@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.annotation.SdkConstant;
 
-
-
 public final class LiveFolders implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:50.620 -0500", hash_original_field = "11F7D90F715D916A63D5FB3D55CA93F4", hash_generated_field = "8F5B94AE17AA8887EB81EF0FD5591FF7")
 
@@ -53,6 +51,8 @@ public final class LiveFolders implements BaseColumns {
     public static final String ACTION_CREATE_LIVE_FOLDER =
             "android.intent.action.CREATE_LIVE_FOLDER";
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:50.652 -0500", hash_original_method = "AC1503908FF1AD4721E32C0243019CC7", hash_generated_method = "75EB957276F57F0FEB26FBBB911376AF")
     
 private LiveFolders() {

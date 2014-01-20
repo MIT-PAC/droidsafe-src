@@ -10,9 +10,6 @@ import java.nio.ByteOrder;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
 
-
-
-
 public class ModifiedUtf8 {
     /**
      * Decodes a byte array containing <i>modified UTF-8</i> bytes into a string.
@@ -119,11 +116,12 @@ public static byte[] encode(String s) throws UTFDataFormatException {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.688 -0500", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "BD4DD56CDB226A8A143AE67AC1075BF1")
     
 private ModifiedUtf8() {
     }
-
     
 }
 

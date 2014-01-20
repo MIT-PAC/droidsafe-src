@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.crypto.ExtendedDigest;
 
-
-
-
-
-
 public abstract class GeneralDigest implements ExtendedDigest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.028 -0500", hash_original_field = "80FB030010B139D624F8F6338A378203", hash_generated_field = "3DFC995CC5383F8C69A040DE4EAEB873")
 
@@ -22,7 +17,6 @@ public abstract class GeneralDigest implements ExtendedDigest {
 
     private int     xBufOff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.035 -0500", hash_original_field = "BCA4DEF68AEEA879C3CDF52B3B2B0634", hash_generated_field = "D3F3DF2B8C683F433F8C23530F50C011")
-
 
     private long    byteCount;
 
@@ -152,14 +146,20 @@ public int getByteLength()
         return BYTE_LENGTH;
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.055 -0500", hash_original_method = "04DFDFE0453D80C4BC4B5BEFF90F3950", hash_generated_method = "E10F26F2963935FC91B6A1386ACD670E")
     
 protected abstract void processWord(byte[] in, int inOff);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.057 -0500", hash_original_method = "6496E83EE108E3B358778ABF0CBEFB20", hash_generated_method = "AB621FDEE444104D0FBF4358FF256476")
     
 protected abstract void processLength(long bitLength);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.059 -0500", hash_original_method = "F44EC1E32B9782C51662CD086C13B889", hash_generated_method = "4340306794C7254459C227CFBB2C305E")
     
 protected abstract void processBlock();

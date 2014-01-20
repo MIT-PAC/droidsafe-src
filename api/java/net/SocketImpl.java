@@ -42,6 +42,8 @@ public abstract class SocketImpl implements SocketOptions {
      * @throws IOException
      *             if an error occurs while accepting a new connection.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.282 -0500", hash_original_method = "645B5DBF048DCD18F59C6757E454F4D9", hash_generated_method = "BBB92267CBAC43C391E741D88616664E")
     
 protected abstract void accept(SocketImpl newSocket) throws IOException;
@@ -54,6 +56,8 @@ protected abstract void accept(SocketImpl newSocket) throws IOException;
      * @throws IOException
      *             if an error occurs while reading the number of bytes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.284 -0500", hash_original_method = "475CB5F8D51E2295C86383D238A46C23", hash_generated_method = "5DEFA11F3DB1D1F1EBD0764907987629")
     
 protected abstract int available() throws IOException;
@@ -68,6 +72,8 @@ protected abstract int available() throws IOException;
      * @throws IOException
      *             if an error occurs while binding this socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.287 -0500", hash_original_method = "B35FD8FDDA4392F4983DCA3861EA0A20", hash_generated_method = "7B0636ABD6BAC64FB656EC1E219CCDE6")
     
 protected abstract void bind(InetAddress address, int port) throws IOException;
@@ -78,6 +84,8 @@ protected abstract void bind(InetAddress address, int port) throws IOException;
      * @throws IOException
      *             if an error occurs while closing this socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.289 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "15CA5096178B277456927E8499C27D0F")
     
 protected abstract void close() throws IOException;
@@ -92,6 +100,8 @@ protected abstract void close() throws IOException;
      * @throws IOException
      *             if an error occurs while connecting to the remote host.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.291 -0500", hash_original_method = "38B5A5FB7EFED572FF5EC5E4770CBCFB", hash_generated_method = "83E516264843228C6E92E0DB8302FA82")
     
 protected abstract void connect(String host, int port) throws IOException;
@@ -107,6 +117,8 @@ protected abstract void connect(String host, int port) throws IOException;
      * @throws IOException
      *             if an error occurs while connecting to the remote host.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.294 -0500", hash_original_method = "908ED6130F1E488FED630AF4785D4A89", hash_generated_method = "9B5EF385EE038269353FD4B56E16B17E")
     
 protected abstract void connect(InetAddress address, int port)
@@ -122,6 +134,8 @@ protected abstract void connect(InetAddress address, int port)
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.297 -0500", hash_original_method = "7920B6A12583802C29C666184FDA8B00", hash_generated_method = "FDF593B1D2CD3575E63889DB26A2437F")
     
 protected abstract void create(boolean isStreaming) throws IOException;
@@ -167,6 +181,8 @@ protected InetAddress getInetAddress() {
      * @throws IOException
      *             if an error occurs while accessing the input stream.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.306 -0500", hash_original_method = "52F11B552F1B3154F1756AD14B960B45", hash_generated_method = "96F61ADB722E9F76BE69B063343A5CC4")
     
 protected abstract InputStream getInputStream() throws IOException;
@@ -192,6 +208,8 @@ protected int getLocalPort() {
      * @throws IOException
      *             if an error occurs while accessing the output stream.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.312 -0500", hash_original_method = "330BE02AC50F8D4A343AF4F02DD1EC2D", hash_generated_method = "5C6182F1AD2C43AE325D52675A84DCB0")
     
 protected abstract OutputStream getOutputStream() throws IOException;
@@ -220,6 +238,8 @@ protected int getPort() {
      * @throws IOException
      *             if an error occurs while listening.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.317 -0500", hash_original_method = "31E00E585554C3B539DD3819BF57995C", hash_generated_method = "48720B1DA3F6EB43B22414401D4AD857")
     
 protected abstract void listen(int backlog) throws IOException;
@@ -281,6 +301,8 @@ protected void shutdownOutput() throws IOException {
      * @throws IOException
      *             if an error occurs while connecting.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.327 -0500", hash_original_method = "0938D29B6C6CBAFB749AFF2C51174A7C", hash_generated_method = "D2555095D342CD6F13874B49069CDA71")
     
 protected abstract void connect(SocketAddress remoteAddr, int timeout) throws IOException;
@@ -305,6 +327,8 @@ protected boolean supportsUrgentData() {
      * @throws IOException
      *             if an error occurs sending urgent data.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.331 -0500", hash_original_method = "B0A374769C8195FE4D3B843710F3EA68", hash_generated_method = "F7D2890C251A546AC0554DB0E4B6951E")
     
 protected abstract void sendUrgentData(int value) throws IOException;

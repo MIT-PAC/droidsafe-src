@@ -109,6 +109,8 @@ public void lock() {
      *
      * @throws InterruptedException if the current thread is interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.131 -0500", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "99377CF76908D3005FAA9EC94629A986")
     
 public void lockInterruptibly() throws InterruptedException {
@@ -141,6 +143,8 @@ public void lockInterruptibly() throws InterruptedException {
      *         current thread, or the lock was already held by the current
      *         thread; and {@code false} otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.134 -0500", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "97D786FCA0BEDED2F0E4356B5AB95F67")
     
 public boolean tryLock() {
@@ -217,6 +221,8 @@ public boolean tryLock() {
      * @throws NullPointerException if the time unit is null
      *
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.136 -0500", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "92FB83CD2DA5E6669041C98D4CCA1701")
     
 public boolean tryLock(long timeout, TimeUnit unit)
@@ -320,6 +326,8 @@ public Condition newCondition() {
      * @return the number of holds on this lock by the current thread,
      *         or zero if this lock is not held by the current thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.143 -0500", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "23450A0B964DC4287A7BC5121FF3D992")
     
@@ -370,6 +378,8 @@ public int getHoldCount() {
      * @return {@code true} if current thread holds this lock and
      *         {@code false} otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.146 -0500", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "93633AA15B4127B7EA873FEBBE9E9F86")
     
 public boolean isHeldByCurrentThread() {
@@ -384,6 +394,8 @@ public boolean isHeldByCurrentThread() {
      * @return {@code true} if any thread holds this lock and
      *         {@code false} otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.148 -0500", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "F9AB52155C1696932A352FCA1FACDA2F")
     
 public boolean isLocked() {
@@ -395,6 +407,8 @@ public boolean isLocked() {
      *
      * @return {@code true} if this lock has fairness set true
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.150 -0500", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "FD5B86C0AAA17846C7B1961516E570A6")
     
 public final boolean isFair() {
@@ -414,6 +428,8 @@ public final boolean isFair() {
      *
      * @return the owner, or {@code null} if not owned
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.152 -0500", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "7D809D9725AEBCF90CFF1BEB201EC3EB")
     
@@ -431,6 +447,8 @@ protected Thread getOwner() {
      * @return {@code true} if there may be other threads waiting to
      *         acquire the lock
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.154 -0500", hash_original_method = "33B7DCC82A105082FC4D268ED56F9DE5", hash_generated_method = "C7584A6E76176296EE4C3AD9AFE15C2D")
     
 public final boolean hasQueuedThreads() {
@@ -448,6 +466,8 @@ public final boolean hasQueuedThreads() {
      * @return {@code true} if the given thread is queued waiting for this lock
      * @throws NullPointerException if the thread is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.157 -0500", hash_original_method = "7B179E46CDF5B520CCEEF15512EC2C63", hash_generated_method = "CAF9172ED60C1F675B6C52C2952927BD")
     
 public final boolean hasQueuedThread(Thread thread) {
@@ -464,6 +484,8 @@ public final boolean hasQueuedThread(Thread thread) {
      *
      * @return the estimated number of threads waiting for this lock
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.160 -0500", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "EA91B63888B7C015D6A36669988D4E4A")
     
@@ -482,6 +504,8 @@ public final int getQueueLength() {
      *
      * @return the collection of threads
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.163 -0500", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "D67E7603910B1CF790C49F196A7D918E")
     
@@ -504,6 +528,8 @@ protected Collection<Thread> getQueuedThreads() {
      *         not associated with this lock
      * @throws NullPointerException if the condition is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.165 -0500", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "D8A38DC1495D3D0A873765D6F9A8A45B")
     
 public boolean hasWaiters(Condition condition) {
@@ -529,6 +555,8 @@ public boolean hasWaiters(Condition condition) {
      *         not associated with this lock
      * @throws NullPointerException if the condition is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.168 -0500", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "40766DA87AAD6F72617A1756D40A4217")
     
 public int getWaitQueueLength(Condition condition) {
@@ -556,6 +584,8 @@ public int getWaitQueueLength(Condition condition) {
      *         not associated with this lock
      * @throws NullPointerException if the condition is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.170 -0500", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "5F349F071ADC291E2ABB5B930AB4DBAB")
     
@@ -572,6 +602,8 @@ protected Collection<Thread> getWaitingThreads(Condition condition) {
 
         private static final long serialVersionUID = -5179523762034025860L;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.504 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
         public Sync ()
         {
@@ -582,6 +614,8 @@ protected Collection<Thread> getWaitingThreads(Condition condition) {
          * Performs {@link Lock#lock}. The main reason for subclassing
          * is to allow fast path for nonfair version.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.076 -0500", hash_original_method = "EA3188FC5C2FE364141E1E027A72F754", hash_generated_method = "9E79877A57CF598470297D3256BCA410")
         
 abstract void lock();
@@ -591,6 +625,8 @@ abstract void lock();
          * implemented in subclasses, but both need nonfair
          * try for trylock method.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.079 -0500", hash_original_method = "D19DB0AA686FDE0FA905238F42C3F88E", hash_generated_method = "B7883604D2C795D13E82979DBE62A2DC")
         
 final boolean nonfairTryAcquire(int acquires) {
@@ -643,6 +679,8 @@ final ConditionObject newCondition() {
 
         // Methods relayed from outer class
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.089 -0500", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "C3C207B7C68025305022EA4618EEB56B")
         
@@ -650,6 +688,8 @@ final Thread getOwner() {
             return getState() == 0 ? null : getExclusiveOwnerThread();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.093 -0500", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "A489F0CCF5FF04E581E437641418427E")
         
@@ -657,6 +697,8 @@ final int getHoldCount() {
             return isHeldExclusively() ? getState() : 0;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.095 -0500", hash_original_method = "89AB065792F4703E484ABCB3E61E822C", hash_generated_method = "4DF0A6EC83E79511F55C358850C8DFCE")
         
 final boolean isLocked() {
@@ -667,6 +709,8 @@ final boolean isLocked() {
          * Reconstitutes this lock instance from a stream.
          * @param s the stream
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.097 -0500", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "7E420B23E106633665207C42814B5A31")
         
 private void readObject(java.io.ObjectInputStream s)
@@ -681,6 +725,8 @@ private void readObject(java.io.ObjectInputStream s)
 
         private static final long serialVersionUID = 7316153563782823691L;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.506 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
@@ -691,6 +737,8 @@ private void readObject(java.io.ObjectInputStream s)
          * Performs lock.  Try immediate barge, backing up to normal
          * acquire on failure.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.106 -0500", hash_original_method = "250EC96D0AD0D747189CAF2CF367FDFE", hash_generated_method = "B345FD567880571D3A71FD5885973500")
         
 final void lock() {
@@ -712,12 +760,16 @@ protected final boolean tryAcquire(int acquires) {
 
         private static final long serialVersionUID = -3000897897090466540L;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.506 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
         public FairSync ()
         {
             //Synthesized constructor
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.116 -0500", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "DE2F5634D2D003CE0C5600B9574D43C7")
         
 final void lock() {
@@ -759,6 +811,8 @@ protected final boolean tryAcquire(int acquires) {
      *
      * @return a string identifying this lock, as well as its lock state
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.172 -0500", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "548B061ACBA6E1F017C0D4DB8D3F0A12")
     
 public String toString() {

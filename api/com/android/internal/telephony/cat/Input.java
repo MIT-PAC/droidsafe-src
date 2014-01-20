@@ -62,6 +62,8 @@ public Input[] newArray(int size) {
 
     public Duration duration;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.384 -0500", hash_original_method = "3E111AA938495B7C4FDD9DF56E63C31E", hash_generated_method = "3E111AA938495B7C4FDD9DF56E63C31E")
     
 Input() {
@@ -79,6 +81,8 @@ Input() {
         duration = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.387 -0500", hash_original_method = "C5B4E51AE4A5E722D5F00F3982A6F022", hash_generated_method = "1F0E029113220D7EAC6362860E2C3DE0")
     
 private Input(Parcel in) {
@@ -119,6 +123,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(duration, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.403 -0500", hash_original_method = "B234C4FFCAD94565C16D3A43A2454835", hash_generated_method = "B234C4FFCAD94565C16D3A43A2454835")
     

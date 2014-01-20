@@ -272,6 +272,8 @@ protected void concatenate(GenericObjectList objList, boolean topFlag) {
      * string formatting function.
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.289 -0500", hash_original_method = "ECC7081A6DE8800C166F28F2C3CCF64F", hash_generated_method = "E94C817CC8C9F29453DBE88B124726A3")
     
 private void sprint(String s) {

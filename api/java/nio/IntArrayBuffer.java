@@ -13,18 +13,24 @@ abstract class IntArrayBuffer extends IntBuffer {
 
     protected  int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.781 -0500", hash_original_method = "D18B871637BEEEB2AE768346D692C9D7", hash_generated_method = "D18B871637BEEEB2AE768346D692C9D7")
     
 IntArrayBuffer(int[] array) {
         this(array.length, array, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.783 -0500", hash_original_method = "64ADCEABF0045F3DCF099C9C9B4F7808", hash_generated_method = "64ADCEABF0045F3DCF099C9C9B4F7808")
     
 IntArrayBuffer(int capacity) {
         this(capacity, new int[capacity], 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.786 -0500", hash_original_method = "8D85757E2A089A86486F1DA1C7B27DB7", hash_generated_method = "8D85757E2A089A86486F1DA1C7B27DB7")
     
 IntArrayBuffer(int capacity, int[] backingArray, int offset) {

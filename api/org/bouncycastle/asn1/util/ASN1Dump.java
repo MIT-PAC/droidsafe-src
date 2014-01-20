@@ -41,11 +41,6 @@ import org.bouncycastle.asn1.DERUnknownTag;
 import org.bouncycastle.asn1.DERVisibleString;
 import org.bouncycastle.util.encoders.Hex;
 
-
-
-
-
-
 public class ASN1Dump {
 
     /**
@@ -53,6 +48,8 @@ public class ASN1Dump {
      *
      * @param obj the DERObject to be dumped out.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.167 -0500", hash_original_method = "CD75AC17D7F386D86DC2E6459CAA03CB", hash_generated_method = "5FF28E01CC55A0DCA7583B0CF55EFA69")
     
 static void _dumpAsString(
@@ -323,6 +320,8 @@ static void _dumpAsString(
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.170 -0500", hash_original_method = "A085E90B685E2DD1BB807B35DC58CB82", hash_generated_method = "6E3C46138551D08E7509B06BB5FB5701")
     
 private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl)
@@ -396,6 +395,8 @@ public static String dumpAsString(
         return buf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.178 -0500", hash_original_method = "3D6C67C11A06616DF2A4DB86F4BD675E", hash_generated_method = "BE9E9BFE41C2CE7AB847C0394AFCE1BF")
     
 private static String dumpBinaryDataAsString(String indent, byte[] bytes)
@@ -433,6 +434,8 @@ private static String dumpBinaryDataAsString(String indent, byte[] bytes)
         return buf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.181 -0500", hash_original_method = "B7AB993C8FF8F0BB3933979E8FD641AD", hash_generated_method = "B782F7489415D349C53C522882507B00")
     
 private static String calculateAscString(byte[] bytes, int off, int len)

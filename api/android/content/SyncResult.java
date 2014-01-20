@@ -80,6 +80,8 @@ public SyncResult() {
      * a sync is already in progress.
      * @param syncAlreadyInProgress if true then set the {@link #syncAlreadyInProgress} flag
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.083 -0500", hash_original_method = "A4EB0430511E7A235909D5D8195B83C3", hash_generated_method = "62AA43D4C8F4ECD3CE768F32C5D2AB84")
     
 private SyncResult(boolean syncAlreadyInProgress) {
@@ -93,6 +95,8 @@ private SyncResult(boolean syncAlreadyInProgress) {
         this.stats = new SyncStats();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.086 -0500", hash_original_method = "B695CA7A40C0F72A389E260A4C1183F2", hash_generated_method = "62EE061EE2DF04FC1CCC5B557E691591")
     
 private SyncResult(Parcel parcel) {

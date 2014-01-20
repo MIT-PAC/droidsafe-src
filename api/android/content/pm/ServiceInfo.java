@@ -47,6 +47,8 @@ public ServiceInfo(ServiceInfo orig) {
         flags = orig.flags;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.899 -0500", hash_original_method = "03E698CAC1E21FAA46C8FF1C3071D430", hash_generated_method = "2FD656109B3013C5E4FDE714D28C7218")
     
 private ServiceInfo(Parcel source) {

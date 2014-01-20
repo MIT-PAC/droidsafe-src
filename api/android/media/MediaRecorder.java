@@ -34,6 +34,8 @@ public static final int getAudioSourceMax() { return AudioSource.VOICE_COMMUNICA
      * code is safe from the object disappearing from underneath it.  (This is
      * the cookie passed to native_setup().)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.871 -0500", hash_original_method = "97DCA2C2A68FF577895DB2733D579418", hash_generated_method = "C1194E01FF583CCEF73CC624991E8EF7")
     
 private static void postEventFromNative(Object mediarecorder_ref,
@@ -50,6 +52,8 @@ private static void postEventFromNative(Object mediarecorder_ref,
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void native_init() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.549 -0500", hash_original_field = "53D9A4726774219B19D0F6C3285BC5F8", hash_generated_field = "9E43FF77760065A7AB714E624C6D69AB")
@@ -853,6 +857,8 @@ public void setOutputFile(String path) throws IllegalStateException
     }
 
     // native implementation
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.760 -0500", hash_original_method = "2C3645C01F64B8B930F730173F6904DB", hash_generated_method = "224DB2A0B75AE3A5424A5128F85F36EF")
     
     private void _setOutputFile(FileDescriptor fd, long offset, long length)
@@ -863,6 +869,8 @@ public void setOutputFile(String path) throws IllegalStateException
     	addTaint(length);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.763 -0500", hash_original_method = "E491231BBA55EF515861E8AF21F37CD9", hash_generated_method = "DE8DCBC67F8D616E500889732F057EEF")
     
     private void _prepare() throws IllegalStateException, IOException{
@@ -957,6 +965,8 @@ public void reset() {
         mEventHandler.removeCallbacksAndMessages(null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.780 -0500", hash_original_method = "AD3447507B75200ED00AEACF3A5CF9B9", hash_generated_method = "F805CC6BEAD82A7BA5217CBF0FC80649")
     
     private void native_reset(){
@@ -1031,6 +1041,8 @@ public void setOnInfoListener(OnInfoListener listener)
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.884 -0500", hash_original_method = "BCB4106EE2D8724832D2515EFBDE53A4", hash_generated_method = "DCCBFCF985F5394E4853A6A7FE9607CC")
     
     private final void native_setup(Object mediarecorder_this) throws IllegalStateException{
@@ -1038,12 +1050,16 @@ public void setOnInfoListener(OnInfoListener listener)
     	addTaint(mediarecorder_this.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.887 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     
     private final void native_finalize(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.891 -0500", hash_original_method = "53992B87F33D5F26EA62BF7D01DBCD08", hash_generated_method = "4E9F2B2D4042AF088A97D4F6280C62E8")
     
     private void setParameter(String nameValuePair){

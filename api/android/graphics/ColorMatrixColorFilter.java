@@ -9,11 +9,15 @@ import droidsafe.helpers.DSUtils;
 
 public class ColorMatrixColorFilter extends ColorFilter {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeColorMatrixFilter(float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nColorMatrixFilter(int nativeFilter, float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373;
@@ -25,6 +29,8 @@ public class ColorMatrixColorFilter extends ColorFilter {
      *               the filter, so changes made to the matrix after the filter
      *               is constructed will not be reflected in the filter.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.294 -0500", hash_original_method = "92B387BCC5497E96DCF4BCCE85C5A491", hash_generated_method = "E783C853CB2DBC2528530EE61AC0DE37")
     
 public ColorMatrixColorFilter(ColorMatrix matrix) {

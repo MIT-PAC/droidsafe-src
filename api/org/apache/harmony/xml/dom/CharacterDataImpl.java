@@ -12,6 +12,8 @@ public abstract class CharacterDataImpl extends LeafNodeImpl implements Characte
 
     protected StringBuffer buffer;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.440 -0500", hash_original_method = "2CB76BA87C10BADB4B5943F1B8732E1D", hash_generated_method = "2CB76BA87C10BADB4B5943F1B8732E1D")
     
 CharacterDataImpl(DocumentImpl document, String data) {

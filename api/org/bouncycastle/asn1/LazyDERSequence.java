@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
-
-
-
 public class LazyDERSequence extends DERSequence {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.800 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "ED95B2E967E3B561D98D41FC80663441")
 
@@ -23,6 +18,8 @@ public class LazyDERSequence extends DERSequence {
 
     private int size = -1;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.807 -0500", hash_original_method = "774E91359D875B822740E8694BBD0378", hash_generated_method = "774E91359D875B822740E8694BBD0378")
     
 LazyDERSequence(
@@ -32,6 +29,8 @@ LazyDERSequence(
         this.encoded = encoded;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.809 -0500", hash_original_method = "F52BE1D6A2A2A6E978CE6B87E0C287FA", hash_generated_method = "40D9EF4B9923E360248D16E33B473F99")
     
 private void parse()
@@ -89,6 +88,8 @@ public int size()
         return size;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.819 -0500", hash_original_method = "46D9E51ED6BB4A9637D586153D86E513", hash_generated_method = "46D9E51ED6BB4A9637D586153D86E513")
     
 void encode(
@@ -97,7 +98,6 @@ void encode(
     {
         out.writeEncoded(SEQUENCE | CONSTRUCTED, encoded);
     }
-
     
 }
 

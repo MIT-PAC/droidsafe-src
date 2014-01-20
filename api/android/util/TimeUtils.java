@@ -126,6 +126,8 @@ public static String getTimeZoneDatabaseVersion() {
         return ZoneInfoDB.getVersion();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.954 -0500", hash_original_method = "3FC6E7A781E4B58A630369339A3D0BEC", hash_generated_method = "EECD5E318F2EA565268D88054CAB5761")
     
 static private int accumField(int amt, int suffix, boolean always, int zeropad) {
@@ -141,6 +143,8 @@ static private int accumField(int amt, int suffix, boolean always, int zeropad) 
         return 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.957 -0500", hash_original_method = "1BBF330F6A4567EA2AE19E3B3560AD54", hash_generated_method = "07A4496E10EC28E39A60E68D4CA6C3CF")
     
 static private int printField(char[] formatStr, int amt, char suffix, int pos,
@@ -167,6 +171,8 @@ static private int printField(char[] formatStr, int amt, char suffix, int pos,
         return pos;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.960 -0500", hash_original_method = "63DC78395A92F8A819496E7F93A5DE4F", hash_generated_method = "1910DA0DF2F867A025490BC8DEAF0595")
     
 private static int formatDurationLocked(long duration, int fieldLen) {

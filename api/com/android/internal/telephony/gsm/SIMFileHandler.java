@@ -25,6 +25,8 @@ public final class SIMFileHandler extends IccFileHandler implements IccConstants
 
     //***** Constructor
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.438 -0500", hash_original_method = "28787217280B11FEE5B9021DD1097C9A", hash_generated_method = "28787217280B11FEE5B9021DD1097C9A")
     
 SIMFileHandler(GSMPhone phone) {

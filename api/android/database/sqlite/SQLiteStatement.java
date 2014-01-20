@@ -41,7 +41,9 @@ public class SQLiteStatement extends SQLiteProgram {
      * @param db
      * @param sql
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.363 -0500", hash_original_method = "5DDFF8C2B7E2F1702052BA1709F992B7", hash_generated_method = "B9E4508E756E5A8384F3CA53B674C040")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.363 -0500", hash_original_method = "5DDFF8C2B7E2F1702052BA1709F992B7", hash_generated_method = "B9E4508E756E5A8384F3CA53B674C040")
     
 SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
         super(db, sql, bindArgs, false /* don't compile sql statement */);
@@ -112,6 +114,8 @@ public long executeInsert() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.376 -0500", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "3A989A9BAE3E3173B88012F0004E7441")
     
 private void saveSqlAsLastSqlStatement() {
@@ -216,6 +220,8 @@ public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
      * This method removes the duplicate code from the other public
      * methods in this class.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.389 -0500", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "31DF08AA7DB680B5B797A6320AA8C336")
     
 private long acquireAndLock(boolean rwFlag) {
@@ -270,6 +276,8 @@ private long acquireAndLock(boolean rwFlag) {
     /**
      * this method releases locks and references acquired in {@link #acquireAndLock(boolean)}
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.392 -0500", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "46E7D271BFA3A6DF8E46090A8915A023")
     
 private void releaseAndUnlock() {
@@ -298,6 +306,8 @@ private void releaseAndUnlock() {
         setNativeHandle(mDatabase.mNativeHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.396 -0500", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "DC5161720DAB8EB47E5EA4047FBF472A")
     
     private final int native_execute(){
@@ -305,6 +315,8 @@ private void releaseAndUnlock() {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.401 -0500", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "9F284F813ADAB367EF93E398BBFD5E94")
     
     private final long native_executeInsert(){
@@ -312,6 +324,8 @@ private void releaseAndUnlock() {
     	return getTaintLong();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.405 -0500", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "109B3F1E1771FF600B0FC63E1CA1E863")
     
     private final long native_1x1_long(){
@@ -319,16 +333,22 @@ private void releaseAndUnlock() {
     	return getTaintLong();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "07DFC0F07DCBF43769548BE4FBA916EE", hash_generated_method = "28030A1C7DC39244AA70D827443E96B9")
     private final String native_1x1_string() {
     	String foo = new String();
     	return foo;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "D5A94C086543C65F36827FC2C8B73314", hash_generated_method = "2FF5ECD0A356350F1F45EEEF9C01561B")
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
     	return new ParcelFileDescriptor();
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.418 -0500", hash_original_method = "BD9AF961A0959F9D5CBC2D8FDDD3B169", hash_generated_method = "80B7D2E3456BEDA8261A1E0B72D02043")
     
     private final void native_executeSql(String sql){

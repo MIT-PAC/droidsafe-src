@@ -91,6 +91,8 @@ public Name(String name) throws IOException {
         rdn = new DNParser(name).parse();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.375 -0500", hash_original_method = "31033A15DF0AC22272F2A1E0E5DFAD4C", hash_generated_method = "9E78C482BB5C208FA2EF04F47FDCC22E")
     
 private Name(List<List<AttributeTypeAndValue>> rdn) {
@@ -179,6 +181,8 @@ public String getName(String format) {
      * Returns Relative Distinguished Name as <code>String</code> according
      * the format requested, format is int value
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.382 -0500", hash_original_method = "F650F61C4EF367763857B0C83C9384E7", hash_generated_method = "F2AD697B381CADF5E0DD2E6D3A8577EB")
     
 private String getName0(String format) {

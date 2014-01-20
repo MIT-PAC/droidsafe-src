@@ -16,6 +16,8 @@ import android.os.SystemProperties;
 
 public class UsbManager {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.845 -0500", hash_original_method = "3527AD09EAC8F1A9B30738F109BFF0EB", hash_generated_method = "059160C4C1510BF56B72A4B251A799DF")
     
 private static boolean propertyContainsFunction(String property, String function) {

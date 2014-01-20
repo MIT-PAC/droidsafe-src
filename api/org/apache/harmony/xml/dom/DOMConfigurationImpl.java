@@ -202,6 +202,8 @@ public void normalize(Node node) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.020 -0500", hash_original_method = "1D4ECB40573303902DF99E5874724C46", hash_generated_method = "565129E004A72D5DA2E8147F4A584366")
     
 private void checkTextValidity(CharSequence s) {
@@ -214,6 +216,8 @@ private void checkTextValidity(CharSequence s) {
      * Returns true if all of the characters in the text are permitted for use
      * in XML documents.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.022 -0500", hash_original_method = "E3663B8D897962AAB4126247F22D681E", hash_generated_method = "1FB2D8CD3CD9C88EFF52AC3F772C9E31")
     
 private boolean isValid(CharSequence text) {
@@ -234,6 +238,8 @@ private boolean isValid(CharSequence text) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.981 -0500", hash_original_field = "95587A84CAA85CC05C4823B1B5D207DB", hash_generated_field = "95587A84CAA85CC05C4823B1B5D207DB")
 
          Object onlyValue;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.984 -0500", hash_original_method = "4AEE734B1EFD8A5D4A3557C383752F00", hash_generated_method = "4AEE734B1EFD8A5D4A3557C383752F00")
         
 FixedParameter(Object onlyValue) {
@@ -264,6 +270,8 @@ public boolean canSet(DOMConfigurationImpl config, Object value) {
     
     static abstract class BooleanParameter implements Parameter {
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.250 -0400", hash_original_method = "51C6AD17F5451D33F04DE00B4C815245", hash_generated_method = "51C6AD17F5451D33F04DE00B4C815245")
         public BooleanParameter ()
         {
@@ -283,6 +291,8 @@ public boolean canSet(DOMConfigurationImpl config, Object value) {
         boolean canSet(DOMConfigurationImpl config, Object value);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.024 -0500", hash_original_method = "9DB2BD31AEB3F11512B5C9ACC16D052B", hash_generated_method = "9835E83AB346EBCE0155E1FE40DC3A55")
     
 private void report(short severity, String type) {

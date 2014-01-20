@@ -30,6 +30,8 @@ public final class SearchableInfo implements Parcelable {
     /**
      * Creates a context for another activity.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.659 -0500", hash_original_method = "AFE36656D81E6CEABC73EB58D0237E28", hash_generated_method = "9D5BF2DF6504F04DF11A5443CE90ED0E")
     
 private static Context createActivityContext(Context context, ComponentName activity) {
@@ -372,6 +374,8 @@ private SearchableInfo(Context activityContext, AttributeSet attr, final Compone
      * @param in The Parcel containing the previously written SearchableInfo,
      * positioned at the location in the buffer where it was written.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.754 -0500", hash_original_method = "5317CE2CAB02C1DC0498B77BC3A6FE3A", hash_generated_method = "5317CE2CAB02C1DC0498B77BC3A6FE3A")
     
 SearchableInfo(Parcel in) {
@@ -742,6 +746,8 @@ public boolean getVoiceSearchLaunchWebSearch() {
          * construct the object.
          * @throws IllegalArgumentException if the action key configuration is invalid
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.679 -0500", hash_original_method = "70C4080A4EB7D334155C1E669C19E162", hash_generated_method = "CD028F2229A77428D73114F09F56CCBE")
         
 ActionKeyInfo(Context activityContext, AttributeSet attr) {
@@ -775,6 +781,8 @@ ActionKeyInfo(Context activityContext, AttributeSet attr) {
          * @param in The Parcel containing the previously written ActionKeyInfo,
          * positioned at the location in the buffer where it was written.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.682 -0500", hash_original_method = "F27ACAC54FD4E2AFDD49ECEAEB99C834", hash_generated_method = "26D3E59CB50F92E3B390B11A524A0412")
         
 private ActionKeyInfo(Parcel in) {

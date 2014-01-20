@@ -126,16 +126,22 @@ public static Class<?> forName(String className, boolean initializeBoolean,
         return result;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
     	Class<?> cl = Object.class;
     	return cl;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static ClassLoader getClassLoader(Class<?> clazz) {
     	return clazz.getClassLoader();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
     	Class[] ret = new Class[0];
     	ret.addTaint(clazz.taint);
@@ -143,6 +149,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
     	Constructor[] ret = new Constructor[0];
@@ -151,6 +159,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	return ret;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
     	ret.addTaint(clazz.taint);
@@ -158,6 +168,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	return ret;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Field getDeclaredField(Class<?> clazz, String name) {
     	Field ret = new Field();
     	ret.addTaint(clazz.taint);
@@ -165,6 +177,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	return ret;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
     	ret[0].addTaint(clazz.taint);
@@ -172,6 +186,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	return ret;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
     	Method ret = new Method();
     	ret.addTaint(clazz.taint);
@@ -180,11 +196,15 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getModifiers(Class<?> clazz, boolean ignoreInnerClassesAttrib) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static <T extends Object> T[] arraycopy(T[] result, T[] head, T[] tail) {
         System.arraycopy(head, 0, result, 0, head.length);
         System.arraycopy(tail, 0, result, head.length, tail.length);
@@ -198,6 +218,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSVAModeled
     private transient String name;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.490 -0400", hash_original_method = "290C4C92EA00F4559290C8F8CF6D9B35", hash_generated_method = "E946603C401B0F4C9A405067C69B1976")
 	public  Class() {
         // ---------- Original Method ----------
@@ -206,6 +228,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     /**
      * Get the Signature attribute for this class.  Returns null if not found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.865 -0500", hash_original_method = "D48BE9AB17D8906757B56E4D680A2C57", hash_generated_method = "B78AD642016FCC1825F3A1A209AE1A79")
     
 private String getSignatureAttribute() {
@@ -218,6 +242,8 @@ private String getSignatureAttribute() {
         return StringUtils.combineStrings(annotation);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
     	Object[] foo = new Object[0];
@@ -423,6 +449,8 @@ public ClassLoader getClassLoader() {
      *
      * @return the ClassLoader
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.894 -0500", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "CA71AD82665CF5FC19F2861C6018C612")
     
@@ -468,6 +496,8 @@ ClassLoader getClassLoaderImpl() {
      * @param name the method name, or "<init>" to return a constructor.
      * @param recursive true to search supertypes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.908 -0500", hash_original_method = "4EF95E7321A9A3F23E7914021D1D63A7", hash_generated_method = "98A59BB2F64617285B92F7E1C4D1EF02")
     
 private Member getConstructorOrMethod(String name, boolean recursive,
@@ -495,6 +525,8 @@ private Member getConstructorOrMethod(String name, boolean recursive,
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.912 -0500", hash_original_method = "388841491B60993DDBB0AE9912E3B4BA", hash_generated_method = "619CFCA5B6AB6934299A174E960CA98B")
     
 private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] parameterTypes) {
@@ -554,6 +586,8 @@ public Constructor<?>[] getConstructors() {
     /**
      * Returns true if the annotation exists.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.924 -0500", hash_original_method = "172017F5B780130A5E2B4C50427437CE", hash_generated_method = "BAF0A1CF7EF8BA29691E3C8313FFA064")
     
     private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass){
@@ -587,6 +621,8 @@ public Class<?>[] getDeclaredClasses() {
      * @param publicOnly reflects whether we want only public members or all of them
      * @return the list of classes
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.930 -0500", hash_original_method = "11EF0E91CA4D1D0CA140D53473DE14D1", hash_generated_method = "741370FF0451A2D498B788FAEA4EB5D6")
     
 private Class<?>[] getFullListOfClasses(boolean publicOnly) {
@@ -818,6 +854,8 @@ public Field getField(String name) throws NoSuchFieldException {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.992 -0500", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "F3676BC6F341EBA853F3C761606E9195")
     
 private Field getPublicFieldRecursive(String name) {
@@ -876,6 +914,8 @@ public Field[] getFields() {
      * Populates {@code result} with public fields defined by this class, its
      * superclasses, and all implemented interfaces.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.998 -0500", hash_original_method = "CCD964C4509A9C827773CB1F1BD75566", hash_generated_method = "22B82B382902708AC3C30359D5ED8391")
     
 private void getPublicFieldsRecursive(List<Field> result) {
@@ -1003,6 +1043,8 @@ public Method[] getMethods() {
      * Populates {@code result} with public methods defined by {@code clazz}, its
      * superclasses, and all implemented interfaces, including overridden methods.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.015 -0500", hash_original_method = "99CBF7E189E92697D7579B92856775ED", hash_generated_method = "F7C8E7FB5A1E5F59BD59B5D6B127FD35")
     
 private void getPublicMethodsRecursive(List<Method> result) {
@@ -1054,6 +1096,8 @@ public String getName() {
         return (result == null) ? (name = getNameNative()) : result;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
     	String ret = new String();
@@ -1097,6 +1141,8 @@ public String getSimpleName() {
         return name;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.757 -0400", hash_original_method = "0DFF052FEDA74158169D3F5C3A6A31A3", hash_generated_method = "E15F8A7CFFBAA6A8E91B4004366ED98B")
     private String getInnerClassName() {
     	String ret = new String();
@@ -1298,8 +1344,8 @@ public boolean isAnnotation() {
      * @return {@code true} if the class represented by this {@code Class} is an
      *         array class; {@code false} otherwise.
      */
-    @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.063 -0500", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "295B3FD7BCB14D1F140029116A5683AB")
     
 public boolean isArray() {
@@ -1465,6 +1511,8 @@ public T newInstance() throws InstantiationException, IllegalAccessException {
         return newInstanceImpl();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.766 -0400", hash_original_method = "15EE5A43120338A96CD2B5DEA980891C", hash_generated_method = "53D1094C8103497B4EEB5236AC886608")
     private T newInstanceImpl() throws IllegalAccessException, InstantiationException {
     	T ret = (T)new Object();

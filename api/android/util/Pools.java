@@ -22,6 +22,8 @@ public class Pools {
     public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool, Object lock) {
         return new SynchronizedPool<T>(pool, lock);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.600 -0500", hash_original_method = "7BA724BF54D87E9022C2063CBB50AED6", hash_generated_method = "E8F74C7933D21E207F3CF684DAA14385")
     
 private Pools() {

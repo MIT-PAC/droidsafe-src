@@ -160,6 +160,8 @@ public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
         flushBytes(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.590 -0500", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "C8FACB662842DE898FFC39C3594E5611")
     
 private void flushBytes(boolean flushUnderlyingStream) throws IOException {
@@ -177,6 +179,8 @@ private void flushBytes(boolean flushUnderlyingStream) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.592 -0500", hash_original_method = "5FDBBBBEF70B98878F7238A71245F3A5", hash_generated_method = "4A911564E9A859C4A6028B8201CF47CB")
     
 private void convert(CharBuffer chars) throws IOException {
@@ -193,6 +197,8 @@ private void convert(CharBuffer chars) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.596 -0500", hash_original_method = "17AF81F5CD218F57FFE1053C07491E0D", hash_generated_method = "524D4A956EFD1F9DD96E8962610F3BDB")
     
 private void drainEncoder() throws IOException {
@@ -226,6 +232,8 @@ private void drainEncoder() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.598 -0500", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "714C39594B4787E56AA58C1A1ACFBD74")
     
 private void checkStatus() throws IOException {
@@ -344,6 +352,8 @@ public String getEncoding() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.612 -0500", hash_original_method = "E279B5931B3E4ADEA2A691FE75B2536D", hash_generated_method = "69A9C9DFC45715CCC07CA531016E0080")
     
 @Override boolean checkError() {

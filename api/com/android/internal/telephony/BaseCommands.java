@@ -22,6 +22,8 @@ public abstract class BaseCommands implements CommandsInterface {
     /**
      * The contents of the /proc/cmdline file
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.610 -0500", hash_original_method = "D7EE75A618128C9318B9442F75114245", hash_generated_method = "68F5FDDC7050CC9BDCB38E211A91DAE1")
     
 private static String getProcCmdLine()

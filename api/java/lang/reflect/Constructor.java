@@ -41,6 +41,8 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
 
     int slot;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.952 -0400", hash_original_method = "F22CB981733D75C2BC34BDB791B93657", hash_generated_method = "5981B35754AB4E8CEEDEF9BB5EC55BCB")
 	public  Constructor() {
         // ---------- Original Method ----------
@@ -68,6 +70,8 @@ private Constructor (Class<T> declaringClass, Class<?>[] ptypes, Class<?>[] exty
         this.slot = slot;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.857 -0500", hash_original_method = "ED32915D16D10FD7E30E61397009B806", hash_generated_method = "A1FFE78535A43F8D511E022C93030B73")
     
 private synchronized void initGenericTypes() {
@@ -83,6 +87,8 @@ private synchronized void initGenericTypes() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.868 -0500", hash_original_method = "C62B79950C859BF71BE9288BB0AB9C37", hash_generated_method = "906C8465F062DF16643A1BE9DE73F23B")
     
@@ -381,6 +387,8 @@ public Class<?>[] getParameterTypes() {
      *
      * @return the constructor's signature
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.912 -0500", hash_original_method = "70A1497759834DE033251D58FB1BC60F", hash_generated_method = "500A530AB78C817D473EEED83F309284")
     
 @SuppressWarnings("unused")

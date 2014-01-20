@@ -73,7 +73,9 @@ public void
         internalNotifyRegistrant (ar.result, ar.exception);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.114 -0500", hash_original_method = "8E93682DAE1125F8892DB75F842EE54A", hash_generated_method = "8E93682DAE1125F8892DB75F842EE54A")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.114 -0500", hash_original_method = "8E93682DAE1125F8892DB75F842EE54A", hash_generated_method = "8E93682DAE1125F8892DB75F842EE54A")
     
 void
     internalNotifyRegistrant (Object result, Throwable exception)

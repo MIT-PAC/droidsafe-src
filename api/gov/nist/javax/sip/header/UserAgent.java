@@ -34,6 +34,8 @@ public UserAgent() {
      * pmusgrave - put a space between products (preserves format of header)
      * @return String
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.738 -0500", hash_original_method = "54509C1E79AD8AD51EA2FF1C763ECD71", hash_generated_method = "A4A0537B9EE87D097717447006422A87")
     
 private String encodeProduct() {

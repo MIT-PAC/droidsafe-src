@@ -67,6 +67,8 @@ public RoundRectShape(float[] outerRadii, RectF inset,
         mPath = new Path();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.704 -0500", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "9CAFFE13CB93ED1E021F4AD5B012F36E")
     
 @Override
@@ -74,6 +76,8 @@ public RoundRectShape(float[] outerRadii, RectF inset,
         canvas.drawPath(mPath, paint);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.707 -0500", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "55B2870296B4A02D7E1BD3D46D93E70B")
     
 @Override
@@ -101,6 +105,8 @@ public RoundRectShape(float[] outerRadii, RectF inset,
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.709 -0500", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "278968F286E9DE55B66B86405F99994F")
     
 @Override

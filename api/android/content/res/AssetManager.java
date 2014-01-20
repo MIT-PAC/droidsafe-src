@@ -18,6 +18,8 @@ import droidsafe.helpers.DSUtils;
 
 public class AssetManager {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.869 -0500", hash_original_method = "A821F17F12E0306B831CCEB4175C42F9", hash_generated_method = "92BE533538642ACCDEB5612A7DC60FD5")
     
 private static void ensureSystemAssets() {
@@ -43,6 +45,8 @@ public static AssetManager getSystem() {
         return sSystem;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final boolean applyStyle(int theme,
             int defStyleAttr, int defStyleRes, int xmlParser,
             int[] inAttrs, int[] outValues, int[] outIndices) {
@@ -61,18 +65,26 @@ public static AssetManager getSystem() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final void applyThemeStyle(int theme, int styleRes, boolean force) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final void copyTheme(int dest, int source) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final int loadThemeAttributeValue(int theme, int ident,
                                                                 TypedValue outValue,
                                                                 boolean resolve) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final void dumpTheme(int theme, int priority, String tag, String prefix) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.827 -0500", hash_original_field = "8596CD11A7036DFAE2B55A84F7B1821E", hash_generated_field = "F0F16F15C40F285B8A0645A0BC532026")
@@ -165,6 +177,8 @@ public AssetManager() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.872 -0500", hash_original_method = "517E3FEC19C254F005880DBF363FE7AF", hash_generated_method = "0AD68695B92B6C49406AD3CAB445259B")
     
 private AssetManager(boolean isSystem) {
@@ -198,7 +212,9 @@ public void close() {
      * Retrieve the string value associated with a particular resource
      * identifier for the current configuration / skin.
      */
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.878 -0500", hash_original_method = "CB81F9A1A3C0416B5CF420A3F62514E3", hash_generated_method = "566D02F833DEB90675A04751BE80B06E")
     
 final CharSequence getResourceText(int ident) {
@@ -219,7 +235,9 @@ final CharSequence getResourceText(int ident) {
      * Retrieve the string value associated with a particular resource
      * identifier for the current configuration / skin.
      */
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.880 -0500", hash_original_method = "2C5FA72B5D3C88AECCC2C4639A2FC63C", hash_generated_method = "5990EC8BFC2A29BA9FF2C6D7D17ECF89")
     
 final CharSequence getResourceBagText(int ident, int bagEntryId) {
@@ -248,7 +266,9 @@ final String[] getResourceStringArray(final int id) {
         return retArray;
     }
 
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.885 -0500", hash_original_method = "880DADF9021E8E0236DAC9AB890DE1A9", hash_generated_method = "6635CC9A9B1559C72E90550A8A0A4FE6")
     
 final boolean getResourceValue(int ident,
@@ -289,7 +309,9 @@ final CharSequence[] getResourceTextArray(final int id) {
         return retArray;
     }
     
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.890 -0500", hash_original_method = "257E397E5CF934BBA53C0ACDE849DFE1", hash_generated_method = "158919A99B960BE9FE30781401A26982")
     
 final boolean getThemeValue(int theme, int ident,
@@ -310,7 +332,9 @@ final boolean getThemeValue(int theme, int ident,
         return false;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.892 -0500", hash_original_method = "BC550AAFCB31C90ECB8DB7C3E260076C", hash_generated_method = "654957354DACF310A05FEE109186629F")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.892 -0500", hash_original_method = "BC550AAFCB31C90ECB8DB7C3E260076C", hash_generated_method = "654957354DACF310A05FEE109186629F")
     
 final void ensureStringBlocks() {
         if (mStringBlocks == null) {
@@ -322,7 +346,9 @@ final void ensureStringBlocks() {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.895 -0500", hash_original_method = "EDCC94234F08B09DDE56D32F4E25BC85", hash_generated_method = "5DE0DF13CB5229BEC74F2E5B2CED9413")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.895 -0500", hash_original_method = "EDCC94234F08B09DDE56D32F4E25BC85", hash_generated_method = "5DE0DF13CB5229BEC74F2E5B2CED9413")
     
 final void makeStringBlocks(boolean copyFromSystem) {
         final int sysNum = copyFromSystem ? sSystem.mStringBlocks.length : 0;
@@ -339,7 +365,9 @@ final void makeStringBlocks(boolean copyFromSystem) {
         }
     }
 
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.897 -0500", hash_original_method = "148EA8945A31568904B22E1C4951294F", hash_generated_method = "39CF31C4D46770A3EC28E345B4DC4F39")
     
 final CharSequence getPooledString(int block, int id) {
@@ -573,7 +601,9 @@ public final XmlResourceParser openXmlResourceParser(int cookie,
      * 
      * @param fileName The name of the file to retrieve.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.928 -0500", hash_original_method = "675415F1EB93293576759C69BAEA6DCB", hash_generated_method = "7C04A244E06F18F218E7F4B18CB646EC")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.928 -0500", hash_original_method = "675415F1EB93293576759C69BAEA6DCB", hash_generated_method = "7C04A244E06F18F218E7F4B18CB646EC")
     
 final XmlBlock openXmlBlockAsset(String fileName)
             throws IOException {
@@ -588,7 +618,9 @@ final XmlBlock openXmlBlockAsset(String fileName)
      * @param cookie Identifier of the package to be opened.
      * @param fileName Name of the asset to retrieve.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.931 -0500", hash_original_method = "9588BC172FA11EB2767F6277EAB2B09E", hash_generated_method = "B417AC5747E8DFC21074CEE7B98F7D8D")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.931 -0500", hash_original_method = "9588BC172FA11EB2767F6277EAB2B09E", hash_generated_method = "B417AC5747E8DFC21074CEE7B98F7D8D")
     
 final XmlBlock openXmlBlockAsset(int cookie, String fileName)
         throws IOException {
@@ -606,7 +638,9 @@ final XmlBlock openXmlBlockAsset(int cookie, String fileName)
         throw new FileNotFoundException("Asset XML file: " + fileName);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.933 -0500", hash_original_method = "30EAECC95AEB342DDD14100667205DCF", hash_generated_method = "30EAECC95AEB342DDD14100667205DCF")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.933 -0500", hash_original_method = "30EAECC95AEB342DDD14100667205DCF", hash_generated_method = "30EAECC95AEB342DDD14100667205DCF")
     
 void xmlBlockGone(int id) {
         synchronized (this) {
@@ -614,7 +648,9 @@ void xmlBlockGone(int id) {
         }
     }
 
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.935 -0500", hash_original_method = "9AD5347899C2D862F4815C023E5977D1", hash_generated_method = "78A9B8EF59C085FBB43CBAAE822870BF")
     
 final int createTheme() {
@@ -628,7 +664,9 @@ final int createTheme() {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.937 -0500", hash_original_method = "0E7F795DABC0415CCAB4CA5A0005DBB0", hash_generated_method = "79DF717765ACB3C1408FA195C0FCABCC")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.937 -0500", hash_original_method = "0E7F795DABC0415CCAB4CA5A0005DBB0", hash_generated_method = "79DF717765ACB3C1408FA195C0FCABCC")
     
 final void releaseTheme(int theme) {
         synchronized (this) {
@@ -758,7 +796,9 @@ public final int[] addAssetPaths(String[] paths) {
     /**
      * Retrieve the resource identifier for the given resource name.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.004 -0500", hash_original_method = "09A813727514834940DA6C6317E3DBCE", hash_generated_method = "42DAF92CC99A835194C08355AE92A0B4")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.004 -0500", hash_original_method = "09A813727514834940DA6C6317E3DBCE", hash_generated_method = "42DAF92CC99A835194C08355AE92A0B4")
     
     final int getResourceIdentifier(String type,
                                                            String name,
@@ -770,30 +810,40 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintInt();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.368 -0400", hash_original_method = "A5876C7E6082BC9F857AB889162EC8D3", hash_generated_method = "FBAAE168C828C7BA370F62A92E8BDE92")
     
     final String getResourceName(int resid) {
     	return "";
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.369 -0400", hash_original_method = "B7E19874BAD16ADDD401F7BE2B2EFFAD", hash_generated_method = "1B222EBFB81E92383980BFED3C95FEF1")
     
     final String getResourcePackageName(int resid) {
     	return "";
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.369 -0400", hash_original_method = "D3A87104246875F54A734A7CED9F3792", hash_generated_method = "FB0BED0BADF159555D7AAA9D63E79093")
     
     final String getResourceTypeName(int resid) {
     	return "";
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.370 -0400", hash_original_method = "7C2D2224C9B46B19401BE8615244E9F1", hash_generated_method = "DCC8904351055C288FCFF6D931A8C8F9")
     
     final String getResourceEntryName(int resid) {
     	return "";
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.022 -0500", hash_original_method = "CCB6CD4213F7E59AA2D59934C9160368", hash_generated_method = "4B54429074B3E82CB432A5C72154C8ED")
     
     private final int openAsset(String fileName, int accessMode){
@@ -803,12 +853,16 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintInt();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.374 -0400", hash_original_method = "9CBF0316C59A074D9238537266A4CF39", hash_generated_method = "1E5C5B867FCBA6692FC4FC36ABE4480B")
     
     private final ParcelFileDescriptor openAssetFd(String fileName,
             long[] outOffsets) throws IOException {
     	return ParcelFileDescriptor.open(new File(fileName), ParcelFileDescriptor.MODE_READ_WRITE);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.030 -0500", hash_original_method = "81CCCE789A5081BAF563B4B2EE08FF05", hash_generated_method = "33C2CE1AD84620F5B594C345D4DA4457")
     
     private final int openNonAssetNative(int cookie, String fileName,
@@ -820,11 +874,15 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintInt();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.391 -0400", hash_original_method = "05F1691565177C2AFF700A7C71F6F6CD", hash_generated_method = "3A7AF2AA82D95CB2D761B5108753F113")
     private ParcelFileDescriptor openNonAssetFdNative(int cookie,
             String fileName, long[] outOffsets) throws IOException {
     	return ParcelFileDescriptor.open(new File(fileName), ParcelFileDescriptor.MODE_READ_WRITE);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.037 -0500", hash_original_method = "97A034179950872E547C89DFB8D9E922", hash_generated_method = "DD455BCC0492E23D4DC8120367C8AB00")
     
     private final void destroyAsset(int asset){
@@ -832,6 +890,8 @@ public final int[] addAssetPaths(String[] paths) {
     	addTaint(asset);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.040 -0500", hash_original_method = "5F1E2DF7C91A7E126E188B382F4854C7", hash_generated_method = "E9EC4872AAC130955E0CE2959BDD0FC8")
     
     private final int readAssetChar(int asset){
@@ -840,6 +900,8 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.044 -0500", hash_original_method = "47F4B97BBBCCF733A9E22BF028AA8D70", hash_generated_method = "9E00BA0526ECB2BFCA1A91C611C75AAC")
     
     private final int readAsset(int asset, byte[] b, int off, int len){
@@ -851,6 +913,8 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.048 -0500", hash_original_method = "B3BCAF9697DD27514E76657171CAECEC", hash_generated_method = "D724FA50DBBCD7861E8DC84CE59DC905")
     
     private final long seekAsset(int asset, long offset, int whence){
@@ -861,6 +925,8 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintLong();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.052 -0500", hash_original_method = "A83D0C436C33F4BEE2F972AC578D7A68", hash_generated_method = "0DD76057179A72704CAAEE5FE8FF1605")
     
     private final long getAssetLength(int asset){
@@ -869,6 +935,8 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintLong();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.056 -0500", hash_original_method = "7F3AC582AA5F20EF55343463044A3085", hash_generated_method = "0E4C91FE4CACEF8701E8607E3D3EB177")
     
     private final long getAssetRemainingLength(int asset){
@@ -879,6 +947,8 @@ public final int[] addAssetPaths(String[] paths) {
 
     /** Returns true if the resource was found, filling in mRetStringBlock and
      *  mRetData. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.059 -0500", hash_original_method = "27B70155371A7D816D4F089317C25CF6", hash_generated_method = "9613E116A4D58A04814824802D7E1A98")
     
     private final int loadResourceValue(int ident, short density, TypedValue outValue,
@@ -893,6 +963,8 @@ public final int[] addAssetPaths(String[] paths) {
 
     /** Returns true if the resource was found, filling in mRetStringBlock and
      *  mRetData. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.063 -0500", hash_original_method = "F08D438D948FB59FEDF35DA42629554E", hash_generated_method = "262A6B89071B38C45E99B003057D519C")
     
     private final int loadResourceBagValue(int ident, int bagEntryId, TypedValue outValue,
@@ -996,7 +1068,9 @@ protected void finalize() throws Throwable
         }
         
     }
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.086 -0500", hash_original_method = "12B5557C9EEBFED6DAC54E4D9FC20DDD", hash_generated_method = "3587482D0B16DC1FDE364CD1782FA043")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.086 -0500", hash_original_method = "12B5557C9EEBFED6DAC54E4D9FC20DDD", hash_generated_method = "3587482D0B16DC1FDE364CD1782FA043")
     
     final boolean retrieveAttributes(
                 int xmlParser, int[] inAttrs, int[] outValues, int[] outIndices){
@@ -1008,7 +1082,9 @@ protected void finalize() throws Throwable
     	return getTaintBoolean();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.090 -0500", hash_original_method = "34A3EC70D4ACE5655FFEE77E96A0F3BC", hash_generated_method = "0E256224C508FC760FE951A98AAA3064")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.090 -0500", hash_original_method = "34A3EC70D4ACE5655FFEE77E96A0F3BC", hash_generated_method = "0E256224C508FC760FE951A98AAA3064")
     
     final int getArraySize(int resource){
     	//Formerly a native method
@@ -1016,7 +1092,9 @@ protected void finalize() throws Throwable
     	return getTaintInt();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.094 -0500", hash_original_method = "6AA3B6ADCA3DD4B26249D05025D281C3", hash_generated_method = "9B06617068AC7DD50401F08FF26E4A44")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.094 -0500", hash_original_method = "6AA3B6ADCA3DD4B26249D05025D281C3", hash_generated_method = "9B06617068AC7DD50401F08FF26E4A44")
     
     final int retrieveArray(int resource, int[] outValues){
     	//Formerly a native method
@@ -1025,6 +1103,8 @@ protected void finalize() throws Throwable
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.098 -0500", hash_original_method = "8643075126929A48F7EB079E8C4278DD", hash_generated_method = "85F34E6DC08510D34BC2CB3B7C0659AA")
     
     private final int getStringBlockCount(){
@@ -1032,6 +1112,8 @@ protected void finalize() throws Throwable
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.101 -0500", hash_original_method = "FB0E199BF31B4B98A791A0A97B553C67", hash_generated_method = "A03F7FD8383261188425D7BF1D947719")
     
     private final int getNativeStringBlock(int block){
@@ -1046,6 +1128,8 @@ protected void finalize() throws Throwable
     	return "";
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.120 -0500", hash_original_method = "4A1BDBE10C6D7479DE706205ED3F0C83", hash_generated_method = "BD1B64559154297AB2C8D63E5FA57C91")
     
     private final int newTheme(){
@@ -1053,6 +1137,8 @@ protected void finalize() throws Throwable
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.124 -0500", hash_original_method = "CA31B66AC1745FBADC98731EBEE7AB46", hash_generated_method = "4212C6AD97F6D8935AD6BE68323DDE50")
     
     private final void deleteTheme(int theme){
@@ -1060,6 +1146,8 @@ protected void finalize() throws Throwable
     	addTaint(theme);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.142 -0500", hash_original_method = "F8A041F054DE87147DC380F35C857F31", hash_generated_method = "5F0B891DF945B3D6645BA50A72D74B67")
     
     private final int openXmlAssetNative(int cookie, String fileName){
@@ -1069,11 +1157,15 @@ protected void finalize() throws Throwable
     	return getTaintInt();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.457 -0400", hash_original_method = "8CA605217ABF9ACD4B0F75B79941D8AD", hash_generated_method = "5F37EF7284C2ED80B62ED2FD114F081D")
     private final String[] getArrayStringResource(int arrayRes) {
     	String[] ret = {""};
     	return ret;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.149 -0500", hash_original_method = "341A9383D92FC9E302B0B298621A3766", hash_generated_method = "0B451BEDF512B4E06C0714E7C551A4B0")
     
     private final int[] getArrayStringInfo(int arrayRes){
@@ -1082,7 +1174,9 @@ protected void finalize() throws Throwable
     	return new int[]{getTaintInt(),};
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.153 -0500", hash_original_method = "BCA05693B8244B417FF82C9EDF7FB611", hash_generated_method = "699B8CDEB6855C8A723437CCC5A97E63")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.153 -0500", hash_original_method = "BCA05693B8244B417FF82C9EDF7FB611", hash_generated_method = "699B8CDEB6855C8A723437CCC5A97E63")
     
     final int[] getArrayIntResource(int arrayRes){
     	//Formerly a native method
@@ -1090,18 +1184,24 @@ protected void finalize() throws Throwable
     	return new int[]{getTaintInt(),};
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.157 -0500", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "63B40292B395EEA932919999AB750BE0")
     
     private final void init(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.160 -0500", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "3A9765D4DB060B4FEE0666AA04B388EF")
     
     private final void destroy(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.163 -0500", hash_original_method = "8CCD44610E895D23EA7CFE3FA359ACA0", hash_generated_method = "7929C286026DADE24F3B7C87A664A348")
     
 private final void incRefsLocked(int id) {
@@ -1116,6 +1216,8 @@ private final void incRefsLocked(int id) {
         mNumRefs++;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.166 -0500", hash_original_method = "5BE87735DD6C438E2E8B68210C5CE018", hash_generated_method = "228C7FCA1DBDA649BCE37EF7BE67ABA4")
     
 private final void decRefsLocked(int id) {

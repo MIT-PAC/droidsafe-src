@@ -69,6 +69,8 @@ public void end() {
      *
      * @return the number of milliseconds to delay running the animation
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.277 -0500", hash_original_method = "A456A6B27B0B6401B5CBF81B119A96B0", hash_generated_method = "FC57DB7F599A90334BED2B9983159634")
     
 public abstract long getStartDelay();
@@ -79,6 +81,8 @@ public abstract long getStartDelay();
 
      * @param startDelay The amount of the delay, in milliseconds
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.279 -0500", hash_original_method = "D1BDC615F0D6CB689D5A02F46F04F12A", hash_generated_method = "2CA8B335A9269A0A3839B3FA55AEDEF4")
     
 public abstract void setStartDelay(long startDelay);
@@ -88,6 +92,8 @@ public abstract void setStartDelay(long startDelay);
      *
      * @param duration The length of the animation, in milliseconds.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.281 -0500", hash_original_method = "82DE27B36BC4484095B14F7E1A297A9F", hash_generated_method = "9880ED4057E2743F5C69F69D7436C09A")
     
 public abstract Animator setDuration(long duration);
@@ -97,6 +103,8 @@ public abstract Animator setDuration(long duration);
      *
      * @return The length of the animation, in milliseconds.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.284 -0500", hash_original_method = "13809D2532E5FA38EF98BEB630AAB08D", hash_generated_method = "FF9278407590D9A00164135C344715E5")
     
 public abstract long getDuration();
@@ -109,6 +117,8 @@ public abstract long getDuration();
      *
      * @param value the interpolator to be used by this animation
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.286 -0500", hash_original_method = "ECD218A4FB106B8E45D391E2FCFE38AF", hash_generated_method = "8E1A8C2825A4BD9063900C0EE443C3BD")
     
 public abstract void setInterpolator(TimeInterpolator value);
@@ -119,6 +129,8 @@ public abstract void setInterpolator(TimeInterpolator value);
      *
      * @return Whether the Animator is running.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.288 -0500", hash_original_method = "01F0FE44E71A30E093E481EBA696B87A", hash_generated_method = "6E27EBB5A90EFE7D59D40ADC42E0CBF6")
     
 public abstract boolean isRunning();

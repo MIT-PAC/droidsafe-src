@@ -40,6 +40,8 @@ public static int compare(Time a, Time b) {
         return nativeCompare(a, b);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCompare(Time a, Time b) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953;
@@ -523,6 +525,8 @@ public String format(String format) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "751765C8BBD19CCE2EF370E3AB9D4D19", hash_generated_method = "CC9E7C3FAB0B3C60FBFB40FF6979F754")
     private String format1(String format) {
     	String s = new String();
@@ -588,6 +592,8 @@ public boolean parse(String s) {
     /**
      * Parse a time in the current zone in YYYYMMDDTHHMMSS format.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.795 -0500", hash_original_method = "715F84C962A7921497F55D5349A2140A", hash_generated_method = "EA919FD7BE7C474CE83983166A9CD5B1")
     
     private boolean nativeParse(String s){
@@ -639,7 +645,9 @@ public boolean parse3339(String s) {
          return false;
      }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.802 -0500", hash_original_method = "57499E6D502331FE1EE9DA37E2D15CA3", hash_generated_method = "759E8A7ADB981CAAF0E76B982DD539A2")
+     @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.802 -0500", hash_original_method = "57499E6D502331FE1EE9DA37E2D15CA3", hash_generated_method = "759E8A7ADB981CAAF0E76B982DD539A2")
     
     private boolean nativeParse3339(String s){
     	//Formerly a native method

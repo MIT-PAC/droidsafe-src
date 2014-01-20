@@ -18,6 +18,8 @@ public final class CursorJoiner implements Iterator<CursorJoiner.Result>, Iterab
      * @param columnIndicies the indicies of the values to read from the cursor
      * @param startingIndex the slot in which to start storing values, and must be either 0 or 1.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.275 -0500", hash_original_method = "84AE19E5FEA6BD44A102FDD1C7D63C31", hash_generated_method = "A7890E5D0CF846B9D0C76B6F6DA78123")
     
 private static void populateValues(String[] values, Cursor cursor, int[] columnIndicies,
@@ -36,6 +38,8 @@ private static void populateValues(String[] values, Cursor cursor, int[] columnI
      * @param values the n pairs of values to compare
      * @return -1, 0, or 1 as described above.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.281 -0500", hash_original_method = "ED7115340A8A7EF690F3B814A164C906", hash_generated_method = "D989FEEA6C655E7554E6D80F9E00F0E6")
     
 private static int compareStrings(String... values) {
@@ -117,6 +121,8 @@ private static int compareStrings(String... values) {
      * @param columnNames the array of names to lookup
      * @return an array of column indices
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.265 -0500", hash_original_method = "9B0D8B6CEE5AA7BD346EB9D2E041D4FA", hash_generated_method = "4BC89F7A72DA2A988961B8D9881BB9CE")
     
 private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
@@ -171,6 +177,8 @@ public void remove() {
         throw new UnsupportedOperationException("not implemented");
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void incrementCursors() {
        mCursorLeft.moveToNext();
        mCursorRight.moveToNext();

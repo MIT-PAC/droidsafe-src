@@ -16,10 +16,6 @@ import gov.nist.javax.sip.address.TelephoneNumber;
 
 import java.text.ParseException;
 
-
-
-
-
 public class URLParser extends Parser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.451 -0500", hash_original_method = "2E6BD7BC03AAC930545A17B5C6166288", hash_generated_method = "A897F129E9AD68B314557B18E0D136F1")
     
@@ -182,6 +178,8 @@ protected String paramNameOrValue() throws ParseException {
         return lexer.getBuffer().substring(startIdx, lexer.getPtr());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.468 -0500", hash_original_method = "28DEAB6489C56D85C58F2548442629A5", hash_generated_method = "B13223F23D353B520FDE65DDFD5D3C0C")
     
 private NameValue uriParam() throws ParseException {
@@ -403,6 +401,8 @@ public GenericURI uriReference( boolean inBrackets ) throws ParseException {
     /**
      * Parser for the base phone number.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.495 -0500", hash_original_method = "FA28BF7ACB321CCE37D931F114A366BD", hash_generated_method = "1EAD434B6308133C51665215BA907C7C")
     
 private String base_phone_number() throws ParseException {
@@ -438,6 +438,8 @@ private String base_phone_number() throws ParseException {
     /**
      * Parser for the local phone #.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.498 -0500", hash_original_method = "0C6D1452631B0ABABC52FCC37CE65FF7", hash_generated_method = "9CC6E52B6C6B6AA593DB3A674423C42E")
     
 private String local_number() throws ParseException {
@@ -509,6 +511,8 @@ public final TelephoneNumber parseTelephoneNumber( boolean inBrackets )
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.504 -0500", hash_original_method = "0F1ADEC60659CEA5C84BABEF7D06F081", hash_generated_method = "706CF5EC819AD786F25546E4156D6BC0")
     
 private final TelephoneNumber global_phone_number( boolean inBrackets ) throws ParseException {
@@ -536,6 +540,8 @@ private final TelephoneNumber global_phone_number( boolean inBrackets ) throws P
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.507 -0500", hash_original_method = "883FF19CD75AFF340396001C616EFCAA", hash_generated_method = "B131F4B14E0003573B1D951687E1B53F")
     
 private TelephoneNumber local_phone_number( boolean inBrackets ) throws ParseException {
@@ -573,6 +579,8 @@ private TelephoneNumber local_phone_number( boolean inBrackets ) throws ParseExc
         return tn;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.510 -0500", hash_original_method = "F5BCCE1D5E357F2A71ACB92ADA6046C2", hash_generated_method = "A77E00A603A19DBF2B618F4A5576C61D")
     
 private NameValueList tel_parameters() throws ParseException {
@@ -611,6 +619,8 @@ private NameValueList tel_parameters() throws ParseException {
      * Parses the 'phone-context' parameter in tel: URLs
      * @throws ParseException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.513 -0500", hash_original_method = "4B2DA37312785E9B10734C6846FECD1E", hash_generated_method = "50A1AD970DEFC6048EA99E78FE6BABC6")
     
 private NameValue phone_context() throws ParseException {
@@ -871,7 +881,6 @@ protected String password() throws ParseException {
 public GenericURI parse() throws ParseException {
         return uriReference( true );
     }
-
     
 }
 

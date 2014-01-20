@@ -75,6 +75,8 @@ public synchronized Object
         return registrants.get(index);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.679 -0500", hash_original_method = "923D2EAB51C3C809A7DC018C31FECFAC", hash_generated_method = "8DAFE555768F325F8FF542C6BF8C8427")
     
 private synchronized void

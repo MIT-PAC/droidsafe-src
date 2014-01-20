@@ -235,6 +235,8 @@ public void run() {
      * @param packet
      *            is the incoming datagram packet.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.439 -0500", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "6B719ED1CA7C5621A0C4F218A60E7CA7")
     
 private void processIncomingDataPacket(DatagramPacket packet)

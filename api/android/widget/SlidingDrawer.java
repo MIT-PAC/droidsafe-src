@@ -21,10 +21,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class SlidingDrawer extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.577 -0500", hash_original_field = "52A309EB0E3683A7462D15119396AD5F", hash_generated_field = "F5AA8D432C85B67F2F1A59A2F86C9B4F")
 
@@ -33,7 +29,6 @@ public class SlidingDrawer extends ViewGroup {
 
     public static final int ORIENTATION_VERTICAL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.581 -0500", hash_original_field = "EADF3C7F3211EA17C7FCEBC67445B288", hash_generated_field = "EF82FF38C70F34E835AAF92E9AE79EDE")
-
 
     private static final int TAP_THRESHOLD = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.584 -0500", hash_original_field = "54B063A7D518B74A6B80D015E6553350", hash_generated_field = "D63B1940B01FABB1E3D03EB23FE92832")
@@ -59,13 +54,11 @@ public class SlidingDrawer extends ViewGroup {
     private static final int ANIMATION_FRAME_DURATION = 1000 / 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.601 -0500", hash_original_field = "479381BF4F6561B8F12F5483DB06EB06", hash_generated_field = "E6DD03D94ACD8E70EDDDE338DBF27AAF")
 
-
     private static final int EXPANDED_FULL_OPEN = -10001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.604 -0500", hash_original_field = "7E13E789246F51504E39551DBDC0E584", hash_generated_field = "B95F2443D5297E62D43F7D70D6A2C6EF")
 
     private static final int COLLAPSED_FULL_CLOSED = -10002;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.606 -0500", hash_original_field = "58CEF23BC59A1B596AC12727233F23D8", hash_generated_field = "B9AD435137DADE0845830F9270F70E30")
-
 
     private  int mHandleId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.608 -0500", hash_original_field = "C8C1FE0E40EAC80B8BC996A81A376870", hash_generated_field = "55C049408744B8FDCA992B53F6C10120")
@@ -73,13 +66,11 @@ public class SlidingDrawer extends ViewGroup {
     private  int mContentId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.610 -0500", hash_original_field = "3D74F3A4EE1AB90E12A43557D37ACE3B", hash_generated_field = "E8BA56C7C02F14BBB3AD7861D24F7F39")
 
-
     private View mHandle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.612 -0500", hash_original_field = "4CE2596198A762943CD94DB82034E59D", hash_generated_field = "4B574DDB85BB6C11F0A70911E19AC509")
 
     private View mContent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.614 -0500", hash_original_field = "753E8A74B879B742778E0A7049176AEA", hash_generated_field = "E13DB1E02187FBC368ECF4DA682C95E3")
-
 
     private final Rect mFrame = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.617 -0500", hash_original_field = "23ADE8F27ED17778584C1B8FC9D10B40", hash_generated_field = "29D89654815C4DD328FBCD4EFB3E81BC")
@@ -93,10 +84,8 @@ public class SlidingDrawer extends ViewGroup {
     private boolean mLocked;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.623 -0500", hash_original_field = "507D8F8387EDC230B54D84A5AD8E5830", hash_generated_field = "5BEE30D4541C1ECA385873E799FC4104")
 
-
     private VelocityTracker mVelocityTracker;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.625 -0500", hash_original_field = "AD5BC26F1486924EA9EA9B5D19F29CAE", hash_generated_field = "69CBC6FC9EE367E3A738852DD60DDD6D")
-
 
     private boolean mVertical;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.627 -0500", hash_original_field = "236172BE4841A164C5722B3244AD96D9", hash_generated_field = "7103A8DBA0A4F81C284E960B8CC80DC4")
@@ -116,7 +105,6 @@ public class SlidingDrawer extends ViewGroup {
     private int mHandleWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.638 -0500", hash_original_field = "866C6A009FF333389CAB25DAA1ECAD17", hash_generated_field = "8C460F25BFF7952FBBB3F43AEC58A8FA")
 
-
     private OnDrawerOpenListener mOnDrawerOpenListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.640 -0500", hash_original_field = "730F28B8289D5CBA928FA0464D717DB4", hash_generated_field = "5DCED40BC5E93EB3FC4EFFDBD1ABA1EB")
 
@@ -125,7 +113,6 @@ public class SlidingDrawer extends ViewGroup {
 
     private OnDrawerScrollListener mOnDrawerScrollListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.645 -0500", hash_original_field = "B7D134B9BC94B6D202271833D74FA7D4", hash_generated_field = "7069DE3AC2B814F5CD0DDE1ECAA02151")
-
 
     private final Handler mHandler = new SlidingHandler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.648 -0500", hash_original_field = "22EAF753DB1C3FBB359C6E22C87A67DC", hash_generated_field = "8AD4D7FBE4447EC74EB11F3023272F93")
@@ -156,7 +143,6 @@ public class SlidingDrawer extends ViewGroup {
 
     private boolean mAnimateOnClick;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.667 -0500", hash_original_field = "0FCC7F3E333A28901CEA22B19FA7629A", hash_generated_field = "C8ECFBCB177EF04D92E685DE7FC65E03")
-
 
     private  int mTapThreshold;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.669 -0500", hash_original_field = "BC275EFC94F31A5D5408C763F8887282", hash_generated_field = "883ADAEF9FFCFF03EA632160D4AD8FA4")
@@ -493,6 +479,8 @@ public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {
         return mTracking || mAnimating || super.onTouchEvent(event);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.713 -0500", hash_original_method = "88CBA816EA18A335641DE4CDFF39F34A", hash_generated_method = "CC659D4031C51EE2EEA89F98B8949C4B")
     
 private void animateClose(int position) {
@@ -500,6 +488,8 @@ private void animateClose(int position) {
         performFling(position, mMaximumAcceleration, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.716 -0500", hash_original_method = "C2A732DFCC58ACB6BBE028A7D0745854", hash_generated_method = "3B9A7238420469000CA2105B595BF88F")
     
 private void animateOpen(int position) {
@@ -507,6 +497,8 @@ private void animateOpen(int position) {
         performFling(position, -mMaximumAcceleration, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.719 -0500", hash_original_method = "D605C0C7A0239DE60A633AEEC0D2A029", hash_generated_method = "DED1CF79DA92F2E40A3C75760D57B680")
     
 private void performFling(int position, float velocity, boolean always) {
@@ -558,6 +550,8 @@ private void performFling(int position, float velocity, boolean always) {
         stopTracking();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.721 -0500", hash_original_method = "59A44BD10421444D4E6898819BFB6759", hash_generated_method = "6C5D51D1BA1F85E73DA4BB26F1A34EDB")
     
 private void prepareTracking(int position) {
@@ -585,6 +579,8 @@ private void prepareTracking(int position) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.725 -0500", hash_original_method = "EB5E8744EDA67A38CC286A32349D536F", hash_generated_method = "EE814491205B93C476F5975F5894BB5E")
     
 private void moveHandle(int position) {
@@ -653,6 +649,8 @@ private void moveHandle(int position) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.728 -0500", hash_original_method = "8AB257947D81E84CE88DA2BD3F113967", hash_generated_method = "0534A9D62D3412A1F857567ADF43D91D")
     
 private void prepareContent() {
@@ -689,6 +687,8 @@ private void prepareContent() {
         content.setVisibility(View.GONE);        
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.730 -0500", hash_original_method = "211492025B22CF1DCBA38CDE66604CEE", hash_generated_method = "F4E43633A9008E5DEE65FA7D8A32D2BB")
     
 private void stopTracking() {
@@ -705,6 +705,8 @@ private void stopTracking() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.733 -0500", hash_original_method = "1985F913D861388A154BC055CAF12D3C", hash_generated_method = "CFEEC89658CEE2DEA0041C3C868341F2")
     
 private void doAnimation() {
@@ -725,6 +727,8 @@ private void doAnimation() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.736 -0500", hash_original_method = "D38E54734013AFEACE31D553AEEA44A0", hash_generated_method = "9019347A6BE3E8D70DFF87D260D20631")
     
 private void incrementAnimation() {
@@ -833,7 +837,6 @@ public void animateClose() {
             scrollListener.onScrollEnded();
         }
     }
-
     
     private class DrawerToggler implements OnClickListener {
         
@@ -858,11 +861,8 @@ public void onClick(View v) {
                 toggle();
             }
         }
-
         
     }
-
-
     
     private class SlidingHandler extends Handler {
         
@@ -880,11 +880,8 @@ public void handleMessage(Message m) {
                     break;
             }
         }
-
         
     }
-
-
     
     public static interface OnDrawerOpenListener {
         
@@ -899,7 +896,6 @@ public void handleMessage(Message m) {
     public static interface OnDrawerScrollListener {
         
         public void onScrollStarted();
-
         
         public void onScrollEnded();
     }
@@ -930,6 +926,8 @@ public void animateOpen() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.751 -0500", hash_original_method = "1255865AE0DB052085CB21C8279D10AA", hash_generated_method = "269772C95AA9A33D0CBC49ED89C9C958")
     
 private void closeDrawer() {
@@ -947,6 +945,8 @@ private void closeDrawer() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.754 -0500", hash_original_method = "68D1245B0829B631CA56B61B1EFB607E", hash_generated_method = "206622C78E0AB7E73B19AC7D6CC81D20")
     
 private void openDrawer() {

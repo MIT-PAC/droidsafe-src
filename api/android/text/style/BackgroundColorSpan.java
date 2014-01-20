@@ -22,12 +22,16 @@ public BackgroundColorSpan(int color) {
 		mColor = color;
 	}
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.802 -0500", hash_original_method = "71157ECE822D307A1BD642C08548B0D3", hash_generated_method = "1AA25EFAED937732392AEB3688A55E59")
     
 public BackgroundColorSpan(Parcel src) {
         mColor = src.readInt();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.804 -0500", hash_original_method = "D24F62EA631AC1AF936FF48E9134FC5B", hash_generated_method = "A571725B2EED3A9BAADBD3F7FF75B3BA")
     
@@ -35,12 +39,16 @@ public int getSpanTypeId() {
         return TextUtils.BACKGROUND_COLOR_SPAN;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.806 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
         return 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.809 -0500", hash_original_method = "F35F8912B3182FC877D8B21825C3ABAF", hash_generated_method = "5D25898D16D89B2F14A8038422877D91")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -56,7 +64,9 @@ public int getBackgroundColor() {
 		return mColor;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.815 -0500", hash_original_method = "7B660C1B12B91C1F1E71953191ED601F", hash_generated_method = "D3D860E9C1D9F021148DD577729D7D5C")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.815 -0500", hash_original_method = "7B660C1B12B91C1F1E71953191ED601F", hash_generated_method = "D3D860E9C1D9F021148DD577729D7D5C")
     
 @Override
 	public void updateDrawState(TextPaint ds) {

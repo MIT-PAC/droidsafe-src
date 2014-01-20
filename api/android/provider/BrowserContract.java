@@ -39,6 +39,8 @@ public class BrowserContract {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.313 -0500", hash_original_field = "F6706C3E2084D134E9959626B0DA9FC4", hash_generated_field = "489183F01776E5FE54CC501794239F31")
 
         public static final String CLIENT_UNIQUE = BaseSyncColumns.SYNC4;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.297 -0500", hash_original_method = "FBBD23C5251F402AEB9A227B34F9A614", hash_generated_method = "1A7A2CEFBCA58FDC5FF4D33C30808C0A")
         
 private ChromeSyncColumns() {}
@@ -101,6 +103,8 @@ public static final Uri buildFolderUri(long folderId) {
         /**
          * This utility class cannot be instantiated.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.336 -0500", hash_original_method = "AE207FC542F592796C7137A1F40A9FC2", hash_generated_method = "A79ADE4DE1D184572ED0C7C3E91386CD")
         
 private Bookmarks() {}
@@ -141,6 +145,8 @@ private Bookmarks() {}
         /**
          * This utility class cannot be instantiated.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.391 -0500", hash_original_method = "9A3C530B0BF357B0539558761B1AC70C", hash_generated_method = "988E0C7B6C13324742BC106865E82AEA")
         
 private History() {}
@@ -165,6 +171,8 @@ private History() {}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.419 -0500", hash_original_field = "5B6FCEF8C44CB783DFFC37049083A6ED", hash_generated_field = "FDAA1E4DCD8393137807C1AA22ED16F2")
 
         public static final String DATE = "date";
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.404 -0500", hash_original_method = "7529334193E0AAE11CAF3EB6D8429B6D", hash_generated_method = "6495D0160998CD8474CAF15BFBC02214")
         
 private Searches() {}
@@ -224,6 +232,8 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.424 -0500", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "B49E3D8116D56A750AEF2EA2BBA629A3")
         
 private SyncState() {}
@@ -239,6 +249,8 @@ private SyncState() {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.444 -0500", hash_original_method = "7ABD1F4BB750369FFBE0EAAD80629925", hash_generated_method = "C2B023356DF2D8423B86547092C71691")
         
 private Images() {}
@@ -254,6 +266,8 @@ private Images() {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.455 -0500", hash_original_method = "A486C536CC2BBF7E5EE5092C736031C8", hash_generated_method = "70FFFC2D075451B0F1CD7FCCB9EFC19E")
         
 private Combined() {}
@@ -306,6 +320,8 @@ static public void setSyncEnabled(Context context, boolean enabled) {
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.464 -0500", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "59B3C6A592AE63BEE2BC1CC1723B36DF")
         
 private Settings() {}

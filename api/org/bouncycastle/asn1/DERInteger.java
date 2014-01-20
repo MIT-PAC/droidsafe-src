@@ -9,11 +9,6 @@ import java.math.BigInteger;
 
 import org.bouncycastle.util.Arrays;
 
-
-
-
-
-
 public class DERInteger extends ASN1Object {
 
     /**
@@ -106,6 +101,8 @@ public BigInteger getPositiveValue()
         return new BigInteger(1, bytes);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.778 -0500", hash_original_method = "01662A631E5ACE6C7726FCC0828E9E63", hash_generated_method = "01662A631E5ACE6C7726FCC0828E9E63")
     
 void encode(
@@ -129,6 +126,8 @@ public int hashCode()
          return value;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.783 -0500", hash_original_method = "A031FF36E08BD1C92CE6416060813BEC", hash_generated_method = "A031FF36E08BD1C92CE6416060813BEC")
     
 boolean asn1Equals(
@@ -150,7 +149,6 @@ public String toString()
     {
       return getValue().toString();
     }
-
     
 }
 

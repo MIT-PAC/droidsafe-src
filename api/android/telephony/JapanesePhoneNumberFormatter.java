@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.Editable;
 
-
-
-
-
 class JapanesePhoneNumberFormatter {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.093 -0500", hash_original_method = "45AAE50F2C13E8232A931CE1D4B77E29", hash_generated_method = "16CB798AD9EDD6C0FEAD1F9310F1D7EA")
@@ -200,6 +196,8 @@ public static void format(Editable text) {
     -35, -35, -35, -35, -35, -35, -35, -35, -35, -45,
     -26, -15, -15, -15, -15, -15, -15, -15, -15, -15};
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.094 -0400", hash_original_method = "8633AFAAB867BB1617201EF2E839378D", hash_generated_method = "8633AFAAB867BB1617201EF2E839378D")
     public JapanesePhoneNumberFormatter ()
     {

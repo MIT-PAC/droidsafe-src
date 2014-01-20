@@ -12,10 +12,6 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
-
-
-
 class SelectActionModeCallback implements ActionMode.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.169 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
 
@@ -24,18 +20,24 @@ class SelectActionModeCallback implements ActionMode.Callback {
 
     private ActionMode mActionMode;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.905 -0400", hash_original_method = "5762F84230A8FBDA28C52CC5E7905CF7", hash_generated_method = "5762F84230A8FBDA28C52CC5E7905CF7")
     public SelectActionModeCallback ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.174 -0500", hash_original_method = "2B5F8950C4750F957BA2CE7A16E0E578", hash_generated_method = "2B5F8950C4750F957BA2CE7A16E0E578")
     
 void setWebView(WebView webView) {
         mWebView = webView;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.176 -0500", hash_original_method = "AEE4CA66C11C42A4DFBE3B808BED80FD", hash_generated_method = "5A55D270C47FEE6C8E965210FE81FBE1")
     
 void finish() {
@@ -127,7 +129,6 @@ void finish() {
     public void onDestroyActionMode(ActionMode mode) {
         mWebView.selectionDone();
     }
-
     
 }
 

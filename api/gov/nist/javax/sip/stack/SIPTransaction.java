@@ -568,6 +568,8 @@ protected final void disableTimeoutTimer() {
      * Fired after each timer tick. Checks the retransmission and timeout timers
      * of this transaction, and fired these events if necessary.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.872 -0500", hash_original_method = "CB8F1BD04D54E1B61EA5D28A66348AD3", hash_generated_method = "8C5E3A7A5448A2D9D818D4909D4C9D1E")
     
 final void fireTimer() {
@@ -849,6 +851,8 @@ protected boolean isServerTransaction() {
      * @return the Dialog Object of this Transaction object.
      * @see Dialog
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.934 -0500", hash_original_method = "2A2D8F90205370D9F145CD8B0AEC9E6A", hash_generated_method = "3F2B96B1CC6A371F5C53B8FBA7E8C942")
     
 public abstract Dialog getDialog();
@@ -861,6 +865,8 @@ public abstract Dialog getDialog();
      * @param dialogId --
      *            the dialog id ot associate with the dialog.s
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.937 -0500", hash_original_method = "9434D78B894DA4967CDAB3F3F4CDCF5D", hash_generated_method = "3F0EB0767DF4DD74688194186849B776")
     
 public abstract void setDialog(SIPDialog sipDialog, String dialogId);
@@ -1381,6 +1387,8 @@ public java.security.cert.Certificate[] getPeerCertificates() throws SSLPeerUnve
      *
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.020 -0500", hash_original_method = "E5EAE26C57F5EBB157203CBA87CB951E", hash_generated_method = "30C468CB6458BA005BA4F4741CC61DEA")
     
 protected abstract void startTransactionTimer();
@@ -1390,6 +1398,8 @@ protected abstract void startTransactionTimer();
      *
      * @return True if the message is part of this transaction, false if not.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.023 -0500", hash_original_method = "54A14067D4D69175B71AF6E3CF49DEDD", hash_generated_method = "AD767D86D9C16901816A5A36F2380B72")
     
 public abstract boolean isMessagePartOfTransaction(SIPMessage messageToTest);
@@ -1398,6 +1408,8 @@ public abstract boolean isMessagePartOfTransaction(SIPMessage messageToTest);
      * This method is called when this transaction's retransmission timer has
      * fired.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.025 -0500", hash_original_method = "FD1B342529E4AA24544A358CD24571F9", hash_generated_method = "313A5C8BF2594769199854407AB53309")
     
 protected abstract void fireRetransmissionTimer();
@@ -1405,6 +1417,8 @@ protected abstract void fireRetransmissionTimer();
     /**
      * This method is called when this transaction's timeout timer has fired.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.028 -0500", hash_original_method = "2DB190C250A960DFD23F0F74910B0F8C", hash_generated_method = "FB0522ADFC3E1A913411DC5B48DA1A35")
     
 protected abstract void fireTimeoutTimer();

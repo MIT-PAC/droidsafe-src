@@ -243,6 +243,8 @@ public boolean isAlwaysShowEnabled() {
         return mAlwaysShow;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.047 -0500", hash_original_method = "8A07D5E4DE8CD170DC3BFC9FE8A30504", hash_generated_method = "86F3FB9B203764A997DC05618B0F0611")
     
 private void refreshDrawableState() {
@@ -311,6 +313,8 @@ public int getState() {
         return mState;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.058 -0500", hash_original_method = "C32E62B08B27A384339E1BC75CFE4552", hash_generated_method = "FEE3E182E4322D9F83A5474043DFECFC")
     
 private void resetThumbPos() {
@@ -328,6 +332,8 @@ private void resetThumbPos() {
         mThumbDrawable.setAlpha(ScrollFade.ALPHA_MAX);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.061 -0500", hash_original_method = "5C6D13F417D5AA8E0A1553C57F0CD3F0", hash_generated_method = "2A2127D26D1FB446FB15A5E389EE4E1B")
     
 private void useThumbDrawable(Context context, Drawable drawable) {
@@ -364,6 +370,8 @@ private void useThumbDrawable(Context context, Drawable drawable) {
             //Synthesized constructor
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.124 -0500", hash_original_method = "C2CB87B9E1EBFB96BF37E1CA2A1422A5", hash_generated_method = "C2CB87B9E1EBFB96BF37E1CA2A1422A5")
         
 void startFade() {
@@ -372,6 +380,8 @@ void startFade() {
             setState(STATE_EXIT);
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.126 -0500", hash_original_method = "AFB48DA784BE880095A4465F927D06A4", hash_generated_method = "AFB48DA784BE880095A4465F927D06A4")
         
@@ -405,6 +415,8 @@ public void run() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.064 -0500", hash_original_method = "0A57524C8928F6FDE971C9B9E9D3463C", hash_generated_method = "91314E9A301787B9AFA5E96712758CB4")
     
 private void init(Context context) {
@@ -453,12 +465,16 @@ private void init(Context context) {
         setScrollbarPosition(mList.getVerticalScrollbarPosition());
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.066 -0500", hash_original_method = "056243A841F0EC691D28BA5422CDF65B", hash_generated_method = "056243A841F0EC691D28BA5422CDF65B")
     
 void stop() {
         setState(STATE_NONE);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.068 -0500", hash_original_method = "DC69F15A6278F37206902D3451EB4A27", hash_generated_method = "DC69F15A6278F37206902D3451EB4A27")
     
 boolean isVisible() {
@@ -565,6 +581,8 @@ public void draw(Canvas canvas) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.075 -0500", hash_original_method = "E295B7FC2E9560F481D5875AE2ECD038", hash_generated_method = "576F2331C6241716E364FCAEDA2631F1")
     
 void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -593,6 +611,8 @@ void onSizeChanged(int w, int h, int oldw, int oldh) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.077 -0500", hash_original_method = "33CBCEE809BB980D8FD69134B46323D0", hash_generated_method = "33CBCEE809BB980D8FD69134B46323D0")
     
 void onItemCountChanged(int oldCount, int newCount) {
@@ -601,6 +621,8 @@ void onItemCountChanged(int oldCount, int newCount) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.080 -0500", hash_original_method = "E5B6E6440A22D0800FAD70BDC783A6AE", hash_generated_method = "39C365730BE8FCA99E01104B5D926A74")
     
 void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, 
@@ -640,6 +662,8 @@ void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.082 -0500", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "AD42D97439FFEC71F76D9E9B9EF1920A")
     
@@ -647,6 +671,8 @@ SectionIndexer getSectionIndexer() {
         return mSectionIndexer;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.084 -0500", hash_original_method = "0CD968054794DA4AF55762FEAC06E707", hash_generated_method = "0CD968054794DA4AF55762FEAC06E707")
     
@@ -657,6 +683,8 @@ Object[] getSections() {
         return mSections;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.086 -0500", hash_original_method = "800EB68723F3F3F4CE4E1BDE2BD8DC58", hash_generated_method = "800EB68723F3F3F4CE4E1BDE2BD8DC58")
     
 void getSectionsFromIndexer() {
@@ -694,6 +722,8 @@ public void onSectionsChanged() {
         mListAdapter = null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.092 -0500", hash_original_method = "5A8E212F57F70A160B41013FFA05181F", hash_generated_method = "1E02AA1B284B98C447E93C16E296F6EA")
     
 void scrollTo(float position) {
@@ -804,6 +834,8 @@ void scrollTo(float position) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.096 -0500", hash_original_method = "5B13E30A0127E5E811D3308FC0C54801", hash_generated_method = "D1FB040BBCD182F6E6A0A22C0372428B")
     
 private int getThumbPositionForListPosition(int firstVisibleItem, int visibleItemCount,
@@ -849,6 +881,8 @@ private int getThumbPositionForListPosition(int firstVisibleItem, int visibleIte
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.098 -0500", hash_original_method = "CEA01B9B754ED8848F89028F972B696F", hash_generated_method = "FBFE1AB1AC19D19D57533C34A68A2DF3")
     
 private void cancelFling() {
@@ -858,6 +892,8 @@ private void cancelFling() {
         cancelFling.recycle();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.100 -0500", hash_original_method = "1BBF9FC05240D406AB082B75B38F8E40", hash_generated_method = "1BBF9FC05240D406AB082B75B38F8E40")
     
 void cancelPendingDrag() {
@@ -865,6 +901,8 @@ void cancelPendingDrag() {
         mPendingDrag = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.102 -0500", hash_original_method = "DD628BE0DD3562FCAA0807D28A9AC0F6", hash_generated_method = "DD628BE0DD3562FCAA0807D28A9AC0F6")
     
 void startPendingDrag() {
@@ -872,6 +910,8 @@ void startPendingDrag() {
         mList.postDelayed(mDeferStartDrag, PENDING_DRAG_DELAY);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.104 -0500", hash_original_method = "12EF9C1930DF387CC333A7C9F1E54726", hash_generated_method = "12EF9C1930DF387CC333A7C9F1E54726")
     
 void beginDrag() {
@@ -887,6 +927,8 @@ void beginDrag() {
         cancelFling();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.107 -0500", hash_original_method = "D950A8D9B3AA1D87B11E428662FC0A13", hash_generated_method = "D950A8D9B3AA1D87B11E428662FC0A13")
     
 boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -909,6 +951,8 @@ boolean onInterceptTouchEvent(MotionEvent ev) {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.110 -0500", hash_original_method = "891E4A8523ECAE5B8AA3233AF8AC2D21", hash_generated_method = "A5C647F904720FFCF79D89E467E68D99")
     
 boolean onTouchEvent(MotionEvent me) {
@@ -1007,6 +1051,8 @@ boolean onTouchEvent(MotionEvent me) {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.112 -0500", hash_original_method = "4AFF55C64BD9939BD0E5A83378980FDE", hash_generated_method = "8405A15E6ED146794AFD2EA3E642BB0D")
     
 boolean isPointInside(float x, float y) {

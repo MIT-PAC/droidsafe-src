@@ -112,6 +112,8 @@ public PlainSocketImpl(FileDescriptor fd, int localport, InetAddress addr, int p
         newImpl.localport = IoBridge.getSocketLocalPort(newImpl.fd);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.933 -0500", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "286D168AC5969CEEC8D7177AFB54002B")
     
 private boolean usingSocks() {
@@ -131,6 +133,8 @@ public void initRemoteAddressAndPort(InetAddress remoteAddress, int remotePort) 
         this.port = remotePort;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.940 -0500", hash_original_method = "000D9AECCAE4DD07D923EE0ADC4BD644", hash_generated_method = "797517EE3BCF41975E6EB9F62189A2F4")
     
 private void checkNotClosed() throws IOException {
@@ -199,6 +203,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if an error occurs while connecting
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.956 -0500", hash_original_method = "CF0E894E8F0E8260CA9CE5027C85CCBC", hash_generated_method = "33D143EF85E8AD02E15A033090CF0D8D")
     
 private void connect(InetAddress anAddr, int aPort, int timeout) throws IOException {
@@ -283,6 +289,8 @@ private void connect(InetAddress anAddr, int aPort, int timeout) throws IOExcept
     /**
      * Gets the SOCKS proxy server port.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.011 -0500", hash_original_method = "64392856CD4BE8946E6224874D95C0C3", hash_generated_method = "BCF93A278DC9D95CE64E1A5A048773E7")
     
 private int socksGetServerPort() {
@@ -296,6 +304,8 @@ private int socksGetServerPort() {
     /**
      * Gets the InetAddress of the SOCKS proxy server.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.013 -0500", hash_original_method = "FA814969259FF99D2E9F464DE776F517", hash_generated_method = "FD504285D7DB41C0F76B38BF01BE8A13")
     
 private InetAddress socksGetServerAddress() throws UnknownHostException {
@@ -314,6 +324,8 @@ private InetAddress socksGetServerAddress() throws UnknownHostException {
     /**
      * Connect using a SOCKS server.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.016 -0500", hash_original_method = "679FA19AE8A4DD99CA71F6CF7886F900", hash_generated_method = "61DB079FA9FD35C506423BF91572915B")
     
 private void socksConnect(InetAddress applicationServerAddress, int applicationServerPort, int timeout) throws IOException {
@@ -333,6 +345,8 @@ private void socksConnect(InetAddress applicationServerAddress, int applicationS
      * Request a SOCKS connection to the application server given. If the
      * request fails to complete successfully, an exception is thrown.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.019 -0500", hash_original_method = "0ACA5DB4B67DEB9A055E1E45DC82A265", hash_generated_method = "5E007C1EA5F4274C098B880EEF579411")
     
 private void socksRequestConnection(InetAddress applicationServerAddress,
@@ -389,6 +403,8 @@ public void socksAccept() throws IOException {
     /**
      * Bind using a SOCKS server.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.030 -0500", hash_original_method = "D66101C95E8A449E156BD86059B4B4F6", hash_generated_method = "96E1944E2D52A530889950726361FE08")
     
 private void socksBind() throws IOException {
@@ -430,6 +446,8 @@ private void socksBind() throws IOException {
     /**
      * Send a SOCKS V4 request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.032 -0500", hash_original_method = "6D223BF7FD79AD9333E45AB0A54AA37D", hash_generated_method = "6E32EC11506185A59EE9CB1CAD77DBB8")
     
 private void socksSendRequest(int command, InetAddress address, int port) throws IOException {
@@ -445,6 +463,8 @@ private void socksSendRequest(int command, InetAddress address, int port) throws
     /**
      * Read a SOCKS V4 reply.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.035 -0500", hash_original_method = "8280AE4C517B666A0E69D98449480DDD", hash_generated_method = "FC82C17F2238474BCA844E921F3F0511")
     
 private Socks4Message socksReadReply() throws IOException {
@@ -563,6 +583,8 @@ public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
     /**
      * For PlainSocketInputStream.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.045 -0500", hash_original_method = "8E8D9564EE0B9256E101864557DD238B", hash_generated_method = "A1B021345B0502A87394E4382A6C7523")
     
 private int read(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -588,6 +610,8 @@ private int read(byte[] buffer, int offset, int byteCount) throws IOException {
     /**
      * For PlainSocketOutputStream.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.047 -0500", hash_original_method = "0BAFEFFE1F4A4A29CFC7D3BD2B2D732D", hash_generated_method = "5463C664C45B30B1791965FF58ACADD6")
     
 private void write(byte[] buffer, int offset, int byteCount) throws IOException {

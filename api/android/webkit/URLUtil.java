@@ -118,6 +118,8 @@ public static byte[] decode(byte[] url) throws IllegalArgumentException {
     /**
      * @return True iff the url is correctly URL encoded
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.680 -0500", hash_original_method = "B86DCEF63D924FEFE4DB4449754985A4", hash_generated_method = "300E97105D23E6FB87A40176CA6B3A1A")
     
 static boolean verifyURLEncoding(String url) {
@@ -143,6 +145,8 @@ static boolean verifyURLEncoding(String url) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.683 -0500", hash_original_method = "2342490C34D4378E5670B7E8B53592CC", hash_generated_method = "8ECF9A9494461412CCE65D52513E6D5A")
     
 private static int parseHex(byte b) {
@@ -406,6 +410,8 @@ public static final String guessFileName(
      * Unfortunately some servers do not quote the value so to maintain
      * consistent behaviour with other browsers, we allow unquoted values too.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.722 -0500", hash_original_method = "AA01DDAC57CD33C8744947339D947DA2", hash_generated_method = "637A39E6F89446E95646E0DFD9E68E60")
     
 static String parseContentDisposition(String contentDisposition) {

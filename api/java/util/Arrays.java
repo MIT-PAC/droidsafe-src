@@ -25,6 +25,8 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.952 -0500", hash_original_method = "AF653A9E2629865B65E27F3E8EFBF9CD", hash_generated_method = "DE4F969DFC1A4EF3B3F02E88F44DA323")
     
 public static int binarySearch(byte[] array, byte value) {
@@ -47,6 +49,8 @@ public static int binarySearch(byte[] array, byte value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.954 -0500", hash_original_method = "B5911E4390B2ECBA2CAD1A2FC1492249", hash_generated_method = "3AD525A409ECF3A129B43AEF5EA39F01")
     
 public static int binarySearch(byte[] array, int startIndex, int endIndex, byte value) {
@@ -103,6 +107,8 @@ public static int binarySearch(char[] array, char value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.959 -0500", hash_original_method = "AEEEC8BFBB077FAE42FCA03B1FA50755", hash_generated_method = "88FBE3D733B22B88825DCA30F44A0AF7")
     
 public static int binarySearch(char[] array, int startIndex, int endIndex, char value) {
@@ -135,6 +141,8 @@ public static int binarySearch(char[] array, int startIndex, int endIndex, char 
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.962 -0500", hash_original_method = "66D7F0846D72EFE08F25F15E2339BFFE", hash_generated_method = "BE1771EA0F006179C18C142A18A33FD6")
     
 public static int binarySearch(double[] array, double value) {
@@ -157,6 +165,8 @@ public static int binarySearch(double[] array, double value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.964 -0500", hash_original_method = "DFA533AB240C3C67D07C47863082135D", hash_generated_method = "B16A80B1E06EF59960692D56C560EDC2")
     
 public static int binarySearch(double[] array, int startIndex, int endIndex, double value) {
@@ -200,6 +210,8 @@ public static int binarySearch(double[] array, int startIndex, int endIndex, dou
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.968 -0500", hash_original_method = "73828DC617856FC9A203FC462E1B8678", hash_generated_method = "A1A5C483C3A39E63749127E427F88451")
     
 public static int binarySearch(float[] array, float value) {
@@ -222,6 +234,8 @@ public static int binarySearch(float[] array, float value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.971 -0500", hash_original_method = "AF7118C80FB68E58015CBBEDE5BFCF3D", hash_generated_method = "D95A313B367A7EB51CCC64AD63645A97")
     
 public static int binarySearch(float[] array, int startIndex, int endIndex, float value) {
@@ -265,6 +279,8 @@ public static int binarySearch(float[] array, int startIndex, int endIndex, floa
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.973 -0500", hash_original_method = "10FAE7826DE6C7FA92370FA2DBE898D1", hash_generated_method = "9271C14F7C01A2A7226F67441954C6B7")
     
 public static int binarySearch(int[] array, int value) {
@@ -287,6 +303,8 @@ public static int binarySearch(int[] array, int value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.976 -0500", hash_original_method = "01050E2BB1B59C59137C6D948F115373", hash_generated_method = "4436BF8F5518276E310254322B95FEA2")
     
 public static int binarySearch(int[] array, int startIndex, int endIndex, int value) {
@@ -343,6 +361,8 @@ public static int binarySearch(long[] array, long value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.981 -0500", hash_original_method = "76252A64BDCCB1FCE9F78F94C438C4DB", hash_generated_method = "A06BFC9BF6FAC780F5C3AC81C0A0435E")
     
 public static int binarySearch(long[] array, int startIndex, int endIndex, long value) {
@@ -405,6 +425,8 @@ public static int binarySearch(Object[] array, Object value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.987 -0500", hash_original_method = "AC62DCBBB079682E75E581145CFFC517", hash_generated_method = "0D4F4FD8200844E664D81F6F376B3F17")
     
 public static int binarySearch(Object[] array, int startIndex, int endIndex, Object value) {
@@ -428,10 +450,14 @@ public static int binarySearch(Object[] array, int startIndex, int endIndex, Obj
         return ~lo;  // value not present
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
         return binarySearch(array, 0, array.length, value, comparator);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -464,6 +490,8 @@ public static int binarySearch(Object[] array, int startIndex, int endIndex, Obj
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.001 -0500", hash_original_method = "1B11741F9AA29C21BB23748721F87958", hash_generated_method = "76D58326E2A244119B66D9C6A61C43CA")
     
 public static int binarySearch(short[] array, short value) {
@@ -486,6 +514,8 @@ public static int binarySearch(short[] array, short value) {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.004 -0500", hash_original_method = "CBB47C186DC83A7CE83F653A8FA49FBE", hash_generated_method = "7709DF7B430676D3582FEBA314A48C7A")
     
 public static int binarySearch(short[] array, int startIndex, int endIndex, short value) {
@@ -508,6 +538,8 @@ public static int binarySearch(short[] array, int startIndex, int endIndex, shor
         return ~lo;  // value not present
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.007 -0500", hash_original_method = "23AA60D248EBBCA086D18D3DB48A4C87", hash_generated_method = "7F187F0E88CA844AD6CFCB5A2601752E")
     
 private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
@@ -553,6 +585,8 @@ public static void fill(byte[] array, byte value) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.013 -0500", hash_original_method = "9FD1A2E2343A7342F7CA850BC8948EC8", hash_generated_method = "AF3A54E7FF041881C4F9E8B06CF87E9A")
     
 public static void fill(byte[] array, int start, int end, byte value) {
@@ -570,6 +604,8 @@ public static void fill(byte[] array, int start, int end, byte value) {
      * @param value
      *            the {@code short} element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.015 -0500", hash_original_method = "0C56D37E9DF08871E792A0F50E2C2D13", hash_generated_method = "1CF19802A5E86A6D8957B67EF29CF63E")
     
 public static void fill(short[] array, short value) {
@@ -594,6 +630,8 @@ public static void fill(short[] array, short value) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.019 -0500", hash_original_method = "9C63A043347A5856E259C40D0B092C8E", hash_generated_method = "406FE9C9ADC52D37C46B04541FF580EB")
     
 public static void fill(short[] array, int start, int end, short value) {
@@ -727,6 +765,8 @@ public static void fill(long[] array, long value) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.035 -0500", hash_original_method = "A7E5E6D8B0352E19D2CAFB651CA3375F", hash_generated_method = "6CBDC8D77E8A0CBB5C04485ADF00FF9B")
     
 public static void fill(long[] array, int start, int end, long value) {
@@ -744,6 +784,8 @@ public static void fill(long[] array, int start, int end, long value) {
      * @param value
      *            the {@code float} element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.037 -0500", hash_original_method = "22CFEAA69588357DEEA1E52F95A64CA9", hash_generated_method = "50C71A9774937CB4C96DFB7BD77C5D4C")
     
 public static void fill(float[] array, float value) {
@@ -768,6 +810,8 @@ public static void fill(float[] array, float value) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.040 -0500", hash_original_method = "E2DD3866058120BA248E0EBF124B1A36", hash_generated_method = "D16830E2241A31CF3EA28FD7BB070D36")
     
 public static void fill(float[] array, int start, int end, float value) {
@@ -785,6 +829,8 @@ public static void fill(float[] array, int start, int end, float value) {
      * @param value
      *            the {@code double} element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.043 -0500", hash_original_method = "DB9408C548BB70BC9C2AC261FCDA28D9", hash_generated_method = "1962DC9CA9457658A119FC983749DA2B")
     
 public static void fill(double[] array, double value) {
@@ -809,6 +855,8 @@ public static void fill(double[] array, double value) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.045 -0500", hash_original_method = "24E580167A377C75EF9FE74DA27231DA", hash_generated_method = "D2CDCE8985EEA64376528B973FDA20A4")
     
 public static void fill(double[] array, int start, int end, double value) {
@@ -826,6 +874,8 @@ public static void fill(double[] array, int start, int end, double value) {
      * @param value
      *            the {@code boolean} element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.048 -0500", hash_original_method = "EF04E7E51A80342C344C8D19A9D97259", hash_generated_method = "D719B9A16FA27CBCE051E6C690CA6ED2")
     
 public static void fill(boolean[] array, boolean value) {
@@ -850,6 +900,8 @@ public static void fill(boolean[] array, boolean value) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.051 -0500", hash_original_method = "9CD6B8DA260D9BA7ACF3634EA114A1DD", hash_generated_method = "ACBDA07FB96BD213D87D2BDC60BC03D5")
     
 public static void fill(boolean[] array, int start, int end, boolean value) {
@@ -867,6 +919,8 @@ public static void fill(boolean[] array, int start, int end, boolean value) {
      * @param value
      *            the {@code Object} element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.053 -0500", hash_original_method = "61F6C031C06541C0A8BB46124B7DF1B0", hash_generated_method = "57B271DD17C53D9174EA5A7D77C69ED2")
     
 public static void fill(Object[] array, Object value) {
@@ -1239,6 +1293,8 @@ public static int hashCode(Object[] array) {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.084 -0500", hash_original_method = "DB95657D7B9BFF04F8AE75CCE334956B", hash_generated_method = "CE577603315572D2578507DB9ABC5061")
     
 public static int deepHashCode(Object[] array) {
@@ -1253,6 +1309,8 @@ public static int deepHashCode(Object[] array) {
         return hashCode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.087 -0500", hash_original_method = "3E4FA1262DE5E7DDD13BA987FBBE3E7F", hash_generated_method = "6510DA308E7BBBA71DF7D5D62B38A290")
     
 private static int deepHashCodeElement(Object element) {
@@ -1610,6 +1668,8 @@ public static boolean equals(Object[] array1, Object[] array2) {
      *         same length and the elements at each index in the two arrays are
      *         equal according to {@code equals()}, {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.116 -0500", hash_original_method = "BBDCB0D2AFB3FB09B2E81D11AD378107", hash_generated_method = "4FF602F398122F00281AB6E439B5CC4B")
     
 public static boolean deepEquals(Object[] array1, Object[] array2) {
@@ -1629,6 +1689,8 @@ public static boolean deepEquals(Object[] array1, Object[] array2) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.119 -0500", hash_original_method = "F5AFF1E198BE400B38C78ACAF40C1324", hash_generated_method = "08A112BE00421BC6113D571222164CF8")
     
 private static boolean deepEqualsElements(Object e1, Object e2) {
@@ -1690,6 +1752,8 @@ private static boolean deepEqualsElements(Object e1, Object e2) {
      * @param array
      *            the {@code byte} array to be sorted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.121 -0500", hash_original_method = "E5BF1B41F12B83B703EDEDC6C20A8D2E", hash_generated_method = "10F8E2945ED87E2DEC22E9498B408452")
     
 public static void sort(byte[] array) {
@@ -1710,6 +1774,8 @@ public static void sort(byte[] array) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.124 -0500", hash_original_method = "C91BF707E87558E2399AB2AABB697A59", hash_generated_method = "46294595859D7DA9E01CD79B48D0F31D")
     
 public static void sort(byte[] array, int start, int end) {
@@ -1722,6 +1788,8 @@ public static void sort(byte[] array, int start, int end) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.127 -0500", hash_original_method = "F4478C2D8B136FFA51B672714176E1DA", hash_generated_method = "01BC072697969B831885D7A03C404D43")
     
 public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
@@ -1737,6 +1805,8 @@ public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.130 -0500", hash_original_method = "E4D2FA815A47A76C3AC4F451E8832ED4", hash_generated_method = "DA96F57F4DE904C94DA4A9CC39A04E62")
     
 public static void checkStartAndEnd(int len, int start, int end) {
@@ -1777,6 +1847,8 @@ public static void sort(char[] array) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.135 -0500", hash_original_method = "371BFA4DC1A016D782A781EAD4A3EDE2", hash_generated_method = "1C0A82A26D31EE8C406869302E86ACAA")
     
 public static void sort(char[] array, int start, int end) {
@@ -1790,6 +1862,8 @@ public static void sort(char[] array, int start, int end) {
      *            the {@code double} array to be sorted.
      * @see #sort(double[], int, int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.137 -0500", hash_original_method = "84A18C4D53BD41C8D2778E79004BC913", hash_generated_method = "77EF985B7D756EB16928287D57DF5D07")
     
 public static void sort(double[] array) {
@@ -1812,6 +1886,8 @@ public static void sort(double[] array) {
      *                if {@code start < 0} or {@code end > array.length}.
      * @see Double#compareTo(Double)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.140 -0500", hash_original_method = "854A1C6650DA6DBAB9B14EA7DEF38592", hash_generated_method = "2A6FDDC8429443748543CCA6946C086B")
     
 public static void sort(double[] array, int start, int end) {
@@ -1825,6 +1901,8 @@ public static void sort(double[] array, int start, int end) {
      *            the {@code float} array to be sorted.
      * @see #sort(float[], int, int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.142 -0500", hash_original_method = "16C65FF0357F4E9D1D50699F331D8839", hash_generated_method = "D95D8F45336F14A82A0DA6D9E33416D0")
     
 public static void sort(float[] array) {
@@ -1847,6 +1925,8 @@ public static void sort(float[] array) {
      *                if {@code start < 0} or {@code end > array.length}.
      * @see Float#compareTo(Float)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.145 -0500", hash_original_method = "AF6D58E0B54A03BD8558812B1E476809", hash_generated_method = "CFC5DD12E904BD82308FCAD44210EBB4")
     
 public static void sort(float[] array, int start, int end) {
@@ -1881,6 +1961,8 @@ public static void sort(int[] array) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.150 -0500", hash_original_method = "0D7CECF6C48A29B817D7C281772463C0", hash_generated_method = "EEA5A91DD76296BEF0E6F5D639F41BA4")
     
 public static void sort(int[] array, int start, int end) {
@@ -1893,6 +1975,8 @@ public static void sort(int[] array, int start, int end) {
      * @param array
      *            the {@code long} array to be sorted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.153 -0500", hash_original_method = "E8E6CFFD56A04D652E5CCA11D468DE7D", hash_generated_method = "479C8E951B583B43B17A63B224C3E23F")
     
 public static void sort(long[] array) {
@@ -1913,6 +1997,8 @@ public static void sort(long[] array) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.156 -0500", hash_original_method = "B4C5BDF3B63061452DED86E729A4379E", hash_generated_method = "E437A036D13E6AAE362166992D5D101B")
     
 public static void sort(long[] array, int start, int end) {
@@ -1925,6 +2011,8 @@ public static void sort(long[] array, int start, int end) {
      * @param array
      *            the {@code short} array to be sorted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.159 -0500", hash_original_method = "2ABBA9721E6AA886F8B6CBB3EA3C6907", hash_generated_method = "DA076D4E62F231F8C5B69BFC1874CA6D")
     
 public static void sort(short[] array) {
@@ -1945,6 +2033,8 @@ public static void sort(short[] array) {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.161 -0500", hash_original_method = "3DD87F91095A169C1E58894EFACAD9BC", hash_generated_method = "30733AE96453ACC928BA06D939F82551")
     
 public static void sort(short[] array, int start, int end) {
@@ -2057,6 +2147,8 @@ public static void sort(Object[] array, int start, int end) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.173 -0500", hash_original_method = "DF1A9D37DEA1814BE0A1BBD9C33C2E61", hash_generated_method = "622402968FDF43F5F4A3D6EBA98237B6")
     
 public static String toString(boolean[] array) {
@@ -2089,6 +2181,8 @@ public static String toString(boolean[] array) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.176 -0500", hash_original_method = "497D7FD68D9DA1C21B948995B9C08123", hash_generated_method = "80B737CED8CABD4D5836ABBCA3038F3C")
     
 public static String toString(byte[] array) {
@@ -2121,6 +2215,8 @@ public static String toString(byte[] array) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.179 -0500", hash_original_method = "0BD927898618E317DB698CC7205B2AB8", hash_generated_method = "6367B5C0721BBA2E45C089433B36ADE6")
     
 public static String toString(char[] array) {
@@ -2153,6 +2249,8 @@ public static String toString(char[] array) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.182 -0500", hash_original_method = "954F4473C971E06E4D851CD45B56DB41", hash_generated_method = "E4DD420CCF21B174899357A65A0EF6B2")
     
 public static String toString(double[] array) {
@@ -2219,6 +2317,8 @@ public static String toString(float[] array) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.187 -0500", hash_original_method = "A82D8AB8B553305192C164EB5888E1A5", hash_generated_method = "C77FC40DF01FB300C98F2C0D47064706")
     
 public static String toString(int[] array) {
@@ -2285,6 +2385,8 @@ public static String toString(long[] array) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.193 -0500", hash_original_method = "2A705CB7132FDFA84D44B25A472815FB", hash_generated_method = "F2E8E036F014D440E81326985210AC11")
     
 public static String toString(short[] array) {
@@ -2356,6 +2458,8 @@ public static String toString(Object[] array) {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.199 -0500", hash_original_method = "A9E20A49559B5F7B4C63C87BC2AD7AEE", hash_generated_method = "93C22C3DF112D64A0D6BB5ED30948BB7")
     
 public static String deepToString(Object[] array) {
@@ -2383,6 +2487,8 @@ public static String deepToString(Object[] array) {
      * @return the result.
      * @see #deepToString(Object[])
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.204 -0500", hash_original_method = "775EF6CABB5AD5EA80F9890FB88BA9F1", hash_generated_method = "F4DC3300895E0BC3A1750F138EB6375F")
     
 private static void deepToStringImpl(Object[] array, Object[] origArrays,
@@ -2467,6 +2573,8 @@ private static void deepToStringImpl(Object[] array, Object[] origArrays,
      * @return A value of {@code true} if {@code array} is an
      *         element in {@code origArrays}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.206 -0500", hash_original_method = "A2425CE786319C2459A6785F99986BBA", hash_generated_method = "8FDF15EC344C672839A8351DECEC37E7")
     
 private static boolean deepToStringImplContains(Object[] origArrays,
@@ -2494,6 +2602,8 @@ private static boolean deepToStringImplContains(Object[] origArrays,
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.209 -0500", hash_original_method = "EEFE4CF8E72C2451CD6574BC42EEF616", hash_generated_method = "80FB277279A07A1BE58ACB083AE0166F")
     
 public static boolean[] copyOf(boolean[] original, int newLength) {
@@ -2538,6 +2648,8 @@ public static byte[] copyOf(byte[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.214 -0500", hash_original_method = "BEEFDE40BF0B812C3EC81F5AA7FF19C2", hash_generated_method = "A9B78EA0B359E7A52A91D91BADC7D1D4")
     
 public static char[] copyOf(char[] original, int newLength) {
@@ -2559,6 +2671,8 @@ public static char[] copyOf(char[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.217 -0500", hash_original_method = "0344866F84B86AB5E9951BBEBE8DF7CF", hash_generated_method = "29D05D4ABCCFC48B4AC3D23A39A60A4F")
     
 public static double[] copyOf(double[] original, int newLength) {
@@ -2580,6 +2694,8 @@ public static double[] copyOf(double[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.219 -0500", hash_original_method = "274DB8BA8EB7DE2FB860E7A8F4EB4CC5", hash_generated_method = "4B37021DD915AA40FBA77AED500139D5")
     
 public static float[] copyOf(float[] original, int newLength) {
@@ -2601,6 +2717,8 @@ public static float[] copyOf(float[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.222 -0500", hash_original_method = "410F54B03DF6190A84943E9E1D03989F", hash_generated_method = "3D9F4FE87F8C2297E41DFECC3C8577A4")
     
 public static int[] copyOf(int[] original, int newLength) {
@@ -2622,6 +2740,8 @@ public static int[] copyOf(int[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.225 -0500", hash_original_method = "3343CDB162AFA47FA49580605A57EDA3", hash_generated_method = "2A191A2B3DB991AC86CA0C3E75588B58")
     
 public static long[] copyOf(long[] original, int newLength) {
@@ -2643,6 +2763,8 @@ public static long[] copyOf(long[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.227 -0500", hash_original_method = "DD9D7EA34F4A6424E4EB64114A9DD79C", hash_generated_method = "D2B56992E2A35D3C87F53536C09F94A6")
     
 public static short[] copyOf(short[] original, int newLength) {
@@ -2686,6 +2808,8 @@ public static short[] copyOf(short[] original, int newLength) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.234 -0500", hash_original_method = "F502B9EC75335D4F5735070162DD7C3C", hash_generated_method = "4E25A19B709CDFDA3155D74A7EC6F6C9")
     
 public static boolean[] copyOfRange(boolean[] original, int start, int end) {
@@ -2718,6 +2842,8 @@ public static boolean[] copyOfRange(boolean[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.238 -0500", hash_original_method = "8F0CC874ECACCB04EB7CA2CFC3E48655", hash_generated_method = "05BB15D077B8441F3559723A5D6087AD")
     
 public static byte[] copyOfRange(byte[] original, int start, int end) {
@@ -2750,6 +2876,8 @@ public static byte[] copyOfRange(byte[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.241 -0500", hash_original_method = "91CE694A0D2E577C530BE629F92B8EF0", hash_generated_method = "B16AB5F5FFF9B0CF11239BEB6B6B10EC")
     
 public static char[] copyOfRange(char[] original, int start, int end) {
@@ -2782,6 +2910,8 @@ public static char[] copyOfRange(char[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.244 -0500", hash_original_method = "7933ED1507BF980E20F5A9C8C4695C51", hash_generated_method = "133B58F008D57286686B0D8F944842C8")
     
 public static double[] copyOfRange(double[] original, int start, int end) {
@@ -2814,6 +2944,8 @@ public static double[] copyOfRange(double[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.247 -0500", hash_original_method = "01867581602B5B044213DAECE2F1D1A8", hash_generated_method = "A49D9C4950BDE090192F8BDA156A6471")
     
 public static float[] copyOfRange(float[] original, int start, int end) {
@@ -2846,6 +2978,8 @@ public static float[] copyOfRange(float[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.249 -0500", hash_original_method = "7B36D32E8B026BA3BC24987851E5FB75", hash_generated_method = "C0DAD15D215B7C170326DE9C95A801D5")
     
 public static int[] copyOfRange(int[] original, int start, int end) {
@@ -2878,6 +3012,8 @@ public static int[] copyOfRange(int[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.252 -0500", hash_original_method = "A34132FCEEB936A432F684C9C10320B5", hash_generated_method = "F1BCB638233CBB2A04705ADDC85AAB59")
     
 public static long[] copyOfRange(long[] original, int start, int end) {
@@ -2910,6 +3046,8 @@ public static long[] copyOfRange(long[] original, int start, int end) {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.255 -0500", hash_original_method = "BA02812AC7ABCCE3BD17A25110563368", hash_generated_method = "1CF2C11C3DB834451A65152365A5B5A8")
     
 public static short[] copyOfRange(short[] original, int start, int end) {
@@ -2927,6 +3065,8 @@ public static short[] copyOfRange(short[] original, int start, int end) {
         return result;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <T> T[] copyOfRange(T[] original, int start, int end) {
         int originalLength = original.length;
@@ -2959,6 +3099,8 @@ public static short[] copyOfRange(short[] original, int start, int end) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.946 -0500", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "A63BB04A5147B5B0A5900847E1C19F14")
     
 private Arrays() {
@@ -2973,6 +3115,8 @@ private Arrays() {
 
         private  E[] a;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.920 -0500", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "28401D48F15218543E5E002CE4B26D15")
         
 ArrayList(E[] storage) {

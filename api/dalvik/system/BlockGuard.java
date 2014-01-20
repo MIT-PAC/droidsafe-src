@@ -157,6 +157,8 @@ public int getPolicyMask() {
         
 };
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.505 -0500", hash_original_method = "0E6BC3DAACB3346655A889CA6E7D1AFA", hash_generated_method = "57D476424577577C2CE8F431DE42A7DA")
     
 private BlockGuard() {}

@@ -34,6 +34,8 @@ public static SignalStrength newFromBundle(Bundle m) {
     /**
      * log
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.712 -0500", hash_original_method = "277DE078A3A03DEDE382EACFE7464D2F", hash_generated_method = "735FBAD30ECBFB458FF9D49ED05CF8FD")
     
 private static void log(String s) {
@@ -788,6 +790,8 @@ public boolean isGsm() {
      * @param m intent notifier map
      * @hide
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.703 -0500", hash_original_method = "3660E1E14B95E0E07C3D11C71AA6DC38", hash_generated_method = "95924EC67C4EF5182C0126129F09A75D")
     
 private void setFromNotifierBundle(Bundle m) {

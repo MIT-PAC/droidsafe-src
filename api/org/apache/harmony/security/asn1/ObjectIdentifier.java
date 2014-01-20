@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public final class ObjectIdentifier {
 
     /**
@@ -112,6 +107,8 @@ public static boolean isOID(String str) {
      * @throws IllegalArgumentException if oid string is invalid or null and
      * shouldThrow is true
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.426 -0500", hash_original_method = "53B83C1819BF34B8CC2A9C3AD4211A77", hash_generated_method = "6963480B9BE93A2D4AEC00AE8C63F59F")
     
 private static int[] toIntArray(String str, boolean shouldThrow) {
@@ -257,7 +254,6 @@ public ObjectIdentifier(String strOid) {
         }
         return intHash & 0x7FFFFFFF; // only positive
     }
-
     
 }
 

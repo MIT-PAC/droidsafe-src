@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.util.Random;
 
-
-
-
-
-
 public abstract class ECCurve {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.434 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "16F3809D308EE3B5C0D90855C77B94DD")
 
@@ -26,22 +21,32 @@ public abstract class ECCurve {
         //Synthesized constructor
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.356 -0500", hash_original_method = "049FE0DFDB7700333EFC0A96FA9B412C", hash_generated_method = "3844C5B4D6AA3EBAD6B265D6EEF27356")
     
 public abstract int getFieldSize();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.359 -0500", hash_original_method = "3D6D3EF0744DE46C1F9ACFF7BCF6B56A", hash_generated_method = "5F95358FEE194DDE6AEF8A74C3098A2C")
     
 public abstract ECFieldElement fromBigInteger(BigInteger x);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.361 -0500", hash_original_method = "54455430F471E362D58EF538D2206349", hash_generated_method = "9F87C4DF9826A02E10F1D66108A25E64")
     
 public abstract ECPoint createPoint(BigInteger x, BigInteger y, boolean withCompression);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.363 -0500", hash_original_method = "1E3378C62F91145B97F5D9E85D7CEA2B", hash_generated_method = "8CA4F841079681A56DD72F303AC60C54")
     
 public abstract ECPoint decodePoint(byte[] encoded);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.365 -0500", hash_original_method = "615D49EF5F12A586033279BE94C6DFFE", hash_generated_method = "17AE2F5C1FB783CE7E47897BB2CD5A30")
     
 public abstract ECPoint getInfinity();
@@ -59,7 +64,6 @@ public ECFieldElement getB()
     {
         return b;
     }
-
     
     public static class Fp extends ECCurve {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.373 -0500", hash_original_field = "F819999E3B2036A19089F4FD0B5D94F4", hash_generated_field = "F819999E3B2036A19089F4FD0B5D94F4")
@@ -218,18 +222,14 @@ public int hashCode()
         {
             return a.hashCode() ^ b.hashCode() ^ q.hashCode();
         }
-
         
     }
-
-
     
     public static class F2m extends ECCurve {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.403 -0500", hash_original_field = "2E6007DAD305AA160976D52F2273ECD5", hash_generated_field = "86DFB4F628B6595CA77F01EE34E06F32")
 
         private int m;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.405 -0500", hash_original_field = "B4EEC5F223717033A283932A5AD23EED", hash_generated_field = "8A92C5A989925989FFD9F1E441F94F46")
-
 
         /**
          * TPB: The integer <code>k</code> where <code>x<sup>m</sup> +
@@ -242,7 +242,6 @@ public int hashCode()
         private int k1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.408 -0500", hash_original_field = "65F94392BC495DE78362F9AE43CD3627", hash_generated_field = "5FC8E9E4C17F1B615F13D4FBD274B4F2")
 
-
         /**
          * TPB: Always set to <code>0</code><br>
          * PPB: The integer <code>k2</code> where <code>x<sup>m</sup> +
@@ -251,7 +250,6 @@ public int hashCode()
          */
         private int k2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.411 -0500", hash_original_field = "5B3915949FC034D039892BB72C0B7484", hash_generated_field = "DCE0BF3CAA63AC2524F01CEA5F451A43")
-
 
         /**
          * TPB: Always set to <code>0</code><br>
@@ -262,27 +260,23 @@ public int hashCode()
         private int k3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.413 -0500", hash_original_field = "C5269AA669EF1E6636D1450EA530C9C5", hash_generated_field = "2DB749C7BBBB3CA6E91E42B798C94290")
 
-
         /**
          * The order of the base point of the curve.
          */
         private BigInteger n;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.415 -0500", hash_original_field = "FF6F1CE798488519FE43D7992CD2DB11", hash_generated_field = "6CD99B033C857377AC6C9952895E94C9")
 
-
         /**
          * The cofactor of the curve.
          */
         private BigInteger h;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.418 -0500", hash_original_field = "9D4FAA2FAC4ABAFE5278E9D062EC35AA", hash_generated_field = "6949032778AE4DCC756003D649733B4D")
-
         
          /**
          * The point at infinity on this curve.
          */
         private ECPoint.F2m infinity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.420 -0500", hash_original_field = "3B2C0E3179A3064695AEEFBCE72954B0", hash_generated_field = "F6D0D8ADD41706658B0F08459A38394C")
-
 
         /**
          * The parameter <code>&mu;</code> of the elliptic curve if this is
@@ -559,6 +553,8 @@ public boolean isKoblitz()
          * @throws IllegalArgumentException if the given ECCurve is not a
          * Koblitz curve.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.452 -0500", hash_original_method = "6A47B833A38B2C51AF1636CDFCEB3B55", hash_generated_method = "9C64ED0EC23F71E258420F0344699D43")
         
 synchronized byte getMu()
@@ -575,6 +571,8 @@ synchronized byte getMu()
          * <code>s<sub>1</sub></code> used for partial modular reduction for
          * Koblitz curves.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.454 -0500", hash_original_method = "C02001236D393BDCA3D2D65CC0F3FCD6", hash_generated_method = "EA370A7804DD6A8C5A4ABDF51A9B5E9C")
         
 synchronized BigInteger[] getSi()
@@ -595,6 +593,8 @@ synchronized BigInteger[] getSi()
          *            ~yp, an indication bit for the decompression of yp.
          * @return the decompressed point.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.457 -0500", hash_original_method = "ABCDD5682443273B6E9EF7110AFEAA10", hash_generated_method = "9D126CDE8B79B9847DD3A385BC9EECF9")
         
 private ECPoint decompressPoint(
@@ -646,6 +646,8 @@ private ECPoint decompressPoint(
          * @return the solution for <code>z<sup>2</sup> + z = beta</code> or
          *         <code>null</code> if no solution exists.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.460 -0500", hash_original_method = "25ED10C579C6ED4884A834D5A2CEB482", hash_generated_method = "57B6CF984EE509422F95DD0E3190E1EA")
         
 private ECFieldElement solveQuadradicEquation(ECFieldElement beta)
@@ -767,11 +769,8 @@ public BigInteger getH()
         {
             return h;
         }
-
         
     }
-
-
     
 }
 

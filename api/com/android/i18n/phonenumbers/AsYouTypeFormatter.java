@@ -116,7 +116,9 @@ public class AsYouTypeFormatter {
    *
    * @param regionCode  the country/region where the phone number is being entered
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.637 -0500", hash_original_method = "936F5C412B2E8DF425145B47DD5CAEF0", hash_generated_method = "936F5C412B2E8DF425145B47DD5CAEF0")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.637 -0500", hash_original_method = "936F5C412B2E8DF425145B47DD5CAEF0", hash_generated_method = "936F5C412B2E8DF425145B47DD5CAEF0")
     
 AsYouTypeFormatter(String regionCode) {
     defaultCountry = regionCode;
@@ -141,7 +143,9 @@ private PhoneMetadata getMetadataForRegion(String regionCode) {
   }
 
   // Returns true if a new template is created as opposed to reusing the existing template.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.642 -0500", hash_original_method = "AB8E8EDD80C278D4452E081702FFED46", hash_generated_method = "71B6A1684BF531EB8752EE89AB50D9D1")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.642 -0500", hash_original_method = "AB8E8EDD80C278D4452E081702FFED46", hash_generated_method = "71B6A1684BF531EB8752EE89AB50D9D1")
     
 private boolean maybeCreateNewTemplate() {
     // When there are multiple available formats, the formatter uses the first format where a
@@ -164,7 +168,9 @@ private boolean maybeCreateNewTemplate() {
     return false;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.644 -0500", hash_original_method = "37D81E1E00F803BB98B41301D27D6488", hash_generated_method = "F1C6F430C859B83950B1360AEE22F66F")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.644 -0500", hash_original_method = "37D81E1E00F803BB98B41301D27D6488", hash_generated_method = "F1C6F430C859B83950B1360AEE22F66F")
     
 private void getAvailableFormats(String leadingThreeDigits) {
     List<NumberFormat> formatList =
@@ -179,13 +185,17 @@ private void getAvailableFormats(String leadingThreeDigits) {
     narrowDownPossibleFormats(leadingThreeDigits);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.647 -0500", hash_original_method = "0CD8D9B07AADCF252FD63C0FF91E8BCD", hash_generated_method = "876E53628EBD7C17CCEAA9A77DD8BA6F")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.647 -0500", hash_original_method = "0CD8D9B07AADCF252FD63C0FF91E8BCD", hash_generated_method = "876E53628EBD7C17CCEAA9A77DD8BA6F")
     
 private boolean isFormatEligible(String format) {
     return ELIGIBLE_FORMAT_PATTERN.matcher(format).matches();
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.649 -0500", hash_original_method = "3E367C813BED2017BCCC9CAE77808F34", hash_generated_method = "442E1C82D47C820479966DFA882E1958")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.649 -0500", hash_original_method = "3E367C813BED2017BCCC9CAE77808F34", hash_generated_method = "442E1C82D47C820479966DFA882E1958")
     
 private void narrowDownPossibleFormats(String leadingDigits) {
     int indexOfLeadingDigitsPattern = leadingDigits.length() - MIN_LEADING_DIGITS_LENGTH;
@@ -232,7 +242,9 @@ private boolean createFormattingTemplate(NumberFormat format) {
 
   // Gets a formatting template which can be used to efficiently format a partial number where
   // digits are added one by one.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.654 -0500", hash_original_method = "D11FAAF63EBAF37B7C1EC170EAFCD005", hash_generated_method = "648078D006F05F16C51735A9A42EE038")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.654 -0500", hash_original_method = "D11FAAF63EBAF37B7C1EC170EAFCD005", hash_generated_method = "648078D006F05F16C51735A9A42EE038")
     
 private String getFormattingTemplate(String numberPattern, String numberFormat) {
     // Creates a phone number consisting only of the digit 9 that matches the
@@ -307,7 +319,9 @@ public String inputDigitAndRememberPosition(char nextChar) {
     return currentOutput;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.664 -0500", hash_original_method = "6C89C7F3A0AAC3A12D8456578D2D5E4E", hash_generated_method = "CDB7C628D2C00931657A7E23FD487A3C")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.664 -0500", hash_original_method = "6C89C7F3A0AAC3A12D8456578D2D5E4E", hash_generated_method = "CDB7C628D2C00931657A7E23FD487A3C")
     
 @SuppressWarnings("fallthrough")
   private String inputDigitWithOptionToRememberPosition(char nextChar, boolean rememberPosition) {
@@ -377,7 +391,9 @@ public String inputDigitAndRememberPosition(char nextChar) {
     }
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.667 -0500", hash_original_method = "3C59019883483E3D8800E37699311374", hash_generated_method = "E3B65007E973BA65ABD6EE6AD8A46FA1")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.667 -0500", hash_original_method = "3C59019883483E3D8800E37699311374", hash_generated_method = "E3B65007E973BA65ABD6EE6AD8A46FA1")
     
 private boolean isDigitOrLeadingPlusSign(char nextChar) {
     return Character.isDigit(nextChar) ||
@@ -385,7 +401,9 @@ private boolean isDigitOrLeadingPlusSign(char nextChar) {
          PhoneNumberUtil.PLUS_CHARS_PATTERN.matcher(Character.toString(nextChar)).matches());
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.670 -0500", hash_original_method = "9BC9DDDBE79729997007D59699BB4F8B", hash_generated_method = "9BC9DDDBE79729997007D59699BB4F8B")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.670 -0500", hash_original_method = "9BC9DDDBE79729997007D59699BB4F8B", hash_generated_method = "9BC9DDDBE79729997007D59699BB4F8B")
     
 String attemptToFormatAccruedDigits() {
     for (NumberFormat numFormat : possibleFormats) {
@@ -422,7 +440,9 @@ public int getRememberedPosition() {
 
   // Attempts to set the formatting template and returns a string which contains the formatted
   // version of the digits entered so far.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.674 -0500", hash_original_method = "4C8321A90BCC237ABE581FD0E018E0B0", hash_generated_method = "CF18A5CD2F9C28177D5181E04DC3DD1C")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.674 -0500", hash_original_method = "4C8321A90BCC237ABE581FD0E018E0B0", hash_generated_method = "CF18A5CD2F9C28177D5181E04DC3DD1C")
     
 private String attemptToChooseFormattingPattern() {
     // We start to attempt to format only when as least MIN_LEADING_DIGITS_LENGTH digits of national
@@ -438,7 +458,9 @@ private String attemptToChooseFormattingPattern() {
 
   // Invokes inputDigitHelper on each digit of the national number accrued, and returns a formatted
   // string in the end.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.677 -0500", hash_original_method = "A0C52ED0A89DE12301F2C974C5007560", hash_generated_method = "4E9AB7CC26A266D36A79C6593165BE01")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.677 -0500", hash_original_method = "A0C52ED0A89DE12301F2C974C5007560", hash_generated_method = "4E9AB7CC26A266D36A79C6593165BE01")
     
 private String inputAccruedNationalNumber() {
     int lengthOfNationalNumber = nationalNumber.length();
@@ -455,7 +477,9 @@ private String inputAccruedNationalNumber() {
     }
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.679 -0500", hash_original_method = "810622AECED476A4374C59B83D98E171", hash_generated_method = "684C47BF347C0C5B33CDF772354CBCD9")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.679 -0500", hash_original_method = "810622AECED476A4374C59B83D98E171", hash_generated_method = "684C47BF347C0C5B33CDF772354CBCD9")
     
 private void removeNationalPrefixFromNationalNumber() {
     int startOfNationalNumber = 0;
@@ -486,7 +510,9 @@ private void removeNationalPrefixFromNationalNumber() {
    * @return  true when accruedInputWithoutFormatting begins with the plus sign or valid IDD for
    *     defaultCountry.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.682 -0500", hash_original_method = "B953FBA4B3460899EA66156C6BB3FF32", hash_generated_method = "0F2C9EA9D6463014D7258E4CC5BB8B7D")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.682 -0500", hash_original_method = "B953FBA4B3460899EA66156C6BB3FF32", hash_generated_method = "0F2C9EA9D6463014D7258E4CC5BB8B7D")
     
 private boolean attemptToExtractIdd() {
     Pattern internationalPrefix =
@@ -515,7 +541,9 @@ private boolean attemptToExtractIdd() {
    *
    * @return  true when a valid country calling code can be found.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.684 -0500", hash_original_method = "218BC2BA6DFB456EB7693A201AB85277", hash_generated_method = "F69F0AF74A9089F685343761B088AEFA")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.684 -0500", hash_original_method = "218BC2BA6DFB456EB7693A201AB85277", hash_generated_method = "F69F0AF74A9089F685343761B088AEFA")
     
 private boolean attemptToExtractCountryCallingCode() {
     if (nationalNumber.length() == 0) {
@@ -542,7 +570,9 @@ private boolean attemptToExtractCountryCallingCode() {
   // normalized to the ASCII version. The return value is nextChar itself, or its normalized
   // version, if nextChar is a digit in non-ASCII format. This method assumes its input is either a
   // digit or the plus sign.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.687 -0500", hash_original_method = "77D81BD33F378FE00304ED0E0D731511", hash_generated_method = "3D2E7794562692432F5A066068309978")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.687 -0500", hash_original_method = "77D81BD33F378FE00304ED0E0D731511", hash_generated_method = "3D2E7794562692432F5A066068309978")
     
 private char normalizeAndAccrueDigitsAndPlusSign(char nextChar, boolean rememberPosition) {
     char normalizedChar;
@@ -561,7 +591,9 @@ private char normalizeAndAccrueDigitsAndPlusSign(char nextChar, boolean remember
     return normalizedChar;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.689 -0500", hash_original_method = "E1A45868A03256452AD2B7163B170B11", hash_generated_method = "3E9926CFA0158697797B4A95BE8345E8")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.689 -0500", hash_original_method = "E1A45868A03256452AD2B7163B170B11", hash_generated_method = "3E9926CFA0158697797B4A95BE8345E8")
     
 private String inputDigitHelper(char nextChar) {
     Matcher digitMatcher = digitPattern.matcher(formattingTemplate);

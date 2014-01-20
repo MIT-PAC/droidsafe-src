@@ -18,6 +18,8 @@ import droidsafe.helpers.DSUtils;
 
 public final class Method extends AccessibleObject implements GenericDeclaration, Member {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Object[] getSignatureAnnotation(Class declaringClass, int slot) {
 		Object[] ret = new Object[0];
 		ret[0].addTaint(declaringClass.taint);
@@ -25,6 +27,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		return ret;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Annotation[] getDeclaredAnnotations(Class<?> declaringClass, int slot) {
 		Annotation[] ret = new Annotation[0];
 		ret[0].addTaint(declaringClass.taint);
@@ -48,7 +52,9 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     /**
      * Creates an array of empty Annotation arrays.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.528 -0500", hash_original_method = "A33FB39CB64C1B7C3BBB588CC3F72925", hash_generated_method = "8C7A6A57A598959B1606649CF15F688C")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.528 -0500", hash_original_method = "A33FB39CB64C1B7C3BBB588CC3F72925", hash_generated_method = "8C7A6A57A598959B1606649CF15F688C")
     
 static Annotation[][] noAnnotations(int size) {
         Annotation[][] annotations = new Annotation[size][];
@@ -58,6 +64,8 @@ static Annotation[][] noAnnotations(int size) {
         return annotations;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
 		Annotation[][] ret = new Annotation[0][0];
 		ret[0][0].addTaint(declaringClass.taint);
@@ -65,6 +73,8 @@ static Annotation[][] noAnnotations(int size) {
 		return ret;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int getMethodModifiers(Class<?> declaringClass, int slot) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721;
@@ -145,7 +155,9 @@ public int compare(Method a, Method b) {
      *
      * @param orig non-null; the original instance to clone
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.477 -0500", hash_original_method = "70F1F77231BFE73E3138A8A58A15C35C", hash_generated_method = "A1DA50C27B1D8906753DF79746239F15")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.477 -0500", hash_original_method = "70F1F77231BFE73E3138A8A58A15C35C", hash_generated_method = "A1DA50C27B1D8906753DF79746239F15")
     
 Method(Method orig) {
         this(orig.declaringClass, orig.parameterTypes, orig.exceptionTypes,
@@ -174,6 +186,8 @@ private Method(Class<?> declaring, Class<?>[] paramTypes, Class<?>[] exceptTypes
 
 	}
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.474 -0500", hash_original_method = "0BE83C703D137B5A5A60EFAA17178485", hash_generated_method = "60615FB4B53F171169936FBF33069ED6")
     
 private synchronized void initGenericTypes() {
@@ -199,6 +213,8 @@ public TypeVariable<Method>[] getTypeParameters() {
     }
 
     /** {@inheritDoc} */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.486 -0500", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "5A7AC51370A528B541EFB40EFD81B606")
     
@@ -439,6 +455,8 @@ public Object getDefaultValue() {
         return getDefaultValue(declaringClass, slot);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.884 -0400", hash_original_method = "01EB45D9363E910A54E557C442527E6E", hash_generated_method = "12453DE2F22689947CA412DBF05F783C")
 	private Object getDefaultValue(Class declaringClass, int slot) {
 		addTaint(declaringClass.taint);
@@ -694,6 +712,8 @@ public Object invoke(Object receiver, Object... args)
      *
      * @return The constructor's signature.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.586 -0500", hash_original_method = "C4F068AB884B2FBA426F9E4B4EB5335D", hash_generated_method = "209508FF00FA7C82E8EAE16DB1379871")
     
 @SuppressWarnings("unused")

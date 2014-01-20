@@ -55,6 +55,8 @@ public static void setErrorCallback(ErrorCallback cb)
         isMicrophoneMuted();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.822 -0500", hash_original_method = "973BE0015415252B34DA0228955CD5FD", hash_generated_method = "FDAAE420C8896F6DDF7FA17E9F3B29FD")
     
 private static void errorCallbackFromNative(int error)

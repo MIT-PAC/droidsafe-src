@@ -25,10 +25,14 @@ public static String getDeviceName(int id) {
         return native_get_device_name(id);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_get_device_id(String name) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String native_get_device_name(int id) {
         	return DSUtils.UNKNOWN_STRING;
     }

@@ -130,6 +130,8 @@ protected final void end(boolean success) throws AsynchronousCloseException {
      * @throws IOException
      *             if a problem occurs while closing the channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.867 -0500", hash_original_method = "9762B902A56F50AF9CDE8E96A06F4D65", hash_generated_method = "F2284707C3F560D4B31581090601831F")
     
 protected abstract void implCloseChannel() throws IOException;

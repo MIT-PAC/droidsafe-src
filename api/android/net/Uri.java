@@ -225,6 +225,8 @@ public static String encode(String s, String allow) {
      * @return true if the character is allowed or false if it should be
      *  encoded
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.402 -0500", hash_original_method = "EC34BDFAF87F6FC405563F3C5834D87D", hash_generated_method = "B64F6845D1765CBAC05659D97CB25992")
     
 private static boolean isAllowed(char c, String allow) {
@@ -435,6 +437,8 @@ public Uri[] newArray(int size) {
     /**
      * Prevents external subclassing.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.896 -0500", hash_original_method = "81E08B95735493D923725112C83DA27A", hash_generated_method = "0ABE2EDBA81B324492C4B22D918117A5")
     
 private Uri() {}
@@ -445,7 +449,9 @@ private Uri() {}
 		uriString = uri;
 	}
     
-	public boolean isHierarchical() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public boolean isHierarchical() {
 		return getTaintBoolean();
 	}
     
@@ -453,7 +459,9 @@ private Uri() {}
         return getTaintBoolean();
     }
     
-	public boolean isRelative() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public boolean isRelative() {
 		// TODO Auto-generated method stub
 		return getTaintBoolean();
 	}
@@ -462,77 +470,95 @@ private Uri() {}
         return getTaintBoolean();
     }
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getScheme() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
     
-	public String getSchemeSpecificPart() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getSchemeSpecificPart() {
 		return uriString;
 	}
     
-	public String getEncodedSchemeSpecificPart() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getEncodedSchemeSpecificPart() {
 		return uriString;
 	}
     
-	public String getAuthority() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getAuthority() {
 		return uriString;
 	}
     
-	public String getEncodedAuthority() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getEncodedAuthority() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getUserInfo() {
 		// TODO Auto-generated method stub
 		return DSUtils.UNKNOWN_STRING;
 	}
     
-	public String getEncodedUserInfo() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getEncodedUserInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getHost() {
 		// TODO Auto-generated method stub
 		return null;
 	}
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getPort() {
 		return getTaintInt();
 	}
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getPath() {
 		return uriString;
 	}
     
-	public String getEncodedPath() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getEncodedPath() {
 		return uriString;
 	}
     
-	public String getQuery() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getQuery() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
     
-	public String getEncodedQuery() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getEncodedQuery() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
     
     private static class StringUri extends AbstractHierarchicalUri {
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.981 -0500", hash_original_method = "B9752410D58B51B65C9ADC7D117FE072", hash_generated_method = "22442DA2F8749F2BB2B04094E92CF446")
         
 static Uri readFrom(Parcel parcel) {
@@ -547,6 +573,8 @@ static Uri readFrom(Parcel parcel) {
          *
          * @return the authority or null if none is found
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.070 -0500", hash_original_method = "646016FCFDD19CBEFB230A993DB05800", hash_generated_method = "CC94B2B4059F922578309270CCC16EE6")
         
 static String parseAuthority(String uriString, int ssi) {
@@ -586,6 +614,8 @@ static String parseAuthority(String uriString, int ssi) {
          *
          * @return the path
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.073 -0500", hash_original_method = "1E19AC1A8E05179CA2F3BA2BE9214917", hash_generated_method = "CF2D20DE501C346989772C1673EA962E")
         
 static String parsePath(String uriString, int ssi) {
@@ -657,6 +687,8 @@ static String parsePath(String uriString, int ssi) {
 
         private Part fragment;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.979 -0500", hash_original_method = "6762E8F4F232397EC67D86B91A630B95", hash_generated_method = "50DD23618C06AA5993422C596D95A15D")
         
 private StringUri(String uriString) {
@@ -681,6 +713,8 @@ public void writeToParcel(Parcel parcel, int flags) {
         }
 
         /** Finds the first ':'. Returns -1 if none found. */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.991 -0500", hash_original_method = "F197955D6E3BAB1920F769AA2F97BBD7", hash_generated_method = "CB28982BF84320CC265CCD0217E2270B")
         
 private int findSchemeSeparator() {
@@ -690,6 +724,8 @@ private int findSchemeSeparator() {
         }
 
         /** Finds the first '#'. Returns -1 if none found. */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.996 -0500", hash_original_method = "B0E1A879F11D02C30EC9FBB06F8801FE", hash_generated_method = "3A287F7E062B40A217480E3CD179D64C")
         
 private int findFragmentSeparator() {
@@ -733,6 +769,8 @@ public String getScheme() {
             return cached ? scheme : (scheme = parseScheme());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.008 -0500", hash_original_method = "B03A2C85823E1DE38C77FC40695B0CC7", hash_generated_method = "8202C68A06A4C9D7E52938E46EA609CA")
         
 private String parseScheme() {
@@ -760,6 +798,8 @@ public String getSchemeSpecificPart() {
             return getSsp().getDecoded();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.019 -0500", hash_original_method = "6082AC88F53E9B67D59D9A72041A5D6F", hash_generated_method = "F5214BF1CAC55E6C4840E5FCA8BB9EC5")
         
 private String parseSsp() {
@@ -827,6 +867,8 @@ public List<String> getPathSegments() {
             return getPathPart().getPathSegments();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.042 -0500", hash_original_method = "EF0989C68625FC2F46DE0EA4CB35660B", hash_generated_method = "EF83B4A0704C57A9ADFBBDE00B07B249")
         
 private String parsePath() {
@@ -868,6 +910,8 @@ public String getEncodedQuery() {
             return getQueryPart().getEncoded();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.052 -0500", hash_original_method = "93492ABD4F9B88C963E84B9F545E5D11", hash_generated_method = "C332A30D6008CD1647D1905962137694")
         
 private String parseQuery() {
@@ -913,6 +957,8 @@ public String getEncodedFragment() {
             return getFragmentPart().getEncoded();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.063 -0500", hash_original_method = "13965C7143AC0E622773DBA6AE062E67", hash_generated_method = "406E2636FE1327D3BED674ABB0488121")
         
 private String parseFragment() {
@@ -954,6 +1000,8 @@ public Builder buildUpon() {
     
     private static class OpaqueUri extends Uri {
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.097 -0500", hash_original_method = "3DE9F905D00C8A1D201EDE3F979AEDDF", hash_generated_method = "89D685E248F63B9588817D427ED3DFC2")
         
 static Uri readFrom(Parcel parcel) {
@@ -1176,6 +1224,8 @@ public Builder buildUpon() {
 
          int size;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.164 -0500", hash_original_method = "816AFE27D6484B7E80593A248F7DEC12", hash_generated_method = "816AFE27D6484B7E80593A248F7DEC12")
         
 PathSegments(String[] segments, int size) {
@@ -1208,6 +1258,8 @@ public int size() {
 
         int size = 0;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.068 -0400", hash_original_method = "CD5B4727D6775EBFE00461F5F237812D", hash_generated_method = "CD5B4727D6775EBFE00461F5F237812D")
         
         public PathSegmentsBuilder ()
@@ -1215,6 +1267,8 @@ public int size() {
             //Synthesized constructor
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.177 -0500", hash_original_method = "F05B9B5ECB44DE7CFF27782486F28CF3", hash_generated_method = "F05B9B5ECB44DE7CFF27782486F28CF3")
         
 void add(String segment) {
@@ -1257,6 +1311,8 @@ PathSegments build() {
 
         private volatile int port = NOT_CALCULATED;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.071 -0400", hash_original_method = "469DE423ED30903E9EDD58224AA80D56", hash_generated_method = "469DE423ED30903E9EDD58224AA80D56")
         
         public AbstractHierarchicalUri ()
@@ -1293,6 +1349,8 @@ public final String getEncodedUserInfo() {
             return getUserInfoPart().getEncoded();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.193 -0500", hash_original_method = "10E379B7D06266EDAAC672E10EB0F58B", hash_generated_method = "C3678EFB1F1D6AB018259E35AC5664E4")
         
 private String parseUserInfo() {
@@ -1322,6 +1380,8 @@ public String getHost() {
                     : (host = parseHost());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.203 -0500", hash_original_method = "F3410DE0DFF96D0677FF54552E852FC4", hash_generated_method = "6FE439461BEF73ECED59AC74EF908941")
         
 private String parseHost() {
@@ -1350,6 +1410,8 @@ public int getPort() {
                     : port;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.210 -0500", hash_original_method = "5469820A1C15A09B87242C85BC223022", hash_generated_method = "F5E0DDA9804C0317A68B5EF25357F043")
         
 private int parsePort() {
@@ -1380,6 +1442,8 @@ private int parsePort() {
     
     private static class HierarchicalUri extends AbstractHierarchicalUri {
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.232 -0500", hash_original_method = "DC5791E697BE9BB4980E8FB1C7E142D4", hash_generated_method = "A47CF22DA42BCF6708CFEE192B64BF1D")
         
 static Uri readFrom(Parcel parcel) {
@@ -1488,6 +1552,8 @@ public String getSchemeSpecificPart() {
         /**
          * Creates the encoded scheme-specific part from its sub parts.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.255 -0500", hash_original_method = "EA75444742B675900BB1383BC22E224C", hash_generated_method = "979E10CFE3C0857FC52F9F856BE08E20")
         
 private String makeSchemeSpecificPart() {
@@ -1496,6 +1562,8 @@ private String makeSchemeSpecificPart() {
             return builder.toString();
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.093 -0400", hash_original_method = "55EA79AD41E607B8DD0B042A78040234", hash_generated_method = "6482B19B506A7357F59DD4CC14EB48C5")
         private void appendSspTo(StringBuilder builder) {
             addTaint(builder.getTaint());
@@ -1600,6 +1668,8 @@ public List<String> getPathSegments() {
                     : (uriString = makeUriString());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.290 -0500", hash_original_method = "5AECD242275C33F74DCA414A6C8DF5D7", hash_generated_method = "AE0B3FAE7964F8BC076EB03B46820B5C")
         
 private String makeUriString() {
@@ -1910,6 +1980,8 @@ public Uri build() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.362 -0500", hash_original_method = "7917AD3B49169A1AC8EEA7DD014B7E45", hash_generated_method = "8FB1F5046A7F2AE85274DDFF94E1698C")
         
 private boolean hasSchemeOrAuthority() {
@@ -1935,6 +2007,8 @@ private boolean hasSchemeOrAuthority() {
 
         volatile String decoded;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.425 -0500", hash_original_method = "21E01F693530948BFE81E2C9AE8C6D31", hash_generated_method = "21E01F693530948BFE81E2C9AE8C6D31")
         
 AbstractPart(String encoded, String decoded) {
@@ -1942,10 +2016,14 @@ AbstractPart(String encoded, String decoded) {
             this.decoded = decoded;
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.427 -0500", hash_original_method = "91FC101CC1B0ACCF71C15B71127FF8D2", hash_generated_method = "C0D3A0FB73870ED76549BD4C608443AC")
         
 abstract String getEncoded();
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.430 -0500", hash_original_method = "06323BBC323E7F59CEDDE1FAA04ED1F6", hash_generated_method = "03DCF9641223B8656F16E1E81D8C0759")
         
@@ -1955,6 +2033,8 @@ final String getDecoded() {
             return hasDecoded ? decoded : (decoded = decode(encoded));
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.433 -0500", hash_original_method = "BB7E54AFB81798C035BF3B3717F470E7", hash_generated_method = "9E6CCE194A734C36504361B0E7203AB8")
         
 final void writeTo(Parcel parcel) {
@@ -1990,6 +2070,8 @@ final void writeTo(Parcel parcel) {
 
             static final int DECODED = 2;
             
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.161 -0400", hash_original_method = "49186660D0AEF0721F749C758CF0FE34", hash_generated_method = "49186660D0AEF0721F749C758CF0FE34")
             public Representation ()
             {
@@ -2084,6 +2166,8 @@ static Part from(String encoded, String decoded) {
 
         static final Part EMPTY = new EmptyPart("");
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.442 -0500", hash_original_method = "68B275EBA6010E5404727E121615E229", hash_generated_method = "0F50A72C8C7037EC2CBE092C0C937235")
         
 private Part(String encoded, String decoded) {
@@ -2097,6 +2181,8 @@ public EmptyPart(String value) {
                 super(value, value);
             }
 
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.465 -0500", hash_original_method = "9A172AFBEDC6074FE36DA0C4940853DE", hash_generated_method = "562A29446A4C3261B9B7CE657D34B7A2")
             
 @Override
@@ -2106,12 +2192,16 @@ public EmptyPart(String value) {
             
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.444 -0500", hash_original_method = "BD94DCCF5B44419F4498543CA74892E2", hash_generated_method = "BD94DCCF5B44419F4498543CA74892E2")
         
 boolean isEmpty() {
             return false;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.446 -0500", hash_original_method = "74B8C999E422A266FD890BA259F6B43C", hash_generated_method = "74B8C999E422A266FD890BA259F6B43C")
         
@@ -2238,12 +2328,16 @@ static PathPart from(String encoded, String decoded) {
 
         private PathSegments pathSegments;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.477 -0500", hash_original_method = "E8CA21F7072E8C7642F3BFF9454329AE", hash_generated_method = "0D9AADBA85FF804C2B025C3087B31625")
         
 private PathPart(String encoded, String decoded) {
             super(encoded, decoded);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.479 -0500", hash_original_method = "EEE1C5D1C73794B2424FF9B6A794D8BE", hash_generated_method = "78801BE81952A415B8F898DB77CC0059")
         
@@ -2297,18 +2391,20 @@ PathSegments getPathSegments() {
         }
     }
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getFragment() {
 		return uriString;
 	}
     
-	public String getEncodedFragment() {
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getEncodedFragment() {
 		return uriString;
 	}
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
 		LinkedList<String> list = new LinkedList<String>();
@@ -2316,8 +2412,8 @@ PathSegments getPathSegments() {
 		return list;
 	}
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getLastPathSegment() {
 		return uriString;
 	}
@@ -2336,8 +2432,8 @@ public int hashCode() {
         return toString().hashCode();
     }
     
-	@DSComment("URI exchange is more important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String toString() {
                 String str = new String();
                 str.addTaint(this.getTaint());

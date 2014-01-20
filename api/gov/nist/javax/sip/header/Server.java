@@ -33,6 +33,8 @@ public Server() {
      * Return canonical form.
      * @return String
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.360 -0500", hash_original_method = "3BD03A3FDC86F025553E39D4B6A63060", hash_generated_method = "1CB22F75567C416919AFB0E86A4E8F65")
     
 private String encodeProduct() {

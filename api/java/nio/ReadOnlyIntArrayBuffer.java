@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadOnlyIntArrayBuffer extends IntArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.987 -0500", hash_original_method = "F37F94B8B4B6C4E82BA18B981375BACA", hash_generated_method = "4B51AE8695235A862EA81A49325E7D2C")
     
 static ReadOnlyIntArrayBuffer copy(IntArrayBuffer other, int markOfOther) {
@@ -21,6 +20,8 @@ static ReadOnlyIntArrayBuffer copy(IntArrayBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.990 -0500", hash_original_method = "01590DEAE9E3D05BD420F8A41610BAB0", hash_generated_method = "01590DEAE9E3D05BD420F8A41610BAB0")
     
 ReadOnlyIntArrayBuffer(int capacity, int[] backingArray, int arrayOffset) {
@@ -110,7 +111,6 @@ ReadOnlyIntArrayBuffer(int capacity, int[] backingArray, int arrayOffset) {
     public IntBuffer slice() {
         return new ReadOnlyIntArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

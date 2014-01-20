@@ -54,6 +54,8 @@ public static void parseCacheControl(String value, CacheControlHandler handler) 
      * contains a character from {@code characters}. Returns the input length if
      * none of the requested characters can be found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.060 -0500", hash_original_method = "4923F6873F4BEA7DF3A0D9AD1B573176", hash_generated_method = "D292702122C2D9AC3B322821A4D89A57")
     
 private static int skipUntil(String input, int pos, String characters) {
@@ -69,6 +71,8 @@ private static int skipUntil(String input, int pos, String characters) {
      * Returns the next non-whitespace character in {@code input} that is white
      * space. Result is undefined if input contains newline characters.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.063 -0500", hash_original_method = "8131A22344C2BE8348ABA2995C7F4BF7", hash_generated_method = "68B21CE46F90F77A9809846BC465D929")
     
 private static int skipWhitespace(String input, int pos) {
@@ -102,6 +106,8 @@ public static int parseSeconds(String value) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.993 -0400", hash_original_method = "C3E16CB5840D33E016F8223898DE7315", hash_generated_method = "C3E16CB5840D33E016F8223898DE7315")
     public HeaderParser ()
     {

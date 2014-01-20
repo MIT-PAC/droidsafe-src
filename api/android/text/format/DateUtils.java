@@ -275,6 +275,8 @@ public static CharSequence getRelativeTimeSpanString(long time, long now, long m
      * @param date2 second date
      * @return number of days passed between to dates.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.074 -0500", hash_original_method = "0E8B24A91185CEAB3D4A07D94FE93D82", hash_generated_method = "096F9CBB8AAFC32DF354327E687413C0")
     
 private synchronized static long getNumberOfDaysPassed(long date1, long date2) {
@@ -354,6 +356,8 @@ public static CharSequence getRelativeDateTimeString(Context c, long time, long 
      * @param today the current time in UTC milliseconds
      * @return a formatting string
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.080 -0500", hash_original_method = "9AC914C306FDB37385F4136987F182E8", hash_generated_method = "AF01706CA36D83D43AA6F0F932E4890F")
     
 private static final String getRelativeDayString(Resources r, long day, long today) {
@@ -389,6 +393,8 @@ private static final String getRelativeDayString(Resources r, long day, long tod
         return String.format(format, days);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.083 -0500", hash_original_method = "7C6415570E17C875444543CA7E0BEB8E", hash_generated_method = "B0E4A3FFAFD407125D4A9F7FF76883F5")
     
 private static void initFormatStrings() {
@@ -397,6 +403,8 @@ private static void initFormatStrings() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.085 -0500", hash_original_method = "1A7EB517E51BACF861383DCE36CB844C", hash_generated_method = "2FF27538157087A97E783A2E63507DDC")
     
 private static void initFormatStringsLocked() {
@@ -474,6 +482,8 @@ public static String formatElapsedTime(StringBuilder recycle, long elapsedSecond
     /**
      * Fast formatting of h:mm:ss
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.105 -0500", hash_original_method = "BE434DFF88CE2417ED5025C2BE62DC96", hash_generated_method = "A714873C97139AD9E9871B8DA38FCAE1")
     
 private static String formatElapsedTime(StringBuilder recycle, String format, long hours,
@@ -509,6 +519,8 @@ private static String formatElapsedTime(StringBuilder recycle, String format, lo
     /**
      * Fast formatting of m:ss
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.108 -0500", hash_original_method = "CC8D5ED8CB2C3C80437353ABAD2DF566", hash_generated_method = "1A35D553520A52DA0CAD178CDB8F9B9B")
     
 private static String formatElapsedTime(StringBuilder recycle, String format, long minutes,
@@ -539,6 +551,8 @@ private static String formatElapsedTime(StringBuilder recycle, String format, lo
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.111 -0500", hash_original_method = "996FF09FDD15BCAB357CDF7A2EFE4B94", hash_generated_method = "5783DC381F39FE347BD4CAFF36CFB877")
     
 private static char toDigitChar(long digit) {

@@ -11,12 +11,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
 
-
-
-
-
 public class ManifestDigest implements Parcelable {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.882 -0500", hash_original_method = "FEFC548E2219D387597583D12BF40859", hash_generated_method = "74E583CFA0C7065024DB130077716962")
     
 static ManifestDigest fromAttributes(Attributes attributes) {
@@ -69,12 +67,16 @@ public ManifestDigest[] newArray(int size) {
 
     private  byte[] mDigest;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.877 -0500", hash_original_method = "241EA3F870D09C8B7DFC477170347AB4", hash_generated_method = "241EA3F870D09C8B7DFC477170347AB4")
     
 ManifestDigest(byte[] digest) {
         mDigest = digest;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.879 -0500", hash_original_method = "95270655529A33593B4B2CDF05A8799C", hash_generated_method = "22F9843B47D89CC41EC0D517C66F1B42")
     
 private ManifestDigest(Parcel source) {

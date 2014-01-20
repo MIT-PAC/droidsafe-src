@@ -28,6 +28,8 @@ abstract class AbstractHttpInputStream extends InputStream {
 
     protected boolean closed;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.957 -0500", hash_original_method = "6245049C2A6A145F2B06E5BE82F53149", hash_generated_method = "2F21611D4703D793C4636C78A0474625")
     
 AbstractHttpInputStream(InputStream in, HttpEngine httpEngine,

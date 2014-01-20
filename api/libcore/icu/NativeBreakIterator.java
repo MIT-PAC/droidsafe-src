@@ -40,60 +40,90 @@ public static NativeBreakIterator getWordInstance(Locale where) {
         return new NativeBreakIterator(getWordInstanceImpl(where.toString()), BI_WORD_INSTANCE);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getCharacterInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getWordInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getLineInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getSentenceInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void closeBreakIteratorImpl(int address) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setTextImpl(int address, String text) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int cloneImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int precedingImpl(int address, int offset) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isBoundaryImpl(int address, int offset) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nextImpl(int address, int n) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int previousImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int currentImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int firstImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int followingImpl(int address, int offset) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int lastImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -119,6 +149,8 @@ public static NativeBreakIterator getWordInstance(Locale where) {
 
     private CharacterIterator charIter;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.752 -0500", hash_original_method = "9ED5AD4E2E4E4D0EFB32A4F0D669C323", hash_generated_method = "B39470009066E1562E6CE37B98210DDF")
     
 private NativeBreakIterator(int address, int type) {
@@ -238,6 +270,8 @@ public void setText(String newText) {
         setText(newText, new StringCharacterIterator(newText));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.787 -0500", hash_original_method = "5F9AC84894F083D607B365AEC97D7D28", hash_generated_method = "B9BCF9DF688E9273A7AE591D5670945C")
     
 private void setText(String s, CharacterIterator it) {

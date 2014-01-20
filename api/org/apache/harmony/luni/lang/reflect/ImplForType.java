@@ -76,6 +76,8 @@ public Class getRawType() {
         return rawType;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.017 -0500", hash_original_method = "62DEF1F574FB703889CA718D111580A0", hash_generated_method = "62DEF1F574FB703889CA718D111580A0")
     

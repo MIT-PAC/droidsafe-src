@@ -56,6 +56,8 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
 
     private Point mGlobalVisibleOffset = new Point();
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.264 -0500", hash_original_method = "5CA1E327210858D6ED3D49BC86FCA935", hash_generated_method = "54322D49FDA0112AD84229345493DF79")
     
 FindActionModeCallback(Context context) {
@@ -75,6 +77,8 @@ FindActionModeCallback(Context context) {
         mResources = context.getResources();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.266 -0500", hash_original_method = "9621A971A6C9D9BC000280709C19BFE5", hash_generated_method = "9621A971A6C9D9BC000280709C19BFE5")
     
 void finish() {
@@ -85,6 +89,8 @@ void finish() {
      * Place text in the text field so it can be searched for.  Need to press
      * the find next or find previous button to find all of the matches.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.268 -0500", hash_original_method = "CA5CD09DA796000F712B45157C41B130", hash_generated_method = "CCD73340064A2FE99A144E130A5D2F5A")
     
@@ -106,6 +112,8 @@ void setText(String text) {
      * Set the WebView to search.  Must be non null, and set before calling
      * startActionMode.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.270 -0500", hash_original_method = "767FD2233AC1DA09E02B0F553ABE32CD", hash_generated_method = "767FD2233AC1DA09E02B0F553ABE32CD")
     
 void setWebView(WebView webView) {
@@ -121,6 +129,8 @@ void setWebView(WebView webView) {
      * @param next If true, find the next match further down in the document.
      *             If false, find the previous match, up in the document.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.272 -0500", hash_original_method = "517F2A554CEE09599D2CC8534059CD71", hash_generated_method = "6B4BF8DBD12C2F243D72527D3C5734E3")
     
 private void findNext(boolean next) {
@@ -144,6 +154,8 @@ private void findNext(boolean next) {
     /*
      * Highlight all the instances of the string from mEditText in mWebView.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.274 -0500", hash_original_method = "BDE9946C9B792224811CE0EAAEBAA6D6", hash_generated_method = "BDE9946C9B792224811CE0EAAEBAA6D6")
     
 void findAll() {
@@ -182,6 +194,8 @@ public void showSoftInput() {
      * which match is currently highlighted.
      * Not to be called when mNumberOfMatches is 0.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.279 -0500", hash_original_method = "9E7B5524BD9C2F1CDB061DB60C13ABB6", hash_generated_method = "D8DCF844B8114098608B66B191F7780C")
     
 private void updateMatchesString() {

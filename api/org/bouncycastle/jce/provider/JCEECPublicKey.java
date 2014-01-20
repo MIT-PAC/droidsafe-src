@@ -38,11 +38,6 @@ import org.bouncycastle.jce.provider.asymmetric.ec.ECUtil;
 import org.bouncycastle.jce.spec.ECNamedCurveSpec;
 import org.bouncycastle.math.ec.ECCurve;
 
-
-
-
-
-
 public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfaces.ECPublicKey, ECPointEncoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.503 -0500", hash_original_field = "33AD2E21A3D6578549470A35F5EBE102", hash_generated_field = "03A7690F51B3F9BF560AF66A2E562751")
 
@@ -188,6 +183,8 @@ public JCEECPublicKey(
         this.q = EC5Util.convertPoint(this.ecSpec, key.getW(), false);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.535 -0500", hash_original_method = "E3331AE678062C5B5D7432BD6E2A836D", hash_generated_method = "E3331AE678062C5B5D7432BD6E2A836D")
     
 JCEECPublicKey(
@@ -196,6 +193,8 @@ JCEECPublicKey(
         populateFromPubKeyInfo(info);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.530 -0500", hash_original_method = "78B971AFBB9FB77663E9AB2BC39F53F9", hash_generated_method = "1F63A992ABDA31E1B069D0AA20D39148")
     
 private ECParameterSpec createSpec(EllipticCurve ellipticCurve, ECDomainParameters dp)
@@ -209,6 +208,8 @@ private ECParameterSpec createSpec(EllipticCurve ellipticCurve, ECDomainParamete
                         dp.getH().intValue());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.539 -0500", hash_original_method = "04369E0AD06428BC33AE0A89BD867221", hash_generated_method = "C3C6B22A24A18C0190D74359896DABB5")
     
 private void populateFromPubKeyInfo(SubjectPublicKeyInfo info)
@@ -436,6 +437,8 @@ public byte[] getEncoded()
         return info.getDEREncoded();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.549 -0500", hash_original_method = "7BE58B7CFDB546DA8CA10F5D2E9502BA", hash_generated_method = "FB7EAE8355D3C84383B8E9F07B4C6DC0")
     
 private void extractBytes(byte[] encKey, int offSet, BigInteger bI)
@@ -506,6 +509,8 @@ public org.bouncycastle.math.ec.ECPoint engineGetQ()
         return q;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.564 -0500", hash_original_method = "EA50C6AAC98F0F1C8DE39B8B441A0904", hash_generated_method = "EA50C6AAC98F0F1C8DE39B8B441A0904")
     
 org.bouncycastle.jce.spec.ECParameterSpec engineGetSpec()
@@ -561,6 +566,8 @@ public int hashCode()
         return engineGetQ().hashCode() ^ engineGetSpec().hashCode();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.575 -0500", hash_original_method = "65AAF373098ED8D46B05238E5475AB46", hash_generated_method = "6E5EFD3B714F485EC3F876D6BD2C9091")
     
 private void readObject(
@@ -575,6 +582,8 @@ private void readObject(
         this.withCompression = in.readBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.578 -0500", hash_original_method = "2E7E67EC6D00C929FDA46D4809812937", hash_generated_method = "00D4F0E1FC29AC287FDBAEBB452F71E5")
     
 private void writeObject(
@@ -585,7 +594,6 @@ private void writeObject(
         out.writeObject(algorithm);
         out.writeBoolean(withCompression);
     }
-
     
 }
 

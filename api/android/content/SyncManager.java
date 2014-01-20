@@ -61,6 +61,8 @@ import com.google.android.collect.Maps;
 
 public class SyncManager implements OnAccountsUpdateListener {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.938 -0500", hash_original_method = "868C4665098C5E1E551E069914A3869C", hash_generated_method = "962E00FF9753425DE0943B5B1EB5482A")
     
@@ -427,6 +429,8 @@ public void onAccountsUpdated(Account[] accounts) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.768 -0500", hash_original_method = "90A2C58DEF02026C184592212F85FF18", hash_generated_method = "3C8E66097B7278B4A38CF252A1DDA6B2")
     
 private boolean readDataConnectionState() {
@@ -434,6 +438,8 @@ private boolean readDataConnectionState() {
         return (networkInfo != null) && networkInfo.isConnected();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.785 -0500", hash_original_method = "85835365DA8D3F37E74A4C98C5566C52", hash_generated_method = "E1D1CC1280EDED6866BFEFA3085B9698")
     
 private ConnectivityManager getConnectivityManager() {
@@ -450,6 +456,8 @@ private ConnectivityManager getConnectivityManager() {
      * Return a random value v that satisfies minValue <= v < maxValue. The difference between
      * maxValue and minValue must be less than Integer.MAX_VALUE.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.797 -0500", hash_original_method = "2C829A46E677D5FF63843A6B74A54E87", hash_generated_method = "E70428BC7F81D405D012426240F6C46E")
     
 private long jitterize(long minValue, long maxValue) {
@@ -469,6 +477,8 @@ public SyncStorageEngine getSyncStorageEngine() {
         return mSyncStorageEngine;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.802 -0500", hash_original_method = "51F169FF6EC2BB253880B74521EEDA04", hash_generated_method = "55AD7DE6237D442382C27E98D0DB8A89")
     
 private void ensureAlarmService() {
@@ -477,6 +487,8 @@ private void ensureAlarmService() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.808 -0500", hash_original_method = "3B1126FA248635D8E240EE322F732C4B", hash_generated_method = "D22B2591A35228D21531770D339CC8DA")
     
 private void initializeSyncAdapter(Account account, String authority) {
@@ -701,6 +713,8 @@ public SyncAdapterType[] getSyncAdapterTypes() {
         return types;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.846 -0500", hash_original_method = "14A3D8C2E4B2E28E7EAE9416931B0D4D", hash_generated_method = "A72EF30B52851AC54AB4CF72BF451788")
     
 private void sendSyncAlarmMessage() {
@@ -708,6 +722,8 @@ private void sendSyncAlarmMessage() {
         mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_SYNC_ALARM);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.848 -0500", hash_original_method = "48CD41A4FC7AAC6DBD3D417BDFF3952E", hash_generated_method = "896E5067C0E45899884FF34849A6BB4B")
     
 private void sendCheckAlarmsMessage() {
@@ -1005,6 +1021,8 @@ protected void close() {
 
         Map<String, AccountSyncStats> accountMap = Maps.newHashMap();
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.982 -0500", hash_original_method = "BA2AD08D9B4BF110732C8291C5F36CF8", hash_generated_method = "C569DAF1A529089ABB34870F514F3E04")
         
 private AuthoritySyncStats(String name) {
@@ -1024,6 +1042,8 @@ private AuthoritySyncStats(String name) {
 
         int times;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.993 -0500", hash_original_method = "1D94286E4C9E35DF248CEA39D6389F91", hash_generated_method = "198934C6E675C2EDFBF5D8E667F470B3")
         
 private AccountSyncStats(String name) {
@@ -1158,6 +1178,8 @@ private PowerManager.WakeLock getSyncWakeLock(Account account, String authority)
             return wakeLock;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.052 -0500", hash_original_method = "CE8AE663CA89CC7DD7AABF796BC60E1D", hash_generated_method = "CE75B7F04697F3D0F3F1788B03D2E59A")
         
 private void waitUntilReadyToRun() {
@@ -1300,6 +1322,8 @@ public void handleMessage(Message msg) {
          * @return the desired start time of the earliest future  periodic sync operation,
          * in milliseconds since boot
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.075 -0500", hash_original_method = "5F18B995A8D5126079C876CBB8B37FF8", hash_generated_method = "9B939A32BB270F981CC6D393026C6794")
         
 private long scheduleReadyPeriodicSyncs() {
@@ -1375,6 +1399,8 @@ private long scheduleReadyPeriodicSyncs() {
                       : (earliestFuturePollTime - nowAbsolute));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.082 -0500", hash_original_method = "8B5418D48FBDFB608CDA80C6788E1356", hash_generated_method = "9EF590F36DF09506A1AC184374DC8D93")
         
 private long maybeStartNextSyncLocked() {
@@ -1585,6 +1611,8 @@ private long maybeStartNextSyncLocked() {
             return nextReadyToRunTime;
      }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.085 -0500", hash_original_method = "40340E62514BC19DB7E9216642814F86", hash_generated_method = "4410C918ADE32E42EF62ED2308700FFA")
         
 private boolean dispatchSyncOperation(SyncOperation op) {
@@ -1646,6 +1674,8 @@ private void runBoundToSyncAdapter(final ActiveSyncContext activeSyncContext,
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.091 -0500", hash_original_method = "7B28CEC882EFEBA05BFBBAFD319121EA", hash_generated_method = "6002EB5E6C65A2B33FC8BAEA7C86B03D")
         
 private void cancelActiveSyncLocked(Account account, String authority) {
@@ -1770,6 +1800,8 @@ private void closeActiveSyncContext(ActiveSyncContext activeSyncContext) {
          * @throws IllegalStateException if the SyncResult does not indicate any errors.
          *   If SyncResult.error() is true then it is safe to call this.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.100 -0500", hash_original_method = "F73ADCF1F7F7E573F488FB12A7E0DEC9", hash_generated_method = "709D340BF59F35234DFF46D5CEACA330")
         
 private int syncResultToErrorNumber(SyncResult syncResult) {
@@ -1792,6 +1824,8 @@ private int syncResultToErrorNumber(SyncResult syncResult) {
             throw new IllegalStateException("we are not in an error state, " + syncResult);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.103 -0500", hash_original_method = "D7164ED4506DE94304BF76B0FBC03583", hash_generated_method = "0CCF20B02793E636D9E379B97E5897FE")
         
 private void manageSyncNotificationLocked() {
@@ -1887,6 +1921,8 @@ public void toString(StringBuilder sb) {
             
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.107 -0500", hash_original_method = "E1B88EC7C887370D571018E17194D40D", hash_generated_method = "A5495618E7F5B03D4EF3599CA03BB6F8")
         
 private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
@@ -1984,6 +2020,8 @@ private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.110 -0500", hash_original_method = "A9010BB637A8EEC323C58050189C44ED", hash_generated_method = "F7900B66055B8D9623EC4F5AF202BA43")
         
 private void sendSyncStateIntent() {
@@ -1994,6 +2032,8 @@ private void sendSyncStateIntent() {
             mContext.sendBroadcast(syncStateIntent);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.113 -0500", hash_original_method = "87A468A0891FD210AAD2B0099F053FF2", hash_generated_method = "2D42FA9A0E80E359623681030C7CAEBB")
         
 private void installHandleTooManyDeletesNotification(Account account, String authority,
@@ -2042,6 +2082,8 @@ private void installHandleTooManyDeletesNotification(Account account, String aut
          * @param intent The intent for an activity.
          * @return Whether or not an activity exists.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.116 -0500", hash_original_method = "ABB616725C31652C20F8F96BBDEFC6AA", hash_generated_method = "E03276DC332DEF5DB0A396B708CD9689")
         
 private boolean isActivityAvailable(Intent intent) {
@@ -2096,6 +2138,8 @@ private void sendCancelSyncsMessage(final Account account, final String authorit
         mSyncHandler.sendMessage(msg);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.869 -0500", hash_original_method = "1BD5650AC2366081E95971C40228D13F", hash_generated_method = "F3B41AFF9A9C64B8CA72412AD848C9F6")
     
 private void clearBackoffSetting(SyncOperation op) {
@@ -2106,6 +2150,8 @@ private void clearBackoffSetting(SyncOperation op) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.872 -0500", hash_original_method = "42DD92B3EE29EAC346CC626BA6B5C78C", hash_generated_method = "54DF0E7641EE320AAB4AFE76F6EFC4A6")
     
 private void increaseBackoffSetting(SyncOperation op) {
@@ -2169,6 +2215,8 @@ private void increaseBackoffSetting(SyncOperation op) {
                 SystemProperties.getLong("sync.notification_delay", 30 * 1000 );
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.874 -0500", hash_original_method = "D0F8BD8389FAB953FA57BE172373CE33", hash_generated_method = "57D05F7ACE35CF49BA068F3A674B5331")
     
 private void setDelayUntilTime(SyncOperation op, long delayUntilSeconds) {
@@ -2238,6 +2286,8 @@ public void clearScheduledSyncOperations(Account account, String authority) {
                 SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.884 -0500", hash_original_method = "7F8B5486825DA8802A08F87FCECDEB6D", hash_generated_method = "D43EC31920600BF9E5E0B1F3669384C5")
     
 void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
@@ -2448,6 +2498,8 @@ protected void dumpSyncState(PrintWriter pw) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.947 -0500", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "23B08CDB7D07BA4557A1E5F722A09891")
     
 private String getLastFailureMessage(int code) {
@@ -2481,6 +2533,8 @@ private String getLastFailureMessage(int code) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.949 -0500", hash_original_method = "2E5C9A0C484B8BFAAD4FF120631D1FEC", hash_generated_method = "3D756EAC90092A2839B2F0D4075EE9BB")
     
 private void dumpTimeSec(PrintWriter pw, long time) {
@@ -2512,6 +2566,8 @@ protected void dumpSyncHistory(PrintWriter pw) {
         dumpDayStatistics(pw);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.967 -0500", hash_original_method = "C137DBDBD7D2B9AF348453A35EDAB8EF", hash_generated_method = "B5D29A48771E7CDB25D49ACFA8EAAE7A")
     
 private void dumpRecentHistory(PrintWriter pw) {
@@ -2707,6 +2763,8 @@ private void dumpRecentHistory(PrintWriter pw) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.970 -0500", hash_original_method = "9349911975C50CB78B5A389074CC1BDC", hash_generated_method = "B523465746AD0B4CBF27FDA0B4AEFE7A")
     
 private void dumpDayStatistics(PrintWriter pw) {

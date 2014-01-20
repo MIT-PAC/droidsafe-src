@@ -9,6 +9,8 @@ import android.os.Parcelable;
 
 public class UsbAccessory implements Parcelable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.616 -0500", hash_original_method = "D8D7DCC3B2A32D762DF452DE7CB7EB2F", hash_generated_method = "B3C5A47D500FA218ED91A35F692E94AD")
     
 private static boolean compare(String s1, String s2) {

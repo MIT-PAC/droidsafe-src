@@ -16,13 +16,19 @@ public static NativePluralRules forLocale(Locale locale) {
         return new NativePluralRules(forLocaleImpl(locale.toString()));
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void finalizeImpl(int address) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int forLocaleImpl(String localeName) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int quantityForIntImpl(int address, int value) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -48,6 +54,8 @@ public static NativePluralRules forLocale(Locale locale) {
 
     private  int address;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.333 -0500", hash_original_method = "AA726DD537B18CF5E6F027FB7C25435F", hash_generated_method = "7F0AD65A8C9002FE1E82D3A81B3E91FE")
     
 private NativePluralRules(int address) {

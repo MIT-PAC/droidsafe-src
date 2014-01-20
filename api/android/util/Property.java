@@ -34,6 +34,8 @@ public abstract class Property<T, V> {
     /**
      * Returns the current value that this property represents on the given <code>object</code>.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.530 -0500", hash_original_method = "6E055708EB60102C3FE3DC026AFEF30C", hash_generated_method = "749817522EE38AE315B321DE724B9835")
     
 public abstract V get(T object);

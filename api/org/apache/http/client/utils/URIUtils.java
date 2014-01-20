@@ -9,8 +9,6 @@ import java.net.URISyntaxException;
 
 import org.apache.http.HttpHost;
 
-
-
 public class URIUtils {
 
      /**
@@ -186,11 +184,12 @@ public static URI resolve(final URI baseURI, URI reference){
     /**
      * This class should not be instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.581 -0500", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "763070220CDD6AAECE1612E041381A7A")
     
 private URIUtils() {
     }
-
     
 }
 

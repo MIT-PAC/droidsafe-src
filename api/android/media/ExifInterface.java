@@ -14,6 +14,8 @@ import java.util.TimeZone;
 
 public class ExifInterface {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.756 -0500", hash_original_method = "573AE63C3A0AF83AD37E730AD0812C4F", hash_generated_method = "676407259D5C96EB17D75B26EC89E30A")
     
 private static float convertRationalLatLonToFloat(
@@ -238,7 +240,9 @@ public void setAttribute(String tag, String value) {
         mAttributes.put(tag, value);
     }
     
-	private void loadAttributes() throws IOException {
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private void loadAttributes() throws IOException {
 		addTaint("string attribute taint".getTaint()); //Implicit taint for getAttribute
 		//addTaint(-1.getTaint()); //Implicit taint for getAttributeInt
 		//addTaint(-2.getTaint()); //Implicit taint for getAttributeDouble
@@ -402,6 +406,8 @@ public long getGpsDateTime() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.760 -0500", hash_original_method = "10F8297A0D98F2707B10E874747B53C0", hash_generated_method = "90628B937B986544BE88FE904F65CAF5")
     
     private boolean appendThumbnailNative(String fileName,
@@ -412,6 +418,8 @@ public long getGpsDateTime() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.764 -0500", hash_original_method = "1943C005EEA560A6DA7650C63E13B4C3", hash_generated_method = "EA5F35D637E602509C693931F9B6A33F")
     
     private void saveAttributesNative(String fileName,
@@ -421,6 +429,8 @@ public long getGpsDateTime() {
     	addTaint(compressedAttributes.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.772 -0500", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "80E74A688A748996FA3E2A2FEFB9B353")
     
     private void commitChangesNative(String fileName){
@@ -434,6 +444,8 @@ public long getGpsDateTime() {
         sFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.776 -0500", hash_original_method = "EE2CC310FEF6D1380D04E187818EEB60", hash_generated_method = "BD46D056B3CB5158CCA64FB57C0A5E4E")
     
     private byte[] getThumbnailNative(String fileName){

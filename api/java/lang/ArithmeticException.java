@@ -14,6 +14,8 @@ public class ArithmeticException extends RuntimeException {
      * Constructs a new {@code ArithmeticException} that includes the current
      * stack trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.140 -0500", hash_original_method = "24115F2AC5B4BFA51305F479377E801A", hash_generated_method = "6CA9F084E57C93D38306509B1DC42B7B")
     
 public ArithmeticException() {

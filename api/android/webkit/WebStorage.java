@@ -31,29 +31,43 @@ public static WebStorage getInstance() {
       return sWebStorage;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Set nativeGetOrigins() {
         	return new HashSet();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetUsageForOrigin(String origin) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetQuotaForOrigin(String origin) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_752076961 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_752076961;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetQuotaForOrigin(String origin, long quota) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDeleteOrigin(String origin) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDeleteAllData() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetAppCacheMaximumSize(long size) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.204 -0500", hash_original_field = "89315E767D1FCC96269A405D475BDE30", hash_generated_field = "B124889B42C1C29694444BA7EE6BE397")
@@ -122,6 +136,8 @@ public static WebStorage getInstance() {
 
         private long mUsage = 0;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.257 -0500", hash_original_method = "4FE78C59959DAB66D5A54195A66AB06B", hash_generated_method = "ED33D477D6E7453AD18F312199E75F82")
         
 private Origin(String origin, long quota, long usage) {
@@ -130,6 +146,8 @@ private Origin(String origin, long quota, long usage) {
             mUsage = usage;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.261 -0500", hash_original_method = "C2CBF7E5975A0E1FB4219FCE2892FC4D", hash_generated_method = "3310E29F2F9F0C6416808768AB2195B8")
         
 private Origin(String origin, long quota) {
@@ -137,6 +155,8 @@ private Origin(String origin, long quota) {
             mQuota = quota;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.263 -0500", hash_original_method = "EABE3A839C363BB6725AAE2908A0D269", hash_generated_method = "BCD38518505CC322CB744642E4AD2BFC")
         
 private Origin(String origin) {
@@ -343,6 +363,8 @@ public void getOrigins(ValueCallback<Map> callback) {
      * Returns a list of origins having a database
      * should only be called from WebViewCore.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.291 -0500", hash_original_method = "20875F7A30B9C28B41BC562F884EFBD9", hash_generated_method = "20875F7A30B9C28B41BC562F884EFBD9")
     
 Collection<Origin> getOriginsSync() {
@@ -463,6 +485,8 @@ public void setAppCacheMaximumSize(long size) {
     /**
      * Utility function to send a message to our handler
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.308 -0500", hash_original_method = "62EA151909BF01F1F742C4723FE70A6A", hash_generated_method = "B4B87F937AC4DD7FF33BE99461BC3CCD")
     
 private synchronized void postMessage(Message msg) {
@@ -474,6 +498,8 @@ private synchronized void postMessage(Message msg) {
     /**
      * Utility function to send a message to the handler on the UI thread
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.310 -0500", hash_original_method = "B15FFE1BDDB388A76F495C309FEFF3DA", hash_generated_method = "C2FC6A3A4D0F6BDDE3E5B5092770AEBC")
     
 private void postUIMessage(Message msg) {
@@ -500,6 +526,8 @@ public void update() {
      * Run on the webcore thread
      * set the local values with the current ones
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.317 -0500", hash_original_method = "5D4FD384A27446A0E17BE685B23E3829", hash_generated_method = "636F3F23718BACD2EA84E7AD0D8B80F5")
     
 private void syncValues() {

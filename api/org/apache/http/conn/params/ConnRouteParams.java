@@ -10,11 +10,7 @@ import org.apache.http.HttpHost;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 
-
-
-
 public class ConnRouteParams implements ConnRoutePNames {
-
 
     /**
      * Obtains the {@link ConnRoutePNames#DEFAULT_PROXY DEFAULT_PROXY}
@@ -42,7 +38,6 @@ public static HttpHost getDefaultProxy(HttpParams params) {
         return proxy;
     }
 
-
     /**
      * Sets the {@link ConnRoutePNames#DEFAULT_PROXY DEFAULT_PROXY}
      * parameter value.
@@ -62,7 +57,6 @@ public static void setDefaultProxy(HttpParams params,
         }
         params.setParameter(DEFAULT_PROXY, proxy);
     }
-
 
     /**
      * Obtains the {@link ConnRoutePNames#FORCED_ROUTE FORCED_ROUTE}
@@ -90,7 +84,6 @@ public static HttpRoute getForcedRoute(HttpParams params) {
         return route;
     }
 
-
     /**
      * Sets the {@link ConnRoutePNames#FORCED_ROUTE FORCED_ROUTE}
      * parameter value.
@@ -110,7 +103,6 @@ public static void setForcedRoute(HttpParams params,
         }
         params.setParameter(FORCED_ROUTE, route);
     }
-
 
     /**
      * Obtains the {@link ConnRoutePNames#LOCAL_ADDRESS LOCAL_ADDRESS}
@@ -136,7 +128,6 @@ public static InetAddress getLocalAddress(HttpParams params) {
         return local;
     }
 
-
     /**
      * Sets the {@link ConnRoutePNames#LOCAL_ADDRESS LOCAL_ADDRESS}
      * parameter value.
@@ -161,8 +152,9 @@ public static void setLocalAddress(HttpParams params,
 
     public static final HttpRoute NO_ROUTE = new HttpRoute(NO_HOST);
 
-
     /** Disabled default constructor. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.394 -0500", hash_original_method = "2F583F6C69B80DBD9155194B569BE764", hash_generated_method = "04E64CF0AA4E52F9C34273875D7B7927")
     
 private ConnRouteParams() {

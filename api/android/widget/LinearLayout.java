@@ -133,24 +133,24 @@ public class LinearLayout extends ViewGroup {
 
     private int mDividerPadding;
 
-    @DSComment("Layout")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.868 -0500", hash_original_method = "FE94B0C3331DC48DD922B45C9927A2E5", hash_generated_method = "8B2A5CE3E06980F8A76CE3DD33ED334F")
     
 public LinearLayout(Context context) {
         super(context);
     }
 
-    @DSComment("Layout")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.871 -0500", hash_original_method = "90765D7AD39C5FFE28F827609E4D9AAF", hash_generated_method = "4C7DDA589A635B38E56D20DF84A9773B")
     
 public LinearLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
-    @DSComment("Layout")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public LinearLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         /*
@@ -228,19 +228,27 @@ public LinearLayout(Context context, AttributeSet attrs) {
         drawDividersHorizontal(canvas);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void drawDividersVertical(Canvas canvas) {
         drawHorizontalDivider(canvas, 0);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void drawDividersHorizontal(Canvas canvas) {
         drawVerticalDivider(canvas, 0);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void drawHorizontalDivider(Canvas canvas, int top) {
         mDivider.setBounds(getTaintInt(), top, 0, 0);
         mDivider.draw(canvas);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void drawVerticalDivider(Canvas canvas, int left) {
         mDivider.setBounds(getTaintInt(), left, 0, 0);
         mDivider.draw(canvas);
@@ -401,6 +409,8 @@ public int getBaselineAlignedChildIndex() {
      * @param index the child's index
      * @return the child at the specified index
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.919 -0500", hash_original_method = "87FE8C209A68A97BDFF0666E4CF673D3", hash_generated_method = "87FE8C209A68A97BDFF0666E4CF673D3")
     
@@ -417,6 +427,8 @@ View getVirtualChildAt(int index) {
      *
      * @return the virtual number of children
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.921 -0500", hash_original_method = "04A766EF9FA40CCD4344368D3178C5E7", hash_generated_method = "04A766EF9FA40CCD4344368D3178C5E7")
     
@@ -509,6 +521,8 @@ protected boolean hasDividerBeforeChildAt(int childIndex) {
      * @see #setOrientation(int)
      * @see #onMeasure(int, int)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.938 -0500", hash_original_method = "A88B972B81C9E0D927EB1FAC25F8F6D1", hash_generated_method = "361D6AE5BBEB079D7684F9677B3DC169")
     
 void measureVertical(int widthMeasureSpec, int heightMeasureSpec) {
@@ -804,6 +818,8 @@ void measureVertical(int widthMeasureSpec, int heightMeasureSpec) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.941 -0500", hash_original_method = "AFA9034D947EBEF26850BC0782F132F9", hash_generated_method = "5CDFBA265252E69A2E6A94802E18344C")
     
 private void forceUniformWidth(int count, int heightMeasureSpec) {
@@ -840,6 +856,8 @@ private void forceUniformWidth(int count, int heightMeasureSpec) {
      * @see #setOrientation(int)
      * @see #onMeasure(int, int) 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.950 -0500", hash_original_method = "22C04BEEA310D9DB4A6BB8F3656099B0", hash_generated_method = "68A3F1CAE782CD28B343A3F110136620")
     
 void measureHorizontal(int widthMeasureSpec, int heightMeasureSpec) {
@@ -1224,6 +1242,8 @@ void measureHorizontal(int widthMeasureSpec, int heightMeasureSpec) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.953 -0500", hash_original_method = "FDF33FE6741A819E3461023969653A29", hash_generated_method = "A12A097BE241F8C39CE91EE660B9CECD")
     
 private void forceUniformHeight(int count, int widthMeasureSpec) {
@@ -1259,6 +1279,8 @@ private void forceUniformHeight(int count, int widthMeasureSpec) {
      * @param index the index of the child after which we want to skip children
      * @return the number of children to skip, 0 by default
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.956 -0500", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "64CDF538399E47C38C21DACEFC8C1E08")
     
@@ -1273,6 +1295,8 @@ int getChildrenSkipCount(View child, int index) {
      * @param childIndex the index of the null child
      * @return the width or height of the child depending on the orientation
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.958 -0500", hash_original_method = "0C791DFCDA5E7DFE7963EF393BDBDA11", hash_generated_method = "0C791DFCDA5E7DFE7963EF393BDBDA11")
     
 int measureNullChild(int childIndex) {
@@ -1292,6 +1316,8 @@ int measureNullChild(int childIndex) {
      * @param heightMeasureSpec vertical space requirements as imposed by the parent
      * @param totalHeight extra space that has been used up by the parent vertically
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.960 -0500", hash_original_method = "784157887C32A4B8D345E93BB13DEECA", hash_generated_method = "784157887C32A4B8D345E93BB13DEECA")
     
 void measureChildBeforeLayout(View child, int childIndex,
@@ -1308,6 +1334,8 @@ void measureChildBeforeLayout(View child, int childIndex,
      * @param child the child for which to obtain the location offset
      * @return the location offset in pixels
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.962 -0500", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "BA69BAE2E1D7A163D53D02D47016A6D7")
     
@@ -1323,6 +1351,8 @@ int getLocationOffset(View child) {
      * @param child the child whose next sibling will be moved
      * @return the location offset of the next child in pixels
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.964 -0500", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "6D7A4F846C7E828D32B84605EE3B545F")
     
@@ -1351,6 +1381,8 @@ int getNextLocationOffset(View child) {
      * @see #setOrientation(int)
      * @see #onLayout(boolean, int, int, int, int)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.970 -0500", hash_original_method = "30B5FEA9EA0D751AC72456573A204452", hash_generated_method = "1F3D722B7D1EF4D467D3DF1D276D23EA")
     
 void layoutVertical() {
@@ -1463,8 +1495,8 @@ void layoutVertical() {
         /**
          * {@inheritDoc}
          */
-        @DSComment("GUI Layout")
-        @DSSafe(DSCat.GUI)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.007 -0500", hash_original_method = "C424BD779148A2828DEB0ABC94DCC73C", hash_generated_method = "1949DD99FD290058A73A861303B9D7FF")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -1481,8 +1513,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
-        @DSComment("GUI Layout")
-        @DSSafe(DSCat.GUI)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.009 -0500", hash_original_method = "5675045EFCD4661F32116909A9822399", hash_generated_method = "D00C43B28A1B544AF669D1382210BD5F")
         
 public LayoutParams(int width, int height) {
@@ -1500,8 +1532,8 @@ public LayoutParams(int width, int height) {
          *        {@link #WRAP_CONTENT} or a fixed size in pixels
          * @param weight the weight
          */
-        @DSComment("GUI Layout")
-        @DSSafe(DSCat.GUI)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.012 -0500", hash_original_method = "4CDC4D1E7FEEFBC37A8F4BABF983F00D", hash_generated_method = "9F21D0821BE5D3698BA91397A51EBA72")
         
 public LayoutParams(int width, int height, float weight) {
@@ -1545,6 +1577,8 @@ public LayoutParams(MarginLayoutParams source) {
      * @see #setOrientation(int)
      * @see #onLayout(boolean, int, int, int, int)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.974 -0500", hash_original_method = "7E4C2E885F4FB677FEB4B548A065DB2A", hash_generated_method = "6B4697484237C8DCDADE873702A27F63")
     
 void layoutHorizontal() {
@@ -1671,6 +1705,8 @@ void layoutHorizontal() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.977 -0500", hash_original_method = "74793CDC2820B7770CC6C7B645CE6A0C", hash_generated_method = "89E0F6704B6BEAB247D2061B420B0C52")
     
 private void setChildFrame(View child, int left, int top, int width, int height) {        

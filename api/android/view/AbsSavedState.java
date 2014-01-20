@@ -39,6 +39,8 @@ public AbsSavedState[] newArray(int size) {
     /**
      * Constructor used to make the EMPTY_STATE singleton
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.411 -0500", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "81ACCF327F7B487F640981502C2E553B")
     
 private AbsSavedState() {

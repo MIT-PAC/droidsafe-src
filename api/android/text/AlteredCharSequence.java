@@ -12,6 +12,8 @@ public class AlteredCharSequence implements CharSequence, GetChars {
      * offsets <code>substart</code> inclusive to <code>subend</code> exclusive
      * are mirrored instead from <code>sub</code>, beginning at offset 0.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.840 -0500", hash_original_method = "4C9F904F92E3B879A03EABDC82FBCB21", hash_generated_method = "4C7948DBDD2398F11C16F716F301458A")
     
 public static AlteredCharSequence make(CharSequence source, char[] sub,
@@ -34,6 +36,8 @@ public static AlteredCharSequence make(CharSequence source, char[] sub,
 
     private CharSequence mSource;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.845 -0500", hash_original_method = "C1A67ADB666FBDE0BE16EFE2B57C9F5A", hash_generated_method = "1DCF11D364EB377957847AE0208B2BE6")
     
 private AlteredCharSequence(CharSequence source, char[] sub,
@@ -44,7 +48,9 @@ private AlteredCharSequence(CharSequence source, char[] sub,
         mEnd = subend;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.848 -0500", hash_original_method = "1FC7902EB789E6071EA22FDF8DF92DE5", hash_generated_method = "1FC7902EB789E6071EA22FDF8DF92DE5")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.848 -0500", hash_original_method = "1FC7902EB789E6071EA22FDF8DF92DE5", hash_generated_method = "1FC7902EB789E6071EA22FDF8DF92DE5")
     
 void update(char[] sub, int substart, int subend) {
         mChars = sub;
@@ -52,6 +58,8 @@ void update(char[] sub, int substart, int subend) {
         mEnd = subend;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.883 -0500", hash_original_method = "37BE7FFEC25E3F757ADB66C6F1A52CBB", hash_generated_method = "190A26A16D5CCDA3DA923FB44382D646")
     
 public char charAt(int off) {
@@ -61,18 +69,24 @@ public char charAt(int off) {
             return mSource.charAt(off);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.897 -0500", hash_original_method = "8E527DE4EB6C1554A95561AAE7972C80", hash_generated_method = "88CC0EBD9B4A5464D3519D909E5714E3")
     
 public void getChars(int start, int end, char[] dest, int off) {
@@ -85,7 +99,9 @@ public void getChars(int start, int end, char[] dest, int off) {
             System.arraycopy(mChars, start - mStart, dest, off, end - start);
     }
     
-	public String toString() {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public String toString() {
 		return new String();
 	}
     
@@ -93,6 +109,8 @@ public void getChars(int start, int end, char[] dest, int off) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.876 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
 
         private Spanned mSpanned;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.854 -0500", hash_original_method = "C72F214965B45129737A1599B1B4D92F", hash_generated_method = "E4DB70EB53548839B4C3558844CE5BC4")
         
 private AlteredSpanned(CharSequence source, char[] sub,

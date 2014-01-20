@@ -75,6 +75,8 @@ public StringBuffer(String string) {
      *            if {@code cs} is {@code null}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.052 -0500", hash_original_method = "8B31F280D5DC89D8F89BF293509278C5", hash_generated_method = "BDEE148D02BA5765CEAF19AA1AB377D3")
     
 public StringBuffer(CharSequence cs) {
@@ -897,6 +899,8 @@ public synchronized StringBuffer reverse() {
         super.trimToSize();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.171 -0500", hash_original_method = "1BC53113CC0063A57FC602AA53299ECD", hash_generated_method = "527366FA4E1C2D0442B6D8734C4FD80A")
     
 private synchronized void writeObject(ObjectOutputStream out)
@@ -908,6 +912,8 @@ private synchronized void writeObject(ObjectOutputStream out)
         out.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.173 -0500", hash_original_method = "9B6E3FB5AF7FD24ED316678958241184", hash_generated_method = "AC7A443A026FB65B591ED989CDC16D2F")
     
 private void readObject(ObjectInputStream in) throws IOException,

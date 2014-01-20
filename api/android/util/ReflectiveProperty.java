@@ -92,6 +92,8 @@ public ReflectiveProperty(Class<T> propertyHolder, Class<V> valueType, String na
      * method/field will probably be a primitive type instead. Accept float as matching Float,
      * etc.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.309 -0500", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "90EE6004B1BC61FC87B465AFC51A1F2D")
     
 private boolean typesMatch(Class<V> valueType, Class getterType) {

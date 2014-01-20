@@ -16,6 +16,8 @@ public final class CollationElementIterator {
      *            the element of the collation.
      * @return the element's 16 bit primary order.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.271 -0500", hash_original_method = "D45AACC1784EFE96257BB7DED0205226", hash_generated_method = "7AF95849154BC919DB73EF5F0602B568")
     
 public static final int primaryOrder(int order) {
@@ -30,6 +32,8 @@ public static final int primaryOrder(int order) {
      *            the element of the collator.
      * @return the 8 bit secondary order of the element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.275 -0500", hash_original_method = "1140CD5E96A0E40D8BD81BCBE0AC1128", hash_generated_method = "85B1520249AF45217F458EC4D3DC1BA8")
     
 public static final short secondaryOrder(int order) {
@@ -44,6 +48,8 @@ public static final short secondaryOrder(int order) {
      *            the element of the collation.
      * @return the 8 bit tertiary order of the element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.285 -0500", hash_original_method = "F642473139BF0FEECA4488F11934C82A", hash_generated_method = "68ADC2128FAEEDE72B974D8526C24406")
     
 public static final short tertiaryOrder(int order) {
@@ -56,6 +62,8 @@ public static final short tertiaryOrder(int order) {
 
     private CollationElementIteratorICU icuIterator;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.259 -0500", hash_original_method = "C4D82AD91997942FF2D2C5DD5D5F8256", hash_generated_method = "C4D82AD91997942FF2D2C5DD5D5F8256")
     
 CollationElementIterator(CollationElementIteratorICU iterator) {
@@ -74,6 +82,8 @@ CollationElementIterator(CollationElementIteratorICU iterator) {
      * @return the maximum length of any expansion sequence ending with the
      *         specified collation element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.261 -0500", hash_original_method = "3D8662E172DF94DE766C937C706B5067", hash_generated_method = "5364E5A27E3DF6E0EF2FBFD834D7184C")
     
@@ -104,6 +114,8 @@ public int getMaxExpansion(int order) {
      *         will be returned by the next invocation of the {@link #next()}
      *         method.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.264 -0500", hash_original_method = "86FFE9FC429F590289C595CEB48BC74B", hash_generated_method = "C1B3A53EF650EBA442EDBFDD333BC45F")
     
@@ -117,6 +129,8 @@ public int getOffset() {
      * @return the next collation element or {@code NULLORDER} if the end
      *         of the iteration has been reached.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.266 -0500", hash_original_method = "57F823A473B8AE20AA92B1969F9DE507", hash_generated_method = "F6D4D9F8B3E5E0232F37E3438B4DA659")
     
 public int next() {
@@ -129,6 +143,8 @@ public int next() {
      * @return the previous collation element, or {@code NULLORDER} when
      *         the start of the iteration has been reached.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.268 -0500", hash_original_method = "3E3F3B80F1885FD18E0677AD75F46948", hash_generated_method = "5B6D4228F03D9A4091FE3AEDB1F8F662")
     
 public int previous() {
@@ -144,6 +160,8 @@ public int previous() {
      * attributes changed, calling {@code reset()} reinitializes the iterator to
      * use the new attributes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.273 -0500", hash_original_method = "CFBEE5200E8F292823205998EF4A1A4C", hash_generated_method = "274D6D48484D467E674F0119E7801A2A")
     
 public void reset() {
@@ -172,6 +190,8 @@ public void reset() {
      *            Note that this is not an offset into the corresponding
      *            sequence of collation elements.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.278 -0500", hash_original_method = "B5159E04ADD34F8792FC76901FA3C75B", hash_generated_method = "D0D4C87AF30D64D3B685B8EA0A6AAE44")
     
@@ -186,6 +206,8 @@ public void setOffset(int newOffset) {
      * @param source
      *            the new source string iterator for iteration.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.280 -0500", hash_original_method = "4B7E5FB8D17EE6600C521F075CD85C4D", hash_generated_method = "961ABBD54DCA1D21997245B688E95566")
     
 public void setText(CharacterIterator source) {
@@ -199,6 +221,8 @@ public void setText(CharacterIterator source) {
      * @param source
      *            the new source string for iteration.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.283 -0500", hash_original_method = "5641B3FAAAA5E41E8D2876C4B877177C", hash_generated_method = "01E9C99A0F71D53E6F2BC83AE127E043")
     

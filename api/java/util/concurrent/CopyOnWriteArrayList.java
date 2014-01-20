@@ -23,6 +23,8 @@ import libcore.util.Objects;
 
 public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.950 -0500", hash_original_method = "C42EED85EE25206F94CCF01E5CEAD68C", hash_generated_method = "6B24A90E95A1434E966751946DCEB460")
     
 static boolean containsAll(Collection<?> collection, Object[] snapshot, int from, int to) {
@@ -34,6 +36,8 @@ static boolean containsAll(Collection<?> collection, Object[] snapshot, int from
         return true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.025 -0500", hash_original_method = "AE5D3DEFCCE0E3FC6EC46BC47A64D153", hash_generated_method = "55332F1BF88F2737B54A34D956F8DBAC")
     
 static int lastIndexOf(Object o, Object[] data, int from, int to) {
@@ -53,6 +57,8 @@ static int lastIndexOf(Object o, Object[] data, int from, int to) {
         return -1;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.027 -0500", hash_original_method = "504933ED8B334053A53FA397546C5B85", hash_generated_method = "C18CB0FE7B2EB3676356370B7238F27B")
     
 static int indexOf(Object o, Object[] data, int from, int to) {
@@ -92,6 +98,8 @@ public CopyOnWriteArrayList() {
     /**
      * Creates a new instance containing the elements of {@code collection}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.932 -0500", hash_original_method = "84AACC1E4283EC6F676E4F2CD339FC5B", hash_generated_method = "055556F726947E25A73EAD27BE56F44C")
     
 @SuppressWarnings("unchecked")
@@ -110,6 +118,8 @@ public CopyOnWriteArrayList(E[] array) {
         this.elements = Arrays.copyOf(array, array.length, Object[].class);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.937 -0500", hash_original_method = "FF2ED4DF1B70DABD1A45F755E1952592", hash_generated_method = "09F8363AB090F7EA92B2D49E3162453A")
     
 @Override public Object clone() {
@@ -122,12 +132,16 @@ public CopyOnWriteArrayList(E[] array) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.939 -0500", hash_original_method = "68DC52534F60D1A5138253A79B12E67C", hash_generated_method = "F9DA793CCA7A2C61149490BBDD9BAC62")
     
 public int size() {
         return elements.length;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.942 -0500", hash_original_method = "07C72EA93D8BC7AB1EE5326762E05E69", hash_generated_method = "B8501BC5823BDF19EB13EA69078CA5AF")
     
@@ -136,12 +150,16 @@ public int size() {
         return (E) elements[index];
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.945 -0500", hash_original_method = "1274BF0858E749C3D9852E86C4A99C22", hash_generated_method = "6DA9BA6F033792CEAA68BABF51C0C85D")
     
 public boolean contains(Object o) {
         return indexOf(o) != -1;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.947 -0500", hash_original_method = "F181183DABCA5209C115C87B0BC63071", hash_generated_method = "EF0A8DFCAD171CA6E7FD057CE73091AB")
     
 public boolean containsAll(Collection<?> collection) {
@@ -155,6 +173,8 @@ public boolean containsAll(Collection<?> collection) {
      *
      * @return the index or -1 if the object was not found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.952 -0500", hash_original_method = "8F838DDE7B5E08714D6360ECE6328BF5", hash_generated_method = "785125CFAC9AD265CFD59C5BB3AD7B87")
     
 public int indexOf(E object, int from) {
@@ -162,6 +182,8 @@ public int indexOf(E object, int from) {
         return indexOf(object, snapshot, from, snapshot.length);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.955 -0500", hash_original_method = "3333011450759BE4404CA7231EDCF09F", hash_generated_method = "1228E5BF23DB59CA54F76F52F6C50D92")
     
 public int indexOf(Object object) {
@@ -175,6 +197,8 @@ public int indexOf(Object object) {
      *
      * @return the index or -1 if the object was not found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.957 -0500", hash_original_method = "19C8A04DC3A46E49A84DF6B57E1917A9", hash_generated_method = "CDBBAE7CB48B9ADBC68BDDBD3C5C1344")
     
 public int lastIndexOf(E object, int to) {
@@ -182,6 +206,8 @@ public int lastIndexOf(E object, int to) {
         return lastIndexOf(object, snapshot, 0, to);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.959 -0500", hash_original_method = "D45902A72D19AFDC170F4A4D129ABA97", hash_generated_method = "D8EA9A9A72C7FD75C840EF61C473CA5B")
     
 public int lastIndexOf(Object object) {
@@ -223,6 +249,8 @@ public Iterator<E> iterator() {
      * <p>The returned iterator does not support {@link ListIterator#add},
      * {@link ListIterator#set} or {@link Iterator#remove()},
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.966 -0500", hash_original_method = "6CF42CA16C3188E71052A9A04B3E4D16", hash_generated_method = "1A76DC37F1E5ACEE1723E409EC686FA8")
     
 public ListIterator<E> listIterator(int index) {
@@ -238,6 +266,8 @@ public ListIterator<E> listIterator(int index) {
     /**
      * Equivalent to {@code listIterator(0)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.969 -0500", hash_original_method = "A4A3425D1D4C041DAFB5C093D1247DF1", hash_generated_method = "CDADF80558F3C689DFFAE1740861B5F9")
     
 public ListIterator<E> listIterator() {
@@ -245,6 +275,8 @@ public ListIterator<E> listIterator() {
         return new CowIterator<E>(snapshot, 0, snapshot.length);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.971 -0500", hash_original_method = "594A2D8CB57DB4B1D13107F70D453706", hash_generated_method = "CE88C9A85D8BD40C30A8ACB5DA660CE4")
     
 public List<E> subList(int from, int to) {
@@ -256,13 +288,17 @@ public List<E> subList(int from, int to) {
         return new CowSubList(snapshot, from, to);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.973 -0500", hash_original_method = "49659221AAE3F1C0ECCE830D1E5CE8D1", hash_generated_method = "66C692977C354165146FAD59B7600B06")
     
 public Object[] toArray() {
         return elements.clone();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.850 -0400", hash_original_method = "C1E48E79962F836E76F520B2DEE3FDB8", hash_generated_method = "2906A4D4D1D1A23323A06045B06FBF69")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.850 -0400", hash_original_method = "C1E48E79962F836E76F520B2DEE3FDB8", hash_generated_method = "2906A4D4D1D1A23323A06045B06FBF69")
     @SuppressWarnings({"unchecked","SuspiciousSystemArraycopy"})
     public <T> T[] toArray(T[] contents) {
         addTaint(contents[0].getTaint());
@@ -293,6 +329,8 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_39742848 =         contents;
         //return contents;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.979 -0500", hash_original_method = "6010CBD888F6152118D77E36B5616E02", hash_generated_method = "95BA1BB990E57A82ECF905695CF62B33")
     
 @Override public boolean equals(Object other) {
@@ -313,12 +351,16 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_39742848 =         contents;
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.981 -0500", hash_original_method = "5CBAD38024C40A34FCDA1A3FF083FDEC", hash_generated_method = "7DC2C2D377925CE8F1E60FBC83A9BAB2")
     
 @Override public int hashCode() {
         return Arrays.hashCode(elements);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.984 -0500", hash_original_method = "D569C6F4ED8C88274D5F2CC2C9F6FBD2", hash_generated_method = "F1E6EEE48B49AC857ED788D30B57C0FF")
     
 @Override public String toString() {
@@ -337,6 +379,8 @@ public synchronized boolean add(E e) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.989 -0500", hash_original_method = "9DD013FF12CCDC2B9301BB35B7E69B98", hash_generated_method = "BF4A31867BFBDC774A42CA3DE2C5543A")
     
 public synchronized void add(int index, E e) {
@@ -347,12 +391,16 @@ public synchronized void add(int index, E e) {
         elements = newElements;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.992 -0500", hash_original_method = "76766E6A3193E0133903AC8237158932", hash_generated_method = "D4F569A652C595934F2B46B92806C013")
     
 public synchronized boolean addAll(Collection<? extends E> collection) {
         return addAll(elements.length, collection);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.995 -0500", hash_original_method = "16622B391256B6F864845FABB18695E4", hash_generated_method = "B2639FD4CF4C0E7F8A484D4EB91B659C")
     
 public synchronized boolean addAll(int index, Collection<? extends E> collection) {
@@ -375,6 +423,8 @@ public synchronized boolean addAll(int index, Collection<? extends E> collection
      * <p>Callers of this method may prefer {@link CopyOnWriteArraySet}, whose
      * API is more appropriate for set operations.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.998 -0500", hash_original_method = "F6411BBDC5A81E1C464E9CEEEB8CCCF0", hash_generated_method = "1530D6362C247347C74805FFE0476B68")
     
 public synchronized int addAllAbsent(Collection<? extends E> collection) {
@@ -401,6 +451,8 @@ public synchronized int addAllAbsent(Collection<? extends E> collection) {
      * <p>Callers of this method may prefer {@link CopyOnWriteArraySet}, whose
      * API is more appropriate for set operations.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.000 -0500", hash_original_method = "17D643777423FC6042E703F36B3EB43F", hash_generated_method = "56919D2D9BA5B4BE1BFCFEB430260039")
     
 public synchronized boolean addIfAbsent(E object) {
@@ -411,12 +463,16 @@ public synchronized boolean addIfAbsent(E object) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.003 -0500", hash_original_method = "343DE0C64B38A0F7CE33FC0930F8B1CE", hash_generated_method = "BC538F2B1E8623592395CB5158B89D9B")
     
 @Override public synchronized void clear() {
         elements = EmptyArray.OBJECT;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.006 -0500", hash_original_method = "83ED6C7BC28A1565457859811EDD5A3A", hash_generated_method = "B9B20CC48173A0B993B8065C80E3FC1D")
     
 public synchronized E remove(int index) {
@@ -439,12 +495,16 @@ public synchronized boolean remove(Object o) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.011 -0500", hash_original_method = "1C7B7BE5468A5E30603ED6851F28BACD", hash_generated_method = "B58C465C19D7C5E1DEF895B1132ADA61")
     
 public synchronized boolean removeAll(Collection<?> collection) {
         return removeOrRetain(collection, false, 0, elements.length) != 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.014 -0500", hash_original_method = "6F7BCA7B0FD040BA943A37C2A3FEA10F", hash_generated_method = "4D5A066BB20A3B18DE0CC873BCD48514")
     
 public synchronized boolean retainAll(Collection<?> collection) {
@@ -455,6 +515,8 @@ public synchronized boolean retainAll(Collection<?> collection) {
      * Removes or retains the elements in {@code collection}. Returns the number
      * of elements removed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.017 -0500", hash_original_method = "4C6E97480A096674EA078C65954A8FE2", hash_generated_method = "47D239EC4D7FBBF93E23B211D4E97D64")
     
 private int removeOrRetain(Collection<?> collection, boolean retain, int from, int to) {
@@ -495,6 +557,8 @@ private int removeOrRetain(Collection<?> collection, boolean retain, int from, i
         return 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.020 -0500", hash_original_method = "DD4407442CC828B95DFD10F580DA2DDA", hash_generated_method = "B675E951E2B618950D3AB8DB9CB4F22C")
     
@@ -507,6 +571,8 @@ public synchronized E set(int index, E e) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.022 -0500", hash_original_method = "3E2723924788C644A99252EDEC8904D6", hash_generated_method = "0A2000680A1776B7FB92BBE05211E1B7")
     
 private void removeRange(int from, int to) {
@@ -516,6 +582,8 @@ private void removeRange(int from, int to) {
         elements = newElements;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.029 -0500", hash_original_method = "223CD20A6350F975434ED49A9EB8E646", hash_generated_method = "1C0E5B506CC6D74BA562E67AA4D5265F")
     
@@ -524,6 +592,8 @@ final Object[] getArray() {
         return elements;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.161 -0500", hash_original_method = "53FDF52EC3502469838FF7FC9C3722C1", hash_generated_method = "2AFECBE8B96C55694756BAEE30187895")
     
 private void writeObject(ObjectOutputStream out) throws IOException {
@@ -766,6 +836,8 @@ public CowSubList(Object[] expectedElements, int from, int to) {
 
         private  int to;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.109 -0500", hash_original_method = "83A1C0AAD9B8B03E61B8B75E1CD914D7", hash_generated_method = "83A1C0AAD9B8B03E61B8B75E1CD914D7")
         
 Slice(Object[] expectedElements, int from, int to) {
@@ -777,6 +849,8 @@ Slice(Object[] expectedElements, int from, int to) {
         /**
          * Throws if {@code index} doesn't identify an element in the array.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.111 -0500", hash_original_method = "C41DDBF64E4B04157ED5EDFC21AF561C", hash_generated_method = "C41DDBF64E4B04157ED5EDFC21AF561C")
         
 void checkElementIndex(int index) {
@@ -789,6 +863,8 @@ void checkElementIndex(int index) {
          * Throws if {@code index} doesn't identify an insertion point in the
          * array. Unlike element index, it's okay to add or iterate at size().
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.113 -0500", hash_original_method = "D022C90E4388D47B06DB5C9D4119BF1C", hash_generated_method = "D022C90E4388D47B06DB5C9D4119BF1C")
         
 void checkPositionIndex(int index) {
@@ -797,6 +873,8 @@ void checkPositionIndex(int index) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.116 -0500", hash_original_method = "7DF1E46EED7497F4680296245E77E1DC", hash_generated_method = "7DF1E46EED7497F4680296245E77E1DC")
         
 void checkConcurrentModification(Object[] snapshot) {
@@ -821,6 +899,8 @@ void checkConcurrentModification(Object[] snapshot) {
 
         private int index = 0;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.133 -0500", hash_original_method = "E0987AFDD42E4364FE4BB0FD3F1A0501", hash_generated_method = "E0987AFDD42E4364FE4BB0FD3F1A0501")
         
 CowIterator(Object[] snapshot, int from, int to) {
@@ -897,6 +977,8 @@ public void set(E object) {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.163 -0500", hash_original_method = "5D8878D7111BA02D76F457F9A02251F1", hash_generated_method = "AC2D919729F64A6C1DFB88AC24ED42FC")
     
 private synchronized void readObject(ObjectInputStream in)

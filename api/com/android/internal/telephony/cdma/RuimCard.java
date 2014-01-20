@@ -6,10 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.telephony.IccCard;
 
-
-
 public final class RuimCard extends IccCard {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.546 -0500", hash_original_method = "B727D2F994ECB759A082BD5FA4C042CC", hash_generated_method = "B727D2F994ECB759A082BD5FA4C042CC")
     
 RuimCard(CDMAPhone phone, String LOG_TAG, boolean dbg) {
@@ -37,7 +37,6 @@ RuimCard(CDMAPhone phone, String LOG_TAG, boolean dbg) {
     public String getServiceProviderName () {
         return mPhone.mIccRecords.getServiceProviderName();
     }
-
     
 }
 

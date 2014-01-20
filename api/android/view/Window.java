@@ -18,6 +18,8 @@ import android.view.accessibility.AccessibilityEvent;
 
 public abstract class Window {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static CompatibilityInfoHolder getCompatInfo(Context context) {
     	CompatibilityInfoHolder retVal;
         Application app = (Application)context.getApplicationContext();
@@ -340,6 +342,8 @@ public abstract void takeInputQueue(InputQueue.Callback callback);
      * @return Returns true if the window is configured to be displayed floating
      * on top of whatever is behind it.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.703 -0500", hash_original_method = "DC8EB6738801C481B4EE73E5DB010C0B", hash_generated_method = "C5D94EC02DADE54137B266373C99D648")
     
 public abstract boolean isFloating();
@@ -624,6 +628,8 @@ public void setCloseOnTouchOutsideIfNotSet(boolean close) {
     }
     
     /** @hide */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.748 -0500", hash_original_method = "ECAC4D4F75238244675EE49EE332E518", hash_generated_method = "03DCD867BBE5E0EF8C0907D757F3E483")
     
 public abstract void alwaysReadCloseOnTouchAttr();
@@ -639,6 +645,8 @@ public boolean shouldCloseOnTouch(Context context, MotionEvent event) {
         return false;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.753 -0500", hash_original_method = "AB4AFCB92A037D63668D3D8B793C0712", hash_generated_method = "2E2E79A6D34196E9E4A65BCF67F5E4C8")
     
 private boolean isOutOfBounds(Context context, MotionEvent event) {
@@ -726,8 +734,8 @@ public View findViewById(int id) {
      * @param layoutResID Resource ID to be inflated.
      * @see #setContentView(View, android.view.ViewGroup.LayoutParams)
      */
-    @DSComment("Normal UI operations")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.768 -0500", hash_original_method = "9773B78A0DDFABD7EC1D4950258114B8", hash_generated_method = "EB433CC04E8E9E0A64557B9580BE400E")
     
 public abstract void setContentView(int layoutResID);
@@ -742,6 +750,8 @@ public abstract void setContentView(int layoutResID);
      * @param view The desired content to display.
      * @see #setContentView(View, android.view.ViewGroup.LayoutParams)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.771 -0500", hash_original_method = "AF94DA1B8B3F19BB99455C41C42AAA2F", hash_generated_method = "7C75EF3022C19CA0AC6D4456AC6BC868")
     
 public abstract void setContentView(View view);
@@ -783,6 +793,8 @@ public abstract void addContentView(View view, ViewGroup.LayoutParams params);
      *
      * @return View The current View with focus or null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.781 -0500", hash_original_method = "507FEC83FAC03422D964FF6776DEED99", hash_generated_method = "F7ED30B276282FDAA9CEB77D401B4EB2")
     
 public abstract View getCurrentFocus();
@@ -793,54 +805,72 @@ public abstract View getCurrentFocus();
      *
      * @return LayoutInflater The shared LayoutInflater.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.784 -0500", hash_original_method = "847F3379611271C0321E2C5BAA33B7FA", hash_generated_method = "8FB812958D8E2D9F54789B094DECD781")
     
 public abstract LayoutInflater getLayoutInflater();
 
-    @DSComment("Normal UI operations")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.787 -0500", hash_original_method = "410835EEA321510B785087E900780AFB", hash_generated_method = "F61FA778C52CF90209781407DFEFC387")
     
 public abstract void setTitle(CharSequence title);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.789 -0500", hash_original_method = "FBE668620F097D2B1FD15F1108FE61BF", hash_generated_method = "38D664D8F582AA9CE8BF80135B76B213")
     
 public abstract void setTitleColor(int textColor);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.791 -0500", hash_original_method = "E3F140A8A8946BBC4133CA8E35BE24A2", hash_generated_method = "EB53D1759C01B34065D8EFF757E094AE")
     
 public abstract void openPanel(int featureId, KeyEvent event);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.794 -0500", hash_original_method = "17C348F7D6A27EB7E670CF4E97DB069A", hash_generated_method = "C5E28C46FC3BE6940390177BE65BD46E")
     
 public abstract void closePanel(int featureId);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.797 -0500", hash_original_method = "B7E544C233801B67A59F057C364E33AE", hash_generated_method = "56E4A676A3C14B8726ACB0C5A19BB79B")
     
 public abstract void togglePanel(int featureId, KeyEvent event);
 
-    @DSComment("Normal UI operations")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.800 -0500", hash_original_method = "ED5A2AB5A6A6225F17A71D49A205D55B", hash_generated_method = "3AF92264D614DD6D3C6140C9D60AEF63")
     
 public abstract void invalidatePanelMenu(int featureId);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.803 -0500", hash_original_method = "57C27522BC8A2BD20032BAB8BDF1BC84", hash_generated_method = "2CF623669E242775C92A49875BF8A904")
     
 public abstract boolean performPanelShortcut(int featureId,
                                                  int keyCode,
                                                  KeyEvent event,
                                                  int flags);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.806 -0500", hash_original_method = "FFD6B495855F1C596AE1C5FE4D74FA0E", hash_generated_method = "1D3384F9A7095A92AD4FF11977BA0739")
     
 public abstract boolean performPanelIdentifierAction(int featureId,
                                                  int id,
                                                  int flags);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.809 -0500", hash_original_method = "02386DB32EC504F68F7F7939721861EB", hash_generated_method = "5BC90B45830AC0D44B19D720598E60C7")
     
 public abstract void closeAllPanels();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.812 -0500", hash_original_method = "CF91ED3CA90DF5B83550D754FC71B528", hash_generated_method = "2F3B6CC21808873F4DE190F0481E6768")
     
 public abstract boolean performContextMenuIdentifierAction(int id, int flags);
@@ -850,6 +880,8 @@ public abstract boolean performContextMenuIdentifierAction(int id, int flags);
      * 
      * @param newConfig The new configuration.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.815 -0500", hash_original_method = "1AE11CFD391BD9AE98B6BD4696F9FDCA", hash_generated_method = "10F7775671EDD17F46F560ADD64B19A7")
     
 public abstract void onConfigurationChanged(Configuration newConfig);
@@ -879,6 +911,8 @@ public void setBackgroundDrawableResource(int resid)
      *
      * @param drawable The new Drawable to use for this window's background.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.820 -0500", hash_original_method = "413AE16E7BB25699B376E766DB0A8D3D", hash_generated_method = "BE47D9F2FD6C215AED538CB308453AFC")
     
 public abstract void setBackgroundDrawable(Drawable drawable);
@@ -894,8 +928,8 @@ public abstract void setBackgroundDrawable(Drawable drawable);
      * constant by Window.
      * @param resId Resource identifier of the desired image.
      */
-    @DSComment("Normal UI operations")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.823 -0500", hash_original_method = "D85024C42C38E01D8D1381EA0521413A", hash_generated_method = "8F53D434F9FEEAE22B35D318FA73CC8A")
     
 public abstract void setFeatureDrawableResource(int featureId, int resId);
@@ -914,6 +948,8 @@ public abstract void setFeatureDrawableResource(int featureId, int resId);
      * constants defined by Window.
      * @param uri The desired URI.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.825 -0500", hash_original_method = "606E3B866EAA709E9AD8275566324796", hash_generated_method = "628262CC8BBF9DEF97C060ED121954EB")
     
 public abstract void setFeatureDrawableUri(int featureId, Uri uri);
@@ -926,6 +962,8 @@ public abstract void setFeatureDrawableUri(int featureId, Uri uri);
      * Features are constants defined by Window.
      * @param drawable A Drawable object to display.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.828 -0500", hash_original_method = "5D87EAB77EFB6B36E1B55DA6ADE4971E", hash_generated_method = "07A6FF99C5A6A6108FE676B6201685B1")
     
 public abstract void setFeatureDrawable(int featureId, Drawable drawable);
@@ -939,6 +977,8 @@ public abstract void setFeatureDrawable(int featureId, Drawable drawable);
      * @param alpha The alpha amount, 0 is completely transparent and 255 is
      *              completely opaque.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.834 -0500", hash_original_method = "C0C8F25B5F920501D9958E4D2352BD14", hash_generated_method = "7C1EDA2F0C35DC3785D5BE9FC0B9F644")
     
 public abstract void setFeatureDrawableAlpha(int featureId, int alpha);
@@ -953,8 +993,8 @@ public abstract void setFeatureDrawableAlpha(int featureId, int alpha);
      * @param value The value for the feature.  The interpretation of this
      *              value is feature-specific.
      */
-    @DSComment("Normal UI operations")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.837 -0500", hash_original_method = "F69F194C10A724FF5B54AE7707FA4E1F", hash_generated_method = "42C5E0BC5C45BCA76685BDD45D4E7A66")
     
 public abstract void setFeatureInt(int featureId, int value);
@@ -964,6 +1004,8 @@ public abstract void setFeatureInt(int featureId, int value);
      * activity has no views with focus, but the activity still wants
      * a chance to process key events.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.840 -0500", hash_original_method = "28F608A9E663E51DCFC12E09E6764B8F", hash_generated_method = "6C0A4C97DA6DA505BAB7EFFBA6D1C4E3")
     
 public abstract void takeKeyEvents(boolean get);
@@ -974,6 +1016,8 @@ public abstract void takeKeyEvents(boolean get);
      * not need to implement or call this.
      *
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.842 -0500", hash_original_method = "D1451E151613AE9B75118E481B4EEA60", hash_generated_method = "D5F884291B7F1B1C530292AA966CA735")
     
 public abstract boolean superDispatchKeyEvent(KeyEvent event);
@@ -1104,6 +1148,8 @@ public final void addView(View view, ViewGroup.LayoutParams params) {
      * not need to implement or call this.
      *
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.845 -0500", hash_original_method = "6C7372A6AAED52604447FEC6A64B288B", hash_generated_method = "FBFDD993FA5F6C13470FDF2E18CE9642")
     
 public abstract boolean superDispatchKeyShortcutEvent(KeyEvent event);
@@ -1114,6 +1160,8 @@ public abstract boolean superDispatchKeyShortcutEvent(KeyEvent event);
      * not need to implement or call this.
      *
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.848 -0500", hash_original_method = "E5160F800594D1AAD73D8C30FF262B56", hash_generated_method = "48F5ED9E47EA85886FB52F6888A37DE6")
     
 public abstract boolean superDispatchTouchEvent(MotionEvent event);
@@ -1124,6 +1172,8 @@ public abstract boolean superDispatchTouchEvent(MotionEvent event);
      * not need to implement or call this.
      *
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.850 -0500", hash_original_method = "8F45AF12C4C1F8295DF4B1576F2849CB", hash_generated_method = "1D4006478FBEE10C7D10CF12564A2276")
     
 public abstract boolean superDispatchTrackballEvent(MotionEvent event);
@@ -1134,6 +1184,8 @@ public abstract boolean superDispatchTrackballEvent(MotionEvent event);
      * not need to implement or call this.
      *
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.854 -0500", hash_original_method = "3EEB372C3A6CF7A6285F5820C3E6AA47", hash_generated_method = "A005D4A8693BD01466990BC9769FC250")
     
 public abstract boolean superDispatchGenericMotionEvent(MotionEvent event);
@@ -1149,8 +1201,8 @@ public abstract boolean superDispatchGenericMotionEvent(MotionEvent event);
      * 
      * @return Returns the top-level window decor view.
      */
-    @DSComment("Normal UI operations")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.856 -0500", hash_original_method = "83066C83022E8181658B34D6E338F2C6", hash_generated_method = "54D70119532474D04D2C263537967038")
     
 public abstract View getDecorView();
@@ -1162,18 +1214,26 @@ public abstract View getDecorView();
      * @return Returns the top-level window decor or null.
      * @see #getDecorView
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.859 -0500", hash_original_method = "2974F4DCDFC5197E408CC7132A85C497", hash_generated_method = "AC66449657450B58FE24F7BE61A493AE")
     
 public abstract View peekDecorView();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.861 -0500", hash_original_method = "68C4DB4B1C44FD7724106402D0F5F177", hash_generated_method = "DF8122A9A10BA3C6C573005E047ABB19")
     
 public abstract Bundle saveHierarchyState();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.864 -0500", hash_original_method = "8EE3C98BDDCEAF1033423457647508C1", hash_generated_method = "B19D245C1F299DD2EF370F3415329349")
     
 public abstract void restoreHierarchyState(Bundle savedInstanceState);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.867 -0500", hash_original_method = "67F014C6E07E062BFF37CE9BC7936F72", hash_generated_method = "28DBC7E78B766240A7F794DEBE59B15A")
     
 protected abstract void onActive();
@@ -1256,10 +1316,14 @@ protected boolean haveDimAmount() {
         return mHaveDimAmount;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.882 -0500", hash_original_method = "E183EAEC11BA99DB4FC1ABD632308ED6", hash_generated_method = "A873284BFB86D1301955C5E6E3AED808")
     
 public abstract void setChildDrawable(int featureId, Drawable drawable);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.884 -0500", hash_original_method = "91795A246E82C211760659389AB7E425", hash_generated_method = "8EAEFC23FA8FD2B5718A2D35594663D8")
     
 public abstract void setChildInt(int featureId, int value);
@@ -1269,6 +1333,8 @@ public abstract void setChildInt(int featureId, int value);
      * @param keyCode the key code from {@link android.view.KeyEvent} to check.
      * @param event the {@link android.view.KeyEvent} to use to help check.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.887 -0500", hash_original_method = "B26619F1D37F9834AAF85A0F4DE23CD5", hash_generated_method = "76A548F8E3C0BCABED0B6DF2C71B59AE")
     
 public abstract boolean isShortcutKey(int keyCode, KeyEvent event);
@@ -1276,6 +1342,8 @@ public abstract boolean isShortcutKey(int keyCode, KeyEvent event);
     /**
      * @see android.app.Activity#setVolumeControlStream(int) 
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.889 -0500", hash_original_method = "990D00AE8E113AC83065E187F08BB6F3", hash_generated_method = "0FCF48EBB7E229B2613FD06DE8596EF2")
     
 public abstract void setVolumeControlStream(int streamType);
@@ -1283,6 +1351,8 @@ public abstract void setVolumeControlStream(int streamType);
     /**
      * @see android.app.Activity#getVolumeControlStream()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.892 -0500", hash_original_method = "E22A8B3D08EAD711AFBEA9D09A632202", hash_generated_method = "70ED8A285B2F0361BE472450A9D0E0EE")
     
 public abstract int getVolumeControlStream();

@@ -7,7 +7,9 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 
 public final class Phonenumber {
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:04.895 -0500", hash_original_method = "9F0C69719EBF6B458992D61E4BCC90E8", hash_generated_method = "C9B6A6946D35C4BEE39F9108178BA451")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:04.895 -0500", hash_original_method = "9F0C69719EBF6B458992D61E4BCC90E8", hash_generated_method = "C9B6A6946D35C4BEE39F9108178BA451")
     
 private Phonenumber() {}
     

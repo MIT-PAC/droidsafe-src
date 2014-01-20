@@ -164,6 +164,8 @@ public ParserAdapter (Parser parser)
      * @exception java.lang.NullPointerException If the parser parameter
      *            is null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.270 -0500", hash_original_method = "9AA60727AB1204C604E2657D93003A43", hash_generated_method = "6B109218C9EB16016D1B5C2BB2E7807F")
     
 private void setup (Parser parser)
@@ -742,6 +744,8 @@ public void processingInstruction (String target, String data)
     /**
      * Initialize the parser before each run.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.334 -0500", hash_original_method = "43648C78921975CBE3898500F19AF8D8", hash_generated_method = "9F1F2C486D2A19A1E8416EFED0962777")
     
 private void setupParser ()
@@ -789,7 +793,9 @@ AttributeListAdapter ()
      *
      * @param The SAX1 attribute list (with qnames).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.380 -0500", hash_original_method = "5931F172E3791972ECDA205EAC9CCB14", hash_generated_method = "5931F172E3791972ECDA205EAC9CCB14")
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.380 -0500", hash_original_method = "5931F172E3791972ECDA205EAC9CCB14", hash_generated_method = "5931F172E3791972ECDA205EAC9CCB14")
         
 void setAttributeList (AttributeList qAtts)
     {
@@ -977,6 +983,8 @@ public String getValue (String qName)
         
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.544 -0400", hash_original_method = "295B884B2E4E1E5DF2659FCF14AB7437", hash_generated_method = "A63E40ABA0ADB07D109396D7430691CA")
     private String [] processName(String qName, boolean isAttribute,
                    boolean useException) throws SAXException {
@@ -1022,6 +1030,8 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
      * @exception SAXException The client may throw
      *            an exception.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.339 -0500", hash_original_method = "FBBB3C346433F99D88D798BC2E1AE3CE", hash_generated_method = "FBBB3C346433F99D88D798BC2E1AE3CE")
     
 void reportError (String message)
@@ -1036,6 +1046,8 @@ void reportError (String message)
      *
      * @param message The error message.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.341 -0500", hash_original_method = "E1E473BD4A5E19C1B1699A01EEA95F9A", hash_generated_method = "9454753F528D595880A1AA56F6EBAA6D")
     
 private SAXParseException makeException (String message)
@@ -1058,6 +1070,8 @@ private SAXParseException makeException (String message)
      * @exception SAXNotSupportedException If a
      *            document is currently being parsed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.343 -0500", hash_original_method = "2915748C93DEC7F425A1836D3BEC9D20", hash_generated_method = "AFF8CCDD36BE6B6DEE077BD930AED755")
     
 private void checkNotParsing (String type, String name)

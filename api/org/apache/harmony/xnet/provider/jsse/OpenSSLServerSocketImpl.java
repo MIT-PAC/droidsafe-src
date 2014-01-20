@@ -247,6 +247,8 @@ public void setEnabledCompressionMethods(String[] methods) {
      * Check if any of the enabled cipher suites has a chance to work.
      * Not 100% accurate, just a useful diagnostic that the RI does.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.922 -0500", hash_original_method = "8DBC4EF4AD92DA8E96BA5DD8978DFCC3", hash_generated_method = "CD1D77D9A778F7D82D8B86B86F8CEF90")
     
 private void checkEnabledCipherSuites() throws SSLException {
@@ -293,6 +295,8 @@ private void checkEnabledCipherSuites() throws SSLException {
                                + "to support the enabled cipher suites.");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.925 -0500", hash_original_method = "23192C3ABD6FAD935D4B733BEA5E6735", hash_generated_method = "3454A90EE543E820D00A7F276E193966")
     
 private boolean checkForPrivateKey(String keyType, Class keyClass) {

@@ -34,6 +34,8 @@ public class PatternSyntaxException extends IllegalArgumentException {
      *            the character index around which the error occurred, or -1 if
      *            the index is not known.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.734 -0500", hash_original_method = "89B9A833AE2CE5B13E9F312F3F36ED4B", hash_generated_method = "00E8F812EAB398F385D00C450BD1C0AB")
     
 public PatternSyntaxException(String description, String pattern, int index) {
@@ -48,6 +50,8 @@ public PatternSyntaxException(String description, String pattern, int index) {
      * @return the regular expression.
      *
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.737 -0500", hash_original_method = "7A292BCA91A2C0FA8C2558D08D8D09A0", hash_generated_method = "1A9FDB8743C473586BF04DCAFF28A282")
     
@@ -62,6 +66,8 @@ public String getPattern() {
      *
      * @return the error message.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.740 -0500", hash_original_method = "103F1174601A04B5B5C014BF3A77F551", hash_generated_method = "3C2F0A3444D1C62640570528625D59B6")
     
@@ -103,6 +109,8 @@ public String getPattern() {
      *
      * @return the description.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.742 -0500", hash_original_method = "B876CD4C2F9B0449C0BFBE53447962F9", hash_generated_method = "E4511326242349EB0FABB36392B66DEB")
     
@@ -117,6 +125,8 @@ public String getDescription() {
      * @return the index.
      *
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.745 -0500", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "96CCC69099797392A28F97F5383D17E0")
     

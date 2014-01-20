@@ -36,6 +36,8 @@ public abstract class LogFactory {
      * that LogFactory.release(contextClassLoader) is called whenever a 
      * webapp is undeployed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.237 -0500", hash_original_method = "99E3A91D3C10CF72291E25D8500DEBBE", hash_generated_method = "1382044792DAC3A0FD246B154CBA0A69")
     
 private static final Hashtable createFactoryStore() {
@@ -640,6 +642,8 @@ protected static ClassLoader directGetContextClassLoader()
      * one has previously been created, or null if this is the first time
      * we have seen this particular classloader.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.267 -0500", hash_original_method = "A56069BFC3164E04069C579E1352C071", hash_generated_method = "C6257C81B9805CB643698CCD873C5C26")
     
 private static LogFactory getCachedFactory(ClassLoader contextClassLoader)
@@ -669,6 +673,8 @@ private static LogFactory getCachedFactory(ClassLoader contextClassLoader)
      *
      * @param factory should be the factory to cache. This should never be null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.270 -0500", hash_original_method = "70047EA0D2501A673893EF14AF73F944", hash_generated_method = "BE9AC6CFF1A525FB6D155E729F9356AF")
     
 private static void cacheFactory(ClassLoader classLoader, LogFactory factory)
@@ -975,6 +981,8 @@ protected static Object createFactory(String factoryClass, ClassLoader classLoad
      * <code>LogFactory</code> when that class is loaded via the same
      * classloader that loaded the <code>logFactoryClass</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.287 -0500", hash_original_method = "9E9B3F33140C2FD522BF5D0E76D4CFF1", hash_generated_method = "1A62B6752C21BD03839E0B0B6F746EB5")
     
 private static boolean implementsLogFactory(Class logFactoryClass) {
@@ -1153,6 +1161,8 @@ private static Properties getProperties(final URL url) {
      * webapps. Webapps can also use explicit priorities to override a configuration
      * file in the shared classpath if needed. 
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.309 -0500", hash_original_method = "7DE9F3F0C3643EF9168BBA0425C15953", hash_generated_method = "8C2EDDBC3FE50A6648874505FBBE5C85")
     
 private static final Properties getConfigurationFile(
@@ -1246,6 +1256,8 @@ private static final Properties getConfigurationFile(
      * output by setting the system property named {@link #DIAGNOSTICS_DEST_PROPERTY} to
      * a filename, or the special values STDOUT or STDERR. 
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.312 -0500", hash_original_method = "BB706202832664F36987A29B6723E314", hash_generated_method = "572798DAC5565ADBAB50961C38124BF7")
     
 private static void initDiagnostics() {
@@ -1332,6 +1344,8 @@ protected static boolean isDiagnosticsEnabled() {
      * 
      * @param msg is the diagnostic message to be output.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.317 -0500", hash_original_method = "236FA7D434741B1A7CF02D845E091B05", hash_generated_method = "5D6EBC1AA6B4939FB9BB8311FA342699")
     
 private static final void logDiagnostic(String msg) {
@@ -1374,6 +1388,8 @@ protected static final void logRawDiagnostic(String msg) {
      * @param clazz is the class whose classloader + tree are to be
      * output.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.322 -0500", hash_original_method = "E38F65D38D4D4B93D1A623DA076AB427", hash_generated_method = "B75AF62EB3787E7C63E2F853C1B93F8C")
     
 private static void logClassLoaderEnvironment(Class clazz) {
@@ -1413,6 +1429,8 @@ private static void logClassLoaderEnvironment(Class clazz) {
      * @param prefix 
      * @param classLoader
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.325 -0500", hash_original_method = "319AE7233CD27CBEA6DD860B25C7C22F", hash_generated_method = "FD4600DB6D8CFB08BF6C0AE2DAA3D58B")
     
 private static void logHierarchy(String prefix, ClassLoader classLoader) {
@@ -1555,6 +1573,8 @@ protected LogFactory() {
      *
      * @param name Name of the attribute to return
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.215 -0500", hash_original_method = "FCC4022F9438D02A03EAF9E0461B0B3B", hash_generated_method = "9607117A4C58FE37636FB3C445473F6C")
     
 public abstract Object getAttribute(String name);
@@ -1564,6 +1584,8 @@ public abstract Object getAttribute(String name);
      * configuration attributes.  If there are no such attributes, a zero
      * length array is returned.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.217 -0500", hash_original_method = "B483E463AD782788123AFB164C362A6B", hash_generated_method = "31D18C91D6F792C33F89EF815037FEE0")
     
 public abstract String[] getAttributeNames();
@@ -1577,6 +1599,8 @@ public abstract String[] getAttributeNames();
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.220 -0500", hash_original_method = "F4C3B8BB2CEF85EE0F12ADFC26E0DE54", hash_generated_method = "69F22EA425FE790B5B6947FF5AF247DA")
     
 public abstract Log getInstance(Class clazz)
@@ -1599,6 +1623,8 @@ public abstract Log getInstance(Class clazz)
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.222 -0500", hash_original_method = "C15C7EE976772EFCE731ED8180CFFC13", hash_generated_method = "E6B297E296FDBE84568CEE36B2D70207")
     
 public abstract Log getInstance(String name)
@@ -1611,6 +1637,8 @@ public abstract Log getInstance(String name)
      * throwing away a ClassLoader.  Dangling references to objects in that
      * class loader would prevent garbage collection.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.224 -0500", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "6DFA7D15E7B71D240B8AE9B1CDC7676A")
     
 public abstract void release();
@@ -1621,6 +1649,8 @@ public abstract void release();
      *
      * @param name Name of the attribute to remove
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.227 -0500", hash_original_method = "F2B1C6370498677CAD1FF1E7C1667F22", hash_generated_method = "9E20905C9741F4DC53902FA8DF269B39")
     
 public abstract void removeAttribute(String name);
@@ -1634,6 +1664,8 @@ public abstract void removeAttribute(String name);
      * @param value Value of the attribute to set, or <code>null</code>
      *  to remove any setting for this attribute
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.229 -0500", hash_original_method = "1F863C3C4F056307A6C164B0CC924493", hash_generated_method = "AFB2A798D58B4DB15FE29BA9093D5023")
     
 public abstract void setAttribute(String name, Object value);

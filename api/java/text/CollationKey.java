@@ -10,6 +10,8 @@ public abstract class CollationKey implements Comparable<CollationKey> {
 
     private  String source;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.372 -0500", hash_original_method = "FA2BB1F012B53BF817CC40F1D26354AF", hash_generated_method = "2BCBB035079A053386A5126B969D116F")
     
 protected CollationKey(String source) {
@@ -23,6 +25,8 @@ protected CollationKey(String source) {
      * @return a negative value if this key is less than {@code value},
      *         0 if they are equal, and a positive value if this key is greater.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.375 -0500", hash_original_method = "5A8B3826F27E8A10E70456EFF51F7B67", hash_generated_method = "34BE21858DBE7BB60BBE664DFC1749FC")
     
 public abstract int compareTo(CollationKey value);
@@ -32,6 +36,8 @@ public abstract int compareTo(CollationKey value);
      *
      * @return the source string of this collation key.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.377 -0500", hash_original_method = "CAA51A8D77816B9C71E897924204286F", hash_generated_method = "9B985589C949425CCB62BF63707CC1D4")
     
@@ -44,6 +50,8 @@ public String getSourceString() {
      *
      * @return an array of bytes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.379 -0500", hash_original_method = "31E18643298D4EE9D64BE0AC906151D9", hash_generated_method = "3D52100227B2457DAC4556D4C4615F2D")
     
 public abstract byte[] toByteArray();

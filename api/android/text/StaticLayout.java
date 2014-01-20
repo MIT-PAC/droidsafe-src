@@ -27,6 +27,8 @@ public class StaticLayout extends Layout {
      *                           (non-starters), which can be broken
      *                           after but not before.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.919 -0500", hash_original_method = "D4C81D48070585F36B5352844546D049", hash_generated_method = "629B9A28DBC1AA3E670F6F3B511A78B5")
     
 private static final boolean isIdeographic(char c, boolean includeNonStarters) {
@@ -343,7 +345,9 @@ public StaticLayout(CharSequence source, int bufstart, int bufend,
         mFontMetricsInt = null;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.905 -0500", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "F6D0B9C991ED85508405BA894E3CF311")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.905 -0500", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "F6D0B9C991ED85508405BA894E3CF311")
     
 StaticLayout(CharSequence text) {
         super(text, null, 0, null, 0, 0);
@@ -953,6 +957,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
     // rather than relying on member functions.
     // The logic mirrors that of Layout.getLineForVertical
     // FIXME: It may be faster to do a linear search for layouts without many lines.
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.932 -0500", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "F53DBA913D61B49EA41F8004ED6B9F9E")
     
@@ -977,6 +983,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.935 -0500", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "DBF99941AFD07ECE9EB20238F6647D01")
     
@@ -985,6 +993,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLineCount;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.938 -0500", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "DF1712773706137859E0420F519F2A9E")
     
@@ -998,6 +1008,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return top;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.941 -0500", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "D2DE19322D73F71BFD300DDCAFD0E6A7")
     
@@ -1011,6 +1023,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return descent;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.944 -0500", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "1C7DBDDD96CC77377476DDC277ED0356")
     
@@ -1019,6 +1033,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + START] & START_MASK;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.949 -0500", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "078A7B8655668116004C7595BE8496CA")
     
@@ -1027,6 +1043,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + DIR] >> DIR_SHIFT;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.952 -0500", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "70A5E4009C70DDE786164BB876ECE36B")
     
 @Override
@@ -1041,6 +1059,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLineDirections[line];
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.957 -0500", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "C9A37F9D7E53BC032BE1989D8B7F43F3")
     
@@ -1049,6 +1069,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mTopPadding;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.960 -0500", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "F0B9D53486F44C4D9B5E36E2D1B1C62A")
     
@@ -1057,6 +1079,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mBottomPadding;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.963 -0500", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "C1E3F9252BF0D28F0902B9B7D4DBD456")
     
@@ -1069,6 +1093,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + ELLIPSIS_COUNT];
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.966 -0500", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "4D0CF81887F135F77C51603EC4C179F2")
     
@@ -1081,6 +1107,8 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + ELLIPSIS_START];
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.969 -0500", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "466A36682DB1C1AD0B2234723777A380")
     
@@ -1089,12 +1117,16 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mEllipsizedWidth;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.971 -0500", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "B52C8C631677053C363ACE90856C8484")
     
 void prepare() {
         mMeasured = MeasuredText.obtain();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.973 -0500", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B")
     
 void finish() {

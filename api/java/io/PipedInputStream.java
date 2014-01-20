@@ -6,25 +6,17 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class PipedInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.835 -0500", hash_original_field = "32272A849EA457522206621DB7551BDB", hash_generated_field = "98981E77F477BF5BC6052D8850C465A7")
 
     protected static final int PIPE_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.821 -0500", hash_original_field = "0C274599D1E182E9646E850B1F54838C", hash_generated_field = "F5A62F451E05D22096D6EE6BA212D601")
 
-
     private Thread lastReader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.823 -0500", hash_original_field = "11B82934C1097E36AA09E79AB8952C5D", hash_generated_field = "276A7969C85F5DE4B1F84464F2E355FA")
 
-
     private Thread lastWriter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.825 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
-
 
     private boolean isClosed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.828 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
@@ -157,6 +149,8 @@ public void connect(PipedOutputStream src) throws IOException {
      * @throws IOException
      *             If this Reader is already connected.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.859 -0500", hash_original_method = "5C9219C47AC485F782454E337FD705F5", hash_generated_method = "9EC41D60B9E82340DD96551BF7F48F3A")
     
 synchronized void establishConnection() throws IOException {
@@ -399,6 +393,8 @@ protected synchronized void receive(int oneByte) throws IOException {
         notifyAll();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.872 -0500", hash_original_method = "19BFAB2AD4E1A13AD9CB12419968F5AB", hash_generated_method = "0B05E6B5D4DC4B6BD624E8CCC3D31FDE")
     
 synchronized void done() {

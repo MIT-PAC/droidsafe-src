@@ -29,6 +29,8 @@ public class Type extends BaseObj {
 
     Element mElement;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.057 -0500", hash_original_method = "16C6269A6A80062F3C7B05511AF2EA14", hash_generated_method = "16C6269A6A80062F3C7B05511AF2EA14")
     
 Type(int id, RenderScript rs) {
@@ -117,6 +119,8 @@ public int getCount() {
         return mElementCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.055 -0500", hash_original_method = "2C27E4A52BBF3CC9203234C207690BDD", hash_generated_method = "2C27E4A52BBF3CC9203234C207690BDD")
     
 void calcElementCount() {
@@ -156,6 +160,8 @@ void calcElementCount() {
         mElementCount = count;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.060 -0500", hash_original_method = "D9C91D8B790AFADAD6800FA858F1EFFA", hash_generated_method = "24B69C690FA1AA47BA6F18E4A983AE74")
     
 @Override

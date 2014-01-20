@@ -11,11 +11,6 @@ import org.bouncycastle.crypto.digests.MD5Digest;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
 
-
-
-
-
-
 public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.707 -0500", hash_original_field = "5E1DE11F0B1BCDF1B09E413E2E26EF96", hash_generated_field = "91AB1A516766E39A2EE21B008511F72A")
 
@@ -48,6 +43,8 @@ public void init(
     /**
      * the derived key function, the ith hash of the password and the salt.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.715 -0500", hash_original_method = "4E618B69222EA698951005FED9FF9FA3", hash_generated_method = "3E5BDE21AA2CFEDEC5F6B5AD711B6446")
     
 private byte[] generateDerivedKey(
@@ -142,7 +139,6 @@ public CipherParameters generateDerivedMacParameters(
     {
         return generateDerivedParameters(keySize);
     }
-
     
 }
 

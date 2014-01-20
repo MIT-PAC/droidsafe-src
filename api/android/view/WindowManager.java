@@ -977,6 +977,8 @@ public void scale(float scale) {
          * Backup the layout parameters used in compatibility mode.
          * @see LayoutParams#restore()
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.126 -0500", hash_original_method = "99E53D5A5FA0AFC41A02D5F2628F3A7A", hash_generated_method = "E36601F0E7B6E2EB4B2A7CE1FC773AF3")
         
 void backup() {
@@ -995,6 +997,8 @@ void backup() {
          * Restore the layout params' coordinates, size and gravity
          * @see LayoutParams#backup()
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.129 -0500", hash_original_method = "80239032BEE556394E9060CC798A2741", hash_generated_method = "80239032BEE556394E9060CC798A2741")
         
 void restore() {

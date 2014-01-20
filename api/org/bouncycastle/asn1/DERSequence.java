@@ -8,8 +8,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
 public class DERSequence extends ASN1Sequence {
     /**
      * create an empty sequence
@@ -67,6 +65,8 @@ public DERSequence(
      * ASN.1 descriptions given. Rather than just outputing SEQUENCE,
      * we also have to specify CONSTRUCTED, and the objects length.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.887 -0500", hash_original_method = "EB6AC1866581E5FE18FBF3DDAE772D4D", hash_generated_method = "7741E6233F15C15B810E57DD9EDBEC11")
     
 void encode(
@@ -91,7 +91,6 @@ void encode(
 
         out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
     }
-
     
 }
 

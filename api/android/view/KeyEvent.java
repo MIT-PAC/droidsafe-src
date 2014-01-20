@@ -22,6 +22,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
                                    rand.nextInt(), rand.nextInt(), rand.nextInt());
         return ev;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.923 -0500", hash_original_method = "CD92FE183731A7A6D1227776EFB98684", hash_generated_method = "FF01DC7C6BA6162970DE0E4EE19F724E")
     
 private static void populateKeycodeSymbolicNames() {
@@ -260,6 +262,8 @@ public static int getDeadChar(int accent, int c) {
         return KeyCharacterMap.getDeadChar(accent, c);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.132 -0500", hash_original_method = "58E59A5E4DC50E1553DDF37B64C67560", hash_generated_method = "6DB8B414A3B1D97047BD316D4D64DB2B")
     
 private static KeyEvent obtain() {
@@ -632,6 +636,8 @@ public static boolean metaStateHasModifiers(int metaState, int modifiers) {
         return metaState == modifiers;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.222 -0500", hash_original_method = "0F5319E42F82F111649B35879EBEED8A", hash_generated_method = "DDCC3B9D87138042780FDE99EBA6BB8A")
     
 private static int metaStateFilterDirectionalModifiers(int metaState,
@@ -1822,6 +1828,8 @@ public KeyEvent[] newArray(int size) {
 
     private String mCharacters;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
     public  KeyEvent() {
         // ---------- Original Method ----------
@@ -2077,6 +2085,8 @@ public KeyEvent(KeyEvent origEvent) {
      * @param origEvent The existing event to be copied.
      * @param action The new action code of the event.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.152 -0500", hash_original_method = "5AF6098C2FF410C0A9EE2BEE9470EC38", hash_generated_method = "5F4343F14C0E163B76CF16F46FC93D8E")
     
 private KeyEvent(KeyEvent origEvent, int action) {
@@ -2094,6 +2104,8 @@ private KeyEvent(KeyEvent origEvent, int action) {
         // when changing the action.
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.366 -0500", hash_original_method = "6CD21CCD9028EF5AE389AE8F77253E73", hash_generated_method = "BC486B529C1ABEDFC019C5195C47ECA9")
     
 private KeyEvent(Parcel in) {
@@ -2959,6 +2971,8 @@ public void writeToParcel(Parcel out, int flags) {
         out.writeLong(mEventTime);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.373 -0500", hash_original_method = "7ECA2477AC40357C7C5AFE00DC4BDA17", hash_generated_method = "71117048333AFB2A09CB84CA82577A12")
     
     private boolean native_isSystemKey(int keyCode){
@@ -2967,6 +2981,8 @@ public void writeToParcel(Parcel out, int flags) {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.377 -0500", hash_original_method = "B29C954784C1F1FDE17D757BB04FDB3D", hash_generated_method = "AFBD9E7A82DE5C56EDF5BB8104037EC1")
     
     private boolean native_hasDefaultAction(int keyCode){

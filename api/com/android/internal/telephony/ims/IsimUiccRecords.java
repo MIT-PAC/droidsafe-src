@@ -27,6 +27,8 @@ public final class IsimUiccRecords implements IsimRecords {
      * @param record the byte array containing the IMS data string
      * @return the decoded String value, or null if the record can't be decoded
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.932 -0500", hash_original_method = "5678F2B610228E0CE45D092607B03827", hash_generated_method = "7B2C35C921BBD0175CC55FEA5D981832")
     
 private static String isimTlvToString(byte[] record) {
@@ -87,6 +89,8 @@ public int fetchIsimRecords(IccFileHandler iccFh, Handler h) {
         return 3;   // number of EF record load requests
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.934 -0500", hash_original_method = "6D2B5E713513F7C05BF0126DA069258E", hash_generated_method = "6D2B5E713513F7C05BF0126DA069258E")
     
 void log(String s) {
@@ -168,6 +172,8 @@ public void onRecordLoaded(AsyncResult ar) {
         
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.936 -0500", hash_original_method = "D22606291D00D3FF31B88F1A658749A5", hash_generated_method = "D22606291D00D3FF31B88F1A658749A5")
     
 void loge(String s) {

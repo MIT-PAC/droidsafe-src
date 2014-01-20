@@ -285,6 +285,8 @@ public String getEncoding() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.989 -0500", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "D3C76831C6D46CAC396A10504AD86E99")
     
 private boolean isOpen() {

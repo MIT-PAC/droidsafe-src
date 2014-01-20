@@ -28,6 +28,8 @@ public abstract class Layout {
      * Return how wide a layout must be in order to display the
      * specified text with one line per paragraph.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.252 -0500", hash_original_method = "1597B0DF539C50975D1094B78D7BA08C", hash_generated_method = "2413E4414C0FEBD348BCD3878230BC25")
     
@@ -40,6 +42,8 @@ public static float getDesiredWidth(CharSequence source,
      * Return how wide a layout must be in order to display the
      * specified text slice with one line per paragraph.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.255 -0500", hash_original_method = "70F93B7B36BD9F1CA7DABE2B88F9D9BC", hash_generated_method = "E19698407338714928F82BF4B18339BF")
     
@@ -69,6 +73,8 @@ public static float getDesiredWidth(CharSequence source,
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.427 -0500", hash_original_method = "7B0A64808977E314E16FC537E6BE92A2", hash_generated_method = "FED1B0E58631CF885CFF2382EE5FAA5C")
     
 static float measurePara(TextPaint paint, TextPaint workPaint,
@@ -128,7 +134,9 @@ static float measurePara(TextPaint paint, TextPaint workPaint,
      * will be used to compute the tab stop.
      * @return the offset of the next tab stop.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.452 -0500", hash_original_method = "63723EF0B95DB45865B535A7B07F44F6", hash_generated_method = "E35782AC4B0B6B04DFA37943BF4BF52F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.452 -0500", hash_original_method = "63723EF0B95DB45865B535A7B07F44F6", hash_generated_method = "E35782AC4B0B6B04DFA37943BF4BF52F")
     
 static float nextTab(CharSequence text, int start, int end,
                                        float h, Object[] tabs) {
@@ -160,6 +168,8 @@ static float nextTab(CharSequence text, int start, int end,
         return ((int) ((h + TAB_INCREMENT) / TAB_INCREMENT)) * TAB_INCREMENT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
     	T[] retVal;
@@ -337,6 +347,8 @@ void replaceWith(CharSequence text, TextPaint paint,
     /**
      * Draw this Layout on the specified Canvas.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.266 -0500", hash_original_method = "21986991A7FC788A39082240DAE8B9C3", hash_generated_method = "8EE65159161E744299A4C08E81C8EA55")
     
 public void draw(Canvas c) {
@@ -353,6 +365,8 @@ public void draw(Canvas c) {
      * @param cursorOffsetVertical the amount to temporarily translate the
      *        canvas while rendering the highlight
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.273 -0500", hash_original_method = "C63D8686FF6D60F338825542CA174C93", hash_generated_method = "6D6B5D7F8BAC5492A7781593E3D44FE0")
     
 public void draw(Canvas c, Path highlight, Paint highlightPaint,
@@ -598,6 +612,8 @@ public void draw(Canvas c, Path highlight, Paint highlightPaint,
      * @param right the right bounds (width, minus leading margin if rtl para)
      * @return the start position of the line (to right of line if rtl para)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.277 -0500", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "11B6DD88F00DBC5D783B97DC24C1AE9F")
     
 private int getLineStartPos(int line, int left, int right) {
@@ -647,6 +663,8 @@ private int getLineStartPos(int line, int left, int right) {
     /**
      * Return the text that is displayed by this Layout.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.280 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "AD41DE29B1C2DCE99B6C37C431B0FBB9")
     
@@ -659,6 +677,8 @@ public final CharSequence getText() {
      * Do NOT change the paint, which may result in funny
      * drawing for this layout.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.282 -0500", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "A1B666BE245BAE87971A84F2CF98551B")
     
@@ -669,6 +689,8 @@ public final TextPaint getPaint() {
     /**
      * Return the width of this layout.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.285 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "22D52A618BDF0D88616879C17C111A4F")
     
@@ -680,6 +702,8 @@ public final int getWidth() {
      * Return the width to which this Layout is ellipsizing, or
      * {@link #getWidth} if it is not doing anything special.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.287 -0500", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "E7219D99AC51B07E456390F92E1768EC")
     
@@ -692,6 +716,8 @@ public int getEllipsizedWidth() {
      * Be careful to use this only when you know it is appropriate&mdash;
      * it does not cause the text to reflow to use the full new width.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.290 -0500", hash_original_method = "461CE12B89AFCA61718D5C5F590357B0", hash_generated_method = "6EEFA7E9C5DE9882F0EDA06E870DF63D")
     
 public final void increaseWidthTo(int wid) {
@@ -705,6 +731,8 @@ public final void increaseWidthTo(int wid) {
     /**
      * Return the total height of this layout.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.292 -0500", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "01D9C5CB97CB8F7EF4A0983825580515")
     
@@ -724,6 +752,8 @@ public final Alignment getAlignment() {
     /**
      * Return what the text height is multiplied by to get the line height.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.296 -0500", hash_original_method = "F861D6694D511E0A8AF4CE2A5552F333", hash_generated_method = "6D96E1ECB0C174A9EDA879AB77379863")
     
@@ -734,6 +764,8 @@ public final float getSpacingMultiplier() {
     /**
      * Return the number of units of leading that are added to each line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.299 -0500", hash_original_method = "E15AF37508F3C3C8F31DF2917343152C", hash_generated_method = "2E7B3A64CBB02E47FC166BB25D32A16B")
     
@@ -745,6 +777,8 @@ public final float getSpacingAdd() {
      * Return the heuristic used to determine paragraph text direction.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.302 -0500", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "37EDBC3BC62434E13DFAD301F3A917B2")
     
@@ -755,6 +789,8 @@ public final TextDirectionHeuristic getTextDirectionHeuristic() {
     /**
      * Return the number of lines of text in this layout.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.305 -0500", hash_original_method = "C858DDC0C1BAD267278CEAB898350F70", hash_generated_method = "26F9A607A463611061DC3AF5F4989C06")
     
 public abstract int getLineCount();
@@ -767,6 +803,8 @@ public abstract int getLineCount();
      * @param bounds Optional. If not null, it returns the extent of the line
      * @return the Y-coordinate of the baseline
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.307 -0500", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "728D9A8BCD139769BF63031581888C94")
     
@@ -786,6 +824,8 @@ public int getLineBounds(int line, Rect bounds) {
      * If the specified line is equal to the line count, returns the
      * bottom of the last line.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.310 -0500", hash_original_method = "A479D88314A093B8C2D849C09BDF783F", hash_generated_method = "D7223F3967A936CA40F1E9C5B7F55E34")
     
 public abstract int getLineTop(int line);
@@ -793,6 +833,8 @@ public abstract int getLineTop(int line);
     /**
      * Return the descent of the specified line(0&hellip;getLineCount() - 1).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.313 -0500", hash_original_method = "03140D6C234EA23E99CFD1E22FA56375", hash_generated_method = "D7CA1E509DA090D89EFE25AF998BE18E")
     
 public abstract int getLineDescent(int line);
@@ -802,6 +844,8 @@ public abstract int getLineDescent(int line);
      * 0&hellip;getLineCount()). If the specified line is equal to the line
      * count, returns the length of the text.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.315 -0500", hash_original_method = "AD4C0CF9A9707EC9B109DA8B3FD4D354", hash_generated_method = "61055093AF86441AE67056D61EBB630B")
     
 public abstract int getLineStart(int line);
@@ -811,6 +855,8 @@ public abstract int getLineStart(int line);
      * specified line, either 1 for left-to-right lines, or -1 for right-to-left
      * lines (see {@link #DIR_LEFT_TO_RIGHT}, {@link #DIR_RIGHT_TO_LEFT}).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.318 -0500", hash_original_method = "1F6293537B18553FE2358B8478EBFAEE", hash_generated_method = "69AF98149A08FF9A3435421DE154B7DE")
     
 public abstract int getParagraphDirection(int line);
@@ -820,6 +866,8 @@ public abstract int getParagraphDirection(int line);
      * characters that need to be handled specially, like tabs
      * or emoji.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.320 -0500", hash_original_method = "2BAA05C8EA3FC25EBF2014880F15841F", hash_generated_method = "626214B760C74C35D95DB221DB2C3B12")
     
 public abstract boolean getLineContainsTab(int line);
@@ -839,6 +887,8 @@ public abstract Directions getLineDirections(int line);
      * Returns the (negative) number of extra pixels of ascent padding in the
      * top line of the Layout.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.325 -0500", hash_original_method = "203B4D132BED8A34E1E9144178389DA9", hash_generated_method = "64E1A39A214A9F5A5E503B5D5C1841F2")
     
 public abstract int getTopPadding();
@@ -847,6 +897,8 @@ public abstract int getTopPadding();
      * Returns the number of extra pixels of descent padding in the
      * bottom line of the Layout.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.327 -0500", hash_original_method = "36186ABA54E56DB57B8D8035164D19BC", hash_generated_method = "EF263A3F424EDC36F744E769CE4C50BB")
     
 public abstract int getBottomPadding();
@@ -858,6 +910,8 @@ public abstract int getBottomPadding();
      * @return true if at a level boundary
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.331 -0500", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "183A814B3D3806E68915D483C8E8871E")
     
 public boolean isLevelBoundary(int offset) {
@@ -890,6 +944,8 @@ public boolean isLevelBoundary(int offset) {
      * @param offset the offset
      * @return true if the character is RTL, false if it is LTR
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.333 -0500", hash_original_method = "AF5CCAD1718916CFF1EB4C8EF2E12FAE", hash_generated_method = "95B2033BED91E0E1C361CEFA7C0ED861")
     
 public boolean isRtlCharAt(int offset) {
@@ -916,6 +972,8 @@ public boolean isRtlCharAt(int offset) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.337 -0500", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "50FC3B2D69D294105C536DC818DE545D")
     
 private boolean primaryIsTrailingPrevious(int offset) {
@@ -972,6 +1030,8 @@ private boolean primaryIsTrailingPrevious(int offset) {
      * This is the location where a new character would be inserted in
      * the paragraph's primary direction.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.340 -0500", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "9B4AE6B1658DB85323FD2387B1068EB8")
     
@@ -985,6 +1045,8 @@ public float getPrimaryHorizontal(int offset) {
      * This is the location where a new character would be inserted in
      * the direction other than the paragraph's primary direction.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.343 -0500", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "0F79438CEB1C5845DC66AA4C325AE230")
     
@@ -993,6 +1055,8 @@ public float getSecondaryHorizontal(int offset) {
         return getHorizontal(offset, !trailing);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.345 -0500", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "E0DF0D7927C49E1B310EECDB2E494565")
     
 private float getHorizontal(int offset, boolean trailing) {
@@ -1001,6 +1065,8 @@ private float getHorizontal(int offset, boolean trailing) {
         return getHorizontal(offset, trailing, line);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.348 -0500", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "4047DC4C00DF16164DC49AE2D24D687C")
     
 private float getHorizontal(int offset, boolean trailing, int line) {
@@ -1035,6 +1101,8 @@ private float getHorizontal(int offset, boolean trailing, int line) {
      * Get the leftmost position that should be exposed for horizontal
      * scrolling on the specified line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.351 -0500", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "E620055286D6375EB43D2B6D4A244CA1")
     
@@ -1069,6 +1137,8 @@ public float getLineLeft(int line) {
      * Get the rightmost position that should be exposed for horizontal
      * scrolling on the specified line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.354 -0500", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "46B4D0C776DD5C5CEB17F101A7835895")
     
@@ -1103,6 +1173,8 @@ public float getLineRight(int line) {
      * Gets the unsigned horizontal extent of the specified line, including
      * leading margin indent, but excluding trailing whitespace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.357 -0500", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "B119E3440FEDD3D9F499A55C08208B73")
     
@@ -1116,6 +1188,8 @@ public float getLineMax(int line) {
      * Gets the unsigned horizontal extent of the specified line, including
      * leading margin indent and trailing whitespace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.359 -0500", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "0F4F8FF2C0501E3545D1A964E3770028")
     
@@ -1132,6 +1206,8 @@ public float getLineWidth(int line) {
      * @param full whether to include trailing whitespace
      * @return the extent of the line
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.363 -0500", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "BCB47313407AEFF254651F95089AA8F1")
     
 private float getLineExtent(int line, boolean full) {
@@ -1192,6 +1268,8 @@ private float getLineExtent(int line, TabStops tabStops, boolean full) {
      * below the bottom of the text, you get the last line.
      */
     // FIXME: It may be faster to do a linear search for layouts without many lines.
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.368 -0500", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "03B80EC8F72E3FD463EC8F7A28676827")
     
@@ -1218,6 +1296,8 @@ public int getLineForVertical(int vertical) {
      * If you ask for a position before 0, you get 0; if you ask for a position
      * beyond the end of the text, you get the last line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.371 -0500", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "675029A7C11075C6493BDAB680B9A9A1")
     
@@ -1243,6 +1323,8 @@ public int getLineForOffset(int offset) {
      * Get the character offset on the specified line whose position is
      * closest to the specified horizontal position.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.374 -0500", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "2E4CD0C95026F5FA47AD3EC34C1D28F1")
     
@@ -1321,6 +1403,8 @@ public int getOffsetForHorizontal(int line, float horiz) {
     /**
      * Return the text offset after the last character on the specified line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.378 -0500", hash_original_method = "AEF50F2FA9A7358F560FC7521C77962F", hash_generated_method = "22CFA665CDFB6F4B3B14333123EEF8CC")
     
@@ -1332,6 +1416,8 @@ public final int getLineEnd(int line) {
      * Return the text offset after the last visible character (so whitespace
      * is not counted) on the specified line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.380 -0500", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "02BF3C4D49F3653C5D7AC1B51F0F0C1F")
     
@@ -1339,6 +1425,8 @@ public int getLineVisibleEnd(int line) {
         return getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.383 -0500", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "5F3E6CE517AE2C62E59DF75D0E1FEAB0")
     
 private int getLineVisibleEnd(int line, int start, int end) {
@@ -1381,12 +1469,16 @@ public static float nextDefaultStop(float h, int inc) {
 
         private int mIncrement;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.438 -0500", hash_original_method = "56D1FFBFF7D6B6649609A0E9FF6888AB", hash_generated_method = "56D1FFBFF7D6B6649609A0E9FF6888AB")
         
 TabStops(int increment, Object[] spans) {
             reset(increment, spans);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.441 -0500", hash_original_method = "12BC3A9AA4E5F32DB7C736F6D72E4602", hash_generated_method = "12BC3A9AA4E5F32DB7C736F6D72E4602")
         
 void reset(int increment, Object[] spans) {
@@ -1419,6 +1511,8 @@ void reset(int increment, Object[] spans) {
             this.mNumStops = ns;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.443 -0500", hash_original_method = "A46080BC8F3B4D3099E262DAA9B4728B", hash_generated_method = "A46080BC8F3B4D3099E262DAA9B4728B")
         
 float nextTab(float h) {
@@ -1451,7 +1545,9 @@ float nextTab(float h) {
         // DIR_RTL_FLAG, if set then the direction is rtl.
 
         /* package */ int[] mDirections;
-        /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.477 -0500", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "DA94802578AA1A107A88665DAAC4811A")
+        /* package */ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.477 -0500", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "DA94802578AA1A107A88665DAAC4811A")
         
 Directions(int[] dirs) {
             mDirections = dirs;
@@ -1601,6 +1697,8 @@ public int nextSpanTransition(int start, int limit, Class type) {
     /**
      * Return the vertical position of the bottom of the specified line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.385 -0500", hash_original_method = "230C56044F8D52E3D0BA17DE5C72A914", hash_generated_method = "5AA61C33C934D24188B590F9EFA8E350")
     
@@ -1611,6 +1709,8 @@ public final int getLineBottom(int line) {
     /**
      * Return the vertical position of the baseline of the specified line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.388 -0500", hash_original_method = "BC6E93964E3CCD0D48881D9F9ABB9170", hash_generated_method = "E006075DD2B455D8358F062B9DB5CA39")
     
@@ -1623,6 +1723,8 @@ public final int getLineBaseline(int line) {
      * Get the ascent of the text on the specified line.
      * The return value is negative to match the Paint.ascent() convention.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.390 -0500", hash_original_method = "577197C969745092B110831C30EF14E9", hash_generated_method = "7AD521E7EB701309FB90AE02B66B8FDC")
     
@@ -1631,6 +1733,8 @@ public final int getLineAscent(int line) {
         return getLineTop(line) - (getLineTop(line+1) - getLineDescent(line));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.393 -0500", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "A5B1C788954A6D00176A51427C30F232")
     
@@ -1647,6 +1751,8 @@ public int getOffsetToLeftOf(int offset) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.395 -0500", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "3A5E3ABAD545AC94C3EBCA81E4FEFA9C")
     
@@ -1654,6 +1760,8 @@ public int getOffsetToRightOf(int offset) {
         return getOffsetToLeftRightOf(offset, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.399 -0500", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "659B0BF074ABD37FCC1298F8FEEACA53")
     
 private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
@@ -1708,6 +1816,8 @@ private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
         return caret;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.402 -0500", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "89783BD78A44BC3704CB607B032D95DF")
     
 private int getOffsetAtStartOf(int offset) {
@@ -1748,6 +1858,8 @@ private int getOffsetAtStartOf(int offset) {
      * but can be multiple discontinuous lines in text with multiple
      * directionalities.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.406 -0500", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "1FA24D84E3B80DB4D7943082439729D7")
     
@@ -1825,6 +1937,8 @@ public void getCursorPath(int point, Path dest,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.409 -0500", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "15F61C9F2541D0CC581984C3AE701AF7")
     
 private void addSelection(int line, int start, int end,
@@ -1866,6 +1980,8 @@ private void addSelection(int line, int start, int end,
      * or a potentially discontinuous set of rectangles.  If the start
      * and end are the same, the returned path is empty.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.413 -0500", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "C2ECEA2506433BADE7235E6563771D35")
     
@@ -1948,6 +2064,8 @@ public final Alignment getParagraphAlignment(int line) {
     /**
      * Get the left edge of the specified paragraph, inset by left margins.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.418 -0500", hash_original_method = "D8249C79FD486A8037899C5A02304321", hash_generated_method = "DD14FCDD99E2D75016AA9A63367F42E2")
     
@@ -1963,6 +2081,8 @@ public final int getParagraphLeft(int line) {
     /**
      * Get the right edge of the specified paragraph, inset by right margins.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.421 -0500", hash_original_method = "4AFE65CA85EFF9BA5DD1726E8E021AC9", hash_generated_method = "FE964169DB4009211AF47BA549E9B1DB")
     
@@ -1981,6 +2101,8 @@ public final int getParagraphRight(int line) {
      * @param line the line index
      * @return the leading margin of this line
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.424 -0500", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "F95AED36160F907B4EDB633E2CBDBB7A")
     
 private int getParagraphLeadingMargin(int line) {
@@ -2019,12 +2141,16 @@ private int getParagraphLeadingMargin(int line) {
         return margin;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.454 -0500", hash_original_method = "CAFF1C73D2C9EA6C410B2B2D519C8AC7", hash_generated_method = "34CD290405260303BC9C44D5C42674E2")
     
 protected final boolean isSpanned() {
         return mSpannedText;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.459 -0500", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "E64D9B7BB3ABFE3B0B5F64655A11DA46")
     
 private void ellipsize(int start, int end, int line,
@@ -2060,6 +2186,8 @@ private void ellipsize(int start, int end, int line,
      * relative to the start of the line.  (So 0 if the beginning of the
      * line is ellipsized, not getLineStart().)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.481 -0500", hash_original_method = "152FA8D0FCA56A1E986B9CFF812EF658", hash_generated_method = "730B30A4CE2FEF465DFB3BD4FAA541AE")
     
 public abstract int getEllipsisStart(int line);
@@ -2068,6 +2196,8 @@ public abstract int getEllipsisStart(int line);
      * Returns the number of characters to be ellipsized away, or 0 if
      * no ellipsis is to take place.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.483 -0500", hash_original_method = "8B8817BB2BCF9519A11FE01870A20CF8", hash_generated_method = "58CE8DA2B014BCFCBD3C293CB5068B49")
     
 public abstract int getEllipsisCount(int line);

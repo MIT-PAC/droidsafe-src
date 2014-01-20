@@ -17,12 +17,12 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebViewCore.EventHub;
 
-
-
 final class SearchBoxImpl implements SearchBox {
 
     // This is used as a hackish alternative to javascript escaping.
     // There appears to be no such functionality in the core framework.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.673 -0500", hash_original_method = "23CD50AF565A02DDF453F7E3EB51F47E", hash_generated_method = "C15F2BA0A91192903FE989EE4437EAAD")
     
 private static String jsonSerialize(String query) {
@@ -67,20 +67,17 @@ private static String jsonSerialize(String query) {
             + "})();";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.413 -0500", hash_original_field = "C8C1F163C4E69667B9C677C20039A21A", hash_generated_field = "4470EB5525AD373A2C4F43799BA466F8")
 
-
     private static final String SET_QUERY_SCRIPT
             = "if (window.chrome && window.chrome.searchBox) {"
             + "  window.chrome.searchBox.setValue(%s);"
             + "}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.416 -0500", hash_original_field = "59A72176902BBC0D7B642BC1FCFBF0DF", hash_generated_field = "0C5C707F45DE4F6CFD9A208D4566A0A5")
 
-
     private static final String SET_VERBATIM_SCRIPT
             =  "if (window.chrome && window.chrome.searchBox) {"
             + "  window.chrome.searchBox.verbatim = %1$s;"
             + "}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.418 -0500", hash_original_field = "5AF07DAFA5F39F33C19C5BF695B6DC45", hash_generated_field = "E9B2CD13776B5B6A12E4BA5BD48197CA")
-
 
     private static final String SET_SELECTION_SCRIPT
             = "if (window.chrome && window.chrome.searchBox) {"
@@ -89,7 +86,6 @@ private static String jsonSerialize(String query) {
             + "  f.selectionEnd = %d"
             + "}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.420 -0500", hash_original_field = "99396ADE40CB205FEAAF3E4E44ADDF53", hash_generated_field = "6E66E9714562A833C543542D31083DA8")
-
 
     private static final String SET_DIMENSIONS_SCRIPT
             = "if (window.chrome && window.chrome.searchBox) { "
@@ -101,7 +97,6 @@ private static String jsonSerialize(String query) {
             + "}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.422 -0500", hash_original_field = "474A53BB297CF8E768BCF7869545E416", hash_generated_field = "E98C117A13350ABF9CB7A23E12B72C8E")
 
-
     private static final String DISPATCH_EVENT_SCRIPT
             = "if (window.chrome && window.chrome.searchBox && window.chrome.searchBox.on%1$s) {"
             + "  window.chrome.searchBox.on%1$s();"
@@ -110,7 +105,6 @@ private static String jsonSerialize(String query) {
             + "  window.searchBoxJavaBridge_.dispatchCompleteCallback('%1$s', %2$d, false);"
             + "}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.425 -0500", hash_original_field = "15A1EF11A0348A462099CFF8DC7251E3", hash_generated_field = "B64DA4EAFE146BA5C8999FC1184F7D6A")
-
 
     private static final String EVENT_CHANGE = "change";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.428 -0500", hash_original_field = "D8DDC02A119FE0E62ADCBF73F68A9C89", hash_generated_field = "D7414F48B25CA14ABCD6CCDD103A43F9")
@@ -124,7 +118,6 @@ private static String jsonSerialize(String query) {
     private static final String EVENT_CANCEL = "cancel";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.435 -0500", hash_original_field = "E714B0C78BCF62E8C7E9C0673724069A", hash_generated_field = "9ADA0EA1F1813A1825E091DB0D4474BC")
 
-
     private static final String IS_SUPPORTED_SCRIPT
             = "if (window.searchBoxJavaBridge_) {"
             + "  if (window.chrome && window.chrome.sv) {"
@@ -133,7 +126,6 @@ private static String jsonSerialize(String query) {
             + "    window.searchBoxJavaBridge_.isSupportedCallback(false);"
             + "  }}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.437 -0500", hash_original_field = "4C0A24B9E60F3EF61165EA033E9064B1", hash_generated_field = "4C7B3AD4D5F853385EAEBF459FCD952D")
-
 
     private  List<SearchBoxListener> mListeners;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.439 -0500", hash_original_field = "799AB033E7CD1CC92AF93A69917908BF", hash_generated_field = "73DACDCC92B5BF8822959B0368CF2255")
@@ -152,6 +144,8 @@ private static String jsonSerialize(String query) {
 
     private  HashMap<Integer, SearchBoxListener> mEventCallbacks;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.451 -0500", hash_original_method = "BE2818047EEFAAD053C1CB5A67BA80EE", hash_generated_method = "BE2818047EEFAAD053C1CB5A67BA80EE")
     
 SearchBoxImpl(WebViewCore webViewCore, CallbackProxy callbackProxy) {
@@ -179,7 +173,6 @@ SearchBoxImpl(WebViewCore webViewCore, CallbackProxy callbackProxy) {
         final String js = String.format(SET_VERBATIM_SCRIPT, String.valueOf(verbatim));
         dispatchJs(js);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.458 -0500", hash_original_method = "17AF7417B2F09AA0D0ABD8E30884C551", hash_generated_method = "A1C163D0930C34E1D3F2806274F8FC1A")
     
@@ -241,6 +234,8 @@ private void dispatchEvent(String eventName, SearchBoxListener callback) {
         dispatchJs(js);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.473 -0500", hash_original_method = "5370F8C01605302B1467DBB9DF339726", hash_generated_method = "FC40A72B0C0D7C9C3C273E0736580532")
     
 private void dispatchJs(String js) {
@@ -353,7 +348,9 @@ public void setSuggestions(String jsonArguments) {
         mCallbackProxy.onSearchboxSuggestionsReceived(query, suggestions);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.678 -0500", hash_original_method = "8DC1A9FA12B51F46AD62CD522978A75D", hash_generated_method = "8DC1A9FA12B51F46AD62CD522978A75D")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.678 -0500", hash_original_method = "8DC1A9FA12B51F46AD62CD522978A75D", hash_generated_method = "8DC1A9FA12B51F46AD62CD522978A75D")
     
 void handleSuggestions(String query, List<String> suggestions) {
         synchronized (mListeners) {

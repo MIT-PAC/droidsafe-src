@@ -362,6 +362,8 @@ public ContentProviderHolder(ProviderInfo _info) {
             info = _info;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.782 -0500", hash_original_method = "DE66B2AAADEB005E6177C82649ADED33", hash_generated_method = "04794E4865E5B5E19D9358C6E4FF1C9C")
         
 private ContentProviderHolder(Parcel source) {
@@ -428,6 +430,8 @@ public WaitResult[] newArray(int size) {
 public WaitResult() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.811 -0500", hash_original_method = "18012A8A4C21626C6284E5F43299A78B", hash_generated_method = "1E1C7D5A3A2869E5CA31188CCC5E8F56")
         
 private WaitResult(Parcel source) {

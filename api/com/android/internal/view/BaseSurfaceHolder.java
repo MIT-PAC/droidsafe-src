@@ -69,12 +69,18 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
         //Synthesized constructor
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.889 -0500", hash_original_method = "62B1F3CDE0CFE8F424A091124E64C21C", hash_generated_method = "4C355A9611E681A0E227B95CF7B6B06E")
     
 public abstract void onUpdateSurface();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.892 -0500", hash_original_method = "0456BAE58505BE6C54BA87CBC72C93A6", hash_generated_method = "9CD58D2F79A4E3673260F3DE6A20F69A")
     
 public abstract void onRelayoutContainer();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.894 -0500", hash_original_method = "18B17FF26B6C18534F6D562146AC8F13", hash_generated_method = "2D402E0D90B2D4C04BEA6806D0BC7652")
     
 public abstract boolean onAllowLockCanvas();
@@ -218,6 +224,8 @@ public Canvas lockCanvas(Rect dirty) {
         return internalLockCanvas(dirty);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.933 -0500", hash_original_method = "ACAAC9086C35A7B567CF149ED3F96213", hash_generated_method = "71214A6B5AE9CB6BFAD07E9025A9B3B0")
     
 private final Canvas internalLockCanvas(Rect dirty) {

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
-
-
-
 class LazyDERConstructionEnumeration implements Enumeration {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.583 -0500", hash_original_field = "ED3C5FC2B559D6337D714A057B3FBFA7", hash_generated_field = "4CF3503F92E00E638FED895EEF5FDEF4")
 
@@ -46,6 +41,8 @@ public Object nextElement()
         return o;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.595 -0500", hash_original_method = "C7A49820E6202D53B06F271620A3165C", hash_generated_method = "FF2F5BFCEF82AA4F463ADCBD88815047")
     
 private Object readObject()
@@ -59,7 +56,6 @@ private Object readObject()
             throw new ASN1ParsingException("malformed DER construction: " + e, e);
         }
     }
-
     
 }
 

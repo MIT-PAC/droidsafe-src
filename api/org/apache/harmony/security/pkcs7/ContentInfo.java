@@ -98,6 +98,8 @@ public final class ContentInfo {
 
     private byte[] encoding;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.597 -0500", hash_original_method = "A1561DFF6C4CF564DBA671C7F4145BEE", hash_generated_method = "2D53BFCD606E91A649F4EFE52FC690F4")
     
 private ContentInfo(int[] oid, Object content, byte[] encoding) {

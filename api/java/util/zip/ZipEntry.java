@@ -109,6 +109,8 @@ public ZipEntry(ZipEntry ze) {
      *
      * On exit, "in" will be positioned at the start of the next entry.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.367 -0500", hash_original_method = "30F30B41DA6F50936D6BF4103A049FEE", hash_generated_method = "8D65F2E329523CA8B82B4DE7CB4195AD")
     
 ZipEntry(byte[] hdrBuf, InputStream in) throws IOException {

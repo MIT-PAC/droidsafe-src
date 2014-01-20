@@ -28,6 +28,8 @@ public class RestoreSession {
      * Nonpublic implementation here
      */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.493 -0500", hash_original_method = "603F247D543111CC62EE9EB2C3201E30", hash_generated_method = "603F247D543111CC62EE9EB2C3201E30")
     
 RestoreSession(Context context, IRestoreSession binder) {

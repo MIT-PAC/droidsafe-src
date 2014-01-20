@@ -111,6 +111,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.342 -0500", hash_original_method = "9F7D1FC25501C8F0267FBA100FA00D09", hash_generated_method = "D38AE64F8ED815ED3F5F4076006BFF3B")
     
 private View createViewFromResource(int position, View convertView,
@@ -147,6 +149,8 @@ public void setDropDownViewResource(int resource) {
         return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.349 -0500", hash_original_method = "BE6FDCE3CF7BF2397C7FC2DCDCAE8C07", hash_generated_method = "C72CC2EB481B5E8FB1525E8103E154BB")
     
 private void bindView(int position, View view) {

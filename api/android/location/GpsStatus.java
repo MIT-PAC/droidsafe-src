@@ -44,6 +44,8 @@ public final class GpsStatus {
         
 };
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.860 -0500", hash_original_method = "8CEA7166A5DE76C7A3B19C2918198865", hash_generated_method = "8CEA7166A5DE76C7A3B19C2918198865")
     
 GpsStatus() {
@@ -57,6 +59,8 @@ GpsStatus() {
      * data from the Location Manager Service to its cached GpsStatus instance.
      * Is synchronized to ensure that GPS status updates are atomic.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.862 -0500", hash_original_method = "4D31391A39726BDC955321B1E3DBD71C", hash_generated_method = "939345E9FE09508EB9CD8225B2B6722A")
     
 synchronized void setStatus(int svCount, int[] prns, float[] snrs,
@@ -145,6 +149,8 @@ public void remove() {
      * Since this method is only used within {@link LocationManager#getGpsStatus},
      * it does not need to be synchronized.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.865 -0500", hash_original_method = "C95E5E3E266CC24D44E0C8A907AC47BF", hash_generated_method = "C95E5E3E266CC24D44E0C8A907AC47BF")
     
@@ -156,6 +162,8 @@ void setStatus(GpsStatus status) {
         } 
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.867 -0500", hash_original_method = "DB9D2F6104F17C34589316947F2A601E", hash_generated_method = "DB9D2F6104F17C34589316947F2A601E")
     
 void setTimeToFirstFix(int ttff) {

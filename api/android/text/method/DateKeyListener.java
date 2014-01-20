@@ -8,6 +8,8 @@ import android.text.InputType;
 
 public class DateKeyListener extends NumberKeyListener {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.103 -0500", hash_original_method = "C1FF2F03ED98B7DB4C979A07E5F21A3F", hash_generated_method = "CDBA412E6107F33E828C513B6AD48AC7")
     
@@ -28,11 +30,15 @@ public static DateKeyListener getInstance() {
 
     private static DateKeyListener sInstance;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.176 -0400", hash_original_method = "09F9B6EA4C38704CC9648D105D359284", hash_generated_method = "09F9B6EA4C38704CC9648D105D359284")
     public DateKeyListener ()
     {
         //Synthesized constructor
     }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.097 -0500", hash_original_method = "FAAA10DF871CFF7A2AF0FCDCA83E30F3", hash_generated_method = "8CDE16EC483428CF85E0F248BF00BBC7")
     
@@ -41,6 +47,8 @@ public int getInputType() {
                 | InputType.TYPE_DATETIME_VARIATION_DATE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.100 -0500", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "C8829E311180669DC917FA428AC766DB")
     

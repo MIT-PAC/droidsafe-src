@@ -9,6 +9,8 @@ import droidsafe.helpers.DSUtils;
 
 public class PorterDuffXfermode extends Xfermode {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateXfermode(int mode) {
         return DSUtils.UNKNOWN_INT;
     }

@@ -84,12 +84,16 @@ public SyncStatusInfo[] newArray(int size) {
 
     public ArrayList<Long> periodicSyncTimes;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.629 -0500", hash_original_method = "A601236BC9972CD1DA6DEFC9BDCCDDF9", hash_generated_method = "A601236BC9972CD1DA6DEFC9BDCCDDF9")
     
 SyncStatusInfo(int authorityId) {
         this.authorityId = authorityId;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.640 -0500", hash_original_method = "48BE1C9789126DF2BDCDE38D758F27DD", hash_generated_method = "48BE1C9789126DF2BDCDE38D758F27DD")
     
 SyncStatusInfo(Parcel parcel) {
@@ -184,6 +188,8 @@ public void setPeriodicSyncTime(int index, long when) {
         periodicSyncTimes.set(index, when);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.644 -0500", hash_original_method = "CB3B6F2BD6B69A04BBE5B4B8321ED55E", hash_generated_method = "1E231E5C13520B687E0DE2A9860D3F11")
     
 private void ensurePeriodicSyncTimeSize(int index) {

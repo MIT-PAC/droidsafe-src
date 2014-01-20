@@ -532,6 +532,8 @@ public static long getOrCreateThreadId(
         public static final int BROADCAST_THREAD = 1;
 
         // No one should construct an instance of this class.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.717 -0500", hash_original_method = "45D6965ABD617E611598473C57FD4F7C", hash_generated_method = "80AB08BF868BD8350BB4DDEADEDC38FA")
         
 private Threads() {
@@ -807,6 +809,8 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String DELETED_CONTENTS = "deleted_contents";
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.897 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
             private  Intents() {
                 // ---------- Original Method ----------
@@ -1074,6 +1078,8 @@ public static boolean isPhoneNumber(String number) {
 
         public static final String EXTRA_SPN        = "spn";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.901 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
         private  Intents() {
             // ---------- Original Method ----------

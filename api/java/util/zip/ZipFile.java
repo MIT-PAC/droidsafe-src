@@ -153,6 +153,8 @@ public void close() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.344 -0500", hash_original_method = "65CE3BC8A7A8514DBA7266C40E446CDF", hash_generated_method = "0ABE44428065F87931C5CB51E7EBB164")
     
 private void checkNotClosed() {
@@ -411,6 +413,8 @@ public int size() {
      * area, we're hosed. This appears to be the way that everybody handles
      * it though, so we're in good company if this fails.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.365 -0500", hash_original_method = "C4C5F4E81B860F4CAE8325550F47061B", hash_generated_method = "E1B44FC98B1B9EEE86046AB5EFD43859")
     
 private void readCentralDir() throws IOException {

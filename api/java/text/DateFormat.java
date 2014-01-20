@@ -20,6 +20,8 @@ public abstract class DateFormat extends Format {
      * are available.
      * <p>Note that Android does not support user-supplied locale service providers.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.050 -0500", hash_original_method = "EC1C9549160E2BC66E11F9DDB4B8FBD0", hash_generated_method = "8D491F66EE876E7A6F3079E4FA395FD6")
     
@@ -54,6 +56,8 @@ public static final DateFormat getDateInstance() {
      *             if {@code style} is not one of SHORT, MEDIUM, LONG, FULL, or
      *             DEFAULT.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.059 -0500", hash_original_method = "E9C515926F59D15FF7CB88B0B60D9C22", hash_generated_method = "AA5C2AC1481A266A9A2F2128C5031964")
     
@@ -115,6 +119,8 @@ public static final DateFormat getDateTimeInstance() {
      *             if {@code dateStyle} or {@code timeStyle} is not one of
      *             SHORT, MEDIUM, LONG, FULL, or DEFAULT.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.067 -0500", hash_original_method = "A7E6AB35D13132D438F9DCCBC72BE606", hash_generated_method = "3900BD34F97E39BD1CA09511756D47FF")
     
@@ -196,6 +202,8 @@ public static final DateFormat getTimeInstance() {
      *             if {@code style} is not one of SHORT, MEDIUM, LONG, FULL, or
      *             DEFAULT.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.082 -0500", hash_original_method = "F938DFCF67BFE83189AB8EEA5DA2BD42", hash_generated_method = "30A9FE09077139894689C40593A1B38B")
     
@@ -228,6 +236,8 @@ public static final DateFormat getTimeInstance(int style, Locale locale) {
         return new SimpleDateFormat(LocaleData.get(locale).getTimeFormat(style), locale);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.207 -0500", hash_original_method = "B329E05B5E04B9823F2C9BC2800E30F2", hash_generated_method = "F96F5E5D4172212169AD6F6775E70405")
     
 private static void checkDateStyle(int style) {
@@ -237,6 +247,8 @@ private static void checkDateStyle(int style) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.210 -0500", hash_original_method = "4710581F2B1DA7C66F09FB3530AA4908", hash_generated_method = "ED5F8F55E700B9E0401BFB32DB6908B6")
     
 private static void checkTimeStyle(int style) {
@@ -449,6 +461,8 @@ public int getCalendarField() {
     /**
      * Constructs a new instance of {@code DateFormat}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.033 -0500", hash_original_method = "B3EF4E3485D0789C83BAEC35E9E3BAD6", hash_generated_method = "10A1B52A5CA8C2A4D9F86E0EA9A1EFD8")
     
 protected DateFormat() {
@@ -461,6 +475,8 @@ protected DateFormat() {
      *
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.035 -0500", hash_original_method = "6214BE37793C3124BC718667B7E0632D", hash_generated_method = "FB7C835B38BFFC419A3B0A3A2A027A83")
     
@@ -483,6 +499,8 @@ protected DateFormat() {
      *         otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.039 -0500", hash_original_method = "ACA6119BE57A696CA271FA419EAF8A87", hash_generated_method = "9478B044B0FAAEBB5403DC1489F2E0ED")
     
 @Override
@@ -527,6 +545,8 @@ protected DateFormat() {
      *            if {@code object} is neither a {@code Date} nor a
      *            {@code Number} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.042 -0500", hash_original_method = "B3CAB535AB645340CDBC761CC64061A2", hash_generated_method = "A2E0A989B834C4E2B1CAFCE3FEA7CA69")
     
@@ -578,6 +598,8 @@ public final String format(Date date) {
      *            of the alignment field in the formatted text.
      * @return the string buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.048 -0500", hash_original_method = "CCA64E9C4F95BFBA0963A237E8C02CBB", hash_generated_method = "B7B10EE9D6E6167008ADC116705062BB")
     
 public abstract StringBuffer format(Date date, StringBuffer buffer,
@@ -602,6 +624,8 @@ public Calendar getCalendar() {
      *
      * @return the {@code NumberFormat} used by this date format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.076 -0500", hash_original_method = "303CF4BDA8F6551FE38CF841A2AE86A7", hash_generated_method = "EB38436501CEBEE3B4D1C055D8B464AE")
     
@@ -614,6 +638,8 @@ public NumberFormat getNumberFormat() {
      *
      * @return the time zone of the calendar used by this date format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.088 -0500", hash_original_method = "028D1A898568609D223BE7B30E97723B", hash_generated_method = "B01A7C91ADD7ACF068582800A58DB9D6")
     
@@ -621,6 +647,8 @@ public TimeZone getTimeZone() {
         return calendar.getTimeZone();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.091 -0500", hash_original_method = "3F46A6ECEE37AE5ECC5364DC5B9940AE", hash_generated_method = "30133F34F2648997EE89ACFF34EEDB3F")
     
 @Override
@@ -637,6 +665,8 @@ public TimeZone getTimeZone() {
      *
      * @return {@code true} if the calendar is lenient; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.094 -0500", hash_original_method = "C4BF8639B942350BBBDBCDAD05669E72", hash_generated_method = "27734BC62C1DCCFA99B539ECC6E7C540")
     
 public boolean isLenient() {
@@ -691,6 +721,8 @@ public Date parse(String string) throws ParseException {
      * @return the date resulting from the parse, or {@code null} if there is an
      *         error.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.099 -0500", hash_original_method = "96A53C3E9008520EC39833233AB03108", hash_generated_method = "87630C55D49CD1AADF581DDA7D25A18E")
     
 public abstract Date parse(String string, ParsePosition position);
@@ -718,6 +750,8 @@ public abstract Date parse(String string, ParsePosition position);
      * @return the date resulting from the parsing, or {@code null} if there is
      *         an error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.102 -0500", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "63216C42E69B7A23B760025E3A8B8D9B")
     
@@ -765,6 +799,8 @@ public void setLenient(boolean value) {
      * @param format
      *            the new number format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.110 -0500", hash_original_method = "DB316F58F9072942395CFF97FB7F9BCE", hash_generated_method = "A51768D3C3145730C6940AA0F928B66A")
     
 public void setNumberFormat(NumberFormat format) {

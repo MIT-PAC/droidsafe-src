@@ -18,6 +18,8 @@ public class BaseObj {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.600 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
 
     RenderScript mRS;
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.584 -0500", hash_original_method = "C8BB1F812AF2F94B259A1E5D31EF6D41", hash_generated_method = "C8BB1F812AF2F94B259A1E5D31EF6D41")
     
 BaseObj(int id, RenderScript rs) {
@@ -27,6 +29,8 @@ BaseObj(int id, RenderScript rs) {
         mDestroyed = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.586 -0500", hash_original_method = "092163F994B2BA343A828C1CA6CB67EF", hash_generated_method = "092163F994B2BA343A828C1CA6CB67EF")
     
 void setID(int id) {
@@ -43,6 +47,8 @@ void setID(int id) {
      *
      * @return int
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.588 -0500", hash_original_method = "070330937CB15D09BB5E296631EB884D", hash_generated_method = "070330937CB15D09BB5E296631EB884D")
     
 int getID() {
@@ -55,6 +61,8 @@ int getID() {
         return mID;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.590 -0500", hash_original_method = "B7F1DAC6FB0A90239CE3626781D0AB2E", hash_generated_method = "B7F1DAC6FB0A90239CE3626781D0AB2E")
     
 void checkValid() {
@@ -141,6 +149,8 @@ synchronized public void destroy() {
      * If an object came from an a3d file, java fields need to be
      * created with objects from the native layer
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.612 -0500", hash_original_method = "AB3B4827E233BF1789642230E2C32EC4", hash_generated_method = "AB3B4827E233BF1789642230E2C32EC4")
     
 void updateFromNative() {

@@ -176,6 +176,8 @@ public void dismissAllowingStateLoss() {
         dismissInternal(true);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.496 -0500", hash_original_method = "D69B3047ADB8F155BAC29C903FDECC6E", hash_generated_method = "D69B3047ADB8F155BAC29C903FDECC6E")
     
 void dismissInternal(boolean allowStateLoss) {

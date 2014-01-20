@@ -79,6 +79,8 @@ private static void setBlockGuardPolicy(final int policyMask) {
     }
 
     // Sets up CloseGuard in Dalvik/libcore
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.094 -0500", hash_original_method = "A91AC5C680257C159878619FE045BB6E", hash_generated_method = "69E0B6702899716DD5BEDDAA8C84C9A9")
     
 private static void setCloseGuardEnabled(boolean enabled) {
@@ -161,6 +163,8 @@ public static ThreadPolicy allowThreadDiskReads() {
     // process, nor do we want to modify all the call sites of
     // conditionallyEnableDebugLogging() in the system server,
     // so instead we use this to determine if we are the system server.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.129 -0500", hash_original_method = "13EE91C23AA3A16D1C05B9C12BE22DBD", hash_generated_method = "AFC78790EC21E917F2FB96DCEBE01755")
     
 private static boolean amTheSystemServerProcess() {
@@ -264,6 +268,8 @@ public static void enableDeathOnNetwork() {
      * valid policy during a violation (else there must've been
      * some policy in effect to violate).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.138 -0500", hash_original_method = "505B6F2C5D14D5307D2792E4869F206A", hash_generated_method = "B2A8BE88A07C1CCC431566DDEBE0F08C")
     
 private static int parsePolicyFromMessage(String message) {
@@ -285,6 +291,8 @@ private static int parsePolicyFromMessage(String message) {
     /**
      * Like parsePolicyFromMessage(), but returns the violation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.141 -0500", hash_original_method = "45B3269BE626BB87F4C05CA0ACD29C39", hash_generated_method = "4CCEDD75E9105676A0753C8872D2F662")
     
 private static int parseViolationFromMessage(String message) {
@@ -308,6 +316,8 @@ private static int parseViolationFromMessage(String message) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.153 -0500", hash_original_method = "30484C59249AAEAE6E097D020A18B06F", hash_generated_method = "37F8ED1F104DFF04041FDF639CA6DE3E")
     
 private static boolean tooManyViolationsThisLoop() {
@@ -356,7 +366,9 @@ public void run() {
     /**
      * Called from Parcel.writeNoException()
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.217 -0500", hash_original_method = "DE6218951D49C9DECACECFC904F7F4CB", hash_generated_method = "254D6A055CF39186CE308B0510685D6F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.217 -0500", hash_original_method = "DE6218951D49C9DECACECFC904F7F4CB", hash_generated_method = "254D6A055CF39186CE308B0510685D6F")
     
 static boolean hasGatheredViolations() {
         return gatheredViolations.get() != null;
@@ -367,7 +379,9 @@ static boolean hasGatheredViolations() {
      * don't incorrectly attribute it to the wrong caller on the next
      * Binder call on this thread.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.219 -0500", hash_original_method = "9805B7FF3BAD48B8D2DE0E62F52A36CA", hash_generated_method = "C424A8BDBD8B97D664023DF9B1CDBC17")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.219 -0500", hash_original_method = "9805B7FF3BAD48B8D2DE0E62F52A36CA", hash_generated_method = "C424A8BDBD8B97D664023DF9B1CDBC17")
     
 static void clearGatheredViolations() {
         gatheredViolations.set(null);
@@ -575,7 +589,9 @@ public static void onVmPolicyViolation(String message, Throwable originStack) {
     /**
      * Called from Parcel.writeNoException()
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.258 -0500", hash_original_method = "988356C76891278DCB1E6DF1B3D94941", hash_generated_method = "8DC97790E2EB719FA56E8E8D7CD81CAD")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.258 -0500", hash_original_method = "988356C76891278DCB1E6DF1B3D94941", hash_generated_method = "8DC97790E2EB719FA56E8E8D7CD81CAD")
     
 static void writeGatheredViolationsToParcel(Parcel p) {
         ArrayList<ViolationInfo> violations = gatheredViolations.get();
@@ -596,7 +612,9 @@ static void writeGatheredViolationsToParcel(Parcel p) {
      * Called from Parcel.readException() when the exception is EX_STRICT_MODE_VIOLATIONS,
      * we here read back all the encoded violations.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.263 -0500", hash_original_method = "85F9A054AA9529578DD28AD736197991", hash_generated_method = "BC279CCB9515367DC19E181BF23167FA")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.263 -0500", hash_original_method = "85F9A054AA9529578DD28AD736197991", hash_generated_method = "BC279CCB9515367DC19E181BF23167FA")
     
 static void readAndHandleBinderCallViolations(Parcel p) {
         // Our own stack trace to append
@@ -627,6 +645,8 @@ static void readAndHandleBinderCallViolations(Parcel p) {
      * policy value and synchronize it to libcore's (Java)
      * thread-local policy value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.266 -0500", hash_original_method = "60E245C2A53AD4DE6244FC5F357660C8", hash_generated_method = "78945C81B34F3347D4044B647EE36D37")
     
 private static void onBinderStrictModePolicyChange(int newPolicy) {
@@ -825,6 +845,8 @@ public static void decrementExpectedActivityCount(Class klass) {
 
          int mask;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.959 -0500", hash_original_method = "B0AC15ACB9093249F94C953D0A842CAE", hash_generated_method = "43C350FD2EC7FD2FAA309ED219B5C058")
         
 private ThreadPolicy(int mask) {
@@ -1066,6 +1088,8 @@ public ThreadPolicy build() {
 
          HashMap<Class, Integer> classInstanceLimit;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.033 -0500", hash_original_method = "BE6E35A5EA1ACA059EF2A402B69D7023", hash_generated_method = "4F5A40A8E136017B53E027E78AA4EC6C")
         
 private VmPolicy(int mask, HashMap<Class, Integer> classInstanceLimit) {
@@ -1344,6 +1368,8 @@ public void onWriteToDisk() {
         }
 
         // Not part of BlockGuard.Policy; just part of StrictMode:
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.171 -0500", hash_original_method = "B44201BA71724735A91DD4F1FF43D337", hash_generated_method = "B44201BA71724735A91DD4F1FF43D337")
         
 void onCustomSlowCall(String name) {
@@ -1590,6 +1616,8 @@ void handleViolation(final ViolationInfo info) {
     
     private static class AndroidCloseGuardReporter implements CloseGuard.Reporter {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.763 -0400", hash_original_method = "E7772DF8591E8A95C00A24C3A7BC9385", hash_generated_method = "E7772DF8591E8A95C00A24C3A7BC9385")
         public AndroidCloseGuardReporter ()
         {
@@ -1605,6 +1633,8 @@ public void report (String message, Throwable allocationSite) {
     
     private static class LogStackTrace extends Exception {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.764 -0400", hash_original_method = "9318B319D2DE8ECE742465D2C7D8840B", hash_generated_method = "9318B319D2DE8ECE742465D2C7D8840B")
         public LogStackTrace ()
         {
@@ -1709,6 +1739,8 @@ public void finish() {
 
         public int mFreeListSize;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "897FCF469D672A73C45810344D5B48A8", hash_generated_method = "897FCF469D672A73C45810344D5B48A8")
         public ThreadSpanState ()
         {
@@ -2231,6 +2263,8 @@ public InstanceTracker(Object instance) {
     private static final HashMap<Class, Integer> sExpectedActivityInstanceCount =
             new HashMap<Class, Integer>();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.950 -0500", hash_original_method = "E3867A4A77A9B912C067B4B7EB14B6CB", hash_generated_method = "0D0ADA1BC3FB4C3229B88A9E8A267886")
     
 private StrictMode() {}

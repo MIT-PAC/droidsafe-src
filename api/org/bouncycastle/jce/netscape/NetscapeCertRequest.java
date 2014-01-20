@@ -30,13 +30,10 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 
-
-
-
-
-
 public class NetscapeCertRequest extends ASN1Encodable {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.590 -0500", hash_original_method = "F4C485F242993B0A9B7E8A2520F2B9A8", hash_generated_method = "7E3D935B8E8666F9D696A30CF2469AA6")
     
 private static ASN1Sequence getReq(
@@ -280,6 +277,8 @@ public void sign(PrivateKey priv_key, SecureRandom rand)
         sigBits = sig.sign();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.627 -0500", hash_original_method = "500EEF6D5B4EBED065BB69A7AF04B4E9", hash_generated_method = "C84528AB26EC58D6F0CCE1BFBF3749C4")
     
 private DERObject getKeySpec() throws NoSuchAlgorithmException,
@@ -330,7 +329,6 @@ public DERObject toASN1Object()
 
         return new DERSequence(spkac);
     }
-
     
 }
 

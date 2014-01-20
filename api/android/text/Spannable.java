@@ -27,6 +27,8 @@ public static Spannable.Factory getInstance() {
             return sInstance;
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         private Factory() {
         	//Synthetic method
         }
@@ -35,6 +37,8 @@ public static Spannable.Factory getInstance() {
          * Returns a new SpannableString from the specified CharSequence.
          * You can override this to provide a different kind of Spannable.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.425 -0500", hash_original_method = "EE26FD92F5BDD12B70225AE1B2FCF67F", hash_generated_method = "5AD200519B3A1311651581156BABDB06")
         
 public Spannable newSpannable(CharSequence source) {

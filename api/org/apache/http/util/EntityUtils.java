@@ -15,10 +15,6 @@ import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.http.protocol.HTTP;
 
-
-
-
-
 public final class EntityUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.691 -0500", hash_original_method = "587F716D69EDEBB71A41980A33A137D7", hash_generated_method = "82582DC32500B03117C2BDB87A875035")
@@ -119,11 +115,12 @@ public static String toString(final HttpEntity entity)
     }
 
     /** Disabled default constructor. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.688 -0500", hash_original_method = "A25F629EA0AE9AB637DBB7282029CCE6", hash_generated_method = "05B004EC72AE6F289D8E7DD337B56445")
     
 private EntityUtils() {
     }
-
     
 }
 

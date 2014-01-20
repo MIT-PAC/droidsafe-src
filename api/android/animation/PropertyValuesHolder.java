@@ -182,6 +182,8 @@ public static PropertyValuesHolder ofKeyframe(Property property, Keyframe... val
      * @return String the property name converted to a method name according to the conventions
      * specified above.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.773 -0500", hash_original_method = "82F5D656CE1D2806336A89B52A0194E7", hash_generated_method = "A922753D6323B195319892BF99C7313B")
     
@@ -195,17 +197,25 @@ static String getMethodName(String prefix, String propertyName) {
         return prefix + firstLetter + theRest;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     static private int nGetIntMethod(Class targetClass, String methodName) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     static private int nGetFloatMethod(Class targetClass, String methodName) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     static private void nCallIntMethod(Object target, int methodID, int arg) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     static private void nCallFloatMethod(Object target, int methodID, float arg) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.671 -0500", hash_original_field = "A112865653801638C79C91F184034634", hash_generated_field = "7E9EFDBC560251144B1ABA6A3E58FAA3")
@@ -278,6 +288,8 @@ static String getMethodName(String prefix, String propertyName) {
      * Internal utility constructor, used by the factory methods to set the property name.
      * @param propertyName The name of the property for this holder.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.697 -0500", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "2D14E895D4B516EDB216E1CDBD096B97")
     
 private PropertyValuesHolder(String propertyName) {
@@ -288,6 +300,8 @@ private PropertyValuesHolder(String propertyName) {
      * Internal utility constructor, used by the factory methods to set the property.
      * @param property The property for this holder.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.700 -0500", hash_original_method = "BDE609B5B8790707A2E7C7F2E71E73EE", hash_generated_method = "0B26935083816CB7C053F482734C3CA3")
     
 private PropertyValuesHolder(Property property) {
@@ -393,6 +407,8 @@ public void setObjectValues(Object... values) {
      * value types used on the setter.
      * @return Method the method associated with mPropertyName.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.732 -0500", hash_original_method = "13DE02BBE5B8605736F61BF53DFAC872", hash_generated_method = "D5AC74373C64EA76831BD5A69FB568C5")
     
 private Method getPropertyFunction(Class targetClass, String prefix, Class valueType) {
@@ -450,6 +466,8 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
      * @param valueType The type of parameter passed into the method (null for getter).
      * @return Method the method associated with mPropertyName.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.735 -0500", hash_original_method = "D9982E89760E4BF7FBC2F6FCA80BFE72", hash_generated_method = "156BC28568B2D9535AC0A3A65DEEE555")
     
 private Method setupSetterOrGetter(Class targetClass,
@@ -483,6 +501,8 @@ private Method setupSetterOrGetter(Class targetClass,
      * Utility function to get the setter from targetClass
      * @param targetClass The Class on which the requested method should exist.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.737 -0500", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "1E4C95A3F0C35809E96A1D77677A320B")
     
@@ -493,6 +513,8 @@ void setupSetter(Class targetClass) {
     /**
      * Utility function to get the getter from targetClass
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.739 -0500", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "53E7D140BF9BE5CB4E809FEC0093E2D2")
     
 private void setupGetter(Class targetClass) {
@@ -509,6 +531,8 @@ private void setupGetter(Class targetClass) {
      * on the target object.
      * @param target The object on which the setter (and possibly getter) exist.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.741 -0500", hash_original_method = "0087C9C0C21400747AF8DC614F234C65", hash_generated_method = "A1154521EE1E5D30840F449F0BA0CB0D")
     
@@ -556,6 +580,8 @@ void setupSetterAndGetter(Object target) {
      * @param target The target object from which the current value should be extracted.
      * @param kf The keyframe which holds the property name and value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.744 -0500", hash_original_method = "FD1A4547C57F636637D228B97E0E8D50", hash_generated_method = "FB5D155A14778A736F2907FB868E19F6")
     
 private void setupValue(Object target, Keyframe kf) {
@@ -583,6 +609,8 @@ private void setupValue(Object target, Keyframe kf) {
      *
      * @param target The object which holds the start values that should be set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.746 -0500", hash_original_method = "981ED4D0B23A22C5ED7F7AF0C37F067E", hash_generated_method = "981ED4D0B23A22C5ED7F7AF0C37F067E")
     
@@ -598,6 +626,8 @@ void setupStartValue(Object target) {
      *
      * @param target The object which holds the start values that should be set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.748 -0500", hash_original_method = "387F5EDF2150EE198B0BBE4A1C97CF48", hash_generated_method = "387F5EDF2150EE198B0BBE4A1C97CF48")
     
@@ -629,6 +659,8 @@ void setupEndValue(Object target) {
      * according to the name of the property.
      * @param target The target object on which the value is set
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.753 -0500", hash_original_method = "BBF3202CC4B8C1713A46E96DE0EE5426", hash_generated_method = "BBF3202CC4B8C1713A46E96DE0EE5426")
     
@@ -652,6 +684,8 @@ void setAnimatedValue(Object target) {
      * Internal function, called by ValueAnimator, to set up the TypeEvaluator that will be used
      * to calculate animated values.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.755 -0500", hash_original_method = "9511AC0B81E584A22A2DBDCB260E6C63", hash_generated_method = "DA9647646504BBB0EA293CD423DA54F8")
     
 void init() {
@@ -734,6 +768,8 @@ public IntPropertyValuesHolder(Property property, int... values) {
             mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.802 -0500", hash_original_method = "30F7306C8A34979730DB91915B461598", hash_generated_method = "4ED0D4FCFEA7E441D20735472C856D1E")
         
 @Override
@@ -741,6 +777,8 @@ public IntPropertyValuesHolder(Property property, int... values) {
             mIntAnimatedValue = mIntKeyframeSet.getIntValue(fraction);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.804 -0500", hash_original_method = "CE13DB8914BA3896479030C59B8EB5EA", hash_generated_method = "E0C63FD811BC259B825A918D50DE5EDF")
         
@@ -765,6 +803,8 @@ public IntPropertyValuesHolder(Property property, int... values) {
          * according to the name of the property.
          * @param target The target object on which the value is set
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.LOG})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.809 -0500", hash_original_method = "774DCA711497C815C6106461263A2AF3", hash_generated_method = "7306EFD2C435A31B28DA158F855893E7")
         
@@ -794,6 +834,8 @@ public IntPropertyValuesHolder(Property property, int... values) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.812 -0500", hash_original_method = "E5FCCB47E07ECB03BE2F278E504281F8", hash_generated_method = "4A89B7134AF1D568189DFDD1FEA1CF13")
         
@@ -901,6 +943,8 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.843 -0500", hash_original_method = "EBADBBF750EE6D7005FAC08DD166E4F4", hash_generated_method = "66510F3EA1DA18F2F5D12C20D1213C09")
         
 @Override
@@ -908,6 +952,8 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             mFloatAnimatedValue = mFloatKeyframeSet.getFloatValue(fraction);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.845 -0500", hash_original_method = "56F77D961BC82461152CD24C144983C0", hash_generated_method = "932BE8033097A3E0DD0F0777F6D73A1F")
         
@@ -932,6 +978,8 @@ public FloatPropertyValuesHolder(Property property, float... values) {
          * according to the name of the property.
          * @param target The target object on which the value is set
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.LOG})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.850 -0500", hash_original_method = "727C6F3DB059985E066E102AF679E2D9", hash_generated_method = "0BF299EE2EE1BE08B279BB046D43F5A8")
         
@@ -961,6 +1009,8 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.853 -0500", hash_original_method = "2E99CF7209AB7743339028E8A9433227", hash_generated_method = "166A6D1C15BBA9368BF93C2728AD3F35")
         
@@ -1026,6 +1076,8 @@ public void setEvaluator(TypeEvaluator evaluator) {
      *
      * @param fraction The elapsed, interpolated fraction of the animation.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.759 -0500", hash_original_method = "3D77B6F49E03B0770D03717F27BECD0E", hash_generated_method = "3D77B6F49E03B0770D03717F27BECD0E")
     
 void calculateValue(float fraction) {
@@ -1087,6 +1139,8 @@ public String getPropertyName() {
      * most recently calculated in calculateValue().
      * @return
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.769 -0500", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "7EED53883B814F7F8B112CE8FF982C26")
     

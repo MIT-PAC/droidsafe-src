@@ -59,6 +59,8 @@ public abstract class ActionBar {
      *
      * @param view Custom navigation view to place in the ActionBar.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.404 -0500", hash_original_method = "75E78D59B0AC673EC9AC299DFF89779E", hash_generated_method = "3F5163B75632712B25ECCBFB0D907DF2")
     
 public abstract void setCustomView(View view);
@@ -102,6 +104,8 @@ public abstract void setCustomView(View view, LayoutParams layoutParams);
      *
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.408 -0500", hash_original_method = "999E7EA647DC5CDCE165BB3550A1876B", hash_generated_method = "8D83D7ECFE5BFE8CE20DCD09F260507E")
     
 public abstract void setCustomView(int resId);
@@ -119,6 +123,8 @@ public abstract void setCustomView(int resId);
      * @see #setDisplayUseLogoEnabled(boolean)
      * @see #setDisplayShowHomeEnabled(boolean)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.410 -0500", hash_original_method = "D5841849BE036FF3F1F40CFD74834BCD", hash_generated_method = "9B84DF91226E155C39700B10BA87FFEC")
     
 public abstract void setIcon(int resId);
@@ -136,6 +142,8 @@ public abstract void setIcon(int resId);
      * @see #setDisplayUseLogoEnabled(boolean)
      * @see #setDisplayShowHomeEnabled(boolean)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.412 -0500", hash_original_method = "35A832EA5C8D9B7F663DFDAB4318C3C9", hash_generated_method = "C10704A9BD17EABD169C029D6E0CFC14")
     
 public abstract void setIcon(Drawable icon);
@@ -153,6 +161,8 @@ public abstract void setIcon(Drawable icon);
      * @see #setDisplayUseLogoEnabled(boolean)
      * @see #setDisplayShowHomeEnabled(boolean)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.414 -0500", hash_original_method = "5A992973B4AAA4EB2D556E7E5F18426D", hash_generated_method = "881666F584146A15F2EE0382D036BCBF")
     
 public abstract void setLogo(int resId);
@@ -170,6 +180,8 @@ public abstract void setLogo(int resId);
      * @see #setDisplayUseLogoEnabled(boolean)
      * @see #setDisplayShowHomeEnabled(boolean)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.417 -0500", hash_original_method = "BE00F1051402F4FF45BA44110672D20A", hash_generated_method = "21350EAFAC6A708CF0CE0CF27202DF64")
     
 public abstract void setLogo(Drawable logo);
@@ -199,6 +211,8 @@ public abstract void setListNavigationCallbacks(SpinnerAdapter adapter,
      *
      * @param position Position of the item to select.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.421 -0500", hash_original_method = "F47386DE67C5DFD0E213E99D0661E7BB", hash_generated_method = "3471E6F45C0E8573058AF378E401E50A")
     
 public abstract void setSelectedNavigationItem(int position);
@@ -208,6 +222,8 @@ public abstract void setSelectedNavigationItem(int position);
      *
      * @return Position of the selected item.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.423 -0500", hash_original_method = "C0E6FA1AFA7AE41BF9B97C29729F20D0", hash_generated_method = "00D90446EA18E66EB837C1437F8C6062")
     
 public abstract int getSelectedNavigationIndex();
@@ -217,6 +233,8 @@ public abstract int getSelectedNavigationIndex();
      *
      * @return Number of navigation items.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.426 -0500", hash_original_method = "C2369EE9673B505598D2B50AEEA08DA1", hash_generated_method = "11C9E9D4744DA40AD5123CD2C68C0468")
     
 public abstract int getNavigationItemCount();
@@ -230,6 +248,8 @@ public abstract int getNavigationItemCount();
      * @see #setTitle(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.428 -0500", hash_original_method = "410835EEA321510B785087E900780AFB", hash_generated_method = "F61FA778C52CF90209781407DFEFC387")
     
 public abstract void setTitle(CharSequence title);
@@ -243,6 +263,8 @@ public abstract void setTitle(CharSequence title);
      * @see #setTitle(CharSequence)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.430 -0500", hash_original_method = "516EEAF41A54C2F23324189E2ED4731D", hash_generated_method = "D271218F7CA96C8DBB89D368B635F8B6")
     
 public abstract void setTitle(int resId);
@@ -257,6 +279,8 @@ public abstract void setTitle(int resId);
      * @see #setSubtitle(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.432 -0500", hash_original_method = "D00074A941BED700B112E60CA2B4BBFA", hash_generated_method = "0BA816A36095386377AF796A7E9F4E55")
     
 public abstract void setSubtitle(CharSequence subtitle);
@@ -270,6 +294,8 @@ public abstract void setSubtitle(CharSequence subtitle);
      * @see #setSubtitle(CharSequence)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.434 -0500", hash_original_method = "08B7103B21D83BEA0EC09BF9CF437884", hash_generated_method = "8D1000593E31D74C218814097C6E4287")
     
 public abstract void setSubtitle(int resId);
@@ -281,6 +307,8 @@ public abstract void setSubtitle(int resId);
      * @param options A combination of the bits defined by the DISPLAY_ constants
      *                defined in ActionBar.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.436 -0500", hash_original_method = "DC25C0C2454CF89FEB28819F3CD4A618", hash_generated_method = "32E10E28682C89DBD204A57E27C0F50A")
     
 public abstract void setDisplayOptions(int options);
@@ -298,6 +326,8 @@ public abstract void setDisplayOptions(int options);
      *                defined in ActionBar.
      * @param mask A bit mask declaring which display options should be changed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.438 -0500", hash_original_method = "54BB4F56FD463FEFE8CE5E75AA3087ED", hash_generated_method = "EFAC8DBB210CD389D0492B0D3B9D2A8D")
     
 public abstract void setDisplayOptions(int options, int mask);
@@ -313,6 +343,8 @@ public abstract void setDisplayOptions(int options, int mask);
      * @see #setDisplayOptions(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.440 -0500", hash_original_method = "4C4DD6013B7ED50AD623552F47D031D0", hash_generated_method = "95095A12BEBBCF8E28A9C126FACFB785")
     
 public abstract void setDisplayUseLogoEnabled(boolean useLogo);
@@ -328,6 +360,8 @@ public abstract void setDisplayUseLogoEnabled(boolean useLogo);
      * @see #setDisplayOptions(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.442 -0500", hash_original_method = "67FDE018A82DDA318E8EE4B546D7CB49", hash_generated_method = "2F416A95FDEA228ED1ECF0E15AD7F883")
     
 public abstract void setDisplayShowHomeEnabled(boolean showHome);
@@ -345,6 +379,8 @@ public abstract void setDisplayShowHomeEnabled(boolean showHome);
      * @see #setDisplayOptions(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.445 -0500", hash_original_method = "7FAA9B7D5A3C48CB59C455373282F80B", hash_generated_method = "D8C2F66495A46EB792CD4E99FF78D108")
     
 public abstract void setDisplayHomeAsUpEnabled(boolean showHomeAsUp);
@@ -359,6 +395,8 @@ public abstract void setDisplayHomeAsUpEnabled(boolean showHomeAsUp);
      * @see #setDisplayOptions(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.448 -0500", hash_original_method = "49E430E7E7BED000E9B7460A01465313", hash_generated_method = "81FE3D3DE6CADA929EEB146B298466EC")
     
 public abstract void setDisplayShowTitleEnabled(boolean showTitle);
@@ -373,6 +411,8 @@ public abstract void setDisplayShowTitleEnabled(boolean showTitle);
      * @see #setDisplayOptions(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.450 -0500", hash_original_method = "269EA1D00FA879831CA8ABD7F34B123A", hash_generated_method = "412AE0EBC3B8DE455F71664A2962597E")
     
 public abstract void setDisplayShowCustomEnabled(boolean showCustom);
@@ -385,6 +425,8 @@ public abstract void setDisplayShowCustomEnabled(boolean showCustom);
      * @see #setStackedBackgroundDrawable(Drawable)
      * @see #setSplitBackgroundDrawable(Drawable)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.452 -0500", hash_original_method = "5E39AC2966371F154D9FDAA58AC06B08", hash_generated_method = "4AD725E2636D2CB7C4C3544F4D568010")
     
 public abstract void setBackgroundDrawable(Drawable d);
@@ -416,6 +458,8 @@ public void setSplitBackgroundDrawable(Drawable d) { }
     /**
      * @return The current custom view.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.458 -0500", hash_original_method = "9FFDC35B3B54894B02C81A484E99C0EB", hash_generated_method = "E95F0DF95C54D06CFADD71C2C35C4CFF")
     
 public abstract View getCustomView();
@@ -427,6 +471,8 @@ public abstract View getCustomView();
      *
      * @return The current ActionBar title or null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.460 -0500", hash_original_method = "2A829968551EA225833AD910559E3639", hash_generated_method = "9F704A6DC6184A7C8579171531B62A23")
     
 public abstract CharSequence getTitle();
@@ -438,6 +484,8 @@ public abstract CharSequence getTitle();
      *
      * @return The current ActionBar subtitle or null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.462 -0500", hash_original_method = "FEEA0E87B97F8601D44AFB1E29DE7E64", hash_generated_method = "19C700D07F867A34AFE71438482B9BA4")
     
 public abstract CharSequence getSubtitle();
@@ -452,6 +500,8 @@ public abstract CharSequence getSubtitle();
      *
      * @return The current navigation mode.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.464 -0500", hash_original_method = "ACB37E7EC2E721AFDF9AA7215747F6DA", hash_generated_method = "2D7B6AE05BF1372B2AC884E876E49A38")
     
 public abstract int getNavigationMode();
@@ -464,6 +514,8 @@ public abstract int getNavigationMode();
      * @see #NAVIGATION_MODE_LIST
      * @see #NAVIGATION_MODE_TABS
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.467 -0500", hash_original_method = "CFE23BA81B0518E7BEE1626B5D4AAF21", hash_generated_method = "E0630E478C8C9F8B96B2CCC765061630")
     
 public abstract void setNavigationMode(int mode);
@@ -471,6 +523,8 @@ public abstract void setNavigationMode(int mode);
     /**
      * @return The current set of display options. 
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.469 -0500", hash_original_method = "DC42952D4250534A529685F0B3612EF4", hash_generated_method = "09C94D136A7B8F34CEC7158FF11FBFB9")
     
 public abstract int getDisplayOptions();
@@ -553,6 +607,8 @@ public abstract void removeTab(Tab tab);
      *
      * @param position Position of the tab to remove
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.484 -0500", hash_original_method = "E327FF6F67A521379771DBC3C0AB5518", hash_generated_method = "0CD5E8639F3CED0CE9AD51388C611140")
     
 public abstract void removeTabAt(int position);
@@ -560,6 +616,8 @@ public abstract void removeTabAt(int position);
     /**
      * Remove all tabs from the action bar and deselect the current tab.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.486 -0500", hash_original_method = "3E6FB1B2AAEBF277582ECBA93E338A01", hash_generated_method = "60C495E9572BF468AF1438E7B40F1DF7")
     
 public abstract void removeAllTabs();
@@ -599,6 +657,8 @@ public abstract Tab getTabAt(int index);
      * Returns the number of tabs currently registered with the action bar.
      * @return Tab count
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.495 -0500", hash_original_method = "E7B97750ADDF2C358CEEFC6FBEBBBE3C", hash_generated_method = "66954A658D61CD03E32EF234828E97B2")
     
 public abstract int getTabCount();
@@ -620,6 +680,8 @@ public abstract int getTabCount();
          * @return Current position, or {@link #INVALID_POSITION} if this tab is not currently in
          *         the action bar.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.523 -0500", hash_original_method = "1032B0D3D5C66E60E2A3A63CB594BFA8", hash_generated_method = "CF5E5CEC83EF085B5BB2AD3D5AD67AC3")
         
 public abstract int getPosition();
@@ -629,6 +691,8 @@ public abstract int getPosition();
          *
          * @return The tab's icon
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.525 -0500", hash_original_method = "AA755DAC91171C2AAB945E5302395478", hash_generated_method = "EE654C6C97D0C1CE3EE9E0223ED50ADD")
         
 public abstract Drawable getIcon();
@@ -638,6 +702,8 @@ public abstract Drawable getIcon();
          *
          * @return The tab's text
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.527 -0500", hash_original_method = "F253B5A800FFE39B36B9B816BB348763", hash_generated_method = "748527C2FC98E6C1FD97D7948B23BF56")
         
 public abstract CharSequence getText();
@@ -711,6 +777,8 @@ public abstract Tab setCustomView(int layoutResId);
          *
          * @return The custom view set by {@link #setCustomView(View)}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.544 -0500", hash_original_method = "9FFDC35B3B54894B02C81A484E99C0EB", hash_generated_method = "E95F0DF95C54D06CFADD71C2C35C4CFF")
         
 public abstract View getCustomView();
@@ -728,6 +796,8 @@ public abstract Tab setTag(Object obj);
         /**
          * @return This Tab's tag object.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.549 -0500", hash_original_method = "372656DAE5C62DE63E43C2A798E8C7AA", hash_generated_method = "7A1D8381ADB85B0BE76468A2A89479DA")
         
 public abstract Object getTag();
@@ -746,6 +816,8 @@ public abstract Tab setTabListener(TabListener listener);
         /**
          * Select this tab. Only valid if the tab has been added to the action bar.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.553 -0500", hash_original_method = "B841EEC3EA2CD8CBEDD47C93BABBE626", hash_generated_method = "F855EF34835F491A4362292827870193")
         
 public abstract void select();
@@ -783,6 +855,8 @@ public abstract Tab setContentDescription(CharSequence contentDesc);
          * @see #setContentDescription(CharSequence)
          * @see #setContentDescription(int)
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.561 -0500", hash_original_method = "4533B3AAEA48E34A49C34F9827D7AAAB", hash_generated_method = "653CC6252AE9AEA258147C383AE5560F")
         
 public abstract CharSequence getContentDescription();
@@ -879,6 +953,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
      *
      * @return The ActionBar's height
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.497 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "D9FDFCA8B4CC6ACB03F0DDFF5E50C85D")
     
 public abstract int getHeight();
@@ -889,6 +965,8 @@ public abstract int getHeight();
      * {@link Window#FEATURE_ACTION_BAR_OVERLAY} it will resize application
      * content to fit the new space available.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.500 -0500", hash_original_method = "9067AC917FFB66A9E8FF84EA37A89CBE", hash_generated_method = "EBADF991BFA81CD6C874A387FE71E812")
     
 public abstract void show();
@@ -899,6 +977,8 @@ public abstract void show();
      * {@link Window#FEATURE_ACTION_BAR_OVERLAY} it will resize application
      * content to fit the new space available.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.502 -0500", hash_original_method = "58365D1B8E35BD4BC81D336D692C97A2", hash_generated_method = "FE02920A742EFECAD317D7ABD9850091")
     
 public abstract void hide();
@@ -906,6 +986,8 @@ public abstract void hide();
     /**
      * @return <code>true</code> if the ActionBar is showing, <code>false</code> otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.504 -0500", hash_original_method = "C3BB9B135A4D4EFD4770D69B00362F45", hash_generated_method = "A6E9391606A75F587F3B11B70522971A")
     
 public abstract boolean isShowing();

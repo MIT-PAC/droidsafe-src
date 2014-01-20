@@ -43,6 +43,8 @@ public DNParser(String dn) throws IOException {
     /**
      * Returns the next attribute type: (ALPHA 1*keychar) / oid
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.076 -0500", hash_original_method = "7D5C37EF81BA8B102CA672C27E3E2647", hash_generated_method = "D580D2B6997CA0AD3EA3DA28A6D39DD5")
     
 private String nextAT() throws IOException {
@@ -107,6 +109,8 @@ private String nextAT() throws IOException {
     /**
      * Returns a quoted attribute value: QUOTATION *( quotechar / pair ) QUOTATION
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.080 -0500", hash_original_method = "5F9B58135FF863A8E24F4B2AD9DF48BE", hash_generated_method = "E3DD63383478888733F50795F38A2121")
     
 private String quotedAV() throws IOException {
@@ -144,6 +148,8 @@ private String quotedAV() throws IOException {
     /**
      * Returns a hex string attribute value: "#" hexstring
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.083 -0500", hash_original_method = "59E635302CD6807B36C1A45A26BE591E", hash_generated_method = "E777F4D20A3E452EC8A82B9D572FAC41")
     
 private String hexAV() throws IOException {
@@ -197,6 +203,8 @@ private String hexAV() throws IOException {
     /**
      * Returns a string attribute value: *( stringchar / pair ).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.085 -0500", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "91DA17AAED4411BDAFC72B3BC9DDFF89")
     
 private String escapedAV() throws IOException {
@@ -246,6 +254,8 @@ private String escapedAV() throws IOException {
     /**
      * Returns an escaped char
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.088 -0500", hash_original_method = "1A89A1602A29634CB35E16E135F5FE74", hash_generated_method = "968F3EFAE4329412C847E640E9C94692")
     
 private char getEscaped() throws IOException {
@@ -336,6 +346,8 @@ protected char getUTF8() throws IOException {
      * hexchar    = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
      *                     / "a" / "b" / "c" / "d" / "e" / "f"
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.094 -0500", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "738B429D26797DFD36B981BBB0BD184C")
     
 private int getByte(int position) throws IOException {

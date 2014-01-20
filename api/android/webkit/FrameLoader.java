@@ -14,12 +14,10 @@ import android.net.http.RequestHandle;
 import android.os.Build;
 import android.webkit.CacheManager.CacheResult;
 
-
-
-
-
 class FrameLoader {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.920 -0500", hash_original_method = "0F090DDEC88C4F6DDE49E0CF19F424EB", hash_generated_method = "FD66A4B52C3F94D32976AC193BD637CB")
     
 private static boolean handleLocalFile(String url, LoadListener loadListener,
@@ -101,10 +99,8 @@ private static boolean handleLocalFile(String url, LoadListener loadListener,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.887 -0500", hash_original_field = "4336C241816DDA6167F38455E1A2AB46", hash_generated_field = "EB2ACDA5CCC677A93D03B81217EE2CA1")
 
-
     private static final int URI_PROTOCOL = 0x100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.890 -0500", hash_original_field = "8CC4B91D16E4C3BAC489D34D5D74C806", hash_generated_field = "E9E9985B4D9BEACB3E20B77FBDAC6013")
-
 
     private static final String CONTENT_TYPE = "content-type";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.893 -0500", hash_original_field = "FA0EBEF2A159D7573F9A9C0E88256609", hash_generated_field = "36FEC7407939A642CEE5B978BA5EE272")
@@ -114,15 +110,12 @@ private static boolean handleLocalFile(String url, LoadListener loadListener,
             "<html><head><title>about:blank</title></head><body></body></html>";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.895 -0500", hash_original_field = "7DF962FCBF88FDCD826B3B2B6F608E65", hash_generated_field = "0A81A03C8AD82EEC7F102EB79209347D")
 
-
     static final String HEADER_STR = "text/xml, text/html, " +
             "application/xhtml+xml, image/png, text/plain, */*;q=0.8";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.897 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
-
     private static final String LOGTAG = "webkit";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.863 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "D7FBD6A4D07A65117411BC8C01652773")
-
 
     private  LoadListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.866 -0500", hash_original_field = "FB63EE61CA76D9C9913EC87AD6B942C6", hash_generated_field = "46D356CEC2B798E53528C0BD5F09C873")
@@ -156,6 +149,8 @@ private static boolean handleLocalFile(String url, LoadListener loadListener,
 
     private  WebResourceResponse mInterceptResponse;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.901 -0500", hash_original_method = "E604BA5F97EB5A21051EE698F8A56155", hash_generated_method = "E604BA5F97EB5A21051EE698F8A56155")
     
 FrameLoader(LoadListener listener, WebSettings settings,
@@ -268,6 +263,8 @@ public boolean executeLoad() {
 
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.923 -0500", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "1C30F7F32746647A05A19AC4A9C30F54")
     
 boolean handleHTTPLoad() {
@@ -341,6 +338,8 @@ private void startCacheLoad(CacheResult result) {
      * correctly.
      * Returns true if the response was handled from the cache
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.929 -0500", hash_original_method = "ED6284595A2927F289F312ED71C4BF2D", hash_generated_method = "6E7D654569B43B2A03FAE01DE6FAA9B3")
     
 private boolean handleCache() {
@@ -349,7 +348,6 @@ private boolean handleCache() {
             // loader to not use the cached content.
             case WebSettings.LOAD_NO_CACHE:
                 break;
-                
                 
             // This mode is used when the content should only be loaded from
             // the cache. If it is not there, then fail the load. This is used
@@ -406,6 +404,8 @@ private boolean handleCache() {
     /**
      * Add the static headers that don't change with each request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.931 -0500", hash_original_method = "2D0BB20A4C7261DEBC8826658FC12230", hash_generated_method = "C58F7F6A51A3BB84E758653BC0F7704F")
     
 private void populateStaticHeaders() {
@@ -434,6 +434,8 @@ private void populateStaticHeaders() {
      * Add the content related headers. These headers contain user private data
      * and is not used when we are proxying an untrusted request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.934 -0500", hash_original_method = "FC5DAD276D63BF9B93BD19919189EAE8", hash_generated_method = "39104EE62728A8993DD70EB39437F698")
     
 private void populateHeaders() {

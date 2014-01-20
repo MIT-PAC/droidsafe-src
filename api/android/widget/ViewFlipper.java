@@ -14,10 +14,6 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
 
-
-
-
-
 public class ViewFlipper extends ViewAnimator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.662 -0500", hash_original_field = "D3F755D7E6A94238E098AB303C90B35E", hash_generated_field = "CC4DF3149FCDDB900A4695D39D4D2780")
 
@@ -27,17 +23,14 @@ public class ViewFlipper extends ViewAnimator {
     private static final boolean LOGD = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.667 -0500", hash_original_field = "981A5CEE819E2D7AB9C46995D4A7FFC1", hash_generated_field = "C50E8EF39D157581F3ADA3B799342BBB")
 
-
     private static final int DEFAULT_INTERVAL = 3000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.669 -0500", hash_original_field = "45FA4E5265FF50261C110F724A036FFE", hash_generated_field = "EF72A9C12698542BA68675F47801C510")
-
 
     private int mFlipInterval = DEFAULT_INTERVAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.671 -0500", hash_original_field = "501E8B454A780DB4BF3497D9A7232702", hash_generated_field = "9C643D61158922DF6FDCA155A2D64171")
 
     private boolean mAutoStart = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.674 -0500", hash_original_field = "B7399D00B226DB1EFC02A9A44C6E372C", hash_generated_field = "BF66F685C8DAD91C6D305A2AD45B0022")
-
 
     private boolean mRunning = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.676 -0500", hash_original_field = "5D947BF952E8653BAADEA609028A78F9", hash_generated_field = "649FDFAC63847330ACCF3CE36C09777A")
@@ -65,11 +58,9 @@ public class ViewFlipper extends ViewAnimator {
                 updateRunning(false);
             }
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.718 -0500", hash_original_field = "BA0637B23BB6A08212BC08AF87AA314C", hash_generated_field = "1535E31D28A65629AD405F9453386A42")
-
 
     private final int FLIP_MSG = 1;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.243 -0400", hash_original_field = "02869CDAF60D7BAD10F76E3EF9313FAC", hash_generated_field = "1FE43EAD86528C4571343BC4A0A3488D")
@@ -87,7 +78,6 @@ public class ViewFlipper extends ViewAnimator {
                 }
             }
         }
-
         
 };
 
@@ -186,6 +176,8 @@ public void stopFlipping() {
      * Internal method to start or stop dispatching flip {@link Message} based
      * on {@link #mRunning} and {@link #mVisible} state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.707 -0500", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "EDCA1C3925D67C2FE8986A6375531C5A")
     
 private void updateRunning() {
@@ -200,6 +192,8 @@ private void updateRunning() {
      *            addition to queuing future flips. If omitted, defaults to
      *            true.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.710 -0500", hash_original_method = "FEBFE82757020B844DFA7E8A1658E9A7", hash_generated_method = "B818E36C169E4F3ABFEA4B684A66854A")
     
 private void updateRunning(boolean flipNow) {

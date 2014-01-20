@@ -22,6 +22,8 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 		addTaint(value.getTaint());
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public String getName() {
@@ -29,6 +31,8 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 		return null;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public String getValue() {
@@ -41,6 +45,8 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
      * 
      * @return A string representation.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.564 -0500", hash_original_method = "93FF9F6BC44FD78A86FF56612368CE29", hash_generated_method = "9222A2A74E472CBBD21741C2076BECE7")
     
 public String toString() {
@@ -73,6 +79,8 @@ public boolean equals(final Object object) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.569 -0500", hash_original_method = "A586BF0615CE91E5DB31F98DF42747A4", hash_generated_method = "92AA0EA6F5675590FB6F464F709CD33B")
     
 public int hashCode() {
@@ -82,6 +90,8 @@ public int hashCode() {
         return hash;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.571 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
     
 public Object clone() throws CloneNotSupportedException {

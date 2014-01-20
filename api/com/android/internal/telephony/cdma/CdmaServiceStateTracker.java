@@ -1107,6 +1107,8 @@ protected void pollStateDone() {
     /**
      * Returns a TimeZone object based only on parameters from the NITZ string.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.569 -0500", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BAD67707D674CDAD94F26509AB9FCB24")
     
 private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
@@ -1119,6 +1121,8 @@ private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
         return guess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.571 -0500", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "049809E0CCBF5A32DA8C3BF574D8B5BF")
     
 private TimeZone findTimeZone(int offset, boolean dst, long when) {
@@ -1262,6 +1266,8 @@ public int getCurrentDataConnectionState() {
      * code is registration state 0-5 from TS 27.007 7.2
      * returns true if registered roam, false otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.587 -0500", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "6C0E3EFDD2ACA49FF7AF90314964240F")
     
 private boolean
@@ -1277,6 +1283,8 @@ private boolean
      * @param roamInd roaming indicator in String
      * @return true if the roamInd is in the carrier-specified list of ERIs for home network
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.589 -0500", hash_original_method = "B4323D2F9A07343D2462A4D59ED08046", hash_generated_method = "3B2E7C0A64E67E03198E98AAACE24392")
     
 private boolean isRoamIndForHomeSystem(String roamInd) {
@@ -1305,6 +1313,8 @@ private boolean isRoamIndForHomeSystem(String roamInd) {
      * @param s ServiceState hold current ons
      * @return true for roaming state set
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.592 -0500", hash_original_method = "011C4920ECDF4CF24EF92E838B11DA6F", hash_generated_method = "42F59445F2ECAFD3199C656771D73CB2")
     
 private
@@ -1326,6 +1336,8 @@ private
      * nitzReceiveTime is time_t that the NITZ time was posted
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.597 -0500", hash_original_method = "7ADA939B474B339ADDF025B993055C9A", hash_generated_method = "984E693ACA3DDAA73BDE3E3021953437")
     
 private
@@ -1517,6 +1529,8 @@ private
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.600 -0500", hash_original_method = "606CF17A4D40300EAFFE0BD67B82E0B6", hash_generated_method = "7CA45260AD3533375D42B40B52005E16")
     
 private boolean getAutoTime() {
@@ -1527,6 +1541,8 @@ private boolean getAutoTime() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.602 -0500", hash_original_method = "46A307C7AC0E208B22907DFB9CC04F45", hash_generated_method = "09AD958D51EAC7A5D33093B552765A49")
     
 private boolean getAutoTimeZone() {
@@ -1537,6 +1553,8 @@ private boolean getAutoTimeZone() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.604 -0500", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "95607A7DB8A17A71A53B4FD9E4217C6A")
     
 private void saveNitzTimeZone(String zoneId) {
@@ -1549,6 +1567,8 @@ private void saveNitzTimeZone(String zoneId) {
      *
      * @param zoneId timezone set by carrier
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.607 -0500", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "0B5EAB3B98BE4495A7BB1CF24837488F")
     
 private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
@@ -1567,6 +1587,8 @@ private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
      *
      * @param time time set by network
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.609 -0500", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "292B45AEF44DD01DD907E884EEAFFEA9")
     
 private void setAndBroadcastNetworkSetTime(long time) {
@@ -1577,6 +1599,8 @@ private void setAndBroadcastNetworkSetTime(long time) {
         phone.getContext().sendStickyBroadcast(intent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.613 -0500", hash_original_method = "FAE09FD02085B2FF4E1D8E37B65790F8", hash_generated_method = "688F6BE267C20F8134B140A9F647E2D7")
     
 private void revertToNitzTime() {
@@ -1592,6 +1616,8 @@ private void revertToNitzTime() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.617 -0500", hash_original_method = "72156026C5CBDDA4CCFB821F20D0E263", hash_generated_method = "36AC0AF73F6D01D0A213B6774D93860E")
     
 private void revertToNitzTimeZone() {
@@ -1621,6 +1647,8 @@ protected boolean isSidsAllZeros() {
     /**
      * Check whether a specified system ID that matches one of the home system IDs.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.625 -0500", hash_original_method = "D3D57AE588662EF8725CB60FCA1C3072", hash_generated_method = "2B75B99AF9634D353514986B6026DE94")
     
 private boolean isHomeSid(int sid) {
@@ -1672,6 +1700,8 @@ public String getPrlVersion() {
     /**
      * Returns IMSI as MCC + MNC + MIN
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.640 -0500", hash_original_method = "B26D3610EF4478BB5ED2ADA9EDE43E3B", hash_generated_method = "8C7D47A97C60077F792C3402BD9CD63E")
     
@@ -1701,6 +1731,8 @@ public boolean isMinInfoReady() {
     /**
      * Returns OTASP_UNKNOWN, OTASP_NEEDED or OTASP_NOT_NEEDED
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.648 -0500", hash_original_method = "0E452BF490F5457F3887197BA13C1AF4", hash_generated_method = "0E452BF490F5457F3887197BA13C1AF4")
     

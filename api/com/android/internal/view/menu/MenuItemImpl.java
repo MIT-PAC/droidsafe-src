@@ -139,6 +139,8 @@ public final class MenuItemImpl implements MenuItem {
      * @param categoryOrder The ordering for this item.
      * @param title The text to display for the item.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.250 -0500", hash_original_method = "64F6A72F78EB0039947A0530C3919D96", hash_generated_method = "A20B17C2FAE41E0FE8ECB3D168D178C1")
     
 MenuItemImpl(MenuBuilder menu, int group, int id, int categoryOrder, int ordering,
@@ -267,6 +269,8 @@ public MenuItem setIntent(Intent intent) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.272 -0500", hash_original_method = "C32C9CAC3047604A3F615D0E2B0A3D92", hash_generated_method = "C32C9CAC3047604A3F615D0E2B0A3D92")
     
@@ -334,6 +338,8 @@ public MenuItem setShortcut(char numericChar, char alphaChar) {
     /**
      * @return The active shortcut (based on QWERTY-mode of the menu).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.287 -0500", hash_original_method = "D96803BF052A5945B7D152CA36FE6B7E", hash_generated_method = "D96803BF052A5945B7D152CA36FE6B7E")
     
@@ -346,6 +352,8 @@ char getShortcut() {
      *         key (for example 'Menu+a'). Also, any non-human readable
      *         characters should be human readable (for example 'Menu+enter').
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.290 -0500", hash_original_method = "BC454AC179D3698A29B0357FA131C3B2", hash_generated_method = "BC454AC179D3698A29B0357FA131C3B2")
     
@@ -384,6 +392,8 @@ String getShortcutLabel() {
      *         whether the menu should show shortcuts and whether this item has
      *         a shortcut defined)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.293 -0500", hash_original_method = "10F1B2AEF5DA21C52B4C4E0F70D42C6B", hash_generated_method = "94CAC6D43EF5F3E660F3D52EFEF9FDCE")
     
 boolean shouldShowShortcut() {
@@ -404,6 +414,8 @@ public boolean hasSubMenu() {
         return mSubMenu != null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.299 -0500", hash_original_method = "84077AC2D714BDDE1A3A80B85CC9BFB0", hash_generated_method = "84077AC2D714BDDE1A3A80B85CC9BFB0")
     
 void setSubMenu(SubMenuBuilder subMenu) {
@@ -568,6 +580,8 @@ public MenuItem setChecked(boolean checked) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.335 -0500", hash_original_method = "F4E3FA5EA691BD61029F7B342451D96B", hash_generated_method = "F4E3FA5EA691BD61029F7B342451D96B")
     
 void setCheckedInt(boolean checked) {
@@ -593,6 +607,8 @@ public boolean isVisible() {
      * @param shown Whether to show (true) or hide (false).
      * @return Whether the item's shown state was changed
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.339 -0500", hash_original_method = "6BBB65AE1F8C0F9A0552DC908B4D29C9", hash_generated_method = "6BBB65AE1F8C0F9A0552DC908B4D29C9")
     

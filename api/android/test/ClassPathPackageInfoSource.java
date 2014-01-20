@@ -20,12 +20,7 @@ import com.google.android.collect.Sets;
 
 import dalvik.system.DexFile;
 
-
-
-
-
 public class ClassPathPackageInfoSource {
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.879 -0500", hash_original_method = "39073AD7440C68985301143C4EF05AD0", hash_generated_method = "FB6305A216513F28E8657D75C1F16B30")
     
@@ -36,6 +31,8 @@ public static void setApkPaths(String[] apkPaths) {
     /**
      * Checks if a given file name represents a toplevel class.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.903 -0500", hash_original_method = "F653DD259DAF160B16141F9C028E5103", hash_generated_method = "0204465D728032ACB5AFCD260826FD3D")
     
 private static boolean isToplevelClass(String fileName) {
@@ -45,6 +42,8 @@ private static boolean isToplevelClass(String fileName) {
     /**
      * Given the absolute path of a class file, return the class name.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.905 -0500", hash_original_method = "E96E955A5C1EB2B683E8448061084FE0", hash_generated_method = "EB93C1109129627397BE30F29F6E61DB")
     
 private static String getClassName(String className) {
@@ -56,6 +55,8 @@ private static String getClassName(String className) {
      * Gets the class path from the System Property "java.class.path" and splits
      * it up into the individual elements.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.908 -0500", hash_original_method = "C01B1A844B82E746BE12E8FB5FEA7F70", hash_generated_method = "E4BBE2E7512D6E273BCCAFDF839650EB")
     
 private static String[] getClassPath() {
@@ -65,10 +66,8 @@ private static String[] getClassPath() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.857 -0500", hash_original_field = "D967D7BD2DC6DD1F65CEF9D1E61AD916", hash_generated_field = "0A8E39F88964FFF21016A3B57374DBA5")
 
-
     private static final String CLASS_EXTENSION = ".class";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.860 -0500", hash_original_field = "666867A935B66C5E4CF25DA40805D59F", hash_generated_field = "4A3AFCB5D516866BED33F518C5F5F314")
-
 
     private static final ClassLoader CLASS_LOADER
             = ClassPathPackageInfoSource.class.getClassLoader();
@@ -84,7 +83,6 @@ private static String[] getClassPath() {
                 protected ClassPathPackageInfo load(String pkgName) {
                     return createPackageInfo(pkgName);
                 }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.868 -0500", hash_original_field = "71A42C6361E2E495CF635983A9996950", hash_generated_field = "738E08BA6D6240CD75FE2D1444323B8B")
@@ -97,6 +95,8 @@ private static String[] getClassPath() {
 
     private ClassLoader classLoader;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.876 -0500", hash_original_method = "5ED3C641A9C0B2F78FCA551972DB4070", hash_generated_method = "5ED3C641A9C0B2F78FCA551972DB4070")
     
 ClassPathPackageInfoSource() {
@@ -109,6 +109,8 @@ public ClassPathPackageInfo getPackageInfo(String pkgName) {
         return cache.get(pkgName);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.885 -0500", hash_original_method = "276BBF38C683664C5FC093FA16997BEF", hash_generated_method = "8142E479C8EDAF640012769EC51F451B")
     
 private ClassPathPackageInfo createPackageInfo(String packageName) {
@@ -292,6 +294,8 @@ private void findClassesInApk(String apkPath, String packageName,
     /**
      * Gets the class and package entries from a Jar.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.900 -0500", hash_original_method = "47511CFE3B18B3B12FAA22B4CA43B4A2", hash_generated_method = "69400A0E1B9E959917EB939B937C78D5")
     
 private Set<String> getJarEntries(File jarFile)

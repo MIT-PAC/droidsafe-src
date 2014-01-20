@@ -23,11 +23,6 @@ import org.bouncycastle.asn1.x509.V2Form;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Selector;
 
-
-
-
-
-
 public class AttributeCertificateIssuer implements CertSelector, Selector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.006 -0500", hash_original_field = "F472E80F733CDF00E48AF589322F06BE", hash_generated_field = "F472E80F733CDF00E48AF589322F06BE")
 
@@ -60,6 +55,8 @@ public AttributeCertificateIssuer(X509Principal principal)
         form = new V2Form(new GeneralNames(new DERSequence(new GeneralName(principal))));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.017 -0500", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "0A50B512A51F6F9ED9CD9C8DB79C5C1D")
     
 private Object[] getNames()
@@ -122,6 +119,8 @@ public Principal[] getPrincipals()
         return (Principal[])l.toArray(new Principal[l.size()]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.022 -0500", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "ADA157C70E1BD88F937B563160F12EED")
     
 private boolean matchesDN(X500Principal subject, GeneralNames targets)
@@ -232,7 +231,6 @@ public boolean match(Object obj)
 
         return match((Certificate)obj);
     }
-
     
 }
 

@@ -35,6 +35,8 @@ public class DefaultRouter implements Router {
 
     private Hop defaultRoute;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.137 -0500", hash_original_method = "1E8D5551C1C844D291A6EDC5BD70E069", hash_generated_method = "76740CD8F7CB8A612911FE9CCA9CE730")
     
 private DefaultRouter() {
@@ -227,6 +229,8 @@ public void fixStrictRouting(SIPRequest req) {
      * @return
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.150 -0500", hash_original_method = "1A8C9A0DF77761777787B14E70DB6165", hash_generated_method = "3A7A70F4AA7EA0B40E7A88DF9227401C")
     
 private final Hop createHop(SipURI sipUri, Request request) {

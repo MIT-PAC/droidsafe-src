@@ -8,10 +8,10 @@ import com.android.internal.telephony.IccCard;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneBase;
 
-
-
 public final class SimCard extends IccCard {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.902 -0500", hash_original_method = "9F0A913CCE42D6EF6B4C91409D578CD8", hash_generated_method = "9F0A913CCE42D6EF6B4C91409D578CD8")
     
 SimCard(GSMPhone phone) {
@@ -61,7 +61,6 @@ public SimCard(PhoneBase phone, String logTag, Boolean dbg) {
     public String getServiceProviderName () {
         return mPhone.mIccRecords.getServiceProviderName();
     }
-
     
 }
 

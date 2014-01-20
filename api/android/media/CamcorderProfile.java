@@ -121,9 +121,13 @@ public static boolean hasProfile(int cameraId, int quality) {
         return native_has_camcorder_profile(cameraId, quality);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void native_init() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final CamcorderProfile native_get_camcorder_profile(
             int cameraId, int quality) {
     	CamcorderProfile cp = new CamcorderProfile(DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT,
@@ -134,6 +138,8 @@ public static boolean hasProfile(int cameraId, int quality) {
     	return cp;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final boolean native_has_camcorder_profile(
             int cameraId, int quality) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356549571 = DSUtils.UNKNOWN_BOOLEAN;
@@ -242,6 +248,8 @@ public static boolean hasProfile(int cameraId, int quality) {
     public int audioChannels;
 
     // Private constructor called by JNI
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.203 -0500", hash_original_method = "90038C05C514B802B5EF0BEF919C1051", hash_generated_method = "EB83460A361121A6ED6780C735F2461B")
     
 private CamcorderProfile(int duration,

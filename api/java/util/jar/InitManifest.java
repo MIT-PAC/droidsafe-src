@@ -83,6 +83,8 @@ void initEntries(Map<String, Attributes> entries,
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.125 -0500", hash_original_method = "DA9F28DCB522B20E2FDE0CD9A032935D", hash_generated_method = "DA9F28DCB522B20E2FDE0CD9A032935D")
     
@@ -93,6 +95,8 @@ int getPos() {
     /**
      * Read a single line from the manifest buffer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.128 -0500", hash_original_method = "A5E7BCD31AF83D3157F8D11FE9DEE1F1", hash_generated_method = "B0989563A2859A21237FD768866FD7A4")
     
 private boolean readHeader() throws IOException {
@@ -109,6 +113,8 @@ private boolean readHeader() throws IOException {
         return consecutiveLineBreaks > 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.131 -0500", hash_original_method = "BA591702B8733A5B91A49342DCC26BF2", hash_generated_method = "B41DB55734822C9DEFD85397F22492F7")
     
 private void readName() throws IOException {
@@ -135,6 +141,8 @@ private void readName() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.134 -0500", hash_original_method = "F963A8011A3FFB3111BBD881FC78A3FF", hash_generated_method = "F3AA5C376290FFE67575A0054CF30EB5")
     
 private void readValue() throws IOException {

@@ -21,6 +21,8 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
      * @return -1 of first OID "less" than second OID 1 otherwise, 0 if they are
      *         equal
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.273 -0500", hash_original_method = "B35DA3AB8471E98A0F9901B66FBBA5C9", hash_generated_method = "7557328DF4D4A138F8EF4FFB2D8845C4")
     
 private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {

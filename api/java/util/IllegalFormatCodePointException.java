@@ -21,6 +21,8 @@ public class IllegalFormatCodePointException extends IllegalFormatException impl
      * @param c
      *           the invalid Unicode code point.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.929 -0500", hash_original_method = "EC5D1DD50821B22662FE61EFD96C533A", hash_generated_method = "202A540A28DC620266DE82CA6597C4B9")
     
 public IllegalFormatCodePointException(int c) {
@@ -32,6 +34,8 @@ public IllegalFormatCodePointException(int c) {
      *
      * @return the invalid Unicode code point.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.931 -0500", hash_original_method = "D5B710B3F21DF9B84478D362C18B2C11", hash_generated_method = "3D186FA967EE924486A47F724539C263")
     
@@ -39,6 +43,8 @@ public int getCodePoint() {
         return c;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.934 -0500", hash_original_method = "D74EDE3BF1A0D3C4B575CB0DB2BFF88F", hash_generated_method = "06B23DFB85682ACA4F776BB49368A799")
     

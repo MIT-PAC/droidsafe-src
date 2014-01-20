@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public final class StructUtsname {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.035 -0500", hash_original_field = "97ED6A6DCDD685F9B3DC68D91EF7195D", hash_generated_field = "06EE67511C7267E177679ED8D9906A87")
 
@@ -24,6 +22,8 @@ public final class StructUtsname {
 
     public  String machine;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.048 -0500", hash_original_method = "ABD276C824D50C395959B30AFCABD3AD", hash_generated_method = "ABD276C824D50C395959B30AFCABD3AD")
     
 StructUtsname(String sysname, String nodename, String release, String version, String machine) {
@@ -33,7 +33,6 @@ StructUtsname(String sysname, String nodename, String release, String version, S
         this.version = version;
         this.machine = machine;
     }
-
     
 }
 

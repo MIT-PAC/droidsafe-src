@@ -34,6 +34,8 @@ public static MultiTapKeyListener getInstance(boolean autotext,
         return sInstance[off];
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.553 -0500", hash_original_method = "A9D9431F8F7C49BD7FCC39C25DD87181", hash_generated_method = "7E0919A985C3A4E00333092011633B3C")
     
 private static void removeTimeouts(Spannable buf) {
@@ -69,6 +71,8 @@ public MultiTapKeyListener(Capitalize cap,
         mAutoText = autotext;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.542 -0500", hash_original_method = "0F62DAE08CCEDDF88EBED8C62070D6C5", hash_generated_method = "0B7F1FA09C054D9B934295C3C2A89BD2")
     
@@ -76,6 +80,8 @@ public int getInputType() {
         return makeTextContentType(mCapitalize, mAutoText);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.547 -0500", hash_original_method = "A5D3B5CD1C27B709A733246605C23357", hash_generated_method = "BFF86FA97AEA614221DE67AA43F95E56")
     
 public boolean onKeyDown(View view, Editable content,
@@ -227,6 +233,8 @@ public boolean onKeyDown(View view, Editable content,
         return super.onKeyDown(view, content, keyCode, event);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.550 -0500", hash_original_method = "32D49D04D14DFD2D5D5762D6E8E59602", hash_generated_method = "159301206BA9C3461ABFA90A03E86E49")
     
 public void onSpanChanged(Spannable buf,
@@ -273,9 +281,13 @@ public void run() {
         
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.568 -0500", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "D0D44080BF1B8B0853634EBEFA340901")
     
 public void onSpanAdded(Spannable s, Object what, int start, int end) { }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.571 -0500", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "5B4B7AFD86AC085C95BBA97BAFF2BD93")
     
 public void onSpanRemoved(Spannable s, Object what, int start, int end) { }

@@ -5,16 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 final class SerializationHandleMap {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.941 -0500", hash_original_field = "D057CC213EDA74E52E26EEA57C4D0F80", hash_generated_field = "EC54E60FA2CF8632B6202FE74DE20CF3")
 
     private static final int LOAD_FACTOR = 7500;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.943 -0500", hash_original_field = "522C2C30A353BD3DE7907DCE49B36EA0", hash_generated_field = "3812BADF0A98B0817D55431A2E260B33")
-
 
     private Object[] keys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.946 -0500", hash_original_field = "05C5B6EA1B8DB599F8A7E342E6CC5721", hash_generated_field = "C452AC6E135820F60F49205B6624FDFE")
@@ -36,6 +31,8 @@ public SerializationHandleMap() {
         resizeArrays(arraySize);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.955 -0500", hash_original_method = "E316A93A87558F399ED4EA2FE7F26EE8", hash_generated_method = "E125FAA45E4C9C72F16E3E79BEA68516")
     
 private void resizeArrays(int newSize) {
@@ -70,6 +67,8 @@ public int get(Object key) {
      * Returns the index where the key is found at, or the index of the next
      * empty spot if the key is not found in this table.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.961 -0500", hash_original_method = "188F67866E8CBA269C0CFF587B29CD3B", hash_generated_method = "EF54C84655590718FBD4C6A141707AC5")
     
 private int findIndex(Object key, Object[] array) {
@@ -89,6 +88,8 @@ private int findIndex(Object key, Object[] array) {
         return index;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.963 -0500", hash_original_method = "CEF876F6D496A0BEC63D43E9A8B9FA0E", hash_generated_method = "E1467679452CC6FCFE96EDFDC50FA819")
     
 private int getModuloHash(Object key, int length) {
@@ -120,6 +121,8 @@ public int put(Object key, int value) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.969 -0500", hash_original_method = "B0944A4627DD585C58C4A846FDB51A94", hash_generated_method = "D80073AB6EA1AFF862D7A7C35661DE52")
     
 private void rehash() {

@@ -256,6 +256,8 @@ protected void initProgram(Program p) {
         
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.903 -0500", hash_original_method = "C5418AC42B4427585CE67C27729678D3", hash_generated_method = "C5418AC42B4427585CE67C27729678D3")
     
 Program(int id, RenderScript rs) {

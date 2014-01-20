@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 class CharArrayBuffers {
 
     /**
@@ -70,6 +65,8 @@ static int setLowercaseIndexOf(CharArrayBuffer buffer, final int ch) {
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.599 -0500", hash_original_method = "29B6D57F0C4C946FE15B5F16943E4D7D", hash_generated_method = "D08A8C824654082C89BE8A224FBB07F1")
     
 private static char toLower(char c) {
@@ -80,9 +77,10 @@ private static char toLower(char c) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.592 -0500", hash_original_field = "3816CC3E335E581DB7D1A94C7707CF43", hash_generated_field = "B3E115C5CFE77FCACE5B31A27B8BA562")
 
-
     static final char uppercaseAddon = 'a' - 'A';
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.864 -0400", hash_original_method = "757048C9429CD89F62E53746321F0081", hash_generated_method = "757048C9429CD89F62E53746321F0081")
     public CharArrayBuffers ()
     {

@@ -23,6 +23,8 @@ public static Console getConsole() {
         return console;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.429 -0500", hash_original_method = "44FBB43D16293FCD0C78B59D6359E9A1", hash_generated_method = "6BFC4CBA2ADD2B5AF844E21342281D24")
     
 private static Console makeConsole() {
@@ -37,6 +39,8 @@ private static Console makeConsole() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.452 -0500", hash_original_method = "366899432B3AD53D4041107C98D183D5", hash_generated_method = "EC07B1EC73AA052235667C4BF649789C")
     
 private static int setEcho(boolean on, int previousState) {
@@ -47,6 +51,8 @@ private static int setEcho(boolean on, int previousState) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int setEchoImpl(boolean on, int previousState) throws IOException {
         return DSUtils.UNKNOWN_INT;
     }
@@ -63,6 +69,8 @@ private static int setEcho(boolean on, int previousState) {
 
     private  PrintWriter writer;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.432 -0500", hash_original_method = "4BB1B19487B7F99D445DFF44E768497C", hash_generated_method = "7893804C010BDCD832EE6678ABEF1519")
     
 private Console(InputStream in, OutputStream out) throws IOException {

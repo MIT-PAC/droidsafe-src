@@ -240,6 +240,8 @@ public final PathPermission[] getPathPermissions() {
      *
      * @return true if the provider was successfully loaded, false otherwise
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.729 -0500", hash_original_method = "78AC53FE8458AA47A6209768E85AFA18", hash_generated_method = "915CAB1C7F690011FFEC68CBE5589F8A")
     
 public abstract boolean onCreate();
@@ -332,6 +334,8 @@ public void onTrimMemory(int level) {
      *      If null then the provider is free to define the sort order.
      * @return a Cursor or null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.737 -0500", hash_original_method = "F21BE52F6A5EF05F42ABB1A7CA8B045D", hash_generated_method = "394B9B61A7DAB44FF481367A59510784")
     
 public abstract Cursor query(Uri uri, String[] projection,
@@ -355,6 +359,8 @@ public abstract Cursor query(Uri uri, String[] projection,
      * @param uri the URI to query.
      * @return a MIME type string, or null if there is no type.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.739 -0500", hash_original_method = "A4398D9B92EECDCA04DBE4333E6E1CA3", hash_generated_method = "F60EB5723300ACB30027945838009E82")
     
 public abstract String getType(Uri uri);
@@ -370,6 +376,8 @@ public abstract String getType(Uri uri);
      * @param values A set of column_name/value pairs to add to the database.
      * @return The URI for the newly inserted item.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.742 -0500", hash_original_method = "B4DEB75D711E59EC126B5AA1EC87337F", hash_generated_method = "A947EC9D331AF38EAB8C36385181C769")
     
 public abstract Uri insert(Uri uri, ContentValues values);
@@ -419,6 +427,8 @@ public int bulkInsert(Uri uri, ContentValues[] values) {
      * @return The number of rows affected.
      * @throws SQLException
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.746 -0500", hash_original_method = "E44ADC3F69A5B9F650B7F634DA106EF4", hash_generated_method = "1ACE593BD8B128A106D7B3E5FDA132DB")
     
 public abstract int delete(Uri uri, String selection, String[] selectionArgs);
@@ -440,6 +450,8 @@ public abstract int delete(Uri uri, String selection, String[] selectionArgs);
      * @param selection An optional filter to match rows to update.
      * @return the number of rows affected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.748 -0500", hash_original_method = "848ED1B601C77FEA6ED8D03E747F824C", hash_generated_method = "B8DAF275BB400A7B883E6875C5F854FA")
     
 public abstract int update(Uri uri, ContentValues values, String selection,
@@ -803,6 +815,8 @@ public Bundle call(String method, String arg, Bundle extras) {
         {
             //Synthesized constructor
         }
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.667 -0500", hash_original_method = "D85CC82248E7B34649DA1C02380D9E2C", hash_generated_method = "D85CC82248E7B34649DA1C02380D9E2C")
         
@@ -920,6 +934,8 @@ public Bundle call(String method, String arg, Bundle extras) {
             return ContentProvider.this.openTypedAssetFile(uri, mimeType, opts);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.701 -0500", hash_original_method = "E57399204B1619B526E92C84388A407F", hash_generated_method = "78C032BED64CF5659D0FED4082567782")
         
 private void enforceReadPermission(Uri uri) {
@@ -968,6 +984,8 @@ private void enforceReadPermission(Uri uri) {
             throw new SecurityException(msg);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.704 -0500", hash_original_method = "329C06E4068EEDF4ECCAEC3BA5AB45CE", hash_generated_method = "CA8226431C1430D5E16C52B8B9C13EB3")
         
 private boolean hasWritePermission(Uri uri) {
@@ -1011,6 +1029,8 @@ private boolean hasWritePermission(Uri uri) {
             return false;
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.706 -0500", hash_original_method = "7CEC600BB70206A61DA89C0C0D2014C1", hash_generated_method = "F9AEE33E48A303A32C44D9DA7544D465")
         
 private void enforceWritePermission(Uri uri) {

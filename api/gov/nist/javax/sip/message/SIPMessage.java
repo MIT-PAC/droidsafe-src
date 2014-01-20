@@ -270,6 +270,8 @@ protected String encodeSIPHeaders() {
     /**
      * Encode all the headers except the contents. For debug logging.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.165 -0500", hash_original_method = "0E20F7A3255DC8C8EF78B7F684A06AF5", hash_generated_method = "4A16183285D0E0C3DFDA0213F27EB58B")
     
 public abstract String encodeMessage();
@@ -280,6 +282,8 @@ public abstract String encodeMessage();
      * 
      * @param isServerTransaction is a flag that indicates whether this is a server transaction.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.168 -0500", hash_original_method = "AF7976790CA90C9E0005CC51A6DBDF36", hash_generated_method = "28626D974B6C4A749823105C2A5AB67C")
     
 public abstract String getDialogId(boolean isServerTransaction);
@@ -579,6 +583,8 @@ public String debugDump() {
      * 
      * @param h SIPHeader to attach.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.192 -0500", hash_original_method = "D9E90811A837F48EC447FF925318738A", hash_generated_method = "A2FD5EC2E0763D8225EB819393C96237")
     
 private void attachHeader(SIPHeader h) {
@@ -966,6 +972,8 @@ public Header getHeader(String headerName) {
         return getHeaderLowerCase(SIPHeaderNamesCache.toLowerCase(headerName));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.227 -0500", hash_original_method = "32A79E235DDCC6E80E2B12189B346373", hash_generated_method = "DF5E82B9478109623784FE7AD0341CB9")
     
 private Header getHeaderLowerCase(String lowerCaseHeaderName) {
@@ -1460,6 +1468,8 @@ public void setMessageContent(byte[] content, boolean computeContentLength, int 
      * 
      * @param content is the content, as String, array of bytes, or other object.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.331 -0500", hash_original_method = "D3327D918F93ECC2995A4C67A415A1A5", hash_generated_method = "8E37A790165C92EF426C2052DDFE3B26")
     
 private void computeContentLength(Object content) {
@@ -1544,6 +1554,8 @@ public String getHeaderAsFormattedString(String name) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.342 -0500", hash_original_method = "2723C6F27F309BF6F386C5DF25AB6032", hash_generated_method = "707C13AAAB45AFB25F3F4B754361CFE4")
     
 private SIPHeader getSIPHeaderListLowerCase(String lowerCaseHeaderName) {
@@ -1556,6 +1568,8 @@ private SIPHeader getSIPHeaderListLowerCase(String lowerCaseHeaderName) {
      * @param headerName -- a header name from which to retrieve the list.
      * @return -- a list of headers with that name.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.346 -0500", hash_original_method = "9F4B7A8AFA1B725FEEE6FA6CFA2755DF", hash_generated_method = "7DBC8A25724003A6F1BD2592E626EC3B")
     
 @SuppressWarnings("unchecked")
@@ -1663,6 +1677,8 @@ public String getToTag() {
     /**
      * Return the encoded first line.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.366 -0500", hash_original_method = "C01DA63F5366D214166075A38E468E9A", hash_generated_method = "58411A571541317B14D7188D5E1265EB")
     
 public abstract String getFirstLine();
@@ -2105,14 +2121,20 @@ public void setNullRequest() {
         this.nullRequest = true;
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.463 -0500", hash_original_method = "CFE860B19AD3D57A0F1F7E2F8E62600E", hash_generated_method = "35F6989AA4DE4044BBBF57E6D95A0E43")
     
 public abstract void setSIPVersion(String sipVersion) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.465 -0500", hash_original_method = "F69BDFBBEC93FDCAB46687974EA5BE73", hash_generated_method = "1AAFAF4422DE746C3637CE78448ED0F2")
     
 public abstract String getSIPVersion();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.468 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "7EA90E50E51652C3FF11C3BD32031D10")
     
 public abstract String toString();

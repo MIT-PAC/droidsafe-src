@@ -48,6 +48,8 @@ public static String getAppName() {
     /*
      * Send an APNM (APplication NaMe) chunk.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.180 -0500", hash_original_method = "C2C3236E5684F32FE2D4F7ADF24D2EBA", hash_generated_method = "666E62AAF6257E804BDD664EBAFAEF35")
     
 private static void sendAPNM(String appName) {
@@ -73,6 +75,8 @@ private static void sendAPNM(String appName) {
     private static DdmHandleAppName mInstance = new DdmHandleAppName();
 
     /* singleton, do not instantiate */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.164 -0500", hash_original_method = "D8F21F6A35B29C82CC84858F5D50C10E", hash_generated_method = "714E45DF5D6BD22E3F028526E485CEE1")
     
 private DdmHandleAppName() {}

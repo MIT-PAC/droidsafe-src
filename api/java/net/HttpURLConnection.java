@@ -209,6 +209,8 @@ protected HttpURLConnection(URL url) {
      * @see URLConnection#connect()
      * @see URLConnection#connected
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.606 -0500", hash_original_method = "3C68B068054EBA545E5AA24799ED950D", hash_generated_method = "0F5A9F285A124D64FA561BD6158DD33E")
     
 public abstract void disconnect();
@@ -365,6 +367,8 @@ public void setRequestMethod(String method) throws ProtocolException {
      * @return {@code true} if this connection passes a proxy server, false
      *         otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.630 -0500", hash_original_method = "373BD5C6D915886091B65C981790F7E3", hash_generated_method = "B63EE72C4BD0A01FEACCDE1364ECDF54")
     
 public abstract boolean usingProxy();

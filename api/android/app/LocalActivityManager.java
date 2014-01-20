@@ -458,6 +458,8 @@ public Activity getActivity(String id) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.359 -0500", hash_original_field = "6D133C9482705F97D3CEA539075FF242", hash_generated_field = "6D133C9482705F97D3CEA539075FF242")
 
         int curState = RESTORED;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.344 -0500", hash_original_method = "E1D83503B31583A6BAE5696926B0F492", hash_generated_method = "E1D83503B31583A6BAE5696926B0F492")
         
 LocalActivityRecord(String _id, Intent _intent) {

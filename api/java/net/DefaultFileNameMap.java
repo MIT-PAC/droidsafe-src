@@ -10,6 +10,8 @@ import libcore.net.MimeUtils;
 
 class DefaultFileNameMap implements FileNameMap {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.439 -0400", hash_original_method = "967DDE3A9286E19D23037DF9EB0654B3", hash_generated_method = "967DDE3A9286E19D23037DF9EB0654B3")
     public DefaultFileNameMap ()
     {

@@ -89,6 +89,8 @@ public static void setupDiskCache(File cacheDir) {
         nSetupShadersDiskCache(new File(cacheDir, CACHE_PATH_SHADERS).getAbsolutePath());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSetupShadersDiskCache(String cacheFile) {
     }
 
@@ -100,6 +102,8 @@ public static void setupDiskCache(File cacheDir) {
      * 
      * @return A hardware renderer backed by OpenGL.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.218 -0500", hash_original_method = "6EE96EBC477B77879F9A873960F8548A", hash_generated_method = "0502D06F1B00937FAD8B3C20BDF1D18F")
     
@@ -119,6 +123,8 @@ static HardwareRenderer createGlRenderer(int glVersion, boolean translucent) {
      * @param level Hint about the amount of memory that should be trimmed,
      *              see {@link android.content.ComponentCallbacks}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.221 -0500", hash_original_method = "6B7DE4E21B02A7055F930254E2A5AEE4", hash_generated_method = "3CB24B0546585868D5A010CEBFFBB49D")
     
 static void trimMemory(int level) {
@@ -169,6 +175,8 @@ static void trimMemory(int level) {
      * 
      * @param full If true, destroys all associated resources.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.171 -0500", hash_original_method = "EB7A0DD175A25AECD4D2F9F82222FF48", hash_generated_method = "05828D357AD43E29595F907E12376CBA")
     
 abstract void destroy(boolean full);
@@ -180,6 +188,8 @@ abstract void destroy(boolean full);
      * 
      * @return True if the initialization was successful, false otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.173 -0500", hash_original_method = "63A8D60474C2966D995D457C9B9955A2", hash_generated_method = "BB23AF9787C7F4B0052DAD454D80E6A3")
     
 abstract boolean initialize(SurfaceHolder holder) throws Surface.OutOfResourcesException;
@@ -189,6 +199,8 @@ abstract boolean initialize(SurfaceHolder holder) throws Surface.OutOfResourcesE
      * 
      * @param holder The holder for the surface to hardware accelerate
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.175 -0500", hash_original_method = "8FE0C4928F213DDB1AC5E22C50F47F64", hash_generated_method = "57E011FCF2E6041383AA2AC8D0251322")
     
 abstract void updateSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException;
@@ -198,6 +210,8 @@ abstract void updateSurface(SurfaceHolder holder) throws Surface.OutOfResourcesE
      * 
      * @param view The root of the view hierarchy
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.177 -0500", hash_original_method = "C93C704EE574651A1BA9456BEAF67A6E", hash_generated_method = "517238A3DFAC8F150EBF533DA592EBC6")
     
 abstract void destroyLayers(View view);
@@ -208,6 +222,8 @@ abstract void destroyLayers(View view);
      * 
      * @param view The root of the view hierarchy
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.180 -0500", hash_original_method = "C54C39F0AE01B1B593235445BAB775DC", hash_generated_method = "6050F23754C71B2BC9438211727BE456")
     
 abstract void destroyHardwareResources(View view);
@@ -218,6 +234,8 @@ abstract void destroyHardwareResources(View view);
      * 
      * @param holder The holder for the surface to hardware accelerate
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.183 -0500", hash_original_method = "9D23EFC6987C44FAD0E7F8718271CC77", hash_generated_method = "4B49A7FD584FBCB829948BA35988585A")
     
 abstract void invalidate(SurfaceHolder holder);
@@ -229,6 +247,8 @@ abstract void invalidate(SurfaceHolder holder);
      * 
      * @return true if the renderer is now valid, false otherwise
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.185 -0500", hash_original_method = "416BA317E33EF7C387F81782526C9623", hash_generated_method = "3A35EB1080D61C47905A7BAE70289D2F")
     
 abstract boolean validate();
@@ -240,6 +260,8 @@ abstract boolean validate();
      * @param width Width of the drawing surface.
      * @param height Height of the drawing surface.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.187 -0500", hash_original_method = "A1F263AE9D74A1E0B7EB2C5CA9090FE8", hash_generated_method = "F38343CFC29A981DE9F65848AD6890F7")
     
 abstract void setup(int width, int height);
@@ -250,6 +272,8 @@ abstract void setup(int width, int height);
      *
      * @return the current width of the surface
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.189 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "FEB5ED1C1A44BA8AD6B90EEC5A641AC2")
     
 abstract int getWidth();
@@ -260,6 +284,8 @@ abstract int getWidth();
      *
      * @return the current width of the surface
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.191 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "56B4A9EEB051769A5AE27C14B0517CFE")
     
 abstract int getHeight();
@@ -269,6 +295,8 @@ abstract int getHeight();
      *
      * @return the current HardwareCanvas
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.193 -0500", hash_original_method = "0D7F234467EBE3155552A1EF9B644626", hash_generated_method = "C04C8CCAD8E35259D9227E6936774422")
     
 abstract HardwareCanvas getCanvas();
@@ -378,6 +406,8 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
 
         private final Rect mRedrawClip = new Rect();
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.300 -0500", hash_original_method = "10324A50C61190B04368151ACA88DC91", hash_generated_method = "10324A50C61190B04368151ACA88DC91")
         
 GlRenderer(int glVersion, boolean translucent) {
@@ -394,6 +424,8 @@ GlRenderer(int glVersion, boolean translucent) {
         /**
          * Indicates whether this renderer instance can track and update dirty regions.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.302 -0500", hash_original_method = "8E011D652AD55D9A8BD48AFBDECCE639", hash_generated_method = "8E011D652AD55D9A8BD48AFBDECCE639")
         
 boolean hasDirtyRegions() {
@@ -405,6 +437,8 @@ boolean hasDirtyRegions() {
          * is invoked and the requested flag is turned off. The error code is
          * also logged as a warning.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.305 -0500", hash_original_method = "5D86F2EDCD8D2650FE0B69784B6D885F", hash_generated_method = "849DC00E57DCD1E295810EC8A52E0EA7")
         
 void checkEglErrors() {
@@ -419,6 +453,8 @@ void checkEglErrors() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.308 -0500", hash_original_method = "87E6FBE52BF3E41B35644D0BA431AF43", hash_generated_method = "2DCEE108E07058D47A7054049261F1B3")
         
 private void fallback(boolean fallback) {
@@ -431,6 +467,8 @@ private void fallback(boolean fallback) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.311 -0500", hash_original_method = "921EA5B73D96C86CDA9474B12ADD4C25", hash_generated_method = "AC9BE6FB9C00DA492F79E828C1659269")
         
 @Override
@@ -462,6 +500,8 @@ private void fallback(boolean fallback) {
             return false;
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.313 -0500", hash_original_method = "2D2C42A66AD2DEB924E2F6769D89C4AD", hash_generated_method = "5DACB61F29CD1537FEDD6249592BE7FA")
         
 @Override
@@ -471,14 +511,20 @@ private void fallback(boolean fallback) {
             }
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.315 -0500", hash_original_method = "7DB12B4D4904E03574ADA1ECFE31C77F", hash_generated_method = "8F81F9113EFE188B4823F1D193F645B3")
         
 abstract GLES20Canvas createCanvas();
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.318 -0500", hash_original_method = "EB23F55B33F6A830491AE8E8F7F78596", hash_generated_method = "CE1C4A796CE77884B9B83331CEBE9A9C")
         
 abstract int[] getConfig(boolean dirtyRegions);
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.321 -0500", hash_original_method = "B279C4718AE98DC5BFCF9CC39FB51005", hash_generated_method = "3662C850DC64376531B42BAF14C28EC2")
         
 void initializeEgl() {
@@ -527,6 +573,8 @@ void initializeEgl() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.324 -0500", hash_original_method = "7EBBB0609098A0727E2316EE23892E6C", hash_generated_method = "89A2A7F31CDF109113A23802DB68516D")
         
 private EGLConfig chooseEglConfig() {
@@ -561,6 +609,8 @@ private EGLConfig chooseEglConfig() {
             return null;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.327 -0500", hash_original_method = "0890A6845DB8299C7ED9F063C47BF666", hash_generated_method = "3F8C8711E02856F769753D378CD4AAF8")
         
 private void printConfig(EGLConfig config) {
@@ -590,6 +640,8 @@ private void printConfig(EGLConfig config) {
             Log.d(LOG_TAG, "  SURFACE_TYPE = 0x" + Integer.toHexString(value[0]));
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.330 -0500", hash_original_method = "CE78C152F3B6BB29B0F51267B059EC85", hash_generated_method = "582FE607616092E2EDE3A41FE8B5C81F")
         
 GL createEglSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException {
@@ -646,10 +698,14 @@ GL createEglSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException
             return mEglContext.getGL();
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.333 -0500", hash_original_method = "3A7BFEE9E506BEABC7703C4487FB8734", hash_generated_method = "EA3413B6E2E9C7912CB6DFB54AA29C4D")
         
 abstract void initCaches();
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.335 -0500", hash_original_method = "25878E68191E1BEA8EFD58CC92DB697F", hash_generated_method = "25878E68191E1BEA8EFD58CC92DB697F")
         
 EGLContext createContext(EGL10 egl, EGLDisplay eglDisplay, EGLConfig eglConfig) {
@@ -659,6 +715,8 @@ EGLContext createContext(EGL10 egl, EGLDisplay eglDisplay, EGLConfig eglConfig) 
                     mGlVersion != 0 ? attribs : null);            
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.338 -0500", hash_original_method = "476B6B31B3E717E00869D611EE7348F9", hash_generated_method = "D097A0CBE91A223A0BA663A7A2047163")
         
 @Override
@@ -679,6 +737,8 @@ EGLContext createContext(EGL10 egl, EGLDisplay eglDisplay, EGLConfig eglConfig) 
             mGl = null;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.340 -0500", hash_original_method = "8729F371C5ECEEE6F9AFEEF006F001BC", hash_generated_method = "8729F371C5ECEEE6F9AFEEF006F001BC")
         
 void destroySurface() {
@@ -689,6 +749,8 @@ void destroySurface() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.343 -0500", hash_original_method = "31AB32F492C93DC28936068651BB9A5D", hash_generated_method = "DB32E0DA063D68D8E1D591E84D3C28E2")
         
 @Override
@@ -713,6 +775,8 @@ void destroySurface() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.346 -0500", hash_original_method = "DE5D7845AE9FF0DF12BC88C1DA1B9378", hash_generated_method = "4C480E3CEC1800596C51E2769B91FD17")
         
 private boolean createSurface(SurfaceHolder holder) {
@@ -730,6 +794,8 @@ private boolean createSurface(SurfaceHolder holder) {
             return true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.348 -0500", hash_original_method = "5192B6F9979CE04F5E58A6D4E6C990F7", hash_generated_method = "DB5855D3087DE5F703B68977C42C1C27")
         
 @Override
@@ -737,6 +803,8 @@ private boolean createSurface(SurfaceHolder holder) {
             return checkCurrent() != SURFACE_STATE_ERROR;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.351 -0500", hash_original_method = "432BCA9410981741609CBA70FE61BE99", hash_generated_method = "1B0FAA25240DD94C2B895D60766BBD55")
         
 @Override
@@ -748,6 +816,8 @@ private boolean createSurface(SurfaceHolder holder) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.353 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "651DCBA9FACC62304A60971F8F89CCBC")
         
@@ -756,6 +826,8 @@ private boolean createSurface(SurfaceHolder holder) {
             return mWidth;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.356 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "ED21678AEB517A389B8FE90A798E5728")
         
@@ -764,6 +836,8 @@ private boolean createSurface(SurfaceHolder holder) {
             return mHeight;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.358 -0500", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "8DFF870ACAE374B016A5345B9168DC2B")
         
@@ -772,17 +846,23 @@ private boolean createSurface(SurfaceHolder holder) {
             return mCanvas;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.361 -0500", hash_original_method = "BAED9FCEBD48E8CDA814A9102CB815B2", hash_generated_method = "BAED9FCEBD48E8CDA814A9102CB815B2")
         
 boolean canDraw() {
             return mGl != null && mCanvas != null;
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.363 -0500", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "5270AAD77A1E26F7563AFAAC446C8262")
         
 void onPreDraw(Rect dirty) {
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.365 -0500", hash_original_method = "600776A2676C628EF453DCB2EAD62BCF", hash_generated_method = "600776A2676C628EF453DCB2EAD62BCF")
         
 void onPostDraw() {
@@ -874,6 +954,8 @@ void onPostDraw() {
          *         {@link #SURFACE_STATE_UPDATED} if the EGL context was changed or
          *         {@link #SURFACE_STATE_SUCCESS} if the EGL context was the correct one
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.371 -0500", hash_original_method = "F54ECE08CE2E8C98D4ED45C8BC0241CA", hash_generated_method = "F54ECE08CE2E8C98D4ED45C8BC0241CA")
         
 int checkCurrent() {
@@ -906,6 +988,8 @@ int checkCurrent() {
     
     static class Gl20Renderer extends GlRenderer {
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.440 -0500", hash_original_method = "3A587C3870D559FE72764A828C177D6D", hash_generated_method = "EDE28C6E6EC3F1BD0A1A015E207F1D6C")
         
 private static void destroyHardwareLayer(View view) {
@@ -921,6 +1005,8 @@ private static void destroyHardwareLayer(View view) {
             }
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.446 -0500", hash_original_method = "8521FC3B281A56CFA34090E93CBC7058", hash_generated_method = "2C7B68118FF5420F1FD37CECE14B634D")
         
 private static void destroyResources(View view) {
@@ -936,6 +1022,8 @@ private static void destroyResources(View view) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.448 -0500", hash_original_method = "7C42AE7FEC85968DC821581EB40A786E", hash_generated_method = "685D7EED2668661A3A81CF9CA425E372")
         
 static HardwareRenderer create(boolean translucent) {
@@ -945,6 +1033,8 @@ static HardwareRenderer create(boolean translucent) {
             return null;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.451 -0500", hash_original_method = "07359DC32B0E99110D7D4927D57C3077", hash_generated_method = "52D59EB479C6E9D3ACA33D44D009C10C")
         
 static void trimMemory(int level) {
@@ -970,6 +1060,8 @@ static void trimMemory(int level) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.453 -0500", hash_original_method = "34BFF10BDA33F8F3E764109893739A93", hash_generated_method = "10E553D21A30BCF6D3E6247F5228E3FE")
         
 private static void usePbufferSurface(EGLContext eglContext) {
@@ -994,12 +1086,16 @@ private static void usePbufferSurface(EGLContext eglContext) {
 
         private GLES20Canvas mGlCanvas;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.405 -0500", hash_original_method = "B1E95719A4C359FC5D5C603A14B80EB3", hash_generated_method = "B1E95719A4C359FC5D5C603A14B80EB3")
         
 Gl20Renderer(boolean translucent) {
             super(2, translucent);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.408 -0500", hash_original_method = "F74985FDFA2E9230D4C8D7E9B7CADFBD", hash_generated_method = "AF2B83FE012044B9B6834BD22F4A7275")
         
 @Override
@@ -1007,6 +1103,8 @@ Gl20Renderer(boolean translucent) {
             return mGlCanvas = new GLES20Canvas(mTranslucent);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.411 -0500", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "FE63F231BD975606BA4D3DDD3D04FB36")
         
@@ -1026,6 +1124,8 @@ Gl20Renderer(boolean translucent) {
             };
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.413 -0500", hash_original_method = "7C06275E87085241F3D16D3C83742A74", hash_generated_method = "E63C095940EAAC542BC3FC016267E23B")
         
 @Override
@@ -1033,6 +1133,8 @@ Gl20Renderer(boolean translucent) {
             GLES20Canvas.initCaches();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.415 -0500", hash_original_method = "C7C1539F42BBDC0F7B3C1C5760B83BD0", hash_generated_method = "C0DC862EF25ED318D23A0F442BDC63FD")
         
 @Override
@@ -1040,6 +1142,8 @@ Gl20Renderer(boolean translucent) {
             return super.canDraw() && mGlCanvas != null;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.417 -0500", hash_original_method = "0022B5A5096431CE2C7606DC3316BE73", hash_generated_method = "0F203CBDA7639E105C65101F9F1F8B96")
         
 @Override
@@ -1047,6 +1151,8 @@ Gl20Renderer(boolean translucent) {
             mGlCanvas.onPreDraw(dirty);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.420 -0500", hash_original_method = "7433D62E540EA68CB724AA636E5E1121", hash_generated_method = "CBCDB29F70267B928CA56AEDDFA9E02F")
         
 @Override
@@ -1054,6 +1160,8 @@ Gl20Renderer(boolean translucent) {
             mGlCanvas.onPostDraw();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.422 -0500", hash_original_method = "6E3A6DE775BA1410C4AD975BAADAD54E", hash_generated_method = "A5FC2DEBE2EC190C53A410DF0C87B637")
         
 @Override
@@ -1067,6 +1175,8 @@ Gl20Renderer(boolean translucent) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.425 -0500", hash_original_method = "E63C13501979998737C0E9B67210D488", hash_generated_method = "CD9DC1D3314A700E2BB6D5376E6F3967")
         
@@ -1078,6 +1188,8 @@ Gl20Renderer(boolean translucent) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.427 -0500", hash_original_method = "91DF561E8BF11B235EB0CF61AE2449D1", hash_generated_method = "BA46D2C6262632E7183640D3E31F768C")
         
 @Override
@@ -1085,6 +1197,8 @@ Gl20Renderer(boolean translucent) {
             return new GLES20DisplayList();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.430 -0500", hash_original_method = "9926A5C358BE0969CD82CBEFEE88B0C5", hash_generated_method = "4D4D9A04FD762D6B5DB835DBFA1D3DA4")
         
 @Override
@@ -1092,6 +1206,8 @@ Gl20Renderer(boolean translucent) {
             return new GLES20TextureLayer(isOpaque);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.432 -0500", hash_original_method = "4877A9BF76918321656F296A4083E728", hash_generated_method = "3FBDCEFBF946203E7B727D84DF38AF0B")
         
 @Override
@@ -1099,6 +1215,8 @@ Gl20Renderer(boolean translucent) {
             return new GLES20RenderLayer(width, height, isOpaque);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.435 -0500", hash_original_method = "2626CBE8666291C6CAEC91C70C04EEE5", hash_generated_method = "47F952BC705D78261B017A9B6A07F35C")
         
 @Override
@@ -1159,6 +1277,8 @@ public Gl20RendererEglContext(EGLContext context) {
             
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.437 -0500", hash_original_method = "47CAC65634322D23BF323CE20E51DB06", hash_generated_method = "6715D2C7C2A5DFC434A7709B787B0A88")
         
 @Override
@@ -1169,6 +1289,8 @@ public Gl20RendererEglContext(EGLContext context) {
             }
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.443 -0500", hash_original_method = "05E9CAD7CA3059A2D779D6F5B2F697AA", hash_generated_method = "D43A8089BBAB2A3A08923DEC53AA6A11")
         
 @Override
@@ -1202,6 +1324,8 @@ public Gl20RendererEglContext(EGLContext context) {
      * 
      * @return A new display list.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.206 -0500", hash_original_method = "356CB302D9BC66C459DDD745CCDFE1DD", hash_generated_method = "4748B2A7984D0C8C43F137D8B317772B")
     
 abstract DisplayList createDisplayList();
@@ -1214,6 +1338,8 @@ abstract DisplayList createDisplayList();
      * 
      * @return A hardware layer
      */    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.209 -0500", hash_original_method = "400A04EF0E476FEB9A1F94E173694FDB", hash_generated_method = "1491B90B042C9035297169067B411717")
     
 abstract HardwareLayer createHardwareLayer(boolean isOpaque);
@@ -1227,6 +1353,8 @@ abstract HardwareLayer createHardwareLayer(boolean isOpaque);
      * 
      * @return A hardware layer
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.211 -0500", hash_original_method = "1DBBF671AE3C021F2109E0400F25ADE2", hash_generated_method = "7222A3FD69629B46F3C52F0C33030932")
     
 abstract HardwareLayer createHardwareLayer(int width, int height, boolean isOpaque);
@@ -1240,6 +1368,8 @@ abstract HardwareLayer createHardwareLayer(int width, int height, boolean isOpaq
      * 
      * @return A {@link SurfaceTexture}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.213 -0500", hash_original_method = "60936D2F9DA291835597D06AC147FC27", hash_generated_method = "B765F9698743085195745CEB692927D2")
     
 abstract SurfaceTexture createSurfaceTexture(HardwareLayer layer);
@@ -1275,6 +1405,8 @@ void initializeIfNeeded(int width, int height, View.AttachInfo attachInfo,
      * 
      * @return True if hardware acceleration is in use, false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.223 -0500", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "B599CE9BD5CE6C0947F95A74F4693444")
     
 boolean isEnabled() {
@@ -1286,6 +1418,8 @@ boolean isEnabled() {
      * 
      * @param enabled True if the hardware renderer is in use, false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.225 -0500", hash_original_method = "E431274334564F99DE06BE0647F24670", hash_generated_method = "E431274334564F99DE06BE0647F24670")
     
 void setEnabled(boolean enabled) {
@@ -1298,6 +1432,8 @@ void setEnabled(boolean enabled) {
      * 
      * @return True if requested, false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.227 -0500", hash_original_method = "2657035D37B57C6EB1FDEBFDEB2FC631", hash_generated_method = "2657035D37B57C6EB1FDEBFDEB2FC631")
     
 boolean isRequested() {
@@ -1310,6 +1446,8 @@ boolean isRequested() {
      * 
      * @return True to request hardware acceleration, false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.229 -0500", hash_original_method = "5489F62162525BB08E1A950602557C7B", hash_generated_method = "5489F62162525BB08E1A950602557C7B")
     
 void setRequested(boolean requested) {

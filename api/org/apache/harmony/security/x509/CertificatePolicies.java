@@ -54,6 +54,8 @@ public static CertificatePolicies decode(byte[] encoding) throws IOException {
     
 public CertificatePolicies() {}
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.221 -0500", hash_original_method = "96307D3270AEFEAD70E1FBA0E6122CDE", hash_generated_method = "3D44680DA2DFBACB6C01B668A744797F")
     
 private CertificatePolicies(List<PolicyInformation> policyInformations, byte[] encoding) {

@@ -71,6 +71,8 @@ public SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey, 
         this(algID, subjectPublicKey, 0, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.167 -0500", hash_original_method = "78E5942A2DBBC7DA4B73868B62747270", hash_generated_method = "9205467311B061ED75535097647830D4")
     
 private SubjectPublicKeyInfo(AlgorithmIdentifier algID,

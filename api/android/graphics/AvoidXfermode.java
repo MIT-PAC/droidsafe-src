@@ -9,6 +9,8 @@ import droidsafe.helpers.DSUtils;
 
 public class AvoidXfermode extends Xfermode {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(int opColor, int tolerance,
                                            int nativeMode) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613288083 = DSUtils.UNKNOWN_INT;

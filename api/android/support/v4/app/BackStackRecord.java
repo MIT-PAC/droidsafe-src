@@ -14,12 +14,7 @@ import android.os.Parcelable;
 import android.support.v4.util.LogWriter;
 import android.text.TextUtils;
 
-
-
-
-
 final class BackStackState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.708 -0400", hash_original_field = "8B8CFB1C8824B4F8DAC46E032DB231EE", hash_generated_field = "FC56B3496DF6C62063CE25DEA3B38012")
 
@@ -199,7 +194,6 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     static final String TAG = FragmentManagerImpl.TAG;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.647 -0500", hash_original_field = "5906708AA0EC9FEEEECEE01C65ADF637", hash_generated_field = "3C725A5D9DEF53B7FBA369B6031C0114")
 
-
     static final int OP_NULL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.650 -0500", hash_original_field = "1A368FE2DF1C3A737687BEA9477073B0", hash_generated_field = "D476F834444990BAEEB054A4C302249A")
 
@@ -224,10 +218,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     static final int OP_ATTACH = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.645 -0500", hash_original_field = "B6E40031C2D8257644CECE00AFE40458", hash_generated_field = "B6E40031C2D8257644CECE00AFE40458")
 
-
      FragmentManagerImpl mManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.689 -0500", hash_original_field = "CAA200DE64F101586FA95F4FEC8429B1", hash_generated_field = "CAA200DE64F101586FA95F4FEC8429B1")
-
 
     Op mHead;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.691 -0500", hash_original_field = "1DBFB57BC3C0C58F1CA989515A3C11B2", hash_generated_field = "1DBFB57BC3C0C58F1CA989515A3C11B2")
@@ -270,7 +262,6 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
 
     int mIndex = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.719 -0500", hash_original_field = "E7A56D2F2469DB150849BCC5ECFF6194", hash_generated_field = "E7A56D2F2469DB150849BCC5ECFF6194")
-
 
     int mBreadCrumbTitleRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.721 -0500", hash_original_field = "CD8B3A4957F7DDF6AC7443892C1BE613", hash_generated_field = "CD8B3A4957F7DDF6AC7443892C1BE613")
@@ -483,6 +474,8 @@ public FragmentTransaction add(int containerViewId, Fragment fragment, String ta
         return this;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.763 -0500", hash_original_method = "F2F897C7BFD0AE6B1B051FF1D3DE8AB7", hash_generated_method = "C95777A5F19475DA08C0B2117C0BAD16")
     
 private void doAddOp(int containerViewId, Fragment fragment, String tag, int opcmd) {
@@ -676,6 +669,8 @@ public FragmentTransaction setBreadCrumbShortTitle(CharSequence text) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.807 -0500", hash_original_method = "F09A90C496A148F600E3D02A9731BC19", hash_generated_method = "F09A90C496A148F600E3D02A9731BC19")
     
 void bumpBackStackNesting(int amt) {
@@ -702,7 +697,6 @@ void bumpBackStackNesting(int amt) {
             op = op.next;
         }
     }
-
     
     static final class Op {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.667 -0500", hash_original_field = "19BBD1601EBAF334D6AA33231EED0715", hash_generated_field = "19BBD1601EBAF334D6AA33231EED0715")
@@ -733,12 +727,13 @@ void bumpBackStackNesting(int amt) {
 
         ArrayList<Fragment> removed;
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.738 -0400", hash_original_method = "D7B482A7C55CFA7077AB6D8147480F87", hash_generated_method = "D7B482A7C55CFA7077AB6D8147480F87")
         public Op ()
         {
             //Synthesized constructor
         }
-
 
     }
 
@@ -754,6 +749,8 @@ public int commitAllowingStateLoss() {
         return commitInternal(true);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.814 -0500", hash_original_method = "01D779364E83C28A30DD99CF6E54EB38", hash_generated_method = "01D779364E83C28A30DD99CF6E54EB38")
     
 int commitInternal(boolean allowStateLoss) {

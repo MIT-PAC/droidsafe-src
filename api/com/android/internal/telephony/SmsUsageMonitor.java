@@ -51,6 +51,8 @@ public SmsUsageMonitor(ContentResolver resolver) {
     }
 
     /** Clear the SMS application list for disposal. */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.932 -0500", hash_original_method = "7B2C29F4698952FF45E2699BBB5DEB62", hash_generated_method = "7B2C29F4698952FF45E2699BBB5DEB62")
     
 void dispose() {
@@ -86,6 +88,8 @@ public boolean check(String appName, int smsWaiting) {
      * Remove keys containing only old timestamps. This can happen if an SMS app is used
      * to send messages and then uninstalled.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.938 -0500", hash_original_method = "0C89C3F43D481EBAFC32AEEAE6183BD3", hash_generated_method = "C6765A4C1D0FFCCF53B54DBAA06615CD")
     
 private void removeExpiredTimestamps() {
@@ -103,6 +107,8 @@ private void removeExpiredTimestamps() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.940 -0500", hash_original_method = "FED252455D0F59F9866280B84F72F407", hash_generated_method = "75E2A84C55B38A039F4E0FD1EBFCDEE1")
     
 private boolean isUnderLimit(ArrayList<Long> sent, int smsWaiting) {

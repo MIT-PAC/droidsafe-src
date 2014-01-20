@@ -27,10 +27,14 @@ public PermissionCollection newPermissionCollection() {
         return new AllPermissionCollection();
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.132 -0500", hash_original_method = "29B5CE65D8821EF2AD74234125DFF7AA", hash_generated_method = "9CF50528387D48395BA46B8306AF52D6")
     
 public abstract String getActions();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.134 -0500", hash_original_method = "EFDD42BDCC8AFC7DB3076C40E1EA19C3", hash_generated_method = "7DCD9075AD00F391A9B7B11ED234E399")
     
 public abstract boolean implies(Permission permission);

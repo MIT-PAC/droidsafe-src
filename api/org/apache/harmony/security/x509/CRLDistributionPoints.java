@@ -44,6 +44,8 @@ public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
 
     private byte[] encoding;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.940 -0500", hash_original_method = "A85C2ECCECA3DBD03B41866807FEA9E1", hash_generated_method = "C9079961F3DACEB65C3DDD9A62D25946")
     
 private CRLDistributionPoints(List<DistributionPoint> distributionPoints, byte[] encoding) {

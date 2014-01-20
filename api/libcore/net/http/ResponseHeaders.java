@@ -22,6 +22,8 @@ public final class ResponseHeaders {
      * Returns true if {@code fieldName} is an end-to-end HTTP header, as
      * defined by RFC 2616, 13.5.1.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.767 -0500", hash_original_method = "73456A0877A0ABD5FC9108B2B0BE45A1", hash_generated_method = "A94F03796C461FF02A2281F0F5E18630")
     
 private static boolean isEndToEnd(String fieldName) {
@@ -392,6 +394,8 @@ public void setLocalTimestamps(long sentRequestMillis, long receivedResponseMill
      * Returns the current age of the response, in milliseconds. The calculation
      * is specified by RFC 2616, 13.2.3 Age Calculations.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.744 -0500", hash_original_method = "62B4E508B2BD1FD8674C188E31D3FA94", hash_generated_method = "F2364D7E3AE13D2A42D3A4CBE3B02500")
     
 private long computeAge(long nowMillis) {
@@ -410,6 +414,8 @@ private long computeAge(long nowMillis) {
      * Returns the number of milliseconds that the response was fresh for,
      * starting from the served date.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.746 -0500", hash_original_method = "723583A81B93D8753154A40B95765CF8", hash_generated_method = "38A63EEC2A6796D02AEF351E230EEF19")
     
 private long computeFreshnessLifetime() {
@@ -438,6 +444,8 @@ private long computeFreshnessLifetime() {
      * heuristic to serve a cached response older than 24 hours, we are required
      * to attach a warning.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.748 -0500", hash_original_method = "8F28A3C0281B6F16DECF00092A03388F", hash_generated_method = "E6B3AE3BEB63D05981CAAF6DB37BEC46")
     
 private boolean isFreshnessLifetimeHeuristic() {

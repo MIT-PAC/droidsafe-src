@@ -41,7 +41,9 @@ public static Tag createMockTag(byte[] id, int[] techList, Bundle[] techListExtr
         return new Tag(id, techList, techListExtras, 0, null);
     }
 
-    /*package*/ @DSSource({DSSourceKind.NFC})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.181 -0500", hash_original_method = "C242347B550488411F3501E51C751C46", hash_generated_method = "F876007B92E5D134943B17B413426925")
     
 static byte[] readBytesWithNull(Parcel in) {
@@ -54,7 +56,9 @@ static byte[] readBytesWithNull(Parcel in) {
         return result;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.183 -0500", hash_original_method = "98002DADC2AF2A7723A17AC5EA70B235", hash_generated_method = "A61FD11585982E78D3E77D0820B2076F")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.183 -0500", hash_original_method = "98002DADC2AF2A7723A17AC5EA70B235", hash_generated_method = "A61FD11585982E78D3E77D0820B2076F")
     
 static void writeBytesWithNull(Parcel out, byte[] b) {
         if (b == null) {
@@ -137,6 +141,8 @@ public Tag(byte[] id, int[] techList, Bundle[] techListExtras, int serviceHandle
         mConnectedTechnology = -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.159 -0500", hash_original_method = "AA46592E4023484A1FFE154B94A62E4A", hash_generated_method = "F90E49BAD838897D3148B283D7B64585")
     
 private String[] generateTechStringList(int[] techList) {

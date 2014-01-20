@@ -162,6 +162,8 @@ public void setExpandedFormat(boolean expandedFormat) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.184 -0500", hash_original_method = "A914366A36A1D33567DEDC1A62560744", hash_generated_method = "4A963B151F239BF2C34A0862E0CC5186")
     
 private void updateTextButtonVisibility() {

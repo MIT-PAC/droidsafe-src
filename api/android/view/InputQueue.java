@@ -16,6 +16,8 @@ public final class InputQueue {
     
     private static HashSet<InputChannel> channels = new HashSet<InputChannel>();
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRegisterInputChannel(InputChannel inputChannel,
             InputHandler inputHandler, MessageQueue messageQueue) {
         channels.add(inputChannel);
@@ -28,10 +30,14 @@ public final class InputQueue {
         dispatchMotionEvent(inputHandler, motionEvent, callback.mFinishedToken);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeUnregisterInputChannel(InputChannel inputChannel) {
         channels.remove(inputChannel);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeFinished(long finishedToken, boolean handled) {
     }
     
@@ -58,6 +64,8 @@ public final class InputQueue {
         nativeUnregisterInputChannel(inputChannel);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.280 -0500", hash_original_method = "36C17BD34CDDCF86AAD54E86A65CBE17", hash_generated_method = "48F220CF03DE9F3A2BEC15ED27315F57")
     
 @SuppressWarnings("unused")
@@ -67,6 +75,8 @@ public final class InputQueue {
         inputHandler.handleKey(event, finishedCallback);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.283 -0500", hash_original_method = "1DB369BCBC340EA73F202ACFFFE6A3DD", hash_generated_method = "945929AAFC4E215FA8BC3E6248F28423")
     
 @SuppressWarnings("unused")
@@ -104,6 +114,8 @@ public final class InputQueue {
 
         private long mFinishedToken;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.302 -0500", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "2E154B4C61D82C8A0B2C3D1599F5A3C6")
         
 private FinishedCallback() {

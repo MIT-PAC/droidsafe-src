@@ -54,6 +54,8 @@ public class NinePatchDrawable extends Drawable {
 
     private int mBitmapHeight;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.434 -0500", hash_original_method = "273B833CD4C77CDA56AC8174D9DCFE29", hash_generated_method = "273B833CD4C77CDA56AC8174D9DCFE29")
     
 NinePatchDrawable() {
@@ -64,6 +66,8 @@ NinePatchDrawable() {
      * @deprecated Use {@link #NinePatchDrawable(Resources, Bitmap, byte[], Rect, String)}
      * to ensure that the drawable has correctly set its target density.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.437 -0500", hash_original_method = "EA37E144790F39B12A14B8A0E7D897B0", hash_generated_method = "73377B88F34C63C9BB19DF8D05F68AF6")
     
 @Deprecated
@@ -75,6 +79,8 @@ NinePatchDrawable() {
      * Create drawable from raw nine-patch data, setting initial target density
      * based on the display metrics of the resources.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.440 -0500", hash_original_method = "929FEA5C59B893442F4AD64A16378707", hash_generated_method = "22943E4CDBF792E0F208BA9E8C0BB83A")
     
 public NinePatchDrawable(Resources res, Bitmap bitmap, byte[] chunk,
@@ -88,6 +94,8 @@ public NinePatchDrawable(Resources res, Bitmap bitmap, byte[] chunk,
      * @deprecated Use {@link #NinePatchDrawable(Resources, NinePatch)}
      * to ensure that the drawable has correctly set its target density.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.443 -0500", hash_original_method = "50B637C031C7A89AA164A5082D6A3A93", hash_generated_method = "B2AEC5AD9697F2A0503EB686601715D6")
     
 @Deprecated
@@ -99,6 +107,8 @@ public NinePatchDrawable(Resources res, Bitmap bitmap, byte[] chunk,
      * Create drawable from existing nine-patch, setting initial target density
      * based on the display metrics of the resources.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.446 -0500", hash_original_method = "78318325CB229FE4515B0254D2B416A2", hash_generated_method = "23EAC72E71441F799B6886655F812A45")
     
 public NinePatchDrawable(Resources res, NinePatch patch) {
@@ -141,6 +151,8 @@ private void setNinePatchState(NinePatchState state, Resources res) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.450 -0500", hash_original_method = "82585E992AABF5984A06ED90552A1C77", hash_generated_method = "61CFDB38788DB3DF61DD296AC5E20393")
     
@@ -156,6 +168,8 @@ public void setTargetDensity(Canvas canvas) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.453 -0500", hash_original_method = "4AE49AE83EF2F62C9A584A758B5178F3", hash_generated_method = "5DB2A771EE175C3701864DA1F5B543BF")
     
@@ -171,6 +185,8 @@ public void setTargetDensity(DisplayMetrics metrics) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.455 -0500", hash_original_method = "F1F344BB6765FE54A2E40BB8E2AEB010", hash_generated_method = "858AB15E6B3A21BD24C0AD1BAC621F25")
     
 public void setTargetDensity(int density) {
@@ -183,6 +199,8 @@ public void setTargetDensity(int density) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.457 -0500", hash_original_method = "E8279E2F004E74E2D3A3C9AE5B1B6A96", hash_generated_method = "FBF357EF39CF86BD2EA1024B918A2DAC")
     
 private void computeBitmapSize() {
@@ -210,6 +228,8 @@ private void computeBitmapSize() {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.460 -0500", hash_original_method = "D590BE7B225C8366E27B182C22714F49", hash_generated_method = "C8AD40ACACCB63A9A23D88384D7CED9B")
     
 @Override
@@ -217,6 +237,8 @@ private void computeBitmapSize() {
         mNinePatch.draw(canvas, getBounds(), mPaint);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.462 -0500", hash_original_method = "F3B5E1AA8DCA42FBC0209DF5DE34A528", hash_generated_method = "820FEF23DD9AF5206EFEB9F420EC84B9")
     
@@ -225,6 +247,8 @@ private void computeBitmapSize() {
         return super.getChangingConfigurations() | mNinePatchState.mChangingConfigurations;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.464 -0500", hash_original_method = "6A7A0B10486EA74D6FDB7CE40BB96DCF", hash_generated_method = "11F4CC9806F6328B92AA9DC802E41BE4")
     
 @Override
@@ -233,6 +257,8 @@ private void computeBitmapSize() {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.467 -0500", hash_original_method = "DDA2062A293BD75777B2540266427F8E", hash_generated_method = "304F8A5C1600DCBD8E288A0C143EEE23")
     
@@ -246,6 +272,8 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.469 -0500", hash_original_method = "D5833F804B1FB713A7DF2F016B869F27", hash_generated_method = "4C3398F7DECFA1CCA5537AB3423663CA")
     
@@ -259,6 +287,8 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.471 -0500", hash_original_method = "CFE043442F57EFE9659FF8A6FEAF97CC", hash_generated_method = "5B33D46B2087D5819378F713C42245C1")
     
@@ -272,6 +302,8 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.473 -0500", hash_original_method = "49680E18787729BA4FD04D8979679DC0", hash_generated_method = "469E9828616F02FFA321DFA7F4094E8F")
     
@@ -281,6 +313,8 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.476 -0500", hash_original_method = "14B4EEBEDACB44F7F53A884DE9C011A3", hash_generated_method = "72522F40C968FD97CA629BA890B71DB0")
     
 @Override
@@ -335,6 +369,8 @@ private void computeBitmapSize() {
         a.recycle();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.478 -0500", hash_original_method = "075C514CB6C74FC258CE8B3440B31BB9", hash_generated_method = "8DB18E39C4FDB6B84FF1968236215A69")
     
@@ -349,6 +385,8 @@ public Paint getPaint() {
     /**
      * Retrieves the width of the source .png file (before resizing).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.482 -0500", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "21AB0A052F6EA6AC14C0E8AE68C8FF19")
     
@@ -360,6 +398,8 @@ public Paint getPaint() {
     /**
      * Retrieves the height of the source .png file (before resizing).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.484 -0500", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "4C6E95AD1C54FB0FB2042DE89349F724")
     
@@ -368,6 +408,8 @@ public Paint getPaint() {
         return mBitmapHeight;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.486 -0500", hash_original_method = "F677AE1ECA1CBA7AB5A76B8BE368A72F", hash_generated_method = "6D0F8344968A9B3DC34906DAEE0028B6")
     
@@ -376,6 +418,8 @@ public Paint getPaint() {
         return mBitmapWidth;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.488 -0500", hash_original_method = "0C368C2268B0130C3ACD75434C6C4889", hash_generated_method = "EFB08363CF0F22C2547E118B51A588FD")
     
@@ -388,6 +432,8 @@ public Paint getPaint() {
      * Returns a {@link android.graphics.PixelFormat graphics.PixelFormat}
      * value of OPAQUE or TRANSLUCENT.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.491 -0500", hash_original_method = "B22FBB09C864D64632C83D9F48FAF25E", hash_generated_method = "26A019198189533DB68C958BCD194B3E")
     
@@ -397,6 +443,8 @@ public Paint getPaint() {
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.493 -0500", hash_original_method = "015B10918498A51630C2035B52469361", hash_generated_method = "640199D0185C3012747587975300B093")
     
@@ -430,12 +478,16 @@ public Paint getPaint() {
 
         int mTargetDensity = DisplayMetrics.DENSITY_DEFAULT;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.513 -0500", hash_original_method = "CA3208FB1D6439C7B894EDBF6EC3D9DE", hash_generated_method = "CA3208FB1D6439C7B894EDBF6EC3D9DE")
         
 NinePatchState(NinePatch ninePatch, Rect padding) {
             this(ninePatch, padding, DEFAULT_DITHER);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.515 -0500", hash_original_method = "88C0915540B2FF11645913E277979DA7", hash_generated_method = "88C0915540B2FF11645913E277979DA7")
         
 NinePatchState(NinePatch ninePatch, Rect rect, boolean dither) {
@@ -479,6 +531,8 @@ NinePatchState(NinePatchState state) {
         
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.498 -0500", hash_original_method = "EEABBB7B802F633C5D2C005A94C5FF68", hash_generated_method = "35C014D185CFAE6CD03862422FA4378D")
     
 @Override

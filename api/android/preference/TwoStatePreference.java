@@ -224,6 +224,8 @@ public void setDisableDependentsState(boolean disableDependentsState) {
                 : (Boolean) defaultValue);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.385 -0500", hash_original_method = "6184398C925EDFB35C067E47CDB9F78F", hash_generated_method = "164EFE9A1695D41D60B2616745708182")
     
 void sendAccessibilityEvent(View view) {
@@ -245,6 +247,8 @@ void sendAccessibilityEvent(View view) {
      * Sync a summary view contained within view's subhierarchy with the correct summary text.
      * @param view View where a summary should be located
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.388 -0500", hash_original_method = "901B0F4CA28424233D996D3F63CA3D29", hash_generated_method = "4B5893EEDD3C4DA62552168499070307")
     
 void syncSummaryView(View view) {

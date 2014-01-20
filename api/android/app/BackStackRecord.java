@@ -440,6 +440,8 @@ public FragmentTransaction add(int containerViewId, Fragment fragment, String ta
         return this;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.228 -0500", hash_original_method = "F2F897C7BFD0AE6B1B051FF1D3DE8AB7", hash_generated_method = "C95777A5F19475DA08C0B2117C0BAD16")
     
 private void doAddOp(int containerViewId, Fragment fragment, String tag, int opcmd) {
@@ -634,6 +636,8 @@ public FragmentTransaction setBreadCrumbShortTitle(CharSequence text) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.270 -0500", hash_original_method = "350B86C0CFAA72F059C15CB3FE1D993C", hash_generated_method = "350B86C0CFAA72F059C15CB3FE1D993C")
     
 void bumpBackStackNesting(int amt) {
@@ -688,6 +692,8 @@ void bumpBackStackNesting(int amt) {
 
         ArrayList<Fragment> removed;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.102 -0400", hash_original_method = "D7B482A7C55CFA7077AB6D8147480F87", hash_generated_method = "D7B482A7C55CFA7077AB6D8147480F87")
         public Op ()
         {
@@ -708,6 +714,8 @@ public int commitAllowingStateLoss() {
         return commitInternal(true);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.276 -0500", hash_original_method = "9BF727F0CCA97F90C9847FCD006039C1", hash_generated_method = "9BF727F0CCA97F90C9847FCD006039C1")
     
 int commitInternal(boolean allowStateLoss) {

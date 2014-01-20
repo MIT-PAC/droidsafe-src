@@ -104,6 +104,8 @@ protected HttpsURLConnection(URL url) {
      * @throws IllegalStateException
      *             if no connection has been established yet.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.197 -0500", hash_original_method = "DC3C51A13960575CAB20927262CC1EAA", hash_generated_method = "50C779AE7D838B9AD10E9CAAE28CA039")
     
 public abstract String getCipherSuite();
@@ -118,6 +120,8 @@ public abstract String getCipherSuite();
      * @throws IllegalStateException
      *             if no connection has been established yet.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.200 -0500", hash_original_method = "44A6CFE353402A844F9D937F26ED2AEF", hash_generated_method = "8F9BF5AF8A973454C61F8FD9C2DAB4E8")
     
 public abstract Certificate[] getLocalCertificates();
@@ -133,6 +137,8 @@ public abstract Certificate[] getLocalCertificates();
      * @throws IllegalStateException
      *             if no connection has been established yet.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.202 -0500", hash_original_method = "5D32B7D80ABF052EA613BA06BE978B0C", hash_generated_method = "8094CF2CD1CE41340713B07DDF22450E")
     
 public abstract Certificate[] getServerCertificates() throws SSLPeerUnverifiedException;

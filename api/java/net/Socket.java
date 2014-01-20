@@ -310,6 +310,8 @@ protected Socket(SocketImpl impl) throws SocketException {
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.735 -0500", hash_original_method = "FE893551BF445ECD0CF959494571F82D", hash_generated_method = "8F0D47E467026B0C124288864DEB5D88")
     
 private void tryAllAddresses(String dstName, int dstPort, InetAddress
@@ -345,6 +347,8 @@ private void tryAllAddresses(String dstName, int dstPort, InetAddress
      * @param dstPort
      *            the port on the destination host.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.758 -0500", hash_original_method = "B238EF3FEB62ADA205D3F3298560A137", hash_generated_method = "BAAC5EC1F498C64E9C7C929F02966619")
     
 private void checkDestination(InetAddress destAddr, int dstPort) {
@@ -662,6 +666,8 @@ public void setTcpNoDelay(boolean on) throws SocketException {
      *             thrown if an error occurs during the bind or connect
      *             operations.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.810 -0500", hash_original_method = "20DD1F1CA9EDC17BE2B90F2B7E5FF655", hash_generated_method = "15634D69F6AFF53B8F514BC3002CEC1C")
     
 private void startupSocket(InetAddress dstAddress, int dstPort,
@@ -691,6 +697,8 @@ private void startupSocket(InetAddress dstAddress, int dstPort,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.812 -0500", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "286D168AC5969CEEC8D7177AFB54002B")
     
 private boolean usingSocks() {
@@ -762,6 +770,8 @@ public void shutdownOutput() throws IOException {
      * @throws SocketException
      *             if the socket is closed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.823 -0500", hash_original_method = "80C03A9E4F151BE4271ACE586291D7DE", hash_generated_method = "C6BB1C000EDEB0F6A93654FF0C5C25A9")
     
 private void checkOpenAndCreate(boolean create) throws SocketException {
@@ -1123,6 +1133,8 @@ public void sendUrgentData(int value) throws IOException {
      *
      * @see ServerSocket#implAccept
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.869 -0500", hash_original_method = "21E3234EAE6C3F4479E6E7944641B8BE", hash_generated_method = "21E3234EAE6C3F4479E6E7944641B8BE")
     
 void accepted() {
@@ -1130,6 +1142,8 @@ void accepted() {
         cacheLocalAddress();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.872 -0500", hash_original_method = "95A7BF302299AFCDED7970E2F7424717", hash_generated_method = "132FA4135EA46117D9C00DD069A47E16")
     
 private void cacheLocalAddress() {

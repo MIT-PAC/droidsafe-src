@@ -44,6 +44,8 @@ private AnimationDrawable(AnimationState state, Resources res) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.519 -0500", hash_original_method = "F207A8C7EE9B62CDAD2CDEF6C9E1E05A", hash_generated_method = "8C07124F4B80241F4930CA719BD65812")
     
@@ -67,6 +69,8 @@ private AnimationDrawable(AnimationState state, Resources res) {
      * @see #isRunning()
      * @see #stop()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.521 -0500", hash_original_method = "B2F55F064A30629408E9D67D650C8080", hash_generated_method = "D4F3C97A9CA06C43D325100C5A3348BD")
     
 public void start() {
@@ -82,6 +86,8 @@ public void start() {
      * @see #isRunning()
      * @see #start()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.523 -0500", hash_original_method = "13ACD75B58E729F7C9E7DE6208579581", hash_generated_method = "ECAD6D583B3C0FBC2F97779678F13777")
     
 public void stop() {
@@ -95,6 +101,8 @@ public void stop() {
      *
      * @return true if the animation is running, false otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.525 -0500", hash_original_method = "58F8F26763BA19E1F1B373F32B389D6B", hash_generated_method = "B66047CBA5F4925ECDEC49FBC2F485FA")
     
 public boolean isRunning() {
@@ -107,12 +115,16 @@ public boolean isRunning() {
      *
      * @see #start()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.527 -0500", hash_original_method = "B6B243EB70C5F724D188154EAF209167", hash_generated_method = "E05920D5F98D86E1C769E09C9DA16AE9")
     
 public void run() {
         nextFrame(false);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.530 -0500", hash_original_method = "A4EA0ABEB4B95482FCBDF5ED15C3D56A", hash_generated_method = "B502024B7F748BE413D5239C2348A019")
     
 @Override
@@ -200,6 +212,8 @@ public void addFrame(Drawable frame, int duration) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.545 -0500", hash_original_method = "5BF496D6A5AC4A1943AFC092E55892DA", hash_generated_method = "5C02CF381FD0924066D55157DF859005")
     
 private void nextFrame(boolean unschedule) {
@@ -211,6 +225,8 @@ private void nextFrame(boolean unschedule) {
         setFrame(next, unschedule, !mAnimationState.mOneShot || next < (N - 1));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.547 -0500", hash_original_method = "B59ABD564D6BE8E67E70E520C58F1693", hash_generated_method = "FA116E4DF1B32B17388905DEF189AB70")
     
 private void setFrame(int frame, boolean unschedule, boolean animate) {
@@ -227,6 +243,8 @@ private void setFrame(int frame, boolean unschedule, boolean animate) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.551 -0500", hash_original_method = "7089458E2F1E271024E158C172450FE4", hash_generated_method = "EA37544FB2B700501553E8901C2F09CF")
     
 @Override
@@ -298,6 +316,8 @@ private void setFrame(int frame, boolean unschedule, boolean animate) {
         setFrame(0, true, false);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.553 -0500", hash_original_method = "91217E14A6A0FB93E4A43550FB5F1C23", hash_generated_method = "C13A033FD4B6D0D66363D304BAF547E6")
     
 @Override

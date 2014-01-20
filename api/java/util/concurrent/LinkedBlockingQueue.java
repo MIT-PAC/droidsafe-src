@@ -88,6 +88,8 @@ public LinkedBlockingQueue(int capacity) {
      * @throws NullPointerException if the specified collection or any
      *         of its elements are null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.331 -0500", hash_original_method = "76A1733AA4693E67903F6C627D09C67F", hash_generated_method = "131BD3961AB3696D2DCB6EF7292F2B4A")
     
 public LinkedBlockingQueue(Collection<? extends E> c) {
@@ -114,6 +116,8 @@ public LinkedBlockingQueue(Collection<? extends E> c) {
      * Signals a waiting take. Called only from put/offer (which do not
      * otherwise ordinarily lock takeLock.)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.309 -0500", hash_original_method = "15D22B562F85AEAC3F4AC4996FFD23A3", hash_generated_method = "690339A57E7981A56E8267DFE7AE9E32")
     
 private void signalNotEmpty() {
@@ -129,6 +133,8 @@ private void signalNotEmpty() {
     /**
      * Signals a waiting put. Called only from take/poll.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.313 -0500", hash_original_method = "23256B84FD63DB25D1FF9FA99CF29C9A", hash_generated_method = "0A0CCB5473488EC37FD52A018021376A")
     
 private void signalNotFull() {
@@ -159,6 +165,8 @@ private void enqueue(Node<E> node) {
      *
      * @return the node
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.318 -0500", hash_original_method = "0F3CD055205E18F01917D382EBA2EDD8", hash_generated_method = "8BE42697A3029C89891D7182DE5D0221")
     
 private E dequeue() {
@@ -176,6 +184,8 @@ private E dequeue() {
     /**
      * Lock to prevent both puts and takes.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.320 -0500", hash_original_method = "8626572E0FE15707F18ECC5A9712CA34", hash_generated_method = "8626572E0FE15707F18ECC5A9712CA34")
     
 void fullyLock() {
@@ -186,6 +196,8 @@ void fullyLock() {
     /**
      * Unlock to allow both puts and takes.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.322 -0500", hash_original_method = "5557FE5692936575245483F7CDC5CE2B", hash_generated_method = "5557FE5692936575245483F7CDC5CE2B")
     
 void fullyUnlock() {
@@ -200,6 +212,8 @@ void fullyUnlock() {
      *
      * @return the number of elements in this queue
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.333 -0500", hash_original_method = "FC3CFC9E56AD635CFF4ED177A60462DA", hash_generated_method = "F40A8ABA2D3BE916A4E7D7B2894B30DE")
     
 public int size() {
@@ -219,6 +233,8 @@ public int size() {
      * because it may be the case that another thread is about to
      * insert or remove an element.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.336 -0500", hash_original_method = "F6FFB0DBE2C073472862E76EB78E2D9E", hash_generated_method = "5BBD08CAE6AE3BD56973E44A910BA27A")
     
 public int remainingCapacity() {
@@ -232,6 +248,8 @@ public int remainingCapacity() {
      * @throws InterruptedException {@inheritDoc}
      * @throws NullPointerException {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.338 -0500", hash_original_method = "37DF2D00E21001E825743AC7943B033F", hash_generated_method = "2FA40809E202F16AD2228E0B91B6701C")
     
 public void put(E e) throws InterruptedException {
@@ -275,6 +293,8 @@ public void put(E e) throws InterruptedException {
      * @throws InterruptedException {@inheritDoc}
      * @throws NullPointerException {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.341 -0500", hash_original_method = "D5F3AC00421DA10DEFBB832E0EC3BAC8", hash_generated_method = "604C205CA2B5AF9DED4087586B8BA844")
     
 public boolean offer(E e, long timeout, TimeUnit unit)
@@ -315,6 +335,8 @@ public boolean offer(E e, long timeout, TimeUnit unit)
      *
      * @throws NullPointerException if the specified element is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.343 -0500", hash_original_method = "751C55DFDD2504B6D9AAA83EF3048DDA", hash_generated_method = "D2ADC948D3AB6EC72A4437470CF6A0BA")
     
 public boolean offer(E e) {
@@ -341,6 +363,8 @@ public boolean offer(E e) {
         return c >= 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.346 -0500", hash_original_method = "022306A077B45DC674F98467F25F93CD", hash_generated_method = "3E3064FFB44D5FC2152801FE8CB3A063")
     
 public E take() throws InterruptedException {
@@ -365,6 +389,8 @@ public E take() throws InterruptedException {
         return x;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.349 -0500", hash_original_method = "AA8094BF5AEC46D297071331A526D258", hash_generated_method = "7DC827F2232517E7E0CC043F47ED1EB7")
     
 public E poll(long timeout, TimeUnit unit) throws InterruptedException {
@@ -392,6 +418,8 @@ public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         return x;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.353 -0500", hash_original_method = "D22B106AF12DCACC53C408D22FAEA025", hash_generated_method = "41F2F247DEA96A501DD66B85F362E3FB")
     
 public E poll() {
@@ -417,6 +445,8 @@ public E poll() {
         return x;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.355 -0500", hash_original_method = "6BD887DAC1ACD373E1861DD85FA5D83B", hash_generated_method = "BF4430C205A805491F590C69F04E3B5B")
     
 public E peek() {
@@ -463,6 +493,8 @@ void unlink(Node<E> p, Node<E> trail) {
      * @param o element to be removed from this queue, if present
      * @return {@code true} if this queue changed as a result of the call
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.360 -0500", hash_original_method = "43DA2AA0857729B72806FF0ABDC45219", hash_generated_method = "013E83539AA1F111BA99927E68DD4682")
     
 public boolean remove(Object o) {
@@ -491,6 +523,8 @@ public boolean remove(Object o) {
      * @param o object to be checked for containment in this queue
      * @return {@code true} if this queue contains the specified element
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.363 -0500", hash_original_method = "A4E3D89F8C47A7118ADD1757BF8D3A46", hash_generated_method = "838F7E959C6474957608640409E1AD98")
     
 public boolean contains(Object o) {
@@ -519,6 +553,8 @@ public boolean contains(Object o) {
      *
      * @return an array containing all of the elements in this queue
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.365 -0500", hash_original_method = "A06A302045E6771EA320A7223F86E4E8", hash_generated_method = "23AD50A3F537DF0818A01FE2BB7FABF1")
     
 public Object[] toArray() {
@@ -535,7 +571,9 @@ public Object[] toArray() {
         }
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.586 -0400", hash_original_method = "3C0973EC18B4AB6267920EDC87F075C5", hash_generated_method = "765D849DB37E2E7E74B6D5F8CD431089")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.586 -0400", hash_original_method = "3C0973EC18B4AB6267920EDC87F075C5", hash_generated_method = "765D849DB37E2E7E74B6D5F8CD431089")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());
@@ -577,6 +615,8 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1520448393 =             a;
         //}
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.370 -0500", hash_original_method = "74ADAA84A44AA4C99AF60EA5FA9916C8", hash_generated_method = "4C19B39368E5BA95807215E36EBD7EB5")
     
 public String toString() {
@@ -605,6 +645,8 @@ public String toString() {
      * Atomically removes all of the elements from this queue.
      * The queue will be empty after this call returns.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.373 -0500", hash_original_method = "2B97B8EA201FFE74530152ABDF41ED91", hash_generated_method = "C5DDAC8973345F26091FACB30536355A")
     
 public void clear() {
@@ -629,6 +671,8 @@ public void clear() {
      * @throws NullPointerException          {@inheritDoc}
      * @throws IllegalArgumentException      {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.375 -0500", hash_original_method = "848AB2101C925A7DB8B05331DC1D79E6", hash_generated_method = "EB9FFDC2CB18F728010F3227114BF0A5")
     
 public int drainTo(Collection<? super E> c) {
@@ -641,6 +685,8 @@ public int drainTo(Collection<? super E> c) {
      * @throws NullPointerException          {@inheritDoc}
      * @throws IllegalArgumentException      {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.378 -0500", hash_original_method = "3B8D4B25C05B9AD02BEBED4DB8AC9EEC", hash_generated_method = "A184BCFEA67EB6A128346DE0E86D1F1E")
     
 public int drainTo(Collection<? super E> c, int maxElements) {
@@ -694,6 +740,8 @@ public int drainTo(Collection<? super E> c, int maxElements) {
      *
      * @return an iterator over the elements in this queue in proper sequence
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.381 -0500", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "B0FB44010E28764F5FA2B4AB0E8E15C1")
     
 public Iterator<E> iterator() {
@@ -708,6 +756,8 @@ public Iterator<E> iterator() {
      * followed by a null
      * @param s the stream
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.407 -0500", hash_original_method = "407E789BCFB8527B31EA0FCB2D45014F", hash_generated_method = "3774031F4593083A8E0FF696530B2F86")
     
 private void writeObject(java.io.ObjectOutputStream s)
@@ -737,6 +787,8 @@ private void writeObject(java.io.ObjectOutputStream s)
 
         Node<E> next;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.285 -0500", hash_original_method = "E24CFB813CF8D6D3545154C1747D57F8", hash_generated_method = "E24CFB813CF8D6D3545154C1747D57F8")
         
 Node(E x) { item = x; }
@@ -840,6 +892,8 @@ public void remove() {
      *
      * @param s the stream
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.410 -0500", hash_original_method = "2A845E5CA6C44D2307376F014D4A5DD1", hash_generated_method = "7E02DA2BE2889F07A6282D6854935FD4")
     
 private void readObject(java.io.ObjectInputStream s)

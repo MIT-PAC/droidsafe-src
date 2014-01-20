@@ -120,12 +120,16 @@ public static final Cursor getAllVisitedUrls(ContentResolver cr) throws
                 Combined.DATE_CREATED + " ASC");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.650 -0500", hash_original_method = "CC1F18686D571794573EDA6311E8020A", hash_generated_method = "7976A57CB4C544C23F7AA2BA7142D68E")
     
 private static final void addOrUrlEquals(StringBuilder sb) {
         sb.append(" OR " + BookmarkColumns.URL + " = ");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.653 -0500", hash_original_method = "789FC1644556002CD63BBE379D3F91B8", hash_generated_method = "E2B330AC174A03167EC6F51CADB52D2F")
     
 private static final Cursor getVisitedLike(ContentResolver cr, String url) {
@@ -344,6 +348,8 @@ public static final void clearHistory(ContentResolver cr) {
      * @param whereClause   String to limit the items affected.
      *                      null means all items.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.669 -0500", hash_original_method = "1F6C0758F6A5058B5FD6EF87FF0282F3", hash_generated_method = "401EF8DE74069AF80CF65959D6B10B42")
     
 private static final void deleteHistoryWhere(ContentResolver cr, String whereClause) {

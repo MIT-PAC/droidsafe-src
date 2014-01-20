@@ -12,10 +12,8 @@ import java.util.Set;
 import junit.framework.Test;
 import junit.framework.TestListener;
 
-
 public class TestPrinter implements TestRunner.Listener, TestListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.364 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
-
 
     private String mTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.366 -0500", hash_original_field = "479F548365C640D5CE2440749BC6DC00", hash_generated_field = "D67B025BE99076C0AEC784CAEC5187EC")
@@ -24,7 +22,6 @@ public class TestPrinter implements TestRunner.Listener, TestListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.368 -0500", hash_original_field = "DAD3F572FF1DE2D1F1189FE61882992C", hash_generated_field = "43F51331B3B228C3F97F168E07DB7958")
 
     private Set<String> mFailedTests = new HashSet<String>();
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.370 -0500", hash_original_method = "010DF77671E7451D539C1A1ED260A711", hash_generated_method = "DF83188D32955D958A6A9165437BB958")
     
@@ -83,6 +80,8 @@ public void failed(String className, Throwable exception) {
         Log.i(mTag, "----- end exception -----");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.384 -0500", hash_original_method = "0F028E9D9A8A52FB5170BD338555A5CA", hash_generated_method = "16C6D01EBA455E3FC51C34CA8D385850")
     
 private void failed(Test test, Throwable t) {
@@ -117,7 +116,6 @@ public void endTest(Test test) {
 public void startTest(Test test) {
         started(test.toString());
     }
-
     
 }
 

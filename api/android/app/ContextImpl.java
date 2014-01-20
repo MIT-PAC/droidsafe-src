@@ -88,6 +88,8 @@ import droidsafe.helpers.DSUtils;
 import java.util.Collections;
 
 class ReceiverRestrictedContext extends ContextWrapper {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.000 -0500", hash_original_method = "7FD4094CD16832D548D3CEFA622075F6", hash_generated_method = "7FD4094CD16832D548D3CEFA622075F6")
     
 ReceiverRestrictedContext(Context base) {
@@ -132,6 +134,8 @@ ReceiverRestrictedContext(Context base) {
 
 public class ContextImpl extends Context {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.187 -0500", hash_original_method = "374239E6E9AC9E3552D4A077D8744FFB", hash_generated_method = "B8FDDC39B13812FD0E23045E8DFF123F")
     
@@ -144,7 +148,9 @@ static ContextImpl getImpl(Context context) {
         return (ContextImpl)context;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.344 -0500", hash_original_method = "4295EC81B8CE00729AA9F7C2FA9F917B", hash_generated_method = "01D6B75E63DA8C5A3D28233BF030539F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.344 -0500", hash_original_method = "4295EC81B8CE00729AA9F7C2FA9F917B", hash_generated_method = "01D6B75E63DA8C5A3D28233BF030539F")
     
 static DropBoxManager createDropBoxManager() {
         IBinder b = ServiceManager.getService(DROPBOX_SERVICE);
@@ -159,6 +165,8 @@ static DropBoxManager createDropBoxManager() {
         return new DropBoxManager(service);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.402 -0500", hash_original_method = "6D48BCF78A0D8F638E4F8DF3493EA1A0", hash_generated_method = "337E35882617EEC65CAF3EEB0E687E78")
     
 static ContextImpl createSystemContext(ActivityThread mainThread) {
@@ -167,6 +175,8 @@ static ContextImpl createSystemContext(ActivityThread mainThread) {
         return context;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.432 -0500", hash_original_method = "C8AF3048756974EA22546B41BE2F7C6F", hash_generated_method = "1DC327CB6766B683BFBFB743C0F8C248")
     
@@ -273,7 +283,9 @@ static void setFilePermissionsFromMode(String name, int mode,
     // orphaned legacy field
     private SensorManager sensorManager;
     
-	public ContextImpl() {
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
 		sensorManager = new SensorManager();
 	}
@@ -392,6 +404,8 @@ public ContextImpl(ContextImpl context) {
         throw new UnsupportedOperationException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.229 -0500", hash_original_method = "0A29125F4E4AA8A93CA3D1CE13216DA3", hash_generated_method = "3F44C0278EEBAE876BE1E4B6C59E4EDC")
     
 private File getPreferencesDir() {
@@ -498,6 +512,8 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.272 -0500", hash_original_method = "5E7F893311C7FFBA04D943EFEC31C4D2", hash_generated_method = "CECB6C2171E104773B017888B934F3B5")
     
 private File getDatabasesDir() {
@@ -639,6 +655,8 @@ private File getDatabasesDir() {
     	return null; // no 'sticky' intents need to be modeled for coverage
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.322 -0500", hash_original_method = "22E75A5CFB9DB3D3B6EDA1829895EA59", hash_generated_method = "85AC04DA82678F15AAEBF3306262841C")
     
 private Intent registerReceiverInternal(BroadcastReceiver receiver,
@@ -704,6 +722,8 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
   }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.108 -0400", hash_original_method = "0B425FF354429B91E3FB5E5F0CCF5247", hash_generated_method = "9DC6D6BDC8B919CA9F34CC2423316AAF")
     private WallpaperManager getWallpaperManager() {
 		return wallPaperManager;
@@ -727,6 +747,8 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.355 -0500", hash_original_method = "6A8DDEA43434D3CB20BB0A5477A87FA9", hash_generated_method = "232F074112C61C087B9C620E93374F5E")
     
 private void enforce(
@@ -790,6 +812,8 @@ private void enforce(
         throw new UnsupportedOperationException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.378 -0500", hash_original_method = "4ABE3E1ABE03D924F88AC8D7A295DCAE", hash_generated_method = "9AD5945F2AFB3A1EB579635C3FB1068B")
     
 private String uriModeFlagToString(int uriModeFlags) {
@@ -806,6 +830,8 @@ private String uriModeFlagToString(int uriModeFlags) {
                 "Unknown permission mode flags: " + uriModeFlags);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.380 -0500", hash_original_method = "6A9FD3C401F0CEC7314A7CD25AD534A9", hash_generated_method = "9E69D25BC0E2F5A67B5636B63ACB6648")
     
 private void enforceForUri(
@@ -860,6 +886,8 @@ private void enforceForUri(
         throw new UnsupportedOperationException();        
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.398 -0500", hash_original_method = "E67FD2E3CB9CBDDDA85EF29E76BC4DD2", hash_generated_method = "16A3CADF8A8FD33F9B29B8BC2A22D525")
     
 private File getDataDirFile() {
@@ -875,6 +903,8 @@ private File getDataDirFile() {
         throw new UnsupportedOperationException();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.408 -0500", hash_original_method = "32CF6005086B5520DA4AE96ECAD890BA", hash_generated_method = "BFEB5056C60F11BF4EC12AB46B425601")
     
 final void init(LoadedApk packageInfo,
@@ -882,6 +912,8 @@ final void init(LoadedApk packageInfo,
         init(packageInfo, activityToken, mainThread, null, null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.412 -0500", hash_original_method = "617B56367877BE6D5351978E32679FCB", hash_generated_method = "E1643BC9B55B363AC0F781D5F3DCDECD")
     
 final void init(LoadedApk packageInfo,
@@ -907,6 +939,8 @@ final void init(LoadedApk packageInfo,
         setActivityToken(activityToken);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.414 -0500", hash_original_method = "A01AC1DE8A0942D58F790AE1580128F4", hash_generated_method = "0E222A7658B0C236572FED39EC0F0A40")
     
 final void init(Resources resources, ActivityThread mainThread) {
@@ -917,12 +951,16 @@ final void init(Resources resources, ActivityThread mainThread) {
         mContentResolver = new ApplicationContentResolver(this, mainThread);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.416 -0500", hash_original_method = "3668A95D26BB557CD7264A8982F20E37", hash_generated_method = "557563E6590F34D000FF7D119C19BA5A")
     
 final void scheduleFinalCleanup(String who, String what) {
         mMainThread.scheduleContextCleanup(this, who, what);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.418 -0500", hash_original_method = "0501008D8AD4AD5FA54A7545814DC0B6", hash_generated_method = "0932B236CD2E7CD152D62004CFBBD224")
     
 final void performFinalCleanup(String who, String what) {
@@ -930,6 +968,8 @@ final void performFinalCleanup(String who, String what) {
         mPackageInfo.removeContextRegistrations(getOuterContext(), who, what);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.420 -0500", hash_original_method = "00E338AD03CD22E7A509C63ABE7257F4", hash_generated_method = "E1719FC9EAE97D56287081945234BDDE")
     
@@ -974,18 +1014,24 @@ public ApplicationContentResolver(Context context, ActivityThread mainThread) {
         
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.422 -0500", hash_original_method = "909971A42CA4D34B6A2AABA7AFFB96CE", hash_generated_method = "104771F57298BD479FD780160FB97942")
     
 final void setActivityToken(IBinder token) {
         mActivityToken = token;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.424 -0500", hash_original_method = "A74250CBDFD89C9F601A5AA3ED01CDC8", hash_generated_method = "35BB7ACF4CB3C4C9F87F055BBEC0D230")
     
 final void setOuterContext(Context context) {
         mOuterContext = context;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.427 -0500", hash_original_method = "03C284D73757410812309249CAB76117", hash_generated_method = "4E683FF5A8BC97CB945DA2DFC7A929BE")
     
@@ -993,6 +1039,8 @@ final Context getOuterContext() {
         return mOuterContext;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.429 -0500", hash_original_method = "D32D1A589CFC02641AF8A3133A37BC7F", hash_generated_method = "D2B98033670730E13D8A5E06B011771E")
     
@@ -1000,6 +1048,8 @@ final IBinder getActivityToken() {
         return mActivityToken;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.434 -0500", hash_original_method = "B435A8710874F18AA5DE97F01977E23C", hash_generated_method = "3C5A65C32C57D3A4778CD3ED95B90BBB")
     
 private File validateFilePath(String name, boolean createDirectory) {
@@ -1025,6 +1075,8 @@ private File validateFilePath(String name, boolean createDirectory) {
         return f;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.437 -0500", hash_original_method = "E9A305FD20BBA1C0FB0979159F7000FC", hash_generated_method = "1CCB9A221099E3C08074D57F5429D26F")
     
 private File makeFilename(File base, String name) {

@@ -43,6 +43,8 @@ public static TaskStackBuilder from(Context context) {
 
     private  Context mSourceContext;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.008 -0500", hash_original_method = "D42A6E80ABDCC8C3AC78797ED9ABE957", hash_generated_method = "960C1FC90ECAD12565878A27908BE5B4")
     
 private TaskStackBuilder(Context a) {

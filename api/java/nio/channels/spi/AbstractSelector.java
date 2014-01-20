@@ -57,6 +57,8 @@ protected AbstractSelector(SelectorProvider selectorProvider) {
     /**
      * Implements the closing of this channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.953 -0500", hash_original_method = "5FE7DCB0F468BAD1C9BA7F9A5F7A9F36", hash_generated_method = "870A346C768AC2510FED8033A3A2756C")
     
 protected abstract void implCloseSelector() throws IOException;
@@ -100,6 +102,8 @@ protected final Set<SelectionKey> cancelledKeys() {
      * @param attachment the attachment for the selection key.
      * @return the key related to the channel and this selector.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.964 -0500", hash_original_method = "4F5EED7EF37B890A788F78CA5BD260CF", hash_generated_method = "A2B54A7B7C7864BE343F8A7FAAF5ED4D")
     
 protected abstract SelectionKey register(AbstractSelectableChannel channel,
@@ -136,6 +140,8 @@ protected final void end() {
         Thread.currentThread().popInterruptAction$(wakeupRunnable);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.974 -0500", hash_original_method = "7076984DBD0A39CC1D8943756DBBDDA2", hash_generated_method = "7076984DBD0A39CC1D8943756DBBDDA2")
     
 void cancel(SelectionKey key) {

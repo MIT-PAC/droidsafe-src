@@ -38,6 +38,8 @@ public DatagramSocketImpl() {
      *                if an error occurs while binding, for example, if the port
      *                has been already bound.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.713 -0500", hash_original_method = "FE8A8A46ED8B7BEC1B130BF00E626B2B", hash_generated_method = "2F9EF19973F199459087B88664C54EB0")
     
 protected abstract void bind(int port, InetAddress addr) throws SocketException;
@@ -45,6 +47,8 @@ protected abstract void bind(int port, InetAddress addr) throws SocketException;
     /**
      * Closes this socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.716 -0500", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "0C36956994211212E0CDECE52E62CAEA")
     
 protected abstract void close();
@@ -56,6 +60,8 @@ protected abstract void close();
      * @throws SocketException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.718 -0500", hash_original_method = "63069B639E58D5DBC601400937E19710", hash_generated_method = "B3C6E7E8045EE58F1AFB4B797B649F31")
     
 protected abstract void create() throws SocketException;
@@ -76,6 +82,8 @@ protected FileDescriptor getFileDescriptor() {
     /**
      * Returns the local address to which the socket is bound.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.723 -0500", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "0E5E291FF84E111D5E99E4DCFA7BD180")
     
@@ -103,6 +111,8 @@ protected int getLocalPort() {
      * @deprecated Replaced by {@link #getTimeToLive}
      * @see #getTimeToLive()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.728 -0500", hash_original_method = "F099E1C41B694EAD2D2039587A594DBF", hash_generated_method = "05CCBE891AA15F5247EDEA7226433FB1")
     
 @Deprecated
@@ -118,6 +128,8 @@ protected int getLocalPort() {
      *             if an error occurs while getting the time-to-live option
      *             value.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.731 -0500", hash_original_method = "D9719A430A5F54FDD1789960993CC8AC", hash_generated_method = "74D63A31CD8C74B09397ED867E75EA4E")
     
 protected abstract int getTimeToLive() throws IOException;
@@ -133,6 +145,8 @@ protected abstract int getTimeToLive() throws IOException;
      *             if an error occurs while joining the specified multicast
      *             group.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.733 -0500", hash_original_method = "D49A72B7415DDB957EDFD1E887D2BCA0", hash_generated_method = "FF94A7086BC1F6746454B09A014789DC")
     
 protected abstract void join(InetAddress addr) throws IOException;
@@ -151,6 +165,8 @@ protected abstract void join(InetAddress addr) throws IOException;
      *             if an error occurs while joining the specified multicast
      *             group.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.736 -0500", hash_original_method = "0BC9B33A0D584BD63DDC3207428282C3", hash_generated_method = "486DDFC097C510374AAF67B009FA4689")
     
 protected abstract void joinGroup(SocketAddress addr,
@@ -165,6 +181,8 @@ protected abstract void joinGroup(SocketAddress addr,
      *             if an error occurs while leaving the group or no multicast
      *             address was assigned.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.738 -0500", hash_original_method = "9C63FA57009863F9BFCF40E2B8324C1A", hash_generated_method = "0B7ED6E08760E2C4B92DB2004904349D")
     
 protected abstract void leave(InetAddress addr) throws IOException;
@@ -180,6 +198,8 @@ protected abstract void leave(InetAddress addr) throws IOException;
      * @throws IOException
      *             if an error occurs while leaving the group.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.740 -0500", hash_original_method = "15FC74D8F1A71B68A2456B26D31E60F3", hash_generated_method = "BB3826376034144E4FE74668420A851A")
     
 protected abstract void leaveGroup(SocketAddress addr,
@@ -196,6 +216,8 @@ protected abstract void leaveGroup(SocketAddress addr,
      * @throws IOException
      *                if an error or a timeout occurs while reading the address.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.743 -0500", hash_original_method = "0A55381DC5E8B9E18B2AFA6C4336B550", hash_generated_method = "5DD8A45C640AE6E22F25B85CF2FC2D6D")
     
 protected abstract int peek(InetAddress sender) throws IOException;
@@ -211,6 +233,8 @@ protected abstract int peek(InetAddress sender) throws IOException;
      * @throws IOException
      *                if an error or timeout occurs while receiving data.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.745 -0500", hash_original_method = "7464E8A609D19003F435E467D9EE656D", hash_generated_method = "2FA9C6D18740487C4CBA6B9940169D32")
     
 protected abstract void receive(DatagramPacket pack) throws IOException;
@@ -224,6 +248,8 @@ protected abstract void receive(DatagramPacket pack) throws IOException;
      * @throws IOException
      *                if an error occurs while sending the packet.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.747 -0500", hash_original_method = "7039A6C69598C650829CBCEB48F7A5DF", hash_generated_method = "90D16BAE394684C1F39DA571F332F072")
     
 protected abstract void send(DatagramPacket pack) throws IOException;
@@ -238,6 +264,8 @@ protected abstract void send(DatagramPacket pack) throws IOException;
      * @throws IOException
      *             if an error occurs while setting the option.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.750 -0500", hash_original_method = "FA7BA60D9C75190FDFDD090C2715CA20", hash_generated_method = "44405459E0F685CDE6998C289101CAEA")
     
 protected abstract void setTimeToLive(int ttl) throws IOException;
@@ -254,6 +282,8 @@ protected abstract void setTimeToLive(int ttl) throws IOException;
      * @deprecated Replaced by {@link #setTimeToLive}
      * @see #setTimeToLive(int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.752 -0500", hash_original_method = "6ADCF6BDAA2EE2F71E55365E5ADD6372", hash_generated_method = "3A9F8E7E78880716E3155881FE1F84E4")
     
 @Deprecated
@@ -299,6 +329,8 @@ protected void disconnect() {
      * @throws IOException
      *                if an error occurs while peeking at the data.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.759 -0500", hash_original_method = "71AE8210735110F7C36210F87AF8E6BB", hash_generated_method = "29AEA3957A65597E5C2CC5DB836535F8")
     
 protected abstract int peekData(DatagramPacket pack) throws IOException;

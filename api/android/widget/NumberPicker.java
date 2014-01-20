@@ -873,6 +873,8 @@ public void setValue(int value) {
     /**
      * Computes the max width if no such specified as an attribute.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.170 -0500", hash_original_method = "EC05395A137121E418B1180AC02A20B0", hash_generated_method = "FA48A23A81492EA6733C2803BABCEEEF")
     
 private void tryComputeMaxWidth() {
@@ -1240,6 +1242,8 @@ public void setDisplayedValues(String[] displayedValues) {
      * @param maxSize The max value for the size.
      * @return A measure spec greedily imposing the max size.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.215 -0500", hash_original_method = "568475CB75488DB4FFB4140594C385EC", hash_generated_method = "216DAD61FEE52E3B355028375A2F946B")
     
 private int makeMeasureSpec(int measureSpec, int maxSize) {
@@ -1270,6 +1274,8 @@ private int makeMeasureSpec(int measureSpec, int maxSize) {
      * @param measureSpec The current measure spec.
      * @return The resolved size and state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.217 -0500", hash_original_method = "AB452915EDDF000AB380F75E12970FED", hash_generated_method = "8DF8A58681F962B5FE74ABD8C90CB727")
     
 private int resolveSizeAndStateRespectingMinSize(int minSize, int measuredSize,
@@ -1286,6 +1292,8 @@ private int resolveSizeAndStateRespectingMinSize(int minSize, int measuredSize,
      * Resets the selector indices and clear the cached
      * string representation of these indices.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.219 -0500", hash_original_method = "73F5524AAE1282E1B063C4C90806C754", hash_generated_method = "2D6824F7627E95305851D5D07F5F3A62")
     
 private void initializeSelectorWheelIndices() {
@@ -1310,6 +1318,8 @@ private void initializeSelectorWheelIndices() {
      *
      * @param current the new value of the NumberPicker
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.221 -0500", hash_original_method = "555F719FBCCD8AB4B94C9C107DB6A73F", hash_generated_method = "D1CF531B8F05A233FE437AD3ECF40DC4")
     
 private void changeCurrent(int current) {
@@ -1331,6 +1341,8 @@ private void changeCurrent(int current) {
      *
      * @param increment True to increment, false to decrement.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.225 -0500", hash_original_method = "E6026B71E66A86671A33BB22E5856635", hash_generated_method = "C3F83C681407CFAC4C990F7EB818E9DF")
     
 private void changeCurrentByOne(boolean increment) {
@@ -1362,6 +1374,8 @@ private void changeCurrentByOne(boolean increment) {
      * by one via scrolling the scroller gets to its final state and the
      * value is updated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.227 -0500", hash_original_method = "175AF73F53EDEE092962AA03BDCBD819", hash_generated_method = "E651BDCEC06D2A45AD6F8FCC0A3C3D28")
     
 private void forceCompleteChangeCurrentByOneViaScroll() {
@@ -1378,6 +1392,8 @@ private void forceCompleteChangeCurrentByOneViaScroll() {
      * Sets the <code>alpha</code> of the {@link Paint} for drawing the selector
      * wheel.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.229 -0500", hash_original_method = "E601C50DC508DF2554B27F10B4080C00", hash_generated_method = "717507DB22BB1B0783342D218FA56C38")
     
 @SuppressWarnings("unused")
@@ -1390,6 +1406,8 @@ private void forceCompleteChangeCurrentByOneViaScroll() {
     /**
      * @return If the <code>event</code> is in the visible <code>view</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.231 -0500", hash_original_method = "400782BE1118D85D04FD2365A968D2CF", hash_generated_method = "9C080FEBF439B1BB0C31C38FAAE88249")
     
 private boolean isEventInVisibleViewHitRect(MotionEvent event, View view) {
@@ -1403,6 +1421,8 @@ private boolean isEventInVisibleViewHitRect(MotionEvent event, View view) {
     /**
      * Sets the <code>selectorWheelState</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.233 -0500", hash_original_method = "BF95E4EC078F38B02D5C875137382733", hash_generated_method = "6C596304D937E56671D0C911C8AC893F")
     
 private void setSelectorWheelState(int selectorWheelState) {
@@ -1421,6 +1441,8 @@ private void setSelectorWheelState(int selectorWheelState) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.236 -0500", hash_original_method = "77AB1B93BD5012BE4D83745B76853590", hash_generated_method = "88B516A42B4434E9C688448C15FE6C31")
     
 private void initializeSelectorWheel() {
@@ -1439,6 +1461,8 @@ private void initializeSelectorWheel() {
         updateInputTextView();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.238 -0500", hash_original_method = "C54C7499288517561E53B381ADACF410", hash_generated_method = "FCE25FB6013E43E5476F2C360899602A")
     
 private void initializeFadingEdges() {
@@ -1581,6 +1605,8 @@ public void run() {
             //Synthesized constructor
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.313 -0500", hash_original_method = "ED1739B7A0ACAE655C07ED8C0ABABF1C", hash_generated_method = "60226B96453F3EBB99279CE7A2393774")
         
 private void setIncrement(boolean increment) {
@@ -1620,6 +1646,8 @@ public void run() {
     /**
      * Callback invoked upon completion of a given <code>scroller</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.241 -0500", hash_original_method = "424BD543DA2123CE0E799CAFA377A1E0", hash_generated_method = "D93C5FAB0743E26F818D269E540B4419")
     
 private void onScrollerFinished(Scroller scroller) {
@@ -1640,6 +1668,8 @@ private void onScrollerFinished(Scroller scroller) {
     /**
      * Handles transition to a given <code>scrollState</code>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.243 -0500", hash_original_method = "76A35782DE0E02AA234AC6648796EFD6", hash_generated_method = "44E51D9474FA55E9336060E5B8D24A85")
     
 private void onScrollStateChange(int scrollState) {
@@ -1655,6 +1685,8 @@ private void onScrollStateChange(int scrollState) {
     /**
      * Flings the selector with the given <code>velocityY</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.245 -0500", hash_original_method = "089FFF3145B83D850B8641EBACA81A89", hash_generated_method = "73E70E76BE4DB0CCF2E8521E1FFFDB0D")
     
 private void fling(int velocityY) {
@@ -1672,6 +1704,8 @@ private void fling(int velocityY) {
     /**
      * Hides the input controls which is the up/down arrows and the text field.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.247 -0500", hash_original_method = "84887968F9B86CB6F225BC4761B2C961", hash_generated_method = "002434C5AE93ADC3AD7D450D7127F1D8")
     
 private void hideInputControls() {
@@ -1687,6 +1721,8 @@ private void hideInputControls() {
      *
      * @param animationDuration The duration of the animation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.250 -0500", hash_original_method = "568B02CE0458B050F29128E328730206", hash_generated_method = "6ACB3979C684EA12B0D020A6DC2DED66")
     
 private void showInputControls(long animationDuration) {
@@ -1701,6 +1737,8 @@ private void showInputControls(long animationDuration) {
      *
      * @param animationDuration The duration of the animation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.252 -0500", hash_original_method = "04EF8175CF934E94876E7611B3BFDBC2", hash_generated_method = "FBC95C514DED32164CF0B1DE81798153")
     
 private void fadeSelectorWheel(long animationDuration) {
@@ -1712,6 +1750,8 @@ private void fadeSelectorWheel(long animationDuration) {
     /**
      * Updates the visibility state of the increment and decrement buttons.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.254 -0500", hash_original_method = "F06555D042A3011B2943A92CA9FE7B6C", hash_generated_method = "9A29321407F4F80183901540F077242A")
     
 private void updateIncrementAndDecrementButtonsVisibilityState() {
@@ -1730,6 +1770,8 @@ private void updateIncrementAndDecrementButtonsVisibilityState() {
     /**
      * @return The wrapped index <code>selectorIndex</code> value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.256 -0500", hash_original_method = "98EC96D2E9172670F87F406C69617E1C", hash_generated_method = "666DA4DB2A89D0AD3EDFA390E02A136A")
     
 private int getWrappedSelectorIndex(int selectorIndex) {
@@ -1745,6 +1787,8 @@ private int getWrappedSelectorIndex(int selectorIndex) {
      * Increments the <code>selectorIndices</code> whose string representations
      * will be displayed in the selector.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.259 -0500", hash_original_method = "76B5F467E3A3E0B55117DFD0AE112AD7", hash_generated_method = "7D0CA5F8084537AD3E051496F7FABECE")
     
 private void incrementSelectorIndices(int[] selectorIndices) {
@@ -1763,6 +1807,8 @@ private void incrementSelectorIndices(int[] selectorIndices) {
      * Decrements the <code>selectorIndices</code> whose string representations
      * will be displayed in the selector.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.261 -0500", hash_original_method = "3BAE7243B627F51EC3CF3C9DBFE60CD6", hash_generated_method = "78C6135CA4817AACEB7BD5908CC93CB3")
     
 private void decrementSelectorIndices(int[] selectorIndices) {
@@ -1782,6 +1828,8 @@ private void decrementSelectorIndices(int[] selectorIndices) {
      * selectorIndex</code>
      * to avoid multiple instantiations of the same string.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.264 -0500", hash_original_method = "5C7213EC7C24F2EA6A4CE0C3E4F76F00", hash_generated_method = "70060A54A4195C787C609FBC90086ECB")
     
 private void ensureCachedScrollSelectorValue(int selectorIndex) {
@@ -1803,12 +1851,16 @@ private void ensureCachedScrollSelectorValue(int selectorIndex) {
         cache.put(selectorIndex, scrollSelectorValue);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.266 -0500", hash_original_method = "CED5CD69155B2474785611FEBB1C2BE4", hash_generated_method = "84C8BFA55CA3ABEDD80A88E89DBFE714")
     
 private String formatNumber(int value) {
         return (mFormatter != null) ? mFormatter.format(value) : String.valueOf(value);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.269 -0500", hash_original_method = "9B2E73D457CEF5FA8F9D91E45C672313", hash_generated_method = "E35F10BA2127EF9CA0FE899B552773C6")
     
 private void validateInputTextView(View v) {
@@ -1829,6 +1881,8 @@ private void validateInputTextView(View v) {
      * be returned. Otherwise, the formatter specified in {@link #setFormatter}
      * will be used to format the number.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.271 -0500", hash_original_method = "B42CFCB10E8E291BCAC25CBB8DE3CDCA", hash_generated_method = "2E6679590DD3C54FA7CF9AB9AE7C8399")
     
 private void updateInputTextView() {
@@ -1855,6 +1909,8 @@ private void updateInputTextView() {
      * Notifies the listener, if registered, of a change of the value of this
      * NumberPicker.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.273 -0500", hash_original_method = "EE3C020B4BB89830916EAF8B846EA64D", hash_generated_method = "8EA1CBD760E208F77E7736ADF7E43FE7")
     
 private void notifyChange(int previous, int current) {
@@ -1868,6 +1924,8 @@ private void notifyChange(int previous, int current) {
      *
      * @param increment Whether to increment or decrement the value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.275 -0500", hash_original_method = "89117A76C28F4F0E670F85E62CCFCD15", hash_generated_method = "4E1C9E88E57F751C62014BE7BAE8CC6C")
     
 private void postChangeCurrentByOneFromLongPress(boolean increment) {
@@ -1883,6 +1941,8 @@ private void postChangeCurrentByOneFromLongPress(boolean increment) {
     /**
      * Removes all pending callback from the message queue.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.277 -0500", hash_original_method = "2F67DA682EF8D26EE412EBB702FD21A7", hash_generated_method = "421387073CC5F80F0C7B0E936EF851FA")
     
 private void removeAllCallbacks() {
@@ -1900,6 +1960,8 @@ private void removeAllCallbacks() {
     /**
      * @return The selected index given its displayed <code>value</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.280 -0500", hash_original_method = "C9822A8BF3CD293D75693533B44BD287", hash_generated_method = "18225D61C2D85C8D67D299A6C0C651F0")
     
 private int getSelectedPos(String value) {
@@ -1937,6 +1999,8 @@ private int getSelectedPos(String value) {
      * </code> to
      * <code>selectionEnd</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.282 -0500", hash_original_method = "B20C23507728532B22E954D2186CEEA6", hash_generated_method = "9916F386BB9D56B7DAC30F8952F9CF60")
     
 private void postSetSelectionCommand(int selectionStart, int selectionEnd) {
@@ -1955,6 +2019,8 @@ private void postSetSelectionCommand(int selectionStart, int selectionEnd) {
      * delayMillis</code>
      * .
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.284 -0500", hash_original_method = "54DD268EE848B5EAB62BAC6791547633", hash_generated_method = "CAFA0BF4E05118E14BAEE921C9D4DBF6")
     
 private void postAdjustScrollerCommand(int delayMillis) {

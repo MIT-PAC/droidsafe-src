@@ -318,6 +318,8 @@ public static String getNetworkTypeName(int type) {
     }
 
     /** @hide */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.767 -0500", hash_original_method = "8E4DE1903A24C15F73A151ACA155A108", hash_generated_method = "4098016423379C34E8ADBEB412A76B9D")
     
 private TelephonyManager() {
@@ -511,6 +513,8 @@ public int getPhoneType() {
         return getCurrentPhoneType();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.918 -0500", hash_original_method = "AFA495B3EA5295146DEDE68ACDCEDE97", hash_generated_method = "6BB314B8E3DD871A064B13D3286AA881")
     
 private int getPhoneTypeFromProperty() {
@@ -520,6 +524,8 @@ private int getPhoneTypeFromProperty() {
         return type;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.928 -0500", hash_original_method = "64BB8AD229481F016ED315B563697438", hash_generated_method = "C759AF23EEC4E0F4CE5744A480AA5ECD")
     
 private int getPhoneTypeFromNetworkType() {
@@ -1029,6 +1035,8 @@ public String[] getIsimImpu() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.233 -0500", hash_original_method = "0499CDF49B310038A9BEEA0F802EAB63", hash_generated_method = "1DC4804D8392A597FEECC0EE6EE070BB")
     
 private IPhoneSubInfo getSubscriberInfo() {
@@ -1106,6 +1114,8 @@ public int getDataState() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.328 -0500", hash_original_method = "7D101ED42BB684AED8CB9AC1B352231C", hash_generated_method = "CC0FA3E85FCC5F3458CE2B3B809EB12D")
     
 private ITelephony getITelephony() {

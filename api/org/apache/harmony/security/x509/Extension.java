@@ -215,6 +215,8 @@ public Extension(int[] extnID, byte[] extnValue) {
         this(extnID, NON_CRITICAL, extnValue);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.752 -0500", hash_original_method = "22B9D2F4819411931A16D6B56F128648", hash_generated_method = "7807FF8F89099B2C9043BE9C105834E4")
     
 private Extension(int[] extnID, boolean critical, byte[] extnValue,
@@ -349,6 +351,8 @@ public BasicConstraints getBasicConstraintsValue() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.780 -0500", hash_original_method = "9C77FF45155916489182A216F1E7CCEA", hash_generated_method = "627FF5557BF01E145C59E4EC4548E4B5")
     
 private void decodeExtensionValue() throws IOException {

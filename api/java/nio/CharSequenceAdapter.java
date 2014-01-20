@@ -8,6 +8,8 @@ import java.util.Arrays;
 
 final class CharSequenceAdapter extends CharBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.116 -0500", hash_original_method = "CE7638F70CEF8967E908481EECFBBCC4", hash_generated_method = "11D8B2801D052D618D81829E5684F0D2")
     
 static CharSequenceAdapter copy(CharSequenceAdapter other) {
@@ -21,6 +23,8 @@ static CharSequenceAdapter copy(CharSequenceAdapter other) {
 
      CharSequence sequence;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.121 -0500", hash_original_method = "206685F1A3CB58D97E4CC4183E9D2DA8", hash_generated_method = "206685F1A3CB58D97E4CC4183E9D2DA8")
     
 CharSequenceAdapter(CharSequence chseq) {

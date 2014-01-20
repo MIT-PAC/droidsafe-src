@@ -9,11 +9,6 @@ import java.io.IOException;
 
 import org.bouncycastle.util.Arrays;
 
-
-
-
-
-
 public class DERBitString extends ASN1Object implements DERString {
 
     /**
@@ -54,7 +49,6 @@ static protected int getPadBits(
         {
             return 7;
         }
-
 
         int bits = 1;
 
@@ -138,6 +132,8 @@ public static DERBitString getInstance(
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.166 -0500", hash_original_method = "135F4859410EF7167EE149EE7B9775D6", hash_generated_method = "9963BCBE953BEEDC2CD0561F98B395B2")
     
 static DERBitString fromOctetString(byte[] bytes)
@@ -161,7 +157,6 @@ static DERBitString fromOctetString(byte[] bytes)
 
     private static final char[]  table = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.121 -0500", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "FE472066F06E7EB612EB3FC3B9912573")
-
     
     protected byte[]      data;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.123 -0500", hash_original_field = "DBDABC1E0B2C1B71214F1769BC7880B1", hash_generated_field = "133CFF098A8491F27C40D29FAE7800EB")
@@ -231,7 +226,6 @@ public int getPadBits()
         return padBits;
     }
 
-
     /**
      * @return the value of the bit string as an int (truncating if necessary)
      */
@@ -249,6 +243,8 @@ public int intValue()
         return value;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.154 -0500", hash_original_method = "CB83D166557B7D270FFD9D836925EA70", hash_generated_method = "CB83D166557B7D270FFD9D836925EA70")
     
 void encode(

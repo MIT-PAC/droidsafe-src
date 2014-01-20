@@ -8,6 +8,8 @@ import libcore.io.SizeOf;
 
 final class CharToByteBufferAdapter extends CharBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.514 -0500", hash_original_method = "55E919F08D15D3984C4AEDF51E3F7B76", hash_generated_method = "F265B11CF4A6BA9EFE4614F4F4C01CB9")
     
 static CharBuffer asCharBuffer(ByteBuffer byteBuffer) {
@@ -19,6 +21,8 @@ static CharBuffer asCharBuffer(ByteBuffer byteBuffer) {
 
     private  ByteBuffer byteBuffer;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.517 -0500", hash_original_method = "20CC34DEF3812E72CBA72992E239D17C", hash_generated_method = "80120F0E3C39B69C1C2D92F7FDD2CC43")
     
 private CharToByteBufferAdapter(ByteBuffer byteBuffer) {

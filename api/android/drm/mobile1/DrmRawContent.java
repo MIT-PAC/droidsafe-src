@@ -366,6 +366,8 @@ public int getContentLength(DrmRights rights) throws DrmException {
      * @return #the id of the DRM content if succeed.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.391 -0500", hash_original_method = "C7FDCF3FD928AB15F38956E64BA9E194", hash_generated_method = "B8BEF93FFA5A3F5F62EC0487663A16A3")
     
     private int nativeConstructDrmContent(InputStream data, int len, int mimeType){
@@ -376,6 +378,8 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	return getTaintInt();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.546 -0400", hash_original_method = "F8C7C9754DABA7F76C3A7CE0927D169C", hash_generated_method = "FB49DAE02267FB01D7F8074178E3812C")
     private String nativeGetRightsAddress() {
     	String s = new String();
@@ -393,6 +397,8 @@ public int getContentLength(DrmRights rights) throws DrmException {
      *              #DRM_SEPARATE_DELIVERY_DM
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.399 -0500", hash_original_method = "DEB2FF4C98D7FB31135AB87CA522046D", hash_generated_method = "96E38A71C3F4C56BF71911413EC2F281")
     
     private int nativeGetDeliveryMethod(){
@@ -412,6 +418,8 @@ public int getContentLength(DrmRights rights) throws DrmException {
      *         #JNI_DRM_EOF if reach to end of the media content.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.403 -0500", hash_original_method = "EB4FD7737CAA6B47FAF861D2CF75741C", hash_generated_method = "6946942B3991A05F1F01A9DFA85486EB")
     
     private int nativeReadContent(byte[] buf, int bufOff, int len, int mediaOff){
@@ -423,6 +431,8 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	return getTaintInt();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.547 -0400", hash_original_method = "9C49D7586D5C53FF58306596D0BFC464", hash_generated_method = "3114617F023481A1F61CCC44387FD7A5")
     private String nativeGetContentType() {
     	String s = new String();
@@ -437,6 +447,8 @@ public int getContentLength(DrmRights rights) throws DrmException {
      *         #JNI_DRM_FAILURE if fail.
      *         #JNI_DRM_UNKNOWN_DATA_LEN if the length is unknown currently.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.411 -0500", hash_original_method = "B76F89F97A3E0D25504A6F7E11289FEA", hash_generated_method = "92193E589D668832E187B7EE4320092C")
     
     private int nativeGetContentLength(){

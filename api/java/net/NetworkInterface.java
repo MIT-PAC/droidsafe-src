@@ -32,6 +32,8 @@ import libcore.io.Libcore;
 
 public final class NetworkInterface extends Object {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.629 -0500", hash_original_method = "B221CC75BF34BFBFBAF89FBF07707022", hash_generated_method = "39A35D04694321A6A7B0D56952040B32")
     
 static NetworkInterface forUnboundMulticastSocket() {
@@ -136,6 +138,8 @@ private static void collectIpv4Address(String interfaceName, List<InetAddress> a
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.651 -0500", hash_original_method = "A493AF52D537772EC9DA5C5C6A13B9D1", hash_generated_method = "5FA96DEA31793464D6E4A442FEC974A7")
     
 @FindBugsSuppressWarnings("DMI_HARDCODED_ABSOLUTE_FILENAME")
@@ -149,6 +153,8 @@ private static void collectIpv4Address(String interfaceName, List<InetAddress> a
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.654 -0500", hash_original_method = "7D3B21C401D86D194908014A1A22C808", hash_generated_method = "B96482B7707A80DAE8234FBBB9DCA39A")
     
 private static int readIntFile(String path) throws SocketException {
@@ -164,6 +170,8 @@ private static int readIntFile(String path) throws SocketException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.656 -0500", hash_original_method = "FB6FEE373D57A234CE759121C2A038EA", hash_generated_method = "E266CE47973441E942358FEAD2C9DB4C")
     
 private static SocketException rethrowAsSocketException(Exception ex) throws SocketException {
@@ -231,6 +239,8 @@ public static Enumeration<NetworkInterface> getNetworkInterfaces() throws Socket
         return Collections.enumeration(getNetworkInterfacesList());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.668 -0500", hash_original_method = "368E4D7FC14C0E393EC78EE372126951", hash_generated_method = "0A7A8F4B7C59A64D69F6657AA1C0A11D")
     
 @FindBugsSuppressWarnings("DMI_HARDCODED_ABSOLUTE_FILENAME")
@@ -492,6 +502,8 @@ public boolean supportsMulticast() throws SocketException {
         return hasFlag(IFF_MULTICAST);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.695 -0500", hash_original_method = "D18447285D6021856765D65DFF4990EE", hash_generated_method = "FF52A0778A379010D3D17A6B111C779E")
     
 private boolean hasFlag(int mask) throws SocketException {

@@ -11,6 +11,8 @@ import android.os.Parcelable;
 
 public class DragEvent implements Parcelable {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.776 -0500", hash_original_method = "569150DCDE5FF4A4307956D9929DFF84", hash_generated_method = "F6882FAE21622A725E57F29349956DDE")
     
 static DragEvent obtain() {
@@ -140,11 +142,15 @@ public DragEvent[] newArray(int size) {
 
     private boolean mRecycled;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.771 -0500", hash_original_method = "5492E1A6EF7C89CB56D8B22EE2854B8B", hash_generated_method = "34D2BE700F5D7E56A2B74D345471D5B9")
     
 private DragEvent() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.773 -0500", hash_original_method = "7C5024523CDDAF1D0113FCBE9F36B975", hash_generated_method = "19167B6226E365583D2B7843F53CAFE7")
     
 private void init(int action, float x, float y, ClipDescription description, ClipData data,

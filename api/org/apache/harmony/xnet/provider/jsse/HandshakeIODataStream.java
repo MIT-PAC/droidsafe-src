@@ -165,6 +165,8 @@ public void append(byte[] src) {
         append(src, 0, src.length);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.417 -0500", hash_original_method = "2AF2E557DF862B37CD8412561C90BA0E", hash_generated_method = "8E7F1A864996AA09FAAF41C2CC960BC0")
     
 private void append(byte[] src, int from, int length) {
@@ -191,6 +193,8 @@ private void append(byte[] src, int from, int length) {
         read_pos_end += length;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.419 -0500", hash_original_method = "7D810597598BCFC529CACE9B428759B7", hash_generated_method = "ED52B2AAA3E59CD36732124900BBF7CE")
     
 private void enlargeBuffer(int size) {
@@ -214,6 +218,8 @@ protected void clearBuffer() {
     }
 
     // checks if the data can be written in the buffer
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.428 -0500", hash_original_method = "5D32524C92EB4CDA6DDBF787AA4026BF", hash_generated_method = "7D68D2D148332D739A350A55C2B9B609")
     
 private void check(int length) {

@@ -11,10 +11,6 @@ import android.net.http.EventHandler;
 
 import com.android.internal.R;
 
-
-
-
-
 class DataLoader extends StreamLoader {
 
     /**
@@ -22,6 +18,8 @@ class DataLoader extends StreamLoader {
      * @param dataUrl data: URL string optionally containing a mimetype
      * @param loadListener LoadListener to pass the content to
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.244 -0500", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "973C5174F409BF73FE3F5C468E90899A")
     
 DataLoader(String dataUrl, LoadListener loadListener) {
@@ -65,7 +63,6 @@ DataLoader(String dataUrl, LoadListener loadListener) {
 @Override
     protected void buildHeaders(android.net.http.Headers h) {
     }
-
     
 }
 

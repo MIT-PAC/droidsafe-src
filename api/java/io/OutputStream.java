@@ -99,8 +99,8 @@ public void write(byte[] buffer, int offset, int count) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to this stream.
      */
-    @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.835 -0500", hash_original_method = "6F952A0997C9C7FC75CA00C51592E230", hash_generated_method = "EFF3C84F96B0F410A6246A434AA1C3DB")
     
 public abstract void write(int oneByte) throws IOException;
@@ -109,6 +109,8 @@ public abstract void write(int oneByte) throws IOException;
      * Returns true if this writer has encountered and suppressed an error. Used
      * by PrintStreams as an alternative to checked exceptions.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.837 -0500", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8")
     
 boolean checkError() {

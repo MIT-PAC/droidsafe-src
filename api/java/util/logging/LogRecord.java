@@ -84,6 +84,8 @@ public class LogRecord implements Serializable {
      * @throws NullPointerException
      *             if {@code level} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.888 -0500", hash_original_method = "022A0341917C5DE72EB88D3FD14C370E", hash_generated_method = "90CB8AE59A260B518D5DE475EB5559DB")
     
 public LogRecord(Level level, String msg) {
@@ -119,6 +121,8 @@ public LogRecord(Level level, String msg) {
      *
      * @return the logging level.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.890 -0500", hash_original_method = "0FEEFD0C4767A5B5B477CADC6D101FDE", hash_generated_method = "6B045C8FB7F9440E56BF0B5D84422425")
     
@@ -134,6 +138,8 @@ public Level getLevel() {
      * @throws NullPointerException
      *             if {@code level} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.892 -0500", hash_original_method = "1C71253C97024F86DF08173E2DC14542", hash_generated_method = "6DF250C304B2F84C7AC43C62249E99DD")
     
 public void setLevel(Level level) {
@@ -148,6 +154,8 @@ public void setLevel(Level level) {
      *
      * @return the logger name.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.895 -0500", hash_original_method = "F91ED8A8026304D4EB26E347DCDA5498", hash_generated_method = "DEE9478D801FF8FA0DD8BF46B374164F")
     
@@ -161,6 +169,8 @@ public String getLoggerName() {
      * @param loggerName
      *            the logger name to set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.897 -0500", hash_original_method = "A458AA58D2D6B65ABAE0935E2AD2D855", hash_generated_method = "C55202ADA5441F1B9194F41F4850371E")
     
 public void setLoggerName(String loggerName) {
@@ -172,6 +182,8 @@ public void setLoggerName(String loggerName) {
      *
      * @return the raw message, may be {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.899 -0500", hash_original_method = "AF20B727F6E1F2FE1F73E3107355CAA7", hash_generated_method = "90D22C2CF9BCEC06A37161C90B3C0462")
     
@@ -187,6 +199,8 @@ public String getMessage() {
      * @param message
      *            the raw message to set, may be {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.901 -0500", hash_original_method = "9A40E46319AC2A39DCEE47C689D1B957", hash_generated_method = "FDFD407E625C2817308BFE3E7E683A7A")
     
 public void setMessage(String message) {
@@ -198,6 +212,8 @@ public void setMessage(String message) {
      *
      * @return the time when this event occurred, in milliseconds since 1970.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.904 -0500", hash_original_method = "06B95E2D5570D6B3A84011B34076B5C7", hash_generated_method = "6278E2044DFF930CA79D820F6FB572A6")
     
@@ -211,6 +227,8 @@ public long getMillis() {
      * @param millis
      *            the time when this event occurred, in milliseconds since 1970.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.906 -0500", hash_original_method = "AAA6B913A1F36A93830487DCD9FBEB6E", hash_generated_method = "5DFDC88CDB35A709F04E2D049AD002F6")
     
 public void setMillis(long millis) {
@@ -223,6 +241,8 @@ public void setMillis(long millis) {
      * @return the array of parameters or {@code null} if there are no
      *         parameters.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.908 -0500", hash_original_method = "7E2CB3B3486574EE0A68176991A0ECCF", hash_generated_method = "00E48544FD6A064CD391B423EF593E68")
     
@@ -236,6 +256,8 @@ public Object[] getParameters() {
      * @param parameters
      *            the array of parameters to set, may be {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.911 -0500", hash_original_method = "A8B44ED180D604C73C7E6D3CC47CE208", hash_generated_method = "8EEB445397669CB319CEE2A07B96F544")
     
 public void setParameters(Object[] parameters) {
@@ -249,6 +271,8 @@ public void setParameters(Object[] parameters) {
      * @return the associated resource bundle, {@code null} if none is
      *         available or the message is not localizable.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.913 -0500", hash_original_method = "A55D46251237391AC4070653DF8FD1F0", hash_generated_method = "C671A99A9F1C793089F11BD332FD5CEB")
     
@@ -263,6 +287,8 @@ public ResourceBundle getResourceBundle() {
      * @param resourceBundle
      *            the resource bundle to set, may be {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.915 -0500", hash_original_method = "22E19C2BD30D13ED1AEAB526931847D2", hash_generated_method = "08ACF7C60C0FE24C03A5E5DEC78810E1")
     
 public void setResourceBundle(ResourceBundle resourceBundle) {
@@ -275,6 +301,8 @@ public void setResourceBundle(ResourceBundle resourceBundle) {
      * @return the name of the resource bundle, {@code null} if none is
      *         available or the message is not localizable.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.917 -0500", hash_original_method = "73FB3843FBEEE5F85EEE27DAD4E6665A", hash_generated_method = "3308BAB56A2FF7F9677DD915FE00D96F")
     
@@ -288,6 +316,8 @@ public String getResourceBundleName() {
      * @param resourceBundleName
      *            the name of the resource bundle to set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.920 -0500", hash_original_method = "953EDB4ADFDF1563BD9A241A7063EF86", hash_generated_method = "B748E3AAE401C2A5C7A57CAAE5BFF79B")
     
 public void setResourceBundleName(String resourceBundleName) {
@@ -299,6 +329,8 @@ public void setResourceBundleName(String resourceBundleName) {
      *
      * @return the sequence number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.922 -0500", hash_original_method = "5B99D7AA47A1BEEC3DF03D05A32BB6DB", hash_generated_method = "1ED8E4C497B5D0169EC3BE45595B3CE9")
     
@@ -314,6 +346,8 @@ public long getSequenceNumber() {
      * @param sequenceNumber
      *            the sequence number to set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.925 -0500", hash_original_method = "A872117CAF84BB70B3F50AB7DBB15709", hash_generated_method = "0BD911D3BDA35C959D49C0AFF6EC1981")
     
 public void setSequenceNumber(long sequenceNumber) {
@@ -326,6 +360,8 @@ public void setSequenceNumber(long sequenceNumber) {
      *
      * @return the name of the source class of this log record (possiblity {@code null})
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.927 -0500", hash_original_method = "17474CC4607EF1F80968125D954E4F2F", hash_generated_method = "6C63A0D50FCF19DA20A9825678436CE7")
     
@@ -337,6 +373,8 @@ public String getSourceClassName() {
     /*
      *  Init the sourceClass and sourceMethod fields.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.929 -0500", hash_original_method = "598A8AAA0AD5798486DE87D6CFFB0E3D", hash_generated_method = "A0E15108FF969AD026EFF44C0BE042E5")
     
 private void initSource() {
@@ -366,6 +404,8 @@ private void initSource() {
      *            the name of the source class of this log record, may be
      *            {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.932 -0500", hash_original_method = "4073B854D67A7DD73FA3797FFA5DDD0A", hash_generated_method = "9AC50DEDB08090D7B9275647FB85A90E")
     
 public void setSourceClassName(String sourceClassName) {
@@ -378,6 +418,8 @@ public void setSourceClassName(String sourceClassName) {
      *
      * @return the name of the source method of this log record.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.934 -0500", hash_original_method = "997894DE44F9E4C217C990670A2096CD", hash_generated_method = "9698EBFC106E5DC19687DE1B388A8E24")
     
@@ -393,6 +435,8 @@ public String getSourceMethodName() {
      *            the name of the source method of this log record, may be
      *            {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.936 -0500", hash_original_method = "6DB80156486F9B3573D791516F5BFF16", hash_generated_method = "964B289C7F331CADECC6E8E141454054")
     
 public void setSourceMethodName(String sourceMethodName) {
@@ -409,6 +453,8 @@ public void setSourceMethodName(String sourceMethodName) {
      *
      * @return the ID of the thread originating this log record.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.939 -0500", hash_original_method = "23D166A70BC333A13745104EBA97F318", hash_generated_method = "087792ED180246341333D8A3A8470BCE")
     
@@ -422,6 +468,8 @@ public int getThreadID() {
      * @param threadID
      *            the new ID of the thread originating this log record.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.942 -0500", hash_original_method = "BFD778F3BC25BE448B5B49F6297DA90A", hash_generated_method = "E30ED58FF23749E913991CF7A912913F")
     
 public void setThreadID(int threadID) {
@@ -433,6 +481,8 @@ public void setThreadID(int threadID) {
      *
      * @return the {@code Throwable} object associated with this log record.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.944 -0500", hash_original_method = "9281C9177DD0647B668ECFF1744AEA20", hash_generated_method = "9B4404C7FE2B7BD8EC0FC6B71C6E9BBE")
     
@@ -447,6 +497,8 @@ public Throwable getThrown() {
      *            the new {@code Throwable} object to associate with this log
      *            record.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.946 -0500", hash_original_method = "11A0184E1F2F67806A14E7D6384E1936", hash_generated_method = "315A10AFC71C8935DFC49AA4E422C68D")
     
 public void setThrown(Throwable thrown) {
@@ -456,6 +508,8 @@ public void setThrown(Throwable thrown) {
     /*
      * Customized serialization.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.949 -0500", hash_original_method = "D3EC386C5EF05328C43DBAC50DDD8B32", hash_generated_method = "9561A9EFDC3E72033A5E7A9E30107D02")
     
 private void writeObject(ObjectOutputStream out) throws IOException {
@@ -475,6 +529,8 @@ private void writeObject(ObjectOutputStream out) throws IOException {
     /*
      * Customized deserialization.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.951 -0500", hash_original_method = "807ED1C9D5895C8055BA2AC3A6A18BB7", hash_generated_method = "CAF4BB874624B30FED77A5DC3DE70198")
     
 private void readObject(ObjectInputStream in) throws IOException,

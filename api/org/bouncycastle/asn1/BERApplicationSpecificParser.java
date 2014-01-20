@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
 public class BERApplicationSpecificParser implements ASN1ApplicationSpecificParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.366 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "3577E5E669CAE3960DB734B50E9992AB")
 
@@ -17,6 +14,8 @@ public class BERApplicationSpecificParser implements ASN1ApplicationSpecificPars
 
     private  ASN1StreamParser parser;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.371 -0500", hash_original_method = "E0609A70F39E6E6F4E13B827D68F5B4C", hash_generated_method = "E0609A70F39E6E6F4E13B827D68F5B4C")
     
 BERApplicationSpecificParser(int tag, ASN1StreamParser parser)
@@ -54,7 +53,6 @@ public DERObject getDERObject()
             throw new ASN1ParsingException(e.getMessage(), e);
         }
     }
-
     
 }
 

@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
 public abstract class CacheRequest {
 
     /**
@@ -26,6 +22,8 @@ public CacheRequest() {
      * while reading the response or writing resource data to the cache, the
      * current cache store operation is aborted.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.211 -0500", hash_original_method = "1FFF85D2B99366704DF7B68C63810E9A", hash_generated_method = "497794C45780098437438798A00821F0")
     
 public abstract void abort();
@@ -38,10 +36,11 @@ public abstract void abort();
      *             if an I/O error is encountered during writing response body
      *             operation.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.213 -0500", hash_original_method = "B81ACDAD971E33A4DC945821187CD1BF", hash_generated_method = "8FC46DDF1D15241976B7C944E220004D")
     
 public abstract OutputStream getBody() throws IOException;
-
     
 }
 

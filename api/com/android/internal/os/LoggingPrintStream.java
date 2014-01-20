@@ -48,6 +48,8 @@ public void write(int oneByte) throws IOException {
     /**
      * Logs the given line.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.904 -0500", hash_original_method = "741BD7E0920FC4CFC4FD808C58B1370D", hash_generated_method = "8391CEE98AE23D0FEBFBA27723C81326")
     
 protected abstract void log(String line);
@@ -65,6 +67,8 @@ protected abstract void log(String line);
      * @param completely true if the ending chars should be treated as a line
      *  even though they don't end in a line break
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.909 -0500", hash_original_method = "4ED1A827BC075458493301694F5FB1B1", hash_generated_method = "451AF770FEA5BA6E78B5FE7594E476E5")
     
 private void flush(boolean completely) {

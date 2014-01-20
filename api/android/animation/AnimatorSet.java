@@ -622,6 +622,8 @@ for(int i = 0;i < numListeners;++i)
      * -     remove r as a dependency from any other node
      * -   any nodes with no dependencies are added to the roots list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.758 -0500", hash_original_method = "FF30C4A715862D404FA915E9EED652EB", hash_generated_method = "E4CCE78079DEBE872337D58AF3DC982E")
     
 private void sortNodes() {
@@ -755,6 +757,8 @@ public void onAnimationStart(Animator animation) {
          * the animation.
          * @param dependencyAnimation the animation that sent the event.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.735 -0500", hash_original_method = "AF711F2A0E7E526F8B6CE8D71F56AFBE", hash_generated_method = "A19B60437C7CFB3800A4E1159AA166E4")
         
 private void startIfReady(Animator dependencyAnimation) {

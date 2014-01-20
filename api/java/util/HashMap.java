@@ -21,6 +21,8 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
      * uses power-of-two length hash tables, that otherwise encounter collisions
      * for hashCodes that do not differ in lower or upper bits.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.564 -0500", hash_original_method = "EB10FD63A8403F00F4E59BED9E510DF9", hash_generated_method = "2C4F8F4C8B306CD83B3F5D269A2D4EFC")
     
 private static int secondaryHash(int h) {
@@ -36,6 +38,8 @@ private static int secondaryHash(int h) {
      * returns Integer.MIN_VALUE. If the argument is zero, the method returns
      * zero.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.567 -0500", hash_original_method = "2E3FAB2711A493998A5CD02CF97D3862", hash_generated_method = "88D47F1314328668F8579B4CB5297971")
     
 private static int roundUpToPowerOfTwo(int i) {
@@ -122,6 +126,8 @@ private static int roundUpToPowerOfTwo(int i) {
      *                when the capacity is less than zero or the load factor is
      *                less or equal to zero or NaN.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.360 -0500", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "3099B2A9FB1DB95A61DD56E531C7FD7C")
     
 public HashMap(int capacity, float loadFactor) {
@@ -148,7 +154,9 @@ public HashMap(int capacity, float loadFactor) {
         //constructorPutAll(map);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "C555E25CE67FE12926CA5480B863847E", hash_generated_method = "4A44D89334A62F71EC7507883AA9B14C")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "C555E25CE67FE12926CA5480B863847E", hash_generated_method = "4A44D89334A62F71EC7507883AA9B14C")
     @SuppressWarnings("unchecked")
     @Override
     public Object clone() {
@@ -193,6 +201,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
      * Item 17). In this case it is unavoidable, and the init method provides a
      * workaround.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.373 -0500", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "417EF77086319CE91314CCF850ADA61E")
     
 void init() { }
@@ -204,7 +214,9 @@ void init() { }
         return super.getEntrySet();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "DB078B96D3A026778ABE08AF9188B4AF", hash_generated_method = "B269550FE5C2A2D1F2C81140D8484158")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "DB078B96D3A026778ABE08AF9188B4AF", hash_generated_method = "B269550FE5C2A2D1F2C81140D8484158")
     private boolean containsMapping(Object key, Object value) {
         addTaint(value.getTaint());
         addTaint(key.getTaint());
@@ -226,7 +238,9 @@ void init() { }
         //return false;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.978 -0400", hash_original_method = "04BAFB4D83496263E755E7BD0F7C13FF", hash_generated_method = "52C658DC0E2F13C5A057F812129BFFD0")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.978 -0400", hash_original_method = "04BAFB4D83496263E755E7BD0F7C13FF", hash_generated_method = "52C658DC0E2F13C5A057F812129BFFD0")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
         ObjectOutputStream.PutField fields = stream.putFields();
@@ -250,7 +264,9 @@ for(Entry<K, V> e : entrySet())
         //}
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.979 -0400", hash_original_method = "332DDC73CD162DC81E3D2D410CF74F29", hash_generated_method = "084A0B9A938F9631A78FC483203ED3E4")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.979 -0400", hash_original_method = "332DDC73CD162DC81E3D2D410CF74F29", hash_generated_method = "084A0B9A938F9631A78FC483203ED3E4")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
         addTaint(stream.getTaint());

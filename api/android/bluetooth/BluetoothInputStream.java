@@ -7,17 +7,14 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 final class BluetoothInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.438 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.440 -0500", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.440 -0500", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1")
     
 BluetoothInputStream(BluetoothSocket s) {
         mSocket = s;
@@ -93,7 +90,6 @@ public int read(byte[] b, int offset, int length) throws IOException {
         }
         return mSocket.read(b, offset, length);
     }
-
     
 }
 

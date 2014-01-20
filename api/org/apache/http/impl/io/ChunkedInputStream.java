@@ -157,6 +157,8 @@ public int read (byte[] b) throws IOException {
      * Read the next chunk.
      * @throws IOException If an IO error occurs.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.199 -0500", hash_original_method = "4EC8EF70B227B064D40EEFDD2252C457", hash_generated_method = "83ABCC4598E21E5B401D267A4724D136")
     
 private void nextChunk() throws IOException {
@@ -185,6 +187,8 @@ private void nextChunk() throws IOException {
      * 
      * @throws IOException when the chunk size could not be parsed
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.201 -0500", hash_original_method = "992D2E5FFE364796E637C7610DCE798B", hash_generated_method = "984043FD4603F59C9F4EE0A228878B4F")
     
 private int getChunkSize() throws IOException {
@@ -219,6 +223,8 @@ private int getChunkSize() throws IOException {
      * Reads and stores the Trailer headers.
      * @throws IOException If an IO problem occurs
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.204 -0500", hash_original_method = "B639A385C0DFC1E0B0F3B3045E38F98A", hash_generated_method = "1850CB8BED76D50CE56B0CC208CCB3C6")
     
 private void parseTrailerHeaders() throws IOException {

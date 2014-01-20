@@ -997,6 +997,8 @@ protected RoutedRequest handleResponse(RoutedRequest roureq,
      * This method is called from a <code>catch</code> block in
      * {@link #execute execute} during exception handling.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.946 -0500", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "6068E21F3A76D203B26A018E1BECEB31")
     
 private void abortConnection() {

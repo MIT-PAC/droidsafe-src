@@ -39,6 +39,8 @@ import com.android.internal.telephony.UUSInfo;
 
 abstract class SipPhoneBase extends PhoneBase {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.365 -0500", hash_original_method = "B82B52808FBFBFA65168DFE4EFB883F7", hash_generated_method = "6DCE0FBF2472ABA06C4A8CEC66842A27")
     
 static void migrate(RegistrantList to, RegistrantList from) {
@@ -63,14 +65,20 @@ public SipPhoneBase(Context context, PhoneNotifier notifier) {
         super(notifier, context, new SipCommandInterface(context), false);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.353 -0500", hash_original_method = "1CAB47D2E81A282422BF05F30A34CFD7", hash_generated_method = "DC440E7AA4E03F9EEAE3CE647DD05D73")
     
 public abstract Call getForegroundCall();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.355 -0500", hash_original_method = "D5FCBC5F93B3B40EB85D18136DC87476", hash_generated_method = "062F517AF15D5F66C9594E51AE6E425F")
     
 public abstract Call getBackgroundCall();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.357 -0500", hash_original_method = "DD42E3B3A11D59E87224EE93F14E61D4", hash_generated_method = "B54B954483EE939AF1F3429D80205655")
     
 public abstract Call getRingingCall();
@@ -84,6 +92,8 @@ public Connection dial(String dialString, UUSInfo uusInfo)
         return dial(dialString);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.362 -0500", hash_original_method = "36F486554819D3516784DFAE37ACA733", hash_generated_method = "36F486554819D3516784DFAE37ACA733")
     
 void migrateFrom(SipPhoneBase from) {
@@ -207,6 +217,8 @@ public DataActivityState getDataActivityState() {
     /**
      * Notify any interested party of a Phone state change {@link Phone.State}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.401 -0500", hash_original_method = "812A77A153EDB691C43A0B58CAFAA77A", hash_generated_method = "812A77A153EDB691C43A0B58CAFAA77A")
     
 void notifyPhoneStateChanged() {
@@ -217,6 +229,8 @@ void notifyPhoneStateChanged() {
      * Notify registrants of a change in the call state. This notifies changes in {@link Call.State}
      * Use this when changes in the precise call state are needed, else use notifyPhoneStateChanged.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.403 -0500", hash_original_method = "3EB8461625C29B29FD6CB8E5D60B43F3", hash_generated_method = "12015DBC20468C486AF905F9802DB743")
     
 void notifyPreciseCallStateChanged() {
@@ -224,6 +238,8 @@ void notifyPreciseCallStateChanged() {
         super.notifyPreciseCallStateChangedP();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.405 -0500", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "292444BE96E352C8E8312B338E19EF02")
     
@@ -231,6 +247,8 @@ void notifyNewRingingConnection(Connection c) {
         super.notifyNewRingingConnectionP(c);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.407 -0500", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "1858091673D3A4B62C058FCC91892C36")
     
@@ -238,6 +256,8 @@ void notifyDisconnect(Connection cn) {
         mDisconnectRegistrants.notifyResult(cn);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.409 -0500", hash_original_method = "4DFA3B176AED92FABCFB596FBC88C127", hash_generated_method = "4DFA3B176AED92FABCFB596FBC88C127")
     
 void notifyUnknownConnection() {
@@ -250,6 +270,8 @@ void notifySuppServiceFailed(SuppService code) {
         mSuppServiceFailedRegistrants.notifyResult(code);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.413 -0500", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "73E7BFF04E4E9785E6146409272926BA")
     
@@ -290,6 +312,8 @@ public boolean handleInCallMmiCommands(String dialString)
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.422 -0500", hash_original_method = "2A1F26DA67C6AD58471FCD8E9D9C481A", hash_generated_method = "2A1F26DA67C6AD58471FCD8E9D9C481A")
     
 boolean isInCall() {
@@ -574,6 +598,8 @@ public boolean isDataConnectivityPossible() {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.516 -0500", hash_original_method = "7A2F4DC26C7BCEF3EFD92AA765E71F2C", hash_generated_method = "7A2F4DC26C7BCEF3EFD92AA765E71F2C")
     
 boolean updateCurrentCarrierInProvider() {
@@ -649,6 +675,8 @@ public LinkProperties getLinkProperties(String apnType) {
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.541 -0500", hash_original_method = "681D205E001AABF5DF77739E6B0B2577", hash_generated_method = "681D205E001AABF5DF77739E6B0B2577")
     
 void updatePhoneState() {

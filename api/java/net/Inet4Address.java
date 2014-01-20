@@ -11,13 +11,8 @@ import java.nio.ByteOrder;
 
 import libcore.io.Memory;
 
-
-
-
-
 public final class Inet4Address extends InetAddress {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.678 -0500", hash_original_field = "C90A358F9020B90EC2F318C027EBE50C", hash_generated_field = "D810DA6D1E5ECCA9B74B4757EAD39B08")
-
 
     private static final long serialVersionUID = 3286316764910316507L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.681 -0500", hash_original_field = "B1D5021F108709308675EE61B00BF99D", hash_generated_field = "103A110B2CE2D2209A59D9B725C4482E")
@@ -34,6 +29,8 @@ public final class Inet4Address extends InetAddress {
     public static final InetAddress LOOPBACK =
             new Inet4Address(new byte[] { 127, 0, 0, 1 }, "localhost");
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.689 -0500", hash_original_method = "456618C96C185AE7EE8C57F26D0D0668", hash_generated_method = "456618C96C185AE7EE8C57F26D0D0668")
     
 Inet4Address(byte[] ipaddress, String hostName) {
@@ -133,6 +130,8 @@ Inet4Address(byte[] ipaddress, String hostName) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.719 -0500", hash_original_method = "ED281EE0C7A186E413EE6AFE3B25FC7C", hash_generated_method = "1AAE8317A2230F441F9711F6305DC8BC")
     
 private Object writeReplace() throws ObjectStreamException {

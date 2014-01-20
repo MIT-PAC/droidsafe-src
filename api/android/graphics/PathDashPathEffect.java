@@ -5,9 +5,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 public class PathDashPathEffect extends PathEffect {
-
     
-        private static int nativeCreate(int native_path, float advance,
+        @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private static int nativeCreate(int native_path, float advance,
                                            float phase, int native_style) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_32104371 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_32104371;
@@ -30,7 +31,6 @@ public PathDashPathEffect(Path shape, float advance, float phase,
         native_instance = nativeCreate(shape.ni(), advance, phase,
                                        style.native_style);
     }
-
     
     public enum Style {
         TRANSLATE(0),   
@@ -46,7 +46,6 @@ Style(int value) {
 
         int native_style;
     }
-
     
 }
 

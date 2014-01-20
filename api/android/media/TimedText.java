@@ -12,8 +12,6 @@ import java.util.Set;
 
 import android.os.Parcel;
 
-
-
 public class TimedText {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.668 -0500", hash_original_field = "F1861F6BC5D6F9B7FF21432832EC545B", hash_generated_field = "E49CBDB7AE1F173AF5FB090FFC3C4FEB")
 
@@ -68,10 +66,8 @@ public class TimedText {
     public static final int KEY_STRUCT_TEXT                   = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.713 -0500", hash_original_field = "253DB3D5AEE773DBCFEEDBD9ECB659B9", hash_generated_field = "D6CDB3F416E9332C18F044FCED7C7805")
 
-
     private static final int LAST_PUBLIC_KEY                  = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.716 -0500", hash_original_field = "078B3949C083A661F3F762B8E4DC7261", hash_generated_field = "2585FF6EA61E16643876449F9A8E9CF0")
-
 
     private static final int FIRST_PRIVATE_KEY                = 101;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.719 -0500", hash_original_field = "649FC8584607BDEFAA82026224E5EB0F", hash_generated_field = "550C60CC5B77ADDB55702D62270B89EE")
@@ -98,13 +94,10 @@ public class TimedText {
     private static final int KEY_TEXT_COLOR_RGBA              = 107;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.737 -0500", hash_original_field = "7BA610CD5AA1893951B928DE5F7E8D69", hash_generated_field = "9E87440B093016A8A449C0F9FD5AC96B")
 
-
     private static final int LAST_PRIVATE_KEY                 = 107;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.740 -0500", hash_original_field = "D9EC20834F60046692FB0AFA51963D72", hash_generated_field = "EB79CC8B0353C1EBD30F062C0FE6F44E")
 
-
     private static final String TAG = "TimedText";
-
     
     public class Text {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.782 -0500", hash_original_field = "4450067011D3443A982DEB734DBDA61A", hash_generated_field = "0ECB483397C115F5BEBC3D12F8A4E7BA")
@@ -117,11 +110,8 @@ public class TimedText {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.787 -0500", hash_original_method = "3E1AB979E39DEC5F091AD71588A6931C", hash_generated_method = "B4B0EE2ADFAA9EAFD131C65C61249187")
         
 public Text() { }
-
         
     }
-
-
     
     public class CharPos {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.791 -0500", hash_original_field = "BEC46065010EFB8DDA3984AF07796B3E", hash_generated_field = "D65473A240F787EB4314A0C92140B20D")
@@ -134,11 +124,8 @@ public Text() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.797 -0500", hash_original_method = "B16942A4D6AA45C219307E42B3F01C5E", hash_generated_method = "71A09C280485717F465665957F7BCE92")
         
 public CharPos() { }
-
         
     }
-
-
     
     public class TextPos {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.801 -0500", hash_original_field = "FBE8F9853F7DE6E2CAA9BC6D1F97B5F2", hash_generated_field = "C64E12BBD149C4BCB4C390DD3A4FF679")
@@ -157,11 +144,8 @@ public CharPos() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.811 -0500", hash_original_method = "533CD86BF5A1B326154330F052078462", hash_generated_method = "AFE384654E883283F76C244E6B13EC99")
         
 public TextPos() { }
-
         
     }
-
-
     
     public class Justification {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.815 -0500", hash_original_field = "64B01D5D707A7ABBB6D7911DD27BCB15", hash_generated_field = "FEA5E3C4079F71C4123525CB7E2A737C")
@@ -174,11 +158,8 @@ public TextPos() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.822 -0500", hash_original_method = "9DE1082C41237E4CAACC983D55330CCE", hash_generated_method = "62E69134EF1E0F0225472B309B28760C")
         
 public Justification() { }
-
         
     }
-
-
     
     public class Style {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.827 -0500", hash_original_field = "BEC46065010EFB8DDA3984AF07796B3E", hash_generated_field = "D65473A240F787EB4314A0C92140B20D")
@@ -209,11 +190,8 @@ public Justification() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.847 -0500", hash_original_method = "A73FFEA889FA48444DBD29C5B6A4F060", hash_generated_method = "827679062E7E52DFA444DAD22218BC84")
         
 public Style() { }
-
         
     }
-
-
     
     public class Font {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.852 -0500", hash_original_field = "9FDAA33DB7B4C2894424E413E1D5BD4D", hash_generated_field = "BF5B80C071A192E34C9E8DFC1250E4D5")
@@ -226,11 +204,8 @@ public Style() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.857 -0500", hash_original_method = "9DB8E4889CA776938A054F1FA406F93D", hash_generated_method = "E68041F90AF5AA077159787B096D5FBE")
         
 public Font() { }
-
         
     }
-
-
     
     public class Karaoke {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.861 -0500", hash_original_field = "A0B3BAC3121C72A80108375A7330A360", hash_generated_field = "A3ACF88B9728F52220895FE4A0056B40")
@@ -249,11 +224,8 @@ public Font() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.872 -0500", hash_original_method = "20387F8DBBE28B02B4D4A333BCD1DC01", hash_generated_method = "7C8CDED970E3C90251249AEA32944455")
         
 public Karaoke() { }
-
         
     }
-
-
     
     public class HyperText {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.877 -0500", hash_original_field = "BEC46065010EFB8DDA3984AF07796B3E", hash_generated_field = "D65473A240F787EB4314A0C92140B20D")
@@ -272,11 +244,9 @@ public Karaoke() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.887 -0500", hash_original_method = "B6B5545C3ABD1F1E6601A7A1C2669923", hash_generated_method = "582775EA9E4FB8E7B5ACD4E5751B1179")
         
 public HyperText() { }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.742 -0500", hash_original_field = "692CCB5FAB3D10FD8D970E4A07D6305C", hash_generated_field = "BB91EE8BB361270D3F9E96BDF275F77B")
-
 
     private Parcel mParcel = Parcel.obtain();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.745 -0500", hash_original_field = "1EF8093BDAB30375FC8B40761872B101", hash_generated_field = "EC5144F1059594ED79C7BE9A57DB8642")
@@ -284,7 +254,6 @@ public HyperText() { }
     private final HashMap<Integer, Object> mKeyObjectMap =
             new HashMap<Integer, Object>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.747 -0500", hash_original_field = "3848A8A74E7CB61271DAF967ED91A66C", hash_generated_field = "80B2AE705A93483E0330D6F3D591DCEE")
-
 
     private int mDisplayFlags = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.750 -0500", hash_original_field = "0EA231E83D0A73509AD8D6D84F0F468E", hash_generated_field = "C453002A9E2C70445EB5199BE9B08059")
@@ -300,7 +269,6 @@ public HyperText() { }
 
     private int mWrapText = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.760 -0500", hash_original_field = "8BCA25F71C4312A6750C9479542F8B47", hash_generated_field = "A15DDCA0E18A78ADEB869939295D7F43")
-
 
     private List<CharPos> mBlinkingPosList = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.762 -0500", hash_original_field = "2E7FF924CEA6D46E294320D13063A485", hash_generated_field = "DB74E93421E71106F88913A1AFB7B88A")
@@ -319,7 +287,6 @@ public HyperText() { }
 
     private List<HyperText> mHyperTextList = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.773 -0500", hash_original_field = "3491C39554D0B35B78418CA1261CB515", hash_generated_field = "1BF0EA15C173D16323FE9F74B1AD8364")
-
 
     private TextPos mTextPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.776 -0500", hash_original_field = "58C98E0408C50A6BD64F8CAD24CB85FD", hash_generated_field = "D18AAA756EFD16ACECFD20B5F9951651")
@@ -350,6 +317,8 @@ public TimedText(byte[] obj) {
      * Parcel. These are stored in mKeyObjectMap for application to retrieve.
      * @return false if an error occurred during parsing. Otherwise, true.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.896 -0500", hash_original_method = "791BBBBBE0FA40697270B44A4D66C782", hash_generated_method = "6BE5A66C72A82CFFA51BE96C76461E51")
     
 private boolean parseParcel() {
@@ -490,6 +459,8 @@ private boolean parseParcel() {
     /**
      * To parse and store the Style list.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.899 -0500", hash_original_method = "0BA14F4ADFDDDB9356E71AC4A1ECA0E9", hash_generated_method = "169953A403CAD937E71E29022A5A362F")
     
 private void readStyle() {
@@ -547,6 +518,8 @@ private void readStyle() {
     /**
      * To parse and store the Font list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.902 -0500", hash_original_method = "00AE5F5A406478801ABD16E12F474E1A", hash_generated_method = "4828E10B4D78E9B684F86709410BF1C4")
     
 private void readFont() {
@@ -571,6 +544,8 @@ private void readFont() {
     /**
      * To parse and store the Highlight list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.904 -0500", hash_original_method = "89A8EBF8FEFD90B855BF480125FCEA6A", hash_generated_method = "24868BA389A9EF1988E4307F847489A7")
     
 private void readHighlight() {
@@ -588,6 +563,8 @@ private void readHighlight() {
     /**
      * To parse and store the Karaoke list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.907 -0500", hash_original_method = "9FC931A03E07E67B33BB5A4FA8F46AC4", hash_generated_method = "01C5EF5795B351A3BE1C30AD17B445BE")
     
 private void readKaraoke() {
@@ -611,6 +588,8 @@ private void readKaraoke() {
     /**
      * To parse and store HyperText list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.910 -0500", hash_original_method = "76399CA140680AA49BE7C693D75B5452", hash_generated_method = "AE1B956E482E3895DADD3266E599D404")
     
 private void readHyperText() {
@@ -636,6 +615,8 @@ private void readHyperText() {
     /**
      * To parse and store blinking text list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.913 -0500", hash_original_method = "9C2885E2BFC08F88B4AF57AA760616C2", hash_generated_method = "703A1692EF67AAA49968A6A28EF906E7")
     
 private void readBlinkingText() {

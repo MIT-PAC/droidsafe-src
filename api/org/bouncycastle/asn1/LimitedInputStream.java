@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.InputStream;
 
-
-
-
-
-
 abstract class LimitedInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.115 -0500", hash_original_field = "0AF8B53607342E2932B67C3C39DDF67E", hash_generated_field = "274538152B8B82436D94F9F1A496F39B")
 
@@ -19,6 +14,8 @@ abstract class LimitedInputStream extends InputStream {
 
     private int _limit;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.119 -0500", hash_original_method = "0D8C2EADFFB47C1CBCA5E0CC8CF6BC20", hash_generated_method = "0D8C2EADFFB47C1CBCA5E0CC8CF6BC20")
     
 LimitedInputStream(
@@ -29,6 +26,8 @@ LimitedInputStream(
         this._limit = limit;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.121 -0500", hash_original_method = "40872598AE6AA3CD657ADA29CC622AC7", hash_generated_method = "898086B79DA7CE22E1C6420B6C7C7693")
     
 int getRemaining()
@@ -46,7 +45,6 @@ protected void setParentEofDetect(boolean on)
             ((IndefiniteLengthInputStream)_in).setEofOn00(on);
         }
     }
-
     
 }
 

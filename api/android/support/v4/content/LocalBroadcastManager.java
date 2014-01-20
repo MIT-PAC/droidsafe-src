@@ -64,6 +64,8 @@ public static LocalBroadcastManager getInstance(Context context) {
 
     private  Handler mHandler;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.531 -0500", hash_original_method = "839AC2DB210099F0B624D40E6378447E", hash_generated_method = "4B2DF27FE67F3CA7DB3A66BAED021A71")
     
 private LocalBroadcastManager(Context context) {
@@ -94,6 +96,8 @@ private LocalBroadcastManager(Context context) {
 
         boolean broadcasting;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.467 -0500", hash_original_method = "5206887270700039FD440F8685BB60D3", hash_generated_method = "5206887270700039FD440F8685BB60D3")
         
 ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) {
@@ -124,6 +128,8 @@ ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) {
 
          ArrayList<ReceiverRecord> receivers;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.484 -0500", hash_original_method = "AA1A90161822F4E9C86DDF136B615F55", hash_generated_method = "AA1A90161822F4E9C86DDF136B615F55")
         
 BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
@@ -300,6 +306,8 @@ public void sendBroadcastSync(Intent intent) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.547 -0500", hash_original_method = "3F6742DF10D1E655ECFD08018DEE1CF4", hash_generated_method = "2833AEBD2A648D4F5FC47CC83599C8FF")
     
 private void executePendingBroadcasts() {

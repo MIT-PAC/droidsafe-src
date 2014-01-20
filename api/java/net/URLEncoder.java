@@ -52,6 +52,8 @@ public static String encode(String s, String charsetName) throws UnsupportedEnco
         }
         
 };
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.238 -0500", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "6546CA37BB594848B3235CCF30367527")
     
 private URLEncoder() {}

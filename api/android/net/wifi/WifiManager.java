@@ -766,6 +766,8 @@ public int updateNetwork(WifiConfiguration config) {
      *         are to set or updated in the network description.
      * @return the ID of the network on success, {@code -1} on failure.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.302 -0500", hash_original_method = "E64504FDFA81026BF4EAE79A420D3010", hash_generated_method = "93138780AA183F7F543C2CE5B8DA3BEA")
     
 private int addOrUpdateNetwork(WifiConfiguration config) {

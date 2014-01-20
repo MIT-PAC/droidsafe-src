@@ -38,13 +38,10 @@ import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Strings;
 
-
-
-
-
-
 class X509Util {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.195 -0500", hash_original_method = "25B2A761D6FCD88D1F6D5EF8095097C3", hash_generated_method = "BBC0B09FA1E82C1739E7BED70CD2D30F")
     
 private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize)
@@ -56,6 +53,8 @@ private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int
             new DERInteger(1));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.198 -0500", hash_original_method = "EB96EA681AA54949640DBBFD56AFEE3D", hash_generated_method = "B96B88943A02621E35E3F201E1D154B4")
     
 static DERObjectIdentifier getAlgorithmOID(
@@ -71,6 +70,8 @@ static DERObjectIdentifier getAlgorithmOID(
         return new DERObjectIdentifier(algorithmName);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.200 -0500", hash_original_method = "86A5A472621EFAB2954CBB6F53B6DF0B", hash_generated_method = "CB0AD73CB40E7D5CD62A76E45B15C4BB")
     
 static AlgorithmIdentifier getSigAlgID(
@@ -96,6 +97,8 @@ static AlgorithmIdentifier getSigAlgID(
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.203 -0500", hash_original_method = "DDE26145F473C5CDA65FAB7711F3C967", hash_generated_method = "661EB69A055DCB1B95146A4E0E78FE19")
     
 static Iterator getAlgNames()
@@ -111,6 +114,8 @@ static Iterator getAlgNames()
         return l.iterator();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.205 -0500", hash_original_method = "BC13D71A5ED2986BEC329C4BD5E6CD4D", hash_generated_method = "D1A7D177FEFF1EB8BB52C1EE40FC9A7B")
     
 static Signature getSignatureInstance(
@@ -120,6 +125,8 @@ static Signature getSignatureInstance(
         return Signature.getInstance(algorithm);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.207 -0500", hash_original_method = "7376E9D2EC8CBDFA3F5EF467F6FFBB82", hash_generated_method = "980CCDA12056C2D2C843541BEDF2BE65")
     
 static Signature getSignatureInstance(
@@ -137,6 +144,8 @@ static Signature getSignatureInstance(
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.210 -0500", hash_original_method = "52BBD38FA535C4B63312A116C09E8119", hash_generated_method = "3573A434339168B61A73F6AB21E8E66A")
     
 static byte[] calculateSignature(
@@ -170,6 +179,8 @@ static byte[] calculateSignature(
         return sig.sign();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.213 -0500", hash_original_method = "8206942B03D277BD993D39F346F7E519", hash_generated_method = "8F3698DEBBFEBD88A481F529AA7E3E89")
     
 static byte[] calculateSignature(
@@ -204,6 +215,8 @@ static byte[] calculateSignature(
         return sig.sign();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.215 -0500", hash_original_method = "F50F3B7A2230AD105E44CA884465512D", hash_generated_method = "600C5D5B441F6B68EFEAAEE4F149BA1E")
     
 static X509Principal convertPrincipal(
@@ -315,6 +328,8 @@ static Implementation getImplementation(
         throw new NoSuchAlgorithmException("cannot find implementation " + algorithm);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.238 -0500", hash_original_method = "E365CC40515812191B8F9F9EFF6B6E93", hash_generated_method = "F45B7EC20089B45BF28339B6E202C233")
     
 static Provider getProvider(String provider)
@@ -332,7 +347,6 @@ static Provider getProvider(String provider)
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.187 -0500", hash_original_field = "A8B38EFEBE1FD690B18E15CE341717C3", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
 
     private static Hashtable algorithms = new Hashtable();
-
     
     static class Implementation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.218 -0500", hash_original_field = "8CEDBCDCD092B544D79CF4DDA5859D9C", hash_generated_field = "8CEDBCDCD092B544D79CF4DDA5859D9C")
@@ -342,6 +356,8 @@ static Provider getProvider(String provider)
 
         Provider provider;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.223 -0500", hash_original_method = "9E32F4D9CC9EFE32B8319A8018F19FA9", hash_generated_method = "9E32F4D9CC9EFE32B8319A8018F19FA9")
         
 Implementation(
@@ -352,6 +368,8 @@ Implementation(
             this.provider = provider;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.225 -0500", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "BE45F36A26940534B07006714A378835")
         
 Object getEngine()
@@ -359,13 +377,14 @@ Object getEngine()
             return engine;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.228 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "4D6A4C5C7B57C5543A93E2FA43879F89")
         
 Provider getProvider()
         {
             return provider;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.190 -0500", hash_original_field = "9F226D98C1CB8D80E9F82A4DB61E3C25", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")

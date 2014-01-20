@@ -18,87 +18,129 @@ import droidsafe.helpers.DSUtils;
 
 final class XmlBlock {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetStringBlock(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeCreateParseState(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final int nativeNext(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetNamespace(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final int nativeGetName(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetText(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetLineNumber(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeCount(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeNamespace(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeName(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeResource(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeDataType(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeData(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeStringValue(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetIdAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetClassAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetStyleAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeIndex(int state, String namespace, String name) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void nativeDestroyParseState(int state) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void nativeDestroy(int obj) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.916 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
@@ -141,6 +183,8 @@ public XmlBlock(byte[] data, int offset, int size) {
      *  are doing!  The given native object must exist for the entire lifetime
      *  of this newly creating XmlBlock.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.093 -0500", hash_original_method = "2D0B3C5ECC15AA5F78B0AD70805A049B", hash_generated_method = "2D0B3C5ECC15AA5F78B0AD70805A049B")
     
 XmlBlock(AssetManager assets, int xmlBlock) {
@@ -160,6 +204,8 @@ public void close() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.926 -0500", hash_original_method = "017FB1456432C4B45E3EDBB9E5F1A65C", hash_generated_method = "CBB5BD63BB4E7B35F2644EB5CA1177B3")
     
 private void decOpenCountLocked() {
@@ -730,7 +776,9 @@ protected void finalize() throws Throwable {
             close();
         }
 
-        /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        /*package*/ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.067 -0500", hash_original_method = "E55719651A1187D6CF490013E1512769", hash_generated_method = "40472AC1B56B347081CB0460B5605667")
         
 final CharSequence getPooledString(int id) {

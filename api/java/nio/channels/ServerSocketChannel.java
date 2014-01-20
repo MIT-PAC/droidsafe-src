@@ -9,10 +9,6 @@ import java.net.ServerSocket;
 import java.nio.channels.spi.AbstractSelectableChannel;
 import java.nio.channels.spi.SelectorProvider;
 
-
-
-
-
 public abstract class ServerSocketChannel extends AbstractSelectableChannel {
 
     /**
@@ -64,6 +60,8 @@ protected ServerSocketChannel(SelectorProvider selectorProvider) {
      *
      * @return the server-socket assigned to this channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.386 -0500", hash_original_method = "E46E31344319076C9803158D28BD500C", hash_generated_method = "632783B6BE4977774D73D2AA87CFFB62")
     
 public abstract ServerSocket socket();
@@ -95,10 +93,11 @@ public abstract ServerSocket socket();
      * @throws NotYetBoundException
      *             if the socket has not yet been bound.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.389 -0500", hash_original_method = "F5741EF9698B4CF9EEEA6AE06A1F48D2", hash_generated_method = "D333A8257FEB8A1F812C98D1166ABF69")
     
 public abstract SocketChannel accept() throws IOException;
-
     
 }
 

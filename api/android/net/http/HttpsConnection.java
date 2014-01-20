@@ -79,6 +79,8 @@ public void checkServerTrusted(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.709 -0500", hash_original_method = "85F174ABC4055BEA52A3B6ED8F0BA48D", hash_generated_method = "C029373C9E1D524F94FA7302D85722C8")
     
 private synchronized static SSLSocketFactory getSocketFactory() {
@@ -103,6 +105,8 @@ private synchronized static SSLSocketFactory getSocketFactory() {
     /**
      * Contructor for a https connection.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.720 -0500", hash_original_method = "09C25F5735AB0754281F1FBF0B28F30D", hash_generated_method = "09C25F5735AB0754281F1FBF0B28F30D")
     
 HttpsConnection(Context context, HttpHost host, HttpHost proxy,
@@ -116,7 +120,9 @@ HttpsConnection(Context context, HttpHost host, HttpHost proxy,
      * connection.
      * @param certificate The SSL certificate
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.722 -0500", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "CE5F1A45B1025117B442485B7D853DDB")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.722 -0500", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "CE5F1A45B1025117B442485B7D853DDB")
     
 void setCertificate(SslCertificate certificate) {
         mCertificate = certificate;
@@ -128,6 +134,8 @@ void setCertificate(SslCertificate certificate) {
      * @return the opened low level connection
      * @throws IOException if the connection fails for any reason.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.727 -0500", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "622D4DB076F02438468DE4A4417A69A2")
     
@@ -348,6 +356,8 @@ void setCertificate(SslCertificate certificate) {
      * need to take any further action.
      *
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.730 -0500", hash_original_method = "94AF48C1BBE0D9628C41EDAE43AD4A70", hash_generated_method = "6F750470763A09962F7C3949B80129FE")
     
 @Override
@@ -373,6 +383,8 @@ void setCertificate(SslCertificate certificate) {
     /**
      * Restart a secure connection suspended waiting for user interaction.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.733 -0500", hash_original_method = "AF3B09D914ADDB679280100B7539789D", hash_generated_method = "AF3B09D914ADDB679280100B7539789D")
     
 void restartConnection(boolean proceed) {
@@ -390,6 +402,8 @@ void restartConnection(boolean proceed) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.735 -0500", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "C7BD68F4A3F52626B3EE16BC0A450363")
     

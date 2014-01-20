@@ -9,11 +9,15 @@ import android.os.Parcelable;
 
 abstract class ValueObject {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.954 -0400", hash_original_method = "E974AB10453903E872F02B47A1C2E57C", hash_generated_method = "E974AB10453903E872F02B47A1C2E57C")
     public ValueObject ()
     {
         //Synthesized constructor
     }
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.962 -0500", hash_original_method = "212B105C30378E62FCB34D5DBAF13A51", hash_generated_method = "639F13DC8D11D22BAE465A34F5915351")
     
 abstract ComprehensionTlvTag getTag();
@@ -51,6 +55,8 @@ public CommandDetails[] newArray(int size) {
 
     public int commandQualifier;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.978 -0500", hash_original_method = "72B242645176D3C048490A6F87EF8C3E", hash_generated_method = "72B242645176D3C048490A6F87EF8C3E")
     
 CommandDetails() {
@@ -114,12 +120,16 @@ class DeviceIdentities extends ValueObject {
 
     public int destinationId;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.958 -0400", hash_original_method = "0DDAAF9AE8107B54D0B6867A38B9BB39", hash_generated_method = "0DDAAF9AE8107B54D0B6867A38B9BB39")
     public DeviceIdentities ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.004 -0500", hash_original_method = "08D7E03586C546439C1E191A295F1932", hash_generated_method = "08D7E03586C546439C1E191A295F1932")
     
@@ -137,12 +147,16 @@ class IconId extends ValueObject {
 
     boolean selfExplanatory;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.959 -0400", hash_original_method = "6C2A3A6407CD61624CE3740BB0DD1581", hash_generated_method = "6C2A3A6407CD61624CE3740BB0DD1581")
     public IconId ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.010 -0500", hash_original_method = "FDA08E7237336A8674293BF7C0007438", hash_generated_method = "FDA08E7237336A8674293BF7C0007438")
     
@@ -160,12 +174,16 @@ class ItemsIconId extends ValueObject {
 
     boolean selfExplanatory;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.959 -0400", hash_original_method = "A28F5B565DAFF118B0CD8282DD5FCE83", hash_generated_method = "A28F5B565DAFF118B0CD8282DD5FCE83")
     public ItemsIconId ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.018 -0500", hash_original_method = "7B0D04191966D298CC63DF323042C1B7", hash_generated_method = "7B0D04191966D298CC63DF323042C1B7")
     

@@ -1722,7 +1722,9 @@ public Intent() {
         //}
     }
     
-	private Intent(Intent o, boolean all) {
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private Intent(Intent o, boolean all) {
 		/*
 		 * Piggyback on the setters to track the taint.  The desire here
 		 * is to "inherit" the taint from the Intent that is passed in
@@ -4210,6 +4212,8 @@ public String toUri(int flags) {
         return uri.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.610 -0500", hash_original_method = "C6B01852F6499829AE05E1CED618D6B2", hash_generated_method = "B60DA575A299C52F8E50386CB38B6A27")
     
 private void toUriInner(StringBuilder uri, String scheme, int flags) {

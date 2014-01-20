@@ -14,6 +14,8 @@ import android.os.ServiceManager;
 
 public class ClipboardManager extends android.text.ClipboardManager {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.353 -0500", hash_original_method = "B823D91CB0BDECA7B94A432D3169CF0F", hash_generated_method = "E46EEAD91E5B0F8A4FFB94615D67E32E")
     
 static private IClipboard getService() {
@@ -217,6 +219,8 @@ public boolean hasText() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.379 -0500", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "0985A14308F67055EBA5FC0B7343D794")
     
 void reportPrimaryClipChanged() {

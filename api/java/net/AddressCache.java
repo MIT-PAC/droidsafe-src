@@ -21,6 +21,8 @@ class AddressCache {
     private final BasicLruCache<String, AddressCacheEntry> cache
             = new BasicLruCache<String, AddressCacheEntry>(MAX_ENTRIES);
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.250 -0400", hash_original_method = "FAF57634870A3B339F1CC57081189EF2", hash_generated_method = "FAF57634870A3B339F1CC57081189EF2")
     public AddressCache ()
     {
@@ -85,6 +87,8 @@ public void put(String hostname, String detailMessage) {
 
          long expiryNanos;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.897 -0500", hash_original_method = "B930CA112737DBCA1D7B360D8F80699C", hash_generated_method = "B930CA112737DBCA1D7B360D8F80699C")
         
 AddressCacheEntry(Object value, long expiryNanos) {
@@ -120,6 +124,8 @@ public void putUnknownHost(String hostname, String detailMessage) {
         put(hostname, detailMessage);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.917 -0500", hash_original_method = "CA6BD7BD54236FC7C97CCB9D1828122E", hash_generated_method = "35E51F4714A5A762FA6448BA689E9AFB")
     
 private long customTtl(String propertyName, long defaultTtlNanos) {

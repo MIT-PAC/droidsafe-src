@@ -305,6 +305,8 @@ public void removeValue(String name) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.292 -0500", hash_original_method = "1B64858E0F9CF91B520A55B4E94E3F8D", hash_generated_method = "1B64858E0F9CF91B520A55B4E94E3F8D")
     
 void setPeer(String peerHost, int peerPort) {

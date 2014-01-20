@@ -66,6 +66,8 @@ public BufferedOutputStream(OutputStream out, int size) {
         out.flush();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.497 -0500", hash_original_method = "E23D99313D714FF4FE33BC33C5A12E3B", hash_generated_method = "C56C442DA552754F9DA28F48FD22AD21")
     
 private void checkNotClosed() throws IOException {
@@ -173,6 +175,8 @@ private void checkNotClosed() throws IOException {
     /**
      * Flushes only internal buffer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.507 -0500", hash_original_method = "AAC3F75032624F788E22A2E407A017DD", hash_generated_method = "B242174C9AD2D547970527CEFEA5B484")
     
 private void flushInternal() throws IOException {

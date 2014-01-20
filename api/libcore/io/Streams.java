@@ -227,6 +227,8 @@ public static String readAsciiLine(InputStream in) throws IOException {
 
     private static AtomicReference<byte[]> skipBuffer = new AtomicReference<byte[]>();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.756 -0500", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "AF0F5237329DC5D339267768437D298E")
     
 private Streams() {}

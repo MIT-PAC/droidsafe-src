@@ -13,10 +13,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-
-
-
-
 public class MediaScannerConnection implements ServiceConnection {
 
     /**
@@ -47,10 +43,8 @@ public static void scanFile(Context context, String[] paths, String[] mimeTypes,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.409 -0500", hash_original_field = "FA9088997C8326B29A310512882D81CA", hash_generated_field = "4C0BB6EBD7CFC593F55CEDF09E4F4A6A")
 
-
     private static final String TAG = "MediaScannerConnection";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.411 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.413 -0500", hash_original_field = "4CD54E75D77FFDB6723D212BB5D7AB75", hash_generated_field = "A9DE3A256FB264536B7E2E88DEACCB5D")
@@ -73,7 +67,6 @@ public void scanCompleted(String path, Uri uri) {
                 client.onScanCompleted(path, uri);
             }
         }
-
         
 };
 
@@ -186,7 +179,6 @@ public void onServiceConnected(ComponentName className, IBinder service) {
             }
         }
     }
-
     
     static class ClientProxy implements MediaScannerConnectionClient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.448 -0500", hash_original_field = "EF5B6E8084A495EAE41C937C524F43C7", hash_generated_field = "EF5B6E8084A495EAE41C937C524F43C7")
@@ -228,6 +220,8 @@ public void onScanCompleted(String path, Uri uri) {
             scanNextPath();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.469 -0500", hash_original_method = "867E90DE2F95BCDF3C69A0A29D034AD3", hash_generated_method = "867E90DE2F95BCDF3C69A0A29D034AD3")
         
 void scanNextPath() {
@@ -239,11 +233,8 @@ void scanNextPath() {
             mConnection.scanFile(mPaths[mNextPath], mimeType);
             mNextPath++;
         }
-
         
     }
-
-
     
     public interface OnScanCompletedListener {
         
@@ -253,7 +244,6 @@ void scanNextPath() {
     public interface MediaScannerConnectionClient extends OnScanCompletedListener {
         
         public void onMediaScannerConnected();
-
         
         public void onScanCompleted(String path, Uri uri);
     }

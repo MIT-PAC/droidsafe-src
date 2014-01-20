@@ -74,6 +74,8 @@ public final Object attachment() {
      * canceled-keys set and will not be included in any future selects of this
      * selector.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.189 -0500", hash_original_method = "BA1BF94FB859172DDE80A7E9000639D0", hash_generated_method = "6D2C251EA0784ADEFD27C351E9E0B5A6")
     
 public abstract void cancel();
@@ -83,6 +85,8 @@ public abstract void cancel();
      *
      * @return the channel of this key.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.191 -0500", hash_original_method = "A96F47B526978A006380DE215C852EE6", hash_generated_method = "8FEDD3EB21EEFBE8F103B7BB3A0ADFEB")
     
 public abstract SelectableChannel channel();
@@ -95,6 +99,8 @@ public abstract SelectableChannel channel();
      * @throws CancelledKeyException
      *             if the key has already been canceled.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.193 -0500", hash_original_method = "78422C81123C4D37C8FE06F27419342C", hash_generated_method = "F65B80C6BA29ABE55D61E052EE9CA5D7")
     
 public abstract int interestOps();
@@ -112,6 +118,8 @@ public abstract int interestOps();
      * @throws CancelledKeyException
      *             if the key has already been canceled.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.196 -0500", hash_original_method = "80BDE0F6570E7C1C49E762ED6594C3D2", hash_generated_method = "873E1FA71A8833E8EB21E863581A8F49")
     
 public abstract SelectionKey interestOps(int operations);
@@ -171,6 +179,8 @@ public final boolean isReadable() {
      * @return {@code true} if this key has not been canceled, {@code false}
      *         otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.206 -0500", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "DEB105C1692FABA897B5C0B0EC6247FE")
     
 public abstract boolean isValid();
@@ -199,6 +209,8 @@ public final boolean isWritable() {
      * @throws CancelledKeyException
      *             if the key has already been canceled.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.211 -0500", hash_original_method = "D8A25344F20E8DE2EBB055E5538E1A27", hash_generated_method = "7694C63AEE61E2806F98612DA5B82C38")
     
 public abstract int readyOps();
@@ -208,6 +220,8 @@ public abstract int readyOps();
      *
      * @return the related selector.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.213 -0500", hash_original_method = "4643185428A8E030AC9F19E1ADCCCBAB", hash_generated_method = "04BCA10CE76B374DE12BB83FBF9321FC")
     
 public abstract Selector selector();

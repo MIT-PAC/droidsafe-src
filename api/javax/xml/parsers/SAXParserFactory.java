@@ -89,6 +89,8 @@ protected SAXParserFactory () {
      * @exception SAXException for SAX errors.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.648 -0500", hash_original_method = "6A5BE2BD18213305F2D52F18BAB8AB70", hash_generated_method = "CFC46F7C8178EF9FFC1654D051B8FFF3")
     
 public abstract SAXParser newSAXParser()
@@ -208,6 +210,8 @@ public boolean isValidating() {
      *
      * @see org.xml.sax.XMLReader#setFeature
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.660 -0500", hash_original_method = "520C8619FD9C9B6AF88B265C6938B254", hash_generated_method = "DE080B47328125529352E5F5672BFBBB")
     
 public abstract void setFeature(String name, boolean value)
@@ -229,6 +233,8 @@ public abstract void setFeature(String name, boolean value)
      *
      * @see org.xml.sax.XMLReader#getProperty
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.662 -0500", hash_original_method = "DA680BE094D753B5194A0B62EF0B1C28", hash_generated_method = "0EF47D00AFE9E9437E3E7D1C425585AC")
     
 public abstract boolean getFeature(String name)

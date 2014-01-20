@@ -187,6 +187,8 @@ public static long getMinGzipSize(ContentResolver resolver) {
     /**
      * Generates a cURL command equivalent to the given request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.336 -0500", hash_original_method = "16B8910DE162C0278D0CD4C3C9C4634A", hash_generated_method = "80F3BCDCD6365473887F76B59C915276")
     
 private static String toCurl(HttpUriRequest request, boolean logAuthToken) throws IOException {
@@ -249,6 +251,8 @@ private static String toCurl(HttpUriRequest request, boolean logAuthToken) throw
         return builder.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.339 -0500", hash_original_method = "C081DBB0102899837B3CACC5437B7254", hash_generated_method = "4907C2A7E92D737A7FB1E80CF3F6AE29")
     
 private static boolean isBinaryContent(HttpUriRequest request) {
@@ -338,6 +342,8 @@ public static long parseDate(String dateString) {
 
     private volatile LoggingConfiguration curlConfiguration;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.267 -0500", hash_original_method = "D8AE79D95EB274B9A84FF0181FB0726D", hash_generated_method = "CFB34A0D7D67A5D43C228BBF702E06B4")
     
 private AndroidHttpClient(ClientConnectionManager ccm, HttpParams params) {
@@ -457,6 +463,8 @@ T var36E49463A8C0D597D04C307A302D4311_1262386378 =         delegate.execute(requ
 
         private  int level;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.314 -0500", hash_original_method = "7A9F95068D47CF60B894A5D5EE822200", hash_generated_method = "28F5F436CD5D05FDBCD52DCA10A3231A")
         
 private LoggingConfiguration(String tag, int level) {
@@ -467,6 +475,8 @@ private LoggingConfiguration(String tag, int level) {
         /**
          * Returns true if logging is turned on for this configuration.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.316 -0500", hash_original_method = "B5444C1DC99A243E7A135E83B11C8EBC", hash_generated_method = "87226959DF4E37DE7AA84EE43652034D")
         
 private boolean isLoggable() {
@@ -476,6 +486,8 @@ private boolean isLoggable() {
         /**
          * Prints a message using this configuration.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.318 -0500", hash_original_method = "0A6EBDDF0EE93BAA660A9D5D941C1EF5", hash_generated_method = "88CB13882D0A251122308F5D591C75C0")
         
 private void println(String message) {

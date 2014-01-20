@@ -355,6 +355,8 @@ MyHandler(Looper mainLooper) {
      *
      * @param stateFlags The state flags.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.039 -0500", hash_original_method = "65E953E454D63C10E4D3E41696E8FA2A", hash_generated_method = "C5616768C499A11AF8B52B2C2F376BC1")
     
 private void setState(int stateFlags) {
@@ -368,6 +370,8 @@ private void setState(int stateFlags) {
      *
      * @param isEnabled The accessibility state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.042 -0500", hash_original_method = "CA4E9E314C9F349802EC965B01AC173F", hash_generated_method = "03C3EB8F91DC52E734DE42CBAF91ADD6")
     
 private void setAccessibilityState(boolean isEnabled) {
@@ -382,6 +386,8 @@ private void setAccessibilityState(boolean isEnabled) {
     /**
      * Notifies the registered {@link AccessibilityStateChangeListener}s.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.044 -0500", hash_original_method = "4BD0E63D4E32757CA8C2FA20BBC17929", hash_generated_method = "4DFDE6489411D7E80509FDDE91300D99")
     
 private void notifyAccessibilityStateChanged() {

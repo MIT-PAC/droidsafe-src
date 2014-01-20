@@ -12,11 +12,6 @@ import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 import org.apache.harmony.dalvik.ddmc.DdmVmInternal;
 
-
-
-
-
-
 public class DdmHandleThread extends ChunkHandler {
 
     /**
@@ -30,7 +25,6 @@ public static void register() {
         DdmServer.registerHandler(CHUNK_STKL, mInstance);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.580 -0500", hash_original_field = "F2C5A2B19E9E75DECB332FBBD8AB7502", hash_generated_field = "6FD8B0A025617CAABDC74F5512BD1925")
-
 
     public static final int CHUNK_THEN = type("THEN");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.582 -0500", hash_original_field = "9BA8FCA0F8FBB1120A5AB372DBDD382B", hash_generated_field = "76B61FBE133D3C178633BE3ED16C7D88")
@@ -47,11 +41,11 @@ public static void register() {
     public static final int CHUNK_STKL = type("STKL");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.593 -0500", hash_original_field = "52AEE05E56FE6F184510FC40EF4AB619", hash_generated_field = "80D0E25C8F1F0092137DF49E7789674E")
 
-
     private static DdmHandleThread mInstance = new DdmHandleThread();
 
-
     /* singleton, do not instantiate */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.595 -0500", hash_original_method = "9014293089915C4268DF07C71EC6FF27", hash_generated_method = "7B16A2D832C1C51ED12E9EDF69EDAE4C")
     
 private DdmHandleThread() {}
@@ -97,6 +91,8 @@ public Chunk handleChunk(Chunk request) {
     /*
      * Handle a "THread notification ENable" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.607 -0500", hash_original_method = "BC156E08FEFB0A0F13BF2C52AB62FDFE", hash_generated_method = "9DA478953B4FDD1477742BA31813917F")
     
 private Chunk handleTHEN(Chunk request) {
@@ -112,6 +108,8 @@ private Chunk handleTHEN(Chunk request) {
     /*
      * Handle a "THread STatus" request.  This is constructed by the VM.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.609 -0500", hash_original_method = "2695125C08C32728E983ED92A17A93FC", hash_generated_method = "1618901B5EBE9270EED4F346F1946A79")
     
 private Chunk handleTHST(Chunk request) {
@@ -137,6 +135,8 @@ private Chunk handleTHST(Chunk request) {
      * use them here for consistency.  (One thought is to keep the current
      * thread ID in the low 16 bits and somehow serialize the top 16 bits.)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.611 -0500", hash_original_method = "D658C618BB2C2BBDA71F6A2C6E25EF76", hash_generated_method = "B6333C1C2AAA48281287DB81C489DECB")
     
 private Chunk handleSTKL(Chunk request) {
@@ -161,6 +161,8 @@ private Chunk handleSTKL(Chunk request) {
      * We include the threadId in the response so the other side doesn't have
      * to match up requests and responses as carefully.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.614 -0500", hash_original_method = "B0772B34720138634AE49D68BC346BA3", hash_generated_method = "A50D916FC1F138DEBA562069C2D7EB90")
     
 private Chunk createStackChunk(StackTraceElement[] trace, int threadId) {

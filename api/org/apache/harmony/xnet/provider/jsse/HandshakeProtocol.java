@@ -175,6 +175,8 @@ public void setRecordProtocol(SSLRecordProtocol recordProtocol) {
      * Start session negotiation
      * @param session
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.405 -0500", hash_original_method = "F8A4DBF1E6F2CEC0927301856B440BE5", hash_generated_method = "70F2B76AB4E373BB2D2DD8B7A0409F0C")
     
 public abstract void start();
@@ -246,6 +248,8 @@ protected void sendHelloRequest() {
     /**
      * Proceses inbound ChangeCipherSpec message
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.418 -0500", hash_original_method = "6A3A0B0C26526B0D6E04B0DD204B8614", hash_generated_method = "C0CA24B351F2CB89B06F27615BB0A34A")
     
 abstract void receiveChangeCipherSpec();
@@ -253,6 +257,8 @@ abstract void receiveChangeCipherSpec();
     /**
      * Creates and sends finished message
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.421 -0500", hash_original_method = "CC2414E222628E693519C21AEB277F5D", hash_generated_method = "EABD2DD5E4BA22FC8EEFAA18647F6AAA")
     
 abstract void makeFinished();
@@ -261,6 +267,8 @@ abstract void makeFinished();
      * Proceses inbound handshake messages
      * @param bytes
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.423 -0500", hash_original_method = "50A905395944DD5BD4D38FF882717F8E", hash_generated_method = "8ECCD1520AF0DB75006E120605B7FB00")
     
 public abstract void unwrap(byte[] bytes);
@@ -269,6 +277,8 @@ public abstract void unwrap(byte[] bytes);
      * Processes SSLv2 Hello message
      * @param bytes
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.425 -0500", hash_original_method = "FCB333C8686CED00C54558985DF56619", hash_generated_method = "0EE769189B7034EEC63A1F3D98B338D7")
     
 public abstract void unwrapSSLv2(byte[] bytes);

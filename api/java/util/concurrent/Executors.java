@@ -59,6 +59,8 @@ public static ExecutorService newFixedThreadPool(int nThreads) {
      * @throws NullPointerException if threadFactory is null
      * @throws IllegalArgumentException if {@code nThreads <= 0}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.740 -0500", hash_original_method = "B4B819B5FCF44407B1B16756E048CBA8", hash_generated_method = "E3B00C6A4203188D2006ED62C0A7DE75")
     
 public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
@@ -81,6 +83,8 @@ public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory thr
      *
      * @return the newly created single-threaded Executor
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.743 -0500", hash_original_method = "C1C113EB7A09B292CF1C69F4CC48EB73", hash_generated_method = "9221D76F05BD5816E653D4B3D94FCBF6")
     
 public static ExecutorService newSingleThreadExecutor() {
@@ -104,6 +108,8 @@ public static ExecutorService newSingleThreadExecutor() {
      * @return the newly created single-threaded Executor
      * @throws NullPointerException if threadFactory is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.745 -0500", hash_original_method = "B2D89085FD1440204585B1FDE708D472", hash_generated_method = "0DB1D891C4BC734697C61313156F9928")
     
 public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
@@ -149,6 +155,8 @@ public static ExecutorService newCachedThreadPool() {
      * @return the newly created thread pool
      * @throws NullPointerException if threadFactory is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.751 -0500", hash_original_method = "75C2AC8A8F418D624F70F1077C2FBC95", hash_generated_method = "A546D36DD3CD43F0C743AE5AE607FB0C")
     
 public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
@@ -171,6 +179,8 @@ public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
      * guaranteed not to be reconfigurable to use additional threads.
      * @return the newly created scheduled executor
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.754 -0500", hash_original_method = "3B8D30E77CB845E3C376AA2B983070C1", hash_generated_method = "55D57A7E9E195C304A2DD55867C5D9F9")
     
 public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
@@ -194,6 +204,8 @@ public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
      * @return a newly created scheduled executor
      * @throws NullPointerException if threadFactory is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.756 -0500", hash_original_method = "662E48DC77F0E634963E4AF8B4B2319F", hash_generated_method = "3031A768012849957C19B4921EB5DA3F")
     
 public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
@@ -209,6 +221,8 @@ public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFa
      * @return a newly created scheduled thread pool
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.759 -0500", hash_original_method = "27FBCCF1D4D5EC0F51777630C21B1B2E", hash_generated_method = "D472E85837C5D4BE96BA90F2DAE0F3A5")
     
 public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
@@ -226,6 +240,8 @@ public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) 
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @throws NullPointerException if threadFactory is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.761 -0500", hash_original_method = "D2C28C34E5EB211F6345884E8C056637", hash_generated_method = "5881D63D11562D74770FEB0EA1531801")
     
 public static ScheduledExecutorService newScheduledThreadPool(
@@ -243,6 +259,8 @@ public static ScheduledExecutorService newScheduledThreadPool(
      * @return an <tt>ExecutorService</tt> instance
      * @throws NullPointerException if executor null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.764 -0500", hash_original_method = "70EF475EAD59784B9F4988C66F330DB5", hash_generated_method = "11F8FC8C39CCEECCB7A9FB73F6C578A4")
     
 public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
@@ -261,6 +279,8 @@ public static ExecutorService unconfigurableExecutorService(ExecutorService exec
      * @return a <tt>ScheduledExecutorService</tt> instance
      * @throws NullPointerException if executor null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.767 -0500", hash_original_method = "CB4FE1F500230F7BE13AAEEB48858B34", hash_generated_method = "BA534C9653084D895D901BCD16036D28")
     
 public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
@@ -325,12 +345,16 @@ public static ThreadFactory defaultThreadFactory() {
      * context does not have permission to both get and set context
      * class loader.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.771 -0500", hash_original_method = "B9A1CBBC5DC86C417067189200E34377", hash_generated_method = "78C9982FEA6BC9F8BF1266665F95D38E")
     
 public static ThreadFactory privilegedThreadFactory() {
         return new PrivilegedThreadFactory();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> Callable<T> callable(Runnable task, T result) {
         if (task == null)
             throw new NullPointerException();
@@ -344,6 +368,8 @@ public static ThreadFactory privilegedThreadFactory() {
      * @return a callable object
      * @throws NullPointerException if task null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.776 -0500", hash_original_method = "B54692C5F74502C1CEAE2E6CE0A90F1F", hash_generated_method = "8E843E3A5EF673FDB9702C5AAD91BD00")
     
 public static Callable<Object> callable(Runnable task) {
@@ -385,12 +411,16 @@ public static Callable<Object> callable(final PrivilegedExceptionAction<?> actio
             public Object call() throws Exception { return action.run(); }};
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> Callable<T> privilegedCallable(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
         return new PrivilegedCallable<T>(callable);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> Callable<T> privilegedCallableUsingCurrentClassLoader(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
@@ -398,6 +428,8 @@ public static Callable<Object> callable(final PrivilegedExceptionAction<?> actio
     }
 
     /** Cannot instantiate. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.947 -0500", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "55D2E894E200221966BF60F73B91F1CC")
     
 private Executors() {}
@@ -409,6 +441,8 @@ private Executors() {}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.799 -0500", hash_original_field = "8B901F4123EF91F350535EEC5A55F787", hash_generated_field = "8B901F4123EF91F350535EEC5A55F787")
 
          T result;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.801 -0500", hash_original_method = "39BEB710EA675D51CD733BCB993FC74E", hash_generated_method = "39BEB710EA675D51CD733BCB993FC74E")
         
 RunnableAdapter(Runnable task, T result) {
@@ -432,6 +466,8 @@ public T call() {
 
         private  AccessControlContext acc;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.815 -0500", hash_original_method = "12C65A09BA65E906C8B3945E2B4DB442", hash_generated_method = "12C65A09BA65E906C8B3945E2B4DB442")
         
 PrivilegedCallable(Callable<T> task) {
@@ -491,6 +527,8 @@ public T run() throws Exception {
 
         private  ClassLoader ccl;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.834 -0500", hash_original_method = "A45AF0A17387712B1B0259CF7D85D2E1", hash_generated_method = "EA5A282813953A9987262FF68D975AD1")
         
 PrivilegedCallableUsingCurrentClassLoader(Callable<T> task) {
@@ -580,6 +618,8 @@ public T run() throws Exception {
 
         private  String namePrefix;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.857 -0500", hash_original_method = "6C4DB34AB218BB8D6524A59E94717A2E", hash_generated_method = "6C4DB34AB218BB8D6524A59E94717A2E")
         
 DefaultThreadFactory() {
@@ -613,6 +653,8 @@ public Thread newThread(Runnable r) {
 
         private  ClassLoader ccl;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.870 -0500", hash_original_method = "1637F6F8B2206F80B43C5E6A7CCBC9A4", hash_generated_method = "B8E6825D1EEB42C0F8FEB349B83C6704")
         
 PrivilegedThreadFactory() {
@@ -653,6 +695,8 @@ public Thread newThread(final Runnable r) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.884 -0500", hash_original_field = "08308C1E09B9F16E16C40112958058EB", hash_generated_field = "11B8F83ADD158AE4ADD1E7AA1252842D")
 
         private  ExecutorService e;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.887 -0500", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "69B8656E71D4B49ACEB9CE44B20A63F5")
         
 DelegatedExecutorService(ExecutorService executor) { e = executor; }
@@ -753,6 +797,8 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114 =             e.invokeAny(tasks,
     }
     
     static class FinalizableDelegatedExecutorService extends DelegatedExecutorService {
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.923 -0500", hash_original_method = "0BC6912A00A2948375A36BA345B953A1", hash_generated_method = "0BC6912A00A2948375A36BA345B953A1")
         
 FinalizableDelegatedExecutorService(ExecutorService executor) {
@@ -770,6 +816,8 @@ protected void finalize() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.930 -0500", hash_original_field = "B6F2D26F7E5AC760D384D7FDFDC2C7DA", hash_generated_field = "3D78CFB93E5EA21FD7B6DC753DB36818")
 
         private  ScheduledExecutorService e;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.933 -0500", hash_original_method = "B9414E1A08721941535D3112D446A4F5", hash_generated_method = "B9414E1A08721941535D3112D446A4F5")
         
 DelegatedScheduledExecutorService(ScheduledExecutorService executor) {

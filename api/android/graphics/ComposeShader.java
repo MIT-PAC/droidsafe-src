@@ -9,21 +9,29 @@ import droidsafe.helpers.DSUtils;
 
 public class ComposeShader extends Shader {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate1(int native_shaderA, int native_shaderB,
             int native_mode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate2(int native_shaderA, int native_shaderB,
             int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate1(int native_shader, int native_skiaShaderA,
             int native_skiaShaderB, int native_mode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate2(int native_shader, int native_skiaShaderA,
             int native_skiaShaderB, int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
@@ -45,6 +53,8 @@ public class ComposeShader extends Shader {
         @param mode     The mode that combines the colors from the two shaders. If mode
                         is null, then SRC_OVER is assumed.
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.876 -0500", hash_original_method = "54479FEAF5918A2D0015420E3AF1868D", hash_generated_method = "70A6BE8E028F56F9FFA10E60669FE620")
     
 public ComposeShader(Shader shaderA, Shader shaderB, Xfermode mode) {

@@ -103,6 +103,8 @@ public IInputMethodWrapper(AbstractInputMethodService context,
 
         boolean notified;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.318 -0400", hash_original_method = "55E10D988B76888B9ACFA8C6EB5966C6", hash_generated_method = "55E10D988B76888B9ACFA8C6EB5966C6")
         public Notifier ()
         {
@@ -118,6 +120,8 @@ public IInputMethodWrapper(AbstractInputMethodService context,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.988 -0500", hash_original_field = "4903C6C7AA2E39F51C3230E9003EAA25", hash_generated_field = "4903C6C7AA2E39F51C3230E9003EAA25")
 
          IInputMethodCallback mCb;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.990 -0500", hash_original_method = "13A9221242487F9ADC2AC17AB23350A5", hash_generated_method = "13A9221242487F9ADC2AC17AB23350A5")
         
 InputMethodSessionCallbackWrapper(Context context, IInputMethodCallback cb) {

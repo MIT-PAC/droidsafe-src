@@ -6,13 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
-
-
-
-
-
 public class TimeUtils {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.424 -0500", hash_original_method = "3FC6E7A781E4B58A630369339A3D0BEC", hash_generated_method = "EECD5E318F2EA565268D88054CAB5761")
     
 static private int accumField(int amt, int suffix, boolean always, int zeropad) {
@@ -28,6 +25,8 @@ static private int accumField(int amt, int suffix, boolean always, int zeropad) 
         return 0;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.427 -0500", hash_original_method = "1BBF330F6A4567EA2AE19E3B3560AD54", hash_generated_method = "07A4496E10EC28E39A60E68D4CA6C3CF")
     
 static private int printField(char[] formatStr, int amt, char suffix, int pos,
@@ -54,6 +53,8 @@ static private int printField(char[] formatStr, int amt, char suffix, int pos,
         return pos;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.431 -0500", hash_original_method = "826438819CB717CC8A3FB2457A65894D", hash_generated_method = "EF538B9BD0004222912AD3282380374C")
     
 private static int formatDurationLocked(long duration, int fieldLen) {
@@ -168,7 +169,6 @@ public static void formatDuration(long time, long now, PrintWriter pw) {
 
     public static final int HUNDRED_DAY_FIELD_LEN = 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.411 -0500", hash_original_field = "CCF3D7934C5CF0E828DC919DE4C03FBB", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
-
     
     private static final int SECONDS_PER_MINUTE = 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.414 -0500", hash_original_field = "B74C4AAABF949CC9638421C3FF2ED2F9", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
@@ -178,7 +178,6 @@ public static void formatDuration(long time, long now, PrintWriter pw) {
 
     private static final int SECONDS_PER_DAY = 24 * 60 * 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.419 -0500", hash_original_field = "57122C12B14FAFC205DF7ECFC3D203DA", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
-
 
     private static final Object sFormatSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.421 -0500", hash_original_field = "2C9FFE246E6936B3E5EBBCA18E32E183", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")

@@ -182,6 +182,8 @@ public void stopSync() {
 protected void onSyncInit() {
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.858 -0500", hash_original_method = "E5516067DC542691365D2969872CE83A", hash_generated_method = "36843EA5B418122959FB60BB87E78367")
     
 abstract void syncFromRamToFlash();

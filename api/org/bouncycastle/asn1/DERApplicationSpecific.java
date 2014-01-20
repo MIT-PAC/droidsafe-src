@@ -9,11 +9,6 @@ import java.io.IOException;
 
 import org.bouncycastle.util.Arrays;
 
-
-
-
-
-
 public class DERApplicationSpecific extends ASN1Object {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.614 -0500", hash_original_field = "9E3BCD745F0AFBDCD90F57B999378CC1", hash_generated_field = "8267FCF370BB52E90BE4145558A847E9")
 
@@ -25,6 +20,8 @@ public class DERApplicationSpecific extends ASN1Object {
 
     private  byte[]    octets;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.621 -0500", hash_original_method = "F358753DF763D75E1752044681BF3AC8", hash_generated_method = "F358753DF763D75E1752044681BF3AC8")
     
 DERApplicationSpecific(
@@ -104,6 +101,8 @@ public DERApplicationSpecific(int tagNo, ASN1EncodableVector vec)
         this.octets = bOut.toByteArray();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.634 -0500", hash_original_method = "61F856A6747C3DB85AB853DB99D560A7", hash_generated_method = "054CBFF1DF59C20151D384DBECEEED8A")
     
 private int getLengthOfLength(byte[] data)
@@ -184,6 +183,8 @@ public DERObject getObject(int derTagNo)
     /* (non-Javadoc)
      * @see org.bouncycastle.asn1.DERObject#encode(org.bouncycastle.asn1.DEROutputStream)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.647 -0500", hash_original_method = "E93A5605AEDD2C30A620D419DCC3B82A", hash_generated_method = "E93A5605AEDD2C30A620D419DCC3B82A")
     
 void encode(DEROutputStream out) throws IOException
@@ -197,6 +198,8 @@ void encode(DEROutputStream out) throws IOException
         out.writeEncoded(classBits, tag, octets);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.649 -0500", hash_original_method = "2058BDE8789C9C651125E90A6C9106EF", hash_generated_method = "2058BDE8789C9C651125E90A6C9106EF")
     
 boolean asn1Equals(
@@ -221,6 +224,8 @@ public int hashCode()
         return (isConstructed ? 1 : 0) ^ tag ^ Arrays.hashCode(octets);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.655 -0500", hash_original_method = "DBC165FE2DD4A16BCAF214B19B914EC2", hash_generated_method = "0FF39C6D913D5FC54C7BC4488516DF51")
     
 private byte[] replaceTagNumber(int newTag, byte[] input)
@@ -262,7 +267,6 @@ private byte[] replaceTagNumber(int newTag, byte[] input)
 
         return tmp;
     }
-
     
 }
 

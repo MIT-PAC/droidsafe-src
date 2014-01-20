@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadWriteLongArrayBuffer extends LongArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.262 -0500", hash_original_method = "4F47DB2B8CB8473CB09876AAA01E381B", hash_generated_method = "4E88693328066D168A03E765A3848554")
     
 static ReadWriteLongArrayBuffer copy(LongArrayBuffer other, int markOfOther) {
@@ -21,18 +20,24 @@ static ReadWriteLongArrayBuffer copy(LongArrayBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.265 -0500", hash_original_method = "834F92961971218638A9D7B65E865A6A", hash_generated_method = "834F92961971218638A9D7B65E865A6A")
     
 ReadWriteLongArrayBuffer(long[] array) {
         super(array);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.268 -0500", hash_original_method = "B372464DEEDD255C23B3D6D2F6AC357B", hash_generated_method = "B372464DEEDD255C23B3D6D2F6AC357B")
     
 ReadWriteLongArrayBuffer(int capacity) {
         super(capacity);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.271 -0500", hash_original_method = "D4CFA6531161D5EBB7847D86519768A8", hash_generated_method = "D4CFA6531161D5EBB7847D86519768A8")
     
 ReadWriteLongArrayBuffer(int capacity, long[] backingArray, int arrayOffset) {
@@ -130,7 +135,6 @@ ReadWriteLongArrayBuffer(int capacity, long[] backingArray, int arrayOffset) {
     public LongBuffer slice() {
         return new ReadWriteLongArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

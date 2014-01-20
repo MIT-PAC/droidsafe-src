@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadWriteFloatArrayBuffer extends FloatArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.035 -0500", hash_original_method = "69207B0DA27229328F09A2CAFC37638C", hash_generated_method = "D405A554BFA398C48477200EDC7E4B66")
     
 static ReadWriteFloatArrayBuffer copy(FloatArrayBuffer other, int markOfOther) {
@@ -21,18 +20,24 @@ static ReadWriteFloatArrayBuffer copy(FloatArrayBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.038 -0500", hash_original_method = "5A8DCC269DCB08038721B4A37F7722F4", hash_generated_method = "5A8DCC269DCB08038721B4A37F7722F4")
     
 ReadWriteFloatArrayBuffer(float[] array) {
         super(array);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.041 -0500", hash_original_method = "495FFBE47D4B4B6385F4C7F54B916311", hash_generated_method = "495FFBE47D4B4B6385F4C7F54B916311")
     
 ReadWriteFloatArrayBuffer(int capacity) {
         super(capacity);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.043 -0500", hash_original_method = "2552E9D1905F4AE718E09F5BFBACBECB", hash_generated_method = "2552E9D1905F4AE718E09F5BFBACBECB")
     
 ReadWriteFloatArrayBuffer(int capacity, float[] backingArray, int arrayOffset) {
@@ -130,7 +135,6 @@ ReadWriteFloatArrayBuffer(int capacity, float[] backingArray, int arrayOffset) {
     public FloatBuffer slice() {
         return new ReadWriteFloatArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

@@ -90,6 +90,8 @@ public final class LatencyTimer
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:50.113 -0500", hash_original_method = "CB4383AB457909CC128F04335BC91797", hash_generated_method = "C22542AC14FBF999F6A0D1F1C414B2FE")
     private long[] getArray(String tag) {
         long[] data = store.get(tag);

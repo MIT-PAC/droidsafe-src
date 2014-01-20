@@ -217,6 +217,8 @@ public int hashCode()
         return hashCode;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.377 -0500", hash_original_method = "736827C8F8F39EC68A9619F02A5000FC", hash_generated_method = "736827C8F8F39EC68A9619F02A5000FC")
     
 boolean asn1Equals(
@@ -256,6 +258,8 @@ boolean asn1Equals(
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.380 -0500", hash_original_method = "A69C6C665FC9D3DE250A324544079C85", hash_generated_method = "71F8019F43835013203D7AD69C0E7F8C")
     
 private DEREncodable getNext(Enumeration e)
@@ -279,6 +283,8 @@ protected void addObject(
         seq.addElement(obj);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.385 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
     
 abstract void encode(DEROutputStream out)

@@ -47,6 +47,8 @@ public ChunkedOutputStream(OutputStream socketOut, int maxChunkLength) {
      * length (data+headers) is {@code dataPlusHeaderLength}. This is presumably
      * useful to match sizes with wire-protocol packets.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.843 -0500", hash_original_method = "4E0221343957C12C5A2A1CAE66CCC091", hash_generated_method = "45028AE40A28DE0C1B50EC72E20664DD")
     
 private int dataLength(int dataPlusHeaderLength) {
@@ -94,6 +96,8 @@ private int dataLength(int dataPlusHeaderLength) {
      * Equivalent to, but cheaper than writing Integer.toHexString().getBytes()
      * followed by CRLF.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.849 -0500", hash_original_method = "3C05A9E8858284557710D8ECCDD07B35", hash_generated_method = "EEEC1B7912F3169DDD870925BA9EB596")
     
 private void writeHex(int i) throws IOException {
@@ -125,6 +129,8 @@ private void writeHex(int i) throws IOException {
         socketOut.write(FINAL_CHUNK);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.856 -0500", hash_original_method = "8C406F82035B71C42CDC38D557C582DC", hash_generated_method = "1684E4B6E19BA9DF1626EA0CBBFB01E5")
     
 private void writeBufferedChunkToSocket() throws IOException {

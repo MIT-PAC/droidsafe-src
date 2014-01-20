@@ -13,26 +13,40 @@ import droidsafe.helpers.DSUtils;
 
 public final class VelocityTracker implements Poolable<VelocityTracker> {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeInitialize() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDispose(int ptr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClear(int ptr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeAddMovement(int ptr, MotionEvent event) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeComputeCurrentVelocity(int ptr, int units, float maxVelocity) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetXVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetYVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
@@ -92,6 +106,8 @@ public void onReleased(VelocityTracker element) {
 
     private boolean mIsPooled;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.345 -0500", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "510D34D719DAF5921219F36E622C806A")
     
 private VelocityTracker() {
@@ -318,6 +334,8 @@ public float estimateY(float time) {
             return estimate(time, yCoeff);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.397 -0500", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "C99359A31DBA1DF409DD1CC561819C32")
         
 private float estimate(float time, float[] c) {

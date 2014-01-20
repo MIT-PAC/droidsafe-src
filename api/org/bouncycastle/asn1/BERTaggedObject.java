@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
-
-
 public class BERTaggedObject extends DERTaggedObject {
     /**
      * @param tagNo the tag number for this object.
@@ -52,6 +48,8 @@ public BERTaggedObject(
         super(false, tagNo, new BERSequence());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.047 -0500", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "7D1415DBFEACA82B062C25744BEBEEC4")
     
 void encode(
@@ -113,7 +111,6 @@ void encode(
             super.encode(out);
         }
     }
-
     
 }
 

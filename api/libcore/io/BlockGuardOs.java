@@ -22,6 +22,8 @@ import dalvik.system.SocketTagger;
 
 public class BlockGuardOs extends ForwardingOs {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.004 -0500", hash_original_method = "FD2393C99E08832136F507440F02147C", hash_generated_method = "1AB8A2AC20313109B0C2BB709BF2CB1D")
     
 private static boolean isLingerSocket(FileDescriptor fd) throws ErrnoException {
@@ -34,6 +36,8 @@ public BlockGuardOs(Os os) {
         super(os);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.988 -0500", hash_original_method = "C76A4564374F8B1BE91B3642FF0C847C", hash_generated_method = "1C00AB71C54DFF9D9D155ACAF287C9A0")
     
 private FileDescriptor tagSocket(FileDescriptor fd) throws ErrnoException {
@@ -45,6 +49,8 @@ private FileDescriptor tagSocket(FileDescriptor fd) throws ErrnoException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.995 -0500", hash_original_method = "94528424D623701A416A9704EA17EE51", hash_generated_method = "447A2ACDEA191C5139194065E4053984")
     
 private void untagSocket(FileDescriptor fd) throws ErrnoException {

@@ -8,11 +8,8 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.SystemClock;
 
-
-
 class ConnectionThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.111 -0500", hash_original_field = "F615C13B274003F82E1E923A46F9CFF8", hash_generated_field = "CDF9EFF3FF58D3FBB7389BB4E67088C6")
-
 
     static final int WAIT_TIMEOUT = 5000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.113 -0500", hash_original_field = "A4C5B983B8A34220392241002BA0396C", hash_generated_field = "6434CE10B92F984DC3B223CA51302E19")
@@ -25,7 +22,6 @@ class ConnectionThread extends Thread {
 
     long mTotalThreadTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.119 -0500", hash_original_field = "A503FEFEF44D8F2333FE77DF0C4ADA1F", hash_generated_field = "665647B80D6EB31435625685BA1ECE83")
-
 
     private boolean mWaiting;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.121 -0500", hash_original_field = "62B498EC2CE9351B23513BC086ECF42D", hash_generated_field = "1680C4AF884999C7E334262B1B6BB81C")
@@ -41,7 +37,6 @@ class ConnectionThread extends Thread {
 
     private RequestFeeder mRequestFeeder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.129 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
-
 
     private int mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.133 -0500", hash_original_field = "D468AD0EA1184CE89FA8A45254E2CDD6", hash_generated_field = "D468AD0EA1184CE89FA8A45254E2CDD6")
@@ -62,6 +57,8 @@ ConnectionThread(Context context,
         mRequestFeeder = requestFeeder;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.137 -0500", hash_original_method = "A5666AE0946DEF68E8FF606C0FDBCF6D", hash_generated_method = "A5666AE0946DEF68E8FF606C0FDBCF6D")
     
 void requestStop() {

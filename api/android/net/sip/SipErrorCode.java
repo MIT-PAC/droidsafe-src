@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SipErrorCode {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.960 -0500", hash_original_method = "4F9BFA28170DB7CB0E6F645850B92FEE", hash_generated_method = "58EB78A50ECE703708D7F8B99BE4EC5E")
@@ -85,6 +81,8 @@ public static String toString(int errorCode) {
 
     public static final int SERVER_UNREACHABLE = -12;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.963 -0500", hash_original_method = "298DBB0089D5BDD0947985D624D66502", hash_generated_method = "41D8C4AB970CAF35B49ADA29C4DBFC2E")
     
 private SipErrorCode() {

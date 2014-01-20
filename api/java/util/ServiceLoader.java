@@ -56,6 +56,8 @@ public final class ServiceLoader<S> implements Iterable<S> {
 
     private  Set<URL> services;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.398 -0500", hash_original_method = "94B9216B7758F0B227BA0C421F85C6AF", hash_generated_method = "EC21449AED08B55C5A66D03C5CACDA3D")
     
 private ServiceLoader(Class<S> service, ClassLoader classLoader) {
@@ -96,6 +98,8 @@ public Iterator<S> iterator() {
         return new ServiceIterator(this);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.407 -0500", hash_original_method = "7DCE51783862B815D2BC789E6049F748", hash_generated_method = "636795A3BEE52517DBA37BF07028F4A4")
     
 private void internalLoad() {
@@ -164,6 +168,8 @@ public boolean hasNext() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.441 -0500", hash_original_method = "D6C7FE21AC961E0461EEEE7A6B5E3796", hash_generated_method = "51319C8714A29158C166730309F225DA")
         
 private void readClass() {
@@ -204,6 +210,8 @@ public void remove() {
             throw new UnsupportedOperationException();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.446 -0500", hash_original_method = "0BD3CD94707D253C58DB4E9194FF8BE6", hash_generated_method = "5884C35807929EC9767E1C51DDEC5DA4")
         
 private void checkValidJavaClassName(String className) {

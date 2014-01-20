@@ -270,6 +270,8 @@ public CompatibilityInfo(ApplicationInfo appInfo, int screenLayout, int sw,
         mCompatibilityFlags = compatFlags;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.132 -0500", hash_original_method = "A82321676D9C84B0538DAFB6CC61C0CB", hash_generated_method = "99F15940337421297145D82B025205D1")
     
 private CompatibilityInfo(int compFlags,
@@ -280,6 +282,8 @@ private CompatibilityInfo(int compFlags,
         applicationInvertedScale = invertedScale;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.135 -0500", hash_original_method = "3DDB26515D25880873E2C6C7F1DDA6F5", hash_generated_method = "2817656ABBA0B85869FD1B589629376D")
     
 private CompatibilityInfo() {
@@ -288,6 +292,8 @@ private CompatibilityInfo() {
                 1.0f);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.224 -0500", hash_original_method = "B251F1B77EF355BF6FA118A826DF4F4A", hash_generated_method = "1C24C499A40E0EAF4FCB6630E02B4573")
     
 private CompatibilityInfo(Parcel source) {

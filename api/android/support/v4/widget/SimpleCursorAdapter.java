@@ -11,10 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-
-
-
 public class SimpleCursorAdapter extends ResourceCursorAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.618 -0500", hash_original_field = "AFCDB43F15D9604C60DF81DB309311CD", hash_generated_field = "6AD876BF1B2A93FF841DC0A6CDF82D53")
 
@@ -24,7 +20,6 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     protected int[] mTo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.622 -0500", hash_original_field = "14E762043CB48AC077260FF08B82CF80", hash_generated_field = "76FAAB307CBAB2502A74F2FD4809A2B4")
 
-
     private int mStringConversionColumn = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.624 -0500", hash_original_field = "F8263407921113CB7A610A2339B65BA8", hash_generated_field = "9EC5CDC29EBE32FECD7EDABDB5C61341")
 
@@ -33,7 +28,6 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
 
     private ViewBinder mViewBinder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.628 -0500", hash_original_field = "393D022CD0A88B84A417682AA08505E2", hash_generated_field = "393D022CD0A88B84A417682AA08505E2")
-
 
     String[] mOriginalFrom;
 
@@ -317,6 +311,8 @@ public void setCursorToStringConverter(CursorToStringConverter cursorToStringCon
      * 
      * @param from the Strings naming the columns of interest
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.659 -0500", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "F6BB161E6EF8993E01BF9BFC3DEBA729")
     
 private void findColumns(String[] from) {
@@ -363,7 +359,6 @@ public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
         super.changeCursor(c);        
         findColumns(mOriginalFrom);
     }
-
     
     public static interface ViewBinder {
         

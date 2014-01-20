@@ -274,6 +274,8 @@ public TimePicker(Context context, AttributeSet attrs, int defStyle) {
      *
      * @param locale The current locale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.091 -0500", hash_original_method = "980D3FE8BB317B8359A795201150D40B", hash_generated_method = "5D5069291485E60BE304298AD119403E")
     
 private void setCurrentLocale(Locale locale) {
@@ -459,6 +461,8 @@ public void setCurrentMinute(Integer currentMinute) {
         event.getText().add(selectedDateUtterance);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.149 -0500", hash_original_method = "D50D8E33466194F955FDB4E6708A42AD", hash_generated_method = "26658E222AA0825A7BE05F15AA023F52")
     
 private void updateHourControl() {
@@ -473,6 +477,8 @@ private void updateHourControl() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.151 -0500", hash_original_method = "C352743C674140A19902F99B280928CF", hash_generated_method = "6686FD7D41DAE1EA3B9C0805F97EE002")
     
 private void updateAmPmControl() {
@@ -515,6 +521,8 @@ private void updateAmPmControl() {
 
         private  int mMinute;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.099 -0500", hash_original_method = "F395FF1FB7466B722BA2E9FD639B6FEC", hash_generated_method = "FD35EC9140699FD0CF83E49224C7091E")
         
 private SavedState(Parcelable superState, int hour, int minute) {
@@ -523,6 +531,8 @@ private SavedState(Parcelable superState, int hour, int minute) {
             mMinute = minute;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.102 -0500", hash_original_method = "E55ECE0F217E584D660F2F1E2BD9AF6D", hash_generated_method = "4886905855BC68C8B409DFE28B1C77A5")
         
 private SavedState(Parcel in) {
@@ -561,6 +571,8 @@ public int getMinute() {
         void onTimeChanged(TimePicker view, int hourOfDay, int minute);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.153 -0500", hash_original_method = "8A252D715D292AC897EF9505006002CC", hash_generated_method = "74FECF8DCE77638E066573B9D52FC7C6")
     
 private void onTimeChanged() {
@@ -570,6 +582,8 @@ private void onTimeChanged() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.156 -0500", hash_original_method = "4C27F718F6DC2C1B1670607286108308", hash_generated_method = "74BE37ADA7BEBCF9A6485907A1FE231E")
     
 private void setContentDescriptions() {
@@ -592,6 +606,8 @@ private void setContentDescriptions() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.158 -0500", hash_original_method = "EA3F98147485CBE1A2219199F92431C8", hash_generated_method = "09E6F398A78323F256D8702185427578")
     
 private void updateInputState() {

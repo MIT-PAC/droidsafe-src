@@ -25,6 +25,8 @@ public class Throwable implements java.io.Serializable {
      *
      * @return the number of duplicate stack frames.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.610 -0500", hash_original_method = "694D318D728E7460C6E6317B80FB1826", hash_generated_method = "89B3661221734219BB93880F76201C32")
     
 private static int countDuplicates(StackTraceElement[] currentStack,
@@ -42,10 +44,14 @@ private static int countDuplicates(StackTraceElement[] currentStack,
         return duplicates;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Object nativeFillInStackTrace() {
     	return new Object();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static StackTraceElement[] nativeGetStackTrace(Object stackState) {
     	StackTraceElement[] ret = new StackTraceElement[0];
     	ret[0].addTaint(stackState.taint);
@@ -73,6 +79,8 @@ private static int countDuplicates(StackTraceElement[] currentStack,
     /**
      * Constructs a new {@code Throwable} that includes the current stack trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.581 -0500", hash_original_method = "8CAF8D74185B0F181EC07276079C4966", hash_generated_method = "3D2DB5F2D6311AEE1851EB3EE05A646E")
     
 public Throwable() {
@@ -104,6 +112,8 @@ public Throwable(String detailMessage) {
      * @param throwable
      *            the cause of this {@code Throwable}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.587 -0500", hash_original_method = "60881CAC7A5ED0481A49F5467094E82C", hash_generated_method = "924BC4E6059AF449701AC9CD7A5E3D6B")
     
 public Throwable(String detailMessage, Throwable throwable) {
@@ -119,6 +129,8 @@ public Throwable(String detailMessage, Throwable throwable) {
      * @param throwable
      *            the cause of this {@code Throwable}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.590 -0500", hash_original_method = "1CFFD54DEC9660238586E7A30681A82F", hash_generated_method = "36DAF41407B4862DBCBB00D51B01FFF4")
     
 public Throwable(Throwable throwable) {
@@ -136,6 +148,8 @@ public Throwable(Throwable throwable) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.593 -0500", hash_original_method = "E90AFC6F1FC322D1AB2CAA72835C3192", hash_generated_method = "0A9493132C6DF2DA1E6BF37222232B14")
     
 protected Throwable(String detailMessage, Throwable throwable, boolean enableSuppression) {
@@ -241,6 +255,8 @@ public StackTraceElement[] getStackTrace() {
      *             if any element in {@code trace} is {@code null}.
      * @see #printStackTrace()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.604 -0500", hash_original_method = "5E6079B0EA3605E8298E1D15C30F6678", hash_generated_method = "4D79DCEB4761ABFCF09895C59AE81452")
     
@@ -273,6 +289,8 @@ public void printStackTrace() {
      *
      * @return an array of StackTraceElement representing the stack
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.612 -0500", hash_original_method = "5A8373E0D01D66F3E38F3485979BD426", hash_generated_method = "96B325E55D8EF6BA5DCC20AB99474C09")
     
 private StackTraceElement[] getInternalStackTrace() {
@@ -333,6 +351,8 @@ public void printStackTrace(PrintWriter err) {
      * @param parentStack the parent stack trace to suppress duplicates from, or
      *     null if this stack trace has no parent.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.620 -0500", hash_original_method = "9161BE82060982591CF587E371FF5EC1", hash_generated_method = "E41462E11C26A6D1B3DA6F23FE79D53C")
     
 private void printStackTrace(Appendable err, String indent, StackTraceElement[] parentStack)
@@ -443,6 +463,8 @@ public Throwable getCause() {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.635 -0500", hash_original_method = "FE7E0A038916A44CD2EDEB98621E4496", hash_generated_method = "3F953B6DCC5D014D9BBB93AAF01028E7")
     
 public final void addSuppressed(Throwable throwable) {
@@ -463,6 +485,8 @@ public final void addSuppressed(Throwable throwable) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.637 -0500", hash_original_method = "8B184B5B883F2271AE4A6DCD97FDDD74", hash_generated_method = "3FEE70597C3C89C502CEED679EDD4D15")
     
@@ -472,6 +496,8 @@ public final Throwable[] getSuppressed() {
                 : EmptyArray.THROWABLE;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.640 -0500", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "EF567936BD808503CF3D5DFEB1398DFA")
     
 private void writeObject(ObjectOutputStream out) throws IOException {
@@ -480,6 +506,8 @@ private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.642 -0500", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "21D81ED8A3D00D34802B128905499369")
     
 private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {

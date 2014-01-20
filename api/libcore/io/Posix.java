@@ -17,6 +17,8 @@ import libcore.util.MutableLong;
 import droidsafe.helpers.DSUtils;
 
 public final class Posix implements Os {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.968 -0500", hash_original_method = "4046CDE00BB837810E8AFBFF17A6CE8F", hash_generated_method = "4046CDE00BB837810E8AFBFF17A6CE8F")
     
 Posix() { }
@@ -453,6 +455,8 @@ public int pread(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount,
         // This indirection isn't strictly necessary, but ensures that our public interface is type safe.
         return preadBytes(fd, bytes, byteOffset, byteCount, offset);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.190 -0500", hash_original_method = "5819B25FAD4FEDA7F174A32C15365436", hash_generated_method = "792EB837617D57195AF77D75CAA18C72")
     
     private int preadBytes(FileDescriptor fd, Object buffer, int bufferOffset, int byteCount, long offset) throws ErrnoException{
@@ -480,6 +484,8 @@ public int pwrite(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount
         // This indirection isn't strictly necessary, but ensures that our public interface is type safe.
         return pwriteBytes(fd, bytes, byteOffset, byteCount, offset);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.198 -0500", hash_original_method = "90B6FC1B27EC82D887BE52674747E195", hash_generated_method = "8A70C40DCEA74BBF51A6362ADD57DA87")
     
     private int pwriteBytes(FileDescriptor fd, Object buffer, int bufferOffset, int byteCount, long offset) throws ErrnoException{
@@ -507,6 +513,8 @@ public int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) 
         // This indirection isn't strictly necessary, but ensures that our public interface is type safe.
         return readBytes(fd, bytes, byteOffset, byteCount);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.207 -0500", hash_original_method = "2C7E892AABA7BE06DDD2C6AC692575BC", hash_generated_method = "264AC2ABFF816724D4F68E54ECECDB3E")
     
     private int readBytes(FileDescriptor fd, Object buffer, int offset, int byteCount) throws ErrnoException{
@@ -544,6 +552,8 @@ public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCou
         // This indirection isn't strictly necessary, but ensures that our public interface is type safe.
         return recvfromBytes(fd, bytes, byteOffset, byteCount, flags, srcAddress);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.220 -0500", hash_original_method = "4ADC9C5F635814CDC8DA4D81B23D96F7", hash_generated_method = "B3C3A3FCF3B2B6F4EEC2B108413C8184")
     
     private int recvfromBytes(FileDescriptor fd, Object buffer, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException{
@@ -600,6 +610,8 @@ public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount
         // This indirection isn't strictly necessary, but ensures that our public interface is type safe.
         return sendtoBytes(fd, bytes, byteOffset, byteCount, flags, inetAddress, port);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.240 -0500", hash_original_method = "F841D540A211C98E750DE668FD283BE2", hash_generated_method = "CCCCB7AA74570A1CFFFDFB5D69726197")
     
     private int sendtoBytes(FileDescriptor fd, Object buffer, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException{
@@ -801,6 +813,8 @@ public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount)
         // This indirection isn't strictly necessary, but ensures that our public interface is type safe.
         return writeBytes(fd, bytes, byteOffset, byteCount);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.325 -0500", hash_original_method = "E853B1F146558B1458DE2FB65CF651EB", hash_generated_method = "702616E7F34093F01DAAD7B9747C047A")
     
     private int writeBytes(FileDescriptor fd, Object buffer, int offset, int byteCount) throws ErrnoException{

@@ -5,14 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class Conversion {
 
-
     /** @see BigInteger#toString(int) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.099 -0500", hash_original_method = "772044A697B0A3955AAC66B382242312", hash_generated_method = "8807D038D38E6169705B33AF641BFDD7")
     
 static String bigInteger2String(BigInteger val, int radix) {
@@ -99,6 +96,8 @@ static String bigInteger2String(BigInteger val, int radix) {
      * @see BigInteger#toString()
      * @see BigDecimal#toString()
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.104 -0500", hash_original_method = "ECCDDE8CF78405B2C7A885C17695063A", hash_generated_method = "4661E4799A0A89D7D8BA207A96FFB159")
     
 static String toDecimalScaledString(BigInteger val, int scale) {
@@ -261,6 +260,8 @@ static String toDecimalScaledString(BigInteger val, int scale) {
     }
 
     /* can process only 32-bit numbers */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.108 -0500", hash_original_method = "201E7AEE63EBD628AB78F5CEAD89D42F", hash_generated_method = "9419F6C5515D327CC57BA5C463908593")
     
 static String toDecimalScaledString(long value, int scale) {
@@ -360,6 +361,8 @@ static String toDecimalScaledString(long value, int scale) {
         return result1.toString();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.111 -0500", hash_original_method = "A8B9614249F094BD6D2B27571E6B35A9", hash_generated_method = "22949F2418B12D16283978E94EA6A0CC")
     
 static long divideLongByBillion(long a) {
@@ -386,6 +389,8 @@ static long divideLongByBillion(long a) {
     }
 
     /** @see BigInteger#doubleValue() */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.115 -0500", hash_original_method = "FB6C73E4A3BD3BD2C5D2B6433E6DFD5C", hash_generated_method = "8C3F32ECEDDBA392345AB721DC818532")
     
 static double bigInteger2Double(BigInteger val) {
@@ -438,7 +443,6 @@ static double bigInteger2Double(BigInteger val) {
             6, 6, 6, 6, 6, 6, 6, 5 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.095 -0500", hash_original_field = "CD7097E492F5DF815D1022CD39139733", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
 
-
     static final int[] bigRadices = { -2147483648, 1162261467,
             1073741824, 1220703125, 362797056, 1977326743, 1073741824,
             387420489, 1000000000, 214358881, 429981696, 815730721, 1475789056,
@@ -448,6 +452,8 @@ static double bigInteger2Double(BigInteger val) {
             1291467969, 1544804416, 1838265625, 60466176 };
 
     /** Just to denote that this class can't be instantiated */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.089 -0500", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "94DED0337828532B8CFA714A972D6810")
     
 private Conversion() {}

@@ -136,6 +136,8 @@ public final LocalActivityManager getLocalActivityManager() {
         return mLocalActivityManager;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.849 -0500", hash_original_method = "EF15653BE893F37F81828092C1398373", hash_generated_method = "33125CF7FEA618B6A92D9D0776A7A0F1")
     
 @Override

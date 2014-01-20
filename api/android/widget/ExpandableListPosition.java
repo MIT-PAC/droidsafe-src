@@ -8,18 +8,24 @@ import java.util.ArrayList;
 
 class ExpandableListPosition {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.519 -0500", hash_original_method = "F62027CF607D9C773A832245726377F9", hash_generated_method = "0EDAAA239E56E3025A3A7C8708AE6740")
     
 static ExpandableListPosition obtainGroupPosition(int groupPosition) {
         return obtain(GROUP, groupPosition, 0, 0);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.521 -0500", hash_original_method = "3BC06DD7BAAC54221802467D7ABA70B4", hash_generated_method = "7D00132CD7D625ACD9095D531AE25628")
     
 static ExpandableListPosition obtainChildPosition(int groupPosition, int childPosition) {
         return obtain(CHILD, groupPosition, childPosition, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.523 -0500", hash_original_method = "5FBB5616540ED7147D96F5EA87CDD381", hash_generated_method = "16EFAE12F0502E7E4169CA2300434A13")
     
 static ExpandableListPosition obtainPosition(long packedPosition) {
@@ -39,6 +45,8 @@ static ExpandableListPosition obtainPosition(long packedPosition) {
         return elp;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.525 -0500", hash_original_method = "349EA56CA9F69D1CACC3FF6BC3EC031E", hash_generated_method = "BAB573D7135C0F6404B48E82DD2925CF")
     
 static ExpandableListPosition obtain(int type, int groupPos, int childPos, int flatListPos) {
@@ -50,6 +58,8 @@ static ExpandableListPosition obtain(int type, int groupPos, int childPos, int f
         return elp;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.528 -0500", hash_original_method = "3CE001A01E3340578213485CE2CE282A", hash_generated_method = "E96B19956B454CF64E593FF07678E85D")
     
 private static ExpandableListPosition getRecycledOrCreate() {
@@ -90,11 +100,15 @@ private static ExpandableListPosition getRecycledOrCreate() {
 
     public int type;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.514 -0500", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "651159CE316F03AD89288A0F5D8A9D64")
     
 private ExpandableListPosition() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.512 -0500", hash_original_method = "6E7C899DC67219985BD699CC84AD95E6", hash_generated_method = "BEC0D5BA67FE24EBC17F3819B1BC262B")
     
 private void resetState() {
@@ -104,6 +118,8 @@ private void resetState() {
         type = 0;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.517 -0500", hash_original_method = "C8676DC8E5CB906E204449634591A777", hash_generated_method = "C8676DC8E5CB906E204449634591A777")
     

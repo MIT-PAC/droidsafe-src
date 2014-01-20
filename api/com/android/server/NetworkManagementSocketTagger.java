@@ -69,18 +69,26 @@ public static int kernelToTag(String string) {
         return (int) (Long.decode(string) >> 32);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_tagSocketFd(FileDescriptor fd, int tag, int uid) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_untagSocketFd(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setCounterSet(int uid, int counterSetNum) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_deleteTagData(int tag, int uid) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -144,6 +152,8 @@ public static int kernelToTag(String string) {
         tagSocketFd(fd, options.statsTag, options.statsUid);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:07.123 -0500", hash_original_method = "C210639DA77D00249F794C3EBD98DE8A", hash_generated_method = "71DB2DFA15FBBD8AB4660E7136F1492B")
     
 private void tagSocketFd(FileDescriptor fd, int tag, int uid) {
@@ -168,6 +178,8 @@ private void tagSocketFd(FileDescriptor fd, int tag, int uid) {
         unTagSocketFd(fd);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:07.128 -0500", hash_original_method = "5654F79E328B73E29CE69FDDA4191C15", hash_generated_method = "F22BD5C4A1110D48875F78BE41ACD95F")
     
 private void unTagSocketFd(FileDescriptor fd) {

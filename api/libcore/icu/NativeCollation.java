@@ -85,6 +85,8 @@ public final class NativeCollation {
     
     public static void setText(int address, String source) {
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.600 -0500", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "5509F5737819DB87F3C8389561825DA9")
     
 private NativeCollation() {

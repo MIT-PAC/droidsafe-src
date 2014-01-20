@@ -13,20 +13,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 
-
-
-
-
-
 public final class PipelinedMsgParser implements Runnable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.961 -0500", hash_original_method = "DAF76D5DD85CC446D92B47A110AC634C", hash_generated_method = "DE313A56D6E4C9D480B32495037BE062")
     
 private static synchronized int getNewUid() {
         return uid++;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.958 -0500", hash_original_field = "8E7F39D78C11D0D620F5769854F95AD4", hash_generated_field = "C945ED2D87187C29A8B309C59A8903B9")
-
 
     private static int uid = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.943 -0500", hash_original_field = "3A28FCAF17F65963C61393B050C3AEEC", hash_generated_field = "E951DA693006702904D44903EC071300")
@@ -158,6 +154,8 @@ public void setMessageListener(SIPMessageListener mlistener) {
      * read a line of input (I cannot use buffered reader because we may need to
      * switch encodings mid-stream!
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.980 -0500", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "C900F8ACEA0D0AB63148521651B7CD91")
     
 private String readLine(InputStream inputStream) throws IOException {

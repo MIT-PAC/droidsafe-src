@@ -13,6 +13,8 @@ public final class Byte extends Number implements Comparable<Byte> {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.436 -0500", hash_original_method = "526CB67D9082E1052DF512ACF5AFED97", hash_generated_method = "AF1DFE575C4097C8712CFD7C9136BD0A")
     
 public static int compare(byte lhs, byte rhs) {
@@ -31,6 +33,8 @@ public static int compare(byte lhs, byte rhs) {
      * @throws NumberFormatException
      *             if {@code string} cannot be parsed as a byte value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.438 -0500", hash_original_method = "FFA7DA06804046B92F2D54F8D6E8206F", hash_generated_method = "2EB97CCF14C50762CE7A9B6EFF037343")
     
 public static Byte decode(String string) throws NumberFormatException {
@@ -75,6 +79,8 @@ public static byte parseByte(String string) throws NumberFormatException {
      *             {@code radix < Character.MIN_RADIX ||
      *             radix > Character.MAX_RADIX}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.459 -0500", hash_original_method = "BF3D50DD939D834A7DF75489B00C6690", hash_generated_method = "DCFACEE3BA254C7BC8C98F4F5AB6DDB7")
     
 public static byte parseByte(String string, int radix) throws NumberFormatException {
@@ -90,6 +96,8 @@ public static byte parseByte(String string, int radix) throws NumberFormatExcept
      * Returns a two-digit hex string. That is, -1 becomes "ff" or "FF" and 2 becomes "02".
      * @hide internal use only
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.467 -0500", hash_original_method = "178909B2C58CF7188A6A8BC8023FFA15", hash_generated_method = "BA098F90A3D5AA4F49CACD160D9F0877")
     
 public static String toHexString(byte b, boolean upperCase) {
@@ -104,6 +112,8 @@ public static String toHexString(byte b, boolean upperCase) {
      *            the byte to convert to a string.
      * @return a printable representation of {@code value}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.470 -0500", hash_original_method = "A5C9B1F940A6E4E0B7C56A8CD89F3E5B", hash_generated_method = "CF35E1D7B63D21B25C3AC38B2AA64EC0")
     
 public static String toString(byte value) {
@@ -121,6 +131,8 @@ public static String toString(byte value) {
      *             if {@code string} can not be parsed as a byte value.
      * @see #parseByte(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.472 -0500", hash_original_method = "C35C42F07E6BEE21A855B7E6408FB8DD", hash_generated_method = "E186142D5A2A10E55B23D27838DD1C2D")
     
 public static Byte valueOf(String string) throws NumberFormatException {
@@ -143,6 +155,8 @@ public static Byte valueOf(String string) throws NumberFormatException {
      *             radix > Character.MAX_RADIX}.
      * @see #parseByte(String, int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.475 -0500", hash_original_method = "46925E95C7BFFD2FC27FB6165D068F93", hash_generated_method = "89D01FA737447FDF0216F6FA90FA37F9")
     
 public static Byte valueOf(String string, int radix) throws NumberFormatException {
@@ -200,6 +214,8 @@ public static Byte valueOf(byte b) {
      * @param value
      *            the primitive byte value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.425 -0500", hash_original_method = "7E64D11F2C96BA434CA992EF3846EE45", hash_generated_method = "9B3A88DBDDE6C9EDA37DA0945AF75BBA")
     
 public Byte(byte value) {
@@ -250,12 +266,16 @@ public Byte(String string) throws NumberFormatException {
      * @see java.lang.Comparable
      * @since 1.2
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.433 -0500", hash_original_method = "BB597B75ED281325D8B4388243F4CDF9", hash_generated_method = "65023D74BB9B48940908617630FCB864")
     
 public int compareTo(Byte object) {
         return compare(value, object.value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.441 -0500", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "BF89BE4469CF5E691A2C43432BBB5D3E")
     
 @Override
@@ -273,6 +293,8 @@ public int compareTo(Byte object) {
      * @return {@code true} if the specified object is equal to this
      *         {@code Byte}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.443 -0500", hash_original_method = "C5FA8B05FD4F870ED8BC1DBD5FAAA797", hash_generated_method = "BB9A7FF0B2609D96A2662AA6493D655D")
     
 @Override
@@ -281,6 +303,8 @@ public int compareTo(Byte object) {
         return (object == this) || ((object instanceof Byte) && (((Byte) object).value == value));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.446 -0500", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "0138C4AD160C9AAF1F0B41D5F85236C8")
     
 @Override
@@ -288,6 +312,8 @@ public int compareTo(Byte object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.448 -0500", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "C30218EC7C084095E716A93197D10945")
     
 @Override
@@ -295,6 +321,8 @@ public int compareTo(Byte object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.451 -0500", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "CED71A70CDF5F216D39A3AE3E558B24B")
     
 @Override
@@ -302,6 +330,8 @@ public int compareTo(Byte object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.454 -0500", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "1422248BBCC1B2BAF9351E8A3DC0A5BE")
     
 @Override
@@ -309,6 +339,8 @@ public int compareTo(Byte object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.462 -0500", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "A82042D96E725949B732B712BE4A645E")
     
 @Override
@@ -316,6 +348,8 @@ public int compareTo(Byte object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.465 -0500", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "523848B88799F041621FC5C99AD5BFED")
     
 @Override

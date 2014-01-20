@@ -43,8 +43,8 @@ public ContentValues[] newArray(int size) {
     /**
      * Creates an empty set of values using the default initial size
      */
-    @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.390 -0500", hash_original_method = "5E7EA6E1821501C5972B7C7CC639145B", hash_generated_method = "D260892D300891C4FE19BE87A93B10A6")
     
 public ContentValues() {
@@ -58,8 +58,8 @@ public ContentValues() {
      *
      * @param size the initial size of the set of values
      */
-    @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.392 -0500", hash_original_method = "8E588067C2537376173067FE549DA446", hash_generated_method = "2E6215BF8A605EB938132E1331B9ECE3")
     
 public ContentValues(int size) {
@@ -71,8 +71,8 @@ public ContentValues(int size) {
      *
      * @param from the values to copy
      */
-    @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.395 -0500", hash_original_method = "6386ACC7AEA70584EF32F8CAA1BD0C6A", hash_generated_method = "92AFC2541FA7884B51844D8D4C94ACE3")
     
 public ContentValues(ContentValues from) {
@@ -86,6 +86,8 @@ public ContentValues(ContentValues from) {
      * @param values the values to start with
      * {@hide}
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.398 -0500", hash_original_method = "79B820032F5D7F722A5DF12324BC548A", hash_generated_method = "5E252719E39637156C8BAC11C1AC30FD")
     
 private ContentValues(HashMap<String, Object> values) {
@@ -305,8 +307,8 @@ public void clear() {
      * @param key the value to check for
      * @return {@code true} if the value is present, {@code false} otherwise
      */
-    @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.434 -0500", hash_original_method = "26760966C3F3EED5AADC7592B64BFAAE", hash_generated_method = "3612599B770562FC03F7BB50A809B2D4")
     
 public boolean containsKey(String key) {

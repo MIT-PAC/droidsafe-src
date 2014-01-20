@@ -20,6 +20,8 @@ public class IllegalFormatWidthException extends IllegalFormatException {
      * @param w
      *           the width.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.246 -0500", hash_original_method = "3E51700FF2AA6FFF2196939892FEBA05", hash_generated_method = "A377C7A207FACB2198B1E0C4BA5D4AC2")
     
 public IllegalFormatWidthException(int w) {
@@ -31,6 +33,8 @@ public IllegalFormatWidthException(int w) {
      *
      * @return the width.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.248 -0500", hash_original_method = "E748E6398AAC681AB6A0D4D76FADF497", hash_generated_method = "5B32195AB029CCD2947D5B7684AE4DC5")
     
@@ -38,6 +42,8 @@ public int getWidth() {
         return w;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.251 -0500", hash_original_method = "DC0A01255F859E7DE489CAE4D4B39EB6", hash_generated_method = "51CAA030EF1AD911E3450AE2654EE45E")
     

@@ -350,6 +350,8 @@ public static boolean remapCoordinateSystem(float[] inR, int X, int Y,
         return remapCoordinateSystemImpl(inR, X, Y, outR);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.048 -0500", hash_original_method = "FD95EEF3A35F6010EF733035D8CD816B", hash_generated_method = "8BC9E027B9AAA12BA4D31AEB03638B1E")
     
 private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
@@ -519,6 +521,8 @@ public static float getAltitude(float p0, float p) {
         return 44330.0f * (1.0f - (float)Math.pow(p/p0, coef));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.061 -0500", hash_original_method = "14C63D8E207B99EF2DEBC9C5BACA5384", hash_generated_method = "891234789498953B63D3A0AEE094E837")
     
 static int getRotation() {
@@ -721,31 +725,45 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
         Q[3] = rv[2];
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClassInit() {  //Formerly a native method
 		//Noop
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int sensors_module_init() {  //Formerly a native method
 		return 0;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int sensors_module_get_next_sensor(Sensor sensor, int next) { //Formerly a native method
 		return 0;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int sensors_create_queue() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712978663 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712978663;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void sensors_destroy_queue(int queue) {
     }
     
-	static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
 		//Formerly a native method.  Generated a very simple stub.
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276;
@@ -856,6 +874,8 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
             mPool = new SensorEvent[poolSize];
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.881 -0500", hash_original_method = "7237223B63C43177AB2849F160B99FEC", hash_generated_method = "9A7CB8B1C3376E5E12F2795B6006575B")
         
 private SensorEvent createSensorEvent() {
@@ -863,6 +883,8 @@ private SensorEvent createSensorEvent() {
             return new SensorEvent(3);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.888 -0500", hash_original_method = "91BAA7B0EF8F8AB0DA2081F8E926B4FD", hash_generated_method = "CDF0E9A5B31422BAAA42CC13D50BE134")
         
@@ -885,6 +907,8 @@ SensorEvent getFromPool() {
             return t;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.890 -0500", hash_original_method = "C46016A1870C47E495A9527702944C16", hash_generated_method = "696C4F051BD51B5ECA1B3799D3AE8046")
         
 void returnToPool(SensorEvent t) {
@@ -909,6 +933,8 @@ void returnToPool(SensorEvent t) {
 
         boolean mSensorsReady;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.905 -0500", hash_original_method = "900B05FC812E5D001EF6E5D26AE8C532", hash_generated_method = "900B05FC812E5D001EF6E5D26AE8C532")
         
 SensorThread() {
@@ -921,6 +947,8 @@ SensorThread() {
         }
 
         // must be called with sListeners lock
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.912 -0500", hash_original_method = "9B9CC9DE22F3A6E67DD39AE0CF54ADF8", hash_generated_method = "9B9CC9DE22F3A6E67DD39AE0CF54ADF8")
         
 boolean startLocked() {
@@ -948,6 +976,8 @@ boolean startLocked() {
 SensorThreadRunnable() {
             }
 
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.919 -0500", hash_original_method = "8D69A6F3F762D5CCB4AA9AA134EC788D", hash_generated_method = "D751A65F76DDDCD600A043C869FE1B40")
             
 private boolean open() {
@@ -1087,18 +1117,24 @@ ListenerDelegate(SensorEventListener listener, Sensor sensor, Handler handler) {
 			mSensorEventListener = null;
 		}
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.956 -0500", hash_original_method = "02DCCE55D13DD3643E30DA559E9BDE85", hash_generated_method = "02DCCE55D13DD3643E30DA559E9BDE85")
         
 Object getListener() {
             return mSensorEventListener;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.959 -0500", hash_original_method = "B2FBA8302C1585AE96282F4E3DA295C6", hash_generated_method = "B2FBA8302C1585AE96282F4E3DA295C6")
         
 void addSensor(Sensor sensor) {
             mSensors.put(sensor.getHandle(), true);
             mSensorList.add(sensor);
         }
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.961 -0500", hash_original_method = "262A581E44AC35F2D9F50EC370F0EA9A", hash_generated_method = "262A581E44AC35F2D9F50EC370F0EA9A")
         
 int removeSensor(Sensor sensor) {
@@ -1106,17 +1142,23 @@ int removeSensor(Sensor sensor) {
             mSensorList.remove(sensor);
             return mSensors.size();
         }
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.964 -0500", hash_original_method = "5A86EBC59444E6C07690511EA8C8466D", hash_generated_method = "5A86EBC59444E6C07690511EA8C8466D")
         
 boolean hasSensor(Sensor sensor) {
             return mSensors.get(sensor.getHandle());
         }
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.967 -0500", hash_original_method = "DA37BCA933FDDA4900146E3A50CD9005", hash_generated_method = "DA37BCA933FDDA4900146E3A50CD9005")
         
 List<Sensor> getSensors() {
             return mSensorList;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.969 -0500", hash_original_method = "16733F3375BBFC31BBB88791653112DA", hash_generated_method = "16733F3375BBFC31BBB88791653112DA")
         
 void onSensorChangedLocked(Sensor sensor, float[] values, long[] timestamp, int accuracy) {
@@ -1159,12 +1201,16 @@ void onSensorChangedLocked(Sensor sensor, float[] values, long[] timestamp, int 
             mSensors = 0;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.077 -0500", hash_original_method = "4097E1683A40A6DEAB5492A2296E3879", hash_generated_method = "4097E1683A40A6DEAB5492A2296E3879")
         
 void registerSensor(int legacyType) {
             mSensors |= legacyType;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.080 -0500", hash_original_method = "737F8C4556D577A83A29D9000B85627C", hash_generated_method = "737F8C4556D577A83A29D9000B85627C")
         
 boolean unregisterSensor(int legacyType) {
@@ -1219,6 +1265,8 @@ boolean unregisterSensor(int legacyType) {
          *         0,1,2: transformed values in the old API format
          *
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.096 -0500", hash_original_method = "7A14D827894C3DC6FC1EC81B36F33A0A", hash_generated_method = "422B16C51048EE2E71C673F07F55597F")
         
 private void mapSensorDataToWindow(int sensor,
@@ -1586,6 +1634,8 @@ public void onRotationChanged(int rotation) {
 	public SensorManager() {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private int getLegacySensorType(int type) {
 		/*
         switch (type) {
@@ -1740,6 +1790,8 @@ public List<Sensor> getSensorList(int type) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.000 -0500", hash_original_method = "2BFEE9499E6BC093763ECA6BB97D348E", hash_generated_method = "0A172544D63FABEAA281C3E511794BD9")
     
 @SuppressWarnings("deprecation")
@@ -1806,6 +1858,8 @@ public List<Sensor> getSensorList(int type) {
                 listener, sensors);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.008 -0500", hash_original_method = "9C431FA18D1D7C546E542BF96DE5A08A", hash_generated_method = "9A93F874B8D01166E3042BF0CDD9B098")
     
 @SuppressWarnings("deprecation")
@@ -1918,6 +1972,8 @@ public void unregisterListener(SensorEventListener listener) {
 		return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.021 -0500", hash_original_method = "500C86ADE6AA4F4A0E12D1A653386772", hash_generated_method = "019D3C8F47177FABD670184275A3E36A")
     
 private boolean enableSensorLocked(Sensor sensor, int delay) {
@@ -1933,6 +1989,8 @@ private boolean enableSensorLocked(Sensor sensor, int delay) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.023 -0500", hash_original_method = "4F96C2E0F6181D20ADA1404B28BE0C37", hash_generated_method = "22AA7206629BAC95DE6C6CC9D8F1CB9A")
     
 private boolean disableSensorLocked(Sensor sensor) {
@@ -2050,6 +2108,8 @@ public boolean registerListener(SensorEventListener listener, Sensor sensor, int
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.030 -0500", hash_original_method = "1441CD23D4F492BD7877A59C29F56827", hash_generated_method = "75D63A57BC3A695659B04E7BB1EA9D4F")
     
 private void unregisterListener(Object listener, Sensor sensor) {
@@ -2074,6 +2134,8 @@ private void unregisterListener(Object listener, Sensor sensor) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.033 -0500", hash_original_method = "63ADCF337C7E30C1A2DEC34D1892CFB3", hash_generated_method = "F2F57CDE3878B1AC334E0670F73C4E99")
     
 private void unregisterListener(Object listener) {

@@ -199,6 +199,8 @@ public float getStepSize() {
     /**
      * @return The amount of progress that fits into a star
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.755 -0500", hash_original_method = "3A53F1CA5B2034CF32272EC34B36C37A", hash_generated_method = "BC6D485251836CBC040AABE53D339EAF")
     
 private float getProgressPerStar() {
@@ -209,6 +211,8 @@ private float getProgressPerStar() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.757 -0500", hash_original_method = "505263BDF0A0C38F11468B8B577065DB", hash_generated_method = "C5242A4E35C0EDDDEB552A620E08706A")
     
 @Override
@@ -217,6 +221,8 @@ private float getProgressPerStar() {
         return new RectShape();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.761 -0500", hash_original_method = "9369317EE923D808BCA8DA286976E63F", hash_generated_method = "7F152030CC2E68B235E3E831874926C8")
     
 @Override
@@ -239,6 +245,8 @@ private float getProgressPerStar() {
      * 
      * @param progress The primary progress level.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.763 -0500", hash_original_method = "8E49EEB31BBD9AD69349C4C139B0ADB3", hash_generated_method = "B09349C5965709603561C5E3C7C88D07")
     
 private void updateSecondaryProgress(int progress) {
@@ -265,6 +273,8 @@ private void updateSecondaryProgress(int progress) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.768 -0500", hash_original_method = "226C4EA3B37AD5190041539897D2C6DD", hash_generated_method = "AFA61F16D6F90EFDCA07FBF3EC964EFF")
     
 @Override
@@ -274,6 +284,8 @@ private void updateSecondaryProgress(int progress) {
         super.onStartTrackingTouch();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.770 -0500", hash_original_method = "6235EE5490022867BAEF4FF5BA6A4578", hash_generated_method = "0969D0898BB8EAEC031F3543B3C33FC8")
     
 @Override
@@ -285,6 +297,8 @@ private void updateSecondaryProgress(int progress) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.772 -0500", hash_original_method = "90A55B8149F7E0DE715F35412D64649C", hash_generated_method = "4E7720682C308FBE34C16F2C77CAE14F")
     
 @Override
@@ -293,6 +307,8 @@ private void updateSecondaryProgress(int progress) {
         dispatchRatingChange(true);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.774 -0500", hash_original_method = "BACFB5351B8F09A10BE81590146F8D2A", hash_generated_method = "BACFB5351B8F09A10BE81590146F8D2A")
     
 void dispatchRatingChange(boolean fromUser) {

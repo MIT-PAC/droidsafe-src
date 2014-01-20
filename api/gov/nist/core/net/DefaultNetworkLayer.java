@@ -29,6 +29,8 @@ public class DefaultNetworkLayer implements NetworkLayer {
 
     private SSLServerSocketFactory sslServerSocketFactory;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.735 -0500", hash_original_method = "253BE5EB0B43BB49D7A03BB30C32FCC9", hash_generated_method = "8EC64ABFBC6307B7394D337F972301C7")
     
 private DefaultNetworkLayer() {

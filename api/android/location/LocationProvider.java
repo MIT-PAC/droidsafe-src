@@ -79,6 +79,8 @@ public boolean meetsCriteria(Criteria criteria) {
      * Returns true if the provider requires access to a
      * data network (e.g., the Internet), false otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.759 -0500", hash_original_method = "C991F65DC5DEF0243F48DDC29B664431", hash_generated_method = "6EE0D775B20E6884DC2712A90B23195B")
     
 public abstract boolean requiresNetwork();
@@ -88,6 +90,8 @@ public abstract boolean requiresNetwork();
      * satellite-based positioning system (e.g., GPS), false
      * otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.761 -0500", hash_original_method = "366017BB8C58181868D32947274C7BC7", hash_generated_method = "F7621CAD0178AAA1D61AE710E32A211C")
     
 public abstract boolean requiresSatellite();
@@ -97,6 +101,8 @@ public abstract boolean requiresSatellite();
      * cellular network (e.g., to make use of cell tower IDs), false
      * otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.763 -0500", hash_original_method = "F6873F536EAE3AC70229B04378E6EEC8", hash_generated_method = "E8F1616BA288FA767C1A755C27079287")
     
 public abstract boolean requiresCell();
@@ -106,6 +112,8 @@ public abstract boolean requiresCell();
      * monetary charge to the user, false if use is free.  It is up to
      * each provider to give accurate information.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.765 -0500", hash_original_method = "CFBD5CD0BF0CEBDC729EBCFAF691D465", hash_generated_method = "644AEA863785DD307221F32DBA4D32B2")
     
 public abstract boolean hasMonetaryCost();
@@ -116,6 +124,8 @@ public abstract boolean hasMonetaryCost();
      * under most circumstances but may occassionally not report it
      * should return true.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.767 -0500", hash_original_method = "55DEE25283169E9A5D4800DBA4BDB841", hash_generated_method = "F797EC496563E6D155DB3B6A066DDD33")
     
 public abstract boolean supportsAltitude();
@@ -126,6 +136,8 @@ public abstract boolean supportsAltitude();
      * under most circumstances but may occassionally not report it
      * should return true.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.770 -0500", hash_original_method = "5B5F31FFA599FC91D5138C125D59C200", hash_generated_method = "A4DF7333959724A8F1BAED0345DE40C5")
     
 public abstract boolean supportsSpeed();
@@ -136,6 +148,8 @@ public abstract boolean supportsSpeed();
      * under most circumstances but may occassionally not report it
      * should return true.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.772 -0500", hash_original_method = "658D3CCD5832B63C0257E88968EB6E43", hash_generated_method = "A8D064CCA76BA74701B7E4E7219A97BF")
     
 public abstract boolean supportsBearing();
@@ -146,6 +160,8 @@ public abstract boolean supportsBearing();
      * @return the power requirement for this provider, as one of the
      * constants Criteria.POWER_REQUIREMENT_*.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.774 -0500", hash_original_method = "2F50AAAB2647BF8230ECBEB434938FE5", hash_generated_method = "34DD62495694D40DE49D2D104CB0D3B2")
     
@@ -158,6 +174,8 @@ public abstract int getPowerRequirement();
      * location is only approximate then {@link Criteria#ACCURACY_COARSE}
      * is returned.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.776 -0500", hash_original_method = "DF70590EBA658BF9F5EE889268264DFA", hash_generated_method = "CD4BE7A1C5BB4B32874B2664C730697D")
     

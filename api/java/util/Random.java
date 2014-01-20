@@ -62,6 +62,8 @@ public Random(long seed) {
      *
      * <p>Most applications will want to use one of this class' convenience methods instead.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.542 -0500", hash_original_method = "9E0494734DCD804B33C2E0A263F97885", hash_generated_method = "E5A67C6FBB96F11803063CFC8E129E2A")
     
 protected synchronized int next(int bits) {
@@ -83,6 +85,8 @@ public boolean nextBoolean() {
     /**
      * Fills {@code buf} with random bytes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.547 -0500", hash_original_method = "43464E5BE3E8DA331BE8CD0E59C0FE2A", hash_generated_method = "CB818010546B2FB965A370CDDE73FCA0")
     
 public void nextBytes(byte[] buf) {
@@ -131,6 +135,8 @@ public float nextFloat() {
      * Art of Computer Programming, Volume 2: Seminumerical Algorithms</i>,
      * section 3.4.1, subsection C, algorithm P.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.554 -0500", hash_original_method = "ABAEC318233CC46845A76D8E695280DE", hash_generated_method = "038AA887BE37FEC3B034B16CD1F54DA8")
     
 public synchronized double nextGaussian() {
@@ -192,6 +198,8 @@ public int nextInt(int n) {
     /**
      * Returns a pseudo-random uniformly distributed {@code long}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.562 -0500", hash_original_method = "A03CC01D80C9639D8965955A7EA1BA6B", hash_generated_method = "E82AC7D0F737FA6181E233560E307496")
     
 public long nextLong() {
@@ -202,6 +210,8 @@ public long nextLong() {
      * Modifies the seed using a linear congruential formula presented in <i>The
      * Art of Computer Programming, Volume 2</i>, Section 3.2.1.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.565 -0500", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "958B70DFEDEAC53E8F47EC09205A4BC7")
     

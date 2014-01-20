@@ -51,6 +51,8 @@ import com.android.internal.util.XmlUtils;
 
 public class PackageParser {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.480 -0500", hash_original_method = "72C97BC0A6F7F87BCA4FBB5B5356EA82", hash_generated_method = "F68BEDE219F72447698AE74F287EF92B")
     
 private static final boolean isPackageFilename(String name) {
@@ -267,6 +269,8 @@ public static PackageLite parsePackageLite(String packageFilePath, int flags) {
         return packageLite;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.524 -0500", hash_original_method = "374948F6F76AAA09931A96A787759CD2", hash_generated_method = "062D1F11700DE49E41477C0CBC302FF0")
     
 private static String validateName(String name, boolean requiresSeparator) {
@@ -295,6 +299,8 @@ private static String validateName(String name, boolean requiresSeparator) {
                 ? null : "must have at least one '.' separator";
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.527 -0500", hash_original_method = "6B3D563B58D4F96DE33030FBF66A336A", hash_generated_method = "1B3BF268BDA96E13F5C88CE2B6B983B8")
     
 private static String parsePackageName(XmlPullParser parser,
@@ -410,6 +416,8 @@ static public Signature stringToSignature(String str) {
         return new Signature(sig);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.548 -0500", hash_original_method = "BE6ACE39D7338BA32068799FDBB53169", hash_generated_method = "5114AB970AF376188D02B9F79EE2AB72")
     
 private static String buildClassName(String pkg, CharSequence clsSeq,
@@ -436,6 +444,8 @@ private static String buildClassName(String pkg, CharSequence clsSeq,
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.551 -0500", hash_original_method = "B7A874DF1AB738544036771E9904B7D1", hash_generated_method = "0A340A4B44ED0BAA744122050A73F05C")
     
 private static String buildCompoundName(String pkg,
@@ -466,6 +476,8 @@ private static String buildCompoundName(String pkg,
         return proc.intern();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.554 -0500", hash_original_method = "F79F0069E41E7C1875AB943D60951387", hash_generated_method = "CB8A37C87D653C1260C9B8C8377D325B")
     
 private static String buildProcessName(String pkg, String defProc,
@@ -488,6 +500,8 @@ private static String buildProcessName(String pkg, String defProc,
         return buildCompoundName(pkg, procSeq, "process", outError);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.557 -0500", hash_original_method = "32096F88962FEB57039D62B42E8373BE", hash_generated_method = "E1E60AE288F83B30A24DF59607635C7F")
     
 private static String buildTaskAffinityName(String pkg, String defProc,
@@ -501,6 +515,8 @@ private static String buildTaskAffinityName(String pkg, String defProc,
         return buildCompoundName(pkg, procSeq, "taskAffinity", outError);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.619 -0500", hash_original_method = "111FA512C44DA33ADE25A2DFFE0A4F74", hash_generated_method = "03EED201C006A36FFC98370A1D6C4245")
     
 private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
@@ -1531,6 +1547,8 @@ public void setOnlyCoreApps(boolean onlyCoreApps) {
         mOnlyCoreApps = onlyCoreApps;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.488 -0500", hash_original_method = "83F32E741E7740326FB3ACF1CABD2263", hash_generated_method = "EA7E84D1A3E04766A30C1A10508EB1C5")
     
 private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
@@ -3595,6 +3613,8 @@ private boolean parseAllMetaData(Resources res,
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.614 -0500", hash_original_method = "714C7ED1FC52C32A41D3A8C089BB2BEC", hash_generated_method = "9457877F7A7FC17587DF2BC9C919C113")
     
 private Bundle parseMetaData(Resources res,

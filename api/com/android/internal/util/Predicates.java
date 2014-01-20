@@ -28,6 +28,8 @@ public class Predicates {
         return new NotPredicate<T>(predicate);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.813 -0500", hash_original_method = "8D570740569D5E9289A65558AD01F51B", hash_generated_method = "BAFFB33D4DEC340B65D746DF76E462CE")
     
 private Predicates() {
@@ -38,6 +40,8 @@ private Predicates() {
 
         private  Iterable<? extends Predicate<? super T>> components;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.831 -0500", hash_original_method = "9C4B289345C7238C0EC3F315CFBA2A0C", hash_generated_method = "E3CFF2EEABB2A73F340AEF3FE1A9780E")
         
 private AndPredicate(Iterable<? extends Predicate<? super T>> components) {
@@ -62,6 +66,8 @@ public boolean apply(T t) {
 
         private  Iterable<? extends Predicate<? super T>> components;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.846 -0500", hash_original_method = "B6491EF17EA70E2615FEA24AC54E8597", hash_generated_method = "531D0A79E9975B9984D08CE6545E6553")
         
 private OrPredicate(Iterable<? extends Predicate<? super T>> components) {
@@ -86,6 +92,8 @@ public boolean apply(T t) {
 
         private  Predicate<? super T> predicate;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.856 -0500", hash_original_method = "1580F792FEAB20E5896374554CF174B0", hash_generated_method = "4D23B2657E1E27CAFFC4256DF7543465")
         
 private NotPredicate(Predicate<? super T> predicate) {

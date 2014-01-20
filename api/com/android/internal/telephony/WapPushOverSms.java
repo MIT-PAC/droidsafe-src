@@ -95,6 +95,8 @@ public void bindWapPushManager() {
          * rebind WapPushManager
          * This method is called when WapPushManager is disconnected unexpectedly.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.803 -0500", hash_original_method = "701141D5EA76AC5255B679005307FF1D", hash_generated_method = "3573F6A47326F70B456013249D3568B2")
         
 private void rebindWapPushManager() {

@@ -25,6 +25,8 @@ final class HttpConnectionPool {
     private final HashMap<HttpConnection.Address, List<HttpConnection>> connectionPool
             = new HashMap<HttpConnection.Address, List<HttpConnection>>();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.021 -0500", hash_original_method = "40F2B2B572ACE3BCAAEC11C8662EC74A", hash_generated_method = "4EB758AD1843ADFC34E458BF79B2665A")
     
 private HttpConnectionPool() {

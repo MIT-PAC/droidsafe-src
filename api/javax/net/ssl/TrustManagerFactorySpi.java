@@ -8,10 +8,6 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 
-
-
-
-
 public abstract class TrustManagerFactorySpi {
 
     /**
@@ -31,6 +27,8 @@ public TrustManagerFactorySpi() {
      * @throws KeyStoreException
      *             if the initialization fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.359 -0500", hash_original_method = "A36FBD4F38FC74970786C4A1820E4581", hash_generated_method = "EE7303806E4C37482E7B9A89A4914786")
     
 protected abstract void engineInit(KeyStore ks) throws KeyStoreException;
@@ -44,6 +42,8 @@ protected abstract void engineInit(KeyStore ks) throws KeyStoreException;
      * @throws InvalidAlgorithmParameterException
      *             if the initialization fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.362 -0500", hash_original_method = "E8464373E665456E480D3D33F7327997", hash_generated_method = "6C76039366DDF10BC7CEC02412F7F915")
     
 protected abstract void engineInit(ManagerFactoryParameters spec)
@@ -55,10 +55,11 @@ protected abstract void engineInit(ManagerFactoryParameters spec)
      *
      * @return the list of {@code TrustManager}s
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.364 -0500", hash_original_method = "87C9EE09C143A95EAE6F2AA8C5201D60", hash_generated_method = "D66C2C8B45C4D1B239C7AF4B28248BEA")
     
 protected abstract TrustManager[] engineGetTrustManagers();
-
     
 }
 

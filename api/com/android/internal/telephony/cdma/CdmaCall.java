@@ -41,6 +41,8 @@ static State
 
     /****************************** Constructors *****************************/
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.210 -0500", hash_original_method = "D729656758C665C5D95A9ED02FF27E98", hash_generated_method = "D729656758C665C5D95A9ED02FF27E98")
     
 CdmaCall (CdmaCallTracker owner) {
@@ -103,7 +105,9 @@ public String
 
     //***** Called from CdmaConnection
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.230 -0500", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "ADEE6A90086841672D212D83F619D5B4")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.230 -0500", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "ADEE6A90086841672D212D83F619D5B4")
     
 void
     attach(Connection conn, DriverCall dc) {
@@ -124,6 +128,8 @@ void
     /**
      * Called by CdmaConnection when it has disconnected
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.235 -0500", hash_original_method = "A46A7B47E3DFA1A951D01F8316BDCB63", hash_generated_method = "491CC6FAE4970D8E92826D7160056A71")
     
 void
@@ -148,7 +154,9 @@ void
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.237 -0500", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "1EA8F68D5A466EEC41832970B917D4DC")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.237 -0500", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "1EA8F68D5A466EEC41832970B917D4DC")
     
 void
     detach(CdmaConnection conn) {
@@ -159,7 +167,9 @@ void
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.239 -0500", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "653CAD94409C4BC1F3DC33028F34238B")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.239 -0500", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "653CAD94409C4BC1F3DC33028F34238B")
     
 boolean
     update (CdmaConnection conn, DriverCall dc) {
@@ -180,7 +190,9 @@ boolean
      * @return true if there's no space in this call for additional
      * connections to be added via "conference"
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.242 -0500", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "1C46465CDA75E6DA5CCE62BB3DA600A6")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.242 -0500", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "1C46465CDA75E6DA5CCE62BB3DA600A6")
     
 boolean
     isFull() {
@@ -194,6 +206,8 @@ boolean
      * Note that at this point, the hangup request has been dispatched to the radio
      * but no response has yet been received so update() has not yet been called
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.246 -0500", hash_original_method = "A6EB616B9F71A14D95ECE60CFCB290DD", hash_generated_method = "A6EB616B9F71A14D95ECE60CFCB290DD")
     
 void
@@ -209,7 +223,9 @@ void
     /**
      * Called when it's time to clean up disconnected Connection objects
      */
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.248 -0500", hash_original_method = "C72D64DE5C06A555CE5E29E3236A56AC", hash_generated_method = "C72D64DE5C06A555CE5E29E3236A56AC")
+   @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.248 -0500", hash_original_method = "C72D64DE5C06A555CE5E29E3236A56AC", hash_generated_method = "C72D64DE5C06A555CE5E29E3236A56AC")
     
 void clearDisconnected() {
         for (int i = connections.size() - 1 ; i >= 0 ; i--) {

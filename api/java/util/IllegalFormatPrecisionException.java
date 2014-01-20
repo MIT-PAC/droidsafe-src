@@ -20,6 +20,8 @@ public class IllegalFormatPrecisionException extends IllegalFormatException {
      * @param p
      *           the precision.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.533 -0500", hash_original_method = "1F9B0D4B155F0DC19F08720A34E7C4BD", hash_generated_method = "56F2E9912160172A9EB81EFCD1BCF16C")
     
 public IllegalFormatPrecisionException(int p) {
@@ -31,6 +33,8 @@ public IllegalFormatPrecisionException(int p) {
      *
      * @return the precision.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.535 -0500", hash_original_method = "B9EA1DC143DCBA676654F6DE1FED4BDB", hash_generated_method = "DF183BBF1373017EFB15F2DD25120416")
     
@@ -38,6 +42,8 @@ public int getPrecision() {
         return p;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.537 -0500", hash_original_method = "5619344DED486463EA63A3A2966EBEEE", hash_generated_method = "76BE4486EF1E837DE116691174C5479C")
     

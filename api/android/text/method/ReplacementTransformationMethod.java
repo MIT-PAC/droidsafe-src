@@ -15,6 +15,8 @@ import android.view.View;
 
 public abstract class ReplacementTransformationMethod implements TransformationMethod {
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.683 -0400", hash_original_method = "1B7B28F98DAC94187572CC248AC52BB7", hash_generated_method = "1B7B28F98DAC94187572CC248AC52BB7")
     public ReplacementTransformationMethod ()
     {
@@ -24,6 +26,8 @@ public abstract class ReplacementTransformationMethod implements TransformationM
      * Returns the list of characters that are to be replaced by other
      * characters when displayed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.399 -0500", hash_original_method = "55EE05D5C51F3398002196D97174C16D", hash_generated_method = "2D5F18B916C26ECBC0D65B8AEFED9128")
     
 protected abstract char[] getOriginal();
@@ -31,6 +35,8 @@ protected abstract char[] getOriginal();
      * Returns a parallel array of replacement characters for the ones
      * that are to be replaced.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.402 -0500", hash_original_method = "3643E5A5E6264E9379DCCE07EDF81EE6", hash_generated_method = "FA11607C5568A335799F48B489079814")
     
 protected abstract char[] getReplacement();
@@ -95,6 +101,8 @@ public CharSequence getTransformation(CharSequence source, View v) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.408 -0500", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "0F8E2FAE363C8E8BE7BE8F6653F0DCB8")
     
 public void onFocusChanged(View view, CharSequence sourceText,

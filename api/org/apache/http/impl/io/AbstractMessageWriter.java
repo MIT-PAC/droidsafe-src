@@ -17,14 +17,8 @@ import org.apache.http.message.LineFormatter;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public abstract class AbstractMessageWriter implements HttpMessageWriter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.069 -0500", hash_original_field = "E995C38DC29F4C5C462B356FE2FC4784", hash_generated_field = "7546C8F84D7739D4A1BA10808E25B0AE")
-
     
     protected  SessionOutputBuffer sessionBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.071 -0500", hash_original_field = "FC03653F373BA80D3DD2EC29A605B1FD", hash_generated_field = "3CE530BC037559228F5322CB75C414E0")
@@ -49,6 +43,8 @@ public AbstractMessageWriter(final SessionOutputBuffer buffer,
             formatter : BasicLineFormatter.DEFAULT;
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.078 -0500", hash_original_method = "857D62785BA62AC1D00D243630A84326", hash_generated_method = "370DDC2BFC6829600C21197F5D5DE4A4")
     
 protected abstract void writeHeadLine(HttpMessage message)
@@ -71,7 +67,6 @@ public void write(
         this.lineBuf.clear();
         this.sessionBuffer.writeLine(this.lineBuf);
     }
-
     
 }
 

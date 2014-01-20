@@ -64,6 +64,8 @@ public ServerSocket createServerSocket() throws IOException {
      * @throws IOException
      *             if an error occurs while creating a new server socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.874 -0500", hash_original_method = "A19234449E0EC19C7E9ADEE610921D3B", hash_generated_method = "7D0FDB739D3EAEBE1857913E45DE578C")
     
 public abstract ServerSocket createServerSocket(int port) throws IOException;
@@ -78,6 +80,8 @@ public abstract ServerSocket createServerSocket(int port) throws IOException;
      * @return the created bound server socket.
      * @throws IOException if an error occurs while creating a new server socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.876 -0500", hash_original_method = "110023DB1A72EAF80EE003D87EE55FF8", hash_generated_method = "4B9A1248B71A9A33BF54AE190BCB8ADC")
     
 public abstract ServerSocket createServerSocket(int port, int backlog) throws IOException;
@@ -94,6 +98,8 @@ public abstract ServerSocket createServerSocket(int port, int backlog) throws IO
      * @return the created bound server socket.
      * @throws IOException if an error occurs while creating a new server socket.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.879 -0500", hash_original_method = "ED335FF1D7604977C78C3FC5EF0DE0C4", hash_generated_method = "C9707838AAD058E99D35EB1E4455E2A9")
     
 public abstract ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress)

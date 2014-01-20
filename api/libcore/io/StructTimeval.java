@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class StructTimeval {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.678 -0500", hash_original_method = "86CA502EEAA32132831B5F55D905CDDD", hash_generated_method = "E0EC0EF37C5A6B9DF811000DDC95179D")
@@ -25,6 +21,8 @@ public static StructTimeval fromMillis(long millis) {
 
     public  long tv_usec;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.675 -0500", hash_original_method = "2F5BA123079D794DD3CCFA1F00DAAB1E", hash_generated_method = "4323A24696B1C49AA486213C11801394")
     
 private StructTimeval(long tv_sec, long tv_usec) {
@@ -43,7 +41,6 @@ public long toMillis() {
 @Override public String toString() {
         return "StructTimeval[tv_sec=" + tv_sec + ",tv_usec=" + tv_usec + "]";
     }
-
     
 }
 

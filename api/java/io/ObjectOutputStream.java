@@ -17,6 +17,8 @@ import libcore.io.SizeOf;
 
 public class ObjectOutputStream extends OutputStream implements ObjectOutput, ObjectStreamConstants {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Object getFieldL(Object instance, Class<?> declaringClass, String fieldName, String fieldTypeName) {
     	return new Object();
     }
@@ -158,6 +160,8 @@ protected void annotateProxyClass(Class<?> aClass) throws IOException {
      * Do the necessary work to see if the receiver can be used to write
      * primitive types like int, char, etc.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.996 -0500", hash_original_method = "73D4A72122980F7DB50B81D978D62054", hash_generated_method = "2F1C9599127953E750BC0EC19183EDEB")
     
 private void checkWritePrimitiveTypes() {
@@ -195,6 +199,8 @@ private void checkWritePrimitiveTypes() {
      * @see #writeFields
      * @see #writeFieldValues(EmulatedFieldsForDumping)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.001 -0500", hash_original_method = "75FABBE0CA8F03B34490087B8F17BDC1", hash_generated_method = "F678F7495D32EE6D68B575867F8261E9")
     
 private void computePutField() {
@@ -277,6 +283,8 @@ protected void drain() throws IOException {
      *             If an error occurs attempting to save {@code null} or
      *             a cyclic reference.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.008 -0500", hash_original_method = "3C81D15CCFEF1BE19C0E53EB7F3B0380", hash_generated_method = "E76FEAE3E540063408EA71EE3DC4EE79")
     
 private int dumpCycle(Object obj) throws IOException {
@@ -331,6 +339,8 @@ protected boolean enableReplaceObject(boolean enable) {
      *
      * @return the next handle to represent the next cyclic reference
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.021 -0500", hash_original_method = "3E8C44E06770B18C136965DDB10C163B", hash_generated_method = "ADE9A862360E55137AC5DB20D13240EE")
     
 private int nextHandle() {
@@ -363,6 +373,8 @@ public PutField putFields() throws IOException {
         return currentPutField;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.025 -0500", hash_original_method = "6CA6FC4D83D22ECC70837B9572B0E8EA", hash_generated_method = "595E1CC0C74AE5C25102927A0B177589")
     
 private int registerObjectWritten(Object obj) {
@@ -380,6 +392,8 @@ private int registerObjectWritten(Object obj) {
      * @param previousHandle
      *            The handle of the previous identical object dumped
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.028 -0500", hash_original_method = "37FD060D4B2DB7C3EC8F52EA51C77D72", hash_generated_method = "F3EEDD6F59E86AC74EA08641023D1986")
     
 private void removeUnsharedReference(Object obj, int previousHandle) {
@@ -444,6 +458,8 @@ public void reset() throws IOException {
      * again, instead of a handle (cyclic reference).
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.035 -0500", hash_original_method = "CB42E7CB8763CADF528182B203F4731A", hash_generated_method = "8A4CBC2C2D0258B0B956D5B7564FC1A5")
     
 private void resetSeenObjects() {
@@ -457,6 +473,8 @@ private void resetSeenObjects() {
      * receiver knows it is in a fresh clean state.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.037 -0500", hash_original_method = "27ED7D7B38D4C22EF7056E4BAF81440E", hash_generated_method = "401F5A1166683BAD2648FE717213E059")
     
 private void resetState() {
@@ -636,6 +654,8 @@ public void writeChars(String value) throws IOException {
      *             If an IO exception happened when writing the class
      *             descriptor.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.061 -0500", hash_original_method = "D6DF6A35D187C3B8A220F04225A24DB7", hash_generated_method = "799C91B9EC343E3F85239B2925693FE3")
     
 private int writeClassDesc(ObjectStreamClass classDesc, boolean unshared) throws IOException {
@@ -701,6 +721,8 @@ private int writeClassDesc(ObjectStreamClass classDesc, boolean unshared) throws
      * Writes a handle representing a cyclic reference (object previously
      * dumped).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.063 -0500", hash_original_method = "6CD4D6A26A6EE5C2333CE9BAD2D29100", hash_generated_method = "681B800BE2C4C367C7E7CFF772D1CB6D")
     
 private void writeCyclicReference(int handle) throws IOException {
@@ -743,6 +765,8 @@ public void writeDouble(double value) throws IOException {
      *
      * @see #writeObject(Object)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.068 -0500", hash_original_method = "8DAE1373FC5F31DAE45B98A018C14CB9", hash_generated_method = "EA2E9DCCE3A72EA51BE3270C308A06E7")
     
 private void writeFieldDescriptors(ObjectStreamClass classDesc, boolean externalizable) throws IOException {
@@ -804,6 +828,8 @@ public void writeFields() throws IOException {
      * @see #writeFields
      * @see #writeObject(Object)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.074 -0500", hash_original_method = "97B3D4C0A2A3E17C88F2E6B51B15BF4C", hash_generated_method = "5FCEBC6175574B4F2FE309D23F646844")
     
 private void writeFieldValues(EmulatedFieldsForDumping emulatedFields) throws IOException {
@@ -853,6 +879,8 @@ private void writeFieldValues(EmulatedFieldsForDumping emulatedFields) throws IO
      *
      * @see #writeObject(Object)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.077 -0500", hash_original_method = "3B2F054C3660B4FEDDE0689C3B0D847B", hash_generated_method = "F2C9D62B715F9CBA4A4AD1678D135095")
     
 private void writeFieldValues(Object obj, ObjectStreamClass classDesc) throws IOException {
@@ -940,6 +968,8 @@ public void writeFloat(float value) throws IOException {
      * @see #defaultWriteObject
      * @see #writeObject(Object)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.084 -0500", hash_original_method = "6C93D0A9BF9141DB46D3843027575223", hash_generated_method = "74E4CF17C29E0267418363D1DF49854B")
     
 private void writeHierarchy(Object object, ObjectStreamClass classDesc)
@@ -1143,6 +1173,8 @@ private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass a
      * @throws IOException
      *             If an IO exception happened when writing the class.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.095 -0500", hash_original_method = "EFEEB16087FF4E0EE92685A5C26C0D2A", hash_generated_method = "11AD60B7E0E9DA9AF48A09450772E69D")
     
 private int writeNewClass(Class<?> object, boolean unshared) throws IOException {
@@ -1184,6 +1216,8 @@ private int writeNewClass(Class<?> object, boolean unshared) throws IOException 
      *             If an IO exception happened when writing the class
      *             descriptor.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.098 -0500", hash_original_method = "8ED9B25450E87C39655806C7FB3946F8", hash_generated_method = "185422283A198BA0E9DC523EDB86FDE1")
     
 private void writeNewClassDesc(ObjectStreamClass classDesc)
@@ -1247,6 +1281,8 @@ protected void writeClassDescriptor(ObjectStreamClass classDesc)
      *             If an IO exception happened when writing the exception
      *             object.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.103 -0500", hash_original_method = "E088B51B3D25E92C7A08790C12EA9546", hash_generated_method = "54C1A98814C60E8C5F754CD30EED532C")
     
 private void writeNewException(Exception ex) throws IOException {
@@ -1280,6 +1316,8 @@ private void writeNewException(Exception ex) throws IOException {
      * @throws IOException
      *             If an IO exception happened when writing the object.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.106 -0500", hash_original_method = "AD17E67664AB2CFE5D575A9D2DBC90D0", hash_generated_method = "6C44F521E14CD6D680627A624B1A6196")
     
 private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass clDesc,
@@ -1363,6 +1401,8 @@ private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass c
      * @throws IOException
      *             If an IO exception happened when writing the String.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.109 -0500", hash_original_method = "BE97C7FA5FB694719D79A72C051D442C", hash_generated_method = "CD49258FB0912708F891AF64058A753C")
     
 private int writeNewString(String object, boolean unshared) throws IOException {
@@ -1399,6 +1439,8 @@ private int writeNewString(String object, boolean unshared) throws IOException {
      *             If an IO exception happened when writing the tag for
      *             {@code null}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.112 -0500", hash_original_method = "631D52D34CFE4ABBA41E943E2B7FB044", hash_generated_method = "60BC8CB03B87340E315CB362518E95AD")
     
 private void writeNull() throws IOException {
@@ -1442,6 +1484,8 @@ public void writeUnshared(Object object) throws IOException {
         writeObject(object, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.120 -0500", hash_original_method = "6135D4458B19CC3120CAE3855FF2BEA8", hash_generated_method = "E5BDC9807B0FDC2792FD9C88BAFE44FB")
     
 private void writeObject(Object object, boolean unshared) throws IOException {
@@ -1500,6 +1544,8 @@ private void writeObject(Object object, boolean unshared) throws IOException {
      *
      * @see ObjectInputStream#readObject()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.124 -0500", hash_original_method = "AD80A9CFC14D0263A7F0CECDD085D8B1", hash_generated_method = "B4039A8ED683CBCBCE97D37B81B712C7")
     
 private int writeObjectInternal(Object object, boolean unshared,
@@ -1624,6 +1670,8 @@ private int writeObjectInternal(Object object, boolean unshared,
     }
 
     // write for Enum Class Desc only, which is different from other classes
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.127 -0500", hash_original_method = "23E7E12F7C58661823B132165D2AB697", hash_generated_method = "71F95F71B6017D2395370C5D48C61E5F")
     
 private ObjectStreamClass writeEnumDesc(Class<?> theClass, ObjectStreamClass classDesc, boolean unshared)
@@ -1677,6 +1725,8 @@ private ObjectStreamClass writeEnumDesc(Class<?> theClass, ObjectStreamClass cla
         return classDesc;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.130 -0500", hash_original_method = "C81760408EA928607A5B6FF41AD80929", hash_generated_method = "A85A7B2AA6A35C622237528541F0FF2D")
     
 private int writeNewEnum(Object object, Class<?> theClass, boolean unshared) throws IOException {
@@ -1779,6 +1829,8 @@ public void writeShort(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.956 -0500", hash_original_method = "667143831AF06F72EDD5FEF1B82AC2BB", hash_generated_method = "713E518839A493B91F7EDF964973EB24")
         
 public abstract void put(String name, boolean value);
@@ -1792,6 +1844,8 @@ public abstract void put(String name, boolean value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.958 -0500", hash_original_method = "7C6DB3901C2EC32B7D3F76BEC36ED2FA", hash_generated_method = "6B8CF0C48B409FCE4E2F599DD0AF969F")
         
 public abstract void put(String name, char value);
@@ -1805,6 +1859,8 @@ public abstract void put(String name, char value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.960 -0500", hash_original_method = "8267BB8AA842B0888237742FBD358BBF", hash_generated_method = "36791ADD60CED0BCFCF9E7B51BBAB22F")
         
 public abstract void put(String name, byte value);
@@ -1818,6 +1874,8 @@ public abstract void put(String name, byte value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.963 -0500", hash_original_method = "CBA96376FB419B0B0C65E2B95E9ED63A", hash_generated_method = "B523A6857C1D11FF3ECE97FCA157FF18")
         
 public abstract void put(String name, short value);
@@ -1831,6 +1889,8 @@ public abstract void put(String name, short value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.966 -0500", hash_original_method = "9B9614BEA4B72B476E99C6FF027511F4", hash_generated_method = "BACEC47DF65202FAFDEF28015B83D8E2")
         
 public abstract void put(String name, int value);
@@ -1844,6 +1904,8 @@ public abstract void put(String name, int value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.969 -0500", hash_original_method = "9C30C7EB94A4F8FEC087934271AC1B02", hash_generated_method = "A3C8081D274479A5E2B870C629090ABA")
         
 public abstract void put(String name, long value);
@@ -1857,6 +1919,8 @@ public abstract void put(String name, long value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.972 -0500", hash_original_method = "A8619D52CECE8ED9E2E87EBF2865ADF7", hash_generated_method = "26D9F3CC2BD44ABFFAAB294B70B8319E")
         
 public abstract void put(String name, float value);
@@ -1870,6 +1934,8 @@ public abstract void put(String name, float value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.974 -0500", hash_original_method = "6F29A03593273294969378EA099D54B1", hash_generated_method = "FA11B36702B36D0E536255B4F480FE89")
         
 public abstract void put(String name, double value);
@@ -1883,6 +1949,8 @@ public abstract void put(String name, double value);
          * @param value
          *            the value that is put to the persistent field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.977 -0500", hash_original_method = "87DAE3A3EEF2A5E508B82EA320203B18", hash_generated_method = "48D7FFE896B7A024B642F064C15A106B")
         
 public abstract void put(String name, Object value);
@@ -1897,6 +1965,8 @@ public abstract void put(String name, Object value);
          * @deprecated This method is unsafe and may corrupt the target stream.
          *             Use ObjectOutputStream#writeFields() instead.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.980 -0500", hash_original_method = "57B108A1D82DAA665AF8E2E4B6F1A1B0", hash_generated_method = "9159849DB36EB4CE7059124897145AE6")
         
 @Deprecated

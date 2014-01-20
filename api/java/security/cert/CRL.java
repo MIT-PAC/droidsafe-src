@@ -42,6 +42,8 @@ public final String getType() {
      * @return {@code true} if the certificate is revoked by this CRL, otherwise
      *         {@code false}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.032 -0500", hash_original_method = "7535F863E9ECA41180B61FD2B41FAD02", hash_generated_method = "D6F72261C48256DC21A27BCC771AFA2D")
     
 public abstract boolean isRevoked(Certificate cert);
@@ -51,6 +53,8 @@ public abstract boolean isRevoked(Certificate cert);
      *
      * @return the string representation of this instance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.035 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "7EA90E50E51652C3FF11C3BD32031D10")
     
 public abstract String toString();

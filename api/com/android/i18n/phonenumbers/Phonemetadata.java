@@ -10,7 +10,9 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
 public final class Phonemetadata {
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.990 -0500", hash_original_method = "AA2168146A79C42118444B1AF1D13430", hash_generated_method = "26CABAE6A5BDA9723B655D1D4AA748A5")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.990 -0500", hash_original_method = "AA2168146A79C42118444B1AF1D13430", hash_generated_method = "26CABAE6A5BDA9723B655D1D4AA748A5")
     
 private Phonemetadata() {}
     

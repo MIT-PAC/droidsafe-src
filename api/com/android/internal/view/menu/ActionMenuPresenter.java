@@ -301,6 +301,8 @@ public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.205 -0500", hash_original_method = "D21215C119A8C9273D02F36683639F77", hash_generated_method = "341EFA87BE3CA56FD6887969373BCF41")
     
 private View findViewForItem(MenuItem item) {
@@ -594,11 +596,15 @@ public SavedState[] newArray(int size) {
 
         public int openSubMenuId;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.239 -0500", hash_original_method = "5B86CE655F475C08F177FDB52AD9ECFE", hash_generated_method = "5B86CE655F475C08F177FDB52AD9ECFE")
         
 SavedState() {
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.242 -0500", hash_original_method = "10B6E86FE11BCC070EDA2136A91ED86D", hash_generated_method = "10B6E86FE11BCC070EDA2136A91ED86D")
         
 SavedState(Parcel in) {

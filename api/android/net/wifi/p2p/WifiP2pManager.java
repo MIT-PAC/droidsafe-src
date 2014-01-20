@@ -101,6 +101,8 @@ Channel(Looper looper, ChannelListener l) {
             mChannelListener = l;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.783 -0500", hash_original_method = "0C1075F742095C1FC6722DFAFFAF85D8", hash_generated_method = "0C1075F742095C1FC6722DFAFFAF85D8")
         
 int putListener(Object listener) {
@@ -113,6 +115,8 @@ int putListener(Object listener) {
             return key;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.785 -0500", hash_original_method = "464423DE95DD4D04CAAC6C3D80546690", hash_generated_method = "464423DE95DD4D04CAAC6C3D80546690")
         
 Object getListener(int key) {

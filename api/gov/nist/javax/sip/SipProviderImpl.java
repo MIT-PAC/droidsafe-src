@@ -85,6 +85,8 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
 
     private boolean dialogErrorsAutomaticallyHandled = true;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.024 -0500", hash_original_method = "D7A082BA7BBEB80ADC15AA42F366B72C", hash_generated_method = "1FF074513790F0FFA27791FD0942A045")
     
 private SipProviderImpl() {

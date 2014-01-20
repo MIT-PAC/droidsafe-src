@@ -507,6 +507,8 @@ public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
      *
      * @return true if provided sid/nid pair belongs to operator's home network.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.489 -0500", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "BC0C7568898C2FF324345168E2B73A7D")
     
 private boolean isInHomeSidNid(int sid, int nid) {

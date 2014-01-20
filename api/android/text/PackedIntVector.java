@@ -119,6 +119,8 @@ public void setValue(int row, int column, int value) {
      * @param column the index of the column to set.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.276 -0500", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "9190E446D7AB276087F2052A557E123D")
     
 private void setValueInternal(int row, int column, int value) {
@@ -261,6 +263,8 @@ public int width() {
      * Grows the value and gap arrays to be large enough to store at least
      * one more than the current number of rows.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.295 -0500", hash_original_method = "B5C941269BF1E9CDD155EBF5B7D0DBA9", hash_generated_method = "EAECF9932D0154241C5F903CA0B78FCB")
     
 private final void growBuffer() {
@@ -300,6 +304,8 @@ private final void growBuffer() {
      * Moves the gap in the values of the specified column to begin at
      * the specified row.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.298 -0500", hash_original_method = "6D74A2161397D319519D26FF483664C7", hash_generated_method = "BEFAF99C1B8ECA9E79E2ECB776545B01")
     
 private final void moveValueGapTo(int column, int where) {
@@ -325,6 +331,8 @@ private final void moveValueGapTo(int column, int where) {
     /**
      * Moves the gap in the row indices to begin at the specified row.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.302 -0500", hash_original_method = "6D396DEEC3DAD541F2D5DA5D46CC7D37", hash_generated_method = "BAC3168B96C6B3F6C160B05C3BDC4478")
     
 private final void moveRowGapTo(int where) {

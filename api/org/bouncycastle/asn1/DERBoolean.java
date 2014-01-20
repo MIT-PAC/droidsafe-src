@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERBoolean extends ASN1Object {
 
     /**
@@ -85,7 +80,6 @@ public static DERBoolean getInstance(
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.531 -0500", hash_original_field = "443DB74997906F631C0EAFA70F40D420", hash_generated_field = "AD41B06028B6D238FF4AF850CAEFE733")
 
-
     public static final DERBoolean FALSE = new DERBoolean(false);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.534 -0500", hash_original_field = "E89193EB5853DE40403321C6D830E58C", hash_generated_field = "74021F0F40550CDAE080A69CBD04BF42")
 
@@ -124,6 +118,8 @@ public boolean isTrue()
         return (value != 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.550 -0500", hash_original_method = "17536CB7674727E81A6C11BC3F7B5C5B", hash_generated_method = "17536CB7674727E81A6C11BC3F7B5C5B")
     
 void encode(
@@ -156,7 +152,6 @@ public int hashCode()
     {
         return value;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.557 -0500", hash_original_method = "9F6A9420185E5E125B8A61B3882EDFBB", hash_generated_method = "6F5ED01EEA806972F85AD45A6EFD5D78")
     

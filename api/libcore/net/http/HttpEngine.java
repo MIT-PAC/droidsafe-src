@@ -239,6 +239,8 @@ public final void sendRequest() throws IOException {
      * Initialize the source for this response. It may be corrected later if the
      * request headers forbids network use.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.836 -0500", hash_original_method = "F2FA78DDC7B88A7A9FD4B961BDAA52C1", hash_generated_method = "63BBF6DB5D50663DB139C7C5EBEDDCFA")
     
 private void initResponseSource() throws IOException {
@@ -278,6 +280,8 @@ private void initResponseSource() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.838 -0500", hash_original_method = "22FB1B3BCF67C2C3EB9ADF307D5A559C", hash_generated_method = "69B7F3F2C95A5D965750F8E338F9A51C")
     
 private void sendSocketRequest() throws IOException {
@@ -362,6 +366,8 @@ protected void initRequestBodyOut() throws IOException {
      * @param body the response body, or null if it doesn't exist or isn't
      *     available.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.849 -0500", hash_original_method = "5E913F4CB8B308A1D4F5DA7B9ED80F77", hash_generated_method = "E6E4CF9CD9194BB7901961E73910EF6E")
     
 private void setResponse(ResponseHeaders headers, InputStream body) throws IOException {
@@ -375,6 +381,8 @@ private void setResponse(ResponseHeaders headers, InputStream body) throws IOExc
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.851 -0500", hash_original_method = "A2A25877F13CAB8F3B2570F0DD573D04", hash_generated_method = "1B1480E1DE1241B9E592429EF05A5860")
     
 private boolean hasRequestBody() {
@@ -465,6 +473,8 @@ protected boolean acceptCacheResponseType(CacheResponse cacheResponse) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.875 -0500", hash_original_method = "E0679987436CD4859195D8429BAB78FF", hash_generated_method = "E23E9C4FC4CF9C5F8A3C46AE4B172F18")
     
 private void maybeCache() throws IOException {
@@ -552,6 +562,8 @@ public final void release(boolean reusable) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.884 -0500", hash_original_method = "EC59FCFED738418E26EF637931185263", hash_generated_method = "47CEDA878E29E8253FD896EB41564424")
     
 private void initContentStream(InputStream transferStream) throws IOException {
@@ -567,6 +579,8 @@ private void initContentStream(InputStream transferStream) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.887 -0500", hash_original_method = "1AB921196A345CEE857EE600A5FD99DD", hash_generated_method = "D1494369BCA92FC7C8183D9EC8CE750F")
     
 private InputStream getTransferStream() throws IOException {
@@ -591,6 +605,8 @@ private InputStream getTransferStream() throws IOException {
         return new UnknownLengthHttpInputStream(socketIn, cacheRequest, this);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.890 -0500", hash_original_method = "E5EB74DB686CEF76B63FEE327FA34FC3", hash_generated_method = "4C599CD8FC75AF1A95F875902AB76F4A")
     
 private void readResponseHeaders() throws IOException {
@@ -635,12 +651,16 @@ public final boolean hasResponseBody() {
      * Trailers are headers included after the last chunk of a response encoded
      * with chunked encoding.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.895 -0500", hash_original_method = "017F163869C61C64FB5708C2B3013CCB", hash_generated_method = "23842DFC2EE1BA3D3D8EF3AC7EB6023B")
     
 final void readTrailers() throws IOException {
         readHeaders(responseHeaders.getHeaders());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.897 -0500", hash_original_method = "814E7EB33C3A4672039AF7BE1F530F36", hash_generated_method = "899A3C425D4215569CC5ED663430C294")
     
 private void readHeaders(RawHeaders headers) throws IOException {
@@ -671,6 +691,8 @@ private void readHeaders(RawHeaders headers) throws IOException {
      * @param contentLength the number of bytes in the request body, or -1 if
      *      the request body length is unknown.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.900 -0500", hash_original_method = "6D117EBD96F306FC6CE6929186DDBA19", hash_generated_method = "A1300E06E07F3E1D0ECF99305EFB4230")
     
 private void writeRequestHeaders(int contentLength) throws IOException {
@@ -723,6 +745,8 @@ protected RawHeaders getNetworkRequestHeaders() throws IOException {
      * <p>This client doesn't specify a default {@code Accept} header because it
      * doesn't know what content types the application is interested in.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.905 -0500", hash_original_method = "9965AB400B31D225B507F0BE101C0DB2", hash_generated_method = "BAE49C2465FE93C8550CC3FA50741AF8")
     
 private void prepareRawRequestHeaders() throws IOException {
@@ -761,6 +785,8 @@ private void prepareRawRequestHeaders() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.908 -0500", hash_original_method = "6DB81453AD78E43D72799E90FBF820CD", hash_generated_method = "99935E76614634899FAE8E3E6BF8CD13")
     
 private String getRequestLine() {
@@ -768,6 +794,8 @@ private String getRequestLine() {
         return method + " " + requestString() + " " + protocol;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.911 -0500", hash_original_method = "579F0C1DEDB2C71B061424762EDA3D6F", hash_generated_method = "CFEC65D01096D2FCEADA1422D22DB130")
     
 private String requestString() {
@@ -807,6 +835,8 @@ protected final String getDefaultUserAgent() {
         return agent != null ? agent : ("Java" + System.getProperty("java.version"));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.918 -0500", hash_original_method = "0A452E6BAC82BB82543FC0DC64DC1250", hash_generated_method = "F749B570B6C1329E0571D63E1B99B8AE")
     
 private boolean hasConnectionCloseHeader() {

@@ -52,12 +52,10 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
-
-
-
-
 class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClickListener {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.321 -0500", hash_original_method = "E7C0EE7191FE721628D10A594437AF98", hash_generated_method = "8BB30D6F2D888052B6E3DB7A4AD9C829")
     
 static String urlForAutoCompleteData(String urlString) {
@@ -72,7 +70,6 @@ static String urlForAutoCompleteData(String urlString) {
         return url != null ? url.getProtocol() + "://" + url.getHost() + url.getPath() : null;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.088 -0500", hash_original_field = "F5A01F041F615713784F34400C9DE3D9", hash_generated_field = "0254F437D32CEDBF3502981A041254AF")
-
 
     static final String LOGTAG = "webtextview";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.135 -0500", hash_original_field = "8F8BB2875FCC75EB5D66BC4152125391", hash_generated_field = "F264F8C744979293C10FAA74C516992A")
@@ -111,14 +108,11 @@ static String urlForAutoCompleteData(String urlString) {
     private static final int URL = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.182 -0500", hash_original_field = "ABF0A1FF8914F00747B518320BD6DE21", hash_generated_field = "3F36447E6A0F20CD137DED5CE2B96C90")
 
-
     private static final int AUTOFILL_FORM = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.090 -0500", hash_original_field = "B2ADA967A81ECE9E2F856FA1E6111C6D", hash_generated_field = "74A54BC69C155F1DB9DBB9FB9549E6B1")
 
-
     private int mRingInset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.092 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
-
 
     private WebView         mWebView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.094 -0500", hash_original_field = "C0E03E3E3516C352DDC0F6EE234F8ED7", hash_generated_field = "3A6B9A9CFCC4CFF9FD3CC2E257ADB30D")
@@ -203,7 +197,6 @@ static String urlForAutoCompleteData(String urlString) {
     private int mDelSelEnd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.145 -0500", hash_original_field = "66041FF16B2AD3B395E344D195D0F70D", hash_generated_field = "D46CADD5A6770F085C96392C484CE8BB")
 
-
     private boolean mAutoFillable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.148 -0500", hash_original_field = "3F8A5995BB61124C69E19BBF96B72914", hash_generated_field = "1A9B7D5E459A03CD29A94A18A042A141")
 
@@ -227,7 +220,9 @@ static String urlForAutoCompleteData(String urlString) {
      * @param   context The Context for this WebTextView.
      * @param   webView The WebView that created this.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.190 -0500", hash_original_method = "089095F3BAAFCF9E87F2A27B8FA6A0A2", hash_generated_method = "892FA8861B9A775F545FC8DB36D3E7C4")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.190 -0500", hash_original_method = "089095F3BAAFCF9E87F2A27B8FA6A0A2", hash_generated_method = "892FA8861B9A775F545FC8DB36D3E7C4")
     
 WebTextView(Context context, WebView webView, int autoFillQueryId) {
         super(context, null, com.android.internal.R.attr.webTextViewStyle);
@@ -443,6 +438,8 @@ public void setAutoFillable(int queryId) {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.223 -0500", hash_original_method = "4890DDDCE957B3D3A5D6757132681BB5", hash_generated_method = "59BE804D0613033D1B47046048A5B41B")
     
 void ensureLayout() {
@@ -457,7 +454,9 @@ void ensureLayout() {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.225 -0500", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "7D5E495C9B289687F8273FA9EA57C0F7")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.225 -0500", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "7D5E495C9B289687F8273FA9EA57C0F7")
     
 ResultReceiver getResultReceiver() { return mReceiver; }
 
@@ -468,7 +467,9 @@ ResultReceiver getResultReceiver() { return mReceiver; }
      *  @return boolean Whether this WebTextView already represents the node
      *          pointed to by ptr.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.227 -0500", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "0D2A49DF88825D4B2D39C3141FFC083A")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.227 -0500", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "0D2A49DF88825D4B2D39C3141FFC083A")
     
 boolean isSameTextField(int ptr) {
         return ptr == mNodePointer;
@@ -477,6 +478,8 @@ boolean isSameTextField(int ptr) {
     /**
      * Ensure that the underlying text field/area is lined up with the WebTextView.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.230 -0500", hash_original_method = "480AEB5EE1C7676DB93788B189E32B71", hash_generated_method = "F26DE7DE8F4A6B544C3DD8C910560523")
     
 private void lineUpScroll() {
@@ -839,7 +842,9 @@ private void lineUpScroll() {
      * Remove this WebTextView from its host WebView, and return
      * focus to the host.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.274 -0500", hash_original_method = "E890325AD4CF04CF90789A3947029902", hash_generated_method = "3B75490E6FBB8EBCBCA6C1BB22DDEA67")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.274 -0500", hash_original_method = "E890325AD4CF04CF90789A3947029902", hash_generated_method = "3B75490E6FBB8EBCBCA6C1BB22DDEA67")
     
 void remove() {
         // hide the soft keyboard when the edit text is out of focus
@@ -869,6 +874,8 @@ void remove() {
      *  Send the DOM events for the specified event.
      *  @param event    KeyEvent to be translated into a DOM event.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.279 -0500", hash_original_method = "950AB6742CC7236DE25064405668EBFC", hash_generated_method = "74BE81AA68D09D9F104563220CA4F0BA")
     
 private void sendDomEvent(KeyEvent event) {
@@ -897,7 +904,6 @@ public void setAdapterCustom(AutoCompleteAdapter adapter) {
         }
         super.setAdapter(adapter);
     }
-
     
     private class MyResultReceiver extends ResultReceiver {
 
@@ -918,15 +924,11 @@ public MyResultReceiver(Handler handler) {
                 mWebView.revealSelection();
             }
         }
-
         
     }
-
-
     
     private static class BackgroundDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.193 -0500", hash_original_field = "1D0586880E5CE88B4198E05E1760434E", hash_generated_field = "04B4E10AE3E38C24827628B090CB2FA5")
-
 
         private Paint mPaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.196 -0500", hash_original_field = "01EC123D331F96E92A48B93553DD9DEC", hash_generated_field = "42F6FF6ED2F2BB89D0174DF2E15B171E")
@@ -976,11 +978,8 @@ public BackgroundDrawable(int width) {
         public int getOpacity() {
             return PixelFormat.TRANSLUCENT;
         }
-
         
     }
-
-
     
     private static class WebTextViewLayout extends DynamicLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.235 -0500", hash_original_field = "E96655635C6ECAD1BB5CE801E2F562CD", hash_generated_field = "01BDC3B4754FD272E9D33AE0E0EEA1AE")
@@ -1018,11 +1017,8 @@ public WebTextViewLayout(CharSequence base, CharSequence display,
         public int getLineTop(int line) {
             return Math.round(mLineHeight * line - mDifference);
         }
-
         
     }
-
-
     
     public static class AutoCompleteAdapter extends ArrayAdapter<String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.284 -0500", hash_original_field = "49AF0A2A014C0E7F98E27CA30429A8B6", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")
@@ -1054,12 +1050,13 @@ public AutoCompleteAdapter(Context context, ArrayList<String> entries) {
         /**
          * Set the TextView so we can match its text size.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.292 -0500", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "67DDC76070F4F873C0B78644EA67760A")
         
 private void setTextView(TextView tv) {
             mTextView = tv;
         }
-
         
     }
 
@@ -1068,7 +1065,9 @@ private void setTextView(TextView tv) {
      * the trackball or center key, or starts typing into it without clicking on
      * it.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.296 -0500", hash_original_method = "10D826035FBCEEF5092B615EC9DFDE75", hash_generated_method = "CA68E96BBBB3D013102EF9EF16F172F2")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.296 -0500", hash_original_method = "10D826035FBCEEF5092B615EC9DFDE75", hash_generated_method = "CA68E96BBBB3D013102EF9EF16F172F2")
     
 void setDefaultSelection() {
         Spannable text = (Spannable) getText();
@@ -1101,6 +1100,8 @@ void setDefaultSelection() {
         mFromSetInputType = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.300 -0500", hash_original_method = "6C4324E77F1CB780AA79022DD606C31E", hash_generated_method = "34275D7B6F708CFD3DA3920123302E4D")
     
 private void setMaxLength(int maxLength) {
@@ -1119,7 +1120,9 @@ private void setMaxLength(int maxLength) {
      *  @param  ptr Integer representing the pointer to the node which this
      *          WebTextView represents.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.302 -0500", hash_original_method = "C341AA0EB003F8D508947196584836B7", hash_generated_method = "C341AA0EB003F8D508947196584836B7")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.302 -0500", hash_original_method = "C341AA0EB003F8D508947196584836B7", hash_generated_method = "C341AA0EB003F8D508947196584836B7")
     
 void setNodePointer(int ptr) {
         if (ptr != mNodePointer) {
@@ -1138,7 +1141,9 @@ void setNodePointer(int ptr) {
      * @param width     width of the textfield.
      * @param height    height of the textfield.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.305 -0500", hash_original_method = "1A385B6FBFB65985BDFEFA75CA11C93C", hash_generated_method = "18F4A9F8A37403451C0CAC8437D278B7")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.305 -0500", hash_original_method = "1A385B6FBFB65985BDFEFA75CA11C93C", hash_generated_method = "18F4A9F8A37403451C0CAC8437D278B7")
     
 void setRect(int x, int y, int width, int height) {
         LayoutParams lp = (LayoutParams) getLayoutParams();
@@ -1173,7 +1178,9 @@ void setRect(int x, int y, int width, int height) {
     /**
      * Set the selection, and disable our onSelectionChanged action.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.307 -0500", hash_original_method = "CE3949E5C336F8D95926C2F0BAE76623", hash_generated_method = "CE3949E5C336F8D95926C2F0BAE76623")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.307 -0500", hash_original_method = "CE3949E5C336F8D95926C2F0BAE76623", hash_generated_method = "CE3949E5C336F8D95926C2F0BAE76623")
     
 void setSelectionFromWebKit(int start, int end) {
         if (start < 0 || end < 0) return;
@@ -1189,7 +1196,9 @@ void setSelectionFromWebKit(int start, int end) {
      * Update the text size according to the size of the focus candidate's text
      * size in mWebView.  Should only be called from mWebView.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.309 -0500", hash_original_method = "0E0FB59047FF987C205DC97754DD32D6", hash_generated_method = "F1412A9895E136A58AC23FEB82DCADFB")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.309 -0500", hash_original_method = "0E0FB59047FF987C205DC97754DD32D6", hash_generated_method = "F1412A9895E136A58AC23FEB82DCADFB")
     
 void updateTextSize() {
         Assert.assertNotNull("updateTextSize should only be called from "
@@ -1206,7 +1215,9 @@ void updateTextSize() {
      * to keep it within the new string.
      * @param   text    The new text to place in the textfield.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.311 -0500", hash_original_method = "FCE77DF28E9B30518950525927BBC7BA", hash_generated_method = "66D04F62B92EBC05536F1496455B46C2")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.311 -0500", hash_original_method = "FCE77DF28E9B30518950525927BBC7BA", hash_generated_method = "66D04F62B92EBC05536F1496455B46C2")
     
 void setTextAndKeepSelection(String text) {
         Editable edit = getText();
@@ -1240,7 +1251,9 @@ void setTextAndKeepSelection(String text) {
      *              is unaffected if that changes, and also because that has no
      *              type corresponding to textarea (which is its own tag).
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.315 -0500", hash_original_method = "9C43235B4CCED4C8A2DC53AB1F7D42B9", hash_generated_method = "E5C1B8FB447755748A4CC3216D199DD4")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.315 -0500", hash_original_method = "9C43235B4CCED4C8A2DC53AB1F7D42B9", hash_generated_method = "E5C1B8FB447755748A4CC3216D199DD4")
     
 void setType(int type) {
         if (mWebView == null) return;
@@ -1334,13 +1347,17 @@ void setType(int type) {
     /**
      *  Update the cache to reflect the current text.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.317 -0500", hash_original_method = "DC0208EAD79A0BCADD603C831599A0E0", hash_generated_method = "DC0208EAD79A0BCADD603C831599A0E0")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.317 -0500", hash_original_method = "DC0208EAD79A0BCADD603C831599A0E0", hash_generated_method = "DC0208EAD79A0BCADD603C831599A0E0")
     
 void updateCachedTextfield() {
         mWebView.updateCachedTextfield(getText().toString());
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.319 -0500", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "E906B54723AD6F9ED79F8F4825A6BCDE")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.319 -0500", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "E906B54723AD6F9ED79F8F4825A6BCDE")
     
 void setAutoFillProfileIsSet(boolean autoFillProfileIsSet) {
         mAutoFillProfileIsSet = autoFillProfileIsSet;

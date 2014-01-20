@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 final class ByteArray {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.067 -0500", hash_original_field = "AB97A4156FC1CC1DAF26375194010FF1", hash_generated_field = "4E58ABB9D5068B90ACC1157BF07E4EBB")
 
@@ -19,6 +14,8 @@ final class ByteArray {
 
     private  int hashCode;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.072 -0500", hash_original_method = "4AF9F563805F4ED44AAE8EE4F8A801D9", hash_generated_method = "4AF9F563805F4ED44AAE8EE4F8A801D9")
     
 ByteArray(byte[] bytes) {
@@ -41,7 +38,6 @@ ByteArray(byte[] bytes) {
         ByteArray lhs = (ByteArray) o;
         return Arrays.equals(bytes, lhs.bytes);
     }
-
     
 }
 

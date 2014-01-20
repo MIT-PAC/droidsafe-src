@@ -152,6 +152,8 @@ public Manifest getManifest() throws java.io.IOException {
      * @throws IOException
      *                if an I/O exception occurs while retrieving the JAR-file.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.071 -0500", hash_original_method = "BF5CCCDB452875A850EBFBEAFE3E1375", hash_generated_method = "939D31392D6E9D4BEED6B815B24B4D7E")
     
 public abstract JarFile getJarFile() throws java.io.IOException;

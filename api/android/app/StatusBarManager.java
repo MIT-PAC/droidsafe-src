@@ -73,12 +73,16 @@ public class StatusBarManager {
 
     private IBinder mToken = new Binder();
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.154 -0500", hash_original_method = "3CFEC728F9006821D55520F81F0C151A", hash_generated_method = "3CFEC728F9006821D55520F81F0C151A")
     
 StatusBarManager(Context context) {
         mContext = context;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.157 -0500", hash_original_method = "1D3FF7F9C7208A1463AE69512DB03B53", hash_generated_method = "87DB02937D830238B0360F8AD32E01CB")
     
 private synchronized IStatusBarService getService() {

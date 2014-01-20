@@ -51,6 +51,8 @@ private AnimatedRotateDrawable(AnimatedRotateState rotateState, Resources res) {
         init();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.520 -0500", hash_original_method = "10C2A2E1B80AA77427356DB5B80319DC", hash_generated_method = "ABF52A393B5FCD61FA229006AF9DB780")
     
 private void init() {
@@ -111,6 +113,8 @@ public boolean isRunning() {
         return mRunning;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.532 -0500", hash_original_method = "7EB3E4BAE2A62EDC6364E7CD5F30E825", hash_generated_method = "8E7FB90703DD01D4D0984540A5BD2FCB")
     
 private void nextFrame() {

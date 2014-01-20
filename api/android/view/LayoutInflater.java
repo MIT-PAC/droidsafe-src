@@ -137,8 +137,8 @@ protected LayoutInflater(LayoutInflater original, Context newContext) {
      * @return Returns a brand spanking new LayoutInflater object associated with
      * the given Context.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.769 -0500", hash_original_method = "3D202F2528926E0CC64A1F0FA507E4F3", hash_generated_method = "429FCA58C8A9A2CC82E1644446569CE4")
     
 public abstract LayoutInflater cloneInContext(Context newContext);
@@ -273,8 +273,8 @@ public void setFilter(Filter filter) {
      *         this is the root View; otherwise it is the root of the inflated
      *         XML file.
      */
-    @DSComment("Proper view needs to be created/instantiated")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.792 -0500", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "73A7EB7DA3644F58C6A3248C4944CDDE")
     
 public View inflate(int resource, ViewGroup root) {
@@ -297,14 +297,16 @@ public View inflate(int resource, ViewGroup root) {
      *         this is the root View; otherwise it is the root of the inflated
      *         XML file.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.794 -0500", hash_original_method = "2C6130928BF5FC4257D730B98F9E332E", hash_generated_method = "D6DD0E6D5A315E2DB13640AB129CE459")
     
 public View inflate(XmlPullParser parser, ViewGroup root) {
         return inflate(parser, root, root != null);
     }
     
-	 @DSComment("Proper view needs to be created/instantiated")
-    @DSSpec(DSCat.TO_MODEL)
+	 @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
 		View newView = new View();
 		return newView;	
@@ -332,6 +334,8 @@ public View inflate(XmlPullParser parser, ViewGroup root) {
      *         attachToRoot is true, this is root; otherwise it is the root of
      *         the inflated XML file.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.802 -0500", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "61A1FCF5FE21DE83BA36DB488F2EE8AC")
     
@@ -610,6 +614,8 @@ public BlinkLayout(Context context, AttributeSet attrs) {
             });
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.850 -0500", hash_original_method = "553FA2CA85816FF11073226F48838667", hash_generated_method = "2ECD602022E8AD4E49F7157714A0721E")
         
 private void makeBlink() {
@@ -670,6 +676,8 @@ private void makeBlink() {
     /**
      * Throw an exception because the specified class is not allowed to be inflated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.808 -0500", hash_original_method = "0971FA0124FB7B31B88F61FC842AABEB", hash_generated_method = "CDB48CD6F3B5A4D5799B3AD84AE78576")
     
 private void failNotAllowed(String name, String prefix, AttributeSet attrs) {
@@ -720,6 +728,8 @@ protected View onCreateView(View parent, String name, AttributeSet attrs)
     /*
      * default visibility so the BridgeInflater can override it.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.816 -0500", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "42E00CE52BE01D0BF7040FF60139A865")
     
@@ -816,6 +826,8 @@ void rInflate(XmlPullParser parser, View parent, final AttributeSet attrs,
         if (finishInflate) parent.onFinishInflate();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.822 -0500", hash_original_method = "D305B9D132FFD898328C34D4AEEA8981", hash_generated_method = "99EFA7552291D9A4CB2F746CA381F160")
     
 private void parseRequestFocus(XmlPullParser parser, View parent)
@@ -829,6 +841,8 @@ private void parseRequestFocus(XmlPullParser parser, View parent)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.826 -0500", hash_original_method = "3903965D4D2522F244AF5345C6CDB188", hash_generated_method = "C449020B6125C8DAC04C41F3DD851E25")
     
 private void parseInclude(XmlPullParser parser, View parent, AttributeSet attrs)

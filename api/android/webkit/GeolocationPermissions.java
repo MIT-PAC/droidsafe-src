@@ -30,22 +30,32 @@ public static GeolocationPermissions getInstance() {
       return sInstance;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Set nativeGetOrigins() {
         	Set s = new HashSet<>();
         	return s;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetAllowed(String origin) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClear(String origin) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeAllow(String origin) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClearAll() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.156 -0500", hash_original_field = "4D2735B1262AC046E5680A52D0A94087", hash_generated_field = "8CF04CB4ECB9AB0455165005BED06537")
@@ -195,6 +205,8 @@ public synchronized void createHandler() {
     /**
      * Utility function to send a message to our handler.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.209 -0500", hash_original_method = "C8B20551C681C75E8A94C862CADE3192", hash_generated_method = "A7433FDE5A5DBECF9F0AF160B3A18046")
     
 private synchronized void postMessage(Message msg) {
@@ -211,6 +223,8 @@ private synchronized void postMessage(Message msg) {
     /**
      * Utility function to send a message to the handler on the UI thread
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.211 -0500", hash_original_method = "B15FFE1BDDB388A76F495C309FEFF3DA", hash_generated_method = "C2FC6A3A4D0F6BDDE3E5B5092770AEBC")
     
 private void postUIMessage(Message msg) {

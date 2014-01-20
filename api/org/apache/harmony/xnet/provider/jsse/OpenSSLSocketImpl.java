@@ -43,6 +43,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
      * Return a possibly null array of X509Certificates given the
      * possibly null array of DER encoded bytes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.432 -0500", hash_original_method = "20B392F81EB563515A5AD0702F74C046", hash_generated_method = "EBE22081BF4F609A10ADE825A5E979C7")
     
 private static X509Certificate[] createCertChain(byte[][] certificatesBytes) {
@@ -207,6 +209,8 @@ protected OpenSSLSocketImpl(Socket socket, String host, int port,
      * Initialize the SSL socket and set the certificates for the
      * future handshaking.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.413 -0500", hash_original_method = "33D1B746D20986D17267826F3151AB68", hash_generated_method = "40C8212AA2D38D28244FD69F411134EA")
     
 private void init(SSLParametersImpl sslParameters) throws IOException {
@@ -220,6 +224,8 @@ private void init(SSLParametersImpl sslParameters) throws IOException {
      * Initialize the SSL socket and set the certificates for the
      * future handshaking.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.416 -0500", hash_original_method = "28ECC4752D5D2759E8F75423B7F304E1", hash_generated_method = "BBB3090F62ED648158D9F2807E79B389")
     
 private void init(SSLParametersImpl sslParameters,
@@ -235,6 +241,8 @@ private void init(SSLParametersImpl sslParameters,
     /**
      * Gets the suitable session reference from the session cache container.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.419 -0500", hash_original_method = "DB9C757E33C47645F1FC9AEA51E10B24", hash_generated_method = "18534E169AD61D74DD431E99A6108961")
     
 private OpenSSLSessionImpl getCachedClientSession(ClientSessionContext sessionContext) {
@@ -303,6 +311,8 @@ private OpenSSLSessionImpl getCachedClientSession(ClientSessionContext sessionCo
         startHandshake(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.424 -0500", hash_original_method = "8DC54C39C6445BAF3181407C830C5887", hash_generated_method = "7588EA0B4439101A03904302427A4E46")
     
 private void checkOpen() throws SocketException {
@@ -516,6 +526,8 @@ public synchronized void startHandshake(boolean full) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.435 -0500", hash_original_method = "447042B984B2D213A231B86095B05FCC", hash_generated_method = "BDDDEB720902D80B38BE06B77895BE39")
     
 private void setCertificate(String alias) throws CertificateEncodingException, SSLException {
@@ -593,6 +605,8 @@ private void setCertificate(String alias) throws CertificateEncodingException, S
         notifyHandshakeCompletedListeners();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.443 -0500", hash_original_method = "7C2534895E7335878B6E22FB6F2D87D0", hash_generated_method = "2B2541D256E9C5DFF6ABB79BE38221DE")
     
 private void notifyHandshakeCompletedListeners() {
@@ -986,6 +1000,8 @@ public void setHandshakeTimeout(int timeoutMilliseconds) throws SocketException 
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.541 -0500", hash_original_method = "0B5EFC2C593350712C0760AFE47F069D", hash_generated_method = "DF748779C8DC18F4B07A6D990E480B29")
     
 private void free() {

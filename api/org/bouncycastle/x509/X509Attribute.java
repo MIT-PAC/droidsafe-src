@@ -12,11 +12,6 @@ import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSet;
 import org.bouncycastle.asn1.x509.Attribute;
 
-
-
-
-
-
 public class X509Attribute extends ASN1Encodable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.311 -0500", hash_original_field = "078373DB546E20C4F10604687E295777", hash_generated_field = "078373DB546E20C4F10604687E295777")
 
@@ -25,6 +20,8 @@ public class X509Attribute extends ASN1Encodable {
     /**
      * @param at an object representing an attribute.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.313 -0500", hash_original_method = "CE4AB458669C1421E9AF493051F17B5E", hash_generated_method = "CE4AB458669C1421E9AF493051F17B5E")
     
 X509Attribute(
@@ -93,7 +90,6 @@ public DERObject toASN1Object()
     {
         return attr.toASN1Object();
     }
-
     
 }
 

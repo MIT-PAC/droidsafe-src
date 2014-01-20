@@ -117,6 +117,8 @@ static public Allocation createSized(RenderScript rs, Element e, int count) {
         return createSized(rs, e, count, USAGE_SCRIPT);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.172 -0500", hash_original_method = "EDF440B25345512D66E9F3A7B03FD12E", hash_generated_method = "F8D3B59FCD3890C53F5E6B947FAF6CE4")
     
 static Element elementFromBitmap(RenderScript rs, Bitmap b) {
@@ -516,6 +518,8 @@ static public Allocation createFromString(RenderScript rs,
 
     int mCurrentCount;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.048 -0500", hash_original_method = "665FE224B2EB4C9CAB6FB0250F8FC614", hash_generated_method = "665FE224B2EB4C9CAB6FB0250F8FC614")
     
 Allocation(int id, RenderScript rs, Type t, int usage) {
@@ -534,6 +538,8 @@ Allocation(int id, RenderScript rs, Type t, int usage) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.043 -0500", hash_original_method = "311D2B5BD14C46D52A18F5FB7D46A7CD", hash_generated_method = "EF4A9BBCFACDD949B961C655FAE4A879")
     
 private int getIDSafe() {
@@ -543,6 +549,8 @@ private int getIDSafe() {
         return getID();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.046 -0500", hash_original_method = "88EDB22B03764ACCBD1FBAF2EA2911C8", hash_generated_method = "E9FDE68297733F42F200B2A392559113")
     
 private void updateCacheInfo(Type t) {
@@ -558,6 +566,8 @@ private void updateCacheInfo(Type t) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.051 -0500", hash_original_method = "65C711257F94F3105DCE4FED6B46495C", hash_generated_method = "EF987AA5F7BC11E7365A6C71DC6A5082")
     
 private void validateIsInt32() {
@@ -569,6 +579,8 @@ private void validateIsInt32() {
             "32 bit integer source does not match allocation type " + mType.mElement.mType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.053 -0500", hash_original_method = "6E4F71EB18D2F00682465DF6305D48C6", hash_generated_method = "27E3517DDE1711114B9ABF5692B0BCDE")
     
 private void validateIsInt16() {
@@ -580,6 +592,8 @@ private void validateIsInt16() {
             "16 bit integer source does not match allocation type " + mType.mElement.mType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.055 -0500", hash_original_method = "ED6CF93005996273EC0803DD9A6B2BBC", hash_generated_method = "76045603592813D78E71B76EA4888FCB")
     
 private void validateIsInt8() {
@@ -591,6 +605,8 @@ private void validateIsInt8() {
             "8 bit integer source does not match allocation type " + mType.mElement.mType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.057 -0500", hash_original_method = "22DC03BEB0D64704815FAFAD8DD448C1", hash_generated_method = "BDD73D53C1D243DC45C624E4D5382AA3")
     
 private void validateIsFloat32() {
@@ -601,6 +617,8 @@ private void validateIsFloat32() {
             "32 bit float source does not match allocation type " + mType.mElement.mType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.061 -0500", hash_original_method = "0F7CA754806BFED6B25F7C22657938DC", hash_generated_method = "426CA8D30E594A28B30F5665F652D730")
     
 private void validateIsObject() {
@@ -620,6 +638,8 @@ private void validateIsObject() {
             "Object source does not match allocation type " + mType.mElement.mType);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.063 -0500", hash_original_method = "CEBA9EC127886AA7BBE4344B60C3C2EC", hash_generated_method = "536AA8035924B0753F81747A946CAE94")
     
 @Override
@@ -672,6 +692,8 @@ public void copyFrom(BaseObj[] d) {
         copy1DRangeFromUnchecked(0, mCurrentCount, i);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.073 -0500", hash_original_method = "68F022BD518BF34A861F2C9F1854EE2C", hash_generated_method = "5F87A944D913FAD9511D138989E00B93")
     
 private void validateBitmapFormat(Bitmap b) {
@@ -720,6 +742,8 @@ private void validateBitmapFormat(Bitmap b) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.075 -0500", hash_original_method = "EA8D3B5F0BE6DABF77176C0C9533D70D", hash_generated_method = "78AD0571A02F1D906D5E1D5B75E296C7")
     
 private void validateBitmapSize(Bitmap b) {
@@ -905,6 +929,8 @@ public void setFromFieldPacker(int xoff, int component_number, FieldPacker fp) {
                                      component_number, data, data.length);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.103 -0500", hash_original_method = "C280AAD194909DEEA802F55F051EEFEF", hash_generated_method = "DE48C88000708CA7955A0FE6DA0C5FAD")
     
 private void data1DChecks(int off, int count, int len, int dataSize) {
@@ -1087,6 +1113,8 @@ public void copy1DRangeFrom(int off, int count, Allocation data, int dataOff) {
                               data.mSelectedLOD, data.mSelectedFace.mID);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.127 -0500", hash_original_method = "549AEF19696CDA0CE15593CF21BCB97B", hash_generated_method = "8C53E625A5EC8863D3711911FCED83CA")
     
 private void validate2DRange(int xoff, int yoff, int w, int h) {

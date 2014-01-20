@@ -21,6 +21,8 @@ public class WebSettings {
      * Convert obsolete language codes, including Hebrew/Indonesian/Yiddish,
      * to new standard.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.297 -0500", hash_original_method = "62A4EBD8F4E62508750FECA9D13AF599", hash_generated_method = "BD27898EED9580F366AC4D9476AB1AFF")
     
 private static String convertObsoleteLanguageCodeToNew(String langCode) {
@@ -40,6 +42,8 @@ private static String convertObsoleteLanguageCodeToNew(String langCode) {
         return langCode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.300 -0500", hash_original_method = "2FD191509AAFF5A35E4AE6ACAB376D84", hash_generated_method = "ACB9318157E592EAC714BBB85AA8F2AA")
     
 private static void addLocaleToHttpAcceptLanguage(StringBuilder builder,
@@ -318,6 +322,8 @@ private static void addLocaleToHttpAcceptLanguage(StringBuilder builder,
      * Package constructor to prevent clients from creating a new settings
      * instance.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.290 -0500", hash_original_method = "C5F77054875E8CE16379FFA130433105", hash_generated_method = "C5F77054875E8CE16379FFA130433105")
     
 WebSettings(Context context, WebView webview) {
@@ -344,6 +350,8 @@ WebSettings(Context context, WebView webview) {
      * Looks at sLocale and returns current AcceptLanguage String.
      * @return Current AcceptLanguage String.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.295 -0500", hash_original_method = "4DE075F72507E4E460D500D800684FF5", hash_generated_method = "D5D1EBAD36E1F29CFFD3A846A6923F1C")
     
 private String getCurrentAcceptLanguage() {
@@ -368,6 +376,8 @@ private String getCurrentAcceptLanguage() {
      * Looks at sLocale and mContext and returns current UserAgent String.
      * @return Current UserAgent String.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.303 -0500", hash_original_method = "7A96EBBEB91D958845CC53A11C0AF344", hash_generated_method = "AD198F5268FD9D3CBF291F692E34E855")
     
 private synchronized String getCurrentUserAgent() {
@@ -459,6 +469,8 @@ private synchronized String getCurrentUserAgent() {
     }
      */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.311 -0500", hash_original_method = "BB54171E3BDD4A64CB98C2709AC39B9C", hash_generated_method = "30FA8E53333FFE1729FB8BEBBBD32F1A")
     
 boolean supportTouchOnly() {
@@ -1353,6 +1365,8 @@ public synchronized boolean getBlockNetworkLoads() {
         return mBlockNetworkLoads;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.468 -0500", hash_original_method = "4445E93EF699C8E4DE794753E49CA477", hash_generated_method = "F3CB4EF725F885ADC8E7FC9F51F629AC")
     
 private void verifyNetworkAccess() {
@@ -1825,7 +1839,9 @@ public synchronized String getUserAgentString() {
     }
 
     /* package api to grab the Accept Language string. */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.544 -0500", hash_original_method = "D20FFE724413B630D767FC3330D85D9B", hash_generated_method = "4DA0FAACCA3DDF0498F542EEF44D6DB2")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.544 -0500", hash_original_method = "D20FFE724413B630D767FC3330D85D9B", hash_generated_method = "4DA0FAACCA3DDF0498F542EEF44D6DB2")
     
 synchronized String getAcceptLanguage() {
         synchronized(sLockForLocaleSettings) {
@@ -1838,7 +1854,9 @@ synchronized String getAcceptLanguage() {
         return mAcceptLanguage;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.547 -0500", hash_original_method = "1949FADEB987BBB9FFD42544F3D5731B", hash_generated_method = "1949FADEB987BBB9FFD42544F3D5731B")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.547 -0500", hash_original_method = "1949FADEB987BBB9FFD42544F3D5731B", hash_generated_method = "1949FADEB987BBB9FFD42544F3D5731B")
     
 boolean isNarrowColumnLayout() {
         return getLayoutAlgorithm() == LayoutAlgorithm.NARROW_COLUMNS;
@@ -1860,7 +1878,9 @@ public void setNeedInitialFocus(boolean flag) {
     }
 
     /* Package api to get the choice whether it needs to set initial focus. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.551 -0500", hash_original_method = "D1C04B216D0AC5093D2F075C6698B7EE", hash_generated_method = "D1C04B216D0AC5093D2F075C6698B7EE")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.551 -0500", hash_original_method = "D1C04B216D0AC5093D2F075C6698B7EE", hash_generated_method = "D1C04B216D0AC5093D2F075C6698B7EE")
     
 boolean getNeedInitialFocus() {
         return mNeedInitialFocus;
@@ -1946,7 +1966,9 @@ public void setMaximumDecodedImageSize(long size) {
      * Returns whether to use fixed viewport.  Use fixed viewport
      * whenever wide viewport is on.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.564 -0500", hash_original_method = "37CD2CB6E6E70B184FA7FDB5F22FF522", hash_generated_method = "37CD2CB6E6E70B184FA7FDB5F22FF522")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.564 -0500", hash_original_method = "37CD2CB6E6E70B184FA7FDB5F22FF522", hash_generated_method = "37CD2CB6E6E70B184FA7FDB5F22FF522")
     
 boolean getUseFixedViewport() {
         return getUseWideViewPort();
@@ -1955,7 +1977,9 @@ boolean getUseFixedViewport() {
     /**
      * Returns whether private browsing is enabled.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.566 -0500", hash_original_method = "F442F079E2DD19439C88D9FB5E3A709B", hash_generated_method = "F442F079E2DD19439C88D9FB5E3A709B")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.566 -0500", hash_original_method = "F442F079E2DD19439C88D9FB5E3A709B", hash_generated_method = "F442F079E2DD19439C88D9FB5E3A709B")
     
 boolean isPrivateBrowsingEnabled() {
         return mPrivateBrowsingEnabled;
@@ -1965,7 +1989,9 @@ boolean isPrivateBrowsingEnabled() {
      * Sets whether private browsing is enabled.
      * @param flag Whether private browsing should be enabled.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.568 -0500", hash_original_method = "34042B5DCA297E4EBEB0CC9227844924", hash_generated_method = "636C96028B8ECA776D5E1C35BD43A5FF")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.568 -0500", hash_original_method = "34042B5DCA297E4EBEB0CC9227844924", hash_generated_method = "636C96028B8ECA776D5E1C35BD43A5FF")
     
 synchronized void setPrivateBrowsingEnabled(boolean flag) {
         if (mPrivateBrowsingEnabled != flag) {
@@ -2159,6 +2185,8 @@ public String getPhoneNumber() { return mPhoneNumber; }
             //Synthesized constructor
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.269 -0500", hash_original_method = "5DB82DF3D22DC31DB9F8A52C18B58140", hash_generated_method = "89C69A3059449651D3B6C371038C5B0C")
         
 private synchronized void createHandler() {
@@ -2198,6 +2226,8 @@ private synchronized void createHandler() {
             };
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.272 -0500", hash_original_method = "C47047917EAD94E1F72D1853ABF9CDB1", hash_generated_method = "CA2A218B589EB50EE94C9E33903DF48B")
         
 private void setRenderPriority() {
@@ -2219,6 +2249,8 @@ private void setRenderPriority() {
         /**
          * Send a message to the private queue or handler.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.274 -0500", hash_original_method = "AA202573A133FD4C93192532FFFE560D", hash_generated_method = "474639955C5D8CF949FD2CA6772DB7D6")
         
 private synchronized boolean sendMessage(Message msg) {
@@ -2231,6 +2263,8 @@ private synchronized boolean sendMessage(Message msg) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.575 -0500", hash_original_method = "5D9DAFAFBF77CCE3ED840C406B6898AF", hash_generated_method = "BC6A3645DFCD86DE7CFF0FD5BD42A427")
     
 synchronized void setSyntheticLinksEnabled(boolean flag) {
@@ -2284,12 +2318,16 @@ public synchronized AutoFillProfile getAutoFillProfile() {
         return mAutoFillProfile;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.586 -0500", hash_original_method = "C3E1D2408E91E83D6659CE445CE89780", hash_generated_method = "C3E1D2408E91E83D6659CE445CE89780")
     
 int getDoubleTapToastCount() {
         return mDoubleTapToastCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.588 -0500", hash_original_method = "3B766C36F75F383AEAB183DB6ECCA431", hash_generated_method = "BA817ADAC0662A17386837E1C90220FA")
     
 void setDoubleTapToastCount(int count) {
@@ -2326,6 +2364,8 @@ public String getProperty(String key) {
      * WebCore thread.
      */
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.596 -0500", hash_original_method = "B2134E4964C5B0957E3BC21A40B5447F", hash_generated_method = "8A2FEDC9D2FB04DC6D60E0090934AFF3")
     
 synchronized void syncSettingsAndCreateHandler(BrowserFrame frame) {
@@ -2349,11 +2389,15 @@ synchronized void syncSettingsAndCreateHandler(BrowserFrame frame) {
      * Let the Settings object know that our owner is being destroyed.
      */
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.598 -0500", hash_original_method = "97F607FA924E3FA8AA008A1519BCA623", hash_generated_method = "A03DF9FDC8B7FEC8EA64149AD0E09E24")
     
 synchronized void onDestroyed() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.600 -0500", hash_original_method = "32C980BFA3F312B2745A36CC144BD5C9", hash_generated_method = "5ECAEFD2FF0554F867BAA0EEAB5A6C3F")
     
 private int pin(int size) {
@@ -2367,6 +2411,8 @@ private int pin(int size) {
     }
 
     /* Post a SYNC message to handle syncing the native settings. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.602 -0500", hash_original_method = "028ACD01F22F62E6B019AFF3AD2AE2F1", hash_generated_method = "49DB4847087FE79E45295B997678671E")
     
 private synchronized void postSync() {
@@ -2378,6 +2424,8 @@ private synchronized void postSync() {
     }
 
     // Synchronize the native and java settings.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.606 -0500", hash_original_method = "B9A4DA2D5B0DA0061612E5CC599DFA25", hash_generated_method = "0D5B015FA56855943EC0D00519209BDE")
     
     private void nativeSync(int nativeFrame){

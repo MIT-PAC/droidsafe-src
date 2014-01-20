@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-
-
 public class JSONStringer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.875 -0500", hash_original_field = "9554BB4AB1E316BAC076E8B4D17E52B3", hash_generated_field = "A0CBD6F499FC0AC1E6545290B568BB70")
 
@@ -28,6 +25,8 @@ public JSONStringer() {
         indent = null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.886 -0500", hash_original_method = "3DA6CD526A78C194327021A156DBFACA", hash_generated_method = "3DA6CD526A78C194327021A156DBFACA")
     
 JSONStringer(int indentSpaces) {
@@ -230,6 +229,8 @@ public JSONStringer value(long value) throws JSONException {
         return this;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.917 -0500", hash_original_method = "E6F73466C6FDC5C4F374E57C86CB98DF", hash_generated_method = "8B59663161522EDC93DCA494C2899DF8")
     
 private void string(String value) {
@@ -283,6 +284,8 @@ private void string(String value) {
         out.append("\"");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.920 -0500", hash_original_method = "A1C4E39B6594D26F11F448F86F922EBA", hash_generated_method = "DFCA45D977E86FFB6D1A5152AF9391A1")
     
 private void newline() {
@@ -317,6 +320,8 @@ public JSONStringer key(String name) throws JSONException {
      * Inserts any necessary separators and whitespace before a name. Also
      * adjusts the stack to expect the key's value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.924 -0500", hash_original_method = "2432D2D31ED521C760D918E6DCE1C6CE", hash_generated_method = "EFBF8EEE61202CEEA55EB02BE50D9FAB")
     
 private void beforeKey() throws JSONException {
@@ -335,6 +340,8 @@ private void beforeKey() throws JSONException {
      * inline array, or inline object. Also adjusts the stack to expect either a
      * closing bracket or another element.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.927 -0500", hash_original_method = "9CA1703B701EBBFA9C513149EAF6F304", hash_generated_method = "6E4181A1A4AC2C5E6956D940DF347FA6")
     
 private void beforeValue() throws JSONException {
@@ -372,7 +379,6 @@ private void beforeValue() throws JSONException {
 @Override public String toString() {
         return out.length() == 0 ? null : out.toString();
     }
-
     
     enum Scope {
         EMPTY_ARRAY,
@@ -382,7 +388,6 @@ private void beforeValue() throws JSONException {
         NONEMPTY_OBJECT,
         NULL,
     }
-
     
 }
 

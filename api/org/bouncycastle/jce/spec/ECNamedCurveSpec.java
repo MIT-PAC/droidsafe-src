@@ -12,13 +12,10 @@ import java.security.spec.EllipticCurve;
 
 import org.bouncycastle.math.ec.ECCurve;
 
-
-
-
-
-
 public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.678 -0500", hash_original_method = "CE1DD527477219861FDCA53909D9C5B4", hash_generated_method = "43B612AD67691A34A25D88EC51B8C458")
     
 private static EllipticCurve convertCurve(
@@ -50,6 +47,8 @@ private static EllipticCurve convertCurve(
 
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.680 -0500", hash_original_method = "B7C4AA036ACA2A30B8E15DF061701AFE", hash_generated_method = "78DF96FB7B5A501ED10C62063FF96B6B")
     
 private static ECPoint convertPoint(
@@ -139,7 +138,6 @@ public String getName()
     {
         return name;
     }
-
     
 }
 

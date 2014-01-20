@@ -12,9 +12,6 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.RetryManager;
 
-
-
-
 public class CdmaDataConnection extends DataConnection {
 
     /**
@@ -25,6 +22,8 @@ public class CdmaDataConnection extends DataConnection {
      * @param rm the RetryManager
      * @return CdmaDataConnection that was created.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.481 -0500", hash_original_method = "C9A1242FF2125DF955BA0640C93EB6EB", hash_generated_method = "F589F88BC8E285568B73C1ECE9CC898C")
     
 static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManager rm) {
@@ -39,10 +38,11 @@ static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManag
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.475 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "1718F4DE7305211326235C8400C02ED3")
 
-
     private static final String LOG_TAG = "CDMA";
 
     // ***** Constructor
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.477 -0500", hash_original_method = "90BEBC84F90039055B8CE59477380674", hash_generated_method = "947C24E53D663B3FAC672F5677F9849B")
     
 private CdmaDataConnection(CDMAPhone phone, String name, int id, RetryManager rm) {

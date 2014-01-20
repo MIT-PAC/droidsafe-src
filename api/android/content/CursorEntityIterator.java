@@ -35,6 +35,8 @@ public CursorEntityIterator(Cursor cursor) {
      * @return the entity that the cursor is currently pointing to
      * @throws RemoteException if a RemoteException is caught while attempting to build the Entity
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.276 -0500", hash_original_method = "8E9C8F1DC87A5B0FEC2F1314601A7972", hash_generated_method = "308DEBA12E5A4D5BEE7FAA2B9F418B93")
     
 public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException;

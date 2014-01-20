@@ -52,6 +52,8 @@ import javax.sip.message.Request;
 
 public final class SIPRequest extends SIPMessage implements javax.sip.message.Request, RequestExt {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.825 -0500", hash_original_method = "7223E3D35B4D52A449DC0E2B1959EDD4", hash_generated_method = "38EAAD4C9286F6207D6B3992C677025D")
     
 private static void putName(String name) {
@@ -756,6 +758,8 @@ public SIPResponse createResponse(int statusCode, String reasonPhrase) {
     }
 
     // Helper method for createResponse, to avoid copying Record-Route unless needed
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.899 -0500", hash_original_method = "B9BF2BAEBA19E8A2F042C98E4A2B8D22", hash_generated_method = "B5EE47E336A8FF2ACCD3D24A763BD037")
     
 private final boolean mustCopyRR( int code ) {

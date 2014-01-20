@@ -107,6 +107,8 @@ public void onEvent(int wfd, int mask, String path) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.733 -0500", hash_original_method = "778044715AD29D56156139197CF7ACD4", hash_generated_method = "C09CD20B792D56A44D7CCF0AC590A5B0")
         
         private int init(){
@@ -114,6 +116,8 @@ public void onEvent(int wfd, int mask, String path) {
         	return getTaintInt();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.737 -0500", hash_original_method = "30BDAF8579403E1F75F26C57B59EB8F1", hash_generated_method = "0C3A49C6AA4498CA7B66854C7F0DEC73")
         
         private void observe(int fd){
@@ -121,6 +125,8 @@ public void onEvent(int wfd, int mask, String path) {
         	addTaint(fd);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.741 -0500", hash_original_method = "CA1E769B93F82C6A5E8C249942B2D7CE", hash_generated_method = "1F5F28AF9A61AB289D32BB2848B3F6EA")
         
         private int startWatching(int fd, String path, int mask){
@@ -131,6 +137,8 @@ public void onEvent(int wfd, int mask, String path) {
         	return getTaintInt();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.745 -0500", hash_original_method = "78CD10B29FCA91AF1BF9DCB391BC5AA9", hash_generated_method = "394E12E9AC9B12044ECB7B5C98603EBD")
         
         private void stopWatching(int fd, int wfd){
@@ -246,6 +254,8 @@ public void stopWatching() {
      * @param path The path, relative to the main monitored file or directory,
      *     of the file or directory which triggered the event
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.769 -0500", hash_original_method = "61CF0F56D51B4057906F8EC12985FFBD", hash_generated_method = "94669805F59639EB370B93260D57DECB")
     
 public abstract void onEvent(int event, String path);

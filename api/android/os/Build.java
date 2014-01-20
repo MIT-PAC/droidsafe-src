@@ -19,12 +19,16 @@ public static String getRadioVersion() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_BASEBAND_VERSION, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.609 -0500", hash_original_method = "418D9C5925500F64D1F7A5BD4EFEEBDF", hash_generated_method = "5447853DC2CC16B9C3F64D805AE1C559")
     
 private static String getString(String property) {
         return SystemProperties.get(property, UNKNOWN);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.612 -0500", hash_original_method = "C6E00A05CF4577B1F2FE54583AF3AC48", hash_generated_method = "12919BF320CA15FB8D6B906889F09136")
     
 private static long getLong(String property) {

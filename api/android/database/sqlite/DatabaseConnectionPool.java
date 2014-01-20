@@ -12,13 +12,8 @@ import android.content.res.Resources;
 import android.os.SystemClock;
 import android.util.Log;
 
-
-
-
-
 class DatabaseConnectionPool {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.022 -0500", hash_original_field = "D458AE8E95C1FC2D2C535B3D0654ED60", hash_generated_field = "6C058760B23A5C13D7BB739FC64924DB")
-
 
     private static final String TAG = "DatabaseConnectionPool";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.025 -0500", hash_original_field = "F58D467CCD0C73A616F2728389AB6A3C", hash_generated_field = "6DB5215553C1840CAEC8065EEA2DFF1E")
@@ -35,7 +30,9 @@ class DatabaseConnectionPool {
 
     private Random rand; // lazily initialized
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.034 -0500", hash_original_method = "642674B3CBAE34C61C10ECDA81AF12DF", hash_generated_method = "642674B3CBAE34C61C10ECDA81AF12DF")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.034 -0500", hash_original_method = "642674B3CBAE34C61C10ECDA81AF12DF", hash_generated_method = "642674B3CBAE34C61C10ECDA81AF12DF")
     
 DatabaseConnectionPool(SQLiteDatabase db) {
         this.mParentDbObj = db;
@@ -47,7 +44,9 @@ DatabaseConnectionPool(SQLiteDatabase db) {
     /**
      * close all database connections in the pool - even if they are in use!
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.037 -0500", hash_original_method = "BA169038399FE60257FEACB6F83742BB", hash_generated_method = "F4DE400B5ECB636CE5878A6196E9F7A7")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.037 -0500", hash_original_method = "BA169038399FE60257FEACB6F83742BB", hash_generated_method = "F4DE400B5ECB636CE5878A6196E9F7A7")
     
 synchronized void close() {
         if (Log.isLoggable(TAG, Log.DEBUG)) {
@@ -66,7 +65,9 @@ synchronized void close() {
      * the compiled statement for this sql.
      * @return the Database connection that the caller can use
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.040 -0500", hash_original_method = "29479C12BC42199BDE721BCCF404E99A", hash_generated_method = "EABA6C2E5398A2C547ACC10A61508936")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.040 -0500", hash_original_method = "29479C12BC42199BDE721BCCF404E99A", hash_generated_method = "EABA6C2E5398A2C547ACC10A61508936")
     
 synchronized SQLiteDatabase get(String sql) {
         SQLiteDatabase db = null;
@@ -147,7 +148,9 @@ synchronized SQLiteDatabase get(String sql) {
      * release the given database connection back to the pool.
      * @param db the connection to be released
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.043 -0500", hash_original_method = "C508883C202336989018472FC420E1EA", hash_generated_method = "5646E4AECD89E9D0C3A80970E4BB3B1E")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.043 -0500", hash_original_method = "C508883C202336989018472FC420E1EA", hash_generated_method = "5646E4AECD89E9D0C3A80970E4BB3B1E")
     
 synchronized void release(SQLiteDatabase db) {
         if (Log.isLoggable(TAG, Log.DEBUG)) {
@@ -177,7 +180,9 @@ synchronized void release(SQLiteDatabase db) {
      * Returns a list of all database connections in the pool (both free and busy connections).
      * This method is used when "adb bugreport" is done.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.045 -0500", hash_original_method = "D267C5BE0AC41A86583B003ED8AE5C35", hash_generated_method = "49B7569C3BAAE699A4F8A4AC950390DC")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.045 -0500", hash_original_method = "D267C5BE0AC41A86583B003ED8AE5C35", hash_generated_method = "49B7569C3BAAE699A4F8A4AC950390DC")
     
 synchronized ArrayList<SQLiteDatabase> getConnectionList() {
         ArrayList<SQLiteDatabase> list = new ArrayList<SQLiteDatabase>();
@@ -190,7 +195,9 @@ synchronized ArrayList<SQLiteDatabase> getConnectionList() {
     /**
      * package level access for testing purposes only. otherwise, private should be sufficient.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.047 -0500", hash_original_method = "FCCC68E0BE173C0DC0076E45C706F445", hash_generated_method = "FCCC68E0BE173C0DC0076E45C706F445")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.047 -0500", hash_original_method = "FCCC68E0BE173C0DC0076E45C706F445", hash_generated_method = "FCCC68E0BE173C0DC0076E45C706F445")
     
 int getFreePoolSize() {
         int count = 0;
@@ -205,7 +212,9 @@ int getFreePoolSize() {
     /**
      * only for testing purposes
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.049 -0500", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "94796DA212EFDAF0BC89ABDE3263411C")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.049 -0500", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "94796DA212EFDAF0BC89ABDE3263411C")
     
 ArrayList<PoolObj> getPool() {
         return mPool;
@@ -231,6 +240,8 @@ ArrayList<PoolObj> getPool() {
         return buff.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.055 -0500", hash_original_method = "8B6A0047A202C3A27DBFDE3CD809337B", hash_generated_method = "0253D1A72B2E2D37A5769D2E4B0EF8CE")
     
 private void doAsserts() {
@@ -241,26 +252,31 @@ private void doAsserts() {
     }
 
     /** only used for testing purposes. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.058 -0500", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "6FF68961EF1ADA0AF66CC0A574046C16")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.058 -0500", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "6FF68961EF1ADA0AF66CC0A574046C16")
     
 synchronized void setMaxPoolSize(int size) {
         mMaxPoolSize = size;
     }
 
     /** only used for testing purposes. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.060 -0500", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "CE54283B2B9347A707D56942852DC94E")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.060 -0500", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "CE54283B2B9347A707D56942852DC94E")
     
 synchronized int getMaxPoolSize() {
         return mMaxPoolSize;
     }
 
     /** only used for testing purposes. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.062 -0500", hash_original_method = "EE241D81DC808707D5F785FD2863CDE3", hash_generated_method = "EE241D81DC808707D5F785FD2863CDE3")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.062 -0500", hash_original_method = "EE241D81DC808707D5F785FD2863CDE3", hash_generated_method = "EE241D81DC808707D5F785FD2863CDE3")
     
 boolean isDatabaseObjFree(SQLiteDatabase db) {
         return mPool.get(db.mConnectionNum - 1).isFree();
     }
-
     
     static class PoolObj {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.072 -0500", hash_original_field = "0225E37C4B8A4E95808D931D59B1E5B7", hash_generated_field = "3E252BD97600562FDA798CEE6D61D62F")
@@ -270,7 +286,6 @@ boolean isDatabaseObjFree(SQLiteDatabase db) {
 
         private static final boolean BUSY = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.067 -0500", hash_original_field = "F34517A3CF2A339F68B081C837324DA1", hash_generated_field = "92D26B03BAC08A535924894FFC21F4C1")
-
 
         private  SQLiteDatabase mDb;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.070 -0500", hash_original_field = "9012DF29D185800EDA5DC094183A34D6", hash_generated_field = "1F70E86597E6AA266596A89FFFE3A0B1")
@@ -291,6 +306,8 @@ public PoolObj(SQLiteDatabase db) {
             mDb = db;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.085 -0500", hash_original_method = "45198477A389ECAEEDC0006E6891DF34", hash_generated_method = "80D515F13C53A3CDD088ED60C4E10D2E")
         
 private synchronized void acquire() {
@@ -305,6 +322,8 @@ private synchronized void acquire() {
             mFreeBusyFlag = BUSY;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.088 -0500", hash_original_method = "AE7C5C4381BC6984ACC18DB5CB72EB59", hash_generated_method = "D3B0E6CD7052940AAECFCA70A283FAE5")
         
 private synchronized void release() {
@@ -321,6 +340,8 @@ private synchronized void release() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.090 -0500", hash_original_method = "789BC5D306614F739870740EDEE72A08", hash_generated_method = "0C6508D555518D1CDABD32967936DBE1")
         
 private synchronized boolean isFree() {
@@ -330,6 +351,8 @@ private synchronized boolean isFree() {
             return (mFreeBusyFlag == FREE);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.093 -0500", hash_original_method = "55CDA36173BE763B72AF18BF479F1305", hash_generated_method = "301630570D604875E674DC021DE17922")
         
 private synchronized void verify() {
@@ -343,7 +366,9 @@ private synchronized void verify() {
         /**
          * only for testing purposes
          */
-        /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.095 -0500", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "945EC54B01EFE1D0FE96997599AA69D8")
+        /* package */ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.095 -0500", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "945EC54B01EFE1D0FE96997599AA69D8")
         
 synchronized int getNumHolders() {
             return mNumHolders;
@@ -370,7 +395,9 @@ synchronized int getNumHolders() {
     }
 
     /** only used for testing purposes. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.064 -0500", hash_original_method = "CEDD9D91870F2CDCC14A9842125741BE", hash_generated_method = "CEDD9D91870F2CDCC14A9842125741BE")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.064 -0500", hash_original_method = "CEDD9D91870F2CDCC14A9842125741BE", hash_generated_method = "CEDD9D91870F2CDCC14A9842125741BE")
     
 int getSize() {
         return mPool.size();

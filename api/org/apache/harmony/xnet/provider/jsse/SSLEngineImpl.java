@@ -797,6 +797,8 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
     }
 
     // Shutdownes the engine and makes all cleanup work.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.936 -0500", hash_original_method = "2E4498D8774C920317F596FEB8E0DACF", hash_generated_method = "310B3004AFFE64449AAA6D06F3926534")
     
 private void shutdown() {

@@ -92,6 +92,8 @@ public AbsSpinner(Context context, AttributeSet attrs, int defStyle) {
     /**
      * Common code for different constructor flavors
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.348 -0500", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "362784A39455FECC93B9947BF59423D1")
     
 private void initAbsSpinner() {
@@ -150,6 +152,8 @@ private void initAbsSpinner() {
     /**
      * Clear out all children from the list
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.353 -0500", hash_original_method = "5DEE49E4A107B00C6160988898CCE14A", hash_generated_method = "5DEE49E4A107B00C6160988898CCE14A")
     
 void resetList() {
@@ -246,6 +250,8 @@ void resetList() {
         mWidthMeasureSpec = widthMeasureSpec;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.359 -0500", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "44D3B1A6F440757321735895159CF3F5")
     
@@ -253,6 +259,8 @@ int getChildHeight(View child) {
         return child.getMeasuredHeight();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.360 -0500", hash_original_method = "3D627342594CC491E8B9982EF63DBDD8", hash_generated_method = "3D627342594CC491E8B9982EF63DBDD8")
     
@@ -269,6 +277,8 @@ int getChildWidth(View child) {
                 ViewGroup.LayoutParams.WRAP_CONTENT);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.365 -0500", hash_original_method = "44A3231F2CD8F60C6B590B4146A8EF3F", hash_generated_method = "2EA84CA676DADABC3A99643373B1BA51")
     
 void recycleAllViews() {
@@ -318,6 +328,8 @@ public void setSelection(int position, boolean animate) {
      * @param animate Should the transition be animated
      * 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.372 -0500", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "63246E2C9E0D90A96046BA94228CF775")
     
@@ -331,6 +343,8 @@ void setSelectionInt(int position, boolean animate) {
         }
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.374 -0500", hash_original_method = "E89B31DFCF88A65148B589897F629BD3", hash_generated_method = "DE3E4C3DF383C543F0AF8E96C0CE29EF")
     
 abstract void layout(int delta, boolean animate);
@@ -473,6 +487,8 @@ public SavedState[] newArray(int size) {
         /**
          * Constructor called from {@link AbsSpinner#onSaveInstanceState()}
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.392 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
         
 SavedState(Parcelable superState) {
@@ -482,6 +498,8 @@ SavedState(Parcelable superState) {
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.395 -0500", hash_original_method = "65E5A0CAB50633949DC788A62A186FA9", hash_generated_method = "356CAD3778F2342124F6018DF5A7DD6E")
         
 private SavedState(Parcel in) {
@@ -539,6 +557,8 @@ public void put(int position, View v) {
             mScrapHeap.put(position, v);
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.423 -0500", hash_original_method = "13D5A4FF59BF1643EBD5228E429384EA", hash_generated_method = "2636315F7184771A1F6940DBD366307F")
         
@@ -554,6 +574,8 @@ View get(int position) {
             return result;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.425 -0500", hash_original_method = "1B173351B88254AC852DFD7E9D6DC12C", hash_generated_method = "1B173351B88254AC852DFD7E9D6DC12C")
         
 void clear() {

@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 
-
-
 final class DefaultServerSocketFactory extends ServerSocketFactory {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.506 -0400", hash_original_method = "8A4D96D5B28C2AFD105167087B65524F", hash_generated_method = "8A4D96D5B28C2AFD105167087B65524F")
     public DefaultServerSocketFactory ()
     {
@@ -46,7 +46,6 @@ final class DefaultServerSocketFactory extends ServerSocketFactory {
             throws IOException {
         return new ServerSocket(port, backlog, iAddress);
     }
-
     
 }
 

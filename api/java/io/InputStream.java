@@ -131,8 +131,8 @@ public boolean markSupported() {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
-    @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.138 -0500", hash_original_method = "F11529017A51516EAF2106297C9899F8", hash_generated_method = "BB7CD99365BF090BE44CD77DA108B2A5")
     
 public abstract int read() throws IOException;
@@ -226,8 +226,8 @@ public synchronized void reset() throws IOException {
      * @throws IOException
      *             if this stream is closed or another IOException occurs.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.148 -0500", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "49A9DBDBFE5E6C68C4E21B5D436733ED")
     
 public long skip(long byteCount) throws IOException {

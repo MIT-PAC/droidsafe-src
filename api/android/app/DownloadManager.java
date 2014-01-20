@@ -67,6 +67,8 @@ public static Long getRecommendedMaxBytesOverMobile(Context context) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.332 -0500", hash_original_method = "84ECCC03BFC76932B52057F843DCE0B3", hash_generated_method = "BFBF9D603AFF992C4BDC463233917D80")
     
 private static void validateArgumentIsNonEmpty(String paramName, String val) {
@@ -78,6 +80,8 @@ private static void validateArgumentIsNonEmpty(String paramName, String val) {
     /**
      * Get a parameterized SQL WHERE clause to select a bunch of IDs.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.337 -0500", hash_original_method = "58FA33488269F1928D1ACA78136BAF7B", hash_generated_method = "220415491416EE285B2042B34738A83B")
     
@@ -98,6 +102,8 @@ static String getWhereClauseForIds(long[] ids) {
     /**
      * Get the selection args for a clause returned by {@link #getWhereClauseForIds(long[])}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.339 -0500", hash_original_method = "18769EFB7E28EF76AE4BA41FDCD2B58B", hash_generated_method = "7DB914CCE4DB3334C6CA4853316B3678")
     
@@ -239,6 +245,8 @@ public Request(Uri uri) {
             mUri = uri;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.205 -0500", hash_original_method = "DEE528427F50C6163D0C2E44786A5A1B", hash_generated_method = "DEE528427F50C6163D0C2E44786A5A1B")
         
 Request(String uriString) {
@@ -337,6 +345,8 @@ public Request setDestinationInExternalPublicDir(String dirType, String subPath)
             return this;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.217 -0500", hash_original_method = "53900E0DE3709F8E65CE6AB9A613EA7C", hash_generated_method = "54B99ABCE4759B5DFBB833E8E956CD7B")
         
 private void setDestinationFromBase(File base, String subPath) {
@@ -506,6 +516,8 @@ public Request setVisibleInDownloadsUi(boolean isVisible) {
         /**
          * @return ContentValues to be passed to DownloadProvider.insert()
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.243 -0500", hash_original_method = "A794ABF9FD18E330B670B5AD24CF2800", hash_generated_method = "42CAA0C4E10C8216BBA189F252261D49")
         
@@ -545,6 +557,8 @@ ContentValues toContentValues(String packageName) {
             return values;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.245 -0500", hash_original_method = "26D27F1BE5E3A68003877A062F0DAD99", hash_generated_method = "413384943EE25FF07BBAB4BC2FB2171C")
         
 private void encodeHttpHeaders(ContentValues values) {
@@ -556,6 +570,8 @@ private void encodeHttpHeaders(ContentValues values) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.247 -0500", hash_original_method = "19BA5B9D42AC58D8841CDF02C796EE38", hash_generated_method = "C5A82A9F598709FF9CD8CD7A261A76DE")
         
 private void putIfNonNull(ContentValues contentValues, String key, Object value) {
@@ -667,6 +683,8 @@ public Query orderBy(String column, int direction) {
          * @param projection the projection to pass to ContentResolver.query()
          * @return the Cursor returned by ContentResolver.query()
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.281 -0500", hash_original_method = "3E117BB34A8C7FFA67D17AB4CC250832", hash_generated_method = "DAA7599D89038CFF9301BC5C895B0144")
         
@@ -718,6 +736,8 @@ Cursor runQuery(ContentResolver resolver, String[] projection, Uri baseUri) {
             return resolver.query(uri, projection, selection, selectionArgs, orderBy);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.284 -0500", hash_original_method = "E982889F0CE13C731CA9D89AB5FD3B78", hash_generated_method = "57723C7A553B25E7484933DE4FA21283")
         
 private String joinStrings(String joiner, Iterable<String> parts) {
@@ -733,6 +753,8 @@ private String joinStrings(String joiner, Iterable<String> parts) {
             return builder.toString();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.286 -0500", hash_original_method = "F1C2C126003D565FB51A9C1A25E86357", hash_generated_method = "81C724EE30870939B7326C4556372EBA")
         
 private String statusClause(String operator, int value) {
@@ -782,6 +804,8 @@ public CursorTranslator(Cursor cursor, Uri baseUri) {
                     super.getString(columnIndex);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.354 -0500", hash_original_method = "C2F388AD18BA84031DEC0607FBEAB7C5", hash_generated_method = "3377C7763DFFB9934FEBD99B84F91314")
         
 private String getLocalUri() {
@@ -801,6 +825,8 @@ private String getLocalUri() {
             return ContentUris.withAppendedId(mBaseUri, downloadId).toString();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.356 -0500", hash_original_method = "A69C93787DF2FD0B667931CA82E74881", hash_generated_method = "20DEA6E2661124B48C431CEB910A1249")
         
 private long getReason(int status) {
@@ -816,6 +842,8 @@ private long getReason(int status) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.358 -0500", hash_original_method = "8BF9F68328111BA50CCB78B1792F76F0", hash_generated_method = "2A0069F7861C1B95A00AFD0562DDBFD9")
         
 private long getPausedReason(int status) {
@@ -834,6 +862,8 @@ private long getPausedReason(int status) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.361 -0500", hash_original_method = "A27080D0C32BDBDFED7217EFE39DC72F", hash_generated_method = "ECE7754021DA5E8ED32EDCC50D1D6B87")
         
 private long getErrorCode(int status) {
@@ -877,6 +907,8 @@ private long getErrorCode(int status) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.364 -0500", hash_original_method = "AC0B465D7BF7B10F5608906AFAA7CE72", hash_generated_method = "5994EBD05BD1AB259151C8084D984FF7")
         
 private int translateStatus(int status) {
@@ -1313,6 +1345,8 @@ public long addCompletedDownload(String title, String description,
     /**
      * Get the DownloadProvider URI for the download with the given ID.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.334 -0500", hash_original_method = "D1EE950396677328804F68406B4587AE", hash_generated_method = "D1EE950396677328804F68406B4587AE")
     

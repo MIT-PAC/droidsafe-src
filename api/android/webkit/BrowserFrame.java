@@ -43,7 +43,9 @@ import android.view.ViewRootImpl;
 import android.view.WindowManager;
 
 class BrowserFrame extends Handler {
-    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.218 -0500", hash_original_method = "50372AB6BB6BBC5DF6CA1B50375B707C", hash_generated_method = "5692FCEFB6C8D382EA8E9E6F92A30F1B")
     
 static String getRawResFilename(int id, Context context) {
@@ -372,7 +374,9 @@ public void loadData(String baseUrl, String data, String mimeType,
      *                 is assumed to be a directory in which a filename will be
      *                 chosen according to the url of the current page.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.089 -0500", hash_original_method = "FE36B1316A593126EBA1AA2EF5942205", hash_generated_method = "FE36B1316A593126EBA1AA2EF5942205")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.089 -0500", hash_original_method = "FE36B1316A593126EBA1AA2EF5942205", hash_generated_method = "FE36B1316A593126EBA1AA2EF5942205")
     
 String saveWebArchive(String basename, boolean autoname) {
         return nativeSaveWebArchive(basename, autoname);
@@ -402,6 +406,8 @@ public void goBackOrForward(int steps) {
      * of domain identifier. Change errorCode to an enum for a cleaner
      * interface.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.093 -0500", hash_original_method = "50E452D86A3E55153B3E0F1DD816D615", hash_generated_method = "BB2A008545B8C231B09A8BC474F79D7F")
     
 private void reportError(int errorCode, String description, String failingUrl) {
@@ -414,6 +420,8 @@ private void reportError(int errorCode, String description, String failingUrl) {
         mCallbackProxy.onReceivedError(errorCode, description, failingUrl);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.095 -0500", hash_original_method = "7B4A87199DD3BC0CC52E5F0CAA9F0064", hash_generated_method = "55DED5FCA323019CEF4F10E6E2FDF089")
     
 private void resetLoadingStates() {
@@ -421,25 +429,33 @@ private void resetLoadingStates() {
         mFirstLayoutDone = true;
     }
 
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.097 -0500", hash_original_method = "82C14ED51175F3BAD05958BE30AA9B50", hash_generated_method = "82C14ED51175F3BAD05958BE30AA9B50")
+    /* package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.097 -0500", hash_original_method = "82C14ED51175F3BAD05958BE30AA9B50", hash_generated_method = "82C14ED51175F3BAD05958BE30AA9B50")
     
 boolean committed() {
         return mCommitted;
     }
 
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.099 -0500", hash_original_method = "6055F5425C1866007AB953B33770A39A", hash_generated_method = "6055F5425C1866007AB953B33770A39A")
+    /* package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.099 -0500", hash_original_method = "6055F5425C1866007AB953B33770A39A", hash_generated_method = "6055F5425C1866007AB953B33770A39A")
     
 boolean firstLayoutDone() {
         return mFirstLayoutDone;
     }
 
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.101 -0500", hash_original_method = "9068063B02257F9D08EFF05D6BD051A9", hash_generated_method = "9068063B02257F9D08EFF05D6BD051A9")
+    /* package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.101 -0500", hash_original_method = "9068063B02257F9D08EFF05D6BD051A9", hash_generated_method = "9068063B02257F9D08EFF05D6BD051A9")
     
 int loadType() {
         return mLoadType;
     }
 
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.104 -0500", hash_original_method = "027FDD69E025CF7A20175D3E84246197", hash_generated_method = "D232C6F4EFCBFDA96EAFEFDD8C61BE56")
+    /* package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.104 -0500", hash_original_method = "027FDD69E025CF7A20175D3E84246197", hash_generated_method = "D232C6F4EFCBFDA96EAFEFDD8C61BE56")
     
 void didFirstLayout() {
         if (!mFirstLayoutDone) {
@@ -455,6 +471,8 @@ void didFirstLayout() {
      * Indicates the beginning of a new load.
      * This method will be called once for the main frame.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.107 -0500", hash_original_method = "588CB65AC18071EB5B02ABC642CC0A1A", hash_generated_method = "C7BFA5CBEA1F09A3E6248BC6D75CCF70")
     
 private void loadStarted(String url, Bitmap favicon, int loadType,
@@ -478,6 +496,8 @@ private void loadStarted(String url, Bitmap favicon, int loadType,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.109 -0500", hash_original_method = "C9CC31AE97DBC19619CDCFC15EC7B03E", hash_generated_method = "87797B2F5B98E0DB51CD960603C59877")
     
 @SuppressWarnings("unused")
@@ -494,6 +514,8 @@ private void loadStarted(String url, Bitmap favicon, int loadType,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.112 -0500", hash_original_method = "F4B9AF2B8B6C0B9D0EBAE01BEE4BF775", hash_generated_method = "EE42455E932A3BE74600001C166B3F03")
     
 @SuppressWarnings("unused")
@@ -510,6 +532,8 @@ private void loadStarted(String url, Bitmap favicon, int loadType,
      * native callback
      * Indicates the WebKit has committed to the new load
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.114 -0500", hash_original_method = "7094DD5A86271DA7E952B216F4C46CCD", hash_generated_method = "39D9BB8A59FFD02C0A407B280CB1B697")
     
 private void transitionToCommitted(int loadType, boolean isMainFrame) {
@@ -526,6 +550,8 @@ private void transitionToCommitted(int loadType, boolean isMainFrame) {
      * Indicates the end of a new load.
      * This method will be called once for the main frame.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.116 -0500", hash_original_method = "5C2FD3A5795EB59386117F9A61E0ADCE", hash_generated_method = "B01B6B091CA06151A1DE19D0694FE513")
     
 private void loadFinished(String url, int loadType, boolean isMainFrame) {
@@ -544,6 +570,8 @@ private void loadFinished(String url, int loadType, boolean isMainFrame) {
      * We have received an SSL certificate for the main top-level page.
      * Used by the Android HTTP stack only.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.118 -0500", hash_original_method = "D2CB1A360A21716BE59AD0C99E7F7543", hash_generated_method = "660ED0C5C1BBCBE5B2E23EA2648192A0")
     
 void certificate(SslCertificate certificate) {
@@ -621,6 +649,8 @@ public void destroy() {
      * title. Inform the Activity of the new title.
      * @param title The new title of the document.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.126 -0500", hash_original_method = "71CD366348BF98805D3BCFC6E13F61B1", hash_generated_method = "FA6ED58B03E74DAF236DFA142A7079E4")
     
 private void setTitle(String title) {
@@ -642,6 +672,8 @@ public void externalRepresentation(Message callback) {
         callback.sendToTarget();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.717 -0400", hash_original_method = "818D4287AF55B155FD9BEC63FC9BB14D", hash_generated_method = "2CE36722D89C9AAE233D32794227C266")
     private String externalRepresentation() {
     	String s = new String();
@@ -670,6 +702,8 @@ public void documentAsText(Message callback) {
         callback.sendToTarget();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "79942AAFA346C254C5198053B4C683D6", hash_generated_method = "07D5EDE5120089FA81790CBAAE4B851E")
     private String documentAsText() {
     	String s = new String();
@@ -677,6 +711,8 @@ public void documentAsText(Message callback) {
     	return s;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "BAA59F57B83FBAF7CC9F5BD462BDF4D7", hash_generated_method = "81DE64B9D9AB653AFA9FD34037C2102D")
     private String childFramesAsText() {
     	String s = new String();
@@ -689,6 +725,8 @@ public void documentAsText(Message callback) {
      * the Javascript window object has been cleared.
      * We should re-attach any attached js interfaces.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.144 -0500", hash_original_method = "7D1B04AB7A647E05019AB7BC865C3803", hash_generated_method = "566A734F03AD8E5AB593B413B639A044")
     
 private void windowObjectCleared(int nativeFramePointer) {
@@ -750,6 +788,8 @@ public void removeJavascriptInterface(String interfaceName) {
      * @param uri A String representing the URI of the desired file.
      * @return int The size of the given file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.153 -0500", hash_original_method = "DF8E19ADC1C4D892E5E9E24D72F873C3", hash_generated_method = "38491F4E04C88F3067B64ECA6F23EA31")
     
 private int getFileSize(String uri) {
@@ -772,6 +812,8 @@ private int getFileSize(String uri) {
      * @param expectedSize The size that the buffer has allocated for this file.
      * @return int The size of the given file, or zero if it fails.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.156 -0500", hash_original_method = "D65A9387A3FB37FCB544A79FFB5606B6", hash_generated_method = "99C51532C2A85ADA1E1CEE7620748EF3")
     
 private int getFile(String uri, byte[] buffer, int offset,
@@ -798,7 +840,9 @@ private int getFile(String uri, byte[] buffer, int offset,
         return size;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.297 -0400", hash_original_method = "60CA323AEDF7C276FF8B65BEFBD4FA69", hash_generated_method = "7D89BCA3D4AB00A29B991E0D9B7AA4A5")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.297 -0400", hash_original_method = "60CA323AEDF7C276FF8B65BEFBD4FA69", hash_generated_method = "7D89BCA3D4AB00A29B991E0D9B7AA4A5")
     private InputStream inputStreamForAndroidResource(String url) {
         addTaint(url.getTaint());
         final String ANDROID_ASSET = "file:///android_asset/";
@@ -923,6 +967,8 @@ InputStream var540C13E9E156B687226421B24F2DF178_1855706854 =             null;
      * @param synchronous True if the load is synchronous.
      * @return A newly created LoadListener object.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.163 -0500", hash_original_method = "DEA49E30923C6B4E17F9FB446E1784D4", hash_generated_method = "ADCBF7F54D14F547D47B3A564F6E4BF7")
     
 private LoadListener startLoadingResource(int loaderHandle,
@@ -1009,6 +1055,8 @@ private LoadListener startLoadingResource(int loaderHandle,
      * @param username The username entered by the user (sniffed from the DOM).
      * @param password The password entered by the user (sniffed from the DOM).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.166 -0500", hash_original_method = "69B43B2B2D64063203E22417AF1B4FBE", hash_generated_method = "9B363FF05DB78C31F3C70490363968C8")
     
 private void maybeSavePassword(
@@ -1062,6 +1110,8 @@ private void maybeSavePassword(
     }
 
     // Called by jni from the chrome network stack.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.168 -0500", hash_original_method = "DD9E58924AE2FD70E5FF51B9D61BCBED", hash_generated_method = "2CECB201E6CC90EA2272DFB57640BE13")
     
 private WebResourceResponse shouldInterceptRequest(String url) {
@@ -1090,6 +1140,8 @@ private WebResourceResponse shouldInterceptRequest(String url) {
      * @param newProgress An int between zero and one hundred representing
      *                    the current progress percentage of loading the page.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.171 -0500", hash_original_method = "07700DAB8245AC940D55DCEF1A17B102", hash_generated_method = "1346203C23A4361CE1942CB7556347BA")
     
 private void setProgress(int newProgress) {
@@ -1109,6 +1161,8 @@ private void setProgress(int newProgress) {
      * Send the icon to the activity for display.
      * @param icon A Bitmap representing a page's favicon.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.174 -0500", hash_original_method = "910C3A78FCE0B1E574FD9CA74D1EE7A9", hash_generated_method = "D28FE7594F08537D0E73353BED18B374")
     
 private void didReceiveIcon(Bitmap icon) {
@@ -1116,6 +1170,8 @@ private void didReceiveIcon(Bitmap icon) {
     }
 
     // Called by JNI when an apple-touch-icon attribute was found.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.176 -0500", hash_original_method = "F9E26289979EC36BEDC07872BFD387F0", hash_generated_method = "EFA0D8E6A38AEFF94B40E9A4E2A04FE2")
     
 private void didReceiveTouchIconUrl(String url, boolean precomposed) {
@@ -1126,6 +1182,8 @@ private void didReceiveTouchIconUrl(String url, boolean precomposed) {
      * Request a new window from the client.
      * @return The BrowserFrame object stored in the new WebView.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.178 -0500", hash_original_method = "49DBB49355B8BD4E95F5FBA6E171926E", hash_generated_method = "59EFD5B8330CF6583E735570D5217D7A")
     
 private BrowserFrame createWindow(boolean dialog, boolean userGesture) {
@@ -1135,6 +1193,8 @@ private BrowserFrame createWindow(boolean dialog, boolean userGesture) {
     /**
      * Try to focus this WebView.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.180 -0500", hash_original_method = "05E62B842D0E318583ACCB4619923A88", hash_generated_method = "C819474EE6118508400B6D2AD475968F")
     
 private void requestFocus() {
@@ -1144,12 +1204,16 @@ private void requestFocus() {
     /**
      * Close this frame and window.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.183 -0500", hash_original_method = "A6BF5F00A4A45564AACA34EE9DAEC5CF", hash_generated_method = "46907B0190919553DD53D2F1687686EC")
     
 private void closeWindow(WebViewCore w) {
         mCallbackProxy.onCloseWindow(w.getWebView());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.190 -0500", hash_original_method = "53828DFE68036F8E35ADAC562AA427C9", hash_generated_method = "5C3A520C0B5183C1E16F1E23B177695F")
     
 private void decidePolicyForFormResubmission(int policyFunction) {
@@ -1163,6 +1227,8 @@ private void decidePolicyForFormResubmission(int policyFunction) {
     /**
      * Tell the activity to update its global history.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.192 -0500", hash_original_method = "B19BAB1EEF674556A3A9CC47CD14FB0B", hash_generated_method = "A4A93DB84096F87B82DB777B3CD75A12")
     
 private void updateVisitedHistory(String url, boolean isReload) {
@@ -1172,7 +1238,9 @@ private void updateVisitedHistory(String url, boolean isReload) {
     /**
      * Get the CallbackProxy for sending messages to the UI thread.
      */
-    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.194 -0500", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "D3ED977A3BCAC48329E24D7D69689852")
     
 CallbackProxy getCallbackProxy() {
@@ -1182,6 +1250,8 @@ CallbackProxy getCallbackProxy() {
     /**
      * Returns the User Agent used by this frame
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.197 -0500", hash_original_method = "F09A8DE53C03EAD5D6B2D7442C92246E", hash_generated_method = "F09A8DE53C03EAD5D6B2D7442C92246E")
     
@@ -1189,12 +1259,16 @@ String getUserAgentString() {
         return mSettings.getUserAgentString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.215 -0500", hash_original_method = "D14466E1FBBBA5A0DDC9A63472126D93", hash_generated_method = "FC1CEB20F0A2030E12B2893C5F1B5453")
     
 private String getRawResFilename(int id) {
         return getRawResFilename(id, mContext);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.220 -0500", hash_original_method = "E4DD03CAE364FD517B782C57726FD370", hash_generated_method = "2C757E9A29C2FD3560D0A5B6424D6332")
     
 private float density() {
@@ -1315,6 +1389,8 @@ private float density() {
      * We delegate the request to CallbackProxy, and route its response to
      * {@link #nativeSslClientCert(int, X509Certificate)}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.246 -0500", hash_original_method = "DFA7C324E28D10E855E86AE4BB5B7562", hash_generated_method = "F326817D796D1230CE099623BEB6B8C3")
     
 private void requestClientCert(int handle, String hostAndPort) {
@@ -1340,6 +1416,8 @@ private void requestClientCert(int handle, String hostAndPort) {
      * We delegate the request to CallbackProxy, which owns the current app's
      * DownloadListener.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.249 -0500", hash_original_method = "322B645C7F09570DF98848B1C3D767D8", hash_generated_method = "7C1CDEC77E67281F51947C6E8EFC17AE")
     
 private void downloadStart(String url, String userAgent,
@@ -1370,12 +1448,16 @@ private void downloadStart(String url, String userAgent,
     /**
      * Called by JNI for Chrome HTTP stack when the Java side needs to access the data.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.251 -0500", hash_original_method = "BAE8CD84EA4D59BD4BB7CAF15EB1C07F", hash_generated_method = "7445C14409FF7674B142C1E17AAC50F3")
     
 private void didReceiveData(byte data[], int size) {
         if (mKeyStoreHandler != null) mKeyStoreHandler.didReceiveData(data, size);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.253 -0500", hash_original_method = "5EC89579D3745ABD19569589FBBBCA81", hash_generated_method = "BF9091BC227ECCCDDA7F7BA30A006F61")
     
 private void didFinishLoading() {
@@ -1389,6 +1471,8 @@ private void didFinishLoading() {
      * Called by JNI when we recieve a certificate for the page's main resource.
      * Used by the Chromium HTTP stack only.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.255 -0500", hash_original_method = "A2E04BD398BDF0F096F042D99402CC27", hash_generated_method = "0CF75FAE561507595D7ECE10D393A40C")
     
 private void setCertificate(byte cert_der[]) {
@@ -1402,7 +1486,9 @@ private void setCertificate(byte cert_der[]) {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.257 -0500", hash_original_method = "780A48AF1DFDDD134926E1881FBB7981", hash_generated_method = "780A48AF1DFDDD134926E1881FBB7981")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.257 -0500", hash_original_method = "780A48AF1DFDDD134926E1881FBB7981", hash_generated_method = "780A48AF1DFDDD134926E1881FBB7981")
     
 SearchBox getSearchBox() {
         return mSearchBox;
@@ -1411,6 +1497,8 @@ SearchBox getSearchBox() {
     /**
      * Called by JNI when processing the X-Auto-Login header.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.260 -0500", hash_original_method = "957E1FEE267AF2EB4B4A609321166001", hash_generated_method = "6CE7CA93B49D4E548EC58C3E38AED7C2")
     
 private void autoLogin(String realm, String account, String args) {
@@ -1428,6 +1516,8 @@ private void autoLogin(String realm, String account, String args) {
      * @param list  The native side will add and remove items from this list as
      *              the native list changes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.264 -0500", hash_original_method = "CAC5AC041AD65DE746A86B06B460473E", hash_generated_method = "73AE5058C776F471080D184F0ABD763B")
     
     private void nativeCreateFrame(WebViewCore w, AssetManager am,
@@ -1456,6 +1546,8 @@ private void autoLogin(String realm, String account, String args) {
 
         private  WindowManager mWindowManager;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.064 -0500", hash_original_method = "049F58B9ED595813037671BB1DAC0333", hash_generated_method = "049F58B9ED595813037671BB1DAC0333")
         
 ConfigCallback(WindowManager wm) {
@@ -1523,6 +1615,8 @@ public void onLowMemory() {}
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.271 -0500", hash_original_method = "7D705910310ED484283730AFB821A717", hash_generated_method = "406301031B3AABF223F5324690FD3ED4")
     
     private void nativeCallPolicyFunction(int policyFunction,
@@ -1547,6 +1641,8 @@ public void onLowMemory() {}
      * @param steps A negative or positive number indicating the direction
      *              and number of steps to move.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.279 -0500", hash_original_method = "53A1F9C2A72688D9CD2F75BB7D3D5005", hash_generated_method = "0F9B35A447BBA3AFD0BD90BA2849A5D4")
     
     private void nativeGoBackOrForward(int steps){
@@ -1565,6 +1661,8 @@ public void onLowMemory() {}
     /**
      * Add a javascript interface to the main frame.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.286 -0500", hash_original_method = "1BC95C43CEE0FFE1F6217DA26B59C5B9", hash_generated_method = "26CC9F7BD5DA7915884E25F00AB2853B")
     
     private void nativeAddJavascriptInterface(int nativeFramePointer,
@@ -1580,6 +1678,8 @@ public void onLowMemory() {}
      */
     /* FIXME: The native cache is always on for now until we have a better
      * solution for our 2 caches. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.289 -0500", hash_original_method = "B177754AEEE092C53184C415EE8118E6", hash_generated_method = "722DDFC3A5FE357762C782EF27156D3B")
     
     private void setCacheDisabled(boolean disabled){
@@ -1603,6 +1703,8 @@ public void onLowMemory() {}
     /**
      * Returns false if the url is bad.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.301 -0500", hash_original_method = "6C44E95231996B5164D16D96A5AF9CAD", hash_generated_method = "40B9E65FBFB1331A55BF5EE628C65CE7")
     
     private void nativeLoadUrl(String url, Map<String, String> headers){
@@ -1611,6 +1713,8 @@ public void onLowMemory() {}
     	addTaint(headers.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.305 -0500", hash_original_method = "4DAAE38A658B1BBD069DC4A366A0C462", hash_generated_method = "9B6613BA10C56B29898E9C3B20F75C07")
     
     private void nativePostUrl(String url, byte[] postData){
@@ -1619,6 +1723,8 @@ public void onLowMemory() {}
     	addTaint(postData[0]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.308 -0500", hash_original_method = "8945167C96AD091C5C39DEC108C4839D", hash_generated_method = "70E1BAD91CD52B6C68F6253B2A952D74")
     
     private void nativeLoadData(String baseUrl, String data,
@@ -1643,6 +1749,8 @@ public void stopLoading() {
         nativeStopLoading();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.314 -0500", hash_original_method = "64AB65E4A9095F9BBCDCF9CF6CF9A5F6", hash_generated_method = "B52A492092BFFE8F4C3A94EF3C1BBCCF")
     
     private void nativeStopLoading(){
@@ -1662,6 +1770,8 @@ public void stopLoading() {
     /**
      * @return TRUE if there is a password field in the current frame
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.321 -0500", hash_original_method = "10318A015094FE1A39B49B3070F280C0", hash_generated_method = "F4A3AF6118273DC4FD2670F4C29DD8CB")
     
     private boolean hasPasswordField(){
@@ -1669,6 +1779,8 @@ public void stopLoading() {
     	return getTaintBoolean();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "865B533AFC1748A162575C4402C4E1D7", hash_generated_method = "649B5EB499FF582D6D8E126787969B7F")
     private String[] getUsernamePassword() {
     	String[] s = new String[1];
@@ -1681,6 +1793,8 @@ public void stopLoading() {
      * @param username
      * @param password
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.328 -0500", hash_original_method = "2745608D69207B6EE74824552EF70660", hash_generated_method = "6E88AFFB477D5693F1F3FC876B4BCA60")
     
     private void setUsernamePassword(String username, String password){
@@ -1689,6 +1803,8 @@ public void stopLoading() {
     	addTaint(password.getTaint());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "74581984BB5BC192860C6547F8D5036F", hash_generated_method = "1313694DA1B47EE7DE9BC757D7889251")
     private String nativeSaveWebArchive(String basename, boolean autoname) {
     	addTaint(autoname);
@@ -1698,6 +1814,8 @@ public void stopLoading() {
     	return s;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.336 -0500", hash_original_method = "08E54613B59D770C860286634891B8BB", hash_generated_method = "21220B1EDA678AA52C6F474D39FEDE96")
     
     private void nativeOrientationChanged(int orientation){
@@ -1705,6 +1823,8 @@ public void stopLoading() {
     	addTaint(orientation);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.340 -0500", hash_original_method = "68B2D8AE5CF2C1C845D97B94EDB581CC", hash_generated_method = "C0C0561BBCCD82FBB7D90A7C0971E34C")
     
     private void nativeAuthenticationProceed(int handle, String username, String password){
@@ -1714,6 +1834,8 @@ public void stopLoading() {
     	addTaint(password.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.343 -0500", hash_original_method = "9DEA51422898C7E38A3DECD149992B9B", hash_generated_method = "B1A5E441167C0DF26C4F33E6275E9502")
     
     private void nativeAuthenticationCancel(int handle){
@@ -1721,6 +1843,8 @@ public void stopLoading() {
     	addTaint(handle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.347 -0500", hash_original_method = "DFE86F393FFB1B33336576462A995D77", hash_generated_method = "78CBB94BAAC06C870BCF54AF7BFB0C64")
     
     private void nativeSslCertErrorProceed(int handle){
@@ -1728,6 +1852,8 @@ public void stopLoading() {
     	addTaint(handle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.351 -0500", hash_original_method = "8A69525C805CE3B5326B3888FD841CA0", hash_generated_method = "7093D1398B4C1821787DE09D35C68DED")
     
     private void nativeSslCertErrorCancel(int handle, int certError){
@@ -1736,6 +1862,8 @@ public void stopLoading() {
     	addTaint(certError);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.355 -0500", hash_original_method = "81F222D4FD7D3F4B597DBD7F9BD0D106", hash_generated_method = "52BA7D1750B8229E20200613F672C566")
     
     void nativeSslClientCert(int handle,
@@ -1754,13 +1882,17 @@ public void stopLoading() {
      * @return true when the frame should be initially scrolled right-most
      * based on the text direction and writing mode.
      */
-    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.357 -0500", hash_original_method = "154F1DF98163CFE18EB2585F133E4CD5", hash_generated_method = "154F1DF98163CFE18EB2585F133E4CD5")
     
 boolean getShouldStartScrolledRight() {
         return nativeGetShouldStartScrolledRight(mNativeFrame);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.360 -0500", hash_original_method = "F95D370518D151DA0A0757957627AE19", hash_generated_method = "20F1EA7DEE781B06C38A55CF9402CA5D")
     
     private boolean nativeGetShouldStartScrolledRight(int nativeBrowserFrame){

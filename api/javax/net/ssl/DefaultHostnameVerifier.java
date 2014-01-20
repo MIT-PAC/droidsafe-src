@@ -22,6 +22,8 @@ class DefaultHostnameVerifier implements HostnameVerifier {
           { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.557 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
     public DefaultHostnameVerifier ()
     {
@@ -67,6 +69,8 @@ public final boolean verify(String host, SSLSession session) {
      * @param cn a certificate CN or DNS subject alt. Either a literal name or
      *     a wildcard of the form "*.google.com".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.383 -0500", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "7AFF45F57CB221839AF43D1350782560")
     
 private boolean matches(String hostName, String cn) {
@@ -92,6 +96,8 @@ private boolean matches(String hostName, String cn) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.385 -0500", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "C59675BD211D3F135E1AEBBEAF5E91B2")
     
 private boolean acceptableCountryWildcard(String cn) {
@@ -109,6 +115,8 @@ private boolean acceptableCountryWildcard(String cn) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.388 -0500", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "A2DE3C6C397202048AE943C2CFF7C4C4")
     
 private String getFirstCn(X509Certificate cert) {
@@ -154,6 +162,8 @@ private String getFirstCn(X509Certificate cert) {
      * <p>(Or maybe the version of OpenSSL I'm using to test isn't storing the
      * international characters correctly in the SubjectAlts?).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.391 -0500", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "163755B59EEC94F6B2CD5A45CFBB27D5")
     
 private List<String> getDNSSubjectAlts(X509Certificate cert) {

@@ -34,7 +34,9 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         // ---------- Original Method ----------
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "200669CE849E0E6EB4D645D70DC42C60", hash_generated_method = "BB398DB8539410A1C6824BFFF541668C")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "200669CE849E0E6EB4D645D70DC42C60", hash_generated_method = "BB398DB8539410A1C6824BFFF541668C")
     public  HashSet(int capacity, float loadFactor) {
         requestCapacity(capacity);
         // ---------- Original Method ----------
@@ -51,13 +53,17 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         //}
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.671 -0500", hash_original_method = "03A7D4D479B1CF6DDF3EDEC66129252B", hash_generated_method = "03A7D4D479B1CF6DDF3EDEC66129252B")
     
 HashSet(HashMap<E, HashSet<E>> backingMap) {
         this.backingMap = backingMap;
     }
     
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.221 -0400", hash_original_method = "955CE9C49A99D547E9A8BE3B956E5B23", hash_generated_method = "19EB10E26D2920921BDA436E55558712")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.221 -0400", hash_original_method = "955CE9C49A99D547E9A8BE3B956E5B23", hash_generated_method = "19EB10E26D2920921BDA436E55558712")
     @Override
     @SuppressWarnings("unchecked")
     public Object clone() {
@@ -92,7 +98,9 @@ HashSet(HashMap<E, HashSet<E>> backingMap) {
         return super.getIterator();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.224 -0400", hash_original_method = "338B1A875F3BC7E4991A09D0F5CEB0AA", hash_generated_method = "07AF6EC737A10200DDD2FAF359C27B81")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.224 -0400", hash_original_method = "338B1A875F3BC7E4991A09D0F5CEB0AA", hash_generated_method = "07AF6EC737A10200DDD2FAF359C27B81")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
         stream.defaultWriteObject();
@@ -111,7 +119,9 @@ for(E e : this)
         //}
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.224 -0400", hash_original_method = "A3FDF0D301AE73958000FBEC5434608A", hash_generated_method = "E8E7D5F7F203631BFBFB53FE54177525")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.224 -0400", hash_original_method = "A3FDF0D301AE73958000FBEC5434608A", hash_generated_method = "E8E7D5F7F203631BFBFB53FE54177525")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

@@ -44,6 +44,8 @@ public static void setDefault(ProxySelector selector) {
      *
      * @throws IllegalArgumentException if {@code uri} is null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.087 -0500", hash_original_method = "FA2D521FEDCC1B346048CD5647CCB42B", hash_generated_method = "A3763E781BA6591B2332D1594D11606C")
     
 public abstract List<Proxy> select(URI uri);
@@ -58,6 +60,8 @@ public abstract List<Proxy> select(URI uri);
      *     establishment.
      * @throws IllegalArgumentException if any argument is null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.090 -0500", hash_original_method = "E5282D5997A6E32A5F667AD5BD72780C", hash_generated_method = "CA2A4B1CC0FFE3CB020A82D3AABDA514")
     
 public abstract void connectFailed(URI uri, SocketAddress address, IOException failure);

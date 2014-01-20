@@ -70,6 +70,8 @@ public ByteArrayOutputStream(int size) {
         super.close();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.339 -0500", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "92873E091686E9A0835B54C164A67468")
     
 private void expand(int i) {

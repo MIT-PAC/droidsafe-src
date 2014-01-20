@@ -68,6 +68,8 @@ public static ArrayList<SmsMessage> getAllMessagesFromIcc() {
      *   <code>getAllMessagesFromIcc</code>
      * @return <code>ArrayList</code> of <code>SmsMessage</code> objects.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.996 -0500", hash_original_method = "79C62ACAD5DF9EB85CE9ACD9496D0810", hash_generated_method = "BD37A5C053055A9986EAFB09C4A8220A")
     
 private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRawData> records) {
@@ -126,6 +128,8 @@ private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRaw
 
     static public final int RESULT_ERROR_FDN_CHECK_FAILURE  = 6;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.965 -0500", hash_original_method = "20095975633950A922641E0460F74587", hash_generated_method = "C08E158669C15A7C99D46221E8D79A58")
     
 private SmsManager() {

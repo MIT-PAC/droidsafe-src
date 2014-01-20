@@ -10,6 +10,8 @@ import android.util.Slog;
 
 public final class InputChannel implements Parcelable {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static InputChannel[] nativeOpenInputChannelPair(String name) {
     	InputChannel i = new InputChannel();
     	i.addTaint(name.getTaint());
@@ -74,6 +76,8 @@ public InputChannel[] newArray(int size) {
 public InputChannel() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.361 -0500", hash_original_method = "94154519B1A6EA4BB0BB640C85BD9A02", hash_generated_method = "5D30F67E0226CDCF475AEF93B871CE0A")
     
     private void nativeDispose(boolean finalized){
@@ -81,6 +85,8 @@ public InputChannel() {
     	addTaint(finalized);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.365 -0500", hash_original_method = "799DA83596ED16E96D78A1B89899E0CA", hash_generated_method = "BD592B7066D3493771F751F7863D1F53")
     
     private void nativeTransferTo(InputChannel other){
@@ -88,6 +94,8 @@ public InputChannel() {
     	addTaint(other.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.369 -0500", hash_original_method = "CB18D1AF1302EC392F144D01425C9ED8", hash_generated_method = "AA6DFDCC8316FCF6C68C857459A11555")
     
     private void nativeReadFromParcel(Parcel parcel){
@@ -95,6 +103,8 @@ public InputChannel() {
     	addTaint(parcel.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.373 -0500", hash_original_method = "0C3EF2E831F019E30F5E266ABBEB1FCD", hash_generated_method = "1E7F17F566678CAC2AC2E8FB5AD98A9C")
     
     private void nativeWriteToParcel(Parcel parcel){
@@ -102,6 +112,8 @@ public InputChannel() {
     	addTaint(parcel.getTaint());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "55C683646032EAF5E4A7B598D440C2F0")
     private String nativeGetName() {
     	String s = new String();

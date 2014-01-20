@@ -422,6 +422,8 @@ public InternalListener(SpellCheckerSessionListenerImpl spellCheckerSessionListe
         public void onGetSuggestions(SuggestionsInfo[] results);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.672 -0500", hash_original_method = "9106E435C4B71E55E27749112B6B4B2E", hash_generated_method = "E94AB98A454534A8F5CA1B9E29D66662")
     
 private void handleOnGetSuggestionsMultiple(SuggestionsInfo[] suggestionInfos) {

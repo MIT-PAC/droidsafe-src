@@ -277,6 +277,8 @@ public synchronized void close() {
      *
      * @param db The database.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.796 -0500", hash_original_method = "2FBC79C6C2BA05FEAB84BE21BD7C0DCC", hash_generated_method = "4120612F73499708628B23C714A029ED")
     
 public abstract void onCreate(SQLiteDatabase db);
@@ -296,6 +298,8 @@ public abstract void onCreate(SQLiteDatabase db);
      * @param oldVersion The old database version.
      * @param newVersion The new database version.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.799 -0500", hash_original_method = "AD445B0156B85B8B4173B4EAC2D086F3", hash_generated_method = "E507DA669B386B03FA7730201B26B476")
     
 public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);

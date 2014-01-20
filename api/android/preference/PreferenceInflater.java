@@ -15,9 +15,6 @@ import android.util.AttributeSet;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
 class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.407 -0500", hash_original_field = "BA3A8A544724D0E4E42D6BF4A9E4DAC8", hash_generated_field = "51862D8DBF3975C527844ECFFE8161D7")
 
@@ -30,7 +27,6 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
     private static final String EXTRA_TAG_NAME = "extra";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.414 -0500", hash_original_field = "F44A9B2F698C7B96C36DE45B8F61794D", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
 
-
     private PreferenceManager mPreferenceManager;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.416 -0500", hash_original_method = "50527EB8D19F2F0D64584B04C3D41EF2", hash_generated_method = "EEC468F90D8E00AB757571523C2C60CD")
@@ -40,6 +36,8 @@ public PreferenceInflater(Context context, PreferenceManager preferenceManager) 
         init(preferenceManager);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.419 -0500", hash_original_method = "CBCBABB7FE70B103F3E123A80F4BFEB8", hash_generated_method = "CBCBABB7FE70B103F3E123A80F4BFEB8")
     
 PreferenceInflater(GenericInflater<Preference, PreferenceGroup> original, PreferenceManager preferenceManager, Context newContext) {
@@ -54,6 +52,8 @@ PreferenceInflater(GenericInflater<Preference, PreferenceGroup> original, Prefer
         return new PreferenceInflater(this, mPreferenceManager, newContext);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.423 -0500", hash_original_method = "7B227AC4C6BF5338AF52F597A9EDC5E2", hash_generated_method = "1BAC0EABFF78094E41E7999CDDD424C2")
     
 private void init(PreferenceManager preferenceManager) {

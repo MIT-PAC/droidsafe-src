@@ -316,6 +316,8 @@ public void setCursorToStringConverter(CursorToStringConverter cursorToStringCon
      * 
      * @param from the Strings naming the columns of interest
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.920 -0500", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "F6BB161E6EF8993E01BF9BFC3DEBA729")
     
 private void findColumns(String[] from) {

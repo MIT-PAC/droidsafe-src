@@ -547,6 +547,8 @@ public final Looper getLooper() {
 		return retVal;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final IMessenger getIMessenger(){
 		// Original method
@@ -573,7 +575,9 @@ public final Looper getLooper() {
     	return retVal;
 	}
     
-	private final Message getPostMessage(Runnable r) {
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private final Message getPostMessage(Runnable r) {
     	addTaint(r.getTaint());
         Message m = new Message();
         m.callback = r;
@@ -601,6 +605,8 @@ public void send(Message msg) {
         public boolean handleMessage(Message msg);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.102 -0500", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "A5974E73A9C80C82DFA1C17347E03874")
     
 private final Message getPostMessage(Runnable r, Object token) {
@@ -610,6 +616,8 @@ private final Message getPostMessage(Runnable r, Object token) {
         return m;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.104 -0500", hash_original_method = "6CA31B63D4772009E291A8EEE8116A2F", hash_generated_method = "AD0BE4CB06C28D91482679A28DE4CCB6")
     
 private final void handleCallback(Message message) {

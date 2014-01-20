@@ -244,6 +244,8 @@ public void setAttribute(String name, String value) {
 
         private ArrayList<String> mFormats = new ArrayList<String>();
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.993 -0500", hash_original_method = "02F078FAC4A0FFA7B56C26518CB9B9A1", hash_generated_method = "2DA64E39C246FA1CB1FD7779973AAE12")
         
 private Media(String type, int port, int portCount, String protocol) {
@@ -407,6 +409,8 @@ public void removeRtpPayload(int type) {
             removeFormat(String.valueOf(type));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.025 -0500", hash_original_method = "9628E0029B5D265C0B7D76261776561B", hash_generated_method = "6FF203714E036AEAD8436A74AB5168BE")
         
 private void write(StringBuilder buffer) {
@@ -432,6 +436,8 @@ private void write(StringBuilder buffer) {
 
         private final ArrayList<String> mLines = new ArrayList<String>();
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.035 -0500", hash_original_method = "961F9332E222C9766CB023FF8444B0B1", hash_generated_method = "961F9332E222C9766CB023FF8444B0B1")
         
 Fields(String order) {
@@ -586,6 +592,8 @@ public void setAttribute(String name, String value) {
             set("a=" + name, ':', value);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.064 -0500", hash_original_method = "0B643EB7A40766CD17BE57ED23F6E069", hash_generated_method = "B863096EDA63A2CB1C8E8E939E025B30")
         
 private void write(StringBuilder buffer) {
@@ -602,6 +610,8 @@ private void write(StringBuilder buffer) {
         /**
          * Invokes {@link #set} after splitting the line into three parts.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.066 -0500", hash_original_method = "1E2B4FDCC5FCB983233F6190F7157F83", hash_generated_method = "D840C97F644B017E3651A356EE52115B")
         
 private void parse(String line) {
@@ -626,6 +636,8 @@ private void parse(String line) {
         /**
          * Finds the key with the given prefix and returns its suffix.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.068 -0500", hash_original_method = "AC73044C1BE8B35906F49C8C6D477AFE", hash_generated_method = "B64DAC5DC579F956866B0E3AFF4E496F")
         
 private String[] cut(String prefix, char delimiter) {
@@ -647,6 +659,8 @@ private String[] cut(String prefix, char delimiter) {
         /**
          * Returns the index of the key.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.071 -0500", hash_original_method = "6CC88714FB6247DC4BDAFCE2B4177456", hash_generated_method = "41FAEBAC9C7E267B54234DF09F294B37")
         
 private int find(String key, char delimiter) {
@@ -665,6 +679,8 @@ private int find(String key, char delimiter) {
          * Sets the key with the value or removes the key if the value is
          * {@code null}.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.073 -0500", hash_original_method = "9868AB060D9EE7DD5CB696B838DF99A9", hash_generated_method = "94F6D8DA96609EB5291E15164A9EE33D")
         
 private void set(String key, char delimiter, String value) {
@@ -686,6 +702,8 @@ private void set(String key, char delimiter, String value) {
         /**
          * Returns the value of the key.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.076 -0500", hash_original_method = "820DDC74FB3CD5776CD6646B43FBF51C", hash_generated_method = "3A7F7BB7C83ACE4EA83E12008CF58EA0")
         
 private String get(String key, char delimiter) {

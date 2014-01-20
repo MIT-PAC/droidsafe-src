@@ -13,12 +13,16 @@ public final class Integer extends Number implements Comparable<Integer> {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.163 -0500", hash_original_method = "08B34540C6F5E5FA9EF442057B264C3A", hash_generated_method = "04989A44666D307E13510E4935EA503C")
     
 public static int compare(int lhs, int rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.166 -0500", hash_original_method = "A3A010FC05E6D36052109B2A32E2CE6D", hash_generated_method = "5EC1AE6DACF5D4E96A3AD3BE653B196C")
     
 private static NumberFormatException invalidInt(String s) {
@@ -125,6 +129,8 @@ public static Integer getInteger(String string) {
      * @return the requested property's value as an {@code Integer} or the
      *         default value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.182 -0500", hash_original_method = "B43E44D829289B070CF83BC460D06D24", hash_generated_method = "A056FC57C20DB105CD700CA7A32403BB")
     
@@ -157,6 +163,8 @@ public static Integer getInteger(String string, int defaultValue) {
      * @return the requested property's value as an {@code Integer} or the
      *         default value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.185 -0500", hash_original_method = "1037DE5287EEBEFE56735B40DF7AE5DF", hash_generated_method = "CE137B705D1095FFD41C9C3C5AC33FD8")
     
@@ -231,6 +239,8 @@ public static int parseInt(String string, int radix) throws NumberFormatExceptio
         return parse(string, i, radix, negative);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.205 -0500", hash_original_method = "2DC7C613589A3F978B8CE07DBD570473", hash_generated_method = "E72E0B7A74CD7BF6ACF7E658CE311850")
     
 private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
@@ -267,6 +277,8 @@ private static int parse(String string, int offset, int radix, boolean negative)
      *            the integer to convert.
      * @return the binary string representation of {@code i}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.210 -0500", hash_original_method = "9D8F65BFD86E7A18329171709CBF3046", hash_generated_method = "E737365418F916A96DC7B6DCF8FED481")
     
 public static String toBinaryString(int i) {
@@ -298,6 +310,8 @@ public static String toHexString(int i) {
      *            the integer to convert.
      * @return the octal string representation of {@code i}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.215 -0500", hash_original_method = "72067B50D522BDEF5353890C050CC074", hash_generated_method = "39DB8FB2BAD3FBA7DDE4A06C2EF9F726")
     
 public static String toOctalString(int i) {
@@ -383,6 +397,8 @@ public static Integer valueOf(String string) throws NumberFormatException {
      *             radix > Character.MAX_RADIX}.
      * @see #parseInt(String, int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.227 -0500", hash_original_method = "5859C0A727537B8EC88F05E2B2FE00D6", hash_generated_method = "F741D2A1942CB111613D0D4114618CDE")
     
 public static Integer valueOf(String string, int radix) throws NumberFormatException {
@@ -400,6 +416,8 @@ public static Integer valueOf(String string, int radix) throws NumberFormatExcep
      * @return the bit mask indicating the highest 1 bit in {@code i}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.230 -0500", hash_original_method = "07B15BCA74AC5BE2F84043AACB0A310C", hash_generated_method = "B6DBA61B905A0FCCC76CA3CD0DA32EE0")
     
 public static int highestOneBit(int i) {
@@ -423,6 +441,8 @@ public static int highestOneBit(int i) {
      * @return the bit mask indicating the lowest 1 bit in {@code i}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.232 -0500", hash_original_method = "ABFA2AA3044F8D161D7CA2C8E1F71BE9", hash_generated_method = "EE380301ABB52F8350D1090A1D5C072D")
     
 public static int lowestOneBit(int i) {
@@ -438,6 +458,8 @@ public static int lowestOneBit(int i) {
      * @return the number of leading zeros in {@code i}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.236 -0500", hash_original_method = "B598B2644508791A0E6226CE6E4EC6FE", hash_generated_method = "48A2DDE22CF3E254A068A354ACF44783")
     
 public static int numberOfLeadingZeros(int i) {
@@ -491,6 +513,8 @@ public static int numberOfTrailingZeros(int i) {
      * @return the number of 1 bits in {@code i}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.241 -0500", hash_original_method = "96F418696A4CBAC7A39E33CF390C9745", hash_generated_method = "796B97E864DDE00011C807F15057D093")
     
 public static int bitCount(int i) {
@@ -514,6 +538,8 @@ public static int bitCount(int i) {
      * @return the rotated value.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.243 -0500", hash_original_method = "EDB2D6790586ADFBD3CCB3C657FE979E", hash_generated_method = "154CA778413D72FD7120CE19D552321D")
     
 public static int rotateLeft(int i, int distance) {
@@ -532,6 +558,8 @@ public static int rotateLeft(int i, int distance) {
      * @return the rotated value.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.246 -0500", hash_original_method = "6074674D7A01ED6AECC5FC14865BC8F8", hash_generated_method = "BDB7EEC2F311DC2505B8F3ADEB750EE8")
     
 public static int rotateRight(int i, int distance) {
@@ -547,6 +575,8 @@ public static int rotateRight(int i, int distance) {
      * @return the reversed value.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.248 -0500", hash_original_method = "E82979AF836D183FB2BABD0E0E7F3431", hash_generated_method = "F9AF44DB11847DD24867E34B907F1D76")
     
 public static int reverseBytes(int i) {
@@ -564,6 +594,8 @@ public static int reverseBytes(int i) {
      * @return the reversed value.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.251 -0500", hash_original_method = "8FB6A7484D99181743947553B04591B0", hash_generated_method = "4D54DAC6709D8BC4B1289684F495D52B")
     
 public static int reverse(int i) {
@@ -586,6 +618,8 @@ public static int reverse(int i) {
      *         {@code i} is zero.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.253 -0500", hash_original_method = "75E0F722BBDC662C077609CB74D0DBA7", hash_generated_method = "0319A297ACBCD3ABBB61C28D9C866493")
     
 public static int signum(int i) {

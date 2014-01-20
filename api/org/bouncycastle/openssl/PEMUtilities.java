@@ -28,13 +28,10 @@ import org.bouncycastle.crypto.generators.OpenSSLPBEParametersGenerator;
 import org.bouncycastle.crypto.generators.PKCS5S2ParametersGenerator;
 import org.bouncycastle.crypto.params.KeyParameter;
 
-
-
-
-
-
 final class PEMUtilities {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.206 -0500", hash_original_method = "D7BDD885F6183D3FE2404E7597BAEAF4", hash_generated_method = "B339DF6AA5EBA30411019BC672F46927")
     
 static int getKeySize(String algorithm)
@@ -47,6 +44,8 @@ static int getKeySize(String algorithm)
         return ((Integer)KEYSIZES.get(algorithm)).intValue();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.208 -0500", hash_original_method = "F953D5E9CA7B7D38E53B159C9E5A8867", hash_generated_method = "D32B4C95FE83B04A629C09B009E1FA59")
     
 static boolean isPKCS5Scheme1(DERObjectIdentifier algOid)
@@ -54,6 +53,8 @@ static boolean isPKCS5Scheme1(DERObjectIdentifier algOid)
         return PKCS5_SCHEME_1.contains(algOid);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.210 -0500", hash_original_method = "00424EE2D648CE42D7D500B3C24E7CFA", hash_generated_method = "5E5674A82F95E698A29224BFDA418D41")
     
 static boolean isPKCS5Scheme2(DERObjectIdentifier algOid)
@@ -61,6 +62,8 @@ static boolean isPKCS5Scheme2(DERObjectIdentifier algOid)
         return PKCS5_SCHEME_2.contains(algOid);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.212 -0500", hash_original_method = "E156EF8AAB7B98FA705E822767B3CB9B", hash_generated_method = "E1981CF687F9EC4F8B86445AB0815144")
     
 static boolean isPKCS12(DERObjectIdentifier algOid)
@@ -68,6 +71,8 @@ static boolean isPKCS12(DERObjectIdentifier algOid)
         return algOid.getId().startsWith(PKCSObjectIdentifiers.pkcs_12PbeIds.getId());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.215 -0500", hash_original_method = "C5DC054BC2F5D17392B9674096013098", hash_generated_method = "4F5C5A7115463CF389D9299B5E52F812")
     
 static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] password, byte[] salt, int iterationCount)
@@ -82,6 +87,8 @@ static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] passw
         return new SecretKeySpec(((KeyParameter)generator.generateDerivedParameters(PEMUtilities.getKeySize(algorithm))).getKey(), algorithm);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.217 -0500", hash_original_method = "E587FFD7E55D8BCA3A1F7CD14BC37C30", hash_generated_method = "5055647B7A77AA314A5118FE0B8B08B9")
     
 static byte[] crypt(
@@ -106,6 +113,8 @@ static byte[] crypt(
         return crypt(encrypt, prov, bytes, password, dekAlgName, iv);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.222 -0500", hash_original_method = "DFC459E32A4CFB944204CC60901BD3B3", hash_generated_method = "4175D59F160486E986D1E98E1B50E5C1")
     
 static byte[] crypt(
@@ -143,7 +152,6 @@ static byte[] crypt(
             blockMode = "OFB";
             padding = "NoPadding";
         }
-
 
         // Figure out algorithm and key size.
         if (dekAlgName.startsWith("DES-EDE"))
@@ -243,6 +251,8 @@ static byte[] crypt(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.224 -0500", hash_original_method = "A870B0E59A853156E7989243F9F739DE", hash_generated_method = "38910D0AE99FA87FAECB4AC43ECC2C8F")
     
 private static SecretKey getKey(
@@ -254,6 +264,8 @@ private static SecretKey getKey(
         return getKey(password, algorithm, keyLength, salt, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.227 -0500", hash_original_method = "A1B523DA0939BD5F5338F346EA9D2D6B", hash_generated_method = "BBDEC054BB7CECC7EAED0BC872694D22")
     
 private static SecretKey getKey(

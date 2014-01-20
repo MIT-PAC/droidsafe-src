@@ -42,7 +42,9 @@ public LocalSocket() {
      * for use with AndroidServerSocket
      * @param impl a SocketImpl
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.189 -0500", hash_original_method = "2CADB18C95425230AEE84C8462CF6B5E", hash_generated_method = "2CADB18C95425230AEE84C8462CF6B5E")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.189 -0500", hash_original_method = "2CADB18C95425230AEE84C8462CF6B5E", hash_generated_method = "2CADB18C95425230AEE84C8462CF6B5E")
     
 LocalSocket(LocalSocketImpl impl) {
         this.impl = impl;
@@ -65,6 +67,8 @@ LocalSocket(LocalSocketImpl impl) {
      *
      * @throws IOException from SocketImpl.create()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.193 -0500", hash_original_method = "49E5C1FBB8FADEED10B26703F569758C", hash_generated_method = "0869DD9505DD3649F4764FEE639920D0")
     
 private void implCreateIfNeeded() throws IOException {

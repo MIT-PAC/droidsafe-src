@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public final class Objects {
 
     /**
@@ -24,10 +21,11 @@ public static boolean equal(Object a, Object b) {
 public static int hashCode(Object o) {
         return (o == null) ? 0 : o.hashCode();
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.003 -0500", hash_original_method = "C158E75DF9842308E7411AE8FDFF45DA", hash_generated_method = "0C4D37AD1C252B023A4081E65D3CD182")
     
 private Objects() {}
-
     
 }
 

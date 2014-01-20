@@ -6,14 +6,13 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Handler;
 
-
-
-
 public class SslErrorHandler extends Handler {
 
     /**
      * Package-private constructor needed for API compatibility.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.602 -0500", hash_original_method = "3466DABF5042C2C528E28F73B5209EC0", hash_generated_method = "3466DABF5042C2C528E28F73B5209EC0")
     
 SslErrorHandler() {}
@@ -32,7 +31,6 @@ public void proceed() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.606 -0500", hash_original_method = "E5C5DBED2FC0D18DB80484DB83D94F8A", hash_generated_method = "03D37BD64D7EA5A498C29F3157B06CA4")
     
 public void cancel() {}
-
     
 }
 

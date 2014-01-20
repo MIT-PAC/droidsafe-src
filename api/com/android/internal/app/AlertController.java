@@ -45,6 +45,8 @@ import com.android.internal.R;
 
 public class AlertController {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.504 -0500", hash_original_method = "72DE9F1667F0AC69B84EC6B497C20732", hash_generated_method = "8B4C999718DE3CFEA840007E7081B23B")
     
 private static boolean shouldCenterSingleButton(Context context) {
@@ -54,6 +56,8 @@ private static boolean shouldCenterSingleButton(Context context) {
         return outValue.data != 0;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.510 -0500", hash_original_method = "71B58AF2F457DFA0A129B301D5386B40", hash_generated_method = "2C9AAF0AB02E0D558666791D023EC365")
     
 static boolean canTextInput(View v) {
@@ -424,6 +428,8 @@ public Button getButton(int whichButton) {
         return mScrollView != null && mScrollView.executeKeyEvent(event);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.545 -0500", hash_original_method = "0CE32455CB333C36B4EB85B89D65D186", hash_generated_method = "80CA0AABA965A440DAA0C85ADBC1CFAA")
     
 private void setupView() {
@@ -478,6 +484,8 @@ private void setupView() {
         a.recycle();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.549 -0500", hash_original_method = "291261EC5A45F15B0AF035A0FADD9120", hash_generated_method = "F9E4DF28E433B482CC6BAE1313DB3D3A")
     
 private boolean setupTitle(LinearLayout topPanel) {
@@ -535,6 +543,8 @@ private boolean setupTitle(LinearLayout topPanel) {
         return hasTitle;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.551 -0500", hash_original_method = "887622C8B8EC01B1F9012F53B044827B", hash_generated_method = "B535E7B8B1A1A771215AE6652FC5B60F")
     
 private void setupContent(LinearLayout contentPanel) {
@@ -564,6 +574,8 @@ private void setupContent(LinearLayout contentPanel) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.554 -0500", hash_original_method = "5BA34AF0614F863A3B9D6C4A8679B5AF", hash_generated_method = "483516A14A56E303C8586E059E4FF151")
     
 private boolean setupButtons() {
@@ -623,6 +635,8 @@ private boolean setupButtons() {
         return whichButtons != 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.558 -0500", hash_original_method = "28BC3CB500322D129CBA8E7C7A78AD5A", hash_generated_method = "F3759F0CDD5BF0C425F81539F9C680F0")
     
 private void centerButton(Button button) {
@@ -640,6 +654,8 @@ private void centerButton(Button button) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.562 -0500", hash_original_method = "6198B5046244FDCE77443F1833B74949", hash_generated_method = "FBA9B6650722BB2345B5A35C17F23F9B")
     
 private void setBackground(LinearLayout topPanel, LinearLayout contentPanel,

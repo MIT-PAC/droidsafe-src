@@ -8,6 +8,8 @@ import libcore.io.SizeOf;
 
 final class IntToByteBufferAdapter extends IntBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.118 -0500", hash_original_method = "C26DFF1CB2F90F920ECE6C3095E8A671", hash_generated_method = "C4015C0AB13DA38B2DCE397C7B94B6F4")
     
 static IntBuffer asIntBuffer(ByteBuffer byteBuffer) {
@@ -19,6 +21,8 @@ static IntBuffer asIntBuffer(ByteBuffer byteBuffer) {
 
     private  ByteBuffer byteBuffer;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.121 -0500", hash_original_method = "0E7C7C86CACD977D9C0D85465EADD9B5", hash_generated_method = "33220E3DF6D519ECC595690D0474A72B")
     
 private IntToByteBufferAdapter(ByteBuffer byteBuffer) {

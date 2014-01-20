@@ -232,6 +232,8 @@ public ActivityInfo() {
 		*/
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private ActivityInfo(Parcel source) {
     	super(source);
         addTaint(source.readInt()); //theme

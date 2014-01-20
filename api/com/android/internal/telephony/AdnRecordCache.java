@@ -64,6 +64,8 @@ public void reset() {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.156 -0500", hash_original_method = "D74CB42B2A20381108736DF447231499", hash_generated_method = "0D6A043D4D49C8D9C65796E47BD4CD99")
     
 private void clearWaiters() {
@@ -76,6 +78,8 @@ private void clearWaiters() {
         adnLikeWaiters.clear();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.158 -0500", hash_original_method = "AA0A19B306C1CFC2139DB9008BF6A4C8", hash_generated_method = "12855302E02974CFED22B6216D10944B")
     
 private void clearUserWriters() {
@@ -104,6 +108,8 @@ public ArrayList<AdnRecord>
      *
      * See 3GPP TS 51.011 for this mapping
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.163 -0500", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "174DD0D2E1851028247F511063879BEA")
     
 int extensionEfForEf(int efid) {
@@ -118,6 +124,8 @@ int extensionEfForEf(int efid) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.166 -0500", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "2AE3908298D4C69CF29B7E61366DED90")
     
 private void sendErrorResponse(Message response, String errString) {
@@ -309,6 +317,8 @@ public void
 
     //***** Private methods
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.185 -0500", hash_original_method = "06D7CFA235737447F2D0DAD9C5CA936C", hash_generated_method = "08E7DDD55DD2450F5C06842E950F7AB5")
     
 private void

@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class ColorFilter {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void finalizer(int native_instance, int nativeColorFilter) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.092 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
@@ -16,12 +18,16 @@ public class ColorFilter {
 
     public int nativeColorFilter;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.004 -0400", hash_original_method = "046AE4C958596245478875223EE4194E", hash_generated_method = "046AE4C958596245478875223EE4194E")
     public ColorFilter ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.096 -0500", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "C4DD20B802A13FAC6510C3A64139B70A")
     
 protected void finalize() throws Throwable {

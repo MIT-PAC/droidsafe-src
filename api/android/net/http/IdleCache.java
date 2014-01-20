@@ -38,6 +38,8 @@ class IdleCache {
 
     private int mReused = 0;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.028 -0500", hash_original_method = "381EAC5E18A2676540DA51802FE9C22A", hash_generated_method = "381EAC5E18A2676540DA51802FE9C22A")
     
 IdleCache() {
@@ -110,6 +112,8 @@ public void run() {
      * Caches connection, if there is room.
      * @return true if connection cached
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.031 -0500", hash_original_method = "15C17CA69A0E3C6519F160E1B18C9284", hash_generated_method = "DDB193F4AB03DBF42B77F2F79AFB5FBA")
     
 synchronized boolean cacheConnection(
@@ -143,6 +147,8 @@ synchronized boolean cacheConnection(
         return ret;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.034 -0500", hash_original_method = "84A867D5F5B3563DFEB3ADE540AAE988", hash_generated_method = "8D515E030AE7DD404198E0F4C7514E84")
     
@@ -166,6 +172,8 @@ synchronized Connection getConnection(HttpHost host) {
         return ret;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.036 -0500", hash_original_method = "3CB6FBE953A3200168C4C82134203CFB", hash_generated_method = "B8167B7BD46151462D923C6809F040AC")
     
 synchronized void clear() {
@@ -180,6 +188,8 @@ synchronized void clear() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.038 -0500", hash_original_method = "D819290B68B2E791C413DF56F024C65B", hash_generated_method = "2737D354493D3C4E4BD3DE8A1BFACE75")
     
 private synchronized void clearIdle() {

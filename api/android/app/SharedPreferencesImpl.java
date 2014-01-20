@@ -34,12 +34,16 @@ import dalvik.system.BlockGuard;
 
 final class SharedPreferencesImpl implements SharedPreferences {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.838 -0500", hash_original_method = "C980122577ED5655D64E7B6AE9CD1D79", hash_generated_method = "7553570DC3BCA4BBFAE080EB7AEA124E")
     
 private static File makeBackupFile(File prefsFile) {
         return new File(prefsFile.getPath() + ".bak");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.944 -0500", hash_original_method = "8706A5F2BF3C277E766BE1BA5825DD17", hash_generated_method = "97918F44CAE3B5E098E992A15594609C")
     
 private static FileOutputStream createFileOutputStream(File file) {
@@ -108,6 +112,8 @@ private static FileOutputStream createFileOutputStream(File file) {
     private final WeakHashMap<OnSharedPreferenceChangeListener, Object> mListeners =
             new WeakHashMap<OnSharedPreferenceChangeListener, Object>();
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.828 -0500", hash_original_method = "4EED344672F91D55C3B3E75973F50190", hash_generated_method = "4EED344672F91D55C3B3E75973F50190")
     
 SharedPreferencesImpl(File file, int mode) {
@@ -119,6 +125,8 @@ SharedPreferencesImpl(File file, int mode) {
         startLoadFromDisk();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.833 -0500", hash_original_method = "F1282AA19C3183BEA34E2A247A149BD2", hash_generated_method = "3C4E7D4F67AD4CD39A3D8C609F5F4AA3")
     
 private void startLoadFromDisk() {
@@ -134,6 +142,8 @@ private void startLoadFromDisk() {
         }.start();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.836 -0500", hash_original_method = "E285F048C64F263B62F1F06EEC72F6E0", hash_generated_method = "286A9FCE00B287BC77ADA41DCAFB3450")
     
 private void loadFromDiskLocked() {
@@ -177,6 +187,8 @@ private void loadFromDiskLocked() {
         notifyAll();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.841 -0500", hash_original_method = "B476681732C380F10709E29F69091336", hash_generated_method = "3AE03A5DA98444272151C6B9C663CB79")
     
 void startReloadIfChangedUnexpectedly() {
@@ -191,6 +203,8 @@ void startReloadIfChangedUnexpectedly() {
 
     // Has the file changed out from under us?  i.e. writes that
     // we didn't instigate.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.843 -0500", hash_original_method = "A66A0F368E0CD54CE4119FA6EA4CE2B9", hash_generated_method = "8970C3B650D4084AA68EA84D9FEB0A16")
     
 private boolean hasFileChangedUnexpectedly() {
@@ -226,6 +240,8 @@ public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeL
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.849 -0500", hash_original_method = "4E41B5524ECBD1AD902DE6B06A01DA71", hash_generated_method = "0F58067B65B73DD44D97312B510CDE4F")
     
 private void awaitLoadedLocked() {
@@ -345,6 +361,8 @@ public boolean contains(String key) {
 
         public volatile boolean writeToDiskResult = false;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.256 -0400", hash_original_method = "1F3E23CA54BAEE886A8B49EA267FA6D4", hash_generated_method = "1F3E23CA54BAEE886A8B49EA267FA6D4")
         public MemoryCommitResult ()
         {

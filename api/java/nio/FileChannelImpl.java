@@ -42,6 +42,8 @@ import libcore.util.MutableLong;
 
 final class FileChannelImpl extends FileChannel {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.512 -0500", hash_original_method = "C892B9EA3C98B5FB0FB2A090E1347610", hash_generated_method = "B32E4875AF7CFD2CDEA1E1EF5BB166E1")
     
 private static long translateLockLength(long byteCount) {
@@ -54,6 +56,8 @@ private static long translateLockLength(long byteCount) {
      * because the caller is a file/network read operation), false if we're
      * copying data out of the buffers (for a file/network write operation).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.587 -0500", hash_original_method = "CC8EF642A7E7880A25F803B71E120073", hash_generated_method = "084EEE3AD0FC53AA4DA4FD5A2EC6A78E")
     
 static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length, boolean copyingIn) {
@@ -108,6 +112,8 @@ public FileChannelImpl(Object stream, FileDescriptor fd, int mode) {
         this.mode = mode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.497 -0500", hash_original_method = "6E6D3E88914C52E71D3EAF93EC51DF72", hash_generated_method = "EAD3E99B497BB5C7F2AA8E02811E691E")
     
 private void checkOpen() throws ClosedChannelException {
@@ -116,6 +122,8 @@ private void checkOpen() throws ClosedChannelException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.500 -0500", hash_original_method = "48C6D0CA0A11D20CF44BD79CC21BDD35", hash_generated_method = "E623D67D319BE599F94C82D8898CC8E6")
     
 private void checkReadable() {
@@ -124,6 +132,8 @@ private void checkReadable() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.502 -0500", hash_original_method = "B5384AE1DC067BB9B7371F695174CE9F", hash_generated_method = "C1239697E9EE610FCF515245599952B1")
     
 private void checkWritable() {
@@ -140,6 +150,8 @@ protected void implCloseChannel() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.508 -0500", hash_original_method = "7E2D5FC994D104072ED63DC91E4C8FE1", hash_generated_method = "698352901D8AF7F322690A35B3ECDA70")
     
 private FileLock basicLock(long position, long size, boolean shared, boolean wait) throws IOException {
@@ -319,6 +331,8 @@ public int read(ByteBuffer buffer) throws IOException {
         return readImpl(buffer, -1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.552 -0500", hash_original_method = "B09A36EC89FDAA97AACE4894ACCEC4C2", hash_generated_method = "3AF7B7D3F9D74A7024FFE2B4E24D7ACD")
     
 private int readImpl(ByteBuffer buffer, long position) throws IOException {
@@ -359,6 +373,8 @@ private int readImpl(ByteBuffer buffer, long position) throws IOException {
         return bytesRead;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.555 -0500", hash_original_method = "4AF9CF697EB56447960A29F46F724C12", hash_generated_method = "E603EEFAA438D42EA2302D2E708EB2B3")
     
 private int transferIoVec(IoVec ioVec) throws IOException {
@@ -528,6 +544,8 @@ public int write(ByteBuffer buffer) throws IOException {
         return writeImpl(buffer, -1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.583 -0500", hash_original_method = "B7C7E18920DBBA232C5F1428FFA4A3EB", hash_generated_method = "BFFA84CCBFE736ECF3F5F74048CD492D")
     
 private int writeImpl(ByteBuffer buffer, long position) throws IOException {
@@ -583,6 +601,8 @@ public FileDescriptor getFD() {
      * would overlap an existing lock. Once the lock is acquired it remains in
      * this set as an acquired lock.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.592 -0500", hash_original_method = "F902144182B3E2AF28D0016B48F7903B", hash_generated_method = "A5CFF847D9766B0A2C3B4C2401D2B43A")
     
 private synchronized void addLock(FileLock lock) throws OverlappingFileLockException {
@@ -635,6 +655,8 @@ public void release() throws IOException {
      * Removes an acquired lock from the lock manager. If the lock did not exist
      * in the lock manager the operation is a no-op.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.595 -0500", hash_original_method = "AE9E3F40D0EE8D3948C9955DBE0083E8", hash_generated_method = "A6F7211F8C2AA2A9B3B54DEA24E658A3")
     
 private synchronized void removeLock(FileLock lock) {

@@ -89,6 +89,8 @@ public static CellLocation getEmpty() {
     /**
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.156 -0500", hash_original_method = "345CB571362C5D7AE1D7BE61B15A2338", hash_generated_method = "BF357EC13D8004B791ED6EB37C53D9B6")
     
 public abstract void fillInNotifierBundle(Bundle bundle);
@@ -96,6 +98,8 @@ public abstract void fillInNotifierBundle(Bundle bundle);
     /**
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.162 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "047840219A293BF58358C9060BC573A9")
     
 public abstract boolean isEmpty();

@@ -77,8 +77,8 @@ public static ArrayAdapter<CharSequence> createFromResource(Context context,
      * @param textViewResourceId The resource ID for a layout file containing a TextView to use when
      *                 instantiating views.
      */
-    @DSComment("Binding data, need modeling to be safe")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.957 -0500", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "2833C0B2FA5336AAF90E2EF1D9BD3CCA")
     
 public ArrayAdapter(Context context, int textViewResourceId) {
@@ -93,6 +93,8 @@ public ArrayAdapter(Context context, int textViewResourceId) {
      *                 instantiating views.
      * @param textViewResourceId The id of the TextView within the layout resource to be populated
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.959 -0500", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "197052AC52C52F6F0E59AF710A9BE149")
     
 public ArrayAdapter(Context context, int resource, int textViewResourceId) {
@@ -107,8 +109,8 @@ public ArrayAdapter(Context context, int resource, int textViewResourceId) {
      *                 instantiating views.
      * @param objects The objects to represent in the ListView.
      */
-    @DSComment("Binding data, need modeling to be safe")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.962 -0500", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "CBD80B289FE05C4187C964890824DEEF")
     
 public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
@@ -124,6 +126,8 @@ public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
      * @param textViewResourceId The id of the TextView within the layout resource to be populated
      * @param objects The objects to represent in the ListView.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.964 -0500", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "1268B755BFCE63F9CBC2F7BAC8EC34B5")
     
 public ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
@@ -138,8 +142,8 @@ public ArrayAdapter(Context context, int resource, int textViewResourceId, T[] o
      *                 instantiating views.
      * @param objects The objects to represent in the ListView.
      */
-    @DSComment("Binding data, need modeling to be safe")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.967 -0500", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "1AF214BAB132148F3F1A696130278B2A")
     
 public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
@@ -155,8 +159,8 @@ public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
      * @param textViewResourceId The id of the TextView within the layout resource to be populated
      * @param objects The objects to represent in the ListView.
      */
-    @DSComment("Binding data, need modeling to be safe")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.970 -0500", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "EB8E16267550BBD05261CAC002377E2D")
     
 public ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
@@ -319,6 +323,8 @@ public void setNotifyOnChange(boolean notifyOnChange) {
         mNotifyOnChange = notifyOnChange;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.993 -0500", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "CB6916EBBEFB3B0CDDB4B56CE0890354")
     
 private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
@@ -400,6 +406,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
         View view;

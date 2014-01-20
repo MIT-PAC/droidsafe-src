@@ -113,6 +113,8 @@ private ServiceCacheEntry(String algorithm,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.076 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "FF85ECC0EC4D5C16081B8E608A6B7EBB")
 
         public  Provider provider;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.079 -0500", hash_original_method = "CD98A36834DFC76460E887FD6F06A4ED", hash_generated_method = "71A96CD316D3191AE4D95F2F8FC3863E")
         
 private SpiAndProvider(Object spi, Provider provider) {
@@ -122,6 +124,8 @@ private SpiAndProvider(Object spi, Provider provider) {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.091 -0500", hash_original_method = "30EA070B5875ADB1FAA05CA3F6CF14E2", hash_generated_method = "6BF0AB7B4E0177708388F98D2FD6AF14")
     
 private NoSuchAlgorithmException notFound(String serviceName, String algorithm)

@@ -155,6 +155,8 @@ public SQLiteDatabase getDatabase() {
         return mCount;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.039 -0500", hash_original_method = "1027AA1FD2FF7DB5721417BC40818677", hash_generated_method = "F4A5210804513905D8EA8143D88462AC")
     
 private void fillWindow(int startPos) {
@@ -172,6 +174,8 @@ private void fillWindow(int startPos) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.042 -0500", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "F32C0F18A6FED89DC24223725C282815")
     
 private synchronized SQLiteQuery getQuery() {

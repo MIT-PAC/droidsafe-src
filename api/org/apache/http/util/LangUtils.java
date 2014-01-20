@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class LangUtils {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.023 -0500", hash_original_method = "4BAA05D6FB6EFA3A6E3E32018F906181", hash_generated_method = "9A9656373F7774B0B5757C699BADA23E")
@@ -58,7 +54,6 @@ public static boolean equals(final Object[] a1, final Object[] a2) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.016 -0500", hash_original_field = "20F03913AC0A2FB37BF071891148B80E", hash_generated_field = "25B02BFACC7EA9B56C306C172298DCD8")
-
     
     public static final int HASH_SEED = 17;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.018 -0500", hash_original_field = "0C5D6FC7BAB365303FD36C7B378EE574", hash_generated_field = "E21D1BF64F0022132172445B51E097C8")
@@ -66,6 +61,8 @@ public static boolean equals(final Object[] a1, final Object[] a2) {
     public static final int HASH_OFFSET = 37;
 
     /** Disabled default constructor. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.021 -0500", hash_original_method = "BC85A4AC258097A2ABE3F2013DFA665D", hash_generated_method = "DAC54984510717AD9DEF69AC201D36DB")
     
 private LangUtils() {

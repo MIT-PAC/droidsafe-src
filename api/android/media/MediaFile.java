@@ -13,6 +13,8 @@ import android.mtp.MtpConstants;
 
 public class MediaFile {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.976 -0500", hash_original_method = "9580D55967DC9BBB4B34535D7F5160BB", hash_generated_method = "D0293C22F3A2D19024F5077248D61EE9")
     
@@ -21,6 +23,8 @@ static void addFileType(String extension, int fileType, String mimeType) {
         sMimeTypeMap.put(mimeType, Integer.valueOf(fileType));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.978 -0500", hash_original_method = "5ADC35196E775CC51F3FAECE85209DA3", hash_generated_method = "9EEF8D0441B302ED4AE9AA1B6788FEDA")
     
@@ -31,6 +35,8 @@ static void addFileType(String extension, int fileType, String mimeType, int mtp
         sFormatToMimeTypeMap.put(mtpFormatCode, mimeType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.981 -0500", hash_original_method = "EB561C10A3096195B06F44E542693A95", hash_generated_method = "BE7BCD58106946CA1E56AA45B78E1C0C")
     
 private static boolean isWMAEnabled() {
@@ -45,6 +51,8 @@ private static boolean isWMAEnabled() {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.984 -0500", hash_original_method = "EF827E9EEC47276564675B91D79934FE", hash_generated_method = "17E0134073FA113A9DD851004C5BB064")
     
 private static boolean isWMVEnabled() {
@@ -189,6 +197,8 @@ public static String getMimeTypeForFormatCode(int formatCode) {
 
         public  String mimeType;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.958 -0500", hash_original_method = "5DA6BED04674A9B9CD299FCBDC3FDFAE", hash_generated_method = "5DA6BED04674A9B9CD299FCBDC3FDFAE")
         
 MediaFileType(int fileType, String mimeType) {

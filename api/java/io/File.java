@@ -45,6 +45,8 @@ import droidsafe.helpers.DSUtils;
 public class File implements Serializable, Comparable<File> {
 
     // Removes duplicate adjacent slashes and any trailing slash.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.445 -0500", hash_original_method = "697F450BEC93E79C07B9CD1FF582F761", hash_generated_method = "3C3E10015E26D5B6A8A0B8197CDF731F")
     
 private static String fixSlashes(String origPath) {
@@ -74,6 +76,8 @@ private static String fixSlashes(String origPath) {
     }
 
     // Joins two path components, adding a separator only if necessary.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.447 -0500", hash_original_method = "778D2D76B8ECF025B166D37379F9F4F6", hash_generated_method = "31162CF3D2813878020700A2F7AB6098")
     
 private static String join(String prefix, String suffix) {
@@ -85,6 +89,8 @@ private static String join(String prefix, String suffix) {
         return haveSlash ? (prefix + suffix) : (prefix + separatorChar + suffix);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.450 -0500", hash_original_method = "66A735BA68A634D4A7FA7C62964D6383", hash_generated_method = "CBABE2EEAC6A19A4D72F86BDC646B123")
     
 private static void checkURI(URI uri) {
@@ -121,19 +127,27 @@ public static File[] listRoots() {
         return new File[] { new File("/") };
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String realpath(String path) {
 		return new String();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String readlink(String path) {
 		return new String();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean setLastModifiedImpl(String path, long time) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] listImpl(String path) {
 		return new String[]{"*.*" + path};
 	}
@@ -355,6 +369,8 @@ public boolean canWrite() {
         return doAccess(W_OK);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.462 -0500", hash_original_method = "66AEEE703F2A5FBBF7F14BCD3C8F63B9", hash_generated_method = "2D9999FA3CDD16B993F2AB1930A20D43")
     
 private boolean doAccess(int mode) {
@@ -662,7 +678,8 @@ public boolean isAbsolute() {
      * @return {@code true} if this file is a directory, {@code false}
      *         otherwise.
      */
-    @DSSpec(DSCat.IO)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.510 -0500", hash_original_method = "5A1A5CA8E31989238D097F162F5C184C", hash_generated_method = "D36D7BBF127F2983896837F632E4EBE0")
     
 public boolean isDirectory() {
@@ -880,6 +897,8 @@ public boolean setWritable(boolean writable) {
         return setWritable(writable, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.543 -0500", hash_original_method = "1AE2CD7860321C46BB79C9D3B3E6342E", hash_generated_method = "5912B43ADAE800E83E77A983007838D8")
     
 private boolean doChmod(int mask, boolean set) {
@@ -1038,6 +1057,8 @@ public File[] listFiles(FileFilter filter) {
      * This method is to remove duplication in the implementation
      * of File.list's overloads.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.564 -0500", hash_original_method = "7CC449D7C06EBE9C929936D878A8919D", hash_generated_method = "CD6036511F0CD6F301B7588427C26A96")
     
 private File[] filenamesToFiles(String[] filenames) {
@@ -1190,8 +1211,8 @@ public boolean renameTo(File newPath) {
      *
      * @return a printable representation of this file.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.583 -0500", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "26C57ED0CDB609D607D36CA3242D043F")
     
 @Override
@@ -1274,6 +1295,8 @@ URL var9F0992E1CDD9692D51AE22365958494F_479158924 =         new URL("file", "", 
     }
 
     // TODO: is this really necessary, or can it be replaced with getAbsolutePath?
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.591 -0500", hash_original_method = "6DC10F50F559258D97A948A93E776D0B", hash_generated_method = "43BB7D5D5C9A267DFD30E45C439351E4")
     
 private String getAbsoluteName() {
@@ -1289,6 +1312,8 @@ private String getAbsoluteName() {
         return name;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.593 -0500", hash_original_method = "84E8B11DBED8384FBE25A5788F12F18C", hash_generated_method = "B1032A28D4FC10DA64CFD152C1DA706D")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -1296,6 +1321,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeChar(separatorChar);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.596 -0500", hash_original_method = "FED9F4FA8E5031FA72F265B39D2840EA", hash_generated_method = "A8A7F8C580E8B6DA1583F7A37E65CB80")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

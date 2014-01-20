@@ -278,6 +278,8 @@ static public InputMethodManager peekInstance() {
     
     final InputConnection mDummyInputConnection = new BaseInputConnection(this, false);
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.711 -0400", hash_original_method = "508ED56B5BF5DABABCAF5D12E61B17FA", hash_generated_method = "8F8CB7DD0282198FF166028847E17584")
       InputMethodManager(IInputMethodManager service, Looper looper) {
         mService = service;
@@ -480,6 +482,8 @@ public boolean isAcceptingText() {
     /**
      * Reset all of the state associated with being bound to an input method.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.677 -0500", hash_original_method = "3A92950E40C3C85A49E393646C27AEA9", hash_generated_method = "3A92950E40C3C85A49E393646C27AEA9")
     
 void clearBindingLocked() {
@@ -493,6 +497,8 @@ void clearBindingLocked() {
      * Reset all of the state associated with a served view being connected
      * to an input method
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.679 -0500", hash_original_method = "7C74580464CD8E195E3FB8BED8B93C53", hash_generated_method = "7C74580464CD8E195E3FB8BED8B93C53")
     
 void clearConnectionLocked() {
@@ -503,6 +509,8 @@ void clearConnectionLocked() {
     /**
      * Disconnect any existing input connection, clearing the served view.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.682 -0500", hash_original_method = "1D1918AFC608107C503CFA70B5918395", hash_generated_method = "AABF32DAB549552287D3114C5BC8E5FA")
     
 void finishInputLocked() {
@@ -783,6 +791,8 @@ public void restartInput(View view) {
         startInputInner();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.737 -0500", hash_original_method = "B3B1285322786DD26A60C9F9B7802F4B", hash_generated_method = "6E265DD55240B0F9569810CA4A2A79CF")
     
 void startInputInner() {
@@ -918,6 +928,8 @@ public void focusIn(View view) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.744 -0500", hash_original_method = "3857011248BD1E1DC17E86CAECB63023", hash_generated_method = "8B1B8925E1EAE73A80DDECB45390CA96")
     
 void focusInLocked(View view) {
@@ -959,6 +971,8 @@ public void focusOut(View view) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.749 -0500", hash_original_method = "4A6B64189F9C851EAF66731814D5760A", hash_generated_method = "8E13AACB8315B96406E4B2DEE94595FD")
     
 void scheduleCheckFocusLocked(View view) {
@@ -1014,6 +1028,8 @@ public void checkFocus() {
         startInputInner();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.755 -0500", hash_original_method = "D0A5B4195CF8CF9C3EE8D9642BA1EAAF", hash_generated_method = "D0A5B4195CF8CF9C3EE8D9642BA1EAAF")
     
 void closeCurrentInput() {
@@ -1439,6 +1455,8 @@ public void dispatchKeyEvent(Context context, int seq, KeyEvent key,
     /**
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.790 -0500", hash_original_method = "99D2E1A6FD8F8DDA0CF04D3632103B0E", hash_generated_method = "99D2E1A6FD8F8DDA0CF04D3632103B0E")
     
 void dispatchTrackballEvent(Context context, int seq, MotionEvent motion,
@@ -1638,6 +1656,8 @@ public InputMethodSubtype getLastInputMethodSubtype() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.815 -0500", hash_original_method = "A669FCC83173C60A2ED2B3C5020338A1", hash_generated_method = "A669FCC83173C60A2ED2B3C5020338A1")
     

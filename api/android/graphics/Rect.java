@@ -12,6 +12,8 @@ import android.os.Parcelable;
 
 public final class Rect implements Parcelable {
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static Rect unflattenFromString(String str){
 		// Original method
 		/*
@@ -29,6 +31,8 @@ public final class Rect implements Parcelable {
 		return null;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static boolean intersects(Rect a, Rect b){
 		// Original method
 		/*
@@ -101,6 +105,8 @@ public Rect() {}
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public Rect(Rect r){
 		addTaint(r.getTaint());
 		/*
@@ -111,6 +117,8 @@ public Rect() {}
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public boolean equals(Object obj){
 		// Original method
 		/*
@@ -126,6 +134,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public String toString(){
 		// Original method
 		/*
@@ -140,6 +150,8 @@ public Rect() {}
 		return "";
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toShortString(){
 		// Original method
 		/*
@@ -150,6 +162,8 @@ public Rect() {}
 		return "";
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -164,6 +178,8 @@ public Rect() {}
 		return "";
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String flattenToString(){
 		// Original method
 		/*
@@ -182,6 +198,8 @@ public Rect() {}
 		return "";
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*
@@ -194,6 +212,8 @@ public Rect() {}
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean isEmpty(){
 		// Original method
 		/*
@@ -228,6 +248,8 @@ public Rect() {}
 		return 0;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final int centerX(){
 		// Original method
 		/*
@@ -238,6 +260,8 @@ public Rect() {}
 		return 0;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final int centerY(){
 		// Original method
 		/*
@@ -248,6 +272,8 @@ public Rect() {}
 		return 0;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float exactCenterX(){
 		// Original method
 		/*
@@ -258,6 +284,8 @@ public Rect() {}
 		return 0;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float exactCenterY(){
 		// Original method
 		/*
@@ -326,6 +354,8 @@ public Rect() {}
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void offsetTo(int newLeft, int newTop){
 		addTaint(newLeft);
 		left = newLeft;  //Preserved
@@ -371,6 +401,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean contains(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -383,6 +415,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean contains(Rect r){
 		// Original method
 		/*
@@ -395,6 +429,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean intersect(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -421,6 +457,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean intersect(Rect r){
 		// Original method
 		/*
@@ -431,6 +469,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean setIntersect(Rect a, Rect b){
 		// Original method
@@ -450,6 +490,8 @@ public Rect() {}
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean intersects(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -489,6 +531,8 @@ public Rect() {}
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void union(Rect r){
 		// Original method
 		/*
@@ -499,6 +543,8 @@ public Rect() {}
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void union(int x, int y){
 		// Original method
 		/*
@@ -518,6 +564,8 @@ public Rect() {}
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void sort(){
 		// Original method
 		/*
@@ -540,12 +588,16 @@ public Rect() {}
     /**
      * Parcelable interface methods
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.658 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
         return 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void writeToParcel(Parcel out, int flags){
 		// Original method
 		/*
@@ -559,6 +611,8 @@ public int describeContents() {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
 		// Original method
 		/*
@@ -572,6 +626,8 @@ public int describeContents() {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void scale(float scale){
 		// Original method
 		/*

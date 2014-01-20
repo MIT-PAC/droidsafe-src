@@ -34,6 +34,8 @@ public class ImageSpan extends DynamicDrawableSpan {
     /**
      * @deprecated Use {@link #ImageSpan(Context, Bitmap)} instead.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.800 -0500", hash_original_method = "185ED0AA6BEAFCFF142A4CFD45E574FC", hash_generated_method = "624EC4071B8522AAE0D4EBEFCB21EF98")
     
 @Deprecated
@@ -44,6 +46,8 @@ public class ImageSpan extends DynamicDrawableSpan {
     /**
      * @deprecated Use {@link #ImageSpan(Context, Bitmap, int) instead.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.803 -0500", hash_original_method = "34B2A214F0FD529DA939313FB3C3E538", hash_generated_method = "8E8550FCD976314D923DEFCFA1FC0453")
     
 @Deprecated
@@ -51,6 +55,8 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(null, b, verticalAlignment);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.806 -0500", hash_original_method = "7AEE11D7D0A74AC540256E446F7A2408", hash_generated_method = "539749FEC0F15BD12798EBE87A210568")
     
 public ImageSpan(Context context, Bitmap b) {
@@ -61,6 +67,8 @@ public ImageSpan(Context context, Bitmap b) {
      * @param verticalAlignment one of {@link DynamicDrawableSpan#ALIGN_BOTTOM} or
      * {@link DynamicDrawableSpan#ALIGN_BASELINE}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.809 -0500", hash_original_method = "3963AA6755EF0F8E669BE02E5FE48B0A", hash_generated_method = "BCF7A8F09E1702CBCFA9735C9A92F82E")
     
 public ImageSpan(Context context, Bitmap b, int verticalAlignment) {
@@ -74,6 +82,8 @@ public ImageSpan(Context context, Bitmap b, int verticalAlignment) {
         mDrawable.setBounds(0, 0, width > 0 ? width : 0, height > 0 ? height : 0); 
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.812 -0500", hash_original_method = "0D126CCCA77E2FB90C8091AB4A5A8377", hash_generated_method = "55AD8A1D6AAD9B36C0BD9E94B1DBCBD1")
     
 public ImageSpan(Drawable d) {
@@ -84,6 +94,8 @@ public ImageSpan(Drawable d) {
      * @param verticalAlignment one of {@link DynamicDrawableSpan#ALIGN_BOTTOM} or
      * {@link DynamicDrawableSpan#ALIGN_BASELINE}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.816 -0500", hash_original_method = "A8A2FDBB2FE3A38ECC14673F42D0EA39", hash_generated_method = "C079A45C63C93828EF855887222E14D3")
     
 public ImageSpan(Drawable d, int verticalAlignment) {
@@ -91,6 +103,8 @@ public ImageSpan(Drawable d, int verticalAlignment) {
         mDrawable = d;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.819 -0500", hash_original_method = "54F6AA82EA4B003ADF5D8246E336A82D", hash_generated_method = "409B3E7F46A0B59F6B502674E298C7AA")
     
 public ImageSpan(Drawable d, String source) {
@@ -101,6 +115,8 @@ public ImageSpan(Drawable d, String source) {
      * @param verticalAlignment one of {@link DynamicDrawableSpan#ALIGN_BOTTOM} or
      * {@link DynamicDrawableSpan#ALIGN_BASELINE}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.822 -0500", hash_original_method = "F9636F3F26DA70FC2592614F77D85D71", hash_generated_method = "A59A9AAF97620FF240E515933F3F045E")
     
 public ImageSpan(Drawable d, String source, int verticalAlignment) {
@@ -109,6 +125,8 @@ public ImageSpan(Drawable d, String source, int verticalAlignment) {
         mSource = source;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.825 -0500", hash_original_method = "E44302541FD4ECECF2698F7D07EBCA57", hash_generated_method = "A3FE01B92EE49FDD6CF9B884BFEBFBFE")
     
 public ImageSpan(Context context, Uri uri) {
@@ -119,6 +137,8 @@ public ImageSpan(Context context, Uri uri) {
      * @param verticalAlignment one of {@link DynamicDrawableSpan#ALIGN_BOTTOM} or
      * {@link DynamicDrawableSpan#ALIGN_BASELINE}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.828 -0500", hash_original_method = "97E5D1114EAA0CA1A8404960D716AC3A", hash_generated_method = "88D8B77573C72D20FA5551EF9DF9B30D")
     
 public ImageSpan(Context context, Uri uri, int verticalAlignment) {
@@ -128,6 +148,8 @@ public ImageSpan(Context context, Uri uri, int verticalAlignment) {
         mSource = uri.toString();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.831 -0500", hash_original_method = "9E8FB6BDEE77C38D81FCBDDCFBDDF78F", hash_generated_method = "37385C5EF61CD732A668ECF71D98738B")
     
 public ImageSpan(Context context, int resourceId) {
@@ -138,6 +160,8 @@ public ImageSpan(Context context, int resourceId) {
      * @param verticalAlignment one of {@link DynamicDrawableSpan#ALIGN_BOTTOM} or
      * {@link DynamicDrawableSpan#ALIGN_BASELINE}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.834 -0500", hash_original_method = "112063CFBD1BF410C553139A09CB99FD", hash_generated_method = "2BA006D4A6FC0FEA7C3CCBAA2DEF9F1D")
     
 public ImageSpan(Context context, int resourceId, int verticalAlignment) {
@@ -146,6 +170,8 @@ public ImageSpan(Context context, int resourceId, int verticalAlignment) {
         mResourceId = resourceId;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.837 -0500", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "EF0FF21DEC8BC201EE4C65D597D6BECC")
     
@@ -184,6 +210,8 @@ public ImageSpan(Context context, int resourceId, int verticalAlignment) {
     /**
      * Returns the source string that was saved during construction.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.840 -0500", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "AF9874FA5096A31AE97D22EB7DD799B5")
     

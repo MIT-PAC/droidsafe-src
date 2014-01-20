@@ -8,8 +8,6 @@ import java.io.UnsupportedEncodingException;
 
 import org.apache.http.protocol.HTTP;
 
-
-
 public final class EncodingUtils {
 
     /**
@@ -46,7 +44,6 @@ public static String getString(
             return new String(data, offset, length);
         }
     }
-
 
     /**
      * Converts the byte array of HTTP content characters to a string. If
@@ -91,7 +88,7 @@ public static byte[] getBytes(final String data, final String charset) {
         } catch (UnsupportedEncodingException e) {
             return data.getBytes();
         }
-    }    
+    }
     
     /**
      * Converts the specified string to byte array of ASCII characters.
@@ -159,11 +156,12 @@ public static String getAsciiString(final byte[] data) {
     /**
      * This class should not be instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.767 -0500", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "CEECFF6F08063F48651117F1E4FF30DE")
     
 private EncodingUtils() {
     }
-
     
 }
 

@@ -19,6 +19,8 @@ import com.android.internal.telephony.IccFileHandler;
 
 class IconLoader extends Handler {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.645 -0500", hash_original_method = "10E76DA53BC66F7E84AC913A1A382A5D", hash_generated_method = "3CA2F1EE9B38A7F66535F31F612C0A2B")
     
@@ -76,6 +78,8 @@ public static Bitmap parseToBnW(byte[] data, int length){
      * @param bit to decode
      * @return RGB color
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.676 -0500", hash_original_method = "758199315728DD79898C642BC32E0396", hash_generated_method = "9C69BA60637CF2A860900E10547403B0")
     
 private static int bitToBnW(int bit){
@@ -143,6 +147,8 @@ public static Bitmap parseToRGB(byte[] data, int length,
      * @param numOfBits number of bits to calculate mask for.
      * @return bit mask
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.682 -0500", hash_original_method = "DF9B429B85BE381DF686E1C6B7F0295C", hash_generated_method = "F425E4641A6FA3E5B633769FD3361E98")
     
 private static int getMask(int numOfBits) {
@@ -234,6 +240,8 @@ private static int getMask(int numOfBits) {
 
     private HashMap<Integer, Bitmap> mIconsCache = null;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.642 -0500", hash_original_method = "FC71F40EA342EA47A36AF8D952C946AD", hash_generated_method = "5B9E9596C4A2E6E80977BF6867A3B575")
     
 private IconLoader(Looper looper , IccFileHandler fh) {
@@ -243,6 +251,8 @@ private IconLoader(Looper looper , IccFileHandler fh) {
         mIconsCache = new HashMap<Integer, Bitmap>(50);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.647 -0500", hash_original_method = "E56E284105F777D8A6CAB7DB3EDAC84F", hash_generated_method = "D9DD8AA7ABE851D3DC0CEF4D5C3ED35D")
     
 void loadIcons(int[] recordNumbers, Message msg) {
@@ -258,6 +268,8 @@ void loadIcons(int[] recordNumbers, Message msg) {
         startLoadingIcon(recordNumbers[0]);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.649 -0500", hash_original_method = "328A1F48C7F5C3C618F7E134C6DE5C8B", hash_generated_method = "328A1F48C7F5C3C618F7E134C6DE5C8B")
     
 void loadIcon(int recordNumber, Message msg) {
@@ -269,6 +281,8 @@ void loadIcon(int recordNumber, Message msg) {
         startLoadingIcon(recordNumber);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.651 -0500", hash_original_method = "CF2A7740DA96FFBF2B7742A73D5B85D3", hash_generated_method = "DDD092AF2B653AF7BD1D9927E97DA288")
     
 private void startLoadingIcon(int recordNumber) {
@@ -340,6 +354,8 @@ private void startLoadingIcon(int recordNumber) {
      * @param data byte [] containing Image Instance descriptor as defined in
      * TS 51.011.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.658 -0500", hash_original_method = "57AAD79E24539ED69C4A9588C1A4DBA1", hash_generated_method = "543CA322D833BE6F09B7DDF7A30413D7")
     
 private boolean handleImageDescriptor(byte[] rawData) {
@@ -351,6 +367,8 @@ private boolean handleImageDescriptor(byte[] rawData) {
     }
 
     // Start reading colour lookup table from SIM card.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.661 -0500", hash_original_method = "78AA98F6413EBAF06D9D3065D89FA10B", hash_generated_method = "EADDAF35C0C1512BAFD6A5DD9B22347E")
     
 private void readClut() {
@@ -362,6 +380,8 @@ private void readClut() {
     }
 
     // Start reading Image Descriptor from SIM card.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.664 -0500", hash_original_method = "9B2E1F9D86B0BE7AA9984F6F6998AD1A", hash_generated_method = "7ED3AFE64FD1741ED2E7309F9E6F7BA7")
     
 private void readId() {
@@ -375,6 +395,8 @@ private void readId() {
     }
 
     // Start reading icon bytes array from SIM card.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.668 -0500", hash_original_method = "E5FF0727F4A23FBA52C74807E31F642C", hash_generated_method = "928F35D10CA4F1844C969B5A5C629F7E")
     
 private void readIconData() {
@@ -383,6 +405,8 @@ private void readIconData() {
     }
 
     // When all is done pass icon back to caller.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.670 -0500", hash_original_method = "2C2351D604337717A113511ACF501262", hash_generated_method = "5AA7AB8619696C01D37191203018D31F")
     
 private void postIcon() {

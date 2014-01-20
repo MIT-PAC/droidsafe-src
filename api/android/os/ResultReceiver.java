@@ -45,6 +45,8 @@ public ResultReceiver(Handler handler) {
         mHandler = handler;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.385 -0500", hash_original_method = "3121A8D4339499004112052A7E531E42", hash_generated_method = "3121A8D4339499004112052A7E531E42")
     
 ResultReceiver(Parcel in) {

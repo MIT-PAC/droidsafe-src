@@ -228,6 +228,8 @@ public QueryHandler(ContentResolver cr) {
     }
 
     /** True if a contact, an email address or a phone number has been assigned */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.385 -0500", hash_original_method = "FCE3B5086AEC0F336253CCDCDE531810", hash_generated_method = "39F8BD95C60DAF4B4F02B7D2464E2E6C")
     
 private boolean isAssigned() {
@@ -314,6 +316,8 @@ public void assignContactFromPhone(String phoneNumber, boolean lazyLookup) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.397 -0500", hash_original_method = "8712FDD692B08E6979A43AB02ED73539", hash_generated_method = "6C3F92EB8F185EEC93FF0FAB48C6EBE3")
     
 private void onContactUriChanged() {

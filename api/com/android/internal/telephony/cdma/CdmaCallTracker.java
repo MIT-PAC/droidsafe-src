@@ -101,6 +101,8 @@ public final class CdmaCallTracker extends CallTracker {
     //***** Events
 
     //***** Constructors
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.715 -0500", hash_original_method = "D7E78FBD4DB8C2DC376D4ABE79BA3592", hash_generated_method = "D7E78FBD4DB8C2DC376D4ABE79BA3592")
     
 CdmaCallTracker(CDMAPhone phone) {
@@ -190,6 +192,8 @@ public void unregisterForCallWaiting(Handler h) {
         callWaitingRegistrants.remove(h);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.736 -0500", hash_original_method = "B11C1D24F61F5A9ABEB7D187928BEC26", hash_generated_method = "028DCC8F83F806C4F951FBA15447674D")
     
 private void
@@ -210,6 +214,8 @@ private void
     /**
      * clirMode is one of the CLIR_ constants
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.739 -0500", hash_original_method = "FEC4E6BC08FD10A2C518984DAAD113C7", hash_generated_method = "1588BDF5754148DC78081AD24F221FCD")
     
@@ -279,6 +285,8 @@ Connection
         return pendingMO;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.742 -0500", hash_original_method = "916DB4F3BDDE26A491E1178653223CEE", hash_generated_method = "916DB4F3BDDE26A491E1178653223CEE")
     
@@ -287,6 +295,8 @@ Connection
         return dial(dialString, CommandsInterface.CLIR_DEFAULT);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.745 -0500", hash_original_method = "88840CD76FEAD0D0B90DCB96EA4A4A27", hash_generated_method = "30E30D8F19F28E82625A92DF4695ABBC")
     
 private Connection
@@ -305,6 +315,8 @@ private Connection
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.748 -0500", hash_original_method = "A15B8A9C3B79A061845560CDFB3D1962", hash_generated_method = "9628ED37CC3A69F6AD179A03E35B5D7F")
     
 void
@@ -330,6 +342,8 @@ void
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.751 -0500", hash_original_method = "9B02E01190499DD77CD223AD7831C55B", hash_generated_method = "159188A7D123B2C37B5B4116F07A42E0")
     
 void
@@ -343,6 +357,8 @@ void
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.753 -0500", hash_original_method = "4E2E600B83947FE548823E8A00BDC609", hash_generated_method = "FBEEF82AA24D8E5869DB130B1C5155CD")
     
 void
@@ -361,6 +377,8 @@ void
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.756 -0500", hash_original_method = "B1073FCDB805CE663445BC5D803D76AA", hash_generated_method = "F8BCEA4E8B3CB91F30D58DEB594FFF78")
     
 void
@@ -369,6 +387,8 @@ void
         flashAndSetGenericTrue();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.758 -0500", hash_original_method = "B9B58214FE30DEB2D41379B25D88E6DD", hash_generated_method = "B9B58214FE30DEB2D41379B25D88E6DD")
     
 void
@@ -376,6 +396,8 @@ void
         cm.explicitCallTransfer(obtainCompleteMessage(EVENT_ECT_RESULT));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.760 -0500", hash_original_method = "89E1881B087BAA2C040FAFD444B532DA", hash_generated_method = "89E1881B087BAA2C040FAFD444B532DA")
     
 void
@@ -386,6 +408,8 @@ void
         phone.notifyPreciseCallStateChanged();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.763 -0500", hash_original_method = "885B69631C6ACC1E38924306F8EB7459", hash_generated_method = "885B69631C6ACC1E38924306F8EB7459")
     
 boolean
@@ -396,6 +420,8 @@ boolean
                 && !foregroundCall.isFull();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.765 -0500", hash_original_method = "DFFE89A6FC85DFAF69854FF09292A4CC", hash_generated_method = "DFFE89A6FC85DFAF69854FF09292A4CC")
     
 boolean
@@ -434,6 +460,8 @@ boolean
         return ret;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.767 -0500", hash_original_method = "F828A2F1845194FFD82C471D7E89F726", hash_generated_method = "F828A2F1845194FFD82C471D7E89F726")
     
 boolean
@@ -444,6 +472,8 @@ boolean
 
     //***** Private Instance Methods
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.769 -0500", hash_original_method = "3058DCAC5E1117AE07A379578E7C6A20", hash_generated_method = "9EAF3135810EB7776F7263823E069660")
     
 private void
@@ -457,6 +487,8 @@ private void
      * Obtain a message to use for signalling "invoke getCurrentCalls() when
      * this operation and all other pending operations are complete
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.772 -0500", hash_original_method = "89F67FF5AFAE8FAD9F556239F3E27159", hash_generated_method = "805FDE0EC1A77B26DA5992514EDF2DAB")
     
 private Message
@@ -468,6 +500,8 @@ private Message
      * Obtain a message to use for signalling "invoke getCurrentCalls() when
      * this operation and all other pending operations are complete
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.774 -0500", hash_original_method = "F527C5C3DD4F0176588A0C261AD76B7A", hash_generated_method = "E21B90D8FFA2C73529233B2579E8CE52")
     
 private Message
@@ -482,6 +516,8 @@ private Message
         return obtainMessage(what);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.777 -0500", hash_original_method = "179E11A88A956D6661DD344814FD0D33", hash_generated_method = "D7248FD5C0CAD7AF1FBA9E72CA812D4F")
     
 private void
@@ -501,6 +537,8 @@ private void
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.780 -0500", hash_original_method = "E4BBEB9CBA55B093A717754E6D30B945", hash_generated_method = "142EF9AA83C1CCB33DCBB91CE86B2AB7")
     
 private void
@@ -782,7 +820,9 @@ protected void
     }
 
     //***** Called from CdmaConnection
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.790 -0500", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "32D326C0F023261C0B289ABEC9139820")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.790 -0500", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "32D326C0F023261C0B289ABEC9139820")
     
 void
     hangup (CdmaConnection conn) throws CallStateException {
@@ -828,7 +868,9 @@ void
         conn.onHangupLocal();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.793 -0500", hash_original_method = "B6040BEA0CD88965F5BB741ECCA6B877", hash_generated_method = "A06604AB24FFBAE744262B82DDD832BD")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.793 -0500", hash_original_method = "B6040BEA0CD88965F5BB741ECCA6B877", hash_generated_method = "A06604AB24FFBAE744262B82DDD832BD")
     
 void
     separate (CdmaConnection conn) throws CallStateException {
@@ -849,7 +891,9 @@ void
 
     //***** Called from CDMAPhone
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.795 -0500", hash_original_method = "8E7DA06B8727FE7EBCD155EA09819106", hash_generated_method = "8E7DA06B8727FE7EBCD155EA09819106")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.795 -0500", hash_original_method = "8E7DA06B8727FE7EBCD155EA09819106", hash_generated_method = "8E7DA06B8727FE7EBCD155EA09819106")
     
 void
     setMute(boolean mute) {
@@ -857,7 +901,9 @@ void
         cm.setMute(desiredMute, null);
     }
 
-    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.797 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
     
 boolean
@@ -867,7 +913,9 @@ boolean
 
     //***** Called from CdmaCall
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.800 -0500", hash_original_method = "E9438EE2A649600B881089247D36F1D3", hash_generated_method = "E9438EE2A649600B881089247D36F1D3")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.800 -0500", hash_original_method = "E9438EE2A649600B881089247D36F1D3", hash_generated_method = "E9438EE2A649600B881089247D36F1D3")
     
 void
     hangup (CdmaCall call) throws CallStateException {
@@ -906,6 +954,8 @@ void
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.802 -0500", hash_original_method = "E840FBD61F8E6AF3DE802E32C39DD93E", hash_generated_method = "E840FBD61F8E6AF3DE802E32C39DD93E")
     
 void hangupWaitingOrBackground() {
@@ -914,6 +964,8 @@ void hangupWaitingOrBackground() {
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.805 -0500", hash_original_method = "D10B26113142441F52E905015040129F", hash_generated_method = "D10B26113142441F52E905015040129F")
     
 void hangupForegroundResumeBackground() {
@@ -921,6 +973,8 @@ void hangupForegroundResumeBackground() {
         cm.hangupForegroundResumeBackground(obtainCompleteMessage());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.807 -0500", hash_original_method = "46F42EF7B8FEEB9638F3768D6C678D5F", hash_generated_method = "46F42EF7B8FEEB9638F3768D6C678D5F")
     
 void hangupConnectionByIndex(CdmaCall call, int index)
@@ -937,6 +991,8 @@ void hangupConnectionByIndex(CdmaCall call, int index)
         throw new CallStateException("no gsm index found");
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.809 -0500", hash_original_method = "C8ED8584ACDA74B40EBCC108129D9E6B", hash_generated_method = "C8ED8584ACDA74B40EBCC108129D9E6B")
     
 void hangupAllConnections(CdmaCall call) throws CallStateException{
@@ -952,6 +1008,8 @@ void hangupAllConnections(CdmaCall call) throws CallStateException{
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.812 -0500", hash_original_method = "DA3BA6D275DE18892F45915EBAE08DC8", hash_generated_method = "DA3BA6D275DE18892F45915EBAE08DC8")
     
@@ -968,6 +1026,8 @@ CdmaConnection getConnectionByIndex(CdmaCall call, int index)
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.814 -0500", hash_original_method = "EB39E7AA8B070FEFE523D7C5104C422F", hash_generated_method = "952A288DE63B2D8E63BC4A8DAEFEBFCF")
     
 private void flashAndSetGenericTrue() throws CallStateException {
@@ -996,6 +1056,8 @@ private Phone.SuppService getFailedService(int what) {
         return Phone.SuppService.UNKNOWN;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.819 -0500", hash_original_method = "6E2D3B844106C3BA4166C29F96BB7EA0", hash_generated_method = "7EA909082D0F3A766A83D359A75C4FD3")
     
 private void handleRadioNotAvailable() {
@@ -1005,6 +1067,8 @@ private void handleRadioNotAvailable() {
         pollCallsWhenSafe();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.823 -0500", hash_original_method = "8A157B3E162ABAFDC3219E193FD9AF9E", hash_generated_method = "9C64105F2EFF3511A73662BA5F99F8BA")
     
 private void notifyCallWaitingInfo(CdmaCallWaitingNotification obj) {
@@ -1013,6 +1077,8 @@ private void notifyCallWaitingInfo(CdmaCallWaitingNotification obj) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.825 -0500", hash_original_method = "8AEB0E73C414AF95EF44C542FCF55311", hash_generated_method = "2E28B2A83EFD60C49DEC2CDBCDEA905C")
     
 private void handleCallWaitingInfo (CdmaCallWaitingNotification cw) {
@@ -1145,6 +1211,8 @@ public void
     /**
      * Handle Ecm timer to be canceled or re-started
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.832 -0500", hash_original_method = "53D0BC70C94C51E4941A4869C727C1EF", hash_generated_method = "C6205B9368136494AA6E18F1D039A277")
     
 private void handleEcmTimer(int action) {
@@ -1160,6 +1228,8 @@ private void handleEcmTimer(int action) {
     /**
      * Disable data call when emergency call is connected
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.834 -0500", hash_original_method = "E45025BA49DB75441FB058D043F13559", hash_generated_method = "70809E6D41784C91458DFE99BB274D58")
     
 private void disableDataCallInEmergencyCall(String dialString) {
@@ -1174,6 +1244,8 @@ private void disableDataCallInEmergencyCall(String dialString) {
      * Check and enable data call after an emergency call is dropped if it's
      * not in ECM
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.837 -0500", hash_original_method = "4B192230440137F94B49778D22CB7CD2", hash_generated_method = "EF578A8F193603212D59FEC332ACDBA1")
     
 private void checkAndEnableDataCallAfterEmergencyCallDropped() {
@@ -1194,6 +1266,8 @@ private void checkAndEnableDataCallAfterEmergencyCallDropped() {
      * Check the MT call to see if it's a new ring or
      * a unknown connection.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.840 -0500", hash_original_method = "D359964B058F5C9ECC2D15DB024983EF", hash_generated_method = "0D8C7939C3B1DDE90D4DB882655A0701")
     
 private Connection checkMtFindNewRinging(DriverCall dc, int i) {
@@ -1227,6 +1301,8 @@ private Connection checkMtFindNewRinging(DriverCall dc, int i) {
      * @return true if it is in emergency call
      *         false if it is not in emergency call
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.842 -0500", hash_original_method = "1842D0C2283B311B2A29E474687D9235", hash_generated_method = "1842D0C2283B311B2A29E474687D9235")
     
 boolean isInEmergencyCall() {

@@ -44,6 +44,8 @@ private static MessageDigest createMessageDigest(
      * @param binaryData array containing the digest
      * @return encoded MD5, or <CODE>null</CODE> if encoding failed
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.718 -0500", hash_original_method = "32C7579E7A20EFF08C798AFD17C9F8B4", hash_generated_method = "9F7BA146B87E96C0D46A707E68C625D2")
     
 private static String encode(byte[] binaryData) {
@@ -213,6 +215,8 @@ public void overrideParamter(final String name, final String value) {
         getParameters().put(name, value);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.701 -0500", hash_original_method = "9DF20B77158B98071C5FA39937248DA7", hash_generated_method = "9D8E75736184C7E03AC93713F7901638")
     
 private String getCnonce() {
@@ -446,6 +450,8 @@ private Header createDigestHeader(
         return new BufferedHeader(buffer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.716 -0500", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "099E82A0A9F44C50061236929B63F866")
     
 private String getQopVariantString() {

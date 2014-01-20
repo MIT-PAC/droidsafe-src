@@ -48,6 +48,8 @@ public static synchronized SSLClientSessionCache usingDirectory(
     }
 
     /** For testing. */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.702 -0500", hash_original_method = "8C25F325A70D0FB77E33A1A14917611A", hash_generated_method = "7B323461C536F7A06E8BB12E6EBDC73D")
     
 static synchronized void reset() {
@@ -62,6 +64,8 @@ static synchronized void reset() {
         /**
          * Creates a new access-ordered linked hash map.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.670 -0500", hash_original_method = "DFC79029E1119A3D48A14DE1B9564947", hash_generated_method = "609DA5A8C24051423EB44DD6C80C5A5C")
         
 private static Map<String, File> newAccessOrder() {
@@ -72,6 +76,8 @@ private static Map<String, File> newAccessOrder() {
         /**
          * Gets the file name for the given host and port.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.673 -0500", hash_original_method = "02E1DD31485C74A947A1C6B3E3A51D41", hash_generated_method = "808B79FDE09C8AF6033F843984DFE08A")
         
 private static String fileName(String host, int port) {
@@ -81,12 +87,16 @@ private static String fileName(String host, int port) {
             return host + "." + port;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.678 -0500", hash_original_method = "8F7D3CFEACAE77FF29CE1B570D2B4071", hash_generated_method = "960A2F165C31F892AF7F89F517CF82C9")
         
 static void logReadError(String host, File file, Throwable t) {
             System.logW("Error reading session data for " + host + " from " + file + ".", t);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.692 -0500", hash_original_method = "DC029A48DFA4AB0F9DF91B47975AC42D", hash_generated_method = "92399B485FABE21F96F9151A2040821B")
         
 static void logWriteError(String host, File file, Throwable t) {
@@ -108,6 +118,8 @@ static void logWriteError(String host, File file, Throwable t) {
         /**
          * Constructs a new cache backed by the given directory.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.668 -0500", hash_original_method = "666C086AB9DBFD99FFC100F4BBE01D6D", hash_generated_method = "3F628D0222C9A381116CFF161912E138")
         
 Impl(File directory) throws IOException {
@@ -254,6 +266,8 @@ public synchronized void putSessionData(SSLSession session,
         /**
          * Deletes old files if necessary.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.684 -0500", hash_original_method = "FF4C7212103FFBD9D2780D404E5A05FB", hash_generated_method = "7BF91F071252BD0D49C93659143BB712")
         
 private void makeRoom() {
@@ -276,6 +290,8 @@ private void makeRoom() {
          * Lazily updates accessOrder to know about all files as opposed to
          * just the files accessed since this process started.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.686 -0500", hash_original_method = "F581C713CF99D0BA42CA770E334518CE", hash_generated_method = "7F77BD1CD1FB490660CE5D1D562D6B90")
         
 private void indexFiles() {
@@ -307,6 +323,8 @@ private void indexFiles() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.689 -0500", hash_original_method = "DB4D1632DEDA59F34618884D114D9227", hash_generated_method = "CC234686820E190C041CC0B1D70B3B4F")
         
 @SuppressWarnings("ThrowableInstanceNeverThrown")
@@ -327,6 +345,8 @@ private void indexFiles() {
 
         long lastModified = -1;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.708 -0500", hash_original_method = "2568A503B31BE5D3BE6A0CE416CE2454", hash_generated_method = "2568A503B31BE5D3BE6A0CE416CE2454")
         
 CacheFile(File dir, String name) {
@@ -363,6 +383,8 @@ CacheFile(File dir, String name) {
     static final Map<File, FileClientSessionCache.Impl> caches
             = new HashMap<File, FileClientSessionCache.Impl>(); // ~72k
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.655 -0500", hash_original_method = "EB2573B5E8F417FAB0EF293234CCCD0D", hash_generated_method = "8B73A1F119778642A645D343B51FC647")
     
 private FileClientSessionCache() {}

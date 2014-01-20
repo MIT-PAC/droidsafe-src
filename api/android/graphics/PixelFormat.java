@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class PixelFormat {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClassInit() {
     }
     
@@ -14,6 +16,8 @@ public class PixelFormat {
     @DSSafe(DSCat.SAFE_LIST)
     public static void getPixelFormatInfo(int format, PixelFormat info) {
     }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.036 -0500", hash_original_method = "E67B3D46F0CB30A9037255CD015EB158", hash_generated_method = "89212E037F92B615AEC1D7571C8E0B36")
     
 public static boolean formatHasAlpha(int format) {

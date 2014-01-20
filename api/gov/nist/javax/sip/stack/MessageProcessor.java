@@ -274,6 +274,8 @@ public String getSentBy() {
      *
      * @return the sip stack.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.308 -0500", hash_original_method = "A1A00F5C2BF3E0AFD608A46FA340D257", hash_generated_method = "D186E97C3F23BE4B3601C73C20E07F79")
     
 public abstract SIPTransactionStack getSIPStack();
@@ -283,6 +285,8 @@ public abstract SIPTransactionStack getSIPStack();
      *
      * @return New MessageChannel for this processor.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.311 -0500", hash_original_method = "ABB3A4B745EF0C3016E695FB2D61AE96", hash_generated_method = "47E9CBB5255A0EFB39F44A2FBAB94009")
     
 public abstract MessageChannel createMessageChannel(HostPort targetHostPort)
@@ -293,6 +297,8 @@ public abstract MessageChannel createMessageChannel(HostPort targetHostPort)
      *
      * @return New MessageChannel for this processor.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.314 -0500", hash_original_method = "B99FCAE3A3388F00CA4B0651ECF766FB", hash_generated_method = "D7991912A0F0FDB275D8BA9E0EEEB60A")
     
 public abstract MessageChannel createMessageChannel(InetAddress targetHost,
@@ -301,6 +307,8 @@ public abstract MessageChannel createMessageChannel(InetAddress targetHost,
     /**
      * Start our thread.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.317 -0500", hash_original_method = "81FFB20F89E8D0B587445E4BF7DBE6A4", hash_generated_method = "AD7D25BA42F7D94247153AF8D82CFE0B")
     
 public abstract void start() throws IOException;
@@ -308,6 +316,8 @@ public abstract void start() throws IOException;
     /**
      * Stop method.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.320 -0500", hash_original_method = "702270B81E0A152F42E95B594CBF6271", hash_generated_method = "83BF6F52E4E13B269491279EF09CDA29")
     
 public abstract void stop();
@@ -315,6 +325,8 @@ public abstract void stop();
     /**
      * Default target port used by this processor. This is 5060 for TCP / UDP
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.323 -0500", hash_original_method = "6BCD8DD5D3EE6B672607E7D0637058E2", hash_generated_method = "D01BA1A4072A6C1EE8BD4DB0B80FCB74")
     
 public abstract int getDefaultTargetPort();
@@ -322,6 +334,8 @@ public abstract int getDefaultTargetPort();
     /**
      * Flags whether this processor is secure or not.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.326 -0500", hash_original_method = "C0F4ED7F29E54AD75430386669D6EE3C", hash_generated_method = "3756A60CD212E039C9DCF60D85147293")
     
 public abstract boolean isSecure();
@@ -329,6 +343,8 @@ public abstract boolean isSecure();
     /**
      * Maximum number of bytes that this processor can handle.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.328 -0500", hash_original_method = "D1034F159FF316937B32787299F2166A", hash_generated_method = "B7E4AD3E8AD39377BA8B23BBB7CB43F6")
     
 public abstract int getMaximumMessageSize();
@@ -337,6 +353,8 @@ public abstract int getMaximumMessageSize();
      * Return true if there are pending messages to be processed (which prevents
      * the message channel from being closed).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.331 -0500", hash_original_method = "FB9F59146EEE6CC40C0613775AE45CBB", hash_generated_method = "3617B8DFC66E3EDDAD2C17D7560F8126")
     
 public abstract boolean inUse();
@@ -344,6 +362,8 @@ public abstract boolean inUse();
     /**
      * Run method.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.334 -0500", hash_original_method = "2C6A443C83148E86AAD705D9EE784F75", hash_generated_method = "5BBE1BCB74D1FAFBB58FE7F038D48F66")
     
 public abstract void run();

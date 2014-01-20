@@ -13,18 +13,24 @@ abstract class FloatArrayBuffer extends FloatBuffer {
 
     protected  int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.580 -0500", hash_original_method = "D11EDAC27157134F6D93222FED96804A", hash_generated_method = "D11EDAC27157134F6D93222FED96804A")
     
 FloatArrayBuffer(float[] array) {
         this(array.length, array, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.582 -0500", hash_original_method = "1F51B561748313656A83CE5668F8D726", hash_generated_method = "1F51B561748313656A83CE5668F8D726")
     
 FloatArrayBuffer(int capacity) {
         this(capacity, new float[capacity], 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.585 -0500", hash_original_method = "08256304DC715C68C786DDFF589B597E", hash_generated_method = "08256304DC715C68C786DDFF589B597E")
     
 FloatArrayBuffer(int capacity, float[] backingArray, int offset) {

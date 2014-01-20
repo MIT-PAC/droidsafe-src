@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class HTTP {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.690 -0500", hash_original_method = "134212A674CF385E582642AFF649A905", hash_generated_method = "E308477FC9CABEB85C4755A08378A651")
@@ -17,7 +13,6 @@ public static boolean isWhitespace(char ch) {
         return ch == SP || ch == HT || ch == CR || ch == LF; 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.610 -0500", hash_original_field = "827B2E55812199FEACACB1E9C37846C6", hash_generated_field = "4B48828FAC4FE3DBFFFAEBA8A8C921C4")
-
 
     public static final int CR = 13;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.613 -0500", hash_original_field = "B49D7BCA303E83D5E6889B0D7C14B13F", hash_generated_field = "DBCCC25381D1593318771528439CD34E")
@@ -30,7 +25,6 @@ public static boolean isWhitespace(char ch) {
 
     public static final int HT = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.620 -0500", hash_original_field = "683DFC7E7BA00A43D201F7E238E33F4B", hash_generated_field = "CD72CB4685B408B00CABB27031A6E67E")
-
 
     /** HTTP header definitions */ 
     public static final String TRANSFER_ENCODING = "Transfer-Encoding";
@@ -110,6 +104,8 @@ public static boolean isWhitespace(char ch) {
 
     public final static String DEFAULT_CONTENT_TYPE = OCTET_STREAM_TYPE;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.693 -0500", hash_original_method = "3A6FCD823D5B25065B735A0BBABE71E6", hash_generated_method = "451E5D2DCE9FF602E8836599E91046BA")
     
 private HTTP() {

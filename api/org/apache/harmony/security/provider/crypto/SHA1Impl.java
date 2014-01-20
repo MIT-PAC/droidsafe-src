@@ -5,11 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class SHA1Impl implements SHA1_Data {
-
 
     /**
      * The method generates a 160 bit hash value using
@@ -29,6 +25,8 @@ public class SHA1Impl implements SHA1_Data {
      *        arrW - integer array; arrW.length >= (BYTES_OFFSET+6); <BR>
      *               only first (BYTES_OFFSET+6) words are used
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.631 -0500", hash_original_method = "2C39C4EE153AE592A29CFAA85DAB86CC", hash_generated_method = "E99C79249A8D3F08398BEFCA625CCF41")
     
 static void computeHash(int[] arrW) {
@@ -126,6 +124,8 @@ static void computeHash(int[] arrW) {
      *        to        - a number of the last byte in the input array to use,
      *                that is, for first byte "to"==0, for last byte "to"==input.length-1
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.635 -0500", hash_original_method = "B4A6EFF0AEF4E7346E32BF1BFF73F137", hash_generated_method = "EEBC88258808B4B70CDC42AD8BBDAACA")
     
 static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByte) {
@@ -211,7 +211,6 @@ static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByt
     {
         //Synthesized constructor
     }
-
     
 }
 

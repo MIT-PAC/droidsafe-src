@@ -129,6 +129,8 @@ public RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectio
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.784 -0500", hash_original_method = "34DA0EC600A8592A38E8BB75F944416C", hash_generated_method = "52BF1AD069255F109AED9B1C2ACF231B")
     
 private void loadNextIndexInBackground() {
@@ -159,6 +161,8 @@ private void loadNextIndexInBackground() {
         });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.789 -0500", hash_original_method = "E1B2571B376275F4805513EEE2D5A305", hash_generated_method = "9D39499690B802221A61BAD23E04C794")
     
 private void processException(String method, Exception e) {
@@ -181,6 +185,8 @@ private void processException(String method, Exception e) {
         });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.792 -0500", hash_original_method = "49F084C42EF1DBBC4522A49655FF79A1", hash_generated_method = "812225256F26E08DFEE92718825B2DBB")
     
 private void updateTemporaryMetaData() {
@@ -320,6 +326,8 @@ public int getItemViewType(int position) {
      * Returns the item type id for the specified convert view.  Returns -1 if the convert view
      * is invalid.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.811 -0500", hash_original_method = "A43180B0154FDAA6CD8755A8245F56F8", hash_generated_method = "7B777983BAE848A12E9BA05A56262790")
     
 private int getConvertViewTypeId(View convertView) {
@@ -1011,6 +1019,8 @@ public void commitTemporaryMetaData() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.749 -0500", hash_original_method = "1379738D9DE8B74BE60C7743F79F9609", hash_generated_method = "0F52340F651BE5B40F8182343FFAF11E")
         
 private int getRemoteViewsBitmapMemoryUsage() {
@@ -1024,6 +1034,8 @@ private int getRemoteViewsBitmapMemoryUsage() {
             }
             return mem;
         }
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.752 -0500", hash_original_method = "61B11826B25E039221975DE702D21975", hash_generated_method = "CC6A94417222AAA2AF529317CFEE76F8")
         
 private int getFarthestPositionFrom(int pos) {
@@ -1164,6 +1176,8 @@ public void reset() {
         public void deferNotifyDataSetChanged();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.828 -0500", hash_original_method = "2DAA079F2CA383CBC7C346F3BCA57054", hash_generated_method = "40BF1DD2C41F1855A16AF209F239C285")
     
 private void onNotifyDataSetChanged() {
@@ -1233,6 +1247,8 @@ public void notifyDataSetChanged() {
         });
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.835 -0500", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "A1EDDF3811A1F9D28CCD28C93269FAD1")
     
 void superNotifyDataSetChanged() {
@@ -1257,6 +1273,8 @@ void superNotifyDataSetChanged() {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.840 -0500", hash_original_method = "D880D88722499DDF7E3D229A00764CBB", hash_generated_method = "DB4A17D1F23846134055B3E2AB23F377")
     
 private void enqueueDeferredUnbindServiceMessage() {
@@ -1265,6 +1283,8 @@ private void enqueueDeferredUnbindServiceMessage() {
         mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.842 -0500", hash_original_method = "FD0BDD14354B6205FD4E5E773D9BDB6D", hash_generated_method = "0C92A40ACFEF5CC4C3A631F85F9C5C83")
     
 private boolean requestBindService() {

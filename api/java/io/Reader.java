@@ -48,8 +48,8 @@ protected Reader(Object lock) {
      * @throws IOException
      *             if an error occurs while closing this reader.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.834 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "2228FF14FE1AFC53EB7399AA035D1509")
     
 public abstract void close() throws IOException;
@@ -158,8 +158,8 @@ public int read(char[] buf) throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
-    @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.846 -0500", hash_original_method = "BAAE620DD47C67A7C9FA2D182BB45EC6", hash_generated_method = "9A8DFEF4E7A8AC2186089662A0C89E20")
     
 public abstract int read(char[] buf, int offset, int count) throws IOException;

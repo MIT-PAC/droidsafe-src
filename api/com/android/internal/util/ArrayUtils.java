@@ -129,6 +129,8 @@ public static boolean contains(int[] array, int value) {
 
     private static Object[] sCache = new Object[CACHE_SIZE];
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.285 -0500", hash_original_method = "43AFEF6A809467B8D7C7F671BE94BA32", hash_generated_method = "89ED7997528D51F882DDEB727ADBF171")
     
 private ArrayUtils() { /* cannot be instantiated */ }

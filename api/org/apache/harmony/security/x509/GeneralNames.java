@@ -50,6 +50,8 @@ public GeneralNames(List<GeneralName> generalNames) {
         this.generalNames = generalNames;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.580 -0500", hash_original_method = "84AB2B2BC22C66DEEE9A4059D9B177CB", hash_generated_method = "ECA719710CD81A8E3929815AEFB0A021")
     
 private GeneralNames(List<GeneralName> generalNames, byte[] encoding) {

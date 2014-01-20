@@ -53,6 +53,8 @@ public OtherName(String typeID, byte[] value) {
         this(typeID, value, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.911 -0500", hash_original_method = "595A6767FA47B61357D3EB21D3BC18A1", hash_generated_method = "40527F6E1D0BCF42501B2FD9E9D7D203")
     
 private OtherName(String typeID, byte[] value, byte[] encoding) {

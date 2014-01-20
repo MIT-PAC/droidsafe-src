@@ -34,6 +34,8 @@ public static PasswordTransformationMethod getInstance() {
         return sInstance;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.850 -0500", hash_original_method = "6C010EB424FCB8CA68C1612A5903637F", hash_generated_method = "164DA6C47BD2D6A76ADCAD98E5918974")
     
 private static void removeVisibleSpans(Spannable sp) {
@@ -49,11 +51,15 @@ private static void removeVisibleSpans(Spannable sp) {
 
     private static char DOT = '\u2022';
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.520 -0400", hash_original_method = "D8EF6B070A80A550C154BD7630CF21E0", hash_generated_method = "D8EF6B070A80A550C154BD7630CF21E0")
     public PasswordTransformationMethod ()
     {
         //Synthesized constructor
     }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.832 -0500", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "6F5BB88E5202740C45B7E1BE13CC66A3")
     
@@ -82,6 +88,8 @@ public CharSequence getTransformation(CharSequence source, View view) {
         return new PasswordCharSequence(source);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.838 -0500", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "AE3A8B08EEC13AABB2ABA2B67ABDF3FC")
     
 public void beforeTextChanged(CharSequence s, int start,
@@ -89,6 +97,8 @@ public void beforeTextChanged(CharSequence s, int start,
         // This callback isn't used.
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.842 -0500", hash_original_method = "E9233B27956FDFC70D77F5557A52BB47", hash_generated_method = "2B3F1DB612245BBF5F597E99F112FCCC")
     
 public void onTextChanged(CharSequence s, int start,
@@ -272,12 +282,16 @@ public ViewReference(View v) {
         
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.844 -0500", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "BCC5CE13C93AE0C11949F22689C8EE7B")
     
 public void afterTextChanged(Editable s) {
         // This callback isn't used.
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.847 -0500", hash_original_method = "D64B8AB73A1F5CA65D62622D3C82E686", hash_generated_method = "6B672CB949B078F48F94F200F8FE6288")
     
 public void onFocusChanged(View view, CharSequence sourceText,

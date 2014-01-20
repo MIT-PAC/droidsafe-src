@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
-
 public class Splitter {
 
     /**
@@ -87,6 +82,8 @@ public static String[] split(Pattern pattern, String re, String input, int limit
         return finishSplit(list, input, begin, maxSize, limit);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.087 -0500", hash_original_method = "0050259AEB9A6D717FF62E48E0DE4FA1", hash_generated_method = "F1D5F2B00DA03DDDF2D392B40A3BE3B8")
     
 private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
@@ -111,6 +108,8 @@ private static String[] finishSplit(List<String> list, String input, int begin, 
 
     private static final String METACHARACTERS = "\\?*+[](){}^$.|";
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.077 -0500", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "BB29E622CEF7B73828D657A8CD746D77")
     
 private Splitter() {

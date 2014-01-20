@@ -94,6 +94,8 @@ Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_2038148973 =         ftask;
         //return ftask;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.225 -0400", hash_original_method = "7ADE924855E97F021AF211771D5543D6", hash_generated_method = "44D4AE2F73DA112D29569CF14CE5E9D4")
     private <T> T doInvokeAny(Collection<? extends Callable<T>> tasks,
                             boolean timed, long nanos) throws InterruptedException, ExecutionException, TimeoutException {

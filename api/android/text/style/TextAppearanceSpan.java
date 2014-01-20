@@ -35,6 +35,8 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
      * text appearance.  The <code>appearance</code> should be, for example,
      * <code>android.R.style.TextAppearance_Small</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.558 -0500", hash_original_method = "9B1172C0C8B31BFAE0D2C93687346AFE", hash_generated_method = "E13808B9D761C7FC4EC662B6B98D865E")
     
 public TextAppearanceSpan(Context context, int appearance) {
@@ -49,6 +51,8 @@ public TextAppearanceSpan(Context context, int appearance) {
      * and the <code>colorList</code> should be, for example,
      * <code>android.R.styleable.Theme_textColorPrimary</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.562 -0500", hash_original_method = "9317B5C63D080DC3774D9B3DFE979A1B", hash_generated_method = "817796371ED855BF67F0184F350184F0")
     
 public TextAppearanceSpan(Context context, int appearance, int colorList) {
@@ -103,6 +107,8 @@ public TextAppearanceSpan(Context context, int appearance, int colorList) {
      * Makes text be drawn with the specified typeface, size, style,
      * and colors.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.565 -0500", hash_original_method = "BC7BB9D16048D8ABD4B4822412C22F80", hash_generated_method = "BB768A6DB07301C01C1E1BDACA468A39")
     
 public TextAppearanceSpan(String family, int style, int size,
@@ -114,6 +120,8 @@ public TextAppearanceSpan(String family, int style, int size,
         mTextColorLink = linkColor;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.568 -0500", hash_original_method = "0C8ADD28198996D9662262CC57DEB737", hash_generated_method = "54A78923DBD31DFD49506777A8B8664E")
     
 public TextAppearanceSpan(Parcel src) {
@@ -132,6 +140,8 @@ public TextAppearanceSpan(Parcel src) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.571 -0500", hash_original_method = "06416282EB1641FCC18F44A861BC9EFB", hash_generated_method = "5820CFA4EE5DA8B5A7814A237A6DD6C3")
     
@@ -139,12 +149,16 @@ public int getSpanTypeId() {
         return TextUtils.TEXT_APPEARANCE_SPAN;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.574 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
         return 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.576 -0500", hash_original_method = "5C4A27F4DE181F367842F0367978AD5D", hash_generated_method = "C6D466EB680329C8888856F55D33E7A0")
     
@@ -170,6 +184,8 @@ public void writeToParcel(Parcel dest, int flags) {
      * Returns the typeface family specified by this span, or <code>null</code>
      * if it does not specify one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.579 -0500", hash_original_method = "15042A588BD36B3AABC957E25B6ABB68", hash_generated_method = "4AB3A6DA8541DBE92DCA2D2683522159")
     
@@ -181,6 +197,8 @@ public String getFamily() {
      * Returns the text color specified by this span, or <code>null</code>
      * if it does not specify one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.581 -0500", hash_original_method = "BEF77474BA0C11C6EB44F1454E52790F", hash_generated_method = "9575CAE1AB7C631C9C79687563375B9B")
     
@@ -192,6 +210,8 @@ public ColorStateList getTextColor() {
      * Returns the link color specified by this span, or <code>null</code>
      * if it does not specify one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.584 -0500", hash_original_method = "9E3E27CD0F13B768F4263E5569C857AD", hash_generated_method = "242170C0CE7903861CC2ABF1C2ABA3F4")
     
@@ -203,6 +223,8 @@ public ColorStateList getLinkTextColor() {
      * Returns the text size specified by this span, or <code>-1</code>
      * if it does not specify one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.587 -0500", hash_original_method = "AB3DB1BB0D199EBBBA8548C5EC0C310E", hash_generated_method = "5F28BA7CEBEC3E497D8525F54BB31DC9")
     
@@ -214,6 +236,8 @@ public int getTextSize() {
      * Returns the text style specified by this span, or <code>0</code>
      * if it does not specify one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.589 -0500", hash_original_method = "3C882FE9CECBB039C8EAD0BA2E56F794", hash_generated_method = "23EFD0FF59218581C82FF50B58AECE14")
     
@@ -221,6 +245,8 @@ public int getTextStyle() {
         return mStyle;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.592 -0500", hash_original_method = "91F606F0F4AED8EEECD78BF397028020", hash_generated_method = "8D3D05CD6A573AE4E201562175EA137B")
     
@@ -237,6 +263,8 @@ public int getTextStyle() {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.596 -0500", hash_original_method = "F4F67354DC20CE392F9DCE12B9A9C5F1", hash_generated_method = "99EAFD0473F9092FB35C400190F2142B")
     
 @Override

@@ -10,6 +10,8 @@ import java.util.List;
 
 final class ProxySelectorImpl extends ProxySelector {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.346 -0400", hash_original_method = "132D2379FE75BA7CC4F9F650D388CD2E", hash_generated_method = "132D2379FE75BA7CC4F9F650D388CD2E")
     public ProxySelectorImpl ()
     {
@@ -30,6 +32,8 @@ final class ProxySelectorImpl extends ProxySelector {
         return Collections.singletonList(selectOneProxy(uri));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.001 -0500", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "7640B91C4AE1E7CA290561CF6C521451")
     
 private Proxy selectOneProxy(URI uri) {
@@ -103,6 +107,8 @@ private Proxy lookupProxy(String hostKey, String portKey, Proxy.Type type, int d
         return new Proxy(type, InetSocketAddress.createUnresolved(host, port));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.006 -0500", hash_original_method = "36E6CCC8C23DA7DA61B6599903A6840E", hash_generated_method = "23945B701BD4BAFEBC1AAC7FD98B1F9B")
     
 private int getSystemPropertyInt(String key, int defaultValue) {
@@ -120,6 +126,8 @@ private int getSystemPropertyInt(String key, int defaultValue) {
      * Returns true if the {@code nonProxyHosts} system property pattern exists
      * and matches {@code host}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.009 -0500", hash_original_method = "960A16929DB84D35FDCE84F421A041D1", hash_generated_method = "503A06BA5841F983D60CFB19779F5660")
     
 private boolean isNonProxyHost(String host, String nonProxyHosts) {

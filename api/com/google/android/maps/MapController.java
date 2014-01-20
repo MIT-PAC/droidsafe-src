@@ -11,6 +11,8 @@ public final class MapController
     implements View.OnKeyListener
 {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     MapController() {
 
     }

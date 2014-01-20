@@ -11,6 +11,8 @@ class CommandParams {
 
     CommandDetails cmdDet;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.511 -0500", hash_original_method = "2B3FA66352959F95E07A360EAE45E831", hash_generated_method = "2B3FA66352959F95E07A360EAE45E831")
     
 CommandParams(CommandDetails cmdDet) {
@@ -23,6 +25,8 @@ AppInterface.CommandType getCommandType() {
         return AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.515 -0500", hash_original_method = "A8568713BEFC46F9EECE865CBC0E3B85", hash_generated_method = "A8568713BEFC46F9EECE865CBC0E3B85")
     
@@ -35,6 +39,8 @@ class DisplayTextParams extends CommandParams {
 
     TextMessage textMsg;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.519 -0500", hash_original_method = "700E001E6C7C4BB86F65A405A500553F", hash_generated_method = "700E001E6C7C4BB86F65A405A500553F")
     
 DisplayTextParams(CommandDetails cmdDet, TextMessage textMsg) {
@@ -42,6 +48,8 @@ DisplayTextParams(CommandDetails cmdDet, TextMessage textMsg) {
         this.textMsg = textMsg;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.522 -0500", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "21525D99FCC45F45CD5434385C40E277")
     
 boolean setIcon(Bitmap icon) {
@@ -65,6 +73,8 @@ class LaunchBrowserParams extends CommandParams {
 
     String url;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.532 -0500", hash_original_method = "333668ED0BA1936719D55AC9BD5C191E", hash_generated_method = "333668ED0BA1936719D55AC9BD5C191E")
     
 LaunchBrowserParams(CommandDetails cmdDet, TextMessage confirmMsg,
@@ -75,6 +85,8 @@ LaunchBrowserParams(CommandDetails cmdDet, TextMessage confirmMsg,
         this.url = url;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.534 -0500", hash_original_method = "14C8B1CAE4AF3E3922E99E945859BFE8", hash_generated_method = "14C8B1CAE4AF3E3922E99E945859BFE8")
     
 boolean setIcon(Bitmap icon) {
@@ -95,6 +107,8 @@ class PlayToneParams extends CommandParams {
 
     ToneSettings settings;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.541 -0500", hash_original_method = "0EF5086DB6919FD4BD0CA8FFEAE75A4D", hash_generated_method = "0EF5086DB6919FD4BD0CA8FFEAE75A4D")
     
 PlayToneParams(CommandDetails cmdDet, TextMessage textMsg,
@@ -104,6 +118,8 @@ PlayToneParams(CommandDetails cmdDet, TextMessage textMsg,
         this.settings = new ToneSettings(duration, tone, vibrate);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.543 -0500", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "21525D99FCC45F45CD5434385C40E277")
     
 boolean setIcon(Bitmap icon) {
@@ -124,6 +140,8 @@ class CallSetupParams extends CommandParams {
 
     TextMessage callMsg;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.550 -0500", hash_original_method = "E3AB8AF63DAE9B970C2C85BEC45D1384", hash_generated_method = "E3AB8AF63DAE9B970C2C85BEC45D1384")
     
 CallSetupParams(CommandDetails cmdDet, TextMessage confirmMsg,
@@ -133,6 +151,8 @@ CallSetupParams(CommandDetails cmdDet, TextMessage confirmMsg,
         this.callMsg = callMsg;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.552 -0500", hash_original_method = "7CBBFD719CD54FED6A95014430B0D13E", hash_generated_method = "7CBBFD719CD54FED6A95014430B0D13E")
     
 boolean setIcon(Bitmap icon) {
@@ -159,6 +179,8 @@ class SelectItemParams extends CommandParams {
 
     boolean loadTitleIcon = false;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.559 -0500", hash_original_method = "E55DB81905BD2AA861EB811BEF064274", hash_generated_method = "E55DB81905BD2AA861EB811BEF064274")
     
 SelectItemParams(CommandDetails cmdDet, Menu menu, boolean loadTitleIcon) {
@@ -167,6 +189,8 @@ SelectItemParams(CommandDetails cmdDet, Menu menu, boolean loadTitleIcon) {
         this.loadTitleIcon = loadTitleIcon;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.561 -0500", hash_original_method = "18017A51DEA7E263420DEFD24143331D", hash_generated_method = "18017A51DEA7E263420DEFD24143331D")
     
 boolean setIcon(Bitmap icon) {
@@ -194,6 +218,8 @@ class GetInputParams extends CommandParams {
 
     Input input = null;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.566 -0500", hash_original_method = "4B81DD05ADA485DA1C52833ACC153D55", hash_generated_method = "4B81DD05ADA485DA1C52833ACC153D55")
     
 GetInputParams(CommandDetails cmdDet, Input input) {
@@ -201,6 +227,8 @@ GetInputParams(CommandDetails cmdDet, Input input) {
         this.input = input;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.568 -0500", hash_original_method = "0D1B780F5B7D1ED973494BE2C3910B90", hash_generated_method = "0D1B780F5B7D1ED973494BE2C3910B90")
     
 boolean setIcon(Bitmap icon) {

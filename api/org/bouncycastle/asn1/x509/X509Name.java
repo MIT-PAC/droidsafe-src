@@ -27,11 +27,6 @@ import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 
-
-
-
-
-
 public class X509Name extends ASN1Encodable {
 
     /**
@@ -213,7 +208,6 @@ public static X509Name getInstance(
     private static final Boolean FALSE = Boolean.FALSE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.881 -0500", hash_original_field = "4991E2934223DCC25A5EF9D9C72EA338", hash_generated_field = "9B1A952CEBF3178959A402DABEDC0A6B")
 
-
     private X509NameEntryConverter  converter = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.884 -0500", hash_original_field = "8370039E4421170D8B7341A1E9105E8E", hash_generated_field = "C8A65116741473EAA58816E75213B0AF")
 
@@ -226,10 +220,8 @@ public static X509Name getInstance(
     private Vector                  added = new Vector();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.890 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
 
-
     private ASN1Sequence            seq;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.892 -0500", hash_original_field = "B6293280C3B6F91ED7F24C3952096C1C", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
-
 
     private boolean                 isHashCodeCalculated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.895 -0500", hash_original_field = "2D42E71DE4D8857610CF43708417333A", hash_generated_field = "D4D90810E0E6D99534BB2E8797B7FFA9")
@@ -617,6 +609,8 @@ public X509Name(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.935 -0500", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "813BD70A3791EAD090BFF26467F4BC63")
     
 private DERObjectIdentifier decodeOID(
@@ -945,6 +939,8 @@ public boolean equals(Object obj)
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.961 -0500", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "0DC697C632F8E307989A51314BBE9F7A")
     
 private boolean equivalentStrings(String s1, String s2)
@@ -966,6 +962,8 @@ private boolean equivalentStrings(String s1, String s2)
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.964 -0500", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "99D555158364CA3DEF5AF3388187EB1F")
     
 private String canonicalize(String s)
@@ -985,6 +983,8 @@ private String canonicalize(String s)
         return value;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.966 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "5DAC87C479937FD6C9024087BA34C1AD")
     
 private ASN1Object decodeObject(String oValue)
@@ -999,6 +999,8 @@ private ASN1Object decodeObject(String oValue)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.969 -0500", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "9DC24EF1383CA0D3011861C7B442B127")
     
 private String stripInternalSpaces(
@@ -1026,6 +1028,8 @@ private String stripInternalSpaces(
         return res.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.972 -0500", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "A5562AC24A647AF0B591142A9B8EE0F8")
     
 private void appendValue(
@@ -1157,6 +1161,8 @@ public String toString(
         return buf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.977 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "6E98F280D567BB4804327BA6C2203108")
     
 private String bytesToString(

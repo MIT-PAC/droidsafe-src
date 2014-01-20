@@ -9,11 +9,8 @@ import java.util.Set;
 
 import com.google.android.collect.Sets;
 
-
-
 public class ClassPathPackageInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.237 -0500", hash_original_field = "718061C0FE229B5B1D34A4F6DEF8B6A1", hash_generated_field = "FD7D781D3D61CDBFBA455DBEB931B016")
-
 
     private  ClassPathPackageInfoSource source;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.239 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "F6B0003813ED943179AFC2BDEE98D917")
@@ -54,6 +51,8 @@ public Set<Class<?>> getTopLevelClassesRecursive() {
         return set;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.253 -0500", hash_original_method = "0BDCB6DD30A5E7EF4568BA987D7AB3D6", hash_generated_method = "9FD84F3351D38B7A09B31A0F43BC7810")
     
 private void addTopLevelClassesTo(Set<Class<?>> set) {
@@ -80,7 +79,6 @@ private void addTopLevelClassesTo(Set<Class<?>> set) {
     public int hashCode() {
         return packageName.hashCode();
     }
-
     
 }
 

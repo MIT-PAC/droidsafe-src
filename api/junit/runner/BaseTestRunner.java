@@ -26,12 +26,16 @@ import junit.framework.TestSuite;
 
 public abstract class BaseTestRunner implements TestListener {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.273 -0500", hash_original_method = "81AEB59715E8652DC89184A5B1CF88C4", hash_generated_method = "1CBF9551B83624D65B3361368677B4C7")
     
 protected static void setPreferences(Properties preferences) {
         fPreferences= preferences;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.275 -0500", hash_original_method = "DA69842FD3F27114EEF071F656F6196E", hash_generated_method = "CCE0E07084E93354B0C43B02C7F1A420")
     
@@ -45,6 +49,8 @@ protected static Properties getPreferences() {
         return fPreferences;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.277 -0500", hash_original_method = "C251857E2E28B44C11CDA11163E1AE93", hash_generated_method = "B84314F7C8FB1234A11324190B4CFB44")
     
 public static void savePreferences() throws IOException {
@@ -59,6 +65,8 @@ public static void savePreferences() throws IOException {
     /**
      * Truncates a String to the maximum length.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.308 -0500", hash_original_method = "4FD9983EAB7FBA133A187A3320DC3C40", hash_generated_method = "A888B1DF356632EFFEB910FAD3D4057C")
     
 public static String truncate(String s) {
@@ -67,6 +75,8 @@ public static String truncate(String s) {
         return s;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.322 -0500", hash_original_method = "35F20B64A4FC33C8F24C27C91E536237", hash_generated_method = "F2FAFE1EE2C2184048498A654D1551B6")
     
 private static File getPreferencesFile() {
@@ -74,7 +84,9 @@ private static File getPreferencesFile() {
          return new File(home, "junit.properties");
      }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.325 -0500", hash_original_method = "EA4BD1C4622D133CAAD3A085AC647F16", hash_generated_method = "56EBE64667FDDB6DE975FCD75709FCF2")
+     @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.325 -0500", hash_original_method = "EA4BD1C4622D133CAAD3A085AC647F16", hash_generated_method = "56EBE64667FDDB6DE975FCD75709FCF2")
     
 private static void readPreferences() {
          InputStream is= null;
@@ -91,14 +103,18 @@ private static void readPreferences() {
         }
      }
 
-     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+     @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.327 -0500", hash_original_method = "546188EB296FF182165775D30DBEF8CB", hash_generated_method = "1658F68DC450829BB9529B34BC9A99D9")
     
 public static String getPreference(String key) {
          return getPreferences().getProperty(key);
      }
 
-     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+     @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.330 -0500", hash_original_method = "C73546D208D255842EFDD569FA86F2C2", hash_generated_method = "538B073E44FFEA94405F6CF68B473E99")
     
 public static int getPreference(String key, int dflt) {
@@ -113,7 +129,9 @@ public static int getPreference(String key, int dflt) {
          return intValue;
      }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.332 -0500", hash_original_method = "3AF974D7E8831EFE5FB01F2A63D39625", hash_generated_method = "E0E85B4534695DA6E617C5BAF4CCC3E3")
+     @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.332 -0500", hash_original_method = "3AF974D7E8831EFE5FB01F2A63D39625", hash_generated_method = "E0E85B4534695DA6E617C5BAF4CCC3E3")
     
 public static boolean inVAJava() {
         try {
@@ -128,6 +146,8 @@ public static boolean inVAJava() {
     /**
      * Returns a filtered stack trace
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.334 -0500", hash_original_method = "28E46636FF437AE43E291479AD98B04F", hash_generated_method = "7EA05E5751D122DF450E346687039F72")
     
@@ -143,6 +163,8 @@ public static String getFilteredTrace(Throwable t) {
     /**
      * Filters stack frames from internal JUnit classes
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.337 -0500", hash_original_method = "1F34B54C4F8B49B6E8A9867036CAC259", hash_generated_method = "2FC5714F1808D39C77E289339760C400")
     
@@ -170,12 +192,16 @@ public static String getFilteredTrace(String stack) {
         return sw.toString();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.339 -0500", hash_original_method = "6968E5A47F22AEB4A31E2A95F81CE753", hash_generated_method = "9A18349E0BBA099F61D89C7DFED7D37C")
     
 protected static boolean showStackRaw() {
         return !getPreference("filterstack").equals("true") || fgFilterStack == false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.347 -0500", hash_original_method = "25C420A2C4F8477871CE10837841E9D2", hash_generated_method = "2540B872E5689958ACCF23A19E82A7C2")
     
 static boolean filterLine(String line) {
@@ -211,6 +237,8 @@ static boolean filterLine(String line) {
 
     boolean fLoading= true;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.387 -0400", hash_original_method = "7AE9B4E2779E68829E6E78655AC68035", hash_generated_method = "7AE9B4E2779E68829E6E78655AC68035")
     public BaseTestRunner ()
     {
@@ -220,12 +248,16 @@ static boolean filterLine(String line) {
     /*
     * Implementation of TestListener
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.270 -0500", hash_original_method = "B534170C99FB9AC20DD9E1D90510BBA7", hash_generated_method = "F9B1B0A2933633CCE02E2A219602AF12")
     
 public synchronized void startTest(Test test) {
         testStarted(test.toString());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.280 -0500", hash_original_method = "B502D6F69F239856B740542829A9775D", hash_generated_method = "756D6C20A02790ED152BAF5653874406")
     
@@ -233,6 +265,8 @@ public void setPreference(String key, String value) {
         getPreferences().setProperty(key, value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.282 -0500", hash_original_method = "1D40CF214770214270118EC3034A73D5", hash_generated_method = "86D8547C7CFA20D00C10C46605CDE0FE")
     
 public synchronized void endTest(Test test) {
@@ -253,14 +287,20 @@ public synchronized void addFailure(final Test test, final AssertionFailedError 
 
     // TestRunListener implementation
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.289 -0500", hash_original_method = "F731AEA695E1062B33EB5AEA27BFB580", hash_generated_method = "4D64AA8EA25F432C1A9977A5CB55924F")
     
 public abstract void testStarted(String testName);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.291 -0500", hash_original_method = "D9A0E2668DBACCF4959976435590F9D7", hash_generated_method = "B5FEC9CAD6D8624D5513488E4436E64E")
     
 public abstract void testEnded(String testName);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.293 -0500", hash_original_method = "F6DC03F50AE1DF5767A89BB487A47184", hash_generated_method = "953ED2CEF22E2FA4B735BB0311D81690")
     
 public abstract void testFailed(int status, Test test, Throwable t);
@@ -269,6 +309,8 @@ public abstract void testFailed(int status, Test test, Throwable t);
      * Returns the Test corresponding to the given suite. This is
      * a template method, subclasses override runFailed(), clearStatus().
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.296 -0500", hash_original_method = "2E093CF05CBCDB737F05E1D7A4FAF338", hash_generated_method = "21985FE09E0154339DAA04095503B9C7")
     
@@ -324,6 +366,8 @@ public Test getTest(String suiteClassName) {
     /**
      * Returns the formatted string of the elapsed time.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.299 -0500", hash_original_method = "6D8039F6261C6F21742AFDC2B366F78B", hash_generated_method = "CB8387C8076C572CB7CDE244697FEDBF")
     
 public String elapsedTimeAsString(long runTime) {
@@ -334,6 +378,8 @@ public String elapsedTimeAsString(long runTime) {
      * Processes the command line arguments and
      * returns the name of the suite class to run or null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.301 -0500", hash_original_method = "BE11435DC4AA3D9B45D704504FF19D7A", hash_generated_method = "AA0602983C75C80BAEE178CCDC64A524")
     
@@ -360,6 +406,8 @@ protected String processArguments(String[] args) {
     /**
      * Sets the loading behaviour of the test runner
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.304 -0500", hash_original_method = "5089456E72AD517131D2C4755EB25FD8", hash_generated_method = "3792A5657855C048B1AEF94E7CC4AA17")
     
 public void setLoading(boolean enable) {
@@ -368,6 +416,8 @@ public void setLoading(boolean enable) {
     /**
      * Extract the class name from a String
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.306 -0500", hash_original_method = "0D3B9048C2AFB821E2A0D331105B4C0F", hash_generated_method = "30E55999F7AE2FF4DD9904E626B47DED")
     
 public String extractClassName(String className) {
@@ -380,6 +430,8 @@ public String extractClassName(String className) {
      * Override to define how to handle a failed loading of
      * a test suite.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.310 -0500", hash_original_method = "C85720DF55126E44DB47D2789B75FD96", hash_generated_method = "768D9C2755118DC382C0A54779ED9DC6")
     
 protected abstract void runFailed(String message);
@@ -387,6 +439,8 @@ protected abstract void runFailed(String message);
     /**
      * Returns the loaded Class for a suite name.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.313 -0500", hash_original_method = "53378ECE171D61BBF4EFB0D39916FCCF", hash_generated_method = "555C7DE432743A36059FF02274863774")
     
@@ -397,6 +451,8 @@ protected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundExcept
     /**
      * Clears the status message.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.315 -0500", hash_original_method = "EEF193CE41029661D90E6D0075FFB68C", hash_generated_method = "F86432ADD1E18639A112111422E145D2")
     
 protected void clearStatus() { // Belongs in the GUI TestRunner class
@@ -405,6 +461,8 @@ protected void clearStatus() { // Belongs in the GUI TestRunner class
     /**
      * Returns the loader to be used.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.317 -0500", hash_original_method = "E9EF8772E071281B9CB71EDD599F1B7C", hash_generated_method = "FADD03C3DE3629526FC468468334415D")
     
@@ -414,6 +472,8 @@ public TestSuiteLoader getLoader() {
         return new StandardTestSuiteLoader();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.320 -0500", hash_original_method = "CAFC5B71DA3D583C51BF61B1F5919197", hash_generated_method = "8CCD8696834A98CDC1563C0A6DD0FBE0")
     
 protected boolean useReloadingTestSuiteLoader() {

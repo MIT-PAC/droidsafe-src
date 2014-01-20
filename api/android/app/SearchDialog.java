@@ -40,6 +40,8 @@ import android.widget.TextView;
 
 public class SearchDialog extends Dialog {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.709 -0500", hash_original_method = "56A848B4C6D8FA4A2680FE0AB0EEBE05", hash_generated_method = "4DCAA74AAF032E5CA9A8B8B2BE8B8E72")
     
 static int resolveDialogTheme(Context context) {
@@ -49,6 +51,8 @@ static int resolveDialogTheme(Context context) {
         return outValue.resourceId;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.767 -0500", hash_original_method = "1515F3198E379060DCB8EFB4F4DD3EF3", hash_generated_method = "068CF4650A3DEA4B1C4E446DD99717AD")
     
 static boolean isLandscapeMode(Context context) {
@@ -253,6 +257,8 @@ public SearchDialog(Context context, SearchManager searchManager) {
      * We recreate the dialog view each time it becomes visible so as to limit
      * the scope of any problems with the contained resources.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.728 -0500", hash_original_method = "464C4B41AE1C07D5D4F71BE590B5445C", hash_generated_method = "74355882FD6A841EAE7513E54F7BC48C")
     
 private void createContentView() {
@@ -320,6 +326,8 @@ public boolean show(String initialQuery, boolean selectInitialQuery,
      *
      * @return true if search dialog showed, false if not
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.736 -0500", hash_original_method = "EAE1B7BC7DC4BF1770F63B02B1B868E2", hash_generated_method = "CA67D5AB382401DC9B5ACA8D75E80D1B")
     
 private boolean doShow(String initialQuery, boolean selectInitialQuery,
@@ -343,6 +351,8 @@ private boolean doShow(String initialQuery, boolean selectInitialQuery,
      * 
      * @return <code>true</code> if search dialog launched
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.741 -0500", hash_original_method = "705B52B556BB75FCC3E8159D4BF0A627", hash_generated_method = "76440539B87D735A9490277AF70C6969")
     
 private boolean show(ComponentName componentName, Bundle appSearchData) {
@@ -492,6 +502,8 @@ public void onConfigurationChanged() {
     /**
      * Update the UI according to the info in the current value of {@link #mSearchable}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.771 -0500", hash_original_method = "BEA9325A3466C1690A3F58B8B49BC62D", hash_generated_method = "AEBA2470C71BF29E47286BD3D8496A4F")
     
 private void updateUI() {
@@ -534,6 +546,8 @@ private void updateUI() {
     /**
      * Updates the auto-complete text view.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.776 -0500", hash_original_method = "7645C33AE0588436620AE83A499D7C08", hash_generated_method = "9D697A0850F600422BCC7570C91E7256")
     
 private void updateSearchAutoComplete() {
@@ -542,6 +556,8 @@ private void updateSearchAutoComplete() {
         mSearchAutoComplete.setForceIgnoreOutsideTouch(false);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.780 -0500", hash_original_method = "E83CA9B0957C02D3E99E874CE94E4E80", hash_generated_method = "7112B892137F2B886F605260B79F93DF")
     
 private void updateSearchAppIcon() {
@@ -564,6 +580,8 @@ private void updateSearchAppIcon() {
     /**
      * Setup the search "Badge" if requested by mode flags.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.784 -0500", hash_original_method = "306E7BCD0818ADE89EBA434EE06262F7", hash_generated_method = "B80DE44C36094CCD8F7BFB6AC88EC24C")
     
 private void updateSearchBadge() {
@@ -611,6 +629,8 @@ private void updateSearchBadge() {
         return super.onTouchEvent(event);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.792 -0500", hash_original_method = "56250C7379795A076A294BCEF2D5FD2C", hash_generated_method = "BA8552B008E20F0400287BEBB9724F3F")
     
 private boolean isOutOfBounds(View v, MotionEvent event) {
@@ -704,6 +724,8 @@ public void setSearchDialog(SearchDialog searchDialog) {
     /**
      * Launches an intent, including any special intent handling.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.806 -0500", hash_original_method = "BC4CCAAD8BAD8DFDC06067A6480767AA", hash_generated_method = "70C567FF99FB51F3FA5DED8971A59CEA")
     
 private void launchIntent(Intent intent) {
@@ -751,6 +773,8 @@ public void setListSelection(int index) {
      *             {@link SearchManager#SEARCH_MODE}, or {@code null}.
      * @return The intent.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.815 -0500", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "1F0A50D12F3AF83BCB8DD4F3AC55A247")
     
 private Intent createIntent(String action, Uri data, String extraData, String query,
@@ -782,6 +806,8 @@ private Intent createIntent(String action, Uri data, String extraData, String qu
         return intent;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.841 -0500", hash_original_method = "F1F42C772C06A28CE3769310F1841510", hash_generated_method = "F787CA429662AB1A9B883868F90AEB8B")
     
 private boolean isEmpty(AutoCompleteTextView actv) {
@@ -804,6 +830,8 @@ private boolean isEmpty(AutoCompleteTextView actv) {
         cancel();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.848 -0500", hash_original_method = "D537924252E5FBECE100B51E4DF20EDD", hash_generated_method = "4440127D4F7F8E99505708E804A9A040")
     
 private boolean onClosePressed() {
@@ -819,6 +847,8 @@ private boolean onClosePressed() {
     /**
      * Sets the text in the query box, updating the suggestions.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.872 -0500", hash_original_method = "AC61287D1F4BDFB9C05737508F4ABB90", hash_generated_method = "51609A548F387EDA2014CA6A38CC5A57")
     
 private void setUserQuery(String query) {

@@ -161,6 +161,8 @@ public Dialog(Context context, int theme) {
         this(context, theme, true);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.052 -0500", hash_original_method = "C6D5E1D2CF37954F320E3261297EC417", hash_generated_method = "C6D5E1D2CF37954F320E3261297EC417")
     
 Dialog(Context context, int theme, boolean createContextWrapper) {
@@ -358,6 +360,8 @@ public void dismiss() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.078 -0500", hash_original_method = "4ECC78F105BA2AD2FA21893BA556AFFD", hash_generated_method = "4ECC78F105BA2AD2FA21893BA556AFFD")
     
 void dismissDialog() {
@@ -385,6 +389,8 @@ void dismissDialog() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.081 -0500", hash_original_method = "866BAFBEBC09B92D7388CA2F75E61BAD", hash_generated_method = "FD5789CE329610B36688F6BABE62CDDC")
     
 private void sendDismissMessage() {
@@ -394,6 +400,8 @@ private void sendDismissMessage() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.083 -0500", hash_original_method = "02D405BDD0443049D755381D9E715694", hash_generated_method = "96649B57B7C1C3DD4F8E7E2163C9158E")
     
 private void sendShowMessage() {
@@ -405,6 +413,8 @@ private void sendShowMessage() {
 
     // internal method to make sure mcreated is set properly without requiring
     // users to call through to super in onCreate
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.084 -0500", hash_original_method = "CD27A7CE58254212F040E7B7DA65BCA4", hash_generated_method = "CD27A7CE58254212F040E7B7DA65BCA4")
     
 void dispatchOnCreate(Bundle savedInstanceState) {
@@ -1184,6 +1194,8 @@ public void onActionModeFinished(ActionMode mode) {
     /**
      * @return The activity associated with this dialog, or null if there is no associated activity.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.218 -0500", hash_original_method = "2C0F3C4A58B092DBFC10EA72C5A7ED76", hash_generated_method = "275C32D8E91155BA86B5F29FC6D158C1")
     
 private ComponentName getAssociatedActivity() {

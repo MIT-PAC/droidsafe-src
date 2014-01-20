@@ -14,6 +14,8 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
     /**
      * Test for equality, coping with nulls.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.673 -0500", hash_original_method = "454D6D8A7D641F48CA6B87A071B1615F", hash_generated_method = "0DDF0DBFDE1A6689A83DC6DC03EBC794")
     
 private static boolean eq(Object o1, Object o2) {
@@ -29,6 +31,8 @@ private static boolean eq(Object o1, Object o2) {
     /**
      * Creates an empty set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.633 -0500", hash_original_method = "719CF91FD15681D04C85978CBE8B39AE", hash_generated_method = "3CBB1DE415F0C19FD3572B7CD1FC83A1")
     
 public CopyOnWriteArraySet() {
@@ -42,6 +46,8 @@ public CopyOnWriteArraySet() {
      * @param c the collection of elements to initially contain
      * @throws NullPointerException if the specified collection is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.635 -0500", hash_original_method = "A905F7DF70B1EDD8621789C3C3A6CD84", hash_generated_method = "B003E144846289E0AEB6814A85C77E68")
     
 public CopyOnWriteArraySet(Collection<? extends E> c) {
@@ -54,6 +60,8 @@ public CopyOnWriteArraySet(Collection<? extends E> c) {
      *
      * @return the number of elements in this set
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.638 -0500", hash_original_method = "3CEC44303CC022BBEC9F119BC403FDBC", hash_generated_method = "FD349EDA389F166F5AB5B32AD7B69928")
     
 public int size() {
@@ -65,6 +73,8 @@ public int size() {
      *
      * @return <tt>true</tt> if this set contains no elements
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.640 -0500", hash_original_method = "3B66E92AC54A2F386067AD3C16431654", hash_generated_method = "B6A29C44E6421DAC7A6BB388191FD1B5")
     
 public boolean isEmpty() {
@@ -80,6 +90,8 @@ public boolean isEmpty() {
      * @param o element whose presence in this set is to be tested
      * @return <tt>true</tt> if this set contains the specified element
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.642 -0500", hash_original_method = "45B83D89DB9565F8F2123157436CF2DA", hash_generated_method = "C1C2C141E940D6A5568E115AEE5A3968")
     
 public boolean contains(Object o) {
@@ -102,12 +114,16 @@ public boolean contains(Object o) {
      *
      * @return an array containing all the elements in this set
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.644 -0500", hash_original_method = "59659636145935A673C89066DF38E15C", hash_generated_method = "4D665EBC24AE869D73CB844CF0201465")
     
 public Object[] toArray() {
         return al.toArray();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.885 -0400", hash_original_method = "611ED93917CDC5DE1AF7714E59426D61", hash_generated_method = "A97A508A6AB1C24B6FB5FCF21A879F6C")
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());
@@ -122,6 +138,8 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
      * Removes all of the elements from this set.
      * The set will be empty after this call returns.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.649 -0500", hash_original_method = "3A8225B3804E9179BE65F5C2B01036E9", hash_generated_method = "ED19120A679128891E62BAFC6205202D")
     
 public void clear() {
@@ -140,6 +158,8 @@ public void clear() {
      * @param o object to be removed from this set, if present
      * @return <tt>true</tt> if this set contained the specified element
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.652 -0500", hash_original_method = "4B916DD49AA1C881C6B40C3BB12114A0", hash_generated_method = "E99DE92F5D686004F214CC5A1E5D831F")
     
 public boolean remove(Object o) {
@@ -158,6 +178,8 @@ public boolean remove(Object o) {
      * @return <tt>true</tt> if this set did not already contain the specified
      *         element
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.654 -0500", hash_original_method = "C36F2E0651BF3F93251D9AAA1075E241", hash_generated_method = "691DCD4142B8BB56E48201EC4322E72A")
     
 public boolean add(E e) {
@@ -175,6 +197,8 @@ public boolean add(E e) {
      * @throws NullPointerException if the specified collection is null
      * @see #contains(Object)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.656 -0500", hash_original_method = "BAD19EAB09738DBB9663648D63DFE74C", hash_generated_method = "20C24386DF433EE5A344EEACFE69F45D")
     
 public boolean containsAll(Collection<?> c) {
@@ -194,6 +218,8 @@ public boolean containsAll(Collection<?> c) {
      * @throws NullPointerException if the specified collection is null
      * @see #add(Object)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.659 -0500", hash_original_method = "B7022E0CB9EF549D20482BA7616126CF", hash_generated_method = "B52446F79F5608D2C75D96940DC21B7C")
     
 public boolean addAll(Collection<? extends E> c) {
@@ -215,6 +241,8 @@ public boolean addAll(Collection<? extends E> c) {
      *         or if the specified collection is null
      * @see #remove(Object)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.661 -0500", hash_original_method = "66AA12EE71C1D65DECB2FC917ACDE24D", hash_generated_method = "ED1ECAE0EB0C2B56318148858C23D470")
     
 public boolean removeAll(Collection<?> c) {
@@ -238,6 +266,8 @@ public boolean removeAll(Collection<?> c) {
      *         or if the specified collection is null
      * @see #remove(Object)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.664 -0500", hash_original_method = "D0A4CF23F1E9AE32CFAA8649387F142B", hash_generated_method = "79BF9843443FC370A29F536A14E6646B")
     
 public boolean retainAll(Collection<?> c) {
@@ -255,6 +285,8 @@ public boolean retainAll(Collection<?> c) {
      *
      * @return an iterator over the elements in this set
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.667 -0500", hash_original_method = "1D191D7F570684E003696ECD55ECD643", hash_generated_method = "0A46AE5BBA3526BAF33DF6C195CE13E9")
     
 public Iterator<E> iterator() {
@@ -277,6 +309,8 @@ public Iterator<E> iterator() {
      * @param o object to be compared for equality with this set
      * @return {@code true} if the specified object is equal to this set
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.670 -0500", hash_original_method = "EF3132D176498E8C292078B60C02B2A5", hash_generated_method = "D090C344345913673474764ABF474EB7")
     
 public boolean equals(Object o) {

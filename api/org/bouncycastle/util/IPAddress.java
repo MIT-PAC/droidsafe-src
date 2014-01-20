@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class IPAddress {
     /**
      * Validate the given IPv4 or IPv6 address.
@@ -113,6 +110,8 @@ public static boolean isValidIPv6WithNetmask(
                            && (isValidIPv6(mask) || isMaskValue(mask, 128)));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.927 -0500", hash_original_method = "1BB0D96AE2C8F4F1CE1C81F0FD974B5B", hash_generated_method = "43FB89ABF1DB3824AC46F6A59741F7A1")
     
 private static boolean isMaskValue(String component, int size)
@@ -210,7 +209,6 @@ public static boolean isValidIPv6(
     {
         //Synthesized constructor
     }
-
     
 }
 

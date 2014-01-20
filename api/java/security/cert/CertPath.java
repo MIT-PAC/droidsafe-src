@@ -120,6 +120,8 @@ public String toString() {
      *
      * @return a list of {@code Certificate}s in the {@code CertPath}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.252 -0500", hash_original_method = "F1426E2A44812D0AE4014B7629FA559D", hash_generated_method = "2227574931B83954DB8047C4709A4C7E")
     
 public abstract List<? extends Certificate> getCertificates();
@@ -131,6 +133,8 @@ public abstract List<? extends Certificate> getCertificates();
      * @throws CertificateEncodingException
      *             if the encoding fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.254 -0500", hash_original_method = "97985BC010DD1187CA9D18F27C6321CC", hash_generated_method = "967CA908BE3445AA84C7FF1C69EFF907")
     
 public abstract byte[] getEncoded()
@@ -145,6 +149,8 @@ public abstract byte[] getEncoded()
      * @throws CertificateEncodingException
      *             if the encoding fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.257 -0500", hash_original_method = "5A28674A03609094F71CED2E9CFD4EAB", hash_generated_method = "F97B4E54ACD29AFDDC963FCA87397711")
     
 public abstract byte[] getEncoded(String encoding)
@@ -156,6 +162,8 @@ public abstract byte[] getEncoded(String encoding)
      *
      * @return {@code Iterator} over supported encodings (as {@code String}s).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.260 -0500", hash_original_method = "501BBB87AB4FA040A3C6E82444EEB8D9", hash_generated_method = "12EE1216881B2F2E57E65D52688C2530")
     
 public abstract Iterator<String> getEncodings();

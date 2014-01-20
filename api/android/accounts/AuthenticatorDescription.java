@@ -84,6 +84,8 @@ public AuthenticatorDescription(String type, String packageName, int labelId, in
         this(type, packageName, labelId, iconId, smallIconId, prefId, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.106 -0500", hash_original_method = "4037EB3A36670641FC6DEBBB390D3E87", hash_generated_method = "3081C37713196AB5405E7A26E393BD99")
     
 private AuthenticatorDescription(String type) {
@@ -96,6 +98,8 @@ private AuthenticatorDescription(String type) {
         this.customTokens = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.109 -0500", hash_original_method = "C10BAC93BE842F654B6DBE8A81B18B55", hash_generated_method = "744BDC08A914DAF88929C7C04F8AB64A")
     
 private AuthenticatorDescription(Parcel source) {

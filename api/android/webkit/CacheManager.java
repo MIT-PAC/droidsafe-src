@@ -33,6 +33,8 @@ public final class CacheManager {
      *
      * @param context The application context.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.008 -0500", hash_original_method = "FD0A44038543D4B071B714911C2F38E6", hash_generated_method = "35AE2BCA55738371B7CE0EA20089509D")
     
 static void init(Context context) {
@@ -59,6 +61,8 @@ static void init(Context context) {
      *
      * @return true if the cache directory didn't exist and was created.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.011 -0500", hash_original_method = "39AF7BF095F0C2B1607F33D11417DF97", hash_generated_method = "F376D4A493B2A43313AC5AD7B7320ED8")
     
 static private boolean createCacheDirectory() {
@@ -110,6 +114,8 @@ static private boolean createCacheDirectory() {
      *
      * @param disabled Whether the cache should be disabled
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.016 -0500", hash_original_method = "15A04C0B3B55BED81D42B45C3530CD7B", hash_generated_method = "B5DD7A823CC11E052351146D788A64DE")
     
 static void setCacheDisabled(boolean disabled) {
@@ -140,6 +146,8 @@ static void setCacheDisabled(boolean disabled) {
 
     // only called from WebViewWorkerThread
     // make sure to call enableTransaction/disableTransaction in pair
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.021 -0500", hash_original_method = "953C900A9DBD3B15E27F74DCB29F2A3F", hash_generated_method = "4A49FA9A6979EE8FDC70C3F4922446F1")
     
 static boolean enableTransaction() {
@@ -154,6 +162,8 @@ static boolean enableTransaction() {
 
     // only called from WebViewWorkerThread
     // make sure to call enableTransaction/disableTransaction in pair
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.023 -0500", hash_original_method = "65C222DBB0B16E3D9C9A879D8816B411", hash_generated_method = "C392682FBE357FFA274F9965349DF02B")
     
 static boolean disableTransaction() {
@@ -168,6 +178,8 @@ static boolean disableTransaction() {
 
     // only called from WebViewWorkerThread
     // make sure to call startTransaction/endTransaction in pair
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.025 -0500", hash_original_method = "604E7ACA960E1118AEAD24723E3956E2", hash_generated_method = "95E7F886CB4ED8D88ED2EF3449898360")
     
 static boolean startTransaction() {
@@ -178,6 +190,8 @@ static boolean startTransaction() {
 
     // only called from WebViewWorkerThread
     // make sure to call startTransaction/endTransaction in pair
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.028 -0500", hash_original_method = "0D470A4357137F5CF22E27F25D4438C9", hash_generated_method = "7ACFB55C8E973782678CC1B31B064791")
     
 static boolean endTransaction() {
@@ -481,6 +495,8 @@ static boolean cleanupCacheFile(CacheResult cacheRet) {
      *
      * @return Whether the removal succeeded.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.062 -0500", hash_original_method = "8B053D7F1520F6A3CE30DCCA756BED4A", hash_generated_method = "9D6D7D01366558B86F29E0C160A9B1C1")
     
 static boolean removeAllCacheFiles() {
@@ -523,6 +539,8 @@ static boolean removeAllCacheFiles() {
         return true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.069 -0500", hash_original_method = "BDADE4E0F63929C91E9784D4BEEE6A94", hash_generated_method = "821533AB969EC30D88C5041F2FCAF74E")
     
 static void trimCacheIfNeeded() {
@@ -560,6 +578,8 @@ static void trimCacheIfNeeded() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.071 -0500", hash_original_method = "EBF8FF361B062C01F7D2F6B200ABB9BA", hash_generated_method = "06ABC24E4421DFFA3721DF4A1A45CD9D")
     
 static void clearCache() {
@@ -569,6 +589,8 @@ static void clearCache() {
         mDataBase.clearCache();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.074 -0500", hash_original_method = "F3AB8B6931536450A242ABE9EADE3D7B", hash_generated_method = "FF12C91EA0A617FB3EF6CDFA7687F14E")
     
 private static boolean isCachableRedirect(int statusCode) {
@@ -580,6 +602,8 @@ private static boolean isCachableRedirect(int statusCode) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.076 -0500", hash_original_method = "95FFC22FDD78E23D1DBD2657CF1B4DEF", hash_generated_method = "9A879508B81EA3BDEABDB475FFC6E80E")
     
 private static String getDatabaseKey(String url, long postIdentifier) {
@@ -660,6 +684,8 @@ private static String getDatabaseKey(String url, long postIdentifier) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.082 -0500", hash_original_method = "800F2AC69DCF49143539415C1D541617", hash_generated_method = "9D0BB8A2014EC570579C15D1059CEB30")
     
 private static void appendAsHex(int i, StringBuffer ret) {

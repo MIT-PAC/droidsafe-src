@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, Serializable {
     
-    @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
         if (!elementType.isEnum()) {
             throw new ClassCastException(elementType.getClass().getName() + " is not an Enum");
@@ -21,12 +21,16 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         return new HugeEnumSet<E>(elementType, enums);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E extends Enum<E>> EnumSet<E> allOf(Class<E> elementType) {
         EnumSet<E> set = noneOf(elementType);
         set.complement();
         return set;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E extends Enum<E>> EnumSet<E> copyOf(EnumSet<E> s) {
         EnumSet<E> set = EnumSet.noneOf(s.elementClass);
         set.addAll(s);
@@ -52,6 +56,8 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         return set;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E extends Enum<E>> EnumSet<E> complementOf(EnumSet<E> s) {
         EnumSet<E> set = EnumSet.noneOf(s.elementClass);
         set.addAll(s);
@@ -112,12 +118,16 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
 
      Class<E> elementClass;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.889 -0500", hash_original_method = "39015C507ACAACD362C6AF5AEC7D9CF8", hash_generated_method = "39015C507ACAACD362C6AF5AEC7D9CF8")
     
 EnumSet(Class<E> cls) {
         elementClass = cls;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.904 -0500", hash_original_method = "EDF5635B07DD157E75B67DB68527FFEC", hash_generated_method = "ACF3C29D7B78CD2551BA957A21A83266")
     
 abstract void complement();
@@ -133,6 +143,8 @@ abstract void setRange(E start, E end);
      * @return a new enum set with the same elements as those contained in this
      *         enum set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.924 -0500", hash_original_method = "37C8AB3D6E991A765CF2ADF4E1FAB73C", hash_generated_method = "94112DC51F4003A94A0F873704824E8C")
     
 @SuppressWarnings("unchecked")
@@ -145,6 +157,8 @@ abstract void setRange(E start, E end);
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.927 -0500", hash_original_method = "04E56AE18F38E72A8E3B6B437517B693", hash_generated_method = "04E56AE18F38E72A8E3B6B437517B693")
     
 boolean isValidType(Class<?> cls) {
@@ -162,12 +176,16 @@ boolean isValidType(Class<?> cls) {
 
         private E[] elements;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.898 -0400", hash_original_method = "F430ADBE7D405D29614A0779FFE3FD6E", hash_generated_method = "F430ADBE7D405D29614A0779FFE3FD6E")
         public SerializationProxy ()
         {
             //Synthesized constructor
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.939 -0500", hash_original_method = "60C5F56392547A20884548FBBB7D801A", hash_generated_method = "45836297E2DCA0C6F305BA7D8B75FD65")
         
 private Object readResolve() {
@@ -179,6 +197,8 @@ private Object readResolve() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.943 -0500", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "4102122C8CA6BFB91A0AAFAE0AD38EAD")
     

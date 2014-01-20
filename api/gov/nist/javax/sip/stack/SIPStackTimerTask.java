@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.TimerTask;
 
-
-
-
-
 public abstract class SIPStackTimerTask extends TimerTask {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.996 -0400", hash_original_method = "CF93C0792FF2A4713A916D013DB0C142", hash_generated_method = "CF93C0792FF2A4713A916D013DB0C142")
@@ -18,6 +14,8 @@ public abstract class SIPStackTimerTask extends TimerTask {
         //Synthesized constructor
     }
     // / Implements code to be run when the SIPStackTimerTask is executed.
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.636 -0500", hash_original_method = "CB5870151CD6DF3DC7632725FAC776A4", hash_generated_method = "4CAC313E67DDA91D5DC1289C58A06F81")
     
 protected abstract void runTask();
@@ -34,7 +32,6 @@ public final void run() {
             e.printStackTrace();
         }
     }
-
     
 }
 

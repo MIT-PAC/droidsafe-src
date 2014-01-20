@@ -17,6 +17,8 @@ import com.android.internal.telephony.IccFileHandler;
 
 class CommandParamsFactory extends Handler {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.916 -0500", hash_original_method = "902F6654BACA21B759C69CE5678E59A7", hash_generated_method = "F41D5CB95F3D9937A947AF7B2BE929CC")
     
@@ -76,6 +78,8 @@ static synchronized CommandParamsFactory getInstance(RilMessageDecoder caller,
 
     private RilMessageDecoder mCaller = null;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.919 -0500", hash_original_method = "7BCA60CE4AA4C3E7854AB72DFCEE5CF9", hash_generated_method = "FD806CA97E8A66464671E5E3328C4A24")
     
 private CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
@@ -83,6 +87,8 @@ private CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
         mIconLoader = IconLoader.getInstance(this, fh);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.922 -0500", hash_original_method = "2E4478F23D166A2E5E35D0CD5C4A129E", hash_generated_method = "B6CB825255E9C63FAB84715E72DFE1D4")
     
 private CommandDetails processCommandDetails(List<ComprehensionTlv> ctlvs) {
@@ -103,6 +109,8 @@ private CommandDetails processCommandDetails(List<ComprehensionTlv> ctlvs) {
         return cmdDet;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.925 -0500", hash_original_method = "1AA16ED3503C2EABAE519A247570B4D1", hash_generated_method = "16012F063D610DD6237B38D0B6F87C41")
     
 void make(BerTlv berTlv) {
@@ -207,6 +215,8 @@ void make(BerTlv berTlv) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.930 -0500", hash_original_method = "3AB391E8251356D82C52829EE4B32ED7", hash_generated_method = "E3356EC179A0390C98FDE662F9F214B3")
     
 private ResultCode setIcons(Object data) {
@@ -231,6 +241,8 @@ private ResultCode setIcons(Object data) {
         return ResultCode.OK;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.932 -0500", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "0F78036AE11C468AB9BCD93A05DFCB29")
     
 private void sendCmdParams(ResultCode resCode) {
@@ -246,6 +258,8 @@ private void sendCmdParams(ResultCode resCode) {
      * @return A ComprehensionTlv object that has the tag value of {@code tag}.
      *         If no object is found with the tag, null is returned.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.935 -0500", hash_original_method = "747AFE004560A767DF481C3AA8002660", hash_generated_method = "9625D3D3689DEE9B299B2E695D5C9E6A")
     
 private ComprehensionTlv searchForTag(ComprehensionTlvTag tag,
@@ -266,6 +280,8 @@ private ComprehensionTlv searchForTag(ComprehensionTlvTag tag,
      * @return A ComprehensionTlv object that has the tag value of {@code tag}.
      *         If no object is found with the tag, null is returned.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.937 -0500", hash_original_method = "D88B588A55F67F23980463DF8FB0DA04", hash_generated_method = "CEDDDCCC0A8F696D6842028354B776F0")
     
 private ComprehensionTlv searchForNextTag(ComprehensionTlvTag tag,
@@ -290,6 +306,8 @@ private ComprehensionTlv searchForNextTag(ComprehensionTlvTag tag,
      *         asynchronous processing is required.
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.941 -0500", hash_original_method = "7E1C347C9C4DEE22923C4A46BE429D13", hash_generated_method = "14E524A6E58CB4758EDD6DF999B7AC29")
     
 private boolean processDisplayText(CommandDetails cmdDet,
@@ -353,6 +371,8 @@ private boolean processDisplayText(CommandDetails cmdDet,
      *         asynchronous processing is required.
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.943 -0500", hash_original_method = "7C3BADEB42DA2C878C6C5ABCBE524429", hash_generated_method = "8CDB4A3364B8F2209625D9813B166F22")
     
 private boolean processSetUpIdleModeText(CommandDetails cmdDet,
@@ -398,6 +418,8 @@ private boolean processSetUpIdleModeText(CommandDetails cmdDet,
      *         asynchronous processing is required.
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.946 -0500", hash_original_method = "025DF7E231D7740FB891A823A7EE822B", hash_generated_method = "45B6A19FC2D426B21B2AC8287429C641")
     
 private boolean processGetInkey(CommandDetails cmdDet,
@@ -457,6 +479,8 @@ private boolean processGetInkey(CommandDetails cmdDet,
      *         asynchronous processing is required.
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.949 -0500", hash_original_method = "03663C70D425FF89FCC6E89BA931B637", hash_generated_method = "170A92F32027F9875BE7114B1EF48E7D")
     
 private boolean processGetInput(CommandDetails cmdDet,
@@ -523,6 +547,8 @@ private boolean processGetInput(CommandDetails cmdDet,
      * @param ctlvs List of ComprehensionTlv objects following Command Details
      *        object and Device Identities object within the proactive command
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.953 -0500", hash_original_method = "328C209D553235E9687156E0E720555C", hash_generated_method = "49CD5A6A2D8FBFD4D95552F94CB6DE0A")
     
 private boolean processRefresh(CommandDetails cmdDet,
@@ -554,6 +580,8 @@ private boolean processRefresh(CommandDetails cmdDet,
      *         asynchronous processing is required.
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.956 -0500", hash_original_method = "BCD1A4E1E4B160F1064A009F1000860C", hash_generated_method = "AED934F64C2AF3A3AA68C1BE35325EE1")
     
 private boolean processSelectItem(CommandDetails cmdDet,
@@ -653,6 +681,8 @@ private boolean processSelectItem(CommandDetails cmdDet,
      * @return true if the command is processing is pending and additional
      *         asynchronous processing is required.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.959 -0500", hash_original_method = "A40BEAAD1582CC67F32BB145B8ABDE84", hash_generated_method = "AF28097F7F5696941EAC21D0DECD9B8D")
     
 private boolean processEventNotify(CommandDetails cmdDet,
@@ -694,6 +724,8 @@ private boolean processEventNotify(CommandDetails cmdDet,
      * @return true if the command is processing is pending and additional
      *         asynchronous processing is required.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.961 -0500", hash_original_method = "C7EE76D8654D8C691124AB97A0520EED", hash_generated_method = "D9D1C48A3F913A5F6D431A91482A34E1")
     
 private boolean processSetUpEventList(CommandDetails cmdDet,
@@ -724,6 +756,8 @@ private boolean processSetUpEventList(CommandDetails cmdDet,
      *         asynchronous processing is required.
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.965 -0500", hash_original_method = "8945EEF95EF30DB6F3AC6F2F65AD50C7", hash_generated_method = "7D7A3879A22C748B9BCF7118D3B3BF76")
     
 private boolean processLaunchBrowser(CommandDetails cmdDet,
@@ -799,6 +833,8 @@ private boolean processLaunchBrowser(CommandDetails cmdDet,
      *         asynchronous processing is required.t
      * @throws ResultException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.968 -0500", hash_original_method = "9E25ADC04DC19743F5D672C3FA9262A8", hash_generated_method = "7A042046982B20BD0D28A6D98CF6237D")
     
 private boolean processPlayTone(CommandDetails cmdDet,
@@ -867,6 +903,8 @@ private boolean processPlayTone(CommandDetails cmdDet,
      * @return true if the command is processing is pending and additional
      *         asynchronous processing is required.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.972 -0500", hash_original_method = "1675CA7AE4DACD4909A19602008CCD7F", hash_generated_method = "1831C6AA7DFE31784A7A670410C2977D")
     
 private boolean processSetupCall(CommandDetails cmdDet,
@@ -921,6 +959,8 @@ private boolean processSetupCall(CommandDetails cmdDet,
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.975 -0500", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "5F369B271055074A84D35E8275BE326B")
     
 private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs)

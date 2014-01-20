@@ -14,32 +14,48 @@ import droidsafe.helpers.DSUtils;
 
 public class MemoryFile {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static FileDescriptor native_open(String name, int length) throws IOException {
 		return new FileDescriptor();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_mmap(FileDescriptor fd, int length, int mode) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437101719 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437101719;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_munmap(int addr, int length) throws IOException {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_close(FileDescriptor fd) {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_read(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563409879 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563409879;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_write(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_pin(FileDescriptor fd, boolean pin) throws IOException {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_get_size(FileDescriptor fd) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962429955 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962429955;
@@ -120,6 +136,8 @@ public void close() {
      *
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.827 -0500", hash_original_method = "08DA91581CCCF703195AD89F50B4F4A1", hash_generated_method = "08DA91581CCCF703195AD89F50B4F4A1")
     
 void deactivate() {
@@ -136,6 +154,8 @@ void deactivate() {
     /**
      * Checks whether the memory file has been deactivated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.829 -0500", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "BC1516CAD839647BACB3E3229CF46E53")
     
 private boolean isDeactivated() {
@@ -145,6 +165,8 @@ private boolean isDeactivated() {
     /**
      * Checks whether the memory file has been closed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.831 -0500", hash_original_method = "3246A0B1468E43E22E475A6EAB25C98D", hash_generated_method = "F89B5B48E6D65164DE427C517F844F7A")
     
 private boolean isClosed() {

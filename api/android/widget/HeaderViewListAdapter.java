@@ -78,6 +78,8 @@ public boolean isEmpty() {
         return mAdapter == null || mAdapter.isEmpty();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.805 -0500", hash_original_method = "41241BC7260E3C26DE66CCD5C227EECC", hash_generated_method = "C016B55F1984CD2E236CB6F46E6A228D")
     
 private boolean areAllListInfosSelectable(ArrayList<ListView.FixedViewInfo> infos) {

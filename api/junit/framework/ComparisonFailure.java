@@ -19,6 +19,8 @@ public class ComparisonFailure extends AssertionFailedError {
      * @param expected the expected string value
      * @param actual the actual string value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.979 -0500", hash_original_method = "7454800965A05A4B5CEDE9BB116D75F0", hash_generated_method = "CEA7B09F6E6015D5ADB3B33A9BAFCC45")
     
 public ComparisonFailure (String message, String expected, String actual) {
@@ -33,6 +35,8 @@ public ComparisonFailure (String message, String expected, String actual) {
      *
      * @see java.lang.Throwable#getMessage()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.982 -0500", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "2CB3B48A443EC9374104A447461A8683")
     

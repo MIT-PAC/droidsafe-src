@@ -50,6 +50,8 @@ public CorrectionInfo(int offset, CharSequence oldText, CharSequence newText) {
         mNewText = newText;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.776 -0500", hash_original_method = "ACB844101F7B730F0891325C0B2B59C5", hash_generated_method = "D49883314DCB4296A37CDB623298E2DD")
     
 private CorrectionInfo(Parcel source) {

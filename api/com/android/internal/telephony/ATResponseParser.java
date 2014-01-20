@@ -94,6 +94,8 @@ public boolean
         return next < line.length();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.783 -0500", hash_original_method = "0441D3F31DB45A49823AD290225E4F8E", hash_generated_method = "0B19355957898A14CBCE7D9492B71AF5")
     
 private void
@@ -152,6 +154,8 @@ private void
     }
 
     /** Throws ATParseEx if whitespace extends to the end of string */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.786 -0500", hash_original_method = "418256DED150EC59875240044DA6104A", hash_generated_method = "8D968F93EAB2D7A400AB6776E32FE6E3")
     
 private char
@@ -169,6 +173,8 @@ private char
         return c;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.789 -0500", hash_original_method = "1D94A267F6B395134932A5B3B0C0A195", hash_generated_method = "FE611489707CC77209F852F7A49C603B")
     
 private void

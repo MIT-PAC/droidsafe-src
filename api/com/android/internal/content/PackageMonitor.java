@@ -90,6 +90,8 @@ public void unregister() {
     }
     
     //not yet implemented
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.568 -0500", hash_original_method = "3A1B53F551F3FC9600BD1567B19D5B62", hash_generated_method = "3A1B53F551F3FC9600BD1567B19D5B62")
     
 boolean isPackageUpdating(String packageName) {
@@ -243,6 +245,8 @@ public void onSomePackagesChanged() {
 public void onFinishPackageChanges() {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.627 -0500", hash_original_method = "19E02459BAFEB1E910E6AB68B93B5860", hash_generated_method = "19E02459BAFEB1E910E6AB68B93B5860")
     

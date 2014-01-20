@@ -734,6 +734,8 @@ public void setClipToScreenEnabled(boolean enabled) {
      *
      * @param enabled True to scroll the anchor's parent when more room is desired by the popup.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.014 -0500", hash_original_method = "AB712E1EFFE4EAE7A80987CD7E1E8D4B", hash_generated_method = "AB712E1EFFE4EAE7A80987CD7E1E8D4B")
     
 void setAllowScrollingAnchorParent(boolean enabled) {
@@ -1089,6 +1091,8 @@ public void showAsDropDown(View anchor, int xoff, int yoff) {
         invokePopup(p);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.056 -0500", hash_original_method = "ACCF8C7A05331E8E4B71A7F0F84ED581", hash_generated_method = "7ED3D7192D8393AF04B621CD8C83B50A")
     
 private void updateAboveAnchor(boolean aboveAnchor) {
@@ -1222,6 +1226,8 @@ private WindowManager.LayoutParams createPopupLayout(IBinder token) {
         return p;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.069 -0500", hash_original_method = "731A130870E20EEF0406E3AA79CC1D53", hash_generated_method = "1E01973C1EDDA45B7BEA98EB2AE26272")
     
 private int computeFlags(int curFlags) {
@@ -1268,6 +1274,8 @@ private int computeFlags(int curFlags) {
         return curFlags;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.072 -0500", hash_original_method = "2B29575EF3002A68968C6947831DCCDB", hash_generated_method = "C4E180F5937461453AE8246FED71CAD6")
     
 private int computeAnimationResource() {
@@ -1789,6 +1797,8 @@ public void update(View anchor, int xoff, int yoff, int width, int height) {
         update(anchor, true, xoff, yoff, true, width, height);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.104 -0500", hash_original_method = "F5290879A773899EB945D797134BA900", hash_generated_method = "579C7E829556C3698E48D25A8DE37367")
     
 private void update(View anchor, boolean updateLocation, int xoff, int yoff,
@@ -1835,6 +1845,8 @@ private void update(View anchor, boolean updateLocation, int xoff, int yoff,
         update(p.x, p.y, width, height, x != p.x || y != p.y);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.109 -0500", hash_original_method = "032144363E44618DF1C4EE95BC82AD16", hash_generated_method = "3D54223C61DAD57A9FE0B4D4C1E721A3")
     
 private void unregisterForScrollChanged() {
@@ -1850,6 +1862,8 @@ private void unregisterForScrollChanged() {
         mAnchor = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.111 -0500", hash_original_method = "F426C621D66F93AA8E883C7FBA8C8657", hash_generated_method = "782793FDDE3C363EC69AC2EA7BEEFACD")
     
 private void registerForScrollChanged(View anchor, int xoff, int yoff) {

@@ -31,7 +31,9 @@ public final class BluetoothServerSocket implements Closeable {
      * @throws IOException On error, for example Bluetooth not available, or
      *                     insufficient privileges
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.470 -0500", hash_original_method = "60B9AE2C87715653387DA9AC24F555A4", hash_generated_method = "60B9AE2C87715653387DA9AC24F555A4")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.470 -0500", hash_original_method = "60B9AE2C87715653387DA9AC24F555A4", hash_generated_method = "60B9AE2C87715653387DA9AC24F555A4")
     
 BluetoothServerSocket(int type, boolean auth, boolean encrypt, int port)
             throws IOException {
@@ -89,7 +91,9 @@ public void close() throws IOException {
         mSocket.close();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.479 -0500", hash_original_method = "4ADEDE7D6DD2772B3D707BC6D3A1D1F8", hash_generated_method = "51252CAAFD1F322718E441C0D7250A91")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.479 -0500", hash_original_method = "4ADEDE7D6DD2772B3D707BC6D3A1D1F8", hash_generated_method = "51252CAAFD1F322718E441C0D7250A91")
     
 synchronized void setCloseHandler(Handler handler, int message) {
         mHandler = handler;

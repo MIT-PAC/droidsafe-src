@@ -197,6 +197,8 @@ public static SimpleDateFormat formatFor(String pattern) {
             
 };
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.866 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
         public DateFormatHolder ()
         {
@@ -224,6 +226,8 @@ public static SimpleDateFormat formatFor(String pattern) {
     public static final TimeZone GMT = TimeZone.getTimeZone("GMT");
     
     /** This class should not be instantiated. */    
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.467 -0500", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "47C30919D1E228AF190D6E0D3F0530CF")
     
 private DateUtils() { 

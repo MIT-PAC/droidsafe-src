@@ -36,6 +36,8 @@ public AtomicInteger(int initialValue) {
     /**
      * Creates a new AtomicInteger with initial value {@code 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.328 -0500", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "0E6B9C34F7A1BCF5C7C73F35173892F1")
     
 public AtomicInteger() {
@@ -46,6 +48,8 @@ public AtomicInteger() {
      *
      * @return the current value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.330 -0500", hash_original_method = "2C5A1089E8025181868581E48D922F38", hash_generated_method = "703E0755BD925C4D70E557B53D2BF771")
     
@@ -58,6 +62,8 @@ public final int get() {
      *
      * @param newValue the new value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.333 -0500", hash_original_method = "E51FD8A91C159D9D3ED3BF52073569AD", hash_generated_method = "C05E959756CFE2654FE95A60FD2AD98E")
     
 public final void set(int newValue) {
@@ -70,6 +76,8 @@ public final void set(int newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.336 -0500", hash_original_method = "77EB9E59BE67AA43485FF3A0F0492CB7", hash_generated_method = "4CD52BDA532FC5AB7C0B2B2E1A0C3792")
     
@@ -83,6 +91,8 @@ public final void lazySet(int newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.338 -0500", hash_original_method = "EFF79965BA8CD7578F2A5616273687C7", hash_generated_method = "459912E78FA47DBEC8F8D999BA2FBD0D")
     
@@ -103,6 +113,8 @@ public final int getAndSet(int newValue) {
      * @return true if successful. False return indicates that
      * the actual value was not equal to the expected value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.340 -0500", hash_original_method = "3CF6D7A3DD4EDBE8D1648E756B160F53", hash_generated_method = "1B4BBA8A27DFE3B91E1C4A1B3C9EAA69")
     
 public final boolean compareAndSet(int expect, int update) {
@@ -121,6 +133,8 @@ public final boolean compareAndSet(int expect, int update) {
      * @param update the new value
      * @return true if successful.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.343 -0500", hash_original_method = "22EC2300FEC70C46ECF009D542FC9430", hash_generated_method = "9EF3B090C06F7BFF42DD435957FE768B")
     
 public final boolean weakCompareAndSet(int expect, int update) {
@@ -151,6 +165,8 @@ public final int getAndIncrement() {
      *
      * @return the previous value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.348 -0500", hash_original_method = "D5257E8A410056D1BB1DB7447390EAE5", hash_generated_method = "8C7CA472D5F813D9D0A3E6E453CD9E55")
     
@@ -169,6 +185,8 @@ public final int getAndDecrement() {
      * @param delta the value to add
      * @return the previous value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.351 -0500", hash_original_method = "4B803B85C89B0C062A735FA86D4518AE", hash_generated_method = "95C75EF25F3A5B40B217926C833417D1")
     
@@ -186,6 +204,8 @@ public final int getAndAdd(int delta) {
      *
      * @return the updated value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.353 -0500", hash_original_method = "6DC45C427ABFB1C3B7D74803EAAF22FF", hash_generated_method = "0B6200F869F0C82E61A1C6A81CB8263D")
     
 public final int incrementAndGet() {
@@ -202,6 +222,8 @@ public final int incrementAndGet() {
      *
      * @return the updated value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.356 -0500", hash_original_method = "4357F9DD6725F5F393683EE2EA89C677", hash_generated_method = "64BF2D5FDACCDB13E451FABAE036B245")
     
 public final int decrementAndGet() {
@@ -219,6 +241,8 @@ public final int decrementAndGet() {
      * @param delta the value to add
      * @return the updated value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.359 -0500", hash_original_method = "5280B98EAB69F2A556138E3D06C4D0D3", hash_generated_method = "0AE1F741F0946B437A1E22F6DD01A830")
     
 public final int addAndGet(int delta) {
@@ -234,30 +258,40 @@ public final int addAndGet(int delta) {
      * Returns the String representation of the current value.
      * @return the String representation of the current value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.361 -0500", hash_original_method = "0CBFF056CB46F189F8DC45AFB469D5F9", hash_generated_method = "D0001D1DA32AF75F5957F8071053FA0F")
     
 public String toString() {
         return Integer.toString(get());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.363 -0500", hash_original_method = "B90EC926C8275C97256DF1E0AD9FC076", hash_generated_method = "78E09736EA0B907CA81C02E14B9D2D57")
     
 public int intValue() {
         return get();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.365 -0500", hash_original_method = "41D936CCD9A9D16949AE3FD60738B8AD", hash_generated_method = "04195FC3A55F3D732B787FB3633E9A7D")
     
 public long longValue() {
         return (long)get();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.368 -0500", hash_original_method = "F8181329F165428C51D2197BB97797EF", hash_generated_method = "225ECFECD93F68C7D435A4909B28BB0D")
     
 public float floatValue() {
         return (float)get();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.371 -0500", hash_original_method = "486C42E34E3619D90E05BCBEDA3844AE", hash_generated_method = "45341808FAD3EC3D7016C92E90DEA5E8")
     
 public double doubleValue() {

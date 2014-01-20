@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.LocaleUtil;
 
-
-
-
-
 public class TextDirectionHeuristics {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.369 -0500", hash_original_method = "752EA957CA9ED0F2290DA6CA047E5538", hash_generated_method = "51C0AB5FAFE47421AB195FD369FF0AA8")
@@ -47,12 +43,10 @@ private static TriState isRtlTextOrFormat(int directionality) {
 
     public static final TextDirectionHeuristic LTR =
         new TextDirectionHeuristicInternal(null /* no algorithm */, false);
-
     
     private static enum TriState {
         TRUE, FALSE, UNKNOWN;
     }
-
     
     public static abstract class TextDirectionHeuristicImpl implements TextDirectionHeuristic {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.341 -0500", hash_original_field = "AC6A49EC5BD80FA8E4AC700D6D739531", hash_generated_field = "E3D2FDC0F5F8FA77A83B5258D585AD07")
@@ -68,6 +62,8 @@ public TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
         /**
          * Return true if the default text direction is rtl.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.347 -0500", hash_original_method = "6996B95EE8A602CD6D77610A0A9C1C36", hash_generated_method = "D128DA54F5CDD559D1B53B9FB923BF61")
         
 abstract protected boolean defaultIsRtl();
@@ -85,6 +81,8 @@ abstract protected boolean defaultIsRtl();
             return doCheck(chars, start, count);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.353 -0500", hash_original_method = "F9BBF1A80AA076481C35E4EEAF375E25", hash_generated_method = "A33829D1716C7146D006AEA226146E9C")
         
 private boolean doCheck(char[] chars, int start, int count) {
@@ -97,11 +95,8 @@ private boolean doCheck(char[] chars, int start, int count) {
                     return defaultIsRtl();
             }
         }
-
         
     }
-
-
     
     private static class TextDirectionHeuristicInternal extends TextDirectionHeuristicImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.358 -0500", hash_original_field = "13EAD5D249DED3E29B625E1E15162FB5", hash_generated_field = "E35325D3CC72CD89F5834771DD655801")
@@ -122,18 +117,16 @@ private TextDirectionHeuristicInternal(TextDirectionAlgorithm algorithm,
         protected boolean defaultIsRtl() {
             return mDefaultIsRtl;
         }
-
         
     }
-
-
     
     public static class FirstStrong implements TextDirectionAlgorithm {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.385 -0500", hash_original_field = "3EE67EB44D7BAB4F1CE4D811DC35F490", hash_generated_field = "E0B2FB089B175E1E869ABC9E4BB92E5B")
 
-
         public static final FirstStrong INSTANCE = new FirstStrong();
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.381 -0500", hash_original_method = "77800305F201A2CE86A750D63435A8FC", hash_generated_method = "1022AB52D2F89377DB2D7E24719DC90E")
         
 private FirstStrong() {
@@ -149,12 +142,9 @@ private FirstStrong() {
             return result;
         }
     }
-
-
     
     public static class AnyStrong implements TextDirectionAlgorithm {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.400 -0500", hash_original_field = "30FABEF1DCD8CA88BE3EF33E8E0639C2", hash_generated_field = "816BE95EB8392CC0E9496A4A3A0FD859")
-
 
         public static final AnyStrong INSTANCE_RTL = new AnyStrong(true);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.403 -0500", hash_original_field = "3A6421B9E017B1B953572DE1404CD4A8", hash_generated_field = "0C39513C6CBA973C236E9D8F6EB932D3")
@@ -164,6 +154,8 @@ private FirstStrong() {
 
         private  boolean mLookForRtl;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.397 -0500", hash_original_method = "CE1C7FC082B7BD7DCEB5DEACBA006400", hash_generated_method = "B3AF76681B7B3EDA504A86B9C505345F")
         
 private AnyStrong(boolean lookForRtl) {
@@ -199,12 +191,9 @@ private AnyStrong(boolean lookForRtl) {
             return TriState.UNKNOWN;
         }
     }
-
-
     
     public static class TextDirectionHeuristicLocale extends TextDirectionHeuristicImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.415 -0500", hash_original_field = "C7D4E73351A56400CDCDFB799F49907D", hash_generated_field = "69EA35186DB990277D8AF9B472E41E71")
-
 
         public static final TextDirectionHeuristicLocale INSTANCE =
                 new TextDirectionHeuristicLocale();
@@ -223,8 +212,6 @@ public TextDirectionHeuristicLocale() {
             return (dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE);
         }
     }
-
-
     
     public static interface TextDirectionAlgorithm {
         

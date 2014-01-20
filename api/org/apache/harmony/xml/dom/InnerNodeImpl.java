@@ -20,6 +20,8 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
      * Returns true if {@code pattern} equals either "*" or {@code s}. Pattern
      * may be {@code null}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.673 -0500", hash_original_method = "3AE42BF49D2EDB4F7904018AB416CBF8", hash_generated_method = "03D776F83958ECCD657E90FD9DA68DD8")
     
 private static boolean matchesNameOrWildcard(String pattern, String s) {
@@ -105,6 +107,8 @@ public Node insertBefore(Node newChild, Node refChild) throws DOMException {
      * Inserts {@code newChild} at {@code index}. If it is already child of
      * another node, it is removed from there.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.648 -0500", hash_original_method = "CC52893233A8017E84157556EAC90FCB", hash_generated_method = "CC52893233A8017E84157556EAC90FCB")
     
@@ -173,6 +177,8 @@ public boolean isParentOf(Node node) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.655 -0500", hash_original_method = "228203F3C91B72F7B5E602122B5A1790", hash_generated_method = "78917AE89F3085715146D7950084B621")
     
 private void refreshIndices(int fromIndex) {
@@ -233,6 +239,8 @@ public String getTextContent() throws DOMException {
         return buf.toString();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.664 -0500", hash_original_method = "1B7875C51CF051392D3264002D3285E5", hash_generated_method = "1B7875C51CF051392D3264002D3285E5")
     
@@ -246,6 +254,8 @@ void getTextContent(StringBuilder buf) throws DOMException {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.666 -0500", hash_original_method = "8BE6B36212848E97AA53F8A83F869F11", hash_generated_method = "7C194BC5DDEBF48FC31149B5BC1C2D72")
     
 final boolean hasTextContent(Node child) {
@@ -254,6 +264,8 @@ final boolean hasTextContent(Node child) {
                 && child.getNodeType() != Node.PROCESSING_INSTRUCTION_NODE;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.668 -0500", hash_original_method = "FBC9DCE28E1410ABABC4D8105012C635", hash_generated_method = "FBC9DCE28E1410ABABC4D8105012C635")
     
@@ -269,6 +281,8 @@ void getElementsByTagName(NodeListImpl out, String name) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.671 -0500", hash_original_method = "E06ADC8546BD526D25CE87ECAD401587", hash_generated_method = "E06ADC8546BD526D25CE87ECAD401587")
     

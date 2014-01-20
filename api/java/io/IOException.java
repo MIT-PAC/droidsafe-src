@@ -13,8 +13,8 @@ public class IOException extends Exception {
     /**
      * Constructs a new {@code IOException} with its stack trace filled in.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.989 -0500", hash_original_method = "4DDFF90B7CF8CD74272BB60235E66E65", hash_generated_method = "2B20F6BC5311851A287D855E8383F8C8")
     
 public IOException() {
@@ -27,8 +27,8 @@ public IOException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.992 -0500", hash_original_method = "240D0BB3974E5D097E21F85B24F6FB44", hash_generated_method = "6B62B2903FC8CDC509B50797A6D8D38A")
     
 public IOException(String detailMessage) {
@@ -45,8 +45,8 @@ public IOException(String detailMessage) {
      *            The detail cause for the exception.
      * @since 1.6
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.995 -0500", hash_original_method = "D16D4F9A4DF133858001870C6413D65C", hash_generated_method = "9EE73FDB0C546D60128128DD662DBF63")
     
 public IOException(String message, Throwable cause) {
@@ -60,6 +60,8 @@ public IOException(String message, Throwable cause) {
      *            The detail cause for the exception.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.997 -0500", hash_original_method = "653E955146B329965A610B3602D07E3E", hash_generated_method = "5FC282426A31CD7F17EA87DB0C0514BE")
     
 public IOException(Throwable cause) {

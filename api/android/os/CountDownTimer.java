@@ -98,6 +98,8 @@ public synchronized final CountDownTimer start() {
      * Callback fired on regular interval.
      * @param millisUntilFinished The amount of time until finished.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.295 -0500", hash_original_method = "68C489D797DF2A96C0EEDEC59003AE1B", hash_generated_method = "0DA4D4CB02C38A9B8CBAAACB5DAAAC69")
     
 public abstract void onTick(long millisUntilFinished);
@@ -105,6 +107,8 @@ public abstract void onTick(long millisUntilFinished);
     /**
      * Callback fired when the time is up.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.297 -0500", hash_original_method = "1D32CADD71AC39A935B309A8116CB641", hash_generated_method = "CF6F808962E70040A3C1C9EEBCB2B8A8")
     
 public abstract void onFinish();

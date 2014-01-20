@@ -20,7 +20,9 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
   /**
    * Gets the minimum number of bytes that can be used to store the provided {@code value}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.788 -0500", hash_original_method = "D8527B07722D3007E049CCA84C0C170A", hash_generated_method = "28DF19F3917E469FC137AF24E17B99F0")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.788 -0500", hash_original_method = "D8527B07722D3007E049CCA84C0C170A", hash_generated_method = "28DF19F3917E469FC137AF24E17B99F0")
     
 private static int getOptimalNumberOfBytesForValue(int value) {
     return value <= Short.MAX_VALUE ? SHORT_SIZE : INT_SIZE;
@@ -37,7 +39,9 @@ private static int getOptimalNumberOfBytesForValue(int value) {
    * @param value  the value that is stored assuming it does not require more than the specified
    *    number of bytes.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.791 -0500", hash_original_method = "43DAEAD9EA7B46F448427A6E33AF9E4F", hash_generated_method = "92B87D21BFF877AEE8BAC0D33BD234B4")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.791 -0500", hash_original_method = "43DAEAD9EA7B46F448427A6E33AF9E4F", hash_generated_method = "92B87D21BFF877AEE8BAC0D33BD234B4")
     
 private static void storeWordInBuffer(ByteBuffer buffer, int wordSize, int index, int value) {
     index *= wordSize;
@@ -59,7 +63,9 @@ private static void storeWordInBuffer(ByteBuffer buffer, int wordSize, int index
    *
    * @return  the value read from the buffer
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.793 -0500", hash_original_method = "95351EDF4B775D7B91EF7507601BCE06", hash_generated_method = "55C1C0283C6B3B0AD5D57E775A00F162")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.793 -0500", hash_original_method = "95351EDF4B775D7B91EF7507601BCE06", hash_generated_method = "55C1C0283C6B3B0AD5D57E775A00F162")
     
 private static int readWordFromBuffer(ByteBuffer buffer, int wordSize, int index) {
     index *= wordSize;
@@ -76,7 +82,9 @@ private static int readWordFromBuffer(ByteBuffer buffer, int wordSize, int index
    * @param index  the index where the value is stored in the buffer
    * @throws IOException  if an error occurred reading from the object input stream
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.809 -0500", hash_original_method = "2A9DB5BB18B5DDB19F65168B47450AF6", hash_generated_method = "5756F7C0ABDD863B66AD77BB7303A91C")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.809 -0500", hash_original_method = "2A9DB5BB18B5DDB19F65168B47450AF6", hash_generated_method = "5756F7C0ABDD863B66AD77BB7303A91C")
     
 private static void readExternalWord(ObjectInput objectInput, int wordSize,
                                        ByteBuffer outputBuffer, int index) throws IOException {
@@ -98,7 +106,9 @@ private static void readExternalWord(ObjectInput objectInput, int wordSize,
    * @param index  the index of the value in the the byte buffer
    * @throws IOException if an error occurred writing to the provided object output stream
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.815 -0500", hash_original_method = "0809A12CC25D71B91D45BE96B1DF5C4D", hash_generated_method = "8BD7FB637BF974B0577F6CD6F2EA10B8")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.815 -0500", hash_original_method = "0809A12CC25D71B91D45BE96B1DF5C4D", hash_generated_method = "8BD7FB637BF974B0577F6CD6F2EA10B8")
     
 private static void writeExternalWord(ObjectOutput objectOutput, int wordSize,
                                         ByteBuffer inputBuffer, int index) throws IOException {

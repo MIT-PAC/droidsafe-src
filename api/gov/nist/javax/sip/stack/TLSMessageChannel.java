@@ -251,6 +251,8 @@ public String getPeerProtocol() {
      * @param msg is the message to send.
      * @param retry
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.391 -0500", hash_original_method = "769119032395AFB8B9E88BC54405133A", hash_generated_method = "4B6E1E27D98E77409B64EB34497F78A1")
     
 private void sendMessage(byte[] msg, boolean retry) throws IOException {

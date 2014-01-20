@@ -109,6 +109,8 @@ public static NdefRecord createUri(String uriString) {
         return new NdefRecord(TNF_WELL_KNOWN, RTD_URI, new byte[0], recordBytes);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.216 -0500", hash_original_method = "CF5FE1A1E327C48AD2DDEDA7889688E1", hash_generated_method = "1930952CAAB9A1E09899B921D0A3F7EE")
     
 private static byte[] concat(byte[]... arrays) {
@@ -329,7 +331,9 @@ public NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload) {
     /**
      * @hide
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.193 -0500", hash_original_method = "EE3B4F476C5F89F900E25765E0C165C3", hash_generated_method = "961FF791CC666F3AAF3C78B505441DCD")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.193 -0500", hash_original_method = "EE3B4F476C5F89F900E25765E0C165C3", hash_generated_method = "961FF791CC666F3AAF3C78B505441DCD")
     
 NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload, byte flags) {
         /* check arguments */
@@ -461,6 +465,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeByteArray(mPayload);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.235 -0500", hash_original_method = "D593336128142C3B83A1F96FE0DB1162", hash_generated_method = "948BCAA76573AA6593E66D6B93F9CD97")
     
     private int parseNdefRecord(byte[] data){
@@ -469,6 +475,8 @@ public void writeToParcel(Parcel dest, int flags) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.239 -0500", hash_original_method = "D4618511B086F2DC6D5A6E1B49747B83", hash_generated_method = "FC256F17E644931C0DB024D180B055A7")
     
     private byte[] generate(short flags, short tnf, byte[] type, byte[] id, byte[] data){

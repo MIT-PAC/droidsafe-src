@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 
 public class BounceInterpolator implements Interpolator {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.085 -0500", hash_original_method = "CF1B738C3C29A998D09201CEFD64B6C7", hash_generated_method = "D71225CF7859E1919935DA421FBB23A0")
     
 private static float bounce(float t) {

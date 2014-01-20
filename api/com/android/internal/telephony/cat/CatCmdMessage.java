@@ -46,6 +46,8 @@ public CatCmdMessage[] newArray(int size) {
 
     private CallSettings mCallSettings = null;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.379 -0500", hash_original_method = "85FA7BFB98F5F6D568F6D9939AB5FCD7", hash_generated_method = "85FA7BFB98F5F6D568F6D9939AB5FCD7")
     
 CatCmdMessage(CommandParams cmdParams) {

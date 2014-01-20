@@ -24,11 +24,15 @@ public abstract class Reference<T> {
     /**
      * Constructs a new instance of this class.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.734 -0500", hash_original_method = "6CD3D0843AA30F3B07C5B27C93AA8456", hash_generated_method = "6CD3D0843AA30F3B07C5B27C93AA8456")
     
 Reference() {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.737 -0500", hash_original_method = "12DB2A62AB24EF0D8394447093A7278F", hash_generated_method = "12DB2A62AB24EF0D8394447093A7278F")
     
 Reference(T r, ReferenceQueue q) {
@@ -56,6 +60,8 @@ public void clear() {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.742 -0500", hash_original_method = "26440EC338F5668042D20BF591B8B96C", hash_generated_method = "2111DDCBAFE3A72FEA0F6335CF132654")
     
 public final synchronized boolean enqueueInternal() {
@@ -74,6 +80,8 @@ public final synchronized boolean enqueueInternal() {
      * @return {@code true} if this call has caused the {@code Reference} to
      * become enqueued, or {@code false} otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.745 -0500", hash_original_method = "D897CF322202613DC6CC465308B391E4", hash_generated_method = "5EF8DAFECFDD103332E8F810D33909CE")
     
 public boolean enqueue() {
@@ -101,6 +109,8 @@ public T get() {
      * @return {@code true} if the {@code Reference} has been enqueued, {@code
      *         false} otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.755 -0500", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "FB8F80D156FCF2C6768C48826119B1E7")
     
 public boolean isEnqueued() {

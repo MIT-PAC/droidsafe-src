@@ -13,11 +13,10 @@ import org.bouncycastle.asn1.sec.SECObjectIdentifiers;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.util.Strings;
 
-
-
-
 public class NISTNamedCurves {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.249 -0500", hash_original_method = "60633E74F2BDAD39112953D581E8F19E", hash_generated_method = "DCF3E93F4F04112545B2D19828602D8F")
     
 static void defineCurve(String name, DERObjectIdentifier oid)

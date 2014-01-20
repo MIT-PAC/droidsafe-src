@@ -29,6 +29,8 @@ import android.util.TypedValue;
 
 public class GradientDrawable extends Drawable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.671 -0500", hash_original_method = "2A7FC3BC597ED3507106B83B5AF4DE4F", hash_generated_method = "F578B0CF8A2A8525C61A3D3133D5BF57")
     
 private static float getFloatOrFraction(TypedArray a, int index, float defaultValue) {
@@ -104,6 +106,8 @@ private static float getFloatOrFraction(TypedArray a, int index, float defaultVa
 
     private boolean mPathIsDirty = true;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.600 -0500", hash_original_method = "64287040FBFB7F81692AADB4245B0378", hash_generated_method = "9E6BAE35B9008BC712C2A5F5E71F0CBF")
     
 public GradientDrawable() {
@@ -128,6 +132,8 @@ private GradientDrawable(GradientState state) {
         mRectIsDirty = true;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.604 -0500", hash_original_method = "0B8807A1903E03E118A45AC647AD9F24", hash_generated_method = "DDF82EEC11A9EB7B003C9AD88AFE7F5B")
     
 @Override
@@ -145,6 +151,8 @@ private GradientDrawable(GradientState state) {
      * contains 2 values, [X_radius, Y_radius]. The corners are ordered
      * top-left, top-right, bottom-right, bottom-left
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.607 -0500", hash_original_method = "71F948CC6AEC5EB6067752059DA33574", hash_generated_method = "55593BB00DDCCE34D3B140D4863D4755")
     
@@ -158,6 +166,8 @@ public void setCornerRadii(float[] radii) {
      * Specify radius for the corners of the gradient. If this is > 0, then the
      * drawable is drawn in a round-rectangle, rather than a rectangle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.609 -0500", hash_original_method = "AFB7C3E5AE7C3BBB28B141F7A3B472BE", hash_generated_method = "C25BA52FCE3048809120D9F850C4E143")
     
@@ -171,6 +181,8 @@ public void setCornerRadius(float radius) {
      * Set the stroke width and color for the drawable. If width is zero,
      * then no stroke is drawn.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.611 -0500", hash_original_method = "6A0F62EB2F02BD455327DA9DA2DD0568", hash_generated_method = "5B8999B9C7DC5E8D9861803D23B6C2B3")
     
@@ -178,6 +190,8 @@ public void setStroke(int width, int color) {
         setStroke(width, color, 0, 0);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.613 -0500", hash_original_method = "F36B912577B048DA0236870F939930FC", hash_generated_method = "B9C0A6ACDEDAEEDBE1BC50425DB3D62A")
     
@@ -199,6 +213,8 @@ public void setStroke(int width, int color, float dashWidth, float dashGap) {
         invalidateSelf();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.615 -0500", hash_original_method = "DBF55AE12AFE7021A6EFA67946A43E31", hash_generated_method = "BE1E4407B9A91F34977DE90BA22DDC6A")
     
@@ -208,6 +224,8 @@ public void setSize(int width, int height) {
         invalidateSelf();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.618 -0500", hash_original_method = "70A303A49D3D529F927A8B25154245C2", hash_generated_method = "35656DC0149E7E7B0984EC11AF0ED466")
     
@@ -218,6 +236,8 @@ public void setShape(int shape) {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.621 -0500", hash_original_method = "18DB26B14B71A02370E6DE427E61924A", hash_generated_method = "5567028F009957DA9198E3B556F3A189")
     
@@ -227,6 +247,8 @@ public void setGradientType(int gradient) {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.623 -0500", hash_original_method = "45A2D9788BC882B134EC764255BF8E5D", hash_generated_method = "8EFFCDF995AD8D9670AA5B4B3F6516CB")
     
@@ -236,6 +258,8 @@ public void setGradientCenter(float x, float y) {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.625 -0500", hash_original_method = "C7CA2F8177799FD0AFA978CBCB22DF14", hash_generated_method = "67B255173F4AC5FB61C41C032D36DA90")
     
@@ -245,6 +269,8 @@ public void setGradientRadius(float gradientRadius) {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.627 -0500", hash_original_method = "76C6B5A7FB76D454B2D8C7EAA5B46C4F", hash_generated_method = "F2D37CC4AF0EA69E0A2E2166CB496BAA")
     
@@ -254,6 +280,8 @@ public void setUseLevel(boolean useLevel) {
         invalidateSelf();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.630 -0500", hash_original_method = "0886E73CB45EE282B3AFC0BE37F5BE6C", hash_generated_method = "FBC4E6FBF66103FD9530D89C3176ECF4")
     
 private int modulateAlpha(int alpha) {
@@ -448,6 +476,8 @@ private Path buildRing(GradientState st) {
         return ringPath;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.640 -0500", hash_original_method = "A6E3DC666A9DC913CF167BAEE3BA3755", hash_generated_method = "20C1E70B42A2F5B1828F48BF2FA64845")
     
@@ -457,6 +487,8 @@ public void setColor(int argb) {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.642 -0500", hash_original_method = "3865DA4989774EEF9AAAD48E0098B1D2", hash_generated_method = "5B7992AAC4E5AF1260016B3CFFEBE3C4")
     
@@ -466,6 +498,8 @@ public void setColor(int argb) {
                 | mGradientState.mChangingConfigurations;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.644 -0500", hash_original_method = "5182E1ED546D38ED0370680C356A26EE", hash_generated_method = "E73515240D0ADBE9EB02F05220B12199")
     
 @Override
@@ -488,6 +522,8 @@ public void setColor(int argb) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.649 -0500", hash_original_method = "0D338CBBF9E8A18D18E6BF68648024B0", hash_generated_method = "24169731B0F467E7BBB3F25BEEECCFD8")
     
 @Override
@@ -498,6 +534,8 @@ public void setColor(int argb) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.651 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "10DE806C6642B5F0CD513CB0E3A17B5D")
     
@@ -507,6 +545,8 @@ public void setColor(int argb) {
         return PixelFormat.TRANSLUCENT;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.653 -0500", hash_original_method = "8123137F2C4F03B6AAC99B13B8B696DA", hash_generated_method = "456084E2E024CA3A86AFF8AC7E271A08")
     
 @Override
@@ -517,6 +557,8 @@ public void setColor(int argb) {
         mRectIsDirty = true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.656 -0500", hash_original_method = "394C06781A7C1BB568DD9A62F4177986", hash_generated_method = "0462C7C415E3DB753CDC1C88B200CD3B")
     
 @Override
@@ -625,6 +667,8 @@ public void setColor(int argb) {
 
         private boolean mUseLevelForShape;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.746 -0500", hash_original_method = "9C4B8156D5998AA4F070091BFAC51297", hash_generated_method = "9C4B8156D5998AA4F070091BFAC51297")
         
 GradientState() {
@@ -782,6 +826,8 @@ public void setGradientRadius(float gradientRadius) {
      * rectangle too.
      * @return true if the resulting rectangle is not empty, false otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.660 -0500", hash_original_method = "A926FB4015A038016094FA9870012FFA", hash_generated_method = "02DABE826AC243D7038F9FF00D262515")
     
 private boolean ensureValidRect() {
@@ -889,6 +935,8 @@ private boolean ensureValidRect() {
         return !mRect.isEmpty();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.668 -0500", hash_original_method = "E432865D544D266B015263529D7B28D5", hash_generated_method = "0319C73E0142076537D7C9A9B2F887B9")
     
 @Override
@@ -1125,6 +1173,8 @@ private boolean ensureValidRect() {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.673 -0500", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "BF3E96399D536081C4FE7FF3F644DEBA")
     
@@ -1133,6 +1183,8 @@ private boolean ensureValidRect() {
         return mGradientState.mWidth;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.675 -0500", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "414190BA159EB48B9D4905B397A68CAB")
     
@@ -1149,6 +1201,8 @@ private boolean ensureValidRect() {
         return mGradientState;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.680 -0500", hash_original_method = "D4EF431721248824E2CCEA5FA3C5FD74", hash_generated_method = "EB30752D721AD486E48093CEBADB7EC3")
     
 @Override

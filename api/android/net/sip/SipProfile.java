@@ -83,11 +83,15 @@ public SipProfile[] newArray(int size) {
 
     private transient int mCallingUid = 0;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.356 -0500", hash_original_method = "A9E3259F33F9DE91C391F7016F4793EF", hash_generated_method = "FED8766999C79E5FC9EADF65B6B01435")
     
 private SipProfile() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.359 -0500", hash_original_method = "03F00CBB1D1D79A9110C9D3986D03161", hash_generated_method = "8CC7170A8DD58D50011A8DB87CAD4F69")
     
 private SipProfile(Parcel in) {
@@ -379,6 +383,8 @@ public Builder(String username, String serverDomain)
             mProfile.mDomain = serverDomain;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.325 -0500", hash_original_method = "9B9A6C83AA85ED9069AF543EFC545200", hash_generated_method = "5B1240AC73121B3CC3E352C7A704B117")
         
 private String fix(String uriString) {
@@ -605,6 +611,8 @@ public int getCallingUid() {
         return mCallingUid;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.401 -0500", hash_original_method = "0A3380549EECCCE1451002357806ED2B", hash_generated_method = "5AD4DC34E87665A45E67778E2D54F695")
     
 private Object readResolve() throws ObjectStreamException {

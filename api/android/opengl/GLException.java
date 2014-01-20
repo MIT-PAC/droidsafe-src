@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class GLException extends RuntimeException {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:18.931 -0500", hash_original_method = "70D71069ED1C0794F70343277F638981", hash_generated_method = "CB8C377E0DF34CCBD41BCA54F9CBF50D")
     
 private static String getErrorString(int error) {
@@ -33,6 +35,8 @@ public GLException(final int error, final String string) {
         mError = error;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:18.933 -0500", hash_original_method = "C8251C577CC610BBB512FB097A387252", hash_generated_method = "C8251C577CC610BBB512FB097A387252")
     

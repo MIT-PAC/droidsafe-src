@@ -26,6 +26,8 @@ public class IllegalFormatConversionException extends IllegalFormatException imp
      * @param arg
      *           the corresponding parameter.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.426 -0500", hash_original_method = "0438EEFB69B3388326CD0DDEA30A5038", hash_generated_method = "7C2405B3E2DB77423CC05BE2D30DEE47")
     
 public IllegalFormatConversionException(char c, Class<?> arg) {
@@ -41,6 +43,8 @@ public IllegalFormatConversionException(char c, Class<?> arg) {
      *
      * @return the class of the mismatched parameter.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.429 -0500", hash_original_method = "F6AB4FB57CDBF80A2EA14BA003E8B6E3", hash_generated_method = "86946FDB0EF9612D985BF1B5238E7B31")
     
@@ -53,6 +57,8 @@ public Class<?> getArgumentClass() {
      *
      * @return the incompatible conversion.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.431 -0500", hash_original_method = "FF899ECAAB1B8C040FEF5324FAB8D93B", hash_generated_method = "A01009E7FAC2235AB14D99D1342E319D")
     
@@ -60,6 +66,8 @@ public char getConversion() {
         return c;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.433 -0500", hash_original_method = "F4CE0F8EC3805161966118C119A25B11", hash_generated_method = "A115DD607857A62D4CFD586C57126BA6")
     

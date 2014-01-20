@@ -156,6 +156,8 @@ public Socket accept() throws IOException {
         return aSocket;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.844 -0500", hash_original_method = "C273B8F533783A3DE90657F5715801E0", hash_generated_method = "7E2B6688A6C527ADA19B28987E08F61A")
     
 private void checkListen(int aPort) {
@@ -408,6 +410,8 @@ public boolean isClosed() {
         return isClosed;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.881 -0500", hash_original_method = "8DC54C39C6445BAF3181407C830C5887", hash_generated_method = "7588EA0B4439101A03904302427A4E46")
     
 private void checkOpen() throws SocketException {

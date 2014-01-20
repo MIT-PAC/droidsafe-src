@@ -32,7 +32,9 @@ public Pattern getPatternForRegex(String regex) {
   }
 
   // This method is used for testing.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.412 -0500", hash_original_method = "9456A95A80F85B5D1573A006C0CCB596", hash_generated_method = "9456A95A80F85B5D1573A006C0CCB596")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.412 -0500", hash_original_method = "9456A95A80F85B5D1573A006C0CCB596", hash_generated_method = "9456A95A80F85B5D1573A006C0CCB596")
     
 boolean containsRegex(String regex) {
     return cache.containsKey(regex);

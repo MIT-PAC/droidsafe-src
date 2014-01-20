@@ -119,6 +119,8 @@ public void removePropertyChangeListener(String propertyName, PropertyChangeList
      * non-null, {@code aName} represents the first property name and {@code a}
      * is its listener.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.456 -0500", hash_original_method = "A38B8477985ECBF9EAC6EDFBD5290064", hash_generated_method = "7F70B7EBC33CEF5EF493D6A553ED7861")
     
 private boolean equals(String aName, EventListener a, EventListener b) {
@@ -325,6 +327,8 @@ public PropertyChangeListener[] getPropertyChangeListeners() {
         return listeners.toArray(new PropertyChangeListener[0]); // 0 to avoid synchronization
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.485 -0500", hash_original_method = "2B46BB9E8064A4DB5FBAF8D8B87BA3A9", hash_generated_method = "C78C87E92685BB4BAE1CD194694CCC1D")
     
 private void writeObject(ObjectOutputStream out) throws IOException {
@@ -361,6 +365,8 @@ private void writeObject(ObjectOutputStream out) throws IOException {
         out.writeObject(null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.489 -0500", hash_original_method = "CF711F06198DA67AA575F0B0D8CAC00C", hash_generated_method = "AA1DF8A46C86151031D36BB0D5195FC0")
     
 @SuppressWarnings("unchecked")

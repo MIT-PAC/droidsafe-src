@@ -326,6 +326,8 @@ public void setGravity(int gravity) {
      * @param delta Change in the selected position. +1 moves selection is moving to the right,
      * so views are scrolling to the left. -1 means selection is moving to the left.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.057 -0500", hash_original_method = "26F25590D97768D2F385154C131B8E76", hash_generated_method = "FACBA9BBE286204464A611CECC467DDC")
     
 @Override
@@ -388,6 +390,8 @@ public void setGravity(int gravity) {
      * @param position Position in the spinner for the view to obtain
      * @return A view that has been added to the spinner
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.059 -0500", hash_original_method = "16A0D15DF35F8329F5BE73262CE9B509", hash_generated_method = "C19A613AD32C7950E4F49F5A1A23137C")
     
 private View makeAndAddView(int position) {
@@ -419,6 +423,8 @@ private View makeAndAddView(int position) {
      *
      * @param child The view to position
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.062 -0500", hash_original_method = "EA422D8BE64CA8F3FB87FB3D4E23C7FB", hash_generated_method = "42C99DC0A0404256B7A2C1BF9AB20CE8")
     
 private void setUpChild(View child) {
@@ -810,6 +816,8 @@ public CharSequence getPrompt() {
         return mPopup.getHintText();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.076 -0500", hash_original_method = "EB37E42D6ACA63E84337B27962C39033", hash_generated_method = "5D4F9D30A18F3DF5C0F75DDD5FD04597")
     
 int measureContentWidth(SpinnerAdapter adapter, Drawable background) {

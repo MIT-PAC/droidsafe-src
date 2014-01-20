@@ -6,12 +6,7 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.xml.sax.Parser;
 
-
-
-
-
 public class ParserFactory {
-
 
     /**
      * Create a new SAX parser using the `org.xml.sax.parser' system property.
@@ -53,7 +48,6 @@ public static Parser makeParser ()
     }
     }
 
-
     /**
      * Create a new SAX parser object using the class name provided.
      *
@@ -89,16 +83,16 @@ public static Parser makeParser (String className)
         NewInstance.getClassLoader (), className);
     }
 
-
     /**
      * Private null constructor.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.015 -0500", hash_original_method = "DF02A0380B383E5EEB62CFDB1AB4D130", hash_generated_method = "CA5715143EA1523CF5782DB4DE0D9B8E")
     
 private ParserFactory ()
     {
     }
-
     
 }
 

@@ -8,6 +8,8 @@ import java.io.Serializable;
 
 public abstract class Format implements Serializable, Cloneable {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.562 -0500", hash_original_method = "342F58D58D7CDE61587D20CC55F1BF65", hash_generated_method = "E40E3DF50A129A615CEDF26F12F19796")
     
 static boolean upTo(String string, ParsePosition position,
@@ -34,6 +36,8 @@ static boolean upTo(String string, ParsePosition position,
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.565 -0500", hash_original_method = "E4DAD8C2181AF3C8695050B31E68F195", hash_generated_method = "EC7B532152BFC21D3BEC28BD5621AAB5")
     
 static boolean upToWithQuotes(String string, ParsePosition position,
@@ -82,6 +86,8 @@ protected Format() {
      *
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.547 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
     
@@ -133,8 +139,8 @@ public final String format(Object object) {
      * @throws IllegalArgumentException
      *            if the object cannot be formatted by this format.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.553 -0500", hash_original_method = "51EFA60E0E20FDE37B9F085D9B58A623", hash_generated_method = "8613FF54F89F6D1F30A04F56DAF4DDD3")
     
 public abstract StringBuffer format(Object object, StringBuffer buffer,
@@ -155,6 +161,8 @@ public abstract StringBuffer format(Object object, StringBuffer buffer,
      * @throws IllegalArgumentException
      *            if the object cannot be formatted by this format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.555 -0500", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "EE414D44458FA6E5766F6B76051CCB77")
     
 public AttributedCharacterIterator formatToCharacterIterator(Object object) {
@@ -220,8 +228,8 @@ protected Field(String fieldName) {
      * @return the object resulting from the parse or {@code null} if there is
      *         an error.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.560 -0500", hash_original_method = "B30F2D29CF174E11D687387FB98BED90", hash_generated_method = "2D7138DA8CBCBAF9EF63AF3FC800E113")
     
 public abstract Object parseObject(String string, ParsePosition position);

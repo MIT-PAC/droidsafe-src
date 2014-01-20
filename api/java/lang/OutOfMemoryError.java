@@ -28,6 +28,8 @@ public OutOfMemoryError() {
      * @param detailMessage
      *            the detail message for this error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.299 -0500", hash_original_method = "C0FA448A5BDB254B40480B36A6B3D86E", hash_generated_method = "F4E05986235926D845F1DD2415EDF845")
     
 public OutOfMemoryError(String detailMessage) {

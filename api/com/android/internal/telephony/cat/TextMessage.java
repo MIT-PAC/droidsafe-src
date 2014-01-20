@@ -8,12 +8,7 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class TextMessage implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.631 -0400", hash_original_field = "EF3F1EB675921B9F7D12DA9545573B3F", hash_generated_field = "7AB7AD3116D6E3A5A4512A3A97E00765")
 
@@ -55,11 +50,15 @@ public TextMessage[] newArray(int size) {
 
     public Duration duration = null;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.764 -0500", hash_original_method = "9D0AB1B2CC05C1155E2594BD69FE3EC1", hash_generated_method = "9D0AB1B2CC05C1155E2594BD69FE3EC1")
     
 TextMessage() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.766 -0500", hash_original_method = "3799DABAA0CF60B82958F76005DE5116", hash_generated_method = "5280A0EB969981172683E0C9A5180813")
     
 private TextMessage(Parcel in) {

@@ -122,6 +122,8 @@ public static CharBuffer wrap(CharSequence cs, int start, int end) {
         return result;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.737 -0500", hash_original_method = "295C6F316A1C76C71107A06FE21F48B5", hash_generated_method = "295C6F316A1C76C71107A06FE21F48B5")
     
 CharBuffer(int capacity) {
@@ -155,6 +157,8 @@ public final int arrayOffset() {
      *
      * @return a read-only version of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.744 -0500", hash_original_method = "E9C6B44F85BB9193F204D1E49DCFF090", hash_generated_method = "BD21260925E192AF83E56ED872F08B60")
     
 public abstract CharBuffer asReadOnlyBuffer();
@@ -192,8 +196,8 @@ public final char charAt(int index) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.749 -0500", hash_original_method = "4734CE8977AF20831B683F622B556E41", hash_generated_method = "132D1383C510B50C25E6DF2A3CA8EF13")
     
 public abstract CharBuffer compact();
@@ -244,6 +248,8 @@ public int compareTo(CharBuffer otherBuffer) {
      *
      * @return a duplicated buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.754 -0500", hash_original_method = "B6D218A3CD92B4ADC9511EB98EDFD60B", hash_generated_method = "F52BEDA6CC60856F0546400F6EECE9BF")
     
 public abstract CharBuffer duplicate();
@@ -290,8 +296,8 @@ public abstract CharBuffer duplicate();
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
-    @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.759 -0500", hash_original_method = "1850A36FB6FEA614E5920130AEF47F4F", hash_generated_method = "16456A3FF8F8E0989D5459246EBEF5BE")
     
 public abstract char get();
@@ -358,6 +364,8 @@ public CharBuffer get(char[] dst, int dstOffset, int charCount) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.768 -0500", hash_original_method = "AAD541C0A943308D03DC370F70AABFC7", hash_generated_method = "702C6AA2AC3B48F035AF66A2D86DBA29")
     
 public abstract char get(int index);
@@ -398,6 +406,8 @@ public final boolean hasArray() {
      *
      * @return {@code true} if this buffer is direct, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.775 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
 public abstract boolean isDirect();
@@ -425,6 +435,8 @@ public final int length() {
      * @return the byte order used by this buffer when converting chars from/to
      *         bytes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.779 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     
 public abstract ByteOrder order();
@@ -434,6 +446,8 @@ public abstract ByteOrder order();
      *
      * @see #array()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.782 -0500", hash_original_method = "47D1D50E8E7D288303379675E63DADA6", hash_generated_method = "8B277730029D605093B8781CFD73DDCA")
     
 abstract char[] protectedArray();
@@ -443,6 +457,8 @@ abstract char[] protectedArray();
      *
      * @see #arrayOffset()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.784 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     
 abstract int protectedArrayOffset();
@@ -452,6 +468,8 @@ abstract int protectedArrayOffset();
      *
      * @see #hasArray()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.786 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     
 abstract boolean protectedHasArray();
@@ -468,8 +486,8 @@ abstract boolean protectedHasArray();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.789 -0500", hash_original_method = "F19EB97E90F9577C945FC2A86DA468D8", hash_generated_method = "85AFD595D3F36EA1A3437288DCA79CB7")
     
 public abstract CharBuffer put(char c);
@@ -576,6 +594,8 @@ public CharBuffer put(CharBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.799 -0500", hash_original_method = "B4FC48477262D11801112BB7E12149CE", hash_generated_method = "D715DB6A762D536206BD0E9BF8B1E04B")
     
 public abstract CharBuffer put(int index, char c);
@@ -654,6 +674,8 @@ public CharBuffer put(String str, int start, int end) {
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.806 -0500", hash_original_method = "C5C9BF0F4A6933B0CC2EE10D9BDC82D3", hash_generated_method = "A48B1767436E9EA6AC807558E9050885")
     
 public abstract CharBuffer slice();
@@ -686,6 +708,8 @@ public abstract CharBuffer slice();
      * @exception IndexOutOfBoundsException
      *                if either {@code start} or {@code end} is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.809 -0500", hash_original_method = "CC1A918E751879C0CACBEAD0F53D48ED", hash_generated_method = "460F5702CFF0539D37C9D86BAB80AFE3")
     
 public abstract CharSequence subSequence(int start, int end);

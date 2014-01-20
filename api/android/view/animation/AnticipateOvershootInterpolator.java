@@ -13,12 +13,16 @@ import android.util.AttributeSet;
 
 public class AnticipateOvershootInterpolator implements Interpolator {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.625 -0500", hash_original_method = "A804F4B2D6C0DDE24A4B9DBFE10616E4", hash_generated_method = "357F270F6A0E934E160F9377E73A1B66")
     
 private static float a(float t, float s) {
         return t * t * ((s + 1) * t - s);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.628 -0500", hash_original_method = "CCFF6DF9EE8C4A0C6417FACC9D2DDD5B", hash_generated_method = "F182AC0DEBE3773636CFD180E4E4FC00")
     
 private static float o(float t, float s) {

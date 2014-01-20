@@ -97,6 +97,8 @@ public static int println(int priority, String tag, String msg) {
         return Log.println_native(Log.LOG_ID_SYSTEM, priority, tag, msg);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.464 -0500", hash_original_method = "0FAE0F80FD2D23A71DD156687BF7DB2B", hash_generated_method = "9F30BAEC09003EB6E11A7E255B01D933")
     
 private Slog() {

@@ -16,6 +16,8 @@ public abstract class Singleton<T> {
         //Synthesized constructor
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.143 -0500", hash_original_method = "143703A29AF7B044F625A19484C15EC6", hash_generated_method = "7FFE270DF8135A8EC19A46E31E7B1DE8")
     
 protected abstract T create();

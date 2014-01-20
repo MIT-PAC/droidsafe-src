@@ -419,6 +419,8 @@ public void readUTCTime() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.852 -0500", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "BF4901166FF4288F10D96DDB30749C00")
     
 private int strToInt(int off, int count) throws ASN1Exception {
@@ -477,6 +479,8 @@ public void readOctetString() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.860 -0500", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "98D15EB49171CF1D1DF9A8863A93D604")
     
 private ASN1Exception expected(String what) throws ASN1Exception {
@@ -633,6 +637,8 @@ public void readSetOf(ASN1SetOf setOf) throws IOException {
         decodeValueCollection(setOf);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.878 -0500", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "B9C167807FCDB2A0145E6F7A34AB8F20")
     
 private void decodeValueCollection(ASN1ValueCollection collection) throws IOException {

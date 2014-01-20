@@ -258,7 +258,9 @@ public void keepNamespaceAttributes() {
         this.keepNamespaceAttributes = true;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.005 -0400", hash_original_method = "F08928441827C23946744248151D18D9", hash_generated_method = "873EFD7690BD62772E8E3CF4ECA9E465")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.005 -0400", hash_original_method = "F08928441827C23946744248151D18D9", hash_generated_method = "873EFD7690BD62772E8E3CF4ECA9E465")
     private boolean adjustNsp() throws XmlPullParserException {
         boolean any = false;
 for(int i = 0;i < attributeCount << 2;i += 4)
@@ -370,6 +372,8 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.075 -0500", hash_original_method = "49B8B44C0E7574021385F3D8BD03186C", hash_generated_method = "79E7724D85DC13D1988F89D143BC4A06")
     
 private String[] ensureCapacity(String[] arr, int required) {
@@ -381,6 +385,8 @@ private String[] ensureCapacity(String[] arr, int required) {
         return bigger;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.077 -0500", hash_original_method = "4A7BCCF6DFE9CB9D8E85D47BF7F54B1D", hash_generated_method = "D04A99BE7FD7E0CF094DBD2A451BE2C5")
     
 private void checkRelaxed(String errorMessage) throws XmlPullParserException {
@@ -404,6 +410,8 @@ public int nextToken() throws XmlPullParserException, IOException {
         return next(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.086 -0500", hash_original_method = "55251A1079E5B9F4E3B9F053CFE6FD44", hash_generated_method = "9A5E6D108F7B1BFAB4B3993625CD7EBD")
     
 private int next(boolean justOneToken) throws IOException, XmlPullParserException {
@@ -548,6 +556,8 @@ private int next(boolean justOneToken) throws IOException, XmlPullParserExceptio
      * @param returnText true to return the read text excluding the delimiter;
      *     false to return null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.090 -0500", hash_original_method = "C492543C28BFA45A4A603454FE30EBBB", hash_generated_method = "406E91A8533F3B594944B702203E858F")
     
 private String readUntil(char[] delimiter, boolean returnText)
@@ -605,6 +615,8 @@ private String readUntil(char[] delimiter, boolean returnText)
     /**
      * Returns true if an XML declaration was read.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.093 -0500", hash_original_method = "79737DD70253BC976180BA8757B427A8", hash_generated_method = "E35A39FA6BB3D486C0447A61818648A7")
     
 private void readXmlDeclaration() throws IOException, XmlPullParserException {
@@ -648,6 +660,8 @@ private void readXmlDeclaration() throws IOException, XmlPullParserException {
         text = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.095 -0500", hash_original_method = "15C58CE8BC29A2518B63BEC83A754E2C", hash_generated_method = "0D4634C17CD8754ABC0714C9115D5024")
     
 private String readComment(boolean returnText) throws IOException, XmlPullParserException {
@@ -669,6 +683,8 @@ private String readComment(boolean returnText) throws IOException, XmlPullParser
      * Read the document's DTD. Although this parser is non-validating, the DTD
      * must be parsed to capture entity values and default attribute values.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.098 -0500", hash_original_method = "39B79927E64E599404174E0314CB7C82", hash_generated_method = "14898573EFB01349EBEEEB94E8FF6811")
     
 private void readDoctype(boolean saveDtdText) throws IOException, XmlPullParserException {
@@ -711,6 +727,8 @@ private void readDoctype(boolean saveDtdText) throws IOException, XmlPullParserE
      *
      * Returns true if any ID was read.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.101 -0500", hash_original_method = "5A46FF78EB6898EF0CABAC45E530C34E", hash_generated_method = "94A775708A149FBFAB5E574EC9E989E8")
     
 private boolean readExternalId(boolean requireSystemName, boolean assignFields)
@@ -752,6 +770,8 @@ private boolean readExternalId(boolean requireSystemName, boolean assignFields)
     /**
      * Reads a quoted string, performing no entity escaping of the contents.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.108 -0500", hash_original_method = "4B3A97D73E48F79754EA5A86D4C2409D", hash_generated_method = "E8E025740DE214A84E53AA7057D82F38")
     
 private String readQuotedId(boolean returnText) throws IOException, XmlPullParserException {
@@ -768,6 +788,8 @@ private String readQuotedId(boolean returnText) throws IOException, XmlPullParse
         return readUntil(delimiter, returnText);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.112 -0500", hash_original_method = "065EAF2A999BF53AAEE6E5D55221F190", hash_generated_method = "7DA0A653A084C1C9049B04BCADA77FFE")
     
 private void readInternalSubset() throws IOException, XmlPullParserException {
@@ -823,6 +845,8 @@ private void readInternalSubset() throws IOException, XmlPullParserException {
      *   <!ELEMENT foo (bar?,(baz|quux)) >
      *   <!ELEMENT foo (#PCDATA|bar)* >
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.115 -0500", hash_original_method = "E2914311E18C41738022F5D7A73FEC8A", hash_generated_method = "6F752AA4232CE3D0BF9CC57A1B3B6A57")
     
 private void readElementDeclaration() throws IOException, XmlPullParserException {
@@ -850,6 +874,8 @@ private void readElementDeclaration() throws IOException, XmlPullParserException
      * The top-level element must be either a choice, a sequence, or one of the
      * special names EMPTY and ANY.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.118 -0500", hash_original_method = "A45115A32F8DEBE95546FC38EF8925EC", hash_generated_method = "1570FD12AEB4D29F4D58F624DC257169")
     
 private void readContentSpec() throws IOException, XmlPullParserException {
@@ -896,6 +922,8 @@ private void readContentSpec() throws IOException, XmlPullParserException {
      * The default is either #REQUIRED, #IMPLIED, #FIXED, a quoted value, or
      * #FIXED with a quoted value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.121 -0500", hash_original_method = "04CF7BEB7F762D6DB023733A3E9A3C83", hash_generated_method = "E38AB502E23B20B2B1798D00F04FB994")
     
 private void readAttributeListDeclaration() throws IOException, XmlPullParserException {
@@ -972,6 +1000,8 @@ private void readAttributeListDeclaration() throws IOException, XmlPullParserExc
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.124 -0500", hash_original_method = "CFB39B3ED48D8CD145E96E2E6FC1A186", hash_generated_method = "C32D664677458783E4A5A1EACDCCAB8F")
     
 private void defineAttributeDefault(String elementName, String attributeName, String value) {
@@ -999,6 +1029,8 @@ private void defineAttributeDefault(String elementName, String attributeName, St
      * marked by a percent sign. Such entities may only be used in the DTD:
      *   <!ENTITY % foo "bar">
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.127 -0500", hash_original_method = "3ECF3BA7E150644C3EFC98E620B12B73", hash_generated_method = "BDE185F16C00F265DD04B71A3ED3CA39")
     
 private void readEntityDeclaration() throws IOException, XmlPullParserException {
@@ -1048,6 +1080,8 @@ private void readEntityDeclaration() throws IOException, XmlPullParserException 
         read('>');
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.131 -0500", hash_original_method = "0A96EF478D2162A2E48AFFA05F705C17", hash_generated_method = "241A4FFD284F6A4661203FE4D22D9352")
     
 private void readNotationDeclaration() throws IOException, XmlPullParserException {
@@ -1062,6 +1096,8 @@ private void readNotationDeclaration() throws IOException, XmlPullParserExceptio
         read('>');
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.136 -0500", hash_original_method = "8099A7EBC5B0B16E684058778DE6A29B", hash_generated_method = "EA9FEEF8E95272B720AA8323AB316FBC")
     
 private void readEndTag() throws IOException, XmlPullParserException {
@@ -1092,6 +1128,8 @@ private void readEndTag() throws IOException, XmlPullParserException {
     /**
      * Returns the type of the next token.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.139 -0500", hash_original_method = "06A44958C70A8BD5DE7481C49C8C3731", hash_generated_method = "26D03B2C4B8F57D7342AC8DE6B9B6539")
     
 private int peekType(boolean inDeclaration) throws IOException, XmlPullParserException {
@@ -1156,6 +1194,8 @@ private int peekType(boolean inDeclaration) throws IOException, XmlPullParserExc
     /**
      * Sets name and attributes
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.144 -0500", hash_original_method = "2D33E593F3270AF80057D4A47B14E7B9", hash_generated_method = "B8B6BDE68E0BEF60E1ED70C98BD2A809")
     
 private void parseStartTag(boolean xmldecl, boolean throwOnResolveFailure)
@@ -1533,6 +1573,8 @@ private String readValue(char delimiter, boolean resolveEntities, boolean throwO
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.159 -0500", hash_original_method = "3B69F4FA17F01509E096A0868A2528ED", hash_generated_method = "7983357308118E99306B6F7473F200EC")
     
 private void read(char expected) throws IOException, XmlPullParserException {
@@ -1543,6 +1585,8 @@ private void read(char expected) throws IOException, XmlPullParserException {
         position++;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.162 -0500", hash_original_method = "A7E267F0C0CB0F12A0F03D9AFED00521", hash_generated_method = "1C147730B7E07CDBAF17A59B69323077")
     
 private void read(char[] chars) throws IOException, XmlPullParserException {
@@ -1563,6 +1607,8 @@ private void read(char[] chars) throws IOException, XmlPullParserException {
         position += chars.length;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.165 -0500", hash_original_method = "902B3F7EB34CE06CF1D7162085CB95DC", hash_generated_method = "65FE0444BD3E119179A01824080B1849")
     
 private int peekCharacter() throws IOException, XmlPullParserException {
@@ -1577,6 +1623,8 @@ private int peekCharacter() throws IOException, XmlPullParserException {
      * exhausted before that many characters are available, this returns
      * false.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.168 -0500", hash_original_method = "DC49987172506F0F8D59FF3F96E536A7", hash_generated_method = "EB4B6169024DF08B9241F616BBE870B2")
     
 private boolean fillBuffer(int minimum) throws IOException, XmlPullParserException {
@@ -1627,6 +1675,8 @@ private boolean fillBuffer(int minimum) throws IOException, XmlPullParserExcepti
      * Returns an element or attribute name. This is always non-empty for
      * non-relaxed parsers.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.171 -0500", hash_original_method = "35E0733B1286860BF21842013F8FFA5F", hash_generated_method = "74ED8BFECD329202BD9A7991EB86B847")
     
 private String readName() throws IOException, XmlPullParserException {
@@ -1693,6 +1743,8 @@ private String readName() throws IOException, XmlPullParserException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.174 -0500", hash_original_method = "7FC6A162788F62EDDD44981BAC207FA9", hash_generated_method = "0B4C033899BBF03E352F823A24F064F5")
     
 private void skip() throws IOException, XmlPullParserException {
@@ -2397,6 +2449,8 @@ public void setProperty(String property, Object value) throws XmlPullParserExcep
      * Prepends the characters of {@code newBuffer} to be read before the
      * current buffer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.289 -0500", hash_original_method = "8F280A3CDA5A3533C9FB5C99B2A6A6C2", hash_generated_method = "C04E22E18A3AA541ECF2FD023C8DCC27")
     
 private void pushContentSource(char[] newBuffer) {
@@ -2409,6 +2463,8 @@ private void pushContentSource(char[] newBuffer) {
     /**
      * Replaces the current exhausted buffer with the next buffer in the chain.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.292 -0500", hash_original_method = "E5A180E871F653CC9F75C9B7A9F73687", hash_generated_method = "E9ECC5A4FCBE9E8D108B5888B61B27A2")
     
 private void popContentSource() {

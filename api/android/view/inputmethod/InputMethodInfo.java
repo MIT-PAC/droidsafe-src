@@ -196,6 +196,8 @@ public InputMethodInfo(Context context, ResolveInfo service,
         mIsDefaultResId = isDefaultResId;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.843 -0500", hash_original_method = "408133FF0ACC2482487194D0CAB563F8", hash_generated_method = "408133FF0ACC2482487194D0CAB563F8")
     
 InputMethodInfo(Parcel source) {

@@ -13,10 +13,6 @@ import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 import android.os.Debug;
 
-
-
-
-
 public class DdmHandleHello extends ChunkHandler {
 
     /**
@@ -42,7 +38,6 @@ public static void sendWAIT(int reason) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.042 -0500", hash_original_field = "1EBF8B4B22AED3D975C24CCFA27E2A4D", hash_generated_field = "4B98D36A3B1780A91D979CD0DB32E544")
 
-
     public static final int CHUNK_HELO = type("HELO");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.044 -0500", hash_original_field = "767D8CE5ECB38211B564E8A2CE7EB526", hash_generated_field = "F10D1B8DFFE546DA4FB9F20A975811FA")
 
@@ -52,11 +47,11 @@ public static void sendWAIT(int reason) {
     public static final int CHUNK_FEAT = type("FEAT");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.049 -0500", hash_original_field = "E94886C809C2BAF59E742434EFB48926", hash_generated_field = "195EB1E12A6D4D5D000F29C48DB2AFBC")
 
-
     private static DdmHandleHello mInstance = new DdmHandleHello();
 
-
     /* singleton, do not instantiate */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.051 -0500", hash_original_method = "7D5B1A101327E53BA05D666FE17BE587", hash_generated_method = "B3EF21D4A64016488B6E8E27F567318B")
     
 private DdmHandleHello() {}
@@ -114,6 +109,8 @@ public Chunk handleChunk(Chunk request) {
     /*
      * Handle introductory packet.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.064 -0500", hash_original_method = "DA2CEBE94E81B4AF53080A8A1470F538", hash_generated_method = "A09BE666595C5D3862F362E3768BB39C")
     
 private Chunk handleHELO(Chunk request) {
@@ -166,6 +163,8 @@ private Chunk handleHELO(Chunk request) {
     /*
      * Handle request for list of supported features.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.067 -0500", hash_original_method = "4DE14E90C721327585D89816C2D399A5", hash_generated_method = "F4629657738F4045746686EC80F76DEC")
     
 private Chunk handleFEAT(Chunk request) {

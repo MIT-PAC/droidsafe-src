@@ -12,13 +12,10 @@ import org.bouncycastle.crypto.ExtendedDigest;
 import org.bouncycastle.crypto.Mac;
 import org.bouncycastle.crypto.params.KeyParameter;
 
-
-
-
-
-
 public class HMac implements Mac {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.901 -0500", hash_original_method = "22CE895445A67645E1245C9F620EC3AF", hash_generated_method = "7474B90794D20F4D5961FB89B3FD4064")
     
 private static int getByteLength(
@@ -46,10 +43,8 @@ private static int getByteLength(
     private final static byte OPAD = (byte)0x5C;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.897 -0500", hash_original_field = "AE6DBBD45137DB46363467A77EC3D235", hash_generated_field = "8154B75C53A1CCD4098DE06BC1B2DEA2")
 
-
     private static Hashtable blockLengths;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.886 -0500", hash_original_field = "A27690AA68DDFB7D002AAB3E5D9E96C9", hash_generated_field = "F5CA32AF1F0185FA6739BEFB868D9AC1")
-
 
     private Digest digest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.888 -0500", hash_original_field = "64A3555DDEDEFC54BE3BEBE705E5221D", hash_generated_field = "F92FB817FD31D1DFBC1B86920B98A48F")
@@ -59,7 +54,6 @@ private static int getByteLength(
 
     private int blockLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.893 -0500", hash_original_field = "F98A792A11536C9F74F471773342692F", hash_generated_field = "6D892D969D7D84936665B5BDF4E8E0CF")
-
     
     private byte[] inputPad;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.895 -0500", hash_original_field = "A5AA4968E96F16D80E074A7C9E7C4D5F", hash_generated_field = "7F3F56B21FEDB8B51DB60B7746F1D214")
@@ -80,6 +74,8 @@ public HMac(
         this(digest, getByteLength(digest));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.906 -0500", hash_original_method = "2F24A8925EE1F6A5F74219B54F49BAF8", hash_generated_method = "38E6E69C320E1806A041CA3E402181DF")
     
 private HMac(

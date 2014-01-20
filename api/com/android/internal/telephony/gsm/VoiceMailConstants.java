@@ -42,6 +42,8 @@ class VoiceMailConstants {
 
     private HashMap<String, String[]> CarrierVmMap;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.799 -0500", hash_original_method = "DDF8D53D84854590566E7F07FF4C6145", hash_generated_method = "DDF8D53D84854590566E7F07FF4C6145")
     
 VoiceMailConstants () {
@@ -49,12 +51,16 @@ VoiceMailConstants () {
         loadVoiceMail();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.802 -0500", hash_original_method = "EA61BB6A69E663D3A55745A8DC567B93", hash_generated_method = "EA61BB6A69E663D3A55745A8DC567B93")
     
 boolean containsCarrier(String carrier) {
         return CarrierVmMap.containsKey(carrier);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.805 -0500", hash_original_method = "50C2E249A143A488875B9940B1F1FDE1", hash_generated_method = "50C2E249A143A488875B9940B1F1FDE1")
     
@@ -63,6 +69,8 @@ String getCarrierName(String carrier) {
         return data[NAME];
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.807 -0500", hash_original_method = "0EE8F97DB48267A64D2C0726286D2A1F", hash_generated_method = "0EE8F97DB48267A64D2C0726286D2A1F")
     
@@ -71,6 +79,8 @@ String getVoiceMailNumber(String carrier) {
         return data[NUMBER];
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.809 -0500", hash_original_method = "DE969177752DBF24A725FEF909B2130D", hash_generated_method = "DE969177752DBF24A725FEF909B2130D")
     
@@ -79,6 +89,8 @@ String getVoiceMailTag(String carrier) {
         return data[TAG];
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.812 -0500", hash_original_method = "F2B6258CF868D3537F2007BF45D05D11", hash_generated_method = "828345446691B9004F36E7F07571674E")
     
 private void loadVoiceMail() {

@@ -28,6 +28,8 @@ public static Printer create(Printer printer, String prefix) {
 
     private  String mPrefix;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.597 -0500", hash_original_method = "F8CFF4B37C5F46A6632B10286A6992AD", hash_generated_method = "0CBE8A4B7DCB6AC405BBF5FD92AC017A")
     
 private PrefixPrinter(Printer printer, String prefix) {

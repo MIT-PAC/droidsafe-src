@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class HexEncoder implements Encoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.937 -0500", hash_original_field = "7FA8FF18999900E041AAF542525E3F2C", hash_generated_field = "A8D4DC408DE84610D910B7400C27CA50")
 
@@ -73,6 +68,8 @@ public int encode(
         return length * 2;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.949 -0500", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "60BA6438BF0D7F2A1A9CF731E65332DE")
     
 private boolean ignore(
@@ -188,7 +185,6 @@ public int decode(
 
         return length;
     }
-
     
 }
 

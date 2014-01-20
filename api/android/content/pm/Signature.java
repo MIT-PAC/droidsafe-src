@@ -17,6 +17,8 @@ import android.os.Parcelable;
 
 public class Signature implements Parcelable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.800 -0500", hash_original_method = "2EFDF66421CB71AEE738679CD64484B1", hash_generated_method = "2CC9D14C5DECE3F63B13E21D77780F06")
     
 private static final int parseHexDigit(int nibble) {
@@ -99,6 +101,8 @@ public Signature(String text) {
         mSignature = sig;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.834 -0500", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "60EE1FF730337042BFF564400F648ED1")
     
 private Signature(Parcel source) {

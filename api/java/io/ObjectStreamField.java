@@ -81,6 +81,8 @@ public ObjectStreamField(String name, Class<?> cl, boolean unshared) {
      * @param name
      *            a String, the name of the field, or null
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.891 -0500", hash_original_method = "7045B1DBF21073AA43E994CE221E4094", hash_generated_method = "7045B1DBF21073AA43E994CE221E4094")
     
 ObjectStreamField(String signature, String name) {
@@ -153,7 +155,9 @@ public int getOffset() {
      * @return A Class object representing the type of the field
      */
     // Changed from private to default visibility for usage in ObjectStreamClass
-    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.900 -0500", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "FF08482EB56AA685DDAE41A39E334998")
     
 Class<?> getTypeInternal() {
@@ -205,6 +209,8 @@ public char getTypeCode() {
         return typeCodeOf(getTypeInternal());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.908 -0500", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "9AE235E0A3E2AA8A3A48ED009224B75D")
     
 private char typeCodeOf(Class<?> type) {
@@ -267,6 +273,8 @@ public boolean isPrimitive() {
         return t != null && t.isPrimitive();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.920 -0500", hash_original_method = "6EE925571D11CA9854483CD43D60AA5F", hash_generated_method = "6EE925571D11CA9854483CD43D60AA5F")
     
 boolean writeField(DataOutputStream out) throws IOException {
@@ -301,6 +309,8 @@ protected void setOffset(int newValue) {
         return this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.926 -0500", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "C3A4214F218453FC713B9A09D068FA34")
     
 void resolve(ClassLoader loader) {
@@ -339,6 +349,8 @@ public boolean isUnshared() {
         return unshared;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.931 -0500", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "68701E3ED15FAA74732CE575E0F04E5E")
     
 void setUnshared(boolean unshared) {
@@ -349,6 +361,8 @@ void setUnshared(boolean unshared) {
      * Resolves typeString into type. Returns true if the type is primitive
      * and false otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.934 -0500", hash_original_method = "E1E63B3BD3E5801BD481EB78C5FBD93C", hash_generated_method = "4CC7DBA3774EC020B36C17E82CD9EC8C")
     
 private boolean defaultResolve() {

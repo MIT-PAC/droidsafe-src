@@ -18,6 +18,8 @@ public final class SipSession {
 
     private Listener mListener;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.543 -0500", hash_original_method = "B71DAA3D1365DDABF697A1D97F8D88A8", hash_generated_method = "B71DAA3D1365DDABF697A1D97F8D88A8")
     
 SipSession(ISipSession realSession) {
@@ -272,6 +274,8 @@ public void changeCall(String sessionDescription, int timeout) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.576 -0500", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "457DE503669A22F9796CDD5163AC081E")
     
@@ -349,6 +353,8 @@ public static String toString(int state) {
 
         public static final int NOT_DEFINED = 101;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.500 -0500", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "3C8E530756BAC73B98BD6601E6821720")
         
 private State() {
@@ -513,6 +519,8 @@ public void onRegistrationTimeout(SipSession session) {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.613 -0500", hash_original_method = "346C5E2A278D0A9A8B61352C5712D581", hash_generated_method = "96775B494C1C9D031CB428176091C7E3")
     
 private ISipSessionListener createListener() {

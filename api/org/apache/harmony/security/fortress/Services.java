@@ -15,6 +15,8 @@ import java.util.Map;
 public class Services {
 
     // Load statically registered providers and init Services Info
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.258 -0500", hash_original_method = "A097B975FD6850E0E629F1529E455924", hash_generated_method = "19164BD7F020E0989E7AC63B249D0B76")
     
 private static void loadProviders() {

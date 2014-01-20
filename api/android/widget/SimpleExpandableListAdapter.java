@@ -12,10 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.034 -0500", hash_original_field = "DCC83A353D601CD0A4E94CC77E93FD9D", hash_generated_field = "611E54FE69D6A51734B23ACE9D45487D")
 
@@ -33,7 +29,6 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
 
     private int[] mGroupTo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.044 -0500", hash_original_field = "D2624B5EE8EA5B76409574C61FCD5715", hash_generated_field = "CA27BAF20820F25F83F483D671CEEFD5")
-
     
     private List<? extends List<? extends Map<String, ?>>> mChildData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.047 -0500", hash_original_field = "E411898B9199DF6F8B109F615D9759C4", hash_generated_field = "3B28367C61855DFAB7FD9BAF80DDA1B4")
@@ -49,7 +44,6 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
 
     private int[] mChildTo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.055 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
-
     
     private LayoutInflater mInflater;
     
@@ -256,6 +250,8 @@ public View newChildView(boolean isLastChild, ViewGroup parent) {
         return mInflater.inflate((isLastChild) ? mLastChildLayout : mChildLayout, parent, false);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.076 -0500", hash_original_method = "8C1FB274099C6E014BD8D472B7606CCC", hash_generated_method = "816AD0505AAE681738E5FF7413C939CA")
     
 private void bindView(View view, Map<String, ?> data, String[] from, int[] to) {
@@ -331,7 +327,6 @@ public boolean isChildSelectable(int groupPosition, int childPosition) {
 public boolean hasStableIds() {
         return true;
     }
-
     
 }
 

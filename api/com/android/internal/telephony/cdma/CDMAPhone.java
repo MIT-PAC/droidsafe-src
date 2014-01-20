@@ -62,6 +62,8 @@ import com.android.internal.telephony.cat.CatService;
 
 public class CDMAPhone extends PhoneBase {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.582 -0500", hash_original_method = "0987EB9B752C2AE0A39CB183394EC719", hash_generated_method = "BD516A911B886CE33B25F5EEA604FBDE")
     
 private static boolean isIs683OtaSpDialStr(String dialStr) {
@@ -95,6 +97,8 @@ private static boolean isIs683OtaSpDialStr(String dialStr) {
     /**
      * This function extracts the system selection code from the dial string.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.585 -0500", hash_original_method = "A91F01B0D3E07B9BAFA73C694BEFBC5B", hash_generated_method = "B9D13965655950C2F38660C7F9171895")
     
 private static int extractSelCodeFromOtaSpNum(String dialStr) {
@@ -120,6 +124,8 @@ private static int extractSelCodeFromOtaSpNum(String dialStr) {
      * the dial string "sysSelCodeInt' is the system selection code specified
      * in the carrier ota sp number schema "sch".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.588 -0500", hash_original_method = "68BC2FB84293153DDA759DD543D07116", hash_generated_method = "E9D95458346F1EDE704F92515B0B8589")
     
 private static boolean
@@ -572,7 +578,9 @@ public DataActivityState getDataActivityState() {
         return ret;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.320 -0500", hash_original_method = "FCBAE539BB72BE21647FF37299DC2B96", hash_generated_method = "FCBAE539BB72BE21647FF37299DC2B96")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.320 -0500", hash_original_method = "FCBAE539BB72BE21647FF37299DC2B96", hash_generated_method = "FCBAE539BB72BE21647FF37299DC2B96")
     
 void
     notifySignalStrength() {
@@ -638,6 +646,8 @@ public boolean handleInCallMmiCommands(String dialString) {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.339 -0500", hash_original_method = "F6112A9AE3405415322B12D2CA172B80", hash_generated_method = "F6112A9AE3405415322B12D2CA172B80")
     
 boolean isInCall() {
@@ -836,6 +846,8 @@ public boolean handlePinMmi(String dialString) {
      *
      * @param mmi MMI that is done
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.393 -0500", hash_original_method = "574EFAE567BAC054324E4789AB0ACA21", hash_generated_method = "1670645142CBE11F3C7719961E4505B3")
     
 void onMMIDone(CdmaMmiCode mmi) {
@@ -1200,7 +1212,9 @@ public String getLine1AlphaTag() {
     /**
      * Notify any interested party of a Phone state change  {@link Phone.State}
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.477 -0500", hash_original_method = "812A77A153EDB691C43A0B58CAFAA77A", hash_generated_method = "812A77A153EDB691C43A0B58CAFAA77A")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.477 -0500", hash_original_method = "812A77A153EDB691C43A0B58CAFAA77A", hash_generated_method = "812A77A153EDB691C43A0B58CAFAA77A")
     
 void notifyPhoneStateChanged() {
         mNotifier.notifyPhoneState(this);
@@ -1210,27 +1224,35 @@ void notifyPhoneStateChanged() {
      * Notify registrants of a change in the call state. This notifies changes in {@link Call.State}
      * Use this when changes in the precise call state are needed, else use notifyPhoneStateChanged.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.479 -0500", hash_original_method = "3EB8461625C29B29FD6CB8E5D60B43F3", hash_generated_method = "12015DBC20468C486AF905F9802DB743")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.479 -0500", hash_original_method = "3EB8461625C29B29FD6CB8E5D60B43F3", hash_generated_method = "12015DBC20468C486AF905F9802DB743")
     
 void notifyPreciseCallStateChanged() {
         /* we'd love it if this was package-scoped*/
         super.notifyPreciseCallStateChangedP();
     }
 
-     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
+     @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.481 -0500", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "73E7BFF04E4E9785E6146409272926BA")
     
 void notifyServiceStateChanged(ServiceState ss) {
          super.notifyServiceStateChangedP(ss);
      }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.484 -0500", hash_original_method = "482FE18FBD1949DAF708F2E65940DE8F", hash_generated_method = "482FE18FBD1949DAF708F2E65940DE8F")
+     @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.484 -0500", hash_original_method = "482FE18FBD1949DAF708F2E65940DE8F", hash_generated_method = "482FE18FBD1949DAF708F2E65940DE8F")
     
 void notifyLocationChanged() {
          mNotifier.notifyCellLocation(this);
      }
 
-    /*package*/ @DSSink({DSSinkKind.PHONE_STATE})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.486 -0500", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "990C97FD08BF8064CCDF498BC93F23E9")
     
 void notifyNewRingingConnection(Connection c) {
@@ -1238,13 +1260,17 @@ void notifyNewRingingConnection(Connection c) {
         super.notifyNewRingingConnectionP(c);
     }
 
-    /*package*/ @DSSink({DSSinkKind.PHONE_STATE})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.488 -0500", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "1858091673D3A4B62C058FCC91892C36")
     
 void notifyDisconnect(Connection cn) {
         mDisconnectRegistrants.notifyResult(cn);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.490 -0500", hash_original_method = "4DFA3B176AED92FABCFB596FBC88C127", hash_generated_method = "4DFA3B176AED92FABCFB596FBC88C127")
     
 void notifyUnknownConnection() {
@@ -1263,6 +1289,8 @@ public boolean isInEcm() {
         return mIsPhoneInEcmState;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.497 -0500", hash_original_method = "00543A79BC25C997F29F0DAD4E28E830", hash_generated_method = "097CC060FEE247ACDF2918B29A0467D4")
     
 void sendEmergencyCallbackModeChange(){
@@ -1284,6 +1312,8 @@ void sendEmergencyCallbackModeChange(){
         mCM.exitEmergencyCallbackMode(obtainMessage(EVENT_EXIT_EMERGENCY_CALLBACK_RESPONSE));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.502 -0500", hash_original_method = "379601A1C426F495327BF8B224FF5B5D", hash_generated_method = "67B035E276002C75108F1E21CDC37896")
     
 private void handleEnterEmergencyCallbackMode(Message msg) {
@@ -1308,6 +1338,8 @@ private void handleEnterEmergencyCallbackMode(Message msg) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.505 -0500", hash_original_method = "DE92BF7F05810FB5E0BD1EEEAFEB4B90", hash_generated_method = "CCB2C780B4A3D904F371AAFD0241C191")
     
 private void handleExitEmergencyCallbackMode(Message msg) {
@@ -1340,6 +1372,8 @@ private void handleExitEmergencyCallbackMode(Message msg) {
      * if action is CANCEL_ECM_TIMER, cancel Ecm timer and notify apps the timer is canceled;
      * otherwise, restart Ecm timer and notify apps the timer is restarted.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.507 -0500", hash_original_method = "C8EF6B60BE95B81385F7554432463CF1", hash_generated_method = "C8EF6B60BE95B81385F7554432463CF1")
     
 void handleTimerInEmergencyCallbackMode(int action) {
@@ -1624,6 +1658,8 @@ public void setCellBroadcastSmsConfig(int[] configValuesArray, Message response)
      *     e.g "FC,2,*2" indicates that the length of the feature code is 2,
      *     and the code itself is "*2".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.594 -0500", hash_original_method = "2F4529BDEA4C79E5E2F449E50272F3AC", hash_generated_method = "9DF69ACE1D900389CAFBC50DAB16AEBE")
     
 private boolean isCarrierOtaSpNum(String dialStr) {
@@ -1735,6 +1771,8 @@ private boolean isCarrierOtaSpNum(String dialStr) {
     /**
      * Store the voicemail number in preferences
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.605 -0500", hash_original_method = "1FA484546C7B73CA49B2C4AE64A8C83E", hash_generated_method = "6377B6D624485818A014047739069E85")
     
 private void storeVoiceMailNumber(String number) {
@@ -1749,6 +1787,8 @@ private void storeVoiceMailNumber(String number) {
      * Sets PROPERTY_ICC_OPERATOR_ISO_COUNTRY property
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.608 -0500", hash_original_method = "04903824830A3F9FD2759E9C177CC0CB", hash_generated_method = "996E7D58CB5DD6EF618F015B0E8D0F8B")
     
 private void setIsoCountryProperty(String operatorNumeric) {
@@ -1775,6 +1815,8 @@ private void setIsoCountryProperty(String operatorNumeric) {
      *
      * @return true for success; false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.611 -0500", hash_original_method = "B076A318D7F3CB7E259ECDC99FDB3D0D", hash_generated_method = "0A44E08571681D07EC93C75BDC2D40E8")
     
@@ -1804,6 +1846,8 @@ boolean updateCurrentCarrierInProvider(String operatorNumeric) {
      *
      * @return true for success; false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.613 -0500", hash_original_method = "A95BEE5F1920F9C579D7A59FC4DBB414", hash_generated_method = "A95BEE5F1920F9C579D7A59FC4DBB414")
     
 boolean updateCurrentCarrierInProvider() {

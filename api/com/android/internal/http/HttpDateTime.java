@@ -10,10 +10,6 @@ import java.util.regex.Pattern;
 
 import android.text.format.Time;
 
-
-
-
-
 public final class HttpDateTime {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.669 -0500", hash_original_method = "E4B152074829BA57285EA96C40C0EF3C", hash_generated_method = "043C6A7B9943BFC8EAD1243FD9CEA784")
@@ -57,6 +53,8 @@ public static long parse(String timeString)
         return time.toMillis(false /* use isDst */);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.671 -0500", hash_original_method = "30B6FF51139E27406DD1403F4EBB1DD0", hash_generated_method = "3F0E1EA038483742D9B631FF8B6BBA5E")
     
 private static int getDate(String dateString) {
@@ -82,6 +80,8 @@ private static int getDate(String dateString) {
      * nov = 13 + 14 + 21 = 48
      * dec = 3 + 4 + 2 = 9
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.674 -0500", hash_original_method = "0A426422E428E0144F4BE4D097CCF45E", hash_generated_method = "56BC5656E9D4416F406A8512030AA642")
     
 private static int getMonth(String monthString) {
@@ -118,6 +118,8 @@ private static int getMonth(String monthString) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.676 -0500", hash_original_method = "94B20CBAF1BF7E8BAB0748EC1D668BD7", hash_generated_method = "FFB9AB22F7CE2366C68ACBC5B0DF0569")
     
 private static int getYear(String yearString) {
@@ -171,11 +173,9 @@ private static TimeOfDay getTime(String timeString) {
     private static final String HTTP_DATE_RFC_REGEXP =
             "([0-9]{1,2})[- ]([A-Za-z]{3,9})[- ]([0-9]{2,4})[ ]"
             + "([0-9]{1,2}:[0-9][0-9]:[0-9][0-9])";
-
     
     private static class TimeOfDay {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.658 -0500", hash_original_field = "6CAA30872566AAC3D8208DA318F04BBD", hash_generated_field = "6CAA30872566AAC3D8208DA318F04BBD")
-
         
         int hour;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.661 -0500", hash_original_field = "56A69BE5A6B1DCF64B7123BACE74483B", hash_generated_field = "56A69BE5A6B1DCF64B7123BACE74483B")
@@ -184,6 +184,8 @@ private static TimeOfDay getTime(String timeString) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.663 -0500", hash_original_field = "662760B0A001432CFE4D3F18F01B3CEF", hash_generated_field = "662760B0A001432CFE4D3F18F01B3CEF")
 
         int second;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.656 -0500", hash_original_method = "C386336929F1995213D1FEE1C093D027", hash_generated_method = "C386336929F1995213D1FEE1C093D027")
         
 TimeOfDay(int h, int m, int s) {
@@ -191,11 +193,9 @@ TimeOfDay(int h, int m, int s) {
             this.minute = m;
             this.second = s;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.646 -0500", hash_original_field = "206191F7C4755BCD8025FA103E8BF230", hash_generated_field = "F1E0087178140CE39B35BFDC4DBACEA5")
-
 
     private static final String HTTP_DATE_ANSIC_REGEXP =
             "[ ]([A-Za-z]{3,9})[ ]+([0-9]{1,2})[ ]"

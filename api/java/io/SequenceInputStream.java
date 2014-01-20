@@ -94,6 +94,8 @@ public SequenceInputStream(Enumeration<? extends InputStream> e) {
      *
      * @throws IOException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.531 -0500", hash_original_method = "AA61F30EE9F68EF2787A55BE84FD9C61", hash_generated_method = "A7C3AA52849A0E697C5FC3DACAD2587D")
     
 private void nextStream() throws IOException {

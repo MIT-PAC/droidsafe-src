@@ -15,6 +15,8 @@ import android.text.TextUtils;
 public class AdnRecord implements Parcelable {
 
     /** Helper function for {@link #isEqual}. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.027 -0500", hash_original_method = "FFF6375FFC722DE9AA4BE2FB124374C8", hash_generated_method = "67BCA36BAA2384216D92880D51BF96F5")
     
 private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
@@ -333,6 +335,8 @@ public void
     /**
      * alphaTag and number are set to null on invalid format
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.045 -0500", hash_original_method = "C94E0153AA9A00481672837ABFA310B4", hash_generated_method = "FAE8FCC29597D474481255BC020DEE6C")
     
 private void

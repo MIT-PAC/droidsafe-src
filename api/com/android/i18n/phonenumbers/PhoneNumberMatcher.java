@@ -13,12 +13,12 @@ import java.util.regex.Pattern;
 import com.android.i18n.phonenumbers.PhoneNumberUtil.Leniency;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-
-
 final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
 
   /** Returns a regular expression quantifier with an upper and lower limit. */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.118 -0500", hash_original_method = "FEB84A328EE7F3166E4E0FA71F02D2E0", hash_generated_method = "A8A19550D0A1B28AF44CDAE5D0E2399B")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.118 -0500", hash_original_method = "FEB84A328EE7F3166E4E0FA71F02D2E0", hash_generated_method = "A8A19550D0A1B28AF44CDAE5D0E2399B")
     
 private static String limit(int lower, int upper) {
     if ((lower < 0) || (upper <= 0) || (upper < lower)) {
@@ -31,7 +31,9 @@ private static String limit(int lower, int upper) {
    * Trims away any characters after the first match of {@code pattern} in {@code candidate},
    * returning the trimmed version.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.153 -0500", hash_original_method = "AB1D11A817737E1FAD20796B1941F248", hash_generated_method = "25FCE6A88C437FD6A09F9BF4EDF639F0")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.153 -0500", hash_original_method = "AB1D11A817737E1FAD20796B1941F248", hash_generated_method = "25FCE6A88C437FD6A09F9BF4EDF639F0")
     
 private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence candidate) {
     Matcher trailingCharsMatcher = pattern.matcher(candidate);
@@ -46,7 +48,9 @@ private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence ca
    * combining marks should also return true since we assume they have been added to a preceding
    * Latin character.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.156 -0500", hash_original_method = "554CF3040E9CF07F05663E3B5F16517A", hash_generated_method = "A8F0E5EA62744C26D0169D65C29CE734")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.156 -0500", hash_original_method = "554CF3040E9CF07F05663E3B5F16517A", hash_generated_method = "A8F0E5EA62744C26D0169D65C29CE734")
     
 static boolean isLatinLetter(char letter) {
     // Combining marks are a subset of non-spacing-mark.
@@ -62,7 +66,9 @@ static boolean isLatinLetter(char letter) {
         block.equals(UnicodeBlock.COMBINING_DIACRITICAL_MARKS);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.159 -0500", hash_original_method = "D59D72E25010879107B56CC21125EBDA", hash_generated_method = "C8247B36BE222BC06BFD92CBA4FFD281")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.159 -0500", hash_original_method = "D59D72E25010879107B56CC21125EBDA", hash_generated_method = "C8247B36BE222BC06BFD92CBA4FFD281")
     
 private static boolean isCurrencySymbol(char character) {
     return Character.getType(character) == Character.CURRENCY_SYMBOL;
@@ -158,7 +164,6 @@ public boolean hasNext() {
     }
     return state == State.READY;
   }
-
     
     private enum State {
     NOT_READY, READY, DONE
@@ -186,7 +191,9 @@ public PhoneNumberMatch next() {
    * @param index  the search index to start searching at
    * @return  the phone number match found, null if none can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.150 -0500", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "26C29AB2CDD6239ED3186A0364BE41D2")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.150 -0500", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "26C29AB2CDD6239ED3186A0364BE41D2")
     
 private PhoneNumberMatch find(int index) {
     Matcher matcher = PATTERN.matcher(text);
@@ -218,7 +225,9 @@ private PhoneNumberMatch find(int index) {
    * @param offset  the offset of {@code candidate} within {@link #text}
    * @return  the match found, null if none can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.161 -0500", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "758DD38C53E2DA0F40F876AA51633F80")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.161 -0500", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "758DD38C53E2DA0F40F876AA51633F80")
     
 private PhoneNumberMatch extractMatch(CharSequence candidate, int offset) {
     // Skip a match that is more likely a publication page reference or a date.
@@ -246,7 +255,9 @@ private PhoneNumberMatch extractMatch(CharSequence candidate, int offset) {
    * @param offset  the current offset of {@code candidate} within {@link #text}
    * @return  the match found, null if none can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.165 -0500", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "1592748F2767C48208EACB2EFF97A07A")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.165 -0500", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "1592748F2767C48208EACB2EFF97A07A")
     
 private PhoneNumberMatch extractInnerMatch(String candidate, int offset) {
     // Try removing either the first or last "group" in the number and see if this gives a result.
@@ -309,7 +320,9 @@ private PhoneNumberMatch extractInnerMatch(String candidate, int offset) {
    * @param offset  the offset of {@code candidate} within {@link #text}
    * @return  the parsed and validated phone number match, or null
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.167 -0500", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "D54292D6C692A99EFE0E67B181185304")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.167 -0500", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "D54292D6C692A99EFE0E67B181185304")
     
 private PhoneNumberMatch parseAndVerify(String candidate, int offset) {
     try {

@@ -44,6 +44,8 @@ protected HttpsURLConnectionImpl(URL url, int port, Proxy proxy) {
         delegate = new HttpUrlConnectionDelegate(url, port, proxy);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.526 -0500", hash_original_method = "EBF39AE3893E60948871AA1B184525FE", hash_generated_method = "1FF8F64F38B77A9125AD65A815A925AC")
     
 private void checkConnected() {
@@ -52,6 +54,8 @@ private void checkConnected() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.528 -0500", hash_original_method = "974BBD03908437759747BBBC84511BEF", hash_generated_method = "974BBD03908437759747BBBC84511BEF")
     
@@ -575,6 +579,8 @@ public SSLSocket getSSLSocket() {
          * @param policy the HttpURLConnectionImpl with connection configuration
          * @param enclosing the HttpsURLConnection with HTTPS features
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.688 -0500", hash_original_method = "8AE083BB8B8AC6DA8D0AC1B890A493FE", hash_generated_method = "343BDD4B79FCEF886F48FE528CF834EA")
         
 private HttpsEngine(HttpURLConnectionImpl policy, String method, RawHeaders requestHeaders,
@@ -619,6 +625,8 @@ private HttpsEngine(HttpURLConnectionImpl policy, String method, RawHeaders requ
          * TLS extensions and SSL deflate compression. If false, use
          * an SSL3 only fallback mode without compression.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.695 -0500", hash_original_method = "E179043C81F65C857C0C51A1F43AC946", hash_generated_method = "733CB4A8B98E8A3ECBDD66AF9B8E42E4")
         
 private boolean makeSslConnection(boolean tlsTolerant) throws IOException {
@@ -650,6 +658,8 @@ private boolean makeSslConnection(boolean tlsTolerant) throws IOException {
          * CONNECT request to create the proxy connection. This may need to be
          * retried if the proxy requires authorization.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.697 -0500", hash_original_method = "8A9A8685511C9FB74B559F38C5A36FB4", hash_generated_method = "B00DCA3BC1FF1A80D3AB079202C7E62D")
         
 private void makeTunnel(HttpURLConnectionImpl policy, HttpConnection connection,

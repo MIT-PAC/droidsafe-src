@@ -17,11 +17,6 @@ import java.security.interfaces.RSAPublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
-
-
 public class OpenSSLSignature extends Signature {
 
     /**
@@ -52,7 +47,6 @@ public static OpenSSLSignature getInstance(String algorithm) throws NoSuchAlgori
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.707 -0500", hash_original_field = "4B33D26517CDA1D6382EB60B2B3E772A", hash_generated_field = "30CADFDA226F957BCA4F06420D70879B")
 
-
     private static Map<String,Class<? extends OpenSSLSignature>> jdkToOpenSsl
             = new HashMap<String,Class<? extends OpenSSLSignature>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.710 -0500", hash_original_field = "8215E0C121D6ABB0163C7AD91F0DBCC0", hash_generated_field = "BD1C84B906E542A0B7737CDBC958EBF4")
@@ -76,6 +70,8 @@ public static OpenSSLSignature getInstance(String algorithm) throws NoSuchAlgori
      *
      * @param algorithm OpenSSL name of the algorithm, e.g. "RSA-SHA1".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.725 -0500", hash_original_method = "2A2E0ABF3B3B1A4964ED7A72D14B2724", hash_generated_method = "FA677E6C1FA5D2A4A5104A5809BB044A")
     
 private OpenSSLSignature(String algorithm) throws NoSuchAlgorithmException {
@@ -192,7 +188,6 @@ private OpenSSLSignature(String algorithm) throws NoSuchAlgorithmException {
         }
 
     }
-
     
     public static final class MD5RSA extends OpenSSLSignature {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.752 -0500", hash_original_method = "B1183C6C9886C7590F89656BAE25BECA", hash_generated_method = "9DCFE763703F44FCA817CF40AB4C25D7")
@@ -200,11 +195,8 @@ private OpenSSLSignature(String algorithm) throws NoSuchAlgorithmException {
 public MD5RSA() throws NoSuchAlgorithmException {
             super("RSA-MD5");
         }
-
         
     }
-
-
     
     public static final class SHA1RSA extends OpenSSLSignature {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.757 -0500", hash_original_method = "52FBE190C92F5C8F173769172401F04E", hash_generated_method = "B7D92F1E22696560B0B8FA4887FC4562")
@@ -212,11 +204,8 @@ public MD5RSA() throws NoSuchAlgorithmException {
 public SHA1RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA1");
         }
-
         
     }
-
-
     
     public static final class SHA256RSA extends OpenSSLSignature {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.762 -0500", hash_original_method = "E7BAD1A6B461EB173260E3EA071C4D98", hash_generated_method = "06E76CAE8E2E60CB138F17FA07C3029E")
@@ -224,11 +213,8 @@ public SHA1RSA() throws NoSuchAlgorithmException {
 public SHA256RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA256");
         }
-
         
     }
-
-
     
     public static final class SHA384RSA extends OpenSSLSignature {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.767 -0500", hash_original_method = "9FE2D91A88929DCA7C5B738CF76745E4", hash_generated_method = "486E5EF4A5ADBF83144B3B1B5ED8F667")
@@ -236,11 +222,8 @@ public SHA256RSA() throws NoSuchAlgorithmException {
 public SHA384RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA384");
         }
-
         
     }
-
-
     
     public static final class SHA512RSA extends OpenSSLSignature {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.772 -0500", hash_original_method = "020897BEF8DEDF16062B317376B71FB5", hash_generated_method = "7E689BC749849AB00AFDEF4CBF3A4801")
@@ -248,11 +231,8 @@ public SHA384RSA() throws NoSuchAlgorithmException {
 public SHA512RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA512");
         }
-
         
     }
-
-
     
     public static final class SHA1DSA extends OpenSSLSignature {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.778 -0500", hash_original_method = "E31D98400FA8DA28AFA04F7443B0CC39", hash_generated_method = "E9AE3004958A0A72FF78A4F2FCAB1311")
@@ -260,7 +240,6 @@ public SHA512RSA() throws NoSuchAlgorithmException {
 public SHA1DSA() throws NoSuchAlgorithmException {
             super("DSA-SHA1");
         }
-
         
     }
 

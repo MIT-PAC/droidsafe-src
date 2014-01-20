@@ -14,6 +14,8 @@ public class NumberFormatException extends IllegalArgumentException {
      * Constructs a new {@code NumberFormatException} that includes the current
      * stack trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.001 -0500", hash_original_method = "5EB9584C9C40374DC4817FFEDC3C2AF2", hash_generated_method = "B681D93FA1DAABB1E461B38A96858684")
     
 public NumberFormatException() {

@@ -35,6 +35,8 @@ import android.view.ViewRootImpl;
 
 public class WallpaperManager {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.161 -0500", hash_original_method = "C193488ECC93C5DEAFD0BA2DBD2772CE", hash_generated_method = "3443D20D6A8561FDE63D74DBB5E22A62")
     
 static void initGlobals(Looper looper) {
@@ -58,6 +60,8 @@ public static WallpaperManager getInstance(Context context) {
                 Context.WALLPAPER_SERVICE);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.216 -0500", hash_original_method = "3AB6B8AC89BBBD415EBF8AF5472BAEF1", hash_generated_method = "C5BB8AD7DDD48E7F070B1792C8B07DB0")
     
 static Bitmap generateBitmap(Bitmap bm, int width, int height) {
@@ -152,7 +156,9 @@ static Bitmap generateBitmap(Bitmap bm, int width, int height) {
     
     private  Context mContext;
     
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.163 -0500", hash_original_method = "AA9944AB0F8A7F99E0205835B0AC132C", hash_generated_method = "AA9944AB0F8A7F99E0205835B0AC132C")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.163 -0500", hash_original_method = "AA9944AB0F8A7F99E0205835B0AC132C", hash_generated_method = "AA9944AB0F8A7F99E0205835B0AC132C")
     
 WallpaperManager(Context context, Handler handler) {
         mContext = context;
@@ -419,6 +425,8 @@ public void setStream(InputStream data) throws IOException {
 
         private  Paint mPaint;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.090 -0500", hash_original_method = "A000E3823EF3583E37A464733E9034D5", hash_generated_method = "ED0EF0E1D8327FA31527D2F99B5C592A")
         
 private FastBitmapDrawable(Bitmap bitmap) {
@@ -539,6 +547,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
         
         private  Handler mHandler;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.136 -0500", hash_original_method = "0C6EE30FFC6BD0B5A33D648A5B68FF7C", hash_generated_method = "0C6EE30FFC6BD0B5A33D648A5B68FF7C")
         
 Globals(Looper looper) {
@@ -613,6 +623,8 @@ public void forgetLoadedWallpaper() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.149 -0500", hash_original_method = "16667119AC99E737F53C6C4F154ADE70", hash_generated_method = "7BC481367F8404D97484C7F09E2B75E6")
         
 private Bitmap getCurrentWallpaperLocked() {
@@ -644,6 +656,8 @@ private Bitmap getCurrentWallpaperLocked() {
             return null;
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.151 -0500", hash_original_method = "7D56EB02955E82C8DDBD02F9FFA3CE84", hash_generated_method = "3DE434BB2A0AB29EAC447CABF6ED45BB")
         
 private Bitmap getDefaultWallpaperLocked(Context context) {
@@ -675,6 +689,8 @@ private Bitmap getDefaultWallpaperLocked(Context context) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.193 -0500", hash_original_method = "4C0B3C480EF9954FF86E8D84EAD55CC1", hash_generated_method = "A3F6272B0DD833DC7243DA71F35D1D8A")
     
 private void setWallpaper(InputStream data, FileOutputStream fos)

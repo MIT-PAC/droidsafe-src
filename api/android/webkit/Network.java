@@ -21,10 +21,6 @@ import android.net.http.RequestQueue;
 import android.net.http.SslError;
 import android.os.Bundle;
 
-
-
-
-
 class Network {
 
     /**
@@ -51,7 +47,6 @@ public static synchronized Network getInstance(Context context) {
         }
         return sNetwork;
     }
-
 
     /**
      * Enables data state and proxy tracking
@@ -87,7 +82,6 @@ public static void disablePlatformNotifications() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.699 -0500", hash_original_field = "B8F296222D99B13B57A30F4500AF7F3D", hash_generated_field = "F098064C2753AB544D48EBBEF82B0BA4")
 
-
     private static final String LOGTAG = "network";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.702 -0500", hash_original_field = "0F12AD73685E2EED270D6B888608A97D", hash_generated_field = "B1F79203A591BC2F780E71886AE7DF53")
 
@@ -115,7 +109,6 @@ public static void disablePlatformNotifications() {
     private HttpAuthHandlerImpl mHttpAuthHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.718 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.721 -0500", hash_original_field = "443BCEF3EEBE54B39D5E3E92FF87E1E4", hash_generated_field = "02055DCC177C93D9A52A736D58C166FD")
 
@@ -128,6 +121,8 @@ public static void disablePlatformNotifications() {
      * Creates a new Network object.
      * XXX: Must be created in the same thread as WebCore!!!!!
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.733 -0500", hash_original_method = "27D599105D57C8AB9F99EAD7FE1A52D5", hash_generated_method = "BB72AFB78DC5B83CD5729BB0D882B6D0")
     
 private Network(Context context) {
@@ -142,6 +137,8 @@ private Network(Context context) {
         mRequestQueue = new RequestQueue(context);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.741 -0500", hash_original_method = "7636534D5021AA0AC5AC07906EACA40E", hash_generated_method = "D1079AD858B57A228A60D912F6A19CC5")
     
 private void monitorRoaming() {
@@ -151,6 +148,8 @@ private void monitorRoaming() {
         mContext.registerReceiver(sNetwork.mRoamingMonitor, filter);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.743 -0500", hash_original_method = "7D0FFF1DC9E3EFF208EFD53429D521D6", hash_generated_method = "2CD4B265BA8A7C98182C0E39FF71B820")
     
 private void stopMonitoringRoaming() {
@@ -159,7 +158,6 @@ private void stopMonitoringRoaming() {
             mRoamingMonitor = null;
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.807 -0400", hash_original_method = "E40B5BA7C100221963CCC3BAE15F17EE", hash_generated_method = "22B52E6758FBB73DDAAC4CF7C4F2C9D4")
     public boolean requestURL(String method,
@@ -346,7 +344,6 @@ public void handleSslErrorRequest(LoadListener loader) {
             mSslErrorHandler.handleSslErrorRequest(loader);
         }
     }
-
     
     private class RoamingMonitor extends BroadcastReceiver {
         
@@ -366,11 +363,12 @@ public void handleSslErrorRequest(LoadListener loader) {
             if (info != null)
                 mRoaming = info.isRoaming();
         }
-
         
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.770 -0500", hash_original_method = "2B01E9B22836C8DC58E90274FB1B42A2", hash_generated_method = "2B01E9B22836C8DC58E90274FB1B42A2")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.770 -0500", hash_original_method = "2B01E9B22836C8DC58E90274FB1B42A2", hash_generated_method = "2B01E9B22836C8DC58E90274FB1B42A2")
     
 boolean checkSslPrefTable(LoadListener loader,
             SslError error) {

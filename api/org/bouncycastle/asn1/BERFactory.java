@@ -5,10 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 class BERFactory {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.638 -0500", hash_original_method = "C14D343AD2F781B2C351EEE6FA75DC28", hash_generated_method = "730439F28645067A9E0274C479958D7C")
     
 static BERSequence createSequence(ASN1EncodableVector v)
@@ -16,6 +16,8 @@ static BERSequence createSequence(ASN1EncodableVector v)
         return v.size() < 1 ? EMPTY_SEQUENCE : new BERSequence(v);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.640 -0500", hash_original_method = "F79D9FB64390166BBBDFF1A0E02669C4", hash_generated_method = "28F57A39C1232C573C19CBDE33B03CA2")
     
 static BERSet createSet(ASN1EncodableVector v)
@@ -23,6 +25,8 @@ static BERSet createSet(ASN1EncodableVector v)
         return v.size() < 1 ? EMPTY_SET : new BERSet(v);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.643 -0500", hash_original_method = "FDF25F6AB6ADABC17FFA4B7E90C11C66", hash_generated_method = "9D9428EADAF72068C0B069D7ABEE1DBE")
     
 static BERSet createSet(ASN1EncodableVector v, boolean needsSorting)

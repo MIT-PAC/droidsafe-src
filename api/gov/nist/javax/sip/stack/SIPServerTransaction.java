@@ -109,6 +109,8 @@ protected SIPServerTransaction(SIPTransactionStack sipStack, MessageChannel newC
      *
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.111 -0500", hash_original_method = "05CFFFBF5E08267473584C7C9C8831C7", hash_generated_method = "58824DA46BB8DAB7F26513A055B540C8")
     
 private void sendResponse(SIPResponse transactionResponse) throws IOException {
@@ -846,6 +848,8 @@ protected void fireRetransmissionTimer() {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.155 -0500", hash_original_method = "0BCA3A7152B5F6366E7B8E296683796F", hash_generated_method = "67A050C3B1EE539A0EB15B41B4BC4A5F")
     
 private void fireReliableResponseRetransmissionTimer() {
@@ -1135,6 +1139,8 @@ public void sendResponse(Response response) throws SipException {
     /**
      * Return the book-keeping information that we actually use.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.175 -0500", hash_original_method = "094652DDD499EE6CA69CC6BEDE88479D", hash_generated_method = "A7235364D32441046E530C9F3B39BFA7")
     
 private TransactionState getRealState() {

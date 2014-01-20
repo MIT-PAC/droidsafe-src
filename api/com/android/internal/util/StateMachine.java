@@ -72,6 +72,8 @@ protected StateMachine(String name, Looper looper) {
      * @param looper for this state machine
      * @param name of the state machine
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.464 -0500", hash_original_method = "DAD3CAAA263F09CC114EE283728F2037", hash_generated_method = "A1308E401E9B010467FCF73FB34174A7")
     
 private void initStateMachine(String name, Looper looper) {
@@ -498,6 +500,8 @@ protected final void removeMessages(int what) {
          * @param orgState is the first state the received the message but
          * did not processes the message.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.257 -0500", hash_original_method = "7EA9EE86A36AF0562D3C01EEF98869EA", hash_generated_method = "7EA9EE86A36AF0562D3C01EEF98869EA")
         
 ProcessedMessageInfo(Message message, State state, State orgState) {
@@ -565,6 +569,8 @@ public State getOriginalState() {
         /**
          * @return an objects class name
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.272 -0500", hash_original_method = "BFE06EA51077266A4C3CDDB9CF5A61E9", hash_generated_method = "EF255C4030F3A9AD46E25889C3255795")
         
 private String cn(Object n) {
@@ -599,6 +605,8 @@ private String cn(Object n) {
         /**
          * Constructor
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.290 -0500", hash_original_method = "8C2E4982B56D335A57BD25CE5A99A95E", hash_generated_method = "8C2E4982B56D335A57BD25CE5A99A95E")
         
 ProcessedMessages() {
@@ -609,6 +617,8 @@ ProcessedMessages() {
          *
          * @param maxSize number of messages to maintain at anyone time.
         */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.292 -0500", hash_original_method = "E690879E37418633C091A0E6D09F0FE8", hash_generated_method = "E690879E37418633C091A0E6D09F0FE8")
         
 void setSize(int maxSize) {
@@ -620,6 +630,8 @@ void setSize(int maxSize) {
         /**
          * @return the number of recent messages.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.294 -0500", hash_original_method = "661C67FDA7F2FAF16A0B73519F701A14", hash_generated_method = "661C67FDA7F2FAF16A0B73519F701A14")
         
 int size() {
@@ -629,6 +641,8 @@ int size() {
         /**
          * @return the total number of messages processed since size was set.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.297 -0500", hash_original_method = "173278F07A9E3F76B246C31AF2BEE799", hash_generated_method = "173278F07A9E3F76B246C31AF2BEE799")
         
 int count() {
@@ -638,6 +652,8 @@ int count() {
         /**
          * Clear the list of Processed Message Info.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.299 -0500", hash_original_method = "7C55F1E05538CA172591209F0EED6056", hash_generated_method = "7C55F1E05538CA172591209F0EED6056")
         
 void cleanup() {
@@ -671,6 +687,8 @@ ProcessedMessageInfo get(int index) {
          * @param orgState is the first state the received the message but
          * did not processes the message.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.305 -0500", hash_original_method = "43A85B457185E158137E22B107CD3124", hash_generated_method = "43A85B457185E158137E22B107CD3124")
         
 void add(Message message, State state, State orgState) {
@@ -745,6 +763,8 @@ void add(Message message, State state, State orgState) {
          * @param looper for dispatching messages
          * @param sm the hierarchical state machine
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.418 -0500", hash_original_method = "02CDDC1E29D68D2242CCC3ED8987E93B", hash_generated_method = "0C2DA2CD9FBC63B58CE3CA69A8133769")
         
 private SmHandler(Looper looper, StateMachine sm) {
@@ -791,6 +811,8 @@ private SmHandler(Looper looper, StateMachine sm) {
         /**
          * Do any transitions
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.378 -0500", hash_original_method = "A1FA2FFB8197AA42C7B119825051565B", hash_generated_method = "66B6388BD6DFE024922BB16B89670CD6")
         
 private void performTransitions() {
@@ -851,6 +873,8 @@ private void performTransitions() {
         /**
          * Cleanup all the static variables and the looper after the SM has been quit.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.381 -0500", hash_original_method = "7DAEABCEDA46187D72BCFC1924088344", hash_generated_method = "5639217F873C6F4B6BBBF8FD81B5AB76")
         
 private final void cleanupAfterQuitting() {
@@ -876,6 +900,8 @@ private final void cleanupAfterQuitting() {
         /**
          * Complete the construction of the state machine.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.384 -0500", hash_original_method = "2988A35ECCAC86323C503A15399549F2", hash_generated_method = "ECBB610784E4A3BFAFD4A3D2BCFF736C")
         
 private final void completeConstruction() {
@@ -922,6 +948,8 @@ private final void completeConstruction() {
          * it, call the states parent and so on. If it is never handled then
          * call the state machines unhandledMessage method.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.387 -0500", hash_original_method = "01E4D9F834B911866303A5B2D2AF3A41", hash_generated_method = "22B5BDC7E79E593A8D2FF29BBCDCF246")
         
 private final void processMsg(Message msg) {
@@ -980,6 +1008,8 @@ private final void invokeExitMethods(StateInfo commonStateInfo) {
         /**
          * Invoke the enter method starting at the entering index to top of state stack
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.393 -0500", hash_original_method = "BBB0EEA794A5EB08AF57745D59E4ED21", hash_generated_method = "8A569DEE210BC5DBEB5FC34B66E0FD8E")
         
 private final void invokeEnterMethods(int stateStackEnteringIndex) {
@@ -993,6 +1023,8 @@ private final void invokeEnterMethods(int stateStackEnteringIndex) {
         /**
          * Move the deferred message to the front of the message queue.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.396 -0500", hash_original_method = "C63EF04ECCAE1AA00B9666D00D691AB5", hash_generated_method = "9F54E8BA14C1EF1883138F7932DF7DB6")
         
 private final void moveDeferredMessageAtFrontOfQueue() {
@@ -1017,6 +1049,8 @@ private final void moveDeferredMessageAtFrontOfQueue() {
          *
          * @return index into mStateStack where entering needs to start
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.400 -0500", hash_original_method = "22489CF328AA5B68E3D4CD4685E1B0FF", hash_generated_method = "A172382E464D8A38BCB04CD76602C7D8")
         
 private final int moveTempStateStackToStateStack() {
@@ -1076,6 +1110,8 @@ private final StateInfo setupTempStateStackWithStatesToEnter(State destState) {
         /**
          * Initialize StateStack to mInitialState.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.406 -0500", hash_original_method = "1F517A6C2C8B64C63155F67495EF1EF9", hash_generated_method = "9EF35F9D468111E928F8FAA147529925")
         
 private final void setupInitialStateStack() {
@@ -1099,6 +1135,8 @@ private final void setupInitialStateStack() {
         /**
          * @return current message
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.409 -0500", hash_original_method = "38EC5F2FF9273B7F113CC175A6D6CA55", hash_generated_method = "384257282751D922C30410AA46C794EB")
         
 private final Message getCurrentMessage() {
@@ -1108,6 +1146,8 @@ private final Message getCurrentMessage() {
         /**
          * @return current state
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.411 -0500", hash_original_method = "4DAC448F0AE857FB37AA7C8477011F21", hash_generated_method = "5928D77CF18B653EF707623017562220")
         
 private final IState getCurrentState() {
@@ -1157,6 +1197,8 @@ private final StateInfo addState(State state, State parent) {
         }
 
         /** @see StateMachine#setInitialState(State) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.421 -0500", hash_original_method = "6BCC70723A0A0266DFEF3F6F9EAE3DFA", hash_generated_method = "3B18F593C219C60CA3A0DC79B5D35734")
         
 private final void setInitialState(State initialState) {
@@ -1165,6 +1207,8 @@ private final void setInitialState(State initialState) {
         }
 
         /** @see StateMachine#transitionTo(IState) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.424 -0500", hash_original_method = "21890E800BC5188E239893B522387EDA", hash_generated_method = "314E77170BF130061D377B333927F21B")
         
 private final void transitionTo(IState destState) {
@@ -1173,6 +1217,8 @@ private final void transitionTo(IState destState) {
         }
 
         /** @see StateMachine#deferMessage(Message) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.426 -0500", hash_original_method = "E228351895B227260722E6D77267BEC1", hash_generated_method = "994B906B8A1E0957DF2C0ABC5F5962E2")
         
 private final void deferMessage(Message msg) {
@@ -1186,6 +1232,8 @@ private final void deferMessage(Message msg) {
         }
 
         /** @see StateMachine#deferMessage(Message) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.429 -0500", hash_original_method = "70D38ABCE91561514ACD98C85375A9A1", hash_generated_method = "103A709794E1DE8E8719A94A81103C7C")
         
 private final void quit() {
@@ -1194,6 +1242,8 @@ private final void quit() {
         }
 
         /** @see StateMachine#isQuit(Message) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.431 -0500", hash_original_method = "BAB49FBE24A81490A5F317754A03EEE6", hash_generated_method = "B536651E8B24FF5F06BAF122F73EEDB6")
         
 private final boolean isQuit(Message msg) {
@@ -1201,6 +1251,8 @@ private final boolean isQuit(Message msg) {
         }
 
         /** @see StateMachine#isDbg() */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.434 -0500", hash_original_method = "0EC17970A8F6815D37F02ED3B599FE78", hash_generated_method = "56881472EE7D3216A6DF0B15B01B73CC")
         
 private final boolean isDbg() {
@@ -1208,6 +1260,8 @@ private final boolean isDbg() {
         }
 
         /** @see StateMachine#setDbg(boolean) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.437 -0500", hash_original_method = "2FBE0CE6F45608217065DCE46294BFD1", hash_generated_method = "2074AE1EBD18EEDD5D44813780E2F771")
         
 private final void setDbg(boolean dbg) {
@@ -1215,6 +1269,8 @@ private final void setDbg(boolean dbg) {
         }
 
         /** @see StateMachine#setProcessedMessagesSize(int) */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.440 -0500", hash_original_method = "80DE9CB8772B169AC72245D032E86B1D", hash_generated_method = "4EF3CDA6DD7D9EB19C0A720105467167")
         
 private final void setProcessedMessagesSize(int maxSize) {
@@ -1222,6 +1278,8 @@ private final void setProcessedMessagesSize(int maxSize) {
         }
 
         /** @see StateMachine#getProcessedMessagesSize() */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.444 -0500", hash_original_method = "8FB0F44FDB0C5DC10452484BB601B3E7", hash_generated_method = "256350CA9CB0CFC5DA2D9DCE2109E35A")
         
 private final int getProcessedMessagesSize() {
@@ -1229,6 +1287,8 @@ private final int getProcessedMessagesSize() {
         }
 
         /** @see StateMachine#getProcessedMessagesCount() */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.447 -0500", hash_original_method = "92EED68DA49DE907A6704035F6436DD3", hash_generated_method = "048EFDA755A0B541196FC852EB3B5214")
         
 private final int getProcessedMessagesCount() {

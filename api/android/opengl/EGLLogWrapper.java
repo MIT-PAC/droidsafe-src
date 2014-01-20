@@ -16,13 +16,10 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 
-
-
-
-
-
 class EGLLogWrapper implements EGL11 {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.389 -0500", hash_original_method = "1FA182FB3F670562E4832FF4C2B7A9B2", hash_generated_method = "2B68B6DC957DD24336BF67343B92A433")
     
 private static String getHex(int value) {
@@ -82,7 +79,6 @@ public static String getErrorString(int error) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.272 -0500", hash_original_field = "B7F88A0F484E30B2A2C4E9BD38D9ED63", hash_generated_field = "3D4AA24E99B2CD1AFB8EEE08DE93A4A1")
 
     private int mArgCount;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.275 -0500", hash_original_method = "0B69E6453D41FDE4430AE10DB8A1E0ED", hash_generated_method = "3783CC5D1147AD194007ACB4DCE53A64")
     
@@ -467,6 +463,8 @@ public boolean eglWaitNative(int engine, Object bindTarget) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.340 -0500", hash_original_method = "788326C328235EE087DA54E094036343", hash_generated_method = "FA963DBF46A7097B6BB51498480FA780")
     
 private void checkError() {
@@ -480,12 +478,16 @@ private void checkError() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.342 -0500", hash_original_method = "B819F9C00E5D903C9B12858E84782EC6", hash_generated_method = "F9CC18CF76615C08196345248052B481")
     
 private void logLine(String message) {
         log(message + '\n');
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.344 -0500", hash_original_method = "55C0C6DBDFA700D90D9FD20B92BCF082", hash_generated_method = "5C448D5FAA0F5584277595ADE0F6F4C6")
     
 private void log(String message) {
@@ -496,6 +498,8 @@ private void log(String message) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.346 -0500", hash_original_method = "FB0C650254ED9FCE75BB6E7EB1636546", hash_generated_method = "369891CBA246B14C38B39EEBD6E95768")
     
 private void begin(String name) {
@@ -503,6 +507,8 @@ private void begin(String name) {
         mArgCount = 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.349 -0500", hash_original_method = "54C70E45C8BA9C703732EB10FD7BBF7B", hash_generated_method = "7B27682116508D3E48B9DC7643F1052D")
     
 private void arg(String name, String value) {
@@ -515,6 +521,8 @@ private void arg(String name, String value) {
         log(value);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.351 -0500", hash_original_method = "34DADD61F74380F23C382DA05A595428", hash_generated_method = "12E3F242E36BA034A6CED88502BAD847")
     
 private void end() {
@@ -522,6 +530,8 @@ private void end() {
         flush();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.353 -0500", hash_original_method = "0CDA8C40EE3F1BEB19FC35DF0C9C3B14", hash_generated_method = "2E2434FEE94D9406D742CF413A2C192F")
     
 private void flush() {
@@ -532,18 +542,24 @@ private void flush() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.356 -0500", hash_original_method = "B92E6D1514E3DF39AF9DE02825B78605", hash_generated_method = "5FEFCA48109687D1811D66434F67790C")
     
 private void arg(String name, int value) {
         arg(name, Integer.toString(value));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.358 -0500", hash_original_method = "F32E9ED1A9AD790C0C3F824859AFFD50", hash_generated_method = "55449E3FE9CFDBA27DF437657A14E1CC")
     
 private void arg(String name, Object object) {
         arg(name, toString(object));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.360 -0500", hash_original_method = "01946A19C8705B92846E5FD249971514", hash_generated_method = "B0344298157D4732C4388127D3BB25C1")
     
 private void arg(String name, EGLDisplay object) {
@@ -556,6 +572,8 @@ private void arg(String name, EGLDisplay object) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.363 -0500", hash_original_method = "01463BB924BE80515544A0A965E7A7B9", hash_generated_method = "7A0AD28168151D03BA17D294B99F2A6E")
     
 private void arg(String name, EGLContext object) {
@@ -566,6 +584,8 @@ private void arg(String name, EGLContext object) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.365 -0500", hash_original_method = "29F033CFC0C7125F3850A082876BA169", hash_generated_method = "8DC870110357B011150E33036CE9AA90")
     
 private void arg(String name, EGLSurface object) {
@@ -576,6 +596,8 @@ private void arg(String name, EGLSurface object) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.367 -0500", hash_original_method = "3FBBFC7C1FE2EDBEEE74392E2BA2D107", hash_generated_method = "C5DE735309A52E52693CD2A7C075BB6B")
     
 private void returns(String result) {
@@ -583,24 +605,32 @@ private void returns(String result) {
         flush();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.370 -0500", hash_original_method = "A943ABBAFE7E9588C2D5222F0375E708", hash_generated_method = "801A10A157319D17C47CD712F1054C74")
     
 private void returns(int result) {
         returns(Integer.toString(result));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.372 -0500", hash_original_method = "F758ED771C34CA3F99E1517AB5DA84CC", hash_generated_method = "2D2FF7A08A8E5AB05280650DCBD223E5")
     
 private void returns(boolean result) {
         returns(Boolean.toString(result));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.374 -0500", hash_original_method = "13511071C6DE4FFBB82F1BC04606E74C", hash_generated_method = "BC463BD401581B8609F1C279B1D16F55")
     
 private void returns(Object result) {
         returns(toString(result));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.376 -0500", hash_original_method = "122D09D33E3C14E13BA1263367B842FD", hash_generated_method = "364630407A11F9DC78D532C5CBA9554A")
     
 private String toString(Object obj) {
@@ -611,6 +641,8 @@ private String toString(Object obj) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.378 -0500", hash_original_method = "681A195715F2634EFD4F6574BD3918CD", hash_generated_method = "69DEF8F03F13A816E001365578F5EEA5")
     
 private void arg(String name, int[] arr) {
@@ -621,6 +653,8 @@ private void arg(String name, int[] arr) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.381 -0500", hash_original_method = "DD519F74DAF76C6EBE410B4846DBED4A", hash_generated_method = "A6F351E07B7BCB448FC8B6F653FB61A3")
     
 private void arg(String name, Object[] arr) {
@@ -631,6 +665,8 @@ private void arg(String name, Object[] arr) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.384 -0500", hash_original_method = "83D3FA96B1354405A93359C25E36746A", hash_generated_method = "FF6A3602DFF20DDF44FBDFA213412638")
     
 private String toString(int n, int[] arr, int offset) {
@@ -651,6 +687,8 @@ private String toString(int n, int[] arr, int offset) {
         return buf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.387 -0500", hash_original_method = "76307B205B17F18B9623C7717F9DB208", hash_generated_method = "84F1356B017386F3D652CD82E379F1BA")
     
 private String toString(int n, Object[] arr, int offset) {
@@ -670,7 +708,6 @@ private String toString(int n, Object[] arr, int offset) {
         buf.append("}");
         return buf.toString();
     }
-
     
 }
 

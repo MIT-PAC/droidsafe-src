@@ -71,6 +71,8 @@ public ToggleButton(Context context) {
         syncTextState();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.767 -0500", hash_original_method = "A3A4B8254A3076C3DF78E3AF06A5BAA7", hash_generated_method = "5870BF8FC0457E17723BABBA4E171CE6")
     
 private void syncTextState() {
@@ -151,6 +153,8 @@ public void setTextOff(CharSequence textOff) {
         updateReferenceToIndicatorDrawable(d);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.783 -0500", hash_original_method = "ECF0FA7CF2036753A46FE0C4EF856618", hash_generated_method = "72EA312AC946199E91902C2723165F53")
     
 private void updateReferenceToIndicatorDrawable(Drawable backgroundDrawable) {

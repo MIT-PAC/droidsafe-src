@@ -20,6 +20,8 @@ class EmulatedFieldsForLoading extends ObjectInputStream.GetField {
      *            an ObjectStreamClass, defining the class for which to emulate
      *            fields.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.235 -0500", hash_original_method = "3A92EA3385CE026A7E99F46A314647AE", hash_generated_method = "3A92EA3385CE026A7E99F46A314647AE")
     
 EmulatedFieldsForLoading(ObjectStreamClass streamClass) {
@@ -57,6 +59,8 @@ EmulatedFieldsForLoading(ObjectStreamClass streamClass) {
      *
      * @return array of ObjectSlot the receiver represents.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.240 -0500", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "F09D38B717E770EDAB76B08B81548137")
     
 EmulatedFields emulatedFields() {

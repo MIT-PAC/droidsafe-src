@@ -22,6 +22,8 @@ import libcore.icu.TimeZones;
 
 public class SimpleDateFormat extends DateFormat {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.087 -0500", hash_original_method = "F209DE6039C95F3ED32C483A7FAB87E8", hash_generated_method = "242A0445AD9B8EA038A867E60E2CF70F")
     
 private static String defaultPattern() {
@@ -29,6 +31,8 @@ private static String defaultPattern() {
         return localeData.getDateFormat(SHORT) + " " + localeData.getTimeFormat(SHORT);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.167 -0500", hash_original_method = "FC74B76DEBD3C100A988B40A9B23664F", hash_generated_method = "58DB67D74D7286DC04494E075E976CCC")
     
 private static String convertPattern(String template, String fromChars, String toChars, boolean check) {
@@ -148,6 +152,8 @@ public SimpleDateFormat(String pattern) {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.071 -0500", hash_original_method = "2C117D04FF17ED0139CEC7451AA4BD73", hash_generated_method = "53982C08D69114A77F58DFC60F0427B9")
     
 public SimpleDateFormat(String template, DateFormatSymbols value) {
@@ -182,6 +188,8 @@ public SimpleDateFormat(String template, Locale locale) {
         formatData = new DateFormatSymbols(locale);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.077 -0500", hash_original_method = "F464E2338695834D875FCA6185F1E83B", hash_generated_method = "C039888B33A3E1C4324452F493B7E115")
     
 private SimpleDateFormat(Locale locale) {
@@ -203,6 +211,8 @@ private SimpleDateFormat(Locale locale) {
      * @throws IllegalArgumentException
      *             when the format character is invalid
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.051 -0500", hash_original_method = "411C0D5D8AD5CB18D4C2CE04A3CEEBF0", hash_generated_method = "E105F6342371FC7A4CC18F36D0625481")
     
 private void validateFormat(char format) {
@@ -223,6 +233,8 @@ private void validateFormat(char format) {
      * @throws IllegalArgumentException
      *             if the pattern is invalid
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.067 -0500", hash_original_method = "49C9E23BED9AC71209F0210F812D9D37", hash_generated_method = "C9301FAA0B5F911E884F0B0D4E4BD72F")
     
 private void validatePattern(String template) {
@@ -280,6 +292,8 @@ private void validatePattern(String template) {
      * @param template
      *            the localized pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.079 -0500", hash_original_method = "9688C7F66E6F76D1BE1FBD610A4BC951", hash_generated_method = "9B81995D24CAE7A81EB817AEC4C3844B")
     
 public void applyLocalizedPattern(String template) {
@@ -313,6 +327,8 @@ public void applyPattern(String template) {
      * @return a shallow copy of this simple date format.
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.084 -0500", hash_original_method = "894F4ABDB71A6E4F1997CC330255AFC7", hash_generated_method = "D0396D0AF64117B3ADAF61FE83EBE065")
     
 @Override
@@ -335,6 +351,8 @@ public void applyPattern(String template) {
      *         format; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.089 -0500", hash_original_method = "386F5EAAB97078077630DB3A1FE9C0D6", hash_generated_method = "12C2795BBBA4D4FDEB8798DF0BFB4376")
     
 @Override
@@ -365,6 +383,8 @@ public void applyPattern(String template) {
      *            if the object cannot be formatted by this simple date
      *            format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.092 -0500", hash_original_method = "F8A48BC85545A42AFE53260512DF9B2E", hash_generated_method = "9EAC7DF5A1F47B4E3861E6DF79531AD6")
     
 @Override
@@ -382,6 +402,8 @@ public void applyPattern(String template) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.095 -0500", hash_original_method = "39C7DAF020DB077C56334C25B45C6758", hash_generated_method = "4269B45109BDFCDABAE8B23522415D35")
     
 private AttributedCharacterIterator formatToCharacterIteratorImpl(Date date) {
@@ -429,6 +451,8 @@ private AttributedCharacterIterator formatToCharacterIteratorImpl(Date date) {
      * @throws IllegalArgumentException
      *            if the object cannot be formatted by this Format.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.098 -0500", hash_original_method = "1377B288F93939E9FA031027B23EE480", hash_generated_method = "36FBAF57FBC342C85330D39DAC1A304D")
     
 private StringBuffer formatImpl(Date date, StringBuffer buffer,
@@ -484,6 +508,8 @@ private StringBuffer formatImpl(Date date, StringBuffer buffer,
         return buffer;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.104 -0500", hash_original_method = "60C88CC31EC17788C6D13B63E0E097AB", hash_generated_method = "EA5E146546A756BECC591632A6C674F2")
     
 private void append(StringBuffer buffer, FieldPosition position,
@@ -615,6 +641,8 @@ private void append(StringBuffer buffer, FieldPosition position,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.106 -0500", hash_original_method = "DD478E87C0FA9016B83D28121FBA02DB", hash_generated_method = "62D8176C354F6CA4270DDAEDA6611069")
     
 private void appendDayOfWeek(StringBuffer buffer, int count, String[] longs, String[] shorts) {
@@ -623,6 +651,8 @@ private void appendDayOfWeek(StringBuffer buffer, int count, String[] longs, Str
         buffer.append(days[calendar.get(Calendar.DAY_OF_WEEK)]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.109 -0500", hash_original_method = "7A41E7167A1A13C1027D42A61A5B401C", hash_generated_method = "3DF6C7C327520361A845637D593DEC47")
     
 private void appendMonth(StringBuffer buffer, int count, String[] longs, String[] shorts) {
@@ -646,6 +676,8 @@ private void appendMonth(StringBuffer buffer, int count, String[] longs, String[
      * false implies that we should use RFC 822 format ("-0800") instead. This corresponds to 'z'
      * versus 'Z' in the format string.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.112 -0500", hash_original_method = "D7241707B86764AD36DA13023C5322B5", hash_generated_method = "EF0C4077378AB8F224EE2E770C8B4D87")
     
 private void appendTimeZone(StringBuffer buffer, int count, boolean generalTimeZone) {
@@ -672,6 +704,8 @@ private void appendTimeZone(StringBuffer buffer, int count, boolean generalTimeZ
     /**
      * @param generalTimeZone "GMT-08:00" rather than "-0800".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.114 -0500", hash_original_method = "E1D84DE5BC6EBCC18019540ED725D9AE", hash_generated_method = "F1ADD90E358970C96463D3A14ADFAEC7")
     
 private void appendNumericTimeZone(StringBuffer buffer, boolean generalTimeZone) {
@@ -692,6 +726,8 @@ private void appendNumericTimeZone(StringBuffer buffer, boolean generalTimeZone)
         appendNumber(buffer, 2, (offset % 3600000) / 60000);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.117 -0500", hash_original_method = "9FC1BA4007CF5C77F0A2B74AE6FBC98F", hash_generated_method = "A8E9337BDCA56FAC6220A63CD2F4DB3F")
     
 private void appendNumber(StringBuffer buffer, int count, int value) {
@@ -704,6 +740,8 @@ private void appendNumber(StringBuffer buffer, int count, int value) {
         numberFormat.setMinimumIntegerDigits(minimumIntegerDigits);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.120 -0500", hash_original_method = "332B10C296E05CECE855CC96158B0A61", hash_generated_method = "DA3B57BDCF1C9B301BA9760F2951B0C8")
     
 private Date error(ParsePosition position, int offset, TimeZone zone) {
@@ -732,6 +770,8 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.122 -0500", hash_original_method = "F2F2556FE533C0A730BEC347E52E5292", hash_generated_method = "03617E1213EA0CE091B1A42EE8FE9EE4")
     
 @Override
@@ -744,6 +784,8 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
      * Returns the date which is the start of the one hundred year period for two-digit year values.
      * See {@link #set2DigitYearStart} for details.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.124 -0500", hash_original_method = "71AF220EE7B6857040DD249E69ABFBDC", hash_generated_method = "E74FAA143E85741BE4E1784A56BEBA05")
     
@@ -756,6 +798,8 @@ public Date get2DigitYearStart() {
      *
      * @return the {@code DateFormatSymbols} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.127 -0500", hash_original_method = "CB6B47612D51E0A5BF8CB9FEBD927C3E", hash_generated_method = "205D974A5D75894D76F8CEEF2351B5EF")
     
@@ -763,6 +807,8 @@ public DateFormatSymbols getDateFormatSymbols() {
         return (DateFormatSymbols) formatData.clone();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.129 -0500", hash_original_method = "90B9D79300B8D8466B4A869D0B95FB5A", hash_generated_method = "ADE3F1602E201DDEC32E7E4E6B076FBB")
     
 @Override
@@ -770,6 +816,8 @@ public DateFormatSymbols getDateFormatSymbols() {
         return super.hashCode() + pattern.hashCode() + formatData.hashCode() + creationYear;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.134 -0500", hash_original_method = "308621012329CC130ED3BC1A1EBA54C1", hash_generated_method = "4FD0ABFE3C0CD8E96E29712CBC74E1E8")
     
 private int parse(String string, int offset, char format, int count) {
@@ -885,6 +933,8 @@ private int parse(String string, int offset, char format, int count) {
         return offset;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.137 -0500", hash_original_method = "4C5DAB8F3090E0FED455AF9657387367", hash_generated_method = "73128BA64BF014A304288ADA8E91211D")
     
 private int parseDayOfWeek(String string, int offset, String[] longs, String[] shorts) {
@@ -895,6 +945,8 @@ private int parseDayOfWeek(String string, int offset, String[] longs, String[] s
         return index;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.139 -0500", hash_original_method = "2749F9959CF57ED8E7DF53A146C2F50E", hash_generated_method = "166162ACB3B56B141E53976292994FD6")
     
 private int parseMonth(String string, int offset, int count, int absolute, String[] longs, String[] shorts) {
@@ -1007,6 +1059,8 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
         return date;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.147 -0500", hash_original_method = "21C7D4A169609BA40C676EFC62A50E23", hash_generated_method = "E770EAFE96F6F02CFDA569B162E2C388")
     
 private Number parseNumber(int max, String string, ParsePosition position) {
@@ -1037,6 +1091,8 @@ private Number parseNumber(int max, String string, ParsePosition position) {
         return Integer.valueOf(result);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.149 -0500", hash_original_method = "D6F7D67552A406D8EA22E8B872F7B057", hash_generated_method = "1C99299274EC12D0A55D501E0A1B9654")
     
 private int parseNumber(int max, String string, int offset, int field, int skew) {
@@ -1049,6 +1105,8 @@ private int parseNumber(int max, String string, int offset, int field, int skew)
         return position.getIndex();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.152 -0500", hash_original_method = "6091F52EF6DC933856441BD49E0F31F1", hash_generated_method = "80CBD34C39C037F0F747F6D54CD77301")
     
 private int parseText(String string, int offset, String[] text, int field) {
@@ -1071,6 +1129,8 @@ private int parseText(String string, int offset, String[] text, int field) {
         return -offset - 1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.156 -0500", hash_original_method = "C11BF6380CD6AEFF5BAB825547AF7C4A", hash_generated_method = "9CECC94FE614EB29D256C9EC771C866D")
     
 private int parseTimeZone(String string, int offset) {
@@ -1159,6 +1219,8 @@ private int parseTimeZone(String string, int offset) {
      * interpreted literally, regardless of the number of digits. So using the
      * pattern {@code MM/dd/yyyy}, {@code "01/11/12"} is parsed as Jan 11, 12 A.D.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.159 -0500", hash_original_method = "893CAD0A3A74697E4DAD4463A5252E56", hash_generated_method = "48F4698F555F5A8A349303AFDE857911")
     
@@ -1175,6 +1237,8 @@ public void set2DigitYearStart(Date date) {
      * @param value
      *            the new {@code DateFormatSymbols} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.161 -0500", hash_original_method = "4ECB9E8EB801E57F7682FCC8E531C475", hash_generated_method = "88A555D21095717934BB05D273D92D69")
     
@@ -1188,6 +1252,8 @@ public void setDateFormatSymbols(DateFormatSymbols value) {
      *
      * @return the localized pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.164 -0500", hash_original_method = "0CBAC1F89B5D111A3585F82BE6753903", hash_generated_method = "1CBD29E7E334507A5B5A2B3CECE9D604")
     
 public String toLocalizedPattern() {
@@ -1208,6 +1274,8 @@ public String toPattern() {
         return pattern;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.174 -0500", hash_original_method = "C5F79137BB7206158B23593D7F9B176B", hash_generated_method = "C150C85536BFA38D40BA2DD9527521D8")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -1219,6 +1287,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.178 -0500", hash_original_method = "8B9631F89FAD33D3B003933051524309", hash_generated_method = "AD5EEEF3C6F64B2951EFD39F3E01F710")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

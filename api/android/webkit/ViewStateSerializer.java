@@ -18,6 +18,8 @@ import droidsafe.helpers.DSUtils;
 
 class ViewStateSerializer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.297 -0500", hash_original_method = "1EF06B01DEFC03F0294E2EE5BC731C9C", hash_generated_method = "B43AF825380E83A00B9112FC5C7D13E6")
     
 static boolean serializeViewState(OutputStream stream, WebView web)
@@ -60,11 +62,15 @@ static DrawData deserializeViewState(InputStream stream, WebView web)
         return draw;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSerializeViewState(int baseLayer,
             OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeDeserializeViewState(
             InputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_INT;
@@ -76,6 +82,8 @@ static DrawData deserializeViewState(InputStream stream, WebView web)
 
     static final int VERSION = 1;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.312 -0500", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "DA8C7636A19B2A584C27A6067BDE4401")
     
 private ViewStateSerializer() {}

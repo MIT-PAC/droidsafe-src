@@ -47,13 +47,10 @@ import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.Strings;
 
-
-
-
-
-
 public class PKCS10CertificationRequest extends CertificationRequest {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.223 -0500", hash_original_method = "25B2A761D6FCD88D1F6D5EF8095097C3", hash_generated_method = "BBC0B09FA1E82C1739E7BED70CD2D30F")
     
 private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize)
@@ -65,6 +62,8 @@ private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int
             new DERInteger(1));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.225 -0500", hash_original_method = "B7B42C128A250CD690CFAC82FBCAFAD6", hash_generated_method = "49F9951902F74AC0AD87EAA49D146595")
     
 private static ASN1Sequence toDERSequence(
@@ -82,6 +81,8 @@ private static ASN1Sequence toDERSequence(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.237 -0500", hash_original_method = "1712D37D77918FC140E45AF86BEEDC9E", hash_generated_method = "AEAD122CB780C3B8C0E5BB640A83C181")
     
 private static X509Name convertName(
@@ -97,6 +98,8 @@ private static X509Name convertName(
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.267 -0500", hash_original_method = "9038DA3F1958107AA4433A375AF2AA35", hash_generated_method = "9A4696D6131CE918E35B6EA2D2873C98")
     
 static String getSignatureName(
@@ -116,6 +119,8 @@ static String getSignatureName(
         return sigAlgId.getObjectId().getId();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.270 -0500", hash_original_method = "E4BEEAE8AEEE7829CDFFCFF7B53EF391", hash_generated_method = "96DEB51CD8B19C25BE874E5A654ABB40")
     
 private static String getDigestAlgName(
@@ -515,6 +520,8 @@ public byte[] getEncoded()
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.265 -0500", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "BAD94E6087F1945FE1FF43E265DD50AD")
     
 private void setSignatureParameters(

@@ -86,9 +86,13 @@ public static String quote(String string) {
         return sb.append(string.substring(apos)).append("\\E").toString();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void closeImpl(int addr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int compileImpl(String regex, int flags) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -129,6 +133,8 @@ public static String quote(String string) {
 
     transient int address;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.886 -0500", hash_original_method = "F3225888DE48ADF8B6D1D654970A412C", hash_generated_method = "94A2C7A6AEB5FDCD4C4ADCB3D65CA700")
     
 private Pattern(String pattern, int flags) throws PatternSyntaxException {
@@ -204,12 +210,16 @@ public String[] split(CharSequence input) {
     /**
      * Returns the regular expression supplied to {@code compile}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.873 -0500", hash_original_method = "266BA96807DA041E9813A92F169CCF9C", hash_generated_method = "0A731FC248A3FE6465B6CF6C9455B5A1")
     
 public String pattern() {
         return pattern;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.876 -0500", hash_original_method = "78D8A2FB7B521C80E554EF489653C471", hash_generated_method = "6B49183A6FDA825A00C2924AD9BAA3CC")
     
 @Override
@@ -220,12 +230,16 @@ public String pattern() {
     /**
      * Returns the flags supplied to {@code compile}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.878 -0500", hash_original_method = "2653DED91010C405DFA7C9A961BBF2C3", hash_generated_method = "E29A98A382618E4AFF86FBD26B701E8F")
     
 public int flags() {
         return flags;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.889 -0500", hash_original_method = "7197179B856EBAB7792F85CCE5015D4A", hash_generated_method = "AA7F043DF2DC9A09E537E20ED58F78E6")
     
 private void compile() throws PatternSyntaxException {
@@ -245,6 +259,8 @@ private void compile() throws PatternSyntaxException {
         address = compileImpl(icuPattern, icuFlags);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.897 -0500", hash_original_method = "40BF36D36128D4529051C108E3BC0352", hash_generated_method = "46D41D65869DB995C823889BE4DFB5A5")
     
 @Override protected void finalize() throws Throwable {
@@ -255,6 +271,8 @@ private void compile() throws PatternSyntaxException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.900 -0500", hash_original_method = "53B6DF024185B8C2D6E69EA267F8FA46", hash_generated_method = "03705951898BB4A4F0A5F822FE183671")
     
 private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {

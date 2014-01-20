@@ -43,6 +43,8 @@ public final class MathContext implements Serializable {
      * @throws IllegalArgumentException
      *             if {@code precision < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.342 -0500", hash_original_method = "F106BE9E01EEA929163197AB20FC2E93", hash_generated_method = "ED48F58267616074573C93A116EF135D")
     
 public MathContext(int precision) {
@@ -64,6 +66,8 @@ public MathContext(int precision) {
      * @throws NullPointerException
      *             if {@code roundingMode} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.345 -0500", hash_original_method = "8370E5A41DB25B2BD130B4958C97346D", hash_generated_method = "326C198F27A28956CF1D6E22903C6750")
     
 public MathContext(int precision, RoundingMode roundingMode) {
@@ -83,6 +87,8 @@ public MathContext(int precision, RoundingMode roundingMode) {
      *             if the string is not in the correct format or if the
      *             precision specified is < 0.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.348 -0500", hash_original_method = "1D8B76B7C700FBF158167DD4C05A3C30", hash_generated_method = "96CB7A0DB097A7BF33DE16B65A96E3E8")
     
 public MathContext(String s) {
@@ -110,12 +116,16 @@ public MathContext(String s) {
         checkValid();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.352 -0500", hash_original_method = "426953F7355AB3CD325EF2685FB1287C", hash_generated_method = "71E5194BC4611C1B71D7A4670C0EE195")
     
 private IllegalArgumentException invalidMathContext(String reason, String s) {
         throw new IllegalArgumentException(reason + ": " + s);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.354 -0500", hash_original_method = "D8DAE7CCCFF0DCEAE4D1ED9221F38BDC", hash_generated_method = "8D5FCA96363B89E55239D1C0C0DF3190")
     
 private void checkValid() {
@@ -136,6 +146,8 @@ private void checkValid() {
      *
      * @return the precision.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.357 -0500", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "A8933D1A9891189E4D69EEFC50A2F6A3")
     
@@ -159,6 +171,8 @@ public int getPrecision() {
      *
      * @return the rounding mode.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.359 -0500", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "6D523F860AF5DA84DA6E20F0C7E0AAFA")
     
@@ -175,6 +189,8 @@ public RoundingMode getRoundingMode() {
      * @return {@code true} if this {@code MathContext} instance is equal to the
      *         {@code x} argument; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.361 -0500", hash_original_method = "297627CFD1856C2678820F72FEC54301", hash_generated_method = "42CFCBB47BC16705E38674A80E91B3F9")
     
 @Override
@@ -189,6 +205,8 @@ public RoundingMode getRoundingMode() {
      *
      * @return the hash code for this {@code MathContext}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.364 -0500", hash_original_method = "CDDF05FC589C0F0146B62DD26D215A30", hash_generated_method = "B195C6308746B1DAC1EA450308C3E284")
     
 @Override
@@ -208,6 +226,8 @@ public RoundingMode getRoundingMode() {
      *
      * @return a string representation for this {@code MathContext} instance
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.366 -0500", hash_original_method = "537ED30546F81713B44C66AB9FEB6470", hash_generated_method = "6DC8430757F134AB039D50B3DD0CF7F7")
     
 @Override
@@ -224,6 +244,8 @@ public RoundingMode getRoundingMode() {
      * @throws StreamCorruptedException
      *             if {@code roundingMode == null}
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.369 -0500", hash_original_method = "323BCE51E980C267DF7F7C47AD5D1D50", hash_generated_method = "0C99EEF0C4D6801AF7A92F869AD842C8")
     
 private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {

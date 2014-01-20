@@ -20,7 +20,9 @@ import android.util.Log;
 
 public final class BluetoothDevice implements Parcelable {
 
-    /*package*/ @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.730 -0500", hash_original_method = "B0796CDCCC198F5133D1C780F27F0FFA", hash_generated_method = "A33AAC12BB252B20DAA5E7A5619BAA78")
     
 static IBluetooth getService() {
@@ -301,7 +303,9 @@ public BluetoothDevice[] newArray(int size) {
      * @throws IllegalArgumentException address is invalid
      * @hide
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.733 -0500", hash_original_method = "01E6ABA43F371BE96DE0741E69CF2696", hash_generated_method = "14317736164C3BE368BCBD12F4A080C4")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.733 -0500", hash_original_method = "01E6ABA43F371BE96DE0741E69CF2696", hash_generated_method = "14317736164C3BE368BCBD12F4A080C4")
     
 BluetoothDevice(String address) {
         getService();  // ensures sService is initialized

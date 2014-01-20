@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
 public class ImageDescriptor {
 
     /**
@@ -17,6 +15,8 @@ public class ImageDescriptor {
      * @param valueIndex
      * @return ImageDescriptor
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.680 -0500", hash_original_method = "4B0B8276597CEA521E1E338B4AADD471", hash_generated_method = "9283ED1C2044F4178961436920D7FF12")
     
 static ImageDescriptor parse(byte[] rawData, int valueIndex) {
@@ -71,6 +71,8 @@ static ImageDescriptor parse(byte[] rawData, int valueIndex) {
     // public static final int ID_LENGTH = 9;
     // ID_LENGTH substituted by IccFileHandlerBase.GET_RESPONSE_EF_IMG_SIZE_BYTES
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.678 -0500", hash_original_method = "9D6AA19EA5B9D87B22803CD155673A0E", hash_generated_method = "9D6AA19EA5B9D87B22803CD155673A0E")
     
 ImageDescriptor() {

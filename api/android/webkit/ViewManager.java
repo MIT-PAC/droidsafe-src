@@ -11,10 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsoluteLayout;
 
-
-
-
-
 class ViewManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.355 -0500", hash_original_field = "BAFAAB07E3E16D198144C59EEA29BFF5", hash_generated_field = "52CD7F2804541D9D147DA6137D506751")
 
@@ -38,6 +34,8 @@ class ViewManager {
 
     private  int MAX_SURFACE_AREA;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.390 -0500", hash_original_method = "41D6739987EDABAA49AC971619E5EA69", hash_generated_method = "129E9A10B1F96A52757E0F16C329E5B4")
     
 ViewManager(WebView w) {
@@ -166,6 +164,8 @@ private void requestLayout(ChildView v) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.402 -0500", hash_original_method = "4F661FC74F7E1A720FEE3022046A7DAD", hash_generated_method = "4F661FC74F7E1A720FEE3022046A7DAD")
     
 void startZoom() {
@@ -175,6 +175,8 @@ void startZoom() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.404 -0500", hash_original_method = "F0F47054709F050065D565E243DB8138", hash_generated_method = "F0F47054709F050065D565E243DB8138")
     
 void endZoom() {
@@ -184,6 +186,8 @@ void endZoom() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.406 -0500", hash_original_method = "C82C75EA2573C85D59C63AD0662E50B7", hash_generated_method = "C82C75EA2573C85D59C63AD0662E50B7")
     
 void scaleAll() {
@@ -192,6 +196,8 @@ void scaleAll() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.408 -0500", hash_original_method = "4F028387E717D291F0C61AFA65DDC151", hash_generated_method = "4F028387E717D291F0C61AFA65DDC151")
     
 void hideAll() {
@@ -204,6 +210,8 @@ void hideAll() {
         mHidden = true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.410 -0500", hash_original_method = "B75BBFE8728E55E21A97BD827A74F550", hash_generated_method = "B75BBFE8728E55E21A97BD827A74F550")
     
 void showAll() {
@@ -216,6 +224,8 @@ void showAll() {
         mHidden = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.414 -0500", hash_original_method = "CA54479F86F4EE856736FA836E1EE2FC", hash_generated_method = "CA54479F86F4EE856736FA836E1EE2FC")
     
 void postResetStateAll() {
@@ -226,6 +236,8 @@ void postResetStateAll() {
         });
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.419 -0500", hash_original_method = "60132EA2B1596F91D6DE492E58F4C89D", hash_generated_method = "60132EA2B1596F91D6DE492E58F4C89D")
     
 void postReadyToDrawAll() {
@@ -238,7 +250,6 @@ void postReadyToDrawAll() {
             }
         });
     }
-
     
     class ChildView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.358 -0500", hash_original_field = "3ECDEC351FCE13CBA8A59E38409B3C9E", hash_generated_field = "3ECDEC351FCE13CBA8A59E38409B3C9E")
@@ -262,6 +273,8 @@ void postReadyToDrawAll() {
 ChildView() {
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.371 -0500", hash_original_method = "49948859AFA14B35AAA713D3429ED265", hash_generated_method = "49948859AFA14B35AAA713D3429ED265")
         
 void setBounds(int x, int y, int width, int height) {
@@ -271,6 +284,8 @@ void setBounds(int x, int y, int width, int height) {
             this.height = height;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.376 -0500", hash_original_method = "C5CB26D6C1A4635E70554CC63D76B563", hash_generated_method = "3D46DAB228E58C931888FB6D80231ED0")
         
 void attachView(int x, int y, int width, int height) {
@@ -294,6 +309,8 @@ void attachView(int x, int y, int width, int height) {
             });
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.379 -0500", hash_original_method = "E19361570D109423E86E664B0AC4389A", hash_generated_method = "C90C39F16FFD9315E5FB7AA3A3CF4FC8")
         
 private void attachViewOnUIThread() {
@@ -304,6 +321,8 @@ private void attachViewOnUIThread() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.384 -0500", hash_original_method = "82A15EE3F2ACFE39B2389F6444C4BAEB", hash_generated_method = "82A15EE3F2ACFE39B2389F6444C4BAEB")
         
 void removeView() {
@@ -317,13 +336,14 @@ void removeView() {
             });
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.386 -0500", hash_original_method = "2FC5BD33F15E4B580397FED329387FB1", hash_generated_method = "0FD1231D619BF4E62EDF563955299AA0")
         
 private void removeViewOnUIThread() {
             mWebView.removeView(mView);
             mChildren.remove(this);
         }
-
         
     }
 

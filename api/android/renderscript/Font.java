@@ -24,6 +24,8 @@ private static void addFamilyToMap(FontFamily family) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.208 -0500", hash_original_method = "C5D0B1FC913C6CAD386E4358A12A37F8", hash_generated_method = "11F387AD43C7B85FB1DD15D7677948DC")
     
 private static void initFontFamilyMap() {
@@ -185,6 +187,8 @@ static public Font create(RenderScript rs, Resources res, String familyName, Sty
 
         String mBoldItalicFileName;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:43.961 -0400", hash_original_method = "4B1D119D7774A95910A46246D7100E2A", hash_generated_method = "4B1D119D7774A95910A46246D7100E2A")
         public FontFamily ()
         {
@@ -214,6 +218,8 @@ static public Font create(RenderScript rs, Resources res, String familyName, Sty
 
     private static Map<String, FontFamily> sFontFamilyMap;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.214 -0500", hash_original_method = "CEBF3BB0FBFA1185414632BE38CC53FE", hash_generated_method = "CEBF3BB0FBFA1185414632BE38CC53FE")
     
 Font(int id, RenderScript rs) {

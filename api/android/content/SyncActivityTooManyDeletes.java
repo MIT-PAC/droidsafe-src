@@ -18,12 +18,8 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-
-
-
 public class SyncActivityTooManyDeletes extends Activity implements AdapterView.OnItemClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.902 -0500", hash_original_field = "8767D22D0CC33D20371C3E004058DD78", hash_generated_field = "86D230D989C0289FA38126BD15162121")
-
 
     private long mNumDeletes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.904 -0500", hash_original_field = "77E70EE964F6B49E35EDB9210610AC8E", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
@@ -116,6 +112,8 @@ public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         finish();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.916 -0500", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "7A50F5BF6B553B57A60C5B28B009277B")
     
 private void startSyncReallyDelete() {
@@ -127,6 +125,8 @@ private void startSyncReallyDelete() {
         ContentResolver.requestSync(mAccount, mAuthority, extras);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.918 -0500", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "37D3C13826B9713FFEEFD1B75D1CF62C")
     
 private void startSyncUndoDeletes() {
@@ -137,7 +137,6 @@ private void startSyncUndoDeletes() {
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         ContentResolver.requestSync(mAccount, mAuthority, extras);
     }
-
     
 }
 

@@ -56,6 +56,8 @@ public PipeImpl() throws IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.258 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
         private  FileDescriptor fd;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.261 -0500", hash_original_method = "86C415C3CB1DC768FC064168AEB16626", hash_generated_method = "6D79B65C4B5AEF7634F6921E34A4AC64")
         
 private FdCloser(FileDescriptor fd) {

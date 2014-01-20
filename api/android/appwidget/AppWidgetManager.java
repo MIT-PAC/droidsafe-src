@@ -103,6 +103,8 @@ public static AppWidgetManager getInstance(Context context) {
 
     private DisplayMetrics mDisplayMetrics;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.839 -0500", hash_original_method = "28C84B38FB30543E3D37A9D265756E51", hash_generated_method = "28C41E57995342459E5B2F477FA6DD69")
     
 private AppWidgetManager(Context context) {

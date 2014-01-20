@@ -19,6 +19,8 @@ import android.provider.Settings;
 
 public class Ringtone {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.964 -0500", hash_original_method = "7C7E876780A603240D42A5BB96522037", hash_generated_method = "EAAD1702E472810FAA2CF3F810517246")
     
 private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
@@ -114,6 +116,8 @@ private static String getTitle(Context context, Uri uri, boolean followSettingsU
 
     private Context mContext;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.953 -0500", hash_original_method = "6365B663239886F10DC7E25536BA8CE2", hash_generated_method = "6365B663239886F10DC7E25536BA8CE2")
     
 Ringtone(Context context) {
@@ -172,6 +176,8 @@ public String getTitle(Context context) {
         return mTitle = getTitle(context, mUri, true);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.967 -0500", hash_original_method = "3D9FD67EE5212878A40EB00FDD255FB4", hash_generated_method = "64022A1AA54923F2F5BCB6D43B903CE2")
     
 private void openMediaPlayer() throws IOException {
@@ -201,6 +207,8 @@ private void openMediaPlayer() throws IOException {
         mAudio.prepare();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.969 -0500", hash_original_method = "CD193C4ECAE3F3E852CEEC2F9F6DE33F", hash_generated_method = "CD193C4ECAE3F3E852CEEC2F9F6DE33F")
     
 void open(FileDescriptor fd) throws IOException {
@@ -208,6 +216,8 @@ void open(FileDescriptor fd) throws IOException {
         openMediaPlayer();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.972 -0500", hash_original_method = "5CEC2029E42F2A9E18E70ED996F72E6E", hash_generated_method = "5CEC2029E42F2A9E18E70ED996F72E6E")
     
 void open(AssetFileDescriptor fd) throws IOException {
@@ -215,6 +225,8 @@ void open(AssetFileDescriptor fd) throws IOException {
         openMediaPlayer();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.974 -0500", hash_original_method = "B6A9AEC7559EAFEEA670C63D280E78C6", hash_generated_method = "B6A9AEC7559EAFEEA670C63D280E78C6")
     
 void open(Uri uri) throws IOException {
@@ -269,6 +281,8 @@ public boolean isPlaying() {
         return mAudio != null && mAudio.isPlaying();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.983 -0500", hash_original_method = "A4C423176AB11C87E288F89C31FDE32A", hash_generated_method = "A4C423176AB11C87E288F89C31FDE32A")
     
 void setTitle(String title) {

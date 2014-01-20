@@ -17,6 +17,8 @@ class DefaultSSLSocketFactory extends SSLSocketFactory {
 
     private  String errMessage;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.475 -0500", hash_original_method = "518A173F954BA705CC3BF505F9E13E1E", hash_generated_method = "518A173F954BA705CC3BF505F9E13E1E")
     
 DefaultSSLSocketFactory(String mes) {

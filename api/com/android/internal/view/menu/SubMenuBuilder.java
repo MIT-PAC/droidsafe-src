@@ -87,6 +87,8 @@ public MenuItem getItem() {
         return mParentMenu;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.446 -0500", hash_original_method = "9000096E0EC4FB2931429080284C8422", hash_generated_method = "8EF4C138320A164DEF5D840F03DE8998")
     
 @Override

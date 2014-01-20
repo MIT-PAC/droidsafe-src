@@ -27,6 +27,8 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
      *
      * @return The resulting Android logging level.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.853 -0500", hash_original_method = "3F92BD817EEC109FB3EFF14A3BE3BBE9", hash_generated_method = "35B5BBAE71B726DCD5E0BB70F044795B")
     

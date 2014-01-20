@@ -120,6 +120,8 @@ private static boolean canResponseHaveBody(final HttpRequest request,
      * this interface
      * @param headers reqeust headers
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.667 -0500", hash_original_method = "E3AB2A1C4C118761EA0CC20D593A5A78", hash_generated_method = "E3C161AA33E9F97B75915A04C7D01B65")
     
 Request(String method, HttpHost host, HttpHost proxyHost, String path,
@@ -157,6 +159,8 @@ Request(String method, HttpHost host, HttpHost proxyHost, String path,
     /**
      * @param pause True if the load should be paused.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.669 -0500", hash_original_method = "E8032EBF304EE392C16172EA55A4B7FA", hash_generated_method = "6D078047263CC1711E539100E6DECBDE")
     
 synchronized void setLoadingPaused(boolean pause) {
@@ -171,13 +175,17 @@ synchronized void setLoadingPaused(boolean pause) {
     /**
      * @param connection Request served by this connection
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.671 -0500", hash_original_method = "A8C7471D7BEF79EC71A4F8B9C611F231", hash_generated_method = "A8C7471D7BEF79EC71A4F8B9C611F231")
     
 void setConnection(Connection connection) {
         mConnection = connection;
     }
 
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.673 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
     
 EventHandler getEventHandler() {
@@ -190,6 +198,8 @@ EventHandler getEventHandler() {
      * @param name of header
      * @param value of header
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.676 -0500", hash_original_method = "CAFFB5BC78A2E3A526CF37E51EA3E6DA", hash_generated_method = "CAFFB5BC78A2E3A526CF37E51EA3E6DA")
     
 void addHeader(String name, String value) {
@@ -210,6 +220,8 @@ void addHeader(String name, String value) {
      * Add all headers in given map to this request.  This is a helper
      * method: it calls addHeader for each pair in the map.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.678 -0500", hash_original_method = "CAEF84F00E8BD676D33383FFEC6D862C", hash_generated_method = "CAEF84F00E8BD676D33383FFEC6D862C")
     
 void addHeaders(Map<String, String> headers) {
@@ -225,6 +237,8 @@ void addHeaders(Map<String, String> headers) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.379 -0400", hash_original_method = "8B550870D8AB2316B065E1C79CBF1A12", hash_generated_method = "383E98875EEC585A968060D5275FCCF4")
      void sendRequest(AndroidHttpClientConnection httpClientConnection) throws HttpException, IOException {
         addTaint(httpClientConnection.getTaint());
@@ -260,6 +274,8 @@ void addHeaders(Map<String, String> headers) {
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.382 -0400", hash_original_method = "77E4A14D27C62797F0A19B684369B7C4", hash_generated_method = "2E64E738A714DA8F9EDDFAFF77FC9478")
      void readResponse(AndroidHttpClientConnection httpClientConnection) throws IOException, ParseException {
         addTaint(httpClientConnection.getTaint());
@@ -394,6 +410,8 @@ void addHeaders(Map<String, String> headers) {
      *
      * Called by RequestHandle from non-network thread
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.687 -0500", hash_original_method = "0703BC7E6FB4CF479DE68CDEB6E6E012", hash_generated_method = "4B6EC5FDAD794F7DFF50406E013371F9")
     
 synchronized void cancel() {
@@ -412,6 +430,8 @@ synchronized void cancel() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.689 -0500", hash_original_method = "512B3E32AEE990D1477AF1DD14A214E5", hash_generated_method = "632932A86D9A8B15AC1DAA7F9BBDA079")
     
@@ -428,6 +448,8 @@ String getHostPort() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.386 -0400", hash_original_method = "2DF65EB3016FC9C1BCED4852586E67B2", hash_generated_method = "1CD07FD701792A8833A6C0A8D18BE133")
      String getUri() {
@@ -462,6 +484,8 @@ public String toString() {
      * If this request has been sent once and failed, it must be reset
      * before it can be sent again.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.696 -0500", hash_original_method = "6782015769BAD3CE7033564D51D44773", hash_generated_method = "5F9D0864E5714EA6E374497F09D12465")
     
 void reset() {
@@ -493,6 +517,8 @@ void reset() {
      * Pause thread request completes.  Used for synchronous requests,
      * and testing
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.698 -0500", hash_original_method = "59F95FD933B02B7872449B124B2DE304", hash_generated_method = "59F95FD933B02B7872449B124B2DE304")
     
 void waitUntilComplete() {
@@ -506,6 +532,8 @@ void waitUntilComplete() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.701 -0500", hash_original_method = "7B097BCF5E489C3DB5111F527714D27C", hash_generated_method = "7B097BCF5E489C3DB5111F527714D27C")
     
 void complete() {
@@ -522,6 +550,8 @@ void complete() {
      * itself without a costly readthrough.  I'm not sure skip() would
      * do what we want.  If you know a better way, please let me know.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.706 -0500", hash_original_method = "270D8BA233306D6526BC7DEE9032A6D1", hash_generated_method = "8DDA10B9AFD52875FB60E681BAE21A29")
     
 private void setBodyProvider(InputStream bodyProvider, int bodyLength) {
@@ -553,6 +583,8 @@ public void handleSslErrorResponse(boolean proceed) {
      * Helper: calls error() on eventhandler with appropriate message
      * This should not be called before the mConnection is set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.710 -0500", hash_original_method = "0F527F16FE7A8194B2376A18FA9A34FA", hash_generated_method = "0F527F16FE7A8194B2376A18FA9A34FA")
     
 void error(int errorId, int resourceId) {

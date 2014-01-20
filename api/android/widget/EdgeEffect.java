@@ -407,6 +407,8 @@ public boolean draw(Canvas canvas) {
         return mState != STATE_IDLE;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.879 -0500", hash_original_method = "217F98194ACCE474266C15D1EE978E29", hash_generated_method = "FCC2C3FBF942F3A242F19781D96BDFAE")
     
 private void update() {

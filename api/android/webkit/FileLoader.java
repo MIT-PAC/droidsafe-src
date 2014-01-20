@@ -16,14 +16,8 @@ import android.util.TypedValue;
 
 import com.android.internal.R;
 
-
-
-
-
-
 class FileLoader extends StreamLoader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.123 -0500", hash_original_field = "EB9F0DA7226F09B1BEBAFC8B7084A19D", hash_generated_field = "2386E910C23CC098E2AFE444C68F6B86")
-
 
     // used for files under asset directory
     static final int TYPE_ASSET = 1;
@@ -35,10 +29,8 @@ class FileLoader extends StreamLoader {
     static final int TYPE_FILE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.130 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
-
     private static final String LOGTAG = "webkit";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.117 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
-
 
     private String mPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.119 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -58,6 +50,8 @@ class FileLoader extends StreamLoader {
      * @param allowFileAccess true if this WebView is allowed to access files
      *                        on the file system.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.133 -0500", hash_original_method = "0A468BF2FF018C04A055F46D2001401C", hash_generated_method = "030E5997862439D9E8876001FF164B61")
     
 FileLoader(String url, LoadListener loadListener, int type,
@@ -86,6 +80,8 @@ FileLoader(String url, LoadListener loadListener, int type,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.135 -0500", hash_original_method = "987DD890C3289D23A785AB1F430BD4A8", hash_generated_method = "363217D5C0B22809618E324C1C500FBA")
     
 private String errString(Exception ex) {

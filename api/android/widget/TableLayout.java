@@ -31,6 +31,8 @@ public class TableLayout extends LinearLayout {
      * @return a sparse array of boolean mapping column indexes to the columns
      *         collapse state
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.445 -0500", hash_original_method = "A6D730040E20DF7D0E0DA97862E3FE2F", hash_generated_method = "2E54471442981D41A41E36565C1066D6")
     
 private static SparseBooleanArray parseColumns(String sequence) {
@@ -140,6 +142,8 @@ public TableLayout(Context context, AttributeSet attrs) {
      * <p>Performs initialization common to prorgrammatic use and XML use of
      * this widget.</p>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.448 -0500", hash_original_method = "B376012DF0DA3032DA90C2CCE23CE9AB", hash_generated_method = "72AC2FEF484178E0E8B1CD63D07623DB")
     
 private void initTableLayout() {
@@ -173,6 +177,8 @@ private void initTableLayout() {
         mPassThroughListener.mOnHierarchyChangeListener = listener;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.453 -0500", hash_original_method = "46F66A2D3F5735AEA41A7DB58B431E82", hash_generated_method = "278AB8FF62E299874D62421E6B6C0879")
     
 private void requestRowsLayout() {
@@ -370,6 +376,8 @@ public boolean isColumnShrinkable(int columnIndex) {
      *
      * @param child the newly added child
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.480 -0500", hash_original_method = "1A7EBA0F6B48090D166288951056A8A7", hash_generated_method = "6E5D1B029CF43E91C365AE3CFD94A65C")
     
 private void trackCollapsedColumns(View child) {
@@ -465,6 +473,8 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.497 -0500", hash_original_method = "D260EEF009252A9802D5F41574FD2463", hash_generated_method = "BAF5DBBE259B49798F16E9BBAD32874F")
     
 @Override
@@ -484,6 +494,8 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.499 -0500", hash_original_method = "A49B05A52F9F2AD597034B1B66F4E4A9", hash_generated_method = "C777CC254EEC31443B44EAEB5431CB13")
     
 @Override
@@ -500,6 +512,8 @@ private void trackCollapsedColumns(View child) {
      *
      * @param widthMeasureSpec the measure constraint imposed by our parent
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.503 -0500", hash_original_method = "4DFA55B8EC4F00C998EFCF5CE369887F", hash_generated_method = "E70E92D0AB2F45BDABAA12B4873229AD")
     
 private void findLargestCells(int widthMeasureSpec) {
@@ -571,6 +585,8 @@ private void findLargestCells(int widthMeasureSpec) {
      * @param widthMeasureSpec the width measure specification as indicated
      *                         by this widget's parent
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.506 -0500", hash_original_method = "FCBDEF350302C6CDE69DD815C0835AC5", hash_generated_method = "562958D2A357BCA14CEF45418F0B26BF")
     
 private void shrinkAndStretchColumns(int widthMeasureSpec) {
@@ -599,6 +615,8 @@ private void shrinkAndStretchColumns(int widthMeasureSpec) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.509 -0500", hash_original_method = "4E3F5E45ADBAE8A09C7C386A43B12806", hash_generated_method = "E8D8AEA341637FF901E4F3686D772F5E")
     
 private void mutateColumnsWidth(SparseBooleanArray columns,

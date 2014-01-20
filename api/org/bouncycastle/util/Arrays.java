@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public final class Arrays {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.182 -0500", hash_original_method = "0A5BBE2F40A2BF8386730633F8545D7C", hash_generated_method = "D07E20A7E314AAC5ABD67A774D681E7E")
@@ -263,13 +260,14 @@ public static int[] clone(int[] data)
 
         return copy;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.180 -0500", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "CD4220DCAB9E3401D982212A79ABD6BB")
     
 private Arrays() 
     {
         // static class, hide constructor
     }
-
     
 }
 

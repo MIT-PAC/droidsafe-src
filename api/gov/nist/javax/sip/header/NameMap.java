@@ -69,6 +69,8 @@ public static void addExtensionHeader(
         nameMap.put(headerName.toLowerCase(), className);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.952 -0500", hash_original_method = "E9B22A8DE01AD2CD98E62339746DE4A7", hash_generated_method = "5F8B99DAC7CF3485F2B4ACAF3F264FB7")
     
 private static void initializeNameMap() {

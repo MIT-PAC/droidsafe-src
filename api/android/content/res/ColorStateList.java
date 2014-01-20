@@ -71,6 +71,8 @@ public static ColorStateList createFromXml(Resources r, XmlPullParser parser)
      * a tag in an XML document, tries to create a ColorStateList from that tag.
      * Returns null if the tag is not a valid ColorStateList.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.581 -0500", hash_original_method = "29461E82F281519D72B414C160880677", hash_generated_method = "2A1176A16A76E420F38B3ECB1167F71E")
     
 private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
@@ -129,6 +131,8 @@ public ColorStateList createFromParcel(Parcel source) {
 
     private int mDefaultColor = 0xffff0000;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.570 -0500", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "7CABE0A9DC84A186FEE9ADFA234E2A75")
     
 private ColorStateList() { }
@@ -175,6 +179,8 @@ public ColorStateList withAlpha(int alpha) {
     /**
      * Fill in this object based on the contents of an XML "selector" element.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.587 -0500", hash_original_method = "096D4D4F0EE82FD61B43B813E755281E", hash_generated_method = "C56BAAE3C8CF809F5B6303E13BAA4F9F")
     
 private void inflate(Resources r, XmlPullParser parser, AttributeSet attrs)

@@ -37,6 +37,8 @@ public static MifareUltralight get(Tag tag) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.875 -0500", hash_original_method = "5381F3968E5290EBFA8EA57118E465FB", hash_generated_method = "C9C2E18151F1C0210CB63BA63893EFE9")
     
 private static void validatePageIndex(int pageIndex) {

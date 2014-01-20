@@ -200,6 +200,8 @@ public void close() {
         close(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.834 -0500", hash_original_method = "AA0DE56AB4C8CE099E885498EC0B29F9", hash_generated_method = "D1ABD1DE0C1AD1E949134E832F826DF0")
     
 private synchronized void close(boolean closeRtp) {
@@ -278,6 +280,8 @@ public SipSession getSipSession() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.846 -0500", hash_original_method = "88FD57B0E3684A7BA74DB8405E64F4E3", hash_generated_method = "0C73D2B17900478CB2681908082D5C55")
     
 private synchronized void transferToNewSession() {
@@ -515,6 +519,8 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.890 -0500", hash_original_method = "20EC585B752C6E63355D5D35BEA59116", hash_generated_method = "B065157F6D47410321EA14DD917AD090")
     
 private void onError(int errorCode, String message) {
@@ -702,6 +708,8 @@ public void continueCall(int timeout) throws SipException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.906 -0500", hash_original_method = "0D8E98137E8907FA474D9700B196F628", hash_generated_method = "F31C8E0FB66AAA25B5BE186D0BBE5E5E")
     
 private SimpleSessionDescription createOffer() {
@@ -717,6 +725,8 @@ private SimpleSessionDescription createOffer() {
         return offer;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.910 -0500", hash_original_method = "7AC71E8F4C8E41998B13EFBED71D93BD", hash_generated_method = "5BE9B4EC5A53056BB8D22C579F0987D0")
     
 private SimpleSessionDescription createAnswer(String offerSd) {
@@ -779,6 +789,8 @@ private SimpleSessionDescription createAnswer(String offerSd) {
         return answer;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.912 -0500", hash_original_method = "B99EA71C05B29A1F5EF342AB2FDD525C", hash_generated_method = "CEC42E4577DBB5AC1FEF22454C89E0F1")
     
 private SimpleSessionDescription createHoldOffer() {
@@ -787,6 +799,8 @@ private SimpleSessionDescription createHoldOffer() {
         return offer;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.915 -0500", hash_original_method = "71EB52827AB306B4A3579086FF868817", hash_generated_method = "D7903CB59D6AF82615A8C665CAB4ED8F")
     
 private SimpleSessionDescription createContinueOffer() {
@@ -803,6 +817,8 @@ private SimpleSessionDescription createContinueOffer() {
         return offer;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.917 -0500", hash_original_method = "9511FA94EBBE4D902AF961AAA5743C5F", hash_generated_method = "7082D71768A9E983E4176C4E8ADEA499")
     
 private void grabWifiHighPerfLock() {
@@ -815,6 +831,8 @@ private void grabWifiHighPerfLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.919 -0500", hash_original_method = "94C077E9D4A3B70D9C34E2292E80901C", hash_generated_method = "7CE0BDE3036B28BE29C5EF5060234744")
     
 private void releaseWifiHighPerfLock() {
@@ -825,6 +843,8 @@ private void releaseWifiHighPerfLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.921 -0500", hash_original_method = "FC1EDAFB978C2E10313819704C8134E2", hash_generated_method = "3995CD253293D570183EA884E01EC4C6")
     
 private boolean isWifiOn() {
@@ -878,6 +898,8 @@ public void setSpeakerMode(boolean speakerMode) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.930 -0500", hash_original_method = "1B6C9A8A7DE7A949D0CD2E188D6FBBDC", hash_generated_method = "7CE9BD647031F8943EB0E2073490FFA1")
     
 private boolean isSpeakerOn() {
@@ -1015,6 +1037,8 @@ public void startAudio() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.948 -0500", hash_original_method = "29EB701080CA01C59CC1BB8E207AC1D7", hash_generated_method = "EA3BFAF85BE5FC369B110AA087A55582")
     
 private synchronized void startAudioInternal() throws UnknownHostException {
@@ -1235,6 +1259,8 @@ public void onChanged(SipAudioCall call) {
     }
 
     // set audio group mode based on current audio configuration
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.950 -0500", hash_original_method = "1498B4B4889D09E5AF0E80BDDCC19CDB", hash_generated_method = "0E9C6EBC082541BE26AC849B2D3F9FB2")
     
 private void setAudioGroupMode() {
@@ -1252,6 +1278,8 @@ private void setAudioGroupMode() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.952 -0500", hash_original_method = "CC3F94229D0F8EEA9220358FBB15354E", hash_generated_method = "CF8959E971F00E833BC56607C43E6869")
     
 private void stopCall(boolean releaseSocket) {
@@ -1267,12 +1295,16 @@ private void stopCall(boolean releaseSocket) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.954 -0500", hash_original_method = "B878A2570A0CCD8ECF14B79C9C36E090", hash_generated_method = "CA7432B876AC7951F9DEED259E1DBA7F")
     
 private String getLocalIp() {
         return mSipSession.getLocalIp();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.957 -0500", hash_original_method = "16DFE4C58B2AE1A5BAAA6CDCCC648429", hash_generated_method = "9CCC718C5B190BBFF32579842470FEB4")
     
 private void throwSipException(Throwable throwable) throws SipException {
@@ -1283,6 +1315,8 @@ private void throwSipException(Throwable throwable) throws SipException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.959 -0500", hash_original_method = "7E510B007B6231BC910990588CC742B2", hash_generated_method = "FDEBF340292A237B489ACC5BDF9B6D51")
     
 private SipProfile getPeerProfile(SipSession session) {

@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class SpannableString extends SpannableStringInternal implements CharSequence, GetChars, Spannable {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.067 -0500", hash_original_method = "90012DFD660EB52D22F0B732AA7864A9", hash_generated_method = "E865D88B944D0050BC86EF2B1CE2F561")
     
 public static SpannableString valueOf(CharSequence source) {
@@ -24,6 +26,8 @@ public SpannableString(CharSequence source) {
         super(source, 0, source.length());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.064 -0500", hash_original_method = "CFA97E25B40B182279BF16FEA76606C4", hash_generated_method = "5E9A332CDC5FDCFABB848DE886135BBA")
     
 private SpannableString(CharSequence source, int start, int end) {
@@ -47,30 +51,40 @@ public void removeSpan(Object what) {
         super.removeSpan(what);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.075 -0500", hash_original_method = "2D77EB0B8B2B37960A9B77E6DDEED655", hash_generated_method = "7D96E1C66DED8CD342ADC6C1F18B8170")
     
 public final CharSequence subSequence(int start, int end) {
         return new SpannableString(this, start, end);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanEnd(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanEnd(what);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanFlags(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanFlags(what);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanStart(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanStart(what);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int nextSpanTransition(int start, int limit, Class kind) {
     	addTaint(start);
     	addTaint(limit);
@@ -78,6 +92,8 @@ public final CharSequence subSequence(int start, int end) {
     	return super.nextSpanTransition(start, limit, kind);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
     	addTaint(queryStart);

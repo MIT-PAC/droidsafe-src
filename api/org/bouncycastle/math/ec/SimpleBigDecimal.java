@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
-
-
-
 class SimpleBigDecimal {
 
     /**
@@ -32,7 +27,6 @@ public static SimpleBigDecimal getInstance(BigInteger value, int scale)
 
     private static final long serialVersionUID = 1L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.974 -0500", hash_original_field = "7D34351BBD83B5DAEF7230C2695B3A56", hash_generated_field = "4CD174344F65D3883705CA71073A947D")
-
 
     private  BigInteger bigInt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.977 -0500", hash_original_field = "BA0D3D812FE0526303F6820DD8690E4B", hash_generated_field = "F9D5D1CA2ABDD82810FF1FE80E0268E6")
@@ -59,6 +53,8 @@ public SimpleBigDecimal(BigInteger bigInt, int scale)
         this.scale = scale;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.986 -0500", hash_original_method = "BB0449F02A6AA340B8F9AEE6846C1B89", hash_generated_method = "6C17DF7C076A9066461547D15218BA60")
     
 private SimpleBigDecimal(SimpleBigDecimal limBigDec)
@@ -67,6 +63,8 @@ private SimpleBigDecimal(SimpleBigDecimal limBigDec)
         scale = limBigDec.scale;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.988 -0500", hash_original_method = "C3E845BC0594ECAC644A3338EF26C373", hash_generated_method = "0ED9610980B5E3F91BA7C767C6247810")
     
 private void checkScale(SimpleBigDecimal b)

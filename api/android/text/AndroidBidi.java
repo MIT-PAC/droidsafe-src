@@ -163,11 +163,15 @@ public static Directions directions(int dir, byte[] levels, int lstart,
         return new Directions(ld);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int runBidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.359 -0400", hash_original_method = "67801A817F22277FC821400294E4A632", hash_generated_method = "67801A817F22277FC821400294E4A632")
     public AndroidBidi ()
     {

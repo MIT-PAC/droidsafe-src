@@ -177,6 +177,8 @@ public static final String concatGroups(Matcher matcher) {
     /**
      * Do not create this static utility class.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.488 -0500", hash_original_method = "91DADCDFBE7734A1949A5AEB67A00312", hash_generated_method = "839D85A97D79476EA9F57FB8F73F918E")
     
 private Patterns() {}

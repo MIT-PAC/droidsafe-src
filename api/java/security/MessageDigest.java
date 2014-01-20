@@ -379,6 +379,8 @@ public final int getDigestLength() {
         private MessageDigestSpi spiImpl;
 
         // MessageDigestImpl ctor
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.435 -0500", hash_original_method = "AF4F6C5934F11306EFBE5B299B5A2B9A", hash_generated_method = "0AA75E449A13074AFEAFAD1E5BE776CA")
         
 private MessageDigestImpl(MessageDigestSpi messageDigestSpi,

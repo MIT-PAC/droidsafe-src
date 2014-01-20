@@ -47,6 +47,8 @@ public abstract class UtteranceProgressListener {
      *
      * @param utteranceId the utterance ID of the utterance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.305 -0500", hash_original_method = "FFE6BB9781067F74360DC2FAF20BAAD4", hash_generated_method = "DB2874D7322015463928183D4FBFE979")
     
 public abstract void onStart(String utteranceId);
@@ -60,6 +62,8 @@ public abstract void onStart(String utteranceId);
      *
      * @param utteranceId the utterance ID of the utterance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.307 -0500", hash_original_method = "48716F662DF6D18F3D98A179CB01ECD6", hash_generated_method = "3180F5A99418CD7817DE8C77D3B83701")
     
 public abstract void onDone(String utteranceId);
@@ -73,6 +77,8 @@ public abstract void onDone(String utteranceId);
      *
      * @param utteranceId the utterance ID of the utterance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.309 -0500", hash_original_method = "B478909748E14FD8A516D3C92795C8CC", hash_generated_method = "605DC1C1145DE80DDE09A8BDBDACC33A")
     
 public abstract void onError(String utteranceId);

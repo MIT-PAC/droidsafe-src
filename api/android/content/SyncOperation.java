@@ -8,10 +8,6 @@ import android.accounts.Account;
 import android.os.Bundle;
 import android.os.SystemClock;
 
-
-
-
-
 public class SyncOperation implements Comparable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.585 -0500", hash_original_method = "C438A0900176804C7624F53E8C780F9C", hash_generated_method = "301CA5FDC40B5374F36562F17AAD18CF")
@@ -91,6 +87,8 @@ public SyncOperation(Account account, int source, String authority, Bundle extra
         this.key = toKey();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.571 -0500", hash_original_method = "BE085BAA1CD2B4B4487382D0022F31D7", hash_generated_method = "BE085BAA1CD2B4B4487382D0022F31D7")
     
 SyncOperation(SyncOperation other) {
@@ -107,6 +105,8 @@ SyncOperation(SyncOperation other) {
         this.key = toKey();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.568 -0500", hash_original_method = "432EE1A094EFB9968E7A50DA8ACAC133", hash_generated_method = "F87A90D4C88D1B1D1102E8073C29E9DC")
     
 private void removeFalseExtra(String extraName) {
@@ -153,6 +153,8 @@ public boolean ignoreBackoff() {
         return extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.582 -0500", hash_original_method = "557BF419234DEC0AF5F90553488D23D9", hash_generated_method = "E8A08269EBFFB46529DD6D581C186DAF")
     
 private String toKey() {
@@ -189,7 +191,6 @@ public int compareTo(Object o) {
 
         return effectiveRunTime < other.effectiveRunTime ? -1 : 1;
     }
-
     
 }
 

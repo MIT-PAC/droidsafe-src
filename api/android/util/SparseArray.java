@@ -9,6 +9,8 @@ import com.android.internal.util.ArrayUtils;
 
 public class SparseArray<E> implements Cloneable {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int binarySearch(int[] a, int start, int len, int key){
 		// Original method
 		/*
@@ -72,7 +74,9 @@ public SparseArray() {
 		*/
 	}
     
-	@Override @SuppressWarnings("unchecked") public SparseArray<E> clone(){
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @Override @SuppressWarnings("unchecked") public SparseArray<E> clone(){
 		SparseArray<E> clone = new SparseArray<E>(0);
 		clone.addTaint(this.getTaint());
 		return clone;
@@ -104,6 +108,8 @@ public E get(int key) {
         return get(key, null);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @SuppressWarnings("unchecked") public E get(int key, E valueIfKeyNotFound){
 		return (E) mValues[0];
@@ -150,6 +156,8 @@ public void remove(int key) {
         delete(key);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void removeAt(int index){
 		mValues[index] = DELETED;
 		// Original method
@@ -164,6 +172,8 @@ public void remove(int key) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void gc(){
 		// Original method
 		/*
@@ -245,6 +255,8 @@ public void remove(int key) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setValueAt(int index, E value){
 		mValues[0] = value;
@@ -260,6 +272,8 @@ public void remove(int key) {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int indexOfKey(int key){
 		return getTaintInt();
 		// Original method

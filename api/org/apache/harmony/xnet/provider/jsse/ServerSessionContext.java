@@ -61,6 +61,8 @@ protected void sessionRemoved(SSLSession session) {}
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.055 -0500", hash_original_method = "6A881248A35D6FEA85AFAE8D9374366B", hash_generated_method = "FC7A1CB319997E6C38E03AB1A8EC0177")
     
 @Override

@@ -237,6 +237,8 @@ public Collection<String> values() {
 
         public final static int RO_PHYSICAL_INTERFACE = 10;
         /** No constructor */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.795 -0500", hash_original_method = "63943B74C3B7537BF21BF313857C8294", hash_generated_method = "52B02B1264CE9A8840E58840CFB1B96A")
         
 private Key() {}
@@ -274,6 +276,8 @@ private Key() {}
 
         public static final String VIDEO_CHAT_480P = "video.chat.480i";
         /** No constructor */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.826 -0500", hash_original_method = "B6871343D9E854D112856D815CFF5530", hash_generated_method = "08F14CB6A5FF9E3090926A56C8693A01")
         
 private Role() {}

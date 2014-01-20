@@ -286,6 +286,8 @@ public boolean showPopup() {
      *
      * @param maxActivityCount The max number of activities to display.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.881 -0500", hash_original_method = "3AECC6260DA21BAD7E8B15E74C7BA72C", hash_generated_method = "F392C09D31983111498AB59E23767E46")
     
 private void showPopupUnchecked(int maxActivityCount) {
@@ -465,6 +467,8 @@ public void setDefaultActionButtonContentDescription(int resourceId) {
      *
      * @return The popup.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.906 -0500", hash_original_method = "A13663EF62899FD593D247A6177CE71D", hash_generated_method = "560AF4251C87CB0E76394EEC66EDDE2F")
     
 private ListPopupWindow getListPopupWindow() {
@@ -482,6 +486,8 @@ private ListPopupWindow getListPopupWindow() {
     /**
      * Updates the buttons state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.909 -0500", hash_original_method = "D65ED5C5B81BB78866247BEAE65AB728", hash_generated_method = "34E36C8EBAFBBEDFE1CC6C6EAD7638E1")
     
 private void updateAppearance() {
@@ -602,6 +608,8 @@ public void onDismiss() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.923 -0500", hash_original_method = "5021FB127D2DB881B8B1C45B5E11E195", hash_generated_method = "243392C772A9BC77EF67532E254E8061")
         
 private void notifyOnDismissListener() {

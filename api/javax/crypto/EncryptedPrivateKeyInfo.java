@@ -27,6 +27,8 @@ import org.apache.harmony.security.x509.AlgorithmIdentifier;
 
 public class EncryptedPrivateKeyInfo {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.909 -0500", hash_original_method = "C7F017D6BF0E95CAC7E674AE844EA4C0", hash_generated_method = "771F301A53C79B4866730FA1B1BFDF03")
     
 private static boolean isNullValue(byte[] toCheck) {
@@ -487,6 +489,8 @@ public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, Provider provider)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.937 -0500", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "C89E4771B98C8F23FB7E2846E4B6C518")
     
 private InvalidKeyException invalidKey() throws InvalidKeyException {
@@ -516,6 +520,8 @@ public byte[] getEncoded() throws IOException {
 
     // Performs all needed alg name mappings.
     // Returns 'true' if mapping available 'false' otherwise
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.942 -0500", hash_original_method = "BB96A16B2E5B8AF0DEB9007883ABA8DF", hash_generated_method = "523D01EB592C72324F70A8A3FFC59C8B")
     
 private boolean mapAlgName() {

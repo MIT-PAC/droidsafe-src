@@ -198,6 +198,8 @@ public Node(Object item) {
 
         long qe;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.518 -0400", hash_original_method = "EA0EDCFF10F8D9E7849DBDB76AB4743F", hash_generated_method = "EA0EDCFF10F8D9E7849DBDB76AB4743F")
         public Slot ()
         {
@@ -217,6 +219,8 @@ public Node(Object item) {
      * @param nanos if timed, the maximum wait time
      * @return the other thread's item, or CANCEL if interrupted or timed out
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.288 -0500", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F999AB1DA8ED0568D23A16ABFD90AFE4")
     
 private Object doExchange(Object item, boolean timed, long nanos) {
@@ -283,6 +287,8 @@ private Object doExchange(Object item, boolean timed, long nanos) {
      *
      * @return a per-thread-random index, 0 <= index < max
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.290 -0500", hash_original_method = "81A7A8FE33AEB39DC2465115E332A8B2", hash_generated_method = "E307B358374E191481F8EF8CDC8D99E6")
     
 private final int hashIndex() {
@@ -307,6 +313,8 @@ private final int hashIndex() {
      *
      * @param index the index to add slot at
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.293 -0500", hash_original_method = "710CA77564EC78E634B8090E5C600333", hash_generated_method = "F86F43D6D2A26E9F7B2A2BE42B2598B8")
     
 private void createSlot(int index) {

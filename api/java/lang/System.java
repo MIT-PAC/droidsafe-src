@@ -73,19 +73,21 @@ public static void setErr(PrintStream newErr) {
         setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
     }
     
-    @DSComment("not sensitive/not an action")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
         dst = src;
 	}
     
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
     
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
@@ -100,6 +102,8 @@ public static void setErr(PrintStream newErr) {
      * @param code
      *            the return code.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.632 -0500", hash_original_method = "B689E3847550085AA4A48748B31E6C57", hash_generated_method = "2B0BEB3C7BDC42A2701677D835C9812E")
     
 public static void exit(int code) {
@@ -111,7 +115,8 @@ public static void exit(int code) {
      * garbage collector. Note that this is a hint only. There is no guarantee
      * that the garbage collector will actually be run.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.634 -0500", hash_original_method = "47EC6AE5C259ABE3B4A35CFA178D5702", hash_generated_method = "0709ED4B03A3139DD3527CC62BB2E466")
     
 public static void gc() {
@@ -134,6 +139,8 @@ public static String getenv(String name) {
         return getenv(name, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.639 -0500", hash_original_method = "DDF861F1441EC0EABAADAA65E3E2ACBF", hash_generated_method = "77F3152230F90F924A2C30E830ABA4C2")
     
 private static String getenv(String name, String defaultValue) {
@@ -144,6 +151,8 @@ private static String getenv(String name, String defaultValue) {
         return (value != null) ? value : defaultValue;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getEnvByName(String name) {
 		return new String();
 	}
@@ -202,6 +211,8 @@ public static Properties getProperties() {
         return systemProperties;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.655 -0500", hash_original_method = "B252A11CAEEE644CE1E741E5C5B0B404", hash_generated_method = "99DA69E508AD9A7D0CF6A0DFE6E6F064")
     
 private static void initSystemProperties() {
@@ -273,6 +284,8 @@ private static void initSystemProperties() {
         systemProperties = p;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] specialProperties() {
 		return new String[0];
 	}
@@ -281,6 +294,8 @@ private static void initSystemProperties() {
      * Adds each element of 'assignments' to 'p', treating each element as an
      * assignment in the form "key=value".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.661 -0500", hash_original_method = "05094F845E3E5F63D2D668EAFF7A5EA3", hash_generated_method = "ED464C8D245A65A5099E569089B93A45")
     
 private static void parsePropertyAssignments(Properties p, String[] assignments) {
@@ -445,8 +460,8 @@ public static SecurityManager getSecurityManager() {
         return null;
     }
     
-    @DSComment("not sensitive/not an action")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int identityHashCode(Object anObject) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
@@ -553,6 +568,8 @@ public static void logW(String message, Throwable th) {
         log('W', message, th);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void log(char type, String message, Throwable th) {
 	}
 
@@ -560,6 +577,8 @@ public static void logW(String message, Throwable th) {
      * Provides a hint to the VM that it would be useful to attempt
      * to perform any outstanding object finalization.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.710 -0500", hash_original_method = "6EE6952ECA2DC5E5A6C1DD03C0E7FD35", hash_generated_method = "195A681901EA8D4D0CE146BE36AC1277")
     
 public static void runFinalization() {
@@ -575,6 +594,8 @@ public static void runFinalization() {
      *            the flag determines if finalization on exit is enabled.
      * @deprecated this method is unsafe.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.713 -0500", hash_original_method = "9BEAEBDCB82386F5F7FA70BDCB71E5C3", hash_generated_method = "88EFC201D528182B951D509F3434C52E")
     
 @SuppressWarnings("deprecation")
@@ -618,6 +639,8 @@ public static void setSecurityManager(SecurityManager sm) {
 		return ret;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setFieldImpl(String fieldName, String signature, Object stream) {
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.596 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "B443C5C680D4DA0BD118CB991BCB8B38")
@@ -659,6 +682,8 @@ public SystemEnvironment(Map<String, String> map) {
             return map.containsValue(toNonNullString(value));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.746 -0500", hash_original_method = "5309B26B5A621654CCE92CC093E8959E", hash_generated_method = "5221DC6EA45BD37C8A7ED98DBD8D9D2D")
         
 private String toNonNullString(Object o) {
@@ -685,6 +710,8 @@ private String toNonNullString(Object o) {
     /**
      * Prevents this class from being instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.616 -0500", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "4C5BFFF833D1388E8E698D0CDB2E2C77")
     
 private System() {

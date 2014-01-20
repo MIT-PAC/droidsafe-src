@@ -7,8 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
 public class BERSet extends DERSet {
     /**
      * create an empty sequence
@@ -44,6 +42,8 @@ public BERSet(
     /**
      * @param v - a vector of objects making up the set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.739 -0500", hash_original_method = "EA203440C88579BB4F9E161A0FFE3946", hash_generated_method = "EA203440C88579BB4F9E161A0FFE3946")
     
 BERSet(
@@ -55,6 +55,8 @@ BERSet(
 
     /*
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.742 -0500", hash_original_method = "F901566FF0371DE323597B13C49C1024", hash_generated_method = "F901566FF0371DE323597B13C49C1024")
     
 void encode(
@@ -80,7 +82,6 @@ void encode(
             super.encode(out);
         }
     }
-
     
 }
 

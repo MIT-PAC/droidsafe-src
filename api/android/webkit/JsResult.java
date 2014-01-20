@@ -24,7 +24,9 @@ public class JsResult {
 
     private  boolean mDefaultValue;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.725 -0500", hash_original_method = "9B12FB4D59A264489E522CD061C38CB7", hash_generated_method = "9B12FB4D59A264489E522CD061C38CB7")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.725 -0500", hash_original_method = "9B12FB4D59A264489E522CD061C38CB7", hash_generated_method = "9B12FB4D59A264489E522CD061C38CB7")
     
 JsResult(CallbackProxy proxy, boolean defaultVal) {
         mProxy = proxy;
@@ -53,14 +55,18 @@ public final void confirm() {
         wakeUp();
     }
 
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.727 -0500", hash_original_method = "B19201A589B2161C860E375BCFC73111", hash_generated_method = "1BA024346F9531D85D136101E5D63312")
     
 final boolean getResult() {
         return mResult;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.729 -0500", hash_original_method = "4642DDC2E06C70021EF03DDC6D972571", hash_generated_method = "A638CE09C26842DDBC63307852F58667")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.729 -0500", hash_original_method = "4642DDC2E06C70021EF03DDC6D972571", hash_generated_method = "A638CE09C26842DDBC63307852F58667")
     
 final void setReady() {
         mReady = true;
@@ -69,7 +75,9 @@ final void setReady() {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.731 -0500", hash_original_method = "0E860B2505C14EEFDBCB2EDE7B7F93FE", hash_generated_method = "0E860B2505C14EEFDBCB2EDE7B7F93FE")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.731 -0500", hash_original_method = "0E860B2505C14EEFDBCB2EDE7B7F93FE", hash_generated_method = "0E860B2505C14EEFDBCB2EDE7B7F93FE")
     
 void handleDefault() {
         setReady();

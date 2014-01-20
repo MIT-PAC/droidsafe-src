@@ -26,6 +26,8 @@ import android.view.accessibility.AccessibilityEvent;
 
 public class AccessibilityServiceInfo implements Parcelable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.300 -0500", hash_original_method = "CD1EB6EF0A8B00F8CC3A1C44C2784273", hash_generated_method = "FFD56650C98DD483EB919248719D2800")
     
 private static void appendFeedbackTypes(StringBuilder stringBuilder, int feedbackTypes) {
@@ -42,6 +44,8 @@ private static void appendFeedbackTypes(StringBuilder stringBuilder, int feedbac
         stringBuilder.append("]");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.303 -0500", hash_original_method = "5383084D29DBC1B20EAFED5DB2C0EA76", hash_generated_method = "B73B4785698EDBD64DB7B34D5C78D318")
     
 private static void appendPackageNames(StringBuilder stringBuilder, String[] packageNames) {
@@ -59,6 +63,8 @@ private static void appendPackageNames(StringBuilder stringBuilder, String[] pac
         stringBuilder.append("]");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.306 -0500", hash_original_method = "1753417F6188163583020B8A4473CCB2", hash_generated_method = "A0184A2E274DB8A88DC34B8A8300139A")
     
 private static void appendEventTypes(StringBuilder stringBuilder, int eventTypes) {
@@ -75,6 +81,8 @@ private static void appendEventTypes(StringBuilder stringBuilder, int eventTypes
         stringBuilder.append("]");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.309 -0500", hash_original_method = "FD95D8B216BC160B0D7D30A0BBADC80C", hash_generated_method = "C3F2D4EDE9264638EA6F514FDD9B9838")
     
 private static void appendFlags(StringBuilder stringBuilder, int flags) {
@@ -432,6 +440,8 @@ public void writeToParcel(Parcel parcel, int flagz) {
         parcel.writeString(mDescription);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.295 -0500", hash_original_method = "7D575AC4AF313C6A4D2D5091D77147E2", hash_generated_method = "E2CB992A247CB44F8E3FC48DDF1A28ED")
     
 private void initFromParcel(Parcel parcel) {

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERVisibleString extends ASN1Object implements DERString {
 
     /**
@@ -120,6 +115,8 @@ public byte[] getOctets()
         return bs;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.097 -0500", hash_original_method = "EDEDEE2045D008C87CEA62CE5CC5E8C6", hash_generated_method = "EDEDEE2045D008C87CEA62CE5CC5E8C6")
     
 void encode(
@@ -129,6 +126,8 @@ void encode(
         out.writeEncoded(VISIBLE_STRING, this.getOctets());
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.099 -0500", hash_original_method = "D3E4E4BB0C90F60625E75FAD6BCA1138", hash_generated_method = "D3E4E4BB0C90F60625E75FAD6BCA1138")
     
 boolean asn1Equals(
@@ -148,7 +147,6 @@ public int hashCode()
     {
         return this.getString().hashCode();
     }
-
     
 }
 

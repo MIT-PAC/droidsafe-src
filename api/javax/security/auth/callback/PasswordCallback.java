@@ -36,6 +36,8 @@ public PasswordCallback(String prompt, boolean echoOn) {
         this.echoOn = echoOn;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.226 -0500", hash_original_method = "3C861E594BCF1170EC69D71F98E7DC21", hash_generated_method = "244A43699B324D8C18CDB6AE348409B4")
     
 private void setPrompt(String prompt) throws IllegalArgumentException {

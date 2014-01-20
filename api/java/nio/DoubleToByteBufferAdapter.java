@@ -8,6 +8,8 @@ import libcore.io.SizeOf;
 
 final class DoubleToByteBufferAdapter extends DoubleBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.277 -0500", hash_original_method = "B904958394A84B00377E65479CDB1292", hash_generated_method = "C0AAEB24DE5F07DF6C490DE458A2AF7F")
     
 static DoubleBuffer asDoubleBuffer(ByteBuffer byteBuffer) {
@@ -19,6 +21,8 @@ static DoubleBuffer asDoubleBuffer(ByteBuffer byteBuffer) {
 
     private  ByteBuffer byteBuffer;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.280 -0500", hash_original_method = "3C3F64E3DFEA19E69D83DE032CD69444", hash_generated_method = "D6CECB6527803B2B3C46C6D02D17738A")
     
 private DoubleToByteBufferAdapter(ByteBuffer byteBuffer) {

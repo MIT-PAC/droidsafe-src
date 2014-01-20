@@ -155,6 +155,8 @@ public SAXParseException (String message, String publicId, String systemId,
      * @param lineNumber The line number of the error, or -1.
      * @param columnNumber The column number of the error, or -1.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.701 -0500", hash_original_method = "CF8913A55801AA3E419E95D1888FBD68", hash_generated_method = "410715A9FAC9A509EFEB2FA43EFA347B")
     
 private void init (String publicId, String systemId,

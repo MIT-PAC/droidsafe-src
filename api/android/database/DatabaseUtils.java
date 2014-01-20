@@ -125,6 +125,8 @@ public static void readExceptionWithOperationApplicationExceptionFromParcel(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.275 -0500", hash_original_method = "7C5917B72662210A19A77F7241EE9613", hash_generated_method = "F38ED1D49B1B724ADD3CC2D9E4EA4904")
     
 private static final void readExceptionFromParcel(Parcel reply, String msg, int code) {
@@ -414,6 +416,8 @@ public static String getHexCollationKey(String name) {
         return new String(keys, 0, getKeyLen(arr) * 2);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.303 -0500", hash_original_method = "E001715DE6DB9ED11A90575B61782D8F", hash_generated_method = "07862CFEE74330FBA1F29FDFF781FE97")
     
 private static int getKeyLen(byte[] arr) {
@@ -425,6 +429,8 @@ private static int getKeyLen(byte[] arr) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.306 -0500", hash_original_method = "2BC34B911946491978F698EBA40659C2", hash_generated_method = "423078A74724516E937E06DC31D1854C")
     
 private static byte[] getCollationKeyInBytes(String name) {
@@ -1132,6 +1138,8 @@ public InsertHelper(SQLiteDatabase db, String tableName) {
             mTableName = tableName;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.428 -0500", hash_original_method = "C9A601B53671BC96A8E157301601DE92", hash_generated_method = "E5EA1E12A1537CF74E7BFAF3D2FE6D1E")
         
 private void buildSQL() throws SQLException {
@@ -1179,6 +1187,8 @@ private void buildSQL() throws SQLException {
             if (LOCAL_LOGV) Log.v(TAG, "insert statement is " + mInsertSQL);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.431 -0500", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "2042BE993FAEE612AB01109525A826F1")
         
 private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
@@ -1211,6 +1221,8 @@ private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
          * @return the row ID of the newly inserted row, or -1 if an
          * error occurred
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.434 -0500", hash_original_method = "13ED4597857164B01AAF7D1C6E2C9384", hash_generated_method = "CCBE22CE3839C3F0D1FFDCDB80A9C33B")
         
 private synchronized long insertInternal(ContentValues values, boolean allowReplace) {

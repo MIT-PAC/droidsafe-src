@@ -20,9 +20,13 @@ import android.util.Log;
 
 public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void _nativeClassInit() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.020 -0500", hash_original_method = "E04EF08BFD93A483AA0844852D39BA58", hash_generated_method = "9829AD318F7509A81CFA7788602F79B9")
     
 private static boolean allowIndirectBuffers(String appName) {
@@ -298,6 +302,8 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
 
     // C function void glColorPointer ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.093 -0500", hash_original_method = "D299BA021168438B5E6E34E52FC6C3F5", hash_generated_method = "493F4A6C3E94A11A15130D27B190F584")
     
     private void glColorPointerBounds(
@@ -1347,6 +1353,8 @@ public String glGetString(
 
     // C function void glNormalPointer ( GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.388 -0500", hash_original_method = "1F3C9CA6DB76EF1CEC4FE9381E242024", hash_generated_method = "11511F01B01522DC10E58561A22B6EF2")
     
     private void glNormalPointerBounds(
@@ -1689,6 +1697,8 @@ public void glNormalPointer(
 
     // C function void glTexCoordPointer ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.479 -0500", hash_original_method = "9D620040AA720FDD33F346FBC8BD5A6E", hash_generated_method = "A08F9635BBFEAFC6D0A24232BB76EDF3")
     
     private void glTexCoordPointerBounds(
@@ -1943,6 +1953,8 @@ public void glTexCoordPointer(
 
     // C function void glVertexPointer ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.536 -0500", hash_original_method = "93D9D08DB02A2FA19D56A49842CFD50E", hash_generated_method = "2471551A5C22A8F9068959FEF4D5D767")
     
     private void glVertexPointerBounds(
@@ -2841,6 +2853,8 @@ public void glVertexPointer(
 
     // C function void glPointSizePointerOES ( GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.778 -0500", hash_original_method = "8C106C3CEF3BB7BF47C54FD961C1CA10", hash_generated_method = "4C7002A2C1F164554BAD655FCD0D1B33")
     
     private void glPointSizePointerOESBounds(
@@ -3262,6 +3276,8 @@ public void glPointSizePointerOES(
 
     // C function void glMatrixIndexPointerOES ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.894 -0500", hash_original_method = "6A7CA123A9CB88F0A99C0D9B4D2D33AF", hash_generated_method = "5AAA432A476B2287EA2125EE664731E7")
     
     private void glMatrixIndexPointerOESBounds(
@@ -3325,6 +3341,8 @@ public void glMatrixIndexPointerOES(
 
     // C function void glWeightPointerOES ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.905 -0500", hash_original_method = "733A86C2F1705E763179D2C64FE1F559", hash_generated_method = "E24695617E5C147F5AC582DB338C49E7")
     
     private void glWeightPointerOESBounds(

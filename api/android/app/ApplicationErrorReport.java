@@ -66,6 +66,8 @@ public static ComponentName getErrorReportReceiver(Context context,
      * @return activity component within receiverPackage which handles
      * ACTION_APP_ERROR, or null if not found
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.792 -0500", hash_original_method = "E8A44BB5F91823678290CFFD8154BF15", hash_generated_method = "CAD628A415C65030DB8FF1513D964A6E")
     
@@ -451,6 +453,8 @@ public ApplicationErrorReport() {
      * Create an instance of {@link ApplicationErrorReport} initialized from
      * a parcel.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.786 -0500", hash_original_method = "56C9FAB6FC92FE279C6A2DB2655BED71", hash_generated_method = "56C9FAB6FC92FE279C6A2DB2655BED71")
     
 ApplicationErrorReport(Parcel in) {

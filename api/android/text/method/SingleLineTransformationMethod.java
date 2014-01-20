@@ -40,6 +40,8 @@ public static SingleLineTransformationMethod getInstance() {
     /**
      * The characters to be replaced are \n and \r.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.562 -0500", hash_original_method = "64C6D73F3773427C2A2F245DBEBF22E0", hash_generated_method = "B0A9DD46339001C9C3C056197B112335")
     
@@ -51,6 +53,8 @@ protected char[] getOriginal() {
      * The character \n is replaced with is space;
      * the character \r is replaced with is FEFF (zero width space).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.565 -0500", hash_original_method = "44611EB51BD7B665366AA2036C731932", hash_generated_method = "431C9324C173CE74F01EB19676A0E5B5")
     

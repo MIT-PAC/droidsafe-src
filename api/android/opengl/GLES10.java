@@ -10,6 +10,8 @@ import droidsafe.helpers.DSUtils;
 
 public class GLES10 {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void _nativeClassInit() {
     }
     
@@ -107,6 +109,8 @@ public class GLES10 {
     ) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void glColorPointerBounds(
         int size,
         int type,
@@ -605,6 +609,8 @@ public static void glColorPointer(
     ) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void glNormalPointerBounds(
         int type,
         int stride,
@@ -776,6 +782,8 @@ public static void glNormalPointer(
     ) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void glTexCoordPointerBounds(
         int size,
         int type,
@@ -910,6 +918,8 @@ public static void glTexCoordPointer(
     ) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void glVertexPointerBounds(
         int size,
         int type,

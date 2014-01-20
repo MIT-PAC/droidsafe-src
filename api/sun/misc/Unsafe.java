@@ -33,16 +33,22 @@ public static Unsafe getUnsafe() {
         return THE_ONE;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long objectFieldOffset0(Field field) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int arrayBaseOffset0(Class clazz) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int arrayIndexScale0(Class clazz) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006;
@@ -54,6 +60,8 @@ public static Unsafe getUnsafe() {
     /**
      * This class is only privately instantiable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.641 -0500", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "2F1337A71CFB2F9405F3B53E4913683F")
     
 private Unsafe() {}

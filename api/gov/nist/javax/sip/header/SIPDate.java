@@ -357,6 +357,8 @@ public int getSecond() {
      * SIP Dates are forced to be GMT. Stores the converted time
      * as a java Calendar class.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.999 -0500", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "3BC81C23A89DB0C3F2683CBF46971FAA")
     
 private void setJavaCal() {

@@ -45,10 +45,14 @@ public static void enableDebugLogging(boolean enabled) {
      * {@link LoaderCallbacks#onLoadFinished(Loader, Object)}, a call
      * will be made to {@link LoaderCallbacks#onLoaderReset(Loader)}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.011 -0500", hash_original_method = "305FA1A128F5C6D6A2790EF0EF873EFF", hash_generated_method = "F3E476E4573CA6AD6CCCCC8E642C0234")
     
 public abstract void destroyLoader(int id);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract <D> Loader<D> getLoader(int id);
 
     /**
@@ -59,6 +63,8 @@ public abstract void destroyLoader(int id);
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.015 -0500", hash_original_method = "9309E77AA4047B9B8316706781ED0A27", hash_generated_method = "3FF3D3380483C9ADF611F5CA2E5A6D00")
     
 public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
@@ -119,6 +125,8 @@ class LoaderManagerImpl extends LoaderManager {
     
     boolean mCreatingLoader;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.118 -0500", hash_original_method = "8A8E6D86E6D6B2C8C93367E841E4998B", hash_generated_method = "8A8E6D86E6D6B2C8C93367E841E4998B")
     
 LoaderManagerImpl(String who, FragmentActivity activity, boolean started) {
@@ -127,6 +135,8 @@ LoaderManagerImpl(String who, FragmentActivity activity, boolean started) {
         mStarted = started;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.120 -0500", hash_original_method = "39148A68E08215CAB837BA67F40FAA62", hash_generated_method = "39148A68E08215CAB837BA67F40FAA62")
     
 void updateActivity(FragmentActivity activity) {
@@ -350,6 +360,8 @@ Loader<D> var540C13E9E156B687226421B24F2DF178_269167439 =         null;
         //return null;
     }
  
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.141 -0500", hash_original_method = "1B5BA5EF1034DE46362C6D43A3344D88", hash_generated_method = "BC4C6E7AD9DB652B73A35CDD2E831243")
     
 void doStart() {
@@ -370,6 +382,8 @@ void doStart() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.143 -0500", hash_original_method = "71BF743CC69E0B66056EF8CBB16C9843", hash_generated_method = "71BF743CC69E0B66056EF8CBB16C9843")
     
 void doStop() {
@@ -387,6 +401,8 @@ void doStop() {
         mStarted = false;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.146 -0500", hash_original_method = "BD51E42738EB85BB1FB65E8F190FCB03", hash_generated_method = "BD51E42738EB85BB1FB65E8F190FCB03")
     
 void doRetain() {
@@ -405,6 +421,8 @@ void doRetain() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.148 -0500", hash_original_method = "9F7DD5161F3947B5A7B3D4E3274626A8", hash_generated_method = "9F7DD5161F3947B5A7B3D4E3274626A8")
     
 void finishRetain() {
@@ -418,6 +436,8 @@ void finishRetain() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.150 -0500", hash_original_method = "BC9F0E25D287A864E557748845981277", hash_generated_method = "BC9F0E25D287A864E557748845981277")
     
 void doReportNextStart() {
@@ -426,6 +446,8 @@ void doReportNextStart() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.152 -0500", hash_original_method = "F7C6DF9C0A34E794980C884EE85C960C", hash_generated_method = "F7C6DF9C0A34E794980C884EE85C960C")
     
 void doReportStart() {
@@ -434,6 +456,8 @@ void doReportStart() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.154 -0500", hash_original_method = "736E3BF19FA9B5737831BA1044201B86", hash_generated_method = "736E3BF19FA9B5737831BA1044201B86")
     
 void doDestroy() {
@@ -517,6 +541,8 @@ public LoaderInfo(int id, Bundle args, LoaderManager.LoaderCallbacks<Object> cal
             mCallbacks = callbacks;
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.083 -0500", hash_original_method = "59414391327A086CB5A9419E1A5D3F4A", hash_generated_method = "12B18D208DA10316CD5E1B0008ABC3B0")
         
 void start() {
@@ -554,6 +580,8 @@ void start() {
             }
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.085 -0500", hash_original_method = "EEEFF8F43B746CBA4F0DDA0630ACC8F2", hash_generated_method = "EEEFF8F43B746CBA4F0DDA0630ACC8F2")
         
 void retain() {
@@ -564,6 +592,8 @@ void retain() {
             mCallbacks = null;
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.087 -0500", hash_original_method = "A6A41243ADFD2D6E0A8ECB9143919977", hash_generated_method = "A59BB551C3A8CF48919FE5C2F8308131")
         
 void finishRetain() {
@@ -591,6 +621,8 @@ void finishRetain() {
             }
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.090 -0500", hash_original_method = "915BC416A2513DED4BAC846F5B62B555", hash_generated_method = "915BC416A2513DED4BAC846F5B62B555")
         
 void reportStart() {
@@ -604,6 +636,8 @@ void reportStart() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.093 -0500", hash_original_method = "2CBDFC8D776F45EC911F1F96CF447373", hash_generated_method = "84565F234F315EB6A98E0B5779C43E16")
         
 void stop() {
@@ -619,6 +653,8 @@ void stop() {
             }
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.096 -0500", hash_original_method = "A36048C3C1A3E46AC40E97896DEEAF8F", hash_generated_method = "A36048C3C1A3E46AC40E97896DEEAF8F")
         
 void destroy() {
@@ -714,6 +750,8 @@ void destroy() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.103 -0500", hash_original_method = "DBCF4A7424D3CE3FF77E30E5C5EDA97C", hash_generated_method = "DBCF4A7424D3CE3FF77E30E5C5EDA97C")
         
 void callOnLoadFinished(Loader<Object> loader, Object data) {

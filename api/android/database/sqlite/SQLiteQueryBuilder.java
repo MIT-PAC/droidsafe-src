@@ -79,6 +79,8 @@ public static String buildQueryString(
         return query.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.141 -0500", hash_original_method = "D278BB0314F1874BBF59B2B8781BE260", hash_generated_method = "DA85E6EDCE32E0374FF85F55A4F4AF9F")
     
 private static void appendClause(StringBuilder s, String name, String clause) {
@@ -401,6 +403,8 @@ public Cursor query(SQLiteDatabase db, String[] projectionIn,
      * Verifies that a SQL statement is valid by compiling it.
      * If the SQL statement is not valid, this method will throw a {@link SQLiteException}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.152 -0500", hash_original_method = "A033D274CBE9E5A0C4BD18FE9EA6496C", hash_generated_method = "C95076B53B9B593D27569827D7E59306")
     
 private void validateSql(SQLiteDatabase db, String sql) {
@@ -616,6 +620,8 @@ public String buildUnionQuery(String[] subQueries, String sortOrder, String limi
         return query.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.170 -0500", hash_original_method = "37AD514842546773747C53CA078B5ACE", hash_generated_method = "D70EE8D8D24C9C44666F66A1E9216045")
     
 private String[] computeProjection(String[] projectionIn) {

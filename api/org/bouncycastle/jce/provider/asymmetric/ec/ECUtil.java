@@ -23,10 +23,6 @@ import org.bouncycastle.jce.provider.JCEECPublicKey;
 import org.bouncycastle.jce.provider.ProviderUtil;
 import org.bouncycastle.jce.spec.ECParameterSpec;
 
-
-
-
-
 public class ECUtil {
     /**
      * Returns a sorted array of middle terms of the reduction polynomial.
@@ -35,6 +31,8 @@ public class ECUtil {
      * @return the sorted array of middle terms of the reduction polynomial.
      * This array always has length 3.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.936 -0500", hash_original_method = "F61560D6410770019EFCEB5BB2747D12", hash_generated_method = "0BD637A5C843FA735D6186DCA29E94AF")
     
 static int[] convertMidTerms(
@@ -250,7 +248,6 @@ public static String getCurveName(
     {
         //Synthesized constructor
     }
-
     
 }
 

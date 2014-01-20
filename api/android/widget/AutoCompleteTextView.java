@@ -178,6 +178,8 @@ public AutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
     /**
      * Private hook into the on click event, dispatched from {@link PassThroughClickListener}
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.040 -0500", hash_original_method = "58D3202231E1A3AE7FD8546C3F8B5C86", hash_generated_method = "6F252D3DBAB2D3637BFAC9BE2CE05524")
     
 private void onClickImpl() {
@@ -762,6 +764,8 @@ public boolean enoughToFilter() {
         return getText().length() >= mThreshold;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.127 -0500", hash_original_method = "9B68F895919D747E86E2BC0B861C3485", hash_generated_method = "447E457E156E84BB9A7E023E62CF8230")
     
 void doBeforeTextChanged() {
@@ -773,6 +777,8 @@ void doBeforeTextChanged() {
         if (DEBUG) Log.v(TAG, "before text changed: open=" + mOpenBefore);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.129 -0500", hash_original_method = "EABD50974341527CEC5D7DC0490BCDC7", hash_generated_method = "5B0369A85B089A34506DC99A71F6CCC5")
     
 void doAfterTextChanged() {
@@ -908,6 +914,8 @@ public void performCompletion() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.150 -0500", hash_original_method = "87F4A447D592D0FFBC34508A48276E40", hash_generated_method = "F11A9C1BE770F3E11C26092FE52EC6BC")
     
 private void performCompletion(View selectedView, int position, long id) {
@@ -999,6 +1007,8 @@ public void onFilterComplete(int count) {
         updateDropDownForFilter(count);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.162 -0500", hash_original_method = "43BA40231E8A8ECAF857BC9AE8C4397B", hash_generated_method = "A08E860AE04FB4ABA8989C5F4BDB74BA")
     
 private void updateDropDownForFilter(int count) {
@@ -1179,6 +1189,8 @@ public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         mPopup.setForceIgnoreOutsideTouch(forceIgnoreOutsideTouch);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.192 -0500", hash_original_method = "DD23AC9F9BC11D23FC9B33CDFA0AE577", hash_generated_method = "758CD66E877E747C2B309E0C07EC6FA9")
     
 private void buildImeCompletions() {

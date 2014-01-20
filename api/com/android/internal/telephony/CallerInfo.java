@@ -198,6 +198,8 @@ public static CallerInfo getCallerInfo(Context context, String number) {
      * @param previousResult the result of previous lookup
      * @return previousResult if it's not the case
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.408 -0500", hash_original_method = "2C00C7AAB5402D365DFE9454D01A448E", hash_generated_method = "7E78560CD6C15B30DB0177E24FE61CB0")
     
 static CallerInfo doSecondaryLookupIfNecessary(Context context,
@@ -250,6 +252,8 @@ public static String getCallerId(Context context, String number) {
         return callerID;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.423 -0500", hash_original_method = "71A6B1217E93364C7D01FED08EAA4DA2", hash_generated_method = "45B1D7824A9F151C89386B31B7CDCF36")
     
 private static String normalize(String s) {
@@ -284,6 +288,8 @@ private static String normalize(String s) {
      * can at least make sure we handle all the URI patterns we claim to,
      * and that the mime types match what we expect...)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.426 -0500", hash_original_method = "97B5B13CD9531D9C33606FD55C18B289", hash_generated_method = "708E7269CAE868800938544CD9E20D21")
     
 private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
@@ -343,6 +349,8 @@ private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
      * @return a geographical description string for the specified number.
      * @see com.android.i18n.phonenumbers.PhoneNumberOfflineGeocoder
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.433 -0500", hash_original_method = "4B8F82068E1A8ACD295433986C1E11C8", hash_generated_method = "E14D0297110973E7DC1BD55768C4078F")
     
 private static String getGeoDescription(Context context, String number) {
@@ -380,6 +388,8 @@ private static String getGeoDescription(Context context, String number) {
      * @return The ISO 3166-1 two letters country code of the country the user
      *         is in.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.436 -0500", hash_original_method = "0D5401F0D97863706C064268E937371A", hash_generated_method = "0C80639C06ED731977181720804DDAFB")
     
 private static String getCurrentCountryIso(Context context, Locale locale) {
@@ -516,7 +526,9 @@ public boolean isVoiceMailNumber() {
     // should set the phone number to the dialed number and name to
     // 'Emergency Number' and let the UI make the decision about what
     // should be displayed.
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.418 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
     
 CallerInfo markAsEmergency(Context context) {
@@ -536,7 +548,9 @@ CallerInfo markAsEmergency(Context context) {
      */
     // TODO: As in the emergency number handling, we end up writing a
     // string in the phone number field.
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.421 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
     
 CallerInfo markAsVoiceMail() {

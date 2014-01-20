@@ -10,12 +10,10 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class FragmentPagerAdapter extends PagerAdapter {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.650 -0500", hash_original_method = "AC2C72A04607F3A9AA867C30F63B471C", hash_generated_method = "3586D9B72C71532D4919EBB53FEDDE2D")
     
 private static String makeFragmentName(int viewId, long id) {
@@ -28,7 +26,6 @@ private static String makeFragmentName(int viewId, long id) {
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.616 -0500", hash_original_field = "0C27EED22F6A82BBBA86D53215B0BF17", hash_generated_field = "F8BD8E8005099844A113591459546070")
-
 
     private  FragmentManager mFragmentManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.618 -0500", hash_original_field = "27F3AB6E6051E5201188AA916E2866AC", hash_generated_field = "45681C0640ABED8BB32E7E47A23478AF")
@@ -47,6 +44,8 @@ public FragmentPagerAdapter(FragmentManager fm) {
     /**
      * Return the Fragment associated with a specified position.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.625 -0500", hash_original_method = "0C9300C8E0F0C0E8B44008DC047CEFF9", hash_generated_method = "918C6D014DB9AA643E9330669120C48C")
     
 public abstract Fragment getItem(int position);

@@ -40,6 +40,8 @@ public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
 
     private  List<?> accessDescriptions;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.071 -0500", hash_original_method = "4CEC0F2DDF7912449CE6AD3ED26DAD30", hash_generated_method = "50DBF6515DAFDB8326FC23F23E52A946")
     
 private InfoAccessSyntax(List<?> accessDescriptions, byte[] encoding) throws IOException {

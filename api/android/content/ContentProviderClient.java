@@ -25,6 +25,8 @@ public class ContentProviderClient {
     /**
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.184 -0500", hash_original_method = "32816B4E573FF44675D42EE607DD365B", hash_generated_method = "32816B4E573FF44675D42EE607DD365B")
     
 ContentProviderClient(ContentResolver contentResolver, IContentProvider contentProvider) {

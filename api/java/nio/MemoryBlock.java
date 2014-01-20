@@ -72,6 +72,8 @@ public static MemoryBlock wrapFromJni(int address, long byteCount) {
 
     protected  long size;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.589 -0500", hash_original_method = "2736B0514B2AB4564F5D7D5517308E00", hash_generated_method = "895DABAE3F84982D3ABFD9EFBBE405E3")
     
 private MemoryBlock(int address, long size) {
@@ -244,6 +246,8 @@ public final long getSize() {
     }
     
     private static class MemoryMappedBlock extends MemoryBlock {
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.547 -0500", hash_original_method = "4FA1675756D2D9224619666C72B7406C", hash_generated_method = "4D2AEDD1DBA920621345704854C9A78E")
         
 private MemoryMappedBlock(int address, long byteCount) {
@@ -278,6 +282,8 @@ private MemoryMappedBlock(int address, long byteCount) {
 
         private byte[] array;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.561 -0500", hash_original_method = "8A7988AD7039E674F46AF68EAF8AE446", hash_generated_method = "2AFD7BF182B722CA09632A7E191624C6")
         
 private NonMovableHeapBlock(byte[] array, int address, long byteCount) {
@@ -302,6 +308,8 @@ private NonMovableHeapBlock(byte[] array, int address, long byteCount) {
     }
     
     private static class UnmanagedBlock extends MemoryBlock {
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.571 -0500", hash_original_method = "3FA50BA19E59098968678E710BF90D48", hash_generated_method = "EFCCC746EA157D42714603255D748B72")
         
 private UnmanagedBlock(int address, long byteCount) {

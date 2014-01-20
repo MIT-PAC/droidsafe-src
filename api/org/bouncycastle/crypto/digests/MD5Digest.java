@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class MD5Digest extends GeneralDigest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.752 -0500", hash_original_field = "C4237AEA9E5B286171811440EA43F2CF", hash_generated_field = "D526475CCCE72C3A14D37ACEDCA80EFD")
 
@@ -83,7 +79,6 @@ public class MD5Digest extends GeneralDigest {
     private int H4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.756 -0500", hash_original_field = "6D065F18D3AA67F35BFD608B2EB3FEF6", hash_generated_field = "9F176090F37D70875BB7E38ED405BB04")
 
-
     private int[]   X = new int[16];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.758 -0500", hash_original_field = "B7445263BE5AA36D026E05FA52197EA0", hash_generated_field = "D14E80AF1F9317982664F9E415590C80")
 
@@ -139,7 +134,7 @@ protected void processWord(
         int     inOff)
     {
         X[xOff++] = (in[inOff] & 0xff) | ((in[inOff + 1] & 0xff) << 8)
-            | ((in[inOff + 2] & 0xff) << 16) | ((in[inOff + 3] & 0xff) << 24); 
+            | ((in[inOff + 2] & 0xff) << 16) | ((in[inOff + 3] & 0xff) << 24);
 
         if (xOff == 16)
         {
@@ -161,6 +156,8 @@ protected void processLength(
         X[15] = (int)(bitLength >>> 32);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.776 -0500", hash_original_method = "C095FEC528E22D3933584D069B5AEBEC", hash_generated_method = "4B18F552C01293658BB99F363EB66FBA")
     
 private void unpackWord(
@@ -217,6 +214,8 @@ public void reset()
     /*
      * rotate int x left n bits.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.822 -0500", hash_original_method = "A078642CC72A2F738FA96A2966371333", hash_generated_method = "01F4DF316CBA5CD957630EE9BB83DAF4")
     
 private int rotateLeft(
@@ -229,6 +228,8 @@ private int rotateLeft(
     /*
      * F, G, H and I are the basic MD5 functions.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.825 -0500", hash_original_method = "38D2A24ABE645695148EECE5A1633407", hash_generated_method = "38A70B93C986D1108EDDBFA0D697042E")
     
 private int F(
@@ -239,6 +240,8 @@ private int F(
         return (u & v) | (~u & w);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.827 -0500", hash_original_method = "F823417414ECF2428B5CBDD347B9FAAC", hash_generated_method = "A8E72E3E5E4A8AD1B9DB51CB18FC61B9")
     
 private int G(
@@ -249,6 +252,8 @@ private int G(
         return (u & w) | (v & ~w);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.829 -0500", hash_original_method = "83C9F03736BB5BDF54EC87B24EC05890", hash_generated_method = "58EBA8EBEE20DBEF0218ECD378CDC7CD")
     
 private int H(
@@ -259,6 +264,8 @@ private int H(
         return u ^ v ^ w;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.831 -0500", hash_original_method = "23BAA908E549D3D7165335B8EBDAA412", hash_generated_method = "83800AD71417A6BE861BFE86F3FC378F")
     
 private int K(

@@ -223,6 +223,8 @@ public ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleR
      * Converts a drawable to a tiled version of itself. It will recursively
      * traverse layer and state list drawables.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.762 -0500", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "9798DB3B91AFBFE542192DDF8FB12827")
     
 private Drawable tileify(Drawable drawable, boolean clip) {
@@ -274,6 +276,8 @@ private Drawable tileify(Drawable drawable, boolean clip) {
         return drawable;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.764 -0500", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "066FEFD8810FD39B2288696E8912725B")
     
@@ -287,6 +291,8 @@ Shape getDrawableShape() {
      * Each frame of the animation is wrapped in a ClipDrawable and
      * given a tiling BitmapShader.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.766 -0500", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "BFBDCEA5D01AFD36373F651333FF5A41")
     
 private Drawable tileifyIndeterminate(Drawable drawable) {
@@ -319,6 +325,8 @@ private Drawable tileifyIndeterminate(Drawable drawable) {
      * <li>behavior = repeat</li>
      * </ul>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.768 -0500", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "78375C615A16504B3FCA36BE4D985473")
     
 private void initProgressBar() {
@@ -480,6 +488,8 @@ public void setProgressDrawable(Drawable d) {
     /**
      * @return The drawable currently used to draw the progress bar
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.785 -0500", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "BC108B758414D6B13292C41A47E0F703")
     
@@ -513,6 +523,8 @@ Drawable getCurrentDrawable() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.810 -0500", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "40EC5B38E670A660E34BCF4B038ADA0B")
     
 private synchronized void doRefreshProgress(int id, int progress, boolean fromUser,
@@ -537,6 +549,8 @@ private synchronized void doRefreshProgress(int id, int progress, boolean fromUs
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.812 -0500", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "1EE4C81513694B44BBA27F5A11B0191B")
     
 void onProgressRefresh(float scale, boolean fromUser) {
@@ -545,6 +559,8 @@ void onProgressRefresh(float scale, boolean fromUser) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.815 -0500", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "F10BD9D23747680E1837588EDF8BD40B")
     
 private synchronized void refreshProgress(int id, int progress, boolean fromUser) {
@@ -587,6 +603,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
         setProgress(progress, false);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.821 -0500", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "A3704F7A1508E702EEC8F03B978F393E")
     
 @android.view.RemotableViewMethod
@@ -766,6 +784,8 @@ public synchronized final void incrementSecondaryProgressBy(int diff) {
     /**
      * <p>Start the indeterminate progress animation.</p>
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.840 -0500", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "F5167F20A872A63C36DAF85A2B000FB5")
     
 void startAnimation() {
@@ -795,6 +815,8 @@ void startAnimation() {
     /**
      * <p>Stop the indeterminate progress animation.</p>
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.842 -0500", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "3AFE1BBA347326120AD78BEE94F7B2A6")
     
 void stopAnimation() {
@@ -845,8 +867,8 @@ public Interpolator getInterpolator() {
         return mInterpolator;
     }
 
-    @DSComment("ProgressBar")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.852 -0500", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "39E0006847B6ED0F90C17C5E24442D20")
     
@@ -919,6 +941,8 @@ public Interpolator getInterpolator() {
         updateDrawableBounds(w, h);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.863 -0500", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "23BFC8FF9086DAA4E8425857EEAE0014")
     
 private void updateDrawableBounds(int w, int h) {
@@ -1023,6 +1047,8 @@ private void updateDrawableBounds(int w, int h) {
         updateDrawableState();
     }
         
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.874 -0500", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "539E58DB3A2F5D873F38DF27B1746999")
     
 private void updateDrawableState() {
@@ -1137,6 +1163,8 @@ public SavedState[] newArray(int size) {
         /**
          * Constructor called from {@link ProgressBar#onSaveInstanceState()}
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.881 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
         
 SavedState(Parcelable superState) {
@@ -1146,6 +1174,8 @@ SavedState(Parcelable superState) {
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.884 -0500", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "3ADD61C80BF0DBEDD59C385D5BA2738C")
         
 private SavedState(Parcel in) {
@@ -1224,6 +1254,8 @@ public void run() {
      *       are sent at most one in a given time frame to save
      *       system resources while the progress changes quickly.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.911 -0500", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "0E30A3D2BAE76CBBDF9F9F5237802C23")
     
 private void scheduleAccessibilityEventSender() {

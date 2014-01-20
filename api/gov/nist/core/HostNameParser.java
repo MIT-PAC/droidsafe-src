@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public class HostNameParser extends ParserCore {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.855 -0500", hash_original_method = "EB0B7695FD3D54C01F52A45ED2BF86CB", hash_generated_method = "5D22F3B0214204297E1DD81EA4BEAD19")
@@ -43,11 +38,9 @@ public static void main(String args[]) throws ParseException {
     private static LexerCore Lexer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.836 -0500", hash_original_field = "3A31B7167ACF593B24415A4E036B3AF1", hash_generated_field = "3EE0A4DA75CB4D9B776B1D397345B183")
 
-
     private static final char[] VALID_DOMAIN_LABEL_CHAR =
         new char[] {LexerCore.ALPHADIGIT_VALID_CHARS, '-', '.'};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.827 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "3E9B266CA60C47190F73E82D7973FA1A")
-
 
     /**
      * Determines whether or not we should tolerate and strip address scope
@@ -222,6 +215,8 @@ public Host host() throws ParseException {
      * @return true if the host part of <tt>uriHeader</tt> could be an IPv6
      * address (i.e. contains at least two colons) and false otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.848 -0500", hash_original_method = "9EB0AD05F46BCDC3EFC8C7DBA5311E53", hash_generated_method = "5625D4078D53703423DD1E3DB811FD93")
     
 private boolean isIPv6Address(String uriHeader)

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class ComparableTimSort {
 
     /*
@@ -17,12 +13,16 @@ class ComparableTimSort {
      * of the public method with the same signature in java.util.Arrays.
      */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.268 -0500", hash_original_method = "C14D2E7089843CCC45AD27058813D72D", hash_generated_method = "EEA198836F48BF259761D97C28E57090")
     
 static void sort(Object[] a) {
           sort(a, 0, a.length);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.271 -0500", hash_original_method = "E921ED41B4BC28E5D7E967678958CC4D", hash_generated_method = "63CA3B030DEA946F2566040F133797E7")
     
 static void sort(Object[] a, int lo, int hi) {
@@ -88,6 +88,8 @@ static void sort(Object[] a, int lo, int hi) {
      * @param start the index of the first element in the range that is
      *        not already known to be sorted (@code lo <= start <= hi}
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.275 -0500", hash_original_method = "7FA02AFD0C69D9246744FAA91808ABAC", hash_generated_method = "69591D1CEC99C37938E80D1958E2FF9D")
     
 @SuppressWarnings("fallthrough")
@@ -160,6 +162,8 @@ static void sort(Object[] a, int lo, int hi) {
      * @return  the length of the run beginning at the specified position in
      *          the specified array
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.279 -0500", hash_original_method = "E06F0431A63DD6BC92462DEC6B607411", hash_generated_method = "818FFFC000C1E64D94E8782637F58CAD")
     
 @SuppressWarnings("unchecked")
@@ -189,6 +193,8 @@ static void sort(Object[] a, int lo, int hi) {
      * @param lo the index of the first element in the range to be reversed
      * @param hi the index after the last element in the range to be reversed
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.281 -0500", hash_original_method = "91B272278DB88F42B96F73872CBFFA74", hash_generated_method = "2BAD7E2C66283498F1FE17C97BEBA274")
     
 private static void reverseRange(Object[] a, int lo, int hi) {
@@ -217,6 +223,8 @@ private static void reverseRange(Object[] a, int lo, int hi) {
      * @param n the length of the array to be sorted
      * @return the length of the minimum run to be merged
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.283 -0500", hash_original_method = "901F75134304B9C846324F0D4BE695EF", hash_generated_method = "22954E4A0482F5141A4D40F3AD54F81A")
     
 private static int minRunLength(int n) {
@@ -246,6 +254,8 @@ private static int minRunLength(int n) {
      *    the first k elements of a should precede key, and the last n - k
      *    should follow it.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.298 -0500", hash_original_method = "999E8B45D34E439F1CA5445DE0CC91D3", hash_generated_method = "99F4659982D515EA4EFA650C5FA4A9BA")
     
 private static int gallopLeft(Comparable<Object> key, Object[] a,
@@ -318,6 +328,8 @@ private static int gallopLeft(Comparable<Object> key, Object[] a,
      *     The closer hint is to the result, the faster this method will run.
      * @return the int k,  0 <= k <= n such that a[b + k - 1] <= key < a[b + k]
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.302 -0500", hash_original_method = "EA7ED5AC4BAC7A2CA54578C2426C4A08", hash_generated_method = "280D424FB9C6CFC33FD25FFCEFCD28A8")
     
 private static int gallopRight(Comparable<Object> key, Object[] a,
@@ -413,6 +425,8 @@ private static int gallopRight(Comparable<Object> key, Object[] a,
      *
      * @param a the array to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.266 -0500", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "433131C2E635F21E7867A70992F1749C")
     
 private ComparableTimSort(Object[] a) {
@@ -448,6 +462,8 @@ private ComparableTimSort(Object[] a) {
      * @param runBase index of the first element in the run
      * @param runLen  the number of elements in the run
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.285 -0500", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "B945D9D44581F68296FA3FBD6173A146")
     
 private void pushRun(int runBase, int runLen) {
@@ -467,6 +483,8 @@ private void pushRun(int runBase, int runLen) {
      * so the invariants are guaranteed to hold for i < stackSize upon
      * entry to the method.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.288 -0500", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "E56B43F48F2878D3CB0575C123027539")
     
 private void mergeCollapse() {
@@ -488,6 +506,8 @@ private void mergeCollapse() {
      * Merges all runs on the stack until only one remains.  This method is
      * called once, to complete the sort.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.291 -0500", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "3E5590DAB928E12BB7FB6F548EF87AAE")
     
 private void mergeForceCollapse() {
@@ -506,6 +526,8 @@ private void mergeForceCollapse() {
      *
      * @param i stack index of the first of the two runs to merge
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.294 -0500", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "ED7DE1B2185580D0B770863787D22FDF")
     
 @SuppressWarnings("unchecked")
@@ -577,6 +599,8 @@ private void mergeForceCollapse() {
      *        (must be aBase + aLen)
      * @param len2  length of second run to be merged (must be > 0)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.306 -0500", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "FDBE76F2D72D0EEE427967DB714D990D")
     
 @SuppressWarnings("unchecked")
@@ -696,6 +720,8 @@ private void mergeForceCollapse() {
      *        (must be aBase + aLen)
      * @param len2  length of second run to be merged (must be > 0)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.311 -0500", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "84AA26745E10021C664F47F53C9058B5")
     
 @SuppressWarnings("unchecked")
@@ -816,6 +842,8 @@ private void mergeForceCollapse() {
      * @param minCapacity the minimum required capacity of the tmp array
      * @return tmp, whether or not it grew
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.314 -0500", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "4AF2550EA09BF8C55F64BB98239623ED")
     
 private Object[]  ensureCapacity(int minCapacity) {

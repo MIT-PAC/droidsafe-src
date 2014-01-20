@@ -17,10 +17,6 @@ import android.widget.Filter;
 import android.widget.FilterQueryProvider;
 import android.widget.Filterable;
 
-
-
-
-
 public abstract class CursorAdapter extends BaseAdapter implements Filterable, CursorFilter.CursorFilterClient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.177 -0500", hash_original_field = "EA16372B4C1173D920973EDB21B112D9", hash_generated_field = "D9CAE4B2CBE505B43F3EFB7D2BDDB501")
 
@@ -119,6 +115,8 @@ public CursorAdapter(Context context, Cursor c, int flags) {
         init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.204 -0500", hash_original_method = "E90B8606F5AC4DC9C7FA36F3DBF50072", hash_generated_method = "E90B8606F5AC4DC9C7FA36F3DBF50072")
     
 void init(Context context, Cursor c, int flags) {
@@ -257,6 +255,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
      * @param parent The parent to which the new view is attached to
      * @return the newly created view.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.223 -0500", hash_original_method = "EE6A21FD9B62596982E99001153626A6", hash_generated_method = "CF45D1D614F206164A24A59CD2225216")
     
 public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
@@ -282,6 +282,8 @@ public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
      * @param cursor The cursor from which to get the data. The cursor is already
      * moved to the correct position.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.228 -0500", hash_original_method = "862EB494F53DC650925859B90E73BA8D", hash_generated_method = "B890DE80D4A3B58521CB62A64CF3811E")
     
 public abstract void bindView(View view, Context context, Cursor cursor);
@@ -412,7 +414,6 @@ public Filter getFilter() {
 public FilterQueryProvider getFilterQueryProvider() {
         return mFilterQueryProvider;
     }
-
     
     private class ChangeObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.249 -0500", hash_original_method = "E9F5B54480B866367BA64F4A5A962E11", hash_generated_method = "E23CF0978D3E04ECD9968CA70095A877")
@@ -434,11 +435,8 @@ public ChangeObserver() {
         public void onChange(boolean selfChange) {
             onContentChanged();
         }
-
         
     }
-
-
     
     private class MyDataSetObserver extends DataSetObserver {
         
@@ -462,7 +460,6 @@ public ChangeObserver() {
             mDataValid = false;
             notifyDataSetInvalidated();
         }
-
         
     }
 

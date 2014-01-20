@@ -11,10 +11,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 
-
-
-
-
 public class RecognizerIntent {
     
     /**
@@ -149,6 +145,8 @@ public static final Intent getVoiceDetailsIntent(Context context) {
     public static final String EXTRA_SUPPORTED_LANGUAGES =
             "android.speech.extra.SUPPORTED_LANGUAGES";
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.417 -0500", hash_original_method = "481DA9A3FEB0B3A08BDC3010832E7C57", hash_generated_method = "57EEFF206AA81510C1A0ED941F197A5E")
     
 private RecognizerIntent() {

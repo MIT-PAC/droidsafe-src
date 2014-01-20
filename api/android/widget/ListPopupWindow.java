@@ -698,6 +698,8 @@ public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mPopup.setOnDismissListener(listener);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.080 -0500", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "3AA7D4B2D9BCE578A6C1E3296F0D706C")
     
 private void removePromptView() {
@@ -850,6 +852,8 @@ public DropDownListView(Context context, boolean hijackFocus) {
          * @param position the item index in the list to get a view for
          * @return the view for the specified item
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.144 -0500", hash_original_method = "3F1E6A7533EB0FC6DBDDA209BB95D590", hash_generated_method = "5B1E71941BEC4631C343B211F7143977")
         
 @Override
@@ -1098,6 +1102,8 @@ public ListView getListView() {
      *
      * @param max Max number of items that can be visible and still allow the list to expand.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.109 -0500", hash_original_method = "21262ED785FC4787FB1F1DE7107BCA92", hash_generated_method = "21262ED785FC4787FB1F1DE7107BCA92")
     
 void setListItemExpandMax(int max) {
@@ -1271,6 +1277,8 @@ public boolean onKeyPreIme(int keyCode, KeyEvent event) {
         return false;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.724 -0400", hash_original_method = "F5C740553BB47CFEBEC052FD2A1DEFBA", hash_generated_method = "F19212F524157543401757E3253BD08A")
     private int buildDropDown() {
         ViewGroup dropDownView;

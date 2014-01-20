@@ -11,21 +11,31 @@ import droidsafe.helpers.DSUtils;
 
 public class BackupDataOutput {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void dtor(int mBackupWriter) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeEntityHeader_native(int mBackupWriter, String key, int dataSize) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeEntityData_native(int mBackupWriter, byte[] data, int size) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setKeyPrefix_native(int mBackupWriter, String keyPrefix) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.323 -0500", hash_original_field = "B54359389579FCBEAD7641AAB8EECDC6", hash_generated_field = "B54359389579FCBEAD7641AAB8EECDC6")

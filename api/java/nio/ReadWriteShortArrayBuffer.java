@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.670 -0500", hash_original_method = "E5828D785D2B7BE994EAC0A3E289DECD", hash_generated_method = "8717F6CBC1D05F222C10BD6B2E557139")
     
 static ReadWriteShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
@@ -21,18 +20,24 @@ static ReadWriteShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.672 -0500", hash_original_method = "8E9D34BCCAE8E429C96FDCF9DF5CAB41", hash_generated_method = "8E9D34BCCAE8E429C96FDCF9DF5CAB41")
     
 ReadWriteShortArrayBuffer(short[] array) {
         super(array);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.675 -0500", hash_original_method = "D514769C5D5F8B6E9B68E0333601C0ED", hash_generated_method = "D514769C5D5F8B6E9B68E0333601C0ED")
     
 ReadWriteShortArrayBuffer(int capacity) {
         super(capacity);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.678 -0500", hash_original_method = "9C56AF79FD26FC5F344A35E3553FC338", hash_generated_method = "9C56AF79FD26FC5F344A35E3553FC338")
     
 ReadWriteShortArrayBuffer(int capacity, short[] backingArray,
@@ -131,7 +136,6 @@ ReadWriteShortArrayBuffer(int capacity, short[] backingArray,
     public ShortBuffer slice() {
         return new ReadWriteShortArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

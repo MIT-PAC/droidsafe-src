@@ -11,11 +11,6 @@ import java.util.Date;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
 
-
-
-
-
-
 public class DERGeneralizedTime extends ASN1Object {
 
     /**
@@ -106,6 +101,8 @@ public DERGeneralizedTime(
         this.time = dateF.format(time);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.554 -0500", hash_original_method = "552D223548319DB52C5B3EC786733650", hash_generated_method = "29C94538B6992AC71CB13237D01F688C")
     
 DERGeneralizedTime(
@@ -186,6 +183,8 @@ public String getTime()
         return time + calculateGMTOffset();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.561 -0500", hash_original_method = "EB1651DAB0D660D6B18E01CA950AD828", hash_generated_method = "0FC3C65E759C23DA14F59D604C7C4750")
     
 private String calculateGMTOffset()
@@ -216,6 +215,8 @@ private String calculateGMTOffset()
         return "GMT" + sign + convert(hours) + ":" + convert(minutes);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.564 -0500", hash_original_method = "17817B80FDAA9A144B025AECDD509966", hash_generated_method = "E38FCE191E57EA9B89EF2F22FE7E4354")
     
 private String convert(int time)
@@ -311,6 +312,8 @@ public Date getDate()
         return dateF.parse(d);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.570 -0500", hash_original_method = "5EC472F8945A730F12ABB53C050C6A0C", hash_generated_method = "BF83E0CEC3BC8951896256286F016C05")
     
 private boolean hasFractionalSeconds()
@@ -318,6 +321,8 @@ private boolean hasFractionalSeconds()
         return time.indexOf('.') == 14;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.572 -0500", hash_original_method = "8BA225FFF1B0D4854B6BEDB73124ABD2", hash_generated_method = "D460D0912FF7E706431D993FFB050836")
     
 private byte[] getOctets()
@@ -333,7 +338,8 @@ private byte[] getOctets()
         return bs;
     }
 
-
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.574 -0500", hash_original_method = "C3570560B057E7DF0510746F3C613D12", hash_generated_method = "C3570560B057E7DF0510746F3C613D12")
     
 void encode(
@@ -343,6 +349,8 @@ void encode(
         out.writeEncoded(GENERALIZED_TIME, this.getOctets());
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.577 -0500", hash_original_method = "F335EAF093E47550844C4E3B7BAA9B7A", hash_generated_method = "F335EAF093E47550844C4E3B7BAA9B7A")
     
 boolean asn1Equals(
@@ -362,7 +370,6 @@ public int hashCode()
     {
         return time.hashCode();
     }
-
     
 }
 

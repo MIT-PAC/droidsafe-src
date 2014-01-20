@@ -120,6 +120,8 @@ public static final Cipher getInstance(String transformation,
         return c;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.185 -0500", hash_original_method = "31B6CB29ED2F5413954ED45B70CE7980", hash_generated_method = "286B4EF9ED3C09E27A6A02D565EE55F7")
     
 private static NoSuchAlgorithmException invalidTransformation(String transformation)
@@ -136,6 +138,8 @@ private static NoSuchAlgorithmException invalidTransformation(String transformat
      * @throws NoSuchAlgorithmException
      * @throws NoSuchPaddingException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.189 -0500", hash_original_method = "339FD1DB95451DD24CDE548E6DAA85EE", hash_generated_method = "A579FA8061BF3808C4D5023922279285")
     
 private static synchronized Cipher getCipher(String transformation, Provider provider)
@@ -212,6 +216,8 @@ private static synchronized Cipher getCipher(String transformation, Provider pro
         return c;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.192 -0500", hash_original_method = "CBDBE8535C51B6F20B21C297E0737B0F", hash_generated_method = "278111CE9992CA4C7A69117568A0F6D4")
     
 private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
@@ -556,6 +562,8 @@ public final void init(int opmode, Key key, SecureRandom random) throws InvalidK
         mode = opmode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.216 -0500", hash_original_method = "09F21B40649178B5CD7EDFF6A1F24869", hash_generated_method = "9EE2533A8E8FA6D0BDC78251310E65E9")
     
 private void checkMode(int mode) {

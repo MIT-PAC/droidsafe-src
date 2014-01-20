@@ -42,6 +42,8 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 		super();
 	}
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.146 -0500", hash_original_method = "F352A3E640216B4F520D3B8AC71B6A25", hash_generated_method = "F22BE05CDA656AFEA2EF3612C7813D7B")
     
 public abstract String getMethod();

@@ -60,6 +60,8 @@ public CharArrayWriter(int initialSize) {
         /* empty */
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.961 -0500", hash_original_method = "74E26FDF253668E5689F73596E4C1217", hash_generated_method = "F9CAD98CB28716B01793247C42A0E08E")
     
 private void expand(int i) {

@@ -308,6 +308,8 @@ public boolean performAccessibilityAction(int connectionId, int accessibilityWin
      * @param interactionId The interaction id to match the result with the request.
      * @return The result {@link AccessibilityNodeInfo}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.123 -0500", hash_original_method = "6C285733A381BDAF8984CA8B204B1B7E", hash_generated_method = "88D28EF136C98713E1E9610B4D92960E")
     
 private AccessibilityNodeInfo getFindAccessibilityNodeInfoResultAndClear(int interactionId) {
@@ -341,6 +343,8 @@ public void setFindAccessibilityNodeInfoResult(AccessibilityNodeInfo info,
      * @param interactionId The interaction id to match the result with the request.
      * @return The result {@link AccessibilityNodeInfo}s.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.128 -0500", hash_original_method = "12169805BC03BC63B5C90B56149C0703", hash_generated_method = "A490CAE54EA8F73489F4028FE7ED9F64")
     
 private List<AccessibilityNodeInfo> getFindAccessibilityNodeInfosResultAndClear(
@@ -375,6 +379,8 @@ public void setFindAccessibilityNodeInfosResult(List<AccessibilityNodeInfo> info
      * @param interactionId The interaction id to match the result with the request.
      * @return Whether the action was performed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.133 -0500", hash_original_method = "785F868CD3C42AFCCB7588732B0BC5FA", hash_generated_method = "17EC7C71CC86126937E7396E38CB5DA5")
     
 private boolean getPerformAccessibilityActionResult(int interactionId) {
@@ -404,6 +410,8 @@ public void setPerformAccessibilityActionResult(boolean succeeded, int interacti
     /**
      * Clears the result state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.137 -0500", hash_original_method = "903092ED2C38BF649D61CAF92AAF4DF4", hash_generated_method = "E3D7390DD5E7DC8155A8D23ED2BD1064")
     
 private void clearResultLocked() {
@@ -419,6 +427,8 @@ private void clearResultLocked() {
      * @param interactionId The interaction id to match the result with the request.
      * @return Whether the result was received.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.140 -0500", hash_original_method = "28474D5684D129A1738A9E8F91D9820E", hash_generated_method = "6CB882EFE8E50C92497DD07A19624409")
     
 private boolean waitForResultTimedLocked(int interactionId) {
@@ -455,6 +465,8 @@ private boolean waitForResultTimedLocked(int interactionId) {
      * @param info The info whose bounds to scale.
      * @param scale The scale to apply.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.142 -0500", hash_original_method = "061B568C08B51F012B887F4F0E2A3802", hash_generated_method = "127E2908C4A5EAD90780B79D3E4E8DA8")
     
 private void applyCompatibilityScaleIfNeeded(AccessibilityNodeInfo info, float scale) {
@@ -478,6 +490,8 @@ private void applyCompatibilityScaleIfNeeded(AccessibilityNodeInfo info, float s
      * @param connectionId The id of the connection to the system.
      * @param windowScale The source window compatibility scale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.145 -0500", hash_original_method = "50C3A05545C97DCA046561890361C747", hash_generated_method = "5841F3C3F52249243991CA2FB6EB4161")
     
 private void finalizeAccessibilityNodeInfo(AccessibilityNodeInfo info, int connectionId,
@@ -496,6 +510,8 @@ private void finalizeAccessibilityNodeInfo(AccessibilityNodeInfo info, int conne
      * @param connectionId The id of the connection to the system.
      * @param windowScale The source window compatibility scale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.148 -0500", hash_original_method = "C4CCA9503A1FCF65E2280A82ABED87CD", hash_generated_method = "457DDE40635D93EE5B1F3F509AC6AD3F")
     
 private void finalizeAccessibilityNodeInfos(List<AccessibilityNodeInfo> infos,
@@ -515,6 +531,8 @@ private void finalizeAccessibilityNodeInfos(List<AccessibilityNodeInfo> infos,
      *
      * @return The message.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.150 -0500", hash_original_method = "44FB956257430D3824804A6F98AEDC24", hash_generated_method = "C0DBE962E82B0B615B0516544C7D7535")
     
 private Message getSameProcessMessageAndClear() {

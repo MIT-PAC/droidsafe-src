@@ -11,10 +11,6 @@ import java.util.Random;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class VerifierDeviceIdentity implements Parcelable {
 
     /**
@@ -37,6 +33,8 @@ public static VerifierDeviceIdentity generate() {
      * @return verifier device identity based on the input from the provided
      *         random number generator
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.268 -0500", hash_original_method = "D6D944AADFC67B4BD42C933C55928E5B", hash_generated_method = "F6BDA7C6CF6CB05237F22F1D1A010B33")
     
 static VerifierDeviceIdentity generate(Random rng) {
@@ -44,6 +42,8 @@ static VerifierDeviceIdentity generate(Random rng) {
         return new VerifierDeviceIdentity(identity);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.276 -0500", hash_original_method = "0014F878462E6AB7B3A39DD713651CE2", hash_generated_method = "D1885278B7FEFFEE8CB7FF91673E9D18")
     
 private static final String encodeBase32(long input) {
@@ -80,6 +80,8 @@ private static final String encodeBase32(long input) {
     }
 
     // TODO move this out to its own class (android.util.Base32)
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.279 -0500", hash_original_method = "67756D280C9AED60DD12C4FC81EE50DF", hash_generated_method = "444EFF4D618771059A5D2938B9F360A4")
     
 private static final long decodeBase32(byte[] input) throws IllegalArgumentException {
@@ -154,7 +156,6 @@ public static VerifierDeviceIdentity parse(String deviceIdentity)
     private static final int GROUP_SIZE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.271 -0500", hash_original_field = "75833F281B694B8CD3EC4A9C17B09CC1", hash_generated_field = "20D44E9FEF188B57242BE5C99167ADCE")
 
-
     private static final char ENCODE[] = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
         'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -162,7 +163,6 @@ public static VerifierDeviceIdentity parse(String deviceIdentity)
         'Y', 'Z', '2', '3', '4', '5', '6', '7',
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.273 -0500", hash_original_field = "A3C2DE947E21D26C1577F395B426F934", hash_generated_field = "1700CA6C584107CCD7EC123C22C80E8A")
-
 
     private static final char SEPARATOR = '-';
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.860 -0400", hash_original_field = "5D332226985CE193A54C57E93EC669C5", hash_generated_field = "B66ADEA0D2643455DE07784BB9BD72C0")
@@ -183,10 +183,8 @@ public VerifierDeviceIdentity[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.256 -0500", hash_original_field = "F7C6E4AF32F5AF287AD04BA4BC64B135", hash_generated_field = "C881F5DFD1BC7D567E596FEF17B3CE41")
 
-
     private  long mIdentity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.258 -0500", hash_original_field = "5CA1432964717A942B99C303AF57A60F", hash_generated_field = "2E79569F54EEBC27B02253CAB547B720")
-
 
     private  String mIdentityString;
 
@@ -203,6 +201,8 @@ public VerifierDeviceIdentity(long identity) {
         mIdentityString = encodeBase32(identity);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.263 -0500", hash_original_method = "C7AE44830E0FC5E69D8DADD2D1F4EE49", hash_generated_method = "43B8624D78594E3A043D0F331A7711FC")
     
 private VerifierDeviceIdentity(Parcel source) {

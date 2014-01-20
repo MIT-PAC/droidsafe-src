@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class Grego {
 
     /**
@@ -161,6 +157,8 @@ public static long floorDivide(long numerator, long denominator) {
             ((numerator + 1) / denominator) - 1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.805 -0500", hash_original_method = "7B5B06C7A3E570E8E507C06240E8B6CC", hash_generated_method = "322295894089126D76740056BE91971A")
     
 private static long floorDivide(long numerator, long denominator, long[] remainder) {
@@ -198,7 +196,6 @@ public static int getDayOfWeekInMonth(int year, int month, int dayOfMonth) {
     public static final long MAX_MILLIS = 183882168921600000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.760 -0500", hash_original_field = "9D3905275F611B4F5F0C815F0B8CD030", hash_generated_field = "2EF9C87A008E40D02EA88BD84F8FF273")
 
-
     public static final int MILLIS_PER_SECOND = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.762 -0500", hash_original_field = "C84E5855533E75D9D07CE28836631B78", hash_generated_field = "C055A950E29AE0E28E103E4673C5C8AA")
 
@@ -217,18 +214,18 @@ public static int getDayOfWeekInMonth(int year, int month, int dayOfMonth) {
     private static final int JULIAN_1970_CE = 2440588;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.776 -0500", hash_original_field = "E1E59FBF70D5B5F17F1DCC3DB36C8FC9", hash_generated_field = "5D04FF7D45B15A8F30A186F2443B0393")
 
-
     private static final int[] MONTH_LENGTH = new int[] {
         31,28,31,30,31,30,31,31,30,31,30,31,
         31,29,31,30,31,30,31,31,30,31,30,31
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.779 -0500", hash_original_field = "03E81969C5843D088353A91115CEE6F7", hash_generated_field = "C612E5CDADBCD3552CCC1FFBA961C5ED")
 
-
     private static final int[] DAYS_BEFORE = new int[] {
         0,31,59,90,120,151,181,212,243,273,304,334,
         0,31,60,91,121,152,182,213,244,274,305,335 };
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.494 -0400", hash_original_method = "C0174AAA570C46558C7AC4376248DE88", hash_generated_method = "C0174AAA570C46558C7AC4376248DE88")
     public Grego ()
     {

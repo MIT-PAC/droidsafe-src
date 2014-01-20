@@ -116,6 +116,8 @@ public BufferedWriter(Writer out, int size) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.413 -0500", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "5E7823C8E0E8B576442E72FE23F39A88")
     
 private void checkNotClosed() throws IOException {
@@ -127,6 +129,8 @@ private void checkNotClosed() throws IOException {
     /**
      * Flushes the internal buffer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.415 -0500", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "44F53CF6742339CE56733D4953AB5880")
     
 private void flushInternal() throws IOException {
@@ -141,6 +145,8 @@ private void flushInternal() throws IOException {
      *
      * @return {@code true} if this writer is closed, {@code false} otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.418 -0500", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "49B5D6BDDF3744E41E97B3326CF144AB")
     
 private boolean isClosed() {

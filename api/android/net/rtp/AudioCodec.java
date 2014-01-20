@@ -98,6 +98,8 @@ public static AudioCodec getCodec(int type, String rtpmap, String fmtp) {
 
     public  String fmtp;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.958 -0500", hash_original_method = "9592639532530D98F97A4B6F44806F64", hash_generated_method = "4A85C7BB46AC6C6020DF699A0BE8FACF")
     
 private AudioCodec(int type, String rtpmap, String fmtp) {

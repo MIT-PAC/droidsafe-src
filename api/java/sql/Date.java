@@ -50,6 +50,8 @@ public static Date valueOf(String dateString) {
      * hours, so that the returned Time value corresponds to 00:00:00 GMT on a
      * particular day.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.288 -0500", hash_original_method = "01A3FB6B1C784C6B589498BF3E72AF89", hash_generated_method = "39FC440E592AD958D3DA1840FF8C82F1")
     
 private static long normalizeTime(long theTime) {
@@ -241,6 +243,8 @@ public Date(long theDate) {
     /*
     * Private method to format the time
     */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.282 -0500", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "42C4F2A798161F88780A237C678B7BD2")
     
 private void format(int date, int digits, StringBuilder sb) {

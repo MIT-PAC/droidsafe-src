@@ -35,6 +35,8 @@ public class ObjectStreamClass implements Serializable {
      *            descriptor
      * @return the computer class descriptor
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.253 -0500", hash_original_method = "EE95B522B106FAE9E2BC75AC9A53C7A8", hash_generated_method = "7C589C8FAA2EC286F4CCE935FE295ADA")
     
 private static ObjectStreamClass createClassDesc(Class<?> cl) {
@@ -117,6 +119,8 @@ private static ObjectStreamClass createClassDesc(Class<?> cl) {
         return result;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long computeSerialVersionUID(Class<?> cl, Field[] fields) {
         for (int i = 0; i < fields.length; i++) {
             final Field field = fields[i];
@@ -268,6 +272,8 @@ public int compare(Method m1, Method m2) {
      *            a field signature
      * @return containing the descriptor
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.280 -0500", hash_original_method = "218236478243591CE821F4BA590E81DD", hash_generated_method = "ABBE47BB0144736314470898AAF5A980")
     
 private static String descriptorForFieldSignature(String signature) {
@@ -282,6 +288,8 @@ private static String descriptorForFieldSignature(String signature) {
      *            a method or constructor signature
      * @return containing the descriptor
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.283 -0500", hash_original_method = "2440EA3F17E46E83B0C55915F3096F8E", hash_generated_method = "C5D9C7488210A8FCBCD98983FD46923D")
     
 private static String descriptorForSignature(String signature) {
@@ -298,6 +306,8 @@ private static String descriptorForSignature(String signature) {
      *         serialPersistentFields {@code null} if the class does not
      *         have serialPersistentFields
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.286 -0500", hash_original_method = "96D2879811B04BE03B81870D013DA6FA", hash_generated_method = "89D0726E0C8CF3709FB42187E8FA9808")
     
 static Field fieldSerialPersistentFields(Class<?> cl) {
@@ -316,27 +326,39 @@ static Field fieldSerialPersistentFields(Class<?> cl) {
         return null;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Object newInstance(Class<?> instantiationClass, int methodId) {
 		return new Object();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getConstructorId(Class<?> c) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812619741 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812619741;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static String getConstructorSignature(Constructor<?> c) {
 		return new String();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getFieldSignature(Field f) {
 		return new String();
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static String getMethodSignature(Method m) {
 		return new String();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean hasClinit(Class<?> cl) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153496694 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_153496694;
@@ -354,6 +376,8 @@ static Field fieldSerialPersistentFields(Class<?> cl) {
      *
      * @see Object#hashCode
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.356 -0500", hash_original_method = "FDF4BA7EF329EAA2CE64F9956BF205C6", hash_generated_method = "F4EDCF3F853EC659B04101229D5E120B")
     
 static boolean isExternalizable(Class<?> cl) {
@@ -370,6 +394,8 @@ static boolean isExternalizable(Class<?> cl) {
      *
      * @see Object#hashCode
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.359 -0500", hash_original_method = "6FE1F5C82C04AB08E12223950D7EB08A", hash_generated_method = "0970F67E09B2A5AAF9041B560FB4FFF3")
     
 static boolean isPrimitiveType(char typecode) {
@@ -388,6 +414,8 @@ static boolean isPrimitiveType(char typecode) {
      *
      * @see Object#hashCode
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.361 -0500", hash_original_method = "1C1B1909AD548F77B8D4A1B7F72F485A", hash_generated_method = "6757B2545B287A28286565B96FCAA48C")
     
 static boolean isSerializable(Class<?> cl) {
@@ -437,6 +465,8 @@ public static ObjectStreamClass lookupAny(Class<?> cl) {
      *            descriptor
      * @return the corresponding descriptor
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.381 -0500", hash_original_method = "B7C56FB22E8F4B2B6633F52B26078E29", hash_generated_method = "DB71443E3123CE8B4711D6791B0D923F")
     
@@ -451,6 +481,8 @@ static ObjectStreamClass lookupStreamClass(Class<?> cl) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.391 -0500", hash_original_method = "BEB8966DF391A95FA8B87FE718027911", hash_generated_method = "8810CB9D2A65598D62D1C0ADD8DA521C")
     
 private static WeakHashMap<Class<?>, ObjectStreamClass> getCache() {
@@ -476,6 +508,8 @@ private static WeakHashMap<Class<?>, ObjectStreamClass> getCache() {
      *         writeReplace <code>null</code> if the class does not implement
      *         writeReplace
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.393 -0500", hash_original_method = "B0BA66A83CE642C4DD80DDEEFA7F6EBC", hash_generated_method = "A96091188E14B3C0996F8E224B35FC6E")
     
 static Method findMethod(Class<?> cl, String methodName) {
@@ -670,17 +704,23 @@ static Method findPrivateMethod(Class<?> cl, String methodName,
     /**
      * Constructs a new instance of this class.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.248 -0500", hash_original_method = "F4D9898A03FC0DADA999BF46D97F9433", hash_generated_method = "F4D9898A03FC0DADA999BF46D97F9433")
     
 ObjectStreamClass() {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.241 -0500", hash_original_method = "7053F33417C9644BFD49070B9EF96C54", hash_generated_method = "7053F33417C9644BFD49070B9EF96C54")
     
 void setConstructor(long newConstructor) {
         constructor = newConstructor;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.243 -0500", hash_original_method = "AE977884038645FC18D9650C0686387C", hash_generated_method = "AE977884038645FC18D9650C0686387C")
     
@@ -688,6 +728,8 @@ long getConstructor() {
         return constructor;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.246 -0500", hash_original_method = "592D0703821799AB937A99A67AB05B5C", hash_generated_method = "E84EEE9AF44D27FA2C13151A94F52D4C")
     
@@ -720,6 +762,8 @@ Field getReflectionField(ObjectStreamField osf) {
      *            collection of java.lang.reflect.Field for which to compute
      *            field descriptors
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.256 -0500", hash_original_method = "3492CF41320405C3965233DAB60A3EF1", hash_generated_method = "7E137D5EAEFEEFFC7D0548124A537F7E")
     
 void buildFieldDescriptors(Field[] declaredFields) {
@@ -797,6 +841,8 @@ public Class<?> forClass() {
      *
      * The returned instance may have uninitialized fields, including final fields.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.290 -0500", hash_original_method = "CFDAB7386CDDDD8EC35152CD7D073792", hash_generated_method = "CFDAB7386CDDDD8EC35152CD7D073792")
     
 Object newInstance(Class<?> instantiationClass) throws InvalidClassException {
@@ -804,6 +850,8 @@ Object newInstance(Class<?> instantiationClass) throws InvalidClassException {
         return newInstance(instantiationClass, resolvedConstructorMethodId);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.298 -0500", hash_original_method = "66A47A19F5FB8C837FA66140F62CB154", hash_generated_method = "A49C2FFE48B88A785AC206E614ED6413")
     
 private Class<?> resolveConstructorClass(Class<?> objectClass) throws InvalidClassException {
@@ -928,6 +976,8 @@ public ObjectStreamField getField(String name) {
      * @return the receiver's collection of declared fields for the class it
      *         represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.315 -0500", hash_original_method = "3D80A7A04F3988E3E464D888981C4A01", hash_generated_method = "45D9D5658ADE04E7870C234E33A3805F")
     
@@ -959,6 +1009,8 @@ public ObjectStreamField[] getFields() {
         return loadFields == null ? fields().clone() : loadFields.clone();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.323 -0500", hash_original_method = "8AA71837DDE89491F51C878CBC8B38A5", hash_generated_method = "8AA71837DDE89491F51C878CBC8B38A5")
     
@@ -970,6 +1022,8 @@ List<ObjectStreamClass> getHierarchy() {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.326 -0500", hash_original_method = "970C4D30E4F07A217EB44CA0880B9D33", hash_generated_method = "F9888FC48E0E9E4FE1CD6D12F0A7D843")
     
 private List<ObjectStreamClass> makeHierarchy() {
@@ -987,6 +1041,8 @@ private List<ObjectStreamClass> makeHierarchy() {
      * provides a way to copy the "unshared" attribute from this.fields.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.329 -0500", hash_original_method = "F57C7EC559BF09EB03BA0EA2BC063E8F", hash_generated_method = "37ED6A429AC93FABB5ECD6432523CB64")
     
 private void copyFieldAttributes() {
@@ -1015,6 +1071,8 @@ private void copyFieldAttributes() {
      * @return the receiver's collection of input fields for the class it
      *         represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.331 -0500", hash_original_method = "8F334CDB84C81A51C0419AAF322CA87A", hash_generated_method = "8F334CDB84C81A51C0419AAF322CA87A")
     
@@ -1031,6 +1089,8 @@ ObjectStreamField[] getLoadFields() {
      *
      * @return byte the receiver's flags for the class it represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.337 -0500", hash_original_method = "CB224A404D2A4A24CFF7504565CB22F2", hash_generated_method = "CB224A404D2A4A24CFF7504565CB22F2")
     
@@ -1072,6 +1132,8 @@ public long getSerialVersionUID() {
      * @return an ObjectStreamClass representing the superclass of the class
      *         represented by the receiver.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.349 -0500", hash_original_method = "B099B86A783D62A1B2FEC5CAB74CA2FF", hash_generated_method = "B099B86A783D62A1B2FEC5CAB74CA2FF")
     
@@ -1082,6 +1144,8 @@ ObjectStreamClass getSuperclass() {
     /**
      * Resolves the class properties, if they weren't already
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.363 -0500", hash_original_method = "742EA2900A6EB88CE28517352A724CD7", hash_generated_method = "34500EE607CF681AAABF6AB99F1567DF")
     
 private void resolveProperties() {
@@ -1098,6 +1162,8 @@ private void resolveProperties() {
         arePropertiesResolved = true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.366 -0500", hash_original_method = "250E0179C7C05D1D77B183DF06C38BC2", hash_generated_method = "250E0179C7C05D1D77B183DF06C38BC2")
     
 boolean isSerializable() {
@@ -1105,6 +1171,8 @@ boolean isSerializable() {
         return isSerializable;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.368 -0500", hash_original_method = "86835294A15C6057A38D3AF0C7A856A1", hash_generated_method = "86835294A15C6057A38D3AF0C7A856A1")
     
 boolean isExternalizable() {
@@ -1112,6 +1180,8 @@ boolean isExternalizable() {
         return isExternalizable;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.371 -0500", hash_original_method = "052543446E0B6EEA498804C02394B590", hash_generated_method = "052543446E0B6EEA498804C02394B590")
     
 boolean isProxy() {
@@ -1119,6 +1189,8 @@ boolean isProxy() {
         return isProxy;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.373 -0500", hash_original_method = "23781B8C58B21A484CF86E4B23EBD9CC", hash_generated_method = "23781B8C58B21A484CF86E4B23EBD9CC")
     
 boolean isEnum() {
@@ -1126,12 +1198,16 @@ boolean isEnum() {
         return isEnum;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.398 -0500", hash_original_method = "8B291B650661131936FFDD0976F9C451", hash_generated_method = "8B291B650661131936FFDD0976F9C451")
     
 boolean hasMethodWriteReplace() {
         return (methodWriteReplace != null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.401 -0500", hash_original_method = "42662B3DE24059CFD85E0D286320D7E3", hash_generated_method = "42662B3DE24059CFD85E0D286320D7E3")
     
@@ -1139,12 +1215,16 @@ Method getMethodWriteReplace() {
         return methodWriteReplace;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.403 -0500", hash_original_method = "2852DBB1E5C3B0D1351FCC53EE3E49ED", hash_generated_method = "2852DBB1E5C3B0D1351FCC53EE3E49ED")
     
 boolean hasMethodReadResolve() {
         return (methodReadResolve != null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.405 -0500", hash_original_method = "4E87A71E13632BD19F893729646A7048", hash_generated_method = "4E87A71E13632BD19F893729646A7048")
     
@@ -1152,12 +1232,16 @@ Method getMethodReadResolve() {
         return methodReadResolve;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.407 -0500", hash_original_method = "5A79EE26139C94EE3C3A1C73D8050C0E", hash_generated_method = "5A79EE26139C94EE3C3A1C73D8050C0E")
     
 boolean hasMethodWriteObject() {
         return (methodWriteObject != null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.409 -0500", hash_original_method = "234967F1224E01D561A4A7AA93A723BD", hash_generated_method = "234967F1224E01D561A4A7AA93A723BD")
     
@@ -1165,12 +1249,16 @@ Method getMethodWriteObject() {
         return methodWriteObject;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.412 -0500", hash_original_method = "46A702B5AEFAE4B1088A7C3DF1FC5D53", hash_generated_method = "46A702B5AEFAE4B1088A7C3DF1FC5D53")
     
 boolean hasMethodReadObject() {
         return (methodReadObject != null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.414 -0500", hash_original_method = "46960222BC0B63A6D59A57191BB77464", hash_generated_method = "46960222BC0B63A6D59A57191BB77464")
     
@@ -1178,12 +1266,16 @@ Method getMethodReadObject() {
         return methodReadObject;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.417 -0500", hash_original_method = "29BCBE89B6EA217724D7699109546E15", hash_generated_method = "29BCBE89B6EA217724D7699109546E15")
     
 boolean hasMethodReadObjectNoData() {
         return (methodReadObjectNoData != null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.419 -0500", hash_original_method = "04BED52E799E809DB8DD364039964962", hash_generated_method = "04BED52E799E809DB8DD364039964962")
     
@@ -1191,6 +1283,8 @@ Method getMethodReadObjectNoData() {
         return methodReadObjectNoData;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.421 -0500", hash_original_method = "971C620E95BDC0255A7014EB736B5315", hash_generated_method = "971C620E95BDC0255A7014EB736B5315")
     
 void initPrivateFields(ObjectStreamClass desc) {
@@ -1214,6 +1308,8 @@ void initPrivateFields(ObjectStreamClass desc) {
      * @param c
      *            aClass, the new class that the receiver describes
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.424 -0500", hash_original_method = "7A3AD0F8FFB276A7B1543CE5BED00A8C", hash_generated_method = "7A3AD0F8FFB276A7B1543CE5BED00A8C")
     
 void setClass(Class<?> c) {
@@ -1228,6 +1324,8 @@ void setClass(Class<?> c) {
      *            ObjectStreamField[], the receiver's new collection of declared
      *            fields for the class it represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.427 -0500", hash_original_method = "95CB44F7E664D85BD475B63456D19F48", hash_generated_method = "95CB44F7E664D85BD475B63456D19F48")
     
 void setFields(ObjectStreamField[] f) {
@@ -1242,6 +1340,8 @@ void setFields(ObjectStreamField[] f) {
      *            ObjectStreamField[], the receiver's new collection of input
      *            fields for the class it represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.429 -0500", hash_original_method = "BCDE99C62E7E698332D80A91E945CB98", hash_generated_method = "BCDE99C62E7E698332D80A91E945CB98")
     
 void setLoadFields(ObjectStreamField[] f) {
@@ -1258,6 +1358,8 @@ void setLoadFields(ObjectStreamField[] f) {
      * @param b
      *            byte, the receiver's new flags for the class it represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.431 -0500", hash_original_method = "576B4ED3621FB044BCB61FA4A013466B", hash_generated_method = "576B4ED3621FB044BCB61FA4A013466B")
     
 void setFlags(byte b) {
@@ -1271,6 +1373,8 @@ void setFlags(byte b) {
      *            a String, the new fully qualified name of the class the
      *            receiver represents
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.433 -0500", hash_original_method = "013A745A10FFAC0063C18ECA8D35B13C", hash_generated_method = "013A745A10FFAC0063C18ECA8D35B13C")
     
 void setName(String newName) {
@@ -1283,6 +1387,8 @@ void setName(String newName) {
      * @param l
      *            a long, the new SUID for the class represented by the receiver
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.435 -0500", hash_original_method = "F5AE79B32CCC15982EBF3437ADD142B6", hash_generated_method = "F5AE79B32CCC15982EBF3437ADD142B6")
     
 void setSerialVersionUID(long l) {
@@ -1297,12 +1403,16 @@ void setSerialVersionUID(long l) {
      *            an ObjectStreamClass, the new ObjectStreamClass for the
      *            superclass of the class represented by the receiver
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.437 -0500", hash_original_method = "0C66D1C8E17ECB3824AFA99C964D873A", hash_generated_method = "0C66D1C8E17ECB3824AFA99C964D873A")
     
 void setSuperclass(ObjectStreamClass c) {
         superclass = c;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.440 -0500", hash_original_method = "555F932795060D0A381054093FA5AE4C", hash_generated_method = "05142541EFC82F6D90BAECD39A06BF52")
     
 private int primitiveSize(Class<?> type) {

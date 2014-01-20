@@ -8,6 +8,8 @@ import libcore.io.SizeOf;
 
 final class ShortToByteBufferAdapter extends ShortBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.697 -0500", hash_original_method = "AC3AEFC35B29F87F354D845C3C24C9D6", hash_generated_method = "93E5B98A7AB0E8CAA7473DBE88CBAADB")
     
 static ShortBuffer asShortBuffer(ByteBuffer byteBuffer) {
@@ -19,6 +21,8 @@ static ShortBuffer asShortBuffer(ByteBuffer byteBuffer) {
 
     private  ByteBuffer byteBuffer;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.700 -0500", hash_original_method = "A7ACA037BB98388A15E54FB4598E481B", hash_generated_method = "0CDBB56219EF926272A5B6A970819344")
     
 private ShortToByteBufferAdapter(ByteBuffer byteBuffer) {

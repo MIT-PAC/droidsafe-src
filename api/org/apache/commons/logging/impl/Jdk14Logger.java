@@ -42,6 +42,8 @@ public Jdk14Logger(String name) {
 
     // --------------------------------------------------------- Public Methods
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.743 -0500", hash_original_method = "C5765CC5B1B39AF0EFD6226D38EFAF69", hash_generated_method = "3B8A9EBFFF89165FD04CE1366AC6CA64")
     
 private void log( Level level, String msg, Throwable ex ) {

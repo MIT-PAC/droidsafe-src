@@ -33,14 +33,13 @@ import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Selector;
 
-
-
-
 public class AttributeCertificateHolder implements CertSelector, Selector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.781 -0500", hash_original_field = "81EEF30676831ECD3948BE1C9E69FB41", hash_generated_field = "81EEF30676831ECD3948BE1C9E69FB41")
 
      Holder holder;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.783 -0500", hash_original_method = "5CADDEA19B83B0D9A5BBB8113D1E397F", hash_generated_method = "5CADDEA19B83B0D9A5BBB8113D1E397F")
     
 AttributeCertificateHolder(ASN1Sequence seq)
@@ -210,6 +209,8 @@ public String getOtherObjectTypeID()
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.812 -0500", hash_original_method = "813AC8AE1843F5B7087E11CB016E8403", hash_generated_method = "98328AD328EBFE4EA80E7D61F0CB4312")
     
 private GeneralNames generateGeneralNames(X509Principal principal)
@@ -217,6 +218,8 @@ private GeneralNames generateGeneralNames(X509Principal principal)
         return new GeneralNames(new DERSequence(new GeneralName(principal)));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.816 -0500", hash_original_method = "938EE7D821BB407EF13AE79847029298", hash_generated_method = "481DB24D8DF1CE280CA62F711FE67824")
     
 private boolean matchesDN(X509Principal subject, GeneralNames targets)
@@ -246,6 +249,8 @@ private boolean matchesDN(X509Principal subject, GeneralNames targets)
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.818 -0500", hash_original_method = "7552EC21B75F1C8319E3B7352977E9CE", hash_generated_method = "2E3F6A22E66BCDAAA8D6F8DE536543B1")
     
 private Object[] getNames(GeneralName[] names)
@@ -271,6 +276,8 @@ private Object[] getNames(GeneralName[] names)
         return l.toArray(new Object[l.size()]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.821 -0500", hash_original_method = "2BE9B6F72BB32A06F2A43AB8DF17A2B5", hash_generated_method = "BE89667838AC79A107867130DACF47F1")
     
 private Principal[] getPrincipals(GeneralNames names)
@@ -452,7 +459,6 @@ public boolean match(Object obj)
 
         return match((Certificate)obj);
     }
-
     
 }
 

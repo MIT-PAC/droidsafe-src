@@ -22,11 +22,6 @@ import android.util.Log;
 
 import com.google.android.collect.Lists;
 
-
-
-
-
-
 public class TestRunner implements PerformanceTestCase.Intermediates {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.610 -0500", hash_original_method = "AD22069B08D63EC743A7576146EA4159", hash_generated_method = "6406C230D8C31AE4E73A75E799AAE9D3")
@@ -143,6 +138,8 @@ public static Method[] getAllTestMethods(Class clazz) {
         return testMethods;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.628 -0500", hash_original_method = "D8643B3E6741F04B2E9656D32352984B", hash_generated_method = "02A3EBD1E7DB597F93309935926B1346")
     
 private static boolean isTestMethod(Method m) {
@@ -234,13 +231,11 @@ public static String getTitle(String className) {
     public static final int PROFILING = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.495 -0500", hash_original_field = "79860B786A2A92E20FCDB1EFB461CB8C", hash_generated_field = "2B9C658BF3C592304842D1E3DF01DC9B")
 
-
     public static final int CLEARSCREEN = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.497 -0500", hash_original_field = "0385BE08D0E88821C8E259FAB30ACD7B", hash_generated_field = "104157555C19EFF242C550E6CF8A49FB")
 
     private static final String TAG = "TestHarness";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.521 -0500", hash_original_field = "A07D468339B9F56E71508AA02AF3174F", hash_generated_field = "08C0FD9F34C8A57F7E692654DC2345AB")
-
 
     private static Class mRunnableClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.523 -0500", hash_original_field = "C22B64973BFE68107EA6C1B77A2908E4", hash_generated_field = "55F3A7A57A174853E25B260195B61D60")
@@ -251,10 +246,8 @@ public static String getTitle(String className) {
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.501 -0500", hash_original_field = "78C6CB4089342DF74EA77B9C70171E1D", hash_generated_field = "80ECCE0FDB54A0C0B71FD5563F9A3BBA")
 
-
     private int mMode = REGRESSION;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.503 -0500", hash_original_field = "A2F8B68CC372A14E3C105D8DCF2C267F", hash_generated_field = "816900AFC4C5F99896FEFAE236AAAC3D")
-
 
     private List<Listener> mListeners = Lists.newArrayList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.505 -0500", hash_original_field = "C82C1A18EFD3F758653B0348AD894A88", hash_generated_field = "9748ECEB0653B84A525176F637D38ECD")
@@ -265,7 +258,6 @@ public static String getTitle(String className) {
     private int mFailed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.510 -0500", hash_original_field = "E41D2F0453F9A25FFB0E870A7DA38D76", hash_generated_field = "3A78B0C220AA631D9D09212ECCBE44E3")
 
-
     private int mInternalIterations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.513 -0500", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "20EEDA67D8E4F20D3E4CA3D911CCA492")
 
@@ -275,10 +267,8 @@ public static String getTitle(String className) {
     private long mEndTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.517 -0500", hash_original_field = "6BC238A3BDD37BF1CAC26EA2CE45C508", hash_generated_field = "DB6E5647C7C137158D39EAA9BCFFCF3D")
 
-
     private String mClassName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.519 -0500", hash_original_field = "2084C12375BBD761F459C848AEF2620C", hash_generated_field = "2084C12375BBD761F459C848AEF2620C")
-
 
     List<IntermediateTime> mIntermediates = null;
 
@@ -309,6 +299,8 @@ public void finishProfiling() {
         Debug.stopMethodTracing();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.565 -0500", hash_original_method = "8C5BFDCF70A85F458A74E20506CDCA9E", hash_generated_method = "115BAB642EB8FE29EEF2CA2B3E419764")
     
 private void started(String className) {
@@ -319,6 +311,8 @@ private void started(String className) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.567 -0500", hash_original_method = "9B2F60619B845977C468209ECD59C4E6", hash_generated_method = "166E9BAE2545F7A89219654E7137F654")
     
 private void finished(String className) {
@@ -328,6 +322,8 @@ private void finished(String className) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.569 -0500", hash_original_method = "5B73476158BD043DA3960AAE5CE325A6", hash_generated_method = "1A57C063EFE53A36B88515708DAC5701")
     
 private void performance(String className,
@@ -410,7 +406,6 @@ public void addIntermediate(String name) {
 public void addIntermediate(String name, long timeInNS) {
         mIntermediates.add(new IntermediateTime(name, timeInNS));
     }
-
     
     public class JunitTestSuite extends TestSuite implements TestListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.527 -0500", hash_original_field = "BDA376DC770C8E971D5C7AD1F1FE1B95", hash_generated_field = "BDA376DC770C8E971D5C7AD1F1FE1B95")
@@ -478,15 +473,11 @@ public void addFailure(Test test, junit.framework.AssertionFailedError t) {
             mError = true;
             failed(test.toString(), t);
         }
-
         
     }
-
-
     
     public static class IntermediateTime {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.548 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
-
 
         public String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.550 -0500", hash_original_field = "738CA73B4822964026076DEBF88C5508", hash_generated_field = "FE74B3B074A6BBF26780BB4EDC778464")
@@ -498,11 +489,8 @@ public IntermediateTime(String name, long timeInNS) {
             this.name = name;
             this.timeInNS = timeInNS;
         }
-
         
     }
-
-
     
     public interface Listener {
         void started(String className);
@@ -530,6 +518,8 @@ public void setPerformanceMode(int mode) {
         mMode = mode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.596 -0500", hash_original_method = "A32FEAB2DFA07740C77FDABE5769E691", hash_generated_method = "191B0C4EBD79B17EE2C4C3CED3CD886C")
     
 private void missingTest(String className, Throwable e) {
@@ -806,7 +796,6 @@ public void runSingleJunitTest(String className) {
             Log.e("TestHarness", "Instantiation Exception", e);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.635 -0500", hash_original_method = "B693F140B371F7E4D9D6941B4BAAAF7A", hash_generated_method = "9B8A79A01E17735DA0524DA84E523177")
     

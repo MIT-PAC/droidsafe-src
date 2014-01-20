@@ -81,6 +81,8 @@ public HttpResponseCache(File directory, long maxSize) throws IOException {
         cache = DiskLruCache.open(directory, VERSION, ENTRY_COUNT, maxSize);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.382 -0500", hash_original_method = "BDF5FA5DFC6F094E24DB34D390FA0AF5", hash_generated_method = "F8FEF1780A1A30BD5E9D4D030C51781E")
     
 private String uriToKey(URI uri) {
@@ -200,6 +202,8 @@ private InputStream newBodyInputStream(final DiskLruCache.Snapshot snapshot) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.401 -0500", hash_original_method = "E894667736427F176108888DBBB58A41", hash_generated_method = "EF73783845FFA882FA9F24063E71D0F5")
     
 private HttpEngine getHttpEngine(HttpURLConnection httpConnection) {
@@ -230,6 +234,8 @@ public synchronized int getWriteSuccessCount() {
         return writeSuccessCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.411 -0500", hash_original_method = "AFAC31322E1EE7F2799E824F8557136B", hash_generated_method = "B0DF93595E815F8FA6AB786C973F786A")
     
 synchronized void trackResponse(ResponseSource source) {
@@ -466,6 +472,8 @@ public void writeTo(DiskLruCache.Editor editor) throws IOException {
             writer.close();
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.410 -0400", hash_original_method = "03191EC96D9A5CD24E720BDBCBE04A2D", hash_generated_method = "783E1F184BA0D6307BCB01A56B82F777")
         private boolean isHttps() {
             boolean var84590F99892941EEBA41F98A1FDD816B_1813402239 = (uri.startsWith("https://"));
@@ -475,6 +483,8 @@ public void writeTo(DiskLruCache.Editor editor) throws IOException {
             //return uri.startsWith("https://");
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.480 -0500", hash_original_method = "6902188738A592ACC936EB175BFF523B", hash_generated_method = "901B22E9287AD4DEA2B2BF3315E3BDF3")
         
 private int readInt(InputStream in) throws IOException {
@@ -486,6 +496,8 @@ private int readInt(InputStream in) throws IOException {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.483 -0500", hash_original_method = "DA1C299BAC85411132B971A655DE52AC", hash_generated_method = "AEF488670CC8F9B35CB962389B87C98A")
         
 private Certificate[] readCertArray(InputStream in) throws IOException {
@@ -508,6 +520,8 @@ private Certificate[] readCertArray(InputStream in) throws IOException {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.485 -0500", hash_original_method = "31A77F7FE4035FAC2C12BBD4DA149ECB", hash_generated_method = "36DDE423BF7D87B2238AB9690C3BCAD7")
         
 private void writeCertArray(Writer writer, Certificate[] certificates) throws IOException {
@@ -641,6 +655,8 @@ InputStream var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868 =                 in;
         
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.413 -0500", hash_original_method = "456F1C16A4D586B3084074761F46B903", hash_generated_method = "5B7AF2711F3524860C7F52A4D5B2C284")
     
 synchronized void trackConditionalCacheHit() {

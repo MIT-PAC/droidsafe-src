@@ -753,6 +753,8 @@ ParcelFileDescriptorInner(ParcelFileDescriptor pfd, IContentProvider icp) {
     }
 
     /** @hide */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.143 -0500", hash_original_method = "E12362426E2275C617AE20C6C7FEA7C8", hash_generated_method = "CFEA63A8306FA2384868F10EC08571CD")
     
 protected abstract IContentProvider acquireProvider(Context c, String name);
@@ -766,6 +768,8 @@ protected IContentProvider acquireExistingProvider(Context c, String name) {
         return acquireProvider(c, name);
     }
     /** @hide */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.148 -0500", hash_original_method = "72D1BF5F06ECC1999DE964627DE0A7C9", hash_generated_method = "39732D82E8BDAE9C259BDABDB3D5EEB1")
     
 public abstract boolean releaseProvider(IContentProvider icp);
@@ -1232,8 +1236,8 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
      *               the field. Passing an empty ContentValues will create an empty row.
      * @return the URL of the newly created row.
      */
-    @DSComment("Content model/data manipulation")
-    @DSSpec(DSCat.CONTENT)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
     
@@ -1668,6 +1672,8 @@ public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwor
      *
      * Always returns at least 1%.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.279 -0500", hash_original_method = "5964C3B3CD446EC6DF12ED3CA7F7D861", hash_generated_method = "0921997DBC9424DEEBA9FFBFAEF6655B")
     
 private int samplePercentForDuration(long durationMillis) {
@@ -1677,6 +1683,8 @@ private int samplePercentForDuration(long durationMillis) {
         return (int) (100 * durationMillis / SLOW_THRESHOLD_MILLIS) + 1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.282 -0500", hash_original_method = "339BAFB8AA6EDB4FDC193A187E8B0067", hash_generated_method = "99B2A5D5BBD81D5B67303C398B4F97C9")
     
 private void maybeLogQueryToEventLog(long durationMillis,
@@ -1719,6 +1727,8 @@ private void maybeLogQueryToEventLog(long durationMillis,
             samplePercent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.285 -0500", hash_original_method = "8C4CA0C0E96B47F9D6365343066B43C9", hash_generated_method = "5556939211C50A350B1A7BA3EEF921A3")
     
 private void maybeLogUpdateToEventLog(

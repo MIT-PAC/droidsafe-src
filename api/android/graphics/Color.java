@@ -93,6 +93,8 @@ public static int rgb(int red, int green, int blue) {
      * 
      * @hide Pending API council
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.602 -0500", hash_original_method = "F562985E094FAB41C0929069F7EFE8D1", hash_generated_method = "A66FF49F97066FE02C2FBBFF09D210D6")
     
 public static float hue(int color) {
@@ -137,6 +139,8 @@ public static float hue(int color) {
      * 
      * @hide Pending API council
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.604 -0500", hash_original_method = "E0C473B1C058E704D5BF11A300CA2D54", hash_generated_method = "D1EC474CB165D3225EAE9EC555C03136")
     
 public static float saturation(int color) {
@@ -165,6 +169,8 @@ public static float saturation(int color) {
      * 
      * @hide Pending API council
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.607 -0500", hash_original_method = "D6758F319DD78E16480F6A6EAFA895B2", hash_generated_method = "6BF6E18793A2BF100ABBE32A3CDF6F4A")
     
 public static float brightness(int color) {
@@ -221,6 +227,8 @@ public static int parseColor(String colorString) {
      * 
      * @hide Pending API council
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.877 -0500", hash_original_method = "A6DC82312CC05525C4EDA100C7030059", hash_generated_method = "E0EB1235C5A74D15A23344DCA4CDDBF1")
     
 public static int HSBtoColor(float[] hsb) {
@@ -240,6 +248,8 @@ public static int HSBtoColor(float[] hsb) {
      * 
      * @hide Pending API council
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.880 -0500", hash_original_method = "E70811FE9C0865EEAC6AAF5133BC7797", hash_generated_method = "F1D1B2B444EC9B708082A424DEC06B8C")
     
 public static int HSBtoColor(float h, float s, float b) {
@@ -305,6 +315,8 @@ public static int HSBtoColor(float h, float s, float b) {
      * @param blue  blue component value [0..255]
      * @param hsv  3 element array which holds the resulting HSV components.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.884 -0500", hash_original_method = "A7C53B8C18974DA71D8345A9FB5FCA17", hash_generated_method = "967AB50A93E41E01104A5FA8AA950BBA")
     
 public static void RGBToHSV(int red, int green, int blue, float hsv[]) {
@@ -358,6 +370,8 @@ public static int HSVToColor(float hsv[]) {
      * @param hsv  3 element array which holds the input HSV components.
      * @return the resulting argb color
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.891 -0500", hash_original_method = "11E4D1D9F03C7C44A0CBC902A480F9CD", hash_generated_method = "14AD95AA2615FA2FF0C63374F2B31E6F")
     
 public static int HSVToColor(int alpha, float hsv[]) {
@@ -367,9 +381,13 @@ public static int HSVToColor(int alpha, float hsv[]) {
         return nativeHSVToColor(alpha, hsv);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeHSVToColor(int alpha, float hsv[]) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947;
@@ -414,6 +432,8 @@ public static int HSVToColor(int alpha, float hsv[]) {
 
     private static  HashMap<String, Integer> sColorNameMap;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.684 -0400", hash_original_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA", hash_generated_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA")
     public Color ()
     {

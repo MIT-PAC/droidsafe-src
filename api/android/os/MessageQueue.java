@@ -32,24 +32,34 @@ public class MessageQueue {
     @SuppressWarnings("unused")
     private int mPtr;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.825 -0500", hash_original_method = "024946A17D31C4FE5B39BFCF4854F539", hash_generated_method = "024946A17D31C4FE5B39BFCF4854F539")
     
 MessageQueue() {
         nativeInit();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void nativeInit(){
         //Formerly a native function
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void nativeDestroy(){
         //Formerly a native function
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void nativePollOnce(int ptr, int timeoutMillis){
         //Formerly a native function
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void nativeWake(int ptr){
         //Formerly a native function
     }
@@ -101,6 +111,8 @@ MessageQueue() {
         */
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final Message next(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //int pendingIdleHandlerCount = -1;
@@ -126,6 +138,8 @@ MessageQueue() {
         /* Original Method Too Long, Refer to Original Implementation */
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final boolean enqueueMessage(Message msg, long when){
         //throw new AndroidRuntimeException(msg + " This message is already in use.");
         //throw new RuntimeException("Main thread not allowed to quit");
@@ -145,6 +159,8 @@ MessageQueue() {
         /* Original Method Too Long, Refer to Original Implementation */
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final boolean removeMessages(Handler h, int what, Object object,
             boolean doRemove){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
@@ -164,6 +180,8 @@ MessageQueue() {
         /* Original Method Too Long, Refer to Original Implementation */
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void removeMessages(Handler h, Runnable r, Object object){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         Message p = mMessages;
@@ -179,6 +197,8 @@ MessageQueue() {
         /* Original Method Too Long, Refer to Original Implementation */
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void removeCallbacksAndMessages(Handler h, Object object){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         Message p = mMessages;

@@ -72,6 +72,8 @@ public static IntBuffer wrap(int[] array, int start, int intCount) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.117 -0500", hash_original_method = "BC7C458D54C7EF00271779F9364447AB", hash_generated_method = "BC7C458D54C7EF00271779F9364447AB")
     
 IntBuffer(int capacity) {
@@ -103,6 +105,8 @@ public final int arrayOffset() {
      *
      * @return a read-only version of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.124 -0500", hash_original_method = "4E5C9DEC8494400600F057FE77AF41B7", hash_generated_method = "A87D6616A98CD0E633A87C121BC06FA8")
     
 public abstract IntBuffer asReadOnlyBuffer();
@@ -118,6 +122,8 @@ public abstract IntBuffer asReadOnlyBuffer();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.127 -0500", hash_original_method = "ADBAAAA244C99486C1E2FADBAB49EEE2", hash_generated_method = "497335B55AC037794B7F61A23232A35C")
     
 public abstract IntBuffer compact();
@@ -168,6 +174,8 @@ public int compareTo(IntBuffer otherBuffer) {
      *
      * @return a duplicated buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.133 -0500", hash_original_method = "0C804092755E4B9B6E5C0297DAA0E741", hash_generated_method = "5A5B68DA5A5D5C973D12C09D54E816A6")
     
 public abstract IntBuffer duplicate();
@@ -214,6 +222,8 @@ public abstract IntBuffer duplicate();
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.138 -0500", hash_original_method = "0A798F66266369F5E0B8382312B2A42C", hash_generated_method = "3728D34F4B8457DB5591DFE714380404")
     
 public abstract int get();
@@ -280,6 +290,8 @@ public IntBuffer get(int[] dst, int dstOffset, int intCount) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.146 -0500", hash_original_method = "C5D471E4849A6B00EECD9AFDBF0AFE23", hash_generated_method = "3A3B1B5CB5F362BC2AAE9BEF986FF130")
     
 public abstract int get(int index);
@@ -318,6 +330,8 @@ public final boolean hasArray() {
      *
      * @return {@code true} if this buffer is direct, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.153 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
 public abstract boolean isDirect();
@@ -332,6 +346,8 @@ public abstract boolean isDirect();
      * @return the byte order used by this buffer when converting ints from/to
      *         bytes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.155 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     
 public abstract ByteOrder order();
@@ -341,6 +357,8 @@ public abstract ByteOrder order();
      *
      * @return see {@code array()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.157 -0500", hash_original_method = "0C22D1CF923E9DF3483B308CB9EA9081", hash_generated_method = "3141C402420A674783C4D953BBCA5765")
     
 abstract int[] protectedArray();
@@ -350,6 +368,8 @@ abstract int[] protectedArray();
      *
      * @return see {@code arrayOffset()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.160 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     
 abstract int protectedArrayOffset();
@@ -359,6 +379,8 @@ abstract int protectedArrayOffset();
      *
      * @return see {@code hasArray()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.163 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     
 abstract boolean protectedHasArray();
@@ -375,6 +397,8 @@ abstract boolean protectedHasArray();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.165 -0500", hash_original_method = "82862E853D49F26D6E084DD906147BE0", hash_generated_method = "6CC47AC36AEAFCB275507B3483ECA23A")
     
 public abstract IntBuffer put(int i);
@@ -480,6 +504,8 @@ public IntBuffer put(IntBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.175 -0500", hash_original_method = "C04490F77D9F5C2317E167F33A34C0AF", hash_generated_method = "794E9CBD8FE98A8EBCFB2C6DAE020A9E")
     
 public abstract IntBuffer put(int index, int i);
@@ -499,6 +525,8 @@ public abstract IntBuffer put(int index, int i);
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.178 -0500", hash_original_method = "B9F3B2A9702898038CC25336B74676C0", hash_generated_method = "3B6DA994D8723384D96B2E09D6E6434C")
     
 public abstract IntBuffer slice();

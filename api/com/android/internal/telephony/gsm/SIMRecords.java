@@ -1205,6 +1205,8 @@ public void handleMessage(Message msg) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.433 -0500", hash_original_method = "E530DF481CB4FAA0037A4FE4ABD87373", hash_generated_method = "4D94A14859D0BFF89C8EDCF35A923FF8")
     
 private void handleFileUpdate(int efid) {
@@ -1235,6 +1237,8 @@ private void handleFileUpdate(int efid) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.436 -0500", hash_original_method = "CBD0F454D52453FACC84E0D26FD9E162", hash_generated_method = "EC796316EA205550D38813FE2E0DD1B3")
     
 private void handleSimRefresh(int[] result) {
@@ -1285,6 +1289,8 @@ protected int dispatchGsmMessage(SmsMessageBase message) {
         return phone.mSMS.dispatchMessage(message);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.441 -0500", hash_original_method = "3974DFF11A620863F24401AEED15BD51", hash_generated_method = "F856310924EA4D479EF65BE2B179A60C")
     
 private void handleSms(byte[] ba) {
@@ -1306,6 +1312,8 @@ private void handleSms(byte[] ba) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.444 -0500", hash_original_method = "AAB2EB039B628CD9C66D57B4359C7EA6", hash_generated_method = "6DB8CC3865EAE6752FC24EB5A8D7D9B8")
     
 private void handleSmses(ArrayList messages) {
@@ -1389,6 +1397,8 @@ protected void onAllRecordsLoaded() {
 
     //***** Private methods
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.451 -0500", hash_original_method = "F5FC22B4152F67EB826E6610A6C9072B", hash_generated_method = "A7EFF23B87E7835FF9D502719AEAA0F1")
     
 private void setSpnFromConfig(String carrier) {
@@ -1397,6 +1407,8 @@ private void setSpnFromConfig(String carrier) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.453 -0500", hash_original_method = "0A1C3646AC6E538340751C4EFB011D4A", hash_generated_method = "64200EBB6E30D739BD0576D48D1DFDB7")
     
 private void setVoiceMailByCountry (String spn) {
@@ -1538,6 +1550,8 @@ protected void fetchSimRecords() {
     /**
      * Checks if plmn is HPLMN or on the spdiNetworks list.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.466 -0500", hash_original_method = "94EB8BB16DAD2AA5FAF871DB9935C4E1", hash_generated_method = "B10CFC01F79C16B123A0B139BF2068B3")
     
 private boolean isOnMatchingPlmn(String plmn) {
@@ -1569,6 +1583,8 @@ private boolean isOnMatchingPlmn(String plmn) {
      *        ar.exception holds exception in error
      *        ar.result is byte[] for data in success
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.472 -0500", hash_original_method = "CF95CAB3FC09F3005867C57538604F5A", hash_generated_method = "CE61E9CA1F81FE2E2EBDD8CBB353B0EF")
     
 private void getSpnFsm(boolean start, AsyncResult ar) {
@@ -1653,6 +1669,8 @@ private void getSpnFsm(boolean start, AsyncResult ar) {
      * This record contains the list of numeric network IDs that
      * are treated specially when determining SPN display
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.474 -0500", hash_original_method = "2AE095A71557CBF993C4F4933FD42467", hash_generated_method = "3DABC7C5ED360ECCBE47B7A30DD7BCCC")
     
 private void
@@ -1694,6 +1712,8 @@ private void
     /**
      * check to see if Mailbox Number is allocated and activated in CPHS SST
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.477 -0500", hash_original_method = "3EE42FFEB0B4A779D022FF2A029DBC31", hash_generated_method = "70E7CFC37DE77752A72E077AC8BCF1AA")
     
 private boolean isCphsMailboxEnabled() {
@@ -1730,6 +1750,8 @@ public boolean isCspPlmnEnabled() {
      *
      * @param data EF_CSP hex data.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.487 -0500", hash_original_method = "5509D297F6B8CC0BD321C284BD8D086E", hash_generated_method = "1EE4C2A44C632B03EB2CD5B26F7BAC3B")
     
 private void handleEfCspData(byte[] data) {

@@ -64,6 +64,8 @@ public ViewAnimator(Context context, AttributeSet attrs) {
      * Initialize this {@link ViewAnimator}, possibly setting
      * {@link #setMeasureAllChildren(boolean)} based on {@link FrameLayout} flags.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.360 -0500", hash_original_method = "6B106D21A6B322E95178F19E05B7CE37", hash_generated_method = "52F738E13C11CE8B2A0A08528D976E94")
     
 private void initViewAnimator(Context context, AttributeSet attrs) {
@@ -155,6 +157,8 @@ public int getDisplayedChild() {
      * @param animate Whether or not to use the in and out animations, defaults
      *            to true.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.371 -0500", hash_original_method = "821F94AAA9585776C884C184A81B321A", hash_generated_method = "821F94AAA9585776C884C184A81B321A")
     
 void showOnly(int childIndex, boolean animate) {
@@ -183,6 +187,8 @@ void showOnly(int childIndex, boolean animate) {
      *
      * @param childIndex The index of the child to be shown.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.373 -0500", hash_original_method = "F76460515723C04BD015D3AE7F75A8EE", hash_generated_method = "F76460515723C04BD015D3AE7F75A8EE")
     
 void showOnly(int childIndex) {

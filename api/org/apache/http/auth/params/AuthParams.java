@@ -7,8 +7,6 @@ import droidsafe.annotations.*;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 
-
-
 public final class AuthParams {
 
     /**
@@ -38,7 +36,6 @@ public static String getCredentialCharset(final HttpParams params) {
         return charset;
     }
 
-
     /**
      * Sets the charset to be used when encoding
      * {@link org.apache.http.auth.Credentials}.
@@ -54,12 +51,13 @@ public static void setCredentialCharset(final HttpParams params, final String ch
         params.setParameter(AuthPNames.CREDENTIAL_CHARSET, charset);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.224 -0500", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "7F4E5802A312C1007D40C42C567D1ADC")
     
 private AuthParams() {
         super();
     }
-
     
 }
 

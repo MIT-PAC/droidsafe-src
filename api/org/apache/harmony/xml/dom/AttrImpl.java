@@ -33,6 +33,8 @@ public final class AttrImpl extends NodeImpl implements Attr {
 
     private String value = "";
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.301 -0500", hash_original_method = "EF27CA8C1828BF4AC2BE0D84F97E8864", hash_generated_method = "EF27CA8C1828BF4AC2BE0D84F97E8864")
     
 AttrImpl(DocumentImpl document, String namespaceURI, String qualifiedName) {
@@ -40,6 +42,8 @@ AttrImpl(DocumentImpl document, String namespaceURI, String qualifiedName) {
         setNameNS(this, namespaceURI, qualifiedName);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.305 -0500", hash_original_method = "2F6F1C08CF036A2A7F978D7F391927BA", hash_generated_method = "2F6F1C08CF036A2A7F978D7F391927BA")
     
 AttrImpl(DocumentImpl document, String name) {

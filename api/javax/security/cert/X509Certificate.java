@@ -238,6 +238,8 @@ public X509Certificate() {
      * @throws CertificateNotYetValidException
      *             if the certificate is not yet valid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.879 -0500", hash_original_method = "F5F347E34DA2ECA632629BEE6BFD25DB", hash_generated_method = "365EAF961D9881EC936517E72D7D2CE1")
     
 public abstract void checkValidity()
@@ -254,6 +256,8 @@ public abstract void checkValidity()
      *             if the certificate is not yet valid.
      * @see #checkValidity()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.881 -0500", hash_original_method = "2BDF346C2D19CD8B70118069444E98B2", hash_generated_method = "42703E5E13EF137B54DDF0AB4D8D14E0")
     
 public abstract void checkValidity(Date date)
@@ -270,6 +274,8 @@ public abstract void checkValidity(Date date)
      *
      * @return the version number.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.884 -0500", hash_original_method = "C9D69CCD70755B0B4C79B91112E497F0", hash_generated_method = "9A237F250BD641E6638839B83E2CCDA2")
     
 public abstract int getVersion();
@@ -285,6 +291,8 @@ public abstract int getVersion();
      *
      * @return the serial number.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.887 -0500", hash_original_method = "2D5882042D282C86B57A0B6CD5FE19CE", hash_generated_method = "D29148C5FFC0F0105CF1B0377A4956B6")
     
 public abstract BigInteger getSerialNumber();
@@ -317,6 +325,8 @@ public abstract BigInteger getSerialNumber();
      * @return the {@code issuer} as an implementation specific {@code
      *         Principal}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.889 -0500", hash_original_method = "CFD4B1AB5457E8D83BA71C1E3C629BC8", hash_generated_method = "9C5A2933970D035DEBB544066AFA6660")
     
 public abstract Principal getIssuerDN();
@@ -348,6 +358,8 @@ public abstract Principal getIssuerDN();
      *
      * @return the {@code subject} (subject distinguished name).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.891 -0500", hash_original_method = "E0F77CE07B227D3603ED3A0271F92454", hash_generated_method = "E482C8FB11763C0AFFC0735209BBBE58")
     
 public abstract Principal getSubjectDN();
@@ -358,6 +370,8 @@ public abstract Principal getSubjectDN();
      *
      * @return the start of the validity period.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.893 -0500", hash_original_method = "4973D771E66D1A4657A0C1247BDB1C7F", hash_generated_method = "4D5B6DD9ED79E382CCCE201BD20FBF19")
     
 public abstract Date getNotBefore();
@@ -368,6 +382,8 @@ public abstract Date getNotBefore();
      *
      * @return the end of the validity period.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.896 -0500", hash_original_method = "60CD39BB89D5B2F3FE02567DED33AE6A", hash_generated_method = "A46977176465432B398D77EAC1C4B7AC")
     
 public abstract Date getNotAfter();
@@ -377,6 +393,8 @@ public abstract Date getNotAfter();
      *
      * @return the signature algorithm name.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.898 -0500", hash_original_method = "216D3E1A498593B7D7EABB101D467822", hash_generated_method = "CB43224098008E13522F8ACD3701FF8F")
     
 public abstract String getSigAlgName();
@@ -386,6 +404,8 @@ public abstract String getSigAlgName();
      *
      * @return the OID of the signature algorithm.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.900 -0500", hash_original_method = "9620CC2E45D9ACF043D9721699346668", hash_generated_method = "0BDD2E502B8E1AFA50ACBBDB644FEF8E")
     
 public abstract String getSigAlgOID();
@@ -396,6 +416,8 @@ public abstract String getSigAlgOID();
      * @return the parameters of the signature algorithm, or null if none are
      *         used.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.902 -0500", hash_original_method = "894442A9DD60EB8EA7F18DCBD364CD81", hash_generated_method = "0ED228DA803094562287FBBA6821152B")
     
 public abstract byte[] getSigAlgParams();

@@ -137,14 +137,18 @@ public void unregisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks call
     /**
      * @hide
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.765 -0500", hash_original_method = "A1FD1227D92B45F25B0D2B23D5D98DA3", hash_generated_method = "84D598C15FE8757E2DACE3FA164916D8")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.765 -0500", hash_original_method = "A1FD1227D92B45F25B0D2B23D5D98DA3", hash_generated_method = "84D598C15FE8757E2DACE3FA164916D8")
     
 final void attach(Context context) {
         attachBaseContext(context);
         mLoadedApk = ContextImpl.getImpl(context).mPackageInfo;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.767 -0500", hash_original_method = "2B96BC83E264258C9DA658E6486A0ADA", hash_generated_method = "2B96BC83E264258C9DA658E6486A0ADA")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.767 -0500", hash_original_method = "2B96BC83E264258C9DA658E6486A0ADA", hash_generated_method = "2B96BC83E264258C9DA658E6486A0ADA")
     
 void dispatchActivityCreated(Activity activity, Bundle savedInstanceState) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -156,7 +160,9 @@ void dispatchActivityCreated(Activity activity, Bundle savedInstanceState) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.769 -0500", hash_original_method = "BB2CB10BE5DA2456D7FFED5329EAA067", hash_generated_method = "BB2CB10BE5DA2456D7FFED5329EAA067")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.769 -0500", hash_original_method = "BB2CB10BE5DA2456D7FFED5329EAA067", hash_generated_method = "BB2CB10BE5DA2456D7FFED5329EAA067")
     
 void dispatchActivityStarted(Activity activity) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -167,7 +173,9 @@ void dispatchActivityStarted(Activity activity) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.772 -0500", hash_original_method = "7639D676E3D6026BF188B6D74D0066A2", hash_generated_method = "7639D676E3D6026BF188B6D74D0066A2")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.772 -0500", hash_original_method = "7639D676E3D6026BF188B6D74D0066A2", hash_generated_method = "7639D676E3D6026BF188B6D74D0066A2")
     
 void dispatchActivityResumed(Activity activity) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -178,7 +186,9 @@ void dispatchActivityResumed(Activity activity) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.774 -0500", hash_original_method = "5DB331CA50D721A0DDEB1A6DEFCCACF3", hash_generated_method = "5DB331CA50D721A0DDEB1A6DEFCCACF3")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.774 -0500", hash_original_method = "5DB331CA50D721A0DDEB1A6DEFCCACF3", hash_generated_method = "5DB331CA50D721A0DDEB1A6DEFCCACF3")
     
 void dispatchActivityPaused(Activity activity) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -189,7 +199,9 @@ void dispatchActivityPaused(Activity activity) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.777 -0500", hash_original_method = "F8E6CA2DBF83F739D06FE3A12F2BF88C", hash_generated_method = "F8E6CA2DBF83F739D06FE3A12F2BF88C")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.777 -0500", hash_original_method = "F8E6CA2DBF83F739D06FE3A12F2BF88C", hash_generated_method = "F8E6CA2DBF83F739D06FE3A12F2BF88C")
     
 void dispatchActivityStopped(Activity activity) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -200,7 +212,9 @@ void dispatchActivityStopped(Activity activity) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.780 -0500", hash_original_method = "B5ED6DC4BA8E7805F8F571CEAE93D7B1", hash_generated_method = "B5ED6DC4BA8E7805F8F571CEAE93D7B1")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.780 -0500", hash_original_method = "B5ED6DC4BA8E7805F8F571CEAE93D7B1", hash_generated_method = "B5ED6DC4BA8E7805F8F571CEAE93D7B1")
     
 void dispatchActivitySaveInstanceState(Activity activity, Bundle outState) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -212,7 +226,9 @@ void dispatchActivitySaveInstanceState(Activity activity, Bundle outState) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.782 -0500", hash_original_method = "53A653C273347AA10BEB59307E30D6C5", hash_generated_method = "53A653C273347AA10BEB59307E30D6C5")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.782 -0500", hash_original_method = "53A653C273347AA10BEB59307E30D6C5", hash_generated_method = "53A653C273347AA10BEB59307E30D6C5")
     
 void dispatchActivityDestroyed(Activity activity) {
         Object[] callbacks = collectActivityLifecycleCallbacks();
@@ -223,6 +239,8 @@ void dispatchActivityDestroyed(Activity activity) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.784 -0500", hash_original_method = "324DD85B066E69EB73C73FA0F3E95B35", hash_generated_method = "D559B694C8BEA8DBF7D46DB17D40279C")
     
 private Object[] collectComponentCallbacks() {
@@ -235,6 +253,8 @@ private Object[] collectComponentCallbacks() {
         return callbacks;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.786 -0500", hash_original_method = "8B856F104DA3FA2F4A1E951FC948DC43", hash_generated_method = "0AC84DF213169E1557305E31E2C846E9")
     
 private Object[] collectActivityLifecycleCallbacks() {

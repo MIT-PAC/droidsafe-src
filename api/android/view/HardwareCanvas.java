@@ -36,6 +36,8 @@ public abstract class HardwareCanvas extends Canvas {
      * 
      * @param dirty The dirty rectangle to update, can be null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.737 -0500", hash_original_method = "6628E6E05E732E5162E850E6ACFA8590", hash_generated_method = "1334D3E461C34BD91F1B89EC09EC96F2")
     
 abstract void onPreDraw(Rect dirty);
@@ -43,6 +45,8 @@ abstract void onPreDraw(Rect dirty);
     /**
      * Invoked after all drawing operation have been performed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.739 -0500", hash_original_method = "5F45C4E9E5B2681580338AD088B6A374", hash_generated_method = "CDD0DA66B0A7BEF0544C1017A3149661")
     
 abstract void onPostDraw();
@@ -59,6 +63,8 @@ abstract void onPostDraw();
      * @return True if the content of the display list requires another
      *         drawing pass (invalidate()), false otherwise
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.742 -0500", hash_original_method = "1A5F4EDA260F50588638E746220BCFA8", hash_generated_method = "2879EE7343419789CF8029A9E0E612F5")
     
 abstract boolean drawDisplayList(DisplayList displayList, int width, int height, Rect dirty);
@@ -69,6 +75,8 @@ abstract boolean drawDisplayList(DisplayList displayList, int width, int height,
      *
      * @param displayList The display list to be logged.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.744 -0500", hash_original_method = "E6D6819B683A7919CCCD821CAF2B58A2", hash_generated_method = "53008257BE7EC8316E5875698761961C")
     
 abstract void outputDisplayList(DisplayList displayList);
@@ -81,6 +89,8 @@ abstract void outputDisplayList(DisplayList displayList);
      * @param y The top coordinate of the layer
      * @param paint The paint used to draw the layer
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.747 -0500", hash_original_method = "083DEA6E913A4D80EEE59AE65B4A7F49", hash_generated_method = "D6E360CC3D94987802CFF82BDAE8D904")
     
 abstract void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint);

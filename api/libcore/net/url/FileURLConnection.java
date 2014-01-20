@@ -142,6 +142,8 @@ public FileURLConnection(URL url) {
      *
      * @return the input stream of the directory listing
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.755 -0500", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "AA1A1EEA3CEC0EE1432CD48663B52191")
     
 private InputStream getDirectoryListing(File f) {

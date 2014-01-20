@@ -142,6 +142,8 @@ public AbstractMessageParser(
         this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.697 -0500", hash_original_method = "6A5FF6AE0D3937AC48619DDFC949CE62", hash_generated_method = "D56D0B4E2D705C17713E8B3E7801723D")
     
 protected abstract HttpMessage parseHead(SessionInputBuffer sessionBuffer) 

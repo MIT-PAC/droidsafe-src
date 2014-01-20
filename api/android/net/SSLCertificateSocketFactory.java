@@ -138,6 +138,8 @@ public static void verifyHostname(Socket socket, String hostname) throws IOExcep
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.591 -0500", hash_original_method = "7DBCA983BBA8193E3D9C095B35951C31", hash_generated_method = "956AC06637C67CC27C38D2D73E70C6A4")
     
 private static boolean isSslCheckRelaxed() {
@@ -197,6 +199,8 @@ public void checkServerTrusted(X509Certificate[] certs, String authType) { }
         this(handshakeTimeoutMillis, null, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.575 -0500", hash_original_method = "0B60EEBB0E30E9D2D2074F3C398E1DED", hash_generated_method = "B61B1262F4CB56E15292FD471F6874A6")
     
 private SSLCertificateSocketFactory(
@@ -206,6 +210,8 @@ private SSLCertificateSocketFactory(
         mSecure = secure;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.589 -0500", hash_original_method = "EA6C3E571993A79CC59A9005D7F049FF", hash_generated_method = "02BB81410CC2F31B22B88773310A42A9")
     
 private SSLSocketFactory makeSocketFactory(
@@ -221,6 +227,8 @@ private SSLSocketFactory makeSocketFactory(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.593 -0500", hash_original_method = "293C785CB66F2E86F228FEC441D5947A", hash_generated_method = "0A26474FA54458BE9B8BD0D8B1817ACD")
     
 private synchronized SSLSocketFactory getDelegate() {

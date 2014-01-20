@@ -98,6 +98,8 @@ public ClipDescription(ClipDescription o) {
         mMimeTypes = o.mMimeTypes;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.210 -0500", hash_original_method = "2082AA3F6A7022812C6D8548A4E1BDA1", hash_generated_method = "2082AA3F6A7022812C6D8548A4E1BDA1")
     
 ClipDescription(Parcel in) {

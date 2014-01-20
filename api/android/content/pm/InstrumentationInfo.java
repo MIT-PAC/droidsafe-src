@@ -64,6 +64,8 @@ public InstrumentationInfo(InstrumentationInfo orig) {
         functionalTest = orig.functionalTest;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.733 -0500", hash_original_method = "2F2A6843358187D56B8BE4AE48B0B4F7", hash_generated_method = "F987D266C0CADF67CC14FDE251190E03")
     
 private InstrumentationInfo(Parcel source) {

@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.telephony.IccCardStatus.PinState;
 
-
-
-
-
-
 public class IccCardApplication {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.169 -0500", hash_original_field = "89FE741B258C985E1314B428A9F949A8", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
-
 
     public AppType        app_type;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.171 -0500", hash_original_field = "B0F0924A203A6481753FB7FEE92E263F", hash_generated_field = "D6FD5E302DD93A741A4A2C8F944FB4B8")
@@ -168,7 +162,6 @@ PinState PinStateFromRILInt(int state) {
         sb.append("}");
         return sb.toString();
     }
-
     
     public enum AppType{
         APPTYPE_UNKNOWN,
@@ -178,7 +171,6 @@ PinState PinStateFromRILInt(int state) {
         APPTYPE_CSIM,
         APPTYPE_ISIM
     }
-
     
     public enum AppState{
         APPSTATE_UNKNOWN,
@@ -188,30 +180,40 @@ PinState PinStateFromRILInt(int state) {
         APPSTATE_SUBSCRIPTION_PERSO,
         APPSTATE_READY;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.152 -0500", hash_original_method = "2E6B69DE72FA4C9BD23004C1BF4BEA60", hash_generated_method = "2E6B69DE72FA4C9BD23004C1BF4BEA60")
             
 boolean isPinRequired() {
             return this == APPSTATE_PIN;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.154 -0500", hash_original_method = "4DBCBD17869052A33CDEC13C582680B8", hash_generated_method = "4DBCBD17869052A33CDEC13C582680B8")
             
 boolean isPukRequired() {
             return this == APPSTATE_PUK;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.156 -0500", hash_original_method = "285D6BC14CD1BBE21D829C0F15FFA0AC", hash_generated_method = "285D6BC14CD1BBE21D829C0F15FFA0AC")
             
 boolean isSubscriptionPersoEnabled() {
             return this == APPSTATE_SUBSCRIPTION_PERSO;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.158 -0500", hash_original_method = "68C3E9D5343F7F67C611D19661C13C3D", hash_generated_method = "68C3E9D5343F7F67C611D19661C13C3D")
             
 boolean isAppReady() {
             return this == APPSTATE_READY;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.160 -0500", hash_original_method = "89AC63621BEA206B932952C5477BDE27", hash_generated_method = "89AC63621BEA206B932952C5477BDE27")
             
 boolean isAppNotReady() {
@@ -219,7 +221,6 @@ boolean isAppNotReady() {
                    this == APPSTATE_DETECTED;
         }
     }
-
     
     public enum PersoSubState{
         PERSOSUBSTATE_UNKNOWN,
@@ -248,13 +249,14 @@ boolean isAppNotReady() {
         PERSOSUBSTATE_RUIM_SERVICE_PROVIDER_PUK,
         PERSOSUBSTATE_RUIM_RUIM_PUK;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.164 -0500", hash_original_method = "E00A6ACB825F604CFE3801927570E3CD", hash_generated_method = "E00A6ACB825F604CFE3801927570E3CD")
             
 boolean isPersoSubStateUnknown() {
             return this == PERSOSUBSTATE_UNKNOWN;
         }
     }
-
     
 }
 

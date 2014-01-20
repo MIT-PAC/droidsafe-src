@@ -17,6 +17,8 @@ public IntProperty(String name) {
      * A type-specific override of the {@link #set(Object, Integer)} that is faster when dealing
      * with fields of type <code>int</code>.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.321 -0500", hash_original_method = "5157CAFF347DB0A33B9E7A6A7812660D", hash_generated_method = "45B46B9487068829BB423C2B4DF73274")
     
 public abstract void setValue(T object, int value);

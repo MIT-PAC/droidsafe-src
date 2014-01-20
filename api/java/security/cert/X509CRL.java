@@ -18,10 +18,6 @@ import java.util.Set;
 
 import javax.security.auth.x500.X500Principal;
 
-
-
-
-
 public abstract class X509CRL extends CRL implements X509Extension {
 
     /**
@@ -85,10 +81,11 @@ public int hashCode() {
      * @throws CRLException
      *             if encoding fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.712 -0500", hash_original_method = "FC55581283358EA6D0060240A5ACF549", hash_generated_method = "F231EC0E41468E770571456AAD350EA8")
     
 public abstract byte[] getEncoded() throws CRLException;
-
 
     /**
      * Verifies this CRL by verifying that this CRL was signed with the
@@ -107,6 +104,8 @@ public abstract byte[] getEncoded() throws CRLException;
      * @throws SignatureException
      *             if errors occur on signatures.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.714 -0500", hash_original_method = "5F4D078983C28BC7E7A3C9E3E7FEBA49", hash_generated_method = "554E05DF4ABD85556E359A5C4A6A1830")
     
 public abstract void verify(PublicKey key)
@@ -134,6 +133,8 @@ public abstract void verify(PublicKey key)
      * @throws SignatureException
      *             if errors occur on signatures.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.717 -0500", hash_original_method = "F5C4428A675377EFB261A3C66620C5AB", hash_generated_method = "034BA3499E0EC952183AB0E404914D97")
     
 public abstract void verify(PublicKey key, String sigProvider)
@@ -146,6 +147,8 @@ public abstract void verify(PublicKey key, String sigProvider)
      *
      * @return the version number of this CRL.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.720 -0500", hash_original_method = "C9D69CCD70755B0B4C79B91112E497F0", hash_generated_method = "9A237F250BD641E6638839B83E2CCDA2")
     
 public abstract int getVersion();
@@ -156,6 +159,8 @@ public abstract int getVersion();
      *
      * @return the issuer distinguished name.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.722 -0500", hash_original_method = "CFD4B1AB5457E8D83BA71C1E3C629BC8", hash_generated_method = "9C5A2933970D035DEBB544066AFA6660")
     
 public abstract Principal getIssuerDN();
@@ -189,6 +194,8 @@ public X500Principal getIssuerX500Principal() {
      *
      * @return the {@code thisUpdate} value of this CRL.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.727 -0500", hash_original_method = "329F7AD22906AF13491758C4D60D1586", hash_generated_method = "BD3C57B4DCACA5E60B09F0348A780A6C")
     
 public abstract Date getThisUpdate();
@@ -199,6 +206,8 @@ public abstract Date getThisUpdate();
      * @return the {@code nextUpdate} value of this CRL, or {@code null} if none
      *         is present.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.729 -0500", hash_original_method = "7E39B043FA4E91F04C1A59DEF5EF7ED8", hash_generated_method = "6C528658AFA4AC8C14A8A0B49D7A774D")
     
 public abstract Date getNextUpdate();
@@ -211,6 +220,8 @@ public abstract Date getNextUpdate();
      * @return the entry for the specified certificate serial number, or {@code
      *         null} if not found.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.733 -0500", hash_original_method = "D31D5CE2614B8CB03FC1AE0FD73EB17D", hash_generated_method = "1878E3AD6D9845B6C4312DCA212EE452")
     
 public abstract X509CRLEntry getRevokedCertificate(BigInteger serialNumber);
@@ -238,6 +249,8 @@ public X509CRLEntry getRevokedCertificate(X509Certificate certificate) {
      * @return the set of revoked certificates, or {@code null} if no revoked
      *         certificates are in this CRL.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.738 -0500", hash_original_method = "65F4C8D14BD7D209CEA2530A7F5087EF", hash_generated_method = "CEF2A9D13024E8592BBB240239E6409F")
     
 public abstract Set<? extends X509CRLEntry> getRevokedCertificates();
@@ -250,6 +263,8 @@ public abstract Set<? extends X509CRLEntry> getRevokedCertificates();
      * @throws CRLException
      *             if encoding fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.740 -0500", hash_original_method = "FD0D7957F15CC3ACDF69B469057EFEF5", hash_generated_method = "1BE0EA0F40662486B2B84E45F8E433B2")
     
 public abstract byte[] getTBSCertList() throws CRLException;
@@ -259,6 +274,8 @@ public abstract byte[] getTBSCertList() throws CRLException;
      *
      * @return the signature bytes of this CRL.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.743 -0500", hash_original_method = "2A6A081097CE32B58420C722B3CF0653", hash_generated_method = "EE84B78CECA9DEC244E6765A7A5D9557")
     
 public abstract byte[] getSignature();
@@ -268,6 +285,8 @@ public abstract byte[] getSignature();
      *
      * @return the name of the signature algorithm.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.745 -0500", hash_original_method = "216D3E1A498593B7D7EABB101D467822", hash_generated_method = "CB43224098008E13522F8ACD3701FF8F")
     
 public abstract String getSigAlgName();
@@ -277,6 +296,8 @@ public abstract String getSigAlgName();
      *
      * @return the OID of the signature algorithm.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.747 -0500", hash_original_method = "9620CC2E45D9ACF043D9721699346668", hash_generated_method = "0BDD2E502B8E1AFA50ACBBDB644FEF8E")
     
 public abstract String getSigAlgOID();
@@ -287,10 +308,11 @@ public abstract String getSigAlgOID();
      * @return the parameters of the signature algorithm in DER encoded form, or
      *         {@code null} if not present.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.750 -0500", hash_original_method = "894442A9DD60EB8EA7F18DCBD364CD81", hash_generated_method = "0ED228DA803094562287FBBA6821152B")
     
 public abstract byte[] getSigAlgParams();
-
     
 }
 

@@ -17,8 +17,8 @@ import android.util.SparseBooleanArray;
 
 public final class Parcel {
     
-    @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static Parcel obtain(){
 		return new Parcel(0);
 		// Original method
@@ -43,27 +43,37 @@ public final class Parcel {
 		*/
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static FileDescriptor openFileDescriptor(String file,
             int mode){
 		//Formerly a native function
 		return new FileDescriptor();
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static FileDescriptor dupFileDescriptor(FileDescriptor orig){
 		//Formerly a native function
 		return orig;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void closeFileDescriptor(FileDescriptor desc){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void clearFileDescriptor(FileDescriptor desc){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     static protected final Parcel obtain(int obj){
 		return new Parcel(obj);
 		// Original method
@@ -319,6 +329,8 @@ public String[] newArray(int size) {
     // orphaned legacy field
     private List<IBinder> mValueIBinderList;
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private Parcel(int obj){
 		init(obj);
 		/*
@@ -329,8 +341,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void recycle(){
 		// Original method
 		/*
@@ -361,6 +373,8 @@ public String[] newArray(int size) {
 		return getTaintInt();
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final int dataPosition(){
 		//Formerly a native function
 		return getTaintInt();
@@ -426,16 +440,16 @@ public String[] newArray(int size) {
 		return getTaintBoolean();
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeInterfaceToken(String interfaceName){
 		//Formerly a native function
 		//Return nothing
 		addTaint(interfaceName.getTaint());
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void enforceInterface(String interfaceName){
 		//Formerly a native function
 		//Return nothing
@@ -472,14 +486,16 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void writeNative(byte[] b, int offset, int len){
 		mValueByteArray = b;
 		//Formerly a native function
 		//Return nothing
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeInt(int val){
 		//Formerly a native function
 		//Return nothing
@@ -494,6 +510,8 @@ public String[] newArray(int size) {
 		addTaint(val);
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeFloat(float val){
 		//Formerly a native function
 		//Return nothing
@@ -527,6 +545,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeStrongBinder(IBinder val){
 		mValueIBinder = val;
 		//Formerly a native function
@@ -577,6 +597,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void writeMapInternal(Map<String,Object> val){
 		mValueMap = val;
 		// Original method
@@ -1375,8 +1397,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeNoException(){
 		// Original method
 		/*
@@ -1398,8 +1420,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void readException(){
 		// Original method
 		/*
@@ -1434,6 +1456,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void readException(int code, String msg){
 		// Original method
 		/*
@@ -1457,8 +1481,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final int readInt(){
 		//Formerly a native function
 		return getTaintInt();
@@ -1471,6 +1495,8 @@ public String[] newArray(int size) {
 		return getTaintInt();
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float readFloat(){
 		//Formerly a native function
 		return getTaintFloat();
@@ -1483,8 +1509,8 @@ public String[] newArray(int size) {
 		return getTaintDouble();
 	}
     
-    @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final String readString(){
 		//Formerly a native function
 		return mValueString;
@@ -1501,6 +1527,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final IBinder readStrongBinder(){
 		//Formerly a native function
 		return mValueIBinder;
@@ -1517,6 +1545,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private FileDescriptor internalReadFileDescriptor(){
 		//Formerly a native function
 		return mValueFileDescriptor;
@@ -2004,21 +2034,29 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void freeBuffer(){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void init(int obj){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void destroy(){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void readMapInternal(Map outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -2035,6 +2073,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void readListInternal(List outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -2050,6 +2090,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void readArrayInternal(Object[] outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -2064,6 +2106,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void readSparseArrayInternal(SparseArray outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -2080,6 +2124,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void readSparseBooleanArrayInternal(SparseBooleanArray outVal, int N){
 		// Original method
 		/*

@@ -32,6 +32,8 @@ public class PropertyResourceBundle extends ResourceBundle {
      *             if an error occurs during a read operation on the
      *             {@code InputStream}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.732 -0500", hash_original_method = "3D88428E114136417B3FF5D84DADF880", hash_generated_method = "3194B03B089A93D6463684DFC69D6F50")
     
 public PropertyResourceBundle(InputStream stream) throws IOException {
@@ -49,6 +51,8 @@ public PropertyResourceBundle(InputStream stream) throws IOException {
      * @throws IOException
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.735 -0500", hash_original_method = "51B0205103DDC756BC77F911CC2E7B89", hash_generated_method = "CC37C88192FB4C086F7EC5BD6987157A")
     
 public PropertyResourceBundle(Reader reader) throws IOException {
@@ -56,12 +60,16 @@ public PropertyResourceBundle(Reader reader) throws IOException {
         resources.load(reader);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.737 -0500", hash_original_method = "18F63E7C5AB3934B8351CB4BC2CE0CC3", hash_generated_method = "C72677F3EC58A35DD625E99528B9144E")
     
 protected Set<String> handleKeySet(){
         return resources.stringPropertyNames();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.740 -0500", hash_original_method = "94C0F4CF2CD414C406604EC575DAD3DD", hash_generated_method = "B78F2820BC5D9559917C4E7B0A6D4DBB")
     
 @SuppressWarnings("unchecked")
@@ -69,6 +77,8 @@ protected Set<String> handleKeySet(){
         return (Enumeration<String>) resources.propertyNames();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.509 -0400", hash_original_method = "8070DEE7B7CBE3EB8E3AF8AF6FE9DBC6", hash_generated_method = "3D01932958A4F18257C01F21A74B1E7B")
     @Override
@@ -86,7 +96,9 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075 =         new
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.508 -0400", hash_original_field = "597A00560349D4451A3F2269B8E761F0", hash_generated_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F")
         String nextElement;
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.751 -0500", hash_original_method = "7E529D209593DF12DACEC799F2DDAEB1", hash_generated_method = "C8EB56A16F0592A9C0229794EA62C50D")
+            @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.751 -0500", hash_original_method = "7E529D209593DF12DACEC799F2DDAEB1", hash_generated_method = "C8EB56A16F0592A9C0229794EA62C50D")
             
 private boolean findNext() {
                 if (nextElement != null) {
@@ -132,6 +144,8 @@ public String nextElement() {
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.762 -0500", hash_original_method = "23544B256E22E0E7C2784DAFEBE5A56C", hash_generated_method = "4E529C8B8C31521875714D968CBBB6E9")
     
 @Override

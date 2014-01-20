@@ -67,12 +67,16 @@ public static Reporter getReporter() {
 
     private Throwable allocationSite;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.918 -0500", hash_original_method = "7E89EAFA67D8405D89044A4D05C8D63F", hash_generated_method = "B3D29D5542BF9E328A13CFD209136F2F")
     
 private CloseGuard() {}
     
     private static final class DefaultReporter implements Reporter {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.702 -0400", hash_original_method = "5AA262E6EA3904FB58CC8171943AAF5F", hash_generated_method = "5AA262E6EA3904FB58CC8171943AAF5F")
         public DefaultReporter ()
         {

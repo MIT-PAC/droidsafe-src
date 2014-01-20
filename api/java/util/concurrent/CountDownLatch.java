@@ -160,12 +160,16 @@ public String toString() {
 
         private static final long serialVersionUID = 4982264981922014374L;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.168 -0500", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "9968F5AA54B3A1250121D3E0CFE14724")
         
 Sync(int count) {
             setState(count);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.170 -0500", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "192D38E698A214D58DA93C3298AD6AD3")
         

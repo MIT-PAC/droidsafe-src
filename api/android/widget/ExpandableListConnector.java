@@ -505,6 +505,8 @@ public View getView(int flatListPos, View convertView, ViewGroup parent) {
      *         based on the group IDs. This should only be needed when calling
      *         this from an onChanged callback.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.800 -0500", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "F6328C3E10841AEBBE550B2E6E81DCC3")
     
 @SuppressWarnings("unchecked")
@@ -584,6 +586,8 @@ public View getView(int flatListPos, View convertView, ViewGroup parent) {
      * 
      * @param groupPos position of the group to collapse
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.803 -0500", hash_original_method = "356AA5E78F17E2ABD0F401EB8EAF983A", hash_generated_method = "356AA5E78F17E2ABD0F401EB8EAF983A")
     
 boolean collapseGroup(int groupPos) {
@@ -629,6 +633,8 @@ boolean collapseGroup(PositionMetadata posMetadata) {
      * Expand a group in the grouped list view
      * @param groupPos the group to be expanded
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.808 -0500", hash_original_method = "5E373C5564B1740CC801138FBC6EE83B", hash_generated_method = "5E373C5564B1740CC801138FBC6EE83B")
     
 boolean expandGroup(int groupPos) {
@@ -722,6 +728,8 @@ public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.817 -0500", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "473155659E1950E1738B6CCA8650B997")
     
@@ -741,6 +749,8 @@ public Filter getFilter() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.821 -0500", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "740752E96AF2B266538C6125F8E79937")
     
@@ -748,6 +758,8 @@ ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
         return mExpGroupMetadataList;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.823 -0500", hash_original_method = "43D377DDC694A5D1EB7EAB73153EC2C8", hash_generated_method = "0EA033DF078D862B1BB25A2BC8FF1ADC")
     
 void setExpandedGroupMetadataList(ArrayList<GroupMetadata> expandedGroupMetadataList) {
@@ -789,6 +801,8 @@ void setExpandedGroupMetadataList(ArrayList<GroupMetadata> expandedGroupMetadata
      *         {@link AdapterView#INVALID_POSITION} if it can't be found
      * @see AdapterView#findSyncPosition()
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.828 -0500", hash_original_method = "174FBE5747A707DB845F85C327785D51", hash_generated_method = "FA57EACDCE0D3B1E10B241C2A5BB18B2")
     
 int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
@@ -948,6 +962,8 @@ public GroupMetadata[] newArray(int size) {
 
         long gId;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.850 -0500", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "66B3DA2A621E45583C4F654641E42F64")
         
 private GroupMetadata() {
@@ -1041,11 +1057,15 @@ private static PositionMetadata getRecycledOrCreate() {
         /**
          * Use {@link #obtain(int, int, int, int, GroupMetadata, int)}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.886 -0500", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "A9ADC97C919B0932908B14D94925CB26")
         
 private PositionMetadata() {
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.884 -0500", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "FF685B47CD5846D30FF011982012AE01")
         
 private void resetState() {

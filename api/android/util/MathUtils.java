@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Random;
 
-
-
-
-
-
 public final class MathUtils {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.229 -0500", hash_original_method = "ABF547D608D1D29A7C7DC2F34A788E93", hash_generated_method = "E7716F6898DA1C04E0533172BE7CB5FB")
@@ -172,7 +167,7 @@ public static float atan2(float a, float b) {
     
 public static float tan(float angle) {
         return (float) Math.tan(angle);
-    }    
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.291 -0500", hash_original_method = "95A3F5CDAC71AB86482CF2FF9278856E", hash_generated_method = "AE87EE55991ECEACF4B6E4858704BDCC")
     
@@ -233,6 +228,8 @@ public static void randomSeed(long seed) {
 
     private static final float RAD_TO_DEG = 180.0f / 3.1415926f;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.227 -0500", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "EDF6FE23D8F51F3CABF7ED6EC1CBF1DB")
     
 private MathUtils() {

@@ -29,6 +29,8 @@ public class SIPTransactionErrorEvent extends EventObject {
      * @param sourceTransaction Transaction which is raising the error.
      * @param transactionErrorID ID of the error that has ocurred.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.506 -0500", hash_original_method = "09AF95BC0271C57553075E85B6A27865", hash_generated_method = "09AF95BC0271C57553075E85B6A27865")
     
 SIPTransactionErrorEvent(

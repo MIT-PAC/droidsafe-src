@@ -109,6 +109,8 @@ public final byte[] encode(Object object) {
      *
      * @throws IOException if an I/O error occurs or the end of the stream is reached
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.043 -0500", hash_original_method = "2BF9EDF995602912593F2BADCC2FB262", hash_generated_method = "8340A524EAFC4475065CF651D95D0FB0")
     
 public abstract Object decode(BerInputStream in) throws IOException;
@@ -119,6 +121,8 @@ public abstract Object decode(BerInputStream in) throws IOException;
      * @param identifier identifier to be verified
      * @return true if identifier is associated with this ASN.1 type
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.046 -0500", hash_original_method = "DB1E45BB7D9010E84CA0E83D419F0F1F", hash_generated_method = "233D7E7C5A8691427B110377CDA61967")
     
 public abstract boolean checkTag(int identifier);
@@ -141,14 +145,20 @@ protected Object getDecodedObject(BerInputStream in) throws IOException {
     /**
      * Encodes ASN.1 type.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.051 -0500", hash_original_method = "F5A7290D617A6ED99139305203F0D02F", hash_generated_method = "A375005D7116F42D562C956B10E45037")
     
 public abstract void encodeASN(BerOutputStream out);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.053 -0500", hash_original_method = "72AD4F4F20976790C60891D8DD85D9DD", hash_generated_method = "F73F1BB0618D47544CC22166099E9F31")
     
 public abstract void encodeContent(BerOutputStream out);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.055 -0500", hash_original_method = "FA26F0316720109DDB7CB4D7ABA99A11", hash_generated_method = "1E9B6C8E331DF817941A77FB3D665F2A")
     
 public abstract void setEncodingContent(BerOutputStream out);

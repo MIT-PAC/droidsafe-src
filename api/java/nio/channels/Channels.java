@@ -197,6 +197,8 @@ public static Writer newWriter(WritableByteChannel channel,
         return newWriter(channel, Charset.forName(charsetName).newEncoder(), -1);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.644 -0500", hash_original_method = "206E2BE370D5671AA0C46024032F807A", hash_generated_method = "EEEBD9956AB1E83544984AEC538BE617")
     
 static void checkBlocking(Channel channel) {
@@ -205,6 +207,8 @@ static void checkBlocking(Channel channel) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.581 -0500", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "660D69849027ABCF1F216F5B02F3F5DA")
     
 private Channels() {}
@@ -214,6 +218,8 @@ private Channels() {}
 
         private  ReadableByteChannel channel;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.609 -0500", hash_original_method = "80B02113EE3067DF952BBE67BFAA654C", hash_generated_method = "80B02113EE3067DF952BBE67BFAA654C")
         
 ChannelInputStream(ReadableByteChannel channel) {
@@ -263,6 +269,8 @@ ChannelInputStream(ReadableByteChannel channel) {
 
         private  WritableByteChannel channel;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.631 -0500", hash_original_method = "1089F5ED21B35830343C54EE52895DB5", hash_generated_method = "1089F5ED21B35830343C54EE52895DB5")
         
 ChannelOutputStream(WritableByteChannel channel) {
@@ -307,6 +315,8 @@ ChannelOutputStream(WritableByteChannel channel) {
 
         private  InputStream inputStream;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.650 -0500", hash_original_method = "A25A8E5B09A21DDDF92BB065F8D65F54", hash_generated_method = "A25A8E5B09A21DDDF92BB065F8D65F54")
         
 InputStreamChannel(InputStream inputStream) {
@@ -351,6 +361,8 @@ public synchronized int read(ByteBuffer target) throws IOException {
 
         private  OutputStream outputStream;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.664 -0500", hash_original_method = "E7CFE65BD19B3A8BD37EE9992015F72E", hash_generated_method = "E7CFE65BD19B3A8BD37EE9992015F72E")
         
 OutputStreamChannel(OutputStream outputStream) {

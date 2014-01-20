@@ -37,6 +37,8 @@ protected DirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.516 -0500", hash_original_method = "5166EE5E9707A9E6D584C615F445133C", hash_generated_method = "B30EDA1977F77CE49FA9B1426D58DEB6")
     
 final void get(char[] dst, int dstOffset, int charCount) {
@@ -45,6 +47,8 @@ final void get(char[] dst, int dstOffset, int charCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.518 -0500", hash_original_method = "ADD0EB5B665BFADA07EEB34F0C07C866", hash_generated_method = "6C4F3C32A19700751A31E8D634D20A72")
     
 final void get(double[] dst, int dstOffset, int doubleCount) {
@@ -53,6 +57,8 @@ final void get(double[] dst, int dstOffset, int doubleCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.521 -0500", hash_original_method = "6E512C073258D3379E68BD1EE70E834D", hash_generated_method = "DC8D55351A0E9BD27426AEFE42D5721F")
     
 final void get(float[] dst, int dstOffset, int floatCount) {
@@ -61,6 +67,8 @@ final void get(float[] dst, int dstOffset, int floatCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.523 -0500", hash_original_method = "C51D1E84C7192049016360AA331FDA28", hash_generated_method = "FBD02CAAB60A94D18E05AF8FE4113F19")
     
 final void get(int[] dst, int dstOffset, int intCount) {
@@ -69,6 +77,8 @@ final void get(int[] dst, int dstOffset, int intCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.525 -0500", hash_original_method = "3F36E5287836D62D1612D85220FCD9CD", hash_generated_method = "1F265C990180FD1AD92AED4E7CEDA728")
     
 final void get(long[] dst, int dstOffset, int longCount) {
@@ -77,6 +87,8 @@ final void get(long[] dst, int dstOffset, int longCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.528 -0500", hash_original_method = "95F33E34C92C83F601EF4DD99BC92C04", hash_generated_method = "1EF395AB09CA9076C226A9E143E4EF79")
     
 final void get(short[] dst, int dstOffset, int shortCount) {

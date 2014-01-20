@@ -174,7 +174,9 @@ public static boolean isRunningInTestHarness() {
 
     private  Handler mHandler;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.844 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "8ADD7487E2C46628C6CC7A69BA117746")
+@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.844 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "8ADD7487E2C46628C6CC7A69BA117746")
       ActivityManager(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
@@ -588,6 +590,8 @@ public RecentTaskInfo[] newArray(int size) {
 public RecentTaskInfo() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.571 -0500", hash_original_method = "1CABC845DDD8B9A1DEC9FF64F1615AFC", hash_generated_method = "1AD0449B79898A3A9244263697D6320D")
         
 private RecentTaskInfo(Parcel source) {
@@ -685,6 +689,8 @@ public RunningTaskInfo[] newArray(int size) {
 public RunningTaskInfo() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.617 -0500", hash_original_method = "A0900FA369CFAE0B339B23849E0D0E54", hash_generated_method = "DC1A40177A07D6E5C742624D53CCD2F5")
         
 private RunningTaskInfo(Parcel source) {
@@ -769,6 +775,8 @@ public void readFromParcel(Parcel source) {
 public TaskThumbnails() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.662 -0500", hash_original_method = "0FEFA86B10CDE25FCF4328B39BD2F7D5", hash_generated_method = "44E48EC08B3FE4557C9B0FAB306E76BF")
         
 private TaskThumbnails(Parcel source) {
@@ -904,6 +912,8 @@ public RunningServiceInfo[] newArray(int size) {
 public RunningServiceInfo() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.735 -0500", hash_original_method = "35E5A4903D7EB9EB66480EDFA6F47A72", hash_generated_method = "66D0A7D163DD1D2DDD3D2067E967C09C")
         
 private RunningServiceInfo(Parcel source) {
@@ -1012,6 +1022,8 @@ public MemoryInfo[] newArray(int size) {
 public MemoryInfo() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.780 -0500", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "8AE129BE4DE87B957565DCB16A2274BA")
         
 private MemoryInfo(Parcel source) {
@@ -1113,6 +1125,8 @@ public void readFromParcel(Parcel source) {
 public ProcessErrorStateInfo() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.836 -0500", hash_original_method = "94E8D1B421B7A163DD1B499E5670983F", hash_generated_method = "06B34152BE015139D83BDCD98F1CE8F2")
         
 private ProcessErrorStateInfo(Parcel source) {
@@ -1259,6 +1273,8 @@ public RunningAppProcessInfo(String pProcessName, int pPid, String pArr[]) {
             pkgList = pArr;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.921 -0500", hash_original_method = "224713C5B1CB6C52B9BDAF058DA172D4", hash_generated_method = "49438AA0211EE51C65FB945BDC9173FD")
         
 private RunningAppProcessInfo(Parcel source) {

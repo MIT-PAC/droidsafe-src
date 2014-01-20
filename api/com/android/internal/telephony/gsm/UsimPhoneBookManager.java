@@ -120,6 +120,8 @@ PbrFile(ArrayList<byte[]> records) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.095 -0500", hash_original_method = "D93ED3119C94191277253FF2EE0C71AD", hash_generated_method = "40B384586491343441CBA49466163935")
         
@@ -143,6 +145,8 @@ void parseTag(SimTlv tlv, int recNum) {
             mFileIds.put(recNum, val);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.098 -0500", hash_original_method = "27E6C520D8DED1C5B5FE1A348EAE7100", hash_generated_method = "27E6C520D8DED1C5B5FE1A348EAE7100")
         
@@ -254,6 +258,8 @@ public ArrayList<AdnRecord> loadEfFilesFromUsim() {
         return mPhoneBookRecords;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.052 -0500", hash_original_method = "B532D4E2E21067521A95047E8C8D19E8", hash_generated_method = "556C751DABBC44784EFD65205A48F2B8")
     
 private void refreshCache() {
@@ -272,6 +278,8 @@ public void invalidateCache() {
         mRefreshCache = true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.063 -0500", hash_original_method = "78E381AC3959E12E81678D4DFFBA5C8B", hash_generated_method = "76D322E24F54A199CCFA37DD8BB7FFE9")
     
 private void readPbrFileAndWait() {
@@ -283,6 +291,8 @@ private void readPbrFileAndWait() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.066 -0500", hash_original_method = "48BBB6A0A30AD38B5848D3F55664B632", hash_generated_method = "D18508225BEB12B4A3EB1916E778819D")
     
 private void readEmailFileAndWait(int recNum) {
@@ -321,6 +331,8 @@ private void readEmailFileAndWait(int recNum) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.069 -0500", hash_original_method = "9E809A1ED86DEC7D2454BACD182423F6", hash_generated_method = "DABED92A54C4D4BB9F6267150658C8C2")
     
 private void readIapFileAndWait(int efid) {
@@ -332,6 +344,8 @@ private void readIapFileAndWait(int efid) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.072 -0500", hash_original_method = "DBF9EE6E650F45B09979783B6AE92B3D", hash_generated_method = "BBFEF3BA32D85A95CBC5F9042AAF4634")
     
 private void updatePhoneAdnRecord() {
@@ -397,6 +411,8 @@ private void updatePhoneAdnRecord() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.075 -0500", hash_original_method = "8AA09CE6055FA7D5E93DEAB0645B4CBD", hash_generated_method = "69BF3DB68C851A416798FF3B8776EEE8")
     
 void parseType1EmailFile(int numRecs) {
@@ -432,6 +448,8 @@ void parseType1EmailFile(int numRecs) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.078 -0500", hash_original_method = "9DD87F6722942AC55924DBE05DD72D60", hash_generated_method = "E2C2B402986EE8D77DB5075BBF0908D0")
     
 private String readEmailRecord(int recNum) {
@@ -447,6 +465,8 @@ private String readEmailRecord(int recNum) {
         return email;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.080 -0500", hash_original_method = "4035A9584818EC181E07E84AC976F741", hash_generated_method = "9234A510276F1310065E47AFB526C552")
     
 private void readAdnFileAndWait(int recNum) {
@@ -469,6 +489,8 @@ private void readAdnFileAndWait(int recNum) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.083 -0500", hash_original_method = "EC7FC3EA469B316149A3EE38C863088E", hash_generated_method = "7374B6345F1361797E3F8C145159730B")
     
 private void createPbrFile(ArrayList<byte[]> records) {
@@ -530,6 +552,8 @@ private void createPbrFile(ArrayList<byte[]> records) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.102 -0500", hash_original_method = "B26CBB1291A6152D9C092C7AC934B437", hash_generated_method = "8C3AE1BEB7398E3267102189A3848636")
     
 private void log(String msg) {

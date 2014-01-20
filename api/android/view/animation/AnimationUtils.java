@@ -44,8 +44,8 @@ public static long currentAnimationTimeMillis() {
      * @return The animation object reference by the specified id
      * @throws NotFoundException when the animation cannot be loaded
      */
-    @DSComment("no actions/not sensitive")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.806 -0500", hash_original_method = "6C4C15BBA350A59BA813AA1FCD4C13A9", hash_generated_method = "964AEB68764DEFC476CB3B91239FBE82")
     
@@ -71,6 +71,8 @@ public static Animation loadAnimation(Context context, int id)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.808 -0500", hash_original_method = "D069E550D8CA085DD74A82091E68A3BB", hash_generated_method = "E9AACF23E7B7D7C0B4B70CD109F223F4")
     
 private static Animation createAnimationFromXml(Context c, XmlPullParser parser)
@@ -79,6 +81,8 @@ private static Animation createAnimationFromXml(Context c, XmlPullParser parser)
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.812 -0500", hash_original_method = "6893224B8C5FB1211DCEDC246B169A3D", hash_generated_method = "46807B79D860F3A5D11390F26BD9090F")
     
 private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
@@ -148,6 +152,8 @@ public static LayoutAnimationController loadLayoutAnimation(Context context, int
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.817 -0500", hash_original_method = "D5A580594CC8247DA48066F217E0E158", hash_generated_method = "679AA6A7A9AC44AD25D49125CAC39704")
     
 private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
@@ -156,6 +162,8 @@ private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.819 -0500", hash_original_method = "C8C5E0568990FFB27974DEFE12A4AD2A", hash_generated_method = "827F6E4015649E16003AF499ACCEC4D2")
     
 private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
@@ -284,6 +292,8 @@ public static Interpolator loadInterpolator(Context context, int id) throws NotF
 
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.834 -0500", hash_original_method = "88F319A6CBF98DB679955694B16E5858", hash_generated_method = "31C0831015B42322C9C383EEB33E7551")
     
 private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser)

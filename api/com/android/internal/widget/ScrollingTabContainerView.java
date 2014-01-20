@@ -137,6 +137,8 @@ public ScrollingTabContainerView(Context context) {
      * of traditional tabs.
      * @return true if showing as a spinner
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.706 -0500", hash_original_method = "0C44DD211AEDE4F8875A759BF8E8E48B", hash_generated_method = "BC517FA24EACE7A695FB011A5D82F875")
     
 private boolean isCollapsed() {
@@ -149,6 +151,8 @@ public void setAllowCollapse(boolean allowCollapse) {
         mAllowCollapse = allowCollapse;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.711 -0500", hash_original_method = "002FC4053C0D51D3D52C5463A6463800", hash_generated_method = "6C79A6EEA90ADC9B06DEE18327CBAAF5")
     
 private void performCollapse() {
@@ -170,6 +174,8 @@ private void performCollapse() {
         mTabSpinner.setSelection(mSelectedTabIndex);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.713 -0500", hash_original_method = "DC1833D7C81A29FFDE1BB4D9BF0A022D", hash_generated_method = "D7F01724781FE5EE1E73ED9A909B6EE5")
     
 private boolean performExpand() {
@@ -204,6 +210,8 @@ public void setContentHeight(int contentHeight) {
         requestLayout();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.720 -0500", hash_original_method = "5C02AED63A2A4EB9B288612999968966", hash_generated_method = "D2FD5D597D780B8C8283B28DDE4BED5A")
     
 private LinearLayout createTabLayout() {
@@ -215,6 +223,8 @@ private LinearLayout createTabLayout() {
         return tabLayout;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.722 -0500", hash_original_method = "37274689DF291E70B964F7E850308591", hash_generated_method = "9F61578C116F41856AAFF7C96E992116")
     
 private Spinner createSpinner() {

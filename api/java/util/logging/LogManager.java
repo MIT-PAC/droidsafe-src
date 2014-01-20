@@ -27,6 +27,8 @@ public class LogManager {
      *
      * @return the {@code LoggingMXBean} instance
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.302 -0500", hash_original_method = "99854C4284B9CB15C4C88E0DA2C68A20", hash_generated_method = "101D71F5F72FF6847144D9317C1745CB")
     
@@ -39,6 +41,8 @@ public static LoggingMXBean getLoggingMXBean() {
      *
      * @return the global {@code LogManager} instance
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.332 -0500", hash_original_method = "A967B00D3DC6A3CAC3067F3E0F5EBD2C", hash_generated_method = "A8A0D9D76BC0BA7CD058F572364881A7")
     
@@ -83,7 +87,9 @@ static Object getInstanceByClass(final String className) {
 
     private PropertyChangeSupport listeners;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.194 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "25A4D420CCA8D659CCCCE116BE659C0D")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.194 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "25A4D420CCA8D659CCCCE116BE659C0D")
     protected  LogManager() {
         loggers = new Hashtable<String, Logger>();
         props = new Properties();
@@ -109,6 +115,8 @@ static Object getInstanceByClass(final String className) {
     /**
      * Does nothing.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.318 -0500", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "8989A8C3AFF2A9F4B72793CB60A6C44F")
     
 public void checkAccess() {
@@ -131,6 +139,8 @@ public void checkAccess() {
      * @return true if the given logger is added into the namespace
      *         successfully, false if the given logger exists in the namespace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.321 -0500", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "377F62B00AC3CF147EA10A2C9C5B5B0E")
     
@@ -145,6 +155,8 @@ public synchronized boolean addLogger(Logger logger) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.325 -0500", hash_original_method = "0070D539A38F64AFDE25421AB7DE8DFA", hash_generated_method = "4DF9866F898C0A5E16C6456AB2E5C863")
     
 private void addToFamilyTree(Logger logger, String name) {
@@ -193,6 +205,8 @@ private void addToFamilyTree(Logger logger, String name) {
      *            name of logger
      * @return logger with given name, or {@code null} if nothing is found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.327 -0500", hash_original_method = "7CC5CB7CA011BF34DBD2626C5B91D261", hash_generated_method = "F20E4986C2983349E2180B4EE3433DEF")
     
@@ -205,6 +219,8 @@ public synchronized Logger getLogger(String name) {
      *
      * @return enumeration of registered logger names
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.329 -0500", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "CEF5D0F650774B176491F6A4150D0276")
     
@@ -219,6 +235,8 @@ public synchronized Enumeration<String> getLoggerNames() {
      *            the name of property
      * @return the value of property
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.334 -0500", hash_original_method = "308A02382C1792AE136BBB31488FF7DC", hash_generated_method = "5A74B7D64213EFDDA9B0FD0847C7ABD3")
     
@@ -236,6 +254,8 @@ public String getProperty(String name) {
      * @throws IOException
      *             if any IO related problems happened.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.337 -0500", hash_original_method = "F9E79871CB75749F3B3C682DFBEA7367", hash_generated_method = "48AA3805D9F1A0AA40E2666DF06657AA")
     
 public void readConfiguration() throws IOException {
@@ -270,6 +290,8 @@ public void readConfiguration() throws IOException {
     }
 
     // actual initialization process from a given input stream
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.343 -0500", hash_original_method = "5AA730DC7CE7051A789AED9B260AEA08", hash_generated_method = "8F7F768A4F1D4F4C3D64E643628F12B3")
     
 private synchronized void readConfigurationImpl(InputStream ins)
@@ -317,6 +339,8 @@ private synchronized void readConfigurationImpl(InputStream ins)
      * @throws IOException
      *             if any IO related problems happened.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.346 -0500", hash_original_method = "0B5A5DFDBB36281B5E8835796DD30069", hash_generated_method = "B5BDD569EEFC40E6B7CDCC9621A45E10")
     
 public void readConfiguration(InputStream ins) throws IOException {
@@ -331,6 +355,8 @@ public void readConfiguration(InputStream ins) throws IOException {
      * level is set to null, except the root logger's level is set to
      * {@code Level.INFO}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.349 -0500", hash_original_method = "C7F5D5A126D3CC9BC9332DC327B04AA6", hash_generated_method = "9CD2567A4C7F1831D7A2E0915FE7FA53")
     
 public synchronized void reset() {
@@ -357,6 +383,8 @@ public synchronized void reset() {
      * @param l
      *            the {@code PropertyChangeListener} to be added.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.351 -0500", hash_original_method = "89AE29101867526E131C7EEE62325170", hash_generated_method = "13773548A085574F10C55BEF24ACA20E")
     
 public void addPropertyChangeListener(PropertyChangeListener l) {
@@ -374,6 +402,8 @@ public void addPropertyChangeListener(PropertyChangeListener l) {
      * @param l
      *            the {@code PropertyChangeListener} to be removed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.353 -0500", hash_original_method = "C0D7CB274D3F753AA28C566B595F1403", hash_generated_method = "342854F1A23657D47924FBC283C5A3EF")
     
 public void removePropertyChangeListener(PropertyChangeListener l) {
@@ -387,6 +417,8 @@ public void removePropertyChangeListener(PropertyChangeListener l) {
      * @param resourceBundleName the resource bundle to associate, or null for
      *      no associated resource bundle.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.356 -0500", hash_original_method = "B934C7BD7B62C355AF995C71D51E6416", hash_generated_method = "76B6DA62C524B74BADD1C23ED9CD543A")
     
@@ -406,6 +438,8 @@ synchronized Logger getOrCreate(String name, String resourceBundleName) {
      * @param newParent
      *            the parent logger to set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.358 -0500", hash_original_method = "B8E057E50526DE42F5AE7CC32A8A2058", hash_generated_method = "835D86530730D8F4B31B5F48538A6CE6")
     
 synchronized void setParent(Logger logger, Logger newParent) {
@@ -427,6 +461,8 @@ synchronized void setParent(Logger logger, Logger newParent) {
      *      parent level will be used; or {@code Level.INFO} for loggers with no
      *      parent.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.360 -0500", hash_original_method = "46EC17C11FD929B8108F5C206F2B42C8", hash_generated_method = "290BA8FBB47E6FFD68986B67FDA11B6C")
     
 synchronized void setLevelRecursively(Logger logger, Level newLevel) {

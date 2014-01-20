@@ -36,6 +36,8 @@ public interface AttributedCharacterIterator extends CharacterIterator {
          * @param name
          *            the name of the new {@code Attribute}.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.354 -0500", hash_original_method = "ACCFEBD66AB851A6FC608414A08D299B", hash_generated_method = "61712E1BA4300DCAD5753E2F1F265E00")
         
 protected Attribute(String name) {
@@ -52,6 +54,8 @@ protected Attribute(String name) {
          * @return {@code true} if the object passed is equal to this instance;
          *         {@code false} otherwise.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.357 -0500", hash_original_method = "36C8AF9F829C9B051BDBF3B9526FC822", hash_generated_method = "34C966AA4C0E8EC46BF85551F0775538")
         
 @Override
@@ -64,6 +68,8 @@ protected Attribute(String name) {
          *
          * @return the name of this attribute.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.359 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "C7902D845D08F4F6CA0D1BA5E593678A")
         
@@ -78,6 +84,8 @@ protected String getName() {
          *
          * @return the hash code for this instance of {@code Attribute}.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.361 -0500", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "BDAAB55570B432722AF7AB079E5FB145")
         
 @Override
@@ -93,6 +101,8 @@ protected String getName() {
          *             if this instance is not of type {@code Attribute.class}
          *             or if it is not a known {@code Attribute}.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.364 -0500", hash_original_method = "E825C982907901F08723C9B3A9C59DC5", hash_generated_method = "B5F8BDA74B76C82BB3DB988F74EDA6D3")
         
 protected Object readResolve() throws InvalidObjectException {
@@ -121,6 +131,8 @@ protected Object readResolve() throws InvalidObjectException {
          *
          * @return the string representing this instance.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.367 -0500", hash_original_method = "4A1605B03FE1E22048A20B9E05E481A5", hash_generated_method = "4396D2BAEFB73347858E563F022F81BC")
         
 @Override

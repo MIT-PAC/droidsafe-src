@@ -12,13 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-
-
-
-
-
 public final class MimeUtils {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.754 -0500", hash_original_method = "26D8FD3DB7DED7D6ADB895709D5259A0", hash_generated_method = "41654EDF1567158E52C1815117FFCB32")
     
 private static void add(String mimeType, String extension) {
@@ -36,6 +33,8 @@ private static void add(String mimeType, String extension) {
         extensionToMimeTypeMap.put(extension, mimeType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.756 -0500", hash_original_method = "58E20A78E353D4299D932C43794B16C8", hash_generated_method = "8E3FD1989B851F59C05E025C8889658F")
     
 private static InputStream getContentTypesPropertiesStream() {
@@ -68,6 +67,8 @@ private static InputStream getContentTypesPropertiesStream() {
      * own "content.types.user.table" means you don't get any of the built-ins, and the built-ins
      * come from "$JAVA_HOME/lib/content-types.properties".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.759 -0500", hash_original_method = "95B16C7C7F13DC470BDCDB52F2D23BFD", hash_generated_method = "3F2164BF4140B2783EB98206D805F67C")
     
 private static void applyOverrides() {
@@ -157,9 +158,10 @@ public static String guessExtensionFromMimeType(String mimeType) {
     private static final Map<String, String> mimeTypeToExtensionMap = new HashMap<String, String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.749 -0500", hash_original_field = "38A0C92CE266B7CB2AAB658A5B02BC54", hash_generated_field = "7842830AD3F69A21CFE5A45DD420D95A")
 
-
     private static final Map<String, String> extensionToMimeTypeMap = new HashMap<String, String>();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.761 -0500", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "C7C14DE5A9400AF5E972869972EAB79C")
     
 private MimeUtils() {

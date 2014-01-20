@@ -14,18 +14,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpConnection;
 
-
-
-
 public class IdleConnectionHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.989 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.992 -0500", hash_original_field = "5A16A1D9253FD3EC2F774F243B01F532", hash_generated_field = "2F5EF38A07EA6A9636288F530673294A")
 
     private  Map<HttpConnection,TimeValues> connectionToTimes;
-    
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.994 -0500", hash_original_method = "3E916BA1101D3583C84AA90CF4FC67D4", hash_generated_method = "A9AAD52CD1E2DDD3F31EE212EFDACC40")
     
@@ -121,7 +116,6 @@ public void closeIdleConnections(long idleTime) {
             }
         }
     }
-    
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.008 -0500", hash_original_method = "1F224929907ADC4A2755470D6C0EBC61", hash_generated_method = "0B4C5F9F88954254E42F6C9DF984799D")
     
@@ -150,7 +144,6 @@ public void closeExpiredConnections() {
             }
         }        
     }
-
     
     private static class TimeValues {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.011 -0500", hash_original_field = "BBD74564EFA9375FCDE743AD03A476CE", hash_generated_field = "40BAAF0C7A31F5A05875046903303AFA")
@@ -165,6 +158,8 @@ public void closeExpiredConnections() {
          * @param validDuration The duration this connection is valid for
          * @param validUnit The unit of time the duration is specified in.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.016 -0500", hash_original_method = "3DD4099178F08AFF793AFE03575649DF", hash_generated_method = "3DD4099178F08AFF793AFE03575649DF")
         
 TimeValues(long now, long validDuration, TimeUnit validUnit) {
@@ -175,11 +170,8 @@ TimeValues(long now, long validDuration, TimeUnit validUnit) {
                 this.timeExpires = Long.MAX_VALUE;
             }
         }
-
         
     }
-
-
     
 }
 

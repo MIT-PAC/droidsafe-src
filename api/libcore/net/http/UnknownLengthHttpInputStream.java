@@ -9,14 +9,13 @@ import java.io.InputStream;
 import java.net.CacheRequest;
 import java.util.Arrays;
 
-
-
-
 final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.957 -0500", hash_original_field = "7C8ED02256EE7A13CC64F8BE47E22974", hash_generated_field = "A47BA202024AEED5382C6DACAC7B8715")
 
     private boolean inputExhausted;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.959 -0500", hash_original_method = "03287555569090C6D887554C44738812", hash_generated_method = "03287555569090C6D887554C44738812")
     
 UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
@@ -60,7 +59,6 @@ UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
             unexpectedEndOfInput();
         }
     }
-
     
 }
 

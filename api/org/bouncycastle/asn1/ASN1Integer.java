@@ -6,9 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
 public class ASN1Integer extends DERInteger {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.921 -0500", hash_original_method = "613C01CE307AF3B490E97733AD3FE791", hash_generated_method = "613C01CE307AF3B490E97733AD3FE791")
     
 ASN1Integer(byte[] bytes)
@@ -29,7 +29,6 @@ public ASN1Integer(int value)
     {
         super(value);
     }
-
     
 }
 

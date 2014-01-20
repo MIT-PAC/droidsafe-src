@@ -269,6 +269,8 @@ public void setIcon(Drawable icon) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.325 -0500", hash_original_method = "10F5F40E2932688DF3201248310D8E11", hash_generated_method = "65D823BAC85CEE4854CE993AA8856CC3")
     
 private void insertIconView() {
@@ -278,6 +280,8 @@ private void insertIconView() {
         addView(mIconView, 0);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.328 -0500", hash_original_method = "3AE05F112F28FE467A439CFB98DC5418", hash_generated_method = "81069E3DD0711088911BF7B3649166AF")
     
 private void insertRadioButton() {
@@ -288,6 +292,8 @@ private void insertRadioButton() {
         addView(mRadioButton);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.330 -0500", hash_original_method = "C1CFD343D3CE36D4657F4BFD8E338B9A", hash_generated_method = "2B45440365DD1C5F85C37E2926E7151E")
     
 private void insertCheckBox() {
@@ -310,6 +316,8 @@ public boolean showsIcon() {
         return mForceShowIcon;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.337 -0500", hash_original_method = "800EDA97716EBA1ECAA54C866B1D88CB", hash_generated_method = "376EA249D7AB6A6A8275F0E352AE441C")
     
 private LayoutInflater getInflater() {

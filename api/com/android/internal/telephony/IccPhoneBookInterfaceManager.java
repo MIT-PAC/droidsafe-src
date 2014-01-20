@@ -94,6 +94,8 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.989 -0400", hash_original_method = "AEA2E9D2067E99FB1331FC981CC14937", hash_generated_method = "A9B77AF35C7BC8F11854E73C8BE49190")
         private void notifyPending(AsyncResult ar) {
             AtomicBoolean status = (AtomicBoolean) ar.userObj;
@@ -123,10 +125,14 @@ protected void publish() {
         ServiceManager.addService("simphonebook", this);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.150 -0500", hash_original_method = "38CE766CCD7AC2AD876D116A52FCCE8F", hash_generated_method = "23BD4551E2B7627F84306D9E9D0D7E90")
     
 protected abstract void logd(String msg);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.153 -0500", hash_original_method = "2CB44E3FBD8F4DD8AE1E0D5B11281502", hash_generated_method = "20F0068141A5357E298923EC41F603D8")
     
 protected abstract void loge(String msg);
@@ -240,6 +246,8 @@ public boolean
      *            recordSizes[1]  is the total length of the EF file
      *            recordSizes[2]  is the number of records in the EF file
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.161 -0500", hash_original_method = "9FB8D2A8F1DAFD7F6DC550B28004A7DD", hash_generated_method = "48F90E8806365397C610A5724EEC45CB")
     
 public abstract int[] getAdnRecordsSize(int efid);
@@ -303,6 +311,8 @@ protected void waitForResult(AtomicBoolean status) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.171 -0500", hash_original_method = "6710BA71BBE2AF73325E69DE756B39B5", hash_generated_method = "35A0CC8BCC0B244794D14FB3B6427BAE")
     
 private int updateEfForIccType(int efid) {

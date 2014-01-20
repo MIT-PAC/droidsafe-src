@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 
 public class Matrix {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void checkPointArrays(float[] src, int srcIndex,
                                          float[] dst, int dstIndex,
                                          int pointCount){
@@ -25,204 +27,274 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_create(int native_src_or_zero){
 		//Formerly a native function
 		return 0;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isIdentity(int native_object){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_rectStaysRect(int native_object){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_reset(int native_object){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_set(int native_object, int other){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setTranslate(int native_object,
                                                    float dx, float dy){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setScale(int native_object,
                                                float sx, float sy){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setRotate(int native_object,
                                                 float degrees){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setSinCos(int native_object,
                             float sinValue, float cosValue, float px, float py){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setSinCos(int native_object,
                                                 float sinValue, float cosValue){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setSkew(int native_object,
                                               float kx, float ky){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_setConcat(int native_object,
                                                    int a, int b){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preRotate(int native_object,
                                                    float degrees){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postRotate(int native_object,
                                                     float degrees){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_invert(int native_object, int inverse){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_mapPoints(int native_object,
                         float[] dst, int dstIndex, float[] src, int srcIndex,
                         int ptCount, boolean isPts){
@@ -230,35 +302,47 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float native_mapRadius(int native_object,
                                                  float radius){
 		//Formerly a native function
 		return 0;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_getValues(int native_object,
                                                 float[] values){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_setValues(int native_object,
                                                 float[] values){
 		//Formerly a native function
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_equals(int native_a, int native_b){
 		//Formerly a native function
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void finalizer(int native_instance){
 		//Formerly a native function
 		//Return nothing
@@ -303,12 +387,16 @@ public class Matrix {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public Matrix(Matrix src){
 		/*
 		native_instance = native_create(src != null ? src.native_instance : 0);
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isIdentity(){
 		// Original method
 		/*
@@ -319,6 +407,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean rectStaysRect(){
 		// Original method
 		/*
@@ -329,6 +419,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Matrix src){
 		// Original method
@@ -344,6 +436,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean equals(Object obj){
 		// Original method
 		/*
@@ -368,6 +462,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTranslate(float dx, float dy){
 		// Original method
@@ -379,6 +475,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScale(float sx, float sy, float px, float py){
 		// Original method
@@ -390,6 +488,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScale(float sx, float sy){
 		// Original method
@@ -401,6 +501,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRotate(float degrees, float px, float py){
 		// Original method
@@ -425,6 +527,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSinCos(float sinValue, float cosValue, float px, float py){
 		// Original method
@@ -436,6 +540,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSinCos(float sinValue, float cosValue){
 		// Original method
@@ -447,6 +553,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSkew(float kx, float ky, float px, float py){
 		// Original method
@@ -458,6 +566,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSkew(float kx, float ky){
 		// Original method
@@ -469,6 +579,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean setConcat(Matrix a, Matrix b){
 		// Original method
@@ -493,6 +605,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preScale(float sx, float sy, float px, float py){
 		// Original method
 		/*
@@ -503,6 +617,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preScale(float sx, float sy){
 		// Original method
 		/*
@@ -513,6 +629,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -535,6 +653,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preSkew(float kx, float ky, float px, float py){
 		// Original method
 		/*
@@ -545,6 +665,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preSkew(float kx, float ky){
 		// Original method
 		/*
@@ -555,6 +677,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preConcat(Matrix other){
 		// Original method
 		/*
@@ -577,6 +701,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postScale(float sx, float sy, float px, float py){
 		// Original method
 		/*
@@ -599,6 +725,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -609,6 +737,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postRotate(float degrees){
 		// Original method
 		/*
@@ -619,6 +749,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postSkew(float kx, float ky, float px, float py){
 		// Original method
 		/*
@@ -629,6 +761,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postSkew(float kx, float ky){
 		// Original method
 		/*
@@ -639,6 +773,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postConcat(Matrix other){
 		// Original method
 		/*
@@ -662,6 +798,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean setPolyToPoly(float[] src, int srcIndex,
                                  float[] dst, int dstIndex,
@@ -680,6 +818,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean invert(Matrix inverse){
 		// Original method
 		/*
@@ -690,6 +830,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void mapPoints(float[] dst, int dstIndex, float[] src, int srcIndex,
                           int pointCount){
 		// Original method
@@ -703,6 +845,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void mapVectors(float[] dst, int dstIndex, float[] src, int srcIndex,
                           int vectorCount){
 		// Original method
@@ -716,6 +860,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void mapPoints(float[] dst, float[] src){
 		// Original method
 		/*
@@ -729,6 +875,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void mapVectors(float[] dst, float[] src){
 		// Original method
 		/*
@@ -742,6 +890,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void mapPoints(float[] pts){
 		// Original method
 		/*
@@ -752,6 +902,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void mapVectors(float[] vecs){
 		// Original method
 		/*
@@ -762,6 +914,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean mapRect(RectF dst, RectF src){
 		// Original method
 		/*
@@ -804,6 +958,8 @@ ScaleToFit(int nativeInt) {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public float mapRadius(float radius){
 		// Original method
 		/*
@@ -814,6 +970,8 @@ ScaleToFit(int nativeInt) {
 		return 0;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void getValues(float[] values){
 		// Original method
 		/*
@@ -827,6 +985,8 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setValues(float[] values){
 		// Original method
@@ -841,6 +1001,8 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString(){
 		// Original method
 		/*
@@ -855,6 +1017,8 @@ ScaleToFit(int nativeInt) {
 		return "";
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toShortString(){
 		// Original method
 		/*
@@ -867,6 +1031,8 @@ ScaleToFit(int nativeInt) {
 		return "";
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -885,6 +1051,8 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*
@@ -903,7 +1071,9 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
 	}
     
-	protected void finalize(){
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    protected void finalize(){
 		// Original method
 		/*
 		{
@@ -913,6 +1083,8 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final int ni(){
 		return getTaintInt();
 		// Original method

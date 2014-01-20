@@ -22,12 +22,18 @@ import com.android.internal.util.ArrayUtils;
 public class TextUtils {
 	static class MyCreator implements Parcelable.Creator<CharSequence> {
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         public MyCreator() {}
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence createFromParcel(Parcel p) {
             return new String();
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence[] newArray(int size)
         {
             return new CharSequence[size];
@@ -35,6 +41,8 @@ public class TextUtils {
 
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.817 -0500", hash_original_method = "B6CD7F3C8D4B193FE534D4C38B1CB19E", hash_generated_method = "6A754CE326C1F91DCD6362C912467103")
     
 public static void getChars(CharSequence s, int start, int end,
@@ -55,6 +63,8 @@ public static void getChars(CharSequence s, int start, int end,
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.820 -0500", hash_original_method = "2B288D1C7C5C63AB74BA28EFC2864361", hash_generated_method = "8DFE0A7282F6A63B6F7767B113B8F488")
     
 public static int indexOf(CharSequence s, char ch) {
@@ -74,6 +84,8 @@ public static int indexOf(CharSequence s, char ch, int start) {
         return indexOf(s, ch, start, s.length());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.826 -0500", hash_original_method = "544FCBC88320BB8F6A1660211014CB9B", hash_generated_method = "351510B1C18807C0B37D7F9C4129E3C4")
     
 public static int indexOf(CharSequence s, char ch, int start, int end) {
@@ -113,12 +125,16 @@ public static int indexOf(CharSequence s, char ch, int start, int end) {
         return -1;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.829 -0500", hash_original_method = "5BBDBA8EF1563B9DD5D1929C015065D1", hash_generated_method = "67AD6698E991A80A60281ADAC00BDF4A")
     
 public static int lastIndexOf(CharSequence s, char ch) {
         return lastIndexOf(s, ch, s.length() - 1);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.831 -0500", hash_original_method = "4FA8A924B5587056C4ACB65EA303EF07", hash_generated_method = "4C637339EC9B0FD3CD103091B8C54618")
     
 public static int lastIndexOf(CharSequence s, char ch, int last) {
@@ -130,6 +146,8 @@ public static int lastIndexOf(CharSequence s, char ch, int last) {
         return lastIndexOf(s, ch, 0, last);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.834 -0500", hash_original_method = "1ABC9B5C8394779C90EF8CC1F1AE5E2C", hash_generated_method = "97400C84F2C886AC62F14B07D8F33F30")
     
 public static int lastIndexOf(CharSequence s, char ch,
@@ -177,18 +195,24 @@ public static int lastIndexOf(CharSequence s, char ch,
         return -1;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.837 -0500", hash_original_method = "552F02994CC4987C268BA730575E79CF", hash_generated_method = "E4083713F952915589A30CB5A8E482E2")
     
 public static int indexOf(CharSequence s, CharSequence needle) {
         return indexOf(s, needle, 0, s.length());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.840 -0500", hash_original_method = "9BACEDD2FEF7E129003580BFF523FE81", hash_generated_method = "6A64A926622D7920B3924F6E2148AA33")
     
 public static int indexOf(CharSequence s, CharSequence needle, int start) {
         return indexOf(s, needle, start, s.length());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.843 -0500", hash_original_method = "01F707FBADA596DCC00F547189098EC5", hash_generated_method = "C42C8263B6EC5846EAF86F575A406A90")
     
 public static int indexOf(CharSequence s, CharSequence needle,
@@ -218,6 +242,8 @@ public static int indexOf(CharSequence s, CharSequence needle,
         return -1;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.846 -0500", hash_original_method = "89989795239EEDDAD38EDCA7AB441D22", hash_generated_method = "205353F2B8DAB161A5A2E93F18EE2F9F")
     
 public static boolean regionMatches(CharSequence one, int toffset,
@@ -247,6 +273,8 @@ public static boolean regionMatches(CharSequence one, int toffset,
      * in that it does not preserve any style runs in the source sequence,
      * allowing a more efficient implementation.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.849 -0500", hash_original_method = "78DE9AEF4C2944726F3B95C9207900D6", hash_generated_method = "F8F3A460C76FF60A06B8FBCA096204C2")
     
 public static String substring(CharSequence source, int start, int end) {
@@ -271,6 +299,8 @@ public static String substring(CharSequence source, int start, int end) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.852 -0500", hash_original_method = "8B31B2502E472EA787355492BFDF03AA", hash_generated_method = "5F9988717201F86C947DA332D70E1763")
     
 public static CharSequence join(Iterable<CharSequence> list) {
@@ -355,6 +385,8 @@ public static String[] split(String text, String expression) {
      *
      * @throws NullPointerException if expression or text is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.864 -0500", hash_original_method = "EB884963B35B912D5FE47DBF808C36A9", hash_generated_method = "9200C2AED7C2BA6B9C658DA4FEBE62DD")
     
 public static String[] split(String text, Pattern pattern) {
@@ -365,6 +397,8 @@ public static String[] split(String text, Pattern pattern) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.899 -0500", hash_original_method = "D7DA1CF6D85F29139017BBA0640DB133", hash_generated_method = "5743ECD91F334EFD1208F9CE9706C38D")
     
 public static CharSequence stringOrSpannedString(CharSequence source) {
@@ -399,6 +433,8 @@ public static boolean isEmpty(CharSequence str) {
      * spaces and control characters were trimmed from the start and end,
      * as by {@link String#trim}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.904 -0500", hash_original_method = "D991523FF91558FCD5D3B3A348459B48", hash_generated_method = "2CD7D9E9B1F38D7B06B7FD27675F7363")
     
 public static int getTrimmedLength(CharSequence s) {
@@ -425,6 +461,8 @@ public static int getTrimmedLength(CharSequence s) {
      * @param b second CharSequence to check
      * @return true if a and b are equal
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.908 -0500", hash_original_method = "67A0EA29212518310C8922834323A122", hash_generated_method = "B9067C793230A53D0E146B8780FE11D6")
     
 public static boolean equals(CharSequence a, CharSequence b) {
@@ -444,6 +482,8 @@ public static boolean equals(CharSequence a, CharSequence b) {
     }
 
     // XXX currently this only reverses chars, not spans
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.911 -0500", hash_original_method = "98F930B270648698A021909A60BE17AD", hash_generated_method = "197399D3D66518E7F26D8A6C6C5A4650")
     
@@ -456,8 +496,8 @@ public static CharSequence getReverse(CharSequence source,
      * Flatten a CharSequence and whatever styles can be copied across processes
      * into the parcel.
      */
-    @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.005 -0500", hash_original_method = "3AB99D64EE2B077E31675DCB4E265A32", hash_generated_method = "42EA47F81EED8389C6DC4542452E1EDA")
     
 public static void writeToParcel(CharSequence cs, Parcel p,
@@ -501,6 +541,8 @@ public static void writeToParcel(CharSequence cs, Parcel p,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.008 -0500", hash_original_method = "9B5ED0499519A130DB4D8B61A9E846A6", hash_generated_method = "B9947CF52F3AFB4C45495453EDAD6B86")
     
 private static void writeWhere(Parcel p, Spanned sp, Object o) {
@@ -514,6 +556,8 @@ private static void writeWhere(Parcel p, Spanned sp, Object o) {
      * be printed one span per line.  If the CharSequence is not a Spanned,
      * then the entire string will be printed on a single line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.024 -0500", hash_original_method = "BE480EAEA78D9AC942A5A115EAA0FF97", hash_generated_method = "9366628B164F37B7BDE9EACCD00BDE22")
     
@@ -540,6 +584,8 @@ public static void dumpSpans(CharSequence cs, Printer printer, String prefix) {
      * Return a new CharSequence in which each of the source strings is
      * replaced by the corresponding element of the destinations.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.027 -0500", hash_original_method = "7F42862E06E0A79232E639A8406A0D91", hash_generated_method = "0B16D69A787C82725742FAD6D22048F8")
     
 public static CharSequence replace(CharSequence template,
@@ -588,6 +634,8 @@ public static CharSequence replace(CharSequence template,
      * value that was not provided, or if more than 9 values are
      * provided.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.030 -0500", hash_original_method = "1FFDFAC4EC60B3BFF5CF0C29A1CCA4F1", hash_generated_method = "385C2317CC363F6FCDE6DD1C5672DEF5")
     
 public static CharSequence expandTemplate(CharSequence template,
@@ -631,6 +679,8 @@ public static CharSequence expandTemplate(CharSequence template,
         return ssb;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.034 -0500", hash_original_method = "8161B498320C5E1EE65901C7324FD829", hash_generated_method = "F1C499A6FEA9F782BC1630BFA1CC4934")
     
 public static int getOffsetBefore(CharSequence text, int offset) {
@@ -668,6 +718,8 @@ public static int getOffsetBefore(CharSequence text, int offset) {
         return offset;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.037 -0500", hash_original_method = "26C887800914BB31A926D9FDB5C01860", hash_generated_method = "266FDB3740A1FA44CD245953DADFF893")
     
 public static int getOffsetAfter(CharSequence text, int offset) {
@@ -707,6 +759,8 @@ public static int getOffsetAfter(CharSequence text, int offset) {
         return offset;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.040 -0500", hash_original_method = "45D562325073C8296B6163D6C6A7113A", hash_generated_method = "98EC5C3C3BF97DA57F4A1992BAC0B17A")
     
 private static void readSpan(Parcel p, Spannable sp, Object o) {
@@ -724,6 +778,8 @@ private static void readSpan(Parcel p, Spannable sp, Object o) {
      * @throws IndexOutOfBoundsException if any of the copied spans
      * are out of range in <code>dest</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.043 -0500", hash_original_method = "8957741676B2512029B5EB0ADA41C6A3", hash_generated_method = "E2BCCB361B1569E7D40583CB780B992D")
     
 public static void copySpansFrom(Spanned source, int start, int end,
@@ -900,6 +956,8 @@ public static CharSequence ellipsize(CharSequence text,
      * @param oneMore the string for "1 more" in the current locale
      * @param more the string for "%d more" in the current locale
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.061 -0500", hash_original_method = "F1EFDFAB351B67E053FAADF2166CDCC3", hash_generated_method = "6524A76625F825359D2A3A2B39201E31")
     
 public static CharSequence commaEllipsize(CharSequence text,
@@ -913,6 +971,8 @@ public static CharSequence commaEllipsize(CharSequence text,
     /**
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.064 -0500", hash_original_method = "0E3B019F0CF7F9AC0F531B04D4677D37", hash_generated_method = "CCF8FB93E2AF1E9E6C010C8AAF92FEB4")
     
 public static CharSequence commaEllipsize(CharSequence text, TextPaint p,
@@ -980,6 +1040,8 @@ public static CharSequence commaEllipsize(CharSequence text, TextPaint p,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.069 -0500", hash_original_method = "F470043619889DFEECBE932B4072D13A", hash_generated_method = "366D8FF7DE24403331AEBF36D1DAF5E3")
     
 private static float setPara(MeasuredText mt, TextPaint paint,
@@ -1009,6 +1071,8 @@ private static float setPara(MeasuredText mt, TextPaint paint,
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.074 -0500", hash_original_method = "3B0290B962B70D4426A36B25A2A84ADD", hash_generated_method = "37C3AEE0D1A41DC464712EFD7E57574D")
     
 static boolean doesNotNeedBidi(CharSequence s, int start, int end) {
@@ -1021,6 +1085,8 @@ static boolean doesNotNeedBidi(CharSequence s, int start, int end) {
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.077 -0500", hash_original_method = "057EA90B22F78FA618CCAE9B4CC3EB9F", hash_generated_method = "2B29807F77C2228AE7E287222667F3BB")
     
 static boolean doesNotNeedBidi(char[] text, int start, int len) {
@@ -1032,7 +1098,9 @@ static boolean doesNotNeedBidi(char[] text, int start, int len) {
         return true;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.079 -0500", hash_original_method = "724D3ECD749CFFB2830BA18321E72A55", hash_generated_method = "FEC8CC1820CE2BC46DD07421EAA048AC")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.079 -0500", hash_original_method = "724D3ECD749CFFB2830BA18321E72A55", hash_generated_method = "FEC8CC1820CE2BC46DD07421EAA048AC")
     
 static char[] obtain(int len) {
         char[] buf;
@@ -1048,7 +1116,9 @@ static char[] obtain(int len) {
         return buf;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.082 -0500", hash_original_method = "35D8C7413AE72E3FBC6ED6BF63BDBAC7", hash_generated_method = "D870E1DCBA7DEFF27E1C10F2AD8B89B0")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.082 -0500", hash_original_method = "35D8C7413AE72E3FBC6ED6BF63BDBAC7", hash_generated_method = "D870E1DCBA7DEFF27E1C10F2AD8B89B0")
     
 static void recycle(char[] temp) {
         if (temp.length > 1000)
@@ -1100,6 +1170,8 @@ public static String htmlEncode(String s) {
      * Returns a CharSequence concatenating the specified CharSequences,
      * retaining their spans if any.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.088 -0500", hash_original_method = "3D20E7CFBF69AD3A80541C9D5FB744D6", hash_generated_method = "D63F0AE9ACC16DDD24B1151887DD460B")
     
 public static CharSequence concat(CharSequence... text) {
@@ -1146,6 +1218,8 @@ public static CharSequence concat(CharSequence... text) {
     /**
      * Returns whether the given CharSequence contains any printable characters.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.091 -0500", hash_original_method = "ADA62A66172DE21069B5A4445E7922D9", hash_generated_method = "9CAED34042B302532BA487BEE4160699")
     
 public static boolean isGraphic(CharSequence str) {
@@ -1168,6 +1242,8 @@ public static boolean isGraphic(CharSequence str) {
     /**
      * Returns whether this character is a printable character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.094 -0500", hash_original_method = "0CFF4A7A331DD9A6D6EBBEEED18C81AF", hash_generated_method = "CA262A3E83D9383D017F6AEF5D193A09")
     
 public static boolean isGraphic(char c) {
@@ -1241,6 +1317,8 @@ public static boolean isPrintableAsciiOnly(final CharSequence str) {
      * {@link #CAP_MODE_CHARACTERS}, {@link #CAP_MODE_WORDS}, and
      * {@link #CAP_MODE_SENTENCES}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.115 -0500", hash_original_method = "C94484EC168BB2A014852EC30CF05C72", hash_generated_method = "DC3112F5D870C4D056CBEFCD7C221D12")
     
 public static int getCapsMode(CharSequence cs, int off, int reqModes) {
@@ -1338,6 +1416,8 @@ public static int getCapsMode(CharSequence cs, int off, int reqModes) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.118 -0500", hash_original_method = "D4F4B6F2CF36AAFF165E53C1B7992C6B", hash_generated_method = "C07FE1AF9C1CFC270AB3A0317ED22A73")
     
 public static boolean delimitedStringContains(
@@ -1363,6 +1443,8 @@ public static boolean delimitedStringContains(
         return false;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <T> T[] removeEmptySpans(T[] spans, Spanned spanned, Class<T> klass) {
     	T[] retVal;
@@ -1419,6 +1501,8 @@ public static boolean delimitedStringContains(
          * Initializes the splitter. setString may be called later.
          * @param delimiter the delimeter on which to split
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.880 -0500", hash_original_method = "6A654BA34A10AA2B42750EC65A3F679B", hash_generated_method = "16716B2C616858C4F227FCB64679DAF8")
         
 public SimpleStringSplitter(char delimiter) {
@@ -1429,6 +1513,8 @@ public SimpleStringSplitter(char delimiter) {
          * Sets the string to split
          * @param string the string to split
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.883 -0500", hash_original_method = "6D8C9957AC1A2476C265420CD8A2E354", hash_generated_method = "72D29C1590426FCCCF674EC48B89F5FB")
         
 public void setString(String string) {
@@ -1437,16 +1523,22 @@ public void setString(String string) {
             mLength = mString.length();
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         public Iterator iterator() {
             return this;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.889 -0500", hash_original_method = "675B2012EE41806104DFB06FA586494D", hash_generated_method = "6754DEE2DF63C57E8C400DF64686FDA8")
         
 public boolean hasNext() {
             return mPosition < mLength;
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         public String next() {
         //public Object next() {
         	/*
@@ -1461,6 +1553,8 @@ public boolean hasNext() {
         	return new String();
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.894 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
         
 public void remove() {
@@ -1650,6 +1744,8 @@ public void getChars(int start, int end, char[] dest, int destoff) {
     private static final String ELLIPSIS_TWO_DOTS = Resources.getSystem().getString(
             R.string.ellipsis_two_dots);
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.814 -0500", hash_original_method = "B02737FE3AF0C7262E7E1815816AFA38", hash_generated_method = "334E17B5C4AA54901502DF0104365421")
     
 private TextUtils() { /* cannot be instantiated */ }

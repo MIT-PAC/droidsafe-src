@@ -23,6 +23,8 @@ class CredentialsCache {
 
     private Timer timer;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.118 -0500", hash_original_method = "27F7597F884C45C17FD9F63A315334B1", hash_generated_method = "27F7597F884C45C17FD9F63A315334B1")
     
 CredentialsCache (Timer timer) {
@@ -38,6 +40,8 @@ CredentialsCache (Timer timer) {
      * @param authorization
      *            the authorization header that we'd like to cache.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.121 -0500", hash_original_method = "557183176EBBC482C2193E58BCF0D460", hash_generated_method = "557183176EBBC482C2193E58BCF0D460")
     
@@ -80,6 +84,8 @@ void cacheAuthorizationHeader(String callId,
      * @return authorization header corresponding to that user for the given
      *         proxy domain.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.124 -0500", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB")
     

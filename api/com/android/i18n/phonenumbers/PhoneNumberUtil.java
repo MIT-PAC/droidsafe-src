@@ -34,7 +34,9 @@ public class PhoneNumberUtil {
    * Helper initialiser method to create the regular-expression pattern to match extensions,
    * allowing the one-char extension symbols provided by {@code singleExtnSymbols}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.502 -0500", hash_original_method = "F3F9C9A4CAA5DAE3DB959030B6EDB840", hash_generated_method = "67B293D2AF26DE41C2D417A4D0B2F3FC")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.502 -0500", hash_original_method = "F3F9C9A4CAA5DAE3DB959030B6EDB840", hash_generated_method = "67B293D2AF26DE41C2D417A4D0B2F3FC")
     
 private static String createExtnPattern(String singleExtnSymbols) {
     // There are three regular expressions here. The first covers RFC 3966 format, where the
@@ -69,7 +71,9 @@ private static String createExtnPattern(String singleExtnSymbols) {
    *                string if no character used to start phone numbers (such as + or any digit) is
    *                found in the number
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.576 -0500", hash_original_method = "D818734C49CD12D5628ABEAEEDEC1994", hash_generated_method = "1878B2C2DBB790029C3B85705DEE563D")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.576 -0500", hash_original_method = "D818734C49CD12D5628ABEAEEDEC1994", hash_generated_method = "1878B2C2DBB790029C3B85705DEE563D")
     
 static String extractPossibleNumber(String number) {
     Matcher m = VALID_START_CHAR_PATTERN.matcher(number);
@@ -102,7 +106,9 @@ static String extractPossibleNumber(String number) {
    * @param number  string to be checked for viability as a phone number
    * @return        true if the number could be a phone number of some sort, otherwise false
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.578 -0500", hash_original_method = "F8B1494236C94478C90C2AF36B5BB0DF", hash_generated_method = "B8626553B4904FE523436AA8BCB044F6")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.578 -0500", hash_original_method = "F8B1494236C94478C90C2AF36B5BB0DF", hash_generated_method = "B8626553B4904FE523436AA8BCB044F6")
     
 static boolean isViablePhoneNumber(String number) {
     if (number.length() < MIN_LENGTH_FOR_NSN) {
@@ -128,7 +134,9 @@ static boolean isViablePhoneNumber(String number) {
    * @param number  a string of characters representing a phone number
    * @return        the normalized string version of the phone number
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.580 -0500", hash_original_method = "B852DEDF2BEDB6040A8893210C30801F", hash_generated_method = "79B9C6D2D5970971739C153D034DB073")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.580 -0500", hash_original_method = "B852DEDF2BEDB6040A8893210C30801F", hash_generated_method = "79B9C6D2D5970971739C153D034DB073")
     
 static String normalize(String number) {
     Matcher m = VALID_ALPHA_PHONE_PATTERN.matcher(number);
@@ -146,7 +154,9 @@ static String normalize(String number) {
    * @param number  a StringBuilder of characters representing a phone number that will be
    *     normalized in place
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.583 -0500", hash_original_method = "D42F831C75A739394DFADDB25E708507", hash_generated_method = "9F857C9E4BC340159E71AA29BA08A6A6")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.583 -0500", hash_original_method = "D42F831C75A739394DFADDB25E708507", hash_generated_method = "9F857C9E4BC340159E71AA29BA08A6A6")
     
 static void normalize(StringBuilder number) {
     String normalizedNumber = normalize(number.toString());
@@ -166,7 +176,9 @@ public static String normalizeDigitsOnly(String number) {
     return normalizeDigits(number, false /* strip non-digits */).toString();
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.587 -0500", hash_original_method = "359C33F05F722664FD26256E64417929", hash_generated_method = "07640CBE68C49280D205745174A0A3B0")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.587 -0500", hash_original_method = "359C33F05F722664FD26256E64417929", hash_generated_method = "07640CBE68C49280D205745174A0A3B0")
     
 private static StringBuilder normalizeDigits(String number, boolean keepNonDigits) {
     StringBuilder normalizedDigits = new StringBuilder(number.length());
@@ -204,7 +216,9 @@ public static String convertAlphaCharactersInNumber(String number) {
    *                                   will be left unchanged in the number.
    * @return  the normalized string version of the phone number
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.598 -0500", hash_original_method = "1633DBFD6FFC6BC177209C717F6C9736", hash_generated_method = "E18B0A0DD9E747175446C7FBE511CB94")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.598 -0500", hash_original_method = "1633DBFD6FFC6BC177209C717F6C9736", hash_generated_method = "E18B0A0DD9E747175446C7FBE511CB94")
     
 private static String normalizeHelper(String number,
                                         Map<Character, Character> normalizationReplacements,
@@ -223,7 +237,9 @@ private static String normalizeHelper(String number,
     return normalizedNumber.toString();
   }
 
-  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.600 -0500", hash_original_method = "B02D8B233D913131328D345E9D5C7AB1", hash_generated_method = "991F6C3EA19CDE01D5A23171EB1323D7")
     
 static synchronized PhoneNumberUtil getInstance(
@@ -240,7 +256,9 @@ static synchronized PhoneNumberUtil getInstance(
   /**
    * Used for testing purposes only to reset the PhoneNumberUtil singleton to null.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.603 -0500", hash_original_method = "4B942EE039798DCE4C7F36FBC1F64250", hash_generated_method = "97FE6B503DABE6F3C4DE1F19161764AE")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.603 -0500", hash_original_method = "4B942EE039798DCE4C7F36FBC1F64250", hash_generated_method = "97FE6B503DABE6F3C4DE1F19161764AE")
     
 static synchronized void resetInstance() {
     instance = null;
@@ -472,12 +490,16 @@ public static synchronized PhoneNumberUtil getInstance() {
   /**
    * This class implements a singleton, so the only constructor is private.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.566 -0500", hash_original_method = "3DBAF8008FFD9E53011E9436972AF77A", hash_generated_method = "58A526AFE359054B3C6F6D717E308EE5")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.566 -0500", hash_original_method = "3DBAF8008FFD9E53011E9436972AF77A", hash_generated_method = "58A526AFE359054B3C6F6D717E308EE5")
     
 private PhoneNumberUtil() {
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.568 -0500", hash_original_method = "E42A7007FDB19817C28C648F3339DD4F", hash_generated_method = "B98FF5E533FD0C3B92D1F1FA46653DE4")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.568 -0500", hash_original_method = "E42A7007FDB19817C28C648F3339DD4F", hash_generated_method = "B98FF5E533FD0C3B92D1F1FA46653DE4")
     
 private void init(String filePrefix) {
     currentFilePrefix = filePrefix;
@@ -487,7 +509,9 @@ private void init(String filePrefix) {
     nanpaRegions.addAll(countryCallingCodeToRegionCodeMap.get(NANPA_COUNTRY_CODE));
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.570 -0500", hash_original_method = "D4A5DED95C2EE22965F522507C270AF5", hash_generated_method = "F3D2D885F9CC0FADCB939DD34AAFF003")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.570 -0500", hash_original_method = "D4A5DED95C2EE22965F522507C270AF5", hash_generated_method = "F3D2D885F9CC0FADCB939DD34AAFF003")
     
 private void loadMetadataForRegionFromFile(String filePrefix, String regionCode) {
     InputStream source =
@@ -507,7 +531,9 @@ private void loadMetadataForRegionFromFile(String filePrefix, String regionCode)
     }
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.572 -0500", hash_original_method = "A1113EBAB3D0682FE612F1231142344C", hash_generated_method = "AE3245B2725FCEC74728EDFA1A599E40")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.572 -0500", hash_original_method = "A1113EBAB3D0682FE612F1231142344C", hash_generated_method = "AE3245B2725FCEC74728EDFA1A599E40")
     
 private void close(InputStream in) {
     if (in != null) {
@@ -661,7 +687,9 @@ public Set<String> getSupportedRegions() {
   /**
    * Helper function to check region code is not unknown or null.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.610 -0500", hash_original_method = "BD64224247A46B4F8D1913B12FB0926A", hash_generated_method = "20C4A11C84C16E3B2A340ABC8FD1643C")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.610 -0500", hash_original_method = "BD64224247A46B4F8D1913B12FB0926A", hash_generated_method = "20C4A11C84C16E3B2A340ABC8FD1643C")
     
 private boolean isValidRegionCode(String regionCode) {
     return regionCode != null && supportedRegions.contains(regionCode);
@@ -672,7 +700,9 @@ private boolean isValidRegionCode(String regionCode) {
    * {@code countryCallingCode} and {@code number} supplied is used only for the resultant log
    * message.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.613 -0500", hash_original_method = "8968A71862E924379D457A4D52F2E514", hash_generated_method = "C4546F917A320DFFBE238A989020BEAC")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.613 -0500", hash_original_method = "8968A71862E924379D457A4D52F2E514", hash_generated_method = "C4546F917A320DFFBE238A989020BEAC")
     
 private boolean hasValidRegionCode(String regionCode,
                                      int countryCallingCode, String number) {
@@ -1486,7 +1516,9 @@ private static String[] getNationalNumberGroups(PhoneNumberUtil util, PhoneNumbe
       return rfc3966Format.substring(startIndex, endIndex).split("-");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.554 -0500", hash_original_method = "9AB9E4BD33616C807EEE356363101105", hash_generated_method = "DB239D85FE3D6B4DB81F389617574362")
+    @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.554 -0500", hash_original_method = "9AB9E4BD33616C807EEE356363101105", hash_generated_method = "DB239D85FE3D6B4DB81F389617574362")
             
 private static boolean containsMoreThanOneSlash(String candidate) {
       int firstSlashIndex = candidate.indexOf('/');
@@ -1535,7 +1567,9 @@ abstract boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil ut
    * prefix. This will be the default extension prefix, unless overridden by a preferred
    * extension prefix for this region.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.667 -0500", hash_original_method = "4E1A69FB5E070DF7BC56976B37027181", hash_generated_method = "8E90055726D8DC8C3C9D272278AD0D74")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.667 -0500", hash_original_method = "4E1A69FB5E070DF7BC56976B37027181", hash_generated_method = "8E90055726D8DC8C3C9D272278AD0D74")
     
 private void formatExtension(String extensionDigits, String regionCode,
                                StringBuilder extension) {
@@ -1907,7 +1941,9 @@ public boolean isNANPACountry(String regionCode) {
    * could contain a leading zero. An example of such a region is Italy. Returns false if no
    * metadata for the country is found.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.702 -0500", hash_original_method = "996B7AC837898451564E65CADA674F54", hash_generated_method = "996B7AC837898451564E65CADA674F54")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.702 -0500", hash_original_method = "996B7AC837898451564E65CADA674F54", hash_generated_method = "996B7AC837898451564E65CADA674F54")
     
 boolean isLeadingZeroPossible(int countryCallingCode) {
     PhoneMetadata mainMetadataForCallingCode = getMetadataForRegion(
@@ -2099,7 +2135,9 @@ public AsYouTypeFormatter getAsYouTypeFormatter(String regionCode) {
   // nationalNumber. It assumes that the leading plus sign or IDD has already been removed. Returns
   // 0 if fullNumber doesn't start with a valid country calling code, and leaves nationalNumber
   // unmodified.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.721 -0500", hash_original_method = "2A48039CFC05A878E1A34077CDECE0D5", hash_generated_method = "2A48039CFC05A878E1A34077CDECE0D5")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.721 -0500", hash_original_method = "2A48039CFC05A878E1A34077CDECE0D5", hash_generated_method = "2A48039CFC05A878E1A34077CDECE0D5")
     
 int extractCountryCode(StringBuilder fullNumber, StringBuilder nationalNumber) {
     int potentialCountryCode;
@@ -2223,7 +2261,9 @@ int maybeExtractCountryCode(String number, PhoneMetadata defaultRegionMetadata,
    * Strips the IDD from the start of the number if present. Helper function used by
    * maybeStripInternationalPrefixAndNormalize.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.728 -0500", hash_original_method = "0F0B6B28B590A156D8457E403790D50B", hash_generated_method = "5774B095961096FF09D2C124BA47E6AB")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.728 -0500", hash_original_method = "0F0B6B28B590A156D8457E403790D50B", hash_generated_method = "5774B095961096FF09D2C124BA47E6AB")
     
 private boolean parsePrefixAsIdd(Pattern iddPattern, StringBuilder number) {
     Matcher m = iddPattern.matcher(number);
@@ -2353,7 +2393,9 @@ String maybeStripNationalPrefixAndCarrierCode(StringBuilder number, PhoneMetadat
    * @param number  the non-normalized telephone number that we wish to strip the extension from
    * @return        the phone extension
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.736 -0500", hash_original_method = "D072FBB7A4080E317A5210E0DF61655A", hash_generated_method = "CC015739D8A9978C3000EDBD8A039D39")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.736 -0500", hash_original_method = "D072FBB7A4080E317A5210E0DF61655A", hash_generated_method = "CC015739D8A9978C3000EDBD8A039D39")
     
 String maybeStripExtension(StringBuilder number) {
     Matcher m = EXTN_PATTERN.matcher(number);
@@ -2379,7 +2421,9 @@ String maybeStripExtension(StringBuilder number) {
    * parse starts with a + symbol so that we can attempt to infer the region from the number.
    * Returns false if it cannot use the region provided and the region cannot be inferred.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.738 -0500", hash_original_method = "E1BA4484CA3B538698D9E39D9664F7DD", hash_generated_method = "094C7F76AB089269A6A4B4724A581363")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.738 -0500", hash_original_method = "E1BA4484CA3B538698D9E39D9664F7DD", hash_generated_method = "094C7F76AB089269A6A4B4724A581363")
     
 private boolean checkRegionForParsing(String numberToParse, String defaultRegion) {
     if (!isValidRegionCode(defaultRegion)) {

@@ -280,13 +280,17 @@ public PendingIntent[] newArray(int size) {
 
     private  IIntentSender mTarget;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.478 -0500", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "3ACE5727953950B87626FD6380A23370")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.478 -0500", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "3ACE5727953950B87626FD6380A23370")
     
 PendingIntent(IIntentSender target) {
         mTarget = target;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.480 -0500", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.480 -0500", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D")
     
 PendingIntent(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);

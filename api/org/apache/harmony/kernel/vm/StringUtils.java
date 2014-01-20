@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public final class StringUtils {
 
     /**
@@ -46,12 +45,13 @@ public static String combineStrings(Object[] list) {
     /**
      * This class is uninstantiable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.362 -0500", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "445D9BE0B3E6A16F60D0C20F91B79742")
     
 private StringUtils() {
         // This space intentionally left blank.
     }
-
     
 }
 

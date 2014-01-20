@@ -13,18 +13,24 @@ abstract class CharArrayBuffer extends CharBuffer {
 
     protected  int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.725 -0500", hash_original_method = "A72F78A13989965B326E51B9BE40A191", hash_generated_method = "A72F78A13989965B326E51B9BE40A191")
     
 CharArrayBuffer(char[] array) {
         this(array.length, array, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.727 -0500", hash_original_method = "1D86BFBD657FBEBE6746E0A26E3B60D6", hash_generated_method = "1D86BFBD657FBEBE6746E0A26E3B60D6")
     
 CharArrayBuffer(int capacity) {
         this(capacity, new char[capacity], 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.730 -0500", hash_original_method = "C3B2650154B809A9DCA4173590E7D6FB", hash_generated_method = "C3B2650154B809A9DCA4173590E7D6FB")
     
 CharArrayBuffer(int capacity, char[] backingArray, int offset) {

@@ -14,11 +14,6 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSequence;
 
-
-
-
-
-
 public class ObjectDigestInfo extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.939 -0500", hash_original_method = "2CD790E0C71507799B4BE3E59BBB8EAE", hash_generated_method = "76E77CEA22755578C54A024CD1511B21")
@@ -59,18 +54,14 @@ public static ObjectDigestInfo getInstance(
     public final static int otherObjectDigest = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.929 -0500", hash_original_field = "1EBFC1EA7BE5FBB19EED6A7F33E7C5E0", hash_generated_field = "1EBFC1EA7BE5FBB19EED6A7F33E7C5E0")
 
-
     DEREnumerated digestedObjectType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.932 -0500", hash_original_field = "2E52D7500B72C9A66D7BDA7C325C8111", hash_generated_field = "2E52D7500B72C9A66D7BDA7C325C8111")
-
 
     DERObjectIdentifier otherObjectTypeID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.934 -0500", hash_original_field = "CA29728B9069A9E1C4E28C8A9BC0FDFA", hash_generated_field = "CA29728B9069A9E1C4E28C8A9BC0FDFA")
 
-
     AlgorithmIdentifier digestAlgorithm;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.936 -0500", hash_original_field = "A8067FEC006B3B31C7D2F37BC96A1A60", hash_generated_field = "A8067FEC006B3B31C7D2F37BC96A1A60")
-
 
     DERBitString objectDigest;
 
@@ -101,11 +92,13 @@ public ObjectDigestInfo(
             this.otherObjectTypeID = new DERObjectIdentifier(otherObjectTypeID);
         }
 
-        this.digestAlgorithm = digestAlgorithm; 
+        this.digestAlgorithm = digestAlgorithm;
 
         this.objectDigest = new DERBitString(objectDigest);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.947 -0500", hash_original_method = "44BAD3DCA2A27D701ACA3AA084450844", hash_generated_method = "F5795BB3BB754F4FF3944D5CBE349893")
     
 private ObjectDigestInfo(

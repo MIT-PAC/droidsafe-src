@@ -78,6 +78,8 @@ public int getPeerPort() {
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.537 -0500", hash_original_method = "4F0D34DFD3D1484E91BA72BADB23162A", hash_generated_method = "9F15F3402ECD6EF74D957997E1F451C3")
     
 public abstract void beginHandshake() throws SSLException;
@@ -90,6 +92,8 @@ public abstract void beginHandshake() throws SSLException;
      *             if this engine did not receive a needed protocol specific
      *             close notification message from the peer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.540 -0500", hash_original_method = "FB93F04FA108FFF94025798660EC1B2D", hash_generated_method = "219050BA1919BE676B5E162C62166922")
     
 public abstract void closeInbound() throws SSLException;
@@ -98,6 +102,8 @@ public abstract void closeInbound() throws SSLException;
      * Notifies this engine instance that no more outbound application data will
      * be sent to this engine.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.542 -0500", hash_original_method = "157CD3ED03C993ED0BE49049AE4142F0", hash_generated_method = "2166A0162E1631064A56157DF1EDCCB3")
     
 public abstract void closeOutbound();
@@ -112,6 +118,8 @@ public abstract void closeOutbound();
      *
      * @return a delegate task, or {@code null} if none are available.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.544 -0500", hash_original_method = "0CD857071E126D0E0E3B448940FD7605", hash_generated_method = "2C29F70C13E42E1F01A4A8EB7BF6F849")
     
 public abstract Runnable getDelegatedTask();
@@ -123,6 +131,8 @@ public abstract Runnable getDelegatedTask();
      * @return the SSL cipher suite names that are enabled in this engine
      *         instance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.547 -0500", hash_original_method = "BB75297504ED13529514C3177F090190", hash_generated_method = "061445B26CADFE8B5CD047D7521151EC")
     
 public abstract String[] getEnabledCipherSuites();
@@ -134,6 +144,8 @@ public abstract String[] getEnabledCipherSuites();
      * @return the protocol version names that are enabled in this engine
      *         instance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.550 -0500", hash_original_method = "32F4E828AC8F445B64955C86B1AFEAEB", hash_generated_method = "5E4CEFAED414B7670ED014CA834938CE")
     
 public abstract String[] getEnabledProtocols();
@@ -144,6 +156,8 @@ public abstract String[] getEnabledProtocols();
      * @return {@code true} if new session may be established, {@code false} if
      *         existing sessions must be reused.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.552 -0500", hash_original_method = "A0E2936040B850370E4431895BC97980", hash_generated_method = "367C53128C1B81ADB8CCA01DBCE35F10")
     
 public abstract boolean getEnableSessionCreation();
@@ -163,6 +177,8 @@ public abstract SSLEngineResult.HandshakeStatus getHandshakeStatus();
      * @return {@code true} if this engine will require client authentication,
      *         {@code false} if no client authentication is needed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.556 -0500", hash_original_method = "18D8E87E8269449773EEAF111DE0F33F", hash_generated_method = "84AFAA836C2B9FD9D30E6C8E29EDA240")
     
 public abstract boolean getNeedClientAuth();
@@ -172,6 +188,8 @@ public abstract boolean getNeedClientAuth();
      *
      * @return the SSL session for this engine instance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.559 -0500", hash_original_method = "532A0CA5E04090EDD94B248F925615EE", hash_generated_method = "83FB733144EA2670CC9BAF632B24E628")
     
 public abstract SSLSession getSession();
@@ -183,6 +201,8 @@ public abstract SSLSession getSession();
      *
      * @return the SSL cipher suite names that are supported by this engine.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.561 -0500", hash_original_method = "972B577B4B04B597248145E0CF6E63D2", hash_generated_method = "09D1FF6565C262832AA989BA28390929")
     
 public abstract String[] getSupportedCipherSuites();
@@ -193,6 +213,8 @@ public abstract String[] getSupportedCipherSuites();
      *
      * @return the protocol names that are supported by this engine.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.563 -0500", hash_original_method = "3FD91F76BC51E9E2EDFCF4A896BF5E5E", hash_generated_method = "A3356A4404800F82B6EC4AE3BBD1CECE")
     
 public abstract String[] getSupportedProtocols();
@@ -204,6 +226,8 @@ public abstract String[] getSupportedProtocols();
      * @return {@code true} if the engine is set to do handshaking in client
      *         mode.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.565 -0500", hash_original_method = "B2F0A693CA367F13693D6A3367E86206", hash_generated_method = "D17191517DC8ACFD56AD0AE6AA8D5B97")
     
 public abstract boolean getUseClientMode();
@@ -214,6 +238,8 @@ public abstract boolean getUseClientMode();
      * @return {@code true} if client authentication will be requested,
      *         {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.568 -0500", hash_original_method = "6ABFE23F3A3B3813808D701D9CDD5E9C", hash_generated_method = "1E5ADAC3870F0177C238FC2ED806960E")
     
 public abstract boolean getWantClientAuth();
@@ -224,6 +250,8 @@ public abstract boolean getWantClientAuth();
      * @return {@code true} if no more inbound data will be accepted by this
      *         engine, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.570 -0500", hash_original_method = "B7DF8CE1866B8DC99DD4341771EDAC84", hash_generated_method = "18CEF27EF141B955EE0880D76A853FF9")
     
 public abstract boolean isInboundDone();
@@ -234,6 +262,8 @@ public abstract boolean isInboundDone();
      * @return {@code true} if no more outbound data will be producted by this
      *         engine, {@code otherwise} false.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.572 -0500", hash_original_method = "F5D84C3147F6B1216757D31C12326703", hash_generated_method = "ACD2B177D0A0F9C3A111DB87658DB7FC")
     
 public abstract boolean isOutboundDone();
@@ -249,6 +279,8 @@ public abstract boolean isOutboundDone();
      *             if one of the specified cipher suites is not supported, or if
      *             {@code suites} is {@code null}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.574 -0500", hash_original_method = "84F6E139E9DDF1E455EB26E1B318EBF4", hash_generated_method = "F9805BBF1FBBA5E941AC2541C0C38322")
     
 public abstract void setEnabledCipherSuites(String[] suites);
@@ -264,6 +296,8 @@ public abstract void setEnabledCipherSuites(String[] suites);
      *             if one of the protocol version names is not supported, or if
      *             {@code protocols} is {@code null}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.577 -0500", hash_original_method = "190265461F98EDDDF9AC6C5332C503B2", hash_generated_method = "30F0BE37EC8F79FDE8B6CE44A0863F4E")
     
 public abstract void setEnabledProtocols(String[] protocols);
@@ -275,6 +309,8 @@ public abstract void setEnabledProtocols(String[] protocols);
      *            {@code true} if new SSL sessions may be established,
      *            {@code false} if existing SSL sessions must be reused.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.579 -0500", hash_original_method = "C22D69DDD073F51A676C7AA37CECE077", hash_generated_method = "6A8A708293722AAF79D6E19A89EDCF3F")
     
 public abstract void setEnableSessionCreation(boolean flag);
@@ -293,6 +329,8 @@ public abstract void setEnableSessionCreation(boolean flag);
      *            {@code true} if client authentication is required,
      *            {@code false} if no authentication is needed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.582 -0500", hash_original_method = "12E2718447E521BB2126CF41CA343554", hash_generated_method = "BFF0A42DB80B794FF8EACD8B0D363AFE")
     
 public abstract void setNeedClientAuth(boolean need);
@@ -308,6 +346,8 @@ public abstract void setNeedClientAuth(boolean need);
      *             if this method is called after starting the initial
      *             handshake.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.584 -0500", hash_original_method = "19AAB4420CED9244333FFE885F8E0B37", hash_generated_method = "AFBE53D3CEDD2FF26833A764AB296F02")
     
 public abstract void setUseClientMode(boolean mode);
@@ -326,6 +366,8 @@ public abstract void setUseClientMode(boolean mode);
      *            {@code true} if client authentication should be requested,
      *            {@code false} if no authentication is needed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.586 -0500", hash_original_method = "356948DA3BA53E1DF3CFAAEFCCB304EC", hash_generated_method = "F842593770E8FDE5B25EAE8AEA1A73A2")
     
 public abstract void setWantClientAuth(boolean want);
@@ -360,6 +402,8 @@ public abstract void setWantClientAuth(boolean want);
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.589 -0500", hash_original_method = "53CF3F2F5AF568B9D67F3A0608E2D611", hash_generated_method = "5F0848612F77A5F1773A61005B9102FB")
     
 public abstract SSLEngineResult unwrap(ByteBuffer src,
@@ -396,6 +440,8 @@ public abstract SSLEngineResult unwrap(ByteBuffer src,
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.591 -0500", hash_original_method = "910AC97486EF4CDF39EFB601F1657BCE", hash_generated_method = "4B18957461BDC41326765A8A501DA786")
     
 public abstract SSLEngineResult wrap(ByteBuffer[] srcs, int offset, int length, ByteBuffer dst)

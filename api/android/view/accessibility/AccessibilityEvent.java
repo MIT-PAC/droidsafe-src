@@ -232,6 +232,8 @@ public AccessibilityEvent[] newArray(int size) {
     /*
      * Hide constructor from clients.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.433 -0500", hash_original_method = "851763ED22FDC1F823C000B96565E393", hash_generated_method = "DB12C3159964370003B409964B096C0C")
     
 private AccessibilityEvent() {
@@ -242,6 +244,8 @@ private AccessibilityEvent() {
      *
      * @param event The event to initialize from.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.436 -0500", hash_original_method = "EF53A9AEF549006E04C5A25F56401EE0", hash_generated_method = "EF53A9AEF549006E04C5A25F56401EE0")
     
 void init(AccessibilityEvent event) {
@@ -475,6 +479,8 @@ public void initFromParcel(Parcel parcel) {
      * @param record The record to initialize.
      * @param parcel The parcel to read from.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.477 -0500", hash_original_method = "B088070677D65811E863E6E48DBE8540", hash_generated_method = "60C42CB458D1A2FC6C1EC72B64B0EB2F")
     
 private void readAccessibilityRecordFromParcel(AccessibilityRecord record,
@@ -529,6 +535,8 @@ public void writeToParcel(Parcel parcel, int flags) {
      * @param record The record to write.
      * @param parcel The parcel to which to write.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.483 -0500", hash_original_method = "BBBE1FBBDEA55D1C2908EC0443C0F1D0", hash_generated_method = "46ADF76686243899D40AF6739251DB9C")
     
 private void writeAccessibilityRecordToParcel(AccessibilityRecord record, Parcel parcel,

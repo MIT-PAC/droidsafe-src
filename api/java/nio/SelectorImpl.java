@@ -127,6 +127,8 @@ public SelectorImpl(SelectorProvider selectorProvider) throws IOException {
         return unmodifiableKeys;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.009 -0500", hash_original_method = "16DB849132AADD2CAC6FB8494D5700D0", hash_generated_method = "A613AD8F32CDABEF7079BFDAD53BDDAD")
     
 private void checkClosed() {
@@ -158,6 +160,8 @@ private void checkClosed() {
         return selectInternal(0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.019 -0500", hash_original_method = "07E877B82AC1C68A90F5E02CD6388406", hash_generated_method = "5A95E6835843354EBC1E779EE93C738A")
     
 private int selectInternal(long timeout) throws IOException {
@@ -194,6 +198,8 @@ private int selectInternal(long timeout) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.021 -0500", hash_original_method = "1864B10FEC667AA8A534CE9CC6FD0BC2", hash_generated_method = "ED40BCE6B992E202F2D560DBB7A1C73F")
     
 private void setPollFd(int i, FileDescriptor fd, int events, Object object) {
@@ -203,6 +209,8 @@ private void setPollFd(int i, FileDescriptor fd, int events, Object object) {
         pollFd.userData = object;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.024 -0500", hash_original_method = "C2C79FE5727E3E67D8033155BDE5FA42", hash_generated_method = "1A5543532813873332AC1DD3AEA580B7")
     
 private void preparePollFds() {
@@ -222,6 +230,8 @@ private void preparePollFds() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.026 -0500", hash_original_method = "561794DF92118E00B9893BD515660DDC", hash_generated_method = "13B9BF3F2C85C7F7A5EDE15E23D497C6")
     
 private void ensurePollFdsCapacity() {
@@ -234,6 +244,8 @@ private void ensurePollFdsCapacity() {
     /**
      * Updates the key ready ops and selected key set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.030 -0500", hash_original_method = "5DC934A1F65A8C13AADF3FD37642D2BD", hash_generated_method = "0A6A7C8D7ECB8D2FD01AD136CFCB11FF")
     
 private int processPollFds() throws IOException {
@@ -299,6 +311,8 @@ private int processPollFds() throws IOException {
      * deregisters the corresponding channels. Returns the number of keys
      * removed from the selected key set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.035 -0500", hash_original_method = "ECFBB6A45EE52702BEFF3EF78A8EE9C3", hash_generated_method = "5147012B6A9D5605058E46ED1E5CC400")
     
 private int doCancel() {
@@ -336,6 +350,8 @@ private int doCancel() {
 
         private  Set<E> set;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.044 -0500", hash_original_method = "62B3F0681944A36B1514E173BA40D640", hash_generated_method = "62B3F0681944A36B1514E173BA40D640")
         
 UnaddableSet(Set<E> set) {

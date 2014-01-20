@@ -8,11 +8,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 public class ASN1StreamParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.840 -0500", hash_original_field = "0AF8B53607342E2932B67C3C39DDF67E", hash_generated_field = "AD9BC78DBAEEEA7F3095C3D4235D31E3")
 
@@ -47,6 +42,8 @@ public ASN1StreamParser(
         this(new ByteArrayInputStream(encoding), encoding.length);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.853 -0500", hash_original_method = "C3E0BE0AC09DBB98B8E162DDEE686364", hash_generated_method = "F26828307F2BB67D67D8475A095865AB")
     
 DEREncodable readIndef(int tagValue) throws IOException
@@ -69,6 +66,8 @@ DEREncodable readIndef(int tagValue) throws IOException
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.856 -0500", hash_original_method = "CAB584B2B56E52E14F26B47F81A64976", hash_generated_method = "53A03EBCA02B4F64398F1CB47E4F7014")
     
 DEREncodable readImplicit(boolean constructed, int tag) throws IOException
@@ -112,6 +111,8 @@ DEREncodable readImplicit(boolean constructed, int tag) throws IOException
         throw new RuntimeException("implicit tagging not implemented");
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.858 -0500", hash_original_method = "52179F915187689C742CC095EFF2DB0F", hash_generated_method = "6EBBC96986A4DF17FEF4820E878DDFC1")
     
 DERObject readTaggedObject(boolean constructed, int tag) throws IOException
@@ -241,6 +242,8 @@ public DEREncodable readObject()
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.865 -0500", hash_original_method = "4F333A451CCAA8C49D86BC8C0430A606", hash_generated_method = "40DC3822BFE66D04E675FE3600FC1C84")
     
 private void set00Check(boolean enabled)
@@ -251,6 +254,8 @@ private void set00Check(boolean enabled)
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.867 -0500", hash_original_method = "0431F63F80CE6652BCE08CECE2E42AA0", hash_generated_method = "0431F63F80CE6652BCE08CECE2E42AA0")
     
 ASN1EncodableVector readVector() throws IOException
@@ -272,7 +277,6 @@ ASN1EncodableVector readVector() throws IOException
 
         return v;
     }
-
     
 }
 

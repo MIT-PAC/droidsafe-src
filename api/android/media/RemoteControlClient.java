@@ -26,6 +26,8 @@ public class RemoteControlClient {
      * @param validKeys the array of valid keys for a given type
      * @return true if the key is part of the array, false otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.153 -0500", hash_original_method = "4A0DB7CDD8D20C21F04F248D2D66CAA9", hash_generated_method = "3E21B50F1D5A689AD570BCD1BFAD30C6")
     
 private static boolean validTypeForKey(int key, int[] validKeys) {
@@ -654,6 +656,8 @@ public IRemoteControlClient getIRemoteControlClient() {
         return mIRCC;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.125 -0500", hash_original_method = "1D4279FF389DE00E45CE62733E438945", hash_generated_method = "830B72CF19C71F767BA4D41EAA03AAA5")
     
 private void detachFromDisplay_syncCacheLock() {
@@ -662,6 +666,8 @@ private void detachFromDisplay_syncCacheLock() {
         mArtworkExpectedHeight = ARTWORK_INVALID_SIZE;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.128 -0500", hash_original_method = "DCEF21D9331BDE9855981A4FAF951191", hash_generated_method = "ECE76AAB9100E6A8BD2D66F177D52D2A")
     
 private void sendPlaybackState_syncCacheLock() {
@@ -676,6 +682,8 @@ private void sendPlaybackState_syncCacheLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.130 -0500", hash_original_method = "414E902B5C775D55BC88776E02F34242", hash_generated_method = "D344328270FA14AE1287ECDC439416FC")
     
 private void sendMetadata_syncCacheLock() {
@@ -689,6 +697,8 @@ private void sendMetadata_syncCacheLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.133 -0500", hash_original_method = "AE3ACB485EA21BE41AFE152A08682540", hash_generated_method = "75492C1532B47397BA7611E987E14482")
     
 private void sendTransportControlFlags_syncCacheLock() {
@@ -703,6 +713,8 @@ private void sendTransportControlFlags_syncCacheLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.135 -0500", hash_original_method = "1072470EEE2F2109E34F0B1C5EF1161C", hash_generated_method = "71A87FC81447387D1B6B38172D61F932")
     
 private void sendArtwork_syncCacheLock() {
@@ -720,6 +732,8 @@ private void sendArtwork_syncCacheLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.138 -0500", hash_original_method = "9C956ABC194A8C18AFD74A607E4260C4", hash_generated_method = "F8FE42449DE75AE0CA324E2BF3F91D90")
     
 private void sendMetadataWithArtwork_syncCacheLock() {
@@ -737,6 +751,8 @@ private void sendMetadataWithArtwork_syncCacheLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.140 -0500", hash_original_method = "0BE7AE1519A8E1F03CB0A5A1A7C2DA4C", hash_generated_method = "0F716B82594B82E5D1B64294B5DD530B")
     
 private void onNewInternalClientGen(Integer clientGeneration, int artWidth, int artHeight) {
@@ -751,6 +767,8 @@ private void onNewInternalClientGen(Integer clientGeneration, int artWidth, int 
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.143 -0500", hash_original_method = "6CA13622614E338BD9C3EB3C00B6EAD4", hash_generated_method = "E8745FF83CA44504DC617ADEC2967446")
     
 private void onNewCurrentClientGen(int clientGeneration) {
@@ -759,6 +777,8 @@ private void onNewCurrentClientGen(int clientGeneration) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.145 -0500", hash_original_method = "53EC796651633C35ADEE8DE59FBA0A28", hash_generated_method = "09623C29A049D07569F7A52F2E5B6864")
     
 private void onPlugDisplay(IRemoteControlDisplay rcd) {
@@ -767,6 +787,8 @@ private void onPlugDisplay(IRemoteControlDisplay rcd) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.147 -0500", hash_original_method = "C16B385AF67DD61790B8C9E68A3BEA11", hash_generated_method = "F56FB16D03D32FDE8F21B1936FB4420F")
     
 private void onUnplugDisplay(IRemoteControlDisplay rcd) {
@@ -789,6 +811,8 @@ private void onUnplugDisplay(IRemoteControlDisplay rcd) {
      * @return
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.150 -0500", hash_original_method = "1F39DBEB11686CD36B20A5C71DB4136D", hash_generated_method = "02D313198A4E932C9E53E7F4012DB825")
     
 private Bitmap scaleBitmapIfTooBig(Bitmap bitmap, int maxWidth, int maxHeight) {

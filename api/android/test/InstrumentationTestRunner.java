@@ -38,11 +38,6 @@ import android.test.suitebuilder.annotation.HasAnnotation;
 import com.android.internal.util.Predicate;
 import com.android.internal.util.Predicates;
 
-
-
-
-
-
 public class InstrumentationTestRunner extends Instrumentation implements TestSuiteProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.697 -0500", hash_original_field = "F6DC7A69727E302F27AAEEE17DCE544E", hash_generated_field = "544F43E7EAEDE0F3FFF2026270B67E8F")
 
@@ -58,7 +53,6 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
     public static final String ARGUMENT_DELAY_MSEC = "delay_msec";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.707 -0500", hash_original_field = "8BF75D0874F677BE850CEEDAB7BA7F06", hash_generated_field = "3D8236D97469E58570ED55142783479C")
 
-
     private static final String SMALL_SUITE = "small";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.710 -0500", hash_original_field = "BAC6661461C176FC9824744B578F9BD6", hash_generated_field = "B754DDFB963A97D2415FE8BBB1143D66")
 
@@ -67,7 +61,6 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
 
     private static final String LARGE_SUITE = "large";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.715 -0500", hash_original_field = "012A4C807171B3370D28FCB605D5D1AA", hash_generated_field = "4876AF80B10E4573D3890A893B4D249A")
-
 
     private static final String ARGUMENT_LOG_ONLY = "log";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.717 -0500", hash_original_field = "B48D839B19844E1FFD00D9200547FE2B", hash_generated_field = "FDAB7AA5BBA17336BF60EF624D90A67C")
@@ -83,7 +76,6 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
 
     private static final float MEDIUM_SUITE_MAX_RUNTIME = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.727 -0500", hash_original_field = "FA35E06B0E20538B6CDBA0D3DD96B1E4", hash_generated_field = "A4E8038785072B6F7F03B3AA288BCAEE")
-
 
     /**
      * This value, if stored with key {@link android.app.Instrumentation#REPORT_KEY_IDENTIFIER},
@@ -135,10 +127,8 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
     private static final String DEFAULT_COVERAGE_FILE_NAME = "coverage.ec";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.768 -0500", hash_original_field = "F19C64FD209D635F9DB5130F38335C7D", hash_generated_field = "797E456CAAADD3A4FF0634549F39725A")
 
-
     private static final String LOG_TAG = "InstrumentationTestRunner";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.771 -0500", hash_original_field = "7A81CF352B7668AE61BB8040836E73FD", hash_generated_field = "57041D8C5014DE6D87A28603CC7822CE")
-
 
     private final Bundle mResults = new Bundle();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.773 -0500", hash_original_field = "BC54B63AEA85D845C1AC338D041E1ED5", hash_generated_field = "141E060C3952C133ADC3DF31048B4376")
@@ -150,7 +140,6 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.777 -0500", hash_original_field = "AEF6B9BB655763364D4271078CA476DE", hash_generated_field = "4C294409170D3110EF12CA3CCED984A1")
 
     private boolean mDebug;
-
     
     private class StringResultPrinter extends ResultPrinter {
 
@@ -160,21 +149,19 @@ public StringResultPrinter(PrintStream writer) {
             super(writer);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.852 -0500", hash_original_method = "D5539E1607000A054CE19EDFAB1372FF", hash_generated_method = "34D3B2CC679CA8D74421C96A2C427A16")
         
 synchronized void print(TestResult result, long runTime) {
             printHeader(runTime);
             printFooter(result);
         }
-
         
     }
-
-
     
     private class SuiteAssignmentPrinter implements TestListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.856 -0500", hash_original_field = "671EF5CCCE64ABF621E6F60CFC0B1CEB", hash_generated_field = "EDD0604A9657EE882307103F9DDCC22C")
-
 
         private Bundle mTestResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.859 -0500", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "20EEDA67D8E4F20D3E4CA3D911CCA492")
@@ -257,11 +244,8 @@ public void endTest(Test test) {
 
             sendStatus(0, mTestResult);
         }
-
         
     }
-
-
     
     private class WatcherResultPrinter implements TestListener, PerformanceResultsWriter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.882 -0500", hash_original_field = "637248878ECDDA1D198C7713E86C6649", hash_generated_field = "8CC2E860F13B0FB54DCF8D3075E5FD80")
@@ -481,7 +465,6 @@ public void writeMeasurement(String label, float value) {
 public void writeMeasurement(String label, String value) {
             mTestResult.putString(label, value);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.780 -0500", hash_original_field = "3EA1F0EA0E7F068FBD0557879F7C5A01", hash_generated_field = "3F2709EEC2B2C2F043111479DDADB3D4")
@@ -617,6 +600,8 @@ public Bundle getBundle(){
         return mArguments;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.802 -0500", hash_original_method = "DCDBF8FA39FD6057A0486A2DA30868B2", hash_generated_method = "DCDBF8FA39FD6057A0486A2DA30868B2")
     
 List<Predicate<TestMethod>> getBuilderRequirements() {
@@ -629,6 +614,8 @@ List<Predicate<TestMethod>> getBuilderRequirements() {
      * @param testClassArg - comma-separated list of test classes and methods
      * @param testSuiteBuilder - builder to add tests to
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.805 -0500", hash_original_method = "F83C1F460CEFDE714C6876815B6DE46B", hash_generated_method = "13638EB57CF94D33F1BF62C549AFB267")
     
 private void parseTestClasses(String testClassArg, TestSuiteBuilder testSuiteBuilder) {
@@ -645,6 +632,8 @@ private void parseTestClasses(String testClassArg, TestSuiteBuilder testSuiteBui
      *        Expected format: com.android.TestClass#testMethod
      * @param testSuiteBuilder - builder to add tests to
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.807 -0500", hash_original_method = "0276346FF35DC079CD9DD44ABC105E23", hash_generated_method = "016A39E64874E99BBB7D8F29F651B09A")
     
 private void parseTestClass(String testClassName, TestSuiteBuilder testSuiteBuilder) {
@@ -664,6 +653,8 @@ protected AndroidTestRunner getAndroidTestRunner() {
         return new AndroidTestRunner();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.814 -0500", hash_original_method = "770E3D4317847EA06A1A186F0C988E4F", hash_generated_method = "666D6986B06EC570ABC5ABBBF814B0DD")
     
 private boolean getBooleanArgument(Bundle arguments, String tag) {
@@ -674,6 +665,8 @@ private boolean getBooleanArgument(Bundle arguments, String tag) {
     /*
      * Returns the size predicate object, corresponding to the "size" argument value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.816 -0500", hash_original_method = "778052CD062ADF4C5333CE80FB346BD7", hash_generated_method = "6017A2C480C7349DEB143945E105F513")
     
 private Predicate<TestMethod> getSizePredicateFromArg(String sizeArg) {
@@ -695,6 +688,8 @@ private Predicate<TestMethod> getSizePredicateFromArg(String sizeArg) {
     *
     * @return the predicate or <code>null</code>
     */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.818 -0500", hash_original_method = "35F9B1C0A7B938B1EE66EE52909CB858", hash_generated_method = "674082B19D11D4EEDB83B4F640690211")
     
 private Predicate<TestMethod> getAnnotationPredicate(String annotationClassName) {
@@ -711,7 +706,9 @@ private Predicate<TestMethod> getAnnotationPredicate(String annotationClassName)
      *
      * @return the predicate or <code>null</code>
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.820 -0500", hash_original_method = "4E674ABAF10B3DBE6E2E2F43854FE054", hash_generated_method = "0AD0395672AC23583378108FA947B8B5")
+     @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.820 -0500", hash_original_method = "4E674ABAF10B3DBE6E2E2F43854FE054", hash_generated_method = "0AD0395672AC23583378108FA947B8B5")
     
 private Predicate<TestMethod> getNotAnnotationPredicate(String annotationClassName) {
          Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
@@ -727,6 +724,8 @@ private Predicate<TestMethod> getNotAnnotationPredicate(String annotationClassNa
      * @param annotationClassName the fully qualified name of the class
      * @return the annotation class or <code>null</code>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.823 -0500", hash_original_method = "7CC1EF53DD56AF5F60DBA3D3D6AD7EDD", hash_generated_method = "6B8DF69971E6B2D9583F74567BB2A025")
     
 private Class<? extends Annotation> getAnnotationClass(String annotationClassName) {
@@ -753,6 +752,8 @@ private Class<? extends Annotation> getAnnotationClass(String annotationClassNam
      * <p/>
      * Exposed for unit testing.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.825 -0500", hash_original_method = "3F6FAB1D23BC515BB2AF6438AF3536A0", hash_generated_method = "3F6FAB1D23BC515BB2AF6438AF3536A0")
     
 void prepareLooper() {
@@ -831,6 +832,8 @@ public ClassLoader getLoader() {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.838 -0500", hash_original_method = "C84559B4D56F542F69C4278CF0320D22", hash_generated_method = "A2A56B2752C42F4BF0472BA7D64B9338")
     
 private void generateCoverageReport() {
@@ -868,6 +871,8 @@ private void generateCoverageReport() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.841 -0500", hash_original_method = "51747DDF7CE66070F16DA4762443E683", hash_generated_method = "8A68CC7B3FC1640FEA6F440A542A67F3")
     
 private String getCoverageFilePath() {
@@ -879,12 +884,16 @@ private String getCoverageFilePath() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.843 -0500", hash_original_method = "5659030AB519EAF8BB83496F91E164E4", hash_generated_method = "75B804D15CAE486DE73CE7493B35D222")
     
 private void reportEmmaError(Exception e) {
         reportEmmaError("", e);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.845 -0500", hash_original_method = "2FAE5EEC06744688E8993112C12E7557", hash_generated_method = "E8DAC8932EAC4F9F04ADEBD9C606E86A")
     
 private void reportEmmaError(String hint, Exception e) {

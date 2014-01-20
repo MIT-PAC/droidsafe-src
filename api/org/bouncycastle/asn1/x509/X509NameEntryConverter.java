@@ -12,10 +12,6 @@ import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERPrintableString;
 import org.bouncycastle.util.Strings;
 
-
-
-
-
 public abstract class X509NameEntryConverter {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.224 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
@@ -88,10 +84,11 @@ protected boolean canBePrintable(
      * @param value the value of the particular DN component.
      * @return the ASN.1 equivalent for the value.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.847 -0500", hash_original_method = "D0B42605F54F436BA6550A9164C86416", hash_generated_method = "0F05FF416A244E97C0B0AD580B10BB3B")
     
 public abstract DERObject getConvertedValue(DERObjectIdentifier oid, String value);
-
     
 }
 

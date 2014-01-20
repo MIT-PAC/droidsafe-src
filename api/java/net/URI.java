@@ -137,6 +137,8 @@ public static int getEffectivePort(String scheme, int specifiedPort) {
 
     private transient int hash = -1;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.813 -0500", hash_original_method = "73A80A2F92FBB785BC19E418E6230F90", hash_generated_method = "885DD97D94BD9686697CE4ED277E398A")
     
 private URI() {}
@@ -213,12 +215,16 @@ public URI(String scheme, String host, String path, String fragment) throws URIS
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.834 -0400", hash_original_method = "A6104B5B1EE0EDAB23A12CFEC06EAA04", hash_generated_method = "DA9CABC9B9E9A98017F63ABE4B6F2FF1")
     private void parseURI(String uri, boolean forceServer) throws URISyntaxException {
         addTaint(forceServer);
         string = uri;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.835 -0500", hash_original_method = "7C3EE07FDCFF0269213047D1214B9B32", hash_generated_method = "EE559D9689264ACE4ECC01549C08C86C")
     
 private String validateScheme(String uri, int end) throws URISyntaxException {
@@ -245,6 +251,8 @@ private String validateScheme(String uri, int end) throws URISyntaxException {
      *     parsed. If false, this method may still throw for some kinds of
      *     errors; this unpredictable behavior is consistent with the RI.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.838 -0500", hash_original_method = "C0C315FFD2F67C196D4E9EC4D3711FBC", hash_generated_method = "BBDFD43E7F896F68E59BC90EEFEB6C27")
     
 private void parseAuthority(boolean forceServer) throws URISyntaxException {
@@ -314,6 +322,8 @@ private void parseAuthority(boolean forceServer) throws URISyntaxException {
         serverAuthority = true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.841 -0500", hash_original_method = "7C8CF37E6F7B87B68C0DE679D5852184", hash_generated_method = "18596FFC45CBCE8FB48752B763BB4135")
     
 private void validateUserInfo(String uri, String userInfo, int index)
@@ -333,6 +343,8 @@ private void validateUserInfo(String uri, String userInfo, int index)
      *     false, this method may still throw for some kinds of errors; this
      *     unpredictable behavior is consistent with the RI.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.844 -0500", hash_original_method = "A181BC4B37A51E9F8D899B7902CC2A7C", hash_generated_method = "8994C7368A32BDBD0080A7B5DC4B6CE2")
     
 private boolean isValidHost(boolean forceServer, String host) throws URISyntaxException {
@@ -384,6 +396,8 @@ private boolean isValidHost(boolean forceServer, String host) throws URISyntaxEx
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.847 -0500", hash_original_method = "2E78BBD0316E5BD424863A1938BE67AE", hash_generated_method = "A98CBD01136C9A75AA28E59A54D9D549")
     
 private boolean isValidDomainName(String host) {
@@ -535,6 +549,8 @@ public int compareTo(URI uri) {
         return 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.856 -0500", hash_original_method = "A98420F05D15A307D401E461EEAC37D0", hash_generated_method = "5687AEEC8E159769E50811B66E9C86A8")
     
 private URI duplicate() {
@@ -558,6 +574,8 @@ private URI duplicate() {
      * Takes a string that may contain hex sequences like %F1 or %2b and
      * converts the hex values following the '%' to lowercase
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.858 -0500", hash_original_method = "FCD362BE8E93703CF564A6DF1A0DE711", hash_generated_method = "2C6EDF9EF730E53C0245458634CF65C0")
     
 private String convertHexToLowerCase(String s) {
@@ -580,6 +598,8 @@ private String convertHexToLowerCase(String s) {
      * Returns true if {@code first} and {@code second} are equal after
      * unescaping hex sequences like %F1 and %2b.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.861 -0500", hash_original_method = "6D42C9BDBF773AFA30CCB9F3B2C418F1", hash_generated_method = "BDEC43497CD126F6BAF4CDD6DD043F9B")
     
 private boolean escapedEquals(String first, String second) {
@@ -894,6 +914,8 @@ public boolean isOpaque() {
     /**
      * Returns the normalized path.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.916 -0500", hash_original_method = "E5D7EFF0C51BEFD641F2F6FB80CD17F5", hash_generated_method = "F96D3A2403620B571D209F169558FE70")
     
 private String normalize(String path, boolean discardRelativePrefix) {
@@ -1070,6 +1092,8 @@ public URI resolve(URI relative) {
 
         private  String extraLegalCharacters;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.772 -0500", hash_original_method = "4347DCA156D9FED6289ADFF2BB08A2D3", hash_generated_method = "4347DCA156D9FED6289ADFF2BB08A2D3")
         
 PartEncoder(String extraLegalCharacters) {
@@ -1091,6 +1115,8 @@ PartEncoder(String extraLegalCharacters) {
      * Helper method used to re-calculate the scheme specific part of the
      * resolved or normalized URIs
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.928 -0500", hash_original_method = "18729C902DFE2D59F18768C35CD0C59E", hash_generated_method = "615B181DE98859175E035CDE95E9ADA3")
     
 private void setSchemeSpecificPart() {
@@ -1126,6 +1152,8 @@ public URI resolve(String relative) {
         return resolve(create(relative));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.933 -0500", hash_original_method = "630095D6548B2B3A1441046549437B77", hash_generated_method = "7C0636640FEC89FC35436475E0DC07DD")
     
 private String decode(String s) {
@@ -1156,6 +1184,8 @@ public String toASCIIString() {
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.846 -0400", hash_original_method = "854CA4638ADB9894AD51F585C304D672", hash_generated_method = "0B60206631064AC9D3D17F0B2496CC55")
     private String getHashString() {
         StringBuilder result = new StringBuilder();
@@ -1231,6 +1261,8 @@ public URL toURL() throws MalformedURLException {
         return new URL(toString());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.947 -0500", hash_original_method = "B129014206D9E37AE762E15B64782F43", hash_generated_method = "D65A56B578E4F4F3D3903DC9F7A90D66")
     
 private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
@@ -1242,6 +1274,8 @@ private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundE
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.949 -0500", hash_original_method = "85F695901967363D4183474FCAC9E200", hash_generated_method = "42A3215A0D666F56C85AB5B404E3A328")
     
 private void writeObject(ObjectOutputStream out) throws IOException, ClassNotFoundException {

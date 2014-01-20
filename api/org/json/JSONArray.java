@@ -641,6 +641,8 @@ public String toString(int indentSpaces) throws JSONException {
         return stringer.toString();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.216 -0500", hash_original_method = "07D36EC028565C954CCF4CA47905C766", hash_generated_method = "07D36EC028565C954CCF4CA47905C766")
     
 void writeTo(JSONStringer stringer) throws JSONException {

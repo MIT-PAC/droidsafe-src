@@ -84,6 +84,8 @@ public static byte[] unsafeArray(ByteBuffer b) {
 public static int unsafeArrayOffset(ByteBuffer b) {
         return ((HeapByteBuffer) b).offset;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.547 -0500", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "2169ABF68DC1CD5C851E50C33CE807CB")
     
 private NioUtils() {

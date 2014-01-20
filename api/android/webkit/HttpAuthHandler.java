@@ -6,14 +6,13 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Handler;
 
-
-
-
 public class HttpAuthHandler extends Handler {
 
     /**
      * Package-private constructor needed for API compatibility.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.453 -0500", hash_original_method = "F01806C33F7FC6D16E466FBD9D98D7F4", hash_generated_method = "F01806C33F7FC6D16E466FBD9D98D7F4")
     
 HttpAuthHandler() {
@@ -54,7 +53,6 @@ public void proceed(String username, String password) {
 public boolean suppressDialog() {
         return false;
     }
-
     
 }
 

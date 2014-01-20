@@ -111,6 +111,8 @@ public void makeExistingFilesAndDbsAccessible() {
      * Returns if the given diskName starts with the given prefix or not.
      * @param diskName name of the database/file.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.581 -0500", hash_original_method = "AE14EC823AA36078EBCBA6012466D013", hash_generated_method = "AE14EC823AA36078EBCBA6012466D013")
     
 boolean shouldDiskNameBeVisible(String diskName) {
@@ -121,6 +123,8 @@ boolean shouldDiskNameBeVisible(String diskName) {
      * Returns the public name (everything following the prefix) of the given diskName.
      * @param diskName name of the database/file.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.584 -0500", hash_original_method = "D497FA9053D718AE60BC2EFC5B528C4E", hash_generated_method = "D497FA9053D718AE60BC2EFC5B528C4E")
     
 String publicNameFromDiskName(String diskName) {
@@ -136,6 +140,8 @@ public String getDatabasePrefix() {
         return mFilePrefix;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.594 -0500", hash_original_method = "288CD7FC3C9C01601C3178A31BF94464", hash_generated_method = "9CB493252D80F3E37E2B048587C901B6")
     
 private String renamedFileName(String name) {

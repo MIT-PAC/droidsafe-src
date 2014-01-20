@@ -199,6 +199,8 @@ public ImageView(Context context, AttributeSet attrs, int defStyle) {
         //need inflate syntax/reader for matrix
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.861 -0500", hash_original_method = "1C158315B1207DD6F7DBD78E9AF6090A", hash_generated_method = "21D11F4FE028BE3BF86D61203CBEA7CA")
     
 private void initImageView() {
@@ -376,8 +378,8 @@ public Drawable getDrawable() {
      *
      * @attr ref android.R.styleable#ImageView_src
      */
-    @DSComment("Safe excetp setImageURI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.885 -0500", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "1B3E5E42D142B65A1EE79330B36AB68D")
     
 @android.view.RemotableViewMethod
@@ -453,8 +455,8 @@ public void setImageDrawable(Drawable drawable) {
      * 
      * @param bm The bitmap to set
      */
-    @DSComment("Safe excetp setImageURI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.893 -0500", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "02829D3E86CB5FA2EC39813FBB35490C")
     
@@ -573,6 +575,8 @@ public void setImageMatrix(Matrix matrix) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.919 -0500", hash_original_method = "16B1589372902AF87B2F0F65CBDC5B57", hash_generated_method = "9E444513D7A3946D402700F5F97124E8")
     
 private void resolveUri() {
@@ -646,6 +650,8 @@ private void resolveUri() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.924 -0500", hash_original_method = "ADE7139D7C0A9B2AE00EA96739AFBDE5", hash_generated_method = "80B1FEE40FC36960351DCCFEA52EF2A7")
     
 private void updateDrawable(Drawable d) {
@@ -669,6 +675,8 @@ private void updateDrawable(Drawable d) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.926 -0500", hash_original_method = "E1DD34F979587974CF0EAF8DF3CFC3FF", hash_generated_method = "17408C02AC3DAA1C31766AA624CC92D6")
     
 private void resizeFromDrawable() {
@@ -794,6 +802,8 @@ private void resizeFromDrawable() {
         setMeasuredDimension(widthSize, heightSize);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.938 -0500", hash_original_method = "6790E6B3204D72187344DF3593244181", hash_generated_method = "ED96FBCE6F6543E0C8770FCCFDAE4D32")
     
 private int resolveAdjustedSize(int desiredSize, int maxSize,
@@ -833,6 +843,8 @@ private int resolveAdjustedSize(int desiredSize, int maxSize,
         return changed;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.944 -0500", hash_original_method = "3A8E22D575255E0F3266968983CC3C02", hash_generated_method = "3939CC816FBF686E2BC72F2560042F62")
     
 private void configureBounds() {
@@ -1106,6 +1118,8 @@ public void setColorFilter(ColorFilter cf) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.972 -0500", hash_original_method = "91840135D820437FBAEF19E5465CA144", hash_generated_method = "C9250591CCE93258AD6133AF380965D2")
     
 private void applyColorMod() {

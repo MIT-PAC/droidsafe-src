@@ -35,13 +35,10 @@ import org.bouncycastle.asn1.x509.X509Extension;
 import org.bouncycastle.asn1.x509.X509Extensions;
 import org.bouncycastle.util.Arrays;
 
-
-
-
-
-
 public class X509V2AttributeCertificate implements X509AttributeCertificate {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.493 -0500", hash_original_method = "E51ACADAD0BF3CFBCB6D5EA7D75AFA69", hash_generated_method = "E9FD2D447A63E89B6FF9C7535FD3ECCF")
     
 private static AttributeCertificate getObject(InputStream in)
@@ -88,6 +85,8 @@ public X509V2AttributeCertificate(
         this(new ByteArrayInputStream(encoded));
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.500 -0500", hash_original_method = "FF0916A499ED21133E7F47C29CF6DD83", hash_generated_method = "FF0916A499ED21133E7F47C29CF6DD83")
     
 X509V2AttributeCertificate(
@@ -271,6 +270,8 @@ public byte[] getExtensionValue(String oid)
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.534 -0500", hash_original_method = "EEE6D6FB39ABCE0441C4E0B5FB99D1CC", hash_generated_method = "7B0EA9C8E0D55BAB8E7CB5AB27C645CF")
     
 private Set getExtensionOIDs(
@@ -405,7 +406,6 @@ public int hashCode()
             return 0;
         }
     }
-
     
 }
 

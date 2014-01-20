@@ -74,6 +74,8 @@ public InputBinding(InputConnection conn, InputBinding binding) {
         mPid = binding.getPid();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.570 -0500", hash_original_method = "60D4493C413075577DFF548F6D5D71C3", hash_generated_method = "60D4493C413075577DFF548F6D5D71C3")
     
 InputBinding(Parcel source) {

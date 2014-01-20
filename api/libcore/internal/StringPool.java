@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public final class StringPool {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.270 -0500", hash_original_method = "9B32FE5AB257BF8F1743169E9DF2009F", hash_generated_method = "A73EDA67461E9FEFF0B0297D0C357EB1")
     
 private static boolean contentEquals(String s, char[] chars, int start, int length) {

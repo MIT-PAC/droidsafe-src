@@ -19,11 +19,6 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSequence;
 
-
-
-
-
-
 public class X509Extensions extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.313 -0500", hash_original_method = "F58F0C73F69E507DB565BFC815954FC2", hash_generated_method = "97CC4EFCE1DBE805D99DE77CEC6BAB27")
@@ -151,7 +146,6 @@ public static X509Extensions getInstance(
 
     public static final ASN1ObjectIdentifier TargetInformation = new ASN1ObjectIdentifier("2.5.29.55");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.309 -0500", hash_original_field = "80192EDB4E5FD2A38E7FEBB63DD471DC", hash_generated_field = "85AC76E085157FE5A5AA3FC59E707E22")
-
     
     private Hashtable               extensions = new Hashtable();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.311 -0500", hash_original_field = "8370039E4421170D8B7341A1E9105E8E", hash_generated_field = "C8A65116741473EAA58816E75213B0AF")
@@ -398,6 +392,8 @@ public ASN1ObjectIdentifier[] getCriticalExtensionOIDs()
         return getExtensionOIDs(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.348 -0500", hash_original_method = "7A0D9F93C88DE50806BB985DD6BFA19B", hash_generated_method = "8D4137D182AEE19A39519A56844A180C")
     
 private ASN1ObjectIdentifier[] getExtensionOIDs(boolean isCritical)
@@ -417,6 +413,8 @@ private ASN1ObjectIdentifier[] getExtensionOIDs(boolean isCritical)
         return toOidArray(oidVec);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.351 -0500", hash_original_method = "4F14C515A25E2063508F233D1F460CFE", hash_generated_method = "AF2B5EB40A999D8039811FB6DC07E7C6")
     
 private ASN1ObjectIdentifier[] toOidArray(Vector oidVec)

@@ -49,6 +49,8 @@ public HopImpl(String hostName, int portNumber, String trans) {
      * @param hop is a hop string in the form of host:port/Transport
      * @throws IllegalArgument exception if string is not properly formatted or null.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.521 -0500", hash_original_method = "54879B5E9B62042FEEDC1EE4ADCFBB66", hash_generated_method = "019781F3234A40E57E115A2ACF307C37")
     
 HopImpl(String hop) throws IllegalArgumentException {

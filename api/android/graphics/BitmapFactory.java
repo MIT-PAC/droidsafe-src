@@ -192,6 +192,8 @@ public static Bitmap decodeByteArray(byte[] data, int offset, int length, Option
      * @param length the number of bytes, beginning at offset, to parse
      * @return The decoded bitmap, or null if the image could not be decode.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.764 -0500", hash_original_method = "DFF1A943D13A30E770B3B1EA5D85E01F", hash_generated_method = "792B9E4F49D4AF98885AAB773350BCF4")
     
 public static Bitmap decodeByteArray(byte[] data, int offset, int length) {
@@ -357,6 +359,8 @@ public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Op
      * @param fd The file descriptor containing the bitmap data to decode
      * @return the decoded bitmap, or null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.792 -0500", hash_original_method = "AD6759EBE965A5DE70F6CCA865F96916", hash_generated_method = "66CCCDB33CFD6B97551E29C13AF35F19")
     
 public static Bitmap decodeFileDescriptor(FileDescriptor fd) {
@@ -388,6 +392,8 @@ public static void setDefaultConfig(Bitmap.Config config) {
         nativeSetDefaultConfig(config.nativeInt);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetDefaultConfig(int nativeConfig) {
 	}
     
@@ -407,16 +413,22 @@ public static void setDefaultConfig(Bitmap.Config config) {
 		return new Bitmap();
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
 		byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_721079546 = { DSUtils.UNKNOWN_BYTE };
 		return var2F9C81BC6E497382285CD6B7A7E33DE1_721079546;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeIsSeekable(FileDescriptor fd) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.744 -0400", hash_original_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7", hash_generated_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7")
     public BitmapFactory ()
     {
@@ -492,6 +504,8 @@ public Options() {
             inScaled = true;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.740 -0500", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "207972AC1E69E3A50625144ADEF8B82A")
         
         private void requestCancel(){

@@ -16,6 +16,8 @@ public final class Formatter {
      * @param number size value to be formatted
      * @return formatted string with the number
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.371 -0500", hash_original_method = "DC56F1E18CD1755F16D6493522100254", hash_generated_method = "D3598CFE5F5174ED8EE1FF7B6118D260")
     
 public static String formatFileSize(Context context, long number) {
@@ -26,12 +28,16 @@ public static String formatFileSize(Context context, long number) {
      * Like {@link #formatFileSize}, but trying to generate shorter numbers
      * (showing fewer digits of precision).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.373 -0500", hash_original_method = "DAB82976D16A0D6212EFE29EDEB70CAF", hash_generated_method = "F45DDB9658DA0BA299DED556C4484D86")
     
 public static String formatShortFileSize(Context context, long number) {
         return formatFileSize(context, number, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.378 -0500", hash_original_method = "7861A6C88DACFCACDFF217A58ACD485F", hash_generated_method = "0BB14DB7BC814C6E06D9ED6E5071DF00")
     
 private static String formatFileSize(Context context, long number, boolean shorter) {
@@ -105,6 +111,8 @@ private static String formatFileSize(Context context, long number, boolean short
         return NetworkUtils.intToInetAddress(ipv4Address).getHostAddress();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.728 -0400", hash_original_method = "161EB95286E2D4F6FBD55DBF919180AE", hash_generated_method = "161EB95286E2D4F6FBD55DBF919180AE")
     public Formatter ()
     {

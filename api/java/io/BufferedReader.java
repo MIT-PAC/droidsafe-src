@@ -90,6 +90,8 @@ public BufferedReader(Reader in, int size) {
      * @return the number of bytes read into the buffer, or -1 if the end of the
      *      source stream has been reached.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.793 -0500", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "A5B09B701CF70EC579E890FDD3F967A4")
     
 private int fillBuf() throws IOException {
@@ -137,6 +139,8 @@ private int fillBuf() throws IOException {
      * @return {@code true} if this reader is closed, {@code false}
      *         otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.797 -0500", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "67B0DB4F7332E1551B3772D6F1B4F707")
     
 private boolean isClosed() {
@@ -175,6 +179,8 @@ private boolean isClosed() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.801 -0500", hash_original_method = "DB9CD04B651C70299E4D82CCA50FA441", hash_generated_method = "9DDB8F58B4353B4CA656716199D36B12")
     
 private void checkNotClosed() throws IOException {
@@ -313,6 +319,8 @@ private void checkNotClosed() throws IOException {
      * Peeks at the next input character, refilling the buffer if necessary. If
      * this character is a newline character ("\n"), it is discarded.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.812 -0500", hash_original_method = "5E2706ACF0BEEE9ADCFD58329E615807", hash_generated_method = "28E9B033F43A6657D4E841C5908095A9")
     
 final void chompNewline() throws IOException {
@@ -333,8 +341,8 @@ final void chompNewline() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
-    @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.816 -0500", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "4EED909B4B3AA6607F4DB5B32DA059E8")
     
 public String readLine() throws IOException {

@@ -13,13 +13,8 @@ import android.net.http.Headers;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
-
 abstract class StreamLoader implements Handler.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.448 -0500", hash_original_field = "BA0608C6B11945797C746BA9FCD1FB67", hash_generated_field = "116567EA42424CED6A518F03ECAEF9D0")
-
 
     private static final int MSG_STATUS = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.451 -0500", hash_original_field = "E2A18147AC49D79948BBF5BF0A7BB520", hash_generated_field = "2560EAA9C0C83E19C62565F808C069B9")
@@ -32,7 +27,6 @@ abstract class StreamLoader implements Handler.Callback {
 
     private static final int MSG_END = 103;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.458 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
-
 
     protected  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.460 -0500", hash_original_field = "469095379AEB9651D259E87F1B97E396", hash_generated_field = "E2AC94C6534F51915562E9E51CE4D893")
@@ -49,7 +43,6 @@ abstract class StreamLoader implements Handler.Callback {
     private byte [] mData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.468 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "0288BD825793D674670D619CC8A17A15")
 
-
     // Handler which will be initialized in the thread where load() is called.
     private Handler mHandler;
 
@@ -60,6 +53,8 @@ abstract class StreamLoader implements Handler.Callback {
      *
      * @param loadlistener The LoadListener to call with the data.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.470 -0500", hash_original_method = "5C97985D356D0B8BED26A67B0D8173AD", hash_generated_method = "5C97985D356D0B8BED26A67B0D8173AD")
     
 StreamLoader(LoadListener loadlistener) {
@@ -74,6 +69,8 @@ StreamLoader(LoadListener loadlistener) {
      *
      * @return true if stream was successfully setup
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.473 -0500", hash_original_method = "E85C43EBDEF851A6A0ECD12470692B56", hash_generated_method = "375CFDB1CC5CBA05F3B9BF82FC309522")
     
 protected abstract boolean setupStreamAndSendStatus();
@@ -85,6 +82,8 @@ protected abstract boolean setupStreamAndSendStatus();
      *
      * @param headers Map of HTTP headers that will be sent to the loader.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.475 -0500", hash_original_method = "F5DF79E852C25F3930CA8E9B0C3908D7", hash_generated_method = "2EDFB7C27FECF21F038ACFC3824E7E29")
     
 abstract protected void buildHeaders(Headers headers);
@@ -94,6 +93,8 @@ abstract protected void buildHeaders(Headers headers);
      * This method simply creates a Handler in the current thread and posts a
      * message to send the status and returns immediately.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.477 -0500", hash_original_method = "9A005467E60C2D9227C099A6A0EA45F6", hash_generated_method = "6A3D2FCA161C2CAC23E96A8966B1DEF7")
     
 final void load() {
@@ -161,6 +162,8 @@ public boolean handleMessage(Message msg) {
     /**
      * Construct the headers and pass them to the EventHandler.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.482 -0500", hash_original_method = "65A84C3A774E903513B92EB5B550F331", hash_generated_method = "74B1B6A78C0F26CEA1A577531FB96C5B")
     
 private void sendHeaders() {
@@ -179,6 +182,8 @@ private void sendHeaders() {
      * @return True if all the data has been read. False if sendData should be
      *         called again.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.485 -0500", hash_original_method = "4C4D4DF9D04A987F005277A578061144", hash_generated_method = "629106C0C894E0B189989BB0005C5456")
     
 private boolean sendData() {
@@ -199,6 +204,8 @@ private boolean sendData() {
     /**
      * Close the stream and inform the EventHandler that load is complete.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.487 -0500", hash_original_method = "1E3300194DB856434710C1AC838853B7", hash_generated_method = "B74557C5D73AC0B9A0C54F5C177F3878")
     
 private void closeStreamAndSendEndData() {

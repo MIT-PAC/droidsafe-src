@@ -29,6 +29,8 @@ final class SAXParserImpl extends SAXParser {
 
     private Parser parser;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.933 -0500", hash_original_method = "9779EC9D1D1B404AB344DB3CA0720707", hash_generated_method = "9779EC9D1D1B404AB344DB3CA0720707")
     
 SAXParserImpl(Map<String, Boolean> initialFeatures)
@@ -39,6 +41,8 @@ SAXParserImpl(Map<String, Boolean> initialFeatures)
         resetInternal();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.936 -0500", hash_original_method = "92E2D289AE561178AC5F307252F0C6F0", hash_generated_method = "06CA538B3A50705C32B2A5DA5AF24422")
     
 private void resetInternal()

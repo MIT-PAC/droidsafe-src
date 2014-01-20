@@ -20,6 +20,8 @@ public class MissingFormatArgumentException extends IllegalFormatException {
      * @param s
      *           the specified conversion that lacks the argument.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.576 -0500", hash_original_method = "3488C8E98AE00375533889C559694B58", hash_generated_method = "681F1F55DB6FB4C149E4113361637857")
     
 public MissingFormatArgumentException(String s) {
@@ -34,6 +36,8 @@ public MissingFormatArgumentException(String s) {
      *
      * @return the conversion associated with the exception.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.578 -0500", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "B5EF8C4577C109EF71D4C5DF20FB818D")
     
@@ -41,6 +45,8 @@ public String getFormatSpecifier() {
         return s;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.580 -0500", hash_original_method = "D7277B29886D06334EB30606D08F78F5", hash_generated_method = "E831B99CF205FF7F407FD6E605C4B920")
     

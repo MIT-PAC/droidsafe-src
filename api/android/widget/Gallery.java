@@ -28,6 +28,8 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     /**
      * @return The center of the given view.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.678 -0500", hash_original_method = "EB22A7FE8A7FE8AF79ECEB2165A42E06", hash_generated_method = "1F0AF854ACC8DC4ED8F3AA836D09B504")
     
 private static int getCenterOfView(View view) {
@@ -316,6 +318,8 @@ public void setUnselectedAlpha(float unselectedAlpha) {
         mInLayout = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.667 -0500", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "0BC0A54504E0107F1965D37EDEFEAF5D")
     
@@ -330,6 +334,8 @@ public void setUnselectedAlpha(float unselectedAlpha) {
      * 
      * @param deltaX Change in X from the previous event.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.669 -0500", hash_original_method = "CF0F4FD99D6D1B74E2AB7A4A0D0FE283", hash_generated_method = "44E44BDA28644E4921175850ACFF8056")
     
 void trackMotionScroll(int deltaX) {
@@ -369,6 +375,8 @@ void trackMotionScroll(int deltaX) {
         invalidate();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.671 -0500", hash_original_method = "1E51C3862CE74D6B831F0305D11D86D1", hash_generated_method = "48A532ABC49B28429FF311906A9D4CBA")
     
@@ -410,6 +418,8 @@ int getLimitedMotionScrollAmount(boolean motionToLeft, int deltaX) {
      * 
      * @param offset the number of pixels to offset
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.673 -0500", hash_original_method = "4EEE31555E188404F99AA8E4E9247689", hash_generated_method = "D9055B18C19E5B672900C34B338EABA1")
     
 private void offsetChildrenLeftAndRight(int offset) {
@@ -421,6 +431,8 @@ private void offsetChildrenLeftAndRight(int offset) {
     /**
      * @return The center of this Gallery.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.676 -0500", hash_original_method = "7DE2375AA3E30D760C22927E49BD5683", hash_generated_method = "BCA86A94109D5D9BC9ACF7FB309CE5CB")
     
 private int getCenterOfGallery() {
@@ -433,6 +445,8 @@ private int getCenterOfGallery() {
      * @param toLeft Whether to detach children to the left of the Gallery, or
      *            to the right.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.681 -0500", hash_original_method = "D8B7CD82B13D6307CBAC6FD1D2419AAD", hash_generated_method = "4998544A91819B4B7C9FD64C661C81E8")
     
 private void detachOffScreenChildren(boolean toLeft) {
@@ -486,6 +500,8 @@ private void detachOffScreenChildren(boolean toLeft) {
      * Scrolls the items so that the selected item is in its 'slot' (its center
      * is the gallery's center).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.684 -0500", hash_original_method = "7B136AF27CDBDA451A86F0C558D92536", hash_generated_method = "AADC47DFFEB747DA251688B348BDD88D")
     
 private void scrollIntoSlots() {
@@ -503,6 +519,8 @@ private void scrollIntoSlots() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.686 -0500", hash_original_method = "73E6CA1691599BC4ECD7D5DB3D8073AD", hash_generated_method = "71FC46A355914A60AE2501B77FE75C0E")
     
 private void onFinishedMovement() {
@@ -515,6 +533,8 @@ private void onFinishedMovement() {
         invalidate();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.688 -0500", hash_original_method = "FFD143793C4BF3C1C0F88DAC5604B8EB", hash_generated_method = "72AF5079CF760FD436F6A272827E6D99")
     
 @Override
@@ -528,6 +548,8 @@ private void onFinishedMovement() {
      * Looks for the child that is closest to the center and sets it as the
      * selected child.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.691 -0500", hash_original_method = "99F459BBFD91AC2E00EAA95D53F6B222", hash_generated_method = "92A0B0724D4757624BDFB5A33F112486")
     
 private void setSelectionToCenterChild() {
@@ -582,6 +604,8 @@ private void setSelectionToCenterChild() {
      *            moving to the right, so views are scrolling to the left. -1
      *            means the selection is moving to the left.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.694 -0500", hash_original_method = "D35D4AE43FE4EA4BE64F388903B9B437", hash_generated_method = "EF47E26112783A6DCAC5E205AD308B9F")
     
 @Override
@@ -650,6 +674,8 @@ private void setSelectionToCenterChild() {
         updateSelectedItemMetadata();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.696 -0500", hash_original_method = "839F6A1D55F5AD62226A4A3F94B7F961", hash_generated_method = "4A1EA5174AF2F51CE04F36842AF6AC16")
     
 private void fillToGalleryLeft() {
@@ -660,6 +686,8 @@ private void fillToGalleryLeft() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.699 -0500", hash_original_method = "D862865A48DB37456DB450C522985E2D", hash_generated_method = "F870AAF39BADAC416033045E6D974E6B")
     
 private void fillToGalleryLeftRtl() {
@@ -693,6 +721,8 @@ private void fillToGalleryLeftRtl() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.701 -0500", hash_original_method = "0FAB0D6FB4467E7662D35717D4E5328D", hash_generated_method = "C99177644619DF89DCCB6647B84A6FD5")
     
 private void fillToGalleryLeftLtr() {
@@ -727,6 +757,8 @@ private void fillToGalleryLeftLtr() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.703 -0500", hash_original_method = "4542FD5BB1889445E8F3BFB504C9CA2C", hash_generated_method = "9A2565BFC859EDF1B9E0DB56BA46515A")
     
 private void fillToGalleryRight() {
@@ -737,6 +769,8 @@ private void fillToGalleryRight() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.705 -0500", hash_original_method = "ACF31DBB20E84F8382BE455EB92D3A14", hash_generated_method = "C38537387D28055C31E0C11017E8A936")
     
 private void fillToGalleryRightRtl() {
@@ -770,6 +804,8 @@ private void fillToGalleryRightRtl() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.708 -0500", hash_original_method = "79C0AF4129796B1D40A0EF3F484CF7D9", hash_generated_method = "AB453D8F210EC7C8F6D9532F0C121DD7")
     
 private void fillToGalleryRightLtr() {
@@ -817,6 +853,8 @@ private void fillToGalleryRightLtr() {
      *        building from left to right)?
      * @return A view that has been added to the gallery
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.711 -0500", hash_original_method = "EBA268158DBADCF4BD34E1D13045F6D1", hash_generated_method = "4101D2F68B664258179ACA5C3C440E40")
     
 private View makeAndAddView(int position, int offset, int x, boolean fromLeft) {
@@ -861,6 +899,8 @@ private View makeAndAddView(int position, int offset, int x, boolean fromLeft) {
      * @param fromLeft Are we positioning views based on the left edge? (i.e.,
      *        building from left to right)?
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.714 -0500", hash_original_method = "3126A82E5C4A08FF6B321D23FF86AF72", hash_generated_method = "BA7FEA21759AB707AFE6C68E4BBAFAC8")
     
 private void setUpChild(View child, int offset, int x, boolean fromLeft) {
@@ -910,6 +950,8 @@ private void setUpChild(View child, int offset, int x, boolean fromLeft) {
      * @param child Child to place
      * @return Where the top of the child should be
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.716 -0500", hash_original_method = "D35AB7435540D0F4BFFD2328F86D6A01", hash_generated_method = "107BFF018AB9A289802BDEAFD968A9A7")
     
 private int calculateTop(View child, boolean duringLayout) {
@@ -1063,6 +1105,8 @@ private int calculateTop(View child, boolean duringLayout) {
     /**
      * Called when a touch event's action is MotionEvent.ACTION_UP.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.731 -0500", hash_original_method = "DF867D53E770A9464F52B7BCD42362AA", hash_generated_method = "DF867D53E770A9464F52B7BCD42362AA")
     
 void onUp() {
@@ -1077,6 +1121,8 @@ void onUp() {
     /**
      * Called when a touch event's action is MotionEvent.ACTION_CANCEL.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.733 -0500", hash_original_method = "BB906BFFF3DF010D02CEEC7D1D49931B", hash_generated_method = "BB906BFFF3DF010D02CEEC7D1D49931B")
     
 void onCancel() {
@@ -1107,6 +1153,8 @@ void onCancel() {
 
     // Unused methods from GestureDetector.OnGestureListener above
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.740 -0500", hash_original_method = "1D9BFD40F04CA79251504E98D313D5F0", hash_generated_method = "A9ED28094450555F21715B7A83DBED71")
     
 private void dispatchPress(View child) {
@@ -1118,6 +1166,8 @@ private void dispatchPress(View child) {
         setPressed(true);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.743 -0500", hash_original_method = "E1E46A91FBA826DABF74EF3365F5DA5C", hash_generated_method = "8433D9EC7E1828B51EF62B94001C04D7")
     
 private void dispatchUnpress() {
@@ -1186,6 +1236,8 @@ private void dispatchUnpress() {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.757 -0500", hash_original_method = "087BDC5665C59A77437D4D81045FF0E8", hash_generated_method = "7C7542789A57FAF04017148C0D05A387")
     
 private boolean dispatchLongPress(View view, int position, long id) {
@@ -1282,6 +1334,8 @@ private boolean dispatchLongPress(View view, int position, long id) {
         return super.onKeyUp(keyCode, event);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.770 -0500", hash_original_method = "B9B4077A4E7C2CAD102566E406F7FE8F", hash_generated_method = "B9B4077A4E7C2CAD102566E406F7FE8F")
     
 boolean movePrevious() {
@@ -1293,6 +1347,8 @@ boolean movePrevious() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.773 -0500", hash_original_method = "AB8E3EDC49D155A48AE82C24C38C480C", hash_generated_method = "AB8E3EDC49D155A48AE82C24C38C480C")
     
 boolean moveNext() {
@@ -1304,6 +1360,8 @@ boolean moveNext() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.775 -0500", hash_original_method = "5A90FC6E5774B3D3ABB7606C34F54E47", hash_generated_method = "8D1AC1B5C868498241972945C66D30DE")
     
 private boolean scrollToChild(int childPosition) {
@@ -1318,6 +1376,8 @@ private boolean scrollToChild(int childPosition) {
         return false;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.777 -0500", hash_original_method = "82657633CA542FCF70C69B7A0BF2796A", hash_generated_method = "5883635F027EAC83B7089E6761FD3333")
     
@@ -1329,6 +1389,8 @@ private boolean scrollToChild(int childPosition) {
         updateSelectedItemMetadata();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.780 -0500", hash_original_method = "5BE8AB05B464B00AB61974AD30001B4B", hash_generated_method = "50F5C67EF899416DEFB94C04CFAF5216")
     
 private void updateSelectedItemMetadata() {
@@ -1375,6 +1437,8 @@ public FlingRunnable() {
             mScroller = new Scroller(getContext());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.797 -0500", hash_original_method = "3F5AABA0482FB6C4BDC6EF9DB417DE5D", hash_generated_method = "3E5E7C56528D7F64B0A4B71837AD8310")
         
 private void startCommon() {
@@ -1415,6 +1479,8 @@ public void stop(boolean scrollIntoSlots) {
             endFling(scrollIntoSlots);
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.807 -0500", hash_original_method = "E61C8A0CE9EFA11B9E0089A9EE90DD3F", hash_generated_method = "3D0F24645D45FB84D01DADF14D4D4E80")
         
 private void endFling(boolean scrollIntoSlots) {

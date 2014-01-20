@@ -568,6 +568,8 @@ public void setValue (int index, String value)
      * @param n The minimum number of attributes that the array must
      *        be able to hold.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.066 -0500", hash_original_method = "CB574EAE8A001C113E60067C9D40C52E", hash_generated_method = "B6378334FA72666F89F67E54A013164D")
     
 private void ensureCapacity (int n)    {
@@ -601,6 +603,8 @@ private void ensureCapacity (int n)    {
      * @param index The index to report.
      * @exception java.lang.ArrayIndexOutOfBoundsException Always.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.068 -0500", hash_original_method = "5A39796CA8340A67B1FFF4D32268D0FF", hash_generated_method = "519CB9D5598641D49CD5C6D24A5E2D01")
     
 private void badIndex (int index)

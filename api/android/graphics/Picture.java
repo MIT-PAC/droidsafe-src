@@ -22,31 +22,45 @@ public static Picture createFromStream(InputStream stream) {
             nativeCreateFromStream(stream, new byte[WORKING_STREAM_STORAGE]));
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(int nativeSrcOr0) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromStream(InputStream stream,
                                                 byte[] storage) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeBeginRecording(int nativeCanvas,
                                                     int w, int h) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeEndRecording(int nativeCanvas) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDraw(int nativeCanvas, int nativePicture) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeWriteToStream(int nativePicture,
                                            OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDestructor(int nativePicture) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.310 -0500", hash_original_field = "93DB6FF890F60901303B2AEAD85141C3", hash_generated_field = "16A3D3E1F1A46232673D292E95776672")
@@ -76,6 +90,8 @@ public Picture(Picture src) {
         this(nativeConstructor(src != null ? src.mNativePicture : 0));
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.341 -0500", hash_original_method = "4720BFD5C543F65C552F0739FF1DD2E7", hash_generated_method = "DDE864049B4B42F60AD8962958A85009")
     
 private Picture(int nativePicture) {
@@ -215,7 +231,9 @@ public RecordingCanvas(Picture pict, int nativeCanvas) {
         
     }
     
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.338 -0500", hash_original_method = "C2445D1D52466847173519B3E77D61F5", hash_generated_method = "591C02832903310A3955790FA88EEB58")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.338 -0500", hash_original_method = "C2445D1D52466847173519B3E77D61F5", hash_generated_method = "591C02832903310A3955790FA88EEB58")
     
 final int ni() {
         return mNativePicture;

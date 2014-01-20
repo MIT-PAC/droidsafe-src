@@ -83,6 +83,8 @@ public static SpeechRecognizer createSpeechRecognizer(final Context context,
         return new SpeechRecognizer(context, serviceComponent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.722 -0500", hash_original_method = "8ACB0B782F8B0E663914EF38630E6A9F", hash_generated_method = "FB04730051FB4D0DC1B612BBA4B5B162")
     
 private static void checkIsCalledFromMainThread() {
@@ -457,6 +459,8 @@ public void cancel() {
         putMessage(Message.obtain(mHandler, MSG_CANCEL));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.724 -0500", hash_original_method = "BD5701E8DF0BF25E7CB3736533848F1A", hash_generated_method = "6088A715F527AB5569B228B7A1B4C5DD")
     
 private void putMessage(Message msg) {
@@ -468,6 +472,8 @@ private void putMessage(Message msg) {
     }
 
     /** sends the actual message to the service */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.726 -0500", hash_original_method = "02FE733144FE02DDB0F8182E4A142CB0", hash_generated_method = "AC4EA91A85FD0035D90E3AC2680C72BA")
     
 private void handleStartListening(Intent recognizerIntent) {
@@ -484,6 +490,8 @@ private void handleStartListening(Intent recognizerIntent) {
     }
 
     /** sends the actual message to the service */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.728 -0500", hash_original_method = "B90CA3721E1A91D945B72975FC03EB82", hash_generated_method = "EEC5104156EC8B701A154FD6A59FFE1B")
     
 private void handleStopMessage() {
@@ -500,6 +508,8 @@ private void handleStopMessage() {
     }
 
     /** sends the actual message to the service */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.731 -0500", hash_original_method = "5E81A38D35A2865AC1654F506B5D7265", hash_generated_method = "29E1CC4E517C946B1446A45E81028CA5")
     
 private void handleCancelMessage() {
@@ -515,6 +525,8 @@ private void handleCancelMessage() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.733 -0500", hash_original_method = "325935BA5701514064BC283979E7156C", hash_generated_method = "CFC2CC3D3BBAB10693E46CB18E5DDA6D")
     
 private boolean checkOpenConnection() {
@@ -527,6 +539,8 @@ private boolean checkOpenConnection() {
     }
 
     /** changes the listener */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.735 -0500", hash_original_method = "90AD91808DE7CDCDA112C3C449526B0F", hash_generated_method = "20B10734DDA46A3CCD37EA8F56111ECD")
     
 private void handleChangeListener(RecognitionListener listener) {

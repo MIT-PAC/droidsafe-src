@@ -149,6 +149,8 @@ public GregorianCalendar(int year, int month, int day, int hour,
         set(year, month, day, hour, minute, second);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.348 -0500", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "63C34121AB8507D7813FBAF0F269A9D2")
     
 GregorianCalendar(long milliseconds) {
@@ -202,6 +204,8 @@ public GregorianCalendar(TimeZone timezone, Locale locale) {
         setTimeInMillis(System.currentTimeMillis());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.359 -0500", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "0CE38BA4675BDF22B153CA671467EBE6")
     
 GregorianCalendar(boolean ignored) {
@@ -351,6 +355,8 @@ GregorianCalendar(boolean ignored) {
         return thisClone;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.371 -0500", hash_original_method = "005B3A99F85903E106454DD8B0079421", hash_generated_method = "5D5AAECD5714EBB5693CDBC5A5741949")
     
 private final void fullFieldsCalc(long timeVal, int millis, int zoneOffset) {
@@ -456,6 +462,8 @@ private final void fullFieldsCalc(long timeVal, int millis, int zoneOffset) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.374 -0500", hash_original_method = "2E866A22E927A34EE822F5C0BBDFB40C", hash_generated_method = "8133CEC61DDB2546B7D27B25AB48C621")
     
 private final void cachedFieldsCheckAndGet(long timeVal,
@@ -798,6 +806,8 @@ private final void cachedFieldsCheckAndGet(long timeVal,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.387 -0500", hash_original_method = "2A644CA75A846A9F294F6A7DE0BAB232", hash_generated_method = "8E73AB6637D824B9FAA3816A317AC3E0")
     
 private int computeYearAndDay(long dayCount, long localTime) {
@@ -820,6 +830,8 @@ private int computeYearAndDay(long dayCount, long localTime) {
         return (int) days + 1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.390 -0500", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "C78D61EDBA01C546F088DF888225FF91")
     
 private long daysFromBaseYear(int iyear) {
@@ -846,12 +858,16 @@ private long daysFromBaseYear(int iyear) {
                 - ((year - 2000) / 100) + ((year - 2000) / 400);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.392 -0500", hash_original_method = "B393AFA9309B3ECCDD74469F481095BD", hash_generated_method = "3D80089CAC945F7D85B5EBE0BD6A19BE")
     
 private int daysInMonth() {
         return daysInMonth(isLeapYear(fields[YEAR]), fields[MONTH]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.395 -0500", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "B76702503A4E8E0C89A90CF13CA4C1F7")
     
 private int daysInMonth(boolean leapYear, int month) {
@@ -862,6 +878,8 @@ private int daysInMonth(boolean leapYear, int month) {
         return DaysInMonth[month];
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.397 -0500", hash_original_method = "643B799339D2A3831DACB9C12752109A", hash_generated_method = "DBDC23FEAAD1342B28D6E8FF18631D90")
     
 private int daysInYear(int year) {
@@ -875,6 +893,8 @@ private int daysInYear(int year) {
         return daysInYear;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.400 -0500", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "0C8FD76949EE8694052989880C69E55A")
     
 private int daysInYear(boolean leapYear, int month) {
@@ -1091,6 +1111,8 @@ public final Date getGregorianChange() {
         return minimums[field];
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.424 -0500", hash_original_method = "A5F3F970AF018D82525827EF3879E8F1", hash_generated_method = "7CC64E6D1EDC82187803C698D4A4A318")
     
 private int getOffset(long localTime) {
@@ -1173,12 +1195,16 @@ public boolean isLeapYear(int year) {
         return year % 4 == 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.432 -0500", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "63AF018498F6022012D2F2CC4CF10B85")
     
 private int julianError() {
         return changeYear / 100 - changeYear / 400 - 2;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.434 -0500", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "2EDCB797D9AC2A54F5D65E61E61FBCC1")
     
 private int mod(int value, int mod) {
@@ -1189,6 +1215,8 @@ private int mod(int value, int mod) {
         return rem;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.436 -0500", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "F83C9883192187F90C92BB45D63524AE")
     
 private int mod7(long num1) {
@@ -1371,12 +1399,16 @@ public void setGregorianChange(Date date) {
         isCached = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.449 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "0D892AC32B11DE8523EBE22E891255E4")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.defaultWriteObject();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.451 -0500", hash_original_method = "6812E7459A56AAC638E0A1455D3A3623", hash_generated_method = "0244D1DF1EB7DAAD65F12CB1E37D37C9")
     
 private void readObject(ObjectInputStream stream) throws IOException,

@@ -9,10 +9,6 @@ import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class ParceledListSlice<T extends Parcelable> implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.727 -0500", hash_original_field = "826BF1CA6DA1118F47044124556516CE", hash_generated_field = "0F7066E666018D9C0306154ED0E07EF5")
 
@@ -54,14 +50,11 @@ public ParceledListSlice[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.729 -0500", hash_original_field = "A291CB568559F5F870526FB6632A3C7D", hash_generated_field = "FECF2C1F375A3EF42076236F811E3099")
 
-
     private Parcel mParcel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.731 -0500", hash_original_field = "E2177534F1B793901087708283D5F093", hash_generated_field = "BA3C2AEB1D951CD4DD5338E0704AB3BD")
 
-
     private int mNumItems;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.733 -0500", hash_original_field = "C98ED83E04B0788F5876ADAD919E6D48", hash_generated_field = "EC008E3F2DC15587B7C3DF28445187C5")
-
 
     private boolean mIsLastSlice;
 
@@ -71,6 +64,8 @@ public ParceledListSlice() {
         mParcel = Parcel.obtain();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.739 -0500", hash_original_method = "EA156AE64DA15F3296203897A2798D45", hash_generated_method = "842872600443FA0399957A585BED5FF6")
     
 private ParceledListSlice(Parcel p, int numItems, boolean lastSlice) {
@@ -184,7 +179,6 @@ public boolean isLastSlice() {
 
             if (numItems > 0) {
                 final int parcelSize = in.readInt();
-
                 
                 int offset = in.dataPosition();
                 in.setDataPosition(offset + parcelSize);

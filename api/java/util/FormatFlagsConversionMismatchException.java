@@ -26,6 +26,8 @@ public class FormatFlagsConversionMismatchException extends IllegalFormatExcepti
      * @param c
      *           the conversion.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.603 -0500", hash_original_method = "23601B02BC801B28ADE07C396E4C34FF", hash_generated_method = "63347355FC94ACD3FDFABA214AAB07C9")
     
 public FormatFlagsConversionMismatchException(String f, char c) {
@@ -41,6 +43,8 @@ public FormatFlagsConversionMismatchException(String f, char c) {
      *
      * @return the incompatible format flag.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.605 -0500", hash_original_method = "3582970EABB5B296536802E98213C512", hash_generated_method = "A71527FD2C89DAA2C9521A9786BC25FE")
     
@@ -53,6 +57,8 @@ public String getFlags() {
      *
      * @return the incompatible conversion.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.608 -0500", hash_original_method = "FF899ECAAB1B8C040FEF5324FAB8D93B", hash_generated_method = "A01009E7FAC2235AB14D99D1342E319D")
     
@@ -60,6 +66,8 @@ public char getConversion() {
         return c;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.612 -0500", hash_original_method = "767287C022ACF72AAFFBED8242F4CC5C", hash_generated_method = "1F22EDA272F75C3502E6A58A746CB24B")
     

@@ -26,18 +26,24 @@ import org.w3c.dom.UserDataHandler;
 
 public final class DocumentImpl extends InnerNodeImpl implements Document {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.812 -0500", hash_original_method = "ECB0F77202F680B9EEEE15A5B36EFD30", hash_generated_method = "CE41BC1EB0C8C3ADD328B005630C9650")
     
 private static boolean isXMLIdentifierStart(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c == '_');
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.815 -0500", hash_original_method = "9963058EBDE294AF7CB17B568D9D59FD", hash_generated_method = "80CA41576FD1DAD2F598E0FAB8B91947")
     
 private static boolean isXMLIdentifierPart(char c) {
         return isXMLIdentifierStart(c) || (c >= '0' && c <= '9') || (c == '-') || (c == '.');
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.817 -0500", hash_original_method = "651DBFFC8DA0DDFB6ECC66CE06F48991", hash_generated_method = "743B807297E077A47659F07B0C9CDAD7")
     
 static boolean isXMLIdentifier(String s) {
@@ -66,6 +72,8 @@ static boolean isXMLIdentifier(String s) {
      * handlers will <strong>not</strong> be notified. The DOM API provides no
      * mechanism to inspect a foreign node's user data.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.913 -0500", hash_original_method = "88BA931E196E85E8D40A5B8A0AA99EFC", hash_generated_method = "C22C99BA5D5D8416927274F362A75128")
     
 private static void notifyUserDataHandlers(
@@ -145,6 +153,8 @@ public DocumentImpl(DOMImplementationImpl impl, String namespaceURI,
      * @return a new node whose document is this document and whose DOM
      *     implementation is this DOM implementation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.821 -0500", hash_original_method = "71EB0F41099D1D8D08C83EAF224E8D36", hash_generated_method = "18477F0F671E7A0E78BDF283C62D7B0F")
     
 private NodeImpl shallowCopy(short operation, Node node) {
@@ -237,6 +247,8 @@ private NodeImpl shallowCopy(short operation, Node node) {
      * @param deep true to recursively copy any child nodes; false to do no such
      *      copying and return a node with no children.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.824 -0500", hash_original_method = "33992AC73E126DB7F05D741A2596DA1D", hash_generated_method = "33992AC73E126DB7F05D741A2596DA1D")
     
 Node cloneOrImportNode(short operation, Node node, boolean deep) {
@@ -315,6 +327,8 @@ public Node adoptNode(Node node) {
      * parent node. Only adoptNode() should invoke this method, otherwise nodes
      * will be left in an inconsistent state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.832 -0500", hash_original_method = "AE2A1AE898A744D8ADE864AE8BDC4C1C", hash_generated_method = "42455D115284AA5D7F06ED32DA9CECB5")
     
 private void changeDocumentToThis(NodeImpl node) {
@@ -603,6 +617,8 @@ public void normalizeDocument() {
      * Returns a map with the user data objects attached to the specified node.
      * This map is readable and writable.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.908 -0500", hash_original_method = "83962F2DF698AAA6D760C50C082C5A3C", hash_generated_method = "83962F2DF698AAA6D760C50C082C5A3C")
     
@@ -622,6 +638,8 @@ Map<String, UserData> getUserDataMap(NodeImpl node) {
      * Returns a map with the user data objects attached to the specified node.
      * The returned map may be read-only.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.911 -0500", hash_original_method = "8B5F30F59CCBC9322DB0F048DEF01A52", hash_generated_method = "8B5F30F59CCBC9322DB0F048DEF01A52")
     

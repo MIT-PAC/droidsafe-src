@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class UserInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.376 -0500", hash_original_field = "AC30E7151FF76A060B7B62C8AF7CA48C", hash_generated_field = "01AA02176D8B0D4469EBD90B8AA3C5A2")
 
@@ -37,7 +33,6 @@ public UserInfo[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.383 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
-
 
     public int id;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.385 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -68,6 +63,8 @@ public UserInfo(UserInfo orig) {
         flags = orig.flags;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.418 -0500", hash_original_method = "D2DCB71066BFE658C1047A9ADF1A8FE4", hash_generated_method = "599E2AFDC689BAC6EF8ECA43771A2613")
     
 private UserInfo(Parcel source) {

@@ -225,6 +225,8 @@ public AppWidgetProviderInfo getAppWidgetInfo() {
         container.put(generateId(), jail);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.303 -0500", hash_original_method = "11D592545671EB0AE44582AC9EA105B8", hash_generated_method = "7D2DCB7D8AF2943E5C896DE4C95E4242")
     
 private int generateId() {
@@ -273,6 +275,8 @@ public ParcelableSparseArray[] newArray(int size) {
                     }
                 };
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.704 -0400", hash_original_method = "545E9F4FFC3CA9F22ED723B298F0D3D0", hash_generated_method = "545E9F4FFC3CA9F22ED723B298F0D3D0")
         public ParcelableSparseArray ()
         {
@@ -328,6 +332,8 @@ public void writeToParcel(Parcel dest, int flags) {
      * Update the AppWidgetProviderInfo for this view, and reset it to the
      * initial layout.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.312 -0500", hash_original_method = "8BE5160C40379A67738659300BC656A4", hash_generated_method = "8BE5160C40379A67738659300BC656A4")
     
 void resetAppWidget(AppWidgetProviderInfo info) {
@@ -444,6 +450,8 @@ public void updateAppWidget(RemoteViews remoteViews) {
      * Process data-changed notifications for the specified view in the specified
      * set of {@link RemoteViews} views.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.320 -0500", hash_original_method = "8A7676901BF746B47397B4739377B887", hash_generated_method = "A2ACB4BEE4EB98666512CFACCC922F1F")
     
 void viewDataChanged(int viewId) {
@@ -467,6 +475,8 @@ void viewDataChanged(int viewId) {
      * Build a {@link Context} cloned into another package name, usually for the
      * purposes of reading remote resources.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.323 -0500", hash_original_method = "D246979F206AF74202D8DE4F4ED2EC44", hash_generated_method = "C2DDC85515C9FF1B8C3027D79EF1D24B")
     
 private Context getRemoteContext(RemoteViews views) {

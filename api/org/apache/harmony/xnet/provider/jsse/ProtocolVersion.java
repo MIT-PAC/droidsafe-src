@@ -120,6 +120,8 @@ public static ProtocolVersion getLatestVersion(String[] protocols) {
 
     public  byte[] version;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.625 -0500", hash_original_method = "B6EFD2221FD9ABD3C193138DD70242C4", hash_generated_method = "F6905066E3F68BFE373CD5D6CAA8EE90")
     
 private ProtocolVersion(String name, byte[] version) {

@@ -26,6 +26,8 @@ public final class InputMethodSubtype implements Parcelable {
         return subtype;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.012 -0500", hash_original_method = "8E1C6298EB66C275DF3380320723757A", hash_generated_method = "FE94C4A8FECD84D683885278E012F460")
     
 private static Locale constructLocaleFromString(String localeStr) {
@@ -44,6 +46,8 @@ private static Locale constructLocaleFromString(String localeStr) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.015 -0500", hash_original_method = "4A7415607D92CC247A3DAF0EC13356B4", hash_generated_method = "50EE231AEB9608260A776569CA36A115")
     
 private static int hashCodeInternal(String locale, String mode, String extraValue,
@@ -183,6 +187,8 @@ public InputMethodSubtype(int nameId, int iconId, String locale, String mode, St
                 mIsAuxiliary, mOverridesImplicitlyEnabledSubtype);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.963 -0500", hash_original_method = "D71F12C4764A764AF688AE6184DB2ED2", hash_generated_method = "D71F12C4764A764AF688AE6184DB2ED2")
     
 InputMethodSubtype(Parcel source) {
@@ -303,6 +309,8 @@ public CharSequence getDisplayName(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.985 -0500", hash_original_method = "2837AE7076837B91930C208632EE903B", hash_generated_method = "C3F39841AA3B2F76CC38931C9CF61386")
     
 private HashMap<String, String> getExtraValueHashMap() {

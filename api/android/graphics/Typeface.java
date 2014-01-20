@@ -88,6 +88,8 @@ public static Typeface createFromAsset(AssetManager mgr, String path) {
      * @param path The path to the font data. 
      * @return The new typeface.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.668 -0500", hash_original_method = "75B14133CB489027D77A424630AF754B", hash_generated_method = "35F35D443F4F1C8CEBFB68A43EE62BD6")
     
 public static Typeface createFromFile(File path) {
@@ -100,35 +102,51 @@ public static Typeface createFromFile(File path) {
      * @param path The full path to the font data. 
      * @return The new typeface.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.670 -0500", hash_original_method = "41766EA6657E21C45E368553CD429F56", hash_generated_method = "F2ECF31D59A09C57439120926468258C")
     
 public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(String familyName, int style) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromTypeface(int native_instance, int style) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeUnref(int native_instance) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetStyle(int native_instance) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromAsset(AssetManager mgr, String path) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromFile(String path) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static void setGammaForText(float blackGamma, float whiteGamma) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.627 -0500", hash_original_field = "8DF784A9F5E85BEBD0698D4CB91805F5", hash_generated_field = "0B2DA0B843E1AF20E33C18AF2C026319")
@@ -164,6 +182,8 @@ public static Typeface createFromFile(String path) {
  int native_instance;
 
     // don't allow clients to call this directly
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.672 -0500", hash_original_method = "A1E0C89A80599EF6E13C90B8B8945AA4", hash_generated_method = "0B0E47126C56BF6E71E6DE4A77BB0B48")
     
 private Typeface(int ni) {
@@ -174,6 +194,8 @@ private Typeface(int ni) {
     }
 
     /** Returns the typeface's intrinsic style attributes */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.652 -0500", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "B1A319B88CE99D3D37B0A0D49A11FA23")
     
@@ -182,6 +204,8 @@ public int getStyle() {
     }
 
     /** Returns true if getStyle() has the BOLD bit set. */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.654 -0500", hash_original_method = "F9C5D984693E715CACA8B421F6CE6BD8", hash_generated_method = "1E88F458374AD4516F7A9850FC969AC0")
     
 public final boolean isBold() {
@@ -189,12 +213,16 @@ public final boolean isBold() {
     }
 
     /** Returns true if getStyle() has the ITALIC bit set. */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.656 -0500", hash_original_method = "55AE9D2665222680CD04F733708ADD28", hash_generated_method = "9FD604C75922F775EE3B6BFFCC00423B")
     
 public final boolean isItalic() {
         return (getStyle() & ITALIC) != 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.675 -0500", hash_original_method = "365BC48BBC32364F202A52D242C543E7", hash_generated_method = "8A0D631D5B8462432D6D6194C67FFABD")
     
 protected void finalize() throws Throwable {

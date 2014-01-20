@@ -11,13 +11,8 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 import android.widget.ZoomButtonsController;
 
-
-
-
-
 class ZoomControlEmbedded implements ZoomControlBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.008 -0500", hash_original_field = "89F04BCF2CEF2FF9614BE546923CA10D", hash_generated_field = "9B99C2FE2EA0A3C0CAEC1D267CB6150C")
-
 
     private  ZoomManager mZoomManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.010 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -87,6 +82,8 @@ public void update() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.026 -0500", hash_original_method = "0263F8BCA60BCA372CF61DE8AB7A303B", hash_generated_method = "F5D4F746BF08592E30559E547F0A1A5D")
     
 private ZoomButtonsController getControls() {
@@ -104,7 +101,6 @@ private ZoomButtonsController getControls() {
         }
         return mZoomButtonsController;
     }
-
     
     private class ZoomListener implements ZoomButtonsController.OnZoomListener {
         
@@ -135,11 +131,8 @@ public void onZoom(boolean zoomIn) {
             }
             update();
         }
-
         
     }
-
-
     
 }
 

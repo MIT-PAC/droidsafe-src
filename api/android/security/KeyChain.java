@@ -219,6 +219,8 @@ public static X509Certificate[] getCertificateChain(Context context, String alia
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.676 -0500", hash_original_method = "2D88B737F06C5681279A96FA6505C78B", hash_generated_method = "D3198FDCE6803459112E503840DEBC1F")
     
 private static PrivateKey toPrivateKey(byte[] bytes) {
@@ -233,6 +235,8 @@ private static PrivateKey toPrivateKey(byte[] bytes) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.679 -0500", hash_original_method = "FBC33F30F54EF78C28A947D81B2D2FD8", hash_generated_method = "3B765872A0AE9B68E04B09B1EAFE0EF9")
     
 private static X509Certificate toCertificate(byte[] bytes) {
@@ -283,6 +287,8 @@ private static X509Certificate toCertificate(byte[] bytes) {
         return new KeyChainConnection(context, keyChainServiceConnection, q.take());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.718 -0500", hash_original_method = "7DAE0D3A2CCC6CA9F77C8F9024139D9A", hash_generated_method = "ED43C8B84829F8F34047312F8EF0394F")
     
 private static void ensureNotOnMainThread(Context context) {
@@ -300,6 +306,8 @@ private static void ensureNotOnMainThread(Context context) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.657 -0500", hash_original_field = "9CC5013B5B2A8FBBD02E50EB12848B32", hash_generated_field = "3B8D8D094E0DD386140E6419313FE34D")
 
         private  KeyChainAliasCallback keyChainAliasResponse;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.660 -0500", hash_original_method = "C9AAF5E97D9880605AC7CEDD0F5EF602", hash_generated_method = "6257DABFC786F50A3D2423B7CF684988")
         
 private AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
@@ -323,6 +331,8 @@ private AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.688 -0500", hash_original_field = "3FAA0CAB83CBC9D427861B15897609E2", hash_generated_field = "3B2474C4869160C7A0D7AF9B8ADD0D10")
 
         private  IKeyChainService service;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.692 -0500", hash_original_method = "0B75A6D253D58C29BB28E672713E5120", hash_generated_method = "EC2DDFDB85129E98429D837C2B7DF946")
         
 private KeyChainConnection(Context context,

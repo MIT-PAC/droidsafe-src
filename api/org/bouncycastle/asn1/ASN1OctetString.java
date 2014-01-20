@@ -11,11 +11,6 @@ import java.io.InputStream;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.encoders.Hex;
 
-
-
-
-
-
 public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStringParser {
 
     /**
@@ -131,6 +126,8 @@ public int hashCode()
         return Arrays.hashCode(this.getOctets());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.337 -0500", hash_original_method = "5FE20DA2EBC8E33EF5740C0666CFE34F", hash_generated_method = "5FE20DA2EBC8E33EF5740C0666CFE34F")
     
 boolean asn1Equals(
@@ -153,6 +150,8 @@ public DERObject getLoadedObject()
         return this.getDERObject();
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.342 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
     
 abstract void encode(DEROutputStream out)
@@ -164,7 +163,6 @@ public String toString()
     {
       return "#"+new String(Hex.encode(string));
     }
-
     
 }
 

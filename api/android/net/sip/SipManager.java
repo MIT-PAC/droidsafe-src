@@ -123,6 +123,8 @@ public static Intent createIncomingCallBroadcast(String callId,
         return intent;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.228 -0500", hash_original_method = "202F15347D7AFCF2355EFD7038580BD7", hash_generated_method = "80280E4046A29DDF49C73CC5D51E3ECB")
     
 private static ISipSessionListener createRelay(
@@ -167,6 +169,8 @@ private static ISipSessionListener createRelay(
 
     private Context mContext;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.186 -0500", hash_original_method = "C37128DE517781FF4AF379CF096D6229", hash_generated_method = "85AB50911AE1C256C1EDCF24348BC04D")
     
 private SipManager(Context context) {
@@ -174,6 +178,8 @@ private SipManager(Context context) {
         createSipService();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.188 -0500", hash_original_method = "78D0C1947CAE04BC8743510E34683CF6", hash_generated_method = "9EEC76B0340FE46B7E6A2AEA5341C1B7")
     
 private void createSipService() {
@@ -330,6 +336,8 @@ public ListenerRelay(SipRegistrationListener listener, String uri) {
             mUri = uri;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.242 -0500", hash_original_method = "DB62FE45AF7F183C085E9ABCEE6AC21A", hash_generated_method = "DE20EAFC1CBB5FC0EF03E583DA412F14")
         
 private String getUri(ISipSession session) {

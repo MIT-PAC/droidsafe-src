@@ -17,6 +17,8 @@ public abstract class SQLiteClosable {
         //Synthesized constructor
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.235 -0500", hash_original_method = "FD90E275F743F61127A2FB1BCCAA6783", hash_generated_method = "30A897A9BCC5879ADA06C65F6AA46200")
     
 protected abstract void onAllReferencesReleased();
@@ -60,6 +62,8 @@ public void releaseReferenceFromContainer() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.247 -0500", hash_original_method = "DF04C7F4D466F671C367EF5E9F18369F", hash_generated_method = "B7AD478023FCCE1AB5389FE7E43F8EC4")
     
 private String getObjInfo() {

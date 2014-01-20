@@ -31,6 +31,8 @@ public final class GpsSatellite {
 
     float mAzimuth;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.914 -0500", hash_original_method = "8573EDE4D6155BE2F87E9990A729AEDD", hash_generated_method = "8573EDE4D6155BE2F87E9990A729AEDD")
     
 GpsSatellite(int prn) {
@@ -41,6 +43,8 @@ GpsSatellite(int prn) {
      * Used by {@link LocationManager#getGpsStatus} to copy LocationManager's
      * cached GpsStatus instance to the client's copy.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.916 -0500", hash_original_method = "6104464C0A9B407CFF88F943228D0F31", hash_generated_method = "6104464C0A9B407CFF88F943228D0F31")
     
 void setStatus(GpsSatellite satellite) {

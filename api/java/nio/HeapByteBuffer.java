@@ -15,18 +15,24 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
 
      int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.318 -0500", hash_original_method = "E17EA7652E4F5A67C65770DE13DD4AE3", hash_generated_method = "E17EA7652E4F5A67C65770DE13DD4AE3")
     
 HeapByteBuffer(byte[] backingArray) {
         this(backingArray, backingArray.length, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.320 -0500", hash_original_method = "720B251A66EBAD61E39D94F5757C7908", hash_generated_method = "720B251A66EBAD61E39D94F5757C7908")
     
 HeapByteBuffer(int capacity) {
         this(new byte[capacity], capacity, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.323 -0500", hash_original_method = "7E0C48043B88A8991A81994678604015", hash_generated_method = "7E0C48043B88A8991A81994678604015")
     
 HeapByteBuffer(byte[] backingArray, int capacity, int offset) {
@@ -50,6 +56,8 @@ HeapByteBuffer(byte[] backingArray, int capacity, int offset) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.328 -0500", hash_original_method = "ADCC30D9FE17E9265DD10F45753F8D68", hash_generated_method = "AF3DAD7D5DEEEA020DEC5496204E4270")
     
 final void get(char[] dst, int dstOffset, int charCount) {
@@ -58,6 +66,8 @@ final void get(char[] dst, int dstOffset, int charCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.331 -0500", hash_original_method = "83F82E1C4D1B0FECE4775D0F7331C2A9", hash_generated_method = "F19BB696E88307166D49AC935E17C019")
     
 final void get(double[] dst, int dstOffset, int doubleCount) {
@@ -66,6 +76,8 @@ final void get(double[] dst, int dstOffset, int doubleCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.333 -0500", hash_original_method = "28783106EE8F5B0602DB80B1FE3018CE", hash_generated_method = "679DF4C4E4AB469718CEEC566F88EACC")
     
 final void get(float[] dst, int dstOffset, int floatCount) {
@@ -74,6 +86,8 @@ final void get(float[] dst, int dstOffset, int floatCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.337 -0500", hash_original_method = "8AC7AD179B2BD3799E5966071FB1A6E9", hash_generated_method = "9DBE628069255A585160925679E99BD7")
     
 final void get(int[] dst, int dstOffset, int intCount) {
@@ -82,6 +96,8 @@ final void get(int[] dst, int dstOffset, int intCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.339 -0500", hash_original_method = "3C880FD9EFF1926FF9582E7F1291E034", hash_generated_method = "0F9FA0E24FF13B77CACDFF8DA596FFBC")
     
 final void get(long[] dst, int dstOffset, int longCount) {
@@ -90,6 +106,8 @@ final void get(long[] dst, int dstOffset, int longCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.342 -0500", hash_original_method = "89F4F4A0F85F41D910E8D20C3ACD7123", hash_generated_method = "2E1E13128C514A33CDE6E140CE4A0BA7")
     
 final void get(short[] dst, int dstOffset, int shortCount) {

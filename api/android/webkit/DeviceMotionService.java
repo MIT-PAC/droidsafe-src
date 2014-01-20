@@ -13,13 +13,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Handler;
 
-
-
-
-
 final class DeviceMotionService implements SensorEventListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.223 -0500", hash_original_field = "556E408B717769DC8A8D3D20CB3A7B1C", hash_generated_field = "9BEB3C1E993D7EFC95522BDB3A8CC69D")
-
 
     private static final int INTERVAL_MILLIS = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.205 -0500", hash_original_field = "ADF7031C73AC58838DF2C97D4D015C9D", hash_generated_field = "66D108DFC043A6E0A2844E4843186070")
@@ -88,6 +83,8 @@ public void resume() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.239 -0500", hash_original_method = "CDFAD74C98E46044259B3BCC3613C4C6", hash_generated_method = "248C82923C8D497CD8C7D49BC31345BC")
     
 private void sendErrorEvent() {
@@ -109,6 +106,8 @@ private void sendErrorEvent() {
         });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.245 -0500", hash_original_method = "9B63FE7EDAA2DFAC9F6DE1381BA682EF", hash_generated_method = "B62ED1B6B3A3982E40B89BD0A00319AE")
     
 private void createHandler() {
@@ -131,6 +130,8 @@ private void createHandler() {
         };
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.247 -0500", hash_original_method = "A3A2E2444DD47EDD24E157A7D990CD47", hash_generated_method = "A8AB9EDA9D09C0FE057A3AB2FE95DC59")
     
 private void startSendingUpdates() {
@@ -138,6 +139,8 @@ private void startSendingUpdates() {
         mUpdateRunnable.run();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.249 -0500", hash_original_method = "C91FFFB25BA3A01D4AF61CC044FBC20A", hash_generated_method = "547EFCEA723E6A896C300423D72C9312")
     
 private void stopSendingUpdates() {
@@ -145,6 +148,8 @@ private void stopSendingUpdates() {
         mLastAcceleration = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.251 -0500", hash_original_method = "8EA92813CD5F00D63229FB53D6348E72", hash_generated_method = "8D82A048E10B3C037F8FCAA443A9C304")
     
 private void registerForSensor() {
@@ -153,6 +158,8 @@ private void registerForSensor() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.254 -0500", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "FEB2F552C044EE42CFEE371617B0383D")
     
 private SensorManager getSensorManager() {
@@ -163,6 +170,8 @@ private SensorManager getSensorManager() {
         return mSensorManager;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.257 -0500", hash_original_method = "132C72132CB3FECC364192FB60290F0C", hash_generated_method = "A3D352B71E1CC15368CF3146B53804A1")
     
 private boolean registerForAccelerometerSensor() {
@@ -176,6 +185,8 @@ private boolean registerForAccelerometerSensor() {
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_UI, mHandler);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.259 -0500", hash_original_method = "8F0ED17D95B5480F975ECDA7EDF68357", hash_generated_method = "641F1F35A7CD6569AAD9EDA882C9BEB2")
     
 private void unregisterFromSensor() {

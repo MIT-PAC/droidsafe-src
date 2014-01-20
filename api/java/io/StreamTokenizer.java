@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
-
-
-
-
-
 public class StreamTokenizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.482 -0500", hash_original_field = "9FFA8D2E6CD3A706488AC551C3F7491D", hash_generated_field = "CE1461C2F3CB152AF49883B7F99787FB")
 
@@ -29,22 +24,17 @@ public class StreamTokenizer {
     private static final int TT_UNKNOWN = -4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.500 -0500", hash_original_field = "FCE204270CBBB6F8A40C3A1BC1ECE596", hash_generated_field = "B5B31D6CF53277606D69A20BBD672055")
 
-
     private static final byte TOKEN_COMMENT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.503 -0500", hash_original_field = "77CCB0435DDCC6C52DE4ED919447477A", hash_generated_field = "47A200D0084A16EFA9E30FE833AFB1FB")
-
 
     private static final byte TOKEN_QUOTE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.506 -0500", hash_original_field = "CCC412E8EA36C20B937CB98E89378E8B", hash_generated_field = "C9DC638D16F1182F35227918AFD70078")
 
-
     private static final byte TOKEN_WHITE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.508 -0500", hash_original_field = "EBB2EFD888EBCCEFED12A4AB8BCDE680", hash_generated_field = "2AE0950E5470D97CB17C370704304234")
 
-
     private static final byte TOKEN_WORD = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.511 -0500", hash_original_field = "99B9C35765C7289AF2FA63F418B0BA28", hash_generated_field = "7175EE1ADBAA718DFE8844137332396F")
-
 
     private static final byte TOKEN_DIGIT = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.477 -0500", hash_original_field = "A3FBF74367DF67847DBDF32C85EFD9A3", hash_generated_field = "61CABEDACAAE440F819A66BD081717D9")
@@ -61,30 +51,23 @@ public class StreamTokenizer {
     private byte[] tokenTypes = new byte[256];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.513 -0500", hash_original_field = "62A9370282965B498A7A3EC27A93F8C0", hash_generated_field = "27FA2CFD35EEFAE64C7DFD7FF18A54A3")
 
-
     private int lineNumber = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.517 -0500", hash_original_field = "6A9488FF441BB4D26B1371315081F117", hash_generated_field = "7FF9EA1081BB65BCD5D6FFEE94A98B82")
-
 
     private boolean forceLowercase;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.519 -0500", hash_original_field = "9CA1EB89C174418E4E1EF05B9653FDBE", hash_generated_field = "D954790BC163C65FCE60F79A2C012ED2")
 
-
     private boolean isEOLSignificant;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.521 -0500", hash_original_field = "E271CE5DF4396F279A1523B6A823C032", hash_generated_field = "D47D5E18F60921FF3632B427BB9CD0AA")
-
 
     private boolean slashStarComments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.524 -0500", hash_original_field = "24A615E423AB8776BB7EF7CD8FC182CD", hash_generated_field = "DC8C8DC2DAFEE20CDA1B1F463AF2DF71")
 
-
     private boolean slashSlashComments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.526 -0500", hash_original_field = "F90EFD8038931D03AABF5F432D393CE8", hash_generated_field = "49F6B836F7E1D68FD6E01FA2485232FE")
 
-
     private boolean pushBackToken;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.528 -0500", hash_original_field = "C0F5897A1978853F42D2445160B14D7D", hash_generated_field = "96F646C740AFE4E9E4C51A083C4D3595")
-
 
     private boolean lastCr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.530 -0500", hash_original_field = "CE67F8E6759E7AA9F0B2D1B1C622FA48", hash_generated_field = "848E95AB29D035B62B017F39E2191D18")
@@ -92,10 +75,8 @@ public class StreamTokenizer {
     private InputStream inStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.533 -0500", hash_original_field = "8713F9F3C39C80F819723C0F08FAA90C", hash_generated_field = "BBEB5044AD720FD044C79AD81CEC888B")
 
-
     private Reader inReader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.535 -0500", hash_original_field = "2BE9E8C231D8C8B24DBE2BA2B804400D", hash_generated_field = "32E47E44D4C148CFC795B5BAC1FD140A")
-
 
     private int peekChar = -2;
 
@@ -103,6 +84,8 @@ public class StreamTokenizer {
      * Private constructor to initialize the default values according to the
      * specification.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.538 -0500", hash_original_method = "0C9484F593CC2C76BC0994AA6F883855", hash_generated_method = "59C15A26070F0EA645890B8321BCD69A")
     
 private StreamTokenizer() {
@@ -559,6 +542,8 @@ public void quoteChar(int ch) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.575 -0500", hash_original_method = "056CD8A5FA209600CEBA1D62E49B6620", hash_generated_method = "4800411E189D789392246574C073EF9B")
     
 private int read() throws IOException {

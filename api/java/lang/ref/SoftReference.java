@@ -30,6 +30,8 @@ public SoftReference(T r) {
      *          results in a weak reference that is not associated with any
      *          queue.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.961 -0500", hash_original_method = "123F9816B0FED05FA5B253267B81F032", hash_generated_method = "A8DF8D86A10B68C4CE29EE706C113C2D")
     
 public SoftReference(T r, ReferenceQueue<? super T> q) {

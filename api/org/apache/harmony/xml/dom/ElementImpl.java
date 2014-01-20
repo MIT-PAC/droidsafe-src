@@ -34,6 +34,8 @@ public class ElementImpl extends InnerNodeImpl implements Element {
 
     private List<AttrImpl> attributes = new ArrayList<AttrImpl>();
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.626 -0500", hash_original_method = "E83037DBBA9A213D892AFBAECFD42006", hash_generated_method = "E83037DBBA9A213D892AFBAECFD42006")
     
 ElementImpl(DocumentImpl document, String namespaceURI, String qualifiedName) {
@@ -41,6 +43,8 @@ ElementImpl(DocumentImpl document, String namespaceURI, String qualifiedName) {
         setNameNS(this, namespaceURI, qualifiedName);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.628 -0500", hash_original_method = "D2CD0310D5C8F85822C82439B7C2ED0A", hash_generated_method = "D2CD0310D5C8F85822C82439B7C2ED0A")
     
 ElementImpl(DocumentImpl document, String name) {
@@ -48,6 +52,8 @@ ElementImpl(DocumentImpl document, String name) {
         setName(this, name);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.630 -0500", hash_original_method = "33812125B5F046930FB02168EEB43D40", hash_generated_method = "23F99DD0B0D8518DD30692A456887E11")
     
 private int indexOfAttribute(String name) {
@@ -61,6 +67,8 @@ private int indexOfAttribute(String name) {
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.633 -0500", hash_original_method = "7BDB91D541F3C8F5E0B377A9C520D55B", hash_generated_method = "FB9659831FD5F15AB2256030C7D30848")
     
 private int indexOfAttributeNS(String namespaceURI, String localName) {
@@ -140,6 +148,8 @@ public AttrImpl getAttributeNodeNS(String namespaceURI, String localName) {
      * with the given ID attribute. We should consider adding an index to speed
      * navigation of large documents.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.646 -0500", hash_original_method = "75972D234B77F7219B8A807D51F2F4BE", hash_generated_method = "384AB3B70029125C168DD9A224D011F9")
     
@@ -438,12 +448,16 @@ public int getLength() {
             return ElementImpl.this.attributes.size();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.696 -0500", hash_original_method = "DC316EFAFE6C9719F9A6712C7C0724A1", hash_generated_method = "D6AB8A65CE16BD484A16ABCB1DB029F2")
         
 private int indexOfItem(String name) {
             return ElementImpl.this.indexOfAttribute(name);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.698 -0500", hash_original_method = "258D65E063DA88D4950E14323AAE31E6", hash_generated_method = "4AF2EF9990FEC62BA89EB3833E2D779E")
         
 private int indexOfItemNS(String namespaceURI, String localName) {

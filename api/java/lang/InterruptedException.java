@@ -28,6 +28,8 @@ public InterruptedException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.489 -0500", hash_original_method = "47A24B4A9D41770C1E928AFF25C6693A", hash_generated_method = "FA9C2D418D0A1338A3E54F344EAEF76E")
     
 public InterruptedException(String detailMessage) {

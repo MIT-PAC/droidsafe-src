@@ -95,6 +95,8 @@ public static Camera open() {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.082 -0500", hash_original_method = "1EA1301E64E0C8CFC2BB26397453FA76", hash_generated_method = "2BD54FA446C220D053A015A132669A6C")
     
 private static void postEventFromNative(Object camera_ref,
@@ -215,6 +217,8 @@ private static void postEventFromNative(Object camera_ref,
 
     private boolean mFaceDetectionRunning = false;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.953 -0500", hash_original_method = "49A6C7700AD76B9B3871368B13D8BEFB", hash_generated_method = "49A6C7700AD76B9B3871368B13D8BEFB")
     
 Camera(int cameraId) {
@@ -243,6 +247,8 @@ protected void finalize() {
         release();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.961 -0500", hash_original_method = "5EC3DC8FB8D66F2C808C7799A0BBD6C8", hash_generated_method = "1BC48BC576F8F6BA036FE8D3ECCCF945")
     
     private final void native_setup(Object camera_this, int cameraId){
@@ -251,6 +257,8 @@ protected void finalize() {
     	addTaint(cameraId);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.965 -0500", hash_original_method = "29EBD7A2FE8EDC8D2C10EA00B5293031", hash_generated_method = "8E05B7AB4B85F0BA21E048043C2032E1")
     
     private final void native_release(){
@@ -379,6 +387,8 @@ public final void setPreviewDisplay(SurfaceHolder holder) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.997 -0500", hash_original_method = "0997F7F636D30A698007C9D53ABFEAA8", hash_generated_method = "9ABCF32B86C6BEE0917FCE8FE808440A")
     
     private final void setPreviewDisplay(Surface surface) throws IOException{
@@ -459,6 +469,8 @@ public final void stopPreview() {
         mAutoFocusCallback = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.023 -0500", hash_original_method = "5C6CC4130952C356AFFCDA8182FC7947", hash_generated_method = "B38C6BA65B9A448510F7A18546EFE817")
     
     private final void _stopPreview(){
@@ -516,6 +528,8 @@ public final void setOneShotPreviewCallback(PreviewCallback cb) {
         setHasPreviewCallback(cb != null, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.048 -0500", hash_original_method = "F92B1FC9B77C310C88F7762A3FF0D1F1", hash_generated_method = "7BED76AF1420A84DB7166263B583B1B9")
     
     private final void setHasPreviewCallback(boolean installed, boolean manualBuffer){
@@ -635,6 +649,8 @@ public final void addRawImageCallbackBuffer(byte[] callbackBuffer)
         addCallbackBuffer(callbackBuffer, CAMERA_MSG_RAW_IMAGE);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.061 -0500", hash_original_method = "391D3A52EC92D78C4E563BC291F66937", hash_generated_method = "3E04A41784B725D24517D1713EA0CD3A")
     
 private final void addCallbackBuffer(byte[] callbackBuffer, int msgType)
@@ -649,6 +665,8 @@ private final void addCallbackBuffer(byte[] callbackBuffer, int msgType)
         _addCallbackBuffer(callbackBuffer, msgType);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.065 -0500", hash_original_method = "D4768D01937D37185DEEEF1DE89AE1E9", hash_generated_method = "90371F8E7E514C28982E8F85BF34CA60")
     
     private final void _addCallbackBuffer(
@@ -702,6 +720,8 @@ public final void autoFocus(AutoFocusCallback cb)
         mAutoFocusCallback = cb;
         native_autoFocus();
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.098 -0500", hash_original_method = "CBF6350AD6916ADF364820AEE02A4625", hash_generated_method = "A02A440B3407A99E3B2FF8EF3BE76B0D")
     
     private final void native_autoFocus(){
@@ -1410,6 +1430,8 @@ public void set(String key, int value) {
             mMap.put(key, Integer.toString(value));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.686 -0500", hash_original_method = "FA0E250AABDDF6BDEB5118FEC7A9E23B", hash_generated_method = "63972096D8FF1414B952CAC11158DF74")
         
 private void set(String key, List<Area> areas) {
@@ -1947,6 +1969,8 @@ public List<Integer> getSupportedPictureFormats() {
             return formats;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.766 -0500", hash_original_method = "0D21EA7C9C6F68B56031C051598A724A", hash_generated_method = "53575DDF4E031CC533F76C1BD0255940")
         
 private String cameraFormatForPixelFormat(int pixel_format) {
@@ -1962,6 +1986,8 @@ private String cameraFormatForPixelFormat(int pixel_format) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.769 -0500", hash_original_method = "0B875F69B968394282E409325FD17632", hash_generated_method = "2A808DBF1C7811103F2D31FBAA9927C0")
         
 private int pixelFormatForCameraFormat(String format) {
@@ -3160,6 +3186,8 @@ public boolean isVideoStabilizationSupported() {
 
         // Splits a comma delimited string to an ArrayList of String.
         // Return null if the passing string is null or the size is 0.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.928 -0500", hash_original_method = "7DB6EA73F79E9017B4C9B1640096A943", hash_generated_method = "0D8DCB1AAF5E839228276128672C8C75")
         
 private ArrayList<String> split(String str) {
@@ -3176,6 +3204,8 @@ private ArrayList<String> split(String str) {
 
         // Splits a comma delimited string to an ArrayList of Integer.
         // Return null if the passing string is null or the size is 0.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.931 -0500", hash_original_method = "5A3E8F077877CF7C521516BE6C2EF1CA", hash_generated_method = "444925080B91C9CC89AD2800BB9FDD59")
         
 private ArrayList<Integer> splitInt(String str) {
@@ -3191,6 +3221,8 @@ private ArrayList<Integer> splitInt(String str) {
             return substrings;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.934 -0500", hash_original_method = "DBE0F4460205976847C38EA4BE2E4232", hash_generated_method = "0D65FA305A7E967CD5AEA8B82CEB99F6")
         
 private void splitInt(String str, int[] output) {
@@ -3205,6 +3237,8 @@ private void splitInt(String str, int[] output) {
         }
 
         // Splits a comma delimited string to an ArrayList of Float.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.936 -0500", hash_original_method = "2EDF646B69F6A8ADE910B245928A49CF", hash_generated_method = "C593531974FDF451852FDB4663CE8C9F")
         
 private void splitFloat(String str, float[] output) {
@@ -3219,6 +3253,8 @@ private void splitFloat(String str, float[] output) {
         }
 
         // Returns the value of a float parameter.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.939 -0500", hash_original_method = "32BB9C0678FCAB5D5E885CB3C8B58074", hash_generated_method = "842D6C1BAD35E2DE74B670A329B8B0A5")
         
 private float getFloat(String key, float defaultValue) {
@@ -3230,6 +3266,8 @@ private float getFloat(String key, float defaultValue) {
         }
 
         // Returns the value of a integer parameter.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.942 -0500", hash_original_method = "E02D965FA231D61DD75FA13C6C4B926A", hash_generated_method = "F05C1AA206ED22549A9B8AD0551802DB")
         
 private int getInt(String key, int defaultValue) {
@@ -3242,6 +3280,8 @@ private int getInt(String key, int defaultValue) {
 
         // Splits a comma delimited string to an ArrayList of Size.
         // Return null if the passing string is null or the size is 0.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.944 -0500", hash_original_method = "E566E7E786C257334A0A0BEDDD18D728", hash_generated_method = "F791113D7F5DEBDFF24B54131C8E0BFC")
         
 private ArrayList<Size> splitSize(String str) {
@@ -3278,6 +3318,8 @@ private Size strToSize(String str) {
         // Splits a comma delimited string to an ArrayList of int array.
         // Example string: "(10000,26623),(10000,30000)". Return null if the
         // passing string is null or the size is 0.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.950 -0500", hash_original_method = "F39DEDF83E61AF664CA09AF99218A1A8", hash_generated_method = "408DC1C554049C0055201E759DF14B68")
         
 private ArrayList<int[]> splitRange(String str) {
@@ -3305,6 +3347,8 @@ private ArrayList<int[]> splitRange(String str) {
         // Splits a comma delimited string to an ArrayList of Area objects.
         // Example string: "(-10,-10,0,0,300),(0,0,10,10,700)". Return null if
         // the passing string is null or the size is 0 or (0,0,0,0,0).
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.953 -0500", hash_original_method = "9274EBB4EF409FF45187E570A4176C77", hash_generated_method = "7E3376C648E9E400FDA2025594C8EB4A")
         
 private ArrayList<Area> splitArea(String str) {
@@ -3340,6 +3384,8 @@ private ArrayList<Area> splitArea(String str) {
             return result;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.956 -0500", hash_original_method = "B277D938849565024C8C9B7FCA3C644C", hash_generated_method = "ECC08C172A9A23F03C37664075F521D5")
         
 private boolean same(String s1, String s2) {
@@ -3405,6 +3451,8 @@ public final void cancelAutoFocus()
         mAutoFocusCallback = null;
         native_cancelAutoFocus();
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.109 -0500", hash_original_method = "627E1E0A1BA298FD1B675A29D70F6408", hash_generated_method = "0B9EB2ADB27936076B423CACE0255EBE")
     
     private final void native_cancelAutoFocus(){
@@ -3422,6 +3470,8 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
             PictureCallback jpeg) {
         takePicture(shutter, raw, null, jpeg);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.130 -0500", hash_original_method = "9DA1D6832E2DF57D49D73BC5F1630045", hash_generated_method = "BBC27BBD94E08B48D8758C1A6E326374")
     
     private final void native_takePicture(int msgType){
@@ -3664,6 +3714,8 @@ public final void stopFaceDetection() {
         mFaceDetectionRunning = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.178 -0500", hash_original_method = "44CAC56F9FD022B772605806F720BF7E", hash_generated_method = "C7E6262EF7BA0CF7A91FBC6CD42CAEAF")
     
     private final void _startFaceDetection(int type){
@@ -3671,6 +3723,8 @@ public final void stopFaceDetection() {
     	addTaint(type);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.182 -0500", hash_original_method = "A44256EE80ABD488101E1B754E2222A4", hash_generated_method = "0433152B56851AE82550BC75B8E92751")
     
     private final void _stopFaceDetection(){
@@ -3688,6 +3742,8 @@ public final void setErrorCallback(ErrorCallback cb)
         mErrorCallback = cb;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.224 -0500", hash_original_method = "62874E13510D0FD5D23BE793A7BF66C4", hash_generated_method = "B96917EBD7D1653FC025DB4499DC22AA")
     
     private final void native_setParameters(String params){
@@ -3695,6 +3751,8 @@ public final void setErrorCallback(ErrorCallback cb)
     	addTaint(params.getTaint());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.245 -0400", hash_original_method = "3CEFEC9BC04BFA67886C8721C375B2BF", hash_generated_method = "7CDFCD53AAB21A45E6D03778B4CC52A9")
     private final String native_getParameters() {
     	String s = new String();

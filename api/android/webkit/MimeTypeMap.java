@@ -52,6 +52,8 @@ public static String getFileExtensionFromUrl(String url) {
     }
 
     // Static method called by jni.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.158 -0500", hash_original_method = "A042DF11FC396083771CF7C6C82EEB8E", hash_generated_method = "54652D16722A89B788B9DC2B62E986B5")
     
 private static String mimeTypeFromExtension(String extension) {
@@ -74,6 +76,8 @@ public static MimeTypeMap getSingleton() {
 
     private static final MimeTypeMap sMimeTypeMap = new MimeTypeMap();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.149 -0500", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "6C67DEF4D1B8466A735788048BB3AF9F")
     
 private MimeTypeMap() {
@@ -139,7 +143,9 @@ public String getExtensionFromMimeType(String mimeType) {
      * @param contentDisposition Content-disposition header given by the server.
      * @return The MIME type that should be used for this data.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.164 -0500", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "AD9F182D1FD77219DDE792983B414E62")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.164 -0500", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "AD9F182D1FD77219DDE792983B414E62")
     
 String remapGenericMimeType(String mimeType, String url,
             String contentDisposition) {

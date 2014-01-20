@@ -346,6 +346,8 @@ public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset
      *                  (septet index * 7)
      * @param value the 7-bit character to store
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.476 -0500", hash_original_method = "8A74673B598B0BDC221AF89902C2BEC8", hash_generated_method = "92139D8AC94846C0E57C2E010BA4FFCA")
     
 private static void
@@ -929,6 +931,8 @@ public static int
      *
      * @param tables the new list of enabled single shift tables
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.518 -0500", hash_original_method = "23491E3B19CA1A0372FB07B6E5962749", hash_generated_method = "B2262967F2201DF1AA99A77E5ADAC619")
     
 static synchronized void setEnabledSingleShiftTables(int[] tables) {
@@ -948,6 +952,8 @@ static synchronized void setEnabledSingleShiftTables(int[] tables) {
      *
      * @param tables the new list of enabled locking shift tables
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.520 -0500", hash_original_method = "1CDBFB6022978351EB57E2AB2AC797D1", hash_generated_method = "31EAF8A9E098DCC0DE525062826D6BE9")
     
 static synchronized void setEnabledLockingShiftTables(int[] tables) {
@@ -961,6 +967,8 @@ static synchronized void setEnabledLockingShiftTables(int[] tables) {
      *
      * @return the list of enabled single shift tables
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.523 -0500", hash_original_method = "199F40335AE19B445C77FA5EEE4476CE", hash_generated_method = "1CF0EBA223248AC82DA5D2B51BDCE44C")
     
@@ -975,6 +983,8 @@ static synchronized int[] getEnabledSingleShiftTables() {
      *
      * @return the list of enabled locking shift tables
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.525 -0500", hash_original_method = "A94B11FCDA8381B4E3DEFD717897E065", hash_generated_method = "B96ED6965210D281C8265A9365306243")
     
@@ -995,6 +1005,8 @@ static synchronized int[] getEnabledLockingShiftTables() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.547 -0500", hash_original_field = "538C50EAF301EE2CC9D2096166C6CEE7", hash_generated_field = "538C50EAF301EE2CC9D2096166C6CEE7")
 
          int[] unencodableCounts;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.550 -0500", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "A6A17A880746EC858BB8D2E85730F74B")
         
 LanguagePairCount(int code) {
@@ -1383,6 +1395,8 @@ LanguagePairCount(int code) {
             + "\u06cd[~]\u06d4|ABCDEFGHIJKLMNOPQRSTUVWXYZ          \u20ac                          "
     };
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.431 -0500", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "47842942894A1B67C2301F7EE168F454")
     
 private GsmAlphabet() { }

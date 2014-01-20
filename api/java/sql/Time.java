@@ -248,6 +248,8 @@ public Time(long theTime) {
     /*
     * Private method to format the time
     */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.431 -0500", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "42C4F2A798161F88780A237C678B7BD2")
     
 private void format(int date, int digits, StringBuilder sb) {

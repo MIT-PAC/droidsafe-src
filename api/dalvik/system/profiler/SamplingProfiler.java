@@ -14,6 +14,8 @@ import java.util.TimerTask;
 
 public final class SamplingProfiler {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.015 -0500", hash_original_method = "E43429358514D6D4B0CC42164635A3D5", hash_generated_method = "5333A58376E57A2EF0CC34755B4EA12E")
     
 private static ThreadSampler findDefaultThreadSampler() {
@@ -237,6 +239,8 @@ public ThreadGroupThreadSet(ThreadGroup threadGroup) {
             resize();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.046 -0500", hash_original_method = "634F6B8483D3410BA8D4C537A5664EC3", hash_generated_method = "4F206BBC8A865A4BA945A1AAC83FFB89")
         
 private void resize() {
@@ -333,6 +337,8 @@ public void run() {
          * Record a new stack trace. The thread should have been
          * previously registered with addStartThread.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.074 -0500", hash_original_method = "F11BBDF4101A6D713104B5DB9760A085", hash_generated_method = "4067A3AA11B7AEE60584EB4F50D11EA3")
         
 private void recordStackTrace(Thread thread, StackTraceElement[] stackFrames) {
@@ -355,6 +361,8 @@ private void recordStackTrace(Thread thread, StackTraceElement[] stackFrames) {
             countCell[0]++;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.077 -0500", hash_original_method = "B49A7EC3437DE14BA292DE44FA40B97A", hash_generated_method = "782E2E3065A8F07031072AC423775A0D")
         
 private void updateThreadHistory(Thread[] oldThreads, Thread[] newThreads) {
@@ -395,6 +403,8 @@ private void updateThreadHistory(Thread[] oldThreads, Thread[] newThreads) {
         /**
          * Record that a newly noticed thread.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.080 -0500", hash_original_method = "D7E70BFB99D4B0D69C428CA3433E6D0D", hash_generated_method = "5BB011C7DBE53407F8AE7B50A48EB795")
         
 private void addStartThread(Thread thread) {
@@ -423,6 +433,8 @@ private void addStartThread(Thread thread) {
         /**
          * Record that a thread has disappeared.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.084 -0500", hash_original_method = "631F90CADC4DC4D78F0863A31213AEA2", hash_generated_method = "A688B080478C127EFDDAD69CC5746D1D")
         
 private void addEndThread(Thread thread) {

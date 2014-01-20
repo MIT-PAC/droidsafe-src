@@ -89,6 +89,8 @@ public ThreadGroup(ThreadGroup parent, String name) {
      * Initialize the special "system" ThreadGroup. Was "main" in Harmony,
      * but we have an additional group above that in Android.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.708 -0500", hash_original_method = "2C0349D8A755A992C407F37169B24D0C", hash_generated_method = "A839BB6C885C046CDCE6C7E7906B1179")
     
 private ThreadGroup() {
@@ -146,6 +148,8 @@ public int activeGroupCount() {
      * @param g ThreadGroup to add
      * @throws IllegalThreadStateException if this group has been destroyed already
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.715 -0500", hash_original_method = "0DD772AEDB7C823C2E91BB6377F03397", hash_generated_method = "644303AB04378EE60FACEF029E5354E5")
     
 private void add(ThreadGroup g) throws IllegalThreadStateException {
@@ -234,6 +238,8 @@ public final void destroy() {
      * @see #setDaemon
      * @see #isDaemon
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.725 -0500", hash_original_method = "CD7DBC672D59D1FAACCF6E53D785D515", hash_generated_method = "34F3FA75DDD0B459C8FD7E56C6729C67")
     
 private void destroyIfEmptyDaemon() {
@@ -338,6 +344,8 @@ public int enumerate(ThreadGroup[] groups, boolean recurse) {
      *        ThreadGroups
      * @return How many elements were enumerated/copied over
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.739 -0500", hash_original_method = "7CEEE4341262A9B70C3A153644CFBA1A", hash_generated_method = "A188A36867D97B25436336404522BDF2")
     
 private int enumerateGeneric(Object[] enumeration, boolean recurse, int enumerationIndex,
@@ -488,6 +496,8 @@ public void list() {
      * @param levels How many levels of nesting, so that proper indentation can
      * be output.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.759 -0500", hash_original_method = "38F7DBD37EF32F68FFB89F20FFE0F443", hash_generated_method = "4F0F356F01E5BE3745BC160458F54362")
     
 private void list(int levels) {
@@ -508,6 +518,8 @@ private void list(int levels) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.761 -0500", hash_original_method = "074D68FF209CFCAF4851113378206A39", hash_generated_method = "88EEC02B72D933C6732FBB8EC4C26F33")
     
 private void indent(int levels) {
@@ -543,6 +555,8 @@ public final boolean parentOf(ThreadGroup g) {
      * @see #add(Thread)
      * @see #add(ThreadGroup)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.766 -0500", hash_original_method = "7E8DD532FE0D28207249CA86D60AFD62", hash_generated_method = "D19A9737DAFF09954A9BC9BA22A98230")
     
 private void remove(ThreadGroup g) {
@@ -651,6 +665,8 @@ public final void setMaxPriority(int newMax) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.780 -0500", hash_original_method = "F86867FC41FDF8B0075237470EA8A18F", hash_generated_method = "38C94953E742CD39BD83518A4C766E57")
     
 @SuppressWarnings("deprecation")
@@ -693,6 +709,8 @@ public final void setMaxPriority(int newMax) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.785 -0500", hash_original_method = "664C597F1857BDEBDBE75F13D3F147B7", hash_generated_method = "1750B92F76518C148B640D01FE0FE82A")
     
 @SuppressWarnings("deprecation")
@@ -752,6 +770,8 @@ public void uncaughtException(Thread t, Throwable e) {
     /**
      * Called by the Thread constructor.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.792 -0500", hash_original_method = "2D14DBB3818CDCF2DBAC484BFFF8FD8D", hash_generated_method = "5453924C354DA49DAAE4D8422DAD0218")
     
 final void addThread(Thread thread) throws IllegalThreadStateException {
@@ -766,6 +786,8 @@ final void addThread(Thread thread) throws IllegalThreadStateException {
     /**
      * Called by the VM when a Thread dies.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.795 -0500", hash_original_method = "37129B7DF3D611DDAA565F6673B5A889", hash_generated_method = "F883E303C45671B497E96C97324A3629")
     
 final void removeThread(Thread thread) throws IllegalThreadStateException {

@@ -57,6 +57,8 @@ public static Animator loadAnimator(Context context, int id)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.803 -0500", hash_original_method = "7F7EA310E666B8E19447863365BDF46E", hash_generated_method = "C62519A7EB69E1240EEEEA6CBC44ADD6")
     
 private static Animator createAnimatorFromXml(Context c, XmlPullParser parser)
@@ -65,6 +67,8 @@ private static Animator createAnimatorFromXml(Context c, XmlPullParser parser)
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.806 -0500", hash_original_method = "0F6E721FE23D631E8AAECB95FEB62E01", hash_generated_method = "4F6E63F01B981F64B6F855BE1323A4D1")
     
 private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
@@ -127,6 +131,8 @@ private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.809 -0500", hash_original_method = "E9BE17E1756C0F9FBDB33E7DB58F62ED", hash_generated_method = "CC986DE9F94EA317F16E7242BD770100")
     
 private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs)
@@ -155,6 +161,8 @@ private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet a
      * @param context the application environment
      * @param attrs the set of attributes holding the animation parameters
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.814 -0500", hash_original_method = "1948BDF01397223EDF19839C0F7A1A0C", hash_generated_method = "152B565EDC78596A805BD7DF2E407430")
     
 private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim)

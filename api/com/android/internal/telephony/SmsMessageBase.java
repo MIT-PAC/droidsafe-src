@@ -206,6 +206,8 @@ public String getEmailFrom() {
     /**
      * Get protocol identifier.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.554 -0500", hash_original_method = "3E66B2546D43CCD1D4D23DAAAC4A1AA6", hash_generated_method = "E150D45D651EBBBCBD4B8ABC274DFBA3")
     
 public abstract int getProtocolIdentifier();
@@ -214,6 +216,8 @@ public abstract int getProtocolIdentifier();
      * See TS 23.040 9.2.3.9 returns true if this is a "replace short message"
      * SMS
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.556 -0500", hash_original_method = "64CB7FE0B301A04BAC030A1BA78B6D08", hash_generated_method = "D45051F00DD7385AB394D7C752D1569B")
     
 public abstract boolean isReplace();
@@ -224,6 +228,8 @@ public abstract boolean isReplace();
      * @return true if this is a CPHS MWI toggle message See CPHS 4.2 section
      *         B.4.2
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.559 -0500", hash_original_method = "B823D1584A04CE44DC421738E7CD944E", hash_generated_method = "8041FC6F9120B0288E53EBB7B0A59E1D")
     
 public abstract boolean isCphsMwiMessage();
@@ -232,6 +238,8 @@ public abstract boolean isCphsMwiMessage();
      * returns true if this message is a CPHS voicemail / message waiting
      * indicator (MWI) clear message
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.567 -0500", hash_original_method = "17D5F1B59BFF3ACF9AACAB0528BFA1A3", hash_generated_method = "ECD81ED7CE14FB0FD00A600B6805594B")
     
 public abstract boolean isMWIClearMessage();
@@ -240,6 +248,8 @@ public abstract boolean isMWIClearMessage();
      * returns true if this message is a CPHS voicemail / message waiting
      * indicator (MWI) set message
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.569 -0500", hash_original_method = "208EF101F62A8D1A5B50E120978B483F", hash_generated_method = "94704115E16862DF76050908295F5844")
     
 public abstract boolean isMWISetMessage();
@@ -248,6 +258,8 @@ public abstract boolean isMWISetMessage();
      * returns true if this message is a "Message Waiting Indication Group:
      * Discard Message" notification and should not be stored.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.572 -0500", hash_original_method = "5B90E4B20FBB0E96385AD394954049F6", hash_generated_method = "0B704924EB1F6AD7648329708ADCA5A7")
     
 public abstract boolean isMwiDontStore();
@@ -302,6 +314,8 @@ public byte[] getPdu() {
      *         See TS 23.040, 9.9.2.3.15 for a description of other possible
      *         values.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.581 -0500", hash_original_method = "133516DDD0D787C1D7D737647A15F491", hash_generated_method = "78DAC92C589514A7EDF05962AC126079")
     
 public abstract int getStatus();
@@ -309,6 +323,8 @@ public abstract int getStatus();
     /**
      * Return true iff the message is a SMS-STATUS-REPORT message.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.585 -0500", hash_original_method = "07C11C5655EC5F1A3A1997AF95C77197", hash_generated_method = "BF48E1AB4852B4ED4CCF418B1996C09E")
     
 public abstract boolean isStatusReportMessage();
@@ -317,6 +333,8 @@ public abstract boolean isStatusReportMessage();
      * Returns true iff the <code>TP-Reply-Path</code> bit is set in
      * this message.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.587 -0500", hash_original_method = "3D83D5F35F081610F4F806A8BA1989DE", hash_generated_method = "D3DE6AB22CA2FD3887B6C91CA718C58B")
     
 public abstract boolean isReplyPathPresent();

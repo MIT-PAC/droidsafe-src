@@ -12,13 +12,10 @@ import android.util.Log;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 class MeasuredText {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.865 -0500", hash_original_method = "A730A63711FAF2BA11082F3B340B807C", hash_generated_method = "4E6EA45AE978894F4D87BFC28F424B02")
     
 static MeasuredText obtain() {
@@ -39,6 +36,8 @@ static MeasuredText obtain() {
         return mt;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.868 -0500", hash_original_method = "1BAFA51CED79ACBA501A721EFAD84840", hash_generated_method = "DAE5FF8228279CA81A7486B6EBB19B06")
     
 static MeasuredText recycle(MeasuredText mt) {
@@ -60,7 +59,6 @@ static MeasuredText recycle(MeasuredText mt) {
 
     private static final boolean localLOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.860 -0500", hash_original_field = "14A59CFC333E208499C98B6D3860ADDD", hash_generated_field = "6FA9B47DB08FC419C50F72FDCF40883C")
-
 
     private static final Object[] sLock = new Object[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.862 -0500", hash_original_field = "AB3E4D5A7F78AED2968C08570B2AE9AB", hash_generated_field = "E84B170D94FAA90534173168110EF774")
@@ -92,12 +90,13 @@ static MeasuredText recycle(MeasuredText mt) {
     int mLen;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.851 -0500", hash_original_field = "25A5DEAC26D49039381CEC3AC02D8D8E", hash_generated_field = "649CC94BF1D5A5FECFE4D2F006B35728")
 
-
     private int mPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.854 -0500", hash_original_field = "B28AC88C47D899E85CEE0110DCCDCA16", hash_generated_field = "BD23BE48855C3EDD93B6A5A7CA353122")
 
     private TextPaint mWorkPaint;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.857 -0500", hash_original_method = "D598B3CBC464CFD963CF00BDB269B2BE", hash_generated_method = "AFF644A9C87997303EA454A23F283D57")
     
 private MeasuredText() {
@@ -107,6 +106,8 @@ private MeasuredText() {
     /**
      * Analyzes text for bidirectional runs.  Allocates working buffers.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.871 -0500", hash_original_method = "AA7EC2CF46DA02829550CC76130A18E2", hash_generated_method = "AA7EC2CF46DA02829550CC76130A18E2")
     
 void setPara(CharSequence text, int start, int end, TextDirectionHeuristic textDir) {
@@ -247,6 +248,8 @@ float addStyleRun(TextPaint paint, MetricAffectingSpan[] spans, int len,
         return wid;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.881 -0500", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "F30A282CEAB73A5948442153B9251096")
     
 int breakText(int start, int limit, boolean forwards, float width) {
@@ -268,6 +271,8 @@ int breakText(int start, int limit, boolean forwards, float width) {
         return limit - start;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.884 -0500", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "053843F92349BBB89263F41FED96E473")
     
 float measure(int start, int limit) {

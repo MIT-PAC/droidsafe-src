@@ -84,6 +84,8 @@ public final static boolean
         return c == PAUSE || c == WAIT;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.352 -0500", hash_original_method = "F868AE21EB899FB020DEBC936A6E152B", hash_generated_method = "45D8A4D90DFC1AA886B53ECAF916CC8F")
     
 private static boolean
@@ -91,6 +93,8 @@ private static boolean
         return c == 'p'||c == 'P';
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.355 -0500", hash_original_method = "77D30713D05D4ED1DFAEEC063717084F", hash_generated_method = "3DE7FDC95044758285A39F217E3251C6")
     
 private static boolean
@@ -99,6 +103,8 @@ private static boolean
     }
 
     /** Returns true if ch is not dialable or alpha char */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.358 -0500", hash_original_method = "85CF1420537B9541711C4FCF41BF1A25", hash_generated_method = "1F51162AE5FD7B556E7AFBCB3F1A3D3C")
     
 private static boolean isSeparator(char ch) {
@@ -294,6 +300,8 @@ public static String convertPreDial(String phoneNumber) {
     }
 
     /** or -1 if both are negative */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.382 -0500", hash_original_method = "45612293FA8EEDD0211FEABD43E17C97", hash_generated_method = "3C831CA419EC7CE3748EE0A6F05278B1")
     
 static private int
@@ -309,6 +317,8 @@ static private int
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.385 -0500", hash_original_method = "DB05E60B51779EDEE5A85D6BA3688CBD", hash_generated_method = "73D02F89C31E4EF7887EA5B6EB937838")
     
 private static void log(String msg) {
@@ -317,6 +327,8 @@ private static void log(String msg) {
     /** index of the last character of the network portion
      *  (eg anything after is a post-dial string)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.388 -0500", hash_original_method = "CA3503A44AF2EBF75D9BE6634816F5BD", hash_generated_method = "2F1D840268C9E28C26FC89221FEC809F")
     
 static private int
@@ -346,6 +358,8 @@ static private int
      *
      * @return the position where the + char will be inserted, -1 if the GSM code was not found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.392 -0500", hash_original_method = "5412F78A6FFD23BF6E67569C9C7086D9", hash_generated_method = "A1A47654BACAD454A83B86CF81070850")
     
 private static int
@@ -734,6 +748,8 @@ public static String
      * Returns the last numDigits of the reversed phone number
      * Returns null if np == null
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.433 -0500", hash_original_method = "D354471DE97D7AAEA65C4CC9D8664F81", hash_generated_method = "6B46BEC57DF751E8331C0A6B42230C36")
     
 private static String
@@ -908,6 +924,8 @@ public static String
         return ret.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.450 -0500", hash_original_method = "1DA55FF5FC6AC864C1B47D3450B3A6D6", hash_generated_method = "4BC5BAFB70888ACA5A632C4653E2EF6C")
     
 private static void
@@ -965,6 +983,8 @@ public static String
     }
 
     /** returns 0 on invalid value */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.458 -0500", hash_original_method = "6BBF92D1C6E8D0EDE6C4F442992FDCAA", hash_generated_method = "D96361B18913B1B8DF9154B1BFF13F95")
     
 private static char
@@ -981,6 +1001,8 @@ private static char
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.462 -0500", hash_original_method = "D9B38AE621A94A7D136B7ACCE59CB7FC", hash_generated_method = "F3FBFED8F593EBD723AB49B6A7ADA562")
     
 private static int
@@ -1029,6 +1051,8 @@ public static boolean isGlobalPhoneNumber(String phoneNumber) {
         return match.matches();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.473 -0500", hash_original_method = "F10D97D241B233A1AD5555B2D68CA84D", hash_generated_method = "0F9D58D8547059E91A29E5A581488E6B")
     
 private static boolean isDialable(String address) {
@@ -1040,6 +1064,8 @@ private static boolean isDialable(String address) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.477 -0500", hash_original_method = "164C0FF3751154C0A9BD1D63E5C99981", hash_generated_method = "15BB8E90268AD9473CDFF40B889D0D32")
     
 private static boolean isNonSeparator(String address) {
@@ -1097,6 +1123,8 @@ public static byte[]
      * If includeLength is true, prepend a one-byte length value to
      * the return array.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.491 -0500", hash_original_method = "3389153632676598B3C0211E28EEF1DE", hash_generated_method = "09BFC38811F1849F3C035834F695D5CF")
     
 private static byte[]
@@ -1364,6 +1392,8 @@ public static void formatJapaneseNumber(Editable text) {
      *
      * @param text the number to clear from dashes
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.547 -0500", hash_original_method = "298AB552332245AFF95538EA4279D4D4", hash_generated_method = "50D1BFC7AAECE48C025D94DD177D8F93")
     
 private static void removeDashes(Editable text) {
@@ -1579,6 +1609,8 @@ public static boolean isPotentialEmergencyNumber(String number) {
      * @return true if the number is in the list of emergency numbers
      *         listed in the RIL / sim, otherwise return false.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.576 -0500", hash_original_method = "37285ED747A36960374A3465C356C231", hash_generated_method = "3827DF70E72AE91F10D6EDEE1DD6AF1F")
     
 private static boolean isEmergencyNumberInternal(String number, boolean useExactMatch) {
@@ -1695,6 +1727,8 @@ public static boolean isPotentialEmergencyNumber(String number, String defaultCo
      *
      * @return true if the number is an emergency number for the specified country.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.586 -0500", hash_original_method = "CB79FF72E5AA03B786B465A966D1C6DF", hash_generated_method = "81C80B715F622ABB2CBDA87FD4BB7C6D")
     
 private static boolean isEmergencyNumberInternal(String number,
@@ -1791,6 +1825,8 @@ public static boolean isPotentialLocalEmergencyNumber(String number, Context con
      *
      * @see android.location.CountryDetector
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.597 -0500", hash_original_method = "96612C398F49F406D66C3575CAB886FB", hash_generated_method = "3009211BA40AE2579361B1980C938E79")
     
 private static boolean isLocalEmergencyNumberInternal(String number,
@@ -2021,6 +2057,8 @@ public static String
      }
 
     // This function gets the default international dialing prefix
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.635 -0500", hash_original_method = "CE701E93949872446157BBE9ECAD64D2", hash_generated_method = "5C783DC2B0314289305BE0318C5A16AA")
     
 private static String getDefaultIdp( ) {
@@ -2032,6 +2070,8 @@ private static String getDefaultIdp( ) {
         return ps;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.639 -0500", hash_original_method = "8B2A426364680DCC80D51C3F849C284B", hash_generated_method = "D2B8ACE6C711ACEF4529BB28202DCF47")
     
 private static boolean isTwoToNine (char c) {
@@ -2042,6 +2082,8 @@ private static boolean isTwoToNine (char c) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.642 -0500", hash_original_method = "532A9297847E5A4BD7745A9593C301A6", hash_generated_method = "133F0A6AB3218927173898344EE66A1A")
     
 private static int getFormatTypeFromCountryCode (String country) {
@@ -2062,6 +2104,8 @@ private static int getFormatTypeFromCountryCode (String country) {
      * This function checks if the passed in string conforms to the NANP format
      * i.e. NXX-NXX-XXXX, N is any digit 2-9 and X is any digit 0-9
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.646 -0500", hash_original_method = "429014701CBDF3E63C4D942F6F6D141A", hash_generated_method = "B62EF7D8E52E9EF213344FDB1A7B0FF5")
     
 private static boolean isNanp (String dialStr) {
@@ -2089,6 +2133,8 @@ private static boolean isNanp (String dialStr) {
    /**
     * This function checks if the passed in string conforms to 1-NANP format
     */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.649 -0500", hash_original_method = "4C14D29B81253845991BCF5FA05DF332", hash_generated_method = "1335544A869314E10256A75BC226BC6C")
     
 private static boolean isOneNanp(String dialStr) {
@@ -2156,6 +2202,8 @@ public static String getUsernameFromUriNumber(String number) {
      * 1)+1NANP,remove +,
      * 2)other than +1NANP, any + numbers,replace + with the current IDP
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.659 -0500", hash_original_method = "84C5DF0BB814E2B994CF01B1B056D342", hash_generated_method = "376E7DFE8900D748A8960D497FE30420")
     
 private static String processPlusCodeWithinNanp(String networkDialStr) {
@@ -2183,6 +2231,8 @@ private static String processPlusCodeWithinNanp(String networkDialStr) {
 
     // This function finds the index of the dialable character(s)
     // in the post dial string
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.663 -0500", hash_original_method = "BD4A493D09E16FABF648801F72081EA4", hash_generated_method = "75C8551D7D331A82F79BA05D08FFE6BD")
     
 private static int findDialableIndexFromPostDialStr(String postDialStr) {
@@ -2197,6 +2247,8 @@ private static int findDialableIndexFromPostDialStr(String postDialStr) {
 
     // This function appends the non-dialable P/W character to the original
     // dial string based on the dialable index passed in
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.667 -0500", hash_original_method = "41DC2CC4DA802A8544E430BC872F3EFD", hash_generated_method = "EB3957498AE44F7D7BE0A56618ECFA28")
     
 private static String
@@ -2230,6 +2282,8 @@ private static String
     /** all of a up to len must be an international prefix or
      *  separators/non-dialing digits
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.670 -0500", hash_original_method = "36F66EFD343D5849BA1CADCA9AD61546", hash_generated_method = "00B5D6CFCA14C26B8E390C5A28B6B3D7")
     
 private static boolean
@@ -2271,6 +2325,8 @@ private static boolean
 
     /** all of 'a' up to len must be a (+|00|011)country code)
      *  We're fast and loose with the country code. Any \d{1,3} matches */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.674 -0500", hash_original_method = "4F741A7A51F1E923707F3A08CA0DFA64", hash_generated_method = "9E5C03E7E7BFA769A4FA8DD1E313E1E2")
     
 private static boolean
@@ -2322,6 +2378,8 @@ private static boolean
     }
 
     /** all of 'a' up to len must match non-US trunk prefix ('0') */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.677 -0500", hash_original_method = "B4C70E997EC0CC2FE1FB1672C0894635", hash_generated_method = "21CC7EDAE46841C772E9773A5857CEF0")
     
 private static boolean
@@ -2346,6 +2404,8 @@ private static boolean
     /**
      * @return true when input is valid Country Calling Code.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.689 -0500", hash_original_method = "DC8924E535E3BE7CAEA9A9E1FDE1AD0C", hash_generated_method = "33E44EBFF435564B163E850435844C94")
     
 private static boolean isCountryCallingCode(int countryCallingCodeCandidate) {
@@ -2358,6 +2418,8 @@ private static boolean isCountryCallingCode(int countryCallingCodeCandidate) {
      * ISO-LATIN characters 0-9.
      * Returns -1 otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.692 -0500", hash_original_method = "076AF69FA4452B4975423A6D4D7C01B2", hash_generated_method = "DC94DD6546D86B4681C6341FA8C70624")
     
 private static int tryGetISODigit(char ch) {
@@ -2469,6 +2531,8 @@ private static CountryCallingCodeAndNewIndex tryGetCountryCallingCodeAndNewIndex
      * "+33123456789" equals "0123456789" (French trunk digit is 0)
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.715 -0500", hash_original_method = "66C826C8182942443823887EE81BC356", hash_generated_method = "351CEC1938395954E97E0058ADAC50B4")
     
 private static int tryGetTrunkPrefixOmittedIndex(String str, int currentIndex) {

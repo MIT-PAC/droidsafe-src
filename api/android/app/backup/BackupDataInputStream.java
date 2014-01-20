@@ -22,6 +22,8 @@ public class BackupDataInputStream extends InputStream {
     byte[] mOneByte;
 
     /** @hide */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.241 -0500", hash_original_method = "C2C10C1477F29698CE48A2404B00FC26", hash_generated_method = "C2C10C1477F29698CE48A2404B00FC26")
     
 BackupDataInputStream(BackupDataInput data) {

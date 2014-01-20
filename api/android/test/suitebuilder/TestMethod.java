@@ -91,6 +91,8 @@ public TestCase createTest()
         return instantiateTest(enclosingClass, testMethodName);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.614 -0500", hash_original_method = "61AE5164C815A2E387BB0A5F097B4DE9", hash_generated_method = "04865E3F3B1D3D83FCAE3057BC0F5A34")
     
 @SuppressWarnings("unchecked")
@@ -119,12 +121,16 @@ public TestCase createTest()
                 + testCaseClass.getName());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.616 -0500", hash_original_method = "FBC2F46CB59FCB97277C0D78D7FF3B06", hash_generated_method = "38140D38D9C3F0D80D661EA9425ED659")
     
 private boolean singleStringConstructor(Class[] params) {
         return (params.length == 1) && (params[0].equals(String.class));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.619 -0500", hash_original_method = "F253E63E2D085BA681D7F5582B501A13", hash_generated_method = "EF7D9BEB350E03B3D7B3F92FE4E27FA9")
     
 private boolean noargsConstructor(Class[] params) {

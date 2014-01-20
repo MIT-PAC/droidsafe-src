@@ -59,6 +59,8 @@ public ProxyProperties(String host, int port, String exclList) {
         setExclusionList(exclList);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.155 -0500", hash_original_method = "BC11E2D42BFC71E7CE241ADFD4F8685E", hash_generated_method = "5AA9D72C7F68D0B185D400832B376459")
     
 private ProxyProperties(String host, int port, String exclList, String[] parsedExclList) {
@@ -114,6 +116,8 @@ public String getExclusionList() {
     }
 
     // comma separated
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.167 -0500", hash_original_method = "BEF68745D535D943EDDB2DD96C1B6EA8", hash_generated_method = "D460AA957E1FB8B20D0706165938EBBF")
     
 private void setExclusionList(String exclusionList) {

@@ -15,6 +15,8 @@ public abstract class Shape implements Cloneable {
 
     private float mHeight;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.862 -0400", hash_original_method = "DE7169FFA3F4BAA3781895C367880AD0", hash_generated_method = "DE7169FFA3F4BAA3781895C367880AD0")
     public Shape ()
     {
@@ -52,6 +54,8 @@ public final float getHeight() {
      * @param canvas the Canvas within which this shape should be drawn
      * @param paint  the Paint object that defines this shape's characteristics
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.801 -0500", hash_original_method = "4FF66B2B9CB8872729DAA8331BAA7F65", hash_generated_method = "186226CA2153FE9A17149A68400BA41E")
     
 public abstract void draw(Canvas canvas, Paint paint);
@@ -87,6 +91,8 @@ public final void resize(float width, float height) {
      * 
      * @return true if any part of the drawable is <em>not</em> opaque. 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.806 -0500", hash_original_method = "E1C0EB5C360EF4564AFB59E1743F2057", hash_generated_method = "DF84950A2941C3F2A1543A61F396C2BD")
     
 public boolean hasAlpha() {
@@ -99,10 +105,14 @@ public boolean hasAlpha() {
      * @param width the new width of the Shape
      * @param height the new height of the Shape
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.808 -0500", hash_original_method = "BE42972290D2C4FCDE54C91B730EEF2B", hash_generated_method = "10737606103A81DBA34BDDD300C5ED40")
     
 protected void onResize(float width, float height) {}
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.810 -0500", hash_original_method = "581DCFE006AA020FE949D9FFE91E7EA5", hash_generated_method = "9FCC5714555E11C6EA6BBEBB14179B05")
     

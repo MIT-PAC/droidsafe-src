@@ -39,6 +39,8 @@ public EmulatedFields(ObjectStreamField[] fields, ObjectStreamField[] declared) 
      *            an array of ObjectStreamField, which describe the fields to be
      *            emulated (names, types, etc).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.340 -0500", hash_original_method = "3EEF58200AED128D87652E78B0B409B1", hash_generated_method = "65F9D2852DE6B216B7C6028C7CC4DADA")
     
 private void buildSlots(ObjectStreamField[] fields) {
@@ -560,6 +562,8 @@ public ObjectSlot[] slots() {
         // assigned (false)
         boolean defaulted = true;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.681 -0400", hash_original_method = "57E475AF330CFB18924297ADFA41ECEA", hash_generated_method = "57E475AF330CFB18924297ADFA41ECEA")
         public ObjectSlot ()
         {

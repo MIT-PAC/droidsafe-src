@@ -69,6 +69,8 @@ protected DatagramChannelImpl(SelectorProvider selectorProvider) throws IOExcept
     /*
      * for native call
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.509 -0500", hash_original_method = "33AAD00A4AE1DFC2263EB97BD11A58AF", hash_generated_method = "66099EB99642DA92B1A9B8C9C0D93F8A")
     
 @SuppressWarnings("unused")
@@ -95,6 +97,8 @@ protected DatagramChannelImpl(SelectorProvider selectorProvider) throws IOExcept
     /**
      * Returns the local address to which the socket is bound.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.515 -0500", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "0E5E291FF84E111D5E99E4DCFA7BD180")
     
@@ -200,6 +204,8 @@ InetAddress getLocalAddress() {
         return retAddr;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.529 -0500", hash_original_method = "A505D0369C23E2979AA10DE303251FF7", hash_generated_method = "657A02EFF136ADF3C116DAD39DC506C1")
     
 private SocketAddress receiveImpl(ByteBuffer target, boolean loop) throws IOException {
@@ -231,6 +237,8 @@ private SocketAddress receiveImpl(ByteBuffer target, boolean loop) throws IOExce
         return retAddr;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.532 -0500", hash_original_method = "3E37D8F586D5D9C430A73700118F801E", hash_generated_method = "86F09F5C9734AE60DC06F23377566DB7")
     
 private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws IOException {
@@ -349,6 +357,8 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
     /*
      * read from channel, and store the result in the target.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.544 -0500", hash_original_method = "FFB1F44E8E8861E1A9AE8DEADE3707A8", hash_generated_method = "3D9E70BF60CF0C531C7F90F70BE1FF8F")
     
 private int readImpl(ByteBuffer dst) throws IOException {
@@ -422,6 +432,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
         return written;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.552 -0500", hash_original_method = "C5D18F36066EF5A8A32922161E6847D8", hash_generated_method = "6FEE4BB97CE71F5E7484F481A02EF38B")
     
 private int writeImpl(ByteBuffer buf) throws IOException {
@@ -459,6 +471,8 @@ private int writeImpl(ByteBuffer buf) throws IOException {
     /*
      * Status check, must be open.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.560 -0500", hash_original_method = "CB491A74BF9C37F6ADAA84B27A2FC899", hash_generated_method = "DD41ADAA14340068E190AE412CC67050")
     
 private void checkOpen() throws IOException {
@@ -470,6 +484,8 @@ private void checkOpen() throws IOException {
     /*
      * Status check, must be open and connected, for read and write.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.562 -0500", hash_original_method = "C4EAE028A2901AB3F43566E69E9E24D8", hash_generated_method = "DD2BB7F26639B16CB62EC70C8AB97DA0")
     
 private void checkOpenConnected() throws IOException {
@@ -482,6 +498,8 @@ private void checkOpenConnected() throws IOException {
     /*
      * Buffer check, must not null
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.566 -0500", hash_original_method = "DE9BF6E7ACC5E7DCC990C5D950818BC0", hash_generated_method = "8D66BA020328633184DC4F66CA3C2381")
     
 private void checkNotNull(ByteBuffer source) {
@@ -508,6 +526,8 @@ public FileDescriptor getFD() {
         /*
          * Constructor initialize the datagramSocketImpl and datagramChannelImpl
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.574 -0500", hash_original_method = "69EFCB277ED141BA204F53D83B183F8E", hash_generated_method = "69EFCB277ED141BA204F53D83B183F8E")
         
 DatagramSocketAdapter(DatagramSocketImpl socketimpl,

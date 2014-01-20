@@ -163,6 +163,8 @@ public ObjectAnimator() {
      * the value of the <code>propertyName</code> parameter.
      * @param propertyName The name of the property being animated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.554 -0500", hash_original_method = "72D05C8CED3E11A756BC68866B4296D0", hash_generated_method = "46ABB29A73B0BECD5A47934583013711")
     
 private ObjectAnimator(Object target, String propertyName) {
@@ -176,6 +178,8 @@ private ObjectAnimator(Object target, String propertyName) {
      * @param target The object whose property is to be animated.
      * @param property The property being animated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.557 -0500", hash_original_method = "F7624EC0BC93A299A0815B7F750DA685", hash_generated_method = "30EA1A433D105EC96F26D1757776D294")
     
 private <T> ObjectAnimator(T target, Property<T, ?> property) {
@@ -352,6 +356,8 @@ public String getPropertyName() {
      *  <p>Overriders of this method should call the superclass method to cause
      *  internal mechanisms to be set up correctly.</p>
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.586 -0500", hash_original_method = "58C84EAE8A6F0E173B983D834F02804C", hash_generated_method = "A5C0BD8252EEC05C3DBED48542EC8BED")
     
 @Override
@@ -452,6 +458,8 @@ public Object getTarget() {
      *
      * @param fraction The elapsed fraction of the animation.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.599 -0500", hash_original_method = "4BDD5FFF3171B4A6B3EE2F328E3988FB", hash_generated_method = "FAD2D93F1AAA4EA78CC5842EE5541188")
     
 @Override

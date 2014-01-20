@@ -44,6 +44,8 @@ public CursorToBulkCursorAdaptor(Cursor cursor, IContentObserver observer,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.715 -0500", hash_original_method = "AD579F119ED4886B2C182C86869C4CD9", hash_generated_method = "59F7A2C56124BED74D0F696A6E6C0859")
     
 private void closeFilledWindowLocked() {
@@ -53,6 +55,8 @@ private void closeFilledWindowLocked() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.717 -0500", hash_original_method = "E626ABF61F7540C19BF105C7958133EC", hash_generated_method = "D3EA8E7F95CEA3C22B60A9CB1E00BE92")
     
 private void disposeLocked() {
@@ -65,6 +69,8 @@ private void disposeLocked() {
         closeFilledWindowLocked();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.720 -0500", hash_original_method = "18B24C6ABC409A0E548E21131FCA3F48", hash_generated_method = "375630E60FD0CCA4F8B04B778992B083")
     
 private void throwIfCursorIsClosed() {
@@ -220,6 +226,8 @@ private void throwIfCursorIsClosed() {
      * @param observer the IContentObserver that wants to monitor the cursor
      * @throws IllegalStateException if an observer is already registered
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.744 -0500", hash_original_method = "1F751777DEFC6D435260F5703D7849F2", hash_generated_method = "7EE27EF1F20A6275792A7B5250FC7943")
     
 private void createAndRegisterObserverProxyLocked(IContentObserver observer) {
@@ -231,6 +239,8 @@ private void createAndRegisterObserverProxyLocked(IContentObserver observer) {
     }
 
     /** Unregister the observer if it is already registered. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.747 -0500", hash_original_method = "8431B5C8F0968484F229748CA95CA0A8", hash_generated_method = "4692BDE8D809837F0CF470CA97A7DFBA")
     
 private void unregisterObserverProxyLocked() {

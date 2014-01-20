@@ -20,11 +20,6 @@ import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameStyle;
 import org.bouncycastle.asn1.x509.X509ObjectIdentifiers;
 
-
-
-
-
-
 public class BCStyle implements X500NameStyle {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.198 -0500", hash_original_field = "14EECF58FF12DE9D1A9B3EDCC3D81AEE", hash_generated_field = "C060850A5B8A43A9641AC7C3AC19DAD7")
 
@@ -233,6 +228,8 @@ public boolean areEqual(X500Name name1, X500Name name2)
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.312 -0500", hash_original_method = "54A0483298F3DFD022315937FBAF5933", hash_generated_method = "3E745317653D6C3DD80B0C0A65CC8360")
     
 private boolean foundMatch(boolean reverse, RDN rdn, RDN[] possRDNs)
@@ -307,6 +304,8 @@ protected boolean rdnAreEqual(RDN rdn1, RDN rdn2)
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.317 -0500", hash_original_method = "9BB2C53F6636F1E7BA3066DC2FBD5F40", hash_generated_method = "21AFE7C629E132C230961AD1A1A741F9")
     
 private boolean atvAreEqual(AttributeTypeAndValue atv1, AttributeTypeAndValue atv2)
@@ -382,6 +381,8 @@ public int calculateHashCode(X500Name name)
         return hashCodeValue;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.326 -0500", hash_original_method = "D9D0265B1123594600F423F1ABB5E8A9", hash_generated_method = "427E59F503130DA5A5103EE91BDFAB18")
     
 private int calcHashCode(ASN1Encodable enc)

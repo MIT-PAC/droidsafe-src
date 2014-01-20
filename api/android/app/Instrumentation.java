@@ -53,7 +53,9 @@ static public Application newApplication(Class<?> clazz, Context context)
         return app;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.271 -0500", hash_original_method = "EA993055DB510E2C2B619EED4CD3438E", hash_generated_method = "2B7FC3687024DFF3E3C0F6C494EB6AC8")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.271 -0500", hash_original_method = "EA993055DB510E2C2B619EED4CD3438E", hash_generated_method = "2B7FC3687024DFF3E3C0F6C494EB6AC8")
     
 static void checkStartActivityResult(int res, Object intent) {
         if (res >= IActivityManager.START_SUCCESS) {
@@ -1207,6 +1209,8 @@ public void stopAllocCounting() {
      * associated with the key. If the key doesn't already exist in results, it
      * adds the key/value pair to results.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.239 -0500", hash_original_method = "8051F011270999D9228A08818EFD61DD", hash_generated_method = "8DA6C0EB41A062AF1C6AD942B2D3E8C3")
     
 private void addValue(String key, int value, Bundle results) {
@@ -1538,6 +1542,8 @@ public final Activity waitForActivityWithTimeout(long timeOut) {
             }
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.123 -0500", hash_original_method = "81CE78024E25171646CA4AFCDB286C47", hash_generated_method = "20EBF901E2F5BB6DA0098EC94B21F575")
         
 final boolean match(Context who,
@@ -1641,6 +1647,8 @@ public void run() {
     
     private static final class EmptyRunnable implements Runnable {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.475 -0400", hash_original_method = "9351A801773C8F1D9056187EA700F8B4", hash_generated_method = "9351A801773C8F1D9056187EA700F8B4")
         public EmptyRunnable ()
         {
@@ -1835,7 +1843,9 @@ public ActivityResult execStartActivity(
         return null;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.268 -0500", hash_original_method = "B2107F3A70ADB2CB9368A3E0EA3587E6", hash_generated_method = "99A5BEA9C463F290223F77DE2D662AA7")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.268 -0500", hash_original_method = "B2107F3A70ADB2CB9368A3E0EA3587E6", hash_generated_method = "99A5BEA9C463F290223F77DE2D662AA7")
     
 final void init(ActivityThread thread,
             Context instrContext, Context appContext, ComponentName component, 
@@ -1848,6 +1858,8 @@ final void init(ActivityThread thread,
         mWatcher = watcher;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.274 -0500", hash_original_method = "F94F35385602BE8879B41CCA4D6F8D26", hash_generated_method = "CC4090B00BAFC1A95057F5CF76475804")
     
 private final void validateNotAppThread() {

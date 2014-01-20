@@ -63,6 +63,8 @@ public ConfigurationInfo(ConfigurationInfo orig) {
         reqGlEsVersion = orig.reqGlEsVersion;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:45.459 -0500", hash_original_method = "7C700DBE05496C6AB562D5FCB315B327", hash_generated_method = "D6E80053319783E448991CF7F142DFD3")
     
 private ConfigurationInfo(Parcel source) {

@@ -36,6 +36,8 @@ public abstract class PhoneBase extends Handler implements Phone {
     /**
      * Common error logger method for unexpected calls to CDMA-only methods.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.722 -0500", hash_original_method = "5895E0F86D6993EE4A5D0827268FD313", hash_generated_method = "45BE346C5C047BF18D7AEBD9932E3EB9")
     
 private static void logUnexpectedCdmaMethodCall(String name)
@@ -47,6 +49,8 @@ private static void logUnexpectedCdmaMethodCall(String name)
     /**
      * Common error logger method for unexpected calls to GSM/WCDMA-only methods.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.727 -0500", hash_original_method = "AD520BE59382A2059D08B3D3D1300653", hash_generated_method = "F781D30AB7A8E1058AC9D8944D576049")
     
 private static void logUnexpectedGsmMethodCall(String name) {
@@ -601,6 +605,8 @@ public void unregisterForMmiComplete(Handler h) {
     /**
      * Method to retrieve the saved operator id from the Shared Preferences
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.464 -0500", hash_original_method = "764E722E685D5D307BCF00BDB294F564", hash_generated_method = "429291A4D4B490626B3FAD3D970FB70C")
     
 private String getSavedNetworkSelection() {
@@ -740,6 +746,8 @@ public SimulatedRadioControl getSimulatedRadioControl() {
      * @exception RuntimeException if the current thread is not
      * the thread that originally obtained this PhoneBase instance.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.496 -0500", hash_original_method = "930052C83226AF8DE91A3B058305558F", hash_generated_method = "CCA9DF7A73C9D116FC06A3AAA0D508BC")
     
 private void checkCorrectThread(Handler h) {
@@ -753,6 +761,8 @@ private void checkCorrectThread(Handler h) {
      * Set the properties by matching the carrier string in
      * a string-array resource
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.500 -0500", hash_original_method = "FDCB651DF17FF9811415182F19CE1B4C", hash_generated_method = "12227064E0EB2B766DBEC91AE4DDE84B")
     
 private void setPropertiesByCarrier() {
@@ -861,6 +871,8 @@ public abstract Phone.State getState();
     /**
      * Retrieves the IccFileHandler of the Phone instance
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.509 -0500", hash_original_method = "BF92A0F8A51D1099AB491A95592785BD", hash_generated_method = "E2D89DDC80711BA95C1FBCD42B9F305C")
     
@@ -1118,10 +1130,14 @@ public boolean isInEcm() {
         return false;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.589 -0500", hash_original_method = "1BE6182806EBB577CA32C99B64FB39FA", hash_generated_method = "ED1B0EB943CE9724358AF3758FCFE781")
     
 public abstract String getPhoneName();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.592 -0500", hash_original_method = "499DD3E62BC2C72F13412D61A0862C5A", hash_generated_method = "282C338128CE2C8CBA7CE01D63BCC199")
     
 public abstract int getPhoneType();
@@ -1458,6 +1474,8 @@ protected void notifyNewRingingConnectionP(Connection cn) {
     /**
      * Notify registrants of a RING event.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.707 -0500", hash_original_method = "E77A37BE6BEB7ED310F1875BE08F1BE3", hash_generated_method = "2080C7DA7AE6CCC7CD8D2101216AD2F0")
     
 private void notifyIncomingRing() {
@@ -1470,6 +1488,8 @@ private void notifyIncomingRing() {
     /**
      * Send the incoming call Ring notification if conditions are right.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.709 -0500", hash_original_method = "E1A10981C368CA09B703B9716F98BBE5", hash_generated_method = "D1AD4B0F56216C5B38E7CBD9AC091AFE")
     
 private void sendIncomingCallRingNotification(int token) {

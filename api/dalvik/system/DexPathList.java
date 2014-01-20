@@ -14,11 +14,6 @@ import java.util.Enumeration;
 import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
 
-
-
-
-
-
 final class DexPathList {
 
     /**
@@ -27,6 +22,8 @@ final class DexPathList {
      * and readable files. (That is, directories are not included in the
      * result.)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.277 -0500", hash_original_method = "0631173DC9A08156235F49544FA05E79", hash_generated_method = "8777EF77154143908F742F2AE2D340C4")
     
 private static ArrayList<File> splitDexPath(String path) {
@@ -40,6 +37,8 @@ private static ArrayList<File> splitDexPath(String path) {
      * from the system library path, and pruning out any elements that
      * do not refer to existing and readable directories.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.280 -0500", hash_original_method = "D610DB71CD37CA41586F87935A2C6BD0", hash_generated_method = "89AA11A1D51AF4F6BBCB9FF648AF2B3C")
     
 private static File[] splitLibraryPath(String path) {
@@ -68,6 +67,8 @@ private static File[] splitLibraryPath(String path) {
      * are empty or {@code null}, or all elements get pruned out, then
      * this returns a zero-element list.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.282 -0500", hash_original_method = "7A346074F9D863A175A6BEFFD5BD4DA4", hash_generated_method = "80C87C96A5ACFA3FDB9272BB0C44971D")
     
 private static ArrayList<File> splitPaths(String path1, String path2,
@@ -83,6 +84,8 @@ private static ArrayList<File> splitPaths(String path1, String path2,
      * Helper for {@link #splitPaths}, which does the actual splitting
      * and filtering and adding to a result.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.285 -0500", hash_original_method = "789B4327777138836797F221198809B4", hash_generated_method = "6FC1F61A0A478FAAB0FE5394A4EFBB03")
     
 private static void splitAndAdd(String path, boolean wantDirectories,
@@ -185,6 +188,8 @@ private static Element[] makeDexElements(ArrayList<File> files,
      * Constructs a {@code DexFile} instance, as appropriate depending
      * on whether {@code optimizedDirectory} is {@code null}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.291 -0500", hash_original_method = "2303A1AD6D6A9E62ECE4D6AAED613FDB", hash_generated_method = "BD8AFB8B702E3B3C2921F2D45A236D29")
     
 private static DexFile loadDexFile(File file, File optimizedDirectory)
@@ -201,6 +206,8 @@ private static DexFile loadDexFile(File file, File optimizedDirectory)
      * Converts a dex/jar file path and an output directory to an
      * output file path for an associated optimized dex file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.294 -0500", hash_original_method = "AC9CA52F95EEC7D238B5030F9E805DDC", hash_generated_method = "2D7D3192756557AF7021EA15D326E0EE")
     
 private static String optimizedPathFor(File path,
@@ -300,7 +307,6 @@ public DexPathList(ClassLoader definingContext, String dexPath,
             makeDexElements(splitDexPath(dexPath), optimizedDirectory);
         this.nativeLibraryDirectories = splitLibraryPath(libraryPath);
     }
-
     
     static class Element {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.307 -0500", hash_original_field = "CF0C1CE75EC12E637A82B051B1AA9983", hash_generated_field = "2F2F994FE64CD70831C1033A4A29832A")
@@ -346,7 +352,6 @@ public URL findResource(String name) {
                 throw new RuntimeException(ex);
             }
         }
-
         
     }
 

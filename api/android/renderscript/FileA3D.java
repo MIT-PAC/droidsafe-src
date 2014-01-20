@@ -112,12 +112,13 @@ static public FileA3D createFromResource(RenderScript rs, Resources res, int id)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.423 -0500", hash_original_field = "15F257B2B58A2F7DD1DF612124F55DC1", hash_generated_field = "15F257B2B58A2F7DD1DF612124F55DC1")
 
-
     IndexEntry[] mFileEntries;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.425 -0500", hash_original_field = "514FB88864F91247F240CC01D2ACC68C", hash_generated_field = "514FB88864F91247F240CC01D2ACC68C")
 
     InputStream mInputStream;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.428 -0500", hash_original_method = "91271D1D3E9059341D099747D061D3F2", hash_generated_method = "91271D1D3E9059341D099747D061D3F2")
     
 FileA3D(int id, RenderScript rs, InputStream stream) {
@@ -125,6 +126,8 @@ FileA3D(int id, RenderScript rs, InputStream stream) {
         mInputStream = stream;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.430 -0500", hash_original_method = "269B092AF0EC3A5F2942611AA8A98D07", hash_generated_method = "2FCF1440FC8F457DCE537A7C0DB485DF")
     
 private void initEntries() {
@@ -174,13 +177,11 @@ public IndexEntry getIndexEntry(int index) {
         }
         return mFileEntries[index];
     }
-
     
     public enum EntryType {
         UNKNOWN (0),
         MESH (1);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.382 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
-
 
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.385 -0500", hash_original_method = "2F37A1A6EA27CDE145768A1C14F98CCA", hash_generated_method = "2F37A1A6EA27CDE145768A1C14F98CCA")
@@ -195,7 +196,6 @@ static EntryType toEntryType(int intID) {
             return EntryType.values()[intID];
         }
     }
-
     
     public static class IndexEntry {
 
@@ -304,11 +304,8 @@ public BaseObj getObject() {
 public Mesh getMesh() {
             return (Mesh)getObject();
         }
-
         
     }
-
-
     
 }
 

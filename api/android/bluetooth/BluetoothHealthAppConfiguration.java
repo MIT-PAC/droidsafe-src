@@ -52,6 +52,8 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
      * @param dataType Data Type of the remote Bluetooth Health device
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.797 -0500", hash_original_method = "F1CCBE170029B3726B6812F4B24EEA34", hash_generated_method = "F1CCBE170029B3726B6812F4B24EEA34")
     
 BluetoothHealthAppConfiguration(String name, int dataType) {
@@ -70,6 +72,8 @@ BluetoothHealthAppConfiguration(String name, int dataType) {
      *                     {@link BluetoothHealth#SINK_ROLE}
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.800 -0500", hash_original_method = "C6E2AF4F2B152BF94119581EC8280111", hash_generated_method = "C6E2AF4F2B152BF94119581EC8280111")
     
 BluetoothHealthAppConfiguration(String name, int dataType, int role, int

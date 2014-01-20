@@ -139,6 +139,8 @@ public synchronized void disablePlatformNotifications() {
      * Because our IntentReceiver can run within a different thread,
      * synchronize setting the proxy
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.287 -0500", hash_original_method = "381746B4CF404D7B9FDB43420AECD746", hash_generated_method = "401A74B2C59723BB96BCE7B323DDB294")
     
 private synchronized void setProxyConfig() {
@@ -263,6 +265,8 @@ public RequestHandle queueSynchronousRequest(String url, WebAddress uri,
     }
 
     // Chooses between the proxy and the request's host.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.316 -0500", hash_original_method = "19FC52B8DC895C49DAE0ECA4EB6CA639", hash_generated_method = "1FB9EE31513A97342E093BC26F601324")
     
 private HttpHost determineHost(HttpHost host) {
@@ -279,6 +283,8 @@ private HttpHost determineHost(HttpHost host) {
     /**
      * @return true iff there are any non-active requests pending
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.318 -0500", hash_original_method = "EFE82EE341DC6BD22EFE3AAE27ABB231", hash_generated_method = "4731BE1B4112D1C43085365BEE4FB6A3")
     
 synchronized boolean requestsPending() {
@@ -288,6 +294,8 @@ synchronized boolean requestsPending() {
     /**
      * debug tool: prints request queue to log
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.321 -0500", hash_original_method = "5E944A5C3AFB2FB0842C37E33C83D8D2", hash_generated_method = "F8482D0B2DB6C94B3879481A48D509CB")
     
 synchronized void dump() {
@@ -442,6 +450,8 @@ ActivePool(int connectionCount) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.246 -0500", hash_original_method = "1219F5054D15C8BA85E10250B0465A48", hash_generated_method = "1219F5054D15C8BA85E10250B0465A48")
         
 void startup() {
@@ -450,6 +460,8 @@ void startup() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.248 -0500", hash_original_method = "3DBC0C51372089E9236025C3C2E89B00", hash_generated_method = "3DBC0C51372089E9236025C3C2E89B00")
         
 void shutdown() {
@@ -458,6 +470,8 @@ void shutdown() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.250 -0500", hash_original_method = "918E02281CDA2E4E4F9A4B76A9977FCD", hash_generated_method = "918E02281CDA2E4E4F9A4B76A9977FCD")
         
 void startConnectionThread() {
@@ -494,6 +508,8 @@ public void stopTiming() {
                     + " new connections");
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.258 -0500", hash_original_method = "D3242BE060800C50D95BDC78717491BA", hash_generated_method = "D3242BE060800C50D95BDC78717491BA")
         
 void logState() {
@@ -514,6 +530,8 @@ public HttpHost getProxyHost() {
         /**
          * Turns off persistence on all live connections
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.262 -0500", hash_original_method = "0E1F656010AA811F93614A0AAB8C062E", hash_generated_method = "0E1F656010AA811F93614A0AAB8C062E")
         
 void disablePersistence() {
@@ -527,6 +545,8 @@ void disablePersistence() {
         /* Linear lookup -- okay for small thread counts.  Might use
            private HashMap<HttpHost, LinkedList<ConnectionThread>> mActiveMap;
            if this turns out to be a hotspot */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.264 -0500", hash_original_method = "4350BDA0BFA960DC6ECB5B267907B720", hash_generated_method = "4350BDA0BFA960DC6ECB5B267907B720")
         
@@ -569,6 +589,8 @@ public boolean recycleConnection(Connection connection) {
 
         // requeued into the RequestFeeder.
         private Request mRequest;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.300 -0500", hash_original_method = "4463F8298E503AEAFD22486DF3099826", hash_generated_method = "4463F8298E503AEAFD22486DF3099826")
         
 SyncFeeder() {
@@ -607,6 +629,8 @@ public void requeueRequest(Request r) {
     }
 
     /* helper */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.341 -0500", hash_original_method = "F363C5354CB9B81208E7FAC033526D24", hash_generated_method = "815D37DEB1C4D2F5ECFD6CB9AC1080AB")
     
 private Request removeFirst(LinkedHashMap<HttpHost, LinkedList<Request>> requestQueue) {

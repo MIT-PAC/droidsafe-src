@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERTaggedObject extends ASN1TaggedObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.509 -0500", hash_original_field = "1507DFE3BF5B3D43C3BD2E67A32D2AD2", hash_generated_field = "DC855D7D38FB2BD504042CC7CEABD828")
 
@@ -56,6 +51,8 @@ public DERTaggedObject(
         super(false, tagNo, new DERSequence());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.520 -0500", hash_original_method = "B5277AF27C85DE4A4669302802507303", hash_generated_method = "90565862AA4F3BE71662FB46ACA23367")
     
 void encode(

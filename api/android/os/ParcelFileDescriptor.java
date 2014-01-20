@@ -86,6 +86,8 @@ public static ParcelFileDescriptor fromFd(int fd) throws IOException {
         return new ParcelFileDescriptor(fdesc);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static FileDescriptor getFileDescriptorFromFd(int fd) throws IOException {
     	return new FileDescriptor();
     }
@@ -107,6 +109,8 @@ public static ParcelFileDescriptor adoptFd(int fd) {
         return new ParcelFileDescriptor(fdesc);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static FileDescriptor getFileDescriptorFromFdNoDup(int fd) {
     	return new FileDescriptor();
     }
@@ -162,6 +166,8 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
         return pfds;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void createPipeNative(FileDescriptor[] outFds) throws IOException {
     }
 
@@ -249,7 +255,9 @@ public ParcelFileDescriptor(ParcelFileDescriptor descriptor) {
         mFileDescriptor = mParcelDescriptor.mFileDescriptor;
     }
 
-    /*package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.107 -0500", hash_original_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2", hash_generated_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2")
+    /*package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.107 -0500", hash_original_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2", hash_generated_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2")
     
 ParcelFileDescriptor(FileDescriptor descriptor) {
         super();
@@ -379,6 +387,8 @@ public int getFd() {
         return getFdNative();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.073 -0500", hash_original_method = "48F8D374A617845984C88F484B28408C", hash_generated_method = "768CDDF19E2CFAF4C00BC3EFCDC28732")
     
     private int getFdNative(){

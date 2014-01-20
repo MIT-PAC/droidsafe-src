@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public enum RoundingMode {
     UP(BigDecimal.ROUND_UP),
     DOWN(BigDecimal.ROUND_DOWN),
@@ -35,6 +33,8 @@ RoundingMode(int rm) {
      *            rounding mode constant as defined in class {@code BigDecimal}
      * @return corresponding rounding mode object
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.219 -0500", hash_original_method = "8AF09B5D366A401DF81A235731D1CF87", hash_generated_method = "EE63D446A942918C26C550E4D9CD88D0")
         
 public static RoundingMode valueOf(int mode) {

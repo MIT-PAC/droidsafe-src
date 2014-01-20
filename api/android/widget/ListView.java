@@ -121,6 +121,8 @@ public int getMaxScrollAmount() {
      * Make sure views are touching the top or bottom edge, as appropriate for
      * our gravity
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.189 -0500", hash_original_method = "C98C1C3289511C3CD05158CF07015375", hash_generated_method = "4B06B7DA9AFCA961A27A7E6E2AFFFDDE")
     
 private void adjustViewsUpOrDown() {
@@ -254,6 +256,8 @@ public boolean removeHeaderView(View v) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.201 -0500", hash_original_method = "56A07A9A1AC012F692F90759B155683C", hash_generated_method = "3AA47336953230010BA3D3E6F8F9A632")
     
 private void removeFixedViewInfo(View v, ArrayList<FixedViewInfo> where) {
@@ -373,8 +377,8 @@ public boolean removeFooterView(View v) {
         super.setRemoteViewsAdapter(intent);
     }
     
-    @DSComment("ListView")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	
 	public void setAdapter(ListAdapter adapter) {
@@ -442,6 +446,8 @@ public boolean removeFooterView(View v) {
     /**
      * The list is empty. Clear everything out.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.221 -0500", hash_original_method = "2C61A8961B533B2EFAE2B5516136BD48", hash_generated_method = "26C2B10AFDA526EBD3AE5E8875BB8BDD")
     
 @Override
@@ -456,6 +462,8 @@ public boolean removeFooterView(View v) {
         mLayoutMode = LAYOUT_NORMAL;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.223 -0500", hash_original_method = "917FCC60A4286C5138F872CFDA18A6AE", hash_generated_method = "833B359465DE0427EC0C1B464B542A37")
     
 private void clearRecycledState(ArrayList<FixedViewInfo> infos) {
@@ -475,6 +483,8 @@ private void clearRecycledState(ArrayList<FixedViewInfo> infos) {
     /**
      * @return Whether the list needs to show the top fading edge
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.226 -0500", hash_original_method = "AE08170EA161B6A1BF0E53E679181532", hash_generated_method = "E99EC7FA086AFFD53CE78C3E2C60DFF7")
     
 private boolean showingTopFadingEdge() {
@@ -485,6 +495,8 @@ private boolean showingTopFadingEdge() {
     /**
      * @return Whether the list needs to show the bottom fading edge
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.228 -0500", hash_original_method = "471206817827115E6FDE8330BC3BFE06", hash_generated_method = "3885AC819B7A36887E76497C51D45C45")
     
 private boolean showingBottomFadingEdge() {
@@ -579,6 +591,8 @@ private boolean showingBottomFadingEdge() {
         return scroll;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override
 	void fillGap(boolean down) {
 		// TODO Auto-generated method stub
@@ -595,6 +609,8 @@ private boolean showingBottomFadingEdge() {
      * @return The view that is currently selected, if it happens to be in the
      *         range that we draw.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.237 -0500", hash_original_method = "A51DD6537C0400974E1B605AE841C465", hash_generated_method = "F4555E8F55AFB244C40B5C6733FA4C7A")
     
 private View fillDown(int pos, int nextTop) {
@@ -630,6 +646,8 @@ private View fillDown(int pos, int nextTop) {
      *
      * @return The view that is currently selected
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.239 -0500", hash_original_method = "05C528C2066045A21E9535AE6FF4CD3D", hash_generated_method = "7FC6F678059DC4C8F2D7F453905F534B")
     
 private View fillUp(int pos, int nextBottom) {
@@ -664,6 +682,8 @@ private View fillUp(int pos, int nextBottom) {
      *
      * @return The view that is currently selected
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.241 -0500", hash_original_method = "E858B13EC4F52DD7B2125F2E9BA15919", hash_generated_method = "56583347CE4DAE881DB0E0B40B64B1D2")
     
 private View fillFromTop(int nextTop) {
@@ -685,6 +705,8 @@ private View fillFromTop(int nextTop) {
      *        as measured in pixels
      * @return Currently selected view
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.244 -0500", hash_original_method = "BB6F12E082A75859BCEF500D953CB8EE", hash_generated_method = "77669E5E2E2E9E3420F4EC1BD5E0EDB7")
     
 private View fillFromMiddle(int childrenTop, int childrenBottom) {
@@ -719,6 +741,8 @@ private View fillFromMiddle(int childrenTop, int childrenBottom) {
      * @param sel The selected view
      * @param position The position corresponding to sel
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.247 -0500", hash_original_method = "E7EAC0AC74052E989A5F3C8A8979A51D", hash_generated_method = "397E4D71254ADC49C2D37EA85C52BDCF")
     
 private void fillAboveAndBelow(View sel, int position) {
@@ -744,6 +768,8 @@ private void fillAboveAndBelow(View sel, int position) {
      * @param childrenBottom Last pixel where children can be drawn
      * @return The view that currently has selection
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.250 -0500", hash_original_method = "439BAC8174DEF92DB2EFE731B080B752", hash_generated_method = "34D6550190D69FAA6F588BBB6D31FA85")
     
 private View fillFromSelection(int selectedTop, int childrenTop, int childrenBottom) {
@@ -806,6 +832,8 @@ private View fillFromSelection(int selectedTop, int childrenTop, int childrenBot
      * @param selectedPosition The position that will be selected
      * @return The bottom-most pixel we can draw the selection into
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.252 -0500", hash_original_method = "DDE472821830C07DE1368C905BA02EE1", hash_generated_method = "886483FEF9232076250A658FCC8FD11C")
     
 private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
@@ -825,6 +853,8 @@ private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
      * @param selectedPosition The position that will be selected
      * @return The top-most pixel we can draw the selection into
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.254 -0500", hash_original_method = "173BB2BFF18272B67A930A02164FEB0F", hash_generated_method = "FA5EB2D447AE7E3C330D6E2E9FA7FBB8")
     
 private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int selectedPosition) {
@@ -877,6 +907,8 @@ private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int sele
      * @param childrenBottom Last pixel where children can be drawn
      * @return The view that currently has selection
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.264 -0500", hash_original_method = "A6BE2578E6D412634113B39CFD73986F", hash_generated_method = "1DAFB44181A2B5C36C4DF9798EEB6703")
     
 private View moveSelection(View oldSel, View newSel, int delta, int childrenTop,
@@ -1089,6 +1121,8 @@ private View moveSelection(View oldSel, View newSel, int delta, int childrenTop,
         mWidthMeasureSpec = widthMeasureSpec;        
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.284 -0500", hash_original_method = "F21C4EE74005F045F306FF7685001DDA", hash_generated_method = "A2D09C9120F3F83EBF7780E64ADAA803")
     
 private void measureScrapChild(View child, int position, int widthMeasureSpec) {
@@ -1215,6 +1249,8 @@ final int measureHeightOfChildren(int widthMeasureSpec, int startPosition, int e
         return returnedHeight;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override
 	int findMotionRow(int y) {
 		// TODO Auto-generated method stub
@@ -1232,6 +1268,8 @@ final int measureHeightOfChildren(int widthMeasureSpec, int startPosition, int e
      * @return The selected view, or null if the selected view is outside the
      *         visible area.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.295 -0500", hash_original_method = "C0E9548D6FEBBB39DCAB5DD502EC06AD", hash_generated_method = "D39D8B79B28699344B30CF82A503E4E0")
     
 private View fillSpecific(int position, int top) {
@@ -1280,6 +1318,8 @@ private View fillSpecific(int position, int top) {
      *
      * @param childCount Number of children
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.298 -0500", hash_original_method = "C65533A90B04CD548C8B98EAAB2119A6", hash_generated_method = "AF5446B5C911B4C540F3AF6999AEC3A4")
     
 private void correctTooHigh(int childCount) {
@@ -1331,6 +1371,8 @@ private void correctTooHigh(int childCount) {
      *
      * @param childCount Number of children
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.301 -0500", hash_original_method = "D798F76D04F235C59E38C4C924A6B5C2", hash_generated_method = "FAC0E986F681F7BE1E346F1C463ED22C")
     
 private void correctTooLow(int childCount) {
@@ -1642,6 +1684,8 @@ private void correctTooLow(int childCount) {
      * @param child a direct child of this list.
      * @return Whether child is a header or footer view.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.311 -0500", hash_original_method = "1975AA11D0AB4A92B498BEF09326AA69", hash_generated_method = "4154DF7AA840953F47E6D4A4AC142901")
     
 private boolean isDirectChildHeaderOrFooter(View child) {
@@ -1676,6 +1720,8 @@ private boolean isDirectChildHeaderOrFooter(View child) {
      * @param selected Is this position selected?
      * @return View that was added
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.314 -0500", hash_original_method = "EAF848DCFCD435D3CED323F008D83518", hash_generated_method = "C0C7BDD10DF621C4F2D590F2E84C235A")
     
 private View makeAndAddView(int position, int y, boolean flow, int childrenLeft,
@@ -1722,6 +1768,8 @@ private View makeAndAddView(int position, int y, boolean flow, int childrenLeft,
      * @param recycled Has this view been pulled from the recycle bin? If so it
      *        does not need to be remeasured.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.318 -0500", hash_original_method = "06B6C56B5992091F7319E58A5C4AE35A", hash_generated_method = "53701AC971C45AE450DD1DE8DA47CA5A")
     
 private void setupChild(View child, int position, int y, boolean flowDown, int childrenLeft,
@@ -1864,6 +1912,8 @@ public void setSelectionFromTop(int position, int y) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	void setSelectionInt(int position) {
@@ -1878,6 +1928,8 @@ public void setSelectionFromTop(int position, int y) {
      * @return The next selectable position starting at position and then searching either up or
      *         down. Returns {@link #INVALID_POSITION} if nothing can be found.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.331 -0500", hash_original_method = "F611253C286EB5F8129DFD60BE22D44F", hash_generated_method = "919DB1A574A34EE860ADDDF078FE731B")
     
 @Override
@@ -1974,6 +2026,8 @@ public void setSelectionAfterHeaderView() {
         return commonKey(keyCode, 1, event);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.348 -0500", hash_original_method = "1DD47D400FE7B21B7ADCD2D234FB64A7", hash_generated_method = "6C43D83C6F4D105A7792B80D392A7B0F")
     
 private boolean commonKey(int keyCode, int count, KeyEvent event) {
@@ -2134,6 +2188,8 @@ private boolean commonKey(int keyCode, int count, KeyEvent event) {
      * @param direction either {@link View#FOCUS_UP} or {@link View#FOCUS_DOWN}
      * @return whether selection was moved
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.350 -0500", hash_original_method = "CFFD02C88D512DC860E9CC0FE1096C45", hash_generated_method = "CFFD02C88D512DC860E9CC0FE1096C45")
     
 boolean pageScroll(int direction) {
@@ -2182,6 +2238,8 @@ boolean pageScroll(int direction) {
      *
      * @return whether selection was moved
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.353 -0500", hash_original_method = "8893A9BFD4970E039D8D32407D02C15E", hash_generated_method = "8893A9BFD4970E039D8D32407D02C15E")
     
 boolean fullScroll(int direction) {
@@ -2223,6 +2281,8 @@ boolean fullScroll(int direction) {
      * @param direction one of {View.FOCUS_LEFT, View.FOCUS_RIGHT}
      * @return Whether this consumes the key event.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.356 -0500", hash_original_method = "27083050B4DD915BDC5D45A692A1DFB7", hash_generated_method = "5D8D5205C46F5979CA7E985C63984DA0")
     
 private boolean handleHorizontalFocusWithinListItem(int direction) {
@@ -2270,6 +2330,8 @@ private boolean handleHorizontalFocusWithinListItem(int direction) {
      *
      * @return whether selection was moved
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.359 -0500", hash_original_method = "6B5D7DFA7F5B692B993CC3912D59B646", hash_generated_method = "6B5D7DFA7F5B692B993CC3912D59B646")
     
 boolean arrowScroll(int direction) {
@@ -2292,6 +2354,8 @@ boolean arrowScroll(int direction) {
      * @param direction Either {@link android.view.View#FOCUS_UP} or {@link android.view.View#FOCUS_DOWN}.
      * @return Whether any scrolling, selection or focus change occured.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.363 -0500", hash_original_method = "5F8F1549FF6A2936584D81A340335636", hash_generated_method = "5BA1C973DC010B01221EFF58C702D710")
     
 private boolean arrowScrollImpl(int direction) {
@@ -2385,6 +2449,8 @@ private boolean arrowScrollImpl(int direction) {
      * @param newFocusAssigned whether new focus was assigned.  This matters because
      *        when something has focus, we don't want to show selection (ugh).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.366 -0500", hash_original_method = "5F7DFDAF299194D301FC447E78E3FD87", hash_generated_method = "C4CEAE19CEAE99E4E4C2197B865D333A")
     
 private void handleNewSelectionChange(View selectedView, int direction, int newSelectedPosition,
@@ -2438,6 +2504,8 @@ private void handleNewSelectionChange(View selectedView, int direction, int newS
      * @param childIndex The view group index of the child.
      * @param numChildren The number of children in the view group.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.368 -0500", hash_original_method = "D9B7EDD91437C9CF7E31BD236F25B8F3", hash_generated_method = "069FA18CB3D91513A755E62D6A4898A5")
     
 private void measureAndAdjustDown(View child, int childIndex, int numChildren) {
@@ -2460,6 +2528,8 @@ private void measureAndAdjustDown(View child, int childIndex, int numChildren) {
      * TODO: unify with setUpChild.
      * @param child The child.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.371 -0500", hash_original_method = "195C1D433E8B0F15028E4D73EB2D6DE2", hash_generated_method = "67E474B376AEA4F08E527A862E401D81")
     
 private void measureItem(View child) {
@@ -2487,6 +2557,8 @@ private void measureItem(View child) {
      * TODO: unify with setUpChild.
      * @param child The child.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.373 -0500", hash_original_method = "69D49227DB6AC5D384C2E3A710CB930F", hash_generated_method = "0C9E256E310058EA1873381CA2B00688")
     
 private void relayoutMeasuredItem(View child) {
@@ -2502,6 +2574,8 @@ private void relayoutMeasuredItem(View child) {
     /**
      * @return The amount to preview next items when arrow srolling.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.375 -0500", hash_original_method = "42F2E28C8994E7757E02659DFEBDEFA8", hash_generated_method = "83F0B808071233543CDA0F5E201BA2CB")
     
 private int getArrowScrollPreviewLength() {
@@ -2520,6 +2594,8 @@ private int getArrowScrollPreviewLength() {
      * @return The amount to scroll. Note: this is always positive!  Direction
      *         needs to be taken into account when actually scrolling.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.379 -0500", hash_original_method = "0CBCA538A833739B1FF13F8466C4BF4D", hash_generated_method = "5DCA661D907C6C4653DD5BBC355142A1")
     
 private int amountToScroll(int direction, int nextSelectedPosition) {
@@ -2602,6 +2678,8 @@ private int amountToScroll(int direction, int nextSelectedPosition) {
      *         be no selection.  Returns {@link #INVALID_POSITION} if there is no
      *         selectable view on screen in the given direction.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.396 -0500", hash_original_method = "760C70065AEFE7BC7EE2B10D159765ED", hash_generated_method = "C39A5F93696D99D4932B489F820CEB1F")
     
 private int lookForSelectablePositionOnScreen(int direction) {
@@ -2728,6 +2806,8 @@ private ArrowScrollFocusResult arrowScrollFocused(final int direction) {
      * @param newFocus The view that would have focus.
      * @return the position that contains newFocus
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.403 -0500", hash_original_method = "E7A74EC59726801D8AE9EB276549022E", hash_generated_method = "13F164A885A765E3B0B42BED2EA3C4C8")
     
 private int positionOfNewFocus(View newFocus) {
@@ -2745,6 +2825,8 @@ private int positionOfNewFocus(View newFocus) {
     /**
      * Return true if child is an ancestor of parent, (or equal to the parent).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.405 -0500", hash_original_method = "3B08BDE00067F884387760F12D698F42", hash_generated_method = "90A061C63C0EE738AA3B18172571066F")
     
 private boolean isViewAncestorOf(View child, View parent) {
@@ -2765,6 +2847,8 @@ private boolean isViewAncestorOf(View child, View parent) {
      * @return The amount to scroll.  Note: this is always positive!  Direction
      *   needs to be taken into account when actually scrolling.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.407 -0500", hash_original_method = "972857949DC34A723A630B605759B3EF", hash_generated_method = "6043D574A03A320A084B8AA74F10E249")
     
 private int amountToScrollToNewFocus(int direction, View newFocus, int positionOfNewFocus) {
@@ -2797,6 +2881,8 @@ private int amountToScrollToNewFocus(int direction, View newFocus, int positionO
      * @param descendant A descendant of this list.
      * @return The distance, or 0 if the nearest edge is already on screen.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.410 -0500", hash_original_method = "2468FB71A40A0019FA8D57CEA81AC8A6", hash_generated_method = "B71728294A7ADAA6224D584B4DB6A1F8")
     
 private int distanceToView(View descendant) {
@@ -2818,6 +2904,8 @@ private int distanceToView(View descendant) {
      *
      * @param amount The amount (positive or negative) to scroll.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.414 -0500", hash_original_method = "FAA0316A71F66D005638E2A277415AFB", hash_generated_method = "580877947D20840DFCDE16EC41EA7F37")
     
 private void scrollListItemsBy(int amount) {
@@ -2896,6 +2984,8 @@ private void scrollListItemsBy(int amount) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.416 -0500", hash_original_method = "9F36487536DE2965CEF1C4C9236F1DF4", hash_generated_method = "77870030F0AC6C58CAE58B279073313D")
     
 private View addViewAbove(View theView, int position) {
@@ -2907,6 +2997,8 @@ private View addViewAbove(View theView, int position) {
         return view;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.418 -0500", hash_original_method = "D4F2FE3018B44C78CF4E93EBC6FE5FC7", hash_generated_method = "75D6A1D4B7D45753306AAD89B83B724C")
     
 private View addViewBelow(View theView, int position) {
@@ -2987,6 +3079,8 @@ public boolean getItemsCanFocus() {
         super.setCacheColorHint(color);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.430 -0500", hash_original_method = "9A5C934D25A361940ECD1D897C78B567", hash_generated_method = "9A5C934D25A361940ECD1D897C78B567")
     
 void drawOverscrollHeader(Canvas canvas, Drawable drawable, Rect bounds) {
@@ -3006,6 +3100,8 @@ void drawOverscrollHeader(Canvas canvas, Drawable drawable, Rect bounds) {
         canvas.restore();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.433 -0500", hash_original_method = "3C862E16BE3AA71DC427E03E79AFA46F", hash_generated_method = "3C862E16BE3AA71DC427E03E79AFA46F")
     
 void drawOverscrollFooter(Canvas canvas, Drawable drawable, Rect bounds) {
@@ -3201,6 +3297,8 @@ void drawOverscrollFooter(Canvas canvas, Drawable drawable, Rect bounds) {
      *            This will be -1 if there is no child above the divider to be
      *            drawn.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.444 -0500", hash_original_method = "AB3CC143C94AF212348DFB5018C60850", hash_generated_method = "B2EF44B3A7B822E184164B205FA8E5FC")
     
 void drawDivider(Canvas canvas, Rect bounds, int childIndex) {
@@ -3454,6 +3552,8 @@ public Drawable getOverscrollFooter() {
      *
      * Look in the passed in list of headers or footers for the view.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.476 -0500", hash_original_method = "CE5790FF46C8EC9157EF966632ADD833", hash_generated_method = "CE5790FF46C8EC9157EF966632ADD833")
     
 View findViewInHeadersOrFooters(ArrayList<FixedViewInfo> where, int id) {
@@ -3504,6 +3604,8 @@ View findViewInHeadersOrFooters(ArrayList<FixedViewInfo> where, int id) {
      *
      * Look in the passed in list of headers or footers for the view with the tag.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.480 -0500", hash_original_method = "FB5700AACE78A96EA34C4186153EA1D8", hash_generated_method = "FB5700AACE78A96EA34C4186153EA1D8")
     
 View findViewWithTagInHeadersOrFooters(ArrayList<FixedViewInfo> where, Object tag) {
@@ -3583,6 +3685,8 @@ public void run() {
 
         private int mAmountToScroll;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.901 -0400", hash_original_method = "F12FA46FC2E286992F273AF0197118D3", hash_generated_method = "F12FA46FC2E286992F273AF0197118D3")
         public ArrowScrollFocusResult ()
         {
@@ -3592,6 +3696,8 @@ public void run() {
         /**
          * How {@link android.widget.ListView#arrowScrollFocused} returns its values.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.387 -0500", hash_original_method = "E4C7C1A71AB7D603722F7CE31ED09575", hash_generated_method = "E4C7C1A71AB7D603722F7CE31ED09575")
         
 void populate(int selectedPosition, int amountToScroll) {

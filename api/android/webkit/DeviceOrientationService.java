@@ -13,13 +13,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Handler;
 
-
-
-
-
 final class DeviceOrientationService implements SensorEventListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.637 -0500", hash_original_field = "30DB8291403D11AAB709408A31447F79", hash_generated_field = "4E3D251C42A5CB0D1F6817ECA2EF0DA8")
-
 
     private static final double DELTA_DEGRESS = 1.0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.613 -0500", hash_original_field = "3710C3B52AF0B64B41D5AA0DD08D7E67", hash_generated_field = "9C5FFC7AB264A9E2409475E7791D4532")
@@ -29,7 +24,6 @@ final class DeviceOrientationService implements SensorEventListener {
 
     private float[] mMagneticFieldVector;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.617 -0500", hash_original_field = "ADF7031C73AC58838DF2C97D4D015C9D", hash_generated_field = "66D108DFC043A6E0A2844E4843186070")
-
 
     private DeviceMotionAndOrientationManager mManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.620 -0500", hash_original_field = "F57A6C5BD72C70EB93523745929F338F", hash_generated_field = "B2DDC5809B05187D32A84097DC68019C")
@@ -96,6 +90,8 @@ public void resume() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.653 -0500", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "95ABA55925D955ACFDEC810BAB37F09C")
     
 private void sendErrorEvent() {
@@ -116,6 +112,8 @@ private void sendErrorEvent() {
         });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.656 -0500", hash_original_method = "A01419D47FD253423887BAF542AEFD8C", hash_generated_method = "4355C08A56FDAFBB5A86EAAA5B9C1F88")
     
 private void registerForSensors() {
@@ -128,6 +126,8 @@ private void registerForSensors() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.658 -0500", hash_original_method = "A3B30EF17FDC8C38C5B1B85F341CAEE6", hash_generated_method = "200B33FB012130D2EAADF8509F9BD3C4")
     
 private void getOrientationUsingGetRotationMatrix() {
@@ -161,6 +161,8 @@ private void getOrientationUsingGetRotationMatrix() {
         maybeSendChange(alpha, beta, gamma);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.661 -0500", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "FEB2F552C044EE42CFEE371617B0383D")
     
 private SensorManager getSensorManager() {
@@ -171,6 +173,8 @@ private SensorManager getSensorManager() {
         return mSensorManager;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.663 -0500", hash_original_method = "B3284C523F8E8DEDA1572FA7CE19585B", hash_generated_method = "7380B0290872694DF42C283F87CB83B0")
     
 private boolean registerForAccelerometerSensor() {
@@ -183,6 +187,8 @@ private boolean registerForAccelerometerSensor() {
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.666 -0500", hash_original_method = "DFE78C89ABF5437F78B53A9E5486BEA8", hash_generated_method = "3035649FC5F676D4337711BD20C3FAAF")
     
 private boolean registerForMagneticFieldSensor() {
@@ -195,12 +201,16 @@ private boolean registerForMagneticFieldSensor() {
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.668 -0500", hash_original_method = "3017DC11BC04FDEC5E6982352A18F2D7", hash_generated_method = "DAB42F16B53F4D46DCD344E32346FDDB")
     
 private void unregisterFromSensors() {
         getSensorManager().unregisterListener(this);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.670 -0500", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "3D1A6280CBD3A8C7B2C77B7CAD4EC4AE")
     
 private void maybeSendChange(double alpha, double beta, double gamma) {

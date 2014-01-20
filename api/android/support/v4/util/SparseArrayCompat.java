@@ -6,12 +6,10 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SparseArrayCompat<E> {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.206 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
     
 private static int binarySearch(int[] a, int start, int len, int key) {
@@ -34,6 +32,8 @@ private static int binarySearch(int[] a, int start, int len, int key) {
             return ~high;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.208 -0500", hash_original_method = "78F4782A9945BD922AE4F703F6706A7E", hash_generated_method = "B882F8244F97164E1A58459C59541F76")
     
 static int idealByteArraySize(int need) {
@@ -44,6 +44,8 @@ static int idealByteArraySize(int need) {
         return need;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.211 -0500", hash_original_method = "C5D38D95B60B446AE8BAAF7982426E2B", hash_generated_method = "62DCA05F0054FCC37EAAC319A156AB93")
     
 static int idealIntArraySize(int need) {
@@ -56,7 +58,6 @@ static int idealIntArraySize(int need) {
 
     private boolean mGarbage = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.213 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
-
 
     private int[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.215 -0500", hash_original_field = "D3F28F3EBFA7D0D8D614CF293C7CCCA8", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
@@ -94,6 +95,8 @@ public SparseArrayCompat(int initialCapacity) {
      * Gets the Object mapped from the specified key, or <code>null</code>
      * if no such mapping has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.166 -0500", hash_original_method = "63029C5D60DB5A1F0C43DA1A71993094", hash_generated_method = "A7652660538AB6B2764F0F7687491E4B")
     
 public E get(int key) {
@@ -104,6 +107,8 @@ public E get(int key) {
      * Gets the Object mapped from the specified key, or the specified Object
      * if no such mapping has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.169 -0500", hash_original_method = "C9E62D05249D95E7C50A204FF58AB455", hash_generated_method = "BA8F26CD51295D8DC29598C253FC1932")
     
 public E get(int key, E valueIfKeyNotFound) {
@@ -168,6 +173,8 @@ public void removeAtRange(int index, int size) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.180 -0500", hash_original_method = "7868047E3541D358CB50D9A842861F65", hash_generated_method = "83C61FF7853C3689F47327323B6A23E5")
     
 private void gc() {
@@ -202,6 +209,8 @@ private void gc() {
      * replacing the previous mapping from the specified key if there
      * was one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.183 -0500", hash_original_method = "954FE01203E8E0B89D8DDB8D29119B01", hash_generated_method = "EC6AADF753D5966CC946C3ECD22E2424")
     
 public void put(int key, E value) {
@@ -255,6 +264,8 @@ public void put(int key, E value) {
      * Returns the number of key-value mappings that this SparseArray
      * currently stores.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.186 -0500", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "DE82729ACB015F73FA05A44E77A4C535")
     
 public int size() {
@@ -285,6 +296,8 @@ public int keyAt(int index) {
      * the value from the <code>index</code>th key-value mapping that this
      * SparseArray stores.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.191 -0500", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "CBC4E30F7778F15DECD755991AE421F6")
     
 public E valueAt(int index) {

@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
 class Primality {
 
     /**
@@ -19,6 +16,8 @@ class Primality {
      *
      * @see BigInteger#nextProbablePrime()
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.698 -0500", hash_original_method = "03EAD52EF6C4F384E7E8361BBED5D4F8", hash_generated_method = "1C5C9667967D12828A8772423BE465C9")
     
 static BigInteger nextProbablePrime(BigInteger n) {
@@ -101,6 +100,8 @@ static BigInteger nextProbablePrime(BigInteger n) {
     private static final BigInteger BIprimes[] = new BigInteger[primes.length];
 
     /** Just to denote that this class can't be instantiated. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.688 -0500", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "3C90B9653382FF7F7553ECE11AC58DB1")
     
 private Primality() {}

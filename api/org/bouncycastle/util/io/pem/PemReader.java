@@ -12,11 +12,6 @@ import java.util.List;
 
 import org.bouncycastle.util.encoders.Base64;
 
-
-
-
-
-
 public class PemReader extends BufferedReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.417 -0500", hash_original_field = "4B5018B208B1D25A1E57B78BC5773F2B", hash_generated_field = "3012F10FFC028E270306D326E4F2BB4D")
 
@@ -54,6 +49,8 @@ public PemObject readPemObject()
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.427 -0500", hash_original_method = "B4339AB43686CE97B8B754B51FC0C571", hash_generated_method = "8801FBEA7E395329E4F4FB9F2332D887")
     
 private PemObject loadObject(String type)

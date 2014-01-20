@@ -64,6 +64,8 @@ public PreferenceGroupAdapter(PreferenceGroup preferenceGroup) {
         syncMyPreferences();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.967 -0500", hash_original_method = "47CAC8934A77F33A41B8A2FADE539715", hash_generated_method = "83862446DB76F88ECA2467D19EDCB51A")
     
 private void syncMyPreferences() {
@@ -87,6 +89,8 @@ private void syncMyPreferences() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.970 -0500", hash_original_method = "DB0831C85843D6D53F9495F3413A2CE3", hash_generated_method = "1393374CC165636D02C8422280A09FB6")
     
 private void flattenPreferenceGroup(List<Preference> preferences, PreferenceGroup group) {
@@ -129,6 +133,8 @@ private PreferenceLayout createPreferenceLayout(Preference preference, Preferenc
         return pl;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.975 -0500", hash_original_method = "22004160B58BE5F5ED0505DF7AB89FF1", hash_generated_method = "0F779E5E5C2CFDE5A29FEB851AF3C43E")
     
 private void addPreferenceClassName(Preference preference) {
@@ -257,6 +263,8 @@ public void onPreferenceHierarchyChange(Preference preference) {
 
         private String name;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.636 -0400", hash_original_method = "12E8ADB8C3EE61AC77B7A82A93B07078", hash_generated_method = "12E8ADB8C3EE61AC77B7A82A93B07078")
         public PreferenceLayout ()
         {

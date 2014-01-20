@@ -9,14 +9,13 @@ import android.util.Log;
 
 import com.android.internal.telephony.IccFileHandler;
 
-
-
-
 public final class CdmaLteUiccFileHandler extends IccFileHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.531 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
     static final String LOG_TAG = "CDMA";
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.535 -0500", hash_original_method = "F91AC2EC8400C94DFA50E0DE5830B6E7", hash_generated_method = "F91AC2EC8400C94DFA50E0DE5830B6E7")
     
 CdmaLteUiccFileHandler(CDMALTEPhone phone) {
@@ -59,7 +58,6 @@ protected String getEFPath(int efid) {
             super.loadEFTransparent(fileid, onLoaded);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.547 -0500", hash_original_method = "9E18A7664E95C7EB6352A9A22332F4AA", hash_generated_method = "542C4AB9C524A140007220A2BC3B4FDF")
     

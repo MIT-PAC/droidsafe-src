@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERGeneralString extends ASN1Object implements DERString {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.311 -0500", hash_original_method = "0DDD2C729303DB5379ACD0D47288A821", hash_generated_method = "51CF3F22B9DFB7460CF105A86EC246BE")
@@ -94,6 +89,8 @@ public byte[] getOctets()
         return bs;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.329 -0500", hash_original_method = "329E6E60BDC6BE9FAC4D8B36E2859F0E", hash_generated_method = "329E6E60BDC6BE9FAC4D8B36E2859F0E")
     
 void encode(DEROutputStream out) 
@@ -109,6 +106,8 @@ public int hashCode()
         return this.getString().hashCode();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.339 -0500", hash_original_method = "790E2075BB1CC35320196C74CBC9C39A", hash_generated_method = "790E2075BB1CC35320196C74CBC9C39A")
     
 boolean asn1Equals(DERObject o)
@@ -120,7 +119,6 @@ boolean asn1Equals(DERObject o)
         DERGeneralString s = (DERGeneralString) o;
         return this.getString().equals(s.getString());
     }
-
     
 }
 

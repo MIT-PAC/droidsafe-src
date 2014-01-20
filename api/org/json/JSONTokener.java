@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class JSONTokener {
 
     /**
@@ -84,6 +80,8 @@ public Object nextValue() throws JSONException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.594 -0500", hash_original_method = "1C1094F3B0EBF3FC35F6CA7F4976DC54", hash_generated_method = "957C5E349030E3D16ECB3AD1E414E518")
     
 private int nextCleanInternal() throws JSONException {
@@ -145,6 +143,8 @@ private int nextCleanInternal() throws JSONException {
      * is terminated by "\r\n", the '\n' must be consumed as whitespace by the
      * caller.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.597 -0500", hash_original_method = "A96A54ECB7E0243FC9401A9259237DF7", hash_generated_method = "B0DFF07F1CCB9ED8CBD3B522463021AE")
     
 private void skipToEndOfLine() {
@@ -217,6 +217,8 @@ public String nextString(char quote) throws JSONException {
      * @throws NumberFormatException if any unicode escape sequences are
      *     malformed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.604 -0500", hash_original_method = "A0F5694EA3978EBF3A8A4E5207628E80", hash_generated_method = "A46B49E033C2A2CEFAE583A4DD53B3CE")
     
 private char readEscapeCharacter() throws JSONException {
@@ -258,6 +260,8 @@ private char readEscapeCharacter() throws JSONException {
      * values will be returned as an Integer, Long, or Double, in that order of
      * preference.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.608 -0500", hash_original_method = "921E97B7A015080CE0A01C361479BF49", hash_generated_method = "E90500B5A498AD228C58A5454954722F")
     
 private Object readLiteral() throws JSONException {
@@ -314,6 +318,8 @@ private Object readLiteral() throws JSONException {
      * Returns the string up to but not including any of the given characters or
      * a newline character. This does not consume the excluded character.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.610 -0500", hash_original_method = "593B1F2EF0668764A615A5DB85CFDCCD", hash_generated_method = "96B0B2272C559422F2F421A9F89F6A66")
     
 private String nextToInternal(String excluded) {
@@ -331,6 +337,8 @@ private String nextToInternal(String excluded) {
      * Reads a sequence of key/value pairs and the trailing closing brace '}' of
      * an object. The opening brace '{' should have already been read.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.614 -0500", hash_original_method = "D694401380EAF5A76DF87137C67448EA", hash_generated_method = "EB427EC91A987E882813E4C55FB0CDE1")
     
 private JSONObject readObject() throws JSONException {
@@ -388,6 +396,8 @@ private JSONObject readObject() throws JSONException {
      * "[]" yields an empty array, but "[,]" returns a two-element array
      * equivalent to "[null,null]".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.618 -0500", hash_original_method = "E76B205E92636F1E7B3FC6B2B934FE47", hash_generated_method = "CB336D3608CC6D764C4BDC3C24CB76A2")
     
 private JSONArray readArray() throws JSONException {
@@ -601,7 +611,6 @@ public void back() {
             pos = 0;
         }
     }
-
     
 }
 

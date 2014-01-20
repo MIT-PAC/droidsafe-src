@@ -37,6 +37,8 @@ public static Currency getInstance(String currencyCode) {
      * @throws IllegalArgumentException
      *             if the locale's country is not a supported ISO 3166 country.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.816 -0500", hash_original_method = "6CD28EDE187ECB267B82CB22AA243B4D", hash_generated_method = "622702E1F5EFE722DCF2139A8DB3D633")
     
@@ -70,6 +72,8 @@ public static Currency getInstance(Locale locale) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.818 -0500", hash_original_method = "3BA00AE8CC62BA0042B4559B37B5E5E2", hash_generated_method = "0A6CA9A85DFE384BF92C633C51165597")
     
@@ -94,6 +98,8 @@ public static Set<Currency> getAvailableCurrencies() {
 
     private  String currencyCode;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.810 -0500", hash_original_method = "B8C067C2D581EC195B8ADF9C49328ECD", hash_generated_method = "EC22FFA2216AB07172547C8A5C42DF40")
     
 private Currency(String currencyCode) {
@@ -108,6 +114,8 @@ private Currency(String currencyCode) {
     /**
      * Returns this currency's ISO 4217 currency code.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.821 -0500", hash_original_method = "2AC1FCCB5B1A729D4AAC7C21169200F6", hash_generated_method = "C3161812D25A8275C97E68CD2A97699A")
     
@@ -121,6 +129,8 @@ public String getCurrencyCode() {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.823 -0500", hash_original_method = "024B35E959A93D0BB9AFB5000392D858", hash_generated_method = "F25632E299DC6CDF309556DD7393FC6B")
     
@@ -134,6 +144,8 @@ public String getDisplayName() {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.826 -0500", hash_original_method = "B412E21D17743E44672A03725048BDDA", hash_generated_method = "BEE04B9C7589DEF988EE51980F910103")
     
@@ -145,6 +157,8 @@ public String getDisplayName(Locale locale) {
      * Equivalent to {@code getSymbol(Locale.getDefault())}.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.828 -0500", hash_original_method = "E9E6FD91308CE554CCA18D78EBA5451D", hash_generated_method = "B882D9E9B74480A7FE05D0C27DD548C8")
     
@@ -163,6 +177,8 @@ public String getSymbol() {
      *
      * <p>If there is no locale-specific currency symbol, the ISO 4217 currency code is returned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.831 -0500", hash_original_method = "798553E01F97CE042B0C960025EC8B4C", hash_generated_method = "B2A9E372B0880E9100E0B24056FFFEE5")
     
@@ -189,6 +205,8 @@ public String getSymbol(Locale locale) {
      * than 1 Yen became invalid in 1953. In the case of pseudo-currencies, such as
      * IMF Special Drawing Rights, -1 is returned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.833 -0500", hash_original_method = "65B2259A2CB290C21BDBA11C63377846", hash_generated_method = "26C4C3825C318B199FB8D45816B19568")
     
@@ -204,6 +222,8 @@ public int getDefaultFractionDigits() {
     /**
      * Returns this currency's ISO 4217 currency code.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.836 -0500", hash_original_method = "61F489343549C45D5079119B52911181", hash_generated_method = "5A69ED0E0A66D7BB87D01A4C23F64132")
     
 @Override
@@ -211,6 +231,8 @@ public int getDefaultFractionDigits() {
         return currencyCode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.838 -0500", hash_original_method = "BB7ABE2F39426123A0B73E0A126344FC", hash_generated_method = "DECCC08527160C4C5759AA77139B5B6B")
     
 private Object readResolve() {

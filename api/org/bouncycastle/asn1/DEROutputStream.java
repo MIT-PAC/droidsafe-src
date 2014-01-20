@@ -8,10 +8,6 @@ import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
 public class DEROutputStream extends FilterOutputStream implements DERTags {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.702 -0500", hash_original_method = "D6882926F90F93A386C7D4D8D57DD786", hash_generated_method = "A320D981703EC188191226365DD3CBBD")
     
@@ -21,6 +17,8 @@ public DEROutputStream(
         super(os);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.704 -0500", hash_original_method = "9630CA34FB2F7F75F5B62885DAC93016", hash_generated_method = "338C20699D845F77BA969F3D1001FDB8")
     
 private void writeLength(
@@ -50,6 +48,8 @@ private void writeLength(
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.707 -0500", hash_original_method = "6A5015CF78D45503CE00711383685F95", hash_generated_method = "6A5015CF78D45503CE00711383685F95")
     
 void writeEncoded(
@@ -62,6 +62,8 @@ void writeEncoded(
         write(bytes);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.709 -0500", hash_original_method = "ED4E90E4B3DD7ED52782F2B0BBD7912E", hash_generated_method = "ED4E90E4B3DD7ED52782F2B0BBD7912E")
     
 void writeTag(int flags, int tagNo)
@@ -97,6 +99,8 @@ void writeTag(int flags, int tagNo)
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.712 -0500", hash_original_method = "7680EF084FC261D5865A989D21C79F36", hash_generated_method = "7680EF084FC261D5865A989D21C79F36")
     
 void writeEncoded(int flags, int tagNo, byte[] bytes)
@@ -155,7 +159,6 @@ public void writeObject(
             throw new IOException("object not DEREncodable");
         }
     }
-
     
 }
 

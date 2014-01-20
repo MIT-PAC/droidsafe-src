@@ -20,6 +20,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
      * This method was extracted to encourage VM to inline callers.
      * TODO: when we have a VM that can actually inline, move the test in here too!
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.923 -0500", hash_original_method = "4D1AAFD088944D073F1D6AEA9907E5AD", hash_generated_method = "7B46C8F09C7254045F5048910CD6EB03")
     
 static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
@@ -178,7 +180,9 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         return getTaintBoolean();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.838 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "5F8684799088AA1AFC2FFB96C7FF18A5")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.838 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "5F8684799088AA1AFC2FFB96C7FF18A5")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
         stream.defaultWriteObject();
@@ -195,7 +199,9 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         //}
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.838 -0400", hash_original_method = "07E10AF7F234C75E84F0879D60F4FA74", hash_generated_method = "DA922EE1034AA093E4D9526E4E5FE819")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.838 -0400", hash_original_method = "07E10AF7F234C75E84F0879D60F4FA74", hash_generated_method = "DA922EE1034AA093E4D9526E4E5FE819")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         stream.defaultReadObject();
         int cap = stream.readInt();

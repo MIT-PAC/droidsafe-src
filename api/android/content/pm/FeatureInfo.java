@@ -52,6 +52,8 @@ public FeatureInfo(FeatureInfo orig) {
         flags = orig.flags;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.248 -0500", hash_original_method = "759BB7759C525D4DCDEBEE87E6E15A1A", hash_generated_method = "36755041B3FD8D6648A607C942A99643")
     
 private FeatureInfo(Parcel source) {

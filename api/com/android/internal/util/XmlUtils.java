@@ -797,6 +797,8 @@ public static final Object readValueXml(XmlPullParser parser, String[] name)
             "Unexpected end of document");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.593 -0500", hash_original_method = "16BF65FFEAF4EB8C9C23A818A2EB822A", hash_generated_method = "9A7552BAFD7DED8D03BC1253A78B5B0C")
     
 private static final Object readThisValueXml(XmlPullParser parser, String[] name)

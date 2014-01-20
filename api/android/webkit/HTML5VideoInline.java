@@ -26,6 +26,8 @@ public class HTML5VideoInline extends HTML5VideoView {
 
     private int[] mTextureNames;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.618 -0500", hash_original_method = "8F7DD5B8943380A1AC60FFDF0F122D77", hash_generated_method = "8F7DD5B8943380A1AC60FFDF0F122D77")
     
 HTML5VideoInline(int videoLayerId, int position,

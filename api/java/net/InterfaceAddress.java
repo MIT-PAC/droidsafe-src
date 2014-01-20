@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class InterfaceAddress {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.534 -0500", hash_original_method = "5E42B457EFC972934681320D52288B28", hash_generated_method = "CC498109EDA786AF03805FD940E7B974")
     
 private static short countPrefixLength(Inet4Address mask) {
@@ -33,6 +35,8 @@ private static short countPrefixLength(Inet4Address mask) {
     /**
      * For IPv4.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.528 -0500", hash_original_method = "A47E632924417AF09C6FD6A35089DC11", hash_generated_method = "A47E632924417AF09C6FD6A35089DC11")
     
 InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Address mask) {
@@ -44,6 +48,8 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     /**
      * For IPv6.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.531 -0500", hash_original_method = "48C591F4E78B8661DAF333100DFF1834", hash_generated_method = "48C591F4E78B8661DAF333100DFF1834")
     
 InterfaceAddress(Inet6Address address, short prefixLength) {

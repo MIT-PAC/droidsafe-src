@@ -34,10 +34,14 @@ public final class Math {
         return DSUtils.UNKNOWN_LONG;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double acos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double asin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -54,6 +58,8 @@ public final class Math {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double cbrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -70,6 +76,8 @@ public final class Math {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double cosh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -80,6 +88,8 @@ public final class Math {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double expm1(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -96,6 +106,8 @@ public final class Math {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double IEEEremainder(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -106,10 +118,14 @@ public final class Math {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double log10(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double log1p(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -332,6 +348,8 @@ public static long min(long l1, long l2) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double rint(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -417,6 +435,8 @@ public static int round(float f) {
      *            the value whose signum has to be computed.
      * @return the value of the signum function.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.715 -0500", hash_original_method = "D0C7BA71432AEC4F38A3BB94348D4F09", hash_generated_method = "0EE2C3EEAB3C8DF5C363E5A7D4532DE5")
     
 public static double signum(double d) {
@@ -474,6 +494,8 @@ public static float signum(float f) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double sinh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -490,6 +512,8 @@ public static float signum(float f) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double tanh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -583,6 +607,8 @@ public static double toDegrees(double angrad) {
      *            the floating-point value to compute ulp of.
      * @return the size of a ulp of the argument.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.751 -0500", hash_original_method = "2D28F1AD865BB966E30C11192290FAD6", hash_generated_method = "3794E08E03A0440B35D500AF8231457C")
     
 public static double ulp(double d) {
@@ -596,6 +622,8 @@ public static double ulp(double d) {
         return nextafter(d, Double.MAX_VALUE) - d;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static double nextafter(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -619,6 +647,8 @@ public static double ulp(double d) {
      *            the floating-point value to compute ulp of.
      * @return the size of a ulp of the argument.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.758 -0500", hash_original_method = "21C6C2BCBE003FB0A77A1E9EFAE42634", hash_generated_method = "FAB09916BE1DD446B169D420203290FB")
     
 public static float ulp(float f) {
@@ -651,6 +681,8 @@ public static float ulp(float f) {
      * If you need a determinate sign in such cases, use {@code StrictMath.copySign}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.761 -0500", hash_original_method = "15C215F29F042865F85D52F4B5FD8DEC", hash_generated_method = "4A76309A7F79AD6F51982D57C30438A6")
     
 public static double copySign(double magnitude, double sign) {
@@ -666,6 +698,8 @@ public static double copySign(double magnitude, double sign) {
      * If you need a determinate sign in such cases, use {@code StrictMath.copySign}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.763 -0500", hash_original_method = "35AECC28C40D46AAA2C600AE0D4B90F6", hash_generated_method = "2CB8DD010CFA47DCE071C17BA226E85D")
     
 public static float copySign(float magnitude, float sign) {
@@ -679,6 +713,8 @@ public static float copySign(float magnitude, float sign) {
      * Returns the unbiased base-2 exponent of float {@code f}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.766 -0500", hash_original_method = "97012FE7C9870A29CEA8A2EDD34265B2", hash_generated_method = "985C9E866BA90774D180385CF000AF5B")
     
@@ -692,6 +728,8 @@ public static int getExponent(float f) {
      * Returns the unbiased base-2 exponent of double {@code d}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.768 -0500", hash_original_method = "19989C21DEF6CFA455C891A862B03E8C", hash_generated_method = "5D6AE80AF25A6EA9088CF469827CA904")
     
@@ -705,6 +743,8 @@ public static int getExponent(double d) {
      * Returns the next double after {@code start} in the given {@code direction}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.772 -0500", hash_original_method = "D2D482B3D86CB8EF8A4CC5B9C45F68F0", hash_generated_method = "461C005C705E50F80E2022CDE544BF62")
     
 public static double nextAfter(double start, double direction) {
@@ -718,6 +758,8 @@ public static double nextAfter(double start, double direction) {
      * Returns the next float after {@code start} in the given {@code direction}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.775 -0500", hash_original_method = "2E9F27F6AE2FE55081770F69E2F60829", hash_generated_method = "6DECAE837D531B483F47DAC581A6C932")
     
 public static float nextAfter(float start, double direction) {
@@ -764,6 +806,8 @@ public static float nextAfter(float start, double direction) {
      * Returns the next double larger than {@code d}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.778 -0500", hash_original_method = "C896DE85CFE9A8E858A973A7CAE05394", hash_generated_method = "2B1EC91962A669B47E637A6AD08DAE4A")
     
 public static double nextUp(double d) {
@@ -786,6 +830,8 @@ public static double nextUp(double d) {
      * Returns the next float larger than {@code f}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.781 -0500", hash_original_method = "5F4A09591A5352832C5CA256EEF7C3E6", hash_generated_method = "BE36B2B4C13664CDD1EE9080481079CE")
     
 public static float nextUp(float f) {
@@ -808,6 +854,8 @@ public static float nextUp(float f) {
      * Returns {@code d} * 2^{@code scaleFactor}. The result may be rounded.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.785 -0500", hash_original_method = "CE7FEED34E827FAEBA93BA76C027047F", hash_generated_method = "7E07A06B36AFE408B936BCD429A07040")
     
 public static double scalb(double d, int scaleFactor) {
@@ -865,6 +913,8 @@ public static double scalb(double d, int scaleFactor) {
      * Returns {@code d} * 2^{@code scaleFactor}. The result may be rounded.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.789 -0500", hash_original_method = "8B2B282A6266695E06D45999219304F1", hash_generated_method = "B93174FD452796C4850B3F2CC588FFF4")
     
 public static float scalb(float d, int scaleFactor) {
@@ -916,6 +966,8 @@ public static float scalb(float d, int scaleFactor) {
 
     // Shifts integer bits as float, if the digits is positive, left-shift; if
     // not, shift to right and calculate its carry.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.792 -0500", hash_original_method = "F851BF8D27456D38F9F1CC4D6CA88124", hash_generated_method = "655A4B2CCDDDE310E233C503E72B85F6")
     
 private static int shiftIntBits(int bits, int digits) {
@@ -944,6 +996,8 @@ private static int shiftIntBits(int bits, int digits) {
 
     // Shifts long bits as double, if the digits is positive, left-shift; if
     // not, shift to right and calculate its carry.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.795 -0500", hash_original_method = "C9C8604677F0F22473B2353C70CE16C1", hash_generated_method = "F757253C1789525BED2F1C512436BB86")
     
 private static long shiftLongBits(long bits, long digits) {
@@ -984,6 +1038,8 @@ private static long shiftLongBits(long bits, long digits) {
     /**
      * Prevents this class from being instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.588 -0500", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "FA4C376A124A9FB7E96B70642915FF5D")
     
 private Math() {

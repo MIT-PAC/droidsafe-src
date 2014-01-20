@@ -14,10 +14,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-
-
-
-
 public class DialogFragment extends Fragment implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.575 -0500", hash_original_field = "B33617D119C9E65EA12B9D46B7D4B9F5", hash_generated_field = "2799E9EE0BE29351BF2343EFA521A888")
 
@@ -32,7 +28,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     public static final int STYLE_NO_INPUT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.585 -0500", hash_original_field = "7C2844D3DF7604C62F66EFED0CC6C3AD", hash_generated_field = "94C97F4A0413FA80F711F0AF0957903C")
-
 
     private static final String SAVED_DIALOG_STATE_TAG = "android:savedDialogState";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.588 -0500", hash_original_field = "E2492F7AF4DDC10729303DEE44331262", hash_generated_field = "32CF27987345FC568CD0673A0881B818")
@@ -52,7 +47,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     private static final String SAVED_BACK_STACK_ID = "android:backStackId";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.599 -0500", hash_original_field = "DBD7D865FD8EE56258485D2729E89222", hash_generated_field = "DBD7D865FD8EE56258485D2729E89222")
 
-
     int mStyle = STYLE_NORMAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.602 -0500", hash_original_field = "075FD7AAD50C5AD8803D9E3B208423A2", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
 
@@ -67,7 +61,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     int mBackStackId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.611 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "0C87BCBAF0D95855709E5BEE2BDBA46D")
-
 
     Dialog mDialog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.613 -0500", hash_original_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3", hash_generated_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3")
@@ -176,6 +169,8 @@ public void dismissAllowingStateLoss() {
         dismissInternal(true);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.635 -0500", hash_original_method = "D69B3047ADB8F155BAC29C903FDECC6E", hash_generated_method = "D69B3047ADB8F155BAC29C903FDECC6E")
     
 void dismissInternal(boolean allowStateLoss) {

@@ -383,28 +383,44 @@ public void disableLocationUpdates() {
         }
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.358 -0500", hash_original_method = "2934325051523620DCD2F62BF84383AD", hash_generated_method = "E0532074FC3B4F0149E2689F81019F86")
     
 protected abstract Phone getPhone();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.360 -0500", hash_original_method = "B097733BE8D514FB5F11D7AA78EE34CE", hash_generated_method = "4E7BFD117830BE223287A0E288E7EC63")
     
 protected abstract void handlePollStateResult(int what, AsyncResult ar);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.363 -0500", hash_original_method = "EFBE9729B803BEF3FD67A09A5D9AC457", hash_generated_method = "980C643B3137A5B5A2226B23ECA6597F")
     
 protected abstract void updateSpnDisplay();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.366 -0500", hash_original_method = "3548185448D01443F6FACDAD06992FAA", hash_generated_method = "8543D43A716450CF356B3CB4BAABEE35")
     
 protected abstract void setPowerStateToDesired();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.368 -0500", hash_original_method = "48DBEBE9679DD6022C78E9B6D9D15841", hash_generated_method = "43827D28600B8F0847D532E80E30A990")
     
 protected abstract void log(String s);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.371 -0500", hash_original_method = "8503C48BD28DECE909202E8D31B4BECE", hash_generated_method = "98998146AAEFC08A350487078A6888FB")
     
 protected abstract void loge(String s);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.373 -0500", hash_original_method = "BEDDA24545C3772B08260481D5178989", hash_generated_method = "1BF694F6D4200D916F4713993884C472")
     
 public abstract int getCurrentDataConnectionState();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.375 -0500", hash_original_method = "132CC79318588C72D1FB6728C65197B0", hash_generated_method = "97782144A3870C79ACF31279FE387829")
     
 public abstract boolean isConcurrentVoiceAndDataAllowed();
@@ -578,6 +594,8 @@ public boolean processPendingRadioPowerOffAfterDataOff() {
     /**
      * Hang up all voice call and turn off radio. Implemented by derived class.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.409 -0500", hash_original_method = "3BB44C3DD2061253679203D4D7C2D279", hash_generated_method = "A83935CB33234D2F29A0F21AA05246AD")
     
 protected abstract void hangupAndPowerOff();

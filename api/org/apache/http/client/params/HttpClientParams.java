@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.params.HttpParams;
 
-
-
 public class HttpClientParams {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.974 -0500", hash_original_method = "7F5EC64678F2BF99B5FC6B00C0649726", hash_generated_method = "3A3F0F1B231BB4A7783DE3BE3B1EB0F8")
@@ -73,12 +71,13 @@ public static void setCookiePolicy(final HttpParams params, final String cookieP
         params.setParameter(ClientPNames.COOKIE_POLICY, cookiePolicy);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.971 -0500", hash_original_method = "C1A6271AA6801B961C8CB360166C77E0", hash_generated_method = "15C82D3BA2561F385477CD1643F8D62E")
     
 private HttpClientParams() {
         super();
     }
-
     
 }
 

@@ -7,9 +7,13 @@ import droidsafe.annotations.*;
 
 public class Shader {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDestructor(int native_shader, int native_skiaShader) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetLocalMatrix(int native_shader,
             int native_skiaShader, int matrix_instance) {
     }
@@ -23,6 +27,8 @@ public class Shader {
 
     private Matrix mLocalMatrix;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.118 -0400", hash_original_method = "2C9D5C9CBFF528B332FC0D9B3274B66B", hash_generated_method = "2C9D5C9CBFF528B332FC0D9B3274B66B")
     public Shader ()
     {
@@ -34,6 +40,8 @@ public class Shader {
      * @param localM If not null, it is set to the shader's local matrix.
      * @return true if the shader has a non-identity local matrix
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.389 -0500", hash_original_method = "68EE3A19E97B552C55745306F03EBBEA", hash_generated_method = "76D75EAFA59EA9E9A826FA2F14B9EAF0")
     
 public boolean getLocalMatrix(Matrix localM) {
@@ -49,6 +57,8 @@ public boolean getLocalMatrix(Matrix localM) {
      * matrix to identity
      * @param localM The shader's new local matrix, or null to specify identity
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.391 -0500", hash_original_method = "D9D7C5F09B6958B88F23796DCADEE0F6", hash_generated_method = "3A24FF4520E0AC54135D1BAF56D0F708")
     
 public void setLocalMatrix(Matrix localM) {
@@ -57,6 +67,8 @@ public void setLocalMatrix(Matrix localM) {
                 localM == null ? 0 : localM.native_instance);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.393 -0500", hash_original_method = "C66C3B2CF2D4E3C25A1D8C5724E65539", hash_generated_method = "2CF5D32D640D4D16A79BEE210A587A8B")
     
 protected void finalize() throws Throwable {

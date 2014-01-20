@@ -68,6 +68,8 @@ import com.android.internal.view.menu.MenuBuilder;
 
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String savedDialogKeyFor(int key){
 		// Original method
 		/*
@@ -78,6 +80,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		return "";
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String savedDialogArgsKeyFor(int key){
 		// Original method
 		/*
@@ -374,6 +378,8 @@ public Window getWindow() {
 		*/
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
@@ -446,6 +452,8 @@ public Window getWindow() {
      *
      * @param savedInstanceState contains the saved state
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.503 -0500", hash_original_method = "F96DCFB160CAE669DE173597BCAB5D29", hash_generated_method = "C734A05148AE2009F15CC2274FB39B2A")
     
 final void performRestoreInstanceState(Bundle savedInstanceState) {
@@ -473,12 +481,16 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void restoreManagedDialogs(Bundle savedInstanceState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
@@ -618,6 +630,8 @@ protected void onNewIntent(Intent intent) {
      *
      * @param outState The bundle to save the state to.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.585 -0500", hash_original_method = "0B461FC0ABFD8E876BD0A4555078BB43", hash_generated_method = "AE2B1A9FF43656294DABE256804A5E19")
     
 final void performSaveInstanceState(Bundle outState) {
@@ -646,6 +660,8 @@ final void performSaveInstanceState(Bundle outState) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void saveManagedDialogs(Bundle outState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -864,6 +880,8 @@ public Object onRetainNonConfigurationInstance() {
         return null;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     HashMap<String, Object> getLastNonConfigurationChildInstances(){
 		return mLastNonConfigurationInstances.children;
@@ -883,6 +901,8 @@ public Object onRetainNonConfigurationInstance() {
      * set of child activities, such as ActivityGroup.  The same guarantees and restrictions apply
      * as for {@link #onRetainNonConfigurationInstance()}.  The default implementation returns null.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.666 -0500", hash_original_method = "342B0C995620FF868A09DAF694D00C04", hash_generated_method = "342B0C995620FF868A09DAF694D00C04")
     
 HashMap<String,Object> onRetainNonConfigurationChildInstances() {
@@ -934,6 +954,8 @@ public FragmentManager getFragmentManager() {
         return mFragments;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void invalidateFragmentIndex(int index){
 		LoaderManagerImpl lm = mAllLoaderManagers.get(0);
 		lm.doDestroy();
@@ -1079,7 +1101,9 @@ public ActionBar getActionBar() {
         return mActionBar;
     }
     
-	private void initActionBar(){
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private void initActionBar(){
 		Window window = getWindow();
 		window.getDecorView();
 		window.hasFeature(Window.FEATURE_ACTION_BAR);
@@ -2126,6 +2150,8 @@ public void closeContextMenu() {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private IllegalArgumentException missingDialog(int id){
 		return new IllegalArgumentException("");
 		// Original method
@@ -2407,6 +2433,8 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity){
 		// Original method
@@ -2701,6 +2729,8 @@ public ComponentName getCallingActivity() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void makeVisible(){
 		ViewManager wm = getWindowManager();
         wm.addView(mDecor, getWindow().getAttributes());
@@ -3091,7 +3121,9 @@ public SharedPreferences getPreferences(int mode) {
         return getSharedPreferences(getLocalClassName(), mode);
     }
     
-	private void ensureSearchManager(){
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private void ensureSearchManager(){
 		mSearchManager = new SearchManager(this, null);
 		// Original method
 		/*
@@ -3458,6 +3490,8 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         Bundle mArgs;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "9DCA77B5D1234925DAEE8DA8399779D6", hash_generated_method = "9DCA77B5D1234925DAEE8DA8399779D6")
         public ManagedDialog ()
         {
@@ -3480,6 +3514,8 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         SparseArray<LoaderManagerImpl> loaders;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "6ECBAFFBF9F9B3F6A966772230E87049", hash_generated_method = "6ECBAFFBF9F9B3F6A966772230E87049")
         public NonConfigurationInstances ()
         {
@@ -3499,6 +3535,8 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         private boolean mUpdated;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         ManagedCursor(Cursor cursor){
 			mCursor = cursor;
 			/*
@@ -3549,6 +3587,8 @@ public void onActionModeFinished(ActionMode mode) {
 
     // ------------------ Internal API ------------------
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.441 -0500", hash_original_method = "CB0EFE3ADA1587CB31B88C9EC51AC6CD", hash_generated_method = "5BB1E580174D709D7209019836E22001")
     
 final void setParent(Activity parent) {
@@ -3598,6 +3638,8 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final IBinder getActivityToken(){
 		return mParent.getActivityToken();
@@ -3609,6 +3651,8 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		*/
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
         performCreate(icicle, this);
@@ -3619,6 +3663,8 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
         //mFragments.dispatchActivityCreated();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void performStart(){
 		mFragments.noteStateNotSaved();
 		mFragments.execPendingActions();
@@ -3652,12 +3698,16 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void performRestart(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void performResume(){
 		performRestart();
 		mFragments.execPendingActions();
@@ -3692,6 +3742,8 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void performPause(){
 		mFragments.dispatchPause();
 		onPause();
@@ -3715,6 +3767,8 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.503 -0500", hash_original_method = "ABDB3944564BF35742E6297221FCB3EA", hash_generated_method = "311E01E06ECE3930B1BDA06564246C07")
     
 final void performUserLeaving() {
@@ -3722,12 +3776,16 @@ final void performUserLeaving() {
         onUserLeaveHint();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void performStop(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final void performDestroy(){
 		mWindow.destroy();
         mFragments.dispatchDestroy();
@@ -3757,6 +3815,8 @@ final void performUserLeaving() {
 		*/
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data){
 		 Log.v(

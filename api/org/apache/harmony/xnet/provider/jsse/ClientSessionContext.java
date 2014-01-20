@@ -125,6 +125,8 @@ public SSLSession getSession(String host, int port) {
 
          int port;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.920 -0500", hash_original_method = "EB165053DB1A3C349320DF850A0D5A85", hash_generated_method = "EB165053DB1A3C349320DF850A0D5A85")
         
 HostAndPort(String host, int port) {

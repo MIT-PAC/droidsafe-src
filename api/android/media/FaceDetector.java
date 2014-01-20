@@ -10,6 +10,8 @@ import android.util.Log;
 
 public class FaceDetector {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClassInit() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.571 -0500", hash_original_field = "D692DCD499E02653F7D40EBB5CF95A8C", hash_generated_field = "27A01AEA893820336EC60E3CEF29F8C6")
@@ -112,6 +114,8 @@ public int findFaces(Bitmap bitmap, Face[] faces)
         fft_destroy();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.580 -0500", hash_original_method = "D8B51518847CA27E06A5D5CCCEFE0583", hash_generated_method = "864DAA609BDA840F6A768B16052A9265")
     
     private int  fft_initialize(int width, int height, int maxFaces){
@@ -122,6 +126,8 @@ public int findFaces(Bitmap bitmap, Face[] faces)
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.584 -0500", hash_original_method = "0EFAC765C015AB65F15820DF03280C70", hash_generated_method = "BB427F2418D011F2F8EA9D3A5A4FD185")
     
     private int  fft_detect(Bitmap bitmap){
@@ -230,6 +236,8 @@ public float pose(int euler) {
            throw new IllegalArgumentException();
         }
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.591 -0500", hash_original_method = "7408AB46012CCA5768269842BF780619", hash_generated_method = "6F6FAC4DFE0C882EC7B63D2DB30C6D37")
     
     private void fft_destroy(){

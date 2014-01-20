@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 class Division {
 
     /**
@@ -59,12 +58,13 @@ static int divideArrayByInt(int[] quotient, int[] dividend, final int dividendLe
         return (int) rem;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.891 -0400", hash_original_method = "1CA90C9F74D165C3A16F193EF3A664DD", hash_generated_method = "1CA90C9F74D165C3A16F193EF3A664DD")
     public Division ()
     {
         //Synthesized constructor
     }
-
     
 }
 

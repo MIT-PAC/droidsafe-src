@@ -45,6 +45,8 @@ public PermissionGroupInfo(PermissionGroupInfo orig) {
         nonLocalizedDescription = orig.nonLocalizedDescription;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.033 -0500", hash_original_method = "251C6C67446670431867B6BD14427B23", hash_generated_method = "7F3C1C643A42B722800AF39689BCB9F3")
     
 private PermissionGroupInfo(Parcel source) {

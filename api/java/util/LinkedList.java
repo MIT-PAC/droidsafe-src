@@ -50,6 +50,8 @@ public LinkedList(Collection<? extends E> collection) {
         //addFirstImpl(object);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.122 -0400", hash_original_method = "13A36680ECD01352EC1F894705FA522D", hash_generated_method = "5E57D6CF03EA15D68138243087D069FE")
     public void addLast(E object) {
         addTaint(object.getTaint());
@@ -84,6 +86,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return getFirstImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "D36A1824B4AA11A93F9167DC96C3E776", hash_generated_method = "879D570AE8E3EA434CCC92636D7DC4AE")
     public E getLast() {
@@ -105,12 +109,16 @@ public LinkedList(Collection<? extends E> collection) {
         //throw new NoSuchElementException();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.127 -0400", hash_original_method = "223AFBB612F259C1ECF52502B2C38D06", hash_generated_method = "14E184305C935AC7BA9BDA89C7D90C6F")
     @Override
     public int indexOf(Object object) {
         return getIndexOf(object);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.128 -0400", hash_original_method = "C5BD92F697D9C0CCDCACCA1E644478EA", hash_generated_method = "5E6174B4CB6EE24332958A2B07E85752")
     @Override
     public int lastIndexOf(Object object) {
@@ -126,11 +134,15 @@ public LinkedList(Collection<? extends E> collection) {
         //return removeFirstImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.132 -0400", hash_original_method = "78A299256A25A92F54699488F92E9106", hash_generated_method = "F8BCF0B3E87B2775ED83E22680730DFF")
     public E removeLast() {
         return removeLastElement();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "B739DCE0B4C0EF3D97CD82250338592B", hash_generated_method = "5BFD32313DD750C7CA5760471E7BA36B")
     public Iterator<E> descendingIterator() {
         Iterator<E> iter = getReverseIterator();
@@ -140,6 +152,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return new ReverseLinkIterator<E>(this);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "EDFB7FC0634DB7C00BD3AB035EBD094A", hash_generated_method = "78D7639AE5EBC21A98948F5640215680")
     public boolean offerFirst(E e) {
         addTaint(e.getTaint());
@@ -150,6 +164,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return addFirstImpl(e);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "89DCF7809C68E43568923DE3D2E1D02D", hash_generated_method = "1E07379150837DD74ABC9481EE0631B5")
     public boolean offerLast(E e) {
         addTaint(e.getTaint());
@@ -160,6 +176,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return addLastImpl(e);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "969AA46310549C7B2FEE1AAA28767998", hash_generated_method = "22691D0470A83276A2325A7168F7857B")
     public E peekFirst() {
         E elem = getFirstElement();
@@ -170,6 +188,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return peekFirstImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "E1ADBCAD0BAE3B6D44E0B3EBBD31EB6D", hash_generated_method = "024A9E03091FFAC89C64A05EB8A81FCD")
     public E peekLast() {
         E elem = getLastElement();
@@ -181,6 +201,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return (last == voidLink) ? null : last.data;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "E15F23512F244F97C3914B4E0B9502A4", hash_generated_method = "1A057191B4C5100708D2FBE5065E8D57")
     public E pollFirst() {
         E elem = removeFirstElement();
@@ -191,6 +213,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return (size == 0) ? null : removeFirstImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "70D8873C9DDF66392CA17B903A435D10", hash_generated_method = "D8A7FF381D9EC211AEFBBB90A4CAA3B0")
     public E pollLast() {
         E elem = removeLastElement();
@@ -201,6 +225,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return (size == 0) ? null : removeLastImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "A1E9A1EB062A81F6CBAFDDDD06F9F273", hash_generated_method = "B11AB0C013FCB9A8E3C22E5318684A99")
     public E pop() {
         E elem = removeLastElement();
@@ -211,6 +237,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return removeFirstImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "9D0F4BD741629A4E20781C5DA21CB652", hash_generated_method = "8E3E5AB8C2EFDDF648D93DCEA06B9D05")
     public void push(E e) {
         addTaint(e.getTaint());
@@ -219,6 +247,8 @@ public LinkedList(Collection<? extends E> collection) {
         //addFirstImpl(e);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "87160631C9EB1EFA1DB767740655C072", hash_generated_method = "6F4E8A748C546CBF7A9F3CDA57E3F37A")
     public boolean removeFirstOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -232,6 +262,8 @@ public LinkedList(Collection<? extends E> collection) {
         //return removeFirstOccurrenceImpl(o);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "1733EDDF12DE29E16D5005CF30B5972D", hash_generated_method = "732CCFFDB97E0915B522A631347B728D")
     public boolean removeLastOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -243,6 +275,8 @@ public LinkedList(Collection<? extends E> collection) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.477 -0500", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "DDEABE8AC9FFECDA965CB2DE2681E456")
     
 private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
@@ -287,6 +321,8 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         return elem;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "4AAADA00C0F9172450031345A8B9DEF3", hash_generated_method = "8BE067080E0634A1915D1ADE92056E6F")
     public E peek() {
         return peekFirst();
@@ -294,11 +330,15 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         //return peekFirstImpl();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "AFC93F64F463BC2AB0989756248E17C1", hash_generated_method = "C5FBCDBEC4241ACA2F00E674FB83707A")
     public E element() {
         return peekFirst();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.137 -0400", hash_original_method = "6BB9A441F12D3E8CACB448F2BFF70164", hash_generated_method = "15C731CFA7712C533369F8FFD15F051E")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -319,6 +359,8 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         //}
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.137 -0400", hash_original_method = "7A7BB5A4D858D82384B74EA358B45BD7", hash_generated_method = "581C710E4AAE3D3860B5F9D074085890")
     private void readObject(ObjectInputStream stream) throws IOException,
     ClassNotFoundException {
@@ -331,6 +373,8 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
 
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     
     public ListIterator<E> listIterator(int location) {

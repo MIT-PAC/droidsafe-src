@@ -5,11 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 class Logical {
 
-
     /** @see BigInteger#not() */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.008 -0500", hash_original_method = "392AFC3BDADB24DC195370AE34B72ED7", hash_generated_method = "EE559654C2007CDF8FB59F6C5F0BB36B")
     
 static BigInteger not(BigInteger val) {
@@ -55,6 +55,8 @@ static BigInteger not(BigInteger val) {
     }
 
     /** @see BigInteger#and(BigInteger) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.010 -0500", hash_original_method = "2C8DC85E0E1CCD004FAAD21C9629C260", hash_generated_method = "A6E1EF5B13BCCC1070AF257A88240E7E")
     
 static BigInteger and(BigInteger val, BigInteger that) {
@@ -86,6 +88,8 @@ static BigInteger and(BigInteger val, BigInteger that) {
     }
 
     /** @return sign = 1, magnitude = val.magnitude & that.magnitude*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.013 -0500", hash_original_method = "7F3EB0E904FF3E9DD99368007D6C9B81", hash_generated_method = "AE5E29782941B2940AE2AF6FDFBDFDDF")
     
 static BigInteger andPositive(BigInteger val, BigInteger that) {
@@ -106,6 +110,8 @@ static BigInteger andPositive(BigInteger val, BigInteger that) {
     }
 
     /** @return sign = positive.magnitude & magnitude = -negative.magnitude */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.016 -0500", hash_original_method = "D4ADDF36FE9698AFC6A4BD65552D080E", hash_generated_method = "F9731EA323E9DF142F65C996737B4DA4")
     
 static BigInteger andDiffSigns(BigInteger positive, BigInteger negative) {
@@ -143,6 +149,8 @@ static BigInteger andDiffSigns(BigInteger positive, BigInteger negative) {
     }
 
     /** @return sign = -1, magnitude = -(-longer.magnitude & -shorter.magnitude)*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.019 -0500", hash_original_method = "4BA9A3F2357E229226C0FDBBF26C29A3", hash_generated_method = "B4B1EBF48EC15332B07C45037F6BD707")
     
 static BigInteger andNegative(BigInteger longer, BigInteger shorter) {
@@ -199,6 +207,8 @@ static BigInteger andNegative(BigInteger longer, BigInteger shorter) {
     }
 
     /** @see BigInteger#andNot(BigInteger) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.022 -0500", hash_original_method = "FFE149F0CA07D5DDAB8B34E15CBB188E", hash_generated_method = "7A4116E6DB1FE2D05FD59C5571D0563A")
     
 static BigInteger andNot(BigInteger val, BigInteger that) {
@@ -233,6 +243,8 @@ static BigInteger andNot(BigInteger val, BigInteger that) {
     }
 
     /** @return sign = 1, magnitude = val.magnitude & ~that.magnitude*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.025 -0500", hash_original_method = "C0E54D558D226B234C4AF57127F55347", hash_generated_method = "DFAC7F613E03603AE640C401A858F3AF")
     
 static BigInteger andNotPositive(BigInteger val, BigInteger that) {
@@ -252,6 +264,8 @@ static BigInteger andNotPositive(BigInteger val, BigInteger that) {
     }
 
     /** @return sign = 1, magnitude = positive.magnitude & ~(-negative.magnitude)*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.027 -0500", hash_original_method = "3369F881491DAA5EA286C0C2A65C4740", hash_generated_method = "CAB55BB40A9374C3CDC62CA4F7FC0760")
     
 static BigInteger andNotPositiveNegative(BigInteger positive, BigInteger negative) {
@@ -285,6 +299,8 @@ static BigInteger andNotPositiveNegative(BigInteger positive, BigInteger negativ
     }
 
     /** @return sign = -1, magnitude = -(-negative.magnitude & ~positive.magnitude)*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.031 -0500", hash_original_method = "DD119577D67A3E7BD795D9D09EFDA25B", hash_generated_method = "079FA99B4F273C98C10B5B0D5A00B7E0")
     
 static BigInteger andNotNegativePositive(BigInteger negative, BigInteger positive) {
@@ -360,6 +376,8 @@ static BigInteger andNotNegativePositive(BigInteger negative, BigInteger positiv
     }
 
     /** @return sign = 1, magnitude = -val.magnitude & ~(-that.magnitude)*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.035 -0500", hash_original_method = "B3B8A3E928EA206167CF1C5192B047DF", hash_generated_method = "78AEE2D4AE5CCC92371A8E41899EE777")
     
 static BigInteger andNotNegative(BigInteger val, BigInteger that) {
@@ -416,6 +434,8 @@ static BigInteger andNotNegative(BigInteger val, BigInteger that) {
     }
 
     /** @see BigInteger#or(BigInteger) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.038 -0500", hash_original_method = "E26D488F3AAB4CDC413B1181E2CD9C21", hash_generated_method = "EA3D26D70594626EBA130E26FF9BAC1C")
     
 static BigInteger or(BigInteger val, BigInteger that) {
@@ -451,6 +471,8 @@ static BigInteger or(BigInteger val, BigInteger that) {
     }
 
     /** @return sign = 1, magnitude = longer.magnitude | shorter.magnitude*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.041 -0500", hash_original_method = "E1A52B0EEA69860CA581AD315054499A", hash_generated_method = "9016A128788D0A4570A9797EA91F4B40")
     
 static BigInteger orPositive(BigInteger longer, BigInteger shorter) {
@@ -471,6 +493,8 @@ static BigInteger orPositive(BigInteger longer, BigInteger shorter) {
     }
 
     /** @return sign = -1, magnitude = -(-val.magnitude | -that.magnitude) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.044 -0500", hash_original_method = "260F2451AD2E052F4E7F80E194494B56", hash_generated_method = "F3A064319B9501202717A6BAC5674F9C")
     
 static BigInteger orNegative(BigInteger val, BigInteger that){
@@ -508,6 +532,8 @@ static BigInteger orNegative(BigInteger val, BigInteger that){
     }
 
     /** @return sign = -1, magnitude = -(positive.magnitude | -negative.magnitude) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.047 -0500", hash_original_method = "A13CE9D347F1A0B9FB1AE680E2818289", hash_generated_method = "04A4455207987297C5176168225A2C25")
     
 static BigInteger orDiffSigns(BigInteger positive, BigInteger negative){
@@ -568,6 +594,8 @@ static BigInteger orDiffSigns(BigInteger positive, BigInteger negative){
     }
 
     /** @see BigInteger#xor(BigInteger) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.050 -0500", hash_original_method = "1821B11966444E78361FC548F4258C0F", hash_generated_method = "A768D5C8C525E6ACFEBC4AA7AE1CF6E1")
     
 static BigInteger xor(BigInteger val, BigInteger that) {
@@ -606,6 +634,8 @@ static BigInteger xor(BigInteger val, BigInteger that) {
     }
 
     /** @return sign = 0, magnitude = longer.magnitude | shorter.magnitude */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.053 -0500", hash_original_method = "189DD0842BC0FB3122036364D7D12A46", hash_generated_method = "6787C77786A7156D1D47603FAE8F9B62")
     
 static BigInteger xorPositive(BigInteger longer, BigInteger shorter) {
@@ -625,6 +655,8 @@ static BigInteger xorPositive(BigInteger longer, BigInteger shorter) {
     }
 
     /** @return sign = 0, magnitude = -val.magnitude ^ -that.magnitude */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.057 -0500", hash_original_method = "8F87E09A5F75207496657A0F33C785A9", hash_generated_method = "719F646D47E7CF47CCF977B0DC7EE88B")
     
 static BigInteger xorNegative(BigInteger val, BigInteger that){
@@ -636,7 +668,6 @@ static BigInteger xorNegative(BigInteger val, BigInteger that){
         int iThat = that.getFirstNonzeroDigit();
         int i = iThat;
         int limit;
-
 
         if (iVal == iThat) {
             resDigits[i] = -val.digits[i] ^ -that.digits[i];
@@ -680,6 +711,8 @@ static BigInteger xorNegative(BigInteger val, BigInteger that){
     }
 
     /** @return sign = 1, magnitude = -(positive.magnitude ^ -negative.magnitude)*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.061 -0500", hash_original_method = "3948FB7D779F1B72187D779FDF9029B7", hash_generated_method = "30400D7C3287C536DD1449A48E158514")
     
 static BigInteger xorDiffSigns(BigInteger positive, BigInteger negative){
@@ -783,10 +816,11 @@ static BigInteger xorDiffSigns(BigInteger positive, BigInteger negative){
 
     /** Just to denote that this class can't be instantiated. */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.005 -0500", hash_original_method = "E0A3DE35724A26B6DFF41660E2732E13", hash_generated_method = "70AB7B0A4996E44234A828B6E1A790AE")
     
 private Logical() {}
-
     
 }
 

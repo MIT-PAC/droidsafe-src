@@ -23,6 +23,8 @@ import org.apache.harmony.security.fortress.Services;
 public final class Security {
 
     // Register default providers
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.357 -0500", hash_original_method = "4FF6FA341ED545BB45EA708ED46D5EA7", hash_generated_method = "B9FBDF6F317E6E4AE7796420935CF81D")
     
 private static void registerDefaultProviders() {
@@ -370,6 +372,8 @@ public static Set<String> getAlgorithms(String serviceName) {
      * Update sequence numbers of all providers.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.391 -0500", hash_original_method = "36CAA565E766988B673C74F846171C19", hash_generated_method = "92D0B4BBA24621AE273B53B31014859B")
     
 private static void renumProviders() {
@@ -384,6 +388,8 @@ private static void renumProviders() {
     
     private static class SecurityDoor implements SecurityAccess {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
@@ -415,6 +421,8 @@ public Provider.Service getService(Provider p, String type) {
     /**
      * This class can't be instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.354 -0500", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "4BBE606056C3BCB2A6E6D86FC214144D")
     
 private Security() {

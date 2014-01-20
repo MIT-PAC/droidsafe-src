@@ -22,6 +22,8 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
 
     private transient NavigableSet<E> descendingSet;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.834 -0500", hash_original_method = "B468A43994310DE7D91A1366853F3908", hash_generated_method = "B468A43994310DE7D91A1366853F3908")
     
 TreeSet(NavigableMap<E, Object> map) {
@@ -74,6 +76,8 @@ public TreeSet(Comparator<? super E> comparator) {
      * @param set
      *            the SortedSet of elements to add.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.845 -0500", hash_original_method = "A9811B2E808509DC9D16313E2A4EF959", hash_generated_method = "7357EAA636FC4374A613D83DAF4FD331")
     
 public TreeSet(SortedSet<E> set) {
@@ -94,7 +98,9 @@ public TreeSet(SortedSet<E> set) {
         return super.add(object);
     }
     
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.548 -0400", hash_original_method = "BDDE8348BEC59AA11A27D7FE3ECB76D9", hash_generated_method = "037128A946DAF3846E141644E35E59AD")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.548 -0400", hash_original_method = "BDDE8348BEC59AA11A27D7FE3ECB76D9", hash_generated_method = "037128A946DAF3846E141644E35E59AD")
     @SuppressWarnings("unchecked")
     @Override
     public Object clone() {
@@ -131,12 +137,16 @@ public TreeSet(SortedSet<E> set) {
      *
      * @return a Comparator or null if the natural ordering is used
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.858 -0500", hash_original_method = "15725AB8DA5A973CA6D3756CF495713E", hash_generated_method = "6EEA529A6B609A566059065CE51057E6")
     
 public Comparator<? super E> comparator() {
         return backingMap.comparator();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.549 -0400", hash_original_method = "B45AC88DE7B9594C8371B21B65FAB594", hash_generated_method = "861FF20C39960260BA63816D3660E6B9")
     @Override
     public Iterator<E> iterator() {
@@ -145,6 +155,8 @@ public Comparator<? super E> comparator() {
         //return backingMap.keySet().iterator();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.549 -0400", hash_original_method = "5A7C74B47E5E24EDAEF18CEBD56ECC34", hash_generated_method = "985B1000856FE0C2D90F59DE62A312F9")
     public Iterator<E> descendingIterator() {
         return super.getReverseIterator();
@@ -152,21 +164,27 @@ public Comparator<? super E> comparator() {
         //return descendingSet().iterator();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.550 -0400", hash_original_method = "4513FA2253D64848D60CCD34F380731F", hash_generated_method = "326AB076421601A1FA7897EB46E26059")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.550 -0400", hash_original_method = "4513FA2253D64848D60CCD34F380731F", hash_generated_method = "326AB076421601A1FA7897EB46E26059")
     public E first() {
         return super.getFirstElement();
         // ---------- Original Method ----------
         //return backingMap.firstKey();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.550 -0400", hash_original_method = "4FE03970533DF6513B3C509D55D59969", hash_generated_method = "59265760E3EF80DCF16FAD0ABADA19DF")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.550 -0400", hash_original_method = "4FE03970533DF6513B3C509D55D59969", hash_generated_method = "59265760E3EF80DCF16FAD0ABADA19DF")
     public E last() {
             return super.getLastElement();
         // ---------- Original Method ----------
         //return backingMap.lastKey();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.551 -0400", hash_original_method = "C4703F0CB955C02A45F56DAC0B50011B", hash_generated_method = "430FC412772ED928A0B8CBF86430BEE9")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.551 -0400", hash_original_method = "C4703F0CB955C02A45F56DAC0B50011B", hash_generated_method = "430FC412772ED928A0B8CBF86430BEE9")
     public E pollFirst() {
         return super.removeFirstElement();
         // ---------- Original Method ----------
@@ -174,7 +192,9 @@ public Comparator<? super E> comparator() {
         //return (entry == null) ? null : entry.getKey();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.551 -0400", hash_original_method = "F4F5E61D6851DE05B80C97EFA1D29318", hash_generated_method = "EC62C48804D72E4F44AACF87C1322107")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.551 -0400", hash_original_method = "F4F5E61D6851DE05B80C97EFA1D29318", hash_generated_method = "EC62C48804D72E4F44AACF87C1322107")
     public E pollLast() {
         return super.removeLastElement();
         // ---------- Original Method ----------
@@ -188,6 +208,8 @@ public Comparator<? super E> comparator() {
      * @see java.util.NavigableSet#higher(java.lang.Object)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.885 -0500", hash_original_method = "255C56AF04920CEFFC0E8FF16D0886BA", hash_generated_method = "BAB0A6DE3A0E5EEC383839F103BC1121")
     
 public E higher(E e) {
@@ -200,6 +222,8 @@ public E higher(E e) {
      * @see java.util.NavigableSet#lower(java.lang.Object)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.887 -0500", hash_original_method = "2923D8AB0DD9211CCF8AD13865FD4B03", hash_generated_method = "27EF061D4628915C35943B91D46B2980")
     
 public E lower(E e) {
@@ -212,6 +236,8 @@ public E lower(E e) {
      * @see java.util.NavigableSet#ceiling(java.lang.Object)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.890 -0500", hash_original_method = "F02A103FC86BCAE7229665056FB74739", hash_generated_method = "4876CBCE7966F5366E623D71B6E25C42")
     
 public E ceiling(E e) {
@@ -224,6 +250,8 @@ public E ceiling(E e) {
      * @see java.util.NavigableSet#floor(java.lang.Object)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.892 -0500", hash_original_method = "09066F58D542F9425C5670329C148EFE", hash_generated_method = "305044D863F1396456C7C58F5FD6AC3C")
     
 public E floor(E e) {
@@ -236,6 +264,8 @@ public E floor(E e) {
      * @see java.util.NavigableSet#descendingSet()
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.894 -0500", hash_original_method = "A6CC6F36D568F252AE741D0349E41073", hash_generated_method = "3CF353DEC30C2380750D2C8D95583DA4")
     
 public NavigableSet<E> descendingSet() {
@@ -249,6 +279,8 @@ public NavigableSet<E> descendingSet() {
      * @see java.util.NavigableSet#subSet(Object, boolean, Object, boolean)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.897 -0500", hash_original_method = "ED81F074F474A876A14D172DD54F12F1", hash_generated_method = "00943543B1A162988CEB2A4F8B35119B")
     
 @SuppressWarnings("unchecked")
@@ -270,6 +302,8 @@ public NavigableSet<E> descendingSet() {
      * @see java.util.NavigableSet#headSet(Object, boolean)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.899 -0500", hash_original_method = "F84D7A45054DBC97192AC73FC2432832", hash_generated_method = "BADCA3D6E5B3206564BBFAF111706B2C")
     
 @SuppressWarnings("unchecked")
@@ -290,6 +324,8 @@ public NavigableSet<E> descendingSet() {
      * @see java.util.NavigableSet#tailSet(Object, boolean)
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.902 -0500", hash_original_method = "663A99D3FA4C192D3A7FF25E6DB9D983", hash_generated_method = "D36F1EE33754292EB0A457B00F2F8026")
     
 @SuppressWarnings("unchecked")
@@ -324,6 +360,8 @@ public NavigableSet<E> descendingSet() {
      *                when the start or end object is null and the comparator
      *                cannot handle null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.905 -0500", hash_original_method = "C92358BB1651ED2C24F4D6C79CD951E7", hash_generated_method = "261A1E8194C4A0B83586EABA1F1258A6")
     
 @SuppressWarnings("unchecked")
@@ -347,6 +385,8 @@ public NavigableSet<E> descendingSet() {
      *                when the end object is null and the comparator cannot
      *                handle null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.907 -0500", hash_original_method = "B22F87137AF3AAA5F7ECED16F7688B46", hash_generated_method = "FCBD8B988A8139DB86114DBF3716E343")
     
 @SuppressWarnings("unchecked")
@@ -372,6 +412,8 @@ public NavigableSet<E> descendingSet() {
      *                when the start object is null and the comparator cannot
      *                handle null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.910 -0500", hash_original_method = "D9366E253CBE1FE1D040B6F98C30B4A1", hash_generated_method = "8D2D3DBE95A0DB0C8135A9DD554761C5")
     
 @SuppressWarnings("unchecked")
@@ -379,6 +421,8 @@ public NavigableSet<E> descendingSet() {
         return tailSet(start, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.913 -0500", hash_original_method = "99C17ADAEB11E32F56AB0674B65B4A86", hash_generated_method = "2F3DFE7FA121EB1EA6565E53426830EB")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -394,6 +438,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.916 -0500", hash_original_method = "675A9075CC9828201778F15727C38572", hash_generated_method = "1FB3794B815BD7ED90D65C97CC7299B0")
     
 @SuppressWarnings("unchecked")

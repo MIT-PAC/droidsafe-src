@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.util.Random;
 
-
-
-
-
-
 public abstract class ECFieldElement implements ECConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.559 -0400", hash_original_method = "18B929116CB81747CE726807F2C6A2C0", hash_generated_method = "18B929116CB81747CE726807F2C6A2C0")
@@ -20,36 +15,58 @@ public abstract class ECFieldElement implements ECConstants {
         //Synthesized constructor
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.803 -0500", hash_original_method = "9E64A0384813C139C8C18942EDABD461", hash_generated_method = "D019B0AC7A8E81D32509DFDB9D8F8B1A")
     
 public abstract BigInteger     toBigInteger();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.805 -0500", hash_original_method = "41F7C7FADBD9EE43B16E448C99FA24E8", hash_generated_method = "970B73DD1B610F8DEB3601DBDCE110C6")
     
 public abstract String         getFieldName();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.807 -0500", hash_original_method = "049FE0DFDB7700333EFC0A96FA9B412C", hash_generated_method = "3844C5B4D6AA3EBAD6B265D6EEF27356")
     
 public abstract int            getFieldSize();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.810 -0500", hash_original_method = "FE7B548CCAEFD218D5A78826C5919A75", hash_generated_method = "2CFEBC4236BDD897199025E0545F7134")
     
 public abstract ECFieldElement add(ECFieldElement b);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.812 -0500", hash_original_method = "B19CF8FF2C3438D63E73CD809F752C16", hash_generated_method = "9DE26FC9A3938F11B3CE84223C3840E4")
     
 public abstract ECFieldElement subtract(ECFieldElement b);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.814 -0500", hash_original_method = "685EA3BE2F341D8641A4511F0DB3B370", hash_generated_method = "4210053576BC21241BA818E79C8B6527")
     
 public abstract ECFieldElement multiply(ECFieldElement b);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.816 -0500", hash_original_method = "60CD11732881C97747F463FB17944C57", hash_generated_method = "2C70415E9E79F21F9F5A8C124D8E4F72")
     
 public abstract ECFieldElement divide(ECFieldElement b);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.819 -0500", hash_original_method = "AF79AB5B6AA69D39E95B0C317656FB1D", hash_generated_method = "94CBC5C627AAB21CF070F4FBE1F31CD2")
     
 public abstract ECFieldElement negate();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.821 -0500", hash_original_method = "2A7EC7F73312E0B70E4512A1A74B027F", hash_generated_method = "29FE87CC60A039660C95C3545403E18E")
     
 public abstract ECFieldElement square();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.824 -0500", hash_original_method = "E51652288AFA3A5841DE5E91510D9072", hash_generated_method = "01A5C4144B75C55A0412A9B3E269DFE4")
     
 public abstract ECFieldElement invert();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.826 -0500", hash_original_method = "11C516C66C5B0E5F8E69FBD1637FC5C1", hash_generated_method = "4FDC64545114C53F4883902C32A74A5B")
     
 public abstract ECFieldElement sqrt();
@@ -60,7 +77,6 @@ public String toString()
     {
         return this.toBigInteger().toString(2);
     }
-
     
     public static class Fp extends ECFieldElement {
 
@@ -87,6 +103,8 @@ public String toString()
 //            return r.multiply(r).multiply(x.modPow(q.subtract(ECConstants.TWO), q)).subtract(ECConstants.TWO).mod(p);
 //        }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.869 -0500", hash_original_method = "DEDA72BB3BC7F2527613E85E73782946", hash_generated_method = "C5E7A4839B36FAA5E820775C713A22AC")
         
 private static BigInteger[] lucasSequence(
@@ -143,7 +161,6 @@ private static BigInteger[] lucasSequence(
 
         BigInteger x;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.834 -0500", hash_original_field = "F819999E3B2036A19089F4FD0B5D94F4", hash_generated_field = "F819999E3B2036A19089F4FD0B5D94F4")
-
 
         BigInteger q;
         
@@ -374,11 +391,8 @@ public int hashCode()
         {
             return q.hashCode() ^ x.hashCode();
         }
-
         
     }
-
-
     
     public static class F2m extends ECFieldElement {
 
@@ -529,6 +543,8 @@ public F2m(int m, int k, BigInteger x)
             this(m, k, 0, 0, x);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.912 -0500", hash_original_method = "E37831F6788FECA0B3C28407A9D117A4", hash_generated_method = "0FD2A434CAB8A27EC3DFFFCDFEB4672C")
         
 private F2m(int m, int k1, int k2, int k3, IntArray x)
@@ -635,7 +651,6 @@ public ECFieldElement square()
             squared.reduce(m, new int[]{k1, k2, k3});
             return new F2m(m, k1, k2, k3, squared);
         }
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.940 -0500", hash_original_method = "1700F54C0CA191DF0B1880FDDD97556A", hash_generated_method = "5A9DF09BBD4B02075EE4FE9FBE27A95C")
         
@@ -812,8 +827,6 @@ public int hashCode()
             return x.hashCode() ^ m ^ k1 ^ k2 ^ k3;
         }
     }
-
-
     
 }
 

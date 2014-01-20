@@ -789,6 +789,8 @@ public boolean getDataOnRoamingEnabled() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.848 -0500", hash_original_method = "D53421F789432FAA1BE4F347AFB92C88", hash_generated_method = "531F0996271BFD729AA050224A6C62AF")
     
 private void handleDataOnRoamingChange() {
@@ -801,30 +803,48 @@ private void handleDataOnRoamingChange() {
     }
 
     // abstract methods
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.851 -0500", hash_original_method = "2012020E588CEEA07B7EB708DEEEB1B9", hash_generated_method = "07DFE59F4E7B16364F9B5C79F690A587")
     
 protected abstract String getActionIntentReconnectAlarm();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.853 -0500", hash_original_method = "1CB8EB5211B5F886D7B8EBB8EC22CD57", hash_generated_method = "B65918E13AFF9CC61F1A55D3EFC582B1")
     
 protected abstract String getActionIntentDataStallAlarm();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.855 -0500", hash_original_method = "A44B84207D5FEA00852D820EA7B21A45", hash_generated_method = "B20D244AB51B62F9597DBFFDA31BA1C2")
     
 protected abstract void startNetStatPoll();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.857 -0500", hash_original_method = "602FDBF457BE376E81403052D70BA305", hash_generated_method = "F218368821D052E29DD1C347E02778D0")
     
 protected abstract void stopNetStatPoll();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.860 -0500", hash_original_method = "C77812435437F76A99F0752F61D7BD78", hash_generated_method = "4FC764802937F30C0E464633A21EE8BA")
     
 protected abstract void restartRadio();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.862 -0500", hash_original_method = "48DBEBE9679DD6022C78E9B6D9D15841", hash_generated_method = "43827D28600B8F0847D532E80E30A990")
     
 protected abstract void log(String s);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.864 -0500", hash_original_method = "8503C48BD28DECE909202E8D31B4BECE", hash_generated_method = "98998146AAEFC08A350487078A6888FB")
     
 protected abstract void loge(String s);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.867 -0500", hash_original_method = "F6B78C14D197B513C8850E81B32E4262", hash_generated_method = "F05E24CF43DD0B4B12DC95652E89F958")
     
 protected abstract boolean isDataAllowed();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.870 -0500", hash_original_method = "130D29CE493449FEC0FB75884B98F60C", hash_generated_method = "7C87DED4CF1C92B358B340108C501B01")
     
 protected abstract boolean isApnTypeAvailable(String type);
@@ -834,43 +854,69 @@ public    abstract State getState(String apnType);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.874 -0500", hash_original_method = "81F6B0782CAB75D9D6FEDF3792241E41", hash_generated_method = "D87F31D184D451CDFD0B3B3975A5863A")
     
 protected abstract void setState(State s);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.877 -0500", hash_original_method = "DA6DD81F7FC526F28D624059F15206A3", hash_generated_method = "82128E3CB3CB2C303349E9B7F6425951")
     
 protected abstract void gotoIdleAndNotifyDataConnection(String reason);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.879 -0500", hash_original_method = "EB097F677BCBED6EB86237833DEBC082", hash_generated_method = "6294D54DB550784B4E3C6FE24618688A")
     
 protected abstract boolean onTrySetupData(String reason);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.882 -0500", hash_original_method = "8C9FE2ADB7F5A6C04946E60BC019D8B1", hash_generated_method = "0E773087A1A27144193FA2A2637C51A6")
     
 protected abstract void onRoamingOff();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.884 -0500", hash_original_method = "2CFEDAD2A9C9E9A45E26A2D960DF9585", hash_generated_method = "F4A42EAA276640EFC5165CC6E8E81037")
     
 protected abstract void onRoamingOn();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.887 -0500", hash_original_method = "F9A16E21EA7FC200AAB1B517843F3C6D", hash_generated_method = "085FFDD9C2BB46C3C88388D91EFF45E8")
     
 protected abstract void onRadioAvailable();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.890 -0500", hash_original_method = "758F039A900656878509DDA234D7AEB8", hash_generated_method = "6BEE21FF2E8E14B94D8570914FC779E5")
     
 protected abstract void onRadioOffOrNotAvailable();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.892 -0500", hash_original_method = "D73C9FE8C0314CBFE7A866786A4386C4", hash_generated_method = "2D6B5A13482EDD09AFB2746AB6EEBB4F")
     
 protected abstract void onDataSetupComplete(AsyncResult ar);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.895 -0500", hash_original_method = "DE6E41DB2D3F1B9CDCDBA4138489278B", hash_generated_method = "2CC33001AC5C84D02F1C79C18E0EEB17")
     
 protected abstract void onDisconnectDone(int connId, AsyncResult ar);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.897 -0500", hash_original_method = "424D67D7BCD8750992A0192EFA72CB95", hash_generated_method = "FAE9C7BEAB57AF6470CC7CC8841ABF52")
     
 protected abstract void onVoiceCallStarted();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.899 -0500", hash_original_method = "F179B8ED631B30ABC684D5439D815095", hash_generated_method = "5B734EBF19059E8B112B67AE2F0EC75C")
     
 protected abstract void onVoiceCallEnded();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.902 -0500", hash_original_method = "1C3E8D0AB9D5543BD1D549743FC04882", hash_generated_method = "6F85799D039DCA082F8B958F3B0273BF")
     
 protected abstract void onCleanUpConnection(boolean tearDown, int apnId, String reason);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.904 -0500", hash_original_method = "05E72BAF77148F4BECF5D3BD8DF7EAC3", hash_generated_method = "9C5B9CD8A59D5B61F8CB89B46C58281B")
     
 protected abstract void onCleanUpAllConnections(String cause);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.906 -0500", hash_original_method = "C1E7EC6E282382B45C353ECA53713605", hash_generated_method = "6F08FF359CEE4D9E6C7CCCBC6E0D2ED4")
     
 protected abstract boolean isDataPossible(String apnType);
@@ -1119,6 +1165,8 @@ protected void notifyDataConnection(String reason) {
 
     // a new APN has gone active and needs to send events to catch up with the
     // current condition
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.936 -0500", hash_original_method = "0EE2FD1B724C501D31FB7072BBECFF7B", hash_generated_method = "C39D3E723CA8E2DEA4773792403C16C0")
     
 private void notifyApnIdUpToCurrent(String reason, int apnId) {
@@ -1139,6 +1187,8 @@ private void notifyApnIdUpToCurrent(String reason, int apnId) {
     }
 
     // since we normally don't send info to a disconnected APN, we need to do this specially
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.938 -0500", hash_original_method = "D45BD11E51C479A3FCCFFBAFE72F463B", hash_generated_method = "E83C7FAC143A3674F29F4186CCE707F3")
     
 private void notifyApnIdDisconnected(String reason, int apnId) {
@@ -1393,6 +1443,8 @@ public void cleanUpAllConnections(String cause) {
         sendMessage(msg);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.972 -0500", hash_original_method = "1352E38507CB0330D4BD0958B3487B84", hash_generated_method = "8FFFA0D97EDED5974C1DF739D7AC1BC8")
     
 public abstract boolean isDisconnected();

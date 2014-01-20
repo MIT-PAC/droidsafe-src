@@ -28,6 +28,8 @@ public GLErrorWrapper(GL gl, int configFlags) {
         mCheckThread = (configFlags & GLDebugHelper.CONFIG_CHECK_THREAD) != 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:04.040 -0500", hash_original_method = "8D2CFEB19FD30277708BE9D87CBF31F7", hash_generated_method = "5C09C8BF96086249C950AC3A3EAF0E1C")
     
 private void checkThread() {
@@ -44,6 +46,8 @@ private void checkThread() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:04.043 -0500", hash_original_method = "DFE4358DBB87A194B0A1ECCFFB0EC18F", hash_generated_method = "727496F96C868886F32D9F5336963127")
     
 private void checkError() {
@@ -2151,7 +2155,6 @@ public void glWeightPointerOES(int size, int type, int stride, int offset) {
         mgl11ExtensionPack.glTexGenxv(coord, pname, params);
         checkError();
     }
-
     
 }
 

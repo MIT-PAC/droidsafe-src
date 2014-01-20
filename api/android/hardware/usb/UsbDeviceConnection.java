@@ -31,7 +31,9 @@ public UsbDeviceConnection(UsbDevice device) {
         mDevice = device;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.081 -0500", hash_original_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF", hash_generated_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.081 -0500", hash_original_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF", hash_generated_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF")
     
 boolean open(String name, ParcelFileDescriptor pfd) {
         return native_open(name, pfd.getFileDescriptor());
@@ -179,6 +181,8 @@ public String getSerial() {
         return native_get_serial();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.112 -0500", hash_original_method = "9E62342DA92A170CFD59DE9144D49504", hash_generated_method = "8CB5F8D9B5EB05A61C61E034D75C67F5")
     
     private boolean native_open(String deviceName, FileDescriptor pfd){
@@ -188,12 +192,16 @@ public String getSerial() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.116 -0500", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "75E92DEDBEC5DB3628B1DCB207D9511C")
     
     private void native_close(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.121 -0500", hash_original_method = "A13B1C2D71E358422B30B2068556F978", hash_generated_method = "8B72AFBCBF44300893A5227B6BD7856C")
     
     private int native_get_fd(){
@@ -201,6 +209,8 @@ public String getSerial() {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.125 -0500", hash_original_method = "6CA261B8E8A3305819062B147F5E1387", hash_generated_method = "C6A6B8E359B6F087548C8B30EA48B374")
     
     private byte[] native_get_desc(){
@@ -208,6 +218,8 @@ public String getSerial() {
     	return new byte[]{getTaintByte(),};
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.129 -0500", hash_original_method = "391F7A5C89801BBAF6BA75AC34FFB355", hash_generated_method = "97638E79E50C39579ACC41895D412928")
     
     private boolean native_claim_interface(int interfaceID, boolean force){
@@ -217,6 +229,8 @@ public String getSerial() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.134 -0500", hash_original_method = "0891BD3C52B455B725F54E6AE146CA4B", hash_generated_method = "2A6230FC45A4FE9E939E5E08D8207806")
     
     private boolean native_release_interface(int interfaceID){
@@ -225,6 +239,8 @@ public String getSerial() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.138 -0500", hash_original_method = "F086403F8994814C82D251244C9D0D13", hash_generated_method = "5AA2AFAA78DB3704B6ED0871646E6400")
     
     private int native_control_request(int requestType, int request, int value,
@@ -240,6 +256,8 @@ public String getSerial() {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.143 -0500", hash_original_method = "BF7603948EC97A6C2A6FF162EAFF5EC5", hash_generated_method = "7FFF791DC0F6219145A9D508B19CE03E")
     
     private int native_bulk_request(int endpoint, byte[] buffer, int length, int timeout){
@@ -251,11 +269,15 @@ public String getSerial() {
     	return getTaintInt();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "88959A018189FD60E12A8554B278AF72", hash_generated_method = "3CB7E68BF025980C89AAE00C7D02E8F5")
     private UsbRequest native_request_wait() {
     	return new UsbRequest();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "7798A12605DD56CE252D35CCA7400682", hash_generated_method = "ABC78903D368E3A02775041EDC3A80F9")
     private String native_get_serial() {
     	return DSUtils.UNKNOWN_STRING;

@@ -270,6 +270,8 @@ public ScaleAnimation(float fromX, float toX, float fromY, float toY,
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.224 -0500", hash_original_method = "676CA3558C31BAAF0E94504390B45F7E", hash_generated_method = "676CA3558C31BAAF0E94504390B45F7E")
     
 float resolveScale(float scale, int type, int data, int size, int psize) {

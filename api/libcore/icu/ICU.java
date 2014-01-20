@@ -157,31 +157,43 @@ public static Locale[] getAvailableNumberFormatLocales() {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getAvailableBreakIteratorLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getAvailableCalendarLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getAvailableCollatorLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getAvailableDateFormatLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getAvailableLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getAvailableNumberFormatLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
@@ -262,16 +274,22 @@ public static Locale[] getAvailableNumberFormatLocales() {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getISOLanguagesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getISOCountriesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean initLocaleDataImpl(String locale, LocaleData result) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629;

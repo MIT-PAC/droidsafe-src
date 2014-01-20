@@ -16,11 +16,6 @@ import android.view.View;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class AutoText {
 
     /**
@@ -29,6 +24,8 @@ public class AutoText {
      * @param view to get the resources from
      * @return the single instance of AutoText
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.605 -0500", hash_original_method = "B963EC3FF6AF03FE47485769AA0F03D8", hash_generated_method = "532C51C8F51A590EC036E55B5360FFCE")
     
 private static AutoText getInstance(View view) {
@@ -66,6 +63,8 @@ public static String get(CharSequence src, final int start, final int end,
      * @param view used to retrieve the current Locale and Resources.
      * @return the number of entries in the auto text dictionary
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.611 -0500", hash_original_method = "7AF3B8B864AEDF2653F262298A569C32", hash_generated_method = "02CCA7C4FE6C8D8101D828F51FC687EA")
     
 public static int getSize(View view) {
@@ -92,7 +91,6 @@ public static int getSize(View view) {
     private static final int TRIE_NEXT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.562 -0500", hash_original_field = "404EFA550AAC0DD93669441B94730B89", hash_generated_field = "1F844D101640222C3A1D40C43FB4C786")
 
-
     private static final int TRIE_SIZEOF = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.565 -0500", hash_original_field = "735CD36D1D3B61261EB9D9BAB8CB2423", hash_generated_field = "07E61E77484A4D134C2E87A238AFD5E0")
 
@@ -102,18 +100,14 @@ public static int getSize(View view) {
     private static final int TRIE_ROOT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.571 -0500", hash_original_field = "78E41A0FA92C32E4CF5FC0672065B3F4", hash_generated_field = "AFE8F2ECAFDB9F5B221DBA3F6D2395CC")
 
-
     private static final int INCREMENT = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.574 -0500", hash_original_field = "DCF95085792D8BE9D2576CF23950BAEA", hash_generated_field = "4962220A561069893B9B4182571E46EF")
-
 
     private static final int DEFAULT = 14337;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.578 -0500", hash_original_field = "75675FCA6F7A137C0B5CEDEC64AA77EE", hash_generated_field = "A173C71035C72942C03904EBEB219845")
 
-
     private static final int RIGHT = 9300;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.581 -0500", hash_original_field = "CE1EE35B21242B56128D6BE8E887DD28", hash_generated_field = "2193FE5B55F6D09F6E5BF7372AB38D87")
-
 
     private static AutoText sInstance = new AutoText(Resources.getSystem());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.584 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "E209496F9F2C9103A6260BCF69D3191B")
@@ -143,6 +137,8 @@ public static int getSize(View view) {
 
     private int mSize;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.602 -0500", hash_original_method = "09AEE40B99596F23FD7F50F9A174308F", hash_generated_method = "BEFAB2CB575C283560FE48E6C86967A3")
     
 private AutoText(Resources resources) {
@@ -153,6 +149,8 @@ private AutoText(Resources resources) {
     /**
      * Returns the size of the dictionary.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.613 -0500", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "078FDE03C7E88FE97FCC849E1A4FF824")
     
 private int getSize() {
@@ -190,6 +188,8 @@ private String lookup(CharSequence src, final int start, final int end) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.620 -0500", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "B5E6AFF462B11169A04E76BBB3111B8F")
     
 private void init(Resources r) {
@@ -243,6 +243,8 @@ private void init(Resources r) {
         mText = right.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.624 -0500", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "D354E0B76BC0B70613FD17D65D475832")
     
 private void add(String src, char off) {
@@ -300,6 +302,8 @@ private void add(String src, char off) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.627 -0500", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "7434CE68F8D446D88144B235481167CA")
     
 private char newTrieNode() {

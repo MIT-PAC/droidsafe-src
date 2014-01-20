@@ -8,8 +8,6 @@ import java.util.Locale;
 
 import libcore.icu.ICU;
 
-
-
 public class LocaleUtil {
 
     /**
@@ -54,6 +52,8 @@ public static int getLayoutDirectionFromLocale(Locale locale) {
      *
      * @hide
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.778 -0500", hash_original_method = "4B0B9488116BB6BD2FA538E03385F4D9", hash_generated_method = "C266638A7408BEA3945B46E15D7B6D36")
     
 private static int getLayoutDirectionFromFirstChar(Locale locale) {
@@ -75,16 +75,16 @@ private static int getLayoutDirectionFromFirstChar(Locale locale) {
     public static final int TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.768 -0500", hash_original_field = "2F88A7A720FE3AC9D2D577402FE96D1B", hash_generated_field = "BDD6D5F89EF25696F38BF4CDA303B03E")
 
-
     private static final char UNDERSCORE_CHAR = '_';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.770 -0500", hash_original_field = "F1EC188F6B9A64E9CC2DDF1BFE231004", hash_generated_field = "E671077DBE84DEFDA400ACC06557696C")
-
 
     private static String ARAB_SCRIPT_SUBTAG = "Arab";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.772 -0500", hash_original_field = "444B44F4D44F456A016C4AA30A616C72", hash_generated_field = "585680D6F417A4378E85E18D90332D17")
 
     private static String HEBR_SCRIPT_SUBTAG = "Hebr";
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.761 -0500", hash_original_method = "DB2CFC1123D815AD16F73168E1C2B755", hash_generated_method = "1F8B01B2D1D91402BAACAACF29104D5C")
     
 private LocaleUtil() { /* cannot be instantiated */ }

@@ -18,6 +18,8 @@ import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 
 public class SECNamedCurves {
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.134 -0500", hash_original_method = "257B088F16AD234B1226009C83E2E43F", hash_generated_method = "EC0DF9DCA8CE83204ACDEA090D85F0D0")
     
 private static BigInteger fromHex(
@@ -26,6 +28,8 @@ private static BigInteger fromHex(
         return new BigInteger(1, Hex.decode(hex));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.351 -0500", hash_original_method = "D496A72DDCEE7F5F04116790B757B93C", hash_generated_method = "A5CBB41323AEE52B90D4E09F74E60444")
     
 static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder)

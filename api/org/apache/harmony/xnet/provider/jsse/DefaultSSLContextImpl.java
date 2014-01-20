@@ -41,6 +41,8 @@ public DefaultSSLContextImpl() throws GeneralSecurityException, IOException {
     }
 
     // TODO javax.net.ssl.keyStoreProvider system property
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.096 -0500", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "EAC19B8B4FD5A1F1B311A095D42F2FC7")
     
@@ -79,6 +81,8 @@ KeyManager[] getKeyManagers () throws GeneralSecurityException, IOException {
     }
 
     // TODO javax.net.ssl.trustStoreProvider system property
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.099 -0500", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "91D2689A479083E2E70C28999FAAC745")
     

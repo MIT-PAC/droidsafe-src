@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
-
-
 public class ECAlgorithms {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.780 -0500", hash_original_method = "F48E0D5EA6C0E86FA4BAC23458A6895D", hash_generated_method = "A1CFEDCDA2D25AC533DB4D31967D0324")
     
@@ -67,6 +63,8 @@ public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
         return implShamirsTrick(P, k, Q, l);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.786 -0500", hash_original_method = "CD0CA0D93D25834154450637B9C6752C", hash_generated_method = "53301DB5FBC8B137560781DF04CC9B00")
     
 private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
@@ -108,7 +106,6 @@ private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
     {
         //Synthesized constructor
     }
-
     
 }
 

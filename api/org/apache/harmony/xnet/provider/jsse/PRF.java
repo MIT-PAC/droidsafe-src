@@ -13,11 +13,10 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.SSLException;
 
-
-
-
 public class PRF {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.640 -0500", hash_original_method = "9013907446D1B3B1BEF728F3AAC98F14", hash_generated_method = "E9294A72F7A271A4930025976E1BC853")
     
 static private void init() {
@@ -48,6 +47,8 @@ static private void init() {
      * @param   secret: the buffer containing the secret value to generate prf.
      * @param   seed:   the seed to be used.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.644 -0500", hash_original_method = "06B09237572FDBACE4B91CD9A5DB4A4A", hash_generated_method = "14C1CE767CE584FF5B151067AFB17C61")
     
 static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
@@ -83,6 +84,8 @@ static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed
      * @param   str_bytes:  the label bytes to be used.
      * @param   seed:   the seed to be used.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.647 -0500", hash_original_method = "1178A5AAEAFD3956E42497222F39B739", hash_generated_method = "1E775A118847D9F735DCABC8A65D2104")
     
 synchronized static void computePRF(byte[] out, byte[] secret,
@@ -183,7 +186,6 @@ synchronized static void computePRF(byte[] out, byte[] secret,
 
     private static Logger.Stream logger = Logger.getStream("prf");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.626 -0500", hash_original_field = "26BBB8E702B9EBF3795D483832DA0664", hash_generated_field = "A5684AE7706FA9ECD61E6D3EA8256C34")
-
 
     private static Mac md5_mac;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.628 -0500", hash_original_field = "F944C092FFC61EAF52CACD16A5BFB7A4", hash_generated_field = "390D99310B8B23E117E0ACB370C8F537")

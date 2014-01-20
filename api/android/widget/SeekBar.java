@@ -32,6 +32,8 @@ public SeekBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.988 -0500", hash_original_method = "DD663C8CCC2546E3D6B933CEB65E26BD", hash_generated_method = "5946F245E80E43CEA4DAC9BD328B0E34")
     
 @Override
@@ -57,6 +59,8 @@ public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
         mOnSeekBarChangeListener = l;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.993 -0500", hash_original_method = "2E55538E3CA24475C492828CB72A3527", hash_generated_method = "20DE66F683C7C9FA49952071E7A0E279")
     
 @Override
@@ -67,6 +71,8 @@ public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.995 -0500", hash_original_method = "C921C0BD5635A2E6E637F17C3D08AF5B", hash_generated_method = "ED3D7ACA32FEF80E21A7E878CE2071B4")
     
 @Override

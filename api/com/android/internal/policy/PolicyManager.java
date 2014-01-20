@@ -53,6 +53,8 @@ public static FallbackEventHandler makeNewFallbackEventHandler(Context context) 
     private static  IPolicy sPolicy;
 
     // Cannot instantiate this class
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.924 -0500", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "D10607CEED0D4A5C5218027895A483A6")
     
 private PolicyManager() {}

@@ -24,10 +24,6 @@ import android.util.Log;
 import dalvik.system.profiler.BinaryHprofWriter;
 import dalvik.system.profiler.SamplingProfiler;
 
-
-
-
-
 public class SamplingProfilerIntegration {
 
     /**
@@ -111,6 +107,8 @@ public static void writeZygoteSnapshot() {
     /**
      * pass in PackageInfo to retrieve various values for snapshot header
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.450 -0500", hash_original_method = "31CB55FEBB712AC9C6C246D13CF90696", hash_generated_method = "F38D38CEE1C403E8B7B2BE8AF85EA744")
     
 private static void writeSnapshotFile(String processName, PackageInfo packageInfo) {
@@ -164,6 +162,8 @@ private static void writeSnapshotFile(String processName, PackageInfo packageInf
      * \n
      * <the actual snapshot content begins here...>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.453 -0500", hash_original_method = "209578548F46DD00349D7E4CCC9857FB", hash_generated_method = "891970310FD08D7AE18CC86CEEA187C7")
     
 private static void generateSnapshotHeader(String processName, PackageInfo packageInfo,
@@ -181,14 +181,11 @@ private static void generateSnapshotHeader(String processName, PackageInfo packa
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.411 -0500", hash_original_field = "FC48C757CF7EBF9D213EA2A4BD870E63", hash_generated_field = "DED25F05264CF95D81AB507303D46649")
 
-
     private static final String TAG = "SamplingProfilerIntegration";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.413 -0500", hash_original_field = "EC4F7C78A85BB3ED8C1A3E830DB3BDEE", hash_generated_field = "72F48D94CC8ED4AD1FCA77C7196B2B92")
 
-
     public static final String SNAPSHOT_DIR = "/data/snapshots";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.416 -0500", hash_original_field = "D42E676CEDD1F98F54276A59532354DC", hash_generated_field = "DB43F08CE6FECA7A1C8C07B38FA1DE26")
-
 
     private static  boolean enabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.418 -0500", hash_original_field = "3D064D1C90BC253FA6F4BEE468114308", hash_generated_field = "1CBC3CB96AAE98A231CC700FE768AAAB")
@@ -204,7 +201,6 @@ private static void generateSnapshotHeader(String processName, PackageInfo packa
 
     private static final AtomicBoolean pending = new AtomicBoolean(false);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.432 -0500", hash_original_field = "F47D7C26E7EA9343134EACA8F7536E80", hash_generated_field = "D6D759FF1128C8C1D8674684F1ED3D4D")
-
 
     private static SamplingProfiler samplingProfiler;
     static {

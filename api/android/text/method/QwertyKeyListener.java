@@ -39,6 +39,8 @@ public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
      * Disables auto-capitalization, auto-text and long-press initiated on-screen
      * character pickers.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.512 -0500", hash_original_method = "28036565923896767649070FCEAD63E9", hash_generated_method = "0B8DEE85B85265AA92FB2339489EC029")
     
@@ -62,6 +64,8 @@ public static QwertyKeyListener getInstanceForFullKeyboard() {
      * @param end the end of the replaced region; the location of the cursor
      * @param original the text to be restored if the user presses DEL
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.530 -0500", hash_original_method = "F1AEE3667206B123E352DC3A76F57C2B", hash_generated_method = "346DD33C10E5D2CF0A9A7E95BB803763")
     
 public static void markAsReplaced(Spannable content, int start, int end,
@@ -79,6 +83,8 @@ public static void markAsReplaced(Spannable content, int start, int end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.540 -0500", hash_original_method = "5F2215F5D4894B08250EC6D68589E01F", hash_generated_method = "6A1FF60FA257FF03CDBB3F944ECF8324")
     
 private static String toTitleCase(String src) {
@@ -119,6 +125,8 @@ public QwertyKeyListener(Capitalize cap, boolean autoText) {
         this(cap, autoText, false);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.515 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
     
@@ -138,6 +146,8 @@ public Replaced(char[] text) {
         
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.523 -0500", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "86735E5613BD276499A17AEDC581B3E9")
     
 public boolean onKeyDown(View view, Editable content,
@@ -415,6 +425,8 @@ public boolean onKeyDown(View view, Editable content,
         return super.onKeyDown(view, content, keyCode, event);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.527 -0500", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "D0295F52687B48DD7A8E2092641C5A5A")
     
 private String getReplacement(CharSequence src, int start, int end,
@@ -460,6 +472,8 @@ private String getReplacement(CharSequence src, int start, int end,
         return out;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.537 -0500", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "5F5E4F8AE9B822D595A482D15393A8AF")
     
 private boolean showCharacterPicker(View view, Editable content, char c,

@@ -69,6 +69,8 @@ public static int getTagCode(String name) {
     /**
      * Read TAGS_FILE, populating sTagCodes and sTagNames, if not already done.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.130 -0500", hash_original_method = "AFAE197FB851905387419AFB7B96BE3D", hash_generated_method = "021B766E7D2435C8BD1B563E57AFC62F")
     
 private static synchronized void readTagsFile() {
@@ -155,7 +157,9 @@ private static synchronized void readTagsFile() {
         private  ByteBuffer mBuffer;
 
         /** @param data containing event, read from the system */
-        /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.086 -0500", hash_original_method = "FACE593E138E02D29B65D04F3AFD5558", hash_generated_method = "FACE593E138E02D29B65D04F3AFD5558")
+        /*package*/ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.086 -0500", hash_original_method = "FACE593E138E02D29B65D04F3AFD5558", hash_generated_method = "FACE593E138E02D29B65D04F3AFD5558")
         
 Event(byte[] data) {
             mBuffer = ByteBuffer.wrap(data);
@@ -214,6 +218,8 @@ public synchronized Object getData() {
         }
 
         /** @return the loggable item at the current position in mBuffer. */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.101 -0500", hash_original_method = "153DDF284ABF68138956B6F9D94EE6B9", hash_generated_method = "8C1B54AAE8A0937EC032905EE1B51BB1")
         
 private Object decodeObject() {

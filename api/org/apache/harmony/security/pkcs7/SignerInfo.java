@@ -120,6 +120,8 @@ public final class SignerInfo {
 
     private  List<?> unauthenticatedAttributes;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.372 -0500", hash_original_method = "27DB92A863E4BE605C04757E557D0CAB", hash_generated_method = "2F739C205EC44E4BCAFF22CEDE549E9A")
     
 private SignerInfo(int version,

@@ -12,11 +12,6 @@ import java.nio.charset.Charsets;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
-
-
-
-
-
 final public class XMLReaderFactory {
 
     /**
@@ -118,7 +113,6 @@ public static XMLReader createXMLReader ()
     }
     }
 
-
     /**
      * Attempt to create an XML reader from a class name.
      *
@@ -144,6 +138,8 @@ public static XMLReader createXMLReader (String className)
     return loadClass (NewInstance.getClassLoader (), className);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.075 -0500", hash_original_method = "19F45E94121470D2054A27FC5606404E", hash_generated_method = "84E036670D1F7C69B51ED09D9A62AD98")
     
 private static XMLReader loadClass (ClassLoader loader, String className)
@@ -168,13 +164,14 @@ private static XMLReader loadClass (ClassLoader loader, String className)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.066 -0500", hash_original_field = "1FF00DEEDADF017351C6C7186E37BE3F", hash_generated_field = "21C340AAACD5354B279B5877FDAA9460")
 
-
     private static final String property = "org.xml.sax.driver";
     /**
      * Private constructor.
      *
      * <p>This constructor prevents the class from being instantiated.</p>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.063 -0500", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "51AC7249F9BE6B126263D8302841892F")
     
 private XMLReaderFactory ()

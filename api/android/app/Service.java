@@ -202,6 +202,8 @@ public void onTrimMemory(int level) {
      * @return Return an IBinder through which clients can call on to the 
      *         service.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.432 -0500", hash_original_method = "E7069E97241B54247C185B02B263733A", hash_generated_method = "00BCEE37A5873355128A7403645D0D57")
     
 public abstract IBinder onBind(Intent intent);
@@ -445,6 +447,8 @@ public final void attach(
                 < Build.VERSION_CODES.ECLAIR;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.459 -0500", hash_original_method = "8DA57A133C364DA0C4CA877026045103", hash_generated_method = "F6EF08CB09E5F3BCA9DE4EF151038199")
     

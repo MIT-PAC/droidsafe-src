@@ -365,6 +365,8 @@ private static InputContextCallback getInstance() {
 
         public int mCursorCapsMode;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "C2F7B541292D8E4E042270C21CD2A858", hash_generated_method = "C2F7B541292D8E4E042270C21CD2A858")
         public InputContextCallback ()
         {
@@ -374,6 +376,8 @@ private static InputContextCallback getInstance() {
         /**
          * Makes the given InputContextCallback available for use in the future.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.227 -0500", hash_original_method = "114A3AA754115CB63309037B1A16C75C", hash_generated_method = "782115CA1F540B7D7546684D76970302")
         
 private void dispose() {
@@ -469,6 +473,8 @@ public void setExtractedText(ExtractedText extractedText, int seq) {
          * 
          * <p>The caller must be synchronized on this callback object.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.243 -0500", hash_original_method = "0DFF250C75DABF6F6E35FBCC4F44FCEA", hash_generated_method = "0DFF250C75DABF6F6E35FBCC4F44FCEA")
         
 void waitForResultLocked() {

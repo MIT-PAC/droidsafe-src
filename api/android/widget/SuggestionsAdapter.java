@@ -53,6 +53,8 @@ public static String getColumnString(Cursor cursor, String columnName) {
         return getStringOrNull(cursor, col);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.828 -0500", hash_original_method = "6E518F16AD3C7946ABDBA44CD98ACB5C", hash_generated_method = "25CD0B399C84A3E56E6B09E8E2824AD9")
     
 private static String getStringOrNull(Cursor cursor, int col) {
@@ -291,6 +293,8 @@ public void close() {
         updateSpinnerState(getCursor());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.760 -0500", hash_original_method = "1E3B20B61BE1D7016BA8A5BF351CC500", hash_generated_method = "2D9B6756D85AA996A0E743B9AA08B870")
     
 private void updateSpinnerState(Cursor cursor) {
@@ -419,6 +423,8 @@ public void onClick(View v) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.790 -0500", hash_original_method = "9779DF5ADEE23E8777317BAD132048A5", hash_generated_method = "82E7BBC70B8DE1DEC8EA6F2641AEE768")
     
 private CharSequence formatUrl(CharSequence url) {
@@ -436,6 +442,8 @@ private CharSequence formatUrl(CharSequence url) {
         return text;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.793 -0500", hash_original_method = "8F61D57F1A865E44B5C7D5D6842EB2D0", hash_generated_method = "85FC7203F9DB42EE6A227B5F2991653F")
     
 private void setViewText(TextView v, CharSequence text) {
@@ -449,6 +457,8 @@ private void setViewText(TextView v, CharSequence text) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.795 -0500", hash_original_method = "11EBBD91023FF77979C98F4482283D5C", hash_generated_method = "84F96B932E02F25F65A07FFC546AC21C")
     
 private Drawable getIcon1(Cursor cursor) {
@@ -463,6 +473,8 @@ private Drawable getIcon1(Cursor cursor) {
         return getDefaultIcon1(cursor);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.797 -0500", hash_original_method = "E54FBD6C00322E8129D2706226F8DB3F", hash_generated_method = "8B681026B02719AD651FEBC592E0A4A5")
     
 private Drawable getIcon2(Cursor cursor) {
@@ -477,6 +489,8 @@ private Drawable getIcon2(Cursor cursor) {
      * Sets the drawable in an image view, makes sure the view is only visible if there
      * is a drawable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.800 -0500", hash_original_method = "DC13C6A1012A85758DE954F51DF05728", hash_generated_method = "35FCB15D203F3076388F2C3CD53C3644")
     
 private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility) {
@@ -592,6 +606,8 @@ public ChildViewCache(View v) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.637 -0400", hash_original_method = "2062B3ECC79D4C838F6E4FC0FEE6243A", hash_generated_method = "33F8B54B0BC6C5CFE9FBF59E33AB8C39")
     private Drawable getDrawableFromResourceValue(String drawableId) {
         addTaint(drawableId.getTaint());
@@ -650,6 +666,8 @@ Drawable var540C13E9E156B687226421B24F2DF178_93646596 =             null;
      *
      * @return A drawable, or {@code null} if the drawable could not be loaded.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.811 -0500", hash_original_method = "3801EEB25227B54F215AA02CEF91B89D", hash_generated_method = "F06B22DD361DF295975F087F0DCF1D54")
     
 private Drawable getDrawable(Uri uri) {
@@ -686,6 +704,8 @@ private Drawable getDrawable(Uri uri) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.813 -0500", hash_original_method = "9553535B4A93F8E44A1EFE31D535ED8E", hash_generated_method = "535FC01315FAC95DA4A22A433C2BB95A")
     
 private Drawable checkIconCache(String resourceUri) {
@@ -697,6 +717,8 @@ private Drawable checkIconCache(String resourceUri) {
         return cached.newDrawable();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.815 -0500", hash_original_method = "7BF5C76588E6E73B227833C6CD1AD962", hash_generated_method = "F2790FE892428FEA44ED738A696811B5")
     
 private void storeInIconCache(String resourceUri, Drawable drawable) {
@@ -712,6 +734,8 @@ private void storeInIconCache(String resourceUri, Drawable drawable) {
      * @param cursor A cursor positioned at the current suggestion.
      * @return A non-null drawable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.817 -0500", hash_original_method = "24C6C5F14DA2AC5DBA34633E0C5BC43B", hash_generated_method = "600C5EABD197F315812F68BD7A0F364A")
     
 private Drawable getDefaultIcon1(Cursor cursor) {
@@ -733,6 +757,8 @@ private Drawable getDefaultIcon1(Cursor cursor) {
      * @return A drawable, or {@code null} if neither the activity nor the application
      *         has an icon set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.821 -0500", hash_original_method = "1ABDDD143C3A87EFB8B7D38CA2C4068F", hash_generated_method = "9470B1CB2A297DF303A94DB2B6FC4035")
     
 private Drawable getActivityIconWithCache(ComponentName component) {
@@ -758,6 +784,8 @@ private Drawable getActivityIconWithCache(ComponentName component) {
      * @return A drawable, or {@code null} if neither the acitivy or the application
      *         have an icon set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.823 -0500", hash_original_method = "62EED478ECA0AB495E91A21A2EB22E87", hash_generated_method = "F92B2945ABEDD05BB5FAD9853AAEFA5E")
     
 private Drawable getActivityIcon(ComponentName component) {

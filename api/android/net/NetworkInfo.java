@@ -155,6 +155,8 @@ public int getSubtype() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.915 -0500", hash_original_method = "0924F80CBAE8411743081929219BD54E", hash_generated_method = "0924F80CBAE8411743081929219BD54E")
     
 void setSubtype(int subtype, String subtypeName) {
@@ -304,6 +306,8 @@ public boolean isRoaming() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.936 -0500", hash_original_method = "B7D7748403F63EB4650DEC0BB363124A", hash_generated_method = "B7D7748403F63EB4650DEC0BB363124A")
     
 void setRoaming(boolean isRoaming) {

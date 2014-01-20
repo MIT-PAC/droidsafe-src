@@ -141,7 +141,9 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
    * @param region  two-letter uppercase ISO country codes as defined by ISO 3166-1
    * @return  the name of the file, or empty string if no such file can be found
    */
-  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.150 -0500", hash_original_method = "F40661B16774EA00988010D992802DCB", hash_generated_method = "F40661B16774EA00988010D992802DCB")
     
 String getFileName(int countryCallingCode, String language, String script, String region) {
@@ -164,7 +166,9 @@ String getFileName(int countryCallingCode, String language, String script, Strin
     return "";
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.153 -0500", hash_original_method = "18F97AE37D6D32FF4C5E8DE16502349B", hash_generated_method = "9A558B04B751C441C72BE513FB41C1B5")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.153 -0500", hash_original_method = "18F97AE37D6D32FF4C5E8DE16502349B", hash_generated_method = "9A558B04B751C441C72BE513FB41C1B5")
     
 private String findBestMatchingLanguageCode(
       Set<String> setOfLangs, String language, String script, String region) {
@@ -204,14 +208,18 @@ private String findBestMatchingLanguageCode(
     return "";
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.156 -0500", hash_original_method = "AAED8563DDED3C53862CE4371524442C", hash_generated_method = "7C004154730EA0AB439CF10D45190DA5")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.156 -0500", hash_original_method = "AAED8563DDED3C53862CE4371524442C", hash_generated_method = "7C004154730EA0AB439CF10D45190DA5")
     
 private boolean onlyOneOfScriptOrRegionIsEmpty(String script, String region) {
     return (script.length() == 0 && region.length() > 0) ||
             (region.length() == 0 && script.length() > 0);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.158 -0500", hash_original_method = "67AD4EAACC19DF5D4391EFA1CE27EABA", hash_generated_method = "0CB4D1F6B2111F0FFAA02160FEA4EA48")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.158 -0500", hash_original_method = "67AD4EAACC19DF5D4391EFA1CE27EABA", hash_generated_method = "0CB4D1F6B2111F0FFAA02160FEA4EA48")
     
 private StringBuilder constructFullLocale(String language, String script, String region) {
     StringBuilder fullLocale = new StringBuilder(language);
@@ -220,7 +228,9 @@ private StringBuilder constructFullLocale(String language, String script, String
     return fullLocale;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.160 -0500", hash_original_method = "A3149B7498B5162CA69A1D6F38AF4B31", hash_generated_method = "416E345B4AD7758BDDB75B399C26D9FC")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.160 -0500", hash_original_method = "A3149B7498B5162CA69A1D6F38AF4B31", hash_generated_method = "416E345B4AD7758BDDB75B399C26D9FC")
     
 private void appendSubsequentLocalePart(String subsequentLocalePart, StringBuilder fullLocale) {
     if (subsequentLocalePart.length() > 0) {

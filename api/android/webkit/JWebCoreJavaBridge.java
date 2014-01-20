@@ -16,6 +16,8 @@ import android.os.Message;
 
 final class JWebCoreJavaBridge extends Handler {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.943 -0500", hash_original_method = "812C5D46D70F6EBD90414C46F818D47C", hash_generated_method = "AD2630B7C1B2B5474F846CC08C2CDBDC")
     
 static synchronized void setActiveWebView(WebView webview) {
@@ -26,6 +28,8 @@ static synchronized void setActiveWebView(WebView webview) {
         sCurrentMainWebView = new WeakReference<WebView>(webview);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.946 -0500", hash_original_method = "BB0EBD6CFC072395955DF2C341991941", hash_generated_method = "41D5EC1C0579B34BAD1020ED0DE627DB")
     
 static synchronized void removeActiveWebView(WebView webview) {
@@ -90,6 +94,8 @@ public JWebCoreJavaBridge() {
     /**
      * Call native timer callbacks.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.948 -0500", hash_original_method = "02E069F093A33F917985EC0A146AF5DF", hash_generated_method = "0A0A0938FE87EB252E42E40EFC5D116F")
     
 private void fireSharedTimer() { 
@@ -129,6 +135,8 @@ private void fireSharedTimer() {
     }
     
     // called from JNI side
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.953 -0500", hash_original_method = "AB9D63477B4D64307AC8C3CAD493B037", hash_generated_method = "161BFB927796FC12A75F92D5D059932B")
     
 private void signalServiceFuncPtrQueue() {
@@ -136,6 +144,8 @@ private void signalServiceFuncPtrQueue() {
         sendMessage(msg);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.957 -0500", hash_original_method = "7F0F2EACA52373092F02E1C8C47DF6D2", hash_generated_method = "BEE2E67E4A1D99AC382D153D5D939FCB")
     
     private void nativeServiceFuncPtrQueue(){
@@ -185,6 +195,8 @@ public void resume() {
      * @param url The url to be used as a key for the cookie.
      * @param value The cookie string to be stored.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.967 -0500", hash_original_method = "D5A9FC7DDB356B7F9D175C82B50A2AF1", hash_generated_method = "24C7574FF957618A543446AAAEE4BC4D")
     
 private void setCookies(String url, String value) {
@@ -216,6 +228,8 @@ private void setCookies(String url, String value) {
      * @param url The resource's url.
      * @return A String representing the cookies for the given resource url.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.970 -0500", hash_original_method = "E3D7D6931554145E868760CB2C4A26A3", hash_generated_method = "EE86FFF77F12F6E87C0C4F0204A00383")
     
 private String cookies(String url) {
@@ -225,6 +239,8 @@ private String cookies(String url) {
     /**
      * Returns whether cookies are enabled or not.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.972 -0500", hash_original_method = "E9376C130584FE2146C1CFB7A84FB471", hash_generated_method = "FA6BBF0A4D9665939C38DB115FB61EFF")
     
 private boolean cookiesEnabled() {
@@ -234,6 +250,8 @@ private boolean cookiesEnabled() {
     /**
      * Returns an array of plugin directoies
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.973 -0500", hash_original_method = "9CEFD28F2377E55BFA773DC40D227755", hash_generated_method = "73D87799411059F553F14ACEF6F84D19")
     
 private String[] getPluginDirectories() {
@@ -243,6 +261,8 @@ private String[] getPluginDirectories() {
     /**
      * Returns the path of the plugin data directory
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.976 -0500", hash_original_method = "EA355C7E0B9693F5192FD4CEC8057AD3", hash_generated_method = "9E6689181E864F22C591AF0EE83A1997")
     
 private String getPluginSharedDataDirectory() {
@@ -253,6 +273,8 @@ private String getPluginSharedDataDirectory() {
      * setSharedTimer
      * @param timemillis The relative time when the timer should fire
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.979 -0500", hash_original_method = "8308F15706BD844BBD432043C004CF45", hash_generated_method = "DFFBE103EB8340C01E1F4FA32BE49C4E")
     
 private void setSharedTimer(long timemillis) {
@@ -279,6 +301,8 @@ private void setSharedTimer(long timemillis) {
     /**
      * Stop the shared timer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.981 -0500", hash_original_method = "962436894D889C4038B1520A1ECBED33", hash_generated_method = "66F7DBB494564B9F17917A6AA602DF50")
     
 private void stopSharedTimer() {
@@ -290,12 +314,16 @@ private void stopSharedTimer() {
         mHasDeferredTimers = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.983 -0500", hash_original_method = "017AD119A16DE91023E8FE76067DD440", hash_generated_method = "53FF7207D2372C3B91C46E1EF3C573FA")
     
 private String[] getKeyStrengthList() {
         return CertTool.getKeyStrengthList();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.986 -0500", hash_original_method = "A59843A23C4CF1F3FD140F676EC35D8E", hash_generated_method = "20C50B3A68FF077FC0E66FC1B4666469")
     
 synchronized private String getSignedPublicKey(int index, String challenge,
@@ -313,6 +341,8 @@ synchronized private String getSignedPublicKey(int index, String challenge,
     }
 
     // Called on the WebCore thread through JNI.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.988 -0500", hash_original_method = "7BAB6C5DC5E9A5F66D14195839893242", hash_generated_method = "6AC7082476212C63B892889CC1EEA5D0")
     
 private String resolveFilePathForContentUri(String uri) {
@@ -355,24 +385,32 @@ public void updateProxy(ProxyProperties proxyProperties) {
         nativeUpdateProxy(host, proxyProperties.getExclusionList());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.996 -0500", hash_original_method = "CB9D9CAF93B6F7C6AC078700B30D5B3A", hash_generated_method = "6EEF3712392D06942F0E7086316BBAB4")
     
     private void nativeConstructor(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.000 -0500", hash_original_method = "46D026C452E34CB5D17D4D7413C83210", hash_generated_method = "78C5016E7109D19F8AD63CF42C68ACE4")
     
     private void nativeFinalize(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.004 -0500", hash_original_method = "509DDA1BD92D7B897CEF90224EAD9875", hash_generated_method = "4223596673A5B3FD038248B23650A4A5")
     
     private void sharedTimerFired(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.008 -0500", hash_original_method = "9316866F322C157E5A357156C0328836", hash_generated_method = "0AAD4E6525FDA7AD6805FD8FD3E4C4A7")
     
     private void nativeUpdatePluginDirectories(String[] directories,

@@ -6,6 +6,8 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import android.util.Log;
 public class ProgramFragmentFixedFunction extends ProgramFragment {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.076 -0500", hash_original_method = "2A0FFECD56CD5C732668EEC76534036D", hash_generated_method = "2A0FFECD56CD5C732668EEC76534036D")
     
 ProgramFragmentFixedFunction(int id, RenderScript rs) {
@@ -93,6 +95,8 @@ public Builder(RenderScript rs) {
             mPointSpriteEnable = false;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.165 -0500", hash_original_method = "3F6F70CDA9BD5D62D40FB2B1189D5392", hash_generated_method = "80D2C71AE69E1846D25FDCBFD9EFA22A")
         
 private void buildShaderString() {

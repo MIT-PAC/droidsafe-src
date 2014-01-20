@@ -54,6 +54,8 @@ public static final int getSelectionEnd(CharSequence text) {
      * Set the selection anchor to <code>start</code> and the selection edge
      * to <code>stop</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.415 -0500", hash_original_method = "B4BEDEE094AF6C1F006DC5BB80D1A16C", hash_generated_method = "20AFBF4B59C39EA9FA8498BC45471C8E")
     
 public static void setSelection(Spannable text, int start, int stop) {
@@ -86,6 +88,8 @@ public static final void setSelection(Spannable text, int index) {
     /**
      * Select the entire text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.420 -0500", hash_original_method = "8AAF0061684BDEF24CE121D97D50E331", hash_generated_method = "E808B5198D0B9FCCFED1EFDBDBBE90F8")
     
 public static final void selectAll(Spannable text) {
@@ -95,6 +99,8 @@ public static final void selectAll(Spannable text) {
     /**
      * Move the selection edge to offset <code>index</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.422 -0500", hash_original_method = "E4C321E604F2ECE719104EDDFB63BDB0", hash_generated_method = "97EDE3A00D372C1E022DEA42CBECF36D")
     
 public static final void extendSelection(Spannable text, int index) {
@@ -105,6 +111,8 @@ public static final void extendSelection(Spannable text, int index) {
     /**
      * Remove the selection or cursor, if any, from the text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.426 -0500", hash_original_method = "5C9161DAB06FFC26DEFD08AA2119CE87", hash_generated_method = "DF42BB6135AF97EE930FF5F92ECA4DE9")
     
 public static final void removeSelection(Spannable text) {
@@ -120,6 +128,8 @@ public static final void removeSelection(Spannable text) {
      * Move the cursor to the buffer offset physically above the current
      * offset, or return false if the cursor is already on the top line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.429 -0500", hash_original_method = "84659E8D2499E9B94C3C9DA87DC894C2", hash_generated_method = "DC7FA337B39E7DD93E4BD8DE4974DF9B")
     
 public static boolean moveUp(Spannable text, Layout layout) {
@@ -163,6 +173,8 @@ public static boolean moveUp(Spannable text, Layout layout) {
      * Move the cursor to the buffer offset physically below the current
      * offset, or return false if the cursor is already on the bottom line.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.433 -0500", hash_original_method = "16FEA497919EDD0949C38B06DA431485", hash_generated_method = "B770E97AF6168177C3A5D599944FDB55")
     
 public static boolean moveDown(Spannable text, Layout layout) {
@@ -207,6 +219,8 @@ public static boolean moveDown(Spannable text, Layout layout) {
      * the current offset, or return false if the cursor is already
      * at the left edge of the line and there is not another line to move it to.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.435 -0500", hash_original_method = "886D06C73B41A96130122C99A87D9A1E", hash_generated_method = "4190EB8DA3AE329C2739407B96628590")
     
 public static boolean moveLeft(Spannable text, Layout layout) {
@@ -234,6 +248,8 @@ public static boolean moveLeft(Spannable text, Layout layout) {
      * at the right edge of the line and there is not another line
      * to move it to.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.438 -0500", hash_original_method = "9878C4D1EA7E15D640972CB1C1B47BC2", hash_generated_method = "D45E049D95259AA05C4617233DD50152")
     
 public static boolean moveRight(Spannable text, Layout layout) {
@@ -259,6 +275,8 @@ public static boolean moveRight(Spannable text, Layout layout) {
      * Move the selection end to the buffer offset physically above
      * the current selection end.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.441 -0500", hash_original_method = "E0C7099B2739F7871176C3DD136C07EE", hash_generated_method = "031A84DC1E4017CCFF80BEE627C951B4")
     
 public static boolean extendUp(Spannable text, Layout layout) {
@@ -290,6 +308,8 @@ public static boolean extendUp(Spannable text, Layout layout) {
      * Move the selection end to the buffer offset physically below
      * the current selection end.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.444 -0500", hash_original_method = "00BC0D111EC862FAD13350B5AA0F9D1E", hash_generated_method = "8F5AE5B486AF4193870583EF801ADCBF")
     
 public static boolean extendDown(Spannable text, Layout layout) {
@@ -321,6 +341,8 @@ public static boolean extendDown(Spannable text, Layout layout) {
      * Move the selection end to the buffer offset physically to the left of
      * the current selection end.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.447 -0500", hash_original_method = "56F4C3294792FD89446A0D99FADD3C38", hash_generated_method = "C4A40F34D299E55140E287CC22E06772")
     
 public static boolean extendLeft(Spannable text, Layout layout) {
@@ -339,6 +361,8 @@ public static boolean extendLeft(Spannable text, Layout layout) {
      * Move the selection end to the buffer offset physically to the right of
      * the current selection end.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.449 -0500", hash_original_method = "3BC49CCCD30F263AA88A2744E391B929", hash_generated_method = "09D232183D4CC67F935005DB307BCCA5")
     
 public static boolean extendRight(Spannable text, Layout layout) {
@@ -353,6 +377,8 @@ public static boolean extendRight(Spannable text, Layout layout) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.452 -0500", hash_original_method = "0205BF019FC2C9F6FBB3FC9FD7721842", hash_generated_method = "8FA04AFF17B2B1ECA5B854C03423C165")
     
 public static boolean extendToLeftEdge(Spannable text, Layout layout) {
@@ -361,6 +387,8 @@ public static boolean extendToLeftEdge(Spannable text, Layout layout) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.455 -0500", hash_original_method = "8B8687D591C13058BF74488988B33F93", hash_generated_method = "531C7964741A55E964E5AA1DBEC4EFF6")
     
 public static boolean extendToRightEdge(Spannable text, Layout layout) {
@@ -369,6 +397,8 @@ public static boolean extendToRightEdge(Spannable text, Layout layout) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.457 -0500", hash_original_method = "76B52FCF8809A1E40B9E883EF3C172AF", hash_generated_method = "FDC375983A80F8ACB4428CDA9490E01E")
     
 public static boolean moveToLeftEdge(Spannable text, Layout layout) {
@@ -377,6 +407,8 @@ public static boolean moveToLeftEdge(Spannable text, Layout layout) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.460 -0500", hash_original_method = "5ECFFBE13B414364AEA3F0C4E45F8BE1", hash_generated_method = "EE78B3531CE59EB2F4FF16BB35556050")
     
 public static boolean moveToRightEdge(Spannable text, Layout layout) {
@@ -417,6 +449,8 @@ public static boolean moveToFollowing(
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.472 -0500", hash_original_method = "748B9EA4D88C0F8475DB2702F051E182", hash_generated_method = "8406E785C606EDAA865448941FF72854")
     
 private static int findEdge(Spannable text, Layout layout, int dir) {
@@ -436,6 +470,8 @@ private static int findEdge(Spannable text, Layout layout, int dir) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.475 -0500", hash_original_method = "2FFC3983C19ED05EF29E3BFCF82D23B0", hash_generated_method = "F37DEECA0D2BD40E5B39CC5375F7612D")
     
 private static int chooseHorizontal(Layout layout, int direction,
@@ -486,6 +522,8 @@ private static int chooseHorizontal(Layout layout, int direction,
     
     private static final class START implements NoCopySpan {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.156 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
@@ -496,6 +534,8 @@ private static int chooseHorizontal(Layout layout, int direction,
     
     private static final class END implements NoCopySpan {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.157 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {
@@ -513,6 +553,8 @@ private static int chooseHorizontal(Layout layout, int direction,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.486 -0500", hash_original_field = "0E482FE00942EA78EED2BFFA8B51419E", hash_generated_field = "158301B7D925B39059B5DF4E88882416")
 
     public static final Object SELECTION_END = new END();
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.406 -0500", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "520B260D6CACA3309765DCE2B5FE4B9C")
     
 private Selection() { /* cannot be instantiated */ }

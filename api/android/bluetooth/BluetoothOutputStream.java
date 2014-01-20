@@ -12,7 +12,9 @@ final class BluetoothOutputStream extends OutputStream {
 
     private BluetoothSocket mSocket;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.496 -0500", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "6B802CCB266833E5725B115B8F18B649")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.496 -0500", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "6B802CCB266833E5725B115B8F18B649")
     
 BluetoothOutputStream(BluetoothSocket s) {
         mSocket = s;

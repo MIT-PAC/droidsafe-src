@@ -224,6 +224,8 @@ public byte[] getBytes() {
      * Get a String from the buffer at the offset given. The method reads until
      * it encounters a null value or reaches the maxLength given.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.165 -0500", hash_original_method = "B2CC94DDACEA4538F2C9BF58B190DB1B", hash_generated_method = "9B486A427284312235492044EB995A7C")
     
 private String getString(int offset, int maxLength) {
@@ -238,6 +240,8 @@ private String getString(int offset, int maxLength) {
     /**
      * Returns the SOCKS version number. Should always be 4.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.168 -0500", hash_original_method = "7A63CD666B1834D5EA2D981ACB832F0E", hash_generated_method = "FE36F30EF9569F408788D91358A9126C")
     
 private int getVersionNumber() {
@@ -247,6 +251,8 @@ private int getVersionNumber() {
     /**
      * Put a string into the buffer at the offset given.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.170 -0500", hash_original_method = "9E3EFE7D6597C76393DFD5F31266B92C", hash_generated_method = "83DDB8F06251D9CBEE8BAF956BD30CC1")
     
 private void setString(int offset, int maxLength, String theString) {
@@ -259,6 +265,8 @@ private void setString(int offset, int maxLength, String theString) {
     /**
      * Set the SOCKS version number. This should always be 4.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.173 -0500", hash_original_method = "551CE4AE0E4E79E50F85783B3E28117C", hash_generated_method = "DAC57D327B3EB24398B8830CB412330E")
     
 private void setVersionNumber(int number) {

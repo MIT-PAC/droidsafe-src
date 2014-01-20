@@ -50,6 +50,8 @@ public final class EDIPartyName {
 
     private byte[] encoding;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.129 -0500", hash_original_method = "2E4835ED3F1B68ED273C9B2B326EFCFA", hash_generated_method = "5CAD23B017BEF927499DE6F26BD8E190")
     
 private EDIPartyName(String nameAssigner, String partyName, byte[] encoding) {

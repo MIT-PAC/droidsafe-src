@@ -45,13 +45,17 @@ public abstract class SQLiteProgram extends SQLiteClosable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.145 -0500", hash_original_field = "424B264B2B85E8A83136F411485ACD38", hash_generated_field = "424B264B2B85E8A83136F411485ACD38")
   int mStatementType;
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.157 -0500", hash_original_method = "7775AC6B878F6A87A2372052B1B0D459", hash_generated_method = "7775AC6B878F6A87A2372052B1B0D459")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.157 -0500", hash_original_method = "7775AC6B878F6A87A2372052B1B0D459", hash_generated_method = "7775AC6B878F6A87A2372052B1B0D459")
     
 SQLiteProgram(SQLiteDatabase db, String sql) {
         this(db, sql, null, true);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.160 -0500", hash_original_method = "DADBFC98E2D0F265D4B5A43330A492E4", hash_generated_method = "DADBFC98E2D0F265D4B5A43330A492E4")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.160 -0500", hash_original_method = "DADBFC98E2D0F265D4B5A43330A492E4", hash_generated_method = "DADBFC98E2D0F265D4B5A43330A492E4")
     
 SQLiteProgram(SQLiteDatabase db, String sql, Object[] bindArgs,
             boolean compileFlag) {
@@ -87,6 +91,8 @@ SQLiteProgram(SQLiteDatabase db, String sql, Object[] bindArgs,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.163 -0500", hash_original_method = "EE8899F672BCD12A22959F518D1125AF", hash_generated_method = "8EE695D84F6E72E97475ACB79F23A6F6")
     
 private void compileSql() {
@@ -141,7 +147,9 @@ private void compileSql() {
         mDatabase.releaseReference();
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.170 -0500", hash_original_method = "A1FA2CE0BFABB0D7A31C7494B049120F", hash_generated_method = "A1FA2CE0BFABB0D7A31C7494B049120F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.170 -0500", hash_original_method = "A1FA2CE0BFABB0D7A31C7494B049120F", hash_generated_method = "A1FA2CE0BFABB0D7A31C7494B049120F")
     
 void release() {
         if (mCompiledSql == null) {
@@ -170,7 +178,9 @@ void release() {
     /**
      * used only for testing purposes
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.175 -0500", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "76820A9DAA0EF4EAA60C4E690E9DF41D")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.175 -0500", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "76820A9DAA0EF4EAA60C4E690E9DF41D")
     
 int getSqlStatementId() {
       synchronized(this) {
@@ -178,7 +188,9 @@ int getSqlStatementId() {
       }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.177 -0500", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "D92A66541C65863AB0B524498A872E5D")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.177 -0500", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "D92A66541C65863AB0B524498A872E5D")
     
 String getSqlString() {
         return mSql;
@@ -198,6 +210,8 @@ String getSqlString() {
         // TODO is there a need for this?
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.182 -0500", hash_original_method = "7AFA2099A2DCB432F4822D315BB6A2D0", hash_generated_method = "013FB257FC0CDC69490011B51E5D6400")
     
 private void bind(int type, int index, Object value) {
@@ -344,6 +358,8 @@ public void close() {
         releaseReference();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.201 -0500", hash_original_method = "8DD7248015BFD919A162C74D92E1DB42", hash_generated_method = "7C94AC73D336D40D18F61050A12F6464")
     
 private void addToBindArgs(int index, Object value) {
@@ -353,7 +369,9 @@ private void addToBindArgs(int index, Object value) {
         mBindArgs.put(index, value);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.204 -0500", hash_original_method = "3FC7B6EE26A3C940A3FAD2B270073635", hash_generated_method = "62964B7B9EADB4CAFC1CD10CF3AD8AD0")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.204 -0500", hash_original_method = "3FC7B6EE26A3C940A3FAD2B270073635", hash_generated_method = "62964B7B9EADB4CAFC1CD10CF3AD8AD0")
     
 void compileAndbindAllArgs() {
         if ((mStatementType & STATEMENT_DONT_PREPARE) > 0) {
@@ -412,7 +430,9 @@ public void bindAllArgsAsStrings(String[] bindArgs) {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.209 -0500", hash_original_method = "B3D61FB7C94FF71F95332257D7EBBE92", hash_generated_method = "2AD098197CAFBEF39B912C7FB3A53B06")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.209 -0500", hash_original_method = "B3D61FB7C94FF71F95332257D7EBBE92", hash_generated_method = "2AD098197CAFBEF39B912C7FB3A53B06")
     
 synchronized final void setNativeHandle(int nHandle) {
         this.nHandle = nHandle;
@@ -482,6 +502,8 @@ synchronized final void setNativeHandle(int nHandle) {
     	addTaint(value[0]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.240 -0500", hash_original_method = "A7443022DB1A1E9003E4973C3792843C", hash_generated_method = "F5ADBCE17982F800A7C5AA5FA2786F05")
     
     private final void native_clear_bindings(){

@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class OutputKeys {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.017 -0500", hash_original_field = "BD65FD8EEC2E4D271EFF9026620D7EA7", hash_generated_field = "D84F27D575BED52CFA60BBCE06EB2535")
 
@@ -44,6 +42,8 @@ public class OutputKeys {
      * Default constructor is private on purpose.  This class is
      * only for static variable access, and should never be constructed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.014 -0500", hash_original_method = "C4127F219AC170F374CB3A1F6630DA14", hash_generated_method = "D7F887B34F463585C001D5ACF4999071")
     
 private OutputKeys() { }

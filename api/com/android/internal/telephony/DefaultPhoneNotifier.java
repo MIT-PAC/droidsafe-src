@@ -139,6 +139,8 @@ public static Phone.DataActivityState convertDataActivityState(int state) {
     private ITelephonyRegistry mRegistry;
 
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.552 -0500", hash_original_method = "0D80097176ECBA025B5ECF690723E738", hash_generated_method = "0D80097176ECBA025B5ECF690723E738")
     
 DefaultPhoneNotifier() {
@@ -298,6 +300,8 @@ public void notifyOtaspChanged(Phone sender, int otaspMode) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.582 -0500", hash_original_method = "2A392D1FEF0E39928D559AB442BF53B9", hash_generated_method = "618CB3583BAA2EBDAF2653A3417F5D39")
     
 private void log(String s) {

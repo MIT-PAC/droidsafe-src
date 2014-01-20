@@ -115,6 +115,8 @@ public ChunkHandler() {}
      * Called when the DDM server connects.  The handler is allowed to
      * send messages to the server.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.486 -0500", hash_original_method = "F8778661F062D65184BDE4E1FC57A2A5", hash_generated_method = "D3AD816D5A1FD5740389E5B94B8A9ABA")
     
 public abstract void connected();
@@ -123,6 +125,8 @@ public abstract void connected();
      * Called when the DDM server disconnects.  Can be used to disable
      * periodic transmissions or clean up saved state.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.488 -0500", hash_original_method = "810314C01C4508E83D83EEDA6FA417D5", hash_generated_method = "5EE59171C2C1381561F50D4DEC0791A4")
     
 public abstract void disconnected();
@@ -133,6 +137,8 @@ public abstract void disconnected();
      *
      * Returns a response in a Chunk.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.490 -0500", hash_original_method = "1554C45CF6A8284D65A689A77C8DBE40", hash_generated_method = "165C8CBCAA6CA401C4B805858E7B51D2")
     
 public abstract Chunk handleChunk(Chunk request);

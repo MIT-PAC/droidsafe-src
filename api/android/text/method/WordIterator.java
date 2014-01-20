@@ -155,6 +155,8 @@ public int getEnd(int offset) {
         return BreakIterator.DONE;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.784 -0500", hash_original_method = "60A45BC82DD7A1F2C5F7476F31AEBCCE", hash_generated_method = "4ABE9F7FB81E2768955671133470FFD1")
     
 private boolean isAfterLetterOrDigit(int shiftedOffset) {
@@ -165,6 +167,8 @@ private boolean isAfterLetterOrDigit(int shiftedOffset) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.787 -0500", hash_original_method = "C811EDD4D225F2A549F13F257AE33EBA", hash_generated_method = "C44238B73F17662F63C661AFFB2A5C16")
     
 private boolean isOnLetterOrDigit(int shiftedOffset) {
@@ -175,6 +179,8 @@ private boolean isOnLetterOrDigit(int shiftedOffset) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.790 -0500", hash_original_method = "715BE561E387B8F91746DB56405B0D1C", hash_generated_method = "22FA9B6C05DFECF8BD32D069E43BB8C7")
     
 private void checkOffsetIsValid(int shiftedOffset) {

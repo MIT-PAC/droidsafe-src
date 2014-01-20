@@ -153,6 +153,8 @@ public AdapterViewAnimator(Context context, AttributeSet attrs, int defStyleAttr
     /**
      * Initialize this {@link AdapterViewAnimator}
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.440 -0500", hash_original_method = "4508B464C0C2084478BE2A642B32436E", hash_generated_method = "E7312D2EEF68D1DD75FC11CFD9B6019C")
     
 private void initViewAnimator() {
@@ -172,7 +174,9 @@ private void initViewAnimator() {
      * @param shouldLoop If the animator is show view 0, and setPrevious() is called, do we
      *        we loop back to the end, or do we do nothing
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.455 -0500", hash_original_method = "91B9FA80E0031C77B528C608AC4759E5", hash_generated_method = "E6943E699166CD8D0B5A859437A889EA")
+     @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.455 -0500", hash_original_method = "91B9FA80E0031C77B528C608AC4759E5", hash_generated_method = "E6943E699166CD8D0B5A859437A889EA")
     
 void configureViewAnimator(int numVisibleViews, int activeOffset) {
         if (activeOffset > numVisibleViews - 1) {
@@ -197,6 +201,8 @@ void configureViewAnimator(int numVisibleViews, int activeOffset) {
      *        being removed
      * @param view The view that is being animated
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.457 -0500", hash_original_method = "CD78C78157016071B0AA2236145765B6", hash_generated_method = "CD78C78157016071B0AA2236145765B6")
     
 void transformViewForTransition(int fromIndex, int toIndex, View view, boolean animate) {
@@ -209,6 +215,8 @@ void transformViewForTransition(int fromIndex, int toIndex, View view, boolean a
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.459 -0500", hash_original_method = "1B47254A99E5F108270897DC3078BE58", hash_generated_method = "1B47254A99E5F108270897DC3078BE58")
     
@@ -218,6 +226,8 @@ ObjectAnimator getDefaultInAnimation() {
         return anim;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.461 -0500", hash_original_method = "FB8DA060E53CA502AAAD2E0D3630FF89", hash_generated_method = "FB8DA060E53CA502AAAD2E0D3630FF89")
     
@@ -240,6 +250,8 @@ ObjectAnimator getDefaultOutAnimation() {
         setDisplayedChild(whichChild, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.466 -0500", hash_original_method = "91CB6634BDE3355704A6B2B246DAA7A9", hash_generated_method = "EF4943262A0A8830C80F7C891ECE0FE8")
     
 private void setDisplayedChild(int whichChild, boolean animate) {
@@ -268,6 +280,8 @@ private void setDisplayedChild(int whichChild, boolean animate) {
      * @param child
      * @param relativeIndex
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.468 -0500", hash_original_method = "A7ED1EB61B0FBCD2BEBD15D1C1303F9C", hash_generated_method = "A7ED1EB61B0FBCD2BEBD15D1C1303F9C")
     
 void applyTransformForChildAtIndex(View child, int relativeIndex) {
@@ -301,6 +315,8 @@ public void showPrevious() {
         setDisplayedChild(mWhichChild - 1);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.477 -0500", hash_original_method = "2C561D0D9BDC240B9A5D5DE9ED7CC2E1", hash_generated_method = "2C561D0D9BDC240B9A5D5DE9ED7CC2E1")
     
 int modulo(int pos, int size) {
@@ -317,6 +333,8 @@ int modulo(int pos, int size) {
      * @param relativeIndex Position relative to the current window's start
      * @return View at this index, null if the index is outside the bounds
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.480 -0500", hash_original_method = "FBBD82E59359C019A1CEF3EB94A89AA2", hash_generated_method = "FBBD82E59359C019A1CEF3EB94A89AA2")
     
@@ -330,6 +348,8 @@ View getViewAtRelativeIndex(int relativeIndex) {
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.482 -0500", hash_original_method = "0421178BBB7DE66A738CAA04F8761832", hash_generated_method = "0421178BBB7DE66A738CAA04F8761832")
     
@@ -341,6 +361,8 @@ int getNumActiveViews() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.484 -0500", hash_original_method = "6029719CD1CD7AB457F8E78F86AE86A1", hash_generated_method = "6029719CD1CD7AB457F8E78F86AE86A1")
     
@@ -379,6 +401,8 @@ LayoutParams createOrReuseLayoutParams(View v) {
         return new ViewGroup.LayoutParams(0, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.491 -0500", hash_original_method = "DEC1654E1282F99AB82BE6A9F7EE0E03", hash_generated_method = "8E8E209FC8B2C875AD52DE3894BCA0EA")
     
 void refreshChildren() {
@@ -409,6 +433,8 @@ void refreshChildren() {
      *
      * @return The FrameLayout into which children can be placed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.493 -0500", hash_original_method = "3A74ED5464ECC3EDCA3FF6D985E482E9", hash_generated_method = "3A74ED5464ECC3EDCA3FF6D985E482E9")
     
@@ -426,6 +452,8 @@ FrameLayout getFrameForChild() {
      * @param animate Whether or not to use the in and out animations, defaults
      *            to true.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.496 -0500", hash_original_method = "65797EBCBD60DE13415615382F58C13B", hash_generated_method = "18A8B821F4EC1624EBF26585D79CE0EF")
     
 void showOnly(int childIndex, boolean animate) {
@@ -543,6 +571,8 @@ void showOnly(int childIndex, boolean animate) {
         invalidate();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.499 -0500", hash_original_method = "CF7E9270D6A781D39501E4BBAEBB3A13", hash_generated_method = "94CDBD4B975DB8AE19E2C2FA0917B3EE")
     
 private void addChild(View child) {
@@ -559,18 +589,24 @@ private void addChild(View child) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.501 -0500", hash_original_method = "2ABC3404C13E4A800F47D0C635B72929", hash_generated_method = "2ABC3404C13E4A800F47D0C635B72929")
     
 void showTapFeedback(View v) {
         v.setPressed(true);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.503 -0500", hash_original_method = "AB8C1F9AF8BDC4DF902FB7F7CD728C3A", hash_generated_method = "AB8C1F9AF8BDC4DF902FB7F7CD728C3A")
     
 void hideTapFeedback(View v) {
         v.setPressed(false);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.505 -0500", hash_original_method = "67399547287D8F71A7A5AE67A071254C", hash_generated_method = "67399547287D8F71A7A5AE67A071254C")
     
 void cancelHandleClick() {
@@ -647,6 +683,8 @@ void cancelHandleClick() {
         return handled;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.524 -0500", hash_original_method = "CF7CC5DB55CCFC095F8C480C67A97670", hash_generated_method = "8353998CA3AA7A37F69D5A5FCBCDE922")
     
 private void measureChildren() {
@@ -707,6 +745,8 @@ private void measureChildren() {
         measureChildren();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.564 -0500", hash_original_method = "F3EF4D3CC56F2B38758DB6D9F3299660", hash_generated_method = "3BB22202D6405B1715E714512F7739CF")
     
 void checkForAndHandleDataChanged() {
@@ -1046,6 +1086,8 @@ public SavedState[] newArray(int size) {
         /**
          * Constructor called from {@link AdapterViewAnimator#onSaveInstanceState()}
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.578 -0500", hash_original_method = "B7BF12453E93628DE35CAA34B998429F", hash_generated_method = "B7BF12453E93628DE35CAA34B998429F")
         
 SavedState(Parcelable superState, int whichChild) {
@@ -1056,6 +1098,8 @@ SavedState(Parcelable superState, int whichChild) {
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.582 -0500", hash_original_method = "392EDFCBBF619540219C8F70BEB96B16", hash_generated_method = "E74A3C95F94CE20D39360016741E18B1")
         
 private SavedState(Parcel in) {

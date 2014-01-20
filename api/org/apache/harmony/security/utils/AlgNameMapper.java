@@ -62,6 +62,8 @@ public static String getStandardName(String algName) {
     //  or
     // Alg.Alias.<service>.OID.<OID-INTS-DOT-SEPARATED>=<alg-name>
     // Puts mappings found into appropriate internal maps
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.856 -0500", hash_original_method = "F5EE4B1951480F5B18913459BA38C43C", hash_generated_method = "609AB978FECBAB632388A7F1B3D06629")
     
 private static void selectEntries(Provider p) {
@@ -173,6 +175,8 @@ public static String normalize(String oid) {
     private static final Map<String, String> algAliasesMap = new HashMap<String, String>();
 
     // No instances
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.845 -0500", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "02F502788C65D3887C73CA265C60EA16")
     
 private AlgNameMapper() {

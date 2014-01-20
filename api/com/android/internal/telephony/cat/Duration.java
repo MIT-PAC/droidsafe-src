@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Duration implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.245 -0400", hash_original_field = "A45E48454A5718B4D58B745F8A75DBD7", hash_generated_field = "3313211CC65C61401C6638CF5336E71F")
 
@@ -46,6 +41,8 @@ public Duration(int timeInterval, TimeUnit timeUnit) {
         this.timeUnit = timeUnit;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.574 -0500", hash_original_method = "69931BD60CFF69C2725A634D6D46CC0C", hash_generated_method = "845498D2971A8F56D26B3F75057AB4B5")
     
 private Duration(Parcel in) {
@@ -59,14 +56,12 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(timeInterval);
         dest.writeInt(timeUnit.ordinal());
     }
-
     
     public enum TimeUnit {
         MINUTE(0x00),
         SECOND(0x01),
         TENTH_SECOND(0x02);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.562 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "1FE26AAF0F7068BF50C3FDD7D6BD850D")
-
 
         private int mValue;
 

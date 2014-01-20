@@ -28,7 +28,9 @@ public AreaCodeMapStorageStrategy() {}
    *
    * @return  whether the underlying implementation of this abstract class is flyweight
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.965 -0500", hash_original_method = "8C3DF0E4670B1B720EA4BF046177B5B2", hash_generated_method = "CB033832448114A4BA252F7449E19AB9")
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.965 -0500", hash_original_method = "8C3DF0E4670B1B720EA4BF046177B5B2", hash_generated_method = "CB033832448114A4BA252F7449E19AB9")
     
 public abstract boolean isFlyweight();
 
@@ -58,7 +60,9 @@ public TreeSet<Integer> getPossibleLengths() {
    * @param index  the index of the prefix that needs to be returned
    * @return  the phone number prefix at the provided index
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.973 -0500", hash_original_method = "CC816A42DE056FA45F4750DD0DF8C50A", hash_generated_method = "D5C1E20A41D3068C1E34614A380A7FF3")
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.973 -0500", hash_original_method = "CC816A42DE056FA45F4750DD0DF8C50A", hash_generated_method = "D5C1E20A41D3068C1E34614A380A7FF3")
     
 public abstract int getPrefix(int index);
 
@@ -69,7 +73,9 @@ public abstract int getPrefix(int index);
    * @param index  the index of the phone number prefix that needs to be returned
    * @return  the description corresponding to the phone number prefix at the provided index
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.975 -0500", hash_original_method = "41C6F1984B61B370D6BEF5F1720FA001", hash_generated_method = "166E43DDF270AD32066C2CB4EFA87421")
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.975 -0500", hash_original_method = "41C6F1984B61B370D6BEF5F1720FA001", hash_generated_method = "166E43DDF270AD32066C2CB4EFA87421")
     
 public abstract String getDescription(int index);
 
@@ -80,7 +86,9 @@ public abstract String getDescription(int index);
    * @param sortedAreaCodeMap  a sorted map that maps phone number prefixes including country
    *    calling code to description strings
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.977 -0500", hash_original_method = "63AE65579CA13AF1E8A6BECB2C0ECB78", hash_generated_method = "5B489F00212DEF5896651E77C051F3BB")
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.977 -0500", hash_original_method = "63AE65579CA13AF1E8A6BECB2C0ECB78", hash_generated_method = "5B489F00212DEF5896651E77C051F3BB")
     
 public abstract void readFromSortedMap(SortedMap<Integer, String> sortedAreaCodeMap);
 
@@ -91,7 +99,9 @@ public abstract void readFromSortedMap(SortedMap<Integer, String> sortedAreaCode
    * @param objectInput  the object input stream from which the area code map is read
    * @throws IOException  if an error occurred reading the provided input stream
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.979 -0500", hash_original_method = "6FE639BDF297291E4A948A266A0FB6FB", hash_generated_method = "7C97ACD2BCD1119C2251275D5760D253")
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.979 -0500", hash_original_method = "6FE639BDF297291E4A948A266A0FB6FB", hash_generated_method = "7C97ACD2BCD1119C2251275D5760D253")
     
 public abstract void readExternal(ObjectInput objectInput) throws IOException;
 
@@ -102,7 +112,9 @@ public abstract void readExternal(ObjectInput objectInput) throws IOException;
    * @param objectOutput  the object output stream to which the area code map is written
    * @throws IOException  if an error occurred writing to the provided output stream
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.982 -0500", hash_original_method = "78E7DE830841F23017EDA8BF3FC41760", hash_generated_method = "B4A3118C40AE051E6D6353D22AA49DED")
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.982 -0500", hash_original_method = "78E7DE830841F23017EDA8BF3FC41760", hash_generated_method = "B4A3118C40AE051E6D6353D22AA49DED")
     
 public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 

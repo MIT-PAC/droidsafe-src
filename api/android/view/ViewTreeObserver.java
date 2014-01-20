@@ -36,6 +36,8 @@ public final class ViewTreeObserver {
     /**
      * Creates a new ViewTreeObserver. This constructor should not be called
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.738 -0500", hash_original_method = "CC9985AE6D7058390B2C51E91CCE49A3", hash_generated_method = "CC9985AE6D7058390B2C51E91CCE49A3")
     
 ViewTreeObserver() {
@@ -48,6 +50,8 @@ ViewTreeObserver() {
      *
      * @param observer The ViewTreeObserver whose listeners must be added to this observer
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.741 -0500", hash_original_method = "FB8092EEF2FD22B43D0D69D64D0387FF", hash_generated_method = "FB8092EEF2FD22B43D0D69D64D0387FF")
     
 void merge(ViewTreeObserver observer) {
@@ -331,6 +335,8 @@ public void removeOnComputeInternalInsetsListener(OnComputeInternalInsetsListene
         mOnComputeInternalInsetsListeners.remove(victim);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.773 -0500", hash_original_method = "09DE926E739DABD1095FDB2AAECCB187", hash_generated_method = "FFBABD4D25B104F5682D07CA2325A330")
     
 private void checkIsAlive() {
@@ -363,6 +369,8 @@ public boolean isAlive() {
      *
      * @hide
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.778 -0500", hash_original_method = "CE15D88AAF79A195F4E8949632256817", hash_generated_method = "E7C848C3D31C92E3FD118F4B74E2023E")
     
 private void kill() {
@@ -372,6 +380,8 @@ private void kill() {
     /**
      * Notifies registered listeners that focus has changed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.780 -0500", hash_original_method = "811076DC02481277282C8AE588FEF9F4", hash_generated_method = "0B2674435C3ADAA3F53B0D1EB876CCF3")
     
 final void dispatchOnGlobalFocusChange(View oldFocus, View newFocus) {
@@ -439,6 +449,8 @@ public final boolean dispatchOnPreDraw() {
      *
      * @param inTouchMode True if the touch mode is now enabled, false otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.788 -0500", hash_original_method = "21795A7BDDB42F1334F3A5AC55A2B47D", hash_generated_method = "4E059443B7D0C15728C7B4D65724A755")
     
 final void dispatchOnTouchModeChanged(boolean inTouchMode) {
@@ -454,6 +466,8 @@ final void dispatchOnTouchModeChanged(boolean inTouchMode) {
     /**
      * Notifies registered listeners that something has scrolled.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.791 -0500", hash_original_method = "B2875E16B1AB55A20CB42509779AE060", hash_generated_method = "F6F78DDD5CA26B1B8B2265AC05BD68D5")
     
 final void dispatchOnScrollChanged() {
@@ -472,6 +486,8 @@ final void dispatchOnScrollChanged() {
     /**
      * Returns whether there are listeners for computing internal insets.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.793 -0500", hash_original_method = "2C6DB6195F93A39A64EFB728D1470871", hash_generated_method = "A8A1F2731498B47C58B115DC2D723291")
     
 final boolean hasComputeInternalInsetsListeners() {
@@ -548,6 +564,8 @@ public int getTouchableInsets() {
             return mTouchableInsets;
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.726 -0500", hash_original_method = "3ADAEF811DF438E3299A293554314ABB", hash_generated_method = "3ADAEF811DF438E3299A293554314ABB")
         
 void reset() {

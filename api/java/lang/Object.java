@@ -42,6 +42,8 @@ public Object() {
         //return internalClone((Cloneable) this);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.633 -0400", hash_original_method = "DC17854DB4C4786A4B8C4AFD2060B404", hash_generated_method = "A43E05FEA5D61737BBCA795F23B88103")
     
     private Object internalClone(Cloneable o) {
@@ -353,6 +355,8 @@ public final void wait(long millis) throws InterruptedException {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.170 -0500", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "94504481D3D619737083E8726B8C7754")
     
     public final void wait(long millis, int nanos) throws InterruptedException{

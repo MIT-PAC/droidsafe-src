@@ -89,12 +89,16 @@ public Properties() {
      * @param properties
      *            the default {@code Properties}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.661 -0500", hash_original_method = "5F2D706A0CAB1895C5A727D855C46322", hash_generated_method = "6B25AC4C2F6728C40E756CFE46A2AEED")
     
 public Properties(Properties properties) {
         defaults = properties;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.664 -0500", hash_original_method = "8670FB32C289DA514C35A14528148A6D", hash_generated_method = "AD797BDA8958849190F0E26D2B0F2B59")
     
 private void dumpString(StringBuilder buffer, String string, boolean key) {
@@ -193,6 +197,8 @@ public String getProperty(String name, String defaultValue) {
      * Lists the mappings in this {@code Properties} to {@code out} in a human-readable form.
      * Note that values are truncated to 37 characters, so this method is rarely useful.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.670 -0500", hash_original_method = "C9FDCBF4B35B89B1D79FB5B2779CDC77", hash_generated_method = "27BBBF78C9C7B66CC25786B094817EAF")
     
 public void list(PrintStream out) {
@@ -203,12 +209,16 @@ public void list(PrintStream out) {
      * Lists the mappings in this {@code Properties} to {@code out} in a human-readable form.
      * Note that values are truncated to 37 characters, so this method is rarely useful.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.672 -0500", hash_original_method = "2577CE734D2D6BD05EB3CE3808D03445", hash_generated_method = "1FA778C7F4AB37BE4F17095F5BD082BA")
     
 public void list(PrintWriter out) {
         listToAppendable(out);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.676 -0500", hash_original_method = "68CAE489B2B77D788FAF807067B604BA", hash_generated_method = "ABEBE0DA40E4B91C3DFCF5DB4AF1855C")
     
 private void listToAppendable(Appendable out) {
@@ -287,6 +297,8 @@ public synchronized void load(InputStream in) throws IOException {
      * @throws IOException
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.684 -0500", hash_original_method = "3CECE8DDCAF4401F719C3D407BA79CAE", hash_generated_method = "D0BF6D33A4A91FE458CF6CCAAAA791D1")
     
 @SuppressWarnings("fallthrough")
@@ -472,6 +484,8 @@ public Enumeration<?> propertyNames() {
      * @return a set of keys in the property list
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.689 -0500", hash_original_method = "3F48821B050A70D7E4FF424CB7AEEF4F", hash_generated_method = "4A180296BFD4FFE6723C6460EBAAC04D")
     
 public Set<String> stringPropertyNames() {
@@ -530,6 +544,8 @@ public Set<String> stringPropertyNames() {
      *             writing -- use {@link #store} instead for better exception
      *             handling.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.694 -0500", hash_original_method = "4460892848C3864FEFFB544B0F6CDF7A", hash_generated_method = "1BF756A007554B5ED33DCC871BAE1B22")
     
 @Deprecated
@@ -550,6 +566,8 @@ public Set<String> stringPropertyNames() {
      *            the value.
      * @return the old value mapped to the key, or {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.696 -0500", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "56F4E85497B4F5EC660B941BA40CCE46")
     
@@ -566,6 +584,8 @@ public Object setProperty(String name, String value) {
      * @throws IOException
      * @throws ClassCastException if a key or value is not a string
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.699 -0500", hash_original_method = "97010F07EC41CFBEB746B7A1A80A2C1A", hash_generated_method = "646D9E8375B20D6B807EFFBEEE3722CD")
     
 public synchronized void store(OutputStream out, String comment) throws IOException {
@@ -582,6 +602,8 @@ public synchronized void store(OutputStream out, String comment) throws IOExcept
      * @throws ClassCastException if a key or value is not a string
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.702 -0500", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "525ADF1180D463C4ACA782A1639904CB")
     
@@ -608,7 +630,9 @@ public synchronized void store(Writer writer, String comment) throws IOException
         writer.flush();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.436 -0400", hash_original_method = "2CD21803BBD0B22DE3395585690DDBAE", hash_generated_method = "B1418958B0758A3E1EA0E924AE7F14B1")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.436 -0400", hash_original_method = "2CD21803BBD0B22DE3395585690DDBAE", hash_generated_method = "B1418958B0758A3E1EA0E924AE7F14B1")
     public synchronized void loadFromXML(InputStream in) throws IOException,
             InvalidPropertiesFormatException {
         addTaint(in.getTaint());
@@ -715,6 +739,8 @@ for(int i = 0;i < entriesListLength;i++)
      * @param comment the comment to add. If null, no comment is added.
      * @throws IOException if an error occurs during writing to the output.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.720 -0500", hash_original_method = "CF08828D5EA0BDD9B2ACD5D46AA8D14C", hash_generated_method = "01C07DD124F02978143E065FA8AE7B2B")
     
 public void storeToXML(OutputStream os, String comment) throws IOException {
@@ -739,6 +765,8 @@ public void storeToXML(OutputStream os, String comment) throws IOException {
      *            write into the {@code OutputStream}.
      * @throws IOException if an error occurs during writing to the output.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.724 -0500", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "314055A6A376FFCBC591266AF54683BD")
     
@@ -801,6 +829,8 @@ public synchronized void storeToXML(OutputStream os, String comment,
         printStream.flush();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.726 -0500", hash_original_method = "C245FBB3FF946795FFB47FE71F12C3B1", hash_generated_method = "E762A0C9495B2E72FE293E3B09EADF7B")
     
 private String substitutePredefinedEntries(String s) {

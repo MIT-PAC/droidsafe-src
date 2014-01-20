@@ -56,6 +56,8 @@ public static CdmaMmiCode
     /** make empty strings be null.
      *  Regexp returns empty strings for empty groups
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.576 -0500", hash_original_method = "2FD14CE5C15BA6F91A4A0B21760850CD", hash_generated_method = "D25CF56895B420B545C3566DEEFBA18C")
     
 private static String
@@ -144,6 +146,8 @@ private static String
 
     // Constructor
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.578 -0500", hash_original_method = "0E9735A507190BB775A80B2FEDEEE634", hash_generated_method = "0E9735A507190BB775A80B2FEDEEE634")
     
 CdmaMmiCode (CDMAPhone phone) {
@@ -194,12 +198,16 @@ public boolean isCancelable() {
     /**
      * @return true if the Service Code is PIN/PIN2/PUK/PUK2-related
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.590 -0500", hash_original_method = "F83C3F3C3A6997A8F3CDD4D707F81FB0", hash_generated_method = "F83C3F3C3A6997A8F3CDD4D707F81FB0")
     
 boolean isPukCommand() {
         return sc != null && sc.equals(SC_PUK);
      }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.592 -0500", hash_original_method = "CA7357DC4342746EF1FE3C742A9E7FC8", hash_generated_method = "CA7357DC4342746EF1FE3C742A9E7FC8")
     
 boolean isRegister() {
@@ -214,6 +222,8 @@ public boolean isUssdRequest() {
     }
 
     /** Process a MMI PUK code */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.596 -0500", hash_original_method = "D40242C1775E5BFA18B0D32E606C72BC", hash_generated_method = "811B1D06942A741BDFAD8B5A12010FC7")
     
 void
@@ -250,6 +260,8 @@ void
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.599 -0500", hash_original_method = "60196158E22905B06D5E62564673E5E1", hash_generated_method = "6899933A4B68D0B99E8CE0B6EB2588C0")
     
 private void handlePasswordError(int res) {
@@ -276,6 +288,8 @@ public void
     }
     // Private instance methods
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.605 -0500", hash_original_method = "DCFC51ECC309A2A613B704517DAD4649", hash_generated_method = "503AE435275B67B6532B1B5687230078")
     
 private CharSequence getScString() {
@@ -288,6 +302,8 @@ private CharSequence getScString() {
         return "";
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.608 -0500", hash_original_method = "52C2461B739F9120EA0709185D4E10B9", hash_generated_method = "EB1A55DFFD705F5FBCA1B040D9226192")
     
 private void

@@ -119,6 +119,8 @@ public DERObject getDERObject()
         return this.toASN1Object();
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.907 -0500", hash_original_method = "0B429B07F7E2CEA8F8A51A82F4B78CF1", hash_generated_method = "CEA674D766057DD98BA91620AB48A54A")
     
 public abstract DERObject toASN1Object();

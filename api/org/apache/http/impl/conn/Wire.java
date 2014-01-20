@@ -10,14 +10,8 @@ import java.io.InputStream;
 
 import org.apache.commons.logging.Log;
 
-
-
-
-
-
 public class Wire {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.563 -0500", hash_original_field = "9928E38BCEFDA1EEA4B4B3BA7730094E", hash_generated_field = "B44E589F36524A8564E741C819F5943D")
-
 
     private  Log log;
     
@@ -27,6 +21,8 @@ public Wire(Log log) {
         this.log = log;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.568 -0500", hash_original_method = "8AB487D8D5FB9334AB649D48E9DFB74A", hash_generated_method = "129627B3F223330EC78D4BA01BEA0271")
     
 private void wire(String header, InputStream instream)
@@ -58,12 +54,11 @@ private void wire(String header, InputStream instream)
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.571 -0500", hash_original_method = "3293A063039621258FD717F75AAE20F6", hash_generated_method = "7429CF7FB1ECB3C33D1AD16DB24C713B")
     
 public boolean enabled() {
         return log.isDebugEnabled();
-    }    
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.573 -0500", hash_original_method = "41909751022A9CA66D19EAE8E0D21F96", hash_generated_method = "E7C108C60829EC6D59683354FF91AFCF")
     
@@ -158,7 +153,6 @@ public void input(final String s)
         }
         input(s.getBytes());
     }
-
     
 }
 

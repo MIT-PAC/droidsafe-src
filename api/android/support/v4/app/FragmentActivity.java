@@ -30,6 +30,8 @@ import android.view.Window;
 
 public class FragmentActivity extends Activity {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.432 -0500", hash_original_method = "3274893E9C9F22CAC70DF93D680DD8B1", hash_generated_method = "CF399103EB831757AC957B278C4C83D7")
     
 private static String viewToString(View view) {
@@ -775,6 +777,8 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
         dumpViewHierarchy(prefix + "  ", writer, getWindow().getDecorView());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.435 -0500", hash_original_method = "0B7E3349E1F0303BBAAE6767112F50B2", hash_generated_method = "6A3DAAEAA2C9E6732B30ABDD653554F6")
     
 private void dumpViewHierarchy(String prefix, PrintWriter writer, View view) {
@@ -798,6 +802,8 @@ private void dumpViewHierarchy(String prefix, PrintWriter writer, View view) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.437 -0500", hash_original_method = "4C92BE36A72450E440D9BAAFB03D8955", hash_generated_method = "4C92BE36A72450E440D9BAAFB03D8955")
     
 void doReallyStop(boolean retaining) {
@@ -816,6 +822,8 @@ void doReallyStop(boolean retaining) {
      * we need to know this, to know whether to retain fragments.  This will
      * tell us what we need to know.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.439 -0500", hash_original_method = "E4D0A1E9799E4532B863FFE2D6A92452", hash_generated_method = "E4D0A1E9799E4532B863FFE2D6A92452")
     
 void onReallyStop() {
@@ -934,6 +942,8 @@ public void startActivityFromFragment(Fragment fragment, Intent intent,
         super.startActivityForResult(intent, ((fragment.mIndex+1)<<16) + (requestCode&0xffff));
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.451 -0500", hash_original_method = "6D742EEA8D7FFBA4C7362E83B04A53C8", hash_generated_method = "3032C09552B4E17980204B5CA8CEBD57")
     
 void invalidateSupportFragment(String who) {
@@ -965,6 +975,8 @@ public LoaderManager getSupportLoaderManager() {
         return mLoaderManager;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.456 -0500", hash_original_method = "AFD15C82BB2F05228B3396C6CCD75AFC", hash_generated_method = "AFD15C82BB2F05228B3396C6CCD75AFC")
     
 LoaderManagerImpl getLoaderManager(String who, boolean started, boolean create) {

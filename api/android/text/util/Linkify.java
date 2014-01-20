@@ -31,6 +31,8 @@ public class Linkify {
      *  attached to the Spannable, to avoid problems if you call it
      *  repeatedly on the same text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.769 -0500", hash_original_method = "6675017785DF7C3E1BBF27AB1F21461B", hash_generated_method = "1A156E678AD361ACA842A68E86E3BB2B")
     
 public static final boolean addLinks(Spannable text, int mask) {
@@ -119,6 +121,8 @@ public static final boolean addLinks(TextView text, int mask) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.776 -0500", hash_original_method = "B3A143C63E26B7CFD3F7C75589162FB2", hash_generated_method = "C62486D87726CBF969CA54D9409C2FAB")
     
 private static final void addLinkMovementMethod(TextView t) {
@@ -143,6 +147,8 @@ private static final void addLinkMovementMethod(TextView t) {
      *                      prepended to the url of links that do not have
      *                      a scheme specified in the link text
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.778 -0500", hash_original_method = "9F163477F9B0B187536137CC20B2DC0D", hash_generated_method = "921121D797C16A9C7CF564107E47138A")
     
 public static final void addLinks(TextView text, Pattern pattern, String scheme) {
@@ -187,6 +193,8 @@ public static final void addLinks(TextView text, Pattern p, String scheme,
      *                      prepended to the url of links that do not have
      *                      a scheme specified in the link text
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.785 -0500", hash_original_method = "4771008E867E137AE8D7BAC2F0B7386A", hash_generated_method = "935F0F10BC8B50591B3F9D7FF378D172")
     
 public static final boolean addLinks(Spannable text, Pattern pattern, String scheme) {
@@ -237,6 +245,8 @@ public static final boolean addLinks(Spannable s, Pattern p,
         return hasMatches;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.790 -0500", hash_original_method = "6A96E49D98DB283ABEDCA5DA8A0D27E1", hash_generated_method = "3DFF1086F3FB5C82A60C75633D7FFF46")
     
 private static final void applyLink(String url, int start, int end, Spannable text) {
@@ -301,6 +311,8 @@ private static final void gatherLinks(ArrayList<LinkSpec> links,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.800 -0500", hash_original_method = "2760D74C5CC252E337320350F0C84F55", hash_generated_method = "5ED656E3B4083BA9313227BBAC4B002E")
     
 private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s) {
@@ -337,6 +349,8 @@ private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s)
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void pruneOverlaps(ArrayList<LinkSpec> links) {
         Comparator<LinkSpec>  c = new Comparator<LinkSpec>() {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.804 -0500", hash_original_method = "8ED3E1F0B1838A02146C142C5B858BAA", hash_generated_method = "7CF7D8B086CE7815023B31658E63FE8B")
@@ -465,6 +479,8 @@ public final String transformUrl(final Matcher match, String url) {
         }
     };
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.467 -0400", hash_original_method = "D1670E1FC2F10CF19A8A5BA1D0122F80", hash_generated_method = "D1670E1FC2F10CF19A8A5BA1D0122F80")
     public Linkify ()
     {
@@ -525,6 +541,8 @@ class LinkSpec {
 
     int end;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.484 -0400", hash_original_method = "556B7BFA52BBBC98785B42B203495262", hash_generated_method = "556B7BFA52BBBC98785B42B203495262")
     public LinkSpec ()
     {

@@ -15,6 +15,8 @@ public class RandomBitsSupplier implements SHA1_Data {
     /**
      * The method is called by provider to determine if a device is available.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.427 -0500", hash_original_method = "3259964D642F1E81BEF73199EA8A73AC", hash_generated_method = "9E5E54730E70BE586A1A95C1A642A8DE")
     
 static boolean isServiceAvailable() {
@@ -27,6 +29,8 @@ static boolean isServiceAvailable() {
      *
      * In case of any runtime failure ProviderException gets thrown.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.430 -0500", hash_original_method = "A38BCE2020D253BC2B60805DDBFC4023", hash_generated_method = "195046E5C35B050C5174F241E9486995")
     
 private static synchronized byte[] getUnixDeviceRandom(int numBytes) {

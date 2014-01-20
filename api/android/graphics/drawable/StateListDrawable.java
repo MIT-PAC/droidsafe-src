@@ -33,6 +33,8 @@ public class StateListDrawable extends DrawableContainer {
 
     private boolean mMutated;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.106 -0500", hash_original_method = "2C05F8B66F3CA072BC0F3CED1F3E988B", hash_generated_method = "CAC778B770A2571E154C8C827BD90DFE")
     
 public StateListDrawable() {
@@ -55,6 +57,8 @@ private StateListDrawable(StateListState state, Resources res) {
      *                 Switch to this image by calling setState().
      * @param drawable -The image to show.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.108 -0500", hash_original_method = "AF6407614B20F66E7E774377847CB658", hash_generated_method = "FBE12C8DC4EE2A8564D85027E19564BE")
     
 public void addState(int[] stateSet, Drawable drawable) {
@@ -65,6 +69,8 @@ public void addState(int[] stateSet, Drawable drawable) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.111 -0500", hash_original_method = "DFB1FDC7F6EFB1E210EFD5F6F91EF45F", hash_generated_method = "4487ED542301ADB966FCFEE9954EA5D4")
     
 @Override
@@ -72,6 +78,8 @@ public void addState(int[] stateSet, Drawable drawable) {
         return true;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.113 -0500", hash_original_method = "3B1FAED12170A69A129A87EF9824D4D4", hash_generated_method = "1CBF5E5B65D18CEA27C53CD9EBB977CC")
     
 @Override
@@ -88,6 +96,8 @@ public void addState(int[] stateSet, Drawable drawable) {
         return super.onStateChange(stateSet);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.117 -0500", hash_original_method = "60A0EEC92FC73D4C3C226304BAFE6ED2", hash_generated_method = "881AEE96865DF1F601FB754CA0BA5763")
     
 @Override
@@ -184,6 +194,8 @@ StateListState getStateListState() {
      * @see #getStateSet(int)
      * @see #getStateDrawable(int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.122 -0500", hash_original_method = "D9E3394F970F5413D258086831B5CB36", hash_generated_method = "0078239649DED5D4DAD52FF650246FE7")
     
@@ -200,6 +212,8 @@ public int getStateCount() {
      * @see #getStateCount()
      * @see #getStateDrawable(int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.124 -0500", hash_original_method = "55D68A9E9C260DCF60D1CBBC77B3FC0F", hash_generated_method = "66AB8B6A85B55405B13EB6F1DBA41E83")
     
@@ -224,6 +238,8 @@ StateListState(StateListState orig, StateListDrawable owner, Resources res) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.138 -0500", hash_original_method = "E4505B2AE7EA07FF537AEC799B3546D0", hash_generated_method = "E4505B2AE7EA07FF537AEC799B3546D0")
         
 int addStateSet(int[] stateSet, Drawable drawable) {
@@ -232,6 +248,8 @@ int addStateSet(int[] stateSet, Drawable drawable) {
             return pos;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.141 -0500", hash_original_method = "A182AEBDD3B8E6EFB499434DA2A68669", hash_generated_method = "D64FD17DD7405A33F3CB0F78E5709DE5")
         
 private int indexOfStateSet(int[] stateSet) {
@@ -280,6 +298,8 @@ private int indexOfStateSet(int[] stateSet) {
      * @see #getStateCount()
      * @see #getStateSet(int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.126 -0500", hash_original_method = "266BB2A523416F0BDAD03984AE85B606", hash_generated_method = "9D08CC0A657EEDE0C0474D4E388F1A07")
     
@@ -296,6 +316,8 @@ public Drawable getStateDrawable(int index) {
      * @see #getStateDrawable(int)
      * @see #getStateSet(int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.128 -0500", hash_original_method = "410013485164C1DC2E995A85C1D3348C", hash_generated_method = "A49D72CF031B64EEE2017098206BB732")
     
@@ -303,6 +325,8 @@ public int getStateDrawableIndex(int[] stateSet) {
         return mStateListState.indexOfStateSet(stateSet);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.130 -0500", hash_original_method = "92CD1CD82DD5DEA6E7693E9ED80EE90B", hash_generated_method = "05DE6CC5FD086CD20355979CB63690F6")
     
 @Override

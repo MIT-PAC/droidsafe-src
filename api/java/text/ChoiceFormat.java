@@ -21,6 +21,8 @@ public class ChoiceFormat extends NumberFormat {
      *            a double value.
      * @return the next larger double value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.839 -0500", hash_original_method = "56A64FBC0E40A49398895D90D31F38E3", hash_generated_method = "779C3A233A5833DCABF81EFED0688FA6")
     
 public static final double nextDouble(double value) {
@@ -48,6 +50,8 @@ public static final double nextDouble(double value) {
      *            get the previous smaller value.
      * @return the next larger or smaller double value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.842 -0500", hash_original_method = "EB590363B29E0495CDDD74FB1BC0A86C", hash_generated_method = "27FD248C294DCBE13C71C3108FF8B5D5")
     
 public static double nextDouble(double value, boolean increment) {
@@ -62,6 +66,8 @@ public static double nextDouble(double value, boolean increment) {
      *            a double value.
      * @return the next smaller double value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.847 -0500", hash_original_method = "8FBD80CA87526A3E9471194C397AFFA8", hash_generated_method = "AF58E0EE0F9F172D31B40E7C3E5F1D1B")
     
 public static final double previousDouble(double value) {
@@ -105,6 +111,8 @@ public static final double previousDouble(double value) {
      *            limits}. The lower bound of the associated range is at the
      *            same index as the string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.809 -0500", hash_original_method = "6AA98ECEF055DFD6530181EFB704802A", hash_generated_method = "E02FD01E958226DF6093A985AE554776")
     
 public ChoiceFormat(double[] limits, String[] formats) {
@@ -120,6 +128,8 @@ public ChoiceFormat(double[] limits, String[] formats) {
      * @throws IllegalArgumentException
      *            if an error occurs while parsing the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.811 -0500", hash_original_method = "7A22DFD5F0C8BF76D2134AD604327DD6", hash_generated_method = "4901BF97DF15B4A7B2C36C9BA69F9B95")
     
 public ChoiceFormat(String template) {
@@ -135,6 +145,8 @@ public ChoiceFormat(String template) {
      * @throws IllegalArgumentException
      *            if an error occurs while parsing the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.815 -0500", hash_original_method = "61054E3E36618E298A5F058604E71A93", hash_generated_method = "B2F03782C34884D28DA28821550AA2A6")
     
 public void applyPattern(String template) {
@@ -207,6 +219,8 @@ public void applyPattern(String template) {
      *
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.818 -0500", hash_original_method = "0E78DE057CBD16D1EEA99DBEA20DA3A1", hash_generated_method = "23543D2B0160711A7FD831421C479CCA")
     
 @Override
@@ -228,6 +242,8 @@ public void applyPattern(String template) {
      *         {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.821 -0500", hash_original_method = "F2D7C03023A3AAC9DFCE95AB2EC2A780", hash_generated_method = "F6C5ACF13148585DCE3804BB4BA541D9")
     
 @Override
@@ -255,6 +271,8 @@ public void applyPattern(String template) {
      *            a {@code FieldPosition} which is ignored.
      * @return the string buffer.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.824 -0500", hash_original_method = "BC91D466505972771C623F66D301FB6D", hash_generated_method = "7C493D9A024EBA9C3DD4B1E2D6674691")
     
 @Override
@@ -281,6 +299,8 @@ public void applyPattern(String template) {
      *            a {@code FieldPosition} which is ignored.
      * @return the string buffer.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.827 -0500", hash_original_method = "F9B960B049B919C822FEECA2E3BD7537", hash_generated_method = "0F244610EE4E1DE2BBEE8C7AC9256CCA")
     
 @Override
@@ -295,6 +315,8 @@ public void applyPattern(String template) {
      *
      * @return an array of format strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.829 -0500", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "5957C9D2934F4D28458980FA43F21FBD")
     
@@ -308,6 +330,8 @@ public Object[] getFormats() {
      * @return the array of doubles which make up the limits of this {@code
      *         ChoiceFormat}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.832 -0500", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "4462B4ADD3CBA8B48052A73F3EA65136")
     
@@ -323,6 +347,8 @@ public double[] getLimits() {
      *
      * @see #equals
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.836 -0500", hash_original_method = "9AF9F658465E6920280B1655C8022A86", hash_generated_method = "2B6A38C70D9EB0CA23B980DC8F6B3D48")
     
 @Override
@@ -367,6 +393,8 @@ public double[] getLimits() {
      * @return a Double resulting from the parse, or Double.NaN if there is an
      *         error
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.845 -0500", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "6E603FA1F2D9295D5AD0EFE6E369A8C2")
     
@@ -401,6 +429,8 @@ public double[] getLimits() {
      *            limits}. The lower bound of the associated range is at the
      *            same index as the string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.850 -0500", hash_original_method = "A68DB2E05654867D5DABBF703FA90F00", hash_generated_method = "48FD31804241588464A37BDF825EAE7E")
     
 public void setChoices(double[] limits, String[] formats) {
@@ -411,6 +441,8 @@ public void setChoices(double[] limits, String[] formats) {
         choiceFormats = formats;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.852 -0500", hash_original_method = "55E8B28E1CF4E8D52478B124E3FA683B", hash_generated_method = "3C2A0E91FFDA79693203BA4400F4E944")
     
 private int skipWhitespace(String string, int index) {
@@ -427,6 +459,8 @@ private int skipWhitespace(String string, int index) {
      *
      * @return the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.855 -0500", hash_original_method = "C892C3517E889BA7A99732103703F353", hash_generated_method = "A16188C800987A064F2D3C803BCB551C")
     
 public String toPattern() {

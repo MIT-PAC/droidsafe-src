@@ -158,6 +158,8 @@ public static AttributeSet asAttributeSet(XmlPullParser parser) {
 
         static  XmlPullParserFactory instance;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.349 -0400", hash_original_method = "C9EFF15750F86CC83530A41F4DEECEE2", hash_generated_method = "C9EFF15750F86CC83530A41F4DEECEE2")
         public XmlSerializerFactory ()
         {

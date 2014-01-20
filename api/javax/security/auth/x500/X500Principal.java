@@ -120,6 +120,8 @@ public X500Principal(String name, Map<String,String> keywordMap){
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.473 -0500", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "AEA0F5E8599DEECC5DC2E48F8246FB22")
     
 private IllegalArgumentException incorrectInputEncoding(IOException e) {
@@ -128,6 +130,8 @@ private IllegalArgumentException incorrectInputEncoding(IOException e) {
         throw iae;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.481 -0500", hash_original_method = "6436965683334E035C1CE670538AE7C6", hash_generated_method = "AE34CECE39AD5164D7DD93651AA682A2")
     
 private IllegalArgumentException incorrectInputName(IOException e, String name) {
@@ -135,6 +139,8 @@ private IllegalArgumentException incorrectInputName(IOException e, String name) 
         iae.initCause(e);
         throw iae;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.486 -0500", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "852B9C78EAF841C5A0B6634DA8FB4360")
     
 private synchronized String getCanonicalName() {
@@ -296,18 +302,24 @@ public String getName(String format, Map<String, String> oidMap) {
         return dn.getName(RFC1779);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.506 -0500", hash_original_method = "11CA04BE900A069B4C6C484CD5BEB982", hash_generated_method = "6F4A84C0992D05135498066119F614D0")
     
 private void writeObject(ObjectOutputStream out) throws IOException {
         out.writeObject(dn.getEncoded());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.508 -0500", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "861E36731E7A5E3C87A1D703DF85C9CF")
     
 private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.511 -0500", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "2DD43C54293F4296C923660BF90BAEA9")
     
 private String substituteNameFromMap(String name, Map<String, String> keywordMap) {

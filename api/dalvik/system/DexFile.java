@@ -54,6 +54,8 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
         return new DexFile(sourcePathName, outputPathName, flags);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
     	Class clazz = new Class();
     	clazz.addTaint(name.taint);
@@ -62,23 +64,31 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
     	return clazz;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] getClassNameList(int cookie) {
     	String[] s = new String[0];
     	s.addTaint(cookie);
     	return s;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int openDexFile(byte[] fileContents) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void closeDexFile(int cookie) {
     }
     
@@ -156,6 +166,8 @@ public DexFile(String fileName) throws IOException {
      * @param flags
      *  Enable optional features.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.714 -0500", hash_original_method = "A9D59C5CAA6AEFC931B2439A85EC8214", hash_generated_method = "EA80EA3709A8C01338A8B5642E17C8F1")
     
 private DexFile(String sourceName, String outputName, int flags) throws IOException {

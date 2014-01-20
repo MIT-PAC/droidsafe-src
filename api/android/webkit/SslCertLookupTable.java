@@ -28,6 +28,8 @@ public static SslCertLookupTable getInstance() {
 
     private  Bundle table;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.933 -0500", hash_original_method = "81BA7CE42C429B1D2F4A8FA68B131FF3", hash_generated_method = "0B6004FF78C212B86ADA49F111537F2F")
     
 private SslCertLookupTable() {

@@ -6,9 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Date;
 
-
-
 public class ASN1UTCTime extends DERUTCTime {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.376 -0500", hash_original_method = "9FB0B414332B377CAC617115546A77CB", hash_generated_method = "9FB0B414332B377CAC617115546A77CB")
     
 ASN1UTCTime(byte[] bytes)
@@ -29,7 +29,6 @@ public ASN1UTCTime(String time)
     {
         super(time);
     }
-
     
 }
 

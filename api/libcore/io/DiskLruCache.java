@@ -32,10 +32,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-
-
-
-
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class DiskLruCache implements Closeable {
@@ -83,6 +79,8 @@ public static DiskLruCache open(File directory, int appVersion, int valueCount, 
         return cache;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.911 -0500", hash_original_method = "A55E7F0201C0F280790862CD26778798", hash_generated_method = "28951C4690DEC49C9E731BE208E1F25E")
     
 private static void deleteIfExists(File file) throws IOException {
@@ -95,6 +93,8 @@ private static void deleteIfExists(File file) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.951 -0500", hash_original_method = "FCB1F7A536BE92A38023570683A10CE6", hash_generated_method = "53E15E45851C670F2D5EBA02266231AE")
     
 private static String inputStreamToString(InputStream in) throws IOException {
@@ -125,7 +125,6 @@ private static String inputStreamToString(InputStream in) throws IOException {
 
     private static final String READ = "READ";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.861 -0500", hash_original_field = "FAF68CC60E35257A66D284E0CBAD8965", hash_generated_field = "8B0860249151DE823C54467CC9BADB3F")
-
 
     private  File directory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.863 -0500", hash_original_field = "8FB46FEB9C38A6CBE5C3158AB2D42DF5", hash_generated_field = "C3DAA1E42AD1B9E8800013507C6A05F9")
@@ -197,22 +196,12 @@ private static String inputStreamToString(InputStream in) throws IOException {
             varA7E53CE21691AB073D9660D615818899_309578625.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_309578625;
             
-            
-                
-                    
-                
-                
-                
-                    
-                    
-                
-            
-            
         }
-
         
 };
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.892 -0500", hash_original_method = "F7C5B739E468E97586605C521F3C2B42", hash_generated_method = "7DD89103BDA236A723429D2497EEF55C")
     
 private DiskLruCache(File directory, int appVersion, int valueCount, long maxSize) {
@@ -224,6 +213,8 @@ private DiskLruCache(File directory, int appVersion, int valueCount, long maxSiz
         this.maxSize = maxSize;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.898 -0500", hash_original_method = "D80881F7E6F2A63F9AF02A98171F075C", hash_generated_method = "C51F0864E9860170832C4164DC428F27")
     
 private void readJournal() throws IOException {
@@ -255,6 +246,8 @@ private void readJournal() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.901 -0500", hash_original_method = "B93033832384BE0A8F735535A303EB51", hash_generated_method = "330ADCE299FEE034B9BDE5E43980FB43")
     
 private void readJournalLine(String line) throws IOException {
@@ -292,6 +285,8 @@ private void readJournalLine(String line) throws IOException {
      * Computes the initial size and collects garbage as a part of opening the
      * cache. Dirty entries are assumed to be inconsistent and will be deleted.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.903 -0500", hash_original_method = "BF29FD79336E7D0F2752A5C16F704FCA", hash_generated_method = "8DDF8BEFAF7D0B9E356C822FFE084B0A")
     
 private void processJournal() throws IOException {
@@ -317,6 +312,8 @@ private void processJournal() throws IOException {
      * Creates a new journal that omits redundant information. This replaces the
      * current journal if it exists.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.907 -0500", hash_original_method = "CAFF8A7D35D4FC2C6D20C8D2E31B18B9", hash_generated_method = "760BDC582D3BA1C5073D44DAFD85B3FA")
     
 private synchronized void rebuildJournal() throws IOException {
@@ -500,6 +497,8 @@ private synchronized void completeEdit(Editor editor, boolean success) throws IO
      * We only rebuild the journal when it will halve the size of the journal
      * and eliminate at least 2000 ops.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.930 -0500", hash_original_method = "BD0CD0940E277CB89BD11D972CAF1EC0", hash_generated_method = "6CB8AA358C5F4EA765EF80B119362FFA")
     
 private boolean journalRebuildRequired() {
@@ -507,13 +506,14 @@ private boolean journalRebuildRequired() {
         return redundantOpCount >= REDUNDANT_OP_COMPACT_THRESHOLD
                 && redundantOpCount >= lruEntries.size();
     }
-
     
     public static final class Snapshot implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.955 -0500", hash_original_field = "C22F1E6E9A57B1C138FFFD0C3B57C88E", hash_generated_field = "464EF7B473F9CC85C5904899BBCD6B8E")
 
         private  InputStream[] ins;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.957 -0500", hash_original_method = "4874F99779A0A237419F7A04515D002C", hash_generated_method = "934833C6A4EE653724527981EF873A46")
         
 private Snapshot(InputStream[] ins) {
@@ -545,11 +545,8 @@ public String getString(int index) throws IOException {
                 IoUtils.closeQuietly(in);
             }
         }
-
         
     }
-
-
     
     public final class Editor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.969 -0500", hash_original_field = "37335DA26DA5FD3B79F548D93188F88C", hash_generated_field = "70C4CB2BDA836A091A18885840DD6AFF")
@@ -651,7 +648,6 @@ public void commit() throws IOException {
 public void abort() throws IOException {
             completeEdit(this, false);
         }
-
         
         private class FaultHidingOutputStream extends FilterOutputStream {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.992 -0500", hash_original_method = "C9ADDA2E4F72C2E9295822BCBAC6927F", hash_generated_method = "3AAF07AFF495EF6B8165E58FA620149D")
@@ -699,15 +695,10 @@ private FaultHidingOutputStream(OutputStream out) {
                     hasErrors = true;
                 }
             }
-
             
         }
-
-
         
     }
-
-
     
     private final class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.011 -0500", hash_original_field = "FFE7EE17DFA37A68070A0F0495753B29", hash_generated_field = "2E3018221E30480EB0F957E72002C7D8")
@@ -743,6 +734,8 @@ public String getLengths() throws IOException {
         /**
          * Set lengths using decimal numbers like "10123".
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.026 -0500", hash_original_method = "38ABC3E1459516CB332E39C8B303294B", hash_generated_method = "070BD6C8709437C82E9BFA929CA9E8F0")
         
 private void setLengths(String[] strings) throws IOException {
@@ -759,6 +752,8 @@ private void setLengths(String[] strings) throws IOException {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.028 -0500", hash_original_method = "0EB1B022FC0EF6548A3015E3FEB332B5", hash_generated_method = "2F5E58135766278DA89920E448D545D8")
         
 private IOException invalidLengths(String[] strings) throws IOException {
@@ -776,7 +771,6 @@ public File getCleanFile(int i) {
 public File getDirtyFile(int i) {
             return new File(directory, key + "." + i + ".tmp");
         }
-
         
     }
 
@@ -825,6 +819,8 @@ public boolean isClosed() {
         return journalWriter == null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.937 -0500", hash_original_method = "8ED19EB33A6AB2822DDF1831EB4A2E5C", hash_generated_method = "98226437BAFFFCF9D555D1F518B4CC99")
     
 private void checkNotClosed() {
@@ -863,6 +859,8 @@ public synchronized void close() throws IOException {
         journalWriter = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.944 -0500", hash_original_method = "52FB98FFFDCED62623018A96063CC5F4", hash_generated_method = "CCACECABD0734F4B95C4E0FA921B1A33")
     
 private void trimToSize() throws IOException {
@@ -884,6 +882,8 @@ public void delete() throws IOException {
         IoUtils.deleteContents(directory);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.949 -0500", hash_original_method = "A6AB05B3A3783BAC84CED8DCEEB398D1", hash_generated_method = "8517A566F0CE10EF13C4AF4DD9A9CE90")
     
 private void validateKey(String key) {

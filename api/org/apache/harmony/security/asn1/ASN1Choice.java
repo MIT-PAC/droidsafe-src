@@ -82,6 +82,8 @@ public ASN1Choice(ASN1Type[] type) {
         this.type = type;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.785 -0500", hash_original_method = "781B2DE1C4956E14672C3431AF37B058", hash_generated_method = "DE4CA369F5857922E33DE14832CEE4A3")
     
 private void addIdentifier(TreeMap<BigInteger, BigInteger> map, int identifier, int index){
@@ -139,10 +141,14 @@ public final void encodeContent(BerOutputStream out) {
         out.encodeChoice(this);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.797 -0500", hash_original_method = "42587D0F9A46971376C939ACA9930C2B", hash_generated_method = "9AD640E17D6E104A27C06EA877BD78B6")
     
 public abstract int getIndex(Object object);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.799 -0500", hash_original_method = "75E7550C20B95169035A29D8C36DEBAE", hash_generated_method = "8D9E618D747BE46CF5FA8CB7E949B545")
     
 public abstract Object getObjectToEncode(Object object);

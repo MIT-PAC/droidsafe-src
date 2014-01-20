@@ -14,7 +14,6 @@ import android.os.Process;
 import android.util.Slog;
 import dalvik.system.Zygote;
 
-
 public class WrapperInit {
 
     /**
@@ -117,6 +116,8 @@ public static void execStandalone(String invokeWith, String classPath, String cl
     /**
      * Class not instantiable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.068 -0500", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "E422BC2875F034EC395ED434A5EE1290")
     
 private WrapperInit() {

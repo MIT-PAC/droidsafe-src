@@ -84,6 +84,8 @@ public static int getResource(int errorCode) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.089 -0500", hash_original_field = "7E068549854EC7B659EE876AD356FB52", hash_generated_field = "26F6F5D2EF35FA86B8698978CE2FD0C9")
 
     private static final String LOGTAG = "Http";
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.087 -0500", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "FDB5E9D3AC187BF874E9B6432C969220")
     
 private ErrorStrings() { /* Utility class, don't instantiate. */ }

@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
 class FinitePool<T extends Poolable<T>> implements Pool<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.598 -0500", hash_original_field = "FAA5BCD910EC1E96EA623DF5F9CEA72D", hash_generated_field = "D4F5669F7C6CCD0730D510AE50304291")
 
@@ -28,6 +26,8 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
 
     private int mPoolCount;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.611 -0500", hash_original_method = "E32E280D36A91DE3F8C1D108448A5172", hash_generated_method = "E32E280D36A91DE3F8C1D108448A5172")
     
 FinitePool(PoolableManager<T> manager) {
@@ -36,6 +36,8 @@ FinitePool(PoolableManager<T> manager) {
         mInfinite = true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.613 -0500", hash_original_method = "1F77D1F43E03D174D17C1D886C3B593A", hash_generated_method = "1F77D1F43E03D174D17C1D886C3B593A")
     
 FinitePool(PoolableManager<T> manager, int limit) {

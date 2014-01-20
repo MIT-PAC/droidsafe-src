@@ -87,6 +87,8 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
 
         ArrayList<byte[]> results;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.017 -0500", hash_original_method = "51FF1105D833FA23AFEA102913139717", hash_generated_method = "51FF1105D833FA23AFEA102913139717")
         
 LoadLinearFixedContext(int efid, int recordNum, Message onLoaded) {
@@ -96,6 +98,8 @@ LoadLinearFixedContext(int efid, int recordNum, Message onLoaded) {
             this.loadAll = false;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.020 -0500", hash_original_method = "D730261F991D6C5434BBC408762FB0A8", hash_generated_method = "D730261F991D6C5434BBC408762FB0A8")
         
 LoadLinearFixedContext(int efid, Message onLoaded) {
@@ -350,6 +354,8 @@ public void updateEFTransparent(int fileid, byte[] data, Message onComplete) {
 
     //***** Private Methods
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.050 -0500", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "011ADC436A437F29A195186F89A69206")
     
 private void sendResult(Message response, Object result, Throwable ex) {
@@ -622,13 +628,19 @@ protected String getCommonIccEFPath(int efid) {
         return null;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.061 -0500", hash_original_method = "C907A749FCCFB41A918898641D1D7558", hash_generated_method = "E4EBBA2992ACA18FD1EDAABC0FC8112F")
     
 protected abstract String getEFPath(int efid);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.064 -0500", hash_original_method = "A6575C85320F46E94B0F4CB5120856FE", hash_generated_method = "9B237DFCD676281237C8BE1A877AC831")
     
 protected abstract void logd(String s);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.066 -0500", hash_original_method = "8503C48BD28DECE909202E8D31B4BECE", hash_generated_method = "98998146AAEFC08A350487078A6888FB")
     
 protected abstract void loge(String s);

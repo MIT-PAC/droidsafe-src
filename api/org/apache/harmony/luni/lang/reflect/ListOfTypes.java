@@ -19,12 +19,16 @@ public final class ListOfTypes {
 
     private Type[] resolvedTypes;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.387 -0500", hash_original_method = "1B717CC03BB3C0AEB2AD5F80BAEDAB75", hash_generated_method = "1B717CC03BB3C0AEB2AD5F80BAEDAB75")
     
 ListOfTypes(int capacity) {
         types = new ArrayList<Type>(capacity);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.390 -0500", hash_original_method = "A3B43C45442B7BC58B3D5A9B17362DF9", hash_generated_method = "A3B43C45442B7BC58B3D5A9B17362DF9")
     
 ListOfTypes(Type[] types) {
@@ -34,6 +38,8 @@ ListOfTypes(Type[] types) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.392 -0500", hash_original_method = "521B9354050D45CFE1C9313A9C3FFED0", hash_generated_method = "521B9354050D45CFE1C9313A9C3FFED0")
     
 void add(Type type) {
@@ -43,6 +49,8 @@ void add(Type type) {
         types.add(type);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.394 -0500", hash_original_method = "5C54E587FAEC26FCFBB8E0F344888E86", hash_generated_method = "5C54E587FAEC26FCFBB8E0F344888E86")
     
 int length() {
@@ -57,6 +65,8 @@ public Type[] getResolvedTypes() {
         return result != null ? result : (resolvedTypes = resolveTypes(types));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.399 -0500", hash_original_method = "F2767C6141E0603586233C8F8B50B3D9", hash_generated_method = "D4DD27393712A5F784F0C5FAEC33AC16")
     
 private Type[] resolveTypes(List<Type> unresolved) {

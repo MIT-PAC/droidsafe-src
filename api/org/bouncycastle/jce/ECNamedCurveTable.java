@@ -14,10 +14,6 @@ import org.bouncycastle.asn1.x9.X962NamedCurves;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
 
-
-
-
-
 public class ECNamedCurveTable {
     /**
      * return a parameter spec representing the passed in named
@@ -118,6 +114,8 @@ public static Enumeration getNames()
         return v.elements();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.441 -0500", hash_original_method = "18BFADD4FC9E195D778FFD96D4319E62", hash_generated_method = "94B42B2C3424706C7EC0D2F3A161EFA2")
     
 private static void addEnumeration(
@@ -135,7 +133,6 @@ private static void addEnumeration(
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -29,12 +29,16 @@ public class TextPaint extends Paint {
 
     public float underlineThickness;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.484 -0500", hash_original_method = "618AB1B9CBAFB419831828FB2E1722C9", hash_generated_method = "C575E1DCDBDEE9AED8D052E4AC8C657D")
     
 public TextPaint() {
         super();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.486 -0500", hash_original_method = "512D920DE77B40AA9B525CC82C9BBF96", hash_generated_method = "79B96FBDA5657F44CDB027702F8F1EF9")
     
 public TextPaint(int flags) {
@@ -53,6 +57,8 @@ public TextPaint(Paint p) {
      * Copy the fields from tp into this TextPaint, including the
      * fields inherited from Paint.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.491 -0500", hash_original_method = "1430CF075B6F082AE7C06C83102C116C", hash_generated_method = "A4C11FF678332E47FFA1D2F56710455A")
     
@@ -74,6 +80,8 @@ public void set(TextPaint tp) {
      * @param thickness underline thickness
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.494 -0500", hash_original_method = "398799A16623F5BF0623CBD73B973047", hash_generated_method = "0EBF4431921869C78567056BE8830C59")
     
 public void setUnderlineText(int color, float thickness) {

@@ -8,7 +8,6 @@ import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 import android.util.Log;
 
-
 public class DdmRegister {
 
     /**
@@ -41,10 +40,11 @@ public static void registerHandlers() {
         DdmServer.registrationComplete();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.502 -0500", hash_original_method = "7B8C628EED4FBAEB3F2321039DB7D59A", hash_generated_method = "BD6F90C15B5A507D2DACDA65C5C77EF3")
     
 private DdmRegister() {}
-
     
 }
 

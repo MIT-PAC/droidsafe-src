@@ -214,6 +214,8 @@ protected byte[] wrap(byte content_type,
         return packetize(content_type, version, ciphered_fragment);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.369 -0500", hash_original_method = "5CCC3748379530494C61DB0E5CDE03DA", hash_generated_method = "2A22C92A3FD80E3D66B40145FCD1B917")
     
 private byte[] packetize(byte type, byte[] version, byte[] fragment) {
@@ -236,6 +238,8 @@ private byte[] packetize(byte type, byte[] version, byte[] fragment) {
      * Set the ssl session to be used after sending the changeCipherSpec message
      * @param   session:    SSLSessionImpl
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.372 -0500", hash_original_method = "B29F5DC9A2BE75FFC944D86037256C31", hash_generated_method = "FA2A8EAE8ED72A519E2810F9CA7EBF7C")
     
 private void setSession(SSLSessionImpl session) {

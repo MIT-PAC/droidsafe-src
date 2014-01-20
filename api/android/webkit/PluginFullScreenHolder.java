@@ -48,6 +48,8 @@ class PluginFullScreenHolder {
         
 };
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.282 -0500", hash_original_method = "FC2D0FD113493C99F64E21CD8982E2A5", hash_generated_method = "FC2D0FD113493C99F64E21CD8982E2A5")
     
 PluginFullScreenHolder(WebView webView, int orientation, int npp) {

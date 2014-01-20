@@ -419,6 +419,8 @@ public synchronized void processResponse(SIPResponse transactionResponse,
      * @param transactionResponse -- transaction response received.
      * @param sourceChannel - source channel on which the response was received.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.988 -0500", hash_original_method = "ADF3D75C6ADD47CBC6B3D63B5D3998CF", hash_generated_method = "0877A94654B2780C0441D1B234A42B9A")
     
 private void nonInviteClientTransaction(SIPResponse transactionResponse,
@@ -538,6 +540,8 @@ private void nonInviteClientTransaction(SIPResponse transactionResponse,
      * @param sourceChannel - source channel on which the response was received.
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.993 -0500", hash_original_method = "C74AAAAD68DF1265333F033333BC207B", hash_generated_method = "3EB99BFD5E7B84123E5B644CCCED444B")
     
 private void inviteClientTransaction(SIPResponse transactionResponse,
@@ -1042,6 +1046,8 @@ public Request createAck() throws SipException {
      * 
      * Note that this is different from an ACK for 2xx
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.016 -0500", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "1106CF9D033B224BB717BD53D35FD0EB")
     
 private final Request createErrorAck() throws SipException, ParseException {

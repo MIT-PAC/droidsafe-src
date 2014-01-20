@@ -24,6 +24,8 @@ import com.android.internal.database.SortCursor;
 
 public class RingtoneManager {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.336 -0500", hash_original_method = "DBC47BF2F28DE087272A0362AE49A9BD", hash_generated_method = "39659D7CC381EF0219D84A11D816E499")
     
 private static Uri getUriFromCursor(Cursor cursor) {
@@ -57,6 +59,8 @@ public static Uri getValidRingtoneUri(Context context) {
         return uri;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.346 -0500", hash_original_method = "6D36BC3A825A2854EC540CE79E0ECBCE", hash_generated_method = "EF8061E2A5A3CB2651093307549053D0")
     
 private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor cursor) {
@@ -82,6 +86,8 @@ private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor
      * @param columns The columns that must be true.
      * @return The where clause.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.359 -0500", hash_original_method = "ABDE2603E3E0183A07EE30B4903BA6A9", hash_generated_method = "555DC2254EB46FA798B435DDC602A06D")
     
 private static String constructBooleanTrueWhereClause(List<String> columns, boolean includeDrm) {
@@ -201,6 +207,8 @@ public static void setActualDefaultRingtoneUri(Context context, int type, Uri ri
                 ringtoneUri != null ? ringtoneUri.toString() : null);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.375 -0500", hash_original_method = "80EF3F46842B7A46317143BED17C21C8", hash_generated_method = "4CDBD97CED152A19231DA6FCA29BBEDB")
     
 private static String getSettingForType(int type) {
@@ -638,6 +646,8 @@ public int getRingtonePosition(Uri ringtoneUri) {
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.348 -0500", hash_original_method = "110261102C7F5AFCA1139D9C233B8EDA", hash_generated_method = "FEBEBEC21D2A0C924BA4AA5D6DAA6395")
     
 private Cursor getInternalRingtones() {
@@ -647,6 +657,8 @@ private Cursor getInternalRingtones() {
                 null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.351 -0500", hash_original_method = "39880916742952A44000639C81C1DE13", hash_generated_method = "8FF5602659052AD222C67D91CEE65D2D")
     
 private Cursor getDrmRingtones() {
@@ -656,6 +668,8 @@ private Cursor getDrmRingtones() {
                 null, null, DrmStore.Audio.TITLE);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.353 -0500", hash_original_method = "2B8B74EFBA4661DD0239B341E05A9848", hash_generated_method = "7714E2B56AD179ACB88F395F4A239304")
     
 private Cursor getMediaRingtones() {
@@ -671,6 +685,8 @@ private Cursor getMediaRingtones() {
                 : null;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.356 -0500", hash_original_method = "395BF736796D6FE27621FD0BAFF0C552", hash_generated_method = "17A9CF02FA5560B070C979565914CE4F")
     
 private void setFilterColumnsList(int type) {
@@ -690,6 +706,8 @@ private void setFilterColumnsList(int type) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.362 -0500", hash_original_method = "4C1ED3200DB68E8363398CACE6114D33", hash_generated_method = "C3A1A75DFF99AF9B184BBB2AB5643BD8")
     
 private Cursor query(Uri uri,

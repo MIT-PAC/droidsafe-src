@@ -32,14 +32,18 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
 
 	// Private clone of Boolean.valueOf that is guaranteed to return
 	// Boolean.TRUE or Boolean.FALSE
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.368 -0500", hash_original_method = "DEEA9127C75CA41B923A3DC43D204756", hash_generated_method = "DDB8999269F7CA4EC20D2B8504360235")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.368 -0500", hash_original_method = "DEEA9127C75CA41B923A3DC43D204756", hash_generated_method = "DDB8999269F7CA4EC20D2B8504360235")
 	
 private static Boolean truthValue(boolean b) {
 		return b ? Boolean.TRUE : Boolean.FALSE;
 		}
 
 	// If the String is quoted, trim the quotes.
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.489 -0500", hash_original_method = "BDA9D8383AE12BFC0EDAC6BE30379C57", hash_generated_method = "7218B177F9828568680D5B4B7EB7D328")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.489 -0500", hash_original_method = "BDA9D8383AE12BFC0EDAC6BE30379C57", hash_generated_method = "7218B177F9828568680D5B4B7EB7D328")
 	
 private static String trimquotes(String in) {
 		if (in == null) return in;
@@ -55,7 +59,9 @@ private static String trimquotes(String in) {
 
 	// Split the supplied String into words or phrases seperated by spaces.
 	// Recognises quotes around a phrase and doesn't split it.
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.492 -0500", hash_original_method = "DAD7677F193C354C030B27974A1BBCD1", hash_generated_method = "206D9B2DD2DA383725DEB0661C09406E")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.492 -0500", hash_original_method = "DAD7677F193C354C030B27974A1BBCD1", hash_generated_method = "206D9B2DD2DA383725DEB0661C09406E")
 	
 private static String[] split(String val) throws IllegalArgumentException {
 		val = val.trim();
@@ -547,7 +553,9 @@ public void parse (String systemid) throws IOException, SAXException {
 		}
 
 	// Sets up instance variables that haven't been set by setFeature
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.407 -0500", hash_original_method = "4BDCB9FDB6AA49AD5AB8549244541048", hash_generated_method = "128A4F55CE7690B3D7D971683C96D224")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.407 -0500", hash_original_method = "4BDCB9FDB6AA49AD5AB8549244541048", hash_generated_method = "128A4F55CE7690B3D7D971683C96D224")
 	
 private void setup() {
 		if (theSchema == null) theSchema = new HTMLSchema();
@@ -572,7 +580,9 @@ private void setup() {
 
 	// Return a Reader based on the contents of an InputSource
 	// Buffer both the InputStream and the Reader
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.410 -0500", hash_original_method = "0FC12B7CFED0DCE2629E4B14587480A6", hash_generated_method = "F8C16F4EB8D66AAA1F2676CD0A051C40")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.410 -0500", hash_original_method = "0FC12B7CFED0DCE2629E4B14587480A6", hash_generated_method = "F8C16F4EB8D66AAA1F2676CD0A051C40")
 	
 private Reader getReader(InputSource s) throws SAXException, IOException {
 		Reader r = s.getCharacterStream();
@@ -600,7 +610,9 @@ private Reader getReader(InputSource s) throws SAXException, IOException {
 		}
 
 	// Get an InputStream based on a publicid and a systemid
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.412 -0500", hash_original_method = "CDC68ACD7694626FF67B6B6D163E3BB7", hash_generated_method = "B9525A38C6B7B12975D2088BC866603A")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.412 -0500", hash_original_method = "CDC68ACD7694626FF67B6B6D163E3BB7", hash_generated_method = "B9525A38C6B7B12975D2088BC866603A")
 	
 private InputStream getInputStream(String publicid, String systemid) throws IOException, SAXException {
 		URL basis = new URL("file", "", System.getProperty("user.dir") + "/.");
@@ -642,7 +654,9 @@ public void aval(char[] buff, int offset, int length) throws SAXException {
 	// Expand entity references in attribute values selectively.
 	// Currently we expand a reference iff it is properly terminated
 	// with a semicolon.
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.447 -0500", hash_original_method = "BD88D393D059FDFF1FEBA4E80D3AAF56", hash_generated_method = "FD4B10672D2DFCBCBCE18A4060968428")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.447 -0500", hash_original_method = "BD88D393D059FDFF1FEBA4E80D3AAF56", hash_generated_method = "FD4B10672D2DFCBCBCE18A4060968428")
 	
 private String expandEntities(String src) {
 		int refStart = -1;
@@ -702,7 +716,9 @@ public void entity(char[] buff, int offset, int length) throws SAXException {
 
 	// Process numeric character references,
 	// deferring to the schema for named ones.
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.452 -0500", hash_original_method = "9575B162D435E8F9BEA7F0ECC81D324A", hash_generated_method = "71DA8E87A02104DD491874959339F5C0")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.452 -0500", hash_original_method = "9575B162D435E8F9BEA7F0ECC81D324A", hash_generated_method = "71DA8E87A02104DD491874959339F5C0")
 	
 private int lookupEntity(char[] buff, int offset, int length) {
 		int result = 0;
@@ -816,7 +832,9 @@ public void etag_basic(char[] buff, int offset, int length) throws SAXException 
 
 	// Push restartables on the stack if possible
 	// e is the next element to be started, if we know what it is
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.468 -0500", hash_original_method = "B330A365C16A276F019BF46E61F37EA8", hash_generated_method = "C94055E14789F3D4B4005D8A2E2C6A9F")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.468 -0500", hash_original_method = "B330A365C16A276F019BF46E61F37EA8", hash_generated_method = "C94055E14789F3D4B4005D8A2E2C6A9F")
 	
 private void restart(Element e) throws SAXException {
 		while (theSaved != null && theStack.canContain(theSaved) &&
@@ -828,7 +846,9 @@ private void restart(Element e) throws SAXException {
 		}
 
 	// Pop the stack irrevocably
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.471 -0500", hash_original_method = "C52776A5281CF0A097BB6E08724FB3A1", hash_generated_method = "54B1BF5D19956C534F2E337C7AC539A2")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.471 -0500", hash_original_method = "C52776A5281CF0A097BB6E08724FB3A1", hash_generated_method = "54B1BF5D19956C534F2E337C7AC539A2")
 	
 private void pop() throws SAXException {
 		if (theStack == null) return;		// empty stack
@@ -857,7 +877,9 @@ private void pop() throws SAXException {
 		}
 
 	// Pop the stack restartably
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.473 -0500", hash_original_method = "C8A2C1B1941DD99452371A15DDB14C88", hash_generated_method = "BD3C8BE7B2DD000A556512EEEE0E226A")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.473 -0500", hash_original_method = "C8A2C1B1941DD99452371A15DDB14C88", hash_generated_method = "BD3C8BE7B2DD000A556512EEEE0E226A")
 	
 private void restartablyPop() throws SAXException {
 		Element popped = theStack;
@@ -868,7 +890,9 @@ private void restartablyPop() throws SAXException {
 			theSaved = popped;
 			}
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.478 -0500", hash_original_method = "CEB0923649F562E1C47AECBE0F37237A", hash_generated_method = "F8D319B8DFAB4F7C272231877CEB3231")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.478 -0500", hash_original_method = "CEB0923649F562E1C47AECBE0F37237A", hash_generated_method = "F8D319B8DFAB4F7C272231877CEB3231")
 	
 private void push(Element e) throws SAXException {
 		String name = e.name();
@@ -908,7 +932,9 @@ private void push(Element e) throws SAXException {
 		}
 
 	// Get the prefix from a QName
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.481 -0500", hash_original_method = "EBD18CEBBA646E39DB7BD8DC690DDED7", hash_generated_method = "9D5F572A96271648363680F006A20732")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.481 -0500", hash_original_method = "EBD18CEBBA646E39DB7BD8DC690DDED7", hash_generated_method = "9D5F572A96271648363680F006A20732")
 	
 private String prefixOf(String name) {
 		int i = name.indexOf(':');
@@ -919,7 +945,9 @@ private String prefixOf(String name) {
 		}
 
 	// Return true if we have a foreign name
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.483 -0500", hash_original_method = "761321F4D2C89C49E6A94969107BF018", hash_generated_method = "D455C227E6289797BD96598D48715321")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.483 -0500", hash_original_method = "761321F4D2C89C49E6A94969107BF018", hash_generated_method = "D455C227E6289797BD96598D48715321")
 	
 private boolean foreign(String prefix, String namespace) {
 //		System.err.print("%% Testing " + prefix + " and " + namespace + " for foreignness -- ");
@@ -983,7 +1011,9 @@ public void decl(char[] buff, int offset, int length) throws SAXException {
             }
         }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.498 -0500", hash_original_method = "92ECD15FFBF9920D383290E17881F5A3", hash_generated_method = "7369990E1790A764920FC6A5232A9E26")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.498 -0500", hash_original_method = "92ECD15FFBF9920D383290E17881F5A3", hash_generated_method = "7369990E1790A764920FC6A5232A9E26")
 	
 private String cleanPublicid(String src) {
 		if (src == null) return null;
@@ -1105,7 +1135,9 @@ public void cmnt(char[] buff, int offset, int length) throws SAXException {
 
 	// Rectify the stack, pushing and popping as needed
 	// so that the argument can be safely pushed
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.522 -0500", hash_original_method = "37597577D17F3DB30561754D63AF952D", hash_generated_method = "A7EE80275DC171DFF2F4303EF721218C")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.522 -0500", hash_original_method = "37597577D17F3DB30561754D63AF952D", hash_generated_method = "A7EE80275DC171DFF2F4303EF721218C")
 	
 private void rectify(Element e) throws SAXException {
 		Element sp;
@@ -1146,7 +1178,9 @@ public int getEntity() {
 	// Return the argument as a valid XML name
 	// This no longer lowercases the result: we depend on Schema to
 	// canonicalize case.
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.526 -0500", hash_original_method = "C657524A51A66CA45344D36C0B6F5C26", hash_generated_method = "A4C1980F2EF0C9354EA6FC4AB4E1FEB0")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.526 -0500", hash_original_method = "C657524A51A66CA45344D36C0B6F5C26", hash_generated_method = "A4C1980F2EF0C9354EA6FC4AB4E1FEB0")
 	
 private String makeName(char[] buff, int offset, int length) {
 		StringBuffer dst = new StringBuffer(length + 2);

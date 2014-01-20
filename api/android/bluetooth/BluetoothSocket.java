@@ -81,7 +81,9 @@ public final class BluetoothSocket implements Closeable {
      * @throws IOException On error, for example Bluetooth not available, or
      *                     insufficient privileges
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.654 -0500", hash_original_method = "68735DD1EF1ADFA6D7D03EB1187FF72F", hash_generated_method = "68735DD1EF1ADFA6D7D03EB1187FF72F")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.654 -0500", hash_original_method = "68735DD1EF1ADFA6D7D03EB1187FF72F", hash_generated_method = "68735DD1EF1ADFA6D7D03EB1187FF72F")
     
 BluetoothSocket(int type, int fd, boolean auth, boolean encrypt,
             BluetoothDevice device, int port, ParcelUuid uuid) throws IOException {
@@ -128,6 +130,8 @@ BluetoothSocket(int type, int fd, boolean auth, boolean encrypt,
      * @throws IOException On error, for example Bluetooth not available, or
      *                     insufficient privileges
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.657 -0500", hash_original_method = "C8329D18FDDAB97E8C009C3EF70FA11B", hash_generated_method = "CFB8030739B97BA355CC33540D3F7220")
     
 private BluetoothSocket(int type, int fd, boolean auth, boolean encrypt, String address,
@@ -274,7 +278,9 @@ public boolean isConnected() {
      * Currently returns unix errno instead of throwing IOException,
      * so that BluetoothAdapter can check the error code for EADDRINUSE
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.674 -0500", hash_original_method = "97BD6115DD834EB0EC7AFA10582FE230", hash_generated_method = "97BD6115DD834EB0EC7AFA10582FE230")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.674 -0500", hash_original_method = "97BD6115DD834EB0EC7AFA10582FE230", hash_generated_method = "97BD6115DD834EB0EC7AFA10582FE230")
     
 int bindListen() {
         mLock.readLock().lock();
@@ -286,7 +292,9 @@ int bindListen() {
         }
     }
 
-    /*package*/ @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.677 -0500", hash_original_method = "7D6884496E175BC1959E5AD456C9EDAE", hash_generated_method = "7D6884496E175BC1959E5AD456C9EDAE")
     
 BluetoothSocket accept(int timeout) throws IOException {
@@ -302,7 +310,9 @@ BluetoothSocket accept(int timeout) throws IOException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.679 -0500", hash_original_method = "4C29CF966E12F8C06463E0440971AA79", hash_generated_method = "4C29CF966E12F8C06463E0440971AA79")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.679 -0500", hash_original_method = "4C29CF966E12F8C06463E0440971AA79", hash_generated_method = "4C29CF966E12F8C06463E0440971AA79")
     
 int available() throws IOException {
         mLock.readLock().lock();
@@ -314,7 +324,9 @@ int available() throws IOException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.681 -0500", hash_original_method = "C322A846AEBBCF22FFE9BDEB0ACD620E", hash_generated_method = "C322A846AEBBCF22FFE9BDEB0ACD620E")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.681 -0500", hash_original_method = "C322A846AEBBCF22FFE9BDEB0ACD620E", hash_generated_method = "C322A846AEBBCF22FFE9BDEB0ACD620E")
     
 int read(byte[] b, int offset, int length) throws IOException {
         mLock.readLock().lock();
@@ -326,7 +338,9 @@ int read(byte[] b, int offset, int length) throws IOException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.684 -0500", hash_original_method = "330129C8F189154F9ACBAE0208663791", hash_generated_method = "330129C8F189154F9ACBAE0208663791")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.684 -0500", hash_original_method = "330129C8F189154F9ACBAE0208663791", hash_generated_method = "330129C8F189154F9ACBAE0208663791")
     
 int write(byte[] b, int offset, int length) throws IOException {
         mLock.readLock().lock();
@@ -338,12 +352,16 @@ int write(byte[] b, int offset, int length) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.687 -0500", hash_original_method = "6BAFDED46378133C3A0BF44C4CFE6B9F", hash_generated_method = "B3B7A9808C7A903F679A6732B2DFD46F")
     
     private void initSocketNative() throws IOException{
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.691 -0500", hash_original_method = "BF4307AC129B0F742AF14FA776C3AE92", hash_generated_method = "D4354584EB2F99B01578B92F535A9B56")
     
     private void initSocketFromFdNative(int fd) throws IOException{
@@ -351,12 +369,16 @@ int write(byte[] b, int offset, int length) throws IOException {
     	addTaint(fd);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.694 -0500", hash_original_method = "A190E917AF0426307B588F8F262C0530", hash_generated_method = "386448654273C48F888727B1858BA821")
     
     private void connectNative() throws IOException{
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.698 -0500", hash_original_method = "FBE8044CF5F70E438EC9FC22860EE6EE", hash_generated_method = "32B3706F36C9D2DCD61B35A1274F915C")
     
     private int bindListenNative(){
@@ -448,11 +470,15 @@ public synchronized void onRfcommChannelFound(int channel) {
         
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.393 -0400", hash_original_method = "CC0EA693249E8BA7FE7333002DBC9497", hash_generated_method = "8710BA099487CF3CAC9E26508C1C065E")
     private BluetoothSocket acceptNative(int timeout) throws IOException {
     	BluetoothSocket other = new BluetoothSocket(getTaintInt(), getTaintInt(), mAuth, mEncrypt, mDevice, getTaintInt(), null);
     	return other;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.705 -0500", hash_original_method = "C51A35C76C1A11634A799600122FA541", hash_generated_method = "BEBDE46472D59239DDC373B2FB4BD396")
     
     private int availableNative() throws IOException{
@@ -460,6 +486,8 @@ public synchronized void onRfcommChannelFound(int channel) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.708 -0500", hash_original_method = "E48C37FA2C3BB9EE05DC3ABFEA76998A", hash_generated_method = "4E5DC766902C2E01B48698C17B636E43")
     
     private int readNative(byte[] b, int offset, int length) throws IOException{
@@ -470,6 +498,8 @@ public synchronized void onRfcommChannelFound(int channel) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.712 -0500", hash_original_method = "9C6D3B57E023222AFF04F9EC86966DB6", hash_generated_method = "4374EFD3242C00EABC79B9F658FFFAA1")
     
     private int writeNative(byte[] b, int offset, int length) throws IOException{
@@ -480,12 +510,16 @@ public synchronized void onRfcommChannelFound(int channel) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.717 -0500", hash_original_method = "C1A11630BFE880D237827EBCB744C990", hash_generated_method = "C13D3B90B210DC473EAF0EEBC0B92F2A")
     
     private void abortNative() throws IOException{
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.720 -0500", hash_original_method = "43A11E63B187B9E286C0B07FFFF02B2D", hash_generated_method = "482B9FD611E950FA751819EA62ACC0AD")
     
     private void destroyNative() throws IOException{
@@ -496,7 +530,9 @@ public synchronized void onRfcommChannelFound(int channel) {
      * Throws an IOException for given posix errno. Done natively so we can
      * use strerr to convert to string error.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.723 -0500", hash_original_method = "9145588604B9732E698BF5C8CCFBB561", hash_generated_method = "8903B5B8FD3CB27D7411DF82194974D2")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.723 -0500", hash_original_method = "9145588604B9732E698BF5C8CCFBB561", hash_generated_method = "8903B5B8FD3CB27D7411DF82194974D2")
     
     void throwErrnoNative(int errno) throws IOException{
     	//Formerly a native method

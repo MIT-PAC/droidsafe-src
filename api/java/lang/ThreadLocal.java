@@ -153,6 +153,8 @@ Values initializeValues(Thread current) {
         /**
          * Constructs a new, empty instance.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.371 -0500", hash_original_method = "8603CA8C8DA2F2A8742D0D3D57F85A73", hash_generated_method = "8603CA8C8DA2F2A8742D0D3D57F85A73")
         
 Values() {
@@ -222,6 +224,8 @@ Values(Values fromParent) {
         /**
          * Creates a new, empty table with the given capacity.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.379 -0500", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "CBACA53A8D3C7D66DABA127668E3E13D")
         
 private void initializeTable(int capacity) {
@@ -234,6 +238,8 @@ private void initializeTable(int capacity) {
         /**
          * Cleans up after garbage-collected thread locals.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.382 -0500", hash_original_method = "9C8BB7874FA14669E3E1A4855CFECE2B", hash_generated_method = "1E4AE75F15E21F869CCCFC0572EF8EC7")
         
 private void cleanUp() {
@@ -284,6 +290,8 @@ private void cleanUp() {
          * presence of null slots to end searches (otherwise, we'll infinitely
          * loop).
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.386 -0500", hash_original_method = "D5329B07F2A83D8B781C7C8F5FD2D30A", hash_generated_method = "99C56485AD9D5B0DEEDA3A46BA4195ED")
         
 private boolean rehash() {
@@ -350,6 +358,8 @@ private boolean rehash() {
          * doesn't have to clean up, check for existing entries, account for
          * tombstones, etc.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.388 -0500", hash_original_method = "8FD2790587F2719E68EBC052DE90327C", hash_generated_method = "8FD2790587F2719E68EBC052DE90327C")
         
 void add(ThreadLocal<?> key, Object value) {
@@ -367,6 +377,8 @@ void add(ThreadLocal<?> key, Object value) {
          * Sets entry for given ThreadLocal to given value, creating an
          * entry if necessary.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.391 -0500", hash_original_method = "F7F8B7C8923C08ADEC94E7E7276E0E2F", hash_generated_method = "CA50C82AAEBCCFC857040B17FF4D0BBA")
         
 void put(ThreadLocal<?> key, Object value) {
@@ -413,6 +425,8 @@ void put(ThreadLocal<?> key, Object value) {
          * Gets value for given ThreadLocal after not finding it in the first
          * slot.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.395 -0500", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "CB49CB1736028974189EF007283FC22C")
         
@@ -496,6 +510,8 @@ Object getAfterMiss(ThreadLocal<?> key) {
         /**
          * Removes entry for the given ThreadLocal.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.397 -0500", hash_original_method = "0360B175C51ABE1598A686E1C95592B6", hash_generated_method = "90506082E3D0459E2C81EA8FB00BD16F")
         
 void remove(ThreadLocal<?> key) {
@@ -524,6 +540,8 @@ void remove(ThreadLocal<?> key) {
          * Gets the next index. If we're at the end of the table, we wrap back
          * around to 0.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.400 -0500", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "2CC1E2DA13B47C46DCCB446A48AA4134")
         
 private int next(int index) {

@@ -17,6 +17,8 @@ public final class RuimFileHandler extends IccFileHandler {
     //***** Instance Variables
 
     //***** Constructor
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.372 -0500", hash_original_method = "CF453B27C96776BB45DA5C39513E79B9", hash_generated_method = "CF453B27C96776BB45DA5C39513E79B9")
     
 RuimFileHandler(CDMAPhone phone) {

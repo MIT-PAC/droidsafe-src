@@ -31,6 +31,8 @@ public class AttributedString {
      *            the {@code AttributedCharacterIterator} that contains the text
      *            for this attributed string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.198 -0500", hash_original_method = "5638BBE38DFF9B04A672F4EC9A02409B", hash_generated_method = "549451187631A94BF8217CD56E05447C")
     
 public AttributedString(AttributedCharacterIterator iterator) {
@@ -67,6 +69,8 @@ public AttributedString(AttributedCharacterIterator iterator) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.202 -0500", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "76E0AB286E2C917791F96CD048B777AA")
     
 private AttributedString(AttributedCharacterIterator iterator, int start,
@@ -127,6 +131,8 @@ private AttributedString(AttributedCharacterIterator iterator, int start,
      *             {@code iterator}, {@code end} is greater than the last
      *             index + 1 in {@code iterator} or if {@code start > end}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.204 -0500", hash_original_method = "D0E1FC5545253EA6E008AE3675A9452F", hash_generated_method = "4A69B046F0DC285A3AD270A5E57E6835")
     
 public AttributedString(AttributedCharacterIterator iterator, int start,
@@ -171,6 +177,8 @@ public AttributedString(AttributedCharacterIterator iterator, int start,
      * @param value
      *            the text to take as base for this attributed string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.210 -0500", hash_original_method = "A0ACF5D97B9D79B3295575A771939692", hash_generated_method = "48D6ACE7C7ABD5B1247D0E282AA020F5")
     
 public AttributedString(String value) {
@@ -195,6 +203,8 @@ public AttributedString(String value) {
      * @throws NullPointerException
      *             if {@code value} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.213 -0500", hash_original_method = "85CF866984BA31F6F3E97322323F86BA", hash_generated_method = "447A1B5A9EC03334905B86FA059A8461")
     
 public AttributedString(String value,
@@ -365,6 +375,8 @@ public void addAttribute(AttributedCharacterIterator.Attribute attribute,
      *             if {@code start < 0}, {@code end} is greater than the length
      *             of this string, or if {@code start >= end}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.223 -0500", hash_original_method = "9BDF8CEEC650CFF21B203033378C7411", hash_generated_method = "D2B5FC2E1D0298403E6F489A411CC0EB")
     
 public void addAttributes(
@@ -385,6 +397,8 @@ public void addAttributes(
      *
      * @return the newly created {@code AttributedCharacterIterator}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.225 -0500", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "70FF1D5C6DB97D8D9158233D5FA99D28")
     
@@ -444,6 +458,8 @@ public AttributedCharacterIterator getIterator(
 
         Object value;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.107 -0500", hash_original_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5", hash_generated_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5")
         
 Range(int s, int e, Object v) {
@@ -471,6 +487,8 @@ Range(int s, int e, Object v) {
 
         private HashSet<Attribute> attributesAllowed;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.120 -0500", hash_original_method = "E441422DE6FDEDB0F1BB74606A67171C", hash_generated_method = "E441422DE6FDEDB0F1BB74606A67171C")
         
 AttributedIterator(AttributedString attrString) {
@@ -591,6 +609,8 @@ private boolean inRange(Range range) {
                     && range.end > begin && range.end <= end;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.145 -0500", hash_original_method = "D282867E9466B5652FFBD5F7BCA71B9B", hash_generated_method = "B2D3D82DDC0DCD4CC70151539E51F85B")
         
 private boolean inRange(List<Range> ranges) {
@@ -640,6 +660,8 @@ public Set<AttributedIterator.Attribute> getAllAttributeKeys() {
             return result;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.151 -0500", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "8B0F14EC21CD12FEE40E3DE66D4F41E1")
         
 private Object currentValue(List<Range> ranges) {
@@ -697,6 +719,8 @@ public int getRunLimit() {
             return getRunLimit(getAllAttributeKeys());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.162 -0500", hash_original_method = "40F484258D42E498FCA29FFC5F596001", hash_generated_method = "D0103678C208EFCE7480C5398687A394")
         
 private int runLimit(List<Range> ranges) {
@@ -754,6 +778,8 @@ public int getRunStart() {
             return getRunStart(getAllAttributeKeys());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.173 -0500", hash_original_method = "3940F742081E74CA234FF11DA5FD3120", hash_generated_method = "1AF3D97DF9B83DA977D426D799AF9A3E")
         
 private int runStart(List<Range> ranges) {

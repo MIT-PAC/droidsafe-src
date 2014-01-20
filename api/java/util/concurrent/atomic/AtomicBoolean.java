@@ -65,6 +65,8 @@ public final boolean get() {
      * @return true if successful. False return indicates that
      * the actual value was not equal to the expected value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.090 -0500", hash_original_method = "F4EDC6324B18AED31374999FCFCE4700", hash_generated_method = "A44868BB070126C586D116031BF7BDEA")
     
 public final boolean compareAndSet(boolean expect, boolean update) {
@@ -85,6 +87,8 @@ public final boolean compareAndSet(boolean expect, boolean update) {
      * @param update the new value
      * @return true if successful.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.096 -0500", hash_original_method = "788D44D9ED0FFD916FA1001367F68A82", hash_generated_method = "CD9B06279AE1596651A40D0F8BE72E2B")
     
 public boolean weakCompareAndSet(boolean expect, boolean update) {
@@ -113,6 +117,8 @@ public final void set(boolean newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.101 -0500", hash_original_method = "CA687482363D6F32107DA02B75F4C570", hash_generated_method = "38099AD6E6A367E1D914C6C541A62172")
     
 public final void lazySet(boolean newValue) {
@@ -126,6 +132,8 @@ public final void lazySet(boolean newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.104 -0500", hash_original_method = "E903BF98EDD2BB9EFF497ED0D64C109B", hash_generated_method = "880640B07998C4C0047A34C015B6399D")
     
 public final boolean getAndSet(boolean newValue) {
@@ -140,6 +148,8 @@ public final boolean getAndSet(boolean newValue) {
      * Returns the String representation of the current value.
      * @return the String representation of the current value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.107 -0500", hash_original_method = "A5A2E0E9AE6072C3F7FFFC3FCCD2C5BC", hash_generated_method = "C8C62185C324BC1270BA5043B15CB6F0")
     
 public String toString() {

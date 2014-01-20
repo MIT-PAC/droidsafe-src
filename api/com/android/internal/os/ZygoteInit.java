@@ -42,6 +42,8 @@ public class ZygoteInit {
      * @param className Fully-qualified class name
      * @param argv Argument vector for main()
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.746 -0500", hash_original_method = "92C0302C214CF8B39DC3046063D57663", hash_generated_method = "72463FCEC06525819F43BD0A022D2598")
     
 static void invokeStaticMain(ClassLoader loader,
@@ -88,6 +90,8 @@ static void invokeStaticMain(ClassLoader loader,
      *
      * @throws RuntimeException when open fails
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.748 -0500", hash_original_method = "33238DBDD3EE10AC78A38524A4B30B45", hash_generated_method = "EB06F1DC315B21A9C36C419617D2C322")
     
 private static void registerZygoteSocket() {
@@ -115,6 +119,8 @@ private static void registerZygoteSocket() {
      * Waits for and accepts a single command connection. Throws
      * RuntimeException on failure.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.751 -0500", hash_original_method = "045B5F1BFA94DC7C2BFF459F85DF0833", hash_generated_method = "104DA174A6EFC5A4FFC070905649B9FB")
     
 private static ZygoteConnection acceptCommandPeer() {
@@ -130,6 +136,8 @@ private static ZygoteConnection acceptCommandPeer() {
      * Close and clean up zygote sockets. Called on shutdown and on the
      * child's exit path.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.753 -0500", hash_original_method = "E08E603F610DF9EAD1243BA93888D718", hash_generated_method = "5797599B65945F2B2406534D8E8A3524")
     
 static void closeServerSocket() {
@@ -147,6 +155,8 @@ static void closeServerSocket() {
     /**
      * Sets effective user ID.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.767 -0500", hash_original_method = "E2A3189629A3C133F0ED36D24E845649", hash_generated_method = "728808F2947D3F3FB44DBE3A16D200F5")
     
 private static void setEffectiveUser(int uid) {
@@ -159,6 +169,8 @@ private static void setEffectiveUser(int uid) {
     /**
      * Sets effective group ID.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.770 -0500", hash_original_method = "18751F68EA30125352914BAC8CA8F1CD", hash_generated_method = "3F7975C5C0F71BC71D4C9DB6435E3592")
     
 private static void setEffectiveGroup(int gid) {
@@ -168,6 +180,8 @@ private static void setEffectiveGroup(int gid) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.772 -0500", hash_original_method = "31986CD3550679EB088D2B62322D5418", hash_generated_method = "47797ED3E0A3374C574CB8E5BF4443E2")
     
 static void preload() {
@@ -182,6 +196,8 @@ static void preload() {
      * Most classes only cause a few hundred bytes to be allocated, but
      * a few will allocate a dozen Kbytes (in one case, 500+K).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.776 -0500", hash_original_method = "8C4C1B59B00A9C1FB0F98F7424B5199F", hash_generated_method = "D96DD0F25F76242E105CF187E0E2089A")
     
 private static void preloadClasses() {
@@ -276,6 +292,8 @@ private static void preloadClasses() {
      * These tend to be a few Kbytes, but are frequently in the 20-40K
      * range, and occasionally even larger.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.779 -0500", hash_original_method = "DE60FEC0184A03FE71EDAD4972871A6E", hash_generated_method = "55B4C0F1C018E7FD9AD76020CEE221A3")
     
 private static void preloadResources() {
@@ -312,6 +330,8 @@ private static void preloadResources() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.782 -0500", hash_original_method = "642EA9DEA1CC6BEC041E0008EC6088E4", hash_generated_method = "5AD30E9ACD7D186E85D5864B6934EE8F")
     
 private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
@@ -336,6 +356,8 @@ private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
         return N;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.785 -0500", hash_original_method = "CD535216A85FF51D7A90936E24E9BD83", hash_generated_method = "5FF12C82422C0D3DFEB27DFE42C007C7")
     
 private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
@@ -370,7 +392,9 @@ private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
      * softly- and final-reachable objects, along with any other garbage.
      * This is only useful just before a fork().
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.787 -0500", hash_original_method = "70491B88332D9FF72DEC0D53EB9B78BC", hash_generated_method = "8AD32AC07D7EC8740371A827D7EBA3E2")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.787 -0500", hash_original_method = "70491B88332D9FF72DEC0D53EB9B78BC", hash_generated_method = "8AD32AC07D7EC8740371A827D7EBA3E2")
     
 static void gc() {
         final VMRuntime runtime = VMRuntime.getRuntime();
@@ -421,6 +445,8 @@ private static void handleSystemServerProcess(
     /**
      * Prepare the arguments and fork for the system server process.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.792 -0500", hash_original_method = "297E5C10002C80959BC209EA8C0A1D06", hash_generated_method = "D969800986D3E41FCEFAFED18B3D4C66")
     
 private static boolean startSystemServer()
@@ -521,6 +547,8 @@ public static void main(String argv[]) {
      * @throws MethodAndArgsCaller in a child process when a main() should
      * be executed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.799 -0500", hash_original_method = "3C215F763D4714C2B1E8B4A6445CBFDE", hash_generated_method = "DAAA573F0655E75EC0107C9511603F80")
     
 private static void runForkMode() throws MethodAndArgsCaller {
@@ -561,6 +589,8 @@ private static void runForkMode() throws MethodAndArgsCaller {
      * @throws MethodAndArgsCaller in a child process when a main() should
      * be executed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.802 -0500", hash_original_method = "4F451180FF9E93B0119857AFE5ACD842", hash_generated_method = "BD30B724511D9D00629B0F664C7C7B3C")
     
 private static void runSelectLoopMode() throws MethodAndArgsCaller {
@@ -616,48 +646,68 @@ private static void runSelectLoopMode() throws MethodAndArgsCaller {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int setreuid(int ruid, int euid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int setregid(int rgid, int egid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int setpgid(int pid, int pgid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int getpgid(int pid) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void reopenStdio(FileDescriptor in,
             FileDescriptor out, FileDescriptor err) throws IOException {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void setCloseOnExec(FileDescriptor fd, boolean flag) throws IOException {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static long capgetPermitted(int pid) throws IOException {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void setCapabilities(
             long permittedCapabilities,
             long effectiveCapabilities) throws IOException {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int selectReadable(FileDescriptor[] fds) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static FileDescriptor createFileDescriptor(int fd) throws IOException {
     	return new FileDescriptor();
     }
@@ -749,6 +799,8 @@ public void run() {
     /**
      * Class not instantiable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.843 -0500", hash_original_method = "428A10BCE5663B72CCCACBE02D386E37", hash_generated_method = "11CAD4ECB2F6D27A77FF1A5A5E2B3963")
     
 private ZygoteInit() {

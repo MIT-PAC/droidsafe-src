@@ -163,6 +163,8 @@ public static Sampler WRAP_LINEAR_MIP_LINEAR(RenderScript rs) {
 
     float mAniso;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.315 -0500", hash_original_method = "F269E274655B2D076A18F19151EF2AC2", hash_generated_method = "F269E274655B2D076A18F19151EF2AC2")
     
 Sampler(int id, RenderScript rs) {

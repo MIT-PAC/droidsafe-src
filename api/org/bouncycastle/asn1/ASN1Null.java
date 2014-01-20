@@ -6,13 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
 public abstract class ASN1Null extends ASN1Object {
     // BEGIN android-changed
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.933 -0500", hash_original_method = "D0FE59B1A9D3F66BFB745D7E961EAD28", hash_generated_method = "D0FE59B1A9D3F66BFB745D7E961EAD28")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.933 -0500", hash_original_method = "D0FE59B1A9D3F66BFB745D7E961EAD28", hash_generated_method = "D0FE59B1A9D3F66BFB745D7E961EAD28")
     
 ASN1Null()
     {
@@ -26,6 +24,8 @@ public int hashCode()
         return -1;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.938 -0500", hash_original_method = "7109287BD38944677651878D40817EF4", hash_generated_method = "7109287BD38944677651878D40817EF4")
     
 boolean asn1Equals(
@@ -39,6 +39,8 @@ boolean asn1Equals(
         return true;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.941 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
     
 abstract void encode(DEROutputStream out)
@@ -50,7 +52,6 @@ public String toString()
     {
          return "NULL";
     }
-
     
 }
 

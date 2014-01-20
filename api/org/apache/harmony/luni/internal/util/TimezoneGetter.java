@@ -48,6 +48,8 @@ public static void setInstance(TimezoneGetter getter) {
      *
      * @return String the ID of the current time zone.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.582 -0500", hash_original_method = "786FFADA2702303736BFB9FDDC0A830C", hash_generated_method = "B5BA589892AA7DF2EDF582DD9382FAF7")
     
 public abstract String getId();

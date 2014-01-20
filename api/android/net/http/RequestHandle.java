@@ -308,6 +308,8 @@ public void setupDigestAuthResponse(boolean isProxy,
         setupAuthResponse();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.845 -0500", hash_original_method = "671BE1071898035C0F84A86A39735052", hash_generated_method = "776827DAC91D7FD5A39B2F56127E5F28")
     
 private void setupAuthResponse() {
@@ -348,6 +350,8 @@ public void processRequest() {
     /**
      * @return Digest-scheme authentication response.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.856 -0500", hash_original_method = "21566870DD44046714482EED382208F4", hash_generated_method = "60D8916D334F405ACB538747C52F509E")
     
 private String computeDigestAuthResponse(String username,
@@ -395,6 +399,8 @@ private String computeDigestAuthResponse(String username,
     /**
      * @return Double-quoted MD5 digest.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.861 -0500", hash_original_method = "7BFA5C62C730E408B108712B34B74DD9", hash_generated_method = "F17F11D9C5498EE34A44618AA68578AD")
     
 private String computeDigest(
@@ -417,6 +423,8 @@ private String computeDigest(
     /**
      * @return MD5 hash of concat(secret, ":", data).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.863 -0500", hash_original_method = "BB88C0CE3A8E823447F9A5A2F73C21EF", hash_generated_method = "50F85659DEA13CCAFEE056A850521A94")
     
 private String KD(String secret, String data) {
@@ -426,6 +434,8 @@ private String KD(String secret, String data) {
     /**
      * @return MD5 hash of param.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.865 -0500", hash_original_method = "ACD3D964B796417ECD09BF2089A3A365", hash_generated_method = "E08F886E24F2027701A43E15B16E27EC")
     
 private String H(String param) {
@@ -448,6 +458,8 @@ private String H(String param) {
     /**
      * @return HEX buffer representation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.868 -0500", hash_original_method = "F71FFAFC3CF70E71567406DE8A9A2D97", hash_generated_method = "8DFED4BB99AB8AC9203E4DAE99D4C7E9")
     
 private String bufferToHex(byte[] buffer) {
@@ -479,6 +491,8 @@ private String bufferToHex(byte[] buffer) {
     /**
      * Computes a random cnonce value based on the current time.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.870 -0500", hash_original_method = "15E2F72950F37D4FA5596F6CA90D9CCE", hash_generated_method = "40216FE3F4C9B2893429DFE030BBF9D9")
     
 private String computeCnonce() {
@@ -492,6 +506,8 @@ private String computeCnonce() {
     /**
      * "Double-quotes" the argument.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.872 -0500", hash_original_method = "2F687A14AA3727476BB6949A7966696D", hash_generated_method = "C526E32916C0209761BD154F36DD7C08")
     
 private String doubleQuote(String param) {
@@ -505,6 +521,8 @@ private String doubleQuote(String param) {
     /**
      * Creates and queues new request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.875 -0500", hash_original_method = "85265833A731D9185DA35397C2BF1AAD", hash_generated_method = "3680A25A8219A45DFCC50FEC17B62D94")
     
 private void createAndQueueNewRequest() {

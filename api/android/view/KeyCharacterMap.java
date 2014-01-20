@@ -13,14 +13,20 @@ import droidsafe.helpers.DSUtils;
 
 public class KeyCharacterMap {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeLoad(String file) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDispose(int ptr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetCharacter(int ptr, int keyCode, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1244637250 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1244637250;
@@ -32,26 +38,36 @@ public class KeyCharacterMap {
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetNumber(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1984588844 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1984588844;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetMatch(int ptr, int keyCode, char[] chars, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1376476993 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1376476993;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetDisplayLabel(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1718283332 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1718283332;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetKeyboardType(int ptr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static KeyEvent[] nativeGetEvents(int ptr, int deviceId, char[] chars) {
     	KeyEvent[] k = new KeyEvent[1];
     	return  k;
@@ -265,6 +281,8 @@ public UnavailableException(String msg) {
 
     private int mPtr;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.788 -0500", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "EF6675F56F37A7ADCCBF26107C109900")
     
 private KeyCharacterMap(int deviceId, int ptr) {

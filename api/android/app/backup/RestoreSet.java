@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class RestoreSet implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.595 -0400", hash_original_field = "CE8E8F9B87B41BD54B3EF7D5C775C91C", hash_generated_field = "FA29E88161E42230CFC58EC9483694A2")
 
@@ -40,7 +35,6 @@ public RestoreSet[] newArray(int size) {
 
     public long token;
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.536 -0500", hash_original_method = "8F1DCA72C97A5A82D254BEC6432DE3FB", hash_generated_method = "F72E27EE7BBB93FAA5D5AC97FA16596B")
     
 public RestoreSet() {
@@ -55,6 +49,8 @@ public RestoreSet(String _name, String _dev, long _token) {
         token = _token;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.553 -0500", hash_original_method = "2219E3A595B9AC7F0E16EAF40A593277", hash_generated_method = "1D7844FE912FD902EF079617CE2F8BFF")
     
 private RestoreSet(Parcel in) {
@@ -62,7 +58,6 @@ private RestoreSet(Parcel in) {
         device = in.readString();
         token = in.readLong();
     }
-
 
     // Parcelable implementation
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.540 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")

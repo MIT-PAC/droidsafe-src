@@ -8,8 +8,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
 public class DERSet extends ASN1Set {
     /**
      * create an empty set
@@ -61,6 +59,8 @@ public DERSet(
     /**
      * @param v - a vector of objects making up the set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.336 -0500", hash_original_method = "90B6A9A913780E80B577423E4251EEF7", hash_generated_method = "90B6A9A913780E80B577423E4251EEF7")
     
 DERSet(
@@ -86,6 +86,8 @@ DERSet(
      * ASN.1 descriptions given. Rather than just outputing SET,
      * we also have to specify CONSTRUCTED, and the objects length.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.338 -0500", hash_original_method = "0C0574F6B6AA5F6F63D97835BA3FFE58", hash_generated_method = "27E305CBEB8AB667D6FFAD78415E16AD")
     
 void encode(
@@ -110,7 +112,6 @@ void encode(
 
         out.writeEncoded(SET | CONSTRUCTED, bytes);
     }
-
     
 }
 

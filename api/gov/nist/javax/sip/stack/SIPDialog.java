@@ -129,6 +129,8 @@ public static SIPDialog createFromNOTIFY(SIPClientTransaction subscribeTx,
         return d;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.514 -0500", hash_original_method = "89C579222925300A22DBFE6EFF04DD03", hash_generated_method = "DCB69FF0E6DC13289462E175CC0C58FD")
     
 private static void storeFirstTransactionInfo(SIPDialog dialog, SIPTransaction transaction) {
@@ -154,6 +156,8 @@ private static void storeFirstTransactionInfo(SIPDialog dialog, SIPTransaction t
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.656 -0500", hash_original_method = "10DA26C1D5D4933A010FC5F42325E504", hash_generated_method = "D828C31DA6AF75BD4A9EF1BA29C3C862")
     
 private static final boolean optionPresent(ListIterator l, String option) {
@@ -370,6 +374,8 @@ private static final boolean optionPresent(ListIterator l, String option) {
     /**
      * Protected Dialog constructor.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.392 -0500", hash_original_method = "B89E344ABA0B0C4EAAF339C3C960DE0F", hash_generated_method = "6D20A62D4FB6D1CF518FA5CB9C10BCF3")
     
 private SIPDialog(SipProviderImpl provider) {
@@ -458,6 +464,8 @@ public SIPDialog(SipProviderImpl sipProvider, SIPResponse sipResponse) {
         addEventListener(sipStack);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.395 -0500", hash_original_method = "9EE497100AA17813744E66E4A05B8669", hash_generated_method = "F8F1D831F0B483329F083128121C4BB4")
     
 private void recordStackTrace() {
@@ -473,6 +481,8 @@ private void recordStackTrace() {
     /**
      * A debugging print routine.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.408 -0500", hash_original_method = "40815EC709415499328FA1CBE062ACB5", hash_generated_method = "AB033A1CDE8B1578E309F49415571B96")
     
 private void printRouteList() {
@@ -488,6 +498,8 @@ private void printRouteList() {
      * @return true if the transaction that created this dialog is a client transaction and false
      *         otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.411 -0500", hash_original_method = "6746D685A6EEFE6F86FE53A5B90B58CB", hash_generated_method = "987E98FB86E6924AD630BE8C80953A6B")
     
 private boolean isClientDialog() {
@@ -502,6 +514,8 @@ private boolean isClientDialog() {
      * @param port -- remote port
      * @param protocol -- protocol (udp/tcp/tls)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.413 -0500", hash_original_method = "871D6D7CB1794492ED7691CB8C5B804E", hash_generated_method = "033720C21C04EE8076D057035900CEA7")
     
 private void raiseIOException(String host, int port, String protocol) {
@@ -520,6 +534,8 @@ private void raiseIOException(String host, int port, String protocol) {
      * 
      * @param dialogTimeoutError 
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.416 -0500", hash_original_method = "352742C76D82997D1FD2B39635FE380F", hash_generated_method = "E11AF9D090D6F2FE40004EC6207EADAF")
     
 private void raiseErrorEvent(int dialogTimeoutError) {
@@ -560,6 +576,8 @@ private void raiseErrorEvent(int dialogTimeoutError) {
      * 
      * @param sipMessage -- SIP Message to extract the relevant information from.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.420 -0500", hash_original_method = "E7371746614A4FB0A7068DCC784728D1", hash_generated_method = "3E54C1F5D0FE2D5478E23C48A46D6672")
     
 private void setRemoteParty(SIPMessage sipMessage) {
@@ -585,6 +603,8 @@ private void setRemoteParty(SIPMessage sipMessage) {
      * @param recordRouteList -- the record route list from the incoming message.
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.424 -0500", hash_original_method = "07989C3909E96A7576DAE0D29DD189A0", hash_generated_method = "4CC6F7815479BD2C24DC503B87EA800A")
     
 private void addRoute(RecordRouteList recordRouteList) {
@@ -658,6 +678,8 @@ private void addRoute(RecordRouteList recordRouteList) {
      * 
      */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.426 -0500", hash_original_method = "0B8DEDA7075751956ABB1ACBE337F637", hash_generated_method = "0B8DEDA7075751956ABB1ACBE337F637")
     
 void setRemoteTarget(ContactHeader contact) {
@@ -675,6 +697,8 @@ void setRemoteTarget(ContactHeader contact) {
      * 
      * @param sipMessage is the SIP message for which we want to add the route.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.430 -0500", hash_original_method = "32344AE5A14991821D94A9D2D9260949", hash_generated_method = "C05CDFD6C74C04E01C519D3E3FE874EA")
     
 private synchronized void addRoute(SIPResponse sipResponse) {
@@ -739,6 +763,8 @@ private synchronized void addRoute(SIPResponse sipResponse) {
      * 
      * @return -- a cloned copy of the dialog route list.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.433 -0500", hash_original_method = "EDCC5E2E639B8E515D6889EB4E225297", hash_generated_method = "FB446DB3537B9649DCAF78DCA2A5B082")
     
 private synchronized RouteList getRouteList() {
@@ -769,6 +795,8 @@ private synchronized RouteList getRouteList() {
         return retval;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.436 -0500", hash_original_method = "7EC927C7EF5071E2849378214CAB8686", hash_generated_method = "7EC927C7EF5071E2849378214CAB8686")
     
 void setRouteList(RouteList routeList) {
@@ -786,6 +814,8 @@ void setRouteList(RouteList routeList) {
      * @throws SipException if implementation cannot send the ACK Request for any other reason
      * 
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.440 -0500", hash_original_method = "EE053BB78DA7F62675E98D1AF5A5B915", hash_generated_method = "D295859F2F9CEB8051268D51BE35BAFA")
     
 private void sendAck(Request request, boolean throwIOExceptionAsSipException)
@@ -894,6 +924,8 @@ private void sendAck(Request request, boolean throwIOExceptionAsSipException)
      * @param sipStack the address of the SIP stack.
      * 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.443 -0500", hash_original_method = "0D216F13B34A5D6836A5B8174F7E5D5B", hash_generated_method = "0D216F13B34A5D6836A5B8174F7E5D5B")
     
 void setStack(SIPTransactionStack sipStack) {
@@ -907,6 +939,8 @@ void setStack(SIPTransactionStack sipStack) {
      * @return sipStack the SIP stack of the dialog.
      * 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.445 -0500", hash_original_method = "4B5A71F52939D771152A6C733BB7B273", hash_generated_method = "4B5A71F52939D771152A6C733BB7B273")
     
@@ -918,6 +952,8 @@ SIPTransactionStack getStack() {
      * Return True if this dialog is terminated on BYE.
      * 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.448 -0500", hash_original_method = "82BA8A08B2E8140159AB0D3D207AD49D", hash_generated_method = "82BA8A08B2E8140159AB0D3D207AD49D")
     
 boolean isTerminatedOnBye() {
@@ -928,6 +964,8 @@ boolean isTerminatedOnBye() {
     /**
      * Mark that the dialog has seen an ACK.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.451 -0500", hash_original_method = "45B7AAA172C2FB7B4FDF9001755F4630", hash_generated_method = "323CF2BAA2501BCBF8D1D678B872A121")
     
 void ackReceived(SIPRequest sipRequest) {
@@ -972,6 +1010,8 @@ void ackReceived(SIPRequest sipRequest) {
      * dialog termination.
      * 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.453 -0500", hash_original_method = "76BE8FDE36BAF0086F9828D261C3B7B9", hash_generated_method = "89A0EA0F4EC0324074E4DA97776F9D16")
     
 synchronized boolean testAndSetIsDialogTerminatedEventDelivered() {
@@ -1402,6 +1442,8 @@ public void addTransaction(SIPTransaction transaction) {
      * 
      * @param hisTag is the remote tag to set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.521 -0500", hash_original_method = "D993372A10E82664D688CA2C725ED950", hash_generated_method = "E6DBE1E222D41BA4D53CA2AF30D51003")
     
 private void setRemoteTag(String hisTag) {
@@ -1477,6 +1519,8 @@ public SIPServerTransaction getInviteTransaction() {
      * @param lCseq is the local cseq number.
      * 
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.531 -0500", hash_original_method = "0F222FB6A793487D534C4C9D0AE37F48", hash_generated_method = "C5DF24AFA260AE2CC049D7F53DCB730B")
     
 private void setLocalSequenceNumber(long lCseq) {
@@ -1612,6 +1656,8 @@ public String getRemoteTag() {
      *        dialog and for generating To tags for Server transaction requests that belong to
      *        this dialog.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.556 -0500", hash_original_method = "CA511CD87985B97DC1F9ED1FACA7DA9D", hash_generated_method = "9184D5DA7C5692E639326840978214FE")
     
 private void setLocalTag(String mytag) {
@@ -1652,6 +1698,8 @@ public CallIdHeader getCallId() {
     /**
      * set the call id header for this dialog.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.564 -0500", hash_original_method = "4B0BBE43D23308E79DF92279003CECC0", hash_generated_method = "89D9C93F4FC035FA318A7255127BE0CA")
     
 private void setCallId(SIPRequest sipRequest) {
@@ -1671,6 +1719,8 @@ public javax.sip.address.Address getLocalParty() {
         return this.localParty;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.569 -0500", hash_original_method = "1D3A055B19FDF32D0E14CBB9A0F366F2", hash_generated_method = "2FD11550133185AD3D2F3894FF742738")
     
 private void setLocalParty(SIPMessage sipMessage) {
@@ -1781,6 +1831,8 @@ public Request createRequest(String method) throws SipException {
      * @return
      * @throws SipException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.590 -0500", hash_original_method = "B004628D88AAF4473352CE6B2CF39886", hash_generated_method = "F58CAB0DD2CC456758563908E1440099")
     
 private Request createRequest(String method, SIPResponse sipResponse) throws SipException {
@@ -2130,6 +2182,8 @@ public void sendRequest(ClientTransaction clientTransactionId, boolean allowInte
     /**
      * Return yes if the last response is to be retransmitted.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.602 -0500", hash_original_method = "BB6E18DBBED43A4BEB60B225A721A13E", hash_generated_method = "7103C6B66DFFFE020479B9B82737731A")
     
 private boolean toRetransmitFinalResponse(int T2) {
@@ -2288,6 +2342,8 @@ public Request createPrack(Response relResponse) throws DialogDoesNotExistExcept
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.623 -0500", hash_original_method = "AE874CF06DEDE92D6543D8F7D52B6043", hash_generated_method = "DEAC41E80A0CB58F87A1C1A4387CE098")
     
 private void updateRequest(SIPRequest sipRequest) {
@@ -2797,6 +2853,8 @@ public SIPResponse getLastResponse() {
      * extensions may define different target refresh requests for dialogs established in other
      * ways.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.654 -0500", hash_original_method = "5B8AFE9B6B91DF83BE42F6862D2EF06A", hash_generated_method = "6566F84799167FB9F34667EB26111658")
     
 private void doTargetRefresh(SIPMessage sipMessage) {
@@ -3148,12 +3206,16 @@ public boolean handleAck(SIPServerTransaction ackTransaction) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.685 -0500", hash_original_method = "5C164F59F3DF11F779F16A5BAEE8EAC7", hash_generated_method = "5C164F59F3DF11F779F16A5BAEE8EAC7")
     
 void setEarlyDialogId(String earlyDialogId) {
         this.earlyDialogId = earlyDialogId;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.687 -0500", hash_original_method = "275E7276434F5D20F41DC92B4F25BAEE", hash_generated_method = "275E7276434F5D20F41DC92B4F25BAEE")
     
@@ -3164,6 +3226,8 @@ String getEarlyDialogId() {
     /**
      * Release the semaphore for ACK processing so the next re-INVITE may proceed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.689 -0500", hash_original_method = "5A72AC369AA326C1E4BE607E2D1E31FF", hash_generated_method = "5A72AC369AA326C1E4BE607E2D1E31FF")
     
 void releaseAckSem() {
@@ -3176,6 +3240,8 @@ void releaseAckSem() {
 
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.692 -0500", hash_original_method = "75493DFA4E25D8A29CC5DF9217BF734F", hash_generated_method = "75493DFA4E25D8A29CC5DF9217BF734F")
     
 boolean takeAckSem() {
@@ -3213,6 +3279,8 @@ boolean takeAckSem() {
     /**
      * @param lastAckReceived the lastAckReceived to set
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.695 -0500", hash_original_method = "68D4C33CE448DB45C09F49FC9815E4FD", hash_generated_method = "19284F6BC48D53A035845DBB106A70B8")
     
 private void setLastAckReceived(SIPRequest lastAckReceived) {
@@ -3232,6 +3300,8 @@ protected SIPRequest getLastAckReceived() {
     /**
      * @param lastAckSent the lastAckSent to set
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.700 -0500", hash_original_method = "AE316349F4F2DB7FF5C817D5A1FDA212", hash_generated_method = "FC2F18C3A0D1F157D404C6B383970102")
     
 private void setLastAckSent(SIPRequest lastAckSent) {
@@ -3281,7 +3351,9 @@ public void setBackToBackUserAgent() {
 	/**
 	 * @return the eventHeader
 	 */
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.713 -0500", hash_original_method = "3A5B567A7D7C4A4D6D60D4CFA5E677D1", hash_generated_method = "3A5B567A7D7C4A4D6D60D4CFA5E677D1")
     
 EventHeader getEventHeader() {
@@ -3291,7 +3363,9 @@ EventHeader getEventHeader() {
 	/**
 	 * @param eventHeader the eventHeader to set
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.717 -0500", hash_original_method = "C85F235E26C94FDBCE92FE9C88454CDD", hash_generated_method = "C85F235E26C94FDBCE92FE9C88454CDD")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.717 -0500", hash_original_method = "C85F235E26C94FDBCE92FE9C88454CDD", hash_generated_method = "C85F235E26C94FDBCE92FE9C88454CDD")
     
 void setEventHeader(EventHeader eventHeader) {
 		this.eventHeader = eventHeader;
@@ -3578,7 +3652,9 @@ protected void runTask() {
 	/**
 	 * @param serverTransactionFlag the serverTransactionFlag to set
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.719 -0500", hash_original_method = "D178A1777AB3611D9691A3F4A69F3B06", hash_generated_method = "D178A1777AB3611D9691A3F4A69F3B06")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.719 -0500", hash_original_method = "D178A1777AB3611D9691A3F4A69F3B06", hash_generated_method = "D178A1777AB3611D9691A3F4A69F3B06")
     
 void setServerTransactionFlag(boolean serverTransactionFlag) {
 		this.serverTransactionFlag = serverTransactionFlag;
@@ -3587,7 +3663,9 @@ void setServerTransactionFlag(boolean serverTransactionFlag) {
 	/**
 	 * @param reInviteFlag the reinviteFlag to set
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.722 -0500", hash_original_method = "B9FC7E5C15DF48754B63587E10ABF39E", hash_generated_method = "B9FC7E5C15DF48754B63587E10ABF39E")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.722 -0500", hash_original_method = "B9FC7E5C15DF48754B63587E10ABF39E", hash_generated_method = "B9FC7E5C15DF48754B63587E10ABF39E")
     
 void setReInviteFlag(boolean reInviteFlag) {
 		this.reInviteFlag = reInviteFlag;

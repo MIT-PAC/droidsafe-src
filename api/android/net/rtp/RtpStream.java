@@ -49,6 +49,8 @@ public class RtpStream {
      * @throws SocketException if the address cannot be bound or a problem
      *     occurs during binding.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.445 -0500", hash_original_method = "87C78188301D65B3202299E6E894F1D3", hash_generated_method = "87C78188301D65B3202299E6E894F1D3")
     
 RtpStream(InetAddress address) throws SocketException {
@@ -56,6 +58,8 @@ RtpStream(InetAddress address) throws SocketException {
         mLocalAddress = address;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.449 -0500", hash_original_method = "215B56CAD65C08D01C00FD356B52B803", hash_generated_method = "2F6FCCBFB3CB44DB4FB1FDD21EF15AF2")
     
     private int create(String address) throws SocketException{
@@ -178,6 +182,8 @@ public void associate(InetAddress address, int port) {
         mRemotePort = port;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.475 -0500", hash_original_method = "CADBAA67E59C58F3A263DE6FDC241D82", hash_generated_method = "15F543B415AA6608CB4F386A014DD60A")
     
     synchronized int dup(){
@@ -201,6 +207,8 @@ public void release() {
         close();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.481 -0500", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "68CDF1C3923748EBF018A28718461478")
     
     private synchronized void close(){

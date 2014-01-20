@@ -9,9 +9,9 @@ import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 
-
-
 public class KeyDerivationFunc extends AlgorithmIdentifier {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.886 -0500", hash_original_method = "AD6BDDE959CE01BE7444FB2D02D03B3C", hash_generated_method = "AD6BDDE959CE01BE7444FB2D02D03B3C")
     
 KeyDerivationFunc(
@@ -28,7 +28,6 @@ public KeyDerivationFunc(
     {
         super(id, params);
     }
-
     
 }
 

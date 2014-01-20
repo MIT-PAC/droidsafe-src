@@ -661,6 +661,8 @@ public void getHeaders(HeaderCallback hcb) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.557 -0500", hash_original_method = "D8DC07475CD7B5300779AA7E8CC52DE7", hash_generated_method = "FA47D96067419C5CCDC2FCF8C111EE8B")
     
 private void setConnectionType(CharArrayBuffer buffer, int pos) {

@@ -16,10 +16,6 @@ import javax.crypto.SecretKey;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.PasswordCallback;
 
-
-
-
-
 public abstract class KeyStoreSpi {
 
     /*
@@ -78,6 +74,8 @@ static char[] getPasswordFromCallBack(KeyStore.ProtectionParameter protParam)
      * @throws UnrecoverableKeyException
      *             if the key can not be recovered.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.998 -0500", hash_original_method = "262C45119F8A2E446CA7A6F639C0529E", hash_generated_method = "7C41AEC5800B546B1ED3DC912C133FCA")
     
 public abstract Key engineGetKey(String alias, char[] password)
@@ -91,6 +89,8 @@ public abstract Key engineGetKey(String alias, char[] password)
      * @return the certificate chain for the entry with the given alias, or
      *         {@code null} if the specified alias is not bound to an entry.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.000 -0500", hash_original_method = "767AA73CFF647726061680736B200CC3", hash_generated_method = "1597C6175CBAF4DA6968D8FD71AF507A")
     
 public abstract Certificate[] engineGetCertificateChain(String alias);
@@ -103,6 +103,8 @@ public abstract Certificate[] engineGetCertificateChain(String alias);
      * @return the trusted certificate for the entry with the given alias, or
      *         {@code null} if the specified alias is not bound to an entry.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.003 -0500", hash_original_method = "CBF968F9BC3E3120432BA9EC88472B26", hash_generated_method = "711ACB7274379F9A47964550FB689ED0")
     
 public abstract Certificate engineGetCertificate(String alias);
@@ -115,6 +117,8 @@ public abstract Certificate engineGetCertificate(String alias);
      * @return the creation date, or {@code null} if the specified alias is not
      *         bound to an entry.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.006 -0500", hash_original_method = "1FF1D16CCFB598DBA5D5922E27AD1C78", hash_generated_method = "06FA8CB1BA04BD1353EE50E6F27A674D")
     
 public abstract Date engineGetCreationDate(String alias);
@@ -139,6 +143,8 @@ public abstract Date engineGetCreationDate(String alias);
      *             if {@code key} is a {@code PrivateKey} and {@code chain} does
      *             not contain any certificates.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.008 -0500", hash_original_method = "7B9992925D33D09A69431FACE43D3F70", hash_generated_method = "E4EC2ECDAA3E49D08A2EE6F1E5D5DED2")
     
 public abstract void engineSetKeyEntry(String alias, Key key,
@@ -161,6 +167,8 @@ public abstract void engineSetKeyEntry(String alias, Key key,
      *             if {@code key} is a {@code PrivateKey} and {@code chain}
      *             does.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.011 -0500", hash_original_method = "1FB1A60189EEE0CCB39F83936C39CD91", hash_generated_method = "5E5F66B91A3636FD7255D4D5CD412B62")
     
 public abstract void engineSetKeyEntry(String alias, byte[] key,
@@ -180,6 +188,8 @@ public abstract void engineSetKeyEntry(String alias, byte[] key,
      *             a trusted certificate, or this method fails for any other
      *             reason.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.013 -0500", hash_original_method = "BC85260036254C3D1D46D5A4CD54C631", hash_generated_method = "4C0F01CD8302A545971F539DF0B9C54C")
     
 public abstract void engineSetCertificateEntry(String alias,
@@ -194,6 +204,8 @@ public abstract void engineSetCertificateEntry(String alias,
      * @throws KeyStoreException
      *             if the entry can not be deleted.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.016 -0500", hash_original_method = "C5912624DCC25C81C7DE5ED28688DDD7", hash_generated_method = "9D1EAB4D7E6162F9727775F5D68BD345")
     
 public abstract void engineDeleteEntry(String alias)
@@ -206,6 +218,8 @@ public abstract void engineDeleteEntry(String alias)
      * @return an {@code Enumeration} over all alias names stored in this
      *         {@code KeyStoreSpi}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.019 -0500", hash_original_method = "82588BB61594FA8A73A0F3F355DEE11B", hash_generated_method = "8530AC63B6A06CF06635BB177F956E18")
     
 public abstract Enumeration<String> engineAliases();
@@ -217,6 +231,8 @@ public abstract Enumeration<String> engineAliases();
      *            the alias of an entry.
      * @return {@code true} if the alias exists, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.021 -0500", hash_original_method = "6DA9587D712F71675D6F7DC0C5D937C9", hash_generated_method = "D7EB33403E187670A7D78C574FE82CA4")
     
 public abstract boolean engineContainsAlias(String alias);
@@ -226,6 +242,8 @@ public abstract boolean engineContainsAlias(String alias);
      *
      * @return the number of entries stored in this {@code KeyStoreSpi}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.024 -0500", hash_original_method = "D8BF35C2ACCF94F2EC69DC5A85C9A8F9", hash_generated_method = "AAB35F0278EF378424EF1D9A79DC8958")
     
 public abstract int engineSize();
@@ -238,6 +256,8 @@ public abstract int engineSize();
      *            the alias of an entry.
      * @return {@code true} if the given alias is associated with a key entry.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.026 -0500", hash_original_method = "71F16054A5D04622A625AC31B4079294", hash_generated_method = "25F8AA154C072AC08B5A33430488A928")
     
 public abstract boolean engineIsKeyEntry(String alias);
@@ -251,6 +271,8 @@ public abstract boolean engineIsKeyEntry(String alias);
      * @return {@code true} if the given alias is associated with a certificate
      *         entry.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.028 -0500", hash_original_method = "30990670F3D1088F0ED6A72446296413", hash_generated_method = "12A128D8AD937B8CD994B42A277D697A")
     
 public abstract boolean engineIsCertificateEntry(String alias);
@@ -264,6 +286,8 @@ public abstract boolean engineIsCertificateEntry(String alias);
      * @return the alias or {@code null} if no entry with the specified
      *         certificate can be found.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.031 -0500", hash_original_method = "5AE9B6FD007D8046B16D2117DA368E0A", hash_generated_method = "CBF05E94E3E7E99E079268AAC92D0B57")
     
 public abstract String engineGetCertificateAlias(Certificate cert);
@@ -285,6 +309,8 @@ public abstract String engineGetCertificateAlias(Certificate cert);
      *             if the an exception occurred while storing the certificates
      *             of this code {@code KeyStoreSpi}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.033 -0500", hash_original_method = "116C689EA990E9A410716324F8AFB01B", hash_generated_method = "B2F76E8D126862F6C7E56AA7935D6C60")
     
 public abstract void engineStore(OutputStream stream, char[] password)
@@ -332,6 +358,8 @@ public void engineStore(KeyStore.LoadStoreParameter param)
      *             if the an exception occurred while loading the certificates
      *             of this code {@code KeyStoreSpi}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.038 -0500", hash_original_method = "F9333B030A9B14BD70E7C9DB7BF90F67", hash_generated_method = "5622AE494536C4D0FE444C23B330469F")
     
 public abstract void engineLoad(InputStream stream, char[] password)
@@ -559,7 +587,6 @@ public boolean engineEntryInstanceOf(String alias,
 
         return false;
     }
-
     
 }
 

@@ -16,6 +16,8 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
 
     private String data;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.366 -0500", hash_original_method = "87437044DD20821D3A88B8D33A6B0848", hash_generated_method = "EC65D0A2EF668B6D696478BC0B4AAD7F")
     
 ProcessingInstructionImpl(DocumentImpl document, String target, String data) {

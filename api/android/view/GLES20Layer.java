@@ -14,11 +14,15 @@ abstract class GLES20Layer extends HardwareLayer {
 
     Finalizer mFinalizer;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.062 -0500", hash_original_method = "FA1FFA78F6EB5DB42F3E3C14749B8FCB", hash_generated_method = "FA1FFA78F6EB5DB42F3E3C14749B8FCB")
     
 GLES20Layer() {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.064 -0500", hash_original_method = "C152CA876A44487347A67A14265C89C6", hash_generated_method = "C152CA876A44487347A67A14265C89C6")
     
 GLES20Layer(int width, int height, boolean opaque) {
@@ -37,6 +41,8 @@ public int getLayer() {
         return mLayer;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.070 -0500", hash_original_method = "EC2EF6564AC27596601815B02E5CA477", hash_generated_method = "A11FE97EF0FFEF3F2D1D1B6A991C272E")
     
 @Override
@@ -44,6 +50,8 @@ public int getLayer() {
         return GLES20Canvas.nCopyLayer(mLayer, bitmap.mNativeBitmap);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.072 -0500", hash_original_method = "029DFD798166E5D5C7A45581B8E77BAB", hash_generated_method = "A3B6DCDAD2B66945895B14984FA2EF45")
     
 @Override
@@ -51,6 +59,8 @@ public int getLayer() {
         super.update(width, height, isOpaque);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.075 -0500", hash_original_method = "2F5D80F3F3B9905F82317A3BBAA77B2C", hash_generated_method = "42C089A63F237766C246D0EAFFAC4F5F")
     
 @Override
@@ -86,6 +96,8 @@ public Finalizer(int layerId) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.085 -0500", hash_original_method = "7590F3F5AEB9FFE0334022A0C3C47C46", hash_generated_method = "7590F3F5AEB9FFE0334022A0C3C47C46")
         
 void destroy() {

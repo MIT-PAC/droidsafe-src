@@ -76,6 +76,8 @@ public Menu() {
         presentationType = PresentationType.NAVIGATION_OPTIONS;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.340 -0500", hash_original_method = "170B02CF9C000CCCFFA0390811062CB3", hash_generated_method = "140E64DEF93781CA196625408970BCC4")
     
 private Menu(Parcel in) {

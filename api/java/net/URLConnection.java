@@ -306,8 +306,8 @@ protected URLConnection(URL url) {
      * @throws IOException
      *             if an error occurs while connecting to the resource.
      */
-    @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.074 -0500", hash_original_method = "E3B3D609A299C20BEA286BB272FDF5DD", hash_generated_method = "12E46584ED58D785D1E4DDAC8B414223")
     
 public abstract void connect() throws IOException;
@@ -415,6 +415,8 @@ public String getContentEncoding() {
      *            The type that needs to be handled
      * @return An instance of the Content Handler
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.089 -0500", hash_original_method = "F46F19D62AAF6AA8CA742989F38D6600", hash_generated_method = "D4E22395C8377B2AFB19B97EEC92AF49")
     
 private ContentHandler getContentHandler(String type) throws IOException {
@@ -625,6 +627,8 @@ public Map<String, List<String>> getRequestProperties() {
         return Collections.emptyMap();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.121 -0500", hash_original_method = "B91416BA99E534CF967424CBFE2F2ACE", hash_generated_method = "593BF47F26E37099B137FDF96EDAB581")
     
 private void checkNotConnected() {
@@ -887,6 +891,8 @@ public boolean getUseCaches() {
      *            the parsed string
      * @return the string to be parsed
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.161 -0500", hash_original_method = "8088F9069DED191ECB9FB0409A3793EB", hash_generated_method = "8B4028A62C0D91E0490E02417DC6A5D8")
     
 private String parseTypeString(String typeString) {
@@ -1045,6 +1051,8 @@ public void setUseCaches(boolean newValue) {
     
     static class DefaultContentHandler extends java.net.ContentHandler {
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.078 -0400", hash_original_method = "D9C7FF4AC457B32D0DB70E56925850DE", hash_generated_method = "D9C7FF4AC457B32D0DB70E56925850DE")
         public DefaultContentHandler ()
         {

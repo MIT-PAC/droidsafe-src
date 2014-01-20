@@ -26,6 +26,8 @@ import android.view.ViewRootImpl;
 
 class ComposingText implements NoCopySpan {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.232 -0400", hash_original_method = "299AC39680AC1BE3A17612B5D7B1D330", hash_generated_method = "299AC39680AC1BE3A17612B5D7B1D330")
     public ComposingText ()
     {
@@ -124,6 +126,8 @@ public static int getComposingSpanEnd(Spannable text) {
 
     KeyCharacterMap mKeyCharacterMap;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.423 -0500", hash_original_method = "1A943D99EC75638EA04879F1FF8F4BB3", hash_generated_method = "1A943D99EC75638EA04879F1FF8F4BB3")
     
 BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
@@ -589,6 +593,8 @@ public boolean reportFullscreenMode(boolean enabled) {
         return true;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.498 -0500", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "7906A3F46BB0899F790A91D7AE62D8D7")
     
 private void sendCurrentText() {
@@ -630,6 +636,8 @@ private void sendCurrentText() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.501 -0500", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "7EBC729A206C85E02F3FD0BAEB161A12")
     
 private void ensureDefaultComposingSpans() {
@@ -657,6 +665,8 @@ private void ensureDefaultComposingSpans() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.504 -0500", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "C7369B4386C41968A7FE480161A021B3")
     
 private void replaceText(CharSequence text, int newCursorPosition,

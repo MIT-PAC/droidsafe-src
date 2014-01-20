@@ -16,20 +16,14 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.webkit.WebViewCore.EventHub;
 
-
-
-
-
 class AccessibilityInjector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.583 -0500", hash_original_field = "ACB89AAF1263E8A9795CBB4955DE9A0D", hash_generated_field = "355BE79B3786523315A38F99C8EFD0EF")
 
     private static final String LOG_TAG = "AccessibilityInjector";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.586 -0500", hash_original_field = "9C97D618612CFF386E7AF19655372855", hash_generated_field = "0DA17BC1AEF6DBF011A4A750F5A71D57")
 
-
     private static final boolean DEBUG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.588 -0500", hash_original_field = "56A03426DE70624A8891C135C791DBBC", hash_generated_field = "12B31C0D92351F48989DB7D421B336D5")
-
 
     private static final int ACTION_SET_CURRENT_AXIS = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.591 -0500", hash_original_field = "49A6DB3A3DCCBA3C0FC1476BBB715506", hash_generated_field = "58291536D1F80FD93588C2E4178BDAD6")
@@ -61,7 +55,6 @@ class AccessibilityInjector {
 
     private int mCurrentAxis = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.612 -0500", hash_original_field = "EB715AD3A256DBE3990BA7ACE73D6261", hash_generated_field = "A930633B2A9AAAF914D3D7A7480791B6")
-
 
     // we need to consume the up if we have handled the last down
     private boolean mLastDownEventHandled;
@@ -181,11 +174,9 @@ public boolean onKeyEvent(KeyEvent event) {
 
         return mLastDownEventHandled;
     }
-
     
     private static final class AccessibilityWebContentKeyBinding {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.648 -0500", hash_original_field = "41D4F6636ABD75FA51662DE9262FB0E2", hash_generated_field = "F8D2FA352C0BA0C64C99BC74D59C6DE5")
-
 
         private static final int MODIFIERS_OFFSET = 32;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.651 -0500", hash_original_field = "7056BD87623FB8ADCEE799472F810C7E", hash_generated_field = "F15D255C8A53F382E8E42786FABAD969")
@@ -193,13 +184,11 @@ public boolean onKeyEvent(KeyEvent event) {
         private static final long MODIFIERS_MASK = 0xFFFFFFF00000000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.653 -0500", hash_original_field = "F1D3E04A6F4A9CE347535E9E4DA2586F", hash_generated_field = "20B9B8442924C25F1223DFD4562CD64E")
 
-
         private static final int KEY_CODE_OFFSET = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.657 -0500", hash_original_field = "1E906E29D4C89ED504FEE37F0001DBB2", hash_generated_field = "B2CEF4BD57CC748D47EB33527D82B47A")
 
         private static final long KEY_CODE_MASK = 0x00000000FFFFFFFFL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.659 -0500", hash_original_field = "5B4CB7BA768A1DEC937DE0A1D5755E4B", hash_generated_field = "8F5435B4DF6B7CFAD8E1946F8438D2B5")
-
 
         private static final int ACTION_OFFSET = 24;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.662 -0500", hash_original_field = "4CCBF76D1138EDBD003691AC4CCD7451", hash_generated_field = "32DF52DD728ADC6D34953391F47C41D6")
@@ -207,13 +196,11 @@ public boolean onKeyEvent(KeyEvent event) {
         private static final int ACTION_MASK = 0xFF000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.664 -0500", hash_original_field = "6446895D134867947C9F6DB054D34058", hash_generated_field = "B9AF7AE6175C7800E8579A20EC2D26D0")
 
-
         private static final int FIRST_ARGUMENT_OFFSET = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.667 -0500", hash_original_field = "C803E5ABD1C04F57FDAC85C9B0796E20", hash_generated_field = "E574C2A0E6EC1F21410525FD57E75FF1")
 
         private static final int FIRST_ARGUMENT_MASK = 0x00FF0000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.670 -0500", hash_original_field = "FA120277FA8E34FE342E8D61ABEC6C0E", hash_generated_field = "B17B97D0AC9CE57566EDCD781528A4A2")
-
 
         private static final int SECOND_ARGUMENT_OFFSET = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.672 -0500", hash_original_field = "A5465F69553CEC1DC69E0A816DB8E0CC", hash_generated_field = "817F021C237E947C0BC3253F16A7EA47")
@@ -221,17 +208,14 @@ public boolean onKeyEvent(KeyEvent event) {
         private static final int SECOND_ARGUMENT_MASK = 0x0000FF00;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.674 -0500", hash_original_field = "FE693384BC24063D6A7D0ACC69CAE62D", hash_generated_field = "63F3F631667C122A4E9AB568B7FA393E")
 
-
         private static final int THIRD_ARGUMENT_OFFSET = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.677 -0500", hash_original_field = "F123833A02A5F6C7D7FDF97461DCEC50", hash_generated_field = "532061882B38166B9A4AFA798321EC67")
 
         private static final int THIRD_ARGUMENT_MASK = 0x000000FF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.679 -0500", hash_original_field = "C7EF2968598FE2B648085E2C95612262", hash_generated_field = "ED9AFF5D0BE3F3908705CAFA2BF1844E")
 
-
         private  long mKeyCodeAndModifiers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.682 -0500", hash_original_field = "B3C4F9C18E062F366016C41A99B374F3", hash_generated_field = "3C3518CA99FABFDBA4EEED5204CA0958")
-
 
         private  int [] mActionSequence;
 
@@ -355,6 +339,8 @@ public int getThirdArgument(int index) {
      * @param sendEvent Whether to send an accessibility event to
      *        announce the change.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.626 -0500", hash_original_method = "3B116BB7452CBE6872A5E570E7D08041", hash_generated_method = "158B7F9D08A3F76C8015220613332334")
     
 private void setCurrentAxis(int axis, boolean sendEvent, String contentDescription) {
@@ -375,6 +361,8 @@ private void setCurrentAxis(int axis, boolean sendEvent, String contentDescripti
      * @param sendEvent Flag if to send an event to announce successful transition.
      * @param contentDescription A description of the performed action.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.628 -0500", hash_original_method = "60CFCAC68A8E46E83373A5BD6B186EBB", hash_generated_method = "FDCD7ECCD5F7A2026D8F5CFF20A42996")
     
 private void prefromAxisTransition(int fromAxis, int toAxis, boolean sendEvent,
@@ -393,6 +381,8 @@ private void prefromAxisTransition(int fromAxis, int toAxis, boolean sendEvent,
      * @param contentDescription A description of the performed action.
      * @see #setCurrentAxis(int, boolean, String)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.630 -0500", hash_original_method = "FD1B61A72867CD7ABA9E4FFEC34475BF", hash_generated_method = "B9FEA51B2B2B7EBC32DCE6FE614CFE0E")
     
 private boolean traverseCurrentAxis(int direction, boolean sendEvent,
@@ -409,6 +399,8 @@ private boolean traverseCurrentAxis(int direction, boolean sendEvent,
      *        announce the change.
      * @param contentDescription A description of the performed action.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.633 -0500", hash_original_method = "D76A1821B2762F1F39CCFC0B2614F6FE", hash_generated_method = "85DCEA3C9ED01CD1E637E6BEF09DDAC7")
     
 private boolean traverseGivenAxis(int direction, int axis, boolean sendEvent,
@@ -461,6 +453,8 @@ public void onSelectionStringChange(String selectionString) {
      *
      * @param event The event to send.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.638 -0500", hash_original_method = "A93E1B734733D18B27A729FA6BA2D3D4", hash_generated_method = "2FC0F06CF4A4D54F5682496E2A763FA6")
     
 private void sendAccessibilityEvent(AccessibilityEvent event) {
@@ -479,6 +473,8 @@ private void sendAccessibilityEvent(AccessibilityEvent event) {
      * @return An accessibility event whose members are populated except its
      *         text and content description.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.640 -0500", hash_original_method = "97CE5C613C0F00A9204AE55F86D0A1E4", hash_generated_method = "77662BA77326FE621C60C6B05D073523")
     
 private AccessibilityEvent getPartialyPopulatedAccessibilityEvent() {
@@ -492,6 +488,8 @@ private AccessibilityEvent getPartialyPopulatedAccessibilityEvent() {
     /**
      * Ensures that the Web content key bindings are loaded.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.643 -0500", hash_original_method = "391E7039B2527FA351ED94B9C1004246", hash_generated_method = "579B77F351718BE58AD7B7B280502260")
     
 private void ensureWebContentKeyBindings() {
@@ -532,6 +530,8 @@ private void ensureWebContentKeyBindings() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.645 -0500", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "A11ABE9645CFB85AB3245D436E4A8107")
     
 private boolean isEnterActionKey(int keyCode) {

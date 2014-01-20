@@ -11,6 +11,8 @@ import android.util.Log;
 
 public class BackupManager {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.071 -0500", hash_original_method = "BC0D552591769CED3EC0FA61A524F186", hash_generated_method = "2015B4D91CD8E20A9296C83B2EBCE38E")
     
 private static void checkServiceBinder() {

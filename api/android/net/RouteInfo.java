@@ -151,12 +151,16 @@ public RouteInfo(InetAddress gateway) {
         this(null, gateway);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.045 -0500", hash_original_method = "BB5D6BF5854981BD1DD4B0D75DB6E8C7", hash_generated_method = "AF491B167AB4E8B5800D256F530C9872")
     
 private boolean isHost() {
         return (mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.047 -0500", hash_original_method = "FAF1A1F97A113F82E8429CDDF8F77F02", hash_generated_method = "1414C670869536BE8A0CB973924FD4AF")
     
 private boolean isDefault() {
@@ -262,6 +266,8 @@ public void writeToParcel(Parcel dest, int flags) {
             + (mIsDefault ? 3 : 7);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.079 -0500", hash_original_method = "CBA981572951BCD1DD27D7FBA4D7D8C9", hash_generated_method = "E9448F3667D5DD37904240312F4F5ADA")
     
 private boolean matches(InetAddress destination) {

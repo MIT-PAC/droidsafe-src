@@ -9,11 +9,6 @@ import org.apache.harmony.dalvik.ddmc.Chunk;
 import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 
-
-
-
-
-
 public class DdmHandleNativeHeap extends ChunkHandler {
 
     /**
@@ -26,15 +21,14 @@ public static void register() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.281 -0500", hash_original_field = "A81ED842E1635FFD8B140CC7A9CFCEE0", hash_generated_field = "CEFB92C5F36D65DBFF534DFB7342F93F")
 
-
     public static final int CHUNK_NHGT = type("NHGT");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.283 -0500", hash_original_field = "A8DABB7C0D3CC5EB57228683F0C112DD", hash_generated_field = "B5F5FC246460885FEBFA550AE061E53E")
 
-
     private static DdmHandleNativeHeap mInstance = new DdmHandleNativeHeap();
 
-
     /* singleton, do not instantiate */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.286 -0500", hash_original_method = "ACE04131AFA484CBFE62D5908678C3E3", hash_generated_method = "AD83B9732C87044D6C434CE82EC71597")
     
 private DdmHandleNativeHeap() {}
@@ -75,6 +69,8 @@ public Chunk handleChunk(Chunk request) {
     /*
      * Handle a "Native Heap GeT" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.297 -0500", hash_original_method = "14897B1C078BC71A7C6BA04BAB3CD153", hash_generated_method = "26A3BEF12CA6CB85F6D6B92D79F1EBDA")
     
 private Chunk handleNHGT(Chunk request) {
@@ -92,6 +88,8 @@ private Chunk handleNHGT(Chunk request) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.301 -0500", hash_original_method = "FB1B192E745D23B5AF3323CB7D32960E", hash_generated_method = "7AFF957A9C1D14636EFC64D11DC855B4")
     
     private byte[] getLeakInfo(){

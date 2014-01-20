@@ -15,6 +15,8 @@ public static RealToString getInstance() {
         return INSTANCE.get();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.675 -0500", hash_original_method = "A3C59A2427D4266EFD936A5ED960D197", hash_generated_method = "0F4C501A9B62AFB41F5015526CA43006")
     
 private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
@@ -53,6 +55,8 @@ private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
 
     private int digitCount;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.669 -0500", hash_original_method = "F7A95644C563B2D2A217A4C43DE10AFD", hash_generated_method = "51776C658104A660CFC7D2506C25B592")
     
 private RealToString() {
@@ -70,6 +74,8 @@ public void appendDouble(AbstractStringBuilder sb, double d) {
         convertDouble(sb, d);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.683 -0500", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "5848186623705B9B0A9C31305748F30C")
     
 private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
@@ -203,6 +209,8 @@ public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
         return (sb != null) ? null : dst.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.695 -0500", hash_original_method = "C9139C7071A5044040591AD73A0078E9", hash_generated_method = "46EC5F47320CB4889A37E8F8FCB7C1B6")
     
 private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
@@ -230,6 +238,8 @@ private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
         IntegralToString.appendInt(sb, exponent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.698 -0500", hash_original_method = "81B49BC2D9465FB81325CD1E0D55DA15", hash_generated_method = "D73E1B369B32FBCBFEDAC49BEE1134F1")
     
 private void freeFormat(AbstractStringBuilder sb, boolean positive) {
@@ -260,6 +270,8 @@ private void freeFormat(AbstractStringBuilder sb, boolean positive) {
         } while (U != -1 || k >= -1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.702 -0500", hash_original_method = "83E7E0138396E030AA4AE60F27CCD6BF", hash_generated_method = "CE87286F710EAF6BF35F0A28E4FD7CB6")
     
     private void bigIntDigitGenerator(long f, int e, boolean isDenormalized, int p){
@@ -270,6 +282,8 @@ private void freeFormat(AbstractStringBuilder sb, boolean positive) {
     	addTaint(p);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.705 -0500", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "6CC7C02F98A2E528A75F213DFC3EA7C7")
     
 private void longDigitGenerator(long f, int e, boolean isDenormalized,

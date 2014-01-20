@@ -452,6 +452,8 @@ public Thread(ThreadGroup group, Runnable runnable, String threadName, long stac
      * Don't call Thread.currentThread(), since there may not be such
      * a thing (e.g. for Main).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.563 -0500", hash_original_method = "DA36D17A4C27DE9C11E6923E1A7A26CA", hash_generated_method = "F43CA0419F7CB7FF7B8EFC3381E7F4E3")
     
 Thread(ThreadGroup group, String name, int priority, boolean daemon) {
@@ -496,6 +498,8 @@ Thread(ThreadGroup group, String name, int priority, boolean daemon) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.566 -0500", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "B9050FD6C572C048D3082A63D11149E1")
     
 private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
@@ -1131,6 +1135,8 @@ public synchronized void start() {
 
         private static final int PARKED = 3;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.471 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
         public ParkState ()
         {

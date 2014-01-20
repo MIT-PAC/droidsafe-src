@@ -14,6 +14,8 @@ public abstract class URLStreamHandler {
     /**
      * Returns a new path by resolving {@code path} relative to {@code base}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.483 -0500", hash_original_method = "A806CA7014E8BD9EACDE88341CB2140E", hash_generated_method = "9BE48AEDEDDA3DE7BD6115522CF4A620")
     
 private static String relativePath(String base, String path) {
@@ -43,6 +45,8 @@ private static String relativePath(String base, String path) {
      * @throws IOException
      *             if an I/O error occurs during opening the connection.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.472 -0500", hash_original_method = "041D500E1591B8A75B5DD1417FC123EC", hash_generated_method = "300967F6DD1F653B0B214BF830AB6C5B")
     
 protected abstract URLConnection openConnection(URL u) throws IOException;
@@ -253,7 +257,9 @@ protected String toExternalForm(URL url) {
         return toExternalForm(url, false);
     }
         
-@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.153 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "EB3AD88B67334820582162A57C895ACB")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
         addTaint(escapeIllegalCharacters);

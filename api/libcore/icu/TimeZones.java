@@ -58,11 +58,15 @@ public static String[] forLocale(Locale locale) {
         return forCountryCode(locale.getCountry());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[] forCountryCode(String countryCode) {
     	String [] ret = {new String()};
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String[][] getZoneStringsImpl(String locale, String[] timeZoneIds) {
     	String [][] ret = {{new String()}};
     	return ret;
@@ -105,6 +109,8 @@ public ZoneStringsCache() {
             return result;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.998 -0500", hash_original_method = "B8ADCF3091CCD0EA103D9032F8613DD2", hash_generated_method = "AF9E956730F1442D3F67FF2610B87FA7")
         
 private synchronized void internStrings(String[][] result) {
@@ -165,6 +171,8 @@ private synchronized void internStrings(String[][] result) {
         cachedZoneStrings.get(Locale.getDefault());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.008 -0500", hash_original_method = "A05C4975F009B050E4723CBEC63CF03D", hash_generated_method = "D7DAFEA01BE01920EF3D08C54FD34329")
     
 private TimeZones() {}

@@ -40,6 +40,8 @@ static int makeTextContentType(Capitalize caps, boolean autoText) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.446 -0500", hash_original_field = "DF6FFF71E95A22B6D27B0C7B334C0DF0", hash_generated_field = "E30A96E800BF4F5D9EAF5982A378A4AE")
  static final Object OLD_SEL_START = new NoCopySpan.Concrete();
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.945 -0400", hash_original_method = "457D2BEC00B20336593EA76F83128980", hash_generated_method = "457D2BEC00B20336593EA76F83128980")
     public BaseKeyListener ()
     {
@@ -54,6 +56,8 @@ static int makeTextContentType(Capitalize caps, boolean autoText) {
      *
      * @return true if anything was deleted; false otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.449 -0500", hash_original_method = "C743EFD1D596571F6949DCD9BEFE98FE", hash_generated_method = "FEC8D779F4C4042D36C0F36EBDA08029")
     
 public boolean backspace(View view, Editable content, int keyCode, KeyEvent event) {
@@ -68,12 +72,16 @@ public boolean backspace(View view, Editable content, int keyCode, KeyEvent even
      *
      * @return true if anything was deleted; false otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.452 -0500", hash_original_method = "44D414C093A103E2D46C2C9EBFB633B7", hash_generated_method = "C9A7237C1E399A37E60EB19B6D52D19F")
     
 public boolean forwardDelete(View view, Editable content, int keyCode, KeyEvent event) {
         return backspaceOrForwardDelete(view, content, keyCode, event, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.455 -0500", hash_original_method = "070DF95C0353A773EEB24BBDC2D8297C", hash_generated_method = "5E34F6783E50CF98B6D366ABA5C8C50B")
     
 private boolean backspaceOrForwardDelete(View view, Editable content, int keyCode,
@@ -112,6 +120,8 @@ private boolean backspaceOrForwardDelete(View view, Editable content, int keyCod
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.458 -0500", hash_original_method = "2C36007D0B232577504AED53A81D7DC4", hash_generated_method = "6F2D55BD0D8644FD18676EB8FAA89F36")
     
 private boolean deleteSelection(View view, Editable content) {
@@ -129,6 +139,8 @@ private boolean deleteSelection(View view, Editable content) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.461 -0500", hash_original_method = "AAA6731DEEEC720845223B285BF37660", hash_generated_method = "2F93290EBB00EC6975F8AB620FEE88FD")
     
 private boolean deleteLine(View view, Editable content) {
@@ -147,6 +159,8 @@ private boolean deleteLine(View view, Editable content) {
         return false;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.468 -0500", hash_original_method = "60BF1BEA0D6A99B2655081BEC42DA13C", hash_generated_method = "7BD99B6E87DE870A2B35A26A9C6BE037")
     
 public boolean onKeyDown(View view, Editable content,
@@ -175,6 +189,8 @@ public boolean onKeyDown(View view, Editable content,
      * Base implementation handles ACTION_MULTIPLE KEYCODE_UNKNOWN by inserting
      * the event's text into the content.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.471 -0500", hash_original_method = "D291AC92E2A4746C8F1BADA03A5CE619", hash_generated_method = "D27DB6A3FB1E267AFA875190E06BE0A1")
     
 public boolean onKeyOther(View view, Editable content, KeyEvent event) {

@@ -82,6 +82,8 @@ private static Call.State getCallStateFrom(SipAudioCall sipAudioCall) {
 
     private SipProfile mProfile;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.273 -0500", hash_original_method = "6A0F0B835E49D28418FC90D67BF66C10", hash_generated_method = "6A0F0B835E49D28418FC90D67BF66C10")
     
 SipPhone (Context context, PhoneNotifier notifier, SipProfile profile) {
@@ -203,6 +205,8 @@ public Connection dial(String dialString) throws CallStateException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.296 -0500", hash_original_method = "E69019A31CF45F3F0FFB8952555ADD38", hash_generated_method = "E65C26A805F1C7116FB7B1CF1811FACE")
     
 private Connection dialInternal(String dialString)
@@ -418,6 +422,8 @@ public Call getForegroundCall() {
         {
             //Synthesized constructor
         }
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.355 -0500", hash_original_method = "077C3D2ABFDDE04A697972D273B811AD", hash_generated_method = "077C3D2ABFDDE04A697972D273B811AD")
         
 void reset() {
@@ -465,6 +471,8 @@ private void takeOver(SipCall that) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.369 -0500", hash_original_method = "B9E3A4EF80D99D71D1AE567F3438F945", hash_generated_method = "B9E3A4EF80D99D71D1AE567F3438F945")
         
@@ -514,6 +522,8 @@ Connection dial(String originalNumber) throws SipException {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.374 -0500", hash_original_method = "03E5A9484BF2B2B8056B6450938A40D7", hash_generated_method = "03E5A9484BF2B2B8056B6450938A40D7")
         
 void initIncomingCall(SipAudioCall sipAudioCall, boolean makeCallWait) {
@@ -528,12 +538,16 @@ void initIncomingCall(SipAudioCall sipAudioCall, boolean makeCallWait) {
             notifyNewRingingConnectionP(c);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.376 -0500", hash_original_method = "F8072C3AD3C86AEC184FDD0C13B73AA0", hash_generated_method = "F8072C3AD3C86AEC184FDD0C13B73AA0")
         
 void rejectCall() throws CallStateException {
             hangup();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.378 -0500", hash_original_method = "B2C3B5FE3154049893EC854E60F79D8F", hash_generated_method = "B2C3B5FE3154049893EC854E60F79D8F")
         
 void acceptCall() throws CallStateException {
@@ -546,6 +560,8 @@ void acceptCall() throws CallStateException {
             ((SipConnection) connections.get(0)).acceptCall();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.381 -0500", hash_original_method = "1B6C9A8A7DE7A949D0CD2E188D6FBBDC", hash_generated_method = "7CE9BD647031F8943EB0E2073490FFA1")
         
 private boolean isSpeakerOn() {
@@ -553,6 +569,8 @@ private boolean isSpeakerOn() {
                     .isSpeakerphoneOn();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.383 -0500", hash_original_method = "AEEC2C5B8263135991756BF729F3B501", hash_generated_method = "AEEC2C5B8263135991756BF729F3B501")
         
 void setAudioGroupMode() {
@@ -573,6 +591,8 @@ void setAudioGroupMode() {
                     audioGroup.getMode()));
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.386 -0500", hash_original_method = "A3EB25D5FFDA71466ECC0EEF32C97EE3", hash_generated_method = "A3EB25D5FFDA71466ECC0EEF32C97EE3")
         
 void hold() throws CallStateException {
@@ -581,6 +601,8 @@ void hold() throws CallStateException {
             setAudioGroupMode();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.388 -0500", hash_original_method = "9A7CCBA25036980309C5282A2982C0B2", hash_generated_method = "9A7CCBA25036980309C5282A2982C0B2")
         
 void unhold() throws CallStateException {
@@ -592,6 +614,8 @@ void unhold() throws CallStateException {
             setAudioGroupMode();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.391 -0500", hash_original_method = "7DDE83D6F9C645A60E86EBEFB92BE589", hash_generated_method = "7DDE83D6F9C645A60E86EBEFB92BE589")
         
@@ -601,6 +625,8 @@ void setMute(boolean muted) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.393 -0500", hash_original_method = "B414CA4B3846B73054EF059A06E7BBBE", hash_generated_method = "B414CA4B3846B73054EF059A06E7BBBE")
         
 boolean getMute() {
@@ -639,6 +665,8 @@ private void add(SipConnection conn) {
             conn.changeOwner(this);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.400 -0500", hash_original_method = "994C45B8BD8978A705E69F1BE351A00B", hash_generated_method = "994C45B8BD8978A705E69F1BE351A00B")
         
 void sendDtmf(char c) {
@@ -647,6 +675,8 @@ void sendDtmf(char c) {
             audioGroup.sendDtmf(convertDtmf(c));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.404 -0500", hash_original_method = "C4229E0DAB0B84D6720429F368FEF1C3", hash_generated_method = "482E416984DA12BF956FCC8650406A9C")
         
 private int convertDtmf(char c) {
@@ -718,6 +748,8 @@ void onConnectionEnded(SipConnection conn) {
             notifyDisconnectP(conn);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.414 -0500", hash_original_method = "3BDED5D4E6618481393AD33B1F728E6A", hash_generated_method = "E71AFDEF4C462B3F0B44E4C834866B3A")
         
 private AudioGroup getAudioGroup() {
@@ -890,6 +922,8 @@ void initIncomingCall(SipAudioCall sipAudioCall, Call.State newState) {
             mIncoming = true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.468 -0500", hash_original_method = "62A265BABD2EF644B89898FE1DF3E037", hash_generated_method = "62A265BABD2EF644B89898FE1DF3E037")
         
 void acceptCall() throws CallStateException {
@@ -906,6 +940,8 @@ void changeOwner(SipCall owner) {
             mOwner = owner;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.472 -0500", hash_original_method = "81195A6CBC9B38EAFBB5618CD4E171CB", hash_generated_method = "81195A6CBC9B38EAFBB5618CD4E171CB")
         
@@ -914,6 +950,8 @@ AudioGroup getAudioGroup() {
             return mSipAudioCall.getAudioGroup();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.475 -0500", hash_original_method = "766A0FDDBD2B3A4E947C7E8FBAB0F165", hash_generated_method = "766A0FDDBD2B3A4E947C7E8FBAB0F165")
         
 void dial() throws SipException {
@@ -923,6 +961,8 @@ void dial() throws SipException {
             mSipAudioCall.setListener(mAdapter);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.478 -0500", hash_original_method = "DDAA74ADB7976F32813665FE128238CD", hash_generated_method = "DDAA74ADB7976F32813665FE128238CD")
         
 void hold() throws CallStateException {
@@ -934,6 +974,8 @@ void hold() throws CallStateException {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.480 -0500", hash_original_method = "F77273A2CD584255814B6B238AF1477E", hash_generated_method = "F77273A2CD584255814B6B238AF1477E")
         
 void unhold(AudioGroup audioGroup) throws CallStateException {
@@ -946,6 +988,8 @@ void unhold(AudioGroup audioGroup) throws CallStateException {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.483 -0500", hash_original_method = "91B9A79444A0C09E86ABE6F5C7C89706", hash_generated_method = "91B9A79444A0C09E86ABE6F5C7C89706")
         
@@ -955,6 +999,8 @@ void setMute(boolean muted) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.486 -0500", hash_original_method = "E20C6A660C2E35A5253ACCD901B5D855", hash_generated_method = "E20C6A660C2E35A5253ACCD901B5D855")
         
@@ -1169,6 +1215,8 @@ public ServiceState getServiceState() {
         return super.getServiceState();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.350 -0500", hash_original_method = "AE09BA0335289F025B1DDE67D4558A7A", hash_generated_method = "A3FEAC57B455D046BB3F8CE1FB92FBEE")
     
 private String getUriString(SipProfile p) {
@@ -1176,6 +1224,8 @@ private String getUriString(SipProfile p) {
         return p.getUserName() + "@" + getSipDomain(p);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.353 -0500", hash_original_method = "CF1C8708B65050BDE73A571BB1592129", hash_generated_method = "AB88EB49425040A81BE888418D0FA3F6")
     
 private String getSipDomain(SipProfile p) {

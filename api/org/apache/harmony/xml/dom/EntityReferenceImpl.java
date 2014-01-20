@@ -12,6 +12,8 @@ public class EntityReferenceImpl extends LeafNodeImpl implements EntityReference
 
     private String name;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.235 -0500", hash_original_method = "0FEA3B6855AA06DD4FD452A95A08D422", hash_generated_method = "0FEA3B6855AA06DD4FD452A95A08D422")
     
 EntityReferenceImpl(DocumentImpl document, String name) {

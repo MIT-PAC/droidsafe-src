@@ -21,6 +21,8 @@ public FloatProperty(String name) {
         addTaint(name.getTaint());
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setValue(T object, float value) {
         addTaint(value);
     }

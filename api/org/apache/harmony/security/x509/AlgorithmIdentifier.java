@@ -68,6 +68,8 @@ public AlgorithmIdentifier(String algorithm, byte[] parameters) {
         this(algorithm, parameters, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.322 -0500", hash_original_method = "D2431539DF2ECCEF9FBA946BEDC34F61", hash_generated_method = "D8B071983057F5FC10BD2CF045C30092")
     
 private AlgorithmIdentifier(String algorithm, byte[] parameters, byte[] encoding) {

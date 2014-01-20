@@ -183,6 +183,8 @@ public boolean removePreference(Preference preference) {
         return returnValue;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.992 -0500", hash_original_method = "4864D54B8C7134B3A64BC66D9DDCC7C4", hash_generated_method = "3DAE919CEBCE7DF8DCC2B51162CA8CD0")
     
 private boolean removePreferenceInt(Preference preference) {
@@ -321,6 +323,8 @@ protected boolean isOnSameScreenAsChildren() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.012 -0500", hash_original_method = "8DBDAE7DDABF4AEFA524423E392EC9C9", hash_generated_method = "8DBDAE7DDABF4AEFA524423E392EC9C9")
     
 void sortPreferences() {

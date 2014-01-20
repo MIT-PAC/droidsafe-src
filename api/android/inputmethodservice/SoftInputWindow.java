@@ -151,6 +151,8 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.313 -0500", hash_original_method = "F6A5F856FF7B400209C66879FBEA71E5", hash_generated_method = "BA5D9FD9FB5F6F4D54CA580065F93831")
     
 private void initDockWindow() {

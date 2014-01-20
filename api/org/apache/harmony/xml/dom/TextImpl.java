@@ -107,6 +107,8 @@ public final Text replaceWholeText(String content) throws DOMException {
      * Returns the first text or CDATA node in the current sequence of text and
      * CDATA nodes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.661 -0500", hash_original_method = "9928E14A90ED22F7792AF824C555C38E", hash_generated_method = "FD09E15A05B5DCDBEE2328F70AACD50E")
     
 private TextImpl firstTextNodeInCurrentRun() {
@@ -126,6 +128,8 @@ private TextImpl firstTextNodeInCurrentRun() {
      * Returns the next sibling node if it exists and it is text or CDATA.
      * Otherwise returns null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.664 -0500", hash_original_method = "E11C938286265122BF52D51A5CD9EED3", hash_generated_method = "3F748EF8100EBB2466E608B65108A031")
     
 private TextImpl nextTextNode() {

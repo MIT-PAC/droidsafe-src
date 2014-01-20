@@ -66,6 +66,8 @@ public static String getKey(HostPort hostPort, String transport) {
      * Note: some limitations here: does not work for short forms of headers, or continuations;
      * problems when header names appear in other parts of the request
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.473 -0500", hash_original_method = "D45D00399FFC9017933279EE021E88CF", hash_generated_method = "95B9892AF4A09203DAB0A0A8C0714F47")
     
 private static final boolean copyHeader(String name, String fromReq, StringBuffer buf) {
@@ -91,6 +93,8 @@ private static final boolean copyHeader(String name, String fromReq, StringBuffe
      * 
      * Note: some limitations here: does not work for short forms of headers, or continuations
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.476 -0500", hash_original_method = "B0ED81FBE57D6EDF5E6EF56B95DE27A2", hash_generated_method = "1F4282D39445E7864FFB9CBBCF5B0988")
     
 private static final boolean copyViaHeaders(String fromReq, StringBuffer buf) {
@@ -135,6 +139,8 @@ protected void uncache() {}
     /**
      * Close the message channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.388 -0500", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "01CBB4D2860961B039FF408E6402870A")
     
 public abstract void close();
@@ -144,6 +150,8 @@ public abstract void close();
      * 
      * @return SIPStack object of this message channel
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.391 -0500", hash_original_method = "A1A00F5C2BF3E0AFD608A46FA340D257", hash_generated_method = "D186E97C3F23BE4B3601C73C20E07F79")
     
 public abstract SIPTransactionStack getSIPStack();
@@ -153,6 +161,8 @@ public abstract SIPTransactionStack getSIPStack();
      * 
      * @return Transport string of this message channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.393 -0500", hash_original_method = "6F76800A66F29254B58644281757D834", hash_generated_method = "472D1D05977661EE7869F1DAA4C9C0C0")
     
 public abstract String getTransport();
@@ -162,6 +172,8 @@ public abstract String getTransport();
      * 
      * @return True if reliable, false if not.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.396 -0500", hash_original_method = "67BE63CE08C0852FBF4D8607122F2A3E", hash_generated_method = "E2CACDD0CC36195BEC0290C7422D469E")
     
 public abstract boolean isReliable();
@@ -169,6 +181,8 @@ public abstract boolean isReliable();
     /**
      * Return true if this is a secure channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.399 -0500", hash_original_method = "C0F4ED7F29E54AD75430386669D6EE3C", hash_generated_method = "3756A60CD212E039C9DCF60D85147293")
     
 public abstract boolean isSecure();
@@ -178,6 +192,8 @@ public abstract boolean isSecure();
      * 
      * @param sipMessage Message to send.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.402 -0500", hash_original_method = "943107E40C7061CF61FBA545BB2DDBDE", hash_generated_method = "D8ADE5FC39BB1D960ABCF93CEBD4BCD5")
     
 public abstract void sendMessage(SIPMessage sipMessage) throws IOException;
@@ -187,14 +203,20 @@ public abstract void sendMessage(SIPMessage sipMessage) throws IOException;
      * 
      * @return a string contianing the ip address or host name of the sender of the message.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.405 -0500", hash_original_method = "8E3B76240BF5A106DB76C05900EB6F70", hash_generated_method = "B9650ED22688B12CEEA0C8A72EC69EC1")
     
 public abstract String getPeerAddress();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.407 -0500", hash_original_method = "86105B048E596AFFC776E1756936570D", hash_generated_method = "F2B085EDDA5E350636D217D4DB67E704")
     
 protected abstract InetAddress getPeerInetAddress();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.410 -0500", hash_original_method = "E138929571C60A253985A230B3A22A80", hash_generated_method = "031B1A27CA071B7A60A3D12FDD6F3BF0")
     
 protected abstract String getPeerProtocol();
@@ -202,14 +224,20 @@ protected abstract String getPeerProtocol();
     /**
      * Get the sender port ( the port of the other end that sent me the message).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.412 -0500", hash_original_method = "5E659664C7E6B37A546815996C8F8ACA", hash_generated_method = "B04118E67000106659EF5EC33B839DF6")
     
 public abstract int getPeerPort();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.415 -0500", hash_original_method = "F346C9CFC7FFB3BFA4246F8E943E387C", hash_generated_method = "9348460B3581B6B4E2076709D506AF42")
     
 public abstract int getPeerPacketSourcePort();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.417 -0500", hash_original_method = "599CD8B9ADF0C8C8BFCAE40B505B1A24", hash_generated_method = "F2E46F7EE0A7199720237741C63636DF")
     
 public abstract InetAddress getPeerPacketSourceAddress();
@@ -218,6 +246,8 @@ public abstract InetAddress getPeerPacketSourceAddress();
      * Generate a key which identifies the message channel. This allows us to cache the message
      * channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.420 -0500", hash_original_method = "BE0D92A3F953565F6F18B17B1C3A43CD", hash_generated_method = "5F8C15F3F00BB78C1D45433F5F8B9C3E")
     
 public abstract String getKey();
@@ -225,6 +255,8 @@ public abstract String getKey();
     /**
      * Get the host to assign for an outgoing Request via header.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.423 -0500", hash_original_method = "3BEA3EEFE4CD9B076F0D5912037EECED", hash_generated_method = "3BED50FEEBA9481B3672C193F7B51E6C")
     
 public abstract String getViaHost();
@@ -232,6 +264,8 @@ public abstract String getViaHost();
     /**
      * Get the port to assign for the via header of an outgoing message.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.425 -0500", hash_original_method = "D492DD42AEC73A3D3ECA27C6E0A2D4F3", hash_generated_method = "8DD347D7A63DAAD2346B9B2FEE94238A")
     
 public abstract int getViaPort();
@@ -243,6 +277,8 @@ public abstract int getViaPort();
      * @param receiverAddress Address of the receiver.
      * @param receiverPort Port of the receiver.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.428 -0500", hash_original_method = "3BF971AACA60A2EF636E81CFE73449CD", hash_generated_method = "2D6B5960D2A75CAD335A07035026E1F5")
     
 protected abstract void sendMessage(byte[] message, InetAddress receiverAddress,

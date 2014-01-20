@@ -366,6 +366,8 @@ public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.805 -0500", hash_original_method = "13CBDA000CECA6BBED63F386B07FC011", hash_generated_method = "59120505421C36B14F3FC8FA709B07F6")
     
 private boolean setCellBroadcastConfig(SmsBroadcastConfigInfo[] configs) {
@@ -388,6 +390,8 @@ private boolean setCellBroadcastConfig(SmsBroadcastConfigInfo[] configs) {
         return mSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.808 -0500", hash_original_method = "D2ABD2A7A42536455FF89EC95B86ABFC", hash_generated_method = "A571AA07F9819A311BBA5B94737C53F3")
     
 private boolean setCellBroadcastActivation(boolean activate) {

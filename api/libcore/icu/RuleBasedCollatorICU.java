@@ -92,6 +92,8 @@ public RuleBasedCollatorICU(Locale locale) {
         address = NativeCollation.openCollator(locale.toString());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.719 -0500", hash_original_method = "A318B723665122F54B169082CADE3CC3", hash_generated_method = "67B0EF4F1D077AE3F338CDBE19294FDB")
     
 private RuleBasedCollatorICU(int address) {
@@ -188,6 +190,8 @@ public CollationElementIteratorICU getCollationElementIterator(CharacterIterator
         return getCollationElementIterator(characterIteratorToString(it));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.748 -0500", hash_original_method = "7AE77B5FB071109A54141F0830318144", hash_generated_method = "5301BC205552665A10E5E04B8EEB45CB")
     
 private String characterIteratorToString(CharacterIterator it) {

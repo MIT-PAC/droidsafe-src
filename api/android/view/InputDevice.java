@@ -139,6 +139,8 @@ public static int[] getDeviceIds() {
 
         private float mFuzz;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.411 -0500", hash_original_method = "003C115B43ED25425A82F4C0BC4BFB2D", hash_generated_method = "D463009C9EB0E2425D401CE128054BB0")
         
 private MotionRange(int axis, int source, float min, float max, float flat, float fuzz) {
@@ -299,6 +301,8 @@ public InputDevice[] newArray(int size) {
     private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
 
     // Called by native code.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.364 -0500", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "EF21FEBD1D8CB31B9833DDCC077F3763")
     
 private InputDevice() {
@@ -359,6 +363,8 @@ public KeyCharacterMap getKeyCharacterMap() {
         return KeyCharacterMap.load(mId);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.383 -0500", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "6E63969CFD2DFD594C82531499F7DA54")
     
 String getKeyCharacterMapFile() {
@@ -434,6 +440,8 @@ public List<MotionRange> getMotionRanges() {
         return mMotionRanges;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.393 -0500", hash_original_method = "F938DEDD59851FE8B4D63705E085118B", hash_generated_method = "0F3603C011A2194091D5E6406DF7D606")
     
 private void addMotionRange(int axis, int source,
@@ -441,6 +449,8 @@ private void addMotionRange(int axis, int source,
         mMotionRanges.add(new MotionRange(axis, source, min, max, flat, fuzz));
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.441 -0500", hash_original_method = "66E89B3285A9850971D96BAD9F2BB44F", hash_generated_method = "8E5476A5D8910D0832C1DB2A7C8C4C82")
     
 private void readFromParcel(Parcel in) {
@@ -540,6 +550,8 @@ private void readFromParcel(Parcel in) {
         return description.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.453 -0500", hash_original_method = "C8D7AE07A3174BF8CEBA0E0E2EC288B0", hash_generated_method = "5BA1D53736C98B494EE8755DBC246A47")
     
 private void appendSourceDescriptionIfApplicable(StringBuilder description, int source,

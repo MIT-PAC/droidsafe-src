@@ -118,6 +118,8 @@ public ChangeWatcher(DynamicLayout layout) {
             mLayout = new WeakReference<DynamicLayout>(layout);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.031 -0500", hash_original_method = "86BF27AD60282A12928BABF6F115B549", hash_generated_method = "423424869722B4931BA721A1164C1132")
         
 private void reflow(CharSequence s, int where, int before, int after) {
@@ -312,6 +314,8 @@ public DynamicLayout(CharSequence base, CharSequence display,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.998 -0500", hash_original_method = "680F026D747328AC88C64FC8C5845240", hash_generated_method = "C5027D20EAD7997CDB812FBFA53EFCF9")
     
 private void reflow(CharSequence s, int where, int before, int after) {
@@ -493,6 +497,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.001 -0500", hash_original_method = "152FA51B02D5FF2B246CE19D3B6F70D3", hash_generated_method = "CC1C88D38AFD959022580027F44A131A")
     
@@ -501,6 +507,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.size() - 1;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.004 -0500", hash_original_method = "D6F378A47E9DC69D83D62FCE6E90C326", hash_generated_method = "8C3BE57369149F292E0CDECC247CD2E8")
     
@@ -509,6 +517,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, TOP);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.006 -0500", hash_original_method = "730DAEEEE356A285055D20F0106F731A", hash_generated_method = "2754D367D485AD7D05CAD612FD563651")
     
@@ -517,6 +527,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, DESCENT);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.009 -0500", hash_original_method = "2D0F6CD810E708D2F846F779125A5CEA", hash_generated_method = "09AB562361EE24C85E8246B466BFA61D")
     
@@ -525,6 +537,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, START) & START_MASK;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.011 -0500", hash_original_method = "A0EC5BA65111126AB58C28059BDF3DD2", hash_generated_method = "FD6BADC82DA978D7DCB95F13EB5829B3")
     
 @Override
@@ -532,6 +546,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return (mInts.getValue(line, TAB) & TAB_MASK) != 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.014 -0500", hash_original_method = "54E53FDCC15DB3057A5F7E1DF0F2D93F", hash_generated_method = "DA61D920D7C002B928BB90BBBA526ADE")
     
@@ -547,6 +563,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mObjects.getValue(line, 0);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.019 -0500", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "C9A37F9D7E53BC032BE1989D8B7F43F3")
     
@@ -555,6 +573,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mTopPadding;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.022 -0500", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "F0B9D53486F44C4D9B5E36E2D1B1C62A")
     
@@ -563,6 +583,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mBottomPadding;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.024 -0500", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "466A36682DB1C1AD0B2234723777A380")
     
@@ -571,6 +593,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mEllipsizedWidth;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.053 -0500", hash_original_method = "C2BA24D83CCF8B46DBDB9E42876D7FC0", hash_generated_method = "E1691EFEB29DA3D8A46F947435E4B747")
     
@@ -583,6 +607,8 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, ELLIPSIS_START);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.056 -0500", hash_original_method = "8861D8B0168294A81E05E00D1A35F6B4", hash_generated_method = "1C8ED8CB9C6D797E4FFBEFBE4408DFDF")
     

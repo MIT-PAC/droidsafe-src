@@ -120,6 +120,8 @@ public Certificate[] getCertificates() {
         return jarVerifier.getCertificates(getName());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.602 -0500", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "DAF50D69E39A2A8F586C4ACAC36673DD")
     
 void setAttributes(Attributes attrib) {
@@ -151,6 +153,8 @@ public CodeSigner[] getCodeSigners() {
         return tmp;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.611 -0500", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "1A48D5118AFBCB71D52D18C8C964E387")
     
 private CodeSigner[] getCodeSigners(Certificate[] certs) {

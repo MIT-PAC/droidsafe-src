@@ -212,6 +212,8 @@ private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolve
          * @param groupId the same groupId used in getThumbnail
          * @param baseUri the base URI of requested thumbnails
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.477 -0500", hash_original_method = "F29A79C31A2CA4FED1ACCEFFCCC8C171", hash_generated_method = "ED094E0A84AEB6D086FD82573B890E67")
         
 static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
@@ -364,6 +366,8 @@ static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int ki
 
         private static byte[] sThumbBuf;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.453 -0400", hash_original_method = "B538DEE370A2D5B0ED2152EA1CB2C251", hash_generated_method = "B538DEE370A2D5B0ED2152EA1CB2C251")
         public InternalThumbnails ()
         {
@@ -455,6 +459,8 @@ public static final String insertImage(ContentResolver cr, String imagePath,
                 }
             }
 
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.513 -0500", hash_original_method = "DAAD784C0B233997846E8495A2862A0E", hash_generated_method = "E66F09C3C1BA3D7840ECBDFEBEF632EB")
             
 private static final Bitmap StoreThumbnail(

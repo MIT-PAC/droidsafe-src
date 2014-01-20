@@ -76,6 +76,8 @@ public ResolveInfo[] newArray(int size) {
 public ResolveInfo() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.623 -0500", hash_original_method = "D76D30C905C95224DB17E633EB6195C1", hash_generated_method = "0932C4CA4B78A5E26DF6C9D29B6A1E1D")
     
 private ResolveInfo(Parcel source) {

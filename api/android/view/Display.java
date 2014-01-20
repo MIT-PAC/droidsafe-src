@@ -17,11 +17,15 @@ import droidsafe.helpers.DSUtils;
 
 public class Display {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int getDisplayCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.307 -0500", hash_original_method = "EAA8F8A14B9F77AE841E750047985ABA", hash_generated_method = "E85C3B1E8EB8D4474C2CFD73095C7800")
     
 static IWindowManager getWindowManager() {
@@ -34,6 +38,8 @@ static IWindowManager getWindowManager() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClassInit() {
     }
 
@@ -98,6 +104,8 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
      * Display gives you access to some information about a particular display
      * connected to the device.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.243 -0500", hash_original_method = "C9519A69B693719AC1491BF9F92C5C8E", hash_generated_method = "482C09FFFDB57BC8D0C88DE0A02382B2")
     
 Display(int display, CompatibilityInfoHolder compatInfo) {
@@ -153,6 +161,8 @@ public void getSize(Point outSize) {
         getSizeInternal(outSize, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.255 -0500", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "50C67704465B26566DAA72B1350433D7")
     
 private void getSizeInternal(Point outSize, boolean doCompat) {
@@ -308,6 +318,8 @@ public int getRawWidth() {
                 TAG, "Returning raw display width: " + w);
         return w;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.275 -0500", hash_original_method = "F4A84F8F2FFCAD78922F38438709A2E6", hash_generated_method = "AD61DDB1335568D17DCD03533EBA08E6")
     
     private int getRawWidthNative(){
@@ -330,6 +342,8 @@ public int getRawHeight() {
                 TAG, "Returning raw display height: " + h);
         return h;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.281 -0500", hash_original_method = "0BBCECD524BDD54CA608342D94B23905", hash_generated_method = "48A3CC71B454471523A765603E8F2113")
     
     private int getRawHeightNative(){
@@ -491,6 +505,8 @@ public void getMetricsWithSize(DisplayMetrics outMetrics,
         outMetrics.ydpi = outMetrics.noncompatYdpi = mDpiY;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.314 -0500", hash_original_method = "CE3A43F20C9E9D8C85E043AD25A6B3E9", hash_generated_method = "665C622029752F1221564D280B11E5B0")
     
     private void init(int display){

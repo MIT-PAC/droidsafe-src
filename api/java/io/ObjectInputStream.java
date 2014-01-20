@@ -24,6 +24,8 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
      * Format the class signature for ObjectStreamField, for example,
      * "[L[Ljava.lang.String;;" is converted to "[Ljava.lang.String;"
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.393 -0500", hash_original_method = "74747FD805E3D37BE3EFCD383C26D2DE", hash_generated_method = "B7968BBB2631E48A86888FD83216759B")
     
 private static String formatClassSig(String classSig) {
@@ -53,6 +55,8 @@ private static String formatClassSig(String classSig) {
      *
      * @return a user-defined class loader or null if one isn't found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.490 -0500", hash_original_method = "D98B125FAAAD460E85A5D4A1FF301F64", hash_generated_method = "54386ACCAF7F85B9F2AC0743DD29A7FA")
     
 private static ClassLoader getClosestUserClassLoader() {
@@ -67,6 +71,8 @@ private static ClassLoader getClosestUserClassLoader() {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.532 -0500", hash_original_method = "A0CE91BAC510F89CA68326A2D2BB846C", hash_generated_method = "2479985A4CC7F0155BD9D55EE6E99528")
     
 private static String getBaseName(String fullName) {
@@ -79,6 +85,8 @@ private static String getBaseName(String fullName) {
     }
 
     // Avoid recursive defining.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.534 -0500", hash_original_method = "8C220D66FEC4AEA02D44FBB23E305EE3", hash_generated_method = "6DFE137859E2431723804AFE073FB1DE")
     
 private static void checkedSetSuperClassDesc(ObjectStreamClass desc,
@@ -224,6 +232,8 @@ public ObjectInputStream(InputStream input) throws StreamCorruptedException, IOE
      *             If any IO problem occurred when trying to read primitive type
      *             or if it is illegal to read primitive types
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.333 -0500", hash_original_method = "5DD662298FB99DC11E3F5A1BB4812CC0", hash_generated_method = "C3EF6120899F63F2851F20098D8AAECC")
     
 private void checkReadPrimitiveTypes() throws IOException {
@@ -290,8 +300,8 @@ private void checkReadPrimitiveTypes() throws IOException {
      *             if this method is not called from {@code readObject()}.
      * @see ObjectOutputStream#defaultWriteObject
      */
-    @DSComment("I/O load/store")
-    @DSSpec(DSCat.IO)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.338 -0500", hash_original_method = "6463B95302326251A8E319007FB9B6A5", hash_generated_method = "42B11E4D034DE9D234002248F992250B")
     
 public void defaultReadObject() throws IOException, ClassNotFoundException,
@@ -329,6 +339,8 @@ protected boolean enableResolveObject(boolean enable) {
      *
      * @return the next handle to represent the next cyclic reference
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.343 -0500", hash_original_method = "BEEE4D4B01DB5401D5A386ECF8653C53", hash_generated_method = "1FEAC46397CA5C5CC1B3C18072FEC1ED")
     
 private int nextHandle() {
@@ -346,6 +358,8 @@ private int nextHandle() {
      *
      * @see ObjectStreamConstants
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.345 -0500", hash_original_method = "EA84EB3C5ACC30FA1515ABE6938E6E9B", hash_generated_method = "3375AA35A03A36642F4172B23EE6E242")
     
 private byte nextTC() throws IOException {
@@ -362,6 +376,8 @@ private byte nextTC() throws IOException {
     /**
      * Pushes back the last TC code read
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.347 -0500", hash_original_method = "056AB6ECFECE1087CD6299233C3046CF", hash_generated_method = "292BC4244431736EA7AF14D030043B8C")
     
 private void pushbackTC() {
@@ -434,6 +450,8 @@ private void pushbackTC() {
      * @throws IOException
      *             If an IO exception happened when reading the primitive data.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.355 -0500", hash_original_method = "35383BB5231F8136A4FECB09DEC2FE93", hash_generated_method = "1C03820D8116427A920F9A19EFAFA7E1")
     
 private byte[] readBlockData() throws IOException {
@@ -452,6 +470,8 @@ private byte[] readBlockData() throws IOException {
      * @throws IOException
      *             If an IO exception happened when reading the primitive data.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.358 -0500", hash_original_method = "478D7B43D09CD1BAF3CA95670FAE291A", hash_generated_method = "E5D46E2A85AA403CC816C040B9832E4C")
     
 private byte[] readBlockDataLong() throws IOException {
@@ -520,6 +540,8 @@ public char readChar() throws IOException {
      *             If the class corresponding to the class descriptor could not
      *             be found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.367 -0500", hash_original_method = "7E3D613702E21574BA96B289FBA102EA", hash_generated_method = "954EF7F370EC2E4439CDEDE6D258AFFC")
     
 private void discardData() throws ClassNotFoundException, IOException {
@@ -549,6 +571,8 @@ private void discardData() throws ClassNotFoundException, IOException {
      *             If the class corresponding to the class descriptor could not
      *             be found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.371 -0500", hash_original_method = "8425AE4559FEB283CFFC129B3DDD377F", hash_generated_method = "0EB62CC4CA8F6E6E6BCDEED50D4D1300")
     
 private ObjectStreamClass readClassDesc() throws ClassNotFoundException, IOException {
@@ -572,6 +596,8 @@ private ObjectStreamClass readClassDesc() throws ClassNotFoundException, IOExcep
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.373 -0500", hash_original_method = "D1B003D7ABBBCEF0B15D64544C91AEEF", hash_generated_method = "0E2F5E06C3A561225FCAABA3D22891C5")
     
 private StreamCorruptedException corruptStream(byte tc) throws StreamCorruptedException {
@@ -593,6 +619,8 @@ private StreamCorruptedException corruptStream(byte tc) throws StreamCorruptedEx
      *             If the class corresponding to the object being read could not
      *             be found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.376 -0500", hash_original_method = "EBF146E3B3C2508DCA0D721582A75609", hash_generated_method = "554AFFE0CAC74237F0EE73767931CBF9")
     
 private Object readContent(byte tc) throws ClassNotFoundException,
@@ -644,6 +672,8 @@ private Object readContent(byte tc) throws ClassNotFoundException,
      *             If the class corresponding to the object being read could not
      *             be found.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.379 -0500", hash_original_method = "C964F7473D297E2F3A28B1C55493EBEA", hash_generated_method = "134B70CC24B5AD5423D8F1D4B64AF289")
     
 private Object readNonPrimitiveContent(boolean unshared)
@@ -710,6 +740,8 @@ private Object readNonPrimitiveContent(boolean unshared)
      * @throws InvalidObjectException
      *             If the cyclic reference is not valid.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.381 -0500", hash_original_method = "821B45232EA8F88246A504603C8240EF", hash_generated_method = "A1A38C40A4D574580ED6E4965907783D")
     
 private Object readCyclicReference() throws InvalidObjectException, IOException {
@@ -759,6 +791,8 @@ public double readDouble() throws IOException {
      * @throws WriteAbortedException
      *             If another exception was caused when dumping this exception
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.387 -0500", hash_original_method = "BA11A34B6A0BFC2FA522B0508C6E225C", hash_generated_method = "044317D68DA0BD38805F29B4FD1F0A5F")
     
 private Exception readException() throws WriteAbortedException,
@@ -794,6 +828,8 @@ private Exception readException() throws WriteAbortedException,
      *
      * @see #readObject()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.390 -0500", hash_original_method = "FA3DFED5FC7EE2104F3E818CA56DCFE9", hash_generated_method = "E4BD98D5378DA6DDDEC60DE40A7E4B61")
     
 private void readFieldDescriptors(ObjectStreamClass cDesc)
@@ -882,6 +918,8 @@ public GetField readFields() throws IOException, ClassNotFoundException, NotActi
      * @see #readFields
      * @see #readObject()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.398 -0500", hash_original_method = "8289C081F35F5F257A7DE20983B5F39B", hash_generated_method = "5D42170528FE8B54CC3E422150BFF631")
     
 private void readFieldValues(EmulatedFieldsForLoading emulatedFields)
@@ -947,6 +985,8 @@ private void readFieldValues(EmulatedFieldsForLoading emulatedFields)
      * @see #readFields
      * @see #readObject()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.402 -0500", hash_original_method = "3FF4AC35875B69602347D8B467CAEB0A", hash_generated_method = "B2EA26F1CE3B08981EDE8CC25190A73C")
     
 private void readFieldValues(Object obj, ObjectStreamClass classDesc) throws OptionalDataException, ClassNotFoundException, IOException {
@@ -1114,6 +1154,8 @@ public void readFully(byte[] dst, int offset, int byteCount) throws IOException 
      * @see #defaultReadObject
      * @see #readObject()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.412 -0500", hash_original_method = "D8B45244A94A62B53D8A8E2E7C864422", hash_generated_method = "8879539C1678805FB3904F91EAB1F7B7")
     
 private void readHierarchy(Object object, ObjectStreamClass classDesc)
@@ -1150,6 +1192,8 @@ private void readHierarchy(Object object, ObjectStreamClass classDesc)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.418 -0500", hash_original_method = "F09DF984FD463C1BCDA606260FD08FFE", hash_generated_method = "621E744F459D0340FE873B6CB874F4C5")
     
 private List<Class<?>> cacheSuperclassesFor(Class<?> c) {
@@ -1187,6 +1231,8 @@ private int findStreamSuperclass(Class<?> cl, List<ObjectStreamClass> classList,
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.423 -0500", hash_original_method = "868BCCA0967481794CFA1D8D3E56D3E6", hash_generated_method = "F375DB5BE6E12A395774B250704BA193")
     
 private void readObjectNoData(Object object, Class<?> cl, ObjectStreamClass classDesc)
@@ -1213,6 +1259,8 @@ private void readObjectNoData(Object object, Class<?> cl, ObjectStreamClass clas
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.426 -0500", hash_original_method = "6119E962BBCC069017D862716C24BEC0", hash_generated_method = "CBBEA02263266C9A5DEAFC076D109545")
     
 private void readObjectForClass(Object object, ObjectStreamClass classDesc)
@@ -1275,6 +1323,8 @@ private void readObjectForClass(Object object, ObjectStreamClass classDesc)
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.428 -0500", hash_original_method = "D31E8D2825D4043295F3D0C685B93717", hash_generated_method = "E9843F0E9026BCD63DD0DCCFFB3E80A4")
     
 public int readInt() throws IOException {
@@ -1328,6 +1378,8 @@ public long readLong() throws IOException {
      * @throws OptionalDataException
      *             If optional data could not be found when reading the array.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.438 -0500", hash_original_method = "6C628531F4475FFAEEB816E877548000", hash_generated_method = "C20AEE76421C64D7CA2F6D2B96885C6A")
     
 private Object readNewArray(boolean unshared) throws OptionalDataException,
@@ -1412,6 +1464,8 @@ private Object readNewArray(boolean unshared) throws OptionalDataException,
         return result;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.500 -0400", hash_original_method = "5D3FFF38041945ED84D75A0CC474793D", hash_generated_method = "B0166E10435415AFDFFF1FF2042C9E72")
     private Class<?> readNewClass(boolean unshared) throws ClassNotFoundException, IOException {
         addTaint(unshared);
@@ -1446,6 +1500,8 @@ Class<?> var0C65C20E72071ADD9DC54213330F27FA_1943451547 =         localClass;
      * read class type for Enum, note there's difference between enum and normal
      * classes
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.443 -0500", hash_original_method = "D16FAEE9BB99888884BA2510B9D0161D", hash_generated_method = "CEE6890D84ABE2946EDB8766727D4D10")
     
 private ObjectStreamClass readEnumDesc() throws IOException,
@@ -1463,6 +1519,8 @@ private ObjectStreamClass readEnumDesc() throws IOException,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.446 -0500", hash_original_method = "58EE21B582EE01373F973D50B42B8A60", hash_generated_method = "7C2D5971BE72A4A5BF0C8F0ED397DF7B")
     
 private ObjectStreamClass readEnumDescInternal() throws IOException, ClassNotFoundException {
@@ -1496,6 +1554,8 @@ private ObjectStreamClass readEnumDescInternal() throws IOException, ClassNotFou
         return classDesc;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.449 -0500", hash_original_method = "0BB1D7ADA0D4FC987B96FE9D538B84F1", hash_generated_method = "3C74295FAF19CB0FD0A294472BF06C2A")
     
 @SuppressWarnings("unchecked")// For the Enum.valueOf call
@@ -1543,6 +1603,8 @@ private ObjectStreamClass readEnumDescInternal() throws IOException, ClassNotFou
      * @throws ClassNotFoundException
      *             If a class for one of the objects could not be found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.452 -0500", hash_original_method = "85A17F1C0F9F03F0EE48936822125550", hash_generated_method = "D1BC7B645B2B656BB17B4444AEC2F058")
     
 private ObjectStreamClass readNewClassDesc(boolean unshared)
@@ -1598,6 +1660,8 @@ private ObjectStreamClass readNewClassDesc(boolean unshared)
      * @throws ClassNotFoundException
      *             If a class for one of the objects could not be found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.454 -0500", hash_original_method = "9592596F093477979EA31311F339CD7D", hash_generated_method = "7D4B4EA9EB9808F6B8B6169727E89F38")
     
 private Class<?> readNewProxyClassDesc() throws ClassNotFoundException,
@@ -1682,6 +1746,8 @@ protected Class<?> resolveProxyClass(String[] interfaceNames)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.462 -0500", hash_original_method = "11D3D467DA55FCE7098C1D9AB901525D", hash_generated_method = "C542D506D4CA9C4FADA8DD2EBB335C0E")
     
 private int readNewHandle() throws IOException {
@@ -1710,6 +1776,8 @@ private int readNewHandle() throws IOException {
      * @throws ClassNotFoundException
      *             If a class for one of the objects could not be found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.466 -0500", hash_original_method = "B0A36455F033DD06E1C6357D1966CB2A", hash_generated_method = "6E87096403FFD0C264DB56D2CDB9E847")
     
 private Object readNewObject(boolean unshared)
@@ -1810,6 +1878,8 @@ private Object readNewObject(boolean unshared)
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.468 -0500", hash_original_method = "C5243F456C3574095BC1BB7FC2411373", hash_generated_method = "58C65402BCE95BB61FE726A25D8ADE29")
     
 private InvalidClassException missingClassDescriptor() throws InvalidClassException {
@@ -1826,6 +1896,8 @@ private InvalidClassException missingClassDescriptor() throws InvalidClassExcept
      * @throws IOException
      *             If an IO exception happened when reading the String.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.471 -0500", hash_original_method = "CF984AE9FCCB80A5CA5459E50D42D99D", hash_generated_method = "B0125642BC3A5B08BA4F04D4F98FC258")
     
 private Object readNewString(boolean unshared) throws IOException {
@@ -1849,6 +1921,8 @@ private Object readNewString(boolean unshared) throws IOException {
      * @throws IOException
      *             If an IO exception happened when reading the String.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.474 -0500", hash_original_method = "E3603577D9590FDF3626C23DB61D460D", hash_generated_method = "4122514E18275DB27149C98C47E4C47C")
     
 private Object readNewLongString(boolean unshared) throws IOException {
@@ -1901,6 +1975,8 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
         return readObject(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.482 -0500", hash_original_method = "E655B580AAC2F65ED2F044289942F1C0", hash_generated_method = "2B8CE588E975D6E5F56A39CA136191B0")
     
 private Object readObject(boolean unshared) throws OptionalDataException,
@@ -2079,6 +2155,8 @@ public String readUTF() throws IOException {
      * @throws InvalidObjectException
      *             If there is no previously-read object with this handle
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.506 -0500", hash_original_method = "10F65D1907C5AA72A1571FB08139A1C8", hash_generated_method = "D1662A9B0C44C85497E57C5698D4F000")
     
 private Object registeredObjectRead(int handle) throws InvalidObjectException {
@@ -2092,6 +2170,8 @@ private Object registeredObjectRead(int handle) throws InvalidObjectException {
     /**
      * Associates a read object with the its serialization handle.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.510 -0500", hash_original_method = "9C8641A932863D3A6F3FA22233749F54", hash_generated_method = "EFCAC5EF43DF7C55822558422F259D07")
     
 private void registerObjectRead(Object obj, int handle, boolean unshared) throws IOException {
@@ -2180,6 +2260,8 @@ public synchronized void registerValidation(ObjectInputValidation object,
     /**
      * Reset the collection of objects already loaded by the receiver.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.516 -0500", hash_original_method = "7A01BA94C22B82138AACA44C7BC92DD9", hash_generated_method = "9637698182A1DE74F963CA0285A84D9E")
     
 private void resetSeenObjects() {
@@ -2193,6 +2275,8 @@ private void resetSeenObjects() {
      * receiver is reset, and internal structures are also reset so that the
      * receiver knows it is in a fresh clean state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.519 -0500", hash_original_method = "356E50ACB0709EF4643021948AB5F291", hash_generated_method = "499511E6C59EC0BAEB750E8738BE3DE7")
     
 private void resetState() {
@@ -2210,6 +2294,8 @@ private void resetState() {
 
         int priority;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.669 -0400", hash_original_method = "9B1F2C1B15D11C4CFF789483FB2B6658", hash_generated_method = "9B1F2C1B15D11C4CFF789483FB2B6658")
         public InputValidationDesc ()
         {
@@ -2230,6 +2316,8 @@ private void resetState() {
          *
          * @return the descriptor class for a serialized field.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.291 -0500", hash_original_method = "B7E1778F8593BF58FDE39FF2FF30A09C", hash_generated_method = "6C622DBCAAB88E7F6ECA3A0771E8E32D")
         
 public abstract ObjectStreamClass getObjectStreamClass();
@@ -2248,6 +2336,8 @@ public abstract ObjectStreamClass getObjectStreamClass();
          *             if an error occurs while reading from the source input
          *             stream.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.294 -0500", hash_original_method = "F1E76C74D4B297359C4FDAEA71138684", hash_generated_method = "DC74AF0596963204EE5FA353DFFC8C95")
         
 public abstract boolean defaulted(String name) throws IOException,
@@ -2270,6 +2360,8 @@ public abstract boolean defaulted(String name) throws IOException,
          *             if the type of the field identified by {@code name} is
          *             not {@code boolean}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.297 -0500", hash_original_method = "D72D90B65472FA8825EE585FD8D97385", hash_generated_method = "8D1B8C1CEE2385A4C9F3DD74ED9FF5EF")
         
 public abstract boolean get(String name, boolean defaultValue)
@@ -2292,6 +2384,8 @@ public abstract boolean get(String name, boolean defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code char}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.299 -0500", hash_original_method = "E155202224603EF6206E6AF14A500B0B", hash_generated_method = "F1AFB87579CC11DFF5E04C4D1FF41A92")
         
 public abstract char get(String name, char defaultValue)
@@ -2314,6 +2408,8 @@ public abstract char get(String name, char defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code byte}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.302 -0500", hash_original_method = "2051EF86255EBDDE5706A869BD42D762", hash_generated_method = "65BCD3067B772175ADE9D10245055D05")
         
 public abstract byte get(String name, byte defaultValue)
@@ -2336,6 +2432,8 @@ public abstract byte get(String name, byte defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code short}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.305 -0500", hash_original_method = "471D592376F4306F4FECBE347E932817", hash_generated_method = "6ABFE5AC80E8872EC2915B1DED475AFF")
         
 public abstract short get(String name, short defaultValue)
@@ -2358,6 +2456,8 @@ public abstract short get(String name, short defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code int}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.307 -0500", hash_original_method = "73A8BECD3164B161A30ECE6C763AD746", hash_generated_method = "A0F02DE73A9246EA04F0AF9AEB0658DE")
         
 public abstract int get(String name, int defaultValue)
@@ -2380,6 +2480,8 @@ public abstract int get(String name, int defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code long}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.310 -0500", hash_original_method = "CCA28848BE07DA6EA929BB53A6F26CF9", hash_generated_method = "B3D452B4A97F3A8102A370E6D5B081F9")
         
 public abstract long get(String name, long defaultValue)
@@ -2402,6 +2504,8 @@ public abstract long get(String name, long defaultValue)
          *             if the type of the field identified by {@code float} is
          *             not {@code char}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.313 -0500", hash_original_method = "E5BBF24B38F141AC18B8EFC4B2AFEA5E", hash_generated_method = "E5CCDEA7EA2358B61514AEC69B011F92")
         
 public abstract float get(String name, float defaultValue)
@@ -2424,6 +2528,8 @@ public abstract float get(String name, float defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code double}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.315 -0500", hash_original_method = "19008D3989B295012C0B95A3F71857C9", hash_generated_method = "114BDC5AA83AC8DCF94B47B065A57844")
         
 public abstract double get(String name, double defaultValue)
@@ -2446,6 +2552,8 @@ public abstract double get(String name, double defaultValue)
          *             if the type of the field identified by {@code name} is
          *             not {@code Object}.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.318 -0500", hash_original_method = "20F7767B6DCA4E25FBC89E9C4913BEF0", hash_generated_method = "689EF82E856189AF74800B035E5625F7")
         
 public abstract Object get(String name, Object defaultValue)
@@ -2570,6 +2678,8 @@ public int skipBytes(int length) throws IOException {
      * @throws InvalidClassException
      *             If the SUID of the stream class does not match the VM class
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.529 -0500", hash_original_method = "F18AA842F3AF8655FE4F963E8A31A757", hash_generated_method = "C68E7EDA63F6C38BAF24513897F68DD7")
     
 private void verifyAndInit(ObjectStreamClass loadedStreamClass)

@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.protocol.HTTP;
 
-
-
-
-
-
 public final class CharArrayBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.476 -0500", hash_original_field = "AF37951EAE101F357ACAF48FB7E85D88", hash_generated_field = "C5FBB54C5ACD68A27601FA9626F9BD71")
-
     
     private char[] buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.478 -0500", hash_original_field = "EF721EE4D9006031C7456130341457B7", hash_generated_field = "6B317AC04635B3FCED4BC37586F98E37")
@@ -30,6 +24,8 @@ public CharArrayBuffer(int capacity) {
         this.buffer = new char[capacity]; 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.483 -0500", hash_original_method = "2F17603B23741271B90038A790622089", hash_generated_method = "ECF6D38E152CDFAF230D9110611FDFBC")
     
 private void expand(int newlen) {
@@ -283,7 +279,6 @@ public String substringTrimmed(int beginIndex, int endIndex) {
 public String toString() {
         return new String(this.buffer, 0, this.len);
     }
-
     
 }
 

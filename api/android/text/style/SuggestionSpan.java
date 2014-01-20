@@ -19,6 +19,8 @@ import android.text.TextUtils;
 
 public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.898 -0500", hash_original_method = "19A242C347BA804206F8CA950CA33C4A", hash_generated_method = "0C8639614D1C222AC84A8F5F0321AC10")
     
 private static int hashCodeInternal(String[] suggestions, String locale,
@@ -107,6 +109,8 @@ private static int hashCodeInternal(String[] suggestions, String locale,
      * @param suggestions Suggestions for the string under the span
      * @param flags Additional flags indicating how this span is handled in TextView
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.857 -0500", hash_original_method = "1AA1B5C63F654C549AF10ADB766A64DF", hash_generated_method = "74A33A9CF13FF82D333456B68C61E897")
     
 public SuggestionSpan(Context context, String[] suggestions, int flags) {
@@ -118,6 +122,8 @@ public SuggestionSpan(Context context, String[] suggestions, int flags) {
      * @param suggestions Suggestions for the string under the span
      * @param flags Additional flags indicating how this span is handled in TextView
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.860 -0500", hash_original_method = "88CDF93F546795CBA0066C8B71DB0B2A", hash_generated_method = "D2658D0A2C8B8C4C4DCAADA498C094AF")
     
 public SuggestionSpan(Locale locale, String[] suggestions, int flags) {
@@ -133,6 +139,8 @@ public SuggestionSpan(Locale locale, String[] suggestions, int flags) {
      * @param notificationTargetClass if not null, this class will get notified when the user
      * selects one of the suggestions.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.864 -0500", hash_original_method = "A25B331A60DB2E24929C6ECDB825D631", hash_generated_method = "C96E639A52CBBDFB6EC5C4C69B4049AC")
     
 public SuggestionSpan(Context context, Locale locale, String[] suggestions, int flags,
@@ -156,6 +164,8 @@ public SuggestionSpan(Context context, Locale locale, String[] suggestions, int 
         initStyle(context);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.870 -0500", hash_original_method = "AC28AFCA6CE2EAE56AAAC33C5F3867AA", hash_generated_method = "817E7E3AC2DF398EC373F171C80E3E05")
     
 public SuggestionSpan(Parcel src) {
@@ -172,6 +182,8 @@ public SuggestionSpan(Parcel src) {
         mAutoCorrectionUnderlineThickness = src.readFloat();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.867 -0500", hash_original_method = "BA5838B3AC67A7A883D23FDD23135D12", hash_generated_method = "94CCEC7D8AF36D768886794C882E01D2")
     
 private void initStyle(Context context) {
@@ -213,6 +225,8 @@ private void initStyle(Context context) {
     /**
      * @return an array of suggestion texts for this span
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.872 -0500", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "013629CE7E363B170006B500CA4D5D7A")
     
@@ -223,6 +237,8 @@ public String[] getSuggestions() {
     /**
      * @return the locale of the suggestions
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.875 -0500", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "8A75BE64309CC11E6E9FB3F5754CC8E4")
     
@@ -239,6 +255,8 @@ public String getLocale() {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.877 -0500", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "B9AB09A78E3DAC7EFDC7AA4B2768F922")
     
@@ -246,6 +264,8 @@ public String getNotificationTargetClassName() {
         return mNotificationTargetClassName;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.879 -0500", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "A2E92201CC64F45D5B306C5445EC4739")
     
@@ -253,12 +273,16 @@ public int getFlags() {
         return mFlags;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.882 -0500", hash_original_method = "CA4BF4BE3BC1B3094957FBC465D7A081", hash_generated_method = "97A4B5D77B14653C46CC07DE01BD3A06")
     
 public void setFlags(int flags) {
         mFlags = flags;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.884 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
     
 @Override
@@ -266,6 +290,8 @@ public void setFlags(int flags) {
         return 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.887 -0500", hash_original_method = "B88B3E1963FF277C84F7B31C7327EB57", hash_generated_method = "32BAEB93F19464E02D67D2B8744873BF")
     
 @Override
@@ -283,6 +309,8 @@ public void setFlags(int flags) {
         dest.writeFloat(mAutoCorrectionUnderlineThickness);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.890 -0500", hash_original_method = "DBAA6553895459183AA1E1C35310F256", hash_generated_method = "F8E6266376A4F6A7AF437EF4875BA636")
     
@@ -291,6 +319,8 @@ public void setFlags(int flags) {
         return TextUtils.SUGGESTION_SPAN;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.893 -0500", hash_original_method = "DEEF8A91A4946D9B043EDA2DAC8F9CA5", hash_generated_method = "48E06225B31E8FF62F1F24D1789138A2")
     
 @Override
@@ -301,6 +331,8 @@ public void setFlags(int flags) {
         return false;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.895 -0500", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "B0837B818531E3C208A8A4F995ED9F70")
     
 @Override
@@ -308,6 +340,8 @@ public void setFlags(int flags) {
         return mHashCode;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.910 -0500", hash_original_method = "FC1F2F33C12EF11918B48BC18977D662", hash_generated_method = "E790414A86A20EEB60D3E6F6C0131EBB")
     
 @Override
@@ -333,6 +367,8 @@ public void setFlags(int flags) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.913 -0500", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "05D7DDAE757CC59D61ACFA08D764FD8C")
     

@@ -900,6 +900,8 @@ public static final void dumpReferenceTables() {
      * the field is of the primitive "boolean" type.  Also handles all of
      * the java.lang.Number subclasses.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.030 -0500", hash_original_method = "C4FA78418D555E768FF5DBC8DE58360D", hash_generated_method = "499C7262D02543E41FA0371D6EC9668C")
     
 private static boolean fieldTypeMatches(Field field, Class<?> cl) {
@@ -1178,6 +1180,8 @@ public MemoryInfo[] newArray(int size) {
 public MemoryInfo() {
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.803 -0500", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "8AE129BE4DE87B957565DCB16A2274BA")
         
 private MemoryInfo(Parcel source) {
@@ -1418,6 +1422,8 @@ public int globalMethodInvocations() {
 
     private static  TypedProperties debugProperties;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.725 -0500", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "EDEB9D622E5FBF902147BB9B280ED1ED")
     
 private Debug() {}

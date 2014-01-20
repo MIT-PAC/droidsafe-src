@@ -9,11 +9,6 @@ import android.util.SparseBooleanArray;
 import com.android.internal.telephony.SmsAddress;
 import com.android.internal.util.HexDump;
 
-
-
-
-
-
 public class CdmaSmsAddress extends SmsAddress {
 
     /*
@@ -22,6 +17,8 @@ public class CdmaSmsAddress extends SmsAddress {
      * processing code in one place.
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.774 -0500", hash_original_method = "94CDCBFA443680005A46D43F8D4600C3", hash_generated_method = "9753CE4C72E0F575AE77034E87DF86E4")
     
 private static byte[] parseToDtmf(String address) {
@@ -46,6 +43,8 @@ private static byte[] parseToDtmf(String address) {
      * plus signs.  If the input string contains non-numeric
      * non-punctuation characters, return null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.784 -0500", hash_original_method = "8E90C4CB34BFA3C349704DFD8C6BECF1", hash_generated_method = "A642FAE04AD387A5323BD6E74B8D7924")
     
 private static String filterNumericSugar(String address) {
@@ -65,6 +64,8 @@ private static String filterNumericSugar(String address) {
      * Given a string, return the string without whitespace,
      * including CR/LF.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.787 -0500", hash_original_method = "93FB269A6EC54BFB27C79F36D7092575", hash_generated_method = "527BA607A8BF91EBA1712AE8BE5BC746")
     
 private static String filterWhitespace(String address) {
@@ -171,27 +172,22 @@ public static CdmaSmsAddress parse(String address) {
     static public final int NUMBERING_PLAN_ISDN_TELEPHONY    = 0x1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.777 -0500", hash_original_field = "A64F5A798EB6CA8C17C15747160E252A", hash_generated_field = "00E884E68BEB39F563669D9FAF5BFCF3")
 
-
     private static final char[] numericCharsDialable = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.779 -0500", hash_original_field = "B05F9DA368C10DEF9F752276FDB4EEC5", hash_generated_field = "EC628CFAB5EFDD0C4241E5FFF0B67C86")
-
 
     private static final char[] numericCharsSugar = {
         '(', ')', ' ', '-', '+', '.', '/', '\\'
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.782 -0500", hash_original_field = "D5086EE4F9CC96792F605F498053CE65", hash_generated_field = "2A475C0FC5FE4DAC50F34DDADF01035E")
 
-
     private static final SparseBooleanArray numericCharDialableMap = new SparseBooleanArray (
             numericCharsDialable.length + numericCharsSugar.length);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.722 -0500", hash_original_field = "95A92FD03ED6030688D1428AC7469695", hash_generated_field = "84D708851062F6247553AB01A32917F4")
 
-
     public int digitMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.729 -0500", hash_original_field = "962B558E45E8225B77AF1A46E6FCF9DB", hash_generated_field = "684B3B4D05E25597D49E78621D640BA3")
-
 
     public int numberMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.758 -0500", hash_original_field = "BD35BB3473BF9134209D1D8D0E6D72E2", hash_generated_field = "380C724376E6D50354D5A2BE6AD71C15")

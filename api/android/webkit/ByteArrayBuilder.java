@@ -129,6 +129,8 @@ public synchronized void clear() {
     }
 
     // Must be called with lock held on sPool.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.044 -0500", hash_original_method = "3A2BA3FFD8F41065BE9E5F1BD3D65412", hash_generated_method = "7CF91C143EFCEEA7FC5F4DA321CA6FDD")
     
 private void processPoolLocked() {

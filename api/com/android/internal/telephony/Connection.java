@@ -41,6 +41,8 @@ public abstract class Connection {
      * @return address or null if unavailable
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.348 -0500", hash_original_method = "463155DAD6692D5B7B592B5147CDA452", hash_generated_method = "0D0803E9D74A2F65E4AC3CC4F90BBC35")
     
 public abstract String getAddress();
@@ -82,6 +84,8 @@ public int getCnapNamePresentation() {
     /**
      * @return Call that owns this Connection, or null if none
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.357 -0500", hash_original_method = "BE586F528B18F18AB0603C213246DEEC", hash_generated_method = "B3425FECC55DFD92957BD9906FEF896A")
     
 public abstract Call getCall();
@@ -92,6 +96,8 @@ public abstract Call getCall();
      * Effectively, when an incoming call starts ringing or an
      * outgoing call starts dialing
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.360 -0500", hash_original_method = "0094C7B2C7DA3827EC25CEE108F9D719", hash_generated_method = "13CD0BB425FCADF5D54706ACEE2745CA")
     
 public abstract long getCreateTime();
@@ -102,6 +108,8 @@ public abstract long getCreateTime();
      * For incoming calls: Begins at (INCOMING|WAITING) -> ACTIVE transition.
      * Returns 0 before then.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.362 -0500", hash_original_method = "EA713A81F3013421921AFF50C60B2D72", hash_generated_method = "F0FBC58DA65E1535E8664E9B0F04B2E6")
     
 public abstract long getConnectTime();
@@ -111,6 +119,8 @@ public abstract long getConnectTime();
      * The time when this Connection makes a transition into ENDED or FAIL.
      * Returns 0 before then.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.364 -0500", hash_original_method = "34769166A3E550CB65044289AF6A6CF1", hash_generated_method = "BE5BA068702424419E84A7A402C7AEAB")
     
 public abstract long getDisconnectTime();
@@ -121,6 +131,8 @@ public abstract long getDisconnectTime();
      * If the call is still connected, then returns the elapsed
      * time since connect.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.367 -0500", hash_original_method = "8D2EDC3C5A540E34E794CA8886CDDCBF", hash_generated_method = "261788DD668D4BBDEC56DA412B5C7473")
     
 public abstract long getDurationMillis();
@@ -131,6 +143,8 @@ public abstract long getDurationMillis();
      * If this connection is in any other state, return 0.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.369 -0500", hash_original_method = "5175C91AAA3357B8DB1CAA498B0363B1", hash_generated_method = "E0B2E5F3E6834F9C20882DD8310709CC")
     
 public abstract long getHoldDurationMillis();
@@ -147,6 +161,8 @@ public abstract DisconnectCause getDisconnectCause();
      * ("MT" or mobile terminated; another party called this terminal)
      * or false if this call originated here (MO or mobile originated).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.374 -0500", hash_original_method = "3F0CEE47B9175DD512A0C55C0A192A04", hash_generated_method = "9964E5021306AC14E7DD512FB6D64523")
     
 public abstract boolean isIncoming();
@@ -219,6 +235,8 @@ public void setUserData(Object userdata) {
     /**
      * Hangup individual Connection
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.388 -0500", hash_original_method = "75701B1B375E0F543AC12EA12A4A97FB", hash_generated_method = "A317DEC2810CF43CE258BB1AF0C61528")
     
 public abstract void hangup() throws CallStateException;
@@ -228,6 +246,8 @@ public abstract void hangup() throws CallStateException;
      * (eg if it is currently part of a Conference call
      * TODO: Throw exception? Does GSM require error display on failure here?
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.391 -0500", hash_original_method = "4C875AF139C81EE675F9DA949951B018", hash_generated_method = "A9EB43436898418FCB356770A704BE70")
     
 public abstract void separate() throws CallStateException;
@@ -246,6 +266,8 @@ public abstract PostDialState getPostDialState();
      * Returns the portion of the post dial string that has not
      * yet been dialed, or "" if none
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.400 -0500", hash_original_method = "587CE99BB7FEBC003E2A7D380ABF5F54", hash_generated_method = "4FD52CCF600F54BA37A8D7F93EFB0549")
     
 public abstract String getRemainingPostDialString();
@@ -254,6 +276,8 @@ public abstract String getRemainingPostDialString();
      * See Phone.setOnPostDialWaitCharacter()
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.402 -0500", hash_original_method = "31AF75546DFC3949CB261375B85CB8DE", hash_generated_method = "100208BAA07A3235842CAE38ADA66493")
     
 public abstract void proceedAfterWaitChar();
@@ -311,12 +335,16 @@ public abstract void proceedAfterWaitChar();
     /**
      * See Phone.setOnPostDialWildCharacter()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.405 -0500", hash_original_method = "960DE7BF3AB96E89A93E092B3069D99A", hash_generated_method = "B4EB2CC4F2A7AA385AAD7E1FC09B5138")
     
 public abstract void proceedAfterWildChar(String str);
     /**
      * Cancel any post
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.407 -0500", hash_original_method = "746E048D2666CCD55B03E27E9F1267A5", hash_generated_method = "8F2D4B9D9E8DD71EA237F93933731C5C")
     
 public abstract void cancelPostDial();
@@ -325,6 +353,8 @@ public abstract void cancelPostDial();
      * Returns the caller id presentation type for incoming and waiting calls
      * @return one of PRESENTATION_*
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.409 -0500", hash_original_method = "D08565902D5E7531CD6EE031895AE87B", hash_generated_method = "D31B1F8B0E2C3993CECD04CB0848FBDA")
     
 public abstract int getNumberPresentation();
@@ -334,6 +364,8 @@ public abstract int getNumberPresentation();
      * incoming and waiting calls
      * @return UUSInfo containing the UUS userdata.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.411 -0500", hash_original_method = "043AFAE41B2359435CE63B006FA27061", hash_generated_method = "922A9F25FF1ABF048AABC48BB690FA52")
     
 public abstract UUSInfo getUUSInfo();

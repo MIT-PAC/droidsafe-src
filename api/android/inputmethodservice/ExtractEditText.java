@@ -36,6 +36,8 @@ public ExtractEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.840 -0500", hash_original_method = "E6DBB41915E723C9F2EECFAC48030375", hash_generated_method = "E6DBB41915E723C9F2EECFAC48030375")
     
 void setIME(InputMethodService ime) {

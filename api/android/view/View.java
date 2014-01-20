@@ -54,6 +54,8 @@ import com.android.internal.util.Predicate;
 
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback, AccessibilityEventSource {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nonzero(float value){
 		// Original method
 		/*
@@ -75,6 +77,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String printFlags(int flags){
 		// Original method
 		/*
@@ -107,6 +111,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return "";
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String printPrivateFlags(int privateFlags){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1395,7 +1401,9 @@ public View(Context context, AttributeSet attrs) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-	View(){
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    View(){
 		this(new ContextImpl());
 		/*
 		mResources = null;
@@ -1566,6 +1574,8 @@ public View(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void initScrollCache(){
 		// Original method
 		/*
@@ -1908,6 +1918,8 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void handleFocusGainInternal(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/*
@@ -1988,6 +2000,8 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void clearFocusForRemoval(){
 		// Original method
 		/*
@@ -2002,6 +2016,8 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void unFocus(){
 		// Original method
 		/*
@@ -2066,6 +2082,8 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     void sendAccessibilityEventInternal(int eventType){
 		// Original method
@@ -2096,6 +2114,8 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void sendAccessibilityEventUncheckedInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -2129,6 +2149,8 @@ ListenerInfo getListenerInfo() {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -2161,6 +2183,8 @@ ListenerInfo getListenerInfo() {
      *
      * Note: Called from the default {@link AccessibilityDelegate}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.845 -0500", hash_original_method = "CF40AA9C4C55BD5A22FC0E76716C7875", hash_generated_method = "CF40AA9C4C55BD5A22FC0E76716C7875")
     
 void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
@@ -2183,6 +2207,8 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void onInitializeAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -2236,6 +2262,8 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2325,6 +2353,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void resetPressedState(){
 		// Original method
 		/*
@@ -2641,8 +2671,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=VISIBLE,to="VISIBLE"),@ViewDebug.IntToString(from=INVISIBLE,to="INVISIBLE"),@ViewDebug.IntToString(from=GONE,to="GONE")}) 
 	public int getVisibility(){
@@ -2655,8 +2685,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return 0;
 	}
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setVisibility(int visibility){
@@ -3120,6 +3150,8 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
         return false;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     View findUserSetNextFocus(View root, int direction){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3292,6 +3324,8 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     ViewRootImpl getViewRootImpl(){
 		// Original method
@@ -3322,6 +3356,8 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean hasAncestorThatBlocksDescendantFocus(){
 		// Original method
 		/*
@@ -3513,6 +3549,8 @@ public void onFinishTemporaryDetach() {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean dispatchGenericMotionEventInternal(MotionEvent event){
 		// Original method
 		/*
@@ -3805,6 +3843,8 @@ protected void onDisplayHint(int hint) {
 protected void onConfigurationChanged(Configuration newConfig) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void dispatchCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -3815,6 +3855,8 @@ protected void onConfigurationChanged(Configuration newConfig) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void performCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -3834,6 +3876,8 @@ protected void onConfigurationChanged(Configuration newConfig) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void needGlobalAttributesUpdate(boolean force){
 		// Original method
 		/*
@@ -3873,8 +3917,8 @@ protected void onConfigurationChanged(Configuration newConfig) {
      *
      * @return The view's Context.
      */
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.137 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "2565E6BAF7209C441ED7A2A85B82D51F")
     
@@ -4198,6 +4242,8 @@ public boolean onGenericMotionEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean isHoverable(){
 		// Original method
 		/*
@@ -4295,6 +4341,8 @@ public void onHoverChanged(boolean hovered) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeLongPressCallback(){
 		// Original method
 		/*
@@ -4307,6 +4355,8 @@ public void onHoverChanged(boolean hovered) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removePerformClickCallback(){
 		// Original method
 		/*
@@ -4319,6 +4369,8 @@ public void onHoverChanged(boolean hovered) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeUnsetPressCallback(){
 		// Original method
 		/*
@@ -4332,6 +4384,8 @@ public void onHoverChanged(boolean hovered) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeTapCallback(){
 		// Original method
 		/*
@@ -4358,6 +4412,8 @@ public void onHoverChanged(boolean hovered) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeSendViewScrolledAccessibilityEventCallback(){
 		// Original method
 		/*
@@ -4393,6 +4449,8 @@ public TouchDelegate getTouchDelegate() {
         return mTouchDelegate;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void setFlags(int flags, int mask){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4569,8 +4627,8 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredWidth(){
 		return getTaintInt();
@@ -4647,6 +4705,8 @@ protected void dispatchDraw(Canvas canvas) {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final boolean hasIdentityMatrix(){
 		// Original method
 		/*
@@ -4661,6 +4721,8 @@ protected void dispatchDraw(Canvas canvas) {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void ensureTransformationInfo(){
 		// Original method
 		/*
@@ -4673,12 +4735,16 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void updateMatrix(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final Matrix getInverseMatrix(){
 		// Original method
@@ -5000,6 +5066,8 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean setAlphaNoInvalidation(float alpha){
 		// Original method
 		/*
@@ -5074,8 +5142,8 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getLeft(){
@@ -5363,6 +5431,8 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final boolean pointInView(float localX, float localY){
 		// Original method
 		/*
@@ -5374,6 +5444,8 @@ protected void dispatchDraw(Canvas canvas) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean pointInView(float localX, float localY, float slop){
 		// Original method
 		/*
@@ -5547,6 +5619,8 @@ protected void dispatchDraw(Canvas canvas) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean initialAwakenScrollBars(){
 		// Original method
 		/*
@@ -5576,6 +5650,8 @@ protected void dispatchDraw(Canvas canvas) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean skipInvalidate(){
 		// Original method
 		/*
@@ -5618,7 +5694,9 @@ public void invalidate() {
         invalidate(true);
     }
     
-	void invalidate(boolean invalidateCache){
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    void invalidate(boolean invalidateCache){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
@@ -5785,6 +5863,8 @@ public void invalidate() {
         @ViewDebug.ExportedProperty
         float mAlpha = 1f;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.648 -0400", hash_original_method = "047CC1B263AEE84E056E34E366D57D72", hash_generated_method = "047CC1B263AEE84E056E34E366D57D72")
         public TransformationInfo ()
         {
@@ -5831,6 +5911,8 @@ public void invalidate() {
 
         private OnSystemUiVisibilityChangeListener mOnSystemUiVisibilityChangeListener;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.649 -0400", hash_original_method = "30D31F497118E5B2F2D60734B7298038", hash_generated_method = "30D31F497118E5B2F2D60734B7298038")
         public ListenerInfo ()
         {
@@ -5917,6 +5999,8 @@ public DragShadowBuilder() {
     
     public static class MeasureSpec {
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         public static int makeMeasureSpec(int size, int mode){
 			// Original method
 			/*
@@ -5938,6 +6022,8 @@ public DragShadowBuilder() {
 			return 0;
 		}
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public static int getSize(int measureSpec){
 			// Original method
@@ -6115,8 +6201,8 @@ public BaseSavedState[] newArray(int size) {
          *
          * @param source
          */
-        @DSComment("Data serialization/deserialization")
-        @DSSpec(DSCat.SERIALIZATION)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.189 -0500", hash_original_method = "0710B1BECA4AE2A64DE9C58BFD4A1161", hash_generated_method = "A170B20D980951FCD7B625137DF8A752")
         
 public BaseSavedState(Parcel source) {
@@ -6128,8 +6214,8 @@ public BaseSavedState(Parcel source) {
          *
          * @param superState The state of the superclass of this view
          */
-        @DSComment("Data serialization/deserialization")
-        @DSSpec(DSCat.SERIALIZATION)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.192 -0500", hash_original_method = "C61013DFD638DC996F3EF4CC52F40C74", hash_generated_method = "47DE192996C36408BDAA9BA55ED90871")
         
 public BaseSavedState(Parcelable superState) {
@@ -6335,6 +6421,8 @@ public void onReleased(InvalidateInfo element) {
 
             int bottom;
             
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.656 -0400", hash_original_method = "7F8409C46E15AE6EC7087A7F4E97E2BF", hash_generated_method = "7F8409C46E15AE6EC7087A7F4E97E2BF")
             public InvalidateInfo ()
             {
@@ -6353,6 +6441,8 @@ public InvalidateInfo getNextPoolable() {
                 return mNext;
             }
             
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             void release(){
 				// Original method
 				/*
@@ -6861,6 +6951,8 @@ AttachInfo(IWindowSession session, IWindow window,
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void postSendViewScrolledAccessibilityEventCallback(){
 		// Original method
 		/*
@@ -7287,6 +7379,8 @@ protected boolean isVerticalScrollBarHidden() {
 protected void onDraw(Canvas canvas) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void assignParent(ViewParent parent){
 		// Original method
 		/*
@@ -7330,6 +7424,8 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void resolveLayoutDirectionIfNeeded(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -7439,6 +7535,8 @@ protected void onDraw(Canvas canvas) {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     IWindowSession getWindowSession(){
 		// Original method
@@ -7470,6 +7568,8 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void dispatchDetachedFromWindow(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -7619,6 +7719,8 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean hasStaticLayer(){
 		// Original method
 		/*
@@ -7669,6 +7771,8 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     HardwareLayer getHardwareLayer(){
 		return mHardwareLayer;
@@ -7676,6 +7780,8 @@ protected void onDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean destroyLayer(){
 		// Original method
 		/*
@@ -8779,8 +8885,8 @@ protected void dispatchSetActivated(boolean activated) {
 		return null;
 	}
     
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final View findViewById(int id){
 		return this;
 		// Original method
@@ -8794,6 +8900,8 @@ protected void dispatchSetActivated(boolean activated) {
 		*/
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     final View findViewByAccessibilityId(int accessibilityId){
 		// Original method
 		/*
@@ -8807,6 +8915,8 @@ protected void dispatchSetActivated(boolean activated) {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
 		/*
@@ -8905,8 +9015,8 @@ protected void dispatchSetActivated(boolean activated) {
 		return false;
 	}
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public int getId(){
@@ -8919,8 +9029,8 @@ protected void dispatchSetActivated(boolean activated) {
 		*/
 	}
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty 
 	public Object getTag(){
@@ -8950,8 +9060,8 @@ public void setTag(final Object tag) {
         mTag = tag;
     }
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Object getTag(int key){
 		return mKeyedTags.get(key);
@@ -8995,6 +9105,8 @@ public void setTag(final Object tag) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void setKeyedTag(int key, Object tag){
 		mKeyedTags.put(key, tag);
 		// Original method
@@ -9095,8 +9207,8 @@ public void requestLayout() {
 		//Return nothing
 	}
     
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void measure(int widthMeasureSpec, int heightMeasureSpec){
 		addTaint(widthMeasureSpec);
 		addTaint(heightMeasureSpec);
@@ -9213,8 +9325,8 @@ public Animation getAnimation() {
         return mCurrentAnimation;
     }
     
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void startAnimation(Animation animation){
 		// Original method
 		/*
@@ -9428,6 +9540,8 @@ protected boolean onSetAlpha(int alpha) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void updateLocalSystemUiVisibility(int localValue, int localChanges){
 		// Original method
 		/*
@@ -9497,6 +9611,8 @@ public boolean onDragEvent(DragEvent event) {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean canAcceptDrag(){
 		// Original method
 		/*
@@ -9523,6 +9639,8 @@ public void onCloseSystemDialogs(String reason) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void checkForLongClick(int delayOffset){
 		// Original method
 		/*

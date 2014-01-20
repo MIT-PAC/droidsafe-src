@@ -351,6 +351,8 @@ public void onInitializeInterface() {
         // Intentionally empty
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.569 -0500", hash_original_method = "F1A6BBC586CE4C5158D93D758F9EE4FD", hash_generated_method = "F1A6BBC586CE4C5158D93D758F9EE4FD")
     
 void initialize() {
@@ -360,6 +362,8 @@ void initialize() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.572 -0500", hash_original_method = "E6A2B0DBCD46A23062A8849E041DB211", hash_generated_method = "E6A2B0DBCD46A23062A8849E041DB211")
     
 void initViews() {
@@ -747,6 +751,8 @@ public boolean isExtractViewShown() {
         return mIsFullscreen && !mExtractViewHidden;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.620 -0500", hash_original_method = "7CD3F30CDD4A5DA751939DF09DB853BA", hash_generated_method = "7CD3F30CDD4A5DA751939DF09DB853BA")
     
 void updateExtractFrameVisibility() {
@@ -894,6 +900,8 @@ public void setCandidatesViewShown(boolean shown) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.636 -0500", hash_original_method = "4164AC2B45DCCBE42C527D3F966F5882", hash_generated_method = "4164AC2B45DCCBE42C527D3F966F5882")
     
 void updateCandidatesVisibility(boolean shown) {
@@ -1213,6 +1221,8 @@ public void showWindow(boolean showInput) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.676 -0500", hash_original_method = "CB135560325B3F8C18497A9052C17028", hash_generated_method = "CB135560325B3F8C18497A9052C17028")
     
 void showWindowInner(boolean showInput) {
@@ -1270,6 +1280,8 @@ void showWindowInner(boolean showInput) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.678 -0500", hash_original_method = "AE7818A6DC114C265A5A8660654BB926", hash_generated_method = "4D27D30FD732E18954E05BA82231EA7C")
     
 private void finishViews() {
@@ -1363,6 +1375,8 @@ public void onStartInput(EditorInfo attribute, boolean restarting) {
         // Intentionally empty
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.694 -0500", hash_original_method = "D870334B8409E203BCA5DBA60A032B6F", hash_generated_method = "D870334B8409E203BCA5DBA60A032B6F")
     
 void doFinishInput() {
@@ -1384,6 +1398,8 @@ void doFinishInput() {
         mCurCompletions = null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.697 -0500", hash_original_method = "D70A8E32EEED9199B71D72D85567D543", hash_generated_method = "D70A8E32EEED9199B71D72D85567D543")
     
 void doStartInput(InputConnection ic, EditorInfo attribute, boolean restarting) {
@@ -1548,12 +1564,16 @@ public void requestHideSelf(int flags) {
      * 0 or have the {@link InputMethodManager#SHOW_FORCED
      * InputMethodManager.} bit set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.716 -0500", hash_original_method = "939E9922D22E9C6523AEB259C97CBC65", hash_generated_method = "AC9E94CA49B20B098BEE1E960A103A15")
     
 private void requestShowSelf(int flags) {
         mImm.showSoftInputFromInputMethod(mToken, flags);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.718 -0500", hash_original_method = "2F1E84CCA4C2BB5EFB606DA289F60F64", hash_generated_method = "532F138375D374C3C4D6D5EBF190BEBE")
     
 private boolean handleBack(boolean doIt) {
@@ -1678,6 +1698,8 @@ public void onAppPrivateCommand(String action, Bundle data) {
     /**
      * Handle a request by the system to toggle the soft input area.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.734 -0500", hash_original_method = "F1BA2156F30663683BD63E2F68C8FA5C", hash_generated_method = "6B77577832037F933F5D23CF8D683943")
     
 private void onToggleSoftInput(int showFlags, int hideFlags) {
@@ -1689,6 +1711,8 @@ private void onToggleSoftInput(int showFlags, int hideFlags) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.742 -0500", hash_original_method = "9C1F09BC7693D3503A84F47A8DD2E9B8", hash_generated_method = "9C1F09BC7693D3503A84F47A8DD2E9B8")
     
 void reportExtractedMovement(int keyCode, int count) {
@@ -1710,6 +1734,8 @@ void reportExtractedMovement(int keyCode, int count) {
         onExtractedCursorMovement(dx, dy);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.745 -0500", hash_original_method = "CADA6E3534C513A6E5A0D2EB184E3B48", hash_generated_method = "EE57C150FBB5A198FA5A38641FDD67FB")
     
 boolean doMovementKey(int keyCode, KeyEvent event, int count) {
@@ -2365,6 +2391,8 @@ public void onExtractingInputChanged(EditorInfo ei) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.784 -0500", hash_original_method = "4C67EC88DE5F38ABAC11BF6FC64666D8", hash_generated_method = "4C67EC88DE5F38ABAC11BF6FC64666D8")
     
 void startExtractingText(boolean inputChanged) {

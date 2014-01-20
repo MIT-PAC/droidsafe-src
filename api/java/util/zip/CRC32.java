@@ -85,6 +85,8 @@ public void update(byte[] buf, int offset, int byteCount) {
         crc = updateImpl(buf, offset, byteCount, crc);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.177 -0500", hash_original_method = "680551833B0F700FD9FEA4D72A9561BF", hash_generated_method = "15F291A5104183040493E4679B402CE7")
     
     private long updateImpl(byte[] buf, int offset, int byteCount, long crc1){
@@ -96,6 +98,8 @@ public void update(byte[] buf, int offset, int byteCount) {
     	return getTaintLong();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.181 -0500", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "B0C80CE3385CE04CE8B102059C4983AE")
     
     private long updateByteImpl(byte val, long crc1){

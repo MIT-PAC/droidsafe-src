@@ -10,7 +10,9 @@ public class JsPromptResult extends JsResult {
 
     private String mStringResult;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.315 -0500", hash_original_method = "7ABE9E090B5E64D2572624CACEEEAFE1", hash_generated_method = "9E37D98FDA33A4F76FED61A9E0A14B68")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.315 -0500", hash_original_method = "7ABE9E090B5E64D2572624CACEEEAFE1", hash_generated_method = "9E37D98FDA33A4F76FED61A9E0A14B68")
     
 JsPromptResult(CallbackProxy proxy) {
         super(proxy, /* unused */ false);
@@ -26,13 +28,17 @@ public void confirm(String result) {
         confirm();
     }
 
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.317 -0500", hash_original_method = "A6887DA895C48DFEB95F5B019D028B73", hash_generated_method = "A6887DA895C48DFEB95F5B019D028B73")
     
 String getStringResult() {
         return mStringResult;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.319 -0500", hash_original_method = "7194C2D571222CB4C5E996180C4D4F3B", hash_generated_method = "C92D3EEE7E204BFD9B51C2A5DC9B9988")
     
 @Override

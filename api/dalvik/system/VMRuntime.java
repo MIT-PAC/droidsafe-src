@@ -26,6 +26,8 @@ public static VMRuntime getRuntime() {
     /**
      * Prevents this class from being instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.057 -0500", hash_original_method = "33A03FA36AA2C869C23BC2B48A2B01BF", hash_generated_method = "756025D690F3417AC1E320794E486242")
     
 private VMRuntime() {
@@ -163,6 +165,8 @@ public float setTargetHeapUtilization(float newTarget) {
      * @param newTarget the new suggested ideal heap utilization.
      *                  This value may be adjusted internally.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.100 -0500", hash_original_method = "1BC492CFAAC06440005836321EF40EC6", hash_generated_method = "E8E53714CB7D45FC31B5E152CC74A9F2")
     
     private void nativeSetTargetHeapUtilization(float newTarget){

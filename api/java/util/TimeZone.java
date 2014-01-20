@@ -95,6 +95,8 @@ public static synchronized TimeZone getTimeZone(String id) {
     /**
      * Returns a new SimpleTimeZone for an id of the form "GMT[+|-]hh[[:]mm]", or null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.904 -0500", hash_original_method = "562E760827834660DE148A4B60F077E3", hash_generated_method = "0BD0812CF1235819DA4EF0A1090F8CF5")
     
 private static TimeZone getCustomTimeZone(String id) {
@@ -128,6 +130,8 @@ private static TimeZone getCustomTimeZone(String id) {
         return new SimpleTimeZone(raw, formattedName);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.908 -0500", hash_original_method = "14669A1A9F13480263115AE965667FDF", hash_generated_method = "8F9A8FE110841A20057F9170654CEA20")
     
 private static String formatTimeZoneName(String name, int offset) {
@@ -159,6 +163,8 @@ private static String formatTimeZoneName(String name, int offset) {
         return buf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.915 -0500", hash_original_method = "ABB4B718F9BEC996080A15CD9936897B", hash_generated_method = "659F3700A783FC37A94E09C4224CC710")
     
 private static int parseNumber(String string, int offset, int[] position) {
@@ -309,6 +315,8 @@ public String getDisplayName(boolean daylightTime, int style, Locale locale) {
         return builder.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.885 -0500", hash_original_method = "7CED7894325BE9D599DFC54349DF84F9", hash_generated_method = "E6A28245E6A3B7335F43087FDD5A3F8D")
     
 private void appendNumber(StringBuilder builder, int count, int value) {
@@ -384,6 +392,8 @@ public int getOffset(long time) {
      * field. Refer to {@link Calendar} for specific definitions of this
      * method's parameters.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.896 -0500", hash_original_method = "BBA8171A17B46E40060127D831CE1275", hash_generated_method = "5574580ABFD637024A653FB08AC4DC87")
     
 public abstract int getOffset(int era, int year, int month, int day,
@@ -393,6 +403,8 @@ public abstract int getOffset(int era, int year, int month, int day,
      * Returns the offset in milliseconds from UTC of this time zone's standard
      * time.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.898 -0500", hash_original_method = "7DDA4500473EBF8DF6FE8E7FD3845289", hash_generated_method = "7A8EA9C6D36624E37953A4D1FC93F79C")
     
 public abstract int getRawOffset();
@@ -416,6 +428,8 @@ public boolean hasSameRules(TimeZone timeZone) {
      * Returns true if {@code time} is in a daylight savings time period for
      * this time zone.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.913 -0500", hash_original_method = "D8D08367AE362349D81E432C10113D69", hash_generated_method = "768000593A099E07941789E134A5EC5C")
     
 public abstract boolean inDaylightTime(Date time);
@@ -436,6 +450,8 @@ public void setID(String id) {
      * Sets the offset in milliseconds from UTC of this time zone's standard
      * time.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.923 -0500", hash_original_method = "9CBC4EC55E0E24E08575245D146CD68B", hash_generated_method = "BE4D6FC1583D34CF69508921CC26130C")
     
 public abstract void setRawOffset(int offsetMillis);
@@ -457,8 +473,8 @@ public abstract void setRawOffset(int offsetMillis);
      *
      * <p>Most applications should not use this method.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.925 -0500", hash_original_method = "21C3C508C0D0784BDA8C6C77AEEDE939", hash_generated_method = "AEA202CA3554582325612E76986178DB")
     
 public abstract boolean useDaylightTime();

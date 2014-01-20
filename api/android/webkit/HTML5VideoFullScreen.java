@@ -147,6 +147,8 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         
 };
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.488 -0500", hash_original_method = "F60EEA4D15F598668F4A6E94C09A46EA", hash_generated_method = "F60EEA4D15F598668F4A6E94C09A46EA")
     
 HTML5VideoFullScreen(Context context, int videoLayerId, int position,
@@ -158,12 +160,16 @@ HTML5VideoFullScreen(Context context, int videoLayerId, int position,
         init(videoLayerId, position, autoStart);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.485 -0500", hash_original_method = "AB3C62FD6F005880E77BC1927A87EEED", hash_generated_method = "C184EA17A320E37EECCC4CD54E6945BB")
     
 private SurfaceView getSurfaceView() {
         return mVideoSurfaceView;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.490 -0500", hash_original_method = "1F74C4E95F456B4EB4EE7ED74E748A1C", hash_generated_method = "13035CB7A0BCE51668A5B11FE79586AC")
     
 private void setMediaController(MediaController m) {
@@ -171,6 +177,8 @@ private void setMediaController(MediaController m) {
         attachMediaController();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.492 -0500", hash_original_method = "BDA424FAC6D15253AC0E1C5DC76C6F7A", hash_generated_method = "4E6AFC513FF84B2D57CFE775AADA9051")
     
 private void attachMediaController() {
@@ -189,6 +197,8 @@ private void attachMediaController() {
         mPlayer.setDisplay(mSurfaceHolder);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.496 -0500", hash_original_method = "55B4D124A95057AC3A279B37C798CFA8", hash_generated_method = "0A6F2F74E1A3F9EB9D0488B7F76F0334")
     
 private void prepareForFullScreen() {
@@ -201,6 +211,8 @@ private void prepareForFullScreen() {
         prepareDataAndDisplayMode(mProxy);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.499 -0500", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "117B787CDC5EAA33653E35830F63BC2F")
     
 private void toggleMediaControlsVisiblity() {

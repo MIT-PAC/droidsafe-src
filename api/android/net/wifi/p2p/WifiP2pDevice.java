@@ -320,6 +320,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(status);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.290 -0500", hash_original_method = "81EACEB4EB0E2420630EBFC84E59B2A4", hash_generated_method = "C0E2D1AD994CCEE1CBE97C16FA3E6C1C")
     
 private String trimQuotes(String str) {
@@ -331,6 +333,8 @@ private String trimQuotes(String str) {
     }
 
     //supported formats: 0x1abc, 0X1abc, 1abc
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.292 -0500", hash_original_method = "C0F4185566F115FC2220CE409C454DF3", hash_generated_method = "26CE78F6E6F315F479373762C2EBF819")
     
 private int parseHex(String hexString) {

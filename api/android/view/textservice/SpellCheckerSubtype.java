@@ -18,6 +18,8 @@ import android.text.TextUtils;
 
 public final class SpellCheckerSubtype implements Parcelable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.428 -0500", hash_original_method = "8E1C6298EB66C275DF3380320723757A", hash_generated_method = "FE94C4A8FECD84D683885278E012F460")
     
 private static Locale constructLocaleFromString(String localeStr) {
@@ -36,6 +38,8 @@ private static Locale constructLocaleFromString(String localeStr) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.447 -0500", hash_original_method = "C3EB8F3C38068CB5E6BC8AD1B82B692A", hash_generated_method = "AAC5CB824032748E2936F1FF72846D35")
     
 private static int hashCodeInternal(String locale, String extraValue) {
@@ -121,6 +125,8 @@ public SpellCheckerSubtype(int nameId, String locale, String extraValue) {
         mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.414 -0500", hash_original_method = "3B75B8CFEB6B6700A7C113FAE634CC5F", hash_generated_method = "3B75B8CFEB6B6700A7C113FAE634CC5F")
     
 SpellCheckerSubtype(Parcel source) {

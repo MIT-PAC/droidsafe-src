@@ -12,11 +12,6 @@ import org.apache.http.auth.MalformedChallengeException;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public abstract class AuthSchemeBase implements AuthScheme {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.986 -0500", hash_original_field = "2AAD7409AD7FA5435AA4F922538A3E61", hash_generated_field = "90A6DE2E00E635760A3B1A224459E469")
 
@@ -83,6 +78,8 @@ public void processChallenge(final Header header) throws MalformedChallengeExcep
         parseChallenge(buffer, pos, buffer.length());
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.995 -0500", hash_original_method = "FFBAC1C6075229BDA5A37E6F58B15A5E", hash_generated_method = "794E6C93C312F0457E48A52E868D8A82")
     
 protected abstract void parseChallenge(
@@ -100,7 +97,6 @@ protected abstract void parseChallenge(
 public boolean isProxy() {
         return this.proxy;
     }
-
     
 }
 

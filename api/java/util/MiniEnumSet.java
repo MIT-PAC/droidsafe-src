@@ -5,24 +5,17 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.785 -0500", hash_original_field = "A8D7839F4333A643EDD492E74C48DD85", hash_generated_field = "C20853631EBCD7966CC4FD1460DE8CB9")
 
     private static final int MAX_ELEMENTS = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.787 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "F06612A05C836674433E69C513561353")
 
-
     private int size;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.789 -0500", hash_original_field = "A1A4E3CC89D133F174FAE04978DF63B3", hash_generated_field = "783D81D695A8378E8654E8D6DD3B9BE2")
 
-
     private  E[] enums;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.792 -0500", hash_original_field = "9027729B517C3BBA76303A7389749115", hash_generated_field = "25B025E9A5F96E0701DCBD2F252ADF7D")
-
 
     private long bits;
 
@@ -216,6 +209,8 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         return bits == ((MiniEnumSet<?>) set).bits;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.844 -0500", hash_original_method = "34C2A46ACE6140E33D58771C1EEACFB4", hash_generated_method = "8E813F97508C363DA18528165ED70354")
     
 @Override
@@ -226,7 +221,6 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
             size = enums.length - size;
         }
     }
-
     
     private class MiniEnumSetIterator implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.797 -0500", hash_original_field = "280756CF70AC75CE51A25117D5C4813C", hash_generated_field = "88FE5C56F0ABD833B5AB4E83CA57D904")
@@ -236,7 +230,6 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
 
         private long mask = currentBits & -currentBits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.802 -0500", hash_original_field = "EE0E70F34F989CA023F449644CD2B8C0", hash_generated_field = "374CA24251E29484A78242144D89346E")
-
 
         /**
          * The candidate for removal. If null, no value may be removed.
@@ -281,7 +274,6 @@ public void remove() {
             MiniEnumSet.this.remove(last);
             last = null;
         }
-
         
     }
 

@@ -227,6 +227,8 @@ public void close() {
         super.finalize();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.911 -0500", hash_original_method = "30EEE88D5EBEE3E7BF1A3FE6896BBA6C", hash_generated_method = "F606EE98D0992ED4C3F358286CDF814C")
     
 private boolean inSystemImage(int callerUid) {
@@ -245,6 +247,8 @@ private boolean inSystemImage(int callerUid) {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.916 -0500", hash_original_method = "7FD7D9F6A29EBA7075A2BE7C2AD27E68", hash_generated_method = "D1A26803CE9935C1B7FA618F016CD4F8")
     
 void generateServicesMap() {
@@ -338,6 +342,8 @@ void generateServicesMap() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.918 -0500", hash_original_method = "45DA6CE662A637B1B0A1C5B390B75450", hash_generated_method = "79B91528470BFF2F55D0432291AAB77B")
     
 private boolean containsType(ArrayList<ServiceInfo<V>> serviceInfos, V type) {
@@ -350,6 +356,8 @@ private boolean containsType(ArrayList<ServiceInfo<V>> serviceInfos, V type) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.921 -0500", hash_original_method = "39F2D99D837C3B52D94DD556DC01CC72", hash_generated_method = "E42777FCF1E30D15460AC23EC824EDA6")
     
 private boolean containsTypeAndUid(ArrayList<ServiceInfo<V>> serviceInfos, V type, int uid) {
@@ -412,6 +420,8 @@ private ServiceInfo<V> parseServiceInfo(ResolveInfo service)
     /**
      * Read all sync status back in to the initial engine state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.927 -0500", hash_original_method = "AEFFF388F6549F52CCF36E0502C98B34", hash_generated_method = "9DFE4CD666B1D5475582D92B6697321D")
     
 private void readPersistentServicesLocked() {
@@ -463,6 +473,8 @@ private void readPersistentServicesLocked() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.580 -0400", hash_original_method = "EE98DCC48BA776AAD27AD82ED0CDBCAD", hash_generated_method = "B48FD1310EFCBD075BD6C7C79A42333B")
     private void writePersistentServicesLocked() {
         if(mSerializerAndParser == null)        
@@ -529,6 +541,8 @@ public ServiceInfo(V type, ComponentName componentName, int uid) {
         
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.932 -0500", hash_original_method = "259476DC514131AD7C2422832CE45DCB", hash_generated_method = "1A75B5302391BADF1F700C4CB696259C")
     
 public abstract V parseServiceAttributes(Resources res,

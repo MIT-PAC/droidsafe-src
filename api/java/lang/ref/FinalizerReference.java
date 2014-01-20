@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public final class FinalizerReference<T> extends Reference<T> {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.855 -0500", hash_original_method = "9DC5C682C66521FC5D3F7542530076A6", hash_generated_method = "ED5A546F7FBC0B84D692AD55F97BB409")
     
 static void add(Object referent) {
@@ -79,6 +81,8 @@ public FinalizerReference(T r, ReferenceQueue<? super T> q) {
 
         boolean finalized = false;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.761 -0400", hash_original_method = "E2AD40226AFB74C4AE2C6FB439A5AA79", hash_generated_method = "E2AD40226AFB74C4AE2C6FB439A5AA79")
         public Sentinel ()
         {
@@ -90,6 +94,8 @@ public FinalizerReference(T r, ReferenceQueue<? super T> q) {
             finalized = true;
             notifyAll();
         }
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.870 -0500", hash_original_method = "A29097CA472383A8F0DF21D7D263FC96", hash_generated_method = "106B6DFB59807D9A553C254965EC984E")
         
 synchronized void awaitFinalization() throws InterruptedException {

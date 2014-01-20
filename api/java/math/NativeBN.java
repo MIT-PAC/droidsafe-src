@@ -208,6 +208,8 @@ final class NativeBN {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011020564;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.200 -0400", hash_original_method = "E90C9F7618B8847FE731998C9CEE159F", hash_generated_method = "E90C9F7618B8847FE731998C9CEE159F")
     public NativeBN ()
     {

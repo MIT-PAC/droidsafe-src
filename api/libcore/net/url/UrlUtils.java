@@ -136,6 +136,8 @@ public static int findFirstOf(String string, String chars, int start, int end) {
         }
         return end;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.919 -0500", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "7FCF6717728C584D442F19497B41ABF1")
     
 private UrlUtils() {

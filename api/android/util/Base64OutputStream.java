@@ -8,14 +8,8 @@ import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class Base64OutputStream extends FilterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.724 -0500", hash_original_field = "8DB95C34ED9D40E875BEE17B0361EF64", hash_generated_field = "8DC8CC9D462633D2F5F238FD63AB94FA")
-
 
     private static byte[] EMPTY = new byte[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.716 -0500", hash_original_field = "4B998A8F6E44515A88542CACC83463DA", hash_generated_field = "1F1AACA9B8C921BF3C739250DBC6741F")
@@ -25,7 +19,6 @@ public class Base64OutputStream extends FilterOutputStream {
 
     private  int flags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.720 -0500", hash_original_field = "5A57624227AB14653270DE833B17A5A8", hash_generated_field = "B17349ED402A8EE321EE2D687D0FC773")
-
 
     private byte[] buffer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.722 -0500", hash_original_field = "1F0B4B6BB95B4A11F5F030C5AA3E5A0D", hash_generated_field = "DE1311439F73FF2DC9E1E67409991F70")
@@ -93,6 +86,8 @@ public void write(int b) throws IOException {
      * Flush any buffered data from calls to write(int).  Needed
      * before doing a write(byte[], int, int) or a close().
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.734 -0500", hash_original_method = "F067C038C49D9731F81C40BA311D56BE", hash_generated_method = "CE5DDA8376A87F35429A12ECB9E39420")
     
 private void flushBuffer() throws IOException {
@@ -144,6 +139,8 @@ public void close() throws IOException {
      * @param finish true if this is the last batch of input, to cause
      *        encoder/decoder state to be finalized.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.741 -0500", hash_original_method = "4C39B7C855C3608586F188D73E5D3223", hash_generated_method = "5FC83B1953E7A5C3D3F0561A084B9533")
     
 private void internalWrite(byte[] b, int off, int len, boolean finish) throws IOException {
@@ -158,6 +155,8 @@ private void internalWrite(byte[] b, int off, int len, boolean finish) throws IO
      * If b.length is at least len, return b.  Otherwise return a new
      * byte array of length len.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.744 -0500", hash_original_method = "8F1A1CDA0B50B3C3FF8220D3A1F18B22", hash_generated_method = "4D1F018057D46810BCA86915AB70D911")
     
 private byte[] embiggen(byte[] b, int len) {

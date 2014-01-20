@@ -126,6 +126,8 @@ public static Timestamp valueOf(String s) throws IllegalArgumentException {
         return theTimestamp;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.643 -0500", hash_original_method = "379D498F436DC6BA5AB970731D566E79", hash_generated_method = "4E15F3DA83104176E624A00C745457DB")
     
 private static IllegalArgumentException badTimestampString(String s) {
@@ -439,6 +441,8 @@ public void setNanos(int n) throws IllegalArgumentException {
         setTimeImpl(theTime);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.627 -0500", hash_original_method = "359A4BB179960D3D4DBBF4A52D3B05F3", hash_generated_method = "BAC1B09601CE7610058933820B7B6EF3")
     
 private void setTimeImpl(long theTime) {
@@ -503,6 +507,8 @@ private void setTimeImpl(long theTime) {
     /*
     * Private method to format the time
     */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.636 -0500", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "42C4F2A798161F88780A237C678B7BD2")
     
 private void format(int date, int digits, StringBuilder sb) {

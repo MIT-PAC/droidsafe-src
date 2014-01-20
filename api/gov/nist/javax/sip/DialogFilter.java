@@ -62,6 +62,8 @@ public DialogFilter(SipStackImpl sipStack) {
      * @param sipRequest
      * @param transaction
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.981 -0500", hash_original_method = "07FCA8BF1CB05FED9E9EE5BE5B9D0DF8", hash_generated_method = "BF297F88E2C526AD78F061C0319EEB89")
     
 private void sendRequestPendingResponse(SIPRequest sipRequest,
@@ -95,6 +97,8 @@ private void sendRequestPendingResponse(SIPRequest sipRequest,
      * @param reasonPhrase
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.984 -0500", hash_original_method = "C4ABF2148AD4585DF588E0AB365097FF", hash_generated_method = "1847CE9A4775F30DB6446D2F571CBAB6")
     
 private void sendBadRequestResponse(SIPRequest sipRequest, SIPServerTransaction transaction,
@@ -127,6 +131,8 @@ private void sendBadRequestResponse(SIPRequest sipRequest, SIPServerTransaction 
      * @param transaction
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.987 -0500", hash_original_method = "D6292ED26CFFFD47381D5C093FDBF969", hash_generated_method = "8C5FE46F3BF7A6E186EC1C93630D29A1")
     
 private void sendCallOrTransactionDoesNotExistResponse(SIPRequest sipRequest,
@@ -161,6 +167,8 @@ private void sendCallOrTransactionDoesNotExistResponse(SIPRequest sipRequest,
      * @param transaction
      * 
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.989 -0500", hash_original_method = "3FDF2D179E068B8AD4629A716A32BCF6", hash_generated_method = "CFBB9677838418A294831DDE7199EB2B")
     
 private void sendLoopDetectedResponse(SIPRequest sipRequest, SIPServerTransaction transaction) {
@@ -190,6 +198,8 @@ private void sendLoopDetectedResponse(SIPRequest sipRequest, SIPServerTransactio
      * @param transaction
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.992 -0500", hash_original_method = "1BAB8A1EF49695D9BD2CE878014B3A7C", hash_generated_method = "C530EBE8B43236563249FD97A1A8E031")
     
 private void sendServerInternalErrorResponse(SIPRequest sipRequest,

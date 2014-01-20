@@ -16,6 +16,8 @@ import libcore.icu.LocaleData;
 
 public class Date implements Serializable, Cloneable, Comparable<Date> {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.963 -0500", hash_original_method = "000F0F69BA8739697FCA4FE0C538316B", hash_generated_method = "4CAA8F423C86610AB9A4DC527B436221")
     
 private static int parse(String string, String[] array) {
@@ -225,6 +227,8 @@ private static int parse(String string, String[] array) {
         throw new IllegalArgumentException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.999 -0500", hash_original_method = "36BC9397BA7EB541FFE75F65C1FDFC91", hash_generated_method = "AED77C3BCF21E4A96669B0606306F259")
     
 private static void appendTwoDigits(StringBuilder sb, int n) {
@@ -267,6 +271,8 @@ private static void appendTwoDigits(StringBuilder sb, int n) {
         return cal.getTimeInMillis();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.005 -0500", hash_original_method = "AD2AD2E6D9D4EAA290D91166777B213B", hash_generated_method = "86E9BCCDB2DF1EDB770370F1C0989B3E")
     
 private static int zone(String text) {
@@ -880,6 +886,8 @@ public void setTime(long milliseconds) {
         return result.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.007 -0500", hash_original_method = "A8D1E2059FF037BF4B3478BBC82EA0DD", hash_generated_method = "9B30E80D376D627A7DAFD1F135D31540")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -887,6 +895,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeLong(getTime());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.009 -0500", hash_original_method = "59F27179ED4F1C5D53DD2971937048C1", hash_generated_method = "0DECBD40ABFABEC36D81C02378E64A5F")
     
 private void readObject(ObjectInputStream stream) throws IOException,

@@ -76,6 +76,8 @@ protected List<Method> getTestMethods(Class<? extends TestCase> testCaseClass) {
         return select(methods, new TestMethodPredicate());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.316 -0500", hash_original_method = "33F5ECA31F61AACED3C9710C1D8342FC", hash_generated_method = "33F5ECA31F61AACED3C9710C1D8342FC")
     
 SortedSet<Class<? extends TestCase>> getTestCaseClasses() {
@@ -155,6 +157,8 @@ public String getFirstIncludedPackage() {
         return firstIncludedPackage;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.330 -0500", hash_original_method = "EB0D3DDEC19295079ED9F02F9ADFE3B2", hash_generated_method = "0B8CAF4FA756F6A9BEDE26D8CC487375")
     
 private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageName) {
@@ -166,6 +170,8 @@ private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageN
     
     private static class SortBySimpleName implements Comparator<Class<? extends TestCase>>, Serializable {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.182 -0400", hash_original_method = "DF47E6BDF91D187CFB898DEC7629CE17", hash_generated_method = "DF47E6BDF91D187CFB898DEC7629CE17")
         public SortBySimpleName ()
         {
@@ -187,6 +193,8 @@ public int compare(Class<? extends TestCase> class1,
     
     private static class SortByFullyQualifiedName implements Comparator<Class<? extends TestCase>>, Serializable {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.183 -0400", hash_original_method = "E467FE44B8FD2B3FC2F2C02A44638E77", hash_generated_method = "E467FE44B8FD2B3FC2F2C02A44638E77")
         public SortByFullyQualifiedName ()
         {
@@ -204,6 +212,8 @@ public int compare(Class<? extends TestCase> class1,
     
     private static class TestCasePredicate implements Predicate<Class<?>> {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.183 -0400", hash_original_method = "C51D9C1D123C5970141C72E69FC5E23D", hash_generated_method = "C51D9C1D123C5970141C72E69FC5E23D")
         public TestCasePredicate ()
         {
@@ -220,6 +230,8 @@ public boolean apply(Class aClass) {
                     && hasValidConstructor((Class<?>) aClass);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.352 -0500", hash_original_method = "3C87EFFA5D029BD7C6E8E87D3458D6A6", hash_generated_method = "C2B55BDCEA7F38FC81E5E7247F40F14E")
         
 @SuppressWarnings("unchecked")
@@ -249,6 +261,8 @@ public boolean apply(Class aClass) {
     
     private static class TestMethodPredicate implements Predicate<Method> {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.185 -0400", hash_original_method = "5644BC516EF6C647F77F88686C681987", hash_generated_method = "5644BC516EF6C647F77F88686C681987")
         public TestMethodPredicate ()
         {
@@ -265,6 +279,8 @@ public boolean apply(Method method) {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.333 -0500", hash_original_method = "9793CFC93A78E03886A5AA31DA3BF499", hash_generated_method = "C246E0185EC4EBE6271F9AAF975CA328")
     
 @SuppressWarnings("unchecked")

@@ -11,11 +11,6 @@ import org.apache.harmony.dalvik.ddmc.Chunk;
 import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 
-
-
-
-
-
 public class DdmHandleExit extends ChunkHandler {
 
     /**
@@ -28,15 +23,14 @@ public static void register() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.711 -0500", hash_original_field = "8157E52A71C2E662BFD594C40F33A43C", hash_generated_field = "DAAD47F6FA6C4CC32717481A9CF9A22B")
 
-
     public static final int CHUNK_EXIT = type("EXIT");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.714 -0500", hash_original_field = "CFC7735AE34A95928FF1A286CB5255C0", hash_generated_field = "5929389BB4771070576D8746DF348AC9")
 
-
     private static DdmHandleExit mInstance = new DdmHandleExit();
 
-
     /* singleton, do not instantiate */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.716 -0500", hash_original_method = "4CE2D1F4C1C2D74BBC9BDD8F112E8266", hash_generated_method = "2DF6E57612A3447A887AE56C7D8A9376")
     
 private DdmHandleExit() {}

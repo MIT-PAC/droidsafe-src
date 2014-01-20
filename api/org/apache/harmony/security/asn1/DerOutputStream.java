@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.util.Objects;
 
-
-
-
-
 public final class DerOutputStream extends BerOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.623 -0500", hash_original_field = "4040ED93930BBA179721E1277AF68B0B", hash_generated_field = "3574CD64DD2D9905361B05608C299821")
 
@@ -86,6 +82,8 @@ public DerOutputStream(ASN1Type asn1, Object object) {
         encodeValueCollection(setOf);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.647 -0500", hash_original_method = "633BE494EAD83DB36EAB8BCAACE55EAA", hash_generated_method = "0635FDBF3C9EA0669DAFF7D858CBF1D2")
     
 private void encodeValueCollection(ASN1ValueCollection collection) {
@@ -100,6 +98,8 @@ private void encodeValueCollection(ASN1ValueCollection collection) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.649 -0500", hash_original_method = "4D1A9BCC2A43E189556FAAB3E35CA849", hash_generated_method = "9106C537F4B903FF67B0CC3E2EFA6503")
     
 private void push(int[] lengths, Object[] values) {
@@ -210,6 +210,8 @@ private void push(int[] lengths, Object[] values) {
         getValueOfLength(setOf);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.665 -0500", hash_original_method = "437F3D994C4DC9FE69A29C0E967F3DCB", hash_generated_method = "32A905DF7A346AE1580B2436FA99C48F")
     
 private void getValueOfLength(ASN1ValueCollection collection) {

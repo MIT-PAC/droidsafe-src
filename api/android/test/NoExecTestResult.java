@@ -7,9 +7,10 @@ import droidsafe.annotations.*;
 import junit.framework.TestCase;
 import junit.framework.TestResult;
 
-
 class NoExecTestResult extends TestResult {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.779 -0400", hash_original_method = "07F1A2CB1736DDDF316171589F812DEE", hash_generated_method = "07F1A2CB1736DDDF316171589F812DEE")
     public NoExecTestResult ()
     {
@@ -27,7 +28,6 @@ class NoExecTestResult extends TestResult {
         startTest(test);
         endTest(test);
     }
-
     
 }
 

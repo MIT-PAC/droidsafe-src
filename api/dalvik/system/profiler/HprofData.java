@@ -201,12 +201,16 @@ public static ThreadEvent end(int threadId) {
             return new ThreadEvent(ThreadEventType.END, threadId);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.631 -0500", hash_original_method = "970ADDE5DABB38D7F42BDDA2D6B8B600", hash_generated_method = "19D9FC52574E06EFA4712248DEA04B2B")
         
 private static int hashCode(Object o) {
             return (o == null) ? 0 : o.hashCode();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.636 -0500", hash_original_method = "F296275000E1AA53C7B464F5FDA7A4B5", hash_generated_method = "F9577F39E347D35EFA8791D7277C6A04")
         
 private static boolean equal(Object a, Object b) {
@@ -311,6 +315,8 @@ private ThreadEvent(ThreadEventType type, int threadId) {
 
         StackTraceElement[] stackFrames;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.653 -0500", hash_original_method = "937A3F2A08E08A14F8EC24A94B9A8468", hash_generated_method = "937A3F2A08E08A14F8EC24A94B9A8468")
         
 StackTrace() {

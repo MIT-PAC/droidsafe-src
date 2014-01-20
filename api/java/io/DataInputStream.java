@@ -13,6 +13,8 @@ import libcore.io.Streams;
 
 public class DataInputStream extends FilterInputStream implements DataInput {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.261 -0500", hash_original_method = "67FCD1C79AA5AB7081ED61CA977F833F", hash_generated_method = "155E09981B88266614B7B0331C008BE8")
     
 private static String decodeUTF(int utfSize, DataInput in) throws IOException {
@@ -236,6 +238,8 @@ public final String readUTF() throws IOException {
         return decodeUTF(readUnsignedShort());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.258 -0500", hash_original_method = "97504F653AF4B98C0D73EF18B85FA029", hash_generated_method = "97504F653AF4B98C0D73EF18B85FA029")
     
 String decodeUTF(int utfSize) throws IOException {

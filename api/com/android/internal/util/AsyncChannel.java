@@ -26,6 +26,8 @@ public class AsyncChannel {
      *
      * @param s
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.610 -0500", hash_original_method = "6FCA9AA6353D4B452135E8444180D2C6", hash_generated_method = "BDA28BABE71D91786DFE8D4E9E911424")
     
 private static void log(String s) {
@@ -525,6 +527,8 @@ private static SyncMessenger obtain() {
          * @param msg to send
          * @return result message or null if an error occurs
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.591 -0500", hash_original_method = "73417FF22870072B41D9E8892C6ACEAF", hash_generated_method = "98D30C9AEE1B66AD2FCFA7D7A2E2B430")
         
 private static Message sendMessageSynchronously(Messenger dstMessenger, Message msg) {
@@ -594,6 +598,8 @@ private SyncHandler(Looper looper) {
         }
 
         /** private constructor */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.569 -0500", hash_original_method = "836D007993A4B13DC1AF265962B161E2", hash_generated_method = "CE56A48956738928E715C01B16E44A32")
         
 private SyncMessenger() {
@@ -602,6 +608,8 @@ private SyncMessenger() {
         /**
          * Recycle this object
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.588 -0500", hash_original_method = "FF57C371186B795A0CEFC17D6A21913E", hash_generated_method = "611CD75D4F68FA4F8A749A0A3935CD3E")
         
 private void recycle() {
@@ -818,6 +826,8 @@ public Message sendMessageSynchronously(int what, Object obj) {
      *
      * @param status to be stored in msg.arg1
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.595 -0500", hash_original_method = "DECE161063975CD41C076FDB9612D509", hash_generated_method = "F774B739C33D0D5630FC3BFA9F4F988D")
     
 private void replyHalfConnected(int status) {
@@ -834,6 +844,8 @@ private void replyHalfConnected(int status) {
      *
      * @param status to be stored in msg.arg1
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.597 -0500", hash_original_method = "6CA7282E928AA840C6D25E995C5EBFEA", hash_generated_method = "EE2364AE0179C423F2BD973FF5B92F49")
     
 private void replyDisconnected(int status) {

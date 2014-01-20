@@ -151,6 +151,8 @@ public CDMALTEPhone(Context context, CommandsInterface ci, PhoneNotifier notifie
     /**
      * Used to track the settings upon completion of the network change.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.660 -0500", hash_original_method = "55A3B9E950023A6988A6B5C4DCBDEA6C", hash_generated_method = "FCA9220C59ACC5602EBC8A8A450E14DD")
     
 private void handleSetSelectNetwork(AsyncResult ar) {
@@ -278,6 +280,8 @@ private void handleSetSelectNetwork(AsyncResult ar) {
 
         public String operatorAlphaLong;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.873 -0400", hash_original_method = "3039E12EC83A8AA31D55051619D54055", hash_generated_method = "3039E12EC83A8AA31D55051619D54055")
         public NetworkSelectMessage ()
         {

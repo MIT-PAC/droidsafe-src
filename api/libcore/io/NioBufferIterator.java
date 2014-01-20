@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class NioBufferIterator extends BufferIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.321 -0500", hash_original_field = "0EFD4B56D5F68F850B84173C34758709", hash_generated_field = "849BAB492558B51E7BC4F1C331A435E4")
 
@@ -21,9 +17,10 @@ public final class NioBufferIterator extends BufferIterator {
     private  boolean swap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.328 -0500", hash_original_field = "92D7808EB8CD548A137230400384C6DC", hash_generated_field = "312206EA2404526B7BBC621459C87A80")
 
-
     private int position;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.331 -0500", hash_original_method = "1851358DA9BE5B3D125F1A8CE59A39B7", hash_generated_method = "1851358DA9BE5B3D125F1A8CE59A39B7")
     
 NioBufferIterator(int address, int size, boolean swap) {
@@ -81,7 +78,6 @@ public short readShort() {
         position += SizeOf.SHORT;
         return result;
     }
-
     
 }
 

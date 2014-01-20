@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadOnlyDoubleArrayBuffer extends DoubleArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.041 -0500", hash_original_method = "E3456167139738CE5D2A1FA4F9C0A044", hash_generated_method = "BAE0DF152F3B27576EF75FF67D613804")
     
 static ReadOnlyDoubleArrayBuffer copy(DoubleArrayBuffer other, int markOfOther) {
@@ -21,6 +20,8 @@ static ReadOnlyDoubleArrayBuffer copy(DoubleArrayBuffer other, int markOfOther) 
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.044 -0500", hash_original_method = "3FFC117F0906E795E350A76B08676C14", hash_generated_method = "3FFC117F0906E795E350A76B08676C14")
     
 ReadOnlyDoubleArrayBuffer(int capacity, double[] backingArray, int arrayOffset) {
@@ -110,7 +111,6 @@ ReadOnlyDoubleArrayBuffer(int capacity, double[] backingArray, int arrayOffset) 
     public DoubleBuffer slice() {
         return new ReadOnlyDoubleArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

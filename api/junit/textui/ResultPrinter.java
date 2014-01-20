@@ -31,7 +31,9 @@ public ResultPrinter(PrintStream writer) {
 	/* API for use by textui.TestRunner
 	 */
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.686 -0500", hash_original_method = "D4B791E5BAEACC439CFB8DF7C803AC90", hash_generated_method = "7B5117346573346A73782586CD3C0FBE")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.686 -0500", hash_original_method = "D4B791E5BAEACC439CFB8DF7C803AC90", hash_generated_method = "7B5117346573346A73782586CD3C0FBE")
     
 synchronized void print(TestResult result, long runTime) {
 		printHeader(runTime);
@@ -40,7 +42,9 @@ synchronized void print(TestResult result, long runTime) {
 	    printFooter(result);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.688 -0500", hash_original_method = "6F3036B6BA5666E793DE1D50D1E27410", hash_generated_method = "6F3036B6BA5666E793DE1D50D1E27410")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.688 -0500", hash_original_method = "6F3036B6BA5666E793DE1D50D1E27410", hash_generated_method = "6F3036B6BA5666E793DE1D50D1E27410")
     
 void printWaitPrompt() {
 		getWriter().println();

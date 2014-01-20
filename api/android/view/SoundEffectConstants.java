@@ -51,6 +51,8 @@ public static int getContantForFocusDirection(int direction) {
 
     public static final int NAVIGATION_DOWN = 4;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.093 -0500", hash_original_method = "A319F34C5C5FF8EBCB8ED9E8C1DFDB18", hash_generated_method = "4129C50D0A507655FBF1F651D920A4AF")
     
 private SoundEffectConstants() {}

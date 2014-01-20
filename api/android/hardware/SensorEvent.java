@@ -17,6 +17,8 @@ public class SensorEvent {
 
     public long timestamp;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.062 -0500", hash_original_method = "70E99143ED23AB543A4BC023624913AA", hash_generated_method = "70E99143ED23AB543A4BC023624913AA")
     
 SensorEvent(int size) {

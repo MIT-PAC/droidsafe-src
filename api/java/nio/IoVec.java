@@ -45,6 +45,8 @@ IoVec(ByteBuffer[] byteBuffers, int offset, int bufferCount, Direction direction
         this.byteCounts = new int[bufferCount];
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.828 -0500", hash_original_method = "0C69B202E78D62C368E6E03D03D6C92B", hash_generated_method = "0C69B202E78D62C368E6E03D03D6C92B")
     
 int init() {
@@ -68,6 +70,8 @@ int init() {
         return totalRemaining;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.830 -0500", hash_original_method = "A7EE0836183CE06C4386DE620F235FAB", hash_generated_method = "A7EE0836183CE06C4386DE620F235FAB")
     
@@ -87,6 +91,8 @@ int doTransfer(FileDescriptor fd) throws IOException {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.833 -0500", hash_original_method = "EBAF870E907233DA47B6BC3AD10EE875", hash_generated_method = "EBAF870E907233DA47B6BC3AD10EE875")
     
 void didTransfer(int byteCount) {

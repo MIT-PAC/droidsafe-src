@@ -11,10 +11,6 @@ import java.util.Arrays;
 
 import libcore.io.Streams;
 
-
-
-
-
 final class ChunkedInputStream extends AbstractHttpInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.177 -0500", hash_original_field = "7C2F50DA7B80834C3EBC5883220B91A4", hash_generated_field = "C5956A6D669A15373C0A4736E4DBDA7D")
 
@@ -29,6 +25,8 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
 
     private boolean hasMoreChunks = true;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.186 -0500", hash_original_method = "F83C2E58EBE5A0D51F69F747FEAA67C2", hash_generated_method = "F83C2E58EBE5A0D51F69F747FEAA67C2")
     
 ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
@@ -73,6 +71,8 @@ ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
         return read;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.192 -0500", hash_original_method = "140E1DA8E8861D1C317B4255A250B320", hash_generated_method = "70353ABF92C74D7D5E8E619BA9901C71")
     
 private void readChunkSize() throws IOException {

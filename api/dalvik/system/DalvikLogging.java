@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public final class DalvikLogging {
 
     /**
@@ -33,10 +30,11 @@ public static String loggerNameToTag(String loggerName) {
                 ? loggerName.substring(lastPeriod + 1)
                 : loggerName.substring(loggerName.length() - 23);
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.148 -0500", hash_original_method = "A5E4F7DD8D6CBC86B82114507B3451BF", hash_generated_method = "E1DD2A0114CBCFB6FC98080C422CA57D")
     
 private DalvikLogging() {}
-
     
 }
 

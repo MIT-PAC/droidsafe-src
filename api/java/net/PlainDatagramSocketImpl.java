@@ -18,6 +18,8 @@ import dalvik.system.CloseGuard;
 
 public class PlainDatagramSocketImpl extends DatagramSocketImpl {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.877 -0500", hash_original_method = "E20F53A6F68C893F54FE6F4EDC3A37F7", hash_generated_method = "C644F8A0EF4D10717D34427B0C7526D8")
     
 private static StructGroupReq makeGroupReq(InetAddress gr_group, NetworkInterface networkInterface) {
@@ -169,6 +171,8 @@ public PlainDatagramSocketImpl() {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.892 -0500", hash_original_method = "7D10FF5DEA56961E254003DBDCD7E211", hash_generated_method = "B5A7C5EAF6249AF20CD97CA8D51B9B88")
     
 private void doRecv(DatagramPacket pack, int flags) throws IOException {
@@ -265,6 +269,8 @@ public void setOption(int option, Object value) throws SocketException {
      * @param packet
      *            the packet to be updated
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.914 -0500", hash_original_method = "9F84EE545D7A893B2BE12E7FDE7E048D", hash_generated_method = "3550118099D2274DF1E233703CE4A395")
     
 private void updatePacketRecvAddress(DatagramPacket packet) {

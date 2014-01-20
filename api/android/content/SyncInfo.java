@@ -39,6 +39,8 @@ public SyncInfo[] newArray(int size) {
     public  long startTime;
 
     /** @hide */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.941 -0500", hash_original_method = "08CB15341E378B91930C38215FF9CE0F", hash_generated_method = "08CB15341E378B91930C38215FF9CE0F")
     
 SyncInfo(int authorityId, Account account, String authority,
@@ -50,6 +52,8 @@ SyncInfo(int authorityId, Account account, String authority,
     }
 
     /** @hide */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.948 -0500", hash_original_method = "C517E1FF2489673370FA690A620D127C", hash_generated_method = "C517E1FF2489673370FA690A620D127C")
     
 SyncInfo(Parcel parcel) {

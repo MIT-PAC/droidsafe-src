@@ -33,6 +33,8 @@ protected int engineGetDigestLength() {
      *            the {@code byte} to update this {@code MessageDigestSpi} with.
      * @see #engineReset()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.052 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
     
 protected abstract void engineUpdate(byte input);
@@ -50,6 +52,8 @@ protected abstract void engineUpdate(byte input);
      *             if {@code offset} or {@code len} are not valid in respect to
      *             {@code input}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.055 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
     
 protected abstract void engineUpdate(byte[] input, int offset, int len);
@@ -89,6 +93,8 @@ protected void engineUpdate(ByteBuffer input) {
      * @return the computed one way hash value.
      * @see #engineReset()
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.060 -0500", hash_original_method = "CEA88A783175745149D390015100AA3F", hash_generated_method = "DCE83104DFD81C1C8822D10C2908CFEA")
     
 protected abstract byte[] engineDigest();
@@ -139,6 +145,8 @@ protected int engineDigest(byte[] buf, int offset, int len) throws DigestExcepti
      * Puts this {@code MessageDigestSpi} back in an initial state, such that it
      * is ready to compute a one way hash value.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.066 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
     
 protected abstract void engineReset();

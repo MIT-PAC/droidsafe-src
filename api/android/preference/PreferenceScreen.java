@@ -103,6 +103,8 @@ public void bind(ListView listView) {
         showDialog(null);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.216 -0500", hash_original_method = "D7F699A89F8BCF859CD843DF375163A1", hash_generated_method = "67ADAA71212D65AEBE33B8A3F49CDC59")
     
 private void showDialog(Bundle state) {

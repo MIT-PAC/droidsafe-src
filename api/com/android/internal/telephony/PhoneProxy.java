@@ -27,6 +27,8 @@ import com.android.internal.telephony.test.SimulatedRadioControl;
 
 public class PhoneProxy extends Handler implements Phone {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.225 -0500", hash_original_method = "0B1698B355A404B2090D50EDC0CDBBB1", hash_generated_method = "1183BC7FE3BDC2AE5CE72B7E7F14E6BE")
     
 private static void logd(String msg) {

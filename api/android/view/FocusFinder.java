@@ -29,12 +29,16 @@ public static FocusFinder getInstance() {
      *   of source to the edge nearest in the given direction of dest.  If the
      *   dest is not in the direction from source, return 0.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.116 -0500", hash_original_method = "FEC197AB260A70050BA79E019D41C702", hash_generated_method = "C41FBCF71DE6926C60C36D0FCE75C3DA")
     
 static int majorAxisDistance(int direction, Rect source, Rect dest) {
         return Math.max(0, majorAxisDistanceRaw(direction, source, dest));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.119 -0500", hash_original_method = "ABB1C6898E503A151891B7A9ABFAD773", hash_generated_method = "9A2D243C90DD6E103172E274629951BB")
     
 static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
@@ -58,12 +62,16 @@ static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
      *   dest is not in the direction from source, return 1 (to break ties with
      *   {@link #majorAxisDistance}).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.122 -0500", hash_original_method = "CA98CAB2ECA74F2E2804BE867DBDF9E9", hash_generated_method = "394269CEE78DD20496BCFEA85A6D86B4")
     
 static int majorAxisDistanceToFarEdge(int direction, Rect source, Rect dest) {
         return Math.max(1, majorAxisDistanceToFarEdgeRaw(direction, source, dest));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.124 -0500", hash_original_method = "AC771A545341D8B57AB42CBFAC5A4EC8", hash_generated_method = "18B58AC0903F0B603C49979735EDB163")
     
 static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
@@ -89,6 +97,8 @@ static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) 
      * @param dest The destination rect.
      * @return The distance.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.127 -0500", hash_original_method = "05A50C3C0DAB95FFDE6EA8B241A55A35", hash_generated_method = "520632667D7E86F01831D49C034CAE08")
     
 static int minorAxisDistance(int direction, Rect source, Rect dest) {
@@ -137,6 +147,8 @@ static int minorAxisDistance(int direction, Rect source, Rect dest) {
     SequentialFocusComparator mSequentialFocusComparator = new SequentialFocusComparator();
 
     // enforce thread local access
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.089 -0500", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "FC6BD4E28BCC84AAF77BDCFB9C14804F")
     
 private FocusFinder() {}
@@ -209,6 +221,8 @@ public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int directio
         return findNextFocus(root, null, focusedRect, direction);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.098 -0500", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "5BDBEC81898759143FCA102B1921FA63")
     
 private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
@@ -304,6 +318,8 @@ private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int d
      * @param rect2 The current best candidate.
      * @return Whether the candidate is the new best.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.101 -0500", hash_original_method = "1A554E4FCE47CCCA17DD555DAEE432BA", hash_generated_method = "3BC6E3E02B5FDA6E0E22C4C7D76E833D")
     
 boolean isBetterCandidate(int direction, Rect source, Rect rect1, Rect rect2) {
@@ -345,6 +361,8 @@ boolean isBetterCandidate(int direction, Rect source, Rect rect1, Rect rect2) {
      * @return Whether rect1 is a better candidate than rect2 by virtue of it being in src's
      *      beam
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.104 -0500", hash_original_method = "F8F20EF16F95C5B1E0CE2264EC877518", hash_generated_method = "A69A351A96146DBA41FCC8B3649180A7")
     
 boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
@@ -384,6 +402,8 @@ boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
      * axis distances.  Warning: this fudge factor is finely tuned, be sure to
      * run all focus tests if you dare tweak it.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.107 -0500", hash_original_method = "1AC6C27686DF7285B59CAB56ADBB9696", hash_generated_method = "1AC6C27686DF7285B59CAB56ADBB9696")
     
@@ -400,6 +420,8 @@ int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {
      * Includes an edge case for an empty rect (which is used in some cases when
      * searching from a point on the screen).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.109 -0500", hash_original_method = "10315B5B788523AD56571BFBE30F6A43", hash_generated_method = "10315B5B788523AD56571BFBE30F6A43")
     
 boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
@@ -428,6 +450,8 @@ boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
      * @param rect2 The second rectangle
      * @return whether the beams overlap
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.112 -0500", hash_original_method = "CDB9DCB11C27A9CD8A1036801B813613", hash_generated_method = "CDB9DCB11C27A9CD8A1036801B813613")
     
 boolean beamsOverlap(int direction, Rect rect1, Rect rect2) {
@@ -446,6 +470,8 @@ boolean beamsOverlap(int direction, Rect rect1, Rect rect2) {
     /**
      * e.g for left, is 'to left of'
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.114 -0500", hash_original_method = "0F816E844CC5CD74396FEF014D25737B", hash_generated_method = "0F816E844CC5CD74396FEF014D25737B")
     
 boolean isToDirectionOf(int direction, Rect src, Rect dest) {
@@ -556,6 +582,8 @@ public View findNearestTouchable(ViewGroup root, int x, int y, int direction, in
 
         private ViewGroup mRoot;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.985 -0400", hash_original_method = "0E280D788A863FD723521B8D9E30F8E5", hash_generated_method = "0E280D788A863FD723521B8D9E30F8E5")
         public SequentialFocusComparator ()
         {
@@ -608,6 +636,8 @@ public int compare(View first, View second) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.151 -0500", hash_original_method = "CE5638677B07104C355FE3EB975CEDE8", hash_generated_method = "A75C51D7CEE240C36DDD927E32FC3BA0")
         
 private void getRect(View view, Rect rect) {
@@ -620,6 +650,8 @@ private void getRect(View view, Rect rect) {
     /**
      * Is destRect a candidate for the next touch given the direction?
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.133 -0500", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "47998B70C2658DBDED4D069DD5945833")
     
 private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {

@@ -122,6 +122,8 @@ public boolean hasUnsupportedCritical() {
     // Makes the separated lists with oids of critical
     // and non-critical extensions
     //
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.393 -0500", hash_original_method = "F144B02FA833AD81E1DCC6E0D8E9952F", hash_generated_method = "9EF5BFE90F18388235246E981C980A7F")
     
 private void makeOidsLists() {

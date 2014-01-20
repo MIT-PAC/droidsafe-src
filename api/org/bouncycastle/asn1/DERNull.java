@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
 public class DERNull extends ASN1Null {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.626 -0500", hash_original_field = "9DCC5709B6FABB0499927A3054EF1968", hash_generated_field = "BCDA123C54265156D82C94A2B76E09D3")
 
@@ -26,6 +23,8 @@ protected DERNull()
     {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.633 -0500", hash_original_method = "ACDC3B7B82E2509D0E7268C448CC95AD", hash_generated_method = "ACDC3B7B82E2509D0E7268C448CC95AD")
     
 void encode(

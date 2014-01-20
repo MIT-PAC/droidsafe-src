@@ -314,6 +314,8 @@ public class SurfaceView extends View {
             
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.960 -0400", hash_original_method = "4B95DCD02F9C44A8215403B28FBCC461", hash_generated_method = "E2365ED314FD823C889E68CD4EC4E0E5")
         private final Canvas internalLockCanvas(Rect dirty) {
             Canvas varB4EAC82CA7396A68D541C85D26508E83_1001906738 = null; 
@@ -425,6 +427,8 @@ public SurfaceView(Context context, AttributeSet attrs, int defStyle) {
         init();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.323 -0500", hash_original_method = "8A7163C0B5D9260FCDBBE7B713CA285D", hash_generated_method = "A8F7F0532972A5FF42195F1D7D4D5A43")
     
 private void init() {
@@ -735,6 +739,8 @@ public void setWindowType(int type) {
         mWindowType = type;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.363 -0500", hash_original_method = "1133978B42097E05A4BF8CED29255FA3", hash_generated_method = "E57E11319E2E1E7E89A4A47602828A7B")
     
 private void updateWindow(boolean force, boolean redrawNeeded) {
@@ -942,6 +948,8 @@ private SurfaceHolder.Callback[] getSurfaceCallbacks() {
         return callbacks;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.368 -0500", hash_original_method = "300B2B985E368655B5E11ADA1916748D", hash_generated_method = "300B2B985E368655B5E11ADA1916748D")
     
 void handleGetNewSurface() {

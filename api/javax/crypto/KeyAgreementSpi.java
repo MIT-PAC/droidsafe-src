@@ -11,10 +11,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 
-
-
-
-
 public abstract class KeyAgreementSpi {
 
     /**
@@ -42,6 +38,8 @@ public KeyAgreementSpi() {
      * @throws IllegalStateException
      *             if this instance has not been initialized.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.174 -0500", hash_original_method = "C70AD38120709A28A897A63CF64E9E2D", hash_generated_method = "7C73FE1FF1D27A10327A4776563B2347")
     
 protected abstract Key engineDoPhase(Key key, boolean lastPhase)
@@ -54,6 +52,8 @@ protected abstract Key engineDoPhase(Key key, boolean lastPhase)
      * @throws IllegalStateException
      *             if this key agreement is not complete.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.177 -0500", hash_original_method = "FF4CD3A39CE0DBF3D5C1B882996F6E08", hash_generated_method = "31DF5E88B20C6A37AE418F082146BC99")
     
 protected abstract byte[] engineGenerateSecret()
@@ -73,6 +73,8 @@ protected abstract byte[] engineGenerateSecret()
      * @throws ShortBufferException
      *             if the specified buffer is too small for the shared secret.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.179 -0500", hash_original_method = "3D9EC8E225091D5B546F3812D25B678F", hash_generated_method = "160D46E73744C9AC26EF784C16AED27B")
     
 protected abstract int engineGenerateSecret(byte[] sharedSecret, int offset)
@@ -94,6 +96,8 @@ protected abstract int engineGenerateSecret(byte[] sharedSecret, int offset)
      *             if a {@code SecretKey} with the specified algorithm cannot be
      *             created using the generated shared secret.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.181 -0500", hash_original_method = "A58AEBB4F410DFCFA45E451DB73C9583", hash_generated_method = "53933193CD4FB024A5EC78A998130165")
     
 protected abstract SecretKey engineGenerateSecret(String algorithm)
@@ -112,6 +116,8 @@ protected abstract SecretKey engineGenerateSecret(String algorithm)
      *             if the specified key cannot be used to initialize this key
      *             agreement.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.183 -0500", hash_original_method = "79A9DF1551CE5FB8C67B172556736333", hash_generated_method = "93F3859914FD384D4088C77BB37EE77F")
     
 protected abstract void engineInit(Key key, SecureRandom random)
@@ -134,12 +140,13 @@ protected abstract void engineInit(Key key, SecureRandom random)
      *             if the specified parameters are invalid for this key
      *             agreement algorithm.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.186 -0500", hash_original_method = "A4D3E81BAC932DACBF1497749ED7EE1D", hash_generated_method = "1B2D1581E5A180CA0330384813EB4348")
     
 protected abstract void engineInit(Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
             InvalidAlgorithmParameterException;
-
     
 }
 

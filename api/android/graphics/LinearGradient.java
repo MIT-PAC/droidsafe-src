@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class LinearGradient extends Shader {
 	/**	Create a shader that draws a linear gradient along a line.
         @param x0           The x-coordinate for the start of the gradient line
@@ -53,7 +50,9 @@ public LinearGradient(float x0, float y0, float x1, float y1,
                 tile.nativeInt);
     }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.528 -0500", hash_original_method = "B94A77D14C5B8671FB729EA28F4EAAD5", hash_generated_method = "D0F325390B0EC6A2BB0E7BCA81E91771")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.528 -0500", hash_original_method = "B94A77D14C5B8671FB729EA28F4EAAD5", hash_generated_method = "D0F325390B0EC6A2BB0E7BCA81E91771")
     
     private int nativeCreate1(float x0, float y0, float x1, float y1,
                 int colors[], float positions[], int tileMode){
@@ -68,7 +67,9 @@ public LinearGradient(float x0, float y0, float x1, float y1,
     	return getTaintInt();
     }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.532 -0500", hash_original_method = "CCD3C7044708751014C9FDE6E03EC148", hash_generated_method = "97A46A89528DF4AAEDF635E546FA6A0A")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.532 -0500", hash_original_method = "CCD3C7044708751014C9FDE6E03EC148", hash_generated_method = "97A46A89528DF4AAEDF635E546FA6A0A")
     
     private int nativeCreate2(float x0, float y0, float x1, float y1,
                 int color0, int color1, int tileMode){
@@ -83,6 +84,8 @@ public LinearGradient(float x0, float y0, float x1, float y1,
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.536 -0500", hash_original_method = "3D4FC89E238038D87C8D1AA41C910405", hash_generated_method = "94488BC5223A1862048AC3E8637F2B4A")
     
     private int nativePostCreate1(int native_shader, float x0, float y0, float x1, float y1,
@@ -99,6 +102,8 @@ public LinearGradient(float x0, float y0, float x1, float y1,
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.539 -0500", hash_original_method = "9C29B9E72B1A16A8D3A2370F81F87105", hash_generated_method = "56A83CD8B20F47EA60DD56782E16B5C9")
     
     private int nativePostCreate2(int native_shader, float x0, float y0, float x1, float y1,
@@ -114,8 +119,6 @@ public LinearGradient(float x0, float y0, float x1, float y1,
     	addTaint(tileMode);
     	return getTaintInt();
     }
-
-
     
 }
 

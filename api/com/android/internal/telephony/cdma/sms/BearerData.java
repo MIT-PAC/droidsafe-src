@@ -24,6 +24,8 @@ import com.android.internal.util.BitwiseOutputStream;
 
 public final class BearerData {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.822 -0500", hash_original_method = "C8440B4B5249951B0460180E0996DCC0", hash_generated_method = "FA9866DE9E0EBCC74C058B4FAECAE16B")
     
 private static void encodeMessageId(BearerData bData, BitwiseOutputStream outStream)
@@ -37,6 +39,8 @@ private static void encodeMessageId(BearerData bData, BitwiseOutputStream outStr
         outStream.skip(3);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.830 -0500", hash_original_method = "45CCF9FC6BBE2266C382A19B24C2C3B0", hash_generated_method = "3B561D8B62665EB2FD102C8FE0C61698")
     
 private static int countAsciiSeptets(CharSequence msg, boolean force) {
@@ -92,6 +96,8 @@ public static TextEncodingDetails calcTextEncodingDetails(CharSequence msg,
         return ted;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.836 -0500", hash_original_method = "91C355610BEE9F119AA057EC1B5B9E18", hash_generated_method = "B34A37701351C2D499E5BC2DCFABCAD0")
     
 private static byte[] encode7bitAscii(String msg, boolean force)
@@ -118,6 +124,8 @@ private static byte[] encode7bitAscii(String msg, boolean force)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.841 -0500", hash_original_method = "5DF4ACCAFFF22D1CDA83BC54321F8332", hash_generated_method = "2729D69952FA805225C1DCDED77AF55E")
     
 private static byte[] encodeUtf16(String msg)
@@ -163,6 +171,8 @@ private static Gsm7bitCodingResult encode7bitGsm(String msg, int septetOffset, b
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.854 -0500", hash_original_method = "5F838063F0B141F65631125BC7CC38DD", hash_generated_method = "FB87166E076E652E9F95FE9EFD65391E")
     
 private static void encode7bitEms(UserData uData, byte[] udhData, boolean force)
@@ -179,6 +189,8 @@ private static void encode7bitEms(UserData uData, byte[] udhData, boolean force)
         System.arraycopy(udhData, 0, uData.payload, 1, udhData.length);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.857 -0500", hash_original_method = "7033638EB6D76A8EF1270FE61E5C8913", hash_generated_method = "6A6575B7D28F31F0634D0A483209977D")
     
 private static void encode16bitEms(UserData uData, byte[] udhData)
@@ -198,6 +210,8 @@ private static void encode16bitEms(UserData uData, byte[] udhData)
         System.arraycopy(payload, 0, uData.payload, udhBytes + udhPadding, payload.length);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.860 -0500", hash_original_method = "A4489840F8F0AB7CD46376C0433D5DEC", hash_generated_method = "2701996644D0BB50A6CB89FA82F8F349")
     
 private static void encodeEmsUserDataPayload(UserData uData)
@@ -222,6 +236,8 @@ private static void encodeEmsUserDataPayload(UserData uData)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.864 -0500", hash_original_method = "4E9E7A33D89CCEFB6DB4C49B1926C5C6", hash_generated_method = "68F825D930631A65A4453F4784DAB2AC")
     
 private static void encodeUserDataPayload(UserData uData)
@@ -279,6 +295,8 @@ private static void encodeUserDataPayload(UserData uData)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.868 -0500", hash_original_method = "D961044B5677DD1E2D66ABA393A33F76", hash_generated_method = "3411014163B14FEA1F532568C00D5633")
     
 private static void encodeUserData(BearerData bData, BitwiseOutputStream outStream)
@@ -324,6 +342,8 @@ private static void encodeUserData(BearerData bData, BitwiseOutputStream outStre
         if (paddingBits > 0) outStream.write(paddingBits, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.870 -0500", hash_original_method = "9AA3A2721795859BDBEE9278794F1EAF", hash_generated_method = "128190140A42D44530A6B506F292B00E")
     
 private static void encodeReplyOption(BearerData bData, BitwiseOutputStream outStream)
@@ -337,6 +357,8 @@ private static void encodeReplyOption(BearerData bData, BitwiseOutputStream outS
         outStream.write(4, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.873 -0500", hash_original_method = "145B537C285486FDF388CB1D49BC658C", hash_generated_method = "348077A4D5CECB075EF423A41661F3C7")
     
 private static byte[] encodeDtmfSmsAddress(String address) {
@@ -364,6 +386,8 @@ private static byte[] encodeDtmfSmsAddress(String address) {
      * and the difference in 4-bit vs. 8-bit is resolved.
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.876 -0500", hash_original_method = "E0D8BC2FB733B97D4B84758B4B732CFB", hash_generated_method = "D9C5502EE73831DB1993CE1ECDD537DD")
     
 private static void encodeCdmaSmsAddress(CdmaSmsAddress addr) throws CodingException {
@@ -378,6 +402,8 @@ private static void encodeCdmaSmsAddress(CdmaSmsAddress addr) throws CodingExcep
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.879 -0500", hash_original_method = "4AD2B9904764EF519DAE910AE53084AC", hash_generated_method = "3FA94612ADDD794FEACCD9817B86FD2C")
     
 private static void encodeCallbackNumber(BearerData bData, BitwiseOutputStream outStream)
@@ -407,6 +433,8 @@ private static void encodeCallbackNumber(BearerData bData, BitwiseOutputStream o
         if (paddingBits > 0) outStream.write(paddingBits, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.881 -0500", hash_original_method = "40D56C36E677F312FE390FA3CD6739EB", hash_generated_method = "9EA53459644D33AD109C3CB2EA4F58E5")
     
 private static void encodeMsgStatus(BearerData bData, BitwiseOutputStream outStream)
@@ -417,6 +445,8 @@ private static void encodeMsgStatus(BearerData bData, BitwiseOutputStream outStr
         outStream.write(6, bData.messageStatus);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.884 -0500", hash_original_method = "B066D5B97CE0C4B0F8C8E9DF62137DA2", hash_generated_method = "B799D47987141ED2E80DA42BB02FDF06")
     
 private static void encodeMsgCount(BearerData bData, BitwiseOutputStream outStream)
@@ -426,6 +456,8 @@ private static void encodeMsgCount(BearerData bData, BitwiseOutputStream outStre
         outStream.write(8, bData.numberOfMessages);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.887 -0500", hash_original_method = "62291A77DBFA4C919FF73895F4C94439", hash_generated_method = "565229793C500D32C211A542FEEADD6D")
     
 private static void encodeValidityPeriodRel(BearerData bData, BitwiseOutputStream outStream)
@@ -435,6 +467,8 @@ private static void encodeValidityPeriodRel(BearerData bData, BitwiseOutputStrea
         outStream.write(8, bData.validityPeriodRelative);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.890 -0500", hash_original_method = "38925A3103B0642972D74B5CCA5C4E6C", hash_generated_method = "5E9D01A14813DB532B6457CDB26762DF")
     
 private static void encodePrivacyIndicator(BearerData bData, BitwiseOutputStream outStream)
@@ -445,6 +479,8 @@ private static void encodePrivacyIndicator(BearerData bData, BitwiseOutputStream
         outStream.skip(6);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.892 -0500", hash_original_method = "AE5D89FF794A34715DD9D23D6669FE26", hash_generated_method = "66CC667E7A3DAAD97D884E2C39FFA765")
     
 private static void encodeLanguageIndicator(BearerData bData, BitwiseOutputStream outStream)
@@ -454,6 +490,8 @@ private static void encodeLanguageIndicator(BearerData bData, BitwiseOutputStrea
         outStream.write(8, bData.language);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.895 -0500", hash_original_method = "EC15F8B60508169BAD62310FB6E7B62C", hash_generated_method = "B3861987E5CBF8354520E18A6BA47F9D")
     
 private static void encodeDisplayMode(BearerData bData, BitwiseOutputStream outStream)
@@ -464,6 +502,8 @@ private static void encodeDisplayMode(BearerData bData, BitwiseOutputStream outS
         outStream.skip(6);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.897 -0500", hash_original_method = "3615FE986595FC6130C29894F12AA6C9", hash_generated_method = "0AEE5E65B6E327D7FEDFA8C1E6B871A8")
     
 private static void encodePriorityIndicator(BearerData bData, BitwiseOutputStream outStream)
@@ -474,6 +514,8 @@ private static void encodePriorityIndicator(BearerData bData, BitwiseOutputStrea
         outStream.skip(6);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.900 -0500", hash_original_method = "397B6C49F7435C6B9291006B0E5CA067", hash_generated_method = "68A3CC721BE956233BC07D611C5E7AB8")
     
 private static void encodeMsgDeliveryAlert(BearerData bData, BitwiseOutputStream outStream)
@@ -554,6 +596,8 @@ public static byte[] encode(BearerData bData) {
         return null;
    }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.907 -0500", hash_original_method = "923C845F84F5C6F3155DABBB92C6DE2E", hash_generated_method = "16709A57212C08B8A6DA2BA619E65CB4")
     
 private static boolean decodeMessageId(BearerData bData, BitwiseInputStream inStream)
@@ -580,6 +624,8 @@ private static boolean decodeMessageId(BearerData bData, BitwiseInputStream inSt
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.910 -0500", hash_original_method = "F5B8D6E554376177A61DA467E9B8453E", hash_generated_method = "753C11D25CE5011154EF0D60756BFB80")
     
 private static boolean decodeUserData(BearerData bData, BitwiseInputStream inStream)
@@ -603,6 +649,8 @@ private static boolean decodeUserData(BearerData bData, BitwiseInputStream inStr
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.912 -0500", hash_original_method = "B88592DD561D7BE4EA02EB193ADE417D", hash_generated_method = "A172CF350931CE4E4CADB4EC23CB854A")
     
 private static String decodeUtf8(byte[] data, int offset, int numFields)
@@ -615,6 +663,8 @@ private static String decodeUtf8(byte[] data, int offset, int numFields)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.915 -0500", hash_original_method = "29926604C70FE73490D2AFB0EFFA3811", hash_generated_method = "56EFD4D116CC64741554CDC56157C6A8")
     
 private static String decodeUtf16(byte[] data, int offset, int numFields)
@@ -630,6 +680,8 @@ private static String decodeUtf16(byte[] data, int offset, int numFields)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.918 -0500", hash_original_method = "A2E3D42851B4A12F82658D4CF7E558E6", hash_generated_method = "8B00CEA38BA8F57C6D404113CFA6072E")
     
 private static String decode7bitAscii(byte[] data, int offset, int numFields)
@@ -665,6 +717,8 @@ private static String decode7bitAscii(byte[] data, int offset, int numFields)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.921 -0500", hash_original_method = "2BBEF1F919895529A7B92F9F319B970F", hash_generated_method = "4F7AE1FF33F63C303787B8CFE92F06C3")
     
 private static String decode7bitGsm(byte[] data, int offset, int numFields)
@@ -683,6 +737,8 @@ private static String decode7bitGsm(byte[] data, int offset, int numFields)
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.923 -0500", hash_original_method = "1666BB823F4365D840FAE30FB0402662", hash_generated_method = "65E9803E8CED5E48CED1412496A6EC53")
     
 private static String decodeLatin(byte[] data, int offset, int numFields)
@@ -695,6 +751,8 @@ private static String decodeLatin(byte[] data, int offset, int numFields)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.927 -0500", hash_original_method = "8FE95FBAC86FD32B593F5D6A76FB895E", hash_generated_method = "B3801A795C5808716148EDCD3D37E685")
     
 private static void decodeUserDataPayload(UserData userData, boolean hasUserDataHeader)
@@ -767,6 +825,8 @@ private static void decodeUserDataPayload(UserData userData, boolean hasUserData
      *
      * Note that the characters encoding is 6-bit packed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.931 -0500", hash_original_method = "11C583A748C5126F7632A70965DAF4B7", hash_generated_method = "106AED6AFFFEAC4EFF5136245DD51CBA")
     
 private static void decodeIs91VoicemailStatus(BearerData bData)
@@ -812,6 +872,8 @@ private static void decodeIs91VoicemailStatus(BearerData bData)
      * characters, which are treated as normal text user data payload.
      * Note that the characters encoding is 6-bit packed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.934 -0500", hash_original_method = "060A9EEF28BA2151837477F91B43F7FB", hash_generated_method = "4FB634BF302A3B38AE7DC3F2E3F82FB5")
     
 private static void decodeIs91ShortMessage(BearerData bData)
@@ -838,6 +900,8 @@ private static void decodeIs91ShortMessage(BearerData bData)
      * encoded using standard 4-bit DTMF, which are treated as a
      * callback number.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.937 -0500", hash_original_method = "D142CB8A8401CEBF28BCC073ADA26748", hash_generated_method = "373B09AAC78224AA682522BE6B8FA27F")
     
 private static void decodeIs91Cli(BearerData bData) throws CodingException {
@@ -855,6 +919,8 @@ private static void decodeIs91Cli(BearerData bData) throws CodingException {
         bData.callbackNumber = addr;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.939 -0500", hash_original_method = "109ABA3A30E199287EB04CAB6B02E375", hash_generated_method = "649E9740F601EA23CD5D1CBC45528112")
     
 private static void decodeIs91(BearerData bData)
@@ -877,6 +943,8 @@ private static void decodeIs91(BearerData bData)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.942 -0500", hash_original_method = "E24DF7CFD7741E5C7CB66CF0BBA61C19", hash_generated_method = "CE4F112230DDF2F546524B03603BF15D")
     
 private static boolean decodeReplyOption(BearerData bData, BitwiseInputStream inStream)
@@ -903,6 +971,8 @@ private static boolean decodeReplyOption(BearerData bData, BitwiseInputStream in
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.945 -0500", hash_original_method = "B7DA0193C1F0E29A3C9A95B701317994", hash_generated_method = "41F808E9E6D6FE7929E45EB1EC3912DE")
     
 private static boolean decodeMsgCount(BearerData bData, BitwiseInputStream inStream)
@@ -925,6 +995,8 @@ private static boolean decodeMsgCount(BearerData bData, BitwiseInputStream inStr
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.949 -0500", hash_original_method = "E2815FE9E78B59C1196C5265558ADE24", hash_generated_method = "D862F305FFD47EBE1FEB2D3FFED831B2")
     
 private static boolean decodeDepositIndex(BearerData bData, BitwiseInputStream inStream)
@@ -947,6 +1019,8 @@ private static boolean decodeDepositIndex(BearerData bData, BitwiseInputStream i
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.952 -0500", hash_original_method = "05A2FAD69F38ED087E94B9E189DD8CF0", hash_generated_method = "DBA118A49F03EBB1354F504479BFB46A")
     
 private static String decodeDtmfSmsAddress(byte[] rawData, int numFields)
@@ -966,6 +1040,8 @@ private static String decodeDtmfSmsAddress(byte[] rawData, int numFields)
         return strBuf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.954 -0500", hash_original_method = "07134771082B158670F9BBEB576EFC00", hash_generated_method = "3F8F868EC66482C23CBD8D6B4A6E207E")
     
 private static void decodeSmsAddress(CdmaSmsAddress addr) throws CodingException {
@@ -982,6 +1058,8 @@ private static void decodeSmsAddress(CdmaSmsAddress addr) throws CodingException
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.958 -0500", hash_original_method = "F2DBCC59FA7C535660772894A9C035EF", hash_generated_method = "72DE8FA51832B259C8A6BE024F8B6BC0")
     
 private static boolean decodeCallbackNumber(BearerData bData, BitwiseInputStream inStream)
@@ -1015,6 +1093,8 @@ private static boolean decodeCallbackNumber(BearerData bData, BitwiseInputStream
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.961 -0500", hash_original_method = "4C657FE6B6C6A98999E77FAF28124251", hash_generated_method = "DBA14E9850132EB85C2FBC01FC80C3AD")
     
 private static boolean decodeMsgStatus(BearerData bData, BitwiseInputStream inStream)
@@ -1039,6 +1119,8 @@ private static boolean decodeMsgStatus(BearerData bData, BitwiseInputStream inSt
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.963 -0500", hash_original_method = "AD019ACB8EA466739D545F6EFCB467DE", hash_generated_method = "F5F5882ADECE914B4AD85179347D3257")
     
 private static boolean decodeMsgCenterTimeStamp(BearerData bData, BitwiseInputStream inStream)
@@ -1061,6 +1143,8 @@ private static boolean decodeMsgCenterTimeStamp(BearerData bData, BitwiseInputSt
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.966 -0500", hash_original_method = "6422694027F3414640C09CE3A0B4639B", hash_generated_method = "B50CE842CB10FFDB13F144724A58700E")
     
 private static boolean decodeValidityAbs(BearerData bData, BitwiseInputStream inStream)
@@ -1083,6 +1167,8 @@ private static boolean decodeValidityAbs(BearerData bData, BitwiseInputStream in
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.969 -0500", hash_original_method = "5924CBF7BA5FE313E58D9F30B885ADAB", hash_generated_method = "18A98E6B861BCA1CA879B79E6C32FF6E")
     
 private static boolean decodeDeferredDeliveryAbs(BearerData bData, BitwiseInputStream inStream)
@@ -1106,6 +1192,8 @@ private static boolean decodeDeferredDeliveryAbs(BearerData bData, BitwiseInputS
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.972 -0500", hash_original_method = "EEF778150D7C2C7BE621DC9A5F784533", hash_generated_method = "B3F0B34E17AA97127696F624E5A83968")
     
 private static boolean decodeValidityRel(BearerData bData, BitwiseInputStream inStream)
@@ -1129,6 +1217,8 @@ private static boolean decodeValidityRel(BearerData bData, BitwiseInputStream in
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.974 -0500", hash_original_method = "C853F9ACBB971D28351D63FF9F0BA3C8", hash_generated_method = "FB80D2DBDFFF1D28E6ECC10E55BC4150")
     
 private static boolean decodeDeferredDeliveryRel(BearerData bData, BitwiseInputStream inStream)
@@ -1152,6 +1242,8 @@ private static boolean decodeDeferredDeliveryRel(BearerData bData, BitwiseInputS
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.978 -0500", hash_original_method = "DE548435765F76D91D91A1AFBA22C349", hash_generated_method = "1209AC6B4571452AF7B9C3728577FB5C")
     
 private static boolean decodePrivacyIndicator(BearerData bData, BitwiseInputStream inStream)
@@ -1176,6 +1268,8 @@ private static boolean decodePrivacyIndicator(BearerData bData, BitwiseInputStre
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.981 -0500", hash_original_method = "2B34FAF3BF7167101350848AE7AE2B5E", hash_generated_method = "3BB9E133395645FEC9140A3D938B72D1")
     
 private static boolean decodeLanguageIndicator(BearerData bData, BitwiseInputStream inStream)
@@ -1199,6 +1293,8 @@ private static boolean decodeLanguageIndicator(BearerData bData, BitwiseInputStr
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.984 -0500", hash_original_method = "D7D5F0FE94672665DAD8D39209E46552", hash_generated_method = "38006448C3360909685BB024711A892A")
     
 private static boolean decodeDisplayMode(BearerData bData, BitwiseInputStream inStream)
@@ -1223,6 +1319,8 @@ private static boolean decodeDisplayMode(BearerData bData, BitwiseInputStream in
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.987 -0500", hash_original_method = "A6F5010B57ABFA30013AE64166D804D6", hash_generated_method = "3272DD8D375AC0BB4834E7E82A70D7FE")
     
 private static boolean decodePriorityIndicator(BearerData bData, BitwiseInputStream inStream)
@@ -1247,6 +1345,8 @@ private static boolean decodePriorityIndicator(BearerData bData, BitwiseInputStr
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.990 -0500", hash_original_method = "EDC73F8B955E61094495F0071001FC68", hash_generated_method = "9FB4574120A6DFA3583EFDA0F4E7BDFE")
     
 private static boolean decodeMsgDeliveryAlert(BearerData bData, BitwiseInputStream inStream)
@@ -1271,6 +1371,8 @@ private static boolean decodeMsgDeliveryAlert(BearerData bData, BitwiseInputStre
         return decodeSuccess;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.993 -0500", hash_original_method = "8C0053F177150406639891A416F80AA8", hash_generated_method = "09DF8B0BC2AA93B0A5375CD1701723E9")
     
 private static boolean decodeUserResponseCode(BearerData bData, BitwiseInputStream inStream)
@@ -1586,6 +1688,8 @@ public CodingException(String s) {
 
         byte[] data;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.708 -0400", hash_original_method = "7E9DFC757F4277B439A8F1AFF7D9B860", hash_generated_method = "7E9DFC757F4277B439A8F1AFF7D9B860")
         public Gsm7bitCodingResult ()
         {

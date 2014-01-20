@@ -31,6 +31,8 @@ public abstract class Buffer {
 
      MemoryBlock block;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.644 -0500", hash_original_method = "2FDB6310072AD349AB73186351A07476", hash_generated_method = "2FDB6310072AD349AB73186351A07476")
     
 Buffer(int elementSizeShift, int capacity, MemoryBlock block) {
@@ -58,6 +60,8 @@ Buffer(int elementSizeShift, int capacity, MemoryBlock block) {
      *         UnsupportedOperationException if the buffer does not expose an array
      * @since 1.6
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.646 -0500", hash_original_method = "09741C8E85E025E968AD6F26D3687DF1", hash_generated_method = "84B70AC4A107B559ECC2A7E3978C672F")
     
 public abstract Object array();
@@ -78,6 +82,8 @@ public abstract Object array();
      *         UnsupportedOperationException if the buffer does not expose an array
      * @since 1.6
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.649 -0500", hash_original_method = "6116DB2B49159CA0E0F5A4E8FDD85562", hash_generated_method = "E71FB9D0772673BC9C1AFEAE483451D3")
     
 public abstract int arrayOffset();
@@ -98,6 +104,8 @@ public final int capacity() {
     /**
      * Used for the scalar get/put operations.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.653 -0500", hash_original_method = "3713E0ECC304C61FA995548AAE6F6858", hash_generated_method = "3713E0ECC304C61FA995548AAE6F6858")
     
 void checkIndex(int index) {
@@ -109,6 +117,8 @@ void checkIndex(int index) {
     /**
      * Used for the ByteBuffer operations that get types larger than a byte.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.656 -0500", hash_original_method = "E27C706F4FA27A5F90FA0BA455FA267B", hash_generated_method = "E27C706F4FA27A5F90FA0BA455FA267B")
     
 void checkIndex(int index, int sizeOfType) {
@@ -118,6 +128,8 @@ void checkIndex(int index, int sizeOfType) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.658 -0500", hash_original_method = "BA880ED8E3C58CA5885B3C340E7A6A66", hash_generated_method = "BA880ED8E3C58CA5885B3C340E7A6A66")
     
 int checkGetBounds(int bytesPerElement, int length, int offset, int count) {
@@ -132,6 +144,8 @@ int checkGetBounds(int bytesPerElement, int length, int offset, int count) {
         return byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.661 -0500", hash_original_method = "A9251187BC2FC71988179BCFBD0F334A", hash_generated_method = "A9251187BC2FC71988179BCFBD0F334A")
     
 int checkPutBounds(int bytesPerElement, int length, int offset, int count) {
@@ -149,6 +163,8 @@ int checkPutBounds(int bytesPerElement, int length, int offset, int count) {
         return byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.663 -0500", hash_original_method = "37F8609F5279E5BC0D8BC318C47B5ADC", hash_generated_method = "37F8609F5279E5BC0D8BC318C47B5ADC")
     
 void checkStartEndRemaining(int start, int end) {
@@ -208,6 +224,8 @@ public final Buffer flip() {
      * read-only arrays, because the other methods would throw {@code ReadOnlyBufferException}.
      * @since 1.6
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.670 -0500", hash_original_method = "5D0B8C70464A251811F6E29D47898FAC", hash_generated_method = "F51D3E74A2EA9BEA06AE46602087F65C")
     
 public abstract boolean hasArray();
@@ -231,6 +249,8 @@ public final boolean hasRemaining() {
      * Returns true if this is a direct buffer.
      * @since 1.6
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.676 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
 public abstract boolean isDirect();
@@ -241,10 +261,14 @@ public abstract boolean isDirect();
      * @return {@code true} if this buffer is read-only, {@code false}
      *         otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.678 -0500", hash_original_method = "A8AEFD64A4190D55AF4312903F115146", hash_generated_method = "CD3E3A8E7CDFBBFF1BC7E86A37D41E49")
     
 public abstract boolean isReadOnly();
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.681 -0500", hash_original_method = "08F9CA73B929B3F2D88417804C3457BC", hash_generated_method = "0D3DD797BA7A4055D03530371799E958")
     
 final void checkWritable() {
@@ -293,6 +317,8 @@ public final Buffer limit(int newLimit) {
     /**
      * Subverts the fact that limit(int) is final, for the benefit of MappedByteBufferAdapter.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.688 -0500", hash_original_method = "513739890B0FB1849008B6B4DB830FEC", hash_generated_method = "513739890B0FB1849008B6B4DB830FEC")
     
 void limitImpl(int newLimit) {
@@ -358,6 +384,8 @@ public final Buffer position(int newPosition) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.698 -0500", hash_original_method = "291AA3CEE66D23BDF7C966DCE30CC485", hash_generated_method = "291AA3CEE66D23BDF7C966DCE30CC485")
     
 void positionImpl(int newPosition) {

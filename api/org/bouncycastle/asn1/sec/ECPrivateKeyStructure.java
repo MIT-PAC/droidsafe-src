@@ -22,11 +22,6 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.util.BigIntegers;
 
-
-
-
-
-
 public class ECPrivateKeyStructure extends ASN1Encodable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.903 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
 
@@ -114,6 +109,8 @@ public ASN1Object getParameters()
         return getObjectInTag(0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.924 -0500", hash_original_method = "F319A866ECD7F1BB5BF305B540FF9ADA", hash_generated_method = "A4E55A8C11A667E5BE3707ECC99AF9F0")
     
 private ASN1Object getObjectInTag(int tagNo)
@@ -149,7 +146,6 @@ public DERObject toASN1Object()
     {
         return seq;
     }
-
     
 }
 

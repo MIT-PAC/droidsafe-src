@@ -8,11 +8,6 @@ import java.io.IOException;
 
 import org.bouncycastle.util.Strings;
 
-
-
-
-
-
 public class DERUTF8String extends ASN1Object implements DERString {
 
     /**
@@ -114,6 +109,8 @@ public int hashCode()
         return this.getString().hashCode();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.545 -0500", hash_original_method = "DF88B5FE85EAF9BB2061A4AEA787A839", hash_generated_method = "DF88B5FE85EAF9BB2061A4AEA787A839")
     
 boolean asn1Equals(DERObject o)
@@ -128,6 +125,8 @@ boolean asn1Equals(DERObject o)
         return this.getString().equals(s.getString());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.547 -0500", hash_original_method = "6841F545C98612C1AFE91CE39DFBA4FF", hash_generated_method = "6841F545C98612C1AFE91CE39DFBA4FF")
     
 void encode(DEROutputStream out)
@@ -135,7 +134,6 @@ void encode(DEROutputStream out)
     {
         out.writeEncoded(UTF8_STRING, Strings.toUTF8ByteArray(string));
     }
-
     
 }
 

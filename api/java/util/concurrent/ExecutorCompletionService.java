@@ -24,6 +24,8 @@ public class ExecutorCompletionService<V> implements CompletionService<V> {
      * @param executor the executor to use
      * @throws NullPointerException if executor is {@code null}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.891 -0500", hash_original_method = "EDD261742BCF15D9FB8B326368F1ACDA", hash_generated_method = "5B5F8784682D6CD93D7B914157746BC6")
     
 public ExecutorCompletionService(Executor executor) {
@@ -48,6 +50,8 @@ public ExecutorCompletionService(Executor executor) {
      *        them not to be retrievable.
      * @throws NullPointerException if executor or completionQueue are {@code null}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.894 -0500", hash_original_method = "4003AFDAD418CC2ECC4A8EB9D6C4E6CA", hash_generated_method = "D835F2A955986AAB23DD04ACF6C2D200")
     
 public ExecutorCompletionService(Executor executor,
@@ -60,6 +64,8 @@ public ExecutorCompletionService(Executor executor,
         this.completionQueue = completionQueue;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.886 -0500", hash_original_method = "C02DA5DA60AA95D77CB448ECF2F70F43", hash_generated_method = "B592AD98AC1117BD75AE2D9835928135")
     
 private RunnableFuture<V> newTaskFor(Callable<V> task) {
@@ -69,6 +75,8 @@ private RunnableFuture<V> newTaskFor(Callable<V> task) {
             return aes.newTaskFor(task);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.888 -0500", hash_original_method = "BBB6A806AE85DE3A7C516C9FC9F3C042", hash_generated_method = "2D2837FCE7F3DBBCD9CA71F759730077")
     
 private RunnableFuture<V> newTaskFor(Runnable task, V result) {
@@ -78,6 +86,8 @@ private RunnableFuture<V> newTaskFor(Runnable task, V result) {
             return aes.newTaskFor(task, result);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.896 -0500", hash_original_method = "1066CE8ABD0AE96E9CBF3A082EB30584", hash_generated_method = "F676796BF602BBE00CB5B98928119D97")
     
 public Future<V> submit(Callable<V> task) {
@@ -87,6 +97,8 @@ public Future<V> submit(Callable<V> task) {
         return f;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.899 -0500", hash_original_method = "90F0DB50BDB2C4419B39525C086024BB", hash_generated_method = "AAC431F8CC7FF23DDF357A3B885CD4C8")
     
 public Future<V> submit(Runnable task, V result) {
@@ -96,18 +108,24 @@ public Future<V> submit(Runnable task, V result) {
         return f;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.902 -0500", hash_original_method = "B111DAF975BA373371F56AC1A498CB62", hash_generated_method = "F8BCEAF3098BB34488C509D5C6CC53DD")
     
 public Future<V> take() throws InterruptedException {
         return completionQueue.take();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.904 -0500", hash_original_method = "AB80AB0A080F8B419B7B16E63DEC8AE2", hash_generated_method = "E93FE2DDC8E980E5DBDA33FD5BA06B4E")
     
 public Future<V> poll() {
         return completionQueue.poll();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.906 -0500", hash_original_method = "68AEBC19C67278ADE553BA09F2BB4BEF", hash_generated_method = "4655BA2D85B4680614476EFDFD4C736E")
     

@@ -13,15 +13,21 @@ import droidsafe.helpers.DSUtils;
 
 public class SQLiteQuery extends SQLiteProgram {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeFillWindow(int databasePtr, int statementPtr, int windowPtr,
             int startPos, int offsetParam) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeColumnCount(int statementPtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeColumnName(int statementPtr, int columnIndex) {
         	return new String();
     }
@@ -42,7 +48,9 @@ public class SQLiteQuery extends SQLiteProgram {
      * @param query The SQL string for this query. 
      * @param offsetIndex The 1-based index to the OFFSET parameter, 
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.488 -0500", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "B04E51F22DB6FA67074D367FD62C2A3B")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.488 -0500", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "B04E51F22DB6FA67074D367FD62C2A3B")
     
 SQLiteQuery(SQLiteDatabase db, String query, int offsetIndex, String[] bindArgs) {
         super(db, query);
@@ -58,7 +66,9 @@ SQLiteQuery(SQLiteDatabase db, String query, int offsetIndex, String[] bindArgs)
      * @param db The database that this query object is associated with
      * @param query the instance of {@link SQLiteQuery} to be replaced
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.491 -0500", hash_original_method = "ACE77F48482E9278318C8F93FF273D4F", hash_generated_method = "ACE77F48482E9278318C8F93FF273D4F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.491 -0500", hash_original_method = "ACE77F48482E9278318C8F93FF273D4F", hash_generated_method = "ACE77F48482E9278318C8F93FF273D4F")
     
 SQLiteQuery(SQLiteDatabase db, SQLiteQuery query) {
         super(db, query.mSql);
@@ -72,7 +82,9 @@ SQLiteQuery(SQLiteDatabase db, SQLiteQuery query) {
      * @param window The window to fill into
      * @return number of total rows in the query
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.493 -0500", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "2020EB7A90BA7B22232FE2964D5A4746")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.493 -0500", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "2020EB7A90BA7B22232FE2964D5A4746")
     
 int fillWindow(CursorWindow window) {
         mDatabase.lock(mSql);
@@ -126,7 +138,9 @@ int fillWindow(CursorWindow window) {
      * 
      * @return The number of column in the statement's result set.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.496 -0500", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "54618FF47D2C419F49442C51D0DA0774")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.496 -0500", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "54618FF47D2C419F49442C51D0DA0774")
     
 int columnCountLocked() {
         acquireReference();
@@ -144,7 +158,9 @@ int columnCountLocked() {
      * @param columnIndex the index of the column to get the name for
      * @return The requested column's name
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.498 -0500", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "B5AB077B4013E218660670FE95A73F4B")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.498 -0500", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "B5AB077B4013E218660670FE95A73F4B")
     
 String columnNameLocked(int columnIndex) {
         acquireReference();
@@ -173,7 +189,9 @@ String columnNameLocked(int columnIndex) {
     /**
      * Called by SQLiteCursor when it is requeried.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.506 -0500", hash_original_method = "10930ECAA546E890A142B67C44E349E2", hash_generated_method = "10930ECAA546E890A142B67C44E349E2")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.506 -0500", hash_original_method = "10930ECAA546E890A142B67C44E349E2", hash_generated_method = "10930ECAA546E890A142B67C44E349E2")
     
 void requery() {
         if (mClosed) {

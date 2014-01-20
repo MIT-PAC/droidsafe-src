@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 class Multiplication {
 
     // BEGIN android-note: multiply has been removed in favor of using OpenSSL BIGNUM
@@ -18,6 +16,8 @@ class Multiplication {
      * @param factor a positive {@code int} number
      * @return {@code val * factor}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.021 -0500", hash_original_method = "D1D350F2DDD3147BCAFA3C9F1D37A8D5", hash_generated_method = "69BD9BFC77D63852CB66187408365DAF")
     
 static BigInteger multiplyByPositiveInt(BigInteger val, int factor) {
@@ -33,6 +33,8 @@ static BigInteger multiplyByPositiveInt(BigInteger val, int factor) {
      * @param exp a positive {@code long} exponent
      * @return {@code val * 10<sup>exp</sup>}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.024 -0500", hash_original_method = "546ADD18DFC665D3BFD1EC85F053ED92", hash_generated_method = "9625348A961D86F15E58A5E05C374BB1")
     
 static BigInteger multiplyByTenPow(BigInteger val, long exp) {
@@ -49,6 +51,8 @@ static BigInteger multiplyByTenPow(BigInteger val, long exp) {
      * @param exp the exponent of power of ten, it must be positive.
      * @return a {@code BigInteger} with value {@code 10<sup>exp</sup>}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.027 -0500", hash_original_method = "2834F7E1D24878B9AB4D87659676BBDC", hash_generated_method = "41389D46E9EA9428D832026CA4A66826")
     
 static BigInteger powerOf10(long exp) {
@@ -114,6 +118,8 @@ static BigInteger powerOf10(long exp) {
      * @param exp a positive {@code int} exponent
      * @return {@code val * 5<sup>exp</sup>}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.030 -0500", hash_original_method = "DACF258463E816AF2E85D9BE7940A118", hash_generated_method = "1CDECBF10F6A15E44A7BD3691A4DDB13")
     
 static BigInteger multiplyByFivePow(BigInteger val, int exp) {
@@ -156,6 +162,8 @@ static BigInteger multiplyByFivePow(BigInteger val, int exp) {
     static final BigInteger bigFivePows[] = new BigInteger[32];
 
     /** Just to denote that this class can't be instantiated. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.008 -0500", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "3C7B22114503E6EA0B68A72F303C2BF0")
     
 private Multiplication() {}

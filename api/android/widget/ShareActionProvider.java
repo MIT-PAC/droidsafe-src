@@ -259,6 +259,8 @@ public void setShareIntent(Intent shareIntent) {
      * Set the activity chooser policy of the model backed by the current
      * share history file if needed which is if there is a registered callback.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.273 -0500", hash_original_method = "5CBD2FEC274C7972832B56342BCF52F4", hash_generated_method = "C4C90C5DAE2924F19930082702F6F18A")
     
 private void setActivityChooserPolicyIfNeeded() {

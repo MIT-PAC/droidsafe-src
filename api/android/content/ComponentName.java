@@ -180,6 +180,8 @@ public ComponentName(Parcel in) {
                 "class name is null");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.617 -0500", hash_original_method = "5EFEBE9DDFB777526DBE0E9A79DAA5EE", hash_generated_method = "FD372FFF984FE9C8200778E7FDFB7A0F")
     
 private ComponentName(String pkg, Parcel in) {

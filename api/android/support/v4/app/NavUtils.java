@@ -12,10 +12,6 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 
-
-
-
-
 public class NavUtils {
 
     /**
@@ -197,6 +193,8 @@ public static String getParentActivityName(Context context, ComponentName compon
     public static final String PARENT_ACTIVITY = "android.support.PARENT_ACTIVITY";
 
     /** No instances! */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.436 -0500", hash_original_method = "E75D43BE6A1853BDB1330AA34521ED0F", hash_generated_method = "ABB99A4CD397AD199325D202C7A52973")
     
 private NavUtils() {

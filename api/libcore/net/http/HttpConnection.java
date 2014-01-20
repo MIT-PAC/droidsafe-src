@@ -261,6 +261,8 @@ public SSLSocket getSecureSocketIfConnected() {
      * Returns true if the connection is functional. This uses a shameful hack
      * to peek a byte from the socket.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.717 -0500", hash_original_method = "197418179C71EABCF647B3FA4C9F9D3C", hash_generated_method = "5C11BDA1B3A23466E1E33DCD2701C4C8")
     
 boolean isStale() throws IOException {

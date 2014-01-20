@@ -863,6 +863,8 @@ void showBreadCrumbs(Header header) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.642 -0500", hash_original_method = "7A46889D874DD705E59FA4FB1509394D", hash_generated_method = "D5534E964B59AC2DBFA44850590E04CF")
     
 private void switchToHeaderInner(String fragmentName, Bundle args, int direction) {
@@ -1024,6 +1026,8 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
 
             TextView summary;
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.646 -0400", hash_original_method = "7AAB7B01E6419825274A30D2382564EA", hash_generated_method = "7AAB7B01E6419825274A30D2382564EA")
             public HeaderViewHolder ()
             {
@@ -1099,6 +1103,8 @@ public Header() {
             // Empty
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.553 -0500", hash_original_method = "3E4088512988FAACC868C0BAC5E638A1", hash_generated_method = "3E4088512988FAACC868C0BAC5E638A1")
         
 Header(Parcel in) {
@@ -1329,6 +1335,8 @@ public void finishPreferencePanel(Fragment caller, int resultCode, Intent result
      * Binding late is preferred as any custom preference types created in
      * {@link #onCreate(Bundle)} are able to have their views recycled.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.662 -0500", hash_original_method = "6C1825C42631AE6FCE57D0240C5D762E", hash_generated_method = "C0A2F3211F41F689D452EE09981B4771")
     
 private void postBindPreferences() {
@@ -1336,6 +1344,8 @@ private void postBindPreferences() {
         mHandler.obtainMessage(MSG_BIND_PREFERENCES).sendToTarget();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.665 -0500", hash_original_method = "548F27FE8CA6D6649BD8B5A7939C474E", hash_generated_method = "FD6B5E4440D382E9C6526DFCBE9F884F")
     
 private void bindPreferences() {
@@ -1366,6 +1376,8 @@ private void bindPreferences() {
         return mPreferenceManager;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.669 -0500", hash_original_method = "B2669BE6B91E4B8BF7765D817C0F2C8A", hash_generated_method = "79E45405A5E3BB0CB046DCF04639395D")
     
 private void requirePreferenceManager() {

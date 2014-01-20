@@ -215,6 +215,8 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         return new SocketPermission(connectToAddress, "connect, resolve");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.526 -0500", hash_original_method = "B5D2FEB67E0E8EA367DFCE05C581AB69", hash_generated_method = "AE775710081CF2C9094FA821E4D19F53")
     
 private String getConnectToHost() {
@@ -223,6 +225,8 @@ private String getConnectToHost() {
                 : getURL().getHost();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.528 -0500", hash_original_method = "D34A028DDA4370B463B41421A37DF230", hash_generated_method = "2E8CACF616E0FA4CDCA4BE6131CE565A")
     
 private int getConnectToPort() {
@@ -241,6 +245,8 @@ private int getConnectToPort() {
         return rawRequestHeaders.get(field);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.534 -0500", hash_original_method = "D46D1C92B88A5C8C0BC8F8E633D4D9BD", hash_generated_method = "EFE388E63F589AA39FB5F13634CA5D47")
     
 private void initHttpEngine() throws IOException {
@@ -284,6 +290,8 @@ protected HttpEngine newHttpEngine(String method, RawHeaders requestHeaders,
      * many HTTP requests in the process in order to cope with redirects and
      * authentication.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.540 -0500", hash_original_method = "DF359A1395A825950E7AA2723E1FBB6D", hash_generated_method = "2B109151B6C631F562FC32636EA2FDF9")
     
 private HttpEngine getResponse() throws IOException {
@@ -343,6 +351,8 @@ private HttpEngine getResponse() throws IOException {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.542 -0500", hash_original_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B", hash_generated_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B")
     
@@ -407,6 +417,8 @@ private Retry processResponseHeaders() throws IOException {
      * @return true if credentials have been added to successorRequestHeaders
      *     and another request should be attempted.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.549 -0500", hash_original_method = "823D52F347E7C18D3A6EC0D6C7FA9FFF", hash_generated_method = "55742085A6820587CDC5C085AB86C7B6")
     
 final boolean processAuthHeader(int responseCode, ResponseHeaders response,
@@ -438,6 +450,8 @@ final boolean processAuthHeader(int responseCode, ResponseHeaders response,
     /**
      * Returns the authorization credentials on the base of provided challenge.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.552 -0500", hash_original_method = "3D7D8508CEE0817C42F7A7AE8F461D7F", hash_generated_method = "185023FCB2973AB99FB044341A02CB50")
     
 private String getAuthorizationCredentials(String challenge) throws IOException {
@@ -467,6 +481,8 @@ private String getAuthorizationCredentials(String challenge) throws IOException 
         return scheme + " " + encoded;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.555 -0500", hash_original_method = "1B9895D1709534856DAC9B7A8958AAC2", hash_generated_method = "4C0DEE0E044FD3A376B1832AA6C8DD4F")
     
 private InetAddress getConnectToInetAddress() throws IOException {
@@ -475,6 +491,8 @@ private InetAddress getConnectToInetAddress() throws IOException {
                 : InetAddress.getByName(getURL().getHost());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.557 -0500", hash_original_method = "CA86BB3AB3ACF92C5C19618DD925F5A0", hash_generated_method = "431F6F7E489BFBF7FB4816405A638734")
     
@@ -483,6 +501,8 @@ final int getDefaultPort() {
     }
 
     /** @see HttpURLConnection#setFixedLengthStreamingMode(int) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.560 -0500", hash_original_method = "3D0FB6F793A38CF78094814B08E28C50", hash_generated_method = "2A9DBFC0881B3259DBC4AD6354DE3A0C")
     
@@ -491,6 +511,8 @@ final int getFixedContentLength() {
     }
 
     /** @see HttpURLConnection#setChunkedStreamingMode(int) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.562 -0500", hash_original_method = "4A001CCB8DCF47A598AF69D3AEEFDD47", hash_generated_method = "1011AF34A3D83F6E28A597C3774FCCF9")
     
@@ -498,6 +520,8 @@ final int getChunkLength() {
         return chunkLength;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.564 -0500", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "571B5CF73C69A11B0F3ACD2ECA862227")
     
@@ -505,6 +529,8 @@ final Proxy getProxy() {
         return proxy;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.566 -0500", hash_original_method = "AA3CF596E23C06E2ACCB3F9CB3C07696", hash_generated_method = "6BFEE1F0907ACC2B40F8FB84044505F8")
     
 final void setProxy(Proxy proxy) {

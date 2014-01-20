@@ -114,6 +114,8 @@ public static Signature getInstance(String algorithm, Provider provider)
         return getSignatureInstance(algorithm, provider);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.524 -0500", hash_original_method = "1D4C76885795B6AE74A499923A41E610", hash_generated_method = "409E8726C515B71C7C1FC023C7B197B5")
     
 private static Signature getSignatureInstance(String algorithm,
@@ -514,6 +516,8 @@ public final void update(ByteBuffer data) throws SignatureException {
     }
 
     // Convert state to string
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.566 -0500", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "98E9662541F0D0D1B3A552EA457578E0")
     
 private String stateToString(int state) {

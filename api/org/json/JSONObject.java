@@ -333,6 +333,8 @@ public JSONObject accumulate(String name, Object value) throws JSONException {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.395 -0500", hash_original_method = "1AA4BB08CA8C9DDACC6E60D58C017824", hash_generated_method = "1AA4BB08CA8C9DDACC6E60D58C017824")
     
 String checkName(String name) throws JSONException {
@@ -773,6 +775,8 @@ public String toString(int indentSpaces) throws JSONException {
         return stringer.toString();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.467 -0500", hash_original_method = "4318203F3538DC271461FDA2F00ABD52", hash_generated_method = "4318203F3538DC271461FDA2F00ABD52")
     
 void writeTo(JSONStringer stringer) throws JSONException {

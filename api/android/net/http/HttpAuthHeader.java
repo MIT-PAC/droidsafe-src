@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class HttpAuthHeader {
 
     /**
@@ -17,6 +13,8 @@ public class HttpAuthHeader {
      * @return The string value without the outermost pair of double-
      * quotes or null if the original value is null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.402 -0500", hash_original_method = "8BB21142A239D7B3379295133F294A9B", hash_generated_method = "87ABD1B79CDBE3CA7FB6FCF973691D0A")
     
 static private String trimDoubleQuotesIfAny(String value) {
@@ -38,7 +36,6 @@ static private String trimDoubleQuotesIfAny(String value) {
     public final static String DIGEST_TOKEN = "Digest";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.306 -0500", hash_original_field = "3AFAF6D243BF22AB499C2557D7784207", hash_generated_field = "7C84E5A4C0DE9A95A192EA063C6A497A")
 
-
     private final static String REALM_TOKEN = "realm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.308 -0500", hash_original_field = "BF7AF071AF5526CD082BCFF0D672BF7E", hash_generated_field = "1B11EFC48FC7008004C2BCDE71004BDB")
 
@@ -56,7 +53,6 @@ static private String trimDoubleQuotesIfAny(String value) {
 
     private final static String ALGORITHM_TOKEN = "algorithm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.322 -0500", hash_original_field = "A8F66825F9B3BFFF84E8E21A24CF617F", hash_generated_field = "847D4677A6A1533A543ECA012114829C")
-
 
     public static final int UNKNOWN = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.324 -0500", hash_original_field = "79FA73196EC6792823F903104FD945FE", hash_generated_field = "B0822A45DCF04E972AB9BA01D4ACE62D")
@@ -280,6 +276,8 @@ public boolean isSupportedScheme() {
      * Parses the header scheme name and then scheme parameters if
      * the scheme is supported.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.388 -0500", hash_original_method = "5A9C556851102A9977303C7DFC694964", hash_generated_method = "7680988B0AE93E017ADB68EA9FB5FB67")
     
 private void parseHeader(String header) {
@@ -305,6 +303,8 @@ private void parseHeader(String header) {
      * parsed later (if the scheme is supported) or null if failed
      * to parse the scheme (the header value is null?).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.390 -0500", hash_original_method = "BA2F0752C4374C507095962D429C28E1", hash_generated_method = "D288CECB993F6AA23666CE3989EA440C")
     
 private String parseScheme(String header) {
@@ -334,6 +334,8 @@ private String parseScheme(String header) {
      * Parses a comma-separated list of authentification scheme
      * parameters.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.392 -0500", hash_original_method = "2438A746B67FAB4E454DBFA828DCDAA3", hash_generated_method = "296ACCF2FB476623414493F173998EA9")
     
 private void parseParameters(String parameters) {
@@ -361,6 +363,8 @@ private void parseParameters(String parameters) {
      * Parses a single authentication scheme parameter. The parameter
      * string is expected to follow the format: PARAMETER=VALUE.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.395 -0500", hash_original_method = "5835A4879F5A1904E0EE047AD8542D67", hash_generated_method = "955E0A89025059E0BD16C48CDA98CC23")
     
 private void parseParameter(String parameter) {
@@ -393,6 +397,8 @@ private void parseParameter(String parameter) {
      * If the token is a known parameter name, parses and initializes
      * the token value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.397 -0500", hash_original_method = "5C1E65D88B1AA36ECF03FA5CEB305F59", hash_generated_method = "7E7C53D67F6B3E597D57AF7EF225E810")
     
 private void parseParameter(String token, String value) {
@@ -428,6 +434,8 @@ private void parseParameter(String token, String value) {
      * Parses and initializes the 'stale' paramer value. Any value
      * different from case-insensitive "true" is considered "false".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.399 -0500", hash_original_method = "76A5C02B3DC683D5BF99D1052171A66C", hash_generated_method = "09185FFE4AB317576453852013B0DBCE")
     
 private void parseStale(String value) {

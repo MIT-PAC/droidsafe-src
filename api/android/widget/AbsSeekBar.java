@@ -228,6 +228,8 @@ public int getKeyProgressIncrement() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.437 -0500", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "D297D1781696209F89E9F026CF903A01")
     
 @Override
@@ -252,6 +254,8 @@ public int getKeyProgressIncrement() {
         updateThumbPos(w, h);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.442 -0500", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "2CD59655C19BBBF172D87FF48B30C6E2")
     
 private void updateThumbPos(int w, int h) {
@@ -292,6 +296,8 @@ private void updateThumbPos(int w, int h) {
     /**
      * @param gap If set to {@link Integer#MIN_VALUE}, this will be ignored and
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.444 -0500", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "78D4F43E8B8447727A62D2774621AC09")
     
 private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
@@ -424,6 +430,8 @@ private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.456 -0500", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "174F3F06879596C6E7370B53A22AABF9")
     
 private void trackTouchEvent(MotionEvent event) {
@@ -451,6 +459,8 @@ private void trackTouchEvent(MotionEvent event) {
      * Tries to claim the user's drag motion, and requests disallowing any
      * ancestors from stealing events in the drag.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.458 -0500", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "4A38C155913606B908C0A2B83E84F323")
     
 private void attemptClaimDrag() {
@@ -462,6 +472,8 @@ private void attemptClaimDrag() {
     /**
      * This is called when the user has started touching this widget.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.460 -0500", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "81C3D3C536033DCEF00354E775EF2F98")
     
 void onStartTrackingTouch() {
@@ -472,6 +484,8 @@ void onStartTrackingTouch() {
      * This is called when the user either releases his touch or the touch is
      * canceled.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.462 -0500", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "E756AFD9567E2119FB96458DFE00C6A9")
     
 void onStopTrackingTouch() {
@@ -481,6 +495,8 @@ void onStopTrackingTouch() {
     /**
      * Called when the user changes the seekbar's progress by using a key event.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.464 -0500", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "F04551903C4B751B14DE46074D4BB62C")
     
 void onKeyChange() {

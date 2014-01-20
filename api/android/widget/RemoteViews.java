@@ -184,6 +184,8 @@ public int getLayoutId() {
      * setting on click extras and setting on click pending intents. The former is enabled,
      * and the latter disabled when this flag is true.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.009 -0500", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "B2E01CE5E210E0306AAEDD7A25572B15")
     
 void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
@@ -193,6 +195,8 @@ void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
     /**
      * Updates the memory usage statistics.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.011 -0500", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "2B95E3882DC6BD034FE284736EA883CE")
     
 private void recalculateMemoryUsage() {
@@ -210,6 +214,8 @@ private void recalculateMemoryUsage() {
     /**
      * Returns an estimate of the bitmap heap memory usage for this RemoteViews.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.013 -0500", hash_original_method = "4E1C2F916A403E6D1D4B708360B7D61A", hash_generated_method = "4E1C2F916A403E6D1D4B708360B7D61A")
     
 int estimateBitmapMemoryUsage() {
@@ -864,6 +870,8 @@ public void reapply(Context context, View v) {
         performApply(v, (ViewGroup) v.getParent());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.105 -0500", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "B7CD65CDD0FE3868DFAC519B78D7F9BC")
     
 private void performApply(View v, ViewGroup parent) {
@@ -876,6 +884,8 @@ private void performApply(View v, ViewGroup parent) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.107 -0500", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "B2D8E583C06BD07BDA77C7DDFC735575")
     
 private Context prepareContext(Context context) {
@@ -912,11 +922,15 @@ public ActionException(String message) {
     
     private abstract static class Action implements Parcelable {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
         public Action ()
         {
             //Synthesized constructor
         }
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.719 -0500", hash_original_method = "67F4BF9F6DDAE6F8C43B87EDA5B1A8FB", hash_generated_method = "BE0DC090C1879247B33B0996B0C8BCFF")
         
 public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
@@ -1775,6 +1789,8 @@ public void writeToParcel(Parcel out, int flags) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.950 -0500", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "D3ACCEA57A875FE5BF1B22C55ED1BC08")
         
 private Class getParameterType() {

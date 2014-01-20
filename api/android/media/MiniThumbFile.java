@@ -81,6 +81,8 @@ public MiniThumbFile(Uri uri) {
         mBuffer = ByteBuffer.allocateDirect(BYTES_PER_MINTHUMB);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.639 -0500", hash_original_method = "83138AD8D526C72B89B2911A4A5BD2FA", hash_generated_method = "4CB412C2AFF8D733ECCC919F6E9E6475")
     
 private String randomAccessFilePath(int version) {
@@ -90,6 +92,8 @@ private String randomAccessFilePath(int version) {
         return directoryName + "/.thumbdata" + version + "-" + mUri.hashCode();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.642 -0500", hash_original_method = "4E94300706FF7803E0D91C5BAD686F7F", hash_generated_method = "31375A94467FF330F26E364A8D609E47")
     
 private void removeOldFile() {
@@ -104,6 +108,8 @@ private void removeOldFile() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.644 -0500", hash_original_method = "E122935DF7BCC080EF63276C2CD73A77", hash_generated_method = "66493D3D6EA63703E235423E2859C881")
     
 private RandomAccessFile miniThumbDataFile() {

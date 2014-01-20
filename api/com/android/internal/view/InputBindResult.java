@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class InputBindResult implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.542 -0500", hash_original_field = "BA5BCA8C303D166D6B803DE7E673C244", hash_generated_field = "736115F46CE1FBBCCD2B323047A41AE5")
 
@@ -48,6 +44,8 @@ public InputBindResult(IInputMethodSession _method, String _id, int _sequence) {
         sequence = _sequence;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.555 -0500", hash_original_method = "26E767C4231C3DD46E94F9C79DE09374", hash_generated_method = "26E767C4231C3DD46E94F9C79DE09374")
     
 InputBindResult(Parcel source) {

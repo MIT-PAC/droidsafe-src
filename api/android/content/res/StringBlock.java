@@ -40,6 +40,8 @@ final class StringBlock {
      * fix it to actually cover the entire paragraph that it is attached to
      * instead of just whatever range they put it on.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.529 -0500", hash_original_method = "32E394B127D16A29C22D9E79131F0326", hash_generated_method = "D3D0AFA3A0D72548038FAC82CEAAF4E7")
     
 private static void addParagraphSpan(Spannable buffer, Object what,
@@ -65,6 +67,8 @@ private static void addParagraphSpan(Spannable buffer, Object what,
         buffer.setSpan(what, start, end, Spannable.SPAN_PARAGRAPH);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.532 -0500", hash_original_method = "6ED522717506018533C6A8A2153C3F0A", hash_generated_method = "D25DC98184327A86AC35876B170F11FB")
     
 private static String subtag(String full, String attribute) {
@@ -83,16 +87,22 @@ private static String subtag(String full, String attribute) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetSize(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final String nativeGetString(int obj, int idx) {
         	String ret = new String();
         	ret.addTaint(obj);
@@ -100,11 +110,15 @@ private static String subtag(String full, String attribute) {
         	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int[] nativeGetStyle(int obj, int idx) {
         int[] ret = {DSUtils.UNKNOWN_INT};
         return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void nativeDestroy(int obj) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.467 -0500", hash_original_field = "E972EA7E59D95929329EC1DEC67C521E", hash_generated_field = "FDC75AE01ED37E059BA4F54E9509C8D2")
@@ -158,6 +172,8 @@ public StringBlock(byte[] data, int offset, int size, boolean useSparse) {
      *  are doing!  The given native object must exist for the entire lifetime
      *  of this newly creating StringBlock.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.549 -0500", hash_original_method = "451F884D80CF979FA811D85381B93BA8", hash_generated_method = "451F884D80CF979FA811D85381B93BA8")
     
 StringBlock(int obj, boolean useSparse) {
@@ -286,6 +302,8 @@ public CharSequence get(int idx) {
 
         private int marqueeId = -1;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.062 -0400", hash_original_method = "4D3750C386AF43C67E7BA6A1E0512626", hash_generated_method = "4D3750C386AF43C67E7BA6A1E0512626")
         public StyleIDs ()
         {

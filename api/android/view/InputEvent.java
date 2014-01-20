@@ -38,7 +38,9 @@ public InputEvent[] newArray(int size) {
         }
     };
     
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.719 -0500", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "5E30BC92EB346FB6C373466BBBDCD9C6")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.719 -0500", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "5E30BC92EB346FB6C373466BBBDCD9C6")
     
 InputEvent() {
     }
@@ -52,6 +54,8 @@ InputEvent() {
      * @return The device id.
      * @see InputDevice#getDevice
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.722 -0500", hash_original_method = "4664318C4E5CEE2F2231757C2DC4118A", hash_generated_method = "3B14757130AFF8B8E9C371FA9EA594F7")
     
 public abstract int getDeviceId();
@@ -74,6 +78,8 @@ public final InputDevice getDevice() {
      * @return The event source or {@link InputDevice#SOURCE_UNKNOWN} if unknown.
      * @see InputDevice#getSourceInfo
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.727 -0500", hash_original_method = "31DA09D399170337D011C7ABAD120D1F", hash_generated_method = "0C97D3321F33F5C733A0CBF04E67E523")
     
 public abstract int getSource();
@@ -84,6 +90,8 @@ public abstract int getSource();
      * @param source The new source.
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.729 -0500", hash_original_method = "96375597F88BD2D6F4E68958C44C8C4D", hash_generated_method = "50377F54DE8931FCC46FFA58C5F141CC")
     
 public abstract void setSource(int source);
@@ -94,6 +102,8 @@ public abstract void setSource(int source);
      * @return A deep copy of the event.
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.732 -0500", hash_original_method = "9DDDBCB38C8769B564E2198A8E8FC6D9", hash_generated_method = "63D1EA3AC9E722B24271F7B18B02D29A")
     
 public abstract InputEvent copy();
@@ -105,6 +115,8 @@ public abstract InputEvent copy();
      * objects are fine.  See {@link KeyEvent#recycle()} for details.
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.734 -0500", hash_original_method = "F236C92B3FC5E7319EEC9571B181713B", hash_generated_method = "75E6A8511076D858E3DA9D0FA62A4E42")
     
 public abstract void recycle();
@@ -118,6 +130,8 @@ public abstract void recycle();
      * @return True if this event is tainted.
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.737 -0500", hash_original_method = "530E6412340D3E4B3C470540E9517380", hash_generated_method = "1510C9D6576E8DB584D28D0F35796077")
     
 public abstract boolean isTainted();
@@ -131,6 +145,8 @@ public abstract boolean isTainted();
      * @param tainted True if this event is tainted.
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.739 -0500", hash_original_method = "AE64E77C1EFE9C9FB95B01CB9D173429", hash_generated_method = "F2E2FBA0DD500051814C9FAFA0209B0C")
     
 public abstract void setTainted(boolean tainted);
@@ -140,6 +156,8 @@ public abstract void setTainted(boolean tainted);
      * The value is in nanosecond precision but it may not have nanosecond accuracy.
      * @hide
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.741 -0500", hash_original_method = "D0D9806AE353526032A1C17B8A5FD0F3", hash_generated_method = "70288428E8ED14988681B539AF1289E9")
     
 public abstract long getEventTimeNano();

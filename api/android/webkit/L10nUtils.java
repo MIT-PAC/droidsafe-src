@@ -18,6 +18,8 @@ public static void setApplicationContext(Context applicationContext) {
         mApplicationContext = applicationContext.getApplicationContext();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.948 -0500", hash_original_method = "C45C66BC278CC99395C98B4B1ECDECD3", hash_generated_method = "F1CF98FF5C00D8D12789BA654899D796")
     
 private static String loadString(int id) {

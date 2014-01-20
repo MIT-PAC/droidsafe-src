@@ -54,6 +54,8 @@ public static void setDefault(ResponseCache responseCache) {
      * @throws IllegalArgumentException
      *             if any one of the parameters is set to {@code null}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.200 -0500", hash_original_method = "1EDD2E6CBFE8528F203F73FF29C1DE1D", hash_generated_method = "CA4D91334F9FE7CDA25A7203F5064D8C")
     
 public abstract CacheResponse get(URI uri, String requestMethod,
@@ -76,6 +78,8 @@ public abstract CacheResponse get(URI uri, String requestMethod,
      * @throws IllegalArgumentException
      *             if any one of the parameters is set to {@code null}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.202 -0500", hash_original_method = "7E0EF9B048C955B193FDF9F90BC94741", hash_generated_method = "DC40A35C7A23A4FEF98B3168BB2F5EE1")
     
 public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;

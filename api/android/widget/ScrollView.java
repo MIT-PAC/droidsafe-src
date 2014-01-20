@@ -184,6 +184,8 @@ public int getMaxScrollAmount() {
         return (int) (MAX_SCROLL_FACTOR * (mBottom - mTop));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.514 -0500", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "A421A744020FEE9AE61BC6A77CA31282")
     
 private void initScrollView() {
@@ -248,6 +250,8 @@ private void initScrollView() {
     /**
      * @return Returns true this ScrollView can be scrolled
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.527 -0500", hash_original_method = "F1DEDB4D65582CE354A1D843D55A4B55", hash_generated_method = "6F61049E3488032C6B6E5970AD97213D")
     
 private boolean canScroll() {
@@ -402,6 +406,8 @@ public boolean executeKeyEvent(KeyEvent event) {
         return handled;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.545 -0500", hash_original_method = "21B5B152D5EE02017A0CB65ECB9B3403", hash_generated_method = "7DE81CCCA4183DAA880E6000454967D8")
     
 private boolean inChild(int x, int y) {
@@ -416,6 +422,8 @@ private boolean inChild(int x, int y) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.548 -0500", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "F9D22C31D08E36D4828AC957FB6E63CE")
     
 private void initOrResetVelocityTracker() {
@@ -426,6 +434,8 @@ private void initOrResetVelocityTracker() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.550 -0500", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "25A96CF18DC9437B446AAF930F7FF708")
     
 private void initVelocityTrackerIfNotExists() {
@@ -434,6 +444,8 @@ private void initVelocityTrackerIfNotExists() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.552 -0500", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "888BC5313EDF5CCF425023EC279AC988")
     
 private void recycleVelocityTracker() {
@@ -678,6 +690,8 @@ private void recycleVelocityTracker() {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.565 -0500", hash_original_method = "1724FA32F4E11B8EDA6825E1236F6DA2", hash_generated_method = "70756FC743C1D780C53652951C6BA6EA")
     
 private void onSecondaryPointerUp(MotionEvent ev) {
@@ -768,6 +782,8 @@ private void onSecondaryPointerUp(MotionEvent ev) {
         event.setMaxScrollY(getScrollRange());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.577 -0500", hash_original_method = "54B8D0E6795D053FB63A6E55BD2EA0C5", hash_generated_method = "6D4E91483434A9ED196D78C4F025112A")
     
 private int getScrollRange() {
@@ -833,6 +849,8 @@ private View findFocusableViewInMyBounds(final boolean topFocus,
      * @return the next focusable component in the bounds or null if none can
      *         be found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.583 -0500", hash_original_method = "78998B2E5B42D469D0E131861596BD99", hash_generated_method = "D76631B2A8BFD823537942B82703A7AD")
     
 private View findFocusableViewInBounds(boolean topFocus, int top, int bottom) {
@@ -986,6 +1004,8 @@ public boolean fullScroll(int direction) {
      * @param bottom    the bottom offset of the new area to be made visible
      * @return true if the key event is consumed by this method, false otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.590 -0500", hash_original_method = "AEE85E195E488E817C7C5FD2FB4EC0FB", hash_generated_method = "84E55294583E25828350CF6CD6953809")
     
 private boolean scrollAndFocus(int direction, int top, int bottom) {
@@ -1077,6 +1097,8 @@ public boolean arrowScroll(int direction) {
      * @return whether the descendant of this scroll view is scrolled off
      *  screen.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.596 -0500", hash_original_method = "98AD346ACFBFFAEC79BE4B86F94546B3", hash_generated_method = "A45A9B75E00FF93EACF3E1441C03F480")
     
 private boolean isOffScreen(View descendant) {
@@ -1087,6 +1109,8 @@ private boolean isOffScreen(View descendant) {
      * @return whether the descendant of this scroll view is within delta
      *  pixels of being on the screen.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.599 -0500", hash_original_method = "472E587EAA6D318183AF3AB1B7CEF83F", hash_generated_method = "A3DC65FB4B4B452F6EF182D269CCF7FE")
     
 private boolean isWithinDeltaOfScreen(View descendant, int delta, int height) {
@@ -1102,6 +1126,8 @@ private boolean isWithinDeltaOfScreen(View descendant, int delta, int height) {
      *
      * @param delta the number of pixels to scroll by on the Y axis
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.601 -0500", hash_original_method = "8E606864EB91DBB174E2D5FEBC80C80F", hash_generated_method = "76FDD9C51E94F6BC1244035CA9FD99B3")
     
 private void doScrollY(int delta) {
@@ -1290,6 +1316,8 @@ public final void smoothScrollTo(int x, int y) {
      *
      * @param child the View to scroll to
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.621 -0500", hash_original_method = "356AAB4A47E20FEC6EFC92C05FCA16CC", hash_generated_method = "446D729E9C4D815A9F5E81598B0F43C1")
     
 private void scrollToChild(View child) {
@@ -1313,6 +1341,8 @@ private void scrollToChild(View child) {
      * @param immediate True to scroll immediately without animation
      * @return true if scrolling was performed
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.623 -0500", hash_original_method = "D69703D23BD1E07705411D82E1BC609A", hash_generated_method = "C5040BC5656BEBDC231ACBEEDEBE09FC")
     
 private boolean scrollToChildRect(Rect rect, boolean immediate) {
@@ -1522,6 +1552,8 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
     /**
      * Return true if child is an descendant of parent, (or equal to the parent).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.646 -0500", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "4E4B67595C9AA38B501A2B2B2088EE51")
     
 private boolean isViewDescendantOf(View child, View parent) {
@@ -1560,6 +1592,8 @@ public void fling(int velocityY) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.651 -0500", hash_original_method = "526DB7CB9D9E6BCF2CDE3F8A7F1D2890", hash_generated_method = "9C9C756EFCB6AFB955C579D71CCE16F9")
     
 private void endDrag() {
@@ -1654,6 +1688,8 @@ private void endDrag() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.661 -0500", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "279E1EDFDA88CD7CCEA7EA4B6374D924")
     
 private int clamp(int n, int my, int child) {

@@ -218,6 +218,8 @@ public static byte[] encode(byte[] input, int offset, int len, int flags) {
 
         public int op;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_method = "1EFD9A0D338C10B7A776AFC361894E38", hash_generated_method = "1EFD9A0D338C10B7A776AFC361894E38")
         public Coder ()
         {
@@ -237,6 +239,8 @@ public static byte[] encode(byte[] input, int offset, int len, int flags) {
          * @return true if the input so far is good; false if some
          *         error has been detected in the input stream..
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.833 -0500", hash_original_method = "75EE07B248864EAE893E28029B66362E", hash_generated_method = "2450F1E12888A2FB60B9FCD35235052A")
         
 public abstract boolean process(byte[] input, int offset, int len, boolean finish);
@@ -246,6 +250,8 @@ public abstract boolean process(byte[] input, int offset, int len, boolean finis
          * could produce for the given number of input bytes.  This may
          * be an overestimate.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.835 -0500", hash_original_method = "00005B72510A57CC06F375BAC4161ADC", hash_generated_method = "8FC7EA328F9FD1DA3A7C48BE37C3997A")
         
 public abstract int maxOutputSize(int len);
@@ -738,6 +744,8 @@ public boolean process(byte[] input, int offset, int len, boolean finish) {
 
     public static final int NO_CLOSE = 16;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.936 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
     
 private Base64() { }

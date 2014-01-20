@@ -78,6 +78,8 @@ protected SSLServerSocketFactory() {
      *
      * @return the names of the cipher suites that are enabled by default
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.534 -0500", hash_original_method = "39637FAA2A428B026F3142CDE9E65872", hash_generated_method = "B1D7CA4E890A48074B49D06D9FFA1B03")
     
 public abstract String[] getDefaultCipherSuites();
@@ -88,6 +90,8 @@ public abstract String[] getDefaultCipherSuites();
      *
      * @return the list of supported cipher suites
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.537 -0500", hash_original_method = "972B577B4B04B597248145E0CF6E63D2", hash_generated_method = "09D1FF6565C262832AA989BA28390929")
     
 public abstract String[] getSupportedCipherSuites();

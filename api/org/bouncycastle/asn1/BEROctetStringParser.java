@@ -9,14 +9,13 @@ import java.io.InputStream;
 
 import org.bouncycastle.util.io.Streams;
 
-
-
-
 public class BEROctetStringParser implements ASN1OctetStringParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.406 -0500", hash_original_field = "8EE68094F784B2C8EC928CABAEA021F0", hash_generated_field = "76949B28A5103E4F545C65F9E6322200")
 
     private ASN1StreamParser _parser;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.409 -0500", hash_original_method = "9F96CED2BAFBB7EF85E1F3DCE32D3250", hash_generated_method = "9F96CED2BAFBB7EF85E1F3DCE32D3250")
     
 BEROctetStringParser(
@@ -53,7 +52,6 @@ public DERObject getDERObject()
             throw new ASN1ParsingException("IOException converting stream to byte array: " + e.getMessage(), e);
         }
     }
-
     
 }
 

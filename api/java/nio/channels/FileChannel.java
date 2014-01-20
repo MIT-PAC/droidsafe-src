@@ -47,6 +47,8 @@ protected FileChannel() {
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.361 -0500", hash_original_method = "61EBCEF4B94A7459672132AD7811DADE", hash_generated_method = "2B9F346152C011E3B65F2DAB75EBEB19")
     
 public abstract void force(boolean metadata) throws IOException;
@@ -146,6 +148,8 @@ public final FileLock lock() throws IOException {
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.366 -0500", hash_original_method = "36155CCD191879126D8E713581E24518", hash_generated_method = "1A1268EF9581FF52B1081F47DCBD7FA2")
     
 public abstract FileLock lock(long position, long size, boolean shared)
@@ -193,6 +197,8 @@ public abstract MappedByteBuffer map(FileChannel.MapMode mode,
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.371 -0500", hash_original_method = "86318E3FB80940F1AAA533B2ACED4DF9", hash_generated_method = "095B82116960CE70F3D88FD85E36DEEC")
     
 public abstract long position() throws IOException;
@@ -217,6 +223,8 @@ public abstract long position() throws IOException;
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.373 -0500", hash_original_method = "50275360EE0083C7C1733212A0550AD4", hash_generated_method = "8702A40A60C04552BC429A1BAAB729AB")
     
 public abstract FileChannel position(long offset) throws IOException;
@@ -250,6 +258,8 @@ public abstract FileChannel position(long offset) throws IOException;
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.375 -0500", hash_original_method = "DE356E2CF3D3B7BE8C5411B6AE364543", hash_generated_method = "E4614D8711BA6249DDF8157E192C267E")
     
 public abstract int read(ByteBuffer buffer) throws IOException;
@@ -289,6 +299,8 @@ public abstract int read(ByteBuffer buffer) throws IOException;
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.378 -0500", hash_original_method = "19A1A80A2A8297FB8F1FB19A576CD97B", hash_generated_method = "5D6844A43D3ECFC11747B3DA9689C100")
     
 public abstract int read(ByteBuffer buffer, long position)
@@ -366,6 +378,8 @@ public final long read(ByteBuffer[] buffers) throws IOException {
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.384 -0500", hash_original_method = "7B96FC6FAB2F090D69C3DCBFF89C815B", hash_generated_method = "B0149C348230C332CE6BEFBA3208C156")
     
 public abstract long read(ByteBuffer[] buffers, int start, int number)
@@ -380,6 +394,8 @@ public abstract long read(ByteBuffer[] buffers, int start, int number)
      * @throws IOException
      *             if an I/O error occurs while getting the size of the file.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.386 -0500", hash_original_method = "533E99DC61BBBC696C27BAAAE618F5D9", hash_generated_method = "CDF3B561CA5CAE9E5BFB6F445BEFCE76")
     
 public abstract long size() throws IOException;
@@ -418,6 +434,8 @@ public abstract long size() throws IOException;
      * @throws IOException
      *             if any I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.388 -0500", hash_original_method = "BF5C523214ACE0203C5F07D23BFB5334", hash_generated_method = "CB134CE9BEDA7D9D6F4CDE2E7ADDD06B")
     
 public abstract long transferFrom(ReadableByteChannel src, long position,
@@ -457,6 +475,8 @@ public abstract long transferFrom(ReadableByteChannel src, long position,
      * @throws IOException
      *             if any I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.391 -0500", hash_original_method = "7DCEB5A88D5F4847CF78A45513AA406A", hash_generated_method = "52B302591A2C8323208E0F6D44BED1D3")
     
 public abstract long transferTo(long position, long count,
@@ -482,6 +502,8 @@ public abstract long transferTo(long position, long count,
      *             if another I/O error occurs.
      * @return this channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.393 -0500", hash_original_method = "D825937878D60F01461C9636076BDCF3", hash_generated_method = "C8C6F1AB8869E88DAD37A0C419CF170D")
     
 public abstract FileChannel truncate(long size) throws IOException;
@@ -543,6 +565,8 @@ public final FileLock tryLock() throws IOException {
      * @throws IOException
      *             if any I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.399 -0500", hash_original_method = "069917A2201DF3B10F8F8DD124DA59AD", hash_generated_method = "82031EE4A79726435431B4685008646B")
     
 public abstract FileLock tryLock(long position, long size, boolean shared)
@@ -573,8 +597,8 @@ public abstract FileLock tryLock(long position, long size, boolean shared)
      *             if another I/O error occurs, details are in the message.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
-    @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.401 -0500", hash_original_method = "D87BCA67F95D1FD6B9CB7D4E4ADD1B2A", hash_generated_method = "FA9F2388453D6D813A2368038E57E8FD")
     
 public abstract int write(ByteBuffer src) throws IOException;
@@ -614,6 +638,8 @@ public abstract int write(ByteBuffer src) throws IOException;
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.404 -0500", hash_original_method = "FE44E4912270B085CA3AFC2E6840559E", hash_generated_method = "10862CCEADBBE800DF252131F9DE485B")
     
 public abstract int write(ByteBuffer buffer, long position)
@@ -690,6 +716,8 @@ public final long write(ByteBuffer[] buffers) throws IOException {
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.409 -0500", hash_original_method = "AC372293C8ABAB0E308F0F7E86460068", hash_generated_method = "5194FA121EAA05CA674317B28600EE9B")
     
 public abstract long write(ByteBuffer[] buffers, int offset, int length)
@@ -712,6 +740,8 @@ public abstract long write(ByteBuffer[] buffers, int offset, int length)
         /*
          * Private constructor prevents others creating new modes.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.351 -0500", hash_original_method = "CA25667E00C4DE16C856657D4E26E93A", hash_generated_method = "79A3B4CE250D4F31DAF740FFA9928F62")
         
 private MapMode(String displayName) {

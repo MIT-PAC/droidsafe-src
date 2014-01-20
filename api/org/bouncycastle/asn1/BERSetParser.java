@@ -6,14 +6,13 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
 public class BERSetParser implements ASN1SetParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.748 -0500", hash_original_field = "8EE68094F784B2C8EC928CABAEA021F0", hash_generated_field = "76949B28A5103E4F545C65F9E6322200")
 
     private ASN1StreamParser _parser;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.751 -0500", hash_original_method = "EF8530238239035799CD0A162B856113", hash_generated_method = "EF8530238239035799CD0A162B856113")
     
 BERSetParser(ASN1StreamParser parser)
@@ -50,7 +49,6 @@ public DERObject getDERObject()
             throw new ASN1ParsingException(e.getMessage(), e);
         }
     }
-
     
 }
 

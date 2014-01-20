@@ -324,6 +324,8 @@ public void parse(InputSource input) throws IOException, SAXException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.973 -0500", hash_original_method = "B98792032D9978680A85667A6250DD52", hash_generated_method = "DD60885E010FCC54219AB3188B57FFCC")
     
 private void parse(Reader in, String publicId, String systemId)
@@ -338,6 +340,8 @@ private void parse(Reader in, String publicId, String systemId)
         parser.parseDocument(in);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.975 -0500", hash_original_method = "9D71B5A1B65775D1A1A09DC689E8FD0F", hash_generated_method = "8A306DE9A3ADC13651C9F1F971A3C8EC")
     
 private void parse(InputStream in, String encoding, String publicId,
@@ -377,6 +381,8 @@ private void parse(InputStream in, String encoding, String publicId,
         private static final String EXTERNAL_PARAMETER_ENTITIES
                 = BASE_URI + "external-parameter-entities";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.123 -0400", hash_original_method = "0B4D9136485558B251EF1E44EE499FB7", hash_generated_method = "0B4D9136485558B251EF1E44EE499FB7")
         public Feature ()
         {

@@ -127,6 +127,8 @@ public GLSurfaceView(Context context, AttributeSet attrs) {
         init();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.485 -0500", hash_original_method = "E27264F3583A6717A4BE0996AD22B7A6", hash_generated_method = "BBFB4A66C22BD7ED9F5426D3679A0B9F")
     
 private void init() {
@@ -378,6 +380,8 @@ public void destroyContext(EGL10 egl, EGLDisplay display,
     
     private static class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.267 -0400", hash_original_method = "6C49886831D2941418C9D5571DBB218F", hash_generated_method = "6C49886831D2941418C9D5571DBB218F")
         public DefaultWindowSurfaceFactory ()
         {
@@ -450,11 +454,15 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
             return config;
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.580 -0500", hash_original_method = "D5AA0DE9B25FCCF7DFB660A22AA5E818", hash_generated_method = "2C8C09C7C8206FCEC2227CEC3F964AB2")
         
 abstract EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
                 EGLConfig[] configs);
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.585 -0500", hash_original_method = "A5ED2D6BA80622A09257A565CA0B4B3A", hash_generated_method = "0FC5EAFD7C70887E6B3AD3B7AA4E313F")
         
 private int[] filterConfigSpec(int[] configSpec) {
@@ -546,6 +554,8 @@ public ComponentSizeChooser(int redSize, int greenSize, int blueSize,
             return null;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.597 -0500", hash_original_method = "97DBBE0DC2E33C941B4CF19B7BAFBD1F", hash_generated_method = "205CF82AC1FF7710F62C76CA25FE446E")
         
 private int findConfigAttrib(EGL10 egl, EGLDisplay display,
@@ -791,12 +801,16 @@ public void finish() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.645 -0500", hash_original_method = "BBFD946D1E92713A8E3F246C64816A5E", hash_generated_method = "576651A4AA863B1D7BF5137C0EBAA7D6")
         
 private void throwEglException(String function) {
             throwEglException(function, mEgl.eglGetError());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.648 -0500", hash_original_method = "F35384FC419606847EA5AA038D9E6031", hash_generated_method = "2DE54EEC147895E03717DD9D459446BD")
         
 private void throwEglException(String function, int error) {
@@ -895,6 +909,8 @@ GLThread(Renderer renderer) {
          * This private method should only be called inside a
          * synchronized(sGLThreadManager) block.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.672 -0500", hash_original_method = "1FA739F1ECF9B8C719EEC300CFB94B99", hash_generated_method = "52444CA2211C1A24BDC91B06E5337381")
         
 private void stopEglSurfaceLocked() {
@@ -908,6 +924,8 @@ private void stopEglSurfaceLocked() {
          * This private method should only be called inside a
          * synchronized(sGLThreadManager) block.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.675 -0500", hash_original_method = "08753DB570F3FF0DFFEC96C08E49FCF2", hash_generated_method = "6356F0F56CBBD764359507E658715010")
         
 private void stopEglContextLocked() {
@@ -917,6 +935,8 @@ private void stopEglContextLocked() {
                 sGLThreadManager.releaseEglContextLocked(this);
             }
         }
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.682 -0500", hash_original_method = "711FE3C53AF4E351881864AF0E3340A2", hash_generated_method = "B13447098E0AD2EE755FA704D1A400DA")
         
 private void guardedRun() throws InterruptedException {
@@ -1165,6 +1185,8 @@ public boolean ableToDraw() {
             return mHaveEglContext && mHaveEglSurface && readyToDraw();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.687 -0500", hash_original_method = "0EE68488D52C3628D006C7323CA4E5A0", hash_generated_method = "577848DF83F2720EAE848E5E2B72B3F6")
         
 private boolean readyToDraw() {
@@ -1361,6 +1383,8 @@ public void queueEvent(Runnable r) {
 
         private StringBuilder mBuilder = new StringBuilder();
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.310 -0400", hash_original_method = "17A1C7BC31C04C9AEB1C6A159FE1E12E", hash_generated_method = "17A1C7BC31C04C9AEB1C6A159FE1E12E")
         public LogWriter ()
         {
@@ -1393,6 +1417,8 @@ public void queueEvent(Runnable r) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.776 -0500", hash_original_method = "E3A61F648C50A4FD42F02D92C137403F", hash_generated_method = "B0C190A9FB0367232B9AD8C1B6CE3B2B")
         
 private void flushBuilder() {
@@ -1437,6 +1463,8 @@ private void flushBuilder() {
 
         private GLThread mEglOwner;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.312 -0400", hash_original_method = "5D6BCD582D13070585FC5F161A43B68D", hash_generated_method = "5D6BCD582D13070585FC5F161A43B68D")
         public GLThreadManager ()
         {
@@ -1535,6 +1563,8 @@ public synchronized void checkGLDriver(GL10 gl) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.805 -0500", hash_original_method = "6DFB699ADC87072E31136271B3768D35", hash_generated_method = "73AD1AB53516B33CCEA37E2F43A568D7")
         
 private void checkGLESVersion() {
@@ -1809,6 +1839,8 @@ public void queueEvent(Runnable r) {
         super.onDetachedFromWindow();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.783 -0500", hash_original_method = "D0DDFF21B511089DC22A6A0EC54D9B69", hash_generated_method = "B1E3905F5083642D143059CB46FC0A14")
     
 private void checkRenderThreadState() {

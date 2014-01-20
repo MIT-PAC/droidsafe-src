@@ -25,8 +25,6 @@ import javax.net.ssl.X509ExtendedKeyManager;
 import javax.net.ssl.X509KeyManager;
 import javax.security.auth.x500.X500Principal;
 
-
-
 public class ClientHandshakeImpl extends HandshakeProtocol {
 
     /**
@@ -34,6 +32,8 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
      *
      * @param owner
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.406 -0500", hash_original_method = "E7725F54B70B03AB684209C7F7E63A02", hash_generated_method = "E7725F54B70B03AB684209C7F7E63A02")
     
 ClientHandshakeImpl(Object owner) {
@@ -81,6 +81,8 @@ ClientHandshakeImpl(Object owner) {
      * Starts renegotiation on a new session
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.412 -0500", hash_original_method = "A1AF1BC51EE82C9340D705103AD7A155", hash_generated_method = "B095B45DF7DE60E1EB58901C0B717D81")
     
 private void renegotiateNewSession() {
@@ -104,6 +106,8 @@ private void renegotiateNewSession() {
     /*
      * Starts/resumes session
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.414 -0500", hash_original_method = "FFCAFC294E61749148CA1FC19A14A2BB", hash_generated_method = "7B7F9A61DB07CB5BE72C469070733090")
     
 private void startSession() {
@@ -350,6 +354,8 @@ private void startSession() {
      * Processes ServerHelloDone: makes verification of the server messages; sends
      * client messages, computers masterSecret, sends ChangeCipherSpec
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.434 -0500", hash_original_method = "2DDF37E22088D1FE8BC73EB3CA83F3A0", hash_generated_method = "D2F899ECF0C8F0AF7307958FBF03F0A2")
     
 void processServerHelloDone() {
@@ -513,6 +519,8 @@ void processServerHelloDone() {
     /*
      * Verifies certificate path
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.437 -0500", hash_original_method = "D4DFA4A65ECB84B5CCE7F9A88CE9F713", hash_generated_method = "7F94A9520F6F2ABBEFC47A3CE13B1AB6")
     
 private void verifyServerCert() {
@@ -547,6 +555,8 @@ private void verifyServerCert() {
     }
 
     // Find session to resume in client session context
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.442 -0500", hash_original_method = "BCA1C752C9C2161C7353D057736B9B80", hash_generated_method = "39275527E963F89D6D5160891DF4E00E")
     
 private SSLSessionImpl findSessionToResume() {
@@ -571,7 +581,6 @@ private SSLSessionImpl findSessionToResume() {
         }
         return session;
     }
-
     
 }
 

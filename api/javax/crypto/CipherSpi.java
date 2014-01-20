@@ -32,6 +32,8 @@ public CipherSpi() {
      *             if the specified cipher mode is not supported by this
      *             provider.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.458 -0500", hash_original_method = "5BCE3040B50603B6E5AFB112956881FA", hash_generated_method = "11F5F8B6D33F450534A39EA214C06937")
     
 protected abstract void engineSetMode(String mode)
@@ -46,6 +48,8 @@ protected abstract void engineSetMode(String mode)
      *             if the specified padding method is not supported by this
      *             cipher.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.460 -0500", hash_original_method = "E0B5BC1F917F2BE5EA0D3771E8033578", hash_generated_method = "D255588F11E98ACF90802C4B1CB1DAD9")
     
 protected abstract void engineSetPadding(String padding)
@@ -57,6 +61,8 @@ protected abstract void engineSetPadding(String padding)
      * @return the block size of this cipher, or zero if this cipher is not a
      *         block cipher.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.462 -0500", hash_original_method = "3ACC05EE7DE432C9B56A86A9FE86D8EC", hash_generated_method = "CE4C83C1C504CE70BA1D20D9F6BF5975")
     
 protected abstract int engineGetBlockSize();
@@ -73,6 +79,8 @@ protected abstract int engineGetBlockSize();
      *            the length of the input (in bytes).
      * @return the size for a buffer (in bytes).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.465 -0500", hash_original_method = "7019972DECB97481B99961B906CB605E", hash_generated_method = "A247EE90853D8ACC344BA5A6B50542CC")
     
 protected abstract int engineGetOutputSize(int inputLen);
@@ -83,6 +91,8 @@ protected abstract int engineGetOutputSize(int inputLen);
      *
      * @return the Initialization Vector (IV), or {@code null} if none was used.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.468 -0500", hash_original_method = "C5141BE3C0DBACFB99BE4E20F3121758", hash_generated_method = "2A81A6576CF9913F0EDB74F9968F99A3")
     
 protected abstract byte[] engineGetIV();
@@ -98,6 +108,8 @@ protected abstract byte[] engineGetIV();
      *         {@code null} if this cipher instance does not have any parameters
      *         at all.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.472 -0500", hash_original_method = "F437E8F38ACE5E40323D54CF433424BE", hash_generated_method = "10476EECE572B4A92BCBC8968F86BA74")
     
 protected abstract AlgorithmParameters engineGetParameters();
@@ -132,6 +144,8 @@ protected abstract AlgorithmParameters engineGetParameters();
      *             if the specified key cannot be used to initialize this cipher
      *             instance.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.474 -0500", hash_original_method = "15D0BECC17BB45C6B91C0893B86C3D1B", hash_generated_method = "D1F579C24D10F21BFDA6B3319806F8F8")
     
 protected abstract void engineInit(int opmode, Key key, SecureRandom random)
@@ -171,6 +185,8 @@ protected abstract void engineInit(int opmode, Key key, SecureRandom random)
      *             it the specified parameters are inappropriate for this
      *             cipher.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.476 -0500", hash_original_method = "B8FFCDB05448A33CA2433E0C98E9F38B", hash_generated_method = "2A193111E0E207ACB6CA2A72E530D15A")
     
 protected abstract void engineInit(int opmode, Key key,
@@ -211,6 +227,8 @@ protected abstract void engineInit(int opmode, Key key,
      *             if the specified parameters are inappropriate for this
      *             cipher.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.479 -0500", hash_original_method = "E8247AA39E1B9CCC8596EAFC45AE0E11", hash_generated_method = "64D5B0AD53E48EA0684BDCD2ACE2CCE3")
     
 protected abstract void engineInit(int opmode, Key key,
@@ -236,6 +254,8 @@ protected abstract void engineInit(int opmode, Key key,
      *             if the input is null, or if {@code inputOffset} and {@code
      *             inputLen} do not specify a valid chunk in the input buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.481 -0500", hash_original_method = "81313172ABED23D45251C078F61F50A7", hash_generated_method = "CFA448C23C6FB2BCA9F484C302BA2856")
     
 protected abstract byte[] engineUpdate(byte[] input, int inputOffset,
@@ -264,6 +284,8 @@ protected abstract byte[] engineUpdate(byte[] input, int inputOffset,
      * @throws ShortBufferException
      *             if the size of the {@code output} buffer is too small.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.483 -0500", hash_original_method = "61BC6ED49CB8D34B55A936DFEB746437", hash_generated_method = "E5AE46DB5118504CAD77DB34E1A26081")
     
 protected abstract int engineUpdate(byte[] input, int inputOffset,
@@ -350,6 +372,8 @@ protected int engineUpdate(ByteBuffer input, ByteBuffer output)
      * @throws BadPaddingException
      *             if the padding of the data does not match the padding scheme.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.489 -0500", hash_original_method = "C26828CB49B064507C61439FD3E111AC", hash_generated_method = "A71484D50D37071EB4267DF764C25B3D")
     
 protected abstract byte[] engineDoFinal(byte[] input, int inputOffset,
@@ -381,6 +405,8 @@ protected abstract byte[] engineDoFinal(byte[] input, int inputOffset,
      * @throws BadPaddingException
      *             if the padding of the data does not match the padding scheme.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.492 -0500", hash_original_method = "88DB39159701BC244ED5DAF1D466344A", hash_generated_method = "25F835FAA2D0CBEDC58369D0BD5A5C5D")
     
 protected abstract int engineDoFinal(byte[] input, int inputOffset,

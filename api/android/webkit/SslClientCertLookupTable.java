@@ -33,6 +33,8 @@ public static synchronized SslClientCertLookupTable getInstance() {
 
     private  Set<String> denied;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.341 -0500", hash_original_method = "C6A28623CA4FEF2D114418C70282C212", hash_generated_method = "030E23072C43339132C1692FE82C3302")
     
 private SslClientCertLookupTable() {

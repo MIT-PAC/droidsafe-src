@@ -6,9 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
 public class ASN1Enumerated extends DEREnumerated {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.662 -0500", hash_original_method = "21C60C1A5AA0865B59F345279A6EA8BF", hash_generated_method = "21C60C1A5AA0865B59F345279A6EA8BF")
     
 ASN1Enumerated(byte[] bytes)
@@ -29,7 +29,6 @@ public ASN1Enumerated(int value)
     {
         super(value);
     }
-
     
 }
 

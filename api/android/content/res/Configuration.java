@@ -286,6 +286,8 @@ public Configuration(Configuration o) {
     /**
      * Construct this Configuration object, reading from the Parcel.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.507 -0500", hash_original_method = "8A45855DAEA6DBD5399558BF539AE2C5", hash_generated_method = "B33F295FC71427932B72309EBDA781D2")
     
 private Configuration(Parcel source) {

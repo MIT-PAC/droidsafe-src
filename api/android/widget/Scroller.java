@@ -14,6 +14,8 @@ import android.view.animation.Interpolator;
 
 public class Scroller {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.189 -0500", hash_original_method = "CF44D29393F8CF17D456596D4EDD821D", hash_generated_method = "610DC32ACEA41D734955CF13C80E48E5")
     
 static float viscousFluid(float x)
@@ -182,6 +184,8 @@ public final void setFriction(float friction) {
         mDeceleration = computeDeceleration(friction);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.153 -0500", hash_original_method = "B6D5379ECD830F8ABC23D18179CF1E64", hash_generated_method = "224177B40DFA9187CA2C63C44995847E")
     
 private float computeDeceleration(float friction) {

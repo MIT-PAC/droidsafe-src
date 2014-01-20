@@ -66,6 +66,8 @@ public static SslError verifyServerCertificates(
      * @param authType The authentication type for the cert chain
      * @return An SSL error object if there is an error and null otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.205 -0500", hash_original_method = "2785BD3BA93222E8AB5B460FDCCCF9E9", hash_generated_method = "3A258E0C2116CB2D762D495F6C5139B6")
     
 private static SslError verifyServerDomainAndCertificates(
@@ -104,6 +106,8 @@ private static SslError verifyServerDomainAndCertificates(
      * Creates a new certificate chain validator. This is a private constructor.
      * If you need a Certificate chain validator, call getInstance().
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.197 -0500", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "D74C4DFAD21CEF4FCC29B841FA38D1DA")
     
 private CertificateChainValidator() {}
@@ -150,6 +154,8 @@ public SslError doHandshakeAndValidateServerCertificates(
         return verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.207 -0500", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "10AEA3ED4E1BC4F19C79B4C82569D499")
     
 private void closeSocketThrowException(
@@ -159,6 +165,8 @@ private void closeSocketThrowException(
             socket, errorMessage != null ? errorMessage : defaultErrorMessage);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.210 -0500", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "6E9E025EFFEDA554EA38003B6695FACD")
     
 private void closeSocketThrowException(SSLSocket socket,

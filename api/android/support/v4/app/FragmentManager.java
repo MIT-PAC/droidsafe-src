@@ -35,10 +35,6 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.ScaleAnimation;
 
-
-
-
-
 public abstract class FragmentManager {
 
     /**
@@ -74,6 +70,8 @@ public static void enableDebugLogging(boolean enabled) {
      * in the state, and if changes are made after the state is saved then they
      * will be lost.</p>
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.144 -0500", hash_original_method = "BE048CD13A2D9177864E9AE5CA89385C", hash_generated_method = "179BF9392A437EED545CF6A3F093EC20")
     
 public abstract FragmentTransaction beginTransaction();
@@ -98,6 +96,8 @@ public abstract FragmentTransaction beginTransaction();
      * @return Returns true if there were any pending transactions to be
      * executed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.148 -0500", hash_original_method = "5B9A3D87E7345C957FA5717C0C10C635", hash_generated_method = "66BAE45C691B1AB5E9BB1A84AE41D8A2")
     
 public abstract boolean executePendingTransactions();
@@ -110,6 +110,8 @@ public abstract boolean executePendingTransactions();
      * on the back stack associated with this ID are searched.
      * @return The fragment if found or null otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.151 -0500", hash_original_method = "F331A49B0DAC9D1709118DA3B3769DC9", hash_generated_method = "4C6F6CF41EE287D45A81567EBA8CB5D6")
     
 public abstract Fragment findFragmentById(int id);
@@ -122,6 +124,8 @@ public abstract Fragment findFragmentById(int id);
      * on the back stack are searched.
      * @return The fragment if found or null otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.153 -0500", hash_original_method = "06F2C60B02B6436122252A9A18FF6B5B", hash_generated_method = "8A748374863BCFCFE22454ABCA2FE261")
     
 public abstract Fragment findFragmentByTag(String tag);
@@ -132,6 +136,8 @@ public abstract Fragment findFragmentByTag(String tag);
      * request to pop, but the action will not be performed until the application
      * returns to its event loop.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.157 -0500", hash_original_method = "8DD8850C5659D39934906ED127571123", hash_generated_method = "06152C82F0BE43992BE41413F4D5A3F1")
     
 public abstract void popBackStack();
@@ -142,6 +148,8 @@ public abstract void popBackStack();
      * afterwards.
      * @return Returns true if there was something popped, else false.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.160 -0500", hash_original_method = "7B6675A0CB9AF3263371BDE096DAF2A9", hash_generated_method = "2C3F7FF8856F557CE69F0CF46B2F4937")
     
 public abstract boolean popBackStackImmediate();
@@ -159,6 +167,8 @@ public abstract boolean popBackStackImmediate();
      * the named state itself is popped. If null, only the top state is popped.
      * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.162 -0500", hash_original_method = "7371282EB954218CB5BB647DBEFB9C4D", hash_generated_method = "DA4FB7A38FD1A9723E0C9FB977608D32")
     
 public abstract void popBackStack(String name, int flags);
@@ -169,6 +179,8 @@ public abstract void popBackStack(String name, int flags);
      * afterwards.
      * @return Returns true if there was something popped, else false.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.165 -0500", hash_original_method = "E1C9735BC76D749F9AAB42E9F89374F3", hash_generated_method = "ADFC94D0AAB8081D7BCE139575F65351")
     
 public abstract boolean popBackStackImmediate(String name, int flags);
@@ -187,6 +199,8 @@ public abstract boolean popBackStackImmediate(String name, int flags);
      * the named state itself is popped.
      * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.167 -0500", hash_original_method = "5DFB5C2F3CB06A536CC67665FD5A1850", hash_generated_method = "AFB34329D29F80428B05B6ACD88A1183")
     
 public abstract void popBackStack(int id, int flags);
@@ -197,6 +211,8 @@ public abstract void popBackStack(int id, int flags);
      * afterwards.
      * @return Returns true if there was something popped, else false.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.169 -0500", hash_original_method = "4468A20E5A85CF532490B1BC373EE3E6", hash_generated_method = "B7D3372DC7597245DDCCDC11FB8C5F74")
     
 public abstract boolean popBackStackImmediate(int id, int flags);
@@ -204,6 +220,8 @@ public abstract boolean popBackStackImmediate(int id, int flags);
     /**
      * Return the number of entries currently in the back stack.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.171 -0500", hash_original_method = "8EAEBBF64A73FEF70E3B2DC6C5497EE9", hash_generated_method = "F5E4FA5B0AAD9A1C436033C01C3AAABD")
     
 public abstract int getBackStackEntryCount();
@@ -241,6 +259,8 @@ public abstract void removeOnBackStackChangedListener(OnBackStackChangedListener
      * @param key The name of the entry in the bundle.
      * @param fragment The Fragment whose reference is to be stored.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.180 -0500", hash_original_method = "8451101D4DDA3AE9BA2F091778F6ACC9", hash_generated_method = "C529CCC132EFEB14EBA38652ABAFD702")
     
 public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
@@ -254,6 +274,8 @@ public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
      * @return Returns the current Fragment instance that is associated with
      * the given reference.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.183 -0500", hash_original_method = "1FBEC41A2754AD4627511B440BD8CDF6", hash_generated_method = "0F634E6958A473C8D2E8404CF8C8DB24")
     
 public abstract Fragment getFragment(Bundle bundle, String key);
@@ -283,24 +305,18 @@ public abstract Fragment getFragment(Bundle bundle, String key);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.185 -0500", hash_original_method = "70232028C6041780F1572B4693E04940", hash_generated_method = "D7143037D7EB1134407060B9E85E5B14")
     
 public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
-
     
     public interface BackStackEntry {
         
         public int getId();
-
         
         public String getName();
-
         
         public int getBreadCrumbTitleRes();
-
         
         public int getBreadCrumbShortTitleRes();
-
         
         public CharSequence getBreadCrumbTitle();
-
         
         public CharSequence getBreadCrumbShortTitle();
     }
@@ -318,13 +334,14 @@ public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.188 -0500", hash_original_method = "9309E77AA4047B9B8316706781ED0A27", hash_generated_method = "3FF3D3380483C9ADF611F5CA2E5A6D00")
     
 public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 }
 
 final class FragmentManagerState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "D29AA2723BAE7915447DC2F30F3AAA56", hash_generated_field = "EE9672AF4023C35BB0D72B0356E5DA5C")
 
@@ -381,6 +398,8 @@ public void writeToParcel(Parcel dest, int flags) {
 }
 final class FragmentManagerImpl extends FragmentManager {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.353 -0500", hash_original_method = "4341065D769972007048C06B6A820CF6", hash_generated_method = "AAEB003EE5CA3BDFC2234E2D6D00CFBC")
     
 static Animation makeOpenCloseAnimation(Context context, float startScale,
@@ -398,6 +417,8 @@ static Animation makeOpenCloseAnimation(Context context, float startScale,
         return set;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.356 -0500", hash_original_method = "90F479F8F611DA10970396B1160BE850", hash_generated_method = "5E695FDA875E0A6653234B0A231739F0")
     
 static Animation makeFadeAnimation(Context context, float start, float end) {
@@ -407,6 +428,8 @@ static Animation makeFadeAnimation(Context context, float start, float end) {
         return anim;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.499 -0500", hash_original_method = "EF9B1EDACB3DF8AEB2756354C0AEFEDD", hash_generated_method = "2C6BD9C0C59EEBA564136501810F7E77")
     
 public static int reverseTransit(int transit) {
@@ -450,11 +473,9 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 
     static final String TAG = "FragmentManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.225 -0500", hash_original_field = "32BF68B99F21EB3682A35A598CF8A71A", hash_generated_field = "47802C2B46813E58B899D23FD9DC343B")
-
     
     static final boolean HONEYCOMB = android.os.Build.VERSION.SDK_INT >= 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.227 -0500", hash_original_field = "F787E82ABD38F2EA55518D5879BC4223", hash_generated_field = "3B27731C0E9DDDFC7028C0BFB720297D")
-
 
     static final String TARGET_REQUEST_CODE_STATE_TAG = "android:target_req_state";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.229 -0500", hash_original_field = "93ACE05EC658CB34C742740556D4AAD2", hash_generated_field = "9220E2EDA94C70BA7341F1BFB405D6BF")
@@ -468,7 +489,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     static final String USER_VISIBLE_HINT_TAG = "android:user_visible_hint";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.342 -0500", hash_original_field = "DBE88DA536863F5E1852D5C0B17397C0", hash_generated_field = "3A10D2877F43112AA0B7A6A8433E95CB")
 
-
     static final Interpolator DECELERATE_QUINT = new DecelerateInterpolator(2.5f);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.344 -0500", hash_original_field = "F24520F51F599A0D5367EFF4AA0763C9", hash_generated_field = "1618232FF2C96BF54619A71799992CCF")
 
@@ -480,11 +500,9 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 
     static final Interpolator ACCELERATE_CUBIC = new AccelerateInterpolator(1.5f);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.351 -0500", hash_original_field = "539442A9D6C409C991FFED1C4320E7CF", hash_generated_field = "71044A5396C27203930538888DCB79FC")
-
     
     static final int ANIM_DUR = 220;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.502 -0500", hash_original_field = "070544131F0D684DCD03A48F95E567E9", hash_generated_field = "7BB089DC1B8A242E88755BDA8C8238B9")
-
     
     public static final int ANIM_STYLE_OPEN_ENTER = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.504 -0500", hash_original_field = "801447442A6349F42ECEBC29356305B2", hash_generated_field = "3C4C6A69EA30C5B582DE8DD757B46311")
@@ -504,7 +522,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     public static final int ANIM_STYLE_FADE_EXIT = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.236 -0500", hash_original_field = "11FD18D208B09E922FC03FBF68E7335B", hash_generated_field = "11FD18D208B09E922FC03FBF68E7335B")
 
-
     ArrayList<Runnable> mPendingActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.238 -0500", hash_original_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3", hash_generated_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3")
 
@@ -513,7 +530,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 
     boolean mExecutingActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.242 -0500", hash_original_field = "A1650882FA43FC001601740ED87DBA1F", hash_generated_field = "A1650882FA43FC001601740ED87DBA1F")
-
     
     ArrayList<Fragment> mActive;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.244 -0500", hash_original_field = "FF37605B8D813171195C0EBF92B2A116", hash_generated_field = "FF37605B8D813171195C0EBF92B2A116")
@@ -536,10 +552,8 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     ArrayList<Integer> mAvailBackStackIndices;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.256 -0500", hash_original_field = "078DA2C7CA0D4289F90F664D0B3EDB3B", hash_generated_field = "078DA2C7CA0D4289F90F664D0B3EDB3B")
 
-
     ArrayList<OnBackStackChangedListener> mBackStackChangeListeners;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.258 -0500", hash_original_field = "9521C64640071A41BA8B18982DEC3BE2", hash_generated_field = "9521C64640071A41BA8B18982DEC3BE2")
-
 
     int mCurState = Fragment.INITIALIZING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.261 -0500", hash_original_field = "DC6970CAF75184DB6DB1AAC52EA720C0", hash_generated_field = "DC6970CAF75184DB6DB1AAC52EA720C0")
@@ -552,7 +566,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 
     Fragment mParent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.267 -0500", hash_original_field = "19DD0E42F9FC244F37062274E8F2012D", hash_generated_field = "19DD0E42F9FC244F37062274E8F2012D")
-
     
     boolean mNeedMenuInvalidate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.268 -0500", hash_original_field = "E68067DB35DA8BD96BFB5C858DBE74BF", hash_generated_field = "E68067DB35DA8BD96BFB5C858DBE74BF")
@@ -581,9 +594,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         public void run() {
             execPendingActions();
             
-            
         }
-
         
 };
     
@@ -593,6 +604,8 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         //Synthesized constructor
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.286 -0500", hash_original_method = "70ACCC725CBD51E4B696A7DF31DD0DB0", hash_generated_method = "C16DE2EC9D0E5F4F1C992757277ACCC3")
     
 private void throwException(RuntimeException ex) {
@@ -907,6 +920,8 @@ private void throwException(RuntimeException ex) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.358 -0500", hash_original_method = "1D86F34E1479CAC948F0E54CF5418376", hash_generated_method = "363C790134E488257F21F18B160FC8D3")
     
 Animation loadAnimation(Fragment fragment, int transit, boolean enter,
@@ -981,8 +996,9 @@ public void performPendingDeferredStart(Fragment f) {
             moveToState(f, mCurState, 0, 0, false);
         }
     }
-
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.364 -0400", hash_original_method = "F13A9F8BA98A34618DEF4155010BA2F5", hash_generated_method = "8CA88B4CA243176602395A315F8F4613")
      void moveToState(Fragment f, int newState, int transit, int transitionStyle,
             boolean keepActive) {
@@ -1270,18 +1286,24 @@ switch(f.mState){
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.381 -0500", hash_original_method = "253ACA6E8863F76AC823063DED921CB5", hash_generated_method = "253ACA6E8863F76AC823063DED921CB5")
     
 void moveToState(Fragment f) {
         moveToState(f, mCurState, 0, 0, false);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.383 -0500", hash_original_method = "4A2DC4C23578532593EF5B01DCA60326", hash_generated_method = "4A2DC4C23578532593EF5B01DCA60326")
     
 void moveToState(int newState, boolean always) {
         moveToState(newState, 0, 0, always);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.386 -0500", hash_original_method = "5BD27BFF276D517E1379D91A3F7AF343", hash_generated_method = "5BD27BFF276D517E1379D91A3F7AF343")
     
 void moveToState(int newState, int transit, int transitStyle, boolean always) {
@@ -1317,6 +1339,8 @@ void moveToState(int newState, int transit, int transitStyle, boolean always) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.388 -0500", hash_original_method = "CCAA4C21D5B5313253593374D7FC1754", hash_generated_method = "CCAA4C21D5B5313253593374D7FC1754")
     
 void startPendingDeferredFragments() {
@@ -1330,6 +1354,8 @@ void startPendingDeferredFragments() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.390 -0500", hash_original_method = "47E8AE46DB9C6E9F4895918BFF9C77EF", hash_generated_method = "47E8AE46DB9C6E9F4895918BFF9C77EF")
     
 void makeActive(Fragment f) {
@@ -1351,6 +1377,8 @@ void makeActive(Fragment f) {
         if (DEBUG) Log.v(TAG, "Allocated fragment index " + f);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.393 -0500", hash_original_method = "2838DA3381C6FA665FE83DACB606EE48", hash_generated_method = "2838DA3381C6FA665FE83DACB606EE48")
     
 void makeInactive(Fragment f) {
@@ -1560,6 +1588,8 @@ public Fragment findFragmentByWho(String who) {
         return null;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.418 -0500", hash_original_method = "B87B380B690A16EB7F37B7EE1C0A0D26", hash_generated_method = "AD151F1BDA94909FC4C898DCA0920366")
     
 private void checkStateLoss() {
@@ -1659,6 +1689,8 @@ public void freeBackStackIndex(int index) {
     /**
      * Only call from main thread!
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.432 -0500", hash_original_method = "2EC9B9D8ABC4926EA1F7FF85BE00D458", hash_generated_method = "204D2702904F445488B280B0FF1C4460")
     
 public boolean execPendingActions() {
@@ -1714,6 +1746,8 @@ public boolean execPendingActions() {
         return didSomething;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.434 -0500", hash_original_method = "480CA24D6CDDA51ECD1DFDE903041169", hash_generated_method = "480CA24D6CDDA51ECD1DFDE903041169")
     
 void reportBackStackChanged() {
@@ -1724,6 +1758,8 @@ void reportBackStackChanged() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.436 -0500", hash_original_method = "93C61FA561A07CB0E9B057A7A904C282", hash_generated_method = "93C61FA561A07CB0E9B057A7A904C282")
     
 void addBackStackState(BackStackRecord state) {
@@ -1734,6 +1770,8 @@ void addBackStackState(BackStackRecord state) {
         reportBackStackChanged();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.439 -0500", hash_original_method = "2DCA4D0949EEA78B53FF55FD7B1EE1F8", hash_generated_method = "77498A76B367759D221EC394B1246D3C")
     
 boolean popBackStackState(Handler handler, String name, int id, int flags) {
@@ -1799,6 +1837,8 @@ boolean popBackStackState(Handler handler, String name, int id, int flags) {
         return true;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.442 -0500", hash_original_method = "4601075007D50CE0BCD1D759D668CB84", hash_generated_method = "4601075007D50CE0BCD1D759D668CB84")
     
 ArrayList<Fragment> retainNonConfig() {
@@ -1820,6 +1860,8 @@ ArrayList<Fragment> retainNonConfig() {
         return fragments;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.444 -0500", hash_original_method = "AB64A806E53952D63B221B8A02A39B9D", hash_generated_method = "AB64A806E53952D63B221B8A02A39B9D")
     
 void saveFragmentViewState(Fragment f) {
@@ -1838,6 +1880,8 @@ void saveFragmentViewState(Fragment f) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.446 -0500", hash_original_method = "4EAE6A1450E2744D0D17A0CBB3487A4E", hash_generated_method = "E9031779BAB51B2450D4E6B808902980")
     
 Bundle saveFragmentBasicState(Fragment f) {
@@ -1873,6 +1917,8 @@ Bundle saveFragmentBasicState(Fragment f) {
         return result;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.450 -0500", hash_original_method = "10343325EA0A9B349A8A31D89021E4C8", hash_generated_method = "AFB6B001EDEBA5C553B21A06475C8774")
     
 Parcelable saveAllState() {
@@ -1991,6 +2037,8 @@ Parcelable saveAllState() {
         return fms;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.456 -0500", hash_original_method = "83508419770250A244151298D1C277A7", hash_generated_method = "B9306D1C9433F0BD1CAFE7B04830BDC9")
     
 void restoreAllState(Parcelable state, ArrayList<Fragment> nonConfig) {
@@ -2115,6 +2163,8 @@ public void attachActivity(FragmentActivity activity,
         mParent = parent;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.460 -0500", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "AF7BA1CF9453ACC672FADB789538767F")
     
 public void noteStateNotSaved() {

@@ -260,6 +260,8 @@ public URL(String protocol, String host, int port, String file,
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.793 -0500", hash_original_method = "0200B051ED19728512FC68E42BCAEC0F", hash_generated_method = "0200B051ED19728512FC68E42BCAEC0F")
     
 void fixURL(boolean fixHost) {
@@ -378,6 +380,8 @@ public boolean sameFile(URL otherURL) {
      *
      * @throws MalformedURLException if no reasonable handler is available.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.807 -0500", hash_original_method = "7ED1A4A4DB26C9983DC69C2C091F1C50", hash_generated_method = "E036A7AC84D6D8EE280C732DEE29FF50")
     
 void setupStreamHandler() {
@@ -565,6 +569,8 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
         //return streamHandler.toExternalForm(this);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.832 -0500", hash_original_method = "75E256B9492C6227D987E1CACFC70E15", hash_generated_method = "D9AF24E0BCDF7E6260DB709F2833ED63")
     
 private void readObject(ObjectInputStream stream) throws IOException {
@@ -594,6 +600,8 @@ private void readObject(ObjectInputStream stream) throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.834 -0500", hash_original_method = "CCBF13D66B2182AA6C1A2589205C2944", hash_generated_method = "C4FE349242269BA033E70DA693229D12")
     
 private void writeObject(ObjectOutputStream s) throws IOException {

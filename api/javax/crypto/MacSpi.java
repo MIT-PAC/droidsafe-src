@@ -25,6 +25,8 @@ public MacSpi() {
      *
      * @return the length of this MAC (in bytes).
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.465 -0500", hash_original_method = "E5EE4E3D529200DA127E29694CDB8928", hash_generated_method = "171056A01B3A57938A6452A54EFDEE0C")
     
 protected abstract int engineGetMacLength();
@@ -44,6 +46,8 @@ protected abstract int engineGetMacLength();
      *             if the specified parameters cannot be used to initialize this
      *             algorithm.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.468 -0500", hash_original_method = "A22BD27EF5C096BDC4200799D5CB43E0", hash_generated_method = "5E2EEEB85E1EBAC9690FDF147512AE55")
     
 protected abstract void engineInit(Key key, AlgorithmParameterSpec params)
@@ -55,6 +59,8 @@ protected abstract void engineInit(Key key, AlgorithmParameterSpec params)
      * @param input
      *            the byte.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.471 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
     
 protected abstract void engineUpdate(byte input);
@@ -71,6 +77,8 @@ protected abstract void engineUpdate(byte input);
      * @param len
      *            the length of the data in the buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.473 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
     
 protected abstract void engineUpdate(byte[] input, int offset, int len);
@@ -114,6 +122,8 @@ protected void engineUpdate(ByteBuffer input) {
      *
      * @return the generated digest.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.478 -0500", hash_original_method = "28E98DE89A8C2A2C7FA6A0C5403AC9E0", hash_generated_method = "DD49CF0D72F140D2D0B5399BA8032066")
     
 protected abstract byte[] engineDoFinal();
@@ -125,6 +135,8 @@ protected abstract byte[] engineDoFinal();
      * used to start the next MAC computation with the same parameters or
      * initialized with different parameters.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.480 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
     
 protected abstract void engineReset();

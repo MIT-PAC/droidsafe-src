@@ -7,10 +7,9 @@ import droidsafe.annotations.*;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
 
-
-
-
 final class ReadWriteDirectByteBuffer extends DirectByteBuffer {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.863 -0500", hash_original_method = "606F49D58A59410A4684B206A52E185F", hash_generated_method = "C2A300365376ECC3085B834EAD5F24EB")
     
 static ReadWriteDirectByteBuffer copy(DirectByteBuffer other, int markOfOther) {
@@ -23,6 +22,8 @@ static ReadWriteDirectByteBuffer copy(DirectByteBuffer other, int markOfOther) {
     }
 
     // Used by ByteBuffer.allocateDirect.
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.866 -0500", hash_original_method = "F2F90AA1C14708BA27FBCC0DAF6F8A9D", hash_generated_method = "F2F90AA1C14708BA27FBCC0DAF6F8A9D")
     
 ReadWriteDirectByteBuffer(int capacity) {
@@ -30,12 +31,16 @@ ReadWriteDirectByteBuffer(int capacity) {
     }
 
     // Used by the JNI NewDirectByteBuffer function.
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.869 -0500", hash_original_method = "B59F4E2576E1A9EB301DFADAA106D67F", hash_generated_method = "B59F4E2576E1A9EB301DFADAA106D67F")
     
 ReadWriteDirectByteBuffer(int address, int capacity) {
         super(MemoryBlock.wrapFromJni(address, capacity), capacity, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.871 -0500", hash_original_method = "64217974EE9299818C86F07054C3DD19", hash_generated_method = "64217974EE9299818C86F07054C3DD19")
     
 ReadWriteDirectByteBuffer(MemoryBlock block, int capacity, int offset) {
@@ -104,6 +109,8 @@ ReadWriteDirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         return this;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.891 -0500", hash_original_method = "3221718B504A786DEFCB0B7DC092A6F4", hash_generated_method = "C62ADAB5A4D8F21A815CA9AF9B574A1A")
     
 final void put(char[] src, int srcOffset, int charCount) {
@@ -112,6 +119,8 @@ final void put(char[] src, int srcOffset, int charCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.894 -0500", hash_original_method = "96DFC920F61F6006882BF66934B5DF94", hash_generated_method = "BC901481B14820A523E8F2A014B1BC01")
     
 final void put(double[] src, int srcOffset, int doubleCount) {
@@ -120,6 +129,8 @@ final void put(double[] src, int srcOffset, int doubleCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.897 -0500", hash_original_method = "C81F946AF2E7397E3B6D2FB9DB9038F5", hash_generated_method = "2277334AB7888CE22237E032A79741BC")
     
 final void put(float[] src, int srcOffset, int floatCount) {
@@ -128,6 +139,8 @@ final void put(float[] src, int srcOffset, int floatCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.899 -0500", hash_original_method = "69116E139CC5D8D5FB2D59FB1E27087D", hash_generated_method = "7C2A31C15DF1A254375CC18946693C4A")
     
 final void put(int[] src, int srcOffset, int intCount) {
@@ -136,6 +149,8 @@ final void put(int[] src, int srcOffset, int intCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.902 -0500", hash_original_method = "F69F67F942D07574E852DB6B4C993418", hash_generated_method = "E8F0FA8B8890C3423109EFAC9A67FA5F")
     
 final void put(long[] src, int srcOffset, int longCount) {
@@ -144,6 +159,8 @@ final void put(long[] src, int srcOffset, int longCount) {
         position += byteCount;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.904 -0500", hash_original_method = "E0EA76B0F879DDFFA81447B27E7A4446", hash_generated_method = "99FF64CD855C046B9E6CF8BD1BCACE32")
     
 final void put(short[] src, int srcOffset, int shortCount) {
@@ -290,7 +307,6 @@ final void put(short[] src, int srcOffset, int shortCount) {
     public ByteBuffer slice() {
         return new ReadWriteDirectByteBuffer(block, remaining(), offset + position);
     }
-
     
 }
 

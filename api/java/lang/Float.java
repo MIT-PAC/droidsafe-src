@@ -190,6 +190,8 @@ public static Float valueOf(float f) {
      * @return the hexadecimal string representation of {@code f}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.316 -0500", hash_original_method = "10B7F57DA48FEE510D3FE44F096FB152", hash_generated_method = "FC28E11E54D49E3E7425983032DF35AD")
     
 public static String toHexString(float f) {
@@ -363,6 +365,8 @@ public Float(float value) {
      * @param value
      *            the primitive double value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.249 -0500", hash_original_method = "F67C36B21D5AC7A6288ABF8CC3CCE46F", hash_generated_method = "76E4C5FB0F782D0A9C051CF0A1E945D1")
     
 public Float(double value) {
@@ -404,12 +408,16 @@ public Float(String string) throws NumberFormatException {
      * @see java.lang.Comparable
      * @since 1.2
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.255 -0500", hash_original_method = "C4AC6F26EC342AC8CCBAB08E832A244F", hash_generated_method = "295C477FE388D5EBA14F86DECAF1B063")
     
 public int compareTo(Float object) {
         return compare(value, object.value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.257 -0500", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "4C2FE469A77605BE0BF5A0C525E46699")
     
 @Override
@@ -417,6 +425,8 @@ public int compareTo(Float object) {
         return (byte) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.259 -0500", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "BF89BE4469CF5E691A2C43432BBB5D3E")
     
 @Override
@@ -437,6 +447,8 @@ public int compareTo(Float object) {
      * @return {@code true} if the specified object is equal to this
      *         {@code Float}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.262 -0500", hash_original_method = "D5A6527E8F740E6B81FAC1E35F94CBE1", hash_generated_method = "842C33B3DA49D18CAAF606BC8E5D01B5")
     
 @Override
@@ -459,6 +471,8 @@ public int compareTo(Float object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.275 -0500", hash_original_method = "08993E3A95048E3B463477EA75421A52", hash_generated_method = "D59EDD7D21AF66F58605F88F64ED1B24")
     
 @Override
@@ -466,6 +480,8 @@ public int compareTo(Float object) {
         return floatToIntBits(value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.282 -0500", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "9019C920956BC6564E381830D24ADC2B")
     
 @Override
@@ -501,6 +517,8 @@ public boolean isNaN() {
         return isNaN(value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.294 -0500", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "8688FBD601BD891739470FEF2F36C2F2")
     
 @Override
@@ -508,6 +526,8 @@ public boolean isNaN() {
         return (long) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.299 -0500", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "5FBF5C4E9B9689119C13934CEF72831A")
     
 @Override

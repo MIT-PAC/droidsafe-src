@@ -191,6 +191,8 @@ public ActionBarImpl(Dialog dialog) {
         init(dialog.getWindow().getDecorView());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.833 -0500", hash_original_method = "CD1B24EA492A78A5E57A77E5FDC89AEF", hash_generated_method = "AE61CA9AB4C4A9D8ED8CE7DAC2B5B53B")
     
 private void init(View decor) {
@@ -228,6 +230,8 @@ public void onConfigurationChanged(Configuration newConfig) {
                 com.android.internal.R.bool.action_bar_embed_tabs));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.838 -0500", hash_original_method = "05911004B37CFCA0E1E3075964BC3E46", hash_generated_method = "01B4E351654E9CD2115F2EEC8CF19EA8")
     
 private void setHasEmbeddedTabs(boolean hasEmbeddedTabs) {
@@ -247,6 +251,8 @@ private void setHasEmbeddedTabs(boolean hasEmbeddedTabs) {
         mActionView.setCollapsable(!mHasEmbeddedTabs && isInTabMode);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.840 -0500", hash_original_method = "04F31515B176FCA9797E5A3B1AE2D925", hash_generated_method = "BD7672C45C085371D67A1A0A7EFCA934")
     
 private void ensureTabsExist() {
@@ -267,6 +273,8 @@ private void ensureTabsExist() {
         mTabScrollView = tabScroller;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.842 -0500", hash_original_method = "FB60553060C0CBA07AA4AE6F5834D888", hash_generated_method = "FB60553060C0CBA07AA4AE6F5834D888")
     
 void completeDeferredDestroyActionMode() {
@@ -414,6 +422,8 @@ public void removeAllTabs() {
         cleanupTabs();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.882 -0500", hash_original_method = "62AE76DE88CDD8F4A1D9D70F05364203", hash_generated_method = "1CC92F98F3B0A9B5EC5EA91E374B2E31")
     
 private void cleanupTabs() {
@@ -692,6 +702,8 @@ private void configureTab(Tab tab, int position) {
         show(true);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.945 -0500", hash_original_method = "B9AB02E6F73BE3423F7A7521B424A639", hash_generated_method = "B9AB02E6F73BE3423F7A7521B424A639")
     
 void show(boolean markHiddenBeforeMode) {
@@ -769,6 +781,8 @@ public boolean isShowing() {
         return mContainerView.getVisibility() == View.VISIBLE;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:57.954 -0500", hash_original_method = "6F997D5B2915B28943A5CB4BD830D4B2", hash_generated_method = "6F997D5B2915B28943A5CB4BD830D4B2")
     
 void animateToMode(boolean toActionMode) {

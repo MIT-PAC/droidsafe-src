@@ -119,70 +119,104 @@ protected AbstractHttpClient(
         connManager          = conman;
     } // constructor
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.003 -0500", hash_original_method = "E760643E0AC1959FE5C530A1F121AD2B", hash_generated_method = "E04FB14D09B2B83C24A5F1215E8BD77C")
     
 protected abstract HttpParams createHttpParams();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.005 -0500", hash_original_method = "247C3FFFCAC7023358E59BA10D2BB371", hash_generated_method = "EB3219EC02588493DDD4C2031BA5F40C")
     
 protected abstract HttpContext createHttpContext();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.008 -0500", hash_original_method = "26CCEF008C8565E7F0C352E1FB780A7F", hash_generated_method = "BA1425CF0534BE3990D6B8224A55320F")
     
 protected abstract HttpRequestExecutor createRequestExecutor();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.010 -0500", hash_original_method = "A7E391CA589A0D00A4292862BDE01F03", hash_generated_method = "A79C9D680D4A694C6B6D88F37C3FEC1F")
     
 protected abstract ClientConnectionManager createClientConnectionManager();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.012 -0500", hash_original_method = "ACB698551ADB996E7366690CCB47C0D7", hash_generated_method = "F05A06FB4B3A1D7C2ECAD4A8BE4FA4CD")
     
 protected abstract AuthSchemeRegistry createAuthSchemeRegistry();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.014 -0500", hash_original_method = "5548986326F8FAC785B31AC07D54394B", hash_generated_method = "0507F78A6E09472BD6F76098FB9FCC0B")
     
 protected abstract CookieSpecRegistry createCookieSpecRegistry();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.017 -0500", hash_original_method = "90801EA4D3DEC4952C41D56CE8D261EC", hash_generated_method = "DEDF079293F22D331B2B8958BA4B0DB1")
     
 protected abstract ConnectionReuseStrategy createConnectionReuseStrategy();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.019 -0500", hash_original_method = "99366874123306FD40F8EA59466E70E8", hash_generated_method = "72CE0563C7B88EE3E16C1C209E98D1B0")
     
 protected abstract ConnectionKeepAliveStrategy createConnectionKeepAliveStrategy();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.021 -0500", hash_original_method = "30116B8D6918FFE3FE30E6C197D404C5", hash_generated_method = "8EF78F68EBD940E1A4DEC661C437D21B")
     
 protected abstract BasicHttpProcessor createHttpProcessor();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.024 -0500", hash_original_method = "6E6917ACB8353A340C276C398A9AD4A1", hash_generated_method = "A1075C32392D151625B5DD9E7B0EC6C9")
     
 protected abstract HttpRequestRetryHandler createHttpRequestRetryHandler();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.027 -0500", hash_original_method = "10B1E54D2564A3F0A072B1EF6BC00D8F", hash_generated_method = "B62E16612E9011613B554C84D31AE124")
     
 protected abstract RedirectHandler createRedirectHandler();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.029 -0500", hash_original_method = "1F7A00F85F5BD3044B2003CCCA327A49", hash_generated_method = "425F6FF775542C0FD725DDD64B43EF52")
     
 protected abstract AuthenticationHandler createTargetAuthenticationHandler();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.031 -0500", hash_original_method = "F5B1BC8740DB48B36E73188C4160F846", hash_generated_method = "FC23B5CBE2D73C5FE5EBE31F727D4BA1")
     
 protected abstract AuthenticationHandler createProxyAuthenticationHandler();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.033 -0500", hash_original_method = "4ED4AF9AEDF1106B3CAD1EFFA7CC2C42", hash_generated_method = "C9B82DF3926E5AAEF31112779BA392F7")
     
 protected abstract CookieStore createCookieStore();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.035 -0500", hash_original_method = "B2DEF9323612691BA8F3782129F8E85E", hash_generated_method = "98CC829429F62E564CE56E435E1F5AF1")
     
 protected abstract CredentialsProvider createCredentialsProvider();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.038 -0500", hash_original_method = "34AF1AC0639FB3072E7D087CDC2B56E0", hash_generated_method = "BF0C741521AA2345954B1689A75A52C2")
     
 protected abstract HttpRoutePlanner createHttpRoutePlanner();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.040 -0500", hash_original_method = "A5FC5D70749E52A363FD037ECA7FDB92", hash_generated_method = "8B0812BB2D9445BF5EF7D2987D5685DA")
     
 protected abstract UserTokenHandler createUserTokenHandler();
@@ -541,6 +575,8 @@ public final HttpResponse execute(HttpUriRequest request,
         return execute(determineTarget(request), request, context);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.145 -0500", hash_original_method = "D4908515F9C0F07C0BDB783E33343E25", hash_generated_method = "0A81BB37E1E34BCDCA4D80A38D818BFF")
     
 private HttpHost determineTarget(HttpUriRequest request) {

@@ -57,6 +57,8 @@ public static byte[] toBigEndianUtf16Bytes(char[] chars, int offset, int length)
 
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.024 -0500", hash_original_method = "9D5DC2CDE25FE055FB5E2F5C6BA10509", hash_generated_method = "44460063642E792FB6F57D14866E6745")
     
 private Charsets() {

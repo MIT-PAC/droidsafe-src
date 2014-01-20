@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.StrictMode;
 
-
-
-
-
 class SQLiteCompiledSql {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.578 -0500", hash_original_field = "3A24461A013C94D7BA13623586A33758", hash_generated_field = "A53F7A6D67993B059CF1B45EC860B911")
-
 
     private static final String TAG = "SQLiteCompiledSql";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.580 -0500", hash_original_field = "AC0A81ABC82A618858F7E54D51784ED6", hash_generated_field = "73D1AC952D2B4C5623C43496E686F020")
@@ -34,7 +29,9 @@ class SQLiteCompiledSql {
 
     private boolean mInUse = false;
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.594 -0500", hash_original_method = "C9E5BB8A7566B989DACB4531BB979B78", hash_generated_method = "C9E5BB8A7566B989DACB4531BB979B78")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.594 -0500", hash_original_method = "C9E5BB8A7566B989DACB4531BB979B78", hash_generated_method = "C9E5BB8A7566B989DACB4531BB979B78")
     
 SQLiteCompiledSql(SQLiteDatabase db, String sql) {
         db.verifyDbIsOpen();
@@ -50,7 +47,9 @@ SQLiteCompiledSql(SQLiteDatabase db, String sql) {
         native_compile(sql);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.596 -0500", hash_original_method = "8853AA921C334D6AF9AE7213FF2A5D13", hash_generated_method = "AA3BACD8E1FD7E2C98E611F4CBDF1144")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.596 -0500", hash_original_method = "8853AA921C334D6AF9AE7213FF2A5D13", hash_generated_method = "AA3BACD8E1FD7E2C98E611F4CBDF1144")
     
 void releaseSqlStatement() {
         // Note that native_finalize() checks to make sure that nStatement is
@@ -64,7 +63,9 @@ void releaseSqlStatement() {
     /**
      * returns true if acquire() succeeds. false otherwise.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.599 -0500", hash_original_method = "C3D2A814A65F76D9CB9F5D4B410FE699", hash_generated_method = "01B6F55405376AEEAD12C5FED208DC0A")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.599 -0500", hash_original_method = "C3D2A814A65F76D9CB9F5D4B410FE699", hash_generated_method = "01B6F55405376AEEAD12C5FED208DC0A")
     
 synchronized boolean acquire() {
         if (mInUse) {
@@ -75,13 +76,17 @@ synchronized boolean acquire() {
         return true;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.601 -0500", hash_original_method = "3B98FAB5CC48492CB208B835B8A64CFB", hash_generated_method = "489B127412461E42875B7CC63433FFAB")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.601 -0500", hash_original_method = "3B98FAB5CC48492CB208B835B8A64CFB", hash_generated_method = "489B127412461E42875B7CC63433FFAB")
     
 synchronized void release() {
         mInUse = false;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.604 -0500", hash_original_method = "AE3D09E3B5AB69E4329FBD89B4473FE6", hash_generated_method = "EC0B650A5BC83E75101F379BEC6CEBD3")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.604 -0500", hash_original_method = "AE3D09E3B5AB69E4329FBD89B4473FE6", hash_generated_method = "EC0B650A5BC83E75101F379BEC6CEBD3")
     
 synchronized void releaseIfNotInUse() {
         // if it is not in use, release its memory from the database
@@ -148,6 +153,8 @@ synchronized void releaseIfNotInUse() {
      * <P>The database lock must be held when calling this method.
      * @param sql The SQL to compile.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.614 -0500", hash_original_method = "957AE60D3A9CE570CB89C0AA6C75F6C8", hash_generated_method = "2B124FEB513D2470D3DA6C6DFDC1125F")
     
     private final void native_compile(String sql){

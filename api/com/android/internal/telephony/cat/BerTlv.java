@@ -82,6 +82,8 @@ public static BerTlv decode(byte[] data) throws ResultException {
 
     private List<ComprehensionTlv> mCompTlvs = null;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.213 -0500", hash_original_method = "5C874FE61091A7FA99CA633BD5413E3E", hash_generated_method = "7792EFE71B80E06007BBB19FC27A915F")
     
 private BerTlv(int tag, List<ComprehensionTlv> ctlvs) {

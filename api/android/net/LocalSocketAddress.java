@@ -77,7 +77,9 @@ Namespace (int id) {
         /**
          * @return int constant shared with native code
          */
-        /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        /*package*/ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.189 -0500", hash_original_method = "9E2F8CA3AB278410BC9A2501C7D5731F", hash_generated_method = "9E2F8CA3AB278410BC9A2501C7D5731F")
             
 int getId() {

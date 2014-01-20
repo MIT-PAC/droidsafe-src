@@ -7,8 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
 public enum SupplicantState implements Parcelable {
     DISCONNECTED,
     INTERFACE_DISABLED,
@@ -37,8 +35,9 @@ public static boolean isValidState(SupplicantState state) {
         return state != UNINITIALIZED && state != INVALID;
     }
 
-
     /* Supplicant associating or authenticating is considered a handshake state */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.320 -0500", hash_original_method = "0936DB4F8E30F4E1D3370706859F46B3", hash_generated_method = "CA8CB1732BFB1828178082E03C9E5A65")
         
 static boolean isHandshakeState(SupplicantState state) {
@@ -63,6 +62,8 @@ static boolean isHandshakeState(SupplicantState state) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.323 -0500", hash_original_method = "A4F0348D390153A3F5D8FAA5CE09DCF2", hash_generated_method = "BF3CDF66A003D34E6785F3C5F5DCD820")
         
 static boolean isConnecting(SupplicantState state) {
@@ -87,6 +88,8 @@ static boolean isConnecting(SupplicantState state) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.325 -0500", hash_original_method = "4062759FD37A40F63149C525AA386A4D", hash_generated_method = "D0B414E15990914D92705A1FA24CB7F0")
         
 static boolean isDriverActive(SupplicantState state) {

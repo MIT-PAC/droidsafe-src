@@ -11,6 +11,8 @@ import android.view.KeyEvent;
 
 public class DialerKeyListener extends NumberKeyListener {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.636 -0500", hash_original_method = "AE7C568B1FC945A3D62D83ECB6AACC3F", hash_generated_method = "0AA2BB67796C4A68DB2BDF94AD1A65E8")
     
@@ -31,11 +33,15 @@ public static DialerKeyListener getInstance() {
 
     private static DialerKeyListener sInstance;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.200 -0400", hash_original_method = "DB0B81FF92CA7DAE82B6AED220522587", hash_generated_method = "DB0B81FF92CA7DAE82B6AED220522587")
     public DialerKeyListener ()
     {
         //Synthesized constructor
     }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.633 -0500", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "C8829E311180669DC917FA428AC766DB")
     
@@ -45,6 +51,8 @@ public static DialerKeyListener getInstance() {
         return CHARACTERS;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.638 -0500", hash_original_method = "CF04961F3F1B69C39A5779241DF2A6D8", hash_generated_method = "CA7F189DF334696BDCB37FC8D67ACEB2")
     
@@ -56,6 +64,8 @@ public int getInputType() {
      * Overrides the superclass's lookup method to prefer the number field
      * from the KeyEvent.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.642 -0500", hash_original_method = "660AADB0BB44A0CB147F8CE16CBE33CA", hash_generated_method = "FC81125965E3EF690D9FFFE6CF20E937")
     
 protected int lookup(KeyEvent event, Spannable content) {

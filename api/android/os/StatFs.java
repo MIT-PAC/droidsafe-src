@@ -91,6 +91,8 @@ public void restat(String path) { native_restat(path); }
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.561 -0500", hash_original_method = "59CA121EFB9D79074525B44E468BE4BE", hash_generated_method = "4A4E9E75ACF160A700F69F0459AF485C")
     
     private void native_restat(String path){
@@ -98,6 +100,8 @@ public void restat(String path) { native_restat(path); }
     	addTaint(path.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.564 -0500", hash_original_method = "1E41289F3DA4BBE4A138859E5014C4A0", hash_generated_method = "DEB2CAAAAAEF6869C50299856205FB7F")
     
     private void native_setup(String path){
@@ -105,6 +109,8 @@ public void restat(String path) { native_restat(path); }
     	addTaint(path.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.568 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "A1A5D53F1ED4FA04B6E0F1659F8C4A39")
     
     private void native_finalize(){

@@ -634,6 +634,8 @@ public String getDialogId(boolean isServer, String toTag) {
      * @param method
      * @throws ParseException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.596 -0500", hash_original_method = "20A80D2C7777E602FB41086859FCE7A8", hash_generated_method = "55F620A2972E397D0422621AF41A15E0")
     
 private final void setBranch( Via via, String method ) {

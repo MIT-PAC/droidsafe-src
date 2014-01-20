@@ -11,65 +11,93 @@ import droidsafe.helpers.DSUtils;
 
 public class Region implements Parcelable {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeEquals(int native_r1, int native_r2) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDestructor(int native_region) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetRegion(int native_dst,
                                                   int native_src) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetRect(int native_dst, int left,
                                                 int top, int right, int bottom) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetPath(int native_dst, int native_path,
                                                 int native_clip) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetBounds(int native_region, Rect rect) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetBoundaryPath(int native_region,
                                                         int native_path) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, Rect rect,
                                            int native_region, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int native_region1,
                                            int native_region2, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromParcel(Parcel p) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeWriteToParcel(int native_region,
                                                       Parcel p) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeToString(int native_region) {
         	return ""; 
         }
@@ -104,6 +132,8 @@ public Region[] newArray(int size) {
 
     /** Create an empty region
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.193 -0500", hash_original_method = "0D8BB79D644235D834A5B870E7DE5E55", hash_generated_method = "26CF2A3DDBA2B25D750180E7A5D924AA")
     
 public Region() {
@@ -112,6 +142,8 @@ public Region() {
 
     /** Return a copy of the specified region
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.196 -0500", hash_original_method = "ADA47703EEBAAF081A921E3B439FC136", hash_generated_method = "A5B59A910014976676BF2030660D4E57")
     
 public Region(Region region) {
@@ -121,6 +153,8 @@ public Region(Region region) {
 
     /** Return a region set to the specified rectangle
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.198 -0500", hash_original_method = "A1BEE89A791B5892C0419D31229063CC", hash_generated_method = "EB9B16E8EFD92A7622854E0DAA174898")
     
 public Region(Rect r) {
@@ -130,6 +164,8 @@ public Region(Rect r) {
 
     /** Return a region set to the specified rectangle
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.201 -0500", hash_original_method = "3B1EBFADD13882DEC7CB8A7DB9BB782B", hash_generated_method = "83AE03E01797E3C3432BDFB8207BCAEF")
     
 public Region(int left, int top, int right, int bottom) {
@@ -137,6 +173,8 @@ public Region(int left, int top, int right, int bottom) {
         nativeSetRect(mNativeRegion, left, top, right, bottom);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.299 -0500", hash_original_method = "AE1199122B801919FCCD86EFAEB8981E", hash_generated_method = "AE1199122B801919FCCD86EFAEB8981E")
     
 Region(int ni) {
@@ -148,6 +186,8 @@ Region(int ni) {
 
     /* add dummy parameter so constructor can be called from jni without
        triggering 'not cloneable' exception */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.302 -0500", hash_original_method = "5B5253F8036AE411F7DD245C7F6E35C3", hash_generated_method = "437B56B8F299655728FD6424D860FFDE")
     
 private Region(int ni, int dummy) {
@@ -156,6 +196,8 @@ private Region(int ni, int dummy) {
 
     /** Set the region to the empty region
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.204 -0500", hash_original_method = "200ADD9307CCB536C203EAC015A5A024", hash_generated_method = "F60AD194CCD318D4A492AD3CEA5E1A55")
     
 public void setEmpty() {
@@ -164,6 +206,8 @@ public void setEmpty() {
 
     /** Set the region to the specified region.
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.206 -0500", hash_original_method = "4FCDB3DC16FC27229A4383057FFC976C", hash_generated_method = "DF74DC22025304EEB4E1BBC240C829FA")
     
@@ -173,6 +217,8 @@ public boolean set(Region region) {
 
     /** Set the region to the specified rectangle
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.208 -0500", hash_original_method = "C2513170875A2D5A2EB27E891206577A", hash_generated_method = "1EE701CCE5E602E8F86BFFEA5C6A52FA")
     
@@ -182,6 +228,8 @@ public boolean set(Rect r) {
     
     /** Set the region to the specified rectangle
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.210 -0500", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "A6370D0256D51227732DADCCC0838A83")
     
@@ -195,6 +243,8 @@ public boolean set(int left, int top, int right, int bottom) {
      * that is identical to the pixels that would be drawn by the path
      * (with no antialiasing).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.212 -0500", hash_original_method = "E058C8FF714DCD6DC5C3B199CE291ABB", hash_generated_method = "0E8BAC49241220EF5972DCAD88426D86")
     
@@ -205,6 +255,8 @@ public boolean setPath(Path path, Region clip) {
     /**
      * Return true if this region is empty
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.216 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "9EFBA24431943EE0CA752566A6372B65")
     
     public boolean isEmpty(){
@@ -215,6 +267,8 @@ public boolean setPath(Path path, Region clip) {
     /**
      * Return true if the region contains a single rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.220 -0500", hash_original_method = "2BE881D6CE1CF3506EFB49B5287B67D4", hash_generated_method = "C33BBD7A1E4F2540D9F79FE41B5DB121")
     
     public boolean isRect(){
@@ -225,6 +279,8 @@ public boolean setPath(Path path, Region clip) {
     /**
      * Return true if the region contains more than one rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.223 -0500", hash_original_method = "96E541304104A48A190119203B0E80D4", hash_generated_method = "6C553C9F8EC00B5D20E97AAC6D8FB38C")
     
     public boolean isComplex(){
@@ -236,6 +292,8 @@ public boolean setPath(Path path, Region clip) {
      * Return a new Rect set to the bounds of the region. If the region is
      * empty, the Rect will be set to [0, 0, 0, 0]
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.226 -0500", hash_original_method = "EBA477C7AF945181ADA3A9B8177742BE", hash_generated_method = "91F82C3A1BDD393CBC9AC4F6E285E45C")
     
@@ -249,6 +307,8 @@ public Rect getBounds() {
      * Set the Rect to the bounds of the region. If the region is empty, the
      * Rect will be set to [0, 0, 0, 0]
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.229 -0500", hash_original_method = "A46555E1E49458678846473DF9E9883B", hash_generated_method = "072D6A525D010879C3ED1409F7063754")
     
 public boolean getBounds(Rect r) {
@@ -262,6 +322,8 @@ public boolean getBounds(Rect r) {
      * Return the boundary of the region as a new Path. If the region is empty,
      * the path will also be empty.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.231 -0500", hash_original_method = "378316FE7952FD732F90591AB3699DE2", hash_generated_method = "D31D11F12DD46AB8DDBF7582ACF4373A")
     
@@ -275,6 +337,8 @@ public Path getBoundaryPath() {
      * Set the path to the boundary of the region. If the region is empty, the
      * path will also be empty.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.233 -0500", hash_original_method = "4EAA9FC9D13D7E90DDD0EEB1CB6196B1", hash_generated_method = "8C0B92710855EFE0DA0BBF78C532F7A0")
     
 public boolean getBoundaryPath(Path path) {
@@ -284,6 +348,8 @@ public boolean getBoundaryPath(Path path) {
     /**
      * Return true if the region contains the specified point
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.236 -0500", hash_original_method = "5B0A75408C2B4CF9238ADD529FC37D02", hash_generated_method = "A7115730B47BC9123607938D0003EDE3")
     
     public boolean contains(int x, int y){
@@ -299,6 +365,8 @@ public boolean getBoundaryPath(Path path) {
      * that the rectangle is not contained by this region, but return true is a
      * guarantee that the rectangle is contained by this region.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.238 -0500", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "E5D3FDE45AA5BD19E1FD088D74ECF497")
     
 public boolean quickContains(Rect r) {
@@ -311,6 +379,8 @@ public boolean quickContains(Rect r) {
      * that the rectangle is not contained by this region, but return true is a
      * guarantee that the rectangle is contained by this region.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.242 -0500", hash_original_method = "F4780612A05468EA5B4971365E65F2E9", hash_generated_method = "3CA9ECB8B6579E2ED02777D3C810F04C")
     
     public boolean quickContains(int left, int top, int right,
@@ -328,6 +398,8 @@ public boolean quickContains(Rect r) {
      * not intersect the region. Returning false is not a guarantee that they
      * intersect, but returning true is a guarantee that they do not.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.244 -0500", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "41CB867DCDD72D9ED89078F64DB12175")
     
 public boolean quickReject(Rect r) {
@@ -339,6 +411,8 @@ public boolean quickReject(Rect r) {
      * not intersect the region. Returning false is not a guarantee that they
      * intersect, but returning true is a guarantee that they do not.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.248 -0500", hash_original_method = "C7FE089D5B9638DFC662C69BB1CCA253", hash_generated_method = "F7F12532769C64CBD97E063872D24096")
     
     public boolean quickReject(int left, int top, int right, int bottom){
@@ -355,6 +429,8 @@ public boolean quickReject(Rect r) {
      * intersect the region. Returning false is not a guarantee that they
      * intersect, but returning true is a guarantee that they do not.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.252 -0500", hash_original_method = "248FAC130B583135AFED72EC96EB473C", hash_generated_method = "3572170AA4F7EEAA69DBE4A77B77CFFC")
     
     public boolean quickReject(Region rgn){
@@ -366,6 +442,8 @@ public boolean quickReject(Rect r) {
     /**
      * Translate the region by [dx, dy]. If the region is empty, do nothing.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.254 -0500", hash_original_method = "1E0220698FB1311F0D8B9F18E7495908", hash_generated_method = "45063F3EB3C0799C5F99D2526314B9C3")
     
 public void translate(int dx, int dy) {
@@ -376,6 +454,8 @@ public void translate(int dx, int dy) {
      * Set the dst region to the result of translating this region by [dx, dy].
      * If this region is empty, then dst will be set to empty.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.258 -0500", hash_original_method = "F2F101D23D8556E25BBA4D0A405F0CD3", hash_generated_method = "EE9270B7DA4BE02B4DA14C8FE019870C")
     
     public void translate(int dx, int dy, Region dst){
@@ -394,6 +474,8 @@ public void translate(int dx, int dy) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.260 -0500", hash_original_method = "39111F1C858A6D228BD34A5A0563D24D", hash_generated_method = "BFEEB739496400E432F0DC548F518493")
     
 public void scale(float scale) {
@@ -405,6 +487,8 @@ public void scale(float scale) {
      * If this region is empty, then dst will be set to empty.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.263 -0500", hash_original_method = "704645B9B50E78F1B3F526FB095B5A0C", hash_generated_method = "D6E6AD9CBBC79DF1403EF93AA313E6B0")
     
     public void scale(float scale, Region dst){
@@ -413,6 +497,8 @@ public void scale(float scale) {
     	addTaint(dst.getTaint());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.266 -0500", hash_original_method = "50F2C1285B4A35F7EE8C85CE7082EAF5", hash_generated_method = "CF4A9E8BED30B016B573CDE6F9A1F331")
     
 public final boolean union(Rect r) {
@@ -473,12 +559,16 @@ public boolean op(Region region1, Region region2, Op op) {
                         region2.mNativeRegion, op.nativeInt);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.279 -0500", hash_original_method = "9B6C5B9AE4B0C715D06D485A7F8D4046", hash_generated_method = "A0A5F489A038871AC177308E2C07676C")
     
 public String toString() {
         return nativeToString(mNativeRegion);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.289 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
@@ -490,6 +580,8 @@ public int describeContents() {
      * rebuilt from the parcel by calling CREATOR.createFromParcel().
      * @param p    Parcel object to write the region data into
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.292 -0500", hash_original_method = "D2434A1CAFA87CC30850BFCF09357749", hash_generated_method = "E11215F902D1914FB169602BEAD50BE4")
     
 public void writeToParcel(Parcel p, int flags) {
@@ -498,6 +590,8 @@ public void writeToParcel(Parcel p, int flags) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.294 -0500", hash_original_method = "1060AF13EAB0782D5AA6FD12A9EA9F72", hash_generated_method = "05933B9020F20BBC28ACC69917027936")
     
 @Override
@@ -509,6 +603,8 @@ public void writeToParcel(Parcel p, int flags) {
         return nativeEquals(mNativeRegion, peer.mNativeRegion);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.297 -0500", hash_original_method = "7B9D4EAB814BE6F839A0AFACF43162A1", hash_generated_method = "5A211E66A6B26EFD24F86C7123F3EC90")
     
 protected void finalize() throws Throwable {
@@ -537,6 +633,8 @@ Op(int nativeInt) {
         public  int nativeInt;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.304 -0500", hash_original_method = "7C7B16974B0225DA07D6CF6E35F70776", hash_generated_method = "3E7EB36F7C9D3CBF11EF862D6CCE34C9")
     
 final int ni() {

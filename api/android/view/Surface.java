@@ -18,6 +18,8 @@ import android.util.Log;
 
 public class Surface implements Parcelable {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClassInit() {
     }
     
@@ -235,6 +237,8 @@ public Surface() {
         mCanvas = new CompatibleCanvas();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.561 -0500", hash_original_method = "6ECF42DC85BE770B3A0C34165723456A", hash_generated_method = "B18B70B7EB02FE5150EB18DF91E4CF68")
     
 private Surface(Parcel source) throws OutOfResourcesException {
@@ -460,6 +464,8 @@ public OutOfResourcesException(String name) {
     	//Formerly a native method
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.826 -0400", hash_original_method = "187F763AA53C0F8EE9F854FE8C7B0DA2", hash_generated_method = "0FF923E44844D20FE339E44DC3CFAC90")
     private Canvas lockCanvasNative(Rect dirty) {
     	return new Canvas();
@@ -593,6 +599,8 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.689 -0500", hash_original_method = "6CC4E2A6788D537FAA561FF2F1482110", hash_generated_method = "D5E13DCCED37C3B2152A231367A45D50")
     
     private void init(SurfaceSession s,
@@ -609,6 +617,8 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     	addTaint(flags);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.693 -0500", hash_original_method = "F10A64920BEF86A35D10AFBE49D37C12", hash_generated_method = "4B2B3F5E9DC41B18919C903B236F7CD8")
     
     private void init(Parcel source){
@@ -616,6 +626,8 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     	addTaint(source.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.696 -0500", hash_original_method = "EBFCAC1A806E7105045857BE7B671E13", hash_generated_method = "78A2DEAE5432D736544DB5B6C5BD3BC8")
     
     private void initFromSurfaceTexture(SurfaceTexture surfaceTexture){
@@ -625,6 +637,8 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
 
     static { nativeClassInit(); }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.700 -0500", hash_original_method = "A65BCA62207C2D99277C23D442CBFDBD", hash_generated_method = "9B9FAD3CC8573BEA4ECFF053EBBDD166")
     
     private int getIdentity(){

@@ -87,6 +87,8 @@ public static String format(String format, Object... args) {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.011 -0500", hash_original_method = "DF99A7D88BE30484426F461C5ED2222D", hash_generated_method = "5C72D6FD9844B81FF2D91678F28F001B")
     
 public MessageFormat(String template, Locale locale) {
@@ -183,6 +185,8 @@ public void applyPattern(String template) {
      * @return a shallow copy of this {@code MessageFormat}.
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.021 -0500", hash_original_method = "B53A9961D24B646CE17498A2E8FD8A6F", hash_generated_method = "BE9C143266B7735695443EF07FD6A8D8")
     
 @Override
@@ -251,6 +255,8 @@ public void applyPattern(String template) {
      *            if the arguments in the object array cannot be formatted
      *            by this message format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.027 -0500", hash_original_method = "2F36A5BCF5EDBC18FDC7136A6298BFC9", hash_generated_method = "CDFF5F0C66FBFAF4CD44AA0CF0CCCC67")
     
 @Override
@@ -295,6 +301,8 @@ public void applyPattern(String template) {
      *            of the alignment field in the formatted text.
      * @return the string buffer.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.029 -0500", hash_original_method = "A9B03AC07F14FDC18F9B212B66591284", hash_generated_method = "C954A19EC965760787C56DC99EEC2864")
     
 public final StringBuffer format(Object[] objects, StringBuffer buffer,
@@ -302,6 +310,8 @@ public final StringBuffer format(Object[] objects, StringBuffer buffer,
         return formatImpl(objects, buffer, field, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.033 -0500", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "7897DDC60620BE71C92184A47C283A6E")
     
 private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
@@ -357,6 +367,8 @@ private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
      * position's begin and end index if it has MessageFormat.Field.ARGUMENT as
      * its field attribute.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.035 -0500", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "92BB0A2A02A372271A864A9F99200768")
     
 private void handleArgumentField(int begin, int end, int argIndex,
@@ -384,6 +396,8 @@ private void handleArgumentField(int begin, int end, int argIndex,
      * @param begin
      *            the index where the string this format has formatted begins
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.051 -0500", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "F2295C7377E10FA5920FF277B65858FC")
     
 private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
@@ -434,6 +448,8 @@ private void handleFormat(Format format, Object arg, int begin, List<FieldContai
      * @throws ClassCastException
      *             if {@code object} is not an array of {@code Object}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.053 -0500", hash_original_method = "86D79FEBC73D19AFFF1CE089D06D0A2E", hash_generated_method = "5177FD74747F715BDF1462BB61283E0F")
     
 @Override
@@ -463,6 +479,8 @@ public Format[] getFormats() {
      *
      * @return an array of formats, ordered by argument index.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.061 -0500", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "7256C96823D4554EB8A201ECE2978ADC")
     
@@ -483,6 +501,8 @@ public Format[] getFormatsByArgumentIndex() {
      * @param format
      *            the format that will be set at index {@code argIndex}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.064 -0500", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "BFFBE18BA64F9C4CA5AC6433624C3006")
     
@@ -501,6 +521,8 @@ public void setFormatByArgumentIndex(int argIndex, Format format) {
      * @param formats
      *            the formats in an array.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.076 -0500", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "FA410B89D84CEDA94F1AB0CCDADC3C2F")
     
@@ -560,6 +582,8 @@ public Locale getLocale() {
      * @throws ParseException
      *            if an error occurs during parsing.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.091 -0500", hash_original_method = "EC21A725ACD65B59B44C587C03791CB0", hash_generated_method = "1E6275FC145A23B549543A655868D2B3")
     
 public Object[] parse(String string) throws ParseException {
@@ -590,6 +614,8 @@ public Object[] parse(String string) throws ParseException {
      * @return the array of objects resulting from the parse, or {@code null} if
      *         there is an error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.097 -0500", hash_original_method = "D7228DDFC0E7ACF8FDCF2D792E0983E6", hash_generated_method = "A2B9D3FBF818C01E8D5B2503E2B4BBFD")
     
@@ -664,6 +690,8 @@ public Object[] parse(String string, ParsePosition position) {
      * @return the array of objects resulting from the parse, or {@code null} if
      *         there is an error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.101 -0500", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "63216C42E69B7A23B760025E3A8B8D9B")
     
 @Override
@@ -671,6 +699,8 @@ public Object[] parse(String string, ParsePosition position) {
         return parse(string, position);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.107 -0500", hash_original_method = "F0EBB1D410262325E53A6EB4F51F6A54", hash_generated_method = "2DE98B380D6132E3EB063D2F69DC49F7")
     
 private int match(String string, ParsePosition position, boolean last,
@@ -702,6 +732,8 @@ private int match(String string, ParsePosition position, boolean last,
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.113 -0500", hash_original_method = "C959BA9FF5D67B6099707C942E630082", hash_generated_method = "AB480404738039F21DDCBF37C62E644B")
     
 private Format parseVariable(String string, ParsePosition position) {
@@ -788,6 +820,8 @@ private Format parseVariable(String string, ParsePosition position) {
      * @param format
      *            the {@code Format} that replaces the old format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.118 -0500", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "D72E7BA9462DF346425955850537E9C6")
     
@@ -852,6 +886,8 @@ public void setLocale(Locale locale) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.132 -0500", hash_original_method = "BE681D9EC5F601D03AA4D2DED505610A", hash_generated_method = "2C86DA88F5AEBCB45B6AD2C00721CD90")
     
 private String decodeDecimalFormat(StringBuffer buffer, Format format) {
@@ -871,6 +907,8 @@ private String decodeDecimalFormat(StringBuffer buffer, Format format) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.137 -0500", hash_original_method = "4C7466ADB5C592A5046867709A03D0C4", hash_generated_method = "BBDE23B5D43A7B9999261B473823AB28")
     
 private String decodeSimpleDateFormat(StringBuffer buffer, Format format) {
@@ -963,6 +1001,8 @@ public String toPattern() {
         return buffer.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.143 -0500", hash_original_method = "6D428A023D401981380713AD4CDA7F82", hash_generated_method = "2C1000AF8EA055B09AE9790989767646")
     
 private void appendQuoted(StringBuffer buffer, String string) {
@@ -1020,6 +1060,8 @@ public FieldContainer(int start, int end,
          * @param fieldName
          *            the field name.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.161 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
         
 protected Field(String fieldName) {
@@ -1027,6 +1069,8 @@ protected Field(String fieldName) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.148 -0500", hash_original_method = "9DFEE475D15759FEAAC0AFBD81E7E5BF", hash_generated_method = "9D0446B89AD916C03E682E9C7948B6D9")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -1053,6 +1097,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.152 -0500", hash_original_method = "A9ED7844547D5D70718F3EA12242A430", hash_generated_method = "B81107E9FD03D52517BB8A93C941EE90")
     
 private void readObject(ObjectInputStream stream) throws IOException,

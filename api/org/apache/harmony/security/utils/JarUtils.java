@@ -157,6 +157,8 @@ public static Certificate[] verifySignature(InputStream signature, InputStream
         return createChain(certs[issuerSertIndex], certs);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.568 -0500", hash_original_method = "00820D9D1C06D03E9E9086299A341619", hash_generated_method = "66AC70C53AC724CC98DD695C82DCBF2F")
     
 private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
@@ -186,6 +188,8 @@ private static X509Certificate[] createChain(X509Certificate  signer, X509Certif
         return (X509Certificate[])chain.toArray(new X509Certificate[count]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.570 -0500", hash_original_method = "34EEBCFB9983630620133DA22BDE2B4B", hash_generated_method = "6F2C72488FF3B4FA0C845C18D07D3371")
     
 private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {

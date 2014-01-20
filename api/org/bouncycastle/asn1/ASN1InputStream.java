@@ -12,11 +12,10 @@ import java.io.InputStream;
 
 import org.bouncycastle.util.io.Streams;
 
-
-
-
 public class ASN1InputStream extends FilterInputStream implements DERTags {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.051 -0500", hash_original_method = "56C5DD58FFCBA746AFAAE3CCE77D0D4C", hash_generated_method = "2EFE9504CAEE1F28DAD59FA269FE7C96")
     
 static int findLimit(InputStream in)
@@ -33,6 +32,8 @@ static int findLimit(InputStream in)
         return Integer.MAX_VALUE;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.087 -0500", hash_original_method = "1DCCD4E2CDE5FA32E7F11DE6F1BB2883", hash_generated_method = "4BD58928B028E7C8B1DD93EDC0FE3668")
     
 static int readTagNumber(InputStream s, int tag) 
@@ -74,6 +75,8 @@ static int readTagNumber(InputStream s, int tag)
         return tagNo;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.090 -0500", hash_original_method = "63E43EDBC26513D9E818C92C4647F38B", hash_generated_method = "C0D00F990A4CF89576AD099E203B28C4")
     
 static int readLength(InputStream s, int limit)
@@ -127,6 +130,8 @@ static int readLength(InputStream s, int limit)
         return length;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.093 -0500", hash_original_method = "D692ED4887C8C432B51B506F951E79C0", hash_generated_method = "14D5E0AE02194870EE4AEEDF65AA7B8C")
     
 static DERObject createPrimitiveDERObject(
@@ -333,6 +338,8 @@ protected DERObject buildObject(
         return createPrimitiveDERObject(tagNo, defIn.toByteArray());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.078 -0500", hash_original_method = "3644C80D3B1C21E0DE1F50623D57B77E", hash_generated_method = "3644C80D3B1C21E0DE1F50623D57B77E")
     
 ASN1EncodableVector buildEncodableVector()
@@ -349,6 +356,8 @@ ASN1EncodableVector buildEncodableVector()
         return v;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.080 -0500", hash_original_method = "758DE99B8F596F62A95AD037BCF1A83C", hash_generated_method = "758DE99B8F596F62A95AD037BCF1A83C")
     
 ASN1EncodableVector buildDEREncodableVector(
@@ -432,7 +441,6 @@ public DERObject readObject()
             }
         }
     }
-
     
 }
 

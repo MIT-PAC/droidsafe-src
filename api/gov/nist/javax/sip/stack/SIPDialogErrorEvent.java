@@ -26,6 +26,8 @@ public class SIPDialogErrorEvent extends EventObject {
      * @param sourceDialog Dialog which is raising the error.
      * @param dialogErrorID ID of the error that has ocurred.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.683 -0500", hash_original_method = "63B6C69AA01911B678EB33AE8A4167CE", hash_generated_method = "63B6C69AA01911B678EB33AE8A4167CE")
     
 SIPDialogErrorEvent(

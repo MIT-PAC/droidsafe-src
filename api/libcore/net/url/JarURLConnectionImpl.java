@@ -121,6 +121,8 @@ public JarURLConnectionImpl(URL url) throws MalformedURLException,
      * @throws IOException
      *             if an IO error occurs while connecting to the resource.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.484 -0500", hash_original_method = "E0D7867F43E3325F58427586B81262FC", hash_generated_method = "9350D4ED5A55F5FCDDE820A56CA4088F")
     
 private void findJarFile() throws IOException {
@@ -150,6 +152,8 @@ private void findJarFile() throws IOException {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.487 -0500", hash_original_method = "AF67425F611C6CCEA6B4F36EBE571AB2", hash_generated_method = "AF67425F611C6CCEA6B4F36EBE571AB2")
     
@@ -215,6 +219,8 @@ JarFile openJarFile() throws IOException {
      * Look up the JarEntry of the entry referenced by this {@code
      * URLConnection}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.492 -0500", hash_original_method = "47E7331F0B55D0071578FE2F3BE66635", hash_generated_method = "61A6D6E95BD183E74AC808B6EE3B68A9")
     
 private void findJarEntry() throws IOException {

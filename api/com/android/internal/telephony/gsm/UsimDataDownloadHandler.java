@@ -16,11 +16,6 @@ import com.android.internal.telephony.IccIoResult;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.cat.ComprehensionTlvTag;
 
-
-
-
-
-
 public class UsimDataDownloadHandler extends Handler {
 
     /**
@@ -32,6 +27,8 @@ public class UsimDataDownloadHandler extends Handler {
      * @param tpduLength the length of the TPDU from the SMS-PP message
      * @return the number of bytes to allocate for the envelope command
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.485 -0500", hash_original_method = "8E06EDD4AB6FEF826893E1C60C4B92E0", hash_generated_method = "619B5414EB99F1F8961CE461B6A9B802")
     
 private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
@@ -52,6 +49,8 @@ private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
      * @param dcs the TP-Data-Coding-Scheme field from the original download SMS
      * @return true if the DCS specifies 7 bit encoding; false otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.494 -0500", hash_original_method = "6AC69FAB0F79D0D17493B5AE3A868686", hash_generated_method = "4039ABFF0D42614771CF6ADECC95A827")
     
 private static boolean is7bitDcs(int dcs) {
@@ -77,7 +76,6 @@ private static boolean is7bitDcs(int dcs) {
 
     private static final int EVENT_SEND_ENVELOPE_RESPONSE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.471 -0500", hash_original_field = "E21447DC33A25D2D4C7CF7D97EC4FA16", hash_generated_field = "BA1337E4728FB9F6BD795CF7696F04DE")
-
 
     private  CommandsInterface mCI;
 
@@ -105,6 +103,8 @@ public int startDataDownload(SmsMessage smsMessage) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.482 -0500", hash_original_method = "B0FB1A5BEF9BBCC367C24989F3FA51BD", hash_generated_method = "8BC3F49B49EF9CA50B42AEC5AB2E0E63")
     
 private void handleDataDownload(SmsMessage smsMessage) {
@@ -172,6 +172,8 @@ private void handleDataDownload(SmsMessage smsMessage) {
      * @param response UICC response encoded as hexadecimal digits. First two bytes are the
      *  UICC SW1 and SW2 status bytes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.489 -0500", hash_original_method = "4D0156FCE32C3B62D3099FB0908581D6", hash_generated_method = "1B3832723BC3034606D499CCE41B0CA4")
     
 private void sendSmsAckForEnvelopeResponse(IccIoResult response, int dcs, int pid) {
@@ -235,6 +237,8 @@ private void sendSmsAckForEnvelopeResponse(IccIoResult response, int dcs, int pi
                 IccUtils.bytesToHexString(smsAckPdu), null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.491 -0500", hash_original_method = "906B533055E100DFA749FD0587281F55", hash_generated_method = "007D4DD9D3C9DC7502F5A6EA63BC10C0")
     
 private void acknowledgeSmsWithError(int cause) {

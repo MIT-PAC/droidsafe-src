@@ -38,6 +38,8 @@ public static void stop() {
 
         private Thread thread;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.802 -0400", hash_original_method = "E956A3D7836B08A486122F00857B9C56", hash_generated_method = "E956A3D7836B08A486122F00857B9C56")
         public Daemon ()
         {
@@ -55,6 +57,8 @@ public synchronized void start() {
             thread.start();
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.208 -0500", hash_original_method = "2C6A443C83148E86AAD705D9EE784F75", hash_generated_method = "5BBE1BCB74D1FAFBB58FE7F038D48F66")
         
 public abstract void run();
@@ -121,6 +125,8 @@ public synchronized StackTraceElement[] getStackTrace() {
 
         private static final ReferenceQueueDaemon INSTANCE = new ReferenceQueueDaemon();
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.824 -0400", hash_original_method = "CD631EFADB4142F64B0E6D0342597BAC", hash_generated_method = "CD631EFADB4142F64B0E6D0342597BAC")
         public ReferenceQueueDaemon ()
         {
@@ -147,6 +153,8 @@ public synchronized StackTraceElement[] getStackTrace() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.232 -0500", hash_original_method = "0570BE5ED95D81092ACBC3B5B723C1BE", hash_generated_method = "D0980855FDF2338435348904BBF0C5B8")
         
 private void enqueue(Reference<?> list) {
@@ -181,6 +189,8 @@ private void enqueue(Reference<?> list) {
 
         private volatile long finalizingStartedNanos;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.825 -0400", hash_original_method = "4CAA35D6DE3500E449D08F039EDA298E", hash_generated_method = "4CAA35D6DE3500E449D08F039EDA298E")
         public FinalizerDaemon ()
         {
@@ -199,6 +209,8 @@ private void enqueue(Reference<?> list) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.251 -0500", hash_original_method = "BF4896400D2910C88936D4B81319EC1C", hash_generated_method = "2622F85051A17208714787B5F21EAAA0")
         
 @FindBugsSuppressWarnings("FI_EXPLICIT_INVOCATION")
@@ -224,6 +236,8 @@ private void enqueue(Reference<?> list) {
 
         private static final FinalizerWatchdogDaemon INSTANCE = new FinalizerWatchdogDaemon();
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.826 -0400", hash_original_method = "703968011540BAA8269C6E22457DD3B1", hash_generated_method = "703968011540BAA8269C6E22457DD3B1")
         public FinalizerWatchdogDaemon ()
         {

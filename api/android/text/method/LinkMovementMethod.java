@@ -43,12 +43,16 @@ public static MovementMethod getInstance() {
 
     private static Object FROM_BELOW = new NoCopySpan.Concrete();
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.298 -0400", hash_original_method = "B3A5612136836A9B554B3E87D4EB3C2A", hash_generated_method = "B3A5612136836A9B554B3E87D4EB3C2A")
     public LinkMovementMethod ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.225 -0500", hash_original_method = "EAC6053DC7B638435B8A062A6CFD4DD9", hash_generated_method = "3F0D88CBF1107BB335972B76722A99F3")
     
 @Override
@@ -68,6 +72,8 @@ public static MovementMethod getInstance() {
         return super.handleMovementKey(widget, buffer, keyCode, movementMetaState, event);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.228 -0500", hash_original_method = "DEEB2C7A1B47C25BB65A22E0D0293968", hash_generated_method = "DCB37E71936B44A24B9D69B4ACF71150")
     
 @Override
@@ -79,6 +85,8 @@ public static MovementMethod getInstance() {
         return super.up(widget, buffer);
     }
         
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.231 -0500", hash_original_method = "DC8F45CAA2BC57E786411FE04BC3C168", hash_generated_method = "24E6B96257C02F2F0F7FC1458738B134")
     
 @Override
@@ -90,6 +98,8 @@ public static MovementMethod getInstance() {
         return super.down(widget, buffer);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.234 -0500", hash_original_method = "D5E4F0AD4C6B30D49FECD80AA6B7EBFC", hash_generated_method = "4E5A6F781725612914CAAD6540F76916")
     
 @Override
@@ -101,6 +111,8 @@ public static MovementMethod getInstance() {
         return super.left(widget, buffer);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.237 -0500", hash_original_method = "3EDE278FB61BAB62DCA4BE9235F80F2F", hash_generated_method = "2DCB6925FE4991E294AA479C254C2226")
     
 @Override
@@ -112,6 +124,8 @@ public static MovementMethod getInstance() {
         return super.right(widget, buffer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.241 -0500", hash_original_method = "0A452BAD56CDA444E4158895C806016D", hash_generated_method = "8D352A07813EE35C4133DA80FEAE70D4")
     
 private boolean action(int what, TextView widget, Spannable buffer) {
@@ -211,6 +225,8 @@ private boolean action(int what, TextView widget, Spannable buffer) {
         return false;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.245 -0500", hash_original_method = "716D5739D0947DCFD6D35AD5A0BFDB34", hash_generated_method = "ABB66E2322BCED3E1465CB14328626C4")
     
 @Override
@@ -253,6 +269,8 @@ private boolean action(int what, TextView widget, Spannable buffer) {
         return super.onTouchEvent(widget, buffer, event);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.248 -0500", hash_original_method = "BC80F942D1A798557294BA9927A105D9", hash_generated_method = "158EBD5CF3B4FD8ABC42BA62CC01543C")
     
 @Override
@@ -261,6 +279,8 @@ private boolean action(int what, TextView widget, Spannable buffer) {
         text.removeSpan(FROM_BELOW);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.251 -0500", hash_original_method = "6C6520056B7F5B60C4D7D2F6B3DF20A3", hash_generated_method = "66CB086A8A7092DF66208D7B45EA0484")
     
 @Override

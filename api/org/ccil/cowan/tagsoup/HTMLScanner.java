@@ -33,7 +33,9 @@ public static void main(String[] argv) throws IOException, SAXException {
 		w.close();
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.401 -0500", hash_original_method = "6185991F32A594F12E5499FEE0E2DB19", hash_generated_method = "F9E9DA837D2ACF24723CDE3E9BD9E281")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.401 -0500", hash_original_method = "6185991F32A594F12E5499FEE0E2DB19", hash_generated_method = "F9E9DA837D2ACF24723CDE3E9BD9E281")
 	
 private static String nicechar(int in) {
 		if (in == '\n') return "\\n";
@@ -446,7 +448,9 @@ private static String nicechar(int in) {
 
 	// Compensate for bug in PushbackReader that allows
 	// pushing back EOF.
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.369 -0500", hash_original_method = "7BF7C7D5830ADAF76FEF60D8F3F10567", hash_generated_method = "872D3FD9168E1181E028E49E9A4216EB")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.369 -0500", hash_original_method = "7BF7C7D5830ADAF76FEF60D8F3F10567", hash_generated_method = "872D3FD9168E1181E028E49E9A4216EB")
 	
 private void unread(PushbackReader r, int c) throws IOException {
 		if (c != -1) r.unread(c);
@@ -788,7 +792,9 @@ Integer.toString(theState));
 	* cdata, processing instruction etc.
 	*/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.391 -0500", hash_original_method = "5C668F99FD089E189A03C18C500CC1BE", hash_generated_method = "7A5B6ECB950F08DE7D9790B7A3DE1542")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.391 -0500", hash_original_method = "5C668F99FD089E189A03C18C500CC1BE", hash_generated_method = "7A5B6ECB950F08DE7D9790B7A3DE1542")
 	
 private void mark() {
 		theLastColumn = theCurrentColumn;
@@ -805,7 +811,9 @@ private void mark() {
 	
 public void startCDATA() { theNextState = S_CDATA; }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.395 -0500", hash_original_method = "84101FD8AB96FAF4340E309879AEA5A7", hash_generated_method = "68B699CFEA4728D8A26CE0926E51E66F")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.395 -0500", hash_original_method = "84101FD8AB96FAF4340E309879AEA5A7", hash_generated_method = "68B699CFEA4728D8A26CE0926E51E66F")
 	
 private void save(int ch, ScanHandler h) throws IOException, SAXException {
 		if (theSize >= theOutputBuffer.length - 20) {

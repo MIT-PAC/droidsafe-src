@@ -93,6 +93,8 @@ protected CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPe
         this(cs, averageBytesPerChar, maxBytesPerChar, replacement, false);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.275 -0500", hash_original_method = "173A83611BD70B9738420414876CE0BB", hash_generated_method = "50AF5491F0B8B2D5C34DF134EC7ECEFF")
     
 CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement, boolean trusted) {
@@ -151,6 +153,8 @@ public boolean canEncode(char c) {
     }
 
     // implementation of canEncode
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.283 -0500", hash_original_method = "8FE38300B66D2E408C3C937D4188B910", hash_generated_method = "B24499D4671ABD45CCE054E5DE6BAEFD")
     
 private boolean implCanEncode(CharBuffer cb) {
@@ -295,6 +299,8 @@ public final ByteBuffer encode(CharBuffer in) throws CharacterCodingException {
     /*
      * checks the result whether it needs to throw CharacterCodingException.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.295 -0500", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "D4B9B7436AC3B98BB199F3D923E8CA0A")
     
 private void checkCoderResult(CoderResult result) throws CharacterCodingException {
@@ -306,6 +312,8 @@ private void checkCoderResult(CoderResult result) throws CharacterCodingExceptio
     }
 
     // allocate more spaces to the given ByteBuffer
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.297 -0500", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "05A13E5088B9AD144A3A695CB753E4B7")
     
 private ByteBuffer allocateMore(ByteBuffer output) {
@@ -472,6 +480,8 @@ public final CoderResult encode(CharBuffer in, ByteBuffer out, boolean endOfInpu
      *            the output buffer.
      * @return a <code>CoderResult</code> instance indicating the result.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.303 -0500", hash_original_method = "9616F044279972BD99324EB6552327DB", hash_generated_method = "87FA30EDAC109573D595DF9CF40D1A26")
     
 protected abstract CoderResult encodeLoop(CharBuffer in, ByteBuffer out);

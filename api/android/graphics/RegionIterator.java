@@ -9,13 +9,19 @@ import droidsafe.helpers.DSUtils;
 
 public class RegionIterator {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(int native_region) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDestructor(int native_iter) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeNext(int native_iter, Rect r) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -30,6 +36,8 @@ public class RegionIterator {
      *
      * @param region the region that will be iterated
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.994 -0500", hash_original_method = "8221B1C759F7AE45DFBE3F2918777459", hash_generated_method = "32463E99A7706C050DBDE46DC7BF00CC")
     
 public RegionIterator(Region region) {
@@ -41,6 +49,8 @@ public RegionIterator(Region region) {
      * this returns false and r is unchanged. If there is at least one more,
      * this returns true and r is set to that rectangle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.996 -0500", hash_original_method = "93D64F5EF378037039049B9C8BD2BE17", hash_generated_method = "242BD38E13C711DF2EE3EE4F074FB23D")
     
 public final boolean next(Rect r) {
@@ -50,6 +60,8 @@ public final boolean next(Rect r) {
         return nativeNext(mNativeIter, r);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.999 -0500", hash_original_method = "ED5A48D85C90AAF769D53509399DCB2D", hash_generated_method = "A408DD68206E064D4D1E1D3E0B3A0A3D")
     
 protected void finalize() throws Throwable {

@@ -28,6 +28,8 @@ public class ColorDrawable extends Drawable {
     /**
      * Creates a new black ColorDrawable.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.365 -0500", hash_original_method = "54D21D729D42DC46694E67B89A565C46", hash_generated_method = "34344A6BE132AF626299B3B6BCCE447B")
     
 public ColorDrawable() {
@@ -39,6 +41,8 @@ public ColorDrawable() {
      *
      * @param color The color to draw.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.367 -0500", hash_original_method = "2F37015D01FE06195FB00430A764BE1B", hash_generated_method = "859BCCE0A1E0BEBBC583BBAFD3E0D0CC")
     
 public ColorDrawable(int color) {
@@ -52,6 +56,8 @@ private ColorDrawable(ColorState state) {
         mState = new ColorState(state);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.372 -0500", hash_original_method = "CCB9F44E02BA506AC13DF4A6CD3FA45F", hash_generated_method = "79A1C10E5A48365D8B9978537D00AB08")
     
@@ -60,6 +66,8 @@ private ColorDrawable(ColorState state) {
         return super.getChangingConfigurations() | mState.mChangingConfigurations;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.374 -0500", hash_original_method = "55968084A6009D3A7FE038F60520CF52", hash_generated_method = "8D30CB84BF554034217ED9C9C801583F")
     
 @Override
@@ -75,6 +83,8 @@ private ColorDrawable(ColorState state) {
      *
      * @return int The color to draw.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.377 -0500", hash_original_method = "12CB188AAA441342DA340C647E5F4CB8", hash_generated_method = "B0AA492B9D8833FB6DBD1E2EE33781FD")
     
@@ -88,6 +98,8 @@ public int getColor() {
      *
      * @param color The color to draw.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.379 -0500", hash_original_method = "BF4E5D15208BCF2CD8D02BB100F40081", hash_generated_method = "0F5478CF321F06D2A372334E3E461D87")
     
 public void setColor(int color) {
@@ -102,6 +114,8 @@ public void setColor(int color) {
      *
      * @return A value between 0 and 255.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.381 -0500", hash_original_method = "5CD88AD7EDD59028127023DB7F8765AB", hash_generated_method = "60FD9929B15A1D916703D0B6F5F8B120")
     
@@ -114,6 +128,8 @@ public int getAlpha() {
      *
      * @param alpha The alpha value to set, between 0 and 255.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.383 -0500", hash_original_method = "459E9D088A35A829F6316FAAD661A311", hash_generated_method = "76FD3359CB81794BC431052CE211C471")
     
@@ -133,12 +149,16 @@ public void setAlpha(int alpha) {
      *
      * @param colorFilter Ignore.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.385 -0500", hash_original_method = "A617079D3CF57FB47B0EF9E1F05040EF", hash_generated_method = "4F96E60EF79CC62633E15FD9F37728CA")
     
 public void setColorFilter(ColorFilter colorFilter) {
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.387 -0500", hash_original_method = "B5DEC9C614B60B544E3B9333F2490C35", hash_generated_method = "24344A1D81C73B8A7DBBD6DCA997AFDC")
     
@@ -152,6 +172,8 @@ public int getOpacity() {
         return PixelFormat.TRANSLUCENT;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.390 -0500", hash_original_method = "9E06540C925D15124E32C083B6C47AE0", hash_generated_method = "6A71D7ED8BAFA80F13CF78171B3BB8D1")
     
 @Override

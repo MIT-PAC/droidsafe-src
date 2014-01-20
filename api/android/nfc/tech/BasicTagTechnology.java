@@ -23,6 +23,8 @@ abstract class BasicTagTechnology implements TagTechnology {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.945 -0500", hash_original_field = "14A56D04133B1EA444C84A98B6F4BAF8", hash_generated_field = "14A56D04133B1EA444C84A98B6F4BAF8")
  int mSelectedTechnology;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.948 -0500", hash_original_method = "D572C74E7520ED5167A849EF718161FC", hash_generated_method = "D572C74E7520ED5167A849EF718161FC")
     
 BasicTagTechnology(Tag tag, int tech) throws RemoteException {
@@ -39,6 +41,8 @@ BasicTagTechnology(Tag tag, int tech) throws RemoteException {
     }
 
     /** Internal helper to throw IllegalStateException if the technology isn't connected */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.952 -0500", hash_original_method = "740AD223006A949AE0C5FC9EABD0A7B2", hash_generated_method = "740AD223006A949AE0C5FC9EABD0A7B2")
     
 void checkConnected() {
@@ -133,6 +137,8 @@ void checkConnected() {
     }
 
     /** Internal getMaxTransceiveLength() */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.965 -0500", hash_original_method = "34B3E57F39840A6B37FC716C1405DA5D", hash_generated_method = "34B3E57F39840A6B37FC716C1405DA5D")
     
@@ -145,7 +151,9 @@ int getMaxTransceiveLengthInternal() {
         }
     }
     /** Internal transceive */
-    /*package*/ @DSSource({DSSourceKind.NFC})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.967 -0500", hash_original_method = "8FB7A232CD74B358E0C2332FDF0D5629", hash_generated_method = "8FB7A232CD74B358E0C2332FDF0D5629")
     
 byte[] transceive(byte[] data, boolean raw) throws IOException {

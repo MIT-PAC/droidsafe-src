@@ -42,6 +42,8 @@ public class AlarmManager {
     /**
      * package private on purpose
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.478 -0500", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "777E43DCC11684FA65853DF87647331C")
     
 AlarmManager(IAlarmManager service) {

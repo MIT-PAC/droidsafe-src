@@ -35,6 +35,8 @@ public static synchronized SipFactory getInstance() {
     private Map<String, SipStack> mNameSipStackMap =
             new HashMap<String, SipStack>();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.012 -0500", hash_original_method = "310FD6F79BE3873A4CC6341AA537481F", hash_generated_method = "FBF172BABDB9A2D2604F43FA77916B34")
     
 private SipFactory() {

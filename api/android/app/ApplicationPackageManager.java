@@ -47,6 +47,8 @@ import android.os.RemoteException;
 
 final class ApplicationPackageManager extends PackageManager {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.953 -0500", hash_original_method = "CAEBB17CBA604CB35D365427B4123BDD", hash_generated_method = "9AE8A061D889EA13448450E238E2CB9A")
     
 static void configurationChanged() {
@@ -56,6 +58,8 @@ static void configurationChanged() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.964 -0500", hash_original_method = "496188F41701FF8F991B0EDFD7F978B1", hash_generated_method = "84DD1948CD7072BC97B2A77154476D74")
     
 static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo) {
@@ -131,6 +135,8 @@ static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo
 
     private  IPackageManager mPM;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.956 -0500", hash_original_method = "12FC21630330363415BEFB2BB747FDD4", hash_generated_method = "12FC21630330363415BEFB2BB747FDD4")
     
 ApplicationPackageManager(ContextImpl context,
@@ -1355,6 +1361,8 @@ private void putCachedString(ResourceName name, CharSequence cs) {
 
          int iconId;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.972 -0500", hash_original_method = "00C0083FA3192C6FB2E9C58DC21ABF99", hash_generated_method = "00C0083FA3192C6FB2E9C58DC21ABF99")
         
 ResourceName(String _packageName, int _iconId) {
@@ -1362,18 +1370,24 @@ ResourceName(String _packageName, int _iconId) {
             iconId = _iconId;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.975 -0500", hash_original_method = "1D7CABC5D0E2E4029539D2105E7113C1", hash_generated_method = "1D7CABC5D0E2E4029539D2105E7113C1")
         
 ResourceName(ApplicationInfo aInfo, int _iconId) {
             this(aInfo.packageName, _iconId);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.977 -0500", hash_original_method = "316DD832F87E78ED23C1ED370845ED19", hash_generated_method = "316DD832F87E78ED23C1ED370845ED19")
         
 ResourceName(ComponentInfo cInfo, int _iconId) {
             this(cInfo.applicationInfo.packageName, _iconId);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.980 -0500", hash_original_method = "B7E8883725512A2439D57072801DA2BC", hash_generated_method = "B7E8883725512A2439D57072801DA2BC")
         
 ResourceName(ResolveInfo rInfo, int _iconId) {

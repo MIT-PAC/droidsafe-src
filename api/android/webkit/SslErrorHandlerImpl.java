@@ -11,13 +11,8 @@ import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Message;
 
-
-
-
-
 class SslErrorHandlerImpl extends SslErrorHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.087 -0500", hash_original_field = "B8F296222D99B13B57A30F4500AF7F3D", hash_generated_field = "F098064C2753AB544D48EBBEF82B0BA4")
-
 
     private static final String LOGTAG = "network";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.098 -0500", hash_original_field = "3B9AB7B503475250BCB386D020A76672", hash_generated_field = "C766379B3EEFF589AF6549B30B31F022")
@@ -39,7 +34,9 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     /**
      * Creates a new error handler with an empty loader queue.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.103 -0500", hash_original_method = "A9D6B0D7435532871C80AFF391EAC1F3", hash_generated_method = "D3243309923E5918CFAFBA2AA7C0AD41")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.103 -0500", hash_original_method = "A9D6B0D7435532871C80AFF391EAC1F3", hash_generated_method = "D3243309923E5918CFAFBA2AA7C0AD41")
     
 SslErrorHandlerImpl() {
         mLoaderQueue = new LinkedList<LoadListener>();
@@ -53,6 +50,8 @@ SslErrorHandlerImpl() {
     /**
      * Create a new error handler that will be passed to the client.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.105 -0500", hash_original_method = "91EB591AB70C8A379D1426222FA143D7", hash_generated_method = "12E40A961D71F26D2516FD836FFBE829")
     
 private SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
@@ -81,7 +80,9 @@ private SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
      * Saves this handler's state into a map.
      * @return True iff succeeds.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.108 -0500", hash_original_method = "D029A1C8EDAAF4B35F26BECE197613A0", hash_generated_method = "D1366F397A526323804F681633521417")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.108 -0500", hash_original_method = "D029A1C8EDAAF4B35F26BECE197613A0", hash_generated_method = "D1366F397A526323804F681633521417")
     
 synchronized boolean saveState(Bundle outState) {
         boolean success = (outState != null);
@@ -97,7 +98,9 @@ synchronized boolean saveState(Bundle outState) {
      * Restores this handler's state from a map.
      * @return True iff succeeds.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.110 -0500", hash_original_method = "6F02B2C09ACF8BBAEA47573C8A17837E", hash_generated_method = "3866773FC1B57104D50AFF562FA0371C")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.110 -0500", hash_original_method = "6F02B2C09ACF8BBAEA47573C8A17837E", hash_generated_method = "3866773FC1B57104D50AFF562FA0371C")
     
 synchronized boolean restoreState(Bundle inState) {
         boolean success = (inState != null);
@@ -114,7 +117,9 @@ synchronized boolean restoreState(Bundle inState) {
     /**
      * Clears SSL error preference table.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.112 -0500", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "55B98DA843890C785D4B1641D65B5257")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.112 -0500", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "55B98DA843890C785D4B1641D65B5257")
     
 synchronized void clear() {
         mSslPrefTable.clear();
@@ -125,7 +130,9 @@ synchronized void clear() {
      * load given an SSL error(s). We may ask the client what to do, or use a
      * cached response.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.115 -0500", hash_original_method = "C8D7B9DA233B276F8D5E9642BE0FE843", hash_generated_method = "898688DA6CEBCF20A15B69A419EFAFA7")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.115 -0500", hash_original_method = "C8D7B9DA233B276F8D5E9642BE0FE843", hash_generated_method = "898688DA6CEBCF20A15B69A419EFAFA7")
     
 synchronized void handleSslErrorRequest(LoadListener loader) {
         if (DebugFlags.SSL_ERROR_HANDLER) {
@@ -147,7 +154,9 @@ synchronized void handleSslErrorRequest(LoadListener loader) {
      * severity than the supplied error. If so, instruct the loader to proceed
      * and return true. Otherwise return false.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.117 -0500", hash_original_method = "F91D7F8A2853C263C312AB7E69DBEB4B", hash_generated_method = "B39B373E6D4E05912089F1FD3E3FDC6C")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.117 -0500", hash_original_method = "F91D7F8A2853C263C312AB7E69DBEB4B", hash_generated_method = "B39B373E6D4E05912089F1FD3E3FDC6C")
     
 synchronized boolean checkSslPrefTable(LoadListener loader,
             SslError error) {
@@ -172,7 +181,9 @@ synchronized boolean checkSslPrefTable(LoadListener loader,
      * Processes queued SSL-error confirmation requests in
      * a tight loop while there is no need to ask the client.
      */
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.119 -0500", hash_original_method = "04F6EA99CF8E9997D9FE1719C2DB77FD", hash_generated_method = "04F6EA99CF8E9997D9FE1719C2DB77FD")
+    /* package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.119 -0500", hash_original_method = "04F6EA99CF8E9997D9FE1719C2DB77FD", hash_generated_method = "04F6EA99CF8E9997D9FE1719C2DB77FD")
     
 void fastProcessQueuedSslErrors() {
         while (processNextLoader());
@@ -183,6 +194,8 @@ void fastProcessQueuedSslErrors() {
      * @return True iff should proceed to processing the
      * following loader in the queue
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.122 -0500", hash_original_method = "C17562BADC30EBD8B8536D75F1BFCDF6", hash_generated_method = "102FDA96883B8E136769EFD50368B807")
     
 private synchronized boolean processNextLoader() {
@@ -244,7 +257,9 @@ public void cancel() {
      * Handles the response from the client about whether to proceed with this
      * load. We save the response to be re-used in the future.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.129 -0500", hash_original_method = "5796F22078D6113D133FA1EE0019F75A", hash_generated_method = "FEA30C8A32DB3EAC28E626363CBC48A0")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.129 -0500", hash_original_method = "5796F22078D6113D133FA1EE0019F75A", hash_generated_method = "FEA30C8A32DB3EAC28E626363CBC48A0")
     
 synchronized void handleSslErrorResponse(LoadListener loader,
             SslError error, boolean proceed) {

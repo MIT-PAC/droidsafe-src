@@ -45,6 +45,8 @@ public static boolean hasNoModifiers(KeyEvent event) {
     
     static class BaseKeyEventVersionImpl implements KeyEventVersionImpl {
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.889 -0500", hash_original_method = "52D694C249868DCBEBE202496FB48D64", hash_generated_method = "82C9F02639134520E1D0026D80D88D31")
         
 private static int metaStateFilterDirectionalModifiers(int metaState,

@@ -164,6 +164,8 @@ public TextToSpeech(Context context, OnInitListener listener, String engine,
         initTts();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.797 -0500", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "D4EDD6B3F4683C2FAA619A8BA3F6D2C4")
     
 private String getPackageName() {
@@ -222,6 +224,8 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_843365152 =             mServiceConnection
         //}
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.805 -0500", hash_original_method = "001A57975E2E50499F283478CA48737A", hash_generated_method = "1864A1EDB61231599B8F13B328991905")
     
 private int initTts() {
@@ -262,6 +266,8 @@ private int initTts() {
         return ERROR;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.808 -0500", hash_original_method = "5177E4BA973A00FB9C33DC0A5DBEACDB", hash_generated_method = "55356FC8457A638C1E5548F08FDDD340")
     
 private boolean connectToEngine(String engine) {
@@ -278,6 +284,8 @@ private boolean connectToEngine(String engine) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.811 -0500", hash_original_method = "16B0CCB3D7329F5127962CE558D4D17C", hash_generated_method = "14D5262097785DA864A06C12FC47F902")
     
 private void dispatchOnInit(int result) {
@@ -441,6 +449,8 @@ public int addEarcon(String earcon, String filename) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.829 -0500", hash_original_method = "276BC175828DCE484EB0703A6A0D8E9B", hash_generated_method = "1300F8BAF607C3ACFC1100CFAB674186")
     
 private Uri makeResourceUri(String packageName, int resourceId) {
@@ -1161,6 +1171,8 @@ public int synthesizeToFile(final String text, final HashMap<String, String> par
         }, ERROR, "synthesizeToFile");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.895 -0500", hash_original_method = "F4A729CBEB92036D830EC51C9E6B27A9", hash_generated_method = "6F024215E8F0CBFEEF24D0B43544E887")
     
 private Bundle getParams(HashMap<String, String> params) {
@@ -1193,6 +1205,8 @@ private Bundle getParams(HashMap<String, String> params) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.897 -0500", hash_original_method = "CA756292003AA5F2AACD5FD8062D880F", hash_generated_method = "5329041D79789C0257C21005A4DB6000")
     
 private void copyStringParam(Bundle bundle, HashMap<String, String> params, String key) {
@@ -1202,6 +1216,8 @@ private void copyStringParam(Bundle bundle, HashMap<String, String> params, Stri
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.900 -0500", hash_original_method = "D148C993B4D17B611EC6A14A9B3B3D7B", hash_generated_method = "D9AB5E9A1FF9CB069E893FDCAA00CB6C")
     
 private void copyIntParam(Bundle bundle, HashMap<String, String> params, String key) {
@@ -1216,6 +1232,8 @@ private void copyIntParam(Bundle bundle, HashMap<String, String> params, String 
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.902 -0500", hash_original_method = "335CA474B2AA628361250A653672DD72", hash_generated_method = "C6C9FDA332AD044D4E36183DC491210D")
     
 private void copyFloatParam(Bundle bundle, HashMap<String, String> params, String key) {

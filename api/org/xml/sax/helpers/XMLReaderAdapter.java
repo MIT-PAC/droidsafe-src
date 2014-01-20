@@ -21,11 +21,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 
-
-
-
-
-
 public class XMLReaderAdapter implements Parser, ContentHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.832 -0500", hash_original_field = "44EF69C8F1F45C928EC7CB20788E9F99", hash_generated_field = "EE469AEF45E8094A1D8CC73FFB1E1C99")
 
@@ -39,12 +34,10 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.835 -0500", hash_original_field = "73705B24ED28379A26291F89BCC792AC", hash_generated_field = "73705B24ED28379A26291F89BCC792AC")
 
     AttributesAdapter qAtts;
-
 
     ////////////////////////////////////////////////////////////////////
     // Constructor.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Create a new adapter.
@@ -64,7 +57,6 @@ public XMLReaderAdapter ()
     setup(XMLReaderFactory.createXMLReader());
     }
 
-
     /**
      * Create a new adapter.
      *
@@ -82,13 +74,13 @@ public XMLReaderAdapter (XMLReader xmlReader)
     setup(xmlReader);
     }
 
-
-
     /**
      * Internal setup.
      *
      * @param xmlReader The embedded XMLReader.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.786 -0500", hash_original_method = "E177ACAABE14FBF113725220BFCC127D", hash_generated_method = "9375E1E7CD4678C1EA0E6E2176C05E19")
     
 private void setup (XMLReader xmlReader)
@@ -100,12 +92,9 @@ private void setup (XMLReader xmlReader)
     qAtts = new AttributesAdapter();
     }
 
-
-
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.Parser.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Set the locale for error reporting.
@@ -125,7 +114,6 @@ public void setLocale (Locale locale)
     throw new SAXNotSupportedException("setLocale not supported");
     }
 
-
     /**
      * Register the entity resolver.
      *
@@ -139,7 +127,6 @@ public void setEntityResolver (EntityResolver resolver)
     xmlReader.setEntityResolver(resolver);
     }
 
-
     /**
      * Register the DTD event handler.
      *
@@ -152,7 +139,6 @@ public void setDTDHandler (DTDHandler handler)
     {
     xmlReader.setDTDHandler(handler);
     }
-
 
     /**
      * Register the SAX1 document event handler.
@@ -170,7 +156,6 @@ public void setDocumentHandler (DocumentHandler handler)
     documentHandler = handler;
     }
 
-
     /**
      * Register the error event handler.
      *
@@ -183,7 +168,6 @@ public void setErrorHandler (ErrorHandler handler)
     {
     xmlReader.setErrorHandler(handler);
     }
-
 
     /**
      * Parse the document.
@@ -207,7 +191,6 @@ public void parse (String systemId)
     {
     parse(new InputSource(systemId));
     }
-
 
     /**
      * Parse the document.
@@ -233,10 +216,11 @@ public void parse (InputSource input)
     xmlReader.parse(input);
     }
 
-
     /**
      * Set up the XML reader.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.805 -0500", hash_original_method = "5328954AF535C9E1B60D1AC7D659B95D", hash_generated_method = "C9DB14B53DE5EF391D38012A46FACC0F")
     
 private void setupXMLReader ()
@@ -251,13 +235,10 @@ private void setupXMLReader ()
     }
     xmlReader.setContentHandler(this);
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.ContentHandler.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Set a document locator.
@@ -272,7 +253,6 @@ public void setDocumentLocator (Locator locator)
     if (documentHandler != null)
         documentHandler.setDocumentLocator(locator);
     }
-
 
     /**
      * Start document event.
@@ -290,7 +270,6 @@ public void startDocument ()
         documentHandler.startDocument();
     }
 
-
     /**
      * End document event.
      *
@@ -307,7 +286,6 @@ public void endDocument ()
         documentHandler.endDocument();
     }
 
-
     /**
      * Adapt a SAX2 start prefix mapping event.
      *
@@ -321,7 +299,6 @@ public void startPrefixMapping (String prefix, String uri)
     {
     }
 
-
     /**
      * Adapt a SAX2 end prefix mapping event.
      *
@@ -333,7 +310,6 @@ public void startPrefixMapping (String prefix, String uri)
 public void endPrefixMapping (String prefix)
     {
     }
-
 
     /**
      * Adapt a SAX2 start element event.
@@ -358,7 +334,6 @@ public void startElement (String uri, String localName,
     }
     }
 
-
     /**
      * Adapt a SAX2 end element event.
      *
@@ -379,7 +354,6 @@ public void endElement (String uri, String localName,
         documentHandler.endElement(qName);
     }
 
-
     /**
      * Adapt a SAX2 characters event.
      *
@@ -398,7 +372,6 @@ public void characters (char ch[], int start, int length)
     if (documentHandler != null)
         documentHandler.characters(ch, start, length);
     }
-
 
     /**
      * Adapt a SAX2 ignorable whitespace event.
@@ -419,7 +392,6 @@ public void ignorableWhitespace (char ch[], int start, int length)
         documentHandler.ignorableWhitespace(ch, start, length);
     }
 
-
     /**
      * Adapt a SAX2 processing instruction event.
      *
@@ -438,7 +410,6 @@ public void processingInstruction (String target, String data)
         documentHandler.processingInstruction(target, data);
     }
 
-
     /**
      * Adapt a SAX2 skipped entity event.
      *
@@ -452,32 +423,32 @@ public void skippedEntity (String name)
     throws SAXException
     {
     }
-
     
     static final class AttributesAdapter implements AttributeList {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.858 -0500", hash_original_field = "14CC0F9D3F04FE972837D6018D833138", hash_generated_field = "B58329F5904269DD97B6B42BAA3B838E")
 
-
     private Attributes attributes;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.838 -0500", hash_original_method = "E50C9A4E371E1BB1DB8AD3C2D41905DA", hash_generated_method = "E50C9A4E371E1BB1DB8AD3C2D41905DA")
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.838 -0500", hash_original_method = "E50C9A4E371E1BB1DB8AD3C2D41905DA", hash_generated_method = "E50C9A4E371E1BB1DB8AD3C2D41905DA")
         
 AttributesAdapter ()
     {
     }
-
 
     /**
      * Set the embedded Attributes object.
      *
      * @param The embedded SAX2 Attributes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.841 -0500", hash_original_method = "53FC4E3BB2217D6659CB21AA159A3250", hash_generated_method = "53FC4E3BB2217D6659CB21AA159A3250")
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.841 -0500", hash_original_method = "53FC4E3BB2217D6659CB21AA159A3250", hash_generated_method = "53FC4E3BB2217D6659CB21AA159A3250")
         
 void setAttributes (Attributes attributes)
     {
         this.attributes = attributes;
     }
-
 
     /**
      * Return the number of attributes.
@@ -492,7 +463,6 @@ public int getLength ()
         return attributes.getLength();
     }
 
-
     /**
      * Return the qualified (prefixed) name of an attribute by position.
      *
@@ -505,7 +475,6 @@ public String getName (int i)
     {
         return attributes.getQName(i);
     }
-
 
     /**
      * Return the type of an attribute by position.
@@ -520,7 +489,6 @@ public String getType (int i)
         return attributes.getType(i);
     }
 
-
     /**
      * Return the value of an attribute by position.
      *
@@ -533,7 +501,6 @@ public String getValue (int i)
     {
         return attributes.getValue(i);
     }
-
 
     /**
      * Return the type of an attribute by qualified (prefixed) name.
@@ -548,7 +515,6 @@ public String getType (String qName)
         return attributes.getType(qName);
     }
 
-
     /**
      * Return the value of an attribute by qualified (prefixed) name.
      *
@@ -561,11 +527,8 @@ public String getValue (String qName)
     {
         return attributes.getValue(qName);
     }
-
         
     }
-
-
     
 }
 

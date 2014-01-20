@@ -256,6 +256,8 @@ public static String
         return GsmAlphabet.gsm8BitUnpackedToString(data, offset, length, defaultCharset.trim());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.034 -0500", hash_original_method = "B5552B011965C0257468E60FC2B05CAC", hash_generated_method = "DEDDAD89FB6278CB2FFEABF65DB62C31")
     
 static int
@@ -415,6 +417,8 @@ public static Bitmap parseToBnW(byte[] data, int length){
         return Bitmap.createBitmap(pixels, width, height, Bitmap.Config.ARGB_8888);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.049 -0500", hash_original_method = "3BFC17C9B856533CDDF27D55AA357ECD", hash_generated_method = "41AC174765BFEDEF03F426DE9B864C51")
     
 private static int bitToRGB(int bit){
@@ -464,6 +468,8 @@ public static Bitmap parseToRGB(byte[] data, int length,
                 Bitmap.Config.RGB_565);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.055 -0500", hash_original_method = "B75B5DFDBFDCB10E296435FA5AE5BFD1", hash_generated_method = "FA6F194F05B81D58D148884C611CA05B")
     
 private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
@@ -504,6 +510,8 @@ private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
         return resultArray;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.057 -0500", hash_original_method = "73828A21F4726D6F4A0F2B43DF9C37BA", hash_generated_method = "C04E7297289248979DC634FF62511B4B")
     
 private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
@@ -519,6 +527,8 @@ private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
         return resultArray;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.060 -0500", hash_original_method = "958CF8860B17626CFA5A6D34DF0F7F83", hash_generated_method = "2E6E44F1E2B239E952041B80F0AF8D3E")
     
 private static int[] getCLUT(byte[] rawData, int offset, int number) {

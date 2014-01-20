@@ -17,6 +17,8 @@ public class Mesh extends BaseObj {
 
     Primitive[] mPrimitives;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.427 -0500", hash_original_method = "C8590D08EE8DAE10D21AC3FD65BED1A9", hash_generated_method = "C8590D08EE8DAE10D21AC3FD65BED1A9")
     
 Mesh(int id, RenderScript rs) {
@@ -85,6 +87,8 @@ public Primitive getPrimitive(int slot) {
         return mPrimitives[slot];
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.440 -0500", hash_original_method = "3C1F4A6EE05921D340A62A6B7A4FB1EA", hash_generated_method = "8B97527B20335FD8EB6031D294C259C0")
     
 @Override
@@ -297,6 +301,8 @@ public Builder addIndexSetType(Element e, int size, Primitive p) {
             return this;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.487 -0500", hash_original_method = "A5F13BDB43E03AFA74C8CAC08DECE9D7", hash_generated_method = "A5F13BDB43E03AFA74C8CAC08DECE9D7")
         
@@ -635,6 +641,8 @@ public TriangleMeshBuilder(RenderScript rs, int vtxSize, int flags) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.578 -0500", hash_original_method = "A80B7EA88EEABE74223D464930207C93", hash_generated_method = "ACCD9CF94E95130FE0E7103C62F81191")
         
 private void makeSpace(int count) {
@@ -645,6 +653,8 @@ private void makeSpace(int count) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.580 -0500", hash_original_method = "9C257BDCAF09464D019E44935C728B31", hash_generated_method = "27F41139843D8C4D8AE05171392DB842")
         
 private void latch() {

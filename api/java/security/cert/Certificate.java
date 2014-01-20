@@ -109,6 +109,8 @@ public int hashCode() {
      * @throws CertificateEncodingException
      *             if the encoding fails.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.484 -0500", hash_original_method = "97985BC010DD1187CA9D18F27C6321CC", hash_generated_method = "967CA908BE3445AA84C7FF1C69EFF907")
     
 public abstract byte[] getEncoded() throws CertificateEncodingException;
@@ -130,6 +132,8 @@ public abstract byte[] getEncoded() throws CertificateEncodingException;
      * @throws SignatureException
      *             if signature errors are detected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.487 -0500", hash_original_method = "B83CE65D5C6D1244820061871FC42D24", hash_generated_method = "25F475487B3388B4A59788D7DA6ADFA1")
     
 public abstract void verify(PublicKey key)
@@ -159,6 +163,8 @@ public abstract void verify(PublicKey key)
      * @exception SignatureException
      *                if signature errors are detected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.490 -0500", hash_original_method = "206D0A21D5BAE0F83A1719C1D14A7E35", hash_generated_method = "D17B985B54E602C77696D4D138B8890E")
     
 public abstract void verify(PublicKey key, String sigProvider)
@@ -174,6 +180,8 @@ public abstract void verify(PublicKey key, String sigProvider)
      *
      * @return a printable representation for the certificate.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.492 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "7EA90E50E51652C3FF11C3BD32031D10")
     
 public abstract String toString();
@@ -183,6 +191,8 @@ public abstract String toString();
      *
      * @return the public key corresponding to this certificate.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.495 -0500", hash_original_method = "F2C717FDFBF8A1EA046A033A3AA9C5CC", hash_generated_method = "D544FA3197F301F074C9140DD12C3EA0")
     
 public abstract PublicKey getPublicKey();

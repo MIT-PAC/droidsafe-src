@@ -19,8 +19,6 @@ import junit.runner.BaseTestRunner;
 
 import com.google.android.collect.Lists;
 
-
-
 public class TestCaseUtil {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.921 -0500", hash_original_method = "9FD0A32684FA5B186B09F654C84A8024", hash_generated_method = "8583F188CF9ABDA2A9AEA4FB05F61321")
@@ -41,6 +39,8 @@ public static List<? extends Test> getTests(Test test, boolean flatten) {
         return getTests(test, flatten, new HashSet<Class<?>>());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.926 -0500", hash_original_method = "93C00521577F44DF8D41C1C2AB9E3721", hash_generated_method = "A1EC84F7C511943ACFE06B3A227A5FB3")
     
 private static List<? extends Test> getTests(Test test, boolean flatten,
@@ -81,6 +81,8 @@ private static List<? extends Test> getTests(Test test, boolean flatten,
         return testCases;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.929 -0500", hash_original_method = "07EFA854A074D722E08D831AD0F2F1EC", hash_generated_method = "0F7E3AA6F9D62473B1826F25DB363314")
     
 private static Test invokeSuiteMethodIfPossible(Class testClass,
@@ -166,11 +168,12 @@ public static TestSuite createTestSuite(Class<? extends Test> testClass)
         return (TestSuite) test;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.918 -0500", hash_original_method = "8B3FB0DB9AA59378E1F246FBF0E78671", hash_generated_method = "293D39CFE11433CB90AB76BE88A51C65")
     
 private TestCaseUtil() {
     }
-
     
 }
 

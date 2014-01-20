@@ -313,6 +313,8 @@ public MediaController(Context context) {
             initControllerView(mRoot);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.805 -0500", hash_original_method = "5AB721CF8AD66EE5762FE50902543B8E", hash_generated_method = "A2E6C609AA05496300AE2D87B08FBB89")
     
 private void initFloatingWindow() {
@@ -338,6 +340,8 @@ private void initFloatingWindow() {
     // Allocate and initialize the static parts of mDecorLayoutParams. Must
     // also call updateFloatingWindowLayout() to fill in the dynamic parts
     // (y and width) before mDecorLayoutParams can be used.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.808 -0500", hash_original_method = "A15216BA04857F16D27E94A01ED8D9C8", hash_generated_method = "91CBB2F75688F6C9CBEB6538E34269C1")
     
 private void initFloatingWindowLayout() {
@@ -357,6 +361,8 @@ private void initFloatingWindowLayout() {
 
     // Update the dynamic parts of mDecorLayoutParams
     // Must be called with mAnchor != NULL.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.810 -0500", hash_original_method = "273528B94A02173E736183C73352565A", hash_generated_method = "4A0ABB6EFFFD02F2E28FACC976ECCE7C")
     
 private void updateFloatingWindowLayout() {
@@ -420,6 +426,8 @@ protected View makeControllerView() {
         return mRoot;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.831 -0500", hash_original_method = "6027E965805CA7D75D241C044D75CFC3", hash_generated_method = "1077BC0B8EEA742D986B8E9AFE2DFE30")
     
 private void initControllerView(View v) {
@@ -488,6 +496,8 @@ public void show() {
      * Disable pause or seek buttons if the stream cannot be paused or seeked.
      * This requires the control interface to be a MediaPlayerControlExt
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.836 -0500", hash_original_method = "4DD833D5B8F1F18277B038D9576E3A42", hash_generated_method = "E512E5CC6A42072B59F0748E78751F3C")
     
 private void disableUnsupportedButtons() {
@@ -574,6 +584,8 @@ public void hide() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.851 -0500", hash_original_method = "E3DEF3CD65DC2BEF1837B2236B56198B", hash_generated_method = "34BD257A9BA58D38572C5D92672179BD")
     
 private String stringForTime(int timeMs) {
@@ -591,6 +603,8 @@ private String stringForTime(int timeMs) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.853 -0500", hash_original_method = "972585652F798E535DB73510970F52DB", hash_generated_method = "885CF83E5506AB7B8C752DB32309D990")
     
 private int setProgress() {
@@ -688,6 +702,8 @@ private int setProgress() {
         return super.dispatchKeyEvent(event);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.869 -0500", hash_original_method = "B0869F9835F79F721C7D9CE04C896B2B", hash_generated_method = "8355708F6C7F243378A44C2457F5C274")
     
 private void updatePausePlay() {
@@ -701,6 +717,8 @@ private void updatePausePlay() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.871 -0500", hash_original_method = "F9113ED701E8317A61E1AB80861EF0B1", hash_generated_method = "2AE3244ADA5A5A27CBD2681B7914FEC2")
     
 private void doPauseResume() {
@@ -754,6 +772,8 @@ private void doPauseResume() {
         super.setEnabled(enabled);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.897 -0500", hash_original_method = "8961D157AE11C5565BE89171B02042D7", hash_generated_method = "7F3433AB3B8ECE39C4B437F8D811BAA4")
     
 private void installPrevNextListeners() {

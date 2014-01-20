@@ -35,7 +35,9 @@ protected AbstractMap() {
             addTaint(capacity);
         }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "76EEE079F2D9B88A31C5F2E8E9C7EB92", hash_generated_method = "D04492222E27A17B4DBF52591A0F49E1")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "76EEE079F2D9B88A31C5F2E8E9C7EB92", hash_generated_method = "D04492222E27A17B4DBF52591A0F49E1")
     public void clear() {
         entrySet().clear();
         keySet.clear();
@@ -44,7 +46,9 @@ protected AbstractMap() {
         //entrySet().clear();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "3D741B03C8862C52B96D9B3B81701BE0", hash_generated_method = "BECB956768FEB16D2592D8DFDCE1254E")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "3D741B03C8862C52B96D9B3B81701BE0", hash_generated_method = "BECB956768FEB16D2592D8DFDCE1254E")
     public boolean containsKey(Object key) {
         return keySet.contains(key);
         // ---------- Original Method ----------
@@ -65,7 +69,9 @@ protected AbstractMap() {
         //return false;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.577 -0400", hash_original_method = "D1C1AD8AFDB44AE56F4D2DF37F057E9D", hash_generated_method = "513B516F3194E91B15E22C3E95839BEC")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.577 -0400", hash_original_method = "D1C1AD8AFDB44AE56F4D2DF37F057E9D", hash_generated_method = "513B516F3194E91B15E22C3E95839BEC")
     public boolean containsValue(Object value) {
         return valuesCollection.contains(value);
         // ---------- Original Method ----------
@@ -86,6 +92,8 @@ protected AbstractMap() {
         //return false;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.244 -0500", hash_original_method = "7CBA802DA52C526436F00BC470BF1937", hash_generated_method = "53D33ED4D71E7E913FBCA82803B17B2C")
     
 public abstract Set<Map.Entry<K, V>> entrySet();
@@ -94,7 +102,9 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         return backingEntrySet;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.578 -0400", hash_original_method = "5B9317AAB202C2AFA6ECB99B62EB1150", hash_generated_method = "DBD8B1A42F9CC9FA5EA8264BA255A505")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.578 -0400", hash_original_method = "5B9317AAB202C2AFA6ECB99B62EB1150", hash_generated_method = "DBD8B1A42F9CC9FA5EA8264BA255A505")
     @Override
     public boolean equals(Object object) {
         addTaint(object.getTaint());
@@ -104,6 +114,8 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "80DED5B1493F4175A64A94324F6ABF01", hash_generated_method = "DE4E462DDFAD080821E1F2FDD12CBB2F")
     public V get(Object key) {
@@ -133,7 +145,9 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         //return null;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "64FA0B5ACB2A736D0354FE373D9CD3E5", hash_generated_method = "3CE35D33DC7EA27D168D7DB47B163C91")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "64FA0B5ACB2A736D0354FE373D9CD3E5", hash_generated_method = "3CE35D33DC7EA27D168D7DB47B163C91")
     @Override
     public int hashCode() {
         return getTaintInt();
@@ -147,19 +161,25 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         //return result;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.580 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "19051CBE57A799DDD0D479D317B6168E")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.580 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "19051CBE57A799DDD0D479D317B6168E")
     public boolean isEmpty() {
         return getTaintBoolean();
         // ---------- Original Method ----------
         //return size() == 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.240 -0400", hash_original_method = "F40A232B51CF144805B23E3A97CCF7A5", hash_generated_method = "9A0B801A8CE9D5D944144F6F2D5118B9")
     public Set<K> keySet() {
         return keySet;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.584 -0400", hash_original_method = "1AE25A34BEB4A8F08F41373ADFFCFE34", hash_generated_method = "68BBC7F50DC671ED0F56BA1A5CF63CD0")
     public V put(K key, V value) {
         addTaint(value.getTaint());
@@ -191,6 +211,8 @@ public abstract Set<Map.Entry<K, V>> entrySet();
      * <p>This implementation iterates through {@code map}'s entry set, calling
      * {@code put()} for each.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.285 -0500", hash_original_method = "1BF9761154AA89A664F00EA3C1B1A227", hash_generated_method = "7E02F7CA54E3FC942C49F89EFE900DF7")
     
 public void putAll(Map<? extends K, ? extends V> map) {
@@ -257,7 +279,9 @@ public void putAll(Map<? extends K, ? extends V> map) {
         return entry;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.585 -0400", hash_original_method = "DF925EC53E8E5501C52A21B969B7A962", hash_generated_method = "A8C27B378C94E544EE89D7FD0FB575DD")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.585 -0400", hash_original_method = "DF925EC53E8E5501C52A21B969B7A962", hash_generated_method = "A8C27B378C94E544EE89D7FD0FB575DD")
     public V remove(Object key) {
         addTaint(key.getTaint());
         
@@ -297,7 +321,9 @@ public void putAll(Map<? extends K, ? extends V> map) {
         //return null;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.586 -0400", hash_original_method = "68473A1BCB9C7CDFC9C6F1089F605F26", hash_generated_method = "C7A06C4B5755155D9E19DE9DF6D4033E")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.586 -0400", hash_original_method = "68473A1BCB9C7CDFC9C6F1089F605F26", hash_generated_method = "C7A06C4B5755155D9E19DE9DF6D4033E")
     public int size() {
         return getTaintInt();
         // ---------- Original Method ----------
@@ -359,7 +385,9 @@ public void putAll(Map<? extends K, ? extends V> map) {
         // Original Method Too Long, Refer to Original Implementation
     }
         
-@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.589 -0400", hash_original_method = "DEDBEBF1A9DF717B6A61BCEAEE5EB8FF", hash_generated_method = "CF2AA62163C630C7B78B734803415A96")
     @SuppressWarnings("unchecked")
     @Override
@@ -394,6 +422,8 @@ public void putAll(Map<? extends K, ? extends V> map) {
 
         private  V value;
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.179 -0500", hash_original_method = "33F8AD4AA392C56EA79ABB4A58A6836E", hash_generated_method = "477085AB5BF507C37ECBC6075C8B3DDE")
         
 public SimpleImmutableEntry(K theKey, V theValue) {
@@ -411,6 +441,8 @@ public SimpleImmutableEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             value = copyFrom.getValue();
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.184 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "70BBB2F2B97930263570BF1F94F8248D")
         
@@ -418,6 +450,8 @@ public K getKey() {
             return key;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.187 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "95D4F56CA118DD7517C6CA2E4A00FE92")
         
@@ -425,7 +459,9 @@ public V getValue() {
             return value;
         }
                 
-@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+@DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "EB9F930298727FE038FD0E2F1F331E96")
         public V setValue(V object) {
             if (DroidSafeAndroidRuntime.control) {
@@ -440,7 +476,9 @@ public V getValue() {
             //throw new UnsupportedOperationException();
         }
                 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "1FF7867B1DC9E467B3C710E28BD73150")
+@DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "1FF7867B1DC9E467B3C710E28BD73150")
         @Override
         public boolean equals(Object object) {
             addTaint(object.getTaint());
@@ -470,6 +508,8 @@ public V getValue() {
             //return false;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.195 -0500", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "5C9EDD5B771CD9A47AFF55CF54BFB883")
         
 @Override public int hashCode() {
@@ -477,6 +517,8 @@ public V getValue() {
                     ^ (value == null ? 0 : value.hashCode());
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.197 -0500", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "EDF37FB38FD11F88857163FA6E2BE31B")
         
 @Override public String toString() {
@@ -495,6 +537,8 @@ public V getValue() {
 
         private V value;
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.211 -0500", hash_original_method = "BD7301488126194D9FCD92EBDE27E89B", hash_generated_method = "211E37AD636ECD6C0C3BF17FD5D672B9")
         
 public SimpleEntry(K theKey, V theValue) {
@@ -512,7 +556,9 @@ public SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             value = copyFrom.getValue();
         }
                 
-@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+@DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "DED2DCB7D9AC2A45C93F999F67F3F5F9")
         public K getKey() {
              key.addTaint(getTaint());
@@ -520,6 +566,8 @@ public SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             //return key;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.219 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "95D4F56CA118DD7517C6CA2E4A00FE92")
         
@@ -527,6 +575,8 @@ public V getValue() {
             return value;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.222 -0500", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "F9467D3B60D7F9589C17103B5B4486CB")
         
 public V setValue(V object) {
@@ -535,6 +585,8 @@ public V setValue(V object) {
             return result;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.224 -0500", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "905555CEA4EF740508EE8D4A3655FE25")
         
 @Override public boolean equals(Object object) {
@@ -551,6 +603,8 @@ public V setValue(V object) {
             return false;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.227 -0500", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "5C9EDD5B771CD9A47AFF55CF54BFB883")
         
 @Override public int hashCode() {
@@ -558,7 +612,9 @@ public V setValue(V object) {
                     ^ (value == null ? 0 : value.hashCode());
         }
                 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.595 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "74F4BFB372D889C3491F29BAD76B35C1")
+@DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.595 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "74F4BFB372D889C3491F29BAD76B35C1")
         @Override
         public String toString() {
 String varFE698C13EFD83B87FAF2DC2AB0874271_1884902144 =             key + "=" + value;

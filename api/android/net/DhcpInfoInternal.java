@@ -76,6 +76,8 @@ public class DhcpInfoInternal {
         return Collections.unmodifiableCollection(mRoutes);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.922 -0500", hash_original_method = "88E38A7A08EF7AB18CBA8BA26CF70492", hash_generated_method = "5F94BE3FE452A3599BCDB206D870547E")
     private int convertToInt(String addr) {
         if (addr != null) {

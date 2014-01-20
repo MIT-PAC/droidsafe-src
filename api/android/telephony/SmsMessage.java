@@ -407,6 +407,8 @@ public static SubmitPdu getSubmitPdu(String scAddress,
 
     public SmsMessageBase mWrappedSmsMessage;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.599 -0500", hash_original_method = "8785081C14DC1062450E96A46CF3DF25", hash_generated_method = "160E8077F5999571B4B1C03D54A61684")
     
 private SmsMessage(SmsMessageBase smb) {

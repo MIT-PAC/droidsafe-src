@@ -8,14 +8,8 @@ import java.math.BigInteger;
 
 import org.bouncycastle.util.Arrays;
 
-
-
-
-
-
 class IntArray {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.447 -0500", hash_original_field = "2D5FF9010CC73184DFBD8E9952524D01", hash_generated_field = "E9EBF884B577D6B8AA0EBD0D214A9975")
-
 
     private int[] m_ints;
 
@@ -194,6 +188,8 @@ public int bitLength()
         return bits;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.469 -0500", hash_original_method = "F4D18BEF0C27A90F867F9F4EB4C5771F", hash_generated_method = "32E1399AD834220FE977FC52F7179924")
     
 private int[] resizedInts(int newLen)
@@ -570,7 +566,6 @@ public String toString()
         }
         return sb.toString();
     }
-
     
 }
 

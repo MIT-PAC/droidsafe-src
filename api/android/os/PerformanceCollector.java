@@ -11,6 +11,8 @@ public class PerformanceCollector {
     /*
      * Starts allocation counting. This triggers a gc and resets the counts.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.771 -0500", hash_original_method = "7FDB53D95055F8344C6717BAA41CDD62", hash_generated_method = "729609E68190913C71FE6831B61BC37F")
     
 private static void startAllocCounting() {
@@ -31,6 +33,8 @@ private static void startAllocCounting() {
     /*
      * Stops allocation counting.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.774 -0500", hash_original_method = "0DC5272531C251864B2A214C154F0F7A", hash_generated_method = "3A9D366252C742A066ADABECE4A40E47")
     
 private static void stopAllocCounting() {
@@ -43,6 +47,8 @@ private static void stopAllocCounting() {
     /*
      * Returns a bundle with the current results from the allocation counting.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.776 -0500", hash_original_method = "7570D27A875B3A44DAA62C272011DD54", hash_generated_method = "772B146FEA3E121C7837D1BD62F32365")
     
 private static Bundle getAllocCounts() {
@@ -60,6 +66,8 @@ private static Bundle getAllocCounts() {
      * process. Currently the only two that are reported are the number of send
      * and the number of received transactions.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.778 -0500", hash_original_method = "B58C6F13B6A7E24472B49AF10049B588", hash_generated_method = "55C8C040B7BC6BDE1CDC0B9FEC74A1A8")
     
 private static Bundle getBinderCounts() {
@@ -386,6 +394,8 @@ public void addMeasurement(String label, String value) {
     /*
      * Starts tracking memory usage, binder transactions, and real & cpu timing.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.766 -0500", hash_original_method = "1B503104185A94AFFC2FCF84AFCEABAE", hash_generated_method = "864FFB42A8D46850B7A5307CDC05B092")
     
 private void startPerformanceSnapshot() {
@@ -414,6 +424,8 @@ private void startPerformanceSnapshot() {
      * Stops tracking memory usage, binder transactions, and real & cpu timing.
      * Stores collected data as type long into Bundle object for reporting.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.769 -0500", hash_original_method = "41A01DA3C680B16D19143811CC413B1E", hash_generated_method = "10ECFB3AE4B6963E66C0DA8778C3E9BE")
     
 private void endPerformanceSnapshot() {

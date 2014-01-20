@@ -74,6 +74,8 @@ public static NetworkTemplate buildTemplateEthernet() {
         return new NetworkTemplate(MATCH_ETHERNET, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.285 -0500", hash_original_method = "5D128FE1E1960C433A71FB9376C09E8B", hash_generated_method = "CD778DE40340D3A6528F1F05DA956F2B")
     
 private static String getMatchRuleName(int matchRule) {
@@ -141,6 +143,8 @@ public NetworkTemplate(int matchRule, String subscriberId) {
         this.mSubscriberId = subscriberId;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.253 -0500", hash_original_method = "467A86E8EFDDFF4383A8018B1ADE829F", hash_generated_method = "9F06E2CA4A827A21DFFE6A004A55A4D7")
     
 private NetworkTemplate(Parcel in) {
@@ -232,6 +236,8 @@ public boolean matches(NetworkIdentity ident) {
     /**
      * Check if mobile network with matching IMSI.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.274 -0500", hash_original_method = "BBF3C380B9774B27B4245C54F7894533", hash_generated_method = "29490970C6EB4A3079390A7C66417EFB")
     
 private boolean matchesMobile(NetworkIdentity ident) {
@@ -247,6 +253,8 @@ private boolean matchesMobile(NetworkIdentity ident) {
     /**
      * Check if mobile network classified 3G or lower with matching IMSI.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.276 -0500", hash_original_method = "0F24D42BACA619E1B4D2A14C838DE427", hash_generated_method = "9376876B8BA8AD4F52F5BDE11BD4D48B")
     
 private boolean matchesMobile3gLower(NetworkIdentity ident) {
@@ -266,6 +274,8 @@ private boolean matchesMobile3gLower(NetworkIdentity ident) {
     /**
      * Check if mobile network classified 4G with matching IMSI.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.278 -0500", hash_original_method = "B7894A7F3E04E8F81CBF1F61E6B8AB40", hash_generated_method = "EA548961B2D594DB52CFED05B98ABA05")
     
 private boolean matchesMobile4g(NetworkIdentity ident) {
@@ -284,6 +294,8 @@ private boolean matchesMobile4g(NetworkIdentity ident) {
     /**
      * Check if matches Wi-Fi network template.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.281 -0500", hash_original_method = "FC1062696978183943559E1C2F0FCB30", hash_generated_method = "13F6F1E90AEE0599F591A3C893AFE89C")
     
 private boolean matchesWifi(NetworkIdentity ident) {
@@ -300,6 +312,8 @@ private boolean matchesWifi(NetworkIdentity ident) {
     /**
      * Check if matches Ethernet network template.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.283 -0500", hash_original_method = "A66E0F5FCADB4F7B6C8822100B46777D", hash_generated_method = "77039782A0E5E9CBF61566D85A23A4AD")
     
 private boolean matchesEthernet(NetworkIdentity ident) {

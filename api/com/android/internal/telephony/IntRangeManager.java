@@ -399,6 +399,8 @@ public boolean updateRanges() {
      * @param selected true to enable range, false to disable range
      * @return true if successful, false otherwise
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.675 -0500", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "F458D0A984C1D2137808AB1EA3DDEA68")
     
 private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
@@ -423,6 +425,8 @@ public boolean isEmpty() {
      * followed by zero or more calls to {@link #addRange} followed by
      * a call to {@link #finishUpdate}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.681 -0500", hash_original_method = "FCF51CD311107A31FE3B2EFC0793E843", hash_generated_method = "0C123BC9261889849152F9859E89C9E9")
     
 protected abstract void startUpdate();
@@ -435,6 +439,8 @@ protected abstract void startUpdate();
      * @param endId the last id included in the range
      * @param selected true to enable range, false to disable range
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.683 -0500", hash_original_method = "F3A93B80CF184574F1C80995545F3790", hash_generated_method = "0ED64598EA827C0BEDDFD4FA8733DA59")
     
 protected abstract void addRange(int startId, int endId, boolean selected);
@@ -574,6 +580,8 @@ ClientRange(int startId, int endId, String client) {
      * previous call to {@link #startUpdate}.
      * @return true if successful, false otherwise
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.686 -0500", hash_original_method = "6F392A19DED1FB567010348872D79562", hash_generated_method = "8FEEA1381A8EBB4860023AB8FE45AAC7")
     
 protected abstract boolean finishUpdate();

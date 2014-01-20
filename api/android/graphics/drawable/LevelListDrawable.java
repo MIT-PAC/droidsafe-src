@@ -13,10 +13,6 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
-
-
 public class LevelListDrawable extends DrawableContainer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.725 -0500", hash_original_field = "2F3B839357AC4C9240B27FC00557844D", hash_generated_field = "47CDAADE6F8C5ECD8D87C1E79510A706")
 
@@ -25,6 +21,8 @@ public class LevelListDrawable extends DrawableContainer {
 
     private boolean mMutated;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.729 -0500", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "E085D1E02370305C3BA4C9C948FEC593")
     
 public LevelListDrawable() {
@@ -40,6 +38,8 @@ private LevelListDrawable(LevelListState state, Resources res) {
         onLevelChange(getLevel());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.731 -0500", hash_original_method = "034C59859D302C36E8258EB9CAEDE0AF", hash_generated_method = "4D7ACAE7F8BE29D0BD3ADD3C090B512D")
     
 public void addLevel(int low, int high, Drawable drawable) {
@@ -52,6 +52,8 @@ public void addLevel(int low, int high, Drawable drawable) {
 
     // overrides from Drawable
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.733 -0500", hash_original_method = "69975FEB6AC4D6000EB731D154CA4016", hash_generated_method = "E888621E60E59C9D397505B76EF521FD")
     
 @Override
@@ -63,6 +65,8 @@ public void addLevel(int low, int high, Drawable drawable) {
         return super.onLevelChange(level);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.737 -0500", hash_original_method = "D1DA3B3E6F995A3C0C835AA99D4132D2", hash_generated_method = "F84A0D1EBB58DA0FB1E23A608A14889D")
     
 @Override
@@ -126,6 +130,8 @@ public void addLevel(int low, int high, Drawable drawable) {
         onLevelChange(getLevel());
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.740 -0500", hash_original_method = "2F3DD5E6B39B84FDED94D3B2A7A7FBE8", hash_generated_method = "3614019FFAAF3C4AA61E4F75819A2C5D")
     
 @Override
@@ -137,7 +143,6 @@ public void addLevel(int low, int high, Drawable drawable) {
         }
         return this;
     }
-
     
     private final static class LevelListState extends DrawableContainerState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.743 -0500", hash_original_field = "6FE36D59F9E611A4BB43B905FDDA462B", hash_generated_field = "37A326654DCDB6D550E9B55D69367F4E")
@@ -209,11 +214,8 @@ public int indexOfLevel(int level) {
             System.arraycopy(mHighs, 0, newInts, 0, oldSize);
             mHighs = newInts;
         }
-
         
     }
-
-
     
 }
 

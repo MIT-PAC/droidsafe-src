@@ -13,8 +13,8 @@ public class DigitsKeyListener extends NumberKeyListener {
     /**
      * Returns a DigitsKeyListener that accepts the digits 0 through 9.
      */
-    @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.064 -0500", hash_original_method = "196C44AF0E4E6E9F7A5ABEBEF1B89855", hash_generated_method = "9C92B0FB155A6AF9255A3D0C67209ECD")
     
@@ -27,6 +27,8 @@ public static DigitsKeyListener getInstance() {
      * plus the minus sign (only at the beginning) and/or decimal point
      * (only one per field) if specified.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.067 -0500", hash_original_method = "0786C44C9A5E0C02A12CFA1A471595DB", hash_generated_method = "6FCA8A80FB5020CEFEDD5BE1AA9953D2")
     
@@ -45,6 +47,8 @@ public static DigitsKeyListener getInstance(boolean sign, boolean decimal) {
      * that appear in the specified String.  Note that not all characters
      * may be available on every keyboard.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.069 -0500", hash_original_method = "D4B3324806FC820344ACA4BE2085B64A", hash_generated_method = "CB6490F312BEAB801C2FE7B3717C0434")
     
@@ -88,6 +92,8 @@ public static DigitsKeyListener getInstance(String accepted) {
     /**
      * Allocates a DigitsKeyListener that accepts the digits 0 through 9.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.057 -0500", hash_original_method = "6BE6AAF45437494799568EB9C567DA33", hash_generated_method = "DD6B2992DC02957B30A273B9FA89021E")
     
 public DigitsKeyListener() {
@@ -99,6 +105,8 @@ public DigitsKeyListener() {
      * plus the minus sign (only at the beginning) and/or decimal point
      * (only one per field) if specified.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.061 -0500", hash_original_method = "FA23D3FC8F275B4F859DA176A5851F12", hash_generated_method = "F764592FAC79A9F63D039B536E6828F9")
     
 public DigitsKeyListener(boolean sign, boolean decimal) {
@@ -109,6 +117,8 @@ public DigitsKeyListener(boolean sign, boolean decimal) {
         mAccepted = CHARACTERS[kind];
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.050 -0500", hash_original_method = "699568E4919BD4E82DA190E9B839182F", hash_generated_method = "BB10730938C682CF3230557C3C82F212")
     
@@ -117,6 +127,8 @@ public DigitsKeyListener(boolean sign, boolean decimal) {
         return mAccepted;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.072 -0500", hash_original_method = "C58B63A603B7A45CFB1185F323DD143F", hash_generated_method = "239130D815D3C5858622EA90F9E5EE4E")
     
@@ -131,6 +143,8 @@ public int getInputType() {
         return contentType;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.076 -0500", hash_original_method = "A15A4B8B8366C48B770873BA3926F314", hash_generated_method = "D0ED06DC3DAB77C3A5A62BB90509257F")
     
 @Override

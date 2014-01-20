@@ -19,6 +19,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         return ev;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.588 -0500", hash_original_method = "A44B14BB1BCBE206EC593BA2C9AFA143", hash_generated_method = "3A835C7ECC1FDB91788D3E3E10F93466")
     
 private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
@@ -43,11 +45,15 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCopy(int destNativePtr, int sourceNativePtr,
             boolean keepHistory) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDispose(int nativePtr) {
     }
     
@@ -55,106 +61,160 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
             PointerCoords[] pointerCoords, int metaState) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetDeviceId(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetSource(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeSetSource(int nativePtr, int source) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetAction(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetAction(int nativePtr, int action) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeIsTouchEvent(int nativePtr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetFlags(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetFlags(int nativePtr, int flags) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetEdgeFlags(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetEdgeFlags(int nativePtr, int action) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetMetaState(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetButtonState(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeOffsetLocation(int nativePtr, float deltaX, float deltaY) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetXOffset(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetYOffset(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetXPrecision(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetYPrecision(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetDownTimeNanos(int nativePtr) {
         return DSUtils.UNKNOWN_LONG;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetDownTimeNanos(int nativePtr, long downTime) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetPointerCount(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetPointerId(int nativePtr, int pointerIndex) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetToolType(int nativePtr, int pointerIndex) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeFindPointerIndex(int nativePtr, int pointerId) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetHistorySize(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetEventTimeNanos(int nativePtr, int historyPos) {
         return DSUtils.UNKNOWN_LONG;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetRawAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
         return DSUtils.UNKNOWN_FLOAT;
@@ -168,19 +228,29 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
             int pointerIndex, PointerProperties outPointerProperties) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeScale(int nativePtr, float scale) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeTransform(int nativePtr, Matrix matrix) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeReadFromParcel(int nativePtr, Parcel parcel) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeWriteToParcel(int nativePtr, Parcel parcel) {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.755 -0500", hash_original_method = "2A0D7EAD7D2D4BD57D90237963E14123", hash_generated_method = "764E77A2466C2EEB909234927FC9E4A0")
     
 static private MotionEvent obtain() {
@@ -450,6 +520,8 @@ static public MotionEvent obtainNoHistory(MotionEvent other) {
         return ev;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.978 -0500", hash_original_method = "21B64904C65635047BDD8B29F88F873B", hash_generated_method = "3DFFF6B981AED6A7796A2EE5AF2B6C9B")
     
 private static final float clamp(float value, float low, float high) {
@@ -1282,7 +1354,9 @@ public MotionEvent[] newArray(int size) {
 
     private boolean mRecycled;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.752 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
+@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.752 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     public  MotionEvent() {
         // ---------- Original Method ----------
     }

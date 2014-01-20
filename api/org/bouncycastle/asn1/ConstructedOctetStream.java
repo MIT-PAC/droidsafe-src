@@ -7,21 +7,19 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
 class ConstructedOctetStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.247 -0500", hash_original_field = "8EE68094F784B2C8EC928CABAEA021F0", hash_generated_field = "76949B28A5103E4F545C65F9E6322200")
 
     private  ASN1StreamParser _parser;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.250 -0500", hash_original_field = "44B450E74685E14F5383B7BF2C5A29D9", hash_generated_field = "5715766DFE7FD713CE352A25A0465277")
 
-
     private boolean                _first = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.253 -0500", hash_original_field = "3BA1CD15C4D2976DF18B717C1B9EDBDD", hash_generated_field = "B436CB06F4CDF9C194959E64C13D82E8")
 
     private InputStream            _currentStream;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.255 -0500", hash_original_method = "25BBB36D71D2D30850B0439DCA6D8B9F", hash_generated_method = "25BBB36D71D2D30850B0439DCA6D8B9F")
     
 ConstructedOctetStream(
@@ -125,7 +123,6 @@ public int read()
             _currentStream = s.getOctetStream();
         }
     }
-
     
 }
 

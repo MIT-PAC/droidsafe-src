@@ -128,6 +128,8 @@ public final
      * Returns a new {@link PoolEntryRequest}, from which a {@link BasicPoolEntry}
      * can be obtained, or the request can be aborted.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.219 -0500", hash_original_method = "4C1A8087D76E51A267FB8C95EE16029B", hash_generated_method = "184E51382C38F1B7B0EE9D2E7BF8B1F6")
     
 public abstract PoolEntryRequest requestPoolEntry(HttpRoute route, Object state);
@@ -144,6 +146,8 @@ public abstract PoolEntryRequest requestPoolEntry(HttpRoute route, Object state)
      * @param validDuration The duration that the entry should remain free and reusable.
      * @param timeUnit The unit of time the duration is measured in.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.221 -0500", hash_original_method = "70C11B1DB13C02F46A7F0C16FC313271", hash_generated_method = "EFC5EC6B219100A61DD283E986AF08F9")
     
 public abstract void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration, TimeUnit timeUnit)
@@ -185,6 +189,8 @@ public void handleReference(Reference ref) {
      *
      * @param route     the route of the pool entry that was lost
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.227 -0500", hash_original_method = "9972DFCB84008C041CDFC4D571B43DEE", hash_generated_method = "63DB68700ECADFDD0EF657F8E82E2A76")
     
 protected abstract void handleLostEntry(HttpRoute route)
@@ -230,6 +236,8 @@ public void closeExpiredConnections() {
     /**
      * Deletes all entries for closed connections.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.234 -0500", hash_original_method = "3CE795F167F9259979B508D0B805A2F6", hash_generated_method = "60FDBB0426DED33426B062C3E2C8C421")
     
 public abstract void deleteClosedConnections()

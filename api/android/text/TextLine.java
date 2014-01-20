@@ -27,6 +27,8 @@ class TextLine {
      *
      * @return an uninitialized TextLine
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.543 -0500", hash_original_method = "94707AFC02D921BFDEDD2070AC4B80C0", hash_generated_method = "32F6F382E99E870FA8001B4ADA028C03")
     
 static TextLine obtain() {
@@ -54,6 +56,8 @@ static TextLine obtain() {
      * @return null, as a convenience from clearing references to the provided
      * TextLine
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.545 -0500", hash_original_method = "FC94B7D2EC96B1E145D19814C89754EC", hash_generated_method = "81AB3B8E692922C831C8601B8B7A83B1")
     
 static TextLine recycle(TextLine tl) {
@@ -162,6 +166,8 @@ static void updateMetrics(FontMetricsInt fmi, int previousTop, int previousAscen
     private final SpanSet<ReplacementSpan> mReplacementSpanSpanSet =
             new SpanSet<ReplacementSpan>(ReplacementSpan.class);
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.885 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
     public TextLine ()
     {
@@ -241,6 +247,8 @@ void set(TextPaint paint, CharSequence text, int start, int limit, int dir,
      * @param y the baseline
      * @param bottom the bottom of the line
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.554 -0500", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "20A60861C26C58A53A0282FABD9ED153")
     
 void draw(Canvas c, float x, int top, int y, int bottom) {
@@ -441,6 +449,8 @@ float measure(int offset, boolean trailing, FontMetricsInt fmi) {
      * @return the signed width of the run, based on the paragraph direction.
      * Only valid if needWidth is true.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.563 -0500", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "71B18765A1186C2AB489F063F2C7351C")
     
 private float drawRun(Canvas c, int start,
@@ -494,6 +504,8 @@ private float measureRun(int start, int offset, int limit, boolean runIsRtl,
      * of the line, the previous/following line should be examined to get the
      * actual offset.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.571 -0500", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "07B09DD4B0CCA43FDBD92EC54B6EE973")
     
@@ -676,6 +688,8 @@ int getOffsetToLeftRightOf(int cursor, boolean toLeft) {
      * offset
      * @return the new offset
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.575 -0500", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "3B29DCE9CCF68B664A34E6FC9DCA8B3C")
     
 private int getOffsetBeforeAfter(int runIndex, int runStart, int runLimit,
@@ -1036,6 +1050,8 @@ private float handleRun(int start, int measureLimit,
 
          Class<? extends E> classType;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.607 -0500", hash_original_method = "08793871E7FAA5C02A5C5115CBB016E1", hash_generated_method = "08793871E7FAA5C02A5C5115CBB016E1")
         
 SpanSet(Class<? extends E> type) {
@@ -1088,6 +1104,8 @@ public boolean hasSpansIntersecting(int start, int end) {
             return false;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.616 -0500", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "70A36A49F9CEFC761501124E36FC2A8C")
         
 int getNextTransition(int start, int limit) {
@@ -1124,6 +1142,8 @@ public void recycle() {
      * @param x the x position of the left edge of the run
      * @param y the baseline of the run
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.629 -0500", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "45DD593F42C875F9C50E96BA4C622377")
     
 private void drawTextRun(Canvas c, TextPaint wp, int start, int end,
@@ -1149,6 +1169,8 @@ private void drawTextRun(Canvas c, TextPaint wp, int start, int end,
      * @param pos the line-relative position
      * @return the ascent of the text at start
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.632 -0500", hash_original_method = "AC74D3C7A92A1C0DA8A76C86F50D3219", hash_generated_method = "AC74D3C7A92A1C0DA8A76C86F50D3219")
     
 float ascent(int pos) {
@@ -1176,6 +1198,8 @@ float ascent(int pos) {
      * @param h the (unsigned) offset from the leading margin
      * @return the (unsigned) tab position after this offset
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.634 -0500", hash_original_method = "73134044CD530D6AE99976E01BA5E625", hash_generated_method = "73134044CD530D6AE99976E01BA5E625")
     
 float nextTab(float h) {

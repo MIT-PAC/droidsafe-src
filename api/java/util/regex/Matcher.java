@@ -18,6 +18,8 @@ public final class Matcher implements MatchResult {
      * @return the input string, with all backslashes and dollar signs having
      *         been escaped.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.337 -0500", hash_original_method = "412B90C2E6660CBD34B9FCD7AA411423", hash_generated_method = "5C0A490BD2CE9B2C5AFFFA4AB2680065")
     
 public static String quoteReplacement(String s) {
@@ -32,47 +34,71 @@ public static String quoteReplacement(String s) {
         return result.toString();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void closeImpl(int addr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean findImpl(int addr, String s, int startIndex, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean findNextImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int groupCountImpl(int addr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean hitEndImpl(int addr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean lookingAtImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean matchesImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int openImpl(int patternAddr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean requireEndImpl(int addr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setInputImpl(int addr, String s, int start, int end) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void useAnchoringBoundsImpl(int addr, boolean value) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void useTransparentBoundsImpl(int addr, boolean value) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.253 -0500", hash_original_field = "6E570AE90FE80F8D699376520DF9AF12", hash_generated_field = "F8E35FE12BF69D119F3D49E111B1D9A2")
@@ -118,6 +144,8 @@ public static String quoteReplacement(String s) {
      * @param input
      *            the input to use.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.282 -0500", hash_original_method = "3CAF328B13970C51C4DF071BCDFD21EA", hash_generated_method = "3CAF328B13970C51C4DF071BCDFD21EA")
     
 Matcher(Pattern pattern, CharSequence input) {
@@ -163,6 +191,8 @@ public Matcher appendReplacement(StringBuffer buffer, String replacement) {
      * @param s
      *            the string to append.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.287 -0500", hash_original_method = "5B3F4DCDB18701B7EDED77C3B9D3C550", hash_generated_method = "1059C2B39BA7CB5FDAEFB1C86FD435AA")
     
 private void appendEvaluated(StringBuffer buffer, String s) {
@@ -199,6 +229,8 @@ private void appendEvaluated(StringBuffer buffer, String s) {
      *
      * @return the {@code Matcher} itself.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.290 -0500", hash_original_method = "9AD9707639C16EE18626C91A471BEAF6", hash_generated_method = "4D667382892858143D169D9743A5A820")
     
 public Matcher reset() {
@@ -240,6 +272,8 @@ public Matcher reset(CharSequence input) {
      *
      * @return the matcher itself.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.295 -0500", hash_original_method = "1E13D8D8B85E56AF9BB58282CB9C7392", hash_generated_method = "0FE0075551BE07BF37B703967428CA6E")
     
 private Matcher reset(CharSequence input, int start, int end) {
@@ -299,6 +333,8 @@ public Matcher usePattern(Pattern pattern) {
         return this;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.300 -0500", hash_original_method = "4B8F5281B8D449CBFD7748E2AB98FC6B", hash_generated_method = "3687FD6AD64E4420BA08D2A6C33C4568")
     
 private void resetForInput() {
@@ -357,6 +393,8 @@ public StringBuffer appendTail(StringBuffer buffer) {
      *            the replacement text.
      * @return the modified input string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.308 -0500", hash_original_method = "902CB288EB494C9205FE6BF90EDE4AF5", hash_generated_method = "FC1FE090735FBE5C0F1CC10B889AFD9F")
     
 public String replaceFirst(String replacement) {
@@ -394,6 +432,8 @@ public String replaceAll(String replacement) {
      *
      * @return the {@code Pattern} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.314 -0500", hash_original_method = "29D81214171EEBB46568323FF70F06B8", hash_generated_method = "80B68F97348D33B2EBEFAA36485AA577")
     
 public Pattern pattern() {
@@ -462,6 +502,8 @@ public String group() {
      *            of the region, the method will fail.
      * @return true if (and only if) a match has been found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.321 -0500", hash_original_method = "1E0A41464CCCF143B80A589A774A22D2", hash_generated_method = "A2A5E4E76B9D8B6E5F60E9F4BC7C4ADD")
     
 public boolean find(int start) {
@@ -550,6 +592,8 @@ public boolean matches() {
      * @throws IllegalStateException
      *             if no successful match has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.332 -0500", hash_original_method = "AB3FAB8AD474566DF13ED737E690D125", hash_generated_method = "C9F93BAC225C470B9A43EA17AC68246C")
     
 public int start(int group) throws IllegalStateException {
@@ -568,6 +612,8 @@ public int start(int group) throws IllegalStateException {
      * @throws IllegalStateException
      *             if no successful match has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.335 -0500", hash_original_method = "3B2B065B47272EA82FEECDA7C28418A1", hash_generated_method = "DCAE168E828A3CB300DD535007B50601")
     
 public int end(int group) {
@@ -630,6 +676,8 @@ public int end() {
      * @throws IllegalStateException
      *             if no successful match has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.348 -0500", hash_original_method = "AA5E91AED2A0230E676820BFF0A777EF", hash_generated_method = "CA9ED716ED2088486B8FAB0EACD3EE7E")
     
 public MatchResult toMatchResult() {
@@ -647,6 +695,8 @@ public MatchResult toMatchResult() {
      *            the new value for anchoring bounds.
      * @return the {@code Matcher} itself.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.350 -0500", hash_original_method = "785D7AD880670D6D8A0DF6FCE0749ACB", hash_generated_method = "EDA23E10272D09A6B3C2CF7A4A28DC19")
     
 public Matcher useAnchoringBounds(boolean value) {
@@ -663,6 +713,8 @@ public Matcher useAnchoringBounds(boolean value) {
      *
      * @return true if (and only if) the {@code Matcher} uses anchoring bounds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.353 -0500", hash_original_method = "56179EEEB1BB6D253C6C82DD4DB81ED5", hash_generated_method = "18CE5E3E77DB977F3B95FE9B38EC4A03")
     
 public boolean hasAnchoringBounds() {
@@ -679,6 +731,8 @@ public boolean hasAnchoringBounds() {
      *            the new value for transparent bounds.
      * @return the {@code Matcher} itself.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.355 -0500", hash_original_method = "EB1ABBA9A1AC428A5376D92D0ECDDD75", hash_generated_method = "B08B3A0DADC6C8E514CD9EA0934E24A9")
     
 public Matcher useTransparentBounds(boolean value) {
@@ -694,6 +748,8 @@ public Matcher useTransparentBounds(boolean value) {
      * @throws IllegalStateException
      *             if no successful match has been made.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.358 -0500", hash_original_method = "62DD7ED3C887DF9CAF781EDBA38B8A50", hash_generated_method = "29C7770F294FC656D07D466B02A78774")
     
 private void ensureMatch() {
@@ -710,6 +766,8 @@ private void ensureMatch() {
      *
      * @return true if (and only if) the {@code Matcher} uses anchoring bounds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.360 -0500", hash_original_method = "935CF82B5FBC95B795356ABD430E53CE", hash_generated_method = "CEFB23A880BD8E7601151C5A26A2B60A")
     
 public boolean hasTransparentBounds() {
@@ -751,6 +809,8 @@ public int regionEnd() {
      * @return true if (and only if) more input might change a successful match
      *         into an unsuccessful one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.367 -0500", hash_original_method = "6469C197EE58C69EE809CEC9FEDF2877", hash_generated_method = "26DA4060817535BC8379662FF9821E13")
     
 public boolean requireEnd() {
@@ -762,12 +822,16 @@ public boolean requireEnd() {
      *
      * @return true if (and only if) the last match hit the end of the input.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.369 -0500", hash_original_method = "EDB1A66CB81652E7B35BD52D60EF4E40", hash_generated_method = "E10AC36B7BD8F6B478BBAF24D7AE3276")
     
 public boolean hitEnd() {
         return hitEndImpl(address);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.372 -0500", hash_original_method = "40BF36D36128D4529051C108E3BC0352", hash_generated_method = "46D41D65869DB995C823889BE4DFB5A5")
     
 @Override protected void finalize() throws Throwable {

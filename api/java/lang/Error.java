@@ -13,6 +13,8 @@ public class Error extends Throwable {
     /**
      * Constructs a new {@code Error} that includes the current stack trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.159 -0500", hash_original_method = "7D5BF5C7538ED3BFC2F69913B33169E2", hash_generated_method = "6D0C6454BB9469EF1C0429926C620B4F")
     
 public Error() {
@@ -42,6 +44,8 @@ public Error(String detailMessage) {
      * @param throwable
      *            the cause of this error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.165 -0500", hash_original_method = "66AA244741442CFF9E9D4A286C858491", hash_generated_method = "86EF41D4B1FADF17B10BB3876C7BF584")
     
 public Error(String detailMessage, Throwable throwable) {
@@ -55,6 +59,8 @@ public Error(String detailMessage, Throwable throwable) {
      * @param throwable
      *            the cause of this error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.168 -0500", hash_original_method = "4F891171DD00932FF603BE77BF813093", hash_generated_method = "A653D91049E5B51F33565FEFBC98BB1E")
     
 public Error(Throwable throwable) {

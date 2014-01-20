@@ -49,6 +49,8 @@ public byte[] toByteArray() {
      *
      * @param bits additional bits to be accommodated
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.022 -0500", hash_original_method = "85E3B4FCCAFED594AE8716A3280C8E01", hash_generated_method = "5102FE82D016AAF05DE0178E966BD666")
     
 private void possExpand(int bits) {

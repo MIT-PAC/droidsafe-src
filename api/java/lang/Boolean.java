@@ -15,6 +15,8 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.843 -0500", hash_original_method = "B3A70AF2DF8E93CED801D9C24A07FA78", hash_generated_method = "52DBC9C2C80935547BDAD01A5C55773E")
     
 public static int compare(boolean lhs, boolean rhs) {
@@ -32,6 +34,8 @@ public static int compare(boolean lhs, boolean rhs) {
      *         comparison, {@code false} otherwise.
      * @see System#getProperty(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.850 -0500", hash_original_method = "E88CDE1BFD10E217DE82EEF79E0E2CED", hash_generated_method = "ADCC75F930DEC79F7EEB42F15EEABB2B")
     
 public static boolean getBoolean(String string) {
@@ -144,6 +148,8 @@ public static Boolean valueOf(boolean b) {
      * @param string
      *            the string representing a boolean value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.829 -0500", hash_original_method = "16D96B4E7F901C7B1D5828A237ACCAC7", hash_generated_method = "BC59887BA943C2D4D49A4AD30A7E111C")
     
 public Boolean(String string) {

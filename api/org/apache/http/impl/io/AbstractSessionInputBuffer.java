@@ -150,6 +150,8 @@ public int read(final byte[] b) throws IOException {
         return read(b, 0, b.length);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.903 -0500", hash_original_method = "25E4831B40662E7C69D1371A042407AC", hash_generated_method = "46B003EDF5AB4CB2C6B031CA7531D9F7")
     
 private int locateLF() {

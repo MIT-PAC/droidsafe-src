@@ -12,11 +12,6 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.DERSet;
 
-
-
-
-
-
 public class RDN extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.644 -0500", hash_original_method = "7D890349CF7796BE43E218B30EC245DF", hash_generated_method = "67356EBF15BC4F825F7E5C92B7EB0FD9")
@@ -38,6 +33,8 @@ public static RDN getInstance(Object obj)
 
     private ASN1Set values;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.641 -0500", hash_original_method = "B2B65A892B577B3023594DECDAE0C7BC", hash_generated_method = "A2A80CEE22C6315FE34647E5E45FDA87")
     
 private RDN(ASN1Set values)
@@ -130,7 +127,6 @@ public DERObject toASN1Object()
     {
         return values;
     }
-
     
 }
 

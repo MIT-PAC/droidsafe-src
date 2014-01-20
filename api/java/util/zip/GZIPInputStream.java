@@ -161,6 +161,8 @@ public GZIPInputStream(InputStream is, int size) throws IOException {
         return bytesRead;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.669 -0500", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "8C3AD726F1F3E6CDDABB7FC7BFC4171A")
     
 private void verifyCrc() throws IOException {
@@ -181,6 +183,8 @@ private void verifyCrc() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.671 -0500", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "CC43A6B9AB766388B022EC0324861731")
     
 private void readFully(byte[] buffer, int offset, int length) throws IOException {
@@ -195,6 +199,8 @@ private void readFully(byte[] buffer, int offset, int length) throws IOException
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.674 -0500", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "B001FE4DE62E99E6040B8044D96F693E")
     
 private void readZeroTerminated(boolean hcrc) throws IOException {

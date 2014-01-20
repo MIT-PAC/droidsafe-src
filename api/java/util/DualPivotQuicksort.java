@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 final class DualPivotQuicksort {
 
     /*
@@ -56,6 +52,8 @@ public static void sort(int[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.363 -0500", hash_original_method = "DE2F13AFC7540F73FF05BA40E9B31AF8", hash_generated_method = "624308ED8D4B36134BA69A0A6AEEEE65")
     
 private static void doSort(int[] a, int left, int right) {
@@ -82,6 +80,8 @@ private static void doSort(int[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.369 -0500", hash_original_method = "7E78CD90ED1E9E863DE97D11ACED21F6", hash_generated_method = "8C48F897F798B01DF3D2D717DB4F52C6")
     
 private static void dualPivotQuicksort(int[] a, int left, int right) {
@@ -342,6 +342,8 @@ public static void sort(long[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.378 -0500", hash_original_method = "57217C9A49FB585063B45B1F237ED223", hash_generated_method = "EBC178C42238810C4AF0C5A5C0490259")
     
 private static void doSort(long[] a, int left, int right) {
@@ -368,6 +370,8 @@ private static void doSort(long[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.383 -0500", hash_original_method = "FB7B04B697C4CD5C2E52C66D10F38E7C", hash_generated_method = "B9BECCC653C69893690A16B8DB132B22")
     
 private static void dualPivotQuicksort(long[] a, int left, int right) {
@@ -628,6 +632,8 @@ public static void sort(short[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.395 -0500", hash_original_method = "6AE68DF80A8FE2CB0DCFB68F6A59F77D", hash_generated_method = "571151D5767C0FC3C71BAA18E02C0707")
     
 private static void doSort(short[] a, int left, int right) {
@@ -668,6 +674,8 @@ private static void doSort(short[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.400 -0500", hash_original_method = "C7C89EDE88EEEE9F63E963A5E9C3FEE9", hash_generated_method = "B8B764751BE0250B937971F01AE9FE8D")
     
 private static void dualPivotQuicksort(short[] a, int left, int right) {
@@ -928,6 +936,8 @@ public static void sort(char[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.413 -0500", hash_original_method = "909B15FA5BF6E7570D2E31DE88123D65", hash_generated_method = "DA52F21B79453835FE6551667A1B5116")
     
 private static void doSort(char[] a, int left, int right) {
@@ -966,6 +976,8 @@ private static void doSort(char[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.418 -0500", hash_original_method = "955F0BB80223C58E153B47499A5DD4B3", hash_generated_method = "FDD563AA40ECE31E69BC2E5E22861B16")
     
 private static void dualPivotQuicksort(char[] a, int left, int right) {
@@ -1226,6 +1238,8 @@ public static void sort(byte[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.430 -0500", hash_original_method = "A1C3CF7FD1EE08825F2123508F5A4D77", hash_generated_method = "B3BEDF731DCA92AE219DA076178656D5")
     
 private static void doSort(byte[] a, int left, int right) {
@@ -1266,6 +1280,8 @@ private static void doSort(byte[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.436 -0500", hash_original_method = "385DB8898AF9AC13D75FFFA3464F288D", hash_generated_method = "57E81833D69AF69EB95FF82F92A7308E")
     
 private static void dualPivotQuicksort(byte[] a, int left, int right) {
@@ -1542,6 +1558,8 @@ public static void sort(float[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.444 -0500", hash_original_method = "08E74107BBE5A1309F25A73146E73583", hash_generated_method = "A2BB16061B6FD08D6C44AACDF4AA6D2C")
     
 private static void sortNegZeroAndNaN(float[] a, int left, int right) {
@@ -1597,6 +1615,8 @@ private static void sortNegZeroAndNaN(float[] a, int left, int right) {
      * @param low the index of the first element, inclusive, to be searched
      * @param high the index of the last element, inclusive, to be searched
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.448 -0500", hash_original_method = "4B96477BBB4E18CCF7F5B12A49CDFC2A", hash_generated_method = "BC8C3B5543D293ACEC988CEA8B3F1359")
     
 private static int findAnyZero(float[] a, int low, int high) {
@@ -1625,6 +1645,8 @@ private static int findAnyZero(float[] a, int low, int high) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.451 -0500", hash_original_method = "8B9253591CB3778BA3235DBD1965402C", hash_generated_method = "7E7B7653D9006713B36B4C18A0C52E31")
     
 private static void doSort(float[] a, int left, int right) {
@@ -1651,6 +1673,8 @@ private static void doSort(float[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.457 -0500", hash_original_method = "87F4CF9B4558729C608B779F834C4D2A", hash_generated_method = "C11DC780A9FA5D5DD147BBB9BA9688DC")
     
 private static void dualPivotQuicksort(float[] a, int left, int right) {
@@ -1927,6 +1951,8 @@ public static void sort(double[] a, int fromIndex, int toIndex) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.466 -0500", hash_original_method = "A36ED475DD13515BBDA234F6686CB7DD", hash_generated_method = "F5D54E52EA3A4E6A0F3922B994C6BD95")
     
 private static void sortNegZeroAndNaN(double[] a, int left, int right) {
@@ -1982,6 +2008,8 @@ private static void sortNegZeroAndNaN(double[] a, int left, int right) {
      * @param low the index of the first element, inclusive, to be searched
      * @param high the index of the last element, inclusive, to be searched
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.469 -0500", hash_original_method = "586B8F3F36F41AEEA37D2D7C84643BDD", hash_generated_method = "86E2CB6863C9F186FD4556610E97B0D6")
     
 private static int findAnyZero(double[] a, int low, int high) {
@@ -2010,6 +2038,8 @@ private static int findAnyZero(double[] a, int low, int high) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.472 -0500", hash_original_method = "A69F91768E9AEC9D49249CE97937E948", hash_generated_method = "6B2B6592134553BD7A946B6816052A9C")
     
 private static void doSort(double[] a, int left, int right) {
@@ -2036,6 +2066,8 @@ private static void doSort(double[] a, int left, int right) {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.477 -0500", hash_original_method = "2098CB9502FC347E6CEF0B39981B1FB6", hash_generated_method = "F5FCAF9BD5CA5DB34A9139FFD115ABDC")
     
 private static void dualPivotQuicksort(double[] a, int left, int right) {
@@ -2256,7 +2288,6 @@ private static void dualPivotQuicksort(double[] a, int left, int right) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.349 -0500", hash_original_field = "1161DDF926E92097F713C6A620F3FBEF", hash_generated_field = "69F1559DEF8EAE4C7B8144E76EB36B2D")
 
-
     /**
      * If the length of an array to be sorted is less than this
      * constant, insertion sort is used in preference to Quicksort.
@@ -2281,6 +2312,8 @@ private static void dualPivotQuicksort(double[] a, int left, int right) {
     /**
      * Prevents instantiation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.347 -0500", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "BE224B666802DAA9D4B75F867770010D")
     
 private DualPivotQuicksort() {}

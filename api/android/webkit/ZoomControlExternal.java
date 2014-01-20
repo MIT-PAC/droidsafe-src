@@ -13,10 +13,6 @@ import android.view.ViewConfiguration;
 import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
 
-
-
-
-
 class ZoomControlExternal implements ZoomControlBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.297 -0500", hash_original_field = "AEDAEBF925ADC218E8CB884C12FDE1B4", hash_generated_field = "4E2B5D96681EAE0558B94E904BDAC5D9")
 
@@ -32,7 +28,6 @@ class ZoomControlExternal implements ZoomControlBase {
 
     private final Handler mPrivateHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.305 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
-
 
     private  WebView mWebView;
 
@@ -102,11 +97,9 @@ public ExtendedZoomControls getControls() {
         }
         return mZoomControls;
     }
-
     
     private static class ExtendedZoomControls extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.334 -0500", hash_original_field = "AE6319379138C6582D5D75BCD3D59137", hash_generated_field = "ED36E8FC67260592E9DD391B877393D2")
-
 
         private android.widget.ZoomControls mPlusMinusZoomControls;
 
@@ -136,6 +129,8 @@ public void hide() {
             fade(View.GONE, 1.0f, 0.0f);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.344 -0500", hash_original_method = "9BED0A47A1FCF93930F77C8CDDC09D0D", hash_generated_method = "5E0237000E83E41CCCE02FCD67078FC1")
         
 private void fade(int visibility, float startAlpha, float endAlpha) {
@@ -162,7 +157,6 @@ public void setOnZoomInClickListener(OnClickListener listener) {
 public void setOnZoomOutClickListener(OnClickListener listener) {
             mPlusMinusZoomControls.setOnZoomOutClickListener(listener);
         }
-
         
     }
 

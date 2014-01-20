@@ -306,6 +306,8 @@ public Preference findPreference(CharSequence key) {
         return mPreferenceManager.findPreference(key);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.229 -0500", hash_original_method = "F3FAECD811389BDC2E843E71360C928C", hash_generated_method = "42EB90D01781D305D22E5F31ACB2EE42")
     
 private void requirePreferenceManager() {
@@ -314,6 +316,8 @@ private void requirePreferenceManager() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.232 -0500", hash_original_method = "6C1825C42631AE6FCE57D0240C5D762E", hash_generated_method = "C0A2F3211F41F689D452EE09981B4771")
     
 private void postBindPreferences() {
@@ -326,6 +330,8 @@ private void postBindPreferences() {
         boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.234 -0500", hash_original_method = "C0B8E456E30D2EFCEB5004C31E6B868F", hash_generated_method = "77A0E3F00D3808F2C6BDF00858B78A99")
     
 private void bindPreferences() {
@@ -344,6 +350,8 @@ public ListView getListView() {
         return mList;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.239 -0500", hash_original_method = "E40145CD20E8491E945AD408A8CD6C13", hash_generated_method = "FF0338F45E6C4DA03F84E9FCA3AB21D0")
     
 private void ensureList() {

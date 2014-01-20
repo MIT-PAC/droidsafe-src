@@ -332,6 +332,8 @@ public static TextEncodingDetails calculateLength(CharSequence messageBody,
      * binder-call, and hence should be thread-safe, it has been
      * synchronized.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.847 -0500", hash_original_method = "B1ECCC301AA91188E5EEB90EE18562E0", hash_generated_method = "A3F46B2E5D7E5D6512D9983CE5F52EC9")
     
@@ -610,7 +612,9 @@ public boolean isReplyPathPresent() {
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#TELESERVICE_VMN},
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#TELESERVICE_WAP}
     */
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.826 -0500", hash_original_method = "BA17728EC06E4E9670ACA616D9E29C12", hash_generated_method = "BA17728EC06E4E9670ACA616D9E29C12")
     
 int getTeleService() {
@@ -624,7 +628,9 @@ int getTeleService() {
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#MESSAGE_TYPE_BROADCAST},
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#MESSAGE_TYPE_ACKNOWLEDGE},
     */
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.828 -0500", hash_original_method = "1BE3451C0D43919E5115D33DA4A62DB3", hash_generated_method = "1BE3451C0D43919E5115D33DA4A62DB3")
     
 int getMessageType() {
@@ -637,6 +643,8 @@ int getMessageType() {
      * of the SMS Java-object.
      * @see #createPdu()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.832 -0500", hash_original_method = "CD6FB45A1A4A8300476A32D9A94A5A2D", hash_generated_method = "267E465882A299B4FD631D6D40CF5E7E")
     
 private void parsePdu(byte[] pdu) {
@@ -689,6 +697,8 @@ private void parsePdu(byte[] pdu) {
     /**
      * Decodes 3GPP2 sms stored in CSIM/RUIM cards As per 3GPP2 C.S0015-0
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.837 -0500", hash_original_method = "4600019E789700BB681DB9CDCB53078A", hash_generated_method = "DB4BEEDC695F7A1D0A1EFB737C359D83")
     
 private void parsePduFromEfRecord(byte[] pdu) {
@@ -916,6 +926,8 @@ public MessageClass getMessageClass() {
      * Creates byte array (pseudo pdu) from SMS object.
      * Note: Do not call this method more than once per object!
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.853 -0500", hash_original_method = "D3C9920CEA488FFF412D7F8E3FE64835", hash_generated_method = "1112B3A261238B6BEC43636417F4DA7A")
     
 private void createPdu() {
@@ -963,6 +975,8 @@ private void createPdu() {
     /**
      * Converts a 4-Bit DTMF encoded symbol from the calling address number to ASCII character
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.857 -0500", hash_original_method = "A11C498F23B8370C7C5D04AE2A0C173A", hash_generated_method = "F3C11577317FE8B59675FBC5C5FEBB98")
     
 private byte convertDtmfToAscii(byte dtmfDigit) {
@@ -996,7 +1010,9 @@ private byte convertDtmfToAscii(byte dtmfDigit) {
     /** This function  shall be called to get the number of voicemails.
      * @hide
      */
-    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.859 -0500", hash_original_method = "D8D3E4C6269124C18E32B3734994B647", hash_generated_method = "D8D3E4C6269124C18E32B3734994B647")
     
 int getNumOfVoicemails() {
@@ -1010,7 +1026,9 @@ int getNumOfVoicemails() {
      * @return byte array uniquely identifying the message.
      * @hide
      */
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.861 -0500", hash_original_method = "ECE8D39C64EEB1FB74B915B4B0882D92", hash_generated_method = "ECE8D39C64EEB1FB74B915B4B0882D92")
     
 byte[] getIncomingSmsFingerprint() {

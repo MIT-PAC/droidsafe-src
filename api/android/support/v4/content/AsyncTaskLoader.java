@@ -14,8 +14,6 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.util.TimeUtils;
 
-
-
 public abstract class AsyncTaskLoader<D> extends Loader<D> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.754 -0500", hash_original_field = "F240A5C69F8AA9B45906194AB2ADEC92", hash_generated_field = "E2B79C20584722CC23AA6431B7343097")
 
@@ -25,13 +23,11 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.780 -0500", hash_original_field = "0D8054BDEEA0AA0CC72AD8EB23D29AE2", hash_generated_field = "5C3107BBF367803569D0AB8A39076D22")
 
-
     volatile LoadTask mTask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.782 -0500", hash_original_field = "3B3013D7772F24F621F8C9729AD8E28A", hash_generated_field = "3D2A32ED16FA4BFF500D2C906E32BFB2")
 
     volatile LoadTask mCancellingTask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.784 -0500", hash_original_field = "0CC16960397661E2A91A0C1245907990", hash_generated_field = "0CC16960397661E2A91A0C1245907990")
-
 
     long mUpdateThrottle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.786 -0500", hash_original_field = "068F47D76DDC530CAC2DF35289A5CFB4", hash_generated_field = "068F47D76DDC530CAC2DF35289A5CFB4")
@@ -136,6 +132,8 @@ public boolean cancelLoad() {
 public void onCanceled(D data) {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.803 -0500", hash_original_method = "DFA4BC3BC4931E8E36EC6E65D042E4CC", hash_generated_method = "7A879335BCECB8C6BA6A80EBA2EA88EB")
     
 void executePendingTask() {
@@ -212,18 +210,15 @@ public abstract D loadInBackground();
 protected D onLoadInBackground() {
         return loadInBackground();
     }
-
     
     final class LoadTask extends ModernAsyncTask<Void, Void, D> implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.759 -0500", hash_original_field = "582B22379A32E8937A90E0545A184CFB", hash_generated_field = "582B22379A32E8937A90E0545A184CFB")
-
 
         D result;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.762 -0500", hash_original_field = "4B5AD997260D6A7F7067C9C9B5D02B34", hash_generated_field = "4B5AD997260D6A7F7067C9C9B5D02B34")
 
         boolean waiting;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.764 -0500", hash_original_field = "09EE2768BAC0B25359CD49866A47E3A0", hash_generated_field = "F0455DF121EFC5ECE22AA733E5351602")
-
 
         private CountDownLatch done = new CountDownLatch(1);
         
@@ -276,7 +271,6 @@ protected D onLoadInBackground() {
             waiting = false;
             AsyncTaskLoader.this.executePendingTask();
         }
-
         
     }
 

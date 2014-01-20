@@ -290,12 +290,16 @@ public WebBackForwardList getBackForwardList() {
         return mBackForwardList;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.306 -0500", hash_original_method = "69271AEE54C61C015B6B50CD212FE110", hash_generated_method = "69271AEE54C61C015B6B50CD212FE110")
     
 void setWebBackForwardListClient(WebBackForwardListClient client) {
         mWebBackForwardListClient = client;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.308 -0500", hash_original_method = "32023A06CFA84B93B3A0030ADE6E4A41", hash_generated_method = "32023A06CFA84B93B3A0030ADE6E4A41")
     
@@ -1033,12 +1037,16 @@ public Uri getResult() {
     /**
      * Called by WebCore side to switch out of history Picture drawing mode
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.365 -0500", hash_original_method = "ADEA75F6BB5426452E05F86965232852", hash_generated_method = "ADEA75F6BB5426452E05F86965232852")
     
 void switchOutDrawHistory() {
         sendMessage(obtainMessage(SWITCH_OUT_HISTORY));
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.836 -0400", hash_original_method = "2F62F4E531DE0AF4C82D66205801E78A", hash_generated_method = "239292A03E2A1C8071CF2D7C707703DE")
     private String getJsDialogTitle(String url) {
         addTaint(url.getTaint());
@@ -1297,6 +1305,8 @@ public void doUpdateVisitedHistory(String url, boolean isReload) {
         sendMessage(obtainMessage(UPDATE_VISITED, isReload ? 1 : 0, 0, url));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.406 -0500", hash_original_method = "E95ED4984215917AB442D7D69416BDAD", hash_generated_method = "84D2EF311938B67022B57B3805091121")
     
 WebResourceResponse shouldInterceptRequest(String url) {
@@ -1339,6 +1349,8 @@ public void onScaleChanged(float oldScale, float newScale) {
         sendMessage(msg);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.412 -0500", hash_original_method = "96CFDF49B56568DC278F123893B1481C", hash_generated_method = "B8B064A8FB5EC16B2D709389F7F5BC3A")
     
@@ -1537,7 +1549,9 @@ public void onReceivedIcon(Bitmap icon) {
         sendMessage(obtainMessage(RECEIVED_ICON, icon));
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.435 -0500", hash_original_method = "F0350B43E0ECCB1BDA5D312CA7F06F8A", hash_generated_method = "D638516BC3AA29793275AE2A3368BEC4")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.435 -0500", hash_original_method = "F0350B43E0ECCB1BDA5D312CA7F06F8A", hash_generated_method = "D638516BC3AA29793275AE2A3368BEC4")
     
 void onReceivedTouchIconUrl(String url, boolean precomposed) {
         // We should have a current item but we do not want to crash so check
@@ -1834,7 +1848,9 @@ public void getVisitedHistory(ValueCallback<String[]> callback) {
     /**
      * Called by WebViewCore to open a file chooser.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.491 -0500", hash_original_method = "FE04684AB3D72B8C190BB2063ADDA47F", hash_generated_method = "FE04684AB3D72B8C190BB2063ADDA47F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.491 -0500", hash_original_method = "FE04684AB3D72B8C190BB2063ADDA47F", hash_generated_method = "FE04684AB3D72B8C190BB2063ADDA47F")
     
 Uri openFileChooser(String acceptType) {
         if (mWebChromeClient == null) {
@@ -1857,6 +1873,8 @@ Uri openFileChooser(String acceptType) {
         return uploadFile.getResult();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.493 -0500", hash_original_method = "047BE1D111CE2C04D81802E658F23AB3", hash_generated_method = "047BE1D111CE2C04D81802E658F23AB3")
     
 void onNewHistoryItem(WebHistoryItem item) {
@@ -1867,6 +1885,8 @@ void onNewHistoryItem(WebHistoryItem item) {
         sendMessage(msg);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.496 -0500", hash_original_method = "895FE5553DA6237DB0B5BAA6BAF66947", hash_generated_method = "895FE5553DA6237DB0B5BAA6BAF66947")
     
 void onIndexChanged(WebHistoryItem item, int index) {
@@ -1877,6 +1897,8 @@ void onIndexChanged(WebHistoryItem item, int index) {
         sendMessage(msg);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.498 -0500", hash_original_method = "8F94850AD3F63EF799E6BEFB2C67734D", hash_generated_method = "8F94850AD3F63EF799E6BEFB2C67734D")
     
 void setInstallableWebApp() {
@@ -1886,6 +1908,8 @@ void setInstallableWebApp() {
         sendMessage(obtainMessage(SET_INSTALLABLE_WEBAPP));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.500 -0500", hash_original_method = "8DF8998B34FE58BC5486ECCDB22BE44D", hash_generated_method = "14A5D5E98155DB5FF55FAF4A6FE1707E")
     
 boolean canShowAlertDialog() {
@@ -1898,6 +1922,8 @@ boolean canShowAlertDialog() {
         return mContext instanceof Activity;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.502 -0500", hash_original_method = "C20FB9F0C31604564B2DC30DE7E0C643", hash_generated_method = "C20FB9F0C31604564B2DC30DE7E0C643")
     
 void onSearchboxSuggestionsReceived(String query, List<String> suggestions) {
@@ -1908,6 +1934,8 @@ void onSearchboxSuggestionsReceived(String query, List<String> suggestions) {
         sendMessage(msg);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.504 -0500", hash_original_method = "350C274DFDDA43015C8C93D9651125A1", hash_generated_method = "350C274DFDDA43015C8C93D9651125A1")
     
 void onIsSupportedCallback(boolean isSupported) {
@@ -1916,6 +1944,8 @@ void onIsSupportedCallback(boolean isSupported) {
         sendMessage(msg);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.506 -0500", hash_original_method = "18679CF45F0FBF6C3076A4EAE4B01ADE", hash_generated_method = "18679CF45F0FBF6C3076A4EAE4B01ADE")
     
 void onSearchboxDispatchCompleteCallback(String function, int id, boolean success) {

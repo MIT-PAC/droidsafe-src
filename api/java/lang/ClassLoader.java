@@ -24,6 +24,8 @@ public abstract class ClassLoader {
      * loader (which is managed by the VM). We use a null value for the parent
      * to indicate that the bootstrap loader is our parent.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.698 -0500", hash_original_method = "68A1F8E40482E8D5899E0A36610D7F57", hash_generated_method = "8DF30F2216A35375468497DB19BD60B0")
     
 private static ClassLoader createSystemClassLoader() {
@@ -149,6 +151,8 @@ protected ClassLoader(ClassLoader parentLoader) {
     /*
      * constructor for the BootClassLoader which needs parent to be null.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.718 -0500", hash_original_method = "B3E4E8C3A704386E61A8D58325A9E2B7", hash_generated_method = "B3E4E8C3A704386E61A8D58325A9E2B7")
     
 ClassLoader(ClassLoader parentLoader, boolean nullAllowed) {
@@ -745,6 +749,8 @@ public void clearAssertionStatus() {
 
         public static ClassLoader loader = ClassLoader.createSystemClassLoader();
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D", hash_generated_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D")
         public SystemClassLoader ()
         {

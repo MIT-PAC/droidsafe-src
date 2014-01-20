@@ -518,6 +518,8 @@ public void setMenu(Menu menu, MenuPresenter.Callback cb) {
         mMenuView = menuView;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.499 -0500", hash_original_method = "962CA6D106A54FF8005566B234E49437", hash_generated_method = "6E927733FD5FEC9041391C74480F71E2")
     
 private void configPresenters(MenuBuilder builder) {
@@ -596,6 +598,8 @@ public void setWindowTitle(CharSequence title) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.515 -0500", hash_original_method = "CA4194BA53EDB0AC58DD1582B0D957BD", hash_generated_method = "6D6C733A34F59C16E124C6E8DD2AE9FF")
     
 private void setTitleImpl(CharSequence title) {
@@ -878,6 +882,8 @@ public int getDisplayOptions() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.564 -0500", hash_original_method = "CF8F187E9CF2FA51D65633927C0BE8F6", hash_generated_method = "1323BBE5C2CB556764AF69F171BAF855")
     
 private void initTitle() {
@@ -1298,12 +1304,16 @@ public boolean isCollapsed() {
 
         boolean isOverflowOpen;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.603 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
         
 SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.606 -0500", hash_original_method = "D55BB2752CF51EBBB8F6639920409E43", hash_generated_method = "10724B7B96A85ADDB7EE54601CAFE7CB")
         
 private SavedState(Parcel in) {

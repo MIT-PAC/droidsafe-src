@@ -16,6 +16,8 @@ import android.util.Log;
 
 public final class BluetoothHealth implements BluetoothProfile {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.246 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
     
 private static void log(String msg) {
@@ -464,12 +466,16 @@ public ParcelFileDescriptor getMainChannelFd(BluetoothDevice device,
         return new ArrayList<BluetoothDevice>();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.236 -0500", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "D3BF3BAE58FFF66435185BE94948ED76")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.236 -0500", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "D3BF3BAE58FFF66435185BE94948ED76")
     
 void close() {
         mServiceListener = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.239 -0500", hash_original_method = "917CCC75EC61E4A55AAE92F70BBDD3C7", hash_generated_method = "3C20B763EDAB1AFD5E134C4D6FAE8BB7")
     
 private boolean isEnabled() {
@@ -480,6 +486,8 @@ private boolean isEnabled() {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.241 -0500", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "3EEE3A9E12DCA4A453C7F11E3F959C9B")
     
 private boolean isValidDevice(BluetoothDevice device) {
@@ -489,6 +497,8 @@ private boolean isValidDevice(BluetoothDevice device) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.244 -0500", hash_original_method = "55A0A269422935E819E2C55F9C91FE5D", hash_generated_method = "3A065E3214F6D4990B2C4423C4E9D89F")
     
 private boolean checkAppParam(String name, int role, int channelType,

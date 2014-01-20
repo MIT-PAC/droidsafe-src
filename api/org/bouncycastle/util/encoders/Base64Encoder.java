@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class Base64Encoder implements Encoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.752 -0500", hash_original_field = "7D8F2FE1CCEB256677F2F8E9B55EA9C3", hash_generated_field = "477367DCA11A991FB18CE4EB6F2C01EF")
 
@@ -31,7 +26,6 @@ public class Base64Encoder implements Encoder {
             (byte)'+', (byte)'/'
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.754 -0500", hash_original_field = "964DEF16619AEC1A1F52C43393D47E4E", hash_generated_field = "6470484C1DBA83A435D7A06D16D20315")
-
 
     protected byte    padding = (byte)'=';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.757 -0500", hash_original_field = "7BCD267FFEC083ECBC844975547427DE", hash_generated_field = "C5A9E5FA83A75FCB14FF277263CBAED5")
@@ -123,6 +117,8 @@ public int encode(
         return (dataLength / 3) * 4 + ((modulus == 0) ? 0 : 4);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.767 -0500", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "60BA6438BF0D7F2A1A9CF731E65332DE")
     
 private boolean ignore(
@@ -196,6 +192,8 @@ public int decode(
         return outLen;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.773 -0500", hash_original_method = "1225BA5A886EEC007862013ADD842450", hash_generated_method = "37957A74CE8A40AAEB855AC2EA497CE3")
     
 private int nextI(byte[] data, int i, int finish)
@@ -270,6 +268,8 @@ public int decode(
         return length;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.779 -0500", hash_original_method = "9E52D5CA91DB497317BE2B1E69827671", hash_generated_method = "B4F5DB34AA16E31D3C680C912806CC93")
     
 private int decodeLastBlock(OutputStream out, char c1, char c2, char c3, char c4) 
@@ -312,6 +312,8 @@ private int decodeLastBlock(OutputStream out, char c1, char c2, char c3, char c4
         } 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.781 -0500", hash_original_method = "4A002F2B2C5A42BB007C07A5E9BC2D50", hash_generated_method = "34DC841B1744328FA68084198AF9D2F3")
     
 private int nextI(String data, int i, int finish)
@@ -322,7 +324,6 @@ private int nextI(String data, int i, int finish)
         }
         return i;
     }
-
     
 }
 

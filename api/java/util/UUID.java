@@ -62,6 +62,8 @@ public static UUID nameUUIDFromBytes(byte[] name) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.044 -0500", hash_original_method = "9E98E00BE8824DAD14A3C091F30213C3", hash_generated_method = "AD54A954ABC3BE59A4B71DACEFCE0467")
     
 private static UUID makeUuid(byte[] hash, int version) {
@@ -179,6 +181,8 @@ public UUID(long mostSigBits, long leastSigBits) {
      * Sets up the transient fields of this instance based on the current values
      * of the {@code mostSigBits} and {@code leastSigBits} fields.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.036 -0500", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "06EC0B1949340F2A3EB7AF13AF6BBD5C")
     
 private void init() {
@@ -485,6 +489,8 @@ public int compareTo(UUID uuid) {
      * @throws ClassNotFoundException
      *             if {@code in} throws it.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.078 -0500", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "AE005D9470B3BE63E266195D5DB3C857")
     
 private void readObject(ObjectInputStream in) throws IOException,

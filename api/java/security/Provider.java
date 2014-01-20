@@ -203,6 +203,8 @@ public String getInfo() {
         myPutAll(t);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.559 -0500", hash_original_method = "F898BA9F30F0CED7EAABA59AE5C4F6F9", hash_generated_method = "E6B8AC8931D35A85ED90712FC4BC5FC1")
     
 private void myPutAll(Map<?,?> t) {
@@ -334,6 +336,8 @@ private void myPutAll(Map<?,?> t) {
      *            The attribute value.
      * @return
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.575 -0500", hash_original_method = "73ADEB588A693290C2EBE420EE1B60DD", hash_generated_method = "73ADEB588A693290C2EBE420EE1B60DD")
     
 boolean implementsAlg(String serv, String alg, String attribute, String val) {
@@ -359,6 +363,8 @@ boolean implementsAlg(String serv, String alg, String attribute, String val) {
      * Returns true if this provider has the same value as is given for the
      * given attribute
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.579 -0500", hash_original_method = "205FEBDC4595F3CAF3DB8C26A01A3B21", hash_generated_method = "A183CBD9E1CF30868F2BB1F12CE4231F")
     
 private boolean checkAttribute(String servAlg, String attribute, String val) {
@@ -384,6 +390,8 @@ private boolean checkAttribute(String servAlg, String attribute, String val) {
      *
      * @param n
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.581 -0500", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "6418C82159D4FAB251CB16B6C408D61D")
     
 void setProviderNumber(int n) {
@@ -396,6 +404,8 @@ void setProviderNumber(int n) {
      *
      * @return
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.583 -0500", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "6209D7B36FBC76163C52BAAF1CE53C35")
     
@@ -615,6 +625,8 @@ private void serviceInfoFromProperties(Provider.Service s) {
     }
 
     // Remove property information from provider Services
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.607 -0500", hash_original_method = "C88E49400116B5906A9CAC0E8D20528B", hash_generated_method = "C2B497AAF7C2D27EC7C8F2192303ED71")
     
 private void removeFromPropertyServiceTable(Object key) {
@@ -687,6 +699,8 @@ private void removeFromPropertyServiceTable(Object key) {
     }
 
     // Update provider Services if the properties was changed
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.612 -0500", hash_original_method = "C12B51396475B7F4EF23B74D619C33FD", hash_generated_method = "8B9158D5624B40A3A7946D1814E13306")
     
 private void updatePropertyServiceTable() {
@@ -813,6 +827,8 @@ private void updatePropertyServiceTable() {
         changedProperties = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.615 -0500", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "50491896FAEB0E038FDF5FAAA30D570E")
     
 private void servicesChanged() {
@@ -826,6 +842,8 @@ private void servicesChanged() {
      * Provider.id name, Provider.id version, Provider.id info,
      * Provider.id className
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.617 -0500", hash_original_method = "768CFC89B63FD1F782E3758D2BCFC6C0", hash_generated_method = "5015F2E16C69CBCFCDD551A44B3B427A")
     
 private void putProviderInfo() {
@@ -839,6 +857,8 @@ private void putProviderInfo() {
      * Returns the property with the specified key in the provider properties.
      * The name is not case-sensitive.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.620 -0500", hash_original_method = "62DD35352FE8FA7B38C17798ED376C47", hash_generated_method = "37F9540DCE2170D70E8B0274ECC1D5A1")
     
 private String getPropertyIgnoreCase(String key) {
@@ -928,7 +948,9 @@ public Service(Provider provider, String type, String algorithm,
          *
          * @param alias the alias to add
          */
-        /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.646 -0500", hash_original_method = "4CA8000463C36260BD9C3E4A41E197CE", hash_generated_method = "4CA8000463C36260BD9C3E4A41E197CE")
+        /*package*/ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.646 -0500", hash_original_method = "4CA8000463C36260BD9C3E4A41E197CE", hash_generated_method = "4CA8000463C36260BD9C3E4A41E197CE")
         
 void addAlias(String alias) {
             if ((aliases == null) || (aliases.size() == 0)) {
@@ -943,7 +965,9 @@ void addAlias(String alias) {
          * @param name the attribute name.
          * @param value the attribute value.
          */
-        /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        /*package*/ @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.649 -0500", hash_original_method = "2623207C72797F9950DF9980B680F416", hash_generated_method = "2623207C72797F9950DF9980B680F416")
         
 void putAttribute(String name, String value) {
@@ -1027,6 +1051,8 @@ public final String getAttribute(String name) {
             return attributes.get(name);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.664 -0500", hash_original_method = "7A6F8F40D5019A1C644CF7CAD3518923", hash_generated_method = "7A6F8F40D5019A1C644CF7CAD3518923")
         
@@ -1134,6 +1160,8 @@ public boolean supportsParameter(Object parameter) {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.679 -0500", hash_original_method = "C9BE26B06AA230EA20C77B7F366C53C8", hash_generated_method = "D50942787AE2BFE587FDA0A0E3563B48")
     
 private void readObject(java.io.ObjectInputStream in)

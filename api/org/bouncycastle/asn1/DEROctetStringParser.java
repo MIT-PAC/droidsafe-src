@@ -7,16 +7,13 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 public class DEROctetStringParser implements ASN1OctetStringParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.977 -0500", hash_original_field = "6E873ACD10B938593CC8F8D39D558B83", hash_generated_field = "B52609448A7FFECE6579BC5E2EF825EF")
 
     private DefiniteLengthInputStream stream;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.980 -0500", hash_original_method = "18F90E7C8910F20983A0E830634FAC28", hash_generated_method = "18F90E7C8910F20983A0E830634FAC28")
     
 DEROctetStringParser(
@@ -53,7 +50,6 @@ public DERObject getDERObject()
             throw new ASN1ParsingException("IOException converting stream to byte array: " + e.getMessage(), e);
         }
     }
-
     
 }
 

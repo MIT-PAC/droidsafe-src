@@ -46,6 +46,8 @@ public UnsupportedOperationException(String detailMessage) {
      *            the optional cause of this exception, may be {@code null}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.781 -0500", hash_original_method = "66AB41D7AD796BF9B33430AF2C434F38", hash_generated_method = "92E2257F8052820444C34D6455F4C1F7")
     
 public UnsupportedOperationException(String message, Throwable cause) {
@@ -60,6 +62,8 @@ public UnsupportedOperationException(String message, Throwable cause) {
      *            the optional cause of this exception, may be {@code null}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.784 -0500", hash_original_method = "47724B2BD03E5789FE4A564680099229", hash_generated_method = "EDC641BC2446FD23BB14BBE931583F71")
     
 public UnsupportedOperationException(Throwable cause) {

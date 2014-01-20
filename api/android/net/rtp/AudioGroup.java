@@ -84,6 +84,8 @@ public void setMode(int mode) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.277 -0500", hash_original_method = "49E777EBA85E577A92F07DB5E1A4FF69", hash_generated_method = "5D2B2CD541B48124F75046A904A2B06A")
     
     private void nativeSetMode(int mode){
@@ -92,6 +94,8 @@ public void setMode(int mode) {
     }
 
     // Package-private method used by AudioStream.join().
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.279 -0500", hash_original_method = "91004DD6DF12C73407D3712D3F37E9FF", hash_generated_method = "F14A8129148CE1D154B64A4C9175583B")
     
 synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
@@ -110,6 +114,8 @@ synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.283 -0500", hash_original_method = "779FC85A590DA71DFFB7AE3A48802754", hash_generated_method = "5B6D56C5B51BCDA2F140D86B9F10B1A1")
     
     private void nativeAdd(int mode, int socket, String remoteAddress,
@@ -124,6 +130,8 @@ synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
     }
 
     // Package-private method used by AudioStream.join().
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.285 -0500", hash_original_method = "E79257D576B41A04A93E4BDE1747C69F", hash_generated_method = "E251AC8033A40DE9CD84D9EB4AE47227")
     
 synchronized void remove(AudioStream stream) {
@@ -133,6 +141,8 @@ synchronized void remove(AudioStream stream) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.288 -0500", hash_original_method = "B9A11772A106AE9307E1900F5171D964", hash_generated_method = "6D9CA59C2EE4CC5E96E3A5B9A971967A")
     
     private void nativeRemove(int socket){
@@ -158,6 +168,8 @@ public void sendDtmf(int event) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.294 -0500", hash_original_method = "679235D0DC30313046A01D4FDDB17DEF", hash_generated_method = "FC87FC70DD2069A134CCF357070570B8")
     
     private void nativeSendDtmf(int event){

@@ -281,6 +281,8 @@ public void setListShownNoAnimation(boolean shown) {
      * @param animate If true, an animation will be used to transition to the
      * new state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.102 -0500", hash_original_method = "01D2A62CF5C9E9D8F31EAD95561BA6AA", hash_generated_method = "FED296308C6FFDA511333418D12AFB73")
     
 private void setListShown(boolean shown, boolean animate) {
@@ -329,6 +331,8 @@ public ListAdapter getListAdapter() {
         return mAdapter;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.107 -0500", hash_original_method = "E4157ED141058B6B94474E0556BB8B74", hash_generated_method = "E72A4503B14DFCDFF883C80D15414C67")
     
 private void ensureList() {

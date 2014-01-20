@@ -25,6 +25,8 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 
 abstract class AbstractSessionContext implements SSLSessionContext {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.739 -0500", hash_original_method = "3A6F397C175F2D6C1475AA31D913F50C", hash_generated_method = "C4AF5DE8488C50BF001E56A5628D4AAD")
     
 static void log(Throwable t) {
@@ -65,6 +67,8 @@ static void log(Throwable t) {
      * @param maximumSize of cache
      * @param timeout for cache entries
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.699 -0500", hash_original_method = "B86A9D4A1D1D4BFB528024933586DA07", hash_generated_method = "B86A9D4A1D1D4BFB528024933586DA07")
     
 AbstractSessionContext(int maximumSize, int timeout) {
@@ -75,6 +79,8 @@ AbstractSessionContext(int maximumSize, int timeout) {
     /**
      * Returns the collection of sessions ordered from oldest to newest
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.701 -0500", hash_original_method = "A58241B75AD2B44C3E74E917DCCEF491", hash_generated_method = "215F523582B3EE7C120B8C74154E005E")
     
 private Iterator<SSLSession> sessionIterator() {
@@ -179,6 +185,8 @@ public void setSessionTimeout(int seconds)
      * Called when a session is removed. Used by ClientSessionContext
      * to update its host-and-port based cache.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.724 -0500", hash_original_method = "8412ECD60BBEE2A0ADC657B1AA8071DE", hash_generated_method = "FE93B555E00C0291AAAED04329503CCC")
     
 protected abstract void sessionRemoved(SSLSession session);
@@ -205,6 +213,8 @@ public final void setSessionCacheSize(int size)
      *
      * @return session data as bytes or null if the session can't be converted
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.729 -0500", hash_original_method = "B42ED13DCD08C26044D05FD9CDF469CF", hash_generated_method = "352FEDC8FDC2993B8AFE5D3AE0423841")
     
@@ -252,6 +262,8 @@ byte[] toBytes(SSLSession session) {
      *
      * @return a session or null if the session can't be converted
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.732 -0500", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "1F6A50EAF05C581243DFC8EDF15FF940")
     
 SSLSession toSession(byte[] data, String host, int port) {
@@ -302,6 +314,8 @@ public SSLSession getSession(byte[] sessionId) {
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.737 -0500", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "01E7B06223DFEA7D5DECA9A679FEAED7")
     
 void putSession(SSLSession session) {

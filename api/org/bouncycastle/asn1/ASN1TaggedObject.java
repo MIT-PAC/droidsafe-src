@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedObjectParser {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.126 -0500", hash_original_method = "B10D1DEB1333C8895ED68C0DE4D64E52", hash_generated_method = "CF1AC47EE66EE08B989C6DF373014CD3")
@@ -99,6 +94,8 @@ public ASN1TaggedObject(
         this.obj = obj;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.137 -0500", hash_original_method = "68AE9CCB33F87A12C7FA4AA63E83BFDC", hash_generated_method = "68AE9CCB33F87A12C7FA4AA63E83BFDC")
     
 boolean asn1Equals(
@@ -238,6 +235,8 @@ public DERObject getLoadedObject()
         return this.getDERObject();
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.156 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
     
 abstract void encode(DEROutputStream  out)
@@ -249,7 +248,6 @@ public String toString()
     {
         return "[" + tagNo + "]" + obj;
     }
-
     
 }
 

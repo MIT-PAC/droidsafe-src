@@ -44,6 +44,8 @@ public BulletSpan() {
         mColor = 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.434 -0500", hash_original_method = "5B0962B90C33EFC1A7FAF035AC11CB4A", hash_generated_method = "DCC0611E75A468F49B036F8245862D40")
     
 public BulletSpan(int gapWidth) {
@@ -52,6 +54,8 @@ public BulletSpan(int gapWidth) {
         mColor = 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.437 -0500", hash_original_method = "49E46CCFEED0864DEF606DCF0C6D9BFC", hash_generated_method = "F75D2CB2B47217F24599E10DDB054883")
     
 public BulletSpan(int gapWidth, int color) {
@@ -60,6 +64,8 @@ public BulletSpan(int gapWidth, int color) {
         mColor = color;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.440 -0500", hash_original_method = "2310754227525D5B1AC7AB495FD8FC46", hash_generated_method = "AA101CE43FD01E3C9FBCE775A384975A")
     
 public BulletSpan(Parcel src) {
@@ -68,6 +74,8 @@ public BulletSpan(Parcel src) {
         mColor = src.readInt();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.443 -0500", hash_original_method = "487ABDFFC7C87077FB337ABC7D22F575", hash_generated_method = "72B6C1A2A06ABE6402112AB29A8EF749")
     
@@ -75,12 +83,16 @@ public int getSpanTypeId() {
         return TextUtils.BULLET_SPAN;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.445 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
         return 0;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.448 -0500", hash_original_method = "D1CA1ADAD215DD7AD321DC70F751BAEF", hash_generated_method = "F602A517B3A0569348EEBA59C9862646")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -89,6 +101,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.450 -0500", hash_original_method = "77C9B4F0913BD5D8F7E0CF3C61E7D063", hash_generated_method = "BB904BCEA193FDE2FC14A293DCAFC599")
     
@@ -96,6 +110,8 @@ public int getLeadingMargin(boolean first) {
         return 2 * BULLET_RADIUS + mGapWidth;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.453 -0500", hash_original_method = "BA5CC5CF550A22429CB3793943786FE7", hash_generated_method = "159993227D47817CC7721762EDC7B41E")
     
 public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,

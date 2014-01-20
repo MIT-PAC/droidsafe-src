@@ -35,6 +35,8 @@ public abstract class Handler {
      * {@code ErrorManager}, the default encoding, and the default logging
      * level {@code Level.ALL}. It has no filter and no formatter.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.042 -0500", hash_original_method = "E5C195C4F6A42ED3922A908BC2F6920A", hash_generated_method = "B9DA729A221FCE9BA92D54083EEF491B")
     
 protected Handler() {
@@ -47,6 +49,8 @@ protected Handler() {
     }
 
     // get a instance from given class name, using Class.forName()
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.044 -0500", hash_original_method = "505322F9A2F9CDB1C20F31F6B7CB4718", hash_generated_method = "AE795027D8D6A69AC119A4F2724DD466")
     
 private Object getDefaultInstance(String className) {
@@ -75,6 +79,8 @@ private Object getCustomizeInstance(final String className) throws Exception {
     }
 
     // print error message in some format
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.048 -0500", hash_original_method = "B5D56DC5C4B8FE4C311A48E44264ABBB", hash_generated_method = "B5D56DC5C4B8FE4C311A48E44264ABBB")
     
 void printInvalidPropMessage(String key, String value, Exception e) {
@@ -86,6 +92,8 @@ void printInvalidPropMessage(String key, String value, Exception e) {
      * init the common properties, including filter, level, formatter, and
      * encoding
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.051 -0500", hash_original_method = "329775ED115F17D9C0AB62A79233F4A6", hash_generated_method = "A4988AE51019DA26CFF3114E7614B5A0")
     
 void initProperties(String defaultLevel, String defaultFilter,
@@ -145,6 +153,8 @@ void initProperties(String defaultLevel, String defaultFilter,
      * associated resources will be freed. Client applications should not use
      * this handler after closing it.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.053 -0500", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "01CBB4D2860961B039FF408E6402870A")
     
 public abstract void close();
@@ -152,6 +162,8 @@ public abstract void close();
     /**
      * Flushes any buffered output.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.056 -0500", hash_original_method = "7DF46C8DE5607DCFD7FF19DAD73048C8", hash_generated_method = "5C061C799C43604AD9581B5D5FEA838D")
     
 public abstract void flush();
@@ -162,6 +174,8 @@ public abstract void flush();
      * @param record
      *            the log record to be logged; {@code null} records are ignored.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.059 -0500", hash_original_method = "E7251C97AA1B6AEB0AABBC157B4CA364", hash_generated_method = "F7EBA5A619C416109F7EE0B0FB0EC99C")
     
 public abstract void publish(LogRecord record);
@@ -172,6 +186,8 @@ public abstract void publish(LogRecord record);
      *
      * @return the character encoding used by this handler.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.061 -0500", hash_original_method = "B6DA448E779CA9929D0D7B4D988D1AFB", hash_generated_method = "02D9BCCBCE42910B6D70E5623FC29FB4")
     
@@ -185,6 +201,8 @@ public String getEncoding() {
      *
      * @return the error manager used by this handler.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.063 -0500", hash_original_method = "E0C8CBFEDB627F2BA4CE76D0A71E633A", hash_generated_method = "D8B7A1DEB706CB487E14D805DE3F2076")
     
@@ -198,6 +216,8 @@ public ErrorManager getErrorManager() {
      *
      * @return the filter used by this handler (possibly {@code null}).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.066 -0500", hash_original_method = "D58C134707557B2D24085330800528E0", hash_generated_method = "CD9F61EC2D214FA63221AF047D239731")
     
@@ -210,6 +230,8 @@ public Filter getFilter() {
      *
      * @return the formatter used by this handler (possibly {@code null}).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.069 -0500", hash_original_method = "A74BB1584114C9889E52E1E2254AF36C", hash_generated_method = "AE8DA20E0234AF39099B197B83CA28A1")
     
@@ -223,6 +245,8 @@ public Formatter getFormatter() {
      *
      * @return the logging level of this handler.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.071 -0500", hash_original_method = "56C01E3C36F1CAAB6EC71D0FEE2F8D34", hash_generated_method = "54336132241FEE82935A7AC62C7D03B8")
     
@@ -239,6 +263,8 @@ public Level getLevel() {
      * @return {@code true} if the supplied log record needs to be logged,
      *         otherwise {@code false}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.073 -0500", hash_original_method = "CE8301478397D9840767CF11CB8E453A", hash_generated_method = "6E1B9BEA0885F76CFA10D0749C3E9BE2")
     
 public boolean isLoggable(LogRecord record) {
@@ -266,6 +292,8 @@ public boolean isLoggable(LogRecord record) {
      * @param code
      *            an {@code ErrorManager} error code.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.076 -0500", hash_original_method = "F62113B5966ABE7DC6200BD5FC9C8FC5", hash_generated_method = "1D0873FC4881D9701F390E2F0B4B34B3")
     
 protected void reportError(String msg, Exception ex, int code) {
@@ -282,6 +310,8 @@ protected void reportError(String msg, Exception ex, int code) {
      * @throws UnsupportedEncodingException
      *             if the specified encoding is not supported by the runtime.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.078 -0500", hash_original_method = "DC978F88261D557C3638CA74D49294AA", hash_generated_method = "AF2DC33E6C423451F626BB2C7573293C")
     
 void internalSetEncoding(String newEncoding) throws UnsupportedEncodingException {
@@ -306,6 +336,8 @@ void internalSetEncoding(String newEncoding) throws UnsupportedEncodingException
      * @throws UnsupportedEncodingException
      *             if the specified encoding is not supported by the runtime.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.080 -0500", hash_original_method = "E46261745C62E25D2001A68F77BA37B9", hash_generated_method = "C449DC42DC06A7608BA35E63FC20EE16")
     
@@ -322,6 +354,8 @@ public void setEncoding(String encoding) throws UnsupportedEncodingException {
      * @throws NullPointerException
      *             if {@code em} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.083 -0500", hash_original_method = "041C6EB6ECB5770848F1CB62B0AB93B7", hash_generated_method = "EE32AF6ACC39EC952CAD402CC1E5A737")
     
 public void setErrorManager(ErrorManager em) {
@@ -338,6 +372,8 @@ public void setErrorManager(ErrorManager em) {
      * @param newFilter
      *            the filter to set, may be {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.085 -0500", hash_original_method = "18CF3005E196F8EBECF3068D37979086", hash_generated_method = "A36C67B0C22BFB9550E29734D402F742")
     
 public void setFilter(Filter newFilter) {
@@ -352,6 +388,8 @@ public void setFilter(Filter newFilter) {
      * @param newFormatter
      *            the formatter to set.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.087 -0500", hash_original_method = "DEDBD4D0DEEB998F333BEBDE35469176", hash_generated_method = "DEDBD4D0DEEB998F333BEBDE35469176")
     
 void internalSetFormatter(Formatter newFormatter) {
@@ -369,6 +407,8 @@ void internalSetFormatter(Formatter newFormatter) {
      * @throws NullPointerException
      *             if {@code newFormatter} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.090 -0500", hash_original_method = "C9CA011EA2B703B6BFC998B221D30A9E", hash_generated_method = "71E42C29F91E40239BE7F75701BA9951")
     
 public void setFormatter(Formatter newFormatter) {
@@ -385,6 +425,8 @@ public void setFormatter(Formatter newFormatter) {
      * @throws NullPointerException
      *             if {@code newLevel} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.092 -0500", hash_original_method = "AEDF55860BF7C8EC74AABF9FCD3CABC4", hash_generated_method = "8D53D3630CFA5A81A67BEAAFAFEA3DFB")
     
 public void setLevel(Level newLevel) {

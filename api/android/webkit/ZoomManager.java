@@ -226,6 +226,8 @@ public void updateDefaultZoomDensity(float density) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.036 -0500", hash_original_method = "E8BCC867B6D8CCFABF539A9D95032C95", hash_generated_method = "51EB7CE29967EC5AE80233E1964549D1")
     
 private void setDefaultZoomScale(float defaultScale) {
@@ -412,6 +414,8 @@ public boolean zoomOut() {
     }
 
     // returns TRUE if zoom out succeeds and FALSE if no zoom changes.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.092 -0500", hash_original_method = "0D06D835317E38A4890F08EB962517B9", hash_generated_method = "8FD242627139C80C62C92726BEF2E23F")
     
 private boolean zoom(float zoomMultiplier) {
@@ -573,6 +577,8 @@ public void setZoomScale(float scale, boolean reflowText) {
         setZoomScale(scale, reflowText, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.113 -0500", hash_original_method = "3A85AAAB95D1CDF586170EB3BBF2667E", hash_generated_method = "B9F3883AE0204845FB5B1CF8AE4BC2B1")
     
 private void setZoomScale(float scale, boolean reflowText, boolean force) {
@@ -723,6 +729,8 @@ public void handleDoubleTap(float lastTouchX, float lastTouchY) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.120 -0500", hash_original_method = "712C22BAE7AA3B12B6A5A40165B58905", hash_generated_method = "0769B498ED18DD4448A2A8DCAC358CB8")
     
 private void setZoomOverviewWidth(int width) {
@@ -734,7 +742,9 @@ private void setZoomOverviewWidth(int width) {
         mInvZoomOverviewWidth = 1.0f / width;
     }
 
-    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.121 -0500", hash_original_method = "B42D229ABB1FC24C49B118C5D42DFED9", hash_generated_method = "B42D229ABB1FC24C49B118C5D42DFED9")
     
 float getZoomOverviewScale() {
@@ -747,6 +757,8 @@ public boolean isInZoomOverview() {
         return mInZoomOverview;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.126 -0500", hash_original_method = "C0C0965039A172A5A5AAF6C9C4472D2A", hash_generated_method = "98858A1F492C45744BC6EB3273EE4A33")
     
 private void zoomToOverview() {
@@ -759,6 +771,8 @@ private void zoomToOverview() {
             !mWebView.getSettings().getUseFixedViewport());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.129 -0500", hash_original_method = "6051F287C8BD349D628462D7AA7CF8A8", hash_generated_method = "9558E0E68E7B9A83D57BAFDCADC7C59C")
     
 private void zoomToReadingLevelOrMore() {
@@ -1081,6 +1095,8 @@ public void restoreZoomState(Bundle b) {
         mInZoomOverview = b.getBoolean("overview");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.217 -0500", hash_original_method = "03F547EF9A141661565AD38656124362", hash_generated_method = "7BAECD6A8B495F1B8A89BFAE4CFA4188")
     
 private ZoomControlBase getCurrentZoomControl() {
@@ -1136,6 +1152,8 @@ FocusMovementQueue() {
             mIndex = 0;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.156 -0500", hash_original_method = "7BD5EC8FD84F966DA50367EA866227AA", hash_generated_method = "5D477912809672A1747C91B1CA9D0030")
         
 private void clear() {
@@ -1147,6 +1165,8 @@ private void clear() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.158 -0500", hash_original_method = "BEA568413C11D502CA7CED6FD222D059", hash_generated_method = "774AC94289319B1C94B440A5471E97F1")
         
 private void add(float focusDelta) {
@@ -1160,6 +1180,8 @@ private void add(float focusDelta) {
             mIndex = (mIndex + 1) % QUEUE_CAPACITY;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.161 -0500", hash_original_method = "D980EABC4C0F2D2A081289A0764FD494", hash_generated_method = "B3CAD0331A91B3C0510B9DEABC0C6468")
         
 private float getSum() {
@@ -1389,7 +1411,9 @@ public void setHardwareAccelerated() {
     /**
      * OnPageFinished called by webview when a page is fully loaded.
      */
-    /* package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.234 -0500", hash_original_method = "35BF52CFA65A672FC707BA33DDD071E9", hash_generated_method = "387FC867EE6AF00187E803EFD322939F")
+    /* package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.234 -0500", hash_original_method = "35BF52CFA65A672FC707BA33DDD071E9", hash_generated_method = "387FC867EE6AF00187E803EFD322939F")
     
 void onPageFinished(String url) {
         // Turn off initial zoom overview flag when a page is fully loaded.

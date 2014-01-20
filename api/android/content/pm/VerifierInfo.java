@@ -9,12 +9,7 @@ import java.security.PublicKey;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class VerifierInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.877 -0400", hash_original_field = "65964BA23E11E5A5472692A88A281144", hash_generated_field = "5A0B6B9CAD98D6A4E4EBB9028FEA4E95")
 
@@ -61,6 +56,8 @@ public VerifierInfo(String packageName, PublicKey publicKey) {
         this.publicKey = publicKey;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.620 -0500", hash_original_method = "C00118AB5B5CCE6381E41D90579B27A9", hash_generated_method = "37D1B283BA5C6A792677AB241D3EBB04")
     
 private VerifierInfo(Parcel source) {

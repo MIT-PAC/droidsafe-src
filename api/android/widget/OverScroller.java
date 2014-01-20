@@ -568,6 +568,8 @@ public boolean isOverScrolled() {
     
     static class SplineOverScroller {
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.631 -0500", hash_original_method = "C5E6E7B4566BE5624EF408255FF00E2C", hash_generated_method = "DF406E9EDC331828AB4F6995E4A45DB1")
         
 static void initFromContext(Context context) {
@@ -581,6 +583,8 @@ static void initFromContext(Context context) {
         /*
          * Get a signed deceleration that will reduce the velocity.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.640 -0500", hash_original_method = "4EEF4AD88BADE833476CB83D5BE6FD85", hash_generated_method = "87EFC541E87F2305523397D7E92B08A7")
         
 static private float getDeceleration(int velocity) {
@@ -671,18 +675,24 @@ static private float getDeceleration(int velocity) {
 
         private int mState = SPLINE;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.636 -0500", hash_original_method = "D0177E162854BD0B51587B46D28F0B6A", hash_generated_method = "D0177E162854BD0B51587B46D28F0B6A")
         
 SplineOverScroller() {
             mFinished = true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.633 -0500", hash_original_method = "9532D02E94E4EAFA434C124BD0A8F760", hash_generated_method = "9532D02E94E4EAFA434C124BD0A8F760")
         
 void setFriction(float friction) {
             mFlingFriction = friction;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.638 -0500", hash_original_method = "64F0298C66739A6C01CABFBC1A2B2075", hash_generated_method = "64F0298C66739A6C01CABFBC1A2B2075")
         
 void updateScroll(float q) {
@@ -693,6 +703,8 @@ void updateScroll(float q) {
          * Modifies mDuration to the duration it takes to get from start to newFinal using the
          * spline interpolation. The previous duration was needed to get to oldFinal.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.643 -0500", hash_original_method = "97FBA6B7752D67B719405DAE507B2D91", hash_generated_method = "BD91AD6668A141299A08D86F21BA5481")
         
 private void adjustDuration(int start, int oldFinal, int newFinal) {
@@ -710,6 +722,8 @@ private void adjustDuration(int start, int oldFinal, int newFinal) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.645 -0500", hash_original_method = "171266C35C248ABBEE6A2AAA833A0F85", hash_generated_method = "4E4B7A93597B80B93714836891060964")
         
 void startScroll(int start, int distance, int duration) {
@@ -726,6 +740,8 @@ void startScroll(int start, int distance, int duration) {
             mVelocity = 0;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.647 -0500", hash_original_method = "435B8A6291C462C3A88DC285D8A7A1BB", hash_generated_method = "499F02C42A63A57AFF143241293C7505")
         
 void finish() {
@@ -736,6 +752,8 @@ void finish() {
             mFinished = true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.649 -0500", hash_original_method = "0F10BE4F5BE9DF7795DBE421341ADDA6", hash_generated_method = "0F10BE4F5BE9DF7795DBE421341ADDA6")
         
 void setFinalPosition(int position) {
@@ -743,6 +761,8 @@ void setFinalPosition(int position) {
             mFinished = false;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.652 -0500", hash_original_method = "7F220CB7E5E59F74D99C7454C47E42C7", hash_generated_method = "7F220CB7E5E59F74D99C7454C47E42C7")
         
 void extendDuration(int extend) {
@@ -752,6 +772,8 @@ void extendDuration(int extend) {
             mFinished = false;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.654 -0500", hash_original_method = "D12AE2ECF55023F539A88C111AC438E6", hash_generated_method = "D12AE2ECF55023F539A88C111AC438E6")
         
 boolean springback(int start, int min, int max) {
@@ -772,6 +794,8 @@ boolean springback(int start, int min, int max) {
             return !mFinished;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.657 -0500", hash_original_method = "FE4DCB4600DDD23F75B042FA5167B4E7", hash_generated_method = "5EEB3647B9727A89DDE32121BD9073D5")
         
 private void startSpringback(int start, int end, int velocity) {
@@ -788,6 +812,8 @@ private void startSpringback(int start, int end, int velocity) {
             mDuration = (int) (1000.0 * Math.sqrt(-2.0 * delta / mDeceleration));
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.660 -0500", hash_original_method = "8B3E33053E001BDAB851E620AED14FC0", hash_generated_method = "9CCEC886A8C6829D12FB79BF6AB6B441")
         
 void fling(int start, int velocity, int min, int max, int over) {
@@ -826,12 +852,16 @@ void fling(int start, int velocity, int min, int max, int over) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.662 -0500", hash_original_method = "55451D958AF332430844B13377F10B18", hash_generated_method = "8F7D539B42417DE076155EC24C6FEB96")
         
 private double getSplineDeceleration(int velocity) {
             return Math.log(INFLEXION * Math.abs(velocity) / (mFlingFriction * PHYSICAL_COEF));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.664 -0500", hash_original_method = "7888FBEE8D14061C2ED981410CC88AC0", hash_generated_method = "58476E0AC7D69B1F96009EE7DA8B01DF")
         
 private double getSplineFlingDistance(int velocity) {
@@ -841,6 +871,8 @@ private double getSplineFlingDistance(int velocity) {
         }
 
         /* Returns the duration, expressed in milliseconds */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.666 -0500", hash_original_method = "1F09855DFC7D15DA5ECD081A4B3F581B", hash_generated_method = "84F3E948F3C80429FD5AF0BE148C7FC7")
         
 private int getSplineFlingDuration(int velocity) {
@@ -849,6 +881,8 @@ private int getSplineFlingDuration(int velocity) {
             return (int) (1000.0 * Math.exp(l / decelMinusOne));
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.669 -0500", hash_original_method = "C51353CD784B93D7179DA830597304C4", hash_generated_method = "E3E97A78EE38983A79AED34F0926A38C")
         
 private void fitOnBounceCurve(int start, int end, int velocity) {
@@ -863,6 +897,8 @@ private void fitOnBounceCurve(int start, int end, int velocity) {
             mVelocity = (int) (- mDeceleration * totalDuration);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.672 -0500", hash_original_method = "5D48F28010F8FCB9211B58C3C36EC8CC", hash_generated_method = "9091647D3DB6B466F7894CBAA1999489")
         
 private void startBounceAfterEdge(int start, int end, int velocity) {
@@ -871,6 +907,8 @@ private void startBounceAfterEdge(int start, int end, int velocity) {
             onEdgeReached();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.675 -0500", hash_original_method = "E644EF955DC6FD722F53E2DD199A395E", hash_generated_method = "E87140B36220D303C5E00D408D9FF277")
         
 private void startAfterEdge(int start, int min, int max, int velocity) {
@@ -896,6 +934,8 @@ private void startAfterEdge(int start, int min, int max, int velocity) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.677 -0500", hash_original_method = "D032297ACDC9C65A50161DCB548F10DC", hash_generated_method = "C5CBAA8CCD9CF5490686919E71322F50")
         
@@ -910,6 +950,8 @@ void notifyEdgeReached(int start, int end, int over) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.679 -0500", hash_original_method = "4D9D443F2B4C6EC9AAAB1FF452014EB4", hash_generated_method = "4B3F2A6A3ED4A6457D048014ADCBB284")
         
 private void onEdgeReached() {
@@ -929,6 +971,8 @@ private void onEdgeReached() {
             mDuration = - (int) (1000.0f * mVelocity / mDeceleration);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.682 -0500", hash_original_method = "6FDA077121143820AC37360810DDE80A", hash_generated_method = "14215DCE62FD88A5E3D19141ACD42A8B")
         
 boolean continueWhenFinished() {
@@ -965,6 +1009,8 @@ boolean continueWhenFinished() {
          * true if update has been done and false if animation duration has been
          * reached.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.685 -0500", hash_original_method = "36FADD2423F4A31EF1611CA012E37B33", hash_generated_method = "36FADD2423F4A31EF1611CA012E37B33")
         
 boolean update() {

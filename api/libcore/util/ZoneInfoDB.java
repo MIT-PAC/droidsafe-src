@@ -23,6 +23,8 @@ public final class ZoneInfoDB {
     /**
      * Reads the file indicating the database version in use.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.734 -0500", hash_original_method = "20BE396DAB95918DA62C140FCD4BD874", hash_generated_method = "28C47D9E2EBF624C6615213B8BB557A5")
     
 private static String readVersion() {
@@ -34,6 +36,8 @@ private static String readVersion() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.737 -0500", hash_original_method = "603C00D789F9F2C664CA8CF3ACA627B8", hash_generated_method = "8A7D1A6F2D2F629E94B107C6F9D7F7CC")
     
 private static MemoryMappedFile mapData() {
@@ -54,6 +58,8 @@ private static MemoryMappedFile mapData() {
      *
      * All this code assumes strings are US-ASCII.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.740 -0500", hash_original_method = "880C6B6FFD6476FB4BC9E8F8AE296E97", hash_generated_method = "3770FEFFBAC67FD1905A83F293D6AE9F")
     
 private static void readIndex() {
@@ -68,6 +74,8 @@ private static void readIndex() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.744 -0500", hash_original_method = "8ADB7A707EA8ED75C4748B3AFCE85217", hash_generated_method = "55DA8CCF299EFDB37DDD4013334EE5E9")
     
 private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException, IOException {
@@ -118,6 +126,8 @@ private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.747 -0500", hash_original_method = "A9F0A2BED5BA3B6592EEADCCDFB17984", hash_generated_method = "E39079190DC539FF1ACAE60F8F633B16")
     
 private static TimeZone makeTimeZone(String id) throws IOException {
@@ -256,6 +266,8 @@ public static String getVersion() {
 
     private static int[] rawUtcOffsets;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.732 -0500", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "AD9962427B97AE7A53554E3AAB13AE6D")
     
 private ZoneInfoDB() {

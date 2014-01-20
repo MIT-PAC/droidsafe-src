@@ -5,10 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class DrmException extends Exception {
     // TODO: add more specific DRM error codes.
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.109 -0500", hash_original_method = "DE31351B18888D140C40B16D35F58F0A", hash_generated_method = "99A95BAFBF43DE9F8A08126933237001")
     
 private DrmException() {
@@ -19,7 +20,6 @@ private DrmException() {
 public DrmException(String message) {
         super(message);
     }
-
     
 }
 

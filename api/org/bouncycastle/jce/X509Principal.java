@@ -14,9 +14,9 @@ import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.x509.X509Name;
 
-
-
 public class X509Principal extends X509Name implements Principal {
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.906 -0500", hash_original_method = "FF25B788711032BAC2432264078A15A6", hash_generated_method = "C85E6D520322491A08965914F5D7DC41")
     
 private static ASN1Sequence readSequence(
@@ -167,7 +167,6 @@ public byte[] getEncoded()
             throw new RuntimeException(e.toString());
         }
     }
-
     
 }
 

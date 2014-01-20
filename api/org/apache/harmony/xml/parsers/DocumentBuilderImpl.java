@@ -57,6 +57,8 @@ class DocumentBuilderImpl extends DocumentBuilder {
 
     private boolean namespaceAware;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.766 -0400", hash_original_method = "6E36B4A4B3486B5FCAD4EDE2EA40AC58", hash_generated_method = "6E36B4A4B3486B5FCAD4EDE2EA40AC58")
     public DocumentBuilderImpl ()
     {
@@ -195,6 +197,8 @@ class DocumentBuilderImpl extends DocumentBuilder {
      * @throws XmlPullParserException If a parsing error occurs.
      * @throws IOException If a general IO error occurs.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.565 -0500", hash_original_method = "608502985E1CF48EAA100E44A7EF5256", hash_generated_method = "284C2C48A2187BEAE0F200C9428307C6")
     
 private void parse(KXmlParser parser, DocumentImpl document, Node node,
@@ -356,6 +360,8 @@ private void parse(KXmlParser parser, DocumentImpl document, Node node,
      * @param token the XML pull parser token type, such as XmlPullParser.CDSECT
      *      or XmlPullParser.ENTITY_REF.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.568 -0500", hash_original_method = "691ECF0A6ABC696CF83421ACD1A425FF", hash_generated_method = "DE036DF73644CE95D47CC7DD2A73D8B6")
     
 private void appendText(DocumentImpl document, Node parent, int token, String text) {
@@ -428,6 +434,8 @@ public void setNamespaceAware(boolean value) {
     /**
      * Returns the replacement text or null if {@code entity} isn't predefined.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.583 -0500", hash_original_method = "73F7C79343F86EF391295D82FA5B5401", hash_generated_method = "09AE160C200BD1185C0583064FD3ED4F")
     
 private String resolvePredefinedOrCharacterEntity(String entityName) {
@@ -453,6 +461,8 @@ private String resolvePredefinedOrCharacterEntity(String entityName) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.586 -0500", hash_original_method = "F0F9BC1451B812F6B38C0D286F9C9978", hash_generated_method = "1A2235C363C3AC8E9929364D0B219835")
     
 private String resolveCharacterReference(String value, int base) {

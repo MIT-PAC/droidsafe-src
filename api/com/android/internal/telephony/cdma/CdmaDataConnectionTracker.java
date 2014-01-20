@@ -169,6 +169,8 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
 
     /* Constructor */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.936 -0500", hash_original_method = "2C5FD67C25932D4938DCF727D105250A", hash_generated_method = "2C5FD67C25932D4938DCF727D105250A")
     
 CdmaDataConnectionTracker(CDMAPhone p) {
@@ -333,6 +335,8 @@ CdmaDataConnectionTracker(CDMAPhone p) {
         return possible;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.962 -0500", hash_original_method = "394F83083B165868EFF2D0029A637488", hash_generated_method = "625DA3663F36DFBEA8136E119B895BE1")
     
 private boolean trySetupData(String reason) {
@@ -370,6 +374,8 @@ private boolean trySetupData(String reason) {
      * @param tearDown true if the underlying DataConnection should be disconnected.
      * @param reason for the clean up.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.965 -0500", hash_original_method = "5189B04FA529AAC9DBE4ECDA45A08A99", hash_generated_method = "E1E79B5EE63821F0719AF30B4C2C9253")
     
 private void cleanUpConnection(boolean tearDown, String reason) {
@@ -414,6 +420,8 @@ private void cleanUpConnection(boolean tearDown, String reason) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.968 -0500", hash_original_method = "CCC265A96715FBE2FE51B6C51A4C9789", hash_generated_method = "670AECFAEADF9F2E335745C83D6CED99")
     
 private CdmaDataConnection findFreeDataConnection() {
@@ -427,6 +435,8 @@ private CdmaDataConnection findFreeDataConnection() {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.971 -0500", hash_original_method = "021C7DB7B25544657AF7783D8DE6441E", hash_generated_method = "F28419E5ACE4CF3F9CCDA10330AE4E76")
     
 private boolean setupData(String reason) {
@@ -463,6 +473,8 @@ private boolean setupData(String reason) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.973 -0500", hash_original_method = "A9B26E176D50C7947D632921998F13D5", hash_generated_method = "A18071108FDF1EB38D9A7365E0C396AC")
     
 private void notifyDefaultData(String reason) {
@@ -472,6 +484,8 @@ private void notifyDefaultData(String reason) {
         mDataConnections.get(0).resetRetryCount();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.976 -0500", hash_original_method = "4334EC28628BC2618150E7F73B49358F", hash_generated_method = "4D418A16CC6A76101B107E9308AB208F")
     
 private void resetPollStats() {
@@ -533,6 +547,8 @@ private boolean
      * @param reason the reason why data is disconnected
      * @return true if try setup data connection is need for this reason
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.995 -0500", hash_original_method = "62A24BB1F647222AA978F8E837B2D330", hash_generated_method = "D168F58C77AFC7F485C17CA9A1350579")
     
 private boolean retryAfterDisconnected(String reason) {
@@ -567,6 +583,8 @@ private void reconnectAfterFail(FailCause lastFailCauseCode, String reason) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.000 -0500", hash_original_method = "E44CA37DEACEC190565F77C6CB5940AA", hash_generated_method = "50706A2763F2F8959B670BE23386CF77")
     
 private void startAlarmForReconnect(int delay, String reason) {
@@ -832,6 +850,8 @@ protected void onNVReady() {
         cleanUpConnection(true, cause);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.043 -0500", hash_original_method = "7F3FB415E824AE28DE838EAC0023F542", hash_generated_method = "DF1A68F0FBCE96E95B317EB7A2CA9AA3")
     
 private void createAllDataConnectionList() {
@@ -865,6 +885,8 @@ private void createAllDataConnectionList() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.046 -0500", hash_original_method = "8430EFDC31AB81EB1D7F0972246BF5F1", hash_generated_method = "C5B00461A74E6FCFC71B8164DF20DC36")
     
 private void destroyAllDataConnectionList() {
@@ -873,6 +895,8 @@ private void destroyAllDataConnectionList() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.048 -0500", hash_original_method = "94CE8407A5E1B53B6799DEAF3D95D61E", hash_generated_method = "69B71B5989BA6BAA09DF07185470B0A2")
     
 private void onCdmaDataDetached() {
@@ -893,6 +917,8 @@ private void onCdmaDataDetached() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.051 -0500", hash_original_method = "A262DC774CC921F05CC1B098B136C4F6", hash_generated_method = "52A3F995DCE1810526D479D64982E8B7")
     
 private void onCdmaOtaProvision(AsyncResult ar) {
@@ -911,6 +937,8 @@ private void onCdmaOtaProvision(AsyncResult ar) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.053 -0500", hash_original_method = "7F30476887B77149E22CB7625A399926", hash_generated_method = "325D11CFFD8C3BB1F0E4B296D76E4B26")
     
 private void onRestartRadio() {
@@ -928,6 +956,8 @@ private void onRestartRadio() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.055 -0500", hash_original_method = "A45AA34613360795905157920DD95009", hash_generated_method = "65FB92C000CAB40FA0AA338B707A035B")
     
 private void writeEventLogCdmaDataDrop() {

@@ -156,6 +156,8 @@ public final int ordinal() {
         return this == other;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.936 -0500", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "3A6CF9A299D5297FC59AC2356DCC4811")
     
 @Override
@@ -171,6 +173,8 @@ public final int ordinal() {
      * @throws CloneNotSupportedException
      *             is always thrown.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.938 -0500", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "720A1100071FDC468D6438DAE71A3A05")
     
@@ -193,6 +197,8 @@ public final int ordinal() {
      *         the ordinal value of {@code o}.
      * @see java.lang.Comparable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.941 -0500", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "50826E44A2062E2FB025D20ED02D5714")
     
 public final int compareTo(E o) {
@@ -204,6 +210,8 @@ public final int compareTo(E o) {
      *
      * @return the class object representing the constant's enum type.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.943 -0500", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "762014D63804DB3D4D80E909CA7FDE71")
     
@@ -222,6 +230,8 @@ public final int compareTo(E o) {
      *
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.950 -0500", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "2079993A117A470D1C9BB6A7397F737D")
     
 @Override

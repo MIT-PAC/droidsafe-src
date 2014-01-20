@@ -278,6 +278,8 @@ public void readItem(AttributeSet attrs) {
             itemAdded = false;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.779 -0500", hash_original_method = "68CBADC6295F8D47EFE8794BDB31E4A9", hash_generated_method = "1EFCA66997A7EB5634D42DB053B48835")
         
 private char getShortcut(String shortcutString) {
@@ -288,6 +290,8 @@ private char getShortcut(String shortcutString) {
             }
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.782 -0500", hash_original_method = "AD827357C34932CC0921A74B0CE8A3EF", hash_generated_method = "554FBA37346CD68476200A331125138F")
         
 private void setItem(MenuItem item) {
@@ -363,6 +367,8 @@ public boolean hasAddedItem() {
             return itemAdded;
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.617 -0400", hash_original_method = "20DE6E19862FEEC3F61B05674F46168C", hash_generated_method = "84DCB8177A79929D4BE13F6A57C95E12")
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,
@@ -432,8 +438,8 @@ public MenuInflater(Context context) {
      * @param menu The Menu to inflate into. The items and submenus will be
      *            added to this Menu.
      */
-    @DSComment("Proper menu needs to be created/instantiated/inflated")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.649 -0500", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "8AC21FD0DA7ADD2076DB467059A78ACF")
     
 public void inflate(int menuRes, Menu menu) {
@@ -456,6 +462,8 @@ public void inflate(int menuRes, Menu menu) {
      * Called internally to fill the given menu. If a sub menu is seen, it will
      * call this recursively.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.652 -0500", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "5A33FCD11FD7601B075450C8B2424E13")
     
 private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)

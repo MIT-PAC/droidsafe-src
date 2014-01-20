@@ -81,6 +81,8 @@ public class Sensor {
 
     private int     mLegacyType;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:57.844 -0500", hash_original_method = "80AB5568838CD06B7C5D0D01375BC87D", hash_generated_method = "80AB5568838CD06B7C5D0D01375BC87D")
     
 Sensor() {
@@ -147,21 +149,29 @@ Sensor() {
         //return mMinDelay;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int getHandle() {
     	return getTaintInt();
         //return mHandle;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void setRange(float max, float res) {
     	addTaint(max);
     	addTaint(res);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void setLegacyType(int legacyType) {
     	addTaint(legacyType);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     int getLegacyType() {
     	return getTaintInt();
         //return mLegacyType;

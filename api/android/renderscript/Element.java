@@ -707,6 +707,8 @@ public static Element createPixel(RenderScript rs, DataType dt, DataKind dk) {
 
     int mVectorSize;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.429 -0500", hash_original_method = "ED819749D70FA098614C1909362577A7", hash_generated_method = "ED819749D70FA098614C1909362577A7")
     
 Element(int id, RenderScript rs, Element[] e, String[] n, int[] as) {
@@ -739,6 +741,8 @@ Element(int id, RenderScript rs, DataType dt, DataKind dk, boolean norm, int siz
         mVectorSize = size;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.435 -0500", hash_original_method = "C4EFD6253604440679EF13CF69D2FF93", hash_generated_method = "C4EFD6253604440679EF13CF69D2FF93")
     
 Element(int id, RenderScript rs) {
@@ -859,6 +863,8 @@ public int getSubElementOffsetBytes(int index) {
         return mOffsetInBytes[index];
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.437 -0500", hash_original_method = "8ECBC2337848BD749AC42873FE5AD6F5", hash_generated_method = "8AAD6E6DB4461C82734101F8C496EA16")
     
 @Override

@@ -17,11 +17,6 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x500.style.BCStyle;
 import org.bouncycastle.asn1.x509.X509Name;
 
-
-
-
-
-
 public class X500Name extends ASN1Encodable implements ASN1Choice {
 
     /**
@@ -95,13 +90,11 @@ public static X500NameStyle getDefaultStyle()
     private static X500NameStyle    defaultStyle = BCStyle.INSTANCE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.755 -0500", hash_original_field = "B6293280C3B6F91ED7F24C3952096C1C", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
 
-
     private boolean                 isHashCodeCalculated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.758 -0500", hash_original_field = "2D42E71DE4D8857610CF43708417333A", hash_generated_field = "D4D90810E0E6D99534BB2E8797B7FFA9")
 
     private int                     hashCodeValue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.760 -0500", hash_original_field = "1562F63C243CCAE34D8562CE45D834EF", hash_generated_field = "ADD2EF6022A4B310B9B3CAE42CBA0F8A")
-
 
     private X500NameStyle style;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.763 -0500", hash_original_field = "15A3760B913BD02CDC7A3EA6E90C0664", hash_generated_field = "E6F265C5A2A75524751364DE8BEDA76F")
@@ -121,6 +114,8 @@ public X500Name(X500NameStyle style, X500Name name)
      *
      * the principal will be a list of constructed sets, each containing an (OID, String) pair.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.773 -0500", hash_original_method = "90B05234255C50E94C255BAB8A26A1D2", hash_generated_method = "AA9DF5223EC8BF953F09F62DE00FBC56")
     
 private X500Name(
@@ -129,6 +124,8 @@ private X500Name(
         this(defaultStyle, seq);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.776 -0500", hash_original_method = "8A5D5B23394E3163B760506B172464EC", hash_generated_method = "4F8227E0D6CC8E1E9CBA4C83D19EF178")
     
 private X500Name(

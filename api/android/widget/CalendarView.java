@@ -516,6 +516,8 @@ public WeeksAdapter(Context context) {
         /**
          * Set up the gesture detector and selected time
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.123 -0500", hash_original_method = "155544AF4C95F51C95BCC140A715A96B", hash_generated_method = "EB8CB92FD797AFD7C2388D23B5D2A7C9")
         
 private void init() {
@@ -646,6 +648,8 @@ public void setFocusMonth(int month) {
          *
          * @param day The day that was tapped
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.146 -0500", hash_original_method = "DDBBBC0FCC832A9812721416C01B8F28", hash_generated_method = "B97A0F074113796E0086F9E5E02A465D")
         
 private void onDateTapped(Calendar day) {
@@ -798,6 +802,8 @@ public void init(int weekNumber, int selectedWeekDay, int focusedMonth) {
         /**
          * Sets up the text and style properties for painting.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.199 -0500", hash_original_method = "FEF07EDEB83DCD7D850BA0B7A04A7856", hash_generated_method = "BDECB2CFACEA72F6C9EBD6D8ED457C75")
         
 private void setPaintProperties() {
@@ -888,6 +894,8 @@ public boolean getDayFromLocation(float x, Calendar outCalendar) {
          *
          * @param canvas The canvas to draw on
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.214 -0500", hash_original_method = "86B2559C98404D7EBD9D2D1A57D5B7B9", hash_generated_method = "CB706EE37E1BF2169A5E7713F9657926")
         
 private void drawBackground(Canvas canvas) {
@@ -912,6 +920,8 @@ private void drawBackground(Canvas canvas) {
          *
          * @param canvas The canvas to draw on
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.217 -0500", hash_original_method = "D3ED4C16A7F0A5B2E5F9E818EC82B4AE", hash_generated_method = "3EB1FEFC27F535A334632D3161FFF648")
         
 private void drawWeekNumbers(Canvas canvas) {
@@ -941,6 +951,8 @@ private void drawWeekNumbers(Canvas canvas) {
          *
          * @param canvas The canvas to draw on.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.219 -0500", hash_original_method = "D028062BEA4F3ED75274534BCA9F109C", hash_generated_method = "EECBD29BD1D9261E869A3233378493CE")
         
 private void drawWeekSeparators(Canvas canvas) {
@@ -963,6 +975,8 @@ private void drawWeekSeparators(Canvas canvas) {
          *
          * @param canvas The canvas to draw on
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.221 -0500", hash_original_method = "A1C98C2320B89AC1B0E9DE7623F0F5E4", hash_generated_method = "3222F0813A737281DE33567DE387E01D")
         
 private void drawSelectedDateVerticalBars(Canvas canvas) {
@@ -990,6 +1004,8 @@ private void drawSelectedDateVerticalBars(Canvas canvas) {
         /**
          * This calculates the positions for the selected day lines.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.226 -0500", hash_original_method = "F4AE55BB3F9C613E7E5A646F02C33791", hash_generated_method = "91BACA51039F1D751961763F63B04D92")
         
 private void updateSelectionPositions() {
@@ -1169,6 +1185,8 @@ public void setDate(long date, boolean animate, boolean center) {
      *
      * @param locale The current locale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.057 -0500", hash_original_method = "4AE549580BCF2D6667C808ED8CCBDCDC", hash_generated_method = "9735E05A9064E240975103C93C06F8C6")
     
 private void setCurrentLocale(Locale locale) {
@@ -1190,6 +1208,8 @@ private void setCurrentLocale(Locale locale) {
      * @param oldCalendar The old calendar.
      * @param locale The locale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.059 -0500", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "FF2C9EE6088D5A80898CD22EED43D339")
     
 private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
@@ -1207,6 +1227,8 @@ private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
      * @return True if the <code>firstDate</code> is the same as the <code>
      * secondDate</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.061 -0500", hash_original_method = "70DC9A9889795E848236506BBC0A481B", hash_generated_method = "E7F9F398761CDCEB482A29A969EB0716")
     
 private boolean isSameDate(Calendar firstDate, Calendar secondDate) {
@@ -1217,6 +1239,8 @@ private boolean isSameDate(Calendar firstDate, Calendar secondDate) {
     /**
      * Creates a new adapter if necessary and sets up its parameters.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.067 -0500", hash_original_method = "513863F202D0E7C406F959CC7EBC2D43", hash_generated_method = "6EAA8B10AA012389EDFB6D2EB92E7CB7")
     
 private void setUpAdapter() {
@@ -1244,6 +1268,8 @@ private void setUpAdapter() {
     /**
      * Sets up the strings to be used by the header.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.070 -0500", hash_original_method = "2BEB208CF4EFB41463E1218ACA7650C9", hash_generated_method = "381190A899EE4B402200707598F9B96C")
     
 private void setUpHeader(int weekDayTextAppearanceResId) {
@@ -1275,6 +1301,8 @@ private void setUpHeader(int weekDayTextAppearanceResId) {
         mDayNamesHeader.invalidate();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "CFADBCF95F8E177F25E22F1FC2115F77", hash_generated_method = "A7212EABDEC78C4670A7D51B166BE4DD")
     private void setUpListView() {
         mListView.setDivider(null);
@@ -1334,6 +1362,8 @@ public void onScroll(
      * @throws IllegalArgumentException of the provided date is before the
      *        range start of after the range end.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.081 -0500", hash_original_method = "9885B6A6E0E890A0EF52CBA474F609AF", hash_generated_method = "3502152145688A5D12E1A22A9194D0A2")
     
 private void goTo(Calendar date, boolean animate, boolean setSelected, boolean forceScroll) {
@@ -1394,6 +1424,8 @@ private void goTo(Calendar date, boolean animate, boolean setSelected, boolean f
      *
      * @return True if the date was parsed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.084 -0500", hash_original_method = "4EF37BB5E8B6D289AE6D0021CE0D4FEB", hash_generated_method = "A8F56004CD8FCB6686C74FEBB9164E0E")
     
 private boolean parseDate(String date, Calendar outDate) {
@@ -1410,6 +1442,8 @@ private boolean parseDate(String date, Calendar outDate) {
      * Called when a <code>view</code> transitions to a new <code>scrollState
      * </code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.086 -0500", hash_original_method = "F153BBCA7962990A30E79BE6D90D9C30", hash_generated_method = "B4B4D8FE55139118C518ABC9FDD69D79")
     
 private void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -1420,6 +1454,8 @@ private void onScrollStateChanged(AbsListView view, int scrollState) {
      * Updates the title and selected month if the <code>view</code> has moved to a new
      * month.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.089 -0500", hash_original_method = "FE6404A8901B8111BDEFCBB086ABC460", hash_generated_method = "5A0105A9E88297E8B07404A58CFC02C3")
     
 private void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
@@ -1491,6 +1527,8 @@ private void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCou
      *
      * @param calendar A day in the new focus month.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.091 -0500", hash_original_method = "2D87D8A121385B44A48D783AA9D15CB4", hash_generated_method = "93195447087440355F33B4D4CB0EA1D0")
     
 private void setMonthDisplayed(Calendar calendar) {
@@ -1511,6 +1549,8 @@ private void setMonthDisplayed(Calendar calendar) {
      * @return Returns the number of weeks between the current <code>date</code>
      *         and the <code>mMinDate</code>.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.093 -0500", hash_original_method = "025B6CEC43A90DA392B09F9FACE78FF5", hash_generated_method = "A96011E69D8E2DC230550BE27027A1DA")
     
 private int getWeeksSinceMinDate(Calendar date) {

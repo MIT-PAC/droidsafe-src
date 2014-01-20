@@ -10,12 +10,8 @@ import java.security.cert.X509Certificate;
 
 import org.apache.harmony.xnet.provider.jsse.NativeCrypto;
 
-
-
-
 public final class ClientCertRequestHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.613 -0500", hash_original_field = "3FC88C05AF84F1DA5801895C1A5E2AA9", hash_generated_field = "076F5BF2A47D119E2704BFAF413B4749")
-
 
     private  BrowserFrame mBrowserFrame;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.615 -0500", hash_original_field = "BE4FBA339B8964B0ABF1E6F625B8029F", hash_generated_field = "24C6DFC54244C0ECB3E13AC2BDE66375")
@@ -27,6 +23,8 @@ public final class ClientCertRequestHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.620 -0500", hash_original_field = "98449DF5F308CC416E08C87F002F786A", hash_generated_field = "CEA12ECAAA37536F06C699DA1C7C1084")
 
     private  SslClientCertLookupTable mTable;
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.623 -0500", hash_original_method = "AEE151B717737CBCB7A587EF1854CBAA", hash_generated_method = "AEE151B717737CBCB7A587EF1854CBAA")
     
 ClientCertRequestHandler(BrowserFrame browserFrame,
@@ -75,7 +73,6 @@ public void cancel() {
         mTable.Deny(mHostAndPort);
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
     }
-
     
 }
 

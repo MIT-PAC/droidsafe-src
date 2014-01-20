@@ -90,6 +90,8 @@ public byte[] getData() {
      * @return false on invalid record, true on valid record
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.855 -0500", hash_original_method = "F0FED94C714DCB7A0D654E5FF6165803", hash_generated_method = "DC16AC6C2BF1FCD472133390104DC745")
     
 private boolean parseCurrentTlvObject() {

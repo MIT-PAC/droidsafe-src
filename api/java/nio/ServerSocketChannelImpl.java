@@ -111,6 +111,8 @@ public FileDescriptor getFD() {
 
         private  ServerSocketChannelImpl channelImpl;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.886 -0500", hash_original_method = "01F94E3226EECA786EFC49C8330A8199", hash_generated_method = "01F94E3226EECA786EFC49C8330A8199")
         
 ServerSocketAdapter(ServerSocketChannelImpl aChannelImpl) throws IOException {

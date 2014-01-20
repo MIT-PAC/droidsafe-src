@@ -40,6 +40,8 @@ extends ParagraphStyle
          * @param first the indent for the first line of the paragraph
          * @param rest the indent for the remaining lines of the paragraph
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.254 -0500", hash_original_method = "E4322DC08758D1156C7649A46E737C12", hash_generated_method = "4170CC5AAF9A4CF7BF4365EB4DD94EBE")
         
 public Standard(int first, int rest) {
@@ -59,6 +61,8 @@ public Standard(int every) {
             this(every, every);
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.261 -0500", hash_original_method = "5691F7E036E5CA8525875CB90EDEC1FA", hash_generated_method = "2AEF3AC5AF25451379F26A06E897D8A2")
         
 public Standard(Parcel src) {
@@ -66,6 +70,8 @@ public Standard(Parcel src) {
             mRest = src.readInt();
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.263 -0500", hash_original_method = "E4A248EAEF7F5505BB63EF903EE82A9C", hash_generated_method = "2CCDBBD91D2A7FB14559B406D0998734")
         
@@ -73,12 +79,16 @@ public int getSpanTypeId() {
             return TextUtils.LEADING_MARGIN_SPAN;
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.266 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
         
 public int describeContents() {
             return 0;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.269 -0500", hash_original_method = "AE8B874C7A6C454A0801C9E1E371EC4A", hash_generated_method = "68B312BE279EA01D12793A6C05F3868E")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -95,6 +105,8 @@ public int getLeadingMargin(boolean first) {
             return first ? mFirst : mRest;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.274 -0500", hash_original_method = "7A6ADECBC198581CEA5B1F0F652E6137", hash_generated_method = "92D9CA97AEFC03E248678E5ACC24005D")
         
 public void drawLeadingMargin(Canvas c, Paint p,

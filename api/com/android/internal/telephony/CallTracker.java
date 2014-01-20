@@ -106,6 +106,8 @@ protected boolean
                         == CommandException.Error.RADIO_NOT_AVAILABLE;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.191 -0500", hash_original_method = "F4424A83FF577363504E072E232C6BA9", hash_generated_method = "56BDC45645BA9F68D2DF424D95218B58")
     
 protected abstract void handlePollCalls(AsyncResult ar);
@@ -138,6 +140,8 @@ protected Message
      * @return true if we're idle or there's a call to getCurrentCalls() pending
      * but nothing else
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.197 -0500", hash_original_method = "D0619E60C8BD0CE46928E7D6B87D3BBB", hash_generated_method = "9A721E6D3B00ACE64A63C36A060B3C18")
     
 private boolean
@@ -148,22 +152,34 @@ private boolean
     }
 
     //***** Overridden from Handler
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.200 -0500", hash_original_method = "DC212188FEA96E721DB2AE6D44B077BD", hash_generated_method = "818083ABEAD9789AFFD0CD112BC340FC")
     
 public abstract void handleMessage (Message msg);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.202 -0500", hash_original_method = "310390FA58C61D98035FB9F023EE00D7", hash_generated_method = "005E3D87745F420B2BB0107A7534048C")
     
 public abstract void registerForVoiceCallStarted(Handler h, int what, Object obj);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.205 -0500", hash_original_method = "8EA3EED1AB0CF98A30A1E0C1FD189AF6", hash_generated_method = "E4FB96C16FD3AD135B83DE423D1C73D1")
     
 public abstract void unregisterForVoiceCallStarted(Handler h);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.207 -0500", hash_original_method = "79961090D13E2ED83D67E92C24E032AD", hash_generated_method = "100CA775E61227FB64514461F3253CB5")
     
 public abstract void registerForVoiceCallEnded(Handler h, int what, Object obj);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.209 -0500", hash_original_method = "0C27A4B9F968C45822E289D3F01B1F79", hash_generated_method = "05547E723F0E4F66F186B18A9FB4E3B5")
     
 public abstract void unregisterForVoiceCallEnded(Handler h);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.212 -0500", hash_original_method = "1B0CB576F4EF5F2EF28DA50D10DF2025", hash_generated_method = "4B0D139DF3381DCA5257214505F38057")
     
 protected abstract void log(String msg);

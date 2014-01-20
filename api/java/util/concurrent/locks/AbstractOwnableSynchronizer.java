@@ -16,6 +16,8 @@ public abstract class AbstractOwnableSynchronizer implements java.io.Serializabl
     /**
      * Empty constructor for use by subclasses.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.961 -0500", hash_original_method = "09FACEDDA2CFE0BD4863CBAC9CCC5DB1", hash_generated_method = "6B42B7C527A821C460743CB35B5EAA52")
     
 protected AbstractOwnableSynchronizer() { }
@@ -26,6 +28,8 @@ protected AbstractOwnableSynchronizer() { }
      * This method does not otherwise impose any synchronization or
      * <tt>volatile</tt> field accesses.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.967 -0500", hash_original_method = "54BE2CB7A2B251833C1274201519DC0B", hash_generated_method = "A15DE0D04E1C22FF9C6D35B6BFC96607")
     
 protected final void setExclusiveOwnerThread(Thread t) {
@@ -39,6 +43,8 @@ protected final void setExclusiveOwnerThread(Thread t) {
      * or <tt>volatile</tt> field accesses.
      * @return the owner thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.969 -0500", hash_original_method = "B27D03344136636BB9AA0892188CCAE3", hash_generated_method = "00E8F599BB6FB5931DFFDB7FA6FB10B1")
     

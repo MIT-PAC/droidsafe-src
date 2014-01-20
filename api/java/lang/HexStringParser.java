@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
-
-
-
 final class HexStringParser {
 
     /*
@@ -37,87 +32,66 @@ public static float parseFloat(String hexString) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.561 -0500", hash_original_field = "7D9EF8DE52CA2BBB43B5979AA63BA45B", hash_generated_field = "D1155B269CDBACFDC3F3E9B06D7DE4A2")
 
-
     private static final int DOUBLE_EXPONENT_WIDTH = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.564 -0500", hash_original_field = "ED98BB921C6D7467B2123112CC9C6C75", hash_generated_field = "31882514B9F507357D29F8936E3263A5")
-
 
     private static final int DOUBLE_MANTISSA_WIDTH = 52;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.566 -0500", hash_original_field = "59E3D1F50B9C879C9FA3E66F4E982380", hash_generated_field = "CF4B4FF0FB0279FDF9CF8A86100ED45B")
 
-
     private static final int FLOAT_EXPONENT_WIDTH = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.568 -0500", hash_original_field = "B6E24ADF8EDDF380D474AE461B92CDD6", hash_generated_field = "029320CB706024D91B89140CF93136C8")
-
 
     private static final int FLOAT_MANTISSA_WIDTH = 23;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.571 -0500", hash_original_field = "07B2D8584EF04E2B99D2814FCDE7787C", hash_generated_field = "2C7DE9BC6090A7DECB1198112765A354")
 
-
     private static final int HEX_RADIX = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.573 -0500", hash_original_field = "E86E1BDCD048C17FF7020D34FE8D0805", hash_generated_field = "5835216A7B337CFF7852890DA661381F")
-
 
     private static final int MAX_SIGNIFICANT_LENGTH = 15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.576 -0500", hash_original_field = "A11BCE31042C290BC616C80076AEC254", hash_generated_field = "B767BEB049546541E0E508E050B00854")
 
-
     private static final String HEX_SIGNIFICANT = "0[xX](\\p{XDigit}+\\.?|\\p{XDigit}*\\.\\p{XDigit}+)";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.579 -0500", hash_original_field = "27FBEE257A72FBF25E12FEB24DC0C1E2", hash_generated_field = "24520C6267DD97CD14C6BD15E0C225E5")
-
 
     private static final String BINARY_EXPONENT = "[pP]([+-]?\\d+)";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.581 -0500", hash_original_field = "CD7D897ED67AE58DD8F6064274A9AA16", hash_generated_field = "56DFBB2C307D6BD6F06ABC2A92C6E120")
 
-
     private static final String FLOAT_TYPE_SUFFIX = "[fFdD]?";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.584 -0500", hash_original_field = "DAAB9DE20DE1C396D6701C04AF6FF6A9", hash_generated_field = "10587FF47EEDFE0BD60A26FD884BF7D2")
-
 
     private static final String HEX_PATTERN = "[\\x00-\\x20]*([+-]?)" + HEX_SIGNIFICANT
             + BINARY_EXPONENT + FLOAT_TYPE_SUFFIX + "[\\x00-\\x20]*";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.587 -0500", hash_original_field = "9BDC9F6AC8B3C88FCF4CCDA41DE42AEA", hash_generated_field = "751B566999B7757AAA6980E384CA6585")
 
-
     private static final Pattern PATTERN = Pattern.compile(HEX_PATTERN);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.589 -0500", hash_original_field = "375B8EF424C62E63F30CD4F4A498C17E", hash_generated_field = "3D1EE3F91B74E8DB430F2C1AC83A33D3")
-
 
     private  int EXPONENT_WIDTH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.592 -0500", hash_original_field = "3B37D02678196B5A3074104DC44F226F", hash_generated_field = "B9594B2F4506B67397EA5D3B03F60E18")
 
-
     private  int MANTISSA_WIDTH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.594 -0500", hash_original_field = "268AC93C7141AC5612E6366121709DC1", hash_generated_field = "C481FEDF39B196EABE033BD5CF17A7CB")
-
 
     private  long EXPONENT_BASE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.597 -0500", hash_original_field = "7FC26B36DB57F8E20FCF964487251636", hash_generated_field = "C18CFDC021CBD7ABEB40DBD973A0ECFF")
 
-
     private  long MAX_EXPONENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.599 -0500", hash_original_field = "DED1C915F9F0EF55D32DA7E1A48AB6BB", hash_generated_field = "872FB1713A6708D4E85FF0ED4DC8BA7A")
-
 
     private  long MIN_EXPONENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.601 -0500", hash_original_field = "7E57C979411EB7FC094689D65C97C03E", hash_generated_field = "8F4140030FA67A2AE931BFB5AC88AE5E")
 
-
     private  long MANTISSA_MASK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.603 -0500", hash_original_field = "09BF80B82B2E76389991270A93A03C74", hash_generated_field = "676D5001C1F011FD0B5A42C3B42410B6")
-
 
     private long sign;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.606 -0500", hash_original_field = "989D2F7FDAA75672DCFF9F1945D9DA4C", hash_generated_field = "DFBAA63A672635AB7C1CDDF13CEC1972")
 
-
     private long exponent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.608 -0500", hash_original_field = "24D6828452654A8C9BF4BDE687C67E23", hash_generated_field = "A592FD1FA81B363A971ABDB296D5BCFC")
 
-
     private long mantissa;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.615 -0500", hash_original_field = "A2C7A586C6ACB704E813E098A0E6F18C", hash_generated_field = "EDC092F9A3603100C3E4D1F89B0BAF46")
-
 
     private String abandonedNumber="";
 
@@ -133,6 +107,8 @@ public HexStringParser(int exponentWidth, int mantissaWidth) {
         this.MANTISSA_MASK = ~(-1L << mantissaWidth);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.626 -0500", hash_original_method = "596249BB373F56930CF8BA31CC9F5A97", hash_generated_method = "63E2BB8AC97B10AD98A907D9FEE01CED")
     
 private long parse(String hexString, boolean isDouble) {
@@ -158,6 +134,8 @@ private long parse(String hexString, boolean isDouble) {
     /*
      * Parses the sign field.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.628 -0500", hash_original_method = "974D688FE86E3244D16C6508E4669FC6", hash_generated_method = "6B03A34A5314161B1527AD34AC9ABD77")
     
 private void parseHexSign(String signStr) {
@@ -167,6 +145,8 @@ private void parseHexSign(String signStr) {
     /*
      * Parses the exponent field.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.631 -0500", hash_original_method = "F54ED53D7D015179F6121F71E1763DC9", hash_generated_method = "CA372BF68E74AF9DC52BE3CB9D7743B8")
     
 private void parseExponent(String exponentStr) {
@@ -187,6 +167,8 @@ private void parseExponent(String exponentStr) {
     /*
      * Parses the mantissa field.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.633 -0500", hash_original_method = "661AC685F2EB81E51AC0AC93731FE290", hash_generated_method = "59366AD8B841C52436C4D332C70BF375")
     
 private void parseMantissa(String significantStr) {
@@ -228,6 +210,8 @@ private void parseMantissa(String significantStr) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.637 -0500", hash_original_method = "E5B2CE5158E0191EB1B4342B503B503C", hash_generated_method = "976BB6C5CAD481AE09CE6CCFFC81A010")
     
 private void setInfinite() {
@@ -235,6 +219,8 @@ private void setInfinite() {
         mantissa = 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.639 -0500", hash_original_method = "B9AC8BA0C31319FE099B6A6C8A6F4144", hash_generated_method = "5E165D072CB4564D3DD4EFF372D6845F")
     
 private void setZero() {
@@ -246,6 +232,8 @@ private void setZero() {
      * Sets the exponent variable to Long.MAX_VALUE or -Long.MAX_VALUE if
      * overflow or underflow happens.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.641 -0500", hash_original_method = "C2A5C13C47CD41059D53CDBF46698CF7", hash_generated_method = "885121F3160A256C33B26607B5203BF6")
     
 private void checkedAddExponent(long offset) {
@@ -258,6 +246,8 @@ private void checkedAddExponent(long offset) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.643 -0500", hash_original_method = "9CA1C86CDD20337336DE019762D1A2F8", hash_generated_method = "4DBDE7DDC250FCEE57623D8174532582")
     
 private void processNormalNumber(){
@@ -267,6 +257,8 @@ private void processNormalNumber(){
         mantissa = mantissa & MANTISSA_MASK;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.645 -0500", hash_original_method = "C617BA86E331FAE3F2D53918109E2E13", hash_generated_method = "528912C877FE389DF7F62D7081ACDD62")
     
 private void processSubNormalNumber(){
@@ -281,6 +273,8 @@ private void processSubNormalNumber(){
     /*
      * Adjusts the mantissa to desired width for further analysis.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.648 -0500", hash_original_method = "330648F0D53116AAA430ECFB8E97D2A6", hash_generated_method = "0534047768B02E4690A8966E76139901")
     
 private void fitMantissaInDesiredWidth(int desiredWidth){
@@ -295,6 +289,8 @@ private void fitMantissaInDesiredWidth(int desiredWidth){
     /*
      * Stores the discarded bits to abandonedNumber.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.650 -0500", hash_original_method = "40C79332802B26AD9210D4E26ECE1852", hash_generated_method = "90E18BEAFCC8900A14F396EE9B0E0EBE")
     
 private void discardTrailingBits(long num) {
@@ -308,6 +304,8 @@ private void discardTrailingBits(long num) {
      * If the value is exactly halfway between two infinitely precise results,
      * then it should be rounded up to the nearest infinitely precise even.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.653 -0500", hash_original_method = "BE1368BC0340B1F1D2FFF04FBC3A9E13", hash_generated_method = "692D349DE4EA6829166817861462EA9C")
     
 private void round() {
@@ -333,6 +331,8 @@ private void round() {
     /*
      * Returns the normalized significand after removing the leading zeros.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.656 -0500", hash_original_method = "D2C62D141CD2F22FD7386D5422E8C46E", hash_generated_method = "90D91664A3B68F4A21813DEB48F41751")
     
 private String getNormalizedSignificand(String strIntegerPart, String strDecimalPart) {
@@ -350,6 +350,8 @@ private String getNormalizedSignificand(String strIntegerPart, String strDecimal
      * characters "0x1." followed by a lowercase hexadecimal representation of
      * the rest of the significand as a fraction.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.659 -0500", hash_original_method = "08762480F158FA197B11D4959C7DC334", hash_generated_method = "FB120997EECBE831E52B60C0713D226C")
     
 private int getOffset(String strIntegerPart, String strDecimalPart) {
@@ -371,6 +373,8 @@ private int getOffset(String strIntegerPart, String strDecimalPart) {
         return (-i - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber, HEX_RADIX)) - 1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.661 -0500", hash_original_method = "20FEBC548021CA37C4B86DB718571102", hash_generated_method = "90E8E25FF2838D42004C15B8F7D2C263")
     
 private int countBitsLength(long value) {

@@ -9,10 +9,6 @@ import java.util.LinkedList;
 
 import android.os.Message;
 
-
-
-
-
 class HttpAuthHandlerImpl extends HttpAuthHandler {
 
     /**
@@ -27,7 +23,6 @@ public static void onReceivedCredentials(LoadListener loader,
         proxy.onReceivedHttpAuthCredentials(host, realm, username, password);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.115 -0500", hash_original_field = "B8F296222D99B13B57A30F4500AF7F3D", hash_generated_field = "F098064C2753AB544D48EBBEF82B0BA4")
-
 
     private static final String LOGTAG = "network";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.122 -0500", hash_original_field = "E9D881E02215A8BBF09D194599456251", hash_generated_field = "307137EC37CD63DF6594FE42EBE00E97")
@@ -63,13 +58,14 @@ public static void onReceivedCredentials(LoadListener loader,
      *
      * @param network The parent network object
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.134 -0500", hash_original_method = "DD7F5BEFB1D050713E2D554BF9DDD08D", hash_generated_method = "DD7F5BEFB1D050713E2D554BF9DDD08D")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.134 -0500", hash_original_method = "DD7F5BEFB1D050713E2D554BF9DDD08D", hash_generated_method = "DD7F5BEFB1D050713E2D554BF9DDD08D")
     
 HttpAuthHandlerImpl(Network network) {
         mNetwork = network;
         mLoaderQueue = new LinkedList<LoadListener>();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.137 -0500", hash_original_method = "92EA526117BA58D828A346DC2F14E6C7", hash_generated_method = "BE888BC2460B85EAE15CD490B47AAED3")
     
@@ -107,6 +103,8 @@ HttpAuthHandlerImpl(Network network) {
      * @return True if the request is synchronous and handleAuthRequest() has
      * been unblocked
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.139 -0500", hash_original_method = "633BAC1354102784355BBDC241836385", hash_generated_method = "A13785571FD4CA7158438247806281C0")
     
 private boolean handleResponseForSynchronousRequest(String username, String password) {
@@ -122,6 +120,8 @@ private boolean handleResponseForSynchronousRequest(String username, String pass
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.142 -0500", hash_original_method = "D0913A95E2E0984BDC30D85F1A6DD6EF", hash_generated_method = "20E0AF4EC1044960CFCE5137C7502180")
     
 private void signalRequestComplete() {
@@ -196,7 +196,9 @@ public boolean useHttpAuthUsernamePassword() {
      * @param loader The loader that resulted in this http
      * authentication request
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.151 -0500", hash_original_method = "69FA3518C12F8613622C8FCCAB6F2AF7", hash_generated_method = "402483C5CBEEB73E864556E7BE42590F")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.151 -0500", hash_original_method = "69FA3518C12F8613622C8FCCAB6F2AF7", hash_generated_method = "402483C5CBEEB73E864556E7BE42590F")
     
 void handleAuthRequest(LoadListener loader) {
         // The call to proxy.onReceivedHttpAuthRequest() may be asynchronous. If
@@ -243,6 +245,8 @@ void handleAuthRequest(LoadListener loader) {
     /**
      * Wait for the request in flight, if any, to complete
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.153 -0500", hash_original_method = "886E13332A9209796D68B57BD4AA101D", hash_generated_method = "D2CF3E934D1AFF5F16088D62551FCDBD")
     
 private void waitForRequestToComplete() {
@@ -260,6 +264,8 @@ private void waitForRequestToComplete() {
     /**
      * Process the next loader in the queue (helper method)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.156 -0500", hash_original_method = "915750F5CD3DA8563236F4856CDF7624", hash_generated_method = "9BD8A92E1B6E56BFF9D1B998641A3453")
     
 private void processNextLoader() {

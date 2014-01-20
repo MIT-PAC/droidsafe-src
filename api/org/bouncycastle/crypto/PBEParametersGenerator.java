@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.util.Strings;
 
-
-
-
-
-
 public abstract class PBEParametersGenerator {
 
     /**
@@ -163,6 +158,8 @@ public int getIterationCount()
      * @param keySize the length, in bits, of the key required.
      * @return a parameters object representing a key.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.547 -0500", hash_original_method = "98AFD8ECF9A0E600D41962C41C0FE43D", hash_generated_method = "8623FF622A8064A58FB3420841479B24")
     
 public abstract CipherParameters generateDerivedParameters(int keySize);
@@ -175,6 +172,8 @@ public abstract CipherParameters generateDerivedParameters(int keySize);
      * @param ivSize the length, in bits, of the iv required.
      * @return a parameters object representing a key and an IV.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.550 -0500", hash_original_method = "9AFA4045D657BD87EACCE4FFD29B371E", hash_generated_method = "86FDA5F7A1A2AEF243E83937CCD85578")
     
 public abstract CipherParameters generateDerivedParameters(int keySize, int ivSize);
@@ -186,10 +185,11 @@ public abstract CipherParameters generateDerivedParameters(int keySize, int ivSi
      * @param keySize the length, in bits, of the key required.
      * @return a parameters object representing a key.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.552 -0500", hash_original_method = "4AC18EA0058B282F1B402876553ECFFB", hash_generated_method = "B3BAE818D4444A17AE5EF402720447EE")
     
 public abstract CipherParameters generateDerivedMacParameters(int keySize);
-
     
 }
 

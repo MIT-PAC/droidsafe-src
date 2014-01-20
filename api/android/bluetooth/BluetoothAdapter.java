@@ -949,6 +949,8 @@ public BluetoothServerSocket listenUsingEncryptedRfcommWithServiceRecord(
         return createNewRfcommSocketAndRecord(name, uuid, false, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.821 -0500", hash_original_method = "ABCD96E52C8B56B2C4BF1A6AB6CFAB37", hash_generated_method = "9CB34745B967B422C46BDF238B65C9D8")
     
 private BluetoothServerSocket createNewRfcommSocketAndRecord(String name, UUID uuid,
@@ -1218,6 +1220,8 @@ public boolean changeApplicationBluetoothState(boolean on,
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.854 -0500", hash_original_method = "513CC86480EBB28E1771EE0ECDF9AF42", hash_generated_method = "15978A1300991F5A9204D32F4FD9DC28")
     
 private Set<BluetoothDevice> toDeviceSet(String[] addresses) {

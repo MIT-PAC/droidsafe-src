@@ -13,18 +13,24 @@ abstract class ShortArrayBuffer extends ShortBuffer {
 
     protected  int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.173 -0500", hash_original_method = "2309FEF74B5324CE6644430AA32CE10F", hash_generated_method = "2309FEF74B5324CE6644430AA32CE10F")
     
 ShortArrayBuffer(short[] array) {
         this(array.length, array, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.175 -0500", hash_original_method = "83C4FE898A0AB05D8AFE678BFD611891", hash_generated_method = "83C4FE898A0AB05D8AFE678BFD611891")
     
 ShortArrayBuffer(int capacity) {
         this(capacity, new short[capacity], 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.178 -0500", hash_original_method = "6241269CB95A33BDF406F3571CF80FE7", hash_generated_method = "6241269CB95A33BDF406F3571CF80FE7")
     
 ShortArrayBuffer(int capacity, short[] backingArray, int offset) {

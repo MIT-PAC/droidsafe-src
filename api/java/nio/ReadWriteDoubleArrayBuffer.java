@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadWriteDoubleArrayBuffer extends DoubleArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.157 -0500", hash_original_method = "B4DD23FAC6B45B9B9799273EFF44AF97", hash_generated_method = "326975168A77573ABC68823CF7C3D9FE")
     
 static ReadWriteDoubleArrayBuffer copy(DoubleArrayBuffer other, int markOfOther) {
@@ -21,18 +20,24 @@ static ReadWriteDoubleArrayBuffer copy(DoubleArrayBuffer other, int markOfOther)
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.159 -0500", hash_original_method = "B4E24CEABED532340C057028C27A20CE", hash_generated_method = "B4E24CEABED532340C057028C27A20CE")
     
 ReadWriteDoubleArrayBuffer(double[] array) {
         super(array);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.162 -0500", hash_original_method = "7B955F583014E9C4E7246DF4D4A38AFC", hash_generated_method = "7B955F583014E9C4E7246DF4D4A38AFC")
     
 ReadWriteDoubleArrayBuffer(int capacity) {
         super(capacity);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.164 -0500", hash_original_method = "070D24C1E4BB222D9665C788C08CE160", hash_generated_method = "070D24C1E4BB222D9665C788C08CE160")
     
 ReadWriteDoubleArrayBuffer(int capacity, double[] backingArray, int arrayOffset) {
@@ -130,7 +135,6 @@ ReadWriteDoubleArrayBuffer(int capacity, double[] backingArray, int arrayOffset)
     public DoubleBuffer slice() {
         return new ReadWriteDoubleArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

@@ -195,6 +195,8 @@ public void setHostAddress(String address) {
      * @param host that host address/name value
      * @param type determines whether host is an address or a host name
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.121 -0500", hash_original_method = "B4E9CFE10688A14DAC1625E8CC87AC41", hash_generated_method = "A1F702A5C3B497AA0A8C613F30D62133")
     
 private void setHost(String host, int type){
@@ -282,6 +284,8 @@ public InetAddress getInetAddress() throws java.net.UnknownHostException {
      * Verifies whether the <code>address</code> could
      * be an IPv6 address
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.134 -0500", hash_original_method = "22A9CB4332482AECEE114125E6F63C27", hash_generated_method = "1BF27C0DE5B5341ACCEFFB6DF77280E8")
     
 private boolean isIPv6Address(String address) {

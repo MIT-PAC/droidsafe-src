@@ -15,10 +15,6 @@ import org.apache.harmony.dalvik.ddmc.DdmVmInternal;
 import android.os.Debug;
 import android.util.Log;
 
-
-
-
-
 public class DdmHandleHeap extends ChunkHandler {
 
     /**
@@ -38,7 +34,6 @@ public static void register() {
         DdmServer.registerHandler(CHUNK_REAL, mInstance);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.811 -0500", hash_original_field = "02C9789580638B8C7211F58E7804CFD7", hash_generated_field = "411BA0ACAF305CEA5DCCB4C3873C0CEB")
-
 
     public static final int CHUNK_HPIF = type("HPIF");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.814 -0500", hash_original_field = "DEC46A5F79E23A211228873455371898", hash_generated_field = "4B945A8D18FB044547723173E8828B0F")
@@ -67,11 +62,11 @@ public static void register() {
     public static final int CHUNK_REAL = type("REAL");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.833 -0500", hash_original_field = "4EBAF2E25D8864FA832149DF1156E814", hash_generated_field = "41155868F04C6605317B5CC3A6E20227")
 
-
     private static DdmHandleHeap mInstance = new DdmHandleHeap();
 
-
     /* singleton, do not instantiate */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.836 -0500", hash_original_method = "236E8F4E2F7DDA83D2B39E117A0E950F", hash_generated_method = "2F7ED6C719B01917EBA38C9269ACFFB4")
     
 private DdmHandleHeap() {}
@@ -129,6 +124,8 @@ public Chunk handleChunk(Chunk request) {
     /*
      * Handle a "HeaP InFo" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.848 -0500", hash_original_method = "0E2E7ADFAF4A415A5EE0645FFEAB4A6D", hash_generated_method = "B3A318D35A881DEE30B5FE479504B57C")
     
 private Chunk handleHPIF(Chunk request) {
@@ -149,6 +146,8 @@ private Chunk handleHPIF(Chunk request) {
     /*
      * Handle a "HeaP SeGment" or "Native Heap SeGment" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.850 -0500", hash_original_method = "A8B738C149F8A2DC880C585E17CFB83A", hash_generated_method = "4CF941C6F5E545562598774A8DFFA42F")
     
 private Chunk handleHPSGNHSG(Chunk request, boolean isNative) {
@@ -177,6 +176,8 @@ private Chunk handleHPSGNHSG(Chunk request, boolean isNative) {
      * the entire contents of the file and return them, but hprof dump
      * files can be a few megabytes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.853 -0500", hash_original_method = "7193E5D1FD98ED03C267523A43581515", hash_generated_method = "54A24673FF106DDD869BF4968EC0A0A4")
     
 private Chunk handleHPDU(Chunk request) {
@@ -213,6 +214,8 @@ private Chunk handleHPDU(Chunk request) {
      * DDMS.  The dumps are large enough that we don't want to copy the
      * data into a byte[] and send it from here.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.855 -0500", hash_original_method = "C41093B7B99D47CB32AB13B14E448339", hash_generated_method = "B9BEC7F61928D35156B4ACE56B42BF06")
     
 private Chunk handleHPDS(Chunk request) {
@@ -243,6 +246,8 @@ private Chunk handleHPDS(Chunk request) {
     /*
      * Handle a "HeaP Garbage Collection" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.857 -0500", hash_original_method = "5AC6D538920D957D7D86B15E943C316B", hash_generated_method = "B7B0C0C694682797A32F853A24F4B406")
     
 private Chunk handleHPGC(Chunk request) {
@@ -258,6 +263,8 @@ private Chunk handleHPGC(Chunk request) {
     /*
      * Handle a "REcent Allocation Enable" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.859 -0500", hash_original_method = "C9F19EAFED9803F043951491F6273920", hash_generated_method = "0459ED362AA523343B5A997852C706F0")
     
 private Chunk handleREAE(Chunk request) {
@@ -277,6 +284,8 @@ private Chunk handleREAE(Chunk request) {
     /*
      * Handle a "REcent Allocation Query" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.862 -0500", hash_original_method = "B480B93C7FE178F2CE62D90F1F153D77", hash_generated_method = "1FA79415431A118A3486A23E3F8BBC7A")
     
 private Chunk handleREAQ(Chunk request) {
@@ -290,6 +299,8 @@ private Chunk handleREAQ(Chunk request) {
     /*
      * Handle a "REcent ALlocations" request.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.864 -0500", hash_original_method = "34D94CBD5BF588E49D545F9249DA1F17", hash_generated_method = "D7B765B028B66BFA45929E1E6AAEDA4F")
     
 private Chunk handleREAL(Chunk request) {

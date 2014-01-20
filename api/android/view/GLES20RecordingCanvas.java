@@ -19,6 +19,8 @@ import android.util.Pools;
 
 class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20RecordingCanvas> {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.385 -0500", hash_original_method = "53E5FDBF859A33AAC863847F6B788FBD", hash_generated_method = "F5137FE27A1F74CD3EEAAE1E925C67FF")
     
 static GLES20RecordingCanvas obtain(GLES20DisplayList displayList) {
@@ -60,12 +62,16 @@ public GLES20RecordingCanvas newInstance() {
 
     private GLES20DisplayList mDisplayList;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.382 -0500", hash_original_method = "812619B49F53F101F754768C67C6D06B", hash_generated_method = "5DEE3E6724C777E7BB89CDEA4B56592A")
     
 private GLES20RecordingCanvas() {
         super(true /*record*/, true /*translucent*/);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.387 -0500", hash_original_method = "4BF651B582CB590909780C1869866D8B", hash_generated_method = "4BF651B582CB590909780C1869866D8B")
     
 void recycle() {
@@ -74,18 +80,24 @@ void recycle() {
         sPool.release(this);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.389 -0500", hash_original_method = "A71C73121DC15CD39FF9E0C285832C08", hash_generated_method = "A71C73121DC15CD39FF9E0C285832C08")
     
 void start() {
         mDisplayList.mBitmaps.clear();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.391 -0500", hash_original_method = "71CBB11C79B7A62506CED8B00E21C814", hash_generated_method = "71CBB11C79B7A62506CED8B00E21C814")
     
 int end(int nativeDisplayList) {
         return getDisplayList(nativeDisplayList);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.394 -0500", hash_original_method = "FB81CD87D0D9397EB08E4403B91E1B9C", hash_generated_method = "86AAF893AF1B83A1BA10AA5157941A07")
     
 private void recordShaderBitmap(Paint paint) {

@@ -79,6 +79,8 @@ public IInputMethodSessionWrapper(Context context,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.667 -0500", hash_original_field = "4903C6C7AA2E39F51C3230E9003EAA25", hash_generated_field = "4903C6C7AA2E39F51C3230E9003EAA25")
 
          IInputMethodCallback mCb;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.670 -0500", hash_original_method = "F69C5DA54CCE399124E2B79C8542153D", hash_generated_method = "F69C5DA54CCE399124E2B79C8542153D")
         
 InputMethodEventCallbackWrapper(IInputMethodCallback cb) {

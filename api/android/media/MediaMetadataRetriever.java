@@ -20,6 +20,8 @@ import droidsafe.helpers.DSUtils;
 
 public class MediaMetadataRetriever {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void native_init() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.073 -0500", hash_original_field = "9EC9B27412543E88C0704005395F4E28", hash_generated_field = "587845B93BAC11B9CC8CAD446009C60D")
@@ -180,6 +182,8 @@ public void setDataSource(String uri,  Map<String, String> headers)
         _setDataSource(uri, keys, values);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.086 -0500", hash_original_method = "1285CC494A70498EAD553FCD7C19AE34", hash_generated_method = "AEB7347C605AC8EE71AD309093B2B6E6")
     
     private void _setDataSource(
@@ -388,6 +392,8 @@ public Bitmap getFrameAtTime() {
         return getFrameAtTime(-1, OPTION_CLOSEST_SYNC);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.171 -0400", hash_original_method = "0267DF76D9FDF0A85486B93D0A2D882E", hash_generated_method = "EAEEF9DF0C3B11B82EFDFB7406623787")
     private Bitmap _getFrameAtTime(long timeUs, int option) {
     	Bitmap bmp = BitmapFactory.decodeByteArray(new byte[] {1}, DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT);
@@ -410,6 +416,8 @@ public byte[] getEmbeddedPicture() {
         return getEmbeddedPicture(EMBEDDED_PICTURE_TYPE_ANY);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.119 -0500", hash_original_method = "B906FFDB309D75A064AF9D81EE962B1C", hash_generated_method = "08ADEAFBA917F96D3A01A7090AD754F4")
     
     private byte[] getEmbeddedPicture(int pictureType){
@@ -428,12 +436,16 @@ public byte[] getEmbeddedPicture() {
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.126 -0500", hash_original_method = "B91E9A85D17B4C3984DC1E936380BF22", hash_generated_method = "3AA47E7546A03DC6BF1E9D10CCBDCA7D")
     
     private void native_setup(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.134 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     
     private final void native_finalize(){

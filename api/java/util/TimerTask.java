@@ -38,6 +38,8 @@ protected TimerTask() {
     /*
      * Method called from the Timer for synchronized getting of when field.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.669 -0500", hash_original_method = "61DD03075FF1927377D7CEC2AE97ED1A", hash_generated_method = "61DD03075FF1927377D7CEC2AE97ED1A")
     
@@ -50,6 +52,8 @@ long getWhen() {
     /*
      * Method called from the Timer object when scheduling an event @param time
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.671 -0500", hash_original_method = "AE139E2AB369CB1B1C48D00C62C96DCB", hash_generated_method = "AE139E2AB369CB1B1C48D00C62C96DCB")
     
 void setScheduledTime(long time) {
@@ -64,6 +68,8 @@ void setScheduledTime(long time) {
      * @return {@code true} if the timer task is scheduled, {@code false}
      * otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.673 -0500", hash_original_method = "0BC3D740AEEAEAE472C572E03A1906A5", hash_generated_method = "0BC3D740AEEAEAE472C572E03A1906A5")
     
 boolean isScheduled() {
@@ -110,6 +116,8 @@ public long scheduledExecutionTime() {
      * The task to run should be specified in the implementation of the {@code run()}
      * method.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.683 -0500", hash_original_method = "2C6A443C83148E86AAD705D9EE784F75", hash_generated_method = "5BBE1BCB74D1FAFBB58FE7F038D48F66")
     
 public abstract void run();

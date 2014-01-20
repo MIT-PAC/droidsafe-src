@@ -16,10 +16,6 @@ import gov.nist.javax.sip.header.ViaList;
 
 import java.text.ParseException;
 
-
-
-
-
 public class ViaParser extends HeaderParser {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.587 -0500", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "1F132816A00B46E58B7BC1EC0DFF40DB")
@@ -37,6 +33,8 @@ public ViaParser(Lexer lexer) {
     /**
      * a parser for the essential part of the via header.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.594 -0500", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "6C971D18B78C1160D112611D2C69AEEE")
     
 private void parseVia(Via v) throws ParseException {
@@ -217,7 +215,6 @@ public SIPHeader parse() throws ParseException {
         }
 
     }
-
     
 }
 

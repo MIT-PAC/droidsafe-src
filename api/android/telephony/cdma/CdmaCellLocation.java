@@ -16,6 +16,8 @@ public class CdmaCellLocation extends CellLocation {
      * @param b second obj
      * @return true if two objects equal or both are null
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.390 -0500", hash_original_method = "BC145A1DE2472995676ED9A315FB0956", hash_generated_method = "171409CD29A7B7D5AD18DD4C394534AC")
     
 private static boolean equalsHandlesNulls(Object a, Object b) {

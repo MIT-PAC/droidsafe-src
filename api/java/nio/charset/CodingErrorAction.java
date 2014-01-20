@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class CodingErrorAction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.598 -0500", hash_original_field = "36280811176184BD58DAE93CABA1A5DB", hash_generated_field = "180E61F2E81DA6FA0483F69131029064")
 
@@ -27,6 +25,8 @@ public class CodingErrorAction {
     /*
      * Can't instantiate outside.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.608 -0500", hash_original_method = "97CD51F500ABFE41AE4BD609F91C5F74", hash_generated_method = "53D432196C6DD13986E47F240213F053")
     
 private CodingErrorAction(String action) {

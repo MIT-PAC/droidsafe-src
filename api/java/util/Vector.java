@@ -17,6 +17,8 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
      * This method was extracted to encourage VM to inline callers.
      * TODO: when we have a VM that can actually inline, move the test in here too!
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.112 -0500", hash_original_method = "9B7D3F2F980E3EB6087A253589224152", hash_generated_method = "241DB74A7C1A3F403B28B3142CB5207F")
     
 private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int index, int size) {
@@ -54,7 +56,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         // ---------- Original Method ----------
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.769 -0400", hash_original_method = "B35B3D540AE265DD802702BED4157C47", hash_generated_method = "BF9A3C0BA660B360DF1D292D1829D8E7")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.769 -0400", hash_original_method = "B35B3D540AE265DD802702BED4157C47", hash_generated_method = "BF9A3C0BA660B360DF1D292D1829D8E7")
     public  Vector(int capacity, int capacityIncrement) {
         if(capacity < 0)        
         {
@@ -87,7 +91,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         add(object);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.781 -0400", hash_original_method = "DD1AE1F8EA98D3605FDD193E0651B9D6", hash_generated_method = "7262DE01DC95807F0A43071764ECEBC7")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.781 -0400", hash_original_method = "DD1AE1F8EA98D3605FDD193E0651B9D6", hash_generated_method = "7262DE01DC95807F0A43071764ECEBC7")
     public synchronized int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2115132097 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2115132097;
@@ -124,7 +130,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
             //}
         }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.784 -0400", hash_original_method = "9FCD2BB7391A67913F5DC5B0A38C9668", hash_generated_method = "ABCEE675B5AABD0DFD2EE89ECE981656")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.784 -0400", hash_original_method = "9FCD2BB7391A67913F5DC5B0A38C9668", hash_generated_method = "ABCEE675B5AABD0DFD2EE89ECE981656")
     public synchronized void copyInto(Object[] elements) {
 
         super.clear();
@@ -157,6 +165,8 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //throw arrayIndexOutOfBoundsException(location, elementCount);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.800 -0400", hash_original_method = "B6E84DE201AAEF8307F5E7CA8A6AEF90", hash_generated_method = "3394A8B949040FA17A0B7582B856E695")
     public Enumeration<E> elements() {
         return getEnumeration();
@@ -178,7 +188,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //};
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.801 -0400", hash_original_method = "DF06508A0F0ED83B84FE34EF6D5FCD26", hash_generated_method = "742A353D3915ECCD250517FD19695D0A")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.801 -0400", hash_original_method = "DF06508A0F0ED83B84FE34EF6D5FCD26", hash_generated_method = "742A353D3915ECCD250517FD19695D0A")
     public synchronized void ensureCapacity(int minimumCapacity) {
         addTaint(minimumCapacity);
         requestCapacity(minimumCapacity);
@@ -191,7 +203,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //}
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.801 -0400", hash_original_method = "18CA94477F381022C117A5BE2C4C7154", hash_generated_method = "4C2D7C68945F209C93ED4EC720F3912B")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.801 -0400", hash_original_method = "18CA94477F381022C117A5BE2C4C7154", hash_generated_method = "4C2D7C68945F209C93ED4EC720F3912B")
     @Override
     public synchronized boolean equals(Object object) {
         return isEqualTo(object);
@@ -241,6 +255,8 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
      * @return the receiver's hash.
      * @see #equals
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.064 -0500", hash_original_method = "20A64E7812064C08C37EDD86F8A561DF", hash_generated_method = "E03AFB35E1AB6EEEE84CD19F72F0EB38")
     
 @Override
@@ -253,7 +269,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         return result;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.805 -0400", hash_original_method = "24750353DFD7303BB9261ABCF2B08CBF", hash_generated_method = "2A2E2AB039FE45D1C4871E0EB007D7DF")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.805 -0400", hash_original_method = "24750353DFD7303BB9261ABCF2B08CBF", hash_generated_method = "2A2E2AB039FE45D1C4871E0EB007D7DF")
     public synchronized int indexOf(Object object, int location) {
         addTaint(location);
         addTaint(object.getTaint());
@@ -331,7 +349,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //}
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.820 -0400", hash_original_method = "DAE93837888D415686D1D0DD0C8E6815", hash_generated_method = "4CC0D52AD094205C4CCF6239F4B7A605")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.820 -0400", hash_original_method = "DAE93837888D415686D1D0DD0C8E6815", hash_generated_method = "4CC0D52AD094205C4CCF6239F4B7A605")
     public synchronized int lastIndexOf(Object object, int location) {
         if (DroidSafeAndroidRuntime.control) {
             addTaint(location);
@@ -363,12 +383,16 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //throw arrayIndexOutOfBoundsException(location, elementCount);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.824 -0400", hash_original_method = "B99CB02C0986A5ACE1171E44B2E88FC0", hash_generated_method = "B1AF8F7A62BE803D9C4214E5FFF1A75D")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.824 -0400", hash_original_method = "B99CB02C0986A5ACE1171E44B2E88FC0", hash_generated_method = "B1AF8F7A62BE803D9C4214E5FFF1A75D")
     public synchronized void removeAllElements() {
         clear();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.824 -0400", hash_original_method = "A6C501B9D7921F5FC1AF3EFCF61D0AD0", hash_generated_method = "E7F332CFDD1F1B8882214C1269A1F7DE")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.824 -0400", hash_original_method = "A6C501B9D7921F5FC1AF3EFCF61D0AD0", hash_generated_method = "E7F332CFDD1F1B8882214C1269A1F7DE")
     public synchronized boolean removeElement(Object object) {
         addTaint(object.getTaint());
         remove(object);
@@ -392,6 +416,8 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
      * @return {@code true} if this vector is modified, {@code false} otherwise.
      * @see #remove(Object)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.104 -0500", hash_original_method = "3D3F7D0269EE9A4A0E6B970CD7AB0599", hash_generated_method = "50571D3BC1ED74E3C9E79E72C232E208")
     
 @Override
@@ -399,6 +425,8 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         return super.retainAll(collection);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.004 -0400", hash_original_method = "BE9BD0132B3B62E633B4EDB307CB7290", hash_generated_method = "EB4FEAFEFF2F9B8F2670ED49875A91C2")
     public synchronized void setElementAt(E object, int location) {
@@ -430,7 +458,9 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //modCount++;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.853 -0400", hash_original_method = "0DD9DB5F445E75E250BA34836212BB86", hash_generated_method = "12B603844139A5BD52EC9721C94F1CD7")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.853 -0400", hash_original_method = "0DD9DB5F445E75E250BA34836212BB86", hash_generated_method = "12B603844139A5BD52EC9721C94F1CD7")
     @Override
     public synchronized String toString() {
         int size = size();
@@ -501,6 +531,8 @@ String varD03843288D33B9E1D3062E25339ECF6D_693101289 =         buffer.toString()
         //}
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.133 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "D143AA14F535C1E7B75B98ADCA9EA642")
     
 private synchronized void writeObject(ObjectOutputStream stream)

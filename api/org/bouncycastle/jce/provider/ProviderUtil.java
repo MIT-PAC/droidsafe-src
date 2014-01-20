@@ -14,13 +14,10 @@ import org.bouncycastle.jce.interfaces.ConfigurableProvider;
 import org.bouncycastle.jce.provider.asymmetric.ec.EC5Util;
 import org.bouncycastle.jce.spec.ECParameterSpec;
 
-
-
-
-
-
 public class ProviderUtil {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.804 -0500", hash_original_method = "A7DC5B91450FFE4B344462BF68654569", hash_generated_method = "F7D989378EBA7BA1A7F50B296D1038E0")
     
 static void setParameter(String parameterName, Object parameter)
@@ -86,6 +83,8 @@ public static ECParameterSpec getEcImplicitlyCa()
         return ecImplicitCaParams;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.808 -0500", hash_original_method = "5D6BD5271BA6E2165580441D00723C55", hash_generated_method = "3D41289F69342537976D8B2A16D9956C")
     
 static int getReadLimit(InputStream in)
@@ -108,7 +107,6 @@ static int getReadLimit(InputStream in)
     private static final long  MAX_MEMORY = Runtime.getRuntime().maxMemory();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.793 -0500", hash_original_field = "E33976C9BA280D6C6ED62C9A87A3C20F", hash_generated_field = "32A3648F1C97FCBCA10D3B7E92706891")
 
-
     private static Permission BC_EC_LOCAL_PERMISSION = new ProviderConfigurationPermission(
                                                    BouncyCastleProvider.PROVIDER_NAME, ConfigurableProvider.THREAD_LOCAL_EC_IMPLICITLY_CA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.796 -0500", hash_original_field = "71BF299AA72D19CEBC41972311AE3936", hash_generated_field = "6DE99D887CBDBCAEE71A9ECF2EC2253D")
@@ -116,7 +114,6 @@ static int getReadLimit(InputStream in)
     private static Permission BC_EC_PERMISSION = new ProviderConfigurationPermission(
                                                    BouncyCastleProvider.PROVIDER_NAME, ConfigurableProvider.EC_IMPLICITLY_CA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.798 -0500", hash_original_field = "E7E750652EAEF3E5B130142ECABDA900", hash_generated_field = "2C64121CA4C81C23DDD3DDCE8301A182")
-
 
     private static ThreadLocal threadSpec = new ThreadLocal();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.800 -0500", hash_original_field = "940FDB492FA81E1042EC1E157D6A36E8", hash_generated_field = "13B48DE98077836F2FD596682B471365")

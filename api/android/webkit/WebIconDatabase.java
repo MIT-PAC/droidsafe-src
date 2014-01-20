@@ -36,23 +36,35 @@ public static WebIconDatabase getInstance() {
         return sIconDatabase;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeOpen(String path) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClose() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRemoveAllIcons() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Bitmap nativeIconForPageUrl(String url) {
     	Bitmap bm = BitmapFactory.decodeByteArray(new byte[1], 0, 0);
     	return bm; 
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRetainIconForPageUrl(String url) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeReleaseIconForPageUrl(String url) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.289 -0500", hash_original_field = "24455ABE358B662CDEC483182BA9B932", hash_generated_field = "1F07299C39AF9E2A5CCA0FEC4BF5CF2A")
@@ -69,6 +81,8 @@ public static WebIconDatabase getInstance() {
     /**
      * Private constructor to avoid anyone else creating an instance.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.380 -0500", hash_original_method = "D97F7EFB28FBFEC67D724170FB0509C5", hash_generated_method = "ACA4506DB54BBD3943536973731E5E2E")
     
 private WebIconDatabase() {}
@@ -213,6 +227,8 @@ IconResult(String url, Bitmap icon, IconListener l) {
                 mIcon = icon;
                 mListener = l;
             }
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.331 -0500", hash_original_method = "0BD69C5EE78EDD047C8FC1E711DA2EA8", hash_generated_method = "0BD69C5EE78EDD047C8FC1E711DA2EA8")
             
 void dispatch() {
@@ -224,6 +240,8 @@ void dispatch() {
 
         private Vector<Message> mMessages = new Vector<Message>();
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.415 -0400", hash_original_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779", hash_generated_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779")
         public EventHandler ()
         {
@@ -243,6 +261,8 @@ void dispatch() {
         }
 
         // Called by WebCore thread to create the actual handler
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.342 -0500", hash_original_method = "93C53855D8E83D18C38BE52A1D7D3DDC", hash_generated_method = "9CEBFAB253FE1599DCDD779F22A9BEE0")
         
 private synchronized void createHandler() {
@@ -293,12 +313,16 @@ private synchronized void createHandler() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.345 -0500", hash_original_method = "9D0DE68A4BFD007DC242C5FC5FA57FA9", hash_generated_method = "45D23FF17766BECACD89444CBA1F9B4F")
         
 private synchronized boolean hasHandler() {
             return mHandler != null;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.348 -0500", hash_original_method = "4B2498A7504C7636E794F105FA929903", hash_generated_method = "BFF1BE7A56B3F7891A1C123884C790D7")
         
 private synchronized void postMessage(Message msg) {
@@ -309,6 +333,8 @@ private synchronized void postMessage(Message msg) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.350 -0500", hash_original_method = "14DAA8F1389B41CD064DE9C446247235", hash_generated_method = "88B6ACE53A08318FE233E45328642E9E")
         
 private void bulkRequestIcons(Message msg) {
@@ -369,7 +395,9 @@ public void releaseIconForPageUrl(String url) {
      * Create the internal handler and transfer all pending messages.
      * XXX: Called by WebCore thread only!
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.378 -0500", hash_original_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34", hash_generated_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.378 -0500", hash_original_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34", hash_generated_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34")
     
 void createHandler() {
         mEventHandler.createHandler();

@@ -84,6 +84,8 @@ public GZIPOutputStream(OutputStream os, int size) throws IOException {
         crc.update(buffer, off, nbytes);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.936 -0500", hash_original_method = "47F39FA28854367E1C176B836238D964", hash_generated_method = "A10CA5051B4714D6AD80970BEA237AE3")
     
 private long writeLong(long i) throws IOException {
@@ -96,6 +98,8 @@ private long writeLong(long i) throws IOException {
         return i;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.938 -0500", hash_original_method = "22B8B662F709BB8BFEF4CD6C31753D50", hash_generated_method = "53FBFB19EE2DCED99DD16824297DCC0A")
     
 private int writeShort(int i) throws IOException {

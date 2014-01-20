@@ -373,6 +373,8 @@ protected boolean needInputMethod() {
     /**
      * Sets the required flags on the dialog window to enable input method window to show up.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.574 -0500", hash_original_method = "3B69F31C6833A6156BA93E6BE7789317", hash_generated_method = "D190D5E44E8FFDDBB130D33475DEE964")
     
 private void requestInputMethod(Dialog dialog) {

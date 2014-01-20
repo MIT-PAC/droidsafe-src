@@ -57,6 +57,8 @@ public MatrixCursor(String[] columnNames) {
     /**
      * Gets value at the given column for the current row.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.743 -0500", hash_original_method = "A7EF9562410A67389E3E61A73FDE647E", hash_generated_method = "83BF9D0907825A7CE7604E80DF04F695")
     
 private Object get(int column) {
@@ -158,6 +160,8 @@ public void addRow(Iterable<?> columnValues) {
     }
 
     /** Optimization for {@link ArrayList}. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.753 -0500", hash_original_method = "F5D0F3FA334A37A2680A290D6DEEBDBE", hash_generated_method = "4542ED27461748289DDD7AF553420831")
     
 private void addRow(ArrayList<?> columnValues, int start) {
@@ -175,6 +179,8 @@ private void addRow(ArrayList<?> columnValues, int start) {
     }
 
     /** Ensures that this cursor has enough capacity. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.756 -0500", hash_original_method = "0FD21978EF299D1119588B65FAE6C3BE", hash_generated_method = "F9728CB00BE91D5A5FC0C8091EAAA7DA")
     
 private void ensureCapacity(int size) {

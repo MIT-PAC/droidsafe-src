@@ -167,6 +167,8 @@ public static final HttpHost getPreferredHttpHost(Context context,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.961 -0500", hash_original_method = "26F6A89AC3C35BA8FFA3188781C71F9A", hash_generated_method = "4F141E0CF1506F8783721B545795D180")
     
 private static final boolean isLocalHost(String host) {

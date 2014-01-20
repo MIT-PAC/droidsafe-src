@@ -17,7 +17,9 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
 protected AbstractSet() {
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.657 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "F562AD9D6FCD2DAE6CC8714D342120D2")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.657 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "F562AD9D6FCD2DAE6CC8714D342120D2")
     @Override
     public boolean equals(Object object) {
         return super.isEqualTo(object);
@@ -31,6 +33,8 @@ protected AbstractSet() {
      * @return the hash code of this set.
      * @see #equals
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.887 -0500", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "EC4E6B86A0B1F508A6076903FE132A4B")
     
 @Override

@@ -659,6 +659,8 @@ public PendingIntent getReconnectIntentSync() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.763 -0500", hash_original_method = "3340C70610FFA5D9D28FC6E77DE7CB0F", hash_generated_method = "53EF0579E11A699B6468ECD12F78E1EC")
     
 private void log(String s) {

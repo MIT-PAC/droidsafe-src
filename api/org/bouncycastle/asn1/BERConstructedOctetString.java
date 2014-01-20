@@ -9,16 +9,13 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
-
-
-
-
-
 public class BERConstructedOctetString extends DEROctetString {
 
     /**
      * convert a vector of octet strings into a single byte string
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.221 -0500", hash_original_method = "4664D1B75E47F4959701A1C01649EB42", hash_generated_method = "742B75D7CF6C93094988DF6E137F66E2")
     
 static private byte[] toBytes(
@@ -65,7 +62,6 @@ public static BERConstructedOctetString fromSequence(ASN1Sequence seq)
 
     private static final int MAX_LENGTH = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.224 -0500", hash_original_field = "5DA4E18E3EB8D14327A16281BB82EBB3", hash_generated_field = "D188A20B051C25B638BF89B386738B27")
-
 
     private Vector  octs;
 
@@ -128,6 +124,8 @@ public Enumeration getObjects()
         return octs.elements();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.241 -0500", hash_original_method = "03E7802E2319FF252715B6886182CABF", hash_generated_method = "792D08AC6A43E9804EEE0BCE0AF8FF5D")
     
 private Vector generateOcts() 
@@ -135,7 +133,7 @@ private Vector generateOcts()
         Vector vec = new Vector(); 
         for (int i = 0; i < string.length; i += MAX_LENGTH) 
         { 
-            int end; 
+            int end;
 
             if (i + MAX_LENGTH > string.length) 
             { 
@@ -144,14 +142,14 @@ private Vector generateOcts()
             else 
             { 
                 end = i + MAX_LENGTH; 
-            } 
+            }
 
-            byte[] nStr = new byte[end - i]; 
+            byte[] nStr = new byte[end - i];
 
-            System.arraycopy(string, i, nStr, 0, nStr.length); 
+            System.arraycopy(string, i, nStr, 0, nStr.length);
 
             vec.addElement(new DEROctetString(nStr)); 
-         } 
+         }
         
          return vec; 
     }

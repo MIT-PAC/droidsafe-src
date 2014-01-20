@@ -46,6 +46,8 @@ synchronized public static SelectorProvider provider() {
         return provider;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.279 -0500", hash_original_method = "C5D0C714A3BF8C6915C7636E13EEA7C7", hash_generated_method = "A60E27474069C0C3802B81F66A315C06")
     
 private static SelectorProvider loadProviderByJar() {
@@ -73,6 +75,8 @@ protected SelectorProvider() {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.281 -0500", hash_original_method = "6CE46028DFD2506BCD98D615EA62CDBE", hash_generated_method = "26779A042F4F3F7A51C52AAC48C8F131")
     
 public abstract DatagramChannel openDatagramChannel() throws IOException;
@@ -84,6 +88,8 @@ public abstract DatagramChannel openDatagramChannel() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.284 -0500", hash_original_method = "9754760E4C5D79B353FBD42CC84376BC", hash_generated_method = "7975B1A8DC0ACD7AFE4EB92E7A2E26B9")
     
 public abstract Pipe openPipe() throws IOException;
@@ -95,6 +101,8 @@ public abstract Pipe openPipe() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.287 -0500", hash_original_method = "33F302F02C9A0ABE6F822FDD9590DDB1", hash_generated_method = "CE2BE189B8E5DFD0DFA7167F12016B71")
     
 public abstract AbstractSelector openSelector() throws IOException;
@@ -106,6 +114,8 @@ public abstract AbstractSelector openSelector() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.289 -0500", hash_original_method = "FFADC8C36121EF0521C5D9B96AF17086", hash_generated_method = "BBBAC932364FF4BB6BA15E4406EEB5D2")
     
 public abstract ServerSocketChannel openServerSocketChannel()
@@ -118,6 +128,8 @@ public abstract ServerSocketChannel openServerSocketChannel()
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.291 -0500", hash_original_method = "A9809723489DBB26BCC3B12B8A96DD26", hash_generated_method = "7FA0C3464F045FA28D2329D892FFD7E5")
     
 public abstract SocketChannel openSocketChannel() throws IOException;

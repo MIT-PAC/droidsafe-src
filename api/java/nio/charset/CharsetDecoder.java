@@ -173,6 +173,8 @@ public final CharBuffer decode(ByteBuffer in) throws CharacterCodingException {
     /*
      * checks the result whether it needs to throw CharacterCodingException.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.874 -0500", hash_original_method = "297219195E5B4473685A201861AC1DC3", hash_generated_method = "93EDC8FB71FB36A64E5E63F079D470B4")
     
 private void checkCoderResult(CoderResult result) throws CharacterCodingException {
@@ -188,6 +190,8 @@ private void checkCoderResult(CoderResult result) throws CharacterCodingExceptio
      * to new CharBuffer and return it, the contents in the given buffer will be
      * copied into the new buffer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.877 -0500", hash_original_method = "D4DFBF2849FE3731857D4FDEE2ED4787", hash_generated_method = "A3953E5E70D27F89B9943BCEBCDC7E83")
     
 private CharBuffer allocateMore(CharBuffer output) {
@@ -359,6 +363,8 @@ public final CoderResult decode(ByteBuffer in, CharBuffer out,
      *            the output buffer.
      * @return a <code>CoderResult</code> instance indicating the result.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.883 -0500", hash_original_method = "9680F981801283FFB7CE500C1C691EF0", hash_generated_method = "45E10C8598041348E587BA19E1D99A75")
     
 protected abstract CoderResult decodeLoop(ByteBuffer in, CharBuffer out);

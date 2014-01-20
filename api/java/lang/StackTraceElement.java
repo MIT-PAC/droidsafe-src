@@ -43,6 +43,8 @@ public final class StackTraceElement implements Serializable {
      * @throws NullPointerException
      *             if {@code cls} or {@code method} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.878 -0500", hash_original_method = "DB2419D651C8F74CAA343D4DD61F23E8", hash_generated_method = "615FA1AFA3F4B97E7D05F8DBB57833F3")
     
 public StackTraceElement(String cls, String method, String file, int line) {
@@ -55,6 +57,8 @@ public StackTraceElement(String cls, String method, String file, int line) {
         lineNumber = line;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.462 -0400", hash_original_method = "DC3E276578F22895683C0979CF7614B3", hash_generated_method = "069C2D8BCA6C8CA3D907F0C7C60A9CFB")
 	public  StackTraceElement() {
         // ---------- Original Method ----------
@@ -78,6 +82,8 @@ public StackTraceElement(String cls, String method, String file, int line) {
      *         {@code StackTraceElement}; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.885 -0500", hash_original_method = "7AAA9568018A0DD8A42BBFC0DF2D8ABE", hash_generated_method = "646E4E325280E4AC3712BC83C69CC404")
     
 @Override
@@ -181,6 +187,8 @@ public String getMethodName() {
         return (methodName == null) ? "<unknown method>" : methodName;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.897 -0500", hash_original_method = "4C3BE92C911A1E7C2FB757777265DE77", hash_generated_method = "1AB62DF0280440DAA5E83C1F594822E3")
     
 @Override
@@ -204,12 +212,16 @@ public String getMethodName() {
      * @return {@code true} if the method in which this stack trace element is
      *         executing is a native method; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.900 -0500", hash_original_method = "9234CE459C30A5F4896C026CB51E3A9C", hash_generated_method = "AF9C5ABF854DFC57A5D4E6FB50B0F17A")
     
 public boolean isNativeMethod() {
         return lineNumber == NATIVE_LINE_NUMBER;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.903 -0500", hash_original_method = "6555BB21F7D49ABF8ADE43CA311A7DFA", hash_generated_method = "CDFE8E2F9ED097F72933396ED7533C74")
     
 @Override

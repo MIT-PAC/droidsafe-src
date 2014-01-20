@@ -35,9 +35,13 @@ public static Runtime getRuntime() {
         return mRuntime;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeExit(int code, boolean isExit) {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeLoad(String filename, ClassLoader loader) {
 		String ret = new String();
 		ret.addTaint(filename.taint);
@@ -56,6 +60,8 @@ public static Runtime getRuntime() {
      *            disable it.
      * @deprecated This method is unsafe.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.143 -0500", hash_original_method = "6FEED072B476DF683299871B82C2E47E", hash_generated_method = "D1C8F57605DACB183A09E1BEE2EA4F5E")
     
 @Deprecated
@@ -84,6 +90,8 @@ public static Runtime getRuntime() {
     /**
      * Prevent this class from being instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.090 -0500", hash_original_method = "F82AC05B2B9BDA560435929D86D5DD16", hash_generated_method = "D0C87865D7155E0AC8B85527D192C72C")
     
 private Runtime(){
@@ -140,6 +148,8 @@ public Process exec(String[] progArray) throws java.io.IOException {
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.095 -0500", hash_original_method = "DBDF96D0DD01BF3A81297C1A77D3788B", hash_generated_method = "012ED451F3EDE6F4898BE91C42133BD1")
     
 public Process exec(String[] progArray, String[] envp) throws java.io.IOException {
@@ -165,6 +175,8 @@ public Process exec(String[] progArray, String[] envp) throws java.io.IOExceptio
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.097 -0500", hash_original_method = "CA3870F83BC3F7A92215C18375ED76A3", hash_generated_method = "221BC57B8B66088A1C3F3396280CB7B6")
     
@@ -208,6 +220,8 @@ public Process exec(String prog) throws java.io.IOException {
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.102 -0500", hash_original_method = "7285BF96BB6399D281A4BE01B5D250F8", hash_generated_method = "E3A3C574ABCA0B9301B70808DA5891D3")
     
 public Process exec(String prog, String[] envp) throws java.io.IOException {
@@ -232,6 +246,8 @@ public Process exec(String prog, String[] envp) throws java.io.IOException {
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.105 -0500", hash_original_method = "D63330F96D8E34D6A893E8125BEC80CB", hash_generated_method = "F14BCCFE800317A310D614C37E2F80A1")
     
 public Process exec(String prog, String[] envp, File directory) throws java.io.IOException {
@@ -264,6 +280,8 @@ public Process exec(String prog, String[] envp, File directory) throws java.io.I
      *            the return code. By convention, non-zero return codes indicate
      *            abnormal terminations.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.108 -0500", hash_original_method = "06E9B7958C64599C6A29BDE55862BAAD", hash_generated_method = "849CF09FE771298F8364E356A2F1C2ED")
     
 public void exit(int code) {
@@ -324,6 +342,8 @@ public void exit(int code) {
      * garbage collector. Note that this is a hint only. There is no guarantee
      * that the garbage collector will actually be run.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.116 -0500", hash_original_method = "D5E9C32F4CCF731A5E6B245C708DE511", hash_generated_method = "7CAFCB792CC3B4196FB5C37A1486828D")
     
     public void gc(){
@@ -341,6 +361,8 @@ public void exit(int code) {
      * @throws UnsatisfiedLinkError
      *             if the library can not be loaded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.121 -0500", hash_original_method = "D4CBB36D8902BC048F224692FC6F0770", hash_generated_method = "B724131873CD57EFCB8673E6D06D13C3")
     
 public void load(String pathName) {
@@ -350,6 +372,8 @@ public void load(String pathName) {
     /*
      * Loads and links a library without security checks.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.123 -0500", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "93CD7EAF10A1B837C6D2761A80025550")
     
 void load(String filename, ClassLoader loader) {
@@ -372,6 +396,8 @@ void load(String filename, ClassLoader loader) {
      * @throws UnsatisfiedLinkError
      *             if the library can not be loaded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.126 -0500", hash_original_method = "552217161A043147D154E437EB4B14C4", hash_generated_method = "1F4F734C1780E7BC04FB653B2CE957E6")
     
 public void loadLibrary(String libName) {
@@ -381,6 +407,8 @@ public void loadLibrary(String libName) {
     /*
      * Loads and links a library without security checks.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.129 -0500", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "7353395E9663C30CCFFD8479E2CC9BF3")
     
 void loadLibrary(String libraryName, ClassLoader loader) {
@@ -422,6 +450,8 @@ void loadLibrary(String libraryName, ClassLoader loader) {
      * Provides a hint to the VM that it would be useful to attempt
      * to perform any outstanding object finalization.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.141 -0500", hash_original_method = "D97B4D8E5C3471916B8248342E55C9E3", hash_generated_method = "490DC7CEB8477FD06E9F6667162C59A4")
     
 public void runFinalization() {
@@ -455,6 +485,8 @@ public void runFinalization() {
      *            {@code true} to switch tracing on, {@code false} to switch it
      *            off.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.149 -0500", hash_original_method = "53798D26DA92803B5299289F1912C9D0", hash_generated_method = "FEA64DAEE719055E865CD3E5F5BD0AB2")
     
 public void traceInstructions(boolean enable) {
@@ -467,6 +499,8 @@ public void traceInstructions(boolean enable) {
      *            {@code true} to switch tracing on, {@code false} to switch it
      *            off.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.151 -0500", hash_original_method = "047BFF8451D039E49AAF4D452A82FBF3", hash_generated_method = "60686E421DC4531B6272F4C57506CB55")
     
 public void traceMethodCalls(boolean enable) {
@@ -491,6 +525,8 @@ public void traceMethodCalls(boolean enable) {
      * @return the localized input stream.
      * @deprecated Use {@link InputStreamReader}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.154 -0500", hash_original_method = "4DD488C3A0CAA7F2473CD0DE597FBF5E", hash_generated_method = "6B953C9928DDF293F7CA3841743D37B9")
     
@@ -514,6 +550,8 @@ public void traceMethodCalls(boolean enable) {
      * @return the localized output stream.
      * @deprecated Use {@link OutputStreamWriter}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.157 -0500", hash_original_method = "E706425DACD57D6DD3EDF96DBA8FB92E", hash_generated_method = "5B2EE3BA978AE131C6801B8B781364A3")
     
@@ -558,6 +596,8 @@ public void traceMethodCalls(boolean enable) {
      * @throws IllegalStateException
      *             if the VM is already shutting down.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.161 -0500", hash_original_method = "4A60C315F45CCAAE039020003BF5AFDA", hash_generated_method = "0CB2C0DD3FA775AC9C9F386D313E0205")
     
 public void addShutdownHook(Thread hook) {
@@ -593,6 +633,8 @@ public void addShutdownHook(Thread hook) {
      * @throws IllegalStateException
      *             if the VM is already shutting down.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.163 -0500", hash_original_method = "402CE948C1020CDD411F4962B0A96E04", hash_generated_method = "FB34F21E38C960E2AA3188CC7A171CE2")
     
 public boolean removeShutdownHook(Thread hook) {
@@ -621,6 +663,8 @@ public boolean removeShutdownHook(Thread hook) {
      * @see #removeShutdownHook(Thread)
      * @see #runFinalizersOnExit(boolean)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.166 -0500", hash_original_method = "9A4EA06F4CB88B6269FED18A769E865A", hash_generated_method = "02773E578A171A0923FD2ACFD6F04C35")
     
 public void halt(int code) {
@@ -631,6 +675,8 @@ public void halt(int code) {
     /**
      * Returns the number of processors available to the VM, at least 1.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.168 -0500", hash_original_method = "1DA5795546617F35E1E74BDB5F5DDD58", hash_generated_method = "878D85E66666C4CA6A7F7C1FFC6D09CD")
     
 public int availableProcessors() {

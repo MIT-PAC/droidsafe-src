@@ -9,10 +9,14 @@ import droidsafe.helpers.DSUtils;
 
 public class AndroidCharacter {
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static void getDirectionalities(char[] src, byte[] dest,
                                                   int count) {
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int getEastAsianWidth(char input) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166295311 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166295311;
@@ -24,11 +28,15 @@ public class AndroidCharacter {
                                                  int count, byte[] dest) {
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static boolean mirror(char[] text, int start, int count) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_456670344 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_456670344;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static char getMirror(char ch) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_2008958859 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_2008958859;
@@ -52,6 +60,8 @@ public class AndroidCharacter {
 
     public static final int EAST_ASIAN_WIDTH_WIDE = 5;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.365 -0400", hash_original_method = "9F50F98AF92A1A34E78D985413026D5F", hash_generated_method = "9F50F98AF92A1A34E78D985413026D5F")
     public AndroidCharacter ()
     {

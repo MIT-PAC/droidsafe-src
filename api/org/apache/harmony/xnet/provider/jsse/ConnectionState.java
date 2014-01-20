@@ -128,6 +128,8 @@ protected byte[] encrypt(byte type, byte[] fragment) {
      * @param offset - the offset from which the data begins with.
      * @param len - the length of the data.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.883 -0500", hash_original_method = "3BA36083D14EF25C2A4B1EE235DAA602", hash_generated_method = "1DCEEA0F5183767845A022B6BACDF1AC")
     
 protected abstract byte[] encrypt
@@ -156,6 +158,8 @@ protected byte[] decrypt(byte type, byte[] fragment) {
      * @param offset - the offset from which the data begins with.
      * @param len - the length of the data.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.889 -0500", hash_original_method = "C51A7F91262654A476F1D9D597BDBA8D", hash_generated_method = "0F946511B4CA284CFB4EF7F118155BEE")
     
 protected abstract byte[] decrypt

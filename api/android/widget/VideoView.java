@@ -397,6 +397,8 @@ public int resolveAdjustedSize(int desiredSize, int measureSpec) {
         return result;
 }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.722 -0500", hash_original_method = "BE85099A7AB9FDC5F9372F356FE70764", hash_generated_method = "5FDEE21DE38A14A407B383FEAECF4089")
     
 private void initVideoView() {
@@ -456,6 +458,8 @@ public void stopPlayback() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.735 -0500", hash_original_method = "4401AC32A9DAF43DD0875A239764A2D5", hash_generated_method = "ACDEF9183AB22BE081DB989542B01F46")
     
 private void openVideo() {
@@ -517,6 +521,8 @@ public void setMediaController(MediaController controller) {
         attachMediaController();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.740 -0500", hash_original_method = "4E9048D91253AD27AA53E4E66A36C9AD", hash_generated_method = "05DEC7217773A09DAD0162440FB49642")
     
 private void attachMediaController() {
@@ -573,6 +579,8 @@ public void setOnErrorListener(OnErrorListener l)
     /*
      * release the media player in any state
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.793 -0500", hash_original_method = "99FF896B381D47748A631FF0CD5A79C0", hash_generated_method = "F2E61E873D06AB1255B5128E6D67AF80")
     
 private void release(boolean cleartargetstate) {
@@ -657,6 +665,8 @@ private void release(boolean cleartargetstate) {
         return super.onKeyDown(keyCode, event);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.803 -0500", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "117B787CDC5EAA33653E35830F63BC2F")
     
 private void toggleMediaControlsVisiblity() {
@@ -772,6 +782,8 @@ public int getBufferPercentage() {
         return 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.825 -0500", hash_original_method = "181624277C30FCEFD8B4CC029FACB2EE", hash_generated_method = "ED16C580D7BB9789EACC029EB3106496")
     
 private boolean isInPlaybackState() {

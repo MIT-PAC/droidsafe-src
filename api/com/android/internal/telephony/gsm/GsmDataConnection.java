@@ -24,6 +24,8 @@ public class GsmDataConnection extends DataConnection {
      * @param rm the RetryManager
      * @return GsmDataConnection that was created.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.602 -0500", hash_original_method = "3F81F4D6513F732B569C05DC90B32139", hash_generated_method = "C8E2544D3D4A91601DCA092D1A682824")
     
 static GsmDataConnection makeDataConnection(PhoneBase phone, int id, RetryManager rm) {
@@ -45,6 +47,8 @@ static GsmDataConnection makeDataConnection(PhoneBase phone, int id, RetryManage
 
     protected String mActiveApnType = Phone.APN_TYPE_DEFAULT;
     //***** Constructor
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.599 -0500", hash_original_method = "D7C479FF4503363D3DB56494C7CC433A", hash_generated_method = "5297674045A18508A4297AD57B8A3E35")
     
 private GsmDataConnection(PhoneBase phone, String name, int id, RetryManager rm) {
@@ -156,6 +160,8 @@ public void setActiveApnType(String apnType) {
         Log.d(LOG_TAG, "[" + getName() + "] " + s);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.622 -0500", hash_original_method = "0EBFCAAE2D7BDF5375234415A0DA2D8D", hash_generated_method = "6C2314413E27DF48C4616BF6EFFB3358")
     
 private boolean isIpAddress(String address) {

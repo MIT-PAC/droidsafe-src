@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
 
-
-
-
-
-
 public abstract class Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.641 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "01D45192EF478C4B8895FC65CF51D2EB")
 
@@ -27,6 +22,8 @@ public abstract class Message {
      * Returns message type
      * @return
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.644 -0500", hash_original_method = "2661BA1F0AB44A1458B9DF009873A1E7", hash_generated_method = "36213AEFF6693FFB3A13105AE24E6A1E")
     
 abstract int getType();
@@ -45,6 +42,8 @@ public int length() {
      * Sends message
      * @param out
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.648 -0500", hash_original_method = "B58948AFEF1A0E057CD3CFAE54CA0552", hash_generated_method = "2E9F9AA3787127B95DA1E436E11287FE")
     
 abstract void send(HandshakeIODataStream out);
@@ -71,7 +70,6 @@ protected void fatalAlert(byte description, String reason) {
 protected void fatalAlert(byte description, String reason, Throwable cause) {
         throw new AlertException(description, new SSLException(reason, cause));
     }
-
     
 }
 

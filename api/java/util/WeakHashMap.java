@@ -55,6 +55,8 @@ public WeakHashMap() {
      * @throws IllegalArgumentException
      *                if the capacity is less than zero.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.623 -0500", hash_original_method = "76AE00E803F5BFDB4BDF43DC151D88D7", hash_generated_method = "E98B88877DFC7D328CA78DE2C40A64A3")
     
 public WeakHashMap(int capacity) {
@@ -81,6 +83,8 @@ public WeakHashMap(int capacity) {
      *             if the capacity is less than zero or the load factor is less
      *             or equal to zero.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.628 -0500", hash_original_method = "342F9B7CF63C1134C14E3979782FA4FA", hash_generated_method = "8A8F0D1C4AB228C0688F808ED15B8670")
     
 public WeakHashMap(int capacity, float loadFactor) {
@@ -102,6 +106,8 @@ public WeakHashMap(int capacity, float loadFactor) {
      * @param map
      *            the mappings to add.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.633 -0500", hash_original_method = "4D7BC16BC60EE786903D624E86CA0AFB", hash_generated_method = "234CA68C4FDBFBFAC8497D2548488981")
     
 public WeakHashMap(Map<? extends K, ? extends V> map) {
@@ -131,6 +137,8 @@ public WeakHashMap(Map<? extends K, ? extends V> map) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.642 -0500", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "3DE3412ACE1BE890F1F96C0B01D802D7")
     
 private void computeMaxSize() {
@@ -154,6 +162,8 @@ private void computeMaxSize() {
         return getEntry(key) != null;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.246 -0400", hash_original_method = "115108C1B40A91216FE420487FA7990C", hash_generated_method = "54486BB87EC100E6525877EA5676ED14")
     @Override
     public Set<Map.Entry<K, V>> entrySet() {
@@ -263,6 +273,8 @@ Entry<K, V> getEntry(Object key) {
      * @return {@code true} if this map contains the specified value,
      *         {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.792 -0500", hash_original_method = "EBDA4BA5DE93153797BA511A1B84894F", hash_generated_method = "09DD43FF130EF5BE29CC5B0B3623FD1F")
     
 @Override
@@ -300,6 +312,8 @@ Entry<K, V> getEntry(Object key) {
      *
      * @return the number of elements in this map.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.796 -0500", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "DBCA9EC6E74705391235527F696D1557")
     
 @Override
@@ -307,6 +321,8 @@ Entry<K, V> getEntry(Object key) {
         return size() == 0;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.800 -0500", hash_original_method = "0A4BB2570FECEAC055174AF0C493CF3C", hash_generated_method = "7AB1FAF3EC17D4FD9BF031A89091E9CC")
     
 @SuppressWarnings("unchecked")
@@ -389,6 +405,8 @@ void removeEntry(Entry<K, V> toRemove) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.814 -0500", hash_original_method = "2B64F6E6AE3910B09507F9013DEACFFD", hash_generated_method = "0F02A7F0DE7C24AAC0BD4A926000772E")
     
 private void rehash() {
@@ -422,6 +440,8 @@ private void rehash() {
      * @throws NullPointerException
      *             if {@code map} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.818 -0500", hash_original_method = "57B3987EA7E50826E0AAD0198F968E42", hash_generated_method = "180A9BE19E826613D60BF9D91B5A0A45")
     
 @Override
@@ -478,6 +498,8 @@ private void rehash() {
      *
      * @return the number of elements in this map.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.826 -0500", hash_original_method = "B65BB7405B9BD112F0A817BA32556A99", hash_generated_method = "746B615BBFBDD47A19CCC643A3AE0A95")
     
 @Override
@@ -500,6 +522,8 @@ private void rehash() {
 
         Entry<K, V> next;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.539 -0500", hash_original_method = "87D1D30974ED96CB990C400F03BCFAE4", hash_generated_method = "87D1D30974ED96CB990C400F03BCFAE4")
         
 Entry(K key, V object, ReferenceQueue<K> queue) {
@@ -655,6 +679,8 @@ public void remove() {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.830 -0500", hash_original_method = "F23833AECC848C129604A1D671C10BB2", hash_generated_method = "5CB6A83A562A7C5A0E5B6F087B960F67")
     
 private void putAllImpl(Map<? extends K, ? extends V> map) {

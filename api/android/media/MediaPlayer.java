@@ -127,6 +127,8 @@ public static MediaPlayer create(Context context, int resid) {
         return null;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void native_init() {
     }
     
@@ -142,6 +144,8 @@ public static MediaPlayer create(Context context, int resid) {
      * code is safe from the object disappearing from underneath it.  (This is
      * the cookie passed to native_setup().)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.880 -0500", hash_original_method = "A7F65D4E00F48E2B72FBD6803EA17170", hash_generated_method = "B03C9160831FCD35FC247A8908F2BA13")
     
 private static void postEventFromNative(Object mediaplayer_ref,
@@ -336,6 +340,8 @@ public MediaPlayer() {
      * Update the MediaPlayer SurfaceTexture.
      * Call after setting a new display surface.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.625 -0500", hash_original_method = "53B8A3255E430D9C87E415235A089C4A", hash_generated_method = "9F3C694A9F0DD605EDBC3062A06FF2D8")
     
     private void _setVideoSurface(Surface surface){
@@ -552,6 +558,8 @@ public void setDataSource(String path, Map<String, String> headers)
         _setDataSource(path, keys, values);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.659 -0500", hash_original_method = "35737102382ABAAE0A83F0ED650DE965", hash_generated_method = "EB79CD88419ECB25044C93776C72D84F")
     
     private void _setDataSource(
@@ -653,6 +661,8 @@ public  void start() throws IllegalStateException {
         _start();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.679 -0500", hash_original_method = "6DEDFC534300C5310A66033260D8A31E", hash_generated_method = "24C32B9BB3A1A3C2499D04DC4BF3823E")
     
     private void _start() throws IllegalStateException{
@@ -674,6 +684,8 @@ public void stop() throws IllegalStateException {
         _stop();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.685 -0500", hash_original_method = "7A254901D3417D112F523A3CB4C0BACF", hash_generated_method = "D820D1EA49A5DE01B3DD42B2C8BD1C42")
     
     private void _stop() throws IllegalStateException{
@@ -695,6 +707,8 @@ public void pause() throws IllegalStateException {
         _pause();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.691 -0500", hash_original_method = "3CFA64AA4FE31303B150AAAF6D2A439E", hash_generated_method = "D6F32858063809E7AE4EA8738C50CE77")
     
     private void _pause() throws IllegalStateException{
@@ -761,6 +775,8 @@ public void setScreenOnWhilePlaying(boolean screenOn) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.699 -0500", hash_original_method = "02316AFDA0A1E822630D7CE99583BEE5", hash_generated_method = "327F83A2A4F21F5D31530C01C1219237")
     
 private void stayAwake(boolean awake) {
@@ -775,6 +791,8 @@ private void stayAwake(boolean awake) {
         updateSurfaceScreenOn();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.702 -0500", hash_original_method = "D56BBB45DF467B2DAD5698BBF1920DD6", hash_generated_method = "E395CA529E80495E2CD879DFAF1CF06B")
     
 private void updateSurfaceScreenOn() {
@@ -996,6 +1014,8 @@ public void release() {
         _release();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.737 -0500", hash_original_method = "D6ED0B9EBF82A338F6093204ADC2E481", hash_generated_method = "7CD823498624B7D2D76B55292DBA6BF3")
     
     private void _release(){
@@ -1018,6 +1038,8 @@ public void reset() {
         mEventHandler.removeCallbacksAndMessages(null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.743 -0500", hash_original_method = "3FFFF13DAAD4B409C984414CD8318D6D", hash_generated_method = "CD929057B611DBCFE32F16C5F956E9FD")
     
     private void _reset(){
@@ -1361,6 +1383,8 @@ public boolean setParameter(int key, int value) {
      * @param key key indicates the parameter to get.
      * @param reply value of the parameter to get.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.792 -0500", hash_original_method = "331C8FC44967717E7E0670FCEDE9BFD0", hash_generated_method = "BBCB7B4CBCCCCE85FC2478DB8823195A")
     
     private void getParameter(int key, Parcel reply){
@@ -1445,6 +1469,8 @@ public int getIntParameter(int key) {
      * @param reply[out] Parcel that will contain the reply.
      * @return The status code.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.807 -0500", hash_original_method = "4B4989130AC0D9F13A471859CBC524C2", hash_generated_method = "31EBB0F410464AAE78D72042AF5C171E")
     
     private final int native_invoke(Parcel request, Parcel reply){
@@ -1467,6 +1493,8 @@ public int getIntParameter(int key) {
      *                   metadata. Valid only if the call was successful.
      * @return The status code.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.811 -0500", hash_original_method = "226F7D6B434A382FD3304895D8BD3523", hash_generated_method = "EA199453DE9DD7B28E6149DC3B5BD206")
     
     private final boolean native_getMetadata(boolean update_only,
@@ -1486,6 +1514,8 @@ public int getIntParameter(int key) {
      *                indicating the number of metadata type elements.
      * @return The status code.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.815 -0500", hash_original_method = "DFB5479CBB8EF2503AE55C0DE7F21BA6", hash_generated_method = "F03A1BC7D6797F20FF196E14E3E519F7")
     
     private final int native_setMetadataFilter(Parcel request){
@@ -1494,6 +1524,8 @@ public int getIntParameter(int key) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.823 -0500", hash_original_method = "B3ECC5C677CF7E418546A8C45CAC4774", hash_generated_method = "DE2C6D1A3E77E5AAAF04163578D75741")
     
     private final void native_setup(Object mediaplayer_this){
@@ -1501,6 +1533,8 @@ public int getIntParameter(int key) {
     	addTaint(mediaplayer_this.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.827 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     
     private final void native_finalize(){

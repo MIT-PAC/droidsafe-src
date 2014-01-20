@@ -130,6 +130,8 @@ public static java.text.DateFormat getDateFormatForSetting(Context context,
         return new java.text.SimpleDateFormat(format);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.155 -0500", hash_original_method = "32A5D141E416AE9044FB1BE5A731640E", hash_generated_method = "4E8409AE4FF1E42F9CDEFE7D2F3E60EE")
     
 private static String getDateFormatStringForSetting(Context context, String value) {
@@ -241,6 +243,8 @@ public static final char[] getDateFormatOrder(Context context) {
         return order;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.168 -0500", hash_original_method = "566994D4112DFC120EA25833B7A2AD23", hash_generated_method = "6DC8D650167CE81590C08346D1F88C9B")
     
 private static String getDateFormatString(Context context) {
@@ -391,6 +395,8 @@ public static final CharSequence format(CharSequence inFormat, Calendar inDate) 
             return s.toString();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.182 -0500", hash_original_method = "B6328CDAAE059376F42670F10E94C3C7", hash_generated_method = "9324B5CE870AACE0BA47C45A3543CFCF")
     
 private static final String getMonthString(Calendar inDate, int count) {
@@ -406,6 +412,8 @@ private static final String getMonthString(Calendar inDate, int count) {
         }
     }
         
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.185 -0500", hash_original_method = "717F8011BB33AD60A52972788AFDBE92", hash_generated_method = "89B2030A9561BD57E99AC98ADEE25225")
     
 private static final String getTimeZoneString(Calendar inDate, int count) {
@@ -421,6 +429,8 @@ private static final String getTimeZoneString(Calendar inDate, int count) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.188 -0500", hash_original_method = "DCEF93C8648F8A4BADBE0DEB45045CC3", hash_generated_method = "7B7892A12E677D66BCA3E5B7D1B19DAB")
     
 private static final String formatZoneOffset(int offset, int count) {
@@ -442,6 +452,8 @@ private static final String formatZoneOffset(int offset, int count) {
         return tb.toString();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.191 -0500", hash_original_method = "61C8A1A7F87CCD34E1CB408B77469F5C", hash_generated_method = "AD8F947AB2F17726ADEE4FEB87658605")
     
 private static final String getYearString(Calendar inDate, int count) {
@@ -449,6 +461,8 @@ private static final String getYearString(Calendar inDate, int count) {
         return (count <= 2) ? zeroPad(year % 100, 2) : String.valueOf(year);
     }
    
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.195 -0500", hash_original_method = "636A48F51D0980A4E6BB5D7F973D5483", hash_generated_method = "1B17694B1880264A26674589EE8C8527")
     
 private static final int appendQuotedText(SpannableStringBuilder s, int i, int len) {
@@ -488,6 +502,8 @@ private static final int appendQuotedText(SpannableStringBuilder s, int i, int l
         return count;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.198 -0500", hash_original_method = "5A00C98C01DB41A2F1A77A0819740F7C", hash_generated_method = "49A2586C850B0856347F2CED3B587F5D")
     
 private static final String zeroPad(int inValue, int inMinDigits) {

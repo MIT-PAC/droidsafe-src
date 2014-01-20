@@ -101,6 +101,8 @@ public static String toHtml(Spanned text) {
         return out.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.473 -0500", hash_original_method = "EB1C92AF9B222E7DE929025AF49140FD", hash_generated_method = "A5A19CCB97B3B92C189AF9263480E11F")
     
 private static void withinHtml(StringBuilder out, Spanned text) {
@@ -139,6 +141,8 @@ private static void withinHtml(StringBuilder out, Spanned text) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.476 -0500", hash_original_method = "F382AF7FDB12AD68B8D02C5E127692D3", hash_generated_method = "5E94E882B83C565CBAC623B6284A9587")
     
 private static void withinDiv(StringBuilder out, Spanned text,
@@ -160,6 +164,8 @@ private static void withinDiv(StringBuilder out, Spanned text,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.479 -0500", hash_original_method = "DB25603DA8C920722F3B423EB60D838A", hash_generated_method = "E1D39A50DFE8AE74C51BF7180242E354")
     
 private static void withinBlockquote(StringBuilder out, Spanned text,
@@ -186,6 +192,8 @@ private static void withinBlockquote(StringBuilder out, Spanned text,
         out.append("</p>\n");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.483 -0500", hash_original_method = "88B1299859CC2E15DC7E18EC2362793A", hash_generated_method = "082EAC3DAA0C1E1B4D22DC964B081941")
     
 private static void withinParagraph(StringBuilder out, Spanned text,
@@ -316,6 +324,8 @@ private static void withinParagraph(StringBuilder out, Spanned text,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.488 -0500", hash_original_method = "2AC4943ECAA15853A29ECA04FDD429B8", hash_generated_method = "D7B339400DD55BE52D483BFFA78F2880")
     
 private static void withinStyle(StringBuilder out, Spanned text,
@@ -344,6 +354,8 @@ private static void withinStyle(StringBuilder out, Spanned text,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.455 -0500", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "66BACEE4EF369FF07BE91C8A29315219")
     
 private Html() { }
@@ -353,6 +365,8 @@ private Html() { }
 
         private static final HTMLSchema schema = new HTMLSchema();
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.650 -0400", hash_original_method = "2BD8172A597CA1F4EC32CC40B5134462", hash_generated_method = "2BD8172A597CA1F4EC32CC40B5134462")
         public HtmlParser ()
         {
@@ -375,6 +389,8 @@ private Html() { }
 
 class HtmlToSpannedConverter implements ContentHandler {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.524 -0500", hash_original_method = "89908122B67E7ED74BEFE84E9574F9C5", hash_generated_method = "ACADF25298C24E3FBB8B039D281A06D0")
     
 private static void handleP(SpannableStringBuilder text) {
@@ -394,12 +410,16 @@ private static void handleP(SpannableStringBuilder text) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.527 -0500", hash_original_method = "B20251B909AC74466B1525FFE1522E65", hash_generated_method = "CD7D5966EB011950DF937C812ACA068A")
     
 private static void handleBr(SpannableStringBuilder text) {
         text.append("\n");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.529 -0500", hash_original_method = "8E7CF3657B664CC0BCEA7EC0B00A7368", hash_generated_method = "A63B9ABD635ED45A2F3EB5D2898297F8")
     
 private static Object getLast(Spanned text, Class kind) {
@@ -416,6 +436,8 @@ private static Object getLast(Spanned text, Class kind) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.532 -0500", hash_original_method = "06C47A85433566C8AA9B606EA88E17F5", hash_generated_method = "ABFE692440BAFF014AD87EBEE22A9C0B")
     
 private static void start(SpannableStringBuilder text, Object mark) {
@@ -423,6 +445,8 @@ private static void start(SpannableStringBuilder text, Object mark) {
         text.setSpan(mark, len, len, Spannable.SPAN_MARK_MARK);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.536 -0500", hash_original_method = "1AFF6246133DBE503673E9E32962CE3F", hash_generated_method = "414FB94C5FF49F6D8F3AD2728648AF3B")
     
 private static void end(SpannableStringBuilder text, Class kind,
@@ -464,6 +488,8 @@ private static void startImg(SpannableStringBuilder text,
                      Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.542 -0500", hash_original_method = "3CBE117D15D8506010E516A2B0560478", hash_generated_method = "162F690831E3BE8D95561F2915512741")
     
 private static void startFont(SpannableStringBuilder text,
@@ -475,6 +501,8 @@ private static void startFont(SpannableStringBuilder text,
         text.setSpan(new Font(color, face), len, len, Spannable.SPAN_MARK_MARK);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.545 -0500", hash_original_method = "46336ED5A98702309685C24DD27BC7C0", hash_generated_method = "87A8BAC26EF1A474253FA8EEF14968B4")
     
 private static void endFont(SpannableStringBuilder text) {
@@ -515,6 +543,8 @@ private static void endFont(SpannableStringBuilder text) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.549 -0500", hash_original_method = "8CACC249ACFD0F9F81DE53C472676E5D", hash_generated_method = "F4A00EBC1951B1E0E837EA82471AF40B")
     
 private static void startA(SpannableStringBuilder text, Attributes attributes) {
@@ -524,6 +554,8 @@ private static void startA(SpannableStringBuilder text, Attributes attributes) {
         text.setSpan(new Href(href), len, len, Spannable.SPAN_MARK_MARK);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.551 -0500", hash_original_method = "76171A28B2C1BF0E1A1E59270D083F1C", hash_generated_method = "260E945340D5203E337D17455D3A78B0")
     
 private static void endA(SpannableStringBuilder text) {
@@ -543,6 +575,8 @@ private static void endA(SpannableStringBuilder text) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.555 -0500", hash_original_method = "847D065436E53F39D70018C4A6278B70", hash_generated_method = "00A68C02B9AF6D61342F90EC5CCCFBA2")
     
 private static void endHeader(SpannableStringBuilder text) {
@@ -568,6 +602,8 @@ private static void endHeader(SpannableStringBuilder text) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.640 -0500", hash_original_method = "63DDE3C4E069F21E7B7E5A560EA48DA7", hash_generated_method = "BEDD72FF3080E540C3FB5F544494ABB3")
     
 private static HashMap<String,Integer> buildColorMap() {
@@ -597,6 +633,8 @@ private static HashMap<String,Integer> buildColorMap() {
      * @param color Non-null color string.
      * @return A color value, or {@code -1} if the color string could not be interpreted.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.643 -0500", hash_original_method = "9706741A6E261E9C7CA75A548C6FB80F", hash_generated_method = "230351E3B2462D4B4F512E085FE12FCE")
     
 private static int getHtmlColor(String color) {
@@ -686,6 +724,8 @@ public Spanned convert() {
         return mSpannableStringBuilder;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.516 -0500", hash_original_method = "D9F0F9B119583626825989DD5C2C535C", hash_generated_method = "5647B6FE80D3CE6893AA39BA09EFE4D6")
     
 private void handleStartTag(String tag, Attributes attributes) {
@@ -739,6 +779,8 @@ private void handleStartTag(String tag, Attributes attributes) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.521 -0500", hash_original_method = "6B986DC33BF60A186B7109194B660A70", hash_generated_method = "1AFEDDE948D5D1AD0DE6851971DC83B0")
     
 private void handleEndTag(String tag) {
@@ -875,6 +917,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Bold {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "360EF21B8D8783EFA444B4BE5FDC6AD7", hash_generated_method = "360EF21B8D8783EFA444B4BE5FDC6AD7")
         public Bold ()
         {
@@ -885,6 +929,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Italic {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "49A8CF03F12E3553DCC23BB27643EAFC", hash_generated_method = "49A8CF03F12E3553DCC23BB27643EAFC")
         public Italic ()
         {
@@ -895,6 +941,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Underline {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "84D51255F87B8DD26833841AC6851E69", hash_generated_method = "84D51255F87B8DD26833841AC6851E69")
         public Underline ()
         {
@@ -905,6 +953,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Big {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "273608B63D858A3552D83E6F68A870F3", hash_generated_method = "273608B63D858A3552D83E6F68A870F3")
         public Big ()
         {
@@ -915,6 +965,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Small {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "30BB2E22576FED131404001997B90E83", hash_generated_method = "30BB2E22576FED131404001997B90E83")
         public Small ()
         {
@@ -925,6 +977,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Monospace {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "9E34A0C6710AE2CB78083EA433BD9375", hash_generated_method = "9E34A0C6710AE2CB78083EA433BD9375")
         public Monospace ()
         {
@@ -935,6 +989,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Blockquote {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "8510635EE940E5512FA9DD7C2C1B8599", hash_generated_method = "8510635EE940E5512FA9DD7C2C1B8599")
         public Blockquote ()
         {
@@ -945,6 +1001,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Super {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE", hash_generated_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE")
         public Super ()
         {
@@ -955,6 +1013,8 @@ public void ignorableWhitespace(char ch[], int start, int length) throws SAXExce
     
     private static class Sub {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "35CBF4C3F1CE0FC70451AFA9D19DB301", hash_generated_method = "35CBF4C3F1CE0FC70451AFA9D19DB301")
         public Sub ()
         {

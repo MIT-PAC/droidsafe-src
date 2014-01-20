@@ -103,6 +103,8 @@ public Certificate getCertificate(String alias, boolean includeDeletedSystem) {
         return cert;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.140 -0500", hash_original_method = "BD13BF64CDF62ABC225832ACDAE55EEB", hash_generated_method = "208A0432159597BBA51CA94E9F4F0291")
     
 private File fileForAlias(String alias) {
@@ -124,12 +126,16 @@ private File fileForAlias(String alias) {
         return file;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.142 -0500", hash_original_method = "C0CC358A113978AA5962E41C2E3971C3", hash_generated_method = "9E8D43A857195E6988E08C4489BC37EA")
     
 private boolean isTombstone(File file) {
         return file.length() == 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.145 -0500", hash_original_method = "8510D8C420703F5BE76FCD04B0D510F3", hash_generated_method = "DF6D9640B60109EAA7CE4FA2716B81B8")
     
 private X509Certificate readCertificate(File file) {
@@ -151,6 +157,8 @@ private X509Certificate readCertificate(File file) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.147 -0500", hash_original_method = "109D07F89CD9540F28E2544DA7036A76", hash_generated_method = "30F3FEC7F6299870448CCB5FEBE50A4E")
     
 private void writeCertificate(File file, X509Certificate cert)
@@ -169,6 +177,8 @@ private void writeCertificate(File file, X509Certificate cert)
         file.setReadable(true, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.149 -0500", hash_original_method = "687C2EEF2D383D4BDFC0BC0824D70D25", hash_generated_method = "E360E08014674B6D13372821A7C6AB3D")
     
 private boolean isDeletedSystemCertificate(X509Certificate x) {
@@ -212,6 +222,8 @@ public Set<String> userAliases() {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.159 -0500", hash_original_method = "BF0B38E159AD70D54A581822F625340B", hash_generated_method = "F07FEA8D58A9E40665F86B1657A755FA")
     
 private void addAliases(Set<String> result, String prefix, File dir) {
@@ -250,6 +262,8 @@ public boolean containsAlias(String alias) {
         return containsAlias(alias, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.165 -0500", hash_original_method = "63CEC7C48C1DF35A32FA8773B953555D", hash_generated_method = "BB8FBCDDA68D6DEF9FC942D4D2F9C8FA")
     
 private boolean containsAlias(String alias, boolean includeDeletedSystem) {
@@ -430,6 +444,8 @@ T varF370AF19C57A14797EFDE924F649B8A2_1961021583 =                     (T) file;
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.192 -0500", hash_original_method = "90B2D041BE6875A6E09EF80BBE557D3F", hash_generated_method = "9B6806023FC65309048F077142AA443D")
     
 private String hash(X500Principal name) {
@@ -437,6 +453,8 @@ private String hash(X500Principal name) {
         return IntegralToString.intToHexString(hash, false, 8);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.194 -0500", hash_original_method = "0B663A316D5F1EC956CA42A84A17EC6A", hash_generated_method = "5C95134D32A0F373087356EE9B04039F")
     
 private File file(File dir, String hash, int index) {
@@ -522,6 +540,8 @@ public void deleteCertificateEntry(String alias) throws IOException, Certificate
         // non-existant user cert, nothing to delete
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.202 -0500", hash_original_method = "728256A42E564BAD8F0CB50A75981023", hash_generated_method = "639537D40AB17CDF6D417500CE67D614")
     
 private void removeUnnecessaryTombstones(String alias) throws IOException {

@@ -103,6 +103,8 @@ public class ViewPropertyAnimator {
      *
      * @param view The View associated with this ViewPropertyAnimator
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.876 -0500", hash_original_method = "684AC817B57804E91C0EF57CA21B86F4", hash_generated_method = "684AC817B57804E91C0EF57CA21B86F4")
     
 ViewPropertyAnimator(View view) {
@@ -471,6 +473,8 @@ public ViewPropertyAnimator translationYBy(float value) {
 
         ArrayList<NameValuesHolder> mNameValuesHolder;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.855 -0500", hash_original_method = "6483519B8187FEE4E1EA6883A6980FC2", hash_generated_method = "6483519B8187FEE4E1EA6883A6980FC2")
         
 PropertyBundle(int propertyMask, ArrayList<NameValuesHolder> nameValuesHolder) {
@@ -488,6 +492,8 @@ PropertyBundle(int propertyMask, ArrayList<NameValuesHolder> nameValuesHolder) {
          * @return true if the given property is a part of this bundle and if it
          * has therefore been canceled.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.858 -0500", hash_original_method = "4E1EA61EF3802406B1375FE91CF7D26A", hash_generated_method = "4E1EA61EF3802406B1375FE91CF7D26A")
         
 boolean cancel(int propertyConstant) {
@@ -517,6 +523,8 @@ boolean cancel(int propertyConstant) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.869 -0500", hash_original_field = "6689A5DB2A8581AB15B0CD1E639E3108", hash_generated_field = "6689A5DB2A8581AB15B0CD1E639E3108")
 
         float mDeltaValue;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.872 -0500", hash_original_method = "96CB986053199F9A9E461CA697D4B879", hash_generated_method = "96CB986053199F9A9E461CA697D4B879")
         
 NameValuesHolder(int nameConstant, float fromValue, float deltaValue) {
@@ -715,6 +723,8 @@ public ViewPropertyAnimator alphaBy(float value) {
      * simply runs from 0 to 1, and then use that fractional value to set each property
      * value accordingly.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.952 -0500", hash_original_method = "10886573EB8B45FC976B918620A506A6", hash_generated_method = "3FB2942F950847506BC4F36FE2D2B437")
     
 private void startAnimation() {
@@ -755,6 +765,8 @@ private void startAnimation() {
      * @param constantName The specifier for the property being animated
      * @param toValue The value to which the property will animate
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.955 -0500", hash_original_method = "DC6A356EFD140318ADF1C94BF09D3544", hash_generated_method = "10B460DDFDD02DB492A2EE848F66304C")
     
 private void animateProperty(int constantName, float toValue) {
@@ -771,6 +783,8 @@ private void animateProperty(int constantName, float toValue) {
      * @param constantName The specifier for the property being animated
      * @param byValue The amount by which the property will change
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.957 -0500", hash_original_method = "B9FE8E2780DEC5F83DA892CAE9192499", hash_generated_method = "CB7E2A92B217AFDBB96A3BB381AD5B3F")
     
 private void animatePropertyBy(int constantName, float byValue) {
@@ -786,6 +800,8 @@ private void animatePropertyBy(int constantName, float byValue) {
      * @param startValue The starting value of the property
      * @param byValue The amount by which the property will change
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.959 -0500", hash_original_method = "1BDECA037A3A41B230975E15C12C5086", hash_generated_method = "7946A799974109CAE7A8BC2385A7E3F0")
     
 private void animatePropertyBy(int constantName, float startValue, float byValue) {
@@ -826,6 +842,8 @@ private void animatePropertyBy(int constantName, float startValue, float byValue
      * @param propertyConstant The property to be set
      * @param value The value to set the property to
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.962 -0500", hash_original_method = "543199367D6B4536DD4796BA994C91F7", hash_generated_method = "6A583290A1A3C3675A6F487171E2386D")
     
 private void setValue(int propertyConstant, float value) {
@@ -870,6 +888,8 @@ private void setValue(int propertyConstant, float value) {
      * @param propertyConstant The property whose value should be returned
      * @return float The value of the named property
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.965 -0500", hash_original_method = "7CFF5C0EAB5A873E8FB7B3F0396E6B5F", hash_generated_method = "2AE1B98D068C1D81669D86104DD87D7A")
     
 private float getValue(int propertyConstant) {

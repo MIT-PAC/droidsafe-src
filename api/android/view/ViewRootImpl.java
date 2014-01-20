@@ -119,6 +119,8 @@ public static void addConfigCallback(ComponentCallbacks callback) {
      *
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.956 -0500", hash_original_method = "056827AB9E74AF6C4B57ABEC8FCA9A3C", hash_generated_method = "67071346A9218C2191AEF8CE4E4334B3")
     
 static boolean isInTouchMode() {
@@ -134,6 +136,8 @@ static boolean isInTouchMode() {
     /**
      * Return true if child is an ancestor of parent, (or equal to the parent).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.100 -0500", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "418459F41ADF951A5077179957FC2600")
     
 private static boolean isViewDescendantOf(View child, View parent) {
@@ -145,6 +149,8 @@ private static boolean isViewDescendantOf(View child, View parent) {
         return (theParent instanceof ViewGroup) && isViewDescendantOf((View) theParent, parent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.103 -0500", hash_original_method = "4A21A3C59CED96F8D51A1FA9FDD7BAE0", hash_generated_method = "486947955DF3791BB348E635C624758E")
     
 private static void forceLayout(View view) {
@@ -158,6 +164,8 @@ private static void forceLayout(View view) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.229 -0500", hash_original_method = "822C159A63B62845A16568D718169DEC", hash_generated_method = "0D9A3ACE204C7A37F242AB353E0C3216")
     
 private static int joystickAxisValueToDirection(float value) {
@@ -175,6 +183,8 @@ private static int joystickAxisValueToDirection(float value) {
      * @param keyEvent The key event.
      * @return True if the key is used for keyboard navigation.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.231 -0500", hash_original_method = "7C2143BAA8152610397375F7B6D253AB", hash_generated_method = "73231264E9616A58A51CB5AF770D3937")
     
 private static boolean isNavigationKey(KeyEvent keyEvent) {
@@ -201,6 +211,8 @@ private static boolean isNavigationKey(KeyEvent keyEvent) {
      * @param keyEvent The key event.
      * @return True if the key is used for typing.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.233 -0500", hash_original_method = "553A2E860A4F6148EE15CCC8CC3C5F34", hash_generated_method = "E371B19500089A404A3F7B6A779D7ED9")
     
 private static boolean isTypingKey(KeyEvent keyEvent) {
@@ -1032,6 +1044,8 @@ public void setView(View view, WindowManager.LayoutParams attrs, View panelParen
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.964 -0500", hash_original_method = "CB86722DA8E467DDCEDA5A630CA3194B", hash_generated_method = "CB86722DA8E467DDCEDA5A630CA3194B")
     
 void destroyHardwareResources() {
@@ -1043,6 +1057,8 @@ void destroyHardwareResources() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.966 -0500", hash_original_method = "E3F9E04A5716D71423EBE08431EEB223", hash_generated_method = "E3F9E04A5716D71423EBE08431EEB223")
     
 void terminateHardwareResources() {
@@ -1052,6 +1068,8 @@ void terminateHardwareResources() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.968 -0500", hash_original_method = "E840B8B43E5ABE6BE2D8F4EA2D3CA2C1", hash_generated_method = "E840B8B43E5ABE6BE2D8F4EA2D3CA2C1")
     
 void destroyHardwareLayers() {
@@ -1135,6 +1153,8 @@ public View getView() {
         return mView;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.977 -0500", hash_original_method = "6C3085A5B27688C16B5F48D71E61D048", hash_generated_method = "4D88FED1FAE2FE688EFF93CB94610127")
     
@@ -1170,6 +1190,8 @@ void setLayoutParams(WindowManager.LayoutParams attrs, boolean newView) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.981 -0500", hash_original_method = "F0FE5EE4E253DD8DC552809A1CA2533F", hash_generated_method = "F0FE5EE4E253DD8DC552809A1CA2533F")
     
 void handleAppVisibility(boolean visible) {
@@ -1179,6 +1201,8 @@ void handleAppVisibility(boolean visible) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.983 -0500", hash_original_method = "18299B4078E7C7C61849ACAFD8526C89", hash_generated_method = "18299B4078E7C7C61849ACAFD8526C89")
     
 void handleGetNewSurface() {
@@ -1240,6 +1264,8 @@ public void invalidateChild(View child, Rect dirty) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.994 -0500", hash_original_method = "813AAD1E42CFCCC731AB301BBB74FC18", hash_generated_method = "813AAD1E42CFCCC731AB301BBB74FC18")
     
 void invalidate() {
@@ -1247,6 +1273,8 @@ void invalidate() {
         scheduleTraversals();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.996 -0500", hash_original_method = "081DD37813B858E5AB3FA0820EF5D835", hash_generated_method = "081DD37813B858E5AB3FA0820EF5D835")
     
 void setStopped(boolean stopped) {
@@ -1315,6 +1343,8 @@ public void unscheduleTraversals() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.013 -0500", hash_original_method = "27A276950AD49DC3B2BCAC57214867E1", hash_generated_method = "27A276950AD49DC3B2BCAC57214867E1")
     
@@ -1322,6 +1352,8 @@ int getHostVisibility() {
         return mAppVisible ? mView.getVisibility() : View.GONE;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.015 -0500", hash_original_method = "4A37F94A433BB0C51ABAD4CD2013B711", hash_generated_method = "4A37F94A433BB0C51ABAD4CD2013B711")
     
 void disposeResizeBuffer() {
@@ -1355,6 +1387,8 @@ public void requestTransitionStart(LayoutTransition transition) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.020 -0500", hash_original_method = "E06FBD8158D133D090EB34C23F0C9FD1", hash_generated_method = "08E9B8B3415110106B705E697BCF4915")
     
 private void processInputEvents(boolean outOfOrder) {
@@ -1369,6 +1403,8 @@ private void processInputEvents(boolean outOfOrder) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.037 -0500", hash_original_method = "DF10FEADFB061504FA9A2B620C341C55", hash_generated_method = "0AB5384548735373AC67A439506317F7")
     
 private void performTraversals() {
@@ -2231,6 +2267,8 @@ public void requestTransparentRegion(View child) {
      *
      * @return The measure spec to use to measure the root view.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.044 -0500", hash_original_method = "66EB141D637AEB4DAD3BF6AA91407C70", hash_generated_method = "D6543F7D393E54F4CFF14593B86C113C")
     
 private int getRootMeasureSpec(int windowSize, int rootDimension) {
@@ -2271,6 +2309,8 @@ public void onHardwarePostDraw(HardwareCanvas canvas) {
     /**
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.057 -0500", hash_original_method = "6ED7CE075B975161CAA5CFD7B073E953", hash_generated_method = "6ED7CE075B975161CAA5CFD7B073E953")
     
 void outputDisplayList(View view) {
@@ -2285,6 +2325,8 @@ void outputDisplayList(View view) {
     /**
      * @see #PROPERTY_PROFILE_RENDERING
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.068 -0500", hash_original_method = "910E3893A962467411DC222791137B30", hash_generated_method = "C1DCEA02E9ED4E520FD2D5B3376FD43D")
     
 private void profileRendering(boolean enabled) {
@@ -2323,6 +2365,8 @@ private void profileRendering(boolean enabled) {
     /**
      * Called from draw() when DEBUG_FPS is enabled
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.072 -0500", hash_original_method = "1AA1A4B748D7601F4F3826735499E6F6", hash_generated_method = "6ADFA33411FC3091951FBDF6F40D4CB6")
     
 private void trackFPS() {
@@ -2348,6 +2392,8 @@ private void trackFPS() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.077 -0500", hash_original_method = "E37EF3DCFB26F629DB3873EE57113F2D", hash_generated_method = "360FF056EDCE8FC6A5A70BB5D66411AF")
     
 private void draw(boolean fullRedrawNeeded) {
@@ -2586,6 +2632,8 @@ private void draw(boolean fullRedrawNeeded) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.082 -0500", hash_original_method = "FAD7953F436A3C038802D5DE07F19E9E", hash_generated_method = "BE1F513AFB04F50D7ECE103EA32EEE2A")
     
 boolean scrollToRectOrFocus(Rect rectangle, boolean immediate) {
@@ -2779,6 +2827,8 @@ public void recomputeViewAttributes(View child) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.095 -0500", hash_original_method = "59E93FB376BDE71F69616A2B01BFF0AF", hash_generated_method = "CA49963B7D3409228AEEF4116086808B")
     
 void dispatchDetachedFromWindow() {
@@ -2823,6 +2873,8 @@ void dispatchDetachedFromWindow() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.098 -0500", hash_original_method = "095941099FB476714878603F2FD5257D", hash_generated_method = "F715C493D00D2B4CB97E33221439FE95")
     
 void updateConfiguration(Configuration config, boolean force) {
@@ -3172,6 +3224,8 @@ private void startInputEvent(InputQueue.FinishedCallback finishedCallback) {
         mFinishedCallback = finishedCallback;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.183 -0500", hash_original_method = "06AEBC75FF0DC9B70A4E2BB2CC6850C1", hash_generated_method = "529A6DE8C751E212D4B5309C67447ECD")
     
 private void finishInputEvent(InputEvent event, boolean handled) {
@@ -3232,6 +3286,8 @@ private void finishInputEvent(InputEvent event, boolean handled) {
      * @param inTouchMode Whether we want to be in touch mode.
      * @return True if the touch mode changed and focus changed was changed as a result
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.185 -0500", hash_original_method = "A6640F15C2D0A406B73F798DB9EA077C", hash_generated_method = "9E0C1B812348DAA23D6CEA8D73128E42")
     
 boolean ensureTouchMode(boolean inTouchMode) {
@@ -3256,6 +3312,8 @@ boolean ensureTouchMode(boolean inTouchMode) {
      * @param inTouchMode Whether we want to be in touch mode.
      * @return True if the touch mode changed and focus changed was changed as a result
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.200 -0500", hash_original_method = "A817FB22551D2F047707EAAC44367E27", hash_generated_method = "A88C42586BD6041A191DF78F545394C3")
     
 private boolean ensureTouchModeLocally(boolean inTouchMode) {
@@ -3270,6 +3328,8 @@ private boolean ensureTouchModeLocally(boolean inTouchMode) {
         return (inTouchMode) ? enterTouchMode() : leaveTouchMode();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.203 -0500", hash_original_method = "4D22F5F97C319901FE80DD8DAA6DBF2B", hash_generated_method = "3D93AE55E9EFD8F8DFDDB9EA73A858EF")
     
 private boolean enterTouchMode() {
@@ -3306,6 +3366,8 @@ private boolean enterTouchMode() {
      * @param focused The currently focused view.
      * @return An appropriate view, or null if no such view exists.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.205 -0500", hash_original_method = "A2FE4CBD06D42BF7C573F07F56417767", hash_generated_method = "F9C37D583DB880496BE6412519F55930")
     
 private ViewGroup findAncestorToTakeFocusInTouchMode(View focused) {
@@ -3325,6 +3387,8 @@ private ViewGroup findAncestorToTakeFocusInTouchMode(View focused) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.208 -0500", hash_original_method = "6D4A7A06FF255705F6FF85A0D8D1E147", hash_generated_method = "EC63AA6B5F1103C3DEDFDCB1A8D46F11")
     
 private boolean leaveTouchMode() {
@@ -3353,6 +3417,8 @@ private boolean leaveTouchMode() {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.212 -0500", hash_original_method = "8F847D145475DB0C2BA683E62F600908", hash_generated_method = "155D2FAA600744563F9A47884F92E61F")
     
 private void deliverPointerEvent(MotionEvent event, boolean sendDone) {
@@ -3414,6 +3480,8 @@ private void deliverPointerEvent(MotionEvent event, boolean sendDone) {
         finishMotionEvent(event, sendDone, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.214 -0500", hash_original_method = "DF90914307EFCD2CA23CDB09D8C7F95D", hash_generated_method = "E6DB291E379636EBCDBDC3EA87426617")
     
 private void finishMotionEvent(MotionEvent event, boolean sendDone, boolean handled) {
@@ -3429,6 +3497,8 @@ private void finishMotionEvent(MotionEvent event, boolean sendDone, boolean hand
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.219 -0500", hash_original_method = "B306A4DB67A1B71DDAAA3D4C50CD59B0", hash_generated_method = "EC20132318249F623211B06EC00B1C09")
     
 private void deliverTrackballEvent(MotionEvent event, boolean sendDone) {
@@ -3569,6 +3639,8 @@ private void deliverTrackballEvent(MotionEvent event, boolean sendDone) {
         finishMotionEvent(event, sendDone, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.222 -0500", hash_original_method = "D79206E9EE4BD2FB4F0103FA8C72904A", hash_generated_method = "FB8701CEDD28BDA40F1D4C383AC6CA95")
     
 private void deliverGenericMotionEvent(MotionEvent event, boolean sendDone) {
@@ -3610,6 +3682,8 @@ private void deliverGenericMotionEvent(MotionEvent event, boolean sendDone) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.226 -0500", hash_original_method = "3F24F6EAAF68F5E1EBCC50D38D5B0024", hash_generated_method = "BFCCACE4AAE763B20CB95D6AE653B8F7")
     
 private void updateJoystickDirection(MotionEvent event, boolean synthesizeNewKeys) {
@@ -3673,6 +3747,8 @@ private void updateJoystickDirection(MotionEvent event, boolean synthesizeNewKey
      * @return Whether this key event should be consumed (meaning the act of
      *   leaving touch mode alone is considered the event).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.236 -0500", hash_original_method = "4A4EC0979E3C48040C37CBDD240E0778", hash_generated_method = "72AE707283996347832E3A05278E2AFD")
     
 private boolean checkForLeavingTouchModeAndConsume(KeyEvent event) {
@@ -3745,6 +3821,8 @@ private boolean checkForLeavingTouchModeAndConsume(KeyEvent event) {
 
         int localChanges;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.755 -0400", hash_original_method = "A01B0E4A631704C3007E2CC2ECBBD6C3", hash_generated_method = "A01B0E4A631704C3007E2CC2ECBBD6C3")
         public SystemUiVisibilityInfo ()
         {
@@ -3793,6 +3871,8 @@ public static InputEventMessage obtain(Message msg) {
 
         InputEventMessage mNext;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.342 -0500", hash_original_method = "B714885B0648B0EB69373E467D5A2ACF", hash_generated_method = "1BC0FC7EDB9C18099C57699D0F93DF75")
         
 private InputEventMessage(Message m) {
@@ -3915,6 +3995,8 @@ public void sessionCreated(IInputMethodSession session) {
     
     static class W extends IWindow.Stub {
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.460 -0500", hash_original_method = "0F834A9D69D3D9A8D8102CFC29F0EF8E", hash_generated_method = "07BF2095C8AB8714CC7FFC034E0187CF")
         
 private static int checkCallingPermission(String permission) {
@@ -3929,6 +4011,8 @@ private static int checkCallingPermission(String permission) {
 
         private  WeakReference<ViewRootImpl> mViewAncestor;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.448 -0500", hash_original_method = "D1CF0E60435976F2AA38BD5BC7DA8E27", hash_generated_method = "D1CF0E60435976F2AA38BD5BC7DA8E27")
         
 W(ViewRootImpl viewAncestor) {
@@ -4097,12 +4181,16 @@ public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
 
         int nonAccelMovement;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.763 -0400", hash_original_method = "D5D0F3DD2FCFEEF1D3847F5A318F142A", hash_generated_method = "D5D0F3DD2FCFEEF1D3847F5A318F142A")
         public TrackballAxis ()
         {
             //Synthesized constructor
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.506 -0500", hash_original_method = "A6304CADA1EF057D91BA6FF70064FCCC", hash_generated_method = "A6304CADA1EF057D91BA6FF70064FCCC")
         
 void reset(int _step) {
@@ -4123,6 +4211,8 @@ void reset(int _step) {
          * @return Returns the absolute value of the amount of movement
          * collected so far.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.510 -0500", hash_original_method = "7BE12B55CFE54AFD4A89AB866136213C", hash_generated_method = "A4791E68B3620EA3E9FF0ACD146CF78D")
         
 float collect(float off, long time, String axis) {
@@ -4191,6 +4281,8 @@ float collect(float off, long time, String axis) {
          * or negative, or 0 if there is not enough trackball movement yet
          * for a discrete movement.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.513 -0500", hash_original_method = "94A3484B43A305FA2D2533E09119590B", hash_generated_method = "7EF47E4FA708A04D233927A5180BBD87")
         
 int generate(float precision) {
@@ -4260,18 +4352,24 @@ public CalledFromWrongThreadException(String msg) {
 
         private final ArrayList<HandlerAction> mActions = new ArrayList<HandlerAction>();
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.767 -0400", hash_original_method = "9D853D73EE638AB90ACD5CD9573763A9", hash_generated_method = "9D853D73EE638AB90ACD5CD9573763A9")
         public RunQueue ()
         {
             //Synthesized constructor
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.567 -0500", hash_original_method = "D30AD5886AAB6A1562A9D91A9C03E0DF", hash_generated_method = "D30AD5886AAB6A1562A9D91A9C03E0DF")
         
 void post(Runnable action) {
             postDelayed(action, 0);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.569 -0500", hash_original_method = "37D90AC712BBF73BCC19C8079034F8F1", hash_generated_method = "37D90AC712BBF73BCC19C8079034F8F1")
         
 void postDelayed(Runnable action, long delayMillis) {
@@ -4284,6 +4382,8 @@ void postDelayed(Runnable action, long delayMillis) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.572 -0500", hash_original_method = "5BA3715297222A78241D425B9BCC6DE7", hash_generated_method = "A571AB3380815F9EF94D2E88926E2615")
         
 void removeCallbacks(Runnable action) {
@@ -4299,6 +4399,8 @@ void removeCallbacks(Runnable action) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.574 -0500", hash_original_method = "3626F7B757A14315643B29FE9818088B", hash_generated_method = "3626F7B757A14315643B29FE9818088B")
         
 void executeActions(Handler handler) {
@@ -4323,6 +4425,8 @@ void executeActions(Handler handler) {
 
             long delay;
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.769 -0400", hash_original_method = "30472C53850B994B9A76B3EFD24AA1BA", hash_generated_method = "30472C53850B994B9A76B3EFD24AA1BA")
             public HandlerAction ()
             {
@@ -4399,6 +4503,8 @@ public void ensureNoConnection() {
 
         private  WeakReference<ViewRootImpl> mRootImpl;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.606 -0500", hash_original_method = "D539A7CCB822AF3CDF20BB7941121D94", hash_generated_method = "D539A7CCB822AF3CDF20BB7941121D94")
         
 AccessibilityInteractionConnection(ViewRootImpl viewAncestor) {
@@ -4731,6 +4837,8 @@ public void perfromAccessibilityActionUiThread(Message message) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.694 -0500", hash_original_method = "0DF709A77C91001270CD6D5BCBC66D0E", hash_generated_method = "462756238992C98537390F5031EA6981")
         
 private boolean performActionFocus(int accessibilityId) {
@@ -4743,6 +4851,8 @@ private boolean performActionFocus(int accessibilityId) {
             return target.requestFocus();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.697 -0500", hash_original_method = "7E9614B48F5F4EC29BCF64D3A075976C", hash_generated_method = "53B94B2271AB10756AB09C8AFF9D2383")
         
 private boolean performActionClearFocus(int accessibilityId) {
@@ -4757,6 +4867,8 @@ private boolean performActionClearFocus(int accessibilityId) {
             return !target.isFocused();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.699 -0500", hash_original_method = "AB7AA9516F9E78D5A5AD4BBEB80A41A0", hash_generated_method = "11C9F62B2AFC7EC92CFF3008A9051D8B")
         
 private boolean performActionSelect(int accessibilityId) {
@@ -4771,6 +4883,8 @@ private boolean performActionSelect(int accessibilityId) {
             return target.isSelected();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.703 -0500", hash_original_method = "E102B39F5DF94C3320BE2ED1E2D3B323", hash_generated_method = "21DAC75A42B4DCA04EED08419CC8DC3E")
         
 private boolean performActionClearSelection(int accessibilityId) {
@@ -4838,6 +4952,8 @@ public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
             }
 
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.666 -0500", hash_original_method = "95D0476EAE9CBD3221945617281C6DDB", hash_generated_method = "8DDF8C8281A3551056B1780CB53659FF")
             
 private void clear() {
@@ -4850,6 +4966,8 @@ private void clear() {
             
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.705 -0500", hash_original_method = "B9D971669B3F873AC0D1B0C38F7811F4", hash_generated_method = "3D104623F0B27F58121F649A0E7358DB")
         
 private View findViewByAccessibilityId(int accessibilityId) {
@@ -4887,6 +5005,8 @@ public void run() {
         
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.238 -0500", hash_original_method = "DD7540FF4FE8EF5C7F3D3C1B535F6D84", hash_generated_method = "DD7540FF4FE8EF5C7F3D3C1B535F6D84")
     
 int enqueuePendingEvent(Object event, boolean sendDone) {
@@ -4897,6 +5017,8 @@ int enqueuePendingEvent(Object event, boolean sendDone) {
         return sendDone ? seq : -seq;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.241 -0500", hash_original_method = "D1881A2DE4A478B1C2476E8789D90C4F", hash_generated_method = "D1881A2DE4A478B1C2476E8789D90C4F")
     
 Object retrievePendingEvent(int seq) {
@@ -4908,6 +5030,8 @@ Object retrievePendingEvent(int seq) {
         return event;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.244 -0500", hash_original_method = "7BC82D96B9DB6F7A084DA2256A5743DA", hash_generated_method = "70D22BCAFFD80E5018219194AE4FA7D5")
     
 private void deliverKeyEvent(KeyEvent event, boolean sendDone) {
@@ -4950,6 +5074,8 @@ private void deliverKeyEvent(KeyEvent event, boolean sendDone) {
         deliverKeyEventPostIme(event, sendDone);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.247 -0500", hash_original_method = "1D388C4C66D020B7A8C536C50B24E128", hash_generated_method = "C63842EE0A4F92FED0FBCC7E4A4A7DE9")
     
 private void handleFinishedEvent(int seq, boolean handled) {
@@ -4966,6 +5092,8 @@ private void handleFinishedEvent(int seq, boolean handled) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.250 -0500", hash_original_method = "3773604D66AC7B7214885F4E3DA58090", hash_generated_method = "AA1C9E985DE69DC27C6134569434E7D2")
     
 private void deliverKeyEventPostIme(KeyEvent event, boolean sendDone) {
@@ -5081,6 +5209,8 @@ private void deliverKeyEventPostIme(KeyEvent event, boolean sendDone) {
         finishKeyEvent(event, sendDone, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.253 -0500", hash_original_method = "2621255CFED260FE88FD0E0DE76ACADD", hash_generated_method = "0FBF3E7EB489C8FBA0AE76DECEACEA49")
     
 private void finishKeyEvent(KeyEvent event, boolean sendDone, boolean handled) {
@@ -5090,12 +5220,16 @@ private void finishKeyEvent(KeyEvent event, boolean sendDone, boolean handled) {
     }
 
     /* drag/drop */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.255 -0500", hash_original_method = "0FF9C383AA2E451EDBB7C2A5CA6E3F80", hash_generated_method = "0FF9C383AA2E451EDBB7C2A5CA6E3F80")
     
 void setLocalDragState(Object obj) {
         mLocalDragState = obj;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.259 -0500", hash_original_method = "977584242F0720CC5E20503FC56D761D", hash_generated_method = "6A3E4DD6C55C641CF2F3BF5DC215D4F5")
     
 private void handleDragEvent(DragEvent event) {
@@ -5217,6 +5351,8 @@ public void setDragFocus(View newDragTarget) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.270 -0500", hash_original_method = "63BA605FA957D5097ED6886D9988BC53", hash_generated_method = "6833C9DFE0A8DA85677C409C8897EBAF")
     
 private AudioManager getAudioManager() {
@@ -5369,6 +5505,8 @@ public void dumpGfxInfo(PrintWriter pw, int[] info) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.290 -0500", hash_original_method = "CD86B0B9CE453C77251859969963B0E8", hash_generated_method = "3097004A47D4FAACA7FD43FAA374B300")
     
 private void getGfxInfo(View view, int[] info) {
@@ -5398,6 +5536,8 @@ public void die(boolean immediate) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.295 -0500", hash_original_method = "8D1DF41E880ED97CD9EA450CBF8DEBA9", hash_generated_method = "FF6F886078429C46002F42F3CFD93E57")
     
 void doDie() {
@@ -5439,6 +5579,8 @@ public void requestUpdateConfiguration(Configuration config) {
         sendMessage(msg);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.300 -0500", hash_original_method = "83B5F7EEB6D7B3078A7769D15E86950B", hash_generated_method = "A77A4F1E37F9154DE647FCD8A746251F")
     
 private void destroyHardwareRenderer() {
@@ -5486,6 +5628,8 @@ public void dispatchResized(int w, int h, Rect coveredInsets,
     /**
      * Place the input event message at the end of the current pending list
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.352 -0500", hash_original_method = "42F15B8B44D9B8805537AB8032035046", hash_generated_method = "406165FEC400D5ECDB795C083EF7D87D")
     
 private void enqueueInputEvent(Message msg, long when) {
@@ -5508,6 +5652,8 @@ public void dispatchKey(KeyEvent event) {
         dispatchKey(event, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.356 -0500", hash_original_method = "40FF3F3DF013E72EC5E96E0A49136BE3", hash_generated_method = "4006AE160FB33305A8A86E26059575B4")
     
 private void dispatchKey(KeyEvent event, boolean sendDone) {
@@ -5533,6 +5679,8 @@ private void dispatchKey(KeyEvent event, boolean sendDone) {
         enqueueInputEvent(msg, event.getEventTime());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.359 -0500", hash_original_method = "F90A161CC4BD8998AC3B193B63EB7E53", hash_generated_method = "465C8FD080A647498A0319A403D66EC5")
     
 private void dispatchMotion(MotionEvent event, boolean sendDone) {
@@ -5546,6 +5694,8 @@ private void dispatchMotion(MotionEvent event, boolean sendDone) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.361 -0500", hash_original_method = "DD56557FEAC8CACD87B056C5C0C702D1", hash_generated_method = "419945085985C0279C8394B5F816B97F")
     
 private void dispatchPointer(MotionEvent event, boolean sendDone) {
@@ -5555,6 +5705,8 @@ private void dispatchPointer(MotionEvent event, boolean sendDone) {
         enqueueInputEvent(msg, event.getEventTime());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.364 -0500", hash_original_method = "CA2BFA17163311E1AAAA771C667E27EE", hash_generated_method = "B6A6D0270A5FD6F28ABF98128ECB118D")
     
 private void dispatchTrackball(MotionEvent event, boolean sendDone) {
@@ -5564,6 +5716,8 @@ private void dispatchTrackball(MotionEvent event, boolean sendDone) {
         enqueueInputEvent(msg, event.getEventTime());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.366 -0500", hash_original_method = "BF71C2E204EC82729A1EA0969E06871A", hash_generated_method = "2526D476327C2E78CBF0E22595AE35B1")
     
 private void dispatchGenericMotion(MotionEvent event, boolean sendDone) {
@@ -5637,6 +5791,8 @@ public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
      * The window is getting focus so if there is anything focused/selected
      * send an {@link AccessibilityEvent} to announce that.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.383 -0500", hash_original_method = "DE2DA8F2C91C4BAC5E71DE180C591B82", hash_generated_method = "15E4462FED18669ABC30EAD9EB1805BD")
     
 private void sendAccessibilityEvents() {
@@ -5656,6 +5812,8 @@ private void sendAccessibilityEvents() {
      * This event is send at most once every
      * {@link ViewConfiguration#getSendRecurringAccessibilityEventsInterval()}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.386 -0500", hash_original_method = "3EBD42CE7AD44788B8B5975E509C0AD4", hash_generated_method = "52C5566DB6F058B16F297F26291A7ED1")
     
 private void postSendWindowContentChangedCallback() {
@@ -5674,6 +5832,8 @@ private void postSendWindowContentChangedCallback() {
      * Remove a posted callback to send a
      * {@link AccessibilityEvent#TYPE_WINDOW_CONTENT_CHANGED} event.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.388 -0500", hash_original_method = "B38BF7B18A0D0C0D14C2E79D97568CE9", hash_generated_method = "28DF4CA9BBEB22347BED538E9FC5650C")
     
 private void removeSendWindowContentChangedCallback() {
@@ -5714,6 +5874,8 @@ public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent even
         return true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.402 -0500", hash_original_method = "C963D9A99CD7BE986B275021EA99CB95", hash_generated_method = "C963D9A99CD7BE986B275021EA99CB95")
     
 void checkThread() {

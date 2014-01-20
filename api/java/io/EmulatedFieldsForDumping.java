@@ -20,6 +20,8 @@ class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
      *            a ObjectStreamClass, which describe the fields to be emulated
      *            (names, types, etc).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.396 -0500", hash_original_method = "D64C2A148CFECC0338F81243CC161580", hash_generated_method = "D64C2A148CFECC0338F81243CC161580")
     
 EmulatedFieldsForDumping(ObjectOutputStream oos, ObjectStreamClass streamClass) {
@@ -34,6 +36,8 @@ EmulatedFieldsForDumping(ObjectOutputStream oos, ObjectStreamClass streamClass) 
      *
      * @return array of ObjectSlot the receiver represents.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.398 -0500", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "F09D38B717E770EDAB76B08B81548137")
     
 EmulatedFields emulatedFields() {

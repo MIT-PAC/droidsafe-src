@@ -23,7 +23,9 @@ public class AreaCodeMap implements Externalizable {
    * Gets the size of the provided area code map storage. The map storage passed-in will be filled
    * as a result.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.575 -0500", hash_original_method = "66990EFDE27B5042FF2B21540E9F1A4A", hash_generated_method = "374C8EC76876E11AC2B2E2C7A5749910")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.575 -0500", hash_original_method = "66990EFDE27B5042FF2B21540E9F1A4A", hash_generated_method = "374C8EC76876E11AC2B2E2C7A5749910")
     
 private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapStorage,
       SortedMap<Integer, String> areaCodeMap) throws IOException {
@@ -56,20 +58,26 @@ private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapSto
 public AreaCodeMap() {}
 
   // @VisibleForTesting
-  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.569 -0500", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "2F443A9F7F25B3F1F0013A418F926218")
     
 AreaCodeMapStorageStrategy getAreaCodeMapStorage() {
     return areaCodeMapStorage;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.577 -0500", hash_original_method = "541ED4E710A19E1EDF02867FA9DD727B", hash_generated_method = "7F6AED160DB0F6D85068F090C20A2B43")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.577 -0500", hash_original_method = "541ED4E710A19E1EDF02867FA9DD727B", hash_generated_method = "7F6AED160DB0F6D85068F090C20A2B43")
     
 private AreaCodeMapStorageStrategy createDefaultMapStorage() {
     return new DefaultMapStorage();
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.579 -0500", hash_original_method = "A0A2E6205BB60A092B8D66A75357AACD", hash_generated_method = "D3C0F00EDFA68771E24688DA13682235")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.579 -0500", hash_original_method = "A0A2E6205BB60A092B8D66A75357AACD", hash_generated_method = "D3C0F00EDFA68771E24688DA13682235")
     
 private AreaCodeMapStorageStrategy createFlyweightMapStorage() {
     return new FlyweightMapStorage();
@@ -81,7 +89,9 @@ private AreaCodeMapStorageStrategy createFlyweightMapStorage() {
    * make this method quite expensive.
    */
   // @VisibleForTesting
-  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.581 -0500", hash_original_method = "F7090ADB0D57C526EAAF391F3C19F58E", hash_generated_method = "F7090ADB0D57C526EAAF391F3C19F58E")
     
 AreaCodeMapStorageStrategy getSmallerMapStorage(SortedMap<Integer, String> areaCodeMap) {
@@ -183,7 +193,9 @@ String lookup(PhoneNumber number) {
    * position which has the largest value that is less than {@code value}. This means if
    * {@code value} is the smallest, -1 will be returned.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.594 -0500", hash_original_method = "D192E9C758CA69648AA3FDEEAB806454", hash_generated_method = "18C829A4A8DE5396E093073CF5829DC1")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.594 -0500", hash_original_method = "D192E9C758CA69648AA3FDEEAB806454", hash_generated_method = "18C829A4A8DE5396E093073CF5829DC1")
     
 private int binarySearch(int start, int end, long value) {
     int current = 0;

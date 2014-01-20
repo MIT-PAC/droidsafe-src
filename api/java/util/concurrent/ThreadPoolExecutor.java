@@ -17,12 +17,18 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ThreadPoolExecutor extends AbstractExecutorService {
 
     // Packing and unpacking ctl
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.735 -0500", hash_original_method = "35D20B7433D8164BEFED9190D6BE2329", hash_generated_method = "C62077775D699E39D0F9E2FD3271FE98")
     
 private static int runStateOf(int c)     { return c & ~CAPACITY; }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.737 -0500", hash_original_method = "621333305A7F85CE314303492213D34F", hash_generated_method = "3F6DB8D2AF9BE83CFB6E6678E2245387")
     
 private static int workerCountOf(int c)  { return c & CAPACITY; }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.739 -0500", hash_original_method = "12A3626063CD1D901A2F97DB97430792", hash_generated_method = "EDD0F382D13688A2B100EBA36802BC87")
     
 private static int ctlOf(int rs, int wc) { return rs | wc; }
@@ -32,18 +38,24 @@ private static int ctlOf(int rs, int wc) { return rs | wc; }
      * These depend on the bit layout and on workerCount being never negative.
      */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.742 -0500", hash_original_method = "FA1A16BC6D47806587415BDA14DAC745", hash_generated_method = "EF0039E40E3F50A7A9E85DC0443D2F01")
     
 private static boolean runStateLessThan(int c, int s) {
         return c < s;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.744 -0500", hash_original_method = "493C1CFFB986457DAF9A40F53248A6E5", hash_generated_method = "C40DB75C4C0E5D690D3B22605714AAB8")
     
 private static boolean runStateAtLeast(int c, int s) {
         return c >= s;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.747 -0500", hash_original_method = "11B81231945C57BFAFCA8253946950FE", hash_generated_method = "E45AF9BEAE37D18E69403B2D0717B63D")
     
 private static boolean isRunning(int c) {
@@ -300,6 +312,8 @@ public ThreadPoolExecutor(int corePoolSize,
     /**
      * Attempt to CAS-increment the workerCount field of ctl.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.749 -0500", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "872FD7AB81551DE312B06EA4051E8884")
     
 private boolean compareAndIncrementWorkerCount(int expect) {
@@ -309,6 +323,8 @@ private boolean compareAndIncrementWorkerCount(int expect) {
     /**
      * Attempt to CAS-decrement the workerCount field of ctl.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.752 -0500", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "FEFD3AEF3C654851B345F063F22ACBC3")
     
 private boolean compareAndDecrementWorkerCount(int expect) {
@@ -320,6 +336,8 @@ private boolean compareAndDecrementWorkerCount(int expect) {
      * abrupt termination of a thread (see processWorkerExit). Other
      * decrements are performed within getTask.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.754 -0500", hash_original_method = "197D64850896CFE44F6E60A0B666E58B", hash_generated_method = "F00E3657FFB8F9C7912B58DBEFE4BBFC")
     
 private void decrementWorkerCount() {
@@ -337,6 +355,8 @@ private void decrementWorkerCount() {
      * @param targetState the desired state, either SHUTDOWN or STOP
      *        (but not TIDYING or TERMINATED -- use tryTerminate for that)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.827 -0500", hash_original_method = "F2BE86117A689CA9DA89AB2ED7F58DB7", hash_generated_method = "E1182E4C8DB3BFB454EEDED9F23B5D39")
     
 private void advanceRunState(int targetState) {
@@ -358,6 +378,8 @@ private void advanceRunState(int targetState) {
      * from the queue during shutdown. The method is non-private to
      * allow access from ScheduledThreadPoolExecutor.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.829 -0500", hash_original_method = "80042B52D4C8A465DC8857956BEE8BCA", hash_generated_method = "36E83D420586B9E8BCB225354E372599")
     
 final void tryTerminate() {
@@ -403,6 +425,8 @@ final void tryTerminate() {
      * first check passed, if the SecurityManager treats some threads
      * specially.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.832 -0500", hash_original_method = "AA36F499694835EB802B188BC7C59A14", hash_generated_method = "8953162C6AA68B916C25F394B240BDD3")
     
 private void checkShutdownAccess() {
@@ -424,6 +448,8 @@ private void checkShutdownAccess() {
      * Interrupts all threads, even if active. Ignores SecurityExceptions
      * (in which case some threads may remain uninterrupted).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.835 -0500", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "8228DE1580FEA319BE05259C1022DB6D")
     
 private void interruptWorkers() {
@@ -460,6 +486,8 @@ private void interruptWorkers() {
      * idle workers so that redundant workers exit promptly, not
      * waiting for a straggler task to finish.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.837 -0500", hash_original_method = "C11819B67BF410300D59BD8104FE87A4", hash_generated_method = "D3F6BF35A48C5972FADA3B21B628784E")
     
 private void interruptIdleWorkers(boolean onlyOne) {
@@ -488,6 +516,8 @@ private void interruptIdleWorkers(boolean onlyOne) {
      * Common form of interruptIdleWorkers, to avoid having to
      * remember what the boolean argument means.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.840 -0500", hash_original_method = "8AE0F2FE6E5901DBE1EC6FD71BA67D3B", hash_generated_method = "DE0ACFAA30DC2A8294B564425F69097F")
     
 private void interruptIdleWorkers() {
@@ -500,6 +530,8 @@ private void interruptIdleWorkers() {
      * of state in case the interrupt was cleared concurrently with a
      * shutdownNow -- if so, the interrupt is re-enabled.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.845 -0500", hash_original_method = "41D1BD0CB95E0A52108020867995148C", hash_generated_method = "7A4B3DC99CABF4731A85D90FA89CB1F3")
     
 private void clearInterruptsForTaskRun() {
@@ -518,6 +550,8 @@ private void clearInterruptsForTaskRun() {
      * Invokes the rejected execution handler for the given command.
      * Package-protected for use by ScheduledThreadPoolExecutor.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.847 -0500", hash_original_method = "DBD2AA47670972F837B77D54B6813996", hash_generated_method = "F9D97FC80731E757B1F78DAFBBD554EA")
     
 final void reject(Runnable command) {
@@ -529,6 +563,8 @@ final void reject(Runnable command) {
      * invocation of shutdown.  A no-op here, but used by
      * ScheduledThreadPoolExecutor to cancel delayed tasks.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.849 -0500", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "0A1F69177689475EC5D7889C7292052F")
     
 void onShutdown() {
@@ -540,6 +576,8 @@ void onShutdown() {
      *
      * @param shutdownOK true if should return true if SHUTDOWN
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.852 -0500", hash_original_method = "270A029E5D11891F0D07089698FD1A31", hash_generated_method = "8E8F4677D82BD84A63C391BB76BDF7E8")
     
 final boolean isRunningOrShutdown(boolean shutdownOK) {
@@ -553,6 +591,8 @@ final boolean isRunningOrShutdown(boolean shutdownOK) {
      * queue for which poll or drainTo may fail to remove some
      * elements, it deletes them one by one.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.854 -0500", hash_original_method = "4695ACF3E76D112BC6AF0E9543CB0BFB", hash_generated_method = "26219DFEC35E0FC3E1128B7D5373CEE0")
     
 private List<Runnable> drainQueue() {
@@ -597,6 +637,8 @@ private List<Runnable> drainQueue() {
      * state).
      * @return true if successful
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.857 -0500", hash_original_method = "7812A944CC6B2EE743043503F380EB35", hash_generated_method = "0E8D7F2E1F7528C3F12D33E967E2B234")
     
 private boolean addWorker(Runnable firstTask, boolean core) {
@@ -727,6 +769,8 @@ private void processWorkerExit(Worker w, boolean completedAbruptly) {
      * @return task, or null if the worker must exit, in which case
      *         workerCount is decremented
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.864 -0500", hash_original_method = "CCE5E762047CA277EB153A60A9218EEF", hash_generated_method = "920140A9E7C575584C31E2FFF98FEAC4")
     
 private Runnable getTask() {
@@ -1415,6 +1459,8 @@ public boolean isLocked() { return isHeldExclusively(); }
         /**
          * Creates a {@code CallerRunsPolicy}.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.967 -0500", hash_original_method = "0024AA22CD353D26AF52EE7A7BFF5B6A", hash_generated_method = "37596DC4FA63974862CFD9E5EE2F5BCB")
         
 public CallerRunsPolicy() { }
@@ -1426,6 +1472,8 @@ public CallerRunsPolicy() { }
          * @param r the runnable task requested to be executed
          * @param e the executor attempting to execute this task
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.969 -0500", hash_original_method = "1E8BCB605E875657A6EC0245732A9544", hash_generated_method = "67071B1E12E0471CDF55C3CC23CCA8B9")
         
 public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
@@ -1465,6 +1513,8 @@ public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
         /**
          * Creates a {@code DiscardPolicy}.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.982 -0500", hash_original_method = "F09B76305D692D1CB8CB62E17F499CB5", hash_generated_method = "39998938A7FD11A04EFDD79C648AB919")
         
 public DiscardPolicy() { }
@@ -1475,6 +1525,8 @@ public DiscardPolicy() { }
          * @param r the runnable task requested to be executed
          * @param e the executor attempting to execute this task
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.984 -0500", hash_original_method = "81B7AD8C9B3A9908C7C41F3CCCB6E30B", hash_generated_method = "4F8A71592DABB995D5E265C49D0411B3")
         
 public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {

@@ -81,6 +81,8 @@ public static AccessibilityNodeInfo obtain(AccessibilityNodeInfo info) {
      * @param action The action.
      * @return The symbolic name.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.396 -0500", hash_original_method = "9281FA443503FD33DEEF9EAD3B753685", hash_generated_method = "391A03671E05FAA090F547861109E519")
     
 private static String getActionSymbolicName(int action) {
@@ -230,6 +232,8 @@ public AccessibilityNodeInfo[] newArray(int size) {
     /**
      * Hide constructor from clients.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.251 -0500", hash_original_method = "EB9F4328D2282B04E1BD31B0186E73D5", hash_generated_method = "2CFD36155427B3DA96125C34DE1AD0E6")
     
 private AccessibilityNodeInfo() {
@@ -1034,6 +1038,8 @@ public void setContentDescription(CharSequence contentDescription) {
      * @param property The property.
      * @return The value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.354 -0500", hash_original_method = "08ED9648E2048980BB715C0F95464D97", hash_generated_method = "722E5652297D2701C0DDED881D11EBE2")
     
 private boolean getBooleanProperty(int property) {
@@ -1048,6 +1054,8 @@ private boolean getBooleanProperty(int property) {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.356 -0500", hash_original_method = "AF4B29064CFE4EC4A14EBB7B9CA58D1B", hash_generated_method = "5034AB41514D2117BB56974500CD2E7A")
     
 private void setBooleanProperty(int property, boolean value) {
@@ -1219,6 +1227,8 @@ public void writeToParcel(Parcel parcel, int flags) {
      *
      * @param other The other instance.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.387 -0500", hash_original_method = "84525B5DDEB8A0E58F9024DAD2E7A518", hash_generated_method = "3B025416C0341984FEB74CA30FB3B7FC")
     
 private void init(AccessibilityNodeInfo other) {
@@ -1243,6 +1253,8 @@ private void init(AccessibilityNodeInfo other) {
      *
      * @param parcel A parcel containing the state of a {@link AccessibilityNodeInfo}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.391 -0500", hash_original_method = "98923D5E356E47505C0A26C0C57920A8", hash_generated_method = "EC619F199FF71492D62428352C5E07E2")
     
 private void initFromParcel(Parcel parcel) {
@@ -1282,6 +1294,8 @@ private void initFromParcel(Parcel parcel) {
     /**
      * Clears the state of this instance.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.393 -0500", hash_original_method = "566B1830900B4F3B865C25C43FCDC943", hash_generated_method = "47DE232BB9CC3750C4E0F95FF7F436AA")
     
 private void clear() {
@@ -1301,6 +1315,8 @@ private void clear() {
         mActions = 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.398 -0500", hash_original_method = "554416B444549B4EB33FDEE3DD8518FA", hash_generated_method = "B64BAFB1492494C16331DCA440BBD62E")
     
 private boolean canPerformRequestOverConnection(int accessibilityViewId) {

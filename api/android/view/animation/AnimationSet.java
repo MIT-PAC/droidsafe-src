@@ -134,6 +134,8 @@ public AnimationSet(boolean shareInterpolator) {
         return animation;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.800 -0500", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "0BC7EE29E2E86D930BE9DB77ED7692C9")
     
 private void setFlag(int mask, boolean value) {
@@ -144,6 +146,8 @@ private void setFlag(int mask, boolean value) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.802 -0500", hash_original_method = "96CA9C56EEADA219CA715399206CF9BC", hash_generated_method = "22467722B61DD6511447346A291AF139")
     
 private void init() {
@@ -532,6 +536,8 @@ public void initializeInvalidateRegion(int left, int top, int right, int bottom)
     /**
      * @hide
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.851 -0500", hash_original_method = "1FA58C163A7DB9A5169EF699805FA3C9", hash_generated_method = "1FA58C163A7DB9A5169EF699805FA3C9")
     
 void restoreChildrenStartOffset() {

@@ -39,6 +39,8 @@ public static LocaleData get(Locale locale) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.460 -0500", hash_original_method = "79D4FC8C2ABEB0A938BC6FE7010C2BAD", hash_generated_method = "56DB64939831588B89054D58D320D8AA")
     
 private static LocaleData makeLocaleData(Locale locale) {
@@ -59,6 +61,8 @@ private static LocaleData makeLocaleData(Locale locale) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.476 -0500", hash_original_method = "FA71E4202D4AE5CBCEEA55A7373875A9", hash_generated_method = "FA990B249DB35B8134DF25A33C7940B6")
     
 private static LocaleData initLocaleData(Locale locale) {
@@ -200,6 +204,8 @@ private static LocaleData initLocaleData(Locale locale) {
 
     public String percentPattern;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.455 -0500", hash_original_method = "CFFFBB83D5CAB96B8DF6F8A1F3FD834E", hash_generated_method = "3B99322668F78B6210F1E35DB1EAC8AD")
     
 private LocaleData() {
@@ -248,6 +254,8 @@ private LocaleData() {
                 "percentPattern=" + percentPattern + "]";
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.467 -0500", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "1918EF1D72275CED5C83739339A9F81A")
     
 private void overrideWithDataFrom(LocaleData overrides) {

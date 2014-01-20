@@ -185,6 +185,8 @@ public SimpleTimeZone(int offset, final String name) {
      *             if the month, day, dayOfWeek, or time parameters are out of
      *             range for the start or end rule.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.971 -0500", hash_original_method = "8CE6DF24772062229638C2D4C95CF5BA", hash_generated_method = "CBB162538BAD51AFD3350BB36C159888")
     
 public SimpleTimeZone(int offset, String name, int startMonth,
@@ -236,6 +238,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
      *                if the month, day, dayOfWeek, or time parameters are out of
      *                range for the start or end rule.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.975 -0500", hash_original_method = "8623FC95180B9E56345F7D06857248B1", hash_generated_method = "805B155C9B08C01D378B769E8D1A5CD6")
     
 public SimpleTimeZone(int offset, String name, int startMonth,
@@ -298,6 +302,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
      *             if the month, day, dayOfWeek, or time parameters are out of
      *             range for the start or end rule.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.979 -0500", hash_original_method = "79A83CB077FC893587B86C22BBA871F3", hash_generated_method = "9E3C308C1B1CDDE4184B6C105D3BD3B9")
     
 public SimpleTimeZone(int offset, String name, int startMonth,
@@ -318,6 +324,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
      * @return a shallow copy of this {@code SimpleTimeZone}.
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.982 -0500", hash_original_method = "826DFB88845863F51C3C619017A5C62F", hash_generated_method = "3891F8CF82A703B740E4B977D8713D1C")
     
 @Override
@@ -337,6 +345,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
      *         {@code SimpleTimeZone}, {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.985 -0500", hash_original_method = "6B0E934BFCA438C9EF8D8ACC7F42CB32", hash_generated_method = "4B1A52DCD50B84BCD56926B029AFE427")
     
 @Override
@@ -358,6 +368,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
                         && endTime == tz.endTime && endMode == tz.endMode && dstSavings == tz.dstSavings));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.988 -0500", hash_original_method = "80F5C5F4A535ECB3386672D31D5CF9AA", hash_generated_method = "B689829CB1C604AC52A715A39828C8A4")
     
@@ -369,6 +381,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
         return dstSavings;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.993 -0500", hash_original_method = "8DB3C09D8D79030897991A8AF2C3603A", hash_generated_method = "C6F92D3B6C143A636AE0517E2D0B92C8")
     
@@ -502,6 +516,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
         return rawOffset + dstSavings;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.996 -0500", hash_original_method = "6DBE603182E450BA9A410285A6D6CE41", hash_generated_method = "70BEBAA8B2BA13FF2EADDA2F08EF85CA")
     
@@ -516,6 +532,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
                 fields[3], fields[5]);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.999 -0500", hash_original_method = "D90129E49D21D0E2F7EA4F6539F9D2CB", hash_generated_method = "C17505E26981E9F2733690B104177769")
     
@@ -531,6 +549,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
      * @return the receiver's hash.
      * @see #equals
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.002 -0500", hash_original_method = "543AFBFA58DD3885C5C6D68F749BE5FB", hash_generated_method = "F59402BF202611685F635C695FD2D912")
     
 @Override
@@ -544,6 +564,8 @@ public SimpleTimeZone(int offset, String name, int startMonth,
         return hashCode;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.005 -0500", hash_original_method = "4BB4BBFFC89848EE3A9E98B493F95D5F", hash_generated_method = "151BEB860200488A67FBA27E804360BC")
     
 @Override
@@ -567,12 +589,16 @@ public SimpleTimeZone(int offset, String name, int startMonth,
                 && endTime == tz.endTime && endMode == tz.endMode;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.008 -0500", hash_original_method = "C51A338C9795AC2507162C0CE1A08702", hash_generated_method = "07476B51E1F72A77AF67007C1E161911")
     
 @Override public boolean inDaylightTime(Date time) {
         return useDaylightTime() && getOffset(time.getTime()) != getRawOffset();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.010 -0500", hash_original_method = "8AD8F18B8E2CE991A6AB313B3340B306", hash_generated_method = "389E08095E7DA7BB895C13DFEF3FDEA3")
     
 private boolean isLeapYear(int year) {
@@ -582,6 +608,8 @@ private boolean isLeapYear(int year) {
         return year % 4 == 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.013 -0500", hash_original_method = "EABB822EA3A4CED689A420DE5F07AD18", hash_generated_method = "6EDF1A67EEB6134BA7E3C295180BA051")
     
 private int mod7(int num1) {
@@ -595,6 +623,8 @@ private int mod7(int num1) {
      * @param milliseconds
      *            the daylight savings offset in milliseconds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.015 -0500", hash_original_method = "37D938F55D2005A7FF3D5AC31467EF4C", hash_generated_method = "91AD9DB45FD779AEBCD8021ED551D223")
     
 public void setDSTSavings(int milliseconds) {
@@ -605,6 +635,8 @@ public void setDSTSavings(int milliseconds) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.018 -0500", hash_original_method = "29EACAF13C91B179EA825409505E4565", hash_generated_method = "FCAFA965D4A4DB96397E8EAD7B49DFA3")
     
 private void checkRange(int month, int dayOfWeek, int time) {
@@ -619,6 +651,8 @@ private void checkRange(int month, int dayOfWeek, int time) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.021 -0500", hash_original_method = "F04B5CC4561F29CBDFD2A63D85494102", hash_generated_method = "C3383CE28563A567C949C6C2E32EBB75")
     
 private void checkDay(int month, int day) {
@@ -627,6 +661,8 @@ private void checkDay(int month, int day) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.024 -0500", hash_original_method = "E98C141304510A5F08CF5DF5CC63E118", hash_generated_method = "B066AEFAA498DFD7A991B3714D47B498")
     
 private void setEndMode() {
@@ -672,6 +708,8 @@ private void setEndMode() {
      *            the time of day in milliseconds standard time on which
      *            daylight savings time ends.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.026 -0500", hash_original_method = "B4162090EB008A9B00DF0FE1EF92B7AC", hash_generated_method = "9B14F99D36C6E95C9455E4892D58E9C4")
     
 public void setEndRule(int month, int dayOfMonth, int time) {
@@ -697,6 +735,8 @@ public void setEndRule(int month, int dayOfMonth, int time) {
      *            the time of day in milliseconds standard time on which
      *            daylight savings time ends.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.029 -0500", hash_original_method = "582DA5383125C3306AD7EBC943F58F20", hash_generated_method = "878706F3ED8B8A49446DA0DD67696B35")
     
 public void setEndRule(int month, int day, int dayOfWeek, int time) {
@@ -723,6 +763,8 @@ public void setEndRule(int month, int day, int dayOfWeek, int time) {
      * @param after
      *            selects the day after or before the day of month.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.031 -0500", hash_original_method = "2E94B36A00113021CB8FDF603EDAA945", hash_generated_method = "226B341ACC4D2E91E74CC230F1E74914")
     
 public void setEndRule(int month, int day, int dayOfWeek, int time, boolean after) {
@@ -739,6 +781,8 @@ public void setEndRule(int month, int day, int dayOfWeek, int time, boolean afte
      * @param offset
      *            the offset from GMT of standard time in milliseconds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.034 -0500", hash_original_method = "C8A257B93E1C51862FD9A30D6A75C66A", hash_generated_method = "6B3DE74FE781DF776659D0672A413299")
     
 @Override
@@ -746,6 +790,8 @@ public void setEndRule(int month, int day, int dayOfWeek, int time, boolean afte
         rawOffset = offset;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.036 -0500", hash_original_method = "4370DAC820CAB38F82466934EE4F5C8D", hash_generated_method = "2877D3D2CEC7F17C9334895D4D13934C")
     
 private void setStartMode() {
@@ -791,6 +837,8 @@ private void setStartMode() {
      *            the time of day in milliseconds on which daylight savings time
      *            starts.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.039 -0500", hash_original_method = "1B6B9F6DA0D38FD2E6B0C75070F8A774", hash_generated_method = "5EF80926DEF4C2F6107FDDA2F72BAACC")
     
 public void setStartRule(int month, int dayOfMonth, int time) {
@@ -816,6 +864,8 @@ public void setStartRule(int month, int dayOfMonth, int time) {
      *            the time of day in milliseconds on which daylight savings time
      *            starts.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.042 -0500", hash_original_method = "05B57A1DF0091079AD9D1D4FB9E42767", hash_generated_method = "96AFAB722150386CBF3702A9FB920AEE")
     
 public void setStartRule(int month, int day, int dayOfWeek, int time) {
@@ -842,6 +892,8 @@ public void setStartRule(int month, int day, int dayOfWeek, int time) {
      * @param after
      *            selects the day after or before the day of month.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.044 -0500", hash_original_method = "D71B6352FE444D82D409CFA5438BDAA8", hash_generated_method = "874383FE574C1B00C2B58F12FEB17FB3")
     
 public void setStartRule(int month, int day, int dayOfWeek, int time, boolean after) {
@@ -859,6 +911,8 @@ public void setStartRule(int month, int day, int dayOfWeek, int time, boolean af
      * @param year
      *            the starting year.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.047 -0500", hash_original_method = "7CBF25AFDCF863C97C11F8D0CB7F66E7", hash_generated_method = "7F0487982CAAC50F068E2EF69DD9A86D")
     
 public void setStartYear(int year) {
@@ -871,6 +925,8 @@ public void setStartYear(int year) {
      *
      * @return the string representation of this {@code SimpleTimeZone}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.050 -0500", hash_original_method = "8DB4BEB563F494A2FC46832022F4609E", hash_generated_method = "DD90658939D7EF7DED8494A054570D8F")
     
 @Override
@@ -901,6 +957,8 @@ public void setStartYear(int year) {
                 + ",endTime=" + endTime + "]";
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.052 -0500", hash_original_method = "7C1BE50DE9C29B43BADE36CF66AF8A96", hash_generated_method = "7EB8179D7118704192041A83659A57C3")
     
 @Override
@@ -908,6 +966,8 @@ public void setStartYear(int year) {
         return useDaylight;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.059 -0500", hash_original_method = "F4691E6CC75F84FE0527C352A6F6F1B9", hash_generated_method = "2C211A75DB24E2D3EF588C18FBB3CA20")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -959,6 +1019,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.write(values);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.062 -0500", hash_original_method = "19765306B3DA0529AD0AFD53EDC0B4B8", hash_generated_method = "B76CEBA51327266D935605469BBD5852")
     
 private void readObject(ObjectInputStream stream) throws IOException,

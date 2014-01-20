@@ -74,6 +74,8 @@ public final class Formatter implements Closeable, Flushable {
      * <p>The {@code Locale} used is the user's default locale.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.873 -0500", hash_original_method = "776A8092D7EB6A8CE9FA3707C90FDC71", hash_generated_method = "9A9797ACDC79BA7B3F09BEE8969079B8")
     
 public Formatter() {
@@ -91,6 +93,8 @@ public Formatter() {
      *            the output destination of the {@code Formatter}. If {@code a} is {@code null},
      *            then a {@code StringBuilder} will be used.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.876 -0500", hash_original_method = "C10A7E7C6014F1D5457B2868B8DDD5FA", hash_generated_method = "F7151103E2DD674DB089FF9C6FE6456E")
     
 public Formatter(Appendable a) {
@@ -107,6 +111,8 @@ public Formatter(Appendable a) {
      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
      *            then no localization will be used.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.878 -0500", hash_original_method = "949ED46E62E9C1FD97345CAB1F572157", hash_generated_method = "246D69465AB23352D4DC5064665D1630")
     
 public Formatter(Locale l) {
@@ -125,6 +131,8 @@ public Formatter(Locale l) {
      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
      *            then no localization will be used.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.881 -0500", hash_original_method = "731A0E308D6775F1250BD9086CA3748C", hash_generated_method = "84A13253DC62E49805B98130B56A070B")
     
 public Formatter(Appendable a, Locale l) {
@@ -154,6 +162,8 @@ public Formatter(Appendable a, Locale l) {
      *             or if a new file cannot be created, or if any error arises when
      *             opening or creating the file.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.884 -0500", hash_original_method = "55110CB3A063CDDA9DDF2A6FEEDBC4D6", hash_generated_method = "E2516CD8790738277E2A830706970BAE")
     
 public Formatter(String fileName) throws FileNotFoundException {
@@ -181,6 +191,8 @@ public Formatter(String fileName) throws FileNotFoundException {
      * @throws UnsupportedEncodingException
      *             if the charset with the specified name is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.887 -0500", hash_original_method = "D05AE6CA9B3694824C73C0B398D66198", hash_generated_method = "1C11F64184B1D8B3FB30344D931F04E0")
     
 public Formatter(String fileName, String csn) throws FileNotFoundException,
@@ -209,6 +221,8 @@ public Formatter(String fileName, String csn) throws FileNotFoundException,
      * @throws UnsupportedEncodingException
      *             if the charset with the specified name is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.890 -0500", hash_original_method = "106406A68116E4DC11358A25DB96C9D8", hash_generated_method = "70ECB7DF7F3F2102097FB3A2CC47AE17")
     
 public Formatter(String fileName, String csn, Locale l)
@@ -235,6 +249,8 @@ public Formatter(String fileName, String csn, Locale l)
      *             new {@code File} cannot be created, or if any error rises when opening or
      *             creating the {@code File}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.892 -0500", hash_original_method = "56C5088BBC7ACEBB0E3B42C5FC534A61", hash_generated_method = "1E278F601A97B10D889C4119BC6EE3D0")
     
 public Formatter(File file) throws FileNotFoundException {
@@ -262,6 +278,8 @@ public Formatter(File file) throws FileNotFoundException {
      * @throws UnsupportedEncodingException
      *             if the charset with the specified name is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.895 -0500", hash_original_method = "15C3BB1BBEBB7DA2B256558B7A83F1D2", hash_generated_method = "AF5C4DDCF65FEF3DA60CA2DAE4F5A25C")
     
 public Formatter(File file, String csn) throws FileNotFoundException,
@@ -290,6 +308,8 @@ public Formatter(File file, String csn) throws FileNotFoundException,
      * @throws UnsupportedEncodingException
      *             if the charset with the specified name is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.897 -0500", hash_original_method = "11FC304A866A57AD6707E0AE5ACD74C6", hash_generated_method = "C8D60A65F1BC72C5573899240A7C8234")
     
 public Formatter(File file, String csn, Locale l)
@@ -320,6 +340,8 @@ public Formatter(File file, String csn, Locale l)
      * @param os
      *            the stream to be used as the destination of the {@code Formatter}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.901 -0500", hash_original_method = "18094D8509766CE6FC608D9540C5972B", hash_generated_method = "A3D7CDD42DF9DFFBFB4990BBFE10E2B6")
     
 public Formatter(OutputStream os) {
@@ -341,6 +363,8 @@ public Formatter(OutputStream os) {
      * @throws UnsupportedEncodingException
      *             if the charset with the specified name is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.903 -0500", hash_original_method = "F6295FD9F7AB3AB7F721531D402E7F81", hash_generated_method = "2137A29D938C10AD69137A4A7C0B324D")
     
 public Formatter(OutputStream os, String csn) throws UnsupportedEncodingException {
@@ -361,6 +385,8 @@ public Formatter(OutputStream os, String csn) throws UnsupportedEncodingExceptio
      * @throws UnsupportedEncodingException
      *             if the charset with the specified name is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.906 -0500", hash_original_method = "339D31BAB557832A3B8A75EB377C0635", hash_generated_method = "A3D139E97C9CE1BF978AF0113011FC9C")
     
 public Formatter(OutputStream os, String csn, Locale l) throws UnsupportedEncodingException {
@@ -381,6 +407,8 @@ public Formatter(OutputStream os, String csn, Locale l) throws UnsupportedEncodi
      *            {@code ps} is {@code null}, then a {@code NullPointerException} will
      *            be raised.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.909 -0500", hash_original_method = "6A92C9283CC7B01627E24F0E27824A3B", hash_generated_method = "408F6162334A84F1D56AF1BFA6C17338")
     
 public Formatter(PrintStream ps) {
@@ -395,12 +423,16 @@ public Formatter(PrintStream ps) {
      * Creates a native peer if we don't already have one, or reconfigures an existing one.
      * This means we get to reuse the peer in cases like "x=%.2f y=%.2f".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.870 -0500", hash_original_method = "9D62CCD9646FE324AC0FFA6EB7C17C6C", hash_generated_method = "0917A02FDC016644C8B13A56EA337A3E")
     
 private NativeDecimalFormat getDecimalFormat(String pattern) {
         return cachedDecimalFormat.get().update(localeData, pattern);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.912 -0500", hash_original_method = "E3DA6A4C963B6E9187963221C571CEC2", hash_generated_method = "100F2A9DD176368CC3F8A0D7D3210923")
     
 private void checkNotClosed() {
@@ -416,6 +448,8 @@ private void checkNotClosed() {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.914 -0500", hash_original_method = "B5A8A4A4A455286143E3BD4E75C6F0FE", hash_generated_method = "CC072A6C582FD239C024A4889119E0FF")
     
 public Locale locale() {
@@ -430,6 +464,8 @@ public Locale locale() {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.916 -0500", hash_original_method = "D73A5BF8E95D39CBD6819B9B1AA13C8D", hash_generated_method = "FE0E5852C6DE222F08138AD38C62ED36")
     
 public Appendable out() {
@@ -446,6 +482,8 @@ public Appendable out() {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.919 -0500", hash_original_method = "39CF8FB3A631311648D12D228411CE26", hash_generated_method = "6DA3D729E44B0341A1ABC59559EF1572")
     
 @Override
@@ -461,6 +499,8 @@ public Appendable out() {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.921 -0500", hash_original_method = "E9CBCF5548B5D691C8801114F0C41C59", hash_generated_method = "7551384FE3FF07BC096BE243C3F007BA")
     
 public void flush() {
@@ -484,6 +524,8 @@ public void flush() {
      * Any method but the {@link #ioException()} that is called after the
      * {@code Formatter} has been closed will raise a {@code FormatterClosedException}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.923 -0500", hash_original_method = "16C1939C51EF65BBD0A872F925CE78BF", hash_generated_method = "5959B1B6060902934AAAD616AD5F40BD")
     
 public void close() {
@@ -507,6 +549,8 @@ public void close() {
      * @return the last {@code IOException} thrown by the {@code Formatter}'s output
      *         destination.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.926 -0500", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "9021EA20032F11132D2B9F300EA6476A")
     
 public IOException ioException() {
@@ -561,6 +605,8 @@ public Formatter format(String format, Object... args) {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.931 -0500", hash_original_method = "F45273151F6DD69ACB6CCC03C59753A4", hash_generated_method = "ED22431379AC5785B8BAB430FCFA2F68")
     
 public Formatter format(Locale l, String format, Object... args) {
@@ -575,6 +621,8 @@ public Formatter format(Locale l, String format, Object... args) {
         return this;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.934 -0500", hash_original_method = "960E24FB807777DEBBE8328729AF6A3F", hash_generated_method = "4FFC364C6BF6D06DE53F6A13340A9F36")
     
 private void doFormat(String format, Object... args) {
@@ -620,6 +668,8 @@ private void doFormat(String format, Object... args) {
     }
 
     // Fixes http://code.google.com/p/android/issues/detail?id=1767.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.936 -0500", hash_original_method = "4A93F3F0DF6F4E45CC93AF5660722832", hash_generated_method = "A6EC27CF5AA0395A9E82675C400128BE")
     
 private void outputCharSequence(CharSequence cs, int start, int end) {
@@ -740,6 +790,8 @@ private CharSequence transform(FormatToken token, Object argument) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.036 -0500", hash_original_method = "D44F27ADB431306CEB9F9E1F25036901", hash_generated_method = "1DDD60EECF3A47736937602E05B6BFD4")
     
 private IllegalFormatConversionException badArgumentType() {
@@ -750,6 +802,8 @@ private IllegalFormatConversionException badArgumentType() {
      * Returns a CharSequence corresponding to {@code s} with all the ASCII digits replaced
      * by digits appropriate to this formatter's locale. Other characters remain unchanged.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.038 -0500", hash_original_method = "8CD3AC57424B332A3611698407D98FD3", hash_generated_method = "72450092AE3AEA069DA2B7D6897A339C")
     
 private CharSequence localizeDigits(CharSequence s) {
@@ -770,6 +824,8 @@ private CharSequence localizeDigits(CharSequence s) {
      * Inserts the grouping separator every 3 digits. DecimalFormat lets you configure grouping
      * size, but you can't access that from Formatter, and the default is every 3 digits.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.041 -0500", hash_original_method = "CC3FF2DA7072A05A8664F97319F6C752", hash_generated_method = "073681E100119D78CF7FBB2AB770DDDB")
     
 private CharSequence insertGrouping(CharSequence s) {
@@ -800,6 +856,8 @@ private CharSequence insertGrouping(CharSequence s) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.044 -0500", hash_original_method = "54F34C95EDCEEE411BD250D07A12E500", hash_generated_method = "42D869C9517CA8E6D9A571BB6B82DCC6")
     
 private CharSequence transformFromBoolean() {
@@ -814,6 +872,8 @@ private CharSequence transformFromBoolean() {
         return padding(result, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.047 -0500", hash_original_method = "FEE63D21FF5AA7B8F21641D7D3CB6697", hash_generated_method = "84BC48557AB0D6DA3AE36CBA26FC16F1")
     
 private CharSequence transformFromHashCode() {
@@ -826,6 +886,8 @@ private CharSequence transformFromHashCode() {
         return padding(result, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.049 -0500", hash_original_method = "41FDF272148D1D909A3CC241D4F2B404", hash_generated_method = "6D0CFDAEF623EC0B769D8D42EB91873E")
     
 private CharSequence transformFromString() {
@@ -852,6 +914,8 @@ private CharSequence transformFromString() {
         return padding(result, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.052 -0500", hash_original_method = "78103310C8550D540C751775D2E73F1B", hash_generated_method = "A72ED8B2E80EE72828A262D7E1BE1332")
     
 private CharSequence transformFromCharacter() {
@@ -874,12 +938,16 @@ private CharSequence transformFromCharacter() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.054 -0500", hash_original_method = "1802F533F155B8AA49557FA5A74B7DBE", hash_generated_method = "EDB7C4DB553D8CF5987D07634BD5D1E3")
     
 private CharSequence transformFromPercent() {
         return padding("%", 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.057 -0500", hash_original_method = "EF7726D1BC858C4C5BDC40B9ACBD3ABF", hash_generated_method = "B7F440B7197569919B9910A1F3D3DD7B")
     
 private CharSequence padding(CharSequence source, int startIndex) {
@@ -927,12 +995,16 @@ private CharSequence padding(CharSequence source, int startIndex) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.059 -0500", hash_original_method = "AA67EEFB247ACC7BDA1BABCD03B30A80", hash_generated_method = "803D855AAC16BD20768E3BA7C1A197CC")
     
 private StringBuilder toStringBuilder(CharSequence cs) {
         return cs instanceof StringBuilder ? (StringBuilder) cs : new StringBuilder(cs);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.062 -0500", hash_original_method = "CE1A2CC9741A13D14659E3953A660AC1", hash_generated_method = "8DA802C33D58DC2074DB11232F93FB44")
     
 private StringBuilder wrapParentheses(StringBuilder result) {
@@ -948,6 +1020,8 @@ private StringBuilder wrapParentheses(StringBuilder result) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.066 -0500", hash_original_method = "FADDE3D8C4FA639F028B03B661D10023", hash_generated_method = "86EEF139DF110EA40C77F1DAF2842D9E")
     
 private CharSequence transformFromInteger() {
@@ -1022,6 +1096,8 @@ private CharSequence transformFromInteger() {
         return padding(result, startIndex);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.068 -0500", hash_original_method = "15D0DEB8422EE33E04C98AFC872D1D51", hash_generated_method = "0A8BBCB7E1E7FFF5E2CABF84DA3F9F81")
     
 private CharSequence transformFromNull() {
@@ -1029,6 +1105,8 @@ private CharSequence transformFromNull() {
         return padding("null", 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.071 -0500", hash_original_method = "28740AE89E2FC451EFE3093F54121A6C", hash_generated_method = "F6AA55727746C890E01D16D469CE5C7E")
     
 private CharSequence transformFromBigInteger() {
@@ -1088,6 +1166,8 @@ private CharSequence transformFromBigInteger() {
         return padding(result, startIndex);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.074 -0500", hash_original_method = "3FA485DEFE055FA59E9A89B7029B3055", hash_generated_method = "76673F0D4EE450FC95EB14E624A75410")
     
 private CharSequence transformFromDateTime() {
@@ -1118,6 +1198,8 @@ private CharSequence transformFromDateTime() {
         return padding(result, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.079 -0500", hash_original_method = "6A85D50A5F6F83B5DE3D767D1CCF3B76", hash_generated_method = "E37C4EEDCFB4D6691204CCD9A1D97C2B")
     
 private boolean appendT(StringBuilder result, char conversion, Calendar calendar) {
@@ -1257,12 +1339,16 @@ private boolean appendT(StringBuilder result, char conversion, Calendar calendar
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.081 -0500", hash_original_method = "07C369462F22245026E1280008B34AEC", hash_generated_method = "88D3F2B05C061151E69206A2ED2DA3E8")
     
 private int to12Hour(int hour) {
         return hour == 0 ? 12 : hour;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.084 -0500", hash_original_method = "60B30B4DC0B127EF94D361BC9EB2AF90", hash_generated_method = "3F42CCC2826A012E928DEBCDFC044B21")
     
 private void appendLocalized(StringBuilder result, long value, int width) {
@@ -1286,6 +1372,8 @@ private void appendLocalized(StringBuilder result, long value, int width) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.087 -0500", hash_original_method = "977B62B975352D4F075C1101DB18FB73", hash_generated_method = "1B297E1F6EAC53366C4B69EA4AD51576")
     
 private CharSequence transformFromSpecialNumber(double d) {
@@ -1315,6 +1403,8 @@ private CharSequence transformFromSpecialNumber(double d) {
         return padding(source, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.091 -0500", hash_original_method = "DECF7ECF8109F764E81E2CF8101BCB0C", hash_generated_method = "4A099C0072244A8B089AEB8E542AF738")
     
 private CharSequence transformFromFloat() {
@@ -1386,6 +1476,8 @@ private CharSequence transformFromFloat() {
         return padding(result, startIndex);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.094 -0500", hash_original_method = "43DA2A76094CCA7D42287B4466035D61", hash_generated_method = "C71E3720A0C279CDA790F6C54C55F2CD")
     
 private void transformE(StringBuilder result) {
@@ -1422,6 +1514,8 @@ private void transformE(StringBuilder result) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.097 -0500", hash_original_method = "1973123C0DFAE44325340FD650EA833E", hash_generated_method = "F20BDA7075602500B17127ABA27240FD")
     
 private void transformG(StringBuilder result) {
@@ -1589,6 +1683,8 @@ public NativeDecimalFormat update(LocaleData localeData, String pattern) {
 
         private StringBuilder strFlags;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.346 -0400", hash_original_method = "98998A93ECCA1CEE378BE6F5FF82B45F", hash_generated_method = "98998A93ECCA1CEE378BE6F5FF82B45F")
         public FormatToken ()
         {
@@ -1596,6 +1692,8 @@ public NativeDecimalFormat update(LocaleData localeData, String pattern) {
         }
 
         // Tests whether there were no flags, no width, and no precision specified.
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.985 -0500", hash_original_method = "A7B957B3122A1E0264F586D374F2E6B7", hash_generated_method = "A7B957B3122A1E0264F586D374F2E6B7")
         
 boolean isDefault() {
@@ -1603,12 +1701,16 @@ boolean isDefault() {
                     !flagSpace && !flagZero && width == UNSET && precision == UNSET;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.987 -0500", hash_original_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17", hash_generated_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17")
         
 boolean isPrecisionSet() {
             return precision != UNSET;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.989 -0500", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "3A74106121887CCA509F985D60DB5637")
         
@@ -1616,12 +1718,16 @@ int getArgIndex() {
             return argIndex;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.991 -0500", hash_original_method = "27CE41687BF54420F4C00D2CFB6A73FA", hash_generated_method = "27CE41687BF54420F4C00D2CFB6A73FA")
         
 void setArgIndex(int index) {
             argIndex = index;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.994 -0500", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "40140C97EC91863535630C305615FEC1")
         
@@ -1629,12 +1735,16 @@ int getWidth() {
             return width;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.996 -0500", hash_original_method = "5C954D9C93DF99E2E990960A3CC1749D", hash_generated_method = "5C954D9C93DF99E2E990960A3CC1749D")
         
 void setWidth(int width) {
             this.width = width;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.998 -0500", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "71BCDCF9E73C85D95AB18BEF6635FA18")
         
@@ -1642,12 +1752,16 @@ int getPrecision() {
             return precision;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.000 -0500", hash_original_method = "7515FB19ACE3C47DEBBD3E8357F6915C", hash_generated_method = "7515FB19ACE3C47DEBBD3E8357F6915C")
         
 void setPrecision(int precise) {
             this.precision = precise;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.003 -0500", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "837A02C50E03265F058B23775F6F6197")
         
@@ -1659,6 +1773,8 @@ String getStrFlags() {
          * Sets qualified char as one of the flags. If the char is qualified,
          * sets it as a flag and returns true. Or else returns false.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.006 -0500", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "396D2A5658270F2187B86860C13278C8")
         
@@ -1708,6 +1824,8 @@ boolean setFlag(int ch) {
             return true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.008 -0500", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "563B5213711441DEFA9BB3355CD61032")
         
@@ -1715,12 +1833,16 @@ char getConversionType() {
             return conversionType;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.010 -0500", hash_original_method = "6C3279116A999B7A879305F448E4C7E6", hash_generated_method = "6C3279116A999B7A879305F448E4C7E6")
         
 void setConversionType(char c) {
             conversionType = c;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.012 -0500", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "EE45DA1AFAF958B13872135C146745E9")
         
@@ -1728,18 +1850,24 @@ char getDateSuffix() {
             return dateSuffix;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.015 -0500", hash_original_method = "6F4F20E9A23952874C5B1A6A80E321B4", hash_generated_method = "6F4F20E9A23952874C5B1A6A80E321B4")
         
 void setDateSuffix(char c) {
             dateSuffix = c;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.017 -0500", hash_original_method = "67F4DE623207C5AE23B919ACAD45AA0B", hash_generated_method = "67F4DE623207C5AE23B919ACAD45AA0B")
         
 boolean requireArgument() {
             return conversionType != '%' && conversionType != 'n';
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.023 -0500", hash_original_method = "34D9D8688BA6BF211700F1E1A866C731", hash_generated_method = "6609DCC3599DEBEC4BE0FC7FE103CFB4")
         
 void checkFlags(Object arg) {
@@ -1900,6 +2028,8 @@ public UnknownFormatConversionException unknownFormatConversionException() {
         /**
          * Constructs a new parser for the given format string.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.116 -0500", hash_original_method = "2EAAE714EE0AE41BF39DBCA3F91B9104", hash_generated_method = "2EAAE714EE0AE41BF39DBCA3F91B9104")
         
 FormatSpecifierParser(String format) {
@@ -1923,6 +2053,8 @@ FormatToken parseFormatToken(int offset) {
          * Returns a string corresponding to the last format specifier that was parsed.
          * Used to construct error messages.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.120 -0500", hash_original_method = "7C388C74117CDF3E7844B526DC734D8C", hash_generated_method = "7C388C74117CDF3E7844B526DC734D8C")
         
@@ -1930,12 +2062,16 @@ String getFormatSpecifierText() {
             return format.substring(startIndex, i);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.124 -0500", hash_original_method = "6521B9C02DA744FF180556D39A74ED44", hash_generated_method = "18DD17E9C6A2CF56FCD457474B08DCAB")
         
 private int peek() {
             return (i < length) ? format.charAt(i) : -1;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.126 -0500", hash_original_method = "F520742ED92EBACDB47FBF0D0B1F08F4", hash_generated_method = "FB586B6D773033594CB9B9A418252FB1")
         
 private char advance() {
@@ -1945,6 +2081,8 @@ private char advance() {
             return format.charAt(i++);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.128 -0500", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "6C6C5076F052DDBA953D8E7572AF6935")
         
 private UnknownFormatConversionException unknownFormatConversionException() {
@@ -2039,6 +2177,8 @@ private FormatToken parseConversionType(FormatToken token) {
         }
 
         // Parses an integer (of arbitrary length, but typically just one digit).
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.142 -0500", hash_original_method = "ADF8322FF676CF5038257F50E4E4E6DC", hash_generated_method = "1E7FDC304C48728374EA176C6AE9E3A6")
         
 private int nextInt() {
@@ -2053,6 +2193,8 @@ private int nextInt() {
         }
 
         // Swallow remaining digits to resync our attempted parse, but return failure.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.144 -0500", hash_original_method = "F2814F47D4EB7F1D4CA24D9FE1C3918D", hash_generated_method = "7E2F5E84092B17E0458A7640B08C3898")
         
 private int failNextInt() {
@@ -2064,6 +2206,8 @@ private int failNextInt() {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.100 -0500", hash_original_method = "DF70A96812FA1EE536149F6B5D8F4C45", hash_generated_method = "E3454FB5606CD94AE81394A56A815DC2")
     
 private void transformF(StringBuilder result) {
@@ -2101,6 +2245,8 @@ private void transformF(StringBuilder result) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.103 -0500", hash_original_method = "DCC3844221755C0C14FA659BF8647E6B", hash_generated_method = "2746D41A3817A710906CF6A8008697C0")
     
 private void transformA(StringBuilder result) {

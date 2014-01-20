@@ -64,6 +64,8 @@ public TransitionDrawable(Drawable[] layers) {
      *
      * @see #TransitionDrawable(Drawable[])
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.030 -0500", hash_original_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85", hash_generated_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85")
     
 TransitionDrawable() {
@@ -129,6 +131,8 @@ public void resetTransition() {
      *
      * @param duration The duration to use if no transition is running.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.044 -0500", hash_original_method = "46AFBEEBA20F3F34CF5FEC703E9F1E57", hash_generated_method = "D908623F6D5052BD806272F7A2E73E18")
     
 public void reverseTransition(int duration) {
@@ -192,6 +196,8 @@ TransitionState(TransitionState orig, TransitionDrawable owner,
         
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.047 -0500", hash_original_method = "1FBAB3689755625C733FF3C6D865C65F", hash_generated_method = "FC82F7FA3DEABE0ADAA5A9978DBA3FA6")
     
 @Override
@@ -275,6 +281,8 @@ public void setCrossFadeEnabled(boolean enabled) {
      *
      * @return True if cross fading is enabled, false otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.051 -0500", hash_original_method = "CD2EAE34D95290C8C0E6CBB8BD3A8C00", hash_generated_method = "BB4BB6AEDC75FA056864FEC70F3EB226")
     
 public boolean isCrossFadeEnabled() {

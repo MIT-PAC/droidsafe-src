@@ -30,6 +30,8 @@ public CertificateFactorySpi() {
      * @exception CertificateException
      *                if parsing problems are detected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.660 -0500", hash_original_method = "6250586A2416CA0D958CE1FED5D56F11", hash_generated_method = "2006AF8689DE20455B64C85A61ED065E")
     
 public abstract Certificate engineGenerateCertificate(InputStream inStream)
@@ -45,6 +47,8 @@ public abstract Certificate engineGenerateCertificate(InputStream inStream)
      * @exception CertificateException
      *                if parsing problems are detected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.662 -0500", hash_original_method = "C98A5E0C086FF0EA46A70DE403C9B7B6", hash_generated_method = "2152B5EB07E3DE291702833E914FD335")
     
 public abstract Collection<? extends Certificate>
@@ -60,6 +64,8 @@ public abstract Collection<? extends Certificate>
      * @exception CRLException
      *                if parsing problems are detected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.664 -0500", hash_original_method = "D86BB6441FBCD789BFDFD55777C4D377", hash_generated_method = "40B61B56537588F737066AA3DA0C2A92")
     
 public abstract CRL engineGenerateCRL(InputStream inStream)
@@ -75,6 +81,8 @@ public abstract CRL engineGenerateCRL(InputStream inStream)
      * @exception CRLException
      *                if parsing problems are detected.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.667 -0500", hash_original_method = "EC440E2CD456EA99D8FFD29CCF8B2AEB", hash_generated_method = "AABE80498BFFAC969ECACCFC0F92CC1D")
     
 public abstract Collection<? extends CRL>

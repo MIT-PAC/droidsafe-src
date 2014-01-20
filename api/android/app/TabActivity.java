@@ -121,6 +121,8 @@ public void setDefaultTab(int index) {
         mTabHost.setup(getLocalActivityManager());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.689 -0500", hash_original_method = "165BC05C59C361B649DC3EA7F3563399", hash_generated_method = "1E5C770EAF8EFB294684B4B7179CB403")
     
 private void ensureTabHost() {

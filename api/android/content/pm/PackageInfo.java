@@ -102,6 +102,8 @@ public PackageInfo[] newArray(int size) {
 public PackageInfo() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.793 -0500", hash_original_method = "22E0C1407EA1D1C66AB0B4BE22F88AA5", hash_generated_method = "14944209C7BBB4C708E44F4A3B4CBA12")
     
 private PackageInfo(Parcel source) {

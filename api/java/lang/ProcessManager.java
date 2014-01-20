@@ -35,6 +35,8 @@ import droidsafe.helpers.DSUtils;
 
 final class ProcessManager {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int exec(String[] command, String[] environment,
             String workingDirectory, FileDescriptor in, FileDescriptor out,
             FileDescriptor err, boolean redirectErrorStream) throws IOException {
@@ -60,6 +62,8 @@ public static ProcessManager getInstance() {
 
     private final ProcessReferenceQueue referenceQueue = new ProcessReferenceQueue();
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
@@ -85,6 +89,8 @@ public static ProcessManager getInstance() {
      * Cleans up after garbage collected processes. Requires the lock on the
      * map.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.541 -0500", hash_original_method = "BF6AA9440795270C2D5A5C002031838F", hash_generated_method = "300FAF7F4C3C8A3A9809C1A337418A2E")
     
 private void cleanUp() {
@@ -99,6 +105,8 @@ private void cleanUp() {
     /**
      * Loops indefinitely and calls ProcessManager.onExit() when children exit.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.544 -0500", hash_original_method = "534F9793819E6D7D8427F97C64CDA54E", hash_generated_method = "616A7277059590F31C767CB08E6096DD")
     
 private void watchChildren() {
@@ -140,6 +148,8 @@ private void watchChildren() {
      * @param pid ID of process that exited
      * @param exitValue value the process returned upon exit
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.546 -0500", hash_original_method = "4025BDFB051861E82299213D97AFEE05", hash_generated_method = "2F2078B86361797FF47A2820BC5DCC4A")
     
 private void onExit(int pid, int exitValue) {
@@ -156,6 +166,8 @@ private void onExit(int pid, int exitValue) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.549 -0500", hash_original_method = "E4B4D1EC14DE436D47A63B575F4759A6", hash_generated_method = "8F648B9A138EFDC6C481A63D5CF8B07E")
     
 private void waitForMoreChildren() {
@@ -200,6 +212,8 @@ private void waitForMoreChildren() {
 
         private final Object exitValueMutex = new Object();
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.576 -0500", hash_original_method = "C79C41A0F8183C5EC729A58D348A92CE", hash_generated_method = "C79C41A0F8183C5EC729A58D348A92CE")
         
 ProcessImpl(int pid, FileDescriptor in, FileDescriptor out, FileDescriptor err) {
@@ -268,6 +282,8 @@ public int waitFor() throws InterruptedException {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.593 -0500", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "B7D46CBA2679C4E3B0149113D5DCFB48")
         
@@ -303,6 +319,8 @@ public ProcessReference(ProcessImpl referent, ProcessReferenceQueue referenceQue
     
     static class ProcessReferenceQueue extends ReferenceQueue<ProcessImpl> {
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.465 -0400", hash_original_method = "862B9F300CC2459FB61E8AEDFA0DE051", hash_generated_method = "862B9F300CC2459FB61E8AEDFA0DE051")
         public ProcessReferenceQueue ()
         {
@@ -325,6 +343,8 @@ public ProcessReference(ProcessImpl referent, ProcessReferenceQueue referenceQue
 
         private FileDescriptor fd;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.621 -0500", hash_original_method = "BA3785E1A3DB1BABE64D1C4B047B2648", hash_generated_method = "7B83815A871CA1A709EF76A91096EA1E")
         
 private ProcessInputStream(FileDescriptor fd) {
@@ -356,6 +376,8 @@ private ProcessInputStream(FileDescriptor fd) {
 
         private FileDescriptor fd;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.632 -0500", hash_original_method = "B3C6B215267D4A75B46BBDC1F5BB9CDB", hash_generated_method = "2348488383A9C8783CF3E70811384549")
         
 private ProcessOutputStream(FileDescriptor fd) {

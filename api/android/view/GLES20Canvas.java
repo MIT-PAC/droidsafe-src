@@ -28,70 +28,106 @@ import droidsafe.helpers.DSUtils;
 
 class GLES20Canvas extends HardwareCanvas {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nIsAvailable() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.065 -0500", hash_original_method = "E7A6C668061FB4CD360ECD595098BC2E", hash_generated_method = "C227356B089353A74253AFA60F79204A")
     
 static boolean isAvailable() {
         return sIsAvailable;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nCreateRenderer() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nCreateLayerRenderer(int layer) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nCreateDisplayListRenderer() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nResetDisplayListRenderer(int renderer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDestroyRenderer(int renderer) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int nCreateTextureLayer(boolean opaque, int[] layerInfo) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static int nCreateLayer(int width, int height, boolean isOpaque, int[] layerInfo) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void nResizeLayer(int layerId, int width, int height, int[] layerInfo) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void nUpdateTextureLayer(int layerId, int width, int height, boolean opaque,
             SurfaceTexture surface) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void nSetTextureLayerTransform(int layerId, int matrix) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void nDestroyLayer(int layerId) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static void nDestroyLayerDeferred(int layerId) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean nCopyLayer(int layerId, int bitmap) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetMaximumTextureWidth() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetMaximumTextureHeight() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSetViewport(int renderer, int width, int height) {
     }
 
@@ -112,6 +148,8 @@ public static boolean preserveBackBuffer() {
         return nPreserveBackBuffer();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nPreserveBackBuffer() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -131,6 +169,8 @@ public static boolean isBackBufferPreserved() {
         return nIsBackBufferPreserved();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nIsBackBufferPreserved() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -146,19 +186,29 @@ public static void disableVsync() {
         nDisableVsync();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDisableVsync() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nPrepare(int renderer, boolean opaque) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nPrepareDirty(int renderer, int left, int top, int right, int bottom,
             boolean opaque) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nFinish(int renderer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nCallDrawGLFunction(int renderer, int drawGLFunction) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -180,6 +230,8 @@ public static void flushCaches(int level) {
         nFlushCaches(level);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nFlushCaches(int level) {
     }
 
@@ -195,6 +247,8 @@ public static void terminateCaches() {
         nTerminateCaches();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nTerminateCaches() {
     }
 
@@ -207,207 +261,313 @@ public static void initCaches() {
         nInitCaches();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nInitCaches() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetDisplayList(int renderer, int displayList) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.240 -0500", hash_original_method = "7797822949EB42761B06A2E6106989AA", hash_generated_method = "D62F0A00880A66791B8FF892C2CD7913")
     
 static void destroyDisplayList(int displayList) {
         nDestroyDisplayList(displayList);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDestroyDisplayList(int displayList) {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.246 -0500", hash_original_method = "D2F577F42B579CD03E6A04C3A1E1D45D", hash_generated_method = "F0DB4F4FA09C82D82C0648F5FA1656E5")
     
 static int getDisplayListSize(int displayList) {
         return nGetDisplayListSize(displayList);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetDisplayListSize(int displayList) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nDrawDisplayList(int renderer, int displayList,
             int width, int height, Rect dirty) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nOutputDisplayList(int renderer, int displayList) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawLayer(int renderer, int layer, float x, float y, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nInterrupt(int renderer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nResume(int renderer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nClipRect(int renderer, float left, float top,
             float right, float bottom, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nClipRect(int renderer, int left, int top, int right, int bottom,
             int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nGetClipBounds(int renderer, Rect bounds) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nQuickReject(int renderer, float left, float top,
             float right, float bottom, int edge) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nTranslate(int renderer, float dx, float dy) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSkew(int renderer, float sx, float sy) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nRotate(int renderer, float degrees) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nScale(int renderer, float sx, float sy) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSetMatrix(int renderer, int matrix) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nGetMatrix(int renderer, int matrix) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nConcatMatrix(int renderer, int matrix) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSave(int renderer, int flags) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayer(int renderer, int paint, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayer(int renderer, float left, float top,
             float right, float bottom, int paint, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayerAlpha(int renderer, int alpha, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayerAlpha(int renderer, float left, float top, float right,
             float bottom, int alpha, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nRestore(int renderer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nRestoreToCount(int renderer, int saveCount) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetSaveCount(int renderer) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawArc(int renderer, float left, float top,
             float right, float bottom, float startAngle, float sweepAngle,
             boolean useCenter, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawPatch(int renderer, int bitmap, byte[] buffer, byte[] chunks,
             float left, float top, float right, float bottom, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawBitmap(
             int renderer, int bitmap, byte[] buffer, float left, float top, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawBitmap(int renderer, int bitmap, byte[] buff,
             int matrix, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawBitmap(int renderer, int bitmap, byte[] buffer,
             float srcLeft, float srcTop, float srcRight, float srcBottom,
             float left, float top, float right, float bottom, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawBitmapMesh(int renderer, int bitmap, byte[] buffer,
             int meshWidth, int meshHeight, float[] verts, int vertOffset,
             int[] colors, int colorOffset, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawCircle(int renderer, float cx, float cy,
             float radius, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawColor(int renderer, int color, int mode) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawLines(int renderer, float[] points,
             int offset, int count, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawOval(int renderer, float left, float top,
             float right, float bottom, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawPath(int renderer, int path, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawRects(int renderer, int region, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawPoints(int renderer, float[] points,
             int offset, int count, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawRect(int renderer, float left, float top,
             float right, float bottom, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawRoundRect(int renderer, float left, float top,
             float right, float bottom, float rx, float y, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawText(int renderer, char[] text, int index, int count,
             float x, float y, int bidiFlags, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawText(int renderer, String text, int start, int end,
             float x, float y, int bidiFlags, int paint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawTextRun(int renderer, char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir, int nativePaint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nDrawTextRun(int renderer, String text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int flags, int nativePaint) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSetupShader(int renderer, int shader) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSetupColorFilter(int renderer, int colorFilter) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nSetupShadow(int renderer, float radius,
             float dx, float dy, int color) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nResetModifiers(int renderer, int modifiers) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.028 -0500", hash_original_field = "E0A3150F3F38261C8E4D4BE8D4154830", hash_generated_field = "E2BA09F8DF55E2B4054F568E93987B59")
@@ -479,6 +639,8 @@ static int getDisplayListSize(int displayList) {
     /**
      * Creates a canvas to render directly on screen.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.068 -0500", hash_original_method = "E61B8AD2F95A2B414E32399D6E0EB15F", hash_generated_method = "E61B8AD2F95A2B414E32399D6E0EB15F")
     
 GLES20Canvas(boolean translucent) {
@@ -488,6 +650,8 @@ GLES20Canvas(boolean translucent) {
     /**
      * Creates a canvas to render into an FBO.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.070 -0500", hash_original_method = "7F059AE8F3F932B35FF16ED888919AA8", hash_generated_method = "7F059AE8F3F932B35FF16ED888919AA8")
     
 GLES20Canvas(int layer, boolean translucent) {
@@ -510,6 +674,8 @@ protected GLES20Canvas(boolean record, boolean translucent) {
         setupFinalizer();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.075 -0500", hash_original_method = "C5F1546049F1B2879B50EF00176E7660", hash_generated_method = "CDA0E79E0E683E7FDA5851E20C6C51DF")
     
 private void setupFinalizer() {
@@ -583,6 +749,8 @@ protected void resetDisplayListRenderer() {
         nSetViewport(mRenderer, width, height);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.185 -0500", hash_original_method = "9B095EEB0FC45774066EB055E8D05D05", hash_generated_method = "15DF7A375DF542F70B100F995D281262")
     
 @Override
@@ -594,6 +762,8 @@ protected void resetDisplayListRenderer() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.195 -0500", hash_original_method = "7365F42EBD4B3D862109C8AFB45818F1", hash_generated_method = "83997BA3E0C31EEE60788DC5B85F15A5")
     
 @Override
@@ -612,6 +782,8 @@ protected void resetDisplayListRenderer() {
     // Display list
     ///////////////////////////////////////////////////////////////////////////
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.232 -0500", hash_original_method = "B6A785707CFBE1E38AD4FE8A1D6625FF", hash_generated_method = "B6A785707CFBE1E38AD4FE8A1D6625FF")
     
@@ -627,6 +799,8 @@ int getDisplayList(int displayList) {
                 ((GLES20DisplayList) displayList).getNativeDisplayList(), width, height, dirty);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.258 -0500", hash_original_method = "5B863FAF56BDA796D9647970A297D545", hash_generated_method = "902955F17374AD1721E505C1CBDC03A3")
     
 @Override
@@ -638,6 +812,8 @@ int getDisplayList(int displayList) {
     // Hardware layer
     ///////////////////////////////////////////////////////////////////////////
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.264 -0500", hash_original_method = "34690C8D247D9A973C4DB94AE9D7C53D", hash_generated_method = "34690C8D247D9A973C4DB94AE9D7C53D")
     
 void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint) {
@@ -648,12 +824,16 @@ void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint) {
         if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.271 -0500", hash_original_method = "2CAEF0DDE58BE10FAAA9AA0E667CCD64", hash_generated_method = "2CAEF0DDE58BE10FAAA9AA0E667CCD64")
     
 void interrupt() {
         nInterrupt(mRenderer);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.273 -0500", hash_original_method = "C365B4BBFEB4F0EDD5006A765220696B", hash_generated_method = "C365B4BBFEB4F0EDD5006A765220696B")
     
 void resume() {
@@ -1457,6 +1637,8 @@ public CanvasFinalizer(int renderer) {
         // TODO: Implement
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.623 -0500", hash_original_method = "5D6688C2A74D4FFF4670B4EAAE2F407B", hash_generated_method = "47977578C6B2700A0D70F0D514425818")
     
 private int setupModifiers(Bitmap b, Paint paint) {
@@ -1473,6 +1655,8 @@ private int setupModifiers(Bitmap b, Paint paint) {
         return MODIFIER_NONE;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.626 -0500", hash_original_method = "7663D59B2E312EB2A24D959BD08A0BC2", hash_generated_method = "8BD5B8D7D3741BF3C9ADC2618EEC871E")
     
 private int setupModifiers(Paint paint) {
@@ -1499,6 +1683,8 @@ private int setupModifiers(Paint paint) {
         return modifiers;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.628 -0500", hash_original_method = "8D8D130B420F7BDB77245347422EB674", hash_generated_method = "78D0EB59D17B40D30E4AB40800D3DB4D")
     
 private int setupColorFilter(Paint paint) {

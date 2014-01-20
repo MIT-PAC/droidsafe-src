@@ -5,25 +5,17 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.242 -0500", hash_original_field = "939EDB9E30D43F1F1DD302FB5EB0CF6E", hash_generated_field = "4752A7C1FB2BE83B3E8CBE7929135C61")
-
 
     private static final int BIT_IN_LONG = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.245 -0500", hash_original_field = "A1A4E3CC89D133F174FAE04978DF63B3", hash_generated_field = "783D81D695A8378E8654E8D6DD3B9BE2")
 
-
      private E[] enums;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.247 -0500", hash_original_field = "92F775DED5CE5142CEEF7075890CCFCE", hash_generated_field = "487233F7143B18DBA481DB90C8ACD8D3")
 
-
     private long[] bits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.249 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "F06612A05C836674433E69C513561353")
-
 
     private int size;
 
@@ -269,7 +261,6 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         }
         return super.retainAll(collection);
     }
-
     
     private class HugeEnumSetIterator implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.255 -0500", hash_original_field = "2F5470A6BE337FF6083E8F778EE88657", hash_generated_field = "C1B6116DE9FEB291CD26A801EC34041A")
@@ -294,6 +285,8 @@ private HugeEnumSetIterator() {
         /**
          * Assigns mask and index to the next available value, cycling currentBits as necessary.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.267 -0500", hash_original_method = "2CE5F24A4C571BEECB25C40400E44908", hash_generated_method = "A3579B97578194B5EA0183D0F747142C")
         
 void computeNextElement() {
@@ -342,7 +335,6 @@ public void remove() {
             HugeEnumSet.this.remove(last);
             last = null;
         }
-
         
     }
 

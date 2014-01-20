@@ -84,6 +84,8 @@ public TabHost(Context context, AttributeSet attrs) {
         initTabHost();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.572 -0500", hash_original_method = "E225D110F749DDFECF8013DBC90AF66D", hash_generated_method = "C1FD2C646020A1EBB2A45DB7C6A75D14")
     
 private void initTabHost() {
@@ -367,8 +369,8 @@ public FrameLayout getTabContentView() {
         }
     }
 
-    @DSComment("TabHost, check callbacks modeled")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.622 -0500", hash_original_method = "E2648DF1C44758803127AAF509A8077D", hash_generated_method = "F8A7159B9E24FFC79BACDC551729E18F")
     
 public void setCurrentTab(int index) {
@@ -426,6 +428,8 @@ public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.627 -0500", hash_original_method = "1A4924ED406293CF6C6A6C1455DF4ECD", hash_generated_method = "0557684ED61A1F884AEA11BA4E0192AD")
     
 private void invokeOnTabChangeListener() {

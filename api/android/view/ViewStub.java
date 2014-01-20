@@ -71,6 +71,8 @@ public ViewStub(Context context, AttributeSet attrs) {
         initialize(context);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.946 -0500", hash_original_method = "7D8DDEBB17ED3180A708C3B6F0212F68", hash_generated_method = "4E039481AEC54873A1C9C32873DD6977")
     
 private void initialize(Context context) {

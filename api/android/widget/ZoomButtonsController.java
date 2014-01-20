@@ -201,6 +201,8 @@ public void setZoomSpeed(long speed) {
         mControls.setZoomSpeed(speed);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.836 -0500", hash_original_method = "4896FBB838EA68425CC17AB554E92B7B", hash_generated_method = "CEC5A4FE8590A0164FA34999C2EA3878")
     
 private FrameLayout createContainer() {
@@ -421,6 +423,8 @@ public View getZoomControls() {
         return mControls;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.860 -0500", hash_original_method = "9FC1F818AD77D871CBB70B150EF10183", hash_generated_method = "41A1B932AC959AF41D283AE9164621E0")
     
 private void dismissControlsDelayed(int delay) {
@@ -430,6 +434,8 @@ private void dismissControlsDelayed(int delay) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.863 -0500", hash_original_method = "AC8EA5B19015CD5AEB4699B6A0E359A3", hash_generated_method = "86259CDB13C61790476C282DBB86B2A4")
     
 private void refreshPositioningVariables() {
@@ -461,6 +467,8 @@ private void refreshPositioningVariables() {
     }
 
     /* This will only be called when the container has focus. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.866 -0500", hash_original_method = "378B3DC7088565C3BEBCF57941C87615", hash_generated_method = "7F41C5970058127C5472ADF68525807C")
     
 private boolean onContainerKey(KeyEvent event) {
@@ -531,6 +539,8 @@ public Container(Context context) {
         void onZoom(boolean zoomIn);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.868 -0500", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "B03AAA01D2E9486C1C702AE99636C247")
     
 private boolean isInterestingKey(int keyCode) {
@@ -548,6 +558,8 @@ private boolean isInterestingKey(int keyCode) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.870 -0500", hash_original_method = "682CD28D25D57C221683C84B731CBBF0", hash_generated_method = "0BB71EE9B4987F8C135E89AA3B466756")
     
 private ViewRootImpl getOwnerViewRootImpl() {
@@ -636,6 +648,8 @@ public boolean onTouch(View v, MotionEvent event) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.876 -0500", hash_original_method = "5B47D11F01081A67B0DC801C22F3388C", hash_generated_method = "F8728FD1EC127FFB3A84F98BFFE3CCF7")
     
 private void setTouchTargetView(View view) {
@@ -652,6 +666,8 @@ private void setTouchTargetView(View view) {
      * @param rawY The raw Y.
      * @return The view that should receive the touches, or null if there is not one.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.879 -0500", hash_original_method = "87725495631184F2D9436EB1CA8B8776", hash_generated_method = "F430E449E9BF40F720FCAA90C74B2995")
     
 private View findViewForTouch(int rawX, int rawY) {
@@ -700,6 +716,8 @@ private View findViewForTouch(int rawX, int rawY) {
         return closestChild;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.881 -0500", hash_original_method = "17B14786F835EF976BE6949F1B3BDF94", hash_generated_method = "8DBF1BF3BF51BDDB4CD4145724804379")
     
 private void onPostConfigurationChanged() {

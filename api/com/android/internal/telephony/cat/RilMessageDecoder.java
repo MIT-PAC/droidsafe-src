@@ -57,6 +57,8 @@ public static synchronized RilMessageDecoder getInstance(Handler caller, IccFile
 
     private StateCmdParamsReady mStateCmdParamsReady = new StateCmdParamsReady();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.501 -0500", hash_original_method = "80000F6682C0A8DA18E484599E848E2C", hash_generated_method = "9565B3CB3B1EACDD4FD41ECCCECE106D")
     
 private RilMessageDecoder(Handler caller, IccFileHandler fh) {
@@ -153,6 +155,8 @@ public void sendMsgParamsDecoded(ResultCode resCode, CommandParams cmdParams) {
         sendMessage(msg);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.498 -0500", hash_original_method = "D82B03DF0CAD2B5CB90F2219FBBA492B", hash_generated_method = "D0F037313C7D6CC20CC902F4ED6A64D9")
     
 private void sendCmdForExecution(RilMessage rilMsg) {
@@ -161,6 +165,8 @@ private void sendCmdForExecution(RilMessage rilMsg) {
         msg.sendToTarget();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.516 -0500", hash_original_method = "7155A04451229DB43083FDF7F69C4418", hash_generated_method = "DBD2ED0D72F82A23D65961ED7B908121")
     
 private boolean decodeMessageParams(RilMessage rilMsg) {

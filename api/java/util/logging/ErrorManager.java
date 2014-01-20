@@ -36,6 +36,8 @@ public class ErrorManager {
     /**
      * Constructs an instance of {@code ErrorManager}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.891 -0500", hash_original_method = "F8543B5AF6CB4B42529104ECFDE08620", hash_generated_method = "96B5B411CA1BF127B60F4230FA78D871")
     
 public ErrorManager() {
@@ -56,6 +58,8 @@ public ErrorManager() {
      *            the error code that identifies the type of error; see the
      *            constant fields of this class for possible values.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.894 -0500", hash_original_method = "88D78C1D6CF19D14D0670D7F86679469", hash_generated_method = "F54423ABBD0AAE2A1F5070C3B34E3A67")
     

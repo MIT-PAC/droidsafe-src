@@ -9,6 +9,8 @@ import droidsafe.helpers.DSUtils;
 
 public class GLES20 {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void _nativeClassInit() {
 	}
     
@@ -723,6 +725,8 @@ public class GLES20 {
     public static void glVertexAttribPointer(int indx, int size, int type, boolean normalized, int stride, int offset) {
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void glVertexAttribPointerBounds(int indx, int size, int type, boolean normalized, int stride, java.nio.Buffer ptr, int remaining) {
 	}
 

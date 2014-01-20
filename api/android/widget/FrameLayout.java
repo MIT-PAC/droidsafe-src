@@ -67,24 +67,24 @@ public class FrameLayout extends ViewGroup {
     
     private final ArrayList<View> mMatchParentChildren = new ArrayList<View>(1);
     
-    @DSComment("GUI/FrameLayout, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.226 -0500", hash_original_method = "C65968E2416D9A27DB8533C5F0C75B69", hash_generated_method = "56CE05F95766EDEA6C59829992E21F3F")
     
 public FrameLayout(Context context) {
         super(context);
     }
     
-    @DSComment("GUI/FrameLayout, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.228 -0500", hash_original_method = "874EEAD1D73BF9A0D133CBC5B921EDD8", hash_generated_method = "FF55F416DA7E947AAABEB5F1EE958BA3")
     
 public FrameLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    @DSComment("GUI/FrameLayout, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.231 -0500", hash_original_method = "CEC811F1E2979D1B9B78B672C02AD5D3", hash_generated_method = "2876C720C009F1994502A44CB01D12FF")
     
 public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
@@ -264,6 +264,8 @@ public Drawable getForeground() {
         return mForeground;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.250 -0500", hash_original_method = "FF3A696BD56D74C1EF72BB71EC65ECEC", hash_generated_method = "630187FC7DD6A6D668815543C727147C")
     
 private int getPaddingLeftWithForeground() {
@@ -271,6 +273,8 @@ private int getPaddingLeftWithForeground() {
             mPaddingLeft + mForegroundPaddingLeft;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.253 -0500", hash_original_method = "6F38D617A9DA11062600EF5C115E1518", hash_generated_method = "04FEAA4594C7B4A8D2AFD4C4521E22CB")
     
 private int getPaddingRightWithForeground() {
@@ -278,6 +282,8 @@ private int getPaddingRightWithForeground() {
             mPaddingRight + mForegroundPaddingRight;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.255 -0500", hash_original_method = "9A91E9D92D71EE5460C3A06ABC1FBD77", hash_generated_method = "B3406FF80CF764671FA88F0F5517A404")
     
 private int getPaddingTopWithForeground() {
@@ -285,6 +291,8 @@ private int getPaddingTopWithForeground() {
             mPaddingTop + mForegroundPaddingTop;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.257 -0500", hash_original_method = "6BA199CF08BDB4F9A10CECB43AC6A7C1", hash_generated_method = "B8EF8ACEC8788156C8B3506CB86D7DE6")
     
 private int getPaddingBottomWithForeground() {
@@ -621,6 +629,8 @@ public boolean getMeasureAllChildren() {
         /**
          * {@inheritDoc}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.293 -0500", hash_original_method = "8477494D7C126F8EB5E8F09916E06813", hash_generated_method = "4C5925BDD528440CB965B692C5AF6D7A")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -634,8 +644,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
-        @DSComment("Layout parameters")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.296 -0500", hash_original_method = "B179862558DB9232A546423CE2E9C45B", hash_generated_method = "5618D547D1ACB51021D28AF4BAF9972B")
         
 public LayoutParams(int width, int height) {
@@ -654,8 +664,8 @@ public LayoutParams(int width, int height) {
          *
          * @see android.view.Gravity
          */
-        @DSComment("Layout parameters")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.299 -0500", hash_original_method = "DAE5F643078D3DA273ACC6BEF5E44EF2", hash_generated_method = "310A384600384362731FCC25D2DE3D0C")
         
 public LayoutParams(int width, int height, int gravity) {

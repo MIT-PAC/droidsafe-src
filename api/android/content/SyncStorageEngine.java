@@ -89,6 +89,8 @@ public static boolean equals(Bundle b1, Bundle b2) {
         return true;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.675 -0500", hash_original_method = "95C75DD941065204D1878F796AFB73D9", hash_generated_method = "CD380022A9599053C9AF20CB78C98BFE")
     
@@ -96,6 +98,8 @@ static int getIntColumn(Cursor c, String name) {
         return c.getInt(c.getColumnIndex(name));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.677 -0500", hash_original_method = "D31304425BE62241852A05C2DAD11520", hash_generated_method = "5F169179EE73BEA2E150DCB74EA70AD0")
     
@@ -103,6 +107,8 @@ static long getLongColumn(Cursor c, String name) {
         return c.getLong(c.getColumnIndex(name));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.708 -0500", hash_original_method = "E4DA0135FFE566947D2B8F88E57874F7", hash_generated_method = "1D0FA115BDDDE29D6FC8883C302A341D")
     
 static private byte[] flattenBundle(Bundle bundle) {
@@ -117,6 +123,8 @@ static private byte[] flattenBundle(Bundle bundle) {
         return flatData;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.711 -0500", hash_original_method = "F0524A3E9BFBA6C03E3030AF4B1CA96F", hash_generated_method = "44644E7F98D4640ABF4BF3E8C8F0B1C1")
     
 static private Bundle unflattenBundle(byte[] flatData) {
@@ -309,6 +317,8 @@ static private Bundle unflattenBundle(byte[] flatData) {
 
     private boolean mMasterSyncAutomatically = true;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.512 -0500", hash_original_method = "A6EFE710C6881152489583C4A465D2CD", hash_generated_method = "7758E2E90161DD739C6ACE3450C6B9BE")
     
 private SyncStorageEngine(Context context, File dataDir) {
@@ -366,6 +376,8 @@ public void removeStatusChangeListener(ISyncStatusObserver callback) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.529 -0500", hash_original_method = "08D269D186E562E9C4A4640195EC72C3", hash_generated_method = "C71BE3B2C68985146E9C2D44F3AE7270")
     
 private void reportChange(int which) {
@@ -612,6 +624,8 @@ public long getDelayUntilTime(Account account, String providerName) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.555 -0500", hash_original_method = "DA5487F77FC92CA93809E84A1EE05946", hash_generated_method = "C172E9D81AEE380B4B2BB426A88DABE9")
     
 private void updateOrRemovePeriodicSync(Account account, String providerName, Bundle extras,
@@ -1049,6 +1063,8 @@ public void reportActiveChange() {
 
         byte[] flatExtras;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.384 -0500", hash_original_method = "EF059F8E3294963F1E848A9313768B5B", hash_generated_method = "EF059F8E3294963F1E848A9313768B5B")
         
 PendingOperation(Account account, int source,
@@ -1083,6 +1099,8 @@ PendingOperation(PendingOperation other) {
         final HashMap<String, AuthorityInfo> authorities =
                 new HashMap<String, AuthorityInfo>();
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.396 -0500", hash_original_method = "0A42050331BE326DBD226E8BF4C55827", hash_generated_method = "0A42050331BE326DBD226E8BF4C55827")
         
 AccountInfo(Account account) {
@@ -1120,6 +1138,8 @@ AccountInfo(Account account) {
 
          ArrayList<Pair<Bundle, Long>> periodicSyncs;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.420 -0500", hash_original_method = "F1AF0EF8567860728BE1920368DC5483", hash_generated_method = "0280BA6672DA948742C07C0FEEF0FE72")
         
 AuthorityInfo(Account account, String authority, int ident) {
@@ -1512,6 +1532,8 @@ public long getInitialSyncFailureTime() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.631 -0500", hash_original_method = "C1CC7B80E3CCED2D49B24E4AC052D091", hash_generated_method = "8F4F536A41C19D545E934C6521C8A47C")
     
 private int getCurrentDayLocked() {
@@ -1591,6 +1613,8 @@ private AuthorityInfo getOrCreateAuthorityLocked(Account accountName,
         return authority;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.638 -0500", hash_original_method = "654490315D677BE62FC7AFF81C0D5F85", hash_generated_method = "E2578E2048573AE9E7DF022901DB3F88")
     
 private void removeAuthorityLocked(Account account, String authorityName, boolean doWrite) {
@@ -1614,6 +1638,8 @@ public SyncStatusInfo getOrCreateSyncStatus(AuthorityInfo authority) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.643 -0500", hash_original_method = "1C22F2C698CD79AA856218BCBCBEF0F7", hash_generated_method = "9E8E2E91A3AAE544AC7871E301FCA278")
     
 private SyncStatusInfo getOrCreateSyncStatusLocked(int authorityId) {
@@ -1670,6 +1696,8 @@ public void clearAndReadState() {
     /**
      * Read all account information back in to the initial engine state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.651 -0500", hash_original_method = "9E90C2E17AAFB2A4F084659253144E64", hash_generated_method = "6CB5DB174862C08791AD8619EC651F9B")
     
 private void readAccountInfoLocked() {
@@ -1754,6 +1782,8 @@ private void readAccountInfoLocked() {
      * some authority names have changed. copy over their settings and delete the old ones
      * @return true if a change was made
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.654 -0500", hash_original_method = "1F0CD4338AAE9E719690DF5E0BB493ED", hash_generated_method = "0BBF3A00BAFAA580DEB88F08EE34F6F5")
     
 private boolean maybeMigrateSettingsForRenamedAuthorities() {
@@ -1880,6 +1910,8 @@ private Pair<Bundle, Long> parsePeriodicSync(XmlPullParser parser, AuthorityInfo
         return periodicSync;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.668 -0500", hash_original_method = "63A9A531A6D6EE37322509C7D60C0471", hash_generated_method = "80D1F953D9D382470BE85168BD28464A")
     
 private void parseExtra(XmlPullParser parser, Pair<Bundle, Long> periodicSync) {
@@ -1912,6 +1944,8 @@ private void parseExtra(XmlPullParser parser, Pair<Bundle, Long> periodicSync) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.120 -0400", hash_original_method = "D0303AA7EB859F30BDBC9813BB120707", hash_generated_method = "456AC6D44877321312D3DB7B70E74378")
     private void writeAccountInfoLocked() {
         if(DEBUG_FILE){ }        FileOutputStream fos = null;
@@ -2025,6 +2059,8 @@ for(String key : extras.keySet())
      * erase it.  Note that we don't deal with pending operations, active
      * sync, or history.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.682 -0500", hash_original_method = "96B84444EEB95F8262A1F514B70427CB", hash_generated_method = "33B6AFAC50A132BCF2111D92B0BC9589")
     
 private void readAndDeleteLegacyAccountInfoLocked() {
@@ -2156,6 +2192,8 @@ private void readAndDeleteLegacyAccountInfoLocked() {
     /**
      * Read all sync status back in to the initial engine state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.690 -0500", hash_original_method = "8A0C770C89ACE123AD07688E6EE32DB8", hash_generated_method = "4ADF04B04F03EC8375470461FE2518DE")
     
 private void readStatusLocked() {
@@ -2189,6 +2227,8 @@ private void readStatusLocked() {
     /**
      * Write all sync status to the sync status file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.692 -0500", hash_original_method = "74BDFC1296AA332718133078DAF25C56", hash_generated_method = "B94282656CAC89533B864BAD327D0DCE")
     
 private void writeStatusLocked() {
@@ -2224,6 +2264,8 @@ private void writeStatusLocked() {
     /**
      * Read all pending operations back in to the initial engine state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.697 -0500", hash_original_method = "1231AB171DBB37761A49B7E20056B86A", hash_generated_method = "A09497D8BB6CEB4CDD6BC9CD1E65DB77")
     
 private void readPendingOperationsLocked() {
@@ -2294,6 +2336,8 @@ private void writePendingOperationLocked(PendingOperation op, Parcel out) {
     /**
      * Write all currently pending ops to the pending ops file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.703 -0500", hash_original_method = "B08FC5F8DD5CA36D6F4DD131B7753109", hash_generated_method = "4FD7ED5798AFBFF982289ABB3D9B44D3")
     
 private void writePendingOperationsLocked() {
@@ -2361,6 +2405,8 @@ private void appendPendingOperationLocked(PendingOperation op) {
     /**
      * Read all sync statistics back in to the initial engine state.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.721 -0500", hash_original_method = "EF23341A4D9A5255D7511F96FA9CF980", hash_generated_method = "40E5EDC4616C5EA6D3E6611FA1DAB53E")
     
 private void readStatisticsLocked() {
@@ -2401,6 +2447,8 @@ private void readStatisticsLocked() {
     /**
      * Write all sync statistics to the sync status file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.724 -0500", hash_original_method = "FBD3A634F75EF390904BDDFD24CE73C8", hash_generated_method = "5B6D7B9372740F7BA2CAF352A032C7FC")
     
 private void writeStatisticsLocked() {

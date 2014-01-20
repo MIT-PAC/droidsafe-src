@@ -148,6 +148,8 @@ public void checkValidity(Date date)
         checkValidity(date.getTime());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.382 -0500", hash_original_method = "5C762410FB306F1308EE7204752B0EB0", hash_generated_method = "311D76C9863D34CF179390B67991A922")
     
 private void checkValidity(long time)
@@ -225,6 +227,8 @@ public Date getNotBefore() {
         return new Date(getNotBeforeInternal());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.400 -0500", hash_original_method = "4558EB8E531DC796F00773B26346E007", hash_generated_method = "044D2B87E64C7236EF8B83EBD8379DA0")
     
 private long getNotBeforeInternal() {
@@ -242,6 +246,8 @@ public Date getNotAfter() {
         return new Date(getNotAfterInternal());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.404 -0500", hash_original_method = "DD249744796DD4B2B8069CA6B07316ED", hash_generated_method = "33B834046F08057C0FFF6F5A4EEEC77A")
     
 private long getNotAfterInternal() {
@@ -259,6 +265,8 @@ public byte[] getTBSCertificate() throws CertificateEncodingException {
         return getTbsCertificateInternal().clone();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.408 -0500", hash_original_method = "3E85018628BFB50292B491E8B8B8C0CD", hash_generated_method = "E0D2EC5640A10FD9E303C656EA287E7E")
     
 private byte[] getTbsCertificateInternal() {
@@ -276,6 +284,8 @@ public byte[] getSignature() {
         return getSignatureInternal().clone();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.413 -0500", hash_original_method = "1D526D791318CE6ACD668C92F6511A39", hash_generated_method = "2F8D8C885CA92928A4332801289EB1F4")
     
 private byte[] getSignatureInternal() {
@@ -428,6 +438,8 @@ public Collection<List<?>> getIssuerAlternativeNames() throws CertificateParsing
 @Override public byte[] getEncoded() throws CertificateEncodingException {
         return getEncodedInternal().clone();
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.441 -0500", hash_original_method = "89DAFF52A0746AEA205DFD1B0F750CF1", hash_generated_method = "D23A0C5E912E559E9C9382142EDDFC0F")
     
 private byte[] getEncodedInternal() throws CertificateEncodingException {

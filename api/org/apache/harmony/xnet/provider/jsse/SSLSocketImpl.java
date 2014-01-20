@@ -623,6 +623,8 @@ protected void closeTransportLayer() throws IOException {
 
     // -----------------------------------------------------------------
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.632 -0500", hash_original_method = "14168DA1E68DB132A0DACBB007EAD125", hash_generated_method = "FCC0FBF4DFF5A546932E59AFF697EF35")
     
 private void shutdown() {
@@ -765,6 +767,8 @@ protected void writeAppData(byte[] data, int offset, int len) throws IOException
      * For more information about the handshake process see
      * TLS v1 specification (http://www.ietf.org/rfc/rfc2246.txt) p 7.3.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.641 -0500", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "B390D30128F47F32DFD6FAC34A8553D2")
     
 private void doHandshake() throws IOException {
@@ -854,6 +858,8 @@ private void doHandshake() throws IOException {
     /*
      * Process received alert message
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.643 -0500", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "A8B7062F8367F20FC4580E74BE3759BF")
     
 private void processAlert() throws IOException {
@@ -887,6 +893,8 @@ private void processAlert() throws IOException {
     /*
      * Sends fatal alert message and throws exception
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.646 -0500", hash_original_method = "716B8ABB2A0B730F9297C2C81BE3F29D", hash_generated_method = "6E69DEE0413F82146C20AEC1FA818168")
     
 private void reportFatalAlert(byte description_code,

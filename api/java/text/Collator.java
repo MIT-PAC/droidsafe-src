@@ -17,6 +17,8 @@ public abstract class Collator implements Comparator<Object>, Cloneable {
      * are available.
      * <p>Note that Android does not support user-supplied locale service providers.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.156 -0500", hash_original_method = "079D2BDCF2543C9EF39D2D400341A9D8", hash_generated_method = "746A813ED9B4684977432502F2AA3677")
     
@@ -29,6 +31,8 @@ public static Locale[] getAvailableLocales() {
      * {@code Locale}.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.163 -0500", hash_original_method = "36423D53959653C2984C84B905F35ABE", hash_generated_method = "5922C2B7903C130A111FFD3F547D8C2C")
     
@@ -39,6 +43,8 @@ public static Collator getInstance() {
     /**
      * Returns a {@code Collator} instance which is appropriate for {@code locale}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.166 -0500", hash_original_method = "FDDB3D7E9466CD25FA15155141F4B994", hash_generated_method = "8A20382FC64DCF44DF83452E25D2BB49")
     
@@ -73,6 +79,8 @@ public static Collator getInstance(Locale locale) {
 
     RuleBasedCollatorICU icuColl;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.137 -0500", hash_original_method = "18D47750B740CE28B17D63629E2E6276", hash_generated_method = "18D47750B740CE28B17D63629E2E6276")
     
 Collator(RuleBasedCollatorICU icuColl) {
@@ -82,6 +90,8 @@ Collator(RuleBasedCollatorICU icuColl) {
     /**
      * Constructs a new {@code Collator} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.140 -0500", hash_original_method = "D1E80A5B5BD1C7C64C7B560256B076FF", hash_generated_method = "542514D3955BA44323F328F19C1378D5")
     
 protected Collator() {
@@ -95,6 +105,8 @@ protected Collator() {
      * @return a shallow copy of this collator.
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.142 -0500", hash_original_method = "2284DB2FEC4C2AB3A601FDA70F532028", hash_generated_method = "21F87DF2591203FC0F1B2A488AAA8A15")
     
@@ -123,6 +135,8 @@ protected Collator() {
      * @throws ClassCastException
      *         if {@code object1} or {@code object2} is not a {@code String}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.146 -0500", hash_original_method = "7C02E06D11E019F44D80294CC033745E", hash_generated_method = "F85FDF97A13D35C0B3110E84B80DDE74")
     
@@ -141,6 +155,8 @@ public int compare(Object object1, Object object2) {
      *         0 if they are equal and a positive value if {@code string1} is
      *         greater than {@code string2}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.148 -0500", hash_original_method = "9DEFA3A080C5B36241D14E3A04AEFBBF", hash_generated_method = "260149D2BD45EA572C2F49EEC2BD0711")
     
 public abstract int compare(String string1, String string2);
@@ -156,6 +172,8 @@ public abstract int compare(String string1, String string2);
      *         collator; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.151 -0500", hash_original_method = "F5E912698B2C6614F01702D72214A0C5", hash_generated_method = "E19FDC12CACA1655EB3FF687EBB0791B")
     
 @Override
@@ -178,6 +196,8 @@ public abstract int compare(String string1, String string2);
      * @return {@code true} if {@code string1} and {@code string2} are equal
      *         using the collation rules, false otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.153 -0500", hash_original_method = "9F5D52877C91EB2005E3609373B16781", hash_generated_method = "1FFC8442EA80E70A4A0F5B8A9E58C86E")
     
 public boolean equals(String string1, String string2) {
@@ -192,6 +212,8 @@ public boolean equals(String string1, String string2) {
      *            the source string that is converted into a collation key.
      * @return the collation key for {@code string}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.158 -0500", hash_original_method = "C0C15CDE83796D9CCD9CA148FDE67C91", hash_generated_method = "F440130EEB37B0341262C8EB9EF14EDE")
     
 public abstract CollationKey getCollationKey(String string);
@@ -203,6 +225,8 @@ public abstract CollationKey getCollationKey(String string);
      *         {@code CANONICAL_DECOMPOSITION}. {@code FULL_DECOMPOSITION} is
      *         not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.161 -0500", hash_original_method = "80384F871328DEB63A40E323709EFE86", hash_generated_method = "5EEB3791091FB7072EEC245609772E7A")
     
@@ -216,6 +240,8 @@ public int getDecomposition() {
      * @return the strength value, either PRIMARY, SECONDARY, TERTIARY or
      *         IDENTICAL.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.169 -0500", hash_original_method = "1088192DB9E30CE77C93098214CBF249", hash_generated_method = "24992D02A8378C893C0606A884EC9451")
     
@@ -223,6 +249,8 @@ public int getStrength() {
         return strength_ICU_Java(icuColl.getStrength());
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.171 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "DC0B80FFE6A69EF8A10E204DA3FCAB54")
     
 @Override
@@ -239,6 +267,8 @@ public int getStrength() {
      *            if the provided decomposition rule is not valid. This includes
      *            {@code FULL_DECOMPOSITION}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.174 -0500", hash_original_method = "B72BC12BA62E721E78973B8AD1CD75B5", hash_generated_method = "F1C2AFE44575D612EDDFFF43B6540109")
     
@@ -255,6 +285,8 @@ public void setDecomposition(int value) {
      * @throws IllegalArgumentException
      *            if the provided strength value is not valid.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.176 -0500", hash_original_method = "EE6B9836B69B72CAEC3F00255CD1C53E", hash_generated_method = "70C8E85EC36DDE7A493D9EF302947660")
     
@@ -262,6 +294,8 @@ public void setStrength(int value) {
         icuColl.setStrength(strength_Java_ICU(value));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.178 -0500", hash_original_method = "59C448B2403440A52B430BC264B57CED", hash_generated_method = "577F370F1D4A66A2107149B322EF3C48")
     
 private int decompositionMode_Java_ICU(int mode) {
@@ -274,6 +308,8 @@ private int decompositionMode_Java_ICU(int mode) {
         throw new IllegalArgumentException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.182 -0500", hash_original_method = "221AF1495063A31B1C807B8FB0041DE6", hash_generated_method = "56E18FB8B2BA73FC2D26CDDE44BD3710")
     
 private int decompositionMode_ICU_Java(int mode) {
@@ -289,6 +325,8 @@ private int decompositionMode_ICU_Java(int mode) {
         return javaMode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.184 -0500", hash_original_method = "8D5EE21418DD2AA072EEA3359693FB17", hash_generated_method = "09A2E0392960F89DDB5B919F89124B94")
     
 private int strength_Java_ICU(int value) {
@@ -305,6 +343,8 @@ private int strength_Java_ICU(int value) {
         throw new IllegalArgumentException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.187 -0500", hash_original_method = "28CE8F975C7774291F421ACF5AFE6047", hash_generated_method = "C222350EAC3FDFAB68521A62D98E2944")
     
 private int strength_ICU_Java(int value) {

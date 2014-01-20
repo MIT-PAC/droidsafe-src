@@ -106,7 +106,6 @@ public static ProgramStore BLEND_ALPHA_DEPTH_NONE(RenderScript rs) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.460 -0500", hash_original_field = "8FAB28482622024207604FC8F68FBA68", hash_generated_field = "8FAB28482622024207604FC8F68FBA68")
 
-
     DepthFunc mDepthFunc;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.462 -0500", hash_original_field = "FC6FA044D5DC3801C8E4182A42864AF5", hash_generated_field = "FC6FA044D5DC3801C8E4182A42864AF5")
 
@@ -133,6 +132,8 @@ public static ProgramStore BLEND_ALPHA_DEPTH_NONE(RenderScript rs) {
 
     boolean mDither;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.478 -0500", hash_original_method = "10AC3BE9B8E79A8C066B5A14E3CCD64D", hash_generated_method = "10AC3BE9B8E79A8C066B5A14E3CCD64D")
     
 ProgramStore(int id, RenderScript rs) {
@@ -228,7 +229,6 @@ public BlendDstFunc getBlendDstFunc() {
 public boolean getDitherEnabled() {
         return mDither;
     }
-
     
     public enum DepthFunc {
         ALWAYS (0),
@@ -240,7 +240,6 @@ public boolean getDitherEnabled() {
         NOT_EQUAL (6);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.439 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.442 -0500", hash_original_method = "4D743C244C42A0A55820AF1A507A208A", hash_generated_method = "4D743C244C42A0A55820AF1A507A208A")
             
@@ -248,7 +247,6 @@ DepthFunc(int id) {
             mID = id;
         }
     }
-
     
     public enum BlendSrcFunc {
         ZERO (0),
@@ -262,7 +260,6 @@ DepthFunc(int id) {
         SRC_ALPHA_SATURATE (8);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.447 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.449 -0500", hash_original_method = "18F498B116E7706225D000DB3E3C3B7D", hash_generated_method = "18F498B116E7706225D000DB3E3C3B7D")
             
@@ -270,7 +267,6 @@ BlendSrcFunc(int id) {
             mID = id;
         }
     }
-
     
     public enum BlendDstFunc {
         ZERO (0),
@@ -283,7 +279,6 @@ BlendSrcFunc(int id) {
         ONE_MINUS_DST_ALPHA (7);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.453 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.457 -0500", hash_original_method = "1D0F32AC64FC5D2F60302C581EF57CC8", hash_generated_method = "1D0F32AC64FC5D2F60302C581EF57CC8")
             
@@ -291,7 +286,6 @@ BlendDstFunc(int id) {
             mID = id;
         }
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.511 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -444,11 +438,8 @@ public ProgramStore create() {
             programStore.mDither = mDither;
             return programStore;
         }
-
         
     }
-
-
     
 }
 

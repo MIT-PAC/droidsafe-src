@@ -200,7 +200,9 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
 
     private SearchDialog mSearchDialog;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.537 -0500", hash_original_method = "A1F4172E8F505D7306645B5F1AC929D8", hash_generated_method = "A1F4172E8F505D7306645B5F1AC929D8")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.537 -0500", hash_original_method = "A1F4172E8F505D7306645B5F1AC929D8", hash_generated_method = "A1F4172E8F505D7306645B5F1AC929D8")
     
 SearchManager(Context context, Handler handler)  {
         mContext = context;
@@ -294,6 +296,8 @@ public void startSearch(String initialQuery,
         mSearchDialog.show(initialQuery, selectInitialQuery, launchActivity, appSearchData);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.545 -0500", hash_original_method = "69AA3000988676CA7D95377F664F088F", hash_generated_method = "0E71652007B9C63AB13538CC00185526")
     
 private void ensureSearchDialog() {
@@ -307,7 +311,9 @@ private void ensureSearchDialog() {
     /**
      * Starts the global search activity.
      */
-    /* package */ @DSSink({DSSinkKind.LOG})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.547 -0500", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "9667A5DFF6E153D9414F2665C36C0D94")
     
 void startGlobalSearch(String initialQuery, boolean selectInitialQuery,

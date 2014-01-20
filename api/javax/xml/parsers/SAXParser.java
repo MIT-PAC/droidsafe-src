@@ -378,6 +378,8 @@ public void parse(InputSource is, DefaultHandler dh)
      *
      * @throws SAXException If any SAX errors occur during processing.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.702 -0500", hash_original_method = "58C886207D8A58E2461E91D14CFC167C", hash_generated_method = "272E38E21040234908310753B49E4582")
     
 public abstract org.xml.sax.Parser getParser() throws SAXException;
@@ -392,8 +394,8 @@ public abstract org.xml.sax.Parser getParser() throws SAXException;
      * @throws SAXException If any SAX errors occur during processing.
      */
 
-    @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.704 -0500", hash_original_method = "B62E96B0118EEB0E23EC3778F736AAE1", hash_generated_method = "388CF7B5AAE047FFAF40E11D2B1A57CC")
     
 public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;
@@ -406,6 +408,8 @@ public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;
      *         understand namespaces; false otherwise.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.707 -0500", hash_original_method = "0C20300A9407A97F92B793E805D98086", hash_generated_method = "C069C8335C3E94893ADF95CE4452F34C")
     
 public abstract boolean isNamespaceAware();
@@ -418,6 +422,8 @@ public abstract boolean isNamespaceAware();
      *         validate XML documents; false otherwise.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.709 -0500", hash_original_method = "B128693C9551D41070A4A0D64F8C0627", hash_generated_method = "89D797F47244E86E3C28FB7197668A45")
     
 public abstract boolean isValidating();
@@ -439,6 +445,8 @@ public abstract boolean isValidating();
      *
      * @see org.xml.sax.XMLReader#setProperty
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.712 -0500", hash_original_method = "4803E6F019B67995F2AFE024A185FC1E", hash_generated_method = "3D6939B3969A0F5AAE6AC1ED64A13B6C")
     
 public abstract void setProperty(String name, Object value)
@@ -458,6 +466,8 @@ public abstract void setProperty(String name, Object value)
      *
      * @see org.xml.sax.XMLReader#getProperty
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.715 -0500", hash_original_method = "A8F7E72A24ED70D88A263F42AB6331E0", hash_generated_method = "32023161F2DD5A4344FACE167186DC0F")
     
 public abstract Object getProperty(String name)

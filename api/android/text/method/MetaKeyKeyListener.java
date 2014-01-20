@@ -17,6 +17,8 @@ public abstract class MetaKeyKeyListener {
     /**
      * Resets all meta state to inactive.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.498 -0500", hash_original_method = "8AF64E1EA84DF175FDB50570C8CEC5BF", hash_generated_method = "21B6D80DCB62FCFE1606C3D631A5E0D3")
     
 public static void resetMetaState(Spannable text) {
@@ -34,6 +36,8 @@ public static void resetMetaState(Spannable text) {
      * @return an integer in which each bit set to one represents a pressed
      *         or locked meta key.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.501 -0500", hash_original_method = "A3D3969A4E5BE158AB30CE45C881503B", hash_generated_method = "8E6859C3B9FCD0D9EC9A4DF8B984938E")
     
 public static final int getMetaState(CharSequence text) {
@@ -51,6 +55,8 @@ public static final int getMetaState(CharSequence text) {
      *
      * @return 0 if inactive, 1 if active, 2 if locked.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.505 -0500", hash_original_method = "BC173CC5F32A7F644973716C59DAC229", hash_generated_method = "247FA46B8CB62E86008EA7F4E88B98D7")
     
 public static final int getMetaState(CharSequence text, int meta) {
@@ -72,6 +78,8 @@ public static final int getMetaState(CharSequence text, int meta) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.508 -0500", hash_original_method = "DC7E5B320979169FEF23BC2039331A57", hash_generated_method = "A0EED6475A72BC8D44D20E76C1138C0B")
     
 private static int getActive(CharSequence text, Object meta,
@@ -97,6 +105,8 @@ private static int getActive(CharSequence text, Object meta,
      * state will be reset to unshifted (if it is not still down)
      * or primed to be reset to unshifted (once it is released).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.512 -0500", hash_original_method = "32802909F6EBAD9D75292258771F56F1", hash_generated_method = "3BA613D5324C3D37BC1D540DE0F7918B")
     
 public static void adjustMetaAfterKeypress(Spannable content) {
@@ -109,6 +119,8 @@ public static void adjustMetaAfterKeypress(Spannable content) {
      * Returns true if this object is one that this class would use to
      * keep track of any meta state in the specified text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.515 -0500", hash_original_method = "8BA6018CB8A318230609528649963F72", hash_generated_method = "C565AB3185A2854C0E70614435A35BCC")
     
 public static boolean isMetaTracker(CharSequence text, Object what) {
@@ -120,12 +132,16 @@ public static boolean isMetaTracker(CharSequence text, Object what) {
      * Returns true if this object is one that this class would use to
      * keep track of the selecting meta state in the specified text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.517 -0500", hash_original_method = "F9AD5FB516FC92F512EBE4470BCD6254", hash_generated_method = "D291075F019491CDE84D4F2AF5684185")
     
 public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
         return what == SELECTING;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.521 -0500", hash_original_method = "3BF97564F386FB083018A6AA958725D3", hash_generated_method = "5E00F607FF0F01F7DEB1EE4F8138FBE9")
     
 private static void adjust(Spannable content, Object what) {
@@ -141,6 +157,8 @@ private static void adjust(Spannable content, Object what) {
      * Call this if you are a method that ignores the locked meta state
      * (arrow keys, for example) and you handle a key.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.524 -0500", hash_original_method = "85EDDF72490A9BF1E58EACB23506A0DF", hash_generated_method = "D3EF5707B9CCEF81D998C8F2A719679C")
     
 protected static void resetLockedMeta(Spannable content) {
@@ -150,6 +168,8 @@ protected static void resetLockedMeta(Spannable content) {
         resetLock(content, SELECTING);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.527 -0500", hash_original_method = "F385B7A10FE4F8593841A972238FB62B", hash_generated_method = "B877076FE3F00B59975203659B35F9FA")
     
 private static void resetLock(Spannable content, Object what) {
@@ -163,6 +183,8 @@ private static void resetLock(Spannable content, Object what) {
      * Start selecting text.
      * @hide pending API review
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.536 -0500", hash_original_method = "FCE3F0DACA962344761C11774B544CCF", hash_generated_method = "942ABB0BCF583B3FE6A77B7D88C3097A")
     
 public static void startSelecting(View view, Spannable content) {
@@ -174,12 +196,16 @@ public static void startSelecting(View view, Spannable content) {
      * call {@link android.text.Selection#setSelection} too.
      * @hide pending API review
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.539 -0500", hash_original_method = "F1455B908B6FB899340003D4BDACF2B8", hash_generated_method = "FBBD4F88CF121B7225FC51054D2EC033")
     
 public static void stopSelecting(View view, Spannable content) {
         content.removeSpan(SELECTING);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.552 -0500", hash_original_method = "3BBDACC08BE9E524CFC4AC125A516AAF", hash_generated_method = "95EE6EA7D6BE7E57EFCD5FCA500C6C89")
     
 public static void clearMetaKeyState(Editable content, int states) {
@@ -193,6 +219,8 @@ public static void clearMetaKeyState(Editable content, int states) {
      * Call this if you are a method that ignores the locked meta state
      * (arrow keys, for example) and you handle a key.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.554 -0500", hash_original_method = "0D999DF67FD3DA664CB224325BB4CDF3", hash_generated_method = "BA088125197E885C0F007722531AC093")
     
 public static long resetLockedMeta(long state) {
@@ -220,6 +248,8 @@ public static long resetLockedMeta(long state) {
      * @return an integer in which each bit set to one represents a pressed
      *         or locked meta key.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.557 -0500", hash_original_method = "8759945C5194DF9FDA8684974019087A", hash_generated_method = "C6021809A3234588E9A91CEFDF648670")
     
@@ -255,6 +285,8 @@ public static final int getMetaState(long state) {
      *
      * @return 0 if inactive, 1 if active, 2 if locked.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.561 -0500", hash_original_method = "9198ADB45CCF6407614EAE29C1436072", hash_generated_method = "6CB187D36897895866179D6DBBA7DC2E")
     
@@ -286,6 +318,8 @@ public static final int getMetaState(long state, int meta) {
      * or primed to be reset to unshifted (once it is released).  Takes
      * the current state, returns the new state.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.564 -0500", hash_original_method = "85D05E4D48A450B763B6DAAD57350FCF", hash_generated_method = "55662DC866222A7973725C5362BC602B")
     
 public static long adjustMetaAfterKeypress(long state) {
@@ -312,6 +346,8 @@ public static long adjustMetaAfterKeypress(long state) {
     /**
      * Handles presses of the meta keys.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.568 -0500", hash_original_method = "9974C6A3EEB89F79A5040D80CF59B71F", hash_generated_method = "599015E0527571C431A15827FA2EB1AB")
     
 public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
@@ -333,6 +369,8 @@ public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
         return state;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.572 -0500", hash_original_method = "A4E9062BCF162F20B883EE858916DF72", hash_generated_method = "43D882320186F204DAD07DFBCA9DDBBE")
     
 private static long press(long state, int what, long mask,
@@ -354,6 +392,8 @@ private static long press(long state, int what, long mask,
     /**
      * Handles release of the meta keys.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.575 -0500", hash_original_method = "2D3829F01E07E80E02365A68C6B16FCB", hash_generated_method = "F10381060CF01AE740B456044757E6C6")
     
 public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
@@ -375,6 +415,8 @@ public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
         return state;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.578 -0500", hash_original_method = "10C2625F1E262859011D37FDCAF1A563", hash_generated_method = "4588BB36D600BCDD1612130EDB7E26E3")
     
 private static long release(long state, int what, long mask,
@@ -488,6 +530,8 @@ private static long release(long state, int what, long mask,
     private static final int LOCKED = 
         Spannable.SPAN_MARK_MARK | (4 << Spannable.SPAN_USER_SHIFT);
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.374 -0400", hash_original_method = "50168EE5CC1513DB2EA8BA89DC077CDF", hash_generated_method = "50168EE5CC1513DB2EA8BA89DC077CDF")
     public MetaKeyKeyListener ()
     {
@@ -497,6 +541,8 @@ private static long release(long state, int what, long mask,
     /**
      * Handles presses of the meta keys.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.530 -0500", hash_original_method = "624DA77F613D89E75494C45A9B699A03", hash_generated_method = "F9B9D9A532011D3CD57536643DB24851")
     
 public boolean onKeyDown(View view, Editable content, int keyCode, KeyEvent event) {
@@ -519,6 +565,8 @@ public boolean onKeyDown(View view, Editable content, int keyCode, KeyEvent even
         return false; // no super to call through to
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.533 -0500", hash_original_method = "04CA7F5473BAF6356CB45A56F068D921", hash_generated_method = "FC33B1232AEA1E4804E92EDDA441C236")
     
 private void press(Editable content, Object what) {
@@ -539,6 +587,8 @@ private void press(Editable content, Object what) {
     /**
      * Handles release of the meta keys.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.542 -0500", hash_original_method = "B6764DC3BD8B6ED5267E5A941E3F8260", hash_generated_method = "63F6B353EC34D087B37B1C1A1F64F9C8")
     
 public boolean onKeyUp(View view, Editable content, int keyCode, KeyEvent event) {
@@ -561,6 +611,8 @@ public boolean onKeyUp(View view, Editable content, int keyCode, KeyEvent event)
         return false; // no super to call through to
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.546 -0500", hash_original_method = "E71400F62D0FFB0C9763693B0DBF0337", hash_generated_method = "EA64849E504B5A3599AE6B7D059FD8E2")
     
 private void release(Editable content, Object what, KeyEvent event) {
@@ -580,6 +632,8 @@ private void release(Editable content, Object what, KeyEvent event) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.548 -0500", hash_original_method = "A6CA9AE4F5FD679B652E94F0868BFDE8", hash_generated_method = "505DE050F2D46843B16D9B2ADB3CDD37")
     
 public void clearMetaKeyState(View view, Editable content, int states) {
@@ -592,6 +646,8 @@ public void clearMetaKeyState(View view, Editable content, int states) {
      * @param which meta keys to clear, may be a combination of {@link #META_SHIFT_ON},
      * {@link #META_ALT_ON} or {@link #META_SYM_ON}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.581 -0500", hash_original_method = "DB6E28AB316658FAB51CA26FDC440ADD", hash_generated_method = "404060AB0856B228DA7A79EF4FA4AA51")
     
 public long clearMetaKeyState(long state, int which) {

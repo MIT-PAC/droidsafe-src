@@ -13,12 +13,16 @@ class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
 
     V value;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.568 -0500", hash_original_method = "1776FA5E19E8D82B200F9151CF90A74A", hash_generated_method = "1776FA5E19E8D82B200F9151CF90A74A")
     
 MapEntry(K theKey) {
         key = theKey;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.571 -0500", hash_original_method = "D494BFA0BCF5AB6B3E53FE04C11D2F42", hash_generated_method = "D494BFA0BCF5AB6B3E53FE04C11D2F42")
     
 MapEntry(K theKey, V theValue) {

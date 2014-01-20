@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class PatternMatcher implements Parcelable {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.381 -0500", hash_original_method = "0DACC851FA271C064A5A12BE9D7B9A0B", hash_generated_method = "E4A178A455D5F4EC8C76C9D0D71455CB")
     
 static boolean matchPattern(String pattern, String match, int type) {

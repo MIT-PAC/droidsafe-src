@@ -183,6 +183,8 @@ protected AbstractSelectableChannel(SelectorProvider selectorProvider) {
      * @throws IOException
      *             if an I/O exception occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.113 -0500", hash_original_method = "E2C0C5827942DAA234C491A2081920DD", hash_generated_method = "9F9DA4AFA37B1972404DE81704FEB67A")
     
 protected abstract void implCloseSelectableChannel() throws IOException;
@@ -263,6 +265,8 @@ protected abstract void implCloseSelectableChannel() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.124 -0500", hash_original_method = "C63B227F52A3721B3F3AB5CE8F9A6DBB", hash_generated_method = "155C40108F0205E4B01B2645BCEC3E31")
     
 protected abstract void implConfigureBlocking(boolean blocking) throws IOException;
@@ -270,6 +274,8 @@ protected abstract void implConfigureBlocking(boolean blocking) throws IOExcepti
     /*
      * package private for deregister method in AbstractSelector.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.126 -0500", hash_original_method = "5E0A774ABE1807BF9448EF86554C6BF7", hash_generated_method = "C182BCE8A84B5B9393DEA71114552EC8")
     
 synchronized void deregister(SelectionKey k) {
@@ -282,6 +288,8 @@ synchronized void deregister(SelectionKey k) {
      * Returns true if the keyList contains at least 1 valid key and false
      * otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.129 -0500", hash_original_method = "57F0CA9634BB6BE72AE1A3DBAB2B8264", hash_generated_method = "7D907C63E24257235EF3D2BDDB046ED5")
     
 private synchronized boolean containsValidKeys() {

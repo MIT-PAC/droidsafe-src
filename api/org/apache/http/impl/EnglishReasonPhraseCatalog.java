@@ -18,6 +18,8 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
      * @param status    the status code for which to define the phrase
      * @param reason    the reason phrase for this status code
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.181 -0500", hash_original_method = "B27E2E37F6B3FC851CE3E6D12D897D85", hash_generated_method = "A2AC6B10722D96F29BEA07C5A03A7B42")
     
 private static void setReason(int status, String reason) {

@@ -49,10 +49,14 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int getColumnIndex(String columnName) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int getColumnIndexOrThrow(String columnName) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -65,6 +69,8 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int getCount() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -73,10 +79,14 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public long getLong(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -97,6 +107,8 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String getString(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -109,6 +121,8 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isAfterLast() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -129,6 +143,8 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean moveToFirst() {
         return true;
     }
@@ -137,6 +153,8 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean moveToNext() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -157,9 +175,13 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void close() {
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isClosed() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }

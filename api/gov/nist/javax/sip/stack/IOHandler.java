@@ -80,6 +80,8 @@ protected void removeSocket(String key) {
      * from multiple threads. We write in chunks to allow the other side to synchronize for large
      * sized writes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.066 -0500", hash_original_method = "F53BBC08C4AFCA76781E5C2EA0968907", hash_generated_method = "1470972030CEE1CDA08B198406DF9EBA")
     
 private void writeChunks(OutputStream outputStream, byte[] bytes, int length)

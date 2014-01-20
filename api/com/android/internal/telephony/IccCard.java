@@ -23,16 +23,10 @@ import android.view.WindowManager;
 import com.android.internal.R;
 import com.android.internal.telephony.CommandsInterface.RadioState;
 
-
-
-
-
-
 public abstract class IccCard {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.913 -0500", hash_original_field = "D4D543F1047C9B2003A73F47EAB03030", hash_generated_field = "8A87A39EB5C77A6355AD19F1EDFA4D50")
 
                                             // Will be updated when SIM_READY.
-
 
     /* The extra data for broacasting intent INTENT_ICC_STATE_CHANGE */
     static public final String INTENT_KEY_ICC_STATE = "ss";
@@ -70,8 +64,6 @@ public abstract class IccCard {
 
     static public final String INTENT_VALUE_ABSENT_ON_PERM_DISABLED = "PERM_DISABLED";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.944 -0500", hash_original_field = "908E3DA617EDC8301116341FF707E0D5", hash_generated_field = "BB00981FA4DDC48E77E3446841ED578B")
-
-
 
     protected static final int EVENT_ICC_LOCKED_OR_ABSENT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.946 -0500", hash_original_field = "22F5B690EF2CD8E2EE520E9F46E92A53", hash_generated_field = "6A530CAC29AE5BD3085335985B2810BD")
@@ -121,7 +113,6 @@ public abstract class IccCard {
     protected boolean mDbg;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.890 -0500", hash_original_field = "4DFC38738F792EE047A12B2367FF8FE4", hash_generated_field = "9B1F8CAC61F695F54D4232EE65554395")
 
-
     private IccCardStatus mIccCardStatus = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.892 -0500", hash_original_field = "FDF14B357CA81047BB566D7F43FE741B", hash_generated_field = "B2CB76BA7B9E699C7A661DE6BE3920DB")
 
@@ -139,7 +130,6 @@ public abstract class IccCard {
 
     private RegistrantList mNetworkLockedRegistrants = new RegistrantList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.903 -0500", hash_original_field = "634B31ADDFD620E22891C51BCAD13FE4", hash_generated_field = "6F5CD85185F4F8603950244B00F7B22C")
-
 
     private boolean mDesiredPinLocked;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.906 -0500", hash_original_field = "C8A3628586A70970BF0DC5D80000B904", hash_generated_field = "4055529E8474844347F470FAB93250EC")
@@ -165,132 +155,96 @@ public abstract class IccCard {
             
             mState = null;
             
-            
             updateStateProperty();
-            
             
             broadcastIccStateChangedIntent(INTENT_VALUE_ICC_NOT_READY, null);
             
-            
             mPhone.mCM.getIccCardStatus(obtainMessage(EVENT_GET_ICC_STATUS_DONE));
-            
             
             mPhone.mCM.queryFacilityLock (
                             CommandsInterface.CB_FACILITY_BA_SIM, "", serviceClassX,
                             obtainMessage(EVENT_QUERY_FACILITY_LOCK_DONE));
-            
             
             mPhone.mCM.queryFacilityLock (
                             CommandsInterface.CB_FACILITY_BA_FD, "", serviceClassX,
                             obtainMessage(EVENT_QUERY_FACILITY_FDN_DONE));
             
-            
             mPhone.mCM.getIccCardStatus(obtainMessage(EVENT_GET_ICC_STATUS_DONE));
-            
             
             mPhone.mCM.queryFacilityLock (
                             CommandsInterface.CB_FACILITY_BA_SIM, "", serviceClassX,
                             obtainMessage(EVENT_QUERY_FACILITY_LOCK_DONE));
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             getIccCardStatusDone(ar);
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             AsyncResult.forMessage(((Message)ar.userObj)).exception
                                                         = ar.exception;
             
-            
             mPhone.mCM.getIccCardStatus(
                         obtainMessage(EVENT_REPOLL_STATUS_DONE, ar.userObj));
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             getIccCardStatusDone(ar);
             
-            
             ((Message)ar.userObj).sendToTarget();
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             onQueryFacilityLock(ar);
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             onQueryFdnEnabled(ar);
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             {
                 mIccPinLocked = mDesiredPinLocked;
                 log( "EVENT_CHANGE_FACILITY_LOCK_DONE: " +
                                 "mIccPinLocked= " + mIccPinLocked);
-            } 
-            
+            }
             
             AsyncResult.forMessage(((Message)ar.userObj)).exception
                                                         = ar.exception;
             
-            
             ((Message)ar.userObj).sendToTarget();
             
-            
             ar = (AsyncResult)msg.obj;
-            
             
             {
                 mIccFdnEnabled = mDesiredFdnEnabled;
                 log("EVENT_CHANGE_FACILITY_FDN_DONE: " +
                                 "mIccFdnEnabled=" + mIccFdnEnabled);
-            } 
-            
+            }
             
             AsyncResult.forMessage(((Message)ar.userObj)).exception
                                                         = ar.exception;
             
-            
             ((Message)ar.userObj).sendToTarget();
-            
             
             ar = (AsyncResult)msg.obj;
             
-            
             AsyncResult.forMessage(((Message)ar.userObj)).exception
                                                         = ar.exception;
             
-            
             ((Message)ar.userObj).sendToTarget();
-            
             
             Log.d(mLogTag, "Received Event EVENT_ICC_STATUS_CHANGED");
             
-            
             mPhone.mCM.getIccCardStatus(obtainMessage(EVENT_GET_ICC_STATUS_DONE));
             
-            
             onIccSwap(false);
-            
             
             onIccSwap(true);
             
             addTaint(msg.getTaint());
             
-            
         }
-
         
 };
 
@@ -404,7 +358,6 @@ public void registerForLocked(Handler h, int what, Object obj) {
             r.notifyRegistrant();
         }
     }
-
     
     public enum State {
         UNKNOWN,
@@ -436,7 +389,6 @@ public boolean iccCardExist() {
 public void unregisterForLocked(Handler h) {
         mPinLockedRegistrants.remove(h);
     }
-
 
     /**
      * Supply the ICC PIN to the ICC
@@ -614,7 +566,6 @@ public void changeIccFdnPassword(String oldPassword, String newPassword,
 
      }
 
-
     /**
      * Returns service provider name stored in ICC card.
      * If there is no service provider name associated or the record is not
@@ -631,6 +582,8 @@ public void changeIccFdnPassword(String oldPassword, String newPassword,
      *         yet available
      *
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.037 -0500", hash_original_method = "36F9BD3E61E1BCEF603A3141A3123DC7", hash_generated_method = "91DF635166F7B784DF503A4E8C997E09")
     
 public abstract String getServiceProviderName();
@@ -641,6 +594,8 @@ protected void updateStateProperty() {
         mPhone.setSystemProperty(TelephonyProperties.PROPERTY_SIM_STATE, getState().toString());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.041 -0500", hash_original_method = "B8050A82EEEB3E75B61D0D7FED84BD4F", hash_generated_method = "C20278702AC7CD86697444C174679582")
     
 private void getIccCardStatusDone(AsyncResult ar) {
@@ -653,6 +608,8 @@ private void getIccCardStatusDone(AsyncResult ar) {
         handleIccCardStatus((IccCardStatus) ar.result);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.045 -0500", hash_original_method = "EDEEC41729C236C302C7B6E1F1DF026D", hash_generated_method = "E6782BCCBAD93DCBBC08F17A4B913EBC")
     
 private void handleIccCardStatus(IccCardStatus newCardStatus) {
@@ -713,6 +670,8 @@ private void handleIccCardStatus(IccCardStatus newCardStatus) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.052 -0500", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "169CD289CD5CD1C6C677A9F692FAFC27")
     
 private void onIccSwap(boolean isAdded) {
@@ -721,7 +680,6 @@ private void onIccSwap(boolean isAdded) {
         //      e.g. REBOOT_ON_SIM_SWAP, to indicate if modem support
         //      hot-swap.
         DialogInterface.OnClickListener listener = null;
-
 
         // TODO: SimRecords is not reset while SIM ABSENT (only reset while
         //       Radio_off_or_not_available). Have to reset in both both
@@ -760,6 +718,8 @@ private void onIccSwap(boolean isAdded) {
      * Interperate EVENT_QUERY_FACILITY_LOCK_DONE
      * @param ar is asyncResult of Query_Facility_Locked
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.055 -0500", hash_original_method = "F212AE1E9E62E46B160458ACE7EF1DC3", hash_generated_method = "50F82A6D728719DE3943F7FE038022B7")
     
 private void onQueryFdnEnabled(AsyncResult ar) {
@@ -781,6 +741,8 @@ private void onQueryFdnEnabled(AsyncResult ar) {
      * Interperate EVENT_QUERY_FACILITY_LOCK_DONE
      * @param ar is asyncResult of Query_Facility_Locked
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.057 -0500", hash_original_method = "2D3A559A68B85B440A539D217592B783", hash_generated_method = "61D84E1A54E002117C3340548F175BB7")
     
 private void onQueryFacilityLock(AsyncResult ar) {
@@ -957,6 +919,8 @@ public boolean hasIccCard() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.086 -0500", hash_original_method = "8040171B9171EEC88FFD4AC75BEDD9D4", hash_generated_method = "14A82AA4D2ADB8B993AA4D5294B16DAE")
     
 private void log(String msg) {

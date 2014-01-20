@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class SocketUtils {
     /**
      * Helps us reuse more of Socket's implementation in SocketChannelImpl.SocketAdapter.
@@ -21,10 +18,11 @@ public static void setCreated(Socket s) {
         s.isCreated = true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.403 -0500", hash_original_method = "2758868180F6D2D4DEA6AC671B8BE637", hash_generated_method = "37866109A1871B6BE95B52B45BF3CCF0")
     
 private SocketUtils() { }
-
     
 }
 

@@ -104,6 +104,8 @@ public static void startMethodTracingDdms(int bufferSize, int flags) {
         startMethodTracingNative(null, null, bufferSize, flags);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void startMethodTracingNative(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
     }
@@ -225,6 +227,8 @@ public static void dumpHprofData(String fileName) throws IOException {
      * Fake method, inserted into dmtrace output when the garbage collector
      * runs.  Not actually called.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.783 -0500", hash_original_method = "0FFE1B94F846E01BB31691717104A15E", hash_generated_method = "0DC425E9BF88C99ABA0565551A773C86")
     
 private static void startGC() {}
@@ -234,6 +238,8 @@ private static void startGC() {}
      * (loading and linking, but not verification or initialization).  Not
      * actually called.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.785 -0500", hash_original_method = "3D3C946F00763A2C63D10BF2042F540D", hash_generated_method = "6853C859C696ECCC5EC2C4AAF7CF7134")
     
 private static void startClassPrep() {}
@@ -375,6 +381,8 @@ private static void startClassPrep() {}
     public static final int KIND_ALL_COUNTS = 0xffffffff;
 
     /* all methods are static */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.658 -0500", hash_original_method = "90647D9537BEB374A6D0146E2B562497", hash_generated_method = "06310B4CCC08A42F2E40F4A0691EC434")
     
 private VMDebug() {}

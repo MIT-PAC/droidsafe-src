@@ -107,6 +107,8 @@ public void terminate() {
         execTerminate();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.365 -0500", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B8E737E7A559452A0DBE946D6943CE60")
     
 void execTerminate() {
@@ -120,6 +122,8 @@ void execTerminate() {
      * thread, you will need to implement this method to hand off the work
      * of destroying the context to that thread.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.367 -0500", hash_original_method = "AC1EFD640BD9F8BD065765A5040125FA", hash_generated_method = "C065830DFE0B79F68CDB7035ED7CCD14")
     
 public abstract void onTerminate(EGLContext context);

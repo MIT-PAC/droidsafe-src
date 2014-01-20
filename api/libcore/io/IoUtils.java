@@ -113,6 +113,8 @@ public static String readFileAsString(String path) throws IOException {
         return readFileAsBytes(path).toString(Charsets.UTF_8);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.025 -0500", hash_original_method = "22D5AD29C8E61574CA8225D08D5B8800", hash_generated_method = "13E2C7E2271355A79EE8C2D2FFA742DE")
     
 private static UnsafeByteSequence readFileAsBytes(String path) throws IOException {
@@ -153,6 +155,8 @@ public static void deleteContents(File dir) throws IOException {
             }
         }
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.005 -0500", hash_original_method = "79E9471925B005378EBE1BC903B5DD58", hash_generated_method = "7F5EA83B39BB608E086FD5E2E671F500")
     
 private IoUtils() {

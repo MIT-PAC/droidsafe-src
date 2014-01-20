@@ -61,6 +61,8 @@ public GenericSignatureParser(ClassLoader loader) {
         this.loader = loader;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.740 -0500", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "6F9101760876DEB9422AEF7944CF1BF2")
     
 void setInput(GenericDeclaration genericDecl, String input) {
@@ -182,6 +184,8 @@ public void parseForField(GenericDeclaration genericDecl,
     // Parser:
     //
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.752 -0500", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "453C8D2DC4372B03FDA8DB150393473B")
     
 void parseClassSignature() {
@@ -200,6 +204,8 @@ void parseClassSignature() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.754 -0500", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "14F1112A2442477667925E7AE96F8DD7")
     
 void parseOptFormalTypeParameters() {
@@ -219,6 +225,8 @@ void parseOptFormalTypeParameters() {
         this.formalTypeParameters = typeParams.getArray();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.757 -0500", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "96C880D70312CBC139B8AB98DD0B326F")
     
@@ -245,6 +253,8 @@ ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
         return new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.759 -0500", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "749D357A47B23FA0DE78104098A8175B")
     
@@ -266,6 +276,8 @@ Type parseFieldTypeSignature() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.762 -0500", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "9DEC9521CE81C4D55CD8C59983880962")
     
@@ -305,6 +317,8 @@ Type parseClassTypeSignature() {
         return type;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.764 -0500", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "DCE856EEF4A95EB7BE5BE42CAE12797A")
     
@@ -324,6 +338,8 @@ ListOfTypes parseOptTypeArguments() {
         return typeArgs;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.766 -0500", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "847D5827D690F284FB834E8421F50C8E")
     
@@ -352,6 +368,8 @@ Type parseTypeArgument() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.768 -0500", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "8ADC92F2BC521F13815E267CE99829F3")
     
@@ -365,6 +383,8 @@ ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
         return new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.770 -0500", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "D5145821AA502497BF8C3C8E07217636")
     
@@ -389,6 +409,8 @@ Type parseTypeSignature() {
      *     because the signature may omit the exceptions when none are generic.
      *     May be null for methods that declare no exceptions.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.773 -0500", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "B9D25BB4D17A2AA456779F79CBF8756A")
     
 void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
@@ -426,6 +448,8 @@ void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.776 -0500", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "879B662B2A1DB1FA2733B83159E41A05")
     
@@ -439,6 +463,8 @@ Type parseReturnType() {
     // Scanner:
     //
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.779 -0500", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "CAE4999AD72CF442B6BBF401B7699A36")
     
 void scanSymbol() {
@@ -455,6 +481,8 @@ void scanSymbol() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.781 -0500", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "D25C52D6AA7AD670E052B9729E548EBD")
     
 void expect(char c) {
@@ -465,6 +493,8 @@ void expect(char c) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.783 -0500", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0")
     
 boolean isStopSymbol(char ch) {
@@ -481,6 +511,8 @@ boolean isStopSymbol(char ch) {
 
     // PRE: symbol is the first char of the identifier.
     // POST: symbol = the next symbol AFTER the identifier.
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.785 -0500", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "5C3CF2A8B89A4104A3955E6247375751")
     
 void scanIdentifier() {

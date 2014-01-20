@@ -34,6 +34,8 @@ public static synchronized WebViewDatabase getInstance(Context context) {
         return mInstance;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.566 -0500", hash_original_method = "CACD524CEE6BCCEC4C67B8F67A8D3537", hash_generated_method = "A44E3FCB6B144AD8694E53470035E833")
     
 private static void upgradeDatabase() {
@@ -44,6 +46,8 @@ private static void upgradeDatabase() {
         mDatabase.setVersion(DATABASE_VERSION);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.568 -0500", hash_original_method = "ED07B1BE1AC91F6ECD95DC5AAED0BCFA", hash_generated_method = "486966A72C9993A0B2599BB26078DFBA")
     
 private static void upgradeDatabaseFromV10ToV11() {
@@ -77,6 +81,8 @@ private static void upgradeDatabaseFromV10ToV11() {
         c.close();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.572 -0500", hash_original_method = "80CCC21A4911CDD61A09E657607A861D", hash_generated_method = "585F9C5D7FEEB8266ECD96502329CCEC")
     
 private static void upgradeDatabaseToV10() {
@@ -158,6 +164,8 @@ private static void upgradeDatabaseToV10() {
                 + ") ON CONFLICT REPLACE);");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.575 -0500", hash_original_method = "2A5D5D6A79FD2409A31A5B75AB574D72", hash_generated_method = "D0002634D18F5FF1F5DFEFBED5E8BD30")
     
 private static void upgradeCacheDatabase() {
@@ -171,6 +179,8 @@ private static void upgradeCacheDatabase() {
         mCacheDatabase.setVersion(CACHE_DATABASE_VERSION);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.578 -0500", hash_original_method = "F83DE2E969DF41D209691DE2D5D3DD69", hash_generated_method = "99E17F94B61FA8A58A45483A5CDA8385")
     
 private static void bootstrapCacheDatabase() {
@@ -423,6 +433,8 @@ private WebViewDatabase(final Context context) {
         // Singleton only, use getInstance()
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.557 -0500", hash_original_method = "AC87AD0E19559694D58F1943BD15C1D5", hash_generated_method = "822C197CD2E58D61C2D5AC7021473447")
     
 private synchronized void init(Context context) {
@@ -442,6 +454,8 @@ private synchronized void init(Context context) {
         notify();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.559 -0500", hash_original_method = "CE06D258DB88B89F42DED68141C198E0", hash_generated_method = "004791B0A102FDC8375CE88BA2A15064")
     
 private void initDatabase(Context context) {
@@ -480,6 +494,8 @@ private void initDatabase(Context context) {
         mDatabase.setLockingEnabled(false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.563 -0500", hash_original_method = "C7A89DE182CA76C10CB3961C893695C2", hash_generated_method = "C6E624CC415EFE95EC25E57FC5741F8D")
     
 private void initCacheDatabase(Context context) {
@@ -561,6 +577,8 @@ private void initCacheDatabase(Context context) {
 
     // Wait for the background initialization thread to complete and check the
     // database creation status.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.580 -0500", hash_original_method = "B19C14CCA683C2C1072DDA1B7A6274D5", hash_generated_method = "B96D5E4DBF7E7F145B43FDA8AF9694E5")
     
 private boolean checkInitialized() {
@@ -578,6 +596,8 @@ private boolean checkInitialized() {
         return mDatabase != null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.583 -0500", hash_original_method = "CBFCA06012BEB8B609A8EBC6EEC6D1A4", hash_generated_method = "2566BD63CB8252798FC115F8BF8641FE")
     
 private boolean hasEntries(int tableId) {
@@ -609,6 +629,8 @@ private boolean hasEntries(int tableId) {
      *
      * @return ArrayList<Cookie> If nothing is found, return an empty list.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.587 -0500", hash_original_method = "4D94521780B9AD3D8F70E78E8CBCD3E0", hash_generated_method = "4D94521780B9AD3D8F70E78E8CBCD3E0")
     
 ArrayList<Cookie> getCookiesForDomain(String domain) {
@@ -671,6 +693,8 @@ ArrayList<Cookie> getCookiesForDomain(String domain) {
      * @param name If it is null, all the cookies match (domain, path) will be
      *            deleted.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.589 -0500", hash_original_method = "BC23D2938EE88E31CA87024518493BE2", hash_generated_method = "BC23D2938EE88E31CA87024518493BE2")
     
 void deleteCookies(String domain, String path, String name) {
@@ -719,6 +743,8 @@ void addCookie(Cookie cookie) {
      *
      * @return TRUE if there is cookie.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.593 -0500", hash_original_method = "83E6237273AAD0C9F4D2DED923ACAFB7", hash_generated_method = "83E6237273AAD0C9F4D2DED923ACAFB7")
     
 boolean hasCookies() {
@@ -730,6 +756,8 @@ boolean hasCookies() {
     /**
      * Clear cookie database
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.596 -0500", hash_original_method = "3E1D9455881C3029C0C51566A563B8F4", hash_generated_method = "3E1D9455881C3029C0C51566A563B8F4")
     
 void clearCookies() {
@@ -745,6 +773,8 @@ void clearCookies() {
     /**
      * Clear session cookies, which means cookie doesn't have EXPIRES.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.598 -0500", hash_original_method = "CAA5F0320575B2151920B0F146B122B7", hash_generated_method = "CAA5F0320575B2151920B0F146B122B7")
     
 void clearSessionCookies() {
@@ -764,6 +794,8 @@ void clearSessionCookies() {
      *
      * @param now Time for now
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.600 -0500", hash_original_method = "AD90F95A26E2D9ECD94EF58E091F4A84", hash_generated_method = "AD90F95A26E2D9ECD94EF58E091F4A84")
     
 void clearExpiredCookies(long now) {
@@ -783,6 +815,8 @@ void clearExpiredCookies(long now) {
     //
 
     // only called from WebViewWorkerThread
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.602 -0500", hash_original_method = "26A436743D42208E44F8DC7C1FFF5A77", hash_generated_method = "26A436743D42208E44F8DC7C1FFF5A77")
     
 boolean startCacheTransaction() {
@@ -800,6 +834,8 @@ boolean startCacheTransaction() {
     }
 
     // only called from WebViewWorkerThread
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.604 -0500", hash_original_method = "14B92CCE9ED71BB98EE6E80EBC3B995B", hash_generated_method = "14B92CCE9ED71BB98EE6E80EBC3B995B")
     
 boolean endCacheTransaction() {
@@ -870,6 +906,8 @@ CacheResult getCache(String url) {
      * 
      * @param url The url
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.609 -0500", hash_original_method = "10415454EB24D9D06B07AD8A5863D117", hash_generated_method = "10415454EB24D9D06B07AD8A5863D117")
     
 void removeCache(String url) {
@@ -918,6 +956,8 @@ void addCache(String url, CacheResult c) {
     /**
      * Clear cache database
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.614 -0500", hash_original_method = "67241BF201ED077F6E669112ABB44844", hash_generated_method = "67241BF201ED077F6E669112ABB44844")
     
 void clearCache() {
@@ -928,6 +968,8 @@ void clearCache() {
         mCacheDatabase.delete("cache", null, null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.616 -0500", hash_original_method = "0A5B6EFF79BC3227EAB74E5615633418", hash_generated_method = "0A5B6EFF79BC3227EAB74E5615633418")
     
 boolean hasCache() {
@@ -949,6 +991,8 @@ boolean hasCache() {
         return ret;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.618 -0500", hash_original_method = "08C6E9C5D3BD785D378572A4A550228E", hash_generated_method = "08C6E9C5D3BD785D378572A4A550228E")
     
 long getCacheTotalSize() {
@@ -971,6 +1015,8 @@ long getCacheTotalSize() {
         return size;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.621 -0500", hash_original_method = "E1CB3EA921D4F41F15D60CB73EFC3B4C", hash_generated_method = "F5F630BF6A0A63E017E7A5708F2FBF06")
     
 List<String> trimCache(long amount) {
@@ -1027,6 +1073,8 @@ List<String> trimCache(long amount) {
         return pathList;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.625 -0500", hash_original_method = "791DEB22BE9B55B5A0DA04ED6BE6D08D", hash_generated_method = "791DEB22BE9B55B5A0DA04ED6BE6D08D")
     
 List<String> getAllCacheFileNames() {
@@ -1061,6 +1109,8 @@ List<String> getAllCacheFileNames() {
      *            password can't be saved.
      * @param password The password
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.627 -0500", hash_original_method = "06E61C8A80289A57F170E4E5B574929B", hash_generated_method = "06E61C8A80289A57F170E4E5B574929B")
     
 void setUsernamePassword(String schemePlusHost, String username,
@@ -1086,6 +1136,8 @@ void setUsernamePassword(String schemePlusHost, String username,
      * @return String[] if found, String[0] is username, which can be null and
      *         String[1] is password. Return null if it can't find anything.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.630 -0500", hash_original_method = "AA29CF1F05823526F8013A43811B3B7E", hash_generated_method = "AA29CF1F05823526F8013A43811B3B7E")
     
 String[] getUsernamePassword(String schemePlusHost) {
@@ -1162,6 +1214,8 @@ public void clearUsernamePassword() {
      *            password can't be saved.
      * @param password The password
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.636 -0500", hash_original_method = "AAEAEDF714B99771C21BA669DE54047C", hash_generated_method = "AAEAEDF714B99771C21BA669DE54047C")
     
 void setHttpAuthUsernamePassword(String host, String realm, String username,
@@ -1190,6 +1244,8 @@ void setHttpAuthUsernamePassword(String host, String realm, String username,
      * @return String[] if found, String[0] is username, which can be null and
      *         String[1] is password. Return null if it can't find anything.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.639 -0500", hash_original_method = "6E1D9953804AC08BC6DDA66478F3E8B6", hash_generated_method = "6E1D9953804AC08BC6DDA66478F3E8B6")
     
 String[] getHttpAuthUsernamePassword(String host, String realm) {
@@ -1264,6 +1320,8 @@ public void clearHttpAuthUsernamePassword() {
      * @param url The url of the site
      * @param formdata The form data in HashMap
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.646 -0500", hash_original_method = "1C1CA3B21EC6341A527B545FB0F444FE", hash_generated_method = "1C1CA3B21EC6341A527B545FB0F444FE")
     
 void setFormData(String url, HashMap<String, String> formdata) {
@@ -1314,6 +1372,8 @@ void setFormData(String url, HashMap<String, String> formdata) {
      * @param name The name of the form entry
      * @return A list of values. Return empty list if nothing is found.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.649 -0500", hash_original_method = "699FE9DC5ACA57A32D74F51785DE679D", hash_generated_method = "699FE9DC5ACA57A32D74F51785DE679D")
     
 ArrayList<String> getFormData(String url, String name) {

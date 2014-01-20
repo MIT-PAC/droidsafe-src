@@ -24,6 +24,8 @@ public class WifiConfiguration implements Parcelable {
     }
     */
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.002 -0500", hash_original_method = "DBF96D5200F7739E62BF98EED93355B3", hash_generated_method = "C5F3532563C170E7C786BD2894B50C43")
     
 private static BitSet readBitSet(Parcel src) {
@@ -36,6 +38,8 @@ private static BitSet readBitSet(Parcel src) {
         return set;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.005 -0500", hash_original_method = "BC9E300E984E6DE1FCAF87B1F38C37A1", hash_generated_method = "616E59AD828D6F0D008AEA7A05B462EF")
     
 private static void writeBitSet(Parcel dest, BitSet set) {
@@ -244,6 +248,8 @@ public String value() {
 
         public static final String[] strings = { "NONE", "WPA_PSK", "WPA_EAP", "IEEE8021X",
                 "WPA2_PSK" };
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.838 -0500", hash_original_method = "3C24C7AE0F0A09BE18E455DF08BF91AE", hash_generated_method = "CCA88AA886D376BE91496A4A94AFEFFD")
         
 private KeyMgmt() { }
@@ -262,6 +268,8 @@ private KeyMgmt() { }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.870 -0500", hash_original_field = "CFCA90357A9B9BC86CF9ABDA1CF67F3F", hash_generated_field = "DB80E946188BE2FD72D1ACBC2C2FADF4")
 
         public static final String[] strings = { "WPA", "RSN" };
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.861 -0500", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "A26F7A49CBC7A5B120EBA5A69FA43E7F")
         
 private Protocol() { }
@@ -283,6 +291,8 @@ private Protocol() { }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.888 -0500", hash_original_field = "40A3D21B53864E048C8E8AC5C7E57AC6", hash_generated_field = "C2B57707331863ED3E749A8C13017BF0")
 
         public static final String[] strings = { "OPEN", "SHARED", "LEAP" };
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.875 -0500", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "876D277586CD4C13203D4D414FD1CC7F")
         
 private AuthAlgorithm() { }
@@ -304,6 +314,8 @@ private AuthAlgorithm() { }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.906 -0500", hash_original_field = "1A05D73B36F520C4DE3E08CC24F24882", hash_generated_field = "A91EB39D642BD98C7B47552D558E16D2")
 
         public static final String[] strings = { "NONE", "TKIP", "CCMP" };
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.892 -0500", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "EAB7F0333857C61D17E9F428DB839DFE")
         
 private PairwiseCipher() { }
@@ -328,6 +340,8 @@ private PairwiseCipher() { }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.924 -0500", hash_original_field = "24F2B38506E2B750E97AAA65A6BA87BE", hash_generated_field = "76C93678C789D0070307271216BEB38A")
 
         public static final String[] strings = { "WEP40", "WEP104", "TKIP", "CCMP" };
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.910 -0500", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "F2994989ED9382CEE2817849B24F6D1F")
         
 private GroupCipher() { }
@@ -346,6 +360,8 @@ private GroupCipher() { }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.940 -0500", hash_original_field = "3705B64F2ED8E5526F2261F27FFD37AF", hash_generated_field = "2E406B892260D5B86778765F2C6E9A2C")
 
         public static final String[] strings = { "current", "disabled", "enabled" };
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.929 -0500", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "89692357FB3E1429AE9E6AB10C62C23A")
         
 private Status() { }

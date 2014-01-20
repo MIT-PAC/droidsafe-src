@@ -14,10 +14,10 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 
-
-
 final class WebViewWorker extends Handler {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.458 -0500", hash_original_method = "6EA1A03C933C6378F381FBDA824C6664", hash_generated_method = "C5377368D5F0C777E790653720C1F6DE")
     
 static synchronized WebViewWorker getHandler() {
@@ -32,13 +32,10 @@ static synchronized WebViewWorker getHandler() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.416 -0500", hash_original_field = "1B649F308D1F94A687056AFEE2F4D0B8", hash_generated_field = "6746BABEC0896F6BAEB65B926D6CCDBB")
 
-
     private static final String THREAD_NAME = "WebViewWorkerThread";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.418 -0500", hash_original_field = "1554AE612E1BC4D3E1B4409130F43F24", hash_generated_field = "C9DA4AE969ACFC6C284F29220A12B86B")
 
-
     private static WebViewWorker sWorkerHandler;
-
     
     static class CacheCreateData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.423 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "6F634748B2632997CFA3BD470A985F63")
@@ -60,16 +57,15 @@ static synchronized WebViewWorker getHandler() {
 
         Headers mHeaders;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.551 -0400", hash_original_method = "ECF9CE691C1E9D0D27062E328F2071F1", hash_generated_method = "ECF9CE691C1E9D0D27062E328F2071F1")
         public CacheCreateData ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class CacheSaveData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.438 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "6F634748B2632997CFA3BD470A985F63")
@@ -82,16 +78,15 @@ static synchronized WebViewWorker getHandler() {
 
         long mPostId;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.552 -0400", hash_original_method = "9E757DF8F2598229E9B6588D817525F8", hash_generated_method = "9E757DF8F2598229E9B6588D817525F8")
         public CacheSaveData ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class CacheEncoding {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.446 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "6F634748B2632997CFA3BD470A985F63")
@@ -101,16 +96,15 @@ static synchronized WebViewWorker getHandler() {
 
         String mEncoding;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.552 -0400", hash_original_method = "F4176929ED2D08D577A72138F39F258C", hash_generated_method = "F4176929ED2D08D577A72138F39F258C")
         public CacheEncoding ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class CacheData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.453 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "6F634748B2632997CFA3BD470A985F63")
@@ -120,16 +114,16 @@ static synchronized WebViewWorker getHandler() {
 
         ByteArrayBuilder.Chunk mChunk;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.553 -0400", hash_original_method = "C46F5AA83A69689BFB2DC11439BD4C32", hash_generated_method = "C46F5AA83A69689BFB2DC11439BD4C32")
         public CacheData ()
         {
             //Synthesized constructor
         }
 
-
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.421 -0500", hash_original_field = "511DC5A19BDBC686AF16C0423C398C2C", hash_generated_field = "41D36C1690A6040A45AB2CA5B0D88030")
-
 
     private static Map<LoadListener, CacheManager.CacheResult> mCacheResultMap
             = new HashMap<LoadListener, CacheManager.CacheResult>();
@@ -137,7 +131,6 @@ static synchronized WebViewWorker getHandler() {
 
     private static final int CACHE_TRANSACTION_TICKER_INTERVAL = 60 * 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.465 -0500", hash_original_field = "8AECF04FB0D15E202F8AEBD389A86831", hash_generated_field = "C7223AC6E98D41A51E3D016D37038A69")
-
 
     private static boolean mCacheTickersBlocked = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.468 -0500", hash_original_field = "F20D1222B76F06BB723026195239CA9E", hash_generated_field = "86598407858DB0F34C9DF81A2728C8E8")
@@ -177,6 +170,8 @@ static synchronized WebViewWorker getHandler() {
 
     static final int MSG_RESUME_CACHE_TRANSACTION = 112;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.461 -0500", hash_original_method = "D7D568B3C492B7B5D5E0F8FEE23B0F62", hash_generated_method = "F417D69BF3705C133B8645804DC0EBF3")
     
 private WebViewWorker(Looper looper) {

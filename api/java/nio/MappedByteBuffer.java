@@ -20,6 +20,8 @@ public abstract class MappedByteBuffer extends ByteBuffer {
 
     private  MapMode mapMode;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.981 -0500", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "B4624F88D9C5C045F8BDE794FFD519CF")
     
 MappedByteBuffer(ByteBuffer directBuffer) {

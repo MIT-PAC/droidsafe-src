@@ -89,6 +89,8 @@ public StorageManager(Looper tgtLooper) throws RemoteException {
         //mMountService.registerListener(mBinderListener);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.044 -0500", hash_original_method = "E880709C72C5FA3A0762DDC8432351B1", hash_generated_method = "1BDA18804B31B850A5DCE1FC2F7164A3")
     
 private int getNextNonce() {
@@ -486,6 +488,8 @@ ObbListenerDelegate(OnObbStateChangeListener listener) {
             };
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.061 -0500", hash_original_method = "834954D068AF2864C85CCAD9D321B725", hash_generated_method = "834954D068AF2864C85CCAD9D321B725")
         
@@ -496,6 +500,8 @@ OnObbStateChangeListener getListener() {
             return mObbEventListenerRef.get();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.063 -0500", hash_original_method = "E278FF9F38CD6580E6FCEF436B6AB830", hash_generated_method = "E278FF9F38CD6580E6FCEF436B6AB830")
         
@@ -620,6 +626,8 @@ ListenerDelegate(StorageEventListener listener) {
             };
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.123 -0500", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "DA2EC644741ABB32C38C92FF70A87DA0")
         
@@ -627,6 +635,8 @@ StorageEventListener getListener() {
             return mStorageEventListener;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.125 -0500", hash_original_method = "2B1B76FC8373F60078A15952F701EC30", hash_generated_method = "2B1B76FC8373F60078A15952F701EC30")
         
@@ -635,6 +645,8 @@ void sendShareAvailabilityChanged(boolean available) {
             mHandler.sendMessage(e.getMessage());
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.128 -0500", hash_original_method = "6996CC17777F13485A3BD31F01C08054", hash_generated_method = "6996CC17777F13485A3BD31F01C08054")
         

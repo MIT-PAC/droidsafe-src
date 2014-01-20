@@ -12,6 +12,8 @@ import java.util.TimeZone;
 
 public final class ZoneInfo extends TimeZone {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.474 -0500", hash_original_method = "8870473B0F5D9FAFDE3FAA6E00691882", hash_generated_method = "724284E4D54CC069B48EAD49A7CB88A9")
     
 private static String formatTime(int s, TimeZone tz) {
@@ -62,6 +64,8 @@ private static String formatTime(int s, TimeZone tz) {
 
     private  boolean mUseDst;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.445 -0500", hash_original_method = "7B585FDC58F35CED01D1FBB089EE95E4", hash_generated_method = "D677FA1F79FBEA978D270DD51A2C60F2")
     
 ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] isDsts) {

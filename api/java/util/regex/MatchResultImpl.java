@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class MatchResultImpl implements MatchResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.951 -0500", hash_original_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C", hash_generated_field = "7A9E06645D5CFC78D3F278D7A0157945")
 
@@ -17,6 +13,8 @@ class MatchResultImpl implements MatchResult {
 
     private int[] offsets;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.957 -0500", hash_original_method = "2A7F503D795C5A57339C0129F572051A", hash_generated_method = "2A7F503D795C5A57339C0129F572051A")
     
 MatchResultImpl(String text, int[] offsets) {
@@ -71,7 +69,6 @@ public int start() {
 public int start(int group) {
         return offsets[2 * group];
     }
-
     
 }
 

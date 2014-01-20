@@ -5,12 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 class BitLevel {
 
     /** @see BigInteger#bitLength() */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.546 -0500", hash_original_method = "2F7599C32F2FAEF59189399723BAD228", hash_generated_method = "72CB16BF55ED2F3ECE35F7218708DFCF")
     
 static int bitLength(BigInteger val) {
@@ -34,6 +33,8 @@ static int bitLength(BigInteger val) {
     }
 
     /** @see BigInteger#bitCount() */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.549 -0500", hash_original_method = "1CAE1E4F93461B8C16860426843CE467", hash_generated_method = "2FB08135846134084293FF49F808EDD2")
     
 static int bitCount(BigInteger val) {
@@ -65,6 +66,8 @@ static int bitCount(BigInteger val) {
      * Performs a fast bit testing for positive numbers. The bit to to be tested
      * must be in the range {@code [0, val.bitLength()-1]}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.552 -0500", hash_original_method = "7EEFC94F9285122B25B4A50FCB40668F", hash_generated_method = "7063A00711C2AFDF8C3CD8177B2DB9EB")
     
 static boolean testBit(BigInteger val, int n) {
@@ -79,6 +82,8 @@ static boolean testBit(BigInteger val, int n) {
      * @param numberOfBits the number of the lowest bits to check
      * @return false if all bits are 0s, true otherwise
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.555 -0500", hash_original_method = "B955791C600CF45FD34660F52B29F1B8", hash_generated_method = "F7DC2D7AD973E0F4C209F9249226E78D")
     
 static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
@@ -92,6 +97,8 @@ static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
         return ((i != intCount) || (digits[i] << (32 - bitCount) != 0));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.558 -0500", hash_original_method = "F0ED4B2FB109B86B7608CBC5C4FC2788", hash_generated_method = "FE7D7A182CA425C17D8E692F46C58C85")
     
 static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
@@ -106,6 +113,8 @@ static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.561 -0500", hash_original_method = "ACB848E4EB2EF5584AA5A58340191858", hash_generated_method = "66CB73735CC02178EEFF9CC16D7D17A0")
     
 static BigInteger shiftLeftOneBit(BigInteger source) {
@@ -118,6 +127,8 @@ static BigInteger shiftLeftOneBit(BigInteger source) {
     }
 
     /** @see BigInteger#shiftRight(int) */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.564 -0500", hash_original_method = "0CAF49D8BF0C1F380E0449E5FD0E2C1B", hash_generated_method = "343FA97311263B42F11D358B8B436B13")
     
 static BigInteger shiftRight(BigInteger source, int count) {
@@ -169,6 +180,8 @@ static BigInteger shiftRight(BigInteger source, int count) {
      *            the number of bits to be shifted
      * @return dropped bit's are all zero (i.e. remaider is zero)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.567 -0500", hash_original_method = "A35A1609E030A9DBE1C939F4F901D824", hash_generated_method = "FB5D0521166E9471DD89C7CA421592ED")
     
 static boolean shiftRight(int[] result, int resultLen, int[] source, int intCount, int count) {
@@ -194,11 +207,12 @@ static boolean shiftRight(int[] result, int resultLen, int[] source, int intCoun
         return allZero;
     }
 
-
     /**
      * Performs a flipBit on the BigInteger, returning a BigInteger with the the
      * specified bit flipped.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.570 -0500", hash_original_method = "BE8327B0577A60EC2E498BB75874DAB6", hash_generated_method = "9E401BE439EAF230A739D78ABA17C0AD")
     
 static BigInteger flipBit(BigInteger val, int n){
@@ -245,10 +259,11 @@ static BigInteger flipBit(BigInteger val, int n){
     }
 
     /** Just to denote that this class can't be instantiated. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.543 -0500", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "0C4F5730701BF797962122ED4C2B7AFF")
     
 private BitLevel() {}
-
     
 }
 

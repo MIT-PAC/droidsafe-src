@@ -84,6 +84,8 @@ public class DecimalFormat extends NumberFormat {
      * for the user's default locale.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.804 -0500", hash_original_method = "DE88C1883A924350E112FA17163006E9", hash_generated_method = "D51330D98971925D6233950BE92B368D")
     
 public DecimalFormat() {
@@ -120,6 +122,8 @@ public DecimalFormat(String pattern) {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.809 -0500", hash_original_method = "17CE9F29195C1874CE3535C0883BB7B4", hash_generated_method = "A85836C0CD45DD10A33224E7CE40C4EF")
     
 public DecimalFormat(String pattern, DecimalFormatSymbols value) {
@@ -128,6 +132,8 @@ public DecimalFormat(String pattern, DecimalFormatSymbols value) {
     }
 
     // Used by NumberFormat.getInstance because cloning DecimalFormatSymbols is slow.
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.813 -0500", hash_original_method = "1EB8095DC5F926848B20CBA55F6BDD83", hash_generated_method = "1EB8095DC5F926848B20CBA55F6BDD83")
     
 DecimalFormat(String pattern, Locale locale) {
@@ -135,6 +141,8 @@ DecimalFormat(String pattern, Locale locale) {
         initNative(pattern);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.815 -0500", hash_original_method = "701B7114CA5711EBC62D39124CAE5412", hash_generated_method = "65215DD4918E44591DB836F46B724251")
     
 private void initNative(String pattern) {
@@ -158,6 +166,8 @@ private void initNative(String pattern) {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.817 -0500", hash_original_method = "65449F4F2C00BF62B7AB916EB2126B60", hash_generated_method = "96254BD74FAC45D2698DDBC33FF69A6A")
     
 public void applyLocalizedPattern(String pattern) {
@@ -173,6 +183,8 @@ public void applyLocalizedPattern(String pattern) {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.820 -0500", hash_original_method = "09E7693F39B1CA310938A9A4756C1A20", hash_generated_method = "76383C728FF2574182D2F7D2FD4A1C71")
     
 public void applyPattern(String pattern) {
@@ -186,6 +198,8 @@ public void applyPattern(String pattern) {
      * @return a shallow copy of this decimal format.
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.822 -0500", hash_original_method = "9257BEF78EF77BD305740BB055166BA8", hash_generated_method = "C4BB3F773677AF91ED1FF0116EBC17E9")
     
 @Override
@@ -207,6 +221,8 @@ public void applyPattern(String pattern) {
      *         format; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.825 -0500", hash_original_method = "6765E822C563E620DE26A0B6A028E00A", hash_generated_method = "7C64C8C7F9B39FA756BD042BF58FAE0F")
     
 @Override
@@ -236,6 +252,8 @@ public void applyPattern(String pattern) {
      * @throws NullPointerException
      *             if {@code object} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.827 -0500", hash_original_method = "3B59068DE45E1D685899870F874FDB91", hash_generated_method = "A44E00164F8F58770AB0FC84E484EA35")
     
 @Override
@@ -246,6 +264,8 @@ public void applyPattern(String pattern) {
         return dform.formatToCharacterIterator(object);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.830 -0500", hash_original_method = "FBA2DE4CAF4AAEBE0D141C6C51AFFE4A", hash_generated_method = "B8D5B1B73DDB78BD66EFF54ABA3D7DE2")
     
 private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition position) {
@@ -257,6 +277,8 @@ private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition posi
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.833 -0500", hash_original_method = "1E84E5D2AEBA1220C1C2BABB55EE58F4", hash_generated_method = "CC08B137CABC5E3F5A119088AA498DE7")
     
 @Override
@@ -281,6 +303,8 @@ private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition posi
         return buffer;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.836 -0500", hash_original_method = "B4F0904648F2A25561C63568681C231B", hash_generated_method = "1421A118F090B51ED03E7088C729FD2B")
     
 @Override
@@ -290,6 +314,8 @@ private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition posi
         return buffer;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.839 -0500", hash_original_method = "9F0187C663B029586FEAEE5997EF0E8A", hash_generated_method = "DB7C629618142FE8ED290726CD35EC7B")
     
 @Override
@@ -315,6 +341,8 @@ private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition posi
      * @return a copy of the {@code DecimalFormatSymbols} used by this decimal
      *         format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.841 -0500", hash_original_method = "8DCCB340D185077EABFD1E6BFE3DB36F", hash_generated_method = "1433923B36B9154D97E82E9D22FE1CE7")
     
@@ -328,6 +356,8 @@ public DecimalFormatSymbols getDecimalFormatSymbols() {
      * @return the currency used by this decimal format.
      * @see DecimalFormatSymbols#getCurrency()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.843 -0500", hash_original_method = "58EEC1F79BF01CD73E1939B30FC9554A", hash_generated_method = "2A671B166B9C52E05AEA409008D31548")
     
@@ -343,6 +373,8 @@ public DecimalFormatSymbols getDecimalFormatSymbols() {
      *
      * @return the number of digits grouped together.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.846 -0500", hash_original_method = "3224B3D9278B5F6729F4AC0FDDE7BC48", hash_generated_method = "7D3B4A6BB4FC8548C8F20EC568FF33BB")
     
@@ -356,6 +388,8 @@ public int getGroupingSize() {
      *
      * @return the multiplier.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.848 -0500", hash_original_method = "20055FC91A272014560FDC07D160C285", hash_generated_method = "609694A207934005FBE331D55076A117")
     
@@ -368,6 +402,8 @@ public int getMultiplier() {
      *
      * @return the negative prefix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.851 -0500", hash_original_method = "1F7C0591D1187101B5F5E6FCEBFE4BA7", hash_generated_method = "5C877E6936A26C55B8ED55C2EA134572")
     
@@ -380,6 +416,8 @@ public String getNegativePrefix() {
      *
      * @return the negative suffix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.853 -0500", hash_original_method = "61D6D48706CC87AEEF19B015AC798361", hash_generated_method = "E98B91806F33E1C69FFBF95588EEA304")
     
@@ -392,6 +430,8 @@ public String getNegativeSuffix() {
      *
      * @return the positive prefix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.855 -0500", hash_original_method = "55B5FDB79399831D6973F7F1358A3E99", hash_generated_method = "6123F5F858C9E0A71F6C85B843802FDC")
     
@@ -404,6 +444,8 @@ public String getPositivePrefix() {
      *
      * @return the positive suffix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.857 -0500", hash_original_method = "2B5CAE95AEB5D456BD3378DDAC8D9097", hash_generated_method = "A930653E4CD5FFE5AF01038AAEF4DDA8")
     
@@ -411,6 +453,8 @@ public String getPositiveSuffix() {
         return dform.getPositiveSuffix();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.860 -0500", hash_original_method = "AC91BBA5B39870FB8DAE3ED8BCCB1730", hash_generated_method = "25C382E37F66403353F0A81E8581DA20")
     
 @Override
@@ -425,6 +469,8 @@ public String getPositiveSuffix() {
      * @return {@code true} if the decimal separator should always be formatted;
      *         {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.862 -0500", hash_original_method = "43884003345D483D0CB1C79601B3CBE6", hash_generated_method = "F8236E4D227A3A5242329135E9E038B7")
     
 public boolean isDecimalSeparatorAlwaysShown() {
@@ -439,6 +485,8 @@ public boolean isDecimalSeparatorAlwaysShown() {
      *         {@code false} if the type of the result is {@code Long} or
      *         {@code Double}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.864 -0500", hash_original_method = "0A7D24FF4B0BD9084E07584B0A08B543", hash_generated_method = "FABE7E60DE05AC71FD1F7CD62C16C421")
     
 public boolean isParseBigDecimal() {
@@ -458,6 +506,8 @@ public boolean isParseBigDecimal() {
      *            will be of type {@code java.lang.Integer} except for the
      *            special cases described above.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.867 -0500", hash_original_method = "7481DA5537EE3F9956B6D5D3C7A225D0", hash_generated_method = "96EEA52003F882ABA75B21AC104A853A")
     
@@ -476,6 +526,8 @@ public boolean isParseBigDecimal() {
      * @return {@code true} if this {@code DecimalFormat}'s parse method only
      *         returns {@code java.lang.Integer}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.870 -0500", hash_original_method = "4A357353F9630D5720A9D39DD6F8D4E6", hash_generated_method = "78947B70437FB395436B116C18890419")
     
 @Override
@@ -506,6 +558,8 @@ public boolean isParseBigDecimal() {
      *         {@code isParseBigDecimal} is {@code true} then it returns the
      *         result as a {@code BigDecimal}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.876 -0500", hash_original_method = "5624B977416508FD6FAAB26F049D0D1B", hash_generated_method = "77AD9311E4254A4E0E08C40873CE4706")
     
 @Override
@@ -544,6 +598,8 @@ public boolean isParseBigDecimal() {
      * @param value
      *            the {@code DecimalFormatSymbols} to set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.878 -0500", hash_original_method = "86D86A0FD4BCEEB43D34AB98DA52821C", hash_generated_method = "ABDCE81DD5C3B5AB0732C3F903CDAF3F")
     
@@ -563,6 +619,8 @@ public void setDecimalFormatSymbols(DecimalFormatSymbols value) {
      *            the currency this {@code DecimalFormat} should use.
      * @see DecimalFormatSymbols#setCurrency(Currency)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.880 -0500", hash_original_method = "4395CDF7142532C86BE10F65050BB217", hash_generated_method = "9E20FF6281BB59E1A6BD1061B4B24737")
     
@@ -580,6 +638,8 @@ public void setDecimalFormatSymbols(DecimalFormatSymbols value) {
      *            {@code true} if the decimal separator should always be
      *            formatted; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.882 -0500", hash_original_method = "3B253ED7615AA8E014EF753B3801D05C", hash_generated_method = "060F41BAE7BBC4890552C3951687DD37")
     
@@ -595,6 +655,8 @@ public void setDecimalSeparatorAlwaysShown(boolean value) {
      * @param value
      *            the number of digits grouped together.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.884 -0500", hash_original_method = "C7D074F8D378A670A8F54B2C99810E6C", hash_generated_method = "3D87E646FC705306EBDAD2F06F9DFEB8")
     
@@ -609,6 +671,8 @@ public void setGroupingSize(int value) {
      * @param value
      *            {@code true} if grouping is used; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.887 -0500", hash_original_method = "ABE655961F79B3C1FE3443634AA21C37", hash_generated_method = "91004DDDF771A6CC7CFB13627495F367")
     
@@ -622,6 +686,8 @@ public void setGroupingSize(int value) {
      *
      * @return {@code true} if grouping is used; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.889 -0500", hash_original_method = "47F90CF51661FE278576148D8412D8DA", hash_generated_method = "630F52B46C2356B6C4E27989C8E6C819")
     
 @Override
@@ -636,6 +702,8 @@ public void setGroupingSize(int value) {
      *
      * @param value the maximum number of fraction digits.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.892 -0500", hash_original_method = "D0C418C01DBD33DD29A18941B68BCBF7", hash_generated_method = "1C7EB6C8394959EECD4657CE2A97FE38")
     
@@ -672,6 +740,8 @@ public void setGroupingSize(int value) {
      *
      * @param value the minimum number of fraction digits.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.897 -0500", hash_original_method = "9EB52B7EEE1D2B50BAA9500CCA3AFB4E", hash_generated_method = "2E01BA5752DCDC86BCBE258A1F10D793")
     
@@ -688,6 +758,8 @@ public void setGroupingSize(int value) {
      *
      * @param value the minimum number of integer digits.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.901 -0500", hash_original_method = "6EFC03984672E7D89A36C9F22F2AAB3B", hash_generated_method = "F01D9D9066CB5833B173FA2BD15528ED")
     
@@ -704,6 +776,8 @@ public void setGroupingSize(int value) {
      * @param value
      *            the multiplier.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.903 -0500", hash_original_method = "2E4C739E2F1CFFD7C6A061AD5BB9ADF4", hash_generated_method = "F52AB94F5BFF1732FE3D52414C16FB4B")
     
@@ -717,6 +791,8 @@ public void setMultiplier(int value) {
      * @param value
      *            the negative prefix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.905 -0500", hash_original_method = "2C739DF56DF29E81D815FC52FA901BFF", hash_generated_method = "EF37A221B1E24DB8C1D8DAE150DD672E")
     
@@ -730,6 +806,8 @@ public void setNegativePrefix(String value) {
      * @param value
      *            the negative suffix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.907 -0500", hash_original_method = "A51B4E91EE1B92D26334E28FF3A003CC", hash_generated_method = "0C504B3533959647AE16EF7F33AA9734")
     
@@ -743,6 +821,8 @@ public void setNegativeSuffix(String value) {
      * @param value
      *            the positive prefix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.910 -0500", hash_original_method = "7DA87D841FEB1EB829AC578209C7D87B", hash_generated_method = "518FFAC2C72B0CF0D4BC6FDEDECE4039")
     
@@ -756,6 +836,8 @@ public void setPositivePrefix(String value) {
      * @param value
      *            the positive suffix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.912 -0500", hash_original_method = "740675349A091E1D283FD9B9350AE3AA", hash_generated_method = "3564C6115BA1159AF36A66E4124816C6")
     
@@ -771,6 +853,8 @@ public void setPositiveSuffix(String value) {
      *            {@code true} if all the returned objects should be of type
      *            {@code BigDecimal}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.914 -0500", hash_original_method = "DD680A2A91BAA011B854EB3CE1AE2AEF", hash_generated_method = "93345C76FD275887E99A63959B05FBDB")
     
@@ -784,6 +868,8 @@ public void setParseBigDecimal(boolean newValue) {
      *
      * @return the localized pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.917 -0500", hash_original_method = "487E11DF64E483CD2A017195603FADD0", hash_generated_method = "70F3AF058A1932CBC6406A58EB67A151")
     
 public String toLocalizedPattern() {
@@ -796,6 +882,8 @@ public String toLocalizedPattern() {
      *
      * @return the non-localized pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.919 -0500", hash_original_method = "588A1CECAAE48251BC4F5156DD9C9A13", hash_generated_method = "CEBFB24A422FFCDC1E0BF9115BA5B2CE")
     
 public String toPattern() {
@@ -812,6 +900,8 @@ public String toPattern() {
      *             if some I/O error occurs
      * @throws ClassNotFoundException
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.925 -0500", hash_original_method = "5BC6394F5F5C73D6097502885E125B6B", hash_generated_method = "084A9AC1CC7A4235E57585946A2F7B65")
     
 private void writeObject(ObjectOutputStream stream) throws IOException, ClassNotFoundException {
@@ -852,6 +942,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException, ClassNot
      * @throws ClassNotFoundException
      *             if some class of serialized objects or fields cannot be found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.928 -0500", hash_original_method = "779EB6B3B1C2B5888DC5BF2D6BFB0D9C", hash_generated_method = "1485D1EE3803384825CD7777F357EBE6")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
@@ -899,6 +991,8 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
      * Returns the {@code RoundingMode} used by this {@code NumberFormat}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.931 -0500", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "6D523F860AF5DA84DA6E20F0C7E0AAFA")
     
@@ -910,6 +1004,8 @@ public RoundingMode getRoundingMode() {
      * Sets the {@code RoundingMode} used by this {@code NumberFormat}.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.933 -0500", hash_original_method = "91D8E7B9A007769AA087DAF2CAD1ADF8", hash_generated_method = "9D2CE860777B487832B5BF4459D353E7")
     
 public void setRoundingMode(RoundingMode roundingMode) {

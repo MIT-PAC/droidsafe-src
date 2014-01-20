@@ -64,6 +64,8 @@ public class FastXmlSerializer implements XmlSerializer {
         //Synthesized constructor
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.918 -0500", hash_original_method = "7F8A4FBBB421106585A40A4ABA627D34", hash_generated_method = "4A3C5650EA1F76EDA495476C30DB9DDF")
     
 private void append(char c) throws IOException {
@@ -118,6 +120,8 @@ private void append(char[] buf, int i, final int length) throws IOException {
         mPos = pos + length;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.925 -0500", hash_original_method = "E6E865A25D7068974BFDA6B3F14B9E04", hash_generated_method = "93F6B0896169EEDFA9756C79319E399A")
     
 private void append(String str) throws IOException {
@@ -144,6 +148,8 @@ private void escapeAndAppendString(final String string) throws IOException {
         if (lastPos < pos) append(string, lastPos, pos-lastPos);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.932 -0500", hash_original_method = "9EEFDA601F6AD1629A39B78C5EDBBF73", hash_generated_method = "DCBB865E98F35A4B7FDC188361040BCE")
     
 private void escapeAndAppendString(char[] buf, int start, int len) throws IOException {
@@ -234,6 +240,8 @@ public void entityRef(String text) throws IOException, IllegalArgumentException,
         throw new UnsupportedOperationException();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.951 -0500", hash_original_method = "8B5DC0C8EFBE829D5900DCFC0D2617F4", hash_generated_method = "1B3CC163C0972C7FDB52EFBAD5F500CD")
     
 private void flushBytes() throws IOException {

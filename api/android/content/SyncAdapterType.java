@@ -100,6 +100,8 @@ public SyncAdapterType(String authority, String accountType, boolean userVisible
         this.isKey = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.501 -0500", hash_original_method = "E5F69ADC566D68AE55898AF008FDA708", hash_generated_method = "BFD4D32CC834C337A352471F08214430")
     
 private SyncAdapterType(String authority, String accountType) {

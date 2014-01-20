@@ -63,6 +63,8 @@ public CompletionInfo(long id, int index, CharSequence text, CharSequence label)
         mLabel = label;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.114 -0500", hash_original_method = "2F837EEA33DB685519494240B032A81B", hash_generated_method = "8865555D59E011AE2F343A4AFB517F20")
     
 private CompletionInfo(Parcel source) {

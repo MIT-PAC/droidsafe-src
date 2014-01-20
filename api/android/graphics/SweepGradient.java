@@ -9,19 +9,27 @@ import droidsafe.helpers.DSUtils;
 
 public class SweepGradient extends Shader {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate1(float x, float y, int colors[], float positions[]) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate2(float x, float y, int color0, int color1) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate1(int native_shader, float cx, float cy,
             int[] colors, float[] positions) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate2(int native_shader, float cx, float cy,
             int color0, int color1) {
         return DSUtils.UNKNOWN_INT;
@@ -66,6 +74,8 @@ public SweepGradient(float cx, float cy,
      * @param color0   The color to use at the start of the sweep
      * @param color1   The color to use at the end of the sweep
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.024 -0500", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "4CF24E78B398EE3E254FEEF5DF20DD61")
     
 public SweepGradient(float cx, float cy, int color0, int color1) {

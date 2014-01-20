@@ -75,6 +75,8 @@ public static void sleep(long ms)
     /**
      * This class is uninstantiable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.625 -0500", hash_original_method = "447AF20F3E8B0F9406C259A46D1AF12B", hash_generated_method = "874F5813A3F49589CCC4C945CC392D71")
     
 private SystemClock() {

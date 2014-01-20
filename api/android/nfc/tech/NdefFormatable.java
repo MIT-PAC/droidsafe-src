@@ -98,7 +98,9 @@ public void formatReadOnly(NdefMessage firstMessage) throws IOException, FormatE
         format(firstMessage, true);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.198 -0500", hash_original_method = "E299B2177763F767A596EAE082378EB1", hash_generated_method = "D2414BB445035CA6912CCB5166D49870")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.198 -0500", hash_original_method = "E299B2177763F767A596EAE082378EB1", hash_generated_method = "D2414BB445035CA6912CCB5166D49870")
     
 void format(NdefMessage firstMessage, boolean makeReadOnly) throws IOException,
             FormatException {

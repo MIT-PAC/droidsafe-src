@@ -230,6 +230,8 @@ public static InvocationHandler getInvocationHandler(Object proxy)
         throw new IllegalArgumentException("not a proxy instance");
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
     	Class ret = (Class)new Object();
@@ -239,6 +241,8 @@ public static InvocationHandler getInvocationHandler(Object proxy)
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void constructorPrototype(InvocationHandler h) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.163 -0500", hash_original_field = "EE4DEE6FBD7EC29CC5158EA595047545", hash_generated_field = "FDC5D947F950CF597538724FB8BE4535")
@@ -257,6 +261,8 @@ public static InvocationHandler getInvocationHandler(Object proxy)
 
     protected InvocationHandler h;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.176 -0500", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "A06C4E727DA1FC070318D01CB5C4DC02")
     
 @SuppressWarnings("unused")

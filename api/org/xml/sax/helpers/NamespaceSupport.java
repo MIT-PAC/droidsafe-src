@@ -469,7 +469,9 @@ void setParent (Context parent)
      * {@link #setParent} must be called before
      * this context may be used again.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.408 -0500", hash_original_method = "9488BC4AFF7634EA1262BEB181C9541E", hash_generated_method = "9488BC4AFF7634EA1262BEB181C9541E")
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.408 -0500", hash_original_method = "9488BC4AFF7634EA1262BEB181C9541E", hash_generated_method = "9488BC4AFF7634EA1262BEB181C9541E")
         
 void clear ()
     {
@@ -488,7 +490,9 @@ void clear ()
      * @param uri The associated Namespace URI.
      * @see org.xml.sax.helpers.NamespaceSupport#declarePrefix
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.411 -0500", hash_original_method = "4549801F41C68E0A6A490696C062C72D", hash_generated_method = "8B62B5695F36760CAD8EDCDC235C2C64")
         
 void declarePrefix(String prefix, String uri) {
@@ -529,7 +533,9 @@ void declarePrefix(String prefix, String uri) {
      *         if there is an undeclared prefix.
      * @see org.xml.sax.helpers.NamespaceSupport#processName
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.414 -0500", hash_original_method = "33259345EBD99FFF49F4E1AAD2529013", hash_generated_method = "296CADF2DCFE4D340DC221E4F2AE1D69")
         
 String [] processName (String qName, boolean isAttribute)
@@ -610,7 +616,9 @@ String [] processName (String qName, boolean isAttribute)
      *         declared.
      * @see org.xml.sax.helpers.NamespaceSupport#getURI
      */
-    @DSSource({DSSourceKind.FILE_INFORMATION})
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.417 -0500", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "33F968ABABCEBD2BA0661937EB8377F0")
         
 String getURI (String prefix)
@@ -634,7 +642,9 @@ String getURI (String prefix)
      * @return The associated prefix, or null if none is declared.
      * @see org.xml.sax.helpers.NamespaceSupport#getPrefix
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.419 -0500", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "62121EA4CFF0891BFB2032F7AF8FE7A1")
         
 String getPrefix (String uri)
@@ -652,7 +662,9 @@ String getPrefix (String uri)
      * @return An enumeration of prefixes (possibly empty).
      * @see org.xml.sax.helpers.NamespaceSupport#getDeclaredPrefixes
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.421 -0500", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "B116CF358C1D0DA8CF46DFF106939FC0")
         
 Enumeration getDeclaredPrefixes() {
@@ -668,7 +680,9 @@ Enumeration getDeclaredPrefixes() {
      * @return An enumeration of prefixes (never empty).
      * @see org.xml.sax.helpers.NamespaceSupport#getPrefixes
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.423 -0500", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "D02303EBFA8DB4A97AF291339C2FB52B")
         
 Enumeration getPrefixes ()
@@ -690,7 +704,9 @@ Enumeration getPrefixes ()
      * <p>This class is optimized for the normal case where most
      * elements do not contain Namespace declarations.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.426 -0500", hash_original_method = "26D71A046B8A5E21DEFC65FB89CD9FDA", hash_generated_method = "2293476E78FCC8BDA181F927AEA93BD1")
+    @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.426 -0500", hash_original_method = "26D71A046B8A5E21DEFC65FB89CD9FDA", hash_generated_method = "2293476E78FCC8BDA181F927AEA93BD1")
         
 private void copyTables ()
     {

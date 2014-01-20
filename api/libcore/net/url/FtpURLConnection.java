@@ -147,6 +147,8 @@ protected FtpURLConnection(URL url, Proxy proxy) {
     /**
      * Change the server directory to that specified in the URL
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.273 -0500", hash_original_method = "2BDEB44F3F77270286A692320830ED18", hash_generated_method = "10A3023962BAC8347E6F9AA00501C9E6")
     
 private void cd() throws IOException {
@@ -218,6 +220,8 @@ private void cd() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.278 -0500", hash_original_method = "C4AF18B7DC35179EB8C42F6F6880E61F", hash_generated_method = "9FAE12B4A24D30720580EE48844C7FB0")
     
 private void connectInternal() throws IOException {
@@ -285,6 +289,8 @@ private void connectInternal() throws IOException {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.283 -0500", hash_original_method = "4A774F3C4B70A99D65FCF85E87C829A2", hash_generated_method = "091E31ADA898D03FEEBD0D4182D9F130")
     
 private void getFile() throws IOException {
@@ -370,6 +376,8 @@ private void getFile() throws IOException {
         return dataSocket.getOutputStream();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.294 -0500", hash_original_method = "754446702A2F2C82AEEC6CF269039EFC", hash_generated_method = "81ED77FDD16F56DCC7E1B5D9E042275C")
     
 private int getReply() throws IOException {
@@ -400,6 +408,8 @@ private int getReply() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.297 -0500", hash_original_method = "0C049C745906095629F65911A54698F4", hash_generated_method = "6E01AC6228185AA9D0FAE2C9A6508A83")
     
 private void login() throws IOException {
@@ -424,6 +434,8 @@ private void login() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.299 -0500", hash_original_method = "7AD2E3313E6C9CA8D7D83CEDA11B3440", hash_generated_method = "0C662C569F216B6C78D5E1EF1B15A833")
     
 private void port() throws IOException {
@@ -440,6 +452,8 @@ private void port() throws IOException {
     /**
      * Read a line of text and return it for possible parsing
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.301 -0500", hash_original_method = "2E63066111AD195377A7E087D5F90A5E", hash_generated_method = "B1ECC6AC4E64132290709D619D40862C")
     
 private String readLine() throws IOException {
@@ -451,6 +465,8 @@ private String readLine() throws IOException {
         return sb.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.304 -0500", hash_original_method = "D4D3BFF8CA61872FC19064B66C8564AF", hash_generated_method = "D271C02393161A417D34C43BB6F198A0")
     
 private boolean readMultiLine() throws IOException {
@@ -468,6 +484,8 @@ private boolean readMultiLine() throws IOException {
     /**
      * Issue the STOR command to the server with the file as the parameter
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.306 -0500", hash_original_method = "2BA78033DAE740186A6855D293FFDC43", hash_generated_method = "6E79BC3AC105495601645C17C9BDCD4E")
     
 private void sendFile() throws IOException {
@@ -534,6 +552,8 @@ private void sendFile() throws IOException {
     /**
      * Set the type of the file transfer. Only Image is supported
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.313 -0500", hash_original_method = "507EB2691A7ADEA1CDA7F73F8F57152E", hash_generated_method = "F7E0FDF9595C5A5E4A6A97D2D8DF488D")
     
 private void setType() throws IOException {
@@ -543,6 +563,8 @@ private void setType() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.317 -0500", hash_original_method = "3CB2D955BA1082FED6AC9AF45688DFA7", hash_generated_method = "E13BB63FBBD3E929E88C92BAA2A1E863")
     
 private void write(String command) throws IOException {

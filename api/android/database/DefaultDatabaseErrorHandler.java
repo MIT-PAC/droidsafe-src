@@ -73,6 +73,8 @@ public void onCorruption(SQLiteDatabase dbObj) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.949 -0500", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "39FC2F2C866EDC4F25097633E0CD189C")
     
 private void deleteDatabaseFile(String fileName) {

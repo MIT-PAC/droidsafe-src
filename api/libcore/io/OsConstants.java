@@ -333,10 +333,14 @@ public static String errnoName(int errno) {
         return null;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void initConstants() {
     }
 
     // A hack to avoid these constants being inlined by javac...
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:23.626 -0500", hash_original_method = "DAE024EA6D6BB39319E6D500BD21C97F", hash_generated_method = "9EC037694603E2A7AF82232FD6D0B452")
     
 private static int placeholder() { return 0; }
@@ -1537,6 +1541,8 @@ private static int placeholder() { return 0; }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:23.613 -0500", hash_original_field = "67647287038FE23E10B919AA206355E3", hash_generated_field = "B4FC867314AA4AFC4194C07590CB8E4B")
 
     public static final int _SC_XOPEN_XCU_VERSION = placeholder();
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:22.585 -0500", hash_original_method = "0498D6F7A9D700EE7D091D4440C7A579", hash_generated_method = "8D4AC756647267C5FAEEAEC8B6A79696")
     
 private OsConstants() { }

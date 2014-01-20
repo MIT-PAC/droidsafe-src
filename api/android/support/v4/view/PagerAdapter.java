@@ -30,6 +30,8 @@ public abstract class PagerAdapter {
     /**
      * Return the number of views available.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:18.999 -0500", hash_original_method = "8A22A1FE2F5B57814AD6F31483E8A082", hash_generated_method = "4A7C62328463406AEE3D11A837EF3867")
     
 public abstract int getCount();
@@ -39,6 +41,8 @@ public abstract int getCount();
      * @param container The containing View which is displaying this adapter's
      * page views.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.001 -0500", hash_original_method = "DCAE5C6F617B7B7CD0D6B0A4179A4B48", hash_generated_method = "B8BC9AC1396C809BA11C5CCA8C517F60")
     
@@ -73,6 +77,8 @@ public Object instantiateItem(ViewGroup container, int position) {
      * @param object The same object that was returned by
      * {@link #instantiateItem(View, int)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.006 -0500", hash_original_method = "81B6B479C89D1904C5A685A128836D6A", hash_generated_method = "F114DE55F7DC7836AF2B5B1FA6EF3009")
     
 public void destroyItem(ViewGroup container, int position, Object object) {
@@ -115,6 +121,8 @@ public void finishUpdate(ViewGroup container) {
      *
      * @deprecated Use {@link #startUpdate(ViewGroup)}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.012 -0500", hash_original_method = "FA1E5F7C2B2EB1EE6744E074AA1F10AB", hash_generated_method = "A06B43F4CD23E238EE09245FF88DEAA6")
     
 public void startUpdate(View container) {
@@ -152,6 +160,8 @@ public Object instantiateItem(View container, int position) {
      *
      * @deprecated Use {@link #destroyItem(ViewGroup, int, Object)}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.016 -0500", hash_original_method = "0E7A719DFB33F3F65D1661AAD48E8CDE", hash_generated_method = "23A2966650893BDAF2FF72298F5A9B1A")
     
 public void destroyItem(View container, int position, Object object) {
@@ -198,6 +208,8 @@ public void finishUpdate(View container) {
      * @param object Object to check for association with <code>view</code>
      * @return true if <code>view</code> is associated with the key object <code>object</code>
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.023 -0500", hash_original_method = "DAA6FA5171544E03AFB8179636AFB377", hash_generated_method = "5C6A67F058B407F9CA962AC1DC62EE22")
     
 public abstract boolean isViewFromObject(View view, Object object);
@@ -259,12 +271,16 @@ public void notifyDataSetChanged() {
         mObservable.notifyChanged();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.033 -0500", hash_original_method = "F0925616C6F47A4BCFCB9E7C14C25F57", hash_generated_method = "F0925616C6F47A4BCFCB9E7C14C25F57")
     
 void registerDataSetObserver(DataSetObserver observer) {
         mObservable.registerObserver(observer);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.035 -0500", hash_original_method = "F847CF5B5DF735E7D60F86704B1D73CD", hash_generated_method = "F847CF5B5DF735E7D60F86704B1D73CD")
     
 void unregisterDataSetObserver(DataSetObserver observer) {

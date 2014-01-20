@@ -22,6 +22,8 @@ public final class OpcodeInfo {
     /**
      * This class is not instantiable.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.855 -0500", hash_original_method = "A83DC80DE6B8698A045EDE141AC37084", hash_generated_method = "A0816D2AFEC14D094AF4E3ECDC02456C")
     
 private OpcodeInfo() {

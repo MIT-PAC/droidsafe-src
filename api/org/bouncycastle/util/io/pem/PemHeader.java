@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class PemHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.323 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
@@ -60,6 +56,8 @@ public boolean equals(Object o)
         return other == this || (isEqual(this.name, other.name) && isEqual(this.value, other.value));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.339 -0500", hash_original_method = "552BFCCB5F897360ADAD8A79D56E72F9", hash_generated_method = "8CE35C1399F8AC3D09351D2FD671746F")
     
 private int getHashCode(String s)
@@ -72,6 +70,8 @@ private int getHashCode(String s)
         return s.hashCode();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.341 -0500", hash_original_method = "56C7E9071A8414DCCD1359B9AFE0CC30", hash_generated_method = "A99870F16E25AC263849C9A12FC58B8C")
     
 private boolean isEqual(String s1, String s2)
@@ -88,7 +88,6 @@ private boolean isEqual(String s1, String s2)
 
         return s1.equals(s2);
     }
-
     
 }
 

@@ -27,6 +27,8 @@ import android.view.VolumePanel;
 
 public class AudioManager {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.020 -0500", hash_original_method = "4C7645D232D763BA4F570538A2273FAB", hash_generated_method = "167786996F36B4A84FAE42E57D8CB72B")
     
 private static IAudioService getService()
@@ -367,6 +369,8 @@ FocusEventHandlerDelegate() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.300 -0500", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "10E7D4FA7AE5C5A4DFE91478AE111D01")
         
@@ -1549,6 +1553,8 @@ public void  playSoundEffect(int effectType, float volume) {
     /**
      * Settings has an in memory cache, so this is fast.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.251 -0500", hash_original_method = "91B9C921984750C333F4A3D84250AE14", hash_generated_method = "9464959B0D7FB3B0DB402DD5E8E57C5B")
     
 private boolean querySoundEffectsEnabled() {

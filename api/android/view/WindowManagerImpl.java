@@ -67,6 +67,8 @@ public static WindowManager getDefault(CompatibilityInfoHolder compatInfo) {
         return new CompatModeWrapper(sWindowManager, compatInfo);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.262 -0500", hash_original_method = "5920761E6519D7DF42289A49318C9DD3", hash_generated_method = "39BA323056CD4B7A0D72C53C01F90DC8")
     
 private static void removeItem(Object[] dst, Object[] src, int index) {
@@ -170,6 +172,8 @@ public boolean isHardwareAccelerated() {
 
         private  CompatibilityInfoHolder mCompatibilityInfo;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.183 -0500", hash_original_method = "3FF7A4C8C61ABC650A78463DAC06ED7D", hash_generated_method = "813B6529F336F81C5261E1486E6D12A4")
         
 CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
@@ -398,6 +402,8 @@ public void removeViewImmediate(View view) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.232 -0500", hash_original_method = "45C6626A33F0E52A8F561F8DE7007122", hash_generated_method = "A76FF12A2F6862507082FE1574ED057D")
     
 View removeViewLocked(int index) {
@@ -421,6 +427,8 @@ View removeViewLocked(int index) {
         return view;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.235 -0500", hash_original_method = "4A1C8F1E2D0E07B0DD1B6F93F46E614A", hash_generated_method = "EF5E088EC9F28E823CDD2320368DAAD2")
     
 void finishRemoveViewLocked(View view, int index) {
@@ -635,6 +643,8 @@ public Display getDefaultDisplay() {
         return new Display(Display.DEFAULT_DISPLAY, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.264 -0500", hash_original_method = "D0BCCB21246B97649D4401D223B22EEE", hash_generated_method = "B64315874421085921C76F4D7DBD9FAF")
     
 private int findViewLocked(View view, boolean required) {

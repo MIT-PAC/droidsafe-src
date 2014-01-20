@@ -171,6 +171,8 @@ public DatagramSocket(SocketAddress localAddr) throws SocketException {
         setBroadcast(true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.614 -0500", hash_original_method = "70ACB9C2984CE075C85AFFAB4CC3F2C3", hash_generated_method = "4A0CD7F4145B8CB13F85031F53729D5A")
     
 private void checkPort(int aPort) {
@@ -209,6 +211,8 @@ public void disconnect() {
         isConnected = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.621 -0500", hash_original_method = "CDBEDFAF0027896E1E3D56B522D080D1", hash_generated_method = "B995B4032CBBFCEDE50138473FC0D1DD")
     
 synchronized void createSocket(int aPort, InetAddress addr) throws SocketException {
@@ -299,6 +303,8 @@ public int getPort() {
      *
      * @return the return value is always {@code false}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.633 -0500", hash_original_method = "4991C56903C24C085B034589D2617CA7", hash_generated_method = "4991C56903C24C085B034589D2617CA7")
     
 boolean isMulticastSocket() {
@@ -486,6 +492,8 @@ public synchronized void setSoTimeout(int timeout) throws SocketException {
         impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(timeout));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.669 -0500", hash_original_method = "8DC54C39C6445BAF3181407C830C5887", hash_generated_method = "8DC54C39C6445BAF3181407C830C5887")
     
 void checkOpen() throws SocketException {
@@ -494,6 +502,8 @@ void checkOpen() throws SocketException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.672 -0500", hash_original_method = "1B212BFD5D3AE863EDBC7C1325928232", hash_generated_method = "BEA3F843DAE93FC57E382B9F4CCF2185")
     
 private void ensureBound() throws SocketException {

@@ -54,6 +54,8 @@ public BasicHeaderElementIterator(final HeaderIterator headerIterator) {
         this(headerIterator, BasicHeaderValueParser.DEFAULT);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.356 -0500", hash_original_method = "C8E28B138A9C5D591B033922ABD8E30E", hash_generated_method = "6FFD397A68944DC958D03E859EB4B5C4")
     
 private void bufferHeaderValue() {
@@ -78,6 +80,8 @@ private void bufferHeaderValue() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.360 -0500", hash_original_method = "AD9B9B018316D22B2D55EF0E8A1D3706", hash_generated_method = "C19A7CF73FC1B18D33C38C384CEEAAD3")
     
 private void parseNextElement() {

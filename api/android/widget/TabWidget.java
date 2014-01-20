@@ -106,6 +106,8 @@ public TabWidget(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.812 -0500", hash_original_method = "5A72EB2BE089A5D99DEFC278831DF5C3", hash_generated_method = "0B3DFAF6C865060DF737C32099F87995")
     
 private void initTabWidget() {
@@ -144,6 +146,8 @@ private void initTabWidget() {
         setOnFocusChangeListener(this);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.814 -0500", hash_original_method = "C935CB6AD095E3F37FD6E422C2C15A30", hash_generated_method = "2C35F53DC1C551664A772CA0130B6C50")
     
 @Override
@@ -161,6 +165,8 @@ private void initTabWidget() {
                 widthMeasureSpec, totalWidth, heightMeasureSpec, totalHeight);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.817 -0500", hash_original_method = "ED82522C2B0B64CD8D60C0C12518DCBA", hash_generated_method = "86ED1DD9064FCE4E863DD64E952FF7FE")
     
 @Override

@@ -25,6 +25,8 @@ public class FieldPosition {
      * @param field
      *            the field to identify.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.948 -0500", hash_original_method = "E695F5151E58D69BC230540B458252AA", hash_generated_method = "6840825CBF924B6A390940786E90DDDB")
     
 public FieldPosition(int field) {
@@ -61,6 +63,8 @@ public FieldPosition(Format.Field attribute, int field) {
         myField = field;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.956 -0500", hash_original_method = "0917A34BEC387437E422442FF9D128A9", hash_generated_method = "0917A34BEC387437E422442FF9D128A9")
     
 void clear() {
@@ -78,6 +82,8 @@ void clear() {
      *         position; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.959 -0500", hash_original_method = "2EFD5CC62AE2C3EDB89CEF52D471F874", hash_generated_method = "65E7AC1AD7D9F4BB8D4ED6C9A5B5D1A7")
     
 @Override
@@ -95,6 +101,8 @@ void clear() {
      *
      * @return the first index of the field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.961 -0500", hash_original_method = "D73EFD1B11663E2F20B33728384A7709", hash_generated_method = "2F90CE977F6454CCD742CC39E5800B3F")
     
@@ -107,6 +115,8 @@ public int getBeginIndex() {
      *
      * @return one past the index of the last character in the field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.964 -0500", hash_original_method = "9236177A75F6147947B59829E100715E", hash_generated_method = "E2DB6089C9C1CB197EEB6F119595567F")
     
@@ -119,6 +129,8 @@ public int getEndIndex() {
      *
      * @return the field constant.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.967 -0500", hash_original_method = "FA0D18F7CDA71089ACF7D0CA54DB97A6", hash_generated_method = "312D8615450594C16427A36E55E25569")
     
@@ -137,6 +149,8 @@ public Format.Field getFieldAttribute() {
         return myAttribute;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.972 -0500", hash_original_method = "C545ABA0B6D3CBB4D119673C6F3DBEAC", hash_generated_method = "B23008877C896A74DC57F148652920FA")
     
 @Override
@@ -151,6 +165,8 @@ public Format.Field getFieldAttribute() {
      * @param index
      *            the index of the first character in the field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.975 -0500", hash_original_method = "B6704CE8D3A3B86DBE7C4466AFBF63DE", hash_generated_method = "6AC0962FD64156C5BD7027682479A8E3")
     
 public void setBeginIndex(int index) {
@@ -163,6 +179,8 @@ public void setBeginIndex(int index) {
      * @param index
      *            one past the index of the last character in the field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.977 -0500", hash_original_method = "D0945845F8EA8830C89E5D5682FA6C51", hash_generated_method = "23964A13F3E495C466DA582765852E9B")
     
 public void setEndIndex(int index) {
@@ -174,6 +192,8 @@ public void setEndIndex(int index) {
      *
      * @return the string representation of this field position.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.980 -0500", hash_original_method = "C87731FA15F0C601F30AE5E2B46DBDCA", hash_generated_method = "BF88C3E53333B37FCC8C650181AD6C8B")
     
 @Override

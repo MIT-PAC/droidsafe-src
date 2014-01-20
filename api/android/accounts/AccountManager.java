@@ -344,10 +344,14 @@ protected void set(Bundle bundle) {
             super.set(bundle);
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.123 -0500", hash_original_method = "E172AC54BDA548AF6DAEF4A168CC4707", hash_generated_method = "84F2E7A49346DDBB2054F34A8AF373BF")
         
 public abstract void doWork() throws RemoteException;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.126 -0500", hash_original_method = "6C34E289CBAB2DD26AA2603338539143", hash_generated_method = "DDD1772D3E9759F0EF2ED2D8151322AC")
         
 private Bundle internalGetResult(Long timeout, TimeUnit unit)
@@ -476,10 +480,14 @@ public BaseFutureTask(Handler handler) {
             mResponse = new Response();
         }
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.160 -0500", hash_original_method = "E172AC54BDA548AF6DAEF4A168CC4707", hash_generated_method = "84F2E7A49346DDBB2054F34A8AF373BF")
         
 public abstract void doWork() throws RemoteException;
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.162 -0500", hash_original_method = "B16E0611AA9ED6C18764DFE7CA12071D", hash_generated_method = "90D20EACEA319C48DC12C539CF65F27B")
         
 public abstract T bundleToResult(Bundle bundle) throws AuthenticatorException;
@@ -579,6 +587,8 @@ public Future2Task<T> start() {
             return this;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.194 -0500", hash_original_method = "41F0112BBEC6735226A2F41FF2202D7E", hash_generated_method = "0239A56840CD6C80C452C472F8299284")
         
 private T internalGetResult(Long timeout, TimeUnit unit)
@@ -1815,6 +1825,8 @@ public AccountManagerFuture<Bundle> editProperties(final String accountType,
         }.start();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.086 -0500", hash_original_method = "05C769BBE692F72E464B52B58848EACE", hash_generated_method = "AC805C3019B3B0AC462E72DD9A55AA27")
     
 private void ensureNotOnMainThread() {
@@ -1864,6 +1876,8 @@ private void postToHandler(Handler handler, final OnAccountsUpdateListener liste
         });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.204 -0500", hash_original_method = "6FDE075EEB86D1BECEDE842FFDA184DE", hash_generated_method = "E3E7A3DF6CE8F3FD2FAF466271540457")
     
 private Exception convertErrorToException(int code, String message) {

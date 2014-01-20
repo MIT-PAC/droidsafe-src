@@ -10,11 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.SimpleTimeZone;
 
-
-
-
-
-
 public class DERUTCTime extends ASN1Object {
 
     /**
@@ -106,6 +101,8 @@ public DERUTCTime(
         this.time = dateF.format(time);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.392 -0500", hash_original_method = "64E72DE8C26EBEE8B82B8D6629E000CC", hash_generated_method = "8602862A4DB4222918F4044B80FE27AE")
     
 DERUTCTime(
@@ -239,6 +236,8 @@ public String getAdjustedTime()
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.404 -0500", hash_original_method = "8BA225FFF1B0D4854B6BEDB73124ABD2", hash_generated_method = "D460D0912FF7E706431D993FFB050836")
     
 private byte[] getOctets()
@@ -254,6 +253,8 @@ private byte[] getOctets()
         return bs;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.407 -0500", hash_original_method = "61B114EE0877AC878307DF8632824910", hash_generated_method = "61B114EE0877AC878307DF8632824910")
     
 void encode(
@@ -263,6 +264,8 @@ void encode(
         out.writeEncoded(UTC_TIME, this.getOctets());
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.409 -0500", hash_original_method = "0AA77B1E8A82CB516C576E10CBE19EDE", hash_generated_method = "0AA77B1E8A82CB516C576E10CBE19EDE")
     
 boolean asn1Equals(
@@ -289,7 +292,6 @@ public String toString()
     {
       return time;
     }
-
     
 }
 

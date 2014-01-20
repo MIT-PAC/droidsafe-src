@@ -14,10 +14,6 @@ import java.util.TimeZone;
 
 import android.os.Parcel;
 
-
-
-
-
 public class Metadata {
 
     /**
@@ -90,7 +86,6 @@ public static int lastType() { return LAST_TYPE; }
      */
     public static final int SEEK_AVAILABLE          = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.103 -0500", hash_original_field = "03DB4E16A8E5C10DEFE74D537CCE5FCD", hash_generated_field = "7A02626DF44C3703D600A5DAC54B3306")
-
 
     // TODO: Should we use numbers compatible with the metadata retriever?
     /**
@@ -183,7 +178,6 @@ public static int lastType() { return LAST_TYPE; }
     public static final int VIDEO_FRAME             = 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.144 -0500", hash_original_field = "9C9F73642CE7E0B90158C6F2A9B6607A", hash_generated_field = "55B1D0F0443317AF585FDF5C39AB01AB")
 
-
     /**
      * {@hide}
      */
@@ -216,7 +210,6 @@ public static int lastType() { return LAST_TYPE; }
     public static final int VIDEO_FRAME_RATE        = 24;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.159 -0500", hash_original_field = "001C65B122B7D008E7AD382FDC3B1F7E", hash_generated_field = "A2D66E24C3CD37E80BA72AEF9A078284")
 
-
     // See RFC2046 and RFC4281.
     /**
      * {@hide}
@@ -235,7 +228,6 @@ public static int lastType() { return LAST_TYPE; }
      */
     public static final int VIDEO_CODEC             = 27;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.168 -0500", hash_original_field = "9372A4FA403BBF7F7666D04CDAE8CBFF", hash_generated_field = "67AE7CD3998073118897918776C3E96A")
-
 
     /**
      * {@hide}
@@ -260,7 +252,6 @@ public static int lastType() { return LAST_TYPE; }
      */
     public static final int DRM_CRIPPLED            = 31;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.178 -0500", hash_original_field = "0D74D2C38B69D67FBBBC8DA2632BDCCA", hash_generated_field = "138468D81E8995E87BF04E16A5FD4F56")
-
 
     private static final int LAST_SYSTEM = 31;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.181 -0500", hash_original_field = "7CB529FCDE2E5DF87420F8023953DF7F", hash_generated_field = "1293C8B3CCCB6F01014120B141F15535")
@@ -302,7 +293,6 @@ public static int lastType() { return LAST_TYPE; }
     private static final int LAST_TYPE = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.213 -0500", hash_original_field = "B567227F9D09314929E33B694C326ABD", hash_generated_field = "EC6F98E58115DB1A9B2DE74236D3700C")
 
-
     private static final String TAG = "media.Metadata";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.216 -0500", hash_original_field = "67124C06F23D8612F74902D83443C7E5", hash_generated_field = "B38D3572DBAFFF8AAEA7DDE94DF97406")
 
@@ -315,10 +305,8 @@ public static int lastType() { return LAST_TYPE; }
     private static final int kRecordHeaderSize = 3 * kInt32Size;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.224 -0500", hash_original_field = "D097CF27B3F514A0FA142C4E15D9287E", hash_generated_field = "DEB70152C7D87EED0BC5674B9F2A6028")
 
-
     private static final int kMetaMarker = 0x4d455441;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.226 -0500", hash_original_field = "A291CB568559F5F870526FB6632A3C7D", hash_generated_field = "0D98F92EEDEB7FCEA0EDE0BDBBD7A022")
-
 
     // After a successful parsing, set the parcel with the serialized metadata.
     private Parcel mParcel;
@@ -362,6 +350,8 @@ public Metadata() { }
      * @param bytesLeft How many bytes in the parcel should be processed.
      * @return false if an error occurred during parsing.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.235 -0500", hash_original_method = "AD5931B1126E13DCBE3F825449AFE253", hash_generated_method = "DAAD326DEF66E04DAB4729BFCCE73FC1")
     
 private boolean scanAllRecords(Parcel parcel, int bytesLeft) {

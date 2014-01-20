@@ -17,6 +17,8 @@ public final class HttpRoute implements RouteInfo, Cloneable {
      *
      * @return  a proxy chain array, or <code>null</code>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.821 -0500", hash_original_method = "1F6E08AD78395DDC36B17C9725479A05", hash_generated_method = "1CB58370D9C0D265BF2B44F328DE8743")
     
 private static HttpHost[] toChain(HttpHost proxy) {
@@ -34,6 +36,8 @@ private static HttpHost[] toChain(HttpHost proxy) {
      *
      * @return  a new proxy chain array, or <code>null</code>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.824 -0500", hash_original_method = "19BAC4EB9F0AC75365ACA9BCF61634EC", hash_generated_method = "5A47858CE58A0A9E5B3CA3FC60A78C82")
     
 private static HttpHost[] toChain(HttpHost[] proxies) {

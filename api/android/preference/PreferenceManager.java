@@ -31,8 +31,8 @@ public class PreferenceManager {
      * @return A SharedPreferences instance that can be used to retrieve and
      *         listen to values of the preferences.
      */
-    @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.726 -0500", hash_original_method = "DEE839A83C4B35ACEA8CCC2B71E2B5D1", hash_generated_method = "2B16C131215B04C3D72C14303B6B379E")
     
@@ -41,12 +41,16 @@ public static SharedPreferences getDefaultSharedPreferences(Context context) {
                 getDefaultSharedPreferencesMode());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.728 -0500", hash_original_method = "42C9CE230DD05245AC0F1F15B9BA0F77", hash_generated_method = "C0A43771BC0878E5F7FF1D24F0A68563")
     
 private static String getDefaultSharedPreferencesName(Context context) {
         return context.getPackageName() + "_preferences";
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.730 -0500", hash_original_method = "9A4A0B76FBD75A7A2387EF85E0D2FD54", hash_generated_method = "D84FC8AF76E7CF2269D44A6A6D9A3736")
     
 private static int getDefaultSharedPreferencesMode() {
@@ -178,6 +182,8 @@ public static void setDefaultValues(Context context, String sharedPreferencesNam
     
     private OnPreferenceTreeClickListener mOnPreferenceTreeClickListener;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.693 -0500", hash_original_method = "A48679E26B4CF910ADEF8C7563331346", hash_generated_method = "A48679E26B4CF910ADEF8C7563331346")
     
 PreferenceManager(Activity activity, int firstRequestCode) {
@@ -195,12 +201,16 @@ PreferenceManager(Activity activity, int firstRequestCode) {
      * should be used ANY time a preference will be displayed, since some preference
      * types need an Activity for managed queries.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.695 -0500", hash_original_method = "962D66AE85693F6FF77A2DEF54D76478", hash_generated_method = "F4455A393DE301F35622852BA02E91EE")
     
 private PreferenceManager(Context context) {
         init(context);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.697 -0500", hash_original_method = "2AA94A8F94EE739DE2B0DB27540BEB34", hash_generated_method = "E716CEF61FDD32C708F8A58ED93D2B72")
     
 private void init(Context context) {
@@ -212,6 +222,8 @@ private void init(Context context) {
     /**
      * Sets the owning preference fragment
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.699 -0500", hash_original_method = "922F3E36F99E52FA3036E92080002B11", hash_generated_method = "922F3E36F99E52FA3036E92080002B11")
     
 void setFragment(PreferenceFragment fragment) {
@@ -221,6 +233,8 @@ void setFragment(PreferenceFragment fragment) {
     /**
      * Returns the owning preference fragment, if any.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.701 -0500", hash_original_method = "11BC570017448843B9A9A22E52E0E479", hash_generated_method = "11BC570017448843B9A9A22E52E0E479")
     
@@ -236,6 +250,8 @@ PreferenceFragment getFragment() {
      * @return The list of {@link ResolveInfo} that point to the matched
      *         activities.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.703 -0500", hash_original_method = "6682C9F88019B1A37FE99B0D2B3B34A2", hash_generated_method = "051844387A24EAE487A48C8117E4273D")
     
 private List<ResolveInfo> queryIntentActivities(Intent queryIntent) {
@@ -258,6 +274,8 @@ private List<ResolveInfo> queryIntentActivities(Intent queryIntent) {
      * @return The root hierarchy (if one was not provided, the new hierarchy's
      *         root).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.707 -0500", hash_original_method = "96A93C80BB9070BDED20D9AB85FFA8E8", hash_generated_method = "DBE5D9014245D9646FD40A2413C6069E")
     
@@ -348,6 +366,8 @@ public PreferenceScreen createPreferenceScreen(Context context) {
      * 
      * @return A unique ID.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.713 -0500", hash_original_method = "D904EAF0B6D90BB52E1F8594EC3F4D15", hash_generated_method = "D904EAF0B6D90BB52E1F8594EC3F4D15")
     
@@ -443,6 +463,8 @@ public SharedPreferences getSharedPreferences() {
      *  
      * @return The {@link PreferenceScreen} object that is at the root of the hierarchy.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.732 -0500", hash_original_method = "60967B21FA602EB86E9B5EB647B08AF2", hash_generated_method = "60967B21FA602EB86E9B5EB647B08AF2")
     
@@ -456,6 +478,8 @@ PreferenceScreen getPreferenceScreen() {
      * @param preferenceScreen The root {@link PreferenceScreen} of the preference hierarchy.
      * @return Whether the {@link PreferenceScreen} given is different than the previous. 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.734 -0500", hash_original_method = "72F330353D1AAD0C361FC98ABB0551E0", hash_generated_method = "72F330353D1AAD0C361FC98ABB0551E0")
     
 boolean setPreferences(PreferenceScreen preferenceScreen) {
@@ -516,12 +540,16 @@ SharedPreferences.Editor getEditor() {
      * 
      * @return Whether the client should commit.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.746 -0500", hash_original_method = "47C154426E8AAB84597A7B272BF8D2FA", hash_generated_method = "47C154426E8AAB84597A7B272BF8D2FA")
     
 boolean shouldCommit() {
         return !mNoCommit;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.748 -0500", hash_original_method = "2ED947FD2CD87E45A298D362CE1C3C54", hash_generated_method = "E1BD2FA4925352CE9F59025D474FA77C")
     
 private void setNoCommit(boolean noCommit) {
@@ -549,6 +577,8 @@ private void setNoCommit(boolean noCommit) {
      * @return The activity that shows the preferences.
      * @see #mContext
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.751 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "3F17133E8D63AE8C7414DC58966291E3")
     
@@ -562,6 +592,8 @@ Activity getActivity() {
      * 
      * @return The context.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.753 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4F4EBC54D108D66F416C93B46580E117")
     
@@ -606,6 +638,8 @@ void unregisterOnActivityResultListener(OnActivityResultListener listener) {
     /**
      * Called by the {@link PreferenceManager} to dispatch a subactivity result.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.760 -0500", hash_original_method = "A3EFE32034D38DFF1A90F9A5F45D56A6", hash_generated_method = "A3EFE32034D38DFF1A90F9A5F45D56A6")
     
 void dispatchActivityResult(int requestCode, int resultCode, Intent data) {
@@ -662,6 +696,8 @@ void unregisterOnActivityStopListener(OnActivityStopListener listener) {
      * Called by the {@link PreferenceManager} to dispatch the activity stop
      * event.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.766 -0500", hash_original_method = "6FD57C464C4DA57829A6C2B52E45A452", hash_generated_method = "6FD57C464C4DA57829A6C2B52E45A452")
     
 void dispatchActivityStop() {
@@ -716,6 +752,8 @@ void unregisterOnActivityDestroyListener(OnActivityDestroyListener listener) {
      * Called by the {@link PreferenceManager} to dispatch the activity destroy
      * event.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.773 -0500", hash_original_method = "ABC0DFC11A448AE601035D9520ECAF99", hash_generated_method = "A50EB56106E28498551C2918E03A855A")
     
 void dispatchActivityDestroy() {
@@ -745,6 +783,8 @@ void dispatchActivityDestroy() {
      * @return A unique request code that will never be used by anyone other
      *         than the caller of this method.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.775 -0500", hash_original_method = "74A43F7F50012109C1C50A128DECA709", hash_generated_method = "74A43F7F50012109C1C50A128DECA709")
     
@@ -754,6 +794,8 @@ int getNextRequestCode() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.777 -0500", hash_original_method = "64532379007357BDD2B5A06E80A12A41", hash_generated_method = "64532379007357BDD2B5A06E80A12A41")
     
 void addPreferencesScreen(DialogInterface screen) {
@@ -767,6 +809,8 @@ void addPreferencesScreen(DialogInterface screen) {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.779 -0500", hash_original_method = "98728EB5C20211F6C02CB983C1971CE8", hash_generated_method = "98728EB5C20211F6C02CB983C1971CE8")
     
 void removePreferencesScreen(DialogInterface screen) {
@@ -785,6 +829,8 @@ void removePreferencesScreen(DialogInterface screen) {
      * 
      * @param intent The new Intent.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.781 -0500", hash_original_method = "4573B347852C64DB794205DBF1F726CF", hash_generated_method = "4573B347852C64DB794205DBF1F726CF")
     
 void dispatchNewIntent(Intent intent) {
@@ -811,6 +857,8 @@ void dispatchNewIntent(Intent intent) {
         void onActivityDestroy();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.784 -0500", hash_original_method = "9025418B8BBAFCD2E271951C43610D69", hash_generated_method = "DCBAF81ECD7B379BC2C84590968F3DB8")
     
 private void dismissAllScreens() {

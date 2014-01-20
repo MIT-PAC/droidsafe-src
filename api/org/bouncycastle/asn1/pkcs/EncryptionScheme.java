@@ -12,8 +12,6 @@ import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 
-
-
 public class EncryptionScheme extends AlgorithmIdentifier {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.250 -0500", hash_original_method = "329448F62D43F2D72E279A19F351634F", hash_generated_method = "0FBFED9FCE389ACC961AA8E74204421B")
@@ -40,6 +38,8 @@ public EncryptionScheme(
         super(objectId, parameters);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.247 -0500", hash_original_method = "14492AE8746901ADA4AAC49DFFF4DA42", hash_generated_method = "14492AE8746901ADA4AAC49DFFF4DA42")
     
 EncryptionScheme(
@@ -66,7 +66,6 @@ public DERObject getDERObject()
 
         return new DERSequence(v);
     }
-
     
 }
 

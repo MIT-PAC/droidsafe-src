@@ -85,6 +85,8 @@ public static double parseDouble(String string) throws NumberFormatException {
      *             the double to convert to a string.
      * @return a printable representation of {@code d}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.675 -0500", hash_original_method = "CC232B8CAE36CFF9A4793AA7869B9E47", hash_generated_method = "FEE36900B728A02BB946FAF254D44323")
     
 public static String toString(double d) {
@@ -184,6 +186,8 @@ public static Double valueOf(double d) {
      * @return the hexadecimal string representation of {@code d}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.688 -0500", hash_original_method = "1D9798A0A4D63301EAA0C709DA651E0D", hash_generated_method = "4777531DC6DAFBE5D6CD7B3DF1F501A7")
     
 public static String toHexString(double d) {
@@ -347,6 +351,8 @@ public static String toHexString(double d) {
      * @param value
      *            the primitive double value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.619 -0500", hash_original_method = "7EA95E8804ADA9698A61C51212EFD766", hash_generated_method = "589D0C0B7FC9F4A52B12E44AC1FCBA18")
     
 public Double(double value) {
@@ -390,12 +396,16 @@ public Double(String string) throws NumberFormatException {
      * @see java.lang.Comparable
      * @since 1.2
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.625 -0500", hash_original_method = "1B85A65FB948A1CAE41CDDDF947CA953", hash_generated_method = "286C44CA10C99DDF8CEFFE5672D34BD2")
     
 public int compareTo(Double object) {
         return compare(value, object.value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.628 -0500", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "4C2FE469A77605BE0BF5A0C525E46699")
     
 @Override
@@ -430,6 +440,8 @@ public int compareTo(Double object) {
      * @return {@code true} if the specified object is equal to this
      *         {@code Double}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.641 -0500", hash_original_method = "EE93E703109A76630ADBE20E58BC1ACE", hash_generated_method = "D82C2AE3C2635BF0173DC63463B49011")
     
 @Override
@@ -447,6 +459,8 @@ public int compareTo(Double object) {
         return (float) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.646 -0500", hash_original_method = "66DA7C954B623D2BD7B3A96EB7989DA3", hash_generated_method = "243A950A1A6DC9CA8D06A15F48F0F22F")
     
 @Override
@@ -492,6 +506,8 @@ public boolean isNaN() {
         return isNaN(value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.665 -0500", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "8688FBD601BD891739470FEF2F36C2F2")
     
 @Override
@@ -499,6 +515,8 @@ public boolean isNaN() {
         return (long) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.670 -0500", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "5FBF5C4E9B9689119C13934CEF72831A")
     
 @Override

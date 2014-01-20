@@ -25,6 +25,8 @@ public abstract class KeyFactorySpi {
      * @throws InvalidKeySpecException
      *             if the specified {@code keySpec} is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.178 -0500", hash_original_method = "D6CBDC24661621DB5B3D02223C9C18D6", hash_generated_method = "04A9286E90285594D40D9CFA95FCFCF7")
     
 protected abstract PublicKey engineGeneratePublic(KeySpec keySpec)
@@ -40,6 +42,8 @@ protected abstract PublicKey engineGeneratePublic(KeySpec keySpec)
      * @throws InvalidKeySpecException
      *             if the specified {@code keySpec} is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.180 -0500", hash_original_method = "B01010AAC698B841B835E796B271E4E0", hash_generated_method = "CBABE83B283930D737F79AC35B467C80")
     
 protected abstract PrivateKey engineGeneratePrivate(KeySpec keySpec)
@@ -59,6 +63,8 @@ protected abstract PrivateKey engineGeneratePrivate(KeySpec keySpec)
      *             if the specified key can not be translated by this key
      *             factory.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.185 -0500", hash_original_method = "739471E10F30D482CB26890FE5494425", hash_generated_method = "46A9471F10A33BCB686EEB889CF4F386")
     
 protected abstract Key engineTranslateKey(Key key) throws InvalidKeyException;

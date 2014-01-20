@@ -18,9 +18,6 @@ import org.bouncycastle.asn1.oiw.OIWObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.jce.interfaces.ConfigurableProvider;
 
-
-
-
 public final class BouncyCastleProvider extends Provider implements ConfigurableProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.115 -0500", hash_original_field = "FCF20FF015ECD1405721C29088E4DE31", hash_generated_field = "C9727C0638F2013F7B780A7BE1307CFA")
 
@@ -30,7 +27,6 @@ public final class BouncyCastleProvider extends Provider implements Configurable
     //     this constant should be final
     public static final String PROVIDER_NAME = "BC";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.120 -0500", hash_original_field = "6AFE32B77084FC7CC5DB9AED5D3D3AEF", hash_generated_field = "96EF51D9176435A4A949DF4BC3624453")
-
 
     /*
      * Configurable symmetric ciphers
@@ -80,6 +76,8 @@ public BouncyCastleProvider()
         });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.151 -0500", hash_original_method = "B0B8FDB1DF484505E991BFEF0E81F7AB", hash_generated_method = "753047AC83C01E8531C46D85518D63BA")
     
 private void setup()
@@ -109,7 +107,6 @@ private void setup()
         // put("X509StreamParser.CRL", "org.bouncycastle.jce.provider.X509CRLParser");
         // put("X509StreamParser.CERTIFICATEPAIR", "org.bouncycastle.jce.provider.X509CertPairParser");
         // END android-removed
-
 
         //
         // KeyStore
@@ -623,6 +620,8 @@ private void setup()
         // END android-removed
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.154 -0500", hash_original_method = "686C79C0163D29E08379E22D5F4091D3", hash_generated_method = "02C3F3C487931441DA0EBB9E68C09D6F")
     
 private void loadAlgorithms(String packageName, String[] names)
@@ -663,6 +662,8 @@ private void loadAlgorithms(String packageName, String[] names)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.157 -0500", hash_original_method = "5007A2B2A77D22A1FFE2768D1D69CD26", hash_generated_method = "8C9B0958A6EA3788D9FF8221246989CF")
     
 private void addMappings(Map mappings)
@@ -683,6 +684,8 @@ private void addMappings(Map mappings)
     //
     // macs
     //
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.160 -0500", hash_original_method = "BF810DB148D6F4B76C3D9477121B375F", hash_generated_method = "24512609174D25296C0AE935218C277E")
     
 private void addMacAlgorithms()
@@ -751,6 +754,8 @@ private void addMacAlgorithms()
         put("Alg.Alias.Mac.1.3.14.3.2.26", "PBEWITHHMACSHA");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.162 -0500", hash_original_method = "92FD2A26DA15B4D69904AC037AAE7782", hash_generated_method = "7E68A49C5E6B70148B8A3C7B7430B06E")
     
 private void addHMACAlgorithm(
@@ -768,6 +773,8 @@ private void addHMACAlgorithm(
         put("Alg.Alias.KeyGenerator.HMAC/" + algorithm, mainName);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.164 -0500", hash_original_method = "D71084920D31BEC8673D5601F90CF345", hash_generated_method = "F356194CE0CBEA34DC3CE2B3DC1313B8")
     
 private void addHMACAlias(
@@ -783,6 +790,8 @@ private void addHMACAlias(
     //
     // message digests
     //
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.168 -0500", hash_original_method = "D1811F612B066C9B05A7CE06AED0A036", hash_generated_method = "6923C48A2FA6515FBAD586A55443BE9B")
     
 private void addMessageDigestAlgorithms()
@@ -836,6 +845,8 @@ private void addMessageDigestAlgorithms()
     //
     // signature algorithms.
     //
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.173 -0500", hash_original_method = "7420A66ACC92234B394212961D34DE13", hash_generated_method = "6A0A569F3F65C21DF8973058772089AE")
     
 private void addSignatureAlgorithms()

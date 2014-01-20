@@ -20,6 +20,8 @@ import android.util.Log;
 public class SoundPool {
 
     // post event from native code to message handler
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.624 -0500", hash_original_method = "504DAC0A61388EA8148C9F4BC59C64B8", hash_generated_method = "59C5F6AE465FD1C8037D4636411E620C")
     
 private static void postEventFromNative(Object weakRef, int msg, int arg1, int arg2, Object obj)
@@ -197,6 +199,8 @@ public int load(FileDescriptor fd, long offset, long length, int priority) {
         return _load(fd, offset, length, priority);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.558 -0500", hash_original_method = "85C3F47AB710FF718648D7EFD49684BE", hash_generated_method = "6BDD75A4565875E2BBDE88C3E1E09E74")
     
     private final int _load(String uri, int priority){
@@ -206,6 +210,8 @@ public int load(FileDescriptor fd, long offset, long length, int priority) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.562 -0500", hash_original_method = "C8E2F6B503F32805E6B119DE960F5701", hash_generated_method = "3AFCD46812429082330FD5DF02EB7BCC")
     
     private final int _load(FileDescriptor fd, long offset, long length, int priority){
@@ -528,6 +534,8 @@ public EventHandler(SoundPool soundPool, Looper looper) {
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.633 -0500", hash_original_method = "643150117BD11ABB17CD24F5EE247C54", hash_generated_method = "A76E14668CE0F65762CD958CABD4D853")
     
     private final int native_setup(Object weakRef, int maxStreams, int streamType, int srcQuality){

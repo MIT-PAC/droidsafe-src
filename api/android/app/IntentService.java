@@ -140,6 +140,8 @@ public void setIntentRedelivery(boolean enabled) {
      * @param intent The value passed to {@link
      *               android.content.Context#startService(Intent)}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.849 -0500", hash_original_method = "3873E8578EC35B4631BF55BE7B040145", hash_generated_method = "76B2D51F2AC1BE5101F9DFE35DD2D67A")
     
 protected abstract void onHandleIntent(Intent intent);

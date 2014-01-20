@@ -707,6 +707,8 @@ protected void setError() {
         doWrite(new char[] { (char) oneChar }, 0, 1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.602 -0500", hash_original_method = "A7437F4A37204482B8F05D868AC831D8", hash_generated_method = "45DD7E2CBEC3C1BAC560BA8D3552A6CE")
     
 private final void doWrite(char[] buf, int offset, int count) {

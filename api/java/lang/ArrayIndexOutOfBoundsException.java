@@ -14,6 +14,8 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
      * Constructs a new {@code ArrayIndexOutOfBoundsException} that includes the
      * current stack trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.891 -0500", hash_original_method = "2927C5AB3FFF56BF1DCC2EADE5C9261A", hash_generated_method = "65F8B1FA2FF7E4237F7FDCDC7C8B69C0")
     
 public ArrayIndexOutOfBoundsException() {
@@ -54,6 +56,8 @@ public ArrayIndexOutOfBoundsException(String detailMessage) {
      * Used internally for consistent high-quality error reporting.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.899 -0500", hash_original_method = "FD6957908D778700DE2EEE696A8B754C", hash_generated_method = "D118BA6F916221C8B09E2997DCAB4C14")
     
 public ArrayIndexOutOfBoundsException(int sourceLength, int index) {
@@ -64,6 +68,8 @@ public ArrayIndexOutOfBoundsException(int sourceLength, int index) {
      * Used internally for consistent high-quality error reporting.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.902 -0500", hash_original_method = "5D0675654F8D9644AC21F8916F1DF9DD", hash_generated_method = "6DB83B372C9D247F9FDD886D033FB4E8")
     
 public ArrayIndexOutOfBoundsException(int sourceLength, int offset,

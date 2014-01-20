@@ -22,12 +22,8 @@ import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SM;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
 public class ResponseProcessCookies implements HttpResponseInterceptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.884 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
     
@@ -125,6 +121,8 @@ private void processCookies(
     /**
      * Don't log the cookie's value; that's potentially sensitive information.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.896 -0500", hash_original_method = "7F26B81C9250A7120577E4D4C011F353", hash_generated_method = "093A5278708C51FD7AEEA247A5D87A5C")
     
 private String cookieToString(Cookie cookie) {
@@ -136,7 +134,6 @@ private String cookieToString(Cookie cookie) {
                 + ",expiry=" + cookie.getExpiryDate()
                 + "]";
     }
-
     
 }
 

@@ -10,6 +10,8 @@ import droidsafe.helpers.DSUtils;
 
 abstract class ExpatAttributes implements Attributes {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getURI(int pointer, int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(pointer);
@@ -18,6 +20,8 @@ abstract class ExpatAttributes implements Attributes {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getLocalName(int pointer, int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(pointer);
@@ -26,6 +30,8 @@ abstract class ExpatAttributes implements Attributes {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getQName(int pointer, int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(pointer);
@@ -34,6 +40,8 @@ abstract class ExpatAttributes implements Attributes {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getValueByIndex(int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
@@ -41,16 +49,22 @@ abstract class ExpatAttributes implements Attributes {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getIndex(int attributePointer, String uri, String localName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getIndexForQName(int attributePointer, String qName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getValue(int attributePointer, String uri, String localName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
@@ -59,6 +73,8 @@ abstract class ExpatAttributes implements Attributes {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getValueForQName(int attributePointer, String qName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
@@ -69,6 +85,8 @@ abstract class ExpatAttributes implements Attributes {
 
     private static final String CDATA = "CDATA";
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.997 -0400", hash_original_method = "D4DF1C9BC2FF91CA250847447EABC788", hash_generated_method = "D4DF1C9BC2FF91CA250847447EABC788")
     public ExpatAttributes ()
     {
@@ -78,6 +96,8 @@ abstract class ExpatAttributes implements Attributes {
     /**
      * Gets the number of attributes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.259 -0500", hash_original_method = "D4463566A46F2BB30D4DDE68BB591E19", hash_generated_method = "2FC4530CCBAE5C61CB39F40EA394F0C7")
     
 public abstract int getLength();
@@ -86,6 +106,8 @@ public abstract int getLength();
      * Gets the pointer to the parser. We need this so we can get to the
      * interned string pool.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.261 -0500", hash_original_method = "BBDF056B00D4C6DB8963F7C247848525", hash_generated_method = "365B5919512E2F7EE3567ECC55AD66B2")
     
 abstract int getParserPointer();
@@ -94,6 +116,8 @@ abstract int getParserPointer();
      * Gets the pointer to the underlying attribute array. Can be 0 if the
      * length is 0.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.263 -0500", hash_original_method = "E7A6A6BC4A3124D64B54EBF7490342ED", hash_generated_method = "957D6E9B37991F1FE5F343F8CB47FE99")
     
 public abstract int getPointer();

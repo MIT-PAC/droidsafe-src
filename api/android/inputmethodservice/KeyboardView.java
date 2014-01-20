@@ -417,6 +417,8 @@ switch(attr){
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.811 -0400", hash_original_method = "EB7C68519BBD5935E699A038D5D44150", hash_generated_method = "B48049B66BF8F951F384E441F62028D6")
     private void initGestureDetector() {
         mGestureDetector = new GestureDetector(getContext(), new GestureDetector.SimpleOnGestureListener() {        
@@ -694,6 +696,8 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         //dismissPopupKeyboard();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.839 -0400", hash_original_method = "781A450D3FB76D72B6A6868D87C7E6E3", hash_generated_method = "223BF3C711E3AF5E372F106B8C544192")
     private CharSequence adjustCase(CharSequence label) {
         addTaint(label.getTaint());
@@ -744,6 +748,8 @@ CharSequence var057F26F90053C562EFC08298AB91C2B1_45947701 =         label;
         //}
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.845 -0400", hash_original_method = "896596FB10EC8067ADB1D8FA588FB3CE", hash_generated_method = "CB6B30A7695FD03554653930ECF5E080")
     private void computeProximityThreshold(Keyboard keyboard) {
         addTaint(keyboard.getTaint());
@@ -819,6 +825,8 @@ for(int i = 0;i < length;i++)
         //canvas.drawBitmap(mBuffer, 0, 0, null);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.856 -0400", hash_original_method = "96C74DEE432C032C16FED8A3134743B1", hash_generated_method = "782D67B96A64AE57B51FAB00B98600A7")
     private void onBufferDraw() {
         if(mBuffer == null || mKeyboardChanged)        
@@ -937,6 +945,8 @@ for(int i = 0;i < keyCount;i++)
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.866 -0400", hash_original_method = "C473D2B758AAFCD419620D01C48167B2", hash_generated_method = "BF565A8EE941932988FCCA723D0C720E")
     private int getKeyIndices(int x, int y, int[] allKeys) {
         addTaint(allKeys[0]);
@@ -1000,6 +1010,8 @@ for(int c = 0;c < nCodes;c++)
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.872 -0400", hash_original_method = "52A7E92418C73C96342342851CFE760F", hash_generated_method = "66EA3FB640CCA98BE76C80AB1A9A68C3")
     private void detectAndSendKey(int index, int x, int y, long eventTime) {
         addTaint(y);
@@ -1067,6 +1079,8 @@ CharSequence var205FABBFF9568819CAC3C3C1D98F3426_1990994969 =             adjust
         //}
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.878 -0400", hash_original_method = "561BE5D178CD3CF93CA2FD4A1DFD5618", hash_generated_method = "1384ECD5FC4436B355FB412BB4C85278")
     private void showPreview(int keyIndex) {
         int oldKeyIndex = mCurrentKeyIndex;
@@ -1210,6 +1224,8 @@ CharSequence var205FABBFF9568819CAC3C3C1D98F3426_1990994969 =             adjust
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.904 -0400", hash_original_method = "D0CD4F0361B047F25CB522F4E5EFF159", hash_generated_method = "5C70E794E0816DB716C4ADE1BFF1C3C5")
     private void sendAccessibilityEventForUnicodeCharacter(int eventType, int code) {
         addTaint(code);
@@ -1311,6 +1327,8 @@ switch(code){
                 //key.x + key.width + mPaddingLeft, key.y + key.height + mPaddingTop);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.913 -0400", hash_original_method = "841EEC9CDBD0499FCF82CCA315D0D684", hash_generated_method = "6FB28206CFFD447FAA23A76C88870DC6")
     private boolean openPopupIfRequired(MotionEvent me) {
         addTaint(me.getTaint());
@@ -1555,6 +1573,8 @@ switch(action){
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.966 -0400", hash_original_method = "9A66FA1609D53EFA58150B8A0FCB8ECB", hash_generated_method = "71A0593054DFE2EFD8625BF60B194E14")
     private boolean onModifiedTouchEvent(MotionEvent me, boolean possiblePoly) {
         int touchX = (int) me.getX() - mPaddingLeft;
@@ -1714,6 +1734,8 @@ switch(action){
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.971 -0400", hash_original_method = "1824B07D0D1DC18D1C7F955965AE03DE", hash_generated_method = "1AC2977B02DE860E7FCD6489165C7749")
     private boolean repeatKey() {
         Key key = mKeys[mRepeatKeyIndex];
@@ -1777,6 +1799,8 @@ switch(action){
         //mMiniKeyboardCache.clear();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.977 -0400", hash_original_method = "661EA634037C92A538704E54EC4A3BC8", hash_generated_method = "0EA65AC3B065DBCA0F9A546F8F02DCAA")
     private void removeMessages() {
         mHandler.removeMessages(MSG_REPEAT);
@@ -1799,6 +1823,8 @@ switch(action){
         //closing();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.980 -0400", hash_original_method = "37A5173B1277346D2A06873E9E98265E", hash_generated_method = "9496DD948A554A0C105F7D3BD0C0F717")
     private void dismissPopupKeyboard() {
         if(mPopupKeyboard.isShowing())        
@@ -1835,6 +1861,8 @@ switch(action){
         //return false;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.984 -0400", hash_original_method = "B7FA68F3C9665AB1B34A8D3EB9A4B77C", hash_generated_method = "EAD2309AFEC83CE70B5554355405C08B")
     private void resetMultiTap() {
         mLastSentIndex = NOT_A_KEY;
@@ -1848,6 +1876,8 @@ switch(action){
         //mInMultiTap = false;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.987 -0400", hash_original_method = "E40865BB0F35C5555FD5AC7537827099", hash_generated_method = "C9B452B942C387ED0EA6B017A3DE7459")
     private void checkMultiTap(long eventTime, int keyIndex) {
         addTaint(keyIndex);
@@ -1910,6 +1940,8 @@ switch(action){
 
         float mXVelocity;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.991 -0400", hash_original_method = "B4C366B58C868F9BC83E6F215F55A14E", hash_generated_method = "B4C366B58C868F9BC83E6F215F55A14E")
         public SwipeTracker ()
         {
@@ -1944,6 +1976,8 @@ for(int i=0;i<N;i++)
             //addPoint(ev.getX(), ev.getY(), time);
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.998 -0400", hash_original_method = "10CA611D62B6CE89EF867344E70F5656", hash_generated_method = "A18366D5D589C3688BDF46FD62468511")
         private void addPoint(float x, float y, long time) {
             addTaint(time);

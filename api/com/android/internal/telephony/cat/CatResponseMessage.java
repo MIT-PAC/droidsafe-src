@@ -61,7 +61,9 @@ public void setConfirmation(boolean confirm) {
             usersConfirm = confirm;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.414 -0500", hash_original_method = "09210AE6CE37D89E5644571273FE7BA3", hash_generated_method = "09210AE6CE37D89E5644571273FE7BA3")
     
 CommandDetails getCmdDetails() {

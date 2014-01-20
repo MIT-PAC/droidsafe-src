@@ -147,6 +147,8 @@ public void dispose() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.499 -0500", hash_original_method = "CBDD17965584D059356B67C204E0599E", hash_generated_method = "59DB1211363D99AB5450D719CF1C9B6E")
     
 private void createWakelock() {
@@ -159,6 +161,8 @@ private void createWakelock() {
      * Called when SIM_FULL message is received from the RIL.  Notifies interested
      * parties that SIM storage for SMS messages is full.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.501 -0500", hash_original_method = "A1AEC8C81078600BF66207F442C7D632", hash_generated_method = "7E0FF3D59263946E3DA08FAE6D77851D")
     
 private void handleIccFull() {

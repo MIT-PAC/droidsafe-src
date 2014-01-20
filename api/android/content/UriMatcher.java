@@ -55,6 +55,8 @@ public UriMatcher(int code)
         mText = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.368 -0500", hash_original_method = "02B7CF0C93AE1B23BA80DE9D9DFF6FFA", hash_generated_method = "90645CB24FE85FAD3970D879680827F5")
     
 private UriMatcher()

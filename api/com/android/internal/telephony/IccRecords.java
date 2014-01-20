@@ -99,10 +99,14 @@ public IccRecords(PhoneBase p) {
     /**
      * Call when the IccRecords object is no longer going to be used.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.969 -0500", hash_original_method = "05AD4FCF8399ECA695874E7F9126B120", hash_generated_method = "3A65586585D1609461086331A61384A4")
     
 public abstract void dispose();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.971 -0500", hash_original_method = "758F039A900656878509DDA234D7AEB8", hash_generated_method = "6BEE21FF2E8E14B94D8570914FC779E5")
     
 protected abstract void onRadioOffOrNotAvailable();
@@ -234,6 +238,8 @@ public String getServiceProviderName() {
      *        ((AsyncResult)onComplete.obj).exception == null on success
      *        ((AsyncResult)onComplete.obj).exception != null on fail
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.994 -0500", hash_original_method = "B638882B098C0F8D29E9D1ED501CAF0A", hash_generated_method = "1CA2E9F1D5405A39710B0CFD2EC97F44")
     
 public abstract void setVoiceMailNumber(String alphaTag, String voiceNumber,
@@ -253,6 +259,8 @@ public String getVoiceMailAlphaTag() {
      *                     -1 to indicate that an unknown number of
      *                      messages are waiting
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.999 -0500", hash_original_method = "1C930D2082A0CD4DAC835AD954B87B66", hash_generated_method = "5E6412F071B6EE5A7D26588BA641BAC1")
     
 public abstract void setVoiceMessageWaiting(int line, int countWaiting);
@@ -282,6 +290,8 @@ public int getVoiceMessageCount() {
      * @param fileChanged indicates whether any files changed
      * @param fileList if non-null, a list of EF files that changed
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.007 -0500", hash_original_method = "1A8BE3F2EEDF2F450368A84B6C569597", hash_generated_method = "53C1D839F8D4BF79B9779AC211E0821C")
     
 public abstract void onRefresh(boolean fileChanged, int[] fileList);
@@ -328,10 +338,14 @@ public boolean getRecordsLoaded() {
         }
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.015 -0500", hash_original_method = "320A9A80BB80D8452D8F2FFF6B74E1B3", hash_generated_method = "7FCE748796CD970A45612A80C286E1FA")
     
 protected abstract void onRecordLoaded();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.017 -0500", hash_original_method = "CDD7963A7A43DF2856E69DF8940397D9", hash_generated_method = "9B8169421B1B38FADA767FBE0A7C7204")
     
 protected abstract void onAllRecordsLoaded();
@@ -344,6 +358,8 @@ protected abstract void onAllRecordsLoaded();
      * If the SPN is not found on the SIM, the rule is always PLMN_ONLY.
      * Generally used for GSM/UMTS and the like SIMs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.019 -0500", hash_original_method = "D7880C6FFFC18637BE120D07ABC14C2D", hash_generated_method = "4A0B68BE784AF4A1FDC256565D467950")
     
 public abstract int getDisplayRule(String plmn);
@@ -418,6 +434,8 @@ public boolean isProvisioned () {
      *
      * @param s is the string to write
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.033 -0500", hash_original_method = "48DBEBE9679DD6022C78E9B6D9D15841", hash_generated_method = "43827D28600B8F0847D532E80E30A990")
     
 protected abstract void log(String s);
@@ -427,6 +445,8 @@ protected abstract void log(String s);
      *
      * @param s is the string to write
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.035 -0500", hash_original_method = "8503C48BD28DECE909202E8D31B4BECE", hash_generated_method = "98998146AAEFC08A350487078A6888FB")
     
 protected abstract void loge(String s);

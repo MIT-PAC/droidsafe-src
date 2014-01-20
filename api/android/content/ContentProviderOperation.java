@@ -137,6 +137,8 @@ private ContentProviderOperation(Builder builder) {
         mYieldAllowed = builder.mYieldAllowed;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.119 -0500", hash_original_method = "9004240102FD3717D6F1BEB293484741", hash_generated_method = "5183199B690BF8BA82CA8926897337E3")
     
 private ContentProviderOperation(Parcel source) {
@@ -273,6 +275,8 @@ public boolean isReadOperation() {
         private boolean mYieldAllowed;
 
         /** Create a {@link Builder} of a given type. The uri must not be null. */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.188 -0500", hash_original_method = "E4683F1EC70220B8EE12920060472DE0", hash_generated_method = "E7D3BD97D7A274DC2B07355C00558C30")
         
 private Builder(int type, Uri uri) {
@@ -284,8 +288,8 @@ private Builder(int type, Uri uri) {
         }
 
         /** Create a ContentProviderOperation from this {@link Builder}. */
-        @DSComment("only building the operation, no action")
-        @DSSafe(DSCat.UTIL_FUNCTION)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.191 -0500", hash_original_method = "52DF5CD1F3EDB944F65D1FF1857828C4", hash_generated_method = "81B910F5CAF6435070D9D9A1339D1692")
         
 public ContentProviderOperation build() {
@@ -656,6 +660,8 @@ public String[] resolveSelectionArgsBackReferences(
      * the numBackRefs
      * @return the string representation of the requested back reference.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.155 -0500", hash_original_method = "4E134EAC713EA4116B151015A8D49950", hash_generated_method = "1A2047A58DB966745764F4E01AEDCBEC")
     
 private long backRefToValue(ContentProviderResult[] backRefs, int numBackRefs,

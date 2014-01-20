@@ -75,6 +75,8 @@ public ProviderInfo(ProviderInfo orig) {
         isSyncable = orig.isSyncable;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.954 -0500", hash_original_method = "CB7E407C3FF25BE7AFF90A1406ACF604", hash_generated_method = "9D052A8D6EA726EACB4803C8DD714358")
     
 private ProviderInfo(Parcel in) {

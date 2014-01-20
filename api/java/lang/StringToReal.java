@@ -9,14 +9,20 @@ import droidsafe.helpers.DSUtils;
 
 final class StringToReal {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static double parseDblImpl(String s, int e) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static float parseFltImpl(String s, int e) {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.958 -0500", hash_original_method = "A702FCC630766BC818EED71038E1F86B", hash_generated_method = "9CB60A6EB8F810F62B75FEF194266678")
     
 private static NumberFormatException invalidReal(String s, boolean isDouble) {
@@ -168,6 +174,8 @@ private static StringExponentPair initialParse(String s, int length, boolean isD
     }
 
     // Parses "+Nan", "NaN", "-Nan", "+Infinity", "Infinity", and "-Infinity", case-insensitively.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.967 -0500", hash_original_method = "C3B0EB4C3A7AB8C70DFA65D2731C2433", hash_generated_method = "9B518F4A12033630F3E4F76CC37006FD")
     
 private static float parseName(String name, boolean isDouble) {
@@ -280,6 +288,8 @@ public static float parseFloat(String s) {
         return info.negative ? -result : result;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.327 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
     public StringToReal ()
     {
@@ -303,6 +313,8 @@ public static float parseFloat(String s) {
 
         boolean zero;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {

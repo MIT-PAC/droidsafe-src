@@ -220,6 +220,8 @@ protected byte[] makeSmsRecordData(int status, byte[] pdu) {
         return data;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.964 -0500", hash_original_method = "1B0CB576F4EF5F2EF28DA50D10DF2025", hash_generated_method = "4B0D139DF3381DCA5257214505F38057")
     
 protected abstract void log(String msg);

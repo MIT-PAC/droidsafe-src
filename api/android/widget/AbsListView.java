@@ -39,6 +39,8 @@ import android.view.inputmethod.InputConnectionWrapper;
 
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static int getDistance(Rect source, Rect dest, int direction){
 		// Original method
@@ -46,6 +48,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		return 0;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static View retrieveFromScrap(ArrayList<View> scrapViews, int position){
 		// Original method
 		/*
@@ -463,6 +467,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void initAbsListView(){
 		// Original method
 		/*
@@ -694,6 +700,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean contentFits(){
 		// Original method
 		/*
@@ -844,6 +852,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void invokeOnItemScrollListener(){
 		// Original method
 		/*
@@ -947,6 +957,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void useDefaultSelector(){
 		// Original method
 		/*
@@ -983,6 +995,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void requestLayoutIfNecessary(){
 		// Original method
 		/*
@@ -1010,6 +1024,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean acceptFilter(){
 		// Original method
 		/*
@@ -1090,6 +1106,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void resetList(){
 		// Original method
 		/*
@@ -1269,6 +1287,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 protected void layoutChildren() {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void updateScrollIndicators(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1338,6 +1358,8 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View obtainView(int position, boolean[] isScrap){
 		// Original method
@@ -1345,12 +1367,16 @@ protected void layoutChildren() {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void positionSelector(int position, View sel){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void positionSelector(int l, int t, int r, int b){
 		// Original method
 		/*
@@ -1439,6 +1465,8 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean touchModeDrawsInPressedState(){
 		// Original method
 		/*
@@ -1455,6 +1483,8 @@ protected void layoutChildren() {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean shouldShowSelector(){
 		// Original method
 		/*
@@ -1465,6 +1495,8 @@ protected void layoutChildren() {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void drawSelector(Canvas canvas){
 		// Original method
 		/*
@@ -1542,6 +1574,8 @@ public Drawable getSelector() {
         return mSelector;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void keyPressed(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1555,6 +1589,8 @@ public void setScrollIndicators(View up, View down) {
         mScrollDown = down;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void updateSelectorState(){
 		// Original method
 		/*
@@ -1805,12 +1841,16 @@ public void setScrollIndicators(View up, View down) {
 		return 0;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean startScrollIfNeeded(int y){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void scrollIfNeeded(int y){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1893,6 +1933,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void initOrResetVelocityTracker(){
 		// Original method
 		/*
@@ -1907,6 +1949,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void initVelocityTrackerIfNotExists(){
 		// Original method
 		/*
@@ -1919,6 +1963,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void recycleVelocityTracker(){
 		// Original method
 		/*
@@ -1951,6 +1997,8 @@ public void setScrollIndicators(View up, View down) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void onSecondaryPointerUp(MotionEvent ev){
 		// Original method
 		/*
@@ -1992,6 +2040,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void reportScrollStateChange(int newState){
 		// Original method
 		/*
@@ -2091,12 +2141,16 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void smoothScrollByOffset(int position){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void createScrollingCache(){
 		// Original method
 		/*
@@ -2111,6 +2165,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void clearScrollingCache(){
 		// Original method
 		/*
@@ -2137,6 +2193,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean trackMotionScroll(int deltaY, int incrementalDeltaY){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2149,6 +2207,8 @@ public void setScrollIndicators(View up, View down) {
      *
      * @return The number of header views, 0 in the default implementation.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.563 -0500", hash_original_method = "D1E5D38495D64541AC6B328A03DDBBE5", hash_generated_method = "D1E5D38495D64541AC6B328A03DDBBE5")
     
@@ -2162,6 +2222,8 @@ int getHeaderViewsCount() {
      *
      * @return The number of footer views, 0 in the default implementation.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.565 -0500", hash_original_method = "0C261F26A2F08E82991D35E703E8BFEF", hash_generated_method = "0C261F26A2F08E82991D35E703E8BFEF")
     
@@ -2177,10 +2239,14 @@ int getFooterViewsCount() {
      *
      * @param down true if the scroll is going down, false if it is going up
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.567 -0500", hash_original_method = "1A0DD5CAE49B88D0010F0706FE7E6BFB", hash_generated_method = "4064B847A8B2BD327A779F8685BB2922")
     
 abstract void fillGap(boolean down);
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void hideSelector(){
 		// Original method
 		/*
@@ -2201,6 +2267,8 @@ abstract void fillGap(boolean down);
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     int reconcileSelectedPosition(){
 		return getTaintInt();
 		// Original method
@@ -2223,10 +2291,14 @@ abstract void fillGap(boolean down);
      * @param y Where the user touched
      * @return The position of the first (or only) item in the row containing y
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.574 -0500", hash_original_method = "E46451AE22F0145DA5E4FBD96B5A06AA", hash_generated_method = "5B8E607A1EC9D001D7764A42BE7A1A5C")
     
 abstract int findMotionRow(int y);
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int findClosestMotionRow(int y){
 		// Original method
@@ -2258,6 +2330,8 @@ abstract int findMotionRow(int y);
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean resurrectSelectionIfNeeded(){
 		// Original method
 		/*
@@ -2277,16 +2351,22 @@ abstract int findMotionRow(int y);
      *
      * @param position the position of the new selection
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.582 -0500", hash_original_method = "298D17F915674885198799233E52EA39", hash_generated_method = "BA596FCCA75DD0D797589AC9E6CEBC56")
     
 abstract void setSelectionInt(int position);
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean resurrectSelection(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void confirmCheckedPositionsById(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2322,6 +2402,8 @@ abstract void setSelectionInt(int position);
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void dismissPopup(){
 		// Original method
 		/*
@@ -2334,6 +2416,8 @@ abstract void setSelectionInt(int position);
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void showPopup(){
 		// Original method
 		/*
@@ -2395,12 +2479,16 @@ abstract void setSelectionInt(int position);
         /**
          * Constructor called from {@link AbsListView#onSaveInstanceState()}
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.174 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
         
 SavedState(Parcelable superState) {
             super(superState);
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         private SavedState(Parcel in){
 			super(in);
 			/*
@@ -2666,6 +2754,8 @@ FlingRunnable() {
             mScroller = new OverScroller(getContext());
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void start(int initialVelocity){
 			// Original method
 			/*
@@ -2690,6 +2780,8 @@ FlingRunnable() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void startSpringback(){
 			// Original method
 			/*
@@ -2707,6 +2799,8 @@ FlingRunnable() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void startOverfling(int initialVelocity){
 			// Original method
 			/*
@@ -2721,12 +2815,16 @@ FlingRunnable() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void edgeReached(int delta){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void startScroll(int distance, int duration){
 			// Original method
 			/*
@@ -2741,6 +2839,8 @@ FlingRunnable() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void endFling(){
 			// Original method
 			/*
@@ -2760,6 +2860,8 @@ FlingRunnable() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void flywheelTouch(){
 			// Original method
 			/*
@@ -2824,6 +2926,8 @@ PositionScroller() {
             mExtraScroll = ViewConfiguration.get(mContext).getScaledFadingEdgeLength();
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void start(int position){
 			addTaint(position);
 			mTargetPos = position;  //Preserved
@@ -2832,6 +2936,8 @@ PositionScroller() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void start(int position, int boundPosition){
 			addTaint(position);
@@ -2843,6 +2949,8 @@ PositionScroller() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void startWithOffset(int position, int offset){
 			// Original method
@@ -2854,6 +2962,8 @@ PositionScroller() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void startWithOffset(int position, int offset, int duration){
 			addTaint(position);
 			mTargetPos = position;  //Preserved
@@ -2864,6 +2974,8 @@ PositionScroller() {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void stop(){
 			// Original method
 			/*
@@ -3134,6 +3246,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			return false;
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void clear(){
 			// Original method
 			/*
@@ -3159,6 +3273,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void fillActiveViews(int childCount, int firstActivePosition){
 			addTaint(firstActivePosition);
 			mFirstActivePosition = firstActivePosition;  //Preserved
@@ -3182,6 +3298,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getActiveView(int position){
 			// Original method
@@ -3200,6 +3318,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			return null;
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getScrapView(int position){
 			// Original method
@@ -3219,6 +3339,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			return null;
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void addScrapView(View scrap, int position){
 			// Original method
@@ -3226,12 +3348,16 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void scrapActiveViews(){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         private void pruneScrapViews(){
 			// Original method
 			/*
@@ -3253,6 +3379,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         void reclaimScrapViews(List<View> views){
 			// Original method
 			/*
@@ -3272,6 +3400,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void setCacheColorHint(int color){
 			// Original method
@@ -3311,6 +3441,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         void onMovedToScrapHeap(View view);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void positionPopup(){
 		// Original method
 		/*
@@ -3340,6 +3472,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 		*/
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean sendToTextFilter(int keyCode, int count, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3362,6 +3496,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void createTextFilter(boolean animateEntrance){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3576,6 +3712,8 @@ public void afterTextChanged(Editable s) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean checkScrap(ArrayList<View> scrap){
 		// Original method
 		/*
@@ -3602,6 +3740,8 @@ public void afterTextChanged(Editable s) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void finishGlows(){
 		// Original method
 		/*

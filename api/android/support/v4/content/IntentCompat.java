@@ -210,6 +210,8 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
 
     public static final int FLAG_ACTIVITY_CLEAR_TASK = 0x00008000;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.523 -0500", hash_original_method = "83FA4EBC7BDF0C9600DF4B8A1228BD78", hash_generated_method = "88640CF7E61565B7DF98CA749CEE2E71")
     
 private IntentCompat() {

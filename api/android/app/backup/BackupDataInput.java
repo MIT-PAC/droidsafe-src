@@ -11,10 +11,14 @@ import droidsafe.helpers.DSUtils;
 
 public class BackupDataInput {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void dtor(int mBackupReader) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.887 -0500", hash_original_field = "EDA18C2AC17158AC38AD184085CE67B9", hash_generated_field = "EDA18C2AC17158AC38AD184085CE67B9")
@@ -178,6 +182,8 @@ public void skipEntityData() throws IOException {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.933 -0500", hash_original_method = "F563013799B99B7F96D96C08DD61A38F", hash_generated_method = "6DBF246326CF816325CD3E3CF7B4B7EF")
     
     private int readEntityData_native(int mBackupReader, byte[] data, int offset, int size){
@@ -189,6 +195,8 @@ public void skipEntityData() throws IOException {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.937 -0500", hash_original_method = "13C96EB578BECC22D2FF8487AD4702B6", hash_generated_method = "059C8CBE1AA90B948C011431FA8DE540")
     
     private int skipEntityData_native(int mBackupReader){
@@ -205,6 +213,8 @@ public void skipEntityData() throws IOException {
 
         int dataSize;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.173 -0400", hash_original_method = "0CA45CB3FD81751EFF77E1E1D96ACA74", hash_generated_method = "0CA45CB3FD81751EFF77E1E1D96ACA74")
         public EntityHeader ()
         {

@@ -17,11 +17,6 @@ import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.math.ec.ECCurve;
 
-
-
-
-
-
 public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:26.113 -0500", hash_original_field = "704A3581F062D90BBFC67E94998B89B2", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
 
@@ -113,6 +108,8 @@ public X9Curve(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:26.130 -0500", hash_original_method = "D736F484B6800931FE72576618335766", hash_generated_method = "1A32C094D829DEFAC0CC93FF64E4A180")
     
 private void setFieldIdentifier()
@@ -180,7 +177,6 @@ public DERObject toASN1Object()
 
         return new DERSequence(v);
     }
-
     
 }
 

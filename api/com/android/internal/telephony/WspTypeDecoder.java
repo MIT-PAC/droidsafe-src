@@ -340,6 +340,8 @@ public boolean decodeContentType(int startIndex) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.592 -0500", hash_original_method = "C75EA04BE4FCD731CE2D1E2104C2BFC7", hash_generated_method = "8FFE0978AA2F6BF0B07EB701B20A6D97")
     
 private boolean readContentParameters(int startIndex, int leftToRead, int accumulator) {
@@ -416,6 +418,8 @@ private boolean readContentParameters(int startIndex, int leftToRead, int accumu
      *
      * @return true if and only if the next byte is 0x00
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.595 -0500", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "DD6AFDA8080022B03F0CD64EB972EE57")
     
 private boolean decodeNoValue(int startIndex) {
@@ -432,6 +436,8 @@ private boolean decodeNoValue(int startIndex) {
      *
      * Sets unsigned32bit to -1 if stringValue is already populated
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.598 -0500", hash_original_method = "CE7AFD5926883ED0297E0E8EC7A7D731", hash_generated_method = "39DC581202F3DDC089AFACD3A40F9668")
     
 private void expandWellKnownMimeType() {

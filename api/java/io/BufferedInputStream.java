@@ -85,6 +85,8 @@ public BufferedInputStream(InputStream in, int size) {
         return count - pos + localIn.available();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.159 -0500", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "492C714F78E5F2332BAF645DCF0D7765")
     
 private IOException streamClosed() throws IOException {
@@ -112,6 +114,8 @@ private IOException streamClosed() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.165 -0500", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "1E32DD52A6A22E317CE9B897937C2FA6")
     
 private int fillbuf(InputStream localIn, byte[] localBuf)

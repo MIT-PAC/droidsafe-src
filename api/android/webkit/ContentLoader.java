@@ -8,13 +8,8 @@ import android.net.Uri;
 import android.net.http.EventHandler;
 import android.net.http.Headers;
 
-
-
-
-
 class ContentLoader extends StreamLoader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.414 -0500", hash_original_field = "CA88DB4A75B79130313A74537195706C", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
-
 
     private String mUrl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.417 -0500", hash_original_field = "608DAE159C1CB591E99EAE76FAB7334E", hash_generated_field = "1F620CC4F21CDF80833E6AB697F4F4F7")
@@ -28,6 +23,8 @@ class ContentLoader extends StreamLoader {
      *               is the same url passed in to the WebView.
      * @param loadListener LoadListener to pass the content to
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.419 -0500", hash_original_method = "F3A29FB813CE2FB46A21E47C37FE57A3", hash_generated_method = "F42B6025FAEC26BD9B34DF75EE222DD4")
     
 ContentLoader(String rawUrl, LoadListener loadListener) {
@@ -44,6 +41,8 @@ ContentLoader(String rawUrl, LoadListener loadListener) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.421 -0500", hash_original_method = "3AAB3C35B7568FF6188E6678FD0DC16D", hash_generated_method = "F10BA01B00D1000CE40F9872C037312B")
     
 private String errString(Exception ex) {
@@ -95,7 +94,6 @@ private String errString(Exception ex) {
         // content can change, we don't want WebKit to cache it
         headers.setCacheControl("no-store, no-cache");
     }
-
     
 }
 

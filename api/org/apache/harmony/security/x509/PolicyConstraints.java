@@ -78,6 +78,8 @@ public PolicyConstraints(byte[] encoding) throws IOException {
         this.inhibitPolicyMapping = pc.inhibitPolicyMapping;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.196 -0500", hash_original_method = "8B4F6C3FF9A61E2FC4F0FDE77894DD6A", hash_generated_method = "989DD5D06AE458F3DEF0AC88CC70C504")
     
 private PolicyConstraints(BigInteger requireExplicitPolicy,

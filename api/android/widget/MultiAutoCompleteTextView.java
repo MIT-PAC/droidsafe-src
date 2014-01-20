@@ -12,10 +12,6 @@ import android.text.TextUtils;
 import android.text.method.QwertyKeyListener;
 import android.util.AttributeSet;
 
-
-
-
-
 public class MultiAutoCompleteTextView extends AutoCompleteTextView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.616 -0500", hash_original_field = "782DFD3BFEBE1EC21FE0DFA4A07ABD54", hash_generated_field = "DC05FA21DC7A9D97C12BF9C7B68E4314")
 
@@ -39,7 +35,9 @@ public MultiAutoCompleteTextView(Context context, AttributeSet attrs, int defSty
         super(context, attrs, defStyle);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.625 -0500", hash_original_method = "BCA16A32890B669BA239C7F8E91B803C", hash_generated_method = "BCA16A32890B669BA239C7F8E91B803C")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.625 -0500", hash_original_method = "BCA16A32890B669BA239C7F8E91B803C", hash_generated_method = "BCA16A32890B669BA239C7F8E91B803C")
     
 void finishInit() { }
 
@@ -178,7 +176,6 @@ protected void performFiltering(CharSequence text, int start, int end,
         QwertyKeyListener.markAsReplaced(editable, start, end, original);
         editable.replace(start, end, mTokenizer.terminateToken(text));
     }
-
     
     public static class CommaTokenizer implements Tokenizer {
         
@@ -241,19 +238,14 @@ public CharSequence terminateToken(CharSequence text) {
                 }
             }
         }
-
         
     }
-
-
     
     public static interface Tokenizer {
         
         public int findTokenStart(CharSequence text, int cursor);
-
         
         public int findTokenEnd(CharSequence text, int cursor);
-
         
         public CharSequence terminateToken(CharSequence text);
     }

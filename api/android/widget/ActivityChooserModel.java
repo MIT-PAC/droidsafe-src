@@ -170,6 +170,8 @@ public static ActivityChooserModel get(Context context, String historyFileName) 
      * @param context Context for loading resources.
      * @param historyFileName The history XML file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.076 -0500", hash_original_method = "807F9125D161268ACCBF934F5F44F95B", hash_generated_method = "4CC55F0D537F3401E12EDEB6D58A8114")
     
 private ActivityChooserModel(Context context, String historyFileName) {
@@ -866,6 +868,8 @@ public void setDefaultActivity(int index) {
      *       data is read until this method is invoked.
      * <p>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.100 -0500", hash_original_method = "79A1B7D3C52D92BAB878ED8275782ED6", hash_generated_method = "FBF069AAA9C160930BF6F2545425DB0D")
     
 private void readHistoricalData() {
@@ -890,6 +894,8 @@ private void readHistoricalData() {
      * @throws IllegalStateException If this method is called before a call to
      *         {@link #readHistoricalData()}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.102 -0500", hash_original_method = "50EE1C88911FEE4E5E828FE89316C1B7", hash_generated_method = "F2A2234770B767080FFE4C421AD30B9D")
     
 private void persistHistoricalData() {
@@ -933,6 +939,8 @@ public void setActivitySorter(ActivitySorter activitySorter) {
      *
      * @see #setActivitySorter(ActivitySorter)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.108 -0500", hash_original_method = "B440CA3B13B34DB5E9312802F4C1443D", hash_generated_method = "343228E589EF52FEFBDD6415F0B1CDAE")
     
 private void sortActivities() {
@@ -1031,6 +1039,8 @@ private boolean addHisoricalRecord(HistoricalRecord historicalRecord) {
     /**
      * Prunes older excessive records to guarantee {@link #mHistoryMaxSize}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.121 -0500", hash_original_method = "84DEA752877B716573664E1E2DB7F950", hash_generated_method = "87E0749EC6EB8C064C1EC8153137CC1C")
     
 private void pruneExcessiveHistoricalRecordsLocked() {
@@ -1051,6 +1061,8 @@ private void pruneExcessiveHistoricalRecordsLocked() {
     /**
      * Loads the activities.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.124 -0500", hash_original_method = "CE097995E3DDE01957F3BEF111DCC08A", hash_generated_method = "B58F04823BB23908BF298601986A7658")
     
 private void loadActivitiesLocked() {
@@ -1074,6 +1086,8 @@ private void loadActivitiesLocked() {
      *
      * @param packageName The name of the package that goes away.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.126 -0500", hash_original_method = "A58F8162E2D66FE48738B2459230A97A", hash_generated_method = "44AA757C179E2890376F71A67063914D")
     
 private void pruneHistoricalRecordsForPackageLocked(String packageName) {

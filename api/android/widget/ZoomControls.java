@@ -89,6 +89,8 @@ public void hide() {
         fade(View.GONE, 1.0f, 0.0f);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.797 -0500", hash_original_method = "9BED0A47A1FCF93930F77C8CDDC09D0D", hash_generated_method = "5E0237000E83E41CCCE02FCD67078FC1")
     
 private void fade(int visibility, float startAlpha, float endAlpha) {

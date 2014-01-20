@@ -73,6 +73,8 @@ public static int getNumActiveCursorsFinalized() {
         return sNumActiveCursorsFinalized;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.712 -0500", hash_original_method = "C4B2F04DB714E228A5907EB20DE16B65", hash_generated_method = "589534524DF61D665FCF724F205A9025")
     
 static synchronized void notifyActiveCursorFinalized() {

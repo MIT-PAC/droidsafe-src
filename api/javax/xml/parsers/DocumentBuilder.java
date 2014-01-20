@@ -183,6 +183,8 @@ public Document parse(File f) throws SAXException, IOException {
      * @return A new DOM Document object.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.107 -0500", hash_original_method = "34848998765D4A28285495E765F5578C", hash_generated_method = "3378BF159BC7F100B945A22A43DFCD5F")
     
 public abstract Document parse(InputSource is)
@@ -196,6 +198,8 @@ public abstract Document parse(InputSource is)
      *         namespaces; false otherwise.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.109 -0500", hash_original_method = "0C20300A9407A97F92B793E805D98086", hash_generated_method = "C069C8335C3E94893ADF95CE4452F34C")
     
 public abstract boolean isNamespaceAware();
@@ -208,6 +212,8 @@ public abstract boolean isNamespaceAware();
      *         XML documents; false otherwise.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.112 -0500", hash_original_method = "B128693C9551D41070A4A0D64F8C0627", hash_generated_method = "89D797F47244E86E3C28FB7197668A45")
     
 public abstract boolean isValidating();
@@ -223,6 +229,8 @@ public abstract boolean isValidating();
      *           present in the XML document to be parsed.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.114 -0500", hash_original_method = "1CC9636D2AC6AC959BBC778E61CA8DF6", hash_generated_method = "769949358DFB300D7ACAAF6C7224E44F")
     
 public abstract void setEntityResolver(EntityResolver er);
@@ -236,6 +244,8 @@ public abstract void setEntityResolver(EntityResolver er);
      * @param eh The <code>ErrorHandler</code> to be used by the parser.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.116 -0500", hash_original_method = "B60831D7C2F41C83EDF30B69ED2E25B6", hash_generated_method = "B179A571E00CDB3760A26762C521A028")
     
 public abstract void setErrorHandler(ErrorHandler eh);
@@ -247,6 +257,8 @@ public abstract void setErrorHandler(ErrorHandler eh);
      * @return A new instance of a DOM Document object.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.119 -0500", hash_original_method = "53C13FA54B20168A8C4E72F2E7F90DDD", hash_generated_method = "550BA59ED5400AA25A091E985E307EFF")
     
 public abstract Document newDocument();
@@ -257,6 +269,8 @@ public abstract Document newDocument();
      * @return A new instance of a <code>DOMImplementation</code>.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.121 -0500", hash_original_method = "02B1A67F0E725EA787B7E8D701D27373", hash_generated_method = "3CDB6E7F1CE404F67D3F85AF23794147")
     
 public abstract DOMImplementation getDOMImplementation();

@@ -62,14 +62,18 @@ public static synchronized PhoneNumberOfflineGeocoder getInstance() {
   private Map<String, AreaCodeMap> availablePhonePrefixMaps = new HashMap<String, AreaCodeMap>();
 
   // @VisibleForTesting
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.396 -0500", hash_original_method = "22A2DBF8A31EE9DB065525841631FE26", hash_generated_method = "22A2DBF8A31EE9DB065525841631FE26")
+  @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.396 -0500", hash_original_method = "22A2DBF8A31EE9DB065525841631FE26", hash_generated_method = "22A2DBF8A31EE9DB065525841631FE26")
     
 PhoneNumberOfflineGeocoder(String phonePrefixDataDirectory) {
     this.phonePrefixDataDirectory = phonePrefixDataDirectory;
     loadMappingFileProvider();
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.398 -0500", hash_original_method = "E1BB23E7722226D1F2FA0A624B863E50", hash_generated_method = "C90AD66BFB0F3CD6B159C88404A96968")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.398 -0500", hash_original_method = "E1BB23E7722226D1F2FA0A624B863E50", hash_generated_method = "C90AD66BFB0F3CD6B159C88404A96968")
     
 private void loadMappingFileProvider() {
     InputStream source =
@@ -85,7 +89,9 @@ private void loadMappingFileProvider() {
     }
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.401 -0500", hash_original_method = "83306CA98099E8F54D458F6E7B135EF3", hash_generated_method = "E4F232503E3B16A15B2324CC5801DE2F")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.401 -0500", hash_original_method = "83306CA98099E8F54D458F6E7B135EF3", hash_generated_method = "E4F232503E3B16A15B2324CC5801DE2F")
     
 private AreaCodeMap getPhonePrefixDescriptions(
       int countryCallingCode, String language, String script, String region) {
@@ -99,7 +105,9 @@ private AreaCodeMap getPhonePrefixDescriptions(
     return availablePhonePrefixMaps.get(fileName);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.404 -0500", hash_original_method = "2B0DD58A818613E514EB671D31CFE754", hash_generated_method = "E4DD1BE5359D5C4E35805998FC232B2B")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.404 -0500", hash_original_method = "2B0DD58A818613E514EB671D31CFE754", hash_generated_method = "E4DD1BE5359D5C4E35805998FC232B2B")
     
 private void loadAreaCodeMapFromFile(String fileName) {
     InputStream source =
@@ -117,7 +125,9 @@ private void loadAreaCodeMapFromFile(String fileName) {
     }
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.406 -0500", hash_original_method = "A1113EBAB3D0682FE612F1231142344C", hash_generated_method = "AE3245B2725FCEC74728EDFA1A599E40")
+  @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.406 -0500", hash_original_method = "A1113EBAB3D0682FE612F1231142344C", hash_generated_method = "AE3245B2725FCEC74728EDFA1A599E40")
     
 private void close(InputStream in) {
     if (in != null) {

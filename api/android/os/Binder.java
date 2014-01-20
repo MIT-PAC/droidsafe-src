@@ -283,12 +283,16 @@ protected void finalize() throws Throwable {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.185 -0500", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "63B40292B395EEA932919999AB750BE0")
     
     private final void init(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.188 -0500", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "3A9765D4DB060B4FEE0666AA04B388EF")
     
     private final void destroy(){
@@ -296,6 +300,8 @@ protected void finalize() throws Throwable {
     }
 
     // Entry point from android_util_Binder.cpp's onTransact
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.191 -0500", hash_original_method = "F07199776E11DA2675C840AC9A2F2A30", hash_generated_method = "0587CA39AE5CA44638259C157AE9E508")
     
 private boolean execTransact(int code, int dataObj, int replyObj,
@@ -349,6 +355,8 @@ private static final void sendDeathNotice(DeathRecipient recipient) {
 
     private int mOrgue;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.224 -0500", hash_original_method = "6F2DE2B0944C9F00778B80C418D11418", hash_generated_method = "6F2DE2B0944C9F00778B80C418D11418")
     
 BinderProxy() {
@@ -453,6 +461,8 @@ public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.230 -0500", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "3A9765D4DB060B4FEE0666AA04B388EF")
     
     private final void destroy(){

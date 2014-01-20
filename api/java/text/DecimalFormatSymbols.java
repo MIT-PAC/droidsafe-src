@@ -24,6 +24,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
      * @return an instance of {@code DecimalFormatSymbols}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.781 -0500", hash_original_method = "A20804536D1BB58CF64F5D4344E1058E", hash_generated_method = "A0E365D64745B645D76306204BE1E035")
     
@@ -39,6 +41,8 @@ public static DecimalFormatSymbols getInstance() {
      * @throws NullPointerException if {@code locale == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.784 -0500", hash_original_method = "AAE245E8122356AE5E986468622585C0", hash_generated_method = "B356C861F459952B5AA0BDB0997162C9")
     
@@ -55,6 +59,8 @@ public static DecimalFormatSymbols getInstance(Locale locale) {
      * <p>Note that Android does not support user-supplied locale service providers.
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.787 -0500", hash_original_method = "623079C002E398EE5B17BE6978E7428C", hash_generated_method = "01AF92D5F3A729A167059F795E08D11C")
     
@@ -142,6 +148,8 @@ public static Locale[] getAvailableLocales() {
      * and then to get the {@code DecimalFormatSymbols} from that object by
      * calling {@link DecimalFormat#getDecimalFormatSymbols()}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.776 -0500", hash_original_method = "91524EB1B511A6593A9E4C16AA4F2798", hash_generated_method = "18B877D5D8D56D5FF678E24B31018039")
     
 public DecimalFormatSymbols() {
@@ -159,6 +167,8 @@ public DecimalFormatSymbols() {
      * @param locale
      *            the locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.779 -0500", hash_original_method = "0AEA27B26006219100D92BC0021E5648", hash_generated_method = "A0434FD7C814BA7DA2DF56002EC17FE9")
     
 public DecimalFormatSymbols(Locale locale) {
@@ -187,6 +197,8 @@ public DecimalFormatSymbols(Locale locale) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.789 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
     
 @Override
@@ -209,6 +221,8 @@ public DecimalFormatSymbols(Locale locale) {
      *         {@code DecimalFormatSymbols}; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.792 -0500", hash_original_method = "B3296A7E858EAC27CB28889E1F7A56D1", hash_generated_method = "CBF1B05DA5600F535EC27909B797280E")
     
 @Override
@@ -237,6 +251,8 @@ public DecimalFormatSymbols(Locale locale) {
                 zeroDigit == obj.zeroDigit;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.794 -0500", hash_original_method = "A8625956386363E3EFDBA37B24F1F247", hash_generated_method = "8216705CD4CCA28793FEEF710E7CD1DD")
     
 @Override
@@ -274,6 +290,8 @@ public DecimalFormatSymbols(Locale locale) {
      * @see #setCurrency(Currency)
      * @see #setInternationalCurrencySymbol(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.796 -0500", hash_original_method = "595F433D4A540AB9FD57454DFC2D00CA", hash_generated_method = "C108EADF2D86F77DBDD7939A80A9D62E")
     
@@ -286,6 +304,8 @@ public Currency getCurrency() {
      *
      * @return the international currency symbol as string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.799 -0500", hash_original_method = "9A7223B2A10801087A5753E160EB5AD9", hash_generated_method = "76F084A7B15F57C9EFBA142A75D537A6")
     
@@ -298,6 +318,8 @@ public String getInternationalCurrencySymbol() {
      *
      * @return the currency symbol as string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.802 -0500", hash_original_method = "44BA6DF186734A9129EE433C5393A649", hash_generated_method = "70DFB06488352B3435EF25CDCFB10A53")
     
@@ -310,6 +332,8 @@ public String getCurrencySymbol() {
      *
      * @return the decimal separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.804 -0500", hash_original_method = "C908C2BC77C07C5C3074706ADD440EBB", hash_generated_method = "E0DBE9B544DF8DC659ED0BE34920CF24")
     
@@ -323,6 +347,8 @@ public char getDecimalSeparator() {
      *
      * @return the digit pattern character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.807 -0500", hash_original_method = "4E80424FBB82914FDC63C744E843DFA5", hash_generated_method = "C49B1F0A349E4E8C7B596F16DD88DA0D")
     
@@ -335,6 +361,8 @@ public char getDigit() {
      *
      * @return the thousands separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.809 -0500", hash_original_method = "0D8DAB63E4E740341CDDC10B95F6771D", hash_generated_method = "DEF4D752D3653A40ABE08847F5944803")
     
@@ -347,6 +375,8 @@ public char getGroupingSeparator() {
      *
      * @return the infinity symbol as a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.811 -0500", hash_original_method = "195513F858098AF1B8C98F122DD853CE", hash_generated_method = "27AB5D9A5F597EF9618F1A7FEBBBBB87")
     
@@ -359,6 +389,8 @@ public String getInfinity() {
      *
      * @return the minus sign as a character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.813 -0500", hash_original_method = "B02DD985FFD3C706D5501C97C0FC9E68", hash_generated_method = "894B9783BEFD2D11F1FCB9633D1EB03A")
     
@@ -372,6 +404,8 @@ public char getMinusSign() {
      *
      * @return the monetary decimal point as a character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.816 -0500", hash_original_method = "C02AEBD6916CB8991D4B6D1CCA4BA867", hash_generated_method = "40FC08D0C79CF6C8B7891E6A23FBF834")
     
@@ -384,6 +418,8 @@ public char getMonetaryDecimalSeparator() {
      *
      * @return the symbol NaN as a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.818 -0500", hash_original_method = "A7A5B5565C9E586C08E861055D3F830D", hash_generated_method = "50D88620192950A49432BD9A7F4D15AA")
     
@@ -397,6 +433,8 @@ public String getNaN() {
      *
      * @return the pattern separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.820 -0500", hash_original_method = "D38F7AE8E1369570AEDB785398752C04", hash_generated_method = "ED7D742D64874057D70983B049FCE9CB")
     
@@ -409,6 +447,8 @@ public char getPatternSeparator() {
      *
      * @return the percent character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.822 -0500", hash_original_method = "0F05A385A7483224A3B3B115F4941DEA", hash_generated_method = "191ACF0D69C3AF2B2A79760C31DE867C")
     
@@ -421,6 +461,8 @@ public char getPercent() {
      *
      * @return the per mill sign character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.824 -0500", hash_original_method = "DDC83740D050E65F948D715CA46AA4E6", hash_generated_method = "9E510AF2F024D1B04872F06D70B8EB92")
     
@@ -433,6 +475,8 @@ public char getPerMill() {
      *
      * @return the zero character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.827 -0500", hash_original_method = "5E609E25361E12310E119A02851AA08C", hash_generated_method = "9F7AD0B6208757056B1FFF98A08C2042")
     
@@ -444,6 +488,8 @@ public char getZeroDigit() {
      * Returns the string used to separate mantissa and exponent. Typically "E", as in "1.2E3".
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.829 -0500", hash_original_method = "819A49232B9C4BF84239DF8CB1CAA3C1", hash_generated_method = "7A596710525270A6C7BAD0763C173D15")
     
@@ -451,6 +497,8 @@ public String getExponentSeparator() {
         return exponentSeparator;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.833 -0500", hash_original_method = "730AF15AAE06AD4A292A18D5EB73C960", hash_generated_method = "4CE2BCED81D139887B56B46E0F2A7FCF")
     
 @Override
@@ -485,6 +533,8 @@ public String getExponentSeparator() {
      * @throws NullPointerException
      *             if {@code currency} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.836 -0500", hash_original_method = "92D5537D8B3843A17694170BBEA5586B", hash_generated_method = "ACADD70342AD1A4712525629366404CF")
     
 public void setCurrency(Currency currency) {
@@ -510,6 +560,8 @@ public void setCurrency(Currency currency) {
      * @param value
      *            the currency code.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.838 -0500", hash_original_method = "207176AE532CCEDF88793D675BD5BB7E", hash_generated_method = "8411A01250F847572708E3CAF71DA871")
     
@@ -539,6 +591,8 @@ public void setInternationalCurrencySymbol(String value) {
      * @param value
      *            the currency symbol.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.841 -0500", hash_original_method = "29E8104D01D46C7E9FE837881A4B811D", hash_generated_method = "74F7DFB51B59745AB7999700EA7F22F0")
     
 public void setCurrencySymbol(String value) {
@@ -551,6 +605,8 @@ public void setCurrencySymbol(String value) {
      * @param value
      *            the decimal separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.843 -0500", hash_original_method = "9AC8CCC4F998C35713D40EA8501A574C", hash_generated_method = "F28CE1DE643543C56421524A2DFF9CB7")
     
 public void setDecimalSeparator(char value) {
@@ -563,6 +619,8 @@ public void setDecimalSeparator(char value) {
      * @param value
      *            the digit character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.845 -0500", hash_original_method = "D6FAF1D38DB7E623F52AE4E3C83BC924", hash_generated_method = "88832D62D2024C46197D999805A0461F")
     
 public void setDigit(char value) {
@@ -575,6 +633,8 @@ public void setDigit(char value) {
      * @param value
      *            the grouping separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.847 -0500", hash_original_method = "9D270588D20ED0589BF78FE9A748D06B", hash_generated_method = "C23E9EFA1E9820F29C8E7DF301C5A0C2")
     
 public void setGroupingSeparator(char value) {
@@ -587,6 +647,8 @@ public void setGroupingSeparator(char value) {
      * @param value
      *            the string representing infinity.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.850 -0500", hash_original_method = "253C85BF9C056E30DB4FF21631672E45", hash_generated_method = "1D37AFC24C53C36A6A7AF808C672A491")
     
 public void setInfinity(String value) {
@@ -599,6 +661,8 @@ public void setInfinity(String value) {
      * @param value
      *            the minus sign character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.852 -0500", hash_original_method = "D3F4D7B2767531D5CB8D7EDFAA19A0F0", hash_generated_method = "5E9C55701C8AEFF1E1075BC6682D316C")
     
 public void setMinusSign(char value) {
@@ -612,6 +676,8 @@ public void setMinusSign(char value) {
      * @param value
      *            the monetary decimal separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.854 -0500", hash_original_method = "5DC5988EDD7C3CC1FE974B80FD913370", hash_generated_method = "BBBAB4DAB4714A928DEB819A26999FDF")
     
 public void setMonetaryDecimalSeparator(char value) {
@@ -624,6 +690,8 @@ public void setMonetaryDecimalSeparator(char value) {
      * @param value
      *            the string representing NaN.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.856 -0500", hash_original_method = "6A48D24176C36753AA1CCB849BDA297D", hash_generated_method = "3DCDBC023873F38218DE42FA318DDCA7")
     
 public void setNaN(String value) {
@@ -637,6 +705,8 @@ public void setNaN(String value) {
      * @param value
      *            the pattern separator character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.859 -0500", hash_original_method = "F9CB88FF85D83DD076D59F9C65C2F022", hash_generated_method = "8A4258183297583C2CD69921F4F06DFE")
     
 public void setPatternSeparator(char value) {
@@ -649,6 +719,8 @@ public void setPatternSeparator(char value) {
      * @param value
      *            the percent character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.862 -0500", hash_original_method = "82CC4266781153E2E37AE97635E76BF7", hash_generated_method = "AFAD83F88998AC68D0067A2A970A03A9")
     
 public void setPercent(char value) {
@@ -661,6 +733,8 @@ public void setPercent(char value) {
      * @param value
      *            the per mill character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.864 -0500", hash_original_method = "A113C8FE00852B00BE817507D877FFEC", hash_generated_method = "6F33AB6CBEFD5DE64C9FC9C073CEA0A3")
     
 public void setPerMill(char value) {
@@ -673,6 +747,8 @@ public void setPerMill(char value) {
      * @param value
      *            the zero digit character.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.866 -0500", hash_original_method = "1F31C9A94279CEAA9BC58336D0C15AE7", hash_generated_method = "3BB7964E99EF8955ABCEF1285BEEA6CC")
     
 public void setZeroDigit(char value) {
@@ -683,6 +759,8 @@ public void setZeroDigit(char value) {
      * Sets the string used to separate mantissa and exponent. Typically "E", as in "1.2E3".
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.869 -0500", hash_original_method = "9B9F6C7BB1C5EA5DED0636F1E4439683", hash_generated_method = "0EDC007810E7C8BCF3967FF24A8E1C13")
     
 public void setExponentSeparator(String value) {
@@ -692,6 +770,8 @@ public void setExponentSeparator(String value) {
         this.exponentSeparator = value;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.874 -0500", hash_original_method = "AC413B5955CC7818D3CB585AD477DBD8", hash_generated_method = "DAA336F5A7F415B76670207E61D0C9FE")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -716,6 +796,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.879 -0500", hash_original_method = "6B45962B37C777732BB6D07E7138D37B", hash_generated_method = "AC27212400A06FD88EE8469147FE9846")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

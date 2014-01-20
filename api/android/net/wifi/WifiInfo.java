@@ -27,6 +27,8 @@ public static DetailedState getDetailedStateOf(SupplicantState suppState) {
         return stateMap.get(suppState);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.744 -0500", hash_original_method = "27D623BE4A455BD5783DEE25FF79A268", hash_generated_method = "FC3B36B122A00923EDD6563B18D75E70")
     
 static SupplicantState valueOf(String stateName) {
@@ -108,6 +110,8 @@ public WifiInfo[] newArray(int size) {
 
     private boolean mExplicitConnect;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.693 -0500", hash_original_method = "3BA330D18DA6D0534E844B32F499A548", hash_generated_method = "3BA330D18DA6D0534E844B32F499A548")
     
 WifiInfo() {
@@ -142,6 +146,8 @@ public WifiInfo(WifiInfo source) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.698 -0500", hash_original_method = "89967329215A273EB27CD79E5BB8124F", hash_generated_method = "E565F1268544A2F6A10C838FAA2F15C2")
     
 void setSSID(String SSID) {
@@ -164,6 +170,8 @@ public String getSSID() {
         return mSSID;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.703 -0500", hash_original_method = "66D619B3A9C00436F0EA6225848F76E2", hash_generated_method = "66D619B3A9C00436F0EA6225848F76E2")
     
 void setBSSID(String BSSID) {
@@ -195,6 +203,8 @@ public int getRssi() {
         return mRssi;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.709 -0500", hash_original_method = "DC61695B2550927FEF6924BD6DCCD37F", hash_generated_method = "DC61695B2550927FEF6924BD6DCCD37F")
     
 void setRssi(int rssi) {
@@ -213,6 +223,8 @@ public int getLinkSpeed() {
         return mLinkSpeed;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.713 -0500", hash_original_method = "BE3FF818F2C5FDEDBAE4E9D0AB590378", hash_generated_method = "BE3FF818F2C5FDEDBAE4E9D0AB590378")
     
 void setLinkSpeed(int linkSpeed) {
@@ -223,6 +235,8 @@ void setLinkSpeed(int linkSpeed) {
      * Record the MAC address of the WLAN interface
      * @param macAddress the MAC address in {@code XX:XX:XX:XX:XX:XX} form
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.715 -0500", hash_original_method = "D01D60678F7B1D8F273F61CB3F3E57D7", hash_generated_method = "D01D60678F7B1D8F273F61CB3F3E57D7")
     
 void setMacAddress(String macAddress) {
@@ -236,6 +250,8 @@ public String getMacAddress() {
         return mMacAddress;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.719 -0500", hash_original_method = "9EA9BCBB38651D2FFE57E5088D2224E9", hash_generated_method = "9EA9BCBB38651D2FFE57E5088D2224E9")
     
 void setNetworkId(int id) {
@@ -285,12 +301,16 @@ public SupplicantState getSupplicantState() {
         return mSupplicantState;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.729 -0500", hash_original_method = "D88102438CF5144569D4601488BE4027", hash_generated_method = "D88102438CF5144569D4601488BE4027")
     
 void setSupplicantState(SupplicantState state) {
         mSupplicantState = state;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.732 -0500", hash_original_method = "34F62DC8D94CF645975CE5993EA04307", hash_generated_method = "34F62DC8D94CF645975CE5993EA04307")
     
 void setInetAddress(InetAddress address) {
@@ -329,6 +349,8 @@ public void setHiddenSSID(boolean hiddenSSID) {
      * @param stateName the name of the state, as a <code>String</code> returned
      * in an event sent by {@code wpa_supplicant}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.742 -0500", hash_original_method = "C2C24AA87816421D7C3613D024B55B7F", hash_generated_method = "C2C24AA87816421D7C3613D024B55B7F")
     

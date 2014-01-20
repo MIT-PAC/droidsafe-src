@@ -79,6 +79,8 @@ private static String getActionKeyMessage(Cursor c, SearchableInfo.ActionKeyInfo
         return result;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.136 -0500", hash_original_method = "1515F3198E379060DCB8EFB4F4DD3EF3", hash_generated_method = "068CF4650A3DEA4B1C4E446DD99717AD")
     
 static boolean isLandscapeMode(Context context) {
@@ -941,6 +943,8 @@ public void setMaxWidth(int maxpixels) {
         super.onMeasure(MeasureSpec.makeMeasureSpec(width, widthMode), heightMeasureSpec);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.811 -0500", hash_original_method = "28B5EEA3A28B4F5F076920D5EA4FBBAC", hash_generated_method = "254C079082E5F872CB3FAB8D60FA5FF6")
     
 private int getPreferredWidth() {
@@ -966,6 +970,8 @@ private void updateViewsVisibility(final boolean collapsed) {
         updateSubmitArea();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.816 -0500", hash_original_method = "1F6B21487B2FA81D5679515DB4F108DF", hash_generated_method = "1BB2BF66E14BCD3AE44340217B36AD5B")
     
 private boolean hasVoiceSearch() {
@@ -985,12 +991,16 @@ private boolean hasVoiceSearch() {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.818 -0500", hash_original_method = "E98BAF533B4581CBC109A603E4339AE5", hash_generated_method = "AD23F41A7E00EA85995BEB5AD85CBAC4")
     
 private boolean isSubmitAreaEnabled() {
         return (mSubmitButtonEnabled || mVoiceButtonEnabled) && !isIconified();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.820 -0500", hash_original_method = "956EC0D217930FCBDABBCC447139885F", hash_generated_method = "73529CCDE2A6E9981D3FEBF7D75D0B13")
     
 private void updateSubmitButton(boolean hasText) {
@@ -1002,6 +1012,8 @@ private void updateSubmitButton(boolean hasText) {
         mSubmitButton.setVisibility(visibility);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.823 -0500", hash_original_method = "FF9871F833F63C36B3921C4F59B0ED2F", hash_generated_method = "1B38B8A2A8BAB3CCCB5E4A3FD23CF235")
     
 private void updateSubmitArea() {
@@ -1014,6 +1026,8 @@ private void updateSubmitArea() {
         mSubmitArea.setVisibility(visibility);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.825 -0500", hash_original_method = "31438C0932D7B883B0B6F7C1A8D11C73", hash_generated_method = "5944F95480569FD75D5F773EF6D2938F")
     
 private void updateCloseButton() {
@@ -1025,12 +1039,16 @@ private void updateCloseButton() {
         mCloseButton.getDrawable().setState(hasText ? ENABLED_STATE_SET : EMPTY_STATE_SET);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.827 -0500", hash_original_method = "A19187F7BD510E54AC677DCF71153712", hash_generated_method = "AD57BDCA7E253262647EAEFB8A94D7E2")
     
 private void postUpdateFocusedState() {
         post(mUpdateDrawableStateRunnable);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.829 -0500", hash_original_method = "2FABE728CB7CDC63DD618939E6086EE5", hash_generated_method = "C1E3D4F2A6D6D989B4BA04D8A52BC794")
     
 private void updateFocusedState() {
@@ -1069,7 +1087,9 @@ private void setImeVisibility(final boolean visible) {
      * Called by the SuggestionsAdapter
      * @hide
      */
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.836 -0500", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "364D10214479FA13BFF6BDB192F3E0CD")
+    /* package */@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.836 -0500", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "364D10214479FA13BFF6BDB192F3E0CD")
     
 void onQueryRefine(CharSequence queryText) {
         setQuery(queryText);
@@ -1109,6 +1129,8 @@ void onQueryRefine(CharSequence queryText) {
      * action keys. If not handled, try refocusing regular characters into the
      * EditText.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.854 -0500", hash_original_method = "2292125EFE6589DCDAE880647EC125AA", hash_generated_method = "41165336350A2A60080799B925742C96")
     
 private boolean onSuggestionsKey(View v, int keyCode, KeyEvent event) {
@@ -1173,6 +1195,8 @@ private boolean onSuggestionsKey(View v, int keyCode, KeyEvent event) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.859 -0500", hash_original_method = "587CD5DA65D790D90BAF0DE8B5BB2354", hash_generated_method = "D02B53B80C738633E7237FE56D38DA1F")
     
 private int getSearchIconId() {
@@ -1182,6 +1206,8 @@ private int getSearchIconId() {
         return outValue.resourceId;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.862 -0500", hash_original_method = "BEC25B8B383259674E4804BA5A8143D3", hash_generated_method = "44066A10F8E9500F3FAB028F54FF591C")
     
 private CharSequence getDecoratedHint(CharSequence hintText) {
@@ -1197,6 +1223,8 @@ private CharSequence getDecoratedHint(CharSequence hintText) {
         return ssb;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.864 -0500", hash_original_method = "86FF55CF6755F81D1B5EAA7CA81FA50B", hash_generated_method = "92448411192D34826A399651377BD42A")
     
 private void updateQueryHint() {
@@ -1219,6 +1247,8 @@ private void updateQueryHint() {
     /**
      * Updates the auto-complete text view.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.867 -0500", hash_original_method = "923331D2E7E4B81B915A368FF3E97F8B", hash_generated_method = "0C212976A0996895A929C282D67BC8BD")
     
 private void updateSearchAutoComplete() {
@@ -1258,6 +1288,8 @@ private void updateSearchAutoComplete() {
      * @param empty whether the search query text field is empty. If it is, then the other
      * criteria apply to make the voice button visible.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.869 -0500", hash_original_method = "3C9F3ABEF9459DE6C607B751B6CB866E", hash_generated_method = "1FD85F4CFDE1CDE27B49BF424218A660")
     
 private void updateVoiceButton(boolean empty) {
@@ -1269,6 +1301,8 @@ private void updateVoiceButton(boolean empty) {
         mVoiceButton.setVisibility(visibility);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.877 -0500", hash_original_method = "1411F54CFFACC3FC33F099091662F124", hash_generated_method = "3C397B31E83B8A3D9C285FE1141EDC6C")
     
 private void onTextChanged(CharSequence newText) {
@@ -1285,6 +1319,8 @@ private void onTextChanged(CharSequence newText) {
         mOldQueryText = newText.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.879 -0500", hash_original_method = "5AEA0BD14CD513B7E21145454A43DADF", hash_generated_method = "A414A69964DB2EDDD93A5DD5422F8F53")
     
 private void onSubmitQuery() {
@@ -1301,12 +1337,16 @@ private void onSubmitQuery() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.881 -0500", hash_original_method = "8D9A2C9AF67AD5F3EB2818A3F7453E73", hash_generated_method = "F96111D7026ABAE36329B7CFE45D22EB")
     
 private void dismissSuggestions() {
         mQueryTextView.dismissDropDown();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.884 -0500", hash_original_method = "E1C21CB17E5E6548A25ED1EEE1C98C9D", hash_generated_method = "0C53F7B2978BD459719E403313087410")
     
 private void onCloseClicked() {
@@ -1329,6 +1369,8 @@ private void onCloseClicked() {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.887 -0500", hash_original_method = "4C174341C531719A99E642D8022F787E", hash_generated_method = "D65670BA560AE783A84167E5E8E45789")
     
 private void onSearchClicked() {
@@ -1340,6 +1382,8 @@ private void onSearchClicked() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.889 -0500", hash_original_method = "5B2168D9C175988BD80847D561C5C5CC", hash_generated_method = "AAF32B7AB04CF54D05C73A4D63265109")
     
 private void onVoiceClicked() {
@@ -1365,6 +1409,8 @@ private void onVoiceClicked() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.897 -0500", hash_original_method = "4D3FC77D85FEC9D80C6560FAE74CDA60", hash_generated_method = "5C44600C46592041A47B81971EB66968")
     
 void onTextFocusChanged() {
@@ -1417,6 +1463,8 @@ void onTextFocusChanged() {
         setIconified(false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.920 -0500", hash_original_method = "C8142821EB0396ABFD0EB3B305480E27", hash_generated_method = "06BEF21F9829EF6AC623AEF433C3958A")
     
 private void adjustDropDownSizeAndPosition() {
@@ -1436,6 +1484,8 @@ private void adjustDropDownSizeAndPosition() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.089 -0500", hash_original_method = "5FDC493391F791D62FF75AE849BF4213", hash_generated_method = "D97A43FE417E7623923C8248271D9B22")
     
 private boolean onItemClicked(int position, int actionKey, String actionMsg) {
@@ -1449,6 +1499,8 @@ private boolean onItemClicked(int position, int actionKey, String actionMsg) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.092 -0500", hash_original_method = "08FFA8C71E803D9BC52878D0BDC1227B", hash_generated_method = "D9287C4CC7F8F95FC25FFE15955460C1")
     
 private boolean onItemSelected(int position) {
@@ -1463,6 +1515,8 @@ private boolean onItemSelected(int position) {
     /**
      * Query rewriting.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.109 -0500", hash_original_method = "FE5C7BD493A3B7C4988BF7B094450FE1", hash_generated_method = "2E791D59EA01A15F27EF5E146953F31F")
     
 private void rewriteQueryFromSuggestion(int position) {
@@ -1498,6 +1552,8 @@ private void rewriteQueryFromSuggestion(int position) {
      *        or <code>null</code> if none.
      * @return true if a successful launch, false if could not (e.g. bad position).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.112 -0500", hash_original_method = "1026A945AA7D5E936A04225BB74423F6", hash_generated_method = "526AD01A8145198E6E90EDF77DA844EA")
     
 private boolean launchSuggestion(int position, int actionKey, String actionMsg) {
@@ -1517,6 +1573,8 @@ private boolean launchSuggestion(int position, int actionKey, String actionMsg) 
     /**
      * Launches an intent, including any special intent handling.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.114 -0500", hash_original_method = "B092F13CA13C6A372C37DCEFCF94B5BC", hash_generated_method = "584E434D946C5FE4F9C56FDAC4C7DDDE")
     
 private void launchIntent(Intent intent) {
@@ -1535,6 +1593,8 @@ private void launchIntent(Intent intent) {
     /**
      * Sets the text in the query box, without updating the suggestions.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.117 -0500", hash_original_method = "39B31EC96E94C2151059B7594679485C", hash_generated_method = "0271B3329C99C1677684038522E73CAF")
     
 private void setQuery(CharSequence query) {
@@ -1543,6 +1603,8 @@ private void setQuery(CharSequence query) {
         mQueryTextView.setSelection(TextUtils.isEmpty(query) ? 0 : query.length());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.119 -0500", hash_original_method = "A610C255BB7D93FEE4A49CEF406D7E3C", hash_generated_method = "3A7DF92BD5F041D72A8251C175ACCB40")
     
 private void launchQuerySearch(int actionKey, String actionMsg, String query) {
@@ -1566,6 +1628,8 @@ private void launchQuerySearch(int actionKey, String actionMsg, String query) {
      *             {@link SearchManager#SEARCH_MODE}, or {@code null}.
      * @return The intent.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.122 -0500", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "1F0A50D12F3AF83BCB8DD4F3AC55A247")
     
 private Intent createIntent(String action, Uri data, String extraData, String query,
@@ -1600,6 +1664,8 @@ private Intent createIntent(String action, Uri data, String extraData, String qu
     /**
      * Create and return an Intent that can launch the voice search activity for web search.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.124 -0500", hash_original_method = "88ED2A4CD1E55FCB278985A3652D43A1", hash_generated_method = "4283836B167ED982507321DF5E9FF938")
     
 private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo searchable) {
@@ -1639,6 +1705,8 @@ public SearchAutoComplete(Context context, AttributeSet attrs, int defStyle) {
             mThreshold = getThreshold();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.163 -0500", hash_original_method = "BBDE2605DAB20A62DF5DDA8DAF1B33B9", hash_generated_method = "BBDE2605DAB20A62DF5DDA8DAF1B33B9")
         
 void setSearchView(SearchView searchView) {
@@ -1656,6 +1724,8 @@ void setSearchView(SearchView searchView) {
         /**
          * Returns true if the text field is empty, or contains only whitespace.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.168 -0500", hash_original_method = "BA394CC4782335931E16390E53BDBA7F", hash_generated_method = "A98D989F760F2BE2ABD9EE7584C75B89")
         
 private boolean isEmpty() {
@@ -1781,6 +1851,8 @@ private boolean isEmpty() {
      * @param baseIntent The voice app search intent to start from
      * @return A completely-configured intent ready to send to the voice search activity
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.127 -0500", hash_original_method = "7F7E8A56997E65BDFC7ADF14F1E923E9", hash_generated_method = "D88D2E599B83EF1B0B1B747E237027F2")
     
 private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo searchable) {
@@ -1851,6 +1923,8 @@ private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo sear
      *        or <code>null</code> if none.
      * @return An intent for the suggestion at the cursor's position.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.131 -0500", hash_original_method = "830957C509294E2BDC3732D8A42E8F7A", hash_generated_method = "51827A38F6C869F7BCF62AE178AB32AF")
     
 private Intent createIntentFromSuggestion(Cursor c, int actionKey, String actionMsg) {
@@ -1896,6 +1970,8 @@ private Intent createIntentFromSuggestion(Cursor c, int actionKey, String action
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.134 -0500", hash_original_method = "7E9F5D2AEBB04ECB1BF9832E28C48CE5", hash_generated_method = "53A4D5B0A197E129502B908B6AE1B3A4")
     
 private void forceSuggestionQuery() {

@@ -368,6 +368,8 @@ public void setMethod(int method) {
         compressMethod = method;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.741 -0500", hash_original_method = "DBE9EE31F55A33C252870BC7FED94C64", hash_generated_method = "F8C3902681C785857E2BCA2B9A763610")
     
 private long writeLong(OutputStream os, long i) throws IOException {
@@ -379,6 +381,8 @@ private long writeLong(OutputStream os, long i) throws IOException {
         return i;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.743 -0500", hash_original_method = "1DFA02CC93F18F84127269F34641BCA1", hash_generated_method = "BDACE10D0777C5F6A7A4C77AF4D7E1A5")
     
 private int writeShort(OutputStream os, int i) throws IOException {
@@ -411,6 +415,8 @@ private int writeShort(OutputStream os, int i) throws IOException {
         crc.update(buffer, offset, byteCount);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.748 -0500", hash_original_method = "D282356A3A75F4936D2E72EF1631ED03", hash_generated_method = "AA4B361C944BEB9349F68E04FDA5B934")
     
 private void checkClosed() throws IOException {

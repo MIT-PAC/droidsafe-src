@@ -67,8 +67,8 @@ public BroadcastReceiver() {
      * @param context The Context in which the receiver is running.
      * @param intent The Intent being received.
      */
-    @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.698 -0500", hash_original_method = "938B84A43002091BA0754FF3EF2C5C0E", hash_generated_method = "694CB25ED6D3FBC56A56AD38523219EB")
     
 public abstract void onReceive(Context context, Intent intent);
@@ -402,6 +402,8 @@ public final boolean getDebugUnregister() {
         return mDebugUnregister;
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.744 -0500", hash_original_method = "719234F696D75BD5E624E0997AEC2529", hash_generated_method = "C57D981D6CEF7C694F836FD9B92626F6")
     
 void checkSynchronousHint() {
@@ -687,6 +689,8 @@ public void sendFinished(IActivityManager am) {
             }
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.689 -0500", hash_original_method = "82A6C5AFD458725D364E088D203D4257", hash_generated_method = "D3D9B52B557CC655E4E6062D42823B33")
         
 void checkSynchronousHint() {

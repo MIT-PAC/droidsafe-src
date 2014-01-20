@@ -19,6 +19,8 @@ class FileBackupHelperBase {
      * Check the parameters so the native code doesn't have to throw all the exceptions
      * since it's easier to do that from Java.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.041 -0500", hash_original_method = "4DFB8B26593004F05B46C7B55CA3A1AC", hash_generated_method = "CFB6CD05ABDFFC658AA0528C1C95A53B")
     
 static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutput data,
@@ -52,22 +54,32 @@ static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutpu
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int ctor() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void dtor(int ptr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int performBackup_native(FileDescriptor oldState,
             int data, FileDescriptor newState, String[] files, String[] keys) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeFile_native(int ptr, String filename, int backupReader) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeSnapshot_native(int ptr, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -84,6 +96,8 @@ static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutpu
 
     boolean mExceptionLogged;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.036 -0500", hash_original_method = "BB23E98A032BF11653E210F5716EBC1E", hash_generated_method = "BB23E98A032BF11653E210F5716EBC1E")
     
 FileBackupHelperBase(Context context) {
@@ -101,6 +115,8 @@ protected void finalize() throws Throwable {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.043 -0500", hash_original_method = "A480CB5B709E68610E22FE65F3C016D5", hash_generated_method = "0BB232A35E1C683E8A062AD38D60A20D")
     
 boolean writeFile(File f, BackupDataInputStream in) {
@@ -130,6 +146,8 @@ public void writeNewStateDescription(ParcelFileDescriptor fd) {
         // TODO: Do something with the error.
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.047 -0500", hash_original_method = "13360827BDB81EDC3014ECA5973B3541", hash_generated_method = "13360827BDB81EDC3014ECA5973B3541")
     
 boolean isKeyInList(String key, String[] list) {

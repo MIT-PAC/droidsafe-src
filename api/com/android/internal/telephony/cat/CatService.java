@@ -33,6 +33,8 @@ class RilMessage {
 
     ResultCode mResCode;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.991 -0500", hash_original_method = "3402C3F9EF39C06F449D290965539671", hash_generated_method = "3402C3F9EF39C06F449D290965539671")
     
 RilMessage(int msgId, String rawData) {
@@ -40,6 +42,8 @@ RilMessage(int msgId, String rawData) {
         mData = rawData;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.993 -0500", hash_original_method = "56F4F1F4536DAFEF01840B516ADA4963", hash_generated_method = "56F4F1F4536DAFEF01840B516ADA4963")
     
 RilMessage(RilMessage other) {
@@ -176,6 +180,8 @@ public static AppInterface getInstance() {
     private RilMessageDecoder mMsgDecoder = null;
 
     /* Intentionally private for singleton */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.059 -0500", hash_original_method = "0B6E46ACD511396208B0FB6CDAFB964A", hash_generated_method = "457642732FF3A3AEC8B97909E8E7EE73")
     
 private CatService(CommandsInterface ci, IccRecords ir, Context context,
@@ -227,6 +233,8 @@ protected void finalize() {
         CatLog.d(this, "Service finalized");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.067 -0500", hash_original_method = "E9D273BBD1B8139BCAB5560E10ADE1AE", hash_generated_method = "F098065BED4664F6DB4E52783450BF54")
     
 private void handleRilMsg(RilMessage rilMsg) {
@@ -288,6 +296,8 @@ private void handleRilMsg(RilMessage rilMsg) {
      * Sends valid proactive command data to the application using intents.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.073 -0500", hash_original_method = "962D88968BE7A135485D50B41AC85213", hash_generated_method = "5C83DB9A6C160B27DA74B31D7A2BB3C7")
     
 private void handleProactiveCommand(CommandParams cmdParams) {
@@ -377,6 +387,8 @@ private void handleProactiveCommand(CommandParams cmdParams) {
      * Handles RIL_UNSOL_STK_SESSION_END unsolicited command from RIL.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.075 -0500", hash_original_method = "F4FE7D680FC27736DB53FE02767C67C5", hash_generated_method = "B2C243698171FA5EFCE4E3C09AAE908D")
     
 private void handleSessionEnd() {
@@ -387,6 +399,8 @@ private void handleSessionEnd() {
         mContext.sendBroadcast(intent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.079 -0500", hash_original_method = "1946CA6BE8E37F5C447374ACD2229E75", hash_generated_method = "4CFED7F34B6103C4BBB591E05B230078")
     
 private void sendTerminalResponse(CommandDetails cmdDet,
@@ -455,6 +469,8 @@ private void sendTerminalResponse(CommandDetails cmdDet,
         mCmdIf.sendTerminalResponse(hexString, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.081 -0500", hash_original_method = "638B326A6DB369CFE44B9E340F9EEB09", hash_generated_method = "9FBC4C797435896D17C51DF573A163AF")
     
 private void encodeOptionalTags(CommandDetails cmdDet,
@@ -486,6 +502,8 @@ private void encodeOptionalTags(CommandDetails cmdDet,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.084 -0500", hash_original_method = "0852EED8EE8FA95FED775B0B05726071", hash_generated_method = "6D3AEE8EC3D7C9CBAC4D9E2C25DE430B")
     
 private void getInKeyResponse(ByteArrayOutputStream buf, Input cmdInput) {
@@ -497,6 +515,8 @@ private void getInKeyResponse(ByteArrayOutputStream buf, Input cmdInput) {
         buf.write(cmdInput.duration.timeInterval); // Time Duration
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.086 -0500", hash_original_method = "9C18CC5EFDD0B345CA3B94FA3BA225B1", hash_generated_method = "D486DD30354CD25DB695D7E60FD340C4")
     
 private void getPliResponse(ByteArrayOutputStream buf) {
@@ -513,6 +533,8 @@ private void getPliResponse(ByteArrayOutputStream buf) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.089 -0500", hash_original_method = "8584D48A0DB0867CC39B0E747FD77F24", hash_generated_method = "57BDD7A4D9B0F2498BB585DF56AC8460")
     
 private void sendMenuSelection(int menuId, boolean helpRequired) {
@@ -557,6 +579,8 @@ private void sendMenuSelection(int menuId, boolean helpRequired) {
         mCmdIf.sendEnvelope(hexString, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.093 -0500", hash_original_method = "BB297ADB158EDB6C7A0522557FDE81DF", hash_generated_method = "A773A07E2DEA8002C92E07214E391A7D")
     
 private void eventDownload(int event, int sourceId, int destinationId,
@@ -658,6 +682,8 @@ public synchronized void onCmdResponse(CatResponseMessage resMsg) {
         msg.sendToTarget();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.108 -0500", hash_original_method = "B0A9A02E0F2D96AF829ED175E58D2181", hash_generated_method = "722525FE0CF92E698D3BC5F94B8AA638")
     
 private boolean validateResponse(CatResponseMessage resMsg) {
@@ -667,6 +693,8 @@ private boolean validateResponse(CatResponseMessage resMsg) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.110 -0500", hash_original_method = "FED22D423ED234057B6FD28452B9EEF5", hash_generated_method = "9F1793606CFE9DCE94A14454066A450E")
     
 private boolean removeMenu(Menu menu) {
@@ -681,6 +709,8 @@ private boolean removeMenu(Menu menu) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.114 -0500", hash_original_method = "48D7C107F944AA3B8D2770DC9FDB0ED7", hash_generated_method = "9DFDE79FDB4E24928364BAB55C565E97")
     
 private void handleCmdResponse(CatResponseMessage resMsg) {

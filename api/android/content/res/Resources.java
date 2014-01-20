@@ -25,6 +25,8 @@ import android.R;
 
 public class Resources {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
@@ -72,7 +74,9 @@ public class Resources {
 	    return mSystem;
 	}
     
-	private static int attrForQuantityCode(int quantityCode){
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private static int attrForQuantityCode(int quantityCode){
 		// Original method
 		/*
 		{
@@ -89,7 +93,9 @@ public class Resources {
 		return 0;
 	}
     
-	private static String stringForQuantityCode(int quantityCode){
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private static String stringForQuantityCode(int quantityCode){
     	String str = new String();
 		str.addTaint(quantityCode);
 		return str;
@@ -248,7 +254,9 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 	}
     
-	public Resources() {
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    public Resources() {
 	    mAssets = null;
 	}
 	
@@ -280,6 +288,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return str;
 	}
 	  
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private NativePluralRules getPluralRule(){
 		// Original method
 		/*
@@ -497,8 +507,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	@DSComment("seemed harmless")
-    @DSSafe(DSCat.SAFE_OTHERS)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Drawable getDrawable(int id){
         return loadDrawable(null, id);
@@ -822,6 +832,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void clearDrawableCache(
             LongSparseArray<WeakReference<ConstantState>> cache,
             int configChanges){
@@ -1177,6 +1189,8 @@ public final AssetManager getAssets() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     Drawable loadDrawable(TypedValue value, int id){
 		// Original method
@@ -1186,6 +1200,8 @@ public final AssetManager getAssets() {
         return ret;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private Drawable getCachedDrawable(
             LongSparseArray<WeakReference<ConstantState>> drawableCache,
             long key){
@@ -1210,6 +1226,8 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     ColorStateList loadColorStateList(TypedValue value, int id){
 		// Original method
@@ -1217,6 +1235,8 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private ColorStateList getCachedColorStateList(int key){
 		// Original method
 		/*
@@ -1239,6 +1259,8 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     XmlResourceParser loadXmlResourceParser(int id, String type){
 		// Original method
@@ -1260,6 +1282,8 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     XmlResourceParser loadXmlResourceParser(String file, int id,
             int assetCookie, String type){
@@ -1268,6 +1292,8 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private TypedArray getCachedStyledAttributes(int len){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

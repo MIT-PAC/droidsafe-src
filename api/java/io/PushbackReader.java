@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class PushbackReader extends FilterReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.228 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "40514AFF00B14ABD40D54C723F22A0B4")
 
@@ -140,6 +135,8 @@ public PushbackReader(Reader in, int size) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.248 -0500", hash_original_method = "168C295624DB201B6537BA6FAD6078C2", hash_generated_method = "EE001FDCF08EFC7B78324344604B3E3E")
     
 private void checkNotClosed() throws IOException {
@@ -382,7 +379,6 @@ public void unread(int oneChar) throws IOException {
             return inSkipped + availableFromBuffer;
         }
     }
-
     
 }
 

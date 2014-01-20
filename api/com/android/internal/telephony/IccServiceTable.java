@@ -18,11 +18,15 @@ protected IccServiceTable(byte[] table) {
     }
 
     // Get the class name to use for log strings
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.362 -0500", hash_original_method = "E0ACE28639D243FCBBC6F27206A0F369", hash_generated_method = "F29540E07ED4EC147D26C77AF493C0DE")
     
 protected abstract String getTag();
 
     // Get the array of enums to use for toString
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.366 -0500", hash_original_method = "B6D39BF2602DAFF66318E7E94226FB88", hash_generated_method = "B933DA98CDDB6E6B03BDBF547C264F1E")
     
 protected abstract Object[] getValues();

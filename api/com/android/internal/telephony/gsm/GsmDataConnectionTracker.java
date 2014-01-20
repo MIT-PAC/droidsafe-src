@@ -284,6 +284,8 @@ public void putRecoveryAction(int action) {
         return INTENT_DATA_STALL_ALARM;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.329 -0500", hash_original_method = "0E3E3502B5D9BF75D72D228425E0F7B7", hash_generated_method = "9617E78808A203DD57F55FA668C1F0EB")
     
 private ApnContext addApnContext(String type) {
@@ -529,6 +531,8 @@ public State getOverallState() {
 
     // A new APN has gone active and needs to send events to catch up with the
     // current condition
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.361 -0500", hash_original_method = "6BE0F7A51104BACC1DFB5733CC5E30CC", hash_generated_method = "D8FD8D562E2DBFDA0157FAE0CCC865E0")
     
 private void notifyApnIdUpToCurrent(String reason, ApnContext apnContext, String type) {
@@ -614,6 +618,8 @@ private void notifyApnIdUpToCurrent(String reason, ApnContext apnContext, String
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.374 -0500", hash_original_method = "7A177E6FBAF2829724A437FA44770C6E", hash_generated_method = "84EA95D2044D5038C6956C33C6DB45B9")
     
 private boolean isDataAllowed(ApnContext apnContext) {
@@ -638,6 +644,8 @@ protected void onDataConnectionDetached() {
         notifyDataConnection(Phone.REASON_DATA_DETACHED);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.379 -0500", hash_original_method = "F401CBF6A4FFFF291696606C3EE2FE85", hash_generated_method = "0A903CD212D8C423334C1A54F72A2A8E")
     
 private void onDataConnectionAttached() {
@@ -698,6 +706,8 @@ private void onDataConnectionAttached() {
         return allowed;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.386 -0500", hash_original_method = "625A02DD3D04B0C927BA692603CBFCC6", hash_generated_method = "0F49FCB08DE0522635AFD9AB30E85D63")
     
 private void setupDataOnReadyApns(String reason) {
@@ -741,6 +751,8 @@ private void setupDataOnReadyApns(String reason) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.389 -0500", hash_original_method = "293D247CD6F3CD381680AFA4CF477431", hash_generated_method = "61A2FC1F4DCB2BD149CBE8E66810FC0C")
     
 private boolean trySetupData(String reason, String type) {
@@ -765,6 +777,8 @@ private boolean trySetupData(String reason, String type) {
         return trySetupData(apnContext);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.393 -0500", hash_original_method = "01B865917AB0716CB4ECB273F41078C0", hash_generated_method = "2DF39C2748B26938E8D79B96073C63C9")
     
 private boolean trySetupData(ApnContext apnContext) {
@@ -887,6 +901,8 @@ protected void cleanUpAllConnections(boolean tearDown, String reason) {
         cleanUpAllConnections(true, cause);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.405 -0500", hash_original_method = "2562A19804F84494AABD51DA4769B2BA", hash_generated_method = "7CF66ADBF25FBF5D08FD9AB13DA04553")
     
 private void cleanUpConnection(boolean tearDown, ApnContext apnContext) {
@@ -950,6 +966,8 @@ private void cleanUpConnection(boolean tearDown, ApnContext apnContext) {
      *
      * @param DataConnectionAc on which the alarm should be stopped.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.408 -0500", hash_original_method = "1F926905027AA18BF39C8A7A893395A9", hash_generated_method = "CE549DC87D1EC01EC2BEE46F103ED306")
     
 private void cancelReconnectAlarm(DataConnectionAc dcac) {
@@ -969,6 +987,8 @@ private void cancelReconnectAlarm(DataConnectionAc dcac) {
      * @param types comma delimited list of APN types
      * @return array of APN types
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.410 -0500", hash_original_method = "08930E35848EBECD6CC869C9C6D6B1F8", hash_generated_method = "5A092E2D72BD8DF3DE8814F8AE9F0DCF")
     
 private String[] parseTypes(String types) {
@@ -983,6 +1003,8 @@ private String[] parseTypes(String types) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.414 -0500", hash_original_method = "25E446029D7F780B1E04F89AE12B062D", hash_generated_method = "782521DDE4894C6986D63D7B355B6DB2")
     
 private ArrayList<ApnSetting> createApnList(Cursor cursor) {
@@ -1024,6 +1046,8 @@ private ArrayList<ApnSetting> createApnList(Cursor cursor) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.417 -0500", hash_original_method = "2E87B4CBA5BF77A80284005F43D6FB91", hash_generated_method = "8F2951C6420CAD67C2445EE1EE088DF8")
     
 private boolean dataConnectionNotInUse(DataConnectionAc dcac) {
@@ -1033,6 +1057,8 @@ private boolean dataConnectionNotInUse(DataConnectionAc dcac) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.419 -0500", hash_original_method = "871B8246FCDE157C8EBBD019FC69C7EE", hash_generated_method = "CCD569290CCFAF5FD630610961309917")
     
 private GsmDataConnection findFreeDataConnection() {
@@ -1068,6 +1094,8 @@ protected GsmDataConnection findReadyDataConnection(ApnSetting apn) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.426 -0500", hash_original_method = "BBFF3626F623A28B2260A4B879BEB776", hash_generated_method = "505676C2966DA4CA8985882D822A3431")
     
 private boolean setupData(ApnContext apnContext) {
@@ -1148,6 +1176,8 @@ private boolean setupData(ApnContext apnContext) {
     /**
      * Handles changes to the APN database.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.429 -0500", hash_original_method = "651F557B6A8D0D165E9CDD4391DC0D13", hash_generated_method = "F3DD0A711FEDFB8A162FBFF01A23EE08")
     
 private void onApnChanged() {
@@ -1173,6 +1203,8 @@ private void onApnChanged() {
      * @param cid Connection id provided from RIL.
      * @return DataConnectionAc associated with specified cid.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.431 -0500", hash_original_method = "65E72951AE41561D32861B862A9CCB8A", hash_generated_method = "7522C9572C390838E67A7746F84509A6")
     
 private DataConnectionAc findDataConnectionAcByCid(int cid) {
@@ -1189,6 +1221,8 @@ private DataConnectionAc findDataConnectionAcByCid(int cid) {
      * @return List of ApnContext which is connected, but is not present in
      *         data connection list reported from RIL.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.434 -0500", hash_original_method = "3E391A4D32CF36E6E02EF7EB45223170", hash_generated_method = "BA1A5570B01E85F6CE3B608DB7480C49")
     
 private List<ApnContext> findApnContextToClean(Collection<DataConnectionAc> dcacs) {
@@ -1226,6 +1260,8 @@ private List<ApnContext> findApnContextToClean(Collection<DataConnectionAc> dcac
      * @param ar is the result of RIL_REQUEST_DATA_CALL_LIST
      * or RIL_UNSOL_DATA_CALL_LIST_CHANGED
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.439 -0500", hash_original_method = "2CAD8F6019A6EE1B4B77B4750A278A68", hash_generated_method = "A5EC7A31BE384542071566F0AA392777")
     
 private void onDataStateChanged (AsyncResult ar) {
@@ -1359,6 +1395,8 @@ private void onDataStateChanged (AsyncResult ar) {
         if (DBG) log("onDataStateChanged(ar): X");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.442 -0500", hash_original_method = "66B167D0E0A206B2D44C874F7CFFABF5", hash_generated_method = "89CEAE71B786C389C731D386CCC63A92")
     
 private void notifyDefaultData(ApnContext apnContext) {
@@ -1384,6 +1422,8 @@ protected void gotoIdleAndNotifyDataConnection(String reason) {
         mActiveApn = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.447 -0500", hash_original_method = "E0A0A9601ED58F14AFBBF23896E64411", hash_generated_method = "DB5476E53DC5255B75D7FFF7609104DC")
     
 private void resetPollStats() {
@@ -1392,6 +1432,8 @@ private void resetPollStats() {
         mNetStatPollPeriod = POLL_NETSTAT_MILLIS;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.451 -0500", hash_original_method = "85BF013ED3EA874C77BCE8B69E224FC2", hash_generated_method = "F8EB7C3945F31622869BACD037F884D6")
     
 private void doRecovery() {
@@ -1490,6 +1532,8 @@ private void doRecovery() {
         SystemProperties.set("net.ppp.reset-by-timeout", String.valueOf(reset+1));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.463 -0500", hash_original_method = "757A180615AA792B2C29A1B55C4F521C", hash_generated_method = "9FB1C6C6D1B06005638D85163201726B")
     
 private void updateDataStallInfo() {
@@ -1565,6 +1609,8 @@ private void updateDataStallInfo() {
         startDataStallAlarm();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.469 -0500", hash_original_method = "94396473B615B857A09FF1389DF39C19", hash_generated_method = "A4C614E16E5CD1D91E96A6D12B8D7215")
     
 private void updateDataActivity() {
@@ -1623,6 +1669,8 @@ private boolean shouldPostNotification(GsmDataConnection.FailCause  cause) {
      * @param reason the reason why data is disconnected
      * @return true if try setup data connection is need for this reason
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.483 -0500", hash_original_method = "62A24BB1F647222AA978F8E837B2D330", hash_generated_method = "D168F58C77AFC7F485C17CA9A1350579")
     
 private boolean retryAfterDisconnected(String reason) {
@@ -1682,6 +1730,8 @@ private void reconnectAfterFail(FailCause lastFailCauseCode,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.494 -0500", hash_original_method = "68704E7FD0A79E29C0B17E36042D228F", hash_generated_method = "A8D3F05F1741B0AFF25DC590D901A19F")
     
 private void startAlarmForReconnect(int delay, ApnContext apnContext) {
@@ -1716,6 +1766,8 @@ private void startAlarmForReconnect(int delay, ApnContext apnContext) {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.498 -0500", hash_original_method = "752A3E1271AADAA161C9D22B1F08D3F3", hash_generated_method = "85A7D1443FBA2BAA06A6A1B2C7966A94")
     
 private void startDataStallAlarm() {
@@ -1738,6 +1790,8 @@ private void startDataStallAlarm() {
                 SystemClock.elapsedRealtime() + delayInMs, mDataStallAlarmIntent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.501 -0500", hash_original_method = "9BAB3B8D9CDA09D3CE76C98C24705EFE", hash_generated_method = "451791A6F34E0262DB8E37F3DDD0D7DA")
     
 private void stopDataStallAlarm() {
@@ -1767,6 +1821,8 @@ private void notifyNoData(GsmDataConnection.FailCause lastFailCauseCode,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.506 -0500", hash_original_method = "E0D6F2F660096B71ECF89DBFFFD7E4A9", hash_generated_method = "E2E692B7274532DF733628E52C3DE417")
     
 private void onRecordsLoaded() {
@@ -1800,6 +1856,8 @@ private void onRecordsLoaded() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.516 -0500", hash_original_method = "99E85476A8EB35B364BDD45037DA3C4C", hash_generated_method = "A3E5BDE64D386629286A6585A4079858")
     
 private void applyNewState(ApnContext apnContext, boolean enabled, boolean met) {
@@ -1837,6 +1895,8 @@ private void applyNewState(ApnContext apnContext, boolean enabled, boolean met) 
         if (trySetup) trySetupData(apnContext);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.521 -0500", hash_original_method = "CD0E8AA9DA59D5F15CB3DBA9C10480A3", hash_generated_method = "3851297CE6E6FE53920FEEDD4FD03638")
     
 private DataConnection checkForConnectionForApnContext(ApnContext apnContext) {
@@ -2257,6 +2317,8 @@ protected boolean isConnected() {
      * Based on the sim operator numeric, create a list for all possible
      * Data Connections and setup the preferredApn.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.584 -0500", hash_original_method = "FAE53DB9273E730E3BB3527C1EA0C82D", hash_generated_method = "8434F909E03B4589EDAD548442697F2B")
     
 private void createAllApnList() {
@@ -2297,6 +2359,8 @@ private void createAllApnList() {
     }
 
     /** Return the id for a new data connection */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.587 -0500", hash_original_method = "5EA4CC699810E4F50A6EFC012301B7BB", hash_generated_method = "0BA4858ECD5A4BD94F468B1B6F8520E2")
     
 private GsmDataConnection createDataConnection() {
@@ -2324,6 +2388,8 @@ private GsmDataConnection createDataConnection() {
         return conn;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.591 -0500", hash_original_method = "E3018B8151F871DAB6348A26AB9C8E22", hash_generated_method = "C9C5656F402CDB474A212F9A863DEED5")
     
 private void configureRetry(DataConnection dc, boolean forDefault) {
@@ -2348,6 +2414,8 @@ private void configureRetry(DataConnection dc, boolean forDefault) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.594 -0500", hash_original_method = "3AA2B8847F1D4D39DED653A1D9ABBA74", hash_generated_method = "C1137FAFEFB49822FA777F99D0AE97DB")
     
 private void destroyDataConnections() {
@@ -2366,6 +2434,8 @@ private void destroyDataConnections() {
      * @return waitingApns list to be used to create PDP
      *          error when waitingApns.isEmpty()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.597 -0500", hash_original_method = "848BE9CB29607B1E2AFE44721BE481D7", hash_generated_method = "C3456B90876EA554F99D5D9A6A620D47")
     
 private ArrayList<ApnSetting> buildWaitingApns(String requestedApnType) {
@@ -2422,6 +2492,8 @@ private ArrayList<ApnSetting> buildWaitingApns(String requestedApnType) {
         return apnList;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.600 -0500", hash_original_method = "E41D316825399ADA7868FFC16CE8AB28", hash_generated_method = "51EFF3E91EBC9C2E27E278C75F133544")
     
 private String apnListToString (ArrayList<ApnSetting> apns) {
@@ -2442,6 +2514,8 @@ private void startDelayedRetry(GsmDataConnection.FailCause cause,
         reconnectAfterFail(cause, apnContext, retryOverride);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.606 -0500", hash_original_method = "A60F121DAB80740EFF8A86C7BC5BA500", hash_generated_method = "84A620A49767372C8F304DAB1FD5126A")
     
 private void setPreferredApn(int pos) {
@@ -2499,6 +2573,8 @@ public ApnChangeObserver () {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.609 -0500", hash_original_method = "C73C211081CDB852B85A3162F1169F83", hash_generated_method = "76033FCFACDDDF9F1E92955EC0353258")
     
 private ApnSetting getPreferredApn() {
@@ -2649,6 +2725,8 @@ protected int getApnProfileID(String apnType) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.619 -0500", hash_original_method = "EC98DB8AAEBCEBF774D7D372A9BC5BED", hash_generated_method = "BF0DCD56F5DC06CC9A7BCFD522065FEB")
     
 private int getCellLocationId() {

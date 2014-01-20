@@ -322,6 +322,8 @@ public static void notifyDirectoryChange(ContentResolver resolver) {
         /**
          * Not instantiable.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.605 -0500", hash_original_method = "C1FAFD7F8C25A27903905826E99B3CB4", hash_generated_method = "DD04442C13079199BDA087C439488FE5")
         
 private Directory() {
@@ -382,6 +384,8 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.678 -0500", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "B49E3D8116D56A750AEF2EA2BBA629A3")
         
 private SyncState() {}
@@ -441,6 +445,8 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.700 -0500", hash_original_method = "1AF1C4539078F536A57F5CC0E82C2CE1", hash_generated_method = "E8BD1E6F807FEECBD8C5F138BED93963")
         
 private ProfileSyncState() {}
@@ -637,7 +643,9 @@ public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri co
         /**
          * This utility class cannot be instantiated
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.132 -0500", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "DA3324DED8188362CBB4DD2028BC1249")
+        @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.132 -0500", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "DA3324DED8188362CBB4DD2028BC1249")
         
 private Data() {}
         }
@@ -655,6 +663,8 @@ private Data() {}
             /**
              * no public constructor since this is a utility class
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.997 -0500", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "75F462E173BDF00A680AA0EE2DD1A435")
             
 private Entity() {
@@ -668,7 +678,9 @@ private Entity() {
         /**
          * This utility class cannot be instantiated
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.051 -0500", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "38419D10162DE19B56D626859AF70FC1")
+        @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.051 -0500", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "38419D10162DE19B56D626859AF70FC1")
         
 private StreamItems() {
         }
@@ -780,6 +792,8 @@ public Uri build() {
             /**
              * No public constructor since this is a utility class
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.868 -0500", hash_original_method = "35E5891C5F5088704DD7A6D202E906B4", hash_generated_method = "5A22D9C6D1242BD04481CFF9EAA01E44")
             
 private AggregationSuggestions() {}
@@ -801,6 +815,8 @@ private AggregationSuggestions() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.656 -0500", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6D1AF7E63DEE3A9E3B5F0EF4008EBD20")
             
 private Photo() {}
@@ -852,6 +868,8 @@ private Photo() {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.788 -0500", hash_original_method = "F5E3085137E37D29F0F8CB3C296F1F57", hash_generated_method = "47D4A76F75042B03A266F16D90E98429")
         
 private Contacts()  {}
@@ -875,6 +893,8 @@ private Contacts()  {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.941 -0500", hash_original_method = "B87424FB8F4DF05D98854CA5453341A1", hash_generated_method = "2C9B95C76153E2E5E4B2D5C2F4C6ADDB")
         
 private Profile() {
@@ -931,6 +951,8 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 
             public static final String CONTENT_DIRECTORY = "data";
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             private  Data() {
                 // ---------- Original Method ----------
@@ -945,6 +967,8 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 
             public static final String DATA_ID = "data_id";
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             private  Entity() {
                 // ---------- Original Method ----------
@@ -957,6 +981,8 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 
             public static final String CONTENT_DIRECTORY = "stream_items";
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             private  StreamItems() {
                 // ---------- Original Method ----------
@@ -970,7 +996,9 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
         /**
          * no public constructor since this is a utility class
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.932 -0500", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "9B7660F77E769FF58079F4D88E0594FA")
+        @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.932 -0500", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "9B7660F77E769FF58079F4D88E0594FA")
         
 private DisplayPhoto() {}
         }
@@ -1097,6 +1125,8 @@ public EntityIteratorImpl(Cursor cursor) {
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.965 -0500", hash_original_method = "6107CD4B76D912ACDA57642552743C0C", hash_generated_method = "FF9200DAB9E02B346F47DEFB7ACA80DD")
         
 private RawContacts() {
@@ -1122,7 +1152,9 @@ private RawContacts() {
         /**
          * No public constructor since this is a utility class
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.096 -0500", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "365A1D1F218F58A740618AC6E583E2CA")
+        @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.096 -0500", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "365A1D1F218F58A740618AC6E583E2CA")
         
 private StreamItemPhotos() {
         }
@@ -1144,6 +1176,8 @@ private StreamItemPhotos() {
 
         public static final String MAX_ITEMS = "max_items";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
         private  StreamItems() {
             // ---------- Original Method ----------
@@ -1155,6 +1189,8 @@ private StreamItemPhotos() {
 
         public static final String PHOTO = "photo";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
         private  StreamItemPhotos() {
             // ---------- Original Method ----------
@@ -1165,6 +1201,8 @@ private StreamItemPhotos() {
         /**
          * No public constructor since this is a utility class
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.108 -0500", hash_original_method = "68B58AFB95B4CB9CF9AA43D4A8112325", hash_generated_method = "1D55691EF49821CB24DE30E4D230DE99")
         
 private PhotoFiles() {
@@ -1214,6 +1252,8 @@ public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
 
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/data";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.215 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
         private  Data() {
             // ---------- Original Method ----------
@@ -1241,6 +1281,8 @@ public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.145 -0500", hash_original_method = "F8C55B41037119D58D30171BDB7F39D2", hash_generated_method = "7A70D09DFEE9FBC6BA095C3DA7D817B5")
         
 private RawContactsEntity() {}
@@ -1260,6 +1302,8 @@ private RawContactsEntity() {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.167 -0500", hash_original_method = "D1B05D947AED4866E4130EF727A894C9", hash_generated_method = "7AA746A32F115FA8E51ACF0B69B1B25D")
         
 private PhoneLookup() {}
@@ -1322,6 +1366,8 @@ public static final int getPresencePrecedence(int status) {
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.183 -0500", hash_original_method = "5AF8C140309DC273491B33B4E92E1FA7", hash_generated_method = "72BB942F4DB8CA23BC83A54E18388E68")
         
 private StatusUpdates() {}
@@ -1400,6 +1446,8 @@ private StatusUpdates() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.230 -0500", hash_original_method = "3FC3D91ED9F213084C3DE2075E5DC6AD", hash_generated_method = "ABBBB4B99B75CEFCCF6BB9ED0DC43F49")
             
 private StructuredName() {}
@@ -1434,6 +1482,8 @@ private StructuredName() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.269 -0500", hash_original_method = "C2B5C7987B903EB42CE1EDEA1961E0EA", hash_generated_method = "DD5283A55E6B6F1BAA391AA5DEE87C6C")
             
 private Nickname() {}
@@ -1600,6 +1650,8 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.295 -0500", hash_original_method = "8C72E3409D1DFC404D9CBFEE30B178A0", hash_generated_method = "20858A91C99B487A0D85DFA58E7B2379")
             
 private Phone() {}
@@ -1680,6 +1732,8 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.384 -0500", hash_original_method = "4685E1971C120F244FF83B34E469953F", hash_generated_method = "C8A3E9E234F4725096CD8FF88F5B6008")
             
 private Email() {}
@@ -1765,6 +1819,8 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.425 -0500", hash_original_method = "C8D888449545672CEC46DD26E7BDDD9A", hash_generated_method = "FAA67BE8147DD6AD9A8F1C202BD53E1E")
             
 private StructuredPostal() {
@@ -1893,6 +1949,8 @@ public static final CharSequence getProtocolLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.477 -0500", hash_original_method = "7F43853CDED9232ACA3765709B5C5CC7", hash_generated_method = "5C9DEEA3F7D329A789B5C65180A72B7C")
             
 private Im() {}
@@ -1966,6 +2024,8 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.538 -0500", hash_original_method = "DB9E0507E0CFF6D3A6878FC813F638FB", hash_generated_method = "E72FA9AB21EB9DEC849D67C832120E3A")
             
 private Organization() {}
@@ -2068,6 +2128,8 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.579 -0500", hash_original_method = "AB820511C2318175DFB023ADDE00500D", hash_generated_method = "5C7379F1CD33F66582C3B79E9B50B8B4")
             
 private Relation() {}
@@ -2111,6 +2173,8 @@ public static int getTypeResource(Integer type) {
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.634 -0500", hash_original_method = "D3DDD15A13BA6EC1D9CD48C2CCCFE0B4", hash_generated_method = "BDAD5B72FB8DC237D351054ED50949FF")
             
 private Event() {}
@@ -2127,6 +2191,8 @@ private Event() {}
 
             public static final String PHOTO = DATA15;
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.227 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             private  Photo() {
                 // ---------- Original Method ----------
@@ -2143,6 +2209,8 @@ private Event() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.670 -0500", hash_original_method = "EBAE52FCFF9289B17EA2262C75B6F6C0", hash_generated_method = "341899536F7070342B48A81450701483")
             
 private Note() {}
@@ -2162,6 +2230,8 @@ private Note() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.681 -0500", hash_original_method = "9948141C64D53CA8E17E7FD2EBA08DA8", hash_generated_method = "CD57B10B47E4384F9C72F867F5045C16")
             
 private GroupMembership() {}
@@ -2198,6 +2268,8 @@ private GroupMembership() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.694 -0500", hash_original_method = "CC2DAF060546DD565E4193F5085BC2F2", hash_generated_method = "B0F75899287A5B3F00C2F73E0E2BF7E4")
             
 private Website() {}
@@ -2255,6 +2327,8 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.724 -0500", hash_original_method = "7307A74E42B27B76827D43357DA8B367", hash_generated_method = "AF19ECCE81B80C3183B5B4B3820F72D8")
             
 private SipAddress() {}
@@ -2273,6 +2347,8 @@ private SipAddress() {}
             /**
              * This utility class cannot be instantiated
              */
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.749 -0500", hash_original_method = "CB97BE8665681C1FD82290A9CE03A1A5", hash_generated_method = "1518C88CE2A7455D28F00A07D030AD7B")
             
 private Identity() {}
@@ -2294,6 +2370,8 @@ private Identity() {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.218 -0500", hash_original_method = "3EB47618DCA126249F6622B558B44C8E", hash_generated_method = "54E371C2E975F27786635AD9178F833E")
         
 private CommonDataKinds() {}
@@ -2364,6 +2442,8 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.787 -0500", hash_original_method = "7BA2DC4B038FD72F399C633B1C4B5B34", hash_generated_method = "3D1B22AE31FE9AB2658DC3713C91A6C9")
         
 private Groups() {
@@ -2403,6 +2483,8 @@ private Groups() {
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.814 -0500", hash_original_method = "AEC5F5D30A84CFEC2D9D1903833FB78B", hash_generated_method = "94924C087BDEF419A601243DE7F68DFF")
         
 private AggregationExceptions() {}
@@ -2422,6 +2504,8 @@ private AggregationExceptions() {}
         /**
          * This utility class cannot be instantiated
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.848 -0500", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "59B3C6A592AE63BEE2BC1CC1723B36DF")
         
 private Settings() {
@@ -2461,6 +2545,8 @@ private Settings() {
         /**
          * Not instantiable.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.861 -0500", hash_original_method = "795A4A88B7E0FFCBF277CCA1899F11E6", hash_generated_method = "8360D316DEAF76F39E9753EEA432BC5B")
         
 private ProviderStatus() {
@@ -2624,6 +2710,8 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
 
         public static final String THUMBNAIL_MAX_DIM = "thumbnail_max_dim";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.240 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
         private  DisplayPhoto() {
             // ---------- Original Method ----------

@@ -18,6 +18,8 @@ public class Attributes implements Cloneable, Map<Object, Object> {
     /**
      * Constructs an {@code Attributes} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.749 -0500", hash_original_method = "CDEB7A2340880305C142690108AEFF5F", hash_generated_method = "244B9174ED48EBD9725092F2B0AF7BE7")
     
 public Attributes() {
@@ -31,6 +33,8 @@ public Attributes() {
      * @param attrib
      *            The attributes to obtain entries from.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.753 -0500", hash_original_method = "F8717927CC90D5B5AE946AC3A31B19F4", hash_generated_method = "7BA17470B255E204F6DA7FB2928C4AFE")
     
 @SuppressWarnings("unchecked")
@@ -45,6 +49,8 @@ public Attributes() {
      * @param size
      *            Initial size of this {@code Attributes} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.757 -0500", hash_original_method = "C0A84EEFF5C41531DA971DB0633F74FC", hash_generated_method = "EC0CA962CB42A8DA59DCD3DD5A1A33CD")
     
 public Attributes(int size) {
@@ -54,6 +60,8 @@ public Attributes(int size) {
     /**
      * Removes all key/value pairs from this {@code Attributes}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.760 -0500", hash_original_method = "00A8C0F9832A2FA4DDA896013D523229", hash_generated_method = "5AB568C4948B760D4C02E1AEC1EED7EF")
     
 public void clear() {
@@ -67,6 +75,8 @@ public void clear() {
      *            The key to search for.
      * @return {@code true} if the key is found, {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.762 -0500", hash_original_method = "51FDEF8A21E6EA5E0FB4715F8113FE74", hash_generated_method = "C774AF9EFA934E85591394B11D4C7343")
     
 public boolean containsKey(Object key) {
@@ -80,6 +90,8 @@ public boolean containsKey(Object key) {
      *            the value to search for.
      * @return {@code true} if the value is found, {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.765 -0500", hash_original_method = "E6B0C93317C0E9F78301AFF4874F2620", hash_generated_method = "4299D3C6FCD0434BBA0FB3B8864121A8")
     
 public boolean containsValue(Object value) {
@@ -92,6 +104,8 @@ public boolean containsValue(Object value) {
      *
      * @return a set of Map.Entry's
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.767 -0500", hash_original_method = "2E4A8A9DC4043DAAC1C8FCCBA69D6A6B", hash_generated_method = "79DA989D76837494BB49058E60FFCC63")
     
 public Set<Map.Entry<Object, Object>> entrySet() {
@@ -106,6 +120,8 @@ public Set<Map.Entry<Object, Object>> entrySet() {
      * @return Object associated with key, or {@code null} if key does not
      *         exist.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.770 -0500", hash_original_method = "C22494F044E1A5B9985D58D15AE531DA", hash_generated_method = "1CB4B722B2B786F4E05559507197B818")
     
@@ -118,6 +134,8 @@ public Object get(Object key) {
      *
      * @return {@code true} if one or more keys exist, {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.773 -0500", hash_original_method = "193F4487BCC4A9B88FB28866363E7ABF", hash_generated_method = "18D56647BDCE89DD9DAE584B2203FB91")
     
 public boolean isEmpty() {
@@ -130,6 +148,8 @@ public boolean isEmpty() {
      *
      * @return a {@code Set} of all keys.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.775 -0500", hash_original_method = "F488EE4006E1366E830BF13438F76FA9", hash_generated_method = "C5F9BB97F2B76FD932C81A54BE7DBC1E")
     
 public Set<Object> keySet() {
@@ -148,6 +168,8 @@ public Set<Object> keySet() {
      *                when key is not an {@code Attributes.Name} or value is not
      *                a {@code String}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.777 -0500", hash_original_method = "3E157C761E601D752826F2BACE4084FB", hash_generated_method = "18233502FC7D0004AD99DF81EB4C3139")
     
@@ -165,6 +187,8 @@ public Set<Object> keySet() {
      *            the associations to store (must be of type {@code
      *            Attributes}).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.780 -0500", hash_original_method = "2F4F3A55CE715E104E0F5EF4690E41E2", hash_generated_method = "2B7CDB8B7DCD01D28A9F196859496986")
     
 public void putAll(Map<?, ?> attrib) {
@@ -183,6 +207,8 @@ public void putAll(Map<?, ?> attrib) {
      * @return the values associated with the removed key, {@code null} if not
      *         present.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.782 -0500", hash_original_method = "10CAD66DFB71B02C0F278FCC3305EF24", hash_generated_method = "E22EF5ABE95AC036D958F08B42196276")
     
 public Object remove(Object key) {
@@ -195,6 +221,8 @@ public Object remove(Object key) {
      *
      * @return the size of this {@code Attributes}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.785 -0500", hash_original_method = "BF2CB7E40375B078820B7350C838FBD6", hash_generated_method = "F8AD4306858FD1D055997425E874EBD9")
     
 public int size() {
@@ -207,12 +235,16 @@ public int size() {
      *
      * @return a collection of all values present.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.787 -0500", hash_original_method = "F211D00F0E74ECC7AD7311207A5002DA", hash_generated_method = "11C9143E14621B3D179FD86F25B18434")
     
 public Collection<Object> values() {
         return map.values();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.790 -0500", hash_original_method = "732187D1BBCF1409FB005BFCCDAC70B4", hash_generated_method = "DE812C948230BCE36325C11EECB429F9")
     
 @SuppressWarnings("unchecked")
@@ -233,6 +265,8 @@ public Collection<Object> values() {
      *
      * @return the hash code of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.792 -0500", hash_original_method = "A7A7EF5A89DF679FD5CBA963DA8911B6", hash_generated_method = "8D13CAD47D1B856E3A0515DAFE1F8411")
     
 @Override
@@ -250,6 +284,8 @@ public Collection<Object> values() {
      * @return {@code true} if the {@code Attributes} are equal, {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.794 -0500", hash_original_method = "E46FF1DB18EE293123D8E2B07FF4B8E9", hash_generated_method = "53D1580E3A84897FD0E12CC4087EFC9B")
     
 @Override
@@ -286,6 +322,8 @@ public String getValue(Attributes.Name name) {
      * @return the string associated with name, or {@code null} if name is not a
      *         valid key.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.799 -0500", hash_original_method = "3C8D5071480DE8B5CA7E078D035D576F", hash_generated_method = "F9FC07771AE8D4BF487E5ACF93B0F2AB")
     
@@ -303,6 +341,8 @@ public String getValue(String name) {
      *            the value to store in this {@code Attributes}.
      * @return the value being stored.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.802 -0500", hash_original_method = "6F8FF0BC58E7762A3A8A85D431B8F527", hash_generated_method = "97406294BEE951C411D979746F739EC5")
     
@@ -369,6 +409,8 @@ public String putValue(String name, String val) {
 
         private  String name;
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.733 -0500", hash_original_method = "2C39DBA2C28891B792407C3858FAD7FB", hash_generated_method = "D259FF0E06F36A67CCF4918D160B3860")
         
 public Name(String name) {
@@ -388,6 +430,8 @@ public Name(String name) {
             this.name = name;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.736 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "7070E6AABEDCBA653834DDC8CF79A47C")
         
@@ -395,6 +439,8 @@ String getName() {
             return name;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.739 -0500", hash_original_method = "44A371BEEBBEF1D1024A1D234C6B6AC2", hash_generated_method = "860637704CE069F2CE0219A489889C20")
         
 @Override public boolean equals(Object object) {
@@ -402,12 +448,16 @@ String getName() {
                     && ((Name) object).name.equalsIgnoreCase(name);
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.742 -0500", hash_original_method = "9402BF4C103D69D49EBD5DEF399C9512", hash_generated_method = "FB8E2117ADDED661096E70AED969BDF9")
         
 @Override public int hashCode() {
             return name.toLowerCase(Locale.US).hashCode();
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.744 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
         
 @Override public String toString() {

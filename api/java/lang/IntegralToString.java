@@ -72,6 +72,8 @@ public static void appendInt(AbstractStringBuilder sb, int i) {
      * Returns the string representation of i and leaves sb alone if sb is null.
      * Returns null and appends the string representation of i to sb if sb is non-null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.183 -0500", hash_original_method = "18F04DADB801BEC6FD2BF5A5509D8E24", hash_generated_method = "E79DB73A536926B98FC83AF3DDCD828E")
     
 private static String convertInt(AbstractStringBuilder sb, int i) {
@@ -214,6 +216,8 @@ public static void appendLong(AbstractStringBuilder sb, long l) {
      * Returns the string representation of n and leaves sb alone if sb is null.
      * Returns null and appends the string representation of n to sb if sb is non-null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.195 -0500", hash_original_method = "335087D7FF3CE8ACF704F016666ED5E4", hash_generated_method = "9C2CF14366EC4FEC5E2510809E61CCA2")
     
 private static String convertLong(AbstractStringBuilder sb, long n) {
@@ -302,6 +306,8 @@ private static String convertLong(AbstractStringBuilder sb, long n) {
      * next time this method is called). Note that n is interpreted as a large
      * positive integer (not a negative integer) if its sign bit is set.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.197 -0500", hash_original_method = "AA8AE34ED725E04DA1882B7CEAEB718F", hash_generated_method = "C5EE79131CBB996273FBE7D43CDE847F")
     
 private static int intIntoCharArray(char[] buf, int cursor, int n) {
@@ -469,6 +475,8 @@ public static String longToOctalString(long v) {
      * using a package-private string constructor that incorporates the
      * "autoboxing array" into the new string.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.224 -0500", hash_original_method = "F1C6410A467B286589D07AFCC53374B5", hash_generated_method = "49D2D4BE49B87B4FD1B9513189C9E32D")
     
 private static String stringOf(char... args) {
@@ -545,6 +553,8 @@ private static String stringOf(char... args) {
         'U', 'V', 'W', 'X', 'Y', 'Z'
     };
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.171 -0500", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "F9A5116623A8F121F9E7894C48ABCCA4")
     
 private IntegralToString() {

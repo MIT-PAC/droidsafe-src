@@ -37,7 +37,9 @@ class LocalSocketImpl {
     /**
      * Create a new instance.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.358 -0500", hash_original_method = "EB46FEA2FE489ABD86FB64E17870F7D5", hash_generated_method = "EB46FEA2FE489ABD86FB64E17870F7D5")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.358 -0500", hash_original_method = "EB46FEA2FE489ABD86FB64E17870F7D5", hash_generated_method = "EB46FEA2FE489ABD86FB64E17870F7D5")
     
 LocalSocketImpl()
     {
@@ -50,13 +52,17 @@ LocalSocketImpl()
      *
      * @param fd non-null; bound file descriptor
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.360 -0500", hash_original_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5", hash_generated_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.360 -0500", hash_original_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5", hash_generated_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5")
     
 LocalSocketImpl(FileDescriptor fd) throws IOException
     {
         this.fd = fd;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.305 -0500", hash_original_method = "2758981D1030A8FDA90CA71A02304595", hash_generated_method = "322BB37FF722A58BB18D2DD8EAADCCB4")
     
     private int available_native(FileDescriptor fd) throws IOException{
@@ -65,6 +71,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.308 -0500", hash_original_method = "C4F1C4509B0A008CEB1A520A33B1432C", hash_generated_method = "0BFB7D9CE40F5048B9859812C60A147E")
     
     private void close_native(FileDescriptor fd) throws IOException{
@@ -72,6 +80,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(fd.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.312 -0500", hash_original_method = "C5E1B2BCA848D2C54F079D7825712FAA", hash_generated_method = "A13C1097AE2EBE781454EF6A4EF629C5")
     
     private int read_native(FileDescriptor fd) throws IOException{
@@ -80,6 +90,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.316 -0500", hash_original_method = "6C0CD8F9940E6252A80F192C7FCEF247", hash_generated_method = "AE77DEEB20B582CDED5DF51CEB0BCE60")
     
     private int readba_native(byte[] b, int off, int len,
@@ -92,6 +104,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.319 -0500", hash_original_method = "411B6D80F43D59E374103A18918D197B", hash_generated_method = "79B65129E58ACA13031F891365D948B8")
     
     private void writeba_native(byte[] b, int off, int len,
@@ -103,6 +117,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(fd.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.323 -0500", hash_original_method = "EC6860394B0EC0B22E9CA8C353E6B2CD", hash_generated_method = "B030B14DF820690DE3A9F7798B1447FC")
     
     private void write_native(int b, FileDescriptor fd)
@@ -112,6 +128,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(fd.getTaint());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.326 -0500", hash_original_method = "FB81706A2E5D939365DC1E11BB4FE7D5", hash_generated_method = "EE262E1FDADAEC621A39F51506C3E6DA")
     
     private void connectLocal(FileDescriptor fd, String name,
@@ -122,6 +140,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(namespace);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.330 -0500", hash_original_method = "62C617B37F715EB0C7D8B05FC6062D1C", hash_generated_method = "CE48C7AFB77AF7187A6547FCD34D998B")
     
     private void bindLocal(FileDescriptor fd, String name, int namespace)
@@ -132,12 +152,16 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(namespace);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "91E7A83B201CCE6F03E99B6B97993D3C", hash_generated_method = "BF4DB921189260FDA30B994461CFCF87")
     private FileDescriptor create_native(boolean stream) throws IOException {
         FileDescriptor fd = new FileDescriptor();
         fd.addTaint(this.taint);
         return fd;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.337 -0500", hash_original_method = "565F45EE1777149341C55D43CF68422B", hash_generated_method = "DA50784D3A2A11405647175C8DFB1DDE")
     
     private void listen_native(FileDescriptor fd, int backlog)
@@ -147,6 +171,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(backlog);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.341 -0500", hash_original_method = "AE79C436903413982C1AAE7FD29B4B48", hash_generated_method = "369C1532C460807B4DB74051FBE9C4F9")
     
     private void shutdown(FileDescriptor fd, boolean shutdownInput){
@@ -155,6 +181,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(shutdownInput);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "0137F99D53D5E10D02D5A211BB31B969", hash_generated_method = "5F1B13E48615D9E4FD0789735B8F4C85")
     private Credentials getPeerCredentials_native(
             FileDescriptor fd) throws IOException {
@@ -162,6 +190,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	creds.addTaint(this.taint);
     	return creds;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.349 -0500", hash_original_method = "57547C3595B23A135CCDE37FD7052F1D", hash_generated_method = "0C8D608554554E90ADE360CC50CEEE96")
     
     private int getOption_native(FileDescriptor fd, int optID)
@@ -172,6 +202,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.352 -0500", hash_original_method = "DE678D0521D206818FAC33E612ECDEF9", hash_generated_method = "08C25418222347227013F52740105F39")
     
     private void setOption_native(FileDescriptor fd, int optID,
@@ -183,6 +215,8 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(value);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.249 -0400", hash_original_method = "AD93B21D07861EA052C26EC40030E4DA", hash_generated_method = "0BA24B5688D235E53CBDA81423459803")
     private FileDescriptor accept(FileDescriptor fd, LocalSocketImpl s) throws IOException {
         FileDescriptor fd2 = new FileDescriptor();

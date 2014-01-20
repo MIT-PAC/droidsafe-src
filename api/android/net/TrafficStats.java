@@ -321,6 +321,8 @@ public static void incrementOperationCount(int tag, int operationCount) {
      * Return detailed {@link NetworkStats} for the current UID. Requires no
      * special permission.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.375 -0500", hash_original_method = "4800E1BB809552A3F41F215D24E3D8D6", hash_generated_method = "39A8F7F76955E0CF923C47F2D8EC1439")
     
 private static NetworkStats getDataLayerSnapshotForUid(Context context) {

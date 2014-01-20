@@ -13,18 +13,24 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
 
     protected  int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.054 -0500", hash_original_method = "3F3E4A2A5ABE550DAD549AD9F5CD19DE", hash_generated_method = "3F3E4A2A5ABE550DAD549AD9F5CD19DE")
     
 DoubleArrayBuffer(double[] array) {
         this(array.length, array, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.057 -0500", hash_original_method = "6003BB432EE138547D90D60175004272", hash_generated_method = "6003BB432EE138547D90D60175004272")
     
 DoubleArrayBuffer(int capacity) {
         this(capacity, new double[capacity], 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.060 -0500", hash_original_method = "BFD112F1B44B2A6AED2367002E1D0285", hash_generated_method = "BFD112F1B44B2A6AED2367002E1D0285")
     
 DoubleArrayBuffer(int capacity, double[] backingArray, int offset) {

@@ -1461,6 +1461,8 @@ public void addTransaction(SIPServerTransaction serverTransaction) throws IOExce
     /**
      * Hash table for quick lookup of transactions. Here we wait for room if needed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.488 -0500", hash_original_method = "A02B6100DC58EB921085C7ED44EE1D0C", hash_generated_method = "48084A26E40A2F235318545FF3404AE3")
     
 private void addTransactionHash(SIPTransaction sipTransaction) {
@@ -2157,6 +2159,8 @@ public String auditStack(Set activeCallIDs, long leakedDialogTimer,
      *
      * @return Audit report, null if no dialog leaks were found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.591 -0500", hash_original_method = "5A76CC0B1A3067E5B9DACF3EB61E431C", hash_generated_method = "8C4AABB785909C003FDE6A663BCA9D8F")
     
 private String auditDialogs(Set activeCallIDs, long leakedDialogTimer) {
@@ -2230,6 +2234,8 @@ private String auditDialogs(Set activeCallIDs, long leakedDialogTimer) {
      *
      * @return Audit report, null if no transaction leaks were found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.594 -0500", hash_original_method = "B29AC2188DE994EDE68B3EFDD85B41F1", hash_generated_method = "C9E4B079ADF87AC96205F417C0149E3E")
     
 private String auditTransactions(ConcurrentHashMap transactionsMap,

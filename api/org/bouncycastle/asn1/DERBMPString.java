@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERBMPString extends ASN1Object implements DERString {
 
     /**
@@ -61,7 +56,6 @@ public static DERBMPString getInstance(
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.034 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
 
     String  string;
-    
 
     /**
      * basic constructor - byte encoded string.
@@ -128,6 +122,8 @@ protected boolean asn1Equals(
         return this.getString().equals(s.getString());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.062 -0500", hash_original_method = "FF137816E9C451A6CEB1C43EC2D7AD7D", hash_generated_method = "FF137816E9C451A6CEB1C43EC2D7AD7D")
     
 void encode(
@@ -145,7 +141,6 @@ void encode(
 
         out.writeEncoded(BMP_STRING, b);
     }
-
     
 }
 

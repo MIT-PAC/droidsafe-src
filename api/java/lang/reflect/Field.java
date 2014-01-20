@@ -15,6 +15,8 @@ import droidsafe.helpers.DSUtils;
 
 public final class Field extends AccessibleObject implements Member {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
     	Annotation[] ret = new Annotation[0];
     	ret[0].addTaint(declaringClass.taint);
@@ -100,7 +102,9 @@ public final class Field extends AccessibleObject implements Member {
      *
      * @param orig non-null; the original instance to clone
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.248 -0500", hash_original_method = "18020B40E6468EB970BF7E1035466368", hash_generated_method = "9031960A6529FC97E6B8E086CB3ADC55")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.248 -0500", hash_original_method = "18020B40E6468EB970BF7E1035466368", hash_generated_method = "9031960A6529FC97E6B8E086CB3ADC55")
     
 Field(Field orig) {
         this(orig.declaringClass, orig.type, orig.name, orig.slot);
@@ -125,6 +129,8 @@ private Field(Class<?> declaringClass, Class<?> type, String name, int slot) {
     	
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.254 -0500", hash_original_method = "5029B4C059F978BE158986B034FE3005", hash_generated_method = "63D5F4635328AC6DD49A3A6379D3C306")
     
 private synchronized void initGenericType() {
@@ -142,6 +148,8 @@ private synchronized void initGenericType() {
     }
 
     /** {@inheritDoc} */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.256 -0500", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "5A7AC51370A528B541EFB40EFD81B606")
     
@@ -156,6 +164,8 @@ private synchronized void initGenericType() {
         return StringUtils.combineStrings(annotation);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.759 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "F1BBACEA836E9C65FE0E5D9A22FF7006")
     private Object[] getSignatureAnnotation(Class declaringClass, int slot) {
     	addTaint(declaringClass.taint);
@@ -560,6 +570,8 @@ public int getModifiers() {
         return getFieldModifiers(declaringClass, slot);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.320 -0500", hash_original_method = "9D513D500FBFD57DB21A924D9A85826A", hash_generated_method = "D9F237B55D499490E2BC78D721103B22")
     
     private int getFieldModifiers(Class<?> declaringClass, int slot){
@@ -620,6 +632,8 @@ public short getShort(Object object) throws IllegalAccessException, IllegalArgum
      *
      * @return the constructor's signature.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.328 -0500", hash_original_method = "994767CE6492BCD5B50ECB089389E539", hash_generated_method = "05C67715888196CD12438B44D6E73AE7")
     
 @SuppressWarnings("unused")

@@ -19,14 +19,8 @@ import android.os.PerformanceCollector.PerformanceResultsWriter;
 
 import com.google.android.collect.Lists;
 
-
-
-
-
-
 public class AndroidTestRunner extends BaseTestRunner {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.123 -0500", hash_original_field = "FAF947ADE8CA338CF26CE4594F5A8D6D", hash_generated_field = "6DA683BBE787F263E5F5E79B3A62B986")
-
 
     private TestResult mTestResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.125 -0500", hash_original_field = "C3CB53F1A053E8E518BD9775B0ABB434", hash_generated_field = "5B8CC2DB991885EB5008A645801A9BD1")
@@ -42,7 +36,6 @@ public class AndroidTestRunner extends BaseTestRunner {
 
     private boolean mSkipExecution = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.133 -0500", hash_original_field = "0794755E72236CB587617728E7BD124C", hash_generated_field = "AED73EC002699D3069BEE18C310BB33E")
-
 
     private List<TestListener> mTestListeners = Lists.newArrayList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.136 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
@@ -79,6 +72,8 @@ public void setTest(Test test) {
         setTest(test, test.getClass());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.145 -0500", hash_original_method = "8A2ED2B311133489D5211F7B75C9AF00", hash_generated_method = "410699AEEE9950A0F333408530BA2573")
     
 private void setTest(Test test, Class<? extends Test> testClass) {
@@ -104,6 +99,8 @@ public void addTestListener(TestListener testListener) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.151 -0500", hash_original_method = "4ED6259CFCB0F06AF455BB5AA68C8ADA", hash_generated_method = "0C73C2364852FEB687E4526313F238A5")
     
 @SuppressWarnings("unchecked")
@@ -116,6 +113,8 @@ public void addTestListener(TestListener testListener) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.154 -0500", hash_original_method = "680F4AFE025176BB5C5C3EA4F624B107", hash_generated_method = "7E527D59F3A66F96630DAE3691C8A27C")
     
 private TestCase buildSingleTestMethod(Class testClass, String testMethodName) {
@@ -132,6 +131,8 @@ private TestCase buildSingleTestMethod(Class testClass, String testMethodName) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.156 -0500", hash_original_method = "DDD5F7F4EAC683F5EFEEC11885AD09F9", hash_generated_method = "16D4C93CAE9D746EF0B46366E79262CB")
     
 private boolean shouldRunSingleTestMethod(String testMethodName,
@@ -139,6 +140,8 @@ private boolean shouldRunSingleTestMethod(String testMethodName,
         return testMethodName != null && TestCase.class.isAssignableFrom(testClass);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.159 -0500", hash_original_method = "771A297B38A7AB0B0FF5862A497CDBEC", hash_generated_method = "6C01E3DBFEBFDBCD202F68F78B8929B0")
     
 private Test getTest(Class clazz) {
@@ -169,6 +172,8 @@ protected TestResult createTestResult() {
         return new TestResult();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.164 -0500", hash_original_method = "35C6F654589DD3EA8896BA4A5DEE7BCB", hash_generated_method = "35C6F654589DD3EA8896BA4A5DEE7BCB")
     
 void setSkipExecution(boolean skip) {
@@ -217,6 +222,8 @@ public void runTest(TestResult testResult) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.177 -0500", hash_original_method = "949353832C2D9CAB570B13ECD24DC64F", hash_generated_method = "6B5410A5E6A44144F76CB2B78960E68A")
     
 private void setContextIfAndroidTestCase(Test test, Context context, Context testContext) {
@@ -232,6 +239,8 @@ public void setContext(Context context) {
         mContext = context;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.181 -0500", hash_original_method = "E266649630C8CD4E16F7F34F320F1B2E", hash_generated_method = "00D8387B614FDA64AA754A61F66C161A")
     
 private void setInstrumentationIfInstrumentationTestCase(
@@ -303,7 +312,6 @@ public void testFailed(int status, Test test, Throwable t) {
 protected void runFailed(String message) {
         throw new RuntimeException(message);
     }
-
     
 }
 

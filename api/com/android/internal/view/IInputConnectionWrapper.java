@@ -180,6 +180,8 @@ public void setSelection(int start, int end) {
 
         int seq;
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.184 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
         public SomeArgs ()
         {
@@ -278,6 +280,8 @@ public void performPrivateCommand(String action, Bundle data) {
         dispatchMessage(obtainMessageOO(DO_PERFORM_PRIVATE_COMMAND, action, data));
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.448 -0500", hash_original_method = "F5A5E3786D2DDCB2FEFEBA688154C5D7", hash_generated_method = "A1BBFB8562CE1F2873E7B8F06FF3267A")
     
@@ -294,6 +298,8 @@ void dispatchMessage(Message msg) {
         mH.sendMessage(msg);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.455 -0500", hash_original_method = "78BA9F6D5AE481CC7127DB3741BBDA1E", hash_generated_method = "BD7781E7C44106F974921C81ACD5568D")
     
 void executeMessage(Message msg) {
@@ -532,24 +538,32 @@ void executeMessage(Message msg) {
         Log.w(TAG, "Unhandled message code: " + msg.what);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.458 -0500", hash_original_method = "92301CED384526FAE2562FC8E2BD0E1D", hash_generated_method = "92301CED384526FAE2562FC8E2BD0E1D")
     
 Message obtainMessage(int what) {
         return mH.obtainMessage(what);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.460 -0500", hash_original_method = "1D375F3B5B7A421102D544B0D8C99910", hash_generated_method = "1D375F3B5B7A421102D544B0D8C99910")
     
 Message obtainMessageII(int what, int arg1, int arg2) {
         return mH.obtainMessage(what, arg1, arg2);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.462 -0500", hash_original_method = "E41B1E1C050A3613D52D3D6F2431F5B0", hash_generated_method = "E41B1E1C050A3613D52D3D6F2431F5B0")
     
 Message obtainMessageO(int what, Object arg1) {
         return mH.obtainMessage(what, 0, 0, arg1);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.464 -0500", hash_original_method = "C41806B53C46498944BCE998FEC907A1", hash_generated_method = "C41806B53C46498944BCE998FEC907A1")
     
 Message obtainMessageISC(int what, int arg1, int seq, IInputContextCallback callback) {
@@ -559,6 +573,8 @@ Message obtainMessageISC(int what, int arg1, int seq, IInputContextCallback call
         return mH.obtainMessage(what, arg1, 0, args);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.467 -0500", hash_original_method = "81C8385506FF3623370F9C4C1A9DC229", hash_generated_method = "81C8385506FF3623370F9C4C1A9DC229")
     
 Message obtainMessageIISC(int what, int arg1, int arg2, int seq, IInputContextCallback callback) {
@@ -568,6 +584,8 @@ Message obtainMessageIISC(int what, int arg1, int arg2, int seq, IInputContextCa
         return mH.obtainMessage(what, arg1, arg2, args);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.469 -0500", hash_original_method = "F0BFCDA04898886ED0BDB255B10E7641", hash_generated_method = "F0BFCDA04898886ED0BDB255B10E7641")
     
 Message obtainMessageIOSC(int what, int arg1, Object arg2, int seq,
@@ -579,12 +597,16 @@ Message obtainMessageIOSC(int what, int arg1, Object arg2, int seq,
         return mH.obtainMessage(what, arg1, 0, args);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.471 -0500", hash_original_method = "BDB545C9895C4A044C116EE5375794DB", hash_generated_method = "BDB545C9895C4A044C116EE5375794DB")
     
 Message obtainMessageIO(int what, int arg1, Object arg2) {
         return mH.obtainMessage(what, arg1, 0, arg2);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.473 -0500", hash_original_method = "0CCDC84288D426642A6380F76E883191", hash_generated_method = "0CCDC84288D426642A6380F76E883191")
     
 Message obtainMessageOO(int what, Object arg1, Object arg2) {

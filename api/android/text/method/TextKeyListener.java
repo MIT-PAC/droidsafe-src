@@ -49,6 +49,8 @@ public static TextKeyListener getInstance(boolean autotext,
      * Returns a new or existing instance with no automatic capitalization
      * or correction.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.762 -0500", hash_original_method = "936D7D79BC1B2ACFC739513AECD7DAAE", hash_generated_method = "023E15A409E87AD8CED46DA23633F6B9")
     
@@ -91,6 +93,8 @@ public static boolean shouldCap(Capitalize cap, CharSequence cs, int off) {
      *
      * @param e the buffer whose text and state are to be cleared.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.781 -0500", hash_original_method = "DDCDD16B215513F049C48DCCB34052D5", hash_generated_method = "E2BF4A07043A385FD8DCCBBCD0FC0AF4")
     
 public static void clear(Editable e) {
@@ -160,6 +164,8 @@ public TextKeyListener(Capitalize cap, boolean autotext) {
         mAutoText = autotext;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.768 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
     
@@ -167,6 +173,8 @@ public int getInputType() {
         return makeTextContentType(mAutoCap, mAutoText);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.771 -0500", hash_original_method = "81E68D18E6AAF9C62286CED7FE623E2E", hash_generated_method = "8DC712458BB74D26286CDA994A4AF4EF")
     
 @Override
@@ -177,6 +185,8 @@ public int getInputType() {
         return im.onKeyDown(view, content, keyCode, event);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.774 -0500", hash_original_method = "4D169ED96CD6963312694BD71629C37D", hash_generated_method = "47AF4ABEA5FFF41EF3671970CFBD60C2")
     
 @Override
@@ -206,6 +216,8 @@ public static NullKeyListener getInstance() {
 
         private static NullKeyListener sInstance;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.774 -0400", hash_original_method = "F358F3B966187D3EEEEBD171D03A4696", hash_generated_method = "F358F3B966187D3EEEEBD171D03A4696")
         public NullKeyListener ()
         {
@@ -269,6 +281,8 @@ public SettingsObserver() {
         
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.777 -0500", hash_original_method = "BC51D61DF5BB87B519CDA007F0E35AD4", hash_generated_method = "0D06E3772B7AF10A65578E0F60A16559")
     
 @Override
@@ -278,13 +292,19 @@ public SettingsObserver() {
         return im.onKeyOther(view, content, event);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.784 -0500", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "D0D44080BF1B8B0853634EBEFA340901")
     
 public void onSpanAdded(Spannable s, Object what, int start, int end) { }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.786 -0500", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "5B4B7AFD86AC085C95BBA97BAFF2BD93")
     
 public void onSpanRemoved(Spannable s, Object what, int start, int end) { }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.789 -0500", hash_original_method = "C422051A9042B505708BBCABB42F0EAF", hash_generated_method = "33AEF148EF8655B2C11372FC2DB1664F")
     
 public void onSpanChanged(Spannable s, Object what, int start, int end,
@@ -294,6 +314,8 @@ public void onSpanChanged(Spannable s, Object what, int start, int end,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.792 -0500", hash_original_method = "AD20E29A89E7D41F4894A2F9AC99B4E0", hash_generated_method = "158B0C4054D88AC275FE93C71E14E239")
     
 private KeyListener getKeyListener(KeyEvent event) {
@@ -317,6 +339,8 @@ private KeyListener getKeyListener(KeyEvent event) {
         return NullKeyListener.getInstance();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.823 -0500", hash_original_method = "565C1A1138C97E5AB635581DD94969A4", hash_generated_method = "08CDBEB787485277FFC31E398701E64B")
     
 public void release() {
@@ -332,6 +356,8 @@ public void release() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.827 -0500", hash_original_method = "083A24B7721BE4E40A2817E04F6CDAB7", hash_generated_method = "AA95F48A0D4EC0C7E2390B426DAD9C6A")
     
 private void initPrefs(Context context) {
@@ -346,6 +372,8 @@ private void initPrefs(Context context) {
         mPrefsInited = true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.839 -0500", hash_original_method = "4FB87B933010A67FA68BED5325D02530", hash_generated_method = "4FBD6D0E1DAF0361C913AF31C5629D8C")
     
 private void updatePrefs(ContentResolver resolver) {
@@ -360,7 +388,9 @@ private void updatePrefs(ContentResolver resolver) {
                  (pw ? SHOW_PASSWORD : 0);
     }
 
-    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.841 -0500", hash_original_method = "27BF28A81EBEDB0A58E981BB8A0B8A16", hash_generated_method = "27BF28A81EBEDB0A58E981BB8A0B8A16")
     
 int getPrefs(Context context) {

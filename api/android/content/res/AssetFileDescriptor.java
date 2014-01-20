@@ -63,6 +63,8 @@ public AssetFileDescriptor(ParcelFileDescriptor fd, long startOffset,
         mLength = length;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.808 -0500", hash_original_method = "1F42E1B919C11896F377AE3DA953160B", hash_generated_method = "1F42E1B919C11896F377AE3DA953160B")
     
 AssetFileDescriptor(Parcel src) {

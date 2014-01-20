@@ -39,6 +39,8 @@ public ParsePosition(int index) {
      *         {@code ParsePosition}; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.829 -0500", hash_original_method = "7A2CC483DDAB3EA409EA20ED7AF6932E", hash_generated_method = "CAB7203C3A085DE7F4B65C2136C19B16")
     
 @Override
@@ -56,6 +58,8 @@ public ParsePosition(int index) {
      *
      * @return the index of the parse error or -1 if there is no error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.831 -0500", hash_original_method = "251F29749A0D498AD09891D5409959A9", hash_generated_method = "8513B758071D7BF28FC97A139C41AD8C")
     
@@ -77,6 +81,8 @@ public int getIndex() {
         return currentPosition;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.836 -0500", hash_original_method = "78BEA0F92DBA8060A51AB3A3D8273064", hash_generated_method = "34759ADCBA6D0B2C6986E711CEEDEC4B")
     
 @Override
@@ -117,6 +123,8 @@ public void setIndex(int index) {
      *
      * @return the string representation of this parse position.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.844 -0500", hash_original_method = "EA803D38773CA0193E1AA7C91AAA6A50", hash_generated_method = "AEB38833E430D517AABC28F6D901BEA1")
     
 @Override

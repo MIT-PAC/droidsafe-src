@@ -9,6 +9,8 @@ import org.w3c.dom.Node;
 
 public final class CommentImpl extends CharacterDataImpl implements Comment {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.389 -0500", hash_original_method = "73927E77C0FC42AE226BC21B47EED77C", hash_generated_method = "73927E77C0FC42AE226BC21B47EED77C")
     
 CommentImpl(DocumentImpl document, String data) {

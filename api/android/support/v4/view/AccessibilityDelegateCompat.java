@@ -33,6 +33,8 @@ public AccessibilityDelegateCompat() {
     /**
      * @return The wrapped bridge implementation.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.632 -0500", hash_original_method = "29194344028099349300BA7E9C8229CD", hash_generated_method = "29194344028099349300BA7E9C8229CD")
     

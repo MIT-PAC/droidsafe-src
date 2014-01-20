@@ -137,6 +137,8 @@ public void bind(
         return buffer.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.928 -0500", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "FA059EA16C6BD439D56873736FDE28AE")
     
 private void assertNotOpen() {
@@ -145,6 +147,8 @@ private void assertNotOpen() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.930 -0500", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "800BA487D09C6D9F62760FED6B11DCF8")
     
 private void assertOpen() {

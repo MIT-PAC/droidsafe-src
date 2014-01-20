@@ -197,6 +197,8 @@ Sync(Callable<V> callable) {
             this.callable = callable;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.365 -0500", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "FCBC3293724673E03B89D5B3E326E5BC")
         
 private boolean ranOrCancelled(int state) {
@@ -223,18 +225,24 @@ protected boolean tryReleaseShared(int ignore) {
             return true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.373 -0500", hash_original_method = "D8E0DD690F3527605076B5F197BA585A", hash_generated_method = "D8E0DD690F3527605076B5F197BA585A")
         
 boolean innerIsCancelled() {
             return getState() == CANCELLED;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.375 -0500", hash_original_method = "3CE62A51F6A5DB16A8E43D03725714DF", hash_generated_method = "3CE62A51F6A5DB16A8E43D03725714DF")
         
 boolean innerIsDone() {
             return ranOrCancelled(getState()) && runner == null;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.378 -0500", hash_original_method = "E3CC861BC123329FE0CD5116647662CC", hash_generated_method = "E3CC861BC123329FE0CD5116647662CC")
         
 V innerGet() throws InterruptedException, ExecutionException {
@@ -246,6 +254,8 @@ V innerGet() throws InterruptedException, ExecutionException {
             return result;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.380 -0500", hash_original_method = "C6C2CADBDD008A3436D4C69E1505E94B", hash_generated_method = "C6C2CADBDD008A3436D4C69E1505E94B")
         
 V innerGet(long nanosTimeout) throws InterruptedException, ExecutionException, TimeoutException {
@@ -258,6 +268,8 @@ V innerGet(long nanosTimeout) throws InterruptedException, ExecutionException, T
             return result;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.383 -0500", hash_original_method = "02A830CC89A3607D091CAAFD46553563", hash_generated_method = "036A999C1B79070240AA9AE9C6B6861F")
         
 void innerSet(V v) {
@@ -281,6 +293,8 @@ void innerSet(V v) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.385 -0500", hash_original_method = "05A852D9D717B3F2A7ED4890D7DD8417", hash_generated_method = "32F7320837548FDF0411DADDCE439C88")
         
 void innerSetException(Throwable t) {
@@ -304,6 +318,8 @@ void innerSetException(Throwable t) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.388 -0500", hash_original_method = "8B39040A94FB4A11910F39A32682A441", hash_generated_method = "8B39040A94FB4A11910F39A32682A441")
         
 boolean innerCancel(boolean mayInterruptIfRunning) {
@@ -324,6 +340,8 @@ boolean innerCancel(boolean mayInterruptIfRunning) {
             return true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.390 -0500", hash_original_method = "98D56FA1D01F6A8481F25F546B1688C1", hash_generated_method = "CDA9DC46DC81CC76B78BF4811C4AC373")
         
 void innerRun() {
@@ -345,6 +363,8 @@ void innerRun() {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.393 -0500", hash_original_method = "8E960784829E06CF5804B32B20F49AB2", hash_generated_method = "89D379E7603CB7FC6255B77371E79540")
         
 boolean innerRunAndReset() {

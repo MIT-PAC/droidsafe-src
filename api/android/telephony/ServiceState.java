@@ -107,6 +107,8 @@ public static String radioTechnologyToString(int rt) {
      * @param b second obj
      * @return true if two objects equal or both are null
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.293 -0500", hash_original_method = "BC145A1DE2472995676ED9A315FB0956", hash_generated_method = "171409CD29A7B7D5AD18DD4C394534AC")
     
 private static boolean equalsHandlesNulls (Object a, Object b) {
@@ -552,6 +554,8 @@ public boolean getIsManualSelection() {
                 + " EmergOnly=" + mIsEmergencyOnly);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.255 -0500", hash_original_method = "8ACC80A7889D35C4C641DEE09D896F76", hash_generated_method = "16CC1D863B940F520A00568F6F3AF0E1")
     
 private void setNullState(int state) {
@@ -675,6 +679,8 @@ public void setIsManualSelection(boolean isManual) {
      * @param m intent notifier map
      * @hide
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.296 -0500", hash_original_method = "45F7665F0B17EC4A3962C47A86921C1E", hash_generated_method = "83187F5C478428947D78544D1672D3CA")
     
 private void setFromNotifierBundle(Bundle m) {

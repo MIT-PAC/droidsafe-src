@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class ReferenceQueue<T> {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.018 -0500", hash_original_method = "6AE174B13F8683C0991DE48985C31F5E", hash_generated_method = "C186A2B079869A9ED3CD9461C13B023C")
     
 static void add(Reference<?> list) {
@@ -100,6 +102,8 @@ public Reference<? extends T> remove() throws InterruptedException {
      * @throws IllegalArgumentException if {@code timeoutMillis < 0}.
      * @throws InterruptedException if the blocking call was interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.011 -0500", hash_original_method = "55CFE9AF663FFFA3410902143F42A33C", hash_generated_method = "EDA90A27A7B84BE384B1B9B462023515")
     
 public synchronized Reference<? extends T> remove(long timeoutMillis)
@@ -150,6 +154,8 @@ public synchronized Reference<? extends T> remove(long timeoutMillis)
      * @return boolean true if reference is enqueued. false if reference failed
      *         to enqueue.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.014 -0500", hash_original_method = "A43A8FC0DB505099966EA05BCA8E1BC7", hash_generated_method = "0371090DC73679EC93E57AEC0836198E")
     
 synchronized void enqueue(Reference<? extends T> reference) {

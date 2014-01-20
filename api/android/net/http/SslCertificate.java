@@ -90,6 +90,8 @@ public static SslCertificate restoreState(Bundle bundle) {
     /**
      * Convenience for UI presentation, not intended as public API.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.467 -0500", hash_original_method = "F4854410C533ABCAFE3E1FF72047B328", hash_generated_method = "DA3146E2C36FF4265B9905515FBC3F07")
     
 private static String getSerialNumber(X509Certificate x509Certificate) {
@@ -106,6 +108,8 @@ private static String getSerialNumber(X509Certificate x509Certificate) {
     /**
      * Convenience for UI presentation, not intended as public API.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.470 -0500", hash_original_method = "BB04971521798A4AB8A6BF219B43860B", hash_generated_method = "4E7893166AF4B5CC778CD2AEB13E54AF")
     
 private static String getDigest(X509Certificate x509Certificate, String algorithm) {
@@ -124,6 +128,8 @@ private static String getDigest(X509Certificate x509Certificate, String algorith
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.472 -0500", hash_original_method = "4FD92B21057EB8E2D86E0A29786F7A27", hash_generated_method = "B76B5A4B6D6CF46D1637D9A6AB60D36D")
     
 private static final String fingerprint(byte[] bytes) {
@@ -144,6 +150,8 @@ private static final String fingerprint(byte[] bytes) {
     /**
      * Parse an ISO 8601 date converting ParseExceptions to a null result;
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.476 -0500", hash_original_method = "580FA0F575468574C9336A7B61DF15D7", hash_generated_method = "83E62F628230CD0C38EF31224B3A998E")
     
 private static Date parseDate(String string) {
@@ -157,6 +165,8 @@ private static Date parseDate(String string) {
     /**
      * Format a date as an ISO 8601 string, return "" for a null date
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.478 -0500", hash_original_method = "5B5085E306AF53459A7AE9C0247F607B", hash_generated_method = "70ECBC4221D6F322FDFBB4F7F717F9B3")
     
 private static String formatDate(Date date) {
@@ -169,6 +179,8 @@ private static String formatDate(Date date) {
     /**
      * Clone a possibly null Date
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.481 -0500", hash_original_method = "601D82D104A095ABBA912C73F2E0F835", hash_generated_method = "A56786C9EEC3E634CDD3B76C435F31F8")
     
 private static Date cloneDate(Date date) {
@@ -259,6 +271,8 @@ public SslCertificate(X509Certificate certificate) {
              certificate);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.451 -0500", hash_original_method = "EBF5C56E3FBE1E8BC5B0F01C28F68A19", hash_generated_method = "908E7D0B7E70B6EB951D6E0B3C81E092")
     
 private SslCertificate(
@@ -507,6 +521,8 @@ public View inflateCertificateView(Context context) {
      * @return Properly localized version of the certificate date string and
      * the "" if it fails to localize.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.511 -0500", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "A6CDB5BE793C81EFAEC5214801083006")
     
 private String formatCertificateDate(Context context, Date certificateDate) {

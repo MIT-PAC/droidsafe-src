@@ -80,6 +80,8 @@ public final class RuimRecords extends IccRecords {
 
     private String mPrlVersion;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.884 -0500", hash_original_method = "44C32614C87F88FAB25838E2BB007C1E", hash_generated_method = "EC81493D94E9D08B109BE97233341FAA")
     
 RuimRecords(CDMAPhone p) {
@@ -375,6 +377,8 @@ public String getRUIMOperatorNumeric() {
                 RuimCard.INTENT_VALUE_ICC_LOADED, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.923 -0500", hash_original_method = "0D138DB0BC983C7D13FA7613202FEE21", hash_generated_method = "B0F9C19BA1ED7B20A1753E8D52ECEB4A")
     
 private void onRuimReady() {
@@ -391,6 +395,8 @@ private void onRuimReady() {
 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.926 -0500", hash_original_method = "618248758DCBCE1B082F10F6590C51C4", hash_generated_method = "8318C6B5FF0AE1AB0C980F08EC53F50F")
     
 private void fetchRuimRecords() {
@@ -444,6 +450,8 @@ private void fetchRuimRecords() {
         ((CDMAPhone) phone).notifyMessageWaitingIndicator();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.936 -0500", hash_original_method = "BF9176F3CF68AA171F4E13CD5AF3ED9E", hash_generated_method = "80C9AC68D9647CB105DA051DA259108D")
     
 private void handleRuimRefresh(int[] result) {

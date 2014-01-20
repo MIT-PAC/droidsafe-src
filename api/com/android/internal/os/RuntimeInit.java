@@ -30,6 +30,8 @@ import droidsafe.helpers.DSUtils;
 
 public class RuntimeInit {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.222 -0500", hash_original_method = "C7622073E000BE2542D010C6F669959A", hash_generated_method = "771018B1D01CA66B5C048E790F69C13F")
     
 private static final void commonInit() {
@@ -97,6 +99,8 @@ private static final void commonInit() {
      * Returns an HTTP user agent of the form
      * "Dalvik/1.1.0 (Linux; U; Android Eclair Build/MASTER)".
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.224 -0500", hash_original_method = "CC6D52B1B7C2781118F4D0CDEF717B7F", hash_generated_method = "21BCD93CA8F78FB04BE6067E43347FE3")
     
 private static String getDefaultUserAgent() {
@@ -133,6 +137,8 @@ private static String getDefaultUserAgent() {
      * @param className Fully-qualified class name
      * @param argv Argument vector for main()
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.227 -0500", hash_original_method = "57D106C9A5F0931B48EF6F0A7020131B", hash_generated_method = "E6DC0239745199AB2318C248A870A99E")
     
 private static void invokeStaticMain(String className, String[] argv)
@@ -244,6 +250,8 @@ public static void wrapperInit(int targetSdkVersion, String[] argv)
         applicationInit(targetSdkVersion, argv);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.242 -0500", hash_original_method = "ED4327773C53459AF7AFC1B9F1BFFE58", hash_generated_method = "51ABAE0A416A1BEAFBE4E8FEAC94ED8E")
     
 private static void applicationInit(int targetSdkVersion, String[] argv)
@@ -336,6 +344,8 @@ public static final IBinder getApplicationObject() {
     
     private static class UncaughtHandler implements Thread.UncaughtExceptionHandler {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.655 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
         public UncaughtHandler ()
         {
@@ -386,6 +396,8 @@ public void uncaughtException(Thread t, Throwable e) {
          * @param args runtime command-line args
          * @throws IllegalArgumentException
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.276 -0500", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "35BDC5101A4DE38616FDCE6EF4D8CA10")
         
 Arguments(String args[]) throws IllegalArgumentException {
@@ -395,6 +407,8 @@ Arguments(String args[]) throws IllegalArgumentException {
         /**
          * Parses the commandline arguments intended for the Runtime.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.278 -0500", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "BA0AD7E18F4DCF5C52C0A2E2DC39C35F")
         
 private void parseArgs(String args[])

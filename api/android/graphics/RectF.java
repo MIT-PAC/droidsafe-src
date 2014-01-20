@@ -24,6 +24,8 @@ public class RectF implements Parcelable {
      * @return true iff the two specified rectangles intersect. In no event are
      *              either of the rectangles modified.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.926 -0500", hash_original_method = "1FAEC0442F27706D6D5F3E840B971AB4", hash_generated_method = "B7ECD36105B38ABAEED5381ABDCCD9B3")
     
 public static boolean intersects(RectF a, RectF b) {
@@ -86,11 +88,15 @@ public RectF() {}
     	addTaint(bottom);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public RectF(RectF r) { 
     	this();
     	addTaint(r.getTaint());
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public RectF(Rect r) {
     	this();
     	addTaint(r.left);
@@ -99,48 +105,68 @@ public RectF() {}
     	addTaint(r.bottom);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString() {
     	String str = new String();
     	return str;        
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toShortString() {    	
     	String str = new String("");
         return str;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public String toShortString(StringBuilder sb) {    	
     	sb.append(1);
     	return sb.toString();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void printShortString(PrintWriter pw) {
     	char c = 0;
     	pw.append(c);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean isEmpty() {
         return false;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float width() {
     	return getTaintInt();
         //return 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float height() {
     	return getTaintInt();
         //return 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float centerX() {
         return 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float centerY() {
         return 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void setEmpty() {
     	//addTaint(0.getTaint());	//No need to track , just an initializer type function setting things to 0   
     }
@@ -154,11 +180,15 @@ public RectF() {}
     	addTaint(bottom);  
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(RectF src) {
     	addTaint(src.getTaint());
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Rect src) {
     	addTaint(src.left);
@@ -192,6 +222,8 @@ public void offset(float dx, float dy) {
      * @param newLeft   The new "left" coordinate for the rectangle
      * @param newTop    The new "top" coordinate for the rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.906 -0500", hash_original_method = "17E8F6A0DA6BEF949708E45EF28FBDEC", hash_generated_method = "072395F153C45E5EB171F20F34EFAEBF")
     
 public void offsetTo(float newLeft, float newTop) {
@@ -210,6 +242,8 @@ public void offsetTo(float newLeft, float newTop) {
      * @param dx The amount to add(subtract) from the rectangle's left(right)
      * @param dy The amount to add(subtract) from the rectangle's top(bottom)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.908 -0500", hash_original_method = "4ED8FEC7EC4817417CFF539CEB8CD3D5", hash_generated_method = "5C4D73D90534F267ACD4AF169BAC2F86")
     
 public void inset(float dx, float dy) {
@@ -230,6 +264,8 @@ public void inset(float dx, float dy) {
      * @return true iff (x,y) are contained by the rectangle, where containment
      *              means left <= x < right and top <= y < bottom
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.910 -0500", hash_original_method = "7C65F21BA78E9C886CB99F3A821D7FC2", hash_generated_method = "478A0BFDE6FD19E13A25783CBA08CD39")
     
 public boolean contains(float x, float y) {
@@ -249,6 +285,8 @@ public boolean contains(float x, float y) {
      * @return true iff the the 4 specified sides of a rectangle are inside or
      *              equal to this rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.912 -0500", hash_original_method = "5736B1A89F8587C3C51B72E5484012E7", hash_generated_method = "B6FF23F3FBB84652AFC78CC30408C7FF")
     
 public boolean contains(float left, float top, float right, float bottom) {
@@ -267,6 +305,8 @@ public boolean contains(float left, float top, float right, float bottom) {
      * @return true iff the specified rectangle r is inside or equal to this
      *              rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.914 -0500", hash_original_method = "89862D8BCB63DE9E9B3F12DF7005EDAF", hash_generated_method = "F4522FD440D4239612D3807D7093E83F")
     
 public boolean contains(RectF r) {
@@ -295,6 +335,8 @@ public boolean contains(RectF r) {
      *              (and this rectangle is then set to that intersection) else
      *              return false and do not change this rectangle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.917 -0500", hash_original_method = "B665C4D2FA87DEF248CEB5906A538992", hash_generated_method = "2D0C490DF28548B6DC59C756C6E5ED0F")
     
 public boolean intersect(float left, float top, float right, float bottom) {
@@ -328,6 +370,8 @@ public boolean intersect(float left, float top, float right, float bottom) {
      *              (and this rectangle is then set to that intersection) else
      *              return false and do not change this rectangle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.919 -0500", hash_original_method = "F1511D7F30AFB03A76430BC5FB3647DC", hash_generated_method = "CFA0BCF83D702859DF36BA49575B2AC3")
     
 public boolean intersect(RectF r) {
@@ -346,6 +390,8 @@ public boolean intersect(RectF r) {
      *              this rectangle to that intersection. If they do not, return
      *              false and do not change this rectangle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.921 -0500", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "2AF3213ACBAE2E61B84DD66231F68225")
     
@@ -375,6 +421,8 @@ public boolean setIntersect(RectF a, RectF b) {
      * @return true iff the specified rectangle intersects this rectangle. In
      *              no event is this rectangle modified.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.923 -0500", hash_original_method = "7636A1ABF3E5D698C7B1F582C19267F0", hash_generated_method = "9F2716432E7B0E6F949B4DA4024FDAFA")
     
 public boolean intersects(float left, float top, float right,
@@ -387,6 +435,8 @@ public boolean intersects(float left, float top, float right,
      * Set the dst integer Rect by rounding this rectangle's coordinates
      * to their nearest integer values.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.929 -0500", hash_original_method = "1D9E886326ACAAED42A7320F81B83BDE", hash_generated_method = "82AA82F3CD16F5D859C1EB06D94C7EA9")
     
 public void round(Rect dst) {
@@ -398,6 +448,8 @@ public void round(Rect dst) {
      * Set the dst integer Rect by rounding "out" this rectangle, choosing the
      * floor of top and left, and the ceiling of right and bottom.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.931 -0500", hash_original_method = "5165AD4866DE272C811B07E7C1D571CC", hash_generated_method = "A3A32B017315656FB7F5300165C158CF")
     
 public void roundOut(Rect dst) {
@@ -415,6 +467,8 @@ public void roundOut(Rect dst) {
      * @param right The right edge being unioned with this rectangle
      * @param bottom The bottom edge being unioned with this rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.934 -0500", hash_original_method = "4ED17A6A0BD221C6F562FF187EDE0EC1", hash_generated_method = "4C2692EB26E3BEAAD6C7D4E751D89554")
     
 public void union(float left, float top, float right, float bottom) {
@@ -459,6 +513,8 @@ public void union(RectF r) {
      * @param x The x coordinate of the point to add to the rectangle
      * @param y The y coordinate of the point to add to the rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.938 -0500", hash_original_method = "5491E96A191FF9AA58559CF28A27B675", hash_generated_method = "F8C61246652072081D322D7B41B43ABE")
     
 public void union(float x, float y) {
@@ -481,6 +537,8 @@ public void union(float x, float y) {
      * If the edges are already correct (i.e. left <= right and top <= bottom)
      * then nothing is done.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.940 -0500", hash_original_method = "5E187609DBD260B5F8E2F7AA44836C46", hash_generated_method = "E1C40BC234F345C5C8DA68129055BA5D")
     
 public void sort() {
@@ -499,6 +557,8 @@ public void sort() {
     /**
      * Parcelable interface methods
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.942 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
@@ -510,6 +570,8 @@ public int describeContents() {
      * a parcel, use readFromParcel()
      * @param out The parcel to write the rectangle's coordinates into
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.944 -0500", hash_original_method = "5C789B83F9658DFF3AD82091DAFFDD49", hash_generated_method = "1CECFCE84FD52EF63862DC7F8ED424FB")
     
 public void writeToParcel(Parcel out, int flags) {
@@ -525,6 +587,8 @@ public void writeToParcel(Parcel out, int flags) {
      *
      * @param in The parcel to read the rectangle's coordinates from
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.954 -0500", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "32582E56D2E66C5F6A01976E86765F0C")
     
 public void readFromParcel(Parcel in) {

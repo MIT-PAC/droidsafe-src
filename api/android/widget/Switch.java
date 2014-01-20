@@ -248,6 +248,8 @@ public void setSwitchTextAppearance(Context context, int resid) {
         appearance.recycle();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.966 -0500", hash_original_method = "667B994D675EC27CF64612287AF7A922", hash_generated_method = "9F214B4B0CA568C5CDAFDE925F51AD5A")
     
 private void setSwitchTypefaceByIndex(int typefaceIndex, int styleIndex) {
@@ -443,6 +445,8 @@ public void setTextOff(CharSequence textOff) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.987 -0500", hash_original_method = "D1466C388B2346E8DF10ED51CFBEA0FC", hash_generated_method = "D8C92525C7A7973F0C0D40F73B8E8C07")
     
 private Layout makeLayout(CharSequence text) {
@@ -454,6 +458,8 @@ private Layout makeLayout(CharSequence text) {
     /**
      * @return true if (x, y) is within the target area of the switch thumb
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.990 -0500", hash_original_method = "EC82A35D1017AC4F050030BE5A651660", hash_generated_method = "4C603F1D40FEECCAC0350BF15A939038")
     
 private boolean hitThumb(float x, float y) {
@@ -535,6 +541,8 @@ private boolean hitThumb(float x, float y) {
         return super.onTouchEvent(ev);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.996 -0500", hash_original_method = "C7212DC872D0065CD5A602E451EED0FD", hash_generated_method = "02B79B21F5F37A4E69C03FB3C48585BB")
     
 private void cancelSuperTouch(MotionEvent ev) {
@@ -549,6 +557,8 @@ private void cancelSuperTouch(MotionEvent ev) {
      *
      * @param ev Event that triggered the end of drag mode - ACTION_UP or ACTION_CANCEL
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.999 -0500", hash_original_method = "6053E208B701C67F21F78DB5D1D6AC6A", hash_generated_method = "491F5DDF5DBDD960B484D5DC883459C0")
     
 private void stopDrag(MotionEvent ev) {
@@ -573,6 +583,8 @@ private void stopDrag(MotionEvent ev) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.001 -0500", hash_original_method = "7C8C019C9C57DB27BCCABCAFF8863202", hash_generated_method = "41F5DD15070328B26087D46F930E061F")
     
 private void animateThumbToCheckedState(boolean newCheckedState) {
@@ -582,6 +594,8 @@ private void animateThumbToCheckedState(boolean newCheckedState) {
         setChecked(newCheckedState);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.003 -0500", hash_original_method = "49A1E38FB4C1D1775597A6823232C034", hash_generated_method = "73086EA9F7B46B40F8A783B0BCA4CE2C")
     
 private boolean getTargetCheckedState() {
@@ -697,6 +711,8 @@ private boolean getTargetCheckedState() {
         return padding;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.016 -0500", hash_original_method = "B890BAF452343CC74FA34D76EC58FC5C", hash_generated_method = "F35C8F9DD5E41788228A9AEFDAFFA43D")
     
 private int getThumbScrollRange() {

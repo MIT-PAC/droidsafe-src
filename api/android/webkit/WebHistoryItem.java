@@ -47,6 +47,8 @@ public class WebHistoryItem implements Cloneable {
      * Basic constructor that assigns a unique id to the item. Called by JNI
      * only.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.434 -0500", hash_original_method = "93B50544C985FE4A97DF747EDD3ED058", hash_generated_method = "610E7FDFD7F804EC3D2C981A4F6D5277")
     
 private WebHistoryItem() {
@@ -59,7 +61,9 @@ private WebHistoryItem() {
      * Construct a new WebHistoryItem with initial flattened data.
      * @param data The pre-flattened data coming from restoreState.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.437 -0500", hash_original_method = "C4EA5DCF4A3C62F4A8277EC33D71D823", hash_generated_method = "881CA721F8739CA30DE597C7F8A1024A")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.437 -0500", hash_original_method = "C4EA5DCF4A3C62F4A8277EC33D71D823", hash_generated_method = "881CA721F8739CA30DE597C7F8A1024A")
     
 WebHistoryItem(byte[] data) {
         mUrl = null; // This will be updated natively
@@ -73,6 +77,8 @@ WebHistoryItem(byte[] data) {
      * Construct a clone of a WebHistoryItem from the given item.
      * @param item The history item to clone.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.439 -0500", hash_original_method = "42CAAAC2E67437069EA69BA0A3B8DA56", hash_generated_method = "76E424DC49D42A2D893E882C0F5ED6C6")
     
 private WebHistoryItem(WebHistoryItem item) {
@@ -212,7 +218,9 @@ public void setCustomData(Object data) {
      * Note: The VM ensures 32-bit atomic read/write operations so we don't have
      * to synchronize this method.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.459 -0500", hash_original_method = "151983BF7C4C69CD96BA6E3E58A2C1A8", hash_generated_method = "151983BF7C4C69CD96BA6E3E58A2C1A8")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.459 -0500", hash_original_method = "151983BF7C4C69CD96BA6E3E58A2C1A8", hash_generated_method = "151983BF7C4C69CD96BA6E3E58A2C1A8")
     
 void setFavicon(Bitmap icon) {
         mFavicon = icon;
@@ -223,7 +231,9 @@ void setFavicon(Bitmap icon) {
      * set already from a <link> tag, unless the new icon is precomposed.
      * @hide
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.462 -0500", hash_original_method = "6AEC6A0521F7371C54A3BE7086F783A3", hash_generated_method = "6AEC6A0521F7371C54A3BE7086F783A3")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.462 -0500", hash_original_method = "6AEC6A0521F7371C54A3BE7086F783A3", hash_generated_method = "6AEC6A0521F7371C54A3BE7086F783A3")
     
 void setTouchIconUrl(String url, boolean precomposed) {
         if (precomposed || mTouchIconUrlFromLink == null) {
@@ -236,7 +246,9 @@ void setTouchIconUrl(String url, boolean precomposed) {
      * Note: The VM ensures 32-bit atomic read/write operations so we don't have
      * to synchronize this method.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.464 -0500", hash_original_method = "B1D43F529CC26FA65E203DF01CCD077E", hash_generated_method = "B1D43F529CC26FA65E203DF01CCD077E")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.464 -0500", hash_original_method = "B1D43F529CC26FA65E203DF01CCD077E", hash_generated_method = "B1D43F529CC26FA65E203DF01CCD077E")
     
 byte[] getFlattenedData() {
         return mFlattenedData;
@@ -247,7 +259,9 @@ byte[] getFlattenedData() {
      * Note: The VM ensures 32-bit atomic read/write operations so we don't have
      * to synchronize this method.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.466 -0500", hash_original_method = "1A13EE8CB67080EC7270F23F0E09F3FC", hash_generated_method = "1A13EE8CB67080EC7270F23F0E09F3FC")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.466 -0500", hash_original_method = "1A13EE8CB67080EC7270F23F0E09F3FC", hash_generated_method = "1A13EE8CB67080EC7270F23F0E09F3FC")
     
 void inflate(int nativeFrame) {
         inflate(nativeFrame, mFlattenedData);
@@ -265,6 +279,8 @@ protected synchronized WebHistoryItem clone() {
 
     /* Natively inflate this item, this method is called in the WebCore thread.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.472 -0500", hash_original_method = "546433AD896626257E1507E5593DD29B", hash_generated_method = "4C044559F7AEEF4BC84D17B1D70CC2D7")
     
     private void inflate(int nativeFrame, byte[] data){
@@ -274,6 +290,8 @@ protected synchronized WebHistoryItem clone() {
     }
 
     /* Called by jni when the item is updated */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.474 -0500", hash_original_method = "54E9940C94044B5E33255DF6DC9264D1", hash_generated_method = "3AE23423858EC3A5755AC72248F0B78A")
     
 private void update(String url, String originalUrl, String title, 

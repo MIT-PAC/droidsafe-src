@@ -47,6 +47,8 @@ public static Editable.Factory getInstance() {
             return sInstance;
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         private Factory() {
         	//Synthensized constructor
         }

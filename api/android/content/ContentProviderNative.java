@@ -61,6 +61,8 @@ public ContentProviderNative()
      * Should probably be part of the {@link IContentProvider} interface.
      * @return The content provider name.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.814 -0500", hash_original_method = "FFF7AE6EAE1820177AAADEFF3E4923B6", hash_generated_method = "98AF0109AF5C67409905A3E1D507D9AB")
     
 public abstract String getProviderName();

@@ -67,6 +67,8 @@ public CertificateList(TBSCertList tbsCertList,
                                                     signatureValue.length);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.092 -0500", hash_original_method = "296A8B306ED3B280093A8F830EEE1E41", hash_generated_method = "1F895138C5CB067D58F8B2825ECBCED2")
     
 private CertificateList(TBSCertList tbsCertList,

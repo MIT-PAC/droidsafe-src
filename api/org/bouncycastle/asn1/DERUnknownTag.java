@@ -8,11 +8,6 @@ import java.io.IOException;
 
 import org.bouncycastle.util.Arrays;
 
-
-
-
-
-
 public class DERUnknownTag extends DERObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.472 -0500", hash_original_field = "9E3BCD745F0AFBDCD90F57B999378CC1", hash_generated_field = "8267FCF370BB52E90BE4145558A847E9")
 
@@ -70,6 +65,8 @@ public byte[] getData()
         return data;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.491 -0500", hash_original_method = "444E91CF9E2407B92E5AF0788B821FF3", hash_generated_method = "444E91CF9E2407B92E5AF0788B821FF3")
     
 void encode(
@@ -102,7 +99,6 @@ public int hashCode()
     {
         return (isConstructed ? ~0 : 0) ^ tag ^ Arrays.hashCode(data);
     }
-
     
 }
 

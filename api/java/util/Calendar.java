@@ -97,6 +97,8 @@ public static synchronized Calendar getInstance(TimeZone timezone, Locale locale
         return new GregorianCalendar(timezone, locale);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.899 -0500", hash_original_method = "158908F3E16F190E3843624363472BB7", hash_generated_method = "AB655AA915AE637BF015DBEB23C1430B")
     
 private static void checkStyle(int style) {
@@ -105,6 +107,8 @@ private static void checkStyle(int style) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.905 -0500", hash_original_method = "7FEAE0C8609C253A29E80C9ED2A4869C", hash_generated_method = "4DB3590F2001DB40A99B922BA2D92348")
     
 private static void insertValuesInMap(Map<String, Integer> map, String[] values) {
@@ -317,6 +321,8 @@ protected Calendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.774 -0500", hash_original_method = "88FEBE5E333C1748D0E9CCFA28BF3B86", hash_generated_method = "88FEBE5E333C1748D0E9CCFA28BF3B86")
     
 Calendar(TimeZone timezone) {
@@ -355,8 +361,8 @@ protected Calendar(TimeZone timezone, Locale locale) {
      *                if {@code field} is {@code DST_OFFSET} or {@code
      *                ZONE_OFFSET}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.779 -0500", hash_original_method = "1B9CB183169BC098F5BE7A4F2BEC8165", hash_generated_method = "6DCB531333EC528588018EC7E90A2656")
     
 public abstract void add(int field, int value);
@@ -486,6 +492,8 @@ protected void complete() {
     /**
      * Computes the {@code Calendar} fields from {@code time}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.797 -0500", hash_original_method = "13BBC340BA44DE8D38B9076FA1C054A9", hash_generated_method = "37629A66BECD3D6F5E10A82E09704267")
     
 protected abstract void computeFields();
@@ -497,6 +505,8 @@ protected abstract void computeFields();
      *                if the time cannot be computed from the current field
      *                values.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.799 -0500", hash_original_method = "20228C8C89B016D8EF2F596CD8D792FA", hash_generated_method = "24696761EFECCCA4BEAAC6843B3F6C86")
     
 protected abstract void computeTime();
@@ -638,6 +648,8 @@ public int getFirstDayOfWeek() {
      *            the field.
      * @return the greatest minimum value of the specified field.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.818 -0500", hash_original_method = "F4E4C6EEC0A04B890531C5BC8563F43A", hash_generated_method = "B7ABBC759B267BFEB3B0E8148923227A")
     
 public abstract int getGreatestMinimum(int field);
@@ -651,8 +663,8 @@ public abstract int getGreatestMinimum(int field);
      *            the field number.
      * @return the smallest maximum value of the specified field.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.831 -0500", hash_original_method = "5BA3EE65DFA41B110C1BA06A0C25C5CB", hash_generated_method = "6FF57DECEF69A4263E77462366234388")
     
 public abstract int getLeastMaximum(int field);
@@ -665,8 +677,8 @@ public abstract int getLeastMaximum(int field);
      *            the field.
      * @return the greatest maximum value of the specified field.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.834 -0500", hash_original_method = "3355B4B72CA8380FA4AE226D96B7F07A", hash_generated_method = "14D647A704686C1BC12D163BEC0AF438")
     
 public abstract int getMaximum(int field);
@@ -691,6 +703,8 @@ public int getMinimalDaysInFirstWeek() {
      *            the field number.
      * @return the smallest minimum value of the specified field.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.838 -0500", hash_original_method = "40653EC39304E8F2297D1CEE6C7E84EC", hash_generated_method = "20CCD6BF9462D8C6E0194AA9AC6710E5")
     
 public abstract int getMinimum(int field);
@@ -846,6 +860,8 @@ public void roll(int field, int value) {
      * @param increment
      *            {@code true} to increment the field, {@code false} to decrement.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.861 -0500", hash_original_method = "5568E08CE0018BF3C7BFBB2216804222", hash_generated_method = "BD9147ED990B352EC9A76A2CA2EE6A7B")
     
 public abstract void roll(int field, boolean increment);
@@ -1132,6 +1148,8 @@ public String getDisplayName(int field, int style, Locale locale) {
         return (array != null) ? array[value] : null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.897 -0500", hash_original_method = "23B9DFD5A49D248BECD0B5B67B00C262", hash_generated_method = "CB0A6AF9007B3D679F6213CA201122FE")
     
 private String[] getDisplayNameArray(int field, int style, Locale locale) {
@@ -1185,6 +1203,8 @@ public Map<String, Integer> getDisplayNames(int field, int style, Locale locale)
         return result.isEmpty() ? null : result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.911 -0500", hash_original_method = "B466F6EE281116CF7ABF0D209ADAF19B", hash_generated_method = "D2A5EA54520D023D762C26421501FEEF")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -1204,6 +1224,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.913 -0500", hash_original_method = "8FB104B0DF4EC943895E45AF22309DC6", hash_generated_method = "B8B675DD2ADC51122406D660965C1759")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

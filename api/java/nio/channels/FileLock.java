@@ -123,6 +123,8 @@ public final boolean overlaps(long start, long length) {
      *
      * @return {@code true} if the lock is valid, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.945 -0500", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "DEB105C1692FABA897B5C0B0EC6247FE")
     
 public abstract boolean isValid();
@@ -137,6 +139,8 @@ public abstract boolean isValid();
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.947 -0500", hash_original_method = "22B65EDA9DAE2C971668345F22156AAE", hash_generated_method = "79128A57A8D9F19E7BCD0E731AF79772")
     
 public abstract void release() throws IOException;

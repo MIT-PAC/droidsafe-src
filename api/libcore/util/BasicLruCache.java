@@ -72,6 +72,8 @@ public synchronized final V put(K key, V value) {
         return previous;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.911 -0500", hash_original_method = "C2014D558C9CB4AC36D82EB01EFD84A6", hash_generated_method = "D24DFE9261B084794D3ED416285B8E3E")
     
 private void trimToSize(int maxSize) {

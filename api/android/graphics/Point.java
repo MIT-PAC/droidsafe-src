@@ -60,6 +60,8 @@ public Point() {}
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void set(int x, int y){
         addTaint(x);
         addTaint(y);
@@ -72,6 +74,8 @@ public Point() {}
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void negate(){
         addTaint(x);
         addTaint(y);
@@ -80,6 +84,8 @@ public Point() {}
     /**
      * Offset the point's coordinates by dx, dy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.608 -0500", hash_original_method = "2341B98028DF5979D10DDC3712740A20", hash_generated_method = "2AF844617832D70B37734FAC2E663D69")
     
 public final void offset(int dx, int dy) {
@@ -87,6 +93,8 @@ public final void offset(int dx, int dy) {
         y += dy;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(int x, int y){
         return getTaintBoolean();
         // Original method
@@ -115,6 +123,8 @@ public final void offset(int dx, int dy) {
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public int hashCode(){
         return getTaintInt();
         // Original method
@@ -125,6 +135,8 @@ public final void offset(int dx, int dy) {
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public String toString(){
         String str = new String();
         str.addTaint(getTaint());
@@ -137,6 +149,8 @@ public final void offset(int dx, int dy) {
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public int describeContents(){
         return getTaintInt();
         // Original method
@@ -152,6 +166,8 @@ public final void offset(int dx, int dy) {
      * a parcel, use readFromParcel()
      * @param out The parcel to write the point's coordinates into
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.622 -0500", hash_original_method = "54E86A99E3577FA18F65ED6CED3821E9", hash_generated_method = "B7119B834B06880890B6188EE22DD239")
     
 @Override
@@ -160,6 +176,8 @@ public final void offset(int dx, int dy) {
         out.writeInt(y);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
         // Original method
         /*

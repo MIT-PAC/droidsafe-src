@@ -58,6 +58,8 @@ public TableRow(Context context, AttributeSet attrs) {
         initTableRow();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.206 -0500", hash_original_method = "B661864F11557636EAA2570C7969C441", hash_generated_method = "797FC0E33A372CF1377E97B4E3DC0B21")
     
 private void initTableRow() {
@@ -86,6 +88,8 @@ private void initTableRow() {
      * @param collapsed true if the column must be collapsed, false otherwise
      * {@hide}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.210 -0500", hash_original_method = "2321E3900029B8CC8621E7719358502D", hash_generated_method = "2321E3900029B8CC8621E7719358502D")
     
 void setColumnCollapsed(int columnIndex, boolean collapsed) {
@@ -151,6 +155,8 @@ void setColumnCollapsed(int columnIndex, boolean collapsed) {
         return mNumColumns;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.222 -0500", hash_original_method = "4E55577CF2059CB35F704B8E869B19CD", hash_generated_method = "099ED2A0A01D09D14DE8E79510974180")
     
 private void mapIndexAndColumns() {
@@ -181,6 +187,8 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.224 -0500", hash_original_method = "6310895A2EAB860DC48C590959484D6D", hash_generated_method = "A3B478942050DC079EF36DF3B5AB228A")
     
 @Override
@@ -191,6 +199,8 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.227 -0500", hash_original_method = "21A01BD04BAB3B03D9551E5E2A120920", hash_generated_method = "9C564505E44A15D18CAE93EE636D1B4B")
     
 @Override
@@ -258,6 +268,8 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.229 -0500", hash_original_method = "B06729C46F9CA4132172A65B967C7D51", hash_generated_method = "8B4B16F1A36E00DE95FD8BF455304A45")
     
@@ -272,6 +284,8 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.232 -0500", hash_original_method = "B1A714BE7A14CFDA42294606652D195E", hash_generated_method = "4E3221E81CD33F380ABC3106BBCBA2B1")
     
@@ -283,6 +297,8 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.234 -0500", hash_original_method = "6629CED69C690D63986C2D59A68F69D3", hash_generated_method = "43E0A45AA2476578E7C6D610F769282D")
     
@@ -300,6 +316,8 @@ private void mapIndexAndColumns() {
      *         column, in this row
      * {@hide}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.237 -0500", hash_original_method = "F97D9B3BAD7BE3BFEC03988909D08EE2", hash_generated_method = "F97D9B3BAD7BE3BFEC03988909D08EE2")
     
@@ -354,6 +372,8 @@ int[] getColumnsWidths(int widthMeasureSpec) {
      *         than the number of children in this row
      * {@hide}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.239 -0500", hash_original_method = "00077407B55623ED0FDC934F0F688424", hash_generated_method = "00077407B55623ED0FDC934F0F688424")
     
 void setColumnsWidthConstraints(int[] columnWidths) {

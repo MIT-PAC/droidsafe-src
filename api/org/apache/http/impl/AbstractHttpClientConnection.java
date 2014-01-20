@@ -58,6 +58,8 @@ public AbstractHttpClientConnection() {
         this.entitydeserializer = createEntityDeserializer();
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.510 -0500", hash_original_method = "EF4FADE4978E6DA370360ABA2B74DC2C", hash_generated_method = "4E6BDA68E7F48D8A30EC00B433E66123")
     
 protected abstract void assertOpen() throws IllegalStateException;

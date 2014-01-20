@@ -183,6 +183,8 @@ public synchronized void deleteRights(DrmRights rights) {
      * @return #JNI_DRM_SUCCESS if succeed.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.788 -0500", hash_original_method = "4EFCC19418AEA2B988CE34DFC9464C6A", hash_generated_method = "8EA966CE9514042DD600884BE7C307E9")
     
     private int nativeInstallDrmRights(InputStream data, int len, int mimeType, DrmRights rights){
@@ -203,6 +205,8 @@ public synchronized void deleteRights(DrmRights rights) {
      * @return #JNI_DRM_SUCCESS if succeed.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.792 -0500", hash_original_method = "D2E0FD9FD256FCE483409E8A0B1A737B", hash_generated_method = "D3F1E1CC2C1AFF2CBF00F1155854E280")
     
     private int nativeQueryRights(DrmRawContent content, DrmRights rights){
@@ -218,6 +222,8 @@ public synchronized void deleteRights(DrmRights rights) {
      * @return the number of the rights object.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.796 -0500", hash_original_method = "53C2DF882AFDD7A7897768491F6FD437", hash_generated_method = "DBCE59F40D10F7323AA9FD03BBF4D83A")
     
     private int nativeGetNumOfRights(){
@@ -234,6 +240,8 @@ public synchronized void deleteRights(DrmRights rights) {
      * @return the number of the rights object has been gotten.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.800 -0500", hash_original_method = "D10F41EFD32E726343E3CA8A142B1A5C", hash_generated_method = "7B2AD6982289DBBA5D12226CFF0E7842")
     
     private int nativeGetRightsList(DrmRights[] rights, int numRights){
@@ -251,6 +259,8 @@ public synchronized void deleteRights(DrmRights rights) {
      * @return #JNI_DRM_SUCCESS if succeed.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.805 -0500", hash_original_method = "75A731730EAFA84E0B65F7039A32C61B", hash_generated_method = "DC75A733962790116C4354C7F58C1294")
     
     private int nativeDeleteRights(DrmRights rights){

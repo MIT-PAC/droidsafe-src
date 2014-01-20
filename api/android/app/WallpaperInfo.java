@@ -135,6 +135,8 @@ public WallpaperInfo(Context context, ResolveInfo service)
         mDescriptionResource = descriptionRes;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.119 -0500", hash_original_method = "C0E8BFC94627855CBFADB81460DD6D49", hash_generated_method = "C0E8BFC94627855CBFADB81460DD6D49")
     
 WallpaperInfo(Parcel source) {

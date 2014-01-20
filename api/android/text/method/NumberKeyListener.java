@@ -15,6 +15,8 @@ import android.view.View;
 
 public abstract class NumberKeyListener extends BaseKeyListener implements InputFilter {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.031 -0500", hash_original_method = "31CEF7B6ADFCFD6FD706824ECFEAE65B", hash_generated_method = "D718178AA3D8EF616421B07A2848E87F")
     
 protected static boolean ok(char[] accept, char c) {
@@ -27,6 +29,8 @@ protected static boolean ok(char[] accept, char c) {
         return false;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.475 -0400", hash_original_method = "4B29623A8F76435C1A957FA964420338", hash_generated_method = "4B29623A8F76435C1A957FA964420338")
     public NumberKeyListener ()
     {
@@ -35,16 +39,22 @@ protected static boolean ok(char[] accept, char c) {
     /**
      * You can say which characters you can accept.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.021 -0500", hash_original_method = "CEAB545228064F3E6229396D3CB18362", hash_generated_method = "BF028713305ABE6488DECAFE3077584F")
     
 protected abstract char[] getAcceptedChars();
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.024 -0500", hash_original_method = "C0C70824215D530CCBC4D0D762C70EA3", hash_generated_method = "4FE9FBBC675127A11CFDC1B46E466BA9")
     
 protected int lookup(KeyEvent event, Spannable content) {
         return event.getMatch(getAcceptedChars(), event.getMetaState() | getMetaState(content));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.028 -0500", hash_original_method = "CB7791CDEF3F29FF221CF4242D732189", hash_generated_method = "7D0E43D08B18974A0313B9C3A3D46568")
     
 public CharSequence filter(CharSequence source, int start, int end,
@@ -85,6 +95,8 @@ public CharSequence filter(CharSequence source, int start, int end,
         return filtered;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.035 -0500", hash_original_method = "A33764BD45F2F5F121C837A63F0C5C57", hash_generated_method = "9721C4EC7386B8A7047CAA23E2BFB523")
     
 @Override

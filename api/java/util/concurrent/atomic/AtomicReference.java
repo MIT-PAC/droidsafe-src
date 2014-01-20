@@ -25,6 +25,8 @@ public class AtomicReference<V> implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.200 -0500", hash_original_method = "BDBA762FEAF5C103321D9E7FB6720E1A", hash_generated_method = "A5963EF9635EBF2275DCE7C1479416FD")
     
 public AtomicReference(V initialValue) {
@@ -74,6 +76,8 @@ public final void set(V newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.209 -0500", hash_original_method = "5F145FC62F46FF5FAD786BED834DE8D5", hash_generated_method = "296FEC93AA3A03604C3649376F898A7D")
     
@@ -109,6 +113,8 @@ public final boolean compareAndSet(V expect, V update) {
      * @param update the new value
      * @return true if successful.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.215 -0500", hash_original_method = "801403A92781688D40B445FC7E652974", hash_generated_method = "EB801DEAE4DF2E72BBC54D899262BEAE")
     
 public final boolean weakCompareAndSet(V expect, V update) {
@@ -121,6 +127,8 @@ public final boolean weakCompareAndSet(V expect, V update) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.217 -0500", hash_original_method = "FD7BCDEFF552AB71FCB964A4983AD19B", hash_generated_method = "DEF91DF473EB9A1AA2087DFAFB68BC02")
     
@@ -136,6 +144,8 @@ public final V getAndSet(V newValue) {
      * Returns the String representation of the current value.
      * @return the String representation of the current value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.220 -0500", hash_original_method = "2EE45E1B1B1F9797465CA7143D35DB76", hash_generated_method = "972BE3736CB2D8DD7338471E5787D8D4")
     
 public String toString() {

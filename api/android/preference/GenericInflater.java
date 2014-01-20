@@ -86,6 +86,8 @@ protected GenericInflater(GenericInflater<T,P> original, Context newContext) {
      * @return Returns a brand spanking new inflater object associated with
      * the given Context.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.640 -0500", hash_original_method = "47E20DE42F11CCA85C2DA73EB641838F", hash_generated_method = "B52D5F76A890DD7905617D959FF36D62")
     
 public abstract GenericInflater cloneInContext(Context newContext);
@@ -396,6 +398,8 @@ protected T onCreateItem(String name, AttributeSet attrs) throws ClassNotFoundEx
         return createItem(name, mDefaultPackage, attrs);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.669 -0500", hash_original_method = "8A20619C5B186F5C05E29B17BC664D21", hash_generated_method = "140C39444B2C4CE8BB5503AF3B995DC2")
     
 private final T createItemFromTag(XmlPullParser parser, String name, AttributeSet attrs) {

@@ -168,6 +168,8 @@ public SHA1PRNG_SecureRandomImpl() {
      *
      * After that it computes a length of whole seed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.908 -0500", hash_original_method = "71D119B7F725F786DBF6F5411B9162C3", hash_generated_method = "4A1195A2F6F98D960D738679187CC73C")
     
 private void updateSeed(byte[] bytes) {
@@ -404,6 +406,8 @@ protected synchronized void engineNextBytes(byte[] bytes) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.922 -0500", hash_original_method = "716FAD60FA2495E9DABF23B35E588917", hash_generated_method = "D69CBD4AB153720E4ABBC92D1EB7AAC4")
     
 private void writeObject(ObjectOutputStream oos) throws IOException {
@@ -476,6 +480,8 @@ private void writeObject(ObjectOutputStream oos) throws IOException {
         oos.write(nextBytes, nextBIndex, HASHBYTES_TO_USE - nextBIndex);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.926 -0500", hash_original_method = "87BDC97ACB5596298F61FE4642318DFC", hash_generated_method = "590F04898F9D59A6A9E462377985AEC6")
     
 private void readObject(ObjectInputStream ois) throws IOException,

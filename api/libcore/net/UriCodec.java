@@ -75,6 +75,8 @@ public static String decode(String s, boolean convertPlus, Charset charset) {
      * Like {@link Character#digit}, but without support for non-ASCII
      * characters.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.395 -0500", hash_original_method = "76CEABA5F78D1B7C2E24392FFD6655D0", hash_generated_method = "EC68D3DE13E4F0BFEE8EE6AD07B85B3A")
     
 private static int hexToInt(char c) {
@@ -95,6 +97,8 @@ public static String decode(String s) {
         return decode(s, false, Charsets.UTF_8);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.400 -0500", hash_original_method = "E9F136CB11807D6535BCD4A061FBC37D", hash_generated_method = "FBABD2BE64FE1261CCF2AF7EE23B9308")
     
 private static void appendHex(StringBuilder builder, String s, Charset charset) {
@@ -103,6 +107,8 @@ private static void appendHex(StringBuilder builder, String s, Charset charset) 
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.402 -0500", hash_original_method = "A304BB6B333CCE47620C2E0D28BC85CC", hash_generated_method = "839C3FDB280437B10551E427ECA4E89A")
     
 private static void appendHex(StringBuilder sb, byte b) {
@@ -119,6 +125,8 @@ private static void appendHex(StringBuilder sb, byte b) {
     /**
      * Returns true if {@code c} does not need to be escaped.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.373 -0500", hash_original_method = "4E8831F3AC7981E695BD544C8DFD7574", hash_generated_method = "B04EF2371FE03B993D1CCF174E51EBCC")
     
 protected abstract boolean isRetained(char c);
@@ -164,6 +172,8 @@ public final String validate(String uri, int start, int end, String name)
      *     unchanged with isPartiallyEncoded=true but would be double-escaped to
      *     "hello%2520world" otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.382 -0500", hash_original_method = "7FC39F773DF770E48BBB73C216A59F70", hash_generated_method = "A709178A851E864AECBF954F3AD0D643")
     
 private void appendEncoded(StringBuilder builder, String s, Charset charset,

@@ -163,6 +163,8 @@ public IccCardApplication getApplication(int index) {
         CARDSTATE_PRESENT,
         CARDSTATE_ERROR;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.088 -0500", hash_original_method = "5D2E7E7C9852D570FA7DEAEED6F01D06", hash_generated_method = "5D2E7E7C9852D570FA7DEAEED6F01D06")
             
 boolean isCardPresent() {
@@ -178,18 +180,24 @@ boolean isCardPresent() {
         PINSTATE_ENABLED_BLOCKED,
         PINSTATE_ENABLED_PERM_BLOCKED;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.092 -0500", hash_original_method = "59BABA49443E4274C834D4D51105C6C6", hash_generated_method = "59BABA49443E4274C834D4D51105C6C6")
             
 boolean isPermBlocked() {
             return this == PINSTATE_ENABLED_PERM_BLOCKED;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.095 -0500", hash_original_method = "E528847B449E85414759CA359F8F15CE", hash_generated_method = "E528847B449E85414759CA359F8F15CE")
             
 boolean isPinRequired() {
             return this == PINSTATE_ENABLED_NOT_VERIFIED;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.097 -0500", hash_original_method = "76793F101293429894997ED5484D21C0", hash_generated_method = "76793F101293429894997ED5484D21C0")
             
 boolean isPukRequired() {

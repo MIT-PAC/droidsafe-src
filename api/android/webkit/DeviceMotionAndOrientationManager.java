@@ -7,19 +7,27 @@ import droidsafe.annotations.*;
 
 public final class DeviceMotionAndOrientationManager {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeUseMock(WebViewCore webViewCore) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetMockOrientation(WebViewCore webViewCore,
             boolean canProvideAlpha, double alpha, boolean canProvideBeta, double beta,
             boolean canProvideGamma, double gamma) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeOnMotionChange(WebViewCore webViewCore,
             boolean canProvideX, double x, boolean canProvideY, double y,
             boolean canProvideZ, double z, double interval) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeOnOrientationChange(WebViewCore webViewCore,
             boolean canProvideAlpha, double alpha, boolean canProvideBeta, double beta,
             boolean canProvideGamma, double gamma) {

@@ -212,6 +212,8 @@ public CharSequence getSubtitle() {
         return mSubtitle;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.138 -0500", hash_original_method = "790F9E36BA88F469E91A3DDEB8BA7A0E", hash_generated_method = "CF8D1EF1AB822485BDC7A5B7DEDCBEC6")
     
 private void initTitle() {
@@ -309,6 +311,8 @@ public void closeMode() {
         mCurrentAnimation.start();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.149 -0500", hash_original_method = "A219535592712D030952E62AEE6B3C28", hash_generated_method = "091E96789E470C896B6903990C8D19F7")
     
 private void finishAnimation() {
@@ -449,6 +453,8 @@ public void killMode() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.171 -0500", hash_original_method = "1F1E13F5C24EF6D24D9BF3983118D5E2", hash_generated_method = "521EFDF524BC6F65D7E35DD426994084")
     
 private Animator makeInAnimation() {
@@ -479,6 +485,8 @@ private Animator makeInAnimation() {
         return set;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.173 -0500", hash_original_method = "BAA3822313887C49DB18D4BC04440E7E", hash_generated_method = "C71D5FA9618B9F09AA534EE9250755E6")
     
 private Animator makeOutAnimation() {

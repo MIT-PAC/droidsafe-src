@@ -27,6 +27,8 @@ public class StringTokenizer implements Enumeration<Object> {
      * @param string
      *            the string to be tokenized.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.844 -0500", hash_original_method = "B454FB9D24CB40B920B0F26A1DEB0F99", hash_generated_method = "B9D0AB32248C17CD91D8043386355085")
     
 public StringTokenizer(String string) {
@@ -67,6 +69,8 @@ public StringTokenizer(String string, String delimiters) {
      * @param returnDelimiters
      *            {@code true} to return each delimiter as a token.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.850 -0500", hash_original_method = "8522BA3F0D65BC6302678F3FDA0BEB48", hash_generated_method = "4961743F82F120E40236D723FA546A45")
     
 public StringTokenizer(String string, String delimiters,
@@ -116,6 +120,8 @@ public int countTokens() {
      *
      * @return {@code true} if unprocessed tokens remain.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.856 -0500", hash_original_method = "8165B2FDF405707BFEA9EF223873FBB9", hash_generated_method = "D5A6D5FD357EFF4FEB63192C5E0E5823")
     
 public boolean hasMoreElements() {
@@ -157,6 +163,8 @@ public boolean hasMoreTokens() {
      * @throws NoSuchElementException
      *                if no tokens remain.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.860 -0500", hash_original_method = "0727048C65431FDBB400A5F8931A38E2", hash_generated_method = "2634E1621F3C8D111804CB487E4DAB7A")
     
 public Object nextElement() {
@@ -214,6 +222,8 @@ public String nextToken() {
      * @throws NoSuchElementException
      *                if no tokens remain.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.866 -0500", hash_original_method = "A244E208DF1B5D62AF8E286FEDEE9DEC", hash_generated_method = "0265576B03E3A6C9E042B5AA5E7F63EA")
     
 public String nextToken(String delims) {

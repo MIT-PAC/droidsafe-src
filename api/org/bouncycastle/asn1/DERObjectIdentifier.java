@@ -9,11 +9,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigInteger;
 
-
-
-
-
-
 public class DERObjectIdentifier extends ASN1Object {
 
     /**
@@ -61,6 +56,8 @@ public static DERObjectIdentifier getInstance(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.651 -0500", hash_original_method = "7A21A0FDB9F41FC21B39244A17757B27", hash_generated_method = "99A784EBDDE84250403E1CC619AC8F04")
     
 private static boolean isValidIdentifier(
@@ -108,8 +105,9 @@ private static boolean isValidIdentifier(
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.620 -0500", hash_original_field = "67D18ED1400CD458B308847E018D0637", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
 
     String      identifier;
-    
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.629 -0500", hash_original_method = "41784C2F0BEC0E535BBC46B058BAD130", hash_generated_method = "E194B8ACE3B852AC3A9A0D5915A8C6D8")
     
 DERObjectIdentifier(
@@ -205,6 +203,8 @@ public String getId()
         return identifier;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.636 -0500", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "E45E5504E29A0C473AC244F4CCC51689")
     
 private void writeField(
@@ -223,6 +223,8 @@ private void writeField(
         out.write(result, pos, 9 - pos);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.639 -0500", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "5A4499E969469E1AB2CCB45521BE4E7D")
     
 private void writeField(
@@ -250,6 +252,8 @@ private void writeField(
 
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.642 -0500", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "ECFD3ADA5852656A886183CB7FE8CA3F")
     
 void encode(
@@ -291,6 +295,8 @@ public int hashCode()
         return identifier.hashCode();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.646 -0500", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "0655D55E620898111D8D6A0724E88908")
     
 boolean asn1Equals(
@@ -310,7 +316,6 @@ public String toString()
     {
         return getId();
     }
-
     
 }
 

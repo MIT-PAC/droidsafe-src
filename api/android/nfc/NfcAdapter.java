@@ -31,6 +31,8 @@ public final class NfcAdapter {
      * Equivalent to
      * context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.652 -0500", hash_original_method = "EB029713530469167365B3658B6FC47E", hash_generated_method = "679B5280429AEA728A25AE4EF9C45DBC")
     
 private static boolean hasNfcFeature() {
@@ -68,6 +70,8 @@ private static boolean hasNfcFeature() {
     }
 
     /** get handle to NFC service interface */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.657 -0500", hash_original_method = "0FFEE716C32FBFB9A0B5A211768219BA", hash_generated_method = "A69D89BB473C479A38B8A821A81439C0")
     
 private static INfcAdapter getServiceInterface() {
@@ -219,6 +223,8 @@ public static NfcAdapter getDefaultAdapter(Context context) {
         
 };
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.665 -0500", hash_original_method = "C4AF3477B0D281733AFB736BB9D4035F", hash_generated_method = "C4AF3477B0D281733AFB736BB9D4035F")
     
 NfcAdapter(Context context) {
@@ -632,6 +638,8 @@ public void disableForegroundDispatch(Activity activity) {
         disableForegroundDispatchInternal(activity, false);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.703 -0500", hash_original_method = "3391D46AA688F0DFABC27A2628A920CB", hash_generated_method = "3391D46AA688F0DFABC27A2628A920CB")
     
 void disableForegroundDispatchInternal(Activity activity, boolean force) {
@@ -806,6 +814,8 @@ public INfcAdapterExtras getNfcAdapterExtrasInterface() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.738 -0500", hash_original_method = "219F2FC6E26DD458668CD53974B46E26", hash_generated_method = "219F2FC6E26DD458668CD53974B46E26")
     
 void enforceResumed(Activity activity) {

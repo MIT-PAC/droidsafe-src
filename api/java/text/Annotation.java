@@ -16,6 +16,8 @@ public class Annotation {
      * @param attribute the attribute attached to this annotation. This may be
      *        {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.206 -0500", hash_original_method = "B1453DDFF141446D32AF844E0A6591E8", hash_generated_method = "EBD06A8BDEC772879149679DA40D14EC")
     
 public Annotation(Object attribute) {
@@ -27,6 +29,8 @@ public Annotation(Object attribute) {
      *
      * @return the value of this annotation or {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.208 -0500", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "8F1C34090E292F1C2F621B605A6DF10D")
     
@@ -39,6 +43,8 @@ public Object getValue() {
      *
      * @return the string representation of this annotation.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.211 -0500", hash_original_method = "439CE19804D9002003DD6A4835AE4496", hash_generated_method = "629F14B051FCA1573294076D9E1BC448")
     
 @Override

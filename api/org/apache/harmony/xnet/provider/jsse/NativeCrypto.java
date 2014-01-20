@@ -29,6 +29,8 @@ import droidsafe.helpers.DSUtils;
 
 public final class NativeCrypto {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void clinit() {
     }
     
@@ -117,6 +119,8 @@ public static int X509_NAME_hash(X500Principal principal) {
 public static int X509_NAME_hash_old(X500Principal principal) {
         return X509_NAME_hash(principal, "MD5");
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.992 -0500", hash_original_method = "B344D9153FDACF8192135D5EDBC47AE4", hash_generated_method = "96D65C307A3DA21E0664FB2E60F0D2FD")
     
 private static int X509_NAME_hash(X500Principal principal, String algorithm) {
@@ -128,6 +132,8 @@ private static int X509_NAME_hash(X500Principal principal, String algorithm) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.006 -0500", hash_original_method = "2E5190E56F7FF68ACB3015B0CB8E2A04", hash_generated_method = "4E228C0756CB9FA5C05937BA2FE8210D")
     
 private static void add(String standard, String openssl) {

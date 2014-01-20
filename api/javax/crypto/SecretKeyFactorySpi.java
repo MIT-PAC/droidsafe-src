@@ -8,10 +8,6 @@ import java.security.InvalidKeyException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
-
-
-
-
 public abstract class SecretKeyFactorySpi {
 
     /**
@@ -32,6 +28,8 @@ public SecretKeyFactorySpi() {
      *             if the specified key specification cannot be used to generate
      *             a secret key.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.609 -0500", hash_original_method = "AF68CD0CA77D7F636E0A4995A1F72B0F", hash_generated_method = "8CC28459B9390463B7AB4F267782111C")
     
 protected abstract SecretKey engineGenerateSecret(KeySpec keySpec)
@@ -49,6 +47,8 @@ protected abstract SecretKey engineGenerateSecret(KeySpec keySpec)
      *             if the specified secret key cannot be transformed into the
      *             requested key specification.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.611 -0500", hash_original_method = "D6F8AD1DDD97E9CFA8FE854EA3F170C2", hash_generated_method = "13C83817EC1ADE4A8347EA4685336C60")
     
 @SuppressWarnings("unchecked")
@@ -66,11 +66,12 @@ protected abstract SecretKey engineGenerateSecret(KeySpec keySpec)
      *             if the specified key cannot be translated using this key
      *             factory.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.614 -0500", hash_original_method = "D8939E80868756AF07DC1B6350589F5C", hash_generated_method = "D93027D8D9217F741510084EB1711D17")
     
 protected abstract SecretKey engineTranslateKey(SecretKey key)
             throws InvalidKeyException;
-
     
 }
 

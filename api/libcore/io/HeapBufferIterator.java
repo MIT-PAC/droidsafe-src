@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 
-
-
-
-
-
 public final class HeapBufferIterator extends BufferIterator {
 
     /**
@@ -36,9 +31,10 @@ public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, 
     private  ByteOrder order;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.574 -0500", hash_original_field = "92D7808EB8CD548A137230400384C6DC", hash_generated_field = "312206EA2404526B7BBC621459C87A80")
 
-
     private int position;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.577 -0500", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8")
     
 HeapBufferIterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
@@ -98,7 +94,6 @@ public short readShort() {
         position += SizeOf.SHORT;
         return result;
     }
-
     
 }
 

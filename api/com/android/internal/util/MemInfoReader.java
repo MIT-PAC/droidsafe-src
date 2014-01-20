@@ -28,6 +28,8 @@ public class MemInfoReader {
         //Synthesized constructor
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.246 -0500", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "ECDA8EE868F3228CAAF2451D7A1A2B99")
     
 private boolean matchText(byte[] buffer, int index, String text) {
@@ -43,6 +45,8 @@ private boolean matchText(byte[] buffer, int index, String text) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.249 -0500", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "EEEBF45D062C00900A093C5FF4CB0C11")
     
 private long extractMemValue(byte[] buffer, int index) {

@@ -262,6 +262,8 @@ public ClientTransaction handleChallenge(Response challenge,
      *
      * @throws OperationFailedException if auth header was malformated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.516 -0500", hash_original_method = "2D1C964540C22A20DCB24ADF01A4F207", hash_generated_method = "3C62CCFD7B649592248DE3F9EE489D88")
     
 private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
@@ -331,6 +333,8 @@ private AuthorizationHeader getAuthorization(String method, String uri, String r
      *
      * @throws OperationFailedException if auth header was malformated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.519 -0500", hash_original_method = "122A01004B39FE573FF7374B710A1EFB", hash_generated_method = "18E181D32449677DD9947AC370571D70")
     
 private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
@@ -393,6 +397,8 @@ private AuthorizationHeader getAuthorization(String method, String uri, String r
      * @param request the Request whose branchID we'd like to remove.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.522 -0500", hash_original_method = "ADD4EE56A02B7B5492F16169DF575C77", hash_generated_method = "C79BF4B67E3189EEF19E9080990D2DC9")
     
 private void removeBranchID(Request request) {

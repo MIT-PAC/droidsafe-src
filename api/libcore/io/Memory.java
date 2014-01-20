@@ -198,6 +198,8 @@ public static void pokeShort(byte[] dst, int offset, short value, ByteOrder orde
     
     public static void pokeShortArray(int address, short[] src, int offset, int count, boolean swap) {
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.960 -0500", hash_original_method = "8E748606B262B165332F0089DEAB291F", hash_generated_method = "B7B6F537B3C912F02D456567DA9C0DA2")
     
 private Memory() { }

@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 
-
-
-
 class HistoricalCharsetNames {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.087 -0500", hash_original_method = "3DD9E53B9F7169D056A1C449CA37D450", hash_generated_method = "4F3655C646BD68275AA8A57825079C7D")
@@ -23,6 +20,8 @@ public static String get(Charset charset) {
 
     private static final HashMap<String, String> historicalNames = new HashMap<String, String>();
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.025 -0400", hash_original_method = "CF7EE4F2AE73DFA7F7185F7E1C545121", hash_generated_method = "CF7EE4F2AE73DFA7F7185F7E1C545121")
     public HistoricalCharsetNames ()
     {

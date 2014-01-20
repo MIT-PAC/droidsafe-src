@@ -9,12 +9,10 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-
-
-
-
 final class DefaultSocketFactory extends SocketFactory {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.712 -0500", hash_original_method = "EE45CFA4F563D30E821D60984F7D023D", hash_generated_method = "EE45CFA4F563D30E821D60984F7D023D")
     
 DefaultSocketFactory() {
@@ -56,7 +54,6 @@ DefaultSocketFactory() {
             int localPort) throws IOException {
         return new Socket(address, port, localAddress, localPort);
     }
-
     
 }
 

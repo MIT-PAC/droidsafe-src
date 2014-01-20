@@ -14,10 +14,6 @@ import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 import org.apache.http.cookie.SetCookie2;
 
-
-
-
-
 public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
 
     /**
@@ -60,6 +56,8 @@ private static int[] parsePortAttribute(final String portValue)
      * @return true returns <tt>true</tt> if the given port exists in
      *         the given ports list; <tt>false</tt> otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.209 -0500", hash_original_method = "0B3635DA28D858C95C4C22FD8015492F", hash_generated_method = "5295B2FA1B13FD60058F0714D4624A49")
     
 private static boolean portMatch(int port, int[] ports) {
@@ -150,7 +148,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
         }
         return true;
     }
-
     
 }
 

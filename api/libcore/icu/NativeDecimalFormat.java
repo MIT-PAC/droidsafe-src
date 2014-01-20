@@ -21,6 +21,8 @@ import droidsafe.helpers.DSUtils;
 
 public final class NativeDecimalFormat {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.152 -0500", hash_original_method = "B8DBC7D049D3B4F244E4AF6EDA028CBA", hash_generated_method = "BFE675F82DDB4D186B8A5179A21EF157")
     
 private static void applyPattern(int addr, boolean localized, String pattern) {
@@ -33,14 +35,20 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void applyPatternImpl(int addr, boolean localized, String pattern) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int cloneImpl(int addr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void close(int addr) {
     }
     
@@ -59,17 +67,23 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
         return var50607924ABD4C17119BAF3A1CE41C0EC_1973734016;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getAttribute(int addr, int symbol) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String getTextAttribute(int addr, int symbol) {
     	String s = new String();
     	s.addTaint(symbol);
     	return s;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int open(String pattern, String currencySymbol,
             char decimalSeparator, char digit, String exponentSeparator, char groupingSeparator,
             String infinity, String internationalCurrencySymbol, char minusSign,
@@ -79,6 +93,8 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659367098;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Number parse(int addr, String string, ParsePosition position, boolean parseBigDecimal) {
     	Number ret;
     	if (parseBigDecimal) {
@@ -97,6 +113,8 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
     	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setDecimalFormatSymbols(int addr, String currencySymbol,
             char decimalSeparator, char digit, String exponentSeparator, char groupingSeparator,
             String infinity, String internationalCurrencySymbol, char minusSign,
@@ -104,18 +122,28 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
             char perMill, char zeroDigit) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setSymbol(int addr, int symbol, String str) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setAttribute(int addr, int symbol, int i) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setRoundingMode(int addr, int roundingMode, double roundingIncrement) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void setTextAttribute(int addr, int symbol, String str) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String toPatternImpl(int addr, boolean localized) {
     	String s = new String();
     	s.addTaint(localized);
@@ -318,6 +346,8 @@ public NativeDecimalFormat(String pattern, LocaleData data) {
     }
 
     // Used to implement clone.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.040 -0500", hash_original_method = "F2FB63D256AD622AD0AA1906E5944DB2", hash_generated_method = "735F77143D45E347FF4196C5A2A8A0BB")
     
 private NativeDecimalFormat(NativeDecimalFormat other) {
@@ -340,6 +370,8 @@ public static FieldPositionIterator forFieldPosition(FieldPosition fp) {
             return null;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.169 -0500", hash_original_method = "FD8765DDE780B1145300BBF4C2302309", hash_generated_method = "A3876A91F7329AEC3A874017AC874AA9")
         
 private static int getNativeFieldPositionId(FieldPosition fp) {
@@ -409,6 +441,8 @@ private static void setFieldPosition(FieldPositionIterator fpi, FieldPosition fp
 
         private int pos = -3; // so first call to next() leaves pos at 0
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.163 -0500", hash_original_method = "3872533C5F4C6DF8E9B47456E87ABB09", hash_generated_method = "395118F450ACB18CEA23FBED606507A8")
         
 private FieldPositionIterator() {
@@ -425,6 +459,8 @@ public boolean next() {
             return pos < data.length;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.177 -0500", hash_original_method = "28A52A04516ACAEA5CBE057E7005DC29", hash_generated_method = "0CC9F874E8C0D5A53F7FE184744A2F39")
         
 private void checkValid() {
@@ -461,6 +497,8 @@ public int limit() {
         }
 
         // called by native
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.192 -0500", hash_original_method = "E1A3B20A4A62E5F6661DF7F73A635F7C", hash_generated_method = "D561088973FEA1999548879FCC5D3A31")
         
 private void setData(int[] data) {
@@ -646,6 +684,8 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         return as.getIterator();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.075 -0500", hash_original_method = "E9B105AB178BFBFEB280AF82F381CE84", hash_generated_method = "BA89376827AA93357D46FEF42969A48F")
     
 private int makeScalePositive(int scale, StringBuilder val) {

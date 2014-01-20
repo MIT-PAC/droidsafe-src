@@ -462,6 +462,8 @@ public void setSpinnersShown(boolean shown) {
      *
      * @param locale The current locale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.359 -0500", hash_original_method = "A700AEEDD57B848576647AE119590A45", hash_generated_method = "8A65553EE1D07E51B6829B4DD1184241")
     
 private void setCurrentLocale(Locale locale) {
@@ -490,6 +492,8 @@ private void setCurrentLocale(Locale locale) {
      * @param oldCalendar The old calendar.
      * @param locale The locale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.361 -0500", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "FF2C9EE6088D5A80898CD22EED43D339")
     
 private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
@@ -508,6 +512,8 @@ private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
      * explicitly set by the user and if no such is set fall back
      * to the current locale's default format.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.363 -0500", hash_original_method = "EC825478EA562937FD242C7F7D2C8CF4", hash_generated_method = "3AB674C783C75714C7B9E143901FB9C5")
     
 private void reorderSpinners() {
@@ -608,6 +614,8 @@ public void init(int year, int monthOfYear, int dayOfMonth,
      *
      * @return True if the date was parsed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.377 -0500", hash_original_method = "4EF37BB5E8B6D289AE6D0021CE0D4FEB", hash_generated_method = "A8F56004CD8FCB6686C74FEBB9164E0E")
     
 private boolean parseDate(String date, Calendar outDate) {
@@ -620,6 +628,8 @@ private boolean parseDate(String date, Calendar outDate) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.380 -0500", hash_original_method = "7DA7F7B10A47108B3DBE60145E22A8FC", hash_generated_method = "A89355DF0F2E75407062019D9D3D4F83")
     
 private boolean isNewDate(int year, int month, int dayOfMonth) {
@@ -628,6 +638,8 @@ private boolean isNewDate(int year, int month, int dayOfMonth) {
                 || mCurrentDate.get(Calendar.DAY_OF_MONTH) != month);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.382 -0500", hash_original_method = "421AA01E04B51628D97359BDD118BF23", hash_generated_method = "BD411F1DEDF77E82FC4ED40D48C62D27")
     
 private void setDate(int year, int month, int dayOfMonth) {
@@ -639,6 +651,8 @@ private void setDate(int year, int month, int dayOfMonth) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.385 -0500", hash_original_method = "CC0C6797D7B0307D38215BFED9C815FE", hash_generated_method = "8DCB514D78F201355D993F551474228A")
     
 private void updateSpinners() {
@@ -689,6 +703,8 @@ private void updateSpinners() {
     /**
      * Updates the calendar view with the current date.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.388 -0500", hash_original_method = "FCBFFA03953049B21025A6ECF65DCE7B", hash_generated_method = "13AECF5EEEDB27529423D561C4796E14")
     
 private void updateCalendarView() {
@@ -723,6 +739,8 @@ private void updateCalendarView() {
         /**
          * Constructor called from {@link DatePicker#onSaveInstanceState()}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.414 -0500", hash_original_method = "A02F651556C80A285B651552B4D99E55", hash_generated_method = "BF3DABFD07A346AFF8F19570F7A85F71")
         
 private SavedState(Parcelable superState, int year, int month, int day) {
@@ -735,6 +753,8 @@ private SavedState(Parcelable superState, int year, int month, int day) {
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.417 -0500", hash_original_method = "CA21CAD6F1AA58ABF5FA7E877A966564", hash_generated_method = "70E3C9EB0A9626F4201021989D517362")
         
 private SavedState(Parcel in) {
@@ -800,6 +820,8 @@ public int getDayOfMonth() {
     /**
      * Notifies the listener, if such, for a change in the selected date.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.397 -0500", hash_original_method = "B58D4A1A16597327E1564790BB46799A", hash_generated_method = "56D8B8D2A2EFB759664769080F262F54")
     
 private void notifyDateChanged() {
@@ -816,6 +838,8 @@ private void notifyDateChanged() {
      * @param spinnerCount The total spinner count.
      * @param spinnerIndex The index of the given spinner.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.399 -0500", hash_original_method = "70CD174A23393C16E923952AAD4C91D4", hash_generated_method = "8C3AE77DCBCFB84D7C67B30C275A8F7A")
     
 private void setImeOptions(NumberPicker spinner, int spinnerCount, int spinnerIndex) {
@@ -829,6 +853,8 @@ private void setImeOptions(NumberPicker spinner, int spinnerCount, int spinnerIn
         input.setImeOptions(imeOptions);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.402 -0500", hash_original_method = "DB545D481E75722C0C153D7F54EF544D", hash_generated_method = "0D34B5E8096703DA29B61327E36E2233")
     
 private void setContentDescriptions() {
@@ -849,6 +875,8 @@ private void setContentDescriptions() {
         mYearSpinner.findViewById(R.id.decrement).setContentDescription(text);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.404 -0500", hash_original_method = "CDABFADCA81181A0329F14F43A5F5848", hash_generated_method = "0A889B8415B4291F1B54165F0E9A6E1A")
     
 private void updateInputState() {

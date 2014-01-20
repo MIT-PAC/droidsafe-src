@@ -27,24 +27,36 @@ import droidsafe.helpers.DSUtils;
 
 class ExpatParser {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int createEntityParser(int parentPointer, String context) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void releaseParser(int pointer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void staticInitialize(String emptyString) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int line(int pointer) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int column(int pointer) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int cloneAttributes(int pointer, int attributeCount) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -52,7 +64,9 @@ class ExpatParser {
     /**
      * Opens an InputStream for the given URL.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.370 -0500", hash_original_method = "58E4A281E06F713A765399D511C2B585", hash_generated_method = "CDCAFDD275A693A2543A5DF9E786274C")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.370 -0500", hash_original_method = "58E4A281E06F713A765399D511C2B585", hash_generated_method = "CDCAFDD275A693A2543A5DF9E786274C")
     
 static InputStream openUrl(String url) throws IOException {
         try {
@@ -119,7 +133,9 @@ static InputStream openUrl(String url) throws IOException {
     /**
      * Constructs a new parser with the specified encoding.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.188 -0500", hash_original_method = "08191F20EE47B985A8EBB31C0BB98A5A", hash_generated_method = "D632B6A54660D3E9782C6BB45A6F40D1")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.188 -0500", hash_original_method = "08191F20EE47B985A8EBB31C0BB98A5A", hash_generated_method = "D632B6A54660D3E9782C6BB45A6F40D1")
     
 ExpatParser(String encoding, ExpatReader xmlReader,
             boolean processNamespaces, String publicId, String systemId) {
@@ -145,6 +161,8 @@ ExpatParser(String encoding, ExpatReader xmlReader,
     /**
      * Used by {@link EntityParser}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.191 -0500", hash_original_method = "289A44034A9CB52BBF40849A78C9DFF1", hash_generated_method = "58816C27FB48CF39F778629A14AA2AC3")
     
 private ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
@@ -161,6 +179,8 @@ private ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
      *
      * @return the pointer to the native parser
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.196 -0500", hash_original_method = "650F081790BC185B19FA56BA8A79A45A", hash_generated_method = "D5439BB5B45E268FEFC3CCEEDFFC3DC6")
     
     private int initialize(String encoding, boolean namespacesEnabled){
@@ -182,7 +202,9 @@ private ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
      *  a separate pointer so we can detach it from the parser instance
      * @param attributeCount number of attributes
      */
-    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.198 -0500", hash_original_method = "6539B8063CABFAD0D8EBA84883A1CF66", hash_generated_method = "6539B8063CABFAD0D8EBA84883A1CF66")
     
 void startElement(String uri, String localName, String qName,
@@ -206,7 +228,9 @@ void startElement(String uri, String localName, String qName,
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.200 -0500", hash_original_method = "50FE3627F5F6FDC1AED1DF8ACC8DE2FD", hash_generated_method = "50FE3627F5F6FDC1AED1DF8ACC8DE2FD")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.200 -0500", hash_original_method = "50FE3627F5F6FDC1AED1DF8ACC8DE2FD", hash_generated_method = "50FE3627F5F6FDC1AED1DF8ACC8DE2FD")
     
 void endElement(String uri, String localName, String qName)
             throws SAXException {
@@ -216,7 +240,9 @@ void endElement(String uri, String localName, String qName)
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.202 -0500", hash_original_method = "79BE0B0DC27CFEFE439A5FDC5A1CA160", hash_generated_method = "79BE0B0DC27CFEFE439A5FDC5A1CA160")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.202 -0500", hash_original_method = "79BE0B0DC27CFEFE439A5FDC5A1CA160", hash_generated_method = "79BE0B0DC27CFEFE439A5FDC5A1CA160")
     
 void text(char[] text, int length) throws SAXException {
         ContentHandler contentHandler = xmlReader.contentHandler;
@@ -225,7 +251,9 @@ void text(char[] text, int length) throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.204 -0500", hash_original_method = "6B257C024B729A7D66F9A83E533EB63B", hash_generated_method = "6B257C024B729A7D66F9A83E533EB63B")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.204 -0500", hash_original_method = "6B257C024B729A7D66F9A83E533EB63B", hash_generated_method = "6B257C024B729A7D66F9A83E533EB63B")
     
 void comment(char[] text, int length) throws SAXException {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
@@ -234,7 +262,9 @@ void comment(char[] text, int length) throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.206 -0500", hash_original_method = "93DE4882575147F90A7802ED6EFEB9E6", hash_generated_method = "93DE4882575147F90A7802ED6EFEB9E6")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.206 -0500", hash_original_method = "93DE4882575147F90A7802ED6EFEB9E6", hash_generated_method = "93DE4882575147F90A7802ED6EFEB9E6")
     
 void startCdata() throws SAXException {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
@@ -243,7 +273,9 @@ void startCdata() throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.208 -0500", hash_original_method = "B0BCA5163C38A135047EC44559B3E39B", hash_generated_method = "B0BCA5163C38A135047EC44559B3E39B")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.208 -0500", hash_original_method = "B0BCA5163C38A135047EC44559B3E39B", hash_generated_method = "B0BCA5163C38A135047EC44559B3E39B")
     
 void endCdata() throws SAXException {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
@@ -252,7 +284,9 @@ void endCdata() throws SAXException {
         }
     }
 
-    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.210 -0500", hash_original_method = "C8BFB5467C9B61347AC273E622412632", hash_generated_method = "C8BFB5467C9B61347AC273E622412632")
     
 void startNamespace(String prefix, String uri)
@@ -263,7 +297,9 @@ void startNamespace(String prefix, String uri)
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.212 -0500", hash_original_method = "386BB3F5F69DADA0341AED81D1A7D2AD", hash_generated_method = "386BB3F5F69DADA0341AED81D1A7D2AD")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.212 -0500", hash_original_method = "386BB3F5F69DADA0341AED81D1A7D2AD", hash_generated_method = "386BB3F5F69DADA0341AED81D1A7D2AD")
     
 void endNamespace(String prefix) throws SAXException {
         ContentHandler contentHandler = xmlReader.contentHandler;
@@ -272,7 +308,9 @@ void endNamespace(String prefix) throws SAXException {
         }
     }
 
-    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.215 -0500", hash_original_method = "08337DADA79B09679000AC18FB47E35A", hash_generated_method = "08337DADA79B09679000AC18FB47E35A")
     
 void startDtd(String name, String publicId, String systemId)
@@ -283,7 +321,9 @@ void startDtd(String name, String publicId, String systemId)
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.217 -0500", hash_original_method = "3F3F92A9168E402E1B573BC06B982B7C", hash_generated_method = "3F3F92A9168E402E1B573BC06B982B7C")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.217 -0500", hash_original_method = "3F3F92A9168E402E1B573BC06B982B7C", hash_generated_method = "3F3F92A9168E402E1B573BC06B982B7C")
     
 void endDtd() throws SAXException {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
@@ -292,7 +332,9 @@ void endDtd() throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.219 -0500", hash_original_method = "4656A390E6416859EC1D4943284352B2", hash_generated_method = "4656A390E6416859EC1D4943284352B2")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.219 -0500", hash_original_method = "4656A390E6416859EC1D4943284352B2", hash_generated_method = "4656A390E6416859EC1D4943284352B2")
     
 void processingInstruction(String target, String data)
             throws SAXException {
@@ -302,7 +344,9 @@ void processingInstruction(String target, String data)
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.221 -0500", hash_original_method = "4F245ABB6EDD8047A0954DBD28029CF8", hash_generated_method = "4F245ABB6EDD8047A0954DBD28029CF8")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.221 -0500", hash_original_method = "4F245ABB6EDD8047A0954DBD28029CF8", hash_generated_method = "4F245ABB6EDD8047A0954DBD28029CF8")
     
 void notationDecl(String name, String publicId, String systemId) throws SAXException {
         DTDHandler dtdHandler = xmlReader.dtdHandler;
@@ -311,7 +355,9 @@ void notationDecl(String name, String publicId, String systemId) throws SAXExcep
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.224 -0500", hash_original_method = "E5C69ABE155B5E114D9566A25B0FC75A", hash_generated_method = "E5C69ABE155B5E114D9566A25B0FC75A")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.224 -0500", hash_original_method = "E5C69ABE155B5E114D9566A25B0FC75A", hash_generated_method = "E5C69ABE155B5E114D9566A25B0FC75A")
     
 void unparsedEntityDecl(String name, String publicId, String systemId, String notationName) throws SAXException {
         DTDHandler dtdHandler = xmlReader.dtdHandler;
@@ -327,7 +373,9 @@ void unparsedEntityDecl(String name, String publicId, String systemId, String no
      * @param publicId the publicId of the entity
      * @param systemId the systemId of the entity
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.227 -0500", hash_original_method = "DBF93F6482092FD1B1DD0B14B0D97B21", hash_generated_method = "52F16005BD1B2C063C973E495CF61BDB")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.227 -0500", hash_original_method = "DBF93F6482092FD1B1DD0B14B0D97B21", hash_generated_method = "52F16005BD1B2C063C973E495CF61BDB")
     
 void handleExternalEntity(String context, String publicId,
             String systemId) throws SAXException, IOException {
@@ -402,6 +450,8 @@ void handleExternalEntity(String context, String publicId,
     /**
      * Picks an encoding for an external entity. Defaults to UTF-8.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.230 -0500", hash_original_method = "0D6C1F8897C50F2325542C54551DAF6A", hash_generated_method = "C0F44909E0B5955DCDF981ADDD47B6F6")
     
 private String pickEncoding(InputSource inputSource) {
@@ -417,6 +467,8 @@ private String pickEncoding(InputSource inputSource) {
     /**
      * Parses the the external entity provided by the input source.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.233 -0500", hash_original_method = "43999A16FC6A2BCB60CE78FA610F37AD", hash_generated_method = "CAA6FAED36ECA1054AC22F42FB17400E")
     
 private void parseExternalEntity(ExpatParser entityParser,
@@ -481,7 +533,9 @@ private void parseExternalEntity(ExpatParser entityParser,
      * @param xml a whole or partial snippet of XML
      * @throws SAXException if an error occurs during parsing
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.239 -0500", hash_original_method = "DD8A0FE95AA726B14C9A7464570F0B95", hash_generated_method = "DD8A0FE95AA726B14C9A7464570F0B95")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.239 -0500", hash_original_method = "DD8A0FE95AA726B14C9A7464570F0B95", hash_generated_method = "DD8A0FE95AA726B14C9A7464570F0B95")
     
 void append(String xml) throws SAXException {
         try {
@@ -491,6 +545,8 @@ void append(String xml) throws SAXException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.242 -0500", hash_original_method = "9EF978047B32CC4B7F73DD218F12B5B2", hash_generated_method = "EF6D58A448768C451021CB234A498E12")
     
     private void appendString(int pointer, String xml, boolean isFinal)
@@ -510,7 +566,9 @@ void append(String xml) throws SAXException {
      * @param length of characters to use
      * @throws SAXException if an error occurs during parsing
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.244 -0500", hash_original_method = "E534E6CFFABE07F7DCCE5DEDEA13040B", hash_generated_method = "E534E6CFFABE07F7DCCE5DEDEA13040B")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.244 -0500", hash_original_method = "E534E6CFFABE07F7DCCE5DEDEA13040B", hash_generated_method = "E534E6CFFABE07F7DCCE5DEDEA13040B")
     
 void append(char[] xml, int offset, int length)
             throws SAXException {
@@ -521,6 +579,8 @@ void append(char[] xml, int offset, int length)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.249 -0500", hash_original_method = "49A4641A93DAB70A1876B4EB02B18B5D", hash_generated_method = "2E42AA5BAC3097585CF7831F05DDD24C")
     
     private void appendChars(int pointer, char[] xml, int offset,
@@ -539,7 +599,9 @@ void append(char[] xml, int offset, int length)
      * @param xml a whole or partial snippet of XML
      * @throws SAXException if an error occurs during parsing
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.251 -0500", hash_original_method = "DB127BCAFE6AA42D44BF28FF8E448923", hash_generated_method = "DB127BCAFE6AA42D44BF28FF8E448923")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.251 -0500", hash_original_method = "DB127BCAFE6AA42D44BF28FF8E448923", hash_generated_method = "DB127BCAFE6AA42D44BF28FF8E448923")
     
 void append(byte[] xml) throws SAXException {
         append(xml, 0, xml.length);
@@ -554,7 +616,9 @@ void append(byte[] xml) throws SAXException {
      * @param length of bytes to use
      * @throws SAXException if an error occurs during parsing
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.254 -0500", hash_original_method = "6B7A6AA30AC9918948A2664C57D48C07", hash_generated_method = "6B7A6AA30AC9918948A2664C57D48C07")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.254 -0500", hash_original_method = "6B7A6AA30AC9918948A2664C57D48C07", hash_generated_method = "6B7A6AA30AC9918948A2664C57D48C07")
     
 void append(byte[] xml, int offset, int length)
             throws SAXException {
@@ -565,6 +629,8 @@ void append(byte[] xml, int offset, int length)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.258 -0500", hash_original_method = "F0951DAA750D508CD972B921A6749C41", hash_generated_method = "FA744DB6076EBFF512EC6F6434C88B18")
     
     private void appendBytes(int pointer, byte[] xml, int offset,
@@ -579,7 +645,9 @@ void append(byte[] xml, int offset, int length)
     /**
      * Parses an XML document from the given input stream.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.260 -0500", hash_original_method = "4F86C73792633F9CAFFD2414652E6044", hash_generated_method = "4F86C73792633F9CAFFD2414652E6044")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.260 -0500", hash_original_method = "4F86C73792633F9CAFFD2414652E6044", hash_generated_method = "4F86C73792633F9CAFFD2414652E6044")
     
 void parseDocument(InputStream in) throws IOException,
             SAXException {
@@ -592,7 +660,9 @@ void parseDocument(InputStream in) throws IOException,
     /**
      * Parses an XML Document from the given reader.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.262 -0500", hash_original_method = "D0C956420A79FC95538314A79FE6EF55", hash_generated_method = "D0C956420A79FC95538314A79FE6EF55")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.262 -0500", hash_original_method = "D0C956420A79FC95538314A79FE6EF55", hash_generated_method = "D0C956420A79FC95538314A79FE6EF55")
     
 void parseDocument(Reader in) throws IOException, SAXException {
         startDocument();
@@ -604,6 +674,8 @@ void parseDocument(Reader in) throws IOException, SAXException {
     /**
      * Parses XML from the given Reader.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.265 -0500", hash_original_method = "0C2DA7F13CAAE321089EB28883C484D4", hash_generated_method = "9D1C96C4E29944823F49260ADAD8981D")
     
 private void parseFragment(Reader in) throws IOException, SAXException {
@@ -621,6 +693,8 @@ private void parseFragment(Reader in) throws IOException, SAXException {
     /**
      * Parses XML from the given input stream.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.267 -0500", hash_original_method = "3CA57F292A4B96862265187DF8ED7F28", hash_generated_method = "B7D6D593ACA01293CE82D91E7B242D5B")
     
 private void parseFragment(InputStream in)
@@ -636,6 +710,8 @@ private void parseFragment(InputStream in)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.270 -0500", hash_original_method = "E29A8B5517BB7A594660A4782169D49D", hash_generated_method = "BB82E8B7C2003DFF3FEC3105C910E8EF")
     
 private void startDocument() throws SAXException {
@@ -646,6 +722,8 @@ private void startDocument() throws SAXException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.272 -0500", hash_original_method = "539A01ACC13B65DFCB758F0CE94D0284", hash_generated_method = "CF01E74AFC536561279BADBE1A08B889")
     
 private void endDocument() throws SAXException {
@@ -661,7 +739,9 @@ private void endDocument() throws SAXException {
      *
      * @throws SAXException if the xml is incomplete
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.274 -0500", hash_original_method = "BFCC6911ABBE3458CCFB4AC68FA2CC36", hash_generated_method = "BFCC6911ABBE3458CCFB4AC68FA2CC36")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.274 -0500", hash_original_method = "BFCC6911ABBE3458CCFB4AC68FA2CC36", hash_generated_method = "BFCC6911ABBE3458CCFB4AC68FA2CC36")
     
 void finish() throws SAXException {
         try {
@@ -693,6 +773,8 @@ void finish() throws SAXException {
          *  length is 0.
          * @param length number of attributes
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.321 -0500", hash_original_method = "045E6201A2106A3289C0B2900185AAE3", hash_generated_method = "FEDE9724C2C0685BF0392B60ED6AFB46")
         
 private ClonedAttributes(int parserPointer, int pointer, int length) {
@@ -828,6 +910,8 @@ public int getColumnNumber() {
     
     private static class ParseException extends SAXParseException {
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.363 -0500", hash_original_method = "58C60C87914EC8E24D1E75365C1B903C", hash_generated_method = "ED3EC96E4DF27595066398114C7ADB19")
         
 private static String makeMessage(String message, Locator locator) {
@@ -835,6 +919,8 @@ private static String makeMessage(String message, Locator locator) {
                     locator.getColumnNumber());
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.366 -0500", hash_original_method = "F00EFB085E12A09282C8F737567E696F", hash_generated_method = "08B0896A5C1670A1B59FB88E7D05EE65")
         
 private static String makeMessage(
@@ -843,6 +929,8 @@ private static String makeMessage(
                     + column + ": " + message;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.360 -0500", hash_original_method = "35DD174A2C7D975B531B73E3C242E751", hash_generated_method = "A6E5ACC35C298CBAFE052F41E0AB63C8")
         
 private ParseException(String message, Locator locator) {
@@ -856,6 +944,8 @@ private ParseException(String message, Locator locator) {
 
         private int depth = 0;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.375 -0500", hash_original_method = "CA2C59BC199DD9BEE0B3FBB1838981DE", hash_generated_method = "E0C851129EA4B3DDB2E5DA63E0589CF7")
         
 private EntityParser(String encoding, ExpatReader xmlReader,
@@ -863,6 +953,8 @@ private EntityParser(String encoding, ExpatReader xmlReader,
             super(encoding, xmlReader, pointer, publicId, systemId);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.377 -0500", hash_original_method = "046BB8109CA52E8AB8C918C4992DC8E2", hash_generated_method = "8096A34B427AF4FCCD3AC387A564BBB1")
         
@@ -879,6 +971,8 @@ private EntityParser(String encoding, ExpatReader xmlReader,
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.380 -0500", hash_original_method = "FFAA25EB14485D022C0B9C6B4C164D1D", hash_generated_method = "067C780E683275AE619C60881B06E755")
         
 @Override
@@ -919,6 +1013,8 @@ private EntityParser(String encoding, ExpatReader xmlReader,
     /**
      * Releases all native objects.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.280 -0500", hash_original_method = "B8FAFDCBEF6ED1DBF49858CA951E344D", hash_generated_method = "8AA59EA901BC30D3E50F0E3A0F1E227C")
     
     private void release(int pointer){
@@ -929,6 +1025,8 @@ private EntityParser(String encoding, ExpatReader xmlReader,
     /**
      * Gets the current line number within the XML file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.290 -0500", hash_original_method = "06014D7BF95F9BC6196F9727E94F85D2", hash_generated_method = "E9517494F4BC21001B2B7B8478CB61B4")
     
 private int line() {
@@ -938,6 +1036,8 @@ private int line() {
     /**
      * Gets the current column number within the XML file.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.297 -0500", hash_original_method = "F3C5081F1B5CC0FD86B00194F6A2466A", hash_generated_method = "648FAF5C1249CCF2DF0A74AC1A625A7A")
     
 private int column() {
@@ -948,7 +1048,9 @@ private int column() {
      * Clones the current attributes so they can be used outside of
      * startElement().
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.303 -0500", hash_original_method = "657780C747B6551FC5B90D954C172ACE", hash_generated_method = "657780C747B6551FC5B90D954C172ACE")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.303 -0500", hash_original_method = "657780C747B6551FC5B90D954C172ACE", hash_generated_method = "657780C747B6551FC5B90D954C172ACE")
     
 Attributes cloneAttributes() {
         if (!inStartElement) {

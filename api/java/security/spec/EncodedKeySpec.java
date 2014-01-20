@@ -49,6 +49,8 @@ public byte[] getEncoded() {
      * @return the name of the encoding format of this encoded key
      *         specification.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.684 -0500", hash_original_method = "CA7EFC56395807F5B08C2CDFF0DEE77B", hash_generated_method = "090623DDECB8BCC454E2F65967F71FC5")
     
 public abstract String getFormat();

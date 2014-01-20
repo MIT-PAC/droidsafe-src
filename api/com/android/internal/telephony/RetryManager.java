@@ -290,6 +290,8 @@ public boolean isRetryForever() {
      * @param stringValue
      * @return Pair.first == true if stringValue an integer >= 0
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.983 -0500", hash_original_method = "CFEE2F1AF91E2D86FFF14B5518822AC3", hash_generated_method = "D5E254F3A93CF7A3613CF09D7CC6B653")
     
 private Pair<Boolean, Integer> parseNonNegativeInt(String name, String stringValue) {
@@ -314,6 +316,8 @@ private Pair<Boolean, Integer> parseNonNegativeInt(String name, String stringVal
      * @param value
      * @return Pair.first
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.985 -0500", hash_original_method = "732CF49E361007DEE3B2FC2D605BF87E", hash_generated_method = "3DA719908B1BF7B8EB9660CF8C565B13")
     
 private boolean validateNonNegativeInt(String name, int value) {
@@ -335,6 +339,8 @@ private boolean validateNonNegativeInt(String name, int value) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.937 -0500", hash_original_field = "C0F0244DB495C4F7A8A1EB5174BBEC44", hash_generated_field = "C0F0244DB495C4F7A8A1EB5174BBEC44")
 
         int mRandomizationTime;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.932 -0500", hash_original_method = "69C230B0D836032F36CE6DFB69101575", hash_generated_method = "69C230B0D836032F36CE6DFB69101575")
         
 RetryRec(int delayTime, int randomizationTime) {
@@ -347,6 +353,8 @@ RetryRec(int delayTime, int randomizationTime) {
     /**
      * Return next random number for the index
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.002 -0500", hash_original_method = "C6100D6542DA0DEE21E22A63B7A19544", hash_generated_method = "55FA424116E7841B7C28D4B140F935FD")
     
 private int nextRandomizationTime(int index) {
@@ -358,6 +366,8 @@ private int nextRandomizationTime(int index) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.004 -0500", hash_original_method = "4CC3EDAC8B8BC9B5E954A182C692136C", hash_generated_method = "912C89BCFAD1DF26D1F99BBC8BBEC4F2")
     
 private void log(String s) {

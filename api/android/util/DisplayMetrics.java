@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class DisplayMetrics {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int getDeviceDensity() {
         return 0;
     }

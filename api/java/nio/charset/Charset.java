@@ -22,6 +22,8 @@ import libcore.icu.NativeConverter;
 
 public abstract class Charset implements Comparable<Charset> {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.289 -0500", hash_original_method = "1B562419FBD56BE2B33ED98FD4ABE386", hash_generated_method = "A2F453F6E5C441B83EF70DACAF3D16D1")
     
 private static void checkCharsetName(String name) {
@@ -36,6 +38,8 @@ private static void checkCharsetName(String name) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.292 -0500", hash_original_method = "9034B02728818A8ACE22749851509C68", hash_generated_method = "C5A1AB7024C0FABC4FCBF5F9A0833A7E")
     
 private static boolean isValidCharsetNameCharacter(char c) {
@@ -77,6 +81,8 @@ public static SortedMap<String, Charset> availableCharsets() {
         return Collections.unmodifiableSortedMap(charsets);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.298 -0500", hash_original_method = "B40419257A5AD729851C1FAA17AEA345", hash_generated_method = "D5458060AD1FD9E91B602F46F2745714")
     
 private static Charset cacheCharset(String charsetName, Charset cs) {
@@ -115,8 +121,8 @@ private static Charset cacheCharset(String charsetName, Charset cs) {
      * @throws UnsupportedCharsetException
      *             if the desired charset is not supported by this runtime.
      */
-    @DSComment("no suspicious activity")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.301 -0500", hash_original_method = "B31D6DDF47464344AF549FF7AC79952D", hash_generated_method = "69512781EC40B9F94DBA1CA7BA3C02E4")
     
 public static Charset forName(String charsetName) {
@@ -203,6 +209,8 @@ public static Charset defaultCharset() {
         return DEFAULT_CHARSET;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.352 -0500", hash_original_method = "CF00CD3332842EC74198C62C87ED0076", hash_generated_method = "E9F8BE2CBB97B961A5CDA9BA052EE481")
     
 private static Charset getDefaultCharset() {
@@ -274,6 +282,8 @@ protected Charset(String canonicalName, String[] aliases) {
      *         false if it's unknown or this charset is not a superset of
      *         the given charset.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.309 -0500", hash_original_method = "A170E8D5F907BC2C49EE2B6B025995E0", hash_generated_method = "69BECE17D88537817044B7AB49A588D2")
     
 public abstract boolean contains(Charset charset);
@@ -283,8 +293,8 @@ public abstract boolean contains(Charset charset);
      *
      * @return a new instance of an encoder for this charset.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.311 -0500", hash_original_method = "6CE48151599625E957ABC6EC54C683E1", hash_generated_method = "F7342451161EBEDD0F2A5E305B52C07E")
     
 public abstract CharsetEncoder newEncoder();
@@ -294,8 +304,8 @@ public abstract CharsetEncoder newEncoder();
      *
      * @return a new instance of a decoder for this charset.
      */
-    @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.314 -0500", hash_original_method = "87399EF201DA00E186FBDB0ABC0F624F", hash_generated_method = "2CC99218A52107AA79DA0D19E105B263")
     
 public abstract CharsetDecoder newDecoder();

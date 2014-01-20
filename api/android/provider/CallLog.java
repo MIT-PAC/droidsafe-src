@@ -151,6 +151,8 @@ public static String getLastOutgoingCall(Context context) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.873 -0500", hash_original_method = "E49FD2EBB5DF26A9EAF75051416A16BA", hash_generated_method = "E8D346CDF75EBA404884537B0949CB1C")
         
 private static void removeExpiredEntries(Context context) {

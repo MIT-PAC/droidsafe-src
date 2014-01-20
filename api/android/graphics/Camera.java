@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Camera {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.200 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
-
     
     int native_instance;
     /**
@@ -35,7 +30,6 @@ public Camera() {
     	//Formerly a native method
     }
 
-
     /**
      * Restores the saved state, if any.
      * 
@@ -46,7 +40,6 @@ public Camera() {
     public void restore(){
     	//Formerly a native method
     }
-
 
     /**
      * Applies a translation transform on all three axis.
@@ -64,7 +57,6 @@ public Camera() {
     	addTaint(z);
     }
 
-
     /**
      * Applies a rotation transform around the X axis.
      * 
@@ -80,7 +72,6 @@ public Camera() {
     	//Formerly a native method
     	addTaint(deg);
     }
-
 
     /**
      * Applies a rotation transform around the Y axis.
@@ -98,7 +89,6 @@ public Camera() {
     	addTaint(deg);
     }
 
-
     /**
      * Applies a rotation transform around the Z axis.
      * 
@@ -114,7 +104,6 @@ public Camera() {
     	//Formerly a native method
     	addTaint(deg);
     }
-
 
     /**
      * Applies a rotation transform around all three axis.
@@ -136,7 +125,6 @@ public Camera() {
     	addTaint(z);
     }
 
-
     /**
      * Sets the location of the camera. The default location is set at
      * 0, 0, -8.
@@ -153,7 +141,6 @@ public Camera() {
     	addTaint(y);
     	addTaint(z);
     }
-
 
     /**
      * Computes the matrix corresponding to the current transformation
@@ -188,7 +175,6 @@ public void applyToCanvas(Canvas canvas) {
     	addTaint(dz);
     	return getTaintFloat();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.184 -0500", hash_original_method = "C90BA6E6D8C2FEFD061454BA6E7AF7E1", hash_generated_method = "8A85EA8E6B128F46007DF31045FAB50E")
     
@@ -200,18 +186,24 @@ protected void finalize() throws Throwable {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.187 -0500", hash_original_method = "CB9D9CAF93B6F7C6AC078700B30D5B3A", hash_generated_method = "6EEF3712392D06942F0E7086316BBAB4")
     
     private void nativeConstructor(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.191 -0500", hash_original_method = "28277D643642440FCD7626A94746E337", hash_generated_method = "51EEE50DA274E26FEE517B8295242BAC")
     
     private void nativeDestructor(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.194 -0500", hash_original_method = "8D274BB0506DF92F70FF4552532F47BF", hash_generated_method = "AA83036AF7865EB6ED4CCFECFB9241B5")
     
     private void nativeGetMatrix(int native_matrix){
@@ -219,14 +211,14 @@ protected void finalize() throws Throwable {
     	addTaint(native_matrix);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.198 -0500", hash_original_method = "969BE384F55540A8E1C5E65A0255064C", hash_generated_method = "A5CAD42A5D0B728F6A4749AB0F69A49E")
     
     private void nativeApplyToCanvas(int native_canvas){
     	//Formerly a native method
     	addTaint(native_canvas);
     }
-
-
     
 }
 

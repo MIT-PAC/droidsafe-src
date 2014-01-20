@@ -92,6 +92,8 @@ public SpellChecker(TextView textView) {
         mCookie = hashCode();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.557 -0500", hash_original_method = "132221852F8DDF087B45024FD49A8E7F", hash_generated_method = "874D74E2A6EAC44D5D7DD5EBF9EE82F4")
     
 private void resetSession() {
@@ -122,6 +124,8 @@ private void resetSession() {
         mTextView.onLocaleChanged();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.560 -0500", hash_original_method = "A16726E56767CB6AA7867DE749E54AF0", hash_generated_method = "C2AC1BCDCC534DDE13B503F20343074A")
     
 private void setLocale(Locale locale) {
@@ -140,6 +144,8 @@ private void setLocale(Locale locale) {
      * @return true if a spell checker session has successfully been created. Returns false if not,
      * for instance when spell checking has been disabled in settings.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.562 -0500", hash_original_method = "7E55E284FCAD6408034DF45536DFE0B3", hash_generated_method = "3959D9B7D5E3D4B0CC84A9F9A6A35570")
     
 private boolean isSessionActive() {
@@ -163,6 +169,8 @@ public void closeSession() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.567 -0500", hash_original_method = "5D19DB78B5A2119B2E660E625690F49E", hash_generated_method = "D8C7D81FC65DEC567EFD212E697734D5")
     
 private int nextSpellCheckSpanIndex() {
@@ -185,6 +193,8 @@ private int nextSpellCheckSpanIndex() {
         return mLength - 1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.569 -0500", hash_original_method = "A1EABCB0A317A13B5BB9A67E3EDF2F7D", hash_generated_method = "C327F612C55552BDFD2DBB5DB1090639")
     
 private void addSpellCheckSpan(Editable editable, int start, int end) {
@@ -390,6 +400,8 @@ public void parse() {
             spellCheck();
         }
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.317 -0400", hash_original_method = "0A3768DE6F2D0EE4EDD70A588C9E13B1", hash_generated_method = "F826D98320B305250B98F56F203BB81E")
         private <T> void removeSpansAt(Editable editable, int offset, T[] spans) {
             addTaint(spans[0].getTaint());
@@ -421,6 +433,8 @@ for(int i = 0;i < length;i++)
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.579 -0500", hash_original_method = "BA5B8BA52678A659BE9D822C4132A8EA", hash_generated_method = "3B0A69FB79C0002C486606C5FA6464C1")
     
 private void spellCheck() {
@@ -496,6 +510,8 @@ private void spellCheck() {
         scheduleNewSpellCheck();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.587 -0500", hash_original_method = "57E44CFBFBBC7EE198958F01316D8781", hash_generated_method = "017CA6AFA78AFCB595024AED85E0B8CB")
     
 private void scheduleNewSpellCheck() {
@@ -520,6 +536,8 @@ private void scheduleNewSpellCheck() {
         mTextView.postDelayed(mSpellRunnable, SPELL_PAUSE_DURATION);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.591 -0500", hash_original_method = "7C6C5A03DA2C9F5FF814A532005DE2A2", hash_generated_method = "9A8F1F8948434327F1D57C9AC94A3B27")
     
 private void createMisspelledSuggestionSpan(Editable editable, SuggestionsInfo suggestionsInfo,

@@ -160,6 +160,8 @@ public final class NativeConverter {
     }
 
     // Translates from Java's enum to the magic numbers #defined in "NativeConverter.cpp".
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.534 -0500", hash_original_method = "E4DEB0C107DDB25A537EF0E89F1C04F8", hash_generated_method = "2E76AFD8C90588F5139C0C2D28CAEA05")
     
 private static int translateCodingErrorAction(CodingErrorAction action) {
@@ -183,6 +185,8 @@ public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder
                 decoder.replacement());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int setCallbackDecode(long converterHandle, int onMalformedInput, int onUnmappableInput, String subChars) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043;
@@ -197,6 +201,8 @@ public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder
                 encoder.replacement());
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int setCallbackEncode(long converterHandle, int onMalformedInput, int onUnmappableInput, byte[] subBytes) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015;

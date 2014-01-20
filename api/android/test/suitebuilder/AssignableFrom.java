@@ -6,14 +6,13 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.util.Predicate;
 
-
-
 class AssignableFrom implements Predicate<TestMethod> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.081 -0500", hash_original_field = "497A6704402071AE6700B86462493C63", hash_generated_field = "CD7AA0FB599481FB503A3BD1231F661A")
 
-
     private  Class root;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.083 -0500", hash_original_method = "E9FCE922FC144032ABCB05F1667FA15F", hash_generated_method = "E9FCE922FC144032ABCB05F1667FA15F")
     
 AssignableFrom(Class root) {
@@ -25,7 +24,6 @@ AssignableFrom(Class root) {
 public boolean apply(TestMethod testMethod) {
         return root.isAssignableFrom(testMethod.getEnclosingClass());
     }
-
     
 }
 

@@ -8,6 +8,8 @@ import libcore.io.SizeOf;
 
 final class FloatToByteBufferAdapter extends FloatBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.889 -0500", hash_original_method = "4E320B5A4FC28FA956032ED554AE256C", hash_generated_method = "1C7AD486528B62D4E17062BD36B4E068")
     
 static FloatBuffer asFloatBuffer(ByteBuffer byteBuffer) {
@@ -19,6 +21,8 @@ static FloatBuffer asFloatBuffer(ByteBuffer byteBuffer) {
 
     private  ByteBuffer byteBuffer;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.891 -0500", hash_original_method = "810EBC63174C0FA8B04ABE1EAC99DA74", hash_generated_method = "810EBC63174C0FA8B04ABE1EAC99DA74")
     
 FloatToByteBufferAdapter(ByteBuffer byteBuffer) {

@@ -30,6 +30,8 @@ public abstract class NodeImpl implements Node {
      * @param namespaceAware whether this node is namespace aware
      * @param namespaceURI this node's namespace URI
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.220 -0500", hash_original_method = "5A076CF41CCED2BA03916DBA6A8D512A", hash_generated_method = "A02189EB4857335F0506463788C17864")
     
 static String validatePrefix(String prefix, boolean namespaceAware, String namespaceURI) {
@@ -57,6 +59,8 @@ static String validatePrefix(String prefix, boolean namespaceAware, String names
      * @param namespaceURI this node's namespace URI. May be null.
      * @param qualifiedName a possibly-prefixed name like "img" or "html:img".
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.223 -0500", hash_original_method = "DA9A10D4BFE6F3C7C94DCF078FE3E793", hash_generated_method = "3567149F6AB32EE63E57D654E909A1CC")
     
 static void setNameNS(NodeImpl node, String namespaceURI, String qualifiedName) {
@@ -108,6 +112,8 @@ static void setNameNS(NodeImpl node, String namespaceURI, String qualifiedName) 
      *
      * @param node an element or attribute node.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.226 -0500", hash_original_method = "D4A9B75EBE5B2394483BA819B660B5EB", hash_generated_method = "9775A9FE12F5070EC7B931CA3F875BF0")
     
 static void setName(NodeImpl node, String name) {
@@ -147,6 +153,8 @@ static void setName(NodeImpl node, String name) {
      * neither of which override Object.equals(). Such values must be compared
      * manually.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.265 -0500", hash_original_method = "9793DB47E7673F718DADE1F7C169BB4E", hash_generated_method = "79A13F694D4418D3F15A793345940960")
     
 private static List<Object> createEqualityKey(Node node) {
@@ -222,6 +230,8 @@ private static List<Object> createEqualityKey(Node node) {
 
     DocumentImpl document;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.162 -0500", hash_original_method = "A803585FEFBC6246911A956CA607D5CA", hash_generated_method = "A803585FEFBC6246911A956CA607D5CA")
     
 NodeImpl(DocumentImpl document) {
@@ -296,6 +306,8 @@ public String getNodeName() {
         return null;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.186 -0500", hash_original_method = "16B19D352521D775272307977AC58B41", hash_generated_method = "B8D2BA8533F0EF1FEBDD64D3DE6A1755")
     
 public abstract short getNodeType();
@@ -491,6 +503,8 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.231 -0500", hash_original_method = "DFD855C107B39D74015E43DCF13ECA5E", hash_generated_method = "70495698BE58AB35C3ADE99D972A45B4")
     
 private String getParentBaseUri() {
@@ -501,6 +515,8 @@ private String getParentBaseUri() {
     /**
      * Returns the sanitized input if it is a URI, or {@code null} otherwise.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.233 -0500", hash_original_method = "1D824B9402137DBC708C242BAEC27F82", hash_generated_method = "C952930FCE91E68AA5A642F8179D45E5")
     
 private String sanitizeUri(String uri) {
@@ -528,6 +544,8 @@ public String getTextContent() throws DOMException {
         return getNodeValue();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.239 -0500", hash_original_method = "6ADB0BF10CD256A5C763161A1385CD79", hash_generated_method = "6ADB0BF10CD256A5C763161A1385CD79")
     
@@ -587,6 +605,8 @@ public boolean isSameNode(Node other) {
      * Returns the element whose namespace definitions apply to this node. Use
      * this element when mapping prefixes to URIs and vice versa.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.247 -0500", hash_original_method = "DDD4A4E09BB31E4B92DF0753DE457415", hash_generated_method = "E5D08FEEF5044B534CF8CEA79BDC3E0C")
     
 private NodeImpl getNamespacingElement() {
@@ -622,6 +642,8 @@ private NodeImpl getNamespacingElement() {
     /**
      * Returns the nearest ancestor element that contains this node.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.249 -0500", hash_original_method = "E4B9E13482B5AB13521831694CDD3F31", hash_generated_method = "3BE440C3722A8E0923D8EC35D57A079C")
     
 private NodeImpl getContainingElement() {
@@ -694,6 +716,8 @@ String var540C13E9E156B687226421B24F2DF178_259019385 =         null;
      * @param prefix the prefix to find. Nullable.
      * @param uri the URI to match. Non-null.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.256 -0500", hash_original_method = "AA07F6405A8EB7821F818F6C760FCB2D", hash_generated_method = "AA07F6405A8EB7821F818F6C760FCB2D")
     
 boolean isPrefixMappedToUri(String prefix, String uri) {
@@ -811,6 +835,8 @@ public final boolean isEqualNode(Node arg) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.271 -0500", hash_original_method = "C9854B9EF2C5621F4F378B8106F34125", hash_generated_method = "E50386A0818B7CDDEA4B1940F4C9C3B6")
     
 private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
@@ -843,6 +869,8 @@ public final Object getFeature(String feature, String version) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.283 -0500", hash_original_field = "827CB1F78A0BBD2016258DC26E1ED2F5", hash_generated_field = "827CB1F78A0BBD2016258DC26E1ED2F5")
 
          UserDataHandler handler;
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.286 -0500", hash_original_method = "0B6C19B4FFBA791689124EA47788F25F", hash_generated_method = "0B6C19B4FFBA791689124EA47788F25F")
         
 UserData(Object value, UserDataHandler handler) {

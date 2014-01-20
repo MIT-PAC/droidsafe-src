@@ -5,20 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Proxy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.915 -0500", hash_original_field = "7A90B00F2DD5A44F0498BE34EC4A9BC4", hash_generated_field = "CFAF9C7805E2D3759922DBF914F8A204")
 
     public static final Proxy NO_PROXY = new Proxy();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.917 -0500", hash_original_field = "C3BCDFF467E25677A4CAD03D3685368E", hash_generated_field = "0493BBFB1288023B7B163197BF9857A6")
 
-
     private Proxy.Type type;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.919 -0500", hash_original_field = "886A1037AAF343052F31583F2126531A", hash_generated_field = "E0A43CBF82D512E62F9819C96F9107F8")
-
 
     private SocketAddress address;
 
@@ -56,6 +50,8 @@ public Proxy(Proxy.Type type, SocketAddress sa) {
      * Constructs a Proxy instance, which is Proxy.DIRECT type with null
      * SocketAddress. This constructor is used for NO_PROXY.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.925 -0500", hash_original_method = "D66A32319FBF400033B05D10E8B8C304", hash_generated_method = "48AD1BF6F9D8AB8F908FD2AFD012C28A")
     
 private Proxy() {
@@ -134,7 +130,6 @@ public SocketAddress address() {
         // address is null when and only when it's NO_PROXY.
         return (type == another.type) && address.equals(another.address);
     }
-
     
     public enum Type {
         DIRECT,

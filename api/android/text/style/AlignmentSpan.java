@@ -23,12 +23,16 @@ public Standard(Layout.Alignment align) {
             mAlignment = align;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.396 -0500", hash_original_method = "C9FB613B57B8FF87A9A7F12F17479517", hash_generated_method = "91C0994D9A6E985BB9F8F4917A292990")
         
 public Standard(Parcel src) {
             mAlignment = Layout.Alignment.valueOf(src.readString());
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.399 -0500", hash_original_method = "2EF0C12246BCA507C6FF618C23AD3C6F", hash_generated_method = "B8C347D29B11B4668573B8FD35494FAE")
         
@@ -36,12 +40,16 @@ public int getSpanTypeId() {
             return TextUtils.ALIGNMENT_SPAN;
         }
         
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.401 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
         
 public int describeContents() {
             return 0;
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.404 -0500", hash_original_method = "A7A355BDB68671CCA4543E875164E432", hash_generated_method = "963E13521BC9AA727893C027FF42FA0A")
         
 public void writeToParcel(Parcel dest, int flags) {

@@ -8,8 +8,6 @@ import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.protocol.HTTP;
 
-
-
 public final class HttpProtocolParams implements CoreProtocolPNames {
 
     /**
@@ -149,12 +147,13 @@ public static void setUseExpectContinue(final HttpParams params, boolean b) {
     
     /**
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.563 -0500", hash_original_method = "97EF9A6B4AA92C207CBAC39297404AF3", hash_generated_method = "5AC7AADFBBE217262025737854AE0708")
     
 private HttpProtocolParams() {
         super();
     }
-
     
 }
 

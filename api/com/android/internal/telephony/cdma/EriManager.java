@@ -97,6 +97,8 @@ public void loadEriFile() {
      * In this case the ERI file can be updated from the Phone Support Tool available
      * from the Chipset vendor
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.576 -0500", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "9E3644C8010B59580E039822D66A62AC")
     
 private void loadEriFileFromModem() {
@@ -109,6 +111,8 @@ private void loadEriFileFromModem() {
      * In this case the a Phone Support Tool to update the ERI file must be provided
      * to the Operator
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.578 -0500", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "2E9EE1FBCA17BF52E15300F9A36ED1DF")
     
 private void loadEriFileFromFileSystem() {
@@ -119,6 +123,8 @@ private void loadEriFileFromFileSystem() {
      * Load the ERI file from the application framework resources encoded in XML
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.583 -0500", hash_original_method = "C6A3384D5129DFA3EA95328C5EF0C849", hash_generated_method = "705A8F768F24C9110C345F97C704AEA9")
     
 private void loadEriFileFromXml() {
@@ -320,6 +326,8 @@ public boolean isEriFileLoaded() {
      * Returns the EriInfo record associated with roamingIndicator
      * or null if the entry is not found
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.594 -0500", hash_original_method = "EC9DEB76FD43053D10B144FC41192B14", hash_generated_method = "A1B48DA814006445EF3B7BA2A031AEC4")
     
 private EriInfo getEriInfo(int roamingIndicator) {

@@ -30,6 +30,8 @@ abstract class Connection {
      * connection factory: returns an HTTP or HTTPS connection as
      * necessary
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.896 -0500", hash_original_method = "9385B9D6EC74D1C750DAFAFBFBD94573", hash_generated_method = "4C4D93138F5E3927E852882E8218A1A2")
     
@@ -120,6 +122,8 @@ protected Connection(Context context, HttpHost host,
         mHttpContext = new BasicHttpContext(null);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.893 -0500", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "9B5E41A5FF20333698838F3F6DF6BCD6")
     
@@ -131,7 +135,9 @@ HttpHost getHost() {
      * @return The server SSL certificate associated with this
      * connection (null if the connection is not secure)
      */
-    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.898 -0500", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "7F448377575EC929DDEDD2BF1EB435C4")
     
 SslCertificate getCertificate() {
@@ -142,6 +148,8 @@ SslCertificate getCertificate() {
      * Close current network connection
      * Note: this runs in non-network thread
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.900 -0500", hash_original_method = "E0AFA64670C1DBA320AD7B4F64C9D703", hash_generated_method = "E0AFA64670C1DBA320AD7B4F64C9D703")
     
 void cancel() {
@@ -155,6 +163,8 @@ void cancel() {
      * Process requests in queue
      * pipelines requests
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.904 -0500", hash_original_method = "F5EEA514D7040591FC6D3FB9B4E157ED", hash_generated_method = "E46FBFB4883AE1552E95C85002A1AF0A")
     
 void processRequests(Request firstRequest) {
@@ -327,6 +337,8 @@ void processRequests(Request firstRequest) {
      * cleared back to the mRequest queue
      * @return true if mRequests is empty after pipe cleared
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.907 -0500", hash_original_method = "3DB5627BDFAF8C06A0CDDAD2458FF1F0", hash_generated_method = "8355093E9B5A918D63AB9052B262AE0F")
     
 private boolean clearPipe(LinkedList<Request> pipe) {
@@ -350,6 +362,8 @@ private boolean clearPipe(LinkedList<Request> pipe) {
     /**
      * @return true on success
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.910 -0500", hash_original_method = "65B4C91B53E686F7A0B5A125142FC3C0", hash_generated_method = "685BB5C8C60A4113FB6E30D0B096B062")
     
 private boolean openHttpConnection(Request req) {
@@ -431,6 +445,8 @@ private boolean openHttpConnection(Request req) {
      * @return true if request can be retried (less than
      * RETRY_REQUEST_LIMIT failures have occurred).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.913 -0500", hash_original_method = "6EC91A36E40ABAF43D521C6CD9682246", hash_generated_method = "AEFBDA141683B77570677E43A16757B3")
     
 private boolean httpFailure(Request req, int errorId, Exception e) {
@@ -460,6 +476,8 @@ private boolean httpFailure(Request req, int errorId, Exception e) {
         return ret;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.915 -0500", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "510B2315D285A4B8D2701F50BEED692F")
     
@@ -501,18 +519,24 @@ private boolean keepAlive(HttpEntity entity,
         return !ver.lessEquals(HttpVersion.HTTP_1_0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.920 -0500", hash_original_method = "30E271C8B4BA77F90D768E6DAD0368A8", hash_generated_method = "30E271C8B4BA77F90D768E6DAD0368A8")
     
 void setCanPersist(HttpEntity entity, ProtocolVersion ver, int connType) {
         mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.922 -0500", hash_original_method = "948404D3184D15107ABD2526F5DFBFE0", hash_generated_method = "948404D3184D15107ABD2526F5DFBFE0")
     
 void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.923 -0500", hash_original_method = "5B21A605E2B59BE630988FE4FC055560", hash_generated_method = "5B21A605E2B59BE630988FE4FC055560")
     
@@ -521,12 +545,18 @@ boolean getCanPersist() {
     }
 
     /** typically http or https... set by subclass */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.925 -0500", hash_original_method = "49DE357EBCB935115FD25920AB27E09B", hash_generated_method = "39D6F3ED68DA5E1AAED39BA2792E024C")
     
 abstract String getScheme();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.927 -0500", hash_original_method = "2743D0CE4FC6FDA658E35772D12E049E", hash_generated_method = "375F4613E9CAD8196D088F4D3C02D3D1")
     
 abstract void closeConnection();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.929 -0500", hash_original_method = "0B181E605C4B422EB0E3DFC7D1CC67FB", hash_generated_method = "FC5E6927B007D47BC3C2D5378E8FE53E")
     
 abstract AndroidHttpClientConnection openConnection(Request req) throws IOException;
@@ -541,6 +571,8 @@ public synchronized String toString() {
         return mHost.toString();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.934 -0500", hash_original_method = "ED2ED37A31E0A6859AF61C011936FDA1", hash_generated_method = "ED2ED37A31E0A6859AF61C011936FDA1")
     

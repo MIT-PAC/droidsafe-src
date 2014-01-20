@@ -449,6 +449,8 @@ public void setChildDivider(Drawable childDivider) {
         mChildDivider = childDivider;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.793 -0500", hash_original_method = "1C2A86D3B4CD7E5098111C8F9235F268", hash_generated_method = "9AA28320A27C85C8E0AD998F4E8B47B8")
     
 @Override
@@ -564,6 +566,8 @@ public ExpandableListAdapter getExpandableListAdapter() {
      * @param position An absolute (including header and footer) flat list position.
      * @return true if the position corresponds to a header or a footer item.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.808 -0500", hash_original_method = "A9D0233B5C169CC66750AD88D31A38E9", hash_generated_method = "74BD10D7D47D662C510C4167355EB8C4")
     
 private boolean isHeaderOrFooterPosition(int position) {
@@ -578,6 +582,8 @@ private boolean isHeaderOrFooterPosition(int position) {
      * @param flatListPosition The absolute flat position
      * @return A group/child flat position as expected by the connector.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.810 -0500", hash_original_method = "8FB53CC37B504290AC6948A7A815A683", hash_generated_method = "EDCB78D6ED26D5A20E1CE956E7AAE40A")
     
 private int getFlatPositionForConnector(int flatListPosition) {
@@ -591,6 +597,8 @@ private int getFlatPositionForConnector(int flatListPosition) {
      * @param flatListPosition The child/group flat position
      * @return An absolute flat position.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.812 -0500", hash_original_method = "D8821ADD18913687E76F2B3166416BE8", hash_generated_method = "C5CFCFBC89B7B708C6A4508EFD8C68DA")
     
 private int getAbsoluteFlatPosition(int flatListPosition) {
@@ -621,6 +629,8 @@ private int getAbsoluteFlatPosition(int flatListPosition) {
      *            remove the header/footer.
      * @param id The ListAdapter ID, not the group or child ID.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.818 -0500", hash_original_method = "6AFB7BBE8B57133AA9AA93690C5E22BA", hash_generated_method = "24BB97D6FAA0289BEF28A499FA0557B1")
     
 boolean handleItemClick(View v, int position, long id) {
@@ -796,6 +806,8 @@ public ExpandableListContextMenuInfo(View targetView, long packedPosition, long 
         /**
          * Constructor called from {@link ExpandableListView#onSaveInstanceState()}
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.909 -0500", hash_original_method = "9176098383EC9C7D58FDF70E89009D8B", hash_generated_method = "9176098383EC9C7D58FDF70E89009D8B")
         
 SavedState(
@@ -808,6 +820,8 @@ SavedState(
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.912 -0500", hash_original_method = "D29B1E3F2DF62BC80E56BCC4A8E9B099", hash_generated_method = "3833DC44E1A060D2177644884B992C55")
         
 private SavedState(Parcel in) {
@@ -1073,6 +1087,8 @@ public boolean isGroupExpanded(int groupPosition) {
      * @param position The position of the child or group whose ID should be
      *            returned.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.883 -0500", hash_original_method = "FEE5EC0BA8444C3E23B9BF5AFE8AF9D9", hash_generated_method = "1C6151BEE6103DBF11F9EBFFEAAFB538")
     
 private long getChildOrGroupId(ExpandableListPosition position) {

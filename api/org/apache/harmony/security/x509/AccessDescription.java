@@ -46,6 +46,8 @@ public final class AccessDescription {
 
     private byte[] encoding;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.801 -0500", hash_original_method = "FB49FC0C1C39F6A3E5A7CF2545478BA4", hash_generated_method = "33E6883F4A012F90A26EF68EA8241D6A")
     
 private AccessDescription(String accessMethod, GeneralName accessLocation, byte[] encoding) {

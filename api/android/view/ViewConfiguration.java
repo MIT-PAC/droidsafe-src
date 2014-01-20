@@ -540,6 +540,8 @@ public static float getScrollFriction() {
      * @see #get(android.content.Context) 
      * @see android.util.DisplayMetrics
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.369 -0500", hash_original_method = "815441BD896E00C6B865EAF3CE23B912", hash_generated_method = "46434ADDCFE39D65CA30D116EE67ED55")
     
 private ViewConfiguration(Context context) {

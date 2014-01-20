@@ -203,6 +203,8 @@ protected SecureRandom(SecureRandomSpi secureRandomSpi,
     }
 
     // Constructor
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.238 -0500", hash_original_method = "8ED38FDA0C5F7DDB2E6327092A1339E9", hash_generated_method = "A1C1C19A9D69A1250E20DBF8F2964DE2")
     
 private SecureRandom(SecureRandomSpi secureRandomSpi,

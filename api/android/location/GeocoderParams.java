@@ -42,6 +42,8 @@ public GeocoderParams[] newArray(int size) {
     private String mPackageName;
 
     // used only for parcelling
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.632 -0500", hash_original_method = "6AA13481A09E5725F329ED6947D74643", hash_generated_method = "C263E3A863BA6E7AAC4F2F56CD08B269")
     
 private GeocoderParams() {

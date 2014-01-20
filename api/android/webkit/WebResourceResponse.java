@@ -97,6 +97,8 @@ public InputStream getData() {
         return mInputStream;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.460 -0500", hash_original_method = "6FC74C7BC54A6B57AFC291C9E3571AE9", hash_generated_method = "6FC74C7BC54A6B57AFC291C9E3571AE9")
     
 StreamLoader loader(LoadListener listener) {

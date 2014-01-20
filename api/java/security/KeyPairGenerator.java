@@ -218,6 +218,8 @@ public final KeyPair genKeyPair() {
 
         private KeyPairGeneratorSpi spiImpl;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.243 -0500", hash_original_method = "31255CF8BFD3D1E3DCC08215387BB12A", hash_generated_method = "6BE9020CAD8EE9935E358E33389AB01D")
         
 private KeyPairGeneratorImpl(KeyPairGeneratorSpi keyPairGeneratorSpi,

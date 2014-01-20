@@ -43,25 +43,37 @@ public static List<AudioDecoder> getAudioDecoders() {
         return decoderList;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final void native_init() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int native_get_num_video_decoders() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int native_get_video_decoder_type(int index) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int native_get_num_audio_decoders() {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static final int native_get_audio_decoder_type(int index) {
         return DSUtils.UNKNOWN_INT;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.793 -0500", hash_original_method = "599AF8A39C7326727CA1A71C57B2EC2D", hash_generated_method = "BFECFE7E67F6E5F2BF2546A8989CB0DE")
     
 private DecoderCapabilities() {}

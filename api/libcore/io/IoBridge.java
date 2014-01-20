@@ -156,6 +156,8 @@ public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int po
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.729 -0500", hash_original_method = "D7BE365D78251E41BD99D05443E2B07E", hash_generated_method = "F38DEB8DDFFF37CFA95B96C84EB39457")
     
 private static boolean connectErrno(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws ErrnoException, IOException {
@@ -193,6 +195,8 @@ private static boolean connectErrno(FileDescriptor fd, InetAddress inetAddress, 
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.731 -0500", hash_original_method = "F8F4A8068EB086BE493EBCFD9E087B18", hash_generated_method = "18945ED2BF4D73CCE15F0ED9659D949A")
     
 private static String connectDetail(InetAddress inetAddress, int port, int timeoutMs, ErrnoException cause) {
@@ -278,6 +282,8 @@ public static Object getSocketOption(FileDescriptor fd, int option) throws Socke
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.752 -0500", hash_original_method = "974AC57B647B0E19683F9AD29B934025", hash_generated_method = "A0A39A1D233B5968E89045F7EEE79078")
     
 private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
@@ -327,12 +333,16 @@ private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.754 -0500", hash_original_method = "B7A8C0409E1035F8EAF6BD618B4E651E", hash_generated_method = "015524567A417EF0175B246905795F4B")
     
 private static boolean booleanFromInt(int i) {
         return (i != 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.757 -0500", hash_original_method = "364F2FBD8F3B46F38D29C27DFFD25B74", hash_generated_method = "2DE4623BBCBF4C0B24219C736E3A31D8")
     
 private static int booleanToInt(boolean b) {
@@ -354,6 +364,8 @@ public static void setSocketOption(FileDescriptor fd, int option, Object value) 
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.763 -0500", hash_original_method = "3019B6668B365ECF8A5509168D80A8D7", hash_generated_method = "EBCEE6D43E56F95799483902CD7FC603")
     
 private static void setSocketOptionErrno(FileDescriptor fd, int option, Object value) throws ErrnoException, SocketException {
@@ -546,6 +558,8 @@ public static int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAd
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.780 -0500", hash_original_method = "2165269B00818F46FED78FE25D6C5FC5", hash_generated_method = "1AF24301DE48F3A9B717B1A856C0A8A4")
     
 private static int maybeThrowAfterSendto(boolean isDatagram, ErrnoException errnoException) throws SocketException {
@@ -591,6 +605,8 @@ public static int recvfrom(boolean isRead, FileDescriptor fd, ByteBuffer buffer,
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.789 -0500", hash_original_method = "871255B3F9D40210CAC4049FA8DF4788", hash_generated_method = "D55FC9DECF6127591DC3F65FAEDE437A")
     
 private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean isConnected, InetSocketAddress srcAddress, int byteCount) {
@@ -607,6 +623,8 @@ private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean i
         return byteCount;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.791 -0500", hash_original_method = "AB9706571F1180FC3B99F722D1F9358A", hash_generated_method = "CB8AF36A3AFB4168861DF6C0CC9A6B19")
     
 private static int maybeThrowAfterRecvfrom(boolean isRead, boolean isConnected, ErrnoException errnoException) throws SocketException, SocketTimeoutException {
@@ -686,6 +704,8 @@ public static int getSocketLocalPort(FileDescriptor fd) {
 
     public static final int JAVA_IP_MULTICAST_TTL = 17;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.714 -0500", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "A6F2BD253663EF887CBF40C0C63E065C")
     
 private IoBridge() {

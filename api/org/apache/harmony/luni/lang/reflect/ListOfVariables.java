@@ -15,18 +15,24 @@ class ListOfVariables {
 
     ArrayList<TypeVariable<?>> array = new ArrayList<TypeVariable<?>>();
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.025 -0400", hash_original_method = "41422E53316C05168ACE5C5221EA93B8", hash_generated_method = "41422E53316C05168ACE5C5221EA93B8")
     public ListOfVariables ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.132 -0500", hash_original_method = "E8D6FFF820F0D97573E6E2C017665088", hash_generated_method = "E8D6FFF820F0D97573E6E2C017665088")
     
 void add (TypeVariable<?> elem) {
         array.add(elem);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.134 -0500", hash_original_method = "89100BC351666DED1BC5DAB11AB3C4DD", hash_generated_method = "89100BC351666DED1BC5DAB11AB3C4DD")
     

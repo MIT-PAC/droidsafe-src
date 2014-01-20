@@ -196,6 +196,8 @@ public PushbackInputStream(InputStream in, int size) {
         return copiedBytes;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.568 -0500", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "69313A2FE135E1A632378547FD715C13")
     
 private IOException streamClosed() throws IOException  {

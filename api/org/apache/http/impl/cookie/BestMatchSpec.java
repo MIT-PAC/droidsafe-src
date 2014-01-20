@@ -44,6 +44,8 @@ public BestMatchSpec() {
         this(null, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.435 -0500", hash_original_method = "F5D458E4620E2EBF824493C3536FD1C3", hash_generated_method = "B8AC8CFFD7542208D13E0CD7C5572BB3")
     
 private RFC2965Spec getStrict() {
@@ -53,6 +55,8 @@ private RFC2965Spec getStrict() {
         return strict;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.437 -0500", hash_original_method = "FE28D7A5554F455D8D7B5F3F6FCB0BC9", hash_generated_method = "C15C304ACB8391E6DE3FA3BD059FE33E")
     
 private BrowserCompatSpec getCompat() {
@@ -62,6 +66,8 @@ private BrowserCompatSpec getCompat() {
         return compat;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.440 -0500", hash_original_method = "31CE28BB07784CC0AF4C8F0ADF6151C2", hash_generated_method = "5FF685AE5382C82CF6BE0CE9A15EA91F")
     
 private NetscapeDraftSpec getNetscape() {

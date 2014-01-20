@@ -296,6 +296,8 @@ protected void fill() throws IOException {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.064 -0500", hash_original_method = "249965AABC06DCB5B5F50760C9E2C49A", hash_generated_method = "B2C7CAFBEA57F8C308959ADD87C03C39")
     
 private void checkClosed() throws IOException {

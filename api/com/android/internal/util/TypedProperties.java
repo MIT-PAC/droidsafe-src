@@ -19,6 +19,8 @@ public class TypedProperties extends HashMap<String, Object> {
      * @param r The {@code Reader} that the {@code StreamTokenizer} will read from
      * @return a newly-created and initialized {@code StreamTokenizer}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.697 -0500", hash_original_method = "21E5AE23294866B670D117774FF68B3C", hash_generated_method = "1B295E4AB2294DCFBDF0C7865A9332B3")
     
 static StreamTokenizer initTokenizer(Reader r) {
@@ -66,6 +68,8 @@ static StreamTokenizer initTokenizer(Reader r) {
      * @return the type constant that corresponds to {@code typeName},
      *         or {@code TYPE_ERROR} if the type is unknown
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.731 -0500", hash_original_method = "EF4819B29F3C178C4F6AF68711CF0B83", hash_generated_method = "C3543B83099E9A7A72D521A601682F75")
     
 static int interpretType(String typeName) {
@@ -99,6 +103,8 @@ static int interpretType(String typeName) {
      * @throws ParseException if the input data is malformed
      * @throws IOException if there is a problem reading from the {@code Reader}
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.739 -0500", hash_original_method = "785911ECAA138D2E7940B3C09FD49889", hash_generated_method = "E3AC2BDA6DE51767040D1673E2EC6B0A")
     
 static void parse(Reader r, Map<String, Object> map) throws ParseException, IOException {
@@ -468,6 +474,8 @@ public byte getByte(String property, byte def) {
     }
     
     public static class ParseException extends IllegalArgumentException {
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.700 -0500", hash_original_method = "443E7125F6059ABCC086317CFCE0D16A", hash_generated_method = "443E7125F6059ABCC086317CFCE0D16A")
         
 ParseException(StreamTokenizer state, String expected) {
@@ -477,6 +485,8 @@ ParseException(StreamTokenizer state, String expected) {
     }
     
     public static class TypeException extends IllegalArgumentException {
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.754 -0500", hash_original_method = "869ADEB9A2A381133512C58E64F92EC9", hash_generated_method = "869ADEB9A2A381133512C58E64F92EC9")
         
 TypeException(String property, Object value, String requestedType) {

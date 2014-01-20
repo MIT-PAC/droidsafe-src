@@ -15,18 +15,24 @@ public class NodeListImpl implements NodeList {
 
     private List<NodeImpl> children;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.450 -0500", hash_original_method = "90C695C7BB2C17E5AEDC35249C42B72B", hash_generated_method = "90C695C7BB2C17E5AEDC35249C42B72B")
     
 NodeListImpl() {
         children = new ArrayList<NodeImpl>();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.452 -0500", hash_original_method = "769B9507B64DB92B25819A81313D951D", hash_generated_method = "769B9507B64DB92B25819A81313D951D")
     
 NodeListImpl(List<NodeImpl> list) {
         children = list;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.454 -0500", hash_original_method = "3686ABB43FF3696F10F1056AA01C2579", hash_generated_method = "3686ABB43FF3696F10F1056AA01C2579")
     
 void add(NodeImpl node) {

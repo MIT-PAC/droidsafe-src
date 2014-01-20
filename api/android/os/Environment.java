@@ -12,6 +12,8 @@ import android.util.Log;
 
 public class Environment {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.740 -0500", hash_original_method = "49D276246FC7889A9B561CCBB290F80E", hash_generated_method = "75573CFB29C81F706693B5B5C0544A51")
     
 private static StorageVolume getPrimaryVolume() {
@@ -288,6 +290,8 @@ public static boolean isExternalStorageEmulated() {
         return (volume != null && volume.isEmulated());
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.840 -0500", hash_original_method = "9C53479BCA8A1AAF4BCF134D9ED07471", hash_generated_method = "966E08026B8F34CEDCCDC647ABF4FCA3")
     

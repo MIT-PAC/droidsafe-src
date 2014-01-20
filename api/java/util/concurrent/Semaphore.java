@@ -512,12 +512,16 @@ protected Collection<Thread> getQueuedThreads() {
 
         private static final long serialVersionUID = 1192457210091910933L;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.441 -0500", hash_original_method = "40565DEBA5724270F81AA15CDC452278", hash_generated_method = "40565DEBA5724270F81AA15CDC452278")
         
 Sync(int permits) {
             setState(permits);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.444 -0500", hash_original_method = "932F869D56214E546755CFC45FDC49E6", hash_generated_method = "D0FD346268DF6B23252F8754EA5A64ED")
         
@@ -525,6 +529,8 @@ final int getPermits() {
             return getState();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.446 -0500", hash_original_method = "38128BDDEF18CD48BAE30B545E1D6E2D", hash_generated_method = "924C255F7648DC137D2A5BB2CF93C45F")
         
 final int nonfairTryAcquireShared(int acquires) {
@@ -550,6 +556,8 @@ protected final boolean tryReleaseShared(int releases) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.452 -0500", hash_original_method = "EF09815047CF337EE6F8F6B76E860F15", hash_generated_method = "7CED8334D0D3544240714C09A5FD25C0")
         
 final void reducePermits(int reductions) {
@@ -563,6 +571,8 @@ final void reducePermits(int reductions) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.455 -0500", hash_original_method = "B47D637533AD6479C19BA02673B291F3", hash_generated_method = "EC3002043DB7DCAC0929D71BE129EB38")
         
 final int drainPermits() {
@@ -579,6 +589,8 @@ final int drainPermits() {
 
         private static final long serialVersionUID = -2694183684443567898L;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.463 -0500", hash_original_method = "AB02276AF05DB48D17C9E59129A0533C", hash_generated_method = "AB02276AF05DB48D17C9E59129A0533C")
         
 NonfairSync(int permits) {
@@ -597,6 +609,8 @@ protected int tryAcquireShared(int acquires) {
 
         private static final long serialVersionUID = 2014338818796000944L;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.473 -0500", hash_original_method = "1546A983167A4F32841E77BDDAC1FABE", hash_generated_method = "1546A983167A4F32841E77BDDAC1FABE")
         
 FairSync(int permits) {

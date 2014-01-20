@@ -20,6 +20,8 @@ import android.util.Log;
 
 final class CertTool {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.011 -0500", hash_original_method = "CB2D35D966CD710A64E9BD9F45549511", hash_generated_method = "16A514B58BB4148859FC4ED301091CD7")
     
@@ -27,6 +29,8 @@ static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.014 -0500", hash_original_method = "0C31F22EE5605896C042A9554E5E2F85", hash_generated_method = "D56FBDE3293A63C7B233422532D7DC04")
     
@@ -49,12 +53,16 @@ static String getSignedPublicKey(Context context, int index, String challenge) {
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.016 -0500", hash_original_method = "7A8048437C17E24F9A892E4FDE33D0BB", hash_generated_method = "61BC1E53B23D221FD5FE580A86EE5C50")
     
 static void addCertificate(Context context, String type, byte[] value) {
         Credentials.getInstance().install(context, type, value);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.018 -0500", hash_original_method = "D4AF6F68FC296225D479C322C857B353", hash_generated_method = "1491190F75D0EB25846273129E9B3152")
     
@@ -72,6 +80,8 @@ static String getCertType(String mimeType) {
 
     private static HashMap<String, String> sCertificateTypeMap;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.021 -0500", hash_original_method = "1838D0FEFA9E4F93A3624A1092DC54F1", hash_generated_method = "FD3B0B368FFB59B33F5C094D6E914C6F")
     
 private CertTool() {}

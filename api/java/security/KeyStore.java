@@ -30,6 +30,8 @@ public class KeyStore {
     /**
      * Throws the standard "keystore not initialized" exception.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.328 -0500", hash_original_method = "98CAAAA38AE0BD626D6C3D7BFF6CA72F", hash_generated_method = "08DAB19305810AB0AFBB3486F0040648")
     
 private static void throwNotInitialized() throws KeyStoreException {
@@ -784,6 +786,8 @@ protected Builder() {
          * @throws KeyStoreException
          *             if an error occurred during construction.
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.408 -0500", hash_original_method = "12C5317A3C346239CA56FE27936EEF14", hash_generated_method = "F6F3B96B5ACA3FA7BED29BE5A3EB2466")
         
 public abstract KeyStore getKeyStore() throws KeyStoreException;

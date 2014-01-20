@@ -28,6 +28,8 @@ public abstract class SignatureSpi {
      * @throws InvalidKeyException
      *             if {@code publicKey} is not valid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.399 -0500", hash_original_method = "2F7C46BC33967B72BDDA1650DD795367", hash_generated_method = "3EE7039E2FB0AC9DDCF24652B84C3E27")
     
 protected abstract void engineInitVerify(PublicKey publicKey)
@@ -42,6 +44,8 @@ protected abstract void engineInitVerify(PublicKey publicKey)
      * @throws InvalidKeyException
      *             if {@code privateKey} is not valid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.401 -0500", hash_original_method = "B3A2136B9FA8AF07EB22DCB5975F1190", hash_generated_method = "1A2E49F77F2A1AB56E1706F96E75DF08")
     
 protected abstract void engineInitSign(PrivateKey privateKey)
@@ -77,6 +81,8 @@ protected void engineInitSign(PrivateKey privateKey, SecureRandom random)
      *             if this {@code SignatureSpi} instance is not initialized
      *             properly.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.406 -0500", hash_original_method = "B13EF1CE2365AEE09FF9414CC65FCD43", hash_generated_method = "FBAAD32A72301A01D444A93F2BF169D5")
     
 protected abstract void engineUpdate(byte b) throws SignatureException;
@@ -95,6 +101,8 @@ protected abstract void engineUpdate(byte b) throws SignatureException;
      *             if this {@code SignatureSpi} instance is not initialized
      *             properly.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.408 -0500", hash_original_method = "659386D9FA79C56AE6BF1A6762347A80", hash_generated_method = "BDBD947A3B2476216488A96F82C1BF77")
     
 protected abstract void engineUpdate(byte[] b, int off, int len)
@@ -153,6 +161,8 @@ protected void engineUpdate(ByteBuffer input) {
      *             if this {@code SignatureSpi} instance is not initialized
      *             properly.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.413 -0500", hash_original_method = "06CD0E816E68A7CE27B7DF90D5DC8A65", hash_generated_method = "1FE9803DB2BB5A5BD7ED55316EFFB086")
     
 protected abstract byte[] engineSign() throws SignatureException;
@@ -215,6 +225,8 @@ protected int engineSign(byte[] outbuf, int offset, int len) throws SignatureExc
      *             if this {@code SignatureSpi} instance is not initialized
      *             properly.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.419 -0500", hash_original_method = "1CDA63D177F24DA89AAED94D12310BE1", hash_generated_method = "4402435A255EF1BCDDA72A2A6E5BA076")
     
 protected abstract boolean engineVerify(byte[] sigBytes)
@@ -265,6 +277,8 @@ protected boolean engineVerify(byte[] sigBytes, int offset, int length)
      *             be changed.
      * @deprecated Use {@link #engineSetParameter(AlgorithmParameterSpec)}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.424 -0500", hash_original_method = "D9E7F345C7F688C847C024069F6DBDB4", hash_generated_method = "93E2B5FB62DDAE4E1A2CFF86E13C38A0")
     
 @Deprecated
@@ -313,6 +327,8 @@ protected AlgorithmParameters engineGetParameters() {
      *             SignatureSpi} or an other error occurs.
      * @deprecated There is no generally accepted parameter naming convention.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.431 -0500", hash_original_method = "1335CBC91320D4F205434409B2D1458E", hash_generated_method = "227563F6E5B8957B70DCAC31731EF84B")
     
 @Deprecated

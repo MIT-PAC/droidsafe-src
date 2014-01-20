@@ -14,6 +14,8 @@ public class ScaleGestureDetector {
     /**
      * MotionEvent has no getRawX(int) method; simulate it pending future API approval.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.632 -0500", hash_original_method = "1C74B9CEBA7069C1C46FE5AC2377DD74", hash_generated_method = "9F535709078E10633F597DAC5E474805")
     
 private static float getRawX(MotionEvent event, int pointerIndex) {
@@ -26,6 +28,8 @@ private static float getRawX(MotionEvent event, int pointerIndex) {
     /**
      * MotionEvent has no getRawY(int) method; simulate it pending future API approval.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.635 -0500", hash_original_method = "E9D933E20849778B1DB8C91D44A0DC56", hash_generated_method = "F03B96929C9C0CCA5FAA5D104052F336")
     
 private static float getRawY(MotionEvent event, int pointerIndex) {
@@ -438,6 +442,8 @@ public boolean onTouchEvent(MotionEvent event) {
         return handled;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.629 -0500", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "EF1EA35B0066A0E9C3683A21C34593BE")
     
 private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) {
@@ -465,6 +471,8 @@ private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) 
         return newActiveIndex;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.638 -0500", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "7A8ABF540AAF47F5874C72CC582870AF")
     
 private void setContext(MotionEvent curr) {
@@ -518,6 +526,8 @@ private void setContext(MotionEvent curr) {
         mPrevPressure = prev.getPressure(prevIndex0) + prev.getPressure(prevIndex1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.641 -0500", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "C3F79E6854FF5192D6DB4BF6DB9FE0CB")
     
 private void reset() {

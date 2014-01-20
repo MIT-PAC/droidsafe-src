@@ -24,20 +24,16 @@ import android.test.TestCaseUtil;
 import com.android.internal.util.Predicate;
 import com.google.android.collect.Lists;
 
-
-
-
-
-
 public class TestSuiteBuilder {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.936 -0500", hash_original_method = "B2C0E32F80832659BC02AF16125886AE", hash_generated_method = "FF2BD17ECCE48B8DC9A3BA61FC9C67CD")
     
 private static String parsePackageNameFromClassName(String className) {
         return className.substring(0, className.lastIndexOf('.'));
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.868 -0500", hash_original_field = "571FE4403DDA9BF54693EBF4F0D6639D", hash_generated_field = "FFC623C2EA984831A33BAADC181E897E")
-
 
     private Context context;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.870 -0500", hash_original_field = "12F87417C0E327D36555F80CB0C0E624", hash_generated_field = "56A9B7A488A7615FB6C4D1D2217E1503")
@@ -267,6 +263,8 @@ protected TestGrouping getTestGrouping() {
         return testGrouping;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.927 -0500", hash_original_method = "3B7E4DAFF4F4255560B2EF8BCF0CA264", hash_generated_method = "E7C8BAA1631DCB7A8D74C1F2A689DFB2")
     
 private boolean satisfiesAllPredicates(TestMethod test) {
@@ -278,6 +276,8 @@ private boolean satisfiesAllPredicates(TestMethod test) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.929 -0500", hash_original_method = "9609FD64CC859CF40862383CC61076E6", hash_generated_method = "D7827B892E65E750AEF759DC9E78AFBF")
     
 private void addTest(TestMethod testMethod) throws Exception {
@@ -285,6 +285,8 @@ private void addTest(TestMethod testMethod) throws Exception {
         suiteForCurrentClass.addTest(testMethod.createTest());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.931 -0500", hash_original_method = "7027D4F6836EC90288680E369B5B8F5A", hash_generated_method = "5A88B0ECD367E913FF656BB45D60AEAE")
     
 private void addTest(Test test) {
@@ -292,6 +294,8 @@ private void addTest(Test test) {
         suiteForCurrentClass.addTest(test);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.933 -0500", hash_original_method = "92951B52D867188410A62009711C9261", hash_generated_method = "FCFABC12F2A064D1F2F2C9B825156477")
     
 private void addSuiteIfNecessary(String parentClassname) {
@@ -301,7 +305,6 @@ private void addSuiteIfNecessary(String parentClassname) {
             rootSuite.addTest(suiteForCurrentClass);
         }
     }
-
     
     public static class FailedToCreateTests extends TestCase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.916 -0500", hash_original_field = "2CBC6074DF6BD2C2AC2A7CA4BC170BEC", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
@@ -320,11 +323,8 @@ public FailedToCreateTests(Exception exception) {
 public void testSuiteConstructionFailed() {
             throw new RuntimeException("Exception during suite construction", exception);
         }
-
         
     }
-
-
     
 }
 

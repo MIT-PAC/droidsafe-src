@@ -15,21 +15,14 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-
-
-
-
-
 public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.775 -0500", hash_original_field = "C1C76A87F655C174D217EA23B00CC6D8", hash_generated_field = "A8CC9CBDCFEE884AAACD2650D6276B04")
-
 
     static final float DEFAULT_LOAD_FACTOR = 0.75f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.777 -0500", hash_original_field = "638C82ACF5EA5C74337F2A945B4E5C3F", hash_generated_field = "EA69D1A7FA6057000A0CB80BAF0F0ADB")
 
     static final int DEFAULT_INITIAL_SIZE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.779 -0500", hash_original_field = "14557A47C47F1A76966820D4FF4DD06C", hash_generated_field = "922E9E523E3B4B4E0BBECCC2419D9A8A")
-
 
     private Set<Map.Entry<String, V>> entrySet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.782 -0500", hash_original_field = "66FC55BC3FE3DFC76C7BE5EAF459710C", hash_generated_field = "0CA88E23C485E63FB3BB9610D40E8264")
@@ -46,10 +39,8 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     private int modCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.791 -0500", hash_original_field = "A005EC563646E47434E5E2706D942C82", hash_generated_field = "8E4CC84ABB20D75F51E93933E0A59066")
 
-
     private Entry<E, K, V>[] arr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.793 -0500", hash_original_field = "9AE85CE37BA4DE356F76E49D73EDA32D", hash_generated_field = "4BC2677DD136E3CB5AE0C48B0EDF5A53")
-
 
     private float loadFactor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.795 -0500", hash_original_field = "F9A5F8AF6E8A641C6C49EB5204F6EF63", hash_generated_field = "F9A5F8AF6E8A641C6C49EB5204F6EF63")
@@ -204,6 +195,8 @@ public V put(E key1, K key2, V value) {
      * Rehash the map
      *
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.818 -0500", hash_original_method = "4E92EE4014ABA801EB273C60A5958799", hash_generated_method = "CC78676D47114D00E5B39F22B9B4DA60")
     
 @SuppressWarnings("unchecked")
@@ -304,6 +297,8 @@ Entry<E, K, V> createEntry(int hashCode, E key1, K key2, V value,
      *
      * @return
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.832 -0500", hash_original_method = "F4E18AFB5A6BD2866D211174F2C65244", hash_generated_method = "F4E18AFB5A6BD2866D211174F2C65244")
     
 Iterator<Map.Entry<String, V>> createEntrySetIterator() {
@@ -315,12 +310,13 @@ Iterator<Map.Entry<String, V>> createEntrySetIterator() {
      *
      * @return
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.834 -0500", hash_original_method = "6209E5C519243BC33CB9A47AFA9E017F", hash_generated_method = "6209E5C519243BC33CB9A47AFA9E017F")
     
 Iterator<V> createValueCollectionIterator() {
         return new ValueIteratorImpl();
     }
-
     
     public static class Entry<E, K, V> implements Map.Entry<String, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.837 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "5ED776CD81502BA181156D7F28EBC9C8")
@@ -409,11 +405,8 @@ public int hashCode() {
             int hash2 = (key2 == null ? 0 : key2.hashCode());
             return (hash1 + hash2) ^ (value == null ? 0 : value.hashCode());
         }
-
         
     }
-
-
     
     class EntrySetImpl extends AbstractSet<Map.Entry<String, V>> {
         
@@ -471,11 +464,8 @@ public boolean remove(Object obj) {
 public Iterator<Map.Entry<String, V>> iterator() {
             return createEntrySetIterator();
         }
-
         
     }
-
-
     
     class EntryIteratorImpl implements Iterator<Map.Entry<String, V>> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.887 -0500", hash_original_field = "CA1D34833BA909ED4BD5B0D0AE54A828", hash_generated_field = "B4C5A8998384DD2BFFBA01B52B5A43F1")
@@ -566,11 +556,8 @@ public void remove() {
             startModCount++;
             returned_index = -1;
         }
-
         
     }
-
-
     
     class ValuesCollectionImpl extends AbstractCollection<V> {
         
@@ -608,11 +595,8 @@ public Iterator<V> iterator() {
 public boolean contains(Object obj) {
             return containsValue(obj);
         }
-
         
     }
-
-
     
     class ValueIteratorImpl implements Iterator<V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.934 -0500", hash_original_field = "2F6782BE81FB2B45679F3A4703FDCDEC", hash_generated_field = "48025B493C25248658D4DBBDCE3A3E0F")
@@ -642,7 +626,6 @@ public void remove() {
 public boolean hasNext() {
             return itr.hasNext();
         }
-
         
     }
 

@@ -32,6 +32,8 @@ public static void writeLength(ByteArrayOutputStream buf, int length) {
         buf.write(length);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.492 -0400", hash_original_method = "814762139FDC16047D72234D9356528B", hash_generated_method = "814762139FDC16047D72234D9356528B")
     public ResponseData ()
     {
@@ -41,6 +43,8 @@ public static void writeLength(ByteArrayOutputStream buf, int length) {
      * Format the data appropriate for TERMINAL RESPONSE and write it into
      * the ByteArrayOutputStream object.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.966 -0500", hash_original_method = "6FB3ECF3A8313AEBC30BD8DDB91C09D0", hash_generated_method = "096DB2CD17C028C2B6A86B512C1A899B")
     
 public abstract void format(ByteArrayOutputStream buf);
@@ -283,6 +287,8 @@ public DTTZResponseData(Calendar cal) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.025 -0500", hash_original_method = "8DC11942C3F1A663AB0155C3D476E532", hash_generated_method = "B70F52F97FF1301795377794A9A46DA9")
     
 private byte byteToBCD(int value) {
@@ -295,6 +301,8 @@ private byte byteToBCD(int value) {
         return (byte) ((value / 10) | ((value % 10) << 4));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.027 -0500", hash_original_method = "024E89671E7DB3E94FD073693C0532F0", hash_generated_method = "43B31C648F1D850CEAF13F9D4610C915")
     
 private byte getTZOffSetByte(long offSetVal) {

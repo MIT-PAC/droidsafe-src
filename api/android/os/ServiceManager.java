@@ -13,6 +13,8 @@ import com.android.internal.os.BinderInternal;
 
 public final class ServiceManager {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.610 -0500", hash_original_method = "F9571D966715D8BEC70F9E92EB17CF43", hash_generated_method = "766A7A92FFAB823331AD1C30295700FC")
     
 private static IServiceManager getIServiceManager() {

@@ -40,6 +40,8 @@ public class FloatMath {
     }
 
     /** Prevents instantiation. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.639 -0500", hash_original_method = "1F13790E730E0CCC2AC5BFBAA0385051", hash_generated_method = "D298F494DD520E539E8C56F1D85453BE")
     
 private FloatMath() {}

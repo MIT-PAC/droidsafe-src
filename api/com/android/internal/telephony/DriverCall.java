@@ -10,6 +10,8 @@ import android.util.Log;
 public class DriverCall implements Comparable {
 
     /** returns null on error */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.062 -0500", hash_original_method = "FB47DF2BD8B60DCEADAB62594508D31A", hash_generated_method = "EC1E7FBAF6E2ADD28D11FCB3F1467F43")
     
 static DriverCall

@@ -68,6 +68,8 @@ public String toString() {
         };
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.193 -0500", hash_original_method = "DDE0D9367C1202DE20513CB9F79F1693", hash_generated_method = "1F58DD856E6A80B19F38E2A41E5D4F16")
     
 static void validate(int start, int end, int length) {

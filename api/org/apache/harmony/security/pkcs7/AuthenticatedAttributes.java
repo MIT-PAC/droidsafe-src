@@ -30,6 +30,8 @@ final class AuthenticatedAttributes {
 
     private  List<AttributeTypeAndValue> authenticatedAttributes;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.741 -0500", hash_original_method = "56322F0DE2F5B85A8944FA9A9F9F5ADE", hash_generated_method = "41B065CA0420A16A106CA7EC5DE1E0FD")
     
 private AuthenticatedAttributes(byte[] encoding,

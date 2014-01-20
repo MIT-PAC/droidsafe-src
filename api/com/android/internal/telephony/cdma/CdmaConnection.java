@@ -26,6 +26,8 @@ import com.android.internal.telephony.UUSInfo;
 
 public class CdmaConnection extends Connection {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.605 -0500", hash_original_method = "BC145A1DE2472995676ED9A315FB0956", hash_generated_method = "2C7138DB4A9526DAF974103E40C81A8A")
     
 static boolean
@@ -33,12 +35,16 @@ static boolean
         return (a == null) ? (b == null) : a.equals (b);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.707 -0500", hash_original_method = "F49BC8816CA47BDF6EE8606ECBE847B9", hash_generated_method = "6E36953EE68D98E9B786004AA124917B")
     
 private static boolean isPause(char c) {
         return c == PhoneNumberUtils.PAUSE;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.709 -0500", hash_original_method = "AB354DE59CC4C5E04FCC9F1BE9EF5108", hash_generated_method = "CCC2E9539011D8576E609E4DB82E0420")
     
 private static boolean isWait(char c) {
@@ -48,6 +54,8 @@ private static boolean isWait(char c) {
     // This function is to find the next PAUSE character index if
     // multiple pauses in a row. Otherwise it finds the next non PAUSE or
     // non WAIT character index.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.711 -0500", hash_original_method = "CCF495396849100A49F08885D961310A", hash_generated_method = "0047B72DC4AB13616299F049FAE6A0C2")
     
 private static int
@@ -81,6 +89,8 @@ private static int
     // This function returns either PAUSE or WAIT character to append.
     // It is based on the next non PAUSE/WAIT character in the phoneNumber and the
     // index for the current PAUSE/WAIT character
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.714 -0500", hash_original_method = "CE89486D83ED31EF15987ED57125D91D", hash_generated_method = "6841E48D36212E920A5CB8AFDE0526A7")
     
 private static char
@@ -257,6 +267,8 @@ public static String formatDialString(String phoneNumber) {
 
     /** This is probably an MT call that we first saw in a CLCC response */
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.594 -0500", hash_original_method = "252146C166F3942BC369E08F0120D87D", hash_generated_method = "252146C166F3942BC369E08F0120D87D")
     
 CdmaConnection (Context context, DriverCall dc, CdmaCallTracker ct, int index) {
@@ -282,6 +294,8 @@ CdmaConnection (Context context, DriverCall dc, CdmaCallTracker ct, int index) {
 
     /** This is an MO call/three way call, created when dialing */
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.597 -0500", hash_original_method = "2CBB8BA051416BBE1CBD482FDF45ADE6", hash_generated_method = "FE6D14DB988140C70DE8975E0CE436AC")
     
 CdmaConnection(Context context, String dialString, CdmaCallTracker ct, CdmaCall parent) {
@@ -320,6 +334,8 @@ CdmaConnection(Context context, String dialString, CdmaCallTracker ct, CdmaCall 
     }
 
     /** This is a Call waiting call*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.600 -0500", hash_original_method = "5BADF30C241906ADFE33CA4BF6040CF6", hash_generated_method = "5BADF30C241906ADFE33CA4BF6040CF6")
     
 CdmaConnection(Context context, CdmaCallWaitingNotification cw, CdmaCallTracker ct,
@@ -346,7 +362,9 @@ CdmaConnection(Context context, CdmaCallWaitingNotification cw, CdmaCallTracker 
 public void dispose() {
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.607 -0500", hash_original_method = "0553AC873EBF02DCE0ECDD52D690154B", hash_generated_method = "065B6A32C6CA7063A00EB20821FEE8BC")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.607 -0500", hash_original_method = "0553AC873EBF02DCE0ECDD52D690154B", hash_generated_method = "065B6A32C6CA7063A00EB20821FEE8BC")
     
 boolean
     compareTo(DriverCall c) {
@@ -564,6 +582,8 @@ public void cancelPostDial() {
      * Note that at this point, the hangup request has been dispatched to the radio
      * but no response has yet been received so update() has not yet been called
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.653 -0500", hash_original_method = "1D26914F95E4E8CAB857832B14C412F2", hash_generated_method = "1D26914F95E4E8CAB857832B14C412F2")
     
 void
@@ -632,7 +652,9 @@ DisconnectCause
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.658 -0500", hash_original_method = "6DD0016A82A0EEA168B83665DD86A0FB", hash_generated_method = "6DD0016A82A0EEA168B83665DD86A0FB")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.658 -0500", hash_original_method = "6DD0016A82A0EEA168B83665DD86A0FB", hash_generated_method = "6DD0016A82A0EEA168B83665DD86A0FB")
     
 void
     onRemoteDisconnect(int causeCode) {
@@ -661,7 +683,9 @@ void
     }
 
     /** Called when the call waiting connection has been hung up */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.662 -0500", hash_original_method = "26AAE16553DBF302B5AA3D0248CB78BC", hash_generated_method = "26AAE16553DBF302B5AA3D0248CB78BC")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.662 -0500", hash_original_method = "26AAE16553DBF302B5AA3D0248CB78BC", hash_generated_method = "26AAE16553DBF302B5AA3D0248CB78BC")
     
 void
     onLocalDisconnect() {
@@ -678,7 +702,9 @@ void
     }
 
     // Returns true if state has changed, false if nothing changed
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.665 -0500", hash_original_method = "4236BCB2C869FC2E101A72CBA66F1959", hash_generated_method = "81BF2206D25F21807CCFA4C17FB5EC28")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.665 -0500", hash_original_method = "4236BCB2C869FC2E101A72CBA66F1959", hash_generated_method = "81BF2206D25F21807CCFA4C17FB5EC28")
     
 boolean
     update (DriverCall dc) {
@@ -751,6 +777,8 @@ boolean
      * We know we're ACTIVE, and we know we're going to end up
      * HOLDING in the backgroundCall
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.667 -0500", hash_original_method = "2801C91DD04690F39967B3B139B04FC8", hash_generated_method = "2801C91DD04690F39967B3B139B04FC8")
     
 void
@@ -765,7 +793,9 @@ void
         onStartedHolding();
     }
 
-    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.670 -0500", hash_original_method = "94F7523429B223E41798A5302127009B", hash_generated_method = "94F7523429B223E41798A5302127009B")
     
 int
@@ -780,6 +810,8 @@ int
     /**
      * An incoming or outgoing call has connected
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.672 -0500", hash_original_method = "42698948AA1B3CB52B9A6434DAA41A35", hash_generated_method = "23050AD49C3D1619F91265D3530DC78F")
     
 void
@@ -804,6 +836,8 @@ void
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.675 -0500", hash_original_method = "0E9E222A942778E934D11665B83572CB", hash_generated_method = "50401168B52C3C5FA50B12B05890A416")
     
 private void
@@ -814,6 +848,8 @@ private void
        disconnected = true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.678 -0500", hash_original_method = "347BE2897DC754C8C9568E8ADC73CA48", hash_generated_method = "6EA028C22A00C67FA168002DDA2CF290")
     
 private void
@@ -825,6 +861,8 @@ private void
      * notify application. returns false if the character is invalid and
      * should be ignored
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.680 -0500", hash_original_method = "DEA7A97D3D4EC63922E017A45C0AA963", hash_generated_method = "F0DCFEFD15110B1D5758A76020B55CFF")
     
 private boolean
@@ -904,6 +942,8 @@ public void updateParent(CdmaCall oldParent, CdmaCall newParent){
         releaseWakeLock();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.690 -0500", hash_original_method = "EB1ACECD3BB7B8254CD65689A960D6CE", hash_generated_method = "71BAD093FD9E68977142B030D286C4D9")
     
 void processNextPostDialChar() {
@@ -965,6 +1005,8 @@ void processNextPostDialChar() {
     /** "connecting" means "has never been ACTIVE" for both incoming
      *  and outgoing calls
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.693 -0500", hash_original_method = "EBFF7E74C490A6457BB1227BB1C69161", hash_generated_method = "CFA67350936CB116E605A59CB3576D4B")
     
 private boolean
@@ -1050,6 +1092,8 @@ private void setPostDialState(PostDialState s) {
         postDialState = s;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.700 -0500", hash_original_method = "CB8FDA401075BC400671977D794CC25C", hash_generated_method = "01B3024D6E6F76F8BF272926384E7FD0")
     
 private void createWakeLock(Context context) {
@@ -1057,6 +1101,8 @@ private void createWakeLock(Context context) {
         mPartialWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, LOG_TAG);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.702 -0500", hash_original_method = "0032D3EFE2E921D247B095F82BB6680D", hash_generated_method = "7D3BB473778370AB10F49ACE2D6940AB")
     
 private void acquireWakeLock() {
@@ -1064,6 +1110,8 @@ private void acquireWakeLock() {
         mPartialWakeLock.acquire();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.704 -0500", hash_original_method = "EF603679E4FE39B900CF6CFCDD40B49D", hash_generated_method = "83369E3B16CB50E336C377050161880E")
     
 private void releaseWakeLock() {
@@ -1075,6 +1123,8 @@ private void releaseWakeLock() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.721 -0500", hash_original_method = "8DB105505540FC3FC6E637FFB094FC3A", hash_generated_method = "4E727B3C854B2B30B55A6C4DFD328957")
     
 private void log(String msg) {

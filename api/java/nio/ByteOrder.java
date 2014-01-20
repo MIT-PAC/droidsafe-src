@@ -9,6 +9,8 @@ import droidsafe.helpers.DSUtils;
 
 public final class ByteOrder {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLittleEndian() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -42,6 +44,8 @@ public static ByteOrder nativeOrder() {
 
     public  boolean needsSwap;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.394 -0500", hash_original_method = "B317EBC8D5650E5C34B265838B9D3EC5", hash_generated_method = "60CB5148C5FD483B83C3C29ED77A5A9D")
     
 private ByteOrder(String name, boolean needsSwap) {

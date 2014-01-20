@@ -13,11 +13,9 @@ import java.io.IOException;
 import java.io.ByteArrayOutputStream;
 public class SerializableEntity extends AbstractHttpEntity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.177 -0500", hash_original_field = "C36D1E2F5E375E8641C86FB595FB0653", hash_generated_field = "5E992B0B880ECD381D3DDEA22743FFE2")
-
     
     private byte[] objSer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.180 -0500", hash_original_field = "530231EA78B6189A4C02EACEE06CA19A", hash_generated_field = "DEF28E95A6CF8B60225389E7AE432494")
-
     
     private Serializable objRef;
     
@@ -36,6 +34,8 @@ public SerializableEntity(Serializable ser, boolean bufferize) throws IOExceptio
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.187 -0500", hash_original_method = "F8F96B1EFE3C5408C7469562A006AE42", hash_generated_method = "036AD32E5F4C881115E91AD8D895EB38")
     
 private void createBytes(Serializable ser) throws IOException {
@@ -93,7 +93,6 @@ public void writeTo(OutputStream outstream) throws IOException {
             outstream.flush();
         }
     }
-
     
 }
 

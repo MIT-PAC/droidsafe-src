@@ -11,11 +11,6 @@ import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 
-
-
-
-
-
 public class AttributeTypeAndValue extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.564 -0500", hash_original_method = "04CC9AF5779AF8FA3BF3914EFE87D41E", hash_generated_method = "A5BBB0999D58A21C7EEB0C2D3A128202")
@@ -40,6 +35,8 @@ public static AttributeTypeAndValue getInstance(Object o)
 
     private ASN1Encodable       value;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.562 -0500", hash_original_method = "15E850D5749E9732B50BB178D64D47F4", hash_generated_method = "9CB7F2B44F1AFAC6F0F8D1058779E2A2")
     
 private AttributeTypeAndValue(ASN1Sequence seq)
@@ -91,7 +88,6 @@ public DERObject toASN1Object()
 
         return new DERSequence(v);
     }
-
     
 }
 

@@ -31,6 +31,8 @@ public static DOMImplementationImpl getInstance() {
 
     private static DOMImplementationImpl instance;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.139 -0500", hash_original_method = "E3A87B6F32DA0C6F1234238EE265E85D", hash_generated_method = "E3A87B6F32DA0C6F1234238EE265E85D")
     
 DOMImplementationImpl() {

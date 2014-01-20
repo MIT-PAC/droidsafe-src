@@ -21,10 +21,6 @@ import org.bouncycastle.asn1.x500.X500NameStyle;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 
-
-
-
-
 public class IETFUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.737 -0500", hash_original_method = "983A3D28718608244DB1B77020020016", hash_generated_method = "EFCCC0589F64419E642BE38ACBC24C65")
     
@@ -81,6 +77,8 @@ public static RDN[] rDNsFromString(String name, X500NameStyle x500Style)
         return builder.build().getRDNs();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.739 -0500", hash_original_method = "E214B529B1DCDC130AD64AFD64165517", hash_generated_method = "AB8311C45EC1C8ACB4031F1279459043")
     
 private static String[] toValueArray(Vector values)
@@ -95,6 +93,8 @@ private static String[] toValueArray(Vector values)
         return tmp;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.742 -0500", hash_original_method = "C6B3449A8EDEDC2DE359B6D403CFA9E6", hash_generated_method = "D569F0732F3C61FB4907BD4EABBFA85E")
     
 private static ASN1ObjectIdentifier[] toOIDArray(Vector oids)
@@ -244,6 +244,8 @@ public static String valueToString(ASN1Encodable value)
         return vBuf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.756 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "5BD375269EED1A37250371DA6FF695D6")
     
 private static String bytesToString(
@@ -280,6 +282,8 @@ public static String canonicalize(String s)
         return value;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.761 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "A58EA57D2A8246BB9F2AC7E44A284DAD")
     
 private static ASN1Object decodeObject(String oValue)
@@ -326,7 +330,6 @@ public static String stripInternalSpaces(
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -14,6 +14,8 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
      * Constructs a new {@code StringIndexOutOfBoundsException} that includes
      * the current stack trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.306 -0500", hash_original_method = "BFD818381E149072D6480C59814A950B", hash_generated_method = "A8FA3953400600EBEE112C798CD7D63C")
     
 public StringIndexOutOfBoundsException() {
@@ -54,6 +56,8 @@ public StringIndexOutOfBoundsException(String detailMessage) {
      * Used internally for consistent high-quality error reporting.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.314 -0500", hash_original_method = "FCCD2BDA38C43A03106A3DA5EA866DEA", hash_generated_method = "A8751CA0E6011BD377A71992646CC23F")
     
 public StringIndexOutOfBoundsException(String s, int index) {
@@ -64,6 +68,8 @@ public StringIndexOutOfBoundsException(String s, int index) {
      * Used internally for consistent high-quality error reporting.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.317 -0500", hash_original_method = "78176BEE1BF5E3D3E49AE6693FD0EBDF", hash_generated_method = "6670A1B97B49FE038CF2317C86D1B7D8")
     
 public StringIndexOutOfBoundsException(int sourceLength, int index) {
@@ -74,6 +80,8 @@ public StringIndexOutOfBoundsException(int sourceLength, int index) {
      * Used internally for consistent high-quality error reporting.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.320 -0500", hash_original_method = "E66129678530AEEFFFBEABAD39F4532F", hash_generated_method = "FC5D27153C9486C901A5C24918336DC1")
     
 public StringIndexOutOfBoundsException(String s, int offset, int count) {
@@ -84,6 +92,8 @@ public StringIndexOutOfBoundsException(String s, int offset, int count) {
      * Used internally for consistent high-quality error reporting.
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.322 -0500", hash_original_method = "47D615FB94A12D10BEA7B6CBBC941916", hash_generated_method = "0514F160BD4EA0E9C6FAFAF642F1790D")
     
 public StringIndexOutOfBoundsException(int sourceLength, int offset,

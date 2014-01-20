@@ -144,6 +144,8 @@ public static Inet6Address getByAddress(String host, byte[] addr,
      * @param scope_id
      *            the scope id for link- or site-local addresses.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.039 -0500", hash_original_method = "FCC74B21AAC45508B8719673A0766005", hash_generated_method = "FCC74B21AAC45508B8719673A0766005")
     
 Inet6Address(byte[] ipaddress, String hostName, int scope_id) {
@@ -161,6 +163,8 @@ Inet6Address(byte[] ipaddress, String hostName, int scope_id) {
      *  <li>{@code ia} is neither site local nor link local</li>
      * </ol>
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.047 -0500", hash_original_method = "5C85837CE4C7853B5C8DB05F5798B94D", hash_generated_method = "8C2971746F0F55CF6492A89EEA04D160")
     
 private boolean compareLocalType(Inet6Address ia) {
@@ -277,6 +281,8 @@ public NetworkInterface getScopedInterface() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.085 -0500", hash_original_method = "080327AC5673C5B50BEA99966675EA0A", hash_generated_method = "363498BFDD91D4945194EA14E382328A")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -294,6 +300,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.088 -0500", hash_original_method = "6B9730D7168B0E96ABCC55BBF7E32967", hash_generated_method = "443011ED754375420CE541E7FB7A0EE6")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

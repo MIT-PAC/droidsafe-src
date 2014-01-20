@@ -27,11 +27,6 @@ import com.android.internal.telephony.gsm.SIMRecords;
 import com.android.internal.telephony.ims.IsimRecords;
 import com.android.internal.telephony.ims.IsimUiccRecords;
 
-
-
-
-
-
 public final class CdmaLteUiccRecords extends SIMRecords {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.705 -0500", hash_original_field = "A21016A3CBFFD3FB799AE07196F414FB", hash_generated_field = "0EA5A23D0B103EB32088F2AFA5A81D56")
 
@@ -58,7 +53,6 @@ public final class CdmaLteUiccRecords extends SIMRecords {
 
     private String mHomeNetworkId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.722 -0500", hash_original_field = "86B77DD293438B697AE7E25D8254778A", hash_generated_field = "89D89698232B45908D9688BC55F4F5B6")
-
 
     private final IsimUiccRecords mIsimUiccRecords = new IsimUiccRecords();
 
@@ -147,6 +141,8 @@ public CdmaLteUiccRecords(PhoneBase p) {
         recordsToLoad += mIsimUiccRecords.fetchIsimRecords(iccFh, this);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.791 -0500", hash_original_method = "097B9B51B341025D2C6281D6E7202450", hash_generated_method = "9034B7209E73E832E9B0156EF5673DE1")
     
 private int adjstMinDigits (int digits) {
@@ -158,6 +154,8 @@ private int adjstMinDigits (int digits) {
         return digits;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.794 -0500", hash_original_method = "8ACEB43E18F76CD22FB9AEC49B26074B", hash_generated_method = "B062ECB79FA39CF8FEF4B86830F054A0")
     
 private void onGetCSimEprlDone(AsyncResult ar) {
@@ -174,6 +172,8 @@ private void onGetCSimEprlDone(AsyncResult ar) {
         if (DBG) log("CSIM PRL version=" + mPrlVersion);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.796 -0500", hash_original_method = "6650B0E8C5FD9109D896567DAC7169B6", hash_generated_method = "30EF186D4455C228B3EDDD1F0C3C19DD")
     
 private void setLocaleFromCsim() {
@@ -200,6 +200,8 @@ private void setLocaleFromCsim() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.799 -0500", hash_original_method = "389005660E8D32B57FD0D16BC435823F", hash_generated_method = "D8FE40A47BF7EAB0F1C86A667DF3EE1A")
     
 private String findBestLanguage(byte[] languages) {
@@ -315,7 +317,6 @@ public boolean getCsimSpnDisplayCondition() {
     protected int dispatchGsmMessage(SmsMessageBase message) {
         return ((CDMALTEPhone) phone).m3gppSMS.dispatchMessage(message);
     }
-
     
     private class EfPlLoaded implements IccRecordLoaded {
         
@@ -336,11 +337,8 @@ public void onRecordLoaded(AsyncResult ar) {
             mEFpl = (byte[]) ar.result;
             if (DBG) log("EF_PL=" + IccUtils.bytesToHexString(mEFpl));
         }
-
         
     }
-
-
     
     private class EfCsimLiLoaded implements IccRecordLoaded {
         
@@ -375,11 +373,8 @@ public void onRecordLoaded(AsyncResult ar) {
 
             if (DBG) log("EF_LI=" + IccUtils.bytesToHexString(mEFli));
         }
-
         
     }
-
-
     
     private class EfCsimSpnLoaded implements IccRecordLoaded {
         
@@ -442,11 +437,8 @@ public void onRecordLoaded(AsyncResult ar) {
             if (DBG) log("spnCondition=" + mCsimSpnDisplayCondition);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
         }
-
         
     }
-
-
     
     private class EfCsimMdnLoaded implements IccRecordLoaded {
         
@@ -470,11 +462,8 @@ public void onRecordLoaded(AsyncResult ar) {
             mMdn = IccUtils.cdmaBcdToString(data, 1, mdnDigitsNum);
             if (DBG) log("CSIM MDN=" + mMdn);
         }
-
         
     }
-
-
     
     private class EfCsimImsimLoaded implements IccRecordLoaded {
         
@@ -519,11 +508,8 @@ public void onRecordLoaded(AsyncResult ar) {
                 if (DBG) log("min not present");
             }
         }
-
         
     }
-
-
     
     private class EfCsimCdmaHomeLoaded implements IccRecordLoaded {
         
@@ -565,11 +551,8 @@ public void onRecordLoaded(AsyncResult ar) {
             mHomeSystemId = sidBuf.toString();
             mHomeNetworkId = nidBuf.toString();
         }
-
         
     }
-
-
     
     private class EfCsimEprlLoaded implements IccRecordLoaded {
         
@@ -588,11 +571,8 @@ public String getEfName() {
 public void onRecordLoaded(AsyncResult ar) {
             onGetCSimEprlDone(ar);
         }
-
         
     }
-
-
     
 }
 

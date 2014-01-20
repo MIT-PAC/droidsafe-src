@@ -36,6 +36,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws NullPointerException
      *             if {@code data} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.866 -0500", hash_original_method = "5D1D071EC3D763C118809FF93B3AD7D2", hash_generated_method = "54629D8B18A57A2E1721D58027EED67E")
     
 public static String copyValueOf(char[] data) {
@@ -60,6 +62,8 @@ public static String copyValueOf(char[] data) {
      *             if {@code length < 0, start < 0} or {@code start + length >
      *             data.length}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.868 -0500", hash_original_method = "3093818BF79083B0FD2B917354862E11", hash_generated_method = "1C060EFB703FE482F85284AE10D6F2E9")
     
 public static String copyValueOf(char[] data, int start, int length) {
@@ -103,6 +107,8 @@ public static String valueOf(char[] data) {
      * @throws NullPointerException
      *             if {@code data} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.981 -0500", hash_original_method = "1671E7A24B213A5C550B79186B0002D8", hash_generated_method = "D8D832B7B9642A12311BA120932EEB0C")
     
 public static String valueOf(char[] data, int start, int length) {
@@ -292,6 +298,8 @@ public static String format(Locale locale, String format, Object... args) {
      * where the needle is a constant string, may compute the values cache, md2
      * and lastChar, and change the call to the following method.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.039 -0500", hash_original_method = "22B32FEEB55C55BB6E6C36B65473E566", hash_generated_method = "D7CB1AC8FEA0128C6B82B8491B1759C5")
     
 @FindBugsSuppressWarnings("UPM_UNCALLED_PRIVATE_METHOD")
@@ -370,6 +378,8 @@ public String() {
     /*
      * Private constructor used for JIT optimization.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.785 -0500", hash_original_method = "8A258D0AF74DE6E118252D0EA5531366", hash_generated_method = "992FEE8CDB9ADFFB8D24FE457F6620ED")
     
 @SuppressWarnings("unused")
@@ -406,6 +416,8 @@ public String() {
      *             if {@code data == null}.
      * @deprecated Use {@link #String(byte[])} or {@link #String(byte[], String)} instead.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.791 -0500", hash_original_method = "94FE9BFA8A903BE49DF8F4E82A84C713", hash_generated_method = "870FACBA9900B05E8ED3F9B0D2FDFB44")
     
 @Deprecated
@@ -450,6 +462,8 @@ public String() {
         //}
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.695 -0400", hash_original_method = "22A6AFB2E643FB23D243CAF5D019E325", hash_generated_method = "79A975FB90AD0ECD193D044E40A8EEB8")
     @Deprecated
     public  String(byte[] data, int high, int offset, int byteCount) {
@@ -520,6 +534,8 @@ public String(byte[] data, String charsetName) throws UnsupportedEncodingExcepti
         this(data, 0, data.length, Charset.forNameUEE(charsetName));
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.813 -0400", hash_original_method = "230168F72CB2A0A48AA9F4A7AFCECA03", hash_generated_method = "5CF85473A930BD9609F6F58C62C97D46")
     public  String(byte[] data, int offset, int byteCount, Charset charset) {
         addTaint(charset.getTaint());
@@ -719,6 +735,8 @@ public String(char[] data) {
      * Internal version of the String(char[], int, int) constructor.
      * Does not range check, null check, or copy the character array.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.819 -0500", hash_original_method = "6AA52B72AD5521C733ED3E9463435DD5", hash_generated_method = "6AA52B72AD5521C733ED3E9463435DD5")
     
 String(int offset, int charCount, char[] chars) {
@@ -747,6 +765,8 @@ public String(String toCopy) {
     /*
      * Private constructor useful for JIT optimization.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.825 -0500", hash_original_method = "8B59C74FD130D5556CE63A5F3CE74139", hash_generated_method = "9EFDB51BAE8337F1F69E4DE1C793F289")
     
 @SuppressWarnings( { "unused", "nls" })
@@ -767,6 +787,8 @@ public String(String toCopy) {
     /*
      * Private constructor useful for JIT optimization.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.829 -0500", hash_original_method = "E07460C3146BC4727C3E888CAC21772A", hash_generated_method = "AB6303DBA3D4B890C7485A0A9A814A89")
     
 @SuppressWarnings( { "unused", "nls" })
@@ -792,6 +814,8 @@ public String(String toCopy) {
      * Creates a {@code String} from the contents of the specified
      * {@code StringBuffer}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.831 -0500", hash_original_method = "C3DEF5F256BD0FFA01404830FE1A0B0E", hash_generated_method = "3229E36585BD2E2901FD01AB77B2E7F3")
     
 public String(StringBuffer stringBuffer) {
@@ -802,6 +826,8 @@ public String(StringBuffer stringBuffer) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.865 -0400", hash_original_method = "DE744DAB842D7A0BE4BC8C7648E27967", hash_generated_method = "A4716F806D0CB47D314F039D1EE5E331")
     public  String(int[] codePoints, int offset, int count) {
         addTaint(codePoints[0]);
@@ -851,6 +877,8 @@ for(int i = offset;i < end;i++)
      *             if {@code stringBuilder == null}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.837 -0500", hash_original_method = "1A43E0983F964C9F4090DA81181B802F", hash_generated_method = "1EFA5C7DF66501B4E9300FC7A3F11922")
     
 public String(StringBuilder stringBuilder) {
@@ -866,6 +894,8 @@ public String(StringBuilder stringBuilder) {
     /*
      * Creates a {@code String} that is s1 + v1. May be used by JIT code.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.840 -0500", hash_original_method = "8767608BAC25DDC267BEC70B13CF72A3", hash_generated_method = "72074810184A2393C111BF6D8ED3EA45")
     
 @SuppressWarnings("unused")
@@ -901,18 +931,24 @@ public String(StringBuilder stringBuilder) {
     	return getTaintChar();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.847 -0500", hash_original_method = "00E4125D0AA58BE2E1232BB5FC2C4846", hash_generated_method = "B1159EE4C7B906D7F8C1FC8C15EB0D6B")
     
 private StringIndexOutOfBoundsException indexAndLength(int index) {
         throw new StringIndexOutOfBoundsException(this, index);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.849 -0500", hash_original_method = "C5BE1ED07127E02665146DD0ACED99A5", hash_generated_method = "FB9D4ABD48FCEC7C8540B108B1A60F24")
     
 private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
         throw new StringIndexOutOfBoundsException(this, start, end - start);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.852 -0500", hash_original_method = "FABF855F22C4847A4FF9FC56E0D56C67", hash_generated_method = "2123D70BF7727C5EDBF7D1832FE04260")
     
 private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int offset, int count) {
@@ -923,6 +959,8 @@ private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int o
      * This isn't equivalent to either of ICU's u_foldCase case folds, and thus any of the Unicode
      * case folds, but it's what the RI uses.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.855 -0500", hash_original_method = "1D42C2C4BD065BE4935C25058CB25A0E", hash_generated_method = "1FA0F03FEC4C1822C6D78194D6620044")
     
 private char foldCase(char ch) {
@@ -1251,6 +1289,8 @@ public byte[] getBytes(Charset charset) {
      * within the java.lang package only.  The caller is responsible for
      * ensuring that start >= 0 && start <= end && end <= count.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.893 -0500", hash_original_method = "25FFBBE7056EE87BB826458DBC43764C", hash_generated_method = "238DD3FC86386D3311138731220E8FD2")
     
 void _getChars(int start, int end, char[] buffer, int index) {
@@ -1323,6 +1363,8 @@ public int indexOf(int c, int start) {
         return fastIndexOf(c, start);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.904 -0500", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "50A62FB275EDAD928891334122C78843")
     
     private int fastIndexOf(int c, int start){
@@ -1332,6 +1374,8 @@ public int indexOf(int c, int start) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.906 -0500", hash_original_method = "9DA1418F8A10F302F688A26755CAB088", hash_generated_method = "6D78EED33ED21368534C2D933E989ED8")
     
 private int indexOfSupplementary(int c, int start) {
@@ -1515,6 +1559,8 @@ public int lastIndexOf(int c, int start) {
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.928 -0500", hash_original_method = "ECC6B0EDCC4F01358439BB31BFF21134", hash_generated_method = "EB35337649F216A80A16127A0A991E05")
     
 private int lastIndexOfSupplementary(int c, int start) {
@@ -2260,6 +2306,8 @@ public CharSequence subSequence(int start, int end) {
 
         private static final long serialVersionUID = 8575799808933029326L;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.207 -0400", hash_original_method = "4085F5B81BF948B4B3F485D1409A9E33", hash_generated_method = "4085F5B81BF948B4B3F485D1409A9E33")
         public CaseInsensitiveComparator ()
         {

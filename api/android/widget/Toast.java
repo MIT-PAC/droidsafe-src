@@ -21,8 +21,8 @@ import android.view.accessibility.AccessibilityManager;
 
 public class Toast {
     
-    @DSComment("Toast")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SCREEN})
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
@@ -51,8 +51,8 @@ public class Toast {
      *
      * @throws Resources.NotFoundException if the resource can't be found.
      */
-    @DSComment("Toast")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SCREEN})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.698 -0500", hash_original_method = "DED4BD06169F84224562F0B1604E2BF3", hash_generated_method = "130DA15736FD2AED20E191F76300EB40")
     
@@ -61,6 +61,8 @@ public static Toast makeText(Context context, int resId, int duration)
         return makeText(context, context.getResources().getText(resId), duration);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.708 -0500", hash_original_method = "D9E8679815944C5B89F305CDC2FBAD3D", hash_generated_method = "F556B20E007842B92ED86508184E1CF6")
     
 static private INotificationManager getService() {
@@ -113,8 +115,8 @@ static private INotificationManager getService() {
          */
     }
     
-    @DSComment("Toast")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void show() {
     	/*  DSModel: nothing
         if (mNextView == null) {
@@ -263,6 +265,8 @@ public void run() {
         
         WindowManagerImpl mWM;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.742 -0500", hash_original_method = "41B653C614D176194B8FC12B04D74B1D", hash_generated_method = "0605A5E0457D435CD7B49511E97EF060")
         
 TN() {
@@ -332,6 +336,8 @@ public void handleShow() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.752 -0500", hash_original_method = "D907D354027470BBEF302644D06948FD", hash_generated_method = "B75002871EB6AE366E3CCD65B5A87161")
         
 private void trySendAccessibilityEvent() {

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERExternal extends ASN1Object {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.796 -0500", hash_original_field = "6D2BDBA72520295A7C15B183E0D9C569", hash_generated_field = "8B451B3DBA24F8A6DD2DAC687FC92958")
 
@@ -103,6 +98,8 @@ public DERExternal(DERObjectIdentifier directReference, DERInteger indirectRefer
         setExternalContent(externalData.getDERObject());
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.811 -0500", hash_original_method = "B967C566758213AD266FDB24FA14151A", hash_generated_method = "AE6FE7C100D471CEA69C459B25610E4F")
     
 private DERObject getObjFromVector(ASN1EncodableVector v, int index)
@@ -142,6 +139,8 @@ public int hashCode()
     /* (non-Javadoc)
      * @see org.bouncycastle.asn1.DERObject#encode(org.bouncycastle.asn1.DEROutputStream)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.823 -0500", hash_original_method = "95E5CCE7002362171E5372628ECC5970", hash_generated_method = "95E5CCE7002362171E5372628ECC5970")
     
 void encode(DEROutputStream out)
@@ -168,6 +167,8 @@ void encode(DEROutputStream out)
     /* (non-Javadoc)
      * @see org.bouncycastle.asn1.ASN1Object#asn1Equals(org.bouncycastle.asn1.DERObject)
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.827 -0500", hash_original_method = "B6A4F973EBC78A6793C4703762E4E562", hash_generated_method = "B6A4F973EBC78A6793C4703762E4E562")
     
 boolean asn1Equals(DERObject o)
@@ -269,6 +270,8 @@ public DERInteger getIndirectReference()
      * Sets the data value descriptor
      * @param dataValueDescriptor The descriptor
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.843 -0500", hash_original_method = "0BD65C140FCC2077661040D20B226912", hash_generated_method = "A8B65273DA2E679E635CBC93ACDFB1FE")
     
 private void setDataValueDescriptor(ASN1Object dataValueDescriptor)
@@ -280,6 +283,8 @@ private void setDataValueDescriptor(ASN1Object dataValueDescriptor)
      * Sets the direct reference of the external element
      * @param directReferemce The reference
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.846 -0500", hash_original_method = "A83523D5E22547A02A231238C93C9842", hash_generated_method = "77F970611B4E55BB9C3550410A2F0B04")
     
 private void setDirectReference(DERObjectIdentifier directReferemce)
@@ -296,6 +301,8 @@ private void setDirectReference(DERObjectIdentifier directReferemce)
      * </ul>
      * @param encoding The encoding
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.849 -0500", hash_original_method = "D6EB4173694568A37E5CF8BEC224CE9C", hash_generated_method = "39FE93F559C112B4809D9178EAA6F995")
     
 private void setEncoding(int encoding)
@@ -311,6 +318,8 @@ private void setEncoding(int encoding)
      * Sets the content of this element
      * @param externalContent The content
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.852 -0500", hash_original_method = "DE6F2795286824746E38E92F0B41BA33", hash_generated_method = "82C51007B051D24EC707A5180654B8C9")
     
 private void setExternalContent(DERObject externalContent)
@@ -322,13 +331,14 @@ private void setExternalContent(DERObject externalContent)
      * Sets the indirect reference of this element
      * @param indirectReference The reference
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.854 -0500", hash_original_method = "0014F60DB99B68C720B34F07B78773E4", hash_generated_method = "69C3211E041A1D148A3AD1FC8D11B5CF")
     
 private void setIndirectReference(DERInteger indirectReference)
     {
         this.indirectReference = indirectReference;
     }
-
     
 }
 

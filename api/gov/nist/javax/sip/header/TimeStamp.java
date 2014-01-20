@@ -34,6 +34,8 @@ public TimeStamp() {
         delay = -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.145 -0500", hash_original_method = "A6A60BDDB9B869E20670F0D4B71173B1", hash_generated_method = "CB83C01BC0FA1004CFB6055083D7100D")
     
 private String getTimeStampAsString() {
@@ -45,6 +47,8 @@ private String getTimeStampAsString() {
             return Float.toString(timeStampFloat);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.148 -0500", hash_original_method = "BFD0E29F8DBDA29B6D5527F4C53FF1F0", hash_generated_method = "ED6CEAC8FD21B02A84CB0F73C2FDA30A")
     
 private String getDelayAsString() {

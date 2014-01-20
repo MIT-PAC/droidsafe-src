@@ -239,6 +239,8 @@ public ApplicationInfo(ApplicationInfo orig) {
         uiOptions = orig.uiOptions;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.585 -0500", hash_original_method = "C34B9C3D6C69EB97D4130A1E4D235BF1", hash_generated_method = "CB49085873BDD4D3068D6247FD14417E")
     
 private ApplicationInfo(Parcel source) {
@@ -410,6 +412,8 @@ public void disableCompatibilityMode() {
         return pm.getDefaultActivityIcon();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.594 -0500", hash_original_method = "B87914FC2F221448B9EDC9CCD205939A", hash_generated_method = "6EC09BA6BCF8464DA9AF02492ED90BEF")
     
 private boolean isPackageUnavailable(PackageManager pm) {

@@ -70,6 +70,8 @@ public static LongBuffer wrap(long[] array, int start, int longCount) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.390 -0500", hash_original_method = "3A9B5F2A82543AF360E63C0F2EA35C03", hash_generated_method = "3A9B5F2A82543AF360E63C0F2EA35C03")
     
 LongBuffer(int capacity) {
@@ -101,6 +103,8 @@ public final int arrayOffset() {
      *
      * @return a read-only version of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.398 -0500", hash_original_method = "EA84EE94947A1E6B3D4BCBC4BC97B98C", hash_generated_method = "BDC2F35BBF6E91E07D767F7EBB3D436C")
     
 public abstract LongBuffer asReadOnlyBuffer();
@@ -116,6 +120,8 @@ public abstract LongBuffer asReadOnlyBuffer();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.401 -0500", hash_original_method = "65B1173EDE8F0277AB549EB0B9AC970A", hash_generated_method = "B25497F8A60157F3846369E8D9A5E02E")
     
 public abstract LongBuffer compact();
@@ -166,6 +172,8 @@ public int compareTo(LongBuffer otherBuffer) {
      *
      * @return a duplicated buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.406 -0500", hash_original_method = "5413D30CD3EBC90F68D9250237276737", hash_generated_method = "5420BC50C6D8AEF499023FF16803CE85")
     
 public abstract LongBuffer duplicate();
@@ -212,6 +220,8 @@ public abstract LongBuffer duplicate();
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.411 -0500", hash_original_method = "DFBC8484A449FE298AE7B323A63CA550", hash_generated_method = "35C8D264EA201FE7C778D2FA1BB835F4")
     
 public abstract long get();
@@ -278,6 +288,8 @@ public LongBuffer get(long[] dst, int dstOffset, int longCount) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.419 -0500", hash_original_method = "39F5D2B49059340DBB0B6DEF4C7EEFE5", hash_generated_method = "07D3CC36CE8EAB5897CED617E22A3CAB")
     
 public abstract long get(int index);
@@ -318,6 +330,8 @@ public final boolean hasArray() {
      *
      * @return {@code true} if this buffer is direct, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.426 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
 public abstract boolean isDirect();
@@ -332,6 +346,8 @@ public abstract boolean isDirect();
      * @return the byte order used by this buffer when converting longs from/to
      *         bytes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.429 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     
 public abstract ByteOrder order();
@@ -341,6 +357,8 @@ public abstract ByteOrder order();
      *
      * @return see {@code array()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.431 -0500", hash_original_method = "871DA11A9DF08881A9FCDFF81EB530B5", hash_generated_method = "9D9537D982E8FFAE67CB8A094717C2BF")
     
 abstract long[] protectedArray();
@@ -350,6 +368,8 @@ abstract long[] protectedArray();
      *
      * @return see {@code arrayOffset()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.433 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     
 abstract int protectedArrayOffset();
@@ -359,6 +379,8 @@ abstract int protectedArrayOffset();
      *
      * @return see {@code hasArray()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.435 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     
 abstract boolean protectedHasArray();
@@ -375,6 +397,8 @@ abstract boolean protectedHasArray();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.438 -0500", hash_original_method = "7DF6B4F8DA8FBE6F4C17DBAB06D0ACEA", hash_generated_method = "616336DC89E45A8294CA98BF1EE3C04B")
     
 public abstract LongBuffer put(long l);
@@ -480,6 +504,8 @@ public LongBuffer put(LongBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.449 -0500", hash_original_method = "4B297CAE32B3CDD427A17908B0003281", hash_generated_method = "FB0108677215A3CB2224A852D9C187E0")
     
 public abstract LongBuffer put(int index, long l);
@@ -499,6 +525,8 @@ public abstract LongBuffer put(int index, long l);
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.451 -0500", hash_original_method = "9887614DC21CB1EE57B05B261C33E0E7", hash_generated_method = "133C5A8A8A658D91F61868C12755449D")
     
 public abstract LongBuffer slice();

@@ -136,6 +136,8 @@ public boolean cancelLoad() {
 public void onCanceled(D data) {
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.520 -0500", hash_original_method = "45E2A10F8A270BE8E82A19AF3BE67D71", hash_generated_method = "2D35D877DC03BB25ADC7D0ABF098CBC0")
     
 void executePendingTask() {

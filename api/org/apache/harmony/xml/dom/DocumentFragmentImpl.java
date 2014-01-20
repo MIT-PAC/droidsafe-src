@@ -9,6 +9,8 @@ import org.w3c.dom.Node;
 
 public class DocumentFragmentImpl extends InnerNodeImpl implements DocumentFragment {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.569 -0500", hash_original_method = "B1D1A671578496EB48835D218203CA93", hash_generated_method = "B1D1A671578496EB48835D218203CA93")
     
 DocumentFragmentImpl(DocumentImpl document) {

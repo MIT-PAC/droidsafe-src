@@ -40,8 +40,8 @@ public byte byteValue() {
      *
      * @return the primitive double value of this object.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.888 -0500", hash_original_method = "ECE731968B529334C266D08292398822", hash_generated_method = "7EA53A2B2C1AC2DDAC0C53F7D9305ADA")
     
 public abstract double doubleValue();
@@ -51,8 +51,8 @@ public abstract double doubleValue();
      *
      * @return the primitive float value of this object.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.891 -0500", hash_original_method = "28E8B58AB2C6301549A92ED9F41DD2A2", hash_generated_method = "D6B00E764949C7A1379BB92339FD15E8")
     
 public abstract float floatValue();
@@ -63,8 +63,8 @@ public abstract float floatValue();
      *
      * @return the primitive int value of this object.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.893 -0500", hash_original_method = "A286406E26D7EBC018CE3A50287F7A12", hash_generated_method = "6DD28E435B306FA7438646E7A81055B0")
     
 public abstract int intValue();
@@ -75,8 +75,8 @@ public abstract int intValue();
      *
      * @return the primitive long value of this object.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.896 -0500", hash_original_method = "B671F368853851977CE77CF906828C6B", hash_generated_method = "BD142D8A949784DEE3CDE89C2828F00A")
     
 public abstract long longValue();

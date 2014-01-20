@@ -25,6 +25,8 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 protected AbstractList() {
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.420 -0400", hash_original_method = "CE54A57EF9628E9FD413F964E9F93054", hash_generated_method = "A01914328316F1F0C4A33E8F194581C9")
     public void add(int location, E object) {
         super.addElementAt(location, object);
@@ -67,11 +69,15 @@ protected AbstractList() {
      * @throws IndexOutOfBoundsException
      *             if {@code location < 0 || >= size()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.985 -0500", hash_original_method = "028843ECC72155B435F1914365BF5067", hash_generated_method = "FA43A5DF06AE806D1B6BA7C7E16F414D")
     
 public abstract E get(int location);
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.425 -0400", hash_original_method = "4C126AEA105405AEB8FC6F1BC74D780D", hash_generated_method = "2B7B72A53AC9827A4DC99ACE39920C7D")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.425 -0400", hash_original_method = "4C126AEA105405AEB8FC6F1BC74D780D", hash_generated_method = "2B7B72A53AC9827A4DC99ACE39920C7D")
     @Override
     public int hashCode() {
         return getTaintInt();
@@ -97,7 +103,9 @@ public abstract E get(int location);
         //return new SimpleListIterator();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.428 -0400", hash_original_method = "D9C6E95DB4589560C406CE5442E4EDF7", hash_generated_method = "BD972CB256E1A2D2ADAD81413FB3F434")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.428 -0400", hash_original_method = "D9C6E95DB4589560C406CE5442E4EDF7", hash_generated_method = "BD972CB256E1A2D2ADAD81413FB3F434")
     public int lastIndexOf(Object object) {
         return getLastIndexOf(object);
     }
@@ -122,17 +130,23 @@ public abstract E get(int location);
         //return new FullListIterator(location);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.430 -0400", hash_original_method = "5388D372D048D053ADD084F02A9C1484", hash_generated_method = "8139D75C3BDD16E15FDC1C3ADC818304")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.430 -0400", hash_original_method = "5388D372D048D053ADD084F02A9C1484", hash_generated_method = "8139D75C3BDD16E15FDC1C3ADC818304")
     public E remove(int location) {
         return removeElementAt(location);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.431 -0400", hash_original_method = "D592F953402A10CA44AACBE4A2DEE99F", hash_generated_method = "6D6A2347514B81060D28B96CAA380E0C")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.431 -0400", hash_original_method = "D592F953402A10CA44AACBE4A2DEE99F", hash_generated_method = "6D6A2347514B81060D28B96CAA380E0C")
     protected void removeRange(int start, int end) {
         for (int i = end; i >= start; i--)
             removeElementAt(i);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.431 -0400", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "EB4F57E538448BBB2DB9DEE7C42586D7")
     public E set(int location, E object) {
@@ -183,6 +197,8 @@ public abstract E get(int location);
             
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         public SubAbstractList(AbstractList original, int start, int end) {
             for (int i = start; i <= end; i++)
                 add((E)original.getElementAt(i));

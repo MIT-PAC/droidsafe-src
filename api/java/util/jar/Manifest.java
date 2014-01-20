@@ -22,6 +22,8 @@ import libcore.io.Streams;
 
 public class Manifest implements Cloneable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.163 -0500", hash_original_method = "54A9C882DCF00408D3A492AAABB65302", hash_generated_method = "4120E28E793559951DD415810AFAABC0")
     
 private static Field getByteArrayInputStreamField(String name) {
@@ -38,6 +40,8 @@ private static Field getByteArrayInputStreamField(String name) {
      * Returns a byte[] containing all the bytes from a ByteArrayInputStream.
      * Where possible, this returns the actual array rather than a copy.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.215 -0500", hash_original_method = "2E7B60C359CF2BD0792E359FF0052325", hash_generated_method = "4574E71359566A1BDF8A7837EF55FE2A")
     
 private static byte[] exposeByteArrayInputStreamBytes(ByteArrayInputStream bais) {
@@ -74,6 +78,8 @@ private static byte[] exposeByteArrayInputStreamBytes(ByteArrayInputStream bais)
      * @throws IOException
      *             If an error occurs writing the {@code Manifest}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.230 -0500", hash_original_method = "364FA78950C637E356994D1026A925C2", hash_generated_method = "0EE1D0450F252260DB5C7949D54F5970")
     
@@ -168,6 +174,8 @@ private static void writeEntry(OutputStream os, Attributes.Name name,
     /**
      * Creates a new {@code Manifest} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.185 -0500", hash_original_method = "2CD70F0E3E6560EF53C780EFAB38343C", hash_generated_method = "FA299F001C1CEF4E33B989DA3F830661")
     
 public Manifest() {
@@ -182,6 +190,8 @@ public Manifest() {
      * @throws IOException
      *             if an IO error occurs while creating this {@code Manifest}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.188 -0500", hash_original_method = "2FA11E9347D2AC2716E0BA224CCFCCB5", hash_generated_method = "9A25B819BAB3FF5FC8622EBB8C328465")
     
 public Manifest(InputStream is) throws IOException {
@@ -195,6 +205,8 @@ public Manifest(InputStream is) throws IOException {
      * @param man
      *            {@code Manifest} instance to obtain attributes from.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.191 -0500", hash_original_method = "0E23B3A5115DCECDE6F46702BE2E2DEF", hash_generated_method = "81428566859418F3DB0717074B4043AC")
     
 @SuppressWarnings("unchecked")
@@ -204,6 +216,8 @@ public Manifest(InputStream is) throws IOException {
                 .getEntries()).clone();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.194 -0500", hash_original_method = "19FA98C36DB13DC48F6FA00606FD5E9E", hash_generated_method = "19FA98C36DB13DC48F6FA00606FD5E9E")
     
 Manifest(InputStream is, boolean readChunks) throws IOException {
@@ -217,6 +231,8 @@ Manifest(InputStream is, boolean readChunks) throws IOException {
      * Resets the both the main attributes as well as the entry attributes
      * associated with this {@code Manifest}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.197 -0500", hash_original_method = "C6A465A281EC0C52F4CC8FABE5DA0F03", hash_generated_method = "C565984F1E5FA363FB6CB1D16E527D1F")
     
 public void clear() {
@@ -233,6 +249,8 @@ public void clear() {
      * @return the Attributes for the entry or {@code null} if the entry does
      *         not exist.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.199 -0500", hash_original_method = "78C1F2A094121E0A509E66806BC04C36", hash_generated_method = "E4DE14DB9621A9D657B46207A017F464")
     
@@ -246,6 +264,8 @@ public Attributes getAttributes(String name) {
      *
      * @return the map of entry attributes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.201 -0500", hash_original_method = "AD5E8B028D2F33E921C50CB4C1BDCE39", hash_generated_method = "E1F6C9A8CB2009128564CD77B4042B46")
     
@@ -259,6 +279,8 @@ public Map<String, Attributes> getEntries() {
      * @return main {@code Attributes} associated with the source {@code
      *         JarFile}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.204 -0500", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "C4BF8381294FCDC1FAB64ADD93A2235A")
     
@@ -272,6 +294,8 @@ public Attributes getMainAttributes() {
      *
      * @return a copy of this instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.207 -0500", hash_original_method = "ED40FF59379F92DE3112CA6576AF5963", hash_generated_method = "E3BB8358407282EFD983BCE228CEEF97")
     
 @Override
@@ -288,6 +312,8 @@ public Attributes getMainAttributes() {
      * @throws IOException
      *             If an error occurs writing the {@code Manifest}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.209 -0500", hash_original_method = "FE58047C3F32AF11D7E00269EA71B148", hash_generated_method = "AABA4DD623EA31BA083B1F1BF032742E")
     
@@ -303,6 +329,8 @@ public void write(OutputStream os) throws IOException {
 
         int end;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.177 -0500", hash_original_method = "A8971FBD893650A54F56F7BF8B0891D6", hash_generated_method = "A8971FBD893650A54F56F7BF8B0891D6")
         
 Chunk(int start, int end) {
@@ -320,6 +348,8 @@ Chunk(int start, int end) {
      * @throws IOException
      *             If an error occurs reading the manifest.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.212 -0500", hash_original_method = "0BB09A51480801FE7389A84744CD3AA5", hash_generated_method = "7E45CD401B5948D65B6801FA87756624")
     
 public void read(InputStream is) throws IOException {
@@ -354,6 +384,8 @@ public void read(InputStream is) throws IOException {
      *
      * @return this {@code Manifest}'s hashCode.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.218 -0500", hash_original_method = "208E1F4DBC48E80FE528AF7E25427460", hash_generated_method = "212D4C2D6B93DB0C152383C6F1E0A9BC")
     
 @Override
@@ -370,6 +402,8 @@ public void read(InputStream is) throws IOException {
      *            the object to compare against.
      * @return {@code true} if the manifests are equal, {@code false} otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.221 -0500", hash_original_method = "7BEE688CCC8D49794388E10DAC06F788", hash_generated_method = "4AECF5328B37B143D324B7D18EC4DC0A")
     
 @Override
@@ -392,12 +426,16 @@ Chunk getChunk(String name) {
         return chunks.get(name);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.225 -0500", hash_original_method = "CB43854902C5BB6A2160DF9CF6991C4E", hash_generated_method = "CB43854902C5BB6A2160DF9CF6991C4E")
     
 void removeChunks() {
         chunks = null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.227 -0500", hash_original_method = "4F9436521007A1D33F6CF267D74BE295", hash_generated_method = "4F9436521007A1D33F6CF267D74BE295")
     

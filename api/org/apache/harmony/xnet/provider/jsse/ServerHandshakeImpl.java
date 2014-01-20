@@ -25,9 +25,6 @@ import javax.net.ssl.X509ExtendedKeyManager;
 import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
 
-
-
-
 public class ServerHandshakeImpl extends HandshakeProtocol {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.857 -0500", hash_original_field = "9BA8921B2F332EF312E273931A2A17B1", hash_generated_field = "F778C7A1E11234387361395B9C2BAFEF")
 
@@ -299,6 +296,8 @@ public ServerHandshakeImpl(Object owner) {
      * and (if necessary) server certificate, server key exchange,
      * certificate request, and server hello done messages.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.885 -0500", hash_original_method = "1EE7C68A79581646D3317E6FF35ECA2F", hash_generated_method = "086A9D938367E6358DB7E7C1B324BC3D")
     
 void processClientHello() {
@@ -605,6 +604,8 @@ void processClientHello() {
     }
 
     // find sesssion in the session hash
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.891 -0500", hash_original_method = "1900CB4813DE311B701E9907815D7379", hash_generated_method = "D72A43C9B363D13A87AA4AED5103AFA4")
     
 private SSLSessionImpl findSessionToResume(byte[] session_id) {
@@ -612,6 +613,8 @@ private SSLSessionImpl findSessionToResume(byte[] session_id) {
     }
 
     // find appropriate cipher_suite in the client suites
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.893 -0500", hash_original_method = "CED7C9E9124D8D76ECA389CBA359AC39", hash_generated_method = "7DC0230207EAF3B1A908A92DFFE7622F")
     
 private CipherSuite selectSuite(CipherSuite[] clientSuites) {
@@ -658,7 +661,6 @@ private CipherSuite selectSuite(CipherSuite[] clientSuites) {
             }
         }
     }
-
     
 }
 

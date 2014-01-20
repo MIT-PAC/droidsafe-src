@@ -277,6 +277,8 @@ public synchronized void setData(byte[] buf) {
      *
      * @return the current capacity value
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.380 -0500", hash_original_method = "59C864B14A0070866D297CD091E1F29D", hash_generated_method = "A78FFB8D04E78CAACD325961B8A131AF")
     
 synchronized int getCapacity() {
@@ -305,6 +307,8 @@ public synchronized void setLength(int length) {
      *
      * @param len the length of this datagram packet
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.385 -0500", hash_original_method = "78A3DBC65D2912D5EFEBEB58F048F8DC", hash_generated_method = "26E42A9547BE66E096D30B0B02657C8A")
     
 synchronized void setLengthOnly(int length) {

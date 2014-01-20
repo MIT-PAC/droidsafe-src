@@ -6,10 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
 public class DEROctetString extends ASN1OctetString {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.166 -0500", hash_original_method = "350FB83D68A1171ABC71A16DF9581EB3", hash_generated_method = "15E0F1074B721C64CAEB116E41439E89")
     
 static void encode(
@@ -38,6 +38,8 @@ public DEROctetString(
         super(obj);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.164 -0500", hash_original_method = "88699FAFA7E37B1C694783679D50E3CD", hash_generated_method = "88699FAFA7E37B1C694783679D50E3CD")
     
 void encode(
@@ -46,7 +48,6 @@ void encode(
     {
         out.writeEncoded(OCTET_STRING, string);
     }
-
     
 }
 

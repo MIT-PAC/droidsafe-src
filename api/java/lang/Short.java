@@ -13,6 +13,8 @@ public final class Short extends Number implements Comparable<Short> {
      * @since 1.7
      * @hide 1.7
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.119 -0500", hash_original_method = "EC012F50DB4364A9230CE07FC3FDA08E", hash_generated_method = "04F0AD5B79EFA19C0773385F336B3C1E")
     
 public static int compare(long lhs, long rhs) {
@@ -32,6 +34,8 @@ public static int compare(long lhs, long rhs) {
      * @throws NumberFormatException
      *             if {@code string} cannot be parsed as a short value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.121 -0500", hash_original_method = "C8348377762FB6D849A417692AC54E63", hash_generated_method = "B8C5243258AE9062078ECD2BB875B16A")
     
 public static Short decode(String string) throws NumberFormatException {
@@ -76,6 +80,8 @@ public static short parseShort(String string) throws NumberFormatException {
      *             {@code radix < Character.MIN_RADIX ||
      *             radix > Character.MAX_RADIX}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.141 -0500", hash_original_method = "B0692BE3743D11D4DF4B4F46D87A99FC", hash_generated_method = "624DC3F714BEB21647873A3742666600")
     
 public static short parseShort(String string, int radix) throws NumberFormatException {
@@ -95,6 +101,8 @@ public static short parseShort(String string, int radix) throws NumberFormatExce
      *             the short to convert to a string.
      * @return a printable representation of {@code value}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.148 -0500", hash_original_method = "1EF8D36085FFBEBAD22C5568ED91BFE4", hash_generated_method = "DD1619FF77139A2F0480F37302994966")
     
 public static String toString(short value) {
@@ -112,6 +120,8 @@ public static String toString(short value) {
      *             if {@code string} cannot be parsed as a short value.
      * @see #parseShort(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.151 -0500", hash_original_method = "BC53579CE1693F911190DD8E21DD944D", hash_generated_method = "C77C28BAB6A5AD0C9182A3450A1404EA")
     
 public static Short valueOf(String string) throws NumberFormatException {
@@ -134,6 +144,8 @@ public static Short valueOf(String string) throws NumberFormatException {
      *             radix > Character.MAX_RADIX}.
      * @see #parseShort(String, int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.153 -0500", hash_original_method = "46C74393C5C072B65EB7EF3C911B0780", hash_generated_method = "35EB6A5FDB629A957EC21221B837098B")
     
 public static Short valueOf(String string, int radix) throws NumberFormatException {
@@ -148,6 +160,8 @@ public static Short valueOf(String string, int radix) throws NumberFormatExcepti
      * @return the reversed value.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.157 -0500", hash_original_method = "CAF92C1590742750040007716FD6D4B6", hash_generated_method = "B1071BF34EE08892A09AC1DB1A0B09B2")
     
 public static short reverseBytes(short s) {
@@ -222,12 +236,16 @@ public Short(String string) throws NumberFormatException {
      * @param value
      *            the primitive short value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.112 -0500", hash_original_method = "943F3BD92535719838B11732349A25CE", hash_generated_method = "A0DAB957B86749FB655AF96F446D992A")
     
 public Short(short value) {
         this.value = value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.114 -0500", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "4C2FE469A77605BE0BF5A0C525E46699")
     
 @Override
@@ -250,12 +268,16 @@ public Short(short value) {
      * @see java.lang.Comparable
      * @since 1.2
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.117 -0500", hash_original_method = "9451F44BD5942680EA0D419B40FE27E5", hash_generated_method = "9BC6DB09097B8FF862117A789E30ABF0")
     
 public int compareTo(Short object) {
         return compare(value, object.value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.124 -0500", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "BF89BE4469CF5E691A2C43432BBB5D3E")
     
 @Override
@@ -273,6 +295,8 @@ public int compareTo(Short object) {
      * @return {@code true} if the specified object is equal to this
      *         {@code Short}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.126 -0500", hash_original_method = "0E7C562AADA4AAAABF3DA1440DB603BB", hash_generated_method = "0A8AF6AC553F87DAF0564A149EF4F5AC")
     
 @Override
@@ -280,6 +304,8 @@ public int compareTo(Short object) {
         return (object instanceof Short) && (((Short) object).value == value);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.128 -0500", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "0138C4AD160C9AAF1F0B41D5F85236C8")
     
 @Override
@@ -287,6 +313,8 @@ public int compareTo(Short object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.131 -0500", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "C30218EC7C084095E716A93197D10945")
     
 @Override
@@ -294,6 +322,8 @@ public int compareTo(Short object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.134 -0500", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "CED71A70CDF5F216D39A3AE3E558B24B")
     
 @Override
@@ -301,6 +331,8 @@ public int compareTo(Short object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.136 -0500", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "1422248BBCC1B2BAF9351E8A3DC0A5BE")
     
 @Override
@@ -322,6 +354,8 @@ public int compareTo(Short object) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.146 -0500", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "523848B88799F041621FC5C99AD5BFED")
     
 @Override

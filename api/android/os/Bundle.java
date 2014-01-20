@@ -77,8 +77,8 @@ public Bundle[] newArray(int size) {
     /**
      * Constructs a new, empty Bundle.
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.405 -0500", hash_original_method = "40BE022BD5AEEE3B1F4C24A599FDBBB4", hash_generated_method = "2E4F8DD9FFAB812A4C4E1772928E04E9")
     
 public Bundle() {
@@ -92,18 +92,24 @@ public Bundle() {
      *
      * @param parcelledData a Parcel containing a Bundle
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.407 -0500", hash_original_method = "DB07395F523937B25016D60988A66D69", hash_generated_method = "DB07395F523937B25016D60988A66D69")
     
 Bundle(Parcel parcelledData) {
         readFromParcel(parcelledData);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.409 -0500", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "4CBA8A75160127E76B9D77B8452C524A")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.409 -0500", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "4CBA8A75160127E76B9D77B8452C524A")
     
 Bundle(Parcel parcelledData, int length) {
         readFromParcelInner(parcelledData, length);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.032 -0400", hash_original_method = "ED19BD28A9BE16566DAB3F7BC8440A20", hash_generated_method = "54C66743395BE4AB6BAD14CE7AE27455")
     public  Bundle(ClassLoader loader) {
         mMap = new HashMap<String, Object>();
@@ -114,6 +120,8 @@ Bundle(Parcel parcelledData, int length) {
         //mClassLoader = loader;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.042 -0400", hash_original_method = "1CEDEB07DCD1E2A2BE2C52C76F89017C", hash_generated_method = "2B27A067BF7B2EDAA4C66221F6D6260E")
     public  Bundle(int capacity) {
         mMap = new HashMap<String, Object>(capacity);
@@ -124,6 +132,8 @@ Bundle(Parcel parcelledData, int length) {
         //mClassLoader = getClass().getClassLoader();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.074 -0400", hash_original_method = "418D42BD4A8F16B387F3064B9218EE53", hash_generated_method = "11F544B121F75AF0D84F3AB92D420B7B")
     public  Bundle(Bundle b) {
         if(b.mParcelledData != null)        
@@ -244,7 +254,9 @@ public ClassLoader getClassLoader() {
      * If the underlying data are stored as a Parcel, unparcel them
      * using the currently assigned class loader.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.433 -0500", hash_original_method = "C84307F15A2AB40D2A9CA51D74C5FD0F", hash_generated_method = "ED5D513DE4FFFE667446D5431C83A8D7")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.433 -0500", hash_original_method = "C84307F15A2AB40D2A9CA51D74C5FD0F", hash_generated_method = "ED5D513DE4FFFE667446D5431C83A8D7")
     
 synchronized void unparcel() {
         if (mParcelledData == null) {
@@ -321,8 +333,8 @@ public boolean containsKey(String key) {
      * @param key a String key
      * @return an Object, or null
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.444 -0500", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "E7E26841E84A6B6A9D5EC9D7CD01763B")
     
@@ -389,8 +401,8 @@ public Set<String> keySet() {
      * @param key a String, or null
      * @param value a Boolean, or null
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.457 -0500", hash_original_method = "94490DFEC498722DA435B9597CF0EDDE", hash_generated_method = "D06CBF81F2867BB687F3C98679973161")
     
@@ -453,8 +465,8 @@ public void putShort(String key, short value) {
      * @param key a String, or null
      * @param value an int, or null
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.465 -0500", hash_original_method = "C2DD503B984E96C46288CB6F7C364E09", hash_generated_method = "4AC8318C015B20964426413A31217551")
     
@@ -555,8 +567,8 @@ public void putCharSequence(String key, CharSequence value) {
      * @param key a String, or null
      * @param value a Parcelable object, or null
      */
-    @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.478 -0500", hash_original_method = "F17082A305780CE778B93F20A20D0318", hash_generated_method = "328E649DB95D7BCD75AD520B7DB513E8")
     
@@ -896,6 +908,8 @@ public boolean getBoolean(String key) {
     }
 
     // Log a message if the value was non-null but not of the expected type
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.525 -0500", hash_original_method = "017EA18B11E7843C44A73EB9482CE841", hash_generated_method = "7C692202F11C0AFCA2ED479E051CDCCC")
     
 private void typeWarning(String key, Object value, String className,
@@ -914,6 +928,8 @@ private void typeWarning(String key, Object value, String className,
         Log.w(LOG_TAG, "Attempt to cast generated internal exception:", e);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.527 -0500", hash_original_method = "AA5C4C6D2863DB47E466486DB4471393", hash_generated_method = "2DD8F779FC54291A2423C235432192F3")
     
 private void typeWarning(String key, Object value, String className,
@@ -1062,8 +1078,8 @@ public short getShort(String key, short defaultValue) {
      * @param key a String
      * @return an int value
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.545 -0500", hash_original_method = "E147114FE6EABC6FAB98EAC3907FD421", hash_generated_method = "CB945A82DA2C8ED3356E82972EDE1C4A")
     
@@ -1079,8 +1095,8 @@ public int getInt(String key) {
      * @param key a String
      * @return an int value
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.547 -0500", hash_original_method = "83073F806AC00C1E2EC4E710A5472BFA", hash_generated_method = "B4328D17C93F2CA0559B5562F5AC19F6")
     
@@ -1105,8 +1121,8 @@ public int getInt(String key, int defaultValue) {
      * @param key a String
      * @return a long value
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.549 -0500", hash_original_method = "0CFFDE7713416A17E206C69E138AC0FF", hash_generated_method = "280B3B770C86AAD43B0180F3944619B2")
     
@@ -1122,8 +1138,8 @@ public long getLong(String key) {
      * @param key a String
      * @return a long value
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.552 -0500", hash_original_method = "84BBB1371E3F4460B78F31822950EAAA", hash_generated_method = "C6EB7F9E11C719D6CA244BE7991CFEB6")
     
@@ -1231,8 +1247,8 @@ public double getDouble(String key, double defaultValue) {
      * @param key a String, or null
      * @return a String value, or null
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.563 -0500", hash_original_method = "51BC83F6E10D252B7C417A14343A53BE", hash_generated_method = "DC94B211C8F775E38F2099A496DDDDAB")
     
@@ -1258,8 +1274,8 @@ public String getString(String key) {
      * @param defaultValue Value to return if key does not exist
      * @return a String value, or null
      */
-    @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.566 -0500", hash_original_method = "BC80281EBAB10986EFB226B5D89A6368", hash_generated_method = "17A1039E666A7650DA2AF0A5672C697D")
     
@@ -1912,8 +1928,8 @@ public int describeContents() {
      * it to be passed through an IBinder connection.
      * @param parcel The parcel to copy this bundle to.
      */
-    @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.628 -0500", hash_original_method = "90A94F467F11AD2B1AEECA4B5BC07A1D", hash_generated_method = "13FC4A3A2DEAA47DAD8328A7A3631F3B")
     
@@ -1959,6 +1975,8 @@ public void readFromParcel(Parcel parcel) {
         readFromParcelInner(parcel, length);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.633 -0500", hash_original_method = "BA7474E49C1BD74E29BF5B4706535141", hash_generated_method = "4626EAB7D7A0699ECA6C3A432923F19B")
     
 void readFromParcelInner(Parcel parcel, int length) {

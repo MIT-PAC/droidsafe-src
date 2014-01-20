@@ -40,6 +40,8 @@ public static MifareClassic get(Tag tag) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.555 -0500", hash_original_method = "6AEBAB1312792C7703187110E11F13AB", hash_generated_method = "D3B8644AAE9BC8E492D40EC59854C738")
     
 private static void validateSector(int sector) {
@@ -55,6 +57,8 @@ private static void validateSector(int sector) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.558 -0500", hash_original_method = "CFA9481E8F030900CA0048919D894F77", hash_generated_method = "C34B68B047A4989525857FEB4C250D12")
     
 private static void validateBlock(int block) {
@@ -64,6 +68,8 @@ private static void validateBlock(int block) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.560 -0500", hash_original_method = "F036ABF163B31A4495D232DA6641AE31", hash_generated_method = "CDE5A15CE101FB85B5C6757A52726679")
     
 private static void validateValueOperand(int value) {
@@ -386,6 +392,8 @@ public boolean authenticateSectorWithKeyB(int sectorIndex, byte[] key) throws IO
         return authenticate(sectorIndex, key, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.529 -0500", hash_original_method = "A4BE9C6E30E6595D3E1AAF1825AE0C43", hash_generated_method = "E27CCEFD3D52E13A0552F8D874A1AC02")
     
 private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOException {

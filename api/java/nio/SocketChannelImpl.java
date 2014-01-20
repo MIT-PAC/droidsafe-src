@@ -41,6 +41,8 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
      * Shared by this class and DatagramChannelImpl, to do the address transfer
      * and check.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.617 -0500", hash_original_method = "905EF919F5C0AB3AE451CC42233B499A", hash_generated_method = "824D7474750B3E4A3EAD9FB616949EDA")
     
 static InetSocketAddress validateAddress(SocketAddress socketAddress) {
@@ -153,12 +155,16 @@ public SocketChannelImpl(SelectorProvider selectorProvider, boolean connect) thr
     /*
      * Status setting used by other class.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.576 -0500", hash_original_method = "18A2FCE579B69612BF9446C66CFB3DF7", hash_generated_method = "983F65E380101960BB4C616A298EE30C")
     
 synchronized void setConnected() {
         status = SOCKET_STATUS_CONNECTED;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.578 -0500", hash_original_method = "F9CE278FD490C297CB59C718AF3342C0", hash_generated_method = "F9CE278FD490C297CB59C718AF3342C0")
     
 void setBound(boolean flag) {
@@ -229,6 +235,8 @@ void setBound(boolean flag) {
         return finished;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.586 -0500", hash_original_method = "06F6825183E6F900AF6E00DC91481B34", hash_generated_method = "8B108F69CF01D12BB7350E96E777584C")
     
 private void initLocalAddressAndPort() {
@@ -286,6 +294,8 @@ private void initLocalAddressAndPort() {
         return finished;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.592 -0500", hash_original_method = "1E64AA428CB659E98A86DB6C8DA80F4E", hash_generated_method = "1E64AA428CB659E98A86DB6C8DA80F4E")
     
 void finishAccept() {
@@ -335,6 +345,8 @@ void finishAccept() {
         return readCount;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.601 -0500", hash_original_method = "59936954910C41239CB7D8967AB1C758", hash_generated_method = "76CD8F86262BEB523E42294916F125BF")
     
 private int readImpl(ByteBuffer dst) throws IOException {
@@ -404,6 +416,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
         return written;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.609 -0500", hash_original_method = "9CA5CC5B2105A1C6A6351FB0E1EC75B2", hash_generated_method = "CD98B944B276E8543790B980B2B26E1E")
     
 private int writeImpl(ByteBuffer src) throws IOException {
@@ -432,6 +446,8 @@ private int writeImpl(ByteBuffer src) throws IOException {
     /*
      * Status check, open and "connected", when read and write.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.612 -0500", hash_original_method = "39D9BE1DFB590318884AF060F0654BAC", hash_generated_method = "D9F9AEF31613A1962FF1A4414AA3E378")
     
 synchronized private void checkOpenConnected() throws ClosedChannelException {
@@ -451,6 +467,8 @@ synchronized private void checkOpenConnected() throws ClosedChannelException {
 
         private  PlainSocketImpl socketImpl;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.637 -0500", hash_original_method = "BE34C7E67ABAE2BC0D8C225897658728", hash_generated_method = "BE34C7E67ABAE2BC0D8C225897658728")
         
 SocketAdapter(PlainSocketImpl socketImpl, SocketChannelImpl channel) throws SocketException {
@@ -460,6 +478,8 @@ SocketAdapter(PlainSocketImpl socketImpl, SocketChannelImpl channel) throws Sock
             SocketUtils.setCreated(this);
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.640 -0500", hash_original_method = "453300FCAD69AE8F91F62237BE21CFBA", hash_generated_method = "453300FCAD69AE8F91F62237BE21CFBA")
         
 PlainSocketImpl socketImpl() {
@@ -572,6 +592,8 @@ PlainSocketImpl socketImpl() {
             return new SocketChannelInputStream(channel);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.668 -0500", hash_original_method = "6DFEABBD8C66364625150870CA176E5F", hash_generated_method = "91A50CA4C3E80098659C4128162B3B9D")
         
 private void checkOpenAndConnected() throws SocketException {
@@ -693,6 +715,8 @@ public SocketChannelInputStream(SocketChannel channel) {
     /*
      * Status check, open and "unconnected", before connection.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.615 -0500", hash_original_method = "ACDFE21557429638E6BE7769521129CC", hash_generated_method = "4C488BAA938CF13CE92C0A03EC8EA9AF")
     
 synchronized private void checkUnconnected() throws IOException {

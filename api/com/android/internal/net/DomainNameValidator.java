@@ -15,10 +15,6 @@ import javax.security.auth.x500.X500Principal;
 import android.net.NetworkUtils;
 import android.util.Log;
 
-
-
-
-
 public class DomainNameValidator {
 
     /**
@@ -45,6 +41,8 @@ public static boolean match(X509Certificate certificate, String thisDomain) {
     /**
      * @return True iff the domain name is specified as an IP address
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.512 -0500", hash_original_method = "E9F532CEF2F4F6A1EF805C8CA429D275", hash_generated_method = "86542C5257423536EE37AAD413F10E68")
     
 private static boolean isIpAddress(String domain) {
@@ -72,6 +70,8 @@ private static boolean isIpAddress(String domain) {
      * @param thisDomain The DNS domain name of the site being visited
      * @return True iff if there is a domain match as specified by RFC2818
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.514 -0500", hash_original_method = "DBB4EF5840B4656B4D7CD7498EF1A157", hash_generated_method = "B5D6BEEE5C50711516C06A63C9884CAB")
     
 private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
@@ -114,6 +114,8 @@ private static boolean matchIpAddress(X509Certificate certificate, String thisDo
      * @param thisDomain The DNS domain name of the site being visited
      * @return True iff if there is a domain match as specified by RFC2818
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.518 -0500", hash_original_method = "C83F44B9F19EF99C9FE0202DE345EC32", hash_generated_method = "744132E1B36703B77D181E917FFD7267")
     
 private static boolean matchDns(X509Certificate certificate, String thisDomain) {
@@ -234,6 +236,8 @@ public static boolean matchDns(String thisDomain, String thatDomain) {
      * wildcard match as specified by RFC2818-3.1. For example, f*.com must
      * match foo.com but not bar.com
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.527 -0500", hash_original_method = "1D471F2BF3CC1DAFB05659B887498BFC", hash_generated_method = "38B50B82DF4BA0374F8D009DAA3B4212")
     
 private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
@@ -256,13 +260,11 @@ private static boolean domainTokenMatch(String thisDomainToken, String thatDomai
     private final static String TAG = "DomainNameValidator";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.497 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
-
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.500 -0500", hash_original_field = "F06F6BE52D1AF076D79F1A84048E39C0", hash_generated_field = "C040F7E72494FCBA74A6440C651C9D2C")
 
     private static final boolean LOG_ENABLED = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.503 -0500", hash_original_field = "A194604B11DC96868B69180CE9EB583D", hash_generated_field = "D60747C22CE448F6B43389DBEE293EA4")
-
 
     private static final int ALT_DNS_NAME = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.505 -0500", hash_original_field = "0127BD18D2C5AC00745DDAAD2707820A", hash_generated_field = "8F4F08DC629818A48F022D07A771C3BD")

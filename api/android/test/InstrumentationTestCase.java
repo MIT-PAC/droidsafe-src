@@ -199,12 +199,16 @@ public void runTestOnUiThread(final Runnable r) throws Throwable {
     }
 
     // For backwards-compatibility after adding isRepetitive
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.676 -0500", hash_original_method = "73C1718FE30AA12508CCB537F6FDE014", hash_generated_method = "F684732A2DB48884CF3D52D339B7917A")
     
 private void runMethod(Method runMethod, int tolerance) throws Throwable {
         runMethod(runMethod, tolerance, false);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.678 -0500", hash_original_method = "FE4B0FEDC134C5D618CB046880639140", hash_generated_method = "84881099638F5CAC8A41158572946D5F")
     
 private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) throws Throwable {

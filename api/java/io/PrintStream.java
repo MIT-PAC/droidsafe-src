@@ -373,6 +373,8 @@ public PrintStream printf(Locale l, String format, Object... args) {
     /**
      * Put the line separator String onto the print stream.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.054 -0500", hash_original_method = "171496FE667133D572716C296277B927", hash_generated_method = "D3FD447AE5153B73BF6854A34B2A5107")
     
 private void newline() {

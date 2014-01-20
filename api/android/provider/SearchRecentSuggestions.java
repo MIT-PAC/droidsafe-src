@@ -85,6 +85,8 @@ public class SearchRecentSuggestions {
 
         public static final String DATE = "date";
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.510 -0400", hash_original_method = "BB858C1043D81D8CD66DDE6CA07AE15D", hash_generated_method = "BB858C1043D81D8CD66DDE6CA07AE15D")
         public SuggestionColumns ()
         {
@@ -161,6 +163,8 @@ public void saveRecentQuery(final String queryString, final String line2) {
     }
 
     // Visible for testing.
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.016 -0500", hash_original_method = "CEDACB2E58AE40EFB4E2590521E9B487", hash_generated_method = "5CB8BDED8225B2ACE71C54BBA8B1237C")
     
 void waitForSave() {
@@ -172,6 +176,8 @@ void waitForSave() {
         } while (sWritesInProgress.availablePermits() > 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.019 -0500", hash_original_method = "9709D87DB23792EAEE277FC562FC04A5", hash_generated_method = "FC6F5F01764156C7D856570F5C5CCFE4")
     
 private void saveRecentQueryBlocking(String queryString, String line2) {

@@ -6,9 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Date;
 
-
-
 public class ASN1GeneralizedTime extends DERGeneralizedTime {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.936 -0500", hash_original_method = "E338472F0350A218212107AE966181F8", hash_generated_method = "E338472F0350A218212107AE966181F8")
     
 ASN1GeneralizedTime(byte[] bytes)
@@ -29,7 +29,6 @@ public ASN1GeneralizedTime(String time)
     {
         super(time);
     }
-
     
 }
 

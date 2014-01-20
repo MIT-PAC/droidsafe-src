@@ -36,6 +36,8 @@ protected static SSLParametersImpl getDefault() throws KeyManagementException {
         return (SSLParametersImpl) result.clone();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.186 -0500", hash_original_method = "574233A58C89B66EABCD6146F3414560", hash_generated_method = "B3D2C268A30ECAABD5BE40F3FDCDA66A")
     
 private static X509KeyManager getDefaultKeyManager() {
@@ -46,6 +48,8 @@ private static X509KeyManager getDefaultKeyManager() {
         }
         return result;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.189 -0500", hash_original_method = "13213BA8EE4DE50C7C892474BADB9D4F", hash_generated_method = "B9B90604A9D81E165AF797EA4AD512AD")
     
 private static X509KeyManager createDefaultKeyManager() {
@@ -63,6 +67,8 @@ private static X509KeyManager createDefaultKeyManager() {
             return null;
         }
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.191 -0500", hash_original_method = "9ED10DF52B252A199408CA1F6F270418", hash_generated_method = "1D1362D88C00C884786EA558735B16AD")
     
 private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
@@ -90,6 +96,8 @@ public static X509TrustManager getDefaultTrustManager() {
         }
         return result;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.196 -0500", hash_original_method = "5432827BFD9253E13EAA8058A8BA3DE5", hash_generated_method = "EDB0DAE01EA27A68BB1732B91AB2FCBB")
     
 private static X509TrustManager createDefaultTrustManager() {
@@ -106,6 +114,8 @@ private static X509TrustManager createDefaultTrustManager() {
             return null;
         }
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.199 -0500", hash_original_method = "8DFF763FD3F8BB26A048698E510F2183", hash_generated_method = "2EA4E31C91A2B2C25C26E52769B9772C")
     
 private static X509TrustManager findX509TrustManager(TrustManager[] tms) {

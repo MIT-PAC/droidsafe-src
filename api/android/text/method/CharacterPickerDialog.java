@@ -64,6 +64,8 @@ public CharacterPickerDialog(Context context, View view,
         mInflater = LayoutInflater.from(context);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.218 -0500", hash_original_method = "E0AAB102B3ED3AF261F94C84219E8ECE", hash_generated_method = "AFAC94750396B597F8BB4B9A0515357A")
     
 @Override
@@ -88,6 +90,8 @@ public CharacterPickerDialog(Context context, View view,
     /**
      * Handles clicks on the character buttons.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.221 -0500", hash_original_method = "EEFA1E961CDBB58662ABBCDF41F1AD2A", hash_generated_method = "65313E400B2230ADE8F11B1477BB7E1A")
     
 public void onItemClick(AdapterView parent, View view, int position, long id) {
@@ -95,6 +99,8 @@ public void onItemClick(AdapterView parent, View view, int position, long id) {
         replaceCharacterAndClose(result);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.224 -0500", hash_original_method = "889637D7E351CCF8A657470FC2914F00", hash_generated_method = "36883B57129A6A258181D8CA0419954E")
     
 private void replaceCharacterAndClose(CharSequence replace) {
@@ -111,6 +117,8 @@ private void replaceCharacterAndClose(CharSequence replace) {
     /**
      * Handles clicks on the Cancel button.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.228 -0500", hash_original_method = "3104127334A31B48E0F0795A4514B3FB", hash_generated_method = "83AB2C617D4369F8739FE19B5CE2C164")
     
 public void onClick(View v) {

@@ -201,6 +201,8 @@ for(int i = 0;i < characters.length();i++)
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.273 -0400", hash_original_method = "4FB4FF088ED0C4D1CB4E59C58676D824", hash_generated_method = "8E9D337D5386C919F5772CEC1D08908C")
     final void resize(int newWidth, int newHeight) {
         addTaint(newHeight);
@@ -407,6 +409,8 @@ for(Key shiftKey : mShiftKeys)
         //return mShiftKeyIndices[0];
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.320 -0400", hash_original_method = "B148C84FA2E3F9F5A1A02C8218F6C9F6", hash_generated_method = "25D85FE0AFD5DF95B315D8C3F8F56B28")
     private void computeNearestNeighbors() {
         mCellWidth = (getMinWidth() + GRID_WIDTH - 1) / GRID_WIDTH;
@@ -498,6 +502,8 @@ Key varE985980EDE73F0AE27A28D587669E369_495507450 =         new Key(res, parent,
         //return new Key(res, parent, x, y, parser);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.341 -0400", hash_original_method = "0682C3FA4A49194161BF3A995754C5A7", hash_generated_method = "97A1C9A2834A8DBC5450342245B710F5")
     private void loadKeyboard(Context context, XmlResourceParser parser) {
         addTaint(parser.getTaint());
@@ -601,6 +607,8 @@ for(int i = 0;i < mShiftKeys.length;i++)
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.347 -0400", hash_original_method = "0E562BFCE15C1E3AC6B0A8EF6F890819", hash_generated_method = "DE299EB0C5B44C47D0ABD180617C2264")
     private void skipToEndOfRow(XmlResourceParser parser) throws XmlPullParserException, IOException {
         addTaint(parser.getTaint());
@@ -624,6 +632,8 @@ for(int i = 0;i < mShiftKeys.length;i++)
         //}
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.353 -0400", hash_original_method = "215B5FFF32E25431B5AACD69551E6B9E", hash_generated_method = "512CB2503541FE767D96F3AF79B154B2")
     private void parseKeyboardAttributes(Resources res, XmlResourceParser parser) {
         addTaint(parser.getTaint());
@@ -649,7 +659,9 @@ for(int i = 0;i < mShiftKeys.length;i++)
         // Original Method Too Long, Refer to Original Implementation
     }
     
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     static int getDimensionOrFraction(TypedArray a, int index, int base, int defValue) {
         TypedValue value = a.peekValue(index);
         if (value == null) return defValue;
@@ -893,6 +905,8 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //}
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.406 -0400", hash_original_method = "7B51E12ECAEC0CF836B26BA3AD3CC811", hash_generated_method = "9FE3FFC47FB4B80C123C478633E2D702")
          int[] parseCSV(String value) {
             addTaint(value.getTaint());

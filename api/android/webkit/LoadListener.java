@@ -64,6 +64,8 @@ public static int getNativeLoaderCount() {
      * be used. This is just for forward/back navigation to a POST
      * URL.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.137 -0500", hash_original_method = "595F3DC654AB4311FF581E0939656C44", hash_generated_method = "7D6FAB9E8F5DDBBF80A469620DC91B5A")
     
 static boolean willLoadFromCache(String url, long identifier) {
@@ -269,6 +271,8 @@ static boolean willLoadFromCache(String url, long identifier) {
     // between the network and the cache.
     private int mCacheRedirectCount;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.045 -0500", hash_original_method = "63FB01D41A0193C36F7BC9C3E9D1276B", hash_generated_method = "63FB01D41A0193C36F7BC9C3E9D1276B")
     
 LoadListener(Context context, BrowserFrame frame, String url,
@@ -300,6 +304,8 @@ LoadListener(Context context, BrowserFrame frame, String url,
      * We keep a count of refs to the nativeLoader so we do not create
      * so many LoadListeners that the GREFs blow up
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.047 -0500", hash_original_method = "E8BFBC0989CB1303890EF6ABB82F2DCB", hash_generated_method = "1D544F275B4EBCF75E4514D548A5000B")
     
 private void clearNativeLoader() {
@@ -410,19 +416,25 @@ public void handleMessage(Message msg) {
     /**
      * @return The loader's BrowserFrame.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.053 -0500", hash_original_method = "172B6AEABEB6A05CD87E0FF0F77BADEB", hash_generated_method = "172B6AEABEB6A05CD87E0FF0F77BADEB")
     
 BrowserFrame getFrame() {
         return mBrowserFrame;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.055 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4F4EBC54D108D66F416C93B46580E117")
     
 Context getContext() {
         return mContext;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.057 -0500", hash_original_method = "8DEF62308917FED7D5E9DE4FE979D5DE", hash_generated_method = "8DEF62308917FED7D5E9DE4FE979D5DE")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.057 -0500", hash_original_method = "8DEF62308917FED7D5E9DE4FE979D5DE", hash_generated_method = "8DEF62308917FED7D5E9DE4FE979D5DE")
     
 boolean isSynchronous() {
         return mSynchronous;
@@ -457,6 +469,8 @@ public void headers(Headers headers) {
     }
 
     // Does the header parsing work on the WebCore thread.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.069 -0500", hash_original_method = "311EC7904C0F96CC61CCD61A611678E4", hash_generated_method = "4978B88FAA58855B70B0EEC56D0FA3E6")
     
 private void handleHeaders(Headers headers) {
@@ -602,6 +616,8 @@ private void handleHeaders(Headers headers) {
     /**
      * @return True iff this loader is in the proxy-authenticate state.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.071 -0500", hash_original_method = "700C126D7DD3A2A28FA66689BEC1C959", hash_generated_method = "700C126D7DD3A2A28FA66689BEC1C959")
     
 boolean proxyAuthenticate() {
@@ -643,6 +659,8 @@ public void status(int majorVersion, int minorVersion,
     }
 
     // Handle the status callback on the WebCore thread.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.075 -0500", hash_original_method = "80BDEC9DD0BC19198E8FAA3CF681EF16", hash_generated_method = "E955BBF80A42B251F8968169994AE628")
     
 private void handleStatus(int major, int minor, int code, String reason) {
@@ -674,6 +692,8 @@ public void certificate(SslCertificate certificate) {
     }
 
     // Handle the certificate on the WebCore thread.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.079 -0500", hash_original_method = "0FA338360DC1BF86862C5325E0DDE15B", hash_generated_method = "43F42A4EA5CA8BE6560D4A806AB9DF11")
     
 private void handleCertificate(SslCertificate certificate) {
@@ -703,6 +723,8 @@ public void error(int id, String description) {
     }
 
     // Handle the error on the WebCore thread.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.084 -0500", hash_original_method = "FF98E8647B63FEBC8B925077CB2E6971", hash_generated_method = "3F9DE0D206C090FF89324BD9EF42ADA8")
     
 private void handleError(int id, String description) {
@@ -762,6 +784,8 @@ public void endData() {
     }
 
     // Handle the end of data.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.092 -0500", hash_original_method = "CDF3DE93E351C5A11A75DE0E367F817E", hash_generated_method = "7EAD288A2C050CA2890BF26FFBF721D9")
     
 private void handleEndData() {
@@ -847,7 +871,9 @@ private void handleEndData() {
 
     /* This method is called from CacheLoader when the initial request is
      * serviced by the Cache. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.094 -0500", hash_original_method = "986192BD953D202BDF33831C4485C789", hash_generated_method = "986192BD953D202BDF33831C4485C789")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.094 -0500", hash_original_method = "986192BD953D202BDF33831C4485C789", hash_generated_method = "986192BD953D202BDF33831C4485C789")
     
 void setCacheLoader(CacheLoader c) {
         mCacheLoader = c;
@@ -860,6 +886,8 @@ void setCacheLoader(CacheLoader c) {
      * @param headers for the request
      * @return true if cached response is used.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.097 -0500", hash_original_method = "0AD650AC52F38566687E74B5EF113675", hash_generated_method = "F79A2E5FA156440E467C6A61D6D61217")
     
 boolean checkCache(Map<String, String> headers) {
@@ -944,6 +972,8 @@ public boolean handleSslErrorRequest(SslError error) {
     }
 
     // Handle the ssl error on the WebCore thread.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.103 -0500", hash_original_method = "8A34681F6BA1F3EEE132C403DE00B59E", hash_generated_method = "1704C2821FE571DC0858607B8EBD0281")
     
 private void handleSslError(SslError error) {
@@ -959,6 +989,8 @@ private void handleSslError(SslError error) {
     /**
      * @return HTTP authentication realm or null if none.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.105 -0500", hash_original_method = "273C3FB8F6276DB18167E6647E9B9071", hash_generated_method = "273C3FB8F6276DB18167E6647E9B9071")
     
 String realm() {
@@ -973,6 +1005,8 @@ String realm() {
      * Returns true iff an HTTP authentication problem has
      * occured (credentials invalid).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.107 -0500", hash_original_method = "B53822BFF4A674DE454739734B590814", hash_generated_method = "EC617CC556BE1483D43B093E2F5B0359")
     
 boolean authCredentialsInvalid() {
@@ -985,6 +1019,8 @@ boolean authCredentialsInvalid() {
     /**
      * @return The last SSL error or null if there is none
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.109 -0500", hash_original_method = "D83DC2897E3C9B13E1B0E03447F2258A", hash_generated_method = "D83DC2897E3C9B13E1B0E03447F2258A")
     
 SslError sslError() {
@@ -995,6 +1031,8 @@ SslError sslError() {
      * Handles SSL error(s) on the way down from the user
      * (the user has already provided their feedback).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.111 -0500", hash_original_method = "98A7269FE5209374A8ED24F438AC19C3", hash_generated_method = "98A7269FE5209374A8ED24F438AC19C3")
     
 void handleSslErrorResponse(boolean proceed) {
@@ -1011,6 +1049,8 @@ void handleSslErrorResponse(boolean proceed) {
      * Uses user-supplied credentials to restart a request. If the credentials
      * are null, cancel the request.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.114 -0500", hash_original_method = "7E02E9AA12C4A958E94F9A413E55434A", hash_generated_method = "0665231E11D1B705C546F5C3CB2CBE70")
     
 void handleAuthResponse(String username, String password) {
@@ -1028,6 +1068,8 @@ void handleAuthResponse(String username, String password) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.116 -0500", hash_original_method = "D4EC792204E12F6CD4476F22DB2D7416", hash_generated_method = "23C15967EC87129DA65B4C170E58149C")
     
 void makeAuthResponse(String username, String password) {
@@ -1067,6 +1109,8 @@ void makeAuthResponse(String username, String password) {
      * @param headers
      * @param postData
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.118 -0500", hash_original_method = "0354530277F06C2F68A7F9A147112FDC", hash_generated_method = "0354530277F06C2F68A7F9A147112FDC")
     
 void setRequestData(String method, Map<String, String> headers, 
@@ -1079,6 +1123,8 @@ void setRequestData(String method, Map<String, String> headers,
     /**
      * @return The current URL associated with this load.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.120 -0500", hash_original_method = "50C2A5A94CFD2B09208EC5050A570E5D", hash_generated_method = "50C2A5A94CFD2B09208EC5050A570E5D")
     
 String url() {
@@ -1088,6 +1134,8 @@ String url() {
     /**
      * @return The current WebAddress associated with this load.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.122 -0500", hash_original_method = "C2839DA6285DEBF5C5C20951F1E9FC61", hash_generated_method = "C2839DA6285DEBF5C5C20951F1E9FC61")
     
 WebAddress getWebAddress() {
@@ -1097,6 +1145,8 @@ WebAddress getWebAddress() {
     /**
      * @return URL hostname (current URL).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.123 -0500", hash_original_method = "0451B8994B1846476A8FE8B0355ADDFF", hash_generated_method = "0451B8994B1846476A8FE8B0355ADDFF")
     
 String host() {
@@ -1110,6 +1160,8 @@ String host() {
     /**
      * @return The original URL associated with this load.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.126 -0500", hash_original_method = "BC027B9D5395B8E20CC57CD534FC36DC", hash_generated_method = "BC027B9D5395B8E20CC57CD534FC36DC")
     
 String originalUrl() {
@@ -1120,12 +1172,16 @@ String originalUrl() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.128 -0500", hash_original_method = "1FD4A483F618FB6B6B2EA6F438798B25", hash_generated_method = "1FD4A483F618FB6B6B2EA6F438798B25")
     
 long postIdentifier() {
         return mPostIdentifier;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.130 -0500", hash_original_method = "555C5182696D3D1E5A8F07F29E226BC9", hash_generated_method = "555C5182696D3D1E5A8F07F29E226BC9")
     
 void attachRequestHandle(RequestHandle requestHandle) {
@@ -1136,6 +1192,8 @@ void attachRequestHandle(RequestHandle requestHandle) {
         mRequestHandle = requestHandle;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.132 -0500", hash_original_method = "A03FA80E3F939CA589BDCCBFD92DE3E2", hash_generated_method = "A03FA80E3F939CA589BDCCBFD92DE3E2")
     
 void detachRequestHandle() {
@@ -1152,6 +1210,8 @@ void detachRequestHandle() {
      * downloading should be saved to a file and not sent to
      * WebCore.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.134 -0500", hash_original_method = "34F543213ABA35F3500E526ABE3EA0BF", hash_generated_method = "6650D383E607F28C1F77130139EBF1C3")
     
 void downloadFile() {
@@ -1178,18 +1238,24 @@ void downloadFile() {
      * when it has run out of disk space. In this situation, the download
      * can be resumed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.138 -0500", hash_original_method = "D1C1DC94D32429EE46F2E8034E6F3CAD", hash_generated_method = "D1C1DC94D32429EE46F2E8034E6F3CAD")
     
 void resetCancel() {
         mCancelled = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.140 -0500", hash_original_method = "AB4E07CAED8783333F5D8E2EFE2FEA5A", hash_generated_method = "AB4E07CAED8783333F5D8E2EFE2FEA5A")
     
 String mimeType() {
         return mMimeType;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.142 -0500", hash_original_method = "EDB0721EF3A307F050BF15E668A80271", hash_generated_method = "EDB0721EF3A307F050BF15E668A80271")
     
 String transferEncoding() {
@@ -1203,6 +1269,8 @@ String transferEncoding() {
      *
      * @ return full content size
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.144 -0500", hash_original_method = "A0A208846C45918947FC3EEE159224A3", hash_generated_method = "A0A208846C45918947FC3EEE159224A3")
     
 long contentLength() {
@@ -1210,6 +1278,8 @@ long contentLength() {
     }
 
     // Commit the headers if the status code is not a redirect.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.147 -0500", hash_original_method = "78D8A8AE22C18C73CE2907680A09633B", hash_generated_method = "8454BFF8CF771223F5CEFC6FBB76A80D")
     
 private void commitHeadersCheckRedirect() {
@@ -1230,6 +1300,8 @@ private void commitHeadersCheckRedirect() {
     }
 
     // This commits the headers without checking the response status code.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.149 -0500", hash_original_method = "8E8E66962C082FBF4981B6E1121BFDBD", hash_generated_method = "06B645531472C60F16D044A6250443F6")
     
 private void commitHeaders() {
@@ -1250,6 +1322,8 @@ private void commitHeaders() {
         setNativeResponse();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.152 -0500", hash_original_method = "E28F47114E6BDDF9FD429A699C881F5C", hash_generated_method = "B74395CDBED4557E00F3454E94232A1E")
     
 private void setNativeResponse() {
@@ -1264,6 +1338,8 @@ private void setNativeResponse() {
      * nativeReceivedResponse or nativeRedirectedToUrl
      * @return native response pointer
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.157 -0500", hash_original_method = "90DA669053E3EAB1E41208AD478B9563", hash_generated_method = "655B3796015A2475A063A7A7B1238571")
     
 private int createNativeResponse() {
@@ -1291,6 +1367,8 @@ private int createNativeResponse() {
      * Commit the load.  It should be ok to call repeatedly but only before
      * tearDown is called.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.160 -0500", hash_original_method = "6C3510E057E7F86D9E5BFE641B751A6D", hash_generated_method = "A3672F6EFBB3BADD1BB15C644CDA938C")
     
 private void commitLoad() {
@@ -1352,6 +1430,8 @@ private void commitLoad() {
      * Tear down the load. Subclasses should clean up any mess because of
      * cancellation or errors during the load.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.162 -0500", hash_original_method = "622A6BD0A40561F44F0949C5CF1F5483", hash_generated_method = "622A6BD0A40561F44F0949C5CF1F5483")
     
 void tearDown() {
@@ -1380,6 +1460,8 @@ void tearDown() {
      * Helper for getting the error ID.
      * @return errorID.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.164 -0500", hash_original_method = "209FBE9F3E1C7384DEBC7D7B19E27A8A", hash_generated_method = "CBB271F392776065AD5357F7DD052812")
     
 private int getErrorID() {
@@ -1390,6 +1472,8 @@ private int getErrorID() {
      * Return the error description.
      * @return errorDescription.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.166 -0500", hash_original_method = "D67F514368DCF056FAAB1F778CFC87BD", hash_generated_method = "4420A8222648D93A15CB5E56C33A0349")
     
 private String getErrorDescription() {
@@ -1399,6 +1483,8 @@ private String getErrorDescription() {
     /**
      * Notify the loader we encountered an error.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.168 -0500", hash_original_method = "E680E4717FCBA329FAA87BAD42E56CAC", hash_generated_method = "E680E4717FCBA329FAA87BAD42E56CAC")
     
 void notifyError() {
@@ -1414,6 +1500,8 @@ void notifyError() {
      * Pause the load. For example, if a plugin is unable to accept more data,
      * we pause reading from the request. Called directly from the WebCore thread.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.171 -0500", hash_original_method = "DFC23EFD31E5C4FF40E98CE1A64FD5ED", hash_generated_method = "DFC23EFD31E5C4FF40E98CE1A64FD5ED")
     
 void pauseLoad(boolean pause) {
@@ -1455,6 +1543,8 @@ public void cancel() {
      * Perform the actual redirection. This involves setting up the new URL,
      * informing WebCore and then telling the Network to start loading again.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.180 -0500", hash_original_method = "A28FBC4A594C62B1FB221C43DC1C2583", hash_generated_method = "96CCBC29EC9CB5B244DE46A72EA7EFD4")
     
 private void doRedirect() {
@@ -1583,7 +1673,9 @@ private void doRedirect() {
         }
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.185 -0500", hash_original_method = "F42460285C9091878E41158B4AED6A71", hash_generated_method = "756BFA1AE35C48D40769C48C08555D3E")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.185 -0500", hash_original_method = "F42460285C9091878E41158B4AED6A71", hash_generated_method = "756BFA1AE35C48D40769C48C08555D3E")
     
 void parseContentTypeHeader(String contentType) {
         if (DebugFlags.LOAD_LISTENER) {
@@ -1645,6 +1737,8 @@ void parseContentTypeHeader(String contentType) {
      * strongest one. If there are several schemes of the same
      * strength, we pick the one that comes first.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.188 -0500", hash_original_method = "AE0FC74CC8A0BC926B5DCE69D72EC94D", hash_generated_method = "37D6D0643FD2EA6EA0B729BE9E908B94")
     
 private HttpAuthHeader parseAuthHeader(String header) {
@@ -1725,6 +1819,8 @@ private HttpAuthHeader parseAuthHeader(String header) {
      *
      * @return True iff the callback should be ignored.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.191 -0500", hash_original_method = "977413F84EEA9D9E0B7BBB5D674FC9E7", hash_generated_method = "C193B708AD165A660F76A53E245457E1")
     
 private boolean ignoreCallbacks() {
@@ -1736,6 +1832,8 @@ private boolean ignoreCallbacks() {
     /**
      * Sets the current URL associated with this load.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.193 -0500", hash_original_method = "B1CFB6FACF3C8464BDC576EEF15EE2EE", hash_generated_method = "B1CFB6FACF3C8464BDC576EEF15EE2EE")
     
 void setUrl(String url) {
@@ -1759,6 +1857,8 @@ void setUrl(String url) {
      * addition, tries to guess the MIME type based on the extension.
      *
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.195 -0500", hash_original_method = "EF260C0902D2E84B94B185FE48F20D51", hash_generated_method = "8021CD6B00DDAD56B52A7509EA9C07EF")
     
 private void guessMimeType() {
@@ -1783,6 +1883,8 @@ private void guessMimeType() {
     /**
      * guess MIME type based on the file extension.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.197 -0500", hash_original_method = "2EA3CE69FA8B837FDAA4CA6DE51D2499", hash_generated_method = "AAE65D57329207CA6E43888EEC2755F7")
     
 private String guessMimeTypeFromExtension(String url) {
@@ -1799,6 +1901,8 @@ private String guessMimeTypeFromExtension(String url) {
      * Either send a message to ourselves or queue the message if this is a
      * synchronous load.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.200 -0500", hash_original_method = "4C14C55105A23524352CD131708D205A", hash_generated_method = "C2051A12288BDA05573D45CB4F842EE0")
     
 private void sendMessageInternal(Message msg) {
@@ -1812,7 +1916,9 @@ private void sendMessageInternal(Message msg) {
     /**
      * Cycle through our messages for synchronous loads.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.202 -0500", hash_original_method = "84B3C85DEED8CE51C1D689DF257AD721", hash_generated_method = "D92F4491524734E2C39072D095E8A5BB")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.202 -0500", hash_original_method = "84B3C85DEED8CE51C1D689DF257AD721", hash_generated_method = "D92F4491524734E2C39072D095E8A5BB")
     
 void loadSynchronousMessages() {
         if (DebugFlags.LOAD_LISTENER && !mSynchronous) {
@@ -1844,6 +1950,8 @@ void loadSynchronousMessages() {
      * @param encoding HTTP encoding.
      * @return The native response pointer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.205 -0500", hash_original_method = "4DA58223C4F20A38192632BBFEEE57C8", hash_generated_method = "9F1AF78FB5A9C9BCEDE3F196974EEDE2")
     
     private int nativeCreateResponse(String url, int statusCode,
@@ -1865,6 +1973,8 @@ void loadSynchronousMessages() {
      * @param key String key.
      * @param val String value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.209 -0500", hash_original_method = "BA6D20A53269A42AE8656C6EBDDFC70F", hash_generated_method = "844C0A50B5716AF87BD34EEB77E0CB7D")
     
     private void nativeSetResponseHeader(int nativeResponse, String key,
@@ -1879,6 +1989,8 @@ void loadSynchronousMessages() {
      * Dispatch the response.
      * @param nativeResponse The native pointer.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.212 -0500", hash_original_method = "41C6950B308582DB9C9A99E22648CC08", hash_generated_method = "CB1212C9E00CED60E958D8E65D773551")
     
     private void nativeReceivedResponse(int nativeResponse){
@@ -1891,6 +2003,8 @@ void loadSynchronousMessages() {
      * @param data Byte array of data.
      * @param length Number of objects in data.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.216 -0500", hash_original_method = "CB7AF973B7AC5B91CFB8AF007E1C0D32", hash_generated_method = "035167774DD7F630D943C0A2DDCA9658")
     
     private void nativeAddData(byte[] data, int length){
@@ -1902,12 +2016,16 @@ void loadSynchronousMessages() {
     /**
      * Tell the loader it has finished.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.220 -0500", hash_original_method = "49549DEACC297430F7E9805D3678A016", hash_generated_method = "AA06E82B2FBF8034810ACC4CD2880391")
     
     private void nativeFinished(){
     	//Formerly a native method
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.190 -0400", hash_original_method = "33F440D9D1697DCCED15CDDD044058A8", hash_generated_method = "29EA735C0797FDF2B21BDCB4EDCF36A9")
     private String nativeRedirectedToUrl(String baseUrl,
             String redirectTo, int nativeResponse) {
@@ -1922,6 +2040,8 @@ void loadSynchronousMessages() {
      * @param desc
      * @param failingUrl The url that failed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.227 -0500", hash_original_method = "BCCFE0CFBD3782D8BEDE6CB5D0F9DEA3", hash_generated_method = "CD9E93ECC177D9B9E4A21A91E47BA028")
     
     private void nativeError(int id, String desc, String failingUrl){

@@ -135,6 +135,8 @@ public TBSCertificate(int version, BigInteger serialNumber,
         this.extensions = extensions;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.297 -0500", hash_original_method = "A222BEBABFC582354A181FFF7432BD39", hash_generated_method = "9B55C44062FA5F2C6983C28BB4BD114C")
     
 private TBSCertificate(int version, BigInteger serialNumber,

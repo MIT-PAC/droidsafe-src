@@ -193,6 +193,8 @@ public boolean onKey(View v, int keyCode, KeyEvent event) {
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.074 -0500", hash_original_method = "E67C1B003E378A3103858A8D234C2EBA", hash_generated_method = "14C21BC89B209B5CE3F5599F8409CB03")
     
 private int measureContentWidth(ListAdapter adapter) {
@@ -416,6 +418,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
             return convertView;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.131 -0500", hash_original_method = "8514B841FB70F13278F6FFF144403E57", hash_generated_method = "8514B841FB70F13278F6FFF144403E57")
         
 void findExpandedIndex() {

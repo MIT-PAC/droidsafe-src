@@ -14,6 +14,8 @@ public final class AttributeValue {
     /**
      * Checks if the string is PrintableString (see X.680)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.069 -0500", hash_original_method = "0119351D8B397CC03524377768328668", hash_generated_method = "694F8F6CDA78A953478E162FD1FBA255")
     
 private static boolean isPrintableString(String str) {
@@ -186,6 +188,8 @@ public void appendQEString(StringBuilder sb) {
      * 4) according to the requirement to be RFC 1779 compatible:
      *    '#' char is escaped in any position
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.079 -0500", hash_original_method = "63614CD0FCED93BBCAC192EC682E4A51", hash_generated_method = "A76D80282249E7E9D8EEBB57A30E4E4A")
     
 private String makeEscaped(String name) {

@@ -9,10 +9,14 @@ import java.util.ArrayList;
 
 public class WebBackForwardList implements Cloneable, Serializable {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static synchronized void restoreIndex(int nativeFrame,
             int index) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClose(int nativeFrame) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.270 -0500", hash_original_field = "9D5DB06DCD458CB1FB573ED28600B2B5", hash_generated_field = "0311A696B59887F86EF6109DBE0484CC")
@@ -31,7 +35,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
     /**
      * Construct a back/forward list used by clients of WebView.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.279 -0500", hash_original_method = "E1648D2B4FFD2451814681FC87C9187A", hash_generated_method = "E1648D2B4FFD2451814681FC87C9187A")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.279 -0500", hash_original_method = "E1648D2B4FFD2451814681FC87C9187A", hash_generated_method = "E1648D2B4FFD2451814681FC87C9187A")
     
 WebBackForwardList(CallbackProxy proxy) {
         mCurrentIndex = -1;
@@ -93,7 +99,9 @@ public synchronized int getSize() {
      * Mark the back/forward list as having a pending clear. This is used on the
      * UI side to mark the list as being invalid during the clearHistory method.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.289 -0500", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "265426AB37C57F06AF49BB0D5D845350")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.289 -0500", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "265426AB37C57F06AF49BB0D5D845350")
     
 synchronized void setClearPending() {
         mClearPending = true;
@@ -103,7 +111,9 @@ synchronized void setClearPending() {
      * Return the status of the clear flag. This is used on the UI side to
      * determine if the list is valid for checking things like canGoBack.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.291 -0500", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "51544C5429B725FF54BB957B856943E7")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.291 -0500", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "51544C5429B725FF54BB957B856943E7")
     
 synchronized boolean getClearPending() {
         return mClearPending;
@@ -116,7 +126,9 @@ synchronized boolean getClearPending() {
      * reading the array or the current index.
      * @param item A new history item.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.293 -0500", hash_original_method = "CF7A7A96F9B6499845E300F4AB5BE8D8", hash_generated_method = "B826C2CCAE61A684F8C94C27EC0AF85A")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.293 -0500", hash_original_method = "CF7A7A96F9B6499845E300F4AB5BE8D8", hash_generated_method = "B826C2CCAE61A684F8C94C27EC0AF85A")
     
 synchronized void addHistoryItem(WebHistoryItem item) {
         // Update the current position because we are going to add the new item
@@ -141,7 +153,9 @@ synchronized void addHistoryItem(WebHistoryItem item) {
     /**
      * Clear the back/forward list. Called from the WebCore thread.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.296 -0500", hash_original_method = "86E2ECBC2C9AC2A7DC658CB964CA32CA", hash_generated_method = "D00D082CF22D68D1D1DBD6A8B53C3AC4")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.296 -0500", hash_original_method = "86E2ECBC2C9AC2A7DC658CB964CA32CA", hash_generated_method = "D00D082CF22D68D1D1DBD6A8B53C3AC4")
     
 synchronized void close(int nativeFrame) {
         // Clear the array first because nativeClose will call addHistoryItem
@@ -154,6 +168,8 @@ synchronized void close(int nativeFrame) {
     }
 
     /* Remove the item at the given index. Called by JNI only. */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.299 -0500", hash_original_method = "7D1DAF4A518C34619CF3BEB7A8646574", hash_generated_method = "06282ECD6E28461C500CF1554CF9B53E")
     
 private synchronized void removeHistoryItem(int index) {
@@ -199,7 +215,9 @@ protected synchronized WebBackForwardList clone() {
      * Set the new history index.
      * @param newIndex The new history index.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.304 -0500", hash_original_method = "CB94BF4CFE461E0C4E4AA1BED49D9ED0", hash_generated_method = "7B34BBDF79729C158A1F3FEBD86E5361")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.304 -0500", hash_original_method = "CB94BF4CFE461E0C4E4AA1BED49D9ED0", hash_generated_method = "7B34BBDF79729C158A1F3FEBD86E5361")
     
 synchronized void setCurrentIndex(int newIndex) {
         mCurrentIndex = newIndex;

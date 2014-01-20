@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 import libcore.icu.RuleBasedCollatorICU;
 
 public class RuleBasedCollator extends Collator {
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.510 -0500", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "31FBA21C05DBD02C02879BE90D845185")
     
 RuleBasedCollator(RuleBasedCollatorICU wrapper) {
@@ -32,6 +34,8 @@ RuleBasedCollator(RuleBasedCollatorICU wrapper) {
      *             if {@code rules} contains rules with invalid collation rule
      *             syntax.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.513 -0500", hash_original_method = "A2DABBE445FB3F5820A862D094AFC471", hash_generated_method = "840BD50A6031165BD7BE803F46CCD2A6")
     
 public RuleBasedCollator(String rules) throws ParseException {
@@ -64,6 +68,8 @@ public RuleBasedCollator(String rules) throws ParseException {
      *            the source character iterator.
      * @return a {@code CollationElementIterator} for {@code source}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.516 -0500", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "19E5E258C162D2AA8B88185575754404")
     
@@ -81,6 +87,8 @@ public CollationElementIterator getCollationElementIterator(CharacterIterator so
      *            the source string.
      * @return the {@code CollationElementIterator} for {@code source}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.518 -0500", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "AD1B8AD7AFE2E9C0E340482B3A9D095A")
     
@@ -103,6 +111,8 @@ public CollationElementIterator getCollationElementIterator(String source) {
      *
      * @return the collation rules.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.520 -0500", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "883506D97BFF401123E80AC480D00700")
     
@@ -117,6 +127,8 @@ public String getRules() {
      * @return a shallow copy of this collator.
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.523 -0500", hash_original_method = "FBA963D7A9FB0658F4932AD387478243", hash_generated_method = "BD7CF7AD8C750BA12A60D8708AABA86F")
     
 @Override
@@ -146,6 +158,8 @@ public String getRules() {
      *         positive value depending on whether {@code source} is less than,
      *         equivalent to, or greater than {@code target}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.526 -0500", hash_original_method = "6590B43BC0A35CBDE76A6B18FA6459C5", hash_generated_method = "0DF60C39C52DB2B5C9099A792AE49CAE")
     
 @Override
@@ -163,6 +177,8 @@ public String getRules() {
      *            the specified source text.
      * @return the {@code CollationKey} for the given source text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.528 -0500", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "FF55CC53E57881B8F6A0E0C8E176DD06")
     
@@ -171,6 +187,8 @@ public String getRules() {
         return icuColl.getCollationKey(source);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.531 -0500", hash_original_method = "B4EBBD96DB20771CAD5EB8825D399E3B", hash_generated_method = "FBDB92B114BF8DE843F423E76B85435F")
     
 @Override
@@ -190,6 +208,8 @@ public String getRules() {
      *         {@code RuleBasedCollator}; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.533 -0500", hash_original_method = "1D9A70F4229C9ABE49C60D2B9C1F5E2A", hash_generated_method = "508188801AE74624F2F85A8DB46E72E5")
     
 @Override

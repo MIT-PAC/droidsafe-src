@@ -45,6 +45,8 @@ public static void checkPermission(Permission permission) throws AccessControlEx
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.636 -0500", hash_original_method = "08126716CBB79243816C8A8ABDB96EAD", hash_generated_method = "91BA942030296B2E25EACC4F1BE7B881")
     
 public static AccessControlContext getContext() { return new AccessControlContext(null); }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.617 -0500", hash_original_method = "933F644DAAB02DBBD976309C952EDFF1", hash_generated_method = "3A3592FC6CB53D901FE90FAD76D10DED")
     
 private AccessController() { }

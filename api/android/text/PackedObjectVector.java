@@ -117,6 +117,8 @@ public int
         return mColumns;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.163 -0500", hash_original_method = "6242267CE6FD4DA11CE3B8DDDCD83B59", hash_generated_method = "18015842C631FB5BDF5FCC9C70E615C3")
     
 private void
@@ -136,6 +138,8 @@ private void
         mValues = newvalues;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.166 -0500", hash_original_method = "31F6FBDDD7D0FB1F20A58E1CEB067332", hash_generated_method = "B0D8EB4F9E4A1F89ADEE63DF0ABA44D4")
     
 private void

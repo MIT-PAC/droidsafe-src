@@ -17,17 +17,11 @@ import org.bouncycastle.math.ec.ECAlgorithms;
 import org.bouncycastle.math.ec.ECConstants;
 import org.bouncycastle.math.ec.ECPoint;
 
-
-
-
-
-
 public class ECDSASigner implements ECConstants, DSA {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.994 -0500", hash_original_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6", hash_generated_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6")
 
     ECKeyParameters key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.996 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
-
 
     SecureRandom    random;
     
@@ -162,6 +156,8 @@ public boolean verifySignature(
         return v.equals(r);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.007 -0500", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "DB253561ABCDFC0B002646CAA76B0434")
     
 private BigInteger calculateE(BigInteger n, byte[] message)
@@ -183,7 +179,6 @@ private BigInteger calculateE(BigInteger n, byte[] message)
             return trunc;
         }
     }
-
     
 }
 

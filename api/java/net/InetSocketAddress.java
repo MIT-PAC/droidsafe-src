@@ -117,6 +117,8 @@ public InetSocketAddress(String host, int port) {
      * Internal constructor for InetSocketAddress(String, int) and
      * createUnresolved(String, int);
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.638 -0500", hash_original_method = "10794513C1E3AAEE9C124882A7C67C11", hash_generated_method = "10794513C1E3AAEE9C124882A7C67C11")
     
 InetSocketAddress(String hostname, int port, boolean needResolved) {
@@ -262,6 +264,8 @@ public final boolean isUnresolved() {
         return addr.hashCode() + port;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.663 -0500", hash_original_method = "A70A079C45F63B1946A4E7EB22F91BB3", hash_generated_method = "A4B6EECE5542ADD758A9646D60C4E193")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

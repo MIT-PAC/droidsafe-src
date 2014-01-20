@@ -59,6 +59,8 @@ public ScheduledThreadPoolExecutor(int corePoolSize) {
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @throws NullPointerException if {@code threadFactory} is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.039 -0500", hash_original_method = "ABDCD4F10C893856EFE26F2C021D677A", hash_generated_method = "892194900DE3EA2EBEB941F9ECC2BB94")
     
 public ScheduledThreadPoolExecutor(int corePoolSize,
@@ -78,6 +80,8 @@ public ScheduledThreadPoolExecutor(int corePoolSize,
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @throws NullPointerException if {@code handler} is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.042 -0500", hash_original_method = "15AFC792EAFAB8847ABF7F7AA1CDCAAC", hash_generated_method = "98D5DA14F077B7BB106076B3A41BFB2D")
     
 public ScheduledThreadPoolExecutor(int corePoolSize,
@@ -100,6 +104,8 @@ public ScheduledThreadPoolExecutor(int corePoolSize,
      * @throws NullPointerException if {@code threadFactory} or
      *         {@code handler} is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.045 -0500", hash_original_method = "FA0219710575675561B4DC7EAFAB1D1D", hash_generated_method = "F65B3DEBD2C9206A45EB1AC4993FE24B")
     
 public ScheduledThreadPoolExecutor(int corePoolSize,
@@ -112,6 +118,8 @@ public ScheduledThreadPoolExecutor(int corePoolSize,
     /**
      * Returns current nanosecond time.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.978 -0500", hash_original_method = "5D4518F727B3B1C5CE98EBC039D9AF6B", hash_generated_method = "5086D8F7DF5A22081C0AACC30CB43003")
     
 final long now() {
@@ -124,6 +132,8 @@ final long now() {
      *
      * @param periodic true if this task periodic, false if delayed
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.021 -0500", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "43122228A318CAFA2BE5FD8EB8B7119A")
     
 boolean canRunInCurrentRunState(boolean periodic) {
@@ -143,6 +153,8 @@ boolean canRunInCurrentRunState(boolean periodic) {
      *
      * @param task the task
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.023 -0500", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "A12A0E4E338A558BFD3C45A30B84EC64")
     
 private void delayedExecute(RunnableScheduledFuture<?> task) {
@@ -165,6 +177,8 @@ private void delayedExecute(RunnableScheduledFuture<?> task) {
      *
      * @param task the task
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.026 -0500", hash_original_method = "0C685B50A598B045820F5EF901D2AED6", hash_generated_method = "0C685B50A598B045820F5EF901D2AED6")
     
 void reExecutePeriodic(RunnableScheduledFuture<?> task) {
@@ -181,6 +195,8 @@ void reExecutePeriodic(RunnableScheduledFuture<?> task) {
      * Cancels and clears the queue of all tasks that should not be run
      * due to shutdown policy.  Invoked within super.shutdown.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.029 -0500", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "0EA178E08FD7931EFBC285084C821B60")
     
 @Override void onShutdown() {
@@ -212,6 +228,8 @@ void reExecutePeriodic(RunnableScheduledFuture<?> task) {
         tryTerminate();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.763 -0400", hash_original_method = "2D7E8C9964120FA3F638C1BFE2958CB1", hash_generated_method = "5F49DDDEC173AD0B54FE56A5933B2845")
     protected <V> RunnableScheduledFuture<V> decorateTask(
         Runnable runnable, RunnableScheduledFuture<V> task) {
@@ -239,6 +257,8 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
     /**
      * Returns the trigger time of a delayed action.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.047 -0500", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "1563039CF8B017832FF7961F544396AE")
     
 private long triggerTime(long delay, TimeUnit unit) {
@@ -248,6 +268,8 @@ private long triggerTime(long delay, TimeUnit unit) {
     /**
      * Returns the trigger time of a delayed action.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.049 -0500", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "43548DFC0EE197F487A673EC89A4A123")
     
 long triggerTime(long delay) {
@@ -262,6 +284,8 @@ long triggerTime(long delay) {
      * not yet been, while some other task is added with a delay of
      * Long.MAX_VALUE.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.051 -0500", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "F5F77E79FD679044009DB5ACA7481F3F")
     
 private long overflowFree(long delay) {
@@ -294,6 +318,8 @@ public ScheduledFuture<?> schedule(Runnable command,
         return t;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.765 -0400", hash_original_method = "3CA816B6292CC3DABD4A8E9E190B6332", hash_generated_method = "378062D887D87CBDB8AFDA6DE196F7A4")
     public <V> ScheduledFuture<V> schedule(Callable<V> callable,
                                            long delay,
@@ -329,6 +355,8 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
      * @throws NullPointerException       {@inheritDoc}
      * @throws IllegalArgumentException   {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.060 -0500", hash_original_method = "8D8E5BFEEBAD4838EB16FA502AD719D4", hash_generated_method = "3EA20E3F4382D0EDE6092893EF206FDF")
     
 public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,
@@ -355,6 +383,8 @@ public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,
      * @throws NullPointerException       {@inheritDoc}
      * @throws IllegalArgumentException   {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.062 -0500", hash_original_method = "F8BFEFA210F26533C5765CF5137E2FD3", hash_generated_method = "80657F904A418F9ACEEDC8127E1116FB")
     
 public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
@@ -396,6 +426,8 @@ public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
      *         executor has been shut down
      * @throws NullPointerException {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.065 -0500", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "E3A52ADE61F54682CF44ABE8A3326258")
     
 public void execute(Runnable command) {
@@ -408,12 +440,16 @@ public void execute(Runnable command) {
      * @throws RejectedExecutionException {@inheritDoc}
      * @throws NullPointerException       {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.067 -0500", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "3800342DFE8696C11E2AE454E3078C85")
     
 public Future<?> submit(Runnable task) {
         return schedule(task, 0, TimeUnit.NANOSECONDS);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.767 -0400", hash_original_method = "A2BAF492547813A1B4B6DC556E74F888", hash_generated_method = "CAC525EA0E485EE36D0C77239CB125EE")
     public <T> Future<T> submit(Runnable task, T result) {
         addTaint(result.getTaint());
@@ -427,6 +463,8 @@ Future<T> var5F143B3617D15E425694BCB00707B794_1636405938 =         schedule(Exec
                         //0, TimeUnit.NANOSECONDS);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.768 -0400", hash_original_method = "7532879CEC1557BEB821686E164CE854", hash_generated_method = "1F446E1DBA15F7EB3F5AB789BFCC5574")
     public <T> Future<T> submit(Callable<T> task) {
         addTaint(task.getTaint());
@@ -469,6 +507,8 @@ public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
      * @return {@code true} if will continue after shutdown
      * @see #setContinueExistingPeriodicTasksAfterShutdownPolicy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.077 -0500", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "3948A3ACE4F6203C67D666D3E68B424A")
     
@@ -508,6 +548,8 @@ public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
      * @return {@code true} if will execute after shutdown
      * @see #setExecuteExistingDelayedTasksAfterShutdownPolicy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.081 -0500", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "D15EDED9EC9A06D04D037B40461AB525")
     
@@ -524,7 +566,9 @@ public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
      * @see #getRemoveOnCancelPolicy
      * @since 1.7
      */
-    /*public*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.084 -0500", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "E2D3F1695A01B0F9F9B0921F1BAF9960")
+    /*public*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.084 -0500", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "E2D3F1695A01B0F9F9B0921F1BAF9960")
     
 void setRemoveOnCancelPolicy(boolean value) { // android-changed
         removeOnCancel = value;
@@ -540,7 +584,9 @@ void setRemoveOnCancelPolicy(boolean value) { // android-changed
      * @see #setRemoveOnCancelPolicy
      * @since 1.7
      */
-    /*public*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*public*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.086 -0500", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "5620BD1526ADD0251D340D253A9E0017")
     
 boolean getRemoveOnCancelPolicy() { // android-changed
@@ -699,6 +745,8 @@ public boolean isPeriodic() {
         /**
          * Sets the next time to run for a periodic task.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.011 -0500", hash_original_method = "AD0F8B1CE8B17F01519D37E93CCE792B", hash_generated_method = "84CD17B038E98EC06CAE4DFAB9D41BCD")
         
 private void setNextRunTime() {
@@ -758,6 +806,8 @@ public void run() {
 
         private final Condition available = lock.newCondition();
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.774 -0400", hash_original_method = "5917AE9375A9F0D7E6AA869E9A88CC5E", hash_generated_method = "5917AE9375A9F0D7E6AA869E9A88CC5E")
         public DelayedWorkQueue ()
         {
@@ -767,6 +817,8 @@ public void run() {
         /**
          * Set f's heapIndex if it is a ScheduledFutureTask.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.113 -0500", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "18070A55AC6452590B1CFCDCCF04E6BB")
         
 private void setIndex(RunnableScheduledFuture f, int idx) {
@@ -778,6 +830,8 @@ private void setIndex(RunnableScheduledFuture f, int idx) {
          * Sift element added at bottom up to its heap-ordered spot.
          * Call only when holding lock.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.116 -0500", hash_original_method = "82039C4DF7CA25BEE85708617CA17C0A", hash_generated_method = "BBE1D43AB052D751607921804C6D353A")
         
 private void siftUp(int k, RunnableScheduledFuture key) {
@@ -798,6 +852,8 @@ private void siftUp(int k, RunnableScheduledFuture key) {
          * Sift element added at top down to its heap-ordered spot.
          * Call only when holding lock.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.119 -0500", hash_original_method = "2B1F11A0F086CDEBFE52E8E81BF54F43", hash_generated_method = "9B6FC43D5E854AA12235EBDC0D9134EC")
         
 private void siftDown(int k, RunnableScheduledFuture key) {
@@ -821,6 +877,8 @@ private void siftDown(int k, RunnableScheduledFuture key) {
         /**
          * Resize the heap array.  Call only when holding lock.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.121 -0500", hash_original_method = "A3FC13DF1E683960EBCF25B1C68B6117", hash_generated_method = "30891C70FD2F977FC1621D90F9DB3D9C")
         
 private void grow() {
@@ -834,6 +892,8 @@ private void grow() {
         /**
          * Find index of given object, or -1 if absent
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.124 -0500", hash_original_method = "C580641A4A2388B58215BACCB42FFCE3", hash_generated_method = "EFFB58FCEBC512A5D266AB90B7608F70")
         
 private int indexOf(Object x) {
@@ -979,6 +1039,8 @@ public boolean offer(Runnable e, long timeout, TimeUnit unit) {
          * holding lock.
          * @param f the task to remove and return
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.153 -0500", hash_original_method = "95AFA75D0998C104C226840186514FC9", hash_generated_method = "A4C2EED943B41B751F9ED084A5D45341")
         
 private RunnableScheduledFuture finishPoll(RunnableScheduledFuture f) {
@@ -1108,6 +1170,8 @@ public void clear() {
          * Return and remove first element only if it is expired.
          * Used only by drainTo.  Call only when holding lock.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.168 -0500", hash_original_method = "2FE630D35A7B40B0A6753A3386B27535", hash_generated_method = "84F92E20F9A31E5E6E1F47A404965C54")
         
 private RunnableScheduledFuture pollExpired() {
@@ -1275,6 +1339,8 @@ public Iterator<Runnable> iterator() {
      *
      * @return the task queue
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.093 -0500", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "14F2FC0C0EDEB99502501B879860D8E2")
     

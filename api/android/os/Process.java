@@ -22,12 +22,18 @@ class ZygoteStartFailedEx extends Exception {
      * Something prevented the zygote process startup from happening normally
      */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.590 -0500", hash_original_method = "ED275066D7155C9928305EEFEFCB430D", hash_generated_method = "ED275066D7155C9928305EEFEFCB430D")
     
 ZygoteStartFailedEx() {}
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.593 -0500", hash_original_method = "7E7EBE30F413F048DFD1A8075A4667DF", hash_generated_method = "7E7EBE30F413F048DFD1A8075A4667DF")
     
 ZygoteStartFailedEx(String s) {super(s);}
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.595 -0500", hash_original_method = "52F849A7EB3457C94980CDA061114152", hash_generated_method = "52F849A7EB3457C94980CDA061114152")
     
 ZygoteStartFailedEx(Throwable cause) {super(cause);}
@@ -88,6 +94,8 @@ public static final ProcessStartResult start(final String processClass,
      * Tries to open socket to Zygote process if not already open. If
      * already open, does nothing.  May block and retry.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.691 -0500", hash_original_method = "E2E38A09C125F42D0156C70D28A0D14A", hash_generated_method = "2B73A6BB9617147F2ACA4FA0B0C80426")
     
 private static void openZygoteSocketIfNeeded() 

@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.038 -0500", hash_original_method = "03D8D114610C5C7BBB7B2EABDE9E86BE", hash_generated_method = "8256C40C7AB8D0660C4B957D37528128")
     
 static ReadOnlyShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
@@ -21,6 +20,8 @@ static ReadOnlyShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.041 -0500", hash_original_method = "DA0F6B028B84C196FFD1459A256816D4", hash_generated_method = "DA0F6B028B84C196FFD1459A256816D4")
     
 ReadOnlyShortArrayBuffer(int capacity, short[] backingArray, int arrayOffset) {
@@ -110,7 +111,6 @@ ReadOnlyShortArrayBuffer(int capacity, short[] backingArray, int arrayOffset) {
     public ShortBuffer slice() {
         return new ReadOnlyShortArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

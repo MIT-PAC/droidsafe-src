@@ -42,6 +42,8 @@ public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativ
         return new HTML5VideoViewProxy(webViewCore.getWebView(), nativePtr);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSendSurfaceTexture(SurfaceTexture texture,
             int baseLayer, int videoLayerId, int textureName,
             int playerState) {
@@ -115,6 +117,8 @@ public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativ
      * @param webView is the WebView that hosts the video.
      * @param nativePtr is the C++ pointer to the MediaPlayerPrivate object.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.369 -0500", hash_original_method = "3F3B5BEC7CE790314D5D416DECF5ACFD", hash_generated_method = "7C6CB4284404AF6DA1812629649587DD")
     
 private HTML5VideoViewProxy(WebView webView, int nativePtr) {
@@ -266,6 +270,8 @@ public void onTimeupdate() {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.389 -0400", hash_original_method = "1A016E6492F3E166AEDA862A5517C526", hash_generated_method = "33018A9ACDFEDC13B4E98D7147E35B5E")
     private void createWebCoreHandler() {
         mWebCoreHandler = new Handler() {
@@ -307,6 +313,8 @@ public void onTimeupdate() {
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.378 -0500", hash_original_method = "76142FB417205DB77C8AC002D1DDBF45", hash_generated_method = "E35C68CC02047118323E86A2DFC8DC13")
     
 private void doSetPoster(Bitmap poster) {
@@ -320,6 +328,8 @@ private void doSetPoster(Bitmap poster) {
         mWebCoreHandler.sendMessage(msg);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.380 -0500", hash_original_method = "16EE14075D106C858D6DFA77C5B90D85", hash_generated_method = "218E0716F6D8C845B6B80057F56B1B64")
     
 private void sendTimeupdate() {
@@ -370,6 +380,8 @@ public void seek(int time) {
     
     private static final class VideoPlayer {
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.253 -0500", hash_original_method = "2C97FA1745D17B93B94376FB01C85A2A", hash_generated_method = "6DA8CF7CD9F055C10800A4AB57037C28")
         
 private static void setPlayerBuffering(boolean playerBuffering) {
@@ -563,6 +575,8 @@ public static void end() {
         // identify the exact layer on the UI thread to use the SurfaceTexture.
         private static int mBaseLayer = 0;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.102 -0400", hash_original_method = "9A68A6C42721A074DDF281539068301A", hash_generated_method = "9A68A6C42721A074DDF281539068301A")
         public VideoPlayer ()
         {
@@ -715,6 +729,8 @@ public boolean handleSslErrorRequest(SslError error) {
             return false;
         }
         // Tears down the poster bytes stream. Called on network thread.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.358 -0500", hash_original_method = "1FB179217FC31AC7E38E0A4A1EABBB3F", hash_generated_method = "2A18B39EBB4788FD1F28A4B30FECF306")
         
 private void cleanup() {
@@ -730,6 +746,8 @@ private void cleanup() {
         }
 
         // Queue management methods. Called on WebCore thread.
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.360 -0500", hash_original_method = "AF9CEA251B70F416DD7268C7CEF45292", hash_generated_method = "5CEF3DFDDF3EA2E0252FB35BB0336921")
         
 private void retainQueue() {
@@ -739,6 +757,8 @@ private void retainQueue() {
             mQueueRefCount++;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.363 -0500", hash_original_method = "AF9D604E006D921DB2DDEF5C99CED27E", hash_generated_method = "E1FA1A21BA9BB187A183AD453404B2FD")
         
 private void releaseQueue() {
@@ -817,12 +837,16 @@ public void enterFullScreenVideo(int layerId, String url) {
         VideoPlayer.enterFullScreenVideo(layerId, url, this, mWebView);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.404 -0500", hash_original_method = "D61E1D458239E8CEF9B36F4B5C04FED9", hash_generated_method = "D61E1D458239E8CEF9B36F4B5C04FED9")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.404 -0500", hash_original_method = "D61E1D458239E8CEF9B36F4B5C04FED9", hash_generated_method = "D61E1D458239E8CEF9B36F4B5C04FED9")
     
 WebView getWebView() {
         return mWebView;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.408 -0500", hash_original_method = "450372CEC4ACF74D667E8FE30D4758C3", hash_generated_method = "C05D68BE24B8B8F67A680AE7FA17E932")
     
     private void nativeOnPrepared(int duration, int width, int height, int nativePointer){
@@ -833,6 +857,8 @@ WebView getWebView() {
     	addTaint(nativePointer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.411 -0500", hash_original_method = "69439EE53B1C4D974D568FFBF0847B4A", hash_generated_method = "7D202EBFFACA85F6A066CDE9078FE386")
     
     private void nativeOnEnded(int nativePointer){
@@ -840,6 +866,8 @@ WebView getWebView() {
     	addTaint(nativePointer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.416 -0500", hash_original_method = "A4A54DE61D62E407521E72B4C5FDD860", hash_generated_method = "0643ECED1D157B3E3A40095555ECB5A9")
     
     private void nativeOnPaused(int nativePointer){
@@ -847,6 +875,8 @@ WebView getWebView() {
     	addTaint(nativePointer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.420 -0500", hash_original_method = "84652220F84E924B202B7575A6B0DB08", hash_generated_method = "035A85A47EFF29C44B34EDE49356B86C")
     
     private void nativeOnPosterFetched(Bitmap poster, int nativePointer){
@@ -855,6 +885,8 @@ WebView getWebView() {
     	addTaint(nativePointer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.423 -0500", hash_original_method = "40EE80299CDDB294EE4D171341428EFD", hash_generated_method = "5C4C6A7958E25050349CD1926402FD8D")
     
     private void nativeOnTimeupdate(int position, int nativePointer){
@@ -863,6 +895,8 @@ WebView getWebView() {
     	addTaint(nativePointer);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.426 -0500", hash_original_method = "73782D526ACC6162F582FA042F7A8C14", hash_generated_method = "89E52BAB9BA605E3ACEF67B2E2C57EB0")
     
     private void nativeOnStopFullscreen(int nativePointer){

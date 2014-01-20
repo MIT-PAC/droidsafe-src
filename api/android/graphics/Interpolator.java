@@ -10,22 +10,34 @@ import droidsafe.helpers.DSUtils;
 
 public class Interpolator {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(int valueCount, int frameCount) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDestructor(int native_instance) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeReset(int native_instance, int valueCount, int frameCount) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetKeyFrame(int native_instance, int index, int msec, float[] values, float[] blend) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetRepeatMirror(int native_instance, float repeatCount, boolean mirror) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -39,6 +51,8 @@ public class Interpolator {
 
     private  int native_instance;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.783 -0500", hash_original_method = "19122541958F7FA844B795B7542E8DCA", hash_generated_method = "CE84137946CF56CEAF822F4C91E1CE36")
     
 public Interpolator(int valueCount) {
@@ -47,6 +61,8 @@ public Interpolator(int valueCount) {
         native_instance = nativeConstructor(valueCount, 2);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.785 -0500", hash_original_method = "39AB5A4645DDA75ACBCA394AE8D72CCA", hash_generated_method = "CF536EA48C32003A951CDB3648B64BD8")
     
 public Interpolator(int valueCount, int frameCount) {
@@ -60,6 +76,8 @@ public Interpolator(int valueCount, int frameCount) {
      * implicit keyFrame count of 2 (just a start and end). After this call the
      * values for each keyFrame must be assigned using setKeyFrame().
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.787 -0500", hash_original_method = "DF63005BC1AE5B0B1E3F7DD90D14732F", hash_generated_method = "8F79EB57671A32037C83D3369B7368ED")
     
 public void reset(int valueCount) {
@@ -71,6 +89,8 @@ public void reset(int valueCount) {
      * keyFrames. After this call the values for each keyFrame must be assigned
      * using setKeyFrame().
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.790 -0500", hash_original_method = "C5023085042082F0979BC336BA173BAC", hash_generated_method = "C3B88D2CC4B9D570E2335D0B2FEE75D3")
     
 public void reset(int valueCount, int frameCount) {
@@ -79,6 +99,8 @@ public void reset(int valueCount, int frameCount) {
         nativeReset(native_instance, valueCount, frameCount);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.792 -0500", hash_original_method = "89BB77AE086853608E25F99A94348DC0", hash_generated_method = "1CB4F11CFA2991257AEC8A9AE99A491A")
     
@@ -86,6 +108,8 @@ public final int getKeyFrameCount() {
         return mFrameCount;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.795 -0500", hash_original_method = "776BE84F4731B9CD4E842330007BED2A", hash_generated_method = "DD489F639A9250C746DDDF3722535E08")
     
@@ -103,6 +127,8 @@ public final int getValueCount() {
      *        SystemClock.uptimeMillis() clock
      * @param values Array of values associated with theis key frame
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.798 -0500", hash_original_method = "8B845648DDEC7EC4E813052052B8A4ED", hash_generated_method = "43FF38EF0AB89DB8347AED2F078AC8FA")
     
@@ -120,6 +146,8 @@ public void setKeyFrame(int index, int msec, float[] values) {
      * @param values Array of values associated with theis key frame
      * @param blend (may be null) Optional array of 4 blend values
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.800 -0500", hash_original_method = "0A4BD1EDAE26740EE7CE301C3AD23A04", hash_generated_method = "0C62FAFCF086862A06AAF6823A5B7E21")
     
@@ -141,6 +169,8 @@ public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
      * whether the interpolator should mirror its repeats. The default settings
      * are repeatCount = 1, and mirror = false.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.802 -0500", hash_original_method = "951FAF18C8FD28DC8D0B362372C0DCF6", hash_generated_method = "AE0C836A346A863BC38BB857F2DB94DD")
     
@@ -184,6 +214,8 @@ public Result timeToValues(int msec, float[] values) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.810 -0500", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "BE69CE7E8423113E232B1962E161780E")
     
 @Override

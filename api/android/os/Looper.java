@@ -26,6 +26,8 @@ public class Looper {
        // myLooper().mQueue.mQuitAllowed = false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.964 -0500", hash_original_method = "A88F24E81953AAC82D589D0EE00658ED", hash_generated_method = "1381AB89A6859F6920A51959D9AA4219")
     
 private synchronized static void setMainLooper(Looper looper) {
@@ -97,6 +99,8 @@ public static MessageQueue myQueue() {
 
     private Printer mLogging = null;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.979 -0500", hash_original_method = "6D5C1375C6658BE56B40A9307D923CFE", hash_generated_method = "3C72C2D742FF74AE9DC766728DBC3719")
     
 private Looper() {

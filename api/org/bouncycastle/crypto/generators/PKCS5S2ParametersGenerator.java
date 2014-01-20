@@ -12,11 +12,6 @@ import org.bouncycastle.crypto.macs.HMac;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
 
-
-
-
-
-
 public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.838 -0500", hash_original_field = "321616263CBCD002E2637343ACC6E0EB", hash_generated_field = "46DC2FCCD8C543ECEF82F3A223B0B31A")
 
@@ -31,6 +26,8 @@ public PKCS5S2ParametersGenerator()
     {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.844 -0500", hash_original_method = "5838C1952069FB825926D87DA007F2C4", hash_generated_method = "CDC3842003E6730159838578BB5FF055")
     
 private void F(
@@ -75,6 +72,8 @@ private void F(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.847 -0500", hash_original_method = "D84C49C513A1760CAD87960E0D89CE0E", hash_generated_method = "7E5D24344EA07CFF7648793E6BD280A6")
     
 private void intToOctet(
@@ -87,6 +86,8 @@ private void intToOctet(
         buf[3] = (byte)i;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.849 -0500", hash_original_method = "9180E4FA1A99F957676BE4B76909E69A", hash_generated_method = "761DF403D56191BEC207394E69089CF5")
     
 private byte[] generateDerivedKey(
@@ -163,7 +164,6 @@ public CipherParameters generateDerivedMacParameters(
     {
         return generateDerivedParameters(keySize);
     }
-
     
 }
 

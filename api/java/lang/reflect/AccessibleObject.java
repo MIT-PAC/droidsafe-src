@@ -41,7 +41,9 @@ public static void setAccessible(AccessibleObject[] objects, boolean flag) {
      * the same as Class.getSignatureAttribute(), but it can be used from
      * the java.lang.reflect package.
      */
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.363 -0500", hash_original_method = "0EA85850CAF8D26BF10D52C824A0CA19", hash_generated_method = "48B4ABE2E7323E428D11CA7F6309669D")
     
 static String getClassSignatureAttribute(Class clazz) {
@@ -54,6 +56,8 @@ static String getClassSignatureAttribute(Class clazz) {
         return StringUtils.combineStrings(annotation);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Object[] getClassSignatureAnnotation(Class clazz) {
 		Object[] ret = new Object[0];
 		ret[0].addTaint(clazz.taint);
@@ -148,6 +152,8 @@ public Annotation[] getAnnotations() {
      *
      * @return The signature as a string
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.356 -0500", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "AFCD123A6E616CB6E7A6F8CAEE33C533")
     
@@ -178,6 +184,8 @@ String getSignature(Class<?> clazz) {
      *
      * @return The String of names
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.358 -0500", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "538B7B8EC3794D6F6E22215297E953DA")
     
 String toString(Class<?>[] types) {
@@ -198,7 +206,9 @@ String toString(Class<?>[] types) {
      * Gets the Signature attribute for this instance. Returns {@code null}
      * if not found.
      */
-    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.360 -0500", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "F0B9CD63B24B94657C1ECA3D3E5E02CA")
     
 String getSignatureAttribute() {
@@ -218,6 +228,8 @@ String getSignatureAttribute() {
      *
      * @throws NullPointerException if any of the arguments is null
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.370 -0500", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "96346F5FDCAEE775233825443F323528")
     
 void appendArrayType(StringBuilder sb, Class<?> obj) {
@@ -240,6 +252,8 @@ void appendArrayType(StringBuilder sb, Class<?> obj) {
      * @param types array of classes to print the names
      * @throws NullPointerException if any of the arguments is null
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.373 -0500", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "4331049DB20FE3D320265414E1BB6DD1")
     
 void appendArrayGenericType(StringBuilder sb, Type[] types) {
@@ -260,6 +274,8 @@ void appendArrayGenericType(StringBuilder sb, Type[] types) {
      *
      * @throws NullPointerException if any of the arguments is null
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.377 -0500", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "639986077F4F64C49F9CD8BE0AAAE4A8")
     
 void appendGenericType(StringBuilder sb, Type obj) {

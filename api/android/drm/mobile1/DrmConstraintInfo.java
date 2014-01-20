@@ -23,6 +23,8 @@ public class DrmConstraintInfo {
     /**
      * Construct the DrmConstraint.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.050 -0500", hash_original_method = "9EDFB4E9C7052BBC86DC69FD90E3B91B", hash_generated_method = "9EDFB4E9C7052BBC86DC69FD90E3B91B")
     
 DrmConstraintInfo() {

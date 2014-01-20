@@ -24,6 +24,8 @@ public static EGL getEGL() {
         //Synthesized constructor
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.232 -0500", hash_original_method = "42CEDADA007B69E4214C0FDBBFC7F329", hash_generated_method = "D197F5844659FA4B7A41BD456BA1B661")
     
 public abstract GL getGL();

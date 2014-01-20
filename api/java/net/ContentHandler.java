@@ -22,6 +22,8 @@ public abstract class ContentHandler {
      * @throws IOException
      *             if an IO error occurs during the retrieval of the object
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.861 -0500", hash_original_method = "0A0DE36248DED56E2DC9A3C213E73F00", hash_generated_method = "C085E82305BE92773C89ADB444EB7B2D")
     
 public abstract Object getContent(URLConnection uConn) throws IOException;

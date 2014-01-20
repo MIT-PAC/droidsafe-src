@@ -18,6 +18,8 @@ import libcore.io.Streams;
 
 public class JarFile extends ZipFile {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.862 -0500", hash_original_method = "56C76838D318C13C94DEE83CC11CDED9", hash_generated_method = "01AD61DC1B9389BE2B87C74510A04B5F")
     
 private static boolean endsWithIgnoreCase(String s, String suffix) {
@@ -253,6 +255,8 @@ public Manifest getManifest() throws IOException {
      * @throws IOException
      *             if there is a problem reading the jar file entries.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.860 -0500", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "46A4B6AFC6A992C4ABFA8ACF50D6D1C2")
     
 private void readMetaEntries() throws IOException {
@@ -470,6 +474,8 @@ JarFileInputStream(InputStream is, ZipEntry ze,
      *
      * @return the list of ZipEntry's or {@code null} if there are none.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.871 -0500", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "A6126524E6A3EAA35E32646B7419A131")
     
 private ZipEntry[] getMetaEntriesImpl() {

@@ -63,6 +63,8 @@ public static synchronized SocketTagger get() {
      * thread. The socket is either newly connected or reused from a connection
      * pool. Implementations of this method should be thread-safe.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.439 -0500", hash_original_method = "9BD43B1E2CFC27D090627A116B518176", hash_generated_method = "227AD56C5F547C039B73864DE505A308")
     
 public abstract void tag(FileDescriptor socketDescriptor) throws SocketException;
@@ -75,6 +77,8 @@ public abstract void tag(FileDescriptor socketDescriptor) throws SocketException
      * <p><strong>Note:</strong> this method will not be invoked when the socket
      * is closed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.442 -0500", hash_original_method = "2BF068569797F0DFBCD6691D25ACF08F", hash_generated_method = "5FD01BB243B453B61CFC5CA4C40FE711")
     
 public abstract void untag(FileDescriptor socketDescriptor) throws SocketException;

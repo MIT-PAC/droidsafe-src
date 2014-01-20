@@ -235,6 +235,8 @@ public int hashCode()
         return hashCode;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.549 -0500", hash_original_method = "4061A2825C144C76460287466E375CA1", hash_generated_method = "4061A2825C144C76460287466E375CA1")
     
 boolean asn1Equals(
@@ -274,6 +276,8 @@ boolean asn1Equals(
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.552 -0500", hash_original_method = "A69C6C665FC9D3DE250A324544079C85", hash_generated_method = "71F8019F43835013203D7AD69C0E7F8C")
     
 private DEREncodable getNext(Enumeration e)
@@ -292,6 +296,8 @@ private DEREncodable getNext(Enumeration e)
     /**
      * return true if a <= b (arrays are assumed padded with zeros).
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.556 -0500", hash_original_method = "207A76DA1E8D21F977EB59C485DCA4E9", hash_generated_method = "D2B42EF0B1A3BFDDC8C331C0A9DD377D")
     
 private boolean lessThanOrEqual(
@@ -309,6 +315,8 @@ private boolean lessThanOrEqual(
         return len == a.length;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.559 -0500", hash_original_method = "522D47B99F0E20F7487ED5107F130A00", hash_generated_method = "5EC8527A9A7B17E76DBC3F5377BFEA21")
     
 private byte[] getEncoded(
@@ -381,6 +389,8 @@ protected void addObject(
         set.addElement(obj);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.566 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
     
 abstract void encode(DEROutputStream out)

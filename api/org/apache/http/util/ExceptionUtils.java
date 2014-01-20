@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.Method;
 
-
-
-
 public final class ExceptionUtils {
 
     /**
@@ -20,6 +17,8 @@ public final class ExceptionUtils {
      * @return A <code>Method<code> for <code>Throwable.initCause</code>, or
      * <code>null</code> if unavailable.
      */ 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.815 -0500", hash_original_method = "E0B19896BEC7E8973FE5692D01506C32", hash_generated_method = "41CF6E32BE46313F3FB2C00B6918F893")
     
 static private Method getInitCauseMethod() {
@@ -52,6 +51,8 @@ public static void initCause(Throwable throwable, Throwable cause) {
 
     static private final Method INIT_CAUSE_METHOD = getInitCauseMethod();
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.820 -0500", hash_original_method = "A1F3D67C211E4EC7543A3C1E27BD7049", hash_generated_method = "B702D3BB38F6042B3663A5D39DE6CA37")
     
 private ExceptionUtils() {

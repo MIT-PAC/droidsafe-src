@@ -11,11 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-
-
-
-
-
 public final class BinaryHprofWriter {
 
     /**
@@ -27,7 +22,6 @@ public static void write(HprofData data, OutputStream outputStream) throws IOExc
         new BinaryHprofWriter(data, outputStream).write();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.103 -0500", hash_original_field = "2602E3561EFB87B6516825F22CA93B39", hash_generated_field = "F6789153277D04B710C8FC8F6CD54F9E")
-
 
     private int nextStringId = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.106 -0500", hash_original_field = "8C680016BB6F7BA0025F3F52CED9F58E", hash_generated_field = "7A760F4F16EAFCB07FE0A0FC4C3F75E3")
@@ -48,12 +42,13 @@ public static void write(HprofData data, OutputStream outputStream) throws IOExc
             = new HashMap<StackTraceElement, Integer>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.117 -0500", hash_original_field = "C626D5D102B670EE54046C0143D70C68", hash_generated_field = "BD98D42EB76BD47A6FDE7B8FA850AB03")
 
-
     private  HprofData data;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.121 -0500", hash_original_field = "9E610CBF013921060FC7250E69532609", hash_generated_field = "58B7027288BADB051D787F0275726007")
 
     private  DataOutputStream out;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.126 -0500", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "4459778BDBFFDB2D7937D2144DC7C4E5")
     
 private BinaryHprofWriter(HprofData data, OutputStream outputStream) {
@@ -61,6 +56,8 @@ private BinaryHprofWriter(HprofData data, OutputStream outputStream) {
         this.out = new DataOutputStream(outputStream);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.129 -0500", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "4217DD3DC3088714F2B7C6B7CD7B70A7")
     
 private void write() throws IOException {
@@ -86,6 +83,8 @@ private void write() throws IOException {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.131 -0500", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "98FD7EF2F92B051FA11E64DC51DA8F20")
     
 private void writeHeader(long dumpTimeInMilliseconds) throws IOException {
@@ -95,6 +94,8 @@ private void writeHeader(long dumpTimeInMilliseconds) throws IOException {
         out.writeLong(dumpTimeInMilliseconds);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.134 -0500", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "DB83CBF92C19DE82B6D43207AE02870B")
     
 private void writeControlSettings(int flags, int depth) throws IOException {
@@ -163,6 +164,8 @@ private void writeRecordHeader(BinaryHprof.Tag hprofTag,
         out.writeInt(recordLength);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.147 -0500", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "76D1F877A474B695EC4FF0EA7D55BAF0")
     
 private void writeId(int id) throws IOException {
@@ -176,6 +179,8 @@ private void writeId(int id) throws IOException {
      * already been written previously, the earlier ID will be
      * returned and no output will be written.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.149 -0500", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "ABE2905D17D5E349C98C5348C046E2AE")
     
 private int writeString(String string) throws IOException {
@@ -200,6 +205,8 @@ private int writeString(String string) throws IOException {
         return id;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.152 -0500", hash_original_method = "759EEA3A3B19BFF3937058AF4EFC13EB", hash_generated_method = "92898533871983B7E00230F2EF22495E")
     
 private void writeCpuSamples(int totalSamples, Set<HprofData.Sample> samples)
@@ -236,6 +243,8 @@ private void writeStackTrace(HprofData.StackTrace stackTrace) throws IOException
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.157 -0500", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "8DE1D2E0112FB7AB0083057B8A1CEED0")
     
 private int writeLoadClass(String className) throws IOException {
@@ -258,6 +267,8 @@ private int writeLoadClass(String className) throws IOException {
         return id;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.159 -0500", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "AA55752FD81E2115236DDBDDB779DE14")
     
 private int writeStackFrame(StackTraceElement stackFrame) throws IOException {
@@ -284,7 +295,6 @@ private int writeStackFrame(StackTraceElement stackFrame) throws IOException {
 
         return id;
     }
-
     
 }
 

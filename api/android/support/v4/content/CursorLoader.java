@@ -13,16 +13,11 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
 
-
-
-
-
 public class CursorLoader extends AsyncTaskLoader<Cursor> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.289 -0500", hash_original_field = "A5AC746DA3DB38EE93C6D4B7204AA2CB", hash_generated_field = "A5AC746DA3DB38EE93C6D4B7204AA2CB")
 
      ForceLoadContentObserver mObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.292 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "49226456B4CE4E55A779249DE3DC63D4")
-
 
     Uri mUri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.295 -0500", hash_original_field = "B4F1557AF588ACBB7C63054FC5A3DB24", hash_generated_field = "B4F1557AF588ACBB7C63054FC5A3DB24")
@@ -38,7 +33,6 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
 
     String mSortOrder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.303 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "4A85E902ED72E65A9AF8F6ED265E4F89")
-
 
     Cursor mCursor;
 
@@ -92,6 +86,8 @@ public CursorLoader(Context context, Uri uri, String[] projection, String select
      * Registers an observer to get notifications from the content provider
      * when the cursor needs to be refreshed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.308 -0500", hash_original_method = "020E778E16877AE64A0EC7CA895AF414", hash_generated_method = "020E778E16877AE64A0EC7CA895AF414")
     
 void registerContentObserver(Cursor cursor, ContentObserver observer) {
@@ -251,7 +247,6 @@ public void setSortOrder(String sortOrder) {
         writer.print(prefix); writer.print("mCursor="); writer.println(mCursor);
         writer.print(prefix); writer.print("mContentChanged="); writer.println(mContentChanged);
     }
-
     
 }
 

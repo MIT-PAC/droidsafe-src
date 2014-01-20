@@ -10,11 +10,15 @@ public abstract class AbstractSequentialList<E> extends AbstractList<E> {
     /**
      * Constructs a new instance of this AbstractSequentialList.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.103 -0500", hash_original_method = "E95CC14AC93438CE9E4618C927D37CA8", hash_generated_method = "B04098F93E3E9654690AFB5E709BB77E")
     
 protected AbstractSequentialList() {
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.105 -0500", hash_original_method = "0430D75F7F3D5E3A6D5F6B220D260C02", hash_generated_method = "64BC5CD164AE9351910CD21AB37E9EB1")
     
 @Override
@@ -22,6 +26,8 @@ protected AbstractSequentialList() {
         listIterator(location).add(object);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.108 -0500", hash_original_method = "252A37CEEA1A0797639D5FF26661E00A", hash_generated_method = "C05BA4B15514461480E933AFEED877BD")
     
 @Override
@@ -35,6 +41,8 @@ protected AbstractSequentialList() {
         return next != it.nextIndex();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.110 -0500", hash_original_method = "B5F59D8654788FE80539C2042F9F3DA0", hash_generated_method = "B64B7ED54C32A134E892BDDE7873952A")
     
@@ -57,11 +65,15 @@ protected AbstractSequentialList() {
         return listIterator(0);
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.115 -0500", hash_original_method = "8817022DCE1939D78B58CBD817768953", hash_generated_method = "121B63D82A543223901DFF56B53DE100")
     
 @Override
     public abstract ListIterator<E> listIterator(int location);
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.117 -0500", hash_original_method = "F4326C1F9DDC82196649CFA76C7956BB", hash_generated_method = "A2F888213920404B25010F9F3D5F5D32")
     
@@ -77,6 +89,8 @@ protected AbstractSequentialList() {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.120 -0500", hash_original_method = "A0691253183890C7E0DBA0D74DD52EDC", hash_generated_method = "6F75963FFA57E8B5B5D8C57390534586")
     

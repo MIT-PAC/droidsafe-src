@@ -17,11 +17,6 @@ import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-
-
-
-
-
 public class TestCaseClassLoader extends ClassLoader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.604 -0500", hash_original_field = "8BB004A7CF4EF33164EC02A1CDC1B50F", hash_generated_field = "CD4C74902896CC679399E8EEF125BD8F")
 
@@ -61,7 +56,9 @@ public TestCaseClassLoader(String classPath) {
 		readExcludedPackages();
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.614 -0500", hash_original_method = "D6CB27563073EDFA6C1A1F398697E6E2", hash_generated_method = "B7B3DFB26C91F8E6A766C136C162945C")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.614 -0500", hash_original_method = "D6CB27563073EDFA6C1A1F398697E6E2", hash_generated_method = "B7B3DFB26C91F8E6A766C136C162945C")
 	
 private void scanPath(String classPath) {
 		String separator= System.getProperty("path.separator");
@@ -82,7 +79,7 @@ public URL getResource(String name) {
 	
 public InputStream getResourceAsStream(String name) {
 		return ClassLoader.getSystemResourceAsStream(name);
-	} 
+	}
 	
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.621 -0500", hash_original_method = "9B640A23D84324F25105A52D659CD058", hash_generated_method = "A4078FED40FFBA61ED5416B1E8792AAD")
 	
@@ -126,7 +123,9 @@ public synchronized Class loadClass(String name, boolean resolve)
 		return c;
 	}
 	
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.626 -0500", hash_original_method = "43D8A8DE8192DE4313AA08C95ADD1453", hash_generated_method = "B947DE2DB6BFD8291CD9BD0A27A9973A")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.626 -0500", hash_original_method = "43D8A8DE8192DE4313AA08C95ADD1453", hash_generated_method = "B947DE2DB6BFD8291CD9BD0A27A9973A")
 	
 private byte[] lookupClassData(String className) throws ClassNotFoundException {
 		byte[] data= null;
@@ -144,7 +143,9 @@ private byte[] lookupClassData(String className) throws ClassNotFoundException {
 		throw new ClassNotFoundException(className);
 	}
 		
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.628 -0500", hash_original_method = "D1958816D560AAF990D492328B2ACA22", hash_generated_method = "D1958816D560AAF990D492328B2ACA22")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.628 -0500", hash_original_method = "D1958816D560AAF990D492328B2ACA22", hash_generated_method = "D1958816D560AAF990D492328B2ACA22")
 	
 boolean isJar(String pathEntry) {
 		return pathEntry.endsWith(".jar") ||
@@ -152,7 +153,9 @@ boolean isJar(String pathEntry) {
                        pathEntry.endsWith(".zip");
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.631 -0500", hash_original_method = "4C328FCFB8D8C5A73ACC65BA858A3F7E", hash_generated_method = "9ACACB142F6B85B332882591F1F9143A")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.631 -0500", hash_original_method = "4C328FCFB8D8C5A73ACC65BA858A3F7E", hash_generated_method = "9ACACB142F6B85B332882591F1F9143A")
 	
 private byte[] loadFileData(String path, String fileName) {
 		File file= new File(path, fileName);
@@ -162,7 +165,9 @@ private byte[] loadFileData(String path, String fileName) {
 		return null;
 	}
 	
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.633 -0500", hash_original_method = "6E324290C9C24F4E29DE2D96FABDFD83", hash_generated_method = "A9D1360D340645F93F99199E138A9A07")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.633 -0500", hash_original_method = "6E324290C9C24F4E29DE2D96FABDFD83", hash_generated_method = "A9D1360D340645F93F99199E138A9A07")
 	
 private byte[] getClassData(File f) {
 		try {
@@ -181,7 +186,9 @@ private byte[] getClassData(File f) {
 		return null;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.636 -0500", hash_original_method = "C76B1C7062D123058031C76531140DC1", hash_generated_method = "E3CAD9BDCC835A182BA210449D360515")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.636 -0500", hash_original_method = "C76B1C7062D123058031C76531140DC1", hash_generated_method = "E3CAD9BDCC835A182BA210449D360515")
 	
 private byte[] loadJarData(String path, String fileName) {
 		ZipFile zipFile= null;
@@ -219,7 +226,9 @@ private byte[] loadJarData(String path, String fileName) {
 		return null;
 	}
 	
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.638 -0500", hash_original_method = "1F7171E3DD1B25E20F5BDFEA6D44B6AF", hash_generated_method = "29BCDC7154887B581023DD54DB552C3C")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.638 -0500", hash_original_method = "1F7171E3DD1B25E20F5BDFEA6D44B6AF", hash_generated_method = "29BCDC7154887B581023DD54DB552C3C")
 	
 private void readExcludedPackages() {		
 		fExcluded= new Vector(10);

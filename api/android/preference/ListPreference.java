@@ -273,6 +273,8 @@ public int findIndexOfValue(String value) {
         return -1;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.299 -0500", hash_original_method = "72A7028E3449428A8EE1CE440273EEC8", hash_generated_method = "F24C2807E7E031260CA7D67E51A7B1FF")
     
 private int getValueIndex() {

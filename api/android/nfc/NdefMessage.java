@@ -137,6 +137,8 @@ public byte[] toByteArray() {
         dest.writeTypedArray(mRecords, flags);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.081 -0500", hash_original_method = "58C82E5C0DBA98ED651A9002B9916229", hash_generated_method = "3B1A556CAF1DDFD06833DB98E1BF0A16")
     
     private int parseNdefMessage(byte[] data){

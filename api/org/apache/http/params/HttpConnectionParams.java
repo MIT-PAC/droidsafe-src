@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public final class HttpConnectionParams implements CoreConnectionPNames {
 
     /**
@@ -203,12 +202,13 @@ public static void setStaleCheckingEnabled(final HttpParams params, boolean valu
 
     /**
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.659 -0500", hash_original_method = "E377E6E9E726367BB194BBBFED21463F", hash_generated_method = "432DB92DA846202D53CA72C75B4DE476")
     
 private HttpConnectionParams() {
         super();
     }
-
     
 }
 

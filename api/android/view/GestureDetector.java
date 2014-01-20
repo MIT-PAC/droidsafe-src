@@ -216,6 +216,8 @@ public GestureDetector(Context context, OnGestureListener listener, Handler hand
         //init(context, ignoreMultitouch);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.793 -0500", hash_original_method = "452594061FCEBDDF878D27E65F4EBA07", hash_generated_method = "29A2551A3E7034A3CD54CE8556A96781")
     
 private void init(Context context, boolean ignoreMultitouch) {
@@ -584,6 +586,8 @@ public boolean onTouchEvent(MotionEvent ev) {
         return handled;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.808 -0500", hash_original_method = "9B9F1964085C6E9CB79BA6CBFD2B9081", hash_generated_method = "C5A172A598ACA3A87A4925C4C503E659")
     
 private void cancel() {
@@ -601,6 +605,8 @@ private void cancel() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.811 -0500", hash_original_method = "EA18A75BD47C1C65D8FE280884C192C1", hash_generated_method = "350379EFD91AC9A9AC3665FE74AB5D18")
     
 private boolean isConsideredDoubleTap(MotionEvent firstDown, MotionEvent firstUp,
@@ -618,6 +624,8 @@ private boolean isConsideredDoubleTap(MotionEvent firstDown, MotionEvent firstUp
         return (deltaX * deltaX + deltaY * deltaY < mDoubleTapSlopSquare);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.813 -0500", hash_original_method = "1B110E72A2C7F37DAF94A595462A9E07", hash_generated_method = "5605DFE52E2DFD6F15B82DC5FFE09AED")
     
 private void dispatchLongPress() {

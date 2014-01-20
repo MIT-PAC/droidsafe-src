@@ -41,6 +41,8 @@ public static long getLastGcTime() {
     public static final void disableBackgroundScheduling(boolean disable) {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static final void handleGc() {
     }
     
@@ -52,6 +54,8 @@ public static void forceGc(String reason) {
         Runtime.getRuntime().gc();
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.486 -0500", hash_original_method = "C8BAA80AD02F89B5235BAA5DBC498303", hash_generated_method = "9FA534FAAC552D584AAD550252C07FB9")
     
 static void forceBinderGc() {
@@ -64,6 +68,8 @@ static void forceBinderGc() {
     
     static final class GcWatcher {
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.469 -0400", hash_original_method = "23BF1C701EF3B7F131F4805BD4892CC0", hash_generated_method = "23BF1C701EF3B7F131F4805BD4892CC0")
         public GcWatcher ()
         {

@@ -7,9 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.Writer;
 
-
-
-
 public class LogWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.502 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
 
@@ -82,6 +79,8 @@ public LogWriter(int priority, String tag, int buffer) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.523 -0500", hash_original_method = "365F60E44B7DA4848E76578B1D312F6F", hash_generated_method = "D50175F96A203B6C6D18C23FC2D8164A")
     
 private void flushBuilder() {
@@ -90,7 +89,6 @@ private void flushBuilder() {
             mBuilder.delete(0, mBuilder.length());
         }
     }
-
     
 }
 

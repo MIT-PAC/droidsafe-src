@@ -17,6 +17,8 @@ public abstract class MapActivity extends Activity
     {
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract boolean isRouteDisplayed();
     
     public boolean isLocationDisplayed() { 

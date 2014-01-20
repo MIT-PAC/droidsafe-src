@@ -5,10 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 class DERFactory {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.314 -0500", hash_original_method = "B358167A9243B301CDBE42B13A7FCA2E", hash_generated_method = "161026F7D87A30FE47ECAD6DD6507C3F")
     
 static DERSequence createSequence(ASN1EncodableVector v)
@@ -16,6 +16,8 @@ static DERSequence createSequence(ASN1EncodableVector v)
         return v.size() < 1 ? EMPTY_SEQUENCE : new DERSequence(v);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.316 -0500", hash_original_method = "EC81E4E4BB5F30D96A37DECC8714E1EB", hash_generated_method = "F2CE75632A8093ACF382DC7FDD66F5EA")
     
 static DERSet createSet(ASN1EncodableVector v)
@@ -23,6 +25,8 @@ static DERSet createSet(ASN1EncodableVector v)
         return v.size() < 1 ? EMPTY_SET : new DERSet(v);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.319 -0500", hash_original_method = "32D8F434EAB688E38C9FF6F3D112EAB2", hash_generated_method = "8DE4FE4054A4A21E69EF88D5003288BA")
     
 static DERSet createSet(ASN1EncodableVector v, boolean needsSorting)

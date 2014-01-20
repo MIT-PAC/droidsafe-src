@@ -88,6 +88,8 @@ protected OpenSSLSessionImpl(int sslSessionNativePointer, X509Certificate[] loca
      * allows loading the saved session.
      * @throws IOException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.133 -0500", hash_original_method = "ECC374A16FFF293E37020E85B391DB03", hash_generated_method = "780E8B5B055F68B079A55AA39CDAE638")
     
 OpenSSLSessionImpl(byte[] derData,
@@ -129,6 +131,8 @@ public byte[] getId() {
      * before we have read the session ticket from the server side and
      * therefore have computed no id based on the SHA of the ticket.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.138 -0500", hash_original_method = "57B02BE93AE841112E3F3B64D0EF8580", hash_generated_method = "57B02BE93AE841112E3F3B64D0EF8580")
     
 void resetId() {
@@ -139,6 +143,8 @@ void resetId() {
      * Get the session object in DER format. This allows saving the session
      * data or sharing it with other processes.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.140 -0500", hash_original_method = "6E61934F3054764656AF5E19BA5296B9", hash_generated_method = "6E61934F3054764656AF5E19BA5296B9")
     
@@ -259,6 +265,8 @@ public javax.security.cert.X509Certificate[] getPeerCertificateChain()
      * Provide a value to initialize the volatile peerCertificateChain
      * field based on the native SSL_SESSION
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.158 -0500", hash_original_method = "95455CDE829A27B48DAF238C4403FA5A", hash_generated_method = "A8390121371D7D9D59758E1993A98F69")
     
 private javax.security.cert.X509Certificate[] createPeerCertificateChain()
@@ -304,6 +312,8 @@ public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
     /**
      * Throw SSLPeerUnverifiedException on null or empty peerCertificates array
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.162 -0500", hash_original_method = "4A7519F376EC7B19E89A23705C5BAAD6", hash_generated_method = "709FF115FFE9F07757B4CC928089959E")
     
 private void checkPeerCertificatesPresent() throws SSLPeerUnverifiedException {

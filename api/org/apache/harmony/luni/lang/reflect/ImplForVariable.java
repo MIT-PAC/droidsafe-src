@@ -12,6 +12,8 @@ import java.lang.reflect.TypeVariable;
 
 public final class ImplForVariable<D extends GenericDeclaration> implements TypeVariable<D> {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.231 -0500", hash_original_method = "D221C8A1B569E1806838DFC95ACABA4D", hash_generated_method = "62BA4A52D51025362248E21AAD3D7B07")
     
 static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
@@ -25,6 +27,8 @@ static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.234 -0500", hash_original_method = "39EFECC73CF5D127083D3BC71C87A926", hash_generated_method = "BDC29D66C62A40ED8D984E5D79ABFC24")
     
 private static GenericDeclaration nextLayer(GenericDeclaration decl) {
@@ -109,6 +113,8 @@ ImplForVariable(D genericDecl, String name) {
         return 31 * getName().hashCode() + getGenericDeclaration().hashCode();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.236 -0500", hash_original_method = "295DDC7EA34C93EE6582DD0CD1BD5CCA", hash_generated_method = "295DDC7EA34C93EE6582DD0CD1BD5CCA")
     
 void resolve() {

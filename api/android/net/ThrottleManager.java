@@ -86,6 +86,8 @@ public class ThrottleManager {
     /**
      * Don't allow use of default constructor.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.250 -0500", hash_original_method = "A34F832700CA864903AE32FE53CD267E", hash_generated_method = "1EC501785D26517D9A94FD011D80C280")
     
 @SuppressWarnings({"UnusedDeclaration"})

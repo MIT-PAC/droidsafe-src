@@ -10,6 +10,8 @@ import java.util.Hashtable;
 import javax.crypto.Cipher;
 
 public class CipherSuite {
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.239 -0500", hash_original_method = "3EDAD5A5AC099D703E8FCE466C4E49F5", hash_generated_method = "00A2549BB4245DF3C178A5F6BBDAE142")
     
 private static int registerCipherSuitesByCode(CipherSuite[] cipherSuites) {
@@ -28,6 +30,8 @@ private static int registerCipherSuitesByCode(CipherSuite[] cipherSuites) {
         }
         return count;
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.242 -0500", hash_original_method = "C64CB9829E7452D1122FA6C3039DF879", hash_generated_method = "B70BF757C96E2408F00CF51D4AB26CC4")
     
 private static void registerSupportedCipherSuites(int offset, CipherSuite[] cipherSuites) {
@@ -94,6 +98,8 @@ public static CipherSuite getByCode(byte b1, byte b2, byte b3) {
                                null, null, null, new byte[] { b1, b2, b3 });
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.252 -0500", hash_original_method = "E7DEF15CD79A5AD2F1096800ACDA8969", hash_generated_method = "728CCF898792DE4B42FF50F9804AD8C2")
     
 private static CipherSuite getCipherSuiteByCode(int i1, int i2, int i3) {
@@ -1161,6 +1167,8 @@ public static String getClientKeyType(byte keyType) {
     /**
      * Creates CipherSuite
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.256 -0500", hash_original_method = "54B6F4B5E133F8A61DA406B9859D0D86", hash_generated_method = "9E4D16CEBDD19DA15C150611BDBAA64C")
     
 private CipherSuite(String name, boolean isExportable, int keyExchange,

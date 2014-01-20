@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Build;
 import android.util.Log;
 
-
-
-
-
 public final class InputEventConsistencyVerifier {
 
     /**
@@ -23,6 +19,8 @@ public static boolean isInstrumentationEnabled() {
         return IS_ENG_BUILD;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.893 -0500", hash_original_method = "F98067EFA794ACF9FB8DE5044A893B73", hash_generated_method = "BC7BC3B62EB722E503DFFD4B2E3182EC")
     
 private static void appendEvent(StringBuilder message, int index,
@@ -38,7 +36,6 @@ private static void appendEvent(StringBuilder message, int index,
 
     private static final boolean IS_ENG_BUILD = "eng".equals(Build.TYPE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.783 -0500", hash_original_field = "72463B0737EA8974C13D3A4158DE9BB2", hash_generated_field = "BF7F27BD11752360FD77D3ADB49DCD5E")
-
 
     private static final String EVENT_TYPE_KEY = "KeyEvent";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.786 -0500", hash_original_field = "D3DCBE09DC4FAD57DF08DAD9069D4DEB", hash_generated_field = "A473C2AB75307FC390ECD2C1507122DA")
@@ -581,6 +578,8 @@ public void onUnhandledEvent(InputEvent event, int nestingLevel) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.880 -0500", hash_original_method = "0D02225F7CFB86AB0627FF86E895BCB3", hash_generated_method = "E5FD72DAC834BBB0A1A8A116BF500630")
     
 private void ensureMetaStateIsNormalized(int metaState) {
@@ -590,7 +589,6 @@ private void ensureMetaStateIsNormalized(int metaState) {
                     metaState, normalizedMetaState));
         }
     }
-
     
     private static final class KeyState {
 
@@ -620,7 +618,6 @@ public static KeyState obtain(int deviceId, int source, int keyCode) {
         private static KeyState mRecycledList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.910 -0500", hash_original_field = "A293A7A34FA0A1458D0CA1A7AC46383B", hash_generated_field = "A4637F51FF091C45870D06CF8B571722")
 
-
         public KeyState next;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.912 -0500", hash_original_field = "51A96BAC743342A974612702E055409D", hash_generated_field = "B25950F42C189E4AB05FFB7366B0AA73")
 
@@ -635,6 +632,8 @@ public static KeyState obtain(int deviceId, int source, int keyCode) {
 
         public boolean unhandled;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.922 -0500", hash_original_method = "9B72C46296302693275D5291E4057DE0", hash_generated_method = "6B5BE5A5B3A51F6690BC5F992EEC0549")
         
 private KeyState() {
@@ -650,6 +649,8 @@ public void recycle() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.882 -0500", hash_original_method = "960C41882671A36CAB1E6050FF4DEA3B", hash_generated_method = "44D5DB36BDD8DF6B6630B71C66A829F5")
     
 private void ensurePointerCountIsOneForThisAction(MotionEvent event) {
@@ -660,6 +661,8 @@ private void ensurePointerCountIsOneForThisAction(MotionEvent event) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.884 -0500", hash_original_method = "418A844BE60240583EF50FE17898B3BB", hash_generated_method = "0867002FDA7046589B3E2D1D48E97F35")
     
 private void ensureHistorySizeIsZeroForThisAction(MotionEvent event) {
@@ -670,6 +673,8 @@ private void ensureHistorySizeIsZeroForThisAction(MotionEvent event) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.887 -0500", hash_original_method = "4D608F0C62317EB539D3EDD1A5B0BBF8", hash_generated_method = "C8D98A055B25E205D27D64CCE0C6FCF5")
     
 private boolean startEvent(InputEvent event, int nestingLevel, String eventType) {
@@ -694,6 +699,8 @@ private boolean startEvent(InputEvent event, int nestingLevel, String eventType)
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.890 -0500", hash_original_method = "ED6D322EBF7819A0A849ACCBA13E8A32", hash_generated_method = "38E812172A2A9A0926D672B484E70FF6")
     
 private void finishEvent() {
@@ -745,6 +752,8 @@ private void finishEvent() {
         mCurrentEventType = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.895 -0500", hash_original_method = "C6124E8B7D001D6ECE47F875379D529E", hash_generated_method = "CFC0E333E9DE215BE9F03E939EF29D4C")
     
 private void problem(String message) {
@@ -783,6 +792,8 @@ private KeyState findKeyState(int deviceId, int source, int keyCode, boolean rem
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.901 -0500", hash_original_method = "49CD2D0DE125B77D543B3E0017318A6E", hash_generated_method = "D11B1D862F9CBFB8EE8DB258D2D53C1F")
     
 private void addKeyState(int deviceId, int source, int keyCode) {

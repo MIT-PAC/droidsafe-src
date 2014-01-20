@@ -539,6 +539,8 @@ protected void onBindView(View view) {
     /**
      * Makes sure the view (and any children) get the enabled state changed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.831 -0500", hash_original_method = "4F80205B57D5838ADEC212DC6CB9E651", hash_generated_method = "927C7F20453A790234AEE493780B3522")
     
 private void setEnabledStateOnViews(View v, boolean enabled) {
@@ -842,6 +844,8 @@ public boolean getShouldDisableView() {
      * 
      * @return A unique ID for this Preference.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.871 -0500", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "6AF16C815DE6FE4144432EF99CDC825B")
     
@@ -898,6 +902,8 @@ public String getKey() {
      * 
      * @throws IllegalStateException If there is no key assigned.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.879 -0500", hash_original_method = "21702F9605A21EAEE85E66B458F985AA", hash_generated_method = "21702F9605A21EAEE85E66B458F985AA")
     
 void requireKey() {
@@ -1032,6 +1038,8 @@ public OnPreferenceClickListener getOnPreferenceClickListener() {
      *            listener should be called in the proper order (between other
      *            processing). May be null.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.901 -0500", hash_original_method = "501E66F7BA58D6B4C7BCFDD2200CB13A", hash_generated_method = "501E66F7BA58D6B4C7BCFDD2200CB13A")
     
 void performClick(PreferenceScreen preferenceScreen) {
@@ -1271,6 +1279,8 @@ protected void onAttachedToActivity() {
         registerDependency();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.931 -0500", hash_original_method = "A499F7D8BECEFF58ECE377DCDDB4C87B", hash_generated_method = "6A4AAE59A5BCE6D1D1581BA2E746C277")
     
 private void registerDependency() {
@@ -1286,6 +1296,8 @@ private void registerDependency() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.933 -0500", hash_original_method = "40F9072BE8C6932FEF31F09A7FFFCE04", hash_generated_method = "014DD8EE6C42FFC2AE2A8AC85D35A73F")
     
 private void unregisterDependency() {
@@ -1326,6 +1338,8 @@ protected Preference findPreferenceInHierarchy(String key) {
      * @param dependent The dependent Preference that will be enabled/disabled
      *            according to the state of this Preference.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.938 -0500", hash_original_method = "528DD85662997ACAED3BC519F97454B8", hash_generated_method = "CAB8415C08EBD2996AB8068BEAA482DB")
     
 private void registerDependent(Preference dependent) {
@@ -1346,6 +1360,8 @@ private void registerDependent(Preference dependent) {
      * @return Returns the same Preference object, for chaining multiple calls
      *         into a single statement.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.940 -0500", hash_original_method = "9028FF718331F8BA1AAB10BD4FAE315E", hash_generated_method = "FBD9977817BB64523E2D3C725C556C6E")
     
 private void unregisterDependent(Preference dependent) {
@@ -1468,6 +1484,8 @@ public void setDefaultValue(Object defaultValue) {
         mDefaultValue = defaultValue;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.957 -0500", hash_original_method = "0CC9C8053B2B40671F6785C5B066E9AB", hash_generated_method = "C405D37DC7D423BFB814F9AFC5337F82")
     
 private void dispatchSetInitialValue() {
@@ -1847,6 +1865,8 @@ protected boolean getPersistedBoolean(boolean defaultReturnValue) {
         return mPreferenceManager.getSharedPreferences().getBoolean(mKey, defaultReturnValue);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.997 -0500", hash_original_method = "79DC631A87B79C35E44BC11E3C275CE7", hash_generated_method = "79DC631A87B79C35E44BC11E3C275CE7")
     
 boolean hasSpecifiedLayout() {
@@ -1871,6 +1891,8 @@ boolean hasSpecifiedLayout() {
      *         preference. By default, this is the title and summary
      *         (concatenated with a space).
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.001 -0500", hash_original_method = "7FA40EC09188F6F1BEA3B1B94241EA4A", hash_generated_method = "947B58C801820171EA581B26A56F9CCF")
     
@@ -1915,6 +1937,8 @@ public void saveHierarchyState(Bundle container) {
      * @see #saveHierarchyState
      * @see #onSaveInstanceState
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.005 -0500", hash_original_method = "1B94F5D63E3EC8B47F4D750B8B09EC88", hash_generated_method = "1B94F5D63E3EC8B47F4D750B8B09EC88")
     
 void dispatchSaveInstanceState(Bundle container) {
@@ -1974,6 +1998,8 @@ public void restoreHierarchyState(Bundle container) {
      * @see #restoreHierarchyState
      * @see #onRestoreInstanceState
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.012 -0500", hash_original_method = "18F16B162844FF15C24BE293B1033BC4", hash_generated_method = "18F16B162844FF15C24BE293B1033BC4")
     
 void dispatchRestoreInstanceState(Bundle container) {

@@ -72,6 +72,8 @@ public static void sendChunk(Chunk chunk) {
         nativeSendChunk(chunk.type, chunk.data, chunk.offset, chunk.length);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSendChunk(int type, byte[] data,
         int offset, int length) {
     }
@@ -79,6 +81,8 @@ public static void sendChunk(Chunk chunk) {
     /*
      * Called by the VM when the DDM server connects or disconnects.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.289 -0500", hash_original_method = "1D9D6AE09D825D5EE0A0437033119805", hash_generated_method = "DB00933F8902351F6F93839272FEEA95")
     
 private static void broadcast(int event)
@@ -114,6 +118,8 @@ private static void broadcast(int event)
      * if DDMS happens to connect.  It's hard to know for sure that
      * registration isn't going to happen, so we settle for a timeout.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.292 -0500", hash_original_method = "BE94F4AC1571A07221102CE5852A3145", hash_generated_method = "15E80EC82FBDA1A11F6C8996BC93F269")
     
 private static Chunk dispatch(int type, byte[] data, int offset, int length)
@@ -173,6 +179,8 @@ private static Chunk dispatch(int type, byte[] data, int offset, int length)
     /**
      * Don't instantiate; all members and methods are static.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.274 -0500", hash_original_method = "9245089A3DC1CB81EAEF9FD5F462A315", hash_generated_method = "55622FB3A2216EBA0977FFD151FF7F19")
     
 private DdmServer() {}

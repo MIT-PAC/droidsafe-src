@@ -402,6 +402,8 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 public Fragment() {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.001 -0500", hash_original_method = "7271436905E3847D6FDF6326194EF06D", hash_generated_method = "2990A88A42011BE1573652DBD364F70D")
     
 final void restoreViewState() {
@@ -411,6 +413,8 @@ final void restoreViewState() {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.003 -0500", hash_original_method = "681200A239FE58A0DC09757C2C18A7DD", hash_generated_method = "94F85D3397D6447CADCCAC8FB3278131")
     
 final void setIndex(int index) {
@@ -418,6 +422,8 @@ final void setIndex(int index) {
         mWho = "android:fragment:" + mIndex;
    }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.006 -0500", hash_original_method = "B0D28796550366EF842F99A3D9D59C11", hash_generated_method = "D60291057198FF92ECFB3CAF33EB7BBB")
     
 final boolean isInBackStack() {
@@ -1247,6 +1253,8 @@ public void onDestroy() {
      * to re-use the instance.  This only clears state that the framework
      * internally manages, not things the application sets.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.130 -0500", hash_original_method = "04633BF5293F80973E1AA355DB2C35EF", hash_generated_method = "04633BF5293F80973E1AA355DB2C35EF")
     
 void initState() {
@@ -1395,12 +1403,16 @@ public SavedState[] newArray(int size) {
 
          Bundle mState;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.967 -0500", hash_original_method = "7D4CB1BC3C04B99DC21EA19CB6BAF4D3", hash_generated_method = "7D4CB1BC3C04B99DC21EA19CB6BAF4D3")
         
 SavedState(Bundle state) {
             mState = state;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.969 -0500", hash_original_method = "E611F4C5C5E159704631D93ABD994DEF", hash_generated_method = "E611F4C5C5E159704631D93ABD994DEF")
         
 SavedState(Parcel in, ClassLoader loader) {
@@ -1570,6 +1582,8 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.157 -0500", hash_original_method = "A194798DFC3B633DD6139CF302E65474", hash_generated_method = "A194798DFC3B633DD6139CF302E65474")
     
 void performStart() {
@@ -1579,6 +1593,8 @@ void performStart() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.159 -0500", hash_original_method = "DF7E450C96FF033A1F96B7AC1D56EC13", hash_generated_method = "DF7E450C96FF033A1F96B7AC1D56EC13")
     
 void performStop() {
@@ -1600,6 +1616,8 @@ void performStop() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.161 -0500", hash_original_method = "3EF3D6E87A549E78C03CB36A1B3A62F5", hash_generated_method = "3EF3D6E87A549E78C03CB36A1B3A62F5")
     
 void performDestroyView() {

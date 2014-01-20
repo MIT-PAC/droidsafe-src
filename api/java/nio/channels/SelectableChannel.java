@@ -24,6 +24,8 @@ protected SelectableChannel() {
      *
      * @return the blocking object as lock.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.061 -0500", hash_original_method = "2E192193615D7EEFA25C6422BFD6D26E", hash_generated_method = "24811C6B2D8CCA17562F0EF8B81873FA")
     
 public abstract Object blockingLock();
@@ -48,6 +50,8 @@ public abstract Object blockingLock();
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.063 -0500", hash_original_method = "21DB17E6C51E37682F8EA397C436E96E", hash_generated_method = "BA37478B634729C2D7E0A5B08FB466F0")
     
 public abstract SelectableChannel configureBlocking(boolean block)
@@ -59,6 +63,8 @@ public abstract SelectableChannel configureBlocking(boolean block)
      * @return {@code true} if this channel is blocking, undefined if this
      *         channel is closed.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.066 -0500", hash_original_method = "7E9BC8041DAE305D9005BF04D0F90DF9", hash_generated_method = "19A54000AD0D6086A655B0B2C02272D6")
     
 public abstract boolean isBlocking();
@@ -69,6 +75,8 @@ public abstract boolean isBlocking();
      * @return {@code true} if this channel is registered, {@code false}
      *         otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.068 -0500", hash_original_method = "B09F725F9534BF401052EB6B0DDF05E6", hash_generated_method = "6304460E41687883CFEC11BCA89CBC0B")
     
 public abstract boolean isRegistered();
@@ -81,6 +89,8 @@ public abstract boolean isRegistered();
      * @return the selection key for the channel or {@code null} if this channel
      *         has not been registered with {@code sel}.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.071 -0500", hash_original_method = "E142EAADB6D6B83087D91F829F1AAF88", hash_generated_method = "04C1D3917ABB4610130E622046B2E5E0")
     
 public abstract SelectionKey keyFor(Selector sel);
@@ -90,6 +100,8 @@ public abstract SelectionKey keyFor(Selector sel);
      *
      * @return the provider of this channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.073 -0500", hash_original_method = "16691AB71F358568043BE374C6495F90", hash_generated_method = "98718A80D4D5481D996D395828ED0646")
     
 public abstract SelectorProvider provider();
@@ -169,6 +181,8 @@ public final SelectionKey register(Selector selector, int operations)
      * @throws CancelledKeyException
      *             if this channel is registered but its key has been canceled.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.078 -0500", hash_original_method = "779FC9C1152041835F6C6467E1F8DA69", hash_generated_method = "80731282758076702486D2DCEAF1F1C8")
     
 public abstract SelectionKey register(Selector sel, int ops, Object att)
@@ -180,6 +194,8 @@ public abstract SelectionKey register(Selector sel, int ops, Object att)
      *
      * @return the set of operations that this channel supports.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.081 -0500", hash_original_method = "33B79DBFF75C6C01F6D678C6A0E94BA6", hash_generated_method = "2ACF24C06FF02F12A8656ACBE4F244F6")
     
 public abstract int validOps();

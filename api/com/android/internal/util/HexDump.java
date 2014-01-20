@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class HexDump {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.078 -0500", hash_original_method = "7FA399DA453396F4D2EEE2775C9F35FF", hash_generated_method = "E23151A364951C4396F43DB5E2BA25CD")
@@ -147,6 +143,8 @@ public static byte[] toByteArray(int i)
         return array;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.098 -0500", hash_original_method = "5A3669A0F97ABE322D99A6FE1918D1AA", hash_generated_method = "01A101033B4AC0A655225EFED6798AF4")
     
 private static int toByte(char c)

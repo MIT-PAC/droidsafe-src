@@ -8,10 +8,6 @@ import java.nio.charset.Charsets;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public final class Base64 {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.154 -0500", hash_original_method = "8535EDDE1B82B493909B7A5D7029E7BE", hash_generated_method = "6A8FCF4552AAB657EB72B7C62E120750")
@@ -141,13 +137,14 @@ public static String encode(byte[] in) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.160 -0500", hash_original_field = "3063CAA3327D5F99524D47E8A719D4E8", hash_generated_field = "82F1210628F15E92912F89A88C162707")
 
-
     private static final byte[] map = new byte[]
         {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
          'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b',
          'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
          'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3',
          '4', '5', '6', '7', '8', '9', '+', '/'};
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.151 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
     
 private Base64() {

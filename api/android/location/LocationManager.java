@@ -85,6 +85,8 @@ public class LocationManager {
     public LocationManager() {
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.056 -0500", hash_original_method = "F4540EAD4F3CF2106C64C62C1DCA569C", hash_generated_method = "AF63B91403D9DAD953364C5524516F0D")
     
 private LocationProvider createProvider(String name, Bundle info) {
@@ -420,6 +422,8 @@ public void requestLocationUpdates(long minTime, float minDistance,
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, listener, looper);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.987 -0400", hash_original_method = "7527D3AF7E08617A40988967AFB4FC4D", hash_generated_method = "324B2DB34138E35B89555069BC343BA8")
     private void _requestLocationUpdates(String provider, Criteria criteria, long minTime,
             float minDistance, boolean singleShot, LocationListener listener, Looper looper) {
@@ -599,6 +603,8 @@ public void requestLocationUpdates(long minTime, float minDistance, Criteria cri
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, intent);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.087 -0500", hash_original_method = "21FA37E7FC7084DE02389BC0809F92F8", hash_generated_method = "82C90F76864A3A3F2CD1CB8F0F42A0CB")
     
 private void _requestLocationUpdates(String provider, Criteria criteria,
@@ -1130,6 +1136,8 @@ public void onProviderDisabled(String provider) {
             mListenerHandler.sendMessage(msg);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.048 -0500", hash_original_method = "B4AFFA03A7F956D43DB0E44DEB20B60F", hash_generated_method = "72A9A909ED136A7F8F527EB71608569F")
         
 private void _handleMessage(Message msg) {

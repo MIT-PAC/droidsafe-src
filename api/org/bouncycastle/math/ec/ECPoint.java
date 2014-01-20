@@ -8,14 +8,8 @@ import java.math.BigInteger;
 
 import org.bouncycastle.asn1.x9.X9IntegerConverter;
 
-
-
-
-
-
 public abstract class ECPoint {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.169 -0500", hash_original_field = "F357BA3E591BD4D6DB34B6CC355FDE3B", hash_generated_field = "F6B8D48C5F5A761E5DB11D930C790FFE")
-
 
     private static X9IntegerConverter converter = new X9IntegerConverter();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.156 -0500", hash_original_field = "704A3581F062D90BBFC67E94998B89B2", hash_generated_field = "704A3581F062D90BBFC67E94998B89B2")
@@ -29,14 +23,11 @@ public abstract class ECPoint {
     ECFieldElement y;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.162 -0500", hash_original_field = "FE461DF1DAA1B11668B50BA700384774", hash_generated_field = "7FD389F38A41EB1BAE8714CB05D998E3")
 
-
     protected boolean withCompression;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.164 -0500", hash_original_field = "0A0491BA2D899FECF8FE9A008DC4471C", hash_generated_field = "C1F508A0F6FEA833DEEAC7A7B323D761")
 
-
     protected ECMultiplier multiplier = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.167 -0500", hash_original_field = "083C3E196756DAA29DEDCBA6B5437F30", hash_generated_field = "84CF639EBFFD87F3AC15C9EF1E1AAF42")
-
 
     protected PreCompInfo preCompInfo = null;
 
@@ -138,6 +129,8 @@ public int hashCode()
      * @param preCompInfo The values precomputed by the
      * <code>ECMultiplier</code>.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.189 -0500", hash_original_method = "3CED2898CE1D9F7EEE71D4F4E6298B52", hash_generated_method = "3CED2898CE1D9F7EEE71D4F4E6298B52")
     
 void setPreCompInfo(PreCompInfo preCompInfo)
@@ -145,19 +138,29 @@ void setPreCompInfo(PreCompInfo preCompInfo)
         this.preCompInfo = preCompInfo;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.192 -0500", hash_original_method = "506507D68F2DEBC7A73E26D74C8EC354", hash_generated_method = "8AD98EEA7FB40BE802733C14B55B9E93")
     
 public abstract byte[] getEncoded();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.194 -0500", hash_original_method = "766446EEB6B09A1F70FAEF2B46A36784", hash_generated_method = "7BD5C118F2665F04A69154179ADD9CF0")
     
 public abstract ECPoint add(ECPoint b);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.197 -0500", hash_original_method = "CDDBDFC652002828E6A5B3B5BFADA778", hash_generated_method = "044F6C9B2C83B745AA7B855CD68C2D9A")
     
 public abstract ECPoint subtract(ECPoint b);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.199 -0500", hash_original_method = "B608ED29DBF5C8F3BA0748B7BC005701", hash_generated_method = "86845A2F5485AA3B7BC0F5940C14AF21")
     
 public abstract ECPoint negate();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.201 -0500", hash_original_method = "A4E675BA65DA5DDB4851852EE539A9CF", hash_generated_method = "0FA8F61AE12CD44BBED274D7ED4B88A6")
     
 public abstract ECPoint twice();
@@ -165,6 +168,8 @@ public abstract ECPoint twice();
     /**
      * Sets the default <code>ECMultiplier</code>, unless already set. 
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.203 -0500", hash_original_method = "CFD8CCAA4A8EFD7B41616F74559C84F4", hash_generated_method = "2FA1F3E9D388BA935572AE9E822542C4")
     
 synchronized void assertECMultiplier()
@@ -174,7 +179,6 @@ synchronized void assertECMultiplier()
             this.multiplier = new FpNafMultiplier();
         }
     }
-
     
     public static class Fp extends ECPoint {
         
@@ -351,6 +355,8 @@ public ECPoint negate()
         /**
          * Sets the default <code>ECMultiplier</code>, unless already set. 
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.228 -0500", hash_original_method = "8EF68E9821BB7A65A39BDB5C806DAEDA", hash_generated_method = "E8FC3568DF4F041FADF2DCC54BD1D6E0")
         
 synchronized void assertECMultiplier()
@@ -360,11 +366,8 @@ synchronized void assertECMultiplier()
                 this.multiplier = new WNafMultiplier();
             }
         }
-
         
     }
-
-
     
     public static class F2m extends ECPoint {
 
@@ -375,6 +378,8 @@ synchronized void assertECMultiplier()
          * @throws IllegalArgumentException if <code>a</code> and <code>b</code>
          * cannot be added.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.243 -0500", hash_original_method = "A1999CEAE21C1E2D06F6C5ECE8093E45", hash_generated_method = "BFBA3DCBF1E587F8457EEAF3730E1766")
         
 private static void checkPoints(ECPoint a, ECPoint b)
@@ -626,6 +631,8 @@ public ECPoint negate()
         /**
          * Sets the appropriate <code>ECMultiplier</code>, unless already set. 
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.261 -0500", hash_original_method = "B01B67DF3607CCDD35FFA0674C4BFE3B", hash_generated_method = "A0C94A7D3EF464ECE0B33012066C1ED3")
         
 synchronized void assertECMultiplier()
@@ -642,7 +649,6 @@ synchronized void assertECMultiplier()
                 }
             }
         }
-
         
     }
 

@@ -169,6 +169,8 @@ public synchronized int deflate(byte[] buf, int offset, int byteCount, int flush
         return deflateImpl(buf, offset, byteCount, flush);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.794 -0500", hash_original_method = "CF6CE2BCD1B535E0E9CC69A73F69BC28", hash_generated_method = "A078D50FDF874C2FC1BC03968C7FEDA2")
     
 private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int flush) {
@@ -180,6 +182,8 @@ private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int 
         return deflateImpl(buf, offset, byteCount, streamHandle, flush);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.798 -0500", hash_original_method = "54CA80994C94CBB2D32C9857F1640D60", hash_generated_method = "792987498202E9827C539CECE80336AC")
     
     private int deflateImpl(byte[] buf, int offset, int byteCount, long handle, int flushParm){
@@ -205,6 +209,8 @@ public synchronized void end() {
         endImpl();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.803 -0500", hash_original_method = "4DA7D037A1FCD4109F30526C6DE57D1C", hash_generated_method = "5A4E6FDDE1BB7592807BB7526C139841")
     
 private void endImpl() {
@@ -215,6 +221,8 @@ private void endImpl() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.807 -0500", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "CAAF219716E180D754E9468CEF90D237")
     
     private void endImpl(long handle){
@@ -276,6 +284,8 @@ public synchronized int getAdler() {
         return getAdlerImpl(streamHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.822 -0500", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "6AD9A385B53DB2BA75AFBBE825FE107D")
     
     private int getAdlerImpl(long handle){
@@ -296,6 +306,8 @@ public synchronized int getTotalIn() {
         return (int) getTotalInImpl(streamHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.829 -0500", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "27A34AED5DC88EA02352AF5C411EC373")
     
     private long getTotalInImpl(long handle){
@@ -316,6 +328,8 @@ public synchronized int getTotalOut() {
         return (int) getTotalOutImpl(streamHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.835 -0500", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "55A13EEEFE112FFF013CCCC774DCBDDC")
     
     private long getTotalOutImpl(long handle){
@@ -354,6 +368,8 @@ public synchronized void reset() {
         inputBuffer = null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.845 -0500", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "F242A02CC5CDF0DDF24D50E919BDE63F")
     
     private void resetImpl(long handle){
@@ -389,6 +405,8 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
         setDictionaryImpl(buf, offset, byteCount, streamHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.855 -0500", hash_original_method = "7E435812B66ABED0B356693E1B3AC0D7", hash_generated_method = "7C22CBFC5AD4E53C75D413E15606F340")
     
     private void setDictionaryImpl(byte[] buf, int offset, int byteCount, long handle){
@@ -428,6 +446,8 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
         setInputImpl(buf, offset, byteCount, streamHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.863 -0500", hash_original_method = "6366C8E331223E53339096A4FF906729", hash_generated_method = "091743318BC2459801E13DFE9BEBAB27")
     
     private void setLevelsImpl(int level, int strategy, long handle){
@@ -437,6 +457,8 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
     	addTaint(handle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.868 -0500", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "1FA97F53D7ABD85282CFAE0F1076CEA3")
     
     private void setInputImpl(byte[] buf, int offset, int byteCount, long handle){
@@ -513,6 +535,8 @@ public synchronized long getBytesWritten() {
         return getTotalOutImpl(streamHandle);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.883 -0500", hash_original_method = "C56CB62EAF4356747257EC4F43A6E2A6", hash_generated_method = "BA18EAA4C722B3C46DE390CC9DED13E1")
     
     private long createStream(int level, int strategy1, boolean noHeader1){
@@ -523,6 +547,8 @@ public synchronized long getBytesWritten() {
     	return getTaintLong();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.885 -0500", hash_original_method = "367A42A5784C609E2D8E37BE922AB4A4", hash_generated_method = "6E548EC6D5D2EE4AE8DEE8BBBE547265")
     
 private void checkOpen() {

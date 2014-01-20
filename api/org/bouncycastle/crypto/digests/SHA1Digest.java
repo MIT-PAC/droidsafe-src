@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.crypto.util.Pack;
 
-
-
-
-
-
 public class SHA1Digest extends GeneralDigest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.698 -0500", hash_original_field = "9301F8BE56680C2B760E8B6165DCF050", hash_generated_field = "7C0B37D298D1C343E182281986721D96")
 
@@ -45,7 +40,6 @@ public class SHA1Digest extends GeneralDigest {
 
     private int H5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.703 -0500", hash_original_field = "36DF1BB1AB0A0C3AB50B4055E588E1D7", hash_generated_field = "8F6FFE924E27CCB7C5DC0F1AC2F650D7")
-
 
     private int[]   X = new int[80];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.705 -0500", hash_original_field = "B7445263BE5AA36D026E05FA52197EA0", hash_generated_field = "D14E80AF1F9317982664F9E415590C80")
@@ -171,6 +165,8 @@ public void reset()
         }
     }
    
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.736 -0500", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "D73F0AA5C601AC4CF74FED73FDE32BD1")
     
 private int f(
@@ -181,6 +177,8 @@ private int f(
         return ((u & v) | ((~u) & w));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.739 -0500", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "3F5EDB6E375354CCAD164045583D64A4")
     
 private int h(
@@ -191,6 +189,8 @@ private int h(
         return (u ^ v ^ w);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.741 -0500", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "DD042622BEE03CBA2B0147089AE1E6E0")
     
 private int g(
@@ -256,7 +256,7 @@ protected void processBlock()
             // E = rotateLeft(A, 5) + h(B, C, D) + E + X[idx++] + Y2
             // B = rotateLeft(B, 30)
             E += (A << 5 | A >>> 27) + h(B, C, D) + X[idx++] + Y2;
-            B = B << 30 | B >>> 2;   
+            B = B << 30 | B >>> 2;
             
             D += (E << 5 | E >>> 27) + h(A, B, C) + X[idx++] + Y2;
             A = A << 30 | A >>> 2;
@@ -316,7 +316,6 @@ protected void processBlock()
             A += (B << 5 | B >>> 27) + h(C, D, E) + X[idx++] + Y4;
             C = C << 30 | C >>> 2;
         }
-
 
         H1 += A;
         H2 += B;

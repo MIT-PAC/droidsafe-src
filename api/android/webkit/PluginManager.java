@@ -37,6 +37,8 @@ public static synchronized PluginManager getInstance(Context context) {
         return mInstance;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.817 -0500", hash_original_method = "CE52C054A8C04EA6394487C6A1F756D1", hash_generated_method = "FD0C96C6B8F2A648D6E2E6CF90C90B2C")
     
 private static boolean containsPluginPermissionAndSignatures(PackageInfo pkgInfo) {
@@ -117,6 +119,8 @@ private static boolean containsPluginPermissionAndSignatures(PackageInfo pkgInfo
 
     private ArrayList<PackageInfo> mPackageInfoCache;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.802 -0500", hash_original_method = "0D07D19E48ED71562BE80BC3DA9E707F", hash_generated_method = "75E4F754C582D1180C09EA86ADE78688")
     
 private PluginManager(Context context) {
@@ -139,6 +143,8 @@ public void refreshPlugins(boolean reloadOpenPages) {
                 .sendToTarget();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.811 -0500", hash_original_method = "7B4BF60DDCCCE0391FC04EA9A7E517B7", hash_generated_method = "C68C0207D9228A1B69B5998F30FFE87C")
     
@@ -239,6 +245,8 @@ String[] getPluginDirectories() {
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.814 -0500", hash_original_method = "A1FA8B166BFF0FCEB8723AD1FF203538", hash_generated_method = "8611B7743D3918B2A437DB6D5406CF83")
     
 boolean containsPluginPermissionAndSignatures(String pluginAPKName) {
@@ -258,6 +266,8 @@ boolean containsPluginPermissionAndSignatures(String pluginAPKName) {
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.819 -0500", hash_original_method = "E90FACC8787C376685A6D80F188924B0", hash_generated_method = "39540C50D30C48AA4A5DAB3D03AFA36B")
     
@@ -281,6 +291,8 @@ String getPluginsAPKName(String pluginLib) {
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.821 -0500", hash_original_method = "FC2E28857813BB5E17C54D889AE237C7", hash_generated_method = "FC2E28857813BB5E17C54D889AE237C7")
     
@@ -289,6 +301,8 @@ String getPluginSharedDataDirectory() {
     }
 
     /* package */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:05.823 -0500", hash_original_method = "44FD7B6877FFF90B805F430598983AE5", hash_generated_method = "44FD7B6877FFF90B805F430598983AE5")
     

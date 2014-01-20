@@ -25,6 +25,8 @@ public class TypedArray {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.152 -0500", hash_original_field = "654366000D5436FE48B31EFBD0B3756D", hash_generated_field = "654366000D5436FE48B31EFBD0B3756D")
  TypedValue mValue = new TypedValue();
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     TypedArray(Resources resources, int[] data, int[] indices, int len){
 		mResources = resources;  //Preserved
 		mData = data;  //Preserved
@@ -555,8 +557,8 @@ public boolean getValue(int index, TypedValue outValue) {
 		*/
 	}
     
-	@DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void recycle(){
 		mResources.mCachedStyledAttributes = this;
 		// Original method
@@ -574,6 +576,8 @@ public boolean getValue(int index, TypedValue outValue) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean getValueAt(int index, TypedValue outValue){
 		outValue.type = 0;
         outValue.data = getTaintInt();
@@ -603,6 +607,8 @@ public boolean getValue(int index, TypedValue outValue) {
 		*/
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private CharSequence loadStringValueAt(int index){
         String str = new String();
         str.addTaint(getTaint());

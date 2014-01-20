@@ -7,18 +7,15 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class DhcpInfo implements Parcelable {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.824 -0500", hash_original_method = "C4630BCCACA5913D9EFE445952131BDB", hash_generated_method = "D7100706F3DA9D35C8228CA2981296E2")
     
 private static void putAddress(StringBuffer buf, int addr) {
         buf.append(NetworkUtils.intToInetAddress(addr).getHostAddress());
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.466 -0400", hash_original_field = "9856C027FECDC0A66630F7DFB04D7434", hash_generated_field = "89C286478D97EE5D122EFDEA836E1240")
 
@@ -55,13 +52,11 @@ public DhcpInfo[] newArray(int size) {
     public int netmask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.809 -0500", hash_original_field = "DD5C00C7D698690DB50DDE4E11D9B847", hash_generated_field = "257F82C9AA70827B0BA2B4E037775503")
 
-
     public int dns1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.811 -0500", hash_original_field = "BB166109CA3E3292037E187A9AD0424A", hash_generated_field = "BC9DD1C3178F0AAF32A5A79882B2C471")
 
     public int dns2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.813 -0500", hash_original_field = "EFA5EDCAD00909BB1BE02EB7F655FE09", hash_generated_field = "955CDA6770D7F45900D23A25A1E286DF")
-
 
     public int serverAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.815 -0500", hash_original_field = "24726342E9CB33AC125472BB0EF00AFE", hash_generated_field = "7EE02913D8BA0209DD0BF7B47A6FCC6D")

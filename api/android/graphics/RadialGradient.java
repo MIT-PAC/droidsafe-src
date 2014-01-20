@@ -9,21 +9,29 @@ import droidsafe.helpers.DSUtils;
 
 public class RadialGradient extends Shader {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate1(float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate2(float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate1(int native_shader, float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate2(int native_shader, float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;

@@ -87,6 +87,8 @@ public boolean consumeRights(int permission) {
      * @return #JNI_DRM_SUCCESS if succeed.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.966 -0500", hash_original_method = "38AB17DDC792736F5CB32D23FA6E92BF", hash_generated_method = "AAE1F1A6D49B0552BBB0959168052AB8")
     
     private int nativeGetConstraintInfo(int permission, DrmConstraintInfo constraint){
@@ -104,6 +106,8 @@ public boolean consumeRights(int permission) {
      * @return #JNI_DRM_SUCCESS if succeed.
      *         #JNI_DRM_FAILURE if fail.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.969 -0500", hash_original_method = "B7050C2592D973CE5B8DCBBE60AC7282", hash_generated_method = "01ADFFC5BADEC6B80A6E2583406912CC")
     
     private int nativeConsumeRights(int permission){

@@ -49,6 +49,8 @@ public static void setDefault(CookieHandler cHandler) {
      * @throws IOException
      *             if an error occurs during the I/O operation.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.132 -0500", hash_original_method = "D068D18B3D9B47F0EAD824B58CADE291", hash_generated_method = "D2294388951A4DED6ABEA745A3199C15")
     
 public abstract Map<String, List<String>> get(URI uri,
@@ -65,6 +67,8 @@ public abstract Map<String, List<String>> get(URI uri,
      * @throws IOException
      *             if an error occurs during the I/O operation.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.135 -0500", hash_original_method = "9C8A274D718511DE42A2D4C3B7D23DEA", hash_generated_method = "86CB2FC2AB52984EA96576101B656CCF")
     
 public abstract void put(URI uri, Map<String, List<String>> responseHeaders)

@@ -32,12 +32,7 @@ import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 
-
-
-
-
 final class FragmentState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.927 -0400", hash_original_field = "20C24B13B86A2BA0167AA1764B64C330", hash_generated_field = "33682AAE42971F2215D5844A73451D2E")
 
@@ -83,11 +78,9 @@ public FragmentState[] newArray(int size) {
 
      Bundle mArguments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.106 -0500", hash_original_field = "F958FB3998EC484A7599A988303CD216", hash_generated_field = "F958FB3998EC484A7599A988303CD216")
-
     
     Bundle mSavedFragmentState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.108 -0500", hash_original_field = "F83F5A158F2251FA12452672DC97E470", hash_generated_field = "F83F5A158F2251FA12452672DC97E470")
-
     
     Fragment mInstance;
     
@@ -236,7 +229,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
     private static final HashMap<String, Class<?>> sClassMap =
             new HashMap<String, Class<?>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.136 -0500", hash_original_field = "BE1EF333470B1511678F5EE23F102EFC", hash_generated_field = "B9FFABD80C3D80703D84376667A75609")
-
     
     static final int INITIALIZING = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.139 -0500", hash_original_field = "38DE4403767C9147B0BB36A53E837FC6", hash_generated_field = "97B36236CFE06BD1C50B96E10CE241B6")
@@ -255,7 +247,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 
     static final int RESUMED = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.150 -0500", hash_original_field = "0294DD5CAC8ED58250DA531156A3A018", hash_generated_field = "0294DD5CAC8ED58250DA531156A3A018")
-
     
     int mState = INITIALIZING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.152 -0500", hash_original_field = "5A7CC416AE8E502EE87A452D06D4A6F4", hash_generated_field = "C4F7846EF8DCBD4772C1EAE556BA9162")
@@ -383,7 +374,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
     boolean mUserVisibleHint = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.231 -0500", hash_original_field = "6EE478DF5473556475C8D09C185A01BC", hash_generated_field = "6EE478DF5473556475C8D09C185A01BC")
 
-
     LoaderManagerImpl mLoaderManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.233 -0500", hash_original_field = "D357ECA56BF47F1751443279339D50DF", hash_generated_field = "D357ECA56BF47F1751443279339D50DF")
 
@@ -414,6 +404,8 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 public Fragment() {
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.274 -0500", hash_original_method = "245153A377A25A4032F77A4E144CB5DC", hash_generated_method = "2C1E9B61679D6DC87423EDB754F46D51")
     
 final void restoreViewState(Bundle savedInstanceState) {
@@ -429,6 +421,8 @@ final void restoreViewState(Bundle savedInstanceState) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.276 -0500", hash_original_method = "57A747EE3041ECA2E14E3727F10963D8", hash_generated_method = "DBEE0A236F799F661C5C8C7E710A8F39")
     
 final void setIndex(int index, Fragment parent) {
@@ -440,6 +434,8 @@ final void setIndex(int index, Fragment parent) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.278 -0500", hash_original_method = "B0D28796550366EF842F99A3D9D59C11", hash_generated_method = "D60291057198FF92ECFB3CAF33EB7BBB")
     
 final boolean isInBackStack() {
@@ -842,6 +838,8 @@ public void setHasOptionsMenu(boolean hasMenu) {
      * @param menuVisible The default is true, meaning the fragment's menu will
      * be shown as usual.  If false, the user will not see the menu.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.353 -0500", hash_original_method = "356D4C9378C3D90FECF449857449A450", hash_generated_method = "96157DC99A0DBE5258E26573AED54A1A")
     
 public void setMenuVisibility(boolean menuVisible) {
@@ -866,6 +864,8 @@ public void setMenuVisibility(boolean menuVisible) {
      * @param isVisibleToUser true if this fragment's UI is currently visible to the user (default),
      *                        false if it is not.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.356 -0500", hash_original_method = "1B0128696FF26E02ABF181CBEC60E7DF", hash_generated_method = "1E5A540C2E02DD71EBF65E7042379446")
     
 public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -1267,6 +1267,8 @@ public void onDestroy() {
      * to re-use the instance.  This only clears state that the framework
      * internally manages, not things the application sets.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.412 -0500", hash_original_method = "04633BF5293F80973E1AA355DB2C35EF", hash_generated_method = "04633BF5293F80973E1AA355DB2C35EF")
     
 void initState() {
@@ -1550,6 +1552,8 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.441 -0500", hash_original_method = "61D88876092ADD5F15473E2AB4FA77D3", hash_generated_method = "61D88876092ADD5F15473E2AB4FA77D3")
     
 Fragment findFragmentByWho(String who) {
@@ -1562,6 +1566,8 @@ Fragment findFragmentByWho(String who) {
         return null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.446 -0500", hash_original_method = "EDAB121E0E9B6E6FAA5680C6215916BF", hash_generated_method = "EDAB121E0E9B6E6FAA5680C6215916BF")
     
 void instantiateChildFragmentManager() {
@@ -1577,6 +1583,8 @@ void instantiateChildFragmentManager() {
         }, this);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.448 -0500", hash_original_method = "3EE407E16277E3B3A8635005B5A0DEC4", hash_generated_method = "3EE407E16277E3B3A8635005B5A0DEC4")
     
 void performCreate(Bundle savedInstanceState) {
@@ -1602,6 +1610,8 @@ void performCreate(Bundle savedInstanceState) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.450 -0500", hash_original_method = "C9098E0ABE3DD99AEB89FC060D15CE33", hash_generated_method = "C9098E0ABE3DD99AEB89FC060D15CE33")
     
 View performCreateView(LayoutInflater inflater, ViewGroup container,
@@ -1612,6 +1622,8 @@ View performCreateView(LayoutInflater inflater, ViewGroup container,
         return onCreateView(inflater, container, savedInstanceState);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.453 -0500", hash_original_method = "6B9A0B76E81212CD14FFC5CCF383D5D3", hash_generated_method = "6B9A0B76E81212CD14FFC5CCF383D5D3")
     
 void performActivityCreated(Bundle savedInstanceState) {
@@ -1629,6 +1641,8 @@ void performActivityCreated(Bundle savedInstanceState) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.456 -0500", hash_original_method = "FAC6959B7963C55ED04FD140D265CD92", hash_generated_method = "FAC6959B7963C55ED04FD140D265CD92")
     
 void performStart() {
@@ -1650,6 +1664,8 @@ void performStart() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.459 -0500", hash_original_method = "225800A7AAA9ACBE89033DE187291152", hash_generated_method = "225800A7AAA9ACBE89033DE187291152")
     
 void performResume() {
@@ -1669,6 +1685,8 @@ void performResume() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.461 -0500", hash_original_method = "4CF76F87E5378DAC79600BD4B0530AEF", hash_generated_method = "4CF76F87E5378DAC79600BD4B0530AEF")
     
 void performConfigurationChanged(Configuration newConfig) {
@@ -1678,6 +1696,8 @@ void performConfigurationChanged(Configuration newConfig) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.463 -0500", hash_original_method = "F077F2C753E805161BC608B27E561A9B", hash_generated_method = "F077F2C753E805161BC608B27E561A9B")
     
 void performLowMemory() {
@@ -1696,6 +1716,8 @@ void performLowMemory() {
     }
     */
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.465 -0500", hash_original_method = "EDE9801703CADFBAB935432E700FE9D4", hash_generated_method = "EDE9801703CADFBAB935432E700FE9D4")
     
 boolean performCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -1712,6 +1734,8 @@ boolean performCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         return show;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.467 -0500", hash_original_method = "27D1E8CFF71284C61956522356EF62A1", hash_generated_method = "27D1E8CFF71284C61956522356EF62A1")
     
 boolean performPrepareOptionsMenu(Menu menu) {
@@ -1728,6 +1752,8 @@ boolean performPrepareOptionsMenu(Menu menu) {
         return show;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.470 -0500", hash_original_method = "AB066317960C5B7A87CEEFD90F19CB53", hash_generated_method = "AB066317960C5B7A87CEEFD90F19CB53")
     
 boolean performOptionsItemSelected(MenuItem item) {
@@ -1746,6 +1772,8 @@ boolean performOptionsItemSelected(MenuItem item) {
         return false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.472 -0500", hash_original_method = "78AAFDAC6C7C01B066E741BD144002F2", hash_generated_method = "78AAFDAC6C7C01B066E741BD144002F2")
     
 boolean performContextItemSelected(MenuItem item) {
@@ -1761,11 +1789,9 @@ boolean performContextItemSelected(MenuItem item) {
         }
         return false;
     }
-
     
     public static class SavedState implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.257 -0500", hash_original_field = "1D828F290844866B19CCFCACF923E53C", hash_generated_field = "FB9BD5541F55208F5BC20C32E5AB0F3E")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
@@ -1781,12 +1807,16 @@ boolean performContextItemSelected(MenuItem item) {
 
          Bundle mState;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.240 -0500", hash_original_method = "7D4CB1BC3C04B99DC21EA19CB6BAF4D3", hash_generated_method = "7D4CB1BC3C04B99DC21EA19CB6BAF4D3")
         
 SavedState(Bundle state) {
             mState = state;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.243 -0500", hash_original_method = "E611F4C5C5E159704631D93ABD994DEF", hash_generated_method = "E611F4C5C5E159704631D93ABD994DEF")
         
 SavedState(Parcel in, ClassLoader loader) {
@@ -1810,8 +1840,6 @@ SavedState(Parcel in, ClassLoader loader) {
             dest.writeBundle(mState);
         }
     }
-
-
     
     static public class InstantiationException extends RuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.262 -0500", hash_original_method = "9A59F9C8F177B5B07F720376B1CE8BCE", hash_generated_method = "E7FAD5438370C220B69593F88B644314")
@@ -1819,10 +1847,11 @@ SavedState(Parcel in, ClassLoader loader) {
 public InstantiationException(String msg, Exception cause) {
             super(msg, cause);
         }
-
         
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.474 -0500", hash_original_method = "4DDEE08146B46D76D3DC17885A5DDDC2", hash_generated_method = "4DDEE08146B46D76D3DC17885A5DDDC2")
     
 void performOptionsMenuClosed(Menu menu) {
@@ -1836,6 +1865,8 @@ void performOptionsMenuClosed(Menu menu) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.476 -0500", hash_original_method = "229F45787776B9C5A3449A8AF116842B", hash_generated_method = "229F45787776B9C5A3449A8AF116842B")
     
 void performSaveInstanceState(Bundle outState) {
@@ -1848,6 +1879,8 @@ void performSaveInstanceState(Bundle outState) {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.478 -0500", hash_original_method = "E981410A628A778E5EC5758D81394A36", hash_generated_method = "E981410A628A778E5EC5758D81394A36")
     
 void performPause() {
@@ -1862,6 +1895,8 @@ void performPause() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.481 -0500", hash_original_method = "A54D340AC4C554E09C318AFC86BC07BD", hash_generated_method = "A54D340AC4C554E09C318AFC86BC07BD")
     
 void performStop() {
@@ -1876,6 +1911,8 @@ void performStop() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.483 -0500", hash_original_method = "E7DDF1CA54A3F6D13CAA1A65082611F8", hash_generated_method = "E7DDF1CA54A3F6D13CAA1A65082611F8")
     
 void performReallyStop() {
@@ -1898,6 +1935,8 @@ void performReallyStop() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.485 -0500", hash_original_method = "A7577DB153B8A046DC326874EE7B0A4B", hash_generated_method = "A7577DB153B8A046DC326874EE7B0A4B")
     
 void performDestroyView() {
@@ -1915,6 +1954,8 @@ void performDestroyView() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.487 -0500", hash_original_method = "6BD30978B327739DC7CB2841A03C0980", hash_generated_method = "6BD30978B327739DC7CB2841A03C0980")
     
 void performDestroy() {

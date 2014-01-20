@@ -73,45 +73,67 @@ public static void setAcceptFileSchemeCookies(boolean accept) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeAcceptCookie() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69788974 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_69788974;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeGetCookie(String url, boolean privateBrowsing) {
         	String s = new String();
         	s.addTaint(url.getTaint());
         	return s;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeHasCookies(boolean privateBrowsing) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281785784 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_281785784;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRemoveAllCookie() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRemoveExpiredCookie() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeRemoveSessionCookie() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetAcceptCookie(boolean accept) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetCookie(String url, String value, boolean privateBrowsing) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeFlushCookieStore() {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeAcceptFileSchemeCookies() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842509513 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_842509513;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeSetAcceptFileSchemeCookies(boolean accept) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.441 -0500", hash_original_field = "E0557A7A649926C8CE19F6226ADACE2C", hash_generated_field = "F3E12733AF62A9958A559C9B68C05600")
@@ -249,11 +271,15 @@ public static void setAcceptFileSchemeCookies(boolean accept) {
 
         byte mode;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.540 -0500", hash_original_method = "91108A58846CEDD8DA5905902DEE69F4", hash_generated_method = "91108A58846CEDD8DA5905902DEE69F4")
         
 Cookie() {
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.543 -0500", hash_original_method = "E1F86FD348EBFCA5152C7C5B27A3DCAA", hash_generated_method = "E1F86FD348EBFCA5152C7C5B27A3DCAA")
         
 Cookie(String defaultDomain, String defaultPath) {
@@ -274,6 +300,8 @@ boolean exactMatch(Cookie in) {
                     name.equals(in.name) && valuesMatch;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.548 -0500", hash_original_method = "AE74CD0D7D859A06FEAA31D7F99E4D83", hash_generated_method = "5EA36DC3E57D31AA105F550302CDD607")
         
 boolean domainMatch(String urlHost) {
@@ -294,6 +322,8 @@ boolean domainMatch(String urlHost) {
             }
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.551 -0500", hash_original_method = "0FD43CB7A1B51508534ED8D9F7B624E8", hash_generated_method = "9C66539CC742B320686392AD36889B54")
         
 boolean pathMatch(String urlPath) {
@@ -323,6 +353,8 @@ public String toString() {
     
     private static final class CookieComparator implements Comparator<Cookie> {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.157 -0400", hash_original_method = "EA07F3AA36DD3B1C5469CE7D110356B0", hash_generated_method = "EA07F3AA36DD3B1C5469CE7D110356B0")
         public CookieComparator ()
         {
@@ -363,6 +395,8 @@ public int compare(Cookie cookie1, Cookie cookie2) {
         
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.565 -0500", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7CA78116DACA37A676690D998A505551")
     
 private CookieManager() {
@@ -731,6 +765,8 @@ public void waitForCookieOperationsToComplete() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.598 -0500", hash_original_method = "65B0411E3AAD9BA729084C50D7485B13", hash_generated_method = "546BDABBE3929411E17F576BE1FD9961")
     
 private synchronized void signalCookieOperationsComplete() {
@@ -739,6 +775,8 @@ private synchronized void signalCookieOperationsComplete() {
         notify();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.600 -0500", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "040CAD6D5912124CE2A118841C2472B4")
     
 private synchronized void signalCookieOperationsStart() {
@@ -878,6 +916,8 @@ public void removeExpiredCookie() {
      *
      * Flush all cookies managed by the Chrome HTTP stack to flash.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.629 -0500", hash_original_method = "6E81366EB3EC21A5D57BD56704F05E83", hash_generated_method = "6E81366EB3EC21A5D57BD56704F05E83")
     
 void flushCookieStore() {
@@ -893,6 +933,8 @@ void flushCookieStore() {
      * @param last The given time in millisec
      * @return A list of cookies
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.637 -0500", hash_original_method = "F607692A589F63FF1216167E4F5DA44E", hash_generated_method = "1BE8C4C7D6C04AEB757CF034AA70A1A5")
     
 synchronized ArrayList<Cookie> getUpdatedCookiesSince(long last) {
@@ -952,6 +994,8 @@ synchronized void syncedACookie(Cookie cookie) {
      * exceeds the limit
      * @return A list of cookies which are removed from RAM
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.645 -0500", hash_original_method = "37E656A6EDF347445C1655B2E42F538E", hash_generated_method = "37AF33C9029C525839FDBA472304273B")
     
 synchronized ArrayList<Cookie> deleteLRUDomain() {
@@ -1013,6 +1057,8 @@ synchronized ArrayList<Cookie> deleteLRUDomain() {
      *          which has at least two periods, String[1] is path which always
      *          ended with "/"
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.648 -0500", hash_original_method = "5193D0EACEE146C23C2F9C98185BC9CF", hash_generated_method = "B7D42267FECCB5489BFD758DC7726422")
     
 private String[] getHostAndPath(WebAddress uri) {
@@ -1073,6 +1119,8 @@ private String[] getHostAndPath(WebAddress uri) {
      * @param host The give host
      * @return the base domain
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.650 -0500", hash_original_method = "0BC29AC3055E44155EBF14855C5D487F", hash_generated_method = "EEC25C8F6A177D8FA6AAD21B22507415")
     
 private String getBaseDomain(String host) {
@@ -1107,6 +1155,8 @@ private String getBaseDomain(String host) {
      * @param cookieString The string coming from "Set-Cookie:"
      * @return A list of Cookies
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.657 -0500", hash_original_method = "686D7BF75F67F22DBAC0E1E36B7A58EB", hash_generated_method = "212251E1BC3E86E873859FCFE5219FB9")
     
 private ArrayList<Cookie> parseCookie(String host, String path,

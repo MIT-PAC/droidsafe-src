@@ -54,6 +54,8 @@ public StringReader(String str) {
      *
      * @return {@code true} if closed, otherwise {@code false}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.769 -0500", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "6527F0BA57A980BF6CB039A1D9CEA605")
     
 private boolean isClosed() {
@@ -88,6 +90,8 @@ private boolean isClosed() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.775 -0500", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "8E2E90CC0F7CC6CA4F243AB52DE19121")
     
 private void checkNotClosed() throws IOException {

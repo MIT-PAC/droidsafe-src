@@ -114,6 +114,8 @@ public static synchronized CoderResult unmappableForLength(int length)
      * @param length
      *            the length of the erroneous input
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.570 -0500", hash_original_method = "720E366141B1E6A3092F9CE363C44766", hash_generated_method = "FB49B0EB754E7FF4B7B137E2B4C0B486")
     
 private CoderResult(int type, int length) {

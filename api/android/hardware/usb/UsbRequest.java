@@ -147,7 +147,9 @@ public boolean queue(ByteBuffer buffer, int length) {
         return result;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.342 -0500", hash_original_method = "AD7D73F051931557C02FDFDEB6B3C889", hash_generated_method = "AD7D73F051931557C02FDFDEB6B3C889")
+    /* package */ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.342 -0500", hash_original_method = "AD7D73F051931557C02FDFDEB6B3C889", hash_generated_method = "AD7D73F051931557C02FDFDEB6B3C889")
     
 void dequeue() {
         boolean out = (mEndpoint.getDirection() == UsbConstants.USB_DIR_OUT);
@@ -171,6 +173,8 @@ public boolean cancel() {
         return native_cancel();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.348 -0500", hash_original_method = "088D546DD8E640FE6DF053A8179CD4B6", hash_generated_method = "96B1EC5E351A412E42A0869292B30718")
     
     private boolean native_init(UsbDeviceConnection connection, int ep_address,
@@ -184,12 +188,16 @@ public boolean cancel() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.352 -0500", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "75E92DEDBEC5DB3628B1DCB207D9511C")
     
     private void native_close(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.356 -0500", hash_original_method = "7F13ABFE9FDE97F40DC7842504BAE184", hash_generated_method = "848D1C3001A3E57AE686BC5E67E0400B")
     
     private boolean native_queue_array(byte[] buffer, int length, boolean out){
@@ -200,6 +208,8 @@ public boolean cancel() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.360 -0500", hash_original_method = "3BDF4594393C8A1BD126F313DABD0D0F", hash_generated_method = "D07158364E2EB906374A1E3E5686864B")
     
     private void native_dequeue_array(byte[] buffer, int length, boolean out){
@@ -209,6 +219,8 @@ public boolean cancel() {
     	addTaint(out);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.364 -0500", hash_original_method = "E7AB577A437B8CBAAC35FF91F8C41F2B", hash_generated_method = "75F7D1CA6AB699DAF7160FBB5EC71A28")
     
     private boolean native_queue_direct(ByteBuffer buffer, int length, boolean out){
@@ -219,12 +231,16 @@ public boolean cancel() {
     	return getTaintBoolean();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.369 -0500", hash_original_method = "558CB787B8354E17E879C85035FE4714", hash_generated_method = "A217BB589FEBA7A9BF2BFF19BE2AE436")
     
     private void native_dequeue_direct(){
     	//Formerly a native method
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.372 -0500", hash_original_method = "EF977425574389A96D73B721035A87F5", hash_generated_method = "B3F49E05D7D870D57BD4C5FD22E181C9")
     
     private boolean native_cancel(){

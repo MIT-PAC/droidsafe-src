@@ -84,6 +84,8 @@ protected void onApplyThemeResource(Resources.Theme theme, int resid, boolean fi
         theme.applyStyle(resid, true);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:59.310 -0500", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "0D45EC997A7E9836F3D441BCF2050F00")
     
 private void initializeTheme() {

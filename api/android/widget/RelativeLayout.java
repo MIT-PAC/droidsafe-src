@@ -152,6 +152,8 @@ public RelativeLayout(Context context, AttributeSet attrs, int defStyle) {
         initFromAttributes(context, attrs);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.827 -0500", hash_original_method = "2508EFC88C6F20ACAB1B8BFE22290A1F", hash_generated_method = "035C1D3E7CE7B3023D1F89667DF7364D")
     
 private void initFromAttributes(Context context, AttributeSet attrs) {
@@ -260,6 +262,8 @@ private void initFromAttributes(Context context, AttributeSet attrs) {
         mDirtyHierarchy = true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.847 -0500", hash_original_method = "701273CD7B3C60F684ABCCF0BE7DD8A5", hash_generated_method = "8DBEAC2230F15061FF523D186D1C89E4")
     
 private void sortChildren() {
@@ -541,6 +545,8 @@ public int[] getRules() {
     
     private static class DependencyGraph {
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.967 -0500", hash_original_method = "FAE4DC70618F6C3634F51BB32C060397", hash_generated_method = "4F30F97F72F8C27BB39E8A6F6AE387E1")
         
 static void printViewId(Resources resources, View view) {
@@ -600,6 +606,8 @@ private static void printdependents(Resources resources, Node node, StringBuilde
 
         private LinkedList<Node> mRoots = new LinkedList<Node>();
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
         public DependencyGraph ()
         {
@@ -609,6 +617,8 @@ private static void printdependents(Resources resources, Node node, StringBuilde
         /**
          * Clears the graph.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.954 -0500", hash_original_method = "686A3AF8289E33425B30BEC25704B03B", hash_generated_method = "686A3AF8289E33425B30BEC25704B03B")
         
 void clear() {
@@ -629,6 +639,8 @@ void clear() {
          *
          * @param view The view to be added as a node to the graph.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.956 -0500", hash_original_method = "2AE2D90F3BED583D61A7D72DDE9D78E7", hash_generated_method = "2AE2D90F3BED583D61A7D72DDE9D78E7")
         
@@ -653,6 +665,8 @@ void add(View view) {
          *        be equal to getChildCount().
          * @param rules The list of rules to take into account.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.959 -0500", hash_original_method = "A9C10EB6FA89DCA6CFC24E3AC1BF04E7", hash_generated_method = "A9C10EB6FA89DCA6CFC24E3AC1BF04E7")
         
 void getSortedViews(View[] sorted, int... rules) {
@@ -692,6 +706,8 @@ void getSortedViews(View[] sorted, int... rules) {
          *
          * @return A list of node, each being a root of the graph
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.962 -0500", hash_original_method = "3833904997A1288F1E7950B84718C1E5", hash_generated_method = "3C85F6F19C37221BA26E3341906EA33F")
         
 private LinkedList<Node> findRoots(int[] rulesFilter) {
@@ -752,6 +768,8 @@ private LinkedList<Node> findRoots(int[] rulesFilter) {
          * @param resources The context's resources to print the ids.
          * @param rules The list of rules to take into account.
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.964 -0500", hash_original_method = "6C6DA74626C9CD8B150D67A2E9AEA5BB", hash_generated_method = "6C6DA74626C9CD8B150D67A2E9AEA5BB")
         
 void log(Resources resources, int... rules) {
@@ -813,6 +831,8 @@ public void onReleased(Node element) {
 
             private boolean mIsPooled;
             
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.559 -0400", hash_original_method = "4AE6680246A461A411C2DCFC3E5C235E", hash_generated_method = "4AE6680246A461A411C2DCFC3E5C235E")
             public Node ()
             {
@@ -843,6 +863,8 @@ public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
             }
 
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.016 -0500", hash_original_method = "4A4B6653C3D2EF8B0AE5BB1353D36229", hash_generated_method = "4A4B6653C3D2EF8B0AE5BB1353D36229")
             
 void release() {
@@ -1184,6 +1206,8 @@ private void measureChildHorizontal(View child, LayoutParams params, int myWidth
      * @param mySize The width or height of this view (the RelativeLayout)
      * @return MeasureSpec for the child
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.865 -0500", hash_original_method = "78354A3A0D2C9A2AC648B99E7333EDDC", hash_generated_method = "16282200745A58B93E2CA5E9F000A4C6")
     
 private int getChildMeasureSpec(int childStart, int childEnd,
@@ -1439,6 +1463,8 @@ private void applyVerticalSizeRules(LayoutParams childParams, int myHeight) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.880 -0500", hash_original_method = "1C833E1C2ADE997D1187353BA16BCE70", hash_generated_method = "83F4CE1F5B509C83152C214D53FEC76D")
     
 private View getRelatedView(int[] rules, int relation) {
@@ -1475,6 +1501,8 @@ private LayoutParams getRelatedViewParams(int[] rules, int relation) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.884 -0500", hash_original_method = "B96AFAE3C58D6FFF0F9AB9328789A20B", hash_generated_method = "299A78988211003B8179EA049732589D")
     
 private int getRelatedViewBaseline(int[] rules, int relation) {

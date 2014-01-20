@@ -182,6 +182,8 @@ public SSLSocketFactory(javax.net.ssl.SSLSocketFactory socketfactory) {
      * This constructor is used exclusively to instantiate the factory for
      * {@link #getSocketFactory getSocketFactory}.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.659 -0500", hash_original_method = "B5B8605C888DE528BB32DDEA2B05EF81", hash_generated_method = "6683D6AE733EB1A46C4CCFA49E80FD03")
     
 private SSLSocketFactory() {

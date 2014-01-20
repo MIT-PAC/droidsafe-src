@@ -185,6 +185,8 @@ public ClipData(ClipDescription description, Item item) {
         mItems.add(item);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.693 -0500", hash_original_method = "58D4E89221B1347651A83B7DDCBD7718", hash_generated_method = "58D4E89221B1347651A83B7DDCBD7718")
     
 ClipData(Parcel in) {

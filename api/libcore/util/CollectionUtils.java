@@ -28,7 +28,9 @@ public final class CollectionUtils {
 
                     private T next;
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.098 -0500", hash_original_method = "E85EAE479DB025693A9729458E71245D", hash_generated_method = "5FF4E103A055D1C17EDE93548A8402A2")
+                    @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.098 -0500", hash_original_method = "E85EAE479DB025693A9729458E71245D", hash_generated_method = "5FF4E103A055D1C17EDE93548A8402A2")
                     
 private void computeNext() {
                         removeIsOkay = false;
@@ -85,6 +87,8 @@ public void remove() {
             list.subList(j, list.size()).clear();
         }
     }
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.084 -0500", hash_original_method = "01B59B68B4B802DAB48FA08289978867", hash_generated_method = "9ECF08C0F15D4899C88459A1B3061187")
     
 private CollectionUtils() {}

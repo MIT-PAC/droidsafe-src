@@ -164,6 +164,8 @@ protected DataConnection(PhoneBase phone, String name, int id, RetryManager rm) 
     }
 
     //***** Abstract methods
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.415 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "756F2EF371660D429BB5FEF72144B300")
     
 @Override
@@ -173,10 +175,14 @@ protected DataConnection(PhoneBase phone, String name, int id, RetryManager rm) 
     
 protected abstract void onConnect(ConnectionParams cp);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.420 -0500", hash_original_method = "B152A29494275433B17B8AB6FD767B62", hash_generated_method = "03B7A158959C6B462D6BFABDFA867604")
     
 protected abstract boolean isDnsOk(String[] domainNameServers);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.423 -0500", hash_original_method = "48DBEBE9679DD6022C78E9B6D9D15841", hash_generated_method = "43827D28600B8F0847D532E80E30A990")
     
 protected abstract void log(String s);
@@ -187,6 +193,8 @@ protected abstract void log(String s);
      * @param o will be returned in AsyncResult.userObj
      *          and is either a DisconnectParams or ConnectionParams.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.429 -0500", hash_original_method = "59ED68D7EF373C505428063E232AFE5C", hash_generated_method = "3D4259D2FE3F23AC235137696717ADB9")
     
 private void tearDownData(Object o) {
@@ -398,6 +406,8 @@ FailCause(int errorCode) {
             mErrorCode = errorCode;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.335 -0500", hash_original_method = "2CAF9569868B361A0FCF2D9EDEA3395A", hash_generated_method = "2CAF9569868B361A0FCF2D9EDEA3395A")
             
@@ -444,6 +454,8 @@ public static FailCause fromInt(int errorCode) {
 
         private int mRetryOverride = -1;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.352 -0500", hash_original_method = "A504ADA2782D67F9E42B2FFAADC374C6", hash_generated_method = "A504ADA2782D67F9E42B2FFAADC374C6")
         
 CallSetupException (int retryOverride) {
@@ -1209,6 +1221,8 @@ private DataCallState.SetupResult onSetupConnectionCompleted(AsyncResult ar) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.474 -0500", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "B875365F6645C433F911EE264E8920EF")
     
 private int getSuggestedRetryTime(AsyncResult ar) {

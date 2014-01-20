@@ -8,6 +8,8 @@ import libcore.icu.NativeBreakIterator;
 
 class RuleBasedBreakIterator extends BreakIterator {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.384 -0500", hash_original_method = "1D7663481F9CF836249C543E9EA9D4B8", hash_generated_method = "1D7663481F9CF836249C543E9EA9D4B8")
     
 RuleBasedBreakIterator(NativeBreakIterator iterator) {
@@ -36,6 +38,8 @@ RuleBasedBreakIterator(NativeBreakIterator iterator) {
     /*
      * check the offset, throw exception if it is invalid
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.394 -0500", hash_original_method = "49EE36B5C8835D510AEEA1B2E4051F58", hash_generated_method = "FCFF8187C01FD0135EEFA96FEDEF2E0F")
     
 private void validateOffset(int offset) {

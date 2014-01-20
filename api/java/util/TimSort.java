@@ -7,10 +7,14 @@ import droidsafe.annotations.*;
 
 class TimSort<T> {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static <T> void sort(T[] a, Comparator<? super T> c) {
         sort(a, 0, a.length, c);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c) {
         if (c == null) {
             Arrays.sort(a, lo, hi);
@@ -44,6 +48,8 @@ class TimSort<T> {
         if (DEBUG) assert ts.stackSize == 1;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @SuppressWarnings("fallthrough")
     private static <T> void binarySort(T[] a, int lo, int hi, int start,
                                        Comparator<? super T> c) {
@@ -74,6 +80,8 @@ class TimSort<T> {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
                                                     Comparator<? super T> c) {
         if (DEBUG) assert lo < hi;
@@ -98,6 +106,8 @@ class TimSort<T> {
      * @param lo the index of the first element in the range to be reversed
      * @param hi the index after the last element in the range to be reversed
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.160 -0500", hash_original_method = "91B272278DB88F42B96F73872CBFFA74", hash_generated_method = "2BAD7E2C66283498F1FE17C97BEBA274")
     
 private static void reverseRange(Object[] a, int lo, int hi) {
@@ -126,6 +136,8 @@ private static void reverseRange(Object[] a, int lo, int hi) {
      * @param n the length of the array to be sorted
      * @return the length of the minimum run to be merged
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.163 -0500", hash_original_method = "901F75134304B9C846324F0D4BE695EF", hash_generated_method = "22954E4A0482F5141A4D40F3AD54F81A")
     
 private static int minRunLength(int n) {
@@ -138,6 +150,8 @@ private static int minRunLength(int n) {
         return n + r;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static <T> int gallopLeft(T key, T[] a, int base, int len, int hint,
                                       Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -182,6 +196,8 @@ private static int minRunLength(int n) {
         return ofs;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static <T> int gallopRight(T key, T[] a, int base, int len,
                                        int hint, Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -275,6 +291,8 @@ private static int minRunLength(int n) {
      * @param a the array to be sorted
      * @param c the comparator to determine the order of the sort
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.147 -0500", hash_original_method = "8363F88EAB5D9C5F21C7C4CB08C10AC9", hash_generated_method = "5719BE7E38A277181F3B9B0DE10DC1C5")
     
 private TimSort(T[] a, Comparator<? super T> c) {
@@ -311,6 +329,8 @@ private TimSort(T[] a, Comparator<? super T> c) {
      * @param runBase index of the first element in the run
      * @param runLen  the number of elements in the run
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.166 -0500", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "B945D9D44581F68296FA3FBD6173A146")
     
 private void pushRun(int runBase, int runLen) {
@@ -330,6 +350,8 @@ private void pushRun(int runBase, int runLen) {
      * so the invariants are guaranteed to hold for i < stackSize upon
      * entry to the method.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.168 -0500", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "E56B43F48F2878D3CB0575C123027539")
     
 private void mergeCollapse() {
@@ -351,6 +373,8 @@ private void mergeCollapse() {
      * Merges all runs on the stack until only one remains.  This method is
      * called once, to complete the sort.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.171 -0500", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "3E5590DAB928E12BB7FB6F548EF87AAE")
     
 private void mergeForceCollapse() {
@@ -369,6 +393,8 @@ private void mergeForceCollapse() {
      *
      * @param i stack index of the first of the two runs to merge
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.174 -0500", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "DFDF8FF00BF0958B04E666FD0BE08A59")
     
 private void mergeAt(int i) {
@@ -438,6 +464,8 @@ private void mergeAt(int i) {
      *        (must be aBase + aLen)
      * @param len2  length of second run to be merged (must be > 0)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.186 -0500", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "8411EC820AA584BF44E6CCED4A3DBD03")
     
 private void mergeLo(int base1, int len1, int base2, int len2) {
@@ -557,6 +585,8 @@ private void mergeLo(int base1, int len1, int base2, int len2) {
      *        (must be aBase + aLen)
      * @param len2  length of second run to be merged (must be > 0)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.190 -0500", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "7234B212615F457DA8EAE2D2891278FF")
     
 private void mergeHi(int base1, int len1, int base2, int len2) {
@@ -677,6 +707,8 @@ private void mergeHi(int base1, int len1, int base2, int len2) {
      * @param minCapacity the minimum required capacity of the tmp array
      * @return tmp, whether or not it grew
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.193 -0500", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "57029F4FBEA51285CEB45FD521D3BF60")
     
 private T[] ensureCapacity(int minCapacity) {

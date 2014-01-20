@@ -39,7 +39,9 @@ public RemoteCallback(Handler handler) {
         mTarget = new LocalCallback();
     }
     
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.337 -0500", hash_original_method = "0B794F9104639CB6919FB2A3A2B6E7D4", hash_generated_method = "0B794F9104639CB6919FB2A3A2B6E7D4")
+     @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.337 -0500", hash_original_method = "0B794F9104639CB6919FB2A3A2B6E7D4", hash_generated_method = "0B794F9104639CB6919FB2A3A2B6E7D4")
     
 RemoteCallback(IRemoteCallback target) {
         mHandler = null;
@@ -53,6 +55,8 @@ public void sendResult(Bundle bundle) throws RemoteException {
         mTarget.sendResult(bundle);
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.342 -0500", hash_original_method = "DDBE4F03B4F4F42CB3E14CAE57B6594B", hash_generated_method = "DD6CD927127F6B9BC8B5C25B8638BF91")
     
 protected abstract void onResult(Bundle bundle);
@@ -119,6 +123,8 @@ public void sendResult(Bundle bundle) {
     }
     
     static class RemoteCallbackProxy extends RemoteCallback {
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.328 -0500", hash_original_method = "883FA11D61E159E4AB8658B2E38FCD52", hash_generated_method = "883FA11D61E159E4AB8658B2E38FCD52")
         
 RemoteCallbackProxy(IRemoteCallback target) {

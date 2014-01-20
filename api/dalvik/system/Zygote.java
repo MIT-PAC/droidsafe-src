@@ -10,6 +10,8 @@ import droidsafe.helpers.DSUtils;
 
 public class Zygote {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.272 -0500", hash_original_method = "48FA3E87F3B01C5B7451B6F18816C44C", hash_generated_method = "ADA12113D5D8110B14919D9438E16B6D")
     
 private static void preFork() {
@@ -21,6 +23,8 @@ private static void preFork() {
      * We must not fork until we're single-threaded again. Wait until /proc shows we're
      * down to just one thread.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.275 -0500", hash_original_method = "E907105D6B58D9053A1938DE7DF89ED1", hash_generated_method = "9FCEF8C8DF6D21C2526B583BB43BE6DA")
     
 private static void waitUntilAllThreadsStopped() {
@@ -35,6 +39,8 @@ private static void waitUntilAllThreadsStopped() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.277 -0500", hash_original_method = "A79881836E3F6AC14C6223324389064A", hash_generated_method = "2A8FB1CE86DFF5A8312306EAA5D4DFAF")
     
 private static void postFork() {
@@ -194,6 +200,8 @@ public static void appendQuotedShellArgs(StringBuilder command, String[] args) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeExecShell(String command) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.256 -0500", hash_original_field = "A21A7AB1279FC9EE4ADB7753815CF78F", hash_generated_field = "3C082D15F14125569237697FB7CFFEB4")
@@ -216,6 +224,8 @@ public static void appendQuotedShellArgs(StringBuilder command, String[] args) {
 
     public static boolean systemInSafeMode = false;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.270 -0500", hash_original_method = "571209F1E0BFAC649B933D0F6DC3BC96", hash_generated_method = "56FC9AAA080079361AC478620488538B")
     
 private Zygote() {}

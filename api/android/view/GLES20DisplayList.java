@@ -24,12 +24,16 @@ class GLES20DisplayList extends DisplayList {
     // DO NOT overwrite this reference once it is set.
     private DisplayListFinalizer mFinalizer;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.173 -0400", hash_original_method = "AE604D63277D457D456549CB93FF76C1", hash_generated_method = "AE604D63277D457D456549CB93FF76C1")
     public GLES20DisplayList ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.980 -0500", hash_original_method = "95D7EAA4B043B28D3D04F5E259ED8AAD", hash_generated_method = "95D7EAA4B043B28D3D04F5E259ED8AAD")
     
@@ -40,6 +44,8 @@ int getNativeDisplayList() {
         return mFinalizer.mNativeDisplayList;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.983 -0500", hash_original_method = "E5C596CBDCD8BE3EF1855673907A59B8", hash_generated_method = "08FF9D06F5EF6732D26BE2D0CF420832")
     
 @Override
@@ -54,6 +60,8 @@ int getNativeDisplayList() {
         return mCanvas;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.985 -0500", hash_original_method = "247D3D8A3D31E91BE5C013DB24963870", hash_generated_method = "D5C134E8BA617FD5E9C3B870609591B2")
     
 @Override
@@ -65,6 +73,8 @@ int getNativeDisplayList() {
         mValid = false;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.987 -0500", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "1A8E4178B3ECA5148654C00257679474")
     
 @Override
@@ -72,6 +82,8 @@ int getNativeDisplayList() {
         return mValid;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.990 -0500", hash_original_method = "96CA5C3852449FF9B74309A832926627", hash_generated_method = "5DEFE479F718B276DE361E7B4349A8E4")
     
 @Override
@@ -88,6 +100,8 @@ int getNativeDisplayList() {
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.993 -0500", hash_original_method = "3E7FC40C3EA5DE4EA51EEDE8E80652F9", hash_generated_method = "E58D98676E92D658A598AEE9912F9C18")
     

@@ -401,6 +401,8 @@ public static void stopHierarchyTracing() {
         sHierarhcyRoot = null;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.725 -0500", hash_original_method = "8AD232DF2BF806FA5443AE736277CC43", hash_generated_method = "33C9D1D66835AC0B098B971E6D082DAF")
     
 static void dispatchCommand(View view, String command, String parameters,
@@ -429,6 +431,8 @@ static void dispatchCommand(View view, String command, String parameters,
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.728 -0500", hash_original_method = "E7AA1AA0F5F3D46BF2196FEAFC7C37E8", hash_generated_method = "95474F79119DE35319CDF7CA4591800E")
     
 private static View findView(View root, String parameter) {
@@ -451,6 +455,8 @@ private static View findView(View root, String parameter) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.731 -0500", hash_original_method = "BDF07495D49506A0278A7A607DDE349D", hash_generated_method = "43C7718534665A73D78F0B8DD5D31E06")
     
 private static void invalidate(View root, String parameter) {
@@ -460,6 +466,8 @@ private static void invalidate(View root, String parameter) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.737 -0500", hash_original_method = "87EF2D5214EE0EA9F700768E799A7935", hash_generated_method = "812311D8246BFDC28512970A2890A732")
     
 private static void requestLayout(View root, String parameter) {
@@ -473,6 +481,8 @@ private static void requestLayout(View root, String parameter) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.740 -0500", hash_original_method = "99E7503B140035CB3F5FB600D6940FA3", hash_generated_method = "C77A165820A546A2CE3858F07922A0E0")
     
 private static void profile(View root, OutputStream clientStream, String parameter)
@@ -518,7 +528,9 @@ public Void[] pre() {
                                 return null;
                             }
 
-                            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.749 -0500", hash_original_method = "4A21A3C59CED96F8D51A1FA9FDD7BAE0", hash_generated_method = "13026B6C2BAE548CE0661B4E35CFB0B2")
+                            @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.749 -0500", hash_original_method = "4A21A3C59CED96F8D51A1FA9FDD7BAE0", hash_generated_method = "13026B6C2BAE548CE0661B4E35CFB0B2")
             
 private void forceLayout(View view) {
                                 view.forceLayout();
@@ -671,6 +683,8 @@ private static void captureLayers(View root, final DataOutputStream clientStream
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.791 -0500", hash_original_method = "39E4687AEC0DFE57B6041298B9A06FA7", hash_generated_method = "8176D68E0C5BD54CA07606596428F328")
     
 private static void captureViewLayer(View view, DataOutputStream clientStream, boolean visible)
@@ -718,6 +732,8 @@ private static void captureViewLayer(View view, DataOutputStream clientStream, b
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.794 -0500", hash_original_method = "50C6ECE900AC13BE000E66CA433DF6CB", hash_generated_method = "F8FB69A5968C85FA97BB5670485A3A4C")
     
 private static void outputDisplayList(View root, String parameter) throws IOException {
@@ -785,6 +801,8 @@ private static Bitmap performViewCapture(final View captureView, final boolean s
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.805 -0500", hash_original_method = "F61162F3CABBD02821B784FB69394317", hash_generated_method = "CCE1AE04DF35DB854AD7CBFA40B0F455")
     
 private static void dump(View root, OutputStream clientStream) throws IOException {
@@ -807,6 +825,8 @@ private static void dump(View root, OutputStream clientStream) throws IOExceptio
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.808 -0500", hash_original_method = "5833D78630A0ABEF24425617A800E52C", hash_generated_method = "413904C6AA110C0AE8BE90235E87B3EE")
     
 private static View findView(ViewGroup group, String className, int hashCode) {
@@ -830,12 +850,16 @@ private static View findView(ViewGroup group, String className, int hashCode) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.811 -0500", hash_original_method = "6C30A5CCC0CF82FA550A697812F2D8AC", hash_generated_method = "12D70F8FAEA6DEE0BB6478FD1D95C69B")
     
 private static boolean isRequestedView(View view, String className, int hashCode) {
         return view.getClass().getName().equals(className) && view.hashCode() == hashCode;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.814 -0500", hash_original_method = "5477E7361E0198F52F4739FAE13D1748", hash_generated_method = "50EE2420BF0B26544444127159CE6215")
     
 private static void dumpViewHierarchyWithProperties(Context context, ViewGroup group,
@@ -855,6 +879,8 @@ private static void dumpViewHierarchyWithProperties(Context context, ViewGroup g
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.817 -0500", hash_original_method = "A1D47394B3DD77835A07F9275FAED40E", hash_generated_method = "DB6679FD3383EF9E6055FD47B7B3C08D")
     
 private static boolean dumpViewWithProperties(Context context, View view,
@@ -877,6 +903,8 @@ private static boolean dumpViewWithProperties(Context context, View view,
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.820 -0500", hash_original_method = "096C849E8C18A39942244A8C79B40CB5", hash_generated_method = "8B80C1A11D4E04C892D17BBCE9BE3C92")
     
 private static Field[] getExportedPropertyFields(Class<?> klass) {
@@ -913,6 +941,8 @@ private static Field[] getExportedPropertyFields(Class<?> klass) {
         return fields;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.824 -0500", hash_original_method = "ED3508DD2DBB4E6ACB6B0001C73AF024", hash_generated_method = "399A8AB9A99FD5F31C02002C0913058D")
     
 private static Method[] getExportedPropertyMethods(Class<?> klass) {
@@ -951,6 +981,8 @@ private static Method[] getExportedPropertyMethods(Class<?> klass) {
         return methods;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.826 -0500", hash_original_method = "40CE639F8706808D9F15554E44131B8F", hash_generated_method = "B8629DCE341C48FAE52277ED1BC33E89")
     
 private static void dumpViewProperties(Context context, Object view,
@@ -959,6 +991,8 @@ private static void dumpViewProperties(Context context, Object view,
         dumpViewProperties(context, view, out, "");
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.829 -0500", hash_original_method = "7BB17C895A68D99A44294B984761FB55", hash_generated_method = "29BC5A36792F5A122B8F501257EE43D4")
     
 private static void dumpViewProperties(Context context, Object view,
@@ -973,6 +1007,8 @@ private static void dumpViewProperties(Context context, Object view,
         } while (klass != Object.class);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.833 -0500", hash_original_method = "B03A838660ADA490E1042D45D00ECCAF", hash_generated_method = "ED479D837200EA7BB9F6E4B04392E6F2")
     
 private static void exportMethods(Context context, Object view, BufferedWriter out,
@@ -1048,6 +1084,8 @@ private static void exportMethods(Context context, Object view, BufferedWriter o
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.837 -0500", hash_original_method = "3A18E6E106473CB28FC5E1DDECF06C31", hash_generated_method = "688185751DD7B5CF578D69E9D5A30983")
     
 private static void exportFields(Context context, Object view, BufferedWriter out,
@@ -1125,6 +1163,8 @@ private static void exportFields(Context context, Object view, BufferedWriter ou
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.840 -0500", hash_original_method = "B7098ACB062DBE88371A117C8201E088", hash_generated_method = "6FE9FE758E446071750999C24203E6FD")
     
 private static void writeEntry(BufferedWriter out, String prefix, String name,
@@ -1211,6 +1251,8 @@ private static void exportUnrolledArray(Context context, BufferedWriter out,
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.849 -0500", hash_original_method = "5FE8610E444A8A1DD826B34556733550", hash_generated_method = "38B8C1C22BADCBEAA730B0774A5762C8")
     
 static Object resolveId(Context context, int id) {
@@ -1229,6 +1271,8 @@ static Object resolveId(Context context, int id) {
         return fieldValue;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.851 -0500", hash_original_method = "7AD2EE6006BF39FAA79DC0A5665EF851", hash_generated_method = "CB65942F17F8702C1E1004DD32EE8D8F")
     
 private static void writeValue(BufferedWriter out, Object value) throws IOException {
@@ -1242,6 +1286,8 @@ private static void writeValue(BufferedWriter out, Object value) throws IOExcept
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.854 -0500", hash_original_method = "661A6662CA258B0107AEBC63F4E81CD9", hash_generated_method = "10C484D2FFC60F49F85705C42F09FF71")
     
 private static void dumpViewHierarchy(ViewGroup group, BufferedWriter out, int level) {
@@ -1260,6 +1306,8 @@ private static void dumpViewHierarchy(ViewGroup group, BufferedWriter out, int l
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.857 -0500", hash_original_method = "FF15F5FE1007358DFF706EB6B3D4C8A8", hash_generated_method = "AA76F32E1682C7F4568C019E99836646")
     
 private static boolean dumpView(Object view, BufferedWriter out, int level) {
@@ -1278,6 +1326,8 @@ private static boolean dumpView(Object view, BufferedWriter out, int level) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.860 -0500", hash_original_method = "AD4DEB44C21E866C8545DD91154B3A1A", hash_generated_method = "D809222B30973DF68A512A024A4D274A")
     
 private static Field[] capturedViewGetPropertyFields(Class<?> klass) {
@@ -1309,6 +1359,8 @@ private static Field[] capturedViewGetPropertyFields(Class<?> klass) {
         return fields;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.863 -0500", hash_original_method = "5A29577CBC3FDAB090889A379D23E802", hash_generated_method = "5454DF1003FC9819721D2BC7171DCE3A")
     
 private static Method[] capturedViewGetPropertyMethods(Class<?> klass) {
@@ -1342,6 +1394,8 @@ private static Method[] capturedViewGetPropertyMethods(Class<?> klass) {
         return methods;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.866 -0500", hash_original_method = "CBB1B3DBF4AD07FDDC99DFD405205658", hash_generated_method = "2A343B01109474429B581F4E114A4169")
     
 private static String capturedViewExportMethods(Object obj, Class<?> klass,
@@ -1389,6 +1443,8 @@ private static String capturedViewExportMethods(Object obj, Class<?> klass,
         return sb.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.869 -0500", hash_original_method = "F6A503DBD2DFB21E8B5B9BC29E887828", hash_generated_method = "5195FE8E30501E25A69C911695521DCA")
     
 private static String capturedViewExportFields(Object obj, Class<?> klass, String prefix) {
@@ -1479,6 +1535,8 @@ public static void dumpCapturedView(String tag, Object view) {
 
         public int indexOnScreen;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.273 -0400", hash_original_method = "ED320AF13EB079D56E1BB2CD418F0F12", hash_generated_method = "ED320AF13EB079D56E1BB2CD418F0F12")
         public RecyclerTrace ()
         {
@@ -1489,6 +1547,8 @@ public static void dumpCapturedView(String tag, Object view) {
     
     private static class LooperProfiler implements Looper.Profiler, Printer {
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.671 -0500", hash_original_method = "6DB53493054EB653FCC57744E10A37C3", hash_generated_method = "146DD2434506C60576E0586CA9849E67")
         
 private static void writeTraces(FileOutputStream out, long offset, long wallStart,
@@ -1562,6 +1622,8 @@ private static void writeHeader(DataOutputStream out, long start,
             startSection("end", out);
         }
     
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.678 -0500", hash_original_method = "C843E445BEC77FA6E6B28EFEC888FAD6", hash_generated_method = "F58880A23485C5F4A4C69BFDF8D9B196")
         
 private static void addMethods(HashMap<String, Integer> names, DataOutputStream out)
@@ -1573,6 +1635,8 @@ private static void addMethods(HashMap<String, Integer> names, DataOutputStream 
             }
         }
     
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.681 -0500", hash_original_method = "3C4BD9177EE9F60FD531F61C4A7D2CF3", hash_generated_method = "BC51CAAD89A42C590E0E4F20FC3C1D12")
         
 private static void addThreadId(int id, String name, DataOutputStream out)
@@ -1581,6 +1645,8 @@ private static void addThreadId(int id, String name, DataOutputStream out)
             out.writeBytes(Integer.toString(id) + '\t' + name + '\n');
         }
     
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.684 -0500", hash_original_method = "B920499BB087E24AC6B54AC1CF0ED8BD", hash_generated_method = "A174DD553BEB6A1FDB365C4F5AD9BF0E")
         
 private static void addValue(String name, String value, DataOutputStream out)
@@ -1592,6 +1658,8 @@ private static void addValue(String name, String value, DataOutputStream out)
             out.writeBytes(value + '\n');
         }
     
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.686 -0500", hash_original_method = "F61DA6CBDE4E83116359AD4099969BDE", hash_generated_method = "453931FDD018CB766721284D6FC65F28")
         
 private static void startSection(String name, DataOutputStream out) throws IOException {
@@ -1654,6 +1722,8 @@ private static void startSection(String name, DataOutputStream out) throws IOExc
 
             long threadTime;
             
+            @DSComment("Package priviledge")
+            @DSBan(DSCat.DEFAULT_MODIFIER)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.283 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
             public Entry ()
             {
@@ -1662,6 +1732,8 @@ private static void startSection(String name, DataOutputStream out) throws IOExc
 
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.652 -0500", hash_original_method = "837FBF9717038E47AC8A60A9DD4D19D4", hash_generated_method = "837FBF9717038E47AC8A60A9DD4D19D4")
         
 LooperProfiler(String path, FileDescriptor fileDescriptor) {
@@ -1698,6 +1770,8 @@ LooperProfiler(String path, FileDescriptor fileDescriptor) {
             mTraces.add(entry);
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.660 -0500", hash_original_method = "A4E97683E16A36EF6068E097213C1038", hash_generated_method = "37607AC9D622458A484DC439E16CA770")
         
 private int getTraceId(Message message) {
@@ -1710,6 +1784,8 @@ private int getTraceId(Message message) {
             return traceId;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.665 -0500", hash_original_method = "BBA2F80D690B10E11CCE7370554710C3", hash_generated_method = "90F83B572DE9F07644F26F2FD249A94A")
         
 void save() {
@@ -1722,6 +1798,8 @@ void save() {
             }, "LooperProfiler[" + mPath + "]").start();
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.668 -0500", hash_original_method = "B1053AAB109E078FB60D54B6D9E37ED4", hash_generated_method = "69C0075C2E96408311C21E4C84229F11")
         
 private void saveTraces() {

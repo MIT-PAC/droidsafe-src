@@ -8,6 +8,8 @@ import libcore.io.SizeOf;
 
 final class LongToByteBufferAdapter extends LongBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.176 -0500", hash_original_method = "D932C9FB81190BBA2222EE830AEAF465", hash_generated_method = "9C539DAB3D1A86AFAC4F6478C3DB9947")
     
 static LongBuffer asLongBuffer(ByteBuffer byteBuffer) {
@@ -19,6 +21,8 @@ static LongBuffer asLongBuffer(ByteBuffer byteBuffer) {
 
     private  ByteBuffer byteBuffer;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.179 -0500", hash_original_method = "7BE681F333C6F648B89AD219E60BA2F8", hash_generated_method = "51E21B349A7901D675DAD719F52322E6")
     
 private LongToByteBufferAdapter(ByteBuffer byteBuffer) {

@@ -6,12 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Enumeration;
 
-
-
-
-
 final class AllPermissionCollection extends PermissionCollection {
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.787 -0400", hash_original_method = "0FDD5C4A8E9AC1DDB2FA5A64417EADFF", hash_generated_method = "0FDD5C4A8E9AC1DDB2FA5A64417EADFF")
     public AllPermissionCollection ()
     {
@@ -28,7 +26,6 @@ final class AllPermissionCollection extends PermissionCollection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.113 -0500", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "7028504695C2B07EE227E4A73DB8D42F")
     
 @Override public boolean implies(Permission permission) { return true; }
-
     
 }
 

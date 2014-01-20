@@ -55,6 +55,8 @@ private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
     /**
      * Convenience method to interrupt current thread.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.146 -0500", hash_original_method = "A017FE2B347BB8E3F328A9771EBB4299", hash_generated_method = "8DC8129982A7D3B365DA079876162962")
     
 private static void selfInterrupt() {
@@ -127,6 +129,8 @@ private static final boolean compareAndSetNext(Node node,
      * Creates a new <tt>AbstractQueuedSynchronizer</tt> instance
      * with initial synchronization state of zero.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.057 -0500", hash_original_method = "C7F1FA27B1E7517E25F1C7951B5E8CA8", hash_generated_method = "28B05CF58E648131424EE9C2854BECE4")
     
 protected AbstractQueuedSynchronizer() { }
@@ -136,6 +140,8 @@ protected AbstractQueuedSynchronizer() { }
      * This operation has memory semantics of a <tt>volatile</tt> read.
      * @return current state value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.113 -0500", hash_original_method = "15A8F8E5739EB2961628EAE8F68BF29F", hash_generated_method = "7BD0EF4590675A6D229BA0F6AA70AD05")
     
@@ -148,6 +154,8 @@ protected final int getState() {
      * This operation has memory semantics of a <tt>volatile</tt> write.
      * @param newState the new state value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.116 -0500", hash_original_method = "57BE013BA515294E586014B30A336C04", hash_generated_method = "6E0BCC99F59C93EE657F3AAB5FC5B39B")
     
 protected final void setState(int newState) {
@@ -165,6 +173,8 @@ protected final void setState(int newState) {
      * @return true if successful. False return indicates that the actual
      *         value was not equal to the expected value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.119 -0500", hash_original_method = "DF00243144DD556AB3E9A0ABE3AEC78F", hash_generated_method = "618055F7154B638264B318EE88C0D9E0")
     
 protected final boolean compareAndSetState(int expect, int update) {
@@ -272,6 +282,8 @@ private void unparkSuccessor(Node node) {
      * propagation. (Note: For exclusive mode, release just amounts
      * to calling unparkSuccessor of head if it needs signal.)
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.135 -0500", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "CD41910D170D208E7EF5E3E2D52AF223")
     
 private void doReleaseShared() {
@@ -397,6 +409,8 @@ private void cancelAcquire(Node node) {
      *
      * @return {@code true} if interrupted
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.149 -0500", hash_original_method = "C551D5FD0C0A2C72DAD755E48C68905F", hash_generated_method = "413A64F040422761DF3E0A13371BE941")
     
 private final boolean parkAndCheckInterrupt() {
@@ -449,6 +463,8 @@ final boolean acquireQueued(final Node node, int arg) {
      * Acquires in exclusive interruptible mode.
      * @param arg the acquire argument
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.154 -0500", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "651B21860BCD5A03563D55E4C417A0FE")
     
 private void doAcquireInterruptibly(int arg)
@@ -481,6 +497,8 @@ private void doAcquireInterruptibly(int arg)
      * @param nanosTimeout max wait time
      * @return {@code true} if acquired
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.158 -0500", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "A2DB36E986688669AC7CAE62C370C146")
     
 private boolean doAcquireNanos(int arg, long nanosTimeout)
@@ -518,6 +536,8 @@ private boolean doAcquireNanos(int arg, long nanosTimeout)
      * Acquires in shared uninterruptible mode.
      * @param arg the acquire argument
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.160 -0500", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "1E77FC77285F8848AC72DCCE8FC9F0FC")
     
 private void doAcquireShared(int arg) {
@@ -552,6 +572,8 @@ private void doAcquireShared(int arg) {
      * Acquires in shared interruptible mode.
      * @param arg the acquire argument
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.163 -0500", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "5F913E2868844DFC02712ACD72D7EDA3")
     
 private void doAcquireSharedInterruptibly(int arg)
@@ -587,6 +609,8 @@ private void doAcquireSharedInterruptibly(int arg)
      * @param nanosTimeout max wait time
      * @return {@code true} if acquired
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.166 -0500", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "779F213A44CB5DBFF44E61D24BDD1114")
     
 private boolean doAcquireSharedNanos(int arg, long nanosTimeout)
@@ -652,6 +676,8 @@ private boolean doAcquireSharedNanos(int arg, long nanosTimeout)
      *         correctly.
      * @throws UnsupportedOperationException if exclusive mode is not supported
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.169 -0500", hash_original_method = "FADA99D99649E8B049B596B89A86AFE3", hash_generated_method = "41CF87B416993B800A71499B681DFB55")
     
 protected boolean tryAcquire(int arg) {
@@ -680,6 +706,8 @@ protected boolean tryAcquire(int arg) {
      *         correctly.
      * @throws UnsupportedOperationException if exclusive mode is not supported
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.171 -0500", hash_original_method = "0AA9B3926B88397CF769442818D9CA16", hash_generated_method = "4C5C83883C880F3750DC4D66C301F52F")
     
 protected boolean tryRelease(int arg) {
@@ -718,6 +746,8 @@ protected boolean tryRelease(int arg) {
      *         correctly.
      * @throws UnsupportedOperationException if shared mode is not supported
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.173 -0500", hash_original_method = "143AB2DE4C7A8CA8F45FD3C862AFB93B", hash_generated_method = "CF4FC4C3DCF139734071AD0930D81153")
     
 protected int tryAcquireShared(int arg) {
@@ -745,6 +775,8 @@ protected int tryAcquireShared(int arg) {
      *         correctly.
      * @throws UnsupportedOperationException if shared mode is not supported
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.176 -0500", hash_original_method = "57760B0E19163CFD26451EB4C702B2B7", hash_generated_method = "2B3277443B81590AC5346687E78BEE57")
     
 protected boolean tryReleaseShared(int arg) {
@@ -766,6 +798,8 @@ protected boolean tryReleaseShared(int arg) {
      *         {@code false} otherwise
      * @throws UnsupportedOperationException if conditions are not supported
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.179 -0500", hash_original_method = "B1A3EF7BA2A74EEB6B3236F0A99ED9FE", hash_generated_method = "4E5ACF4C26366A664FF277D62DADDF5D")
     
 protected boolean isHeldExclusively() {
@@ -784,6 +818,8 @@ protected boolean isHeldExclusively() {
      *        {@link #tryAcquire} but is otherwise uninterpreted and
      *        can represent anything you like.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.181 -0500", hash_original_method = "10DE26F4AB94E5F1867D5F821F4BF0D7", hash_generated_method = "62EDAA8E2A69B433409756720C4BCF9D")
     
 public final void acquire(int arg) {
@@ -806,6 +842,8 @@ public final void acquire(int arg) {
      *        can represent anything you like.
      * @throws InterruptedException if the current thread is interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.184 -0500", hash_original_method = "34DE0EEECFCC486100F3F952023E1D48", hash_generated_method = "F98EADB511B43B221B8BCC82CE164E43")
     
 public final void acquireInterruptibly(int arg)
@@ -833,6 +871,8 @@ public final void acquireInterruptibly(int arg)
      * @return {@code true} if acquired; {@code false} if timed out
      * @throws InterruptedException if the current thread is interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.187 -0500", hash_original_method = "C2BC4409CE226EEA6D2598B40FA64E1C", hash_generated_method = "A256174DDE96DDC2C530EC2E5176A457")
     
 public final boolean tryAcquireNanos(int arg, long nanosTimeout)
@@ -853,6 +893,8 @@ public final boolean tryAcquireNanos(int arg, long nanosTimeout)
      *        can represent anything you like.
      * @return the value returned from {@link #tryRelease}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.189 -0500", hash_original_method = "482847B9E820B21E98E389768A5050E4", hash_generated_method = "2FAEE2167706D475481F2CF3BE74917C")
     
 public final boolean release(int arg) {
@@ -876,6 +918,8 @@ public final boolean release(int arg) {
      *        {@link #tryAcquireShared} but is otherwise uninterpreted
      *        and can represent anything you like.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.192 -0500", hash_original_method = "503864E706CF656D09684EB1E461773D", hash_generated_method = "4174C720E2F034320AE5D361BCEDD81B")
     
 public final void acquireShared(int arg) {
@@ -896,6 +940,8 @@ public final void acquireShared(int arg) {
      * you like.
      * @throws InterruptedException if the current thread is interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.194 -0500", hash_original_method = "10425BDCE3B0F2DAA2E0ECCAD9B4BACD", hash_generated_method = "1C7C1901F4A69134B8CD856AC48AC316")
     
 public final void acquireSharedInterruptibly(int arg)
@@ -922,6 +968,8 @@ public final void acquireSharedInterruptibly(int arg)
      * @return {@code true} if acquired; {@code false} if timed out
      * @throws InterruptedException if the current thread is interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.197 -0500", hash_original_method = "34AA5C57E6BB40898FDB5D4BB2EF37C3", hash_generated_method = "A610971918F42D560B1FF823D68E3A60")
     
 public final boolean tryAcquireSharedNanos(int arg, long nanosTimeout)
@@ -941,6 +989,8 @@ public final boolean tryAcquireSharedNanos(int arg, long nanosTimeout)
      *        and can represent anything you like.
      * @return the value returned from {@link #tryReleaseShared}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.200 -0500", hash_original_method = "64AF2599D3C05FF36535D67856367D8D", hash_generated_method = "39408A7D0DD8AD8D4C66CEF09C1EF3BB")
     
 public final boolean releaseShared(int arg) {
@@ -964,6 +1014,8 @@ public final boolean releaseShared(int arg) {
      *
      * @return {@code true} if there may be other threads waiting to acquire
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.203 -0500", hash_original_method = "3ACA5092770D7AD1442898AF3B627DFE", hash_generated_method = "37DD01FA42E8F07F9DC2844F456F2826")
     
 public final boolean hasQueuedThreads() {
@@ -979,6 +1031,8 @@ public final boolean hasQueuedThreads() {
      *
      * @return {@code true} if there has ever been contention
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.205 -0500", hash_original_method = "3ED9D0D071477B613E998B33D61DD4C5", hash_generated_method = "BBEFB627E25524A6B5E2B21CE60A6901")
     
 public final boolean hasContended() {
@@ -996,6 +1050,8 @@ public final boolean hasContended() {
      * @return the first (longest-waiting) thread in the queue, or
      *         {@code null} if no threads are currently queued
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.209 -0500", hash_original_method = "DB23AE447B60E978D848F5CEAEC8257B", hash_generated_method = "C85CE6E16C73974CB41083E907609161")
     
@@ -1007,6 +1063,8 @@ public final Thread getFirstQueuedThread() {
     /**
      * Version of getFirstQueuedThread called when fastpath fails
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.211 -0500", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "6B4F856B395D4DD199D66097848438EE")
     
 private Thread fullGetFirstQueuedThread() {
@@ -1055,6 +1113,8 @@ private Thread fullGetFirstQueuedThread() {
      * @return {@code true} if the given thread is on the queue
      * @throws NullPointerException if the thread is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.214 -0500", hash_original_method = "1573E83A14D593E0BFADABB9AEDBB7D2", hash_generated_method = "0C16F7A946D77FA08793AC10C12614CA")
     
 public final boolean isQueued(Thread thread) {
@@ -1075,6 +1135,8 @@ public final boolean isQueued(Thread thread) {
      * is not the first queued thread.  Used only as a heuristic in
      * ReentrantReadWriteLock.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.217 -0500", hash_original_method = "4993AFB2E466C494E10B5DA4780E51AB", hash_generated_method = "72C0E2E14B4F85805C33B1CA24094604")
     
 final boolean apparentlyFirstQueuedIsExclusive() {
@@ -1129,6 +1191,8 @@ final boolean apparentlyFirstQueuedIsExclusive() {
      * @since 1.7
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.220 -0500", hash_original_method = "155F6B01F514C41CA8367710346D37E3", hash_generated_method = "7B24077761DC3492F4D994D196AE994A")
     
 public final boolean hasQueuedPredecessors() {
@@ -1154,6 +1218,8 @@ public final boolean hasQueuedPredecessors() {
      *
      * @return the estimated number of threads waiting to acquire
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.222 -0500", hash_original_method = "65AB677A04652631BF1CC269A789F93A", hash_generated_method = "3891B39CEDDDC3F2382E5CD4C00CC553")
     
@@ -1177,6 +1243,8 @@ public final int getQueueLength() {
      *
      * @return the collection of threads
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.225 -0500", hash_original_method = "BA97C075FB0E9B39CEF398B585209CAD", hash_generated_method = "C8AA1296DBAA21B50FB1466011F82C85")
     
@@ -1198,6 +1266,8 @@ public final Collection<Thread> getQueuedThreads() {
      *
      * @return the collection of threads
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.227 -0500", hash_original_method = "8F9C05C78C38CDEC6B94C7386A00C30C", hash_generated_method = "B57D297BB60651F8BF59DB74E589A08B")
     
@@ -1221,6 +1291,8 @@ public final Collection<Thread> getExclusiveQueuedThreads() {
      *
      * @return the collection of threads
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.230 -0500", hash_original_method = "3B2BC348731488178C75B0F7C3256BE4", hash_generated_method = "CE4E9194FCA7D28E65C681FDCFC4E133")
     
@@ -1245,6 +1317,8 @@ public final Collection<Thread> getSharedQueuedThreads() {
      *
      * @return a string identifying this synchronizer, as well as its state
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.233 -0500", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "83A51AA04AFC157B403BDF3D76B84E44")
     
@@ -1363,6 +1437,8 @@ final boolean transferForSignal(Node node) {
 
         Node nextWaiter;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.095 -0500", hash_original_method = "2DD8BF5485F2495811D83404AF44A29C", hash_generated_method = "9B3CDAA3618745AE419A93F505BAFCE0")
         
 Node() {    // Used to establish initial head or SHARED marker
@@ -1375,6 +1451,8 @@ Node(Thread thread, Node mode) {     // Used by addWaiter
             this.thread = thread;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.100 -0500", hash_original_method = "5118904E6021AE155CDFF15DB609BD48", hash_generated_method = "F999A54B1423E11A7ABC62E2AD5E42C0")
         
 Node(Thread thread, int waitStatus) { // Used by Condition
@@ -1385,6 +1463,8 @@ Node(Thread thread, int waitStatus) { // Used by Condition
         /**
          * Returns true if node is waiting in shared mode
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.089 -0500", hash_original_method = "EA506AD78E2AE8ACF234FE0610B9A575", hash_generated_method = "DB77189C1A49E080001D8DECE7046C83")
         
 final boolean isShared() {
@@ -1505,6 +1585,8 @@ private void doSignalAll(Node first) {
          * without requiring many re-traversals during cancellation
          * storms.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.279 -0500", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "04D897707079137EE6D8A1003358B81E")
         
 private void unlinkCancelledWaiters() {
@@ -1537,6 +1619,8 @@ private void unlinkCancelledWaiters() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.282 -0500", hash_original_method = "217DDC96D1B25C0D1457937D523A3AA4", hash_generated_method = "8D3841501153DC8DC4D44C4E93EC71D1")
         
 public final void signal() {
@@ -1554,6 +1638,8 @@ public final void signal() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.285 -0500", hash_original_method = "8098E0901B1513A38FF0251B40A20DA9", hash_generated_method = "24338BAE20FEB9E05BE3A946C2F5EAB7")
         
 public final void signalAll() {
@@ -1576,6 +1662,8 @@ public final void signalAll() {
          *      {@link #acquire} with saved state as argument.
          * </ol>
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.288 -0500", hash_original_method = "03B567BE1E70F2310FD90D1C09544B27", hash_generated_method = "26A5F5D054AC468B78DF01B257079279")
         
 public final void awaitUninterruptibly() {
@@ -1608,6 +1696,8 @@ private int checkInterruptWhileWaiting(Node node) {
          * Throws InterruptedException, reinterrupts current thread, or
          * does nothing, depending on mode.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.299 -0500", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "C6E6BF2DAFEBC6FB6A6DE5127AC7C2D1")
         
 private void reportInterruptAfterWait(int interruptMode)
@@ -1632,6 +1722,8 @@ private void reportInterruptAfterWait(int interruptMode)
          * <li> If interrupted while blocked in step 4, throw InterruptedException.
          * </ol>
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.302 -0500", hash_original_method = "316B8F22454E74CF1A9F01045EC67EC6", hash_generated_method = "8B54820BDFEAA3C88179C1B963EC2230")
         
 public final void await() throws InterruptedException {
@@ -1667,6 +1759,8 @@ public final void await() throws InterruptedException {
          * <li> If interrupted while blocked in step 4, throw InterruptedException.
          * </ol>
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.306 -0500", hash_original_method = "46C34832DD3406F7F3C664FF7A3A79B4", hash_generated_method = "9120A2E42720E3333A49ECF54D2B7EA6")
         
 public final long awaitNanos(long nanosTimeout)
@@ -1714,6 +1808,8 @@ public final long awaitNanos(long nanosTimeout)
          * <li> If timed out while blocked in step 4, return false, else true.
          * </ol>
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.310 -0500", hash_original_method = "9B6F9AFE5FC55A4D3153D2EEB76307B9", hash_generated_method = "3D3977BFD174A3BCFB46CFF08CC4717A")
         
 public final boolean awaitUntil(Date deadline)
@@ -1760,6 +1856,8 @@ public final boolean awaitUntil(Date deadline)
          * <li> If timed out while blocked in step 4, return false, else true.
          * </ol>
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.313 -0500", hash_original_method = "BFE4D71142E465ECC716594C0843F211", hash_generated_method = "F8C4EA6F8AC1AF7FA3311638C3889D59")
         
 public final boolean await(long time, TimeUnit unit)
@@ -1804,6 +1902,8 @@ public final boolean await(long time, TimeUnit unit)
          *
          * @return {@code true} if owned
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.316 -0500", hash_original_method = "165B5BC520C58D38E1ED3303B481AD06", hash_generated_method = "31A30F6585BFDDD1EB1245A8A7351220")
         
 final boolean isOwnedBy(AbstractQueuedSynchronizer sync) {
@@ -1818,6 +1918,8 @@ final boolean isOwnedBy(AbstractQueuedSynchronizer sync) {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.318 -0500", hash_original_method = "5570422C2D22E250B14B7FB8C176D89A", hash_generated_method = "55EDC40A97826AB5FA40D6C0CF54F938")
         
 protected final boolean hasWaiters() {
@@ -1839,6 +1941,8 @@ protected final boolean hasWaiters() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.322 -0500", hash_original_method = "586699B2B19676C29FE19392CDC481BB", hash_generated_method = "30974DA2235D0BD4131D3752CB6B3514")
         
@@ -1862,6 +1966,8 @@ protected final int getWaitQueueLength() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.325 -0500", hash_original_method = "D1136CB2B0FE173AD3F139F996FAE8B5", hash_generated_method = "7EA3D53A4EBF34B862031A40D99920FC")
         

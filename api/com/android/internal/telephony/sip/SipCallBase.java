@@ -16,6 +16,8 @@ abstract class SipCallBase extends Call {
 
     protected List<Connection> connections = new ArrayList<Connection>();
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.071 -0400", hash_original_method = "0EF508E50423F81ECC9230D92981C1BD", hash_generated_method = "0EF508E50423F81ECC9230D92981C1BD")
     public SipCallBase ()
     {
@@ -46,6 +48,8 @@ public String toString() {
         return state.toString() + ":" + super.toString();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.343 -0500", hash_original_method = "2179B35862415320201802CDBF1F003D", hash_generated_method = "2179B35862415320201802CDBF1F003D")
     
 void clearDisconnected() {

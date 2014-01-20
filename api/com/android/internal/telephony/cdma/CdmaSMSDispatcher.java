@@ -35,6 +35,8 @@ import com.android.internal.telephony.cdma.sms.UserData;
 
 final class CdmaSMSDispatcher extends SMSDispatcher {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.341 -0500", hash_original_method = "1910D6A77440317C1CCBAEDFB419E5C5", hash_generated_method = "D07CC08874D7F5CA9E49CF869CE487D5")
     
 private static int resultToCause(int rc) {
@@ -64,6 +66,8 @@ private static int resultToCause(int rc) {
      * @return True if OrigPdu is OmaDM Push Message which has duplicate ports.
      *         False if OrigPdu is NOT OmaDM Push Message which has duplicate ports.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.344 -0500", hash_original_method = "FE2EE888E133A219C2FC6A0924C277B1", hash_generated_method = "C2CC0D8C5F45F369D2FCB8EF49695423")
     
 private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
@@ -106,6 +110,8 @@ private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index)
     private final boolean mCheckForDuplicatePortsInOmadmWapPush = Resources.getSystem().getBoolean(
             com.android.internal.R.bool.config_duplicate_port_omadm_wappush);
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.303 -0500", hash_original_method = "2E2EEE07B541CA6772FE9654DB0B546E", hash_generated_method = "2E2EEE07B541CA6772FE9654DB0B546E")
     
 CdmaSMSDispatcher(CDMAPhone phone, SmsStorageMonitor storageMonitor,
@@ -129,6 +135,8 @@ CdmaSMSDispatcher(CDMAPhone phone, SmsStorageMonitor storageMonitor,
         return android.telephony.SmsMessage.FORMAT_3GPP2;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.312 -0500", hash_original_method = "D8F9BF94E3CE828F06F15D06BD41575B", hash_generated_method = "9095C774A2A52536F74416C7040CBFD9")
     
 private void handleCdmaStatusReport(SmsMessage sms) {

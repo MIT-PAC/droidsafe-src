@@ -249,6 +249,8 @@ public static void applyInvokeWithSystemProperty(Arguments args) {
      * @param message non-null; error message
      * @param ex null-ok an exception
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.895 -0500", hash_original_method = "DF65FA753319B9C502684E1A241A3191", hash_generated_method = "7BE5235DE18EAFA623725F269AEE58AB")
     
 private static void logAndPrintError (PrintStream newStderr,
@@ -292,6 +294,8 @@ private static void logAndPrintError (PrintStream newStderr,
      * @param socket non-null; connected socket
      * @throws IOException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.787 -0500", hash_original_method = "7184EAAE07D7B6F9BEC01EBE5F329335", hash_generated_method = "7184EAAE07D7B6F9BEC01EBE5F329335")
     
 ZygoteConnection(LocalSocket socket) throws IOException {
@@ -318,6 +322,8 @@ ZygoteConnection(LocalSocket socket) throws IOException {
      *
      * @return null-ok; file descriptor
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.789 -0500", hash_original_method = "D031047267A17F3FBDEAA6E5A25F7FEC", hash_generated_method = "D031047267A17F3FBDEAA6E5A25F7FEC")
     
@@ -335,6 +341,8 @@ FileDescriptor getFileDesciptor() {
      * @throws ZygoteInit.MethodAndArgsCaller trampoline to invoke main()
      * method in child process
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.792 -0500", hash_original_method = "D83ED9D59CE4DAAE3BDA7C68EE854B3C", hash_generated_method = "1AC9EAA50F6993A129EFED22FD356A19")
     
 void run() throws ZygoteInit.MethodAndArgsCaller {
@@ -378,6 +386,8 @@ void run() throws ZygoteInit.MethodAndArgsCaller {
      * @throws ZygoteInit.MethodAndArgsCaller trampoline to invoke main()
      * method in child process
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.796 -0500", hash_original_method = "D76E963329652A6F2BCB5FE055E042D1", hash_generated_method = "54B63CBA7F76BDD313C56D3CB823D8C9")
     
 boolean runOnce() throws ZygoteInit.MethodAndArgsCaller {
@@ -533,6 +543,8 @@ boolean runOnce() throws ZygoteInit.MethodAndArgsCaller {
          * @param args zygote command-line args
          * @throws IllegalArgumentException
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.852 -0500", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "35BDC5101A4DE38616FDCE6EF4D8CA10")
         
 Arguments(String args[]) throws IllegalArgumentException {
@@ -547,6 +559,8 @@ Arguments(String args[]) throws IllegalArgumentException {
          * Per security review bug #1112214, duplicate args are disallowed in
          * critical cases to make injection harder.
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.859 -0500", hash_original_method = "12134C3215A59528551E59AC16868712", hash_generated_method = "93EE9BCAF5076F45C58A977C9F074FBD")
         
 private void parseArgs(String args[])
@@ -697,6 +711,8 @@ private void parseArgs(String args[])
     /**
      * Closes socket associated with this connection.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.799 -0500", hash_original_method = "5A630DC8DA41E048830D803B657E049B", hash_generated_method = "5A630DC8DA41E048830D803B657E049B")
     
 void closeSocket() {
@@ -713,6 +729,8 @@ void closeSocket() {
      * @return Argument list or null if EOF is reached
      * @throws IOException passed straight through
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.865 -0500", hash_original_method = "366F843C8FBE8BB09896187A9CDF1388", hash_generated_method = "4859A824ABAA5B362F6D19FCD2E6553C")
     
 private String[] readArgumentList()
@@ -944,6 +962,8 @@ private boolean handleParentProc(int pid,
         return false;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.892 -0500", hash_original_method = "A5A16DB5966812C0B6C21E171E7DEF94", hash_generated_method = "D1E829C404BF83AEF9B86E3EC545510C")
     
 private void setChildPgid(int pid) {

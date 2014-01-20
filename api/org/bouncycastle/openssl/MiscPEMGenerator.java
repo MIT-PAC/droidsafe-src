@@ -44,11 +44,6 @@ import org.bouncycastle.util.io.pem.PemObjectGenerator;
 import org.bouncycastle.x509.X509AttributeCertificate;
 import org.bouncycastle.x509.X509V2AttributeCertificate;
 
-
-
-
-
-
 public class MiscPEMGenerator implements PemObjectGenerator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.985 -0500", hash_original_field = "B907C3B1813ED5337E8F8B30F31ED00A", hash_generated_field = "03657E147A117C299E988405DFDF1FE0")
 
@@ -114,6 +109,8 @@ public MiscPEMGenerator(
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.007 -0500", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "3AEB8909C5A200208CB372EF0268B583")
     
 private PemObject createPemObject(Object o)
@@ -229,6 +226,8 @@ private PemObject createPemObject(Object o)
         return new PemObject(type, encoding);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.009 -0500", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "1D93C79278F5017273720A49FCC5B60F")
     
 private String getHexEncoded(byte[] bytes)
@@ -246,6 +245,8 @@ private String getHexEncoded(byte[] bytes)
         return new String(chars);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.013 -0500", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "EA647454FDF684924F3C52BFCE4D5E0C")
     
 private PemObject createPemObject(
@@ -360,7 +361,6 @@ public PemObject generate()
             throw new PemGenerationException("encoding exception: " + e.getMessage(), e);
         }
     }
-
     
 }
 

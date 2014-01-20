@@ -50,6 +50,8 @@ public static synchronized CookieSyncManager createInstance(
         return sRef;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.523 -0500", hash_original_method = "19427D791526EDA33E0F88047E0F811C", hash_generated_method = "44A56C2C146D3BE33671B1B125BE25DC")
     
 private static void checkInstanceIsCreated() {
@@ -66,6 +68,8 @@ private static void checkInstanceIsCreated() {
 
     private long mLastUpdate;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.500 -0500", hash_original_method = "5E4F0B174A675D28BE31D2D74DFE21DE", hash_generated_method = "8F21A0EF040A408BAEFF22186E770579")
     
 private CookieSyncManager(Context context) {
@@ -78,6 +82,8 @@ private CookieSyncManager(Context context) {
      * @param domain
      * @return A list of Cookie
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.507 -0500", hash_original_method = "A7C987CCC15AF0CAF990686404E67664", hash_generated_method = "D7930072548DF6657AB45C5EAC426887")
     
 ArrayList<Cookie> getCookiesForDomain(String domain) {
@@ -94,6 +100,8 @@ ArrayList<Cookie> getCookiesForDomain(String domain) {
      * Package level api, called from CookieManager Clear all cookies in the
      * database
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.509 -0500", hash_original_method = "04ED664127B5DCE8177E313009734B8D", hash_generated_method = "99F8393036AA0731DEF10D2000CDEAD2")
     
 void clearAllCookies() {
@@ -109,6 +117,8 @@ void clearAllCookies() {
     /**
      * Returns true if there are any saved cookies.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.511 -0500", hash_original_method = "8FADF93798BEC10B7C24976655D3DFB0", hash_generated_method = "4501EF37F3AFF95A4F9D02168B7BE25C")
     
 boolean hasCookies() {
@@ -125,6 +135,8 @@ boolean hasCookies() {
      * Package level api, called from CookieManager Clear all session cookies in
      * the database
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.513 -0500", hash_original_method = "C551147CF3F803C4BE33E46DD1A6FC76", hash_generated_method = "90A59F4AAB447180ED46FB5FC398298B")
     
 void clearSessionCookies() {
@@ -141,6 +153,8 @@ void clearSessionCookies() {
      * Package level api, called from CookieManager Clear all expired cookies in
      * the database
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.516 -0500", hash_original_method = "C17F5F6F39FEAB50212EA7D808E14AB6", hash_generated_method = "14895F7A4DF93FE4018C5567C0185149")
     
 void clearExpiredCookies(long now) {
@@ -182,6 +196,8 @@ protected void syncFromRamToFlash() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.521 -0500", hash_original_method = "CE02A4B6AAF984780597D96D08B33D6E", hash_generated_method = "EF405A617A398059AF6BF8DD1DC573CE")
     
 private void syncFromRamToFlash(ArrayList<Cookie> list) {

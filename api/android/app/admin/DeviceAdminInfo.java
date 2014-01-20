@@ -179,6 +179,8 @@ public DeviceAdminInfo(Context context, ResolveInfo receiver)
         }
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.354 -0500", hash_original_method = "63AFCAD0BD5EA5852A2B80B7C90D81EC", hash_generated_method = "63AFCAD0BD5EA5852A2B80B7C90D81EC")
     
 DeviceAdminInfo(Parcel source) {

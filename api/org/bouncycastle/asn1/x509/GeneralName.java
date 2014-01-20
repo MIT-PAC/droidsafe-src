@@ -22,11 +22,6 @@ import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.util.IPAddress;
 
-
-
-
-
-
 public class GeneralName extends ASN1Encodable implements ASN1Choice {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.853 -0500", hash_original_method = "54EB3F8F10D837749BD54B5257E33309", hash_generated_method = "734DA2A9C8A7CF13749D016C17E76B23")
@@ -118,7 +113,6 @@ public static GeneralName getInstance(
 
     public static final int registeredID                  = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.833 -0500", hash_original_field = "C14035F3386E46275A7D663AC38D8A14", hash_generated_field = "C14035F3386E46275A7D663AC38D8A14")
-
 
     DEREncodable      obj;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.835 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "0870A130AAC33D99955FFBF59B769627")
@@ -291,6 +285,8 @@ public String toString()
         return buf.toString();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.869 -0500", hash_original_method = "F02018A790F280370B2CB39B10862FEC", hash_generated_method = "B4114A90346BAC2CA37E578F2040413C")
     
 private byte[] toGeneralNameEncoding(String ip)
@@ -361,6 +357,8 @@ private byte[] toGeneralNameEncoding(String ip)
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.872 -0500", hash_original_method = "B54AB1000C04EF98C8414C613F178EE6", hash_generated_method = "26D3FB892318A3AD15278E196768ABF7")
     
 private void parseIPv4Mask(String mask, byte[] addr, int offset)
@@ -373,6 +371,8 @@ private void parseIPv4Mask(String mask, byte[] addr, int offset)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.874 -0500", hash_original_method = "D3256FE340A5AB891180F872DE9312FE", hash_generated_method = "01C7845478B8D1321EA2883987ADA9ED")
     
 private void parseIPv4(String ip, byte[] addr, int offset)
@@ -386,6 +386,8 @@ private void parseIPv4(String ip, byte[] addr, int offset)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.876 -0500", hash_original_method = "AAEA46BCEA791BA55D0418C441E919BF", hash_generated_method = "F4E9F7CAD7EE1AF06DCCBCEC5D429EDA")
     
 private int[] parseMask(String mask)
@@ -400,6 +402,8 @@ private int[] parseMask(String mask)
         return res;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.878 -0500", hash_original_method = "C5093ABFF769462F7C38A897D6D20C09", hash_generated_method = "E1E3F895F3628CA1484F8C1FB38DDD84")
     
 private void copyInts(int[] parsedIp, byte[] addr, int offSet)
@@ -411,6 +415,8 @@ private void copyInts(int[] parsedIp, byte[] addr, int offSet)
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.883 -0500", hash_original_method = "9628A2DF5EA66A9EC56C6B58E58FBD48", hash_generated_method = "7BE89C247823BE0E04BBB5E195A9B3F6")
     
 private int[] parseIPv6(String ip)

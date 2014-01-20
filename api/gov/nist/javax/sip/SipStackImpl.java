@@ -651,7 +651,9 @@ public SipStackImpl(Properties configurationProperties)
 	/**
 	 * ReInitialize the stack instance.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.610 -0500", hash_original_method = "4F314CDF94BE73A82A3392DB747CDD4B", hash_generated_method = "873F6E29B2A7D42140DFD4860764E1F5")
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.610 -0500", hash_original_method = "4F314CDF94BE73A82A3392DB747CDD4B", hash_generated_method = "873F6E29B2A7D42140DFD4860764E1F5")
 	
 private void reInitialize() {
 		super.reInit();
@@ -668,7 +670,9 @@ private void reInitialize() {
 	 * @return boolean, true if automatic dialog support is enabled for this
 	 *         stack
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.612 -0500", hash_original_method = "1B8FCD54ED5E137B1A38ACB963DE1ED8", hash_generated_method = "1B8FCD54ED5E137B1A38ACB963DE1ED8")
+	@DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.612 -0500", hash_original_method = "1B8FCD54ED5E137B1A38ACB963DE1ED8", hash_generated_method = "1B8FCD54ED5E137B1A38ACB963DE1ED8")
 	
 boolean isAutomaticDialogSupportEnabled() {
 		return super.isAutomaticDialogSupportEnabled;

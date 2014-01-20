@@ -329,6 +329,8 @@ public void setButtonDrawable(Drawable d) {
         /**
          * Constructor called from {@link CompoundButton#onSaveInstanceState()}
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.543 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
         
 SavedState(Parcelable superState) {
@@ -338,6 +340,8 @@ SavedState(Parcelable superState) {
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.546 -0500", hash_original_method = "527F999E441AD9A28BC136B181E8236B", hash_generated_method = "9934F70C9F95110BECB37EFB5CF3AC07")
         
 private SavedState(Parcel in) {

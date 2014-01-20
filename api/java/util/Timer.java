@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class Timer {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.157 -0500", hash_original_method = "583B36D89F2230FC842E9DB40CDF730D", hash_generated_method = "F6AED2A8A3D3246BB251352889CBE974")
     
 private synchronized static long nextId() {
@@ -274,6 +276,8 @@ public void scheduleAtFixedRate(TimerTask task, Date when, long period) {
          * @param name thread's name
          * @param isDaemon daemon thread or not
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.125 -0500", hash_original_method = "F4DF6B4551FDBC23EEE87B7E4E870504", hash_generated_method = "F4DF6B4551FDBC23EEE87B7E4E870504")
         
 TimerImpl(String name, boolean isDaemon) {
@@ -385,6 +389,8 @@ TimerImpl(String name, boolean isDaemon) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.132 -0500", hash_original_method = "1179C8665DD7C88A3DCD4C96D03B447E", hash_generated_method = "3A09465985A4325B7F092E5B20961DFF")
         
 private void insertTask(TimerTask newTask) {
@@ -430,6 +436,8 @@ public int purge() {
 
             private int deletedCancelledNumber = 0;
             
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.867 -0400", hash_original_method = "8C2F50BDBBFD0A7BB81F89CAC3407288", hash_generated_method = "8C2F50BDBBFD0A7BB81F89CAC3407288")
             public TimerHeap ()
             {
@@ -471,6 +479,8 @@ public void delete(int pos) {
                 }
             }
 
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.097 -0500", hash_original_method = "4756DE20DDADB3FD04AA7E2F3A372FAC", hash_generated_method = "F6EFD1079C9FBFA191BB2B88B1CA4D54")
             
 private void upHeap() {
@@ -489,6 +499,8 @@ private void upHeap() {
                 }
             }
 
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.100 -0500", hash_original_method = "A63AC6E1F65E01631F08DE00B4EE87D2", hash_generated_method = "A093CBF3F9B1D0E853F483CAE169BC01")
             
 private void downHeap(int pos) {
@@ -544,6 +556,8 @@ public void deleteIfCancelled() {
                 }
             }
 
+            @DSComment("Private Method")
+            @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.111 -0500", hash_original_method = "B28407BF2F77FCC6A87AD91AEA3746F4", hash_generated_method = "71B2343A558DA510F7E8C618FD4E1787")
             
 private int getTask(TimerTask task) {
@@ -588,6 +602,8 @@ FinalizerHelper(TimerImpl impl) {
     /*
      * Schedule a task.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.197 -0500", hash_original_method = "163F6B0C6203677A1F058E56FE2F9B83", hash_generated_method = "D8ABB86F6BE38A4B04DB74BF6B5FD7D6")
     
 private void scheduleImpl(TimerTask task, long delay, long period, boolean fixed) {

@@ -62,6 +62,8 @@ public static String[] parseLocalePref(String pref) {
      * so forth. Returns null if the list is empty, malformed or if there is no engine
      * specific preference in the list.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.364 -0500", hash_original_method = "2F5267EC7682EE18BF8989544D09D313", hash_generated_method = "8C0495090EE1A298FA0AE3AAC4D915A7")
     
 private static String parseEnginePrefFromList(String prefValue, String engineName) {
@@ -185,6 +187,8 @@ public List<EngineInfo> getEngines() {
         return engines;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.328 -0500", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "29329F0285EF0138ECFEC7C464DA9AD0")
     
 private boolean isSystemEngine(ServiceInfo info) {
@@ -235,6 +239,8 @@ public Intent getSettingsIntent(String engine) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.338 -0500", hash_original_method = "9D4652ECD9FA23521B324D3DE279FEF6", hash_generated_method = "C218BF58374FB23848B15C54290813A9")
     
 private String settingsActivityFromServiceInfo(ServiceInfo si, PackageManager pm) {
@@ -337,6 +343,8 @@ public String getLocalePrefForEngine(String engineName) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.346 -0500", hash_original_field = "E0DE08AA64E04B0EC8D9439B823C00DF", hash_generated_field = "0CA244E03083D2D3306A1733CBDEDA51")
 
         static EngineInfoComparator INSTANCE = new EngineInfoComparator();
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.344 -0500", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "A5F988DF903195CFB8B4DE0BB7877772")
         
 private EngineInfoComparator() { }
@@ -372,6 +380,8 @@ private EngineInfoComparator() { }
      *         {@link Settings.Secure#TTS_DEFAULT_VARIANT}. If no such locale is set,
      *         then return the default phone locale.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.358 -0500", hash_original_method = "610702C4AF37E3C5EE6AAD794DF1E7DF", hash_generated_method = "5ABFE07DD948844F6E4589909F8D8DA1")
     
 private String getV1Locale() {
@@ -399,6 +409,8 @@ private String getV1Locale() {
         return v1Locale;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.361 -0500", hash_original_method = "DCEE8BF4C9B6F52F0B0F667E0393B18E", hash_generated_method = "173E058DBECEFB809F68A169B26653CB")
     
 private String getDefaultLocale() {
@@ -453,6 +465,8 @@ public synchronized void updateLocalePrefForEngine(String name, String newLocale
      * each of which are delimited by a colon. If no value exists for the given key,
      * the kay value pair are appended to the end of the list.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.369 -0500", hash_original_method = "00BF6BD14B34E2134A0C0EF2661B3919", hash_generated_method = "83C61D7B6607B61814DDCCE16B2683BE")
     
 private String updateValueInCommaSeparatedList(String list, String key,

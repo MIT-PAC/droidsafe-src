@@ -400,6 +400,8 @@ public SIPMessage parseSIPMessage(String msgString) throws ParseException {
         return message;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.441 -0500", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "6AB5AD0FEFC47BFD85BB51F416D0C5F0")
     
 private String trimEndOfLine(String line) {
@@ -419,6 +421,8 @@ private String trimEndOfLine(String line) {
         return line.substring(0, i+1);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.444 -0500", hash_original_method = "E1A152A7092436D65484E6472132234E", hash_generated_method = "1EA560A8F950937693E119DE7973E4CA")
     
 private SIPMessage processFirstLine(String firstLine) throws ParseException {
@@ -454,6 +458,8 @@ private SIPMessage processFirstLine(String firstLine) throws ParseException {
         return message;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.447 -0500", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "E884BF3BFFEBA037ADB951B9BCD4A7ED")
     
 private void processHeader(String header, SIPMessage message) throws ParseException {

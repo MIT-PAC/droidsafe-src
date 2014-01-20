@@ -15,6 +15,8 @@ import android.widget.Toast;
 public final class SqliteWrapper {
 
     // FIXME: need to optimize this method.
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.609 -0500", hash_original_method = "43181FB3B6A2D4F44BBC07717E6979FA", hash_generated_method = "6BDA45268EEBD89D7BCE460495F34084")
     
 private static boolean isLowMemory(SQLiteException e) {
@@ -104,6 +106,8 @@ public static Uri insert(Context context, ContentResolver resolver,
     private static final String SQLITE_EXCEPTION_DETAIL_MESSAGE
                 = "unable to open database file";
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.605 -0500", hash_original_method = "6012CC1B0BDCD376222B54176A59A0F5", hash_generated_method = "8CF65362502EEA702895B8F67B77C271")
     
 private SqliteWrapper() {

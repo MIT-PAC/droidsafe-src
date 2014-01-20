@@ -676,6 +676,8 @@ public void removeMultiParameters() {
     }
     
     // ----------- Abstract methods --------------
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.788 -0500", hash_original_method = "174EBB1808D17B56AB5E004277B62194", hash_generated_method = "67C6A1D41F49045B75F8C639C65C4404")
     
 protected abstract String encodeBody();

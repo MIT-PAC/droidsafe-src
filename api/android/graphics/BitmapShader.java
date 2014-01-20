@@ -9,11 +9,15 @@ import droidsafe.helpers.DSUtils;
 
 public class BitmapShader extends Shader {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(int native_bitmap, int shaderTileModeX,
             int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate(int native_shader, int native_bitmap,
             int shaderTileModeX, int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;

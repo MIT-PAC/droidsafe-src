@@ -9,6 +9,8 @@ import java.nio.channels.FileChannel.MapMode;
 import libcore.io.SizeOf;
 
 final class MappedByteBufferAdapter extends MappedByteBuffer {
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.941 -0500", hash_original_method = "47B29CB1ACCF161EBA65518E27011CFA", hash_generated_method = "08692C527830894E4F49717D9EB3713E")
     
 private MappedByteBufferAdapter(ByteBuffer buffer) {
@@ -23,6 +25,8 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         effectiveDirectAddress = wrapped.effectiveDirectAddress;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.947 -0500", hash_original_method = "E1DE3F7336A5099D6DE2B8D867AB9894", hash_generated_method = "7CAB282A010BB2CE036E62EBB1E1E08E")
     
 @Override void limitImpl(int newLimit) {
@@ -30,6 +34,8 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         wrapped.limit(newLimit);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.949 -0500", hash_original_method = "3B95D10870BE74C82FCFC1DC24594CC6", hash_generated_method = "B564E458FD8FB3A1F157424530A3EC13")
     
 @Override void positionImpl(int newPosition) {
@@ -271,6 +277,8 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return wrapped.isReadOnly();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.017 -0500", hash_original_method = "D8FBBAF3DBEC96335348C23D9CEFF5FC", hash_generated_method = "28571ECAB3C3046434453ADC24F3959D")
     
 @Override void orderImpl(ByteOrder byteOrder) {
@@ -446,6 +454,8 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return result;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.103 -0500", hash_original_method = "33CDC6092C78EAE8E1726040ED7707B5", hash_generated_method = "767CA2682DBBD640DCFB530C005D761B")
     
@@ -454,6 +464,8 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return wrapped.protectedArray();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.107 -0500", hash_original_method = "07409272224D2DCFB9ED6864BAB477CC", hash_generated_method = "134B0097441C3DA2147356AF627E4718")
     
 @Override
@@ -461,6 +473,8 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return wrapped.protectedArrayOffset();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.112 -0500", hash_original_method = "088F278FB6BC57CD2CF8BD7E84B85911", hash_generated_method = "24049EBE4EF2A45ED9500C2EFFE43C20")
     
 @Override

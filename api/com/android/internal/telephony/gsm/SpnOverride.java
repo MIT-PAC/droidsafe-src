@@ -30,6 +30,8 @@ public class SpnOverride {
 
     private HashMap<String, String> CarrierSpnMap;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.019 -0500", hash_original_method = "DBF3481E765E19045BAECAE6F7649C1E", hash_generated_method = "DBF3481E765E19045BAECAE6F7649C1E")
     
 SpnOverride () {
@@ -37,12 +39,16 @@ SpnOverride () {
         loadSpnOverrides();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.021 -0500", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "F9DB25D793978B2E288A45309BFBD20E")
     
 boolean containsCarrier(String carrier) {
         return CarrierSpnMap.containsKey(carrier);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.023 -0500", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "DEBF8ECBE1690451B3CAF7E732385AF7")
     
@@ -50,6 +56,8 @@ String getSpn(String carrier) {
         return CarrierSpnMap.get(carrier);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.026 -0500", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "A0A0A66152D1527EEC801CBFC57BB3F0")
     
 private void loadSpnOverrides() {

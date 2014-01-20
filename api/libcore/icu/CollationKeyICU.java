@@ -14,6 +14,8 @@ public final class CollationKeyICU extends CollationKey {
 
     private int hashCode;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.532 -0500", hash_original_method = "FDD367E7E47ED4793DE3731632868D96", hash_generated_method = "FDD367E7E47ED4793DE3731632868D96")
     
 CollationKeyICU(String source, byte[] bytes) {

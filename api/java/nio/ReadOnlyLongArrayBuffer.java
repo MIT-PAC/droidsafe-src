@@ -5,11 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.144 -0500", hash_original_method = "4E6C468E7026EB60D76A14D272ED9069", hash_generated_method = "5D090BD2D1376E282E6CB3E4F11FF037")
     
 static ReadOnlyLongArrayBuffer copy(LongArrayBuffer other, int markOfOther) {
@@ -21,6 +20,8 @@ static ReadOnlyLongArrayBuffer copy(LongArrayBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.147 -0500", hash_original_method = "C217C684C5DFBD85DAC953DA8CC4F355", hash_generated_method = "C217C684C5DFBD85DAC953DA8CC4F355")
     
 ReadOnlyLongArrayBuffer(int capacity, long[] backingArray, int arrayOffset) {
@@ -110,7 +111,6 @@ ReadOnlyLongArrayBuffer(int capacity, long[] backingArray, int arrayOffset) {
     public LongBuffer slice() {
         return new ReadOnlyLongArrayBuffer(remaining(), backingArray, offset + position);
     }
-
     
 }
 

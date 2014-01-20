@@ -365,6 +365,8 @@ public void sendToTarget() {
         target.sendMessage(this);
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void clearForRecycle(){
 		// Original method
 		/*
@@ -384,6 +386,8 @@ public void sendToTarget() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean isInUse(){
 		// Original method
 		/*
@@ -394,6 +398,8 @@ public void sendToTarget() {
 		return getTaintBoolean();
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void markInUse(){
 		// Original method
 		/*
@@ -414,6 +420,8 @@ public void sendToTarget() {
 		return "";
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     String toString(long now){
 		// Original method
 		/*
@@ -481,6 +489,8 @@ public void sendToTarget() {
         Messenger.writeMessengerOrNullToParcel(replyTo, dest);
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private final void readFromParcel(Parcel source){
         addTaint(source.getTaint());
 		// Original method

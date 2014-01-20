@@ -13,18 +13,24 @@ abstract class LongArrayBuffer extends LongBuffer {
 
     protected  int offset;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.254 -0500", hash_original_method = "D20A97F337BC1EF41CF62C2D80A010BB", hash_generated_method = "D20A97F337BC1EF41CF62C2D80A010BB")
     
 LongArrayBuffer(long[] array) {
         this(array.length, array, 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.257 -0500", hash_original_method = "EE894B007B87BC6BD13255E42716BBF0", hash_generated_method = "EE894B007B87BC6BD13255E42716BBF0")
     
 LongArrayBuffer(int capacity) {
         this(capacity, new long[capacity], 0);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.259 -0500", hash_original_method = "C693B30298FFAD9EFA29C4595321A1EB", hash_generated_method = "C693B30298FFAD9EFA29C4595321A1EB")
     
 LongArrayBuffer(int capacity, long[] backingArray, int offset) {

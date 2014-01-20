@@ -8,10 +8,6 @@ import java.util.Locale;
 
 import libcore.icu.ICU;
 
-
-
-
-
 class CaseMapper {
 
     /**
@@ -58,6 +54,8 @@ public static String toLowerCase(Locale locale, String s, char[] value, int offs
      * sequence, and 'index' is not followed by a sequence consisting of an ignorable sequence and
      * then a cased letter.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.718 -0500", hash_original_method = "8C80F4924B4B7C7CE3A9E179D5335CDB", hash_generated_method = "D757BE4E0A61F0F646B8230728FC3E74")
     
 private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
@@ -87,6 +85,8 @@ private static boolean isFinalSigma(char[] value, int offset, int count, int ind
      * are used, the third character in the table is \u0000.
      * @return the index into the upperValues table, or -1
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.722 -0500", hash_original_method = "13DD8DB959754AD57AB3077389D7ADB3", hash_generated_method = "60ED6C262BC16DB52818D9B130F3CC52")
     
 private static int upperIndex(int ch) {
@@ -189,7 +189,6 @@ public static String toUpperCase(Locale locale, String s, char[] value, int offs
     private static final char[] upperValues2 = "\u000b\u0000\f\u0000\r\u0000\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>\u0000\u0000?@A\u0000BC\u0000\u0000\u0000\u0000D\u0000\u0000\u0000\u0000\u0000EFG\u0000HI\u0000\u0000\u0000\u0000J\u0000\u0000\u0000\u0000\u0000KL\u0000\u0000MN\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000OPQ\u0000RS\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TUV\u0000WX\u0000\u0000\u0000\u0000Y".toCharArray();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.704 -0500", hash_original_field = "B9A3ECBBC7653E79A27AC334647343CE", hash_generated_field = "137BEBA58F305CAEF4643F39E4943C5E")
 
-
     private static final char LATIN_CAPITAL_I_WITH_DOT = '\u0130';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.706 -0500", hash_original_field = "193AC28434EEAC1AA658F646BB77DEBB", hash_generated_field = "1AC73BFA60585BBDB30ED9BBC3C30FA0")
 
@@ -203,6 +202,8 @@ public static String toUpperCase(Locale locale, String s, char[] value, int offs
      * this class should be changed so that you instantiate it with the String and its value,
      * offset, and count fields.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.711 -0500", hash_original_method = "8FD2C0B10363E6DF4E4A890BB3EDCD79", hash_generated_method = "FD9119837CB1AEA2F8EE59FC469298E9")
     
 private CaseMapper() {

@@ -73,6 +73,8 @@ public WorkSource(int uid) {
         mUids = new int[] { uid, 0 };
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.547 -0500", hash_original_method = "01CB17D53B35B98697D0BEFEE05C5A5F", hash_generated_method = "01CB17D53B35B98697D0BEFEE05C5A5F")
     
 WorkSource(Parcel in) {
@@ -253,6 +255,8 @@ public boolean remove(WorkSource other) {
         return changed;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.577 -0500", hash_original_method = "34E034689DDCE68A5D27EE33789EB9C2", hash_generated_method = "5512EFB0DA8CD027C4FD8432344BAA39")
     
 private boolean updateLocked(WorkSource other, boolean set, boolean returnNewbs) {
@@ -324,6 +328,8 @@ private boolean updateLocked(WorkSource other, boolean set, boolean returnNewbs)
         return changed;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.580 -0500", hash_original_method = "E8ED9AF8451B0D2EC41EDBDBB476EE69", hash_generated_method = "F94CDBE8C163C76FB6B259C5873B4C40")
     
 private void addLocked(int uid) {

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class DERPrintableString extends ASN1Object implements DERString {
     // END android-changed
 
@@ -197,6 +192,8 @@ public byte[] getOctets()
         return bs; 
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.011 -0500", hash_original_method = "84DAFF7719AC505908CDD70F6E92DE78", hash_generated_method = "84DAFF7719AC505908CDD70F6E92DE78")
     
 void encode(
@@ -213,6 +210,8 @@ public int hashCode()
         return this.getString().hashCode();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.015 -0500", hash_original_method = "356EB8B61A96F4A47C607B567EAD3298", hash_generated_method = "356EB8B61A96F4A47C607B567EAD3298")
     
 boolean asn1Equals(
@@ -234,7 +233,6 @@ public String toString()
     {
         return string;
     }
-
     
 }
 

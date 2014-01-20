@@ -13,10 +13,6 @@ import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.cat.Duration.TimeUnit;
 
-
-
-
-
 abstract class ValueParser {
 
     /**
@@ -27,6 +23,8 @@ abstract class ValueParser {
      *         Command Details object is found, ResultException is thrown.
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.788 -0500", hash_original_method = "6AE2D5DA6C5F460EE4B46BC785279C7C", hash_generated_method = "07B2A188896D620B2AEF2081BDEE7294")
     
 static CommandDetails retrieveCommandDetails(ComprehensionTlv ctlv)
@@ -54,6 +52,8 @@ static CommandDetails retrieveCommandDetails(ComprehensionTlv ctlv)
      *         Command Details object is found, ResultException is thrown.
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.791 -0500", hash_original_method = "71A21439D49BE4DC675A1D07C5085E0D", hash_generated_method = "4EA9082D3B18CDF043CA61C90B966003")
     
 static DeviceIdentities retrieveDeviceIdentities(ComprehensionTlv ctlv)
@@ -79,6 +79,8 @@ static DeviceIdentities retrieveDeviceIdentities(ComprehensionTlv ctlv)
      * @return A Duration object
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.793 -0500", hash_original_method = "60F0F464B613534040B157E1C2112C00", hash_generated_method = "E7F46C5369B89F2355684BABFAC81CB3")
     
 static Duration retrieveDuration(ComprehensionTlv ctlv) throws ResultException {
@@ -104,6 +106,8 @@ static Duration retrieveDuration(ComprehensionTlv ctlv) throws ResultException {
      * @return An Item
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.796 -0500", hash_original_method = "152402B1F19F5AF3A149355992289F4E", hash_generated_method = "5A7C233B5CE9F29C1DD832CCE8FC99D4")
     
 static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
@@ -136,6 +140,8 @@ static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
      * @return An Item id
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.799 -0500", hash_original_method = "327E65F268062B661107B9088D7D6DB0", hash_generated_method = "394814D2A6BAF01CA9935D76F60C042A")
     
 static int retrieveItemId(ComprehensionTlv ctlv) throws ResultException {
@@ -160,6 +166,8 @@ static int retrieveItemId(ComprehensionTlv ctlv) throws ResultException {
      * @return IconId instance
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.801 -0500", hash_original_method = "31E51BFBE155FA06FC60503CF7989650", hash_generated_method = "2D5C1ACFC7853CCB44D8E6BD90E832BB")
     
 static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
@@ -185,6 +193,8 @@ static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
      * @return ItemsIconId instance
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.804 -0500", hash_original_method = "30C4B6CD40D711382C087F999961E577", hash_generated_method = "DA61DAAA30AE3E61CF44B7B5BEA9107D")
     
 static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv)
@@ -218,6 +228,8 @@ static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv)
      * @return A list of TextAttribute objects
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.807 -0500", hash_original_method = "D4116A9C3735B3F595194F995C84896F", hash_generated_method = "79801730538B34C12C03F956F4749FAF")
     
 static List<TextAttribute> retrieveTextAttribute(ComprehensionTlv ctlv)
@@ -271,7 +283,6 @@ static List<TextAttribute> retrieveTextAttribute(ComprehensionTlv ctlv)
         return null;
     }
 
-
     /**
      * Retrieves alpha identifier from an Alpha Identifier COMPREHENSION-TLV
      * object.
@@ -280,6 +291,8 @@ static List<TextAttribute> retrieveTextAttribute(ComprehensionTlv ctlv)
      * @return String corresponding to the alpha identifier
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.809 -0500", hash_original_method = "B98E5D45204294650F3F1CE04E4B9F56", hash_generated_method = "6DB0E7689EB3EEE02057D1BF22BCF5E0")
     
 static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
@@ -311,6 +324,8 @@ static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
      * @return A Java String object decoded from the Text object
      * @throws ResultException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.813 -0500", hash_original_method = "3BCED7FFBE0FE784BA49584BB088736F", hash_generated_method = "A6D1542B468031E8023E6CF76568C729")
     
 static String retrieveTextString(ComprehensionTlv ctlv) throws ResultException {
@@ -352,12 +367,13 @@ static String retrieveTextString(ComprehensionTlv ctlv) throws ResultException {
         }
     }
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.076 -0400", hash_original_method = "536C7A90AC0042B9CC31730ED4B5756F", hash_generated_method = "536C7A90AC0042B9CC31730ED4B5756F")
     public ValueParser ()
     {
         //Synthesized constructor
     }
-
     
 }
 

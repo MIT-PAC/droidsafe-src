@@ -35,15 +35,23 @@ public abstract class Call {
      *  It will change across event loop iterations            top
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.361 -0500", hash_original_method = "0089893DA47F1B14AB96BC8B40B81502", hash_generated_method = "9372FCFEA6B5445E00ABA77EFD3B2BFF")
     
 public abstract List<Connection> getConnections();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.364 -0500", hash_original_method = "2934325051523620DCD2F62BF84383AD", hash_generated_method = "12BBA2D21C9A07EF05F8A8A5DD085730")
     
 public abstract Phone getPhone();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.368 -0500", hash_original_method = "1BE345EF59716A496590A9770EF7112C", hash_generated_method = "D52C554226BFE13E03B63E4EFC6DB11B")
     
 public abstract boolean isMultiparty();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.371 -0500", hash_original_method = "75701B1B375E0F543AC12EA12A4A97FB", hash_generated_method = "A317DEC2810CF43CE258BB1AF0C61528")
     
 public abstract void hangup() throws CallStateException;

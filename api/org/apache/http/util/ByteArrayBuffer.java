@@ -23,6 +23,8 @@ public ByteArrayBuffer(int capacity) {
         this.buffer = new byte[capacity]; 
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.889 -0500", hash_original_method = "00DB8B6A06284480D1470563C3051457", hash_generated_method = "A4A97010213E22BCC2359D1D030D23C9")
     
 private void expand(int newlen) {

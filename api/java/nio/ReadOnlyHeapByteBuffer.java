@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 final class ReadOnlyHeapByteBuffer extends HeapByteBuffer {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.685 -0500", hash_original_method = "F87692C45C0A8D0A5A75D4739DA65D10", hash_generated_method = "7B0FE031CEBD49E576F2A1EE4DB3CEC6")
     
 static ReadOnlyHeapByteBuffer copy(HeapByteBuffer other, int markOfOther) {
@@ -18,6 +20,8 @@ static ReadOnlyHeapByteBuffer copy(HeapByteBuffer other, int markOfOther) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.687 -0500", hash_original_method = "2F2ACF3B9ABB2D0DAB5827DF665B4EAD", hash_generated_method = "2F2ACF3B9ABB2D0DAB5827DF665B4EAD")
     
 ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {

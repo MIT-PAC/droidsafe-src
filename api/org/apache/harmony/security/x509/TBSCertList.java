@@ -99,6 +99,8 @@ public final class TBSCertList {
     private byte[] encoding;
 
     /** Constructs the object with associated ASN.1 encoding */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.724 -0500", hash_original_method = "31062813EF8734E09BA3D189CC3AAF0B", hash_generated_method = "9C313AB700168328343E482F4B2D2542")
     
 private TBSCertList(int version, AlgorithmIdentifier signature,

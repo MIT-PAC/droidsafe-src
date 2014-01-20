@@ -60,6 +60,8 @@ abstract class SipConnectionBase extends Connection {
 
     private PostDialState postDialState = PostDialState.NOT_STARTED;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.252 -0500", hash_original_method = "D12ADA666E21FFAC81BC845F1B1B388F", hash_generated_method = "D12ADA666E21FFAC81BC845F1B1B388F")
     
 SipConnectionBase(String dialString) {
@@ -183,6 +185,8 @@ void setDisconnectCause(DisconnectCause cause) {
         // TODO
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.286 -0500", hash_original_method = "2934325051523620DCD2F62BF84383AD", hash_generated_method = "E0532074FC3B4F0149E2689F81019F86")
     
 protected abstract Phone getPhone();
@@ -202,6 +206,8 @@ protected abstract Phone getPhone();
         return postDialString.substring(nextPostDialChar);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.290 -0500", hash_original_method = "780D5AE6347C99C37A99BA1F1D4E1D8E", hash_generated_method = "5B243B4AC5A2917C420361F3F8717D57")
     
 private void log(String msg) {

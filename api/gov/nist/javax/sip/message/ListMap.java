@@ -79,6 +79,8 @@ import java.util.Hashtable;
 
 class ListMap {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.100 -0500", hash_original_method = "432E67B4E78CD4BF646DB4DECA89550C", hash_generated_method = "641992C365D9538BCC35E3D72A986433")
     
 static private void initializeListMap() {
@@ -232,6 +234,8 @@ static protected Class<?> getListClass(Class<?> sipHdrClass) {
 
     private static boolean initialized;
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.584 -0400", hash_original_method = "3B4FA022548893E6C8E65FE681D24699", hash_generated_method = "3B4FA022548893E6C8E65FE681D24699")
     public ListMap ()
     {

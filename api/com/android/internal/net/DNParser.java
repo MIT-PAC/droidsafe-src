@@ -9,8 +9,6 @@ import java.io.IOException;
 
 import javax.security.auth.x500.X500Principal;
 
-
-
 public final class DNParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.185 -0500", hash_original_field = "EA1B57D73AF22D42FFBE3F9C03A150D5", hash_generated_field = "8755658AF290FD110892EDFB73434ADB")
 
@@ -53,6 +51,8 @@ public DNParser(X500Principal principal) {
     }
 
     // gets next attribute type: (ALPHA 1*keychar) / oid
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.206 -0500", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "F0D0BF57D4C2BD93F75155F728BA4DC0")
     
 private String nextAT() throws IOException {
@@ -114,6 +114,8 @@ private String nextAT() throws IOException {
     }
 
     // gets quoted attribute value: QUOTATION *( quotechar / pair ) QUOTATION
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.208 -0500", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "C8479615C8221D0B73A1DA6D2665FBAB")
     
 private String quotedAV() throws IOException {
@@ -151,6 +153,8 @@ private String quotedAV() throws IOException {
     }
 
     // gets hex string attribute value: "#" hexstring
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.212 -0500", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "F1094E0759D42A95372AF458E2BC086C")
     
 private String hexAV() throws IOException {
@@ -204,6 +208,8 @@ private String hexAV() throws IOException {
     }
 
     // gets string attribute value: *( stringchar / pair )
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.215 -0500", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "FA340660B1DC19FDC8860502F86C8A8C")
     
 private String escapedAV() throws IOException {
@@ -253,6 +259,8 @@ private String escapedAV() throws IOException {
     }
 
     // returns escaped char
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.217 -0500", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "C460509F8FDC988A9540230C9CA971BE")
     
 private char getEscaped() throws IOException {
@@ -287,6 +295,8 @@ private char getEscaped() throws IOException {
 
     // decodes UTF-8 char
     // see http://www.unicode.org for UTF-8 bit distribution table
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.221 -0500", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "05008221DC4D81DCF8CC27935EE71897")
     
 private char getUTF8() throws IOException {
@@ -338,6 +348,8 @@ private char getUTF8() throws IOException {
     // According to BNF syntax:
     // hexchar    = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
     //                    / "a" / "b" / "c" / "d" / "e" / "f"
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.224 -0500", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "91DA66F05902E6D47D3876FBD601DB01")
     
 private int getByte(int position) throws IOException {

@@ -152,6 +152,8 @@ public boolean hasValue() {
      *
      * @return The value for this Keyframe.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.996 -0500", hash_original_method = "2BAF52093DF90C012CD98E75F6017DB6", hash_generated_method = "0BBDF3917B1F70E411088037046C99F8")
     
 public abstract Object getValue();
@@ -161,6 +163,8 @@ public abstract Object getValue();
      *
      * @param value value for this Keyframe.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.998 -0500", hash_original_method = "0331A921E67C9DBFCFD1B97103D5AA96", hash_generated_method = "FD3EE2B12CCD0465A5CF86CA5F089295")
     
 public abstract void setValue(Object value);
@@ -229,6 +233,8 @@ public Class getType() {
         return mValueType;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.012 -0500", hash_original_method = "195CDEEBE964F431C4EC3BA6D3E40199", hash_generated_method = "2E6D16650854665C10782A699DC48FF5")
     
 @Override
@@ -239,6 +245,8 @@ public Class getType() {
 
         Object mValue;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.016 -0500", hash_original_method = "203797AF2B16BA31CF618ABFC3881151", hash_generated_method = "203797AF2B16BA31CF618ABFC3881151")
         
 ObjectKeyframe(float fraction, Object value) {
@@ -278,6 +286,8 @@ public void setValue(Object value) {
 
         int mValue;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.030 -0500", hash_original_method = "EEAB8C81F88FA2F655356211D4887153", hash_generated_method = "EEAB8C81F88FA2F655356211D4887153")
         
 IntKeyframe(float fraction, int value) {
@@ -287,6 +297,8 @@ IntKeyframe(float fraction, int value) {
             mHasValue = true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.032 -0500", hash_original_method = "361D7315F9884E2CC45B77F9DFFA5D0B", hash_generated_method = "361D7315F9884E2CC45B77F9DFFA5D0B")
         
 IntKeyframe(float fraction) {
@@ -334,6 +346,8 @@ public void setValue(Object value) {
 
         float mValue;
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.048 -0500", hash_original_method = "12EFD0F6FC013537F5F7DD4B7E13C7C3", hash_generated_method = "12EFD0F6FC013537F5F7DD4B7E13C7C3")
         
 FloatKeyframe(float fraction, float value) {
@@ -343,6 +357,8 @@ FloatKeyframe(float fraction, float value) {
             mHasValue = true;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.050 -0500", hash_original_method = "68E29C538F7AE79A8714A7F41CC12063", hash_generated_method = "68E29C538F7AE79A8714A7F41CC12063")
         
 FloatKeyframe(float fraction) {

@@ -18,47 +18,71 @@ import droidsafe.helpers.DSUtils;
 
 public class CursorWindow extends SQLiteClosable implements Parcelable {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(String name, int cursorWindowSize) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromParcel(Parcel parcel) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeDispose(int windowPtr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeWriteToParcel(int windowPtr, Parcel parcel) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeClear(int windowPtr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetNumRows(int windowPtr) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeAllocRow(int windowPtr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeFreeLastRow(int windowPtr) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetType(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static byte[] nativeGetBlob(int windowPtr, int row, int column) {
         byte[] ret = {DSUtils.UNKNOWN_BYTE};
         return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeGetString(int windowPtr, int row, int column) {
         	String ret = new String();
         	ret.addTaint(windowPtr);
@@ -67,38 +91,56 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         	return ret;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetLong(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_LONG;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static double nativeGetDouble(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeCopyStringToBuffer(int windowPtr, int row, int column,
             CharArrayBuffer buffer) {
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutNull(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeGetName(int windowPtr) {
         	String ret =  new String();
         	ret.addTaint(windowPtr);
@@ -194,6 +236,8 @@ public CursorWindow(String name) {
         this((String)null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.151 -0500", hash_original_method = "2F52A6C89F1D54A86C82C46FF5E1EC25", hash_generated_method = "E11F5BE39FF20AEE597FBD9394CE1422")
     
 private CursorWindow(Parcel source) {
@@ -221,6 +265,8 @@ private CursorWindow(Parcel source) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.156 -0500", hash_original_method = "DF965B7262A7C1EB6D66FE3F57E4031E", hash_generated_method = "7CCF55D494A31637CF54FDE61D52931F")
     
 private void dispose() {
@@ -849,6 +895,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dispose();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.251 -0500", hash_original_method = "A1A5B0D31D251CEBDD86B0232FAF0913", hash_generated_method = "69E1424A9E4EA73EDE14F0691B295FFA")
     
 private void recordNewWindow(int pid, int window) {
@@ -860,6 +908,8 @@ private void recordNewWindow(int pid, int window) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.254 -0500", hash_original_method = "35EFD039834BDFB7DFA5FAF4FCFF938C", hash_generated_method = "71ACDCAC4F62F9980332EA65E44A2C32")
     
 private void recordClosingOfWindow(int window) {
@@ -872,6 +922,8 @@ private void recordClosingOfWindow(int window) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.257 -0500", hash_original_method = "FB6D9C80437A7691015FDFE53D1A15C9", hash_generated_method = "08A818B6B263049C3D5F0FB03B76FFAC")
     
 private String printStats() {

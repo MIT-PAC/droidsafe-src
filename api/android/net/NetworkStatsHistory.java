@@ -36,18 +36,24 @@ public static long randomLong(Random r, long start, long end) {
         return (long) (start + (r.nextFloat() * (end - start)));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.544 -0500", hash_original_method = "487E304B6AB9C8CF5BD693DAEBDF29C6", hash_generated_method = "9CFB00EDA3F0500A33DA1CE5E7E2DC74")
     
 private static long getLong(long[] array, int i, long value) {
         return array != null ? array[i] : value;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.546 -0500", hash_original_method = "D85045C76D29B281747DCD22D98FFBDB", hash_generated_method = "CC30DD7C084D89323E39367DACB6B621")
     
 private static void setLong(long[] array, int i, long value) {
         if (array != null) array[i] = value;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.548 -0500", hash_original_method = "61DF4ED7ED1863BCC96DE4FB2685A3AA", hash_generated_method = "7952539C07DC1E3E63A22A95333C3AF4")
     
 private static void addLong(long[] array, int i, long value) {
@@ -578,6 +584,8 @@ public void recordEntireHistory(NetworkStatsHistory input) {
     /**
      * Ensure that buckets exist for given time range, creating as needed.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.508 -0500", hash_original_method = "B927CFA0CEDE41C1E5D84D22AEB0E325", hash_generated_method = "C2BEED7A0A6543BD3478EEFCD606EE2E")
     
 private void ensureBuckets(long start, long end) {
@@ -598,6 +606,8 @@ private void ensureBuckets(long start, long end) {
     /**
      * Insert new bucket at requested index and starting time.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.511 -0500", hash_original_method = "B3108244F274B858A2EC662DDA9927CD", hash_generated_method = "ECC9EF8F4D049CE8B9750D07CE63020C")
     
 private void insertBucket(int index, long start) {

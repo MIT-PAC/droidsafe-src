@@ -29,6 +29,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
      * @param parentHeightPadding Padding present in the parent view
      * @return Number of cells this child was measured to occupy
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.796 -0500", hash_original_method = "3EE8D7D16F58FBE24D52688DB0D4BEBD", hash_generated_method = "B755F96AF94AB504804536B58F7E7090")
     
 static int measureChildForCells(View child, int cellSize, int cellsRemaining,
@@ -164,6 +166,8 @@ public boolean isExpandedFormat() {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.793 -0500", hash_original_method = "904CFC5C82A7517026F4582C82215F76", hash_generated_method = "D798BE971F883CA82659A3338E449641")
     
 private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {

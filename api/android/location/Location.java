@@ -137,6 +137,8 @@ public static double convert(String coordinate) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.354 -0500", hash_original_method = "165EE56F2E92FA289A109F63B6B1920A", hash_generated_method = "1EA7F072BDA182110E9EEF7322654C6F")
     
 private static void computeDistanceAndBearing(double lat1, double lon1,

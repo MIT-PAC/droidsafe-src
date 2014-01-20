@@ -78,6 +78,8 @@ public StorageVolume(String path, String description, boolean removable,
     }
 
     // for parcelling only
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.736 -0500", hash_original_method = "C6DC3558E219CD63D264358A9A1233CF", hash_generated_method = "63327E782ECC95985A3E12DCA8532007")
     
 private StorageVolume(String path, String description, boolean removable,

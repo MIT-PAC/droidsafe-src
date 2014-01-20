@@ -419,6 +419,8 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
         return createMultiArray(componentType, dimensions);
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
     	Object ret = new Object();
@@ -483,6 +485,8 @@ public static Object newInstance(Class<?> componentType, int size)
         throw new AssertionError();
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
     	Object ret = new Object();
@@ -805,6 +809,8 @@ public static void setShort(Object array, int index, short value)
     /**
      * Prevent this class from being instantiated.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.890 -0500", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "A5B775E55BAEC7F200D31C4FEF7D82EB")
     
 private Array(){

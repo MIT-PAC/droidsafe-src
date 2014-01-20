@@ -522,6 +522,8 @@ public Builder setDefaults(int defaults) {
             return this;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.463 -0500", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "0BC7EE29E2E86D930BE9DB77ED7692C9")
         
 private void setFlag(int mask, boolean value) {
@@ -532,6 +534,8 @@ private void setFlag(int mask, boolean value) {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.466 -0500", hash_original_method = "874AA4550BEDC5FDB0E26F145D0FEF64", hash_generated_method = "0CB4779EF65DCE57119D5376D136EE75")
         
 private RemoteViews makeRemoteViews(int resId) {
@@ -583,6 +587,8 @@ private RemoteViews makeRemoteViews(int resId) {
             return contentView;
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.469 -0500", hash_original_method = "BA4EC765F0E429DA930DFC57746DA461", hash_generated_method = "E66B8BC37AE19DD3018D557A171B0CCA")
         
 private RemoteViews makeContentView() {
@@ -595,6 +601,8 @@ private RemoteViews makeContentView() {
             }
         }
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.472 -0500", hash_original_method = "E7ABF10FCA5C3841BF6DB5E454736B56", hash_generated_method = "0AB02F9567C1005F66F74069F084A6F5")
         
 private RemoteViews makeTickerView() {

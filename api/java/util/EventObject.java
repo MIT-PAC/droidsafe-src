@@ -21,6 +21,8 @@ public class EventObject implements Serializable {
      * @param source
      *            the object which fired the event.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.346 -0500", hash_original_method = "19E83C4C00CF513D7C219A8F2CE4B9FA", hash_generated_method = "31254B198F68157457014067B2589821")
     
 public EventObject(Object source) {
@@ -33,6 +35,8 @@ public EventObject(Object source) {
     /**
      * Returns the object which fired the event.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.348 -0500", hash_original_method = "9C6E9403B2BCB843296731DEDAEEBBC7", hash_generated_method = "3D28168EFE76736511F32DF40C7D247E")
     
@@ -43,6 +47,8 @@ public Object getSource() {
     /**
      * Returns the string representation of this {@code EventObject}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.351 -0500", hash_original_method = "50A98C78FE68558BA94E5BDF90A15613", hash_generated_method = "2A2B8D705213FD04B84EB4BB1F536CF0")
     
 @Override public String toString() {

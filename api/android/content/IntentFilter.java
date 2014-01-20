@@ -28,6 +28,8 @@ public class IntentFilter implements Parcelable {
     // These functions are the start of more optimized code for managing
     // the string sets...  not yet implemented.
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.751 -0500", hash_original_method = "DA21299454DC334FA5FD853D1BFD2D91", hash_generated_method = "0931E9784E87BD4E6C0385E8116E742F")
     
 private static int findStringInSet(String[] set, String string,
@@ -40,6 +42,8 @@ private static int findStringInSet(String[] set, String string,
         return -1;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.753 -0500", hash_original_method = "77C7ED281F73E32FAEAB4043A75B2222", hash_generated_method = "6E55CE27038C83CA2C9F4EF6BA6D0080")
     
 private static String[] addStringToSet(String[] set, String string,
@@ -66,6 +70,8 @@ private static String[] addStringToSet(String[] set, String string,
         return set;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.756 -0500", hash_original_method = "5DADFEE73D89E7689BB0B9FCBD7E5BBE", hash_generated_method = "3C1DD4EDF5A37BB60FCA2D86C2F478E6")
     
 private static String[] removeStringFromSet(String[] set, String string,
@@ -316,6 +322,8 @@ public IntentFilter(IntentFilter o) {
         mHasPartialTypes = o.mHasPartialTypes;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.924 -0500", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "6EE529B66EC18E565826F7115C1F962E")
     
 private IntentFilter(Parcel source) {
@@ -650,6 +658,8 @@ public AuthorityEntry(String host, String port) {
             mPort = port != null ? Integer.parseInt(port) : -1;
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.834 -0500", hash_original_method = "9AA41EA6C96E16AD56B52F388CEAC244", hash_generated_method = "9AA41EA6C96E16AD56B52F388CEAC244")
         
 AuthorityEntry(Parcel src) {
@@ -659,6 +669,8 @@ AuthorityEntry(Parcel src) {
             mPort = src.readInt();
         }
 
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.836 -0500", hash_original_method = "3FD27104A5CDDCA498D8F62DC306DFFB", hash_generated_method = "3FD27104A5CDDCA498D8F62DC306DFFB")
         
 void writeToParcel(Parcel dest) {
@@ -1491,6 +1503,8 @@ public boolean debugCheck() {
         */
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.927 -0500", hash_original_method = "742383A5720F36FAAE26E247984D38D1", hash_generated_method = "7602D17575FA8737C2A348002BCBA396")
     
 private final boolean findMimeType(String type) {

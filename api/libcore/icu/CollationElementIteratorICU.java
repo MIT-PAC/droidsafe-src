@@ -83,6 +83,8 @@ public static CollationElementIteratorICU getInstance(int collatorAddress, Strin
      */
     private int address;
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.807 -0500", hash_original_method = "650A589CB2D4F7C3E63293AEFAAA9A77", hash_generated_method = "E15AF53D2515D281431A6ECD4A4CA9A7")
     
 private CollationElementIteratorICU(int address) {

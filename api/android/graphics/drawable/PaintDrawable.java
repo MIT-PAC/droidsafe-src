@@ -13,11 +13,15 @@ import android.util.AttributeSet;
 
 public class PaintDrawable extends ShapeDrawable {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.206 -0500", hash_original_method = "35894A2FD0CE190FC6DCE9F697221056", hash_generated_method = "EB239EA7E3A1C7969BCE1D083693AE7F")
     
 public PaintDrawable() {
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.208 -0500", hash_original_method = "51DC0DAE916B0D4375C00567B21115B1", hash_generated_method = "66B5361B947C282388A1F9D3FC07FE15")
     
 public PaintDrawable(int color) {
@@ -29,6 +33,8 @@ public PaintDrawable(int color) {
      * drawable is drawn in a round-rectangle, rather than a rectangle.
      * @param radius the radius for the corners of the rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.210 -0500", hash_original_method = "29D687C39F10D3A684C3799EDBB48EFB", hash_generated_method = "6F40AA935AB00B671F6C53CB6B863A7E")
     
@@ -49,6 +55,8 @@ public void setCornerRadius(float radius) {
      * top-left, top-right, bottom-right, bottom-left
      * @param radii the x and y radii of the corners
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.212 -0500", hash_original_method = "458539BDB31F16A86FED0FC05CC292D2", hash_generated_method = "83779F66102631002C7FEC9547C188FF")
     
@@ -63,6 +71,8 @@ public void setCornerRadii(float[] radii) {
         invalidateSelf();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.215 -0500", hash_original_method = "B0701038A568952969848F330DE56979", hash_generated_method = "006E78934D7584D196C67FAA0E072C15")
     
 @Override

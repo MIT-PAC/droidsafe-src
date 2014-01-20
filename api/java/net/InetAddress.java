@@ -45,6 +45,8 @@ public class InetAddress implements Serializable {
      * @param hostName the hostname corresponding to the IP address.
      * @return the corresponding InetAddresses, appropriately sorted.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.217 -0500", hash_original_method = "C098D3724E09EEC45853C7E5DAED7824", hash_generated_method = "C6B35AE2FA29E9467645051E8EE6EECF")
     
 private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String hostName)
@@ -82,6 +84,8 @@ public static InetAddress[] getAllByName(String host) throws UnknownHostExceptio
      * Returns the InetAddresses for {@code host}. The returned array is shared
      * and must be cloned before it is returned to application code.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.223 -0500", hash_original_method = "246D92EAF0F98E04427CC0512E8DD56F", hash_generated_method = "B8D2624A0D74BA243001C4FC7E42FD18")
     
 private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostException {
@@ -102,6 +106,8 @@ private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostExc
         return lookupHostByName(host).clone();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.226 -0500", hash_original_method = "CB8F6EAC24B3C3F95717D807E1D14C33", hash_generated_method = "FBE29A04B92154FCDCE4BABDD598B24E")
     
 private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws UnknownHostException {
@@ -114,6 +120,8 @@ private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.230 -0500", hash_original_method = "7257BB04AFE16B3CCE24EF2723A03805", hash_generated_method = "5D891E9367533A1DC52C8213611309BD")
     
 private static InetAddress disallowDeprecatedFormats(String address, InetAddress inetAddress) {
@@ -127,6 +135,8 @@ private static InetAddress disallowDeprecatedFormats(String address, InetAddress
         return Libcore.os.inet_pton(AF_INET, address);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.233 -0500", hash_original_method = "13D428EED9E34243733FECE30A32A88B", hash_generated_method = "699B2C4562AA4A7C273787E9923B81EC")
     
 private static InetAddress parseNumericAddressNoThrow(String address) {
@@ -219,6 +229,8 @@ public static InetAddress getLocalHost() throws UnknownHostException {
      * @param host the hostname to resolve.
      * @return the IP addresses of the host.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.252 -0500", hash_original_method = "9A18BDA9B7320ADFBD057B8A639BF335", hash_generated_method = "C7C17F28CB7AE80D1B93EFAD44AA3AD8")
     
 private static InetAddress[] lookupHostByName(String host) throws UnknownHostException {
@@ -272,6 +284,8 @@ public static void clearDnsCache() {
         addressCache.clear();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.256 -0500", hash_original_method = "52AE02939059AD17567A159306895CC4", hash_generated_method = "FAB60AFCEE7C37B239B874D1CAF9F245")
     
 private static InetAddress getHostByAddrImpl(InetAddress address) throws UnknownHostException {
@@ -320,6 +334,8 @@ public static InetAddress parseNumericAddress(String numericAddress) {
         return result;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.267 -0500", hash_original_method = "89B71749F6D1ED2E70A746BF0E6C21BC", hash_generated_method = "720D5C7EF54D55F3A03C431CCB43DEB2")
     
 private static InetAddress[] loopbackAddresses() {
@@ -374,6 +390,8 @@ public static InetAddress getByAddress(String hostName, byte[] ipAddress) throws
         return getByAddress(hostName, ipAddress, 0);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.312 -0500", hash_original_method = "92BD61B54A32FD10D3456FBE907A2602", hash_generated_method = "7DF91EF802DBF81C0EFB976DEC45B6D1")
     
 private static InetAddress getByAddress(String hostName, byte[] ipAddress, int scopeId) throws UnknownHostException {
@@ -396,12 +414,16 @@ private static InetAddress getByAddress(String hostName, byte[] ipAddress, int s
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.315 -0500", hash_original_method = "816D2EFAAEB973A2F6F408B300A22DDF", hash_generated_method = "6765381FFF68B17C9B4D8BFF63CC0A6A")
     
 private static UnknownHostException badAddressLength(byte[] bytes) throws UnknownHostException {
         throw new UnknownHostException("Address is neither 4 or 16 bytes: " + Arrays.toString(bytes));
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.317 -0500", hash_original_method = "976F5692DBFDF51A2ADCA4E3FA07B136", hash_generated_method = "EE241AABD532AD61C0482DFB82156C56")
     
 private static boolean isIPv4MappedAddress(byte[] ipAddress) {
@@ -422,6 +444,8 @@ private static boolean isIPv4MappedAddress(byte[] ipAddress) {
         return true;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.321 -0500", hash_original_method = "76C3DB48DD3809B5557BF6F40359BC2C", hash_generated_method = "61CAD9059146DB1956372921747CDB86")
     
 private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
@@ -463,6 +487,8 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
      *
      * Note: this constructor is for subclasses only.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.211 -0500", hash_original_method = "D743789B4770A2F65AD981CCEDC5E9F2", hash_generated_method = "D743789B4770A2F65AD981CCEDC5E9F2")
     
 InetAddress(int family, byte[] ipaddress, String hostName) {
@@ -819,6 +845,8 @@ for(final InetAddress sourceAddress : sourceAddresses)
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.305 -0500", hash_original_method = "296F60C65F61166BD9A8DF4CB4E70272", hash_generated_method = "66D56AEF1B5710B77AD7862267AA381D")
     
 private boolean isReachable(InetAddress destination, InetAddress source, int timeout) throws IOException {
@@ -843,6 +871,8 @@ private boolean isReachable(InetAddress destination, InetAddress source, int tim
         return reached;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.326 -0500", hash_original_method = "EA85F511D24184DD59F5742DCBE8C620", hash_generated_method = "5C57A1D1CAB63432A118D1D074C07BA0")
     
 private void writeObject(ObjectOutputStream stream) throws IOException {
@@ -858,6 +888,8 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.writeFields();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.328 -0500", hash_original_method = "8E54F0F7AE1E424107F71EAAF0F6F90C", hash_generated_method = "2EC13D04E1E401E6F26FA5CA585A0EA9")
     
 private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
@@ -873,6 +905,8 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
      * The spec requires that if we encounter a generic InetAddress in
      * serialized form then we should interpret it as an Inet4Address.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.331 -0500", hash_original_method = "08DCB3CBD406BD7814E8362202DC0D50", hash_generated_method = "CD0E3E4CC1216AEAA55C0790F30B74C9")
     
 private Object readResolve() throws ObjectStreamException {

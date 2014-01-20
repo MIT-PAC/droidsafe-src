@@ -77,6 +77,8 @@ public IContentObserver getObserver() {
         return mObserverBridge.getContentObserver();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.682 -0500", hash_original_method = "A0DC3D6282923B31FCC435384F5B1B63", hash_generated_method = "207A1BFBBD46C28991369216F5EE6345")
     
 private void throwIfCursorIsClosed() {

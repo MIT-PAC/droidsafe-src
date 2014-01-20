@@ -26,6 +26,8 @@ public final class AttributeTypeAndValue {
     /**
      * Returns known OID or null.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.393 -0500", hash_original_method = "E69664DF4B06AA7B2D486D69240A9EDA", hash_generated_method = "78762018B546B35CC876C218AF5DCF8D")
     
 private static ObjectIdentifier getOID(int[] oid) {
@@ -45,6 +47,8 @@ private static ObjectIdentifier getOID(int[] oid) {
      * Adds known OID to pool.
      * for static AttributeTypeAndValue initialization only
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.397 -0500", hash_original_method = "BFF86F06D273903B963DFA916A722686", hash_generated_method = "4FE0FBBFCB4CFF862AE86B08133326C6")
     
 private static void addOID(ObjectIdentifier oid) {
@@ -73,6 +77,8 @@ private static void addOID(ObjectIdentifier oid) {
     /**
      * Returns hash for array of integers.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.400 -0500", hash_original_method = "9326E50D231DBE55A4CC7DEFA5FC4FF2", hash_generated_method = "AFBCD72A8015E7440F7486AFB8662303")
     
 private static int hashIntArray(int[] oid) {
@@ -304,6 +310,8 @@ public void encodeContent(BerOutputStream out) {
     private  AttributeValue value;
 
     // for decoder only
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.325 -0500", hash_original_method = "6EC11ED1743D72D03D153EE3955FA226", hash_generated_method = "D3248DE04962BAD63BCFA76115DC7F20")
     
 private AttributeTypeAndValue(int[] oid, AttributeValue value) throws IOException {

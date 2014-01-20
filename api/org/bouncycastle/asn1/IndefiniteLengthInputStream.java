@@ -8,11 +8,6 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 class IndefiniteLengthInputStream extends LimitedInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.618 -0500", hash_original_field = "2E6688B071EBDE694CC6A067296A4CA2", hash_generated_field = "EED902105BB6C063F6B373DB3476C8FB")
 
@@ -27,6 +22,8 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
 
     private boolean _eofOn00 = true;
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.629 -0500", hash_original_method = "2A5952809765D349E8595E91B1C3BF8F", hash_generated_method = "BB11001A280430E08429D05DDAE9F44E")
     
 IndefiniteLengthInputStream(
@@ -48,6 +45,8 @@ IndefiniteLengthInputStream(
         checkForEof();
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.631 -0500", hash_original_method = "32A1BF96E83BDB9D0A76804DE17B7296", hash_generated_method = "32A1BF96E83BDB9D0A76804DE17B7296")
     
 void setEofOn00(
@@ -57,6 +56,8 @@ void setEofOn00(
         checkForEof();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.633 -0500", hash_original_method = "4FDE0FC0A80FB708AB4FF6F00CAD13DD", hash_generated_method = "23B32280FDDF1D96959AB222F428D32F")
     
 private boolean checkForEof()
@@ -133,7 +134,6 @@ public int read()
 
         return v;
     }
-
     
 }
 

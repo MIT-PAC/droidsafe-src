@@ -28,6 +28,8 @@ public X9ECParameters getParameters()
         return params;
     }
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.925 -0500", hash_original_method = "1F1693C301D27181EAB1FFC1D645AFDA", hash_generated_method = "CA79BF06048E9D1AF0018F6F3A4B479B")
     
 protected abstract X9ECParameters createParameters();

@@ -295,6 +295,8 @@ private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
         return b;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.775 -0500", hash_original_method = "FC6A0FA20365F95F496B2895DCD18765", hash_generated_method = "82AD175BB4105E5CA8A5D91AE5A316FB")
     
 private static void closeSilently(ParcelFileDescriptor c) {
@@ -306,6 +308,8 @@ private static void closeSilently(ParcelFileDescriptor c) {
       }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.778 -0500", hash_original_method = "A019EC2B740FA4F119FA9C0508A1F44E", hash_generated_method = "FF8D83046215CF42BE9DE9ADBC6660C4")
     
 private static ParcelFileDescriptor makeInputStream(
@@ -320,6 +324,8 @@ private static ParcelFileDescriptor makeInputStream(
     /**
      * Transform source Bitmap to targeted width and height.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.782 -0500", hash_original_method = "0F38C1B7EF4D27E0FE011F71A1226373", hash_generated_method = "EE9A0886C5343FE0EEB4CA45AB817FDB")
     
 private static Bitmap transform(Matrix scaler,
@@ -494,6 +500,8 @@ private static void createThumbnailFromEXIF(String filePath, int targetSize,
 
         public int mThumbnailHeight;
         
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.264 -0400", hash_original_method = "00296400B022DD946E1008D4AF6645F7", hash_generated_method = "00296400B022DD946E1008D4AF6645F7")
         public SizedThumbnailBitmap ()
         {

@@ -7,15 +7,12 @@ import droidsafe.annotations.*;
 import android.app.DownloadManager;
 import android.net.Uri;
 
-
-
-
-
 public final class Downloads {
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:56.203 -0500", hash_original_method = "9B4A677720B6322F28A15E895C99B092", hash_generated_method = "4EDA36C3C41965990B9DBE385624F13F")
     
 private Downloads() {}
-
     
     public static final class Impl implements BaseColumns {
 
@@ -100,7 +97,6 @@ public static boolean isStatusCompleted(int status) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:56.210 -0500", hash_original_field = "6CC91191DBBE5DDD4D947582F23DEB7A", hash_generated_field = "A16F8C5C1BDFFBA8B2519500C603637B")
 
         public static final String PERMISSION_ACCESS = "android.permission.ACCESS_DOWNLOAD_MANAGER";
-
         
         public static class RequestHeaders {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:56.447 -0500", hash_original_field = "6A25E4E65891B8E7F6078DEA2F08B82F", hash_generated_field = "5028F2620B4D52418A7802C0D5210CA6")
@@ -279,7 +275,6 @@ public static boolean isStatusCompleted(int status) {
         public static final int LAST_UPDATESRC_DONT_NOTIFY_DOWNLOADSVC = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:56.334 -0500", hash_original_field = "0A62CBBD4A3FED29703D4F13DD822B77", hash_generated_field = "3E52737E9B7A7A575774600F119868AA")
 
-
         /**
          * This download will be saved to the external storage. This is the
          * default behavior, and should be used for any file that the user
@@ -399,12 +394,12 @@ public static boolean isStatusCompleted(int status) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:56.444 -0500", hash_original_field = "D7ECDCC7F0576F5E52A682ADB1C04784", hash_generated_field = "D7B83DB94501403C446B003FF3C4C516")
 
         public static final int VISIBILITY_HIDDEN = DownloadManager.Request.VISIBILITY_HIDDEN;
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:56.207 -0500", hash_original_method = "BBF0D9B1CF16C5FC7549DABF49EBEFE0", hash_generated_method = "85EA5655661B5E305978CD7B13301ACE")
         
 private Impl() {}
     }
-
-
     
 }
 

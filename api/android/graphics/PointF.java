@@ -13,6 +13,8 @@ public class PointF implements Parcelable {
     /**
      * Returns the euclidian distance from (0,0) to (x,y)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.906 -0500", hash_original_method = "465129C188D91F5542AA39E43CB0E49D", hash_generated_method = "1D2193BD88EC285E5911F89209C0F412")
     
 public static float length(float x, float y) {
@@ -49,6 +51,8 @@ public PointF[] newArray(int size) {
 
     public float y;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.885 -0500", hash_original_method = "AC71EBB0EDB844032A48DF20A80FB47B", hash_generated_method = "C7971DDDF14A176537AD598EA326BF59")
     
 public PointF() {}
@@ -60,6 +64,8 @@ public PointF() {}
         addTaint(y);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public PointF(Point p){
         addTaint(p.getTaint());
         /*
@@ -75,21 +81,29 @@ public PointF() {}
         addTaint(y);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void set(PointF p){
         addTaint(p.getTaint());
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void negate(){
         addTaint(x);
         addTaint(y);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void offset(float dx, float dy){
         addTaint(dx);
         addTaint(dy);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(float x, float y){
         return getTaintBoolean();
         // Original method
@@ -100,6 +114,8 @@ public PointF() {}
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final float length(){
         return getTaintFloat();
         // Original method
@@ -110,6 +126,8 @@ public PointF() {}
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public int describeContents(){
         return getTaintInt();
     }
@@ -119,6 +137,8 @@ public PointF() {}
      * a parcel, use readFromParcel()
      * @param out The parcel to write the point's coordinates into
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.910 -0500", hash_original_method = "498F687E010E97B616DAA29FD28A4DFC", hash_generated_method = "714CC2DDD987CBCA3EFA76DDF3CD6A9D")
     
 @Override
@@ -127,6 +147,8 @@ public PointF() {}
         out.writeFloat(y);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
         // Original method
         /*

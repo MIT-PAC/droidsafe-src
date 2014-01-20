@@ -95,6 +95,8 @@ protected SocketChannel(SelectorProvider selectorProvider) {
      *
      * @return the socket assigned to this channel.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.636 -0500", hash_original_method = "D13CC21BE3BC4EA472CA63F894296CE7", hash_generated_method = "9838D871440061866DFAA20C4E5401B9")
     
 public abstract Socket socket();
@@ -105,6 +107,8 @@ public abstract Socket socket();
      * @return {@code true} if this channel's socket is connected, {@code false}
      *         otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.638 -0500", hash_original_method = "EF2DCF0240DCDAB71A78C6BD0371BA93", hash_generated_method = "640ACF0B46AF152682CD460E4AF1D091")
     
 public abstract boolean isConnected();
@@ -115,6 +119,8 @@ public abstract boolean isConnected();
      * @return {@code true} if the connection is initiated but not finished;
      *         {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.641 -0500", hash_original_method = "BE9EA5DF5228F76E2C0F080F812385E5", hash_generated_method = "516528913B2C11CF701C827F6429BDAE")
     
 public abstract boolean isConnectionPending();
@@ -157,6 +163,8 @@ public abstract boolean isConnectionPending();
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.644 -0500", hash_original_method = "EF042CD430999BAF5A1AF2158097F6BB", hash_generated_method = "84563A591A56E321A1FB21BE663EFF3F")
     
 public abstract boolean connect(SocketAddress address) throws IOException;
@@ -193,6 +201,8 @@ public abstract boolean connect(SocketAddress address) throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.646 -0500", hash_original_method = "81C54D102AA55CD30CE0569D1C7BBF90", hash_generated_method = "16F3CFA8A040FF11376537FFBD2C2C0C")
     
 public abstract boolean finishConnect() throws IOException;
@@ -227,6 +237,8 @@ public abstract boolean finishConnect() throws IOException;
      *             if another I/O error occurs.
      * @see java.nio.channels.ReadableByteChannel#read(java.nio.ByteBuffer)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.649 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
     
 public abstract int read(ByteBuffer target) throws IOException;
@@ -266,6 +278,8 @@ public abstract int read(ByteBuffer target) throws IOException;
      * @see java.nio.channels.ScatteringByteChannel#read(java.nio.ByteBuffer[],
      *      int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.651 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
     
 public abstract long read(ByteBuffer[] targets, int offset, int length) throws IOException;
@@ -335,6 +349,8 @@ public synchronized final long read(ByteBuffer[] targets) throws IOException {
      *             if this channel is not connected yet.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.657 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
     
 public abstract int write(ByteBuffer source) throws IOException;
@@ -376,6 +392,8 @@ public abstract int write(ByteBuffer source) throws IOException;
      * @see java.nio.channels.GatheringByteChannel#write(java.nio.ByteBuffer[],
      *      int, int)
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.659 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
     
 public abstract long write(ByteBuffer[] sources, int offset, int length) throws IOException;

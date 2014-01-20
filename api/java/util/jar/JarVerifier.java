@@ -88,12 +88,16 @@ public static Vector<Certificate> getSignerCertificates(
      * @param name
      *            the name of the JAR file being verified.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.384 -0500", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "4436059C4E8276439A6065FE93A5DE5F")
     
 JarVerifier(String name) {
         jarName = name;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.379 -0500", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "EAC500B4D4C6E3E60265AC7DB475A82C")
     
 private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
@@ -101,6 +105,8 @@ private SecurityException invalidDigest(String signatureFile, String name, Strin
                 " in " + jarName);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.381 -0500", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "F5CE810BEF717ECE24D592E956941563")
     
 private SecurityException failedVerification(String jarName, String signatureFile) {
@@ -189,6 +195,8 @@ VerifierEntry initEntry(String name) {
      *            the file bytes for the file called {@code name}.
      * @see #removeMetaEntries()
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.390 -0500", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "B24E46A89F6B78A5F74DC1F8899F1D36")
     
@@ -213,6 +221,8 @@ void addMetaEntry(String name, byte[] buf) {
      *             signature block file contains an invalid signature for the
      *             corresponding signature file.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.393 -0500", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "8A6C9CCF0D097FF838DD1FBE220DAD25")
     
 synchronized boolean readCertificates() {
@@ -237,6 +247,8 @@ synchronized boolean readCertificates() {
     /**
      * @param certFile
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.398 -0500", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "6D4AE1E3F1E817737EC4190C3E6EB66E")
     
 private void verifyCertificate(String certFile) {
@@ -331,6 +343,8 @@ private void verifyCertificate(String certFile) {
      * @param mf
      *            a {@code java.util.jar.Manifest} object.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.400 -0500", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "5E96175D15755C77B9F4C5D6341FECA1")
     
 void setManifest(Manifest mf) {
@@ -344,12 +358,16 @@ void setManifest(Manifest mf) {
      * @return {@code true} if the JAR is signed, {@code false}
      *         otherwise.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.402 -0500", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "61D9EDAFD8C0E1537C8EF2C7E942A904")
     
 boolean isSignedJar() {
         return certificates.size() > 0;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.406 -0500", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "B6619677E7320A9972188585FDF7BA18")
     
 private boolean verify(Attributes attributes, String entry, byte[] data,
@@ -394,6 +412,8 @@ private boolean verify(Attributes attributes, String entry, byte[] data,
      *            the name of a JAR entry.
      * @return an array of {@link java.security.cert.Certificate}.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.408 -0500", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "4AB9D8996D4C7F856FC4CD4DD096303E")
     
@@ -411,6 +431,8 @@ Certificate[] getCertificates(String name) {
      *
      * @see #addMetaEntry(String, byte[])
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.411 -0500", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E")
     
 void removeMetaEntries() {
@@ -463,6 +485,8 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
             digest.update(buf, off, nbytes);
         }
         
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.210 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "5C4BD9472CDE665A3B734979B8A321D7")
          void verify() {
             byte[] d = digest.digest();

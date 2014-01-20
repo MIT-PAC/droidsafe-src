@@ -36,6 +36,8 @@ import com.android.internal.telephony.TelephonyProperties;
 
 public final class GsmSMSDispatcher extends SMSDispatcher {
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.895 -0500", hash_original_method = "43CB38824F520614242805C962124F56", hash_generated_method = "50A51534287DE547B59C18626D20E481")
     
 private static int resultToCause(int rc) {
@@ -142,6 +144,8 @@ public GsmSMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
      * @param ar AsyncResult passed into the message handler.  ar.result should
      *           be a String representing the status report PDU, as ASCII hex.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.871 -0500", hash_original_method = "4DDABCDA44FFF28C561B2585B61E25F7", hash_generated_method = "672B038178BC088608C17482EB0C7D6B")
     
 private void handleStatusReport(AsyncResult ar) {
@@ -427,6 +431,8 @@ public boolean matchesLocation(String plmn, int lac, int cid) {
      * Handle 3GPP format SMS-CB message.
      * @param ar the AsyncResult containing the received PDUs
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.927 -0500", hash_original_method = "4513E8DEDD790BB664A98AD56B29A135", hash_generated_method = "E344EEAD2668EB96BDD6242C7F151494")
     
 private void handleBroadcastSms(AsyncResult ar) {

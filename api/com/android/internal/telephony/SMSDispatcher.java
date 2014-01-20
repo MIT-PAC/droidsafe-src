@@ -321,6 +321,8 @@ protected boolean isMultipart() {
     }
 
     /** Unregister for incoming SMS events. */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.594 -0500", hash_original_method = "05AD4FCF8399ECA695874E7F9126B120", hash_generated_method = "3A65586585D1609461086331A61384A4")
     
 public abstract void dispose();
@@ -339,6 +341,8 @@ public abstract void dispose();
      *
      * @return the format of the message PDU
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.597 -0500", hash_original_method = "CA7EFC56395807F5B08C2CDFF0DEE77B", hash_generated_method = "742B6FB3FD85813DF3DCDC257A2A1465")
     
 protected abstract String getFormat();
@@ -449,6 +453,8 @@ protected abstract String getFormat();
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.608 -0500", hash_original_method = "1E59FCBE70CAB945B533C092F603248E", hash_generated_method = "D6B094EA22326BDD48EC8535AC1DDEFC")
     
 private void createWakelock() {
@@ -465,6 +471,8 @@ private void createWakelock() {
      * @param intent intent to broadcast
      * @param permission Receivers are required to have this permission
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.611 -0500", hash_original_method = "6F7A6F4FA235882A4AAAEA7C85F33B76", hash_generated_method = "C251D6CB3397C10A48FD3B153016DA3B")
     
@@ -578,6 +586,8 @@ protected void handleSendComplete(AsyncResult ar) {
      *         {@link Activity#RESULT_OK} if the message has been broadcast
      *         to applications
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.621 -0500", hash_original_method = "4E10B405E560470A4760CC983A05DC59", hash_generated_method = "2D89BD0ADDBA3CD649FDDA1CE42E67E1")
     
 public abstract int dispatchMessage(SmsMessageBase sms);
@@ -837,6 +847,8 @@ protected void dispatchPdus(byte[][] pdus) {
      *  broadcast when the message is delivered to the recipient.  The
      *  raw pdu of the status report is in the extended data ("pdu").
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.636 -0500", hash_original_method = "A96C2E55439AE3EFE85AFB8DAE145B34", hash_generated_method = "4A50728100065D2BCB28E8F88849D451")
     
 protected abstract void sendData(String destAddr, String scAddr, int destPort,
@@ -867,6 +879,8 @@ protected abstract void sendData(String destAddr, String scAddr, int destPort,
      *  broadcast when the message is delivered to the recipient.  The
      *  raw pdu of the status report is in the extended data ("pdu").
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.639 -0500", hash_original_method = "2C5553F2CCA921D9F8A1481C43C39F5A", hash_generated_method = "22C03A73394CDCE9CF31BEF2E870B6A5")
     
 protected abstract void sendText(String destAddr, String scAddr,
@@ -973,6 +987,8 @@ protected void sendMultipartText(String destAddr, String scAddr,
     /**
      * Create a new SubmitPdu and send it.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.649 -0500", hash_original_method = "A5EF9BFB73598DDC932897317160A032", hash_generated_method = "D3E467AF7FCCEAE0FB1E27D4DC7C4496")
     
 protected abstract void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -1132,6 +1148,8 @@ private void sendMultipartSms(SmsTracker tracker) {
      * @param result result code indicating any error
      * @param response callback message sent when operation completes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.665 -0500", hash_original_method = "7149ACC866FE837F2282F2EB97169277", hash_generated_method = "C107F46B52EC57A9E8476BE10AEAB0F2")
     
 protected abstract void acknowledgeLastIncomingSms(boolean success,
@@ -1144,6 +1162,8 @@ protected abstract void acknowledgeLastIncomingSms(boolean success,
      * @param result result code indicating any error
      * @param response callback message sent when operation completes.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.668 -0500", hash_original_method = "3FF14669D60F392B7539BF30A1AA74B3", hash_generated_method = "F23EDF06D072F51E49386D5C9BC90C66")
     
 private void notifyAndAcknowledgeLastIncomingSms(boolean success,

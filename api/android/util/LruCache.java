@@ -140,6 +140,8 @@ public final V put(K key, V value) {
      * @param maxSize the maximum size of the cache before returning. May be -1
      *     to evict even 0-sized elements.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.258 -0500", hash_original_method = "5A85F1994DB09F90DA92A4710FB4C22D", hash_generated_method = "37AFB714E52833F666C67A891B7919B5")
     
 private void trimToSize(int maxSize) {
@@ -239,6 +241,8 @@ protected V create(K key) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.268 -0500", hash_original_method = "971860883D94FE365FE71BDE260829D3", hash_generated_method = "C15F98F8088B2F6FFC9871ACE2669840")
     
 private int safeSizeOf(K key, V value) {

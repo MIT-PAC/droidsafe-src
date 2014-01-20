@@ -206,6 +206,8 @@ public void leaveGroup(SocketAddress groupAddress, NetworkInterface netInterface
         impl.leaveGroup(groupAddress, netInterface);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.618 -0500", hash_original_method = "5D3737731721260F57AF95D7810519A1", hash_generated_method = "BE6D5906A27A20F91153C7ACFC899E5F")
     
 private void checkJoinOrLeave(SocketAddress groupAddress, NetworkInterface netInterface) throws IOException {
@@ -233,6 +235,8 @@ private void checkJoinOrLeave(SocketAddress groupAddress, NetworkInterface netIn
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.621 -0500", hash_original_method = "6596B4EA78B0ED28321084C8CA9DCC77", hash_generated_method = "7C391F04DE09282EA07355A617CC217F")
     
 private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {
@@ -345,6 +349,8 @@ public void setTimeToLive(int ttl) throws IOException {
         impl.setTTL(ttl);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.637 -0500", hash_original_method = "EBCEB6AAB2ED917FE096C1D1630BA905", hash_generated_method = "B8910BDDD82261F958A35850A4498C3E")
     
 @Override

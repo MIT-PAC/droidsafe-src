@@ -39,6 +39,8 @@ static State
 
     /****************************** Constructors *****************************/
     /*package*/
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.989 -0500", hash_original_method = "28231960C31A4F9365B5A7FC4FD91175", hash_generated_method = "28231960C31A4F9365B5A7FC4FD91175")
     
 GsmCall (GsmCallTracker owner) {
@@ -96,7 +98,9 @@ public String
 
     //***** Called from GsmConnection
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.009 -0500", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "ADEE6A90086841672D212D83F619D5B4")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.009 -0500", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "ADEE6A90086841672D212D83F619D5B4")
     
 void
     attach(Connection conn, DriverCall dc) {
@@ -117,6 +121,8 @@ void
     /**
      * Called by GsmConnection when it has disconnected
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.014 -0500", hash_original_method = "6CF66D622F9C9313C400A181CC9C1077", hash_generated_method = "C0929D6422F5D3C11AC276F36853FA1D")
     
 void
@@ -141,7 +147,9 @@ void
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.016 -0500", hash_original_method = "D8060A2D244E5FF428DF6CE721032DF1", hash_generated_method = "D8060A2D244E5FF428DF6CE721032DF1")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.016 -0500", hash_original_method = "D8060A2D244E5FF428DF6CE721032DF1", hash_generated_method = "D8060A2D244E5FF428DF6CE721032DF1")
     
 void
     detach(GsmConnection conn) {
@@ -152,7 +160,9 @@ void
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.019 -0500", hash_original_method = "B7010AC293AED59823FAEF8D2AD3B969", hash_generated_method = "B7010AC293AED59823FAEF8D2AD3B969")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.019 -0500", hash_original_method = "B7010AC293AED59823FAEF8D2AD3B969", hash_generated_method = "B7010AC293AED59823FAEF8D2AD3B969")
     
 boolean
     update (GsmConnection conn, DriverCall dc) {
@@ -173,7 +183,9 @@ boolean
      * @return true if there's no space in this call for additional
      * connections to be added via "conference"
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.021 -0500", hash_original_method = "8D2922917355F4AB0DD299BF5AB22FDE", hash_generated_method = "8D2922917355F4AB0DD299BF5AB22FDE")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.021 -0500", hash_original_method = "8D2922917355F4AB0DD299BF5AB22FDE", hash_generated_method = "8D2922917355F4AB0DD299BF5AB22FDE")
     
 boolean
     isFull() {
@@ -187,6 +199,8 @@ boolean
      * Note that at this point, the hangup request has been dispatched to the radio
      * but no response has yet been received so update() has not yet been called
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.024 -0500", hash_original_method = "B742BF2BEC1472EF6E9612211814463C", hash_generated_method = "B742BF2BEC1472EF6E9612211814463C")
     
 void
@@ -204,6 +218,8 @@ void
     /**
      * Called when it's time to clean up disconnected Connection objects
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.026 -0500", hash_original_method = "001DBBEE7493D5C83D8EF835ED579635", hash_generated_method = "001DBBEE7493D5C83D8EF835ED579635")
     
 void

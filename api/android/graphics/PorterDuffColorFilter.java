@@ -9,10 +9,14 @@ import droidsafe.helpers.DSUtils;
 
 public class PorterDuffColorFilter extends ColorFilter {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_CreatePorterDuffFilter(int srcColor, int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static int nCreatePorterDuffFilter(int nativeFilter, int srcColor,
             int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;

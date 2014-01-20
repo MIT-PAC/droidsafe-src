@@ -32,6 +32,8 @@ import com.android.internal.util.Predicate;
 
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event){
 		// Original method
 		/*
@@ -45,6 +47,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		return null;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean canViewReceivePointerEvents(View child){
 		// Original method
 		/*
@@ -349,7 +353,9 @@ public ViewGroup(Context context) {
 		*/
 	}
     
-	private void initViewGroup(){
+	@DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    private void initViewGroup(){
 		// Original method
 		/*
 		{
@@ -372,6 +378,8 @@ public ViewGroup(Context context) {
 	    mChildren = new View[ARRAY_INITIAL_CAPACITY];
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void initFromAttributes(Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -414,6 +422,8 @@ public ViewGroup(Context context) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override void handleFocusGainInternal(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/*
@@ -558,6 +568,8 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -614,6 +626,8 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override void unFocus(){
 		// Original method
 		/*
@@ -751,6 +765,8 @@ public View getFocusedChild() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
@@ -899,6 +915,8 @@ public View getFocusedChild() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override void dispatchCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -940,6 +958,8 @@ public View getFocusedChild() {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint){
 		// Original method
@@ -962,6 +982,8 @@ public View getFocusedChild() {
 		return null;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean notifyChildOfDrag(View child){
 		// Original method
 		/*
@@ -1002,6 +1024,8 @@ public View getFocusedChild() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override void updateLocalSystemUiVisibility(int localValue, int localChanges){
 		// Original method
 		/*
@@ -1209,6 +1233,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean dispatchTransformedGenericPointerEvent(MotionEvent event, View child){
 		// Original method
 		/*
@@ -1242,6 +1268,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void resetTouchState(){
 		// Original method
 		/*
@@ -1254,6 +1282,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean resetCancelNextUpFlag(View view){
 		// Original method
 		/*
@@ -1268,6 +1298,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void clearTouchTargets(){
 		// Original method
 		/*
@@ -1286,6 +1318,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void cancelAndClearTouchTargets(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1320,6 +1354,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return null;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removePointersFromTouchTargets(int pointerIdBits){
 		// Original method
 		/*
@@ -1374,6 +1410,8 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private boolean dispatchTransformedTouchEvent(MotionEvent event, boolean cancel,
             View child, int desiredPointerIdBits){
 		// Original method
@@ -1566,6 +1604,8 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -1589,6 +1629,8 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		return false;
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info){
 		// Original method
 		/*
@@ -1606,6 +1648,8 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @Override void dispatchDetachedFromWindow(){
 		// Original method
 		/*
@@ -1811,6 +1855,8 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		return 0;
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void notifyAnimationListener(){
 		// Original method
 		/*
@@ -2226,12 +2272,16 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void addInArray(View child, int index){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeFromArray(int index){
 		// Original method
 		/*
@@ -2260,12 +2310,16 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeFromArray(int start, int count){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void bindLayoutAnimation(View child){
 		// Original method
 		/*
@@ -2361,6 +2415,8 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeViewInternal(View view){
 		// Original method
 		/*
@@ -2374,6 +2430,8 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeViewInternal(int index, View view){
 		// Original method
 		/*
@@ -2440,6 +2498,8 @@ public LayoutTransition getLayoutTransition() {
         return mTransition;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void removeViewsInternal(int start, int count){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2598,6 +2658,8 @@ public LayoutTransition getLayoutTransition() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     void offsetRectBetweenParentAndChild(View descendant, Rect rect,
             boolean offsetFromChildToParent, boolean clipToBounds){
 		// Original method
@@ -2649,6 +2711,8 @@ public LayoutTransition getLayoutTransition() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.941 -0500", hash_original_method = "71AA4DA3A86B859FE325E7D3AB99A56D", hash_generated_method = "C9442B2DA782FC842F7449F8B61E3ED6")
     
 @Override
@@ -2817,6 +2881,8 @@ public LayoutAnimationController getLayoutAnimation() {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void setBooleanFlag(int flag, boolean value){
 		// Original method
 		/*
@@ -2925,6 +2991,8 @@ public LayoutParams(LayoutParams source) {
          * Used internally by MarginLayoutParams.
          * @hide
          */
+        @DSComment("Package priviledge")
+        @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.112 -0500", hash_original_method = "6916C65008FD05252A1C29A02882BE94", hash_generated_method = "6916C65008FD05252A1C29A02882BE94")
         
 LayoutParams() {
@@ -3187,6 +3255,8 @@ public MarginLayoutParams(LayoutParams source) {
 
         public TouchTarget next;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.202 -0500", hash_original_method = "5259B67E5A6C02FEFA0EB82F43285FB5", hash_generated_method = "3FD6060E7F316E76470356009D890095")
         
 private TouchTarget() {
@@ -3254,6 +3324,8 @@ private TouchTarget() {
 
         public HoverTarget next;
 
+        @DSComment("Private Method")
+        @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.229 -0500", hash_original_method = "5539B57739929C533DCF7E732D22C4F2", hash_generated_method = "3287AC7D0F65F609C74D7BC047708D05")
         
 private HoverTarget() {
@@ -3498,6 +3570,8 @@ private HoverTarget() {
 		//Return nothing
 	}
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private void addDisappearingView(View v){
 		// Original method
 		/*
@@ -3518,6 +3592,8 @@ private HoverTarget() {
 		//Return nothing
 	}
     
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean isViewTransitioning(View view){
 		// Original method
 		/*

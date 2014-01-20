@@ -89,6 +89,8 @@ protected DocumentBuilderFactory () {
      * @return A new instance of a DocumentBuilder.
      */
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.039 -0500", hash_original_method = "C92B2605725A3C79039D87554B8487A2", hash_generated_method = "2510D54080F06623198E1BC44C9B9D87")
     
 public abstract DocumentBuilder newDocumentBuilder()
@@ -303,6 +305,8 @@ public boolean isCoalescing() {
      * @exception IllegalArgumentException thrown if the underlying
      * implementation doesn't recognize the attribute.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.068 -0500", hash_original_method = "CB73F36311CD92EDEA1B2B1274063888", hash_generated_method = "8AA6026C8FF7CAC06417C37855D110F3")
     
 public abstract void setAttribute(String name, Object value)
@@ -316,6 +320,8 @@ public abstract void setAttribute(String name, Object value)
      * @exception IllegalArgumentException thrown if the underlying
      * implementation doesn't recognize the attribute.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.071 -0500", hash_original_method = "91ADABC875C777126203143168D8F098", hash_generated_method = "05DA748C339404248E8ADA114B39660B")
     
 public abstract Object getAttribute(String name)
@@ -356,6 +362,8 @@ public abstract Object getAttribute(String name)
      *   it creates cannot support this feature.
      * @throws NullPointerException If the <code>name</code> parameter is null.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.073 -0500", hash_original_method = "36709D7D57B60C6C962D7D5945B5BF45", hash_generated_method = "6A57F383BB0171EF10332E4F340D9CF6")
     
 public abstract void setFeature(String name, boolean value)
@@ -379,6 +387,8 @@ public abstract void setFeature(String name, boolean value)
      * @throws ParserConfigurationException if this <code>DocumentBuilderFactory</code>
      *   or the <code>DocumentBuilder</code>s it creates cannot support this feature.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.075 -0500", hash_original_method = "5A73D1115FD1B21364503EAEC11369CE", hash_generated_method = "97981E4AF4AF97F8AD156A0F6B6084B8")
     
 public abstract boolean getFeature(String name)

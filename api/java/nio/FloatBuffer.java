@@ -72,6 +72,8 @@ public static FloatBuffer wrap(float[] array, int start, int floatCount) {
         return buf;
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.888 -0500", hash_original_method = "40CC822379F71BDE2069817768983643", hash_generated_method = "40CC822379F71BDE2069817768983643")
     
 FloatBuffer(int capacity) {
@@ -103,6 +105,8 @@ public final int arrayOffset() {
      *
      * @return a read-only version of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.896 -0500", hash_original_method = "7D04A9A0A6165ECC04702031574C9284", hash_generated_method = "CD1F845562D6F37D2A5B53D175237E61")
     
 public abstract FloatBuffer asReadOnlyBuffer();
@@ -118,6 +122,8 @@ public abstract FloatBuffer asReadOnlyBuffer();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.898 -0500", hash_original_method = "32451F91DF186B108F7203FB4BA804FE", hash_generated_method = "EF0844D0F5966A9C2725DA610CA19C52")
     
 public abstract FloatBuffer compact();
@@ -170,6 +176,8 @@ public int compareTo(FloatBuffer otherBuffer) {
      *
      * @return a duplicated buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.904 -0500", hash_original_method = "1B86386F557AE66C36D17D9B1B10AA42", hash_generated_method = "50991417D689BE7BA7C34A224197ED5A")
     
 public abstract FloatBuffer duplicate();
@@ -224,6 +232,8 @@ public abstract FloatBuffer duplicate();
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.909 -0500", hash_original_method = "DD95629D26D81841C1FF3883AEB98612", hash_generated_method = "E89A65E5800A885076A7605D12085972")
     
 public abstract float get();
@@ -290,6 +300,8 @@ public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.916 -0500", hash_original_method = "F91C260BFD4314693FFE7C960F687058", hash_generated_method = "ED2514FFDD12B9EA8E991C2A15809E5B")
     
 public abstract float get(int index);
@@ -328,6 +340,8 @@ public final boolean hasArray() {
      *
      * @return {@code true} if this buffer is direct, {@code false} otherwise.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.924 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
 public abstract boolean isDirect();
@@ -342,6 +356,8 @@ public abstract boolean isDirect();
      * @return the byte order used by this buffer when converting floats from/to
      *         bytes.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.926 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     
 public abstract ByteOrder order();
@@ -351,6 +367,8 @@ public abstract ByteOrder order();
      *
      * @return see {@code array()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.928 -0500", hash_original_method = "49CD62ACC68CCE0E42D0E52B209B94A8", hash_generated_method = "A92F33D350E7D3E689CEAD5B921975B9")
     
 abstract float[] protectedArray();
@@ -360,6 +378,8 @@ abstract float[] protectedArray();
      *
      * @return see {@code arrayOffset()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.931 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     
 abstract int protectedArrayOffset();
@@ -369,6 +389,8 @@ abstract int protectedArrayOffset();
      *
      * @return see {@code hasArray()}
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.933 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     
 abstract boolean protectedHasArray();
@@ -385,6 +407,8 @@ abstract boolean protectedHasArray();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.935 -0500", hash_original_method = "41A5E27A4133F6F3A8C64820C2D21D90", hash_generated_method = "378AF54BC621B6DF660AC5E8B485929F")
     
 public abstract FloatBuffer put(float f);
@@ -492,8 +516,8 @@ public FloatBuffer put(FloatBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.946 -0500", hash_original_method = "E055474EFA3FA7B3EA940C5865B7DADC", hash_generated_method = "FF72BFC456E313F487B3F4301D2E435E")
     
 public abstract FloatBuffer put(int index, float f);
@@ -513,6 +537,8 @@ public abstract FloatBuffer put(int index, float f);
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.948 -0500", hash_original_method = "BDB0C51DF50027D80732B423FDACD53A", hash_generated_method = "AD1D105D90B144C73812BDD3ADD1779B")
     
 public abstract FloatBuffer slice();

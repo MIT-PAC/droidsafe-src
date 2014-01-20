@@ -23,6 +23,8 @@ import com.android.internal.app.AlertController;
 
 public class AlertDialog extends Dialog implements DialogInterface {
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.001 -0500", hash_original_method = "B16DF712FADBC6F763054B9AFC3C54C8", hash_generated_method = "25D3EA26FBF1141D80814F97B62D6ECC")
     
 static int resolveDialogTheme(Context context, int resid) {
@@ -84,6 +86,8 @@ protected AlertDialog(Context context, int theme) {
         this(context, theme, true);
     }
 
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.996 -0500", hash_original_method = "6D386DC5BAB559A725B0E80B3B80739F", hash_generated_method = "6D386DC5BAB559A725B0E80B3B80739F")
     
 AlertDialog(Context context, int theme, boolean createContextWrapper) {
@@ -337,8 +341,8 @@ public void setIcon(Drawable icon) {
         /**
          * Constructor using a context for this builder and the {@link AlertDialog} it creates.
          */
-        @DSComment("Dialog builder")
-        @DSSafe(DSCat.GUI)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.059 -0500", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "0F6F28BA388F588C46FF4901DEA377E8")
         
 public Builder(Context context) {
@@ -356,6 +360,8 @@ public Builder(Context context) {
          * {@link AlertDialog#THEME_HOLO_DARK AlertDialog.THEME_HOLO_DARK}, or
          * {@link AlertDialog#THEME_HOLO_LIGHT AlertDialog.THEME_HOLO_LIGHT}.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.062 -0500", hash_original_method = "054A5871E094F7103A36213597CB2400", hash_generated_method = "FC7699A0F2A3B06BF3E1311C765B25A6")
         
 public Builder(Context context, int theme) {
@@ -965,8 +971,8 @@ public Builder setRecycleOnMeasureEnabled(boolean enabled) {
          * before displaying the dialog. Use {@link #show()} if you don't have any other processing
          * to do and want this to be created and displayed.
          */
-        @DSComment("Dialog builder")
-        @DSSafe(DSCat.GUI)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.145 -0500", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "316857243741277D06918E544FCD71B7")
         
 public AlertDialog create() {
@@ -987,8 +993,8 @@ public AlertDialog create() {
          * Creates a {@link AlertDialog} with the arguments supplied to this builder and
          * {@link Dialog#show()}'s the dialog.
          */
-        @DSComment("Dialog builder")
-        @DSSafe(DSCat.GUI)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.147 -0500", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "FECC0B8CEF43AB35AB1E1B32C0D7658C")
         

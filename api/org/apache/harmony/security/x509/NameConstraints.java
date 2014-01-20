@@ -91,6 +91,8 @@ public NameConstraints(GeneralSubtrees permittedSubtrees,
         this.excludedSubtrees = excludedSubtrees;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.687 -0500", hash_original_method = "0B4FF50B5EED3F81B51F891413D3BBDC", hash_generated_method = "2B50100466BA363732912791603D553D")
     
 private NameConstraints(GeneralSubtrees permittedSubtrees,
@@ -112,6 +114,8 @@ private NameConstraints(GeneralSubtrees permittedSubtrees,
     /**
      * Prepare the data structure to speed up the checking process.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.694 -0500", hash_original_method = "D5B90ECD7CBCC97B9564754E474A01DA", hash_generated_method = "4BE7314064592CE045D0CECB1895497B")
     
 private void prepareNames() {
@@ -144,6 +148,8 @@ private void prepareNames() {
     /**
      * Returns the value of certificate extension
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.697 -0500", hash_original_method = "7F050A55683D0AA0C8EC41E810522931", hash_generated_method = "382D82C3B2C923F88C9BBC99031AA8D4")
     
 private byte[] getExtensionValue(X509Certificate cert, String OID) {

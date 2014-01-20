@@ -24,6 +24,8 @@ public class EGLImpl implements EGL10 {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600;
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static void _nativeClassInit() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.339 -0500", hash_original_field = "5165D24D9AE870029D7EE629BD62CEFE", hash_generated_field = "299BB99E9FA7B75F06D17EB158F11EC7")
@@ -312,6 +314,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
         return mSurface;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.442 -0500", hash_original_method = "00A9769D3FCB2BCA752959A2156960BA", hash_generated_method = "123FF23E2FD831FD5E2A58B0E9D2D78B")
     
     private int _eglCreateContext(EGLDisplay display, EGLConfig config, EGLContext share_context, int[] attrib_list){
@@ -323,6 +327,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.446 -0500", hash_original_method = "9C66F8DAF2CF1DF35D1777997045841F", hash_generated_method = "304FFBB8322DF481D9B4DB907382C74F")
     
     private int _eglCreatePbufferSurface(EGLDisplay display, EGLConfig config, int[] attrib_list){
@@ -333,6 +339,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.450 -0500", hash_original_method = "37A0D40F82301EFE54D93A3E184BD2AE", hash_generated_method = "2D549B823D2F4395A5965FD7E2C89934")
     
     private void _eglCreatePixmapSurface(EGLSurface sur, EGLDisplay display, EGLConfig config, Object native_pixmap, int[] attrib_list){
@@ -344,6 +352,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	addTaint(attrib_list[0]);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.453 -0500", hash_original_method = "73053A5CE6D69977C0A5A55B454424E0", hash_generated_method = "6B132B10DF019C1CD66329E9D1551E6C")
     
     private int _eglCreateWindowSurface(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list){
@@ -355,6 +365,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.457 -0500", hash_original_method = "C683AABBDC194C692A1DD6C73D5E2B96", hash_generated_method = "034A3E5F20A85D7E705348D3C7653ED2")
     
     private int _eglCreateWindowSurfaceTexture(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list){
@@ -366,6 +378,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.462 -0500", hash_original_method = "E8D546530FFFC5C2FC6E86FFB85AACEC", hash_generated_method = "8D9CE2FDC7E6CD726BBA9CB740736852")
     
     private int _eglGetDisplay(Object native_display){
@@ -374,6 +388,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.466 -0500", hash_original_method = "37AAAAC75A3E4652292E435C97659047", hash_generated_method = "DF49315663E2606797D4BA6FB493CF14")
     
     private int _eglGetCurrentContext(){
@@ -381,6 +397,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.469 -0500", hash_original_method = "AF8954095CE356BE495ED3F59D7027C3", hash_generated_method = "8A9F04088767B77C663624B119E15A53")
     
     private int _eglGetCurrentDisplay(){
@@ -388,6 +406,8 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	return getTaintInt();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.473 -0500", hash_original_method = "9F7D143F548ED01AA850BEE267C7749A", hash_generated_method = "E85BF49E3DFC46CE31DBCAF92AE4181B")
     
     private int _eglGetCurrentSurface(int readdraw){

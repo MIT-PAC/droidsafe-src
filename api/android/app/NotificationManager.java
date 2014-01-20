@@ -39,7 +39,9 @@ static public INotificationManager getService()
 
     private Context mContext;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.192 -0500", hash_original_method = "10DBF11C8E724C226D878C7C01FAA245", hash_generated_method = "10DBF11C8E724C226D878C7C01FAA245")
+    /*package*/ @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.192 -0500", hash_original_method = "10DBF11C8E724C226D878C7C01FAA245", hash_generated_method = "10DBF11C8E724C226D878C7C01FAA245")
     
 NotificationManager(Context context, Handler handler)
     {
@@ -61,8 +63,8 @@ NotificationManager(Context context, Handler handler)
      * @param notification A {@link Notification} object describing what to show the user. Must not
      *        be null.
      */
-    @DSComment("Notification can only go to screen")
-    @DSSafe(DSCat.GUI)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.194 -0500", hash_original_method = "8A4CA4E7E43847BF1836AE50422D1EC2", hash_generated_method = "11BB02842F74EFA0B750E0E2DC061F0E")
     
@@ -82,6 +84,8 @@ public void notify(int id, Notification notification)
      * @param notification A {@link Notification} object describing what to
      *        show the user. Must not be null.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.196 -0500", hash_original_method = "825D6C1D97F576BD7D887B295C793809", hash_generated_method = "285DCA988B4614C883FFF0F662B28DF3")
     

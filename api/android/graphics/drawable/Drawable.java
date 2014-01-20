@@ -48,6 +48,8 @@ public abstract class Drawable {
      *
      * @see #getOpacity
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.973 -0500", hash_original_method = "916D14DF9AF3A81E437ADC0DC2203CFE", hash_generated_method = "BC2213D8D42D8210AD9C5ABE45796385")
     
 public static int resolveOpacity(int op1, int op2) {
@@ -69,6 +71,8 @@ public static int resolveOpacity(int op1, int op2) {
     /**
      * Create a drawable from an inputstream
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.996 -0500", hash_original_method = "F698992CDA7CE4CFA6270F08869E33EB", hash_generated_method = "EA31CB41043D98187A4334DCA5BDDCB4")
     
@@ -80,6 +84,8 @@ public static Drawable createFromStream(InputStream is, String srcName) {
      * Create a drawable from an inputstream, using the given resources and
      * value to determine density information.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.998 -0500", hash_original_method = "6539199B7E5EF78E3B150794D858A2C9", hash_generated_method = "D8B91DF7BE5D083150AB363B8A4B7E47")
     
@@ -135,6 +141,8 @@ public static Drawable createFromResourceStream(Resources res, TypedValue value,
      * create resources in XML, see
      * <a href="{@docRoot}guide/topics/resources/drawable-resource.html">Drawable Resources</a>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.003 -0500", hash_original_method = "86675DFFF0A0A811727E3034212032EE", hash_generated_method = "1C83BEE8B00F8FC24EADC94BA921020F")
     
@@ -166,6 +174,8 @@ public static Drawable createFromXml(Resources r, XmlPullParser parser)
      * a tag in an XML document, tries to create a Drawable from that tag.
      * Returns null if the tag is not a valid drawable.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.007 -0500", hash_original_method = "C057D9F248A8C0B51C535F2391A8C186", hash_generated_method = "6B82F8D4DE15B03E277728092A3B670F")
     
 public static Drawable createFromXmlInner(Resources r, XmlPullParser parser, AttributeSet attrs)
@@ -241,6 +251,8 @@ public static Drawable createFromPath(String pathName) {
         return null;
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.029 -0500", hash_original_method = "1F43455DFCC8536E753114D2CECC415D", hash_generated_method = "23FBC035CFAA577048942BA8AA2CFFE6")
     
 private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
@@ -288,8 +300,8 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
      *
      * @param canvas The canvas to draw into
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.901 -0500", hash_original_method = "E7E2918BC47750A7683807E138C9FCF4", hash_generated_method = "DC73F3A81D382705FEE7B6D1EB5964B5")
     
 public abstract void draw(Canvas canvas);
@@ -338,6 +350,8 @@ public void setBounds(Rect bounds) {
      * @param bounds Rect to receive the drawable's bounds (allocated by the
      *               caller).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.907 -0500", hash_original_method = "2860BC8F60A9356A6AA851AD0EDF9049", hash_generated_method = "A26616E82DFC109B2FAD7A3295CBE031")
     
 public final void copyBounds(Rect bounds) {
@@ -352,6 +366,8 @@ public final void copyBounds(Rect bounds) {
      *
      * @return A copy of the drawable's bounds
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.909 -0500", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "8398153568D8B0C1C8AE601AF1652DDD")
     
@@ -549,6 +565,8 @@ public void unscheduleSelf(Runnable what) {
      *
      * @hide
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.940 -0500", hash_original_method = "D8B32EDE038D6347583B50AC97BFE4A6", hash_generated_method = "3E4549D53336D87BA990C99D49BE7AC7")
     
 public int getResolvedLayoutDirectionSelf() {
@@ -563,8 +581,8 @@ public int getResolvedLayoutDirectionSelf() {
      * Specify an alpha value for the drawable. 0 means fully transparent, and
      * 255 means fully opaque.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.942 -0500", hash_original_method = "552C47BA233D82B224568BE44106808F", hash_generated_method = "BA237553E37FDD6A99627044600E8CEA")
     
 public abstract void setAlpha(int alpha);
@@ -573,8 +591,8 @@ public abstract void setAlpha(int alpha);
      * Specify an optional colorFilter for the drawable. Pass null to remove
      * any filters.
     */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.944 -0500", hash_original_method = "BDC70B2F57B8B4271211A6F4E36828D5", hash_generated_method = "4C4D56B62B5030A0B2B533B25B3B132E")
     
 public abstract void setColorFilter(ColorFilter cf);
@@ -722,6 +740,8 @@ public final boolean setLevel(int level) {
      *
      * @return int Current level, from 0 (minimum) to 10000 (maximum).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.964 -0500", hash_original_method = "3688C6710C4CB9729612AA02E692BC0A", hash_generated_method = "920139CD38512EC2764B3D291ADD9FB8")
     
@@ -756,6 +776,8 @@ public boolean setVisible(boolean visible, boolean restart) {
         return changed;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.968 -0500", hash_original_method = "5E5A2EDE31F4C9B537E19F3E9904B493", hash_generated_method = "D3B6BF17C13DC8D40405CAB7A503ACFE")
     
 public final boolean isVisible() {
@@ -786,8 +808,8 @@ public final boolean isVisible() {
      *
      * @see android.graphics.PixelFormat
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.970 -0500", hash_original_method = "9662DD8C5FEE80BC1339C77EC72BA687", hash_generated_method = "7B9E49E8EE3D72D401142B9347C6D2DA")
     
 public abstract int getOpacity();
@@ -823,6 +845,8 @@ public Region getTransparentRegion() {
      * if it looks the same and there is no need to redraw it since its
      * last state.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.977 -0500", hash_original_method = "B7A8462AFC13A6E0F2F8BCB43385BD49", hash_generated_method = "58A509E6CF0FAC6525FCC611ABA223CD")
     
 protected boolean onStateChange(int[] state) { return false; }
@@ -833,6 +857,8 @@ protected boolean onStateChange(int[] state) { return false; }
      * if it looks the same and there is no need to redraw it since its
      * last level.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.979 -0500", hash_original_method = "37D330857F7202D119AB7FE43B955D5E", hash_generated_method = "528BB1010E01B65B3B9ADB937C28B112")
     
 protected boolean onLevelChange(int level) { return false; }
@@ -840,6 +866,8 @@ protected boolean onLevelChange(int level) { return false; }
      * Override this in your subclass to change appearance if you recognize the
      * specified state.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.981 -0500", hash_original_method = "F81B37D492B4B76F5CB4F03B5248220C", hash_generated_method = "43794E13307713CCF0C1A15FC4F2B463")
     
 protected void onBoundsChange(Rect bounds) {}
@@ -969,6 +997,8 @@ public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs)
      * @throws XmlPullParserException
      * @throws IOException
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.014 -0500", hash_original_method = "9471DE214DF2BB650CFB53CA22D70654", hash_generated_method = "9471DE214DF2BB650CFB53CA22D70654")
     
 void inflateWithAttributes(Resources r, XmlPullParser parser,
@@ -994,8 +1024,8 @@ void inflateWithAttributes(Resources r, XmlPullParser parser,
          * density correctly. One should use {@link #newDrawable(Resources)}
          * instead to provide a resource.
          */
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.017 -0500", hash_original_method = "8AAC9AC676CAA292B513ED599D29AE60", hash_generated_method = "B86729DCAC25EA47F6FEDC3DE3D49986")
         
 public abstract Drawable newDrawable();
@@ -1005,6 +1035,8 @@ public abstract Drawable newDrawable();
          * density of their caller (that is depending on whether it is
          * in compatibility mode).
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.019 -0500", hash_original_method = "5FCE46455F7833ADD9520B3BEB7232AE", hash_generated_method = "BBD7A0387CA646C11FC474D0EB63EDA1")
         
 public Drawable newDrawable(Resources res) {
@@ -1014,6 +1046,8 @@ public Drawable newDrawable(Resources res) {
          * Return a bit mask of configuration changes that will impact
          * this drawable (and thus require completely reloading it).
          */
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.022 -0500", hash_original_method = "45D95E7A5F5F7D451E51E9095BE8F693", hash_generated_method = "8A4BA37C2E536863D0CAC6B3C245CFD2")
         
 public abstract int getChangingConfigurations();

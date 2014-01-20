@@ -67,6 +67,8 @@ public RadioGroup(Context context, AttributeSet attrs) {
         init();
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.169 -0500", hash_original_method = "BF04917C1358A32EDE5746B4072D7D20", hash_generated_method = "092D531ED22915F12D228E20373014E8")
     
 private void init() {
@@ -154,6 +156,8 @@ public void check(int id) {
         setCheckedId(id);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.181 -0500", hash_original_method = "5FA05BD652ABFE7F3AF547784FD6946B", hash_generated_method = "1ABE797A75A958D4D9D46CFE872E6665")
     
 private void setCheckedId(int id) {
@@ -163,6 +167,8 @@ private void setCheckedId(int id) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.183 -0500", hash_original_method = "C9C9D7D4FE388186AB4F88F5226CFA81", hash_generated_method = "ACEF9C7829489C0561227FBD2BF1F5A5")
     
 private void setCheckedStateForView(int viewId, boolean checked) {

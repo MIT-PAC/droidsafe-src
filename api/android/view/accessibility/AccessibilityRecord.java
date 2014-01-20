@@ -152,6 +152,8 @@ public static AccessibilityRecord obtain() {
     /*
      * Hide constructor.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.977 -0500", hash_original_method = "47B5C6FFA7A08624EFFE67BFFC3F0DF4", hash_generated_method = "47B5C6FFA7A08624EFFE67BFFC3F0DF4")
     
 AccessibilityRecord() {
@@ -834,6 +836,8 @@ public void setSealed(boolean sealed) {
      *
      * @return Whether is sealed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.079 -0500", hash_original_method = "AF3422E1C079F6B2A15130B45797502F", hash_generated_method = "AF3422E1C079F6B2A15130B45797502F")
     
 boolean isSealed() {
@@ -845,6 +849,8 @@ boolean isSealed() {
      *
      * @throws IllegalStateException If this instance is not sealed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.081 -0500", hash_original_method = "0309B89A8A5C20FB439CB65AA9DE3FAA", hash_generated_method = "0309B89A8A5C20FB439CB65AA9DE3FAA")
     
 void enforceSealed() {
@@ -859,6 +865,8 @@ void enforceSealed() {
      *
      * @throws IllegalStateException If this instance is sealed.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.083 -0500", hash_original_method = "9B7C20934D3E00C37812C7E94DAAB15E", hash_generated_method = "9B7C20934D3E00C37812C7E94DAAB15E")
     
 void enforceNotSealed() {
@@ -874,6 +882,8 @@ void enforceNotSealed() {
      * @param property The property.
      * @return The value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.086 -0500", hash_original_method = "4FB14FE7E8FA7F40071202FB709EF8E4", hash_generated_method = "241BDD7624E9B30D6E3564D25E7F1CFC")
     
 private boolean getBooleanProperty(int property) {
@@ -886,6 +896,8 @@ private boolean getBooleanProperty(int property) {
      * @param property The property.
      * @param value The value.
      */
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.088 -0500", hash_original_method = "1E3C58B2EEBD5BD671884B4ADC3ACB2F", hash_generated_method = "222E98F89D8BBC5E2EB4330004D08654")
     
 private void setBooleanProperty(int property, boolean value) {
@@ -927,6 +939,8 @@ public void recycle() {
      *
      * @param record The to initialize from.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.097 -0500", hash_original_method = "EC9B4AFBEF6A967243E7EC5889FB4591", hash_generated_method = "EC9B4AFBEF6A967243E7EC5889FB4591")
     
 void init(AccessibilityRecord record) {
@@ -955,6 +969,8 @@ void init(AccessibilityRecord record) {
     /**
      * Clears the state of this instance.
      */
+    @DSComment("Package priviledge")
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.100 -0500", hash_original_method = "F6BD36F7AA33E2CDDBD8ECFA17198BE9", hash_generated_method = "F6BD36F7AA33E2CDDBD8ECFA17198BE9")
     
 void clear() {
