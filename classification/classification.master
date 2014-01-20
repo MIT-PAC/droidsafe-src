@@ -1508,7 +1508,7 @@
 @DSSafe(DSCat.GUI) - @DSComment("Perference UI, only change preference is spec") - <android.preference.PreferenceGroup: void removeAll()>
 @DSSpec(DSCat.ANDROID_MANAGER) - @DSComment("Request/Change/Listen Android Manger") - <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>
 @DSSpec(DSCat.ANDROID_MANAGER) - @DSComment("Request/Change/Listen Android Manger") - <android.preference.PreferenceManager: android.content.SharedPreferences getSharedPreferences()>
-@DSSpec(DSCat.SYSTEM_SETTINGS) - @DSComment("May change system behavior") - <android.preference.PreferenceManager: android.preference.Preference findPreference(java.lang.CharSequence)>
+@DSSpec(DSCat.SYSTEM) - @DSComment("May change system behavior") - <android.preference.PreferenceManager: android.preference.Preference findPreference(java.lang.CharSequence)>
 @DSSpec(DSCat.ANDROID_MANAGER) - @DSComment("Request/Change/Listen Android Manger") - <android.preference.PreferenceManager: void setDefaultValues(android.content.Context,int,boolean)>
 @DSSpec(DSCat.ANDROID_MANAGER) - @DSComment("Request/Change/Listen Android Manger") - <android.preference.PreferenceManager: void setSharedPreferencesMode(int)>
 @DSSpec(DSCat.ANDROID_MANAGER) - @DSComment("Request/Change/Listen Android Manger") - <android.preference.PreferenceManager: void setSharedPreferencesName(java.lang.String)>
@@ -4699,18 +4699,18 @@
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("no concerns") - <android.database.Cursor: boolean isNull(int)>
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("no concerns") - <android.database.Cursor: boolean requery()>
 
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: byte[] getBlob(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: double getDouble(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: float getFloat(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: int getColumnCount()>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: int getColumnIndex(java.lang.String)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: int getColumnIndexOrThrow(java.lang.String)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: int getInt(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: java.lang.String getColumnName(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: java.lang.String getString(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: java.lang.String[] getColumnNames()>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: long getLong(int)>
-@DSSpec(DSCat.SENSOR) - @DSComment("Sensor access") - <android.database.Cursor: short getShort(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: byte[] getBlob(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: double getDouble(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: float getFloat(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: int getColumnCount()>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: int getColumnIndex(java.lang.String)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: int getColumnIndexOrThrow(java.lang.String)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: int getInt(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: java.lang.String getColumnName(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: java.lang.String getString(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: java.lang.String[] getColumnNames()>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: long getLong(int)>
+@DSSpec(DSCat.DATABASE) - @DSComment("Database access") - <android.database.Cursor: short getShort(int)>
 
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("no concerns") - <android.database.Cursor: int getCount()>
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("no concerns") - <android.database.Cursor: void close()>
@@ -4896,59 +4896,63 @@
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("not sensitive/not an action") - <android.view.accessibility.AccessibilityEvent: android.view.accessibility.AccessibilityRecord getRecord(int)>
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("not sensitive/not an action") - <android.view.accessibility.AccessibilityEvent: int getEventType()>
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("not sensitive/not an action") - <android.view.accessibility.AccessibilityEvent: int getRecordCount()>
-@DSSpec(DSCat.SECURITY) - @DSComment("Potenitally can fake other event") - <android.view.accessibility.AccessibilityEvent: void appendRecord(android.view.accessibility.AccessibilityRecord)>
-@DSSpec(DSCat.SECURITY) - @DSComment("Can spoof the source") - <android.view.accessibility.AccessibilityEvent: void setPackageName(java.lang.CharSequence)>
+
+@DSSafe(DSCat.SAFE_OTHERS) - @DSComment("can only append for its own use") - <android.view.accessibility.AccessibilityEvent: void appendRecord(android.view.accessibility.AccessibilityRecord)>
+@DSSafe(DSCat.SAFE_OTHERS) - @DSComment("for the same app usage only") - <android.view.accessibility.AccessibilityEvent: void setPackageName(java.lang.CharSequence)>
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("not sensitive/not an action") - <android.view.accessibility.AccessibilityManager: boolean isEnabled()>
 @DSSafe(DSCat.SAFE_OTHERS) - @DSComment("not sensitive/not an action") - <android.view.accessibility.AccessibilityManager: boolean isTouchExplorationEnabled()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo getChild(int)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo getParent()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo obtain()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo obtain(android.view.View)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo obtain(android.view.accessibility.AccessibilityNodeInfo)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure manip on NodeInfo") - /normal UI") - <android.view.accessibility.AccessibilityNodeInfo: boolean isCheckable()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isChecked()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isClickable()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isEnabled()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isFocusable()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isFocused()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isLongClickable()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isPassword()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isScrollable()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean isSelected()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: boolean performAction(int)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: int getActions()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: int getChildCount()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: int getWindowId()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getClassName()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getContentDescription()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getPackageName()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getText()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: java.util.List findAccessibilityNodeInfosByText(java.lang.String)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void addAction(int)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void addChild(android.view.View)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void getBoundsInParent(android.graphics.Rect)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void getBoundsInScreen(android.graphics.Rect)>
+
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo getChild(int)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo getParent()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo obtain()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo obtain(android.view.View)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: android.view.accessibility.AccessibilityNodeInfo obtain(android.view.accessibility.AccessibilityNodeInfo)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isChecked()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isClickable()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isEnabled()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isFocusable()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isFocused()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isLongClickable()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isPassword()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isScrollable()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isSelected()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean performAction(int)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: int getActions()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: int getChildCount()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: int getWindowId()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getClassName()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getContentDescription()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getPackageName()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: java.lang.CharSequence getText()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: java.util.List findAccessibilityNodeInfosByText(java.lang.String)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void addAction(int)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void addChild(android.view.View)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void getBoundsInParent(android.graphics.Rect)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void getBoundsInScreen(android.graphics.Rect)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setBoundsInParent(android.graphics.Rect)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setBoundsInScreen(android.graphics.Rect)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setCheckable(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setChecked(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setClassName(java.lang.CharSequence)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setClickable(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setContentDescription(java.lang.CharSequence)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setEnabled(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setFocusable(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setFocused(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setLongClickable(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setPackageName(java.lang.CharSequence)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setParent(android.view.View)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setPassword(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setScrollable(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setSelected(boolean)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setSource(android.view.View)>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: void setText(java.lang.CharSequence)>
+
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityNodeInfo: boolean isCheckable()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityRecord: android.view.accessibility.AccessibilityNodeInfo getSource()>
+@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("View state info") - <android.view.accessibility.AccessibilityRecord: android.view.accessibility.AccessibilityRecord obtain()>
+
 @DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("no relevant action/ recycle the node for reuse") - <android.view.accessibility.AccessibilityNodeInfo: void recycle()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setBoundsInParent(android.graphics.Rect)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setBoundsInScreen(android.graphics.Rect)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setCheckable(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setChecked(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setClassName(java.lang.CharSequence)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setClickable(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setContentDescription(java.lang.CharSequence)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setEnabled(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setFocusable(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setFocused(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setLongClickable(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setPackageName(java.lang.CharSequence)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setParent(android.view.View)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setPassword(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setScrollable(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setSelected(boolean)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setSource(android.view.View)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("data structure") - <android.view.accessibility.AccessibilityNodeInfo: void setText(java.lang.CharSequence)>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("Data structure/no action") - <android.view.accessibility.AccessibilityRecord: android.view.accessibility.AccessibilityNodeInfo getSource()>
-@DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("Data structure/no action") - <android.view.accessibility.AccessibilityRecord: android.view.accessibility.AccessibilityRecord obtain()>
 @DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("Data structure/no action") - <android.view.accessibility.AccessibilityRecord: android.view.accessibility.AccessibilityRecord obtain(android.view.accessibility.AccessibilityRecord)>
 @DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("Data structure/no action") - <android.view.accessibility.AccessibilityRecord: boolean isChecked()>
 @DSSafe(DSCat.DATA_STRUCTURE) - @DSComment("Data structure/no action") - <android.view.accessibility.AccessibilityRecord: boolean isEnabled()>
