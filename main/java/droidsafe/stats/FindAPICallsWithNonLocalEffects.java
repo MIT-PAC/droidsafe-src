@@ -54,6 +54,9 @@ public class FindAPICallsWithNonLocalEffects {
         for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
             if (API.v().isSystemMethod(method)) 
                 continue;
+            
+            if (method.isAbstract() || method.isPhantom() || !method.isConcrete())
+                continue;
 
             StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
             // get body's unit as a chain
