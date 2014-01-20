@@ -296,8 +296,7 @@ public class Main {
         //need this pta run to account for object sens and jsa injection
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
-        new FindAPICallsWithNonLocalEffects().run();
+       
         
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
