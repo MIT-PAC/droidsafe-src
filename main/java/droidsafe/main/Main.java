@@ -1,7 +1,6 @@
 package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
-
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -32,6 +31,7 @@ import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.stats.FindAPICallsWithNonLocalEffects;
 import droidsafe.stats.PTASetsAvgSize;
 import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.HoistAllocations;
@@ -296,7 +296,9 @@ public class Main {
         //need this pta run to account for object sens and jsa injection
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
- 
+        
+        new FindAPICallsWithNonLocalEffects().run();
+        
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
         ClassGetNameToClassString.run();
