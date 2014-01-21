@@ -38,6 +38,7 @@ import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
+import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -296,15 +297,25 @@ public class Main {
         //need this pta run to account for object sens and jsa injection
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-       
-        
+
+        // ObjectGetClassToClassConstant must run before ClassGetNameToClassString 
+        driverMsg("Converting Object.getClass calls to class constant.");
+        monitor.subTask("Converting Object.getClass calls to class constant.");
+        ObjectGetClassToClassConstant.run();
+        monitor.worked(1);
+        if (monitor.isCanceled())
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+        if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
         ClassGetNameToClassString.run();
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
+   
         if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 

@@ -12,6 +12,7 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.Project;
 import droidsafe.transforms.objsensclone.ClassCloner;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
@@ -87,8 +88,10 @@ public class VAStats {
                 if (entryPointMethod.getName().equals("onClick")) {
                     for(int i = 0; i < rcfgNode.getNumArgs(); ++i) {
                         for(IAllocNode allocNode : rcfgNode.getArgPTSet(rcfgNode.getContext(ContextType.EVENT_CONTEXT), i)) {
-                            v.markAllocNodeAsReachable(allocNode);
-                            v.markMethodAsRelevant(allocNode, entryPointMethod);
+                            if(shouldInclude(allocNode)) {
+                                v.markAllocNodeAsReachable(allocNode);
+                                v.markMethodAsRelevant(allocNode, entryPointMethod);
+                            }
                         }
                     }
                 }
@@ -101,8 +104,10 @@ public class VAStats {
                         // process receiver IAllocNodes
                         Set<IAllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
                         for(IAllocNode allocNode : receiverPTSet) {
-                            v.markAllocNodeAsReachable(allocNode);
-                            v.markMethodAsRelevant(allocNode, sm);
+                            if(shouldInclude(allocNode)) {
+                                v.markAllocNodeAsReachable(allocNode);
+                                v.markMethodAsRelevant(allocNode, sm);
+                            }
                         }
                     }
                     // process argument allocNodes
@@ -110,8 +115,10 @@ public class VAStats {
                         if(oe.isArgPointer(i)) {
                             Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(oe.getContext(ContextType.EVENT_CONTEXT), i);
                             for(IAllocNode allocNode : argPTSet) {
-                                v.markAllocNodeAsReachable(allocNode);
-                                v.markMethodAsRelevant(allocNode, sm);
+                                if(shouldInclude(allocNode)) {
+                                    v.markAllocNodeAsReachable(allocNode);
+                                    v.markMethodAsRelevant(allocNode, sm);
+                                }
                             }
                         }
                     }
@@ -247,11 +254,32 @@ public class VAStats {
                 for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
                     Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(allocNode, sf);
                     for(IAllocNode an : allocNodes) {
-                        markAllocNodeAsReachable(an);
+                        if(shouldInclude(an)) {
+                            markAllocNodeAsReachable(an);
+                        }
                     }
                 }
             }
         }
     }
-
+    
+    /** 
+     * Returns true if allocNode not allocated in DroidSafeMain or is of type android.app.Activity
+     */
+    private static boolean shouldInclude(IAllocNode allocNode) {
+        Object newExpr = PTABridge.v().getNewExpr(allocNode);
+        if (newExpr != null && newExpr instanceof NewExpr) {
+            SootMethod method = JimpleRelationships.v().getEnclosingMethod((NewExpr)newExpr);
+            if(method != null) {
+                SootClass sootClass = method.getDeclaringClass();
+                Type type = allocNode.getType();
+                if(sootClass != null && type instanceof RefType) {
+                    boolean should = sootClass.getName() != "droidsafe.generated.DroidSafeMain" || 
+                           ClassCloner.removeClassCloneSuffix(((RefType)type).getSootClass().getSuperclass().getName()).equals("android.app.Activity");
+                    return should;
+                }
+            }
+        }
+        return false;
+    }
 }
