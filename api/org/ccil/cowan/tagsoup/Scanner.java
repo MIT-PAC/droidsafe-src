@@ -11,16 +11,16 @@ import org.xml.sax.SAXException;
 
 public interface Scanner {
 
-	
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void scan(Reader r, ScanHandler h) throws IOException, SAXException;
 
-	public void scan(Reader r, ScanHandler h) throws IOException, SAXException;
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void resetDocumentLocator(String publicid, String systemid);
 
-	
-
-	public void resetDocumentLocator(String publicid, String systemid);
-
-	
-
-	public void startCDATA();
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void startCDATA();
 
 	}

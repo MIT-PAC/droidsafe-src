@@ -6,21 +6,21 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface Locator {
-
-
     
-    public abstract String getPublicId ();
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String getPublicId ();
     
-    public abstract String getSystemId ();
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String getSystemId ();
     
-    public abstract int getLineNumber ();
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int getLineNumber ();
     
-    public abstract int getColumnNumber ();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int getColumnNumber ();
 
 }

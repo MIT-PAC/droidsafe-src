@@ -8,6 +8,8 @@ import gov.nist.javax.sip.message.SIPMessage;
 
 public interface RawMessageChannel {
 
-    public abstract void processMessage(SIPMessage sipMessage) throws Exception ;
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void processMessage(SIPMessage sipMessage) throws Exception ;
 
 }

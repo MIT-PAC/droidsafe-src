@@ -1050,6 +1050,8 @@ private void enforceWritePermission(Uri uri) {
     
     public interface PipeDataWriter<T> {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeDataToPipe(ParcelFileDescriptor output, Uri uri, String mimeType,
                 Bundle opts, T args);
     }

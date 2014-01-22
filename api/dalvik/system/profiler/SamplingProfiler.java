@@ -453,6 +453,8 @@ private void addEndThread(Thread thread) {
     
     public static interface ThreadSet {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Thread[] threads();
     }
     

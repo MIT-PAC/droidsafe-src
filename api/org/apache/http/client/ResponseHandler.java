@@ -9,8 +9,9 @@ import java.io.IOException;
 import org.apache.http.HttpResponse;
 
 public interface ResponseHandler<T> {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     T handleResponse(HttpResponse response) throws ClientProtocolException, IOException;
     
 }

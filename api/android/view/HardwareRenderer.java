@@ -1313,8 +1313,12 @@ public Gl20RendererEglContext(EGLContext context) {
     
     interface HardwareDrawCallbacks {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onHardwarePreDraw(HardwareCanvas canvas);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onHardwarePostDraw(HardwareCanvas canvas);
     }
 

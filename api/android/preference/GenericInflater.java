@@ -511,11 +511,15 @@ public T onCreateItem(String name, Context context, AttributeSet attrs) {
     }
     
     public interface Parent<T> {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void addItemFromInflater(T child);
     }
     
     public interface Factory<T> {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public T onCreateItem(String name, Context context, AttributeSet attrs);
     }
     

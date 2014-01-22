@@ -8,5 +8,7 @@ import javax.sip.ServerTransaction;
 
 public interface ServerTransactionExt extends ServerTransaction, TransactionExt {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ServerTransaction getCanceledInviteTransaction();
 }

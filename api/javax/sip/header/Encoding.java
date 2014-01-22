@@ -7,6 +7,10 @@ import droidsafe.annotations.*;
 import java.text.ParseException;
 
 public interface Encoding {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getEncoding();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setEncoding(String encoding) throws ParseException;
 }

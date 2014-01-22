@@ -371,25 +371,43 @@ GestureHandler(Handler handler) {
     
     public interface OnGestureListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onDown(MotionEvent e);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onShowPress(MotionEvent e);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onSingleTapUp(MotionEvent e);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onLongPress(MotionEvent e);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY);
     }
     
     public interface OnDoubleTapListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onSingleTapConfirmed(MotionEvent e);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onDoubleTap(MotionEvent e);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onDoubleTapEvent(MotionEvent e);
     }
 

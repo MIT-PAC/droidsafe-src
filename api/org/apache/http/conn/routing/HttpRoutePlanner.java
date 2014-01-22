@@ -10,8 +10,9 @@ import org.apache.http.HttpRequest;
 import org.apache.http.protocol.HttpContext;
 
 public interface HttpRoutePlanner {
-    
             
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public HttpRoute determineRoute(HttpHost target,
                                     HttpRequest request,
                                     HttpContext context)

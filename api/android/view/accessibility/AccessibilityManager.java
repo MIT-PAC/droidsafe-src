@@ -318,6 +318,8 @@ MyHandler(Looper mainLooper) {
     
     public interface AccessibilityStateChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onAccessibilityStateChanged(boolean enabled);
     }
     

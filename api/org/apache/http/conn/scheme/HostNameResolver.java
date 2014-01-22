@@ -9,6 +9,8 @@ import java.net.InetAddress;
 
 public interface HostNameResolver {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     InetAddress resolve (String hostname) throws IOException;
 
 }

@@ -514,6 +514,8 @@ public EventHandler(SoundPool soundPool, Looper looper) {
     public interface OnLoadCompleteListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onLoadComplete(SoundPool soundPool, int sampleId, int status);
     }
     

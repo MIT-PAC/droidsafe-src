@@ -1239,48 +1239,64 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnPreparedListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPrepared(MediaPlayer mp);
     }
     
     public interface OnCompletionListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onCompletion(MediaPlayer mp);
     }
     
     public interface OnBufferingUpdateListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onBufferingUpdate(MediaPlayer mp, int percent);
     }
     
     public interface OnSeekCompleteListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSeekComplete(MediaPlayer mp);
     }
     
     public interface OnVideoSizeChangedListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onVideoSizeChanged(MediaPlayer mp, int width, int height);
     }
     
     public interface OnTimedTextListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onTimedText(MediaPlayer mp, TimedText text);
     }
     
     public interface OnErrorListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onError(MediaPlayer mp, int what, int extra);
     }
     
     public interface OnInfoListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onInfo(MediaPlayer mp, int what, int extra);
     }
 

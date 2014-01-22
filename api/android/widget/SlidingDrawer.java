@@ -885,18 +885,26 @@ public void handleMessage(Message m) {
     
     public static interface OnDrawerOpenListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDrawerOpened();
     }
     
     public static interface OnDrawerCloseListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDrawerClosed();
     }
     
     public static interface OnDrawerScrollListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScrollStarted();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScrollEnded();
     }
 

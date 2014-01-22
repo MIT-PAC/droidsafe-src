@@ -265,6 +265,8 @@ public void setOnInflateListener(OnInflateListener inflateListener) {
     
     public static interface OnInflateListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onInflate(ViewStub stub, View inflated);
     }
     

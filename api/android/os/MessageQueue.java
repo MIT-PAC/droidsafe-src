@@ -241,6 +241,8 @@ MessageQueue() {
     
     public static interface IdleHandler {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean queueIdle();
     }
     

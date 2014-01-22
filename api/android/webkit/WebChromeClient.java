@@ -401,6 +401,8 @@ public void setupAutoFill(Message msg) { }
     
     public interface CustomViewCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onCustomViewHidden();
     }
     

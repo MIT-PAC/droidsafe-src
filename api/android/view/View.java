@@ -6476,7 +6476,11 @@ public InvalidateInfo getNextPoolable() {
         }
         
         interface Callbacks {
+            @DSComment("Abstract Method")
+            @DSSpec(DSCat.ABSTRACT_METHOD)
             void playSoundEffect(int effectId);
+            @DSComment("Abstract Method")
+            @DSSpec(DSCat.ABSTRACT_METHOD)
             boolean performHapticFeedback(int effectId, boolean always);
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.364 -0500", hash_original_field = "2E729681C5CD99C66AC4181B19223EFE", hash_generated_field = "2E729681C5CD99C66AC4181B19223EFE")
@@ -6743,47 +6747,65 @@ AttachInfo(IWindowSession session, IWindow window,
     
     public interface OnLayoutChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onLayoutChange(View v, int left, int top, int right, int bottom,
             int oldLeft, int oldTop, int oldRight, int oldBottom);
     }
     
     public interface OnKeyListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onKey(View v, int keyCode, KeyEvent event);
     }
     
     public interface OnTouchListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onTouch(View v, MotionEvent event);
     }
     
     public interface OnHoverListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onHover(View v, MotionEvent event);
     }
     
     public interface OnGenericMotionListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onGenericMotion(View v, MotionEvent event);
     }
     
     public interface OnLongClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onLongClick(View v);
     }
     
     public interface OnDragListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onDrag(View v, DragEvent event);
     }
     
     public interface OnFocusChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onFocusChange(View v, boolean hasFocus);
     }
     
     public interface OnClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onClick(View v);
     }
     
@@ -6794,13 +6816,19 @@ AttachInfo(IWindowSession session, IWindow window,
     
     public interface OnSystemUiVisibilityChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSystemUiVisibilityChange(int visibility);
     }
     
     public interface OnAttachStateChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onViewAttachedToWindow(View v);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onViewDetachedFromWindow(View v);
     }
     

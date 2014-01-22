@@ -382,6 +382,8 @@ Handler getHandler() {
     
     public interface OnAudioFocusChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onAudioFocusChange(int focusChange);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.239 -0500", hash_original_field = "A38E8ADE6B42DFF11CBDA454A3C9FD74", hash_generated_field = "C665DE812B57F58CB0283896A6829103")

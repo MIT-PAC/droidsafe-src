@@ -9,6 +9,10 @@ import java.text.ParseException;
 public interface AllowHeader extends Header {
     String NAME = "Allow";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getMethod();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setMethod(String method) throws ParseException;
 }

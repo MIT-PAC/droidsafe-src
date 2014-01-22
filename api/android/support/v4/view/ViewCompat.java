@@ -323,13 +323,29 @@ public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompa
     }
     
     interface ViewCompatImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean canScrollHorizontally(View v, int direction);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean canScrollVertically(View v, int direction);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getOverScrollMode(View v);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void setOverScrollMode(View v, int mode);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPopulateAccessibilityEvent(View v, AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.172 -0500", hash_original_field = "CC647B45C45ACE646CE989AEBDB00745", hash_generated_field = "218BFE0FF46A804B55589DCE0FFD7D0A")

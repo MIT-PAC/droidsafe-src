@@ -9,11 +9,11 @@ import java.util.List;
 
 public interface SecurityAccess {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void renumProviders();
-
     
     public List<String> getAliases(Provider.Service s);
-
     
     public Provider.Service getService(Provider p, String type);
 }

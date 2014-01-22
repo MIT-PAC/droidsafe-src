@@ -6,5 +6,7 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface TextDirectionHeuristic {
-     boolean isRtl(char[] text, int start, int count);
+     @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean isRtl(char[] text, int start, int count);
 }

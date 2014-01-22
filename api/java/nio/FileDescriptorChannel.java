@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
 interface FileDescriptorChannel {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public FileDescriptor getFD();
 }

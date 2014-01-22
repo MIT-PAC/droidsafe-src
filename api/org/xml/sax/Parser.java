@@ -9,35 +9,36 @@ import java.util.Locale;
 
 @Deprecated public interface Parser
 {
-
     
-    public abstract void setLocale (Locale locale)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setLocale (Locale locale)
     throws SAXException;
-
-
     
-    public abstract void setEntityResolver (EntityResolver resolver);
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setEntityResolver (EntityResolver resolver);
     
-    public abstract void setDTDHandler (DTDHandler handler);
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setDTDHandler (DTDHandler handler);
     
-    public abstract void setDocumentHandler (DocumentHandler handler);
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setDocumentHandler (DocumentHandler handler);
     
-    public abstract void setErrorHandler (ErrorHandler handler);
-
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setErrorHandler (ErrorHandler handler);
     
-    public abstract void parse (InputSource source)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void parse (InputSource source)
     throws SAXException, IOException;
-
-
     
-    public abstract void parse (String systemId)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void parse (String systemId)
     throws SAXException, IOException;
 
 }

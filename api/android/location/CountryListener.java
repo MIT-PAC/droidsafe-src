@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface CountryListener {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void onCountryDetected(Country country);
 }

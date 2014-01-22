@@ -9,5 +9,7 @@ import java.math.BigInteger;
 interface ECMultiplier
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo);
 }

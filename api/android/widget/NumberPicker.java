@@ -1624,6 +1624,8 @@ public void run() {
     
     public interface OnValueChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onValueChange(NumberPicker picker, int oldVal, int newVal);
     }
     
@@ -1635,11 +1637,15 @@ public void run() {
         
         public static int SCROLL_STATE_FLING = 2;
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScrollStateChange(NumberPicker view, int scrollState);
     }
     
     public interface Formatter {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public String format(int value);
     }
 

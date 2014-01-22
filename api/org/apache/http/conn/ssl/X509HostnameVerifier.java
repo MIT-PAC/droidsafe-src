@@ -14,15 +14,21 @@ import javax.net.ssl.SSLSocket;
 
 public interface X509HostnameVerifier extends HostnameVerifier {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean verify(String host, SSLSession session);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void verify(String host, SSLSocket ssl) throws IOException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void verify(String host, X509Certificate cert) throws SSLException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void verify(String host, String[] cns, String[] subjectAlts)
           throws SSLException;
-
 
 }

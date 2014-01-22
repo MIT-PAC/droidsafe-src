@@ -7,11 +7,19 @@ import droidsafe.annotations.*;
 
 public interface TestListener {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void addError(Test test, Throwable t);
     
-     public void addFailure(Test test, AssertionFailedError t);
+     @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void addFailure(Test test, AssertionFailedError t);
     
-     public void endTest(Test test);
+     @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void endTest(Test test);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void startTest(Test test);
 }

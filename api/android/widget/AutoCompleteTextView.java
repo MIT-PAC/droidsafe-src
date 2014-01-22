@@ -1330,8 +1330,12 @@ public void onClick(View v) {
     
     public interface Validator {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean isValid(CharSequence text);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         CharSequence fixText(CharSequence invalidText);
     }
 

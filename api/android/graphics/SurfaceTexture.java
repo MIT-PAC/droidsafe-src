@@ -337,6 +337,8 @@ public EventHandler(Looper looper) {
     }
     
     public interface OnFrameAvailableListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onFrameAvailable(SurfaceTexture surfaceTexture);
     }
     

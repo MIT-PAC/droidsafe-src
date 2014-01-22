@@ -133,6 +133,8 @@ private static void errorCallbackFromNative(int error)
     public interface ErrorCallback
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onError(int error);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.715 -0500", hash_original_field = "6311951090DC1223C48D9C5DB55C8FFD", hash_generated_field = "CF5F7FF83468A22B18D53E798BDAD312")

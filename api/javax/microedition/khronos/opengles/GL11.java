@@ -129,12 +129,18 @@ public interface GL11 extends GL10 {
     int GL_VIEWPORT                                = 0x0BA2;
     int GL_WRITE_ONLY                              = 0x88B9;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetPointerv(int pname, java.nio.Buffer[] params);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBindBuffer(
         int target,
         int buffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBufferData(
         int target,
         int size,
@@ -142,6 +148,8 @@ public interface GL11 extends GL10 {
         int usage
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBufferSubData(
         int target,
         int offset,
@@ -149,28 +157,38 @@ public interface GL11 extends GL10 {
         java.nio.Buffer data
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glClipPlanef(
         int plane,
         float[] equation,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glClipPlanef(
         int plane,
         java.nio.FloatBuffer equation
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glClipPlanex(
         int plane,
         int[] equation,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glClipPlanex(
         int plane,
         java.nio.IntBuffer equation
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glColor4ub(
         byte red,
         byte green,
@@ -178,6 +196,8 @@ public interface GL11 extends GL10 {
         byte alpha
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glColorPointer(
         int size,
         int type,
@@ -185,17 +205,23 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDeleteBuffers(
         int n,
         int[] buffers,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDeleteBuffers(
         int n,
         java.nio.IntBuffer buffers
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawElements(
         int mode,
         int count,
@@ -203,28 +229,38 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenBuffers(
         int n,
         int[] buffers,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenBuffers(
         int n,
         java.nio.IntBuffer buffers
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetBooleanv(
         int pname,
         boolean[] params,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetBooleanv(
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetBufferParameteriv(
         int target,
         int pname,
@@ -232,56 +268,76 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetBufferParameteriv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetClipPlanef(
         int pname,
         float[] eqn,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetClipPlanef(
         int pname,
         java.nio.FloatBuffer eqn
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetClipPlanex(
         int pname,
         int[] eqn,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetClipPlanex(
         int pname,
         java.nio.IntBuffer eqn
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetFixedv(
         int pname,
         int[] params,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetFixedv(
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetFloatv(
         int pname,
         float[] params,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetFloatv(
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetLightfv(
         int light,
         int pname,
@@ -289,12 +345,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetLightfv(
         int light,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetLightxv(
         int light,
         int pname,
@@ -302,12 +362,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetLightxv(
         int light,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetMaterialfv(
         int face,
         int pname,
@@ -315,12 +379,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetMaterialfv(
         int face,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetMaterialxv(
         int face,
         int pname,
@@ -328,12 +396,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetMaterialxv(
         int face,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexEnviv(
         int env,
         int pname,
@@ -341,12 +413,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexEnviv(
         int env,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexEnvxv(
         int env,
         int pname,
@@ -354,12 +430,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexEnvxv(
         int env,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexParameterfv(
         int target,
         int pname,
@@ -367,12 +447,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexParameterfv(
         int target,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexParameteriv(
         int target,
         int pname,
@@ -380,12 +464,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexParameteriv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexParameterxv(
         int target,
         int pname,
@@ -393,68 +481,94 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexParameterxv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean glIsBuffer(
         int buffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean glIsEnabled(
         int cap
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean glIsTexture(
         int texture
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glNormalPointer(
         int type,
         int stride,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointParameterf(
         int pname,
         float param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointParameterfv(
         int pname,
         float[] params,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointParameterfv(
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointParameterx(
         int pname,
         int param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointParameterxv(
         int pname,
         int[] params,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointParameterxv(
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glPointSizePointerOES(
         int type,
         int stride,
         java.nio.Buffer pointer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexCoordPointer(
         int size,
         int type,
@@ -462,12 +576,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvi(
         int target,
         int pname,
         int param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnviv(
         int target,
         int pname,
@@ -475,12 +593,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnviv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameterfv(
         int target,
         int pname,
@@ -488,18 +610,24 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameterfv(
         int target,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameteri(
         int target,
         int pname,
         int param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameteriv(
         int target,
         int pname,
@@ -507,12 +635,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameteriv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameterxv(
         int target,
         int pname,
@@ -520,12 +652,16 @@ public interface GL11 extends GL10 {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameterxv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glVertexPointer(
         int size,
         int type,

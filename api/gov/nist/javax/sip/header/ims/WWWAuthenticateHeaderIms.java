@@ -14,13 +14,20 @@ public interface WWWAuthenticateHeaderIms extends WWWAuthenticateHeader
     public static final String IK = ParameterNamesIms.IK;
     public static final String CK = ParameterNamesIms.CK;
 
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setIK(String ik) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getIK();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setCK(String ck) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getCK();
 
 }

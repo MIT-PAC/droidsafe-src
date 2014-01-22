@@ -11,11 +11,19 @@ import android.view.Window;
 import android.view.WindowManagerPolicy;
 
 public interface IPolicy {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Window makeNewWindow(Context context);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public LayoutInflater makeNewLayoutInflater(Context context);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public WindowManagerPolicy makeNewWindowManager();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public FallbackEventHandler makeNewFallbackEventHandler(Context context);
 }

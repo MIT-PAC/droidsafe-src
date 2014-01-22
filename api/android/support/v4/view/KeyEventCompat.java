@@ -146,8 +146,14 @@ private static int metaStateFilterDirectionalModifiers(int metaState,
     }
     
     interface KeyEventVersionImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int normalizeMetaState(int metaState);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean metaStateHasModifiers(int metaState, int modifiers);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean metaStateHasNoModifiers(int metaState);
     }
     

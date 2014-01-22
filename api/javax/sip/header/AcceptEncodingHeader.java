@@ -9,6 +9,10 @@ import javax.sip.InvalidArgumentException;
 public interface AcceptEncodingHeader extends Encoding, Header, Parameters {
     String NAME = "Accept-Encoding";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     float getQValue();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setQValue(float qValue) throws InvalidArgumentException;
 }

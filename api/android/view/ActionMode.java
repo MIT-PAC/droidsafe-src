@@ -206,12 +206,20 @@ public abstract MenuInflater getMenuInflater();
     
     public interface Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onCreateActionMode(ActionMode mode, Menu menu);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onPrepareActionMode(ActionMode mode, Menu menu);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onActionItemClicked(ActionMode mode, MenuItem item);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDestroyActionMode(ActionMode mode);
     }
 

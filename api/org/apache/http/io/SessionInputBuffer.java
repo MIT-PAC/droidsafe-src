@@ -10,18 +10,32 @@ import org.apache.http.util.CharArrayBuffer;
 
 public interface SessionInputBuffer {
     
-    int read(byte[] b, int off, int len) throws IOException; 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int read(byte[] b, int off, int len) throws IOException;
     
-    int read(byte[] b) throws IOException; 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int read(byte[] b) throws IOException;
     
-    int read() throws IOException; 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int read() throws IOException;
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int readLine(CharArrayBuffer buffer) throws IOException;
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String readLine() throws IOException;
     
-    boolean isDataAvailable(int timeout) throws IOException; 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean isDataAvailable(int timeout) throws IOException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpTransportMetrics getMetrics();
     
 }

@@ -852,22 +852,30 @@ private SavedState(Parcel in) {
     
     public interface OnGroupCollapseListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onGroupCollapse(int groupPosition);
     }
     
     public interface OnGroupExpandListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onGroupExpand(int groupPosition);
     }
     
     public interface OnGroupClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onGroupClick(ExpandableListView parent, View v, int groupPosition,
                 long id);
     }
     
     public interface OnChildClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
                 int childPosition, long id);
     }

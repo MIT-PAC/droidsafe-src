@@ -9,5 +9,7 @@ import java.io.InputStream;
 public interface ASN1OctetStringParser
     extends DEREncodable, InMemoryRepresentable
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public InputStream getOctetStream();
 }

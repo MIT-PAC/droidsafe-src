@@ -15,14 +15,20 @@ import org.apache.http.protocol.HttpContext;
 
 public interface AuthenticationHandler {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isAuthenticationRequested(
             HttpResponse response, 
             HttpContext context);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Map<String, Header> getChallenges(
             HttpResponse response, 
             HttpContext context) throws MalformedChallengeException;
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     AuthScheme selectScheme(
             Map<String, Header> challenges, 
             HttpResponse response, 

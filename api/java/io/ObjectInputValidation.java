@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface ObjectInputValidation {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void validateObject() throws InvalidObjectException;
 }

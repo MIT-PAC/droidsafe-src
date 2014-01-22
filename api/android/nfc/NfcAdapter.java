@@ -292,20 +292,28 @@ LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
     
     public interface OnNdefPushCompleteCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onNdefPushComplete(NfcEvent event);
     }
     
     public interface CreateNdefMessageCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public NdefMessage createNdefMessage(NfcEvent event);
     }
     
     @Deprecated public interface NdefPushCallback {
         
         @Deprecated
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         NdefMessage createMessage();
         
         @Deprecated
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onMessagePushed();
     }
 

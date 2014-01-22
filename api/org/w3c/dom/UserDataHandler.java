@@ -7,7 +7,6 @@ import droidsafe.annotations.*;
 
 public interface UserDataHandler {
     
-    
     public static final short NODE_CLONED               = 1;
     
     public static final short NODE_IMPORTED             = 2;
@@ -17,8 +16,9 @@ public interface UserDataHandler {
     public static final short NODE_RENAMED              = 4;
     
     public static final short NODE_ADOPTED              = 5;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void handle(short operation,
                        String key,
                        Object data,

@@ -7,6 +7,10 @@ import droidsafe.annotations.*;
 import java.text.ParseException;
 
 public interface OptionTag {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getOptionTag();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setOptionTag(String optionTag) throws ParseException;
 }

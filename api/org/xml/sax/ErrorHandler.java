@@ -6,20 +6,20 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface ErrorHandler {
-
-
     
-    public abstract void warning (SAXParseException exception)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void warning (SAXParseException exception)
     throws SAXException;
-
-
     
-    public abstract void error (SAXParseException exception)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void error (SAXParseException exception)
     throws SAXException;
-
-
     
-    public abstract void fatalError (SAXParseException exception)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void fatalError (SAXParseException exception)
     throws SAXException;
 
 }

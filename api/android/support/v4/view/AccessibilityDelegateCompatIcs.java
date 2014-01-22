@@ -119,13 +119,27 @@ public static void sendAccessibilityEventUnchecked(Object delegate, View host,
     }
     
     public interface AccessibilityDelegateBridge {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInitializeAccessibilityNodeInfo(View host, Object info);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
             AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void sendAccessibilityEvent(View host, int eventType);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event);
     }
     

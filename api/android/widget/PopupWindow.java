@@ -1770,6 +1770,8 @@ public PopupViewContainer(Context context) {
     
     public interface OnDismissListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDismiss();
     }
 

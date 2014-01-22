@@ -170,8 +170,14 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
     }
     
     interface IntentCompatImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Intent makeMainActivity(ComponentName componentName);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Intent makeMainSelectorActivity(String selectorAction, String selectorCategory);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Intent makeRestartActivityTask(ComponentName mainActivity);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.525 -0500", hash_original_field = "B79625E19F4E2F1BD5E45C4B3667954F", hash_generated_field = "9FA64A1EB1F4C37DEEE5D6D1F18DD57D")

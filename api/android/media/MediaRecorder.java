@@ -807,12 +807,16 @@ public EventHandler(MediaRecorder mr, Looper looper) {
     public interface OnErrorListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onError(MediaRecorder mr, int what, int extra);
     }
     
     public interface OnInfoListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onInfo(MediaRecorder mr, int what, int extra);
     }
     

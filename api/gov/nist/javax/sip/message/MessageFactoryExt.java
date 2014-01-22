@@ -10,27 +10,25 @@ import javax.sip.header.UserAgentHeader;
 import javax.sip.message.MessageFactory;
 
 public interface MessageFactoryExt extends MessageFactory {
-    
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setDefaultUserAgentHeader(UserAgentHeader userAgent);
 
-
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setDefaultServerHeader(ServerHeader userAgent);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public  void setDefaultContentEncodingCharset(String charset)
             throws NullPointerException,IllegalArgumentException ;
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public MultipartMimeContent createMultipartMimeContent(ContentTypeHeader multipartMimeContentTypeHeader,
             String[] contentType, 
             String[] contentSubtype, 
             String[] contentBody);
-    
-    
-    
-    
     
 }

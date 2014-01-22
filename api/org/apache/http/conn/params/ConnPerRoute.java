@@ -8,6 +8,8 @@ import org.apache.http.conn.routing.HttpRoute;
 
 public interface ConnPerRoute {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getMaxForRoute(HttpRoute route);
     
 }

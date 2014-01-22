@@ -9,5 +9,7 @@ public interface GetChars
 extends CharSequence
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void getChars(int start, int end, char[] dest, int destoff);
 }

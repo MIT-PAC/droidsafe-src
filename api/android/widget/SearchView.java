@@ -1827,20 +1827,30 @@ private boolean isEmpty() {
     
     public interface OnQueryTextListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onQueryTextSubmit(String query);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onQueryTextChange(String newText);
     }
     
     public interface OnCloseListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onClose();
     }
     
     public interface OnSuggestionListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onSuggestionSelect(int position);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onSuggestionClick(int position);
     }
 

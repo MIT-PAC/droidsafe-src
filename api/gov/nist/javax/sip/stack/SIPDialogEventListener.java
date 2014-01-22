@@ -7,7 +7,8 @@ import droidsafe.annotations.*;
 import java.util.EventListener;
 
 public interface SIPDialogEventListener extends EventListener {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void dialogErrorEvent(SIPDialogErrorEvent dialogErrorEvent);
 }

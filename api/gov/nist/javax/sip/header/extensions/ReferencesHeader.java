@@ -27,13 +27,20 @@ public interface ReferencesHeader extends Parameters, Header {
     
     public static final String SERVICE = "service";
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setCallId(String callId) throws ParseException;
        
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getCallId();
        
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setRel (String rel) throws ParseException;
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getRel();
-        
 
 }

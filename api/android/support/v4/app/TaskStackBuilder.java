@@ -180,6 +180,8 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
     }
     
     interface TaskStackBuilderImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode,
                 int flags);
     }

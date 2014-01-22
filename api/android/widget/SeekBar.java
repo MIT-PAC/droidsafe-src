@@ -85,10 +85,16 @@ public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
     
     public interface OnSeekBarChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onStartTrackingTouch(SeekBar seekBar);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onStopTrackingTouch(SeekBar seekBar);
     }
     

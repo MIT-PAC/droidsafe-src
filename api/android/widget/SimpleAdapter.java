@@ -388,6 +388,8 @@ public Filter getFilter() {
     
     public static interface ViewBinder {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean setViewValue(View view, Object data, String textRepresentation);
     }
     

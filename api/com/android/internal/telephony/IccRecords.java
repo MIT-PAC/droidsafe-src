@@ -389,7 +389,11 @@ public String getOperatorNumeric() {
     }
     
     public interface IccRecordLoaded {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         String getEfName();
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onRecordLoaded(AsyncResult ar);
     }
 

@@ -93,30 +93,42 @@ public interface GL11ExtensionPack extends GL {
     int GL_TEXTURE_GEN_MODE                                 = 0x2500;
     int GL_TEXTURE_GEN_STR                                  = 0x8D60;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBindFramebufferOES(
         int target,
         int framebuffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBindRenderbufferOES(
         int target,
         int renderbuffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBindTexture(
         int target,
         int texture
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBlendEquation(
         int mode
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBlendEquationSeparate(
         int modeRGB,
         int modeAlpha
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glBlendFuncSeparate(
         int srcRGB,
         int dstRGB,
@@ -124,10 +136,14 @@ public interface GL11ExtensionPack extends GL {
         int dstAlpha
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int glCheckFramebufferStatusOES(
         int target
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glCompressedTexImage2D(
         int target,
         int level,
@@ -139,6 +155,8 @@ public interface GL11ExtensionPack extends GL {
         java.nio.Buffer data
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glCopyTexImage2D(
         int target,
         int level,
@@ -150,32 +168,44 @@ public interface GL11ExtensionPack extends GL {
         int border
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDeleteFramebuffersOES(
         int n,
         int[] framebuffers,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDeleteFramebuffersOES(
         int n,
         java.nio.IntBuffer framebuffers
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDeleteRenderbuffersOES(
         int n,
         int[] renderbuffers,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDeleteRenderbuffersOES(
         int n,
         java.nio.IntBuffer renderbuffers
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glEnable(
         int cap
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glFramebufferRenderbufferOES(
         int target,
         int attachment,
@@ -183,6 +213,8 @@ public interface GL11ExtensionPack extends GL {
         int renderbuffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glFramebufferTexture2DOES(
         int target,
         int attachment,
@@ -191,32 +223,44 @@ public interface GL11ExtensionPack extends GL {
         int level
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenerateMipmapOES(
         int target
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenFramebuffersOES(
         int n,
         int[] framebuffers,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenFramebuffersOES(
         int n,
         java.nio.IntBuffer framebuffers
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenRenderbuffersOES(
         int n,
         int[] renderbuffers,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGenRenderbuffersOES(
         int n,
         java.nio.IntBuffer renderbuffers
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetFramebufferAttachmentParameterivOES(
         int target,
         int attachment,
@@ -225,6 +269,8 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetFramebufferAttachmentParameterivOES(
         int target,
         int attachment,
@@ -232,17 +278,23 @@ public interface GL11ExtensionPack extends GL {
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetIntegerv(
         int pname,
         int[] params,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetIntegerv(
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetRenderbufferParameterivOES(
         int target,
         int pname,
@@ -250,12 +302,16 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetRenderbufferParameterivOES(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexGenfv(
         int coord,
         int pname,
@@ -263,12 +319,16 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexGenfv(
         int coord,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexGeniv(
         int coord,
         int pname,
@@ -276,12 +336,16 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexGeniv(
         int coord,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexGenxv(
         int coord,
         int pname,
@@ -289,20 +353,28 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glGetTexGenxv(
         int coord,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean glIsFramebufferOES(
         int framebuffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean glIsRenderbufferOES(
         int renderbuffer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glRenderbufferStorageOES(
         int target,
         int internalformat,
@@ -310,18 +382,24 @@ public interface GL11ExtensionPack extends GL {
         int height
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glStencilOp(
         int fail,
         int zfail,
         int zpass
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvf(
         int target,
         int pname,
         float param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvfv(
         int target,
         int pname,
@@ -329,18 +407,24 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvfv(
         int target,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvx(
         int target,
         int pname,
         int param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvxv(
         int target,
         int pname,
@@ -348,18 +432,24 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexEnvxv(
         int target,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGenf(
         int coord,
         int pname,
         float param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGenfv(
         int coord,
         int pname,
@@ -367,18 +457,24 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGenfv(
         int coord,
         int pname,
         java.nio.FloatBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGeni(
         int coord,
         int pname,
         int param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGeniv(
         int coord,
         int pname,
@@ -386,18 +482,24 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGeniv(
         int coord,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGenx(
         int coord,
         int pname,
         int param
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGenxv(
         int coord,
         int pname,
@@ -405,12 +507,16 @@ public interface GL11ExtensionPack extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexGenxv(
         int coord,
         int pname,
         java.nio.IntBuffer params
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameterf(
         int target,
         int pname,

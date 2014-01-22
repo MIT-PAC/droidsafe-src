@@ -243,10 +243,16 @@ public CharSequence terminateToken(CharSequence text) {
     
     public static interface Tokenizer {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int findTokenStart(CharSequence text, int cursor);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int findTokenEnd(CharSequence text, int cursor);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public CharSequence terminateToken(CharSequence text);
     }
     

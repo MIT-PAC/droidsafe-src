@@ -6,7 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface Protectable {
-
     
-    public abstract void protect() throws Throwable;
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void protect() throws Throwable;
 }

@@ -97,12 +97,20 @@ public String getMessage() {
     
     public interface Policy {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onWriteToDisk();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onReadFromDisk();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onNetwork();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         int getPolicyMask();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.441 -0500", hash_original_field = "10C56D7E547128C6542891F6C95CA616", hash_generated_field = "6C6117464ADDC1180A74752B4BB63E94")

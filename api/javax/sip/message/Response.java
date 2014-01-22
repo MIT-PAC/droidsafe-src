@@ -61,9 +61,17 @@ public interface Response extends Message {
     int DOES_NOT_EXIST_ANYWHERE = 604;
     int SESSION_NOT_ACCEPTABLE = 606;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getStatusCode();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setStatusCode(int statusCode) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getReasonPhrase();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setReasonPhrase(String reasonPhrase) throws ParseException;
 }

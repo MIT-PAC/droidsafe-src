@@ -191,6 +191,8 @@ public CharSequence getText() {
     }
     
     public interface OnPrimaryClipChangedListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPrimaryClipChanged();
     }
 

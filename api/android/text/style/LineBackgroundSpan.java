@@ -10,6 +10,8 @@ import android.graphics.Paint;
 public interface LineBackgroundSpan
 extends ParagraphStyle
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void drawBackground(Canvas c, Paint p,
                                int left, int right,
                                int top, int baseline, int bottom,

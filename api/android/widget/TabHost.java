@@ -763,23 +763,33 @@ public void tabClosed() {
     }
     
     public interface OnTabChangeListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onTabChanged(String tabId);
     }
     
     public interface TabContentFactory {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         View createTabContent(String tag);
     }
     
     private static interface IndicatorStrategy {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         View createIndicatorView();
     }
     
     private static interface ContentStrategy {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         View getContentView();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void tabClosed();
     }
     

@@ -534,8 +534,12 @@ public Container(Context context) {
     
     public interface OnZoomListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onVisibilityChanged(boolean visible);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onZoom(boolean zoomIn);
     }
 

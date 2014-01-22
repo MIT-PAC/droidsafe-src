@@ -222,6 +222,8 @@ public void setShareHistoryFileName(String shareHistoryFile) {
     
     public interface OnShareTargetSelectedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onShareTargetSelected(ShareActionProvider source, Intent intent);
     }
 

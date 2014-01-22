@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public interface PemObjectParser
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Object parseObject(PemObject obj)
             throws IOException;
 }

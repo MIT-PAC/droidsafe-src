@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface EventHandler {
-
-    
-
     
     public static final int OK = 0;
     
@@ -41,29 +38,36 @@ public interface EventHandler {
     public static final int FILE_NOT_FOUND_ERROR = -14;
     
     public static final int TOO_MANY_REQUESTS_ERROR = -15;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void status(int major_version,
                        int minor_version,
                        int code,
                        String reason_phrase);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void headers(Headers headers);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void data(byte[] data, int len);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void endData();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void certificate(SslCertificate certificate);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void error(int id, String description);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public boolean handleSslErrorRequest(SslError error);
 
 }

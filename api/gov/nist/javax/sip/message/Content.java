@@ -9,16 +9,24 @@ import javax.sip.header.ContentTypeHeader;
 
 public interface Content {
 
-    public abstract void setContent(Object content);
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setContent(Object content);
     
-    public abstract Object getContent();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    Object getContent();
  
-    public abstract ContentTypeHeader getContentTypeHeader();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    ContentTypeHeader getContentTypeHeader();
     
-    public abstract ContentDispositionHeader getContentDispositionHeader();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    ContentDispositionHeader getContentDispositionHeader();
     
-    public abstract String toString();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String toString();
  
 }

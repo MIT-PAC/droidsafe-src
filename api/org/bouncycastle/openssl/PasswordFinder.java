@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface PasswordFinder
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public char[] getPassword();
 }

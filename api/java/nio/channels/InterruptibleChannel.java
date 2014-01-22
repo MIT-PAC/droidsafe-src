@@ -7,7 +7,8 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 
 public interface InterruptibleChannel extends Channel {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void close() throws IOException;
 }

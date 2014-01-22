@@ -7,10 +7,12 @@ import droidsafe.annotations.*;
 
 public interface HttpTransportMetrics {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    long getBytesTransferred();
     
-    long getBytesTransferred(); 
-    
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void reset();
     
 }

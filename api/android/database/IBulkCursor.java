@@ -11,28 +11,45 @@ import android.os.RemoteException;
 
 public interface IBulkCursor extends IInterface  {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public CursorWindow getWindow(int startPos) throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void onMove(int position) throws RemoteException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int count() throws RemoteException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String[] getColumnNames() throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void deactivate() throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void close() throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int requery(IContentObserver observer) throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getWantsAllOnMoveCalls() throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Bundle getExtras() throws RemoteException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Bundle respond(Bundle extras) throws RemoteException;
-
     
     static final String descriptor = "android.content.IBulkCursor";
 

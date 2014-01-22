@@ -8,5 +8,7 @@ import javax.sip.SipProvider;
 
 public interface SipProviderExt extends SipProvider {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setDialogErrorsAutomaticallyHandled();
 }

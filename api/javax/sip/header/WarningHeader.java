@@ -24,12 +24,24 @@ public interface WarningHeader extends Header {
     int SESSION_DESCRIPTION_PARAMETER_NOT_UNDERSTOOD = 60;
     int UNICAST_NOT_AVAILABLE = 51;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getAgent();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setAgent(String agent) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getCode();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setCode(int code) throws InvalidArgumentException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getText();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setText(String text) throws ParseException;
 }

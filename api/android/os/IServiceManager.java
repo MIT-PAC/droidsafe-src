@@ -8,18 +8,24 @@ import droidsafe.annotations.*;
 public interface IServiceManager extends IInterface
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public IBinder getService(String name) throws RemoteException;
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public IBinder checkService(String name) throws RemoteException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void addService(String name, IBinder service) throws RemoteException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String[] listServices() throws RemoteException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setPermissionController(IPermissionController controller)
             throws RemoteException;
     

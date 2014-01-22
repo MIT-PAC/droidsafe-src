@@ -8,5 +8,7 @@ import android.database.Cursor;
 
 public interface FilterQueryProvider {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Cursor runQuery(CharSequence constraint);
 }

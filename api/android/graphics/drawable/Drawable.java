@@ -1056,15 +1056,23 @@ public abstract int getChangingConfigurations();
     
     public static interface Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void invalidateDrawable(Drawable who);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void scheduleDrawable(Drawable who, Runnable what, long when);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void unscheduleDrawable(Drawable who, Runnable what);
     }
     
     public static interface Callback2 extends Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getResolvedLayoutDirection(Drawable who);
     }
 

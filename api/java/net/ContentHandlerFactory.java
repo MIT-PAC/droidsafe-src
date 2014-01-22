@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface ContentHandlerFactory {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     ContentHandler createContentHandler(String contentType);
 }

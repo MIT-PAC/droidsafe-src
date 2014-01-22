@@ -1139,6 +1139,8 @@ private void createListView(final AlertController dialog) {
         
         public interface OnPrepareListViewListener {
             
+            @DSComment("Abstract Method")
+            @DSSpec(DSCat.ABSTRACT_METHOD)
             void onPrepareListView(ListView listView);
         }
         

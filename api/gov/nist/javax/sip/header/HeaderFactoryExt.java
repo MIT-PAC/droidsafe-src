@@ -38,95 +38,116 @@ import javax.sip.header.HeaderFactory;
 
 public interface HeaderFactoryExt extends HeaderFactory {
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SipRequestLine createRequestLine(String requestLine) throws ParseException;
     
-    
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SipStatusLine createStatusLine(String statusLine) throws ParseException;
     
-    
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ReferredByHeader createReferredByHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ReplacesHeader createReplacesHeader(String callId, String toTag,
             String fromTag) throws ParseException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PAccessNetworkInfoHeader createPAccessNetworkInfoHeader();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PAssertedIdentityHeader createPAssertedIdentityHeader(Address address)
             throws NullPointerException, ParseException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PAssociatedURIHeader createPAssociatedURIHeader(Address assocURI);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PCalledPartyIDHeader createPCalledPartyIDHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PChargingFunctionAddressesHeader createPChargingFunctionAddressesHeader();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PChargingVectorHeader createChargingVectorHeader(String icid) throws ParseException;
-
      
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PMediaAuthorizationHeader createPMediaAuthorizationHeader(String token)
         throws InvalidArgumentException, ParseException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PPreferredIdentityHeader createPPreferredIdentityHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PVisitedNetworkIDHeader createPVisitedNetworkIDHeader();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PathHeader createPathHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PrivacyHeader createPrivacyHeader(String privacyType);
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ServiceRouteHeader createServiceRouteHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SecurityServerHeader createSecurityServerHeader();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SecurityClientHeader createSecurityClientHeader();
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SecurityVerifyHeader createSecurityVerifyHeader();
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SessionExpiresHeader createSessionExpiresHeader(int expires) throws InvalidArgumentException ;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public JoinHeader createJoinHeader(String callId, String toTag,
             String fromTag) throws ParseException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PUserDatabaseHeader createPUserDatabaseHeader(String databaseName);
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PProfileKeyHeader createPProfileKeyHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PServedUserHeader createPServedUserHeader(Address address);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PPreferredServiceHeader createPPreferredServiceHeader();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PAssertedServiceHeader createPAssertedServiceHeader();
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Header createHeader(String header) throws ParseException;
 
 }

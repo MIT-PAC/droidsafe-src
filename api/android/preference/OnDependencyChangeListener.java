@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 interface OnDependencyChangeListener {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void onDependencyChanged(Preference dependency, boolean disablesDependent);
 }

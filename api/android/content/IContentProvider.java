@@ -17,29 +17,51 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 
 public interface IContentProvider extends IInterface {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Cursor query(Uri url, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getType(Uri url) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Uri insert(Uri url, ContentValues initialValues)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int bulkInsert(Uri url, ContentValues[] initialValues) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int delete(Uri url, String selection, String[] selectionArgs)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int update(Uri url, ContentValues values, String selection,
             String[] selectionArgs) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ParcelFileDescriptor openFile(Uri url, String mode)
             throws RemoteException, FileNotFoundException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public AssetFileDescriptor openAssetFile(Uri url, String mode)
             throws RemoteException, FileNotFoundException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations)
             throws RemoteException, OperationApplicationException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Bundle call(String method, String arg, Bundle extras) throws RemoteException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public AssetFileDescriptor openTypedAssetFile(Uri url, String mimeType, Bundle opts)
             throws RemoteException, FileNotFoundException;
-
     
     static final String descriptor = "android.content.IContentProvider";
 

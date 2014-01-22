@@ -9,6 +9,10 @@ import java.text.ParseException;
 public interface SIPETagHeader extends ExtensionHeader {
     String NAME = "SIP-ETag";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getETag();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setETag(String etag) throws ParseException;
 }

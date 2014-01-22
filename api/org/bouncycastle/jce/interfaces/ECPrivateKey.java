@@ -11,5 +11,7 @@ public interface ECPrivateKey
     extends ECKey, PrivateKey
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public BigInteger getD();
 }

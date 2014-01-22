@@ -114,6 +114,8 @@ public DatePicker getDatePicker() {
     
     public interface OnDateSetListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth);
     }
 

@@ -9,8 +9,8 @@ import java.io.Reader;
 
 public interface AutoDetector {
 
-	
-
-	public Reader autoDetectingReader(InputStream i);
+	@DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public Reader autoDetectingReader(InputStream i);
 
 	}

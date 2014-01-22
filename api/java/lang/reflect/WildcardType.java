@@ -7,8 +7,11 @@ import droidsafe.annotations.*;
 
 public interface WildcardType extends Type {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Type[] getUpperBounds();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Type[] getLowerBounds();
 }

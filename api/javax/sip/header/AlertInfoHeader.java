@@ -9,7 +9,13 @@ import javax.sip.address.URI;
 public interface AlertInfoHeader extends Header, Parameters {
     String NAME = "Alert-Info";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     URI getAlertInfo();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setAlertInfo(URI alertInfo);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setAlertInfo(String alertInfo);
 }

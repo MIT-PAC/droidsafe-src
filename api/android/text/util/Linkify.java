@@ -411,6 +411,8 @@ public final boolean equals(Object o) {
     
     public interface MatchFilter {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean acceptMatch(CharSequence s, int start, int end);
     }
     

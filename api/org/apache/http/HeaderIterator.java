@@ -7,13 +7,14 @@ import droidsafe.annotations.*;
 import java.util.Iterator;
 
 public interface HeaderIterator extends Iterator {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean hasNext()
         ;
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Header nextHeader()
         ;
 }

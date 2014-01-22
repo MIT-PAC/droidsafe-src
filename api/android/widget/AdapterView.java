@@ -932,18 +932,26 @@ public void run() {
     
     public interface OnItemClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onItemClick(AdapterView<?> parent, View view, int position, long id);
     }
     
     public interface OnItemLongClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id);
     }
     
     public interface OnItemSelectedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onItemSelected(AdapterView<?> parent, View view, int position, long id);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onNothingSelected(AdapterView<?> parent);
     }
 

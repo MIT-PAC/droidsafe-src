@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public interface Encoder {
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Object encode(Object pObject) throws EncoderException;
 }

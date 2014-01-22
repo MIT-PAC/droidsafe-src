@@ -33,19 +33,33 @@ public interface LocalPowerManager {
     public static final int POKE_LOCK_MEDIUM_TIMEOUT = 0x4;
     public static final int POKE_LOCK_TIMEOUT_MASK = 0x6;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void goToSleep(long time);
     
     // notify power manager when keyboard is opened/closed
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setKeyboardVisibility(boolean visible);
 
     // when the keyguard is up, it manages the power state, and userActivity doesn't do anything.
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void enableUserActivity(boolean enabled);
 
     // the same as the method on PowerManager
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void userActivity(long time, boolean noChangeLights, int eventType);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isScreenOn();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setScreenBrightnessOverride(int brightness);
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setButtonBrightnessOverride(int brightness);
 }

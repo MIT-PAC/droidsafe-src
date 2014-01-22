@@ -228,6 +228,8 @@ public class Plugin {
     
     public interface PreferencesClickHandler {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void handleClickEvent(Context context);
     }
     

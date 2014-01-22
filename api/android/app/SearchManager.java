@@ -108,11 +108,15 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     
     public interface OnDismissListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDismiss();
     }
     
     public interface OnCancelListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onCancel();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.475 -0500", hash_original_field = "4907EDF000CAA815231D95F4F1E2E2A7", hash_generated_field = "ABC428E73F300198BAFB5CA25EDD54D5")

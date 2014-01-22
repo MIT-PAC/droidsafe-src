@@ -71,10 +71,14 @@ public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, 
     
     public interface LoaderCallbacks<D> {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Loader<D> onCreateLoader(int id, Bundle args);
         
         public void onLoadFinished(Loader<D> loader, D data);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onLoaderReset(Loader<D> loader);
     }
     

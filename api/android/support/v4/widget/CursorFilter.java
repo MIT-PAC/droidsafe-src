@@ -7,11 +7,8 @@ import droidsafe.annotations.*;
 import android.database.Cursor;
 import android.widget.Filter;
 
-
-
 class CursorFilter extends Filter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.791 -0500", hash_original_field = "D7B21BB19581EA5872B7B46EEFBFEFD2", hash_generated_field = "D7B21BB19581EA5872B7B46EEFBFEFD2")
-
     
     CursorFilterClient mClient;
 
@@ -55,12 +52,19 @@ CursorFilter(CursorFilterClient client) {
             mClient.changeCursor((Cursor) results.values);
         }
     }
-
     
     interface CursorFilterClient {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         CharSequence convertToString(Cursor cursor);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Cursor runQueryOnBackgroundThread(CharSequence constraint);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Cursor getCursor();
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void changeCursor(Cursor cursor);
     }
     

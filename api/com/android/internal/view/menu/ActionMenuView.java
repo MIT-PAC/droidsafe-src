@@ -598,7 +598,11 @@ public LayoutParams(int width, int height, boolean isOverflowButton) {
     }
     
     public interface ActionMenuChildView {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean needsDividerBefore();
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean needsDividerAfter();
     }
 

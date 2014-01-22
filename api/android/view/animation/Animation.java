@@ -866,10 +866,16 @@ static Description parseValue(TypedValue value) {
     
     public static interface AnimationListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationStart(Animation animation);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationEnd(Animation animation);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationRepeat(Animation animation);
     }
 

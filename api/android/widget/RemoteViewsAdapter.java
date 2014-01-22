@@ -1169,10 +1169,16 @@ public void reset() {
     
     public interface RemoteAdapterConnectionCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onRemoteAdapterConnected();
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onRemoteAdapterDisconnected();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void deferNotifyDataSetChanged();
     }
 

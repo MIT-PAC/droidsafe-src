@@ -14,6 +14,10 @@ public interface PriorityHeader extends Header {
     String URGENT = "Urgent";
     String EMERGENCY = "Emergency";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getPriority();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setPriority(String priority) throws ParseException;
 }

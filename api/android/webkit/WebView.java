@@ -10190,6 +10190,8 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
     @Deprecated public interface PictureListener {
         
         @Deprecated
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onNewPicture(WebView view, Picture picture);
     }
 

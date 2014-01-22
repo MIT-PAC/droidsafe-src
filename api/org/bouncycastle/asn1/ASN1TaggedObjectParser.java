@@ -9,8 +9,12 @@ import java.io.IOException;
 public interface ASN1TaggedObjectParser
     extends DEREncodable, InMemoryRepresentable
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getTagNo();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public DEREncodable getObjectParser(int tag, boolean isExplicit)
         throws IOException;
 }

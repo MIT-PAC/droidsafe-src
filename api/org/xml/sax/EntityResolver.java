@@ -7,10 +7,10 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 
 public interface EntityResolver {
-
-
     
-    public abstract InputSource resolveEntity (String publicId,
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    InputSource resolveEntity (String publicId,
                            String systemId)
     throws SAXException, IOException;
 

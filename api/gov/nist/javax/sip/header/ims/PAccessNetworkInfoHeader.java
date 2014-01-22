@@ -13,7 +13,6 @@ public interface PAccessNetworkInfoHeader extends Parameters, Header
 {
 
     public final static String NAME = "P-Access-Network-Info";
-
     
     public static final String IEEE_802_11 = "IEEE-802.11";
     public static final String IEEE_802_11A = "IEEE-802.11a";
@@ -36,32 +35,46 @@ public interface PAccessNetworkInfoHeader extends Parameters, Header
     public static final String GGGPP2_1X = "3GPP2-1X";
     public static final String GGGPP2_1XHRPD = "3GPP2-1XHRPD";
 
-
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setAccessType(String accessTypeVal) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getAccessType();
 
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setCGI3GPP(String cgi) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getCGI3GPP();
 
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setUtranCellID3GPP(String utranCellID) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getUtranCellID3GPP();
 
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setDSLLocation(String dslLocation) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getDSLLocation();
 
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setCI3GPP2(String ci2Gpp2) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getCI3GPP2();
 
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setExtensionAccessInfo(Object extendAccessInfo) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Object getExtensionAccessInfo();
-
-
-
 
 }

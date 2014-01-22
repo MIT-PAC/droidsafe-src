@@ -10,6 +10,8 @@ import java.text.ParseException;
 
 public interface ParseExceptionListener {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void handleException(
         ParseException ex,
         SIPMessage sipMessage,

@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface OnAccountsUpdateListener {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void onAccountsUpdated(Account[] accounts);
 }

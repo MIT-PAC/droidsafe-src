@@ -777,6 +777,8 @@ public void run() {
     
     public interface ActivityChooserModelClient {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void setActivityChooserModel(ActivityChooserModel dataModel);
     }
     
@@ -788,6 +790,8 @@ public void run() {
     
     public interface OnChooseActivityListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent);
     }
 

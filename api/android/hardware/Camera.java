@@ -3398,29 +3398,39 @@ private boolean same(String s1, String s2) {
     public interface PreviewCallback
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPreviewFrame(byte[] data, Camera camera);
     }
     
     public interface AutoFocusCallback
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAutoFocus(boolean success, Camera camera);
     }
     
     public interface ShutterCallback
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onShutter();
     }
     
     public interface PictureCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPictureTaken(byte[] data, Camera camera);
     }
     
     public interface OnZoomChangeListener
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onZoomChange(int zoomValue, boolean stopped, Camera camera);
     }
     
@@ -3433,6 +3443,8 @@ private boolean same(String s1, String s2) {
     public interface ErrorCallback
     {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onError(int error, Camera camera);
     }
 

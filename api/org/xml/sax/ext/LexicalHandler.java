@@ -8,40 +8,41 @@ import org.xml.sax.SAXException;
 
 public interface LexicalHandler
 {
-
     
-    public abstract void startDTD (String name, String publicId,
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void startDTD (String name, String publicId,
                    String systemId)
     throws SAXException;
-
-
     
-    public abstract void endDTD ()
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void endDTD ()
     throws SAXException;
-
-
     
-    public abstract void startEntity (String name)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void startEntity (String name)
     throws SAXException;
-
-
     
-    public abstract void endEntity (String name)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void endEntity (String name)
     throws SAXException;
-
-
     
-    public abstract void startCDATA ()
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void startCDATA ()
     throws SAXException;
-
-
     
-    public abstract void endCDATA ()
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void endCDATA ()
     throws SAXException;
-
-
     
-    public abstract void comment (char ch[], int start, int length)
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void comment (char ch[], int start, int length)
     throws SAXException;
 
 }

@@ -9,15 +9,15 @@ import javax.sip.header.Header;
 
 public interface PMediaAuthorizationHeader extends Header
 {
-
     
     public final static String NAME = "P-Media-Authorization";
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setMediaAuthorizationToken(String token) throws InvalidArgumentException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getToken();
-
 
 }

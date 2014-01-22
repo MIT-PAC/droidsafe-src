@@ -23,12 +23,24 @@ public interface SubscriptionStateHeader extends ExpiresHeader, Parameters {
     String PENDING = "Pending";
     String TERMINATED = "Terminated";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getReasonCode();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setReasonCode(String reasonCode) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getRetryAfter();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setRetryAfter(int retryAfter) throws InvalidArgumentException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getState();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setState(String state) throws ParseException;
 }

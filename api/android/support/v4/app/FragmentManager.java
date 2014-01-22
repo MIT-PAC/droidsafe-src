@@ -308,21 +308,35 @@ public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
     
     public interface BackStackEntry {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getId();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public String getName();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getBreadCrumbTitleRes();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getBreadCrumbShortTitleRes();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public CharSequence getBreadCrumbTitle();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public CharSequence getBreadCrumbShortTitle();
     }
     
     public interface OnBackStackChangedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onBackStackChanged();
     }
 
@@ -2363,6 +2377,8 @@ public void dispatchOptionsMenuClosed(Menu menu) {
 }
 
 interface FragmentContainer {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public View findViewById(int id);
 }
 

@@ -2364,12 +2364,16 @@ public String getOwnerDescription() {
     
     public interface CursorFactory {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Cursor newCursor(SQLiteDatabase db,
                 SQLiteCursorDriver masterQuery, String editTable,
                 SQLiteQuery query);
     }
     
     public interface CustomFunction {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void callback(String[] args);
     }
 

@@ -14,21 +14,22 @@ public interface MmiCode
         COMPLETE,
         FAILED
     }
-
-
     
     public State getState();
 
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public CharSequence getMessage();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void cancel();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public boolean isUssdRequest();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public boolean isCancelable();
 }
