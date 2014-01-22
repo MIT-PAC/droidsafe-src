@@ -8,18 +8,16 @@ import droidsafe.annotations.*;
 public interface UserCredentials
 {
    
-
+   @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getUserName();
    
-   public String getUserName();
+   @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getPassword();
    
-
-   
-   public String getPassword();
-   
-   
-   
-   public String getSipDomain();
-   
-   
+   @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public String getSipDomain();
   
 }

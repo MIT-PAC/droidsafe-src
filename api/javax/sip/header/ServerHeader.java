@@ -11,7 +11,13 @@ import java.util.ListIterator;
 public interface ServerHeader extends Header {
     String NAME = "Server";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     ListIterator getProduct();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setProduct(List product) throws ParseException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void addProductToken(String productToken);
 }

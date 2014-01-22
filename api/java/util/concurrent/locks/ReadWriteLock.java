@@ -7,8 +7,11 @@ import droidsafe.annotations.*;
 
 public interface ReadWriteLock {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Lock readLock();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Lock writeLock();
 }

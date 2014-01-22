@@ -229,13 +229,29 @@ public boolean draw(Object edgeEffect, Canvas canvas) {
     }
     
     interface EdgeEffectImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Object newEdgeEffect(Context context);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void setSize(Object edgeEffect, int width, int height);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean isFinished(Object edgeEffect);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void finish(Object edgeEffect);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onPull(Object edgeEffect, float deltaDistance);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onRelease(Object edgeEffect);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onAbsorb(Object edgeEffect, int velocity);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean draw(Object edgeEffect, Canvas canvas);
     }
 

@@ -660,16 +660,22 @@ private void makeBlink() {
     public interface Filter {
         
         @SuppressWarnings("unchecked")
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onLoadClass(Class clazz);
     }
     
     public interface Factory {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public View onCreateView(String name, Context context, AttributeSet attrs);
     }
     
     public interface Factory2 extends Factory {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public View onCreateView(View parent, String name, Context context, AttributeSet attrs);
     }
 

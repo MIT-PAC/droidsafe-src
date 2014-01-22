@@ -9,7 +9,8 @@ import org.apache.http.protocol.HttpContext;
 
 public interface ConnectionKeepAliveStrategy {
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     long getKeepAliveDuration(HttpResponse response, HttpContext context);
     
 }

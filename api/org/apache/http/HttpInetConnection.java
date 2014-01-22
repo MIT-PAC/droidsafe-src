@@ -8,12 +8,20 @@ import java.net.InetAddress;
 
 public interface HttpInetConnection extends HttpConnection {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     InetAddress getLocalAddress();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getLocalPort();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     InetAddress getRemoteAddress();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getRemotePort();
     
 }

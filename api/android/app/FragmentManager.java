@@ -318,21 +318,35 @@ public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, 
     
     public interface BackStackEntry {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getId();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public String getName();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getBreadCrumbTitleRes();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getBreadCrumbShortTitleRes();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public CharSequence getBreadCrumbTitle();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public CharSequence getBreadCrumbShortTitle();
     }
     
     public interface OnBackStackChangedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onBackStackChanged();
     }
 

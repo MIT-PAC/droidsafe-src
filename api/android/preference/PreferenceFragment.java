@@ -327,6 +327,8 @@ private void postBindPreferences() {
     
     public interface OnPreferenceStartFragmentCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref);
     }
 

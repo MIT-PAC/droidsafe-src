@@ -9,6 +9,8 @@ import java.io.IOException;
 public interface ASN1ApplicationSpecificParser
     extends DEREncodable, InMemoryRepresentable
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     DEREncodable readObject()
         throws IOException;
 }

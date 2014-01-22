@@ -1637,11 +1637,15 @@ public void getChars(int start, int end, char[] dest, int destoff) {
     }
     
     public interface StringSplitter extends Iterable<String> {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void setString(String string);
     }
     
     public interface EllipsizeCallback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void ellipsized(int start, int end);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.944 -0500", hash_original_field = "7F34253C37BD6C61CA0FC47C32EDBF19", hash_generated_field = "0F4922FC1D49AD6ED7458917DE77E255")

@@ -6,16 +6,19 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface CookieAttributeHandler {
-
   
-  void parse(SetCookie cookie, String value)
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void parse(SetCookie cookie, String value)
           throws MalformedCookieException;
-
   
-  void validate(Cookie cookie, CookieOrigin origin)
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void validate(Cookie cookie, CookieOrigin origin)
           throws MalformedCookieException;
-
   
-  boolean match(Cookie cookie, CookieOrigin origin);
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean match(Cookie cookie, CookieOrigin origin);
 
 }

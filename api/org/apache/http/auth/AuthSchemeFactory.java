@@ -6,8 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.params.HttpParams;
 
-public interface AuthSchemeFactory {    
+public interface AuthSchemeFactory {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     AuthScheme newInstance(HttpParams params);
 
 }

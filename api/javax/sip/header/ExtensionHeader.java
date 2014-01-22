@@ -7,6 +7,10 @@ import droidsafe.annotations.*;
 import java.text.ParseException;
 
 public interface ExtensionHeader extends Header {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getValue();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setValue(String value) throws ParseException;
 }

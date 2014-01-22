@@ -99,6 +99,8 @@ public static GeolocationPermissions getInstance() {
     private static final String ALLOWED = "allowed";
     
     public interface Callback {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void invoke(String origin, boolean allow, boolean remember);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.160 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")

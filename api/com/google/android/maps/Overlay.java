@@ -56,6 +56,8 @@ public abstract class Overlay
     @DSModeled(DSC.SAFE)
     public static abstract interface Snappable
     {
-        public abstract boolean onSnapToItem(int paramInt1, int paramInt2, Point paramPoint, MapView paramMapView);
+        public abstract @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        boolean onSnapToItem(int paramInt1, int paramInt2, Point paramPoint, MapView paramMapView);
     }
 }

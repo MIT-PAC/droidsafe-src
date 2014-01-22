@@ -284,6 +284,8 @@ MyHandler(Looper looper) {
     }
     
     public interface Callback {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void executeMessage(Message msg);
     }
     

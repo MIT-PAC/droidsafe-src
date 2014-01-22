@@ -6,7 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface FilenameFilter {
-
     
-    public abstract boolean accept(File dir, String filename);
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean accept(File dir, String filename);
 }

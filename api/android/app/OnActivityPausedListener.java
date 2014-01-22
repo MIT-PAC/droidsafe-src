@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface OnActivityPausedListener {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void onPaused(Activity activity);
 }

@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface Predicate<T> {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean apply(T t);
 }

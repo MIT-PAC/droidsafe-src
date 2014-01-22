@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface Match {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public boolean match(String searchString);
 }

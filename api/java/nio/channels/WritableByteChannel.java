@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 
 public interface WritableByteChannel extends Channel {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int write(ByteBuffer buffer) throws IOException;
 }

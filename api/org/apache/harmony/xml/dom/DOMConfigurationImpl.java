@@ -286,8 +286,14 @@ public boolean canSet(DOMConfigurationImpl config, Object value) {
     }
     
     interface Parameter {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Object get(DOMConfigurationImpl config);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void set(DOMConfigurationImpl config, Object value);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean canSet(DOMConfigurationImpl config, Object value);
     }
 

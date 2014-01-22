@@ -547,7 +547,11 @@ private static int chooseHorizontal(Layout layout, int direction,
     public static interface PositionIterator {
         public static final int DONE = BreakIterator.DONE;
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int preceding(int position);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int following(int position);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.486 -0500", hash_original_field = "0E482FE00942EA78EED2BFFA8B51419E", hash_generated_field = "158301B7D925B39059B5DF4E88882416")

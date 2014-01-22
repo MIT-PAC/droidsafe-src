@@ -115,6 +115,8 @@ public static int parseSeconds(String value) {
     }
     
     public interface CacheControlHandler {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void handle(String directive, String parameter);
     }
     

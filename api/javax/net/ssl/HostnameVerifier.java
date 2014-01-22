@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface HostnameVerifier {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean verify(String hostname, SSLSession session);
 }

@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public interface DOMErrorHandler {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public boolean handleError(DOMError error);
 
 }

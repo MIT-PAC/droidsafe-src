@@ -11,28 +11,40 @@ import javax.sip.SipProvider;
 import javax.sip.Transaction;
 
 public interface TransactionExt extends Transaction {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public SipProvider getSipProvider();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getPeerAddress();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getPeerPort();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getTransport();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getHost();
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getPort();
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getCipherSuite() throws UnsupportedOperationException;
     
+   @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    Certificate[] getLocalCertificates() throws UnsupportedOperationException;
     
-   Certificate[] getLocalCertificates() throws UnsupportedOperationException;
-    
-    
-   Certificate[]  getPeerCertificates() throws SSLPeerUnverifiedException;
+   @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    Certificate[]  getPeerCertificates() throws SSLPeerUnverifiedException;
 }

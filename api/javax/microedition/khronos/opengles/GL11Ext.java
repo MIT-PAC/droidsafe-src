@@ -23,12 +23,18 @@ public interface GL11Ext extends GL {
     int GL_WEIGHT_ARRAY_STRIDE_OES               = 0x86AA;
     int GL_WEIGHT_ARRAY_TYPE_OES                 = 0x86A9;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glTexParameterfv(int target, int pname, float[] param, int offset);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glCurrentPaletteMatrixOES(
         int matrixpaletteindex
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexfOES(
         float x,
         float y,
@@ -37,15 +43,21 @@ public interface GL11Ext extends GL {
         float height
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexfvOES(
         float[] coords,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexfvOES(
         java.nio.FloatBuffer coords
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexiOES(
         int x,
         int y,
@@ -54,15 +66,21 @@ public interface GL11Ext extends GL {
         int height
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexivOES(
         int[] coords,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexivOES(
         java.nio.IntBuffer coords
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexsOES(
         short x,
         short y,
@@ -71,15 +89,21 @@ public interface GL11Ext extends GL {
         short height
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexsvOES(
         short[] coords,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexsvOES(
         java.nio.ShortBuffer coords
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexxOES(
         int x,
         int y,
@@ -88,26 +112,38 @@ public interface GL11Ext extends GL {
         int height
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexxvOES(
         int[] coords,
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glDrawTexxvOES(
         java.nio.IntBuffer coords
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glEnable(
         int cap
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glEnableClientState(
         int array
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glLoadPaletteFromModelViewMatrixOES(
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glMatrixIndexPointerOES(
         int size,
         int type,
@@ -115,6 +151,8 @@ public interface GL11Ext extends GL {
         java.nio.Buffer pointer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glMatrixIndexPointerOES(
         int size,
         int type,
@@ -122,6 +160,8 @@ public interface GL11Ext extends GL {
         int offset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glWeightPointerOES(
         int size,
         int type,
@@ -129,6 +169,8 @@ public interface GL11Ext extends GL {
         java.nio.Buffer pointer
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void glWeightPointerOES(
         int size,
         int type,

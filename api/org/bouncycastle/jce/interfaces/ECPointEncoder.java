@@ -8,5 +8,7 @@ import droidsafe.annotations.*;
 public interface ECPointEncoder
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setPointFormat(String style);
 }

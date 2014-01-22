@@ -25,9 +25,17 @@ public interface Request extends Message {
     String SUBSCRIBE = "SUBSCRIBE";
     String UPDATE = "UPDATE";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getMethod();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setMethod(String method) throws ParseException;
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     URI getRequestURI();
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setRequestURI(URI requestURI);
 }

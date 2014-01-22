@@ -282,12 +282,20 @@ public void setTarget(Object target) {
     
     public static interface AnimatorListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationStart(Animator animation);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationEnd(Animator animation);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationCancel(Animator animation);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationRepeat(Animator animation);
     }
     

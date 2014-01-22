@@ -136,10 +136,14 @@ public void remove() {
     
     public interface Listener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onGpsStatusChanged(int event);
     }
     
     public interface NmeaListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onNmeaReceived(long timestamp, String nmea);
     }
 

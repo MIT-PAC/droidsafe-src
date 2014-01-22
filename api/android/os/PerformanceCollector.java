@@ -139,18 +139,32 @@ private static Bundle getBinderCounts() {
     
     public interface PerformanceResultsWriter {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeBeginSnapshot(String label);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeEndSnapshot(Bundle results);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeStartTiming(String label);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeStopTiming(Bundle results);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeMeasurement(String label, long value);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeMeasurement(String label, float value);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void writeMeasurement(String label, String value);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.705 -0500", hash_original_field = "9E3E985E10482824135654A526170E3B", hash_generated_field = "49E99AC048E613E8191A91BC78FAE993")

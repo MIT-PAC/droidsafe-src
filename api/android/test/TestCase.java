@@ -9,8 +9,11 @@ import android.content.Context;
 @Deprecated public interface TestCase extends Runnable
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setUp(Context context);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void tearDown();
 }

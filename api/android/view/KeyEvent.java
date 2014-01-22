@@ -1120,12 +1120,20 @@ public void handleUpEvent(KeyEvent event) {
     
     public interface Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onKeyDown(int keyCode, KeyEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onKeyLongPress(int keyCode, KeyEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onKeyUp(int keyCode, KeyEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onKeyMultiple(int keyCode, int count, KeyEvent event);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.566 -0500", hash_original_field = "DB1C717642A56E965480673F3F05386B", hash_generated_field = "86DB665B33F8C0F0EAF3A4B3E3D86A09")

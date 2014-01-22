@@ -727,10 +727,16 @@ public void onScaleEnd(ScaleGestureDetector detector) {
     
     public interface OnScaleGestureListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onScale(ScaleGestureDetector detector);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onScaleBegin(ScaleGestureDetector detector);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScaleEnd(ScaleGestureDetector detector);
     }
 

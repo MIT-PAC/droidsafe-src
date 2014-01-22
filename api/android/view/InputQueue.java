@@ -154,8 +154,12 @@ private FinishedCallback() {
     
     public static interface Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onInputQueueCreated(InputQueue queue);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onInputQueueDestroyed(InputQueue queue);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.252 -0500", hash_original_field = "9822897BD047FB46E3B13005AC739818", hash_generated_field = "9822897BD047FB46E3B13005AC739818")

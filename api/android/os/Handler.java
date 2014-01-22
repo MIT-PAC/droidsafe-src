@@ -602,6 +602,8 @@ public void send(Message msg) {
     }
     
     public interface Callback {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean handleMessage(Message msg);
     }
 

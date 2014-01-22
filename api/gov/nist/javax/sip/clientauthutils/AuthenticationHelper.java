@@ -11,16 +11,19 @@ import javax.sip.message.Request;
 import javax.sip.message.Response;
 
 public interface AuthenticationHelper {
-
     
-    public abstract ClientTransaction handleChallenge(Response challenge,
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    ClientTransaction handleChallenge(Response challenge,
             ClientTransaction challengedTransaction,
             SipProvider transactionCreator, int cacheTime ) throws SipException,
              NullPointerException;
-
     
-    public abstract void setAuthenticationHeaders(Request request) ;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setAuthenticationHeaders(Request request) ;
     
-    public abstract void removeCachedAuthenticationHeaders(String callId);
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void removeCachedAuthenticationHeaders(String callId);
 }

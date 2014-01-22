@@ -10,20 +10,28 @@ import javax.sip.header.ContentTypeHeader;
 
 public interface MultipartMimeContent {
 
-    public abstract boolean add(Content content);
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean add(Content content);
+    
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    ContentTypeHeader getContentTypeHeader();
 
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String toString();
     
-    public abstract ContentTypeHeader getContentTypeHeader();
-
-    public abstract String toString();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void addContent( Content content);
     
-    public abstract void addContent( Content content);
-    
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Iterator<Content> getContents();
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getContentCount();
 
 }

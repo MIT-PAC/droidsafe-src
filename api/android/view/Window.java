@@ -1099,46 +1099,84 @@ public final void addView(View view, ViewGroup.LayoutParams params) {
     
     public interface Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchKeyEvent(KeyEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchKeyShortcutEvent(KeyEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchTouchEvent(MotionEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchTrackballEvent(MotionEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchGenericMotionEvent(MotionEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public View onCreatePanelView(int featureId);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onCreatePanelMenu(int featureId, Menu menu);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onPreparePanel(int featureId, View view, Menu menu);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onMenuOpened(int featureId, Menu menu);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onMenuItemSelected(int featureId, MenuItem item);
         
         public void onWindowAttributesChanged(WindowManager.LayoutParams attrs);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onContentChanged();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onWindowFocusChanged(boolean hasFocus);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onAttachedToWindow();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDetachedFromWindow();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPanelClosed(int featureId, Menu menu);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onSearchRequested();
         
         public ActionMode onWindowStartingActionMode(ActionMode.Callback callback);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onActionModeStarted(ActionMode mode);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onActionModeFinished(ActionMode mode);
     }
 

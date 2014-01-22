@@ -3353,8 +3353,12 @@ private HoverTarget() {
     
     public interface OnHierarchyChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onChildViewAdded(View parent, View child);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onChildViewRemoved(View parent, View child);
     }
     

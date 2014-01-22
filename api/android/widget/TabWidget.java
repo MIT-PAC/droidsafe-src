@@ -604,6 +604,8 @@ public void onClick(View v) {
     
     static interface OnTabSelectionChanged {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onTabSelectionChanged(int tabIndex, boolean clicked);
     }
     

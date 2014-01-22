@@ -10,5 +10,7 @@ import android.util.AttributeSet;
 
 public interface XmlResourceParser extends XmlPullParser, AttributeSet {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void close();
 }

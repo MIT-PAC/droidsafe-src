@@ -12,5 +12,7 @@ public interface ECPublicKey
     extends ECKey, PublicKey
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ECPoint getQ();
 }

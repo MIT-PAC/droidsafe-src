@@ -7,7 +7,8 @@ import droidsafe.annotations.*;
 import android.database.sqlite.SQLiteDatabase;
 
 public interface DatabaseErrorHandler {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void onCorruption(SQLiteDatabase dbObj);
 }

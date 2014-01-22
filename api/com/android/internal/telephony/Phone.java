@@ -20,16 +20,12 @@ import com.android.internal.telephony.ims.IsimRecords;
 import com.android.internal.telephony.test.SimulatedRadioControl;
 
 public interface Phone {
-
     
     static final boolean DEBUG_PHONE = true;
-
-
     
     enum State {
         IDLE, RINGING, OFFHOOK;
     };
-
     
     enum DataState {
         CONNECTED, CONNECTING, DISCONNECTED, SUSPENDED;
@@ -57,7 +53,6 @@ public interface Phone {
     static final String NETWORK_UNAVAILABLE_KEY = "networkUnvailable";
     static final String DATA_NETWORK_ROAMING_KEY = "networkRoaming";
     static final String PHONE_IN_ECM_STATE = "phoneinECMState";
-
     
     static final String APN_TYPE_ALL = "*";
     
@@ -76,7 +71,6 @@ public interface Phone {
     static final String APN_TYPE_IMS = "ims";
     
     static final String APN_TYPE_CBS = "cbs";
-
     
     static final String FEATURE_ENABLE_MMS = "enableMMS";
     static final String FEATURE_ENABLE_SUPL = "enableSUPL";
@@ -86,15 +80,12 @@ public interface Phone {
     static final String FEATURE_ENABLE_FOTA = "enableFOTA";
     static final String FEATURE_ENABLE_IMS = "enableIMS";
     static final String FEATURE_ENABLE_CBS = "enableCBS";
-
     
     static final int APN_ALREADY_ACTIVE     = 0;
     static final int APN_REQUEST_STARTED    = 1;
     static final int APN_TYPE_NOT_AVAILABLE = 2;
     static final int APN_REQUEST_FAILED     = 3;
     static final int APN_ALREADY_INACTIVE   = 4;
-
-
     
     static final String REASON_ROAMING_ON = "roamingOn";
     static final String REASON_ROAMING_OFF = "roamingOff";
@@ -119,7 +110,6 @@ public interface Phone {
     static final String REASON_DATA_DEPENDENCY_MET = "dependencyMet";
     static final String REASON_DATA_DEPENDENCY_UNMET = "dependencyUnmet";
     static final String REASON_LINK_PROPERTIES_CHANGED = "linkPropertiesChanged";
-
     
     static final int BM_UNSPECIFIED = 0; 
     static final int BM_EURO_BAND   = 1; 
@@ -127,20 +117,16 @@ public interface Phone {
     static final int BM_JPN_BAND    = 3; 
     static final int BM_AUS_BAND    = 4; 
     static final int BM_AUS2_BAND   = 5; 
-    static final int BM_BOUNDARY    = 6; 
-
+    static final int BM_BOUNDARY    = 6;
     
     static final int PHONE_TYPE_NONE = RILConstants.NO_PHONE;
     static final int PHONE_TYPE_GSM = RILConstants.GSM_PHONE;
     static final int PHONE_TYPE_CDMA = RILConstants.CDMA_PHONE;
     static final int PHONE_TYPE_SIP = RILConstants.SIP_PHONE;
-
     
     static final int LTE_ON_CDMA_UNKNOWN = RILConstants.LTE_ON_CDMA_UNKNOWN;
     static final int LTE_ON_CDMA_FALSE = RILConstants.LTE_ON_CDMA_FALSE;
     static final int LTE_ON_CDMA_TRUE = RILConstants.LTE_ON_CDMA_TRUE;
-
-    
     
     int NT_MODE_WCDMA_PREF   = RILConstants.NETWORK_MODE_WCDMA_PREF;
     int NT_MODE_GSM_ONLY     = RILConstants.NETWORK_MODE_GSM_ONLY;
@@ -155,16 +141,13 @@ public interface Phone {
 
     int NT_MODE_LTE_ONLY     = RILConstants.NETWORK_MODE_LTE_ONLY;
     int PREFERRED_NT_MODE    = RILConstants.PREFERRED_NETWORK_MODE;
-
-
     
     static final int CDMA_RM_HOME        = 0;  
     static final int CDMA_RM_AFFILIATED  = 1;  
-    static final int CDMA_RM_ANY         = 2;  
-
+    static final int CDMA_RM_ANY         = 2;
     
     static final int CDMA_SUBSCRIPTION_RUIM_SIM = 0; 
-    static final int CDMA_SUBSCRIPTION_NV       = 1; 
+    static final int CDMA_SUBSCRIPTION_NV       = 1;
 
     static final int PREFERRED_CDMA_SUBSCRIPTION = CDMA_SUBSCRIPTION_NV;
 
@@ -172,8 +155,6 @@ public interface Phone {
     static final int TTY_MODE_FULL = 1;
     static final int TTY_MODE_HCO = 2;
     static final int TTY_MODE_VCO = 3;
-
-     
 
     public static final int CDMA_OTA_PROVISION_STATUS_SPL_UNLOCKED = 0;
     public static final int CDMA_OTA_PROVISION_STATUS_SPC_RETRIES_EXCEEDED = 1;
@@ -187,544 +168,697 @@ public interface Phone {
     public static final int CDMA_OTA_PROVISION_STATUS_OTAPA_STARTED = 9;
     public static final int CDMA_OTA_PROVISION_STATUS_OTAPA_STOPPED = 10;
     public static final int CDMA_OTA_PROVISION_STATUS_OTAPA_ABORTED = 11;
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     ServiceState getServiceState();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     CellLocation getCellLocation();
-
     
     DataState getDataConnectionState();
-
     
     DataState getDataConnectionState(String apnType);
-
     
     DataActivityState getDataActivityState();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Context getContext();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void disableDnsCheck(boolean b);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isDnsCheckDisabled();
-
     
     State getState();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getPhoneName();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getPhoneType();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String[] getActiveApnTypes();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getActiveApnHost(String apnType);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     LinkProperties getLinkProperties(String apnType);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     LinkCapabilities getLinkCapabilities(String apnType);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     SignalStrength getSignalStrength();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForUnknownConnection(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForUnknownConnection(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForPreciseCallStateChanged(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForPreciseCallStateChanged(Handler h);
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForNewRingingConnection(Handler h, int what, Object obj);
 
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForNewRingingConnection(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForIncomingRing(Handler h, int what, Object obj);
 
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForIncomingRing(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForRingbackTone(Handler h, int what, Object obj);
 
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForRingbackTone(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForResendIncallMute(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForResendIncallMute(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForDisconnect(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForDisconnect(Handler h);
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForMmiInitiate(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForMmiInitiate(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForMmiComplete(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForMmiComplete(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void registerForEcmTimerReset(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void unregisterForEcmTimerReset(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public List<? extends MmiCode> getPendingMmiCodes();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void sendUssdResponse(String ussdMessge);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForServiceStateChanged(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForServiceStateChanged(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForSuppServiceNotification(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForSuppServiceNotification(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForSuppServiceFailed(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForSuppServiceFailed(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForInCallVoicePrivacyOn(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForInCallVoicePrivacyOn(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForInCallVoicePrivacyOff(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForInCallVoicePrivacyOff(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForCdmaOtaStatusChange(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForCdmaOtaStatusChange(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void registerForSubscriptionInfoReady(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void unregisterForSubscriptionInfoReady(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getIccRecordsLoaded();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     IccCard getIccCard();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void acceptCall() throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void rejectCall() throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void switchHoldingAndActive() throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean canConference();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void conference() throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void enableEnhancedVoicePrivacy(boolean enable, Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getEnhancedVoicePrivacy(Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean canTransfer();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void explicitCallTransfer() throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void clearDisconnected();
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Call getForegroundCall();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Call getBackgroundCall();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Call getRingingCall();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Connection dial(String dialString) throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean handlePinMmi(String dialString);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean handleInCallMmiCommands(String command) throws CallStateException;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void sendDtmf(char c);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void startDtmf(char c);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void stopDtmf();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void sendBurstDtmf(String dtmfString, int on, int off, Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setRadioPower(boolean power);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getMessageWaitingIndicator();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getCallForwardingIndicator();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getLine1Number();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getLine1AlphaTag();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setLine1Number(String alphaTag, String number, Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getVoiceMailNumber();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getVoiceMessageCount();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getVoiceMailAlphaTag();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setVoiceMailNumber(String alphaTag,
                             String voiceMailNumber,
                             Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getCallForwardingOption(int commandInterfaceCFReason,
                                   Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setCallForwardingOption(int commandInterfaceCFReason,
                                  int commandInterfaceCFAction,
                                  String dialingNumber,
                                  int timerSeconds,
                                  Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getOutgoingCallerIdDisplay(Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode,
                                     Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getCallWaiting(Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setCallWaiting(boolean enable, Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getAvailableNetworks(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setNetworkSelectionModeAutomatic(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void selectNetworkManually(OperatorInfo network,
                             Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setPreferredNetworkType(int networkType, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getPreferredNetworkType(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getSmscAddress(Message result);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setSmscAddress(String address, Message result);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getNeighboringCids(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setOnPostDialCharacter(Handler h, int what, Object obj);
 
-
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setMute(boolean muted);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getMute();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setEchoSuppressionEnabled(boolean enabled);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void invokeOemRilRequestRaw(byte[] data, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void invokeOemRilRequestStrings(String[] strings, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getDataCallList(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void updateServiceLocation();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void enableLocationUpdates();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void disableLocationUpdates();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setUnitTestMode(boolean f);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getUnitTestMode();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setBandMode(int bandMode, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void queryAvailableBandMode(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean getDataRoamingEnabled();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setDataRoamingEnabled(boolean enable);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void queryCdmaRoamingPreference(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setCdmaRoamingPreference(int cdmaRoamingType, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setCdmaSubscription(int cdmaSubscriptionType, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     SimulatedRadioControl getSimulatedRadioControl();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int enableApnType(String type);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int disableApnType(String type);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isDataConnectivityPossible();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isDataConnectivityPossible(String apnType);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getDeviceId();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getDeviceSvn();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getSubscriberId();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getIccSerialNumber();
-
     
-
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getCdmaMin();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isMinInfoReady();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getCdmaPrlVersion();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getEsn();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getMeid();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getMsisdn();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     String getImei();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public PhoneSubInfo getPhoneSubInfo();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public IccSmsInterfaceManager getIccSmsInterfaceManager();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setTTYMode(int ttyMode, Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void queryTTYMode(Message onComplete);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void activateCellBroadcastSms(int activate, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void getCellBroadcastSmsConfig(Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setCellBroadcastSmsConfig(int[] configValuesArray, Message response);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void notifyDataActivity();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getCdmaEriIconIndex();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getCdmaEriIconMode();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getCdmaEriText();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void exitEmergencyCallbackMode();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isOtaSpNumber(String dialStr);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean needsOtaServiceProvisioning();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForCallWaiting(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForCallWaiting(Handler h);
 
-
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForSignalInfo(Handler h, int what, Object obj) ;
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForSignalInfo(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForDisplayInfo(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForDisplayInfo(Handler h) ;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForNumberInfo(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForNumberInfo(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForRedirectedNumberInfo(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForRedirectedNumberInfo(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForLineControlInfo(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForLineControlInfo(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerFoT53ClirlInfo(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForT53ClirInfo(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerForT53AudioControlInfo(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterForT53AudioControlInfo(Handler h);
 
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setOnEcbModeExitResponse(Handler h, int what, Object obj);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void unsetOnEcbModeExitResponse(Handler h);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getLteOnCdmaMode();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isCspPlmnEnabled();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     IsimRecords getIsimRecords();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void requestIsimAuthentication(String nonce, Message response);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setVoiceMessageWaiting(int line, int countWaiting);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     UsimServiceTable getUsimServiceTable();
 }

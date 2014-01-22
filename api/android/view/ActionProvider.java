@@ -130,6 +130,8 @@ public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
     }
     
     public interface SubUiVisibilityListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSubUiVisibilityChanged(boolean isVisible);
     }
     

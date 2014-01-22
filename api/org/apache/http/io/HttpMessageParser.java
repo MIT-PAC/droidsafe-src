@@ -11,6 +11,8 @@ import org.apache.http.HttpMessage;
 
 public interface HttpMessageParser {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpMessage parse()
         throws IOException, HttpException;
 

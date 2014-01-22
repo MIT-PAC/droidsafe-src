@@ -408,6 +408,8 @@ public void onChildViewRemoved(View parent, View child) {
     
     public interface OnCheckedChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onCheckedChanged(RadioGroup group, int checkedId);
     }
     

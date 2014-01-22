@@ -304,6 +304,8 @@ public void run() {
     
     public interface OnFinished {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onSendFinished(IntentSender IntentSender, Intent intent,
                 int resultCode, String resultData, Bundle resultExtras);
     }

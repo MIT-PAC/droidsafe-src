@@ -238,13 +238,19 @@ void scanNextPath() {
     
     public interface OnScanCompletedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScanCompleted(String path, Uri uri);
     }
     
     public interface MediaScannerConnectionClient extends OnScanCompletedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onMediaScannerConnected();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScanCompleted(String path, Uri uri);
     }
 

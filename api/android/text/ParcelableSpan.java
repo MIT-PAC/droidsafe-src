@@ -8,5 +8,7 @@ import android.os.Parcelable;
 
 public interface ParcelableSpan extends Parcelable {
     
-    public abstract int getSpanTypeId();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int getSpanTypeId();
 }

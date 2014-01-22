@@ -9,8 +9,9 @@ import java.io.IOException;
 import org.apache.http.protocol.HttpContext;
 
 public interface HttpResponseInterceptor {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void process(HttpResponse response, HttpContext context) 
         throws HttpException, IOException;
 

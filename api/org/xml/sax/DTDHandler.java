@@ -6,17 +6,17 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface DTDHandler {
-
-
     
-    public abstract void notationDecl (String name,
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void notationDecl (String name,
                        String publicId,
                        String systemId)
     throws SAXException;
-
-
     
-    public abstract void unparsedEntityDecl (String name,
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void unparsedEntityDecl (String name,
                          String publicId,
                          String systemId,
                          String notationName)

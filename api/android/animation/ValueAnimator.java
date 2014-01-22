@@ -928,6 +928,8 @@ public void removeAllUpdateListeners() {
     
     public static interface AnimatorUpdateListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationUpdate(ValueAnimator animation);
 
     }

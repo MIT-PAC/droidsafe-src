@@ -8,10 +8,12 @@ import javax.sip.address.URI;
 
 public interface WWWAuthenticateHeader extends AuthorizationHeader {
     String NAME = "WWW-Authenticate";
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     URI getURI();
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setURI(URI uri);
 }

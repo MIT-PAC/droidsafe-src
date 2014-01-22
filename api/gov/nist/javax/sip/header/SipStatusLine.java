@@ -6,29 +6,37 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface SipStatusLine {
-
     
-    public abstract String getSipVersion();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String getSipVersion();
     
-    public abstract int getStatusCode();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int getStatusCode();
     
-    public abstract String getReasonPhrase();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String getReasonPhrase();
     
-    public abstract void setSipVersion(String sipVersion);
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setSipVersion(String sipVersion);
     
-    public abstract void setStatusCode(int statusCode);
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setStatusCode(int statusCode);
     
-    public abstract void setReasonPhrase(String reasonPhrase);
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void setReasonPhrase(String reasonPhrase);
     
-    public abstract String getVersionMajor();
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String getVersionMajor();
     
-    public abstract String getVersionMinor();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String getVersionMinor();
 
 }

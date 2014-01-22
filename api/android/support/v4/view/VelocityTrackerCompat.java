@@ -86,7 +86,11 @@ public static float getYVelocity(VelocityTracker tracker, int pointerId) {
     }
     
     interface VelocityTrackerVersionImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public float getXVelocity(VelocityTracker tracker, int pointerId);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public float getYVelocity(VelocityTracker tracker, int pointerId);
     }
     

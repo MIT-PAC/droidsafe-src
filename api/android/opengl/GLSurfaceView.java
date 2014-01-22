@@ -1586,32 +1586,50 @@ private void checkGLESVersion() {
     
     public interface GLWrapper {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         GL wrap(GL gl);
     }
     
     public interface Renderer {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onSurfaceCreated(GL10 gl, EGLConfig config);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onSurfaceChanged(GL10 gl, int width, int height);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onDrawFrame(GL10 gl);
     }
     
     public interface EGLContextFactory {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig eglConfig);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void destroyContext(EGL10 egl, EGLDisplay display, EGLContext context);
     }
     
     public interface EGLWindowSurfaceFactory {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display, EGLConfig config,
                 Object nativeWindow);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void destroySurface(EGL10 egl, EGLDisplay display, EGLSurface surface);
     }
     
     public interface EGLConfigChooser {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         EGLConfig chooseConfig(EGL10 egl, EGLDisplay display);
     }
 

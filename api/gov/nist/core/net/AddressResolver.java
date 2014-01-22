@@ -7,12 +7,9 @@ import droidsafe.annotations.*;
 import javax.sip.address.Hop;
 
 public interface AddressResolver {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Hop resolveAddress( Hop hop);
-
-
-
-
 
 }

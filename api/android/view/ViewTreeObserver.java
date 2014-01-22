@@ -610,26 +610,36 @@ void set(InternalInsetsInfo other) {
     
     public interface OnGlobalFocusChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onGlobalFocusChanged(View oldFocus, View newFocus);
     }
     
     public interface OnGlobalLayoutListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onGlobalLayout();
     }
     
     public interface OnPreDrawListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onPreDraw();
     }
     
     public interface OnTouchModeChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onTouchModeChanged(boolean isInTouchMode);
     }
     
     public interface OnScrollChangedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScrollChanged();
     }
     

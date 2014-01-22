@@ -888,9 +888,13 @@ public void cancel(int transitionType) {
     
     public interface TransitionListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void startTransition(LayoutTransition transition, ViewGroup container,
                 View view, int transitionType);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void endTransition(LayoutTransition transition, ViewGroup container,
                 View view, int transitionType);
     }

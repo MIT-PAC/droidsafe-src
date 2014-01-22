@@ -8,5 +8,7 @@ import junit.framework.TestSuite;
 
 public interface TestSuiteProvider {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     TestSuite getTestSuite();
 }

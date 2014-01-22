@@ -10,11 +10,19 @@ public interface PAssertedServiceHeader extends Header{
 
     public static final String NAME = "P-Asserted-Service";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setSubserviceIdentifiers(String subservices);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getSubserviceIdentifiers();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setApplicationIdentifiers(String appids);
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getApplicationIdentifiers();
 }

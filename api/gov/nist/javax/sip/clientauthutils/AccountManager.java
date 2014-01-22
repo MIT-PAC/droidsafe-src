@@ -8,8 +8,8 @@ import javax.sip.ClientTransaction;
 
 public interface AccountManager {
 
-    
-
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     UserCredentials getCredentials(ClientTransaction challengedTransaction, String realm);
 
 }

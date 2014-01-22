@@ -6,8 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface DownloadListener {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void onDownloadStart(String url, String userAgent,
             String contentDisposition, String mimetype, long contentLength);
 

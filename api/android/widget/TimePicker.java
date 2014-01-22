@@ -568,6 +568,8 @@ public int getMinute() {
     
     public interface OnTimeChangedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onTimeChanged(TimePicker view, int hourOfDay, int minute);
     }
 

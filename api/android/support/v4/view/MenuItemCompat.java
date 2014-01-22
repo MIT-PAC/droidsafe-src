@@ -88,7 +88,11 @@ public static MenuItem setActionView(MenuItem item, View view) {
     }
     
     interface MenuVersionImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean setShowAsAction(MenuItem item, int actionEnum);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public MenuItem setActionView(MenuItem item, View view);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.322 -0500", hash_original_field = "DB02EA7CAFC50D4ED26C0904D5112D55", hash_generated_field = "F83989AA2029EE1F6F60BC38E0C9593B")

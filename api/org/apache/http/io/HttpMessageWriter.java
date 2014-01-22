@@ -11,6 +11,8 @@ import org.apache.http.HttpMessage;
 
 public interface HttpMessageWriter {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void write(HttpMessage message)
         throws IOException, HttpException;
     

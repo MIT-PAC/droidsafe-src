@@ -332,6 +332,8 @@ void dispatchRatingChange(boolean fromUser) {
     
     public interface OnRatingBarChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser);
 
     }

@@ -91,6 +91,8 @@ public void report (String message, Throwable allocationSite) {
     }
     
     public static interface Reporter {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void report (String message, Throwable allocationSite);
     }
 

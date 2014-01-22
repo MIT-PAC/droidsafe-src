@@ -6,8 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.params.HttpParams;
 
-public interface CookieSpecFactory {    
+public interface CookieSpecFactory {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     CookieSpec newInstance(HttpParams params);
 
 }

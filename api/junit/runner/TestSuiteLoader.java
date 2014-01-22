@@ -6,6 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface TestSuiteLoader {
-	abstract public Class load(String suiteClassName) throws ClassNotFoundException;
-	abstract public Class reload(Class aClass) throws ClassNotFoundException;
+	abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public Class load(String suiteClassName) throws ClassNotFoundException;
+	abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public Class reload(Class aClass) throws ClassNotFoundException;
 }

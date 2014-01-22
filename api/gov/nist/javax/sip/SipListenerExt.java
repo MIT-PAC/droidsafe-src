@@ -7,7 +7,8 @@ import droidsafe.annotations.*;
 import javax.sip.SipListener;
 
 public interface SipListenerExt extends SipListener {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void processDialogTimeout(DialogTimeoutEvent timeoutEvent);
 }

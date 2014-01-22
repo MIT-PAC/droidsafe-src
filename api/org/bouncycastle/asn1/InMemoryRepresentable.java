@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public interface InMemoryRepresentable
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     DERObject getLoadedObject()
         throws IOException;
 }

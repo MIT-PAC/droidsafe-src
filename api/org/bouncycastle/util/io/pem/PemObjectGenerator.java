@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public interface PemObjectGenerator
 {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     PemObject generate()
         throws PemGenerationException;
 }

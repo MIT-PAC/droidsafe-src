@@ -268,12 +268,26 @@ private Object[] collectActivityLifecycleCallbacks() {
     }
     
     public interface ActivityLifecycleCallbacks {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityCreated(Activity activity, Bundle savedInstanceState);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityStarted(Activity activity);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityResumed(Activity activity);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityPaused(Activity activity);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityStopped(Activity activity);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivitySaveInstanceState(Activity activity, Bundle outState);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityDestroyed(Activity activity);
     }
     

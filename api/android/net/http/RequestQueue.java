@@ -623,8 +623,14 @@ public void requeueRequest(Request r) {
     }
     
     interface ConnectionManager {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         HttpHost getProxyHost();
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         Connection getConnection(Context context, HttpHost host);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean recycleConnection(Connection connection);
     }
 

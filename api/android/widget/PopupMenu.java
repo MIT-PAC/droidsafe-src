@@ -200,11 +200,15 @@ public void onMenuModeChange(MenuBuilder menu) {
     
     public interface OnDismissListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDismiss(PopupMenu menu);
     }
     
     public interface OnMenuItemClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onMenuItemClick(MenuItem item);
     }
     

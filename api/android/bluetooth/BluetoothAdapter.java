@@ -310,6 +310,8 @@ StateChangeCallbackWrapper(BluetoothStateChangeCallback
     }
     
     public interface BluetoothStateChangeCallback {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onBluetoothStateChange(boolean on);
     }
 

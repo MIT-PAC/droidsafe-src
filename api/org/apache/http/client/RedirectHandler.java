@@ -11,11 +11,13 @@ import org.apache.http.ProtocolException;
 import org.apache.http.protocol.HttpContext;
 
 public interface RedirectHandler {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean isRedirectRequested(HttpResponse response, HttpContext context);
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     URI getLocationURI(HttpResponse response, HttpContext context)
             throws ProtocolException;
 

@@ -203,6 +203,8 @@ public long getUsage() {
     }
     
     public interface QuotaUpdater {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void updateQuota(long newQuota);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.245 -0500", hash_original_field = "5AC474BA51F7B7C543F2DB5B1360A60E", hash_generated_field = "A7637B18C168C40831B0C5AF31A66C87")

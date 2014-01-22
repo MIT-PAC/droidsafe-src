@@ -7,10 +7,12 @@ import droidsafe.annotations.*;
 
 public interface LogRecord {
 
-    public abstract boolean equals(Object other);
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean equals(Object other);
 
-    
-
-    public abstract String toString();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String toString();
 
 }

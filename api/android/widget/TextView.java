@@ -13271,20 +13271,30 @@ public void onTouchModeChanged(boolean isInTouchMode) {
 
     public interface OnEditorActionListener {
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onEditorAction(TextView v, int actionId, KeyEvent event);
     }
 
     private interface TextViewPositionListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void updatePosition(int parentPositionX, int parentPositionY,
                                    boolean parentPositionChanged, boolean parentScrolled);
     }
 
     private interface CursorController extends ViewTreeObserver.OnTouchModeChangeListener {
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void show();
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void hide();
 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDetached();
     }
 

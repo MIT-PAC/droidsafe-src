@@ -349,19 +349,37 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
     }
     
     static interface AccessibilityDelegateImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Object newAccessiblityDelegateDefaultImpl();
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void sendAccessibilityEvent(Object delegate, View host, int eventType);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event);
     }

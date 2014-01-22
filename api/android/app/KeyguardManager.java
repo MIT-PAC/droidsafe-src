@@ -179,6 +179,8 @@ KeyguardLock(String tag) {
     
     public interface OnKeyguardExitResult {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onKeyguardExitResult(boolean success);
     }
     

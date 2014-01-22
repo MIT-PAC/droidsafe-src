@@ -194,28 +194,40 @@ P2pHandler(Looper looper) {
     
     public interface ChannelListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onChannelDisconnected();
     }
     
     public interface ActionListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSuccess();
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onFailure(int reason);
     }
     
     public interface PeerListListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPeersAvailable(WifiP2pDeviceList peers);
     }
     
     public interface ConnectionInfoListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onConnectionInfoAvailable(WifiP2pInfo info);
     }
     
     public interface GroupInfoListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onGroupInfoAvailable(WifiP2pGroup group);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.675 -0500", hash_original_field = "5E1B1AC77017D84819943BF67015D9E9", hash_generated_field = "842D9113C995AF1BEE59E95DB025DD8D")

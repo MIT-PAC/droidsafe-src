@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface Callable<V> {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     V call() throws Exception;
 }

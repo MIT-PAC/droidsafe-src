@@ -194,10 +194,20 @@ public static int getPointerCount(MotionEvent event) {
     }
     
     interface MotionEventVersionImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int findPointerIndex(MotionEvent event, int pointerId);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getPointerId(MotionEvent event, int pointerIndex);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public float getX(MotionEvent event, int pointerIndex);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public float getY(MotionEvent event, int pointerIndex);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getPointerCount(MotionEvent event);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.106 -0500", hash_original_field = "FC4C290B75F77C9110197620363F9111", hash_generated_field = "CA4F36A588CFE36A93CA952406390368")

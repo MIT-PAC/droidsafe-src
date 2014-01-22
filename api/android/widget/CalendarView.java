@@ -1033,6 +1033,8 @@ private void updateSelectionPositions() {
     
     public interface OnDateChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth);
     }
 

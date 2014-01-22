@@ -7,5 +7,7 @@ import droidsafe.annotations.*;
 
 public interface Filterable {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     Filter getFilter();
 }

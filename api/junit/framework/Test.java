@@ -7,7 +7,11 @@ import droidsafe.annotations.*;
 
 public interface Test {
     
-    public abstract int countTestCases();
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int countTestCases();
     
-    public abstract void run(TestResult result);
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void run(TestResult result);
 }

@@ -11,10 +11,12 @@ public interface PUserDatabaseHeader extends Parameters,Header
 {
     public final static String NAME = "P-User-Database";
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getDatabaseName();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void setDatabaseName(String name);
-
-
 
 }

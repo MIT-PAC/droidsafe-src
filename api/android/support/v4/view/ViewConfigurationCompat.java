@@ -58,6 +58,8 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
     }
     
     interface ViewConfigurationVersionImpl {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public int getScaledPagingTouchSlop(ViewConfiguration config);
     }
     

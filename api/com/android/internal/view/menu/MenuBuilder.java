@@ -1382,12 +1382,18 @@ public void setCurrentMenuInfo(ContextMenuInfo menuInfo) {
     
     public interface Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onMenuModeChange(MenuBuilder menu);
     }
     
     public interface ItemInvoker {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean invokeItem(MenuItemImpl item);
     }
 

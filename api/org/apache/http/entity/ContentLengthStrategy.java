@@ -12,6 +12,8 @@ public interface ContentLengthStrategy {
     public static final int IDENTITY         = -1;
     public static final int CHUNKED          = -2;
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     long determineLength(HttpMessage message) throws HttpException;
             
 }

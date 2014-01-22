@@ -7,10 +7,12 @@ import droidsafe.annotations.*;
 import javax.net.ssl.SSLSession;
 
 public interface SSLClientSessionCache {
-
   
-  public byte[] getSessionData(String host, int port);
-
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public byte[] getSessionData(String host, int port);
   
-  public void putSessionData(SSLSession session, byte[] sessionData);
+  @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void putSessionData(SSLSession session, byte[] sessionData);
 }

@@ -7,47 +7,63 @@ import droidsafe.annotations.*;
 
 public interface DataInput {
     
-    public abstract boolean readBoolean() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    boolean readBoolean() throws IOException;
     
-    public abstract byte readByte() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    byte readByte() throws IOException;
     
-    public abstract char readChar() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    char readChar() throws IOException;
     
-    public abstract double readDouble() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    double readDouble() throws IOException;
     
-    public abstract float readFloat() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    float readFloat() throws IOException;
     
-    public abstract void readFully(byte[] dst) throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void readFully(byte[] dst) throws IOException;
     
-    public abstract void readFully(byte[] dst, int offset, int byteCount) throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    void readFully(byte[] dst, int offset, int byteCount) throws IOException;
     
-    public abstract int readInt() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int readInt() throws IOException;
     
-    public abstract String readLine() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String readLine() throws IOException;
     
-    public abstract long readLong() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    long readLong() throws IOException;
     
-    public abstract short readShort() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    short readShort() throws IOException;
     
-    public abstract int readUnsignedByte() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int readUnsignedByte() throws IOException;
     
-    public abstract int readUnsignedShort() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int readUnsignedShort() throws IOException;
     
-    public abstract String readUTF() throws IOException;
-
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    String readUTF() throws IOException;
     
-    public abstract int skipBytes(int count) throws IOException;
+    public abstract @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    int skipBytes(int count) throws IOException;
 }

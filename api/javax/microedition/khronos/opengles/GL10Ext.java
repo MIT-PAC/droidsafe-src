@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public interface GL10Ext extends GL {
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int glQueryMatrixxOES(
         int[] mantissa,
         int mantissaOffset,
@@ -14,6 +16,8 @@ public interface GL10Ext extends GL {
         int exponentOffset
     );
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int glQueryMatrixxOES(
         java.nio.IntBuffer mantissa,
         java.nio.IntBuffer exponent

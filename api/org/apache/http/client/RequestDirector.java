@@ -13,9 +13,9 @@ import org.apache.http.HttpResponse;
 import org.apache.http.protocol.HttpContext;
 
 public interface RequestDirector {
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpResponse execute(HttpHost target, HttpRequest request,
                          HttpContext context)
         throws HttpException, IOException

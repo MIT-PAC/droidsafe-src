@@ -931,11 +931,15 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     
     public interface OnNavigationListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onNavigationItemSelected(int itemPosition, long itemId);
     }
     
     public interface OnMenuVisibilityListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onMenuVisibilityChanged(boolean isVisible);
     }
     

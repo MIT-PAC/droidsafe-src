@@ -379,11 +379,15 @@ public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
     
     public static interface ViewBinder {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean setViewValue(View view, Cursor cursor, int columnIndex);
     }
     
     public static interface CursorToStringConverter {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         CharSequence convertToString(Cursor cursor);
     }
     

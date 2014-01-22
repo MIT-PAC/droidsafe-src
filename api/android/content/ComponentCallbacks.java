@@ -8,8 +8,11 @@ import android.content.res.Configuration;
 
 public interface ComponentCallbacks {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void onConfigurationChanged(Configuration newConfig);
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void onLowMemory();
 }

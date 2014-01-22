@@ -8,5 +8,7 @@ import droidsafe.annotations.*;
 public interface IInterface
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public IBinder asBinder();
 }

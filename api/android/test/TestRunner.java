@@ -493,12 +493,22 @@ public IntermediateTime(String name, long timeInNS) {
     }
     
     public interface Listener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void started(String className);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void finished(String className);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void performance(String className,
                 long itemTimeNS, int iterations,
                 List<IntermediateTime> itermediates);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void passed(String className);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void failed(String className, Throwable execption);
     }
 

@@ -9,5 +9,7 @@ public interface ExtendedDigest
     extends Digest
 {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getByteLength();
 }

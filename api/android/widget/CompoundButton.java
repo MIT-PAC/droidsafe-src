@@ -380,6 +380,8 @@ private SavedState(Parcel in) {
     
     public static interface OnCheckedChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onCheckedChanged(CompoundButton buttonView, boolean isChecked);
     }
 

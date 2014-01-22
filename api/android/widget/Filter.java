@@ -205,11 +205,15 @@ public void handleMessage(Message msg) {
     
     public static interface FilterListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onFilterComplete(int count);
     }
     
     public interface Delayer {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         long getPostingDelay(CharSequence constraint);
     }
 

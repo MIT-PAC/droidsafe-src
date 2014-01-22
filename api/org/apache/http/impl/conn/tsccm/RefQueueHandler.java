@@ -7,8 +7,9 @@ import droidsafe.annotations.*;
 import java.lang.ref.Reference;
 
 public interface RefQueueHandler {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void handleReference(Reference<?> ref)
         ;
 }

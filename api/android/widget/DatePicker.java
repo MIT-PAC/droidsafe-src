@@ -778,6 +778,8 @@ private SavedState(Parcel in) {
     
     public interface OnDateChangedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth);
     }
 

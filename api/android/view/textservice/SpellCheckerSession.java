@@ -419,6 +419,8 @@ public InternalListener(SpellCheckerSessionListenerImpl spellCheckerSessionListe
     
     public interface SpellCheckerSessionListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onGetSuggestions(SuggestionsInfo[] results);
     }
 

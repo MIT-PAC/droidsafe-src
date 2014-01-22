@@ -1155,6 +1155,8 @@ public synchronized void start() {
     
     public static interface UncaughtExceptionHandler {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void uncaughtException(Thread thread, Throwable ex);
     }
 

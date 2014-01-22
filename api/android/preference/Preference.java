@@ -2058,18 +2058,26 @@ public BaseSavedState(Parcelable superState) {
     
     public interface OnPreferenceChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onPreferenceChange(Preference preference, Object newValue);
     }
     
     public interface OnPreferenceClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onPreferenceClick(Preference preference);
     }
     
     interface OnPreferenceChangeInternalListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPreferenceChange(Preference preference);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPreferenceHierarchyChange(Preference preference);
     }
 

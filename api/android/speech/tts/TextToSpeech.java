@@ -1109,11 +1109,15 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_113215503 =                 errorResult;
     
     public interface OnInitListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onInit(int status);
     }
     
     public interface OnUtteranceCompletedListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onUtteranceCompleted(String utteranceId);
     }
     

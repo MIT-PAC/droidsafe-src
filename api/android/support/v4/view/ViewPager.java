@@ -2058,14 +2058,22 @@ public LayoutParams(Context context, AttributeSet attrs) {
     
     public interface OnPageChangeListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPageSelected(int position);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPageScrollStateChanged(int state);
     }
     
     interface OnAdapterChangeListener {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onAdapterChanged(PagerAdapter oldAdapter, PagerAdapter newAdapter);
     }
     

@@ -146,6 +146,8 @@ public final class Headers {
     private final static int HASH_PRAGMA = -980228804;
     
     public interface HeaderCallback {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void header(String name, String value);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.409 -0500", hash_original_field = "D8035A61A6E22909C254BB44A1138814", hash_generated_field = "8613521BF28512C3BE1153253E6BB597")

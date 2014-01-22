@@ -138,6 +138,8 @@ public void setMessageLogging(Printer printer) {
     }
     
     public static interface Profiler {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void profile(Message message, long wallStart, long wallTime,
                 long threadStart, long threadTime);
     }

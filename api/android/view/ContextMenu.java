@@ -8,23 +8,29 @@ import android.graphics.drawable.Drawable;
 
 public interface ContextMenu extends Menu {
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ContextMenu setHeaderTitle(int titleRes);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ContextMenu setHeaderTitle(CharSequence title);
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ContextMenu setHeaderIcon(int iconRes);
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ContextMenu setHeaderIcon(Drawable icon);
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public ContextMenu setHeaderView(View view);
     
-    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void clearHeader();
-    
     
     public interface ContextMenuInfo {
     }

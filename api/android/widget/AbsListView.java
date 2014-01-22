@@ -3419,25 +3419,35 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         
         public static int SCROLL_STATE_FLING = 2;
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScrollStateChanged(AbsListView view, int scrollState);
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                 int totalItemCount);
     }
     
     public interface SelectionBoundsAdjuster {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void adjustListItemSelectionBounds(Rect bounds);
     }
     
     public interface MultiChoiceModeListener extends ActionMode.Callback {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onItemCheckedStateChanged(ActionMode mode,
                 int position, long id, boolean checked);
     }
     
     public static interface RecyclerListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onMovedToScrapHeap(View view);
     }
     

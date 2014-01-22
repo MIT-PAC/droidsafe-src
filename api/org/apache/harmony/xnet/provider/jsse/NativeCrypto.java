@@ -547,13 +547,19 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
     
     public interface SSLHandshakeCallbacks {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void verifyCertificateChain(byte[][] asn1DerEncodedCertificateChain, String authMethod)
             throws CertificateException;
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void clientCertificateRequested(byte[] keyTypes,
                                                byte[][] asn1DerEncodedX500Principals)
             throws CertificateEncodingException, SSLException;
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void handshakeCompleted();
     }
     

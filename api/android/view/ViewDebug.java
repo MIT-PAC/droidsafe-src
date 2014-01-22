@@ -1871,8 +1871,14 @@ private void saveTraces() {
     }
     
     interface ViewOperation<T> {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         T[] pre();
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void run(T... data);
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void post(T... data);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.506 -0500", hash_original_field = "47571E059F5D32EC7487DF4B83C42941", hash_generated_field = "D9BFBAE0C25DC40F4D9BB455F91F6D0A")

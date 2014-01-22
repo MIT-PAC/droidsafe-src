@@ -7,7 +7,8 @@ import droidsafe.annotations.*;
 import javax.crypto.spec.DHParameterSpec;
 
 public interface DHKey {
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public DHParameterSpec getParams();
 }

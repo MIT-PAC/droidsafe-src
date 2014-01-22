@@ -375,6 +375,8 @@ private void requestIconAndSendResult(String url, IconListener listener) {
     
     public interface IconListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onReceivedIcon(String url, Bitmap icon);
     }
 

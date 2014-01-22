@@ -25,13 +25,25 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 
 public interface IApplicationThread extends IInterface {
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void schedulePauseActivity(IBinder token, boolean finished, boolean userLeaving,
             int configChanges) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleStopActivity(IBinder token, boolean showWindow,
             int configChanges) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleWindowVisibility(IBinder token, boolean showWindow) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleSleeping(IBinder token, boolean sleeping) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleResumeActivity(IBinder token, boolean isForward) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleSendResult(IBinder token, List<ResultInfo> results) throws RemoteException;
     void scheduleLaunchActivity(Intent intent, IBinder token, int ident,
             ActivityInfo info, Configuration curConfig, CompatibilityInfo compatInfo,
@@ -42,27 +54,47 @@ public interface IApplicationThread extends IInterface {
     void scheduleRelaunchActivity(IBinder token, List<ResultInfo> pendingResults,
             List<Intent> pendingNewIntents, int configChanges,
             boolean notResumed, Configuration config) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleNewIntent(List<Intent> intent, IBinder token) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleDestroyActivity(IBinder token, boolean finished,
             int configChanges) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleReceiver(Intent intent, ActivityInfo info, CompatibilityInfo compatInfo,
             int resultCode, String data, Bundle extras, boolean sync) throws RemoteException;
     static final int BACKUP_MODE_INCREMENTAL = 0;
     static final int BACKUP_MODE_FULL = 1;
     static final int BACKUP_MODE_RESTORE = 2;
     static final int BACKUP_MODE_RESTORE_FULL = 3;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleCreateBackupAgent(ApplicationInfo app, CompatibilityInfo compatInfo,
             int backupMode) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleDestroyBackupAgent(ApplicationInfo app, CompatibilityInfo compatInfo)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleCreateService(IBinder token, ServiceInfo info,
             CompatibilityInfo compatInfo) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleBindService(IBinder token,
             Intent intent, boolean rebind) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleUnbindService(IBinder token,
             Intent intent) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
             int flags, Intent args) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleStopService(IBinder token) throws RemoteException;
     static final int DEBUG_OFF = 0;
     static final int DEBUG_ON = 1;
@@ -73,38 +105,82 @@ public interface IApplicationThread extends IInterface {
             int debugMode, boolean restrictedBackupMode, boolean persistent,
             Configuration config, CompatibilityInfo compatInfo, Map<String, IBinder> services,
             Bundle coreSettings) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleExit() throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleSuicide() throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void requestThumbnail(IBinder token) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleConfigurationChanged(Configuration config) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void updateTimeZone() throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void clearDnsCache() throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setHttpProxy(String proxy, String port, String exclList) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void processInBackground() throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void dumpService(FileDescriptor fd, IBinder servicetoken, String[] args)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
             int resultCode, String data, Bundle extras, boolean ordered, boolean sticky)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleLowMemory() throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleActivityConfigurationChanged(IBinder token) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void profilerControl(boolean start, String path, ParcelFileDescriptor fd, int profileType)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void dumpHeap(boolean managed, String path, ParcelFileDescriptor fd)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setSchedulingGroup(int group) throws RemoteException;
     void getMemoryInfo(Debug.MemoryInfo outInfo) throws RemoteException;
     static final int PACKAGE_REMOVED = 0;
     static final int EXTERNAL_STORAGE_UNAVAILABLE = 1;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void dispatchPackageBroadcast(int cmd, String[] packages) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleCrash(String msg) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void dumpActivity(FileDescriptor fd, IBinder servicetoken, String prefix, String[] args)
             throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void setCoreSettings(Bundle coreSettings) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void updatePackageCompatibilityInfo(String pkg, CompatibilityInfo info) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void scheduleTrimMemory(int level) throws RemoteException;
     Debug.MemoryInfo dumpMemInfo(FileDescriptor fd, boolean checkin, boolean all,
             String[] args) throws RemoteException;
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException;
 
     String descriptor = "android.app.IApplicationThread";

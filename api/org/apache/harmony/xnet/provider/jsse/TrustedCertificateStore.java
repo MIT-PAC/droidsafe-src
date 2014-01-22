@@ -374,6 +374,8 @@ public X509Certificate findIssuer(final X509Certificate c) {
     }
     
     private static interface CertSelector {
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean match(X509Certificate cert);
     }
     

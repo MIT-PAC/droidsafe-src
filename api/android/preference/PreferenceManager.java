@@ -839,21 +839,29 @@ void dispatchNewIntent(Intent intent) {
     
     interface OnPreferenceTreeClickListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference);
     }
     
     public interface OnActivityResultListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onActivityResult(int requestCode, int resultCode, Intent data);
     }
     
     public interface OnActivityStopListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityStop();
     }
     
     public interface OnActivityDestroyListener {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onActivityDestroy();
     }
 

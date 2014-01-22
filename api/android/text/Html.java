@@ -376,11 +376,15 @@ private Html() { }
     
     public static interface ImageGetter {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public Drawable getDrawable(String source);
     }
     
     public static interface TagHandler {
         
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void handleTag(boolean opening, String tag,
                                  Editable output, XMLReader xmlReader);
     }
