@@ -34,7 +34,7 @@ public class ListApiMethods extends ApiUsageListing {
         super();
     }
     
-    public void saveApiList(String fileName, boolean useModifier) throws FileNotFoundException {
+    public void saveApiList(String fileName, boolean useModifier, boolean classify) throws FileNotFoundException {
         
         PrintStream outStream = new PrintStream(fileName);
         for(SootClass cls: Scene.v().getClasses()) {
@@ -42,29 +42,30 @@ public class ListApiMethods extends ApiUsageListing {
                 String line = '"' + method.getSignature() + '"';
                 if (useModifier && method.getModifiers() != 0)
                     line = soot.Modifier.toString(method.getModifiers()) + ":" + line;
+                if (classify) {
+                   String classification = null;
+                   int modifiers = method.getModifiers();
+                   if (soot.Modifier.isAbstract(modifiers)) {
+                       classification = "@DSSpec(DSCat.ABSTRACT_METHOD) - @DSComment(\"Abstract Method\")";  
+                   }
+                   else if (soot.Modifier.isPrivate(modifiers)) {
+                       classification = "@DSBan(DSCat.PRIVATE_METHOD) - @DSComment(\"Private Method\")";  
+                   }
+                   else if (!soot.Modifier.isProtected(modifiers) && !soot.Modifier.isPublic(modifiers)) {
+                       classification = "@DSBan(DSCat.DEFAULT_MODIFIER) - @DSComment(\"Package priviledge\")";  
+                   }
+                   else if (SafeAndroidClassesAndMethods.v().isSafeMethod(method)) {
+                       classification = "@DSSafe(DSCat.SAFE_LIST) - @DSComment(\"From safe class list\")";                                     
+                   }
+                   if (classification != null)
+                       line = classification + "-" +  line;         
+                }
                 outStream.println(line);
             }
         }    
         outStream.close();
     }
     
-    public void loadSafeList(String listName) {
-        InputStream listFile;
-        try {
-            listFile = new FileInputStream(listName);
-            List<String> list = IOUtils.readLines(listFile);          
-            for (String apiClass: list) {
-                apiClass = apiClass.trim();
-                if (apiClass.startsWith("/^\\s*#/") || apiClass.startsWith("#")) {
-                    continue;
-                }
-                safeClassSet.add(apiClass);
-            }
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }            
-    }
     /**
      * @param args
      */
@@ -72,8 +73,7 @@ public class ListApiMethods extends ApiUsageListing {
         // TODO Auto-generated method stub
         Options options = new Options();
         options.addOption("o", "out",     true,  "output filename");
-        options.addOption("c", "classify", true, "automatic classification");
-        options.addOption("s", "safelist", true,  "list of safe classes");
+        options.addOption("c", "classify", false, "automatic classification");
         options.addOption("a", "apijar",  true,  "Optional API jar file");
 
         if (args.length == 0){
@@ -111,6 +111,11 @@ public class ListApiMethods extends ApiUsageListing {
             return;
         }
         
+        boolean classify = false;
+        
+        if (commandLine.hasOption("classify"))
+            classify = true;
+        
         StringBuilder cp = new StringBuilder();
         cp.append(".");
         for (String jarName: libJars) {
@@ -127,8 +132,13 @@ public class ListApiMethods extends ApiUsageListing {
         
         if (commandLine.hasOption("out")) {
             String outFile = commandLine.getOptionValue("out");
+
             try {
-                listing.saveApiList(outFile, true);
+                if (classify)
+                    listing.saveApiList(outFile, false, classify);
+                else
+                    listing.saveApiList(outFile, true, false);
+
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
