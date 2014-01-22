@@ -50,11 +50,15 @@ public class RemoveStupidOverrides {
     public static void run() {
         RemoveStupidOverrides transformer = new RemoveStupidOverrides();
         for (SootClass clz : Scene.v().getClasses()) {
-            SootMethod[] methods = clz.getMethods().toArray(new SootMethod[0]);
+            String clzName = clz.getName();
+            // Do not touch classes specially treated by JSA
+            if (!clzName.equals("java.lang.StringBuffer") && !clzName.equals("java.lang.StringBuilder")) {
+                SootMethod[] methods = clz.getMethods().toArray(new SootMethod[0]);
                 for (SootMethod meth : methods) {
                     if (meth.isConcrete() && !meth.isStatic() && !meth.isConstructor())
                         transformer.removeMethodIfStupid(clz, meth);
                 }
+            }
         }
     }
 
