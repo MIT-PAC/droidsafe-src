@@ -442,7 +442,9 @@ public class ResourcesSoot {
                 //Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
                 Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
         
-        mViewLocal = Jimple.v().newLocal("view", RefType.v("android.view.View"));
+        String localView = "view"; 
+
+        mViewLocal = Jimple.v().newLocal(localView, RefType.v("android.view.View"));
         
         // android.content.Context paramActivity;
         mInitLayoutBody.getLocals().add(mArgContext);
@@ -608,9 +610,15 @@ public class ResourcesSoot {
         
         Chain<Unit> units = mInitLayoutBody.getUnits();
         
+
+        String viewLocalName = "viewLocal" + UNIQUE_ID;
+        Local viewLocal = Jimple.v().newLocal(viewLocalName, RefType.v("android.view.View"));
+        mInitLayoutBody.getLocals().add(viewLocal);
+
         //logger.warn("mArgContext {}", mArgContext);
         FieldRef  fieldRef = Jimple.v().newStaticFieldRef(uiObj.sootField.makeRef());
-        Stmt stmt = Jimple.v().newAssignStmt(mViewLocal, fieldRef);
+
+        Stmt stmt = Jimple.v().newAssignStmt(viewLocal, fieldRef);
         
         // localView =  fieldRef
         units.add(stmt);
@@ -625,7 +633,7 @@ public class ResourcesSoot {
                 Jimple.v().newAssignStmt(castLocal, Jimple.v().newCastExpr(mArgContext,RefType.v(listenerClass)));
         units.add(castStmt);
         
-        Expr invokeExpr = Jimple.v().newVirtualInvokeExpr(castLocal, method.makeRef(), mViewLocal);
+        Expr invokeExpr = Jimple.v().newVirtualInvokeExpr(castLocal, method.makeRef(), viewLocal);
         stmt = Jimple.v().newInvokeStmt(invokeExpr);
         
         units.add(stmt);
