@@ -142,6 +142,9 @@ public class JSAUtils {
 //        }
 //    }
 
+    /**
+     * Set JSA hotspots to be all system methods that have a string as a parameter.
+     */
     public static void setupSpecHotspots() {
         Set<SootMethod> systemMethods = getSystemMethodsWithStringArgs();
         CallGraph cg = Scene.v().getCallGraph();
@@ -158,20 +161,27 @@ public class JSAUtils {
                     for (Unit unit : body.getUnits()) {
                         Stmt stmt = (Stmt) unit;
                         if (stmt.containsInvokeExpr()) {
-                            Iterator<Edge> edges = cg.edgesOutOf(stmt);
-                            boolean done = false;
-                            while (edges.hasNext() && !done) {
-                                SootMethod tgt = edges.next().getTgt().method();
-                                if (systemMethods.contains(tgt)) {
-                                    InvokeExpr expr = stmt.getInvokeExpr();
-                                    List<InvokeExpr> exprs = methodToInvokeExprsMap.get(tgt);
-                                    if (exprs == null) {
-                                        exprs = new ArrayList<InvokeExpr>();
-                                        methodToInvokeExprsMap.put(tgt, exprs);
+                            boolean containsHotspot = false;
+                            InvokeExpr expr = stmt.getInvokeExpr();
+                            SootMethod tgt = expr.getMethod();
+                            if (tgt != null && API.v().isSystemMethod(tgt)) {
+                                containsHotspot = true;
+                            } else {
+                                Iterator<Edge> edges = cg.edgesOutOf(stmt);                            
+                                while (edges.hasNext() && !containsHotspot) {
+                                    tgt = edges.next().getTgt().method();
+                                    if (systemMethods.contains(tgt)) {
+                                        containsHotspot = true;
                                     }
-                                    exprs.add(expr);
-                                    done = true;
                                 }
+                            }
+                            if (containsHotspot) {
+                                List<InvokeExpr> exprs = methodToInvokeExprsMap.get(tgt);
+                                if (exprs == null) {
+                                    exprs = new ArrayList<InvokeExpr>();
+                                    methodToInvokeExprsMap.put(tgt, exprs);
+                                }
+                                exprs.add(expr);
                             }
                         }
                     }
