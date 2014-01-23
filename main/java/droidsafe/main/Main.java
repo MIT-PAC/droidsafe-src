@@ -42,6 +42,7 @@ import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.StartActivityTransformStats;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.VATransformsSuite;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
@@ -306,7 +307,7 @@ public class Main {
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-        if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Converting Class.getName calls to class name strings.");
@@ -347,6 +348,21 @@ public class Main {
             VATransformsSuite.run();
             driverMsg("Finished Value Analysis Transforms Suite: " + vaTimer);
 
+            if (Config.v().dumpICCStats) {
+                driverMsg("Dumping ICC Stats");
+                monitor.subTask("Dumping ICC Stats");
+                StopWatch iccStatsTimer = new StopWatch();
+                iccStatsTimer.start();
+                StartActivityTransformStats.run();
+                iccStatsTimer.stop();
+                monitor.worked(1);
+                if (monitor.isCanceled()) {
+                    return DroidsafeExecutionStatus.CANCEL_STATUS;
+                }
+                driverMsg("Finished Computing ICC Stats: " + iccStatsTimer.toString());
+           }
+
+
             driverMsg("Undoing String Analysis Result Injection.");
             monitor.subTask("Undoing String Analysis Result Injection.");
             UndoJSAResultInjection.run();
@@ -377,9 +393,9 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (Config.v().computeVAStats) {
-            driverMsg("Computing Value Analysis Stats");
-            monitor.subTask("Value Analysis Stats");
+        if (Config.v().dumpVAStats) {
+            driverMsg("Dumping Value Analysis Stats");
+            monitor.subTask("Dumping Value Analysis Stats");
             StopWatch vaStatsTimer = new StopWatch();
             vaStatsTimer.start();
             VAStats.run();
@@ -388,7 +404,7 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer.toString());
+            driverMsg("Finished Dumping Value Analysis Stats: " + vaStatsTimer.toString());
         }
 
         // print out what modeling is required for this application
