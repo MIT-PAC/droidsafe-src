@@ -134,8 +134,6 @@ public class ResourcesSoot {
     
     private Local mArgContext;
     
-    private Local mViewLocal;
-    
     /** body of initLayout_ID */
     private JimpleBody mInitLayoutBody;
     
@@ -442,13 +440,8 @@ public class ResourcesSoot {
                 //Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
                 Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
         
-        String localView = "view"; 
-
-        mViewLocal = Jimple.v().newLocal(localView, RefType.v("android.view.View"));
-        
         // android.content.Context paramActivity;
         mInitLayoutBody.getLocals().add(mArgContext);
-        mInitLayoutBody.getLocals().add(mViewLocal);
         
         // argContext = @paramter0
         Chain<Unit> units = mInitLayoutBody.getUnits();
