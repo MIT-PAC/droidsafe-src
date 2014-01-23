@@ -223,8 +223,7 @@ public class Harness {
 	 * @param body
 	 */
 	private int intentFilterCount = 0;
-	private void injectIntentFilter(Local compLocal, Local stringLocal, 
-				List<IntentFilter> intentFilters, StmtBody body, Local appLocal) {
+	private void injectIntentFilter(Local compLocal, List<IntentFilter> intentFilters, StmtBody body, Local appLocal) {
 		
 		if (intentFilters.size() == 0)
 			return;
@@ -280,6 +279,10 @@ public class Harness {
 			body.getUnits().add(initStmt);
 			
 			for (String action: intentFilter.actions) {
+			    Local stringLocal = Jimple.v().newLocal(String.format("__dsActionString%03d", LOCAL_COUNTER++),  
+			            RefType.v("java.lang.String"));
+			    body.getLocals().add(stringLocal);
+		
 				//localString = "constant"
 				body.getUnits().add(Jimple.v().
 								newAssignStmt(stringLocal, StringConstant.v(action)));
@@ -292,6 +295,10 @@ public class Harness {
 			}
 			
 			for (String category: intentFilter.categories) {
+			    Local stringLocal = Jimple.v().newLocal(String.format("__dsCategoryString%03d", LOCAL_COUNTER++),  
+			            RefType.v("java.lang.String"));
+			    body.getLocals().add(stringLocal);
+		
 				//localString = "constant"
 				body.getUnits().add(Jimple.v().
 								newAssignStmt(stringLocal, StringConstant.v(category)));
@@ -324,7 +331,7 @@ public class Harness {
 	}
 	
 	
-	int counter = 0;
+	int LOCAL_COUNTER = 0;
 		
 	/**
 	 * 
@@ -370,15 +377,12 @@ public class Harness {
 		}
 
 		String name = String.format("__ds__%s%03d", 
-				compType.substring(compType.lastIndexOf(".") + 1), counter++);
+				compType.substring(compType.lastIndexOf(".") + 1), LOCAL_COUNTER++);
 		
 		//Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
 		Local compLocal = Jimple.v().newLocal(name,  compClass.getType());
 		body.getLocals().add(compLocal);
 		
-		Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
-		    RefType.v("java.lang.String"));
-		body.getLocals().add(stringLocal);
 		
 		//Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
 		//        RefType.v(compType)); 
@@ -401,7 +405,7 @@ public class Harness {
         //add to globals map for querying
         globalsMap.put(compClass, compField);
 		
-		injectIntentFilter(compLocal, stringLocal, intentFilterList, body, appLocal);
+		injectIntentFilter(compLocal, intentFilterList, body, appLocal);
 	        
 		// Call runtime init
 		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
@@ -492,7 +496,6 @@ public class Harness {
 						makeInvokeExpression(droidsafeInit, null, list))); 
 		
 		// Deal with activities addressed in XML file
-		int counter = 0;
 		SootMethod contextInit;
 		contextInit = Scene.v().getMethod(componentInitMethod.get(Components.SERVICE_CLASS));
 	
