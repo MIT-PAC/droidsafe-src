@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Type;
 import soot.util.Chain;
 
 import droidsafe.utils.SootUtils;
@@ -48,6 +49,7 @@ public class ApiCalledByApi extends ApiUsageListing{
     private Map<SootMethod, Set<SootMethod>> callerSetMap = new HashMap<SootMethod, Set<SootMethod>>();
     private Set<SootMethod> noCalleeSet = new HashSet<SootMethod>();
     private Set<SootMethod> privateNoCallerSet = new HashSet<SootMethod>();
+    protected HashSet<SootMethod> interfaceParameterMethodSet = new HashSet<SootMethod>();
     
     private int privateCount = 0;
     private int publicCount = 0;
@@ -57,6 +59,24 @@ public class ApiCalledByApi extends ApiUsageListing{
         super();
     }
     
+    public void buildInterfaceApiMap() {
+        for (SootClass  clz: Scene.v().getClasses()) {
+            for (SootMethod method: clz.getMethods()) {
+                if (method.isAbstract())
+                    continue;
+                for (Type type: method.getParameterTypes()) {
+                    if (type instanceof soot.RefType) {
+                        SootClass clazz = ((soot.RefType)type).getSootClass();
+                        if (clazz.isInterface() && !clazz.isApplicationClass()) {
+                            logger.info("method {} uses API interface", method);
+                            interfaceParameterMethodSet.add(method); 
+                        }
+                    }
+                }
+
+            }
+        }
+    }
     
     public void buildCallerSetMap() {
         for (SootClass  clz: Scene.v().getClasses()) {
@@ -177,7 +197,7 @@ public class ApiCalledByApi extends ApiUsageListing{
        for (String methodSig: methodList) {
            printStream.printf("%s \n", methodSig);
        }
-       
+       printApiWithInterfaceParam();
     }
     
     
@@ -187,6 +207,31 @@ public class ApiCalledByApi extends ApiUsageListing{
      */
     public void printPublicWithNoCallee(String fileName) {
         
+    }
+
+    public void printApiWithInterfaceParam() {
+        
+        List<String>methodList = new ArrayList<String>(interfaceParameterMethodSet.size());
+        
+        for (SootMethod method: this.interfaceParameterMethodSet) {
+            logger.info("method: {}", method);
+            methodList.add(method.toString());
+        }
+        Collections.sort(methodList);
+        
+        printStream.printf("----------------------------------------------\n");
+        printStream.printf("\nMethod with API Interface parameters: \n");
+        printStream.printf("----------------------\n");
+        for (String methodSig: methodList) {
+            try {
+            SootMethod method = Scene.v().getMethod(methodSig);       
+            printStream.printf("%s \n",  method);
+            }
+            catch (Exception e) {
+                //logger.warn("exception {}", e);
+                logger.info("method {} not availalbe ", methodSig);
+            }
+        }
     }
        
     public void printCallByTree(String callbyFile){
@@ -305,6 +350,7 @@ public class ApiCalledByApi extends ApiUsageListing{
         }
  
         listing.buildCallerSetMap();
+        listing.buildInterfaceApiMap();
         listing.printApiUsedInApi();
         
         if (commandLine.hasOption("callby")) {

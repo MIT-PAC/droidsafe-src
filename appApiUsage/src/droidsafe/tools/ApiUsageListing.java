@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Type;
 import soot.util.Chain;
 
 import droidsafe.utils.SootUtils;
@@ -70,6 +71,8 @@ public class ApiUsageListing {
 
     protected HashMap<SootMethod, Integer> apiAllUsage    = new HashMap<SootMethod, Integer>();
     protected HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
+    // method with interface as a parameters
+    protected HashSet<SootMethod> apiAllInterfaceParam = new HashSet<SootMethod>();
     
     int jarCount = 0;
     
@@ -137,11 +140,21 @@ public class ApiUsageListing {
                     
                     // add the counter
                     apiUsage.put(method, apiUsage.get(method)+1); 
+
+                    for (Type type: method.getParameterTypes()) {
+                        if (type instanceof soot.RefType) {
+                            SootClass clazz = ((soot.RefType)type).getSootClass();
+                            if (clazz.isInterface() && !clazz.isApplicationClass()) {
+                                logger.info("method {} uses API interface", method);
+                                apiAllInterfaceParam.add(sootMethod); 
+                            }
+                        }
+                    }
                 }
-            }            
+                
+           }            
         }
 
-     
         printJarReport(jarFile, apiOverride, apiUsage);
         
         for (SootMethod method: apiOverride.keySet()) {
@@ -211,7 +224,6 @@ public class ApiUsageListing {
        }
        methodList = new ArrayList<String>(usageMap.size());
        
-
        for (SootMethod method: usageMap.keySet()) {
            methodList.add(method.toString());
        }
@@ -228,6 +240,29 @@ public class ApiUsageListing {
                logger.warn("exception {}", e);
            }
        }
+       
+       methodList = new ArrayList<String>(apiAllInterfaceParam.size());
+       
+       for (SootMethod method: apiAllInterfaceParam) {
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
+       
+       printStream.printf("----------------------------------------------\n");
+       printStream.printf("\nMethod with API Interface parameters: \n");
+       printStream.printf("----------------------\n");
+       for (String methodSig: methodList) {
+           try {
+           SootMethod method = Scene.v().getMethod(methodSig);       
+           printStream.printf("%s \n",  method);
+           }
+           catch (Exception e) {
+               //logger.warn("exception {}", e);
+               logger.info("method {} not availalbe ", methodSig);
+           }
+       }
+       
+       
     }
     
     private static void setSootOptions() {
