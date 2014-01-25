@@ -73,6 +73,7 @@ public class ApiUsageListing {
     protected HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
     // method with interface as a parameters
     protected HashSet<SootMethod> apiAllInterfaceParam = new HashSet<SootMethod>();
+    protected HashSet<SootMethod> infImplSet = new HashSet<SootMethod>();
     
     int jarCount = 0;
     
@@ -109,13 +110,14 @@ public class ApiUsageListing {
         for (SootClass sootClass: Scene.v().getApplicationClasses()) {
             logger.info("Application classes {} ", sootClass);
         
+            Chain<SootClass> infSet = sootClass.getInterfaces(); 
+
             for (SootMethod sootMethod: sootClass.getMethods()) {
                 // Check for overriding method
                 // check for method being called by someone
                 logger.info("Method {} ", sootMethod);
                                 
                 SootMethod overriden = SootUtils.getApiOverridenMethod(sootMethod);
-
                 //if (SootUtils.isApiOverridenMethod(sootMethod)) {
                 if (overriden != null) {
 
@@ -140,7 +142,7 @@ public class ApiUsageListing {
                     
                     // add the counter
                     apiUsage.put(method, apiUsage.get(method)+1); 
-
+                    
                     for (Type type: method.getParameterTypes()) {
                         if (type instanceof soot.RefType) {
                             SootClass clazz = ((soot.RefType)type).getSootClass();
