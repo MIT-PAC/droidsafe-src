@@ -1073,8 +1073,6 @@ public class SootUtils {
         }
 
         SootClass clz = method.getDeclaringClass().getSuperclass();
-        if (clz == null)
-            return null;
 
         logger.debug("getApiOverridenMethod: {} ", method);
         logger.debug("sig {}, subsig {} ", method.getSignature(), method.getSubSignature());
@@ -1096,6 +1094,16 @@ public class SootUtils {
                 return parentMethod;
             }
             clz = clz.getSuperclass();
+        }
+        
+        String subSig = method.getSubSignature(); 
+        // now we are dealing with interface
+        for (SootClass parent: method.getDeclaringClass().getInterfaces()) {
+            if (parent.declaresMethod(subSig)) {
+                SootMethod meth = parent.getMethod(subSig);
+                if (meth != null)
+                    return meth;
+            }
         }
 
         return null;
