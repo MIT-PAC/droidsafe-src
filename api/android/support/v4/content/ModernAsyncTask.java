@@ -119,7 +119,9 @@ public static void execute(Runnable runnable) {
     
 public ModernAsyncTask() {
         mWorker = new WorkerRunnable<Params, Result>() {
-            public Result call() throws Exception {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:30.088 -0500", hash_original_method = "A54B00CDBBB35FABA36BF774EC6EA22F", hash_generated_method = "E215EC74B46BA094000534E7464227B4")
+            
+public Result call() throws Exception {
                 mTaskInvoked.set(true);
 
                 Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
@@ -128,7 +130,9 @@ public ModernAsyncTask() {
         };
 
         mFuture = new FutureTask<Result>(mWorker) {
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:30.091 -0500", hash_original_method = "EC5824A2B7431B45243C7897F66BDC0A", hash_generated_method = "CB1E900B743AFFB3606D5EC438471925")
+            
+@Override
             protected void done() {
                 try {
                     final Result result = get();

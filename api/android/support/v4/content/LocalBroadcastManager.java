@@ -72,7 +72,9 @@ private LocalBroadcastManager(Context context) {
         mAppContext = context;
         mHandler = new Handler(context.getMainLooper()) {
 
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:31.175 -0500", hash_original_method = "83DCC689423DD34BA48280EAD0078C8B", hash_generated_method = "9EF740E24F28E1B88201FF8077F270D2")
+            
+@Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case MSG_EXEC_PENDING_BROADCASTS:

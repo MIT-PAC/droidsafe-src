@@ -271,19 +271,37 @@ public void notifyDataSetChanged() {
         mObservable.notifyChanged();
     }
 
-    @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.033 -0500", hash_original_method = "F0925616C6F47A4BCFCB9E7C14C25F57", hash_generated_method = "F0925616C6F47A4BCFCB9E7C14C25F57")
+
+
+    @DSComment("Package priviledge")
+
+
+    /**
+     * Register an observer to receive callbacks related to the adapter's data changing.
+     *
+     * @param observer The {@link android.database.DataSetObserver} which will receive callbacks.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:27.067 -0500", hash_original_method = "F0925616C6F47A4BCFCB9E7C14C25F57", hash_generated_method = "ED53D07D14C010A3795D1986C4E94E69")
     
-void registerDataSetObserver(DataSetObserver observer) {
+public void registerDataSetObserver(DataSetObserver observer) {
         mObservable.registerObserver(observer);
     }
 
-    @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.035 -0500", hash_original_method = "F847CF5B5DF735E7D60F86704B1D73CD", hash_generated_method = "F847CF5B5DF735E7D60F86704B1D73CD")
+
+
+    @DSComment("Package priviledge")
+
+
+    /**
+     * Unregister an observer from callbacks related to the adapter's data changing.
+     *
+     * @param observer The {@link android.database.DataSetObserver} which will be unregistered.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:27.068 -0500", hash_original_method = "F847CF5B5DF735E7D60F86704B1D73CD", hash_generated_method = "C57A6AEE370CA4E86D7E3631610F1BBF")
     
-void unregisterDataSetObserver(DataSetObserver observer) {
+public void unregisterDataSetObserver(DataSetObserver observer) {
         mObservable.unregisterObserver(observer);
     }
 

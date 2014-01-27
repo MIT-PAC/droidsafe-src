@@ -22,39 +22,55 @@ public static Object newAccessibilityDelegateDefaultImpl() {
     
 public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateBridge bridge) {
         return new AccessibilityDelegate() {
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.071 -0500", hash_original_method = "1DFD7F4BEC0B66EBD27FEABF958B1314", hash_generated_method = "7D61C47EFDC8B8C68137CEB6899605BC")
+            
+@Override
             public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                 return bridge.dispatchPopulateAccessibilityEvent(host, event);
             }
 
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.072 -0500", hash_original_method = "577084C18896F6DAB04587328D4F1C5E", hash_generated_method = "3B4A3ECF863B53B7E05A6CC530CC735B")
+            
+@Override
             public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
                 bridge.onInitializeAccessibilityEvent(host, event);
             }
 
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.074 -0500", hash_original_method = "7B4088FD5DB99D3A3B16EC31CACC65F0", hash_generated_method = "B0781182AF876A8FE04AF849CF16DC8B")
+            
+@Override
             public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info) {
                 bridge.onInitializeAccessibilityNodeInfo(host, info);
             }
 
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.075 -0500", hash_original_method = "6BF745BF1485CB98E34BB430E9F628B2", hash_generated_method = "3B2CB883BC735E77BC2F91122090F169")
+            
+@Override
             public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                 bridge.onPopulateAccessibilityEvent(host, event);
             }
 
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.077 -0500", hash_original_method = "C0E2432FB54D6017F9AB55D33C385DEB", hash_generated_method = "FBA115DFB1FB51DBF8B9CAE41E7A23FC")
+            
+@Override
             public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                     AccessibilityEvent event) {
                 return bridge.onRequestSendAccessibilityEvent(host, child, event);
             }
 
             @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @Override
+
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.078 -0500", hash_original_method = "4E1388AB899A33FE609ED751D5CD6F19", hash_generated_method = "4A279A00CE3545BD6A0104190CC10258")
+            
+@Override
             public void sendAccessibilityEvent(View host, int eventType) {
                 bridge.sendAccessibilityEvent(host, eventType);
             }
 
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.079 -0500", hash_original_method = "03708C456C10999D4DAE45B4E276BCA7", hash_generated_method = "D34DE85811F54CE72DE37B44BD389CBD")
+            
+@Override
             public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
                 bridge.sendAccessibilityEventUnchecked(host, event);
             }

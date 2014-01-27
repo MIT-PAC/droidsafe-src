@@ -662,7 +662,9 @@ private void throwException(RuntimeException ex) {
 @Override
     public void popBackStack() {
         enqueueAction(new Runnable() {
-            @Override public void run() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.495 -0500", hash_original_method = "C15C9D80C4BF4FB6B2AF0B93A4449441", hash_generated_method = "1E775B2913B07D2EF0E46F6FF2B9DCB4")
+            
+@Override public void run() {
                 popBackStackState(mActivity.mHandler, null, -1, 0);
             }
         }, false);
@@ -682,7 +684,9 @@ private void throwException(RuntimeException ex) {
 @Override
     public void popBackStack(final String name, final int flags) {
         enqueueAction(new Runnable() {
-            @Override public void run() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.500 -0500", hash_original_method = "22FC8A6DB6B4AB9E651D01E64BEED72A", hash_generated_method = "D4F166516CD2906CC8BDAB23FF969A06")
+            
+@Override public void run() {
                 popBackStackState(mActivity.mHandler, name, -1, flags);
             }
         }, false);
@@ -705,7 +709,9 @@ private void throwException(RuntimeException ex) {
             throw new IllegalArgumentException("Bad id: " + id);
         }
         enqueueAction(new Runnable() {
-            @Override public void run() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.507 -0500", hash_original_method = "DBCE7037D51EB5153CDA373E6D392F0E", hash_generated_method = "44E0DD65D7D6454CB2701D75E88FE657")
+            
+@Override public void run() {
                 popBackStackState(mActivity.mHandler, null, id, flags);
             }
         }, false);

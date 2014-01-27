@@ -1573,7 +1573,9 @@ Fragment findFragmentByWho(String who) {
 void instantiateChildFragmentManager() {
         mChildFragmentManager = new FragmentManagerImpl();
         mChildFragmentManager.attachActivity(mActivity, new FragmentContainer() {
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.702 -0500", hash_original_method = "5BED041A00050D47AD1342402B9985BC", hash_generated_method = "7F8C7F0A17A9F13AF5FBB14D7677E1E2")
+            
+@Override
             public View findViewById(int id) {
                 if (mView == null) {
                     throw new IllegalStateException("Fragment does not have a view");
@@ -1795,11 +1797,15 @@ boolean performContextItemSelected(MenuItem item) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.313 -0500", hash_original_method = "F6A52F04C4D14500D0C1089F687B7F14", hash_generated_method = "FE85131981ECBA63EB19FB4392208C42")
+            
+public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in, null);
             }
 
-            public SavedState[] newArray(int size) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.319 -0500", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "020465B62F970B98C266AF229149E391")
+            
+public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
         };

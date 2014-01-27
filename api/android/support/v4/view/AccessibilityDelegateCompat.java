@@ -168,57 +168,67 @@ public Object newAccessiblityDelegateDefaultImpl() {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.546 -0500", hash_original_method = "CA4708336A662876B1C4E973563DF8C7", hash_generated_method = "93A6AD45B4C1E8A83591CD2FCE27A1CC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.024 -0500", hash_original_method = "CA4708336A662876B1C4E973563DF8C7", hash_generated_method = "297E9D5DB56B4897FDAE9FC8D70FDBD5")
         
-public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener) {
+@Override
+        public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.548 -0500", hash_original_method = "9EE5CAEDF307AFCEB241BA171EF39C83", hash_generated_method = "92ED1B40B4AA4398EC4FC9A0A7CC4C3B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.025 -0500", hash_original_method = "9EE5CAEDF307AFCEB241BA171EF39C83", hash_generated_method = "14143B1DF0344B498EDC5E980BD367DA")
         
-public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
+@Override
+        public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.551 -0500", hash_original_method = "1447397CED667B971B04D5F82ACD0B6D", hash_generated_method = "A280F51B0C54D20DC726AEEABF20A47F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.027 -0500", hash_original_method = "1447397CED667B971B04D5F82ACD0B6D", hash_generated_method = "A7D077727793290DE6F7FC840886DAAA")
         
-public void onInitializeAccessibilityEvent(Object delegate, View host,
+@Override
+        public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.553 -0500", hash_original_method = "99C4DEE76C5B6F4A70F08ECD66D4CBFF", hash_generated_method = "C1FC8EB0454BDF6B5A0E5AE7547D72F6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.028 -0500", hash_original_method = "99C4DEE76C5B6F4A70F08ECD66D4CBFF", hash_generated_method = "4B35DCB9939D8164A629DDB3025F75E9")
         
-public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
+@Override
+        public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.557 -0500", hash_original_method = "01D49E3547E9C548CD307570029DA5C4", hash_generated_method = "BE87F4FABE5D328D4F99A39341DC09CC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.029 -0500", hash_original_method = "01D49E3547E9C548CD307570029DA5C4", hash_generated_method = "7AB5772BA0561840C511DF6DE4744C9F")
         
-public void onPopulateAccessibilityEvent(Object delegate, View host,
+@Override
+        public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.560 -0500", hash_original_method = "389DE28FC8C0CFCD072BB38D30CE111B", hash_generated_method = "63363AE98997D43F6EB18EBBFEA74BDC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.031 -0500", hash_original_method = "389DE28FC8C0CFCD072BB38D30CE111B", hash_generated_method = "69E3A40ABD769D22E87F96FF031330EF")
         
-public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
+@Override
+        public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
             return true;
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.563 -0500", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "EDA1B8FF043A974CBE273BD76451E8D5")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.032 -0500", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "6811E1A481F9E3BBCB1261B1C21BDD57")
         
-public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
+@Override
+        public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.565 -0500", hash_original_method = "B229E2592A12C5FBAB6E11834FD34BE2", hash_generated_method = "8CE9621E73586C1035C961BD804A462C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.033 -0500", hash_original_method = "B229E2592A12C5FBAB6E11834FD34BE2", hash_generated_method = "1574B448E797F44D4BD3FFC4F3A2780C")
         
-public void sendAccessibilityEventUnchecked(Object delegate, View host,
+@Override
+        public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
@@ -245,41 +255,57 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
         public Object newAccessiblityDelegateBridge(final AccessibilityDelegateCompat compat) {
             return AccessibilityDelegateCompatIcs.newAccessibilityDelegateBridge(
                     new AccessibilityDelegateCompatIcs.AccessibilityDelegateBridge() {
-                @Override
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.045 -0500", hash_original_method = "9395E77EA1FD8AFEADB2DB8B279E2A67", hash_generated_method = "B0708E60FE5F5221358E91A2AF7F7369")
+                
+@Override
                 public boolean dispatchPopulateAccessibilityEvent(View host,
                         AccessibilityEvent event) {
                     return compat.dispatchPopulateAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.046 -0500", hash_original_method = "D7ED4F87557CED496737993AB37F4B3F", hash_generated_method = "B8F3A24A4B066E126C98543CE288B96F")
+                
+@Override
                 public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
                     compat.onInitializeAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.047 -0500", hash_original_method = "BCC479229D07763EE1ADFC3B5966A67E", hash_generated_method = "EE8A0A9AEFBC81DAFF819E80DF044273")
+                
+@Override
                 public void onInitializeAccessibilityNodeInfo(View host, Object info) {
                     compat.onInitializeAccessibilityNodeInfo(host,
                             new AccessibilityNodeInfoCompat(info));
                 }
 
-                @Override
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.049 -0500", hash_original_method = "CCB1C95876DA6951777EF2568060C667", hash_generated_method = "9606060B173EA7EE8992A01F5B8D7AC2")
+                
+@Override
                 public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                     compat.onPopulateAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.052 -0500", hash_original_method = "8B3EFAFCC5F82FF08E5816A5D75668A2", hash_generated_method = "250480DA3CC8C63D471128D0ED778811")
+                
+@Override
                 public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                         AccessibilityEvent event) {
                     return compat.onRequestSendAccessibilityEvent(host, child, event);
                 }
 
                 @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-            @Override
+
+
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.053 -0500", hash_original_method = "70D63C2BFF8EC6B97AB4FDD168BE56A7", hash_generated_method = "D6F327288AD1C658F9D9FA615ABA939B")
+                
+@Override
                 public void sendAccessibilityEvent(View host, int eventType) {
                     compat.sendAccessibilityEvent(host, eventType);
                 }
 
-                @Override
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.055 -0500", hash_original_method = "DD5EF61DAD976C4E444C1B00AA4D994D", hash_generated_method = "944C95CA6D4BD6825A6F9A8E1026D721")
+                
+@Override
                 public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
                     compat.sendAccessibilityEventUnchecked(host, event);
                 }

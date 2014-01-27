@@ -50,9 +50,24 @@ public static AccessibilityNodeInfoCompat obtain() {
 public static AccessibilityNodeInfoCompat obtain(AccessibilityNodeInfoCompat info) {
         return new AccessibilityNodeInfoCompat(IMPL.obtain(info.mInfo));
     }
+    
+    /**
+     * Creates a wrapper for info implementation.
+     *
+     * @param object The info to wrap.
+     * @return A wrapper for if the object is not null, null otherwise.
+     */
+    static AccessibilityNodeInfoCompat wrapNonNullInstance(Object object) {
+        if (object != null) {
+            return new AccessibilityNodeInfoCompat(object);
+        }
+        return null;
+    }
+    
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.627 -0500", hash_original_field = "B1D8AB103F046CFEA3FC9CDC8BCBC3C0", hash_generated_field = "97BD12C859C1DA2B5849DD1AFA547C72")
 
     private static  AccessibilityNodeInfoImpl IMPL;
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.632 -0500", hash_original_field = "617EB5A49831D4E42CC1FEF3965E4033", hash_generated_field = "F78F9523CB351E82CADC0E3370F65663")
 
     /**
@@ -701,87 +716,101 @@ public void setText(CharSequence text) {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.388 -0500", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "E63F20960B6D02B12716A3819EFD1DB3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.484 -0500", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "5CCDD96D6467B8BE3BB6E85C29A3F6FE")
         
-public Object obtain() {
+@Override
+        public Object obtain() {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.390 -0500", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "B228B913824C0061F3FC9E0ACFA1513A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.485 -0500", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "476C929333B8AE23FEBD30CA4B56EB2B")
         
-public Object obtain(View source) {
+@Override
+        public Object obtain(View source) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.392 -0500", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "35116944E92967590C7B1582759A075D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.488 -0500", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "3A785773368F0B60732DF009CB499C8F")
         
-public Object obtain(Object info) {
+@Override
+        public Object obtain(Object info) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.394 -0500", hash_original_method = "8D71C6A90F236F7F17CE9F0DA3BE99D2", hash_generated_method = "D079D6F3460222FD56CB17FD00B22288")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.489 -0500", hash_original_method = "8D71C6A90F236F7F17CE9F0DA3BE99D2", hash_generated_method = "80A7B37C0A6FB7BEDFF3D909614576E1")
         
-public void addAction(Object info, int action) {
+@Override
+        public void addAction(Object info, int action) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.397 -0500", hash_original_method = "6B9372E604C01DF70F526B6A8E570148", hash_generated_method = "CA4334FE615ADF5FF93BDEFF92048E15")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.491 -0500", hash_original_method = "6B9372E604C01DF70F526B6A8E570148", hash_generated_method = "8A4FDF830F9CC48BC830EAFC252A4C65")
         
-public void addChild(Object info, View child) {
+@Override
+        public void addChild(Object info, View child) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.400 -0500", hash_original_method = "DDFBD7F537083E060F4196E4CBB1F004", hash_generated_method = "0C302232632E2BE33F7B1E2F99F920B0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.494 -0500", hash_original_method = "DDFBD7F537083E060F4196E4CBB1F004", hash_generated_method = "99D9489D32B84043A66A843D7E066D81")
         
-public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
+@Override
+        public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
             return Collections.emptyList();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.402 -0500", hash_original_method = "62879C9A6873AFA1FE78492502C9E8C1", hash_generated_method = "1B09725F28EC0FD7CCC68EC5681527B1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.495 -0500", hash_original_method = "62879C9A6873AFA1FE78492502C9E8C1", hash_generated_method = "44F638538CE984C4155C51E0D23E1BDF")
         
-public int getActions(Object info) {
+@Override
+        public int getActions(Object info) {
             return 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.404 -0500", hash_original_method = "194BB4DCA6CDD611708C0DBE13AE8AE6", hash_generated_method = "FDF96C587609658A1C7CC7B85FE7AA2F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.496 -0500", hash_original_method = "194BB4DCA6CDD611708C0DBE13AE8AE6", hash_generated_method = "C5C410A947B3846F45172688F0B5AB94")
         
-public void getBoundsInParent(Object info, Rect outBounds) {
+@Override
+        public void getBoundsInParent(Object info, Rect outBounds) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.406 -0500", hash_original_method = "AD025A7E801C16406D0F86CAFA041F7F", hash_generated_method = "EAC0067D53A64557D6AC53C7F0EEC501")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.498 -0500", hash_original_method = "AD025A7E801C16406D0F86CAFA041F7F", hash_generated_method = "14F8BD3164CBA8AB25DD4EDAA69676B1")
         
-public void getBoundsInScreen(Object info, Rect outBounds) {
+@Override
+        public void getBoundsInScreen(Object info, Rect outBounds) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.409 -0500", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "870DBE28D652511DF55C447015312F10")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.499 -0500", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "9B4628C60681E7F9D9F13593DCAD076B")
         
-public Object getChild(Object info, int index) {
+@Override
+        public Object getChild(Object info, int index) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.411 -0500", hash_original_method = "DE0573752D5D98EE2B44C4024F5102E5", hash_generated_method = "6B94932D70B58FA45BCEFC06F48841A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.500 -0500", hash_original_method = "DE0573752D5D98EE2B44C4024F5102E5", hash_generated_method = "62E577EFB323CB92DEA1EFDA4BE6F4A5")
         
-public int getChildCount(Object info) {
+@Override
+        public int getChildCount(Object info) {
             return 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.414 -0500", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "E8E0B48CB275E1E67174E1852A0D2501")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.501 -0500", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "FB02FFD60D1B2BFB87567CF8985E78EF")
         
-public CharSequence getClassName(Object info) {
+@Override
+        public CharSequence getClassName(Object info) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.416 -0500", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "C2A3B2C429CC7C82C38ABC848FC736B5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.502 -0500", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "12915B05BA29EA9D9699922B9F02DF62")
         
-public CharSequence getContentDescription(Object info) {
+@Override
+        public CharSequence getContentDescription(Object info) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.418 -0500", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "27815C2DE12138498A811FD259DFB57A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.503 -0500", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "1674807EA2B52D8449A2CCF904533409")
         
-public CharSequence getPackageName(Object info) {
+@Override
+        public CharSequence getPackageName(Object info) {
             return null;
         }
 
@@ -791,202 +820,248 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.423 -0500", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "BD45C21C71A5796FEB425A789EB7111D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.506 -0500", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "89FEA2CD06F2AF2AA0336016AA803345")
         
-public CharSequence getText(Object info) {
+@Override
+        public CharSequence getText(Object info) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.426 -0500", hash_original_method = "EB7D2054B13C972973DD67D9B21CE0E5", hash_generated_method = "1CA2BBF715ED25817F4D259DF2170015")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.507 -0500", hash_original_method = "EB7D2054B13C972973DD67D9B21CE0E5", hash_generated_method = "F62B4CEECA5EA4D266F9BA1FA857EA8E")
         
-public int getWindowId(Object info) {
+@Override
+        public int getWindowId(Object info) {
             return 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.428 -0500", hash_original_method = "4E39FE68FD90D69FA08C7AD1E979DF07", hash_generated_method = "5AA5713FEAF2A3541F057FB3F0EA6AB3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.508 -0500", hash_original_method = "4E39FE68FD90D69FA08C7AD1E979DF07", hash_generated_method = "93B95DBF166A6FF2C17D081FD97352B3")
         
-public boolean isCheckable(Object info) {
+@Override
+        public boolean isCheckable(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.431 -0500", hash_original_method = "F2469434A89FA62BE9B2DB78034140F5", hash_generated_method = "66ED3C092CC7019EF9829DF445BFF20D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.511 -0500", hash_original_method = "F2469434A89FA62BE9B2DB78034140F5", hash_generated_method = "B8C7D4EF98072F5AEFB45404F544C4CB")
         
-public boolean isChecked(Object info) {
+@Override
+        public boolean isChecked(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.433 -0500", hash_original_method = "F7781A93E107315385A57825C2B0B78A", hash_generated_method = "8B729B21713FDFDA602278279787045F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.512 -0500", hash_original_method = "F7781A93E107315385A57825C2B0B78A", hash_generated_method = "6C2248646E9B3215F6DCBE28E31BBD88")
         
-public boolean isClickable(Object info) {
+@Override
+        public boolean isClickable(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.435 -0500", hash_original_method = "6BAAC3777342DFE283E965C06FC8D874", hash_generated_method = "C7502920BB7EB353859573348C7487BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.513 -0500", hash_original_method = "6BAAC3777342DFE283E965C06FC8D874", hash_generated_method = "BADD14F6F09C65B413812C6F644995ED")
         
-public boolean isEnabled(Object info) {
+@Override
+        public boolean isEnabled(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.437 -0500", hash_original_method = "24826F7A102BA4F82C9D9B08241E284F", hash_generated_method = "4A8E8BF489067EBEBBA043153F5E11C3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.514 -0500", hash_original_method = "24826F7A102BA4F82C9D9B08241E284F", hash_generated_method = "F0E48068CB644683EF19A53A955826DC")
         
-public boolean isFocusable(Object info) {
+@Override
+        public boolean isFocusable(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.439 -0500", hash_original_method = "4D0616B5A88718B8558E59C7943E57B4", hash_generated_method = "7C70A61FF4EB9417B79D26C961A54C95")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.517 -0500", hash_original_method = "4D0616B5A88718B8558E59C7943E57B4", hash_generated_method = "DD48C4B20861B68A6EF19B512225974E")
         
-public boolean isFocused(Object info) {
+@Override
+        public boolean isFocused(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.443 -0500", hash_original_method = "3EB36752093CDD3C24048A6DFD7EC73D", hash_generated_method = "689344C1E023DD6328F379B8EDE0FF66")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.522 -0500", hash_original_method = "3EB36752093CDD3C24048A6DFD7EC73D", hash_generated_method = "0BAF065BDC8A8BEF3EC3126F7D5C563F")
         
-public boolean isLongClickable(Object info) {
+@Override
+        public boolean isLongClickable(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.445 -0500", hash_original_method = "CB922389EC3BD00D9BEE74A550F7293C", hash_generated_method = "0631DDA363DE7088678E7AAF9AE290A0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.524 -0500", hash_original_method = "CB922389EC3BD00D9BEE74A550F7293C", hash_generated_method = "AC243B9E3A3C78956A44DA845307640F")
         
-public boolean isPassword(Object info) {
+@Override
+        public boolean isPassword(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.447 -0500", hash_original_method = "0A24FC3E128A848006031E8724C7F0A9", hash_generated_method = "ECE07DC162E0BB665D8F33A417CE59B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.525 -0500", hash_original_method = "0A24FC3E128A848006031E8724C7F0A9", hash_generated_method = "FAA088CDD5257D731CB33A38060A66FB")
         
-public boolean isScrollable(Object info) {
+@Override
+        public boolean isScrollable(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.449 -0500", hash_original_method = "6AFAC3555346166234EF254615BCA05C", hash_generated_method = "1E1C35E786DCA17F23D23B5E0D714103")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.528 -0500", hash_original_method = "6AFAC3555346166234EF254615BCA05C", hash_generated_method = "59C55C2B94DFF02500CA9A8C725C4A08")
         
-public boolean isSelected(Object info) {
+@Override
+        public boolean isSelected(Object info) {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.452 -0500", hash_original_method = "FCBED87974E8349E51CFE67F3FE8BAAB", hash_generated_method = "981939D2E2CE075D7961575819539A89")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.782 -0500", hash_original_method = "FCBED87974E8349E51CFE67F3FE8BAAB", hash_generated_method = "364BE3A609A401B6B86EE71144ADB542")
         
-public boolean performAction(Object info, int action) {
+@Override
+        public boolean performAction(Object info, int action) {
             return false;
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.454 -0500", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "A26B4E2A7BDD2FA71BC9BAAB08E4C552")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.787 -0500", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "DCFF1EA124941B45B445643DEA1DCAAD")
         
-public void setBoundsInParent(Object info, Rect bounds) {
+@Override
+        public void setBoundsInParent(Object info, Rect bounds) {
 
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.456 -0500", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "0FC111DB7DE6058E7083B0209F29310E")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.788 -0500", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "3E21410E855A133232A1349240AFF84F")
         
-public void setBoundsInScreen(Object info, Rect bounds) {
+@Override
+        public void setBoundsInScreen(Object info, Rect bounds) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.458 -0500", hash_original_method = "38431A6D5EE00E0099D8DB2DEFF6D601", hash_generated_method = "4D3ABFBBB0E2573CC1DCD5EE529CB2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.789 -0500", hash_original_method = "38431A6D5EE00E0099D8DB2DEFF6D601", hash_generated_method = "BA7A954B9F07B9A979753DB88CB69893")
         
-public void setCheckable(Object info, boolean checkable) {
+@Override
+        public void setCheckable(Object info, boolean checkable) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.461 -0500", hash_original_method = "4FE562645B89F53A2E3F577D51BE4F8C", hash_generated_method = "98DE3AC033BFE06B26C4F0698FFC32D2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.790 -0500", hash_original_method = "4FE562645B89F53A2E3F577D51BE4F8C", hash_generated_method = "207FE3B97DA2C3B161E69E60424A2DA4")
         
-public void setChecked(Object info, boolean checked) {
-
-        }
-
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.463 -0500", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "AFE296A61CCEE4D84EF0872398D9733C")
-        
-public void setClassName(Object info, CharSequence className) {
-
-        }
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.465 -0500", hash_original_method = "31E6103163DC809F9F67CE01A33EE87B", hash_generated_method = "D43E421195E9BB3ADFD20F1A34A77B94")
-        
-public void setClickable(Object info, boolean clickable) {
+@Override
+        public void setChecked(Object info, boolean checked) {
 
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.468 -0500", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "EB7B5797CB096E840BA1BF48B7980B6C")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.793 -0500", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "4C629E3ABBF85F5A021382BEC0BE6448")
         
-public void setContentDescription(Object info, CharSequence contentDescription) {
+@Override
+        public void setClassName(Object info, CharSequence className) {
+
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.796 -0500", hash_original_method = "31E6103163DC809F9F67CE01A33EE87B", hash_generated_method = "B3078C66F43622C1471B726AB40FA556")
+        
+@Override
+        public void setClickable(Object info, boolean clickable) {
 
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.471 -0500", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "D814BFEA204A885E830BD4627DD5B8E2")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.798 -0500", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "6BFB774F2AB1777C633277C9BCD0CE81")
         
-public void setEnabled(Object info, boolean enabled) {
-
-        }
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.473 -0500", hash_original_method = "6FC489938507A8AC8A67E31F4C0F3485", hash_generated_method = "CED39C71C8CA57FCD42E56264A07759C")
-        
-public void setFocusable(Object info, boolean focusable) {
-
-        }
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.475 -0500", hash_original_method = "D760A9B869FD1EE026AE8BC4B17036E8", hash_generated_method = "90D84AF15CF9D150E277CDCAB2FEDC9D")
-        
-public void setFocused(Object info, boolean focused) {
-
-        }
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.478 -0500", hash_original_method = "FD5EDA58E4935860A3097167F37FF25A", hash_generated_method = "F7AF40C77103695AA347AF345D4408E2")
-        
-public void setLongClickable(Object info, boolean longClickable) {
+@Override
+        public void setContentDescription(Object info, CharSequence contentDescription) {
 
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.480 -0500", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "52138046DAE4B6428E3CA6B1062E96F8")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.800 -0500", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "5A19B8A4E7A7EDA1A6783AA1665FA934")
         
-public void setPackageName(Object info, CharSequence packageName) {
+@Override
+        public void setEnabled(Object info, boolean enabled) {
+
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.802 -0500", hash_original_method = "6FC489938507A8AC8A67E31F4C0F3485", hash_generated_method = "A2ADAEB88EF2679C31FE8742E29AD265")
+        
+@Override
+        public void setFocusable(Object info, boolean focusable) {
+
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.804 -0500", hash_original_method = "D760A9B869FD1EE026AE8BC4B17036E8", hash_generated_method = "542124EBF6FEBEA7F3A85EE74E7ADD2C")
+        
+@Override
+        public void setFocused(Object info, boolean focused) {
+
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.809 -0500", hash_original_method = "FD5EDA58E4935860A3097167F37FF25A", hash_generated_method = "0E27C8020062A7E8E2F26B6D4E28374E")
+        
+@Override
+        public void setLongClickable(Object info, boolean longClickable) {
 
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.482 -0500", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "8F59DCA4A71FFC66B6C4776E8B8E43FC")
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.813 -0500", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "C2D5468919AD98FB91D5B3A5AB6FEC8A")
         
-public void setParent(Object info, View parent) {
+@Override
+        public void setPackageName(Object info, CharSequence packageName) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.484 -0500", hash_original_method = "363672B9055A3FB9061F2E3103405704", hash_generated_method = "AFB485FB25B45D94517E202F237D9102")
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.814 -0500", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "FB1AA3CFB8C0A0C78390E1D51844A74A")
         
-public void setPassword(Object info, boolean password) {
+@Override
+        public void setParent(Object info, View parent) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.487 -0500", hash_original_method = "709C7E935F852B3F6266600FDF6B6337", hash_generated_method = "00FF14C5054D7CF0D9FEEFAACFC3C21F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.815 -0500", hash_original_method = "363672B9055A3FB9061F2E3103405704", hash_generated_method = "E6BCC4E1D8EC34BCC9E036E49191C739")
         
-public void setScrollable(Object info, boolean scrollable) {
+@Override
+        public void setPassword(Object info, boolean password) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.489 -0500", hash_original_method = "3EF8627D1C0109EB2B6665EF94BA680A", hash_generated_method = "2022E389F5DF8560EB0A77F324639730")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.817 -0500", hash_original_method = "709C7E935F852B3F6266600FDF6B6337", hash_generated_method = "DB69F995E3BAEC364140109E33E4E5AD")
         
-public void setSelected(Object info, boolean selected) {
+@Override
+        public void setScrollable(Object info, boolean scrollable) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.492 -0500", hash_original_method = "483D361A53672C2015F284EB727D68EB", hash_generated_method = "1A75E73E829BC172520C248A709D2A6D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.819 -0500", hash_original_method = "3EF8627D1C0109EB2B6665EF94BA680A", hash_generated_method = "D661BE4B7EDD9860BBDF10174DE27585")
         
-public void setSource(Object info, View source) {
+@Override
+        public void setSelected(Object info, boolean selected) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.494 -0500", hash_original_method = "A82131F0C1B3FA9CC52D0C37845C305A", hash_generated_method = "EB3701D4E9A7B92B651A7349176BE310")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.820 -0500", hash_original_method = "483D361A53672C2015F284EB727D68EB", hash_generated_method = "A285A6DF3C2B3F734F29B4A9EE0E6A84")
         
-public void setText(Object info, CharSequence text) {
+@Override
+        public void setSource(Object info, View source) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.496 -0500", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "9F9D28B5FEF5D06E1BC9D148E7B407A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.825 -0500", hash_original_method = "A82131F0C1B3FA9CC52D0C37845C305A", hash_generated_method = "39C05B005327A9B53FBBEB94A910AE32")
         
-public void recycle(Object info) {
+@Override
+        public void setText(Object info, CharSequence text) {
+
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.826 -0500", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "B55C8406131A66C20E9A55B4AA272004")
+        
+@Override
+        public void recycle(Object info) {
 
         }
         
