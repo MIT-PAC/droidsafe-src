@@ -2038,6 +2038,28 @@ SavedState(Parcel in, ClassLoader loader) {
 
         public int gravity;
 
+        /**
+         * Width as a 0-1 multiplier of the measured pager width
+         */
+        float widthFactor = 0.f;
+        
+        /**
+         * true if this view was added during layout and needs to be measured
+         * before being positioned.
+         */
+        boolean needsMeasure;
+
+        /**
+         * Adapter position this view is for if !isDecor
+         */
+        int position;
+
+        /**
+         * Current child index within the ViewPager that this view occupies
+         */
+        int childIndex;
+
+
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.595 -0500", hash_original_method = "22352D37EA586BAB2B06261A9354918D", hash_generated_method = "7FE9663220C0107D37C7BA8C1C30C316")
         
 public LayoutParams() {
