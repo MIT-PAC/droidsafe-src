@@ -4,6 +4,7 @@ import org.eclipse.swt.graphics.Image;
 
 import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.AllocLocationModel;
@@ -32,18 +33,18 @@ public class PointsToTreeElementLabelProvider extends MethodInfoTreeElementLabel
             Object data = treeElement.getData();
             if (data instanceof AllocLocationModel) {
                 AllocLocationModel loc = (AllocLocationModel) data;
-                if (!loc.getFromAPI()) {
+                if (loc.getFromAPI()) {
                     return "<new> (from API)";
                 } else {
-                    return "<new> " + ClassCloner.removeClassCloneSuffix(loc.toString());
+                    return "<new> " + DroidsafePluginUtilities.removeCloneSuffix(loc.toString());
                 }
             } else if (data instanceof CallLocationModel) {
                 CallLocationModel loc = (CallLocationModel) data;
-                return "<call> " + ClassCloner.removeClassCloneSuffix(loc.toString());
+                return "<call> " + DroidsafePluginUtilities.removeCloneSuffix(loc.toString());
             }
-            return ClassCloner.removeClassCloneSuffix(data.toString());
+            return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
         }
-        return ClassCloner.removeClassCloneSuffix(element.toString());
+        return DroidsafePluginUtilities.removeCloneSuffix(element.toString());
     }
 
     /**

@@ -3,11 +3,10 @@ package droidsafe.eclipse.plugin.core.view.infoflow;
 import org.eclipse.swt.graphics.Image;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
-import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
-import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * Label provider for the nodes of the info flow outline view.
@@ -28,7 +27,7 @@ public class InfoFlowSummarylTreeElementLabelProvider extends MethodInfoTreeElem
         if (element instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
-            return ClassCloner.removeClassCloneSuffix(data.toString());
+            return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
         }
         return super.getText(element);
     }

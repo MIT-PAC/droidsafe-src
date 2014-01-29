@@ -16,9 +16,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoViewPart;
 import droidsafe.speclang.model.MethodModel;
-import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * View for displaying droidsafe value analysis info on a given method. 
@@ -103,7 +103,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         if (fInputElement != null && fParentComposite != null) {
             showPage(PAGE_VIEWER);
             
-            String sig = ClassCloner.removeClassCloneSuffix(fInputElement.getSignature());
+            String sig = DroidsafePluginUtilities.removeCloneSuffix(fInputElement.getSignature());
             setContentDescription("method " + sig);
             
             String valuesText = getValuesText(fInputElement);
@@ -144,7 +144,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
                 valuesText = buf.toString();
                 methodToValuesText.put(method, valuesText);
             }
-            return ClassCloner.removeClassCloneSuffix(valuesText);
+            return DroidsafePluginUtilities.removeCloneSuffix(valuesText);
         } 
     }
 

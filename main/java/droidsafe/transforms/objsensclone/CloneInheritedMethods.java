@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -359,4 +361,13 @@ public class CloneInheritedMethods {
             }
         }   
     }
+    
+    public static String removeMethodCloneSuffix(String str) {
+        String regex = CLONED_HIDDEN_METHOD_SUFFIX+"[0-9]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        return matcher.replaceAll("");
+    }
+
+
 }

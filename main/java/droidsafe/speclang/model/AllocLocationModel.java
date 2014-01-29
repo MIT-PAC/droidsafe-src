@@ -64,7 +64,7 @@ public class AllocLocationModel extends CodeLocationModel {
      */
     public AllocLocationModel(String clz, int line, IAllocNode node) {
         super(clz, line);
-        fromAPI = Project.v().isSrcClass(clz);
+        fromAPI = !Project.v().isSrcClass(clz);
         Object expr = node.getNewExpr();
         if (expr != null && expr instanceof NewExpr)
             type = ((NewExpr) expr).getType().toString();

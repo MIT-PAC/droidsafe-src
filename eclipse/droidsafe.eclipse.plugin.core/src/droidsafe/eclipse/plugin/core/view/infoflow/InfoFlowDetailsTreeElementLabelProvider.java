@@ -3,6 +3,7 @@ package droidsafe.eclipse.plugin.core.view.infoflow;
 import org.eclipse.swt.graphics.Image;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.CallLocationModel;
@@ -32,7 +33,7 @@ public class InfoFlowDetailsTreeElementLabelProvider extends MethodInfoTreeEleme
                 return data.toString();
             } else if (data instanceof CallLocationModel) {
                 CallLocationModel loc = (CallLocationModel) data;
-                return "<call> " + ClassCloner.removeClassCloneSuffix(loc.toString());
+                return "<call> " + DroidsafePluginUtilities.removeCloneSuffix(loc.toString());
             }
         }
         return super.getText(element);

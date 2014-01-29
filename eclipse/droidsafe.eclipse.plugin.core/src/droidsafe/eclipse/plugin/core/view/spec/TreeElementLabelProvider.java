@@ -88,15 +88,15 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
         if (!useShortSignatureForMethods) {
-          return ClassCloner.removeClassCloneSuffix(method.getSignature());
+          return DroidsafePluginUtilities.removeCloneSuffix(method.getSignature());
         } else {
-          return ClassCloner.removeClassCloneSuffix(method.getShortSignature());
+          return DroidsafePluginUtilities.removeCloneSuffix(method.getShortSignature());
         }
       } else if (data instanceof HotspotModel) {
           return "hotspot: argument " + (((HotspotModel)data).getArgumentPosition() + 1);
       }
     }
-    return ClassCloner.removeClassCloneSuffix(element.toString());
+    return DroidsafePluginUtilities.removeCloneSuffix(element.toString());
   }
 
   public String getToolTipText(Object obj) {
@@ -123,7 +123,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         if (method.isNative()) {
           sb.append("\nNATIVE METHOD");
         }
-        return ClassCloner.removeClassCloneSuffix(sb.toString());
+        return DroidsafePluginUtilities.removeCloneSuffix(sb.toString());
       }
     }
     return null;

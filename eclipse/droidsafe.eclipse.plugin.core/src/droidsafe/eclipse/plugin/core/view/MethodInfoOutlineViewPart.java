@@ -2,8 +2,8 @@ package droidsafe.eclipse.plugin.core.view;
 
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.MethodModel;
-import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * View for displaying droidsafe analysis info on a given method. 
@@ -45,7 +45,7 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
         if (fInputElement != null && fParentComposite != null) {
             showPage(PAGE_VIEWER);
             
-            String sig = ClassCloner.removeClassCloneSuffix(fInputElement.getSignature());
+            String sig = DroidsafePluginUtilities.removeCloneSuffix(fInputElement.getSignature());
             setContentDescription("method " + sig);
 
             fTreeViewer.setInput(fInputElement);

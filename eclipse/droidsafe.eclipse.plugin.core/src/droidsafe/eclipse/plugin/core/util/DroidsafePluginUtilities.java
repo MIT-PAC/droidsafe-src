@@ -53,6 +53,8 @@ import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.transforms.objsensclone.ClassCloner;
+import droidsafe.transforms.objsensclone.CloneInheritedMethods;
 import droidsafe.utils.SourceLocationTag;
 
 public class DroidsafePluginUtilities {
@@ -531,6 +533,10 @@ public class DroidsafePluginUtilities {
         ex.printStackTrace();
       }
     }
+  }
+  
+  public static String removeCloneSuffix(String str) {
+    return CloneInheritedMethods.removeMethodCloneSuffix(ClassCloner.removeClassCloneSuffix(str));
   }
 
 
