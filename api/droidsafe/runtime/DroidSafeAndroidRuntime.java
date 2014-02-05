@@ -78,20 +78,19 @@ public class DroidSafeAndroidRuntime {
         activity.onPrepareDialog(0, new Dialog(context));
         */
         
-        //TODO: WHAT ABOUT A REAL MENU?
+        /*
+        //TODO: WHAT ABOUT A REAL MENU?  We moved to Activity's droidsafeOnOtherHook
         activity.onCreateOptionsMenu(null);
         activity.onPrepareOptionsMenu(null);
         activity.onCreateContextMenu(null, null, null);
         activity.onOptionsItemSelected(null);
         activity.onContextItemSelected(null);
-        
         activity.dispatchTouchEvent(new MotionEvent());
-        
+
+        //activity.droidsafeOnKeyEvents();
+        */
         activity.onConfigurationChanged(new Configuration());
-
         activity.droidsafeOnSavedInstanceState(new Bundle());
-
-        activity.droidsafeOnKeyEvents();
         
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
@@ -106,7 +105,6 @@ public class DroidSafeAndroidRuntime {
         activity.droidsafeOnDestroy();
 
         Bundle state = new Bundle();
-        activity.droidsafePerformSaveInstanceState(state);
         activity.droidsafePerformRestoreInstanceState(state);
         
         activity.onDetachedFromWindow();

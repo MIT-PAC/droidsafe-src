@@ -806,6 +806,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onConfigurationChanged(Configuration newConfig){
@@ -1162,9 +1163,10 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+	@DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.747 -0500", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "8A18F956B194A0C371BE43C50E45248B")
     
 public void setContentView(int layoutResID) {
@@ -1187,9 +1189,10 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+	@DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.752 -0500", hash_original_method = "6143DA20A0E63D3DD26D6D6CC3A0350F", hash_generated_method = "68042BCA2A6984D357903A5C198D5CDB")
     
 public void setContentView(View view) {
@@ -1209,7 +1212,8 @@ public void setContentView(View view) {
      * @see #setContentView(int)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.757 -0500", hash_original_method = "FCB0E6F09A4D449F841F63B35D6A2C9A", hash_generated_method = "1913D4F1055F25C59E2EB22DE55ACB26")
-    
+    @DSVerified    
+    @DSSafe(DSCat.GUI) 
 public void setContentView(View view, ViewGroup.LayoutParams params) {
         getWindow().setContentView(view, params);
         initActionBar();
@@ -1224,6 +1228,8 @@ public void setContentView(View view, ViewGroup.LayoutParams params) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.762 -0500", hash_original_method = "FC447FA34EAD1A15520CE5D8778BF36F", hash_generated_method = "CC69E4A6765A9668C67296C98FBE0BCE")
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
 public void addContentView(View view, ViewGroup.LayoutParams params) {
         getWindow().addContentView(view, params);
         initActionBar();
@@ -1270,6 +1276,7 @@ public void setFinishOnTouchOutside(boolean finish) {
 		//Return nothing
 	}
 
+    @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnKeyEvents() {
         int action = getTaintInt();
@@ -1697,6 +1704,7 @@ public View onCreatePanelView(int featureId) {
         return null;
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreatePanelMenu(int featureId, Menu menu){
@@ -1713,7 +1721,9 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
+   
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
@@ -1754,6 +1764,7 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onMenuItemSelected(int featureId, MenuItem item){
@@ -1782,6 +1793,7 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onPanelClosed(int featureId, Menu menu){
@@ -1823,6 +1835,7 @@ public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreateOptionsMenu(Menu menu){
@@ -1868,6 +1881,7 @@ public void invalidateOptionsMenu() {
 		*/
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onOptionsMenuClosed(Menu menu){
@@ -1920,8 +1934,10 @@ public void openOptionsMenu() {
      * It is not safe to hold onto the context menu after this method returns.
      * {@inheritDoc}
      */
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.992 -0500", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "1B44B70B0D6B4F288A41A01A283212DF")
-    
 public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     }
     
@@ -2021,6 +2037,7 @@ public void closeContextMenu() {
     /**
      * @deprecated Old no-arguments version of {@link #onCreateDialog(int, Bundle)}.
      */
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.026 -0500", hash_original_method = "5C4ABBE5E4F27E10ACC00467798D80D8", hash_generated_method = "9BF122C6459667CD41B62EBC07FD4E1C")
@@ -2064,7 +2081,9 @@ public void closeContextMenu() {
      * available on older platforms through the Android compatibility package.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.031 -0500", hash_original_method = "34E3D2628A4C0BFC6C20A449A8141897", hash_generated_method = "89B5A5F903C7FE6A743D1C5892B9317D")
-    
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 @Deprecated
     protected Dialog onCreateDialog(int id, Bundle args) {
         return onCreateDialog(id);
@@ -2074,6 +2093,8 @@ public void closeContextMenu() {
      * @deprecated Old no-arguments version of
      * {@link #onPrepareDialog(int, Dialog, Bundle)}.
      */
+
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.036 -0500", hash_original_method = "7779942926F36CBECCFB305682D0E188", hash_generated_method = "C3F52CD22FCD74D322864C49F353283D")
@@ -2108,7 +2129,9 @@ public void closeContextMenu() {
      * available on older platforms through the Android compatibility package.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.042 -0500", hash_original_method = "5C5331293ECB563ADEBB709047E6FA90", hash_generated_method = "187B10D7012B64C19222392AB7B39983")
-    
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Deprecated
     protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
         onPrepareDialog(id, dialog);
@@ -2132,6 +2155,7 @@ public void closeContextMenu() {
         showDialog(id, null);
     }
     
+    @DSVerified
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
@@ -3450,6 +3474,7 @@ public final int getVolumeControlStream() {
 		//Return nothing
 	}
     
+	@DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public View onCreateView(String name, Context context, AttributeSet attrs){
@@ -3524,7 +3549,9 @@ public void setImmersive(boolean i) {
             // pass
         }
     }
-
+    @DSVerified    
+    @DSComment("normal android callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     /**
      * Start an action mode.
      *
@@ -3536,7 +3563,12 @@ public void setImmersive(boolean i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.423 -0500", hash_original_method = "2C973E12746FE944D244FE9652432CFA", hash_generated_method = "426310D8B485F00F6CAE4106DF9E1A43")
     
 public ActionMode startActionMode(ActionMode.Callback callback) {
-        return mWindow.getDecorView().startActionMode(callback);
+
+        ActionMode actionMode = new ActionMode.SimpleActionMode();
+        actionMode.setTag(callback);
+        onActionModeStarted(actionMode);
+        //return mWindow.getDecorView().startActionMode(callback);
+        return actionMode;
     }
     
     private static class ManagedDialog {
@@ -3620,6 +3652,9 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 		*/
 	}
 
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     /**
      * Notifies the Activity that an action mode has been started.
      * Activity subclasses overriding this method should call the superclass implementation.
@@ -3629,6 +3664,18 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.433 -0500", hash_original_method = "255BA88D048ED7CA66014BFC1FF334C0", hash_generated_method = "59326024C2A90147ADE5F72F14E6828B")
     
 public void onActionModeStarted(ActionMode mode) {
+        Object callbackTag = mode.getTag();
+        if (callbackTag != null && callbackTag instanceof ActionMode.Callback) {
+            ActionMode.Callback callback = (ActionMode.Callback) callbackTag;
+            MenuBuilder builder = new MenuBuilder(getBaseContext());
+        //technically we should use the menu from external source
+            Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
+            MenuItem menuItem = menu.add(DSUtils.FAKE_INT);
+            callback.onCreateActionMode(mode, menu);
+            callback.onPrepareActionMode(mode, menu);
+            callback.onActionItemClicked(mode, menuItem);  
+            callback.onDestroyActionMode(mode);
+        }
     }
 
     /**
@@ -3992,16 +4039,38 @@ final void performUserLeaving() {
 	@DSVerified
 	@DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnOthersHook() {
-        this.onActionModeFinished(new ActionMode.SimpleActionMode());
-        this.onActionModeStarted(new ActionMode.SimpleActionMode());
+
+        this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
+
         MenuBuilder builder = new MenuBuilder(getBaseContext());
         //technically we should use the menu from external source
         Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onCreateOptionsMenu(menu);
-        this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
         this.onPrepareOptionsMenu(menu);
+        this.onMenuOpened(DSUtils.FAKE_INT, menu);
         this.onContextMenuClosed(menu);
+
         this.onContextItemSelected(menu.add(new String()));
+        this.onOptionsItemSelected(menu.add(new String()));
+        this.onMenuItemSelected(DSUtils.FAKE_INT, menu.add(new String()));
+
+        this.onCreatePanelMenu(DSUtils.FAKE_INT, builder.addSubMenu(DSUtils.FAKE_INT));
+        this.onPreparePanel(DSUtils.FAKE_INT, this.findViewById(DSUtils.FAKE_INT), builder.addSubMenu(DSUtils.FAKE_INT));
+        this.onPanelClosed(DSUtils.FAKE_INT, builder.addSubMenu(DSUtils.FAKE_INT));
+        
+        //TODO: WHAT ABOUT A REAL MENU?
+        this.onActionModeStarted(new ActionMode.SimpleActionMode());
+        this.onActionModeFinished(new ActionMode.SimpleActionMode());
+        
+        
+        AttributeSet attrSet = new AttributeSet.EmptyAttributeSet();;
+        this.onCreateView(new String(), getBaseContext(), attrSet);
+        
+        //context menu
+        ContextMenu contextMenu = new ContextMenu.DroidSafeContextMenu();
+        ContextMenu.ContextMenuInfo info = null;
+        this.onCreateContextMenu(contextMenu, 
+                this.findViewById(DSUtils.FAKE_INT), info);
        
         onWindowFocusChanged(getTaintBoolean());
         onTouchEvent(new MotionEvent()); 
