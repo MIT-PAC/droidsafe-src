@@ -21,6 +21,7 @@ public enum DSCat {
     REFLECTION,
     CLASS_LOADER,
     SECURITY_VIOLATION,
+    DROIDSAFE_INTERNAL,
     BAN_OTHERS,
     
     //Spec Categories

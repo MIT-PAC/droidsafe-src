@@ -100,7 +100,15 @@ public class DroidSafeAndroidRuntime {
         activity.droidsafeOnSubActivityHook();
 
         activity.droidsafeOnStop();
+
+        activity.droidsafeOnRestart();
+      
         activity.droidsafeOnDestroy();
+
+        Bundle state = new Bundle();
+        activity.droidsafePerformSaveInstanceState(state);
+        activity.droidsafePerformRestoreInstanceState(state);
+        
         activity.onDetachedFromWindow();
 
         //Calls for MapActivity from mapping library

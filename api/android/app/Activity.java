@@ -280,7 +280,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
     
-public Intent getIntent() {
+    public Intent getIntent() {
         return mIntent;
     }
 
@@ -452,18 +452,19 @@ public Window getWindow() {
      *
      * @param savedInstanceState contains the saved state
      */
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.503 -0500", hash_original_method = "F96DCFB160CAE669DE173597BCAB5D29", hash_generated_method = "C734A05148AE2009F15CC2274FB39B2A")
-    
 final void performRestoreInstanceState(Bundle savedInstanceState) {
         onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
     }
-    
+
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -481,6 +482,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void restoreManagedDialogs(Bundle savedInstanceState){
@@ -507,7 +509,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
     }
 		*/
 	}
-    
+
+    @DSVerified 
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPostCreate(Bundle savedInstanceState){
@@ -524,7 +527,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified("Modeled Lifecycle Event")
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onStart(){
@@ -549,7 +553,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified    
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onRestart(){
@@ -562,6 +566,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSVerified    
 	@DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onResume(){
@@ -615,6 +620,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
      * @see #setIntent 
      * @see #onResume 
      */
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.580 -0500", hash_original_method = "ECA12E6FCFF6C8E6301C9A23FD34F5BD", hash_generated_method = "4ADDCDE3CE740D4C5E6F0A8FD5893823")
@@ -639,6 +645,7 @@ final void performSaveInstanceState(Bundle outState) {
         saveManagedDialogs(outState);
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onSaveInstanceState(Bundle outState){
@@ -660,6 +667,7 @@ final void performSaveInstanceState(Bundle outState) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void saveManagedDialogs(Bundle outState){
@@ -722,12 +730,33 @@ protected void onUserLeaveHint() {
      * @see #onSaveInstanceState
      * @see #onPause
      */
+    @DSVerified("Modeled Lifecycle Event")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.615 -0500", hash_original_method = "88BB0202BF6BAEB771096BFB80D04435", hash_generated_method = "89FD83C8377F7059D62B43FADD327332")
-    
 public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
         return false;
     }
+    
+    @DSVerified("Internal droidsafe use")
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafePerformSaveInstanceState(Bundle bundle) {
+        performSaveInstanceState(bundle);
+    }
+    
+    @DSVerified("Internal droidsafe use")
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafePerformRestoreInstanceState(Bundle savedInstanceState) {
+        performRestoreInstanceState(savedInstanceState);
+    }
+ 
+    @DSVerified("Internal droidsafe use")
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public boolean droidsafeOnCreateThumbnail() {
+        return onCreateThumbnail(new Bitmap(), new Canvas());
+    }
+ 
 
+    
     /**
      * Generate a new description for this activity.  This method is called
      * before pausing the activity and can, if desired, return some textual
@@ -745,6 +774,8 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
      * @see #onSaveInstanceState
      * @see #onPause
      */
+    @DSVerified("Modeled Lifecycle Event")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.620 -0500", hash_original_method = "ABF3FC9B35FB67DA4650457E79D2DAE8", hash_generated_method = "4A801EFBDC40FB7231D50804D2987BA1")
     
 public CharSequence onCreateDescription() {
@@ -1209,6 +1240,7 @@ public void setFinishOnTouchOutside(boolean finish) {
         mWindow.setCloseOnTouchOutside(finish);
     }
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public final void setDefaultKeyMode(int mode){
@@ -1237,7 +1269,8 @@ public void setFinishOnTouchOutside(boolean finish) {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnKeyEvents() {
         int action = getTaintInt();
         int code = getTaintInt();
@@ -1304,12 +1337,16 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
      * KeyEvent.Callback.onKeyMultiple()}: always returns false (doesn't handle
      * the event).
      */
+    @DSVerified
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.829 -0500", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "36A8C90D805E1CE396E3F79E76A992E5")
     
 public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onBackPressed(){
@@ -2372,6 +2409,7 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSVerified
 	@DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
@@ -2442,11 +2480,26 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
+		
+		/*
+		  * This is called for activities that set launchMode to "singleTop" in
+		     * their package, or if a client used the {@link Intent#FLAG_ACTIVITY_SINGLE_TOP}
+		     * flag when calling {@link #startActivity}.  In either case, when the
+		     * activity is re-launched while at the top of the activity stack instead
+		     * of a new instance of the activity being started, onNewIntent() will be
+		     * called on the existing instance with the Intent that was used to
+		     * re-launch it */
+		// on lauchmode to singleStop or SINGLE_ACTIVTY_SINGLE
+		// if ((intent.getFlags() & Intent.FLAG_ACTIVITY_SINGLE_TOP) != 0) {
+		// }
+		onNewIntent(intent);
+	
 		// Original method
 		/*
 		{
@@ -2474,6 +2527,8 @@ public LayoutInflater getLayoutInflater() {
      *
      * @see #startActivityForResult
      */
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     
@@ -2481,6 +2536,8 @@ public LayoutInflater getLayoutInflater() {
     public void startActivities(Intent[] intents) {
         mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
+        for (Intent intent: intents)
+            startActivity(intent);
     }
     
     @DSSink({DSSinkKind.START_ACTIVITY})
@@ -3815,6 +3872,7 @@ final void performUserLeaving() {
 		*/
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     void dispatchActivityResult(String who, int requestCode, 
@@ -3847,6 +3905,8 @@ final void performUserLeaving() {
 	}
     // orphaned legacy method
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnDestroy() {
 		onDestroy();
 	}
@@ -3856,9 +3916,12 @@ final void performUserLeaving() {
 	public final void performCreate(Bundle icicle, Context context){
         addTaint(icicle.getTaint());
         addTaint(context.getTaint());
+		mIntent = droidsafeGetIntent();
+
 		this.attachBaseContext(context);
 		onCreate(icicle);
 		onStart();
+		onPostCreate(icicle);
 		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
 		mFragments.dispatchActivityCreated();
@@ -3876,6 +3939,8 @@ final void performUserLeaving() {
     
     // orphaned legacy method
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnResume() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onResume();
@@ -3883,19 +3948,34 @@ final void performUserLeaving() {
     
     // orphaned legacy method
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onStop();
     }
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeOnRestart() {
+		//This method is called by droidsafe itself, and should NEVER be called by an app
+    	onRestart();
+    }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void setApplication(Application app) { 
             this.mApplication = app;
     }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnSavedInstanceState(Bundle b) {
     	this.onSaveInstanceState(b);
 	}
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
@@ -3903,17 +3983,20 @@ final void performUserLeaving() {
     /**
      * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
      */
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnSubActivityHook() {
         droidsafeOnOthersHook();
 	}
     
+	@DSVerified
+	@DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnOthersHook() {
-        this.onActionModeFinished(ActionMode.droidsafeObtainObject());
-        this.onActionModeStarted(ActionMode.droidsafeObtainObject());
+        this.onActionModeFinished(new ActionMode.SimpleActionMode());
+        this.onActionModeStarted(new ActionMode.SimpleActionMode());
         MenuBuilder builder = new MenuBuilder(getBaseContext());
         //technically we should use the menu from external source
-        Menu menu = builder.addSubMenu(getTaintInt());
+        Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onCreateOptionsMenu(menu);
         this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
         this.onPrepareOptionsMenu(menu);
@@ -3921,23 +4004,27 @@ final void performUserLeaving() {
         this.onContextItemSelected(menu.add(new String()));
        
         onWindowFocusChanged(getTaintBoolean());
-        onTouchEvent(MotionEvent.droidsafeObtainEvent());
-        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
-        onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+        onTouchEvent(new MotionEvent()); 
+        onTrackballEvent(new MotionEvent());
+        onGenericMotionEvent(new MotionEvent());
 
-        onKeyDown(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyUp(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyDown(getTaintInt(), new KeyEvent()); 
+        onKeyUp(getTaintInt(), new KeyEvent());
+        onKeyLongPress(getTaintInt(), new KeyEvent());
+        onKeyShortcut(getTaintInt(), new KeyEvent());
+        onKeyMultiple(getTaintInt(), getTaintInt(), new KeyEvent());
         
         //all dispatch functions
-        dispatchTouchEvent(MotionEvent.droidsafeObtainEvent());
-        dispatchGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
-        dispatchKeyEvent(KeyEvent.droidsafeObtainEvent());
-        dispatchKeyShortcutEvent(KeyEvent.droidsafeGetEvent());
-        dispatchTrackballEvent(MotionEvent.droidsafeObtainEvent());
-        dispatchPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
+        dispatchTouchEvent(new MotionEvent());
+        dispatchGenericMotionEvent(new MotionEvent());
+        dispatchKeyEvent(new KeyEvent());
+        dispatchKeyShortcutEvent(new KeyEvent());
+        dispatchTrackballEvent(new MotionEvent());
+        dispatchPopulateAccessibilityEvent(new AccessibilityEvent(DSUtils.FAKE_INT));
+        
+        droidsafeOnCreateThumbnail();
+        onCreateDescription();
+        
     }
     
 }

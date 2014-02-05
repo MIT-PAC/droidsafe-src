@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import com.android.internal.policy.PolicyManager;
@@ -255,6 +257,7 @@ public abstract class Context {
     
 	// Hook to match with value analsysis
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
+	public List<Intent> intentsFromFilter = new LinkedList<Intent>();
 
 	public Context() {
 		//Do Nothing
@@ -2304,14 +2307,25 @@ public abstract Context createPackageContext(String packageName,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.141 -0500", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "5F09F86AB7736674ADD7B4B91DD7FE80")
     
+    @DSVerified
 public boolean isRestricted() {
         return false;
     }
 	
 	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
-	
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
-	this.__ds__intentFilters.add(intentFilter);
+	    this.__ds__intentFilters.add(intentFilter);
+	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
+	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
+	    this.intentsFromFilter.add(intent);	
+	}
+	
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+	public Intent droidsafeGetIntent() {
+	    return intentsFromFilter.get(getTaintInt());
 	}
     
 }
