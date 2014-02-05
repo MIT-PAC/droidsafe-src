@@ -21,6 +21,7 @@ import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
 import soot.RefType;
+import soot.ArrayType;
 
 public class CallbackWithContext extends ApiUsageListing{
     private static final Logger logger = LoggerFactory.getLogger(CallbackWithContext.class);
@@ -98,6 +99,13 @@ public class CallbackWithContext extends ApiUsageListing{
                 }
                 else {
                     logger.info("method {}, paramType {}", method, myType);
+                    category = "KEEP_PARAM";
+                    break;
+                }
+            }
+            if (myType instanceof ArrayType) {
+                ArrayType atype = (ArrayType)myType;
+                if (atype.baseType instanceof RefType) {
                     category = "KEEP_PARAM";
                     break;
                 }

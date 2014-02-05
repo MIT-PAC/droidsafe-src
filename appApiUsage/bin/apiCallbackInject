@@ -7,11 +7,14 @@ DROIDSAFE_DIR=$APPDIR/../..
 DROIDSAFE_BINDIR=$APPDIR/../../bin
 APPJAR=$APPDIR/bin/appApiUsage.jar
 
+
 for JARFILE in $LIBDIR/*.jar $DROIDSAFE_BINDIR/*jar; do
     APP_CLASSPATH=$APP_CLASSPATH:$JARFILE
 done
 
-APP_CLASSPATH=$APPJAR:$APP_CLASSPATH
+APP_CLASSPATH=$APPJAR:$APP_CLASSPATH:$DROIDSAFE_DIR/config-files
+
+echo "app classpath: $APP_CLASSPATH"
 
 if [ "$#" -eq 0 ]; then
     java -cp $APP_CLASSPATH droidsafe.tools.CallbackInject 
