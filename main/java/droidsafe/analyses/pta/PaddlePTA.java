@@ -220,9 +220,9 @@ public class PaddlePTA extends PTABridge {
 
         soot.options.Options.v().setPhaseOption("cg.paddle","enabled:true");
         soot.options.Options.v().setPhaseOption("cg.paddle","verbose:false");
-        soot.options.Options.v().setPhaseOption("cg.paddle","bdd:true");
-        soot.options.Options.v().setPhaseOption("cg.paddle","backend:buddy");
-        soot.options.Options.v().setPhaseOption("cg.paddle","context:objsens");
+        soot.options.Options.v().setPhaseOption("cg.paddle","bdd:false");
+        soot.options.Options.v().setPhaseOption("cg.paddle","backend:none");
+        soot.options.Options.v().setPhaseOption("cg.paddle","context:kobjsens");
         soot.options.Options.v().setPhaseOption("cg.paddle","k:2");
         soot.options.Options.v().setPhaseOption("cg.paddle","propagator:auto");
         soot.options.Options.v().setPhaseOption("cg.paddle","conf:ofcg");

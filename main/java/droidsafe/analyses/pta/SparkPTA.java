@@ -27,6 +27,7 @@ import soot.ArrayType;
 import soot.Context;
 import soot.G;
 import soot.Local;
+import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.Scene;
@@ -94,7 +95,7 @@ public class SparkPTA extends PTABridge {
     /** underlying pta */
     private PAG ptsProvider;
 
-  
+
 
     public SparkPTA() {
 
@@ -102,7 +103,6 @@ public class SparkPTA extends PTABridge {
 
     @Override
     protected void releaseInternal() {
-        G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
     }
 
     @Override
@@ -129,19 +129,28 @@ public class SparkPTA extends PTABridge {
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
 
         long totalIndegree = 0;
-        
+
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
-            if (momc instanceof SootMethod) {
-                reachableMethods.add((SootMethod)momc);
-                
-                Iterator<Edge> iterator = callGraph.edgesInto(momc);
-                while (iterator.hasNext()) {
-                    totalIndegree++;
-                    iterator.next();
-                }
+
+            reachableMethods.add(momc.method());
+
+            //System.out.println("SparkPTA Reachable MOMC: " + momc);
+            
+            Iterator<Edge> iterator = callGraph.edgesInto(momc);
+            while (iterator.hasNext()) {
+                totalIndegree++;
+                Edge e = iterator.next();
+               // System.out.println("SparkPTA Reachable Edge: " + e + "\n");
             }
         }
+
+        QueueReader<Edge> edges = callGraph.listener();
+        /*
+        while (edges.hasNext()) {
+            System.out.println("SparkPTA cg edge: " + edges.next());
+        }*/
+        
 
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
@@ -163,7 +172,7 @@ public class SparkPTA extends PTABridge {
     public CallGraph getCallGraph() {
         return callGraph;
     }
-   
+
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
@@ -524,11 +533,14 @@ public class SparkPTA extends PTABridge {
     private void createNewToAllocMap() {
         newToAllocNodeMap = HashBiMap.create();
 
+        int realSize = 0; 
+
         for (AllocNode node : ptsProvider.getAllocNodes()) {
             newToAllocNodeMap.put(node.getNewExpr(), node);
+            realSize ++;
         }
 
-
+        System.out.println("Real alloc node size (NEED TO FIX): " + realSize);
     }
 
     /**
@@ -549,7 +561,7 @@ public class SparkPTA extends PTABridge {
         opt.put("types-for-sites","false");        
         opt.put("merge-stringbuffer","false");   
         opt.put("string-constants","true");     
-        opt.put("simulate-natives","true");      
+        opt.put("simulate-natives","false");      
         opt.put("simple-edges-bidirectional","false");
         opt.put("on-fly-cg","true");            
         opt.put("simplify-offline","false");    
@@ -569,11 +581,15 @@ public class SparkPTA extends PTABridge {
         opt.put("add-tags","false");             
         opt.put("set-mass","false");
 
+        opt.put("kobjsens", "2");
+
+        /*
         //some context sensitivity
         opt.put("cs-demand", "false");
         opt.put("lazy-pts", "true");
         opt.put("passes", "10");
         opt.put("traversal", "75000");
+         */
 
         SparkTransformer.v().transform("",opt);
 

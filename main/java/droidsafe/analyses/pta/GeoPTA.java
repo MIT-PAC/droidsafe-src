@@ -135,7 +135,6 @@ public class GeoPTA extends PTABridge {
     protected void releaseInternal() {
         ContextTranslator.pts_1cfa_map = null;
         ContextTranslator.objs_1cfa_map = null;
-        G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
     }
 
     public CallGraph getCallGraph() {
