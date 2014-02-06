@@ -3,6 +3,7 @@ package droidsafe.transforms.objsensclone;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -78,8 +79,17 @@ public class CloneInheritedMethods {
             return;
 
         //build ancestor
-        List<SootClass> ancestors = Scene.v().getActiveHierarchy().getSuperclassesOf(clazz);
+        //List<SootClass> ancestors = Scene.v().getActiveHierarchy().getSuperclassesOf(clazz);
+        List<SootClass> ancestors = new LinkedList<SootClass>();
 
+        //fill in ancestor list without using Soot.Hierarchy
+        SootClass curAncestor = clazz;
+        while (curAncestor.hasSuperclass())
+        {
+            ancestors.add(curAncestor.getSuperclass());
+            curAncestor = curAncestor.getSuperclass();
+        }
+        
         for (SootClass ancestor : ancestors) {
             if (ancestor.isPhantom())
                 continue;

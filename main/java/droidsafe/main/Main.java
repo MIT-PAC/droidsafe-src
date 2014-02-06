@@ -282,6 +282,10 @@ public class Main {
             appStatRowEntries.add(timer1.toString());
             driverMsg("Finished cloning: " + timer1);
         }
+        
+        //need this pta run to account for cloning
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
             
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
@@ -292,12 +296,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
         }
-       
-        //need this pta run to account for object sens and jsa injection
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-       
-        
+            
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
         ClassGetNameToClassString.run();
@@ -305,6 +304,8 @@ public class Main {
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
     
+        
+        //need this pta run to account for jsa injection and class / forname
         if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
