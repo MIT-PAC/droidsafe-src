@@ -1,3 +1,4 @@
+
 package android.app;
 
 // Droidsafe Imports
@@ -96,10 +97,10 @@ public void onCreate() {
     /**
      * @deprecated Implement {@link #onStartCommand(Intent, int, int)} instead.
      */
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.400 -0500", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "CF926B6A86164E3DF6A5EB52ADD8A622")
-    
 @Deprecated
     public void onStart(Intent intent, int startId) {
     }
@@ -144,8 +145,9 @@ public void onCreate() {
      * 
      * @see #stopSelfResult(int)
      */
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSpec(DSCat.INTENT_EXCHANGE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.421 -0500", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "8F82C5618944297E2295D41E531A28CB")
     
 public int onStartCommand(Intent intent, int flags, int startId) {
@@ -202,8 +204,8 @@ public void onTrimMemory(int level) {
      * @return Return an IBinder through which clients can call on to the 
      *         service.
      */
-    @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.432 -0500", hash_original_method = "E7069E97241B54247C185B02B263733A", hash_generated_method = "00BCEE37A5873355128A7403645D0D57")
     
 public abstract IBinder onBind(Intent intent);
@@ -221,8 +223,9 @@ public abstract IBinder onBind(Intent intent);
      * @return Return true if you would like to have the service's
      * {@link #onRebind} method later called when new clients bind to it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.434 -0500", hash_original_method = "5942B5AC8056FD2F0F888A571E85A724", hash_generated_method = "B52FE46858C6AEA7DD3A25C370E114B2")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.434 -0500", hash_original_method = "5942B5AC8056FD2F0F888A571E85A724", hash_generated_method = "B52FE46858C6AEA7DD3A25C370E114B2")    
 public boolean onUnbind(Intent intent) {
         return false;
     }
@@ -238,7 +241,8 @@ public boolean onUnbind(Intent intent) {
      * Context.bindService}.  Note that any extras that were included with
      * the Intent at that point will <em>not</em> be seen here.
      */
-    @DSComment("Potential intent to trigger other processing")
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")    
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.436 -0500", hash_original_method = "96E602EF97C136D1349E20B0217FC297", hash_generated_method = "170404668CF0E888E1F95844174DBC8F")
     
@@ -256,7 +260,9 @@ public void onRebind(Intent intent) {
      * the task that is being removed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.438 -0500", hash_original_method = "8FB0E93CA9596F065DFD6DBA45B93821", hash_generated_method = "D19487D23911CA2C5A5E261B83D459BB")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")    
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void onTaskRemoved(Intent rootIntent) {
     }
 

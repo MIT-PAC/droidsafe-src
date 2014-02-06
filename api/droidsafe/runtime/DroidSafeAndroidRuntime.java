@@ -128,9 +128,9 @@ public class DroidSafeAndroidRuntime {
             for (Intent intent : DSUtils.getIntentFromFilter(filter)) {
                 service.onBind(intent);
                 service.onRebind(intent);
-                service.onStart(intent, 0);
+                service.onStart(intent, DSUtils.FAKE_INT);
                 service.onTaskRemoved(intent);
-                service.onStartCommand(intent, 0, 0);
+                service.onStartCommand(intent, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
                 service.onUnbind(intent);
                 if (service instanceof IntentService) {
                     ((IntentService) service).__ds__onHandleIntent(intent);
