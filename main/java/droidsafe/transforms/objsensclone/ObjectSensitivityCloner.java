@@ -11,7 +11,9 @@ import droidsafe.utils.SootUtils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -69,7 +71,7 @@ import soot.ValueBox;
  *
  */
 public class ObjectSensitivityCloner {
-    
+
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
 
@@ -77,19 +79,20 @@ public class ObjectSensitivityCloner {
     private static final double CLONING_THRESHOLD = .10;
 
     private static final boolean CLONE_STRINGS = false;
-    
+
     /** list of classes resolved by VA, some of which should be cloned */
     public static final Set<SootClass> VA_RESOLVED_CLASSES = 
             VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
 
     private static final Set<String> STRING_CLASSES = 
-                new HashSet<String>(Arrays.asList("java.lang.String", 
-                    "java.lang.StringBuffer",
-                        "java.lang.StringBuilder"));
+            new HashSet<String>(Arrays.asList("java.lang.String", 
+                "java.lang.StringBuffer",
+                    "java.lang.StringBuilder"));
 
     private int numClonedClasses = 0;
     private int cloneErrors = 0;
-    private List<SootMethod> masterMethodList;
+    /** reachable assignment statements that have an allocation, that we search when cloning */
+    private HashMap<SootMethod, List<AssignStmt>> allocStmts;
     private static ObjectSensitivityCloner v;
 
     private Map<SootClass, Set<SootClass>> originalToCloneMap;
@@ -119,6 +122,7 @@ public class ObjectSensitivityCloner {
         originalToCloneMap = new HashMap<SootClass, Set<SootClass>>();
         clonedMethodsAdded = new HashSet<SootMethod>();
         methodToClonesMap = new HashMap<SootMethod,Set<SootMethod>>();
+        allocStmts = new HashMap<SootMethod, List<AssignStmt>>();
     }
 
     /**
@@ -126,9 +130,9 @@ public class ObjectSensitivityCloner {
      */
     private void replaceArrayCopyCalls() {
         SootMethod arrayCopy = Scene.v().getMethod("<java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>");
-        
+
         for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
-            
+
 
             if (method.isAbstract() || !method.isConcrete())
                 continue;
@@ -140,7 +144,7 @@ public class ObjectSensitivityCloner {
 
             while (stmtIt.hasNext()) {
                 Stmt stmt = (Stmt)stmtIt.next();
-                
+
                 if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
                     StaticInvokeExpr sie = (StaticInvokeExpr)stmt.getInvokeExpr();
                     if (sie.getMethod().equals(arrayCopy)) {
@@ -151,13 +155,31 @@ public class ObjectSensitivityCloner {
             }
         }
     }
-    
-    private void initMasterList() {
-        //we want to keep a consistent numbering across runs of droidsafe for clones
-        //so we sort the classes list we go through
-        masterMethodList = new LinkedList<SootMethod>();
-        masterMethodList.addAll(PTABridge.v().getAllReachableMethods());
-        Collections.sort(masterMethodList, new ToStringComparator());
+
+    private void addToAllocList(Collection<SootMethod> methods) {
+        for (SootMethod method : methods) {
+            if (method.isAbstract() || !method.isConcrete())
+                continue;
+
+            Body body = method.getActiveBody();
+            StmtBody stmtBody = (StmtBody)body;
+            Chain units = stmtBody.getUnits();
+            Iterator stmtIt = units.snapshotIterator();
+
+            while (stmtIt.hasNext()) {
+                Stmt stmt = (Stmt)stmtIt.next();
+
+                if (stmt instanceof AssignStmt) {
+                    AssignStmt assign = (AssignStmt) stmt;
+                    if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
+                        if (!allocStmts.containsKey(method)) {
+                            allocStmts.put(method, new LinkedList<AssignStmt>());
+                        }
+                        allocStmts.get(method).add(assign);
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -168,10 +190,10 @@ public class ObjectSensitivityCloner {
             logger.error("Cannot call on non-cloned class!: {}", clz);
             droidsafe.main.Main.exit(1);
         }
-        
+
         return cloneToOriginalMap.get(clz);
     }
-    
+
     /**
      * Get all the cloned classes that represent the given original class.
      */
@@ -180,14 +202,14 @@ public class ObjectSensitivityCloner {
             logger.error("Cannot call on cloned class!: {}", clz);
             droidsafe.main.Main.exit(1);
         }
-        
+
         if (!originalToCloneMap.containsKey(clz))
             return Collections.emptySet();
-        
+
         return originalToCloneMap.get(clz);
-        
+
     }
-    
+
     public boolean isClonedClass(SootClass clz) {
         return cloneToOriginalMap.keySet().contains(clz);
     }
@@ -199,11 +221,11 @@ public class ObjectSensitivityCloner {
     public Set<SootMethod> getMethodsThatWereCloned() {
         return methodToClonesMap.keySet();
     }
-    
+
     public Set<SootMethod> getAllClonedMethods(){
         return clonedMethodsAdded;
     }
-    
+
     public Set<SootMethod> getClonedContextMethods(SootMethod method) {
         SootClass clz = method.getDeclaringClass();
 
@@ -217,7 +239,7 @@ public class ObjectSensitivityCloner {
         else 
             return Collections.emptySet();
     }
-    
+
     /**
      * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
      * new expression.
@@ -226,8 +248,9 @@ public class ObjectSensitivityCloner {
         hasRun = true;
         numClonedClasses = 0;
         AllocationGraph aGraph = new AllocationGraph();
-        
-        initMasterList();
+
+        //build list of allocations that we are going to search for each clone
+        addToAllocList(PTABridge.v().getAllReachableMethods());
 
         FileWriter fw = null;
 
@@ -236,7 +259,7 @@ public class ObjectSensitivityCloner {
                     "obj-sens-cloner-va-stats.csv");
 
             fw.write(aGraph.getGraphStats());
-            
+
             List<SootClass> workList = aGraph.workList();
             fw.write("Total classes to consider: " + workList.size() + "\n");
             fw.write("Class,InDegree,OutDegree,TotalClasses,PercentChange\n");
@@ -244,9 +267,9 @@ public class ObjectSensitivityCloner {
             int prevClassCount = Scene.v().getClasses().size();
             for (SootClass currentClass : workList) {
                 //don't clone strings on first run
-                
+
                 fw.write("Considering " + currentClass + "\n");
-                
+
                 if (!CLONE_STRINGS && STRING_CLASSES.contains(currentClass.getName())) {
                     fw.write("\tDo not touch: String class\n");
                     continue;
@@ -282,8 +305,9 @@ public class ObjectSensitivityCloner {
                     //remove methods from the original class as being reachable, and thus not going to force a
                     //clone
                     for (SootMethod method : currentClass.getMethods()) { 
-                        if (!method.isStatic())
-                            masterMethodList.remove(method);
+                        if (!method.isStatic()) {
+                            allocStmts.remove(method);
+                        }
                     }
                 } 
 
@@ -296,13 +320,15 @@ public class ObjectSensitivityCloner {
                     //update allocation graph for new methods
                     for (SootMethod method : cim.getReachableClonedMethods()) {
                         aGraph.updateAllocationGraph(method);
-                         masterMethodList.add(method);
+                        List<SootMethod> tempSet = new ArrayList<SootMethod>(1);
+                        tempSet.add(method);
+                        addToAllocList(tempSet);
                     }
-                    
+
                 }
                 fw.flush();
             }
-            
+
             fw.close();
         } catch (IOException e) {
             logger.error("Error writing stats file.");
@@ -367,96 +393,85 @@ public class ObjectSensitivityCloner {
 
         //create a list to iterate over that is the current snap shot of the master list
         //because we update the master list for each clone...
-        List<SootMethod> iterationList = new LinkedList<SootMethod>();
-        iterationList.addAll(masterMethodList);
+        //List<SootMethod> iterationList = new LinkedList<SootMethod>();
+        //iterationList.addAll(masterMethodList);
 
-        for (SootMethod method : iterationList) {
+        HashMap<SootMethod,List<AssignStmt>> allocs = (HashMap<SootMethod,List<AssignStmt>>)allocStmts.clone();
 
-            //if (API.v().isSystemMethod(method))
-            //    continue;
+        for (Map.Entry<SootMethod, List<AssignStmt>> entry : allocs.entrySet()) {
+            SootMethod method = entry.getKey();
+            List<AssignStmt> assigns = entry.getValue();
 
-            if (method.isAbstract() || !method.isConcrete())
-                continue;
+            for (AssignStmt assign : assigns) {
+                NewExpr newExpr = (NewExpr) assign.getRightOp();
+                SootClass base = newExpr.getBaseType().getSootClass();
+                String baseClassName = base.getName();
 
-            Body body = method.getActiveBody();
-            StmtBody stmtBody = (StmtBody)body;
-            Chain units = stmtBody.getUnits();
-            Iterator stmtIt = units.snapshotIterator();
+                if (!currentClass.equals(base)) 
+                    continue;
 
-            while (stmtIt.hasNext()) {
-                Stmt stmt = (Stmt)stmtIt.next();
+                logger.info("Found new expr to replace and clone class: {} {}\n",
+                    method, assign);
 
-                if (stmt instanceof AssignStmt) {
-                    AssignStmt assign = (AssignStmt) stmt;
-                    if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
-                        NewExpr newExpr = (NewExpr) assign.getRightOp();
-                        SootClass base = newExpr.getBaseType().getSootClass();
-                        String baseClassName = base.getName();
+                //now change the constructor call after find the appropriate call to change
+                try {
+                    Set<Local> local = new HashSet<Local>();
+                    local.add((Local)assign.getLeftOp());
 
-                        if (!currentClass.equals(base)) 
-                            continue;
+                    Body body = method.getActiveBody();
+                    StmtBody stmtBody = (StmtBody)body;
+                    Chain units = stmtBody.getUnits();
 
-                        logger.info("Found new expr to replace and clone class: {} {}\n",
-                            method, assign);
+                    SpecialInvokeExpr special = findConstructorCall(method,
+                        (Stmt)units.getSuccOf(assign), local);
 
-                        //now change the constructor call after find the appropriate call to change
-                        try {
-                            Set<Local> local = new HashSet<Local>();
-                            local.add((Local)assign.getLeftOp());
+                    if (special != null) {
+                        //found an appropriate constructor call
+                        //clone class and install it as an new API class
 
-                            SpecialInvokeExpr special = findConstructorCall(method,
-                                (Stmt)units.getSuccOf(assign), local);
+                        ClassCloner cCloner = ClassCloner.cloneClass(base);
 
-                            if (special != null) {
-                                //found an appropriate constructor call
-                                //clone class and install it as an new API class
+                        SootClass cloned = cCloner.getClonedClass();
 
-                                ClassCloner cCloner = ClassCloner.cloneClass(base);
+                        //add all cloned methods clone to the master list
+                        addToAllocList(cCloner.getReachableClonedMethods());
 
-                                SootClass cloned = cCloner.getClonedClass();
+                        rememberCloneContext(cCloner.getCloneToOriginalMap());
 
-                                //add all cloned methods clone to the master list
-                                masterMethodList.addAll(cCloner.getReachableClonedMethods());
+                        //update allocation graph for new methods
+                        for (SootMethod newMethod : cCloner.getReachableClonedMethods())
+                            aGraph.updateAllocationGraph(newMethod);
 
-                                rememberCloneContext(cCloner.getCloneToOriginalMap());
+                        SootMethodRef origMethodRef = special.getMethodRef();
 
-                                //update allocation graph for new methods
-                                for (SootMethod newMethod : cCloner.getReachableClonedMethods())
-                                    aGraph.updateAllocationGraph(newMethod);
+                        //replace old constructor call with call to cloned class
+                        special.setMethodRef(Scene.v().makeMethodRef(cloned, 
+                            origMethodRef.name(), 
+                            origMethodRef.parameterTypes(), 
+                            origMethodRef.returnType(), 
+                            origMethodRef.isStatic()));
 
-                                SootMethodRef origMethodRef = special.getMethodRef();
+                        //replace new expression with new expression of cloned class
+                        newExpr.setBaseType(RefType.v(cloned));
 
-                                //replace old constructor call with call to cloned class
-                                special.setMethodRef(Scene.v().makeMethodRef(cloned, 
-                                    origMethodRef.name(), 
-                                    origMethodRef.parameterTypes(), 
-                                    origMethodRef.returnType(), 
-                                    origMethodRef.isStatic()));
+                        numClonedClasses++;
+                        cloneToOriginalMap.put(cloned, currentClass);
 
-                                //replace new expression with new expression of cloned class
-                                newExpr.setBaseType(RefType.v(cloned));
-                                
-                                numClonedClasses++;
-                                cloneToOriginalMap.put(cloned, currentClass);
-                                
-                                if (!originalToCloneMap.containsKey(currentClass)) 
-                                    originalToCloneMap.put(currentClass, new HashSet<SootClass>());
-                                
-                                originalToCloneMap.get(currentClass).add(cloned);
-                                
-                                
-                                haveCloned = true;
-                            } else {
-                                throw new Exception("Special Invoke Not Found!");
-                            }
-                        } catch (Exception e) {
-                            logger.info("Error processing constructor call after modifying new expr: {} in {}", 
-                                stmt, method, e);
-                            //droidsafe.main.Main.exit(1);
-                            cloneErrors++;
-                        }
+                        if (!originalToCloneMap.containsKey(currentClass)) 
+                            originalToCloneMap.put(currentClass, new HashSet<SootClass>());
 
+                        originalToCloneMap.get(currentClass).add(cloned);
+
+
+                        haveCloned = true;
+                    } else {
+                        throw new Exception("Special Invoke Not Found!");
                     }
+                } catch (Exception e) {
+                    logger.info("Error processing constructor call after modifying new expr: {} in {}", 
+                        assign, method, e);
+                    //droidsafe.main.Main.exit(1);
+                    cloneErrors++;
                 }
             }
         }
