@@ -1389,13 +1389,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.705 -0500", hash_original_method = "7A0AD99F840E8369EC476A6B56BA8ADA", hash_generated_method = "A09B7F6F117B98E786ADFB55C19B5992")
-    
+    @DSVerified
 public View(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     public View(Context context, AttributeSet attrs, int defStyle){
 		this(context);
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1403,8 +1404,11 @@ public View(Context context, AttributeSet attrs) {
     
 	@DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSVerified
     View(){
 		this(new ContextImpl());
+		droidsafeCallbackHook();
+        droidsafeOverridingMethodHook();
 		/*
 		mResources = null;
 		*/
@@ -1422,7 +1426,8 @@ public View(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeCallbackHook(){
         onCheckIsTextEditor();
         onCloseSystemDialogs(new String());
@@ -1457,7 +1462,8 @@ public View(Context context, AttributeSet attrs) {
         onAnimationEnd();
         
     }
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOverridingMethodHook() {
         computeHorizontalScrollExtent();
         computeHorizontalScrollOffset();

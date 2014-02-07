@@ -15,6 +15,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
      */
     @DSComment("Widget wrapper")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.965 -0500", hash_original_method = "9EAF442CC86F0B5BA1B1B46FB2948CE7", hash_generated_method = "DEB53658D67F140D3EE8EB0F32F20711")
     
 public AppWidgetProvider() {
@@ -29,7 +30,8 @@ public AppWidgetProvider() {
      */
     // BEGIN_INCLUDE(onReceive)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.969 -0500", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "EF342D23D1577697EF78747946840D49")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public void onReceive(Context context, Intent intent) {
         // Protect against rogue update broadcasts (not really a security issue,
         // just filter bad broacasts out so subclasses are less likely to crash).
@@ -77,9 +79,9 @@ public void onReceive(Context context, Intent intent) {
      * @see AppWidgetManager#ACTION_APPWIDGET_UPDATE
      */
     @DSComment("normal android callback")
+    @DSVerified
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.972 -0500", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "DA35BFFBEC9E2DD7C21FA7CA2CB56F93")
-    
 public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
     }
     
@@ -98,6 +100,8 @@ public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] a
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.975 -0500", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "0A2F587359EF4FFC4CE003D359E17721")
     
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onDeleted(Context context, int[] appWidgetIds) {
     }
 
@@ -117,6 +121,7 @@ public void onDeleted(Context context, int[] appWidgetIds) {
      *
      * @see AppWidgetManager#ACTION_APPWIDGET_ENABLED
      */
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.977 -0500", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "633E65C488AD0A62FAB2CA13D96145CE")
@@ -136,6 +141,7 @@ public void onEnabled(Context context) {
      *
      * @see AppWidgetManager#ACTION_APPWIDGET_DISABLED
      */
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.981 -0500", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "C0B79C8D02E20A27718E8BEE80E6A67D")

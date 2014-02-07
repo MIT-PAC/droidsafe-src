@@ -2007,6 +2007,7 @@ public void closeContextMenu() {
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -2022,6 +2023,7 @@ public void closeContextMenu() {
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
@@ -3488,6 +3490,9 @@ public final int getVolumeControlStream() {
 		return new View(context);
 	}
     
+	@DSVerified
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method

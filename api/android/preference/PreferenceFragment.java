@@ -97,6 +97,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
 
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified("called from FragmentManagerImpl")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.193 -0500", hash_original_method = "14584F9C5C89DF812017D65CA10140CA", hash_generated_method = "99748259059AAD72599BC1E0DB18050A")
     
 @Override
@@ -118,7 +119,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.198 -0500", hash_original_method = "428378000E0F8A164C3A97E3B49B3453", hash_generated_method = "4246A9548633178E9033B1ECDDC8FA26")
-    
+    @DSVerified("called from FragmentManagerImpl")
 @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
