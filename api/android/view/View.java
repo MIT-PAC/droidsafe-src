@@ -4126,7 +4126,9 @@ public boolean checkInputConnectionProxy(View view) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     public void createContextMenu(ContextMenu menu){
+        onCreateContextMenu(menu);
 		// Original method
 		/*
 		{
@@ -4171,6 +4173,7 @@ protected ContextMenuInfo getContextMenuInfo() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.166 -0500", hash_original_method = "6522DD22D3C6D7A95FA248A3D5D95901", hash_generated_method = "324350287C575D3BD196B24BCAF0E20C")
+    @DSVerified
     
 protected void onCreateContextMenu(ContextMenu menu) {
     }

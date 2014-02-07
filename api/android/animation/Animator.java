@@ -284,18 +284,22 @@ public void setTarget(Object target) {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onAnimationStart(Animator animation);
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onAnimationEnd(Animator animation);
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onAnimationCancel(Animator animation);
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onAnimationRepeat(Animator animation);
     }
     

@@ -3263,6 +3263,7 @@ public SharedPreferences getPreferences(int mode) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);

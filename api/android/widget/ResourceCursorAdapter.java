@@ -96,6 +96,7 @@ public ResourceCursorAdapter(Context context, int layout, Cursor c, int flags) {
      */
     @DSComment("View to hold data at cursor, no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.408 -0500", hash_original_method = "E86C9DC4408CF260B8E6AACF31CF8025", hash_generated_method = "CF872DAE47252191A5AA057CAEF11C5C")
     

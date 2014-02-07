@@ -65,6 +65,7 @@ public void onTerminate() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.750 -0500", hash_original_method = "2D485B4C1AE5E3664AA314F747191250", hash_generated_method = "54485CB360746CF2B2E2C51891FDCFE0")
+    @DSVerified
     
 public void onConfigurationChanged(Configuration newConfig) {
         Object[] callbacks = collectComponentCallbacks();

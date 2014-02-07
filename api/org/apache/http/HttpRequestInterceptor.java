@@ -12,6 +12,7 @@ public interface HttpRequestInterceptor {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     void process(HttpRequest request, HttpContext context) 
         throws HttpException, IOException;
     

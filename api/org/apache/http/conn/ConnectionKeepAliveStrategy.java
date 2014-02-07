@@ -11,6 +11,7 @@ public interface ConnectionKeepAliveStrategy {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     long getKeepAliveDuration(HttpResponse response, HttpContext context);
     
 }

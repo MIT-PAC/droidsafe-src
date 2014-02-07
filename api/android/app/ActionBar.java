@@ -945,10 +945,16 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     
     public interface TabListener {
         
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onTabSelected(Tab tab, FragmentTransaction ft);
         
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onTabUnselected(Tab tab, FragmentTransaction ft);
         
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onTabReselected(Tab tab, FragmentTransaction ft);
     }
 
