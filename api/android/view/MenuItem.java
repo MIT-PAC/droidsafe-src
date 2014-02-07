@@ -73,6 +73,8 @@ public interface MenuItem {
     public Drawable getIcon();
     
     
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     public MenuItem setIntent(Intent intent);
 
     

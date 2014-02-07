@@ -1,3 +1,4 @@
+
 package android.app;
 
 // Droidsafe Imports
@@ -270,6 +271,7 @@ public final Activity getOwnerActivity() {
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.069 -0500", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "C14BB39171429278E5F75B94242D6C8F")
+    @DSVerified
     
 public boolean isShowing() {
         return mShowing;
@@ -283,6 +285,7 @@ public boolean isShowing() {
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.072 -0500", hash_original_method = "079FA2E5CA600A12F7067E75E853F614", hash_generated_method = "11E4DB30ED79C6CDA041FA909FA3550C")
     
 public void show() {
@@ -299,7 +302,7 @@ public void show() {
         mCanceled = false;
         
         if (!mCreated) {
-            dispatchOnCreate(null);
+            dispatchOnCreate(new Bundle());
         }
 
         onStart();
@@ -413,6 +416,7 @@ private void sendShowMessage() {
 
     // internal method to make sure mcreated is set properly without requiring
     // users to call through to super in onCreate
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.084 -0500", hash_original_method = "CD27A7CE58254212F040E7B7DA65BCA4", hash_generated_method = "CD27A7CE58254212F040E7B7DA65BCA4")
@@ -432,6 +436,7 @@ void dispatchOnCreate(Bundle savedInstanceState) {
      *     the most recent call to {@link #onSaveInstanceState}, or null if this
      *     is the first time.
      */
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.086 -0500", hash_original_method = "B84ED822BC6011EB138B2F6F1D018FE5", hash_generated_method = "77A2481F58483133CF549B870D7F844F")
@@ -443,7 +448,8 @@ protected void onCreate(Bundle savedInstanceState) {
      * Called when the dialog is starting.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.088 -0500", hash_original_method = "1B4F9BFF1D832A07D0E1F41D0B16D2FF", hash_generated_method = "5D26BC6CD7492E3645E935033A475185")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 protected void onStart() {
         if (mActionBar != null) mActionBar.setShowHideAnimationEnabled(true);
     }
@@ -452,7 +458,9 @@ protected void onStart() {
      * Called to tell you that you're stopping.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.091 -0500", hash_original_method = "28173EE669492C23D10F671D2D034693", hash_generated_method = "67FB30F07373DAF067C9EA6C2F3D55DD")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+
 protected void onStop() {
         if (mActionBar != null) mActionBar.setShowHideAnimationEnabled(false);
     }
@@ -468,6 +476,7 @@ protected void onStop() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.098 -0500", hash_original_method = "2D855197EA1046BD8EC8CA2E991844E1", hash_generated_method = "D37FA2CB6FD8B56BC1A93315A28DB0DC")
+    @DSVerified
     
 public Bundle onSaveInstanceState() {
         Bundle bundle = new Bundle();
@@ -492,6 +501,7 @@ public Bundle onSaveInstanceState() {
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.100 -0500", hash_original_method = "EE5C9B4EF0AAEC8AB3AF49A30F3FD2D3", hash_generated_method = "BEE22EB7A0FCFB296E957648A81A3257")
+    @DSVerified
     
 public void onRestoreInstanceState(Bundle savedInstanceState) {
         final Bundle dialogHierarchyState = savedInstanceState.getBundle(DIALOG_HIERARCHY_TAG);
@@ -518,6 +528,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.103 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
+    @DSVerified
     
 public Window getWindow() {
         return mWindow;
@@ -549,6 +560,7 @@ public View getCurrentFocus() {
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.108 -0500", hash_original_method = "FBC1E026CFF410D335B7C0F9A45B0829", hash_generated_method = "DF935DC9559B6B34CF7AC16F65849BAE")
+    @DSVerified
     
 public View findViewById(int id) {
         return mWindow.findViewById(id);

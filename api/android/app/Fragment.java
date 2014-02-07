@@ -398,8 +398,16 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.994 -0500", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "CF5FF4F149C6CF2D53AA15104CFBDB03")
+    @DSVerified
     
 public Fragment() {
+        droidsafeModelFragment();
+    }
+    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private void droidsafeModelFragment() {
+        
     }
     
     @DSComment("Package priviledge")
@@ -1288,6 +1296,15 @@ void initState() {
     
 public void onDetach() {
         mCalled = true;
+    }
+    
+    /**
+     * We need to pass in the activity to associate the fragment with an activity.
+     * There is no legal way of doing it through API 
+     * @param activity
+     */
+    public void droidsafeSetActivity(Activity activity) {
+        mActivity = activity;
     }
     
     /**

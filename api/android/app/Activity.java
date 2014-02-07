@@ -782,6 +782,7 @@ public CharSequence onCreateDescription() {
         return null;
     }
     
+    @DSVerified
 	@DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onStop(){
@@ -3957,7 +3958,9 @@ final void performUserLeaving() {
 	public void droidsafeOnDestroy() {
 		onDestroy();
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     // orphaned legacy method
      //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
@@ -3971,6 +3974,9 @@ final void performUserLeaving() {
 		onPostCreate(icicle);
 		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
+
+		// attach ativiity to the fragments
+		mFragments.attachActivity(this);
 		mFragments.dispatchActivityCreated();
 		// Original method
 		/*
@@ -3991,6 +3997,7 @@ final void performUserLeaving() {
     public void droidsafeOnResume() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onResume();
+		mFragments.dispatchResume();
     }
     
     // orphaned legacy method
@@ -4000,6 +4007,7 @@ final void performUserLeaving() {
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onStop();
+		mFragments.dispatchStop();
     }
 
     @DSVerified

@@ -61,6 +61,7 @@ public interface Menu {
     @DSSpec(DSCat.ABSTRACT_METHOD)
     SubMenu addSubMenu(int groupId, int itemId, int order, int titleRes);
     
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public int addIntentOptions(int groupId, int itemId, int order,
