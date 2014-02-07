@@ -10,9 +10,11 @@ public interface ComponentCallbacks {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     void onConfigurationChanged(Configuration newConfig);
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     void onLowMemory();
 }

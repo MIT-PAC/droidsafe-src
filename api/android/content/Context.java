@@ -20,6 +20,7 @@ import com.android.internal.policy.PolicyManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.DatabaseErrorHandler;
@@ -344,9 +345,12 @@ public abstract Context getApplicationContext();
      * {@link ComponentCallbacks} or {@link ComponentCallbacks2} interface.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.869 -0500", hash_original_method = "CA41FDFA6BB6EC9A7DA4C7864F293E89", hash_generated_method = "E5E2788341808E62206638EFC3698CF5")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void registerComponentCallbacks(ComponentCallbacks callback) {
-        getApplicationContext().registerComponentCallbacks(callback);
+        callback.onLowMemory();
+        callback.onConfigurationChanged(new Configuration());
+        //getApplicationContext().registerComponentCallbacks(callback);
     }
 
     /**
@@ -355,8 +359,10 @@ public void registerComponentCallbacks(ComponentCallbacks callback) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.871 -0500", hash_original_method = "494D7366CDA5CBFD506341B295742C11", hash_generated_method = "76B9ED3DB9C96637173C301628B1E341")
     
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void unregisterComponentCallbacks(ComponentCallbacks callback) {
-        getApplicationContext().unregisterComponentCallbacks(callback);
+        //getApplicationContext().unregisterComponentCallbacks(callback);
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
