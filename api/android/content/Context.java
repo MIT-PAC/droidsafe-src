@@ -257,7 +257,7 @@ public abstract class Context {
     
 	// Hook to match with value analsysis
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
-	public List<Intent> intentsFromFilter = new LinkedList<Intent>();
+	public List<Intent> __ds__intentsFromFilter = new LinkedList<Intent>();
 
 	public Context() {
 		//Do Nothing
@@ -2319,13 +2319,13 @@ public boolean isRestricted() {
 	    this.__ds__intentFilters.add(intentFilter);
 	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
 	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
-	    this.intentsFromFilter.add(intent);	
+	    this.__ds__intentsFromFilter.add(intent);	
 	}
 	
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public Intent droidsafeGetIntent() {
-	    return intentsFromFilter.get(getTaintInt());
+	    return __ds__intentsFromFilter.get(getTaintInt());
 	}
     
 }

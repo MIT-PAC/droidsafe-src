@@ -8,6 +8,7 @@ import droidsafe.helpers.DSUtils;
 import android.app.ContextImpl;
 import android.app.IntentService;
 import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
@@ -15,6 +16,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.app.Application;
 import android.app.Dialog;
+import android.app.admin.DeviceAdminReceiver;
 import android.view.MotionEvent;
 import com.google.android.maps.MapActivity;
 
@@ -159,9 +161,23 @@ public class DroidSafeAndroidRuntime {
         contentProvider.getType(null);
     }
     
-    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
-        if (mApplication != null)
+    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {        
+        if (mApplication != null) {
             receiver.setApplication(mApplication);
+            // callback receiver
+            if (receiver instanceof android.app.admin.DeviceAdminReceiver) {
+                DeviceAdminReceiver ar = (DeviceAdminReceiver) receiver;
+                Intent appIntent = mApplication.droidsafeGetIntent();
+                Context appContext = mApplication.getApplicationContext();
+                ar.onDisableRequested(appContext, appIntent);
+                ar.onDisabled(appContext, appIntent);
+                ar.onEnabled(appContext, appIntent);
+                ar.onPasswordChanged(appContext, appIntent);
+                ar.onPasswordExpiring(appContext, appIntent);
+                ar.onPasswordFailed(appContext, appIntent);
+                ar.onPasswordSucceeded(appContext, appIntent);
+            }
+        }
     }
     
     public static void modelApplication(android.app.Application app) {

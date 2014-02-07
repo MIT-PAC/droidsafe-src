@@ -479,12 +479,14 @@ public Context getBaseContext() {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.200 -0500", hash_original_method = "0D532949C3012CD33C142E9B5D03BB61", hash_generated_method = "DA4E611FCD62E3251428C579B62B39B8")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         mBase.sendBroadcast(intent, receiverPermission);
     }
-
+    @DSVerified
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -496,6 +498,9 @@ public Context getBaseContext() {
         mBase.sendOrderedBroadcast(intent, receiverPermission);
     }
 
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.205 -0500", hash_original_method = "DEE55BD129D883E4F2F6F72EA9382082", hash_generated_method = "60EB3C25B9CDBEE2156292B403A5D265")
     
@@ -511,6 +516,9 @@ public Context getBaseContext() {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.207 -0500", hash_original_method = "E4D0FD66C31D49EF8A28B259CA31F5AB", hash_generated_method = "5C8026ECFF9BD6F962718388BB93A0F3")
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     
 @Override
     public void sendStickyBroadcast(Intent intent) {
@@ -519,6 +527,9 @@ public Context getBaseContext() {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.210 -0500", hash_original_method = "7E21CD2A51D6CF22EBBD91300928AE98", hash_generated_method = "BE7EB70AC42FBFF67990C422D3707BA6")
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     
 @Override
     public void sendStickyOrderedBroadcast(
@@ -531,30 +542,71 @@ public Context getBaseContext() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.212 -0500", hash_original_method = "F6F4D7B74D392C087E12FF2E322B2B45", hash_generated_method = "00EC50DC96CCBD32534F9677AF9377C0")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 @Override
     public void removeStickyBroadcast(Intent intent) {
         mBase.removeStickyBroadcast(intent);
     }
     
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-    	receiver.onReceive(this, new Intent());
-    	return null; // no 'sticky' intents need to be modeled for coverage
+        int actionCount = filter.countActions();
+        int catCount = filter.countCategories();
+        Intent[] intents = new Intent[actionCount];
+        for (int actionIndex = 0; actionIndex < actionCount; actionIndex++) {
+            Intent intent = new Intent(filter.getAction(actionIndex));
+
+            for (int catIndex = 0; catIndex < catCount; catIndex++) {
+                intent.addCategory(filter.getCategory(catIndex));
+            }
+            intents[actionIndex] = intent;
+            receiver.onReceive(this, intent);
+        }
+        
+        return intents[0];
+    	
+    	//return null; // no 'sticky' intents need to be modeled for coverage
     }
 
+    /*
+     * Register to receive intent broadcasts, to run in the context of scheduler. See registerReceiver(BroadcastReceiver, IntentFilter) for more information. This allows you to enforce permissions on who can broadcast intents to your receiver, or have the receiver run in a different thread than the main application thread.(non-Javadoc)
+     * @see android.content.Context#registerReceiver(android.content.BroadcastReceiver, android.content.IntentFilter, java.lang.String, android.os.Handler)
+     */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.217 -0500", hash_original_method = "C498ADCED351E80E96A53362B4745838", hash_generated_method = "33D6C6769721FBE99429C7A0DC3317BE")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
         String broadcastPermission, Handler scheduler) {
+        
+        int actionCount = filter.countActions();
+        int catCount = filter.countCategories();
+        Intent[] intents = new Intent[actionCount];
+        for (int actionIndex = 0; actionIndex < actionCount; actionIndex++) {
+            Intent intent = new Intent(filter.getAction(actionIndex));
+
+            for (int catIndex = 0; catIndex < catCount; catIndex++) {
+                intent.addCategory(filter.getCategory(catIndex));
+            }
+            intents[actionIndex] = intent;
+            receiver.onReceive(this, intent);
+        }
+        
+        
+        //return intents[0];
+        
         return mBase.registerReceiver(receiver, filter, broadcastPermission,
                 scheduler);
     }
 
+    @DSVerified
     @DSComment("No action for callback unregistration")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.220 -0500", hash_original_method = "D3936D1C8F9D43BCF113D4D92126FE25", hash_generated_method = "A589371689D3516AE882F7EC4F1BDC2E")
@@ -571,6 +623,8 @@ public Context getBaseContext() {
     
 @Override
     public ComponentName startService(Intent service) {
+        //DSTODO:  We need to translate the service request to the correct service
+        //then call onStart on that
         return mBase.startService(service);
     }
 
