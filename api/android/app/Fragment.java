@@ -1050,8 +1050,11 @@ public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.097 -0500", hash_original_method = "00494AECA41C1730DF6E82548FC2C3D5", hash_generated_method = "16BC96174FF1001ACAD87A7C411E6383")
+    @DSVerified
     
 public void onCreate(Bundle savedInstanceState) {
+        // onCreate is being called by activity -> FragmentMangerImpl -> Fragment
+        // it is deep in changeState.  We may need to simplify the model a little bit
         mCalled = true;
     }
     
@@ -1066,7 +1069,9 @@ public void onCreate(Bundle savedInstanceState) {
      * from a previous saved state as given here.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.099 -0500", hash_original_method = "F4318A499F9B06ABC9CCF0644AE6DC10", hash_generated_method = "7A9779D0E96BCB81E2F9B1D4F8B9E908")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onViewCreated(View view, Bundle savedInstanceState) {
     }
     
@@ -1108,6 +1113,7 @@ public View getView() {
      */
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.105 -0500", hash_original_method = "C52625884C98429BE8DE42F4FBFE7367", hash_generated_method = "98A4E1BEF43B96D6CA75F281B713F100")
     
 public void onActivityCreated(Bundle savedInstanceState) {

@@ -137,6 +137,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.047 -0500", hash_original_method = "BC9D2F22217346E354BF7BFC78A2D0C2", hash_generated_method = "DDBAE1C6053AAADDEEB81EF120BBEB14")
+    @DSVerified
     
 public Dialog(Context context) {
         this(context, 0, true);
@@ -183,6 +184,8 @@ Dialog(Context context, int theme, boolean createContextWrapper) {
         w.setGravity(Gravity.CENTER);
         mUiThread = Thread.currentThread();
         mListenersHandler = new ListenersHandler(this);
+
+        droidsafeModelDialog();
     }
     
     /**
@@ -234,6 +237,16 @@ public ActionBar getActionBar() {
         return mActionBar;
     }
 
+@DSVerified
+@DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeModelDialog() {
+        Bundle bundle = new Bundle();
+        onCreate(bundle);
+        onAttachedToWindow();
+        onStart();
+        onStop();
+        
+    }
     /**
      * Sets the Activity that owns this dialog. An example use: This Dialog will
      * use the suggested volume control stream of the Activity.

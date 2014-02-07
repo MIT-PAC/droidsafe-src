@@ -77,8 +77,11 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     @DSComment("GUI, dialog")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.483 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
+    @DSVerified
     
-public DialogFragment() {
+    public DialogFragment() {
+        onCreate(new Bundle());
+        onCreateDialog(new Bundle());
     }
 
     /**
@@ -308,7 +311,7 @@ public boolean getShowsDialog() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.517 -0500", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "9347B65955CA212EDA6B1AB62C4BBD9E")
-    
+    @DSVerified 
 @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -377,6 +380,8 @@ public boolean getShowsDialog() {
      * @return Return a new Dialog instance to be displayed by the Fragment.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.522 -0500", hash_original_method = "94CB11021A94D8409376FA3A852A41E9", hash_generated_method = "8854F20A927D4731539FCCDAD7E493F4")
+    @DSVerified 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new Dialog(getActivity(), getTheme());
@@ -400,7 +405,9 @@ public void onDismiss(DialogInterface dialog) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.529 -0500", hash_original_method = "B958C5F8B85A3937B9102EC0291E48E7", hash_generated_method = "8E5BA66B5A3B082135A77464C0E14A70")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+
 @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

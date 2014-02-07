@@ -93,7 +93,7 @@ public ListFragment() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.075 -0500", hash_original_method = "BEDEF1303F07526C038707780C2D3CB6", hash_generated_method = "32569A28687D4A3C8ED5E30F4B91B64A")
-    
+    @DSVerified("called by FragmentManagerImpl")
 @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
