@@ -1,3 +1,4 @@
+
 package android.app;
 
 // Droidsafe Imports
@@ -71,6 +72,7 @@ public void onItemClick(AdapterView<?> parent, View v, int position, long id)
      */
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.799 -0500", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "A5ED3456A9BC8D0D960D02BCCB1B3136")
     
 protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -248,7 +250,9 @@ public ListAdapter getListAdapter() {
         //}
         //setContentView(com.android.internal.R.layout.list_content_simple);
     }
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     @Override
     public void droidsafeOnSubActivityHook() {
         onListItemClick(mList, mList.getChildAt(0), getTaintInt(), getTaintInt());

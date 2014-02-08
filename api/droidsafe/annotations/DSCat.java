@@ -48,6 +48,7 @@ public enum DSCat {
     DEFAULT_MODIFIER,  
     DEVICE,    
     
+    FILE_SYSTEM,
     MONITORING,
 
     GPS,
@@ -67,6 +68,7 @@ public enum DSCat {
     NETWORKING,
     
     OS_LOW_LEVEL,    
+    PACKAGE_INFO,
     PHONE_CALL,
     RESOURCE,
     RTP_CALL,

@@ -17,6 +17,8 @@ import android.os.IBinder;
 import android.app.Application;
 import android.app.Dialog;
 import android.app.admin.DeviceAdminReceiver;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProvider;
 import android.view.MotionEvent;
 import com.google.android.maps.MapActivity;
 
@@ -51,6 +53,8 @@ public class DroidSafeAndroidRuntime {
      * @param activity
      */
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelActivity(android.app.Activity activity) {
         ContextImpl context = new ContextImpl();
 
@@ -121,6 +125,8 @@ public class DroidSafeAndroidRuntime {
 
     }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelService(android.app.Service service) {
         if (mApplication != null)
             service.setApplication(mApplication);
@@ -147,6 +153,8 @@ public class DroidSafeAndroidRuntime {
         service.onDestroy();
     }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelContentProvider(android.content.ContentProvider contentProvider) {
         contentProvider.onCreate();
         contentProvider.onConfigurationChanged(new Configuration());
@@ -160,7 +168,9 @@ public class DroidSafeAndroidRuntime {
         contentProvider.delete(null, null, null);
         contentProvider.getType(null);
     }
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelBroadCastReceiver(BroadcastReceiver receiver) {        
         if (mApplication != null) {
             receiver.setApplication(mApplication);
@@ -176,6 +186,19 @@ public class DroidSafeAndroidRuntime {
                 ar.onPasswordExpiring(appContext, appIntent);
                 ar.onPasswordFailed(appContext, appIntent);
                 ar.onPasswordSucceeded(appContext, appIntent);
+            }
+
+            if (receiver instanceof android.appwidget.AppWidgetProvider) {
+                AppWidgetProvider aw = (AppWidgetProvider)receiver;
+                Intent appIntent = mApplication.droidsafeGetIntent();
+                Context appContext = mApplication.getApplicationContext();
+                aw.onReceive(appContext, appIntent);
+                aw.onEnabled(appContext);
+                aw.onDisabled(appContext);
+                int[] appWidgetIds = new int[1];
+                appWidgetIds[0] = DSUtils.FAKE_INT;
+                aw.onUpdate(appContext, AppWidgetManager.getInstance(appContext), appWidgetIds);
+                aw.onDeleted(appContext, appWidgetIds);
             }
         }
     }

@@ -2093,6 +2093,8 @@ public void attachActivity(Activity activity) {
         mActivity = activity;
         for (Fragment f: mAdded) {
             f.droidsafeSetActivity(activity);
+            //calling all subfragment callbacks
+            f.droidsafeSubFragmentHook();
         }
     }
     
@@ -2194,7 +2196,8 @@ public void dispatchTrimMemory(int level) {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.599 -0500", hash_original_method = "059A23578A0DB56C84349E8F783E9AC3", hash_generated_method = "75E6340F244539A764DD64732C96ED9E")
-    
+    @DSVerified("may need to inflate menu")
+    @DSSpec(DSCat.SPEC_OTHERS)
 public boolean dispatchCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         boolean show = false;
         ArrayList<Fragment> newMenus = null;

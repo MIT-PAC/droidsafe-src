@@ -1019,7 +1019,7 @@ public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanc
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.093 -0500", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "B80B37A37F384FB495394FF2DE913216")
-    
+    @DSVerified("called by FragmentManagerImpl")
 public void onAttach(Activity activity) {
         mCalled = true;
     }
@@ -1219,6 +1219,12 @@ public void onStop() {
 		// TODO Auto-generated method stub
 	}
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeSubFragmentHook() {
+        
+    }
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.123 -0500", hash_original_method = "E1E8CF8B1FBB3E8165C3219A9D0BB675", hash_generated_method = "9F599A3EEFB4A8E50276D3B55427ECB6")
     
 public void onTrimMemory(int level) {
@@ -1327,7 +1333,8 @@ public void onDetach() {
      * @see #onOptionsItemSelected
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.134 -0500", hash_original_method = "B3C5F3D019B47C47E6111F1C7C38CA5D", hash_generated_method = "029924445C1AFDCE87D15E2774C1B76B")
-    
+    @DSVerified("Called from FragmentManagerImp, which is called by droidsafeOnOthersHook")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
     }
 
