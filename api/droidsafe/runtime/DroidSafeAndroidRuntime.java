@@ -153,6 +153,9 @@ public class DroidSafeAndroidRuntime {
         service.onDestroy();
     }
     
+    //NOTE: active commands (query, delete, ..) are called to try to 
+    //invoke provider code.  Real access happens in the Client code
+    //and we need to conntect the Android ContentProviderClient with this.....
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelContentProvider(android.content.ContentProvider contentProvider) {
@@ -160,8 +163,7 @@ public class DroidSafeAndroidRuntime {
         contentProvider.onConfigurationChanged(new Configuration());
         contentProvider.onLowMemory();
         contentProvider.onTrimMemory(0);
-        // Its not clear if we could figure out some of the value for these
-        // parameters
+        // Its not clear if we could figure out some of the value for these parameters
         contentProvider.query(null, null, null, null, null);
         contentProvider.insert(null, null);
         contentProvider.update(null, null, null, null);

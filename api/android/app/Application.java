@@ -102,11 +102,14 @@ public void onTrimMemory(int level) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.757 -0500", hash_original_method = "999C2BA374DE68751A0CA6FB69F492E4", hash_generated_method = "283E1D3A362D1A8D8772446542C8D6CC")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void registerComponentCallbacks(ComponentCallbacks callback) {
         synchronized (mComponentCallbacks) {
             mComponentCallbacks.add(callback);
         }
+        callback.onConfigurationChanged(new Configuration());
+        callback.onLowMemory();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.759 -0500", hash_original_method = "01F19973468E375E5E76C4BC0EA13BD8", hash_generated_method = "0C577100894B473B84432278E677D48D")

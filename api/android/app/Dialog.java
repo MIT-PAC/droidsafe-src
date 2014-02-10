@@ -1381,7 +1381,8 @@ public void cancel() {
      * @param listener The {@link DialogInterface.OnCancelListener} to use.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.242 -0500", hash_original_method = "B6A3C715E726D4D77D298D569C13057A", hash_generated_method = "A4129EBA16B106E20EC01A33D83D4381")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnCancelListener(final OnCancelListener listener) {
         if (mCancelAndDismissTaken != null) {
             throw new IllegalStateException(
@@ -1393,6 +1394,7 @@ public void setOnCancelListener(final OnCancelListener listener) {
         } else {
             mCancelMessage = null;
         }
+        listener.onCancel(this);
     }
 
     /**
@@ -1411,7 +1413,8 @@ public void setCancelMessage(final Message msg) {
      * @param listener The {@link DialogInterface.OnDismissListener} to use.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.247 -0500", hash_original_method = "464A84E289A7DD535A8EA3034BC5D33F", hash_generated_method = "AA09BB623862B4C8757C3CDC5F3F8F50")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnDismissListener(final OnDismissListener listener) {
         if (mCancelAndDismissTaken != null) {
             throw new IllegalStateException(
@@ -1423,6 +1426,7 @@ public void setOnDismissListener(final OnDismissListener listener) {
         } else {
             mDismissMessage = null;
         }
+        listener.onDismiss(this);
     }
     
     private static final class ListenersHandler extends Handler {
@@ -1460,10 +1464,12 @@ public ListenersHandler(Dialog dialog) {
      * @param listener The {@link DialogInterface.OnShowListener} to use.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.249 -0500", hash_original_method = "0B69163DC80B46ACDA2709DE4C77DC2F", hash_generated_method = "87A3D93A28F439C62A18E848E86BC529")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnShowListener(OnShowListener listener) {
         if (listener != null) {
             mShowMessage = mListenersHandler.obtainMessage(SHOW, listener);
+            listener.onShow(this);
         } else {
             mShowMessage = null;
         }
@@ -1524,9 +1530,11 @@ public final int getVolumeControlStream() {
      * Sets the callback that will be called if a key is dispatched to the dialog.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.261 -0500", hash_original_method = "A9C3EE1B48BA32717B6024C41DF4E1F6", hash_generated_method = "472DF197C926507F0B9B35ECE002C55F")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnKeyListener(final OnKeyListener onKeyListener) {
         mOnKeyListener = onKeyListener;
+        onKeyListener.onKey(this, DSUtils.FAKE_INT, new KeyEvent());
     }
 }
 

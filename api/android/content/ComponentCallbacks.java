@@ -8,13 +8,13 @@ import android.content.res.Configuration;
 
 public interface ComponentCallbacks {
     
-    @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSVerified
+
+    @DSVerified("called from Application and Context")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     void onConfigurationChanged(Configuration newConfig);
     
-    @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSVerified
+
+    @DSVerified("called from Application and Context")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     void onLowMemory();
 }

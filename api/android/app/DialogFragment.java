@@ -389,6 +389,8 @@ public Dialog onCreateDialog(Bundle savedInstanceState) {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.524 -0500", hash_original_method = "355678003B9B3B1563024A6589368B65", hash_generated_method = "B5C1EB04A4254D80E0CBB4208CB0D39E")
     
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onCancel(DialogInterface dialog) {
     }
 
