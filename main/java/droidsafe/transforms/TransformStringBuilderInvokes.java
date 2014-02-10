@@ -106,7 +106,7 @@ public class TransformStringBuilderInvokes {
                                 continue;
 
                             //found method call to transform!
-                            logger.warn("Replacing toString call in method {}", method);
+                            logger.info("Replacing toString call in method {}", method);
 
                             //replace call with new expression to local
                             NewExpr newExpr = Jimple.v().newNewExpr(RefType.v("java.lang.String"));
