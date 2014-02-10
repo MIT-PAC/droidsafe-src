@@ -1,6 +1,8 @@
 package droidsafe.android.app;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -44,6 +46,7 @@ import com.google.common.collect.ImmutableMap;
 
 import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
+import droidsafe.transforms.TransformsUtils;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
 import droidsafe.android.app.resources.AndroidManifest;
@@ -77,7 +80,6 @@ public class Harness {
 	private String modelApplicationMethod = "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>";
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
-	private List<Unit> entryPointInvokes;
 	public static String HARNESS_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFX + "DroidSafeMain";
 	public static String FIELD_PREFIX = "_ds_field_";
 	
@@ -137,8 +139,7 @@ public class Harness {
 	
 	private Harness() {
 	    globalsMap = new LinkedHashMap<SootClass, SootField>();
-		entryPointInvokes = new LinkedList<Unit>();
-				
+						
 		//create the harness class
 		harnessClass = new SootClass(HARNESS_CLASS_NAME, Modifier.PUBLIC | Modifier.FINAL);
 		harnessClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
@@ -212,7 +213,7 @@ public class Harness {
 	private void addCallToModelingRuntime(StmtBody body) {
 		SootClass dsRuntime = Scene.v().getSootClass("droidsafe.runtime.DroidSafeAndroidRuntime");
 		SootMethod entry = dsRuntime.getMethod("void main()");
-		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(entry, null, new LinkedList<Value>()));
+		Stmt call = Jimple.v().newInvokeStmt(TransformsUtils.makeInvokeExpression(entry, null, new LinkedList<Value>()));
 		body.getUnits().add(call);
 	}
 	
@@ -493,7 +494,7 @@ public class Harness {
 		
 		body.getUnits().add(
 				Jimple.v().newInvokeStmt(
-						makeInvokeExpression(droidsafeInit, null, list))); 
+						TransformsUtils.makeInvokeExpression(droidsafeInit, null, list))); 
 		
 		// Deal with activities addressed in XML file
 		SootMethod contextInit;
@@ -585,7 +586,7 @@ public class Harness {
 	        harnessClass.addField(newField);
 	        	                    
 	        //create a constructor for this object
-	        addConstructorCall(body, receiver, type);
+	        TransformsUtils.addConstructorCall(body, receiver, type);
 
 	        //assign back to field
 	        body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(newField.makeRef()), receiver));
@@ -594,12 +595,12 @@ public class Harness {
 	        globalsMap.put(clazz, newField);
 
 	        //if a component, add a call to the launch (init) method in the runtime modeling
-	        if (Hierarchy.v().isAndroidComponentClass(clazz)) {
+	        if (Hierarchy.isAndroidComponentClass(clazz)) {
 	            SootMethod initMethod = 
-	                    Scene.v().getMethod(componentInitMethod.get(Hierarchy.v().getComponentParent(clazz).getName()));
+	                    Scene.v().getMethod(componentInitMethod.get(Hierarchy.getComponentParent(clazz).getName()));
 	            LinkedList<Value> args = new LinkedList<Value>();
 	            args.add(receiver);
-	            Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(initMethod, null, args));
+	            Stmt call = Jimple.v().newInvokeStmt(TransformsUtils.makeInvokeExpression(initMethod, null, args));
 	            body.getUnits().add(call);
 	        }
 
@@ -617,152 +618,9 @@ public class Harness {
 	            logger.info("Missing modeling.  Had to create a dummy call for: {}", entryPoint);
 	            logger.info("Closest Parent: {}, modeled? {}", closestParent, API.v().isAPIModeledMethod(closestParent));
 	            
-	            createCallWithNewArgs(entryPoint, body, field);
+	            TransformsUtils.addCallCreatingArgs(entryPoint, body, field, new HashMap<Type,Local>());
 	        }
 	    }
 	}
 
-	private void createCallWithNewArgs(SootMethod method, StmtBody body, SootField field) {
-		//next create locals for all arguments
-		//List of argument position to locals created...
-		List<Value> args = new LinkedList<Value>();
-		for (Object argType : method.getParameterTypes()) {
-			//if a reference, create dummy object
-			if (argType instanceof RefType) {
-				Value v = createNewAndConstructorCall(body, method, ((RefType)argType));
-				args.add(v);
-			} else if (argType instanceof ArrayType) {
-				Value v = createNewArrayAndObject(body, method, (ArrayType)argType);
-				args.add(v);
-			} else {
-				args.add(SootUtils.getNullValue((Type)argType));
-			}
-		}
-
-		//now create call to entry point
-		logger.debug("method args {} = size of args list {}", method.getParameterCount(), args.size());
-		Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
-		body.getLocals().add(receiver);
-		body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newStaticFieldRef(field.makeRef())));
-		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(method, receiver, args));
-		entryPointInvokes.add(call);
-		body.getUnits().add(call);
-	}
-	
-	private Value createNewArrayAndObject(Body body, SootMethod entryPoint, ArrayType type) {
-		Type baseType = type.getArrayElementType();
-		
-		//create new array to local		
-		Local arrayLocal = Jimple.v().newLocal("l" + localID++, type);
-		body.getLocals().add(arrayLocal);
-		
-		if (type.numDimensions > 1) {
-			//multiple dimensions, have to do some crap...
-			List<Value> ones = new LinkedList<Value>();
-			for (int i = 0; i < type.numDimensions; i++)
-				ones.add(IntConstant.v(1));
-			
-			body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal,
-				Jimple.v().newNewMultiArrayExpr(type, ones)));
-		} else {
-			//single dimension, add new expression
-			body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal, 
-				Jimple.v().newNewArrayExpr(baseType, IntConstant.v(1))));
-		}
-		
-		//get down to an element through the dimensions
-		Local elementPtr = arrayLocal;
-		while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-			Local currentLocal = Jimple.v().newLocal("l" + localID++, ((ArrayType)elementPtr).getElementType());
-			body.getUnits().add(Jimple.v().newAssignStmt(
-					currentLocal, 
-					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
-			elementPtr = currentLocal;
-		}
-
-		//if a ref type, then create the new and constructor and assignment to array element
-		if (baseType instanceof RefType) {
-			//create the new expression and constructor call for a new local
-			Value eleLocal = createNewAndConstructorCall(body, entryPoint, (RefType)baseType);
-			//assign the new local to the array access
-			body.getUnits().add(Jimple.v().newAssignStmt(
-					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
-					eleLocal));	
-		}	
-
-		return arrayLocal;
-	}
-	
-	/**
-	 * Add to the body code to create a new object and assign it to a local, and then call the constructor
-	 * on the local.  If the type is an interface, then try to find a close implementor
-	 * return the local so it can be used in array assignments
-	 */
-	private Value createNewAndConstructorCall(Body body, SootMethod entryPoint, RefType type) {
-		SootClass clz = type.getSootClass();
-		//if an interface, find a direct implementor of and instantiate that...
-		if (!clz.isConcrete()) {
-			clz = SootUtils.getCloseConcrete(clz);
-		}
-		
-		if (clz ==  null) {
-			//if clz is null, then we have an interface with no known implementors, 
-			//so just pass null
-			logger.warn("Cannot find any known implementors of {} when building harness for entry {}", 
-					type.getSootClass(), entryPoint);
-			return SootUtils.getNullValue(type);
-		}
-		
-		//if we got here, we found a class to instantiate, either the org or an implementor
-		Local argLocal = Jimple.v().newLocal("l" + localID++, type);
-		body.getLocals().add(argLocal);
-		
-		//add the call to the new object
-		body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
-		
-		addConstructorCall(body, argLocal, RefType.v(clz));
-		return argLocal;
-	}
-	
-	/**
-	 * Given a method, create the appropriate invoke jimple expression to invoke it on the local, and with 
-	 * args.
-	 */
-	public static InvokeExpr makeInvokeExpression(SootMethod method, Local local, List<Value> args) {
-		if (method.isConstructor()) {	
-			return Jimple.v().newSpecialInvokeExpr(local, method.makeRef(), args);
-		} else if (method.isStatic()) {
-			return Jimple.v().newStaticInvokeExpr(method.makeRef(), args);
-		} else {
-			return Jimple.v().newVirtualInvokeExpr(local, method.makeRef(), args);
-		}
-	}
-	
-	/**
-	 * add a constructor call to body for the given reftype.  Use the simpliest constructor
-	 * that can be found.
-	 */
-	public static void addConstructorCall(Body body, Local local, RefType type) {
-		SootClass clazz = type.getSootClass();
-		
-		//add the call to the constructor with its args
-		SootMethod constructor = SootUtils.findSimpliestConstructor(clazz);
- 
-		
-		if (constructor == null) {
-			logger.info("Cannot find constructor for {}.  Not going to call constructor.", clazz);
-			return;
-		}
-		
-		//create list of dummy arg values for the constructor call, right now all constants
-		List<Value> args = new LinkedList<Value>();
-		for (Object argType : constructor.getParameterTypes()) {
-			args.add(SootUtils.getNullValue((Type)argType));
-		}
-		
-		//add constructor call to body nested in invoke statement
-		body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args)));
-		
-		// add xml injected stuff in here
-	}
 }

@@ -6,6 +6,7 @@ import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.transforms.TransformsUtils;
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
@@ -76,7 +77,7 @@ public class ObjectSensitivityCloner {
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
 
     /** Do not clone classes that will add more than this percentage to the total number of classes */
-    private static final double CLONING_THRESHOLD = .10;
+    private static final double CLONING_THRESHOLD = .15;
 
     private static final boolean CLONE_STRINGS = false;
 
@@ -123,37 +124,6 @@ public class ObjectSensitivityCloner {
         clonedMethodsAdded = new HashSet<SootMethod>();
         methodToClonesMap = new HashMap<SootMethod,Set<SootMethod>>();
         allocStmts = new HashMap<SootMethod, List<AssignStmt>>();
-    }
-
-    /**
-     * Replace calls to array copy with explicit assignment expression of 2nd to 0th argument. 
-     */
-    private void replaceArrayCopyCalls() {
-        SootMethod arrayCopy = Scene.v().getMethod("<java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>");
-
-        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
-
-
-            if (method.isAbstract() || !method.isConcrete())
-                continue;
-
-            Body body = method.getActiveBody();
-            StmtBody stmtBody = (StmtBody)body;
-            Chain units = stmtBody.getUnits();
-            Iterator stmtIt = units.snapshotIterator();
-
-            while (stmtIt.hasNext()) {
-                Stmt stmt = (Stmt)stmtIt.next();
-
-                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
-                    StaticInvokeExpr sie = (StaticInvokeExpr)stmt.getInvokeExpr();
-                    if (sie.getMethod().equals(arrayCopy)) {
-                        AssignStmt assignStmt = Jimple.v().newAssignStmt(sie.getArg(2), sie.getArg(0));
-                        units.swapWith(stmt, assignStmt);
-                    }
-                }
-            }
-        }
     }
 
     private void addToAllocList(Collection<SootMethod> methods) {
@@ -422,10 +392,12 @@ public class ObjectSensitivityCloner {
                     StmtBody stmtBody = (StmtBody)body;
                     Chain units = stmtBody.getUnits();
 
-                    SpecialInvokeExpr special = findConstructorCall(method,
+                    Stmt specialStmt = TransformsUtils.findConstructorCall(method,
                         (Stmt)units.getSuccOf(assign), local);
 
-                    if (special != null) {
+                    
+                    if (specialStmt.containsInvokeExpr() && specialStmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
+                        SpecialInvokeExpr special = (SpecialInvokeExpr)specialStmt.getInvokeExpr();
                         //found an appropriate constructor call
                         //clone class and install it as an new API class
 
@@ -478,73 +450,7 @@ public class ObjectSensitivityCloner {
         return haveCloned;
     }
 
-    /**
-     * Given the assignment statement that includes the new expression, find the associated constructor call
-     * that is called on the local value.  This method will search starting from the assignment, and conservatively
-     * find the constructor call.  Will return null if a constructor is not found.
-     */
-    private SpecialInvokeExpr findConstructorCall(SootMethod method, Stmt startStmt, Set<Local> locals) {
-        //loop through all instructions in method and find the special invoke on this allocnode
-        Body body = method.getActiveBody();
-        StmtBody stmtBody = (StmtBody)body;
-        Chain units = stmtBody.getUnits();
-        Iterator stmtIt = units.iterator(startStmt);
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-
-            if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
-                SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
-                if (locals.contains(si.getBase()))
-                    return si;
-            }
-
-            //assigning local to new local, remember lhs
-            if (stmt instanceof AssignStmt &&
-                    locals.contains(((AssignStmt)stmt).getRightOp()) &&
-                    ((AssignStmt)stmt).getLeftOp() instanceof Local) {
-
-                locals.add((Local) ((AssignStmt)stmt).getLeftOp());
-                continue;
-            }
-
-            //check
-            //value has been redefined before we found a constructor, so we can't find anything!
-            for (ValueBox def : stmt.getDefBoxes()) {
-                if (locals.contains(def.getValue())) {
-                    //System.out.println("Failed on can contain value: " + stmt);
-                    return null;
-                }
-
-            }
-
-            //now account for some jumps, and if constructs
-            if (stmt instanceof JGotoStmt) {
-                //recurse into goto statements
-
-                //but only go forward...to avoid loops
-                if (!units.follows((Stmt)((JGotoStmt) stmt).getTarget(), stmt))
-                    return null;
-
-                return findConstructorCall(method, (Stmt)((JGotoStmt) stmt).getTarget(), locals);
-            } else if (stmt instanceof JIfStmt) {
-                if (!units.follows((Stmt)((JIfStmt) stmt).getTarget(), stmt))
-                    return null;
-
-                //recurse into if statement target and fall through
-                SpecialInvokeExpr trueBranch = findConstructorCall(method, ((JIfStmt) stmt).getTarget(), locals); 
-                SpecialInvokeExpr falseBranch = findConstructorCall(method, (Stmt)units.getSuccOf(stmt), locals); 
-
-                if (trueBranch == falseBranch)
-                    return trueBranch;
-                else 
-                    return null;
-            } 
-        }
-
-        return null;
-    }
-
+   
     /**
      * Given a non-cloned method and a local of the method, for all cloned context methods, find the locals
      * that correspond.

@@ -38,9 +38,11 @@ import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
+import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.VATransformsSuite;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
@@ -82,6 +84,8 @@ public class Main {
     private static List<String> appStatRowEntries = new ArrayList<String>();
     /** app stat csvwriter */
     private static CSVWriter appStatWriter = null; 
+    
+    private static IDroidsafeProgressMonitor sMonitor;
 
     /**
      * Entry point of DroidSafe Tool.
@@ -111,6 +115,7 @@ public class Main {
     }
 
     public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
+        sMonitor = monitor;
         monitor.subTask("Initializing Environment");
         G.reset();
         // initial project directories and lib jar files
@@ -235,9 +240,17 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+    
+        /*
+        //fallback modeling...
+        driverMsg ("Adding Missing User Callback Modeling...");
+        monitor.subTask("Adding Missing User Callback Modeling...");
+        CallBackModeling.v().run();
+        monitor.worked(1);
+        if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+*/
+        
         driverMsg ("Hoisting Allocations");
         monitor.subTask("Hoisting Allocations");
         HoistAllocations.run();
@@ -345,6 +358,16 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
+            //any method of stringbuffer or stringbuilder that returns a string
+            //on a call replace with new String(receiver)...
+            driverMsg("Converting StringBuffer/Builder calls...");
+            monitor.subTask("Converting StringBuffer/Builder calls...");
+            TransformStringBuilderInvokes.run();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+            
             if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
@@ -529,6 +552,10 @@ public class Main {
         logger.info(str);
     }
 
+    public static void afterTransform(boolean recordTime) {
+        afterTransform(sMonitor, recordTime);
+    }
+    
     /**
      * Called after one or more transforms to recalculate any underlying analysis.
      */

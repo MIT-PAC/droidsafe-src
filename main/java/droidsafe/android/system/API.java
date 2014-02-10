@@ -62,6 +62,8 @@ public class API {
     private  SootMethodList api_modeled_methods = new SootMethodList();
     /** Set of all Android Classes */
     private Set<SootClass> allSystemClasses;
+    /** Set of android methods that have DSVerified annotation */
+    private SootMethodList verified_methods = new SootMethodList();
     /** the current runtime instance */
     private static API v;
     /** The classes that define the droidsafe library */
@@ -448,6 +450,7 @@ public class API {
             if (verified) {
                 logger.info("Found verified method: {}", method);
                 api_modeled_methods.addMethod(method);
+                verified_methods.addMethod(method);
             }
         }
     }
@@ -739,6 +742,13 @@ public class API {
     }
 
     /**
+     * Return true if this method has the DSVerified annotation.  (don't search parents)
+     */
+    public boolean isDSVerifiedMethod(SootMethod m) {
+        return verified_methods.contains(m);
+    }
+    
+    /**
      * Return true if the argument is a modeled method from the api.
      */
     public boolean isAPIModeledMethod(SootMethod m) {
@@ -759,7 +769,7 @@ public class API {
         //check for all overriden methods because of possible cloning
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 if (srcsMapping.containsKey(parent))
                     return true;
             }
@@ -780,7 +790,7 @@ public class API {
         
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 Set<InfoKind> parentMappings = srcsMapping.get(parent);
                 if (parentMappings != null)
                     kinds.addAll(parentMappings);
@@ -801,7 +811,7 @@ public class API {
         //check for all overriden methods because of possible cloning
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 if (sinksMapping.containsKey(parent))
                     return true;
             }
@@ -822,7 +832,7 @@ public class API {
         
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 Set<InfoKind> parentMapping = sinksMapping.get(parent);
                 if (parentMapping != null)
                     kinds.addAll(parentMapping);

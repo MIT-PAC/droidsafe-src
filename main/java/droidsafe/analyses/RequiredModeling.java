@@ -151,10 +151,10 @@ public class RequiredModeling {
             //only check classes of application
             for (SootMethod method : clz.getMethods()) {
                 if (method.isConcrete() && 
-                        Hierarchy.v().isImplementedSystemMethod(method)) {
+                        Hierarchy.isImplementedSystemMethod(method)) {
                     
                     //if an init of a component, then ignore, because this is done in the harness
-                    if (Hierarchy.v().isAndroidComponentClass(clz) && 
+                    if (Hierarchy.isAndroidComponentClass(clz) && 
                             (method.isConstructor() || "void <clinit>()".equals(method.getSubSignature())))
                         continue;
                     

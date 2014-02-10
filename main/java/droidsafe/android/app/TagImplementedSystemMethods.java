@@ -24,7 +24,7 @@ public class TagImplementedSystemMethods {
 		
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		
-    		Set<SootClass> systemParents = Hierarchy.v().systemParents(clazz);
+    		Set<SootClass> systemParents = Hierarchy.systemParents(clazz);
     		
     		//do nothing if no system parents
     		if (systemParents.isEmpty())

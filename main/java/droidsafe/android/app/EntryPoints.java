@@ -56,8 +56,8 @@ public class EntryPoints {
                 continue;
 		    boolean hasEP = false;
 		    
-		    for (SootMethod m : Hierarchy.v().getAllInheritedAppMethodsIncluded(clz)) {
-		        if (Hierarchy.v().isImplementedSystemMethod(m)) {
+		    for (SootMethod m : Hierarchy.getAllInheritedAppMethodsIncluded(clz)) {
+		        if (Hierarchy.isImplementedSystemMethod(m)) {
 		            hasEP = true;
 		            break;
 		        }
@@ -124,7 +124,7 @@ public class EntryPoints {
     		//only add entry points for android component classes
     		//other entry points will be handled by searching for allocations 
     		//of classes that inherit from an api class / interface.
-    		if (!Hierarchy.v().isAndroidComponentClass(clazz))
+    		if (!Hierarchy.isAndroidComponentClass(clazz))
     			continue;
     		/*
     		if (!Resources.v().getManifest().getComponents().contains(clazz)) {
@@ -135,12 +135,12 @@ public class EntryPoints {
     		//Messages.log("Checking class for missing modeling: " + clazz.getName());
     			    	
     		//now check which methods are overrides
-    		for (SootMethod method : Hierarchy.v().getAllInheritedAppMethodsIncluded(clazz)) {
+    		for (SootMethod method : Hierarchy.getAllInheritedAppMethodsIncluded(clazz)) {
     			//Messages.log("    Checking for method: " + method.getSignature());
     			if (!method.isConcrete())
     			    continue;
     			
-    			if (Hierarchy.v().isImplementedSystemMethod(method)) {
+    			if (Hierarchy.isImplementedSystemMethod(method)) {
     				appEntryPoints.add(new EntryPoint(clazz, method));
     				logger.info("Found entry point as implemented system method: {}", method.toString());
     			} 

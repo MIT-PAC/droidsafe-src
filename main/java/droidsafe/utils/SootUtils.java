@@ -941,18 +941,21 @@ public class SootUtils {
 
 
     /**
-     * Return all methods that the given method (in the class) overrides from all of its parent classes.
+     * Return all methods that the given method (in the class) overrides 
+     * from all of its parent classes (not interfaces).
      */
-    public static List<SootMethod> getOverriddenMethodsFromParents(SootClass clz, String subSig) {
+    public static List<SootMethod> getOverriddenMethodsFromSuperclasses(SootMethod method) {
+        SootClass clz = method.getDeclaringClass();
+        String subSig = method.getSubSignature();
+        
         List<SootMethod> methods = new LinkedList<SootMethod>();
 
-        Set<SootClass> parents = getParents(clz);
+        List<SootClass> parents = getSuperClassList(clz);
 
         for (SootClass parent : parents) {
             if (parent.declaresMethod(subSig)) {
                 SootMethod meth = parent.getMethod(subSig);
-                if (!meth.isAbstract())
-                    methods.add(meth);
+                methods.add(meth);
             }
         }
 
@@ -1168,7 +1171,7 @@ public class SootUtils {
     /**
      * get a list of ancestor of a given class, in order from immediate to oldest
      */
-    public static List<SootClass> getAncestorList(SootClass me) {
+    public static List<SootClass> getSuperClassList(SootClass me) {
         List<SootClass> list = new LinkedList<SootClass>();
 
         if (!me.hasSuperclass())
@@ -1197,7 +1200,7 @@ public class SootUtils {
      * given method
      */
     public static SootMethod findClosetMatch(SootClass sootClass, SootMethodRef method) {
-        List<SootClass> ancestorList = getAncestorList(sootClass);
+        List<SootClass> ancestorList = getSuperClassList(sootClass);
 
         ancestorList.add(0, sootClass);
         NumberedString subSig = method.getSubSignature();
@@ -1322,6 +1325,26 @@ public class SootUtils {
         return false;
     }
 
+    /**
+     * Return the set of concrete methods are inherited but not overriden by a class.
+     */
+    public static List<SootMethod> getInheritedMethods(SootClass clz) {
+        List<SootMethod> methods = new LinkedList<SootMethod>();
+        
+        
+        for (SootClass parent : getSuperClassList(clz)) {
+            for (SootMethod method : parent.getMethods()) {
+                //check if the a concrete resolve from the original class to the parent method 
+                //resolves to this method, if so, it was not overriden.
+                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(clz, method);
+                if (method.equals(resolved))
+                    methods.add(method);
+            }
+        }
+        
+        return methods;
+    }
+    
     /**
      * Return true if the class has the synthetic tag or flag.
      */
