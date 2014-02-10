@@ -73,6 +73,7 @@ public enum DSCat {
     RESOURCE,
     RTP_CALL,
     SENSOR,
+    SIP_REGISTRATION,
     SMS,
     SHARING,
     STORAGE,

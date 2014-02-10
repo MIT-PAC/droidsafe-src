@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
+
 import java.text.ParseException;
 
 import android.app.PendingIntent;
@@ -126,7 +127,7 @@ public static Intent createIncomingCallBroadcast(String callId,
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.228 -0500", hash_original_method = "202F15347D7AFCF2355EFD7038580BD7", hash_generated_method = "80280E4046A29DDF49C73CC5D51E3ECB")
-    
+    @DSVerified
 private static ISipSessionListener createRelay(
             SipRegistrationListener listener, String uri) {
         return ((listener == null) ? null : new ListenerRelay(listener, uri));
@@ -242,7 +243,7 @@ public void open(SipProfile localProfile) throws SipException {
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.193 -0500", hash_original_method = "BDC8C921966B306282AD779760136C05", hash_generated_method = "8527A1D79853591CE7E52EC29C824448")
-    
+    @DSVerified 
 public void open(SipProfile localProfile,
             PendingIntent incomingCallPendingIntent,
             SipRegistrationListener listener) throws SipException {
@@ -271,7 +272,7 @@ public void open(SipProfile localProfile,
     @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.195 -0500", hash_original_method = "CFF28AE1062695240C0119F8DCC4A5F5", hash_generated_method = "F1C8ECE543E5B0202CFE7BEF1EEE182D")
-    
+   @DSVerified 
 public void setRegistrationListener(String localProfileUri,
             SipRegistrationListener listener) throws SipException {
         try {
@@ -330,10 +331,16 @@ public boolean isOpened(String localProfileUri) throws SipException {
 
         // listener must not be null
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.240 -0500", hash_original_method = "EDC0C5FAD332557C083D99177F2D4EAD", hash_generated_method = "E70DA54B380B68134B466871174FA847")
-        
+        @DSVerified
+        @DSSpec(DSCat.SIP_REGISTRATION)
 public ListenerRelay(SipRegistrationListener listener, String uri) {
             mListener = listener;
             mUri = uri;
+            if (listener != null) {
+                listener.onRegistering(uri);
+                listener.onRegistrationDone(uri, DSUtils.FAKE_INT);
+                listener.onRegistrationFailed(uri, DSUtils.FAKE_INT, new String());
+            }
         }
 
         @DSComment("Private Method")
@@ -353,14 +360,16 @@ private String getUri(ISipSession session) {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.244 -0500", hash_original_method = "5C196F3BA9DB038EA3DA210A6D75DA60", hash_generated_method = "F57FB556DFFEDF8347EEBC2D696683F3")
-        
+        @DSVerified
+        @DSSpec(DSCat.SIP_REGISTRATION)
 @Override
         public void onRegistering(ISipSession session) {
             mListener.onRegistering(getUri(session));
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.247 -0500", hash_original_method = "C7A68C57912DB0D6749A6AEEEB478950", hash_generated_method = "4F10DA8D97E5860739C8336D3F902B20")
-        
+        @DSVerified
+        @DSSpec(DSCat.SIP_REGISTRATION)
 @Override
         public void onRegistrationDone(ISipSession session, int duration) {
             long expiryTime = duration;
@@ -431,7 +440,8 @@ public boolean isRegistered(String localProfileUri) throws SipException {
      * @see #isVoipSupported
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.204 -0500", hash_original_method = "AC6B9DFAF926B776E74C72D404923FC3", hash_generated_method = "ABD901304CE49428641B6E4FFDA1B7F7")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSpec(DSCat.PHONE_CALL)
 public SipAudioCall makeAudioCall(SipProfile localProfile,
             SipProfile peerProfile, SipAudioCall.Listener listener, int timeout)
             throws SipException {
@@ -465,7 +475,8 @@ public SipAudioCall makeAudioCall(SipProfile localProfile,
      * @see #isVoipSupported
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.206 -0500", hash_original_method = "7876146B456607658E8063AE5100AB4E", hash_generated_method = "12D4AE3EECF2BCDF0238BD19667308B9")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSpec(DSCat.PHONE_CALL)
 public SipAudioCall makeAudioCall(String localProfileUri,
             String peerProfileUri, SipAudioCall.Listener listener, int timeout)
             throws SipException {
@@ -495,7 +506,8 @@ public SipAudioCall makeAudioCall(String localProfileUri,
      * @throws SipException if calling the SIP service results in an error
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.209 -0500", hash_original_method = "E0DC1BF0888BDAC076F0EBE49A950610", hash_generated_method = "919D2F282F644DC15CC2600D08129F25")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSpec(DSCat.PHONE_CALL)
 public SipAudioCall takeAudioCall(Intent incomingCallIntent,
             SipAudioCall.Listener listener) throws SipException {
         if (incomingCallIntent == null) {
@@ -542,7 +554,8 @@ public SipAudioCall takeAudioCall(Intent incomingCallIntent,
      * @throws SipException if calling the SIP service results in an error
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.220 -0500", hash_original_method = "686853C3DB5059E14B851E63F90D72E4", hash_generated_method = "8E9EA7A06A585A493CD111ED84E3DE89")
-    
+    @DSVerified
+    @DSSpec(DSCat.SIP_REGISTRATION)
 public void register(SipProfile localProfile, int expiryTime,
             SipRegistrationListener listener) throws SipException {
         try {
@@ -597,7 +610,9 @@ public void unregister(SipProfile localProfile,
      */
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.226 -0500", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "C977213B7D15E378A034987AAE287794")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+
 public SipSession getSessionFor(Intent incomingCallIntent)
             throws SipException {
         try {

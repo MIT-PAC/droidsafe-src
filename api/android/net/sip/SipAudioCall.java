@@ -109,7 +109,8 @@ public SipAudioCall(Context context, SipProfile localProfile) {
      * @see #setListener(Listener, boolean)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.822 -0500", hash_original_method = "624C526ACE340C91B4AE00384193A96D", hash_generated_method = "DB7607906465AD6E43DAE61C401A9904")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSpec(DSCat.PHONE_CALL)
 public void setListener(SipAudioCall.Listener listener) {
         setListener(listener, false);
     }
@@ -124,7 +125,8 @@ public void setListener(SipAudioCall.Listener listener) {
      *      back immediately on the current state
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.825 -0500", hash_original_method = "7FD2357D0901F6F1D08ACBD882A0FD6F", hash_generated_method = "24A40599EF26E0E62B11B908766CB98F")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSpec(DSCat.PHONE_CALL)
 public void setListener(SipAudioCall.Listener listener,
             boolean callbackImmediately) {
         mListener = listener;
@@ -154,6 +156,12 @@ public void setListener(SipAudioCall.Listener listener,
                     case SipSession.State.OUTGOING_CALL_RING_BACK:
                         listener.onRingingBack(this);
                         break;
+                        
+                    default:
+                        listener.onCallBusy(this);
+                        listener.onCallEnded(this);
+                        listener.onChanged(this);
+                        
                 }
             }
         } catch (Throwable t) {
@@ -590,7 +598,8 @@ public void attachCall(SipSession session, String sessionDescription)
      * @see SipManager#isVoipSupported
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.895 -0500", hash_original_method = "CDFD7E26E80EFA4595D6BD4E5712D0C4", hash_generated_method = "5E42044AB3897BA1C9D2618970F8C699")
-    
+    @DSVerified
+    @DSSpec(DSCat.PHONE_CALL)
 public void makeCall(SipProfile peerProfile, SipSession sipSession,
             int timeout) throws SipException {
         if (!SipManager.isVoipSupported(mContext)) {
@@ -1129,6 +1138,7 @@ private synchronized void startAudioInternal() throws UnknownHostException {
         @DSComment("potential callback called inside method")
         @DSSpec(DSCat.TO_MODEL)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "5575F820891B6AD64AFC44C76A4BA5AF", hash_generated_method = "5575F820891B6AD64AFC44C76A4BA5AF")
+        @DSVerified    
         public Listener ()
         {
             //Synthesized constructor
@@ -1140,7 +1150,8 @@ private synchronized void startAudioInternal() throws UnknownHostException {
          * @param call the call object that is ready to make another call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.759 -0500", hash_original_method = "1692051440F2E30BB9552F9991C2F337", hash_generated_method = "11E668ECFDA3B77B737AC61A09899A92")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onReadyToCall(SipAudioCall call) {
             onChanged(call);
         }
@@ -1152,7 +1163,8 @@ public void onReadyToCall(SipAudioCall call) {
          * @param call the call object that carries out the audio call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.761 -0500", hash_original_method = "F61EC18A6F9190266BB417D94187D91F", hash_generated_method = "A2F25A849A146D828EA39EF638EF651C")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onCalling(SipAudioCall call) {
             onChanged(call);
         }
@@ -1165,7 +1177,8 @@ public void onCalling(SipAudioCall call) {
          * @param caller the SIP profile of the caller
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.763 -0500", hash_original_method = "80FA944D90A47A92553C0DDAF9805E5E", hash_generated_method = "2216F8741C0D3E0F7248E17820ED8C16")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onRinging(SipAudioCall call, SipProfile caller) {
             onChanged(call);
         }
@@ -1177,7 +1190,8 @@ public void onRinging(SipAudioCall call, SipProfile caller) {
          * @param call the call object that carries out the audio call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.765 -0500", hash_original_method = "F638A746C099264E58AA2EF34946D274", hash_generated_method = "85C5171B79693998CB064F2B1EBC9370")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onRingingBack(SipAudioCall call) {
             onChanged(call);
         }
@@ -1189,7 +1203,8 @@ public void onRingingBack(SipAudioCall call) {
          * @param call the call object that carries out the audio call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.767 -0500", hash_original_method = "ED0948473C3573D4349DE4B81266B2ED", hash_generated_method = "B29327434525E3AE5D606811D905F286")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onCallEstablished(SipAudioCall call) {
             onChanged(call);
         }
@@ -1201,7 +1216,8 @@ public void onCallEstablished(SipAudioCall call) {
          * @param call the call object that carries out the audio call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.770 -0500", hash_original_method = "87752713DF39DD8F370DBCB68CD08A8A", hash_generated_method = "1745C01EC15FF64CFAC097B664847063")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onCallEnded(SipAudioCall call) {
             onChanged(call);
         }
@@ -1213,7 +1229,8 @@ public void onCallEnded(SipAudioCall call) {
          * @param call the call object that carries out the audio call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.772 -0500", hash_original_method = "A1C8D07F76B181730B1462483C996C45", hash_generated_method = "47FB9647763A344B26BEEAA4798D4E1D")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onCallBusy(SipAudioCall call) {
             onChanged(call);
         }
@@ -1225,7 +1242,8 @@ public void onCallBusy(SipAudioCall call) {
          * @param call the call object that carries out the audio call
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.774 -0500", hash_original_method = "901B34C07D0BCB3C3E5EC60CF9AA74AD", hash_generated_method = "37DA2E50BF4BFD1E75192F716647973B")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onCallHeld(SipAudioCall call) {
             onChanged(call);
         }
@@ -1239,7 +1257,8 @@ public void onCallHeld(SipAudioCall call) {
          * @see SipErrorCode
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.777 -0500", hash_original_method = "43C9D48E22A0172861A5C1A464B2052F", hash_generated_method = "906E4C73DD296925B03F12293E1E5F56")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onError(SipAudioCall call, int errorCode,
                 String errorMessage) {
             // no-op
@@ -1251,7 +1270,8 @@ public void onError(SipAudioCall call, int errorCode,
          * not re-directed to this callback and are handled in {@link #onError}.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.780 -0500", hash_original_method = "06CD8F9D0FA40D0750F021E4FF896790", hash_generated_method = "1D21261A8AAFC730014FD4AC6F0A67F7")
-        
+        @DSVerified
+        @DSSpec(DSCat.PHONE_CALL)
 public void onChanged(SipAudioCall call) {
             // no-op
         }

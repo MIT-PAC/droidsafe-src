@@ -457,7 +457,8 @@ public int load(FileDescriptor fd, long offset, long length, int priority) {
      * Sets the callback hook for the OnLoadCompleteListener.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.611 -0500", hash_original_method = "093CAC8CD903CBE9AAF47DBBDF966468", hash_generated_method = "2A4B1D5909A4BC4D1E5AC1B3F367A2AD")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnLoadCompleteListener(OnLoadCompleteListener listener)
     {
         synchronized(mLock) {
@@ -475,6 +476,9 @@ public void setOnLoadCompleteListener(OnLoadCompleteListener listener)
                 mEventHandler = null;
             }
             mOnLoadCompleteListener = listener;
+        }
+        if (listener != null) {
+            listener.onLoadComplete(this, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
         }
     }
     
@@ -513,7 +517,7 @@ public EventHandler(SoundPool soundPool, Looper looper) {
     
     public interface OnLoadCompleteListener
     {
-        
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onLoadComplete(SoundPool soundPool, int sampleId, int status);
