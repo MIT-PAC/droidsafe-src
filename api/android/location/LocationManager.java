@@ -286,10 +286,9 @@ public String getBestProvider(Criteria criteria, boolean enabledOnly) {
      * @throws RuntimeException if the calling thread has no Looper
      * @throws SecurityException if no suitable permission is present for the provider.
      */
-    @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.070 -0500", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "3B5D5B85B1DA5C9AC21655D8FDFF0796")
     @DSVerified
+    @DSSpec(DSCat.LOCATION)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.070 -0500", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "3B5D5B85B1DA5C9AC21655D8FDFF0796")
 public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener) {
         if (provider == null) {
@@ -348,7 +347,8 @@ public void requestLocationUpdates(String provider,
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.073 -0500", hash_original_method = "FA80C6D3E17A94A62F4AA64272188CF2", hash_generated_method = "12D34FA1BBDE41B64F00C5F19CC29CCA")
-    
+    @DSVerified
+    @DSSpec(DSCat.LOCATION) 
 public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener,
         Looper looper) {
@@ -410,7 +410,8 @@ public void requestLocationUpdates(String provider,
      * the location services.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.076 -0500", hash_original_method = "2A4D2871A80639591D176F262A5FC273", hash_generated_method = "58EE3CFBEF2B1652895394E2CF341A32")
-    
+    @DSVerified
+    @DSSpec(DSCat.LOCATION)
 public void requestLocationUpdates(long minTime, float minDistance,
             Criteria criteria, LocationListener listener, Looper looper) {
         if (criteria == null) {
@@ -661,7 +662,7 @@ private void _requestLocationUpdates(String provider, Criteria criteria,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.089 -0500", hash_original_method = "E82A66C4B675428C8689D564FEFE46C0", hash_generated_method = "46845E4FCC97AC801B52F850B754D27D")
     @DSVerified
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSpec(DSCat.LOCATION)
 public void requestSingleUpdate(String provider, LocationListener listener, Looper looper) {
         if (provider == null) {
             throw new IllegalArgumentException("provider==null");
