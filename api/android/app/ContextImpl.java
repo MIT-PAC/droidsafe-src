@@ -310,7 +310,7 @@ public ContextImpl(ContextImpl context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public AssetManager getAssets() {
-        throw new UnsupportedOperationException();
+        return AssetManager.getSystem();
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -342,7 +342,7 @@ public ContextImpl(ContextImpl context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Context getApplicationContext() {
-        throw new UnsupportedOperationException();
+        return this;
     }
     
     @Override
@@ -383,19 +383,19 @@ public ContextImpl(ContextImpl context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageResourcePath() {
-        throw new UnsupportedOperationException();
+        return "DSUnknown";
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageCodePath() {
-        throw new UnsupportedOperationException();
+        return "DSUnknown";
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getSharedPrefsFile(String name) {
-        throw new UnsupportedOperationException();
+        return new File("DSUnknown");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -431,7 +431,7 @@ private File getPreferencesDir() {
     
     @Override
     public boolean deleteFile(String name) {
-        throw new UnsupportedOperationException();
+        return false;
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

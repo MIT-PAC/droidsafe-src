@@ -105,6 +105,13 @@ public ComponentName[] newArray(int size) {
     @DSVAModeled
     private  String mClass;
 
+    /** created by droidsafe modeling */
+    @DSBan()
+    public ComponentName() {
+        mPackage = "DSDummyValue";
+        mClass = "DSDummyValue";
+    }
+
     /**
      * Create a new component identifier.
      * 
@@ -112,6 +119,9 @@ public ComponentName[] newArray(int size) {
      * not be null.
      * @param cls The name of the class inside of <var>pkg</var> that
      * implements the component.  Can not be null.
+     * 
+     *
+     * 
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)

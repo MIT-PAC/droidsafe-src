@@ -1359,6 +1359,7 @@ public MotionEvent[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.752 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     public  MotionEvent() {
         // ---------- Original Method ----------
+    
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.752 -0500", hash_original_method = "3F0B5C050D986DD9F1F0F2A742C616C8", hash_generated_method = "9D1B4CBF29CC86076D0E7A276889F27A")

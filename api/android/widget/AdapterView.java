@@ -191,12 +191,13 @@ public boolean performItemClick(View view, int position, long id) {
      * @param listener The callback that will run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.981 -0500", hash_original_method = "8890007B6750F9F3A0AF363421C33470", hash_generated_method = "61F9D91F91DF3E0733CD083126E71A92")
-    
+    @DSVerified
 public void setOnItemLongClickListener(OnItemLongClickListener listener) {
         if (!isLongClickable()) {
             setLongClickable(true);
         }
         mOnItemLongClickListener = listener;
+        listener.onItemLongClick(this,  this.getSelectedView(), getTaintInt(), getTaintInt());
     }
 
     /**
