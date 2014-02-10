@@ -1074,7 +1074,7 @@ public View onCreateInputView() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.661 -0500", hash_original_method = "4B7A497965AEC42ECF0C79E271F7AFEF", hash_generated_method = "7AA061D048DFE3946E7BBEB04867DE6E")
-    
+    @DSVerified
 public void onStartInputView(EditorInfo info, boolean restarting) {
         // Intentionally empty
     }
@@ -1370,7 +1370,7 @@ public void onUnbindInput() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.692 -0500", hash_original_method = "3ADFFB39DB97C5354271962A42564DD7", hash_generated_method = "C1E9AD96C736581C1A705C6238BF6027")
-    
+    @DSVerified 
 public void onStartInput(EditorInfo attribute, boolean restarting) {
         // Intentionally empty
     }
@@ -1441,7 +1441,7 @@ void doStartInput(InputConnection ic, EditorInfo attribute, boolean restarting) 
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.699 -0500", hash_original_method = "E745A863BE4D98B94E02F169B272F08C", hash_generated_method = "1B6DE133E922D6BCF141B2D837C355BE")
-    
+    @DSVerified    
 public void onFinishInput() {
         InputConnection ic = getCurrentInputConnection();
         if (ic != null) {
@@ -1459,7 +1459,9 @@ public void onFinishInput() {
      * <p>The default implementation here does nothing.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.701 -0500", hash_original_method = "75C3F475CAD98FE8CF4A523C8BDA8BB1", hash_generated_method = "EB17B144C38574BF696AAA7C1A153C30")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 public void onDisplayCompletions(CompletionInfo[] completions) {
         // Intentionally empty
     }
@@ -1471,7 +1473,8 @@ public void onDisplayCompletions(CompletionInfo[] completions) {
      * method is running in fullscreen mode.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.704 -0500", hash_original_method = "CC541C375904CEFCC1DC228363FE0C44", hash_generated_method = "97E09452EA6DB754301C2DA73BB44033")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 public void onUpdateExtractedText(int token, ExtractedText text) {
         if (mExtractedToken != token) {
             return;
@@ -1496,7 +1499,7 @@ public void onUpdateExtractedText(int token, ExtractedText text) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.706 -0500", hash_original_method = "08F34B1B106CF5B01DE522670D82A3BC", hash_generated_method = "B8226CECE01A1CE14F7C4DC9D2929B8E")
-    
+    @DSVerified
 public void onUpdateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd,
             int candidatesStart, int candidatesEnd) {
@@ -2082,7 +2085,8 @@ public void showSoftInput(int flags, ResultReceiver resultReceiver) {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.508 -0500", hash_original_method = "A5FC41682DA51C285C2C6651867F8D99", hash_generated_method = "B02E801B8BFC007EC6A831AC44A26D9C")
-        
+        @DSVerified("Calling callbacks ")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void changeInputMethodSubtype(InputMethodSubtype subtype) {
             onCurrentInputMethodSubtypeChanged(subtype);
         }
@@ -2125,7 +2129,8 @@ public void displayCompletions(CompletionInfo[] completions) {
          * InputMethodService.onUpdateExtractedText()}.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.520 -0500", hash_original_method = "0102DD0EEEDCD27552C577307A27FE88", hash_generated_method = "7ABB7F4B4DE290873C2708D443E15A29")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public void updateExtractedText(int token, ExtractedText text) {
             if (!isEnabled()) {
                 return;
@@ -2138,7 +2143,8 @@ public void updateExtractedText(int token, ExtractedText text) {
          * InputMethodService.onUpdateSelection()}.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.523 -0500", hash_original_method = "8EA462F0F0CF12CBAE81AB6E28205A3D", hash_generated_method = "96D54095F35B207C6116CF5CDF141A5D")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public void updateSelection(int oldSelStart, int oldSelEnd,
                 int newSelStart, int newSelEnd,
                 int candidatesStart, int candidatesEnd) {
@@ -2524,7 +2530,8 @@ protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype newSubtype)
     }
 
     @Override
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnSubServiceHook() {
         super.droidsafeOnSubServiceHook();
         onBindInput();
@@ -2538,32 +2545,32 @@ protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype newSubtype)
         onDisplayCompletions(mCurCompletions);
         onEvaluateFullscreenMode();
         onEvaluateInputViewShown();
-        onExtractedCursorMovement(getTaintInt(),  getTaintInt());
-        onExtractedDeleteText(getTaintInt(),  getTaintInt());
+        onExtractedCursorMovement(DSUtils.FAKE_INT,  DSUtils.FAKE_INT);
+        onExtractedDeleteText(DSUtils.FAKE_INT,  DSUtils.FAKE_INT);
         onExtractedTextClicked();
         onExtractingInputChanged(new EditorInfo());
         onFinishInput();
         onFinishInputView(getTaintBoolean());
         onInitializeInterface();
-        onKeyDown(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
-        onKeyUp(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
-        onKeyLongPress(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
-        onKeyDown(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
-        onKeyMultiple(getTaintInt(), getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
-        onShowInputRequested(getTaintInt(),  getTaintBoolean());
+        onKeyDown(DSUtils.FAKE_INT, new KeyEvent(DSUtils.FAKE_INT, DSUtils.FAKE_INT));
+        onKeyUp(DSUtils.FAKE_INT, new KeyEvent(DSUtils.FAKE_INT, DSUtils.FAKE_INT));
+        onKeyLongPress(DSUtils.FAKE_INT, new KeyEvent(DSUtils.FAKE_INT, DSUtils.FAKE_INT));
+        onKeyDown(DSUtils.FAKE_INT, new KeyEvent(DSUtils.FAKE_INT, DSUtils.FAKE_INT));
+        onKeyMultiple(DSUtils.FAKE_INT, DSUtils.FAKE_INT, new KeyEvent(DSUtils.FAKE_INT, DSUtils.FAKE_INT));
+        onShowInputRequested(DSUtils.FAKE_INT,  getTaintBoolean());
         onStartCandidatesView(new EditorInfo(), getTaintBoolean());
         onStartInput(new EditorInfo(), getTaintBoolean());
         onStartInputView(new EditorInfo(), getTaintBoolean());
         onTrackballEvent(MotionEvent.droidsafeObtainEvent());
         onUpdateCursor(new Rect());
-        onUpdateExtractedText(getTaintInt(), new ExtractedText());
+        onUpdateExtractedText(DSUtils.FAKE_INT, new ExtractedText());
         onUpdateExtractingViews(new EditorInfo());
         onUpdateExtractingVisibility(new EditorInfo());
         
         onCurrentInputMethodSubtypeChanged(InputMethodSubtype.droidsafeObtainInputMethodSubtype());
 
-        onUpdateSelection(getTaintInt(),  getTaintInt(),  getTaintInt(), getTaintInt(),  
-                         getTaintInt(), getTaintInt());
+        onUpdateSelection(DSUtils.FAKE_INT,  DSUtils.FAKE_INT,  DSUtils.FAKE_INT, DSUtils.FAKE_INT,  
+                         DSUtils.FAKE_INT, DSUtils.FAKE_INT);
         onViewClicked(getTaintBoolean());
         onWindowHidden();
         onWindowShown();
