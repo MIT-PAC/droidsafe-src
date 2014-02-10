@@ -500,7 +500,8 @@ public final void stopPreview() {
      *     or null to stop receiving callbacks.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.036 -0500", hash_original_method = "2F9DAB75D6DAF4C7768888E00FFEEEC7", hash_generated_method = "CA84C4F6DAD03324062BD9123CDE94E5")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void setPreviewCallback(PreviewCallback cb) {
         mPreviewCallback = cb;
         mOneShot = false;
@@ -508,6 +509,9 @@ public final void setPreviewCallback(PreviewCallback cb) {
         // Always use one-shot mode. We fake camera preview mode by
         // doing one-shot preview continuously.
         setHasPreviewCallback(cb != null, false);
+        if (cb != null) {
+            cb.onPreviewFrame(new byte[1], this);
+        }
     }
 
     /**
@@ -560,11 +564,16 @@ public final void setOneShotPreviewCallback(PreviewCallback cb) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.052 -0500", hash_original_method = "D6843334713D07AAF210EACBD6CFBFF4", hash_generated_method = "0F2A86A0477236DFAB416425D80EA147")
     
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void setPreviewCallbackWithBuffer(PreviewCallback cb) {
         mPreviewCallback = cb;
         mOneShot = false;
         mWithBuffer = true;
         setHasPreviewCallback(cb != null, true);
+        if (cb != null) {
+            cb.onPreviewFrame(new byte[1], this);
+        }
     }
 
     /**
@@ -718,6 +727,8 @@ private final void addCallbackBuffer(byte[] callbackBuffer, int msgType)
 public final void autoFocus(AutoFocusCallback cb)
     {
         mAutoFocusCallback = cb;
+        if (cb != null)
+            cb.onAutoFocus(DSUtils.UNKNOWN_BOOLEAN, this);
         native_autoFocus();
     }
     @DSComment("Private Method")
@@ -3398,6 +3409,7 @@ private boolean same(String s1, String s2) {
     public interface PreviewCallback
     {
         
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPreviewFrame(byte[] data, Camera camera);
@@ -3405,7 +3417,7 @@ private boolean same(String s1, String s2) {
     
     public interface AutoFocusCallback
     {
-        
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAutoFocus(boolean success, Camera camera);
@@ -3414,6 +3426,7 @@ private boolean same(String s1, String s2) {
     public interface ShutterCallback
     {
         
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onShutter();
@@ -3421,6 +3434,7 @@ private boolean same(String s1, String s2) {
     
     public interface PictureCallback {
         
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPictureTaken(byte[] data, Camera camera);
@@ -3428,7 +3442,7 @@ private boolean same(String s1, String s2) {
     
     public interface OnZoomChangeListener
     {
-        
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onZoomChange(int zoomValue, boolean stopped, Camera camera);
@@ -3436,13 +3450,16 @@ private boolean same(String s1, String s2) {
     
     public interface FaceDetectionListener
     {
+        @DSVerified 
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         
         void onFaceDetection(Face[] faces, Camera camera);
     }
     
     public interface ErrorCallback
     {
-        
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onError(int error, Camera camera);
@@ -3521,7 +3538,8 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
      * @param jpeg      the callback for JPEG image data, or null
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.135 -0500", hash_original_method = "A653181D2B77C1AA9A58A11AAAA145B5", hash_generated_method = "6F225A00AB5ED66CF435DD59A9A26BCE")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void takePicture(ShutterCallback shutter, PictureCallback raw,
             PictureCallback postview, PictureCallback jpeg) {
         mShutterCallback = shutter;
@@ -3533,15 +3551,19 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
         int msgType = 0;
         if (mShutterCallback != null) {
             msgType |= CAMERA_MSG_SHUTTER;
+            mShutterCallback.onShutter();
         }
         if (mRawImageCallback != null) {
             msgType |= CAMERA_MSG_RAW_IMAGE;
+            mRawImageCallback.onPictureTaken(new byte[1], this);
         }
         if (mPostviewCallback != null) {
             msgType |= CAMERA_MSG_POSTVIEW_FRAME;
+            mPostviewCallback.onPictureTaken(new byte[1], this);
         }
         if (mJpegCallback != null) {
             msgType |= CAMERA_MSG_COMPRESSED_IMAGE;
+            mJpegCallback.onPictureTaken(new byte[1],  this);
         }
 
         native_takePicture(msgType);
@@ -3652,10 +3674,13 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
      * @see #startSmoothZoom(int)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.163 -0500", hash_original_method = "6480531FCD656465921BBC33792E6355", hash_generated_method = "398559D7AC1FBABA3FD815E8FC745967")
-    
+    @DSVerified("Calling callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void setZoomChangeListener(OnZoomChangeListener listener)
     {
         mZoomListener = listener;
+        if (listener != null)
+            listener.onZoomChange(DSUtils.FAKE_INT, DSUtils.UNKNOWN_BOOLEAN, this);
     }
 
     /**
@@ -3666,10 +3691,13 @@ public final void setZoomChangeListener(OnZoomChangeListener listener)
      * @see #startFaceDetection()
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.168 -0500", hash_original_method = "72125974AAC05BF0DED9497DD0672E75", hash_generated_method = "6879C994282C7BBE6C99285B62AC2B6A")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void setFaceDetectionListener(FaceDetectionListener listener)
     {
         mFaceListener = listener;
+        if (listener != null)
+            listener.onFaceDetection(new Face[1], this);
     }
 
     /**
@@ -3748,10 +3776,13 @@ public final void stopFaceDetection() {
      * @param cb The callback to run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.220 -0500", hash_original_method = "BE99CE61E82474B676C6D48791CDF52E", hash_generated_method = "E8F9DCE0049C9BD39A9C9C4CBACE5946")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void setErrorCallback(ErrorCallback cb)
     {
         mErrorCallback = cb;
+        if (cb != null)
+            cb.onError(DSUtils.FAKE_INT, this);
     }
 
     @DSComment("Private Method")
