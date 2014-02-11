@@ -141,6 +141,8 @@ public class PhoneStateListener {
 
     Handler mHandler = new Handler() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.693 -0400", hash_original_method = "6E54091CCEB0E4C4829EFF16721C7D7A", hash_generated_method = "22BEE3C02190EB16B2F2B97BE882EF49")
+        @DSVerified("callback modeled")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         public void handleMessage(Message msg) {
             
             PhoneStateListener.this.onServiceStateChanged((ServiceState)msg.obj);
@@ -187,6 +189,8 @@ public PhoneStateListener() {
      * @see ServiceState#STATE_POWER_OFF
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.586 -0500", hash_original_method = "71FF02CB37AAD9FA42E430343744C95D", hash_generated_method = "6A4D437F0A4E6015B235F63BCD713402")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onServiceStateChanged(ServiceState serviceState) {
         // default implementation empty
@@ -212,7 +216,9 @@ public void onServiceStateChanged(ServiceState serviceState) {
      * Callback invoked when the message-waiting indicator changes.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.595 -0500", hash_original_method = "75359DDCF2D0B158439199FBAF05E06A", hash_generated_method = "AB13BA3AF446FA82A306C47744A3DBAF")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+        
 public void onMessageWaitingIndicatorChanged(boolean mwi) {
         // default implementation empty
     }
@@ -221,6 +227,8 @@ public void onMessageWaitingIndicatorChanged(boolean mwi) {
      * Callback invoked when the call-forwarding indicator changes.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.600 -0500", hash_original_method = "D5A60C39C845CE2458AA9D81FF0C97F9", hash_generated_method = "7809D56E1A90252DAF5A9AE579827AF4")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onCallForwardingIndicatorChanged(boolean cfi) {
         // default implementation empty
@@ -230,6 +238,8 @@ public void onCallForwardingIndicatorChanged(boolean cfi) {
      * Callback invoked when device cell location changes.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.603 -0500", hash_original_method = "DC558EBD989E1315B12793B36376A79E", hash_generated_method = "A454123B2928F5DAF408E04F1BFD9C75")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onCellLocationChanged(CellLocation location) {
         // default implementation empty
@@ -243,6 +253,8 @@ public void onCellLocationChanged(CellLocation location) {
      * @see TelephonyManager#CALL_STATE_OFFHOOK
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.607 -0500", hash_original_method = "B1A721EFB2ABF6430D11EDB26008EF34", hash_generated_method = "0F512FAE81769FBE457784B1828B9765")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onCallStateChanged(int state, String incomingNumber) {
         // default implementation empty
@@ -257,6 +269,8 @@ public void onCallStateChanged(int state, String incomingNumber) {
      * @see TelephonyManager#DATA_SUSPENDED
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.611 -0500", hash_original_method = "1C4CEBBE82C84ACE1203815C2B422383", hash_generated_method = "0135B9E40705D7E3105DAB72CC525AB0")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onDataConnectionStateChanged(int state) {
         // default implementation empty
@@ -266,6 +280,8 @@ public void onDataConnectionStateChanged(int state) {
      * same as above, but with the network type.  Both called.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.615 -0500", hash_original_method = "BFD2027492A8CA27CCE6A852F5D0D4BF", hash_generated_method = "CFB27AB400DD88FBC877D4D8B3607B54")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onDataConnectionStateChanged(int state, int networkType) {
     }
@@ -280,6 +296,8 @@ public void onDataConnectionStateChanged(int state, int networkType) {
      * @see TelephonyManager#DATA_ACTIVITY_DORMANT
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.619 -0500", hash_original_method = "F374B48EE0586B0F56A0A6BEC28E9201", hash_generated_method = "81C50F436205C428E7EDDB5CEAEA2CA5")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onDataActivity(int direction) {
         // default implementation empty
@@ -294,6 +312,8 @@ public void onDataActivity(int direction) {
      * @see ServiceState#STATE_POWER_OFF
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.623 -0500", hash_original_method = "A22E0BB42B0E543666A17B7B6AC4EDC6", hash_generated_method = "8B634D2C9D16E7C7160326010210C3DD")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onSignalStrengthsChanged(SignalStrength signalStrength) {
         // default implementation empty
@@ -310,6 +330,8 @@ public void onSignalStrengthsChanged(SignalStrength signalStrength) {
      * @hide
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.627 -0500", hash_original_method = "AF1EBC6D8A2DA1E39265DEC2CD9D5FBB", hash_generated_method = "2DDFFB18789BDBA4467A3333F5000805")
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public void onOtaspChanged(int otaspMode) {
         // default implementation empty
