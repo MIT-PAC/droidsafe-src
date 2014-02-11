@@ -53,7 +53,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     @DSComment("Perference UI, only change preference is spec")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.524 -0500", hash_original_method = "0DCDE098692C34941ED8905F239ED21D", hash_generated_method = "9FB519AAD49C293A40F4A896BC0DE3D2")
-    
+    @DSVerified
 public DialogPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         
@@ -71,8 +71,26 @@ public DialogPreference(Context context, AttributeSet attrs, int defStyle) {
         mNegativeButtonText = a.getString(com.android.internal.R.styleable.DialogPreference_negativeButtonText);
         mDialogLayoutResId = a.getResourceId(com.android.internal.R.styleable.DialogPreference_dialogLayout,
                 mDialogLayoutResId);
+        droidsafeModelCallbacks();
         a.recycle();
         
+    }
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private void droidsafeModelCallbacks() {
+        onPrepareDialogBuilder(mBuilder);
+        View view = onCreateDialogView();
+        onBindDialogView(view);
+
+        Parcelable p = onSaveInstanceState();
+        onRestoreInstanceState(p);
+
+        onClick();
+        onClick(mDialog, DSUtils.FAKE_INT);
+
+        onDismiss(mDialog);
+        onDialogClosed(DSUtils.UNKNOWN_BOOLEAN);
     }
 
     @DSComment("Perference UI, only change preference is spec")
@@ -322,7 +340,8 @@ protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
      * @param state Optional instance state to restore on the dialog
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.569 -0500", hash_original_method = "F05F4238EDB347ACAD0B24F734C6EC9A", hash_generated_method = "29C53E3687E9449EF990569C7679DD39")
-    
+    @DSVerified
+    @DSSafe(DSCat.GUI)
 protected void showDialog(Bundle state) {
         Context context = getContext();
 
