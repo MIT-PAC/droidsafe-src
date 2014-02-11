@@ -631,9 +631,13 @@ public MenuItem setVisible(boolean shown) {
     }
 
    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.344 -0500", hash_original_method = "1DDD55F9AC5A73432BCD73A94619FD45", hash_generated_method = "E14BB9B4DD44ECA082C114F4DB378189")
-    
+   @DSVerified("callback modeled")
+   @DSSafe(DSCat.ANDROID_CALLBACK)
 public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener clickListener) {
         mClickListener = clickListener;
+        if (clickListener != null) {
+            clickListener.onMenuItemClick(this);
+        }
         return this;
     }
     
@@ -823,10 +827,15 @@ public MenuItem setActionProvider(ActionProvider actionProvider) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.391 -0500", hash_original_method = "B1FCAF7D5B88EED4E84E6E84EBEC9EE4", hash_generated_method = "4DE1588451EEB40B14B63F3C72F480C0")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public MenuItem setOnActionExpandListener(OnActionExpandListener listener) {
         mOnActionExpandListener = listener;
+        if (listener != null) {
+            listener.onMenuItemActionCollapse(this);
+            listener.onMenuItemActionExpand(this);
+        }
         return this;
     }
 
