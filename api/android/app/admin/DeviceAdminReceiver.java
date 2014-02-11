@@ -117,7 +117,7 @@ public ComponentName getWho(Context context) {
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.480 -0500", hash_original_method = "B5AB3987ECA0392723BA81C8F9C984A4", hash_generated_method = "8B5EE3325DE226B338C2FD08481371E1")
-    
+    @DSVerified
 public void onEnabled(Context context, Intent intent) {
     }
     
@@ -133,7 +133,8 @@ public void onEnabled(Context context, Intent intent) {
      * being disabled; if null is returned, no message is displayed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.482 -0500", hash_original_method = "B030DD992F331571B7C674C361AA5021", hash_generated_method = "FFEC1869BCDFDAF4A3E4B0735713365F")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)    
 public CharSequence onDisableRequested(Context context, Intent intent) {
         return null;
     }
@@ -149,7 +150,7 @@ public CharSequence onDisableRequested(Context context, Intent intent) {
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.485 -0500", hash_original_method = "3AE73024A5AE1632BF7BF3FF39ABC61B", hash_generated_method = "F87BC4D3C872A59388EE472A15BF5243")
-    
+    @DSVerified
 public void onDisabled(Context context, Intent intent) {
     }
     
@@ -163,7 +164,8 @@ public void onDisabled(Context context, Intent intent) {
      * @param intent The received intent as per {@link #onReceive}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.487 -0500", hash_original_method = "5C5796A973779ABAC966AF8BF648505D", hash_generated_method = "5EE87EFB7B0AC2C37DA8366DD70046E0")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void onPasswordChanged(Context context, Intent intent) {
     }
     
@@ -176,7 +178,9 @@ public void onPasswordChanged(Context context, Intent intent) {
      * @param intent The received intent as per {@link #onReceive}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.489 -0500", hash_original_method = "CF78327402B2C2123E9EC601B6F31A15", hash_generated_method = "7D6546C5FE125B5DF1F48600716B832B")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+
 public void onPasswordFailed(Context context, Intent intent) {
     }
     
@@ -189,7 +193,8 @@ public void onPasswordFailed(Context context, Intent intent) {
      * @param intent The received intent as per {@link #onReceive}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.491 -0500", hash_original_method = "2AC7C3B5C72B40DDF68FA801C448C7B7", hash_generated_method = "9232896A96911725C9C6CE39E4E346BF")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void onPasswordSucceeded(Context context, Intent intent) {
     }
 
@@ -212,7 +217,8 @@ public void onPasswordSucceeded(Context context, Intent intent) {
      * @param intent The received intent as per {@link #onReceive}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.493 -0500", hash_original_method = "412B859F7B36388642359BACAD05594E", hash_generated_method = "6160BA354A3AF505E3F25076E08ADC87")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void onPasswordExpiring(Context context, Intent intent) {
     }
 
@@ -222,7 +228,9 @@ public void onPasswordExpiring(Context context, Intent intent) {
      * convenience callbacks for each action.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.496 -0500", hash_original_method = "2445129A1CDA7F03AFDA7F9C777F984A", hash_generated_method = "FF7DC1FEB70492C2E8AF52B85A93BCFA")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+
 @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();

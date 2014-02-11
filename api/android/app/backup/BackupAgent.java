@@ -112,6 +112,7 @@ public void onDestroy() {
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.389 -0500", hash_original_method = "3EE7A0CC9D81AA95F5F10419C2075716", hash_generated_method = "E87C91B51BA9F67DC3EBA84B883745BA")
     
 public abstract void onBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
@@ -150,6 +151,7 @@ public abstract void onBackup(ParcelFileDescriptor oldState, BackupDataOutput da
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.391 -0500", hash_original_method = "6AA44BE7189E208A2B9808783324262B", hash_generated_method = "D030D1219085DBE9123CB3AD08785434")
     
 public abstract void onRestore(BackupDataInput data, int appVersionCode,

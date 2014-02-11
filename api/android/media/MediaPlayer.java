@@ -1239,6 +1239,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnPreparedListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPrepared(MediaPlayer mp);
@@ -1247,6 +1248,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnCompletionListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onCompletion(MediaPlayer mp);
@@ -1255,6 +1257,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnBufferingUpdateListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onBufferingUpdate(MediaPlayer mp, int percent);
@@ -1263,6 +1266,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnSeekCompleteListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSeekComplete(MediaPlayer mp);
@@ -1271,6 +1275,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnVideoSizeChangedListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onVideoSizeChanged(MediaPlayer mp, int width, int height);
@@ -1279,6 +1284,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnTimedTextListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onTimedText(MediaPlayer mp, TimedText text);
@@ -1287,6 +1293,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnErrorListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onError(MediaPlayer mp, int what, int extra);
@@ -1295,6 +1302,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     public interface OnInfoListener
     {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onInfo(MediaPlayer mp, int what, int extra);
@@ -1605,10 +1613,14 @@ public boolean disableTimedText() {
      * @param listener the callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.884 -0500", hash_original_method = "652A10B898FA76BB677D4E34679A7B5D", hash_generated_method = "121E0B182C491C4B2C85FD6119D834A3")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnPreparedListener(OnPreparedListener listener)
     {
         mOnPreparedListener = listener;
+        if (listener != null) {
+            listener.onPrepared(this);
+        }
     }
 
     /**
@@ -1618,10 +1630,14 @@ public void setOnPreparedListener(OnPreparedListener listener)
      * @param listener the callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.891 -0500", hash_original_method = "6CC4251EDF834484FDBD6F0A122C65D9", hash_generated_method = "E954F08D090C618317924314D4864513")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnCompletionListener(OnCompletionListener listener)
     {
         mOnCompletionListener = listener;
+        if (listener != null) {
+            listener.onCompletion(this);
+        }
     }
 
     /**
@@ -1631,10 +1647,15 @@ public void setOnCompletionListener(OnCompletionListener listener)
      * @param listener the callback that will be run.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.898 -0500", hash_original_method = "DDA62D9965B414E96A3CCD5D800217D1", hash_generated_method = "2B4819AD18CCC7D63B86E05B68963846")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener)
     {
         mOnBufferingUpdateListener = listener;
+
+        if (listener != null) {
+            listener.onBufferingUpdate(this, DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -1644,10 +1665,14 @@ public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener)
      * @param listener the callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.905 -0500", hash_original_method = "E6C283B9723E51C1AAC734ADC41F741F", hash_generated_method = "4262AB45F75AAFC3EC462BDF90628F01")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnSeekCompleteListener(OnSeekCompleteListener listener)
     {
         mOnSeekCompleteListener = listener;
+        if (listener != null) {
+            listener.onSeekComplete(this);
+        }
     }
 
     /**
@@ -1671,10 +1696,14 @@ public void setOnVideoSizeChangedListener(OnVideoSizeChangedListener listener)
      * {@hide}
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.920 -0500", hash_original_method = "EF2D264E164B28DBC06EEC6D3EBE8B23", hash_generated_method = "B27FFF2A432702BB6491BF0FAFA01D32")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnTimedTextListener(OnTimedTextListener listener)
     {
         mOnTimedTextListener = listener;
+        if (listener != null) {
+            listener.onTimedText(this, new TimedText(new byte[1]));
+        }
     }
 
     /**
@@ -1684,10 +1713,14 @@ public void setOnTimedTextListener(OnTimedTextListener listener)
      * @param listener the callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.934 -0500", hash_original_method = "606EB06B64A07407B83CA5CBEBF309C3", hash_generated_method = "3EEA30E1A38917AA79DA96D8939B5641")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 public void setOnErrorListener(OnErrorListener listener)
     {
         mOnErrorListener = listener;
+        if (listener != null) {
+            listener.onError(this, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -1696,10 +1729,14 @@ public void setOnErrorListener(OnErrorListener listener)
      * @param listener the callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.959 -0500", hash_original_method = "4D9753A45AFF6F50F6DD9F2BE501A438", hash_generated_method = "00A764E9A5F73CCD36593277E2A3C417")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 public void setOnInfoListener(OnInfoListener listener)
     {
         mOnInfoListener = listener;
+        if (listener != null) {
+            listener.onInfo(this,  DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
     }
 }
 

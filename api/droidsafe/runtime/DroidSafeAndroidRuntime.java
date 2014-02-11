@@ -8,6 +8,7 @@ import droidsafe.helpers.DSUtils;
 import android.app.ContextImpl;
 import android.app.IntentService;
 import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
@@ -15,6 +16,9 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.app.Application;
 import android.app.Dialog;
+import android.app.admin.DeviceAdminReceiver;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProvider;
 import android.view.MotionEvent;
 import com.google.android.maps.MapActivity;
 
@@ -49,6 +53,8 @@ public class DroidSafeAndroidRuntime {
      * @param activity
      */
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelActivity(android.app.Activity activity) {
         ContextImpl context = new ContextImpl();
 
@@ -78,20 +84,19 @@ public class DroidSafeAndroidRuntime {
         activity.onPrepareDialog(0, new Dialog(context));
         */
         
-        //TODO: WHAT ABOUT A REAL MENU?
+        /*
+        //TODO: WHAT ABOUT A REAL MENU?  We moved to Activity's droidsafeOnOtherHook
         activity.onCreateOptionsMenu(null);
         activity.onPrepareOptionsMenu(null);
         activity.onCreateContextMenu(null, null, null);
         activity.onOptionsItemSelected(null);
         activity.onContextItemSelected(null);
-        
         activity.dispatchTouchEvent(new MotionEvent());
-        
+
+        //activity.droidsafeOnKeyEvents();
+        */
         activity.onConfigurationChanged(new Configuration());
-
         activity.droidsafeOnSavedInstanceState(new Bundle());
-
-        activity.droidsafeOnKeyEvents();
         
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
@@ -100,7 +105,14 @@ public class DroidSafeAndroidRuntime {
         activity.droidsafeOnSubActivityHook();
 
         activity.droidsafeOnStop();
+
+        activity.droidsafeOnRestart();
+      
         activity.droidsafeOnDestroy();
+
+        Bundle state = new Bundle();
+        activity.droidsafePerformRestoreInstanceState(state);
+        
         activity.onDetachedFromWindow();
 
         //Calls for MapActivity from mapping library
@@ -113,6 +125,8 @@ public class DroidSafeAndroidRuntime {
 
     }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelService(android.app.Service service) {
         if (mApplication != null)
             service.setApplication(mApplication);
@@ -122,9 +136,9 @@ public class DroidSafeAndroidRuntime {
             for (Intent intent : DSUtils.getIntentFromFilter(filter)) {
                 service.onBind(intent);
                 service.onRebind(intent);
-                service.onStart(intent, 0);
+                service.onStart(intent, DSUtils.FAKE_INT);
                 service.onTaskRemoved(intent);
-                service.onStartCommand(intent, 0, 0);
+                service.onStartCommand(intent, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
                 service.onUnbind(intent);
                 if (service instanceof IntentService) {
                     ((IntentService) service).__ds__onHandleIntent(intent);
@@ -139,23 +153,56 @@ public class DroidSafeAndroidRuntime {
         service.onDestroy();
     }
     
+    //NOTE: active commands (query, delete, ..) are called to try to 
+    //invoke provider code.  Real access happens in the Client code
+    //and we need to conntect the Android ContentProviderClient with this.....
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelContentProvider(android.content.ContentProvider contentProvider) {
         contentProvider.onCreate();
         contentProvider.onConfigurationChanged(new Configuration());
         contentProvider.onLowMemory();
         contentProvider.onTrimMemory(0);
-        // Its not clear if we could figure out some of the value for these
-        // parameters
+        // Its not clear if we could figure out some of the value for these parameters
         contentProvider.query(null, null, null, null, null);
         contentProvider.insert(null, null);
         contentProvider.update(null, null, null, null);
         contentProvider.delete(null, null, null);
         contentProvider.getType(null);
     }
-    
-    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
-        if (mApplication != null)
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {        
+        if (mApplication != null) {
             receiver.setApplication(mApplication);
+            // callback receiver
+            if (receiver instanceof android.app.admin.DeviceAdminReceiver) {
+                DeviceAdminReceiver ar = (DeviceAdminReceiver) receiver;
+                Intent appIntent = mApplication.droidsafeGetIntent();
+                Context appContext = mApplication.getApplicationContext();
+                ar.onDisableRequested(appContext, appIntent);
+                ar.onDisabled(appContext, appIntent);
+                ar.onEnabled(appContext, appIntent);
+                ar.onPasswordChanged(appContext, appIntent);
+                ar.onPasswordExpiring(appContext, appIntent);
+                ar.onPasswordFailed(appContext, appIntent);
+                ar.onPasswordSucceeded(appContext, appIntent);
+            }
+
+            if (receiver instanceof android.appwidget.AppWidgetProvider) {
+                AppWidgetProvider aw = (AppWidgetProvider)receiver;
+                Intent appIntent = mApplication.droidsafeGetIntent();
+                Context appContext = mApplication.getApplicationContext();
+                aw.onReceive(appContext, appIntent);
+                aw.onEnabled(appContext);
+                aw.onDisabled(appContext);
+                int[] appWidgetIds = new int[1];
+                appWidgetIds[0] = DSUtils.FAKE_INT;
+                aw.onUpdate(appContext, AppWidgetManager.getInstance(appContext), appWidgetIds);
+                aw.onDeleted(appContext, appWidgetIds);
+            }
+        }
     }
     
     public static void modelApplication(android.app.Application app) {

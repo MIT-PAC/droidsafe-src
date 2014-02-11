@@ -237,13 +237,17 @@ public boolean isUiFocusable() {
         return true;
     }
     
-    private static class SimpleActionMode extends ActionMode {
+    public static class SimpleActionMode extends ActionMode {
         
-        @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
-        private SimpleActionMode() {
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public SimpleActionMode() {
             
         }
+
+        public SimpleActionMode(int mode) {
+        }
+
 
         @Override
         

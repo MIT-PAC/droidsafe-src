@@ -15,6 +15,7 @@ import android.animation.ObjectAnimator;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -1171,10 +1172,15 @@ public ActionBar.TabListener getCallback() {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:58.046 -0500", hash_original_method = "464280ABF8AEC5C77A1E9FBBDE9C172D", hash_generated_method = "3E8C5211C65E6ADE3E320A4B82D8E94A")
-        
+        @DSVerified
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
         public Tab setTabListener(ActionBar.TabListener callback) {
             mCallback = callback;
+            FragmentManager fragmentManager = mActivity.getFragmentManager();
+            callback.onTabSelected(getSelectedTab(), fragmentManager.beginTransaction()); 
+            callback.onTabReselected(getSelectedTab(), fragmentManager.beginTransaction()); 
+            callback.onTabUnselected(getSelectedTab(), fragmentManager.beginTransaction()); 
             return this;
         }
 

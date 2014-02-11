@@ -15,21 +15,26 @@ public interface Parcelable {
     
     public int describeContents();
     
-    
+
+    @DSVerified
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void writeToParcel(Parcel dest, int flags);
 
     
     public interface Creator<T> {
-        
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public T createFromParcel(Parcel source);
         
-        
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public T[] newArray(int size);
     }
 
     
     public interface ClassLoaderCreator<T> extends Creator<T> {
-        
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public T createFromParcel(Parcel source, ClassLoader loader);
     }
 }

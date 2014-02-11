@@ -398,8 +398,16 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.994 -0500", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "CF5FF4F149C6CF2D53AA15104CFBDB03")
+    @DSVerified
     
 public Fragment() {
+        droidsafeModelFragment();
+    }
+    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private void droidsafeModelFragment() {
+        
     }
     
     @DSComment("Package priviledge")
@@ -1011,7 +1019,7 @@ public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanc
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.093 -0500", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "B80B37A37F384FB495394FF2DE913216")
-    
+    @DSVerified("called by FragmentManagerImpl")
 public void onAttach(Activity activity) {
         mCalled = true;
     }
@@ -1042,8 +1050,11 @@ public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.097 -0500", hash_original_method = "00494AECA41C1730DF6E82548FC2C3D5", hash_generated_method = "16BC96174FF1001ACAD87A7C411E6383")
+    @DSVerified
     
 public void onCreate(Bundle savedInstanceState) {
+        // onCreate is being called by activity -> FragmentMangerImpl -> Fragment
+        // it is deep in changeState.  We may need to simplify the model a little bit
         mCalled = true;
     }
     
@@ -1058,7 +1069,9 @@ public void onCreate(Bundle savedInstanceState) {
      * from a previous saved state as given here.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.099 -0500", hash_original_method = "F4318A499F9B06ABC9CCF0644AE6DC10", hash_generated_method = "7A9779D0E96BCB81E2F9B1D4F8B9E908")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onViewCreated(View view, Bundle savedInstanceState) {
     }
     
@@ -1100,6 +1113,7 @@ public View getView() {
      */
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.105 -0500", hash_original_method = "C52625884C98429BE8DE42F4FBFE7367", hash_generated_method = "98A4E1BEF43B96D6CA75F281B713F100")
     
 public void onActivityCreated(Bundle savedInstanceState) {
@@ -1205,6 +1219,12 @@ public void onStop() {
 		// TODO Auto-generated method stub
 	}
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeSubFragmentHook() {
+        
+    }
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.123 -0500", hash_original_method = "E1E8CF8B1FBB3E8165C3219A9D0BB675", hash_generated_method = "9F599A3EEFB4A8E50276D3B55427ECB6")
     
 public void onTrimMemory(int level) {
@@ -1291,6 +1311,15 @@ public void onDetach() {
     }
     
     /**
+     * We need to pass in the activity to associate the fragment with an activity.
+     * There is no legal way of doing it through API 
+     * @param activity
+     */
+    public void droidsafeSetActivity(Activity activity) {
+        mActivity = activity;
+    }
+    
+    /**
      * Initialize the contents of the Activity's standard options menu.  You
      * should place your menu items in to <var>menu</var>.  For this method
      * to be called, you must have first called {@link #setHasOptionsMenu}.  See
@@ -1304,7 +1333,8 @@ public void onDetach() {
      * @see #onOptionsItemSelected
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.134 -0500", hash_original_method = "B3C5F3D019B47C47E6111F1C7C38CA5D", hash_generated_method = "029924445C1AFDCE87D15E2774C1B76B")
-    
+    @DSVerified("Called from FragmentManagerImp, which is called by droidsafeOnOthersHook")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
     }
 

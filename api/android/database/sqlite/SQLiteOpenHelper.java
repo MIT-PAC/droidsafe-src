@@ -44,13 +44,7 @@ public abstract class SQLiteOpenHelper {
         addTaint(name.getTaint());
         addTaint(context.getTaint());
 
-        // This method will call various entry points when necessary.
-        // We enable all of them here
-        onCreate (null);
-        onDowngrade (null, 0, 1);
-        onOpen (null);
-        onUpgrade (null, 0, 1);
-
+        
         // ---------- Original Method ----------
     }
 
@@ -84,6 +78,20 @@ public SQLiteOpenHelper(Context context, String name, CursorFactory factory, int
         mFactory = factory;
         mNewVersion = version;
         mErrorHandler = errorHandler;
+        
+        // This method will call various entry points when necessary.
+        // We enable all of them here
+        /*
+         NOTES:
+             These methods don't have to be called as they are called
+             from getReadable/getWriteableDtabase
+         */
+        /*
+        onCreate (null);
+        onDowngrade (null, 0, 1);
+        onOpen (null);
+        onUpgrade (null, 0, 1);
+        */
     }
 
     /**
@@ -260,6 +268,7 @@ public synchronized SQLiteDatabase getReadableDatabase() {
      */
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.793 -0500", hash_original_method = "C09EB7B9D42A5A795555D7C9A56D8370", hash_generated_method = "7DAFEB4AF1658D891E4799A36032CC30")
     
 public synchronized void close() {
@@ -280,7 +289,7 @@ public synchronized void close() {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.796 -0500", hash_original_method = "2FBC79C6C2BA05FEAB84BE21BD7C0DCC", hash_generated_method = "4120612F73499708628B23C714A029ED")
-    
+    @DSVerified
 public abstract void onCreate(SQLiteDatabase db);
 
     /**
@@ -301,7 +310,7 @@ public abstract void onCreate(SQLiteDatabase db);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.799 -0500", hash_original_method = "AD445B0156B85B8B4173B4EAC2D086F3", hash_generated_method = "E507DA669B386B03FA7730201B26B476")
-    
+    @DSVerified
 public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
 
     /**
@@ -316,7 +325,8 @@ public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion
      * @param newVersion The new database version.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.801 -0500", hash_original_method = "E809F845DA52B26B37A0B95640D58A46", hash_generated_method = "0BC539B90B921B9865428E46B9B72836")
-    
+    @DSVerified
+    @DSSpec(DSCat.DATABASE)
 public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         throw new SQLiteException("Can't downgrade database from version " +
                 oldVersion + " to " + newVersion);
@@ -330,7 +340,8 @@ public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
      * @param db The database.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.803 -0500", hash_original_method = "4811C8ED58A3ECFEDC0621F514E7FFAC", hash_generated_method = "FC73B503B4F27A0AAE320B027E4A24EC")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onOpen(SQLiteDatabase db) {}
 }
 

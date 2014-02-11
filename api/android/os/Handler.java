@@ -95,10 +95,12 @@ public class Handler {
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.014 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
-    
-public void handleMessage(Message msg) {
+    @DSVerified
+    public void handleMessage(Message msg) {
     }
     
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSVerified
     public void dispatchMessage(Message msg){
 		// Original method
 		/*
@@ -200,6 +202,7 @@ public final Message obtainMessage()
     
 	@DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
+	@DSVerified
     public final boolean post(Runnable r){
 		// Original method
 		/*
@@ -224,7 +227,8 @@ public final Message obtainMessage()
     	addTaint(uptimeMillis);
     	return sendMessageAtTime(getPostMessage(r), uptimeMillis);
 	}
-    
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean postAtTime(Runnable r, Object token, long uptimeMillis){
 		// Original method
 		/*
@@ -251,7 +255,8 @@ public final Message obtainMessage()
     	addTaint(delayMillis);
     	return sendMessageDelayed(getPostMessage(r), delayMillis);
 	}
-    
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean postAtFrontOfQueue(Runnable r){
 		// Original method
 		/*
@@ -359,6 +364,8 @@ public final Message obtainMessage()
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean sendMessageDelayed(Message msg, long delayMillis){
 		// Original method
 		/*
@@ -373,7 +380,8 @@ public final Message obtainMessage()
     	addTaint(delayMillis);
         return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)
 	public boolean sendMessageAtTime(Message msg, long uptimeMillis){
 		// Original method
 		/*
@@ -396,9 +404,11 @@ public final Message obtainMessage()
     	addTaint(msg.getTaint());
 		addTaint(uptimeMillis);
 		msg.callback.run();
+		dispatchMessage(msg);
 		return true;
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean sendMessageAtFrontOfQueue(Message msg){
 		// Original method
 		/*
@@ -428,6 +438,8 @@ public final Message obtainMessage()
             RuntimeException e = new RuntimeException(
                 this + " sendMessageAtTime() called with no mQueue");
         }
+
+		dispatchMessage(msg);
 		return getTaintBoolean();
 	}
     
@@ -604,6 +616,7 @@ public void send(Message msg) {
     public interface Callback {
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         public boolean handleMessage(Message msg);
     }
 

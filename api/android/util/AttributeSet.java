@@ -100,4 +100,190 @@ public interface AttributeSet {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public int getStyleAttribute();
+
+    public static class EmptyAttributeSet implements AttributeSet {
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeCount() {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String getAttributeName(int index) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String getAttributeValue(int index) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String getAttributeValue(String namespace, String name) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String getPositionDescription() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeNameResource(int index) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeListValue(String namespace, String attribute,
+                String[] options, int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public boolean getAttributeBooleanValue(String namespace,
+                String attribute, boolean defaultValue) {
+            // TODO Auto-generated method stub
+            return false;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeResourceValue(String namespace,
+                String attribute, int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeIntValue(String namespace, String attribute,
+                int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeUnsignedIntValue(String namespace,
+                String attribute, int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public float getAttributeFloatValue(String namespace, String attribute,
+                float defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeListValue(int index, String[] options,
+                int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public boolean getAttributeBooleanValue(int index, boolean defaultValue) {
+            // TODO Auto-generated method stub
+            return false;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeResourceValue(int index, int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeIntValue(int index, int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getAttributeUnsignedIntValue(int index, int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public float getAttributeFloatValue(int index, float defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String getIdAttribute() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String getClassAttribute() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getIdAttributeResourceValue(int defaultValue) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getStyleAttribute() {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+    }
 }

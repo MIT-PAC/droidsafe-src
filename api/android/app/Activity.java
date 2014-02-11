@@ -280,7 +280,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
     
-public Intent getIntent() {
+    public Intent getIntent() {
         return mIntent;
     }
 
@@ -452,18 +452,19 @@ public Window getWindow() {
      *
      * @param savedInstanceState contains the saved state
      */
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.503 -0500", hash_original_method = "F96DCFB160CAE669DE173597BCAB5D29", hash_generated_method = "C734A05148AE2009F15CC2274FB39B2A")
-    
 final void performRestoreInstanceState(Bundle savedInstanceState) {
         onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
     }
-    
+
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -481,6 +482,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void restoreManagedDialogs(Bundle savedInstanceState){
@@ -507,7 +509,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
     }
 		*/
 	}
-    
+
+    @DSVerified 
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPostCreate(Bundle savedInstanceState){
@@ -524,7 +527,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified("Modeled Lifecycle Event")
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onStart(){
@@ -549,7 +553,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified    
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onRestart(){
@@ -562,6 +566,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSVerified    
 	@DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onResume(){
@@ -615,6 +620,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
      * @see #setIntent 
      * @see #onResume 
      */
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.580 -0500", hash_original_method = "ECA12E6FCFF6C8E6301C9A23FD34F5BD", hash_generated_method = "4ADDCDE3CE740D4C5E6F0A8FD5893823")
@@ -639,6 +645,7 @@ final void performSaveInstanceState(Bundle outState) {
         saveManagedDialogs(outState);
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onSaveInstanceState(Bundle outState){
@@ -660,6 +667,7 @@ final void performSaveInstanceState(Bundle outState) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void saveManagedDialogs(Bundle outState){
@@ -722,12 +730,33 @@ protected void onUserLeaveHint() {
      * @see #onSaveInstanceState
      * @see #onPause
      */
+    @DSVerified("Modeled Lifecycle Event")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.615 -0500", hash_original_method = "88BB0202BF6BAEB771096BFB80D04435", hash_generated_method = "89FD83C8377F7059D62B43FADD327332")
-    
 public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
         return false;
     }
+    
+    @DSVerified("Internal droidsafe use")
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafePerformSaveInstanceState(Bundle bundle) {
+        performSaveInstanceState(bundle);
+    }
+    
+    @DSVerified("Internal droidsafe use")
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafePerformRestoreInstanceState(Bundle savedInstanceState) {
+        performRestoreInstanceState(savedInstanceState);
+    }
+ 
+    @DSVerified("Internal droidsafe use")
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public boolean droidsafeOnCreateThumbnail() {
+        return onCreateThumbnail(new Bitmap(), new Canvas());
+    }
+ 
 
+    
     /**
      * Generate a new description for this activity.  This method is called
      * before pausing the activity and can, if desired, return some textual
@@ -745,12 +774,15 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
      * @see #onSaveInstanceState
      * @see #onPause
      */
+    @DSVerified("Modeled Lifecycle Event")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.620 -0500", hash_original_method = "ABF3FC9B35FB67DA4650457E79D2DAE8", hash_generated_method = "4A801EFBDC40FB7231D50804D2987BA1")
     
 public CharSequence onCreateDescription() {
         return null;
     }
     
+    @DSVerified
 	@DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onStop(){
@@ -776,6 +808,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onConfigurationChanged(Configuration newConfig){
@@ -1132,9 +1165,10 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+	@DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.747 -0500", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "8A18F956B194A0C371BE43C50E45248B")
     
 public void setContentView(int layoutResID) {
@@ -1157,9 +1191,10 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+	@DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.752 -0500", hash_original_method = "6143DA20A0E63D3DD26D6D6CC3A0350F", hash_generated_method = "68042BCA2A6984D357903A5C198D5CDB")
     
 public void setContentView(View view) {
@@ -1179,7 +1214,8 @@ public void setContentView(View view) {
      * @see #setContentView(int)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.757 -0500", hash_original_method = "FCB0E6F09A4D449F841F63B35D6A2C9A", hash_generated_method = "1913D4F1055F25C59E2EB22DE55ACB26")
-    
+    @DSVerified    
+    @DSSafe(DSCat.GUI) 
 public void setContentView(View view, ViewGroup.LayoutParams params) {
         getWindow().setContentView(view, params);
         initActionBar();
@@ -1194,6 +1230,8 @@ public void setContentView(View view, ViewGroup.LayoutParams params) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.762 -0500", hash_original_method = "FC447FA34EAD1A15520CE5D8778BF36F", hash_generated_method = "CC69E4A6765A9668C67296C98FBE0BCE")
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
 public void addContentView(View view, ViewGroup.LayoutParams params) {
         getWindow().addContentView(view, params);
         initActionBar();
@@ -1210,6 +1248,7 @@ public void setFinishOnTouchOutside(boolean finish) {
         mWindow.setCloseOnTouchOutside(finish);
     }
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public final void setDefaultKeyMode(int mode){
@@ -1238,7 +1277,9 @@ public void setFinishOnTouchOutside(boolean finish) {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnKeyEvents() {
         int action = getTaintInt();
         int code = getTaintInt();
@@ -1305,12 +1346,16 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
      * KeyEvent.Callback.onKeyMultiple()}: always returns false (doesn't handle
      * the event).
      */
+    @DSVerified
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.829 -0500", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "36A8C90D805E1CE396E3F79E76A992E5")
     
 public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onBackPressed(){
@@ -1661,6 +1706,7 @@ public View onCreatePanelView(int featureId) {
         return null;
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreatePanelMenu(int featureId, Menu menu){
@@ -1677,7 +1723,9 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
+   
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
@@ -1718,6 +1766,7 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onMenuItemSelected(int featureId, MenuItem item){
@@ -1746,6 +1795,7 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onPanelClosed(int featureId, Menu menu){
@@ -1787,6 +1837,7 @@ public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreateOptionsMenu(Menu menu){
@@ -1832,6 +1883,7 @@ public void invalidateOptionsMenu() {
 		*/
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onOptionsMenuClosed(Menu menu){
@@ -1884,8 +1936,10 @@ public void openOptionsMenu() {
      * It is not safe to hold onto the context menu after this method returns.
      * {@inheritDoc}
      */
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.992 -0500", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "1B44B70B0D6B4F288A41A01A283212DF")
-    
 public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     }
     
@@ -1954,6 +2008,7 @@ public void closeContextMenu() {
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1969,6 +2024,7 @@ public void closeContextMenu() {
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
@@ -1985,6 +2041,7 @@ public void closeContextMenu() {
     /**
      * @deprecated Old no-arguments version of {@link #onCreateDialog(int, Bundle)}.
      */
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.026 -0500", hash_original_method = "5C4ABBE5E4F27E10ACC00467798D80D8", hash_generated_method = "9BF122C6459667CD41B62EBC07FD4E1C")
@@ -2028,7 +2085,9 @@ public void closeContextMenu() {
      * available on older platforms through the Android compatibility package.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.031 -0500", hash_original_method = "34E3D2628A4C0BFC6C20A449A8141897", hash_generated_method = "89B5A5F903C7FE6A743D1C5892B9317D")
-    
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 @Deprecated
     protected Dialog onCreateDialog(int id, Bundle args) {
         return onCreateDialog(id);
@@ -2038,6 +2097,8 @@ public void closeContextMenu() {
      * @deprecated Old no-arguments version of
      * {@link #onPrepareDialog(int, Dialog, Bundle)}.
      */
+
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.036 -0500", hash_original_method = "7779942926F36CBECCFB305682D0E188", hash_generated_method = "C3F52CD22FCD74D322864C49F353283D")
@@ -2072,7 +2133,9 @@ public void closeContextMenu() {
      * available on older platforms through the Android compatibility package.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.042 -0500", hash_original_method = "5C5331293ECB563ADEBB709047E6FA90", hash_generated_method = "187B10D7012B64C19222392AB7B39983")
-    
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Deprecated
     protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
         onPrepareDialog(id, dialog);
@@ -2096,6 +2159,7 @@ public void closeContextMenu() {
         showDialog(id, null);
     }
     
+    @DSVerified
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
@@ -2373,6 +2437,7 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSVerified
 	@DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
@@ -2443,11 +2508,26 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
+		
+		/*
+		  * This is called for activities that set launchMode to "singleTop" in
+		     * their package, or if a client used the {@link Intent#FLAG_ACTIVITY_SINGLE_TOP}
+		     * flag when calling {@link #startActivity}.  In either case, when the
+		     * activity is re-launched while at the top of the activity stack instead
+		     * of a new instance of the activity being started, onNewIntent() will be
+		     * called on the existing instance with the Intent that was used to
+		     * re-launch it */
+		// on lauchmode to singleStop or SINGLE_ACTIVTY_SINGLE
+		// if ((intent.getFlags() & Intent.FLAG_ACTIVITY_SINGLE_TOP) != 0) {
+		// }
+		onNewIntent(intent);
+	
 		// Original method
 		/*
 		{
@@ -2475,6 +2555,8 @@ public LayoutInflater getLayoutInflater() {
      *
      * @see #startActivityForResult
      */
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     
@@ -2482,6 +2564,8 @@ public LayoutInflater getLayoutInflater() {
     public void startActivities(Intent[] intents) {
         mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
+        for (Intent intent: intents)
+            startActivity(intent);
     }
     
     @DSSink({DSSinkKind.START_ACTIVITY})
@@ -3180,6 +3264,7 @@ public SharedPreferences getPreferences(int mode) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);
@@ -3394,6 +3479,7 @@ public final int getVolumeControlStream() {
 		//Return nothing
 	}
     
+	@DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public View onCreateView(String name, Context context, AttributeSet attrs){
@@ -3406,6 +3492,9 @@ public final int getVolumeControlStream() {
 		return new View(context);
 	}
     
+	@DSVerified
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
@@ -3468,7 +3557,9 @@ public void setImmersive(boolean i) {
             // pass
         }
     }
-
+    @DSVerified    
+    @DSComment("normal android callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     /**
      * Start an action mode.
      *
@@ -3480,7 +3571,12 @@ public void setImmersive(boolean i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.423 -0500", hash_original_method = "2C973E12746FE944D244FE9652432CFA", hash_generated_method = "426310D8B485F00F6CAE4106DF9E1A43")
     
 public ActionMode startActionMode(ActionMode.Callback callback) {
-        return mWindow.getDecorView().startActionMode(callback);
+
+        ActionMode actionMode = new ActionMode.SimpleActionMode();
+        actionMode.setTag(callback);
+        onActionModeStarted(actionMode);
+        //return mWindow.getDecorView().startActionMode(callback);
+        return actionMode;
     }
     
     private static class ManagedDialog {
@@ -3564,6 +3660,9 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 		*/
 	}
 
+    @DSVerified    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     /**
      * Notifies the Activity that an action mode has been started.
      * Activity subclasses overriding this method should call the superclass implementation.
@@ -3573,6 +3672,18 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.433 -0500", hash_original_method = "255BA88D048ED7CA66014BFC1FF334C0", hash_generated_method = "59326024C2A90147ADE5F72F14E6828B")
     
 public void onActionModeStarted(ActionMode mode) {
+        Object callbackTag = mode.getTag();
+        if (callbackTag != null && callbackTag instanceof ActionMode.Callback) {
+            ActionMode.Callback callback = (ActionMode.Callback) callbackTag;
+            MenuBuilder builder = new MenuBuilder(getBaseContext());
+        //technically we should use the menu from external source
+            Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
+            MenuItem menuItem = menu.add(DSUtils.FAKE_INT);
+            callback.onCreateActionMode(mode, menu);
+            callback.onPrepareActionMode(mode, menu);
+            callback.onActionItemClicked(mode, menuItem);  
+            callback.onDestroyActionMode(mode);
+        }
     }
 
     /**
@@ -3816,6 +3927,7 @@ final void performUserLeaving() {
 		*/
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     void dispatchActivityResult(String who, int requestCode, 
@@ -3848,20 +3960,30 @@ final void performUserLeaving() {
 	}
     // orphaned legacy method
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnDestroy() {
 		onDestroy();
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     // orphaned legacy method
      //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
         addTaint(icicle.getTaint());
         addTaint(context.getTaint());
+		mIntent = droidsafeGetIntent();
+
 		this.attachBaseContext(context);
 		onCreate(icicle);
 		onStart();
+		onPostCreate(icicle);
 		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
+
+		// attach ativiity to the fragments
+		mFragments.attachActivity(this);
 		mFragments.dispatchActivityCreated();
 		// Original method
 		/*
@@ -3877,26 +3999,45 @@ final void performUserLeaving() {
     
     // orphaned legacy method
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnResume() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onResume();
+		mFragments.dispatchResume();
     }
     
     // orphaned legacy method
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onStop();
+		mFragments.dispatchStop();
+    }
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeOnRestart() {
+		//This method is called by droidsafe itself, and should NEVER be called by an app
+    	onRestart();
     }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void setApplication(Application app) { 
             this.mApplication = app;
     }
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnSavedInstanceState(Bundle b) {
     	this.onSaveInstanceState(b);
 	}
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
@@ -3904,41 +4045,70 @@ final void performUserLeaving() {
     /**
      * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
      */
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnSubActivityHook() {
         droidsafeOnOthersHook();
 	}
     
+	@DSVerified
+	@DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOnOthersHook() {
-        this.onActionModeFinished(ActionMode.droidsafeObtainObject());
-        this.onActionModeStarted(ActionMode.droidsafeObtainObject());
+
+        this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
+
         MenuBuilder builder = new MenuBuilder(getBaseContext());
         //technically we should use the menu from external source
-        Menu menu = builder.addSubMenu(getTaintInt());
+        Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onCreateOptionsMenu(menu);
-        this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
         this.onPrepareOptionsMenu(menu);
+        this.onMenuOpened(DSUtils.FAKE_INT, menu);
         this.onContextMenuClosed(menu);
+
         this.onContextItemSelected(menu.add(new String()));
+        this.onOptionsItemSelected(menu.add(new String()));
+        this.onMenuItemSelected(DSUtils.FAKE_INT, menu.add(new String()));
+
+        this.onCreatePanelMenu(DSUtils.FAKE_INT, builder.addSubMenu(DSUtils.FAKE_INT));
+        this.onPreparePanel(DSUtils.FAKE_INT, this.findViewById(DSUtils.FAKE_INT), builder.addSubMenu(DSUtils.FAKE_INT));
+        this.onPanelClosed(DSUtils.FAKE_INT, builder.addSubMenu(DSUtils.FAKE_INT));
+        
+        //TODO: WHAT ABOUT A REAL MENU?
+        this.onActionModeStarted(new ActionMode.SimpleActionMode());
+        this.onActionModeFinished(new ActionMode.SimpleActionMode());
+        
+        
+        AttributeSet attrSet = new AttributeSet.EmptyAttributeSet();;
+        this.onCreateView(new String(), getBaseContext(), attrSet);
+        
+        //context menu
+        ContextMenu contextMenu = new ContextMenu.DroidSafeContextMenu();
+        ContextMenu.ContextMenuInfo info = null;
+        this.onCreateContextMenu(contextMenu, 
+                this.findViewById(DSUtils.FAKE_INT), info);
        
         onWindowFocusChanged(getTaintBoolean());
-        onTouchEvent(MotionEvent.droidsafeObtainEvent());
-        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
-        onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+        onTouchEvent(new MotionEvent()); 
+        onTrackballEvent(new MotionEvent());
+        onGenericMotionEvent(new MotionEvent());
 
-        onKeyDown(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyUp(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyDown(getTaintInt(), new KeyEvent()); 
+        onKeyUp(getTaintInt(), new KeyEvent());
+        onKeyLongPress(getTaintInt(), new KeyEvent());
+        onKeyShortcut(getTaintInt(), new KeyEvent());
+        onKeyMultiple(getTaintInt(), getTaintInt(), new KeyEvent());
         
         //all dispatch functions
-        dispatchTouchEvent(MotionEvent.droidsafeObtainEvent());
-        dispatchGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
-        dispatchKeyEvent(KeyEvent.droidsafeObtainEvent());
-        dispatchKeyShortcutEvent(KeyEvent.droidsafeGetEvent());
-        dispatchTrackballEvent(MotionEvent.droidsafeObtainEvent());
-        dispatchPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
+        dispatchTouchEvent(new MotionEvent());
+        dispatchGenericMotionEvent(new MotionEvent());
+        dispatchKeyEvent(new KeyEvent());
+        dispatchKeyShortcutEvent(new KeyEvent());
+        dispatchTrackballEvent(new MotionEvent());
+        dispatchPopulateAccessibilityEvent(new AccessibilityEvent(DSUtils.FAKE_INT));
+        
+        droidsafeOnCreateThumbnail();
+        onCreateDescription();
+        
     }
     
 }

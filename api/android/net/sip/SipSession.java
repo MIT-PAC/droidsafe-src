@@ -40,6 +40,11 @@ SipSession(ISipSession realSession, Listener listener) {
         setListener(listener);
     }
 
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public SipSession(DSOnlyType bogus) {
+        
+    }
     /**
      * Gets the IP address of the local host on which this SIP session runs.
      *

@@ -57,7 +57,8 @@ public ActivityGroup(boolean singleActivityMode) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.747 -0500", hash_original_method = "96D303A1531FF329BB7500E6AC728702", hash_generated_method = "BD77D8E9731BA3F582FCCDE213051CA5")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +68,9 @@ public ActivityGroup(boolean singleActivityMode) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.770 -0500", hash_original_method = "F4E7F925AD67F8C08641672CC736CBD1", hash_generated_method = "E8A638190FD50359F0DBFE5F3B99684F")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     protected void onResume() {
         super.onResume();
@@ -75,7 +78,8 @@ public ActivityGroup(boolean singleActivityMode) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.781 -0500", hash_original_method = "42BC4841682BB427F9696A4814584FE9", hash_generated_method = "DA5CBD401712E9E6D4505CB1B535F718")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -86,7 +90,8 @@ public ActivityGroup(boolean singleActivityMode) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.789 -0500", hash_original_method = "FE5C48D98D4B78F303997B7614AC45A4", hash_generated_method = "023308D7FE28046A581D6078045BE7A4")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     protected void onPause() {
         super.onPause();
@@ -94,7 +99,8 @@ public ActivityGroup(boolean singleActivityMode) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.797 -0500", hash_original_method = "BC201DA8DDB80A0B4AC67ABF425CB100", hash_generated_method = "C25F60F1C749830CBFCB1F528EA8FC6D")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     protected void onStop() {
         super.onStop();
@@ -102,7 +108,8 @@ public ActivityGroup(boolean singleActivityMode) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.812 -0500", hash_original_method = "25D4F476B8DF9F422F9CA53AF33664B2", hash_generated_method = "A2AA3F01C4D2AA1C455897CD050E0314")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -542,10 +542,16 @@ private void attachMediaController() {
      * @param l The callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.777 -0500", hash_original_method = "D1A9D86A0084E612B3B59A1A4238CD00", hash_generated_method = "C017A99C96589FF5CD5FC26F13496F26")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+
 public void setOnPreparedListener(MediaPlayer.OnPreparedListener l)
     {
         mOnPreparedListener = l;
+        if (l != null) {
+            l.onPrepared(mMediaPlayer);
+        }
+
     }
 
     /**
@@ -555,10 +561,14 @@ public void setOnPreparedListener(MediaPlayer.OnPreparedListener l)
      * @param l The callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.779 -0500", hash_original_method = "E72FB4A9E0939C099D3564FC711BE1EB", hash_generated_method = "56EF9777CF687A5EF2F63E987236C467")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnCompletionListener(OnCompletionListener l)
     {
         mOnCompletionListener = l;
+        if (l != null) {
+            l.onCompletion(mMediaPlayer);
+        }
     }
 
     /**
@@ -570,10 +580,14 @@ public void setOnCompletionListener(OnCompletionListener l)
      * @param l The callback that will be run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.781 -0500", hash_original_method = "1D9D4DF006E463AA131E1079BD21BB23", hash_generated_method = "D2226C2AEE46E386CEEAE20829BB160C")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnErrorListener(OnErrorListener l)
     {
         mOnErrorListener = l;
+        if (l != null) {
+            l.onError(mMediaPlayer, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
     }
 
     /*

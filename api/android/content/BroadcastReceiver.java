@@ -67,8 +67,9 @@ public BroadcastReceiver() {
      * @param context The Context in which the receiver is running.
      * @param intent The Intent being received.
      */
+    @DSVerified
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.698 -0500", hash_original_method = "938B84A43002091BA0754FF3EF2C5C0E", hash_generated_method = "694CB25ED6D3FBC56A56AD38523219EB")
     
 public abstract void onReceive(Context context, Intent intent);
@@ -428,8 +429,14 @@ void checkSynchronousHint() {
     // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
     
     public void __ds__registerIntentFilter(IntentFilter intentFilter) {
-        if (mApplication != null)
+        if (mApplication != null) {
             mApplication.__ds__intentFilters.add(intentFilter);
+            Intent intent = new Intent();
+            intent.addCategory(intentFilter.getCategory(0));
+            intent.setAction(intentFilter.getAction(0));
+            mApplication.__ds__intentsFromFilter.add(intent);
+            onReceive(mApplication, intent);
+        }
     }
     
     public void setApplication(Application app) { 

@@ -93,7 +93,7 @@ public ListFragment() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.075 -0500", hash_original_method = "BEDEF1303F07526C038707780C2D3CB6", hash_generated_method = "32569A28687D4A3C8ED5E30F4B91B64A")
-    
+    @DSVerified("called by FragmentManagerImpl")
 @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -141,8 +141,16 @@ public ListFragment() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.081 -0500", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "CB4D791D7A70B359EC627916815866E7")
-    
+    @DSVerified
 public void onListItemClick(ListView l, View v, int position, long id) {
+    }
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)    
+    @Override public void droidsafeSubFragmentHook() {
+        super.droidsafeSubFragmentHook();
+        onListItemClick(mList, new View(new ContextImpl()), 
+                        DSUtils.FAKE_INT, DSUtils.FAKE_INT);
     }
 
     /**
