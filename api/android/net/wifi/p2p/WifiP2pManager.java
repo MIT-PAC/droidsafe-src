@@ -211,7 +211,7 @@ P2pHandler(Looper looper) {
     }
     
     public interface PeerListListener {
-        
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onPeersAvailable(WifiP2pDeviceList peers);
@@ -219,6 +219,7 @@ P2pHandler(Looper looper) {
     
     public interface ConnectionInfoListener {
         
+        @DSVerified    
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onConnectionInfoAvailable(WifiP2pInfo info);
@@ -513,9 +514,13 @@ public void removeGroup(Channel c, ActionListener listener) {
      * @param listener for callback when peer list is available. Can be null.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.807 -0500", hash_original_method = "694EBF25C431D0A14A1B93A99A392CFF", hash_generated_method = "B5C39F23F897642DFEA5CFE2EFB6D114")
-    
+    @DSVerified
+    @DSSpec(DSCat.WIFI) 
 public void requestPeers(Channel c, PeerListListener listener) {
         if (c == null) return;
+        if (listener != null) {
+            listener.onPeersAvailable(new WifiP2pDeviceList());
+        }
         c.mAsyncChannel.sendMessage(REQUEST_PEERS, 0, c.putListener(listener));
     }
 
@@ -526,8 +531,11 @@ public void requestPeers(Channel c, PeerListListener listener) {
      * @param listener for callback when connection info is available. Can be null.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.809 -0500", hash_original_method = "F3A4F04EC67A346ED642EB6C8CC671D5", hash_generated_method = "8C500CC33DC85EC9E99A9B05AA8EBFD6")
-    
+    @DSVerified
+    @DSSpec(DSCat.WIFI)  
 public void requestConnectionInfo(Channel c, ConnectionInfoListener listener) {
+        if (listener != null)
+            listener.onConnectionInfoAvailable(new WifiP2pInfo());
         if (c == null) return;
         c.mAsyncChannel.sendMessage(REQUEST_CONNECTION_INFO, 0, c.putListener(listener));
     }

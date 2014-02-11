@@ -243,7 +243,7 @@ public final PathPermission[] getPathPermissions() {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.729 -0500", hash_original_method = "78AC53FE8458AA47A6209768E85AFA18", hash_generated_method = "915CAB1C7F690011FFEC68CBE5589F8A")
-    
+    @DSVerified
 public abstract boolean onCreate();
 
     /**
@@ -257,7 +257,9 @@ public abstract boolean onCreate();
      * orientation, but may want to know about locale changes.)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.731 -0500", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "7225E52F3A5BCFC0B4421616E52468C0")
-    
+    @DSVerified("called from Application and Context")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+
 public void onConfigurationChanged(Configuration newConfig) {
     }
 
@@ -270,12 +272,15 @@ public void onConfigurationChanged(Configuration newConfig) {
      * Subclasses may override this method to take appropriate action.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.733 -0500", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "79F592DC22C7A97AE301DB7CC367A921")
-    
+    @DSVerified("called from Application and Context")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+
 public void onLowMemory() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.735 -0500", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "447804E40C3F002F4A06D23D7AFAFD46")
-    
+    @DSVerified("called from Application and Context")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onTrimMemory(int level) {
     }
 
@@ -337,7 +342,7 @@ public void onTrimMemory(int level) {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.737 -0500", hash_original_method = "F21BE52F6A5EF05F42ABB1A7CA8B045D", hash_generated_method = "394B9B61A7DAB44FF481367A59510784")
-    
+    @DSVerified
 public abstract Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder);
 
@@ -362,6 +367,7 @@ public abstract Cursor query(Uri uri, String[] projection,
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.739 -0500", hash_original_method = "A4398D9B92EECDCA04DBE4333E6E1CA3", hash_generated_method = "F60EB5723300ACB30027945838009E82")
+    @DSVerified
     
 public abstract String getType(Uri uri);
 
@@ -379,6 +385,7 @@ public abstract String getType(Uri uri);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.742 -0500", hash_original_method = "B4DEB75D711E59EC126B5AA1EC87337F", hash_generated_method = "A947EC9D331AF38EAB8C36385181C769")
+    @DSVerified
     
 public abstract Uri insert(Uri uri, ContentValues values);
 
@@ -430,6 +437,7 @@ public int bulkInsert(Uri uri, ContentValues[] values) {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.746 -0500", hash_original_method = "E44ADC3F69A5B9F650B7F634DA106EF4", hash_generated_method = "1ACE593BD8B128A106D7B3E5FDA132DB")
+    @DSVerified
     
 public abstract int delete(Uri uri, String selection, String[] selectionArgs);
 
@@ -454,6 +462,7 @@ public abstract int delete(Uri uri, String selection, String[] selectionArgs);
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.748 -0500", hash_original_method = "848ED1B601C77FEA6ED8D03E747F824C", hash_generated_method = "B8DAF275BB400A7B883E6875C5F854FA")
     
+    @DSVerified
 public abstract int update(Uri uri, ContentValues values, String selection,
             String[] selectionArgs);
 
@@ -489,7 +498,9 @@ public abstract int update(Uri uri, ContentValues values, String selection,
      * @see #openFileHelper(Uri, String)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.750 -0500", hash_original_method = "DCC5B23EAE3536B2EEFB8F5A1AA89B13", hash_generated_method = "84165A880D6CDF9D2F7DE7F768E3AB8F")
-    
+     @DSComment("File System access")
+    @DSSpec(DSCat.FILE_SYSTEM)   
+    @DSVerified
 public ParcelFileDescriptor openFile(Uri uri, String mode)
             throws FileNotFoundException {
         throw new FileNotFoundException("No files supported by provider at "
@@ -535,7 +546,9 @@ public ParcelFileDescriptor openFile(Uri uri, String mode)
      * @see #openFileHelper(Uri, String)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.752 -0500", hash_original_method = "58BEA9E66A4FD3FC19246F4A2CA5B928", hash_generated_method = "A6089BB0E944391C03BA06D5D029DD00")
-    
+   @DSComment("File System access")
+    @DSSpec(DSCat.FILE_SYSTEM)   
+    @DSVerified 
 public AssetFileDescriptor openAssetFile(Uri uri, String mode)
             throws FileNotFoundException {
         ParcelFileDescriptor fd = openFile(uri, mode);

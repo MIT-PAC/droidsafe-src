@@ -286,10 +286,9 @@ public String getBestProvider(Criteria criteria, boolean enabledOnly) {
      * @throws RuntimeException if the calling thread has no Looper
      * @throws SecurityException if no suitable permission is present for the provider.
      */
-    @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSVerified
+    @DSSpec(DSCat.LOCATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.070 -0500", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "3B5D5B85B1DA5C9AC21655D8FDFF0796")
-    
 public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener) {
         if (provider == null) {
@@ -348,7 +347,8 @@ public void requestLocationUpdates(String provider,
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.073 -0500", hash_original_method = "FA80C6D3E17A94A62F4AA64272188CF2", hash_generated_method = "12D34FA1BBDE41B64F00C5F19CC29CCA")
-    
+    @DSVerified
+    @DSSpec(DSCat.LOCATION) 
 public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener,
         Looper looper) {
@@ -410,7 +410,8 @@ public void requestLocationUpdates(String provider,
      * the location services.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.076 -0500", hash_original_method = "2A4D2871A80639591D176F262A5FC273", hash_generated_method = "58EE3CFBEF2B1652895394E2CF341A32")
-    
+    @DSVerified
+    @DSSpec(DSCat.LOCATION)
 public void requestLocationUpdates(long minTime, float minDistance,
             Criteria criteria, LocationListener listener, Looper looper) {
         if (criteria == null) {
@@ -424,6 +425,7 @@ public void requestLocationUpdates(long minTime, float minDistance,
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.987 -0400", hash_original_method = "7527D3AF7E08617A40988967AFB4FC4D", hash_generated_method = "324B2DB34138E35B89555069BC343BA8")
     private void _requestLocationUpdates(String provider, Criteria criteria, long minTime,
             float minDistance, boolean singleShot, LocationListener listener, Looper looper) {
@@ -441,6 +443,7 @@ public void requestLocationUpdates(long minTime, float minDistance,
         listener.onStatusChanged(provider, 0, bundle);
         listener.onProviderEnabled(provider);
         listener.onProviderDisabled(provider);
+        listener.onStatusChanged(provider, DSUtils.FAKE_INT, bundle);
         
         if(minTime < 0L)        
         {
@@ -533,7 +536,10 @@ public void requestLocationUpdates(long minTime, float minDistance,
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.082 -0500", hash_original_method = "C7C08F02B5B72D29F482122DD6AFB995", hash_generated_method = "D34B2C0838AED3DA24476E75E96D0446")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+  
 public void requestLocationUpdates(String provider,
             long minTime, float minDistance, PendingIntent intent) {
         if (provider == null) {
@@ -592,7 +598,10 @@ public void requestLocationUpdates(String provider,
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.084 -0500", hash_original_method = "2F287C6E75A45C2A01B3C0BCBDE67B57", hash_generated_method = "F50E6C6FB45DB283BED88871736379AA")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+
 public void requestLocationUpdates(long minTime, float minDistance, Criteria criteria, PendingIntent intent) {
         if (criteria == null) {
             throw new IllegalArgumentException("criteria==null");
@@ -606,7 +615,8 @@ public void requestLocationUpdates(long minTime, float minDistance, Criteria cri
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.087 -0500", hash_original_method = "21FA37E7FC7084DE02389BC0809F92F8", hash_generated_method = "82C90F76864A3A3F2CD1CB8F0F42A0CB")
-    
+    @DSVerified
+
 private void _requestLocationUpdates(String provider, Criteria criteria,
             long minTime, float minDistance, boolean singleShot, PendingIntent intent) {
         if (minTime < 0L) {
@@ -651,7 +661,8 @@ private void _requestLocationUpdates(String provider, Criteria criteria,
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.089 -0500", hash_original_method = "E82A66C4B675428C8689D564FEFE46C0", hash_generated_method = "46845E4FCC97AC801B52F850B754D27D")
-    
+    @DSVerified
+    @DSSpec(DSCat.LOCATION)
 public void requestSingleUpdate(String provider, LocationListener listener, Looper looper) {
         if (provider == null) {
             throw new IllegalArgumentException("provider==null");
@@ -692,7 +703,8 @@ public void requestSingleUpdate(String provider, LocationListener listener, Loop
      * the location services.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.091 -0500", hash_original_method = "A942F553EBD5189FF7258B50664EDDE9", hash_generated_method = "69FAFB98917A14410C1D1293E7AE145D")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void requestSingleUpdate(Criteria criteria, LocationListener listener, Looper looper) {
         if (criteria == null) {
             throw new IllegalArgumentException("criteria==null");
@@ -726,7 +738,9 @@ public void requestSingleUpdate(Criteria criteria, LocationListener listener, Lo
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.094 -0500", hash_original_method = "71C843DE562F708F58659EAA42FBA5B9", hash_generated_method = "2C25A6C1BEA7153C6815F252406EEAB5")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void requestSingleUpdate(String provider, PendingIntent intent) {
         if (provider == null) {
             throw new IllegalArgumentException("provider==null");
@@ -761,7 +775,9 @@ public void requestSingleUpdate(String provider, PendingIntent intent) {
      * @throws SecurityException if no suitable permission is present for the provider.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.096 -0500", hash_original_method = "6685F769C73037425B092AE6FD387007", hash_generated_method = "74C27A4C34550DD6DA1B1E79292C7573")
-    
+    @DSVerified
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void requestSingleUpdate(Criteria criteria, PendingIntent intent) {
         if (criteria == null) {
             throw new IllegalArgumentException("criteria==null");

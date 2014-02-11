@@ -21,10 +21,12 @@ public enum DSCat {
     REFLECTION,
     CLASS_LOADER,
     SECURITY_VIOLATION,
+    DROIDSAFE_INTERNAL,
     BAN_OTHERS,
     
     //Spec Categories
     ABSTRACT_METHOD,
+    ANDROID_ACTIVITY_STARTING,
     ANDROID_APPLICATION,
     ANDROID_INTERNAL,
     ANDROID_INSTRUMENTATION,
@@ -46,6 +48,7 @@ public enum DSCat {
     DEFAULT_MODIFIER,  
     DEVICE,    
     
+    FILE_SYSTEM,
     MONITORING,
 
     GPS,
@@ -65,10 +68,12 @@ public enum DSCat {
     NETWORKING,
     
     OS_LOW_LEVEL,    
+    PACKAGE_INFO,
     PHONE_CALL,
     RESOURCE,
     RTP_CALL,
     SENSOR,
+    SIP_REGISTRATION,
     SMS,
     SHARING,
     STORAGE,

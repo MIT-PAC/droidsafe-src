@@ -1742,6 +1742,8 @@ public List<Sensor> getSensorList(int type) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.993 -0500", hash_original_method = "CA10DA2A107C571495F28D1A1A335E4D", hash_generated_method = "39A71066D52410B1B2BC40D185752AD1")
     
 @Deprecated
+@DSVerified
+@DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean registerListener(SensorListener listener, int sensors) {
         return registerListener(listener, sensors, SENSOR_DELAY_NORMAL);
     }
@@ -1772,6 +1774,8 @@ public List<Sensor> getSensorList(int type) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.997 -0500", hash_original_method = "B7C7A7F6BC1EDB860C06401873DD1A46", hash_generated_method = "4FB1B4808455BC8EEEEFC2E684C7D21F")
     
 @Deprecated
+@DSVerified
+@DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean registerListener(SensorListener listener, int sensors, int rate) {
         if (listener == null) {
             return false;
@@ -1940,6 +1944,7 @@ public List<Sensor> getSensorList(int type) {
     @DSComment("no action when removing callback")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.013 -0500", hash_original_method = "A245758148D9D81E2CADBC67CD903CC7", hash_generated_method = "097D859FD01791F8FF42C752BCE68E9A")
+    @DSVerified
     
 public void unregisterListener(SensorEventListener listener, Sensor sensor) {
         unregisterListener((Object)listener, sensor);
@@ -1958,13 +1963,14 @@ public void unregisterListener(SensorEventListener listener, Sensor sensor) {
     @DSComment("no action when removing callback")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.016 -0500", hash_original_method = "C9A0C02866BC64B5017A48A301526982", hash_generated_method = "66E71156F28D2F602815D9F161A4681D")
+    @DSVerified
     
 public void unregisterListener(SensorEventListener listener) {
         unregisterListener((Object)listener);
     }
     
-	@DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
 		SensorEvent se = new SensorEvent(0);
 		se.sensor = sensor;
@@ -2038,7 +2044,9 @@ private boolean disableSensorLocked(Sensor sensor) {
      *
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.027 -0500", hash_original_method = "55FB0E0786574FCA30E9C20955CE2F64", hash_generated_method = "45B8D2B32CD34F888BBB1F5BE2D33E25")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate,
             Handler handler) {
         if (listener == null || sensor == null) {
@@ -2104,6 +2112,13 @@ public boolean registerListener(SensorEventListener listener, Sensor sensor, int
                 }
             }
         }
+        
+        if (listener != null) {
+            listener.onSensorChanged(new SensorEvent());
+            listener.onAccuracyChanged(sensor, DSUtils.FAKE_INT);
+        }
+        
+
 
         return result;
     }
@@ -2111,7 +2126,7 @@ public boolean registerListener(SensorEventListener listener, Sensor sensor, int
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.030 -0500", hash_original_method = "1441CD23D4F492BD7877A59C29F56827", hash_generated_method = "75D63A57BC3A695659B04E7BB1EA9D4F")
-    
+    @DSVerified
 private void unregisterListener(Object listener, Sensor sensor) {
         if (listener == null || sensor == null) {
             return;
@@ -2137,7 +2152,7 @@ private void unregisterListener(Object listener, Sensor sensor) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.033 -0500", hash_original_method = "63ADCF337C7E30C1A2DEC34D1892CFB3", hash_generated_method = "F2F57CDE3878B1AC334E0670F73C4E99")
-    
+    @DSVerified    
 private void unregisterListener(Object listener) {
         if (listener == null) {
             return;

@@ -40,7 +40,8 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener, On
      * @param dayOfMonth The initial day of the dialog.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.109 -0500", hash_original_method = "45DFC999AB5975804639ACA9BF45B7CD", hash_generated_method = "C131E8D30866BA9A0E6E72D918391F7C")
-    
+    @DSVerified
+    @DSSafe(DSCat.GUI)
 public DatePickerDialog(Context context,
             OnDateSetListener callBack,
             int year,
@@ -58,7 +59,9 @@ public DatePickerDialog(Context context,
      * @param dayOfMonth The initial day of the dialog.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.112 -0500", hash_original_method = "6DE1DD9A3E1C9A1CF6C571076F7EF456", hash_generated_method = "4CAB26F69036C1FC7BDB5F99ED71E6D9")
-    
+    @DSVerified
+    @DSSafe(DSCat.GUI)
+
 public DatePickerDialog(Context context,
             int theme,
             OnDateSetListener callBack,
@@ -68,6 +71,7 @@ public DatePickerDialog(Context context,
         super(context, theme);
 
         mCallBack = callBack;
+        
 
         Context themeContext = getContext();
         setButton(BUTTON_POSITIVE, themeContext.getText(R.string.date_time_set), this);
@@ -81,6 +85,8 @@ public DatePickerDialog(Context context,
         setView(view);
         mDatePicker = (DatePicker) view.findViewById(R.id.datePicker);
         mDatePicker.init(year, monthOfYear, dayOfMonth, this);
+
+        callBack.onDateSet(mDatePicker, year, monthOfYear, dayOfMonth);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.115 -0500", hash_original_method = "570F8D0CC141D3B1D2B15B140C7533C1", hash_generated_method = "52C59E61F92863688756C3CD6E6DA3F8")
@@ -116,6 +122,7 @@ public DatePicker getDatePicker() {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth);
     }
 

@@ -18,6 +18,9 @@ public class DSUtils {
 	public static final boolean UNKNOWN_BOOLEAN = false;
 	public static final char UNKNOWN_CHAR = 0;
 	
+	public static final int FAKE_INT = -1;
+	public static final String FAKE_STRING = "Unknown";
+	
 	/** This utility method should be used to create Intents from IntentFilters.  This
 	 * was originally developed to exercise {@link BroadcastReceiver} with all of the possible
 	 * intents for which the application registers

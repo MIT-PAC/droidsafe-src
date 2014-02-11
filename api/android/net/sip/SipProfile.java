@@ -108,6 +108,11 @@ private SipProfile(Parcel in) {
         mAuthUserName = in.readString();
     }
 
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public SipProfile(DSOnlyType ds) {
+    }
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.361 -0500", hash_original_method = "0F86B1263AA1167A9BA85D0781C26BDD", hash_generated_method = "C4D0286935FE551D873CEDBE3C350714")
     
 @Override

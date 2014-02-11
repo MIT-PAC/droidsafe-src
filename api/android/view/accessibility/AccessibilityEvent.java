@@ -235,9 +235,16 @@ public AccessibilityEvent[] newArray(int size) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.433 -0500", hash_original_method = "851763ED22FDC1F823C000B96565E393", hash_generated_method = "DB12C3159964370003B409964B096C0C")
-    
+    @DSVerified
 private AccessibilityEvent() {
     }
+
+    @DSComment("Added for droidsafe modelling")
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public AccessibilityEvent(int dummy) {
+    }
+
 
     /**
      * Initialize an event from another one.

@@ -1704,6 +1704,7 @@ public boolean execPendingActions() {
         return didSomething;
     }
 
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.540 -0500", hash_original_method = "480CA24D6CDDA51ECD1DFDE903041169", hash_generated_method = "480CA24D6CDDA51ECD1DFDE903041169")
@@ -1716,6 +1717,7 @@ void reportBackStackChanged() {
         }
     }
 
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.542 -0500", hash_original_method = "93C61FA561A07CB0E9B057A7A904C282", hash_generated_method = "93C61FA561A07CB0E9B057A7A904C282")
@@ -2084,10 +2086,16 @@ void restoreAllState(Parcelable state, ArrayList<Fragment> nonConfig) {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.572 -0500", hash_original_method = "1A90D3789635EF8BA5063E635EAF56EA", hash_generated_method = "D86258A762A7AC6C3A2A4183328B640C")
-    
+    @DSVerified
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
 public void attachActivity(Activity activity) {
         if (mActivity != null) throw new IllegalStateException();
         mActivity = activity;
+        for (Fragment f: mAdded) {
+            f.droidsafeSetActivity(activity);
+            //calling all subfragment callbacks
+            f.droidsafeSubFragmentHook();
+        }
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.574 -0500", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "AF7BA1CF9453ACC672FADB789538767F")
@@ -2188,7 +2196,8 @@ public void dispatchTrimMemory(int level) {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.599 -0500", hash_original_method = "059A23578A0DB56C84349E8F783E9AC3", hash_generated_method = "75E6340F244539A764DD64732C96ED9E")
-    
+    @DSVerified("may need to inflate menu")
+    @DSSpec(DSCat.SPEC_OTHERS)
 public boolean dispatchCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         boolean show = false;
         ArrayList<Fragment> newMenus = null;

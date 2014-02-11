@@ -417,6 +417,15 @@ switch(attr){
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @Override
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeCallbackHook() {
+        super.droidsafeCallbackHook();
+        Key key = mKeys[0];
+        onLongPress(key);
+    }
+
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.811 -0400", hash_original_method = "EB7C68519BBD5935E699A038D5D44150", hash_generated_method = "B48049B66BF8F951F384E441F62028D6")
@@ -523,8 +532,16 @@ switch(attr){
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.814 -0400", hash_original_method = "7AD9DD428DF8E7D6E8D91417D6DB1819", hash_generated_method = "7B9A6FF4EA2CC942E6DB354B5A69D299")
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnKeyboardActionListener(OnKeyboardActionListener listener) {
         mKeyboardActionListener = listener;
+        if (listener != null) {
+            listener.onText(new String());
+            listener.onKey(DSUtils.FAKE_INT, new int[1]);
+            listener.onPress(DSUtils.FAKE_INT);
+            listener.onRelease(DSUtils.FAKE_INT);
+        }
         // ---------- Original Method ----------
         //mKeyboardActionListener = listener;
     }
@@ -1748,7 +1765,9 @@ switch(action){
         //detectAndSendKey(mCurrentKey, key.x, key.y, mLastTapTime);
         //return true;
     }
-    
+
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.SAFE_OTHERS) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.972 -0400", hash_original_method = "E311EE99DFD17FF74F47149470BADF24", hash_generated_method = "C70BB149F257C665B91AC5BA279A8756")
     protected void swipeRight() {
         mKeyboardActionListener.swipeRight();
@@ -1757,6 +1776,8 @@ switch(action){
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.973 -0400", hash_original_method = "F06A9E8E8529ED6F027C708A6E561BF3", hash_generated_method = "F8012F525DECDA873C133E697FF87608")
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.SAFE_OTHERS)
     protected void swipeLeft() {
         mKeyboardActionListener.swipeLeft();
         // ---------- Original Method ----------
@@ -1764,6 +1785,8 @@ switch(action){
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.974 -0400", hash_original_method = "B4EE4270465E482F662B868F04086F2D", hash_generated_method = "B8384E6F74BBA9453048C2E8D6BECA81")
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.SAFE_OTHERS)
     protected void swipeUp() {
         mKeyboardActionListener.swipeUp();
         // ---------- Original Method ----------
@@ -1771,6 +1794,8 @@ switch(action){
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.974 -0400", hash_original_method = "046102819DD48F6283DB67AFBCA217CC", hash_generated_method = "08C06EF013D5A31989B3238AAE68F51A")
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.SAFE_OTHERS)
     protected void swipeDown() {
         mKeyboardActionListener.swipeDown();
         // ---------- Original Method ----------
@@ -2112,20 +2137,24 @@ for(int i=1;i < N;i++)
     
     public interface OnKeyboardActionListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onPress(int primaryCode);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onRelease(int primaryCode);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onKey(int primaryCode, int[] keyCodes);
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onText(CharSequence text);
         
         @DSComment("Abstract Method")

@@ -22,6 +22,7 @@ public class TabActivity extends ActivityGroup {
 
     private int mDefaultTabIndex = -1;
 
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.672 -0500", hash_original_method = "7656B1DA8F939C27E9A82F1B44C0847D", hash_generated_method = "58E71EE30CE038A7E54BAFF2C3030AF5")
@@ -56,7 +57,7 @@ public void setDefaultTab(int index) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.679 -0500", hash_original_method = "43FC78560A264DC47797D8670D9C3246", hash_generated_method = "6AC89BFAC49F7EC91737BA5CBAE8C9FA")
-    
+    @DSVerified("called in Activity")
 @Override
     protected void onRestoreInstanceState(Bundle state) {
         super.onRestoreInstanceState(state);
@@ -73,7 +74,9 @@ public void setDefaultTab(int index) {
             }
         }
     }
-
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified("called in Activity")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.681 -0500", hash_original_method = "95D0011EE002D17BAA86137B82FD9E88", hash_generated_method = "932DC7D210369E2E72283F0F299B1AE6")
     
 @Override
@@ -89,6 +92,7 @@ public void setDefaultTab(int index) {
 
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified("called in Activity")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.685 -0500", hash_original_method = "7A1E5FF4358126AE2CED70B78C4AF1EE", hash_generated_method = "800834DA05538FBD581E6F9367E60777")
     
 @Override
@@ -107,7 +111,8 @@ public void setDefaultTab(int index) {
      *@see Activity#onContentChanged()
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.687 -0500", hash_original_method = "582B2DDC8E1047355D2EEA6881BB52B9", hash_generated_method = "FC35BCF3565A03809911FAE1712E18DE")
-    
+   @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 @Override
     public void onContentChanged() {
         super.onContentChanged();

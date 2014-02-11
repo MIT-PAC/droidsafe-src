@@ -173,6 +173,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
 
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified("called from Activity's droidsafeOnCreate")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.579 -0500", hash_original_method = "7377982A731D92C32EEEF871F40BFABD", hash_generated_method = "52427157046BF3244375E6579DEF6556")
     
 @Override
@@ -655,6 +656,7 @@ public void setListFooter(View view) {
         super.onRestoreInstanceState(state);
     }
 
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.616 -0500", hash_original_method = "BC5669EA98C9095AD4591AFCBD99CE20", hash_generated_method = "367800A5BDAE41B74EA1B95BD8DBE532")

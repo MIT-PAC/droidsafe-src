@@ -102,7 +102,8 @@ public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
      * @see #setViewText(TextView, String)
      */
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.899 -0500", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "01273149BA86C6FD86C6E74045C8A8EE")
     
 @Override

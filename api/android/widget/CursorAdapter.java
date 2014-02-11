@@ -221,6 +221,7 @@ public long getItemId(int position) {
      */
     @DSComment("Database cursor wrapper")
     @DSSpec(DSCat.DATABASE)
+    @DSVerified
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.921 -0500", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "DE47E3A9E8938A879091E0DCD9DCBB47")
     
@@ -271,6 +272,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.925 -0500", hash_original_method = "EE6A21FD9B62596982E99001153626A6", hash_generated_method = "CF45D1D614F206164A24A59CD2225216")
     
 public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
@@ -285,6 +287,8 @@ public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.927 -0500", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "5AE8A92A3E307F742AA8A763AF9271C1")
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSVerified
     
 public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
         return newView(context, cursor, parent);
@@ -299,6 +303,7 @@ public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.929 -0500", hash_original_method = "862EB494F53DC650925859B90E73BA8D", hash_generated_method = "B890DE80D4A3B58521CB62A64CF3811E")
     
 public abstract void bindView(View view, Context context, Cursor cursor);

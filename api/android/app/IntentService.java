@@ -1,3 +1,4 @@
+
 package android.app;
 
 // Droidsafe Imports
@@ -81,8 +82,9 @@ public void setIntentRedelivery(boolean enabled) {
         mServiceHandler = new ServiceHandler(mServiceLooper);
     }
 
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.841 -0500", hash_original_method = "1A8CCBE4C5A081BBDC2E857325C2F354", hash_generated_method = "44FDF9E70DE06721462D5094339E1AE1")
-    
 @Override
     public void onStart(Intent intent, int startId) {
         Message msg = mServiceHandler.obtainMessage();
@@ -97,6 +99,7 @@ public void setIntentRedelivery(boolean enabled) {
      * receives a start request.
      * @see android.app.Service#onStartCommand
      */
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.843 -0500", hash_original_method = "38140402AEC024932D8DF709F80C2AA8", hash_generated_method = "8A862437975BF5D7F532D7E88BD5534F")
@@ -140,6 +143,7 @@ public void setIntentRedelivery(boolean enabled) {
      * @param intent The value passed to {@link
      *               android.content.Context#startService(Intent)}.
      */
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.849 -0500", hash_original_method = "3873E8578EC35B4631BF55BE7B040145", hash_generated_method = "76B2D51F2AC1BE5101F9DFE35DD2D67A")
@@ -162,9 +166,13 @@ public ServiceHandler(Looper looper) {
         }
         
     }
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void __ds__onHandleIntent(Intent intent) {
     	onHandleIntent(intent);
+    	//onStartCommand will also call onStart
+    	onStartCommand(intent, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
     }
 }
 

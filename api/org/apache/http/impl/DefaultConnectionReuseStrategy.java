@@ -28,6 +28,8 @@ public DefaultConnectionReuseStrategy() {
         super();
     }
 
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     // see interface ConnectionReuseStrategy
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.602 -0500", hash_original_method = "99701CE5AD38D49B49A62B2892241655", hash_generated_method = "9C5EAA05C0FE23320E5792BD37C1027B")
     

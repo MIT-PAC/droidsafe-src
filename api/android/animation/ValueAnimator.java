@@ -782,6 +782,7 @@ public void addUpdateListener(AnimatorUpdateListener listener) {
         if (mUpdateListeners == null) {
             mUpdateListeners = new ArrayList<AnimatorUpdateListener>();
         }
+        listener.onAnimationUpdate(this);
         mUpdateListeners.add(listener);
     }
 
@@ -930,6 +931,7 @@ public void removeAllUpdateListeners() {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onAnimationUpdate(ValueAnimator animation);
 
     }

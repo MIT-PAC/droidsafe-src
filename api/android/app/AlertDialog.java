@@ -98,11 +98,15 @@ AlertDialog(Context context, int theme, boolean createContextWrapper) {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.999 -0500", hash_original_method = "EA464E0CF4AA10E0AEDF6B163BEEF729", hash_generated_method = "6BB5D4D65D0741BBA829B5502D7AFC6D")
     
+    @DSVerified
+    @DSComment("GUI constructor with callback registration modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 protected AlertDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, resolveDialogTheme(context, 0));
         mWindow.alwaysReadCloseOnTouchAttr();
         setCancelable(cancelable);
         setOnCancelListener(cancelListener);
+
         mAlert = new AlertController(context, this, getWindow());
     }
 
@@ -971,8 +975,8 @@ public Builder setRecycleOnMeasureEnabled(boolean enabled) {
          * before displaying the dialog. Use {@link #show()} if you don't have any other processing
          * to do and want this to be created and displayed.
          */
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSComment("New Dialog")
+        @DSSpec(DSCat.SPEC_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.145 -0500", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "316857243741277D06918E544FCD71B7")
         
 public AlertDialog create() {
@@ -985,7 +989,34 @@ public AlertDialog create() {
             dialog.setOnCancelListener(P.mOnCancelListener);
             if (P.mOnKeyListener != null) {
                 dialog.setOnKeyListener(P.mOnKeyListener);
+                //P.mOnKeyListener.onKey(dialog, DSUtils.FAKE_INT, new KeyEvent());
             }
+            if (P.mOnCancelListener != null) {
+               //P.mOnCancelListener.onCancel(dialog);
+               dialog.setOnCancelListener(P.mOnCancelListener);
+            }
+            if (P.mOnCheckboxClickListener != null) {
+                P.mOnCheckboxClickListener.onClick(dialog, DSUtils.FAKE_INT, false);
+            }
+            
+            if (P.mOnClickListener != null) {
+                P.mOnClickListener.onClick(dialog, DSUtils.FAKE_INT);
+            }
+            if (P.mNegativeButtonListener != null) {
+                P.mNegativeButtonListener.onClick(dialog, DSUtils.FAKE_INT);
+            }
+
+            if (P.mPositiveButtonListener != null) {
+                P.mPositiveButtonListener.onClick(dialog, DSUtils.FAKE_INT);
+            }
+
+            if (P.mNeutralButtonListener != null) {
+                P.mNeutralButtonListener.onClick(dialog, DSUtils.FAKE_INT);
+            }
+
+            //TODO:
+            // we proably need to inflate all the items added to the builder
+            // and call them in here
             return dialog;
         }
 

@@ -6,6 +6,8 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -106,13 +108,16 @@ public static void setDefaultExecutor(Executor exec) {
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.588 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "717DB90AF8B9D7E6F5C69DCC8BADBDB4")
+    @DSVerified
     public  AsyncTask() {
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.250 -0500", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "B892F3B62337C7FA8F4DB2B283CECB48")
-    
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSVerified
 private void postResultIfNotInvoked(Result result) {
         final boolean wasTaskInvoked = mTaskInvoked.get();
         if (!wasTaskInvoked) {
@@ -121,7 +126,9 @@ private void postResultIfNotInvoked(Result result) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.253 -0500", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "602FBAA8201076CF27A77C6A020DD7E3")
-    
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSVerified
 private Result postResult(Result result) {
         Message message = sHandler.obtainMessage(MESSAGE_POST_RESULT,
                 new AsyncTaskResult<Result>(this, result));
@@ -170,6 +177,7 @@ protected abstract Result doInBackground(Params... params);
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.259 -0500", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "19E203C96602819786512F2B26D8C26C")
     
+    @DSVerified    
 protected void onPreExecute() {
     }
     
@@ -281,6 +289,8 @@ AsyncTaskResult(AsyncTask task, Data... data) {
         }
         
     }
+    
+
 
     /**
      * <p>Runs on the UI thread after {@link #doInBackground}. The
@@ -295,7 +305,8 @@ AsyncTaskResult(AsyncTask task, Data... data) {
      * @see #onCancelled(Object) 
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.261 -0500", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "AD609ADA895A3E153D035F81FAEF3E1A")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @SuppressWarnings({"UnusedDeclaration"})
     protected void onPostExecute(Result result) {
     }
@@ -310,7 +321,8 @@ AsyncTaskResult(AsyncTask task, Data... data) {
      * @see #doInBackground
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.264 -0500", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "A730193FC2E19B8CA66C41764F3098FF")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @SuppressWarnings({"UnusedDeclaration"})
     protected void onProgressUpdate(Progress... values) {
     }
@@ -330,7 +342,8 @@ AsyncTaskResult(AsyncTask task, Data... data) {
      * @see #isCancelled()
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.266 -0500", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "7E43458B6C54753F6FA513FCA2BB81E3")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @SuppressWarnings({"UnusedParameters"})
     protected void onCancelled(Result result) {
         onCancelled();
@@ -351,10 +364,12 @@ AsyncTaskResult(AsyncTask task, Data... data) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.268 -0500", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "D07A2E6060CD99151CC30F4F6E6B6769")
+    @DSVerified    
     
 protected void onCancelled() {
     }
     
+    @DSVerified    
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.602 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "7429E399886A985919F57383107CAFFB")
@@ -364,10 +379,12 @@ protected void onCancelled() {
         //return mFuture.isCancelled();
     }
     
+    @DSVerified    
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.603 -0400", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "F2B9735A675310C684553A57E2E3C5AE")
     public final boolean cancel(boolean mayInterruptIfRunning) {
+        onCancelled();
     	if ((mStatus == Status.RUNNING && mayInterruptIfRunning) || mStatus == Status.PENDING) {
     		cancelled = true;
     		return true;
@@ -423,7 +440,9 @@ protected void onCancelled() {
 public final AsyncTask<Params, Progress, Result> execute(Params... params) {
         return executeOnExecutor(sDefaultExecutor, params);
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.608 -0400", hash_original_method = "579EA4E2ACCB0940FE86E74F49727E28", hash_generated_method = "4DFC50B34A0C3A4BCA817175FC7DF9B3")
     public final AsyncTask<Params, Progress, Result> executeOnExecutor(Executor exec,
             Params... params) {
@@ -445,6 +464,8 @@ switch(mStatus){
         } //End block
         mStatus = Status.RUNNING;
         onPreExecute();
+        List<Progress> list = new LinkedList<Progress>();
+        onProgressUpdate((Progress[])list.toArray());
         result = doInBackground(params);
         onPostExecute(result);
         return this;

@@ -119,7 +119,7 @@ public void onEvent(int wfd, int mask, String path) {
         @DSComment("Private Method")
         @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.737 -0500", hash_original_method = "30BDAF8579403E1F75F26C57B59EB8F1", hash_generated_method = "0C3A49C6AA4498CA7B66854C7F0DEC73")
-        
+        @DSVerified 
         private void observe(int fd){
         	//Formerly a native method
         	addTaint(fd);
@@ -219,11 +219,12 @@ protected void finalize() {
     @DSComment("Low level monitoring file state")
     @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.765 -0500", hash_original_method = "2F8CF3013C1A72AA7A8ACE9D7C9A9F50", hash_generated_method = "4B40553039EC0FF89457EEC174970D10")
-    
+    @DSVerified
 public void startWatching() {
         if (m_descriptor < 0) {
             m_descriptor = s_observerThread.startWatching(m_path, m_mask, this);
         }
+        onEvent(DSUtils.FAKE_INT, m_path);
     }
 
     /**
@@ -257,7 +258,7 @@ public void stopWatching() {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.769 -0500", hash_original_method = "61CF0F56D51B4057906F8EC12985FFBD", hash_generated_method = "94669805F59639EB370B93260D57DECB")
-    
+    @DSVerified
 public abstract void onEvent(int event, String path);
     static {
         s_observerThread = new ObserverThread();

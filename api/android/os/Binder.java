@@ -154,7 +154,7 @@ public IInterface queryLocalInterface(String descriptor) {
     @DSComment("Data serialization/deserialization")
     @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.161 -0500", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "1C003B722C02AF5B148F4AC3DEDD3455")
-    
+    @DSVerified("called from transact")
 protected boolean onTransact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
         if (code == INTERFACE_TRANSACTION) {
@@ -242,7 +242,8 @@ protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
      * the remote side, transact calls into the binder to do the IPC.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.175 -0500", hash_original_method = "45A6F1E38538846BA699CFB220CE3AE3", hash_generated_method = "DFD2A6D833E8FF563A6C31E0748E4021")
-    
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSVerified
 public final boolean transact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
         if (false) Log.v("Binder", "Transact: " + code + " to " + this);

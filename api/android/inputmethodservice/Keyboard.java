@@ -486,7 +486,8 @@ Row var7FB2305D944DF0E13CD0B9F32571CD82_217922640 =         new Row(res, this, p
         // ---------- Original Method ----------
         //return new Row(res, this, parser);
     }
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.328 -0400", hash_original_method = "7C30A8D931433BEC83D450C4892EA38E", hash_generated_method = "065CFC740585DAAA22F517B11248C727")
     protected Key createKeyFromXml(Resources res, Row parent, int x, int y, 
             XmlResourceParser parser) {

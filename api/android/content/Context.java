@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import com.android.internal.policy.PolicyManager;
@@ -18,6 +20,7 @@ import com.android.internal.policy.PolicyManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.DatabaseErrorHandler;
@@ -255,6 +258,7 @@ public abstract class Context {
     
 	// Hook to match with value analsysis
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
+	public List<Intent> __ds__intentsFromFilter = new LinkedList<Intent>();
 
 	public Context() {
 		//Do Nothing
@@ -341,9 +345,12 @@ public abstract Context getApplicationContext();
      * {@link ComponentCallbacks} or {@link ComponentCallbacks2} interface.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.869 -0500", hash_original_method = "CA41FDFA6BB6EC9A7DA4C7864F293E89", hash_generated_method = "E5E2788341808E62206638EFC3698CF5")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void registerComponentCallbacks(ComponentCallbacks callback) {
-        getApplicationContext().registerComponentCallbacks(callback);
+        callback.onLowMemory();
+        callback.onConfigurationChanged(new Configuration());
+        //getApplicationContext().registerComponentCallbacks(callback);
     }
 
     /**
@@ -352,8 +359,10 @@ public void registerComponentCallbacks(ComponentCallbacks callback) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.871 -0500", hash_original_method = "494D7366CDA5CBFD506341B295742C11", hash_generated_method = "76B9ED3DB9C96637173C301628B1E341")
     
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void unregisterComponentCallbacks(ComponentCallbacks callback) {
-        getApplicationContext().unregisterComponentCallbacks(callback);
+        //getApplicationContext().unregisterComponentCallbacks(callback);
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -2304,14 +2313,25 @@ public abstract Context createPackageContext(String packageName,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.141 -0500", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "5F09F86AB7736674ADD7B4B91DD7FE80")
     
+    @DSVerified
 public boolean isRestricted() {
         return false;
     }
 	
 	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
-	
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
-	this.__ds__intentFilters.add(intentFilter);
+	    this.__ds__intentFilters.add(intentFilter);
+	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
+	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
+	    this.__ds__intentsFromFilter.add(intent);	
+	}
+	
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+	public Intent droidsafeGetIntent() {
+	    return __ds__intentsFromFilter.get(getTaintInt());
 	}
     
 }
