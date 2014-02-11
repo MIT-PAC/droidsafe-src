@@ -378,6 +378,7 @@ private Html() { }
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         public Drawable getDrawable(String source);
     }
     

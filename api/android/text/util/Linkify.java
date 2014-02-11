@@ -413,11 +413,13 @@ public final boolean equals(Object o) {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         boolean acceptMatch(CharSequence s, int start, int end);
     }
     
     public interface TransformFilter {
         
+        @DSVerified
         String transformUrl(final Matcher match, String url);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.730 -0500", hash_original_field = "0B087C31A3D9458F8B5B2380338FB1CA", hash_generated_field = "49537DE6E32CE1FDEFBAA9B907C31C5A")

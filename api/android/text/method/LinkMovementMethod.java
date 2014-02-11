@@ -127,7 +127,7 @@ public static MovementMethod getInstance() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.241 -0500", hash_original_method = "0A452BAD56CDA444E4158895C806016D", hash_generated_method = "8D352A07813EE35C4133DA80FEAE70D4")
-    
+    @DSVerified
 private boolean action(int what, TextView widget, Spannable buffer) {
         Layout layout = widget.getLayout();
 
@@ -143,6 +143,10 @@ private boolean action(int what, TextView widget, Spannable buffer) {
         int last = layout.getLineEnd(linebot);
 
         ClickableSpan[] candidates = buffer.getSpans(first, last, ClickableSpan.class);
+
+        for (ClickableSpan span: candidates) {
+                span.onClick(widget);
+        }
 
         int a = Selection.getSelectionStart(buffer);
         int b = Selection.getSelectionEnd(buffer);
@@ -250,6 +254,10 @@ private boolean action(int what, TextView widget, Spannable buffer) {
             int off = layout.getOffsetForHorizontal(line, x);
 
             ClickableSpan[] link = buffer.getSpans(off, off, ClickableSpan.class);
+
+            for (ClickableSpan span: link) {
+                span.onClick(widget);
+            }
 
             if (link.length != 0) {
                 if (action == MotionEvent.ACTION_UP) {
