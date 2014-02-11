@@ -769,6 +769,7 @@ public CharSequence onCreateDescription() {
     
 	@DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+	@DSVerified()
     protected void onDestroy(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

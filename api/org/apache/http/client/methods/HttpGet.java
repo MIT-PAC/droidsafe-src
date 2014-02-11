@@ -23,13 +23,14 @@ public HttpGet() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.043 -0500", hash_original_method = "31474A7F59CE66F27E23571A1F0DC0EA", hash_generated_method = "746BE47C6BCD631FEA7CF15494CB8B2C")
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public HttpGet(final URI uri) {
         super();
         setURI(uri);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.426 -0400", hash_original_method = "DACE54F54F01CEE5FF3D25626E7EEBF2", hash_generated_method = "18E73CB6390DC2C709D6D3975107CA40")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public  HttpGet(final String uri) {
         super();
         addTaint(uri.getTaint());
