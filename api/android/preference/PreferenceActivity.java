@@ -1430,11 +1430,13 @@ private void requirePreferenceManager() {
     @DSSafe(DSCat.OS_GENERAL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.674 -0500", hash_original_method = "7CC03E7D3EBAF4E1E382E9E7A55EF0AE", hash_generated_method = "FA685498E0CC32F1C045DBDEE416C01B")
-    
+    @DSVerified
 @Deprecated
     public PreferenceScreen getPreferenceScreen() {
         if (mPreferenceManager != null) {
-            return mPreferenceManager.getPreferenceScreen();
+            PreferenceScreen screen = mPreferenceManager.getPreferenceScreen();
+            onPreferenceTreeClick(screen, screen);
+            return screen;
         }
         return null;
     }
@@ -1484,7 +1486,8 @@ private void requirePreferenceManager() {
      * PreferenceActivity.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.681 -0500", hash_original_method = "ADC2C8250ACD9F9573CD9A45AF1661C3", hash_generated_method = "3398DD08B181ADA01EFDFE3261598757")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Deprecated
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return false;

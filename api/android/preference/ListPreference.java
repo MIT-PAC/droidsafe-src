@@ -83,7 +83,8 @@ public void setEntries(CharSequence[] entries) {
      */
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.272 -0500", hash_original_method = "F8AB6256811E3BA7AD610D04605DBEC4", hash_generated_method = "7BA5761937675BD0B0EC2B67C45A8475")
-    
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSVerified
 public void setEntries(int entriesResId) {
         setEntries(getContext().getResources().getTextArray(entriesResId));
     }
@@ -112,7 +113,7 @@ public CharSequence[] getEntries() {
     @DSComment("Perference UI, only change preference is spec")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.276 -0500", hash_original_method = "33C67F5304EFCF57E93FE56574A29FD8", hash_generated_method = "5508A90163592EA1632D80E304D0522A")
-    
+    @DSVerified
 public void setEntryValues(CharSequence[] entryValues) {
         mEntryValues = entryValues;
     }
@@ -150,10 +151,10 @@ public CharSequence[] getEntryValues() {
      * 
      * @param value The value to set for the key.
      */
-    @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSComment("Storing value")
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.283 -0500", hash_original_method = "C381E833D619D719391B620073306BFE", hash_generated_method = "220A5BD7A62524EB3744B4EB6DB31206")
-    
+    @DSVerified 
 public void setValue(String value) {
         mValue = value;
         
@@ -168,11 +169,11 @@ public void setValue(String value) {
      *
      * @return the summary with appropriate string substitution
      */
-    @DSComment("Perference UI, only change preference is spec")
+    @DSComment("Preference summary")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.286 -0500", hash_original_method = "C91AC61B4049FB662B529C1D1FF98F02", hash_generated_method = "1ADDD367AAA1A08308E8609EB30FA51B")
-    
+    @DSVerified
 @Override
     public CharSequence getSummary() {
         final CharSequence entry = getEntry();
@@ -195,7 +196,7 @@ public void setValue(String value) {
     @DSComment("Perference UI, only change preference is spec")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.288 -0500", hash_original_method = "4C1B142B1B7C5EA1E6C6981CF6E13968", hash_generated_method = "E5338CAD084404E4E11D1C8474AFBED4")
-    
+    @DSVerified
 @Override
     public void setSummary(CharSequence summary) {
         super.setSummary(summary);
@@ -211,11 +212,10 @@ public void setValue(String value) {
      * 
      * @param index The index of the value to set.
      */
-    @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.290 -0500", hash_original_method = "BCD9DE4E5FC7BA2AD13976209DEB6B06", hash_generated_method = "8CFE42693252720D86102FC0820AEB8D")
-    
+    @DSVerified
 public void setValueIndex(int index) {
         if (mEntryValues != null) {
             setValue(mEntryValues[index].toString());

@@ -447,7 +447,6 @@ public View getView(View convertView, ViewGroup parent) {
             convertView = onCreateView(parent);
         }
         onBindView(convertView);
-        onSetInitialValue(DSUtils.UNKNOWN_BOOLEAN, new Object());
 
         TypedArray t = new TypedArray(DSOnlyType.NOT_USED);
         onGetDefaultValue(t, DSUtils.FAKE_INT);
@@ -743,9 +742,9 @@ public CharSequence getSummary() {
      * @param summary The summary for the preference.
      */
     @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.854 -0500", hash_original_method = "9397E34A85A0111B42F6FFB9A2837DEB", hash_generated_method = "473E4AE991A26B165213F8390D5E8AF8")
-    
+    @DSVerified
 public void setSummary(CharSequence summary) {
         if (summary == null && mSummary != null || summary != null && !summary.equals(mSummary)) {
             mSummary = summary;
@@ -1520,7 +1519,7 @@ public void setDefaultValue(Object defaultValue) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.957 -0500", hash_original_method = "0CC9C8053B2B40671F6785C5B066E9AB", hash_generated_method = "C405D37DC7D423BFB814F9AFC5337F82")
-    
+    @DSVerified 
 private void dispatchSetInitialValue() {
         // By now, we know if we are persistent.
         final boolean shouldPersist = shouldPersist();

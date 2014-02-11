@@ -321,7 +321,8 @@ public int getDialogLayoutResource() {
      * {@link AlertDialog.Builder#show()}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.564 -0500", hash_original_method = "9A579D55B073C910524B0A138ED58992", hash_generated_method = "F66DEA8C21E7895B642AD2BA231BFC21")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
     }
     
@@ -367,6 +368,15 @@ protected void showDialog(Bundle state) {
         
         // Create the dialog
         final Dialog dialog = mDialog = mBuilder.create();
+
+        //Preference callback
+        onDismiss(dialog);
+        Parcelable otherState = onSaveInstanceState();
+
+        if (otherState != null)
+            onRestoreInstanceState(otherState);
+
+        //dialog spsefic callback
         if (state != null) {
             dialog.onRestoreInstanceState(state);
         }
@@ -433,6 +443,7 @@ protected View onCreateDialogView() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.578 -0500", hash_original_method = "5B74FDBCA1C0676CAF2A41085AFE51F9", hash_generated_method = "F9F79A99BEC07821AA52E5285769563E")
+    @DSVerified
     
 protected void onBindDialogView(View view) {
         View dialogMessageView = view.findViewById(com.android.internal.R.id.message);
@@ -466,7 +477,7 @@ public void onClick(DialogInterface dialog, int which) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.584 -0500", hash_original_method = "4F73C1927BDEFF08475C0DA03B2F2CFE", hash_generated_method = "58617F782952416B4E8F5CA68C72810B")
-    
+    @DSVerified
 public void onDismiss(DialogInterface dialog) {
         
         getPreferenceManager().unregisterOnActivityDestroyListener(this);
@@ -519,7 +530,7 @@ public void onActivityDestroy() {
     @DSSpec(DSCat.SERIALIZATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.596 -0500", hash_original_method = "690D860013A43623DC1BE14E616673FB", hash_generated_method = "A36474BF7EB3EF505FDD40FD5D98B014")
-    
+    @DSVerified
 @Override
     protected Parcelable onSaveInstanceState() {
         final Parcelable superState = super.onSaveInstanceState();
@@ -536,7 +547,7 @@ public void onActivityDestroy() {
     @DSComment("Data serialization/deserialization")
     @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.599 -0500", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "235316BF207EBD7B35336C9EA423C5B4")
-    
+    @DSVerified
 @Override
     protected void onRestoreInstanceState(Parcelable state) {
         if (state == null || !state.getClass().equals(SavedState.class)) {
