@@ -371,7 +371,7 @@ public ContextImpl(ContextImpl context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageName() {
-        throw new UnsupportedOperationException();
+        return new String("DSUnknown (Package Name)");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -383,13 +383,13 @@ public ContextImpl(ContextImpl context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageResourcePath() {
-        return "DSUnknown";
+        return "DSUnknown (Package Resource Path)";
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageCodePath() {
-        return "DSUnknown";
+        return "DSUnknown (Package Code Path)";
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

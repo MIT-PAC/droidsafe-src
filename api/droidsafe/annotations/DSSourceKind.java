@@ -1,6 +1,7 @@
 package droidsafe.annotations;
 
 public enum DSSourceKind {
+    GUI,
     ACCOUNT_INFORMATION,
     BLUETOOTH_INFORMATION,
     BROWSER_INFORMATION,
@@ -18,5 +19,6 @@ public enum DSSourceKind {
     SYNCHRONIZATION_DATA,
     SYSTEM_SETTINGS,
     UNIQUE_IDENTIFIER,
-    UNSPECIFIED
+    UNSPECIFIED,
+    UNMODELED
 }
