@@ -27,8 +27,8 @@ public static Spannable.Factory getInstance() {
             return sInstance;
         }
         
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSVerified
+        @DSBan(DSCat.PRIVATE_METHOD)
         private Factory() {
         	//Synthetic method
         }

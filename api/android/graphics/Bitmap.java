@@ -279,7 +279,10 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
 public static Bitmap createBitmap(int width, int height, Config config) {
         return createBitmap(width, height, config, true);
     }
-    
+
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD) 
+    @DSComment("Private Method")
 	private static Bitmap createBitmap(int width, int height, Config config, boolean hasAlpha) {
         Bitmap bm = new Bitmap();
         bm.setHeight(height);
