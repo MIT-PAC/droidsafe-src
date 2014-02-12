@@ -307,7 +307,6 @@ public class ObjectSensitivityCloner {
             fw.close();
         } catch (IOException e) {
             logger.error("Error writing stats file.");
-            droidsafe.main.Main.exit(1);
         } 
 
         Scene.v().releaseActiveHierarchy();

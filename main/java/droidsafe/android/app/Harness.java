@@ -586,6 +586,7 @@ public class Harness {
                         Scene.v().getMethod(componentInitMethod.get(Hierarchy.getComponentParent(clazz).getName()));
                 LinkedList<Value> args = new LinkedList<Value>();
                 args.add(receiver);
+                logger.info("Adding constructor for component to harness {}, of parent {}", clazz, Hierarchy.getComponentParent(clazz));
                 Stmt call = Jimple.v().newInvokeStmt(TransformsUtils.makeInvokeExpression(initMethod, null, args));
                 body.getUnits().add(call);
             }
