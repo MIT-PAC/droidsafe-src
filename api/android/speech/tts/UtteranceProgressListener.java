@@ -13,6 +13,8 @@ public abstract class UtteranceProgressListener {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.313 -0500", hash_original_method = "3F2D59FF03EC4B4B608FDD3E4DB90E0E", hash_generated_method = "CDF6AB67D1551C9510FD4ADC4F635C8E")
             
 @Override
+@DSVerified
+@DSSafe(DSCat.ANDROID_CALLBACK)
             public synchronized void onDone(String utteranceId) {
                 listener.onUtteranceCompleted(utteranceId);
             }
@@ -20,12 +22,17 @@ public abstract class UtteranceProgressListener {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.315 -0500", hash_original_method = "AC081657B9F9ED7B22DC9AE489D875D0", hash_generated_method = "FB287A5C8E6291B40012E8E9A6DBC6BD")
             
 @Override
+    
+@DSVerified
+@DSSafe(DSCat.ANDROID_CALLBACK)
             public void onError(String utteranceId) {
                 listener.onUtteranceCompleted(utteranceId);
             }
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.318 -0500", hash_original_method = "2A033D132A2F59FA4570A621A6A54819", hash_generated_method = "4FDCB152B1D124DF1B18099983F4F5F2")
             
+@DSVerified
+@DSSpec(DSCat.ANDROID_CALLBACK)
 @Override
             public void onStart(String utteranceId) {
                 // Left unimplemented, has no equivalent in the old
@@ -33,7 +40,9 @@ public abstract class UtteranceProgressListener {
             }
         };
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.584 -0400", hash_original_method = "D96B1FA74926A4581FA2AC04698293D6", hash_generated_method = "D96B1FA74926A4581FA2AC04698293D6")
     public UtteranceProgressListener ()
     {

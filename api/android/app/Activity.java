@@ -3669,7 +3669,6 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
      * @param mode The new action mode.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.433 -0500", hash_original_method = "255BA88D048ED7CA66014BFC1FF334C0", hash_generated_method = "59326024C2A90147ADE5F72F14E6828B")
-    
 public void onActionModeStarted(ActionMode mode) {
         Object callbackTag = mode.getTag();
         if (callbackTag != null && callbackTag instanceof ActionMode.Callback) {

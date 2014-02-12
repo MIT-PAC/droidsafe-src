@@ -1263,7 +1263,8 @@ private void copyFloatParam(Bundle bundle, HashMap<String, String> params, Strin
      *        instead.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.905 -0500", hash_original_method = "24D73865C05CC11CAA8C791D8BA56024", hash_generated_method = "1D8F482EE17CE53A16C9EF8377CCF2B9")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Deprecated
     public int setOnUtteranceCompletedListener(final OnUtteranceCompletedListener listener) {
         mUtteranceProgressListener = UtteranceProgressListener.from(listener);

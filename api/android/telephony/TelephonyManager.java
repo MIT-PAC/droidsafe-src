@@ -4,6 +4,7 @@ package android.telephony;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.util.List;
 
 import android.annotation.SdkConstant;
@@ -1124,6 +1125,7 @@ private ITelephony getITelephony() {
     
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSVerified
     public void listen(PhoneStateListener listener, int events) {/* removed for compilation
         String pkgForDebug = sContext != null ? sContext.getPackageName() : "<unknown>";
         try {
@@ -1134,6 +1136,36 @@ private ITelephony getITelephony() {
         } catch (NullPointerException ex) {
             // system process dead
             }*/
+        if (listener != null){ 
+            listener.onCallForwardingIndicatorChanged(DSUtils.UNKNOWN_BOOLEAN);
+            listener.onCallStateChanged(DSUtils.FAKE_INT, new String());
+            listener.onCellLocationChanged(new CellLocation() {
+                
+                @Override
+                @DSVerified("callback modeled")
+                @DSSafe(DSCat.ANDROID_CALLBACK)                
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.162 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "047840219A293BF58358C9060BC573A9")
+                public boolean isEmpty() {
+                    // TODO Auto-generated method stub
+                    return false;
+                }
+                
+                @Override
+                @DSVerified("callback modeled")
+                @DSSafe(DSCat.ANDROID_CALLBACK)                
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.156 -0500", hash_original_method = "345CB571362C5D7AE1D7BE61B15A2338", hash_generated_method = "BF357EC13D8004B791ED6EB37C53D9B6")
+                public void fillInNotifierBundle(Bundle bundle) {
+                    // TODO Auto-generated method stub
+                    
+                }
+            });
+            listener.onDataActivity(DSUtils.FAKE_INT);
+            listener.onDataConnectionStateChanged(DSUtils.FAKE_INT);
+            listener.onServiceStateChanged(new ServiceState());
+            listener.onSignalStrengthsChanged(new SignalStrength());
+            listener.onMessageWaitingIndicatorChanged(false);
+            listener.onOtaspChanged(DSUtils.FAKE_INT);
+        }
     }
 
     /**

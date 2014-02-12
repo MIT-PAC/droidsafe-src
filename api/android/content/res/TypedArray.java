@@ -39,6 +39,12 @@ public class TypedArray {
 		mLength = len;
 		*/
 	}
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public TypedArray(DSOnlyType dontcare) {
+        
+    }
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)

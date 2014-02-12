@@ -94,7 +94,8 @@ public int describeContents() {
     @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.423 -0500", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "59DEDCCB266A692EC97DC26A98166A87")
-    
+    @DSVerified
+     
 public void writeToParcel(Parcel dest, int flags) {
          dest.writeParcelable(mSuperState, flags);
     }

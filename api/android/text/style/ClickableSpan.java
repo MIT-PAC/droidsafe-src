@@ -23,7 +23,7 @@ public abstract class ClickableSpan extends CharacterStyle implements UpdateAppe
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.523 -0500", hash_original_method = "4553467B701B7D2A64C445DA132DB316", hash_generated_method = "56BD9F38BD46DB5803BBEE5C3975BA2C")
-    
+    @DSVerified
 public abstract void onClick(View widget);
    
     /**
