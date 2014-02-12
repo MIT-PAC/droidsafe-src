@@ -110,12 +110,7 @@ ReceiverRestrictedContext(Context base) {
 @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
-        throw new ReceiverCallNotAllowedException(
-                "IntentReceiver components are not allowed to register to receive intents");
-        //ex.fillInStackTrace();
-        //Log.e("IntentReceiver", ex.getMessage(), ex);
-        //return mContext.registerReceiver(receiver, filter, broadcastPermission,
-        //        scheduler);
+        return receiver.__ds__registerIntentFilter(filter)[0];
     }
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -637,22 +632,14 @@ private File getDatabasesDir() {
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	// Generate Intents based on filter
-    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
-    	for (Intent intent : intents) {
-			receiver.onReceive(this, intent);
-		}
-    	return null; // no 'sticky' intents need to be modeled for coverage
+        return receiver.__ds__registerIntentFilter(filter)[0];
     }
     
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
     	// Generate Intents based on filter
-    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
-    	for (Intent intent : intents) {
-			receiver.onReceive(this, intent);
-		}
-    	return null; // no 'sticky' intents need to be modeled for coverage
+        return receiver.__ds__registerIntentFilter(filter)[0];
     }
 
     @DSComment("Private Method")

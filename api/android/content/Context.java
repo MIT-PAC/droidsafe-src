@@ -2321,11 +2321,12 @@ public boolean isRestricted() {
 	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
+	public Intent __ds__registerIntentFilter(IntentFilter intentFilter) {
 	    this.__ds__intentFilters.add(intentFilter);
 	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
 	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
 	    this.__ds__intentsFromFilter.add(intent);	
+            return intent;
 	}
 	
     @DSVerified
