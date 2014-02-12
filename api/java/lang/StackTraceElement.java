@@ -57,8 +57,8 @@ public StackTraceElement(String cls, String method, String file, int line) {
         lineNumber = line;
     }
     
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST) 
+    @DSComment("From safe class list")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.462 -0400", hash_original_method = "DC3E276578F22895683C0979CF7614B3", hash_generated_method = "069C2D8BCA6C8CA3D907F0C7C60A9CFB")
 	public  StackTraceElement() {
         // ---------- Original Method ----------

@@ -1142,9 +1142,8 @@ private Object readResolve() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.880 -0500", hash_original_field = "432AF62647CB9AAAB1998CD06CE495C0", hash_generated_field = "410EA5184B11CE9687E932D7F263B83C")
 
         private static final long serialVersionUID = 7207038068494060240L;
-        
-        @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSVerified
+        @DSSafe(DSCat.SAFE_LIST)         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.641 -0400", hash_original_method = "FFB2FB11DBE006893CA9746ECCE68517", hash_generated_method = "FFB2FB11DBE006893CA9746ECCE68517")
         public ReverseComparator ()
         {

@@ -119,8 +119,8 @@ protected AbstractCollection() {
      *
      * @return an iterator for accessing the {@code Collection} contents.
      */
-    @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.278 -0500", hash_original_method = "38DA4AD00F2312AF1AD3CD50855F4F5F", hash_generated_method = "04D077BF385AFE862B82A3802F213294")
     
 public abstract Iterator<E> iterator();
@@ -159,9 +159,9 @@ public abstract Iterator<E> iterator();
         }
         return getTaintBoolean();
     }
-    
-    @DSComment("Abstract Method")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_LIST)
     public int size() {
         return len;
     }
