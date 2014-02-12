@@ -268,7 +268,8 @@ public Preference(Context context) {
      * @return The default value of this preference type.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.798 -0500", hash_original_method = "75C2469AD4E7F0A9F01D294D0E9B9A83", hash_generated_method = "5FAF95615287C19A61F13B87DB38C656")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 protected Object onGetDefaultValue(TypedArray a, int index) {
         return null;
     }
@@ -437,12 +438,31 @@ public int getWidgetLayoutResource() {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.822 -0500", hash_original_method = "10F5B4A945AE227B9B33457223123B2A", hash_generated_method = "DAA4ED66700C6E6E567467C24C079A20")
-    
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSComment("view inflatiion may have info gap")
+    @DSVerified
 public View getView(View convertView, ViewGroup parent) {
+        // this is the beginning of alll callback
         if (convertView == null) {
             convertView = onCreateView(parent);
         }
         onBindView(convertView);
+
+        TypedArray t = new TypedArray(DSOnlyType.NOT_USED);
+        onGetDefaultValue(t, DSUtils.FAKE_INT);
+        
+        onClick();
+        onAttachedToActivity();
+        onAttachedToHierarchy(mPreferenceManager);
+        onKey(convertView,  DSUtils.FAKE_INT, new KeyEvent());
+
+        onDependencyChanged(mDependents.get(0), DSUtils.UNKNOWN_BOOLEAN);
+        Parcelable state = onSaveInstanceState();
+        if (state != null)
+            onRestoreInstanceState(state);
+
+        // call perform click
+
         return convertView;
     }
     
@@ -722,9 +742,9 @@ public CharSequence getSummary() {
      * @param summary The summary for the preference.
      */
     @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.854 -0500", hash_original_method = "9397E34A85A0111B42F6FFB9A2837DEB", hash_generated_method = "473E4AE991A26B165213F8390D5E8AF8")
-    
+    @DSVerified
 public void setSummary(CharSequence summary) {
         if (summary == null && mSummary != null || summary != null && !summary.equals(mSummary)) {
             mSummary = summary;
@@ -860,7 +880,9 @@ long getId() {
      * update the preference's state with the new value.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.873 -0500", hash_original_method = "DE9BB9E40914727DA5D6E94159FAF3CB", hash_generated_method = "D330D7CED94953FD8C389AF42A43D4B3")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+
 protected void onClick() {
     }
     
@@ -977,11 +999,13 @@ public void setPersistent(boolean persistent) {
      * @return True if the user value should be set as the preference
      *         value (and persisted).
      */
-    @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.890 -0500", hash_original_method = "4367E5B2EAD1BB8898BD88F610DDAF7D", hash_generated_method = "1CFD0B3B4276F8625AC51F1A7A0055E7")
     
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.890 -0500", hash_original_method = "4367E5B2EAD1BB8898BD88F610DDAF7D", hash_generated_method = "1CFD0B3B4276F8625AC51F1A7A0055E7")
 protected boolean callChangeListener(Object newValue) {
+        if (mOnChangeListener != null)
+            mOnChangeListener.onPreferenceChange(this, newValue);
         return mOnChangeListener == null ? true : mOnChangeListener.onPreferenceChange(this, newValue);
     }
     
@@ -992,9 +1016,11 @@ protected boolean callChangeListener(Object newValue) {
      * @param onPreferenceChangeListener The callback to be invoked.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.892 -0500", hash_original_method = "D46636D80B7557AC6195A05902CC638C", hash_generated_method = "BA06CE8EF7CF6B97C6958AB95DB1DBCD")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnPreferenceChangeListener(OnPreferenceChangeListener onPreferenceChangeListener) {
         mOnChangeListener = onPreferenceChangeListener;
+        callChangeListener(new Object());
     }
 
     /**
@@ -1015,9 +1041,13 @@ public OnPreferenceChangeListener getOnPreferenceChangeListener() {
      * @param onPreferenceClickListener The callback to be invoked.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.897 -0500", hash_original_method = "E8A10745E179E2FA23FF715EAD4A5CB3", hash_generated_method = "F6CB66294636498CFCF630891808C4BE")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnPreferenceClickListener(OnPreferenceClickListener onPreferenceClickListener) {
         mOnClickListener = onPreferenceClickListener;
+        if (mOnClickListener != null) {
+            mOnClickListener.onPreferenceClick(this);
+        }
     }
 
     /**
@@ -1041,7 +1071,7 @@ public OnPreferenceClickListener getOnPreferenceClickListener() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.901 -0500", hash_original_method = "501E66F7BA58D6B4C7BCFDD2200CB13A", hash_generated_method = "501E66F7BA58D6B4C7BCFDD2200CB13A")
-    
+    @DSVerified 
 void performClick(PreferenceScreen preferenceScreen) {
         
         if (!isEnabled()) {
@@ -1185,7 +1215,9 @@ public boolean shouldCommit() {
      *          greater than 0 if this Preference sorts after <var>another</var>.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.915 -0500", hash_original_method = "93B6E6EE30870726B108BD396B876DEB", hash_generated_method = "4693F5F7F58E9AEA61FD6671B80CFAC9")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int compareTo(Preference another) {
         if (mOrder != DEFAULT_ORDER
                 || (mOrder == DEFAULT_ORDER && another.mOrder != DEFAULT_ORDER)) {
@@ -1487,7 +1519,7 @@ public void setDefaultValue(Object defaultValue) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.957 -0500", hash_original_method = "0CC9C8053B2B40671F6785C5B066E9AB", hash_generated_method = "C405D37DC7D423BFB814F9AFC5337F82")
-    
+    @DSVerified 
 private void dispatchSetInitialValue() {
         // By now, we know if we are persistent.
         final boolean shouldPersist = shouldPersist();
@@ -1550,11 +1582,11 @@ private void tryCommit(SharedPreferences.Editor editor) {
      *         will be a batch commit later.)
      * @see #getPersistedString(String)
      */
-    @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("store string")
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.964 -0500", hash_original_method = "386F50F42D6EB5DC2DA2887FAD5D9C7B", hash_generated_method = "9B5C087D3CC87E17EBE1A4FFD846B271")
-    
+    @DSVerified
 protected boolean persistString(String value) {
         if (shouldPersist()) {
             // Shouldn't store null
@@ -1584,11 +1616,11 @@ protected boolean persistString(String value) {
      *         value.
      * @see #persistString(String)
      */
-    @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("Get some persisted string")
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.967 -0500", hash_original_method = "5E73C8E580A094A1DF5E2EFDD3570FC9", hash_generated_method = "E35762D31C01EBAE27AC52B743D4B6E5")
-    
+    @DSVerified
 protected String getPersistedString(String defaultReturnValue) {
         if (!shouldPersist()) {
             return defaultReturnValue;
@@ -2060,6 +2092,7 @@ public BaseSavedState(Parcelable superState) {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         boolean onPreferenceChange(Preference preference, Object newValue);
     }
     
@@ -2067,6 +2100,7 @@ public BaseSavedState(Parcelable superState) {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         boolean onPreferenceClick(Preference preference);
     }
     

@@ -67,7 +67,7 @@ public CharacterPickerDialog(Context context, View view,
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.218 -0500", hash_original_method = "E0AAB102B3ED3AF261F94C84219E8ECE", hash_generated_method = "AFAC94750396B597F8BB4B9A0515357A")
-    
+    @DSVerified
 @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +81,7 @@ public CharacterPickerDialog(Context context, View view,
 
         GridView grid = (GridView) findViewById(R.id.characterPicker);
         grid.setAdapter(new OptionsAdapter(getContext()));
-        grid.setOnItemClickListener(this);
+        grid.setOnItemClickListener(this); //this will trigger onItemClick
 
         mCancelButton = (Button) findViewById(R.id.cancel);
         mCancelButton.setOnClickListener(this);
@@ -120,7 +120,7 @@ private void replaceCharacterAndClose(CharSequence replace) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.228 -0500", hash_original_method = "3104127334A31B48E0F0795A4514B3FB", hash_generated_method = "83AB2C617D4369F8739FE19B5CE2C164")
-    
+    @DSVerified
 public void onClick(View v) {
         if (v == mCancelButton) {
             dismiss();
@@ -140,7 +140,8 @@ public OptionsAdapter(Context context) {
 
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.235 -0500", hash_original_method = "2F3D5346969689C1B0E524EA0F83CDB3", hash_generated_method = "3D5D618B2C4A90AC83411EF5C6ACE585")
-        
+        @DSVerified("onClick Called inside button")
+        @DSSafe(DSCat.SAFE_OTHERS)
 public View getView(int position, View convertView, ViewGroup parent) {
             Button b = (Button)
                 mInflater.inflate(R.layout.character_picker_button, null);

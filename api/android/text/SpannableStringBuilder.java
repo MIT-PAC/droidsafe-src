@@ -990,6 +990,7 @@ public String substring(int start, int end) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.864 -0500", hash_original_method = "9EEE5F03C950DBDA8CD631C0E0A3B78A", hash_generated_method = "5C9748C0B437FC8674F47C7A9443FC7B")
+    @DSVerified
     
 private TextWatcher[] sendTextWillChange(int start, int before, int after) {
         TextWatcher[] recip = getSpans(start, start + before, TextWatcher.class);
@@ -1005,7 +1006,7 @@ private TextWatcher[] sendTextWillChange(int start, int before, int after) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.867 -0500", hash_original_method = "B0F46C63F0D82B2972BAF2786F5024B6", hash_generated_method = "AFAA8E9BE07B166E1333098013CF609C")
-    
+    @DSVerified
 private void sendTextChange(TextWatcher[] recip, int start, int before, int after) {
         int n = recip.length;
 
@@ -1017,6 +1018,7 @@ private void sendTextChange(TextWatcher[] recip, int start, int before, int afte
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.869 -0500", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "5883A705572BE249EB4C077E99892A28")
+    @DSVerified
     
 private void sendTextHasChanged(TextWatcher[] recip) {
         int n = recip.length;

@@ -1653,10 +1653,9 @@ public final KeyListener getKeyListener() {
      * @attr ref android.R.styleable#TextView_capitalize
      * @attr ref android.R.styleable#TextView_autoText
      */
-    @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.572 -0500", hash_original_method = "C24E7464E624E00527FA94ACF2B78CDF", hash_generated_method = "3006DC6A1FBEBD6754AC5B1AA8ADEDC1")
-    
 public void setKeyListener(KeyListener input) {
         setKeyListenerOnly(input);
         fixFocusableAndClickableSettings();
@@ -1678,6 +1677,7 @@ public void setKeyListener(KeyListener input) {
         if (imm != null) imm.restartInput(this);
     }
     
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.466 -0400", hash_original_method = "4C0922906A0644E54152EA479C6FB8D4", hash_generated_method = "D150019EF240ACF49C8766A33CC7D765")
@@ -1688,6 +1688,13 @@ public void setKeyListener(KeyListener input) {
             setText(mText);
             */
         setFilters((Editable) mText, mFilters);
+        if (input != null) {
+            input.onKeyDown(this, (Editable)mText,  DSUtils.FAKE_INT, new KeyEvent());
+            input.onKeyUp(this, (Editable)mText,  DSUtils.FAKE_INT, new KeyEvent());
+            input.onKeyOther(this, (Editable)mText,  new KeyEvent());
+
+        }
+
         // ---------- Original Method ----------
         //mInput = input;
         //if (mInput != null && !(mText instanceof Editable))
@@ -13385,6 +13392,9 @@ public boolean isSuggestionsEnabled() {
     
 public void setCustomSelectionActionModeCallback(ActionMode.Callback actionModeCallback) {
         mCustomSelectionActionModeCallback = actionModeCallback;
+        if (actionModeCallback != null) {
+            
+        }
     }
 
     /**

@@ -50,7 +50,7 @@ protected abstract char[] getReplacement();
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.405 -0500", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "95203B0678B88F2740A8A7DD052AC2B5")
-    
+    @DSVerified
 public CharSequence getTransformation(CharSequence source, View v) {
         char[] original = getOriginal();
         char[] replacement = getReplacement();

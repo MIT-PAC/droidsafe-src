@@ -935,6 +935,7 @@ private void stopEglContextLocked() {
                 sGLThreadManager.releaseEglContextLocked(this);
             }
         }
+        @DSVerified
         @DSComment("Private Method")
         @DSBan(DSCat.PRIVATE_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.682 -0500", hash_original_method = "711FE3C53AF4E351881864AF0E3340A2", hash_generated_method = "B13447098E0AD2EE755FA704D1A400DA")
@@ -1593,14 +1594,17 @@ private void checkGLESVersion() {
     
     public interface Renderer {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onSurfaceCreated(GL10 gl, EGLConfig config);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onSurfaceChanged(GL10 gl, int width, int height);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onDrawFrame(GL10 gl);
@@ -1630,6 +1634,7 @@ private void checkGLESVersion() {
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         EGLConfig chooseConfig(EGL10 egl, EGLDisplay display);
     }
 

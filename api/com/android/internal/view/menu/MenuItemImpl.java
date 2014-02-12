@@ -213,7 +213,8 @@ public boolean isEnabled() {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.257 -0500", hash_original_method = "D7CDC1A4A52E7AA2B30AF0AEE42BB489", hash_generated_method = "027B24EBA2CBC69B4BE70A641C93A1FC")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public MenuItem setEnabled(boolean enabled) {
         if (enabled) {
             mFlags |= ENABLED;
@@ -228,14 +229,18 @@ public MenuItem setEnabled(boolean enabled) {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.260 -0500", hash_original_method = "66AB3334E79E1A7B9556FEE3F51B4E39", hash_generated_method = "92A3BA6D09A85A547821EFB39597530D")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public int getGroupId() {
         return mGroup;
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.262 -0500", hash_original_method = "885331F67BBD80203E95A04A19AE99CE", hash_generated_method = "1317CA6C177DD5E384638FF9B9D3B0E0")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 @ViewDebug.CapturedViewProperty
     public int getItemId() {
         return mId;
@@ -243,27 +248,35 @@ public int getGroupId() {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.264 -0500", hash_original_method = "C3905BED22935FA2186A402E1BBD1829", hash_generated_method = "20049C831CB934DCFE00AEED81052B69")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public int getOrder() {
         return mCategoryOrder;
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.266 -0500", hash_original_method = "92E8F82AA50FD1AD58335B2DC7895A83", hash_generated_method = "86ECFC944B9ECDE2A30AF3BDF41C6AF2")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public int getOrdering() {
         return mOrdering; 
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.268 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
-    
+
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public Intent getIntent() {
         return mIntent;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.270 -0500", hash_original_method = "17F59D8B490C99308235DB62C5632C43", hash_generated_method = "FC870B7BE66B774D28C4327475BB97C9")
-    
+
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public MenuItem setIntent(Intent intent) {
         mIntent = intent;
         return this;
@@ -279,19 +292,25 @@ Runnable getCallback() {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.274 -0500", hash_original_method = "CAD9375B57D68888676D597787CB9AA1", hash_generated_method = "0D75E48DE09605C569BED85BD011E981")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public MenuItem setCallback(Runnable callback) {
         mItemCallback = callback;
+        if (callback != null)
+            callback.run();
         return this;
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.276 -0500", hash_original_method = "74420A18C35CD9809E945AA28295EB23", hash_generated_method = "C6CC3463628F299A61B99559C4F6FF3E")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public char getAlphabeticShortcut() {
         return mShortcutAlphabeticChar;
     }
-
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.279 -0500", hash_original_method = "88D9907A20D6B14742A0B31CE890DEE4", hash_generated_method = "4765654F81D049EFED2FFE80F4792B0E")
     
@@ -304,7 +323,8 @@ public MenuItem setAlphabeticShortcut(char alphaChar) {
         
         return this;
     }
-
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.281 -0500", hash_original_method = "4BF7437C18C8B8610ED809C4B1A41FBC", hash_generated_method = "C2D13B8EBB073B93C575296CDD9268AC")
     
@@ -313,7 +333,8 @@ public char getNumericShortcut() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.283 -0500", hash_original_method = "C979D44A5E5C9CB1A686CC5CF090F436", hash_generated_method = "5CD656EAC51B1D24F28A2F01A6A15115")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setNumericShortcut(char numericChar) {
         if (mShortcutNumericChar == numericChar) return this;
         
@@ -325,7 +346,8 @@ public MenuItem setNumericShortcut(char numericChar) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.285 -0500", hash_original_method = "0C4A5B3F8F292031B8A33F43134542C3", hash_generated_method = "FCA4FEC30C9C14FC2320A6AA9492D3A7")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setShortcut(char numericChar, char alphaChar) {
         mShortcutNumericChar = numericChar;
         mShortcutAlphabeticChar = Character.toLowerCase(alphaChar);
@@ -342,7 +364,7 @@ public MenuItem setShortcut(char numericChar, char alphaChar) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.287 -0500", hash_original_method = "D96803BF052A5945B7D152CA36FE6B7E", hash_generated_method = "D96803BF052A5945B7D152CA36FE6B7E")
-    
+    @DSVerified 
 char getShortcut() {
         return (mMenu.isQwertyMode() ? mShortcutAlphabeticChar : mShortcutNumericChar);
     }
@@ -357,6 +379,7 @@ char getShortcut() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.290 -0500", hash_original_method = "BC454AC179D3698A29B0357FA131C3B2", hash_generated_method = "BC454AC179D3698A29B0357FA131C3B2")
     
+        @DSVerified
 String getShortcutLabel() {
 
         char shortcut = getShortcut();
@@ -396,11 +419,13 @@ String getShortcutLabel() {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.293 -0500", hash_original_method = "10F1B2AEF5DA21C52B4C4E0F70D42C6B", hash_generated_method = "94CAC6D43EF5F3E660F3D52EFEF9FDCE")
     
+    @DSVerified
 boolean shouldShowShortcut() {
         // Show shortcuts if the menu is supposed to show shortcuts AND this item has a shortcut
         return mMenu.isShortcutsVisible() && (getShortcut() != 0);
     }
     
+        @DSVerified
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.295 -0500", hash_original_method = "4569B511D747F82913D0DE9D1EF62E55", hash_generated_method = "9FA931FE199DCF0DC73BBAF006E0DC11")
     
@@ -409,7 +434,8 @@ public SubMenu getSubMenu() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.297 -0500", hash_original_method = "4556386DBA75360C55B0D4465EB5905E", hash_generated_method = "A025273C95280FA865C2AF35AB1B0983")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)    
 public boolean hasSubMenu() {
         return mSubMenu != null;
     }
@@ -426,7 +452,8 @@ void setSubMenu(SubMenuBuilder subMenu) {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.301 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "AD33569EACFD9ACB376C2E26B5A178EC")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 @ViewDebug.CapturedViewProperty
     public CharSequence getTitle() {
         return mTitle;
@@ -440,7 +467,8 @@ void setSubMenu(SubMenuBuilder subMenu) {
      *         prefers
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.303 -0500", hash_original_method = "6C0965535A50DC1B1EFB814EBEDF6248", hash_generated_method = "6C0965535A50DC1B1EFB814EBEDF6248")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 CharSequence getTitleForItemView(MenuView.ItemView itemView) {
         return ((itemView != null) && itemView.prefersCondensedTitle())
                 ? getTitleCondensed()
@@ -448,7 +476,8 @@ CharSequence getTitleForItemView(MenuView.ItemView itemView) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.305 -0500", hash_original_method = "1E48645B8578DDF9EFFB5676592C549A", hash_generated_method = "B3C5E4C4CA24633B222C0AA21605F656")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setTitle(CharSequence title) {
         mTitle = title;
 
@@ -463,20 +492,23 @@ public MenuItem setTitle(CharSequence title) {
     
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.307 -0500", hash_original_method = "504EB589769814F693A853F99C8002C5", hash_generated_method = "9BDD30412EBF141D045C3D6538D7908E")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setTitle(int title) {
         return setTitle(mMenu.getContext().getString(title));
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.309 -0500", hash_original_method = "2F32534D1148FE277B46E47FA445D759", hash_generated_method = "C8573BD766B461834936ABC5F1714FF2")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public CharSequence getTitleCondensed() {
         return mTitleCondensed != null ? mTitleCondensed : mTitle;
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.312 -0500", hash_original_method = "A10897990E671CAED83F82CF9B7ADDEE", hash_generated_method = "616C3611A28651C6A686B47A93933AB4")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setTitleCondensed(CharSequence title) {
         mTitleCondensed = title;
 
@@ -492,7 +524,8 @@ public MenuItem setTitleCondensed(CharSequence title) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.314 -0500", hash_original_method = "77C51DB63A44599458883D3753A34CC1", hash_generated_method = "4C19287DF61F38B92B725033F38CB73E")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public Drawable getIcon() {
         if (mIconDrawable != null) {
             return mIconDrawable;
@@ -528,14 +561,16 @@ public MenuItem setIcon(int iconResId) {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.321 -0500", hash_original_method = "03294EC000E2E3A998710BD4D5DBC105", hash_generated_method = "6BB8DFB796F32A0DB2909EC761B5FEB5")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isCheckable() {
         return (mFlags & CHECKABLE) == CHECKABLE;
     }
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.324 -0500", hash_original_method = "97D03B8420DC0405BDED5AEBB6194B4D", hash_generated_method = "16D37BDBBBC4140B8699764B9FC4BCA5")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setCheckable(boolean checkable) {
         final int oldFlags = mFlags;
         mFlags = (mFlags & ~CHECKABLE) | (checkable ? CHECKABLE : 0);
@@ -548,26 +583,30 @@ public MenuItem setCheckable(boolean checkable) {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.326 -0500", hash_original_method = "D48B0A4B4830ACC112B29145FA304FB9", hash_generated_method = "D3E935207667584557FD554C5725658F")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS) 
 public void setExclusiveCheckable(boolean exclusive) {
         mFlags = (mFlags & ~EXCLUSIVE) | (exclusive ? EXCLUSIVE : 0);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.328 -0500", hash_original_method = "09CA122F8C23D0DDA91200023A557A5D", hash_generated_method = "554225F6F0A6FF90EDE7D50256C3AD37")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isExclusiveCheckable() {
         return (mFlags & EXCLUSIVE) != 0;
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.330 -0500", hash_original_method = "153A3CA3675B13C11B20504065FC3BF7", hash_generated_method = "748FD27E624D2890342336929D3D93D9")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isChecked() {
         return (mFlags & CHECKED) == CHECKED;
     }
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.333 -0500", hash_original_method = "9107E25FB1CB75DAB92AC94A4D8833A7", hash_generated_method = "9D33893CA7B07243796507819AE7861C")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public MenuItem setChecked(boolean checked) {
         if ((mFlags & EXCLUSIVE) != 0) {
             // Call the method on the Menu since it knows about the others in this
@@ -583,6 +622,7 @@ public MenuItem setChecked(boolean checked) {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.335 -0500", hash_original_method = "F4E3FA5EA691BD61029F7B342451D96B", hash_generated_method = "F4E3FA5EA691BD61029F7B342451D96B")
+    @DSVerified
     
 void setCheckedInt(boolean checked) {
         final int oldFlags = mFlags;
@@ -611,6 +651,7 @@ public boolean isVisible() {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.339 -0500", hash_original_method = "6BBB65AE1F8C0F9A0552DC908B4D29C9", hash_generated_method = "6BBB65AE1F8C0F9A0552DC908B4D29C9")
+    @DSVerified
     
 boolean setVisibleInt(boolean shown) {
         final int oldFlags = mFlags;
@@ -618,6 +659,7 @@ boolean setVisibleInt(boolean shown) {
         return oldFlags != mFlags;
     }
     
+    @DSVerified
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.341 -0500", hash_original_method = "C575291A3325EE507AB9F55E92185E54", hash_generated_method = "6E848C8D6208474679BAEB6A78CEE3A1")
     
@@ -631,9 +673,13 @@ public MenuItem setVisible(boolean shown) {
     }
 
    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.344 -0500", hash_original_method = "1DDD55F9AC5A73432BCD73A94619FD45", hash_generated_method = "E14BB9B4DD44ECA082C114F4DB378189")
-    
+   @DSVerified("callback modeled")
+   @DSSafe(DSCat.ANDROID_CALLBACK)
 public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener clickListener) {
         mClickListener = clickListener;
+        if (clickListener != null) {
+            clickListener.onMenuItemClick(this);
+        }
         return this;
     }
     
@@ -823,10 +869,15 @@ public MenuItem setActionProvider(ActionProvider actionProvider) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.391 -0500", hash_original_method = "B1FCAF7D5B88EED4E84E6E84EBEC9EE4", hash_generated_method = "4DE1588451EEB40B14B63F3C72F480C0")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public MenuItem setOnActionExpandListener(OnActionExpandListener listener) {
         mOnActionExpandListener = listener;
+        if (listener != null) {
+            listener.onMenuItemActionCollapse(this);
+            listener.onMenuItemActionExpand(this);
+        }
         return this;
     }
 

@@ -35,24 +35,34 @@ public interface Menu {
     
     static final int FLAG_ALWAYS_PERFORM_CLOSE = 0x0002;
     
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public MenuItem add(CharSequence title);
     
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public MenuItem add(int titleRes);
     
+        @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public MenuItem add(int groupId, int itemId, int order, CharSequence title);
     
+        @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public MenuItem add(int groupId, int itemId, int order, int titleRes);
     
+    
+    @DSVerified
+    @DSComment("Abstract Method")
     SubMenu addSubMenu(final CharSequence title);
     
+    
+    @DSVerified
+    @DSComment("Abstract Method")
     SubMenu addSubMenu(final int titleRes);
     
     SubMenu addSubMenu(final int groupId, final int itemId, int order, final CharSequence title);

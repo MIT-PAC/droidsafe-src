@@ -481,26 +481,19 @@ public ViewGroup(Context context) {
 		//Return nothing
 	}
     
+    @DSVerified("callback modeled")
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean showContextMenuForChild(View originalView){
 		// Original method
-		/*
-		{
         return mParent != null && mParent.showContextMenuForChild(originalView);
-    }
-		*/
-		return false;
 	}
-    
+
+    @DSVerified("callback modeled")
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback){
-		// Original method
-		/*
-		{
         return mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")

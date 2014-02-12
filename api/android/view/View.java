@@ -1872,6 +1872,11 @@ ListenerInfo getListenerInfo() {
         return getParent().startActionModeForChild(this, callback);
     }
 		*/
+        if (callback != null) {
+            ActionMode am = new ActionMode.SimpleActionMode();
+            //callback.onActionItemClicked(am,  new MenuIt)
+        }
+        
 		return null;
 	}
     
