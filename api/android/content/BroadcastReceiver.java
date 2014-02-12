@@ -442,8 +442,10 @@ void checkSynchronousHint() {
             if (mApplication != null) {
                 mApplication.__ds__intentFilters.add(intentFilter);
                 mApplication.__ds__intentsFromFilter.add(intent);
-                onReceive(mApplication, intent);
             }            
+            
+            onReceive(mApplication, intent);
+
 
             intents[actionIndex] = intent;
         }
