@@ -60,7 +60,7 @@ protected AbstractSet() {
      * Overiding to help keeping it unique
      */
     @Override
-    
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean add(E object) {
        if (super.getIndexOf(object) != -1) 
            return super.add(object);

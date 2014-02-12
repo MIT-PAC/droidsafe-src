@@ -4071,15 +4071,7 @@ public final void setText(int resid, BufferType type) {
     
 @android.view.RemotableViewMethod
     public final void setHint(CharSequence hint) {
-        mHint = TextUtils.stringOrSpannedString(hint);
-
-        if (mLayout != null) {
-            checkForRelayout();
-        }
-
-        if (mText.length() == 0) {
-            invalidate();
-        }
+        mHint = hint;
     }
 
     /**

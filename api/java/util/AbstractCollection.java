@@ -159,11 +159,7 @@ public abstract Iterator<E> iterator();
         }
         return getTaintBoolean();
     }
-    
-    /*
-    @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
-    */
+
     @DSVerified
     @DSSafe(DSCat.SAFE_LIST)
     public int size() {

@@ -17,7 +17,7 @@ public class ExifInterface {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.756 -0500", hash_original_method = "573AE63C3A0AF83AD37E730AD0812C4F", hash_generated_method = "676407259D5C96EB17D75B26EC89E30A")
-    
+    @DSSource(DSSourceKind.LOCATION_INFORMATION)
 private static float convertRationalLatLonToFloat(
             String rationalString, String ref) {
         try {
