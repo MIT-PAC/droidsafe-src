@@ -1713,6 +1713,7 @@ ListenerInfo getListenerInfo() {
 		return null;
 	}
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 	public void setOnClickListener(OnClickListener l){
 		l.onClick(this);
 		// Original method
@@ -6820,6 +6821,7 @@ AttachInfo(IWindowSession session, IWindow window,
         
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified()
         void onClick(View v);
     }
     

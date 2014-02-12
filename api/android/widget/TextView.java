@@ -592,6 +592,7 @@ private static int extractRangeEndFromLong(long range) {
     private int                     mInputType = EditorInfo.TYPE_NULL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.383 -0500", hash_original_field = "20B85DCC442F65116E07F2CD18DD5949", hash_generated_field = "D5CD99D8D87E7592EC6B5781C6FFB2FA")
 
+@DSVAModeled
     private CharSequence            mHint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.385 -0500", hash_original_field = "893C81BF77774962E846196D9E846E6B", hash_generated_field = "EFAB677B32664E9E21A5DE46AC4EC1D6")
 

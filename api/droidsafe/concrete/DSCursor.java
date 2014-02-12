@@ -58,11 +58,13 @@ public class DSCursor implements Cursor {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public int getColumnIndexOrThrow(String columnName) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return getTaintInt();
     }
 
     public String getColumnName(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        String str = new String("DSUnknown");
+        str.addTaint(getTaint());
+        return str;
     }
 
     public String[] getColumnNames() {
@@ -88,7 +90,7 @@ public class DSCursor implements Cursor {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public long getLong(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return getTaintInt();
     }
 
     public short getShort(int columnIndex) {
@@ -110,7 +112,7 @@ public class DSCursor implements Cursor {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public String getString(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return new String("DSUnknown");
     }
 
     public Bundle getExtras() {

@@ -81,7 +81,7 @@ public Object() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.140 -0500", hash_original_method = "9AE1611573D7E7CF89E7E933B2D1DCAF", hash_generated_method = "9814B1EDD6A309DF77DC31113B9908C5")
-    
+    @DSVerified()
 public boolean equals(Object o) {
         return this == o;
     }
@@ -119,6 +119,7 @@ public boolean equals(Object o) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.142 -0500", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "7BAE00D5214727B96165F35F1A10FDEF")
     
 @FindBugsSuppressWarnings("FI_EMPTY")
+    @DSVerified
     protected void finalize() throws Throwable {
     }
     
@@ -145,7 +146,7 @@ public boolean equals(Object o) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.150 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "1752793FA5EABF016299BFC6474E6534")
-    
+    @DSVerified()
     public int hashCode(){
     	//Formerly a native method
     	return getTaintInt();
@@ -236,7 +237,7 @@ public boolean equals(Object o) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.161 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")
-    
+    @DSVerified()
 public String toString() {
         return getClass().getName() + '@' + Integer.toHexString(hashCode());
     }
@@ -358,7 +359,6 @@ public final void wait(long millis) throws InterruptedException {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.170 -0500", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "94504481D3D619737083E8726B8C7754")
-    
     public final void wait(long millis, int nanos) throws InterruptedException{
     	//Formerly a native method
     	addTaint(millis);

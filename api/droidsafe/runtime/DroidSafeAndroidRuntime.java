@@ -212,4 +212,72 @@ public class DroidSafeAndroidRuntime {
         app.droidsafeOnTerminate();
         app.droidsafeOnEverythingElse();
     }
+
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static String getUnmodeledTaintString() {
+        return "DSUnknown";
+    }
+
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static int getUnmodeledTaintInt() {
+        return 0;
+    }
+        
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static short getUnmodeledTaintShort() {
+        return 0;
+    }
+    
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()    
+    public static byte getUnmodeledTaintByte() {
+        return 0;
+    }    
+    
+    
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static boolean getUnmodeledTaintBoolean() {
+        return true;
+    }
+    
+    
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static char getUnmodeledTaintChar() {
+        return 0;
+    }
+    
+    
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static float getUnmodeledTaintFloat() {
+        return 0;
+    }
+    
+    
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static double getUnmodeledTaintDouble() {
+        return 0;
+    }
+    
+    
+    @DSSource(DSSourceKind.UNMODELED)
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified()
+    public static long getUnmodeledTaintLong() {        
+        return 0;
+    }
 }

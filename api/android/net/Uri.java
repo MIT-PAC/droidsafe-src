@@ -444,6 +444,7 @@ public Uri[] newArray(int size) {
 private Uri() {}
     // orphaned legacy method
     
+    @DSSafe(DSCat.DATA_STRUCTURE)
 	public Uri(String uri) {
 		this();
 		uriString = uri;
