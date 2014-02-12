@@ -410,17 +410,17 @@ public class API {
                         if (at.getType().contains("droidsafe/annotations/DSSafe")) {
                             c = Classification.SAFE;
                             category = getCategoryFromClassificationTag(at);
-                            safe_methods.addMethod(method);
+                            addSafeMethod(method);
                             logger.info("Found method with SAFE classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSSpec")) {
-                            spec_methods.addMethod(method);  
+                            addSpecMethod(method);
                             category = getCategoryFromClassificationTag(at);
                             c = Classification.SPEC;
                             logger.info("Found method with SPEC classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSBan")) {
                             c = Classification.BAN; 
                             category = getCategoryFromClassificationTag(at);
-                            banned_methods.addMethod(method);
+                            addBanMethod(method);
                             logger.info("Found method with BAN classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSVerified")) {
                             verified = true;
@@ -429,7 +429,7 @@ public class API {
                             addSinkSourceTag(method, at, sinksMapping);
                             sink = true;
                         } else if (at.getType().contains("droidsafe/annotations/DSSource")) {
-                            logger.info("Found sink method: {}", method); 
+                            logger.info("Found source method: {}", method); 
                             addSinkSourceTag(method, at, srcsMapping);
                             source = true; 
                         }
@@ -453,6 +453,16 @@ public class API {
                 verified_methods.addMethod(method);
             }
         }
+    }
+    
+    /**
+     * Add infokind taint to the return value of the method.
+     */
+    public void addSourceInfoKind(SootMethod sootMethod, String kind) {
+        if (!srcsMapping.containsKey(sootMethod)) {
+            srcsMapping.put(sootMethod, new HashSet<InfoKind>());
+        }
+        srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(kind));
     }
 
     private void addSinkSourceTag(SootMethod sootMethod, AnnotationTag at, Map<SootMethod, Set<InfoKind>> mapping) {

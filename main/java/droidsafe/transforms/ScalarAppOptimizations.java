@@ -5,7 +5,6 @@ import java.util.HashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Project;
 import soot.G;
 import soot.Scene;

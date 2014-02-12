@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.android.app.Project;
+import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.CannotFindMethodException;
 import soot.AnySubType;
 import soot.Body;
@@ -112,6 +113,14 @@ public class SootUtils {
         return false;
     }
 
+    /** 
+     * Is the type a void type
+     */
+    public static boolean isVoidType(Type type) {
+        return type instanceof VoidType;
+    }
+    
+    
     /**
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
@@ -700,7 +709,7 @@ public class SootUtils {
 
         //return the first concrete class
         for (SootClass c : implementors) 
-            if (c.isConcrete())
+            if (c.isConcrete() && !ClassCloner.isClonedClass(c))
                 return c;
 
         return null;
@@ -724,7 +733,7 @@ public class SootUtils {
 
         //return the first concrete class
         for (SootClass c : implementors) 
-            if (c.isConcrete())
+            if (c.isConcrete() && !ClassCloner.isClonedClass(c))
                 return c;
 
         return null;
@@ -760,7 +769,7 @@ public class SootUtils {
                 
                 JasminClass jasminClass = new soot.jimple.JasminClass(clz);
                 jasminClass.print(writerOut);
-                System.out.println("Succeeded writing class: " + clz);
+                //System.out.println("Succeeded writing class: " + clz);
             } catch (Exception e) {
                 logger.warn("Error writing class to file {}", clz, e);
             }

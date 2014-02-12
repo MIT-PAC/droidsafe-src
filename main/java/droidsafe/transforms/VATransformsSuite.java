@@ -24,7 +24,6 @@ import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.system.API;

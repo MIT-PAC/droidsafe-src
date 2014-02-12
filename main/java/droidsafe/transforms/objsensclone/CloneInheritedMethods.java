@@ -62,11 +62,19 @@ public class CloneInheritedMethods {
     private static final String CLONED_HIDDEN_METHOD_SUFFIX = "_ds_hidden_clone_";
     /** id to add to cloned methods that were hidden by inheritance but are reachable by invoke special */
     private static int cloned_method_id = 0;
-
-    public CloneInheritedMethods(SootClass clz) {
+    /** if true clone all methods otherwise clone only reachable */
+    private boolean cloneAllMethods = false;
+    
+    /**
+     * Clone inherited method and fix up code.  
+     * 
+     * If allMethods == true, then clone all methods, otherwise, just clone reachable methods
+     */
+    public CloneInheritedMethods(SootClass clz, boolean allMethods) {
         clazz = clz;
         methods = new SootMethodList();
         
+        cloneAllMethods = allMethods;
         clonedToOriginal = HashBiMap.create();
         
         //add methods already in the clz
@@ -161,7 +169,7 @@ public class CloneInheritedMethods {
                 continue;
 
             //clone only reachable methods
-            if (!PTABridge.v().getAllReachableMethods().contains(ancestorM))
+            if (!cloneAllMethods && !PTABridge.v().getAllReachableMethods().contains(ancestorM))
                 continue;
 
             //check if this method already exists

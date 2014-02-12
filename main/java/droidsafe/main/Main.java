@@ -15,11 +15,11 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAStats;
-import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
@@ -39,6 +39,7 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.transforms.CallBackModeling;
+import droidsafe.transforms.InsertUnmodeledObjects;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -77,14 +78,14 @@ import soot.SootMethod;
  * 
  */
 public class Main {
-   
+
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     /** timing stats container */
     private static List<String> appStatRowEntries = new ArrayList<String>();
     /** app stat csvwriter */
     private static CSVWriter appStatWriter = null; 
-    
+
     private static IDroidsafeProgressMonitor sMonitor;
 
     /**
@@ -110,7 +111,7 @@ public class Main {
                 }
             }
         });
-        
+
         run(new DroidsafeDefaultProgressMonitor());
     }
 
@@ -140,14 +141,14 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-       
+
         try {
             appStatWriter = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "app-stats.csv"));
         } catch(Exception e) {
             logger.warn("Unable to open app-stats.csv: {}", e);
             System.exit(1);
         }
-       
+
         // write out headers for columns
         appStatWriter.writeNext(new String[] {"App Name", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"});
 
@@ -170,7 +171,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-       
+
         driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
@@ -186,21 +187,13 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         driverMsg("Checking invoke special calls...");
         CheckInvokeSpecials.run();
 
         driverMsg("Resolving resources and Manifest.");
         monitor.subTask("Resolving Manifest");
         Resources.resolveManifest(Config.v().APP_ROOT_DIR);
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
-        driverMsg("Finding entry points in user code.");
-        monitor.subTask("Finding entry points.");
-        EntryPoints.v().calculate();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -240,17 +233,20 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-    
-        /*
-        //fallback modeling...
-        driverMsg ("Adding Missing User Callback Modeling...");
-        monitor.subTask("Adding Missing User Callback Modeling...");
-        CallBackModeling.v().run();
-        monitor.worked(1);
-        if (monitor.isCanceled())
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-*/
+
         
+        if (Config.v().addFallbackModeling) {
+            //fallback modeling...
+            driverMsg ("Adding Missing Modeling...");
+            monitor.subTask("Adding Missing Modeling...");
+            CallBackModeling.v().run();
+            monitor.worked(1);
+            if (monitor.isCanceled())
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
         driverMsg ("Hoisting Allocations");
         monitor.subTask("Hoisting Allocations");
         HoistAllocations.run();
@@ -295,11 +291,11 @@ public class Main {
             appStatRowEntries.add(timer1.toString());
             driverMsg("Finished cloning: " + timer1);
         }
-        
+
         //need this pta run to account for cloning
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-            
+
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");
@@ -309,15 +305,15 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
         }
-            
+
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
         ClassGetNameToClassString.run();
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
-        
+
+
         //need this pta run to account for jsa injection and class / forname
         if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -329,7 +325,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
-            
+
             driverMsg("Starting Value Analysis");
             monitor.subTask("Value Analysis");
             StopWatch vaTimer = new StopWatch();
@@ -367,7 +363,7 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            
+
             if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
@@ -377,6 +373,21 @@ public class Main {
         PTASetsAvgSize.run();
         exit(0);
     }*/
+
+        //add fallback object modeling for any value from the api that leaks into user
+        //code as null    
+        if (Config.v().addFallbackModeling) {
+            driverMsg("Inserting Unmodeled Objects...");
+            monitor.subTask("Inserting Unmodeled Objects...");
+            InsertUnmodeledObjects.v().run();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+
+            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
@@ -426,8 +437,8 @@ public class Main {
         }
 
         if (Config.v().infoFlow) {
-           // ObjectSensitivityCloner.v().runForInfoFlow();
-            
+            // ObjectSensitivityCloner.v().runForInfoFlow();
+
             StopWatch timer = new StopWatch();
             driverMsg("Starting Information Flow Analysis...");
             monitor.subTask("Information Flow Analysis: Injected source flow");
@@ -513,7 +524,7 @@ public class Main {
             RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
- 
+
         monitor.worked(1);
         return DroidsafeExecutionStatus.OK_STATUS;
     }
@@ -555,7 +566,7 @@ public class Main {
     public static void afterTransform(boolean recordTime) {
         afterTransform(sMonitor, recordTime);
     }
-    
+
     /**
      * Called after one or more transforms to recalculate any underlying analysis.
      */
@@ -587,8 +598,8 @@ public class Main {
         long endTime = System.currentTimeMillis();
         timer.stop();
         if(recordTime) {
-          // app stat column #4 - PTA
-          appStatRowEntries.add(timer.toString());
+            // app stat column #4 - PTA
+            appStatRowEntries.add(timer.toString());
         }
         driverMsg("Finished PTA: " + timer);
 

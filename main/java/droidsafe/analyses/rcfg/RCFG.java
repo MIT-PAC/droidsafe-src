@@ -55,7 +55,6 @@ import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
-import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;

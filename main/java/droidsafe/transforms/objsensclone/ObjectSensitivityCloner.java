@@ -239,6 +239,11 @@ public class ObjectSensitivityCloner {
                 //don't clone strings on first run
 
                 fw.write("Considering " + currentClass + "\n");
+                
+                if (ClassCloner.isClonedClass(currentClass)) {
+                    fw.write("Not cloning because already a clone (probably made by fallback modeling)\n");
+                    continue;
+                }
 
                 if (!CLONE_STRINGS && STRING_CLASSES.contains(currentClass.getName())) {
                     fw.write("\tDo not touch: String class\n");
@@ -284,7 +289,7 @@ public class ObjectSensitivityCloner {
                 if (!cloned) {
                     fw.write("\tNot cloned: but removed inheritance\n");
                     //if not cloning, then just clone inherited methods of class
-                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass);
+                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass, false);
                     cim.transform();
                     rememberCloneContext(cim.getCloneToOriginalMap());
                     //update allocation graph for new methods
@@ -401,7 +406,7 @@ public class ObjectSensitivityCloner {
                         //found an appropriate constructor call
                         //clone class and install it as an new API class
 
-                        ClassCloner cCloner = ClassCloner.cloneClass(base);
+                        ClassCloner cCloner = ClassCloner.cloneClass(base, false);
 
                         SootClass cloned = cCloner.getClonedClass();
 

@@ -6,8 +6,6 @@ import com.google.common.collect.HashBiMap;
 import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
-import droidsafe.analyses.CallGraphFromEntryPoints;
-
 import droidsafe.android.app.resources.AndroidManifest.Activity;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.AndroidManifest.Receiver;
