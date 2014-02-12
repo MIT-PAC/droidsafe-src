@@ -114,7 +114,8 @@ public int getRequestedType() {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.908 -0500", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "30D95F1DFB9C284DED444A79AC31DC07")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void addCallback(Callback callback) {
         synchronized (mCallbacks) {
             // This is a linear search, but in practice we'll 
@@ -122,6 +123,11 @@ public void addCallback(Callback callback) {
             if (mCallbacks.contains(callback) == false) {      
                 mCallbacks.add(callback);
             }
+        }
+        if (callback != null) {
+            callback.surfaceCreated(this);
+            callback.surfaceChanged(this, DSUtils.FAKE_INT, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+            callback.surfaceDestroyed(this);
         }
     }
 

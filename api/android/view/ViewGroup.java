@@ -3824,9 +3824,15 @@ private HoverTarget() {
      * @param animationListener the layout animation listener
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.071 -0500", hash_original_method = "CCA9986B4D287F2F006BAE825941ECAA", hash_generated_method = "6B28890EA364BD54F07B7CDD3200B2AF")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
         mAnimationListener = animationListener;
+
+        Animation animation = getAnimation();
+        if (animationListener != null && animation != null) {
+            animation.setAnimationListener(animationListener);
+        }
     }
     
     public void requestTransitionStart(LayoutTransition transition){

@@ -38,14 +38,17 @@ public BadSurfaceTypeException(String name) {
 
     
     public interface Callback {
-        
+        @DSVerified("Callback modeled")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void surfaceCreated(SurfaceHolder holder);
 
-        
+        @DSVerified("Callback modeled")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void surfaceChanged(SurfaceHolder holder, int format, int width,
                 int height);
 
-        
+        @DSVerified("Callback modeled")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void surfaceDestroyed(SurfaceHolder holder);
     }
 

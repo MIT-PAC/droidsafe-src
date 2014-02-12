@@ -795,7 +795,9 @@ public MenuItem setActionView(int resId) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.376 -0500", hash_original_method = "404D78F2C7005B21FAAA5C37E608175C", hash_generated_method = "E4B0C17417A0453A8883AE73F01D00D7")
-    
+
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public View getActionView() {
         if (mActionView != null) {
             return mActionView;

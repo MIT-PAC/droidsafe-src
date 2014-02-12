@@ -31,7 +31,7 @@ public ActionProvider(Context context) {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.121 -0500", hash_original_method = "D34B37B54FEE3A61B3F2EC9EB9350036", hash_generated_method = "A1917FF468BF52201E55304E949C12BA")
-    
+    @DSVerified("Called from MenuItempImp")
 public abstract View onCreateActionView();
 
     /**
@@ -70,7 +70,9 @@ public abstract View onCreateActionView();
      * </p>
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.124 -0500", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "8E69AA43F8FD02823DF2F04092FB421C")
-    
+
+    @DSVerified("Called from Menubuilder/MenuItemImpl")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public boolean onPerformDefaultAction() {
         return false;
     }
@@ -86,7 +88,8 @@ public boolean onPerformDefaultAction() {
      * @return true if the item backed by this provider should have an associated submenu
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.126 -0500", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "C47A8DBA8C06C24113E67B7BE29255AD")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean hasSubMenu() {
         return false;
     }

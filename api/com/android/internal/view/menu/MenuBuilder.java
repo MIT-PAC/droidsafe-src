@@ -965,7 +965,9 @@ public boolean performIdentifierAction(int id, int flags) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.407 -0500", hash_original_method = "35FE8CE6C993B07CD0CB9DB44F8CBE25", hash_generated_method = "BD93F78D9CC3DD5F116A11776F553E97")
-    
+
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public boolean performItemAction(MenuItem item, int flags) {
         MenuItemImpl itemImpl = (MenuItemImpl) item;
         
