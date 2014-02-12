@@ -1,6 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
+import com.android.internal.view.menu.MenuBuilder;
+
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
@@ -25,12 +27,15 @@ import android.util.TypedValue;
 import android.view.ActionMode;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.ActionMode.SimpleActionMode;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
@@ -716,6 +721,18 @@ public void setSearchDialog(SearchDialog searchDialog) {
         
 @Override
         public ActionMode startActionModeForChild(View child, ActionMode.Callback callback) {
+            if (callback  != null) {
+                //callback.onCreateActionMode(mode, menu)
+                MenuBuilder builder = new MenuBuilder(mSearchDialog.mActivityContext);
+            //technically we should use the menu from external source
+                Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
+                MenuItem menuItem = menu.add(DSUtils.FAKE_INT);
+                ActionMode mode = new ActionMode.SimpleActionMode();
+                callback.onCreateActionMode(mode, menu);
+                callback.onPrepareActionMode(mode, menu);
+                callback.onActionItemClicked(mode, menuItem);  
+                callback.onDestroyActionMode(mode);
+            }
             return null;
         }
         

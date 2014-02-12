@@ -13391,6 +13391,9 @@ public boolean isSuggestionsEnabled() {
     
 public void setCustomSelectionActionModeCallback(ActionMode.Callback actionModeCallback) {
         mCustomSelectionActionModeCallback = actionModeCallback;
+        if (actionModeCallback != null) {
+            
+        }
     }
 
     /**
