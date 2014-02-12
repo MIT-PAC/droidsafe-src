@@ -159,9 +159,8 @@ public class Main {
             String name = IOUtils.toString(inputStream).split("\n")[0].split(" ")[2];
             appStatRowEntries.add(name);
             inputStream.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             logger.warn("Unable to open or close the application's Makefile");
-            System.exit(1);
         }
 
         driverMsg("Removing identity overrides.");

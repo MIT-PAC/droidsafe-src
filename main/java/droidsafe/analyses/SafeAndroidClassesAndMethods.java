@@ -18,6 +18,7 @@ import soot.IntType;
 import soot.LongType;
 import soot.RefType;
 import soot.ShortType;
+import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
 import soot.VoidType;
@@ -576,6 +577,20 @@ public class SafeAndroidClassesAndMethods {
             v = new SafeAndroidClassesAndMethods();
         
         return v;
+    }
+    
+    /**
+     * Are all the methods of this class safe?
+     */
+    public boolean isSafeClass(SootClass clz) {
+        return safeClasses.contains(clz.getName());
+    }
+    
+    /**
+     * Denote that all methods of a class are safe.
+     */
+    public void addSafeClass(SootClass clz) {
+        safeClasses.add(clz.getName());
     }
     
    /** 

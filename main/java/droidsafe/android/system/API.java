@@ -31,6 +31,7 @@ import soot.tagkit.AnnotationTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
+import droidsafe.analyses.SafeAndroidClassesAndMethods;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
@@ -192,6 +193,11 @@ public class API {
         if (Project.v().isLibClass(original)) {
             Project.v().addLibClass(clone);
         }
+        
+        //if the original class had all methods denoted as safe, then all the methods of the clone
+        //should be denoted as safe
+        if (SafeAndroidClassesAndMethods.v().isSafeClass(original))
+            SafeAndroidClassesAndMethods.v().addSafeClass(clone);
     }
 
     public void init() {
