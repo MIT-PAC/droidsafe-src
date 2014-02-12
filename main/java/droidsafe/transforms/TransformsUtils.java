@@ -127,7 +127,7 @@ public class TransformsUtils {
      * add a constructor call to body for the given reftype.  Use the simpliest constructor
      * that can be found.
      */
-    public static void addConstructorCall(Body body, Local local, RefType type) {
+    public static Stmt getConstructorCall(Local local, RefType type) {
         SootClass clazz = type.getSootClass();
 
         //add the call to the constructor with its args
@@ -136,7 +136,7 @@ public class TransformsUtils {
 
         if (constructor == null) {
             logger.warn("Cannot find constructor for {}.  Not going to call constructor.", clazz);
-            return;
+            return null;
         }
 
         if (constructor.getParameterCount() > 0)
@@ -149,8 +149,6 @@ public class TransformsUtils {
         }
 
         //add constructor call to body nested in invoke statement
-        body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args)));
-
-        // add xml injected stuff in here
+         return Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args));
     }
 }

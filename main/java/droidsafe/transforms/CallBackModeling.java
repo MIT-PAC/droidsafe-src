@@ -79,19 +79,23 @@ public class CallBackModeling {
         //go through all user classes and find method that override system methods that are not called
         //create a method for each class that calls inherited methods that are not reachable (and not verified)
         //for each allocation of one of these classes, call the fallback callback method
-
         findDeadCallbackAndCreateFallbackMethod();
 
+        //call the methods that we have created at each allocation
         callFallBackMethods();
         
         //check for components that are not created anywhere
+        findUnallocedComponents();
     }
     
     private void findUnallocedComponents() {
         for (SootClass hasFallback : classToCallbackMethod.keySet()) {
-            if (Hierarchy.isAndroidComponentClass(hasFallback) && !calledFallback.contains(hasFallback)) {
+            if (Hierarchy.isAndroidComponentClass(hasFallback) && !calledFallback.contains(hasFallback) &&
+                    !Project.v().isLibClass(hasFallback)) {
                 //found component that is not allocated, should we call is??
-                logger.warn("Found component not in manifest and not created in code: {}", hasFallback);
+                logger.warn("Found component not in manifest and not created in code: {}. Adding modeling.", 
+                    hasFallback);
+                Harness.v().createComponentsNotInManifest(hasFallback);
             }
         }
     }
@@ -112,7 +116,7 @@ public class CallBackModeling {
             List<SootMethod> toCheck = new LinkedList<SootMethod>();
             toCheck.addAll(clz.getMethods());
             toCheck.addAll(SootUtils.getInheritedMethods(clz));
-
+      
             for (SootMethod method : toCheck) {
                 //don't worry about constructors or static methods
                 if (method.isConstructor() || method.isStatic())
@@ -145,8 +149,9 @@ public class CallBackModeling {
                     }
 
                 } else {
-                    //don't add fallback callback modeling the method is verified and unreachable...
-                    if (!API.v().isDSVerifiedMethod(closetSystemParent))
+                    //don't add fallback callback modeling the method is verified, but if the class is a 
+                    //component, then we cannot rely on the verified tag, so fake anyway
+                    if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
                         shouldFake = true;
                 }
 
@@ -365,7 +370,10 @@ public class CallBackModeling {
         //add the call to the new object
         body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
 
-        TransformsUtils.addConstructorCall(body, argLocal, RefType.v(clz));
+        Stmt consCall = TransformsUtils.getConstructorCall(argLocal, RefType.v(clz));
+        if (consCall != null)
+            body.getUnits().add(consCall);
+        
         return argLocal;
     }
 

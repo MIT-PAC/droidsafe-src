@@ -87,7 +87,11 @@ public class Harness {
     private Map<SootClass, SootField> globalsMap;
     private int localID = 0;
     private int fieldID = 0;
-
+    /** body for the harness main */
+    private Body harnessMainBody;
+    /** for injecting code after the create() method has been called, inject before this statment */
+    private Stmt inLoopStmt;
+    /** static singleton */
     public static Harness v;
 
     /**
@@ -152,6 +156,7 @@ public class Harness {
         harnessClass.addMethod(harnessMain);
 
         StmtBody body = Jimple.v().newBody(harnessMain);
+        harnessMainBody = body;
         harnessMain.setActiveBody(body);
 
         API.v().addSafeMethod(harnessMain);
@@ -171,10 +176,9 @@ public class Harness {
         /** inject intentfilter and application  */
         injectApplicationIntentFilters();
 
-        //addCallsToComponentEntryPoints(body);
-
         //create the loop back to the beginning of the calls
-        body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
+        inLoopStmt = Jimple.v().newGotoStmt(beginCalls);
+        body.getUnits().add(inLoopStmt);
 
         body.getUnits().add(Jimple.v().newReturnVoidStmt());
 
@@ -533,35 +537,15 @@ public class Harness {
         return beginCalls;
     }
 
-    private void addCallsToComponentEntryPoints(StmtBody body) {
-
-
-        for (SootClass clazz : Scene.v().getApplicationClasses()) {
-            if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
-                continue;
-
-            //don't add entry points into the system classes...
-            if (API.v().isSystemClass(clazz))
-                continue;
-
-            //only add entry points for android component classes
-            //other entry points will be handled by searching for allocations 
-            //of classes that inherit from an api class / interface.
-            if (!Hierarchy.isAndroidComponentClass(clazz))
-                continue;
-
-            createComponentsNoInManifest(body, clazz); 
-        }
-    }
-
-
     /** 
-     * Add a call to the method in the main of the harness, and create the receiver class if it does
-     * not exist in a local reference in the main (meaning it is the first time we have seen the class).
+     * After the harness has been initialized with create, use this method to add any component classes
+     * to the harness to be created and modeled.  This is used if we find a component class that is defined,
+     * but not allocated and reachable, and added as part of callback modeling.
      */
-    private void createComponentsNoInManifest(StmtBody body, SootClass clazz) {
+    public void createComponentsNotInManifest(SootClass clazz) {
         //first create the local for the declaring class if we have not created it before
         if (!globalsMap.containsKey(clazz)) {
+            Body body = harnessMainBody;
             RefType type = RefType.v(clazz);
             logger.info("Creating component class not in manifest: {}", clazz);
 
@@ -569,7 +553,7 @@ public class Harness {
             body.getLocals().add(receiver);
 
             //add the call to the new object
-            body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)));
+            body.getUnits().insertBefore(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)), inLoopStmt);
 
             //add the field
             SootField newField = new SootField(FIELD_PREFIX + localID++, type, 
@@ -577,10 +561,12 @@ public class Harness {
             harnessClass.addField(newField);
 
             //create a constructor for this object
-            TransformsUtils.addConstructorCall(body, receiver, type);
+            Stmt consCall = TransformsUtils.getConstructorCall(receiver, type);
+            if (consCall != null)
+                body.getUnits().insertBefore(consCall, inLoopStmt);
 
             //assign back to field
-            body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(newField.makeRef()), receiver));
+            body.getUnits().insertBefore(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(newField.makeRef()), receiver), inLoopStmt);
 
             logger.info("Adding new receiver object to harness main method: {}", clazz.toString());
             globalsMap.put(clazz, newField);
@@ -593,7 +579,7 @@ public class Harness {
                 args.add(receiver);
                 logger.info("Adding constructor for component to harness {}, of parent {}", clazz, Hierarchy.getComponentParent(clazz));
                 Stmt call = Jimple.v().newInvokeStmt(TransformsUtils.makeInvokeExpression(initMethod, null, args));
-                body.getUnits().add(call);
+                body.getUnits().insertBefore(call, inLoopStmt);
             }
 
         }

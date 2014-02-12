@@ -653,7 +653,7 @@ public class SecuritySpecModel extends ModelChangeSupport
       List<CallLocationModel> infoUnits, FileWriter fw) throws IOException {
     if ((infoKinds != null && !infoKinds.isEmpty()) || (infoUnits != null && !infoUnits.isEmpty())) {
       fw.write("  " + desc + "\n");
-      String kinds = (infoKinds == null) ? "[SENSITIVE_NOCATEGORY]" : infoKinds.toString();
+      String kinds = (infoKinds == null) ? "[SENSITIVE_UNCATEGORIZED]" : infoKinds.toString();
       fw.write("    " + kinds + "\n");
       if (infoUnits != null) {
         for (CallLocationModel loc: infoUnits) {

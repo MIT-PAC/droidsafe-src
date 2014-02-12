@@ -223,7 +223,7 @@ public class API {
 
             classificationCat = new HashMap<SootMethod, String>();
             
-            SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_NOCATEGORY");
+            SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED");
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
