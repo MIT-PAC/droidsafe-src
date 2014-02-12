@@ -436,7 +436,7 @@ protected void onCancelled() {
      *         {@link AsyncTask.Status#RUNNING} or {@link AsyncTask.Status#FINISHED}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.279 -0500", hash_original_method = "C6B4FDC12FE10CD7E1E7DDF258371598", hash_generated_method = "C9C181AC8660B884EFC53DDD4FDD03CB")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final AsyncTask<Params, Progress, Result> execute(Params... params) {
         return executeOnExecutor(sDefaultExecutor, params);
     }

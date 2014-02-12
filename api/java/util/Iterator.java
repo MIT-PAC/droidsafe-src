@@ -8,14 +8,14 @@ import droidsafe.annotations.*;
 public interface Iterator<E> {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean hasNext();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public E next();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public void remove();
 }

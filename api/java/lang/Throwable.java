@@ -211,7 +211,6 @@ public String getMessage() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.600 -0500", hash_original_method = "A2EE7B7852887DFBE3A27B61B4F72974", hash_generated_method = "9A2C4BFFE86AF7C1B43429C9DF39A332")
     
 public String getLocalizedMessage() {

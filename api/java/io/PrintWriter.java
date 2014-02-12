@@ -228,7 +228,7 @@ protected void clearError() {
      * If an I/O error occurs, this writer's error flag is set to {@code true}.
      */
     @DSComment("PrintWriter class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.532 -0500", hash_original_method = "914ABB48E88E0FB5E2AF825917F549B2", hash_generated_method = "0DD80271147924135BA0F03FF3D404CE")
     
 @Override
