@@ -55,6 +55,7 @@ public class CallBackModeling {
     private Map<SootClass, SootMethod> classToCallbackMethod;
     private Map<SootMethod, Local> callbackMethodToThisLocal;
     private Set<Stmt> allocAlreadyConsidered;
+    private Set<SootClass> calledFallback;
 
     private static int LOCAL_ID = 0;
 
@@ -63,6 +64,7 @@ public class CallBackModeling {
         classToCallbackMethod = new HashMap<SootClass, SootMethod>();
         callbackMethodToThisLocal = new HashMap<SootMethod, Local>();
         allocAlreadyConsidered = new HashSet<Stmt>();
+        calledFallback = new HashSet<SootClass>();
     }
 
 
@@ -81,6 +83,17 @@ public class CallBackModeling {
         findDeadCallbackAndCreateFallbackMethod();
 
         callFallBackMethods();
+        
+        //check for components that are not created anywhere
+    }
+    
+    private void findUnallocedComponents() {
+        for (SootClass hasFallback : classToCallbackMethod.keySet()) {
+            if (Hierarchy.isAndroidComponentClass(hasFallback) && !calledFallback.contains(hasFallback)) {
+                //found component that is not allocated, should we call is??
+                logger.warn("Found component not in manifest and not created in code: {}", hasFallback);
+            }
+        }
     }
 
     private void findDeadCallbackAndCreateFallbackMethod() {
@@ -238,6 +251,7 @@ public class CallBackModeling {
 
                                     units.insertAfter(fallBackCall, consCall);
                                     allocAlreadyConsidered.add(assign);
+                                    calledFallback.add(classWithFallBackMethod);
                                 } else {
                                     logger.warn("Error finding constructor call for class with fall back modeling: {} {}", clz, assign);
                                 }

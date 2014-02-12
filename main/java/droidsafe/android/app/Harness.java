@@ -171,7 +171,7 @@ public class Harness {
         /** inject intentfilter and application  */
         injectApplicationIntentFilters();
 
-        addCallsToComponentEntryPoints(body);
+        //addCallsToComponentEntryPoints(body);
 
         //create the loop back to the beginning of the calls
         body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
@@ -208,12 +208,12 @@ public class Harness {
 
         RefType intentFilterType = RefType.v("android.content.IntentFilter");
 
-        String methodSig = String.format("<%s: void __ds__registerIntentFilter(android.content.IntentFilter)>", 
+        String methodSig = String.format("<%s: android.content.Intent __ds__registerIntentFilter(android.content.IntentFilter)>", 
                 "android.content.Context");
 
         // if broadcast receiver, we use a different signature
         if (appLocal != null) {
-            methodSig = String.format("<%s: void __ds__registerIntentFilter(android.content.IntentFilter)>", 
+            methodSig = String.format("<%s: android.content.Intent[] __ds__registerIntentFilter(android.content.IntentFilter)>", 
                     "android.content.BroadcastReceiver");
         }
 
@@ -333,6 +333,12 @@ public class Harness {
         logger.info("Type {} ", compType);
 
         String initSig = String.format("<%s: void <init>()>", compClass.getName());
+        
+        if (!compType.equals(Hierarchy.getComponentParent(compClass).getName())) {
+            logger.error("Malformed manifest: component {} defined in manifest as {} have defined parent {}", 
+                compClass, compType, Hierarchy.getComponentParent(compClass).getName());
+            droidsafe.main.Main.exit(1);
+        }
 
         //SootMethod compInit = Scene.v().getMethod(initSig);
         SootMethod compInit = null;
@@ -342,7 +348,7 @@ public class Harness {
             compInit = Scene.v().getMethod(initSig);
         }
         else {
-            logger.info("Class {} does not have <init> function");
+            logger.info("Class {} does not have <init> function", compClass);
         }
 
         if (compInit != null) {
@@ -544,7 +550,7 @@ public class Harness {
             if (!Hierarchy.isAndroidComponentClass(clazz))
                 continue;
 
-            addCreateComponentAndAddRuntimeCall(body, clazz); 
+            createComponentsNoInManifest(body, clazz); 
         }
     }
 
@@ -553,12 +559,11 @@ public class Harness {
      * Add a call to the method in the main of the harness, and create the receiver class if it does
      * not exist in a local reference in the main (meaning it is the first time we have seen the class).
      */
-    private void addCreateComponentAndAddRuntimeCall(StmtBody body, SootClass clazz) {
-
+    private void createComponentsNoInManifest(StmtBody body, SootClass clazz) {
         //first create the local for the declaring class if we have not created it before
         if (!globalsMap.containsKey(clazz)) {
             RefType type = RefType.v(clazz);
-
+            logger.info("Creating component class not in manifest: {}", clazz);
 
             Local receiver = Jimple.v().newLocal("l" + localID++, type);
             body.getLocals().add(receiver);
@@ -577,7 +582,7 @@ public class Harness {
             //assign back to field
             body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(newField.makeRef()), receiver));
 
-            logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
+            logger.info("Adding new receiver object to harness main method: {}", clazz.toString());
             globalsMap.put(clazz, newField);
 
             //if a component, add a call to the launch (init) method in the runtime modeling
