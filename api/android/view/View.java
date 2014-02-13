@@ -27,6 +27,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.Shader;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.IBinder;
@@ -43,14 +44,17 @@ import android.util.SparseArray;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityEventSource;
+import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Animation;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import android.widget.AdapterView;
 import android.widget.ScrollBarDrawable;
 
 import com.android.internal.R;
 import com.android.internal.util.Predicate;
+import com.android.internal.view.InputConnectionWrapper;
 
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback, AccessibilityEventSource {
     
@@ -1358,6 +1362,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         droidsafeCallbackHook();
         droidsafeOverridingMethodHook();
         
+        //initialize listenerinfo
+        getListenerInfo();
+        
 		/*
 		mContext = context;
 		mResources = context != null ? context.getResources() : null;
@@ -1435,31 +1442,38 @@ public View(Context context, AttributeSet attrs) {
 
         onWindowFocusChanged(getTaintBoolean());
         onDragEvent(DragEvent.obtain());
-        onFilterTouchEventForSecurity(MotionEvent.droidsafeObtainEvent());
+        onFilterTouchEventForSecurity(new MotionEvent());
 
         onHoverChanged(getTaintBoolean());
-        onHoverEvent(MotionEvent.droidsafeObtainEvent());
-        onTouchEvent(MotionEvent.droidsafeObtainEvent());
-        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
-        onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+        onHoverEvent(new MotionEvent());
+        onTouchEvent(new MotionEvent());
+        onTrackballEvent(new MotionEvent());
+        onGenericMotionEvent(new MotionEvent());
 
-        onInitializeAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
-        onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo.obtain());
+        onInitializeAccessibilityEvent(new AccessibilityEvent(DSUtils.FAKE_INT));
+        onInitializeAccessibilityNodeInfo(new AccessibilityNodeInfo(DSOnlyType.NOT_USED));
 
-        onKeyDown(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyUp(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyPreIme(getTaintInt(), KeyEvent.droidsafeGetEvent());
-        onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyDown(getTaintInt(), new KeyEvent()); 
+        onKeyUp(getTaintInt(), new KeyEvent());
+        onKeyLongPress(getTaintInt(), new KeyEvent());
+        onKeyShortcut(getTaintInt(), new KeyEvent());
+        onKeyPreIme(getTaintInt(), new KeyEvent());
+        onKeyMultiple(getTaintInt(), getTaintInt(), new KeyEvent());
 
-        onPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
+        onPopulateAccessibilityEvent(new AccessibilityEvent(DSUtils.FAKE_INT));
         onStartTemporaryDetach();
-        
         onMeasure(getTaintInt(),  getTaintInt());
 
         onAnimationStart();
         onAnimationEnd();
+        
+        onConfigurationChanged(new Configuration());
+        
+        Parcelable state = onSaveInstanceState();
+        if (state != null)
+            onRestoreInstanceState(state);
+        
+        onVisibilityChanged(this, DSUtils.FAKE_INT);
         
     }
     @DSVerified
@@ -1624,29 +1638,31 @@ public View(Context context, AttributeSet attrs) {
 	}
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.751 -0500", hash_original_method = "3F6307E0FF2B24CF42D639D72702E7A3", hash_generated_method = "3F6307E0FF2B24CF42D639D72702E7A3")
-    
-ListenerInfo getListenerInfo() {
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    ListenerInfo getListenerInfo() {
         if (mListenerInfo != null) {
             return mListenerInfo;
         }
         mListenerInfo = new ListenerInfo();
         return mListenerInfo;
     }
-    
+
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnFocusChangeListener(OnFocusChangeListener l){
 		// Original method
-		/*
-		{
         getListenerInfo().mOnFocusChangeListener = l;
-    }
-		*/
+        if (l != null) {
+            l.onFocusChange(this, DSUtils.UNKNOWN_BOOLEAN);
+        }
 		//Return nothing
 	}
     
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void addOnLayoutChangeListener(OnLayoutChangeListener listener){
 		// Original method
-		/*
-		{
         ListenerInfo li = getListenerInfo();
         if (li.mOnLayoutChangeListeners == null) {
             li.mOnLayoutChangeListeners = new ArrayList<OnLayoutChangeListener>();
@@ -1654,11 +1670,10 @@ ListenerInfo getListenerInfo() {
         if (!li.mOnLayoutChangeListeners.contains(listener)) {
             li.mOnLayoutChangeListeners.add(listener);
         }
-    }
-		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void removeOnLayoutChangeListener(OnLayoutChangeListener listener){
 		// Original method
 		/*
@@ -1672,22 +1687,23 @@ ListenerInfo getListenerInfo() {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
     public void addOnAttachStateChangeListener(OnAttachStateChangeListener listener){
 		// Original method
-		/*
-		{
         ListenerInfo li = getListenerInfo();
         if (li.mOnAttachStateChangeListeners == null) {
             li.mOnAttachStateChangeListeners
                     = new CopyOnWriteArrayList<OnAttachStateChangeListener>();
         }
         li.mOnAttachStateChangeListeners.add(listener);
-    }
-		*/
-		//Return nothing
+        if (listener != null) {
+            listener.onViewAttachedToWindow(this);
+            listener.onViewDetachedFromWindow(this);
+        }
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void removeOnAttachStateChangeListener(OnAttachStateChangeListener listener){
 		// Original method
 		/*
@@ -1701,45 +1717,41 @@ ListenerInfo getListenerInfo() {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS) 
     public OnFocusChangeListener getOnFocusChangeListener(){
 		// Original method
-		/*
-		{
         ListenerInfo li = mListenerInfo;
         return li != null ? li.mOnFocusChangeListener : null;
-    }
-		*/
-		return null;
 	}
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 	public void setOnClickListener(OnClickListener l){
 		l.onClick(this);
+        getListenerInfo().mOnClickListener = l;
 		// Original method
 		/*
 		{
         if (!isClickable()) {
             setClickable(true);
         }
-        getListenerInfo().mOnClickListener = l;
     }
 		*/
 		//Return nothing
 	}
 	
+    @DSVerified
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean hasOnClickListeners(){
 		// Original method
-		/*
-		{
         ListenerInfo li = mListenerInfo;
         return (li != null && li.mOnClickListener != null);
-    }
-		*/
-		return false;
 	}
-	
+    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)	
 	public void setOnLongClickListener(OnLongClickListener l){
 		// Original method
 		/*
@@ -1747,13 +1759,15 @@ ListenerInfo getListenerInfo() {
         if (!isLongClickable()) {
             setLongClickable(true);
         }
-        getListenerInfo().mOnLongClickListener = l;
     }
 		*/
 		//Return nothing
+        getListenerInfo().mOnLongClickListener = l;
 		l.onLongClick(this);
 	}
-    
+	 
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
     public void setOnCreateContextMenuListener(OnCreateContextMenuListener l){
 		// Original method
 		/*
@@ -1765,14 +1779,20 @@ ListenerInfo getListenerInfo() {
     }
 		*/
 		//Return nothing
+        getListenerInfo().mOnCreateContextMenuListener = l;
+        if (l != null) {
+            l.onCreateContextMenu(new ContextMenu.DroidSafeContextMenu(), 
+                    this, new AdapterView.AdapterContextMenuInfo(this, 
+                            DSUtils.FAKE_INT, DSUtils.FAKE_INT));
+        }
+    
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean performClick(){
 		// Original method
-		/*
-		{
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
         ListenerInfo li = mListenerInfo;
         if (li != null && li.mOnClickListener != null) {
@@ -1781,9 +1801,6 @@ ListenerInfo getListenerInfo() {
             return true;
         }
         return false;
-    }
-		*/
-		return false;
 	}
     
     @DSComment("Normal GUI")
@@ -1803,12 +1820,11 @@ ListenerInfo getListenerInfo() {
 		return false;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean performLongClick(){
 		// Original method
-		/*
-		{
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);
         boolean handled = false;
         ListenerInfo li = mListenerInfo;
@@ -1822,9 +1838,6 @@ ListenerInfo getListenerInfo() {
             performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
         }
         return handled;
-    }
-		*/
-		return false;
 	}
     
     protected boolean performButtonActionOnTouchDown(MotionEvent event){
@@ -1873,42 +1886,50 @@ ListenerInfo getListenerInfo() {
 		*/
         if (callback != null) {
             ActionMode am = new ActionMode.SimpleActionMode();
-            //callback.onActionItemClicked(am,  new MenuIt)
+            return am;
         }
         
 		return null;
 	}
-    
+
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnKeyListener(OnKeyListener l){
 		// Original method
 		/*
-		{
+		*/
+		//Return nothing
         getListenerInfo().mOnKeyListener = l;
-    }
-		*/
-		//Return nothing
+        if (l != null) {
+            l.onKey(this,  DSUtils.FAKE_INT, new KeyEvent());
+        }
 	}
-    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnTouchListener(OnTouchListener l){
-		// Original method
-		/*
-		{
+        if (l != null) {
+            l.onTouch(this, new MotionEvent());
+        }
         getListenerInfo().mOnTouchListener = l;
-    }
-		*/
 		//Return nothing
 	}
-    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnGenericMotionListener(OnGenericMotionListener l){
 		// Original method
 		/*
 		{
-        getListenerInfo().mOnGenericMotionListener = l;
     }
 		*/
 		//Return nothing
+        if (l != null) {
+            l.onGenericMotion(this, new MotionEvent());
+        }
+        getListenerInfo().mOnGenericMotionListener = l;
 	}
     
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnHoverListener(OnHoverListener l){
 		// Original method
 		/*
@@ -1917,8 +1938,12 @@ ListenerInfo getListenerInfo() {
     }
 		*/
 		//Return nothing
+        if (l != null) {
+            l.onHover(this, new MotionEvent());
+        }
 	}
-    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnDragListener(OnDragListener l){
 		// Original method
 		/*
@@ -1991,13 +2016,8 @@ ListenerInfo getListenerInfo() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     public void clearFocus(){
-		// Original method
-		/*
-		{
-        if (DBG) {
-            System.out.println(this + " clearFocus()");
-        }
         if ((mPrivateFlags & FOCUSED) != 0) {
             mPrivateFlags &= ~FOCUSED;
             if (mParent != null) {
@@ -2006,27 +2026,22 @@ ListenerInfo getListenerInfo() {
             onFocusChanged(false, 0, null);
             refreshDrawableState();
         }
-    }
-		*/
-		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     void clearFocusForRemoval(){
 		// Original method
-		/*
-		{
         if ((mPrivateFlags & FOCUSED) != 0) {
             mPrivateFlags &= ~FOCUSED;
             onFocusChanged(false, 0, null);
             refreshDrawableState();
         }
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     void unFocus(){
@@ -2036,14 +2051,12 @@ ListenerInfo getListenerInfo() {
         if (DBG) {
             System.out.println(this + " unFocus()");
         }
+		*/
         if ((mPrivateFlags & FOCUSED) != 0) {
             mPrivateFlags &= ~FOCUSED;
             onFocusChanged(false, 0, null);
             refreshDrawableState();
         }
-    }
-		*/
-		//Return nothing
 	}
     
     @DSComment("Normal GUI")
@@ -2076,61 +2089,50 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
-    @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void sendAccessibilityEvent(int eventType){
 		// Original method
-		/*
-		{
         if (mAccessibilityDelegate != null) {
             mAccessibilityDelegate.sendAccessibilityEvent(this, eventType);
         } else {
             sendAccessibilityEventInternal(eventType);
         }
-    }
-		*/
 		//Return nothing
 	}
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSVerified
     void sendAccessibilityEventInternal(int eventType){
 		// Original method
-		/*
-		{
         if (AccessibilityManager.getInstance(mContext).isEnabled()) {
             sendAccessibilityEventUnchecked(AccessibilityEvent.obtain(eventType));
         }
-    }
-		*/
 		//Return nothing
 	}
     
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSVerified
     public void sendAccessibilityEventUnchecked(AccessibilityEvent event){
 		// Original method
-		/*
-		{
         if (mAccessibilityDelegate != null) {
            mAccessibilityDelegate.sendAccessibilityEventUnchecked(this, event);
         } else {
             sendAccessibilityEventUncheckedInternal(event);
         }
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     void sendAccessibilityEventUncheckedInternal(AccessibilityEvent event){
 		// Original method
-		/*
-		{
         if (!isShown()) {
             return;
         }
@@ -2139,53 +2141,40 @@ ListenerInfo getListenerInfo() {
             dispatchPopulateAccessibilityEvent(event);
         }
         getParent().requestSendAccessibilityEvent(this, event);
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		// Original method
-		/*
-		{
         if (mAccessibilityDelegate != null) {
             return mAccessibilityDelegate.dispatchPopulateAccessibilityEvent(this, event);
         } else {
             return dispatchPopulateAccessibilityEventInternal(event);
         }
-    }
-		*/
-		return false;
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
-		/*
-		{
         onPopulateAccessibilityEvent(event);
         return false;
-    }
-		*/
-		return false;
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onPopulateAccessibilityEvent(AccessibilityEvent event){
 		// Original method
-		/*
-		{
         if (mAccessibilityDelegate != null) {
             mAccessibilityDelegate.onPopulateAccessibilityEvent(this, event);
         } else {
             onPopulateAccessibilityEventInternal(event);
         }
-    }
-		*/
 		//Return nothing
 	}
 
@@ -2202,19 +2191,16 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
 
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onInitializeAccessibilityEvent(AccessibilityEvent event){
 		// Original method
-		/*
-		{
         if (mAccessibilityDelegate != null) {
             mAccessibilityDelegate.onInitializeAccessibilityEvent(this, event);
         } else {
             onInitializeAccessibilityEventInternal(event);
         }
-    }
-		*/
 		//Return nothing
 	}
     
@@ -2257,19 +2243,16 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
 		return null;
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info){
 		// Original method
-		/*
-		{
         if (mAccessibilityDelegate != null) {
             mAccessibilityDelegate.onInitializeAccessibilityNodeInfo(this, info);
         } else {
             onInitializeAccessibilityNodeInfoInternal(info);
         }
-    }
-		*/
 		//Return nothing
 	}
     
@@ -3126,20 +3109,16 @@ protected void dispatchSetPressed(boolean pressed) {
 		return false;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public View focusSearch(int direction){
 		// Original method
-		/*
-		{
         if (mParent != null) {
             return mParent.focusSearch(this, direction);
         } else {
             return null;
         }
-    }
-		*/
-		return null;
 	}
 
     /**
@@ -3311,12 +3290,11 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		return false;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean requestFocus(int direction, Rect previouslyFocusedRect){
 		// Original method
-		/*
-		{
         if ((mViewFlags & FOCUSABLE_MASK) != FOCUSABLE ||
                 (mViewFlags & VISIBILITY_MASK) != VISIBLE) {
             return false;
@@ -3330,31 +3308,23 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
         }
         handleFocusGainInternal(direction, previouslyFocusedRect);
         return true;
-    }
-		*/
-		return false;
 	}
     
+    @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     ViewRootImpl getViewRootImpl(){
 		// Original method
-		/*
-		{
         View root = getRootView();
         return root != null ? (ViewRootImpl)root.getParent() : null;
-    }
-		*/
-		return null;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public final boolean requestFocusFromTouch(){
 		// Original method
-		/*
-		{
         if (isInTouchMode()) {
             ViewRootImpl viewRoot = getViewRootImpl();
             if (viewRoot != null) {
@@ -3362,9 +3332,6 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
             }
         }
         return requestFocus(View.FOCUS_DOWN);
-    }
-		*/
-		return false;
 	}
     
     @DSComment("Private Method")
@@ -3388,13 +3355,12 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		return false;
 	}
     
+    @DSVerified
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void dispatchStartTemporaryDetach(){
 		// Original method
-		/*
-		{
         onStartTemporaryDetach();
-    }
-		*/
 		//Return nothing
 	}
     
@@ -3493,6 +3459,7 @@ public void onFinishTemporaryDetach() {
 		return false;
 	}
     
+    @DSVerified
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchTouchEvent(MotionEvent event){
@@ -3518,6 +3485,14 @@ public void onFinishTemporaryDetach() {
         return false;
     }
 		*/
+        ListenerInfo li = mListenerInfo;
+        if (li != null && li.mOnTouchListener != null) { 
+            li.mOnTouchListener.onTouch(this, event);
+            return true;
+        }
+        if (onTouchEvent(event)) {
+            return true;
+        }
 		return false;
 	}
     
@@ -3707,17 +3682,17 @@ protected boolean dispatchGenericFocusedEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void dispatchVisibilityChanged(View changedView, int visibility){
 		// Original method
 		/*
-		{
-        onVisibilityChanged(changedView, visibility);
-    }
 		*/
 		//Return nothing
+        onVisibilityChanged(changedView, visibility);
 	}
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onVisibilityChanged(View changedView, int visibility){
@@ -3825,15 +3800,12 @@ protected void onDisplayHint(int hint) {
 		//Return nothing
 	}
     
-    @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSVerified
+    @DSComment("calling callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void dispatchConfigurationChanged(Configuration newConfig){
 		// Original method
-		/*
-		{
         onConfigurationChanged(newConfig);
-    }
-		*/
 		//Return nothing
 	}
 
@@ -3850,7 +3822,7 @@ protected void onDisplayHint(int hint) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.125 -0500", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "5104AFB7AFD1C999549D7EB994254EF0")
-    
+    @DSVerified
 protected void onConfigurationChanged(Configuration newConfig) {
     }
     
@@ -4000,12 +3972,11 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         return false;
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		// Original method
-		/*
-		{
         boolean result = false;
         switch (keyCode) {
             case KeyEvent.KEYCODE_DPAD_CENTER:
@@ -4024,9 +3995,6 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
             }
         }
         return result;
-    }
-		*/
-		return false;
 	}
 
     /**
@@ -4106,8 +4074,9 @@ public boolean onCheckIsTextEditor() {
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.156 -0500", hash_original_method = "0601401EB37355AF70FCC37B4ABEB0DF", hash_generated_method = "AF45BEE97068CF271D86CB07AF9A90A7")
-    
-public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
+    public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
         return null;
     }
 
@@ -4326,7 +4295,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.183 -0500", hash_original_method = "E702D19B1B952DDC0E28AFCA7C53007F", hash_generated_method = "D7267BF982AB852A7028B2D26CF0BC14")
-    
+    @DSVerified
 public void onHoverChanged(boolean hovered) {
     }
     
@@ -6164,12 +6133,7 @@ public DragShadowBuilder() {
         
         public void run(){
 			// Original method
-			/*
-			{
             performClick();
-        }
-			*/
-			//Return nothing
 		}
         
     }
@@ -6649,12 +6613,8 @@ AttachInfo(IWindowSession session, IWindow window,
         
         public void run(){
 			// Original method
-			/*
-			{
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SCROLLED);
             mIsPending = false;
-        }
-			*/
 			//Return nothing
 		}
         
@@ -6662,6 +6622,7 @@ AttachInfo(IWindowSession session, IWindow window,
     
     public static class AccessibilityDelegate {
         
+        @DSVerified
         @DSComment("not sensitive/not an action")
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.663 -0400", hash_original_method = "B81C1E38B66B1195ED1D00E194D402D3", hash_generated_method = "B81C1E38B66B1195ED1D00E194D402D3")
@@ -6670,6 +6631,7 @@ AttachInfo(IWindowSession session, IWindow window,
             //Synthesized constructor
         }
         
+        @DSVerified
         @DSComment("IO movement methodName")
         @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -6683,78 +6645,55 @@ AttachInfo(IWindowSession session, IWindow window,
 			//Return nothing
 		}
         
+        @DSVerified
         @DSComment("IO movement methodName")
         @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event){
 			// Original method
-			/*
-			{
             host.sendAccessibilityEventUncheckedInternal(event);
-        }
-			*/
 			//Return nothing
 		}
         
-        @DSComment("potential callback called inside method")
-        @DSSpec(DSCat.TO_MODEL)
+        @DSVerified("Callback modeled")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event){
-			// Original method
-			/*
-			{
             return host.dispatchPopulateAccessibilityEventInternal(event);
-        }
-			*/
-			return false;
 		}
         
+        @DSVerified
         @DSComment("normal android callback")
         @DSSafe(DSCat.ANDROID_CALLBACK)
         public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event){
-			// Original method
-			/*
-			{
             host.onPopulateAccessibilityEventInternal(event);
-        }
-			*/
 			//Return nothing
 		}
         
+        @DSVerified
         @DSComment("normal android callback")
         @DSSafe(DSCat.ANDROID_CALLBACK)
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event){
 			// Original method
-			/*
-			{
             host.onInitializeAccessibilityEventInternal(event);
-        }
-			*/
 			//Return nothing
 		}
         
         @DSComment("normal android callback")
         @DSSafe(DSCat.ANDROID_CALLBACK)
+        @DSVerified
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info){
 			// Original method
-			/*
-			{
             host.onInitializeAccessibilityNodeInfoInternal(info);
-        }
-			*/
 			//Return nothing
 		}
         
+        @DSVerified
         @DSComment("normal android callback")
         @DSSafe(DSCat.ANDROID_CALLBACK)
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                 AccessibilityEvent event){
 			// Original method
-			/*
-			{
             return host.onRequestSendAccessibilityEventInternal(child, event);
-        }
-			*/
-			return false;
 		}
         
     }
@@ -6769,13 +6708,14 @@ AttachInfo(IWindowSession session, IWindow window,
     
     public interface OnKeyListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onKey(View v, int keyCode, KeyEvent event);
     }
     
     public interface OnTouchListener {
-        
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onTouch(View v, MotionEvent event);
@@ -6797,6 +6737,7 @@ AttachInfo(IWindowSession session, IWindow window,
     
     public interface OnLongClickListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onLongClick(View v);
@@ -6811,13 +6752,14 @@ AttachInfo(IWindowSession session, IWindow window,
     
     public interface OnFocusChangeListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onFocusChange(View v, boolean hasFocus);
     }
     
     public interface OnClickListener {
-        
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onClick(View v);
@@ -7629,11 +7571,11 @@ protected void onDraw(Canvas canvas) {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container){
 		// Original method
-		/*
-		{
         if (mID != NO_ID && (mViewFlags & SAVE_DISABLED_MASK) == 0) {
             mPrivateFlags &= ~SAVE_STATE_CALLED;
             Parcelable state = onSaveInstanceState();
@@ -7645,11 +7587,9 @@ protected void onDraw(Canvas canvas) {
                 container.put(mID, state);
             }
         }
-    }
-		*/
-		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Data serialization/deserialization")
     @DSSpec(DSCat.SERIALIZATION)
     protected Parcelable onSaveInstanceState(){
@@ -7660,7 +7600,9 @@ protected void onDraw(Canvas canvas) {
         return BaseSavedState.EMPTY_STATE;
     }
 		*/
-		return null;
+        //return BaseSavedState.CREATOR.createFromParcel(new Parcel)
+		//return null;
+        return BaseSavedState.EMPTY_STATE;
 	}
     
     @DSComment("Normal GUI")
@@ -7674,27 +7616,20 @@ protected void onDraw(Canvas canvas) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container){
 		// Original method
-		/*
-		{
         if (mID != NO_ID) {
             Parcelable state = container.get(mID);
             if (state != null) {
-                mPrivateFlags &= ~SAVE_STATE_CALLED;
                 onRestoreInstanceState(state);
-                if ((mPrivateFlags & SAVE_STATE_CALLED) == 0) {
-                    throw new IllegalStateException(
-                            "Derived class did not call super.onRestoreInstanceState()");
-                }
             }
         }
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Data serialization/deserialization")
     @DSSpec(DSCat.SERIALIZATION)
     protected void onRestoreInstanceState(Parcelable state){
@@ -8190,6 +8125,7 @@ protected int getBottomPaddingOffset() {
 		return false;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -8292,6 +8228,7 @@ public Resources getResources() {
         return mResources;
     }
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void invalidateDrawable(Drawable drawable){
@@ -8370,6 +8307,7 @@ public Resources getResources() {
 		return 0;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     protected boolean verifyDrawable(Drawable who){
@@ -8459,21 +8397,18 @@ public final int[] getDrawableState() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setBackgroundColor(int color){
 		// Original method
-		/*
-		{
         if (mBGDrawable instanceof ColorDrawable) {
             ((ColorDrawable) mBGDrawable).setColor(color);
         } else {
             setBackgroundDrawable(new ColorDrawable(color));
         }
-    }
-		*/
 		//Return nothing
 	}
     

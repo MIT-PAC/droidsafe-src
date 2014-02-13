@@ -78,7 +78,8 @@ public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateB
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.557 -0500", hash_original_method = "6ACE51EA58811389F963855EDE91500A", hash_generated_method = "6709091DC317E6D55671708F35B14F8A")
-    
+    @DSVerified("Calling callbacks/dispatch function")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 public static boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
         return ((AccessibilityDelegate) delegate).dispatchPopulateAccessibilityEvent(host, event);
@@ -92,14 +93,16 @@ public static void onInitializeAccessibilityEvent(Object delegate, View host,
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.564 -0500", hash_original_method = "1F8FACA0119C91F655C96295793323CF", hash_generated_method = "D3239850F59C5F767E60AC67AFF1AC10")
-    
+    @DSVerified("Calling callbacks/dispatching function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public static void onInitializeAccessibilityNodeInfo(Object delegate, View host, Object info) {
         ((AccessibilityDelegate) delegate).onInitializeAccessibilityNodeInfo(host,
                 (AccessibilityNodeInfo) info);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.568 -0500", hash_original_method = "0843CB9D4B6841EC057F5B77887CA203", hash_generated_method = "9DF209BA8F6B6843B287C7F17B10F14D")
-    
+    @DSVerified("Calling callbacks/dispatch function")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public static void onPopulateAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
         ((AccessibilityDelegate) delegate).onPopulateAccessibilityEvent(host, event);
