@@ -1,6 +1,7 @@
 package droidsafe.transforms.objsensclone;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
@@ -79,7 +80,7 @@ public class ObjectSensitivityCloner {
     /** Do not clone classes that will add more than this percentage to the total number of classes */
     private static final double CLONING_THRESHOLD = .15;
 
-    private static final boolean CLONE_STRINGS = false;
+    private static final boolean CLONE_STRINGS = true;
 
     /** list of classes resolved by VA, some of which should be cloned */
     public static final Set<SootClass> VA_RESOLVED_CLASSES = 
@@ -104,6 +105,8 @@ public class ObjectSensitivityCloner {
 
     private Set<SootMethod> clonedMethodsAdded;
 
+    private Set<SootMethod> currentReachableMethods;
+
     public boolean hasRun = false;
 
     public static ObjectSensitivityCloner v() {
@@ -124,9 +127,11 @@ public class ObjectSensitivityCloner {
         clonedMethodsAdded = new HashSet<SootMethod>();
         methodToClonesMap = new HashMap<SootMethod,Set<SootMethod>>();
         allocStmts = new HashMap<SootMethod, List<AssignStmt>>();
+        currentReachableMethods = new HashSet<SootMethod>();
     }
 
     private void addToAllocList(Collection<SootMethod> methods) {
+        currentReachableMethods.addAll(methods);
         for (SootMethod method : methods) {
             if (method.isAbstract() || !method.isConcrete())
                 continue;
@@ -214,7 +219,7 @@ public class ObjectSensitivityCloner {
      * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
      * new expression.
      */
-    public void runForVA() {
+    public void run() {
         hasRun = true;
         numClonedClasses = 0;
         AllocationGraph aGraph = new AllocationGraph();
@@ -239,7 +244,7 @@ public class ObjectSensitivityCloner {
                 //don't clone strings on first run
 
                 fw.write("Considering " + currentClass + "\n");
-                
+
                 if (ClassCloner.isClonedClass(currentClass)) {
                     fw.write("Not cloning because already a clone (probably made by fallback modeling)\n");
                     continue;
@@ -279,7 +284,8 @@ public class ObjectSensitivityCloner {
 
                     //remove methods from the original class as being reachable, and thus not going to force a
                     //clone
-                    for (SootMethod method : currentClass.getMethods()) { 
+                    for (SootMethod method : currentClass.getMethods()) {
+                        currentReachableMethods.remove(method);
                         if (!method.isStatic()) {
                             allocStmts.remove(method);
                         }
@@ -309,29 +315,89 @@ public class ObjectSensitivityCloner {
             logger.error("Error writing stats file.");
         } 
 
+        //try to clone all static methods based on static invokes
+        cloneStaticMethods();
+
         Scene.v().releaseActiveHierarchy();
         Scene.v().releaseFastHierarchy();
 
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
-    /*
-    public void runForInfoFlow() {
-        numClonedClasses = 0;
+    /** 
+     * Clone reachable static method based on the number of static invokes we find in reachable methods.
+     */
+    private void cloneStaticMethods() {
+        HashMap<SootMethod, List<StaticInvokeExpr>> map = new HashMap<SootMethod, List<StaticInvokeExpr>>();
 
-        initMasterList();
+        for (SootMethod method : currentReachableMethods) {
+            if (method.isAbstract() || !method.isConcrete())
+                continue;
 
-        for (String stringClass : STRING_CLASSES) {
-            SootClass currentClass = Scene.v().getSootClass(stringClass);
-            cloneAllAllocsOfClass(currentClass);
+            Body body = method.getActiveBody();
+            StmtBody stmtBody = (StmtBody)body;
+            Chain units = stmtBody.getUnits();
+            Iterator stmtIt = units.snapshotIterator();
+
+            while (stmtIt.hasNext()) {
+                Stmt stmt = (Stmt)stmtIt.next();
+                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
+                    SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
+                    if (!PTABridge.v().isReachableMethod(target))
+                        continue;
+                    if (!map.containsKey(target)) {
+                        map.put(target, new LinkedList<StaticInvokeExpr>());
+                    }  
+                    map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
+                }
+            }
         }
 
-        Scene.v().releaseActiveHierarchy();
-        Scene.v().releaseFastHierarchy();
+        int clonesAdded = 0;
+        for (SootMethod method : map.keySet()) {
+            if (map.get(method).size() <= 1) 
+                continue;
 
-        System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
+            //otherwise clone all instances but one of the method, changing static invokes
+            int i = 0;
+            for (StaticInvokeExpr si : map.get(method)) {
+                i++;
+
+                //skip first
+                if (i == 1)
+                    continue;
+                
+                //clone and install method
+                //create new method
+                String cloneName = method.getName() + "__" + i;
+                
+                SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
+                    method.getReturnType(), method.getModifiers(), method.getExceptions());
+
+                //System.out.printf("\tAdding method %s.\n", method);
+                //register method
+                method.getDeclaringClass().addMethod(newMeth);
+                newMeth.setDeclaringClass(method.getDeclaringClass());
+                
+                //copy over any api classifications
+                API.v().cloneMethodClassifications(method, newMeth);
+
+                //clone body
+                Body newBody = (Body)method.retrieveActiveBody().clone();
+                newMeth.setActiveBody(newBody);
+
+                JSAStrings.v().updateJSAResults(method.retrieveActiveBody(), newBody);
+                
+                //update static invoke
+                si.setMethodRef(newMeth.makeRef());
+                
+                logger.info("Cloning static method {} in {}", newMeth, si);
+                clonesAdded++;
+            }
+        }
+        
+        System.out.println("Cloned static methods added: " + clonesAdded);
     }
-     */
 
     /**
      * Add the effects of cloning to the remember clone context for each original method
@@ -399,7 +465,7 @@ public class ObjectSensitivityCloner {
                     Stmt specialStmt = TransformsUtils.findConstructorCall(method,
                         (Stmt)units.getSuccOf(assign), local);
 
-                    
+
                     if (specialStmt.containsInvokeExpr() && specialStmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
                         SpecialInvokeExpr special = (SpecialInvokeExpr)specialStmt.getInvokeExpr();
                         //found an appropriate constructor call
@@ -454,7 +520,7 @@ public class ObjectSensitivityCloner {
         return haveCloned;
     }
 
-   
+
     /**
      * Given a non-cloned method and a local of the method, for all cloned context methods, find the locals
      * that correspond.

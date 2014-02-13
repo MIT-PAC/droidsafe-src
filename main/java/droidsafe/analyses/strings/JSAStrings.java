@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -22,11 +23,14 @@ import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Body;
 import soot.Scene;
 import soot.SootClass;
 import soot.Value;
 import soot.ValueBox;
 import soot.jimple.Expr;
+import soot.jimple.InvokeExpr;
+import soot.jimple.Stmt;
 import dk.brics.string.StringAnalysis;
 import dk.brics.string.grammar.Nonterminal;
 import droidsafe.analyses.strings.AutomataUtil.RE;
@@ -111,6 +115,47 @@ public class JSAStrings {
     gv = null;
     signatureToHotspotMap = new TreeMap<String, List<Hotspot>>();
     status = Status.OK;
+  }
+  
+  /**
+   * For each value in original body that is hotspots for JSA, add the corresponding cloned
+   * value in the clone body to the JSA results with the same result.
+   */
+  public void updateJSAResults(Body originalBody, Body cloneBody) {
+      if (!Config.v().runStringAnalysis || !JSAStrings.v().hasRun())
+          return;
+
+      assert originalBody.getUnits().size() == cloneBody.getUnits().size();
+
+      //loop over all methods of both clone and originals
+      Iterator originalIt = originalBody.getUnits().iterator();
+      Iterator cloneIt = cloneBody.getUnits().iterator();
+
+      while (originalIt.hasNext()) {
+          Stmt origStmt = (Stmt)originalIt.next();
+          Stmt cloneStmt = (Stmt)cloneIt.next();
+
+          if (!origStmt.containsInvokeExpr()) {
+              continue;
+          }
+
+          InvokeExpr origInvokeExpr = (InvokeExpr)origStmt.getInvokeExpr();
+          InvokeExpr cloneInvokeExpr = (InvokeExpr)cloneStmt.getInvokeExpr();
+
+          //iterate over the args and see if any arg from orig is tracked by jsa
+          //if so, add the clone to jsa results
+          for (int i = 0; i < origInvokeExpr.getArgCount(); i++) {
+              ValueBox origVB = origInvokeExpr.getArgBox(i);
+
+              if (JSAStrings.v().isHotspotValue(origVB.getValue())) {
+                  ValueBox cloneVB = cloneInvokeExpr.getArgBox(i);
+                  JSAStrings.v().copyResult(origVB.getValue(), 
+                      cloneInvokeExpr.getMethodRef().getSignature(), 
+                      i, 
+                      cloneVB);
+              }
+          }
+      }   
   }
 
   /**

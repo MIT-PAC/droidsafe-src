@@ -245,14 +245,7 @@ public class Main {
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
-        driverMsg ("Hoisting Allocations");
-        monitor.subTask("Hoisting Allocations");
-        HoistAllocations.run();
-        monitor.worked(1);
-        if (monitor.isCanceled())
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+        
         // jsa uses pta results in hotspot calculation
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -280,7 +273,7 @@ public class Main {
             timer1.start();
             driverMsg("Adding Object Sensitivity by cloning...");
             monitor.subTask("Adding Object Sensitivity by cloning...");
-            ObjectSensitivityCloner.v().runForVA();
+            ObjectSensitivityCloner.v().run();
             monitor.worked(1);
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -355,6 +348,7 @@ public class Main {
 
             //any method of stringbuffer or stringbuilder that returns a string
             //on a call replace with new String(receiver)...
+            /* currently cloning strings
             driverMsg("Converting StringBuffer/Builder calls...");
             monitor.subTask("Converting StringBuffer/Builder calls...");
             TransformStringBuilderInvokes.run();
@@ -362,7 +356,7 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-
+             */
             if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }

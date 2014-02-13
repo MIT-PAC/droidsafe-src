@@ -295,7 +295,7 @@ public class CloneInheritedMethods {
         Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
         newMeth.setActiveBody(newBody);
 
-        updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
+        JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
         
         return newMeth;
     }
@@ -337,47 +337,6 @@ public class CloneInheritedMethods {
 
         //didn't find it
         return false;
-    }
-
-    /**
-     * For each value in original body that is hotspots for JSA, add the corresponding cloned
-     * value in the clone body to the JSA results with the same result.
-     */
-    private void updateJSAResults(Body originalBody, Body cloneBody) {
-        if (!Config.v().runStringAnalysis || !JSAStrings.v().hasRun())
-            return;
-
-        assert originalBody.getUnits().size() == cloneBody.getUnits().size();
-
-        //loop over all methods of both clone and originals
-        Iterator originalIt = originalBody.getUnits().iterator();
-        Iterator cloneIt = cloneBody.getUnits().iterator();
-
-        while (originalIt.hasNext()) {
-            Stmt origStmt = (Stmt)originalIt.next();
-            Stmt cloneStmt = (Stmt)cloneIt.next();
-
-            if (!origStmt.containsInvokeExpr()) {
-                continue;
-            }
-
-            InvokeExpr origInvokeExpr = (InvokeExpr)origStmt.getInvokeExpr();
-            InvokeExpr cloneInvokeExpr = (InvokeExpr)cloneStmt.getInvokeExpr();
-
-            //iterate over the args and see if any arg from orig is tracked by jsa
-            //if so, add the clone to jsa results
-            for (int i = 0; i < origInvokeExpr.getArgCount(); i++) {
-                ValueBox origVB = origInvokeExpr.getArgBox(i);
-
-                if (JSAStrings.v().isHotspotValue(origVB.getValue())) {
-                    ValueBox cloneVB = cloneInvokeExpr.getArgBox(i);
-                    JSAStrings.v().copyResult(origVB.getValue(), 
-                        cloneInvokeExpr.getMethodRef().getSignature(), 
-                        i, 
-                        cloneVB);
-                }
-            }
-        }   
     }
     
     public static String removeMethodCloneSuffix(String str) {
