@@ -60,7 +60,7 @@ private static boolean isValidCharsetNameCharacter(char c) {
     
 public static SortedMap<String, Charset> availableCharsets() {
         // Start with a copy of the built-in charsets...
-        TreeMap<String, Charset> charsets = new TreeMap<String, Charset>(String.CASE_INSENSITIVE_ORDER);
+        TreeMap<String, Charset> charsets = new TreeMap<String, Charset>();
         for (String charsetName : NativeConverter.getAvailableCharsetNames()) {
             Charset charset = NativeConverter.charsetForName(charsetName);
             charsets.put(charset.name(), charset);

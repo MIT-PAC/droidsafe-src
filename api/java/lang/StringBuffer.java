@@ -134,7 +134,7 @@ public synchronized StringBuffer append(char ch) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.059 -0500", hash_original_method = "0AFE0A1757F436EAD0779848DAA16349", hash_generated_method = "F6AB23291A5B282DA207B93C0353B068")
     
 public StringBuffer append(double d) {
-        RealToString.getInstance().appendDouble(this, d);
+        addTaint(d);
         return this;
     }
 
@@ -152,7 +152,7 @@ public StringBuffer append(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.061 -0500", hash_original_method = "E91CEA6395085A2C805805AEC660F914", hash_generated_method = "7E86911A557B95B7B6AC85986E42C999")
     
 public StringBuffer append(float f) {
-        RealToString.getInstance().appendFloat(this, f);
+        addTaint(f);
         return this;
     }
 
@@ -170,7 +170,7 @@ public StringBuffer append(float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.064 -0500", hash_original_method = "BEA181157FE20523F8DAE95D96DA45D4", hash_generated_method = "7D280E4AD18897171EECE2E55A094B2E")
     
 public StringBuffer append(int i) {
-        IntegralToString.appendInt(this, i);
+        addTaint(i);
         return this;
     }
 
@@ -188,7 +188,7 @@ public StringBuffer append(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.066 -0500", hash_original_method = "83E6088E5FD422B34A78952B80516F81", hash_generated_method = "D02F3B64A279C32A1CC10AD39F39AB60")
     
 public StringBuffer append(long l) {
-        IntegralToString.appendLong(this, l);
+        addTaint(l);
         return this;
     }
 
@@ -210,11 +210,7 @@ public StringBuffer append(long l) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.069 -0500", hash_original_method = "2D15CD6872414C1946401A7870801F7E", hash_generated_method = "0680B24696FEFB38714FEC87A351DC5B")
     
 public synchronized StringBuffer append(Object obj) {
-        if (obj == null) {
-            appendNull();
-        } else {
-            append0(obj.toString());
-        }
+    append0(obj.toString());
         return this;
     }
 
@@ -254,17 +250,11 @@ public synchronized StringBuffer append(String string) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.074 -0500", hash_original_method = "F6E1A459EC09255D7DD48512D99C9457", hash_generated_method = "E37E86CF6BC125A770B254F284CB6953")
     
-public synchronized StringBuffer append(StringBuffer sb) {
-        if (sb == null) {
-            appendNull();
-        } else {
-            synchronized (sb) {
-                append0(sb.getValue(), 0, sb.length());
-            }
-        }
+    public synchronized StringBuffer append(StringBuffer sb) {
+        append0(sb.getValue(), 0, sb.length());
         return this;
     }
-
+    
     /**
      * Adds the character array to the end of this buffer.
      *
@@ -324,12 +314,8 @@ public synchronized StringBuffer append(char[] chars, int start, int length) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.081 -0500", hash_original_method = "2C28D2E65709E046DB9D8E48F9D4C881", hash_generated_method = "CF5F54D37511371BF72B6F64B465B028")
     
-public synchronized StringBuffer append(CharSequence s) {
-        if (s == null) {
-            appendNull();
-        } else {
-            append0(s, 0, s.length());
-        }
+    public synchronized StringBuffer append(CharSequence s) {
+        append0(s, 0, s.length());
         return this;
     }
 
@@ -356,7 +342,7 @@ public synchronized StringBuffer append(CharSequence s) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.084 -0500", hash_original_method = "C1E3B870A5740951AADEEF0491CD7264", hash_generated_method = "F736447AA6D7242FF8318D00F32A2D4C")
     
-public synchronized StringBuffer append(CharSequence s, int start, int end) {
+    public synchronized StringBuffer append(CharSequence s, int start, int end) {
         append0(s, start, end);
         return this;
     }
@@ -378,8 +364,9 @@ public synchronized StringBuffer append(CharSequence s, int start, int end) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.087 -0500", hash_original_method = "4B31A9F498F093ACA181C8BA507E02E7", hash_generated_method = "51B3EB01EF89D31312417A193DAB15E9")
     
-public StringBuffer appendCodePoint(int codePoint) {
-        return append(Character.toChars(codePoint));
+    public StringBuffer appendCodePoint(int codePoint) {
+        addTaint(codePoint);
+        return this;
     }
 
     @DSComment("From safe class list")
@@ -388,7 +375,8 @@ public StringBuffer appendCodePoint(int codePoint) {
     
 @Override
     public synchronized char charAt(int index) {
-        return super.charAt(index);
+        addTaint(index);
+        return getTaintChar();
     }
 
     @DSComment("From safe class list")
@@ -538,7 +526,9 @@ public synchronized StringBuffer insert(int index, char ch) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.116 -0500", hash_original_method = "162176ED227569BA5BCA4BCD896EB6BD", hash_generated_method = "8A0663796DEAA523B3A44491704958DC")
     
 public StringBuffer insert(int index, boolean b) {
-        return insert(index, b ? "true" : "false");
+        addTaint(index);
+        addTaint(b);
+        return this;
     }
 
     /**
@@ -558,7 +548,9 @@ public StringBuffer insert(int index, boolean b) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.118 -0500", hash_original_method = "5A54C4D4DA42D98D57F22399AE362D5B", hash_generated_method = "219E2E02AE15A517294992BEEEB98F5A")
     
 public StringBuffer insert(int index, int i) {
-        return insert(index, Integer.toString(i));
+        addTaint(index);
+        addTaint(i);
+        return this;
     }
 
     /**
@@ -578,7 +570,9 @@ public StringBuffer insert(int index, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.120 -0500", hash_original_method = "5D8E4B66E2DC4C0F0AE2C3587B4A421D", hash_generated_method = "07E69C4F0157179849617A1E3687C2FD")
     
 public StringBuffer insert(int index, long l) {
-        return insert(index, Long.toString(l));
+        addTaint(l);
+        addTaint(index);
+        return this;
     }
 
     /**
@@ -598,7 +592,9 @@ public StringBuffer insert(int index, long l) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.122 -0500", hash_original_method = "6F91201558DE19CA8BB7D7C8218AE116", hash_generated_method = "C1453933B6DCD4B8D289D21A9ACAC6E5")
     
 public StringBuffer insert(int index, double d) {
-        return insert(index, Double.toString(d));
+        addTaint(d);
+        addTaint(index);
+        return this;
     }
 
     /**
@@ -618,7 +614,9 @@ public StringBuffer insert(int index, double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.124 -0500", hash_original_method = "F7E2A65D054608BBB689E2070378B818", hash_generated_method = "96D3E5CFDD6B54015A707CF978492C04")
     
 public StringBuffer insert(int index, float f) {
-        return insert(index, Float.toString(f));
+        addTaint(f);
+        addTaint(index);
+        return this;
     }
 
     /**
@@ -642,7 +640,9 @@ public StringBuffer insert(int index, float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.127 -0500", hash_original_method = "474B289AA5CB68BD472602D89AE62101", hash_generated_method = "1DCEC35B84C61CF75282A56269007DC4")
     
 public StringBuffer insert(int index, Object obj) {
-        return insert(index, obj == null ? "null" : obj.toString());
+        addTaint(index);
+        addTaint(obj.toString().getTaint());
+        return this;
     }
 
     /**
@@ -739,8 +739,9 @@ public synchronized StringBuffer insert(int index, char[] chars, int start, int 
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.137 -0500", hash_original_method = "313D5F48F5D2BFD8C8C3947312396740", hash_generated_method = "4ACA4BD1DF55AFCC3240809DC91469C6")
     
-public synchronized StringBuffer insert(int index, CharSequence s) {
-        insert0(index, s == null ? "null" : s.toString());
+    public synchronized StringBuffer insert(int index, CharSequence s) {
+        addTaint(s.toString().getTaint());
+        addTaint(index);
         return this;
     }
 
@@ -922,6 +923,8 @@ private void readObject(ObjectInputStream in) throws IOException,
         int count = fields.get("count", 0);
         char[] value = (char[]) fields.get("value", null);
         set(value, count);
+
+
     }
 }
 

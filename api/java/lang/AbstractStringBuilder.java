@@ -102,11 +102,7 @@ final void set(char[] val, int len) throws InvalidObjectException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.727 -0500", hash_original_method = "8DE386E9EA04BE56519C8A6264F91502", hash_generated_method = "62F407B7E75F75DE3E6791DD28A3852F")
     
 private void enlargeBuffer(int min) {
-        int newCount = ((value.length >> 1) + value.length) + 2;
-        char[] newData = new char[min > newCount ? min : newCount];
-        System.arraycopy(value, 0, newData, 0, count);
-        value = newData;
-        shared = false;
+      
     }
 
     @DSComment("Package priviledge")
@@ -114,14 +110,7 @@ private void enlargeBuffer(int min) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.729 -0500", hash_original_method = "BE4C961EA91A0D5BF81DD6DF988583CA", hash_generated_method = "0026E8F7271FCB4540320659CA2A9DA7")
     
 final void appendNull() {
-        int newCount = count + 4;
-        if (newCount > value.length) {
-            enlargeBuffer(newCount);
-        }
-        value[count++] = 'n';
-        value[count++] = 'u';
-        value[count++] = 'l';
-        value[count++] = 'l';
+     
     }
 
     @DSComment("Package priviledge")
@@ -129,12 +118,7 @@ final void appendNull() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.731 -0500", hash_original_method = "8C85C9AFF9EA1123A22A14B3A5C3C022", hash_generated_method = "A6667FA89203D112B27C7D329C3CCDF5")
     
 final void append0(char[] chars) {
-        int newCount = count + chars.length;
-        if (newCount > value.length) {
-            enlargeBuffer(newCount);
-        }
-        System.arraycopy(chars, 0, value, count, chars.length);
-        count = newCount;
+        this.addTaint(chars.getTaint());
     }
 
     @DSComment("Package priviledge")
@@ -142,24 +126,17 @@ final void append0(char[] chars) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.734 -0500", hash_original_method = "7BE8867E430B01B44EC74C0F78249D07", hash_generated_method = "85BE030D378734CCD5485E78B713DD3D")
     
 final void append0(char[] chars, int offset, int length) {
-        Arrays.checkOffsetAndCount(chars.length, offset, length);
-        int newCount = count + length;
-        if (newCount > value.length) {
-            enlargeBuffer(newCount);
-        }
-        System.arraycopy(chars, offset, value, count, length);
-        count = newCount;
+        this.addTaint(offset);
+        this.addTaint(length);
+        this.addTaint(chars.getTaint());
     }
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.736 -0500", hash_original_method = "ECBEE238E1E86380FF7C7052710927A2", hash_generated_method = "F2DDEA2FE5C77E4F2BC68D7E15627FC4")
     
-final void append0(char ch) {
-        if (count == value.length) {
-            enlargeBuffer(count + 1);
-        }
-        value[count++] = ch;
+    final void append0(char ch) {
+        this.addTaint(ch);
     }
 
     @DSComment("Package priviledge")
@@ -167,53 +144,17 @@ final void append0(char ch) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.739 -0500", hash_original_method = "B96D71BE07A8651AC5DD35DFB1E0B9E9", hash_generated_method = "C954915CE23D2CC547AA2CB578D414C5")
     
 final void append0(String string) {
-        if (string == null) {
-            appendNull();
-            return;
-        }
-        int length = string.length();
-        int newCount = count + length;
-        if (newCount > value.length) {
-            enlargeBuffer(newCount);
-        }
-        string._getChars(0, length, value, count);
-        count = newCount;
+        this.addTaint(string.getTaint());
     }
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.743 -0500", hash_original_method = "C43881C5821BA2B06BD7E52CBFC700AF", hash_generated_method = "A2934907B51AA94AB82681F6BB94AA6C")
     
-final void append0(CharSequence s, int start, int end) {
-        if (s == null) {
-            s = "null";
-        }
-        if ((start | end) < 0 || start > end || end > s.length()) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        int length = end - start;
-        int newCount = count + length;
-        if (newCount > value.length) {
-            enlargeBuffer(newCount);
-        } else if (shared) {
-            value = value.clone();
-            shared = false;
-        }
-
-        if (s instanceof String) {
-            ((String) s)._getChars(start, end, value, count);
-        } else if (s instanceof AbstractStringBuilder) {
-            AbstractStringBuilder other = (AbstractStringBuilder) s;
-            System.arraycopy(other.value, start, value, count, length);
-        } else {
-            int j = count; // Destination index.
-            for (int i = start; i < end; i++) {
-                value[j++] = s.charAt(i);
-            }
-        }
-
-        this.count = newCount;
+    final void append0(CharSequence s, int start, int end) {
+        this.addTaint(s.getTaint());
+        this.addTaint(start);
+        this.addTaint(end);
     }
 
     /**
@@ -246,9 +187,6 @@ public int capacity() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.748 -0500", hash_original_method = "447DEA66ED097ABAE0E9735DA732DBDF", hash_generated_method = "FAC07C09F852D642353F0EF74A2A34E0")
     
 public char charAt(int index) {
-        if (index < 0 || index >= count) {
-            throw indexAndLength(index);
-        }
         return value[index];
     }
 
@@ -273,31 +211,8 @@ private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.756 -0500", hash_original_method = "19BE941D07BAB030F14923AC484F383F", hash_generated_method = "7295AD2FB7044894CDFDF9B97A609EE0")
     
 final void delete0(int start, int end) {
-        if (start >= 0) {
-            if (end > count) {
-                end = count;
-            }
-            if (end == start) {
-                return;
-            }
-            if (end > start) {
-                int length = count - end;
-                if (length >= 0) {
-                    if (!shared) {
-                        System.arraycopy(value, end, value, start, length);
-                    } else {
-                        char[] newData = new char[value.length];
-                        System.arraycopy(value, 0, newData, 0, start);
-                        System.arraycopy(value, end, newData, start, length);
-                        value = newData;
-                        shared = false;
-                    }
-                }
-                count -= end - start;
-                return;
-            }
-        }
-        throw startEndAndLength(start, end);
+        this.addTaint(start);
+        this.addTaint(end);
     }
 
     @DSComment("Package priviledge")
@@ -305,22 +220,7 @@ final void delete0(int start, int end) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.758 -0500", hash_original_method = "54D305E0C27E04AE130B9F0D173AF3D5", hash_generated_method = "544AFCD3A08DBE245A2B212D8ADC4F53")
     
 final void deleteCharAt0(int index) {
-        if (index < 0 || index >= count) {
-            throw indexAndLength(index);
-        }
-        int length = count - index - 1;
-        if (length > 0) {
-            if (!shared) {
-                System.arraycopy(value, index + 1, value, index, length);
-            } else {
-                char[] newData = new char[value.length];
-                System.arraycopy(value, 0, newData, 0, index);
-                System.arraycopy(value, index + 1, newData, index, length);
-                value = newData;
-                shared = false;
-            }
-        }
-        count--;
+        this.addTaint(index);
     }
 
     /**
@@ -340,10 +240,7 @@ final void deleteCharAt0(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.761 -0500", hash_original_method = "DB245C34644491EEEAB0523333BD6692", hash_generated_method = "42490A7AFC6A57F55CB7D84C7093B2E9")
     
 public void ensureCapacity(int min) {
-        if (min > value.length) {
-            int ourMin = value.length*2 + 2;
-            enlargeBuffer(Math.max(ourMin, min));
-        }
+        this.addTaint(min);
     }
 
     /**
@@ -370,10 +267,10 @@ public void ensureCapacity(int min) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.764 -0500", hash_original_method = "AE7F72EED3837594CFBBCCC4060D7909", hash_generated_method = "E3BB1927CAAB08FF737445C26081F5DD")
     
 public void getChars(int start, int end, char[] dst, int dstStart) {
-        if (start > count || end > count || start > end) {
-            throw startEndAndLength(start, end);
-        }
-        System.arraycopy(value, start, dst, dstStart, end - start);
+        this.addTaint(start);
+        this.addTaint(end);
+        this.addTaint(dst.getTaint());
+        this.addTaint(dstStart);
     }
 
     @DSComment("Package priviledge")
@@ -381,14 +278,8 @@ public void getChars(int start, int end, char[] dst, int dstStart) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.766 -0500", hash_original_method = "93FE28F62EFBAB9F8EBF9F9ADC8E87C8", hash_generated_method = "242C508258718C9D9F50007F4511FE4C")
     
 final void insert0(int index, char[] chars) {
-        if (index < 0 || index > count) {
-            throw indexAndLength(index);
-        }
-        if (chars.length != 0) {
-            move(chars.length, index);
-            System.arraycopy(chars, 0, value, index, chars.length);
-            count += chars.length;
-        }
+        this.addTaint(chars.getTaint());
+        this.addTaint(index);
     }
 
     @DSComment("Package priviledge")
@@ -396,20 +287,10 @@ final void insert0(int index, char[] chars) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.769 -0500", hash_original_method = "D46FA7C87DEEBA750439C9564B3FB7FE", hash_generated_method = "8B7A403365079BE883D31B0B79020802")
     
 final void insert0(int index, char[] chars, int start, int length) {
-        if (index >= 0 && index <= count) {
-            // start + length could overflow, start/length maybe MaxInt
-            if (start >= 0 && length >= 0 && length <= chars.length - start) {
-                if (length != 0) {
-                    move(length, index);
-                    System.arraycopy(chars, start, value, index, length);
-                    count += length;
-                }
-                return;
-            }
-        }
-        throw new StringIndexOutOfBoundsException("this.length=" + count
-                + "; index=" + index + "; chars.length=" + chars.length
-                + "; start=" + start + "; length=" + length);
+        addTaint(index);
+        addTaint(chars.getTaint());
+        addTaint(start);
+        addTaint(length);
     }
 
     @DSComment("Package priviledge")
@@ -417,13 +298,8 @@ final void insert0(int index, char[] chars, int start, int length) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.772 -0500", hash_original_method = "20DD23A1E6916CB9CC20932D676C3164", hash_generated_method = "73BB8505ED9484329723241FFAD56DF2")
     
 final void insert0(int index, char ch) {
-        if (index < 0 || index > count) {
-            // RI compatible exception type
-            throw new ArrayIndexOutOfBoundsException(count, index);
-        }
-        move(1, index);
-        value[index] = ch;
-        count++;
+        addTaint(index);
+        addTaint(ch);
     }
 
     @DSComment("Package priviledge")
@@ -431,19 +307,8 @@ final void insert0(int index, char ch) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.775 -0500", hash_original_method = "9E8CB9B48D87CB2577EC00CC04D06833", hash_generated_method = "76DE473778E46B1CA6569CB2B850870C")
     
 final void insert0(int index, String string) {
-        if (index >= 0 && index <= count) {
-            if (string == null) {
-                string = "null";
-            }
-            int min = string.length();
-            if (min != 0) {
-                move(min, index);
-                string._getChars(0, min, value, index);
-                count += min;
-            }
-        } else {
-            throw indexAndLength(index);
-        }
+        addTaint(index);
+        addTaint(string.getTaint());
     }
 
     @DSComment("Package priviledge")
@@ -451,12 +316,6 @@ final void insert0(int index, String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.777 -0500", hash_original_method = "10AE187E8F37FB4E725DAC6B12ECB82F", hash_generated_method = "A4F5FAEA0E39234006556600C0008CB6")
     
 final void insert0(int index, CharSequence s, int start, int end) {
-        if (s == null) {
-            s = "null";
-        }
-        if ((index | start | end) < 0 || index > count || start > end || end > s.length()) {
-            throw new IndexOutOfBoundsException();
-        }
         insert0(index, s.subSequence(start, end).toString());
     }
 
@@ -478,24 +337,8 @@ public int length() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.782 -0500", hash_original_method = "E2C445AFFEE441B211B71B3E0E3E89EA", hash_generated_method = "9526DADBE0783B7CB28D7284CA19588D")
     
 private void move(int size, int index) {
-        int newCount;
-        if (value.length - count >= size) {
-            if (!shared) {
-                // index == count case is no-op
-                System.arraycopy(value, index, value, index + size, count - index);
-                return;
-            }
-            newCount = value.length;
-        } else {
-            newCount = Math.max(count + size, value.length*2 + 2);
-        }
-
-        char[] newData = new char[newCount];
-        System.arraycopy(value, 0, newData, 0, index);
-        // index == count case is no-op
-        System.arraycopy(value, index, newData, index + size, count - index);
-        value = newData;
-        shared = false;
+        addTaint(size);
+        addTaint(index);
     }
 
     @DSComment("Package priviledge")
@@ -503,47 +346,9 @@ private void move(int size, int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.786 -0500", hash_original_method = "467233E9D0CCB909364F18BB14890489", hash_generated_method = "53AEE84C0A111C22ABED1BD30476DDCA")
     
 final void replace0(int start, int end, String string) {
-        if (start >= 0) {
-            if (end > count) {
-                end = count;
-            }
-            if (end > start) {
-                int stringLength = string.length();
-                int diff = end - start - stringLength;
-                if (diff > 0) { // replacing with fewer characters
-                    if (!shared) {
-                        // index == count case is no-op
-                        System.arraycopy(value, end, value, start
-                                + stringLength, count - end);
-                    } else {
-                        char[] newData = new char[value.length];
-                        System.arraycopy(value, 0, newData, 0, start);
-                        // index == count case is no-op
-                        System.arraycopy(value, end, newData, start
-                                + stringLength, count - end);
-                        value = newData;
-                        shared = false;
-                    }
-                } else if (diff < 0) {
-                    // replacing with more characters...need some room
-                    move(-diff, end);
-                } else if (shared) {
-                    value = value.clone();
-                    shared = false;
-                }
-                string._getChars(0, stringLength, value, start);
-                count -= diff;
-                return;
-            }
-            if (start == end) {
-                if (string == null) {
-                    throw new NullPointerException();
-                }
-                insert0(start, string);
-                return;
-            }
-        }
-        throw startEndAndLength(start, end);
+        addTaint(start);
+        addTaint(end);
+        addTaint(string.getTaint());
     }
 
     @DSComment("Package priviledge")
@@ -551,80 +356,6 @@ final void replace0(int start, int end, String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.789 -0500", hash_original_method = "227A175682657414C42D64433DAB4FBA", hash_generated_method = "B66ABB11CFAE4D2D0EAF38D8AC9E23F4")
     
 final void reverse0() {
-        if (count < 2) {
-            return;
-        }
-        if (!shared) {
-            int end = count - 1;
-            char frontHigh = value[0];
-            char endLow = value[end];
-            boolean allowFrontSur = true, allowEndSur = true;
-            for (int i = 0, mid = count / 2; i < mid; i++, --end) {
-                char frontLow = value[i + 1];
-                char endHigh = value[end - 1];
-                boolean surAtFront = allowFrontSur && frontLow >= 0xdc00
-                        && frontLow <= 0xdfff && frontHigh >= 0xd800
-                        && frontHigh <= 0xdbff;
-                if (surAtFront && (count < 3)) {
-                    return;
-                }
-                boolean surAtEnd = allowEndSur && endHigh >= 0xd800
-                        && endHigh <= 0xdbff && endLow >= 0xdc00
-                        && endLow <= 0xdfff;
-                allowFrontSur = allowEndSur = true;
-                if (surAtFront == surAtEnd) {
-                    if (surAtFront) {
-                        // both surrogates
-                        value[end] = frontLow;
-                        value[end - 1] = frontHigh;
-                        value[i] = endHigh;
-                        value[i + 1] = endLow;
-                        frontHigh = value[i + 2];
-                        endLow = value[end - 2];
-                        i++;
-                        end--;
-                    } else {
-                        // neither surrogates
-                        value[end] = frontHigh;
-                        value[i] = endLow;
-                        frontHigh = frontLow;
-                        endLow = endHigh;
-                    }
-                } else {
-                    if (surAtFront) {
-                        // surrogate only at the front
-                        value[end] = frontLow;
-                        value[i] = endLow;
-                        endLow = endHigh;
-                        allowFrontSur = false;
-                    } else {
-                        // surrogate only at the end
-                        value[end] = frontHigh;
-                        value[i] = endHigh;
-                        frontHigh = frontLow;
-                        allowEndSur = false;
-                    }
-                }
-            }
-            if ((count & 1) == 1 && (!allowFrontSur || !allowEndSur)) {
-                value[end] = allowFrontSur ? endLow : frontHigh;
-            }
-        } else {
-            char[] newData = new char[value.length];
-            for (int i = 0, end = count; i < count; i++) {
-                char high = value[i];
-                if ((i + 1) < count && high >= 0xd800 && high <= 0xdbff) {
-                    char low = value[i + 1];
-                    if (low >= 0xdc00 && low <= 0xdfff) {
-                        newData[--end] = low;
-                        i++;
-                    }
-                }
-                newData[--end] = high;
-            }
-            value = newData;
-            shared = false;
-        }
     }
 
     /**
@@ -644,14 +375,8 @@ final void reverse0() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.792 -0500", hash_original_method = "5EFF2E769F54F3F7450C4FCC35538F65", hash_generated_method = "F067C6081462E0F84A1EDCC6EEF7313A")
     
 public void setCharAt(int index, char ch) {
-        if (index < 0 || index >= count) {
-            throw indexAndLength(index);
-        }
-        if (shared) {
-            value = value.clone();
-            shared = false;
-        }
-        value[index] = ch;
+        this.addTaint(index);
+        addTaint(ch);
     }
 
     /**
@@ -670,24 +395,7 @@ public void setCharAt(int index, char ch) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.795 -0500", hash_original_method = "CCD67F72D75D83378F17335F6F9DC00A", hash_generated_method = "C5DDC62D70F97D21489DAA2768EA566A")
     
 public void setLength(int length) {
-        if (length < 0) {
-            throw new StringIndexOutOfBoundsException("length < 0: " + length);
-        }
-        if (length > value.length) {
-            enlargeBuffer(length);
-        } else {
-            if (shared) {
-                char[] newData = new char[value.length];
-                System.arraycopy(value, 0, newData, 0, count);
-                value = newData;
-                shared = false;
-            } else {
-                if (count < length) {
-                    Arrays.fill(value, count, length, (char) 0);
-                }
-            }
-        }
-        count = length;
+        addTaint(length);
     }
 
     /**
@@ -706,15 +414,11 @@ public void setLength(int length) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.798 -0500", hash_original_method = "1708C6B44328EC2FA5364A52800D811B", hash_generated_method = "7464E15E936DE83D60F39D0931579A21")
     
 public String substring(int start) {
-        if (start >= 0 && start <= count) {
-            if (start == count) {
-                return "";
-            }
-
-            // Remove String sharing for more performance
-            return new String(value, start, count - start);
-        }
-        throw indexAndLength(start);
+        String str = new String();
+        
+        str.addTaint(getTaint());
+        str.addTaint(start);
+        return str;
     }
 
     /**
@@ -736,15 +440,11 @@ public String substring(int start) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.801 -0500", hash_original_method = "7121FB14814A84CA4ADE1E9CCF3D54F6", hash_generated_method = "51605E837F8A436C0F718178ED9E3C0E")
     
 public String substring(int start, int end) {
-        if (start >= 0 && start <= end && end <= count) {
-            if (start == end) {
-                return "";
-            }
-
-            // Remove String sharing for more performance
-            return new String(value, start, end - start);
-        }
-        throw startEndAndLength(start, end);
+        String str = new String();
+        
+        str.addTaint(getTaint());
+        str.addTaint(start);
+        return str;
     }
 
     /**
@@ -758,17 +458,9 @@ public String substring(int start, int end) {
     
 @Override
     public String toString() {
-        if (count == 0) {
-            return "";
-        }
-        // Optimize String sharing for more performance
-        int wasted = value.length - count;
-        if (wasted >= 256
-                || (wasted >= INITIAL_CAPACITY && wasted >= (count >> 1))) {
-            return new String(value, 0, count);
-        }
-        shared = true;
-        return new String(0, count, value);
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
     }
 
     /**
@@ -830,39 +522,9 @@ public int indexOf(String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.811 -0500", hash_original_method = "58EF09653819A20604D2729AAEA1E73D", hash_generated_method = "C87E0A918200362DCA05AAF69DC212CC")
     
 public int indexOf(String subString, int start) {
-        if (start < 0) {
-            start = 0;
-        }
-        int subCount = subString.length();
-        if (subCount > 0) {
-            if (subCount + start > count) {
-                return -1;
-            }
-            // TODO optimize charAt to direct array access
-            char firstChar = subString.charAt(0);
-            while (true) {
-                int i = start;
-                boolean found = false;
-                for (; i < count; i++) {
-                    if (value[i] == firstChar) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found || subCount + i > count) {
-                    return -1; // handles subCount > count || start >= count
-                }
-                int o1 = i, o2 = 0;
-                while (++o2 < subCount && value[++o1] == subString.charAt(o2)) {
-                    // Intentionally empty
-                }
-                if (o2 == subCount) {
-                    return i;
-                }
-                start = i + 1;
-            }
-        }
-        return (start < count || start == 0) ? start : count;
+        this.addTaint(subString.getTaint());
+        addTaint(start);
+        return getTaintInt();
     }
 
     /**
@@ -906,41 +568,9 @@ public int lastIndexOf(String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.817 -0500", hash_original_method = "7130CA0E46A667075374433A3B5D2D85", hash_generated_method = "C3B932323D38DDFF2F46EAA9B5DA6CB9")
     
 public int lastIndexOf(String subString, int start) {
-        int subCount = subString.length();
-        if (subCount <= count && start >= 0) {
-            if (subCount > 0) {
-                if (start > count - subCount) {
-                    start = count - subCount; // count and subCount are both
-                }
-                // >= 1
-                // TODO optimize charAt to direct array access
-                char firstChar = subString.charAt(0);
-                while (true) {
-                    int i = start;
-                    boolean found = false;
-                    for (; i >= 0; --i) {
-                        if (value[i] == firstChar) {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        return -1;
-                    }
-                    int o1 = i, o2 = 0;
-                    while (++o2 < subCount
-                            && value[++o1] == subString.charAt(o2)) {
-                        // Intentionally empty
-                    }
-                    if (o2 == subCount) {
-                        return i;
-                    }
-                    start = i - 1;
-                }
-            }
-            return start < count ? start : count;
-        }
-        return -1;
+        this.addTaint(subString.getTaint());
+        addTaint(start);
+        return getTaintInt();
     }
 
     /**
@@ -954,12 +584,6 @@ public int lastIndexOf(String subString, int start) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.820 -0500", hash_original_method = "DFFDB9C5FDBA0FB3D8B8BAEB0765C9A3", hash_generated_method = "3C2FFD5B9A70C837FD2579D761B6114C")
     
 public void trimToSize() {
-        if (count < value.length) {
-            char[] newValue = new char[count];
-            System.arraycopy(value, 0, newValue, 0, count);
-            value = newValue;
-            shared = false;
-        }
     }
 
     /**
@@ -980,10 +604,8 @@ public void trimToSize() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.822 -0500", hash_original_method = "E01C43C5D144342C7BDF51C53F549AB8", hash_generated_method = "92C9B82B5F9D423360085BF0405A7DA4")
     
 public int codePointAt(int index) {
-        if (index < 0 || index >= count) {
-            throw indexAndLength(index);
-        }
-        return Character.codePointAt(value, index, count);
+        addTaint(index);
+        return getTaintInt();
     }
 
     /**
@@ -1004,10 +626,8 @@ public int codePointAt(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.824 -0500", hash_original_method = "F58237612B89D3EA2A0CCEABA41468D6", hash_generated_method = "AA113CAE349E2AB7195B4106C3FE1295")
     
 public int codePointBefore(int index) {
-        if (index < 1 || index > count) {
-            throw indexAndLength(index);
-        }
-        return Character.codePointBefore(value, index);
+        addTaint(index);
+        return getTaintInt();
     }
 
     /**
@@ -1032,10 +652,9 @@ public int codePointBefore(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.827 -0500", hash_original_method = "012FBC57A3E4CD6B3DAD71A54F843207", hash_generated_method = "5061C6CAB680A6E8AFA655DFF140F3AF")
     
 public int codePointCount(int start, int end) {
-        if (start < 0 || end > count || start > end) {
-            throw startEndAndLength(start, end);
-        }
-        return Character.codePointCount(value, start, end - start);
+        addTaint(start);
+        addTaint(end);
+        return getTaintInt();
     }
 
     /**
@@ -1062,8 +681,9 @@ public int codePointCount(int start, int end) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.830 -0500", hash_original_method = "AC95F45AA90228D3C037EE242B5DE1AD", hash_generated_method = "35BCE7F2F7241D5B40C16E9A9AC4818C")
     
 public int offsetByCodePoints(int index, int codePointOffset) {
-        return Character.offsetByCodePoints(value, 0, count, index,
-                codePointOffset);
+        addTaint(index);
+        addTaint(codePointOffset);
+        return getTaintInt();
     }
 }
 

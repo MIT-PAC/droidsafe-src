@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.content.IntentFilter;
 import android.content.ComponentCallbacks2;
 import android.content.ComponentName;
 import android.content.Context;
@@ -298,6 +299,21 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.438 -0500", hash_original_method = "CC61C883982068788EAC9DED2F81C9E5", hash_generated_method = "4FCD5B90D6018F4246EC2AA6BF36143F")
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Intent __ds__registerIntentFilter(IntentFilter intentFilter) {
+        this.__ds__intentFilters.add(intentFilter);
+        Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
+        intent.addCategory(intentFilter.getCategory(getTaintInt()));
+        this.__ds__intentsFromFilter.add(intent);	
+    
+        //set the intent from the intent filter
+        this.setIntent(intent);
+
+        return intent;
+    }
+
+
 public void setIntent(Intent newIntent) {
         mIntent = newIntent;
     }

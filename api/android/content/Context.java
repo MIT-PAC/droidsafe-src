@@ -2326,6 +2326,7 @@ public boolean isRestricted() {
 	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
 	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
 	    this.__ds__intentsFromFilter.add(intent);	
+            
             return intent;
 	}
 	

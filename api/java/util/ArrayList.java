@@ -44,17 +44,6 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
             var5783EF97022AA508B74A1E3EA38534AF_866917787.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_866917787;
         } //End block
-
-        if (capacity > super.capacity) {
-            collectionData = (E[]) new Object[capacity];
-            super.capacity = capacity;
-        }
-
-        // ---------- Original Method ----------
-        //if (capacity < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //array = (capacity == 0 ? EmptyArray.OBJECT : new Object[capacity]);
     }
         
 @DSComment("From safe class list")
