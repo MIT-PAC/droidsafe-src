@@ -441,7 +441,7 @@ public MenuInflater(Context context) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.649 -0500", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "8AC21FD0DA7ADD2076DB467059A78ACF")
-    
+    @DSVerified
 public void inflate(int menuRes, Menu menu) {
         XmlResourceParser parser = null;
         try {

@@ -787,9 +787,15 @@ public boolean willChangeBounds() {
      * @param listener the animation listener to be notified
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.901 -0500", hash_original_method = "93175FBEC8620A1D25367C53936C85B5", hash_generated_method = "31A6529B587BD93A6B444DCD66C155FD")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setAnimationListener(AnimationListener listener) {
         mListener = listener;
+        if (listener != null) {
+            listener.onAnimationStart(this);
+            listener.onAnimationRepeat(this);
+            listener.onAnimationEnd(this);
+        }
     }
 
     /**
@@ -865,15 +871,17 @@ static Description parseValue(TypedValue value) {
     }
     
     public static interface AnimationListener {
-        
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationStart(Animation animation);
         
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationEnd(Animation animation);
         
+        @DSVerified 
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onAnimationRepeat(Animation animation);
@@ -887,7 +895,9 @@ static Description parseValue(TypedValue value) {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.906 -0500", hash_original_method = "B3F1AB6DDEFF92B122293B4363A1C456", hash_generated_method = "218F4F0D841E83DDCED3770CA4EF235B")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public long computeDurationHint() {
         return (getStartOffset() + getDuration()) * (getRepeatCount() + 1);
     }
@@ -906,7 +916,8 @@ public long computeDurationHint() {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.910 -0500", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "AF8652057DAD4A8F9C8E0866DE608D21")
-    
+    @DSVerified
+
 public boolean getTransformation(long currentTime, Transformation outTransformation) {
 
         if (mStartTime == -1) {
@@ -999,7 +1010,9 @@ public boolean getTransformation(long currentTime, Transformation outTransformat
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.912 -0500", hash_original_method = "2D55A6E78A3D329DDFA1835011833D50", hash_generated_method = "BEF4999254C104668FDB8CAEBDD04900")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public boolean getTransformation(long currentTime, Transformation outTransformation,
             float scale) {
         mScaleFactor = scale;
@@ -1023,7 +1036,9 @@ public boolean hasStarted() {
      * @return true if the animation has ended, false otherwise
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.917 -0500", hash_original_method = "D01D8338B537AF4FCC0E5AB769C5FB0B", hash_generated_method = "773D01EF8E711AEBA48EABF5103125E0")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public boolean hasEnded() {
         return mEnded;
     }
@@ -1040,7 +1055,8 @@ public boolean hasEnded() {
      *        transforms.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.919 -0500", hash_original_method = "073EBA254DBED3B6D4C21030E1884802", hash_generated_method = "D6FE7A45FD5E4B9F277EDEFC410B9A03")
-    
+    @DSVerified("Called internally in this class")
+    @DSSafe(DSCat.SAFE_OTHERS)
 protected void applyTransformation(float interpolatedTime, Transformation t) {
     }
 
@@ -1116,7 +1132,8 @@ public void getInvalidateRegion(int left, int top, int right, int bottom,
      * @hide
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.927 -0500", hash_original_method = "CE5BD1162FB4278724A9276A03F0A96A", hash_generated_method = "87E5AE505747DD51A8C50204F665DD6C")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
         final RectF region = mPreviousRegion;
         region.set(left, top, right, bottom);
@@ -1129,7 +1146,8 @@ public void initializeInvalidateRegion(int left, int top, int right, int bottom)
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.929 -0500", hash_original_method = "F91EB5DE0AE774B21AEF523039CEDA53", hash_generated_method = "1BDDD198ABF893F767F90C68C32D3AB3")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 protected void finalize() throws Throwable {
         try {
             if (guard != null) {

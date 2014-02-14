@@ -1018,7 +1018,7 @@ public Drawable mutate() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.012 -0500", hash_original_method = "A7AA835959A57BB8EBB74755836F5541", hash_generated_method = "011ED454E37B98397BD93D35F88D7B33")
-    
+    @DSVerified
 public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs)
             throws XmlPullParserException, IOException {
 

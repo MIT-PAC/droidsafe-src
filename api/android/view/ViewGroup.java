@@ -352,6 +352,13 @@ public ViewGroup(Context context) {
 		initFromAttributes(context, attrs);
 		*/
 	}
+	
+	@Override
+	public void droidsafeCallbackHook() {
+	    super.droidsafeCallbackHook();
+	    this.onRequestFocusInDescendants(DSUtils.FAKE_INT, new Rect());
+	    this.onRequestSendAccessibilityEvent(this, new AccessibilityEvent(DSUtils.FAKE_INT));
+	}
     
 	@DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -438,6 +445,7 @@ public ViewGroup(Context context) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void requestChildFocus(View child, View focused){
@@ -450,6 +458,7 @@ public ViewGroup(Context context) {
         if (getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS) {
             return;
         }
+        */
         super.unFocus();
         if (mFocused != child) {
             if (mFocused != null) {
@@ -460,9 +469,6 @@ public ViewGroup(Context context) {
         if (mParent != null) {
             mParent.requestChildFocus(this, focused);
         }
-    }
-		*/
-		//Return nothing
 	}
     
     @DSComment("Normal GUI")
@@ -520,17 +526,16 @@ public ViewGroup(Context context) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.552 -0500", hash_original_method = "1A209ACB79681B08302166E2C48344A2", hash_generated_method = "4FC7A971315AD74C0142BA77AB447A9A")
-    
+    @DSVerified
 public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate) {
         return false;
     }
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSVerified
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event){
 		// Original method
-		/*
-		{
         ViewParent parent = getParent();
         if (parent == null) {
             return false;
@@ -540,9 +545,6 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
             return false;
         }
         return parent.requestSendAccessibilityEvent(this, event);
-    }
-		*/
-		return false;
 	}
     
     @DSComment("normal android callback")
@@ -717,24 +719,25 @@ public View getFocusedChild() {
 		return false;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @Override public void addFocusables(ArrayList<View> views, int direction){
 		// Original method
-		/*
-		{
         addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @Override public void addFocusables(ArrayList<View> views, int direction, int focusableMode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        for (View view: views) {
+            view.onFocusChanged(false, DSUtils.FAKE_INT, new Rect());
+        }
 	}
     
     @DSComment("Normal GUI")
@@ -801,12 +804,11 @@ public View getFocusedChild() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @Override public void addTouchables(ArrayList<View> views){
 		// Original method
-		/*
-		{
         super.addTouchables(views);
         final int count = mChildrenCount;
         final View[] children = mChildren;
@@ -816,8 +818,6 @@ public View getFocusedChild() {
                 child.addTouchables(views);
             }
         }
-    }
-		*/
 		//Return nothing
 	}
     
@@ -1546,6 +1546,13 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
         return false;
     }
 		*/
+        final View[] children = mChildren;
+        for (int i = 0; i != children.length; i ++) {
+            View child = children[i];
+            if (child.requestFocus(direction, previouslyFocusedRect)) {
+                return true;
+            }
+        }
 		return false;
 	}
     
@@ -1700,22 +1707,18 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container){
 		// Original method
-		/*
-		{
         super.dispatchSaveInstanceState(container);
-    }
-		*/
 		//Return nothing
 	}
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container){
 		// Original method
-		/*
-		{
         super.dispatchRestoreInstanceState(container);
         final int count = mChildrenCount;
         final View[] children = mChildren;
@@ -1725,8 +1728,6 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
                 c.dispatchRestoreInstanceState(container);
             }
         }
-    }
-		*/
 		//Return nothing
 	}
     
@@ -1828,6 +1829,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		return null;
 	}
     
+    @DSVerified
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -1835,6 +1837,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        onDraw(canvas);
 	}
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -1897,11 +1900,14 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     protected boolean drawChild(Canvas canvas, View child, long drawingTime){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
+        onDraw(canvas);
+        child.onDraw(canvas);
 		return false;
 	}
     
@@ -2091,24 +2097,20 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		return null;
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void addView(View child){
 		// Original method
-		/*
-		{
         addView(child, -1);
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void addView(View child, int index){
 		// Original method
-		/*
-		{
         LayoutParams params = child.getLayoutParams();
         if (params == null) {
             params = generateDefaultLayoutParams();
@@ -2117,36 +2119,31 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
             }
         }
         addView(child, index, params);
-    }
-		*/
-		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void addView(View child, int width, int height){
 		// Original method
-		/*
-		{
         final LayoutParams params = generateDefaultLayoutParams();
         params.width = width;
         params.height = height;
         addView(child, -1, params);
-    }
-		*/
-		//Return nothing
 	}
     
+    @DSVerified
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void addView(View child, LayoutParams params){
 		// Original method
-		/*
-		{
         addView(child, -1, params);
-    }
-		*/
 		//Return nothing
 	}
     
+    @DSVerified
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void addView(View child, int index, LayoutParams params){
 		// Original method
 		/*
@@ -2154,11 +2151,10 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
         if (DBG) {
             System.out.println(this + " addView");
         }
+        */
         requestLayout();
         invalidate(true);
         addViewInner(child, index, params, false);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -2177,7 +2173,8 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS) 
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -2223,29 +2220,22 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     protected boolean addViewInLayout(View child, int index, LayoutParams params){
 		// Original method
-		/*
-		{
         return addViewInLayout(child, index, params, false);
-    }
-		*/
-		return false;
 	}
-    
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     protected boolean addViewInLayout(View child, int index, LayoutParams params,
             boolean preventRequestLayout){
 		// Original method
-		/*
-		{
         child.mParent = null;
         addViewInner(child, index, params, preventRequestLayout);
         child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK) | DRAWN;
         return true;
-    }
-		*/
-		return false;
 	}
     
     protected void cleanupLayoutState(View child){
@@ -2257,12 +2247,15 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     private void addViewInner(View child, int index, LayoutParams params,
             boolean preventRequestLayout){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        //calling attching to window
+        child.onAttachedToWindow();
 	}
     
     @DSComment("Private Method")
@@ -2342,17 +2335,14 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void removeView(View view){
 		// Original method
-		/*
-		{
         removeViewInternal(view);
         requestLayout();
         invalidate(true);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -3380,17 +3370,14 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public LayoutParams generateLayoutParams(AttributeSet attrs){
-		// Original method
-		/*
-		{
         return new LayoutParams(getContext(), attrs);
-    }
-		*/
-		return null;
 	}
     
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -3482,7 +3469,8 @@ private HoverTarget() {
 		*/
 		return 0;
 	}
-    
+
+    @DSVerified
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -3532,6 +3520,7 @@ private HoverTarget() {
 		//Return nothing
 	}
     
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     protected void measureChildWithMargins(View child,
@@ -3824,9 +3813,15 @@ private HoverTarget() {
      * @param animationListener the layout animation listener
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.071 -0500", hash_original_method = "CCA9986B4D287F2F006BAE825941ECAA", hash_generated_method = "6B28890EA364BD54F07B7CDD3200B2AF")
-    
+    @DSVerified("Calling callbacks ")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
         mAnimationListener = animationListener;
+
+        Animation animation = getAnimation();
+        if (animationListener != null && animation != null) {
+            animation.setAnimationListener(animationListener);
+        }
     }
     
     public void requestTransitionStart(LayoutTransition transition){

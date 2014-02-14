@@ -240,6 +240,11 @@ private AccessibilityNodeInfo() {
         /* do nothing */
     }
 
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public  AccessibilityNodeInfo(DSOnlyType doncare) {
+        
+    }
     /**
      * Sets the source.
      *
