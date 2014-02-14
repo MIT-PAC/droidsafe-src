@@ -6761,7 +6761,7 @@ AttachInfo(IWindowSession session, IWindow window,
         @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
-        @DSVerified()
+        // @DSVerified()
         void onClick(View v);
     }
     
