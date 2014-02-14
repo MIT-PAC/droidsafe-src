@@ -27,7 +27,10 @@ public class DSUtils {
 	 * @param filter
 	 * @return
 	 */
-	
+
+    //mgordon: using a static method is bad for the precision of the analysis!
+    //do not use 
+    /**
 	public static Intent[] getIntentFromFilter(IntentFilter filter) {
 		int actionCount = filter.countActions();
 		int catCount = filter.countCategories();
@@ -43,4 +46,5 @@ public class DSUtils {
 		
 		return intents;
 	}
+    **/
 }

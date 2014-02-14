@@ -34,13 +34,6 @@ protected AbstractCollection() {
     }
     
     protected void incrementCapacity(int additional) {
-        int newCap = capacity + additional; 
-        E[] newCollection = (E[])new Object[newCap];
-        for (int i = 0; i < capacity; i++) {
-            newCollection[i] = collectionData[i];
-        }
-        collectionData = newCollection;
-        addTaint(capacity);
     }
         
 @DSComment("From safe class list")

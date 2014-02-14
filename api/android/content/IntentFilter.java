@@ -407,7 +407,7 @@ public final int getPriority() {
     
 public final void addAction(String action) {
         if (!mActions.contains(action)) {
-            mActions.add(action.intern());
+            mActions.add(action);
         }
     }
 

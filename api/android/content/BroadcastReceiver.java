@@ -428,15 +428,29 @@ void checkSynchronousHint() {
     // broadcast the receiver of application
     // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
     
-    public void __ds__registerIntentFilter(IntentFilter intentFilter) {
-        if (mApplication != null) {
-            mApplication.__ds__intentFilters.add(intentFilter);
-            Intent intent = new Intent();
-            intent.addCategory(intentFilter.getCategory(0));
-            intent.setAction(intentFilter.getAction(0));
-            mApplication.__ds__intentsFromFilter.add(intent);
+    public Intent[] __ds__registerIntentFilter(IntentFilter intentFilter) {
+        int actionCount = intentFilter.countActions();
+        int catCount = intentFilter.countCategories();
+        Intent[] intents = new Intent[actionCount];
+        for (int actionIndex = 0; actionIndex < actionCount; actionIndex++) {
+            Intent intent = new Intent(intentFilter.getAction(actionIndex));
+            
+            for (int catIndex = 0; catIndex < catCount; catIndex++) {
+                intent.addCategory(intentFilter.getCategory(catIndex));
+            }
+            
+            if (mApplication != null) {
+                mApplication.__ds__intentFilters.add(intentFilter);
+                mApplication.__ds__intentsFromFilter.add(intent);
+            }            
+            
             onReceive(mApplication, intent);
+
+
+            intents[actionIndex] = intent;
         }
+	
+        return intents;
     }
     
     public void setApplication(Application app) { 

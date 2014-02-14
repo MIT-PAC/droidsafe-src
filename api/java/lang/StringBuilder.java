@@ -94,7 +94,7 @@ public StringBuilder(String str) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.188 -0500", hash_original_method = "F4B609B0FD968769DCA7EA12F3C7D749", hash_generated_method = "10234F2C6B874DC25F3B85EB5405B8BF")
     
 public StringBuilder append(boolean b) {
-        append0(b ? "true" : "false");
+        this.addTaint(b);
         return this;
     }
 
@@ -132,7 +132,7 @@ public StringBuilder append(char c) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.193 -0500", hash_original_method = "03C42A72247CEAA018EF9799EE93DC9B", hash_generated_method = "06B8F1DCC54980DA0607BA7F80669E0E")
     
 public StringBuilder append(int i) {
-        IntegralToString.appendInt(this, i);
+        addTaint(i);
         return this;
     }
 
@@ -151,7 +151,7 @@ public StringBuilder append(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.195 -0500", hash_original_method = "3D332B8F712AE97F73088EED6A4C60D8", hash_generated_method = "AF09391DF0EB76459C4CDE72BE800231")
     
 public StringBuilder append(long l) {
-        IntegralToString.appendLong(this, l);
+        addTaint(l);
         return this;
     }
 
@@ -170,7 +170,7 @@ public StringBuilder append(long l) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.197 -0500", hash_original_method = "C39FE91FF51EAFB5C369F19D2F31B26F", hash_generated_method = "CDEFE36323E4CF99EA8F8E5BB889EA8B")
     
 public StringBuilder append(float f) {
-        RealToString.getInstance().appendFloat(this, f);
+        this.addTaint(f);
         return this;
     }
 
@@ -189,7 +189,7 @@ public StringBuilder append(float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.200 -0500", hash_original_method = "E9C651CD5B73A9D5605CA0251B77324C", hash_generated_method = "4D0DCE75113BEA77BE9EBE194E669575")
     
 public StringBuilder append(double d) {
-        RealToString.getInstance().appendDouble(this, d);
+        this.addTaint(d);
         return this;
     }
 
@@ -247,11 +247,7 @@ public StringBuilder append(String str) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.207 -0500", hash_original_method = "DA3BC72B04D08CA1AE27B14F3B2132F6", hash_generated_method = "3CDECCB6296E381BB262A6BF8AF07057")
     
 public StringBuilder append(StringBuffer sb) {
-        if (sb == null) {
-            appendNull();
-        } else {
-            append0(sb.getValue(), 0, sb.length());
-        }
+        addTaint(sb.getTaint());
         return this;
     }
 
@@ -314,11 +310,7 @@ public StringBuilder append(char[] str, int offset, int len) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.215 -0500", hash_original_method = "D80365633E36C9036E4897C864A6AF37", hash_generated_method = "FDC02CA5B38F45068CDDBB9202395239")
     
 public StringBuilder append(CharSequence csq) {
-        if (csq == null) {
-            appendNull();
-        } else {
-            append0(csq, 0, csq.length());
-        }
+        append0(csq, 0, csq.length());
         return this;
     }
 
@@ -362,7 +354,7 @@ public StringBuilder append(CharSequence csq, int start, int end) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.220 -0500", hash_original_method = "6B412AA8DE0150EC1DBDE5B0F42A5CFB", hash_generated_method = "4AE22F5CB99576F6B7D639914551478A")
     
 public StringBuilder appendCodePoint(int codePoint) {
-        append0(Character.toChars(codePoint));
+        addTaint(codePoint);
         return this;
     }
 
@@ -429,7 +421,7 @@ public StringBuilder deleteCharAt(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.227 -0500", hash_original_method = "9E94636A15CA5FDDF7E9AC999A98B61E", hash_generated_method = "D5451CE46EB1A61A7740C8D3D125ABAF")
     
 public StringBuilder insert(int offset, boolean b) {
-        insert0(offset, b ? "true" : "false");
+        addTaint(b);
         return this;
     }
 
@@ -477,7 +469,8 @@ public StringBuilder insert(int offset, char c) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.232 -0500", hash_original_method = "0E2F0E15101F82363F6315617D179ADE", hash_generated_method = "8794B9AC39FE97D939AC8F6B3DABBC3A")
     
 public StringBuilder insert(int offset, int i) {
-        insert0(offset, Integer.toString(i));
+        addTaint(i);
+        addTaint(offset);
         return this;
     }
 
@@ -501,7 +494,7 @@ public StringBuilder insert(int offset, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.235 -0500", hash_original_method = "0414BCBB4B3CD85646765E73B01D123B", hash_generated_method = "A24B024E0D99D53BD03CEC4D3E9887E8")
     
 public StringBuilder insert(int offset, long l) {
-        insert0(offset, Long.toString(l));
+        addTaint(l);addTaint(offset);
         return this;
     }
 
@@ -525,7 +518,7 @@ public StringBuilder insert(int offset, long l) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.237 -0500", hash_original_method = "8BED9229B1DF452CCAD065018015A008", hash_generated_method = "2EAB1FAF0819E152B085B766F439EB26")
     
 public StringBuilder insert(int offset, float f) {
-        insert0(offset, Float.toString(f));
+        addTaint(f);addTaint(offset);
         return this;
     }
 
@@ -550,7 +543,7 @@ public StringBuilder insert(int offset, float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.240 -0500", hash_original_method = "1BF020DB1D2B7F2D38356085E08D1D32", hash_generated_method = "C290A3D0DE64D1A7BB5BD94652237949")
     
 public StringBuilder insert(int offset, double d) {
-        insert0(offset, Double.toString(d));
+        addTaint(d);addTaint(offset);
         return this;
     }
 
@@ -574,7 +567,8 @@ public StringBuilder insert(int offset, double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.242 -0500", hash_original_method = "61D3E125BF148F03C1F93F887D6D82B6", hash_generated_method = "FB88A32D48655BF1B000CF687A0A5E1E")
     
 public StringBuilder insert(int offset, Object obj) {
-        insert0(offset, obj == null ? "null" : obj.toString());
+        addTaint(obj.toString().getTaint());
+        addTaint(offset);
         return this;
     }
 

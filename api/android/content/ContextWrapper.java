@@ -571,21 +571,7 @@ public Context getBaseContext() {
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        int actionCount = filter.countActions();
-        int catCount = filter.countCategories();
-        Intent[] intents = new Intent[actionCount];
-        for (int actionIndex = 0; actionIndex < actionCount; actionIndex++) {
-            Intent intent = new Intent(filter.getAction(actionIndex));
-
-            for (int catIndex = 0; catIndex < catCount; catIndex++) {
-                intent.addCategory(filter.getCategory(catIndex));
-            }
-            intents[actionIndex] = intent;
-            receiver.onReceive(this, intent);
-        }
-        
-        return intents[0];
-    	
+        return receiver.__ds__registerIntentFilter(filter)[0];
     	//return null; // no 'sticky' intents need to be modeled for coverage
     }
 
@@ -602,24 +588,12 @@ public Context getBaseContext() {
         BroadcastReceiver receiver, IntentFilter filter,
         String broadcastPermission, Handler scheduler) {
         
-        int actionCount = filter.countActions();
-        int catCount = filter.countCategories();
-        Intent[] intents = new Intent[actionCount];
-        for (int actionIndex = 0; actionIndex < actionCount; actionIndex++) {
-            Intent intent = new Intent(filter.getAction(actionIndex));
-
-            for (int catIndex = 0; catIndex < catCount; catIndex++) {
-                intent.addCategory(filter.getCategory(catIndex));
-            }
-            intents[actionIndex] = intent;
-            receiver.onReceive(this, intent);
-        }
+        Intent intent = receiver.__ds__registerIntentFilter(filter)[0];
         
-        
-        //return intents[0];
-        
-        return mBase.registerReceiver(receiver, filter, broadcastPermission,
+        mBase.registerReceiver(receiver, filter, broadcastPermission,
                 scheduler);
+
+        return intent;
     }
 
     @DSVerified
