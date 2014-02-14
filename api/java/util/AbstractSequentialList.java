@@ -23,7 +23,7 @@ protected AbstractSequentialList() {
     
 @Override
     public void add(int location, E object) {
-        listIterator(location).add(object);
+        addElementAt(location, object);
     }
 
     @DSComment("From safe class list")
@@ -32,13 +32,7 @@ protected AbstractSequentialList() {
     
 @Override
     public boolean addAll(int location, Collection<? extends E> collection) {
-        ListIterator<E> it = listIterator(location);
-        Iterator<? extends E> colIt = collection.iterator();
-        int next = it.nextIndex();
-        while (colIt.hasNext()) {
-            it.add(colIt.next());
-        }
-        return next != it.nextIndex();
+        return super.addAll(location, collection);
     }
 
     @DSComment("From safe class list")
@@ -48,11 +42,7 @@ protected AbstractSequentialList() {
     
 @Override
     public E get(int location) {
-        try {
-            return listIterator(location).next();
-        } catch (NoSuchElementException e) {
-            throw new IndexOutOfBoundsException();
-        }
+        return getElementAt(location);
     }
 
     @DSComment("From safe class list")
@@ -79,14 +69,7 @@ protected AbstractSequentialList() {
     
 @Override
     public E remove(int location) {
-        try {
-            ListIterator<E> it = listIterator(location);
-            E result = it.next();
-            it.remove();
-            return result;
-        } catch (NoSuchElementException e) {
-            throw new IndexOutOfBoundsException();
-        }
+        return super.remove(location);
     }
 
     @DSComment("From safe class list")
@@ -96,13 +79,7 @@ protected AbstractSequentialList() {
     
 @Override
     public E set(int location, E object) {
-        ListIterator<E> it = listIterator(location);
-        if (!it.hasNext()) {
-            throw new IndexOutOfBoundsException();
-        }
-        E result = it.next();
-        it.set(object);
-        return result;
+        return super.set(location, object);
     }
     
 }
