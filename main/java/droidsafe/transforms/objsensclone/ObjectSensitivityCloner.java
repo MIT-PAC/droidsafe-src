@@ -80,7 +80,7 @@ public class ObjectSensitivityCloner {
     /** Do not clone classes that will add more than this percentage to the total number of classes */
     private static final double CLONING_THRESHOLD = .15;
 
-    private static final boolean CLONE_STRINGS = true;
+    private static final boolean CLONE_STRINGS = false;
 
     /** list of classes resolved by VA, some of which should be cloned */
     public static final Set<SootClass> VA_RESOLVED_CLASSES = 
