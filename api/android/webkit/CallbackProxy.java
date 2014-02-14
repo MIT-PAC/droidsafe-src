@@ -278,6 +278,8 @@ public WebChromeClient getWebChromeClient() {
     
 public void setDownloadListener(DownloadListener client) {
         mDownloadListener = client;
+        if (client != null) {
+        }
     }
 
     /**
@@ -313,7 +315,8 @@ WebBackForwardListClient getWebBackForwardListClient() {
      */
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.311 -0500", hash_original_method = "43AE5B1BF40E67157C7361E5EC862A6C", hash_generated_method = "77FCB2DD35C0BD735FD6211133F153EF")
-    
+    @DSVerified
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
 public boolean uiOverrideUrlLoading(String overrideUrl) {
         if (overrideUrl == null || overrideUrl.length() == 0) {
             return false;
@@ -504,7 +507,6 @@ public boolean uiOverrideKeyEvent(KeyEvent event) {
                         msg.getData().getString("contentDisposition");
                     String mimetype = msg.getData().getString("mimetype");
                     Long contentLength = msg.getData().getLong("contentLength");
-
                     mDownloadListener.onDownloadStart(url, userAgent,
                             contentDisposition, mimetype, contentLength);
                 }

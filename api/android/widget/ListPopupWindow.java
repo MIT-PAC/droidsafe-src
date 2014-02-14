@@ -537,9 +537,15 @@ public void setHeight(int height) {
      * @see ListView#setOnItemClickListener(android.widget.AdapterView.OnItemClickListener)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.064 -0500", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "4F93B27CDA566E1947C562DDACAB23C1")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
         mItemClickListener = clickListener;
+        if (clickListener != null) {
+            AdapterView<?> a = (AdapterView<?>)getListView();
+            clickListener.onItemClick(a, new View(DSOnlyType.NOT_VALID), DSUtils.FAKE_INT,
+                    (long)DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -550,9 +556,15 @@ public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener
      * @see ListView#setOnItemSelectedListener(android.widget.AdapterView.OnItemSelectedListener)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.066 -0500", hash_original_method = "77C1F384A6316C978289202E5719DEEE", hash_generated_method = "080AB42266AF6BB9870333E8AD2B5DFF")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener selectedListener) {
         mItemSelectedListener = selectedListener;
+        if (selectedListener != null) {
+            AdapterView<?> a = (AdapterView<?>)getListView();
+            selectedListener.onItemSelected(a, new View(DSOnlyType.NOT_VALID), DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+            selectedListener.onNothingSelected(a);
+        }
     }
 
     /**

@@ -1420,6 +1420,12 @@ public View(Context context, AttributeSet attrs) {
 		mResources = null;
 		*/
 	}
+	
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified
+    public View(droidsafe.helpers.DSOnlyType dontcare) {
+       this(); 
+    }
     
     protected void initializeFadingEdge(TypedArray a){
 		// Original method

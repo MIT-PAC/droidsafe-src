@@ -541,9 +541,15 @@ public void setThreshold(int threshold) {
      * @param l the item click listener
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.090 -0500", hash_original_method = "B69DF6D8B348285F7F509DAAD23C3372", hash_generated_method = "7842F66D843EA6654D84B924FD053A47")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
         mItemClickListener = l;
+        if (l != null) {
+            AdapterView<?> a = (AdapterView<?>)getRootView();
+            //TODO: to figure out proper AdapterView to pass in here
+            l.onItemClick(a, this, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -553,9 +559,17 @@ public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
      * @param l the item selected listener
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.092 -0500", hash_original_method = "48F24F393448111E92CC5CFF766C1584", hash_generated_method = "A61D054416CB4681E7ED1D9CB20ED173")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)   
 public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener l) {
         mItemSelectedListener = l;
+        if (l != null) {
+           View v = this.getRootView(); 
+           AdapterView<?> av = (AdapterView<?>)v;
+            l.onItemSelected(av, new View(DSOnlyType.NOT_USED), DSUtils.FAKE_INT,
+                    (long)DSUtils.FAKE_INT);
+            l.onNothingSelected(av);
+        }
     }
 
     /**

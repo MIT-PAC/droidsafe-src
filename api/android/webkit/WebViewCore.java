@@ -2530,7 +2530,12 @@ protected DeviceOrientationService getDeviceOrientationService() {
     private void nativeResume(){
     	//Formerly a native method
     }
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private void droidsafeHandleMessage(Message msg) {
+    }
+
     private static class WebCoreThread implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.174 -0500", hash_original_field = "F2F3FD27E3C0039D3E93099B6B8DDCBB", hash_generated_field = "4F713FFA365E563DDF84874CBE5719C1")
 
@@ -2549,9 +2554,11 @@ protected DeviceOrientationService getDeviceOrientationService() {
         {
             //Synthesized constructor
         }
+        
+        
+  
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.185 -0500", hash_original_method = "82DEF5A0DA884DCAB5C26C3D415DCFF4", hash_generated_method = "2E3D0317EE5893C232A5D0C05FB91FEB")
-        
 public void run() {
             Looper.prepare();
             Assert.assertNull(sWebCoreHandler);

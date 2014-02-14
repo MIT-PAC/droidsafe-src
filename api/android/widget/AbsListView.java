@@ -8,6 +8,8 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.internal.view.menu.MenuBuilder;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -22,6 +24,7 @@ import android.util.AttributeSet;
 import android.util.LongSparseArray;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
+import android.view.ActionMode.SimpleActionMode;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -467,6 +470,12 @@ public AbsListView(Context context, AttributeSet attrs) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    //droidsafe hook
+    @Override
+    public void droidsafeCallbackHook() {
+        super.droidsafeCallbackHook();
+    }
+    
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void initAbsListView(){
@@ -686,17 +695,29 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setMultiChoiceModeListener(MultiChoiceModeListener listener){
 		// Original method
-		/*
-		{
         if (mMultiChoiceModeCallback == null) {
             mMultiChoiceModeCallback = new MultiChoiceModeWrapper();
         }
         mMultiChoiceModeCallback.setWrapped(listener);
-    }
-		*/
+        if (listener != null) {
+            ActionMode mode = new ActionMode.SimpleActionMode();
+
+            MenuBuilder builder = new MenuBuilder(getContext());
+            //technically we should use the menu from external source
+            Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
+            MenuItem item = menu.add(DSUtils.FAKE_INT);
+            
+            listener.onPrepareActionMode(mode, menu);
+            listener.onItemCheckedStateChanged(mode, DSUtils.FAKE_INT,
+                    DSUtils.FAKE_INT, DSUtils.UNKNOWN_BOOLEAN);
+            listener.onCreateActionMode(mode, menu);
+            listener.onActionItemClicked(mode, item); 
+            listener.onDestroyActionMode(mode);
+        }
 		//Return nothing
 	}
     
@@ -837,11 +858,13 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnScrollListener(OnScrollListener l){
 		mOnScrollListener = l;  //Preserved
-		mOnScrollListener.onScroll(this, 1, 10, 10);
-		mOnScrollListener.onScrollStateChanged(this, 1);
+		mOnScrollListener.onScroll(this, DSUtils.FAKE_INT, DSUtils.FAKE_INT,
+		        DSUtils.FAKE_INT);
+		mOnScrollListener.onScrollStateChanged(this, DSUtils.FAKE_INT);
 		// Original method
 		/*
 		{
@@ -3419,10 +3442,12 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         
         public static int SCROLL_STATE_FLING = 2;
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScrollStateChanged(AbsListView view, int scrollState);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
@@ -3438,6 +3463,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     
     public interface MultiChoiceModeListener extends ActionMode.Callback {
         
+        @DSVerified("Called in AbsListView")
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onItemCheckedStateChanged(ActionMode mode,

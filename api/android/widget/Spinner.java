@@ -284,7 +284,8 @@ public void setGravity(int gravity) {
      * @param l this listener will be ignored
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.048 -0500", hash_original_method = "AE9F9278138E36A1F7A0C4102CD0DE5F", hash_generated_method = "E4893921088FD20363D1609510E45D60")
-    
+   @DSSafe(DSCat.SAFE_OTHERS) 
+    @DSVerified
 @Override
     public void setOnItemClickListener(OnItemClickListener l) {
         throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");

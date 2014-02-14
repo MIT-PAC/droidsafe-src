@@ -401,11 +401,12 @@ public long getItemId(int position) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.005 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
-    
+    @DSVerified
 public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
     
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
@@ -460,6 +461,8 @@ public void setDropDownViewResource(int resource) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.013 -0500", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "354A608CAB67E58C0C02915FF74A2A17")
     
 @Override
+@DSVerified
+@DSSafe(DSCat.SAFE_OTHERS)
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mDropDownResource);
     }

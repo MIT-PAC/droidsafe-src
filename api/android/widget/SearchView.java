@@ -336,6 +336,8 @@ static boolean isLandscapeMode(Context context) {
 
     private final OnItemClickListener mOnItemClickListener = new OnItemClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.775 -0400", hash_original_method = "5E212E5821217E2BB1A383DD15E7F009", hash_generated_method = "B4B056AC6204886414378AA45400D874")
+        @DSVerified
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             
             Log.d(LOG_TAG, "onItemClick() position " + position);

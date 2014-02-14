@@ -520,7 +520,8 @@ public void setChildDivider(Drawable childDivider) {
      * {@inheritDoc}
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.801 -0500", hash_original_method = "B7F875362109C546409DA14CD03B0627", hash_generated_method = "838DA70518B00B72ED518316BB3B654D")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void setOnItemClickListener(OnItemClickListener l) {
         super.setOnItemClickListener(l);

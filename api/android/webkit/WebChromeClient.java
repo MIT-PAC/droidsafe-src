@@ -156,7 +156,8 @@ public void onCloseWindow(WebView window) {}
      * @return boolean Whether the client will handle the alert dialog.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.824 -0500", hash_original_method = "B665260C93890B7DFFFEE826876C181C", hash_generated_method = "826D2BD1A94E35260E9B910D8DDA837B")
-    
+    @DSVerified("Not a callback.  Called by WebView's callback proxy")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean onJsAlert(WebView view, String url, String message,
             JsResult result) {
         return false;
