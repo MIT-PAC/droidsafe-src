@@ -999,6 +999,12 @@ public AlertDialog create() {
                 P.mOnCheckboxClickListener.onClick(dialog, DSUtils.FAKE_INT, false);
             }
             
+            if (P.mOnItemSelectedListener != null) {
+                AdapterView av =  (AdapterView)P.mView;
+                P.mOnItemSelectedListener.onItemSelected(av, new View(DSOnlyType.DONTCARE),
+                        DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+                P.mOnItemSelectedListener.onNothingSelected(av);
+            }
             if (P.mOnClickListener != null) {
                 P.mOnClickListener.onClick(dialog, DSUtils.FAKE_INT);
             }

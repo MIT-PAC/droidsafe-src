@@ -179,21 +179,29 @@ public LinearLayout(Context context, AttributeSet attrs) {
         */
     }
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     public void setShowDividers(int showDividers) {
         addTaint(showDividers);
         requestLayout();
     }
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     @Override
     public boolean shouldDelayChildPressedState() {
         return getTaintBoolean();
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getShowDividers() {
         return getTaintInt();
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     public void setDividerDrawable(Drawable divider) {
         if (divider != null) {
             mDividerWidth = divider.getIntrinsicWidth();
@@ -205,20 +213,27 @@ public LinearLayout(Context context, AttributeSet attrs) {
         addTaint(divider.getIntrinsicWidth());
     }
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     public void setDividerPadding(int padding) {
         addTaint(padding);
     }
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDividerPadding() {
         return getTaintInt();
     }
     
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDividerWidth() {
         return getTaintInt();
     }
     
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
@@ -1798,7 +1813,9 @@ public int getOrientation() {
             requestLayout();
         }
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.GUI) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.991 -0500", hash_original_method = "5E749CCE267F5C755BAC22F4F9345284", hash_generated_method = "CA9C1AF7081DA793BD4CF0AC667E6C23")
     
 @Override
@@ -1815,7 +1832,8 @@ public int getOrientation() {
      * and the height to {@link LayoutParams#WRAP_CONTENT}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.993 -0500", hash_original_method = "3D6E4608F39560A7785B268309288C51", hash_generated_method = "7A67EAB2FE0D2916307AA18036B8065F")
-    
+    @DSVerified
+    @DSSafe(DSCat.GUI) 
 @Override
     protected LayoutParams generateDefaultLayoutParams() {
         if (mOrientation == HORIZONTAL) {
@@ -1825,7 +1843,8 @@ public int getOrientation() {
         }
         return null;
     }
-
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.995 -0500", hash_original_method = "E5FE95308BC48D9899CFDE5A4F7DEDB6", hash_generated_method = "5EC68A52A80404D335FAABCCA3BC514C")
     
 @Override
@@ -1833,6 +1852,8 @@ public int getOrientation() {
         return new LayoutParams(p);
     }
 
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     // Override to allow type-checking of LayoutParams.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.997 -0500", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "28AB7436F710E069C2BB270F65908AD1")
     

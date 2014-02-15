@@ -79,7 +79,8 @@ public InputStream getContent()
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.834 -0500", hash_original_method = "AB7D45D5A15CAF2F20DF541B4637AB99", hash_generated_method = "7177975BE493E9B969B7CF7EB1DD7476")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public void writeTo(OutputStream outstream)
         throws IOException {
         wrappedEntity.writeTo(outstream);

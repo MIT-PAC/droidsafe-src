@@ -1350,6 +1350,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     
+                    @DSVerified
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public View(Context context){
@@ -1420,6 +1421,12 @@ public View(Context context, AttributeSet attrs) {
 		mResources = null;
 		*/
 	}
+	
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSVerified
+    public View(droidsafe.helpers.DSOnlyType dontcare) {
+       this(); 
+    }
     
     protected void initializeFadingEdge(TypedArray a){
 		// Original method
@@ -7359,6 +7366,7 @@ protected boolean isVerticalScrollBarHidden() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.549 -0500", hash_original_method = "88C9EEC1EB66ECE8EDFB3E744FAAD32C", hash_generated_method = "E113BC8AA739CC725E469C12F71C1101")
+    @DSVerified
     
 protected void onDraw(Canvas canvas) {
     }

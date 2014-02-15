@@ -73,9 +73,14 @@ public RatingBar(Context context) {
      * @param listener The listener.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.734 -0500", hash_original_method = "CB44A4D2B638D14CC961BB9C350C60D5", hash_generated_method = "EC3E173484ED252D622A0CA73172F600")
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnRatingBarChangeListener(OnRatingBarChangeListener listener) {
         mOnRatingBarChangeListener = listener;
+        if (listener != null) {
+            listener.onRatingChanged(this, 
+                    DSUtils.UNKNOWN_FLOAT, DSUtils.UNKNOWN_BOOLEAN);
+        }
     }
     
     /**
@@ -332,6 +337,7 @@ void dispatchRatingChange(boolean fromUser) {
     
     public interface OnRatingBarChangeListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser);

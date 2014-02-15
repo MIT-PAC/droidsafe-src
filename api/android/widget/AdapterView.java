@@ -142,6 +142,8 @@ public AdapterView(Context context, AttributeSet attrs, int defStyle) {
     }
         
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.375 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "A196844E345185ADD2A42B24D8C435A9")
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
         //TODO: callback listener
@@ -155,7 +157,6 @@ public AdapterView(Context context, AttributeSet attrs, int defStyle) {
      *         been clicked, or null id no callback has been set.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.974 -0500", hash_original_method = "53FBB33228561FD1F46130BA576FD131", hash_generated_method = "3D9F6F39644A66B08EDDAAAEA44D28DD")
-    
 public final OnItemClickListener getOnItemClickListener() {
         return mOnItemClickListener;
     }
@@ -192,6 +193,7 @@ public boolean performItemClick(View view, int position, long id) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.981 -0500", hash_original_method = "8890007B6750F9F3A0AF363421C33470", hash_generated_method = "61F9D91F91DF3E0733CD083126E71A92")
     @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnItemLongClickListener(OnItemLongClickListener listener) {
         if (!isLongClickable()) {
             setLongClickable(true);
@@ -217,9 +219,16 @@ public final OnItemLongClickListener getOnItemLongClickListener() {
      * @param listener The callback that will run
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.987 -0500", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "2D3BB4E9340D49E8E59E0B4D10064887")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         mOnItemSelectedListener = listener;
+        if (listener != null) {
+
+            listener.onItemSelected(this, new View(DSOnlyType.DONTCARE), 
+                    DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+            listener.onNothingSelected(this); 
+        }
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.990 -0500", hash_original_method = "C1B2E8F5BC8E80BA634AE326A645C328", hash_generated_method = "10F0D77C2F0F6DF3EA3824C2C66600BA")
@@ -933,6 +942,7 @@ public void run() {
     
     public interface OnItemClickListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onItemClick(AdapterView<?> parent, View view, int position, long id);
@@ -940,6 +950,7 @@ public void run() {
     
     public interface OnItemLongClickListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id);
@@ -947,10 +958,12 @@ public void run() {
     
     public interface OnItemSelectedListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onItemSelected(AdapterView<?> parent, View view, int position, long id);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onNothingSelected(AdapterView<?> parent);

@@ -103,7 +103,7 @@ public FilterResults() {
 public RequestHandler(Looper looper) {
             super(looper);
         }
-        
+
         /**
          * <p>Handles filtering requests by calling
          * {@link Filter#performFiltering} and then sending a message
@@ -232,8 +232,21 @@ public void handleMessage(Message msg) {
      * @see #publishResults(CharSequence, android.widget.Filter.FilterResults)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.053 -0500", hash_original_method = "72132B08B36B7C63B817B4EDB2584A0E", hash_generated_method = "14BEA71A118655F166B81BAB279E61A4")
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public final void filter(CharSequence constraint, FilterListener listener) {
+        //Original code delegates processing to the mThreadHandler 
+        //The model performs it directly here as a model
+        performFiltering(constraint);
+        if (listener != null) {
+            listener.onFilterComplete(DSUtils.FAKE_INT);
+        }
+        
+        FilterResults results = new FilterResults();
+        publishResults(constraint, results);
+
+        //Original:
+        /*
         synchronized (mLock) {
             if (mThreadHandler == null) {
                 HandlerThread thread = new HandlerThread(
@@ -257,6 +270,7 @@ public final void filter(CharSequence constraint, FilterListener listener) {
             mThreadHandler.removeMessages(FINISH_TOKEN);
             mThreadHandler.sendMessageDelayed(message, delay);
         }
+        */
     }
 
     /**
@@ -279,7 +293,8 @@ public final void filter(CharSequence constraint, FilterListener listener) {
      * @see android.widget.Filter.FilterResults
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.056 -0500", hash_original_method = "5D9C7EB89D72F26BDF5B529628AEC808", hash_generated_method = "928692DC9D126A81A52E50557C0E61D0")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS) 
 protected abstract FilterResults performFiltering(CharSequence constraint);
 
     /**
@@ -309,7 +324,9 @@ protected abstract void publishResults(CharSequence constraint,
      * @return a CharSequence representing the value
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.061 -0500", hash_original_method = "5D0951FE3DB94952122FC0A58DABB40C", hash_generated_method = "548BF281A0CB22879A28C8B5DAAEBC85")
-    
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public CharSequence convertResultToString(Object resultValue) {
         return resultValue == null ? "" : resultValue.toString();
     }

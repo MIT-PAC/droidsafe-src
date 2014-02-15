@@ -71,7 +71,8 @@ public static void setMaxConnectionsPerRoute(final HttpParams params,
      * @see ConnManagerPNames#MAX_CONNECTIONS_PER_ROUTE
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.501 -0500", hash_original_method = "DA6ADC6E9D2C27BABC0D2375E7EFB08F", hash_generated_method = "C9A4CA687813F883FB044D2453FB3140")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public static ConnPerRoute getMaxConnectionsPerRoute(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException

@@ -9,11 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public interface Adapter {
-    
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     void registerDataSetObserver(DataSetObserver observer);
     
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     void unregisterDataSetObserver(DataSetObserver observer);
@@ -34,6 +35,7 @@ public interface Adapter {
     @DSSpec(DSCat.ABSTRACT_METHOD)
     boolean hasStableIds();
     
+    @DSVerified("Called from various classes")
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     View getView(int position, View convertView, ViewGroup parent);

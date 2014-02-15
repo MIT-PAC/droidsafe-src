@@ -424,8 +424,13 @@ public void setCurrentTab(int index) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.624 -0500", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "D99F564D264294062CE40B73B7F6CF69")
     
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
+        if (l != null) {
+            l.onTabChanged(new String());
+        }
     }
 
     @DSComment("Private Method")
@@ -685,7 +690,8 @@ public FactoryContentStrategy(CharSequence tag, TabContentFactory factory) {
 
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.721 -0500", hash_original_method = "ED11D1341C028F4F2DA686CA9100CB0F", hash_generated_method = "D3E27D5F5789C8EFBB4F418168A8FD30")
-        
+        @DSVerified
+        @DSSafe(DSCat.GUI)
 public View getContentView() {
             if (mTabContent == null) {
                 mTabContent = mFactory.createTabContent(mTag.toString());
@@ -763,6 +769,7 @@ public void tabClosed() {
     }
     
     public interface OnTabChangeListener {
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onTabChanged(String tabId);
@@ -770,6 +777,7 @@ public void tabClosed() {
     
     public interface TabContentFactory {
         
+        @DSVerified("Class interface, not for callback")
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         View createTabContent(String tag);

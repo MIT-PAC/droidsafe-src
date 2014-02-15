@@ -1033,6 +1033,7 @@ private void updateSelectionPositions() {
     
     public interface OnDateChangeListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth);
@@ -1117,9 +1118,14 @@ public void setFirstDayOfWeek(int firstDayOfWeek) {
      * @param listener The listener to be notified.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.047 -0500", hash_original_method = "2EC5480533B2BF54D56B2049BA7CA5D7", hash_generated_method = "760AF8D4280E51921BA03F1DD37302CA")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnDateChangeListener(OnDateChangeListener listener) {
         mOnDateChangeListener = listener;
+        if (listener != null) {
+            listener.onSelectedDayChange(this, DSUtils.FAKE_INT,
+                    DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
     }
 
     /**

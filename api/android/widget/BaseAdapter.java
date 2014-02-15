@@ -26,16 +26,17 @@ public boolean hasStableIds() {
         return false;
     }
     
-    @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.481 -0500", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "6A22BA8F56D7F69EA0195E58760DC1E9")
-    
 public void registerDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.registerObserver(observer);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.483 -0500", hash_original_method = "8548074F279CEB9C75C60995B3E76B4B", hash_generated_method = "031B2EC0C55A5BC43BE2C370EF5FFD75")
     
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void unregisterDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.unregisterObserver(observer);
     }
@@ -79,7 +80,8 @@ public boolean isEnabled(int position) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.493 -0500", hash_original_method = "CB37ABFEFF70AAB623ABE3C5C5654EBA", hash_generated_method = "C130B06C5541CF8B289B8F49334D09CE")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getView(position, convertView, parent);
     }

@@ -2425,7 +2425,7 @@ private void loadUrlImpl(String url, Map<String, String> extraHeaders) {
     @DSComment("I/O load/store/Internet")
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.569 -0500", hash_original_method = "900343F64392479D278DAE2853AD0CAD", hash_generated_method = "AACBEEE0E28FE1B64F1E9BC46034B940")
-    
+    @DSVerified
 public void loadUrl(String url) {
         checkThread();
         loadUrlImpl(url);
@@ -2434,6 +2434,7 @@ public void loadUrl(String url) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.571 -0500", hash_original_method = "9F389BEC5E499016577EC1A6216F8CDA", hash_generated_method = "01ADABB1756CCB934FAEC213819353E2")
+    @DSVerified
     
 private void loadUrlImpl(String url) {
         if (url == null) {

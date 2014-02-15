@@ -46,7 +46,9 @@ public void notifyInvalidated() {
             }
         }
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     // orphaned legacy method
     @Override
 	public void registerObserver(DataSetObserver observer) {

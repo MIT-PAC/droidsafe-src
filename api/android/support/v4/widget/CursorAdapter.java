@@ -382,7 +382,8 @@ public CharSequence convertToString(Cursor cursor) {
      * @see #setFilterQueryProvider(android.widget.FilterQueryProvider)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.237 -0500", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "5F7BE9B3FD55D8757F5D41047CD6CB7C")
-    
+    @DSVerified
+    @DSSpec(DSCat.DATABASE) 
 public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
         if (mFilterQueryProvider != null) {
             return mFilterQueryProvider.runQuery(constraint);
@@ -476,7 +477,8 @@ public ChangeObserver() {
      * @see #runQueryOnBackgroundThread(CharSequence)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.244 -0500", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "6EE317667BB9ED8B884FEF999EC255FF")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
         mFilterQueryProvider = filterQueryProvider;
     }

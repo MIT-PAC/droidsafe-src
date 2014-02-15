@@ -111,7 +111,8 @@ protected Map<HttpRoute, RouteSpecificPool> createRouteToPoolMap() {
      * @return  the new pool
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.274 -0500", hash_original_method = "5DDB8B45F189660D50400B7C32F12F31", hash_generated_method = "6592B93F88A363C7E41FBD1C5A6C9416")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 protected RouteSpecificPool newRouteSpecificPool(HttpRoute route) {
         return new RouteSpecificPool(route, connPerRoute.getMaxForRoute(route));
     }

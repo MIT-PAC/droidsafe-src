@@ -81,7 +81,7 @@ public class WebViewClient {
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.228 -0500", hash_original_method = "B25B5EE312C01437108EEEF8D289ECD3", hash_generated_method = "C63E892A6BA4EC792C3677F2364FB69A")
-    
+    @DSVerified
 public boolean shouldOverrideUrlLoading(WebView view, String url) {
         return false;
     }
@@ -126,6 +126,7 @@ public void onPageFinished(WebView view, String url) {
      */
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.234 -0500", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "131BF72B6B1D1DE1F995D238334481A4")
     
 public void onLoadResource(WebView view, String url) {

@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public interface Executor {
     
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     void execute(Runnable command);

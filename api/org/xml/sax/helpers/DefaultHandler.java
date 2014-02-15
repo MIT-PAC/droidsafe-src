@@ -148,7 +148,7 @@ public void setDocumentLocator (Locator locator)
     @DSComment("No op default handler")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.142 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "3955D568D23D91849FC2AFF57016EC23")
-    
+    @DSVerified 
 public void startDocument ()
     throws SAXException
     {
@@ -242,7 +242,8 @@ public void endPrefixMapping (String prefix)
      * @see org.xml.sax.ContentHandler#startElement
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.151 -0500", hash_original_method = "4370BBADFC324ACBBC533D016E5331B9", hash_generated_method = "A43BCFB3590903ED462CCADA0953A76D")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void startElement (String uri, String localName,
                   String qName, Attributes attributes)
     throws SAXException
@@ -271,7 +272,8 @@ public void startElement (String uri, String localName,
      * @see org.xml.sax.ContentHandler#endElement
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.153 -0500", hash_original_method = "D1BB65E44FB06EB911D3CDAFED8D37CD", hash_generated_method = "0BCE982FF5852BF7039A7416E6F1C03A")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void endElement (String uri, String localName, String qName)
     throws SAXException
     {
@@ -295,7 +297,8 @@ public void endElement (String uri, String localName, String qName)
      * @see org.xml.sax.ContentHandler#characters
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.156 -0500", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "D16272D013A1528940CEA00C0F124898")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void characters (char ch[], int start, int length)
     throws SAXException
     {
@@ -319,7 +322,8 @@ public void characters (char ch[], int start, int length)
      * @see org.xml.sax.ContentHandler#ignorableWhitespace
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.158 -0500", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "D8858A88BA20CC0A6A20C0B768D5BE33")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void ignorableWhitespace (char ch[], int start, int length)
     throws SAXException
     {
@@ -342,7 +346,8 @@ public void ignorableWhitespace (char ch[], int start, int length)
      * @see org.xml.sax.ContentHandler#processingInstruction
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.161 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "E7A100FD0C93F22A1CE30CA6639AC7DE")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void processingInstruction (String target, String data)
     throws SAXException
     {
