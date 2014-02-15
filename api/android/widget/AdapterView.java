@@ -200,7 +200,7 @@ public void setOnItemLongClickListener(OnItemLongClickListener listener) {
         }
         mOnItemLongClickListener = listener;
         if (listener != null) {
-            listener.onItemLongClick(this, new View(DSOnlyType.NOT_AVAILABLE), 
+            listener.onItemLongClick(this, new View(DSOnlyType.DONTCARE), 
                     DSUtils.FAKE_INT, (long)DSUtils.FAKE_INT);
         }
     }
@@ -228,7 +228,7 @@ public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         mOnItemSelectedListener = listener;
         if (listener != null) {
 
-            listener.onItemSelected(this, new View(DSOnlyType.NOT_AVAILABLE), 
+            listener.onItemSelected(this, new View(DSOnlyType.DONTCARE), 
                     DSUtils.FAKE_INT, DSUtils.FAKE_INT);
             listener.onNothingSelected(this); 
         }

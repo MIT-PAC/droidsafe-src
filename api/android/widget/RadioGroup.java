@@ -217,9 +217,13 @@ public void clearCheck() {
      * @param listener the callback to call on checked state change
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.189 -0500", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "2005422FD19D8F4D4652659CAEDD0423")
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
+        if (listener != null) {
+            listener.onCheckedChanged(this, DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -408,6 +412,7 @@ public void onChildViewRemoved(View parent, View child) {
     
     public interface OnCheckedChangeListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onCheckedChanged(RadioGroup group, int checkedId);

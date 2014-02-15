@@ -126,9 +126,13 @@ public void dismiss() {
      * @param listener Listener to notify
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.877 -0500", hash_original_method = "28F3665ED7463B0146351549FFC48231", hash_generated_method = "9AA69019FACE4666B4C595CCED7CCE70")
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnMenuItemClickListener(OnMenuItemClickListener listener) {
         mMenuItemClickListener = listener;
+        if (listener != null) {
+            listener.onMenuItemClick(mMenu.add(DSUtils.FAKE_INT));
+        }
     }
 
     /**
@@ -137,9 +141,13 @@ public void setOnMenuItemClickListener(OnMenuItemClickListener listener) {
      * @param listener Listener to notify
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.879 -0500", hash_original_method = "C95583275768EA3036A4E9EDA3D06AF7", hash_generated_method = "51920096DC51EBF6574C50318A80DE67")
-    
+    @DSVerified("Calling/dispatching callbacks")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnDismissListener(OnDismissListener listener) {
         mDismissListener = listener;
+        if (listener != null) {
+            listener.onDismiss(this);
+        }
     }
 
     /**
@@ -199,7 +207,7 @@ public void onMenuModeChange(MenuBuilder menu) {
     }
     
     public interface OnDismissListener {
-        
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onDismiss(PopupMenu menu);
@@ -207,6 +215,7 @@ public void onMenuModeChange(MenuBuilder menu) {
     
     public interface OnMenuItemClickListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public boolean onMenuItemClick(MenuItem item);

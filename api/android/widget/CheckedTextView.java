@@ -135,7 +135,7 @@ public void setCheckMarkDrawable(int resid) {
     @DSComment("CheckedTextView")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.365 -0500", hash_original_method = "93DA6C15D035807E73845CA0E25952EE", hash_generated_method = "8FC52121B0E09B5222D817EAA98458BD")
-    
+    @DSVerified
 public void setCheckMarkDrawable(Drawable d) {
         if (mCheckMarkDrawable != null) {
             mCheckMarkDrawable.setCallback(null);
@@ -186,6 +186,7 @@ public void setCheckMarkDrawable(Drawable d) {
         mBasePadding = mPaddingRight;
     }
 
+    @DSVerified("Called from View")
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.372 -0500", hash_original_method = "B19E130BF4CF411642FF2978EAC8260B", hash_generated_method = "5283734485D27F5C9072751F8356F5BA")

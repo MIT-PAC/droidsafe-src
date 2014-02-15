@@ -875,6 +875,7 @@ private SavedState(Parcel in) {
     
     public interface OnChildClickListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
@@ -898,6 +899,11 @@ public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
     
 public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
         mOnChildClickListener = onChildClickListener;
+        if (onChildClickListener != null) {
+            onChildClickListener.onChildClick(this, new View(DSOnlyType.DONTCARE), 
+                    DSUtils.FAKE_INT, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
+
     }
     
     /**

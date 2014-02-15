@@ -144,9 +144,12 @@ public void setChecked(boolean checked) {
      * @param listener the callback to call on checked state change
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.511 -0500", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "2005422FD19D8F4D4652659CAEDD0423")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
+        if (listener != null)
+            listener.onCheckedChanged(this, DSUtils.UNKNOWN_BOOLEAN);
     }
 
     /**
@@ -157,9 +160,12 @@ public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
      * @hide
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.513 -0500", hash_original_method = "CC17A77F98E8CA70C4846D647AA35249", hash_generated_method = "CC17A77F98E8CA70C4846D647AA35249")
-    
-void setOnCheckedChangeWidgetListener(OnCheckedChangeListener listener) {
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    void setOnCheckedChangeWidgetListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeWidgetListener = listener;
+        if (listener != null)
+            listener.onCheckedChanged(this, DSUtils.UNKNOWN_BOOLEAN);
     }
 
     /**
@@ -380,6 +386,7 @@ private SavedState(Parcel in) {
     
     public static interface OnCheckedChangeListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onCheckedChanged(CompoundButton buttonView, boolean isChecked);

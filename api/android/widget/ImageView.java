@@ -127,6 +127,7 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
 
     private boolean mBaselineAlignBottom = false;
 
+    @DSVerified
     @DSComment("Safe excetp setImageURI")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.852 -0500", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "A9312934B320F52AF3B76BC1947F3486")
@@ -943,6 +944,7 @@ private void configureBounds() {
         }
     }
 
+    @DSVerified("Called from View construction")
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.949 -0500", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "1C9D798A9510D9155570D002AE5DB66C")

@@ -5462,6 +5462,7 @@ public boolean isTextSelectable() {
         return drawableState;
     }
 
+    @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.066 -0500", hash_original_method = "FA11BA597CA3990806012CD62CCA6F49", hash_generated_method = "FFCEB09FFDE79BF596434566074776DB")

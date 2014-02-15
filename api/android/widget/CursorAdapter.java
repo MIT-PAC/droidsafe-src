@@ -406,8 +406,9 @@ public CharSequence convertToString(Cursor cursor) {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.939 -0500", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "5F7BE9B3FD55D8757F5D41047CD6CB7C")
-    
-public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
+    @DSSpec(DSCat.DATABASE)
+    @DSVerified
+    public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
         if (mFilterQueryProvider != null) {
             return mFilterQueryProvider.runQuery(constraint);
         }

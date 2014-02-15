@@ -1001,7 +1001,7 @@ public AlertDialog create() {
             
             if (P.mOnItemSelectedListener != null) {
                 AdapterView av =  (AdapterView)P.mView;
-                P.mOnItemSelectedListener.onItemSelected(av, new View(DSOnlyType.NOT_AVAILABLE),
+                P.mOnItemSelectedListener.onItemSelected(av, new View(DSOnlyType.DONTCARE),
                         DSUtils.FAKE_INT, DSUtils.FAKE_INT);
                 P.mOnItemSelectedListener.onNothingSelected(av);
             }
