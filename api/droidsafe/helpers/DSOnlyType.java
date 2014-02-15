@@ -8,5 +8,5 @@ package droidsafe.helpers;
 public enum DSOnlyType {
     NOT_VALID,
     NOT_USED,
-    NOT_AVAILABLE
+    DONTCARE
 }
