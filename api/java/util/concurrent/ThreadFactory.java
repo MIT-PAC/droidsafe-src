@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public interface ThreadFactory {
     
+    @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     Thread newThread(Runnable r);

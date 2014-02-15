@@ -310,9 +310,13 @@ private void setCurrentLocale(Locale locale) {
      * @param onTimeChangedListener the callback, should not be null.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.125 -0500", hash_original_method = "6B3D4A5E94F1256617D4C5854135F89F", hash_generated_method = "6D13FFE088285C8C5D84E67519FC065F")
-    
+    @DSVerified
+    @DSSafe(DSCat.GUI) 
 public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener) {
         mOnTimeChangedListener = onTimeChangedListener;
+        if (onTimeChangedListener != null) {
+            onTimeChangedListener.onTimeChanged(this,  DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -568,6 +572,7 @@ public int getMinute() {
     
     public interface OnTimeChangedListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onTimeChanged(TimePicker view, int hourOfDay, int minute);

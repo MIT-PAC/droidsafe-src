@@ -31,6 +31,15 @@ public SeekBar(Context context, AttributeSet attrs) {
 public SeekBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
+    
+    @DSComment("This method will be called from View's constructor")
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override public void droidsafeCallbackHook() {
+        onProgressRefresh(DSUtils.UNKNOWN_FLOAT, DSUtils.UNKNOWN_BOOLEAN);
+        onStartTrackingTouch();
+        onStopTrackingTouch();
+    }
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
@@ -54,9 +63,15 @@ public SeekBar(Context context, AttributeSet attrs, int defStyle) {
      * @see SeekBar.OnSeekBarChangeListener
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.991 -0500", hash_original_method = "C0517BE28CCF436D86BD6FE3A21CD0CD", hash_generated_method = "665E94AA2A7F661DF7CE9E8B86D1FCE8")
-    
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
         mOnSeekBarChangeListener = l;
+        if (l != null) {
+            l.onProgressChanged(this,  DSUtils.FAKE_INT,  DSUtils.UNKNOWN_BOOLEAN);
+            l.onStartTrackingTouch(this);
+            l.onStopTrackingTouch(this);
+        }
     }
     
     @DSComment("Package priviledge")
@@ -85,14 +100,17 @@ public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
     
     public interface OnSeekBarChangeListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onStartTrackingTouch(SeekBar seekBar);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         void onStopTrackingTouch(SeekBar seekBar);

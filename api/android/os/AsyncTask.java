@@ -33,11 +33,14 @@ public static void init() {
 
     /** @hide */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.239 -0500", hash_original_method = "B027C147EDCD8E49898D40178E159A21", hash_generated_method = "58070820B0D447663D6A5F11B97A69F4")
-    
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)  
 public static void setDefaultExecutor(Executor exec) {
         sDefaultExecutor = exec;
     }
     
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)  
     public static void execute(Runnable runnable) {
     	runnable.run();
     }
@@ -436,7 +439,8 @@ protected void onCancelled() {
      *         {@link AsyncTask.Status#RUNNING} or {@link AsyncTask.Status#FINISHED}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.279 -0500", hash_original_method = "C6B4FDC12FE10CD7E1E7DDF258371598", hash_generated_method = "C9C181AC8660B884EFC53DDD4FDD03CB")
-    
+   @DSVerified
+   @DSSafe(DSCat.OS_GENERAL) 
 public final AsyncTask<Params, Progress, Result> execute(Params... params) {
         return executeOnExecutor(sDefaultExecutor, params);
     }

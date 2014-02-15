@@ -531,35 +531,44 @@ public long getItemId(int position) {
 
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.092 -0500", hash_original_method = "A9F8983A232A0A246637701F010ACE34", hash_generated_method = "03AFF81851DA0BC76885ED27D0C5048D")
-        
+        @DSVerified
+        @DSSafe(DSCat.GUI)
 public View getView(int position, View convertView, ViewGroup parent) {
             return getDropDownView(position, convertView, parent);
         }
 
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.095 -0500", hash_original_method = "F097CA4C24B6E5261C3C9C12681A60CA", hash_generated_method = "913C5CA37528A27E8EF4206A364B885C")
-        
+        @DSVerified
+        @DSSafe(DSCat.GUI)   
 public View getDropDownView(int position, View convertView, ViewGroup parent) {
             return mAdapter == null ? null :
                     mAdapter.getDropDownView(position, convertView, parent);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.098 -0500", hash_original_method = "EE546908428E55FCCB0B2F98C659D31B", hash_generated_method = "8500215988217A55022DA9C9B63866B4")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public boolean hasStableIds() {
             return mAdapter != null && mAdapter.hasStableIds();
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.100 -0500", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "B74E824CE2534F171C068A593B2FABFD")
-        
+        @DSVerified("Callback registration")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void registerDataSetObserver(DataSetObserver observer) {
             if (mAdapter != null) {
                 mAdapter.registerDataSetObserver(observer);
             }
+            if (observer != null) {
+                observer.onChanged();
+                observer.onInvalidated();
+            }
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.102 -0500", hash_original_method = "3A9A7C936FBCE4451B499589F8C4C5C5", hash_generated_method = "1A40DA71628EA2969005B726C48A6DC9")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public void unregisterDataSetObserver(DataSetObserver observer) {
             if (mAdapter != null) {
                 mAdapter.unregisterDataSetObserver(observer);

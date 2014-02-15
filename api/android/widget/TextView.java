@@ -4373,12 +4373,17 @@ public int getImeActionId() {
      * modifier will, however, allow the user to insert a newline character.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.930 -0500", hash_original_method = "46DFB908E4A3870151F9CA120300C85B", hash_generated_method = "5B6C40581092B44D2318441116923AA7")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnEditorActionListener(OnEditorActionListener l) {
         if (mInputContentType == null) {
             mInputContentType = new InputContentType();
         }
         mInputContentType.onEditorActionListener = l;
+        
+        if (l != null){
+            l.onEditorAction(this, DSUtils.FAKE_INT, new KeyEvent());
+        }
     }
     
     /**
@@ -13279,6 +13284,7 @@ public void onTouchModeChanged(boolean isInTouchMode) {
 
     public interface OnEditorActionListener {
 
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onEditorAction(TextView v, int actionId, KeyEvent event);

@@ -623,9 +623,14 @@ public void setInputType(int inputType) {
      * actions in the SearchView such as clicking on buttons or typing a query.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.767 -0500", hash_original_method = "5F51E4234BD6E41AFB4ED2E85F8CC1A5", hash_generated_method = "F731C6D2D30300297FC406B8FA6ABD04")
-    
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnQueryTextListener(OnQueryTextListener listener) {
         mOnQueryChangeListener = listener;
+        if (listener != null) {
+            listener.onQueryTextChange(new String());
+            listener.onQueryTextSubmit(new String());
+        }
     }
 
     /**
@@ -634,9 +639,13 @@ public void setOnQueryTextListener(OnQueryTextListener listener) {
      * @param listener the listener to call when the user closes the SearchView.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.769 -0500", hash_original_method = "5C0B64E237CFC180C92A60294DA35470", hash_generated_method = "A1E5647D03EE3F8EEDCB1074B1734E38")
-    
-public void setOnCloseListener(OnCloseListener listener) {
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    public void setOnCloseListener(OnCloseListener listener) {
         mOnCloseListener = listener;
+        if (listener != null) {
+            listener.onClose();
+        }
     }
 
     /**
@@ -645,9 +654,13 @@ public void setOnCloseListener(OnCloseListener listener) {
      * @param listener the listener to inform of focus changes.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.771 -0500", hash_original_method = "2E189EEDC80EC67610C89143836C4DBB", hash_generated_method = "0EA58FC48A5D9D8D979AA20C6545B62B")
-    
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnQueryTextFocusChangeListener(OnFocusChangeListener listener) {
         mOnQueryTextFocusChangeListener = listener;
+        if (listener != null) {
+            listener.onFocusChange(this, DSUtils.UNKNOWN_BOOLEAN);
+        }
     }
 
     /**
@@ -656,9 +669,14 @@ public void setOnQueryTextFocusChangeListener(OnFocusChangeListener listener) {
      * @param listener the listener to inform of suggestion selection events.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.773 -0500", hash_original_method = "5242CF20D6A154AA5BAD996C3A14A890", hash_generated_method = "85A5B72DC2BB7473FFED56F694357D7C")
-    
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 public void setOnSuggestionListener(OnSuggestionListener listener) {
         mOnSuggestionListener = listener;
+        if (listener != null) {
+            listener.onSuggestionClick(DSUtils.FAKE_INT);
+            listener.onSuggestionSelect(DSUtils.FAKE_INT);
+        }
     }
 
     /**
@@ -670,9 +688,13 @@ public void setOnSuggestionListener(OnSuggestionListener listener) {
      * the text field is programmatically de-iconified.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.775 -0500", hash_original_method = "AFFD80E7D30CC6B8E84DA9D0AC11DA43", hash_generated_method = "6929C53F98015CCBDE8E8E7C150A004B")
-    
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnSearchClickListener(OnClickListener listener) {
         mOnSearchClickListener = listener;
+        if (listener != null) {
+            listener.onClick(this);
+        }
     }
 
     /**
@@ -1371,6 +1393,7 @@ private void onCloseClicked() {
 
     }
 
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.887 -0500", hash_original_method = "4C174341C531719A99E642D8022F787E", hash_generated_method = "D65670BA560AE783A84167E5E8E45789")
@@ -1434,6 +1457,24 @@ void onTextFocusChanged() {
         postUpdateFocusedState();
     }
 
+    @DSComment("This method will be called from View's constructor")
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override public void droidsafeCallbackHook() {
+        onActionViewCollapsed();
+        onActionViewExpanded();
+        onCloseClicked();
+        onItemClicked(DSUtils.FAKE_INT,  DSUtils.FAKE_INT, new String());
+        onItemSelected(DSUtils.FAKE_INT);
+        onQueryRefine(new String());
+        onSearchClicked();
+        onSubmitQuery();
+        onSuggestionsKey(this, DSUtils.FAKE_INT, new KeyEvent());
+        onTextChanged(new String());
+        onVoiceClicked();
+        onWindowFocusChanged(DSUtils.UNKNOWN_BOOLEAN);
+        onDetachedFromWindow();
+    }
     /**
      * {@inheritDoc}
      */
@@ -1829,10 +1870,12 @@ private boolean isEmpty() {
     
     public interface OnQueryTextListener {
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onQueryTextSubmit(String query);
         
+        @DSVerified
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)
         boolean onQueryTextChange(String newText);

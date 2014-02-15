@@ -281,9 +281,14 @@ private void ensureContent() {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.606 -0500", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "D9FF1584C7DD9E598DA7E29BE55236E0")
     
+    @DSVerified("Callback registration")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
+        if (l != null) {
+            l.onTabChanged(new String());
+        }
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.608 -0500", hash_original_method = "B272F2CD0D376DB45BFCD5A09F6A3201", hash_generated_method = "E66CEE54B1F0C4E663440E99701D8473")
