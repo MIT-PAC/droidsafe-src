@@ -4159,10 +4159,6 @@ public void setInputType(int type) {
             applySingleLine(singleLine, !isPassword, true);
         }
         
-        if (!isSuggestionsEnabled()) {
-            mText = removeSuggestionSpans(mText);
-        }
-
         InputMethodManager imm = InputMethodManager.peekInstance();
         if (imm != null) imm.restartInput(this);
     }
