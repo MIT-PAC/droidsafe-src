@@ -11,10 +11,9 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PTAMethodInformation;
+import soot.Context;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
@@ -36,7 +35,7 @@ public class RCFGNode implements PTAMethodInformation {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(RCFGNode.class);
     /** The edge representing the Input Event entry point */
-	private PTAContext eventContext;
+	private Edge eventEdge;
 	/** The list of output events associated with the input event */
 	private Map<Edge, OutputEvent> outputEvents;
 	/** the invoke expression that triggers the input event */
@@ -45,11 +44,11 @@ public class RCFGNode implements PTAMethodInformation {
 	/** 
 	 * Create a new RCFG Node with the given input event entry edge.
 	 */
-	public RCFGNode(Edge entryEdge) {
+	public RCFGNode(Edge eventEdge) {
 		outputEvents = new LinkedHashMap<Edge, OutputEvent>();
-		this.eventContext = new PTAContext(ContextType.EVENT_CONTEXT, entryEdge);
-		if (entryEdge.srcStmt() != null && entryEdge.srcStmt().containsInvokeExpr())
-		    invokeExpr = (InvokeExpr)entryEdge.srcStmt().getInvokeExpr();
+		this.eventEdge = eventEdge;
+		if (eventEdge.srcStmt() != null && eventEdge.srcStmt().containsInvokeExpr())
+		    invokeExpr = (InvokeExpr)eventEdge.srcStmt().getInvokeExpr();
 		else
 		    invokeExpr = null;
 	}
@@ -57,13 +56,8 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * Return the calling edge of this entry point.
 	 */
-	public PTAContext getContext(ContextType type) {
-	    if (type == type.EVENT_CONTEXT) {
-	        return eventContext;
-	    } else {
-	        logger.error("Invalid context type for rcfg node: {}", type);
-	        return null;
-	    }  
+	public Context getContext() {
+	    return eventEdge.srcCtxt();
 	}
 	
 	/**
@@ -76,7 +70,7 @@ public class RCFGNode implements PTAMethodInformation {
 	    }
 	    
 		outputEvents.put(edge, oe);
-		logger.debug("Found output event: {}", oe.getContext(ContextType.ONE_CFA));
+		logger.debug("Found output event: {}", oe.getContext());
 	}
 
 	
@@ -98,7 +92,7 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Return the SootMethod for the entry point.
 	 */
 	public SootMethod getEntryPoint() {
-		return eventContext.getContext().tgt();
+		return eventEdge.tgt();
 	}
 
 	/**
@@ -177,9 +171,9 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Return the PT set as calculated by GeoPTA without context.
 	 * @return
 	 */
-	public Set<? extends IAllocNode> getReceiverPTSet(PTAContext context) {
+	public Set<IAllocNode> getReceiverPTSet(Context context) {
 	    if (isReceiverPointer()) 
-	        return PTABridge.v().getPTSet(getReceiver(), context);
+	        return (Set<IAllocNode>)PTABridge.v().getPTSet(getReceiver(), context);
 	    else
 	        return null;
 	}
@@ -211,7 +205,7 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * For a pointer arg value at i, return the PTA result (insensitive). 
 	 */
-	public Set<? extends IAllocNode> getArgPTSet(PTAContext context, int i) {
+	public Set<? extends IAllocNode> getArgPTSet(Context context, int i) {
 	    if (!isArgPointer(i))
 	        return null;
 	    

@@ -161,7 +161,7 @@ public class AllocationGraph {
     }
     
     private  void buildAllocationGraph() {
-        SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
+        SootMethod[] methods = PTABridge.v().getReachableMethods().toArray(new SootMethod[0]);
 
         for (SootMethod method : methods) {
           updateAllocationGraph(method);  

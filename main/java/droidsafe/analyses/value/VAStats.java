@@ -5,7 +5,6 @@ import au.com.bytecode.opencsv.CSVWriter;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
 
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
@@ -86,7 +85,7 @@ public class VAStats {
                 SootMethod entryPointMethod = invokeExpr.getMethod();
                 if (entryPointMethod.getName().equals("onClick")) {
                     for(int i = 0; i < rcfgNode.getNumArgs(); ++i) {
-                        for(IAllocNode allocNode : rcfgNode.getArgPTSet(rcfgNode.getContext(ContextType.EVENT_CONTEXT), i)) {
+                        for(IAllocNode allocNode : rcfgNode.getArgPTSet(rcfgNode.getContext(), i)) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, entryPointMethod);
                         }
@@ -99,7 +98,7 @@ public class VAStats {
                 if(ie != null) {
                     if(oe.hasReceiver()) {
                         // process receiver IAllocNodes
-                        Set<IAllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
+                        Set<IAllocNode> receiverPTSet = (Set<IAllocNode>)oe.getReceiverPTSet(oe.getContext());
                         for(IAllocNode allocNode : receiverPTSet) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, sm);
@@ -108,7 +107,7 @@ public class VAStats {
                     // process argument allocNodes
                     for(int i = 0; i < oe.getNumArgs(); ++i) {
                         if(oe.isArgPointer(i)) {
-                            Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(oe.getContext(ContextType.EVENT_CONTEXT), i);
+                            Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(oe.getContext(), i);
                             for(IAllocNode allocNode : argPTSet) {
                                 v.markAllocNodeAsReachable(allocNode);
                                 v.markMethodAsRelevant(allocNode, sm);
@@ -122,9 +121,8 @@ public class VAStats {
         // write out headers for columns
         writer.writeNext(new String[] {"field", "size", "relevant methods", "allocNode"});
 
-        for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
-            Object newExpr = entry.getKey();
-            IAllocNode node = PTABridge.v().getAllocNode(newExpr);
+        for(Map.Entry<IAllocNode, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
+            IAllocNode node = entry.getKey();
             Type type = node.getType();
             // we only care about reachable nodes
             if(type instanceof RefType && v.reachableAllocNodes.contains(node)) {

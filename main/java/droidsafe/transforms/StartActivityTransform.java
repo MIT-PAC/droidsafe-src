@@ -1,7 +1,6 @@
 package droidsafe.transforms;
 
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.RefVAModel;
@@ -26,6 +25,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.Stmt;
+import soot.Context;
 import soot.Local;
 import soot.RefType;
 import soot.Scene;
@@ -64,7 +64,7 @@ class StartActivityTransform implements VATransform {
     }
 
     @Override
-    public void tranformsInvoke(SootMethod containingMthd, SootMethod callee, InvokeExpr invoke, Stmt stmt, Body body, PTAContext context) { 
+    public void tranformsInvoke(SootMethod containingMthd, SootMethod callee, InvokeExpr invoke, Stmt stmt, Body body) { 
         // is this one of the invokes that we want to transform?
         if (!sigsOfInvokesToTransform.contains(callee.getSignature()))
             return;
@@ -81,7 +81,7 @@ class StartActivityTransform implements VATransform {
 
         Value intentArg = invoke.getArg(0);
 
-        for (SootField activityField : getDestinationsOfIntent(intentArg, context)) {
+        for (SootField activityField : getDestinationsOfIntent(intentArg)) {
             logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
             //call set intent on these activities with local   
 
@@ -123,9 +123,9 @@ class StartActivityTransform implements VATransform {
      * @return set of harness fields that correspond to the activites that all the intents that intentArg could
      * reference could start
      */
-    private Set<SootField> getDestinationsOfIntent(Value intentArg, PTAContext context) {
+    private Set<SootField> getDestinationsOfIntent(Value intentArg) {
         Set<SootField> destActivityHarnessSootFields = new HashSet<SootField>();
-        Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(intentArg, context);
+        Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(intentArg);
         for(IAllocNode allocNode : allocNodes) {
             VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
             if(vaModel != null && vaModel instanceof RefVAModel) {

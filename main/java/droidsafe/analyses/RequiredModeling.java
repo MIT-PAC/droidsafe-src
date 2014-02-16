@@ -68,7 +68,7 @@ public class RequiredModeling {
     public static void run() {
         Set<String> toModel = new TreeSet<String>();
 
-        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+        for (SootMethod method : PTABridge.v().getReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
             //ignore clinits

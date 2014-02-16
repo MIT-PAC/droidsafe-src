@@ -247,13 +247,13 @@ public class SparkPTAStats {
             }
 
             //raw call graph
-            fw.write("Raw reachable methods: " + pta.getAllReachableMethods().size() + "\n");
+            fw.write("Raw reachable methods: " + pta.getReachableMethods().size() + "\n");
             fw.write("Raw call graph edges: " + pta.getCallGraph().size() + "\n");
 
             fw.write("Collapsed Reachable Methods: " + collapsedReachable + "\n");
 
             fw.write("Average method context size: " + 
-                    ((double)pta.getAllReachableMethods().size()) / ((double)collapsedReachable) + "\n");
+                    ((double)pta.getReachableMethods().size()) / ((double)collapsedReachable) + "\n");
 
             //cloning removed call graph
 
@@ -279,7 +279,10 @@ public class SparkPTAStats {
         }
     }
 
+    
     private Set<IAllocNode> getAllocNodesOfClass(SootClass clz) {
+        return null;
+        /*
         Set<NewExpr> newExprs = graph.getNewExprsForClass(clz);
         
         Set<IAllocNode> nodes = new HashSet<IAllocNode>();
@@ -287,5 +290,7 @@ public class SparkPTAStats {
             nodes.add(pta.getAllocNode(newE));
         }
         return nodes;
+        */
     }
+    
 }

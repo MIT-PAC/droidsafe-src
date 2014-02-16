@@ -24,6 +24,7 @@ import soot.ArrayType;
 import soot.Context;
 import soot.G;
 import soot.Local;
+import soot.MethodOrMethodContext;
 import soot.PointsToSet;
 import soot.RefLikeType;
 import soot.RefType;
@@ -52,7 +53,7 @@ import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.SparkTransformer;
-import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
+import soot.jimple.spark.geom.dataRep.ContextVar;
 import soot.jimple.spark.geom.dataRep.IntervalContextVar;
 import soot.jimple.spark.geom.geomE.FullSensitiveNode;
 import soot.jimple.spark.geom.dataRep.CgEdge;
@@ -185,6 +186,11 @@ public class GeoPTA extends PTABridge {
         eventEntryQueryCache = new HashMap<ValueAndContext, Set<AllocNode>>();
     }
 
+    public Set<Context> getMethodContexts(SootMethod method) {
+        logger.error("Not implemented");
+        return null;
+    }
+    
     /**
      * Return true if it is legal to cast objType to the refType.  False if not.
      */
@@ -202,7 +208,7 @@ public class GeoPTA extends PTABridge {
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
-    public IAllocNode getAllocNode(Object newExpr) {
+    public IAllocNode getAllocNode(Object newExpr, Context context) {
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
@@ -255,9 +261,17 @@ public class GeoPTA extends PTABridge {
     /**
      * Return list of all reachable methods as calculated by pta.
      */
-    public Set<SootMethod> getAllReachableMethods() {
+    public Set<SootMethod> getReachableMethods() {
         return ptsProvider.getAllReachableMethods();
     }
+    
+    /**
+     * Return list of all reachable methods as calculated by pta.
+     */
+    public Set<MethodOrMethodContext> getReachableMethodContexts() {
+        return null;
+    }
+    
     
     /**
      * Return true if this method is a reachable method.
@@ -323,7 +337,7 @@ public class GeoPTA extends PTABridge {
 
 
     @Override
-    public Set<Type> getTypes(Value val, PTAContext context) {
+    public Set<Type> getTypes(Value val, Context context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
         for (IAllocNode node : getPTSet(val, context)) {
@@ -368,50 +382,41 @@ public class GeoPTA extends PTABridge {
     }
     
     @Override
-    public Set<? extends IAllocNode> getPTSet(Value val, PTAContext context) {
-        if (context.getType() == ContextType.EVENT_CONTEXT) {
-            return getPTSetEventContext(val, context.getContext());
-        } else if (context.getType() == ContextType.ONE_CFA) {
-            return getPTSet1CFA(val, context.getContext());
-        } else if (context.getType() == ContextType.NONE) {
+    public Set<? extends IAllocNode> getPTSet(Value val, Context ctxt) {
+      
+        if (ctxt == null)
             return getPTSet(val);
-        } else {
-            logger.error("Invalid Query Type: {}", context.getType());
-            droidsafe.main.Main.exit(1);
-            return null;
-        }
+        else 
+            return getPTSet1CFA(val, ctxt);
     }
     
     /** 
      * Return the 1CFA context query for reference and 1CFA context edge.
      */
-    private Set<? extends IAllocNode> getPTSet1CFA(Value val, Edge context) {
+    private Set<? extends IAllocNode> getPTSet1CFA(Value val, Context context) {
         try {
             //if the context does not make sense, use the insensitive version
-            if (context == null || context.srcStmt() == null)
+            if (context == null )
                 return getPTSet(val);
 
-            if (ptsProvider.getInternalEdgeFromSootEdge(context) == null) {
-                //System.out.println("Edge not in geo: " + context);
-                return getPTSet(val);
-            }
+          
 
             final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
             PointsToSetInternal pts = null;
 
             if (val instanceof InstanceFieldRef) {
                 InstanceFieldRef ifr = (InstanceFieldRef)val;
-                pts = (PointsToSetInternal)ptsProvider.reachingObjects(context.srcStmt(), 
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(context, 
                     (Local)ifr.getBase(), ifr.getField());
             } else if (val instanceof ArrayRef) {
                 ArrayRef arrayRef = (ArrayRef)val;
 
-                PointsToSet baseSet = ptsProvider.reachingObjects(context.srcStmt(), 
+                PointsToSet baseSet = ptsProvider.reachingObjects(context, 
                     (Local) arrayRef.getBase());
 
                 pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(baseSet);
             } else if (val instanceof Local) {
-                pts = (PointsToSetInternal)ptsProvider.reachingObjects(context.srcStmt(), (Local)val);
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(context, (Local)val);
             } else if (val instanceof StaticFieldRef) {
                 SootField field = ((StaticFieldRef)val).getField();
                 pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
@@ -442,11 +447,14 @@ public class GeoPTA extends PTABridge {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    private Set<? extends IAllocNode> getPTSetEventContext(Value val, Edge context) {
+    private Set<? extends IAllocNode> getPTSetEventContext(Value val, Context c) {
         if (!Config.v().eventContextPTA)
             return getPTSet(val);
         
         totalECQueries++;
+        
+        //TODO: fix me
+        Edge context = null;
         
         ValueAndContext vandc = new ValueAndContext(val, context);
         
@@ -462,7 +470,7 @@ public class GeoPTA extends PTABridge {
             LocalVarNode vn = ptsProvider.findLocalVarNode((Local)val);
             objFull.prepare();
             
-            if (vn != null && vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+            if (vn != null && vn.getMethod() != null && getReachableMethods().contains(vn.getMethod()) && 
                     queries.contexsByAnyCallEdge(context, (Local)val, objFull) ) {
                 objFull.finish();
             } else {
@@ -482,7 +490,7 @@ public class GeoPTA extends PTABridge {
             LocalVarNode vn = ptsProvider.findLocalVarNode(base);
             objFull.prepare();
             
-            if (vn != null && vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+            if (vn != null && vn.getMethod() != null && getReachableMethods().contains(vn.getMethod()) && 
                     queries.contextsByAnyCallEdge(context, base, ifr.getField(), objFull) ) {
                 objFull.finish();
             } else {
@@ -501,7 +509,7 @@ public class GeoPTA extends PTABridge {
             LocalVarNode vn = ptsProvider.findLocalVarNode(base);
             objFull.prepare();
             
-            if (vn != null && vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+            if (vn != null && vn.getMethod() != null && getReachableMethods().contains(vn.getMethod()) && 
                     queries.contextsByAnyCallEdge(context, base, ArrayElement.v(), objFull) ) {
                 objFull.finish();
             } else {
@@ -602,18 +610,12 @@ public class GeoPTA extends PTABridge {
     }
     
     @Override
-    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, PTAContext context) 
+    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
-        if (context.getType() == ContextType.EVENT_CONTEXT) {
-           return resolveInvokeEventContext(invoke, context.getContext()); 
-        } else if (context.getType() == ContextType.ONE_CFA) {
-            return resolveInvoke1CFA(invoke, context.getContext());
-        } else if (context.getType() == ContextType.NONE) {
+        if (context == null) {
             return resolveInvoke(invoke);
         } else {
-            logger.error("Invalid Query Type: {}", context.getType());
-            droidsafe.main.Main.exit(1);
-            return null;
+            return resolveInvokeEventContext(invoke, context); 
         }
     }
     
@@ -621,7 +623,7 @@ public class GeoPTA extends PTABridge {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an event context search.
      */
-    private Collection<SootMethod> resolveInvokeEventContext(InvokeExpr invoke, Edge context) 
+    private Collection<SootMethod> resolveInvokeEventContext(InvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -641,7 +643,7 @@ public class GeoPTA extends PTABridge {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use a 1cfa search.
      */
-    private Collection<SootMethod> resolveInvoke1CFA(InvokeExpr invoke, Edge context) 
+    private Collection<SootMethod> resolveInvoke1CFA(InvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -659,19 +661,13 @@ public class GeoPTA extends PTABridge {
     
 
     @Override
-    public  Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
+    public  Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
-        if (context.getType() == ContextType.EVENT_CONTEXT) {
-           return resolveInstanceInvokeMapEventContext(invoke, context.getContext()); 
-        } else if (context.getType() == ContextType.ONE_CFA) {
-            return resolveInstanceInvokeMap1CFA(invoke, context.getContext());
-        } else if (context.getType() == ContextType.NONE) {
+              
+        if (context != null) {
+            return resolveInstanceInvokeMap1CFA(invoke, context);
+        } else 
             return resolveInstanceInvokeMap(invoke);
-        } else {
-            logger.error("Invalid Query Type: {}", context.getType());
-            droidsafe.main.Main.exit(1);
-            return null;
-        }
     }
     
     /**
@@ -689,7 +685,7 @@ public class GeoPTA extends PTABridge {
      * version, use the 1cfa context result.  Return a map of each alloc node to its
      * target method.
      */
-    private Map<IAllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
+    private Map<IAllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Context context) 
         throws CannotFindMethodException {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
@@ -705,7 +701,7 @@ public class GeoPTA extends PTABridge {
      * 
      */
     private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
-        InstanceInvokeExpr invoke, Edge context) throws CannotFindMethodException {
+        InstanceInvokeExpr invoke, Context context) throws CannotFindMethodException {
         Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
         
       //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
@@ -747,7 +743,7 @@ public class GeoPTA extends PTABridge {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMapEventContext(InstanceInvokeExpr invoke, Edge context) 
+    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMapEventContext(InstanceInvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
@@ -766,7 +762,7 @@ public class GeoPTA extends PTABridge {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Collection<SootMethod> resolveInstanceInvokeEventContext(InstanceInvokeExpr invoke, Edge context) 
+    public Collection<SootMethod> resolveInstanceInvokeEventContext(InstanceInvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
        return resolveInstanceInvokeMapEventContext(invoke, context).values();
     }
@@ -802,12 +798,10 @@ public class GeoPTA extends PTABridge {
      * Given a specific context, a soot edge, dump the pta analysis results only for that context (but
      * considering all references in the program).
      */
-    public void dumpPTAForContext(PrintStream file, PTAContext ptaContext) {
-        file.printf("== dumpPTA for %s ==\n", ptaContext);
-
-        CgEdge context = ptsProvider.getInternalEdgeFromSootEdge(ptaContext.getContext());
+    public void dumpPTAForContext(PrintStream file, Context ptaContext) {
 
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
+            CgEdge context = (CgEdge)ptaContext;
             IVarAbstraction orig = pn;
             pn = pn.getRepresentative();
             Node val = pn.getWrappedNode();
@@ -826,7 +820,7 @@ public class GeoPTA extends PTABridge {
                 Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
                 pn.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
 
-                for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+                for ( ContextVar cobj : contextObjsVisitor.outList ) {
                     //cobj.inQ = false;
                     if (cobj != null && cobj.var != null)
                         file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
@@ -838,7 +832,7 @@ public class GeoPTA extends PTABridge {
                 pn.get_all_context_sensitive_objects(1, soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, 
                     contextObjsVisitor);
 
-                for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+                for ( ContextVar cobj : contextObjsVisitor.outList ) {
                     //cobj.inQ = false;
                     if (cobj != null)
                         file.print( " " + cobj.getNumber() );
@@ -920,7 +914,7 @@ public class GeoPTA extends PTABridge {
     public void dumpPTA(final PrintStream file) {
 
         file.print("======================= dumpPTA ()=====================================\n");
-        //Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+        //Vector<ContextVar> outList = new Vector<ContextVar>();
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
             IVarAbstraction orig = pn;
             pn = pn.getRepresentative();
@@ -959,7 +953,7 @@ public class GeoPTA extends PTABridge {
                     Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
                     pn.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
 
-                    for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+                    for ( ContextVar cobj : contextObjsVisitor.outList ) {
                         //cobj.inQ = false;
                         if (cobj != null && cobj.var != null)
                             file.printf( "%s: %s %s\n", cobj.var.getClass(), cobj.var, cobj.var.hashCode());
@@ -990,7 +984,7 @@ public class GeoPTA extends PTABridge {
                 pn.get_all_context_sensitive_objects(1, 
                     soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, contextObjsVisitor);
 
-                for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+                for ( ContextVar cobj : contextObjsVisitor.outList ) {
                     //cobj.inQ = false;
                     if (cobj != null)
                         file.println( " " + cobj.var );

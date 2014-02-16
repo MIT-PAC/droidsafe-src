@@ -2,6 +2,7 @@ package droidsafe.analyses.pta;
 
 import java.util.Set;
 
+import soot.Context;
 import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
@@ -31,7 +32,7 @@ public interface PTAMethodInformation {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<? extends IAllocNode> getReceiverPTSet(PTAContext context);
+    public Set<IAllocNode> getReceiverPTSet(Context context);
 
     /**
      * Return the type of the receiver value.
@@ -47,7 +48,7 @@ public interface PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<? extends IAllocNode> getArgPTSet(PTAContext context, int i);
+    public Set<? extends IAllocNode> getArgPTSet(Context context, int i);
     
     /** 
      * Return the number of args in the invoke expression.
@@ -77,7 +78,7 @@ public interface PTAMethodInformation {
     public InvokeExpr getInvokeExpr();
     
     /**
-     * Return the call graph edge used for context sensitive lookups. 
+     * Return the context for sensitive lookups. 
      */
-    public PTAContext getContext(ContextType type);
+    public Context getContext();
 }

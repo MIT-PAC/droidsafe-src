@@ -9,6 +9,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Context;
 import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
@@ -21,9 +22,7 @@ import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
@@ -39,10 +38,8 @@ import droidsafe.utils.Utils;
 public class OutputEvent implements PTAMethodInformation {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(OutputEvent.class);
-    /** the cg edge from caller to API */
-    private PTAContext oneCFAContext;
-    /** the cg context edge (the event edge) */
-    private PTAContext eventContext;
+    private Edge invokeEdge;
+    private Context invokeContext;
     /** The invoke expression call to an API method, might be null EX finalize*/
     private InvokeExpr invokeExpr;
     /** The parent RFCG Node */
@@ -57,10 +54,10 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Create an output event from an edge, context edge, ... 
      */
-    public OutputEvent(PTAContext oneCFA, PTAContext eventContext, RCFGNode p, 
+    public OutputEvent(Edge edge, RCFGNode p, 
                        SourceLocationTag ln) {
-        this.oneCFAContext = oneCFA;
-        this.eventContext = eventContext;
+        this.invokeEdge = edge;
+        this.invokeContext = edge.srcCtxt();
         this.parent = p;
         this.receiverNodes = new HashSet<IAllocNode>();
         this.receiverNodeTypes = new HashSet<Type>();
@@ -78,7 +75,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Try to grab the invoke expression from the context
      */
     private void setInvoke() {
-        Unit context = oneCFAContext.getContext().srcUnit();
+        Unit context = invokeEdge.srcUnit();
         invokeExpr = null;
 
         if (context == null) {
@@ -155,7 +152,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<IAllocNode> getReceiverPTSet(PTAContext context) {
+    public Set<IAllocNode> getReceiverPTSet(Context context) {
         getReceiver();
 
         return receiverNodes; 
@@ -186,7 +183,7 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<? extends IAllocNode> getArgPTSet(PTAContext context, int i) {
+    public Set<? extends IAllocNode> getArgPTSet(Context context, int i) {
         Value v = getArgValue(i);
         
         return PTABridge.v().getPTSet(v, context);
@@ -195,7 +192,7 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return a set of all the alloc nodes that all the of the args can point to.
      */
-    public Set<IAllocNode> getAllArgsPTSet(PTAContext context) {
+    public Set<IAllocNode> getAllArgsPTSet(Context context) {
         HashSet<IAllocNode> nodes = new HashSet<IAllocNode>();
         
         for (int i = 0; i < getNumArgs(); i++) {
@@ -209,16 +206,8 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return the context
      */
-    public PTAContext getContext(ContextType type) {
-        if (type == ContextType.EVENT_CONTEXT) {
-            return eventContext;
-        } else if (type == ContextType.ONE_CFA) {
-            return oneCFAContext;
-        } else {
-            logger.error("Invalid context type: {}", type);
-            droidsafe.main.Main.exit(1);
-            return null;
-        }
+    public Context getContext() {
+        return invokeContext;
     }
 
     /**
@@ -226,7 +215,7 @@ public class OutputEvent implements PTAMethodInformation {
      * @return
      */
     public SootMethod getTarget() {
-        return oneCFAContext.getContext().tgt();
+        return invokeEdge.tgt();
     }
 
     /**

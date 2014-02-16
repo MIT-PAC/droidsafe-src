@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import soot.AnySubType;
 import soot.ArrayType;
 import soot.Body;
+import soot.Context;
 import soot.Kind;
 import soot.MethodOrMethodContext;
 import soot.RefType;
@@ -48,13 +49,8 @@ import soot.util.Chain;
 import soot.util.queue.QueueReader;
 import soot.Type;
 import soot.RefLikeType;
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
-import droidsafe.analyses.pta.cg.CGContextVisitor;
-import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
@@ -130,14 +126,17 @@ public class RCFG  {
         CallGraph cg = Scene.v().getCallGraph();
 
         //loop over all reachable methods
-        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            SootMethod sootMethod = momc.method();
+            Context context = momc.context();
+            
             //don't do anything for system methods
-            if (API.v().isSystemMethod(method))
+            if (API.v().isSystemMethod(sootMethod))
                 continue;
 
-            visitedMethods.add(method);
+            visitedMethods.add(sootMethod);
 
-            Iterator<Edge> incomingEdges = cg.edgesInto(method);
+            Iterator<Edge> incomingEdges = cg.edgesInto(momc);
             while (incomingEdges.hasNext()) {
                 Edge incomingEdge = incomingEdges.next();
                 //if method is user, and has incoming edge from system, then it is an entry point
@@ -260,9 +259,6 @@ public class RCFG  {
         SootMethod callee = callEdge.tgt();
         boolean debug = false;
 
-        PTAContext eventContext = new PTAContext(ContextType.EVENT_CONTEXT, eventEdge);
-        PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, callEdge);
-
         /*System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
             !API.v().isSystemMethod(caller),
             API.v().isInterestingMethod(callee));
@@ -276,7 +272,9 @@ public class RCFG  {
                 !ignoreSet.contains(callEdge.srcStmt())) {
 
             RCFGNode node = getNodeForEntryEdge(eventEdge);
-
+            
+            Context context = callEdge.srcCtxt();
+            
             SourceLocationTag line = 
                     SootUtils.getSourceLocation(callEdge.srcStmt(), callEdge.src().getDeclaringClass());
 
@@ -288,7 +286,7 @@ public class RCFG  {
                     //for each, see if they map to the destination method, if they do,
                     //create the output event
                     for (Map.Entry<IAllocNode, SootMethod> entry : 
-                        PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
+                        PTABridge.v().resolveInstanceInvokeMap(iie, context).entrySet()) {
                         //System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
                         //System.out.println("\tReachable: " + Scene.v().getReachableMethods().contains(entry.getValue()));
                         if (entry.getValue().equals(callee)) {
@@ -302,11 +300,11 @@ public class RCFG  {
                                 oe.addReceiverNode(entry.getKey());
                             } else {
                                 //new output event that we have not seen, create output event and install it
-                                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
+                                OutputEvent oe = new OutputEvent(callEdge, node, line);
                                 logger.debug("Found output event: {}", callEdge.tgt());
                                 oe.addReceiverNode(entry.getKey());
                                 node.addOutputEvent(callEdge, oe);
-                                apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
+                                apiCallNodes.addAll(oe.getAllArgsPTSet(context));
                             }
 
                             //remember interesting alloc nodes
@@ -321,10 +319,10 @@ public class RCFG  {
                 }
             } else {
                 if (!node.hasOutputEventEdge(callEdge)) {
-                    OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
+                    OutputEvent oe = new OutputEvent(callEdge, node, line);
                     logger.debug("Found output event: {} (null receiver)", callEdge.tgt());
                     node.addOutputEvent(callEdge, oe);
-                    apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
+                    apiCallNodes.addAll(oe.getAllArgsPTSet(context));
                 }
             }
         }
@@ -378,7 +376,7 @@ public class RCFG  {
 
             fw.write("# All Reachable Methods in User Classes (including system methods) \n\n");
 
-            for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+            for (SootMethod method : PTABridge.v().getReachableMethods()) {
                 if (!API.v().isSystemClass(method.getDeclaringClass()))
                     fw.write(method + "\n");
             }

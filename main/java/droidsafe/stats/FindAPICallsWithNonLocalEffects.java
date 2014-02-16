@@ -51,7 +51,7 @@ public class FindAPICallsWithNonLocalEffects {
     public void run() {
         int nonLocals = 0;
 
-        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+        for (SootMethod method : PTABridge.v().getReachableMethods()) {
             if (API.v().isSystemMethod(method)) 
                 continue;
             

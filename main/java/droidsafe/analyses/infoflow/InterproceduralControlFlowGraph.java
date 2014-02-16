@@ -14,10 +14,10 @@ import com.google.common.collect.Lists;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Context;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Unit;
@@ -31,12 +31,7 @@ import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
 import soot.toolkits.graph.DirectedGraph;
 import soot.util.dot.DotGraph;
-
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.ContextType;
-import droidsafe.analyses.pta.PTAContext;
-import droidsafe.analyses.pta.cg.CGContextVisitor;
-import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.main.Config;
 import droidsafe.utils.SootUtils;
 
@@ -58,8 +53,6 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     public final Map<SootMethod, List<Block>> methodToBlocks;
 
     public final Map<Unit, Block> unitToBlock;
-
-    public final Map<SootMethod, Set<PTAContext>> methodToContexts;
 
     private static InterproceduralControlFlowGraph v;
 
@@ -201,23 +194,11 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
         collectIntraproceduralControlFlowGraphs();
         connectIntraproceduralControlFlowGraphs();
-
-        methodToContexts = new DefaultHashMap<SootMethod, Set<PTAContext>>(Collections.<PTAContext>emptySet());
-        CallGraphTraversal.acceptContext(new CGContextVisitor () {
-            @Override
-            public void visit(SootMethod method, PTAContext context) {
-                Set<PTAContext> contexts = methodToContexts.get(method);
-                if (contexts.isEmpty()) {
-                    contexts = new HashSet<PTAContext>();
-                }
-                contexts.add(context);
-                methodToContexts.put(method, contexts);
-            }
-        }, InformationFlowAnalysis.contextType);
+       
     }
 
     private void collectIntraproceduralControlFlowGraphs() {
-        Set<SootMethod> reachableMethods = PTABridge.v().getAllReachableMethods();
+        Set<SootMethod> reachableMethods = PTABridge.v().getReachableMethods();
         List<SootMethod> entryPoints = Scene.v().getEntryPoints();
         TopologicalOrderer topologicalOrderer = new TopologicalOrderer(Scene.v().getCallGraph());
         topologicalOrderer.go();

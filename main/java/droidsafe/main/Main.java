@@ -9,7 +9,6 @@ import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.infoflow.MemoryReadAnalysis;
 import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.MethodCallsOnAlloc;
-import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
@@ -32,7 +31,6 @@ import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.stats.FindAPICallsWithNonLocalEffects;
-import droidsafe.stats.PTASetsAvgSize;
 import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
@@ -132,7 +130,6 @@ public class Main {
         //sink high-level information flow mapping 
         ResourcesSoot.reset();
         JimpleRelationships.reset();
-        CallGraphTraversal.reset();
         AllocLocationModel.reset();
         CallLocationModel.reset();
         ObjectSensitivityCloner.reset();
@@ -561,10 +558,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
-        //reset the cache of the call graph traversal
-        CallGraphTraversal.reset();
-
+        
         long endTime = System.currentTimeMillis();
         timer.stop();
         if(recordTime) {

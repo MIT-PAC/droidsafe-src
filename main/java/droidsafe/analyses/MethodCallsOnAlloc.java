@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import soot.Context;
+import soot.MethodOrMethodContext;
 import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
@@ -18,16 +22,13 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.value.RefVAModel;
 import droidsafe.utils.SootUtils;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.android.system.API;
 
 /**
@@ -40,7 +41,8 @@ import droidsafe.android.system.API;
  * @author mgordon
  *
  */
-public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
+public class MethodCallsOnAlloc {
+    private static final Logger logger = LoggerFactory.getLogger(MethodCallsOnAlloc.class);
     /** Map of alloc node to edges that could have alloc node as receiver or arg */
     private Map<IAllocNode,Set<Edge>> nodeToCalls;
     /** Singleton object */
@@ -89,15 +91,20 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
         v = new MethodCallsOnAlloc();
         if (PTABridge.v().getPackage() == PointsToAnalysisPackage.SPARK) {
             v.runInternalSpark();
-        } else //full context traversal for any other pta 
-            CallGraphTraversal.acceptEntryContextAnd1CFA(v);
+        } else {
+            logger.error("Only SPARK supported!");
+            droidsafe.main.Main.exit(1);
+        }
     }
 
     /** optimized search for context insensitive points to analysis */
     private void runInternalSpark() {
         //loop over all methods, for each invoke in or out, decide track appropriate metrics
         
-        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            SootMethod method = momc.method();
+            Context context = momc.context();
+            
             //do nothing for system methods
             if (API.v().isSystemMethod(method))
                 continue;
@@ -118,7 +125,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
                     InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
                     if (typesToConsider.contains(iie.getBase().getType())) {
                         Set<? extends IAllocNode> nodes;
-                        nodes = PTABridge.v().getPTSet(iie.getBase());
+                        nodes = PTABridge.v().getPTSet(iie.getBase(), context);
                         
                         for (IAllocNode an : nodes) {
                             if (RCFG.v().isRecOrArgForAPICall(an)) {
@@ -131,7 +138,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
                 for (Value argv : invoke.getArgs()) {
                     if (PTABridge.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
                         Set<? extends IAllocNode> nodes;
-                        nodes = PTABridge.v().getPTSet(argv);
+                        nodes = PTABridge.v().getPTSet(argv, context);
                             
                         for (IAllocNode an : nodes) {
                             if (RCFG.v().isRecOrArgForAPICall(an)) {
@@ -144,58 +151,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
         }
     }
     
-    /**
-     * For each method call edge, decide if the receiver or any of the args could be an alloc node
-     * for the list of alloc nodes used in api calls (from RCFG).  Store in the map the alloc node to edge
-     * mapping.
-     */
-    public void visitEntryContextAnd1CFA(SootMethod method, PTAContext eventContext, PTAContext oneCFAContext) {
-        Edge edgeInto = oneCFAContext.getContext();
-        
-        
-        //do nothing this is not a normal call
-        if (edgeInto.srcStmt() == null || !edgeInto.srcStmt().containsInvokeExpr())
-            return;
-
-        InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
-
-        if (invoke == null)
-            return;
-
-        if (invoke instanceof InstanceInvokeExpr) {
-            InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
-            if (typesToConsider.contains(iie.getBase().getType())) {
-                Set<? extends IAllocNode> nodes;
-                //if the context is the same as the edge into, then we cannot use context back to the src
-                if (eventContext.getContext() == edgeInto) 
-                    nodes = PTABridge.v().getPTSet(iie.getBase());
-                else    
-                    nodes = PTABridge.v().getPTSet(iie.getBase(), eventContext);
-
-                for (IAllocNode an : nodes) {
-                    if (RCFG.v().isRecOrArgForAPICall(an)) {
-                        getCalls(an).add(edgeInto);
-                    }
-                }
-            }
-        }
-
-        for (Value argv : invoke.getArgs()) {
-            if (PTABridge.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
-                Set<? extends IAllocNode> nodes;
-                //if the context is the same as the edge into, then we cannot use context back to the src
-                if (eventContext.getContext() == edgeInto) 
-                    nodes = PTABridge.v().getPTSet(argv);
-                else    
-                    nodes = PTABridge.v().getPTSet(argv, eventContext);
-                for (IAllocNode an : nodes) {
-                    if (RCFG.v().isRecOrArgForAPICall(an)) {
-                        getCalls(an).add(edgeInto);
-                    }
-                }
-            }
-        }
-    }
+  
 
     /**
      * For a given alloc node that is important for RCFG (used in an api call) return the set

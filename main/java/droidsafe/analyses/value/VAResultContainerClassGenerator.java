@@ -1016,9 +1016,9 @@ public class VAResultContainerClassGenerator {
 
     private ConstructorDeclaration generateConstructor(ClassOrInterfaceDeclaration modelCoi) {
         ConstructorDeclaration modelConstr = new ConstructorDeclaration(Modifier.PUBLIC, modelCoi.getName());
-        Parameter parameter = ASTHelper.createParameter(makeReferenceType("Object"), "newExpr");
+        Parameter parameter = ASTHelper.createParameter(makeReferenceType("soot.jimple.toolkits.pta.IAllocNode"), "node");
         modelConstr.setParameters(makeParameterList(parameter));
-        Statement stmt = new ExplicitConstructorInvocationStmt(false, null, makeExprList(new NameExpr("newExpr")));
+        Statement stmt = new ExplicitConstructorInvocationStmt(false, null, makeExprList(new NameExpr("node")));
         modelConstr.setBlock(makeBlockStmt(stmt));
         return modelConstr;
     }

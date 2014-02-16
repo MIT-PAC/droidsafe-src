@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import soot.BooleanType;
 import soot.ByteType;
 import soot.CharType;
+import soot.Context;
 import soot.IntType;
 import soot.Type;
 import soot.Value;
@@ -26,8 +27,6 @@ import soot.jimple.StringConstant;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
 import soot.jimple.toolkits.pta.IClassConstantNode;
-import droidsafe.analyses.pta.ContextType;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
@@ -188,11 +187,11 @@ public class RCFGToSSL {
 
 	    boolean allVAResults = true;
 	    List<ConcreteArgumentValue> vaResults = new LinkedList<ConcreteArgumentValue>();
-        PTAContext eventContext = method.getContext(ContextType.EVENT_CONTEXT);
+        Context context = method.getContext();
 	    
         //iterate over all the nodes pointed to and see if they are all va results
         //if not, break and remember
-        for (IAllocNode node : method.getReceiverPTSet(eventContext)) {
+        for (IAllocNode node : method.getReceiverPTSet(context)) {
             if (ValueAnalysis.v().hasResult(node)) {
                 //check to see if we have a value analysis result for this alloc node
                 //and if so, add it to the concrete list of values.
@@ -204,7 +203,7 @@ public class RCFGToSSL {
             }
         }
         
-	    if (allVAResults && method.getReceiverPTSet(eventContext).size() > 0) {
+	    if (allVAResults && method.getReceiverPTSet(context).size() > 0) {
             //if we have all va results, create the concrete argument list from the results
             ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(method.getReceiverType());
             for (ConcreteArgumentValue s : vaResults) 
@@ -240,7 +239,7 @@ public class RCFGToSSL {
 	        return clrv;
 	    }
 	    
-	    Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(methodInfo.getContext(ContextType.EVENT_CONTEXT), i); 
+	    Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(methodInfo.getContext(), i); 
 		boolean allConstants = true;
 		//here we consider Value Analysis results as constants
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();

@@ -131,7 +131,7 @@ public class InjectedSourceFlows {
      * Return the set of injected flows for this allocation site.
      */
     public Set<InfoKind> getInjectedFlows(IAllocNode node) {
-        Object newExpr = PTABridge.v().getNewExpr(node);
+        Object newExpr = node.getNewExpr();
         if (newExpr instanceof NewExpr) {
             String className = ((NewExpr)newExpr).getBaseType().getClassName();
             if (classNameToFlows.containsKey(className)) {
@@ -185,8 +185,7 @@ public class InjectedSourceFlows {
         //System.out.println(fieldFlowMap);
 
         //loop over all allocnodes in the results and if there is an inject flow, remember it
-        for (Object newExpr : ValueAnalysis.v().getResults().keySet()) {
-            IAllocNode node = PTABridge.v().getAllocNode(newExpr);
+        for (IAllocNode node : ValueAnalysis.v().getResults().keySet()) {
             Type type = node.getType();
             if (type instanceof RefType) {
                 SootClass clz = ((RefType)type).getSootClass();

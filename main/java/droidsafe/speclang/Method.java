@@ -26,7 +26,6 @@ import soot.tagkit.LineNumberTag;
 import droidsafe.analyses.infoflow.InfoUnit;
 import droidsafe.analyses.infoflow.InfoValue;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.android.system.API;
@@ -172,7 +171,7 @@ public class Method implements Comparable<Method> {
         if (ptaInfo == null || !ptaInfo.hasReceiver() || !PTABridge.v().isPointer(ptaInfo.getReceiver()))
             return new HashSet<IAllocNode>();
 
-        return ptaInfo.getReceiverPTSet(ptaInfo.getContext(ContextType.EVENT_CONTEXT));
+        return ptaInfo.getReceiverPTSet(ptaInfo.getContext());
     }
 
     /**
@@ -183,7 +182,7 @@ public class Method implements Comparable<Method> {
         if (ptaInfo == null || !PTABridge.v().isPointer(ptaInfo.getArgValue(i)))
             return new HashSet<IAllocNode>();
 
-        return ptaInfo.getArgPTSet(ptaInfo.getContext(ContextType.EVENT_CONTEXT), i);
+        return ptaInfo.getArgPTSet(ptaInfo.getContext(), i);
     }
 
     public boolean hasReceiver() {
@@ -353,7 +352,7 @@ public class Method implements Comparable<Method> {
 
         Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
         //call the information flow results
-        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContext(ContextType.EVENT_CONTEXT), 
+        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContext(), 
             unit, (Local)val);
     }
 
@@ -426,7 +425,7 @@ public class Method implements Comparable<Method> {
 
                 try {
                     Collection<SootMethod> targets = 
-                            PTABridge.v().resolveInvoke(invoke, ptaInfo.getContext(ContextType.EVENT_CONTEXT));
+                            PTABridge.v().resolveInvoke(invoke, ptaInfo.getContext());
 
                     for (SootMethod target : targets) {
                         if (API.v().hasSourceInfoKind(target))

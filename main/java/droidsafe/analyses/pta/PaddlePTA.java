@@ -263,7 +263,7 @@ public class PaddlePTA extends PTABridge {
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
-    public IAllocNode getAllocNode(Object newExpr) {
+    public IAllocNode getAllocNode(Object newExpr, Context context) {
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
@@ -273,6 +273,12 @@ public class PaddlePTA extends PTABridge {
         } else
             return (IAllocNode) newToAllocNodeMap.get(newExpr);
     }
+    
+    public Set<Context> getMethodContexts(SootMethod method) {
+        logger.error("Not implemented");
+        return null;
+    }
+    
 
     /**
      * Return a set of all allocnodes in the program.
@@ -290,8 +296,13 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public Set<SootMethod> getAllReachableMethods() {
+    public Set<SootMethod> getReachableMethods() {
         return reachableMethodContextMap.keySet();
+    }
+    
+    @Override
+    public Set<MethodOrMethodContext> getReachableMethodContexts() {
+       return null;
     }
 
     @Override
@@ -349,7 +360,7 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public Set<Type> getTypes(Value val, PTAContext context) {
+    public Set<Type> getTypes(Value val, Context context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
         for (IAllocNode node : getPTSet(val, context)) {
@@ -428,16 +439,16 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public Set<? extends IAllocNode> getPTSet(Value val, PTAContext context) {
+    public Set<? extends IAllocNode> getPTSet(Value val, Context context) {
         //        if (context.getType() == ContextType.EVENT_CONTEXT) {
         //            return getPTSetEventContext(val, context.getContext());
         //        } else if (context.getType() == ContextType.ONE_CFA) {
         //            return getPTSet1CFA(val, context.getContext());
         //        } else if (context.getType() == ContextType.NONE) {
-        if (context.getType() == ContextType.NONE) {
+        if (context == null) {
             return getPTSet(val);
         } else {
-            logger.error("Invalid Query Type: {}", context.getType());
+            logger.error("Invalid Query Type: {}", context);
             droidsafe.main.Main.exit(1);
             return null;
         }
@@ -470,7 +481,7 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, PTAContext context)
+    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context)
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -501,7 +512,7 @@ public class PaddlePTA extends PTABridge {
      * target method.
      */
     public Map<IAllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke,
-        PTAContext context) throws CannotFindMethodException {
+        Context context) throws CannotFindMethodException {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
@@ -516,7 +527,7 @@ public class PaddlePTA extends PTABridge {
      * 
      */
     private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
-        InstanceInvokeExpr invoke, PTAContext context) throws CannotFindMethodException {
+        InstanceInvokeExpr invoke, Context context) throws CannotFindMethodException {
         Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
 
         //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
@@ -564,7 +575,7 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public void dumpPTAForContext(PrintStream file, PTAContext sootContext) {
+    public void dumpPTAForContext(PrintStream file, Context sootContext) {
         // TODO Auto-generated method stub
 
     }

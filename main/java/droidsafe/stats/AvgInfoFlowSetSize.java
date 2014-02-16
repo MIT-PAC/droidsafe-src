@@ -3,6 +3,7 @@ package droidsafe.stats;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import soot.Context;
 import soot.Local;
 import soot.SootMethod;
 import soot.Unit;
@@ -14,9 +15,6 @@ import soot.jimple.StmtBody;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
-import droidsafe.analyses.pta.ContextType;
-import droidsafe.analyses.pta.PTAContext;
-import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -38,7 +36,7 @@ public class AvgInfoFlowSetSize {
         for (RCFGNode inputNode : RCFG.v().getNodes()) {
             
             for (OutputEvent oe : inputNode.getOutputEvents()) {
-                PTAContext context = oe.getContext(ContextType.EVENT_CONTEXT);
+                Context context = oe.getContext();
                 InvokeExpr invoke = oe.getInvokeExpr();
 
                 try {

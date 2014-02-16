@@ -225,7 +225,7 @@ public class ObjectSensitivityCloner {
         AllocationGraph aGraph = new AllocationGraph();
 
         //build list of allocations that we are going to search for each clone
-        addToAllocList(PTABridge.v().getAllReachableMethods());
+        addToAllocList(PTABridge.v().getReachableMethods());
 
         FileWriter fw = null;
 
@@ -332,7 +332,7 @@ public class ObjectSensitivityCloner {
     public static void cloneStaticMethods() {
         HashMap<SootMethod, List<StaticInvokeExpr>> map = new HashMap<SootMethod, List<StaticInvokeExpr>>();
 
-        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+        for (SootMethod method : PTABridge.v().getReachableMethods()) {
             if (method.isAbstract() || !method.isConcrete())
                 continue;
 

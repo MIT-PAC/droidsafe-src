@@ -142,7 +142,7 @@ public class AllocLocationModel extends CodeLocationModel {
     public static AllocLocationModel get(IAllocNode node) {
         AllocLocationModel line = map.get(node);
         if (line == null) {
-            Object expr = PTABridge.v().getNewExpr(node);
+            Object expr = node.getNewExpr();
 
             if (expr == null || !(expr instanceof Expr)) {
                 logger.debug("Cannot find new expression for allocnode: {}", node);

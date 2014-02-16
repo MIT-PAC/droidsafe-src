@@ -35,7 +35,7 @@ public abstract class RefVAModel extends VAModel {
     /**
      * Every model is tied to an allocNode (one-to-one). 
      */
-    protected Object newExpr;
+    protected IAllocNode node;
 
     private static final Logger logger = LoggerFactory.getLogger(RefVAModel.class);
 
@@ -47,8 +47,8 @@ public abstract class RefVAModel extends VAModel {
      */
     private boolean beingPrinted = false;
 
-    public RefVAModel(Object newExpr){
-        this.newExpr = newExpr;
+    public RefVAModel(IAllocNode an){
+        this.node = an;
     }
 
     /**
@@ -117,7 +117,7 @@ public abstract class RefVAModel extends VAModel {
      * @returns AllocNode that corresponds to this model.
      */
     public IAllocNode getAllocNode(){
-        return PTABridge.v().getAllocNode(this.newExpr);
+        return node;
     }
 
     /**

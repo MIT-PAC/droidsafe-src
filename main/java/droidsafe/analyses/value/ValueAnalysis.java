@@ -1,12 +1,7 @@
 package droidsafe.analyses.value;
 
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
-import droidsafe.analyses.pta.cg.CGContextVisitor;
-import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
@@ -38,9 +33,12 @@ import soot.jimple.IntConstant;
 import soot.jimple.LongConstant;
 import soot.jimple.StringConstant;
 import soot.jimple.Stmt;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
+import soot.Context;
+import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.SootClass;
 import soot.SootField;
@@ -57,11 +55,10 @@ import soot.Value;
  * 
  * @author dpetters
  */
-public class ValueAnalysis implements CGContextVisitor {
+public class ValueAnalysis  {
     //if true then for string values, only track jsa resolved strings (so hot spot strings)
     public static final boolean ONLY_TRACK_JSA_STRINGS = true;
-    public static ContextType CONTEXT_TYPE = ContextType.NONE;
-    
+
     /** Singleton for analysis */
     private static ValueAnalysis am;
 
@@ -72,8 +69,8 @@ public class ValueAnalysis implements CGContextVisitor {
      * keys are the objects that we can and want to model (they are new expressions) 
      * The value is the Model object which simulates that object. 
      */
-    private Map<Object, VAModel> allocNodeToVAModelMap; 
-    
+    private Map<IAllocNode, VAModel> allocNodeToVAModelMap; 
+
     private Set<Type> vaModeledTypesAndParents;
 
     private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
@@ -99,7 +96,7 @@ public class ValueAnalysis implements CGContextVisitor {
 
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
-        this.allocNodeToVAModelMap = new LinkedHashMap<Object, VAModel>();
+        this.allocNodeToVAModelMap = new LinkedHashMap<IAllocNode, VAModel>();
         this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
         this.vaModeledTypesAndParents = new HashSet<Type>();
     }
@@ -111,16 +108,16 @@ public class ValueAnalysis implements CGContextVisitor {
     public static Set<SootClass> baseClassesToModel() {
         if (baseClassesToModel == null) {
             baseClassesToModel = 
-                VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
+                    VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
         }
 
         return baseClassesToModel;
     }
 
     /**
-     * Getter for analysis result.  Jimple NewExpr -> VAModel.
+     * Getter for analysis result.  AllocNode -> VAModel.
      */
-    public Map<Object, VAModel> getResults() {
+    public Map<IAllocNode, VAModel> getResults() {
         return this.allocNodeToVAModelMap;
     }
 
@@ -135,19 +132,15 @@ public class ValueAnalysis implements CGContextVisitor {
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(IAllocNode node) {
-        Object newExpr = PTABridge.v().getNewExpr(node);
-
-        return this.allocNodeToVAModelMap.containsKey(newExpr) &&
-                !this.allocNodeToVAModelMap.get(newExpr).invalidated();
+        return this.allocNodeToVAModelMap.containsKey(node) &&
+                !this.allocNodeToVAModelMap.get(node).invalidated();
     }
 
     /**
      * Return the ModeledObject result for a given alloc node.
      */
     public VAModel getResult(IAllocNode node) {
-        Object newExpr = PTABridge.v().getNewExpr(node);
-
-        return this.allocNodeToVAModelMap.get(newExpr);
+        return this.allocNodeToVAModelMap.get(node);
     }
 
     /** access to the singleton instance */
@@ -183,12 +176,9 @@ public class ValueAnalysis implements CGContextVisitor {
 
         am.createObjectModels();
 
-        //run with one cfa if using geo
-        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.GEOPTA)
-            CONTEXT_TYPE = ContextType.ONE_CFA;
-        
-        CallGraphTraversal.acceptContext(am, CONTEXT_TYPE);;
-                                
+
+        am.visitMethodContexts();
+
         am.logResults();
 
         try {
@@ -203,15 +193,14 @@ public class ValueAnalysis implements CGContextVisitor {
             logger.warn("Unable to close the va-results.log file.", e);
         }
     }
-    
+
     public void createObjectModels() {
         for(IAllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
-            Object newExpr = PTABridge.v().getNewExpr(allocNode);
-            createObjectModel(allocNode, newExpr);    
+            createObjectModel(allocNode);    
         }
     }
 
-    public void createObjectModel(IAllocNode allocNode, Object newExpr) {
+    public void createObjectModel(IAllocNode allocNode) {
         if(!(allocNode.getType() instanceof RefType)) {
             this.logError(allocNode.toString());
             return;
@@ -256,14 +245,14 @@ public class ValueAnalysis implements CGContextVisitor {
         }
 
         try {
-            model = (RefVAModel)ctor.newInstance(newExpr);
+            model = (RefVAModel)ctor.newInstance(allocNode);
         } catch(Exception e){
             errorLogEntry += e.toString();
             logError(errorLogEntry);
             return;
         }
         if(model != null) {
-            this.allocNodeToVAModelMap.put(newExpr, model);
+            this.allocNodeToVAModelMap.put(allocNode, model);
             RefType refT = (RefType)allocNode.getType();
             this.vaModeledTypesAndParents.add(refT);
             SootClass allocType = refT.getSootClass();
@@ -273,76 +262,78 @@ public class ValueAnalysis implements CGContextVisitor {
         }
     }
 
-    @Override
-    public void visit(SootMethod sootMethod, PTAContext ptaContext) {
-              
-        if(!sootMethod.isConcrete())
-            return;
+    public void visitMethodContexts() {
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            SootMethod sootMethod = momc.method();
+            Context context = momc.context();
 
-        if(!sootMethod.hasActiveBody())
-            sootMethod.retrieveActiveBody();
-        
-        for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
-            Stmt stmt = (Stmt) stmts.next();
-            if(stmt instanceof AssignStmt) {
-                AssignStmt assignStmt = (AssignStmt)stmt;
-                Value leftOp = assignStmt.getLeftOp();
-                Value rightOp = assignStmt.getRightOp();
-                if(leftOp instanceof InstanceFieldRef) {
-                    InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
-                    Value baseValue = instanceFieldRef.getBase();
-                    //use a quick type search to see if we need to look at the pta for this value
-                    //if its types is not possibly one that could be tracked, then continue;
-                    if (!vaModeledTypesAndParents.contains(baseValue.getType())) {
-                        continue;
-                    }
-                                        
-                    //this call here is expensive!!
-                    Set<? extends IAllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, ptaContext);
-                    for(IAllocNode allocNode : baseAllocNodes) {
-                        Object newExpr = PTABridge.v().getNewExpr(allocNode);
-                        VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
-                        if(vaModel != null) {
-                            Class<?> c = vaModel.getClass();
-                            String fieldName = instanceFieldRef.getField().getName();
-                            try {
-                                Field field = c.getField(fieldName);
+            if(!sootMethod.isConcrete())
+                return;
+
+            if(!sootMethod.hasActiveBody())
+                sootMethod.retrieveActiveBody();
+
+            for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+                Stmt stmt = (Stmt) stmts.next();
+                if(stmt instanceof AssignStmt) {
+                    AssignStmt assignStmt = (AssignStmt)stmt;
+                    Value leftOp = assignStmt.getLeftOp();
+                    Value rightOp = assignStmt.getRightOp();
+                    if(leftOp instanceof InstanceFieldRef) {
+                        InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
+                        Value baseValue = instanceFieldRef.getBase();
+                        //use a quick type search to see if we need to look at the pta for this value
+                        //if its types is not possibly one that could be tracked, then continue;
+                        if (!vaModeledTypesAndParents.contains(baseValue.getType())) {
+                            continue;
+                        }
+
+                        //this call here is expensive!!
+                        Set<? extends IAllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue,context);
+                        for(IAllocNode allocNode : baseAllocNodes) {
+                            VAModel vaModel = this.allocNodeToVAModelMap.get(allocNode);
+                            if(vaModel != null) {
+                                Class<?> c = vaModel.getClass();
+                                String fieldName = instanceFieldRef.getField().getName();
                                 try {
-                                    Object fieldObject = field.get(vaModel);
-                                    VAModel fieldObjectVAModel = (VAModel)fieldObject;
-                                    if(fieldObjectVAModel instanceof PrimVAModel) {
-                                        PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
-                                        if (fieldPrimVAModel instanceof StringVAModel) {
-                                            handleString(assignStmt, fieldPrimVAModel, ptaContext);
-                                        } else  {
-                                            //primitive, but not string primitive
-                                            if(rightOp instanceof Constant) {
-                                                Constant rightOpConstant = (Constant)rightOp;
-                                                if(rightOpConstant instanceof IntConstant) {
-                                                    IntConstant intConstant = (IntConstant)rightOpConstant;
-                                                    fieldPrimVAModel.addValue(intConstant.value);
-                                                } else if(rightOpConstant instanceof LongConstant) {
-                                                    LongConstant longConstant = (LongConstant)rightOpConstant;
-                                                    fieldPrimVAModel.addValue(longConstant.value);
-                                                } else if(rightOpConstant instanceof DoubleConstant) {
-                                                    DoubleConstant doubleConstant = (DoubleConstant)rightOpConstant;
-                                                    fieldPrimVAModel.addValue(doubleConstant.value);
-                                                } else if(rightOpConstant instanceof FloatConstant) {
-                                                    FloatConstant floatConstant = (FloatConstant)rightOpConstant;
-                                                    fieldPrimVAModel.addValue(floatConstant.value);
+                                    Field field = c.getField(fieldName);
+                                    try {
+                                        Object fieldObject = field.get(vaModel);
+                                        VAModel fieldObjectVAModel = (VAModel)fieldObject;
+                                        if(fieldObjectVAModel instanceof PrimVAModel) {
+                                            PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
+                                            if (fieldPrimVAModel instanceof StringVAModel) {
+                                                handleString(assignStmt, fieldPrimVAModel, context);
+                                            } else  {
+                                                //primitive, but not string primitive
+                                                if(rightOp instanceof Constant) {
+                                                    Constant rightOpConstant = (Constant)rightOp;
+                                                    if(rightOpConstant instanceof IntConstant) {
+                                                        IntConstant intConstant = (IntConstant)rightOpConstant;
+                                                        fieldPrimVAModel.addValue(intConstant.value);
+                                                    } else if(rightOpConstant instanceof LongConstant) {
+                                                        LongConstant longConstant = (LongConstant)rightOpConstant;
+                                                        fieldPrimVAModel.addValue(longConstant.value);
+                                                    } else if(rightOpConstant instanceof DoubleConstant) {
+                                                        DoubleConstant doubleConstant = (DoubleConstant)rightOpConstant;
+                                                        fieldPrimVAModel.addValue(doubleConstant.value);
+                                                    } else if(rightOpConstant instanceof FloatConstant) {
+                                                        FloatConstant floatConstant = (FloatConstant)rightOpConstant;
+                                                        fieldPrimVAModel.addValue(floatConstant.value);
+                                                    } else {
+                                                        System.out.println("Unhandled constant case: " + 
+                                                                rightOpConstant.getClass());
+                                                        System.exit(1);
+                                                    }
                                                 } else {
-                                                    System.out.println("Unhandled constant case: " + 
-                                                            rightOpConstant.getClass());
-                                                    System.exit(1);
+                                                    fieldPrimVAModel.invalidate();
                                                 }
-                                            } else {
-                                                fieldPrimVAModel.invalidate();
                                             }
                                         }
+                                    } catch(IllegalAccessException e) {
                                     }
-                                } catch(IllegalAccessException e) {
+                                } catch(NoSuchFieldException e) {
                                 }
-                            } catch(NoSuchFieldException e) {
                             }
                         }
                     }
@@ -355,7 +346,7 @@ public class ValueAnalysis implements CGContextVisitor {
     /**
      * Handle case where type for assignment is a string
      */
-    private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, PTAContext eventContext) {
+    private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Context context) {
         //Found string
         Set<? extends IAllocNode> rhsNodes;
 
@@ -363,11 +354,11 @@ public class ValueAnalysis implements CGContextVisitor {
         if (assignStmt.getRightOp() instanceof StringConstant) {
             //if a direct string constant, then get the string constant node from pta
             Set<IAllocNode> nodes = new HashSet<IAllocNode>();
-            nodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp()));
+            nodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp(), context));
             rhsNodes = nodes;
         } else {
             //if not a string constant, then query pta
-            rhsNodes = PTABridge.v().getPTSet(assignStmt.getRightOp(), eventContext);
+            rhsNodes = PTABridge.v().getPTSet(assignStmt.getRightOp(), context);
         }
 
         for(IAllocNode rhsNode : rhsNodes) {
@@ -395,7 +386,6 @@ public class ValueAnalysis implements CGContextVisitor {
             }
         }                           
     }
-
 
     /**
      * Helper method to write to the file where we log all errors we encounter during value analysis
@@ -425,9 +415,8 @@ public class ValueAnalysis implements CGContextVisitor {
      * Log the results of the modeling
      */
     private void logResults() {
-        for(Map.Entry<Object, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
-            logResult("NewExpr: " + entry.getKey().toString());
-            logResult("AllocNode: " + PTABridge.v().getAllocNode(entry.getKey()));
+        for(Map.Entry<IAllocNode, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
+            logResult("AllocNode: " + entry.getKey());
             logResult("Model: " + entry.getValue().toStringPretty());
         }
     }

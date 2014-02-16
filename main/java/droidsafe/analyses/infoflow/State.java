@@ -13,6 +13,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import com.google.common.collect.ImmutableSet;
 
+import soot.Context;
 import soot.Immediate;
 import soot.Local;
 import soot.MethodOrMethodContext;
@@ -37,16 +38,15 @@ import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
 import droidsafe.main.Config;
 
 class ContextLocal implements Comparable<ContextLocal> {
-    private static final HashMap<ImmutablePair<PTAContext, Local>, ContextLocal> cache = new HashMap<ImmutablePair<PTAContext, Local>, ContextLocal>();
+    private static final HashMap<ImmutablePair<Context, Local>, ContextLocal> cache = new HashMap<ImmutablePair<Context, Local>, ContextLocal>();
 
-    PTAContext context;
+    Context context;
     Local local;
 
-    private ContextLocal(PTAContext context, Local local) {
+    private ContextLocal(Context context, Local local) {
         if (Config.v().strict) {
             assert context != null && local != null;
         }
@@ -54,8 +54,8 @@ class ContextLocal implements Comparable<ContextLocal> {
         this.local = local;
     }
 
-    static ContextLocal v(PTAContext context, Local local) {
-        ImmutablePair<PTAContext, Local> key = ImmutablePair.of(context, local);
+    static ContextLocal v(Context context, Local local) {
+        ImmutablePair<Context, Local> key = ImmutablePair.of(context, local);
         ContextLocal value = cache.get(key);
         if (value == null) {
             value = new ContextLocal(context, local);
@@ -89,7 +89,7 @@ class ContextLocal implements Comparable<ContextLocal> {
 
     @Override
     public int compareTo(ContextLocal that) {
-        int context = this.context.getContext().toString().compareTo(that.context.getContext().toString());
+        int context = this.context.toString().compareTo(that.context.toString());
         if (context != 0) {
             return context;
         } else {
@@ -111,11 +111,11 @@ class Locals {
         this.contextLocalToValues = new DefaultHashMap<ContextLocal, ImmutableSet<InfoValue>>(that.contextLocalToValues);
     }
 
-    ImmutableSet<InfoValue> putS(PTAContext context, Local local, HashSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putS(Context context, Local local, HashSet<InfoValue> values) {
         return putS(context, local, ImmutableSet.<InfoValue>copyOf(values));
     }
 
-    ImmutableSet<InfoValue> putS(PTAContext context, Local local, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putS(Context context, Local local, ImmutableSet<InfoValue> values) {
         if (values != null && !values.isEmpty()) {
             return contextLocalToValues.put(ContextLocal.v(context, local), values);
         } else {
@@ -123,7 +123,7 @@ class Locals {
         }
     }
 
-    ImmutableSet<InfoValue> putW(PTAContext context, Local local, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putW(Context context, Local local, ImmutableSet<InfoValue> values) {
         ContextLocal contextLocal = ContextLocal.v(context, local);
         ImmutableSet<InfoValue> oldValues = contextLocalToValues.get(contextLocal);
         if (values != null && !values.isEmpty()) {
@@ -139,7 +139,7 @@ class Locals {
         return contextLocalToValues.remove(contextLocal);
     }
 
-    ImmutableSet<InfoValue> remove(PTAContext context, Local local) {
+    ImmutableSet<InfoValue> remove(Context context, Local local) {
         return remove(ContextLocal.v(context, local));
     }
 
@@ -147,7 +147,7 @@ class Locals {
         return contextLocalToValues.get(contextLocal);
     }
 
-    ImmutableSet<InfoValue> get(PTAContext context, Local local) {
+    ImmutableSet<InfoValue> get(Context context, Local local) {
         return get(ContextLocal.v(context, local));
     }
 
@@ -502,53 +502,53 @@ class AddressFieldToValues {
 }
 
 class Instances {
-    private DefaultHashMap<PTAContext, AddressFieldToValues> contextToAddressFieldToValues;
+    private DefaultHashMap<Context, AddressFieldToValues> contextToAddressFieldToValues;
 
     Instances() {
-        contextToAddressFieldToValues = new DefaultHashMap<PTAContext, AddressFieldToValues>(AddressFieldToValues.EMPTY);
+        contextToAddressFieldToValues = new DefaultHashMap<Context, AddressFieldToValues>(AddressFieldToValues.EMPTY);
     }
 
     Instances(Instances that) {
-        this.contextToAddressFieldToValues = new DefaultHashMap<PTAContext, AddressFieldToValues>(AddressFieldToValues.EMPTY);
-        for (Map.Entry<PTAContext, AddressFieldToValues> contextAddressFieldToValues : that.contextToAddressFieldToValues.entrySet()) {
-            PTAContext context = contextAddressFieldToValues.getKey();
+        this.contextToAddressFieldToValues = new DefaultHashMap<Context, AddressFieldToValues>(AddressFieldToValues.EMPTY);
+        for (Map.Entry<Context, AddressFieldToValues> contextAddressFieldToValues : that.contextToAddressFieldToValues.entrySet()) {
+            Context context = contextAddressFieldToValues.getKey();
             AddressFieldToValues addressFieldToValues = contextAddressFieldToValues.getValue();
             this.contextToAddressFieldToValues.put(context, new AddressFieldToValues(addressFieldToValues));
         }
     }
 
-    ImmutableSet<InfoValue> putS(PTAContext context, AddressField addressField, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putS(Context context, AddressField addressField, ImmutableSet<InfoValue> values) {
         return contextToAddressFieldToValues.get(context).putS(addressField, values);
     }
 
-    void putSAll(PTAContext context, AddressFieldToValues addressFieldToValues) {
+    void putSAll(Context context, AddressFieldToValues addressFieldToValues) {
         contextToAddressFieldToValues.get(context).putSAll(addressFieldToValues);
     }
 
-    ImmutableSet<InfoValue> putW(PTAContext context, AddressField addressField, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putW(Context context, AddressField addressField, ImmutableSet<InfoValue> values) {
         return contextToAddressFieldToValues.get(context).putW(addressField, values);
     }
 
-    ImmutableSet<InfoValue> putW(PTAContext context, Address address, SootField field, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putW(Context context, Address address, SootField field, ImmutableSet<InfoValue> values) {
         return contextToAddressFieldToValues.get(context).putW(address, field, values);
     }
 
-    void putWAll(PTAContext context, AddressFieldToValues addressFieldToValues) {
+    void putWAll(Context context, AddressFieldToValues addressFieldToValues) {
         contextToAddressFieldToValues.get(context).putWAll(addressFieldToValues);
     }
 
-    ImmutableSet<InfoValue> get(PTAContext context, Address address, SootField field) {
+    ImmutableSet<InfoValue> get(Context context, Address address, SootField field) {
         return contextToAddressFieldToValues.get(context).get(address, field);
     }
 
-    AddressFieldToValues get(PTAContext context) {
+    AddressFieldToValues get(Context context) {
         return contextToAddressFieldToValues.get(context);
     }
 
     private HashMap<ContextAddress, FieldToValues> contextAddressToFieldToValues;
 
     // XXX: put*() must not be called after calling get(Edge, Address). Otherwise, subsequent get(Edge, Address)'s return value may be invalid.
-    FieldToValues get(PTAContext context, Address address) {
+    FieldToValues get(Context context, Address address) {
         if (contextAddressToFieldToValues == null) {
             contextAddressToFieldToValues = new HashMap<ContextAddress, FieldToValues>();
         }
@@ -585,7 +585,7 @@ class Instances {
             return false;
         }
         try {
-            for (Map.Entry<PTAContext, AddressFieldToValues> contextAddressFieldToValues : this.contextToAddressFieldToValues.entrySet()) {
+            for (Map.Entry<Context, AddressFieldToValues> contextAddressFieldToValues : this.contextToAddressFieldToValues.entrySet()) {
                 if (!(contextAddressFieldToValues.getValue().equals(that.contextToAddressFieldToValues.get(contextAddressFieldToValues.getKey())))) {
                     return false;
                 }
@@ -606,12 +606,12 @@ class Instances {
 }
 
 class ContextAddress implements Comparable<ContextAddress> {
-    private static final HashMap<ImmutablePair<PTAContext, Address>, ContextAddress> cache = new HashMap<ImmutablePair<PTAContext, Address>, ContextAddress>();
+    private static final HashMap<ImmutablePair<Context, Address>, ContextAddress> cache = new HashMap<ImmutablePair<Context, Address>, ContextAddress>();
 
-    PTAContext context;
+    Context context;
     Address address;
 
-    private ContextAddress(PTAContext context, Address address) {
+    private ContextAddress(Context context, Address address) {
         if (Config.v().strict) {
             assert context != null && address != null;
         }
@@ -619,8 +619,8 @@ class ContextAddress implements Comparable<ContextAddress> {
         this.address = address;
     }
 
-    static ContextAddress v(PTAContext context, Address address) {
-        ImmutablePair<PTAContext, Address> key = ImmutablePair.of(context, address);
+    static ContextAddress v(Context context, Address address) {
+        ImmutablePair<Context, Address> key = ImmutablePair.of(context, address);
         ContextAddress value = cache.get(key);
         if (value == null) {
             value = new ContextAddress(context, address);
@@ -654,7 +654,7 @@ class ContextAddress implements Comparable<ContextAddress> {
 
     @Override
     public int compareTo(ContextAddress that) {
-        int context = this.context.getContext().toString().compareTo(that.context.getContext().toString());
+        int context = this.context.toString().compareTo(that.context.toString());
         if (context != 0) {
             return context;
         } else {
@@ -746,11 +746,11 @@ class Arrays {
         this.arrays = new DefaultHashMap<ContextAddress, ImmutableSet<InfoValue>>(that.arrays);
     }
 
-    ImmutableSet<InfoValue> putS(PTAContext context, Address address, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putS(Context context, Address address, ImmutableSet<InfoValue> values) {
         return arrays.put(ContextAddress.v(context, address), values);
     }
 
-    void putSAll(PTAContext context, AddressToValues addressToValues) {
+    void putSAll(Context context, AddressToValues addressToValues) {
         for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : addressToValues.entrySet()) {
             Address address = addressValues.getKey();
             ImmutableSet<InfoValue> values = addressValues.getValue();
@@ -758,7 +758,7 @@ class Arrays {
         }
     }
 
-    ImmutableSet<InfoValue> putW(PTAContext context, Address address, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putW(Context context, Address address, ImmutableSet<InfoValue> values) {
         ContextAddress contextAddress = ContextAddress.v(context, address);
         ImmutableSet<InfoValue> oldValues = arrays.get(contextAddress);
         if (values != null && !values.isEmpty()) {
@@ -770,7 +770,7 @@ class Arrays {
         }
     }
 
-    void putWAll(PTAContext context, AddressToValues addressToValues) {
+    void putWAll(Context context, AddressToValues addressToValues) {
         for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : addressToValues.entrySet()) {
             Address address = addressValues.getKey();
             ImmutableSet<InfoValue> values = addressValues.getValue();
@@ -782,11 +782,11 @@ class Arrays {
         return arrays.get(contextAddress);
     }
 
-    ImmutableSet<InfoValue> get(PTAContext context, Address address) {
+    ImmutableSet<InfoValue> get(Context context, Address address) {
         return get(ContextAddress.v(context, address));
     }
 
-    AddressToValues get(PTAContext context) {
+    AddressToValues get(Context context) {
         AddressToValues addressToValues = new AddressToValues();
         for (Map.Entry<ContextAddress, ImmutableSet<InfoValue>> contextAddressValues : arrays.entrySet()) {
             ContextAddress contextAddress = contextAddressValues.getKey();
@@ -828,12 +828,12 @@ class Arrays {
 }
 
 class ContextField implements Comparable<ContextField> {
-    private static final HashMap<ImmutablePair<PTAContext, SootField>, ContextField> cache = new HashMap<ImmutablePair<PTAContext, SootField>, ContextField>();
+    private static final HashMap<ImmutablePair<Context, SootField>, ContextField> cache = new HashMap<ImmutablePair<Context, SootField>, ContextField>();
 
-    PTAContext context;
+    Context context;
     SootField field;
 
-    private ContextField(PTAContext context, SootField field) {
+    private ContextField(Context context, SootField field) {
         if (Config.v().strict) {
             assert context != null && field != null;
         }
@@ -841,8 +841,8 @@ class ContextField implements Comparable<ContextField> {
         this.field = field;
     }
 
-    static ContextField v(PTAContext context, SootField field) {
-        ImmutablePair<PTAContext, SootField> key = ImmutablePair.of(context, field);
+    static ContextField v(Context context, SootField field) {
+        ImmutablePair<Context, SootField> key = ImmutablePair.of(context, field);
         ContextField value = cache.get(key);
         if (value == null) {
             value = new ContextField(context, field);
@@ -876,7 +876,7 @@ class ContextField implements Comparable<ContextField> {
 
     @Override
     public int compareTo(ContextField that) {
-        int context = this.context.getContext().toString().compareTo(that.context.getContext().toString());
+        int context = this.context.toString().compareTo(that.context.toString());
         if (context != 0) {
             return context;
         } else {
@@ -971,7 +971,7 @@ class Statics {
         this.statics = new DefaultHashMap<ContextField, ImmutableSet<InfoValue>>(that.statics);
     }
 
-    FieldToValues get(PTAContext context) {
+    FieldToValues get(Context context) {
         FieldToValues fieldToValues = new FieldToValues();
         for (Map.Entry<ContextField, ImmutableSet<InfoValue>> contextFieldValues : statics.entrySet()) {
             ContextField contextField = contextFieldValues.getKey();
@@ -983,11 +983,11 @@ class Statics {
         return fieldToValues;
     }
 
-    ImmutableSet<InfoValue> putS(PTAContext context, SootField field, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putS(Context context, SootField field, ImmutableSet<InfoValue> values) {
         return statics.put(ContextField.v(context, field), values);
     }
 
-    void putSAll(PTAContext context, FieldToValues fieldToValues) {
+    void putSAll(Context context, FieldToValues fieldToValues) {
         for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : fieldToValues.entrySet()) {
             SootField field = fieldValues.getKey();
             ImmutableSet<InfoValue> values = fieldValues.getValue();
@@ -995,7 +995,7 @@ class Statics {
         }
     }
 
-    ImmutableSet<InfoValue> putW(PTAContext context, SootField field, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putW(Context context, SootField field, ImmutableSet<InfoValue> values) {
         ContextField contextField = ContextField.v(context, field);
         ImmutableSet<InfoValue> oldValues = statics.get(contextField);
         if (values != null && !values.isEmpty()) {
@@ -1007,7 +1007,7 @@ class Statics {
         }
     }
 
-    void putWAll(PTAContext context, FieldToValues fieldToValues) {
+    void putWAll(Context context, FieldToValues fieldToValues) {
         for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : fieldToValues.entrySet()) {
             SootField field = fieldValues.getKey();
             ImmutableSet<InfoValue> values = fieldValues.getValue();
@@ -1019,7 +1019,7 @@ class Statics {
         return statics.get(contextField);
     }
 
-    ImmutableSet<InfoValue> get(PTAContext context, SootField field) {
+    ImmutableSet<InfoValue> get(Context context, SootField field) {
         return get(ContextField.v(context, field));
     }
 

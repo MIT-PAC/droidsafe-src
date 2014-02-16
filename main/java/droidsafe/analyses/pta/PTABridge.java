@@ -13,8 +13,10 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
+import soot.Context;
 import soot.G;
 import soot.Hierarchy;
+import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
@@ -131,17 +133,20 @@ public abstract class PTABridge {
     public abstract boolean isLegalCast(Type objType, Type refType);
 
     /** return the alloc node of the PAG representing the new expr */
-    public abstract IAllocNode getAllocNode(Object newExpr);
+    public abstract IAllocNode getAllocNode(Object newExpr, Context context);
     
     /** Get all the alloc nodes of the PAG */
     public abstract Set<? extends IAllocNode> getAllAllocNodes();
     
-    /** return the new expression in the IR that this alloc node represents */
-    public abstract Object getNewExpr(IAllocNode an);
-    
     /** Return a list of all reachable methods based on PTA */
-    public abstract Set<SootMethod> getAllReachableMethods() ;
+    public abstract Set<SootMethod> getReachableMethods() ;
     
+    /** return a set of all reachable method contexts */
+    public abstract Set<MethodOrMethodContext> getReachableMethodContexts();
+    
+    /** return all contexts the method is called under */
+    public abstract Set<Context> getMethodContexts(SootMethod method);
+            
     /** Return true if this given method is reachable given the last PTA run */
     public abstract boolean isReachableMethod(SootMethod method);
     
@@ -152,7 +157,7 @@ public abstract class PTABridge {
     public abstract Set<Type> getTypes(Value val);
     
     /** Return the possible dynamic types of the pointer value given the context */
-    public abstract Set<Type> getTypes(Value val, PTAContext context);
+    public abstract Set<Type> getTypes(Value val, Context context);
     
     /** Return the possible alloc nodes that the given pointer could point to, insensitive */
     public abstract Set<? extends IAllocNode> getPTSet(Value val);
@@ -163,7 +168,7 @@ public abstract class PTABridge {
     public abstract Set<? extends IAllocNode> getPTSet(IAllocNode node, SootField field);
     
     /** Return the possible alloc nodes that the given points to could point to given the context */
-    public abstract Set<? extends IAllocNode> getPTSet(Value val, PTAContext context);
+    public abstract Set<? extends IAllocNode> getPTSet(Value val, Context context);
     
     /** Return the possible alloc nodes that the given alloc node could point to, with alloc node arg an array */
     public abstract Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode nodes);
@@ -172,7 +177,7 @@ public abstract class PTABridge {
     public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke)  throws CannotFindMethodException;
     
     /** Resolve the targets of the invoke statement given the PTA and the context*/
-    public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke, PTAContext context) 
+    public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context) 
         
          throws CannotFindMethodException;
     
@@ -192,7 +197,7 @@ public abstract class PTABridge {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke, PTAContext context)
+    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke, Context context)
             throws CannotFindMethodException {
         return resolveInstanceInvokeMap(invoke, context).values();
     }
@@ -204,7 +209,7 @@ public abstract class PTABridge {
     
     /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 
         given the PTA and a context */
-    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context)
+    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Context context)
             throws CannotFindMethodException;
     
     /** dump the pta result */
@@ -214,7 +219,7 @@ public abstract class PTABridge {
     public abstract void dumpPTA(String fileName);
     
     /** dump the pta result for a given context */
-    public abstract void dumpPTAForContext(PrintStream file, PTAContext sootContext);
+    public abstract void dumpPTAForContext(PrintStream file, Context sootContext);
     
     /** dump the call graph to a file */
     public abstract void dumpCallGraph(String fileStr);

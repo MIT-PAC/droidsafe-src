@@ -169,7 +169,7 @@ public class CloneInheritedMethods {
                 continue;
 
             //clone only reachable methods
-            if (!cloneAllMethods && !PTABridge.v().getAllReachableMethods().contains(ancestorM))
+            if (!cloneAllMethods && !PTABridge.v().getReachableMethods().contains(ancestorM))
                 continue;
 
             //check if this method already exists

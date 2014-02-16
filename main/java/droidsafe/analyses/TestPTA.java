@@ -23,10 +23,7 @@ import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
-import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PTAContext;
-import droidsafe.analyses.pta.cg.*;
 
 /**
  * Hacked up testing pass for the PTA and the call graph traversal.
@@ -34,7 +31,7 @@ import droidsafe.analyses.pta.cg.*;
  * @author mgordon
  *
  */
-public class TestPTA implements CGContextVisitor {
+public class TestPTA  {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(TestPTA.class);
 
@@ -42,14 +39,17 @@ public class TestPTA implements CGContextVisitor {
 
     public TestPTA() {
         // TODO Auto-generated constructor stub
-        CallGraphTraversal.acceptContext(this, ContextType.NONE);
+       visitMethods();
         System.out.println("Number of method/context visited: " + numMethods);
     }
 
-    @Override
-    public void visit(SootMethod method, PTAContext context) {
+
+    public void visitMethods() {
         // TODO Auto-generated method stub
-        testMethod(method);
+        for (SootMethod method : PTABridge.v().getReachableMethods()) {
+            testMethod(method);
+        }
+        
         //countMethods(method, context);
     }
 
@@ -113,7 +113,7 @@ public class TestPTA implements CGContextVisitor {
                 AssignStmt a = (AssignStmt) st;
                 try {
                     if (a.getRightOp() instanceof AnyNewExpr) {
-                        if (PTABridge.v().getAllocNode(a.getRightOp()) == null)
+                        if (PTABridge.v().getAllocNode(a.getRightOp(), null) == null)
                             System.out.println("New expr not in map: " + a);
                     } 
 
@@ -124,9 +124,9 @@ public class TestPTA implements CGContextVisitor {
                         if (PTABridge.v().isPointer(a.getRightOp())) {
                             rhsNodes = PTABridge.v().getPTSet(a.getRightOp() 
                                 );
-                        } else if (PTABridge.v().getAllocNode(a.getRightOp()) != null) {
+                        } else if (PTABridge.v().getAllocNode(a.getRightOp(), null) != null) {
                             Set<IAllocNode> nodes = new LinkedHashSet<IAllocNode>();
-                            nodes.add(PTABridge.v().getAllocNode(a.getRightOp()));
+                            nodes.add(PTABridge.v().getAllocNode(a.getRightOp(), null));
                             rhsNodes = nodes;
                         } else if (a.getRightOp() instanceof CastExpr) {
                             CastExpr castExpr = (CastExpr)a.getRightOp();
