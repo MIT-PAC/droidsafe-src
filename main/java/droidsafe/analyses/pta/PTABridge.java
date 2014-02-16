@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -25,7 +27,9 @@ import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
@@ -40,6 +44,9 @@ public abstract class PTABridge {
     private static final Logger logger = LoggerFactory.getLogger(PTABridge.class);
     /** Singleton for PTA bridge */
     private static PTABridge v;
+    
+    /** internal soot call graph */
+    protected CallGraph callGraph;
 
     private static PointsToAnalysisPackage myPackage;
     
@@ -226,4 +233,30 @@ public abstract class PTABridge {
     
     /** return the call graph built by the pta */
     public abstract CallGraph getCallGraph();
+    
+    /** return edges out of a method/method+context that have stmt as source */
+    public List<Edge> outgoingEdges(MethodOrMethodContext momc, Stmt stmt) {
+        List<Edge> edges = new LinkedList<Edge>();
+        
+        Iterator<Edge> it = callGraph.edgesOutOf(momc);
+        while (it.hasNext()) {
+            Edge e = it.next();
+            if (e.srcStmt().equals(stmt))
+                edges.add(e);
+        }
+        
+        return edges;  
+        
+    }
+    
+    /** return edges into a method/method+context */
+    public List<Edge> incomingEdges(MethodOrMethodContext momc) {
+        List<Edge> edges = new LinkedList<Edge>();
+        
+        Iterator<Edge> it = callGraph.edgesInto(momc);
+        while (it.hasNext()) 
+            edges.add(it.next());
+        
+        return edges;
+    }
 }

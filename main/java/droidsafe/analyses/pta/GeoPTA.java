@@ -115,8 +115,6 @@ public class GeoPTA extends PTABridge {
     private static final Logger logger = LoggerFactory.getLogger(GeoPTA.class);
     /** internal soot geometric points to analysis object */
     private GeomPointsTo ptsProvider;
-    /** internal soot call graph */
-    private CallGraph callGraph;
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, AllocNode> newToAllocNodeMap;
     /** Full context query interface */

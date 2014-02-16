@@ -50,6 +50,7 @@ import soot.jimple.NullConstant;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.StaticInvokeExpr;
+import soot.jimple.Stmt;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataMgr.Obj_full_extractor;
@@ -90,8 +91,6 @@ public class SparkPTA extends PTABridge {
     
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(SparkPTA.class);
-    /** internal soot call graph */
-    private CallGraph callGraph;
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, AllocNode> newToAllocNodeMap;
     /** all method reachable from the harness main */
@@ -562,7 +561,6 @@ public class SparkPTA extends PTABridge {
         // TODO Auto-generated method stub
 
     }
-    
     
 
     /**
