@@ -59,6 +59,7 @@ import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
+import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
 import soot.jimple.spark.pag.PAG;
 import soot.jimple.spark.sets.HashPointsToSet;
 import soot.jimple.spark.sets.P2SetVisitor;
@@ -141,7 +142,7 @@ public class SparkPTA extends PTABridge {
             while (iterator.hasNext()) {
                 totalIndegree++;
                 Edge e = iterator.next();
-               // System.out.println("SparkPTA Reachable Edge: " + e + "\n");
+                //System.out.println("\tEdge: " + e + "\n");
             }
         }
 
@@ -156,7 +157,8 @@ public class SparkPTA extends PTABridge {
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
         System.out.println("Average Indegree for call graph: " + 
                 ((double)totalIndegree) / ((double)reachableMethods.size()));
-
+        System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
+        
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
         }
@@ -559,8 +561,9 @@ public class SparkPTA extends PTABridge {
         opt.put("rta","false");                   
         opt.put("field-based","false");           
         opt.put("types-for-sites","false");        
-        opt.put("merge-stringbuffer","false");   
-        opt.put("string-constants","true");     
+        
+  
+        
         opt.put("simulate-natives","false");      
         opt.put("simple-edges-bidirectional","false");
         opt.put("on-fly-cg","true");            
@@ -580,6 +583,9 @@ public class SparkPTA extends PTABridge {
         opt.put("dump-answer","false");          
         opt.put("add-tags","false");             
         opt.put("set-mass","false");
+        
+        opt.put("merge-stringbuffer","false");   
+        opt.put("string-constants","true");   
 
         opt.put("kobjsens", "2");
 

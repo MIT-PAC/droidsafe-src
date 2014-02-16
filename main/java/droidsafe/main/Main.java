@@ -268,26 +268,7 @@ public class Main {
         appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
-        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE != PointsToAnalysisPackage.PADDLE && Config.v().addObjectSensitivity) {
-            timer1.reset();
-            timer1.start();
-            driverMsg("Adding Object Sensitivity by cloning...");
-            monitor.subTask("Adding Object Sensitivity by cloning...");
-            ObjectSensitivityCloner.v().run();
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-            timer1.stop();
-            // app stat column #3 - cloning
-            appStatRowEntries.add(timer1.toString());
-            driverMsg("Finished cloning: " + timer1);
-        }
-
-        //need this pta run to account for cloning
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+                
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");
@@ -346,15 +327,6 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
-            //any method of stringbuffer or stringbuilder that returns a string
-            //on a call replace with new String(receiver)...
-            driverMsg("Converting StringBuffer/Builder calls...");
-            monitor.subTask("Converting StringBuffer/Builder calls...");
-            TransformStringBuilderInvokes.run();
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
             if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
