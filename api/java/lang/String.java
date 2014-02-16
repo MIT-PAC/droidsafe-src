@@ -1,5 +1,4 @@
 package java.lang;
-
 // Droidsafe Imports
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -306,36 +305,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @SuppressWarnings("unused")
         private static int indexOf(String haystackString, String needleString,
                                    int cache, int md2, char lastChar) {
-        char[] haystack = haystackString.value;
-        int haystackOffset = haystackString.offset;
-        int haystackLength = haystackString.count;
-        char[] needle = needleString.value;
-        int needleOffset = needleString.offset;
-        int needleLength = needleString.count;
-        int needleLengthMinus1 = needleLength - 1;
-        int haystackEnd = haystackOffset + haystackLength;
-        outer_loop: for (int i = haystackOffset + needleLengthMinus1; i < haystackEnd;) {
-            if (lastChar == haystack[i]) {
-                for (int j = 0; j < needleLengthMinus1; ++j) {
-                    if (needle[j + needleOffset] != haystack[i + j
-                                                             - needleLengthMinus1]) {
-                        int skip = 1;
-                        if ((cache & (1 << haystack[i])) == 0) {
-                            skip += j;
-                        }
-                        i += Math.max(md2, skip);
-                        continue outer_loop;
-                    }
-                }
-                return i - needleLengthMinus1 - haystackOffset;
-            }
-
-            if ((cache & (1 << haystack[i])) == 0) {
-                i += needleLengthMinus1;
-            }
-            i++;
-        }
-        return -1;
+        int ret = haystackString.getTaintInt() + needleString.getTaintInt() + cache + md2 + (int)lastChar;
+        return ret;
     }
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.754 -0500", hash_original_field = "FD3FEDA6C0FA798616493B49961CBA92", hash_generated_field = "94C8E35BF1C6D0DCD0C640C5B7214BD5")
 
