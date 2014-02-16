@@ -429,6 +429,542 @@ public WebViewCore(Context context, WebView w, CallbackProxy proxy,
                 WebCoreThread.INITIALIZE, this);
         sWebCoreHandler.sendMessage(init);
     }
+    
+    /*
+     * instead of sending a message through a queue and having message
+     * processed by another thread, we process it with droidsafeHandleMessage
+     */
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeHandleMessage(Message msg) {
+        switch (msg.what) {
+            case EventHub.WEBKIT_DRAW:
+                webkitDraw();
+                break;
+
+            case EventHub.WEBKIT_DRAW_LAYERS:
+                webkitDrawLayers();
+                break;
+
+            case EventHub.DESTROY:
+                // Time to take down the world. Cancel all pending
+                // loads and destroy the native view and frame.
+                synchronized (WebViewCore.this) {
+                    mBrowserFrame.destroy();
+                    mBrowserFrame = null;
+                    mSettings.onDestroyed();
+                    mNativeClass = 0;
+                    mWebView = null;
+                }
+                break;
+
+            case EventHub.REVEAL_SELECTION:
+                nativeRevealSelection();
+                break;
+
+            case EventHub.REQUEST_LABEL:
+                if (mWebView != null) {
+                    int nodePointer = msg.arg2;
+                    String label = nativeRequestLabel(msg.arg1,
+                            nodePointer);
+                    if (label != null && label.length() > 0) {
+                        Message.obtain(mWebView.mPrivateHandler,
+                                WebView.RETURN_LABEL, nodePointer,
+                                0, label).sendToTarget();
+                    }
+                }
+                break;
+
+            case EventHub.UPDATE_FRAME_CACHE_IF_LOADING:
+                nativeUpdateFrameCacheIfLoading();
+                break;
+
+            case EventHub.SCROLL_TEXT_INPUT:
+                float xPercent;
+                if (msg.obj == null) {
+                    xPercent = 0f;
+                } else {
+                    xPercent = ((Float) msg.obj).floatValue();
+                }
+                nativeScrollFocusedTextInput(xPercent, msg.arg2);
+                break;
+
+            case EventHub.LOAD_URL: {
+                GetUrlData param = (GetUrlData) msg.obj;
+                loadUrl(param.mUrl, param.mExtraHeaders);
+                break;
+            }
+
+            case EventHub.POST_URL: {
+                CookieManager.getInstance().waitForCookieOperationsToComplete();
+                PostUrlData param = (PostUrlData) msg.obj;
+                mBrowserFrame.postUrl(param.mUrl, param.mPostData);
+                
+            }
+            case EventHub.LOAD_DATA:
+                CookieManager.getInstance().waitForCookieOperationsToComplete();
+                BaseUrlData loadParams = (BaseUrlData) msg.obj;
+                String baseUrl = loadParams.mBaseUrl;
+                if (baseUrl != null) {
+                    int i = baseUrl.indexOf(':');
+                    if (i > 0) {
+                        // In 1.0, WebView.loadDataWithBaseURL() could access local
+                        // asset files using 'file' scheme URLs as long as the data is
+                        // valid. Later versions of WebKit have tightened the
+                        // restriction around when pages can access such local URLs.
+                        // To maintain compatibility with 1.0, we register the scheme of
+                        // the baseUrl to be considered local, as long as it is not
+                        // http(s)/ftp(s)/about/javascript.
+                        String scheme = baseUrl.substring(0, i);
+                        if (!scheme.startsWith("http") &&
+                                !scheme.startsWith("ftp") &&
+                                !scheme.startsWith("about") &&
+                                !scheme.startsWith("javascript")) {
+                            nativeRegisterURLSchemeAsLocal(scheme);
+                        }
+                    }
+                }
+                mBrowserFrame.loadData(baseUrl,
+                        loadParams.mData,
+                        loadParams.mMimeType,
+                        loadParams.mEncoding,
+                        loadParams.mHistoryUrl);
+                nativeContentInvalidateAll();
+                break;
+
+            case EventHub.STOP_LOADING:
+                // If the WebCore has committed the load, but not
+                // finished the first layout yet, we need to set
+                // first layout done to trigger the interpreted side sync
+                // up with native side
+                if (mBrowserFrame.committed()
+                        && !mBrowserFrame.firstLayoutDone()) {
+                    mBrowserFrame.didFirstLayout();
+                }
+                // Do this after syncing up the layout state.
+                stopLoading();
+                break;
+
+            case EventHub.RELOAD:
+                mBrowserFrame.reload(false);
+                break;
+
+            case EventHub.KEY_DOWN:
+                key((KeyEvent) msg.obj, true);
+                break;
+
+            case EventHub.KEY_UP:
+                key((KeyEvent) msg.obj, false);
+                break;
+
+            case EventHub.FAKE_CLICK:
+                nativeClick(msg.arg1, msg.arg2, true);
+                break;
+
+            case EventHub.CLICK:
+                nativeClick(msg.arg1, msg.arg2, false);
+                break;
+
+            case EventHub.VIEW_SIZE_CHANGED: {
+                viewSizeChanged((WebView.ViewSizeData) msg.obj);
+                break;
+            }
+            case EventHub.SET_SCROLL_OFFSET:
+                // note: these are in document coordinates
+                // (inv-zoom)
+                Point pt = (Point) msg.obj;
+                nativeSetScrollOffset(msg.arg1, msg.arg2 == 1,
+                        pt.x, pt.y);
+                break;
+
+            case EventHub.SET_GLOBAL_BOUNDS:
+                Rect r = (Rect) msg.obj;
+                nativeSetGlobalBounds(r.left, r.top, r.width(),
+                    r.height());
+                break;
+
+            case EventHub.GO_BACK_FORWARD:
+                // If it is a standard load and the load is not
+                // committed yet, we interpret BACK as RELOAD
+                if (!mBrowserFrame.committed() && msg.arg1 == -1 &&
+                        (mBrowserFrame.loadType() ==
+                        BrowserFrame.FRAME_LOADTYPE_STANDARD)) {
+                    mBrowserFrame.reload(true);
+                } else {
+                    mBrowserFrame.goBackOrForward(msg.arg1);
+                }
+                break;
+
+            case EventHub.RESTORE_STATE:
+                stopLoading();
+                restoreState(msg.arg1);
+                break;
+
+            case EventHub.PAUSE_TIMERS:
+                break;
+
+            case EventHub.RESUME_TIMERS:
+                break;
+
+            case EventHub.ON_PAUSE:
+                nativePause();
+                break;
+
+            case EventHub.ON_RESUME:
+                nativeResume();
+                break;
+
+            case EventHub.FREE_MEMORY:
+                clearCache(false);
+                nativeFreeMemory();
+                break;
+
+            case EventHub.SET_NETWORK_STATE:
+                if (BrowserFrame.sJavaBridge == null) {
+                    throw new IllegalStateException("No WebView " +
+                            "has been created in this process!");
+                }
+                BrowserFrame.sJavaBridge
+                        .setNetworkOnLine(msg.arg1 == 1);
+                break;
+
+            case EventHub.SET_NETWORK_TYPE:
+                if (BrowserFrame.sJavaBridge == null) {
+                    throw new IllegalStateException("No WebView " +
+                            "has been created in this process!");
+                }
+                Map<String, String> map = (Map<String, String>) msg.obj;
+                BrowserFrame.sJavaBridge
+                        .setNetworkType(map.get("type"), map.get("subtype"));
+                break;
+
+            case EventHub.CLEAR_CACHE:
+                clearCache(msg.arg1 == 1);
+                break;
+
+            case EventHub.CLEAR_HISTORY:
+                mCallbackProxy.getBackForwardList().
+                        close(mBrowserFrame.mNativeFrame);
+                break;
+
+            case EventHub.REPLACE_TEXT:
+                ReplaceTextData rep = (ReplaceTextData) msg.obj;
+                nativeReplaceTextfieldText(msg.arg1, msg.arg2,
+                        rep.mReplace, rep.mNewStart, rep.mNewEnd,
+                        rep.mTextGeneration);
+                break;
+
+            case EventHub.PASS_TO_JS: {
+                JSKeyData jsData = (JSKeyData) msg.obj;
+                KeyEvent evt = jsData.mEvent;
+                int keyCode = evt.getKeyCode();
+                int keyValue = evt.getUnicodeChar();
+                int generation = msg.arg1;
+                passToJs(generation,
+                        jsData.mCurrentText,
+                        keyCode,
+                        keyValue,
+                        evt.isDown(),
+                        evt.isShiftPressed(), evt.isAltPressed(),
+                        evt.isSymPressed());
+                break;
+            }
+
+            case EventHub.SAVE_DOCUMENT_STATE: {
+                CursorData cDat = (CursorData) msg.obj;
+                nativeSaveDocumentState(cDat.mFrame);
+                break;
+            }
+
+            case EventHub.CLEAR_SSL_PREF_TABLE:
+                if (JniUtil.useChromiumHttpStack()) {
+                    // FIXME: This will not work for connections currently in use, as
+                    // they cache the certificate responses. See http://b/5324235.
+                    SslCertLookupTable.getInstance().clear();
+                    nativeCloseIdleConnections();
+                } else {
+                    Network.getInstance(mContext).clearUserSslPrefTable();
+                }
+                break;
+
+            case EventHub.TOUCH_UP:
+                TouchUpData touchUpData = (TouchUpData) msg.obj;
+                if (touchUpData.mNativeLayer != 0) {
+                    nativeScrollLayer(touchUpData.mNativeLayer,
+                            touchUpData.mNativeLayerRect);
+                }
+                nativeTouchUp(touchUpData.mMoveGeneration,
+                        touchUpData.mFrame, touchUpData.mNode,
+                        touchUpData.mX, touchUpData.mY);
+                break;
+
+            case EventHub.TOUCH_EVENT: {
+                TouchEventData ted = (TouchEventData) msg.obj;
+                final int count = ted.mPoints.length;
+                int[] xArray = new int[count];
+                int[] yArray = new int[count];
+                for (int c = 0; c < count; c++) {
+                    xArray[c] = ted.mPoints[c].x;
+                    yArray[c] = ted.mPoints[c].y;
+                }
+                if (ted.mNativeLayer != 0) {
+                    nativeScrollLayer(ted.mNativeLayer,
+                            ted.mNativeLayerRect);
+                }
+                ted.mNativeResult = nativeHandleTouchEvent(ted.mAction, ted.mIds,
+                        xArray, yArray, count, ted.mActionIndex, ted.mMetaState);
+                Message.obtain(
+                        mWebView.mPrivateHandler,
+                        WebView.PREVENT_TOUCH_ID,
+                        ted.mAction,
+                        ted.mNativeResult ? 1 : 0,
+                        ted).sendToTarget();
+                break;
+            }
+
+            case EventHub.SET_ACTIVE:
+                nativeSetFocusControllerActive(msg.arg1 == 1);
+                break;
+
+            case EventHub.ADD_JS_INTERFACE:
+                JSInterfaceData jsData = (JSInterfaceData) msg.obj;
+                mBrowserFrame.addJavascriptInterface(jsData.mObject,
+                        jsData.mInterfaceName);
+                break;
+
+            case EventHub.REMOVE_JS_INTERFACE:
+                jsData = (JSInterfaceData) msg.obj;
+                mBrowserFrame.removeJavascriptInterface(
+                        jsData.mInterfaceName);
+                break;
+
+            case EventHub.REQUEST_EXT_REPRESENTATION:
+                mBrowserFrame.externalRepresentation(
+                        (Message) msg.obj);
+                break;
+
+            case EventHub.REQUEST_DOC_AS_TEXT:
+                mBrowserFrame.documentAsText((Message) msg.obj);
+                break;
+
+            case EventHub.SET_MOVE_FOCUS:
+                CursorData focusData = (CursorData) msg.obj;
+                nativeMoveFocus(focusData.mFrame, focusData.mNode);
+                break;
+
+            case EventHub.SET_MOVE_MOUSE:
+                CursorData cursorData = (CursorData) msg.obj;
+                nativeMoveMouse(cursorData.mFrame,
+                         cursorData.mX, cursorData.mY);
+                break;
+
+            case EventHub.SET_MOVE_MOUSE_IF_LATEST:
+                CursorData cData = (CursorData) msg.obj;
+                nativeMoveMouseIfLatest(cData.mMoveGeneration,
+                        cData.mFrame,
+                        cData.mX, cData.mY);
+                if (msg.arg1 == 1) {
+                    nativeStopPaintingCaret();
+                }
+                break;
+
+            case EventHub.REQUEST_CURSOR_HREF: {
+                Message hrefMsg = (Message) msg.obj;
+                hrefMsg.getData().putString("url",
+                        nativeRetrieveHref(msg.arg1, msg.arg2));
+                hrefMsg.getData().putString("title",
+                        nativeRetrieveAnchorText(msg.arg1, msg.arg2));
+                hrefMsg.getData().putString("src",
+                        nativeRetrieveImageSource(msg.arg1, msg.arg2));
+                hrefMsg.sendToTarget();
+                break;
+            }
+
+            case EventHub.UPDATE_CACHE_AND_TEXT_ENTRY:
+                nativeUpdateFrameCache();
+                // FIXME: this should provide a minimal rectangle
+                if (mWebView != null) {
+                    mWebView.postInvalidate();
+                }
+                sendUpdateTextEntry();
+                break;
+
+            case EventHub.DOC_HAS_IMAGES:
+                Message imageResult = (Message) msg.obj;
+                imageResult.arg1 =
+                        mBrowserFrame.documentHasImages() ? 1 : 0;
+                imageResult.sendToTarget();
+                break;
+
+            case EventHub.DELETE_SELECTION:
+                TextSelectionData deleteSelectionData
+                        = (TextSelectionData) msg.obj;
+                nativeDeleteSelection(deleteSelectionData.mStart,
+                        deleteSelectionData.mEnd, msg.arg1);
+                break;
+
+            case EventHub.SET_SELECTION:
+                nativeSetSelection(msg.arg1, msg.arg2);
+                break;
+
+            case EventHub.MODIFY_SELECTION:
+                String modifiedSelectionString = nativeModifySelection(msg.arg1,
+                        msg.arg2);
+                mWebView.mPrivateHandler.obtainMessage(WebView.SELECTION_STRING_CHANGED,
+                        modifiedSelectionString).sendToTarget();
+                break;
+
+            case EventHub.LISTBOX_CHOICES:
+                SparseBooleanArray choices = (SparseBooleanArray)
+                        msg.obj;
+                int choicesSize = msg.arg1;
+                boolean[] choicesArray = new boolean[choicesSize];
+                for (int c = 0; c < choicesSize; c++) {
+                    choicesArray[c] = choices.get(c);
+                }
+                nativeSendListBoxChoices(choicesArray,
+                        choicesSize);
+                break;
+
+            case EventHub.SINGLE_LISTBOX_CHOICE:
+                nativeSendListBoxChoice(msg.arg1);
+                break;
+
+            case EventHub.SET_BACKGROUND_COLOR:
+                nativeSetBackgroundColor(msg.arg1);
+                break;
+
+            case EventHub.DUMP_DOMTREE:
+                nativeDumpDomTree(msg.arg1 == 1);
+                break;
+
+            case EventHub.DUMP_RENDERTREE:
+                nativeDumpRenderTree(msg.arg1 == 1);
+                break;
+
+            case EventHub.DUMP_NAVTREE:
+                nativeDumpNavTree();
+                break;
+
+            case EventHub.DUMP_V8COUNTERS:
+                nativeDumpV8Counters();
+                break;
+
+            case EventHub.SET_JS_FLAGS:
+                nativeSetJsFlags((String)msg.obj);
+                break;
+
+            case EventHub.CONTENT_INVALIDATE_ALL:
+                nativeContentInvalidateAll();
+                break;
+
+            case EventHub.SAVE_WEBARCHIVE:
+                WebView.SaveWebArchiveMessage saveMessage =
+                    (WebView.SaveWebArchiveMessage)msg.obj;
+                saveMessage.mResultFile =
+                    saveWebArchive(saveMessage.mBasename, saveMessage.mAutoname);
+                mWebView.mPrivateHandler.obtainMessage(
+                    WebView.SAVE_WEBARCHIVE_FINISHED, saveMessage).sendToTarget();
+                break;
+
+            case EventHub.GEOLOCATION_PERMISSIONS_PROVIDE:
+                GeolocationPermissionsData data =
+                        (GeolocationPermissionsData) msg.obj;
+                nativeGeolocationPermissionsProvide(data.mOrigin,
+                        data.mAllow, data.mRemember);
+                break;
+
+            case EventHub.SPLIT_PICTURE_SET:
+                nativeSplitContent(msg.arg1);
+                mWebView.mPrivateHandler.obtainMessage(
+                        WebView.REPLACE_BASE_CONTENT, msg.arg1, 0);
+                mSplitPictureIsScheduled = false;
+                break;
+
+            case EventHub.CLEAR_CONTENT:
+                // Clear the view so that onDraw() will draw nothing
+                // but white background
+                // (See public method WebView.clearView)
+                nativeClearContent();
+                break;
+
+            case EventHub.MESSAGE_RELAY:
+                ((Message) msg.obj).sendToTarget();
+                break;
+
+            case EventHub.POPULATE_VISITED_LINKS:
+                nativeProvideVisitedHistory((String[])msg.obj);
+                break;
+
+            case EventHub.VALID_NODE_BOUNDS: {
+                MotionUpData motionUpData = (MotionUpData) msg.obj;
+                if (!nativeValidNodeAndBounds(
+                        motionUpData.mFrame, motionUpData.mNode,
+                        motionUpData.mBounds)) {
+                    nativeUpdateFrameCache();
+                }
+                Message message = mWebView.mPrivateHandler
+                        .obtainMessage(WebView.DO_MOTION_UP,
+                        motionUpData.mX, motionUpData.mY);
+                mWebView.mPrivateHandler.sendMessageAtFrontOfQueue(
+                        message);
+                break;
+            }
+
+            case EventHub.HIDE_FULLSCREEN:
+                nativeFullScreenPluginHidden(msg.arg1);
+                break;
+
+            case EventHub.PLUGIN_SURFACE_READY:
+                nativePluginSurfaceReady();
+                break;
+
+            case EventHub.NOTIFY_ANIMATION_STARTED:
+                nativeNotifyAnimationStarted(mNativeClass);
+                break;
+
+            case EventHub.ADD_PACKAGE_NAMES:
+                if (BrowserFrame.sJavaBridge == null) {
+                    throw new IllegalStateException("No WebView " +
+                            "has been created in this process!");
+                }
+                BrowserFrame.sJavaBridge.addPackageNames(
+                        (Set<String>) msg.obj);
+                break;
+
+            case EventHub.GET_TOUCH_HIGHLIGHT_RECTS:
+                TouchHighlightData d = (TouchHighlightData) msg.obj;
+                if (d.mNativeLayer != 0) {
+                    nativeScrollLayer(d.mNativeLayer,
+                            d.mNativeLayerRect);
+                }
+                ArrayList<Rect> rects = nativeGetTouchHighlightRects
+                        (d.mX, d.mY, d.mSlop);
+                mWebView.mPrivateHandler.obtainMessage(
+                        WebView.SET_TOUCH_HIGHLIGHT_RECTS, rects)
+                        .sendToTarget();
+                break;
+
+            case EventHub.USE_MOCK_DEVICE_ORIENTATION:
+                useMockDeviceOrientation();
+                break;
+
+            case EventHub.AUTOFILL_FORM:
+                nativeAutoFillForm(msg.arg1);
+                mWebView.mPrivateHandler.obtainMessage(WebView.AUTOFILL_COMPLETE, null)
+                        .sendToTarget();
+                break;
+
+            case EventHub.EXECUTE_JS:
+                if (msg.obj instanceof String) {
+                    if (DebugFlags.WEB_VIEW_CORE) {
+                        Log.d(LOGTAG, "Executing JS : " + msg.obj);
+                    }
+                    mBrowserFrame.stringByEvaluatingJavaScriptFromString((String) msg.obj);
+                }
+                break;
+        }
+    }
 
     /* Initialize private data within the WebCore thread.
      */
@@ -1246,32 +1782,38 @@ void stopLoading() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.628 -0500", hash_original_method = "7711F35529A80997737E0C04E1483C72", hash_generated_method = "4931D3DEB9A7A82DBD1610858C59F580")
     
 public void sendMessage(Message msg) {
-        mEventHub.sendMessage(msg);
+        //mEventHub.sendMessage(msg);
+        droidsafeHandleMessage(msg);
     }
 
+        @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.629 -0500", hash_original_method = "E19A847BDC376FCC409B2080F91A4777", hash_generated_method = "E19A847BDC376FCC409B2080F91A4777")
     
 void sendMessage(int what) {
-        mEventHub.sendMessage(Message.obtain(null, what));
+        //mEventHub.sendMessage(Message.obtain(null, what));
+        droidsafeHandleMessage(Message.obtain(null, what));
     }
 
+        @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.631 -0500", hash_original_method = "3E0AD5D05665DC86C1B2BC352FB304E3", hash_generated_method = "3E0AD5D05665DC86C1B2BC352FB304E3")
     
 void sendMessage(int what, Object obj) {
-        mEventHub.sendMessage(Message.obtain(null, what, obj));
+        droidsafeHandleMessage(Message.obtain(null, what, obj));
     }
 
+        @DSVerified
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.633 -0500", hash_original_method = "C23BF0CD5B475AFDE2C5AFE3693DBFAC", hash_generated_method = "8A039920AAE37C00F14C33BD5DCF6CCC")
     
 void sendMessage(int what, int arg1) {
         // just ignore the second argument (make it 0)
-        mEventHub.sendMessage(Message.obtain(null, what, arg1, 0));
+        //mEventHub.sendMessage(Message.obtain(null, what, arg1, 0));
+        droidsafeHandleMessage(Message.obtain(null, what, arg1, 0));
     }
 
     @DSComment("Package priviledge")
@@ -1279,7 +1821,7 @@ void sendMessage(int what, int arg1) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.635 -0500", hash_original_method = "BB791EA62C0999DDA8C7D0E8B12A435D", hash_generated_method = "BB791EA62C0999DDA8C7D0E8B12A435D")
     
 void sendMessage(int what, int arg1, int arg2) {
-        mEventHub.sendMessage(Message.obtain(null, what, arg1, arg2));
+        droidsafeHandleMessage(Message.obtain(null, what, arg1, arg2));
     }
 
     @DSComment("Package priviledge")
@@ -1288,7 +1830,7 @@ void sendMessage(int what, int arg1, int arg2) {
     
 void sendMessage(int what, int arg1, Object obj) {
         // just ignore the second argument (make it 0)
-        mEventHub.sendMessage(Message.obtain(null, what, arg1, 0, obj));
+        droidsafeHandleMessage(Message.obtain(null, what, arg1, 0, obj));
     }
 
     @DSComment("Package priviledge")
@@ -1296,7 +1838,7 @@ void sendMessage(int what, int arg1, Object obj) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.639 -0500", hash_original_method = "6F3BFA4748A47EA8C7E77DF53F526C02", hash_generated_method = "6F3BFA4748A47EA8C7E77DF53F526C02")
     
 void sendMessage(int what, int arg1, int arg2, Object obj) {
-        mEventHub.sendMessage(Message.obtain(null, what, arg1, arg2, obj));
+        droidsafeHandleMessage(Message.obtain(null, what, arg1, arg2, obj));
     }
 
     @DSComment("Package priviledge")
@@ -1304,7 +1846,7 @@ void sendMessage(int what, int arg1, int arg2, Object obj) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.641 -0500", hash_original_method = "D6940867453E54F97589FC877C811177", hash_generated_method = "D6940867453E54F97589FC877C811177")
     
 void sendMessageAtFrontOfQueue(int what, Object obj) {
-        mEventHub.sendMessageAtFrontOfQueue(Message.obtain(
+        droidsafeHandleMessage(Message.obtain(
                 null, what, obj));
     }
 
@@ -1313,7 +1855,7 @@ void sendMessageAtFrontOfQueue(int what, Object obj) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.644 -0500", hash_original_method = "E02AF416600FEDFA3677939C48774A40", hash_generated_method = "E02AF416600FEDFA3677939C48774A40")
     
 void sendMessageDelayed(int what, Object obj, long delay) {
-        mEventHub.sendMessageDelayed(Message.obtain(null, what, obj), delay);
+        droidsafeHandleMessage(Message.obtain(null, what, obj));
     }
 
     @DSComment("Package priviledge")
@@ -1371,6 +1913,7 @@ private void clearCache(boolean includeDiskFiles) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.655 -0500", hash_original_method = "AA9F9969DB77E536EC07D516D83D1BCB", hash_generated_method = "06C87A9948F6BB1D2AA81A4FCCEB25A0")
+    @DSVerified
     
 private void loadUrl(String url, Map<String, String> extraHeaders) {
         if (DebugFlags.WEB_VIEW_CORE) Log.v(LOGTAG, " CORE loadUrl " + url);
@@ -2529,11 +3072,6 @@ protected DeviceOrientationService getDeviceOrientationService() {
     
     private void nativeResume(){
     	//Formerly a native method
-    }
-
-    @DSVerified
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    private void droidsafeHandleMessage(Message msg) {
     }
 
     private static class WebCoreThread implements Runnable {

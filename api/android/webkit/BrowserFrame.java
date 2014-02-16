@@ -306,7 +306,8 @@ public BrowserFrame(Context context, WebViewCore w, CallbackProxy proxy,
      *            will be replaced by the intrinsic value of the WebView.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.082 -0500", hash_original_method = "056144D27ACF2932EFB0C1980B0D6F98", hash_generated_method = "74273AD6A7D138355EF1ACE14D1C1CB7")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void loadUrl(String url, Map<String, String> extraHeaders) {
         mLoadInitFromJava = true;
         if (URLUtil.isJavaScriptUrl(url)) {
