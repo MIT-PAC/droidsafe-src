@@ -6,8 +6,6 @@ import com.google.common.collect.HashBiMap;
 import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
-import droidsafe.analyses.CallGraphFromEntryPoints;
-
 import droidsafe.android.app.resources.AndroidManifest.Activity;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.AndroidManifest.Receiver;
@@ -204,14 +202,7 @@ public class Resources {
 					logger.info("has intent filter for {}:{}", r.name, r);
 				}
 			}
-
-			//check that all source components are in the manifest
-			for (SootClass clazz : droidsafe.android.app.Hierarchy.v().getAllAppComponents()) {
-				if (!clazz.isAbstract() && !am.components.contains(clazz)) {
-					logger.warn("\nComponent class not defined in manifest, please add to manifest: {}\n", clazz);
-				}
-			}		
-
+			
 			//build soot xml object
 			v.buildXMLSootObjects();
 

@@ -55,7 +55,6 @@ import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
-import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
@@ -80,7 +79,7 @@ public class RCFG  {
     /** Singleton of this class */
     private static RCFG v;
     /** File name for output of unreachable user methods */
-    private static final String UNREACHABLES_FILE_NAME = "unreachable-user-methods.txt"; 
+    private static final String REACHABLES_FILE_NAME = "reachable-user-class-methods.txt"; 
     /** list of names of methods to ignore when creating the RCFG output events */
     private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = 
             new HashSet<String>(Arrays.asList("<clinit>", "finalize"));
@@ -122,7 +121,7 @@ public class RCFG  {
         v().runAlt();
 
         //print unreachable methods to the debug log
-        v().printUnreachableSrcMethods();
+        v().printReachableMethods();
         
         //System.out.println(v().toString());
     }
@@ -372,29 +371,16 @@ public class RCFG  {
      * Loop over methods in the application we did not hit, because the analysis thinks they
      * are unreachable, and inform the user of any api calls in unreachable methods.
      */
-    private void printUnreachableSrcMethods() {
+    private void printReachableMethods() {
 
         try {
-            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + UNREACHABLES_FILE_NAME);
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + REACHABLES_FILE_NAME);
 
-            fw.write("# Unreachable Methods and the api calls they Invoke \n");
-            fw.write("# DroidSafe determined that these methods are unreachable, but that may be unsound\n");
-            fw.write("# due to Android api errors or omissions.\n\n");
+            fw.write("# All Reachable Methods in User Classes (including system methods) \n\n");
 
-
-            for (SootClass clz : Scene.v().getClasses()) {
-                if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString()) &&
-                        !Project.v().isGenClass(clz.toString())) {
-                    for (SootMethod method : clz.getMethods()) {
-                        if (!visitedMethods.contains(method)) {
-                            String apiCalls = checkForCompleteness(method);
-
-                            if (!apiCalls.isEmpty()) {
-                                fw.write(method + ":\n" + apiCalls + "\n\n");
-                            }
-                        }
-                    }
-                }
+            for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+                if (!API.v().isSystemClass(method.getDeclaringClass()))
+                    fw.write(method + "\n");
             }
 
             fw.close();

@@ -85,6 +85,8 @@ public class Config {
     public boolean memoryReadAnalysis = true;
     /** if true, use event context, otherwise, use insensitive result */
     public boolean eventContextPTA = false;
+    /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
+    public boolean addFallbackModeling = true;
 
     /**
      * If true, classes loaded from android.jar will be treated as application classes and analysis
@@ -248,6 +250,9 @@ public class Config {
 
         Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
         options.addOption(pta);
+        
+        Option fallbackMod = new Option("nofallback", "Disable Fallback Modeling");
+        options.addOption(fallbackMod);
 
         Option eventContext = new Option("eventcontext", "Run analysis with Event Context.");
         options.addOption(eventContext);
@@ -394,6 +399,9 @@ public class Config {
         if (cmd.hasOption("eventcontext"))
             this.eventContextPTA = true;
 
+        if (cmd.hasOption("nofallback"))
+            this.addFallbackModeling = false;
+        
         if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 
 

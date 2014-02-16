@@ -3,6 +3,7 @@ package droidsafe.transforms.objsensclone;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -61,11 +62,19 @@ public class CloneInheritedMethods {
     private static final String CLONED_HIDDEN_METHOD_SUFFIX = "_ds_hidden_clone_";
     /** id to add to cloned methods that were hidden by inheritance but are reachable by invoke special */
     private static int cloned_method_id = 0;
-
-    public CloneInheritedMethods(SootClass clz) {
+    /** if true clone all methods otherwise clone only reachable */
+    private boolean cloneAllMethods = false;
+    
+    /**
+     * Clone inherited method and fix up code.  
+     * 
+     * If allMethods == true, then clone all methods, otherwise, just clone reachable methods
+     */
+    public CloneInheritedMethods(SootClass clz, boolean allMethods) {
         clazz = clz;
         methods = new SootMethodList();
         
+        cloneAllMethods = allMethods;
         clonedToOriginal = HashBiMap.create();
         
         //add methods already in the clz
@@ -78,8 +87,17 @@ public class CloneInheritedMethods {
             return;
 
         //build ancestor
-        List<SootClass> ancestors = Scene.v().getActiveHierarchy().getSuperclassesOf(clazz);
+        //List<SootClass> ancestors = Scene.v().getActiveHierarchy().getSuperclassesOf(clazz);
+        List<SootClass> ancestors = new LinkedList<SootClass>();
 
+        //fill in ancestor list without using Soot.Hierarchy
+        SootClass curAncestor = clazz;
+        while (curAncestor.hasSuperclass())
+        {
+            ancestors.add(curAncestor.getSuperclass());
+            curAncestor = curAncestor.getSuperclass();
+        }
+        
         for (SootClass ancestor : ancestors) {
             if (ancestor.isPhantom())
                 continue;
@@ -151,7 +169,7 @@ public class CloneInheritedMethods {
                 continue;
 
             //clone only reachable methods
-            if (!PTABridge.v().getAllReachableMethods().contains(ancestorM))
+            if (!cloneAllMethods && !PTABridge.v().getAllReachableMethods().contains(ancestorM))
                 continue;
 
             //check if this method already exists
@@ -277,7 +295,7 @@ public class CloneInheritedMethods {
         Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
         newMeth.setActiveBody(newBody);
 
-        updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
+        JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
         
         return newMeth;
     }
@@ -319,47 +337,6 @@ public class CloneInheritedMethods {
 
         //didn't find it
         return false;
-    }
-
-    /**
-     * For each value in original body that is hotspots for JSA, add the corresponding cloned
-     * value in the clone body to the JSA results with the same result.
-     */
-    private void updateJSAResults(Body originalBody, Body cloneBody) {
-        if (!Config.v().runStringAnalysis || !JSAStrings.v().hasRun())
-            return;
-
-        assert originalBody.getUnits().size() == cloneBody.getUnits().size();
-
-        //loop over all methods of both clone and originals
-        Iterator originalIt = originalBody.getUnits().iterator();
-        Iterator cloneIt = cloneBody.getUnits().iterator();
-
-        while (originalIt.hasNext()) {
-            Stmt origStmt = (Stmt)originalIt.next();
-            Stmt cloneStmt = (Stmt)cloneIt.next();
-
-            if (!origStmt.containsInvokeExpr()) {
-                continue;
-            }
-
-            InvokeExpr origInvokeExpr = (InvokeExpr)origStmt.getInvokeExpr();
-            InvokeExpr cloneInvokeExpr = (InvokeExpr)cloneStmt.getInvokeExpr();
-
-            //iterate over the args and see if any arg from orig is tracked by jsa
-            //if so, add the clone to jsa results
-            for (int i = 0; i < origInvokeExpr.getArgCount(); i++) {
-                ValueBox origVB = origInvokeExpr.getArgBox(i);
-
-                if (JSAStrings.v().isHotspotValue(origVB.getValue())) {
-                    ValueBox cloneVB = cloneInvokeExpr.getArgBox(i);
-                    JSAStrings.v().copyResult(origVB.getValue(), 
-                        cloneInvokeExpr.getMethodRef().getSignature(), 
-                        i, 
-                        cloneVB);
-                }
-            }
-        }   
     }
     
     public static String removeMethodCloneSuffix(String str) {

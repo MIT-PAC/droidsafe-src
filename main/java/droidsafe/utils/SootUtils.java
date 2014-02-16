@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.android.app.Project;
+import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.CannotFindMethodException;
 import soot.AnySubType;
 import soot.Body;
@@ -112,6 +113,14 @@ public class SootUtils {
         return false;
     }
 
+    /** 
+     * Is the type a void type
+     */
+    public static boolean isVoidType(Type type) {
+        return type instanceof VoidType;
+    }
+    
+    
     /**
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
@@ -700,7 +709,7 @@ public class SootUtils {
 
         //return the first concrete class
         for (SootClass c : implementors) 
-            if (c.isConcrete())
+            if (c.isConcrete() && !ClassCloner.isClonedClass(c))
                 return c;
 
         return null;
@@ -724,7 +733,7 @@ public class SootUtils {
 
         //return the first concrete class
         for (SootClass c : implementors) 
-            if (c.isConcrete())
+            if (c.isConcrete() && !ClassCloner.isClonedClass(c))
                 return c;
 
         return null;
@@ -760,7 +769,7 @@ public class SootUtils {
                 
                 JasminClass jasminClass = new soot.jimple.JasminClass(clz);
                 jasminClass.print(writerOut);
-                System.out.println("Succeeded writing class: " + clz);
+                //System.out.println("Succeeded writing class: " + clz);
             } catch (Exception e) {
                 logger.warn("Error writing class to file {}", clz, e);
             }
@@ -941,18 +950,21 @@ public class SootUtils {
 
 
     /**
-     * Return all methods that the given method (in the class) overrides from all of its parent classes.
+     * Return all methods that the given method (in the class) overrides 
+     * from all of its parent classes (not interfaces).
      */
-    public static List<SootMethod> getOverriddenMethodsFromParents(SootClass clz, String subSig) {
+    public static List<SootMethod> getOverriddenMethodsFromSuperclasses(SootMethod method) {
+        SootClass clz = method.getDeclaringClass();
+        String subSig = method.getSubSignature();
+        
         List<SootMethod> methods = new LinkedList<SootMethod>();
 
-        Set<SootClass> parents = getParents(clz);
+        List<SootClass> parents = getSuperClassList(clz);
 
         for (SootClass parent : parents) {
             if (parent.declaresMethod(subSig)) {
                 SootMethod meth = parent.getMethod(subSig);
-                if (!meth.isAbstract())
-                    methods.add(meth);
+                methods.add(meth);
             }
         }
 
@@ -1168,7 +1180,7 @@ public class SootUtils {
     /**
      * get a list of ancestor of a given class, in order from immediate to oldest
      */
-    public static List<SootClass> getAncestorList(SootClass me) {
+    public static List<SootClass> getSuperClassList(SootClass me) {
         List<SootClass> list = new LinkedList<SootClass>();
 
         if (!me.hasSuperclass())
@@ -1197,7 +1209,7 @@ public class SootUtils {
      * given method
      */
     public static SootMethod findClosetMatch(SootClass sootClass, SootMethodRef method) {
-        List<SootClass> ancestorList = getAncestorList(sootClass);
+        List<SootClass> ancestorList = getSuperClassList(sootClass);
 
         ancestorList.add(0, sootClass);
         NumberedString subSig = method.getSubSignature();
@@ -1322,6 +1334,26 @@ public class SootUtils {
         return false;
     }
 
+    /**
+     * Return the set of concrete methods are inherited but not overriden by a class.
+     */
+    public static List<SootMethod> getInheritedMethods(SootClass clz) {
+        List<SootMethod> methods = new LinkedList<SootMethod>();
+        
+        
+        for (SootClass parent : getSuperClassList(clz)) {
+            for (SootMethod method : parent.getMethods()) {
+                //check if the a concrete resolve from the original class to the parent method 
+                //resolves to this method, if so, it was not overriden.
+                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(clz, method);
+                if (method.equals(resolved))
+                    methods.add(method);
+            }
+        }
+        
+        return methods;
+    }
+    
     /**
      * Return true if the class has the synthetic tag or flag.
      */

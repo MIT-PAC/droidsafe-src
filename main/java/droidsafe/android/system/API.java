@@ -31,6 +31,7 @@ import soot.tagkit.AnnotationTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
+import droidsafe.analyses.SafeAndroidClassesAndMethods;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
@@ -62,6 +63,8 @@ public class API {
     private  SootMethodList api_modeled_methods = new SootMethodList();
     /** Set of all Android Classes */
     private Set<SootClass> allSystemClasses;
+    /** Set of android methods that have DSVerified annotation */
+    private SootMethodList verified_methods = new SootMethodList();
     /** the current runtime instance */
     private static API v;
     /** The classes that define the droidsafe library */
@@ -190,6 +193,11 @@ public class API {
         if (Project.v().isLibClass(original)) {
             Project.v().addLibClass(clone);
         }
+        
+        //if the original class had all methods denoted as safe, then all the methods of the clone
+        //should be denoted as safe
+        if (SafeAndroidClassesAndMethods.v().isSafeClass(original))
+            SafeAndroidClassesAndMethods.v().addSafeClass(clone);
     }
 
     public void init() {
@@ -215,7 +223,7 @@ public class API {
 
             classificationCat = new HashMap<SootMethod, String>();
             
-            SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_NOCATEGORY");
+            SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED");
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
@@ -408,17 +416,17 @@ public class API {
                         if (at.getType().contains("droidsafe/annotations/DSSafe")) {
                             c = Classification.SAFE;
                             category = getCategoryFromClassificationTag(at);
-                            safe_methods.addMethod(method);
+                            addSafeMethod(method);
                             logger.info("Found method with SAFE classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSSpec")) {
-                            spec_methods.addMethod(method);  
+                            addSpecMethod(method);
                             category = getCategoryFromClassificationTag(at);
                             c = Classification.SPEC;
                             logger.info("Found method with SPEC classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSBan")) {
                             c = Classification.BAN; 
                             category = getCategoryFromClassificationTag(at);
-                            banned_methods.addMethod(method);
+                            addBanMethod(method);
                             logger.info("Found method with BAN classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSVerified")) {
                             verified = true;
@@ -427,7 +435,7 @@ public class API {
                             addSinkSourceTag(method, at, sinksMapping);
                             sink = true;
                         } else if (at.getType().contains("droidsafe/annotations/DSSource")) {
-                            logger.info("Found sink method: {}", method); 
+                            logger.info("Found source method: {}", method); 
                             addSinkSourceTag(method, at, srcsMapping);
                             source = true; 
                         }
@@ -448,8 +456,19 @@ public class API {
             if (verified) {
                 logger.info("Found verified method: {}", method);
                 api_modeled_methods.addMethod(method);
+                verified_methods.addMethod(method);
             }
         }
+    }
+    
+    /**
+     * Add infokind taint to the return value of the method.
+     */
+    public void addSourceInfoKind(SootMethod sootMethod, String kind) {
+        if (!srcsMapping.containsKey(sootMethod)) {
+            srcsMapping.put(sootMethod, new HashSet<InfoKind>());
+        }
+        srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(kind));
     }
 
     private void addSinkSourceTag(SootMethod sootMethod, AnnotationTag at, Map<SootMethod, Set<InfoKind>> mapping) {
@@ -739,6 +758,13 @@ public class API {
     }
 
     /**
+     * Return true if this method has the DSVerified annotation.  (don't search parents)
+     */
+    public boolean isDSVerifiedMethod(SootMethod m) {
+        return verified_methods.contains(m);
+    }
+    
+    /**
      * Return true if the argument is a modeled method from the api.
      */
     public boolean isAPIModeledMethod(SootMethod m) {
@@ -759,7 +785,7 @@ public class API {
         //check for all overriden methods because of possible cloning
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 if (srcsMapping.containsKey(parent))
                     return true;
             }
@@ -780,7 +806,7 @@ public class API {
         
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 Set<InfoKind> parentMappings = srcsMapping.get(parent);
                 if (parentMappings != null)
                     kinds.addAll(parentMappings);
@@ -801,7 +827,7 @@ public class API {
         //check for all overriden methods because of possible cloning
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 if (sinksMapping.containsKey(parent))
                     return true;
             }
@@ -822,7 +848,7 @@ public class API {
         
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
-                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
                 Set<InfoKind> parentMapping = sinksMapping.get(parent);
                 if (parentMapping != null)
                     kinds.addAll(parentMapping);

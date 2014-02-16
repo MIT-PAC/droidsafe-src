@@ -11,8 +11,6 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 
-import droidsafe.analyses.CallGraphFromEntryPoints;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 

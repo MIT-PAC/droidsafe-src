@@ -1132,8 +1132,10 @@ public class ResourcesSoot {
     	Stmt beforeIf = (Stmt) units.getLast();
 
     	// IF block: adding more code for if block
-    	Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
-    	units.add(Jimple.v().newAssignStmt(localString, newExpr));
+    	if (!SootUtils.isStringType(returnType)) {
+    	    Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
+    	    units.add(Jimple.v().newAssignStmt(localString, newExpr));
+    	}
 
     	for (RString rstring: rvalueSet) {
     		units.add(Jimple.v().newAssignStmt(localString, StringConstant.v(rstring.value)));

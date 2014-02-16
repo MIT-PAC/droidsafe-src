@@ -71,12 +71,15 @@ public class ClassCloner {
     public static final String CLONE_POSTFIX = "_ds_clone_";
     /** transform to clone inherited methods and remove dynamic dispatch */
     private CloneInheritedMethods cim;
-
+    /** if true, clone all methods, otherwise clone only reachable methods */
+    private boolean cloneAllMethods;
+    
     /**
      * Private constructor for a specific class cloner.
      */
-    private ClassCloner(SootClass org) {
+    private ClassCloner(SootClass org, boolean allMethods) {
         this.original = org;
+        cloneAllMethods = allMethods;
     }
 
     /**
@@ -105,9 +108,11 @@ public class ClassCloner {
      * 
      * If isAPIClass is true, then treat the cloned class as an api class and add it to the list of api classes, and
      * set its methods as safe,spec,ban based on ancestors.
+     * 
+     * if allMethods is true, then clone all methods from ancestor classes, otherwise if false, clone only reachables
      */
-    public static ClassCloner cloneClass(SootClass original) {
-        ClassCloner c = new ClassCloner(original);
+    public static ClassCloner cloneClass(SootClass original, boolean allMethods) {
+        ClassCloner c = new ClassCloner(original, allMethods);
         c.cloneAndInstallClass();
         return c;
     }
@@ -131,7 +136,7 @@ public class ClassCloner {
         clone.setSuperclass(original);
 
         //remove inheritance by cloning
-        cim = new CloneInheritedMethods(clone);
+        cim = new CloneInheritedMethods(clone, cloneAllMethods);
         cim.transform();
 
         //install the class

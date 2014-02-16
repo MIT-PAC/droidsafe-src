@@ -23,49 +23,13 @@ import soot.SootMethodRef;
  *
  */
 public class Hierarchy {
-	
-	private static Hierarchy v;
-	/** Set of classes that implement an Android component class */
-	private List<SootClass> appComponents;
-	/** Set of activities in the application */
-	private Set<SootClass> activities;
-	
-	
-	/**
-	 * Return the singleton hierarchy object for this application.
-	 */
-	public static Hierarchy v() {
-		if (v == null) {
-			v = new Hierarchy();
-		}
-		
-		return v;
-	}
-	
-	protected Hierarchy() {	
-		activities = new LinkedHashSet<SootClass>();
-		
-		//loop over all code and find calls for with any tracked as received or arg
-		for (SootClass clazz : Scene.v().getApplicationClasses()) {
-			if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
-				continue;
-
-			//don't add entry points into the system classes...
-			if (API.v().isSystemClass(clazz))
-				continue;
-			
-			if (inheritsFromAndroidActivity(clazz))
-				activities.add(clazz);
-		}
-	}
-		
-	/**
+    /**
 	 * Given a application class (either from src/ or lib/) return a set of all methods
 	 * defined in the class, plus all methods defined in application superclasses.
 	 * 
 	 * This set will not include methods that are overriden by child classes
 	 */
-	public Set<SootMethod> getAllInheritedAppMethodsIncluded(SootClass sc) {
+	public static Set<SootMethod> getAllInheritedAppMethodsIncluded(SootClass sc) {
 	    LinkedHashSet<SootMethod> methods = new LinkedHashSet<SootMethod>();
 	    Set<String> subSigs = new LinkedHashSet<String>();
 	    
@@ -90,7 +54,7 @@ public class Hierarchy {
 	 * Returns true if cn is class android/app/Activity or is a class
 	 * that inherits from android/app/Activity
 	 */
-	public boolean inheritsFromAndroidActivity(final SootClass cn) {
+	public static boolean inheritsFromAndroidActivity(final SootClass cn) {
 		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
 		    Scene.v().getSootClass(Components.ACTIVITY_CLASS));
 	}
@@ -98,7 +62,7 @@ public class Hierarchy {
 	/**
 	 * Return true if this class inherits from an android component class.
 	 */
-	public boolean isAndroidComponentClass(SootClass clz) {
+	public static boolean isAndroidComponentClass(SootClass clz) {
 		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {
@@ -112,7 +76,7 @@ public class Hierarchy {
 	/**
 	 * Return the closest parent of clz that is an android component
 	 */
-	public SootClass getComponentParent(SootClass clz) {
+	public static SootClass getComponentParent(SootClass clz) {
 		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {
@@ -124,10 +88,25 @@ public class Hierarchy {
 	}
 	
 	/**
+	 * Return the system method that is the closest in the inheritance chain 
+	 * that this method overrides.  Null if this method does not override a system method.
+	 */
+	public static SootMethod closestOverridenSystemMethodNoInterfaces(SootMethod method) {
+	    List<SootMethod> oMethods = SootUtils.getOverriddenMethodsFromSuperclasses(method);
+	      	    
+	    for (SootMethod parent : oMethods) {
+	        if (API.v().isSystemMethod(parent))
+	            return parent;
+	    }
+	    
+	    return null;
+	}
+	
+	/**
 	 * Return set of all interface and classes implemented or inherited by 
 	 * this class.
 	 */
-	public Set<SootClass> systemParents(SootClass clz) {
+	public static Set<SootClass> systemParents(SootClass clz) {
 		Set<SootClass> supers = SootUtils.getParents(clz);
 		LinkedHashSet<SootClass> systemSupers = new LinkedHashSet<SootClass>();
 		
@@ -144,7 +123,7 @@ public class Hierarchy {
 	 * defined in the android.jar.  Note, this will return true if the class
 	 * inherits from java.lang.Object.
 	 */
-	public boolean inheritsFromAndroid(SootClass clz) {
+	public static boolean inheritsFromAndroid(SootClass clz) {
 		return systemParents(clz).size() > 0;
 	}
 	
@@ -152,10 +131,7 @@ public class Hierarchy {
 	 * Return a list of all classes from the app (not libs) that inherit from
 	 * an android api application component.
 	 */
-	public List<SootClass> getAllAppComponents() {
-		//cache calculation
-		if (appComponents != null)
-			return appComponents;
+	public static List<SootClass> getAllAppComponents() {
 		
 		List<SootClass> comps = new LinkedList<SootClass>();
 		
@@ -175,7 +151,7 @@ public class Hierarchy {
 	 * Examime the droidsafe.system.override tag on the method to see
 	 * if it overrides or implements a system method.
 	 */
-	public boolean isImplementedSystemMethod(SootMethod method) {
+	public static boolean isImplementedSystemMethod(SootMethod method) {
 		return method.getTag(TagImplementedSystemMethods.SYSTEM_OVERRIDE_TAG) != null;
 	}
 	
@@ -183,7 +159,7 @@ public class Hierarchy {
 	 * Given a soot method ref (a reference to a method that may not exist in the class
 	 * but should be in a superclass), can the method ref be resolved to the tgtMeth.	
 	 */
-	public boolean canResolveTo(SootMethodRef mr, SootMethod tgtMeth) {
+	public static boolean canResolveTo(SootMethodRef mr, SootMethod tgtMeth) {
 		SootMethod called = mr.resolve();
 		Set<SootClass> tgtParents = SootUtils.getParents(tgtMeth.getDeclaringClass());
 		

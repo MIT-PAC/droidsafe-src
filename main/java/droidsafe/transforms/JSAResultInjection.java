@@ -1,5 +1,6 @@
 package droidsafe.transforms;
 
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
@@ -20,6 +21,8 @@ import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
+import soot.jimple.spark.pag.StringConstantNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.Local;
 import soot.RefType;
 import soot.Scene;
@@ -127,7 +130,13 @@ public class JSAResultInjection extends BodyTransformer {
             //iterate over the args and see if any arg is a string constant
             for (int i = 0; i < expr.getArgCount(); i++) {
                 Value v = expr.getArg(i);
-                if (JSAStrings.v().isHotspotValue(v)) {
+                //don't do a injection of the hotspot value if it is all constants anyway...
+                if (v != null && JSAStrings.v().isHotspotValue(v)) {
+                    
+                    if (allStringConstants(v)) {
+                        continue;
+                    }
+                    
                     //add a local variable
                     Local arg = Jimple.v().newLocal(LOCAL_PREFIX + LOCALID++, RefType.v("java.lang.String"));
                     stmtBody.getLocals().add(arg);
@@ -146,5 +155,23 @@ public class JSAResultInjection extends BodyTransformer {
             }
             changesMade.put(expr, argMod);            
         }
+    }
+    
+    /**
+     * Return true if all allocnodes that v can reference are string constants
+     */
+    private boolean allStringConstants(Value v) {
+        if (v instanceof StringConstant)
+            return true;
+        
+        if (!PTABridge.v().isPointer(v))
+            return false;
+        
+        for (IAllocNode node : PTABridge.v().getPTSet(v)) {
+            if (!(node instanceof StringConstantNode)) 
+                return false;
+        }
+        
+        return true;
     }
 }

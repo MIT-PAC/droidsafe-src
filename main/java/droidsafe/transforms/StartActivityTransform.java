@@ -57,7 +57,7 @@ class StartActivityTransform implements VATransform {
     public StartActivityTransform() {
         //get all activities
         for (SootClass clz : Harness.v().getCreatedClasses()) {
-            if (Hierarchy.v().inheritsFromAndroidActivity(clz)) {
+            if (Hierarchy.inheritsFromAndroidActivity(clz)) {
                 activitiesFromHarness.add(Harness.v().getFieldForCreatedClass(clz));
             }
         }
