@@ -245,7 +245,7 @@ public class Main {
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+                
         // jsa uses pta results in hotspot calculation
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -268,7 +268,14 @@ public class Main {
         appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
-                
+        
+        ObjectSensitivityCloner.cloneStaticMethods();
+        
+        // jsa uses pta results in hotspot calculation
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+       
+        
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");

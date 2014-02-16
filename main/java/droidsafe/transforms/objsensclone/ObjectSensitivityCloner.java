@@ -324,13 +324,15 @@ public class ObjectSensitivityCloner {
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
+
     /** 
      * Clone reachable static method based on the number of static invokes we find in reachable methods.
+     * Must be run after object sensitivity cloning and a pta pass. 
      */
-    private void cloneStaticMethods() {
+    public static void cloneStaticMethods() {
         HashMap<SootMethod, List<StaticInvokeExpr>> map = new HashMap<SootMethod, List<StaticInvokeExpr>>();
 
-        for (SootMethod method : currentReachableMethods) {
+        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
             if (method.isAbstract() || !method.isConcrete())
                 continue;
 
@@ -398,7 +400,7 @@ public class ObjectSensitivityCloner {
         
         System.out.println("Cloned static methods added: " + clonesAdded);
     }
-
+    
     /**
      * Add the effects of cloning to the remember clone context for each original method
      * @param cloneToOrg
