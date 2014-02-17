@@ -254,7 +254,7 @@ public ListAdapter getListAdapter() {
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     @Override
-    public void droidsafeOnSubActivityHook() {
+    public void droidsafeSubActivityCallbackHook() {
         onListItemClick(mList, mList.getChildAt(0), getTaintInt(), getTaintInt());
     }
     

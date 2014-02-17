@@ -31,7 +31,7 @@ public class BackupAgentHelper extends BackupAgent {
     @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.127 -0500", hash_original_method = "9A231220123F2F65AC76F55439204202", hash_generated_method = "4B27DE55ED62E3465E0AE69468C5694B")
-    
+    @DSVerified("Called from BackupManager")
 @Override
     public void onBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
              ParcelFileDescriptor newState) throws IOException {
@@ -45,6 +45,7 @@ public class BackupAgentHelper extends BackupAgent {
     @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.130 -0500", hash_original_method = "73F73FE661E634DA2EF3458F6B4B1263", hash_generated_method = "3057EF61A5E1D3097A01AB9DA476A12D")
+    @DSVerified("Called from BackupManager")
     
 @Override
     public void onRestore(BackupDataInput data, int appVersionCode, ParcelFileDescriptor newState)
@@ -55,7 +56,8 @@ public class BackupAgentHelper extends BackupAgent {
     /** @hide */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.133 -0500", hash_original_method = "846FCA7C7B95F7683BAEC473D9697583", hash_generated_method = "B1CF8ABC069741BD2E7D239784E01135")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public BackupHelperDispatcher getDispatcher() {
         return mDispatcher;
     }

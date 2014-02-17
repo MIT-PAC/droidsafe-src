@@ -65,7 +65,7 @@ public BackupAgent() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.385 -0500", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "9687CB6D9F1B2A9EE9EE5E6EB201E78C")
-    
+    @DSVerified("Called from BackupManager")
 public void onCreate() {
     }
 
@@ -76,7 +76,8 @@ public void onCreate() {
      * Agents do not need to override this method.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.387 -0500", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "B543AE4E1838FF864DE64776FEE21A06")
-    
+    @DSVerified("Called from BackupManager")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
 public void onDestroy() {
     }
 
@@ -112,7 +113,7 @@ public void onDestroy() {
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSVerified
+    @DSVerified("Called from BackupManager")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.389 -0500", hash_original_method = "3EE7A0CC9D81AA95F5F10419C2075716", hash_generated_method = "E87C91B51BA9F67DC3EBA84B883745BA")
     
 public abstract void onBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
@@ -151,7 +152,7 @@ public abstract void onBackup(ParcelFileDescriptor oldState, BackupDataOutput da
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSVerified
+    @DSVerified("Called from BackupManager")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.391 -0500", hash_original_method = "6AA44BE7189E208A2B9808783324262B", hash_generated_method = "D030D1219085DBE9123CB3AD08785434")
     
 public abstract void onRestore(BackupDataInput data, int appVersionCode,
@@ -163,7 +164,8 @@ public abstract void onRestore(BackupDataInput data, int appVersionCode,
      * file system trees to the output.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.395 -0500", hash_original_method = "9C0AD80B0DC65359576BE56D304BF72D", hash_generated_method = "921A495D21A39B96F35048DE3259CC4E")
-    
+    @DSVerified("Called directly from Backup Manager")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
 public void onFullBackup(FullBackupDataOutput data) throws IOException {
         ApplicationInfo appInfo = getApplicationInfo();
 
@@ -551,7 +553,8 @@ protected void onRestoreFile(ParcelFileDescriptor data, long size,
     /** @hide */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.410 -0500", hash_original_method = "2EA8D194620A11CB2853C240391D2146", hash_generated_method = "2322775DBA6D1BBD8A29F3CB4D39A778")
-    
+    @DSVerified("Called from BackupManager")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
 public final IBinder onBind() {
         return mBinder;
     }

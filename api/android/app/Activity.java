@@ -4051,7 +4051,7 @@ final void performUserLeaving() {
      */
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-	public void droidsafeOnSubActivityHook() {
+	public void droidsafeSubActivityCallbackHook() {
         droidsafeOnOthersHook();
 	}
     
