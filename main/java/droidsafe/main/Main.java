@@ -571,7 +571,7 @@ public class Main {
         }
         driverMsg("Finished PTA: " + timer);
         
-        //new TestPTA();
+       // new TestPTA();
 
         return DroidsafeExecutionStatus.OK_STATUS;
     }

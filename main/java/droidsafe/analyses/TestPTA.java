@@ -65,7 +65,7 @@ public class TestPTA  {
             SootMethod method = momc.method();
             Context context = momc.context();
             
-            if (!method.getSignature().startsWith("<com.example.android.apis.content.PickContact"))
+            if (!method.getSignature().startsWith("<edu.droidsafe"))
                 continue;
             
             if (!method.isConcrete())

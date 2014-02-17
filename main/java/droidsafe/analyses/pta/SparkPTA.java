@@ -146,7 +146,7 @@ public class SparkPTA extends PTABridge {
             
             reachableMethodContexts.add(momc);
 
-            //System.out.println("SparkPTA Reachable MOMC: " + momc);
+           // System.out.println("SparkPTA Reachable MOMC: " + momc);
             
             if (!methodToContexts.containsKey(momc.method()))
                 methodToContexts.put(momc.method(), new LinkedHashSet<MethodOrMethodContext>());
@@ -170,7 +170,7 @@ public class SparkPTA extends PTABridge {
 
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
-        System.out.println("Average Indegree for call graph: " + 
+        System.out.println("Average Contexts per Method: " + 
                 (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         

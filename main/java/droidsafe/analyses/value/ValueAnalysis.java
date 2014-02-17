@@ -270,12 +270,10 @@ public class ValueAnalysis  {
             Context context = momc.context();
 
             if(!sootMethod.isConcrete())
-                return;
+                continue;
 
             if(!sootMethod.hasActiveBody())
                 sootMethod.retrieveActiveBody();
-
-            logger.info("VA looking at method: {}", momc);
             
             for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
                 Stmt stmt = (Stmt) stmts.next();
@@ -371,7 +369,7 @@ public class ValueAnalysis  {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
-                if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() == 1) {
+                if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() <= 5) {
                     String value = ((IStringConstantNode)rhsNode).getString();
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");

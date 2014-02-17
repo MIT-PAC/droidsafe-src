@@ -264,13 +264,13 @@ public class RCFG  {
     private void addOutputEvent(Edge callEdge, Edge eventEdge) {
         SootMethod caller = callEdge.src();
         SootMethod callee = callEdge.tgt();
-        boolean debug = true;
+        boolean debug = false;
 
-        System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
+        /*System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
             !API.v().isSystemMethod(caller),
             API.v().isInterestingMethod(callee));
         
-        System.out.println("\t" + callEdge.srcStmt());
+        System.out.println("\t" + callEdge.srcStmt());*/
         
         if (API.v().isSystemMethod(callee) && 
                 !API.v().isSystemMethod(caller) &&
@@ -294,7 +294,7 @@ public class RCFG  {
                     //create the output event
                     for (Map.Entry<IAllocNode, SootMethod> entry : 
                         PTABridge.v().resolveInstanceInvokeMap(iie, context).entrySet()) {
-                        System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
+                        //System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
                         //System.out.println("\tReachable: " + Scene.v().getReachableMethods().contains(entry.getValue()));
                         if (entry.getValue().equals(callee)) {
                             if (debug)

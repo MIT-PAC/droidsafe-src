@@ -13,6 +13,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import soot.Body;
 import soot.BodyTransformer;
 import soot.jimple.AssignStmt;
@@ -41,6 +44,7 @@ import soot.ValueBox;
  *
  */
 public class JSAResultInjection extends BodyTransformer {
+    private final static Logger logger = LoggerFactory.getLogger(JSAResultInjection.class);
     private static int LOCALID = 0;
     public static final String LOCAL_PREFIX = "JSA_INJ_STRING_ARG";
     public static Map<InvokeExpr, Map<Integer, Value>> changesMade = new HashMap<InvokeExpr, Map<Integer, Value>>();
@@ -112,7 +116,7 @@ public class JSAResultInjection extends BodyTransformer {
             
             //add all string constants from va tracked classes, but not from other API classes
             //because this is too aggressive
-            if (isVATrackedClass) {
+            if (isVATrackedClass && false) {
                 for (Object valueBox : stmt.getUseAndDefBoxes()) {
                     if (valueBox instanceof ValueBox) {
                         Value value = ((ValueBox)valueBox).getValue();
@@ -151,6 +155,7 @@ public class JSAResultInjection extends BodyTransformer {
                     //replace the string constant with the local in the call
                     argMod.put(i, v);
                     expr.setArg(i, arg);
+                    logger.info("Injecting JSA result: {} {}", enclosingMethod, stmt);    
                 }
             }
             changesMade.put(expr, argMod);            
