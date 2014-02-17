@@ -184,7 +184,7 @@ public class GeoPTA extends PTABridge {
         eventEntryQueryCache = new HashMap<ValueAndContext, Set<AllocNode>>();
     }
 
-    public Set<Context> getMethodContexts(SootMethod method) {
+    public Set<MethodOrMethodContext> getMethodContexts(SootMethod method) {
         logger.error("Not implemented");
         return null;
     }

@@ -232,7 +232,7 @@ public class Main {
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-        
+
         if (Config.v().addFallbackModeling) {
             //fallback modeling...
             driverMsg ("Adding Missing Modeling...");
@@ -241,11 +241,12 @@ public class Main {
             monitor.worked(1);
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+            // jsa uses pta results in hotspot calculation
+            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-                
-        // jsa uses pta results in hotspot calculation
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
 
         //run jsa after we inject strings from XML values and layout
         driverMsg("Starting String Analysis...");
@@ -265,14 +266,15 @@ public class Main {
         appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
-        
-        ObjectSensitivityCloner.cloneStaticMethods();
-        
-        // jsa uses pta results in hotspot calculation
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-       
-        
+        if (false) {
+            ObjectSensitivityCloner.cloneStaticMethods();
+
+            // jsa uses pta results in hotspot calculation
+            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");
@@ -281,19 +283,21 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
+            
+            driverMsg("Converting Class.getName calls to class name strings.");
+            monitor.subTask("Converting Class.getName calls to class name strings.");
+            ClassGetNameToClassString.run();
+            monitor.worked(1);
+            if (monitor.isCanceled())
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            
+            //need this pta run to account for jsa injection and class / forname
+            if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        driverMsg("Converting Class.getName calls to class name strings.");
-        monitor.subTask("Converting Class.getName calls to class name strings.");
-        ClassGetNameToClassString.run();
-        monitor.worked(1);
-        if (monitor.isCanceled())
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
 
-        //need this pta run to account for jsa injection and class / forname
-        if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         ValueAnalysis.setup();
         if (Config.v().runValueAnalysis) {
@@ -558,7 +562,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         long endTime = System.currentTimeMillis();
         timer.stop();
         if(recordTime) {
@@ -566,6 +570,8 @@ public class Main {
             appStatRowEntries.add(timer.toString());
         }
         driverMsg("Finished PTA: " + timer);
+        
+        //new TestPTA();
 
         return DroidsafeExecutionStatus.OK_STATUS;
     }

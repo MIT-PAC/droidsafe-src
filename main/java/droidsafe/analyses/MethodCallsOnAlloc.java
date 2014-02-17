@@ -109,7 +109,7 @@ public class MethodCallsOnAlloc {
             if (API.v().isSystemMethod(method))
                 continue;
             
-            Iterator<Edge> outgoingEdges = Scene.v().getCallGraph().edgesOutOf(method);
+            Iterator<Edge> outgoingEdges = Scene.v().getCallGraph().edgesOutOf(momc);
             while (outgoingEdges.hasNext()) {
                 Edge edge = outgoingEdges.next();
                 

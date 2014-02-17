@@ -100,7 +100,7 @@ public class SparkPTA extends PTABridge {
     /** underlying pta */
     private PAG ptsProvider;
 
-    private HashMap<SootMethod, Set<Context>> methodToContexts;
+    private HashMap<SootMethod, Set<MethodOrMethodContext>> methodToContexts;
 
     private Set<AllocNode> allAllocNodes;
     
@@ -133,7 +133,7 @@ public class SparkPTA extends PTABridge {
         //fill reachable methods map
         reachableMethods = new LinkedHashSet<SootMethod>();
         reachableMethodContexts = new LinkedHashSet<MethodOrMethodContext>();
-        methodToContexts = new HashMap<SootMethod, Set<Context>>();
+        methodToContexts = new HashMap<SootMethod, Set<MethodOrMethodContext>>();
 
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
 
@@ -149,9 +149,9 @@ public class SparkPTA extends PTABridge {
             //System.out.println("SparkPTA Reachable MOMC: " + momc);
             
             if (!methodToContexts.containsKey(momc.method()))
-                methodToContexts.put(momc.method(), new LinkedHashSet<Context>());
+                methodToContexts.put(momc.method(), new LinkedHashSet<MethodOrMethodContext>());
             
-            methodToContexts.get(momc.method()).add(momc.context());
+            methodToContexts.get(momc.method()).add(momc);
             
             Iterator<Edge> iterator = callGraph.edgesInto(momc);
             while (iterator.hasNext()) {
@@ -171,7 +171,7 @@ public class SparkPTA extends PTABridge {
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
         System.out.println("Average Indegree for call graph: " + 
-                ((double)totalIndegree) / ((double)reachableMethods.size()));
+                (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         
         if (Config.v().dumpPta){
@@ -190,7 +190,7 @@ public class SparkPTA extends PTABridge {
         return callGraph;
     }
 
-    public Set<Context> getMethodContexts(SootMethod method) {
+    public Set<MethodOrMethodContext> getMethodContexts(SootMethod method) {
         return methodToContexts.get(method);
     }
     

@@ -18,6 +18,7 @@ import droidsafe.utils.SootUtils;
 import soot.Context;
 import soot.G;
 import soot.Hierarchy;
+import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootClass;
@@ -152,7 +153,7 @@ public abstract class PTABridge {
     public abstract Set<MethodOrMethodContext> getReachableMethodContexts();
     
     /** return all contexts the method is called under */
-    public abstract Set<Context> getMethodContexts(SootMethod method);
+    public abstract Set<MethodOrMethodContext> getMethodContexts(SootMethod method);
             
     /** Return true if this given method is reachable given the last PTA run */
     public abstract boolean isReachableMethod(SootMethod method);
@@ -233,6 +234,26 @@ public abstract class PTABridge {
     
     /** return the call graph built by the pta */
     public abstract CallGraph getCallGraph();
+    
+    public List<SootMethod> incomingEdgesIns(SootMethod method) {
+        List<SootMethod> callingMethods = new LinkedList<SootMethod>();
+        
+        List<MethodOrMethodContext> momcs = new LinkedList<MethodOrMethodContext>();
+      
+        //find contexts
+        for (MethodOrMethodContext mc : getMethodContexts(method)) {
+            momcs.add(mc);
+        }
+        
+        //find incoming methods for all contexts, ignore context
+        for (MethodOrMethodContext momc : momcs) {
+            Iterator<Edge> edges = callGraph.edgesInto(momc);
+            while (edges.hasNext()) 
+                callingMethods.add(edges.next().src());
+        }
+        
+        return callingMethods;
+    }
     
     /** return edges out of a method/method+context that have stmt as source */
     public List<Edge> outgoingEdges(MethodOrMethodContext momc, Stmt stmt) {

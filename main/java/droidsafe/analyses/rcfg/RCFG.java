@@ -136,10 +136,13 @@ public class RCFG  {
 
             visitedMethods.add(sootMethod);
 
+            logger.info("RCFG: looking at method {}", momc);
+            
             Iterator<Edge> incomingEdges = cg.edgesInto(momc);
             while (incomingEdges.hasNext()) {
                 Edge incomingEdge = incomingEdges.next();
                 //if method is user, and has incoming edge from system, then it is an entry point
+                logger.info(incomingEdge + " " + API.v().isSystemMethod(incomingEdge.src()));
                 if (API.v().isSystemMethod(incomingEdge.src())) {
                     //System.out.println("Event Edge: " + incomingEdge);
                     //now we have an entry point
@@ -156,6 +159,7 @@ public class RCFG  {
      * for each user method, find all output event api calls and build nodes for them
      */
     private void findOutputEventsForEventEdge(Edge entryEdge) {
+        logger.info("find output events for event edge: {}", entryEdge);
         CallGraph cg = Scene.v().getCallGraph();
 
         LinkedList<Edge> stack = new LinkedList<Edge>();
@@ -170,22 +174,25 @@ public class RCFG  {
             if (visitedEdges.contains(current)) 
                 continue;
 
-            SootMethod method = current.tgt();
+            MethodOrMethodContext momc = current.getTgt();
 
             //remember what we have visited
             visitedEdges.add(current);
 
             //don't do anything if we are in a system method
-            if (API.v().isSystemMethod(method))
+            if (API.v().isSystemMethod(momc.method()))
                 continue;
 
-            Iterator<Edge> ciEdges = cg.edgesOutOf(method);
+            Iterator<Edge> ciEdges = cg.edgesOutOf(momc);
 
             //iterate over all the ci edges from soot, and check to see
             //if they are valid given the context
             while (ciEdges.hasNext()) {
+                
                 Edge outgoingEdge = ciEdges.next();
 
+                logger.info("Looking at edge: {}", outgoingEdge);
+                
                 SootMethod calleeMethod = outgoingEdge.tgt();
 
                 if (API.v().isSystemMethod(calleeMethod)) {
@@ -257,13 +264,13 @@ public class RCFG  {
     private void addOutputEvent(Edge callEdge, Edge eventEdge) {
         SootMethod caller = callEdge.src();
         SootMethod callee = callEdge.tgt();
-        boolean debug = false;
+        boolean debug = true;
 
-        /*System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
+        System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
             !API.v().isSystemMethod(caller),
             API.v().isInterestingMethod(callee));
         
-        System.out.println("\t" + callEdge.srcStmt()); */
+        System.out.println("\t" + callEdge.srcStmt());
         
         if (API.v().isSystemMethod(callee) && 
                 !API.v().isSystemMethod(caller) &&
@@ -287,7 +294,7 @@ public class RCFG  {
                     //create the output event
                     for (Map.Entry<IAllocNode, SootMethod> entry : 
                         PTABridge.v().resolveInstanceInvokeMap(iie, context).entrySet()) {
-                        //System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
+                        System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
                         //System.out.println("\tReachable: " + Scene.v().getReachableMethods().contains(entry.getValue()));
                         if (entry.getValue().equals(callee)) {
                             if (debug)

@@ -229,7 +229,7 @@ public class ValueAnalysis  {
         RefVAModel model = null;
         Constructor<?> ctor;
         try {
-            ctor = cls.getConstructor(Object.class);
+            ctor = cls.getConstructor(IAllocNode.class);
         } catch(NoSuchMethodException e) {
             errorLogEntry += "Available constructors are:\n";
             for (Constructor<?> constructor : cls.getConstructors()){
@@ -237,6 +237,7 @@ public class ValueAnalysis  {
             }
             errorLogEntry += e.toString();
             logError(errorLogEntry);
+            logger.info(errorLogEntry);
             return;
         } catch(SecurityException e) {
             errorLogEntry += e.toString();
@@ -249,6 +250,7 @@ public class ValueAnalysis  {
         } catch(Exception e){
             errorLogEntry += e.toString();
             logError(errorLogEntry);
+            logger.info(errorLogEntry);
             return;
         }
         if(model != null) {
@@ -273,6 +275,8 @@ public class ValueAnalysis  {
             if(!sootMethod.hasActiveBody())
                 sootMethod.retrieveActiveBody();
 
+            logger.info("VA looking at method: {}", momc);
+            
             for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
                 Stmt stmt = (Stmt) stmts.next();
                 if(stmt instanceof AssignStmt) {

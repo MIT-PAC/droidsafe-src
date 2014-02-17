@@ -274,7 +274,7 @@ public class PaddlePTA extends PTABridge {
             return (IAllocNode) newToAllocNodeMap.get(newExpr);
     }
     
-    public Set<Context> getMethodContexts(SootMethod method) {
+    public Set<MethodOrMethodContext> getMethodContexts(SootMethod method) {
         logger.error("Not implemented");
         return null;
     }

@@ -139,8 +139,6 @@ public class RequiredModeling {
         //for all user classes, check for implemented api method, and then check
         //to see if there is a call from the api (not the harness)
         
-        CallGraph sparkCG = Scene.v().getCallGraph();
-        
         Set<InvokeExpr> invokesInSystem = getAllSystemInvokes();
         
         fw.write("\n\nMethods overriding a system method that are not called from model: \n");
@@ -160,11 +158,7 @@ public class RequiredModeling {
                     
                     //find a call to it that is not from the harness
                     boolean found = false;
-                    Iterator<Edge> edges = sparkCG.edgesInto(method); 
-                    while (edges.hasNext()) {
-                        Edge edge = edges.next();
-                        SootMethod srcMeth = edge.src(); 
-                        
+                    for (SootMethod srcMeth: PTABridge.v().incomingEdgesIns(method)) {                        
                         if (API.v().isSystemMethod(srcMeth)) {
                             found = true;
                             break;

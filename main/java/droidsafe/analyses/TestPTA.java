@@ -8,9 +8,12 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Context;
 import soot.Local;
+import soot.MethodOrMethodContext;
 import soot.SootMethod;
 import soot.Value;
+import soot.ValueBox;
 import soot.jimple.AnyNewExpr;
 import soot.jimple.AssignStmt;
 import soot.jimple.CastExpr;
@@ -39,8 +42,7 @@ public class TestPTA  {
 
     public TestPTA() {
         // TODO Auto-generated constructor stub
-       visitMethods();
-        System.out.println("Number of method/context visited: " + numMethods);
+        testUserMethods();
     }
 
 
@@ -58,11 +60,53 @@ public class TestPTA  {
         System.out.println("Call: " + sm);
     }
 
+    private void testUserMethods() {
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            SootMethod method = momc.method();
+            Context context = momc.context();
+            
+            if (!method.getSignature().startsWith("<com.example.android.apis.content.PickContact"))
+                continue;
+            
+            if (!method.isConcrete())
+                continue;
+            if (!method.hasActiveBody()) {
+                method.retrieveActiveBody();
+            }
+            
+            System.out.println(momc);
+            
+            // We first gather all the memory access expressions
+            for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+                Stmt st = (Stmt) stmts.next();
+                System.out.println(st);
+                for (ValueBox vb : st.getUseAndDefBoxes()) {
+                    Value value = vb.getValue();
+                    if (PTABridge.v().isPointer(value)) {
+                        System.out.println(value);
+                        System.out.println("  Context Sensitive");
+                        for (IAllocNode node : PTABridge.v().getPTSet(value, context)) {
+                            System.out.println("\t" + node);
+                        }
+                        
+                        System.out.println("  Context Insensitive");
+                        for (IAllocNode node : PTABridge.v().getPTSet(value)) {
+                            System.out.println("\t" + node);
+                        }
+                    }
+                }
+                System.out.println();
+            }
+
+        }
+        
+    }
+    
     private void testMethod(SootMethod sm) {
         //if (API.v().isSystemMethod(sm))
         //    return;
         
-        if (!sm.getSignature().startsWith("<android.os.AsyncTask: android.os.AsyncTask execute"))
+        if (!sm.getSignature().startsWith("<"))
             return;
 
         numMethods++;
