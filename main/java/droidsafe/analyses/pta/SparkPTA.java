@@ -146,7 +146,7 @@ public class SparkPTA extends PTABridge {
             
             reachableMethodContexts.add(momc);
 
-           // System.out.println("SparkPTA Reachable MOMC: " + momc);
+            //System.out.println("SparkPTA Reachable MOMC: " + momc);
             
             if (!methodToContexts.containsKey(momc.method()))
                 methodToContexts.put(momc.method(), new LinkedHashSet<MethodOrMethodContext>());
@@ -157,7 +157,8 @@ public class SparkPTA extends PTABridge {
             while (iterator.hasNext()) {
                 totalIndegree++;
                 Edge e = iterator.next();
-                //System.out.println("\tEdge: " + e + "\n");
+                
+                // System.out.println("\tEdge: " + e + "\n");
             }
         }
 
@@ -189,8 +190,13 @@ public class SparkPTA extends PTABridge {
     public CallGraph getCallGraph() {
         return callGraph;
     }
-
+    
+    
     public Set<MethodOrMethodContext> getMethodContexts(SootMethod method) {
+        if (!methodToContexts.containsKey(method)) {
+            return Collections.<MethodOrMethodContext>emptySet();
+        }
+        
         return methodToContexts.get(method);
     }
     
