@@ -615,12 +615,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(stringBuffer.getTaint());
     }
     
-    /** used by droidsafe to model strings in the information flow */
-    @DSBan(DSCat.BAN_OTHERS)
-        public String(AbstractStringBuilder sb) {
-        addTaint(sb.getTaint());
-    }
-    
     @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.865 -0400", hash_original_method = "DE744DAB842D7A0BE4BC8C7648E27967", hash_generated_method = "A4716F806D0CB47D314F039D1EE5E331")
@@ -931,8 +925,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         void _getChars(int start, int end, char[] buffer, int index) {
         // NOTE last character not copied!
-        addTaint(buffer.getTaint());
-    
+        buffer.addTaint(this.getTaint());
     }
 
     @DSComment("From safe class list")
