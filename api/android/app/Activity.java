@@ -1315,7 +1315,6 @@ public void setFinishOnTouchOutside(boolean finish) {
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
