@@ -40,8 +40,7 @@ import droidsafe.utils.SootUtils;
  */
 
 public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
-    public static final ContextType PTA_CONTEXT_TYPE = ContextType.NONE;
-
+  
     private final List<Block> headBlocks;
 
     private final Map<Block, List<Block>> blockToFollowingBlocks;
