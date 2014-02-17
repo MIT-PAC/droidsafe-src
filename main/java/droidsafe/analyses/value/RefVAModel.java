@@ -158,6 +158,30 @@ public abstract class RefVAModel extends VAModel {
     }
 
     /**
+     * @returns a well-formatted (pretty!) detailed printout of the results, indented at 
+     * the given level
+     */
+    public String toStringPretty(int level) {
+        StringBuffer buf = new StringBuffer();
+        buf.append("va-modeled-");
+        buf.append(this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()));
+        buf.append(" ");
+        buf.append(this.getId());
+        buf.append(": ");
+        if(beingPrinted) {
+            buf.append("<RECURSIVE>");
+        } else {
+            beingPrinted = true;
+            buf.append("{");
+            buf.append(this.fieldsStringPretty(level + 1));
+            buf.append("}");
+            beingPrinted = false;
+        }
+        return buf.toString();
+    }
+
+
+    /**
      * @returns the SootClass for this object model.
      */ 
     public SootClass getSootClass() {
@@ -172,12 +196,12 @@ public abstract class RefVAModel extends VAModel {
         String fieldsString = "";
         Set<String> fieldStrings = new HashSet<String>();
         if (this.invalidated) {
-            fieldsString += INVALIDATED;
+            fieldsString += "\"" + INVALIDATED + "\"";
         } else {
             for(SootField sootField : getFieldsToDisplay(this.getSootClass())) {
                 Set<VAModel> vaModels = this.getFieldVAModels(sootField);
                 if(vaModels == null) {
-                    String fieldString = "\"" + sootField.getName() + "\":" + INVALIDATED;
+                    String fieldString = "\"" + sootField.getName() + "\": \"" + INVALIDATED + "\"";
                     fieldStrings.add(fieldString);
                 } else if(vaModels.size() > 0){
                     // using which we call getFieldVAModels to get a list of of object models
@@ -211,6 +235,56 @@ public abstract class RefVAModel extends VAModel {
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
         }
         return fieldsString;
+    }
+
+    /**
+     * Return a well-formatted (pretty!) string of the resolved field values for this modeled object.
+     */
+    private String fieldsStringPretty(int level) {
+        if (this.invalidated) {
+            return INVALIDATED;
+        } else {
+            StringBuffer buf = new StringBuffer();
+            String indent = "\n" + VAUtils.indent(level);
+            boolean firstField = true;
+            for (SootField sootField : getFieldsToDisplay(this.getSootClass())) {
+                Set<VAModel> vaModels = this.getFieldVAModels(sootField);
+                if (vaModels == null || vaModels.size() > 0) {
+                    if (firstField)
+                        firstField = false;
+                    else
+                        buf.append(",");
+                    buf.append(indent);
+                    buf.append(sootField.getName());
+                    buf.append(": ");
+                    if (vaModels == null) {
+                        buf.append(INVALIDATED);
+                    } else {
+                        // using which we call getFieldVAModels to get a list of of object models
+                        if(vaModels.size() > 1) buf.append("{");
+                        boolean firstValue = true;
+                        for (VAModel vaModel : vaModels) {
+                            // TODO: figure out why this can be null
+                            if(vaModel != null) {
+                                if (firstValue)
+                                    firstValue = false;
+                                else
+                                    buf.append(",");
+                                // for each field object model, we call its toString, unless the object model is the same
+                                // one we are trying to print out (to avoid a toString infinite loop)
+                                if(this==vaModel) {                                                                           
+                                    buf.append("<itself>");
+                                } else {
+                                    buf.append(vaModel.toStringPretty(level + 1));
+                                }
+                            }
+                        }
+                        if(vaModels.size() > 1) buf.append("}");
+                    }
+                }
+            }
+            return buf.toString();
+        }
     }
 
     public static Set<SootField> getFieldsToDisplay(SootClass sootClassParam) {

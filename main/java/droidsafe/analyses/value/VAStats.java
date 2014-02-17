@@ -161,7 +161,7 @@ public class VAStats {
                                         if(!primVAModel.invalidated()) {
                                             Set<Object> values = primVAModel.getValues();
                                             // if the set of values could include ANYTHING, leave size as -1
-                                            if(!values.contains("ANYTHING")) size = values.size();
+                                            if(!values.contains(ValueAnalysis.UNKNOWN_VALUES_STRING)) size = values.size();
                                         }
                                     }
                                 }

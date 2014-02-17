@@ -66,7 +66,7 @@ public class ValueAnalysis implements CGContextVisitor {
     private static ValueAnalysis am;
 
     /** string to represent sets of unknown values */
-    public static final String UNKNOWN_VALUES_STRING = "ANYTHING";
+    public static final String UNKNOWN_VALUES_STRING = "<ANYTHING>";
 
     /** 
      * keys are the objects that we can and want to model (they are new expressions) 
