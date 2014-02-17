@@ -15,17 +15,21 @@ import android.util.SparseIntArray;
 import android.view.KeyCharacterMap.KeyData;
 
 public class KeyEvent extends InputEvent implements Parcelable {
-    
+
+    /*
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static KeyEvent droidsafeObtainEvent() {
         Random rand = new Random();
         KeyEvent ev = new KeyEvent(rand.nextInt(), rand.nextInt(), rand.nextInt(),
                                    rand.nextInt(), rand.nextInt(), rand.nextInt());
         return ev;
     }
+    */
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.923 -0500", hash_original_method = "CD92FE183731A7A6D1227776EFB98684", hash_generated_method = "FF01DC7C6BA6162970DE0E4EE19F724E")
-    
+    @DSVerified 
 private static void populateKeycodeSymbolicNames() {
         SparseArray<String> names = KEYCODE_SYMBOLIC_NAMES;
         names.append(KEYCODE_UNKNOWN, "KEYCODE_UNKNOWN");

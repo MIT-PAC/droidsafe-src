@@ -296,19 +296,26 @@ private Object[] collectActivityLifecycleCallbacks() {
     }
     
 	// ------------- Droidsafe Hooks -------------
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL) 
  	public void droidsafeAttach(Context context) {
  		attach(context);
  	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL) 
 	public void droidsafeOnCreate() {
 		onCreate();
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL) 
 	public void droidsafeOnTerminate() {
 		onTerminate();
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnEverythingElse() {
 		onTrimMemory(getTaintInt());
 		onLowMemory();
