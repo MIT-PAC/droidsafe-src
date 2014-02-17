@@ -55,8 +55,11 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.time.*;
@@ -210,7 +213,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Incorporating XML layout information");
@@ -229,26 +232,23 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-
         if (Config.v().addFallbackModeling) {
             //fallback modeling...
+
+            if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            
             driverMsg ("Adding Missing Modeling...");
             monitor.subTask("Adding Missing Modeling...");
             CallBackModeling.v().run();
             monitor.worked(1);
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-            // jsa uses pta results in hotspot calculation
-            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
 
         //run jsa after we inject strings from XML values and layout
+        //does not need a pta run before
         driverMsg("Starting String Analysis...");
         StopWatch timer1 = new StopWatch();
         timer1.start();
@@ -268,13 +268,11 @@ public class Main {
 
         if (false) {
             ObjectSensitivityCloner.cloneStaticMethods();
-
-            // jsa uses pta results in hotspot calculation
-            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-
+        if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");
@@ -292,12 +290,9 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             
             //need this pta run to account for jsa injection and class / forname
-            if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            if (afterTransformPrecise(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
-
-
 
         ValueAnalysis.setup();
         if (Config.v().runValueAnalysis) {
@@ -334,9 +329,6 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-
-            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
         //some stats to collect, probably want a better structure for stats gathering
@@ -348,6 +340,10 @@ public class Main {
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
+            
+            if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            
             driverMsg("Inserting Unmodeled Objects...");
             monitor.subTask("Inserting Unmodeled Objects...");
             InsertUnmodeledObjects.v().run();
@@ -355,10 +351,10 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-
-            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
@@ -534,21 +530,46 @@ public class Main {
         logger.info(str);
     }
 
-    public static void afterTransform(boolean recordTime) {
-        afterTransform(sMonitor, recordTime);
+    private static DroidsafeExecutionStatus afterTransformFast(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+        Map<String,String> opts = new HashMap<String,String>();
+        
+        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
+           //build fast options for spark
+            opts.put("merge-stringbuffer","true");   
+            opts.put("string-constants","false");   
+            opts.put("kobjsens", "0");
+        } 
+        
+        return afterTransform(monitor, recordTime, opts);
     }
-
+    
+    private static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+        Map<String,String> opts = new HashMap<String,String>();
+        
+        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
+           //build precise options for spark
+            //build fast options for spark
+            opts.put("merge-stringbuffer","false");   
+            opts.put("string-constants","true");   
+            opts.put("kobjsens", "2");
+        } 
+        
+        return afterTransform(monitor, recordTime, opts);   
+    }
+    
     /**
      * Called after one or more transforms to recalculate any underlying analysis.
      */
-    private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+    private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor, 
+                                                           boolean recordTime, 
+                                                           Map<String, String> opts) {
         Scene.v().releaseActiveHierarchy();
         driverMsg("Running PTA...");
         monitor.subTask("Running PTA");
         StopWatch timer = new StopWatch();
         timer.start();
         PTABridge.release();
-        PTABridge.run(Config.v().POINTS_TO_ANALYSIS_PACKAGE);
+        PTABridge.run(Config.v().POINTS_TO_ANALYSIS_PACKAGE, opts);
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;

@@ -105,7 +105,8 @@ public class PaddlePTA extends PTABridge {
     }
 
 
-    public PaddlePTA() {
+    public PaddlePTA(Map<String,String> opts) {
+        super(opts);
         // TODO Auto-generated constructor stub
     }
 

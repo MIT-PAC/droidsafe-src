@@ -180,7 +180,8 @@ public class GeoPTA extends PTABridge {
     /**
      * Private constructor.
      */
-    GeoPTA() {
+    GeoPTA(Map<String, String> opts) {
+        super(opts);
         eventEntryQueryCache = new HashMap<ValueAndContext, Set<AllocNode>>();
     }
 

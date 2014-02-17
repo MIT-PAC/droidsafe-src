@@ -50,6 +50,8 @@ public abstract class PTABridge {
     protected CallGraph callGraph;
 
     private static PointsToAnalysisPackage myPackage;
+    /** options passed by caller to the underlying pta */
+    protected Map<String,String> opts;
     
     /** When gathering statistics, ignore methods and references of these classes or subclasses */
     public static final Set<String> STATS_IGNORE_CLASS_STRINGS = new HashSet<String>(Arrays.asList(
@@ -62,6 +64,10 @@ public abstract class PTABridge {
     
     public PointsToAnalysisPackage getPackage() {
         return myPackage;
+    }
+    
+    protected PTABridge(Map<String,String> opts) {
+        this.opts = opts;
     }
     
     /**
@@ -104,7 +110,7 @@ public abstract class PTABridge {
     }
     
     /** Run the points to analysis, if an analysis is to be added, it must be added here in the if statement */
-    public static void run(PointsToAnalysisPackage pta) {
+    public static void run(PointsToAnalysisPackage pta, Map<String,String> opts) {
        STATS_IGNORE_SOOTCLASSES = new HashSet<SootClass>();
        for (String str : STATS_IGNORE_CLASS_STRINGS) {
            SootClass clz = Scene.v().getSootClass(str);
@@ -115,14 +121,14 @@ public abstract class PTABridge {
             
         myPackage = pta;
         if (pta == PointsToAnalysisPackage.GEOPTA) {
-            v = new GeoPTA();
+            v = new GeoPTA(opts);
             v.runInternal();
         } else if (pta == PointsToAnalysisPackage.SPARK) {
-            v = new SparkPTA();
+            v = new SparkPTA(opts);
             v.runInternal();
         }  else
         if (pta == PointsToAnalysisPackage.PADDLE) {
-            v = new PaddlePTA();
+            v = new PaddlePTA(opts);
             v.runInternal();
         } else {
             logger.error("Invalid points to analysis package: {}", pta);

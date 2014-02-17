@@ -104,8 +104,8 @@ public class SparkPTA extends PTABridge {
 
     private Set<AllocNode> allAllocNodes;
     
-    public SparkPTA() {
-
+    public SparkPTA(Map<String,String> opts) {
+        super(opts);
     }
 
     @Override
@@ -593,7 +593,7 @@ public class SparkPTA extends PTABridge {
     /**
      * Run context insensitive spark analysis.
      */
-    static void setSparkPointsToAnalysis() {
+    void setSparkPointsToAnalysis() {
         logger.info("[spark] Starting analysis ...");
 
         HashMap<String, String> opt = new HashMap<String, String>();
@@ -634,6 +634,14 @@ public class SparkPTA extends PTABridge {
 
         opt.put("kobjsens", Integer.toString(K));
 
+        opt.put("obj-sens-no-context-list", 
+            "java.lang.Throwable,java.math.BigInt,java.math.BigInteger");
+        
+        //now overwrite options with options that are passed in
+        for (Map.Entry<String, String> entry : opts.entrySet()) {
+            opt.put(entry.getKey(), entry.getValue());
+        }
+        
         /*
         //some context sensitivity
         opt.put("cs-demand", "false");
