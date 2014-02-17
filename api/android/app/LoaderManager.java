@@ -170,13 +170,30 @@ void installLoader(LoaderInfo info) {
             info.start();
         }
     }
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private<D> void droidsafeCallbackHook(Loader<D> loader, int id, Bundle args,  LoaderManager.LoaderCallbacks<D> callback) {
+        loader.addTaint(taint);
+       
+        callback.onCreateLoader(id, args);
+        callback.onLoaderReset(loader);
+        
+        //TODO: find a better way to inject generic data
+        D data = null;
+        callback.onLoadFinished(loader, data);
+    }
+
+    @DSVerified("initialize content loader, makes callback to LoaderCallbacks")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.016 -0400", hash_original_method = "E04CC49F77F654C9D0B54FC39C94F2D8", hash_generated_method = "44F3208F077884E4A84DDB056BA88B7C")
     @SuppressWarnings("unchecked")
     public <D> Loader<D> initLoader(int id, Bundle args, LoaderManager.LoaderCallbacks<D> callback) {
         addTaint(callback.getTaint());
         addTaint(args.getTaint());
         addTaint(id);
+        
+        
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_690930276 = new IllegalStateException("Called while creating a loader");
@@ -197,9 +214,11 @@ void installLoader(LoaderInfo info) {
         {
             info.callOnLoadFinished(info.mLoader, info.mData);
         } //End block
-Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_41822955 =         (Loader<D>)info.mLoader;
-        var75A6A3900136EAA1B4E4C3D43F1802B1_41822955.addTaint(taint);
-        return var75A6A3900136EAA1B4E4C3D43F1802B1_41822955;
+
+        Loader<D> loader =         (Loader<D>)info.mLoader;
+        loader.addTaint(taint);
+        droidsafeCallbackHook(loader, id, args, callback);
+        return loader;
         // ---------- Original Method ----------
         //if (mCreatingLoader) {
             //throw new IllegalStateException("Called while creating a loader");
@@ -219,6 +238,8 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_41822955 =         (Loader<D>)info
         //return (Loader<D>)info.mLoader;
     }
     
+    @DSVerified("restart content loader, make call to callback")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.024 -0400", hash_original_method = "54BE8D79606278ABB814838D7A2BEC9C", hash_generated_method = "E405CBE6FB4EF75DAE651B6F372BFECF")
     @SuppressWarnings("unchecked")
     public <D> Loader<D> restartLoader(int id, Bundle args, LoaderManager.LoaderCallbacks<D> callback) {
@@ -273,9 +294,11 @@ Loader<D> varA0A415B70AD2C3775252A85D08956D6B_1321731627 =                      
             } //End block
         } //End block
         info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
-Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1202775445 =         (Loader<D>)info.mLoader;
-        var75A6A3900136EAA1B4E4C3D43F1802B1_1202775445.addTaint(taint);
-        return var75A6A3900136EAA1B4E4C3D43F1802B1_1202775445;
+        Loader<D> loader =         (Loader<D>)info.mLoader;
+        loader.addTaint(taint);
+        droidsafeCallbackHook(loader, id, args, callback);
+
+        return loader;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

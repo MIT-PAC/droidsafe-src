@@ -704,15 +704,32 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
     }
     
+    ComponentName serviceCompName = null; 
+
+    @DSVerified("Calling connection callback")
+    @DSSpec(DSCat.SERVICE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        if (serviceCompName == null) {
+            serviceCompName = new ComponentName(new String(), new String());
+        }
+        
+        if (conn != null) {
+            conn.onServiceConnected(serviceCompName, mActivityToken);
+            conn.onServiceDisconnected(serviceCompName);
+        }
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
     @Override
     public void unbindService(ServiceConnection conn) {
-        throw new UnsupportedOperationException();
+        if (conn != null) {
+            conn.onServiceDisconnected(serviceCompName);
+        }
     }
     
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})

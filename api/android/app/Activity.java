@@ -2566,7 +2566,9 @@ public LayoutInflater getLayoutInflater() {
         for (Intent intent: intents)
             startActivity(intent);
     }
-    
+
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
@@ -2642,10 +2644,14 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
+        fragment.onActivityCreated(new Bundle());
+        fragment.onActivityResult(DSUtils.FAKE_INT, DSUtils.FAKE_INT, intent);
 	    /*
 		Instrumentation.ActivityResult ar =
 	            mInstrumentation.execStartActivity(

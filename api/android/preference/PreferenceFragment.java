@@ -192,6 +192,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         }
     }
 
+    @DSVerified("Called from Activity")
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.212 -0500", hash_original_method = "ED65E8315019E6E9FED78D8EFC0AFB01", hash_generated_method = "C533AE0F68DA8D9BE6AC196831165320")
