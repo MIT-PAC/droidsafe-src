@@ -55,7 +55,6 @@ public class NotificationCompat {
     public static final int PRIORITY_MAX = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.978 -0500", hash_original_field = "4AE7297870DD4E88340580CC7C071192", hash_generated_field = "EFDD110E4A65B545589FF531F677AF83")
 
-
     private static  NotificationCompatImpl IMPL;
 
     interface NotificationCompatImpl {
@@ -98,7 +97,6 @@ public Notification build(Builder b) {
         }
     }
 
-
     static {
         if (Build.VERSION.SDK_INT >= 14) {
             IMPL = new NotificationCompatImplIceCreamSandwich();
@@ -134,7 +132,6 @@ public Notification build(Builder b) {
 
         Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.047 -0500", hash_original_field = "880293D1CB2F5D4C60729EDF187AA8F8", hash_generated_field = "880293D1CB2F5D4C60729EDF187AA8F8")
-
 
         CharSequence mContentTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.048 -0500", hash_original_field = "338AB4B5CF81AE908BF4544B3B2F254F", hash_generated_field = "338AB4B5CF81AE908BF4544B3B2F254F")
@@ -183,7 +180,6 @@ public Notification build(Builder b) {
 
         ArrayList<Action> mActions = new ArrayList<Action>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.079 -0500", hash_original_field = "15DBBA5CB9F17B25316C96C477594C30", hash_generated_field = "15DBBA5CB9F17B25316C96C477594C30")
-
 
         Notification mNotification = new Notification();
 
@@ -626,6 +622,7 @@ public Builder setStyle(Style style) {
         /**
          * @deprecated Use {@link #build()} instead.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.149 -0500", hash_original_method = "15588961BDA1926CBA8261EB675AB085", hash_generated_method = "753F4735B0BCF8452E775FEB97424181")
         
 @Deprecated
@@ -677,6 +674,7 @@ public void setBuilder(Builder builder) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.334 -0500", hash_original_method = "0FEC214F89D6BD743099C9B7F081F5FC", hash_generated_method = "5343CBF8C4B183FE71BC140FE018747F")
         
 public Notification build() {

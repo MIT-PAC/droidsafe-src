@@ -52,6 +52,7 @@ public static void incrementOperationCount(int tag, int operationCount) {
         TrafficStats.incrementOperationCount(tag, operationCount);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.993 -0500", hash_original_method = "2E16EEAC4DC43102B618BD8FF88B8964", hash_generated_method = "6B6DB1178A0DB49B5A1D4A16DD65E482")
     
 public static void setThreadStatsTag(int tag) {

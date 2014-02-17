@@ -346,6 +346,7 @@ public void setSource(Object record, View source) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 11:34:21.579 -0500", hash_original_method = "D826993569B19883E7E5AC70428C6BE2", hash_generated_method = "9251F539122F28683C02FC60453FE6A0")
         
 public void setSource(Object record, View root, int virtualDescendantId) {
@@ -690,7 +691,6 @@ public void setToIndex(Object record, int toIndex) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 11:34:21.959 -0500", hash_original_field = "D9929383C763B2C21DE54D8C7FC3D20D", hash_generated_field = "D1D1E99F4AC4499526A983B23845B236")
 
-
     private static  AccessibilityRecordImpl IMPL;
 
     /**
@@ -718,7 +718,6 @@ public static AccessibilityRecordCompat obtain() {
         return new AccessibilityRecordCompat(IMPL.obtain());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 11:34:21.967 -0500", hash_original_field = "F224D45AFF2A604E7CE25719AC85C9AA", hash_generated_field = "A784208C03B426DBD21A9F3B1C9C44D6")
-
 
     private  Object mRecord;
 
@@ -767,6 +766,7 @@ public void setSource(View source) {
      * @param root The root of the virtual subtree.
      * @param virtualDescendantId The id of the virtual descendant.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 11:34:21.998 -0500", hash_original_method = "C5C1E2089E805FAB545775E080EFBCA2", hash_generated_method = "60D4801F64D31D3994EABE2DDBCA0D56")
     
 public void setSource(View root, int virtualDescendantId) {
@@ -1288,7 +1288,6 @@ public void recycle() {
     public int hashCode() {
         return (mRecord == null) ? 0 : mRecord.hashCode();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 11:34:22.303 -0500", hash_original_method = "23C3AD1F1A4F2DE3EE1527927DE9E6EE", hash_generated_method = "0EB6254746C0D84971139AFEEA52BAE8")
     

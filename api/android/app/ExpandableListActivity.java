@@ -292,6 +292,7 @@ public void setListAdapter(ExpandableListAdapter adapter) {
      * 
      * @see ExpandableListView
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:24.955 -0500", hash_original_method = "2F22B94C75DB37CE8939976B81D6509B", hash_generated_method = "2FF0C5C65AF87D196DB891E1667E111F")
     
 public ExpandableListView getExpandableListView() {
@@ -303,6 +304,7 @@ public ExpandableListView getExpandableListView() {
      * Get the ExpandableListAdapter associated with this activity's
      * ExpandableListView.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:24.962 -0500", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "72DC64E495E44B4040054743218614A1")
     
 public ExpandableListAdapter getExpandableListAdapter() {
@@ -323,6 +325,7 @@ private void ensureList() {
      * 
      * @return The ID of the currently selected group or child.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:24.978 -0500", hash_original_method = "D269A0D02850950126987DFFB8BC24BB", hash_generated_method = "67F8AACFA3C6FC308CBD1F08D99044AD")
     
 public long getSelectedId() {
@@ -340,6 +343,7 @@ public long getSelectedId() {
      * @return A packed position representation containing the currently
      *         selected group or child's position and type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:24.985 -0500", hash_original_method = "0A3ABCC5DF6D266750E60E7B93EFBFA9", hash_generated_method = "122F5B7E4CA9B6DEB70C6353D1DB1DFA")
     
 public long getSelectedPosition() {
@@ -357,6 +361,7 @@ public long getSelectedPosition() {
      *            it is collapsed.
      * @return Whether the selection was successfully set on the child.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:24.993 -0500", hash_original_method = "12D5BB1A8EA5B36CE9F4C13B45510FF0", hash_generated_method = "E6F3789439E16C2295FC08DAC8AB9B11")
     
 public boolean setSelectedChild(int groupPosition, int childPosition, boolean shouldExpandGroup) {
@@ -367,6 +372,7 @@ public boolean setSelectedChild(int groupPosition, int childPosition, boolean sh
      * Sets the selection to the specified group.
      * @param groupPosition The position of the group that should be selected.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:25.001 -0500", hash_original_method = "3A247D892E79B521DDD1AEE43FAB3391", hash_generated_method = "00A6538AC308DA804FCAF754F2317AFE")
     
 public void setSelectedGroup(int groupPosition) {

@@ -22,6 +22,7 @@ import droidsafe.helpers.*;
 import android.app.Fragment;
 
 class FragmentCompatICS {
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:53.137 -0500", hash_original_method = "3D643F0B92C9B976462991A3025729D0", hash_generated_method = "EA0120DF02C7D9DDD5144DD0DDCA6F0E")
     
 public static void setMenuVisibility(Fragment f, boolean visible) {

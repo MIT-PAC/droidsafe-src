@@ -22,6 +22,7 @@ import droidsafe.helpers.*;
 import android.app.Fragment;
 
 class FragmentCompatICSMR1 {
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:55.271 -0500", hash_original_method = "947C3D7F21A8D61EA27FD8815FBD7BD0", hash_generated_method = "96B18988B66D085934CE5C8F4CEADE9E")
     
 public static void setUserVisibleHint(Fragment f, boolean isVisible) {

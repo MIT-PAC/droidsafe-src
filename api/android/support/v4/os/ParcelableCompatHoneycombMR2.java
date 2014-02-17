@@ -39,12 +39,14 @@ public ParcelableCompatCreatorHoneycombMR2(ParcelableCompatCreatorCallbacks<T> c
         mCallbacks = callbacks;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.127 -0500", hash_original_method = "52A728D45CED91BA6B017F7FCEEE53FB", hash_generated_method = "89D844B06D3C2CADBA949A9CE0796070")
     
 public T createFromParcel(Parcel in) {
         return mCallbacks.createFromParcel(in, null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.128 -0500", hash_original_method = "A7CE79B4A20BAA4EA8FDFB810F2AE2AD", hash_generated_method = "D170AF0E8C4238F0C6694A57558F704F")
     
 public T createFromParcel(Parcel in, ClassLoader loader) {
