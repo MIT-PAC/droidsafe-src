@@ -377,10 +377,22 @@ private SpeechRecognizer(final Context context, final ComponentName serviceCompo
     @DSSpec(DSCat.TO_MODEL)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.713 -0500", hash_original_method = "F27BB062A778ED5EBCB2B3B868E059E6", hash_generated_method = "51B58CFA8B31AC91F1DF1953A495C0C7")
+    @DSVerified
     
 public void setRecognitionListener(RecognitionListener listener) {
-        checkIsCalledFromMainThread();
+        //checkIsCalledFromMainThread();
         putMessage(Message.obtain(mHandler, MSG_CHANGE_LISTENER, listener));
+        if (listener != null) {
+            listener.onBeginningOfSpeech();
+            listener.onBufferReceived(new byte[1]);
+            listener.onEndOfSpeech();
+            listener.onError(DSUtils.FAKE_INT);
+            listener.onEvent(DSUtils.FAKE_INT, new Bundle());
+            listener.onPartialResults(new Bundle());
+            listener.onReadyForSpeech(new Bundle());
+            listener.onResults(new Bundle());
+            listener.onRmsChanged(DSUtils.UNKNOWN_FLOAT);
+        }
     }
 
     /**

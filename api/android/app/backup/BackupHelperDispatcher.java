@@ -4,6 +4,7 @@ package android.app.backup;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.Map;
@@ -53,7 +54,9 @@ public void addHelper(String keyPrefix, BackupHelper helper) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.677 -0500", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "2DB6F46FC080896E1612FC549CC80A3D")
-    
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSVerified
 public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
              ParcelFileDescriptor newState) throws IOException {
         // First, do the helpers that we've already done, since they're already in the state
@@ -136,7 +139,9 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
 
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.683 -0500", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "C8CBD5B804A52AAF69F30F351ED21240")
-    
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSVerified
 public void performRestore(BackupDataInput input, int appVersionCode,
             ParcelFileDescriptor newState)
             throws IOException {

@@ -6773,7 +6773,8 @@ AttachInfo(IWindowSession session, IWindow window,
     }
     
     public interface OnCreateContextMenuListener {
-        
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo);
     }
     

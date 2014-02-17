@@ -101,8 +101,12 @@ public class DroidSafeAndroidRuntime {
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
         
-        //call hooks specific for SubActivity classes
-        activity.droidsafeOnSubActivityHook();
+        ////////////////
+        //Callback hooks specific for SubActivity classes
+        //All subclass of Activity should implment this in the model
+        //so that their callback will be called
+        //Map, listview, expandblelist, etc...
+        activity.droidsafeSubActivityCallbackHook();
 
         activity.droidsafeOnStop();
 
@@ -114,15 +118,7 @@ public class DroidSafeAndroidRuntime {
         activity.droidsafePerformRestoreInstanceState(state);
         
         activity.onDetachedFromWindow();
-
         //Calls for MapActivity from mapping library
-        if (activity instanceof MapActivity) {
-            MapActivity ma = (MapActivity)activity;
-            ma.isRouteDisplayed();
-            ma.isLocationDisplayed();
-            ma.onGetMapDataSource();
-        }
-
     }
     
     @DSVerified
