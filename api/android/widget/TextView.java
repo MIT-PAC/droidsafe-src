@@ -3674,7 +3674,7 @@ void removeMisspelledSpans(Spannable spannable) {
         super.onRestoreInstanceState(ss.getSuperState());
         if(ss.text != null)        
         {
-            setText(ss.text);
+            //setText(ss.text);
         } //End block
         if(ss.selStart >= 0 && ss.selEnd >= 0)        
         {
@@ -4044,7 +4044,6 @@ public final void setTextKeepState(CharSequence text, BufferType type) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.887 -0500", hash_original_method = "F67FB9F700F5516CACC8B84E46FAB678", hash_generated_method = "929DBDF02CD46CB45E799900F9F11CB3")
     
 @android.view.RemotableViewMethod
