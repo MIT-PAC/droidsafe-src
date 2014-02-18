@@ -108,9 +108,7 @@ public class Config {
 
     /** timeout value in minutes for running the string analysis. 0 means no timeout. Default is 120 (2 hours). */
     public int stringAnalysisTimeout = 120;
-
-    public boolean addObjectSensitivity = true;
-
+    
     /** if true, run value analysis */
     public boolean runValueAnalysis = true;
 
@@ -134,7 +132,8 @@ public class Config {
     public boolean strict = false;
     /** depth of obj sens when running pta for precision (with context) */
     public int kobjsens = 2;
-   
+    /** should we clone static methods to add call site sensitivity for them? */
+    public boolean cloneStaticCalls = true;
 
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -220,6 +219,9 @@ public class Config {
 
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
+        
+        Option noCloneStatics = new Option("noclonestatics", "Do not clone static methods to add call site sensitivity");
+        options.addOption(noCloneStatics);
 
         Option writeJimple =
                 new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
@@ -240,10 +242,6 @@ public class Config {
         Option allStatsRun =
                 new Option("stats", "Perform extra work to generate stats.");
         options.addOption(allStatsRun);
-
-        Option noObjSens =
-                new Option("noobjsens", "Do not add object sensitivity to points to analysis.");
-        options.addOption(noObjSens);
 
         Option ptaPackage = 
                 OptionBuilder.withArgName("package").hasArg()
@@ -347,9 +345,6 @@ public class Config {
         if (cmd.hasOption("stats"))
             this.statsRun = true;
 
-        if (cmd.hasOption("noobjsens"))
-            this.addObjectSensitivity = false;
-
         if (cmd.hasOption("manualmod")) 
             this.useManualModeling = true;
 
@@ -364,9 +359,13 @@ public class Config {
         if (cmd.hasOption("kobjsens")) {
             this.kobjsens = Integer.parseInt(cmd.getOptionValue("kobjsens"));
         }
-
+        
         if (cmd.hasOption("strict")) {
             this.strict = true;
+        }
+        
+        if (cmd.hasOption("noclonestatics")) {
+            this.cloneStaticCalls = false;
         }
 
         if (cmd.hasOption("noinfoflow")) {
@@ -388,13 +387,9 @@ public class Config {
                 POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.SPARK;
             else if ("geo".equals(ptaPackage)) {
                 POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.GEOPTA;
-                logger.warn("Running with GeoPTA, turning off object sensitivity cloning.");
-                this.addObjectSensitivity = false;
             }
             else if ("paddle".equals(ptaPackage)) {
                 POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.PADDLE;
-                logger.warn("Running with Paddle, turning off object sensitivity cloning.");
-                this.addObjectSensitivity = false;  
             }
             else {
                 logger.error("Invalid PTA Package specified: {}", ptaPackage);

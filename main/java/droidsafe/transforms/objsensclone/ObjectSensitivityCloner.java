@@ -316,7 +316,7 @@ public class ObjectSensitivityCloner {
         } 
 
         //try to clone all static methods based on static invokes
-        cloneStaticMethods();
+        //cloneStaticMethods();
 
         Scene.v().releaseActiveHierarchy();
         Scene.v().releaseFastHierarchy();
@@ -328,14 +328,20 @@ public class ObjectSensitivityCloner {
     /** 
      * Clone reachable static method based on the number of static invokes we find in reachable methods.
      * Must be run after object sensitivity cloning and a pta pass. 
+     * 
+     * if onlyusermethods is true, only clone methods based on calls from user methods
      */
-    public static void cloneStaticMethods() {
+    public static void cloneStaticMethods(boolean onlyUserMethods) {
         HashMap<SootMethod, List<StaticInvokeExpr>> map = new HashMap<SootMethod, List<StaticInvokeExpr>>();
 
         for (SootMethod method : PTABridge.v().getReachableMethods()) {
             if (method.isAbstract() || !method.isConcrete())
                 continue;
 
+            //if we just want to clone from user methods, then continue if we see a system method
+            if (onlyUserMethods && API.v().isSystemMethod(method))
+                continue;
+            
             Body body = method.getActiveBody();
             StmtBody stmtBody = (StmtBody)body;
             Chain units = stmtBody.getUnits();

@@ -232,7 +232,7 @@ public class GrammarVisitor {
          * @param n The nonterminal to add to.
          * @param re The regular expression to add.
          */
-        private void addCoeff(Nonterminal n, RE re) {
+        private void addCoeff(Nonterminal n, RE re) throws InterruptedException {
             getCoeff(n).addAll(re.getAlts());
         }
 
@@ -252,7 +252,7 @@ public class GrammarVisitor {
          * @param other The recursive production to substitute in.
          * @return
          */
-        public RecursiveProduction substitute(RecursiveProduction other) {
+        public RecursiveProduction substitute(RecursiveProduction other) throws InterruptedException {
             // Copy the current equation
             RecursiveProduction newEqn = new RecursiveProduction(this);
             // Then perform the substitution destructively on the copy.
@@ -265,7 +265,7 @@ public class GrammarVisitor {
          * 
          * @param other
          */
-        private void substituteDestructive(RecursiveProduction other) {
+        private void substituteDestructive(RecursiveProduction other) throws InterruptedException {
             Nonterminal ont = other.nt;
 
             // Get the set of coefficients associated with the other
@@ -295,13 +295,13 @@ public class GrammarVisitor {
 
                 for (Map.Entry<Nonterminal, Set<RE>> entry : other.coeffs.entrySet()) {
                     Nonterminal substVar = entry.getKey(); // The variable in
-                                                           // the term being
-                                                           // substituted.
+                    // the term being
+                    // substituted.
                     Set<RE> substCoeffs = entry.getValue(); // The coefficients
-                                                            // associated with
-                                                            // substVar in the
-                                                            // production being
-                                                            // substituted
+                    // associated with
+                    // substVar in the
+                    // production being
+                    // substituted
                     // Set<RE> ncs = getCoeff(substVar); // The coefficients
                     // associated with substVar in *this* production
                     for (RE c : ocoeffs) {
@@ -322,7 +322,7 @@ public class GrammarVisitor {
          * 
          * Modifies this.
          */
-        private void arden() {
+        private void arden() throws InterruptedException {
             Set<RE> self = removeCoeff(nt);
             if (self == null || self.isEmpty()) {
                 return;
@@ -356,7 +356,7 @@ public class GrammarVisitor {
          * 
          * @return
          */
-        public RE extractRE() {
+        public RE extractRE() throws InterruptedException {
             arden();
             if (!coeffs.isEmpty()) {
                 throw new RuntimeException("production still has free variables");
@@ -374,10 +374,14 @@ public class GrammarVisitor {
             // Automata productions should be added to the set of terminals for
             // this
             // nonterminal.
-            Automaton automaton = p.getAutomaton();
-            RE newRE = AutomataUtil.convertAutomata(automaton);
-            newRE.meta = (String) automaton.getInfo();
-            addTerm(newRE);
+            try {
+                Automaton automaton = p.getAutomaton();
+                RE newRE = AutomataUtil.convertAutomata(automaton);
+                newRE.meta = (String) automaton.getInfo();
+                addTerm(newRE);
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
+            }
         }
 
         /**
@@ -391,7 +395,11 @@ public class GrammarVisitor {
             // Epsilon productions should be added to the set of terminals for
             // this
             // nonterminal.
-            addTerm(RE.empty);
+            try {
+                addTerm(RE.empty);
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
+            }
         }
 
 
@@ -402,25 +410,27 @@ public class GrammarVisitor {
          *      brics.string.grammar.Nonterminal, dk.brics.string.grammar.PairProduction)
          **/
         public void visitPairProduction(Nonterminal a, PairProduction p) {
+            try {
+                Nonterminal left = p.getNonterminal1();
+                Nonterminal right = p.getNonterminal2();
 
-            Nonterminal left = p.getNonterminal1();
-            Nonterminal right = p.getNonterminal2();
-
-            boolean rleft = isRecursive(left);
-            boolean rright = isRecursive(right);
-            RE leftRE, rightRE;
-            if (rleft) {
-                rightRE = getRE(right);
-                addCoeff(left, rightRE);
-            } else if (rright) {
-                leftRE = getRE(left);
-                addCoeff(right, leftRE);
-            } else {
-                leftRE = getRE(left);
-                rightRE = getRE(right);
-                addTerm(leftRE.concat(rightRE));
+                boolean rleft = isRecursive(left);
+                boolean rright = isRecursive(right);
+                RE leftRE, rightRE;
+                if (rleft) {
+                    rightRE = getRE(right);
+                    addCoeff(left, rightRE);
+                } else if (rright) {
+                    leftRE = getRE(left);
+                    addCoeff(right, leftRE);
+                } else {
+                    leftRE = getRE(left);
+                    rightRE = getRE(right);
+                    addTerm(leftRE.concat(rightRE));
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
             }
-
         }
 
         /**
@@ -430,16 +440,20 @@ public class GrammarVisitor {
          *      brics.string.grammar.Nonterminal, dk.brics.string.grammar.UnitProduction)
          **/
         public void visitUnitProduction(Nonterminal a, UnitProduction p) {
-            // If A -> B, and B is a nonterminal in this component, then add
-            // an epsilon production to the coefficients for B.
-            // If A -> B and B is a nonterminal in another component, then
-            // fetch the corresponding RE and add it to the set of terms.
-            Nonterminal rhs = p.getNonterminal();
-            if (isRecursive(rhs)) {
-                addCoeff(rhs, RE.epsilon);
-            } else {
-                RE rhsRE = getRE(rhs);
-                addTerm(rhsRE);
+            try {
+                // If A -> B, and B is a nonterminal in this component, then add
+                // an epsilon production to the coefficients for B.
+                // If A -> B and B is a nonterminal in another component, then
+                // fetch the corresponding RE and add it to the set of terms.
+                Nonterminal rhs = p.getNonterminal();
+                if (isRecursive(rhs)) {
+                    addCoeff(rhs, RE.epsilon);
+                } else {
+                    RE rhsRE = getRE(rhs);
+                    addTerm(rhsRE);
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
             }
         }
 
@@ -457,7 +471,11 @@ public class GrammarVisitor {
             RE re1 = getRE(p.getNonterminal());
 
             RE cur = RE.mkUnOp(p.getOperation(), re1);
-            addTerm(cur);
+            try {
+                addTerm(cur);
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
+            }
 
         }
 
@@ -469,21 +487,25 @@ public class GrammarVisitor {
          *      dk.brics.string.grammar.BinaryProduction)
          */
         public void visitBinaryProduction(Nonterminal a, BinaryProduction p) {
-            Nonterminal arg1 = p.getNonterminal1();
-            Nonterminal arg2 = p.getNonterminal2();
+            try {
+                Nonterminal arg1 = p.getNonterminal1();
+                Nonterminal arg2 = p.getNonterminal2();
 
-            if (isRecursive(arg1)) {
-                throw new RuntimeException("Binary production arg1 is recursive!");
+                if (isRecursive(arg1)) {
+                    throw new RuntimeException("Binary production arg1 is recursive!");
+                }
+
+                if (isRecursive(arg2)) {
+                    throw new RuntimeException("Binary production arg2 is recursive!");
+                }
+
+                RE re1 = getRE(arg1);
+                RE re2 = getRE(arg2);
+                RE cur = RE.mkBinOp(p.getOperation(), re1, re2);
+                addTerm(cur);
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
             }
-
-            if (isRecursive(arg2)) {
-                throw new RuntimeException("Binary production arg2 is recursive!");
-            }
-
-            RE re1 = getRE(arg1);
-            RE re2 = getRE(arg2);
-            RE cur = RE.mkBinOp(p.getOperation(), re1, re2);
-            addTerm(cur);
         }
 
         /**
@@ -491,8 +513,8 @@ public class GrammarVisitor {
          * 
          * @param tm
          */
-        private void addTerm(RE tm) {
-               terms.addAll(tm.getAlts());
+        private void addTerm(RE tm) throws InterruptedException {
+            terms.addAll(tm.getAlts());
         }
 
         /**
@@ -516,11 +538,15 @@ public class GrammarVisitor {
     private final class NonrecursiveProduction implements ProductionVisitor {
         @Override
         public void visitAutomatonProduction(Nonterminal a, AutomatonProduction p) {
-            RE newRE = AutomataUtil.convertAutomata(p.getAutomaton());
-            newRE.meta = (String) p.getAutomaton().getInfo();
-            // System.out.println("Regex is " + newRE.toString(true));
-            // System.out.println("Meta is " + newRE.meta);
-            unionRE(a, newRE);
+            try {
+                RE newRE = AutomataUtil.convertAutomata(p.getAutomaton());
+                newRE.meta = (String) p.getAutomaton().getInfo();
+                // System.out.println("Regex is " + newRE.toString(true));
+                // System.out.println("Meta is " + newRE.meta);
+                unionRE(a, newRE);
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
+            }
         }
 
         @Override
@@ -567,7 +593,7 @@ public class GrammarVisitor {
      * 
      * @param c The strongly connected component, representing a set of nonterminals.
      */
-    private void solve(final Component c) {
+    private void solve(final Component c) throws InterruptedException {
 
         Map<Nonterminal, RecursiveProduction> equations =
                 new HashMap<Nonterminal, RecursiveProduction>();
@@ -625,7 +651,7 @@ public class GrammarVisitor {
      * @return RE representing the union of all regular expression in <code>coll</code>.
      *         <code>RE.empty</code> if <code>coll.isEmpty()</code>.
      */
-    private RE unionREs(Set<RE> coll) {
+    private RE unionREs(Set<RE> coll) throws InterruptedException {
         if (coll.isEmpty()) {
             return RE.empty;
         }
@@ -652,7 +678,11 @@ public class GrammarVisitor {
             if (rec == Recursion.BOTH) {
                 throw new RuntimeException("grammar is not strongly regular");
             } else if (rec == Recursion.LEFT || rec == Recursion.RIGHT) {
-                solve(c);
+                try {
+                    solve(c);
+                } catch (InterruptedException e) {
+                   throw new RuntimeException();
+                }
             } else { // rec == Recursion.NONE
                 reMap.put(nt, AutomataUtil.RE.empty);
                 for (Production p : nt.getProductions()) {
@@ -684,7 +714,11 @@ public class GrammarVisitor {
      */
     private void unionRE(Nonterminal nt, RE re) {
         RE old = getRE(nt);
-        setRE(nt, old.union(re));
+        try {
+            setRE(nt, old.union(re));
+        } catch (InterruptedException e) {
+            throw new RuntimeException();
+        }
     }
 
     /**

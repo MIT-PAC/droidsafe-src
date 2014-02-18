@@ -80,7 +80,7 @@ public class AutomataUtil {
      * @param a
      * @return
      */
-    public static RE convertAutomata(Automaton a) {
+    public static RE convertAutomata(Automaton a) throws InterruptedException {
         return RE.brzozowski(a);
     }
 
@@ -322,6 +322,10 @@ public class AutomataUtil {
          * @see java.lang.Object#hashCode()
          */
         public int hashCode() {
+            
+            if (Thread.interrupted())
+                throw new RuntimeException();
+
             int acc = 0;
             int c = 0;
 
@@ -385,7 +389,10 @@ public class AutomataUtil {
          * @param y
          * @return
          */
-        public static RE mkUnion(RE x, RE y) {
+        public static RE mkUnion(RE x, RE y) throws InterruptedException {
+            if (Thread.interrupted())
+                throw new InterruptedException();
+            
             if (x.op.equals(ReOp.EMPTY)) {
                 return y;
             }
@@ -410,6 +417,7 @@ public class AutomataUtil {
                 return empty;
             } else if (res.alts.size() == 1) {
                 for (RE e : res.alts) {
+                    
                     return e;
                 }
             }
@@ -724,7 +732,7 @@ public class AutomataUtil {
          * @param y
          * @return
          */
-        public RE union(RE y) {
+        public RE union(RE y) throws InterruptedException {
             return mkUnion(this, y);
         }
 
@@ -804,7 +812,10 @@ public class AutomataUtil {
          * 
          * @return
          */
-        public RE simplifyOps() {
+        public RE simplifyOps() throws InterruptedException {
+            if (Thread.interrupted())
+                throw new InterruptedException();
+            
             RE res;
             switch (this.op) {
                 case EMPTY:
@@ -863,7 +874,10 @@ public class AutomataUtil {
          * 
          * @return
          */
-        private RE interpretOp() {
+        private RE interpretOp() throws InterruptedException {
+            if (Thread.interrupted())
+                throw new InterruptedException();
+            
             RE out = null;
             if (strOp instanceof AssertContainedInOther) {
                 out = assertContainedInOther();
@@ -958,6 +972,9 @@ public class AutomataUtil {
             for (RE arg : cats) {
                 logger.debug(String.format("StringOperation Arg %s: %s", i, arg));
                 i++;
+                
+                if (Thread.interrupted())
+                    throw new InterruptedException();
             }
             if (out != null) {
                 logger.debug(String.format("StringOperation simplified to %s", out));
@@ -969,6 +986,9 @@ public class AutomataUtil {
             List<RE> args = new LinkedList<RE>();
             for (RE arg : cats) {
                 args.add(arg.simplifyOps());
+                
+                if (Thread.interrupted())
+                    throw new InterruptedException();
             }
 
             RE res = new RE(op);
@@ -990,7 +1010,7 @@ public class AutomataUtil {
 
 
 
-        private RE assertEquals() {
+        private RE assertEquals() throws InterruptedException {
             RE arg1 = this.cats.get(0); // The inferred REGEX
             RE arg2 = this.cats.get(1); // The constrained REGEX
 
@@ -1060,7 +1080,7 @@ public class AutomataUtil {
             return null;
         }
 
-        private RE assertHasNotLength() {
+        private RE assertHasNotLength()  throws InterruptedException {
             AssertHasNotLength sop = (AssertHasNotLength) strOp;
             logger.debug(String.format("AssertNotLength min is %s", sop.getMin()));
             logger.debug(String.format("AssertNotLength max is %s", sop.getMax()));
@@ -1094,7 +1114,7 @@ public class AutomataUtil {
             return null;
         }
 
-        private RE assertHasLength() {
+        private RE assertHasLength()  throws InterruptedException {
             // AssertHasLength sop = (AssertHasLength) strOp;
             // logger.debug(String.format("AssertHasLength min is %s", sop.getMin()));
             // logger.debug(String.format("AssertHasLength max is %s", sop.getMax()));
@@ -1156,7 +1176,7 @@ public class AutomataUtil {
             return null;
         }
 
-        private RE assertStartsWith() {
+        private RE assertStartsWith()  throws InterruptedException {
             RE arg1 = this.cats.get(0); // The inferred REGEX
             RE arg2 = this.cats.get(1); // The constrained REGEX
 
@@ -1241,7 +1261,7 @@ public class AutomataUtil {
             return null;
         }
 
-        private RE replace1() {
+        private RE replace1()  throws InterruptedException {
             char c = ((Replace1)strOp).getC();
             char d =  ((Replace1)strOp).getD();
             // TODO Auto-generated method stub
@@ -1363,7 +1383,7 @@ public class AutomataUtil {
         /**
          * Take the tail of a regular expression.
          **/
-        private RE postfix2() {
+        private RE postfix2() throws InterruptedException {
             Postfix2 o = (Postfix2) strOp;
             int start = o.getStart();
             RE arg = cats.get(0);
@@ -1379,6 +1399,10 @@ public class AutomataUtil {
                     List<RE> tail = new LinkedList<RE>();
                     tail.addAll(arg.cats);
                     while (!tail.isEmpty()) {
+                        
+                        if (Thread.interrupted())
+                            throw new InterruptedException();
+                        
                         RE a = tail.remove(0);
                         if (a.op == ReOp.STRING) {
                             int len = a.lit.length();
@@ -1452,7 +1476,7 @@ public class AutomataUtil {
          *    how-to-convert-finite-automata-to-regular-expressions 
          *  http://codepad.org/dbFztCCM
          **/
-        private static RE brzozowski(Automaton fsm) {
+        private static RE brzozowski(Automaton fsm) throws InterruptedException {
 
             logger.debug("Brzozowski");
 
@@ -1502,6 +1526,9 @@ public class AutomataUtil {
             worklist.add(initial);
 
             while (!worklist.isEmpty()) {
+                if (Thread.interrupted())
+                    throw new InterruptedException();
+                
                 State cur = worklist.remove(0);
                 // logger.debug("With state: " + cur.toString());
                 if (!done.contains(cur)) {
@@ -1569,7 +1596,11 @@ public class AutomataUtil {
          * 
          * @return
          */
-        public Collection<RE> getAlts() {
+        public Collection<RE> getAlts() throws InterruptedException {
+            if (Thread.interrupted())
+                throw new InterruptedException();
+
+            
             if (op == ReOp.UNION) {
                 return alts;
             }

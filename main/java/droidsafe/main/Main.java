@@ -60,6 +60,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.time.*;
@@ -266,8 +267,13 @@ public class Main {
         appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
-        if (false) {
-            ObjectSensitivityCloner.cloneStaticMethods();
+        
+        driverMsg("Cloning static methods to introduce call site context...");
+        monitor.subTask("Cloning static methods to introduce callsite context...");
+        ObjectSensitivityCloner.cloneStaticMethods(true);
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
@@ -501,23 +507,32 @@ public class Main {
      * Run the JSA analysis
      */
     private static DroidsafeExecutionStatus jsaAnalysis(IDroidsafeProgressMonitor monitor) {
+        //set up the executor for the timeouts
+        //set as single thread executor so no threads get away from us
+        JSAStrings.executor = Executors.newSingleThreadExecutor();
+        
         monitor.subTask("String Analysis: Setting Hotspots");
         JSAUtils.setupSpecHotspots();
         if (monitor.isCanceled()) {
+            JSAStrings.executor.shutdownNow();
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
         monitor.subTask("String Analysis: Running Analysis");
         JSAStrings.run();
         if (monitor.isCanceled()) {
+            JSAStrings.executor.shutdownNow();
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
         monitor.subTask("String Analysis: Logging");
         JSAStrings.v().log();
         if (monitor.isCanceled()) {
+            JSAStrings.executor.shutdownNow();
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        JSAStrings.executor.shutdownNow();
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
