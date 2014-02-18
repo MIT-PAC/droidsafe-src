@@ -311,7 +311,7 @@ public class RCFG  {
                                 logger.debug("Found output event: {}", callEdge.tgt());
                                 oe.addReceiverNode(entry.getKey());
                                 node.addOutputEvent(callEdge, oe);
-                                apiCallNodes.addAll(oe.getAllArgsPTSet(context));
+                                apiCallNodes.addAll(oe.getAllArgsPTSet());
                             }
 
                             //remember interesting alloc nodes
@@ -329,7 +329,7 @@ public class RCFG  {
                     OutputEvent oe = new OutputEvent(callEdge, node, line);
                     logger.debug("Found output event: {} (null receiver)", callEdge.tgt());
                     node.addOutputEvent(callEdge, oe);
-                    apiCallNodes.addAll(oe.getAllArgsPTSet(context));
+                    apiCallNodes.addAll(oe.getAllArgsPTSet());
                 }
             }
         }

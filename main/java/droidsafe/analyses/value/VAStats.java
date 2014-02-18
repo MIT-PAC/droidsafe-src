@@ -85,7 +85,7 @@ public class VAStats {
                 SootMethod entryPointMethod = invokeExpr.getMethod();
                 if (entryPointMethod.getName().equals("onClick")) {
                     for(int i = 0; i < rcfgNode.getNumArgs(); ++i) {
-                        for(IAllocNode allocNode : rcfgNode.getArgPTSet(rcfgNode.getContext(), i)) {
+                        for(IAllocNode allocNode : rcfgNode.getArgPTSet(i)) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, entryPointMethod);
                         }
@@ -98,7 +98,7 @@ public class VAStats {
                 if(ie != null) {
                     if(oe.hasReceiver()) {
                         // process receiver IAllocNodes
-                        Set<IAllocNode> receiverPTSet = (Set<IAllocNode>)oe.getReceiverPTSet(oe.getContext());
+                        Set<IAllocNode> receiverPTSet = (Set<IAllocNode>)oe.getReceiverPTSet();
                         for(IAllocNode allocNode : receiverPTSet) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, sm);
@@ -107,7 +107,7 @@ public class VAStats {
                     // process argument allocNodes
                     for(int i = 0; i < oe.getNumArgs(); ++i) {
                         if(oe.isArgPointer(i)) {
-                            Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(oe.getContext(), i);
+                            Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(i);
                             for(IAllocNode allocNode : argPTSet) {
                                 v.markAllocNodeAsReachable(allocNode);
                                 v.markMethodAsRelevant(allocNode, sm);

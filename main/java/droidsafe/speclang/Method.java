@@ -6,13 +6,17 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Context;
 import soot.Local;
+import soot.MethodContext;
+import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
@@ -21,6 +25,7 @@ import soot.Value;
 import soot.jimple.Expr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.tagkit.LineNumberTag;
 import droidsafe.analyses.infoflow.InfoUnit;
@@ -58,7 +63,9 @@ public class Method implements Comparable<Method> {
     private Set<InfoKind>[] argInfoKinds;
     /** argument raw info flow results, used to cache the info kinds so we do not query info flow more than once */
     private Set<InfoValue>[] argInfoValues;
-    
+    /** if the target method is synthetic, then we try to find the real target through the synthetic method
+     *  if this is non-null, then this is the real target of this method in user code     */
+    private SootMethod realTarget = null;
     
 
     public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, ArgumentValue receiver) {
@@ -70,9 +77,63 @@ public class Method implements Comparable<Method> {
         this.ptaInfo = ptaInfo;
         argInfoKinds = new HashSet[ptaInfo.getNumArgs()];
         argInfoValues = new HashSet[ptaInfo.getNumArgs()];
-        
     }
-
+    
+    public void checkForSynthetic() {
+        if (!API.v().isSystemMethod(sootMethod) && SootUtils.isSynthetic(sootMethod)) {
+            //specific set of tests to see if we can find a real user method that is called
+            //and replace
+            
+            System.out.println("Found synthetic user method: " + sootMethod);
+            
+            MethodOrMethodContext thisMomc = sootMethod;
+            
+            Context context = ptaInfo.getEdge().tgtCtxt();
+            
+            if (context != null)
+                thisMomc = MethodContext.v(sootMethod, context);
+            
+            SootMethod newTarget = null;
+            
+            Iterator<Edge> edges  = Scene.v().getCallGraph().edgesOutOf(thisMomc);
+            
+            while (edges.hasNext()) {
+                Edge edge = edges.next();
+                SootMethod target = edge.tgt();                
+                
+                System.out.println("Found explicit edge: " + edge);
+                
+                if (!edge.isExplicit())                    
+                    continue;
+                
+                if (!target.getName().equals(sootMethod.getName()))
+                    return;
+                
+                /* return type may change!
+                if (!SootUtils.isSubTypeOfIncluding(target.getReturnType(), sootMethod.getReturnType()))
+                    return;
+                */
+                
+                if (sootMethod.getParameterCount() != target.getParameterCount())
+                    return;
+                
+                for (int i = 0; i < target.getParameterCount(); i++) {
+                    if (!SootUtils.isSubTypeOfIncluding(target.getParameterType(i), sootMethod.getParameterType(i))) {
+                        return;
+                    }
+                }
+                                
+                //found potential match see if we have see it before
+                //if not then two potential matches and we don't handle that!
+                if (newTarget != null && !newTarget.equals(target))
+                    return;
+            }
+            
+            //if we get here all tests pass!
+            //replace the original method reference with the target of this sythetic method
+            realTarget = newTarget;
+        }
+    }
 
     public SootMethod getSootMethod() {
         return sootMethod;
@@ -171,7 +232,7 @@ public class Method implements Comparable<Method> {
         if (ptaInfo == null || !ptaInfo.hasReceiver() || !PTABridge.v().isPointer(ptaInfo.getReceiver()))
             return new HashSet<IAllocNode>();
 
-        return ptaInfo.getReceiverPTSet(ptaInfo.getContext());
+        return ptaInfo.getReceiverPTSet();
     }
 
     /**
@@ -182,7 +243,7 @@ public class Method implements Comparable<Method> {
         if (ptaInfo == null || !PTABridge.v().isPointer(ptaInfo.getArgValue(i)))
             return new HashSet<IAllocNode>();
 
-        return ptaInfo.getArgPTSet(ptaInfo.getContext(), i);
+        return ptaInfo.getArgPTSet(i);
     }
 
     public boolean hasReceiver() {
@@ -318,7 +379,10 @@ public class Method implements Comparable<Method> {
         if (!Scene.v().containsMethod(getSignature()))
             return null;
 
-        return SootUtils.getMethodLocation(sootMethod);
+        if (realTarget != null)
+            return SootUtils.getMethodLocation(realTarget);
+        else 
+            return SootUtils.getMethodLocation(sootMethod);
     }
 
     /**
@@ -352,7 +416,7 @@ public class Method implements Comparable<Method> {
 
         Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
         //call the information flow results
-        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContext(), 
+        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getEdge().srcCtxt(), 
             unit, (Local)val);
     }
 
@@ -425,7 +489,7 @@ public class Method implements Comparable<Method> {
 
                 try {
                     Collection<SootMethod> targets = 
-                            PTABridge.v().resolveInvoke(invoke, ptaInfo.getContext());
+                            PTABridge.v().resolveInvoke(invoke, ptaInfo.getEdge().srcCtxt());
 
                     for (SootMethod target : targets) {
                         if (API.v().hasSourceInfoKind(target))

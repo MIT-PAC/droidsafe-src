@@ -36,7 +36,7 @@ public class AvgInfoFlowSetSize {
         for (RCFGNode inputNode : RCFG.v().getNodes()) {
             
             for (OutputEvent oe : inputNode.getOutputEvents()) {
-                Context context = oe.getContext();
+                Context context = oe.getEdge().srcCtxt();
                 InvokeExpr invoke = oe.getInvokeExpr();
 
                 try {

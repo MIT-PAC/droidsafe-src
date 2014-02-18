@@ -66,6 +66,8 @@ public abstract class VAModel {
      * @returns a detailed printout of the results
      */
     public String toString() {
-        return this.toStringDetailed().replace("\"", "");
+        return this.toStringDetailed();
+        //is this really necessary?
+        //return this.toStringDetailed().replace("\"", "");
     }
 }

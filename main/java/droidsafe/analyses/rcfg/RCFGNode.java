@@ -54,10 +54,10 @@ public class RCFGNode implements PTAMethodInformation {
 	}
 	
 	/**
-	 * Return the calling edge of this entry point.
+	 * Return the context of the entry method that is called.
 	 */
-	public Context getContext() {
-	    return eventEdge.srcCtxt();
+	public Edge getEdge() {
+	    return eventEdge;
 	}
 	
 	/**
@@ -70,7 +70,7 @@ public class RCFGNode implements PTAMethodInformation {
 	    }
 	    
 		outputEvents.put(edge, oe);
-		logger.debug("Found output event: {}", oe.getContext());
+		logger.debug("Found output event: {}", edge);
 	}
 
 	
@@ -171,9 +171,9 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Return the PT set as calculated by GeoPTA without context.
 	 * @return
 	 */
-	public Set<IAllocNode> getReceiverPTSet(Context context) {
+	public Set<IAllocNode> getReceiverPTSet() {
 	    if (isReceiverPointer()) 
-	        return (Set<IAllocNode>)PTABridge.v().getPTSet(getReceiver(), context);
+	        return (Set<IAllocNode>)PTABridge.v().getPTSet(getReceiver(), getEdge().srcCtxt());
 	    else
 	        return null;
 	}
@@ -205,10 +205,10 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * For a pointer arg value at i, return the PTA result (insensitive). 
 	 */
-	public Set<? extends IAllocNode> getArgPTSet(Context context, int i) {
+	public Set<? extends IAllocNode> getArgPTSet(int i) {
 	    if (!isArgPointer(i))
 	        return null;
 	    
-	    return PTABridge.v().getPTSet(getArgValue(i), context);
+	    return PTABridge.v().getPTSet(getArgValue(i), getEdge().srcCtxt());
 	}
 }

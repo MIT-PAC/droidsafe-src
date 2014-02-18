@@ -2,14 +2,11 @@ package droidsafe.analyses.pta;
 
 import java.util.Set;
 
-import soot.Context;
 import soot.Type;
 import soot.Value;
-import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
-import droidsafe.utils.Utils;
 
 /**
  * Interface for providing PTA information for a method.  
@@ -32,7 +29,7 @@ public interface PTAMethodInformation {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<IAllocNode> getReceiverPTSet(Context context);
+    public Set<IAllocNode> getReceiverPTSet();
 
     /**
      * Return the type of the receiver value.
@@ -48,7 +45,7 @@ public interface PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<? extends IAllocNode> getArgPTSet(Context context, int i);
+    public Set<? extends IAllocNode> getArgPTSet(int i);
     
     /** 
      * Return the number of args in the invoke expression.
@@ -80,5 +77,5 @@ public interface PTAMethodInformation {
     /**
      * Return the context for sensitive lookups. 
      */
-    public Context getContext();
+    public Edge getEdge();
 }

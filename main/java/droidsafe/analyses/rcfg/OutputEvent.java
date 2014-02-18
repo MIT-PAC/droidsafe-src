@@ -39,7 +39,6 @@ public class OutputEvent implements PTAMethodInformation {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(OutputEvent.class);
     private Edge invokeEdge;
-    private Context invokeContext;
     /** The invoke expression call to an API method, might be null EX finalize*/
     private InvokeExpr invokeExpr;
     /** The parent RFCG Node */
@@ -57,7 +56,6 @@ public class OutputEvent implements PTAMethodInformation {
     public OutputEvent(Edge edge, RCFGNode p, 
                        SourceLocationTag ln) {
         this.invokeEdge = edge;
-        this.invokeContext = edge.srcCtxt();
         this.parent = p;
         this.receiverNodes = new HashSet<IAllocNode>();
         this.receiverNodeTypes = new HashSet<Type>();
@@ -152,7 +150,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<IAllocNode> getReceiverPTSet(Context context) {
+    public Set<IAllocNode> getReceiverPTSet() {
         getReceiver();
 
         return receiverNodes; 
@@ -183,21 +181,21 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<? extends IAllocNode> getArgPTSet(Context context, int i) {
+    public Set<? extends IAllocNode> getArgPTSet(int i) {
         Value v = getArgValue(i);
         
-        return PTABridge.v().getPTSet(v, context);
+        return PTABridge.v().getPTSet(v, invokeEdge.srcCtxt() );
     }
 
     /**
      * Return a set of all the alloc nodes that all the of the args can point to.
      */
-    public Set<IAllocNode> getAllArgsPTSet(Context context) {
+    public Set<IAllocNode> getAllArgsPTSet() {
         HashSet<IAllocNode> nodes = new HashSet<IAllocNode>();
         
         for (int i = 0; i < getNumArgs(); i++) {
             if (isArgPointer(i))
-                nodes.addAll(getArgPTSet(context, i));
+                nodes.addAll(getArgPTSet(i));
         }
         
         return nodes;
@@ -206,8 +204,8 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return the context
      */
-    public Context getContext() {
-        return invokeContext;
+    public Edge getEdge() {
+        return invokeEdge;
     }
 
     /**

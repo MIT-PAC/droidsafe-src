@@ -135,6 +135,8 @@ public class RCFGToSSL {
         }
 	    
 	    Method method = new Method(node.getEntryPoint(), node, args, receiver);
+	    //if this entry is a synthetic method, then calculate the line number properly
+	    method.checkForSynthetic();
 	    return method;
 	}
 	
@@ -187,11 +189,10 @@ public class RCFGToSSL {
 
 	    boolean allVAResults = true;
 	    List<ConcreteArgumentValue> vaResults = new LinkedList<ConcreteArgumentValue>();
-        Context context = method.getContext();
 	    
         //iterate over all the nodes pointed to and see if they are all va results
         //if not, break and remember
-        for (IAllocNode node : method.getReceiverPTSet(context)) {
+        for (IAllocNode node : method.getReceiverPTSet()) {
             if (ValueAnalysis.v().hasResult(node)) {
                 //check to see if we have a value analysis result for this alloc node
                 //and if so, add it to the concrete list of values.
@@ -203,7 +204,7 @@ public class RCFGToSSL {
             }
         }
         
-	    if (allVAResults && method.getReceiverPTSet(context).size() > 0) {
+	    if (allVAResults && method.getReceiverPTSet().size() > 0) {
             //if we have all va results, create the concrete argument list from the results
             ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(method.getReceiverType());
             for (ConcreteArgumentValue s : vaResults) 
@@ -239,7 +240,7 @@ public class RCFGToSSL {
 	        return clrv;
 	    }
 	    
-	    Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(methodInfo.getContext(), i); 
+	    Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(i); 
 		boolean allConstants = true;
 		//here we consider Value Analysis results as constants
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();

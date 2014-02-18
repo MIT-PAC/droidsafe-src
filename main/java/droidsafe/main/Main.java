@@ -83,11 +83,7 @@ public class Main {
 
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
-    /** timing stats container */
-    private static List<String> appStatRowEntries = new ArrayList<String>();
-    /** app stat csvwriter */
-    private static CSVWriter appStatWriter = null; 
-
+    
     private static IDroidsafeProgressMonitor sMonitor;
 
     /**
@@ -98,22 +94,7 @@ public class Main {
         driverMsg("Starting DroidSafe Run");
         // grab command line args and set some globals
         Config.v().init(args);
-
-        // need this shutdown hook so that app stats get written even if some phase fails or we timeout
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run() {
-                if (appStatWriter != null) {
-                    appStatWriter.writeNext(appStatRowEntries.toArray(new String[] {}));                                             
-                    try {                                                                                                            
-                        appStatWriter.close();                                                                                       
-                    } catch(IOException ie) {                                                                                        
-                        logger.warn("Unable to close app-stats.log: {}", ie);                                                        
-                    }        
-                }
-            }
-        });
-
+        
         run(new DroidsafeDefaultProgressMonitor());
     }
 
@@ -143,27 +124,6 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        try {
-            appStatWriter = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "app-stats.csv"));
-        } catch(Exception e) {
-            logger.warn("Unable to open app-stats.csv: {}", e);
-            System.exit(1);
-        }
-
-        // write out headers for columns
-        appStatWriter.writeNext(new String[] {"App Name", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"});
-
-        // app stat column #1 - app name
-        try {
-            FileInputStream inputStream = new FileInputStream(Config.v().APP_ROOT_DIR + File.separator + "Makefile");
-            inputStream = new FileInputStream(Config.v().APP_ROOT_DIR + File.separator + "Makefile");
-            String name = IOUtils.toString(inputStream).split("\n")[0].split(" ")[2];
-            appStatRowEntries.add(name);
-            inputStream.close();
-        } catch (Exception e) {
-            logger.warn("Unable to open or close the application's Makefile");
-        }
-
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
@@ -187,9 +147,11 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        
+        /* used when we were cloning classes 
         driverMsg("Checking invoke special calls...");
         CheckInvokeSpecials.run();
+        */
 
         driverMsg("Resolving resources and Manifest.");
         monitor.subTask("Resolving Manifest");
@@ -263,8 +225,6 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
         timer1.stop();
-        // app stat column #2 - string analysis runtime
-        appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
         
@@ -318,8 +278,6 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            // app stat column #5 - va
-            appStatRowEntries.add(vaTimer.toString());
             driverMsg("Finished Value Analysis: " + vaTimer);
 
             vaTimer.reset();
@@ -454,8 +412,6 @@ public class Main {
             }
             timer.stop();
             droidsafe.stats.AvgInfoFlowSetSize.run();
-            // app stat column #6 - infoflow
-            appStatRowEntries.add(timer.toString());
             driverMsg("Finished Information Flow Analysis: " + timer);
         }
         monitor.worked(1);
@@ -600,12 +556,8 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        long endTime = System.currentTimeMillis();
         timer.stop();
-        if(recordTime) {
-            // app stat column #4 - PTA
-            appStatRowEntries.add(timer.toString());
-        }
+        
         driverMsg("Finished PTA: " + timer);
         
        // new TestPTA();
