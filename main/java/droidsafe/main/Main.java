@@ -491,8 +491,9 @@ public class Main {
             RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
-
+        
         monitor.worked(1);
+        System.out.println("Finished!");
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
@@ -551,7 +552,7 @@ public class Main {
             //build fast options for spark
             opts.put("merge-stringbuffer","false");   
             opts.put("string-constants","true");   
-            opts.put("kobjsens", "2");
+            opts.put("kobjsens", Integer.toString(Config.v().kobjsens));
         } 
         
         return afterTransform(monitor, recordTime, opts);   

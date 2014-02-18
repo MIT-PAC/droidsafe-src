@@ -132,6 +132,9 @@ public class Config {
     public boolean debug = false;
     /** are we in strict mode and should fail on errors */
     public boolean strict = false;
+    /** depth of obj sens when running pta for precision (with context) */
+    public int kobjsens = 2;
+   
 
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -209,6 +212,11 @@ public class Config {
                 OptionBuilder.withArgName("value").hasArg()
                 .withDescription("Timeout value for the string analysis (default 120)").create("jsatimeout");
         options.addOption(jsatimeout);
+        
+        Option kObjSens = OptionBuilder.withArgName("k").hasArg()
+                .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
+        options.addOption(kObjSens);
+                
 
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
@@ -351,6 +359,10 @@ public class Config {
 
         if (cmd.hasOption("jsatimeout")) {
             this.stringAnalysisTimeout = Integer.parseInt(cmd.getOptionValue("jsatimeout"));
+        }
+        
+        if (cmd.hasOption("kobjsens")) {
+            this.kobjsens = Integer.parseInt(cmd.getOptionValue("kobjsens"));
         }
 
         if (cmd.hasOption("strict")) {

@@ -582,7 +582,7 @@ public class SparkPTA extends PTABridge {
             newToAllocNodeMap.put(node.getNewExpr(), node);
             realSize ++;
             allAllocNodes.add(node);
-            for (Map.Entry<Context, ObjectSensitiveAllocNode> entry : node.getContextNodeMap().entrySet()) {
+            for (Map.Entry<Context, AllocNode> entry : node.getContextNodeMap().entrySet()) {
                 allAllocNodes.add(entry.getValue());
             }
         }
