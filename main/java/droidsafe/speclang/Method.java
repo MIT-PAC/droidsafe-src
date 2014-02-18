@@ -79,12 +79,15 @@ public class Method implements Comparable<Method> {
         argInfoValues = new HashSet[ptaInfo.getNumArgs()];
     }
     
+    /**
+     * Call this method to check if the target method is a synthetic method in a user class, and if so,
+     * find the real target through the synthetic method.  This is used to report correct line numbers
+     * for synthetic methods in user code that are entry points.
+     */
     public void checkForSynthetic() {
         if (!API.v().isSystemMethod(sootMethod) && SootUtils.isSynthetic(sootMethod)) {
             //specific set of tests to see if we can find a real user method that is called
             //and replace
-            
-            System.out.println("Found synthetic user method: " + sootMethod);
             
             MethodOrMethodContext thisMomc = sootMethod;
             
@@ -100,8 +103,6 @@ public class Method implements Comparable<Method> {
             while (edges.hasNext()) {
                 Edge edge = edges.next();
                 SootMethod target = edge.tgt();                
-                
-                System.out.println("Found explicit edge: " + edge);
                 
                 if (!edge.isExplicit())                    
                     continue;
@@ -127,10 +128,13 @@ public class Method implements Comparable<Method> {
                 //if not then two potential matches and we don't handle that!
                 if (newTarget != null && !newTarget.equals(target))
                     return;
+                
+                newTarget = target;
             }
             
             //if we get here all tests pass!
             //replace the original method reference with the target of this sythetic method
+            
             realTarget = newTarget;
         }
     }
