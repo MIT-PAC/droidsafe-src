@@ -104,6 +104,14 @@ public class SparkPTA extends PTABridge {
 
     private Set<AllocNode> allAllocNodes;
     
+    /** comma separated list of classes in which no matter what the length of k
+     * for object sensitivity, we want to limit the depth of the object sensitivity 
+     * to one.
+     */
+    private static final String  LIMIT_DEPTH_TO_ONE = 
+            "java.lang.Throwable,java.math.BigInt,java.math.BigInteger,"+
+             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point";
+    
     public SparkPTA(Map<String,String> opts) {
         super(opts);
     }
@@ -568,6 +576,24 @@ public class SparkPTA extends PTABridge {
 
     }
     
+    private void countNode(Map<SootClass, Integer> nodeCount, AllocNode node) {
+        SootClass clz = null;
+        if (node.getType() instanceof RefType) {
+            clz = ((RefType)node.getType()).getSootClass();
+        } else if (node.getType() instanceof ArrayType && 
+                ((ArrayType)node.getType()).getArrayElementType() instanceof RefType) {
+            clz = ((RefType)((ArrayType)node.getType()).getArrayElementType()).getSootClass();
+        }
+        
+        if (clz != null) {
+            if (!nodeCount.containsKey(clz)) {
+                nodeCount.put(clz, 0);
+            }
+            
+            nodeCount.put(clz, nodeCount.get(clz) + 1);
+        }
+    }
+    
 
     /**
      * Create the bi map of NewExpr <-> AllocNode
@@ -575,6 +601,8 @@ public class SparkPTA extends PTABridge {
     private void createNewToAllocMap() {
         newToAllocNodeMap = HashBiMap.create();
         allAllocNodes = new LinkedHashSet<AllocNode>();
+            
+        Map<SootClass,Integer> nodeCount = new LinkedHashMap<SootClass,Integer>();
 
         int realSize = 0; 
 
@@ -582,12 +610,24 @@ public class SparkPTA extends PTABridge {
             newToAllocNodeMap.put(node.getNewExpr(), node);
             realSize ++;
             allAllocNodes.add(node);
+        
+            //countNode(nodeCount, node);
+        
             for (Map.Entry<Context, AllocNode> entry : node.getContextNodeMap().entrySet()) {
                 allAllocNodes.add(entry.getValue());
+                //countNode(nodeCount, node);
             }
         }
 
+        
         System.out.println("Alloc node size (insensitive objects): " + realSize);
+        
+        /* used to print a sorted list of alloc nodes created
+        Map<SootClass, Integer> sortedNodeCount = SootUtils.sortByValue(nodeCount);
+        for (Map.Entry<SootClass, Integer> entry : sortedNodeCount.entrySet()) {
+            System.out.println(entry.getValue() + " " + entry.getKey());
+        }
+        */
     }
 
     /**
@@ -635,7 +675,7 @@ public class SparkPTA extends PTABridge {
         opt.put("kobjsens", Integer.toString(K));
 
         opt.put("obj-sens-no-context-list", 
-            "java.lang.Throwable,java.math.BigInt,java.math.BigInteger");
+                LIMIT_DEPTH_TO_ONE);
         
         //now overwrite options with options that are passed in
         for (Map.Entry<String, String> entry : opts.entrySet()) {

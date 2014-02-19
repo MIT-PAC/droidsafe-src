@@ -10,8 +10,11 @@ import java.util.Iterator;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -119,8 +122,8 @@ public class SootUtils {
     public static boolean isVoidType(Type type) {
         return type instanceof VoidType;
     }
-    
-    
+
+
     /**
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
@@ -766,17 +769,17 @@ public class SootUtils {
                     method.retrieveActiveBody();
             }
             try {
-                
+
                 JasminClass jasminClass = new soot.jimple.JasminClass(clz);
                 jasminClass.print(writerOut);
                 //System.out.println("Succeeded writing class: " + clz);
             } catch (Exception e) {
                 logger.warn("Error writing class to file {}", clz, e);
             }
-            
+
             writerOut.flush();
             streamOut.close();
-            
+
 
             streamOut = new FileOutputStream(packageDirectory.toString() + File.separator + clz.getShortName() + ".jimple");
             writerOut = new PrintWriter(new OutputStreamWriter(streamOut));
@@ -808,7 +811,7 @@ public class SootUtils {
 
         return null;
     }
-    
+
     private static Map<Stmt, SourceLocationTag> stmtToSourceLocMap = new HashMap<Stmt, SourceLocationTag>();
 
     /**
@@ -956,7 +959,7 @@ public class SootUtils {
     public static List<SootMethod> getOverriddenMethodsFromSuperclasses(SootMethod method) {
         SootClass clz = method.getDeclaringClass();
         String subSig = method.getSubSignature();
-        
+
         List<SootMethod> methods = new LinkedList<SootMethod>();
 
         List<SootClass> parents = getSuperClassList(clz);
@@ -1107,7 +1110,7 @@ public class SootUtils {
             }
             clz = clz.getSuperclass();
         }
-        
+
         String subSig = method.getSubSignature(); 
         // now we are dealing with interface
         for (SootClass parent: method.getDeclaringClass().getInterfaces()) {
@@ -1339,8 +1342,8 @@ public class SootUtils {
      */
     public static List<SootMethod> getInheritedMethods(SootClass clz) {
         List<SootMethod> methods = new LinkedList<SootMethod>();
-        
-        
+
+
         for (SootClass parent : getSuperClassList(clz)) {
             for (SootMethod method : parent.getMethods()) {
                 //check if the a concrete resolve from the original class to the parent method 
@@ -1350,10 +1353,10 @@ public class SootUtils {
                     methods.add(method);
             }
         }
-        
+
         return methods;
     }
-    
+
     /**
      * Return true if the class has the synthetic tag or flag.
      */
@@ -1394,6 +1397,30 @@ public class SootUtils {
         SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
         SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
         return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
+    }
+
+
+    /**
+     * Utility method to returned sorted map of input map, sorted by values (value must implement
+     * comparator)
+     */
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue( Map<K, V> map ) {
+        List<Map.Entry<K, V>> list =
+                new LinkedList<Map.Entry<K, V>>( map.entrySet() );
+        Collections.sort( list, new Comparator<Map.Entry<K, V>>()
+            {
+            public int compare( Map.Entry<K, V> o1, Map.Entry<K, V> o2 )
+            {
+                return (o1.getValue()).compareTo( o2.getValue() );
+            }
+            } );
+
+        Map<K, V> result = new LinkedHashMap<K, V>();
+        for (Map.Entry<K, V> entry : list)
+        {
+            result.put( entry.getKey(), entry.getValue() );
+        }
+        return result;
     }
 }
 
