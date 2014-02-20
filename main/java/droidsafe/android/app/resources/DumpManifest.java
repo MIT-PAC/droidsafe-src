@@ -45,7 +45,11 @@ public class DumpManifest {
 
     Config.v().setApacHome(Config.v().getApacHome());
     // Initialize information about the application
-    Resources app = new Resources (new File (args[0]));
+    String appDir = args[0];
+    if (appDir.endsWith("AndroidManifest.xml"))
+        appDir = appDir.replace("AndroidManifest.xml", "");
+
+    Resources app = new Resources (new File (appDir));
     AndroidManifest am = app.manifest;
     
     PrintStream out = System.out;
@@ -89,7 +93,7 @@ public class DumpManifest {
     
     out.println("\nServices: ");
     for (Service a : am.services) {
-        out.printf("  Name: %s \n", a.name);
+        out.printf("    Name: %s \n", a.name);
         for (IntentFilter intentFilter: a.intent_filters) {
             String dataString = "";
             if (intentFilter.dataUri != null)
@@ -105,7 +109,7 @@ public class DumpManifest {
     
     out.println("\nReceivers: ");
     for (Receiver a : am.receivers) {
-        out.printf("  receiver %s \n", a.toString());
+        out.printf("    receiver %s \n", a.name);
         for (IntentFilter intentFilter: a.intent_filters) {
             String dataString = "";
             if (intentFilter.dataUri != null)
@@ -125,7 +129,7 @@ public class DumpManifest {
             String dataString = "";
             if (intentFilter.dataUri != null)
                 dataString = " - " + intentFilter.dataUri;
-            out.printf("    intentFilter %s - %s %s\n",
+            out.printf("        intentFilter %s - %s %s\n",
                     listToString(intentFilter.actions, "|"),
                     listToString(intentFilter.categories, "|"),
                     dataString);
