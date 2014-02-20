@@ -71,7 +71,8 @@ public class Config {
     /** Path for the root folder for droidsafe code */
     private String apacHome = System.getenv("APAC_HOME");
 
-    public File ANDROID_LIB_DIR;
+    public File ANDROID_LIB_DIR = new File(System.getenv("APAC_HOME") + File.separator + ANDROID_LIB_DIR_REL);  
+
     public String target = "specdump";
     /** Don't include source location information when outputting spec */
     public boolean noSourceInfo = false;

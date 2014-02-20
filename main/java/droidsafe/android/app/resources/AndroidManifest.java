@@ -3,6 +3,7 @@ package droidsafe.android.app.resources;
 import java.util.*;
 import java.io.*;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
@@ -573,13 +574,20 @@ public class AndroidManifest {
     public List<String>  dataHost = new ArrayList<String>();
     public List<String>  dataMime = new ArrayList<String>();
     public List<String>  dataPort = new ArrayList<String>();
-    public List<String>  dataScheme = new ArrayList<String>();
+    public List<String>  dataScheme =  new ArrayList<String>();
+    public List<String>  dataPath = new ArrayList<String>();
+    public List<String>  dataPathPattern = new ArrayList<String>();
+    public List<String>  dataPathPrefix = new ArrayList<String>();
+    public List<String> dataList = new ArrayList<String>();
+    
+    public String dataUri = null;
     
     public IntentFilter (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {
 
       super(n, parent);
 
+      boolean hasData = false;
       for (Node child : gather_children()) {
         String name = child.getNodeName();
         logger.info("processing node %s in IntentFilter", name);
@@ -588,14 +596,88 @@ public class AndroidManifest {
         else if (name.equalsIgnoreCase ("category"))
           categories.add (get_attr (child, "name"));
         else if (name.equalsIgnoreCase ("data")) {
+
+            if (get_attr(child, "scheme") != null) {
+                dataScheme.add(get_attr(child, "scheme"));
+            }
+            
+            if (get_attr(child, "mimeType") != null) {
+                dataMime.add(get_attr(child, "mimeType"));
+            }
+
+            if (get_attr(child, "host") != null) {
+                dataHost.add(get_attr(child, "host"));
+            }
+            
+            if (get_attr(child, "port") != null) {
+                dataPort.add(get_attr(child, "port"));
+            }
+            
+            if (get_attr(child, "path") != null) {
+                dataPath.add(get_attr(child, "path"));
+            }
+
+            if (get_attr(child, "pathPattern") != null) {
+                dataPathPattern.add(get_attr(child, "pathPattern"));
+            }
+
+            if (get_attr(child, "pathPrefix") != null) {
+                dataPathPrefix.add(get_attr(child, "pathPrefix"));
+            }
+            
+            hasData = true;
         }
         else { // unexpected node
           xml_error ("Unexpected node %s in intent-filter ignored", 
                      name);
         }
       }
+      
+      if (hasData) {
+          StringBuilder uriBuilder = new StringBuilder();
+          if (dataMime.size() > 0) {
+              //uriBuilder.append(String.format("[mime:%s]", StringUtils.join(dataMime, "|")));
+              if (dataScheme.size() == 0)
+                  dataScheme.add("file");
+          }
+
+          if (dataScheme.size() > 0) 
+              uriBuilder.append(String.format("%s://", listToString(dataScheme)));
+          
+          if (dataHost.size() > 0) {
+              uriBuilder.append(String.format("%s", listToString(dataHost)));
+              
+              if (dataPort.size() > 0)
+                  uriBuilder.append(String.format(":%s", listToString(dataPort)));
+          }
+
+          if (dataPath.size() > 0)
+              uriBuilder.append(String.format("/%s", listToString(dataPath)));
+          
+          else if (dataPathPrefix.size() > 0)
+              uriBuilder.append(String.format("/%s", listToString(dataPathPrefix)));
+          
+          else if (dataPathPattern.size() > 0)
+              uriBuilder.append(String.format("/%s", listToString(dataPathPattern)));
+          
+          if (dataMime.size() > 0 && !dataMime.get(0).equals("file"))
+              uriBuilder.append(String.format("[mime=%s]", listToString(dataMime)));
+          
+          dataUri = uriBuilder.toString();
+      }
     }
 
+    /**
+     * Convenient method to get a string representation of list
+     * @param list
+     * @return
+     */
+    private String listToString(List<String> list) {
+        String tmp = StringUtils.join(list, "|");
+        if (list.size() > 1)
+           tmp = String.format("(%s)", tmp);
+        return tmp;
+    }
     public String toString() {
       return String.format ("actions: %s, categories: %s", actions, categories);
     }
