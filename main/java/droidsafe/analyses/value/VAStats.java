@@ -160,15 +160,35 @@ public class VAStats {
                                 Type fieldType = sf.getType();
                                 if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
                                     size = fieldVAModels.size();
+                                    for(VAModel vaModel : fieldVAModels) {
+                                        if(vaModel instanceof UnknownVAModel) {
+                                            size = -1;
+                                        }
+                                    }
                                 } else {
-                                    VAModel vaModel = fieldVAModels.iterator().next();
-                                    if(vaModel instanceof PrimVAModel) {
-                                        PrimVAModel primVAModel = (PrimVAModel)vaModel;
-                                        // if the primitive field is invalidated, we can't trust the number of values
-                                        if(!primVAModel.invalidated()) {
-                                            Set<Object> values = primVAModel.getValues();
-                                            // if the set of values could include ANYTHING, leave size as -1
-                                            if(!values.contains("ANYTHING")) size = values.size();
+                                    for(VAModel vaModel : fieldVAModels) {
+                                        if(vaModel instanceof PrimVAModel) {
+                                            PrimVAModel primVAModel = (PrimVAModel)vaModel;
+                                            // if the primitive field is invalidated, we can't trust the number of values
+                                            if(primVAModel.invalidated()) {
+                                                size = -1;
+                                                break;
+                                            } else {
+                                                Set<Object> values = primVAModel.getValues();
+                                                // if the set of values could include ANYTHING, leave size as -1
+                                                if(values.contains("ANYTHING")) {
+                                                    size = -1;
+                                                    break;    
+                                                } else {
+                                                    if (size == -1) {
+                                                        size = 0;
+                                                    }
+                                                    size += values.size(); 
+                                                }
+                                            }
+                                        } else {
+                                            size = -1;
+                                            break;
                                         }
                                     }
                                 }

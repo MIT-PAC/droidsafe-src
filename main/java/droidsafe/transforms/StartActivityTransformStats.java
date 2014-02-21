@@ -62,7 +62,7 @@ public class StartActivityTransformStats {
         }
 
         // write out headers for columns
-        writer.writeNext(new String[] {"AllocNode", "Type", "# of targets", "# targets in-app"});
+        writer.writeNext(new String[] {"AllocNode", "Type", "# of targets", "# of targets (without data)", "# targets in-app"});
 
         List<String> rowEntries = null;
         for(IAllocNode intentAllocNode : intentAllocNodes) {
@@ -80,28 +80,53 @@ public class StartActivityTransformStats {
                 if(vaModel != null && vaModel instanceof RefVAModel) {
                     RefVAModel intentRefVAModel = (RefVAModel)vaModel;
                     IntentType intentType = StartActivityTransform.getIntentType(intentRefVAModel);
+                    Set<String> targetClsStrings = null;
                     switch(intentType) {
                         case IMPLICIT:
                             // column #2 - type
                             rowEntries.add("IMPLICIT");
+                            // column #3 - # of possible targets
+                            if(StartActivityTransform.isImplicitIntentTargettingAmbiguous(intentRefVAModel, true)) {
+                                rowEntries.add("UNKNOWN");
+                            } else {
+                                rowEntries.add("n/a");
+                            }
+                            // column #4 - # of possible targets (without data)
+                            if(StartActivityTransform.isImplicitIntentTargettingAmbiguous(intentRefVAModel, false)) {
+                                rowEntries.add("UNKNOWN");
+                            } else {
+                                rowEntries.add("n/a");
+                            }
                             break;
                         case EXPLICIT:
                             // column #2 - type
                             rowEntries.add("EXPLICIT");
+                            // column #3 - # of possible targets
+                            targetClsStrings = StartActivityTransform.getExplicitIntentTargetClsStrings(intentRefVAModel);
+                            if(targetClsStrings == null) {
+                                rowEntries.add("UNKNOWN");
+                                // the without data column is identical for explicit intents
+                                rowEntries.add("UNKNOWN");
+                            } else {
+                                String targetClsStringsCount = Integer.toString(targetClsStrings.size());
+                                rowEntries.add(targetClsStringsCount);
+                                // the without data column is identical for explicit intents
+                                rowEntries.add(targetClsStringsCount);
+                            }
                             break;
                         default:
                             // column #2 - type
                             rowEntries.add("UNKNOWN");
+                            // column #3 - # of targets
+                            rowEntries.add("UNKNOWN");
+                            // column #4 - # of targets (without data)
+                            rowEntries.add("UNKNOWN");
                             break;
                     }
-                    // column #3 - # of possible targets
-                    Set<String> targetClsStrings = StartActivityTransform.getIntentTargetClsStrings(intentRefVAModel);
-                    if(targetClsStrings == null) {
-                        rowEntries.add("UNKNOWN");
-                    } else {
-                        rowEntries.add(Integer.toString(targetClsStrings.size()));
+                    // column #5 - # of possible targets in-app
+                    if(intentType == IntentType.IMPLICIT) {
+                         targetClsStrings = StartActivityTransform.getImplicitIntentInAppTargetClsStrings(intentRefVAModel);
                     }
-                    // column #4 - # of possible targets in-app
                     Set<SootField> targetHarnessFlds = StartActivityTransform.getHarnessFldsForClsStrings(targetClsStrings);
                     if(targetHarnessFlds == null) {
                         rowEntries.add("UNKNOWN");
@@ -116,7 +141,9 @@ public class StartActivityTransformStats {
             rowEntries.add("UNKNOWN");
             // column #3 - # of targets
             rowEntries.add("UNKNOWN");
-            // column #4 - # of targets in-app
+            // column #4 - # of targets (without data)
+            rowEntries.add("UNKNOWN");
+            // column #5 - # of targets in-app
             rowEntries.add("UNKNOWN");
         }
      
