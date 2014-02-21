@@ -24,6 +24,12 @@ import droidsafe.annotations.DSModeled;
 
 public final class String implements Serializable, Comparable<String>, CharSequence {
 
+    /** used by droidsafe to model strings in the information flow */
+    @DSBan(DSCat.BAN_OTHERS)
+    public String(AbstractStringBuilder sb) {
+        addTaint(sb.getTaint());
+    }
+
     /**
      * Creates a new string containing the characters in the specified character
      * array. Modifying the character array after creating the string has no

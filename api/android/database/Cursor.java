@@ -106,6 +106,7 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     int getInt(int columnIndex);
     
     @DSComment("Abstract Method")
