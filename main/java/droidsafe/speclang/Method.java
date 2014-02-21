@@ -501,7 +501,7 @@ public class Method implements Comparable<Method> {
                         else {
                             //unknown info kind, check if a spec or ban method and if so, denote with UNKNOWN kind
                             if (API.v().isInterestingMethod(target)) {
-                                srcKinds.add(API.v().SENSITIVE_NOCATEGORY);
+                                srcKinds.add(API.v().SENSITIVE_UNCATEGORIZED);
                             }
 
                         }

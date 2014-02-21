@@ -25,6 +25,7 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.app.resources.ResourcesSoot;
 import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
+import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
@@ -120,9 +121,12 @@ public class Main {
         ObjectSensitivityCloner.reset();
         RCFG.reset();
         monitor.worked(1);
+        AutomatedSourceTagging.run();
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        
 
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
@@ -317,6 +321,12 @@ public class Main {
             }
         }
         
+        //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
+        //replace calls with new expressions, and let the modeling pass taint appropriately
+        driverMsg("Converting AbstractStringBuilder.toString()");
+        TransformStringBuilderInvokes.run();
+        
+        
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -372,12 +382,14 @@ public class Main {
 
             StopWatch timer = new StopWatch();
             driverMsg("Starting Information Flow Analysis...");
+            /*
             monitor.subTask("Information Flow Analysis: Injected source flow");
             timer.start();
             InjectedSourceFlows.run();
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
+            */
             monitor.subTask("Information Flow Analysis: Control flow graph");
             ObjectUtils.run();
             InterproceduralControlFlowGraph.run();

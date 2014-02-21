@@ -1,4 +1,4 @@
-package droidsafe.android.system;
+    package droidsafe.android.system;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -81,7 +81,7 @@ public class API {
     /** map of sinks from soot method to info kinds */
     private Map<SootMethod,Set<InfoKind>> sinksMapping;
     /** default info kind for a spec or ban method that is not labeled */
-    public InfoKind SENSITIVE_NOCATEGORY;
+    public InfoKind SENSITIVE_UNCATEGORIZED;
 
     /** Container classes that we have modified to be understood by our analysis. */
     private Set<String> droidSafeContainerClasses = 
@@ -223,7 +223,7 @@ public class API {
 
             classificationCat = new HashMap<SootMethod, String>();
             
-            SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED");
+            SENSITIVE_UNCATEGORIZED = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED");
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
@@ -419,10 +419,18 @@ public class API {
                             addSafeMethod(method);
                             logger.info("Found method with SAFE classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSSpec")) {
-                            addSpecMethod(method);
+                            
                             category = getCategoryFromClassificationTag(at);
-                            c = Classification.SPEC;
-                            logger.info("Found method with SPEC classification: {}", method);
+                            //if classified as spec because it was abstract, then do not make spec
+                            if ("ABSTRACT_METHOD".equals(category)) {
+                                c = Classification.SAFE;
+                                addSafeMethod(method);
+                                logger.info("Found SPEC method with ABSTRACT, making SAFE: {}", method);
+                            } else {
+                                c = Classification.SPEC;
+                                addSpecMethod(method);
+                                logger.info("Found method with SPEC classification: {}", method);
+                            }
                         } else if (at.getType().contains("droidsafe/annotations/DSBan")) {
                             c = Classification.BAN; 
                             category = getCategoryFromClassificationTag(at);
@@ -432,11 +440,11 @@ public class API {
                             verified = true;
                         } else if (at.getType().contains("droidsafe/annotations/DSSink")) {
                             logger.info("Found sink method: {}", method);
-                            addSinkSourceTag(method, at, sinksMapping);
+                            addSinkTag(method, at);
                             sink = true;
                         } else if (at.getType().contains("droidsafe/annotations/DSSource")) {
                             logger.info("Found source method: {}", method); 
-                            addSinkSourceTag(method, at, srcsMapping);
+                            addSourceTag(method, at);
                             source = true; 
                         }
                     }
@@ -470,8 +478,43 @@ public class API {
         }
         srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(kind));
     }
+    
 
-    private void addSinkSourceTag(SootMethod sootMethod, AnnotationTag at, Map<SootMethod, Set<InfoKind>> mapping) {
+    private void addSinkTag(SootMethod sootMethod, AnnotationTag at) {
+        if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
+            logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
+            droidsafe.main.Main.exit(1);
+        }
+        
+        for (AnnotationElem ae : ((AnnotationArrayElem)at.getElemAt(0)).getValues()) {
+            if (!(ae instanceof AnnotationEnumElem)) {
+                logger.error("DSSink/DSSource Annotation Element incorrect for: {} is {}", sootMethod, ae.getClass());
+                droidsafe.main.Main.exit(1);
+            }
+            
+            String infoKind = ((AnnotationEnumElem)ae).getConstantName();
+           
+            //get more informatin for uncategorized
+            if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind)) {
+                String pkg = sootMethod.getDeclaringClass().getPackageName();
+                infoKind = pkg.substring(pkg.indexOf(".") + 1);
+            } else {
+                //encase in asterisks to denote it is marked by human as sensitive
+                infoKind = "*" + infoKind +"*";
+            }
+            
+            if (!sinksMapping.containsKey(sootMethod)) {
+                sinksMapping.put(sootMethod, new HashSet<InfoKind>());
+            }
+            sinksMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
+            logger.info("Adding sink infokind category for {} as {}", sootMethod, infoKind);
+        }
+            
+            
+    }
+    
+
+    private void addSourceTag(SootMethod sootMethod, AnnotationTag at) {
         if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
             logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
             droidsafe.main.Main.exit(1);
@@ -485,11 +528,19 @@ public class API {
             
             String infoKind = ((AnnotationEnumElem)ae).getConstantName();
             
-            if (!mapping.containsKey(sootMethod)) {
-                mapping.put(sootMethod, new HashSet<InfoKind>());
+            //don't add uncategorized if we have an uncategorized sink / source
+            if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind))
+                continue;
+            
+            if (!srcsMapping.containsKey(sootMethod)) {
+                srcsMapping.put(sootMethod, new HashSet<InfoKind>());
             }
-            mapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
-            logger.info("Adding sink/source infokind category for {} as {}", sootMethod, infoKind);
+            
+            //encase in asterisks to denote it was labeled by human as sensitive
+            infoKind = "*" + infoKind +"*";
+            
+            srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
+            logger.info("Adding source infokind category for {} as {}", sootMethod, infoKind);
         }
             
             
