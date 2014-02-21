@@ -103,8 +103,6 @@ public class Handler {
     @DSVerified
     public void dispatchMessage(Message msg){
 		// Original method
-		/*
-		{
         if (msg.callback != null) {
             handleCallback(msg);
         } else {
@@ -115,8 +113,6 @@ public class Handler {
             }
             handleMessage(msg);
         }
-    }
-		*/
 		//Return nothing
 	}
     

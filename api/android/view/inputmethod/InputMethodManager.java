@@ -608,8 +608,8 @@ public void updateExtractedText(View view, int token, ExtractedText text) {
      * @param flags Provides additional operating flags.  Currently may be
      * 0 or have the {@link #SHOW_IMPLICIT} bit set.
      */
-    @DSComment("System settings/policy")
-    @DSSpec(DSCat.SYSTEM)
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.697 -0500", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "8B69D752E6300569DF8BE9839965005B")
     
 public boolean showSoftInput(View view, int flags) {
@@ -633,10 +633,15 @@ public boolean showSoftInput(View view, int flags) {
      * {@link #RESULT_HIDDEN}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.710 -0500", hash_original_method = "182A36951EBA765A4D1CAFFC02BFF851", hash_generated_method = "129BC9F4D86B8059494E49277383CAE7")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
     
 public boolean showSoftInput(View view, int flags, ResultReceiver resultReceiver) {
         checkFocus();
         synchronized (mH) {
+            if (resultReceiver != null) {
+                resultReceiver.send(DSUtils.FAKE_INT, new Bundle());
+            }
             if (mServedView != view && (mServedView == null
                     || !mServedView.checkInputConnectionProxy(view))) {
                 return false;
@@ -696,11 +701,16 @@ public boolean hideSoftInputFromWindow(IBinder windowToken, int flags) {
      * {@link #RESULT_HIDDEN}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.722 -0500", hash_original_method = "0C97F129DA85CEA766FB3D7196531B26", hash_generated_method = "B03BB07FC79CDD81A271865377AF9DAF")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
 public boolean hideSoftInputFromWindow(IBinder windowToken, int flags,
             ResultReceiver resultReceiver) {
         checkFocus();
         synchronized (mH) {
+
+            if (resultReceiver != null) {
+                resultReceiver.send(DSUtils.FAKE_INT, new Bundle());
+            }
             if (mServedView == null || mServedView.getWindowToken() != windowToken) {
                 return false;
             }
