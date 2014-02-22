@@ -74,8 +74,8 @@ public class GregorianCalendar extends Calendar {
      * Constructs a new {@code GregorianCalendar} initialized to the current date and
      * time with the default {@code Locale} and {@code TimeZone}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.336 -0500", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "8106811364876E1FB5FEFEAB5E247D55")
     
 public GregorianCalendar() {
@@ -93,8 +93,8 @@ public GregorianCalendar() {
      * @param day
      *            the day of the month.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.339 -0500", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "C6FBC74FDA42BFD4E322BD6205A6B3F8")
     
 public GregorianCalendar(int year, int month, int day) {
@@ -117,6 +117,8 @@ public GregorianCalendar(int year, int month, int day) {
      * @param minute
      *            the minute.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.342 -0500", hash_original_method = "D6C72587979F1136CC7CF710B2F32D12", hash_generated_method = "200C889D405CFA31C11B19F22D850B0F")
     
 public GregorianCalendar(int year, int month, int day, int hour, int minute) {
@@ -141,6 +143,8 @@ public GregorianCalendar(int year, int month, int day, int hour, int minute) {
      * @param second
      *            the second.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.345 -0500", hash_original_method = "BC793B84C6DC2AD69827C6FC0D0FCEDD", hash_generated_method = "D808C8A13F245E0033CFCF0DD01629DC")
     
 public GregorianCalendar(int year, int month, int day, int hour,
@@ -149,8 +153,8 @@ public GregorianCalendar(int year, int month, int day, int hour,
         set(year, month, day, hour, minute, second);
     }
 
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.348 -0500", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "63C34121AB8507D7813FBAF0F269A9D2")
     
 GregorianCalendar(long milliseconds) {
@@ -165,6 +169,8 @@ GregorianCalendar(long milliseconds) {
      * @param locale
      *            the {@code Locale}.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.351 -0500", hash_original_method = "56E3B8EB09DD30B0731434891C29D1A4", hash_generated_method = "B220926F77A1F0594A80803E8231CBF7")
     
 public GregorianCalendar(Locale locale) {
@@ -178,8 +184,8 @@ public GregorianCalendar(Locale locale) {
      * @param timezone
      *            the {@code TimeZone}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.354 -0500", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "989AD10C10424F4CEEDD7483BF5F80CF")
     
 public GregorianCalendar(TimeZone timezone) {
@@ -195,8 +201,8 @@ public GregorianCalendar(TimeZone timezone) {
      * @param locale
      *            the {@code Locale}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.357 -0500", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "35023E300DC55B5BD1545BFDF63CDBB8")
     
 public GregorianCalendar(TimeZone timezone, Locale locale) {
@@ -204,8 +210,8 @@ public GregorianCalendar(TimeZone timezone, Locale locale) {
         setTimeInMillis(System.currentTimeMillis());
     }
 
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.359 -0500", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "0CE38BA4675BDF22B153CA671467EBE6")
     
 GregorianCalendar(boolean ignored) {

@@ -193,6 +193,8 @@ public void release() {
          *
          * {@hide}
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.669 -0500", hash_original_method = "4CBF875B7FFD1CFD45FAA62AD6F1991F", hash_generated_method = "F0AC080B112EF81290E9E9D504FF0117")
         
 public void release(int flags) {

@@ -47,20 +47,24 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
 
     private int[] mImposedTabWidths;
 
-    @DSComment("Tab Widget")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.799 -0500", hash_original_method = "BAD8053A139C3B2472C278F997D22869", hash_generated_method = "F03AF98FF889585319AC016EC76F6657")
     
 public TabWidget(Context context) {
         this(context, null);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.802 -0500", hash_original_method = "09ECDBF0B3A18A9B29EEE79A768970FF", hash_generated_method = "171AD1885EE8BD11A2273EA7E3E4CAA4")
     
 public TabWidget(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.tabWidgetStyle);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.804 -0500", hash_original_method = "5CD4B242048A54DEBDC5CA30A897F614", hash_generated_method = "0591D1822D0377E67C3230F5E2B19F49")
     
 public TabWidget(Context context, AttributeSet attrs, int defStyle) {

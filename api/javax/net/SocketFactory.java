@@ -18,6 +18,7 @@ public abstract class SocketFactory {
      *
      * @return the system default socket factory.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.805 -0500", hash_original_method = "94A92FA9F3862BBC2F949BB5EF556892", hash_generated_method = "77B5BFA33B79EE4E2EC4F32DFDC5EB44")
     
@@ -34,6 +35,8 @@ public static synchronized SocketFactory getDefault() {
     /**
      * Creates a new {@code SocketFactory} instance.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.808 -0500", hash_original_method = "558E5CF77A92B4D322EAE73AA7FC9ED5", hash_generated_method = "FF97926B4FA8C53D65322F48A6AC6EB4")
     
 protected SocketFactory() {
@@ -48,6 +51,8 @@ protected SocketFactory() {
      * @throws IOException
      *             if an error occurs while creating a new socket.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.810 -0500", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "3223CC07973034D16BC112F67CE7D73F")
     

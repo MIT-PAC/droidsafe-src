@@ -434,6 +434,7 @@ public void notifySuggestionPicked(SuggestionSpan span, String originalString, i
      * in fullscreen mode.  Return true if it is fullscreen, entirely covering
      * your UI, else returns false.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.668 -0500", hash_original_method = "FCDCA2DC24AB76EAA903F8369A9A45F8", hash_generated_method = "140974EC04E609A75C5B666C07BE566A")
     
 public boolean isFullscreenMode() {
@@ -608,7 +609,8 @@ public void updateExtractedText(View view, int token, ExtractedText text) {
      * @param flags Provides additional operating flags.  Currently may be
      * 0 or have the {@link #SHOW_IMPLICIT} bit set.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.697 -0500", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "8B69D752E6300569DF8BE9839965005B")
     

@@ -65,8 +65,8 @@ public class ZipEntry implements ZipConstants, Cloneable {
      * @throws IllegalArgumentException
      *             if the name length is outside the range (> 0xFFFF).
      */
-    @DSComment("zip/io")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.310 -0500", hash_original_method = "60F10CCF439EC77C0A98401AA44AF184", hash_generated_method = "F5AE49741A518153E5A7FD0732EEE752")
     
 public ZipEntry(String name) {
@@ -86,6 +86,8 @@ public ZipEntry(String name) {
      * @param ze
      *            the {@code ZipEntry} from which to obtain values.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.357 -0500", hash_original_method = "61E22A8AE090FB92E1157A3CABA3C550", hash_generated_method = "3EBE4419052845F92E599C1C14FCA073")
     
 public ZipEntry(ZipEntry ze) {
@@ -109,8 +111,8 @@ public ZipEntry(ZipEntry ze) {
      *
      * On exit, "in" will be positioned at the start of the next entry.
      */
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.367 -0500", hash_original_method = "30F30B41DA6F50936D6BF4103A049FEE", hash_generated_method = "8D65F2E329523CA8B82B4DE7CB4195AD")
     
 ZipEntry(byte[] hdrBuf, InputStream in) throws IOException {
@@ -229,6 +231,7 @@ public int getMethod() {
      *
      * @return the entry name.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.325 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     

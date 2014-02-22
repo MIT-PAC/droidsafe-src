@@ -13,22 +13,24 @@ import android.text.method.MovementMethod;
 import android.util.AttributeSet;
 
 public class EditText extends TextView {
-    @DSComment("GUI/EditText, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.035 -0500", hash_original_method = "3D8BBCF9E8BFADB5EA8354D28833D1D0", hash_generated_method = "C75AE58EE7E177481EFAC327F009D2AF")
     
 public EditText(Context context) {
         this(context, null);
     }
 
-    @DSComment("GUI/EditText, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.038 -0500", hash_original_method = "13651F89327987238C61359B94395EF4", hash_generated_method = "839BB48F992F6EDC4F6529EB4CFBC279")
     
 public EditText(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.editTextStyle);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.040 -0500", hash_original_method = "B310470CAC184D932B7E9107B288DF59", hash_generated_method = "96F551ACA7625DCE5E3C0BAEC552DCDA")
     
 public EditText(Context context, AttributeSet attrs, int defStyle) {

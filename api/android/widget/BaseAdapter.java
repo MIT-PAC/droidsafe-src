@@ -14,8 +14,8 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
 
-	@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public BaseAdapter() {
 		//Not in the initial implementation, generated for specdump
 	}

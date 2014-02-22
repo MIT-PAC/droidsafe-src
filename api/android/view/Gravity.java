@@ -21,6 +21,7 @@ public class Gravity {
      * @param outRect Receives the computed frame of the object in its
      *                container.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.329 -0500", hash_original_method = "A674BAD38D7705D0D440DD3B391B22D6", hash_generated_method = "57E295F129CEDA9FA962B11B19569ABC")
     
 public static void apply(int gravity, int w, int h, Rect container, Rect outRect) {
@@ -43,6 +44,7 @@ public static void apply(int gravity, int w, int h, Rect container, Rect outRect
      *
      * @hide
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.332 -0500", hash_original_method = "48714A437D8A9113BC5943C1BF674836", hash_generated_method = "2A6EC70C28CF56F4B80C25920A682A8B")
     
 public static void apply(int gravity, int w, int h, Rect container,
@@ -72,6 +74,7 @@ public static void apply(int gravity, int w, int h, Rect container,
      * @param outRect Receives the computed frame of the object in its
      *                container.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.337 -0500", hash_original_method = "90A08A9DD00D03BD7934A3A8059C60AE", hash_generated_method = "AD0067790C40DF14C2A78239349B23A0")
     
 public static void apply(int gravity, int w, int h, Rect container,
@@ -175,6 +178,7 @@ public static void apply(int gravity, int w, int h, Rect container,
      * @param inoutObj Supplies the current object position; returns with it
      * modified if needed to fit in the display.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.342 -0500", hash_original_method = "4DADE2ED4614B557691AD1421788BDE3", hash_generated_method = "2C545D1FB947278F2E1C4B6DDA29EF0B")
     
 public static void applyDisplay(int gravity, Rect display, Rect inoutObj) {
@@ -250,6 +254,7 @@ public static boolean isHorizontal(int gravity) {
      * @param layoutDirection The layout direction.
      * @return gravity converted to absolute (horizontal) values.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.357 -0500", hash_original_method = "37EF9EE7320B485FC2AA136E992B8620", hash_generated_method = "436CE65F63BDA46BD9A23D7B3143408A")
     

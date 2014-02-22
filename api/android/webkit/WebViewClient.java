@@ -57,7 +57,7 @@ public class WebViewClient {
 
     public static final int ERROR_TOO_MANY_REQUESTS = -15;
     
-    @DSComment("not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.612 -0400", hash_original_method = "B78AAF28C2768A73FBC0F670C8F6188A", hash_generated_method = "B78AAF28C2768A73FBC0F670C8F6188A")
     public WebViewClient ()

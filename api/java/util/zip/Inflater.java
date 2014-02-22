@@ -239,6 +239,7 @@ public synchronized int getTotalOut() {
      *             if the underlying stream is corrupted or was not compressed
      *             using a {@code Deflater}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.354 -0500", hash_original_method = "7C5FBD7958B67E2748697C6AE75EF54A", hash_generated_method = "B75641034F3607F953153800C3BBCF63")
     
 public int inflate(byte[] buf) throws DataFormatException {
@@ -254,6 +255,7 @@ public int inflate(byte[] buf) throws DataFormatException {
      *             using a {@code Deflater}.
      * @return the number of bytes inflated.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.357 -0500", hash_original_method = "A9BECE182D792DD8518CBB91F9F00FF9", hash_generated_method = "F8D3D9A7BB2AD5CD0AD38F517D82B6DE")
     
 public synchronized int inflate(byte[] buf, int offset, int byteCount) throws DataFormatException {
@@ -373,6 +375,7 @@ public synchronized void setDictionary(byte[] dictionary, int offset, int byteCo
      * Sets the current input to to be decompressed. This method should only be
      * called if {@link #needsInput} returns {@code true}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.384 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "2F3B40F86F19A07DE7F3CED216B3F40D")
     
@@ -384,6 +387,7 @@ public synchronized void setInput(byte[] buf) {
      * Sets the current input to to be decompressed. This method should only be
      * called if {@link #needsInput} returns {@code true}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.387 -0500", hash_original_method = "D18140A9F42CF395349CBB05A8109835", hash_generated_method = "6A01D937CA709A5F6CB7B04E9366B285")
     
 public synchronized void setInput(byte[] buf, int offset, int byteCount) {

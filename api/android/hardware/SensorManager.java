@@ -1846,6 +1846,8 @@ public List<Sensor> getSensorList(int type) {
      * @param sensors
      *        a bit masks of the sensors to unregister from
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.004 -0500", hash_original_method = "08C00AEC5C2F4A8557AFE56DD5038FAA", hash_generated_method = "F6900602A78D362DC13AF520AEF4FB59")
     
 @Deprecated
@@ -1921,6 +1923,8 @@ public List<Sensor> getSensorList(int type) {
      * @param listener
      *        a SensorListener object
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.010 -0500", hash_original_method = "F024191DD75DA5578F802D33C834CE8F", hash_generated_method = "C7791D999DC6F94D97BA856FF8908E2A")
     
 @Deprecated
@@ -2117,8 +2121,6 @@ public boolean registerListener(SensorEventListener listener, Sensor sensor, int
             listener.onSensorChanged(new SensorEvent());
             listener.onAccuracyChanged(sensor, DSUtils.FAKE_INT);
         }
-        
-
 
         return result;
     }

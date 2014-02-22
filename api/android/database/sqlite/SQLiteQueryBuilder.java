@@ -137,8 +137,8 @@ public static void appendColumns(StringBuilder s, String[] columns) {
 
     private boolean mStrict;
 
-    @DSComment("Build SQL queries")
-    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.110 -0500", hash_original_method = "841FC2D35CC9552E307358F36A673D72", hash_generated_method = "2AEC253E7142AD2F66BF83F76E98F9AA")
     
 public SQLiteQueryBuilder() {

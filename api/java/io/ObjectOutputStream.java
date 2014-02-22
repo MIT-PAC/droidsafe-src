@@ -79,6 +79,8 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      * @throws IOException
      *             if an error occurs when creating this stream.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.985 -0500", hash_original_method = "EA89A37EA944EE797F4A4E71C06BB807", hash_generated_method = "20201D6142A4F45AD52A1B42A23D1633")
     
 protected ObjectOutputStream() throws IOException {
@@ -100,7 +102,7 @@ protected ObjectOutputStream() throws IOException {
      *             if an error occurs while writing the object stream
      *             header
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.989 -0500", hash_original_method = "C3742BF53888E5C7E36BAC1682B0BA91", hash_generated_method = "951FD3E615E51932C8B5A8C595B0B848")
     

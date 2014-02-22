@@ -47,6 +47,8 @@ public static InetSocketAddress createUnresolved(String host, int port) {
     /**
      * @hide internal use only
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.627 -0500", hash_original_method = "E61EEABC5DF9527410338B11302226FE", hash_generated_method = "4D6101AB37389FFA45490C9C535069AE")
     
 public InetSocketAddress() {
@@ -64,6 +66,8 @@ public InetSocketAddress() {
      * @param port
      *            the specified port number to which this socket is bound.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.629 -0500", hash_original_method = "95F398A6CE4FD1305EED1666777F8263", hash_generated_method = "CD33CA8FB1F3123A4A03C02AA3494ECC")
     
 public InetSocketAddress(int port) {
@@ -81,7 +85,7 @@ public InetSocketAddress(int port) {
      * @param address
      *            the specified address to which this socket is bound.
      */
-    @DSComment("no suspicious activity, just sets class variable")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.632 -0500", hash_original_method = "9F6BF484BF454F89FD6A310ADFCD9122", hash_generated_method = "A3FF0FE93DD89D7DDA0D00CCF9EE59E9")
     
@@ -105,7 +109,7 @@ public InetSocketAddress(InetAddress address, int port) {
      * @param host
      *            the specified hostname to which this socket is bound.
      */
-    @DSComment("no suspicious activity, just sets class variable")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.635 -0500", hash_original_method = "6C9F5B77CD6EF4C5F038F88B12F1FECD", hash_generated_method = "71E9E971E7D0422D05092181F52B89E1")
     
@@ -117,8 +121,8 @@ public InetSocketAddress(String host, int port) {
      * Internal constructor for InetSocketAddress(String, int) and
      * createUnresolved(String, int);
      */
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.638 -0500", hash_original_method = "10794513C1E3AAEE9C124882A7C67C11", hash_generated_method = "10794513C1E3AAEE9C124882A7C67C11")
     
 InetSocketAddress(String hostname, int port, boolean needResolved) {
@@ -144,6 +148,7 @@ InetSocketAddress(String hostname, int port, boolean needResolved) {
      *
      * @return the socket endpoint port number.
      */
+    @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.643 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "E126B6DCEFD20BABFE67A5DF1C3260B4")
     
@@ -167,6 +172,7 @@ public final InetAddress getAddress() {
      * Returns the hostname, doing a reverse lookup on the {@code InetAddress} if no
      * hostname string was provided at construction time.
      */
+    @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.648 -0500", hash_original_method = "6B2BE268DC286B10AABA01E5C61B1025", hash_generated_method = "47DBD0EB47A52E31FF9344CBBA2DA06B")
     

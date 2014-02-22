@@ -1623,6 +1623,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     public final Bundle readBundle(ClassLoader loader){
 		return mValueBundle;
 		// Original method

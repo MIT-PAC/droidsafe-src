@@ -69,8 +69,8 @@ public class ListFragment extends Fragment {
 
     boolean mListShown;
 
-    @DSComment("GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.072 -0500", hash_original_method = "EF57861318B397409B17ABF77AE47B37", hash_generated_method = "B81266A0FA43BBE0A70682BF3A3618B6")
     
 public ListFragment() {

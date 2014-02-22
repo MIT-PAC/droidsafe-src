@@ -33,7 +33,7 @@ public class BufferedInputStream extends FilterInputStream {
      *
      * @param in the {@code InputStream} the buffer reads from.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.150 -0500", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "372D73774F2BD015B118B47B81AE2714")
     
@@ -53,7 +53,7 @@ public BufferedInputStream(InputStream in) {
      * @param size the size of buffer in bytes.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.153 -0500", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "E76DA12E1EAECD7C410B08708D171821")
     
@@ -200,6 +200,8 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      * @throws IOException
      *             if this stream is closed or another IOException occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.173 -0500", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "6A4474C98316806C704D1FF867C7D064")
     
 @Override

@@ -155,6 +155,8 @@ public static void sleep(long time) throws InterruptedException {
         Thread.sleep(time, 0);
     }
     
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static void sleep(long millis, int nanos) throws InterruptedException {
         if (DroidSafeAndroidRuntime.control) {
             InterruptedException ex = new InterruptedException();
@@ -264,7 +266,7 @@ public static boolean holdsLock(Object object) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
-    @DSComment("No action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.540 -0500", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "F8D663241D3BE03836B5B656811F626F")
     
@@ -284,8 +286,8 @@ public Thread() {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
-    @DSComment("callback needs to be called")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.543 -0500", hash_original_method = "FFE43BBD5535897A2D4ADC63E06A2D0F", hash_generated_method = "F90C5CD5D3864819E1DE105AE256BFEE")
     
 public Thread(Runnable runnable) {
@@ -306,8 +308,8 @@ public Thread(Runnable runnable) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
-    @DSComment("callback needs to be called")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.545 -0500", hash_original_method = "BDCA95CAB999722EC25DF6B8E927C95F", hash_generated_method = "C26ED3CEB33006056E94A062350A3BCD")
     
 public Thread(Runnable runnable, String threadName) {
@@ -330,7 +332,7 @@ public Thread(Runnable runnable, String threadName) {
      * @see java.lang.Runnable
      *
      */
-    @DSComment("No action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.548 -0500", hash_original_method = "ACB5E26D2EF52FBACC4A4E78EC843CDD", hash_generated_method = "58CB3772237497BCBEE9592D7AAEB7D0")
     
@@ -358,6 +360,8 @@ public Thread(String threadName) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.551 -0500", hash_original_method = "CFE0254168731091471FC08E1B68E532", hash_generated_method = "17A7608BEA96360E13AAC96221758215")
     
 public Thread(ThreadGroup group, Runnable runnable) {
@@ -380,8 +384,8 @@ public Thread(ThreadGroup group, Runnable runnable) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
-    @DSComment("callback needs to be called")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.555 -0500", hash_original_method = "492306C5FED9EC58991A5E8736E27F15", hash_generated_method = "35FB1A83520105B4AC877538231D0DE7")
     
 public Thread(ThreadGroup group, Runnable runnable, String threadName) {
@@ -405,6 +409,8 @@ public Thread(ThreadGroup group, Runnable runnable, String threadName) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.557 -0500", hash_original_method = "D83475E079BCC4E2E3558A574C3A704E", hash_generated_method = "5803C3D7E1AFF31B1E83E8A50C84CA6B")
     
 public Thread(ThreadGroup group, String threadName) {
@@ -436,6 +442,8 @@ public Thread(ThreadGroup group, String threadName) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.560 -0500", hash_original_method = "38DDF80F64A6875AC3B97FC941143FB8", hash_generated_method = "45591954BA5D1C91A2F9803A060A0855")
     
 public Thread(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
@@ -452,8 +460,8 @@ public Thread(ThreadGroup group, Runnable runnable, String threadName, long stac
      * Don't call Thread.currentThread(), since there may not be such
      * a thing (e.g. for Main).
      */
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.563 -0500", hash_original_method = "DA36D17A4C27DE9C11E6923E1A7A26CA", hash_generated_method = "F43CA0419F7CB7FF7B8EFC3381E7F4E3")
     
 Thread(ThreadGroup group, String name, int priority, boolean daemon) {
@@ -628,6 +636,8 @@ public final String getName() {
      * @return the Thread's priority
      * @see Thread#setPriority
      */
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.597 -0500", hash_original_method = "0FA6C5514FC3354D3A5FFA078FF2070D", hash_generated_method = "B4B45689BCD450DB4D8629E0D5D6C977")
     
@@ -862,6 +872,7 @@ public final void join(long millis) throws InterruptedException {
      * @see Object#notifyAll
      * @see java.lang.ThreadDeath
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.628 -0500", hash_original_method = "7E549C860CA937D59E3BB1D99D89340F", hash_generated_method = "D009B3011A949A17C6885D2CE2FFFD80")
     
 public final void join(long millis, int nanos) throws InterruptedException {

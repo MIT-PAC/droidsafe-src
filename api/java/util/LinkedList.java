@@ -16,8 +16,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
     private static final long serialVersionUID = 876323262645176354L;
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.114 -0400", hash_original_method = "4832DB7F32D79BC3832C9989ACB7B916", hash_generated_method = "8DFD03108CDD2A33CB7D765F5A450A4F")
     public  LinkedList() {
     }
@@ -31,8 +31,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
      * @param collection
      *            the collection of elements to add.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.370 -0500", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "99A0B50156378254E3DBEB1D97EE7EF1")
     
 public LinkedList(Collection<? extends E> collection) {

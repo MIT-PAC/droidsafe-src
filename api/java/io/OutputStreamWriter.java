@@ -31,8 +31,8 @@ public class OutputStreamWriter extends Writer {
      * @param out
      *            the non-null target stream to write converted bytes to.
      */
-    @DSComment("OutputStreamWrite class")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.574 -0500", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "842F6B6710D3A66CF876DB8E7DB54F66")
     
 public OutputStreamWriter(OutputStream out) {
@@ -82,8 +82,8 @@ public OutputStreamWriter(OutputStream out, final String enc)
      * @param cs
      *            the {@code Charset} that specifies the character encoding.
      */
-    @DSComment("OutputStreamWrite class")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.580 -0500", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "C388739C3AC44331B56B35FBA1B88BA7")
     
 public OutputStreamWriter(OutputStream out, Charset cs) {
@@ -104,8 +104,8 @@ public OutputStreamWriter(OutputStream out, Charset cs) {
      * @param enc
      *            the character encoder used for character conversion.
      */
-    @DSComment("OutputStreamWrite class")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.583 -0500", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "8CD38A4A4B1FF7E5F7207AD626AB27C7")
     
 public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {

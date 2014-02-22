@@ -17,7 +17,7 @@ public class StringWriter extends Writer {
      * StringBuffer} is also the {@code lock} used to synchronize access to this
      * writer.
      */
-    @DSComment("not sensitive, memory stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.091 -0500", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "7E2C64E64DC268AFCDD2C66951952544")
     
@@ -35,7 +35,7 @@ public StringWriter() {
      * @param initialSize
      *            the intial size of the target string buffer.
      */
-    @DSComment("not sensitive, memory stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.094 -0500", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "C2FFDDB811278DE495C1C31F5BEAB90C")
     
@@ -135,6 +135,8 @@ public StringBuffer getBuffer() {
      * @param oneChar
      *            the character to write to this writer's {@code StringBuffer}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.109 -0500", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "C5C3795F9028875601BFA514394360DA")
     
 @Override
@@ -149,6 +151,8 @@ public StringBuffer getBuffer() {
      * @param str
      *            the non-null string containing the characters to write.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.111 -0500", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B9E6C838B077F39FFE8F290B8FE54952")
     
 @Override
@@ -170,6 +174,8 @@ public StringBuffer getBuffer() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code str}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.114 -0500", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "A8BBB0A5273822517081196A431752C3")
     
 @Override

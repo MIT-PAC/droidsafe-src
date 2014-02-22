@@ -15,7 +15,7 @@ public abstract class Reader implements Readable, Closeable {
      * Constructs a new {@code Reader} with {@code this} as the object used to
      * synchronize critical sections.
      */
-    @DSComment("not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.829 -0500", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "71C8FCF9A91B7A5A1526A6B249D29EC8")
     
@@ -32,6 +32,8 @@ protected Reader() {
      * @throws NullPointerException
      *             if {@code lock} is {@code null}.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.832 -0500", hash_original_method = "841CA56D08654DE62644A6941CD75AE9", hash_generated_method = "6F72851AB99894DB9A81607419A3DB91")
     
 protected Reader(Object lock) {

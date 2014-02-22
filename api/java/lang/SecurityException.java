@@ -14,8 +14,8 @@ public class SecurityException extends RuntimeException {
      * Constructs a new {@code SecurityException} that includes the current
      * stack trace.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.396 -0500", hash_original_method = "0D8A79337436926212C4E8DACFE6A955", hash_generated_method = "C7F889834C9E7C4C4B72A99F9A91AC6B")
     
 public SecurityException() {
@@ -28,8 +28,8 @@ public SecurityException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.399 -0500", hash_original_method = "35201AC9E2F0540A3FCA08DB4F71F2A3", hash_generated_method = "F9010C592D66BE68816BE6B0C626B107")
     
 public SecurityException(String detailMessage) {
@@ -46,8 +46,8 @@ public SecurityException(String detailMessage) {
      *            the optional cause of this exception, may be {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.402 -0500", hash_original_method = "6D3B8DD6DA516F6B2B4EBB83E8379AAA", hash_generated_method = "6D5E26C532D69214D3DD0DA43C477B77")
     
 public SecurityException(String message, Throwable cause) {
@@ -62,8 +62,8 @@ public SecurityException(String message, Throwable cause) {
      *            the optional cause of this exception, may be {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.405 -0500", hash_original_method = "B0CE861A38AC7D57FFFB507001C97872", hash_generated_method = "EE785A04AC176438B220EB6E7057547B")
     
 public SecurityException(Throwable cause) {

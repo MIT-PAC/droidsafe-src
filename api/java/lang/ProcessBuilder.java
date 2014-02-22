@@ -26,6 +26,8 @@ public final class ProcessBuilder
         command(command);
     }
     
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public List<String> command() { 
         List<String> ret = new LinkedList<String>();
@@ -33,6 +35,8 @@ public final class ProcessBuilder
         return ret;
     }
     
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ProcessBuilder command(String[] command) { 
         this.commands = "";
 
@@ -42,6 +46,8 @@ public final class ProcessBuilder
         return this;
     }
     
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ProcessBuilder command(List<String> command) { 
         this.commands = "";
 

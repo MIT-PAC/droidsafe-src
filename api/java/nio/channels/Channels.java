@@ -79,6 +79,8 @@ public static OutputStream newOutputStream(WritableByteChannel channel) {
      *            the stream to be wrapped by a byte channel.
      * @return a byte channel that reads bytes from the input stream.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.589 -0500", hash_original_method = "10F29762DE0104F8A39064501FA4AE67", hash_generated_method = "AA1E1902CBC1C56C3259D6D39450828D")
     
 public static ReadableByteChannel newChannel(InputStream inputStream) {
@@ -99,6 +101,8 @@ public static ReadableByteChannel newChannel(InputStream inputStream) {
      *            the stream to be wrapped by a byte channel.
      * @return a byte channel that writes bytes to the output stream.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.593 -0500", hash_original_method = "0A26450DD89B99CDCEEC5300E1958D40", hash_generated_method = "4F67C407FEF8F96ABDC5077C62504DCB")
     
 public static WritableByteChannel newChannel(OutputStream outputStream) {

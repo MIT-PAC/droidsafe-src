@@ -13,8 +13,8 @@ public class WeakReference<T> extends Reference<T> {
      *
      * @param r the referent to track
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.094 -0500", hash_original_method = "8EA2EBB87AD36DFCCFE2AFAE0E37BC47", hash_generated_method = "017308E48D7250A3BF3BE12CDE53806C")
     
 public WeakReference(T r) {
@@ -30,8 +30,8 @@ public WeakReference(T r) {
      *          results in a weak reference that is not associated with any
      *          queue.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.097 -0500", hash_original_method = "5A9A40099BD4C3938AFF91F9B1097812", hash_generated_method = "9BD1637300A18F5DCD6CAE440482C7C2")
     
 public WeakReference(T r, ReferenceQueue<? super T> q) {

@@ -23,6 +23,8 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.628 -0500", hash_original_method = "1C22500DDD1A1C4CBFF296D433984138", hash_generated_method = "BD5E389F8FE3DF580E59B07FBB199E75")
     
 public static SocketChannel open() throws IOException {
@@ -52,6 +54,8 @@ public static SocketChannel open() throws IOException {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.630 -0500", hash_original_method = "AC2B95C5BDC217F19851C0632D37B5EC", hash_generated_method = "034337553752947731A0C6353DC0D7E3")
     
 public static SocketChannel open(SocketAddress address) throws IOException {
@@ -313,6 +317,8 @@ public abstract long read(ByteBuffer[] targets, int offset, int length) throws I
      * @throws NotYetConnectedException
      *             if this channel is not yet connected.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.654 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
     
@@ -422,6 +428,8 @@ public abstract long write(ByteBuffer[] sources, int offset, int length) throws 
      *             if this channel is not yet connected.
      * @see java.nio.channels.GatheringByteChannel#write(java.nio.ByteBuffer[])
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.662 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
     

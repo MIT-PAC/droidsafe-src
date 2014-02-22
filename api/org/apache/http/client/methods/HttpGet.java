@@ -16,6 +16,8 @@ public class HttpGet extends HttpRequestBase {
     @DSVAModeled
     private URI theURI;
     
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.040 -0500", hash_original_method = "5037302FD966B72BDD781660024EF657", hash_generated_method = "0C8D3574F60C84033C0278476E55ECDE")
     
 public HttpGet() {

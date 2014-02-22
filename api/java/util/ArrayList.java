@@ -34,8 +34,8 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
 
     transient Object[] array;
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.819 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "E5A14EE03FC08BF10B9F1780BA42710D")
     public  ArrayList(int capacity) {
         if(capacity < 0)        
@@ -46,8 +46,8 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         } //End block
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "A3AEAA024802F16BF2F719D937C47F2E")
     public  ArrayList() {
         array = collectionData;
@@ -55,8 +55,8 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         //array = EmptyArray.OBJECT;
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "D918CF514940FBDA5D9A59D94625E26F")
     public  ArrayList(Collection<? extends E> collection) {
         addTaint(collection.getTaint());

@@ -137,13 +137,13 @@ public static int getEffectivePort(String scheme, int specifiedPort) {
 
     private transient int hash = -1;
 
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.813 -0500", hash_original_method = "73A80A2F92FBB785BC19E418E6230F90", hash_generated_method = "885DD97D94BD9686697CE4ED277E398A")
     
 private URI() {}
     
-    @DSComment("no suspicious activity, just calls class function")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.827 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "14D9F285EF0C4143A3F21833924D8EC8")
     public  URI(String spec) throws URISyntaxException {
@@ -154,6 +154,8 @@ private URI() {}
         //parseURI(spec, false);
     }
     
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.827 -0400", hash_original_method = "F4D6A57E88E582E23AEC47906A7180EC", hash_generated_method = "7C807C9B2DDA0B26042D289002997F2A")
     public  URI(String scheme, String schemeSpecificPart, String fragment) throws URISyntaxException {
         addTaint(fragment.getTaint());
@@ -176,6 +178,8 @@ private URI() {}
         //parseURI(uri.toString(), false);
     }
     
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.828 -0400", hash_original_method = "449C250DB61724F5848BC66D065240CA", hash_generated_method = "DF265733E36A95658C1C0396ED83E00D")
     public  URI(String scheme, String userInfo, String host, int port, String path, String query,
             String fragment) throws URISyntaxException {
@@ -196,12 +200,16 @@ private URI() {}
      *
      * @param scheme the URI scheme, or null for a non-absolute URI.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.825 -0500", hash_original_method = "3ADDFDCD3FB84301D1E5780B2C0B6096", hash_generated_method = "AABE4865C1CC5E636F585E88017D1892")
     
 public URI(String scheme, String host, String path, String fragment) throws URISyntaxException {
         this(scheme, null, host, -1, path, null, fragment);
     }
     
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.830 -0400", hash_original_method = "71F6E3E8DB1B58D64CBF907E96A43001", hash_generated_method = "2ECCFC3325121242CFD04A6F46E193C8")
     public  URI(String scheme, String authority, String path, String query,
             String fragment) throws URISyntaxException {
@@ -942,6 +950,7 @@ private String normalize(String path, boolean discardRelativePrefix) {
      * @return an URI object which represents this instance with a normalized
      *         path.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION )
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.918 -0500", hash_original_method = "516FFF274D5A3C3904BD2A35075D82E5", hash_generated_method = "C003D4D15FB3B793E0C405F27DCF0A14")
     
 public URI normalize() {

@@ -355,6 +355,7 @@ public int describeContents() {
      * @see #STATE_EMERGENCY_ONLY
      * @see #STATE_POWER_OFF
      */
+    @DSSpec(DSCat.PHONE_STATE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.206 -0500", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "4C50D1866B5E804CF0B05EFBD6788B97")
     
@@ -434,6 +435,7 @@ public int getCdmaEriIconMode() {
      *
      * @return long name of operator, null if unregistered or unknown
      */
+    @DSSpec(DSCat.PHONE_STATE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.227 -0500", hash_original_method = "550CF77EB1CEA79355B2985E6B5A4349", hash_generated_method = "DCCAC5F4BADF15C4277416570E2E2717")
     

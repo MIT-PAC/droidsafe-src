@@ -488,6 +488,8 @@ private MulticastLock(String tag) {
          * Also note that applications cannot leave Multicast locked on.
          * When an app exits or crashes, any Multicast locks will be released.
          */
+        @DSComment("Wifi subsystem")
+        @DSSpec(DSCat.WIFI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.471 -0500", hash_original_method = "130A969831975A68066B20EB1F9033A3", hash_generated_method = "953949F6966190661FDE39011980842E")
         
 public void acquire() {
@@ -581,6 +583,8 @@ public void setReferenceCounted(boolean refCounted) {
          *
          * @return true if this MulticastLock is held, false otherwise
          */
+        @DSComment("Wifi subsystem")
+        @DSSpec(DSCat.WIFI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.477 -0500", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "6E5AE3C21361B5E024A600F344792BD5")
         
 public boolean isHeld() {

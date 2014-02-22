@@ -80,8 +80,8 @@ public RemoteViews[] newArray(int size) {
      * @param packageName Name of the package that contains the layout resource
      * @param layoutId The id of the layout resource
      */
-    @DSComment("check setOnClickPendingIntent")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.997 -0500", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "CCC49EDBEBEE8FE5F22E011E1EB338ED")
     
 public RemoteViews(String packageName, int layoutId) {
@@ -98,6 +98,8 @@ public RemoteViews(String packageName, int layoutId) {
      * 
      * @param parcel
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.000 -0500", hash_original_method = "B81662C8B479B3D3C957D533866FE808", hash_generated_method = "0F60A5162E795F91957BC687802EF6F8")
     
 public RemoteViews(Parcel parcel) {

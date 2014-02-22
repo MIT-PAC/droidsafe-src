@@ -191,6 +191,8 @@ public static boolean getSyncAutomatically(Account account, String authority) {
      * @param authority the provider whose behavior is being controlled
      * @param sync true if the provider should be synced when tickles are received for it
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.240 -0500", hash_original_method = "C45393365DF55DBBF34D87F9DFB07A0E", hash_generated_method = "4064BAE8FA6519AFCF28B0D7EC6499F5")
     
@@ -227,6 +229,8 @@ public static void setSyncAutomatically(Account account, String authority, boole
      * @throws IllegalArgumentException if an illegal extra was set or if any of the parameters
      * are null.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.244 -0500", hash_original_method = "8992802F92BFCE1FEFF92FC805CEE29B", hash_generated_method = "915AB377DA9F65048783D3851F618E6B")
     
 public static void addPeriodicSync(Account account, String authority, Bundle extras,
@@ -323,6 +327,8 @@ public static int getIsSyncable(Account account, String authority) {
      * Set whether this account/provider is syncable.
      * @param syncable >0 denotes syncable, 0 means not syncable, <0 means unknown
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.253 -0500", hash_original_method = "0A00860601B883D5D57C7B4B58CC648B", hash_generated_method = "C164D7E46A59E1610414F7A95B602BAA")
     
@@ -1306,6 +1312,8 @@ public ContentProviderResult[] applyBatch(String authority,
      *               the field. Passing null will create an empty row.
      * @return the number of newly created rows.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.192 -0500", hash_original_method = "B00B6610FA17409048836C33B1F1B82B", hash_generated_method = "2AD28F6E6FE0929324667278137BC1B1")
     
 public final int bulkInsert(Uri url, ContentValues[] values)
@@ -1608,6 +1616,8 @@ public void notifyChange(Uri uri, ContentObserver observer) {
      * @param observer The observer that originated the change, may be <code>null</null>
      * @param syncToNetwork If true, attempt to sync the change to the network.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.222 -0500", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "D4B7A5BA283E58792D86DBEA8A8D8DD8")
     

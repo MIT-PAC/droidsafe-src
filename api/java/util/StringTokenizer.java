@@ -27,8 +27,8 @@ public class StringTokenizer implements Enumeration<Object> {
      * @param string
      *            the string to be tokenized.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.844 -0500", hash_original_method = "B454FB9D24CB40B920B0F26A1DEB0F99", hash_generated_method = "B9D0AB32248C17CD91D8043386355085")
     
 public StringTokenizer(String string) {
@@ -47,8 +47,8 @@ public StringTokenizer(String string) {
      * @param delimiters
      *            the delimiters to use.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.847 -0500", hash_original_method = "19F75AB88247B84D1EA58EB13E75D4B3", hash_generated_method = "04C80AC85BD9505571E3AE925FFB6AC8")
     
 public StringTokenizer(String string, String delimiters) {
@@ -69,8 +69,8 @@ public StringTokenizer(String string, String delimiters) {
      * @param returnDelimiters
      *            {@code true} to return each delimiter as a token.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.850 -0500", hash_original_method = "8522BA3F0D65BC6302678F3FDA0BEB48", hash_generated_method = "4961743F82F120E40236D723FA546A45")
     
 public StringTokenizer(String string, String delimiters,

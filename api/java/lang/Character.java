@@ -3021,8 +3021,8 @@ private UnicodeBlock(String blockName, int start, int end) {
      * @param value
      *            the primitive char value to store in the new instance.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.075 -0500", hash_original_method = "8DEFF913326DC7F74512EFD131579B65", hash_generated_method = "7C63A56BD2050D9DFD23DCA01F1FAB4D")
     
 public Character(char value) {

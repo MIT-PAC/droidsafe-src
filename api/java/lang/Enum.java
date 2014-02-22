@@ -82,8 +82,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
      *            the enum constant's ordinal, which corresponds to its position
      *            in the enum declaration, starting at zero.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.922 -0500", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "1887E501CA6B8019D2032FB3139B9377")
     
 protected Enum(String name, int ordinal) {

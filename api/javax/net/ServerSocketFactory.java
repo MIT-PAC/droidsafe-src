@@ -17,6 +17,7 @@ public abstract class ServerSocketFactory {
      *
      * @return the system default server socket factory.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.867 -0500", hash_original_method = "C92005BA8F3770F4486A33380A281994", hash_generated_method = "6378783AC72B921B197960106AE63FE3")
     

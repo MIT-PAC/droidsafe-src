@@ -1,0 +1,715 @@
+INFO d.d.s.Config [Config.java:169] APAC_HOME = /home/droidsafe/droidsafe.autoapi
+INFO d.d.s.SootConfig [SootConfig.java:24] Configuring Soot...
+INFO d.d.s.SootConfig [SootConfig.java:71] Setting Soot ClassPath: /home/droidsafe/droidsafe.autoapi/android-lib/android-impl-sdk15.jar
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:355] Using ModelGenerator2 mode
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:363] generateModel2 /home/droidsafe/android-impl/src/android/accounts/AbstractAccountAuthenticator.java => ./android/accounts/AbstractAccountAuthenticator.java 
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:381] First generation model;  It is safe to generate transforms for all methods
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:386] Pass 1: Performing type declaration resequencing against /home/droidsafe/android-impl/src/android/accounts/AbstractAccountAuthenticator.java
+INFO d.d.ExtractInterfaceTool [TypeDeclarationResequencer.java:37] Reordering type declarations
+INFO d.d.ExtractInterfaceTool [TypeDeclarationResequencer.java:57] Found a class
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:394] Pass 2: Performing class body resequencing against /home/droidsafe/android-impl/src/android/accounts/AbstractAccountAuthenticator.java
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:128] Resequencing class body context Transport 
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:129] ===================================
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:130] {publicvoidaddAccount(IAccountAuthenticatorResponseresponse,StringaccountType,StringauthTokenType,String[]features,Bundleoptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"addAccount: accountType "+accountType+", authTokenType "+authTokenType+", features "+(features==null?"[]":Arrays.toString(features)));}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.addAccount(newAccountAuthenticatorResponse(response),accountType,authTokenType,features,options);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"addAccount: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"addAccount",accountType,e);}}publicvoidconfirmCredentials(IAccountAuthenticatorResponseresponse,Accountaccount,Bundleoptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"confirmCredentials: "+account);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.confirmCredentials(newAccountAuthenticatorResponse(response),account,options);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"confirmCredentials: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"confirmCredentials",account.toString(),e);}}publicvoidgetAuthTokenLabel(IAccountAuthenticatorResponseresponse,StringauthTokenType)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"getAuthTokenLabel: authTokenType "+authTokenType);}checkBinderPermission();try{Bundleresult=newBundle();result.putString(AccountManager.KEY_AUTH_TOKEN_LABEL,AbstractAccountAuthenticator.this.getAuthTokenLabel(authTokenType));if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"getAuthTokenLabel: result "+AccountManager.sanitizeResult(result));}response.onResult(result);}catch(Exceptione){handleException(response,"getAuthTokenLabel",authTokenType,e);}}publicvoidgetAuthToken(IAccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,BundleloginOptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"getAuthToken: "+account+", authTokenType "+authTokenType);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.getAuthToken(newAccountAuthenticatorResponse(response),account,authTokenType,loginOptions);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"getAuthToken: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"getAuthToken",account.toString()+","+authTokenType,e);}}publicvoidupdateCredentials(IAccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,BundleloginOptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"updateCredentials: "+account+", authTokenType "+authTokenType);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.updateCredentials(newAccountAuthenticatorResponse(response),account,authTokenType,loginOptions);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"updateCredentials: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"updateCredentials",account.toString()+","+authTokenType,e);}}publicvoideditProperties(IAccountAuthenticatorResponseresponse,StringaccountType)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.editProperties(newAccountAuthenticatorResponse(response),accountType);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"editProperties",accountType,e);}}publicvoidhasFeatures(IAccountAuthenticatorResponseresponse,Accountaccount,String[]features)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.hasFeatures(newAccountAuthenticatorResponse(response),account,features);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"hasFeatures",account.toString(),e);}}publicvoidgetAccountRemovalAllowed(IAccountAuthenticatorResponseresponse,Accountaccount)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.getAccountRemovalAllowed(newAccountAuthenticatorResponse(response),account);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"getAccountRemovalAllowed",account.toString(),e);}}}
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:131] ===================================
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 0
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 1
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 2
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 3
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 4
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 5
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 6
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 7
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:128] Resequencing class body context AbstractAccountAuthenticator 
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:129] ===================================
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:130] {privatestaticfinalStringTAG="AccountAuthenticator";privatefinalContextmContext;publicAbstractAccountAuthenticator(Contextcontext){mContext=context;}privateclassTransportextendsIAccountAuthenticator.Stub{publicvoidaddAccount(IAccountAuthenticatorResponseresponse,StringaccountType,StringauthTokenType,String[]features,Bundleoptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"addAccount: accountType "+accountType+", authTokenType "+authTokenType+", features "+(features==null?"[]":Arrays.toString(features)));}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.addAccount(newAccountAuthenticatorResponse(response),accountType,authTokenType,features,options);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"addAccount: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"addAccount",accountType,e);}}publicvoidconfirmCredentials(IAccountAuthenticatorResponseresponse,Accountaccount,Bundleoptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"confirmCredentials: "+account);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.confirmCredentials(newAccountAuthenticatorResponse(response),account,options);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"confirmCredentials: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"confirmCredentials",account.toString(),e);}}publicvoidgetAuthTokenLabel(IAccountAuthenticatorResponseresponse,StringauthTokenType)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"getAuthTokenLabel: authTokenType "+authTokenType);}checkBinderPermission();try{Bundleresult=newBundle();result.putString(AccountManager.KEY_AUTH_TOKEN_LABEL,AbstractAccountAuthenticator.this.getAuthTokenLabel(authTokenType));if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"getAuthTokenLabel: result "+AccountManager.sanitizeResult(result));}response.onResult(result);}catch(Exceptione){handleException(response,"getAuthTokenLabel",authTokenType,e);}}publicvoidgetAuthToken(IAccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,BundleloginOptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"getAuthToken: "+account+", authTokenType "+authTokenType);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.getAuthToken(newAccountAuthenticatorResponse(response),account,authTokenType,loginOptions);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"getAuthToken: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"getAuthToken",account.toString()+","+authTokenType,e);}}publicvoidupdateCredentials(IAccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,BundleloginOptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"updateCredentials: "+account+", authTokenType "+authTokenType);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.updateCredentials(newAccountAuthenticatorResponse(response),account,authTokenType,loginOptions);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"updateCredentials: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"updateCredentials",account.toString()+","+authTokenType,e);}}publicvoideditProperties(IAccountAuthenticatorResponseresponse,StringaccountType)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.editProperties(newAccountAuthenticatorResponse(response),accountType);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"editProperties",accountType,e);}}publicvoidhasFeatures(IAccountAuthenticatorResponseresponse,Accountaccount,String[]features)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.hasFeatures(newAccountAuthenticatorResponse(response),account,features);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"hasFeatures",account.toString(),e);}}publicvoidgetAccountRemovalAllowed(IAccountAuthenticatorResponseresponse,Accountaccount)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.getAccountRemovalAllowed(newAccountAuthenticatorResponse(response),account);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"getAccountRemovalAllowed",account.toString(),e);}}}privatevoidhandleException(IAccountAuthenticatorResponseresponse,Stringmethod,Stringdata,Exceptione)throwsRemoteException{if(einstanceofNetworkErrorException){if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,method+"("+data+")",e);}response.onError(AccountManager.ERROR_CODE_NETWORK_ERROR,e.getMessage());}elseif(einstanceofUnsupportedOperationException){if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,method+"("+data+")",e);}response.onError(AccountManager.ERROR_CODE_UNSUPPORTED_OPERATION,method+" not supported");}elseif(einstanceofIllegalArgumentException){if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,method+"("+data+")",e);}response.onError(AccountManager.ERROR_CODE_BAD_ARGUMENTS,method+" not supported");}else{Log.w(TAG,method+"("+data+")",e);response.onError(AccountManager.ERROR_CODE_REMOTE_EXCEPTION,method+" failed");}}privatevoidcheckBinderPermission(){finalintuid=Binder.getCallingUid();finalStringperm=Manifest.permission.ACCOUNT_MANAGER;if(mContext.checkCallingOrSelfPermission(perm)!=PackageManager.PERMISSION_GRANTED){thrownewSecurityException("caller uid "+uid+" lacks "+perm);}}privateTransportmTransport=newTransport();publicfinalIBindergetIBinder(){returnmTransport.asBinder();}publicabstractBundleeditProperties(AccountAuthenticatorResponseresponse,StringaccountType);publicabstractBundleaddAccount(AccountAuthenticatorResponseresponse,StringaccountType,StringauthTokenType,String[]requiredFeatures,Bundleoptions)throwsNetworkErrorException;publicabstractBundleconfirmCredentials(AccountAuthenticatorResponseresponse,Accountaccount,Bundleoptions)throwsNetworkErrorException;publicabstractBundlegetAuthToken(AccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,Bundleoptions)throwsNetworkErrorException;publicabstractStringgetAuthTokenLabel(StringauthTokenType);publicabstractBundleupdateCredentials(AccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,Bundleoptions)throwsNetworkErrorException;publicabstractBundlehasFeatures(AccountAuthenticatorResponseresponse,Accountaccount,String[]features)throwsNetworkErrorException;publicBundlegetAccountRemovalAllowed(AccountAuthenticatorResponseresponse,Accountaccount)throwsNetworkErrorException{finalBundleresult=newBundle();result.putBoolean(AccountManager.KEY_BOOLEAN_RESULT,true);returnresult;}}
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:131] ===================================
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:61] Found static class body declaration
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:78] field privatefinalContextmContext; : 
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:92] Static class body declaration in slot 3 is not compatible with resequencing
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:93]  ==> classTransportextendsIAccountAuthenticator.Stub{publicvoidaddAccount(IAccountAuthenticatorResponseresponse,StringaccountType,StringauthTokenType,String[]features,Bundleoptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"addAccount: accountType "+accountType+", authTokenType "+authTokenType+", features "+(features==null?"[]":Arrays.toString(features)));}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.addAccount(newAccountAuthenticatorResponse(response),accountType,authTokenType,features,options);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"addAccount: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"addAccount",accountType,e);}}publicvoidconfirmCredentials(IAccountAuthenticatorResponseresponse,Accountaccount,Bundleoptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"confirmCredentials: "+account);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.confirmCredentials(newAccountAuthenticatorResponse(response),account,options);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"confirmCredentials: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"confirmCredentials",account.toString(),e);}}publicvoidgetAuthTokenLabel(IAccountAuthenticatorResponseresponse,StringauthTokenType)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"getAuthTokenLabel: authTokenType "+authTokenType);}checkBinderPermission();try{Bundleresult=newBundle();result.putString(AccountManager.KEY_AUTH_TOKEN_LABEL,AbstractAccountAuthenticator.this.getAuthTokenLabel(authTokenType));if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"getAuthTokenLabel: result "+AccountManager.sanitizeResult(result));}response.onResult(result);}catch(Exceptione){handleException(response,"getAuthTokenLabel",authTokenType,e);}}publicvoidgetAuthToken(IAccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,BundleloginOptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"getAuthToken: "+account+", authTokenType "+authTokenType);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.getAuthToken(newAccountAuthenticatorResponse(response),account,authTokenType,loginOptions);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"getAuthToken: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"getAuthToken",account.toString()+","+authTokenType,e);}}publicvoidupdateCredentials(IAccountAuthenticatorResponseresponse,Accountaccount,StringauthTokenType,BundleloginOptions)throwsRemoteException{if(Log.isLoggable(TAG,Log.VERBOSE)){Log.v(TAG,"updateCredentials: "+account+", authTokenType "+authTokenType);}checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.updateCredentials(newAccountAuthenticatorResponse(response),account,authTokenType,loginOptions);if(Log.isLoggable(TAG,Log.VERBOSE)){result.keySet();Log.v(TAG,"updateCredentials: result "+AccountManager.sanitizeResult(result));}if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"updateCredentials",account.toString()+","+authTokenType,e);}}publicvoideditProperties(IAccountAuthenticatorResponseresponse,StringaccountType)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.editProperties(newAccountAuthenticatorResponse(response),accountType);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"editProperties",accountType,e);}}publicvoidhasFeatures(IAccountAuthenticatorResponseresponse,Accountaccount,String[]features)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.hasFeatures(newAccountAuthenticatorResponse(response),account,features);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"hasFeatures",account.toString(),e);}}publicvoidgetAccountRemovalAllowed(IAccountAuthenticatorResponseresponse,Accountaccount)throwsRemoteException{checkBinderPermission();try{finalBundleresult=AbstractAccountAuthenticator.this.getAccountRemovalAllowed(newAccountAuthenticatorResponse(response),account);if(result!=null){response.onResult(result);}}catch(Exceptione){handleException(response,"getAccountRemovalAllowed",account.toString(),e);}}}
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:78] field privateTransportmTransport=newTransport(); : 
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:104] Moving static to slot 0
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:109] Moving field to slot 1
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:110] field privatefinalContextmContext; : 
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:109] Moving field to slot 2
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:110] field privateTransportmTransport=newTransport(); : 
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:115] Moving constructor to slot 4
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 5
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 6
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 7
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 8
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 9
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 10
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 11
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 12
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 13
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 14
+INFO d.d.ExtractInterfaceTool [ClassBodyDeclarationResequencer.java:120] Moving method to slot 15
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:402] Pass 3: Performing transforms against the original source (/home/droidsafe/android-impl/src/android/accounts/AbstractAccountAuthenticator.java)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(7a1aab32)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "private"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "static"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "final"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(7a1aab32) => child-MemberDeclarationContext(49c03048)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(7a1aab32)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:453] FieldBody <
+    private static final String TAG = "AccountAuthenticator";>
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:454] Model Hash <BF3374BAD0101417026E99889985E21E>
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(7dcf7147)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "private"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "final"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(7dcf7147) => child-MemberDeclarationContext(3e162cd8)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(7dcf7147)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:453] FieldBody <
+
+    private  Context mContext;>
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:454] Model Hash <C458E619396054F78BC926FB81B4386D>
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(21da38c0)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(21da38c0) => child-MemberDeclarationContext(7dc3d69c)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:540] **** Enter Constructor AbstractAccountAuthenticator ****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:545] Found a constructor
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:549] **** Exit Constructor AbstractAccountAuthenticator ****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(21da38c0)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(443edc45)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "private"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(443edc45) => child-MemberDeclarationContext(7aef5903)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(77bd1302)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(77bd1302) => child-MemberDeclarationContext(1e2b25b8)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method addAccount *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method addAccount *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(77bd1302)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(38f214f6)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(38f214f6) => child-MemberDeclarationContext(1d3e3faf)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method confirmCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method confirmCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(38f214f6)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(61c70928)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(61c70928) => child-MemberDeclarationContext(522a533e)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getAuthTokenLabel *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getAuthTokenLabel *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(61c70928)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(58bf3596)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(58bf3596) => child-MemberDeclarationContext(7157385e)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getAuthToken *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getAuthToken *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(58bf3596)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(1bab2037)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(1bab2037) => child-MemberDeclarationContext(7fd00911)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method updateCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method updateCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(1bab2037)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(33037ca5)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(33037ca5) => child-MemberDeclarationContext(29ec4ecd)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method editProperties *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method editProperties *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(33037ca5)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(59298a3b)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(59298a3b) => child-MemberDeclarationContext(36325538)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method hasFeatures *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method hasFeatures *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(59298a3b)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(2278eb54)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(2278eb54) => child-MemberDeclarationContext(30a1e97a)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getAccountRemovalAllowed *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getAccountRemovalAllowed *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(2278eb54)
+INFO d.d.ExtractInterfaceTool [StatefulListener.java:76] Justification text is "    "
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(443edc45)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:457] Class Body Declaration is neither a function or a field and will be skipped
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(55e76187)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "private"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(55e76187) => child-MemberDeclarationContext(49b41220)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method handleException *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method handleException *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(55e76187)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(4d1218ad)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "private"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(4d1218ad) => child-MemberDeclarationContext(5f122d62)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method checkBinderPermission *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method checkBinderPermission *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(4d1218ad)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(2261adb1)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "private"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(2261adb1) => child-MemberDeclarationContext(3ad25119)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(2261adb1)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:453] FieldBody <
+
+    private Transport mTransport = new Transport();>
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:454] Model Hash <B996B8C49C2307FDF0CA3803832CA9DC>
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(45ca5e7a)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "final"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(45ca5e7a) => child-MemberDeclarationContext(6900bf61)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getIBinder *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getIBinder *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(45ca5e7a)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(3014af22)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(3014af22) => child-MemberDeclarationContext(1df5f9d7)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method editProperties *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method editProperties *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(3014af22)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(7fe5a19e)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(7fe5a19e) => child-MemberDeclarationContext(3cd5cdab)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method addAccount *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method addAccount *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(7fe5a19e)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(78b1b4c0)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(78b1b4c0) => child-MemberDeclarationContext(5ad1e727)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method confirmCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method confirmCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(78b1b4c0)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(a9ee006)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(a9ee006) => child-MemberDeclarationContext(4485af5c)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getAuthToken *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getAuthToken *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(a9ee006)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(24bbe429)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(24bbe429) => child-MemberDeclarationContext(2b805296)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getAuthTokenLabel *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getAuthTokenLabel *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(24bbe429)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(75ae0c29)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(75ae0c29) => child-MemberDeclarationContext(75a0941a)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method updateCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method updateCredentials *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(75ae0c29)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(15b734b)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "abstract"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(15b734b) => child-MemberDeclarationContext(1aee419f)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method hasFeatures *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method hasFeatures *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(15b734b)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:311] Entering ClassBodyDeclarationContext(10163b89)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:520] Class/Interface Modifier is "public"
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:479] Tranferring properties from parent-ClassBodyDeclarationContext(10163b89) => child-MemberDeclarationContext(239ea79f)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:564] **** Enter Method getAccountRemovalAllowed *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:593] **** Exit Method getAccountRemovalAllowed *****
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:391] Exiting ClassBodyDeclarationContext(10163b89)
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:412] Pass 4: Performing code modification task against /home/droidsafe/android-impl/src/android/accounts/AbstractAccountAuthenticator.java
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+private static final String TAG = "AccountAuthenticator";
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "BF3374BAD0101417026E99889985E21E"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash BF3374BAD0101417026E99889985E21E in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+private final Context mContext;
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "F617D0564F7E0B49BC38FEA81222592A"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash F617D0564F7E0B49BC38FEA81222592A in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+private Transport mTransport = new Transport();
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "B996B8C49C2307FDF0CA3803832CA9DC"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash B996B8C49C2307FDF0CA3803832CA9DC in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void addAccount(IAccountAuthenticatorResponse response, String accountType,
+                String authTokenType, String[] features, Bundle options)
+                throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "addAccount: accountType " + accountType
+                        + ", authTokenType " + authTokenType
+                        + ", features " + (features == null ? "[]" : Arrays.toString(features)));
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.addAccount(
+                    new AccountAuthenticatorResponse(response),
+                        accountType, authTokenType, features, options);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "addAccount: result " + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "addAccount", accountType, e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "342F08F99FF2CDD09FF6C00F4921DCC4"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 342F08F99FF2CDD09FF6C00F4921DCC4 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void confirmCredentials(IAccountAuthenticatorResponse response,
+                Account account, Bundle options) throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "confirmCredentials: " + account);
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.confirmCredentials(
+                    new AccountAuthenticatorResponse(response), account, options);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "confirmCredentials: result "
+                            + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "confirmCredentials", account.toString(), e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "C20BFB11EDCA13D22C1E283722BE0576"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash C20BFB11EDCA13D22C1E283722BE0576 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void getAuthTokenLabel(IAccountAuthenticatorResponse response,
+                String authTokenType)
+                throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "getAuthTokenLabel: authTokenType " + authTokenType);
+            }
+            checkBinderPermission();
+            try {
+                Bundle result = new Bundle();
+                result.putString(AccountManager.KEY_AUTH_TOKEN_LABEL,
+                        AbstractAccountAuthenticator.this.getAuthTokenLabel(authTokenType));
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "getAuthTokenLabel: result "
+                            + AccountManager.sanitizeResult(result));
+                }
+                response.onResult(result);
+            } catch (Exception e) {
+                handleException(response, "getAuthTokenLabel", authTokenType, e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "5F56A3C38BCD0F48299A67B7A736ACC9"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 5F56A3C38BCD0F48299A67B7A736ACC9 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void getAuthToken(IAccountAuthenticatorResponse response,
+                Account account, String authTokenType, Bundle loginOptions)
+                throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "getAuthToken: " + account
+                        + ", authTokenType " + authTokenType);
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.getAuthToken(
+                        new AccountAuthenticatorResponse(response), account,
+                        authTokenType, loginOptions);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "getAuthToken: result " + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "getAuthToken",
+                        account.toString() + "," + authTokenType, e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "FC7F957FD38744312ED4CD01A97D51B8"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash FC7F957FD38744312ED4CD01A97D51B8 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void updateCredentials(IAccountAuthenticatorResponse response, Account account,
+                String authTokenType, Bundle loginOptions) throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "updateCredentials: " + account
+                        + ", authTokenType " + authTokenType);
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.updateCredentials(
+                    new AccountAuthenticatorResponse(response), account,
+                        authTokenType, loginOptions);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "updateCredentials: result "
+                            + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "updateCredentials",
+                        account.toString() + "," + authTokenType, e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "D7683B8A7BEFF549D02DFB63DE230292"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash D7683B8A7BEFF549D02DFB63DE230292 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void editProperties(IAccountAuthenticatorResponse response,
+                String accountType) throws RemoteException {
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.editProperties(
+                    new AccountAuthenticatorResponse(response), accountType);
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "editProperties", accountType, e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "E7658B03951F0BD802E884F2362396C7"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash E7658B03951F0BD802E884F2362396C7 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void hasFeatures(IAccountAuthenticatorResponse response,
+                Account account, String[] features) throws RemoteException {
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.hasFeatures(
+                    new AccountAuthenticatorResponse(response), account, features);
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "hasFeatures", account.toString(), e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "5B98ACE416E9A8BCB2C4EF06D68C85F2"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 5B98ACE416E9A8BCB2C4EF06D68C85F2 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public void getAccountRemovalAllowed(IAccountAuthenticatorResponse response,
+                Account account) throws RemoteException {
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.getAccountRemovalAllowed(
+                    new AccountAuthenticatorResponse(response), account);
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "getAccountRemovalAllowed", account.toString(), e);
+            }
+        }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "1EBB264D7618C49C54EDB4BC8AF60D93"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 1EBB264D7618C49C54EDB4BC8AF60D93 in class Transport
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+private class Transport extends IAccountAuthenticator.Stub {
+        public void addAccount(IAccountAuthenticatorResponse response, String accountType,
+                String authTokenType, String[] features, Bundle options)
+                throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "addAccount: accountType " + accountType
+                        + ", authTokenType " + authTokenType
+                        + ", features " + (features == null ? "[]" : Arrays.toString(features)));
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.addAccount(
+                    new AccountAuthenticatorResponse(response),
+                        accountType, authTokenType, features, options);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "addAccount: result " + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "addAccount", accountType, e);
+            }
+        }
+
+        public void confirmCredentials(IAccountAuthenticatorResponse response,
+                Account account, Bundle options) throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "confirmCredentials: " + account);
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.confirmCredentials(
+                    new AccountAuthenticatorResponse(response), account, options);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "confirmCredentials: result "
+                            + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "confirmCredentials", account.toString(), e);
+            }
+        }
+
+        public void getAuthTokenLabel(IAccountAuthenticatorResponse response,
+                String authTokenType)
+                throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "getAuthTokenLabel: authTokenType " + authTokenType);
+            }
+            checkBinderPermission();
+            try {
+                Bundle result = new Bundle();
+                result.putString(AccountManager.KEY_AUTH_TOKEN_LABEL,
+                        AbstractAccountAuthenticator.this.getAuthTokenLabel(authTokenType));
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "getAuthTokenLabel: result "
+                            + AccountManager.sanitizeResult(result));
+                }
+                response.onResult(result);
+            } catch (Exception e) {
+                handleException(response, "getAuthTokenLabel", authTokenType, e);
+            }
+        }
+
+        public void getAuthToken(IAccountAuthenticatorResponse response,
+                Account account, String authTokenType, Bundle loginOptions)
+                throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "getAuthToken: " + account
+                        + ", authTokenType " + authTokenType);
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.getAuthToken(
+                        new AccountAuthenticatorResponse(response), account,
+                        authTokenType, loginOptions);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "getAuthToken: result " + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "getAuthToken",
+                        account.toString() + "," + authTokenType, e);
+            }
+        }
+
+        public void updateCredentials(IAccountAuthenticatorResponse response, Account account,
+                String authTokenType, Bundle loginOptions) throws RemoteException {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "updateCredentials: " + account
+                        + ", authTokenType " + authTokenType);
+            }
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.updateCredentials(
+                    new AccountAuthenticatorResponse(response), account,
+                        authTokenType, loginOptions);
+                if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                    result.keySet(); // force it to be unparcelled
+                    Log.v(TAG, "updateCredentials: result "
+                            + AccountManager.sanitizeResult(result));
+                }
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "updateCredentials",
+                        account.toString() + "," + authTokenType, e);
+            }
+        }
+
+        public void editProperties(IAccountAuthenticatorResponse response,
+                String accountType) throws RemoteException {
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.editProperties(
+                    new AccountAuthenticatorResponse(response), accountType);
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "editProperties", accountType, e);
+            }
+        }
+
+        public void hasFeatures(IAccountAuthenticatorResponse response,
+                Account account, String[] features) throws RemoteException {
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.hasFeatures(
+                    new AccountAuthenticatorResponse(response), account, features);
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "hasFeatures", account.toString(), e);
+            }
+        }
+
+        public void getAccountRemovalAllowed(IAccountAuthenticatorResponse response,
+                Account account) throws RemoteException {
+            checkBinderPermission();
+            try {
+                final Bundle result = AbstractAccountAuthenticator.this.getAccountRemovalAllowed(
+                    new AccountAuthenticatorResponse(response), account);
+                if (result != null) {
+                    response.onResult(result);
+                }
+            } catch (Exception e) {
+                handleException(response, "getAccountRemovalAllowed", account.toString(), e);
+            }
+        }
+    }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "306BA03B3D6D4253CA4EAF0B52A4C2C4"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 306BA03B3D6D4253CA4EAF0B52A4C2C4 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:212] No modifications shall be made because: regenerate = true
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:213] transformText <null>
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public AbstractAccountAuthenticator(Context context) {
+        mContext = context;
+    }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "273418773D979EAC578A93251DBF332A"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 273418773D979EAC578A93251DBF332A in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+private void handleException(IAccountAuthenticatorResponse response, String method,
+            String data, Exception e) throws RemoteException {
+        if (e instanceof NetworkErrorException) {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, method + "(" + data + ")", e);
+            }
+            response.onError(AccountManager.ERROR_CODE_NETWORK_ERROR, e.getMessage());
+        } else if (e instanceof UnsupportedOperationException) {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, method + "(" + data + ")", e);
+            }
+            response.onError(AccountManager.ERROR_CODE_UNSUPPORTED_OPERATION,
+                    method + " not supported");
+        } else if (e instanceof IllegalArgumentException) {
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, method + "(" + data + ")", e);
+            }
+            response.onError(AccountManager.ERROR_CODE_BAD_ARGUMENTS,
+                    method + " not supported");
+        } else {
+            Log.w(TAG, method + "(" + data + ")", e);
+            response.onError(AccountManager.ERROR_CODE_REMOTE_EXCEPTION,
+                    method + " failed");
+        }
+    }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "A0D6215A6F4913E32BE30E9DC640FFEE"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash A0D6215A6F4913E32BE30E9DC640FFEE in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+private void checkBinderPermission() {
+        final int uid = Binder.getCallingUid();
+        final String perm = Manifest.permission.ACCOUNT_MANAGER;
+        if (mContext.checkCallingOrSelfPermission(perm) != PackageManager.PERMISSION_GRANTED) {
+            throw new SecurityException("caller uid " + uid + " lacks " + perm);
+        }
+    }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "525E51D9760B3BB804EF9219F3110B07"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 525E51D9760B3BB804EF9219F3110B07 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public final IBinder getIBinder() {
+        return mTransport.asBinder();
+    }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "E85CCD2CD8210FBCA5AD7E9CA4E95103"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash E85CCD2CD8210FBCA5AD7E9CA4E95103 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract Bundle editProperties(AccountAuthenticatorResponse response,
+            String accountType);
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "952D5676681A5E6B061BE7CC4D5F403D"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 952D5676681A5E6B061BE7CC4D5F403D in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract Bundle addAccount(AccountAuthenticatorResponse response, String accountType,
+            String authTokenType, String[] requiredFeatures, Bundle options)
+            throws NetworkErrorException;
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "8FD7408C3510BA75FB0D46C4E0073484"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 8FD7408C3510BA75FB0D46C4E0073484 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract Bundle confirmCredentials(AccountAuthenticatorResponse response,
+            Account account, Bundle options)
+            throws NetworkErrorException;
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "117B1E3C3F01AFF77C67E6E0FE54E1B7"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 117B1E3C3F01AFF77C67E6E0FE54E1B7 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract Bundle getAuthToken(AccountAuthenticatorResponse response,
+            Account account, String authTokenType, Bundle options)
+            throws NetworkErrorException;
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "548C7E630A039DC69E47A1F9D0138549"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 548C7E630A039DC69E47A1F9D0138549 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract String getAuthTokenLabel(String authTokenType);
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "FD1A09CBCE9BC752396FCFB40E6235C1"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash FD1A09CBCE9BC752396FCFB40E6235C1 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract Bundle updateCredentials(AccountAuthenticatorResponse response,
+            Account account, String authTokenType, Bundle options) throws NetworkErrorException;
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "0B2BAF6302BB25423091E5062AD84111"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 0B2BAF6302BB25423091E5062AD84111 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public abstract Bundle hasFeatures(AccountAuthenticatorResponse response,
+            Account account, String[] features) throws NetworkErrorException;
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "387FCB531A48C5159F34A9219B158E91"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 387FCB531A48C5159F34A9219B158E91 in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:119] generatedText is:
+public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse response,
+            Account account) throws NetworkErrorException {
+        final Bundle result = new Bundle();
+        result.putBoolean(AccountManager.KEY_BOOLEAN_RESULT, true);
+        return result;
+    }
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:120] hash of generatedText is: "7E44D248202B98DE8E662032A3E0332B"
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:166] Looking for hash 7E44D248202B98DE8E662032A3E0332B in class AbstractAccountAuthenticator
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:174] Found matching hash using the original-nocomment hash type
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:185] Found an entry, replacement will happen!
+INFO d.d.ExtractInterfaceTool [CodeRewriter.java:49] There are 0 orphaned transforms
+INFO d.d.ExtractInterfaceTool [ExtractInterfaceTool.java:305] 
+
+Modeled 0 files in 3.072 seconds (0.0 files/sec).

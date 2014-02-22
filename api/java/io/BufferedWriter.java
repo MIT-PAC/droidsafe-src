@@ -25,7 +25,7 @@ public class BufferedWriter extends Writer {
      *
      * @param out the {@code Writer} the buffer writes to.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.401 -0500", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "FAED49220CE1BA4E9A3247C527651C59")
     
@@ -41,7 +41,7 @@ public BufferedWriter(Writer out) {
      * @param size the size of buffer in bytes.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.404 -0500", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "F1E03926A4E3DA844CAF0FC8D59F2B35")
     
@@ -187,6 +187,8 @@ public void newLine() throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.424 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
     
@@ -274,6 +276,8 @@ public void newLine() throws IOException {
      *             if {@code offset < 0} or {@code offset + count} is greater
      *             than the length of {@code str}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.432 -0500", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "CC19827EBE9A9C4E7EA3C6B136BC89B1")
     

@@ -52,6 +52,8 @@ public static synchronized Calendar getInstance() {
      *            the locale to use.
      * @return a {@code Calendar} subclass instance set to the current date and time.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.823 -0500", hash_original_method = "691484FDA756A7151BBC682C05DB892E", hash_generated_method = "D23801B3F583C8565835C978CAC9E4FD")
     
@@ -930,6 +932,8 @@ public final void set(int year, int month, int day) {
      * @param minute
      *            the minute.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.869 -0500", hash_original_method = "B4EBEBE6ED320058BB13C1E33AF949E4", hash_generated_method = "396504D08E42B024F7F32C7E28DC7024")
     
@@ -957,6 +961,8 @@ public final void set(int year, int month, int day, int hourOfDay,
      * @param second
      *            the second.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.872 -0500", hash_original_method = "071B019FF423902B33C61C7D7703D8F0", hash_generated_method = "02E66189939C24081396104958954FC7")
     

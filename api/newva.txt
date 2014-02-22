@@ -1,0 +1,145 @@
+
+./java/lang/reflect/Constructor.java:    @DSVAModeled
+./java/lang/reflect/Constructor.java-    Class<T> declaringClass;
+
+./java/lang/reflect/Constructor.java:    @DSVAModeled
+./java/lang/reflect/Constructor.java-    Class<?>[] parameterTypes;
+
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java-    private Class<?> declaringClass;
+
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java-    private String name;
+
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java-    private Class<?>[] parameterTypes;
+
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java-    private Class<?> returnType;
+
+./java/lang/Class.java:    @DSVAModeled
+./java/lang/Class.java-    private transient String name;
+
+./java/lang/ProcessBuilder.java:    @DSVAModeled
+./java/lang/ProcessBuilder.java-    String commands;
+
+./java/io/File.java:    @DSVAModeled
+./java/io/File.java-    private String path;
+
+./java/io/FileDescriptor.java:    @DSVAModeled
+./java/io/FileDescriptor.java-    private int descriptor = -1;
+
+./java/net/Socket.java:    @DSVAModeled
+./java/net/Socket.java-     SocketImpl impl;
+
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected InetAddress address;
+
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected int port;
+
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected FileDescriptor fd;
+
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected int localport;
+
+
+./java/net/InetAddress.java:    @DSVAModeled
+./java/net/InetAddress.java-    String hostName;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String protocol;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String authority;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String host;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String file;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String ref;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private transient String userInfo;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private transient String path;
+
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private transient String query;
+
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java-    private  InetAddress addr;
+
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java-    private  String hostname;
+
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java-    private  int port;
+
+./java/net/URI.java:    @DSVAModeled
+./java/net/URI.java-    private String string;
+
+./org/apache/http/client/methods/HttpGet.java:@DSVAModeled
+./org/apache/http/client/methods/HttpGet.java-public class HttpGet extends HttpRequestBase {
+
+./org/apache/http/client/methods/HttpGet.java:    @DSVAModeled
+./org/apache/http/client/methods/HttpGet.java-    private URI theURI;
+
+./org/apache/http/client/methods/HttpRequestBase.java:    @DSVAModeled
+./org/apache/http/client/methods/HttpRequestBase.java-    private URI uri;
+
+./android/widget/Button.java:@DSVAModeled
+./android/widget/Button.java-public class Button extends TextView {
+
+./android/widget/TextView.java:    @DSVAModeled
+./android/widget/TextView.java-    private ColorStateList mTextColor;
+
+##### NOT mTextColor: BAD*** 
+./android/widget/TextView.java:    @DSVAModeled
+./android/widget/TextView.java-    @ViewDebug.ExportedProperty(category = "text")
+./android/widget/TextView.java-    private CharSequence mText;
+
+./android/os/Bundle.java:    @DSVAModeled
+./android/os/Bundle.java-    /* package */ Map<String, Object> mMap = null;
+
+./android/content/ComponentName.java:    @DSVAModeled
+./android/content/ComponentName.java-    private  String mPackage;
+./android/content/ComponentName.java-
+./android/content/ComponentName.java:    @DSVAModeled
+./android/content/ComponentName.java-    private  String mClass;
+./android/content/ComponentName.java-
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private String mAction;
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private Uri mData;
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private String mType;
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private String mPackage;
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private ComponentName mComponent;
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private int mFlags;
+
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private Bundle mExtras;
+
+
+### GOOD ###
+
+./android/app/Activity.java: @DSVAModeled
+./android/app/Activity.java- Intent mIntent;
+
+./android/net/Uri.java:    @DSVAModeled
+./android/net/Uri.java-    private String uriString;

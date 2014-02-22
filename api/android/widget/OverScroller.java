@@ -42,6 +42,8 @@ public class OverScroller {
      * Creates an OverScroller with a viscous fluid scroll interpolator and flywheel.
      * @param context
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.488 -0500", hash_original_method = "B9802AB7FB2D6944C0543E71DB189BC5", hash_generated_method = "DEEB77B2C68BB909DABA5292FF87F355")
     
 public OverScroller(Context context) {
@@ -54,6 +56,8 @@ public OverScroller(Context context) {
      * @param interpolator The scroll interpolator. If null, a default (viscous) interpolator will
      * be used.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.491 -0500", hash_original_method = "F6227ED49D62C3697D2AC005A8942714", hash_generated_method = "11F2C344198340390A40979F8BC30D32")
     
 public OverScroller(Context context, Interpolator interpolator) {
@@ -68,6 +72,8 @@ public OverScroller(Context context, Interpolator interpolator) {
      * @param flywheel If true, successive fling motions will keep on increasing scroll speed.
      * @hide
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.493 -0500", hash_original_method = "8F06EBB42FF76B1717D428E4F6418D97", hash_generated_method = "E1898FD7C9E27045498EAA45738EDD9A")
     
 public OverScroller(Context context, Interpolator interpolator, boolean flywheel) {
@@ -91,6 +97,8 @@ public OverScroller(Context context, Interpolator interpolator, boolean flywheel
      * behavior is no longer supported and this coefficient has no effect.
      * !deprecated Use {!link #OverScroller(Context, Interpolator, boolean)} instead.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.496 -0500", hash_original_method = "0CF9495AD70A3403C1A28AE06C2DFE6A", hash_generated_method = "3096F049D35F1B9D2027C112D9B826AC")
     
 public OverScroller(Context context, Interpolator interpolator,
@@ -111,6 +119,8 @@ public OverScroller(Context context, Interpolator interpolator,
      * @param flywheel If true, successive fling motions will keep on increasing scroll speed.
      * !deprecated Use {!link OverScroller(Context, Interpolator, boolean)} instead.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.499 -0500", hash_original_method = "229999978F856549CB121738FDE882C4", hash_generated_method = "FAC82D23424B0049B140FB11B266CA66")
     
 public OverScroller(Context context, Interpolator interpolator,
@@ -139,6 +149,7 @@ public final void setFriction(float friction) {
      *
      * @return True if the scroller has finished scrolling, false otherwise.
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.505 -0500", hash_original_method = "C0D588953F48F0F49E401C0010BD067A", hash_generated_method = "FDD5257AB5E7A1CD3E9757215A6BF545")
     
 public final boolean isFinished() {
@@ -164,6 +175,7 @@ public final void forceFinished(boolean finished) {
      *
      * @return The new X offset as an absolute distance from the origin.
      */
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.509 -0500", hash_original_method = "935C47FB8A3CB470F597BC28E107035C", hash_generated_method = "53B4A4CD497A9D5DB67229573C2C599A")
     
@@ -176,6 +188,7 @@ public final int getCurrX() {
      *
      * @return The new Y offset as an absolute distance from the origin.
      */
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.512 -0500", hash_original_method = "4ECEC07425ABC9DEFD7B203A5114566B", hash_generated_method = "E2A744CFD1190860F0D4BDB7448D0F72")
     
@@ -188,6 +201,7 @@ public final int getCurrY() {
      *
      * @return The original velocity less the deceleration, norm of the X and Y velocity vector.
      */
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.514 -0500", hash_original_method = "64BF41B2D89FD1AD797ACAED97E05500", hash_generated_method = "7C8FCD2CBE06F83A568B96C0E16D4F7E")
     
@@ -226,6 +240,7 @@ public final int getStartY() {
      *
      * @return The final X offset as an absolute distance from the origin.
      */
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.521 -0500", hash_original_method = "B59ED352B9AEDA78AFFC00B7CFC03926", hash_generated_method = "5D94BA28B978E4A121B5EA36EF43E61C")
     
@@ -238,6 +253,7 @@ public final int getFinalX() {
      *
      * @return The final Y offset as an absolute distance from the origin.
      */
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.523 -0500", hash_original_method = "35D86359302D602175EC68518CA83146", hash_generated_method = "99FD42909C9877A51B345A36A5CEA1DE")
     
@@ -330,6 +346,7 @@ public final int getFinalY() {
      * Call this when you want to know the new location. If it returns true, the
      * animation is not yet finished.
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.535 -0500", hash_original_method = "4391FF82C7FA76BDB2CDCD1D85612F8D", hash_generated_method = "F531D5EBDD0D953AA2BA79FD6C6C9618")
     
 public boolean computeScrollOffset() {
@@ -398,6 +415,7 @@ public boolean computeScrollOffset() {
      * @param dy Vertical distance to travel. Positive numbers will scroll the
      *        content up.
      */
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.537 -0500", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "F9CD515A4E2C5B16D0DE692CF1A61742")
     
@@ -418,6 +436,7 @@ public void startScroll(int startX, int startY, int dx, int dy) {
      *        content up.
      * @param duration Duration of the scroll in milliseconds.
      */
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.540 -0500", hash_original_method = "C7C9FE1639F9BA6211C746BC2E590EF8", hash_generated_method = "B751B33CC0BF2EE6E2C7273D514854B1")
     
@@ -517,6 +536,7 @@ public void fling(int startX, int startY, int velocityX, int velocityY,
      * @param overX Magnitude of overscroll allowed. This should be the maximum
      *              desired distance from finalX. Absolute value - must be positive.
      */
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.549 -0500", hash_original_method = "B9132D3CC6E7407A65F178898D94F282", hash_generated_method = "6D02779E22897C5CCC1B61B4DC8471C5")
     
@@ -537,6 +557,7 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
      * @param overY Magnitude of overscroll allowed. This should be the maximum
      *              desired distance from finalY. Absolute value - must be positive.
      */
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.551 -0500", hash_original_method = "EAACB5866396964CA4004FBBF9350F29", hash_generated_method = "85C49A64CA88551D9AB324C5AED2C0C3")
     
@@ -557,6 +578,7 @@ public void notifyVerticalEdgeReached(int startY, int finalY, int overY) {
      * @return true when the current position is overscrolled and in the process of
      *         interpolating back to a valid value.
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.553 -0500", hash_original_method = "AE5D891ECDFB8C77EC70A4859A3A8CFD", hash_generated_method = "C45BAD324F84A226584CE60DFDCE088F")
     
 public boolean isOverScrolled() {
@@ -1103,6 +1125,7 @@ boolean update() {
      *
      * @see #forceFinished(boolean)
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.556 -0500", hash_original_method = "E56D99D09F46A8AEF8DD628D53F963A5", hash_generated_method = "DF9BAD7B315AA83FCD459BD28184D3D4")
     
 public void abortAnimation() {

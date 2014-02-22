@@ -67,8 +67,8 @@ public class Binder implements IBinder {
     /**
      * Default constructor initializes the object.
      */
-    @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.148 -0500", hash_original_method = "E9C0CAF28240B0B259339EF455808C3F", hash_generated_method = "3D5C65FE180F867DB2040729AD77C600")
     
 public Binder() {

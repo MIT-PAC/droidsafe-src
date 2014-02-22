@@ -42,6 +42,7 @@ public static AccessibilityEvent obtain(int eventType) {
      * @param event The other event.
      * @return An instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.464 -0500", hash_original_method = "266DCFFE6CD24F344E992D02CFAE713D", hash_generated_method = "772844F881FE1E9374A34ADF6AA14620")
     
 public static AccessibilityEvent obtain(AccessibilityEvent event) {
@@ -244,7 +245,6 @@ private AccessibilityEvent() {
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public AccessibilityEvent(int dummy) {
     }
-
 
     /**
      * Initialize an event from another one.

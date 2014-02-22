@@ -14,8 +14,8 @@ public class IllegalArgumentException extends RuntimeException {
      * Constructs a new {@code IllegalArgumentException} that includes the
      * current stack trace.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.620 -0500", hash_original_method = "BA7A8F41F569FABF17AACC9F2A0F75BC", hash_generated_method = "108225E116CCD19305134C87B93E06AB")
     
 public IllegalArgumentException() {
@@ -28,8 +28,8 @@ public IllegalArgumentException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.623 -0500", hash_original_method = "D7D337F40643B35AC799AE8640B0B8F6", hash_generated_method = "9562BB172BC5C2EDC30D6E00CCDF876E")
     
 public IllegalArgumentException(String detailMessage) {
@@ -46,8 +46,8 @@ public IllegalArgumentException(String detailMessage) {
      *            the cause of this exception, may be {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.625 -0500", hash_original_method = "7E098EA3EF50B45CC4772F0CD835FBB7", hash_generated_method = "B91024B75E52AFAC1BF8C2E01D1C72EE")
     
 public IllegalArgumentException(String message, Throwable cause) {
@@ -62,8 +62,8 @@ public IllegalArgumentException(String message, Throwable cause) {
      *            the cause of this exception, may be {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.628 -0500", hash_original_method = "F1590E7EC4D7642CCEBCDC7875206A8D", hash_generated_method = "617ADCCDB708FBFF48044B80AD1463C6")
     
 public IllegalArgumentException(Throwable cause) {

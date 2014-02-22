@@ -21,8 +21,8 @@ public class LevelListDrawable extends DrawableContainer {
 
     private boolean mMutated;
 
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.729 -0500", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "E085D1E02370305C3BA4C9C948FEC593")
     
 public LevelListDrawable() {

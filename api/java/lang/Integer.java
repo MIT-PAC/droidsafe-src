@@ -686,8 +686,8 @@ public static Integer valueOf(int i) {
      * @param value
      *            the primitive integer value to store in the new instance.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.153 -0500", hash_original_method = "22146E0D9B2FD3EEBD460016C940A35F", hash_generated_method = "F12C9F40D3EC41E1174EF104CA5C5A1E")
     
 public Integer(int value) {
@@ -703,8 +703,8 @@ public Integer(int value) {
      *             if {@code string} cannot be parsed as an integer value.
      * @see #parseInt(String)
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.156 -0500", hash_original_method = "E0CD1D1A7D46CCFF15C90A26B138404A", hash_generated_method = "840AFBF91231E7375DBE5F4F8362BFE1")
     
 public Integer(String string) throws NumberFormatException {

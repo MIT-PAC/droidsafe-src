@@ -75,8 +75,8 @@ public class Properties extends Hashtable<Object, Object> {
     /**
      * Constructs a new {@code Properties} object.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.658 -0500", hash_original_method = "15BC7402B615AC640D692CA8D591C86A", hash_generated_method = "7795BAC062AED72B959D89678A199367")
     
 public Properties() {
@@ -89,8 +89,8 @@ public Properties() {
      * @param properties
      *            the default {@code Properties}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.661 -0500", hash_original_method = "5F2D706A0CAB1895C5A727D855C46322", hash_generated_method = "6B25AC4C2F6728C40E756CFE46A2AEED")
     
 public Properties(Properties properties) {

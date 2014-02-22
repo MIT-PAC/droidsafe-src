@@ -197,8 +197,8 @@ public synchronized static void setDefault(Locale locale) {
      *
      * @param unused required for this constructor to have a unique signature
      */
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.100 -0500", hash_original_method = "3151080AB39B36B6870FE53962DD218F", hash_generated_method = "51B002A79014304904E6D6D37A8D4547")
     
 private Locale(boolean unused, String lowerCaseLanguageCode, String upperCaseCountryCode) {
@@ -210,8 +210,8 @@ private Locale(boolean unused, String lowerCaseLanguageCode, String upperCaseCou
     /**
      * Constructs a new {@code Locale} using the specified language.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.102 -0500", hash_original_method = "95F62AD785CE7F14018E0D0D1E27B00E", hash_generated_method = "A96F2B7C3EC9EA494AAA086887AA5806")
     
 public Locale(String language) {
@@ -221,8 +221,8 @@ public Locale(String language) {
     /**
      * Constructs a new {@code Locale} using the specified language and country codes.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.105 -0500", hash_original_method = "37BC67CA8C45857B55D0F669E159529A", hash_generated_method = "127917F6C0A60B48C74F456651F93671")
     
 public Locale(String language, String country) {
@@ -233,8 +233,8 @@ public Locale(String language, String country) {
      * Constructs a new {@code Locale} using the specified language, country,
      * and variant codes.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.108 -0500", hash_original_method = "C07F4523516B5D8C3B044DC468C2EE3F", hash_generated_method = "0E3861966B3341EE23DBF47DDB2EF19C")
     
 public Locale(String language, String country, String variant) {

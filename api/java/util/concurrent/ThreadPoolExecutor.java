@@ -910,7 +910,8 @@ final void runWorker(Worker w) {
      * @throws NullPointerException if {@code command} is null
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.881 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
-    
+    @DSVerified
+    @DSSafe(DSCat.OS_GENERAL)
 public void execute(Runnable command) {
         if (command == null)
             throw new NullPointerException();
@@ -934,6 +935,9 @@ public void execute(Runnable command) {
          * thread.  If it fails, we know we are shut down or saturated
          * and so reject the task.
          */
+        if (command != null) {
+            command.run();
+        }
         int c = ctl.get();
         if (workerCountOf(c) < corePoolSize) {
             if (addWorker(command, true))
@@ -1145,6 +1149,7 @@ public RejectedExecutionHandler getRejectedExecutionHandler() {
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @see #getCorePoolSize
      */
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.910 -0500", hash_original_method = "753479E48A5DF49EEF8BAF55BE437F30", hash_generated_method = "35E782E97A04DC3DF8DD8A86CE8F1899")
     
 public void setCorePoolSize(int corePoolSize) {
@@ -1372,6 +1377,7 @@ public BlockingQueue<Runnable> getQueue() {
      * @param task the task to remove
      * @return true if the task was removed
      */
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.937 -0500", hash_original_method = "79BF7D79C72AB53C9D385B8F29AB696D", hash_generated_method = "D3CC93BB4DBD07F46B86AB7121E4A5CD")
     
 public boolean remove(Runnable task) {
@@ -1538,6 +1544,8 @@ public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
         /**
          * Creates a {@code DiscardOldestPolicy} for the given executor.
          */
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.989 -0500", hash_original_method = "7D42DC0AF0C4E1A1DAE9147B8685950D", hash_generated_method = "05088EC62DD35021D0EFFE1A458A35D3")
         
 public DiscardOldestPolicy() { }

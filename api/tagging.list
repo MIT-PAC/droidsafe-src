@@ -1,0 +1,115 @@
+########################################
+#        List of classes                
+########################################
+android.app.Activity
+android.app.ActivityManagerProxy
+android.content.ContextWrapper
+android.location.Location
+android.opengl.GLErrorWrapper
+android.opengl.GLException
+android.opengl.GLSurfaceView
+android.os.AsyncTask
+android.view.WindowImpl
+
+com.android.future.usb.UsbAccessory
+com.android.internal.app.ActionBarImpl
+com.android.internal.view.menu.MenuBuilder
+com.android.internal.view.menu.SubMenuBuilder
+
+com.google.android.gles_jni.EGLImpl
+com.google.android.gles_jni.GLImpl
+com.google.android.maps.GeoPoint
+com.google.android.maps.GestureDetector
+com.google.android.maps.MapActivity
+com.google.android.maps.MapController
+com.google.android.maps.MapView
+com.google.android.maps.MyLocationOverlay
+com.google.android.maps.NetworkConnectivityListener
+com.google.android.maps.Overlay
+com.google.android.maps.TrackballGestureDetector
+
+java.lang.TwoEnumerationsInOne
+java.math.RoundingMode
+java.nio.BaseByteBuffer
+java.nio.DirectByteBuffer
+java.nio.FloatToByteBufferAdapter
+java.nio.ReadWriteDirectByteBuffer
+libcore.icu.NativeDecimalFormat
+
+android.content.ContentValues
+
+# com.invincea.draw.Cube
+# com.invincea.draw.MyGLActivity
+# com.invincea.draw.Pyramid
+# com.invincea.draw.Square
+# com.invincea.draw.Triangle
+# 
+# com.ultracoolmap.UltraCoolMapActivity
+
+
+# from pictviewer
+# android.content.Entity
+# android.database.DatabaseUtils
+# android.os.Bundle
+# android.provider.ContactsContract
+# java.math.RoundingMode
+# java.util.AbstractMap
+# java.util.Collections
+# java.util.MapEntry
+# java.util.concurrent.LinkedBlockingDeque
+# org.apache.http.client.utils.URLEncodedUtils
+# org.apache.http.entity.StringEntity
+# org.apache.http.message.BasicHeader
+
+# from sourceviwer
+# gov.nist.javax.sip.parser.Pipeline
+# java.io.DataOutputStream
+# java.io.NotSerializableException
+# java.io.ObjectOutputStream
+# java.io.ObjectStreamClass
+# java.io.ObjectStreamException
+# java.io.SerializationHandleMap
+# java.io.StreamCorruptedException
+# java.io.UTFDataFormatException
+# java.lang.Class
+# java.lang.reflect.Field
+# java.lang.TwoEnumerationsInOne
+# java.math.RoundingMode
+# org.apache.http.message.BasicHttpResponse
+
+# android.app.ActivityManagerProxy
+# android.app.backup.BackupDataInputStream
+# android.app.IntentService
+# android.app.PendingIntent
+# android.app.Service
+# android.content.ComponentName
+# android.content.IntentFilter
+# android.content.res.AssetManager
+# android.net.LocalSocketImpl
+# android.os.Bundle
+# android.os.Handler
+# android.os.HandlerThread
+# android.os.Looper
+# android.os.MemoryFile
+# android.os.MessageQueue
+#droidsafe.runtime.DroidSafeAndroidRuntime
+
+
+# java.lang.TwoEnumerationsInOne
+# java.math.RoundingMode
+# java.nio.Buffer
+# java.nio.channels.Channels
+# java.nio.SocketChannelImpl
+# org.apache.commons.logging.impl.Jdk14Logger
+# org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl
+# org.apache.http.client.methods.HttpGet
+# org.apache.http.conn.BasicManagedEntity
+# org.apache.http.conn.EofSensorInputStream
+# org.apache.http.entity.EntityTemplate
+# org.apache.http.entity.FileEntity
+# org.apache.http.entity.SerializableEntity
+# org.apache.http.impl.io.ChunkedInputStream
+# org.apache.http.message.BasicHttpResponse
+# org.apache.http.util.CharArrayBuffer
+# org.bouncycastle.asn1.LimitedInputStream
+

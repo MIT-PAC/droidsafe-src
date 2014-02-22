@@ -13,8 +13,8 @@ public class Stack<E> extends Vector<E> {
     /**
      * Constructs a stack with the default size of {@code Vector}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.934 -0500", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "929D9277DEEF374CC6B17326832CDE90")
     
 public Stack() {

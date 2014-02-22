@@ -16,7 +16,7 @@ public class HandlerThread extends Thread {
 
     Looper mLooper;
 
-    @DSComment("not sensitive/not an action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.204 -0500", hash_original_method = "E5F101A858C2AB40D5C2E9617BFE5E37", hash_generated_method = "3E0C0881ECB68AF6855B784013C5EA28")
     
@@ -31,6 +31,8 @@ public HandlerThread(String name) {
      * @param priority The priority to run the thread at. The value supplied must be from 
      * {@link android.os.Process} and not from java.lang.Thread.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.207 -0500", hash_original_method = "E70E3F12F9547EDCFC1C795A424416CD", hash_generated_method = "965A538D3098226CBCAF41065E4CD7F9")
     
 public HandlerThread(String name, int priority) {

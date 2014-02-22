@@ -174,6 +174,8 @@ private static void checkedSetSuperClassDesc(ObjectStreamClass desc,
      * @throws IOException
      *             if an error occurs when creating this stream.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.324 -0500", hash_original_method = "124623F0922D5D71F912D224AEC5FA85", hash_generated_method = "3440EFA570D2A028974AE6B06CE67786")
     
 protected ObjectInputStream() throws IOException {
@@ -194,7 +196,7 @@ protected ObjectInputStream() throws IOException {
      *             if the source stream does not contain serialized objects that
      *             can be read.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.328 -0500", hash_original_method = "15BB4AD74FE576D95ABFC0E40CC8A986", hash_generated_method = "51A8016FADCEFC89A5C92227CB583F45")
     

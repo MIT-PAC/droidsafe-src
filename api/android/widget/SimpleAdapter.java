@@ -104,6 +104,7 @@ public long getItemId(int position) {
     /**
      * @see android.widget.Adapter#getView(int, View, ViewGroup)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.339 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
     

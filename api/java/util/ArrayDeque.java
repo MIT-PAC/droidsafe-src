@@ -30,8 +30,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
      * Constructs an empty array deque with an initial capacity
      * sufficient to hold 16 elements.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.410 -0500", hash_original_method = "8C7B174379DD3B2C843811B1130834BD", hash_generated_method = "366EB0889C106AAC3E31EE9BAED51380")
     
 public ArrayDeque() {
@@ -44,8 +44,8 @@ public ArrayDeque() {
      *
      * @param numElements  lower bound on initial capacity of the deque
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.412 -0500", hash_original_method = "690593276EDD66C533F49BEE09E9C663", hash_generated_method = "246273E126350628D3C7920EF6CDCCD5")
     
 public ArrayDeque(int numElements) {
@@ -62,8 +62,8 @@ public ArrayDeque(int numElements) {
      * @param c the collection whose elements are to be placed into the deque
      * @throws NullPointerException if the specified collection is null
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.416 -0500", hash_original_method = "5E7B6C878951D7CA458070D073F03065", hash_generated_method = "AA1896D162B72EAE3EDE1B373974C833")
     
 public ArrayDeque(Collection<? extends E> c) {

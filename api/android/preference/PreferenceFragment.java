@@ -87,8 +87,8 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         
 };
     
-    @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.553 -0400", hash_original_method = "7AC8446BD8400B4FB28876E58FD0C82C", hash_generated_method = "7AC8446BD8400B4FB28876E58FD0C82C")
     public PreferenceFragment ()
     {

@@ -414,6 +414,8 @@ public final InputStream open(String fileName) throws IOException {
      * @see #open(String)
      * @see #list
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.902 -0500", hash_original_method = "EB9FEA0B2CEADB65FF0921C2B52A13F4", hash_generated_method = "4BBF30831C3143B01679ADF8D444356C")
     

@@ -171,6 +171,8 @@ private static IllegalArgumentException badTimestampString(String s) {
      * @throws IllegalArgumentException
      *             if any of the parameters is out of range.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.596 -0500", hash_original_method = "48500113F421714EC43BE387D502DA70", hash_generated_method = "9E29B82E0CE991AA90D9D496CB994378")
     
 @SuppressWarnings("deprecation")
@@ -193,8 +195,8 @@ private static IllegalArgumentException badTimestampString(String s) {
      *            a time value in the format of milliseconds since the Epoch
      *            (January 1 1970 00:00:00.000 GMT).
      */
-    @DSComment("no suspicious activity, just creates object")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.599 -0500", hash_original_method = "86C700BF2C693DDDD6950F4A0D10E64A", hash_generated_method = "1906AE39ACDEF7A3327208E54D6A248D")
     
 public Timestamp(long theTime) {

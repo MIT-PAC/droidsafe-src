@@ -72,8 +72,8 @@ private static int roundUpToPowerOfTwo(int i) {
         new ObjectStreamField("loadFactor", float.class)
     };
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.963 -0400", hash_original_method = "67F8ADB6599C3AA95FA8DFFD843377DD", hash_generated_method = "7409D258B8D042741B25C0440FA51BF9")
     @SuppressWarnings("unchecked")
     public  HashMap() {
@@ -82,8 +82,8 @@ private static int roundUpToPowerOfTwo(int i) {
         //threshold = -1;
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.970 -0400", hash_original_method = "DBEA46BF5DB352E6536C06B54FDF6C1E", hash_generated_method = "7FE94A00763E7E488D81DCDBEADA9FA8")
     public  HashMap(int capacity) {
         if(capacity < 0)        
@@ -126,8 +126,8 @@ private static int roundUpToPowerOfTwo(int i) {
      *                when the capacity is less than zero or the load factor is
      *                less or equal to zero or NaN.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.360 -0500", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "3099B2A9FB1DB95A61DD56E531C7FD7C")
     
 public HashMap(int capacity, float loadFactor) {
@@ -144,8 +144,8 @@ public HashMap(int capacity, float loadFactor) {
          */
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "D988B3BE94D6CE1D83E9BB54AA86E55F", hash_generated_method = "D8E5CB87B1CD6B8482A863452313CF44")
     public  HashMap(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());

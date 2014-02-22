@@ -396,8 +396,8 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
      * layout resource, though should take care here because this happens for
      * the fragment is attached to its activity.
      */
-    @DSComment("GUI, Fragment")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.994 -0500", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "CF5FF4F149C6CF2D53AA15104CFBDB03")
     @DSVerified
     

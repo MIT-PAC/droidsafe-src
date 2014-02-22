@@ -1058,6 +1058,7 @@ public AccountManagerFuture<Account[]> getAccountsByTypeAndFeatures(
      * @return True if the account was successfully added, false if the account
      *     already exists, the account is null, or another error occurs.
      */
+    @DSSpec(DSCat.ANDROID_ACCOUNT)
     @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.008 -0500", hash_original_method = "757D4D500E44E3A8DF2EF3DE74D56199", hash_generated_method = "3DCE731003B6465DC675805C3C9DBC38")
     

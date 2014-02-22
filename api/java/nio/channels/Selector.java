@@ -17,6 +17,8 @@ public abstract class Selector {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.528 -0500", hash_original_method = "D2B63EBEB5E56482EA1EC71E4ADC6B8F", hash_generated_method = "D9D2632C8FA47BFA91F51C1B152ECC92")
     
 public static Selector open() throws IOException {

@@ -20,7 +20,7 @@ public class FilterOutputStream extends OutputStream {
      * @param out
      *            the target stream that this stream writes to.
      */
-    @DSComment("no security concern")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.169 -0500", hash_original_method = "970F937F317FD0AE06FB76477C0F6F62", hash_generated_method = "C7AF229F201AE48E3E201474212FCBB3")
     

@@ -76,6 +76,7 @@ public void reset() {
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.678 -0500", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "BF8CFBBEA18A12A239BA0C8DB24F3656")
     
 public void parse(InputStream is, HandlerBase hb)
@@ -106,6 +107,7 @@ public void parse(InputStream is, HandlerBase hb)
      *
      * @see org.xml.sax.DocumentHandler version of this method instead.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.680 -0500", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "DFE97DBB075CEB43CC98933A412464B6")
     
 public void parse(
@@ -165,6 +167,7 @@ public void parse(InputStream is, DefaultHandler dh)
      *
      * @see org.xml.sax.DocumentHandler version of this method instead.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.685 -0500", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "3C21E7953F5452067AA5A27C66419022")
     
 public void parse(
@@ -197,6 +200,7 @@ public void parse(
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.687 -0500", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "43D13F5939334F2F10AB50C8971F6DF9")
     
 public void parse(String uri, HandlerBase hb)
@@ -223,6 +227,7 @@ public void parse(String uri, HandlerBase hb)
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.689 -0500", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "C9998E6A83F4A64846D1FFF9E7C51719")
     
 public void parse(String uri, DefaultHandler dh)
@@ -250,6 +255,7 @@ public void parse(String uri, DefaultHandler dh)
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.692 -0500", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "E8EB618F55B4C3E8ABCCCEEC9CF3DDDD")
     
 public void parse(File f, HandlerBase hb)
@@ -281,6 +287,7 @@ public void parse(File f, HandlerBase hb)
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.694 -0500", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "E1820870BC3407C75737C70D7558183D")
     
 public void parse(File f, DefaultHandler dh)
@@ -316,6 +323,7 @@ public void parse(File f, DefaultHandler dh)
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.696 -0500", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "291FAAD7E7EF70DACDE5C2DC4FA54219")
     
 public void parse(InputSource is, HandlerBase hb)

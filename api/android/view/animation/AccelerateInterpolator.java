@@ -16,7 +16,7 @@ public class AccelerateInterpolator implements Interpolator {
 
     private  double mDoubleFactor;
 
-    @DSComment("no action/not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.310 -0500", hash_original_method = "6B066D2B0A6275C71F94C50A6808FEFE", hash_generated_method = "561C0C48B89A9EDAC0AB93CBCF1494FA")
     
@@ -33,7 +33,7 @@ public AccelerateInterpolator() {
      *        1.0f  exaggerates the ease-in effect (i.e., it starts even
      *        slower and ends evens faster)
      */
-    @DSComment("no action/not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.313 -0500", hash_original_method = "94059E5CBD2536EA402F0EA752CA0B91", hash_generated_method = "9645CF4B2EBFA6BF1B15BD023F89559D")
     
@@ -42,6 +42,8 @@ public AccelerateInterpolator(float factor) {
         mDoubleFactor = 2 * mFactor;
     }
     
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.316 -0500", hash_original_method = "E776590D91ABBE218804FDD3622828FA", hash_generated_method = "85AE2CE3522EAC83DB14E56935E3506E")
     
 public AccelerateInterpolator(Context context, AttributeSet attrs) {

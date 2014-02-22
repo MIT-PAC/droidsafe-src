@@ -87,8 +87,8 @@ public static ContentProvider coerceToLocalContentProvider(
      * application launch time.  The constructor must not perform lengthy
      * operations, or application startup will be delayed.
      */
-    @DSComment("Interface/abstract method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.659 -0500", hash_original_method = "F039A73ADD81439EFEE4572A926905FF", hash_generated_method = "95D9FE26934D919F164145BD4B52277D")
     
 public ContentProvider() {
@@ -107,6 +107,8 @@ public ContentProvider() {
      * in the test, which is available via {@link #getPathPermissions()}.
      * @hide
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.662 -0500", hash_original_method = "40393AF8078D8D6FEE29B00460ADF530", hash_generated_method = "2503DC7072D31FA560B9D85C6DD1B595")
     
 public ContentProvider(
@@ -749,6 +751,7 @@ public IContentProvider getIContentProvider() {
      * @param context The context this provider is running in
      * @param info Registered information about this content provider
      */
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.775 -0500", hash_original_method = "0A143494E98F1D73DE768E656190D91A", hash_generated_method = "9FAD0985A1BE43AFFAAC4D530C393AE6")
     
 public void attachInfo(Context context, ProviderInfo info) {

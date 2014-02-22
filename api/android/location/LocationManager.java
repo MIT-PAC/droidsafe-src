@@ -136,6 +136,8 @@ public List<String> getAllProviders() {
      * enabled are returned.
      * @return list of Strings containing names of the providers
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.060 -0500", hash_original_method = "229C505A2DE7B350090013A910A6BB48", hash_generated_method = "6058E4EB9E5B3F4B8E8A47C61C812AB9")
     
@@ -188,6 +190,8 @@ public LocationProvider getProvider(String name) {
      * enabled are returned.
      * @return list of Strings containing names of the providers
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.065 -0500", hash_original_method = "03CC9524D6FEF78A1BD79E07965ADEF5", hash_generated_method = "DFE1C66868BC9C2BD5DC8900BED2442F")
     
@@ -825,6 +829,8 @@ public void removeUpdates(LocationListener listener) {
      * @param intent {#link PendingIntent} object that no longer needs location updates
      * @throws IllegalArgumentException if intent is null
      */
+    @DSComment("Location manager")
+    @DSSpec(DSCat.LOCATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.101 -0500", hash_original_method = "53855AAE83CDCFDE219D3895B886D007", hash_generated_method = "11D02D5FFF7DF18BC5C2C49EC31ACDE3")
     
 public void removeUpdates(PendingIntent intent) {

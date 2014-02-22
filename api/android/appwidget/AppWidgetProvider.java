@@ -13,8 +13,8 @@ public class AppWidgetProvider extends BroadcastReceiver {
     /**
      * Constructor to initialize AppWidgetProvider.
      */
-    @DSComment("Widget wrapper")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.965 -0500", hash_original_method = "9EAF442CC86F0B5BA1B1B46FB2948CE7", hash_generated_method = "DEB53658D67F140D3EE8EB0F32F20711")
     

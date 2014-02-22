@@ -19,8 +19,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
      * Creates an instance of {@code ReentrantLock}.
      * This is equivalent to using {@code ReentrantLock(false)}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.124 -0500", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "AEC11EC0D4BB362F107A8D68598F3A34")
     
 public ReentrantLock() {
@@ -33,8 +33,8 @@ public ReentrantLock() {
      *
      * @param fair {@code true} if this lock should use a fair ordering policy
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.127 -0500", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "351877AD8EA12CDBB8C7B872FE29D59C")
     
 public ReentrantLock(boolean fair) {

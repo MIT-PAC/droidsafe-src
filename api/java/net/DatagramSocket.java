@@ -71,7 +71,7 @@ public static synchronized void setDatagramSocketImplFactory(DatagramSocketImplF
      * @throws SocketException
      *             if an error occurs while creating or binding the socket.
      */
-    @DSComment("no security concern")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.606 -0500", hash_original_method = "600D2DC769AA1337C3E52515B77C9BA6", hash_generated_method = "E20B11B2B01A755621C765189DBA41B7")
     
@@ -89,6 +89,8 @@ public DatagramSocket() throws SocketException {
      * @throws SocketException
      *             if an error occurs while creating or binding the socket.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.608 -0500", hash_original_method = "5C9F869A9F8E783507AEDF83BF8CB0B7", hash_generated_method = "23C824DFE2FE70E29B80EE8001A33850")
     
 public DatagramSocket(int aPort) throws SocketException {
@@ -108,8 +110,8 @@ public DatagramSocket(int aPort) throws SocketException {
      * @throws SocketException
      *             if an error occurs while creating or binding the socket.
      */
-    @DSComment("Socket construction")
-    @DSSpec(DSCat.NETWORK)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.611 -0500", hash_original_method = "CB0AFEB195CAFC978B9076AC8691C2BF", hash_generated_method = "4F66F1E6A00EEDD5800A398FCFF396DF")
     
 public DatagramSocket(int aPort, InetAddress addr) throws SocketException {
@@ -125,6 +127,8 @@ public DatagramSocket(int aPort, InetAddress addr) throws SocketException {
      * @param socketImpl
      *            the DatagramSocketImpl to use.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.663 -0500", hash_original_method = "8791E60C190AA1CE5F0CD19BC0C9D10B", hash_generated_method = "91EEF7B95468F3757EC43B665D181C21")
     
 protected DatagramSocket(DatagramSocketImpl socketImpl) {
@@ -146,6 +150,8 @@ protected DatagramSocket(DatagramSocketImpl socketImpl) {
      * @throws SocketException
      *             if a problem occurs creating or binding the socket.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.666 -0500", hash_original_method = "F9D705BC16951CA970DD006A85C9F283", hash_generated_method = "6FAE8D45786083F9DDDF00C32DCF8DA9")
     
 public DatagramSocket(SocketAddress localAddr) throws SocketException {
@@ -610,6 +616,7 @@ public void connect(InetAddress address, int port) {
     /**
      * Returns true if this socket is bound to a local address. See {@link #bind}.
      */
+    @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.681 -0500", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "A878CB652BF3277F9F7822AB8074E046")
     
 public boolean isBound() {
@@ -665,6 +672,7 @@ public SocketAddress getLocalSocketAddress() {
      * @throws SocketException
      *             if the socket is closed or the option could not be set.
      */
+    @DSSpec(DSCat.NETWORKING)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.692 -0500", hash_original_method = "D6CD69E67882E49578E557811A0FC457", hash_generated_method = "F94F3DC09B3E131C2F7D5BA39FFC9336")
     
@@ -697,6 +705,7 @@ public boolean getReuseAddress() throws SocketException {
      * @throws SocketException
      *             if the socket is closed or the option could not be set.
      */
+    @DSSpec(DSCat.NETWORKING)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.697 -0500", hash_original_method = "16BACAE92585B22CC8D47D482CFB74B4", hash_generated_method = "80E17E7313B16739DDEA9982B0678291")
     

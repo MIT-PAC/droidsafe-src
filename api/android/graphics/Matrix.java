@@ -379,16 +379,16 @@ public class Matrix {
 
     public int native_instance;
     
-	@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Matrix(){
 		/*
 		native_instance = native_create(0);
 		*/
 	}
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Matrix(Matrix src){
 		/*
 		native_instance = native_create(src != null ? src.native_instance : 0);
