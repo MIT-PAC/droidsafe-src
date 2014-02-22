@@ -17,6 +17,7 @@ import soot.Context;
 import soot.Local;
 import soot.MethodContext;
 import soot.MethodOrMethodContext;
+import soot.PrimType;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
@@ -25,6 +26,7 @@ import soot.Value;
 import soot.jimple.Expr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.tagkit.LineNumberTag;
@@ -66,7 +68,8 @@ public class Method implements Comparable<Method> {
     /** if the target method is synthetic, then we try to find the real target through the synthetic method
      *  if this is non-null, then this is the real target of this method in user code     */
     private SootMethod realTarget = null;
-    
+    /** cache of the info kinds that method call (plus any called methods) could access */
+    private Set<InfoKind> methodInfoKinds;
 
     public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, ArgumentValue receiver) {
         this.sootMethod = method;
@@ -78,7 +81,7 @@ public class Method implements Comparable<Method> {
         argInfoKinds = new HashSet[ptaInfo.getNumArgs()];
         argInfoValues = new HashSet[ptaInfo.getNumArgs()];
     }
-    
+
     /**
      * Call this method to check if the target method is a synthetic method in a user class, and if so,
      * find the real target through the synthetic method.  This is used to report correct line numbers
@@ -88,53 +91,53 @@ public class Method implements Comparable<Method> {
         if (!API.v().isSystemMethod(sootMethod) && SootUtils.isSynthetic(sootMethod)) {
             //specific set of tests to see if we can find a real user method that is called
             //and replace
-            
+
             MethodOrMethodContext thisMomc = sootMethod;
-            
+
             Context context = ptaInfo.getEdge().tgtCtxt();
-            
+
             if (context != null)
                 thisMomc = MethodContext.v(sootMethod, context);
-            
+
             SootMethod newTarget = null;
-            
+
             Iterator<Edge> edges  = Scene.v().getCallGraph().edgesOutOf(thisMomc);
-            
+
             while (edges.hasNext()) {
                 Edge edge = edges.next();
                 SootMethod target = edge.tgt();                
-                
+
                 if (!edge.isExplicit())                    
                     continue;
-                
+
                 if (!target.getName().equals(sootMethod.getName()))
                     return;
-                
+
                 /* return type may change!
                 if (!SootUtils.isSubTypeOfIncluding(target.getReturnType(), sootMethod.getReturnType()))
                     return;
-                */
-                
+                 */
+
                 if (sootMethod.getParameterCount() != target.getParameterCount())
                     return;
-                
+
                 for (int i = 0; i < target.getParameterCount(); i++) {
                     if (!SootUtils.isSubTypeOfIncluding(target.getParameterType(i), sootMethod.getParameterType(i))) {
                         return;
                     }
                 }
-                                
+
                 //found potential match see if we have see it before
                 //if not then two potential matches and we don't handle that!
                 if (newTarget != null && !newTarget.equals(target))
                     return;
-                
+
                 newTarget = target;
             }
-            
+
             //if we get here all tests pass!
             //replace the original method reference with the target of this sythetic method
-            
+
             realTarget = newTarget;
         }
     }
@@ -410,18 +413,23 @@ public class Method implements Comparable<Method> {
         return new HashSet<InfoKind>();
     }
 
-    /**
-     * Query the information flow analysis for the given value, either the receiver or an argument
-     * of this method call.
-     */
-    private Set<InfoValue> queryInfoFlow(Value val) {
-        if (!Config.v().infoFlow || !(val instanceof Local))
-            return new HashSet<InfoValue>();
+    Set<InfoValue> getTaint(MethodOrMethodContext momc) {
+        return null;
+    }
 
-        Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
-        //call the information flow results
-        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getEdge().srcCtxt(), 
-            unit, (Local)val);
+    Set<InfoValue> getTaint(AllocNode a, MethodOrMethodContext momc) {
+        return null;
+    }
+
+
+    Set<InfoValue> getTaints(Stmt stmt, MethodOrMethodContext srcMethodContext, Local local) {
+        assert srcMethodContext.method().retrieveActiveBody().getUnits().contains(stmt);
+        assert local.getType() instanceof PrimType;
+        return null;
+    }
+
+    private MethodOrMethodContext getMethodContext() {
+        return ptaInfo.getEdge().getTgt();
     }
 
     /**
@@ -432,9 +440,13 @@ public class Method implements Comparable<Method> {
         //call the information flow results
         if (!hasReceiver())
             return new HashSet<Stmt>();
-        
-        if (recInfoValues == null)
-            recInfoValues = queryInfoFlow(ptaInfo.getReceiver());
+
+        if (recInfoValues == null) {
+            recInfoValues = new HashSet<InfoValue>();
+            for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
+                recInfoValues.addAll(getTaint((AllocNode)node, getMethodContext()));
+            }
+        }
 
         Set<Stmt> srcSrcs = new HashSet<Stmt>();
         for (InfoValue iv : recInfoValues) {
@@ -454,8 +466,22 @@ public class Method implements Comparable<Method> {
      * argument (or one of its fields).
      */
     public Set<Stmt> getArgSourceInfoUnits(int i) {
-        if (argInfoValues[i] == null)
-            argInfoValues[i] = queryInfoFlow(ptaInfo.getArgValue(i));	    
+
+        if (argInfoValues[i] == null) {
+            argInfoValues[i] = new HashSet<InfoValue>();
+            if (ptaInfo.isArgPointer(i)) {
+                for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
+                    argInfoValues[i].addAll(getTaint((AllocNode)node, getMethodContext()));
+                }
+            } else if (ptaInfo.getArgValue(i) instanceof Local && 
+                    ptaInfo.getArgValue(i).getType() instanceof PrimType){
+                argInfoValues[i] = getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
+                    getMethodContext(), (Local)ptaInfo.getArgValue(i));
+            } else {
+                logger.error("Unknown value or type for argument when retreiveing infovalue: {} {} {}", 
+                    getMethodContext(), ptaInfo.getArgValue(i), ptaInfo.getArgValue(i).getType());
+            }
+        }
 
         Set<Stmt> srcSrcs = new HashSet<Stmt>();
         for (InfoValue iv : argInfoValues[i]) {
@@ -476,9 +502,7 @@ public class Method implements Comparable<Method> {
      * of the source statements to see if any of them have higher level InfoKind associated with them.
      * Return the set of all InfoKinds for the targets of all sources.
      */
-    private Set<InfoKind> getInfoKinds(Value v) {
-        Set<InfoValue> srcs = queryInfoFlow(v);
-
+    private Set<InfoKind> getInfoKinds(Set<InfoValue> srcs) {
         Set<InfoKind> srcKinds = new HashSet<InfoKind>();
         for (InfoValue iv : srcs) {
             if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
@@ -496,15 +520,7 @@ public class Method implements Comparable<Method> {
                             PTABridge.v().resolveInvoke(invoke, ptaInfo.getEdge().srcCtxt());
 
                     for (SootMethod target : targets) {
-                        if (API.v().hasSourceInfoKind(target))
-                            srcKinds.addAll(API.v().getSourceInfoKinds(target));
-                        else {
-                            //unknown info kind, check if a spec or ban method and if so, denote with UNKNOWN kind
-                            if (API.v().isInterestingMethod(target)) {
-                                srcKinds.add(API.v().SENSITIVE_UNCATEGORIZED);
-                            }
-
-                        }
+                        srcKinds.addAll(API.v().getSourceInfoKinds(target));
                     }
                 } catch (CannotFindMethodException e) {
                     continue;
@@ -523,8 +539,12 @@ public class Method implements Comparable<Method> {
      * be tainted with.
      */
     public Set<InfoKind> getArgInfoKinds(int i) {
-        if (argInfoKinds[i] == null)
-            argInfoKinds[i] = getInfoKinds(ptaInfo.getArgValue(i)); 
+        if (argInfoKinds[i] == null) {
+            //call info flow and cache results
+            getArgSourceInfoUnits(i);
+            //convert info flow infovalue results to infokind
+            argInfoKinds[i] = getInfoKinds(argInfoValues[i]);
+        }
         return argInfoKinds[i];
     }
 
@@ -533,9 +553,13 @@ public class Method implements Comparable<Method> {
      * tainted with.	 
      */
     public Set<InfoKind> getRecInfoKinds() {
-        if (hasReceiver()) {
-            if (recInfoKinds == null)
-                recInfoKinds = getInfoKinds(ptaInfo.getReceiver()); 
+        if (hasReceiver()) { 
+            if (recInfoKinds == null) {
+                //cache info flow results
+                getReceiverSourceInfoUnits();
+                //convert info flow results to high level infokind
+                recInfoKinds = getInfoKinds(recInfoValues);
+            }
             return recInfoKinds;
         }
         else 
@@ -543,13 +567,14 @@ public class Method implements Comparable<Method> {
     }
 
     /**
-     *  Return the high level InfoKinds for all possible sources (receiver and all args).
+     *  Return the high level InfoKinds for all possible access of the target method.
      */
     public Set<InfoKind> getSourcesInfoKinds() {
-        Set<InfoKind> srcKinds = getRecInfoKinds();
-        for (int i = 0; i < ptaInfo.getNumArgs(); i++)
-            srcKinds.addAll(getArgInfoKinds(i));
-        return srcKinds;
+        if (methodInfoKinds == null) {
+            methodInfoKinds = getInfoKinds(getTaint(getMethodContext()));
+        }
+
+        return methodInfoKinds;
     }
 
     @Override
