@@ -358,6 +358,8 @@ public static InetAddress getLoopbackAddress() {
      * Equivalent to {@code getByAddress(null, ipAddress)}. Handy for addresses with
      * no associated hostname.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.307 -0500", hash_original_method = "62A7C11189E68648BE032AAAC357AEAD", hash_generated_method = "6640896F14B26720B73658FB0E72D38B")
     
@@ -570,6 +572,8 @@ public String getHostName() {
     /**
      * Returns the fully qualified hostname corresponding to this IP address.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.242 -0500", hash_original_method = "A5A62CAEFD7FCA56AB200DB74BB59546", hash_generated_method = "F3D2F0697947A3C6FDC2EB20AA874985")
     
@@ -599,6 +603,8 @@ public String getCanonicalHostName() {
      *
      * @return the description, as host/address.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.259 -0500", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "BB4B7DC306DE02D48C444870FADF73B1")
     
 @Override
@@ -776,6 +782,8 @@ public boolean isSiteLocalAddress() {
      * @throws IllegalArgumentException
      *             if timeout is less than zero.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.294 -0500", hash_original_method = "C5AA36E6C7DFD1C45750A6D7AE21AFCC", hash_generated_method = "D9B0F0A17C132723F6CC895BD9C5B09E")
     
 public boolean isReachable(int timeout) throws IOException {

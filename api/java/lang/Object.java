@@ -14,8 +14,8 @@ public class Object {
     /**
      * Constructs a new instance of {@code Object}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.129 -0500", hash_original_method = "1035BC9FD37C3D2AC57825226BBB0539", hash_generated_method = "D31E84B79A4FC29F631370F22BA60293")
     
 public Object() {

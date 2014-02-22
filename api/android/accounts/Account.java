@@ -32,6 +32,8 @@ public Account[] newArray(int size) {
 
     public  String type;
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.365 -0500", hash_original_method = "92321A38B636724882B81077847DFFEE", hash_generated_method = "F048E77C9215A8AF9B03F89C76A7DD3C")
     
 public Account(String name, String type) {
@@ -45,6 +47,8 @@ public Account(String name, String type) {
         this.type = type;
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.367 -0500", hash_original_method = "634539653E1462125AEF6C008057544F", hash_generated_method = "FC9CA9A81C9A52928A015565A6C91A13")
     
 public Account(Parcel in) {

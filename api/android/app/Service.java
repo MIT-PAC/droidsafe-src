@@ -66,8 +66,8 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
 
     private boolean mStartCompatibility = false;
 
-    @DSComment("Modeled")
-    @DSSafe(DSCat.SERVICE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.394 -0500", hash_original_method = "D0179C650F036CDA92B50348E0090B82", hash_generated_method = "51E9E57980FDAAC374C77A00B7C0E1C8")
     
 public Service() {

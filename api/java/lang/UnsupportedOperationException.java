@@ -14,8 +14,8 @@ public class UnsupportedOperationException extends RuntimeException {
      * Constructs a new {@code UnsupportedOperationException} that includes the
      * current stack trace.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.776 -0500", hash_original_method = "7F6DB5D5ED9D38F1F537736368EB0450", hash_generated_method = "0E0DB9023EDADF61F49201327AC8AD26")
     
 public UnsupportedOperationException() {
@@ -28,8 +28,8 @@ public UnsupportedOperationException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.779 -0500", hash_original_method = "D8E5E0CB144C04E81C4A0C2F4745C381", hash_generated_method = "524F01D45A2ED48F724445E4C12C424F")
     
 public UnsupportedOperationException(String detailMessage) {
@@ -46,8 +46,8 @@ public UnsupportedOperationException(String detailMessage) {
      *            the optional cause of this exception, may be {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.781 -0500", hash_original_method = "66AB41D7AD796BF9B33430AF2C434F38", hash_generated_method = "92E2257F8052820444C34D6455F4C1F7")
     
 public UnsupportedOperationException(String message, Throwable cause) {
@@ -62,8 +62,8 @@ public UnsupportedOperationException(String message, Throwable cause) {
      *            the optional cause of this exception, may be {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.784 -0500", hash_original_method = "47724B2BD03E5789FE4A564680099229", hash_generated_method = "EDC641BC2446FD23BB14BBE931583F71")
     
 public UnsupportedOperationException(Throwable cause) {

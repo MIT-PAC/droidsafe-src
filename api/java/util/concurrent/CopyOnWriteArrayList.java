@@ -87,8 +87,8 @@ static int indexOf(Object o, Object[] data, int from, int to) {
     /**
      * Creates a new empty instance.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.928 -0500", hash_original_method = "E357703A48348C8EEE9667190E563C6C", hash_generated_method = "E35E785C1CA6F25DCC940C5A7D20BFFD")
     
 public CopyOnWriteArrayList() {
@@ -98,8 +98,8 @@ public CopyOnWriteArrayList() {
     /**
      * Creates a new instance containing the elements of {@code collection}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.932 -0500", hash_original_method = "84AACC1E4283EC6F676E4F2CD339FC5B", hash_generated_method = "055556F726947E25A73EAD27BE56F44C")
     
 @SuppressWarnings("unchecked")
@@ -110,8 +110,8 @@ public CopyOnWriteArrayList() {
     /**
      * Creates a new instance containing the elements of {@code array}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.934 -0500", hash_original_method = "51C6AA63C04D903DC2F19EE7270C9A87", hash_generated_method = "CF8A43BBF7E32E1F34D4AA3517AE8F70")
     
 public CopyOnWriteArrayList(E[] array) {

@@ -671,6 +671,8 @@ public void setDiscoverableTimeout(int timeout) {
      *
      * @return true on success, false on error
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.772 -0500", hash_original_method = "10268AD378D15FC8A51253E10EC3C6B2", hash_generated_method = "4C98BE48E60EF5B7E0123B8C32683AE8")
     
 public boolean startDiscovery() {

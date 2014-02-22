@@ -22,6 +22,8 @@ public class PushbackReader extends FilterReader {
      * @param in
      *            the source reader.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.233 -0500", hash_original_method = "B6B01CC88320509C49CCBB3EC0CBE41F", hash_generated_method = "6730B2B68C67C67A679F031CA28A9667")
     
 public PushbackReader(Reader in) {
@@ -41,6 +43,8 @@ public PushbackReader(Reader in) {
      * @throws IllegalArgumentException
      *             if {@code size} is negative.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.236 -0500", hash_original_method = "9E5ACD5C81BD224F75A81C9C066E599D", hash_generated_method = "CECF6E8D14BA8A124B031577F81C794F")
     
 public PushbackReader(Reader in, int size) {
@@ -117,6 +121,8 @@ public PushbackReader(Reader in, int size) {
      *             if this reader is closed or an I/O error occurs while reading
      *             from this reader.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.246 -0500", hash_original_method = "CE14A4FF29D58642FE2BEF405E27FE95", hash_generated_method = "B663E5509391218D52F5860CEB3FAC99")
     
 @Override
@@ -170,6 +176,8 @@ private void checkNotClosed() throws IOException {
      *             if this reader is closed or another I/O error occurs while
      *             reading from this reader.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.251 -0500", hash_original_method = "B9190ABDE3B10CB37A8EAB2FF74A1B25", hash_generated_method = "C43BFCB5C469DA2B73FD120B13D3B5E0")
     
 @Override
@@ -219,6 +227,8 @@ private void checkNotClosed() throws IOException {
      * @see #read()
      * @see #read(char[], int, int)
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.254 -0500", hash_original_method = "D62FC241A8B58B8EF1EBB387C319130D", hash_generated_method = "7AE65CBF665E1FACF94870E16095D856")
     
 @Override
@@ -264,6 +274,7 @@ private void checkNotClosed() throws IOException {
      *             pushback buffer is not sufficient to store the contents of
      *             {@code buffer}.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.259 -0500", hash_original_method = "3A71863D4D33CC0B41E243A7D99AFC6A", hash_generated_method = "6822D8AB7F17ED9CDD029D20FB09AA8B")
     
 public void unread(char[] buffer) throws IOException {
@@ -300,6 +311,7 @@ public void unread(char[] buffer) throws IOException {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.261 -0500", hash_original_method = "D820ACC6B7460811082E4447561A1371", hash_generated_method = "938F12667C4183ED486E1AE8AD3171A7")
     
 public void unread(char[] buffer, int offset, int length) throws IOException {
@@ -329,6 +341,7 @@ public void unread(char[] buffer, int offset, int length) throws IOException {
      *             if this reader is closed or the internal pushback buffer is
      *             full.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.264 -0500", hash_original_method = "778C661227F8B678AE3F6B841DAAEACD", hash_generated_method = "DED29060FB3081DF9D596E1E0350CEF2")
     
 public void unread(int oneChar) throws IOException {

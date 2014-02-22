@@ -1,0 +1,559 @@
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:139] DG1 Hash: mod< static final long serialVersionUID = 7515723908773894738L;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:339] *originalBody <
+
+    private static final long serialVersionUID = 7515723908773894738L;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <private static final long serialVersionUID = 7515723908773894738L;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody AC22C2D7B4371C5B3354C8DF803452A1
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body A4DA12589231B70040707FDEAE5A5302
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:377] No longer marking fields with custom annotation
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:385] Added Transform for class Short original hash AC22C2D7B4371C5B3354C8DF803452A1, DG1 hash A4DA12589231B70040707FDEAE5A5302 Model body value is:
+--
+    /**
+     * The value which the receiver represents.
+     */
+    private final short value;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <private final short value;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 725B5FF252E0874CDDE3200D0E8D3E87
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body F058F0DC3FA1445444612EC1729AC084
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:377] No longer marking fields with custom annotation
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:385] Added Transform for class Short original hash 725B5FF252E0874CDDE3200D0E8D3E87, DG1 hash F058F0DC3FA1445444612EC1729AC084 Model body value is:
+--
+    /**
+     * Constant for the maximum {@code short} value, 2<sup>15</sup>-1.
+     */
+    public static final short MAX_VALUE = (short) 0x7FFF;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static final short MAX_VALUE = (short) 0x7FFF;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 2E8990EE4BCAF51ABAF9910FEA47E327
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 4E535BEA31C7BBFE37C6125C355AA401
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:377] No longer marking fields with custom annotation
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:385] Added Transform for class Short original hash 2E8990EE4BCAF51ABAF9910FEA47E327, DG1 hash 4E535BEA31C7BBFE37C6125C355AA401 Model body value is:
+--
+    /**
+     * Constant for the minimum {@code short} value, -2<sup>15</sup>.
+     */
+    public static final short MIN_VALUE = (short) 0x8000;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static final short MIN_VALUE = (short) 0x8000;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 8248891CDA13195DEFED2D9240C645FE
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 6AFEEE5C6D4CAA395CBB726295009C03
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:377] No longer marking fields with custom annotation
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:385] Added Transform for class Short original hash 8248891CDA13195DEFED2D9240C645FE, DG1 hash 6AFEEE5C6D4CAA395CBB726295009C03 Model body value is:
+--
+     *
+     * @since 1.5
+     */
+    public static final int SIZE = 16;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static final int SIZE = 16;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 35BBD8D16D40CCFD2558C6BE179C9BD7
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body A660B6353B2C6F87F431A4033E70556A
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:377] No longer marking fields with custom annotation
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:385] Added Transform for class Short original hash 35BBD8D16D40CCFD2558C6BE179C9BD7, DG1 hash A660B6353B2C6F87F431A4033E70556A Model body value is:
+--
+     */
+    @SuppressWarnings("unchecked")
+    public static final Class<Short> TYPE
+            = (Class<Short>) short[].class.getComponentType();>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@SuppressWarnings("unchecked")
+public static final Class<Short> TYPE
+            = (Class<Short>) short[].class.getComponentType();>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody E28BA0FAE7ADC3DBF11B80B560194555
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 1C560DD956BA390561CDDC131A7B3472
+--
+     */
+    public Short(String string) throws NumberFormatException {
+        this(parseShort(string));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public Short(String string) throws NumberFormatException {
+        this(parseShort(string));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody E48305ACBB0A4408E27E3B9E599A8961
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 3FF19FE9B7A2AAC6FFD4ADCF39E090CF
+--
+     */
+    public Short(short value) {
+        this.value = value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public Short(short value) {
+        this.value = value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody A0DAB957B86749FB655AF96F446D992A
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body E5BE3E42398BAC4AC4E6C3B90132D61D
+--
+    @Override
+    public byte byteValue() {
+        return (byte) value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public byte byteValue() {
+        return (byte) value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 4C2FE469A77605BE0BF5A0C525E46699
+--
+     */
+    public int compareTo(Short object) {
+        return compare(value, object.value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public int compareTo(Short object) {
+        return compare(value, object.value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 9BC6DB09097B8FF862117A789E30ABF0
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 0C5DA46BB9BF2DC53C6061E789D724A6
+--
+     */
+    public static int compare(long lhs, long rhs) {
+        return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static int compare(long lhs, long rhs) {
+        return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 04F0AD5B79EFA19C0773385F336B3C1E
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 478FD4A607436BF9645D8B564F3B6D2D
+--
+            return valueOf(result);
+        }
+        throw new NumberFormatException("Value out of range for short: \"" + string + "\"");
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static Short decode(String string) throws NumberFormatException {
+        int intValue = Integer.decode(string).intValue();
+        short result = (short) intValue;
+        if (result == intValue) {
+            return valueOf(result);
+--
+    @Override
+    public double doubleValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public double doubleValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody BF89BE4469CF5E691A2C43432BBB5D3E
+--
+    @Override
+    public boolean equals(Object object) {
+        return (object instanceof Short) && (((Short) object).value == value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public boolean equals(Object object) {
+        return (object instanceof Short) && (((Short) object).value == value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 0A8AF6AC553F87DAF0564A149EF4F5AC
+--
+    @Override
+    public float floatValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public float floatValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 0138C4AD160C9AAF1F0B41D5F85236C8
+--
+    @Override
+    public int hashCode() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public int hashCode() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody C30218EC7C084095E716A93197D10945
+--
+    @Override
+    public int intValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public int intValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody CED71A70CDF5F216D39A3AE3E558B24B
+--
+    @Override
+    public long longValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public long longValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 1422248BBCC1B2BAF9351E8A3DC0A5BE
+--
+     */
+    public static short parseShort(String string) throws NumberFormatException {
+        return parseShort(string, 10);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static short parseShort(String string) throws NumberFormatException {
+        return parseShort(string, 10);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 092E6E17D3E94A3774E469ED31E8F789
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 9E014B495222C343A28892C8489AC61B
+--
+            return result;
+        }
+        throw new NumberFormatException("Value out of range for short: \"" + string + "\"");
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static short parseShort(String string, int radix) throws NumberFormatException {
+        int intValue = Integer.parseInt(string, radix);
+        short result = (short) intValue;
+        if (result == intValue) {
+            return result;
+--
+    @Override
+    public short shortValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public short shortValue() {
+        return value;
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody A82042D96E725949B732B712BE4A645E
+--
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <@Override
+public String toString() {
+        return Integer.toString(value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 523848B88799F041621FC5C99AD5BFED
+--
+     */
+    public static String toString(short value) {
+        return Integer.toString(value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static String toString(short value) {
+        return Integer.toString(value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody DD1619FF77139A2F0480F37302994966
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body C5B2FD991635A33C424D221466C65156
+--
+     */
+    public static Short valueOf(String string) throws NumberFormatException {
+        return valueOf(parseShort(string));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static Short valueOf(String string) throws NumberFormatException {
+        return valueOf(parseShort(string));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody C77C28BAB6A5AD0C9182A3450A1404EA
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body C516C1A9E3A7B243E3728A7860E9F4E6
+--
+     */
+    public static Short valueOf(String string, int radix) throws NumberFormatException {
+        return valueOf(parseShort(string, radix));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static Short valueOf(String string, int radix) throws NumberFormatException {
+        return valueOf(parseShort(string, radix));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 35EB6A5FDB629A957EC21221B837098B
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 590301C82A90967090EAC69ADFE497FC
+--
+     */
+    public static short reverseBytes(short s) {
+        return (short) ((s << 8) | ((s >>> 8) & 0xFF));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static short reverseBytes(short s) {
+        return (short) ((s << 8) | ((s >>> 8) & 0xFF));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody B1071BF34EE08892A09AC1DB1A0B09B2
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 0500F9B9834D967CA462BC34C0FFC5A3
+--
+     */
+    public static Short valueOf(short s) {
+        return s < -128 || s >= 128 ? new Short(s) : SMALL_VALUES[s + 128];
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <public static Short valueOf(short s) {
+        return s < -128 || s >= 128 ? new Short(s) : SMALL_VALUES[s + 128];
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 7296C5697BB66FEC2AC94F5102A69D0E
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 0DFE8EE5D06964C1951ECAFF89A66210
+--
+    /**
+     * A cache of instances used by {@link Short#valueOf(short)} and auto-boxing.
+     */
+    private static final Short[] SMALL_VALUES = new Short[256];>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] ******HashableBody <private static final Short[] SMALL_VALUES = new Short[256];>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:341] Hash of hashableBody 5EDCE38E3A4104420004ABECDB3724B1
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:342] DG1 original Body 04064972970896AB0D9741A2120B786C
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:377] No longer marking fields with custom annotation
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:385] Added Transform for class Short original hash 5EDCE38E3A4104420004ABECDB3724B1, DG1 hash 04064972970896AB0D9741A2120B786C Model body value is:
+--
+    }
+**** AFTER:
+publicstaticintcompare(longlhs,longrhs){returnlhs>rhs?1:(lhs<rhs?-1:0);}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static int compare(long lhs, long rhs) {
+        return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticintcompare(longlhs,longrhs){returnlhs>rhs?1:(lhs<rhs?-1:0);}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 04F0AD5B79EFA19C0773385F336B3C1E
+--
+    }
+**** AFTER:
+publicstaticShortdecode(Stringstring)throwsNumberFormatException{intintValue=Integer.decode(string).intValue();shortresult=(short)intValue;if(result==intValue){returnvalueOf(result);}thrownewNumberFormatException("Valueoutofrangeforshort:\""+string+"\"");}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static Short decode(String string) throws NumberFormatException {
+        int intValue = Integer.decode(string).intValue();
+        short result = (short) intValue;
+        if (result == intValue) {
+            return valueOf(result);
+--
+    }
+**** AFTER:
+publicstaticshortparseShort(Stringstring)throwsNumberFormatException{returnparseShort(string,10);}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static short parseShort(String string) throws NumberFormatException {
+        return parseShort(string, 10);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticshortparseShort(Stringstring)throwsNumberFormatException{returnparseShort(string,10);}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 092E6E17D3E94A3774E469ED31E8F789
+--
+    }
+**** AFTER:
+publicstaticshortparseShort(Stringstring,intradix)throwsNumberFormatException{intintValue=Integer.parseInt(string,radix);shortresult=(short)intValue;if(result==intValue){returnresult;}thrownewNumberFormatException("Valueoutofrangeforshort:\""+string+"\"");}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static short parseShort(String string, int radix) throws NumberFormatException {
+        int intValue = Integer.parseInt(string, radix);
+        short result = (short) intValue;
+        if (result == intValue) {
+            return result;
+--
+    }
+**** AFTER:
+publicstaticStringtoString(shortvalue){returnInteger.toString(value);}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static String toString(short value) {
+        return Integer.toString(value);
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticStringtoString(shortvalue){returnInteger.toString(value);}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: DD1619FF77139A2F0480F37302994966
+--
+    }
+**** AFTER:
+publicstaticShortvalueOf(Stringstring)throwsNumberFormatException{returnvalueOf(parseShort(string));}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static Short valueOf(String string) throws NumberFormatException {
+        return valueOf(parseShort(string));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticShortvalueOf(Stringstring)throwsNumberFormatException{returnvalueOf(parseShort(string));}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: C77C28BAB6A5AD0C9182A3450A1404EA
+--
+    }
+**** AFTER:
+publicstaticShortvalueOf(Stringstring,intradix)throwsNumberFormatException{returnvalueOf(parseShort(string,radix));}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static Short valueOf(String string, int radix) throws NumberFormatException {
+        return valueOf(parseShort(string, radix));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticShortvalueOf(Stringstring,intradix)throwsNumberFormatException{returnvalueOf(parseShort(string,radix));}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 35EB6A5FDB629A957EC21221B837098B
+--
+    }
+**** AFTER:
+publicstaticshortreverseBytes(shorts){return(short)((s<<8)|((s>>>8)&0xFF));}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static short reverseBytes(short s) {
+        return (short) ((s << 8) | ((s >>> 8) & 0xFF));
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticshortreverseBytes(shorts){return(short)((s<<8)|((s>>>8)&0xFF));}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: B1071BF34EE08892A09AC1DB1A0B09B2
+--
+    }
+**** AFTER:
+publicstaticShortvalueOf(shorts){returns<-128||s>=128?newShort(s):SMALL_VALUES[s+128];}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static Short valueOf(short s) {
+        return s < -128 || s >= 128 ? new Short(s) : SMALL_VALUES[s + 128];
+    }>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticShortvalueOf(shorts){returns<-128||s>=128?newShort(s):SMALL_VALUES[s+128];}
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 7296C5697BB66FEC2AC94F5102A69D0E
+--
+private static final long serialVersionUID = 7515723908773894738L;
+**** AFTER:
+privatestaticfinallongserialVersionUID=7515723908773894738L;
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <private static final long serialVersionUID = 7515723908773894738L;>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: privatestaticfinallongserialVersionUID=7515723908773894738L;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: AC22C2D7B4371C5B3354C8DF803452A1
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:99] normalizedWithNoComment: privatestaticfinallongserialVersionUID=7515723908773894738L;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:100] MD5: AC22C2D7B4371C5B3354C8DF803452A1
+--
+public static final short MAX_VALUE = (short) 0x7FFF;
+**** AFTER:
+publicstaticfinalshortMAX_VALUE=(short)0x7FFF;
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static final short MAX_VALUE = (short) 0x7FFF;>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticfinalshortMAX_VALUE=(short)0x7FFF;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 2E8990EE4BCAF51ABAF9910FEA47E327
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:99] normalizedWithNoComment: publicstaticfinalshortMAX_VALUE=(short)0x7FFF;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:100] MD5: 2E8990EE4BCAF51ABAF9910FEA47E327
+--
+public static final short MIN_VALUE = (short) 0x8000;
+**** AFTER:
+publicstaticfinalshortMIN_VALUE=(short)0x8000;
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static final short MIN_VALUE = (short) 0x8000;>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticfinalshortMIN_VALUE=(short)0x8000;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 8248891CDA13195DEFED2D9240C645FE
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:99] normalizedWithNoComment: publicstaticfinalshortMIN_VALUE=(short)0x8000;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:100] MD5: 8248891CDA13195DEFED2D9240C645FE
+--
+public static final int SIZE = 16;
+**** AFTER:
+publicstaticfinalintSIZE=16;
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public static final int SIZE = 16;>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: publicstaticfinalintSIZE=16;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 35BBD8D16D40CCFD2558C6BE179C9BD7
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:99] normalizedWithNoComment: publicstaticfinalintSIZE=16;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:100] MD5: 35BBD8D16D40CCFD2558C6BE179C9BD7
+--
+            = (Class<Short>) short[].class.getComponentType();
+**** AFTER:
+@SuppressWarnings("unchecked")publicstaticfinalClass<Short>TYPE=(Class<Short>)short[].class.getComponentType();
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@SuppressWarnings("unchecked")
+public static final Class<Short> TYPE
+            = (Class<Short>) short[].class.getComponentType();>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: @SuppressWarnings("unchecked")publicstaticfinalClass<Short>TYPE=(Class<Short>)short[].class.getComponentType();
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: E28BA0FAE7ADC3DBF11B80B560194555
+--
+private static final Short[] SMALL_VALUES = new Short[256];
+**** AFTER:
+privatestaticfinalShort[]SMALL_VALUES=newShort[256];
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <private static final Short[] SMALL_VALUES = new Short[256];>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: privatestaticfinalShort[]SMALL_VALUES=newShort[256];
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 5EDCE38E3A4104420004ABECDB3724B1
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:99] normalizedWithNoComment: privatestaticfinalShort[]SMALL_VALUES=newShort[256];
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:100] MD5: 5EDCE38E3A4104420004ABECDB3724B1
+--
+private short value;
+**** AFTER:
+privateshortvalue;
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <private short value;>
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:96] normalizedWithComment: privateshortvalue;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:97] MD5: 6B20F172DB6AEA88BC2254D4F28BB29D
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:99] normalizedWithNoComment: privateshortvalue;
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:100] MD5: 6B20F172DB6AEA88BC2254D4F28BB29D
+--
+    }
+**** AFTER:
+publicShort(Stringstring)throwsNumberFormatException{this(parseShort(string));addTaint(string.getTaint());}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public Short(String string) throws NumberFormatException {
+        this(parseShort(string));
+        addTaint(string.getTaint());
+        // ---------- Original Method ----------
+    }>
+--
+    }
+**** AFTER:
+publicShort(shortvalue){this.value=value;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public Short(short value) {
+        this.value = value;
+        // ---------- Original Method ----------
+        //this.value = value;
+    }>
+--
+    }
+**** AFTER:
+@OverridepublicbytebyteValue(){bytevarF3F1FD62E8C4F529180D718EF4A7CECE_1911334790=((byte)value);bytevar40EA57D3EE3C07BF1C102B466E1C3091_2072002457=getTaintByte();returnvar40EA57D3EE3C07BF1C102B466E1C3091_2072002457;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public byte byteValue() {
+        byte varF3F1FD62E8C4F529180D718EF4A7CECE_1911334790 = ((byte) value);
+                byte var40EA57D3EE3C07BF1C102B466E1C3091_2072002457 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_2072002457;
+--
+    }
+**** AFTER:
+publicintcompareTo(Shortobject){addTaint(object.getTaint());intvar054767143750F894747E80D9A9324D76_1297027947=(compare(value,object.value));intvarFA7153F7ED1CB6C0FCF2FFB2FAC21748_590344958=getTaintInt();returnvarFA7153F7ED1CB6C0FCF2FFB2FAC21748_590344958;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <public int compareTo(Short object) {
+        addTaint(object.getTaint());
+        int var054767143750F894747E80D9A9324D76_1297027947 = (compare(value, object.value));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590344958 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590344958;
+--
+    }
+**** AFTER:
+@OverridepublicdoubledoubleValue(){doublevar2063C1608D6E0BAF80249C42E2BE5804_1018073464=(value);doublevarE8CD7DA078A86726031AD64F35F5A6C0_1802010545=getTaintDouble();returnvarE8CD7DA078A86726031AD64F35F5A6C0_1802010545;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public double doubleValue() {
+        double var2063C1608D6E0BAF80249C42E2BE5804_1018073464 = (value);
+                double varE8CD7DA078A86726031AD64F35F5A6C0_1802010545 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_1802010545;
+--
+    }
+**** AFTER:
+@Overridepublicbooleanequals(Objectobject){addTaint(object.getTaint());booleanvarDE02B0012693B2F0DBBDEFC2E4538AA7_1252309939=((objectinstanceofShort)&&(((Short)object).value==value));booleanvar84E2C64F38F78BA3EA5C905AB5A2DA27_1983259455=getTaintBoolean();returnvar84E2C64F38F78BA3EA5C905AB5A2DA27_1983259455;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public boolean equals(Object object) {
+        addTaint(object.getTaint());
+        boolean varDE02B0012693B2F0DBBDEFC2E4538AA7_1252309939 = ((object instanceof Short) && (((Short) object).value == value));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983259455 = getTaintBoolean();
+--
+    }
+**** AFTER:
+@OverridepublicfloatfloatValue(){floatvar2063C1608D6E0BAF80249C42E2BE5804_255790021=(value);floatvar546ADE640B6EDFBC8A086EF31347E768_1551851549=getTaintFloat();returnvar546ADE640B6EDFBC8A086EF31347E768_1551851549;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public float floatValue() {
+        float var2063C1608D6E0BAF80249C42E2BE5804_255790021 = (value);
+                float var546ADE640B6EDFBC8A086EF31347E768_1551851549 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1551851549;
+--
+    }
+**** AFTER:
+@OverridepublicinthashCode(){intvar2063C1608D6E0BAF80249C42E2BE5804_1541631223=(value);intvarFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923351768=getTaintInt();returnvarFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923351768;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public int hashCode() {
+        int var2063C1608D6E0BAF80249C42E2BE5804_1541631223 = (value);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923351768 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923351768;
+--
+    }
+**** AFTER:
+@OverridepublicintintValue(){intvar2063C1608D6E0BAF80249C42E2BE5804_246614064=(value);intvarFA7153F7ED1CB6C0FCF2FFB2FAC21748_314545955=getTaintInt();returnvarFA7153F7ED1CB6C0FCF2FFB2FAC21748_314545955;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public int intValue() {
+        int var2063C1608D6E0BAF80249C42E2BE5804_246614064 = (value);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314545955 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314545955;
+--
+    }
+**** AFTER:
+@OverridepubliclonglongValue(){longvar2063C1608D6E0BAF80249C42E2BE5804_290597418=(value);longvar0F5264038205EDFB1AC05FBB0E8C5E94_551931996=getTaintLong();returnvar0F5264038205EDFB1AC05FBB0E8C5E94_551931996;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public long longValue() {
+        long var2063C1608D6E0BAF80249C42E2BE5804_290597418 = (value);
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_551931996 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_551931996;
+--
+    }
+**** AFTER:
+@OverridepublicshortshortValue(){shortvar2063C1608D6E0BAF80249C42E2BE5804_2069831394=(value);shortvar4F09DAA9D95BCB166A302407A0E0BABE_1028075988=getTaintShort();returnvar4F09DAA9D95BCB166A302407A0E0BABE_1028075988;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public short shortValue() {
+        short var2063C1608D6E0BAF80249C42E2BE5804_2069831394 = (value);
+                short var4F09DAA9D95BCB166A302407A0E0BABE_1028075988 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_1028075988;
+--
+    }
+**** AFTER:
+@OverridepublicStringtoString(){Stringvar695C2C3E368F8F994F8F1E388D82E0AE_652349740=Integer.toString(value);var695C2C3E368F8F994F8F1E388D82E0AE_652349740.addTaint(taint);returnvar695C2C3E368F8F994F8F1E388D82E0AE_652349740;}
+
+DEBUG d.d.ExtractInterfaceTool [CodeRewriter.java:94] ******HashableBody <@Override
+public String toString() {
+String var695C2C3E368F8F994F8F1E388D82E0AE_652349740 =         Integer.toString(value);
+        var695C2C3E368F8F994F8F1E388D82E0AE_652349740.addTaint(taint);
+        return var695C2C3E368F8F994F8F1E388D82E0AE_652349740;

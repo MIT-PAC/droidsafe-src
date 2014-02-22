@@ -425,6 +425,7 @@ public int detachFd() {
      * @throws IOException
      *             If an error occurs attempting to close this ParcelFileDescriptor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.078 -0500", hash_original_method = "39939000D7522F3E727F0E3243089AE5", hash_generated_method = "ED2F276848683C97A8A50C78CD7E7CD6")
     
 public void close() throws IOException {

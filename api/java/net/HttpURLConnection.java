@@ -316,6 +316,7 @@ public int getResponseCode() throws IOException {
      *             if there is an error during the retrieval.
      * @see #getResponseCode()
      */
+    @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.621 -0500", hash_original_method = "2B517AE93F70715BB09FC42E79EE9551", hash_generated_method = "268A72CA5053EB689B330389DCC43810")
     

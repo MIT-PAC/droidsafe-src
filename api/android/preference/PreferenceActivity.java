@@ -163,8 +163,8 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
         
 };
     
-    @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.369 -0400", hash_original_method = "5B933AEEC6389C71875EE2A57A875A3A", hash_generated_method = "5B933AEEC6389C71875EE2A57A875A3A")
     public PreferenceActivity ()
     {

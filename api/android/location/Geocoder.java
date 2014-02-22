@@ -56,8 +56,8 @@ public static boolean isPresent() {
      *
      * @throws NullPointerException if Locale is null
      */
-    @DSComment("Utility function")
-    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.063 -0500", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "1C36BBE9907E4DB6EC9677D2355EAD8B")
     
 public Geocoder(Context context, Locale locale) {
@@ -75,8 +75,8 @@ public Geocoder(Context context, Locale locale) {
      *
      * @param context the Context of the calling Activity
      */
-    @DSComment("Utility function")
-    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.065 -0500", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "28778F0E116D3FCD4F6F5F892496788F")
     
 public Geocoder(Context context) {
@@ -218,6 +218,8 @@ public List<Address> getFromLocationName(String locationName, int maxResults) th
      * @throws IOException if the network is unavailable or any other
      * I/O problem occurs
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.073 -0500", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "0B1DBFCDA45AB3795CE5CC65B4E634BC")
     

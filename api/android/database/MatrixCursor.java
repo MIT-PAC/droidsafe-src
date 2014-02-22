@@ -27,6 +27,8 @@ public class MatrixCursor extends AbstractCursor {
      *  determines column ordering elsewhere in this cursor
      * @param initialCapacity in rows
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.738 -0500", hash_original_method = "2D581361992135FCD53B75EF54E93588", hash_generated_method = "B1E537B79598D41770319712D233687F")
     
 public MatrixCursor(String[] columnNames, int initialCapacity) {
@@ -46,7 +48,7 @@ public MatrixCursor(String[] columnNames, int initialCapacity) {
      * @param columnNames names of the columns, the ordering of which
      *  determines column ordering elsewhere in this cursor
      */
-    @DSComment("not sensitive/not an action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.740 -0500", hash_original_method = "520E9D572328080C8A52E1417D8346F4", hash_generated_method = "139E9284A654A258F94B9F29AED42E95")
     
@@ -126,6 +128,8 @@ public void addRow(Object[] columnValues) {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
+    @DSComment("MatrixCursor is array backed data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.751 -0500", hash_original_method = "30233D359459EB079BFCFD374250902B", hash_generated_method = "56703011C0300D55CE4BB4F75D9CA356")
     
 public void addRow(Iterable<?> columnValues) {

@@ -280,6 +280,7 @@ public int describeContents() {
     /**
      * Get the GSM Signal Strength, valid values are (0-31, 99) as defined in TS 27.007 8.5
      */
+    @DSSpec(DSCat.PHONE_STATE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.584 -0500", hash_original_method = "BF744C5FBE02CF825B56C3345AF59498", hash_generated_method = "CBC90B152B3CA37C0698181443702CA1")
     
@@ -290,6 +291,7 @@ public int getGsmSignalStrength() {
     /**
      * Get the GSM bit error rate (0-7, 99) as defined in TS 27.007 8.5
      */
+    @DSSpec(DSCat.PHONE_STATE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.590 -0500", hash_original_method = "092AE71FB082AB370F835236471B5652", hash_generated_method = "B16D3AA7A53422306E3A8740E3C67D7F")
     
@@ -300,6 +302,7 @@ public int getGsmBitErrorRate() {
     /**
      * Get the CDMA RSSI value in dBm
      */
+    @DSSpec(DSCat.PHONE_STATE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.594 -0500", hash_original_method = "4A3A20AF02DE258CADBBD180CAF3D12D", hash_generated_method = "836885968B8AC0E5580F43B2D5AA9963")
     
@@ -703,6 +706,7 @@ public int getLteAsuLevel() {
     /**
      * @return true if this is for GSM
      */
+    @DSSpec(DSCat.PHONE_STATE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.682 -0500", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "B70409FA6ADEB0B1159578592B61EB05")
     
 public boolean isGsm() {

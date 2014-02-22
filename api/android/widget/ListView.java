@@ -86,21 +86,21 @@ public class ListView extends AbsListView {
 
     private FocusSelector mFocusSelector;
     
-	@DSComment("ListView")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ListView(Context context) {
 		super(context);
 	}
     
-    @DSComment("ListView")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
     
-    @DSComment("ListView")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub

@@ -376,6 +376,7 @@ public static final int getParentPid(int pid) {
         return (int) procStatusValues[0];
     }
     
+    @DSSafe(DSCat.OS_GENERAL)
     public static final void setThreadPriority(int tid, int priority) throws IllegalArgumentException, SecurityException {
     }
     

@@ -268,8 +268,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     final Handler mHandler = new Handler();
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Activity() {
 		super();
 		mWindow = PolicyManager.makeNewWindow((Context)this);

@@ -15,47 +15,45 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
 public interface HttpClient {
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpParams getParams()
         ;
-
-
     
     ClientConnectionManager getConnectionManager()
         ;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpResponse execute(HttpUriRequest request)
         throws IOException, ClientProtocolException
         ;
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpResponse execute(HttpUriRequest request, HttpContext context)
         throws IOException, ClientProtocolException
         ;
-
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpResponse execute(HttpHost target, HttpRequest request)
         throws IOException, ClientProtocolException
         ;
-
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     HttpResponse execute(HttpHost target, HttpRequest request,
                          HttpContext context)
         throws IOException, ClientProtocolException
         ;
-
     
     <T> T execute(
             HttpUriRequest request, 
             ResponseHandler<? extends T> responseHandler)
         throws IOException, ClientProtocolException
         ;
-
     
     <T> T execute(
             HttpUriRequest request, 
@@ -63,7 +61,6 @@ public interface HttpClient {
             HttpContext context)
         throws IOException, ClientProtocolException
         ;
-
     
     <T> T execute(
             HttpHost target, 
@@ -71,7 +68,6 @@ public interface HttpClient {
             ResponseHandler<? extends T> responseHandler)
         throws IOException, ClientProtocolException
         ;
-    
     
     <T> T execute(
             HttpHost target, 

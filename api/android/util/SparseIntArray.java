@@ -45,8 +45,8 @@ private static int binarySearch(int[] a, int start, int len, int key) {
     /**
      * Creates a new SparseIntArray containing no mappings.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.158 -0500", hash_original_method = "3CB703BA4BBEFDD58F8198A538C651FA", hash_generated_method = "CF855BD0B8B8C8AFFCD8B68DE31A2318")
     
 public SparseIntArray() {
@@ -58,8 +58,8 @@ public SparseIntArray() {
      * require any additional memory allocation to store the specified
      * number of mappings.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.161 -0500", hash_original_method = "4F3979691C622EA5D57CC5639ACF4BFA", hash_generated_method = "8010346A9A49BD37949A5284CA6889FD")
     
 public SparseIntArray(int initialCapacity) {

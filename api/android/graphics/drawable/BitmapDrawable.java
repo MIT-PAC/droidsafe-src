@@ -60,8 +60,8 @@ public class BitmapDrawable extends Drawable {
      * @deprecated Use {@link #BitmapDrawable(Resources)} to ensure
      * that the drawable has correctly set its target density.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.022 -0500", hash_original_method = "B0AF2A53C18BC0AEA00F89D5110E52E7", hash_generated_method = "10025C3CB8BCA7B5E32EB632DAC36488")
     
 @Deprecated
@@ -73,8 +73,8 @@ public class BitmapDrawable extends Drawable {
      * Create an empty drawable, setting initial target density based on
      * the display metrics of the resources.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.024 -0500", hash_original_method = "ECC74DE3478988E64B883DFDAEC329B4", hash_generated_method = "6CCAA0CEB8A5375232BFAD5CE0634B39")
     
 @SuppressWarnings({"UnusedParameters"})
@@ -88,8 +88,8 @@ public class BitmapDrawable extends Drawable {
      * @deprecated Use {@link #BitmapDrawable(Resources, Bitmap)} to ensure
      * that the drawable has correctly set its target density.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.027 -0500", hash_original_method = "EDF3772DB206CC7034C0B4AE87D72F1A", hash_generated_method = "2A24C773588AAE50B0BEBB88EBB18FAE")
     
 @Deprecated
@@ -101,8 +101,8 @@ public class BitmapDrawable extends Drawable {
      * Create drawable from a bitmap, setting initial target density based on
      * the display metrics of the resources.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.030 -0500", hash_original_method = "0FA3F000A20BF5722D4983CAD4B48A6A", hash_generated_method = "0098083302FD036F72DFABFE27F96262")
     
 public BitmapDrawable(Resources res, Bitmap bitmap) {
@@ -115,8 +115,8 @@ public BitmapDrawable(Resources res, Bitmap bitmap) {
      * @deprecated Use {@link #BitmapDrawable(Resources, String)} to ensure
      * that the drawable has correctly set its target density.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.032 -0500", hash_original_method = "88A1392443C2003D9FA4C6DECF6A14A3", hash_generated_method = "AEAAE41ED94955B07B93D5B2B222D042")
     
 @Deprecated
@@ -130,8 +130,8 @@ public BitmapDrawable(Resources res, Bitmap bitmap) {
     /**
      * Create a drawable by opening a given file path and decoding the bitmap.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.035 -0500", hash_original_method = "2E50FC990DF5F99ED2B436DB68D65D30", hash_generated_method = "00378E813D9AAE96C89E687C495CF7FE")
     
 @SuppressWarnings({"UnusedParameters"})
@@ -148,8 +148,8 @@ public BitmapDrawable(Resources res, Bitmap bitmap) {
      * @deprecated Use {@link #BitmapDrawable(Resources, java.io.InputStream)} to ensure
      * that the drawable has correctly set its target density.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.039 -0500", hash_original_method = "5474E95C495E2BDEA7848B2F1051B5AB", hash_generated_method = "1FFFECB7616C84868E8040908FCDEBA5")
     
 @Deprecated
@@ -163,8 +163,8 @@ public BitmapDrawable(Resources res, Bitmap bitmap) {
     /**
      * Create a drawable by decoding a bitmap from the given input stream.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.041 -0500", hash_original_method = "A95CEE47ED6D08FEFE672AAA66725922", hash_generated_method = "0AB6F4FFFBE41D5DDFA26AA1238B2C05")
     
 @SuppressWarnings({"UnusedParameters"})

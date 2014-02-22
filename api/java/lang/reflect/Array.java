@@ -402,6 +402,8 @@ public static short getShort(Object array, int index)
      *             if the array of dimensions is of size zero, or exceeds the
      *             limit of the number of dimension for an array (currently 255)
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.922 -0500", hash_original_method = "9C554BC8C0AA11B64E6653FCAA15C2E7", hash_generated_method = "4A9297550B4F9160675971DAFB19C3B9")
     

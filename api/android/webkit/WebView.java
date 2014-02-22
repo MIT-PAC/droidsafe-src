@@ -2398,6 +2398,7 @@ public WebBackForwardList restoreState(Bundle inState) {
      *            controlling caching, accept types or the User-Agent, their
      *            values may be overriden by the WebView's defaults.
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.565 -0500", hash_original_method = "66CEDD7560D58AC5C6DF5108A28592A9", hash_generated_method = "5B9D1B63FC1E7B285328458907CCA0A9")
     
 public void loadUrl(String url, Map<String, String> additionalHttpHeaders) {
@@ -2626,6 +2627,7 @@ public void stopLoading() {
     /**
      * Reload the current url.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.606 -0500", hash_original_method = "012D905CFE3C40A166231928A7F6FD85", hash_generated_method = "5F5638F28E9C0FFF9AA6B8A4D8FA6E4D")
     
 public void reload() {
@@ -3687,6 +3689,7 @@ private int computeRealVerticalScrollRange() {
      * that url has begun, the current page may not have changed.
      * @return The url for the current page.
      */
+    @DSSpec(DSCat.URI_EXCHANGE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.790 -0500", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "F38C676B99E9ECCC987DAE6C3277ADF4")
     

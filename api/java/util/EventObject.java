@@ -21,8 +21,8 @@ public class EventObject implements Serializable {
      * @param source
      *            the object which fired the event.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.346 -0500", hash_original_method = "19E83C4C00CF513D7C219A8F2CE4B9FA", hash_generated_method = "31254B198F68157457014067B2589821")
     
 public EventObject(Object source) {

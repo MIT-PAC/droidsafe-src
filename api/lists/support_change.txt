@@ -1,0 +1,10 @@
+android.support.v4.app.Fragment
+android.support.v4.app.FragmentManager
+android.support.v4.app.NavUtils
+android.support.v4.content.LocalBroadcastManager
+android.support.v4.content.ModernAsyncTask
+android.support.v4.view.AccessibilityDelegateCompat
+android.support.v4.view.AccessibilityDelegateCompatIcs
+android.support.v4.view.PagerAdapter
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
+

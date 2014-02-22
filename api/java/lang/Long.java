@@ -717,8 +717,8 @@ public static Long valueOf(long v) {
      * @param value
      *            the primitive long value to store in the new instance.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.186 -0500", hash_original_method = "F7421F28ECB11D742A45928A1DF88A80", hash_generated_method = "C881530C83685CC8A13E1C945742B04A")
     
 public Long(long value) {
@@ -734,8 +734,8 @@ public Long(long value) {
      *             if {@code string} cannot be parsed as a long value.
      * @see #parseLong(String)
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.189 -0500", hash_original_method = "FBD907393492057451D7BFE621A4E030", hash_generated_method = "CFB280A7B8AB2A0D00761A7CE10CA5F9")
     
 public Long(String string) throws NumberFormatException {

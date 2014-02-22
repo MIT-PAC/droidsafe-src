@@ -18,14 +18,22 @@ public class FutureTask<V> implements RunnableFuture<V> {
      * @param  callable the callable task
      * @throws NullPointerException if callable is null
      */
-    @DSComment("callback needs to be called")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("constructor")
+    @DSVerified("Callback called")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.310 -0500", hash_original_method = "EBD25CFA864782219EF130D05DE406FC", hash_generated_method = "7BD296EDBFF52128CD69A980B4707200")
     
 public FutureTask(Callable<V> callable) {
         if (callable == null)
             throw new NullPointerException();
         sync = new Sync(callable);
+        try {
+            callable.call();
+        }
+        catch (Exception ex) {
+            
+        }
+        
     }
 
     /**
@@ -40,10 +48,18 @@ public FutureTask(Callable<V> callable) {
      * {@code Future<?> f = new FutureTask<Void>(runnable, null)}
      * @throws NullPointerException if runnable is null
      */
+    @DSComment("constructor")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.313 -0500", hash_original_method = "343C63FBFE3927352CC6BAC59E679D87", hash_generated_method = "F35D99CC429422B5DF255E078F6CB9B6")
-    
+    @DSVerified("Callback called")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public FutureTask(Runnable runnable, V result) {
         sync = new Sync(Executors.callable(runnable, result));
+        try {
+            runnable.run();
+        }
+        catch (Exception ex) {            
+        }
+        
     }
 
     @DSComment("No action/impact")

@@ -19,8 +19,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
      *
      * @see #capacity()
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.177 -0500", hash_original_method = "7F69BEEEB3AFB76A0F531C605E603484", hash_generated_method = "7169FB6FFC5F8BA666834292D850982F")
     
 public StringBuilder() {
@@ -35,8 +35,8 @@ public StringBuilder() {
      *             if the specified {@code capacity} is negative.
      * @see #capacity()
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.180 -0500", hash_original_method = "E4F57F923C13DCFDFB2A278667BC010D", hash_generated_method = "5D0A27352F38E3C125CF335CBDA1294C")
     
 public StringBuilder(int capacity) {
@@ -53,8 +53,8 @@ public StringBuilder(int capacity) {
      * @throws NullPointerException
      *            if {@code seq} is {@code null}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.183 -0500", hash_original_method = "6026ED097BE2B2C063828C0943FCE04D", hash_generated_method = "7BB2522BCAA4830FEDD7EA86B4207862")
     
 public StringBuilder(CharSequence seq) {
@@ -71,8 +71,8 @@ public StringBuilder(CharSequence seq) {
      * @throws NullPointerException
      *            if {@code str} is {@code null}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.186 -0500", hash_original_method = "AED4EA464802033AF614945292CFDAC8", hash_generated_method = "DF9AB23776A1F0CC49E7F85950B92881")
     
 public StringBuilder(String str) {

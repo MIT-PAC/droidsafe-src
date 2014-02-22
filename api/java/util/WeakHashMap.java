@@ -38,8 +38,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     /**
      * Constructs a new empty {@code WeakHashMap} instance.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.617 -0500", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "16A7169736FF430365004AC4125002EC")
     
 public WeakHashMap() {
@@ -55,8 +55,8 @@ public WeakHashMap() {
      * @throws IllegalArgumentException
      *                if the capacity is less than zero.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.623 -0500", hash_original_method = "76AE00E803F5BFDB4BDF43DC151D88D7", hash_generated_method = "E98B88877DFC7D328CA78DE2C40A64A3")
     
 public WeakHashMap(int capacity) {
@@ -83,8 +83,8 @@ public WeakHashMap(int capacity) {
      *             if the capacity is less than zero or the load factor is less
      *             or equal to zero.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.628 -0500", hash_original_method = "342F9B7CF63C1134C14E3979782FA4FA", hash_generated_method = "8A8F0D1C4AB228C0688F808ED15B8670")
     
 public WeakHashMap(int capacity, float loadFactor) {
@@ -106,8 +106,8 @@ public WeakHashMap(int capacity, float loadFactor) {
      * @param map
      *            the mappings to add.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.633 -0500", hash_original_method = "4D7BC16BC60EE786903D624E86CA0AFB", hash_generated_method = "234CA68C4FDBFBFAC8497D2548488981")
     
 public WeakHashMap(Map<? extends K, ? extends V> map) {

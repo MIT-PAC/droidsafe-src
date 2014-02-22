@@ -42,8 +42,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
 
     private HashMap<K,V> backingMap = new HashMap<K,V>();
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.342 -0400", hash_original_method = "9A93999031A29C4DD8DE295A6372F847", hash_generated_method = "6A7170C4C6FFAE127214BE36F7841D7F")
     @SuppressWarnings("unchecked")
     public  Hashtable() {
@@ -52,8 +52,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //threshold = -1;
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.344 -0400", hash_original_method = "6003D4D798348C1583CB15DE42C187C6", hash_generated_method = "C0EB67B815B968B704ED802BE6142354")
     public  Hashtable(int capacity) {
         addTaint(capacity);
@@ -80,8 +80,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //makeTable(capacity);
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "5B6B569F078844A0FAD42909C56D1E6D", hash_generated_method = "91BC277383C1006AE68C521E66A2CAB0")
     public  Hashtable(int capacity, float loadFactor) {
         this(capacity);
@@ -99,8 +99,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //}
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "6950B91F5E6C68C49CB594AFD1673B84", hash_generated_method = "B59FAFD8CEADB25F80DD1853537DF4FA")
     public  Hashtable(Map<? extends K, ? extends V> map) {
         this(map.size());

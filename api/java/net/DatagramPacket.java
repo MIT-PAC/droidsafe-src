@@ -34,8 +34,8 @@ public final class DatagramPacket {
      * @param length
      *            the length of the data buffer.
      */
-    @DSComment("Data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.348 -0500", hash_original_method = "28D366BE99A6BECEEC6B0BD286389E83", hash_generated_method = "0540F8CFBE8C783DBBBA4EAC64FD0D4C")
     
 public DatagramPacket(byte[] data, int length) {
@@ -53,6 +53,8 @@ public DatagramPacket(byte[] data, int length) {
      * @param length
      *            the length of the data.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.351 -0500", hash_original_method = "4CE5C637B4B89EB1E9EB381D06DF8800", hash_generated_method = "DA7DC205E10495C34B4CCC8227D3F364")
     
 public DatagramPacket(byte[] data, int offset, int length) {
@@ -76,6 +78,8 @@ public DatagramPacket(byte[] data, int offset, int length) {
      * @param aPort
      *            the port of the target host.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.354 -0500", hash_original_method = "E7BE9233E3C5340436266F1CA27D4E74", hash_generated_method = "3AF5F21251316F945FC425D1419D9BCA")
     
 public DatagramPacket(byte[] data, int offset, int length,
@@ -100,8 +104,8 @@ public DatagramPacket(byte[] data, int offset, int length,
      * @param port
      *            the port of the target host.
      */
-    @DSComment("Data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.356 -0500", hash_original_method = "2604ABB8A21562C349D5EE8B9E092E22", hash_generated_method = "D61F101FB212FF8FE9898A2F74A92CA8")
     
 public DatagramPacket(byte[] data, int length, InetAddress host, int port) {
@@ -123,8 +127,8 @@ public DatagramPacket(byte[] data, int length, InetAddress host, int port) {
      * @throws SocketException
      *             if an error in the underlying protocol occurs.
      */
-    @DSComment("Data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.390 -0500", hash_original_method = "5A348CBDEF8E4CCB182CB7D327F8975B", hash_generated_method = "D3A41011ED854179B274A712081CE540")
     
 public DatagramPacket(byte[] data, int length, SocketAddress sockAddr) throws SocketException {
@@ -149,6 +153,8 @@ public DatagramPacket(byte[] data, int length, SocketAddress sockAddr) throws So
      * @throws SocketException
      *             if an error in the underlying protocol occurs.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.393 -0500", hash_original_method = "9EFE7F8CACFA39C8DFB2EE9B45B29DD7", hash_generated_method = "FE60111D267819A7D2C38F9ED9FD4220")
     
 public DatagramPacket(byte[] data, int offset, int length,

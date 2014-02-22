@@ -44,8 +44,8 @@ public class GZIPInputStream extends InflaterInputStream {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
-    @DSComment("IO/Stream accessing")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.657 -0500", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "4CACDDA3C01475C988E89A026717E9AA")
     
 public GZIPInputStream(InputStream is) throws IOException {
@@ -63,8 +63,8 @@ public GZIPInputStream(InputStream is) throws IOException {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
-    @DSComment("IO/Stream accessing")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.660 -0500", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "AF15E3C7F5B5382DCDADBB1DF73D5083")
     
 public GZIPInputStream(InputStream is, int size) throws IOException {

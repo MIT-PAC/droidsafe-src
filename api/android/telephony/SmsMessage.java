@@ -51,6 +51,7 @@ public static SmsMessage createFromPdu(byte[] pdu) {
      * @param format the format extra from the SMS_RECEIVED_ACTION intent
      * @hide pending API council approval
      */
+    @DSSpec(DSCat.SMS)
     @DSSource({DSSourceKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.608 -0500", hash_original_method = "B5B0C01DE595010BFEEC3AB703E88508", hash_generated_method = "FDF9E8B8EA9AE0FA9656134B5470A32A")
     

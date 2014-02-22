@@ -23,8 +23,8 @@ public class TabActivity extends ActivityGroup {
     private int mDefaultTabIndex = -1;
 
     @DSVerified
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.672 -0500", hash_original_method = "7656B1DA8F939C27E9A82F1B44C0847D", hash_generated_method = "58E71EE30CE038A7E54BAFF2C3030AF5")
     
 public TabActivity() {

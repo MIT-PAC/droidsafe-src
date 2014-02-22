@@ -383,14 +383,14 @@ public class Paint {
 
     public  int         mBidiFlags = BIDI_DEFAULT_LTR;
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Paint() {
         //this(0);  No real need to flow down into second constructor which would track taint, since it's a fixed value
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Paint(int flags) {
 		setFlags(flags);
 		/*
@@ -407,8 +407,8 @@ public class Paint {
      * @param paint Existing paint used to initialized the attributes of the
      *              new paint.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.571 -0500", hash_original_method = "5333FFC8A800A9BDD5C93C0D81F44606", hash_generated_method = "8ABBA94AFCE96480E8CA6B2F52A5AE36")
     
 public Paint(Paint paint) {

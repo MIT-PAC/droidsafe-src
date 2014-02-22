@@ -25,7 +25,7 @@ public class ThreadLocal<T> {
     /**
      * Creates a new thread-local variable.
      */
-    @DSComment("no security concern")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.324 -0500", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "D0C2DD8281FBEC9648419EC2F2A6CF45")
     

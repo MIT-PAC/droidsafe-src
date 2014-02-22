@@ -434,6 +434,7 @@ public void notifySuggestionPicked(SuggestionSpan span, String originalString, i
      * in fullscreen mode.  Return true if it is fullscreen, entirely covering
      * your UI, else returns false.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.668 -0500", hash_original_method = "FCDCA2DC24AB76EAA903F8369A9A45F8", hash_generated_method = "140974EC04E609A75C5B666C07BE566A")
     
 public boolean isFullscreenMode() {
@@ -610,6 +611,7 @@ public void updateExtractedText(View view, int token, ExtractedText text) {
      */
     @DSComment("System settings/policy")
     @DSSpec(DSCat.SYSTEM)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.697 -0500", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "8B69D752E6300569DF8BE9839965005B")
     
 public boolean showSoftInput(View view, int flags) {
@@ -633,10 +635,15 @@ public boolean showSoftInput(View view, int flags) {
      * {@link #RESULT_HIDDEN}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.710 -0500", hash_original_method = "182A36951EBA765A4D1CAFFC02BFF851", hash_generated_method = "129BC9F4D86B8059494E49277383CAE7")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
     
 public boolean showSoftInput(View view, int flags, ResultReceiver resultReceiver) {
         checkFocus();
         synchronized (mH) {
+            if (resultReceiver != null) {
+                resultReceiver.send(DSUtils.FAKE_INT, new Bundle());
+            }
             if (mServedView != view && (mServedView == null
                     || !mServedView.checkInputConnectionProxy(view))) {
                 return false;
@@ -696,11 +703,16 @@ public boolean hideSoftInputFromWindow(IBinder windowToken, int flags) {
      * {@link #RESULT_HIDDEN}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.722 -0500", hash_original_method = "0C97F129DA85CEA766FB3D7196531B26", hash_generated_method = "B03BB07FC79CDD81A271865377AF9DAF")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSVerified
 public boolean hideSoftInputFromWindow(IBinder windowToken, int flags,
             ResultReceiver resultReceiver) {
         checkFocus();
         synchronized (mH) {
+
+            if (resultReceiver != null) {
+                resultReceiver.send(DSUtils.FAKE_INT, new Bundle());
+            }
             if (mServedView == null || mServedView.getWindowToken() != windowToken) {
                 return false;
             }

@@ -133,20 +133,24 @@ public class ProgressBar extends View {
      * Create a new progress bar with range 0...100 and initial progress of 0.
      * @param context the application environment
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.750 -0500", hash_original_method = "F5911F61390A242F23F5676C44FA4C61", hash_generated_method = "05E6D4AB511F57E4A865290B84F04FA0")
     
 public ProgressBar(Context context) {
         this(context, null);
     }
     
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.752 -0500", hash_original_method = "D031AA7B7D98D3870546853F1BC5BC9E", hash_generated_method = "47D897E39CB9DA3B5AFB7902ECC9EC16")
     
 public ProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.progressBarStyle);
     }
 
-    @DSComment("ProgressBar")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.755 -0500", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "DF0BE037724D12B3A67CC8FCB3B2ED9F")
     
 public ProgressBar(Context context, AttributeSet attrs, int defStyle) {
@@ -156,6 +160,8 @@ public ProgressBar(Context context, AttributeSet attrs, int defStyle) {
     /**
      * @hide
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.758 -0500", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "C71F6C764FA9D0B7547017DA6EB5808A")
     
 public ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleRes) {
@@ -1088,6 +1094,8 @@ private void updateDrawableState() {
         setSecondaryProgress(ss.secondaryProgress);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.904 -0500", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "7F5751066C42C755413048DCB414803C")
     
 @Override
@@ -1220,6 +1228,8 @@ public void run() {
         
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.906 -0500", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "6A2E3120A45F5AF406553365915C1EE8")
     
 @Override

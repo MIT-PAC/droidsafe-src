@@ -72,14 +72,14 @@ public RectF[] newArray(int size) {
     /**
      * Create a new empty RectF. All coordinates are initialized to 0.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.864 -0500", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "0C35021DCF1E2EEAC4ACC137BA6B97DB")
     
 public RectF() {}
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
     	addTaint(left);
@@ -88,15 +88,15 @@ public RectF() {}
     	addTaint(bottom);
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(RectF r) { 
     	this();
     	addTaint(r.getTaint());
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(Rect r) {
     	this();
     	addTaint(r.left);

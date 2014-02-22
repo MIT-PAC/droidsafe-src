@@ -93,7 +93,7 @@ public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFacto
      * @throws MalformedURLException if {@code spec} could not be parsed as a
      *     URL.
      */
-    @DSComment("no suspicious activity, just chanegs object")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.776 -0500", hash_original_method = "121BE8263BD1C356B2FE90A678407E92", hash_generated_method = "957AACC1D575B1FFFB563B71D8404E20")
     
@@ -109,6 +109,8 @@ public URL(String spec) throws MalformedURLException {
      * @throws MalformedURLException if {@code spec} could not be parsed as a
      *     URL or has an unsupported protocol.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.779 -0500", hash_original_method = "472053565B13D456EDCEBEA98F287F95", hash_generated_method = "214AF839F51D69EA16CC67A7694133C0")
     
 public URL(URL context, String spec) throws MalformedURLException {
@@ -125,6 +127,8 @@ public URL(URL context, String spec) throws MalformedURLException {
      * @throws MalformedURLException if the given string {@code spec} could not
      *     be parsed as a URL or an invalid protocol has been found.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.782 -0500", hash_original_method = "D8E146F1F2E4ED207D7672129A3654D5", hash_generated_method = "81FB4A355BD0EB1A21C30E10A91F8FA2")
     
 public URL(URL context, String spec, URLStreamHandler handler) throws MalformedURLException {
@@ -178,6 +182,8 @@ public URL(URL context, String spec, URLStreamHandler handler) throws MalformedU
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.785 -0500", hash_original_method = "216BAC89605FCA377BB0AADBB6E2A8AC", hash_generated_method = "3077633676B6AE40756F1F933FD918E4")
     
 public URL(String protocol, String host, String file) throws MalformedURLException {
@@ -194,7 +200,7 @@ public URL(String protocol, String host, String file) throws MalformedURLExcepti
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
-    @DSComment("no suspicious activity, just URL data structure building")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.787 -0500", hash_original_method = "9AD76E183D70EDC4767A9EAC128427AE", hash_generated_method = "7F84BB36FF6A492699D9A50DEDC1FED1")
     
@@ -214,6 +220,8 @@ public URL(String protocol, String host, int port, String file) throws Malformed
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.791 -0500", hash_original_method = "D56485CA0554FF67A28005CBDB936EDB", hash_generated_method = "43F03066ACCDCA13567DF29511D1C59A")
     
 public URL(String protocol, String host, int port, String file,
@@ -501,6 +509,8 @@ public URLConnection openConnection() throws IOException {
      * @throws UnsupportedOperationException if the protocol handler does not
      *     support opening connections through proxies.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.819 -0500", hash_original_method = "CB72409718452D46955A0A85FC179645", hash_generated_method = "9FFC82767BCEE2CD44BAA6101C4AB2EB")
     
 public URLConnection openConnection(Proxy proxy) throws IOException {
@@ -707,6 +717,8 @@ public String getFile() {
     /**
      * Returns the path part of this URL.
      */
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.855 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
     

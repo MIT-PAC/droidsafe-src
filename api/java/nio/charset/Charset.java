@@ -409,6 +409,7 @@ public boolean canEncode() {
      *            the character buffer containing the content to be encoded.
      * @return the result of the encoding.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.331 -0500", hash_original_method = "0107CD00701D9024191BE26A03E59733", hash_generated_method = "054B9100A5F8034807034FD772D16332")
     
 public final ByteBuffer encode(CharBuffer buffer) {
@@ -432,6 +433,7 @@ public final ByteBuffer encode(CharBuffer buffer) {
      * @param s the string to be encoded.
      * @return the result of the encoding.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.333 -0500", hash_original_method = "50936E0BD61264091679E7D1BE4B4220", hash_generated_method = "8228597DAB540A67EF7908C4EE6BE165")
     
 public final ByteBuffer encode(String s) {

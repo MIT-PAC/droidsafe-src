@@ -351,8 +351,8 @@ public static String toHexString(double d) {
      * @param value
      *            the primitive double value to store in the new instance.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.619 -0500", hash_original_method = "7EA95E8804ADA9698A61C51212EFD766", hash_generated_method = "589D0C0B7FC9F4A52B12E44AC1FCBA18")
     
 public Double(double value) {
@@ -368,8 +368,8 @@ public Double(double value) {
      *             if {@code string} cannot be parsed as a double value.
      * @see #parseDouble(String)
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.623 -0500", hash_original_method = "C14717042677DE8EFE6605DB4D5CF298", hash_generated_method = "343BD09059FB57D9991D877A88D8B7ED")
     
 public Double(String string) throws NumberFormatException {

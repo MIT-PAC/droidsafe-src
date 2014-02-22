@@ -75,7 +75,7 @@ public static synchronized void setSocketImplFactory(SocketImplFactory fac)
      * @see SocketImplFactory
      * @see SocketImpl
      */
-    @DSComment("no action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.729 -0500", hash_original_method = "DE6B6B5588954C6A35AB00A23B1617FE", hash_generated_method = "24D8AF97881FC81FD7824F1A915C2F48")
     
@@ -103,6 +103,8 @@ public Socket() {
      * @see SocketImplFactory
      * @see SocketImpl
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.732 -0500", hash_original_method = "903F698227E2205A08AC4EC3E6D912C3", hash_generated_method = "D980E618455C5863EA3B58E2F36FDB40")
     
 public Socket(Proxy proxy) {
@@ -131,8 +133,8 @@ public Socket(Proxy proxy) {
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
-    @DSComment("Connect to outside")
-    @DSSpec(DSCat.NETWORK)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.737 -0500", hash_original_method = "59B1F76D08717F2A7DB6178659D1BD4D", hash_generated_method = "6316CA7E40A21D61D9B9CAFA97BA22ED")
     
 public Socket(String dstName, int dstPort) throws UnknownHostException, IOException {
@@ -162,6 +164,8 @@ public Socket(String dstName, int dstPort) throws UnknownHostException, IOExcept
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.740 -0500", hash_original_method = "7A6ED28BC12F5ABFF2F2CE0F9C5717C0", hash_generated_method = "9C677317C87580468FBBC3BC25BFED31")
     
 public Socket(String dstName, int dstPort, InetAddress localAddress, int localPort) throws IOException {
@@ -193,6 +197,8 @@ public Socket(String dstName, int dstPort, InetAddress localAddress, int localPo
      *             sockets or an appropriate constructor of {@code
      *             DatagramSocket} for UDP transport.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.744 -0500", hash_original_method = "1948ABC1DE3B1C37A63093E998C50FE7", hash_generated_method = "C650B30E681882C8D76DB812E2F56676")
     
 @Deprecated
@@ -213,8 +219,8 @@ public Socket(String dstName, int dstPort, InetAddress localAddress, int localPo
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
-    @DSComment("Connect to outside")
-    @DSSpec(DSCat.NETWORK)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.747 -0500", hash_original_method = "A1767A7E1F84ED40BDB339014C4851EF", hash_generated_method = "80204189B6A824DCFD0C9110D1ADFD5C")
     
 public Socket(InetAddress dstAddress, int dstPort) throws IOException {
@@ -240,6 +246,8 @@ public Socket(InetAddress dstAddress, int dstPort) throws IOException {
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.749 -0500", hash_original_method = "BE0D4569A05DA3EF578449A5DA65F5E7", hash_generated_method = "0E8F2DC694F5FBD63C66F979FDE19EBD")
     
 public Socket(InetAddress dstAddress, int dstPort,
@@ -267,6 +275,8 @@ public Socket(InetAddress dstAddress, int dstPort,
      *             streaming sockets or an appropriate constructor of {@code
      *             DatagramSocket} for UDP transport.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.752 -0500", hash_original_method = "D85BA2D34027734E343FA152CA6CE177", hash_generated_method = "6B14DA291D9EF1DF9AC5EA862FF0318C")
     
 @Deprecated
@@ -284,6 +294,8 @@ public Socket(InetAddress dstAddress, int dstPort,
      * @throws SocketException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.755 -0500", hash_original_method = "3BE6817A95031499261EFB4432AAFCBF", hash_generated_method = "DD263612467E12256A9D2943B451B889")
     
 protected Socket(SocketImpl impl) throws SocketException {
@@ -572,6 +584,7 @@ public void setKeepAlive(boolean keepAlive) throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF send buffer size}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.798 -0500", hash_original_method = "AEB667B5DBC425D73D37135566ECC286", hash_generated_method = "2BACDB608F27E2DA5EA3F1A1CC0AE41C")
     
@@ -586,6 +599,7 @@ public synchronized void setSendBufferSize(int size) throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF receive buffer size}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.801 -0500", hash_original_method = "1376DE896B8682F991877B7A17C5B3A4", hash_generated_method = "E8C94E07AE5129400B83D2720335F5D5")
     
@@ -731,6 +745,7 @@ private boolean usingSocks() {
      * @throws SocketException
      *             if the input stream is already closed.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.818 -0500", hash_original_method = "D21BBF88E7F4579ADC8933941E3433FA", hash_generated_method = "81C512F189B1182D65AD5E8B04B3BD3A")
     
 public void shutdownInput() throws IOException {
@@ -752,6 +767,7 @@ public void shutdownInput() throws IOException {
      * @throws SocketException
      *             if the output stream is already closed.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.820 -0500", hash_original_method = "1AECC9ACE476BBC93D823FC75BDACBC6", hash_generated_method = "44045D291AD7392C8760F4BF20807225")
     
 public void shutdownOutput() throws IOException {
@@ -829,6 +845,8 @@ public SocketAddress getLocalSocketAddress() {
      *
      * @return the remote socket address and port.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.829 -0500", hash_original_method = "7C698472BF26D61A7917F4B5238C5FF7", hash_generated_method = "C1CDFAAC803588FC140B6196FA164411")
     
@@ -1023,6 +1041,7 @@ public void connect(SocketAddress remoteAddr, int timeout) throws IOException {
      * @return {@code true} if reading from this socket is not possible anymore,
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.847 -0500", hash_original_method = "2FA07403172C73A0B79A0DF7F37DEBFB", hash_generated_method = "292ABABAAF94A2EB587343519213959C")
     
 public boolean isInputShutdown() {
@@ -1036,6 +1055,7 @@ public boolean isInputShutdown() {
      * @return {@code true} if writing to this socket is not possible anymore,
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.849 -0500", hash_original_method = "C1B1C01C4973B5698673C5D09FA67185", hash_generated_method = "9F44FA927E6B01FF6A7180A7E08E5E5B")
     
 public boolean isOutputShutdown() {

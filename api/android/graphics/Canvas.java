@@ -423,8 +423,8 @@ protected static void checkRange(int length, int offset, int count) {
     @SuppressWarnings({"UnusedDeclaration"})
     private  CanvasFinalizer mFinalizer;
     
-	@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Canvas() {
 		//Do Nothing
 	}
@@ -438,8 +438,8 @@ protected static void checkRange(int length, int offset, int count) {
      *
      * @param bitmap Specifies a mutable bitmap for the canvas to draw into.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.068 -0500", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "9BFED6DEC7FF5091C599E38FA68AFF9D")
     
 public Canvas(Bitmap bitmap) {
@@ -454,8 +454,8 @@ public Canvas(Bitmap bitmap) {
         mDensity = bitmap.mDensity;
     }
     
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.070 -0500", hash_original_method = "347D84319548CC8FC9B392FE55B81BD9", hash_generated_method = "347D84319548CC8FC9B392FE55B81BD9")
     
 Canvas(int nativeCanvas) {

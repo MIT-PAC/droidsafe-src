@@ -134,8 +134,8 @@ static float viscousFluid(float x)
     /**
      * Create a Scroller with the default duration and interpolator.
      */
-    @DSComment("Scroller")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.143 -0500", hash_original_method = "F0B1F091C7D17598674B0DE91138DFE8", hash_generated_method = "5D5978B521B426BD09D0BCE0882F736E")
     
 public Scroller(Context context) {
@@ -147,8 +147,8 @@ public Scroller(Context context) {
      * null, the default (viscous) interpolator will be used. "Flywheel" behavior will
      * be in effect for apps targeting Honeycomb or newer.
      */
-    @DSComment("Scroller")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.145 -0500", hash_original_method = "26C129B43F046C683A3A546D94D7B25F", hash_generated_method = "16550742F281D93BA8322B35FFE8DACF")
     
 public Scroller(Context context, Interpolator interpolator) {
@@ -161,6 +161,8 @@ public Scroller(Context context, Interpolator interpolator) {
      * null, the default (viscous) interpolator will be used. Specify whether or
      * not to support progressive "flywheel" behavior in flinging.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.148 -0500", hash_original_method = "DB17BDB963992533B7D3120B4F8AA0BD", hash_generated_method = "0FAFDCCE70A0B6A60C3CB38E4C077433")
     
 public Scroller(Context context, Interpolator interpolator, boolean flywheel) {

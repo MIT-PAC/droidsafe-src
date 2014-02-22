@@ -21,7 +21,7 @@ public abstract class ContentObserver {
      *
      * @param handler The handler to run {@link #onChange} on.
      */
-    @DSComment("Observer setup, no action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.940 -0500", hash_original_method = "DEDF781BC2901F5DB53B414F0A999CAB", hash_generated_method = "BD3934C133084C4C709DEBF2A7930A64")
     

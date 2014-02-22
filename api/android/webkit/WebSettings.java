@@ -481,6 +481,7 @@ boolean supportTouchOnly() {
     /**
      * Set whether the WebView supports zoom
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.313 -0500", hash_original_method = "6B7C7B097AE4AF077C4ED1E2A5D10429", hash_generated_method = "9AD8CD43D414B15C5C81F48132666191")
     
@@ -666,6 +667,7 @@ public boolean enableSmoothTransition() {
     /**
      * Store whether the WebView is saving form data.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.348 -0500", hash_original_method = "BAE3B161CD7589698136E106A2876792", hash_generated_method = "374F121303AD8BD6516B2DBD6D8CB63E")
     
@@ -687,6 +689,7 @@ public boolean getSaveFormData() {
     /**
      *  Store whether the WebView is saving password.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.352 -0500", hash_original_method = "B2DE3A754D34523602EAE606838B5563", hash_generated_method = "C270DE2E6B44D4B1AA54E72FEE5E1D4B")
     
@@ -1910,6 +1913,7 @@ public synchronized void setRenderPriority(RenderPriority priority) {
      * This function allows the client to override this behavior.
      * @param mode One of the LOAD_ values.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.556 -0500", hash_original_method = "C16F91A0BF5BCFC94071B85F47E4B2E9", hash_generated_method = "1B4CE6ECBB354B1224D7BA7B78B92FF7")
     

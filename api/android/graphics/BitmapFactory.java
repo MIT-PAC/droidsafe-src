@@ -495,7 +495,7 @@ public static void setDefaultConfig(Bitmap.Config config) {
          * Create a default Options object, which if left unchanged will give
          * the same result from the decoder as if null were passed.
          */
-        @DSComment("not sensitive/not an action")
+        @DSComment("constructor")
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.697 -0500", hash_original_method = "1E2502131AFAFEE705D62EA28BD1E532", hash_generated_method = "476BB4A6DF32CC0368C94A292A50B98B")
         

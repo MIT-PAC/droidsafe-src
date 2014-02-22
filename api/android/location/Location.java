@@ -657,6 +657,8 @@ public void removeAltitude() {
      * Returns true if this fix contains speed information, false
      * otherwise.  The default implementation returns false.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.391 -0500", hash_original_method = "053704FA5AD46F36CEE00CE492DC93E4", hash_generated_method = "0F2EAA8A9FA79AE5D6CEE9645500DEB9")
     
 public boolean hasSpeed() {
@@ -702,6 +704,8 @@ public void removeSpeed() {
      * Returns true if the provider is able to report bearing information,
      * false otherwise.  The default implementation returns false.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.401 -0500", hash_original_method = "D55FF6AB44947F083C797EDEE83A6188", hash_generated_method = "4412D78FAA6F07FFF0816FEBECD5E3BD")
     
 public boolean hasBearing() {

@@ -105,8 +105,8 @@ private static String convertPattern(String template, String fromChars, String t
      * dates and times in the {@code SHORT} style for the user's default locale.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.046 -0500", hash_original_method = "55288B23256ED63825B1D49B41027576", hash_generated_method = "39B68D1F56D4EBE9F4B1205B0CE3AF97")
     
 public SimpleDateFormat() {
@@ -129,8 +129,8 @@ public SimpleDateFormat() {
      *            if {@code pattern} is not considered to be usable by this
      *            formatter.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.048 -0500", hash_original_method = "DF79561AB8D44B187C9CA04B354315AC", hash_generated_method = "F3014B31121A74282CEB26A187F51EA5")
     
 public SimpleDateFormat(String pattern) {
@@ -152,8 +152,8 @@ public SimpleDateFormat(String pattern) {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.071 -0500", hash_original_method = "2C117D04FF17ED0139CEC7451AA4BD73", hash_generated_method = "53982C08D69114A77F58DFC60F0427B9")
     
 public SimpleDateFormat(String template, DateFormatSymbols value) {
@@ -177,8 +177,8 @@ public SimpleDateFormat(String template, DateFormatSymbols value) {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.074 -0500", hash_original_method = "1BCD123DF2A5414BB2A2ECF5D3357D25", hash_generated_method = "D1932A3E010E48695122576E5363C257")
     
 public SimpleDateFormat(String template, Locale locale) {
@@ -188,8 +188,8 @@ public SimpleDateFormat(String template, Locale locale) {
         formatData = new DateFormatSymbols(locale);
     }
 
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.077 -0500", hash_original_method = "F464E2338695834D875FCA6185F1E83B", hash_generated_method = "C039888B33A3E1C4324452F493B7E115")
     
 private SimpleDateFormat(Locale locale) {

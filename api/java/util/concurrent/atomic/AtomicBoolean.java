@@ -25,8 +25,8 @@ public class AtomicBoolean implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.082 -0500", hash_original_method = "2D4043190EFF6FBF71F6E61F91ACE979", hash_generated_method = "22155F1CEA387050B46DD1FA608FC521")
     
 public AtomicBoolean(boolean initialValue) {
@@ -36,8 +36,8 @@ public AtomicBoolean(boolean initialValue) {
     /**
      * Creates a new {@code AtomicBoolean} with initial value {@code false}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.084 -0500", hash_original_method = "4EFA45A0BE6632C845A9BA70932A5A0A", hash_generated_method = "DD75D899E8FB229720E6C75B96D2B634")
     
 public AtomicBoolean() {

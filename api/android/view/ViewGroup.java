@@ -324,8 +324,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 
     private LayoutTransition.TransitionListener mLayoutTransitionListener = new MyTransitionListener(this);
 
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.516 -0500", hash_original_method = "B03ADF87A05C955E785D82B4A9B527B3", hash_generated_method = "2535FABE5BBE40293AF3CA446AE00E22")
     
 public ViewGroup(Context context) {
@@ -333,8 +333,8 @@ public ViewGroup(Context context) {
         initViewGroup();
     }
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ViewGroup(Context context, AttributeSet attrs){
 		super(context, attrs);
 		initViewGroup();
@@ -343,8 +343,8 @@ public ViewGroup(Context context) {
 		*/
 	}
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ViewGroup(Context context, AttributeSet attrs, int defStyle){
 		super(context, attrs, defStyle);// Taint tracked in super class, View.
 		initViewGroup();
@@ -2926,8 +2926,8 @@ public LayoutAnimationController getLayoutAnimation() {
 
         public LayoutAnimationController.AnimationParameters layoutAnimationParameters;
         
-        @DSComment("data structure manipulation")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         public LayoutParams(Context c, AttributeSet attrs){
 			/*
 			TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_Layout);
@@ -2949,8 +2949,8 @@ public LayoutAnimationController getLayoutAnimation() {
          *        {@link #FILL_PARENT} (replaced by {@link #MATCH_PARENT} in
          *        API Level 8), or a fixed size in pixels
          */
-        @DSComment("data structure only")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.107 -0500", hash_original_method = "25BDC30F3D80C9CBE1EB5EBCEE37F7CB", hash_generated_method = "8E7E8A7AFA1D7595B2A0F2A2F14462A8")
         
 public LayoutParams(int width, int height) {
@@ -2974,8 +2974,8 @@ public LayoutParams(LayoutParams source) {
          * Used internally by MarginLayoutParams.
          * @hide
          */
-        @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.112 -0500", hash_original_method = "6916C65008FD05252A1C29A02882BE94", hash_generated_method = "6916C65008FD05252A1C29A02882BE94")
         
 LayoutParams() {
@@ -3051,8 +3051,8 @@ protected void resolveWithDirection(int layoutDirection) {
         @ViewDebug.ExportedProperty(category = "layout")
         protected int endMargin = DEFAULT_RELATIVE;
         
-        @DSComment("data structure manipulation")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         public MarginLayoutParams(Context c, AttributeSet attrs){
 			super();
 			/* Original Method Too Long, Refer to Original Implementation */
@@ -3061,8 +3061,8 @@ protected void resolveWithDirection(int layoutDirection) {
         /**
          * {@inheritDoc}
          */
-        @DSComment("data structure manipulation")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.151 -0500", hash_original_method = "4C1C9EAF9AFA2E58AB980E97DFB147EB", hash_generated_method = "245AED6E1728C23DD137A7E19EFB1ECF")
         
 public MarginLayoutParams(int width, int height) {
@@ -3135,6 +3135,7 @@ public MarginLayoutParams(LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public int getMarginStart(){
 			return getTaintInt();
@@ -3146,6 +3147,7 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 		}
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public int getMarginEnd(){
 			return getTaintInt();
@@ -3157,6 +3159,7 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 		}
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         public boolean isMarginRelative(){
 			// Original method
 			/*

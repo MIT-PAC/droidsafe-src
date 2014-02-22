@@ -7,7 +7,7 @@ import droidsafe.annotations.*;
 
 public class DataSetObservable extends Observable<DataSetObserver> {
 
-	@DSComment("no concerns")
+	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public DataSetObservable() {
 		super();

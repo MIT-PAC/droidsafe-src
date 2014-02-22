@@ -94,18 +94,24 @@ public class TimePicker extends FrameLayout {
 
     private Locale mCurrentLocale;
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.062 -0500", hash_original_method = "DB39C8F7A833003C7D32A896903A886B", hash_generated_method = "D68D0ED22B31427BC1C546F2BA4B2ACD")
     
 public TimePicker(Context context) {
         this(context, null);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.065 -0500", hash_original_method = "13212DBF3C0B0551DB88CC2A61A0591D", hash_generated_method = "12CEED4892E7AE7C9EE5E80462EBC2AD")
     
 public TimePicker(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.timePickerStyle);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.081 -0500", hash_original_method = "01E52F88810C7560B77A694B8CE593AF", hash_generated_method = "A88833ABD457298F1DD4A4B4997EC1C6")
     
 public TimePicker(Context context, AttributeSet attrs, int defStyle) {

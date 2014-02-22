@@ -26,7 +26,7 @@ public class PushbackInputStream extends FilterInputStream {
      * @param in
      *            the source input stream.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.549 -0500", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "D360854ACE2AA0CA85C5491A466A340C")
     
@@ -51,6 +51,8 @@ public PushbackInputStream(InputStream in) {
      * @throws IllegalArgumentException
      *             if {@code size} is negative.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.552 -0500", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "CA99E296F05811C04CC8506980310862")
     
 public PushbackInputStream(InputStream in, int size) {
@@ -163,6 +165,8 @@ public PushbackInputStream(InputStream in, int size) {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.566 -0500", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "8166BEB41CDADC014E3C1918E6FB3725")
     
 @Override

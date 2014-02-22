@@ -106,7 +106,8 @@ public ComponentName[] newArray(int size) {
     private  String mClass;
 
     /** created by droidsafe modeling */
-    @DSBan()
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ComponentName() {
         mPackage = "DSDummyValue";
         mClass = "DSDummyValue";
@@ -123,8 +124,8 @@ public ComponentName[] newArray(int size) {
      *
      * 
      */
-    @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.564 -0500", hash_original_method = "1714B1C8173E376D41E514F902D33E99", hash_generated_method = "1BA84BE4467588AE2A03CD87E288D467")
     
 public ComponentName(String pkg, String cls) {
@@ -142,8 +143,8 @@ public ComponentName(String pkg, String cls) {
      * @param cls The name of the class inside of <var>pkg</var> that
      * implements the component.
      */
-    @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.567 -0500", hash_original_method = "36F25878FE380B4CEA8E7C4B89DDFC1A", hash_generated_method = "366843CDEB60ED07212DE3CF20310076")
     
 public ComponentName(Context pkg, String cls) {
@@ -160,8 +161,8 @@ public ComponentName(Context pkg, String cls) {
      * @param cls The Class object of the desired component, from which the
      * actual class name will be retrieved.
      */
-    @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.570 -0500", hash_original_method = "8AE00F6D12874A3382D28F364D43BAC6", hash_generated_method = "D7EF4C8D4676CF4464A0EC53BF75F826")
     
 public ComponentName(Context pkg, Class<?> cls) {
@@ -179,6 +180,8 @@ public ComponentName(Context pkg, Class<?> cls) {
      * @param in The Parcel containing the previously written ComponentName,
      * positioned at the location in the buffer where it was written.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.615 -0500", hash_original_method = "85979238AB87BCF4845F6771314A5B1D", hash_generated_method = "ECB047062E247841A22DE82929CCAD76")
     
 public ComponentName(Parcel in) {
@@ -190,8 +193,8 @@ public ComponentName(Parcel in) {
                 "class name is null");
     }
 
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.617 -0500", hash_original_method = "5EFEBE9DDFB777526DBE0E9A79DAA5EE", hash_generated_method = "FD372FFF984FE9C8200778E7FDFB7A0F")
     
 private ComponentName(String pkg, Parcel in) {

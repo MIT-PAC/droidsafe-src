@@ -26,8 +26,8 @@ public class EditTextPreference extends DialogPreference {
     
     private String mText;
     
-    @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.689 -0500", hash_original_method = "1B48EB5F8CF3DC4D984298B6B0C90D10", hash_generated_method = "EC83FFC623BCAF07BB1299D8A9A0BF9D")
     
 public EditTextPreference(Context context, AttributeSet attrs, int defStyle) {
@@ -47,16 +47,16 @@ public EditTextPreference(Context context, AttributeSet attrs, int defStyle) {
         mEditText.setEnabled(true);
     }
 
-    @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.691 -0500", hash_original_method = "494CFEDBEF358096AFA1B35C2A3DFF6C", hash_generated_method = "B52031657C6FBCA2718CF1E7C2477B6C")
     
 public EditTextPreference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.editTextPreferenceStyle);
     }
 
-    @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.694 -0500", hash_original_method = "204E2C5BC38780F40E54ECF3FAD0BB5A", hash_generated_method = "9016449D056F9E4AD532EC1E9337FFE1")
     
 public EditTextPreference(Context context) {

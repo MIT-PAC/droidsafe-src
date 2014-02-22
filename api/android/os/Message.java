@@ -35,6 +35,8 @@ public final class Message implements Parcelable {
      * @param orig Original message to copy.
      * @return A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.317 -0500", hash_original_method = "3DDDC922E39D84127A2DC1786D3B33D2", hash_generated_method = "FB481C3AFDFA8C19EBE869A80159C902")
     
 public static Message obtain(Message orig) {
@@ -58,6 +60,8 @@ public static Message obtain(Message orig) {
      * @param h  Handler to assign to the returned Message object's <em>target</em> member.
      * @return A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.319 -0500", hash_original_method = "F1E1A90C9FE0056DE27D4BDD6B0CFE0C", hash_generated_method = "D9647A6DA04D00CC1B48559ADDC91104")
     
 public static Message obtain(Handler h) {
@@ -74,6 +78,8 @@ public static Message obtain(Handler h) {
      * @param callback Runnable that will execute when the message is handled.
      * @return A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.321 -0500", hash_original_method = "073C1A8A82742334214D17BA541D97D4", hash_generated_method = "4A3DA3C99DDA22F9E99EA5853834959A")
     
 public static Message obtain(Handler h, Runnable callback) {
@@ -148,7 +154,9 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
         return m;
     }
     
-	public static Message obtain(Handler h, int what, 
+	@DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public static Message obtain(Handler h, int what, 
             int arg1, int arg2, Object obj){
 		// Original method
         Message m = obtain();

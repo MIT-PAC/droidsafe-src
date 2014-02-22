@@ -27,7 +27,7 @@ public class ByteArrayInputStream extends InputStream {
      * @param buf
      *            the byte array to stream over.
      */
-    @DSComment("not sensitive, memory stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.621 -0500", hash_original_method = "CF1B6A0EB8AC88640F4210354AA3396D", hash_generated_method = "22ECD6164ED993D37BCA3A52212F68AE")
     
@@ -49,7 +49,7 @@ public ByteArrayInputStream(byte[] buf) {
      * @param length
      *            the number of bytes available for streaming.
      */
-    @DSComment("not sensitive, memory stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.624 -0500", hash_original_method = "CF3AD622E6B16C040D235FE2C3A31C84", hash_generated_method = "002D6764A0F21990A33FD29DEB63DF23")
     

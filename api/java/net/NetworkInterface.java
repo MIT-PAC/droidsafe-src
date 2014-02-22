@@ -50,6 +50,8 @@ static NetworkInterface forUnboundMulticastSocket() {
      * @throws SocketException if an error occurs.
      * @throws NullPointerException if {@code interfaceName == null}.
      */
+    @DSComment("Network interface accessing")
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.641 -0500", hash_original_method = "EC81104C8006573D0B5015A0AF9F06F0", hash_generated_method = "EF8E107A0F265E928EBACFC41E9A3312")
     
@@ -322,6 +324,8 @@ public int getIndex() {
     /**
      * Returns the name of this network interface (such as "eth0" or "lo").
      */
+    @DSComment("Network interface accessing")
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.634 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
@@ -345,6 +349,8 @@ public Enumeration<InetAddress> getInetAddresses() {
      * Returns a human-readable name for this network interface. On Android, this is the same
      * string as returned by {@link #getName}.
      */
+    @DSComment("Network interface accessing")
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.638 -0500", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "338C1CAD35E4DEB5DCEAB0CFAAB84764")
     

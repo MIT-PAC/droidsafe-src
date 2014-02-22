@@ -23,8 +23,8 @@ public class Semaphore implements java.io.Serializable {
      *        This value may be negative, in which case releases
      *        must occur before any acquires will be granted.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.482 -0500", hash_original_method = "1D09FBBC41D290488B50FAB01D9EE120", hash_generated_method = "C04686D0D19E5E671D3B80A0912BCDBD")
     
 public Semaphore(int permits) {
@@ -42,8 +42,8 @@ public Semaphore(int permits) {
      *        first-in first-out granting of permits under contention,
      *        else {@code false}
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.485 -0500", hash_original_method = "EDA1419EB058A316E989F6F201EF4313", hash_generated_method = "A1A0BA6EC5BC5C6538BBAE2E2744E06F")
     
 public Semaphore(int permits, boolean fair) {
@@ -248,6 +248,8 @@ public void release() {
      * @throws InterruptedException if the current thread is interrupted
      * @throws IllegalArgumentException if {@code permits} is negative
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.500 -0500", hash_original_method = "7B985EDB9B3C3368A9FFE0EA00FDC854", hash_generated_method = "7575346F096F2E84F6B8BF1FB0976378")
     
 public void acquire(int permits) throws InterruptedException {
@@ -399,6 +401,8 @@ public boolean tryAcquire(int permits, long timeout, TimeUnit unit)
      * @param permits the number of permits to release
      * @throws IllegalArgumentException if {@code permits} is negative
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.516 -0500", hash_original_method = "86FDC777B5FFBB0166AB6B40E9CBCA0F", hash_generated_method = "FFC414346719443481D4593FE03A94F1")
     
 public void release(int permits) {

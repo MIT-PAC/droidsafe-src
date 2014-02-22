@@ -111,6 +111,7 @@ public void onDestroy() {
      *            state here after writing the requested data to the <code>data</code>
      *            output stream.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSVerified("Called from BackupManager")

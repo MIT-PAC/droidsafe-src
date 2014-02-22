@@ -18,6 +18,7 @@ public class Date extends java.util.Date {
      *             if the format of the supplied string does not match the SQL
      *             format.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.285 -0500", hash_original_method = "FC7C79FC527809241DADD4534B95BE5B", hash_generated_method = "19DF358F7CC2DBEF4A33710192D3BA9D")
     
 public static Date valueOf(String dateString) {
@@ -78,6 +79,8 @@ private static long normalizeTime(long theTime) {
      * @param theDay
      *            the day in the month. Must be in the range {@code [1,31]}.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.254 -0500", hash_original_method = "54033E67BCAF2131C1DBBD633092C516", hash_generated_method = "C8C4841D2C7D069BC9CC87A5545C4A0A")
     
 @Deprecated
@@ -96,6 +99,8 @@ private static long normalizeTime(long theTime) {
      *            correspond to 00:00:00 GMT on the day determined by the supplied
      *            time value.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.256 -0500", hash_original_method = "0597C0984A3A8E2CF9C870E073A794F7", hash_generated_method = "652642F15E965BBB7E5FD61A824E4250")
     
 public Date(long theDate) {
@@ -208,6 +213,7 @@ public Date(long theDate) {
      * @param theTime
      *            the time in milliseconds since the Epoch.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.275 -0500", hash_original_method = "58DD96CFC8DDA00016DEC24CC6519017", hash_generated_method = "1F810C618BA62488684578EB05C3C6A1")
     
@@ -225,6 +231,7 @@ public Date(long theDate) {
      *
      * @return a string representation of the date in SQL format - {@code "yyyy-MM-dd"}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.277 -0500", hash_original_method = "F7971D7A9962AA78000A8292B336C43C", hash_generated_method = "C4F82B04518E944139744F728FE1B9E7")
     
 @Override

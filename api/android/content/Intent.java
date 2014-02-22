@@ -1667,15 +1667,15 @@ public Intent[] newArray(int size) {
     /**
      * Create an empty intent.
      */
-    @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.283 -0500", hash_original_method = "5C0F2C7B56AA3A635FE64462CDD8279E", hash_generated_method = "CA02BD6062B99ED9FB67966A876306F0")
     
 public Intent() {
     }
     
-    @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.415 -0400", hash_original_method = "3FAB664599EE7924CC36F277EFA522C8", hash_generated_method = "AB0CC1E246524C1E63F16EBEA02DAD1F")
     public  Intent(Intent o) {
         this.mAction = o.mAction;
@@ -1722,8 +1722,8 @@ public Intent() {
         //}
     }
     
-	@DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     private Intent(Intent o, boolean all) {
 		/*
 		 * Piggyback on the setters to track the taint.  The desire here
@@ -1750,21 +1750,21 @@ public Intent() {
         */
     }
     
-	@DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Intent(String action) {
         mAction = action;
     }
     
-	@DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Intent(String action, Uri uri) {
         mAction = action;
         mData = uri;
     }
     
-    @DSComment("Intent creation")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "8A8F598E2C7B57A58F1379D7AFC8B81F", hash_generated_method = "CFC95A750DAD5D8F9B4AF9DD7CFFB32A")
     public  Intent(Context packageContext, Class<?> cls) {
         mComponent = new ComponentName(packageContext, cls.getName());
@@ -1772,8 +1772,8 @@ public Intent() {
         //mComponent = new ComponentName(packageContext, cls);
     }
     
-    @DSComment("Intent creation")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "780AF3DA4D357977F460A8077F315476", hash_generated_method = "6432A8C7753059113592629EBEB24128")
     public  Intent(String action, Uri uri,
             Context packageContext, Class<?> cls) {
@@ -1788,6 +1788,8 @@ public Intent() {
     }
 
     /** @hide */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.624 -0500", hash_original_method = "BDABA8F9DB7F141DA2E5B48F186347CF", hash_generated_method = "FD782D49799CFD91C295FAFFCE111B9E")
     
 protected Intent(Parcel in) {
@@ -2112,6 +2114,8 @@ public byte getByteExtra(String name, byte defaultValue) {
      *
      * @see #putExtra(String, short)
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.364 -0500", hash_original_method = "7EF2CF350AA07FA1327C85A618EDDBDF", hash_generated_method = "7A2D49D6A8AA9AC64B52D23A1885544E")
     
@@ -2216,6 +2220,8 @@ public float getFloatExtra(String name, float defaultValue) {
      *
      * @see #putExtra(String, double)
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.374 -0500", hash_original_method = "9D513802316CA501D261DB0FDD177D9E", hash_generated_method = "237FBC9F07BF14699CA58B8E750592D1")
     
@@ -2970,6 +2976,8 @@ public Intent putExtra(String name, boolean value) {
      * @see #removeExtra
      * @see #getByteExtra(String, byte)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.458 -0500", hash_original_method = "983951350B18B30CD357EFC4A5F8C533", hash_generated_method = "369EAA9A7D333C9805FC57A65750D36F")
     
@@ -2996,6 +3004,8 @@ public Intent putExtra(String name, byte value) {
      * @see #removeExtra
      * @see #getCharExtra(String, char)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.461 -0500", hash_original_method = "44F743D0FCF3A3B09735F92996DFB8B8", hash_generated_method = "9A89A17EE52C9990C8D3B5950C6CB8BC")
     
@@ -3022,6 +3032,8 @@ public Intent putExtra(String name, char value) {
      * @see #removeExtra
      * @see #getShortExtra(String, short)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.463 -0500", hash_original_method = "D504428E6A64263CB337167E8E11D24B", hash_generated_method = "F6A29E038B705BB14118CC4BC5C94282")
     
@@ -3104,6 +3116,8 @@ public Intent putExtra(String name, long value) {
      * @see #removeExtra
      * @see #getFloatExtra(String, float)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.469 -0500", hash_original_method = "5563D3D5FF8C4FA36F1584B48F1347B6", hash_generated_method = "5067A756CF8499B7ABF1DB4D1F6C7336")
     
@@ -3130,6 +3144,8 @@ public Intent putExtra(String name, float value) {
      * @see #removeExtra
      * @see #getDoubleExtra(String, double)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.472 -0500", hash_original_method = "FDAB0726590DA4887C7F048C162A9588", hash_generated_method = "1C66BD585F85E5DE9F834C9668DEEE1F")
     
@@ -3240,6 +3256,8 @@ public Intent putExtra(String name, Parcelable value) {
      * @see #removeExtra
      * @see #getParcelableArrayExtra(String)
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.480 -0500", hash_original_method = "478D5F3649CF3C1019BEE6D895BDE15B", hash_generated_method = "8EE2EE37DEC8E216CE30AD3A34E60139")
     
@@ -3381,6 +3399,8 @@ public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence>
      * @see #removeExtra
      * @see #getBooleanArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.494 -0500", hash_original_method = "6C30326EEBD8635124BFC9218A6B6422", hash_generated_method = "C75337EC13A828BA2CF290B1734627F0")
     
@@ -3407,6 +3427,8 @@ public Intent putExtra(String name, boolean[] value) {
      * @see #removeExtra
      * @see #getByteArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.496 -0500", hash_original_method = "4D4788E50F7779B1D72BD45B4E76C775", hash_generated_method = "CF81A6D8F26F9F109EFE6BE3F51D4C02")
     
@@ -3433,6 +3455,8 @@ public Intent putExtra(String name, byte[] value) {
      * @see #removeExtra
      * @see #getShortArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.498 -0500", hash_original_method = "521E65BC95668B6A66CE17103975D2B1", hash_generated_method = "8DC6ED6D9F00B4FC7646C9B74D598F46")
     
@@ -3459,6 +3483,8 @@ public Intent putExtra(String name, short[] value) {
      * @see #removeExtra
      * @see #getCharArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.500 -0500", hash_original_method = "CEC6E945D8554F36BF71D2D38B61B7EF", hash_generated_method = "5294EA3365F0D553D067410AB35C1AA8")
     
@@ -3541,6 +3567,8 @@ public Intent putExtra(String name, long[] value) {
      * @see #removeExtra
      * @see #getFloatArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.507 -0500", hash_original_method = "F6CA728A57FEA4C77AF7294872C7D495", hash_generated_method = "0AB87D1FFE8ACBFD8140FF2BFBB1B700")
     
@@ -3567,6 +3595,8 @@ public Intent putExtra(String name, float[] value) {
      * @see #removeExtra
      * @see #getDoubleArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.510 -0500", hash_original_method = "3F155E9B232579FD3DCD2D3FAECEA79F", hash_generated_method = "D2DFE2902C91701683C6C77CD1D801AB")
     
@@ -3621,6 +3651,8 @@ public Intent putExtra(String name, String[] value) {
      * @see #removeExtra
      * @see #getCharSequenceArrayExtra(String)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.514 -0500", hash_original_method = "5B5979B9E2BB6EA8D0974FC96788F02A", hash_generated_method = "9CF7F62F974438343F82E84474D2AC00")
     
@@ -3678,6 +3710,8 @@ public Intent putExtra(String name, Bundle value) {
      * @deprecated
      * @hide
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.519 -0500", hash_original_method = "1AE089536D0C6059F1731DCA673BC867", hash_generated_method = "F96CE15EA84327F92F6D10BA45D9B4F0")
     

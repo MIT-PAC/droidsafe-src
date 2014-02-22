@@ -337,7 +337,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return str;
 	}
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getText(int id, CharSequence def){
     	String str = new String();
 		str.addTaint(id);
@@ -693,7 +694,9 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public InputStream openRawResource(int id, TypedValue value){
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    public InputStream openRawResource(int id, TypedValue value){
 		// Original method
 		/*
 		{

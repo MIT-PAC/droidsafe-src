@@ -1708,6 +1708,8 @@ public int abandonAudioFocus(OnAudioFocusChangeListener l) {
      *      in the application manifest. The package of the component must match that of
      *      the context you're registering from.
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.330 -0500", hash_original_method = "50EC2C592ADEFE7D217B837E9C2D3748", hash_generated_method = "FF871B2A83C34CECCD452A175FD29C2D")
     
 public void registerMediaButtonEventReceiver(ComponentName eventReceiver) {
@@ -1753,6 +1755,8 @@ public void registerMediaButtonIntent(PendingIntent pi, ComponentName eventRecei
      * @param eventReceiver identifier of a {@link android.content.BroadcastReceiver}
      *      that was registered with {@link #registerMediaButtonEventReceiver(ComponentName)}.
      */
+    @DSComment("Controlling audio")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.335 -0500", hash_original_method = "50FCC009A55C4B527D3EADAFCCF926C2", hash_generated_method = "B08E5578BA52F57410A395515F4F1E33")
     
 public void unregisterMediaButtonEventReceiver(ComponentName eventReceiver) {
@@ -1789,6 +1793,8 @@ public void unregisterMediaButtonIntent(PendingIntent pi, ComponentName eventRec
      *      information to display.
      * @see RemoteControlClient
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.341 -0500", hash_original_method = "226F7C4DEEA463C35DD22DDAE8FCA983", hash_generated_method = "43A97832DAC05830FE6AB0698A3BDBFF")
     
 public void registerRemoteControlClient(RemoteControlClient rcClient) {
@@ -1812,6 +1818,8 @@ public void registerRemoteControlClient(RemoteControlClient rcClient) {
      * @param rcClient The remote control client to unregister.
      * @see #registerRemoteControlClient(RemoteControlClient)
      */
+    @DSComment("Controlling audio")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.343 -0500", hash_original_method = "61965062F9C113F5A501568B9F9D00FE", hash_generated_method = "F3B68DDCB4B5D644E2811C9E0FD270CB")
     
 public void unregisterRemoteControlClient(RemoteControlClient rcClient) {

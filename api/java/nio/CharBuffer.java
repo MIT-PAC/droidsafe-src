@@ -39,6 +39,8 @@ public static CharBuffer allocate(int capacity) {
      *            the char array which the new buffer will be based on.
      * @return the created char buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.726 -0500", hash_original_method = "D9A2F140B5EF04EB7DEC41094ED7E8AE", hash_generated_method = "65ED0488DDDF29B220084A330F6927CA")
     
 public static CharBuffer wrap(char[] array) {
@@ -63,6 +65,8 @@ public static CharBuffer wrap(char[] array) {
      * @exception IndexOutOfBoundsException
      *                if either {@code start} or {@code charCount} is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.729 -0500", hash_original_method = "F4BBCADC2CAAE6F42E5D0A764115F8AA", hash_generated_method = "D5490944D7BAD3977680C13B7CFB7E2A")
     
 public static CharBuffer wrap(char[] array, int start, int charCount) {
@@ -110,6 +114,8 @@ public static CharBuffer wrap(CharSequence chseq) {
      * @exception IndexOutOfBoundsException
      *                if either {@code start} or {@code end} is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.734 -0500", hash_original_method = "6F90926803EA51F00CE00F4590525589", hash_generated_method = "D9FFB72AF163F0ACAE0C27A8A19234D4")
     
 public static CharBuffer wrap(CharSequence cs, int start, int end) {

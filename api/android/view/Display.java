@@ -126,6 +126,8 @@ Display(int display, CompatibilityInfoHolder compatInfo) {
      * Returns the index of this display.  This is currently undefined; do
      * not use.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.246 -0500", hash_original_method = "107F25776C4AB2DB96852EDD25D31975", hash_generated_method = "1C8EF4CE2343D615351A4D0090FBFC7B")
     

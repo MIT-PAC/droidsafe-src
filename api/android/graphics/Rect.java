@@ -84,14 +84,14 @@ public Rect[] newArray(int size) {
     /**
      * Create a new empty Rect. All coordinates are initialized to 0.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.576 -0500", hash_original_method = "2824AA033EB3CD5BF749E2296CB51BE8", hash_generated_method = "C673E9B57A7025273AA936A51CDE4468")
     
 public Rect() {}
     
-	@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Rect(int left, int top, int right, int bottom){
 		addTaint(left);
 		addTaint(top);
@@ -105,8 +105,8 @@ public Rect() {}
 		*/
 	}
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Rect(Rect r){
 		addTaint(r.getTaint());
 		/*

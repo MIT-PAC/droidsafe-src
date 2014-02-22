@@ -136,6 +136,8 @@ public static String encode(String s) {
      * @return an encoded version of s suitable for use as a URI component,
      *  or null if s is null
      */
+    @DSComment("Only URI passing around is important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.399 -0500", hash_original_method = "1C5D49909CC2D6B9385B7495620A5621", hash_generated_method = "835A012B817E2AE6DD44309433E28C9D")
     
 public static String encode(String s, String allow) {
@@ -1724,6 +1726,8 @@ public Builder buildUpon() {
         /**
          * Constructs a new Builder.
          */
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.311 -0500", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "E3E7F27996F0F2E94367F4C927CC51AE")
         
 public Builder() {}
