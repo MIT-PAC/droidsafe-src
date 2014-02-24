@@ -91,8 +91,7 @@ public abstract class PTABridge {
         G.v().instance_soot_jimple_toolkits_callgraph_VirtualCalls = null;
         G.v().instance_soot_jimple_toolkits_typing_integer_ClassHierarchy = null;
         G.v().instance_soot_jimple_spark_SparkTransformer = null;
-        G.v().ClassHierarchy_classHierarchyMap.clear();
-        G.v().MethodContext_map.clear();    
+        G.v().ClassHierarchy_classHierarchyMap.clear();  
         //G.v().instance_soot_jimple_spark_fieldrw_FieldWriteTagAggregator = null;
         
         System.gc();
