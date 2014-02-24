@@ -6,7 +6,6 @@ import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.infoflow.MemoryReadAnalysis;
 import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
@@ -427,25 +426,6 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
-            if (Config.v().memoryReadAnalysis) {
-                MemoryReadAnalysis.run();
-            }
-
-            try {
-                String[] infoFlowDotMethods = Config.v().infoFlowDotMethods;
-                if (infoFlowDotMethods != null) {
-                    monitor.subTask("Information Flow Analysis: Export Dot Graph");
-                    for (String methodSignature : infoFlowDotMethods) {
-                        SootMethod method = Scene.v().getMethod(methodSignature);
-                        InformationFlowAnalysis.exportDotGraph(method, methodSignature + ".dot");
-                    }
-                    if (monitor.isCanceled()) {
-                        return DroidsafeExecutionStatus.CANCEL_STATUS;
-                    }
-                }
-            } catch (IOException exp) {
-                logger.error(exp.toString());
-            }
             timer.stop();
             droidsafe.stats.AvgInfoFlowSetSize.run();
             // app stat column #6 - infoflow
