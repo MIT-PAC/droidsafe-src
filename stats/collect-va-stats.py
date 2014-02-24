@@ -4,7 +4,7 @@ from subprocess import check_output
 from collections import defaultdict
 import csv
 import sys
-import optparse
+import argparse
 import os
 import fnmatch
 import xml.etree.ElementTree as ET
@@ -18,24 +18,20 @@ def process_command_line(argv):
         argv = sys.argv[1:]
 
     # initialize the parser object:
-    parser = optparse.OptionParser(formatter=optparse.TitledHelpFormatter(width=78), add_help_option=None)
+    parser = argparse.ArgumentParser()
 
     # define options here:
-    parser.add_option('-h', '--help', action='help', help='Show this help message and exit.')
+    parser.add_argument("dir")
 
-    settings, args = parser.parse_args(argv)
-
-    # check number of arguments, verify values, etc.:
-    if args:
-        parser.error('program takes no command-line arguments; ''"%s" ignored.' % (args,))
+    args = parser.parse_args(argv)
 
     # further process settings & args if necessary
-    return settings, args
+    return args
 
-def run(settings, args):
+def run(args):
     path = os.environ['APAC_HOME'] + '/android-apps/engagements'
     droidsafe_gen_dirs = [os.path.join(dirpath, f) for dirpath, dirnames, files in os.walk(path) for f in
-            fnmatch.filter(dirnames, 'droidsafe-gen')]
+            fnmatch.filter(dirnames, args.dir)]
     
 
     ambg =  defaultdict(lambda : defaultdict(int))
@@ -44,7 +40,21 @@ def run(settings, args):
     total_dict = defaultdict(lambda : defaultdict(int))
     setsizesum = defaultdict(lambda : defaultdict(int))
     set_size_one_dict = defaultdict(lambda : defaultdict(int))
-   
+    TARGETED_FIELDS = ["java.lang.CharSequence mText",
+                       "java.lang.String uriString",
+                       "java.lang.String mAction",
+                       "android.net.Uri mData",
+                       "android.content.ComponentName mComponent",
+                       "java.lang.String mType",
+                       "java.lang.String mClass"]
+    
+    total_of_totals = 0
+    total_of_size_0 = 0
+    total_of_size_1 = 0
+    total_over_1 = 0
+    total_of_unambiguous = 0
+    sum_of_all_set_sizes = 0
+    total_klocs = 0
     with open('app-stats.csv', 'wb') as app_stat_csv_file:
         app_stat_csv_writer = csv.writer(app_stat_csv_file)
         app_stat_csv_writer.writerow(["App Name", 
@@ -53,7 +63,8 @@ def run(settings, args):
                                       "Class Cloning", 
                                       "Points-to Analysis", 
                                       "Value Analysis", 
-                                      "Infoflow Analysis"])
+                                      "Infoflow Analysis",
+                                      "Total Runtime"])
 
         for droidsafe_gen_dir in droidsafe_gen_dirs:
             # only keep apps that have va and app stats
@@ -71,6 +82,7 @@ def run(settings, args):
             for language in root.iter('language'):
                 if language.attrib['name'] == "Java":
                     size = language.attrib['code']
+                    total_klocs += int(size)
                     break
             if size == -1:
                 continue
@@ -120,10 +132,8 @@ def run(settings, args):
                             "%", 
                             "Ambiguous", 
                             "%", 
-                            "Avg Set Size (of set size > 0)",
-                            "Set Size 1", 
-                            "%", 
-                            "Set Size 0",
+                            "Avg Set Size",
+                            "Set Size > 1", 
                             "%",
                             "Total"])
         for cls, fields in total_dict.items():
@@ -133,7 +143,7 @@ def run(settings, args):
                 unambg_count = unambg[cls][field]
                 ambg_count = ambg[cls][field]
                 over_zero_count = total-set_size_zero
-
+                setsizesum_count = setsizesum[cls][field]
                 if total == 0:
                     unambg_perc = "n/a"
                 else:
@@ -149,23 +159,50 @@ def run(settings, args):
                 else:
                     set_size_zero_perc = '{:.2%}'.format(float((set_size_zero))/total)
 
-                if unambg_count != 0:
-                    avg_setsize = setsizesum[cls][field]/unambg_count
+                if total-set_size_zero-ambg_count != 0:
+                    avg_setsize = '{:.2f}'.format(float(setsizesum_count)/(total-set_size_zero-ambg_count))
                 else:
                     avg_setsize = "n/a"
                 
                 if over_zero_count == 0:
                     set_size_one_perc = "0%"
                 else:
-                    set_size_one_perc = '{:.2%}'.format(float(set_size_one)/over_zero_count)
+                    set_size_one_perc = '{:.2%}'.format(float(set_size_one)/total)
+
+                over_one_count = total-set_size_one-set_size_zero
+                if over_one_count == 0:
+                    over_one_perc = "0%"
+                else:
+                    over_one_perc = '{:.2%}'.format(float(over_one_count)/total)
 
                 csvwriter.writerow([cls, field, unambg_count, unambg_perc, ambg_count, ambg_perc, avg_setsize,
-                                    set_size_one, set_size_one_perc, set_size_zero, set_size_zero_perc, total])
-    
+                                    over_one_count, over_one_perc, total])
+
+                if field in TARGETED_FIELDS:
+                     total_of_totals += total
+                     total_of_size_1 += set_size_one
+                     total_of_size_0 += set_size_zero
+                     total_over_1 += over_one_count
+                     total_of_unambiguous += unambg_count
+                     sum_of_all_set_sizes += setsizesum_count
+        unamb_perc =  '{:.2%}'.format(float(total_of_unambiguous)/total_of_totals)
+        ambg_perc =  '{:.2%}'.format(float((total_of_totals -total_of_unambiguous))/total_of_totals)
+        size_1_perc = '{:.2%}'.format(float(total_of_size_1)/total_of_totals)
+        size_0_perc = '{:.2%}'.format(float(total_of_size_0)/total_of_totals)
+        over_1_perc = '{:.2%}'.format(float(total_over_1)/total_of_totals)
+        avg_size = '{:.2f}'.format(float(sum_of_all_set_sizes)/(total_of_totals -
+            total_of_size_0-(total_of_totals-total_of_unambiguous)))
+
+        csvwriter.writerow(["Total", "", total_of_unambiguous, unamb_perc, (total_of_totals-total_of_unambiguous),
+            ambg_perc, avg_size, total_over_1, over_1_perc, total_of_totals])
+        print "unambigious: " + '{:.2%}'.format(float(total_of_unambiguous)/total_of_totals)
+        print "size 1: " + '{:.2%}'.format(float(total_of_size_1)/total_of_totals)
+        print "avg size 1: " + avg_size
+
 def main(argv=None):
-    settings, args = process_command_line(argv)
+    args = process_command_line(argv)
     # application code here, like:
-    run(settings, args)
+    run(args)
     return 0        # success
 
 if __name__ == '__main__':
