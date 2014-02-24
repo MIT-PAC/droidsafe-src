@@ -1,5 +1,12 @@
 package droidsafe.speclang;
 
+import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
+import droidsafe.android.system.InfoKind;
+import droidsafe.utils.SourceLocationTag;
+
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,10 +29,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
-import droidsafe.android.system.API;
-import droidsafe.android.system.InfoKind;
-import droidsafe.utils.SourceLocationTag;
-import droidsafe.utils.Utils;
 
 
 /**
@@ -257,6 +260,16 @@ public class SecuritySpecification  {
                 }
                        
             }
+        }
+
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(Project.v().getOutputDir() + File.separator + "high-level.txt");
+            out.println(highLevelFlows);
+        } catch (IOException e) {
+            logger.warn("Couldn't write out high level flows num to high-level.txt: "+ e);
+        } finally {
+            out.close();
         }
         System.out.println("High Level Flows: " + highLevelFlows);
         return sb.toString();

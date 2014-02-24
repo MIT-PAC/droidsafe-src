@@ -7,8 +7,10 @@ import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.RefVAModel;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
+import droidsafe.analyses.value.UnknownVAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.android.app.Project;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -24,8 +26,8 @@ import org.slf4j.LoggerFactory;
 import soot.Body;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
-import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.Stmt;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.Local;
 import soot.RefType;
 import soot.Scene;
@@ -45,43 +47,68 @@ class StartActivityTransform implements VATransform {
 
     private final Logger logger = LoggerFactory.getLogger(StartActivityTransform.class);
 
-    private final String START_ACTIVITY_SIG = 
-        "<android.app.Activity: void startActivity(android.content.Intent)>";
-    private final String START_ACTIVITYFORRESULT_SIG = 
-        "<android.app.Activity: void startActivityForResult(android.content.Intent,int)>";
     private Set<String> sigsOfInvokesToTransform;
 
     Set<Stmt> modified = new HashSet<Stmt>();
-    Set<SootField> activitiesFromHarness = new HashSet<SootField>();
+    Set<SootField> allHarnessActivityFlds = new HashSet<SootField>();
+
+    // allocNodes of all intents used to start activities in the last run of this transform
+    private static Set<IAllocNode> intentAllocNodes;
 
     public StartActivityTransform() {
+        intentAllocNodes = new HashSet<IAllocNode>();
+
         //get all activities
         for (SootClass clz : Harness.v().getCreatedClasses()) {
             if (Hierarchy.inheritsFromAndroidActivity(clz)) {
-                activitiesFromHarness.add(Harness.v().getFieldForCreatedClass(clz));
+                allHarnessActivityFlds.add(Harness.v().getFieldForCreatedClass(clz));
             }
         }
     }
 
+    /**
+     * @return allocNodes of all intents used to start activities in the last run of this transform
+     *         Null if this tranform has not run
+     */
+    public static Set<IAllocNode> getIntentAllocNodes() {
+        return intentAllocNodes;
+    }
+
     @Override
     public void tranformsInvoke(SootMethod containingMthd, SootMethod callee, InvokeExpr invoke, Stmt stmt, Body body, PTAContext context) { 
+
+        if(!Project.v().isSrcClass(containingMthd.getDeclaringClass())){
+            return;
+        }
+
         // is this one of the invokes that we want to transform?
-        if (!sigsOfInvokesToTransform.contains(callee.getSignature()))
+        // TODO: switch from using name to using signature
+        boolean match = false;
+        for(String sig : sigsOfInvokesToTransform) {
+            if (callee.getName().equals(SootUtils.grabName(sig))){
+                match = true;
+                break;
+            }
+        }
+        if(!match)
             return;
 
-        // don't replace startActivityForResult in startActivity 
-        if (sigsOfInvokesToTransform.contains(containingMthd.getSignature()))
-            return;
+        for(String sig : sigsOfInvokesToTransform) {
+            if (containingMthd.getName().equals(SootUtils.grabName(sig))) {
+                return;
+            }
+        }
 
-        if (modified.contains(stmt)) 
+        if (modified.contains(stmt)) {
             return;
+        }
         modified.add(stmt);
 
         SootMethod setIntentMethod = Scene.v().getMethod("<android.app.Activity: void setIntent(android.content.Intent)>");
 
         Value intentArg = invoke.getArg(0);
 
-        for (SootField activityField : getDestinationsOfIntent(intentArg, context)) {
+        for (SootField activityField : getIntentTargetHarnessFlds(intentArg, context)) {
             logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
             //call set intent on these activities with local   
 
@@ -113,102 +140,204 @@ class StartActivityTransform implements VATransform {
     public Set<String> sigsOfInvokesToTransform() {
         if (sigsOfInvokesToTransform == null) {
             sigsOfInvokesToTransform = new HashSet<String>();
-            sigsOfInvokesToTransform.add(START_ACTIVITY_SIG);
-            sigsOfInvokesToTransform.add(START_ACTIVITYFORRESULT_SIG);
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivity(android.content.Intent)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivity(android.content.Intent,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityForResult(android.content.Intent,int,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)>");
         }
         return sigsOfInvokesToTransform;
     }
 
     /**
-     * @return set of harness fields that correspond to the activites that all the intents that intentArg could
+     * @return set of harness fields that correspond to the activities that all the intents that intentArg could
      * reference could start
      */
-    private Set<SootField> getDestinationsOfIntent(Value intentArg, PTAContext context) {
-        Set<SootField> destActivityHarnessSootFields = new HashSet<SootField>();
+    private Set<SootField> getIntentTargetHarnessFlds(Value intentArg, PTAContext context) {
+        Set<SootField> resolvedTargetHarnessFlds = new HashSet<SootField>();
+
         Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(intentArg, context);
+
+        // Couldn't figure out which intents 
+        if(allocNodes.size() == 0) {
+            logger.warn("getPTSet didn't return anything for: {}", intentArg);
+            resolvedTargetHarnessFlds.addAll(allHarnessActivityFlds);
+        }
+
         for(IAllocNode allocNode : allocNodes) {
+            intentAllocNodes.add(allocNode);
             VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
             if(vaModel != null && vaModel instanceof RefVAModel) {
-                destActivityHarnessSootFields.addAll(getDestinationsOfIntent((RefVAModel)vaModel));
+                RefVAModel intentRefVAModel = (RefVAModel)vaModel;
+                Set<String> targetClsStrings = null;
+                switch(getIntentType(intentRefVAModel)) {
+                    case EXPLICIT:
+                        targetClsStrings = getExplicitIntentTargetClsStrings(intentRefVAModel);
+                        break;
+                    case IMPLICIT:  
+                        targetClsStrings = getImplicitIntentInAppTargetClsStrings(intentRefVAModel);
+                        break;
+                }
+                if(targetClsStrings != null) {
+                    Set<SootField> targetHarnessFlds = getHarnessFldsForClsStrings(targetClsStrings);
+                    // If we didn't get a field for each possible target class, then be conservative and use all
+                    if(targetClsStrings.size() > targetHarnessFlds.size()){
+                        resolvedTargetHarnessFlds.addAll(allHarnessActivityFlds);
+                    } else if (targetClsStrings.size() == targetHarnessFlds.size()){
+                        resolvedTargetHarnessFlds.addAll(targetHarnessFlds);
+                    } else {
+                        logger.error("Should not get back more target harness fields than target class strings.");
+                        System.exit(1);
+                    }
+                } else {
+                    resolvedTargetHarnessFlds.addAll(allHarnessActivityFlds);
+                }
+            } else {
+                resolvedTargetHarnessFlds.addAll(allHarnessActivityFlds);
             }
         }
-        return destActivityHarnessSootFields;
+        return resolvedTargetHarnessFlds;
     }
 
     /**
-     * @return set of harness fields that correspond to the activities that the intent modeled by intentModel could
-     * start
+     * @return IntentType of the passed in Intent RefVAModel
      */
-    private Set<SootField> getDestinationsOfIntent(RefVAModel intentModel) {
-        // the next 3 lines get the VA models for the 'mComponent' field
-        SootClass clonedIntentSootClass = ((RefType)intentModel.getAllocNode().getType()).getSootClass();
+    public static IntentType getIntentType(RefVAModel intentRefVAModel) {
+        SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
         SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
-        Set<VAModel> componentNameModels = intentModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
+
+        Set<VAModel> componentNameFieldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
+        Set<VAModel> actionFieldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mAction"));
+        Set<VAModel> typeFieldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mType"));
+        Set<VAModel> dataFieldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mData"));
 
         // if there are any componentNames, then we assume this is an explicitely tracked intent
-        if(componentNameModels.size() > 0) {
-            // componentName field is empty - this is an explicitely targetted intent
-            return getExplicitlyTargetedIntentTargets(componentNameModels);
+        if(componentNameFieldVAModels.size() > 0) {
+            return IntentType.EXPLICIT;
         } else {
-            // not handling implicitely targetted intents yet, return all possibilities
-            return getImplicitlyTargettedIntentTargets(intentModel);
+            return IntentType.IMPLICIT;
         }
     }
 
     /**
-     * @return set of harness fields that correspond to the activities referred to the by the set of ComponentName VA
-     * models componentNameModels
+     * @return a set of SootFields that correspond to as many classStrings as possible
      */
-    private Set<SootField> getExplicitlyTargetedIntentTargets(Set<VAModel> componentNameModels) {
-        // result container
-        Set<SootField> destActivityHarnessSootFields = new HashSet<SootField>();
+    public static Set<SootField> getHarnessFldsForClsStrings(Set<String> clsStrings) {
+        if(clsStrings == null)
+            return null;
 
-        for(VAModel componentNameVAModel : componentNameModels) {
+        Set<SootField> sootFlds = new HashSet<SootField>();
+        for(String clsString : clsStrings) {
+            if(!clsString.equals("")) {
+                SootClass sootCls = Scene.v().getSootClass(clsString);
+                if(sootCls != null) {
+                    SootField activityHarnessFld = Harness.v().getFieldForCreatedClass(sootCls);
+                    if(activityHarnessFld != null) {
+                        sootFlds.add(activityHarnessFld);
 
+                    }
+                }
+            }
+        }
+        return sootFlds;
+    }
+
+    /**
+     * @return set of class strings that the passed in explicit intent may target
+     *         null if we cannot resolved them unambiguously
+     */
+    public static Set<String> getExplicitIntentTargetClsStrings(RefVAModel intentRefVAModel) {
+
+        // container for results
+        Set<String> targetClsStrings = new HashSet<String>();
+
+        // iterate over every possible componentName field value
+        SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
+        SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
+        Set<VAModel> componentNameFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
+
+        for(VAModel componentNameFldVAModel : componentNameFldVAModels) {
+            // if any of the component name VA models are invalidated, we cannot unambiguously determine all target
+            // cls strings and must return null
+            if(componentNameFldVAModel.invalidated() || componentNameFldVAModel instanceof UnknownVAModel){
+                return null;
+            }
             // the next four lines get the VA models for the 'mClass' field
-            RefVAModel componentNameRefVAModel = (RefVAModel)componentNameVAModel;
+            RefVAModel componentNameRefVAModel = (RefVAModel)componentNameFldVAModel;
             SootClass clonedComponentNameSootClass = ((RefType)componentNameRefVAModel.getAllocNode().getType()).getSootClass();
             SootClass componentNameSootClass = ClassCloner.getClonedClassFromClone(clonedComponentNameSootClass);
             Set<VAModel> mClassVAModels = componentNameRefVAModel.getFieldVAModels(componentNameSootClass.getFieldByName("mClass"));
 
-            if(mClassVAModels.size() > 0) {
-                for(VAModel mClassVAModel : mClassVAModels) {
-                    // get the class strings
-                    Set<Object> mClassObjects = ((StringVAModel)mClassVAModel).getValues();
-                    if(mClassObjects.size() != 1 || mClassObjects.toArray()[0].equals("")) {
-                        // no targetted classes got resolved, gotta return all possibilities
-                        return activitiesFromHarness;
-                    }
-
-                    for(Object mClassObject : mClassObjects) {
-                        SootClass sootClass = Scene.v().getSootClass((String)mClassObject);
-                        if(sootClass != null) {
-                            SootField fieldOfActivityInHarness = Harness.v().getFieldForCreatedClass(sootClass);
-                            if(fieldOfActivityInHarness != null) {
-                                destActivityHarnessSootFields.add(fieldOfActivityInHarness);
-                            } else {
-                                // couldn't find field in harness for this class, return all possibilities
-                                return activitiesFromHarness;
-                            }
-                        } else {
-                            // couldn't find a soot class for this class stirng, return all possibilities
-                            return activitiesFromHarness;
-                        }
-                    }
+            for(VAModel mClassVAModel : mClassVAModels) {
+                // if any of the classVAModels are invalidated, we cannot unambiguously determine all target cls
+                // strings and must return null
+                if(mClassVAModel.invalidated() || mClassVAModel instanceof UnknownVAModel) {
+                    return null;
                 }
-            } else {
-                // the component name's class field didn't get resolved, return all possibilities
-                return activitiesFromHarness;
+                // get the class strings
+                Set<Object> mClassObjects = ((StringVAModel)mClassVAModel).getValues();
+                for(Object mClassObject : mClassObjects) {
+                    targetClsStrings.add((String)mClassObject);
+                }
             }
         }
-        return destActivityHarnessSootFields;
+        return targetClsStrings;
     }
 
     /**
-     * @return set of harness fields that correspond to the activities that could be started by this implicitely
-     * targetted intent
+     * @return set of class strings that the passed in explicit intent may target
+     *         null if we cannot resolved them unambiguously
      */
-    private Set<SootField> getImplicitlyTargettedIntentTargets(RefVAModel intentModel) {
-        return activitiesFromHarness;
+    public static Set<String> getImplicitIntentInAppTargetClsStrings(RefVAModel intentRefVAModel) {
+        // for each Activity
+        // for each intentFilter
+        // if match, return cls string of activity
+        return null;
+    }
+
+    /**
+     * @return set of class strings that the passed in explicit intent may target
+     *         null if we cannot resolved them unambiguously
+     */
+    public static boolean isImplicitIntentTargettingAmbiguous(RefVAModel intentRefVAModel, boolean countData) {
+        SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
+        SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
+
+        // iterate over every possible action field value
+        Set<VAModel> actionFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mAction"));
+        for(VAModel actionFldVAModel : actionFldVAModels) {
+            if(actionFldVAModel.invalidated() || actionFldVAModel instanceof UnknownVAModel){
+                return true;
+            }
+        }
+
+        // iterate over every possible type field value
+        Set<VAModel> typeFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mType"));
+        for(VAModel typeFldVAModel : typeFldVAModels) {
+            if(typeFldVAModel.invalidated() || typeFldVAModel instanceof UnknownVAModel){
+                return true;
+            }
+        }
+        if (countData) {
+            // iterate over every possible data field value
+            Set<VAModel> dataFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mData"));
+            for(VAModel dataFldVAModel : dataFldVAModels) {
+                if(dataFldVAModel.invalidated() || dataFldVAModel instanceof UnknownVAModel ){
+                    return true;
+                }
+                RefVAModel uriRefVAModel = (RefVAModel)dataFldVAModel;
+                SootClass clonedURISootClass = ((RefType)(uriRefVAModel.getAllocNode().getType())).getSootClass();
+                SootClass uriSootClass = ClassCloner.getClonedClassFromClone(clonedURISootClass);
+                // iterate over every possible action field value
+                Set<VAModel> uriStringFldVAModels = uriRefVAModel.getFieldVAModels(uriSootClass.getFieldByName("uriString"));
+                for(VAModel uriStringFldVAModel : uriStringFldVAModels) {
+                    if(uriStringFldVAModel.invalidated() || uriStringFldVAModel instanceof UnknownVAModel){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

@@ -54,7 +54,7 @@ public abstract class PrimVAModel extends VAModel {
             fieldsString += "[";
             Set<String> fieldStrings = new HashSet<String>();
             for(Object val : this.getValues()) {
-                fieldStrings.add("\"" + val.toString() + "\"");
+                fieldStrings.add("\"" + val.toString().replace("\\", "\\\\").replace("\"", "\\\"") + "\"");
             }
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
             fieldsString += "]";

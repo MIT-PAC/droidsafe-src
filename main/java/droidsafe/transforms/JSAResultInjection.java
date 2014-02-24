@@ -72,13 +72,15 @@ public class JSAResultInjection extends BodyTransformer {
         
         if (baseClassesToModel.contains(clz))
             return true; 
-
+        
+        /*
         //if not directly contained, now check parents
         for (SootClass parent : SootUtils.getParents(clz)) {
             if (!parent.isInterface() && baseClassesToModel.contains(parent)) {
                 return true;
             }
         }
+        */
 
         return false;
     }

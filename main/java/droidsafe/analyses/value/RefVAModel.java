@@ -1,15 +1,12 @@
 package droidsafe.analyses.value;
 
 import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.UnknownVAModel;
+import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.utils.SootUtils;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,6 +17,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.spark.pag.StringConstantNode;
+import soot.ArrayType;
+import soot.RefLikeType;
 import soot.RefType;
 import soot.SootClass;
 import soot.SootField;
@@ -40,7 +40,7 @@ public abstract class RefVAModel extends VAModel {
     private static final Logger logger = LoggerFactory.getLogger(RefVAModel.class);
 
     private static final UnknownVAModel unknownValue = new UnknownVAModel();
-    
+
     /** 
      * Flag that gets set to true when the model is being printed.
      * Used to avoid infinite loops when printing due to chains of models being values of fields of other models.
@@ -59,20 +59,30 @@ public abstract class RefVAModel extends VAModel {
         String errorMsg = this.getAllocNode() + "'s field " + sootField + " got assigned the value 'unknown' because ";
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
-        if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)) {
-            RefType fieldRefType = (RefType)fieldType;
-            Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(this.getAllocNode(), sootField);
+        if((fieldType instanceof ArrayType || fieldType instanceof RefType) && !SootUtils.isStringOrSimilarType(fieldType)) {
+            IAllocNode wholeObjectAN = this.getAllocNode();
+            Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(wholeObjectAN, sootField);
+            if (fieldType instanceof ArrayType) {
+                Set<IAllocNode> arrayElementAllocNodes = new HashSet<IAllocNode>();
+                for(IAllocNode arrayAllocNode : allocNodes) {
+                    arrayElementAllocNodes.addAll(PTABridge.v().getPTSetOfArrayElement(arrayAllocNode));
+                }
+                allocNodes = arrayElementAllocNodes;
+            }
             if(allocNodes.size() > 0){
-                String fieldClassName = fieldRefType.getSootClass().getName();
-                //took out string code here!
                 for(IAllocNode allocNode : allocNodes) {
-                    VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
-                    if(vaModel != null) {
-                        fieldVAModels.add(vaModel);
+                    if(allocNode instanceof StringConstantNode) {
+                        StringVAModel stringVAModel = new StringVAModel();
+                        stringVAModel.addValue(((StringConstantNode)allocNode).getString());
+                        fieldVAModels.add(stringVAModel);
                     } else {
-                        ValueAnalysis.logError(errorMsg + 
-                            " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
-                        fieldVAModels.add(unknownValue);
+                        VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
+                        if(vaModel != null) {
+                            fieldVAModels.add(vaModel);
+                        } else {
+                            ValueAnalysis.logError(errorMsg + " there was no model for its objects (perhaps the objects' class isn't annotated with DSVAModeled?).");
+                            fieldVAModels.add(unknownValue);
+                        }
                     }
 
                 }
@@ -94,6 +104,14 @@ public abstract class RefVAModel extends VAModel {
             } catch(NoSuchFieldException e) {
                 ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
                 fieldVAModels.add(unknownValue);
+                ValueAnalysis.logError("Available field using getFields:");                                              
+                for(Field fld : c.getFields()) {                                                                         
+                    ValueAnalysis.logError(fld.toString());                                                             
+                }                                                                                                        
+                ValueAnalysis.logError("Available fields using getDeclaredFields:");                                     
+                for(Field fld : c.getDeclaredFields()) {                                                                 
+                    ValueAnalysis.logError(fld.toString());                                                             
+                }
             }
         }
         return fieldVAModels;
@@ -198,14 +216,14 @@ public abstract class RefVAModel extends VAModel {
         if (this.invalidated) {
             fieldsString += "\"" + INVALIDATED + "\"";
         } else {
+            int cumStrLen = 0;
             for(SootField sootField : getFieldsToDisplay(this.getSootClass())) {
                 Set<VAModel> vaModels = this.getFieldVAModels(sootField);
+                String fieldString = "\"" + sootField.getName() + "\":";
                 if(vaModels == null) {
-                    String fieldString = "\"" + sootField.getName() + "\": \"" + INVALIDATED + "\"";
-                    fieldStrings.add(fieldString);
-                } else if(vaModels.size() > 0){
+                    fieldString += INVALIDATED;
+                } else if(vaModels.size() > 0 && vaModels.size() < 100){
                     // using which we call getFieldVAModels to get a list of of object models
-                    String fieldString = "\"" + sootField.getName() + "\":";
                     if(vaModels.size() > 1) fieldString += "[";
                     Set<String> objectModelStrings = new HashSet<String>();
                     for(VAModel vaModel : vaModels){
@@ -213,15 +231,16 @@ public abstract class RefVAModel extends VAModel {
                         if(vaModel != null) {
                             // for each field object model, we call its toString, unless the object model is the same
                             // one we are trying to print out (to avoid a toString infinite loop)
+                            String str = "";
                             if(this==vaModel) {                                                                           
-                                objectModelStrings.add("\"itself\"");
+                                str = "\"itself\"";
+                                objectModelStrings.add(str);
                             } else {
                                 // for each object model we call its tostring method
-                                String str = "";
                                 if(detailed) {
-                                    str += vaModel.toStringDetailed();
+                                    str = vaModel.toStringDetailed();
                                 } else {
-                                    str += vaModel.toStringSimple();
+                                    str = vaModel.toStringSimple();
                                 }
                                 objectModelStrings.add(str);
                             }
@@ -229,8 +248,15 @@ public abstract class RefVAModel extends VAModel {
                     }
                     fieldString += StringUtils.join(objectModelStrings.toArray(), ", ");
                     if(vaModels.size() > 1) fieldString += "]";
+                } else {
+                    fieldString += "\"too many values\"";
+                }
+                int length = fieldString.length();
+                cumStrLen += length;
+                if(length > 0 && cumStrLen  < 1000) {
                     fieldStrings.add(fieldString);
                 }
+
             }
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
         }

@@ -1,6 +1,7 @@
 package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
+
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -15,7 +16,6 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
@@ -31,18 +31,18 @@ import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.speclang.SecuritySpecification;
-import droidsafe.stats.FindAPICallsWithNonLocalEffects;
 import droidsafe.stats.PTASetsAvgSize;
+import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.ClassGetNameToClassString;
-import droidsafe.transforms.HoistAllocations;
+import droidsafe.transforms.InsertUnmodeledObjects;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
-import droidsafe.transforms.CallBackModeling;
-import droidsafe.transforms.InsertUnmodeledObjects;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.StartActivityTransformStats;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.VATransformsSuite;
@@ -297,6 +297,21 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
         }
+       
+        //need this pta run to account for object sens and jsa injection
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+        // ObjectGetClassToClassConstant must run before ClassGetNameToClassString 
+        driverMsg("Converting Object.getClass calls to class constant.");
+        monitor.subTask("Converting Object.getClass calls to class constant.");
+        ObjectGetClassToClassConstant.run();
+        monitor.worked(1);
+        if (monitor.isCanceled())
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
@@ -304,7 +319,6 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
 
         //need this pta run to account for jsa injection and class / forname
         if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
@@ -337,6 +351,21 @@ public class Main {
             driverMsg("Running Value Analysis Tranform Suite...");
             VATransformsSuite.run();
             driverMsg("Finished Value Analysis Transforms Suite: " + vaTimer);
+
+            if (Config.v().dumpICCStats) {
+                driverMsg("Dumping ICC Stats");
+                monitor.subTask("Dumping ICC Stats");
+                StopWatch iccStatsTimer = new StopWatch();
+                iccStatsTimer.start();
+                StartActivityTransformStats.run();
+                iccStatsTimer.stop();
+                monitor.worked(1);
+                if (monitor.isCanceled()) {
+                    return DroidsafeExecutionStatus.CANCEL_STATUS;
+                }
+                driverMsg("Finished Computing ICC Stats: " + iccStatsTimer.toString());
+           }
+
 
             driverMsg("Undoing String Analysis Result Injection.");
             monitor.subTask("Undoing String Analysis Result Injection.");
@@ -392,9 +421,9 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (Config.v().computeVAStats) {
-            driverMsg("Computing Value Analysis Stats");
-            monitor.subTask("Value Analysis Stats");
+        if (Config.v().dumpVAStats) {
+            driverMsg("Dumping Value Analysis Stats");
+            monitor.subTask("Dumping Value Analysis Stats");
             StopWatch vaStatsTimer = new StopWatch();
             vaStatsTimer.start();
             VAStats.run();
@@ -403,7 +432,7 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer.toString());
+            driverMsg("Finished Dumping Value Analysis Stats: " + vaStatsTimer.toString());
         }
 
         // print out what modeling is required for this application
