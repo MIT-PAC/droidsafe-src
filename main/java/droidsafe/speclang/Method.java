@@ -413,21 +413,6 @@ public class Method implements Comparable<Method> {
         return new HashSet<InfoKind>();
     }
 
-    Set<InfoValue> getTaint(MethodOrMethodContext momc) {
-        return null;
-    }
-
-    Set<InfoValue> getTaint(AllocNode a, MethodOrMethodContext momc) {
-        return null;
-    }
-
-
-    Set<InfoValue> getTaints(Stmt stmt, MethodOrMethodContext srcMethodContext, Local local) {
-        assert srcMethodContext.method().retrieveActiveBody().getUnits().contains(stmt);
-        assert local.getType() instanceof PrimType;
-        return null;
-    }
-
     private MethodOrMethodContext getMethodContext() {
         return ptaInfo.getEdge().getTgt();
     }
@@ -444,7 +429,7 @@ public class Method implements Comparable<Method> {
         if (recInfoValues == null) {
             recInfoValues = new HashSet<InfoValue>();
             for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
-                recInfoValues.addAll(getTaint((AllocNode)node, getMethodContext()));
+                recInfoValues.addAll(InformationFlowAnalysis.v().getTaints((AllocNode)node, getMethodContext()));
             }
         }
 
@@ -471,12 +456,13 @@ public class Method implements Comparable<Method> {
             argInfoValues[i] = new HashSet<InfoValue>();
             if (ptaInfo.isArgPointer(i)) {
                 for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
-                    argInfoValues[i].addAll(getTaint((AllocNode)node, getMethodContext()));
+                    argInfoValues[i].addAll(InformationFlowAnalysis.v().getTaints((AllocNode)node, getMethodContext()));
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
-                argInfoValues[i] = getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
-                    getMethodContext(), (Local)ptaInfo.getArgValue(i));
+                argInfoValues[i] = 
+                        InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
+                            getMethodContext(), (Local)ptaInfo.getArgValue(i));
             } else {
                 logger.error("Unknown value or type for argument when retreiveing infovalue: {} {} {}", 
                     getMethodContext(), ptaInfo.getArgValue(i), ptaInfo.getArgValue(i).getType());
@@ -571,7 +557,7 @@ public class Method implements Comparable<Method> {
      */
     public Set<InfoKind> getSourcesInfoKinds() {
         if (methodInfoKinds == null) {
-            methodInfoKinds = getInfoKinds(getTaint(getMethodContext()));
+            methodInfoKinds = getInfoKinds(InformationFlowAnalysis.v().getTaints(getMethodContext()));
         }
 
         return methodInfoKinds;
