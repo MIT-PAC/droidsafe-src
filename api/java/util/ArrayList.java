@@ -32,6 +32,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
     private static final long serialVersionUID = 8683452581122892189L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.898 -0500", hash_original_field = "3E4C52F6F0428C39E4E692D20A9AA9AA", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
 
+    @DSVAModeled
     transient Object[] array;
         
 @DSComment("constructor")
