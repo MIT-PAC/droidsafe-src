@@ -21,11 +21,16 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 	}
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.478 -0500", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "A0DC4E380222F91FCE535191E64A1824")
-    
+    @DSVerified
+    @DSSpec(DSCat.SPEC_OTHERS)
 public boolean hasStableIds() {
         return false;
     }
-    
+
+    @DSVerified
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public abstract Object getItem(int pos);
+
     @DSVerified
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.481 -0500", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "6A22BA8F56D7F69EA0195E58760DC1E9")

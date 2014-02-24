@@ -248,7 +248,7 @@ public void setForeground(Drawable drawable) {
             invalidate();
         }
     }
-
+    
     /**
      * Returns the drawable used as the foreground of this FrameLayout. The
      * foreground drawable, if non-null, is always drawn on top of the children.
