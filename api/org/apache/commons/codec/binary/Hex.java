@@ -94,6 +94,12 @@ public static char[] encodeHex(byte[] data) {
 
            return out;
     }
+    
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public static String encodeHexString(byte[] data) {
+        return new String(encodeHex(data));
+    }
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.736 -0500", hash_original_field = "6A79B7FE9690C6CB215ECF581D2C9051", hash_generated_field = "951B6C7D58E013204229930C868FD053")
 
     private static final char[] DIGITS = {
@@ -123,7 +129,8 @@ public static char[] encodeHex(byte[] data) {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.746 -0500", hash_original_method = "A17636F69FEFB6DDDFC5F873DED10994", hash_generated_method = "60C8C0188F520A0E56A43B3C97B10639")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public byte[] decode(byte[] array) throws DecoderException {
         return decodeHex(new String(array).toCharArray());
     }
@@ -143,7 +150,8 @@ public byte[] decode(byte[] array) throws DecoderException {
      * @see #decodeHex(char[])
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.749 -0500", hash_original_method = "259B1B44CE3EA0D75FAE3A3A31435A4B", hash_generated_method = "C6C4C645FD0EAABF29F771E2F97C02E5")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public Object decode(Object object) throws DecoderException {
         try {
             char[] charArray = object instanceof String ? ((String) object).toCharArray() : (char[]) object;
@@ -165,7 +173,8 @@ public Object decode(Object object) throws DecoderException {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.752 -0500", hash_original_method = "50DBD5604B609ED94F02B18C89B60347", hash_generated_method = "117BABCF8A047303DF484347B3136DE9")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public byte[] encode(byte[] array) {
         return new String(encodeHex(array)).getBytes();
     }
@@ -182,7 +191,8 @@ public byte[] encode(byte[] array) {
      * @see #encodeHex(byte[])
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.754 -0500", hash_original_method = "65D07AA1ACA3F409200AC5EFDF123AC8", hash_generated_method = "4674FA6F6A3412B85ACB310AC9769419")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public Object encode(Object object) throws EncoderException {    
         try {
             byte[] byteArray = object instanceof String ? ((String) object).getBytes() : (byte[]) object;
