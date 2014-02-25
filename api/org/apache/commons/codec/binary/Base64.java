@@ -109,16 +109,6 @@ public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
             encodedDataLength = numberTriplets * 4;
         }
 
-        // If the output is to be "chunked" into 76 character sections, 
-        // for compliance with RFC 2045 MIME, then it is important to 
-        // allow for extra length to account for the separator(s)
-        if (isChunked) {
-
-            nbrChunks =
-                (CHUNK_SEPARATOR.length == 0 ? 0 : (int) Math.ceil((float) encodedDataLength / CHUNK_SIZE));
-            encodedDataLength += nbrChunks * CHUNK_SEPARATOR.length;
-        }
-
         encodedData = new byte[encodedDataLength];
         encodedData.addTaint(isChunked);
 
@@ -135,7 +125,7 @@ public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.963 -0500", hash_original_method = "87C77E071BDF35E1C91859D8F7A3EF45", hash_generated_method = "24B5D2DD8D4071995BF1156D8E7C81EE")
     @DSVerified
     @DSSafe(DSCat.UTIL_FUNCTION)
-public static byte[] decodeBase64(byte[] base64Data) {
+    public static byte[] decodeBase64(byte[] base64Data) {
         // RFC 2045 requires that we discard ALL non-Base64 characters
         base64Data = discardNonBase64(base64Data);
 
@@ -260,6 +250,17 @@ static byte[] discardNonBase64(byte[] data) {
     {
         //Synthesized constructor
     }
+    
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public Base64(int lineLength, byte[] separator) {
+        addTaint(lineLength);
+        addTaint(separator.getTaint());
+    }
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean hasData() {
+        return getTaintBoolean();
+    }
 
     /**
      * Decodes an Object using the base64 algorithm.  This method
@@ -363,6 +364,49 @@ public byte[] encode(byte[] pArray) {
         lookUpBase64Alphabet[62] = (byte) '+';
         lookUpBase64Alphabet[63] = (byte) '/';
     }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public void setInitialBuffer(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        addTaint(b.getTaint());
+        addTaint(offset);
+        addTaint(len);
+    }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public int readResults(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        b.addTaint(getTaint());
+        b.addTaint(offset);
+        b.addTaint(len);
+        return b.getTaintInt();
+    }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public static byte[] encode(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        byte[] ret = new byte[len];
+        ret.addTaint(b.getTaint());
+        ret.addTaint(offset);
+        ret.addTaint(len);
+        return ret;
+    }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public byte[] decode(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        byte[] ret = new byte[len];
+        ret.addTaint(b.getTaint());
+        ret.addTaint(offset);
+        ret.addTaint(len);
+        return ret; 
+    }
+    
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public int avail() {
+        return getTaintInt();
+    }
+    
     
 }
 
