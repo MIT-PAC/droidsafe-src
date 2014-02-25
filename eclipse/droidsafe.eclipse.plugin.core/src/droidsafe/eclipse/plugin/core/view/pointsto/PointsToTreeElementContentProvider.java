@@ -20,33 +20,17 @@ import droidsafe.speclang.model.MethodModel;
  */
 public class PointsToTreeElementContentProvider extends MethodInfoTreeElementContentProvider {
 
-    protected static Map<MethodModel, Object[]> methodToRoots = new HashMap<MethodModel, Object[]>();
-
-    @Override
-    public Object[] getElements(Object input) {
-        if (input instanceof MethodModel) {
-            MethodModel method = (MethodModel) input;
-            this.fMethod = method;
-            Object[] roots = methodToRoots.get(method);
-            if (roots == null) {
-                roots = initializeRoots();
-                methodToRoots.put(method, roots);
-            }
-            return roots;
-        }
-        return NO_CHILDREN;
-    }
-
     /**
      * Populate the tree elements of the points-to outline view. Return the root elements.
      */
     protected Object[] initializeRoots() {
-        if (!fMethod.hasPointsToInfo())
+        MethodModel method = (MethodModel) fInput;
+        if (!method.hasPointsToInfo())
             return NO_CHILDREN;
         List<MethodArgumentModel> methodArgs = new ArrayList<MethodArgumentModel>();
-        for (int i = -1; i < fMethod.getMethodArguments().size(); i++) {
-            if (fMethod.getArgumentAllocSources(i) != null)
-                methodArgs.add(fMethod.getArgumentModel(i));
+        for (int i = -1; i < method.getMethodArguments().size(); i++) {
+            if (method.getArgumentAllocSources(i) != null)
+                methodArgs.add(method.getArgumentModel(i));
         }
         Object[] roots = new Object[methodArgs.size()];
         for (int i = 0; i < methodArgs.size(); i++) {
@@ -68,14 +52,6 @@ public class PointsToTreeElementContentProvider extends MethodInfoTreeElementCon
             }
         }
         return roots;
-    }
-
-    /**
-     * Reset the content of this content provider.
-     */
-    @Override
-    protected void reset() {
-        methodToRoots.clear();
     }
 
 }

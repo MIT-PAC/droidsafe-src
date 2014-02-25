@@ -13,13 +13,13 @@ import droidsafe.speclang.model.MethodModel;
  */
 abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineViewPart implements ISelectionChangedListener {
 
-    /** The method on which the droidsafe analysis info is to be displayed. */
-    protected MethodModel fInputElement;
+    /** The object on which the droidsafe analysis info is to be displayed. */
+    protected Object fInputElement;
 
     /**
      * Set the input element for the viewer and update the contents of the view.
      */
-    protected void setInputElement(MethodModel inputElement) {
+    protected void setInputElement(Object inputElement) {
         if (!inputElement.equals(fInputElement)) {
             fInputElement = inputElement;
             updateView();
@@ -29,7 +29,7 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
     /**
      * Return the input element for this outline.
      */
-    public MethodModel getInputElement() {
+    public Object getInputElement() {
         return fInputElement;
     }
 
@@ -37,6 +37,11 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
         resetViewer();
         showPage(PAGE_EMPTY);
     }
+    
+    /**
+     * Return the method on which the droidsafe analysis info is displayed on this outline.
+     */
+    protected abstract MethodModel getMethod();
 
     /**
      * Update the content of the outline view.
@@ -45,7 +50,7 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
         if (fInputElement != null && fParentComposite != null) {
             showPage(PAGE_VIEWER);
             
-            String sig = DroidsafePluginUtilities.removeCloneSuffix(fInputElement.getSignature());
+            String sig = DroidsafePluginUtilities.removeCloneSuffix(getMethod().getSignature());
             setContentDescription("method " + sig);
 
             fTreeViewer.setInput(fInputElement);

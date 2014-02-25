@@ -295,58 +295,34 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
 
         @Override
         public void doubleClick(DoubleClickEvent event) {
-          // TreeViewer viewer = (TreeViewer) event.getViewer();
-          IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
-          Object selectedNode = thisSelection.getFirstElement();
-          // viewer.setExpandedState(selectedNode,
-          // !viewer.getExpandedState(selectedNode));
-          SourceLocationTag line = null;
-          if (selectedNode instanceof TreeElement<?, ?>) {
-            TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
-            Object data = treeElement.getData();
-            if (data instanceof SourceLocationTag) {
-              line = (SourceLocationTag) data;
-            } else if (data instanceof MethodModel) {
-              if (((MethodModel) data).getLines().isEmpty()) {
-                line = ((MethodModel) data).getDeclSourceLocation();
-              } else {
-                line = ((MethodModel) data).getLines().get(0);
-              }
-            } else if (treeElement.getParent().getData() instanceof SourceLocationTag) {
-              line = (SourceLocationTag) treeElement.getParent().getData();
-            } else if (treeElement.hasChildren()
-                && treeElement.getChildren().get(0).getData() instanceof SourceLocationTag) {
-              line = (SourceLocationTag) treeElement.getChildren().get(0).getData();
-            }
-          }
-          if (line != null) {
-            int lineNumber = line.getLine();
-            String className = line.getClz();
-            String classPath = DroidsafePluginUtilities.classNamePath(className);
-            IFile file = getProject().getFile(classPath);
-            if (file != null) {
-              try {
-                IWorkbenchPage page =
-                    PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-                IEditorDescriptor desc =
-                    PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
-                IEditorPart openEditor = page.openEditor(new FileEditorInput(file), desc.getId());
-
-                if (openEditor instanceof ITextEditor) {
-                  ITextEditor textEditor = (ITextEditor) openEditor;
-                  IDocument document =
-                      textEditor.getDocumentProvider().getDocument(textEditor.getEditorInput());
-                  textEditor.selectAndReveal(document.getLineOffset(lineNumber - 1),
-                      document.getLineLength(lineNumber - 1));
-                }
-              } catch (Exception ex) {
-                logger.debug("Exception while creating editor for line {}", line);
-                ex.printStackTrace();
-              }
-            }
-          }
+          revealSelectionInEditor(event.getSelection(), true);
         }
       });
+    }
+  }
+
+  protected void revealSelectionInEditor(ISelection selection, boolean activate) {
+    // TreeViewer viewer = (TreeViewer) event.getViewer();
+    if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+      Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
+      SourceLocationTag line = null;
+      if (selectedNode instanceof TreeElement<?, ?>) {
+        TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
+        Object data = treeElement.getData();
+        if (data instanceof SourceLocationTag) {
+          line = (SourceLocationTag) data;
+        } else if (data instanceof MethodModel) {
+          line = DroidsafePluginUtilities.getLine((MethodModel) data);
+        } else if (treeElement.getParent().getData() instanceof SourceLocationTag) {
+          line = (SourceLocationTag) treeElement.getParent().getData();
+        } else if (treeElement.hasChildren()
+            && treeElement.getChildren().get(0).getData() instanceof SourceLocationTag) {
+          line = (SourceLocationTag) treeElement.getChildren().get(0).getData();
+        }
+      }
+      if (line != null) {
+          DroidsafePluginUtilities.revealInEditor(getProject(), line, activate);
+      }
     }
   }
 

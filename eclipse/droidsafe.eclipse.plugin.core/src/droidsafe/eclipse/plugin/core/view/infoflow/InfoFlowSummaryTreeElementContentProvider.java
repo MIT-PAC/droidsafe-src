@@ -1,23 +1,12 @@
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.jface.viewers.Viewer;
-
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
-import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.SpecInfoTreeElementContentProvider;
-import droidsafe.speclang.model.AllocLocationModel;
-import droidsafe.speclang.model.CallLocationModel;
-import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 
@@ -50,9 +39,9 @@ public class InfoFlowSummaryTreeElementContentProvider extends SpecInfoTreeEleme
         for (String source : infoFlowSummaryMap.keySet()) {
             Map<String, Set<MethodModel>> sinkMap = infoFlowSummaryMap.get(source);
             for (String sink : sinkMap.keySet()) {
-                String sourceSinkPair = source + " -> " + sink;
-                TreeElement<String, MethodModel> root =
-                        new TreeElement<String, MethodModel>(sourceSinkPair, sourceSinkPair, MethodModel.class);
+                SourceSinkPair sourceSinkPair = new SourceSinkPair(source, sink);
+                TreeElement<SourceSinkPair, MethodModel> root =
+                        new TreeElement<SourceSinkPair, MethodModel>(sourceSinkPair.toString(), sourceSinkPair, MethodModel.class);
                 Set<MethodModel> methods = sinkMap.get(sink);
                 for (MethodModel method: methods) {
                     TreeElement<MethodModel, Object> methElement =
