@@ -336,6 +336,8 @@ private void findColumns(String[] from) {
         }
     }
 
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.923 -0500", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "DCAFF21CFF90CAE27D942A9EA9291B7A")
     
 @Override

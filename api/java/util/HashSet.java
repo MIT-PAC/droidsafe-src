@@ -19,31 +19,31 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
 
     transient HashMap<E, HashSet<E>> backingMap;
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "E33F776FDE5FB34265D051C43B067D53", hash_generated_method = "04DBAE4FD4D1BE6063B2C2E36A78C25F")
     public  HashSet() {
         // ---------- Original Method ----------
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "99449DF656D31D85FA19BFCB5BF76454", hash_generated_method = "0033902E8F425F3576BA1EDD3E4839F8")
     public  HashSet(int capacity) {
         this(capacity, 0);
         // ---------- Original Method ----------
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "200669CE849E0E6EB4D645D70DC42C60", hash_generated_method = "BB398DB8539410A1C6824BFFF541668C")
     public  HashSet(int capacity, float loadFactor) {
         requestCapacity(capacity);
         // ---------- Original Method ----------
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.220 -0400", hash_original_method = "B287B339899074AD24911C01E3E019EA", hash_generated_method = "A6086E0532F712E31587B9655BDF6775")
     public  HashSet(Collection<? extends E> collection) {
         super.addAll(collection);
@@ -53,8 +53,8 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         //}
     }
 
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.671 -0500", hash_original_method = "03A7D4D479B1CF6DDF3EDEC66129252B", hash_generated_method = "03A7D4D479B1CF6DDF3EDEC66129252B")
     
 HashSet(HashMap<E, HashSet<E>> backingMap) {

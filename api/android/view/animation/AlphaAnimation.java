@@ -22,6 +22,8 @@ public class AlphaAnimation extends Animation {
      * @param context Application context to use
      * @param attrs Attribute set from which to read values
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.152 -0500", hash_original_method = "C876E0498492EBC100852A514EEAC281", hash_generated_method = "E8D13F92E4D5A8FCF20C60D0445F7401")
     
 public AlphaAnimation(Context context, AttributeSet attrs) {
@@ -43,7 +45,7 @@ public AlphaAnimation(Context context, AttributeSet attrs) {
      *        fully opaque and 0.0 means fully transparent.
      * @param toAlpha Ending alpha value for the animation.
      */
-    @DSComment("no action/not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.155 -0500", hash_original_method = "DFFB255DB5DD71C3FC3D40107483D6B8", hash_generated_method = "4BCF8AF3DDE5297D42D5A4574268EB47")
     

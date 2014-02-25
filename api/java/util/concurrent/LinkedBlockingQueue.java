@@ -53,8 +53,8 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
      * Creates a {@code LinkedBlockingQueue} with a capacity of
      * {@link Integer#MAX_VALUE}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.325 -0500", hash_original_method = "632CB0CBBBC44DF00B6EA380FB3D1564", hash_generated_method = "D85DB2EFAC70D57E72E3D7E297D13E19")
     
 public LinkedBlockingQueue() {
@@ -68,8 +68,8 @@ public LinkedBlockingQueue() {
      * @throws IllegalArgumentException if {@code capacity} is not greater
      *         than zero
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.328 -0500", hash_original_method = "B75314FE98F585143D624DCD24C1F5B2", hash_generated_method = "0CA71B9823D03D7F274A4495030180EB")
     
 public LinkedBlockingQueue(int capacity) {
@@ -88,8 +88,8 @@ public LinkedBlockingQueue(int capacity) {
      * @throws NullPointerException if the specified collection or any
      *         of its elements are null
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.331 -0500", hash_original_method = "76A1733AA4693E67903F6C627D09C67F", hash_generated_method = "131BD3961AB3696D2DCB6EF7292F2B4A")
     
 public LinkedBlockingQueue(Collection<? extends E> c) {

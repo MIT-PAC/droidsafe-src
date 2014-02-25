@@ -1,0 +1,155 @@
+
+1. For field, hashableBody removes modifier:
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:338] *hashableBody <long serialVersionUID = 7515723908773894738L;>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:339] Hash of hashableBody AC22C2D7B4371C5B3354C8DF803452A1
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] DG1 original Body 0143806A1FE78CF9EE1B24FF57864D42
+
+2. DG1 calculate HASH in a WHACKY way:
+    - Generated Hash: 
+        * include @Override, public, static, everything
+    - Original Hash:
+        * ingnore everything
+        DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:99] normalized <@OverridepublicshortshortValue(){shortvar2063C1608D6E0BAF80249C42E2BE5804_446925668=(value);shortvar4F09DAA9D95BCB166A302407A0E0BABE_1863149905=getTaintShort();returnvar4F09DAA9D95BCB166A302407A0E0BABE_1863149905;//----------OriginalMethod----------//returnvalue;}>
+        DEBUG d.d.ExtractInterfaceTool [ExtractInterfaceListener.java:1993] OriginalMethod <short shortValue() {
+            return value;    
+        }>               
+        DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:98] string <short shortValue() {
+            return value;
+        }>                   
+
+
+
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:511] **** Exit Method byteValue *****
+DEBUG d.d.ExtractInterfaceTool [StatefulListener.java:330] put(isFunction, true)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:325] Exiting ClassBodyDeclarationContext(8fd586d)
+*******
+@Override
+public byte byteValue() {
+    return (byte) value;
+}
+*********
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:132] DG1 Hash: orig <
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:139] DG1 Hash: mod<
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:337] *originalBody <
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:338] *hashableBody <byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:339] Hash of hashableBody 4C2FE469A77605BE0BF5A0C525E46699
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] DG1 original Body 1C6586897479BCC6499FB6B4015906D0
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:126] Generating hash for:
+*******
+
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:511] **** Exit Method byteValue *****
+DEBUG d.d.ExtractInterfaceTool [StatefulListener.java:330] put(isFunction, true)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:325] Exiting ClassBodyDeclarationContext(8fd586d)
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:456] comment channel has 1 tokens
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:126] Generating hash for:
+*******
+
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}
+*********
+
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:132] DG1 Hash: orig <
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:139] DG1 Hash: mod<
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:337] *originalBody <
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:338] *hashableBody <byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:339] Hash of hashableBody 4C2FE469A77605BE0BF5A0C525E46699
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] DG1 original Body 1C6586897479BCC6499FB6B4015906D0
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:126] Generating hash for:
+*******
+
+
+
+######
+    INFO d.d.ExtractInterfaceTool [CodeTransformer.java:511] **** Exit Method byteValue *****
+    DEBUG d.d.ExtractInterfaceTool [StatefulListener.java:330] put(isFunction, true)
+INFO d.d.ExtractInterfaceTool [CodeTransformer.java:325] Exiting ClassBodyDeclarationContext(8fd586d)
+    DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:456] comment channel has 1 tokens
+    DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:126] Generating hash for:
+    *******
+
+
+    @Override
+    public byte byteValue() {
+        return (byte) value;
+    }
+*********
+
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:132] DG1 Hash: orig <
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:139] DG1 Hash: mod<
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:337] *originalBody <
+
+@Override
+public byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:338] *hashableBody <byte byteValue() {
+    return (byte) value;
+}>
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:339] Hash of hashableBody 4C2FE469A77605BE0BF5A0C525E46699
+DEBUG d.d.ExtractInterfaceTool [CodeTransformer.java:340] DG1 original Body 1C6586897479BCC6499FB6B4015906D0
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:126] Generating hash for:
+*******
+
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:99] normalized <@OverridepublicshortshortValue(){shortvar2063C1608D6E0BAF80249C42E2BE5804_446925668=(value);shortvar4F09DAA9D95BCB166A302407A0E0BABE_1863149905=getTaintShort();returnvar4F09DAA9D95BCB166A302407A0E0BABE_1863149905;//----------OriginalMethod----------//returnvalue;}>
+DEBUG d.d.ExtractInterfaceTool [ExtractInterfaceListener.java:1993] OriginalMethod <short shortValue() {
+    return value;    
+}>               
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:98] string <short shortValue() {
+    return value;
+}>                   
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:99] normalized <shortshortValue(){returnvalue;}>
+DEBUG d.d.ExtractInterfaceTool [ExtractInterfaceListener.java:1994] OriginalMethodHash C4526A740A626A32E8FE5B0C1E7B83A6
+DEBUG d.d.ExtractInterfaceTool [ExtractInterfaceListener.java:907] Ignoring extraneous newline
+DEBUG d.d.ExtractInterfaceTool [ExtractInterfaceListener.java:907] Ignoring extraneous newline
+DEBUG d.d.ExtractInterfaceTool [ExtractInterfaceListener.java:907] Ignoring extraneous newline
+DEBUG d.d.DoppelgangerUtils [DoppelgangerUtils.java:98] string <String toString() {
+    return Integer.toString(value);
+}>           
+

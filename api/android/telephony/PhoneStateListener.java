@@ -173,8 +173,8 @@ public class PhoneStateListener {
         
 };
 
-    @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.582 -0500", hash_original_method = "20EF8DCC516BA3C0FC2B58EA0CC3EA6E", hash_generated_method = "473E9BD4D0B5D3C1F663E2739D183347")
     
 public PhoneStateListener() {

@@ -167,6 +167,8 @@ public static File[] listRoots() {
      * @throws IOException
      *             if an error occurs when writing the file.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.575 -0500", hash_original_method = "F35DD4D2E6395DF1DE5627BA1147A02F", hash_generated_method = "1887394672DF3A2517963CDA02015A8E")
     
@@ -254,7 +256,7 @@ public static File createTempFile(String prefix, String suffix, File directory)
      * @throws NullPointerException
      *             if {@code name} is {@code null}.
      */
-    @DSComment("not sensitive, real action happens on operations of File")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.432 -0500", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "C4F8D83E64C44160E188661FCFE7409A")
     
@@ -268,7 +270,7 @@ public File(File dir, String name) {
      * @param path
      *            the path to be used for the file.
      */
-    @DSComment("no security concern")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.435 -0500", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "6E9FD4316F59D7CE7196381057C46B1A")
     
@@ -287,7 +289,7 @@ public File(String path) {
      * @throws NullPointerException
      *             if {@code name == null}.
      */
-    @DSComment("not sensitive, real action happens on operations of File")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.439 -0500", hash_original_method = "133C96EC98AEE8D59630F091A182C267", hash_generated_method = "6F57CB283102230538221213F534B8CF")
     
@@ -318,8 +320,8 @@ public File(String dirPath, String name) {
      * @see #toURI
      * @see java.net.URI
      */
-    @DSComment("Potential Internet/URI processing")
-    @DSSpec(DSCat.URI_EXCHANGE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.442 -0500", hash_original_method = "8BC21AA0285296D0787FE6CED7AAF58D", hash_generated_method = "8D7B2025B352DFD259920003A0518A80")
     
 public File(URI uri) {

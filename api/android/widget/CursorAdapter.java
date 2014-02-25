@@ -60,8 +60,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
      * @param c The cursor from which to get the data.
      * @param context The context
      */
-    @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.897 -0500", hash_original_method = "8D1D2C00F3993B5859A91333170D7E0C", hash_generated_method = "4C377DA66825F64CF4C1260A56CCE8C3")
     
 @Deprecated
@@ -81,8 +81,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
      *                    cursor whenever it changes so the most recent
      *                    data is always displayed.  Using true here is discouraged.
      */
-    @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.899 -0500", hash_original_method = "E3D9EE9ED812FDA16E5801F0DB803037", hash_generated_method = "9177FA971129F5CD41797232E6A18730")
     
 public CursorAdapter(Context context, Cursor c, boolean autoRequery) {
@@ -98,6 +98,8 @@ public CursorAdapter(Context context, Cursor c, boolean autoRequery) {
      * be any combination of {@link #FLAG_AUTO_REQUERY} and
      * {@link #FLAG_REGISTER_CONTENT_OBSERVER}.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.902 -0500", hash_original_method = "ED5E23B4BC6F3954BD932E88BE4B619F", hash_generated_method = "56CE5F5ADD8AF24CC6D468307BCB3C3E")
     
 public CursorAdapter(Context context, Cursor c, int flags) {

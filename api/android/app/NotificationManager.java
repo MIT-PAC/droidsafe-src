@@ -123,6 +123,8 @@ public void cancel(int id)
      * will be hidden.  If it's persistent, it will be removed from the status
      * bar.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.200 -0500", hash_original_method = "40D57D78EF425D9AA1571205DDC7CF63", hash_generated_method = "A0E0DC88E05BABDCC3A25F5F9F730F35")
     
 public void cancel(String tag, int id)

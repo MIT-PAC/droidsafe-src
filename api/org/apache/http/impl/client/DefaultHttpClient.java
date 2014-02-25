@@ -79,8 +79,8 @@ public DefaultHttpClient(final HttpParams params) {
         super(null, params);
     }
     
-    @DSComment("creates connection ability")
-    @DSSpec(DSCat.NETWORKING)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.252 -0500", hash_original_method = "750193D90CA0949C0C735B3486D9889C", hash_generated_method = "C2281E91FF5D0B24DBCBA793897CD3E2")
     
 public DefaultHttpClient() {

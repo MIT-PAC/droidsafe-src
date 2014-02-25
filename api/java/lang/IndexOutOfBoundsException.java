@@ -14,8 +14,8 @@ public class IndexOutOfBoundsException extends RuntimeException {
      * Constructs a new {@code IndexOutOfBoundsException} that includes the
      * current stack trace.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.530 -0500", hash_original_method = "D4CD8ADEE84F45A3C2932250B7EFAD5E", hash_generated_method = "23002068444B289C379D769C448C26ED")
     
 public IndexOutOfBoundsException() {
@@ -28,8 +28,8 @@ public IndexOutOfBoundsException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.533 -0500", hash_original_method = "43F047B4ECB1C9194E62BC668739E967", hash_generated_method = "C5B5BAD31536FF032B10B6AA7198497E")
     
 public IndexOutOfBoundsException(String detailMessage) {

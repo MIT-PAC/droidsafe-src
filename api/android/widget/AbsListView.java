@@ -3156,22 +3156,24 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 
         int scrappedFromPosition;
 
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.726 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
         
 public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
         }
 
-        @DSComment("Layout params")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.729 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
         
 public LayoutParams(int w, int h) {
             super(w, h);
         }
         
-        @DSComment("Layout params")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         public LayoutParams(int w, int h, int viewType){
 			super(w, h);
 			/*

@@ -14,8 +14,8 @@ public class InterruptedException extends Exception {
      * Constructs a new {@code InterruptedException} that includes the current
      * stack trace.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.487 -0500", hash_original_method = "276D0C061081F968E041F3504D86F3DC", hash_generated_method = "5CE7ADEBB840028F432D53EA0FC13DBF")
     
 public InterruptedException() {
@@ -28,8 +28,8 @@ public InterruptedException() {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.489 -0500", hash_original_method = "47A24B4A9D41770C1E928AFF25C6693A", hash_generated_method = "FA9C2D418D0A1338A3E54F344EAEF76E")
     
 public InterruptedException(String detailMessage) {

@@ -345,8 +345,8 @@ public void setIcon(Drawable icon) {
         /**
          * Constructor using a context for this builder and the {@link AlertDialog} it creates.
          */
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.059 -0500", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "0F6F28BA388F588C46FF4901DEA377E8")
         
 public Builder(Context context) {
@@ -364,8 +364,8 @@ public Builder(Context context) {
          * {@link AlertDialog#THEME_HOLO_DARK AlertDialog.THEME_HOLO_DARK}, or
          * {@link AlertDialog#THEME_HOLO_LIGHT AlertDialog.THEME_HOLO_LIGHT}.
          */
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.062 -0500", hash_original_method = "054A5871E094F7103A36213597CB2400", hash_generated_method = "FC7699A0F2A3B06BF3E1311C765B25A6")
         
 public Builder(Context context, int theme) {

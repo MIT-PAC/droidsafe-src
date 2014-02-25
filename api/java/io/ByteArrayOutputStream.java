@@ -19,7 +19,7 @@ public class ByteArrayOutputStream extends OutputStream {
      * If more than 32 bytes are written to this instance, the underlying byte
      * array will expand.
      */
-    @DSComment("not sensitive, memory stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.332 -0500", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "FDFBFEB3E3EF5CD81ADCFCD518080293")
     
@@ -38,7 +38,7 @@ public ByteArrayOutputStream() {
      * @throws IllegalArgumentException
      *             if {@code size} < 0.
      */
-    @DSComment("not sensitive, memory stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.334 -0500", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "CE24AC27B7B66339EC71838E2850BE11")
     

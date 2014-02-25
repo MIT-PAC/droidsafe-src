@@ -52,8 +52,8 @@ public class ShareActionProvider extends ActionProvider {
      *
      * @param context Context for accessing resources.
      */
-    @DSComment("Sharing request")
-    @DSSpec(DSCat.SHARING)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.252 -0500", hash_original_method = "D37DD9362CC0C7C9F17F614AA422CDA5", hash_generated_method = "EB12F0C179FF5049530FB71B65E2D7EF")
     
 public ShareActionProvider(Context context) {

@@ -163,8 +163,8 @@ public class EdgeEffect {
      * Construct a new EdgeEffect with a theme appropriate for the provided context.
      * @param context Context used to provide theming and resource information for the EdgeEffect
      */
-    @DSComment("GUI/Edge Effect, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.857 -0500", hash_original_method = "AC508E1EC1805645807F80E8793DDCA5", hash_generated_method = "61AE4AD3CB08912ADE9B987299285E5F")
     
 public EdgeEffect(Context context) {

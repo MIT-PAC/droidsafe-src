@@ -43,8 +43,8 @@ public ContentValues[] newArray(int size) {
     /**
      * Creates an empty set of values using the default initial size
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.390 -0500", hash_original_method = "5E7EA6E1821501C5972B7C7CC639145B", hash_generated_method = "D260892D300891C4FE19BE87A93B10A6")
     
 public ContentValues() {
@@ -58,8 +58,8 @@ public ContentValues() {
      *
      * @param size the initial size of the set of values
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.392 -0500", hash_original_method = "8E588067C2537376173067FE549DA446", hash_generated_method = "2E6215BF8A605EB938132E1331B9ECE3")
     
 public ContentValues(int size) {
@@ -71,8 +71,8 @@ public ContentValues(int size) {
      *
      * @param from the values to copy
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.395 -0500", hash_original_method = "6386ACC7AEA70584EF32F8CAA1BD0C6A", hash_generated_method = "92AFC2541FA7884B51844D8D4C94ACE3")
     
 public ContentValues(ContentValues from) {
@@ -86,8 +86,8 @@ public ContentValues(ContentValues from) {
      * @param values the values to start with
      * {@hide}
      */
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.398 -0500", hash_original_method = "79B820032F5D7F722A5DF12324BC548A", hash_generated_method = "5E252719E39637156C8BAC11C1AC30FD")
     
 private ContentValues(HashMap<String, Object> values) {
@@ -144,6 +144,8 @@ public void putAll(ContentValues other) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.409 -0500", hash_original_method = "46309CD6AABC048E549ED8D367B97222", hash_generated_method = "3AC3EEB729C4601EC06C6443D14BA600")
     
@@ -157,6 +159,8 @@ public void put(String key, Byte value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.411 -0500", hash_original_method = "19B45CF10C6274AA18ED4281EBB4A7D5", hash_generated_method = "7097D4FC5474B218D98D39DBDCF261FE")
     
@@ -200,6 +204,8 @@ public void put(String key, Long value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.418 -0500", hash_original_method = "66DA1C106B1B7F2AFB03D110B785A501", hash_generated_method = "2C261E0300BC82829635A8C7705EBEBA")
     
@@ -271,6 +277,8 @@ public void putNull(String key) {
      *
      * @return the number of values
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.427 -0500", hash_original_method = "C7AE6CE1280D5E080A32F66907E851BD", hash_generated_method = "630AC021B3D713F59B111AFE3453A52E")
     
 public int size() {
@@ -381,6 +389,8 @@ public Long getAsLong(String key) {
      * @param key the value to get
      * @return the Integer value, or null if the value is missing or cannot be converted
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.444 -0500", hash_original_method = "C11C55EBF0D230069C8558AD456DF6B2", hash_generated_method = "BC9A5C1FBC18FEA67B7B9944B7CC111E")
     

@@ -66,6 +66,8 @@ public class AnimationSet extends Animation {
      * @param context Application context to use
      * @param attrs Attribute set from which to read values
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.791 -0500", hash_original_method = "E48F61BFB7E750EB9CE1872A6E59F583", hash_generated_method = "EA0FE4A9169C252541507BD027C48061")
     
 public AnimationSet(Context context, AttributeSet attrs) {
@@ -107,7 +109,7 @@ public AnimationSet(Context context, AttributeSet attrs) {
      *        should use the interpolator assocciated with this AnimationSet.
      *        Pass false if each animation should use its own interpolator.
      */
-    @DSComment("no actions/not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.794 -0500", hash_original_method = "40E1DAC9F5FF86741AE2A2FFD7F09052", hash_generated_method = "5F96F8968EED46B49569FF0B4F851825")
     

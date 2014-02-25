@@ -1,0 +1,45 @@
+"Builder android.net.Uri$Builder.appendEncodedPath (String)", "@DSModeled(DSC.SPEC)", "1" 
+"Builder android.net.Uri$Builder.appendPath (String)", "@DSModeled(DSC.SPEC)", "1" 
+"Builder android.net.Uri$Builder.appendQueryParameter (String,String)", "@DSModeled(DSC.SPEC)", "1" 
+"Builder android.net.Uri$HierarchicalUri.buildUpon ()", "@DSModeled(DSC.SPEC)", "1" 
+"Builder android.net.Uri$OpaqueUri.buildUpon ()", "@DSModeled(DSC.SPEC)", "1" 
+
+"float android.text.MeasuredText.addStyleRun (TextPaint, int, FontMetricsInt)", "@DSModeled(DSC.SAFE)", "1" 
+"TriState android.text.TextDirectionHeuristics$AnyStrong.checkRtl (char[], int, int)", "@DSModeled(DSC.SAFE)", "1" 
+"TriState android.text.TextDirectionHeuristics$FirstStrong.checkRtl (char[], int, int)", "@DSModeled(DSC.SAFE)", "1" 
+
+"void com.android.internal.view.InputConnectionWrapper$InputContextCallback.setCursorCapsMode (int, int)", "@DSModeled(DSC.SAFE)", "1" 
+"void com.android.internal.view.InputConnectionWrapper$InputContextCallback.setExtractedText (ExtractedText, int)", "@DSModeled(DSC.SAFE)", "1" 
+"void com.android.internal.view.InputConnectionWrapper$InputContextCallback.setSelectedText (CharSequence, int)", "@DSModeled(DSC.SAFE)", "1" 
+"void com.android.internal.view.InputConnectionWrapper$InputContextCallback.setTextAfterCursor (CharSequence, int)", "@DSModeled(DSC.SAFE)", "1" 
+"void com.android.internal.view.InputConnectionWrapper$InputContextCallback.setTextBeforeCursor (CharSequence, int)", "@DSModeled(DSC.SAFE)", "1" 
+
+"Element[] dalvik.system.DexPathList.makeDexElements (ArrayList, File)", "@DSModeled(DSC.BAN)", "1" 
+"String gov.nist.javax.sip.Utils.toHexString (byte[])", "@DSModeled(DSC.SAFE)", "1" 
+"void java.lang.TwoEnumerationsInOne.<init> (Enumeration, Enumeration)", "@DSModeled(DSC.SAFE)", "1" 
+
+"Entry java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1.next ()", "@DSModeled(DSC.SAFE)", "1" 
+"Iterator java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet.iterator ()", "@DSModeled(DSC.SAFE)", "1" 
+"Set java.util.Collections$UnmodifiableMap.entrySet ()", "@DSModeled(DSC.SAFE)", "1" 
+
+# to look at these
+"boolean java.util.jar.JarFile$1JarFileEnumerator.hasMoreElements ()", "@DSModeled(DSC.BAN)", "1" 
+"JarEntry java.util.jar.JarFile$1JarFileEnumerator.nextElement ()", "@DSModeled(DSC.BAN)", "1" 
+
+#To review these
+"CoderResult libcore.icu.NativeConverter$1$1.encodeLoop (CharBuffer, ByteBuffer)", "@DSModeled(DSC.SAFE)", "1" 
+"CoderResult libcore.icu.NativeConverter$1$2.decodeLoop (ByteBuffer, CharBuffer)", "@DSModeled(DSC.SAFE)", "1" 
+
+"HttpConnection libcore.net.http.HttpConnectionPool.get (Address, int)", "@DSModeled(DSC.SAFE)", "1" 
+"SpiAndProvider org.apache.harmony.security.fortress.Engine.getInstance (String, Object)", "@DSModeled(DSC.SAFE)", "1" 
+
+"void org.apache.harmony.security.x509.Extension$2.getValues (Object, Object[])", "@DSModeled(DSC.BAN)", "1" 
+"void org.apache.harmony.security.x509.ORAddress$1.getValues (Object, Object[])", "@DSModeled(DSC.BAN)", "1" 
+
+"void org.apache.http.conn.routing.HttpRoute.<init> (InetAddress, HttpHost, HttpHost[], boolean, TunnelType, LayerType)", "@DSModeled(DSC.BAN)", "1" 
+
+#######################################################
+#Need java files
+#"void android.app.ActivityManagerProxy.handleApplicationStrictModeViolation (IBinder,int,ViolationInfo)", "@DSModeled(DSC.SPEC)", "1" 
+#"void android.renderscript.RSRuntimeException.<init> (String)", "@DSModeled(DSC.BAN)", "1" 
+#./java/lang/TwoEnumerationsInOne.java

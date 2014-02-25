@@ -20,7 +20,7 @@ public class BufferedOutputStream extends FilterOutputStream {
      *
      * @param out the {@code OutputStream} the buffer writes to.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.489 -0500", hash_original_method = "D896F62F17EBF4CCE50C0B823DA78DD6", hash_generated_method = "1DC2D67667A8AA777FEE99B1E87967D5")
     
@@ -36,7 +36,7 @@ public BufferedOutputStream(OutputStream out) {
      * @param size the size of buffer in bytes.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.492 -0500", hash_original_method = "D77D548D42DBDD230976FC72C0A9CFDA", hash_generated_method = "4153D9D5D4726C88F7425CFB042587B2")
     
@@ -160,6 +160,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if an error occurs attempting to write to this stream.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.505 -0500", hash_original_method = "45333A97ED5F96C22A3D88C235B79D5A", hash_generated_method = "5AA7A43BC98370BA14A74751C65BA048")
     
 @Override

@@ -23,13 +23,6 @@ import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 
 public final class String implements Serializable, Comparable<String>, CharSequence {
-
-    /** used by droidsafe to model strings in the information flow */
-    @DSBan(DSCat.BAN_OTHERS)
-    public String(AbstractStringBuilder sb) {
-        addTaint(sb.getTaint());
-    }
-
     /**
      * Creates a new string containing the characters in the specified character
      * array. Modifying the character array after creating the string has no
@@ -325,7 +318,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
 
     public static final Comparator<String> CASE_INSENSITIVE_ORDER = new CaseInsensitiveComparator();
 
-
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.770 -0500", hash_original_field = "C14595FF670F012A0483206D218F5442", hash_generated_field = "6699F3B26E20D4AC1415724EB8FB9705")
 
         private static  char[] ASCII;
@@ -345,8 +337,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     /**
      * Creates an empty string.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.783 -0500", hash_original_method = "F65E96A775698E2C256BB1E903F5D8A6", hash_generated_method = "2D4827908F7D1AE19B6B75D4111BE4B4")
     
         public String() {
@@ -358,8 +350,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     /*
      * Private constructor used for JIT optimization.
      */
-    @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.785 -0500", hash_original_method = "8A258D0AF74DE6E118252D0EA5531366", hash_generated_method = "992FEE8CDB9ADFFB8D24FE457F6620ED")
     
         @SuppressWarnings("unused")
@@ -375,8 +367,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * Converts the byte array to a string using the system's
      * {@link java.nio.charset.Charset#defaultCharset default charset}.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.788 -0500", hash_original_method = "3CF6472F1EAFF36B200903831BC9D282", hash_generated_method = "03F81E410607AF83FE1129895E924F03")
     
         @FindBugsSuppressWarnings("DM_DEFAULT_ENCODING")
@@ -396,8 +388,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *             if {@code data == null}.
      * @deprecated Use {@link #String(byte[])} or {@link #String(byte[], String)} instead.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.791 -0500", hash_original_method = "94FE9BFA8A903BE49DF8F4E82A84C713", hash_generated_method = "870FACBA9900B05E8ED3F9B0D2FDFB44")
     
         @Deprecated
@@ -405,8 +397,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         this(data, high, 0, data.length);
     }
     
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.652 -0400", hash_original_method = "9C5B9D3903B08C7F386C9C307D28A8D8", hash_generated_method = "D6439CB90D6545AC7AC3C86073E9F0E9")
         public  String(byte[] data, int offset, int byteCount) {
         addTaint(byteCount);
@@ -442,8 +434,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         //}
     }
     
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.695 -0400", hash_original_method = "22A6AFB2E643FB23D243CAF5D019E325", hash_generated_method = "79A975FB90AD0ECD193D044E40A8EEB8")
         @Deprecated
         public  String(byte[] data, int high, int offset, int byteCount) {
@@ -487,8 +479,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws UnsupportedEncodingException
      *             if the named charset is not supported.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.800 -0500", hash_original_method = "D35F458D65648B05442A41C1A12F30CA", hash_generated_method = "4A2E2E5B578D26BC53ADEAE92430F57A")
     
         public String(byte[] data, int offset, int byteCount, String charsetName) throws UnsupportedEncodingException {
@@ -506,16 +498,16 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws UnsupportedEncodingException
      *             if {@code charsetName} is not supported.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.803 -0500", hash_original_method = "11FE032D0B0EBCDEFC4E4C2065489303", hash_generated_method = "0F260EFB114087F1784BF1AB863C49ED")
     
         public String(byte[] data, String charsetName) throws UnsupportedEncodingException {
         this(data, 0, data.length, Charset.forNameUEE(charsetName));
     }
     
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.813 -0400", hash_original_method = "230168F72CB2A0A48AA9F4A7AFCECA03", hash_generated_method = "5CF85473A930BD9609F6F58C62C97D46")
         public  String(byte[] data, int offset, int byteCount, Charset charset) {
         addTaint(charset.getTaint());
@@ -528,8 +520,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws NullPointerException if {@code data == null}
      * @since 1.6
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.811 -0500", hash_original_method = "9D77FFE69AA84BF1048ED5CBD8EE386C", hash_generated_method = "14BE1B47B3BDFB19FC4452BDB9ABB0DE")
     
         public String(byte[] data, Charset charset) {
@@ -543,16 +535,16 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *
      * @throws NullPointerException if {@code data == null}
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.814 -0500", hash_original_method = "84FF2A14EA759DC7C1F299809C55E832", hash_generated_method = "F6B2AA4C452966F0A0FC1D5FF2BE0A93")
     
         public String(char[] data) {
         this(data, 0, data.length);
     }
     
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.828 -0400", hash_original_method = "14BFB40845511D49F067DB0E6AC711FE", hash_generated_method = "971E3234E4344BD64B6C546645470DD3")
         public  String(char[] data, int offset, int charCount) {
         addTaint(data[0]);
@@ -562,8 +554,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * Internal version of the String(char[], int, int) constructor.
      * Does not range check, null check, or copy the character array.
      */
-    @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.819 -0500", hash_original_method = "6AA52B72AD5521C733ED3E9463435DD5", hash_generated_method = "6AA52B72AD5521C733ED3E9463435DD5")
     
         String(int offset, int charCount, char[] chars) {
@@ -577,8 +569,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * toCopy}. The returned string's <a href="#backing_array">backing array</a>
      * is no larger than necessary.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.822 -0500", hash_original_method = "7D7AE898849737A5DE2F771028ADD293", hash_generated_method = "1067742A918A0414BA56DD0E157F3286")
     
         public String(String toCopy) {
@@ -588,8 +580,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     /*
      * Private constructor useful for JIT optimization.
      */
-    @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.825 -0500", hash_original_method = "8B59C74FD130D5556CE63A5F3CE74139", hash_generated_method = "9EFDB51BAE8337F1F69E4DE1C793F289")
     
         @SuppressWarnings( { "unused", "nls" })
@@ -600,8 +592,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     /*
      * Private constructor useful for JIT optimization.
      */
-    @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.829 -0500", hash_original_method = "E07460C3146BC4727C3E888CAC21772A", hash_generated_method = "AB6303DBA3D4B890C7485A0A9A814A89")
     
         @SuppressWarnings( { "unused", "nls" })
@@ -613,16 +605,23 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * Creates a {@code String} from the contents of the specified
      * {@code StringBuffer}.
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.831 -0500", hash_original_method = "C3DEF5F256BD0FFA01404830FE1A0B0E", hash_generated_method = "3229E36585BD2E2901FD01AB77B2E7F3")
     
         public String(StringBuffer stringBuffer) {
         addTaint(stringBuffer.getTaint());
     }
     
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    /** used by droidsafe to model strings in the information flow */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
+        public String(AbstractStringBuilder sb) {
+        addTaint(sb.getTaint());
+    }
+    
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.865 -0400", hash_original_method = "DE744DAB842D7A0BE4BC8C7648E27967", hash_generated_method = "A4716F806D0CB47D314F039D1EE5E331")
         public  String(int[] codePoints, int offset, int count) {
         addTaint(codePoints[0]);
@@ -636,8 +635,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *             if {@code stringBuilder == null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.837 -0500", hash_original_method = "1A43E0983F964C9F4090DA81181B802F", hash_generated_method = "1EFA5C7DF66501B4E9300FC7A3F11922")
     
         public String(StringBuilder stringBuilder) {
@@ -647,8 +646,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     /*
      * Creates a {@code String} that is s1 + v1. May be used by JIT code.
      */
-    @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.840 -0500", hash_original_method = "8767608BAC25DDC267BEC70B13CF72A3", hash_generated_method = "72074810184A2393C111BF6D8ED3EA45")
     
         @SuppressWarnings("unused")
@@ -1466,6 +1465,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         return getTaintBoolean();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean contains(CharSequence cs) {
         this.addTaint(cs.getTaint());
         return getTaintBoolean();

@@ -216,24 +216,31 @@ public IntentFilter[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.732 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
 
+    @DSVAModeled
     private int mPriority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.734 -0500", hash_original_field = "1C01DCF3CAD6F1F8B4C99696F3E8A2C8", hash_generated_field = "B7B787904E751334D4C6C5E9190CBECB")
 
+    @DSVAModeled
     private  ArrayList<String> mActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.737 -0500", hash_original_field = "3FA8ABFF8F3A29D5E46D1842F4E37CCD", hash_generated_field = "DF1B13D35CEEB5232DEB8422E072E169")
 
+    @DSVAModeled
     private ArrayList<String> mCategories = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.739 -0500", hash_original_field = "C86BC44BB7486732DFCE4230CAE0D3E5", hash_generated_field = "D6C69DEDF341F4A4196AEA26E81D24A7")
 
+    @DSVAModeled
     private ArrayList<String> mDataSchemes = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.741 -0500", hash_original_field = "49B33C9415691552BCB1FCE6D3901D6B", hash_generated_field = "C318D366A8228836F69A6B4BDDBFB506")
 
+    @DSVAModeled
     private ArrayList<AuthorityEntry> mDataAuthorities = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.744 -0500", hash_original_field = "ED5161411B31CEB4187B897C71E9F686", hash_generated_field = "2207044C23DD28F016FBFC7451C9D66A")
 
+    @DSVAModeled
     private ArrayList<PatternMatcher> mDataPaths = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.746 -0500", hash_original_field = "85E613F84E208E29787CF516CB1D2553", hash_generated_field = "06256A3E596C9EB087048F541BEAB278")
 
+    @DSVAModeled
     private ArrayList<String> mDataTypes = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.748 -0500", hash_original_field = "4E9BB20DDD719BB7B01F0A2592C02543", hash_generated_field = "A768E3466CCFB1BF3BC36D8E0C71D999")
 
@@ -242,8 +249,8 @@ public IntentFilter[] newArray(int size) {
     /**
      * New empty IntentFilter.
      */
-    @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.768 -0500", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "873E5D48980AE16EC4645A8878C78F5B")
     
 public IntentFilter() {
@@ -258,8 +265,8 @@ public IntentFilter() {
      *
      * @param action The action to match, i.e. Intent.ACTION_MAIN.
      */
-    @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.771 -0500", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "9D26B14C7A6A2DAA4F9CFE07029C4107")
     
 public IntentFilter(String action) {
@@ -284,6 +291,8 @@ public IntentFilter(String action) {
      * @param dataType The type to match, i.e. "vnd.android.cursor.dir/person".
      *
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.773 -0500", hash_original_method = "6F03ACB8C3DEEE507BC72687512BE15B", hash_generated_method = "91B753132D963E5C5F3D2E690A4320DD")
     
 public IntentFilter(String action, String dataType)
@@ -299,6 +308,8 @@ public IntentFilter(String action, String dataType)
      *
      * @param o The original filter to copy.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.776 -0500", hash_original_method = "1836401D6B82BE6CCBD088E7B5026D41", hash_generated_method = "1E198A53AE5B2BE3C2A90D8BCF0759DF")
     
 public IntentFilter(IntentFilter o) {
@@ -322,8 +333,8 @@ public IntentFilter(IntentFilter o) {
         mHasPartialTypes = o.mHasPartialTypes;
     }
 
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.924 -0500", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "6EE529B66EC18E565826F7115C1F962E")
     
 private IntentFilter(Parcel source) {

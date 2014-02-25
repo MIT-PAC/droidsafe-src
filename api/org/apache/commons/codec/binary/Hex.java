@@ -24,6 +24,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      * @throws DecoderException Thrown if an odd number or illegal of characters 
      *         is supplied
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.739 -0500", hash_original_method = "B601E34EA293BA88B55F6A64935FC5DC", hash_generated_method = "1D0981A94C4AD37C0BFF170C7DBC532D")
     
 public static byte[] decodeHex(char[] data) throws DecoderException {
@@ -56,6 +57,7 @@ public static byte[] decodeHex(char[] data) throws DecoderException {
      * @return An integer
      * @throws DecoderException Thrown if ch is an illegal hex character
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.741 -0500", hash_original_method = "8DFB6DF41A3F3D055DAE389A113EB960", hash_generated_method = "64C121B97B5278B1BF2017E99C88A8EB")
     
 protected static int toDigit(char ch, int index) throws DecoderException {
@@ -75,6 +77,7 @@ protected static int toDigit(char ch, int index) throws DecoderException {
      *                  a byte[] to convert to Hex characters
      * @return A char[] containing hexidecimal characters
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.744 -0500", hash_original_method = "01C49558DED2DE24F896F908105CD756", hash_generated_method = "CD93DA4C1C1B38B7502DF1AB3E17F9C3")
     
 public static char[] encodeHex(byte[] data) {

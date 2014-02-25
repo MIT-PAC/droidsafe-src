@@ -108,8 +108,8 @@ public static void setDefaultExecutor(Executor exec) {
 	
 	private Result result;
     
-    @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.588 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "717DB90AF8B9D7E6F5C69DCC8BADBDB4")
     @DSVerified
     public  AsyncTask() {
@@ -292,8 +292,6 @@ AsyncTaskResult(AsyncTask task, Data... data) {
         }
         
     }
-    
-
 
     /**
      * <p>Runs on the UI thread after {@link #doInBackground}. The
@@ -367,7 +365,7 @@ AsyncTaskResult(AsyncTask task, Data... data) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.268 -0500", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "D07A2E6060CD99151CC30F4F6E6B6769")
-    @DSVerified    
+    @DSVerified
     
 protected void onCancelled() {
     }

@@ -518,6 +518,8 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
      * @see AudioManager#registerMediaButtonEventReceiver(ComponentName)
      * @see AudioManager#registerRemoteControlClient(RemoteControlClient)
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.980 -0500", hash_original_method = "AD6CCD9D9B436D492F90BC57466F8BB6", hash_generated_method = "28D4AB3908D0D540BF76A156E34290C8")
     
 public RemoteControlClient(PendingIntent mediaButtonIntent) {
@@ -549,6 +551,8 @@ public RemoteControlClient(PendingIntent mediaButtonIntent) {
      * @see AudioManager#registerMediaButtonEventReceiver(ComponentName)
      * @see AudioManager#registerRemoteControlClient(RemoteControlClient)
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.983 -0500", hash_original_method = "BBCB02942EAA4463B06F3A8D8D85915D", hash_generated_method = "7765B7729477EAF97C8D70200FCA521F")
     
 public RemoteControlClient(PendingIntent mediaButtonIntent, Looper looper) {
@@ -594,6 +598,7 @@ public MetadataEditor editMetadata(boolean startEmpty) {
      *       {@link #PLAYSTATE_BUFFERING},
      *       {@link #PLAYSTATE_ERROR}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.036 -0500", hash_original_method = "1B4A5A7A2B9348E61A1F8DBEDB05B350", hash_generated_method = "A64D9665EAAEA37E6C534597A949D6BF")
     
@@ -623,6 +628,7 @@ public void setPlaybackState(int state) {
      *      {@link #FLAG_KEY_MEDIA_FAST_FORWARD},
      *      {@link #FLAG_KEY_MEDIA_NEXT}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.038 -0500", hash_original_method = "940D4AD017270A6AD7F6D36A1ADC2473", hash_generated_method = "C8662BF2E806A42D2295DE9872FCC1DD")
     
 public void setTransportControlFlags(int transportControlFlags) {

@@ -315,7 +315,7 @@ private static void postEventFromNative(Object mediaplayer_ref,
      * to free the resources. If not released, too many MediaPlayer instances may
      * result in an exception.</p>
      */
-    @DSComment("not sensitive")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.620 -0500", hash_original_method = "2C929CFD6011D1A8428ADCC5A270A92B", hash_generated_method = "16B7B2D5FA47F9A8C49D18D274F85689")
     
@@ -455,6 +455,7 @@ public void setSurface(Surface surface) {
      * @param uri the Content URI of the data you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSSpec(DSCat.URI_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.645 -0500", hash_original_method = "40ED5E4D3E36120D5E7C77AB85EB12F0", hash_generated_method = "49BBD7F1F5C7FC9EFF80CE77FB20CBF6")
     
 public void setDataSource(Context context, Uri uri)
@@ -470,6 +471,7 @@ public void setDataSource(Context context, Uri uri)
      * @param headers the headers to be sent together with the request for the data
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSSpec(DSCat.URI_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.648 -0500", hash_original_method = "0C532A10BBEED73B371000A59C797624", hash_generated_method = "B5589E8A03EB9B6B5348414CBA69A953")
     
 public void setDataSource(Context context, Uri uri, Map<String, String> headers)
@@ -535,6 +537,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @throws IllegalStateException if it is called in an invalid state
      * @hide pending API council
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.655 -0500", hash_original_method = "21A95B4BC3854510C509CF1B7B37D46D", hash_generated_method = "77957DCFCCF9D67F2710FFEB1E1A6307")
     

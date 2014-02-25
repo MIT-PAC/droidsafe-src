@@ -406,14 +406,16 @@ static boolean isLandscapeMode(Context context) {
         
 };
 
-    @DSComment("SearchView, check callback")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.740 -0500", hash_original_method = "C1ED4F339F78000C40B1DF7945901DEA", hash_generated_method = "5E808D3C82C90AF1D2E0DF44FC1C629D")
     
 public SearchView(Context context) {
         this(context, null);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.751 -0500", hash_original_method = "3896FE61014E55816F436D09C274C5F6", hash_generated_method = "D02ECEE285493B50125BBFA1D95C8972")
     
 public SearchView(Context context, AttributeSet attrs) {

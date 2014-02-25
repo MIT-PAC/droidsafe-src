@@ -29,8 +29,8 @@ public abstract class BroadcastReceiver {
     
     private Application mApplication;
     
-    @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.695 -0500", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "D3FA3C172476927ED563AFCC971E4A9A")
     
 public BroadcastReceiver() {
@@ -442,10 +442,9 @@ void checkSynchronousHint() {
             if (mApplication != null) {
                 mApplication.__ds__intentFilters.add(intentFilter);
                 mApplication.__ds__intentsFromFilter.add(intent);
-            }            
+            }
             
             onReceive(mApplication, intent);
-
 
             intents[actionIndex] = intent;
         }

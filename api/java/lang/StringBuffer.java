@@ -25,8 +25,8 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     /**
      * Constructs a new StringBuffer using the default capacity which is 16.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.043 -0500", hash_original_method = "6484BCA0EF411C515D6EAFFBE43997C3", hash_generated_method = "69ADD4EC850DAA0BC95FE3266726B3FE")
     
 public StringBuffer() {
@@ -38,8 +38,8 @@ public StringBuffer() {
      * @param capacity
      *            the initial capacity.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.047 -0500", hash_original_method = "7B7971D2835EB2D685FF89EC3D85C02A", hash_generated_method = "8CAA87DB79F0EC4C38563D4D1770A0D3")
     
 public StringBuffer(int capacity) {
@@ -56,8 +56,8 @@ public StringBuffer(int capacity) {
      * @throws NullPointerException
      *            if {@code string} is {@code null}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.049 -0500", hash_original_method = "505E372B31FD7A37A1258BF28C555BD1", hash_generated_method = "7B365BBE067553F3FE0F70CA346D6DF1")
     
 public StringBuffer(String string) {
@@ -75,8 +75,8 @@ public StringBuffer(String string) {
      *            if {@code cs} is {@code null}.
      * @since 1.5
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.052 -0500", hash_original_method = "8B31F280D5DC89D8F89BF293509278C5", hash_generated_method = "BDEE148D02BA5765CEAF19AA1AB377D3")
     
 public StringBuffer(CharSequence cs) {
@@ -923,7 +923,6 @@ private void readObject(ObjectInputStream in) throws IOException,
         int count = fields.get("count", 0);
         char[] value = (char[]) fields.get("value", null);
         set(value, count);
-
 
     }
 }

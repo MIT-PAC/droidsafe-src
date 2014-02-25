@@ -18,8 +18,8 @@ import org.xml.sax.SAXParseException;
 
 public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandler, ErrorHandler {
     
-    @DSComment("No op default handler")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.326 -0400", hash_original_method = "C916F3EC761E0C154A1A9AFCDD294D40", hash_generated_method = "C916F3EC761E0C154A1A9AFCDD294D40")
     public DefaultHandler ()
     {
@@ -415,6 +415,8 @@ public void warning (SAXParseException e)
      * @see org.xml.sax.ErrorHandler#warning
      * @see org.xml.sax.SAXParseException
      */
+    @DSComment("No op default handler")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.168 -0500", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "CACE9FD48F5BBAC46481DE007E53B3CB")
     
 public void error (SAXParseException e)

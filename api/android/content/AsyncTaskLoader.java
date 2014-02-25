@@ -88,8 +88,9 @@ public void setUpdateThrottle(long delayMS) {
      *         because {@link #startLoading()} hasn't been called; returns
      *         <tt>true</tt> otherwise.
      */
-    @DSComment("no impact")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSComment("calling onCanceled")
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.516 -0500", hash_original_method = "D61160F50878CF3D95A0B223A0044CD3", hash_generated_method = "154D154DC32BA2A5A0D3464A2BE0C207")
     
 public boolean cancelLoad() {
@@ -124,6 +125,7 @@ public boolean cancelLoad() {
                 return cancelled;
             }
         }
+        onCanceled(null);
         return false;
     }
 
@@ -132,7 +134,8 @@ public boolean cancelLoad() {
      * to properly dispose of the result.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.518 -0500", hash_original_method = "6EDCFF0D227BFAAE1F619E412FD9521B", hash_generated_method = "9FEC541D061BA7A4CCE8EF034DC255B4")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onCanceled(D data) {
     }
 

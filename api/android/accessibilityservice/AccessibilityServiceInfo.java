@@ -398,7 +398,11 @@ public String getSettingsActivityName() {
 public boolean getCanRetrieveWindowContent() {
         return mCanRetrieveWindowContent;
     }
-
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getCapabilities () {
+        return getTaintInt();
+    }
     /**
      * Description of the accessibility service.
      * <p>

@@ -365,6 +365,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         //getApplicationContext().unregisterComponentCallbacks(callback);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final CharSequence getText(int resId) {
         String str = new String();
@@ -385,6 +386,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
      *
      * @param resId Resource id for the string
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
     
@@ -401,6 +403,7 @@ public final String getString(int resId) {
      * @param formatArgs The format arguments that will be used for substitution.
      */
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
     
@@ -445,6 +448,7 @@ public abstract Resources.Theme getTheme();
      *
      * @see Resources.Theme#obtainStyledAttributes(int[])
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.886 -0500", hash_original_method = "FF26021DC793B4DE3C0383ED66D7E1E8", hash_generated_method = "8263BAB3FE93E96AF6816141E1709550")
     
 public final TypedArray obtainStyledAttributes(
@@ -459,6 +463,7 @@ public final TypedArray obtainStyledAttributes(
      *
      * @see Resources.Theme#obtainStyledAttributes(int, int[])
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.888 -0500", hash_original_method = "C05CBF641E41D370531BE7FED84BE5CE", hash_generated_method = "643F335630EFA85BB93672A12259C8AF")
     
 public final TypedArray obtainStyledAttributes(
@@ -473,6 +478,7 @@ public final TypedArray obtainStyledAttributes(
      *
      * @see Resources.Theme#obtainStyledAttributes(AttributeSet, int[], int, int)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.891 -0500", hash_original_method = "C594E5E7DCFBB517BAAED03BB3D45896", hash_generated_method = "5BA5A74A13CBB0188C9E74882C49861E")
     
 public final TypedArray obtainStyledAttributes(
@@ -487,6 +493,7 @@ public final TypedArray obtainStyledAttributes(
      *
      * @see Resources.Theme#obtainStyledAttributes(AttributeSet, int[], int, int)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.894 -0500", hash_original_method = "23F3A3F4901D9D1C9DD21EEAA884561D", hash_generated_method = "4422D6DA26647847CA530D1B3929C7F8")
     
 public final TypedArray obtainStyledAttributes(
@@ -2325,7 +2332,7 @@ public boolean isRestricted() {
 	    this.__ds__intentFilters.add(intentFilter);
 	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
 	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
-	    this.__ds__intentsFromFilter.add(intent);	
+	    this.__ds__intentsFromFilter.add(intent);
             
             return intent;
 	}

@@ -48,7 +48,6 @@ public class TrafficStatsCompat {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.110 -0500", hash_original_field = "B25EEFE942F3522AE9B7C87C81A575B6", hash_generated_field = "F94787120B7DCB7AB43791A107524046")
 
-
         private ThreadLocal<SocketTags> mThreadSocketTags = new ThreadLocal<SocketTags>() {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:10.568 -0500", hash_original_method = "917426AFC28735098682F2B9D9CB79DB", hash_generated_method = "33F4ECD1E86E2B8E57F485FE00B0D17E")
             
@@ -84,6 +83,7 @@ public class TrafficStatsCompat {
         public void incrementOperationCount(int tag, int operationCount) {
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.142 -0500", hash_original_method = "9E4D6173C835AE0B3ACB1B95EE549A39", hash_generated_method = "D2741C37BD8EDC73E7CA77FD70C29DE1")
         
 @Override
@@ -133,6 +133,7 @@ public class TrafficStatsCompat {
             TrafficStatsCompatIcs.incrementOperationCount(tag, operationCount);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.188 -0500", hash_original_method = "1738DCB0EBCA30BF1C05152FFD4491B7", hash_generated_method = "009CF9C13BB840465EB25F63CA293850")
         
 @Override
@@ -155,7 +156,6 @@ public class TrafficStatsCompat {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.211 -0500", hash_original_field = "4B98C7C8ECB5D559E993CDD8D7BD112C", hash_generated_field = "9FAF7A77D1E139709D9A712232752488")
-
 
     private static  TrafficStatsCompatImpl IMPL;
 
@@ -225,6 +225,7 @@ public static void incrementOperationCount(int tag, int operationCount) {
      * used internally by system services like DownloadManager when performing
      * traffic on behalf of an application.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.240 -0500", hash_original_method = "2BBDBF9BBAB4164DE099624469E8DDCA", hash_generated_method = "58711509537BDEF7EC94C8ADD400A44D")
     
 public static void setThreadStatsTag(int tag) {

@@ -411,6 +411,7 @@ public static String
     /**
      * Compare phone numbers a and b, return true if they're identical enough for caller ID purposes.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.399 -0500", hash_original_method = "448A5F7926670D54885C01A1388DB100", hash_generated_method = "19F13777886CC7C0DB1DF14622F244BF")
     
 public static boolean compare(String a, String b) {
@@ -424,6 +425,7 @@ public static boolean compare(String a, String b) {
      * enough for caller ID purposes. Checks a resource to determine whether
      * to use a strict or loose comparison algorithm.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.403 -0500", hash_original_method = "FAC0E437D1666841C3F351749EE85C53", hash_generated_method = "4D0435CC2E5475DDCCDB8B40A240E271")
     
 public static boolean compare(Context context, String a, String b) {
@@ -435,6 +437,7 @@ public static boolean compare(Context context, String a, String b) {
     /**
      * @hide only for testing.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.406 -0500", hash_original_method = "367B284A9371AD494F48AAD9523ABA01", hash_generated_method = "A806BE37D44FCFF0044AFFEDBF82AE71")
     
 public static boolean compare(String a, String b, boolean useStrictComparation) {
@@ -1191,6 +1194,7 @@ public static String formatNumber(String source) {
      *
      * @hide TODO: Should be unhidden.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.513 -0500", hash_original_method = "A28BEF976D7AD72608E8693C01B15E97", hash_generated_method = "1747FF79977D1D6D80FDB3C041399E3E")
     
 public static String formatNumber(String source, int defaultFormattingType) {
@@ -1223,6 +1227,7 @@ public static int getFormatTypeForLocale(Locale locale) {
      * @param defaultFormattingType The default formatting rules to apply if the number does
      * not begin with +[country_code]
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.520 -0500", hash_original_method = "F478444122BC83D34781A111CA26291E", hash_generated_method = "1A66F58E10D618B5AC146E8E7434C960")
     
 public static void formatNumber(Editable text, int defaultFormattingType) {
@@ -1455,6 +1460,7 @@ public static String formatNumberToE164(String phoneNumber, String defaultCountr
      *
      * @hide
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.555 -0500", hash_original_method = "A7ACF6BA9DDECE3E31DBB8A7DF4DF0DB", hash_generated_method = "8924B0BC1D30B617CA248F7E362509B4")
     
 public static String formatNumber(String phoneNumber, String defaultCountryIso) {
@@ -1492,6 +1498,7 @@ public static String formatNumber(String phoneNumber, String defaultCountryIso) 
      *
      * @hide
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.559 -0500", hash_original_method = "7DEA5A41C8CF38812E48507218F476CC", hash_generated_method = "BEE13F965138C88900A72C83D720ADE8")
     
 public static String formatNumber(

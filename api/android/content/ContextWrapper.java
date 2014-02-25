@@ -4,6 +4,7 @@ package android.content;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -357,18 +358,26 @@ public Context getBaseContext() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.163 -0500", hash_original_method = "DDED7E3E0B02F872C2CC1A3BF9DCD873", hash_generated_method = "F75FC8CDE79A6B9ED45517DBB10EF4B8")
-    
+    @DSVerified
+    @DSSpec(DSCat.DATABASE)
 @Override
     public SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory factory) {
-        return mBase.openOrCreateDatabase(name, mode, factory);
+        //return mBase.openOrCreateDatabase(name, mode, factory);
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(name, factory, mode); 
+        return db;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.166 -0500", hash_original_method = "670C2BACF8B510FB1BD02F583C82D7AC", hash_generated_method = "B78B1255E8ACE0078D1779299830C1AB")
+    @DSVerified
+    @DSSpec(DSCat.DATABASE)
     
 @Override
     public SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory factory,
             DatabaseErrorHandler errorHandler) {
-        return mBase.openOrCreateDatabase(name, mode, factory, errorHandler);
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(name, factory, mode); 
+        errorHandler.onCorruption(db);
+        //return mBase.openOrCreateDatabase(name, mode, factory, errorHandler);
+        return db;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.168 -0500", hash_original_method = "2060E0B3DB8EB041F39B4C3EBCF4134E", hash_generated_method = "5F9D01C1C5301426A2D101BDA344D5A9")
@@ -606,6 +615,7 @@ public Context getBaseContext() {
         mBase.unregisterReceiver(receiver);
     }
 
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -618,6 +628,7 @@ public Context getBaseContext() {
         return mBase.startService(service);
     }
 
+    @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.225 -0500", hash_original_method = "2538E8D6E7BE6E9AB177EECCCE1CB620", hash_generated_method = "DA0A6458C647468F8B3105A4F87E6EDB")
@@ -627,7 +638,8 @@ public Context getBaseContext() {
         return mBase.stopService(name);
     }
 
-    @DSComment("IO movement methodName")
+    @DSVerified
+    @DSComment("Bind a service with a connection")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.227 -0500", hash_original_method = "67132A5BC1B8EF0B15B0E872390898A0", hash_generated_method = "5A2B04010F66FEE0B0F4E923A6C9E2B2")
@@ -650,7 +662,8 @@ public Context getBaseContext() {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.231 -0500", hash_original_method = "093BF17242F85E57BE88B991FC8B0E44", hash_generated_method = "8E4409240F730EE1F3CC7BCB054AF805")
-    
+    @DSVerified("Profiling/instrumentation")
+    @DSSpec(DSCat.SPEC_OTHERS)
 @Override
     public boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments) {

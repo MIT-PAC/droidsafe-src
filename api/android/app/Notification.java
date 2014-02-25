@@ -210,8 +210,8 @@ public Notification[] newArray(int size)
          *      RemoteViews. The Context will not be held past the lifetime of this
          *      Builder object.
          */
-        @DSComment("Building Notification")
-        @DSSafe(DSCat.UTIL_FUNCTION)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.407 -0500", hash_original_method = "A0705CD8F7169475619B80AC2CAED080", hash_generated_method = "31183F4BFEB771758826DC42A3BB6B50")
         
 public Builder(Context context) {
@@ -679,7 +679,7 @@ public Notification getNotification() {
      * Constructs a Notification object with everything set to 0.
      * You might want to consider using {@link Builder} instead.
      */
-    @DSComment("no impact")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.312 -0500", hash_original_method = "1CE373DE78E11DB8401FDC6F724116BB", hash_generated_method = "79DCC7BC767E8F085FFC072842DC4C08")
     
@@ -691,6 +691,8 @@ public Notification()
     /**
      * @hide
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.315 -0500", hash_original_method = "F912A2DECFC167F58680F860007D2BB5", hash_generated_method = "AE6727A684FB35E2A2D80E2578110191")
     
 public Notification(Context context, int icon, CharSequence tickerText, long when,
@@ -715,7 +717,7 @@ public Notification(Context context, int icon, CharSequence tickerText, long whe
      *
      * @deprecated Use {@link Builder} instead.
      */
-    @DSComment("no impact")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.317 -0500", hash_original_method = "CC2BF19BEFE3DF69C00F83DC5FB8C9D2", hash_generated_method = "024900C64796E7D706CC036A6F0BE7A3")
     
@@ -730,6 +732,8 @@ public Notification(Context context, int icon, CharSequence tickerText, long whe
     /**
      * Unflatten the notification from a parcel.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.321 -0500", hash_original_method = "B9AE56CCF72BA824A2D5505B37E7A00A", hash_generated_method = "0421A61567333E348954B5AA8383A318")
     
 public Notification(Parcel parcel)

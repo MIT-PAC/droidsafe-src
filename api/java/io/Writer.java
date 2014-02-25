@@ -14,7 +14,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
      * Constructs a new {@code Writer} with {@code this} as the object used to
      * synchronize critical sections.
      */
-    @DSComment("no security concern")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.980 -0500", hash_original_method = "673B7AADE5290DAEA83488F65491132B", hash_generated_method = "A127FC3D7486266B886A0A3E8AB5F70C")
     
@@ -31,6 +31,8 @@ protected Writer() {
      * @throws NullPointerException
      *             if {@code lock} is {@code null}.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.983 -0500", hash_original_method = "D96C97132BD2547E52536C41B19A9E8C", hash_generated_method = "3FC050CD4B4869AC2C3CEE0B92F4DF88")
     
 protected Writer(Object lock) {

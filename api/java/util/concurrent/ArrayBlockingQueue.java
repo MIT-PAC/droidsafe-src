@@ -66,8 +66,8 @@ private static void checkNotNull(Object v) {
      * @param capacity the capacity of this queue
      * @throws IllegalArgumentException if {@code capacity < 1}
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.803 -0500", hash_original_method = "989EAF8314C95E2BC3034097E1831933", hash_generated_method = "2C52861D2300CD5655FBC5D396102FAF")
     
 public ArrayBlockingQueue(int capacity) {
@@ -84,8 +84,8 @@ public ArrayBlockingQueue(int capacity) {
      *        if {@code false} the access order is unspecified.
      * @throws IllegalArgumentException if {@code capacity < 1}
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.805 -0500", hash_original_method = "D00F5C645B4A4E3D47EB794330FD0093", hash_generated_method = "0066915398E1BE14FB4EAD0DF7E0B621")
     
 public ArrayBlockingQueue(int capacity, boolean fair) {
@@ -113,8 +113,8 @@ public ArrayBlockingQueue(int capacity, boolean fair) {
      * @throws NullPointerException if the specified collection or any
      *         of its elements are null
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.809 -0500", hash_original_method = "27F14E8862A13463ECADB9F13ABB8363", hash_generated_method = "6BD9391880E738BD4E5732E84326A7D1")
     
 public ArrayBlockingQueue(int capacity, boolean fair,

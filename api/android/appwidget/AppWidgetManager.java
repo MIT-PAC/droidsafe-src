@@ -127,6 +127,8 @@ private AppWidgetManager(Context context) {
      * @param appWidgetIds     The AppWidget instances for which to set the RemoteViews.
      * @param views         The RemoteViews object to show.
      */
+    @DSComment("Request update on remote view")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.842 -0500", hash_original_method = "C145E9C7D3CA673896555FC1E9B6614C", hash_generated_method = "CF3C48A2B5433CB1B9F054F36DD33C3C")
     
@@ -232,6 +234,8 @@ public void partiallyUpdateAppWidget(int appWidgetId, RemoteViews views) {
      *                      for your AppWidget.
      * @param views         The RemoteViews object to show.
      */
+    @DSComment("Request update on remote view")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.855 -0500", hash_original_method = "E171ADDB89C92A829FC0A5D980C9CF1B", hash_generated_method = "853134522A21D08D57F15F190C06DF1F")
     

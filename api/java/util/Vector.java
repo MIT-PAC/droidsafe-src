@@ -40,14 +40,14 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
 
     protected int capacityIncrement;
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.768 -0400", hash_original_method = "DACE16FEA3F29475D20FB4F2AE2C4BF3", hash_generated_method = "F92FDEEA28BC7E4B901A0A343D42232D")
     public  Vector() {
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.768 -0400", hash_original_method = "516F631FEB27C4B8AC76BAFF727DB150", hash_generated_method = "F3CDA2715564D8E8516468F487D83DFA")
     public  Vector(int capacity) {
         addTaint(capacity);
@@ -56,8 +56,8 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         // ---------- Original Method ----------
     }
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.769 -0400", hash_original_method = "B35B3D540AE265DD802702BED4157C47", hash_generated_method = "BF9A3C0BA660B360DF1D292D1829D8E7")
     public  Vector(int capacity, int capacityIncrement) {
         if(capacity < 0)        
@@ -77,8 +77,8 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         //this.capacityIncrement = capacityIncrement;
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.770 -0400", hash_original_method = "5554DADF2588E03BDCF1E2168D3E3C3F", hash_generated_method = "AB91ED40A9838270A2ED5EA6CEA47583")
     public  Vector(Collection<? extends E> collection) {
         super.addAll(collection);

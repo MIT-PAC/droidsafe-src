@@ -40,6 +40,8 @@ protected SelectionKey() {
      * @return the last attached object or {@code null} if no object has been
      *         attached.
      */
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.183 -0500", hash_original_method = "AFA38A9E30799729C39292277D62F43D", hash_generated_method = "B54AE609D7C0FC0B67C4C164D9302A9E")
     
 public final Object attach(Object anObject) {
@@ -54,6 +56,8 @@ public final Object attach(Object anObject) {
      * @return the attached object or {@code null} if no object has been
      *         attached.
      */
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.186 -0500", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "8BA2F3446477E1CEF6EBC6E7B1482BDB")
     
@@ -150,6 +154,7 @@ public final boolean isAcceptable() {
      * @throws CancelledKeyException
      *             if the key has already been canceled.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.201 -0500", hash_original_method = "2F2EE0183B49AF3C16598E47DE1FB088", hash_generated_method = "D843236A4EA7EB5401F715B6298F7961")
     
 public final boolean isConnectable() {
@@ -166,6 +171,7 @@ public final boolean isConnectable() {
      * @throws CancelledKeyException
      *             if the key has already been canceled.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.203 -0500", hash_original_method = "B9D7CCBAB6757F436C28ADF7D4904FD5", hash_generated_method = "27947B142D3B5371E4A37141CC41BEF5")
     
 public final boolean isReadable() {
@@ -195,6 +201,7 @@ public abstract boolean isValid();
      * @throws CancelledKeyException
      *             if the key has already been canceled.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.208 -0500", hash_original_method = "FD6385C69AD88B8295913B1A01B9080B", hash_generated_method = "4EE9117D91CF5E1B1523A5C13C09F778")
     
 public final boolean isWritable() {

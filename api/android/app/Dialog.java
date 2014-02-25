@@ -134,8 +134,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
      *                uses the window manager and theme in this context to
      *                present its UI.
      */
-    @DSComment("GUI, no security concern")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.047 -0500", hash_original_method = "BC9D2F22217346E354BF7BFC78A2D0C2", hash_generated_method = "DDBAE1C6053AAADDEEB81EF120BBEB14")
     @DSVerified
     
@@ -155,16 +155,16 @@ public Dialog(Context context) {
      * styles.  This theme is applied on top of the current theme in 
      * <var>context</var>.  If 0, the default dialog theme will be used.
      */
-    @DSComment("GUI, no security concern")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.049 -0500", hash_original_method = "E8683E6729C8449A45D83189604DFAE9", hash_generated_method = "98259AAF2CBADD065607919899437452")
     
 public Dialog(Context context, int theme) {
         this(context, theme, true);
     }
 
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.052 -0500", hash_original_method = "C6D5E1D2CF37954F320E3261297EC417", hash_generated_method = "C6D5E1D2CF37954F320E3261297EC417")
     
 Dialog(Context context, int theme, boolean createContextWrapper) {
@@ -192,6 +192,8 @@ Dialog(Context context, int theme, boolean createContextWrapper) {
      * @deprecated
      * @hide
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.055 -0500", hash_original_method = "845C16E53E1BE45A2BA7FF67CD257C6C", hash_generated_method = "04D95BF1921307A71C49AA44DAF21A88")
     
 @Deprecated

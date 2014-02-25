@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -395,8 +396,8 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
      * layout resource, though should take care here because this happens for
      * the fragment is attached to its activity.
      */
-    @DSComment("GUI, Fragment")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.994 -0500", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "CF5FF4F149C6CF2D53AA15104CFBDB03")
     @DSVerified
     
@@ -898,7 +899,7 @@ public LoaderManager getLoaderManager() {
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.079 -0500", hash_original_method = "B68B30EDC5AB3BE8EF657FB7051C7F7E", hash_generated_method = "2653C537061CAA70FE618F1495F7C4F1")
-    
+    @DSVerified
 public void startActivity(Intent intent) {
         if (mActivity == null) {
             throw new IllegalStateException("Fragment " + this + " not attached to Activity");
@@ -914,6 +915,7 @@ public void startActivity(Intent intent) {
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.083 -0500", hash_original_method = "849399EB62F8B6EE6A6E550D7989B87C", hash_generated_method = "8768E2B6EA85361E6FA51CBF490464A9")
+    @DSVerified
     
 public void startActivityForResult(Intent intent, int requestCode) {
         if (mActivity == null) {
@@ -937,7 +939,9 @@ public void startActivityForResult(Intent intent, int requestCode) {
      *               (various data can be attached to Intent "extras").
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.084 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "C260DB77EAE28D217FB04A25644FEF88")
-    
+    @DSVerified("Called from Activity")
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
     

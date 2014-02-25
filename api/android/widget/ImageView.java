@@ -128,8 +128,8 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
     private boolean mBaselineAlignBottom = false;
 
     @DSVerified
-    @DSComment("Safe excetp setImageURI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.852 -0500", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "A9312934B320F52AF3B76BC1947F3486")
     
 public ImageView(Context context) {
@@ -137,16 +137,16 @@ public ImageView(Context context) {
         initImageView();
     }
     
-    @DSComment("Safe excetp setImageURI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.854 -0500", hash_original_method = "67FF47760B585BF8195A474475D955DB", hash_generated_method = "97AB01D65DE1CF05D3F3DCCA4747DE30")
     
 public ImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
-    @DSComment("Safe excetp setImageURI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.857 -0500", hash_original_method = "8CC4CE610519C30A909B4E591A3E5936", hash_generated_method = "7733C97D46F188090692509C5C8D271A")
     
 public ImageView(Context context, AttributeSet attrs, int defStyle) {

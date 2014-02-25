@@ -1182,6 +1182,8 @@ public final void smoothScrollBy(int dx, int dy) {
      * @param x the position where to scroll on the X axis
      * @param y the position where to scroll on the Y axis
      */
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.606 -0500", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "100B355DE0AE23DDEE74EF5E482D3B12")
     
 public final void smoothScrollTo(int x, int y) {

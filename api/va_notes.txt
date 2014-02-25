@@ -1,0 +1,241 @@
+./java/lang/reflect/Constructor.java-
+./java/lang/reflect/Constructor.java-
+./java/lang/reflect/Constructor.java-public final class Constructor<T> extends AccessibleObject implements GenericDeclaration, Member {
+./java/lang/reflect/Constructor.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.935 -0400", hash_original_field = "02CBE457FB1B22631E594CE79672D2F1", hash_generated_field = "A496C5D8F7CD0CB9CA97840555DF2AAA")
+./java/lang/reflect/Constructor.java-
+./java/lang/reflect/Constructor.java:    @DSVAModeled
+./java/lang/reflect/Constructor.java-    Class<T> declaringClass;
+./java/lang/reflect/Constructor.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.935 -0400", hash_original_field = "11427856321C6E9F5321CA879704C8FE", hash_generated_field = "6A17A418C19B2E2A1B1FDDDFEF7489B2")
+./java/lang/reflect/Constructor.java-
+./java/lang/reflect/Constructor.java:    @DSVAModeled
+--
+./java/lang/reflect/Method.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.111 -0400", hash_original_field = "5E97994ED38A2B2F984F3B2B75012BF8", hash_generated_field = "6B06F56F1EB868ADA8CFFD63973A7E09")
+./java/lang/reflect/Method.java-
+./java/lang/reflect/Method.java-    private int slot;
+./java/lang/reflect/Method.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.111 -0400", hash_original_field = "02CBE457FB1B22631E594CE79672D2F1", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
+./java/lang/reflect/Method.java-
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java-    private Class<?> declaringClass;
+./java/lang/reflect/Method.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+./java/lang/reflect/Method.java-
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java-    private String name;
+./java/lang/reflect/Method.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "11427856321C6E9F5321CA879704C8FE", hash_generated_field = "2BEA8A3EFDFBD76D3A4CCA6C3AC7E53C")
+./java/lang/reflect/Method.java-
+./java/lang/reflect/Method.java:    @DSVAModeled
+--
+./java/lang/reflect/Method.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "2CD56E5B83C33F80B2D25820C51596A0", hash_generated_field = "2A0AC8F9632DF82B378D2F01BC74BDF4")
+./java/lang/reflect/Method.java-
+./java/lang/reflect/Method.java-    private Class<?>[] exceptionTypes;
+./java/lang/reflect/Method.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "9CD6843F4536590CD86F933708C7371E", hash_generated_field = "052C26419A9A6CDFB48BC17097CACAE9")
+./java/lang/reflect/Method.java-
+./java/lang/reflect/Method.java:    @DSVAModeled
+--
+./java/lang/Class.java-import droidsafe.helpers.DSUtils;
+./java/lang/Class.java-
+./java/lang/Class.java-public final class Class<T> implements Serializable, AnnotatedElement, GenericDeclaration, Type {
+./java/lang/Class.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.624 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
+./java/lang/Class.java-
+./java/lang/Class.java:    @DSVAModeled
+--
+./java/lang/ProcessBuilder.java-import droidsafe.concrete.*;
+./java/lang/ProcessBuilder.java-import droidsafe.annotations.*;
+./java/lang/ProcessBuilder.java-     
+./java/lang/ProcessBuilder.java-public final class ProcessBuilder
+./java/lang/ProcessBuilder.java-{
+./java/lang/ProcessBuilder.java:    @DSVAModeled
+--
+./java/io/File.java-import droidsafe.helpers.DSUtils;
+./java/io/File.java-
+./java/io/File.java-public class File implements Serializable, Comparable<File> {
+./java/io/File.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.816 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
+./java/io/File.java-
+./java/io/File.java:    @DSVAModeled
+--
+./java/io/FileDescriptor.java-
+./java/io/FileDescriptor.java-
+./java/io/FileDescriptor.java-public final class FileDescriptor {
+./java/io/FileDescriptor.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.868 -0400", hash_original_field = "AFBBCDF48BBBB69A1D97A2B7954DC265", hash_generated_field = "AD84990C5A466F07845F94B14109703E")
+./java/io/FileDescriptor.java-
+./java/io/FileDescriptor.java:    @DSVAModeled
+--
+./java/net/Socket.java-
+./java/net/Socket.java-
+./java/net/Socket.java-public class Socket {
+./java/net/Socket.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.485 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "76382137C184A183F2BF2D8583A90AEC")
+./java/net/Socket.java-
+./java/net/Socket.java:    @DSVAModeled
+--
+./java/net/SocketImpl.java-
+./java/net/SocketImpl.java-
+./java/net/SocketImpl.java-public abstract class SocketImpl implements SocketOptions {
+./java/net/SocketImpl.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "3EF85E4B8326DFDFB5F1248DB5848FBE")
+./java/net/SocketImpl.java-
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected InetAddress address;
+./java/net/SocketImpl.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_field = "901555FB06E346CB065CEB9808DCFC25", hash_generated_field = "C021A045CC358C8C262F3483738B3278")
+./java/net/SocketImpl.java-
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected int port;
+./java/net/SocketImpl.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "22B1DDEE70BE0A6499271C452045F538")
+./java/net/SocketImpl.java-
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java-    protected FileDescriptor fd;
+./java/net/SocketImpl.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_field = "F7439E9867FD6BB737D74ED95E5B79AC", hash_generated_field = "ACF030B7409F7B39EDB4C92454C3B34B")
+./java/net/SocketImpl.java-
+./java/net/SocketImpl.java:    @DSVAModeled
+--
+./java/net/InetAddress.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.662 -0400", hash_original_field = "59FBC8DF7B0BEA3A26A2FB6771EA3EEE", hash_generated_field = "90EA25AB4D338372155DC6F7EC59D04E")
+./java/net/InetAddress.java-
+./java/net/InetAddress.java-    byte[] ipaddress;
+./java/net/InetAddress.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.662 -0400", hash_original_field = "018531A6FE3834353217DBF6A6634DCF", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
+./java/net/InetAddress.java-
+./java/net/InetAddress.java:    @DSVAModeled
+--
+./java/net/URL.java-
+./java/net/URL.java-
+./java/net/URL.java-public final class URL implements Serializable {
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.954 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String protocol;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "AC50B8E8CEC0F955316DE9A8EC0AB5AE")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String authority;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "67B3DBA8BC6778101892EB77249DB32E", hash_generated_field = "6D420698033AD4B037D630A04933A2DD")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+--
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "CAB9CCA4AFFBFB7ECB540E3002763641", hash_generated_field = "F51DF048A4B5B6B4A61A3652544F4757")
+./java/net/URL.java-
+./java/net/URL.java-    private int port = -1;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "8C7DD922AD47494FC02C388E12C00EAC", hash_generated_field = "30FC605F61F5025973295CA9594B2C5A")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String file;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "18389A4A9AD5795744699CFF0BA66C15", hash_generated_field = "4B296BDB98B3E9CBEDF6971A25928318")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private String ref;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "49F290D6E8459C53F31F97DE37921086", hash_generated_field = "BED672F8886D4042083406EE52B803AE")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private transient String userInfo;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "1E845389D3352EECA0945BADE902EA26")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java-    private transient String path;
+./java/net/URL.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.955 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "296DE38AE03D10320738C7EA0F932C4A")
+./java/net/URL.java-
+./java/net/URL.java:    @DSVAModeled
+--
+./java/net/InetSocketAddress.java-
+./java/net/InetSocketAddress.java-
+./java/net/InetSocketAddress.java-public class InetSocketAddress extends SocketAddress {
+./java/net/InetSocketAddress.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.694 -0400", hash_original_field = "3EF9A0D7FAB5D2BCABF0978C0A35244E", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
+./java/net/InetSocketAddress.java-
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java-    private InetAddress addr;
+./java/net/InetSocketAddress.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.694 -0400", hash_original_field = "0897ACF49C7C1EA9F76EFE59187AA046", hash_generated_field = "A7530665071F24FF1A9052578197759B")
+./java/net/InetSocketAddress.java-
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java-    private String hostname;
+./java/net/InetSocketAddress.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.695 -0400", hash_original_field = "901555FB06E346CB065CEB9808DCFC25", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
+./java/net/InetSocketAddress.java-
+./java/net/InetSocketAddress.java:    @DSVAModeled
+--
+./java/net/URI.java-
+./java/net/URI.java-
+./java/net/URI.java-public final class URI implements Comparable<URI>, Serializable {
+./java/net/URI.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.825 -0400", hash_original_field = "B45CFFE084DD3D20D928BEE85E7B0F21", hash_generated_field = "D1325E87F7D151CD81D0B4A318C3AE5C")
+./java/net/URI.java-
+./java/net/URI.java:    @DSVAModeled
+--
+./org/apache/http/client/methods/HttpGet.java-
+./org/apache/http/client/methods/HttpGet.java-
+./org/apache/http/client/methods/HttpGet.java-
+./org/apache/http/client/methods/HttpGet.java-
+./org/apache/http/client/methods/HttpGet.java-
+./org/apache/http/client/methods/HttpGet.java:@DSVAModeled
+./org/apache/http/client/methods/HttpGet.java-public class HttpGet extends HttpRequestBase {
+./org/apache/http/client/methods/HttpGet.java-    
+./org/apache/http/client/methods/HttpGet.java:    @DSVAModeled
+--
+./org/apache/http/client/methods/HttpRequestBase.java-    private Lock abortLock;
+./org/apache/http/client/methods/HttpRequestBase.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.197 -0400", hash_original_field = "DFB7069BFC6E0064A6C667626ECA07B4", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
+./org/apache/http/client/methods/HttpRequestBase.java-
+./org/apache/http/client/methods/HttpRequestBase.java-    private boolean aborted;
+./org/apache/http/client/methods/HttpRequestBase.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.198 -0400", hash_original_field = "9305B73D359BD06734FEE0B3638079E1", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
+./org/apache/http/client/methods/HttpRequestBase.java:    @DSVAModeled
+--
+./android/widget/Button.java-import android.content.Context;
+./android/widget/Button.java-import android.util.AttributeSet;
+./android/widget/Button.java-
+./android/widget/Button.java-
+./android/widget/Button.java-
+./android/widget/Button.java:@DSVAModeled
+--
+./android/widget/TextView.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "A88463CF8707DFCA9D81D838EE11C191", hash_generated_field = "2AD0F97487EA7D5F86DCAFC3259ED37F")
+./android/widget/TextView.java-
+./android/widget/TextView.java-    private Layout mSavedMarqueeModeLayout;
+./android/widget/TextView.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CF16E724237A2841199FB30284CED38")
+./android/widget/TextView.java-
+./android/widget/TextView.java:    @DSVAModeled
+--
+./android/os/Bundle.java-import java.io.Serializable;
+./android/os/Bundle.java-import java.util.HashMap;
+./android/os/Bundle.java-public final class Bundle implements Parcelable, Cloneable {
+./android/os/Bundle.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.857 -0400", hash_original_field = "6C9D7AEB7CF5AE9F2141CB23F95F4D45", hash_generated_field = "6C79F547522536A208CAFCE9016DC05F")
+./android/os/Bundle.java-
+./android/os/Bundle.java:    @DSVAModeled
+--
+./android/content/ComponentName.java-
+./android/content/ComponentName.java-
+./android/content/ComponentName.java-public final class ComponentName implements Parcelable, Cloneable, Comparable<ComponentName> {
+./android/content/ComponentName.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.666 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
+./android/content/ComponentName.java-
+./android/content/ComponentName.java:    @DSVAModeled
+./android/content/ComponentName.java-    private String mPackage;
+./android/content/ComponentName.java-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.666 -0400", hash_original_field = "3C06167D41E761EA62261D0BFD22DD5C", hash_generated_field = "5E2CA74CC8E570ED6932C7E63B69D503")
+./android/content/ComponentName.java-
+./android/content/ComponentName.java:    @DSVAModeled
+--
+./android/content/Intent.java-
+./android/content/Intent.java-
+./android/content/Intent.java-
+./android/content/Intent.java-
+./android/content/Intent.java-public class Intent implements Parcelable, Cloneable {
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private String mAction;
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private Uri mData;
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private String mType;
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private String mPackage;
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private ComponentName mComponent;
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private int mFlags;
+./android/content/Intent.java-    private HashSet<String> mCategories;
+./android/content/Intent.java-    //TODO: removed for demo
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java-    private Bundle mExtras;
+./android/content/Intent.java-    private Rect mSourceBounds;
+./android/content/Intent.java-    //TODO: removed for demo
+./android/content/Intent.java:    //@DSVAModeled
+--
+./android/app/Activity.java-    private Instrumentation mInstrumentation;
+./android/app/Activity.java-    private IBinder mToken;
+./android/app/Activity.java-    private int mIdent;
+./android/app/Activity.java-    String mEmbeddedID;
+./android/app/Activity.java-    private Application mApplication;
+./android/app/Activity.java:    @DSVAModeled
+--
+./android/net/Uri.java-		// TODO Auto-generated method stub
+./android/net/Uri.java-		return getTaintInt();
+./android/net/Uri.java-	}
+./android/net/Uri.java-    
+./android/net/Uri.java-    // orphaned legacy field
+./android/net/Uri.java:    @DSVAModeled

@@ -25,8 +25,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.325 -0500", hash_original_method = "A3EEEE607FBEBD432F4111F47BB23345", hash_generated_method = "F0670CE27A83C450C2A4000B5E8C2390")
     
 public AtomicInteger(int initialValue) {
@@ -36,8 +36,8 @@ public AtomicInteger(int initialValue) {
     /**
      * Creates a new AtomicInteger with initial value {@code 0}.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.328 -0500", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "0E6B9C34F7A1BCF5C7C73F35173892F1")
     
 public AtomicInteger() {

@@ -63,6 +63,7 @@ public static MessageDigest getInstance(String algorithm)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.391 -0500", hash_original_method = "4A47CCCAB9E7CA50F3AD4953C61AD60D", hash_generated_method = "E109005BEF06DBB9107F58DD5DA16131")
     
@@ -94,6 +95,7 @@ public static MessageDigest getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.393 -0500", hash_original_method = "723C5C1CC0AC6B47325C4EFD63C83CA5", hash_generated_method = "FB6253B2AEE8F1F7762F8C00D3303C27")
     
@@ -180,6 +182,7 @@ public void reset() {
      *            the {@code byte} to update this {@code MessageDigest} with
      * @see #reset()
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.398 -0500", hash_original_method = "5D76F053E1EB2FF1CE017209E211EA20", hash_generated_method = "791DEE263418D919F257C0DEEEE6FDB0")
     
 public void update(byte arg0) {
@@ -222,6 +225,7 @@ public void update(byte[] input, int offset, int len) {
      * @throws NullPointerException
      *             if {@code input} is {@code null}
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.403 -0500", hash_original_method = "2D0F4C2E65A537F2694C1C3FF3BB32CC", hash_generated_method = "E30CF82352DABF728C05F31DB8FAC659")
     
 public void update(byte[] input) {
@@ -265,6 +269,7 @@ public byte[] digest() {
      *             {@code buf}
      * @see #reset()
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.408 -0500", hash_original_method = "427D2D0CC508C9C4E8BC486441041E72", hash_generated_method = "4224D6AC70D62E706B8319BA24B874F8")
     
 public int digest(byte[] buf, int offset, int len) throws DigestException {
@@ -452,6 +457,7 @@ private MessageDigestImpl(MessageDigestSpi messageDigestSpi,
      * @param input
      *            the {@code ByteBuffer}
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.429 -0500", hash_original_method = "8AF1ACEDEB3ACC905C3D0DD872BD7C78", hash_generated_method = "D53B69CF8BDE63A44A79B25F760A0FD2")
     
 public final void update(ByteBuffer input) {

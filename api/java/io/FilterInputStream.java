@@ -20,7 +20,7 @@ public class FilterInputStream extends InputStream {
      *
      * @param in the input stream to filter reads on.
      */
-    @DSComment("no security concern")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.038 -0500", hash_original_method = "28F38498A0B180D5BCC888F2248F3934", hash_generated_method = "D28A4C86943E8574377DFF40EEBB983E")
     

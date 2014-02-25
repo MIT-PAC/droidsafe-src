@@ -1,16 +1,24 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.IOException;
+
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
+import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
 public class BackupManager {
 
+    //  used by droidsafe so that we can inject user's flavor of BackupAgent
+    BackupAgent dsBackupAgent; 
+    
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.071 -0500", hash_original_method = "BC0D552591769CED3EC0FA61A524F186", hash_generated_method = "2015B4D91CD8E20A9296C83B2EBCE38E")
@@ -69,6 +77,17 @@ public static void dataChanged(String packageName) {
     
 public BackupManager(Context context) {
         mContext = context;
+        dsBackupAgent = new BackupAgentHelper();
+    }
+
+    //This method should be called by droidsafe Harness to include backup agent implementations
+    // here
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeSetBackupAgent(BackupAgent agent) {
+        dsBackupAgent = agent;
+        dsBackupAgent.onCreate();
+        dsBackupAgent.onBind();
     }
 
     /**
@@ -77,11 +96,14 @@ public BackupManager(Context context) {
      * {@link android.app.backup.BackupAgent} subclass will be scheduled when you
      * call this method.
      */
+    @DSVerified("Trigger a backup, calls callback as well")
     @DSComment("Backup subsystem")
     @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.076 -0500", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "BF4AC2D842D44FB6ABE35CE29B125D9F")
-    
 public void dataChanged() {
+        //TODO: This method is used to initiate a backup
+        // and requestRestore is used to request a restore
+        /*
         checkServiceBinder();
         if (sService != null) {
             try {
@@ -90,6 +112,21 @@ public void dataChanged() {
                 Log.d(TAG, "dataChanged() couldn't connect");
             }
         }
+        */
+
+        ParcelFileDescriptor fd = new ParcelFileDescriptor();
+        try {
+            dsBackupAgent.onFullBackup(new FullBackupDataOutput(fd));
+            
+            dsBackupAgent.onBackup(new ParcelFileDescriptor(), 
+                    new BackupDataOutput(new FileDescriptor()),
+                    new ParcelFileDescriptor());
+            //dsBackupAgent.onBackup(oldState, data, newState);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        dsBackupAgent.onDestroy();
     }
 
     /**
@@ -112,9 +149,28 @@ public void dataChanged() {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.081 -0500", hash_original_method = "0F46E379860B99708825D89131970D97", hash_generated_method = "4F9C77C32BC694F410AB977B57EE9DF9")
-    
+    @DSVerified
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
 public int requestRestore(RestoreObserver observer) {
+        FileDescriptor fd = new FileDescriptor();
+        BackupDataInput dataInput = new BackupDataInput(fd);
+        try {
+            dsBackupAgent.onRestore(dataInput, DSUtils.FAKE_INT, new ParcelFileDescriptor());
+            dsBackupAgent.onRestoreFile(new ParcelFileDescriptor(), (long)DSUtils.FAKE_INT, new File(new String()), 0, 0, 0);
+            dsBackupAgent.onRestoreFile(new ParcelFileDescriptor(), DSUtils.FAKE_INT,
+                    0, new String(), new String(), DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        }
+        catch (Exception ex) {
+            
+        }
+
+        if (observer != null) {
+            observer.onUpdate(DSUtils.FAKE_INT, mContext.getPackageName());
+        }
+
+        /*
         int result = -1;
+
         checkServiceBinder();
         if (sService != null) {
             RestoreSession session = null;
@@ -132,6 +188,8 @@ public int requestRestore(RestoreObserver observer) {
             }
         }
         return result;
+        */
+        return DSUtils.FAKE_INT;
     }
 
     /**

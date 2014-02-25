@@ -52,16 +52,16 @@ public class SparseArray<E> implements Cloneable {
     /**
      * Creates a new SparseArray containing no mappings.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.749 -0500", hash_original_method = "E97D5EED29ED8377C999990C20A12343", hash_generated_method = "883E33622B92FE2F9F88EA2CD46632D6")
     
 public SparseArray() {
         this(10);
     }
     
-	@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public SparseArray(int initialCapacity){
 		ArrayUtils.idealIntArraySize(initialCapacity);
 		mKeys = new int[0];

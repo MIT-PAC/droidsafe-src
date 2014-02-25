@@ -26,6 +26,7 @@ public enum DSCat {
     
     //Spec Categories
     ABSTRACT_METHOD,
+    ANDROID_ACCOUNT,
     ANDROID_ACTIVITY_STARTING,
     ANDROID_APPLICATION,
     ANDROID_INTERNAL,
@@ -70,6 +71,7 @@ public enum DSCat {
     OS_LOW_LEVEL,    
     PACKAGE_INFO,
     PHONE_CALL,
+    PHONE_STATE,
     RESOURCE,
     RTP_CALL,
     SENSOR,
@@ -77,6 +79,7 @@ public enum DSCat {
     SMS,
     SHARING,
     STORAGE,
+    STORAGE_STATE,
     SYSTEM_SETTING,    
     SYSTEM_SERVICE,
     STORAGE_ACCESS,

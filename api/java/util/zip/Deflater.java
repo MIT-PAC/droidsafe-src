@@ -80,6 +80,8 @@ public class Deflater {
      * header is added to the output by default; use {@link
      * #Deflater(int, boolean)} if you need to omit the header.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.778 -0500", hash_original_method = "6DBC61BE4FC097F2420F36A015A6138C", hash_generated_method = "8855039A4E948A2EBAE9A37F127A6C32")
     
 public Deflater() {
@@ -95,6 +97,8 @@ public Deflater() {
      * @param level
      *            the compression level in the range between 0 and 9.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.780 -0500", hash_original_method = "EE2B377CE8D615D75129B5A0881EF06D", hash_generated_method = "7984FC435A3A7867215F0AF3F1B6C573")
     
 public Deflater(int level) {
@@ -112,6 +116,8 @@ public Deflater(int level) {
      * @param noHeader
      *            {@code true} indicates that no ZLIB header should be written.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.783 -0500", hash_original_method = "2C334DD40EC2ED2E518DCA464DFDC51E", hash_generated_method = "4CD73A96FD978B4532E5D32548FEC5C8")
     
 public Deflater(int level, boolean noHeader) {
@@ -129,6 +135,7 @@ public Deflater(int level, boolean noHeader) {
      *
      * @return number of bytes of compressed data written to {@code buf}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.785 -0500", hash_original_method = "611AF07E266F550F53CDF01F1CC352A1", hash_generated_method = "FC427B8EEC53AFC977E8B0D330D010BA")
     
 public int deflate(byte[] buf) {
@@ -141,6 +148,7 @@ public int deflate(byte[] buf) {
      *
      * @return the number of bytes of compressed data written to {@code buf}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.788 -0500", hash_original_method = "0A84F3CD8D711F8E28F74CE9A11C545E", hash_generated_method = "02F0C53054935B096D133B75CBDF0099")
     
 public synchronized int deflate(byte[] buf, int offset, int byteCount) {
@@ -160,6 +168,7 @@ public synchronized int deflate(byte[] buf, int offset, int byteCount) {
      * @hide
      * @since 1.7
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.791 -0500", hash_original_method = "0DC5FF46D79769AAEF0B4E5EA32BA58D", hash_generated_method = "04C3B82E1BCE6669B5B47C959713746C")
     
 public synchronized int deflate(byte[] buf, int offset, int byteCount, int flush) {
@@ -202,6 +211,7 @@ private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int 
      * order to free native resources as soon as possible. After {@code end()} is
      * called, other methods will typically throw {@code IllegalStateException}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.800 -0500", hash_original_method = "59D998A9FACC96CAD9DEE3EEFD22688A", hash_generated_method = "FD85EB7EBAC8A6B33BB75FD0B188343E")
     
 public synchronized void end() {
@@ -256,6 +266,7 @@ private void endImpl() {
      *
      * @see #finished
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.813 -0500", hash_original_method = "CE8BB8EC5EB7D8A83BE6D0D952D2FABD", hash_generated_method = "6E4DC661CEF6D6C634EA0F50B1605232")
     
 public synchronized void finish() {
@@ -267,6 +278,7 @@ public synchronized void finish() {
      * data provided by {@link #setInput setInput} has been
      * successfully compressed and consumed by {@link #deflate deflate}.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.815 -0500", hash_original_method = "AE445D0E75B15DAD06E7B3F2F4342E00", hash_generated_method = "9EE93713E74AD8A78F696927ADB1433F")
     
 public synchronized boolean finished() {
@@ -421,6 +433,7 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
      * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes
      * for later compression.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.857 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "19B3B4D9BFCD113AADCC6DB794F536DA")
     
@@ -432,6 +445,7 @@ public void setInput(byte[] buf) {
      * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes
      * for later compression.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.860 -0500", hash_original_method = "5EAC232252C5BA68B98F924DC24DA75C", hash_generated_method = "F84DF425B88F7030AFB1ADE467975000")
     
 public synchronized void setInput(byte[] buf, int offset, int byteCount) {

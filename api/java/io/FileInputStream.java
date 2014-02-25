@@ -40,8 +40,8 @@ public class FileInputStream extends InputStream implements Closeable {
      * @throws FileNotFoundException
      *             if {@code file} does not exist.
      */
-    @DSComment("File Input Stream")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.110 -0500", hash_original_method = "1BD49D518996D312C80F5CC2297619D7", hash_generated_method = "B658BDC677171B3FEE9047C0F1943C54")
     
 public FileInputStream(File file) throws FileNotFoundException {
@@ -61,8 +61,8 @@ public FileInputStream(File file) throws FileNotFoundException {
      * @throws NullPointerException
      *             if {@code fd} is {@code null}.
      */
-    @DSComment("File Input Stream")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.113 -0500", hash_original_method = "9A99F3F0C17344BC7A4198604236E89C", hash_generated_method = "6FFB9E5503B5FFEBF02470C9DA7622BF")
     
 public FileInputStream(FileDescriptor fd) {
@@ -78,8 +78,8 @@ public FileInputStream(FileDescriptor fd) {
     /**
      * Equivalent to {@code new FileInputStream(new File(path))}.
      */
-    @DSComment("File Input Stream")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.116 -0500", hash_original_method = "3B135756B4C06BFF0359EE9E41EEDC20", hash_generated_method = "A45CB9BBA620FFB20A4C2B7E074F5E66")
     
 public FileInputStream(String path) throws FileNotFoundException {
@@ -188,6 +188,8 @@ public final FileDescriptor getFD() throws IOException {
         return IoBridge.read(fd, buffer, byteOffset, byteCount);
     }
 
+    @DSComment("File Input Stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.137 -0500", hash_original_method = "4138A4F75DA401A9AB2AB0F0CF384113", hash_generated_method = "E06C26822D1847D5403C294FF6E5D395")
     
 @Override

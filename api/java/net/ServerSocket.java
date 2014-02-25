@@ -49,7 +49,7 @@ public static synchronized void setSocketFactory(SocketImplFactory aFactory) thr
      *
      * @throws IOException if an error occurs while creating the socket.
      */
-    @DSComment("no action")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.831 -0500", hash_original_method = "31BB74D5896D397B1327C5B34E5CB836", hash_generated_method = "F6958EEE717C65B2382EA357C50183A7")
     
@@ -65,8 +65,8 @@ public ServerSocket() throws IOException {
      *
      * @throws IOException if an error occurs while creating the socket.
      */
-    @DSComment("can learn network device info")
-    @DSSpec(DSCat.NETWORK)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.833 -0500", hash_original_method = "17E5A7EAB5FF74551872A5C22051BFB5", hash_generated_method = "B9F823FA7D895103EEFDAF26A9FC01D0")
     
 public ServerSocket(int port) throws IOException {
@@ -80,6 +80,8 @@ public ServerSocket(int port) throws IOException {
      *
      * @throws IOException if an error occurs while creating the socket.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.836 -0500", hash_original_method = "B81C30D251B31CAFF71CF07C7882EF32", hash_generated_method = "FCF551FDBEDBC3159E80F30C445BF534")
     
 public ServerSocket(int port, int backlog) throws IOException {
@@ -94,8 +96,8 @@ public ServerSocket(int port, int backlog) throws IOException {
      *
      * @throws IOException if an error occurs while creating the socket.
      */
-    @DSComment("can learn network device info")
-    @DSSpec(DSCat.NETWORK)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.839 -0500", hash_original_method = "6BB36DC8E15E305D7407A47C7739996C", hash_generated_method = "F776CE6D05038553C1A88DD290C54077")
     
 public ServerSocket(int port, int backlog, InetAddress localAddress) throws IOException {

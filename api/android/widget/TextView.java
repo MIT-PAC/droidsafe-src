@@ -225,6 +225,8 @@ private static int desired(Layout layout) {
      * from the TextView_textAppearance attribute, if TextView_textColor
      * was not set directly.
      */
+    @DSComment("TextView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.660 -0500", hash_original_method = "610DF4562C72E9710D612FAA54D67DFE", hash_generated_method = "A75A6D7F80F1F0271AD4582D7821E552")
     
@@ -754,16 +756,16 @@ private static int extractRangeEndFromLong(long range) {
 
     private CorrectionHighlighter mCorrectionHighlighter;
 
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.523 -0500", hash_original_method = "16A18A865F32B95685EAC04EF434D4B5", hash_generated_method = "5BD772F917010B9D0FE3F05FF4D0CD58")
     
 public TextView(Context context) {
         this(context, null);
     }
 
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.526 -0500", hash_original_method = "2AA1B7AF4AA0321ED5A0A8E3910A65F3", hash_generated_method = "056D37355FCFA9907259EFB0C9FF69AD")
     
 public TextView(Context context,
@@ -771,8 +773,8 @@ public TextView(Context context,
         this(context, attrs, com.android.internal.R.attr.textViewStyle);
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.462 -0400", hash_original_method = "9090DB4BB502E7A1E7DDA866F2D92623", hash_generated_method = "23AD89CBA0BEBC0D035CBE13A9739020")
     @SuppressWarnings("deprecation")
     public  TextView(Context context,

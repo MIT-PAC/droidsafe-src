@@ -80,6 +80,7 @@ public Context getContext() {
     /**
      * @return the ID of this loader
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.655 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
     
@@ -102,6 +103,9 @@ public void registerListener(int id, OnLoadCompleteListener<D> listener) {
         }
         mListener = listener;
         mId = id;
+        if (listener != null) {
+            listener.onLoadComplete(this, null);
+        }
     }
 
     /**
@@ -149,11 +153,20 @@ public boolean isAbandoned() {
      * has been called.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.666 -0500", hash_original_method = "6F78AC76FABAE5B00729D2DF0B0C81EB", hash_generated_method = "BB9BBFFEC1CEA5136C58814820AD315E")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isReset() {
         return mReset;
     }
-
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeCallbackHook() {
+        onContentChanged();
+        onForceLoad();
+        onAbandon();
+        onStopLoading();
+        onReset();
+    }
     /**
      * This function will normally be called for you automatically by
      * {@link android.app.LoaderManager} when the associated fragment/activity
@@ -176,12 +189,14 @@ public boolean isReset() {
      * <p>Must be called from the process's main thread.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.669 -0500", hash_original_method = "8E7A6B4B56209ADF45890FC32754A367", hash_generated_method = "A8FDC28840DC97D7B5C895BB675AFA80")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS) 
 public final void startLoading() {
         mStarted = true;
         mReset = false;
         mAbandoned = false;
         onStartLoading();
+        droidsafeCallbackHook();
     }
 
     /**
@@ -269,7 +284,8 @@ protected void onStopLoading() {
      * any new data.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.681 -0500", hash_original_method = "ACB324D8F1768E7142E127CF7A1A7031", hash_generated_method = "48EA11BD72707F304B6A1EE7D8D93FD6")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void abandon() {
         mAbandoned = true;
         onAbandon();
@@ -285,7 +301,8 @@ public void abandon() {
      * state with {@link #isAbandoned}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.683 -0500", hash_original_method = "A161936916B264DFAEE5DB9D8DEA7F5D", hash_generated_method = "CBC00E77921BBCC552F1B3DA797F6D5F")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 protected void onAbandon() {        
     }
     
@@ -308,7 +325,8 @@ protected void onAbandon() {
      * <p>Must be called from the process's main thread.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.685 -0500", hash_original_method = "1D7BF800397B2CC75C7600D5EBC7C29A", hash_generated_method = "E573CB7964BA333ED5A8B0E9DFBCEE8D")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void reset() {
         onReset();
         mReset = true;
@@ -354,7 +372,8 @@ public boolean takeContentChanged() {
      * <p>Must be called from the process's main thread.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.692 -0500", hash_original_method = "9CACF0CE278273BE0AB1B5F570D8CB20", hash_generated_method = "0BBB21E67670D69FBD1DFC64D6E42AA5")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onContentChanged() {
         if (mStarted) {
             forceLoad();

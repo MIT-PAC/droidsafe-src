@@ -27,8 +27,8 @@ public class Handler {
 
     IMessenger mMessenger;
     
-	@DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Handler(){
 		mLooper = Looper.myLooper();
 		//mQueue = mLooper.mQueue;
@@ -75,8 +75,8 @@ public class Handler {
 		*/
 	}
     
-	@DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Handler(Looper looper){
 		mLooper = looper;
 		//mQueue = looper.mQueue;
@@ -103,8 +103,6 @@ public class Handler {
     @DSVerified
     public void dispatchMessage(Message msg){
 		// Original method
-		/*
-		{
         if (msg.callback != null) {
             handleCallback(msg);
         } else {
@@ -115,8 +113,6 @@ public class Handler {
             }
             handleMessage(msg);
         }
-    }
-		*/
 		//Return nothing
 	}
     
@@ -139,6 +135,7 @@ public class Handler {
      * creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).
      *  If you don't want that facility, just call Message.obtain() instead.
      */
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.031 -0500", hash_original_method = "3FA1D1E6850485EFDFF54C55EBFDD1CC", hash_generated_method = "D4575D4F60FCD7C3F7B83BA70194059B")
     
 public final Message obtainMessage()
@@ -173,6 +170,7 @@ public final Message obtainMessage()
     	return Message.obtain(this, what, obj);
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public final Message obtainMessage(int what, int arg1, int arg2){
 		// Original method
 		/*
@@ -186,6 +184,7 @@ public final Message obtainMessage()
     	return Message.obtain(this, what, arg1, arg2);
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public final Message obtainMessage(int what, int arg1, int arg2, Object obj){
 		// Original method
 		/*
@@ -282,6 +281,7 @@ public final Message obtainMessage()
     	mQueue.removeMessages(this, r, null);
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public final void removeCallbacks(Runnable r, Object token){
 		// Original method
 		/*
@@ -457,6 +457,7 @@ public final Message obtainMessage()
     	mQueue.removeMessages(this, what, null, true);
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public final void removeMessages(int what, Object object){
 		// Original method
 		/*
@@ -497,6 +498,7 @@ public final Message obtainMessage()
 		return getTaintBoolean();
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean hasMessages(int what, Object object){
 		// Original method
 		/*

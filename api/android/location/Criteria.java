@@ -95,8 +95,8 @@ public Criteria[] newArray(int size) {
      * require altitude, speed, or bearing; and will not allow monetary
      * cost.
      */
-    @DSComment("Used for thresholding")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.293 -0500", hash_original_method = "56D25A23ADD1F3C93CB7F827DA5DFB02", hash_generated_method = "B843D41D9AC4259E19148AB7E4644051")
     
 public Criteria() {}
@@ -104,6 +104,8 @@ public Criteria() {}
     /**
      * Constructs a new Criteria object that is a copy of the given criteria.
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.295 -0500", hash_original_method = "4027197A668FB712D0A5A09027B96247", hash_generated_method = "9253179FA8FD9943E9EC8B7E0F2095E8")
     
 public Criteria(Criteria criteria) {

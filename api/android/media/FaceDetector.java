@@ -50,6 +50,8 @@ public class FaceDetector {
      * @param maxFaces the maximum number of faces to identify
      *
      */
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.563 -0500", hash_original_method = "69484680A1706F6AEC1DEA5335B0CC8C", hash_generated_method = "2D6AFF60B7D25965A7A6D862C14145CD")
     
 public FaceDetector(int width, int height, int maxFaces)
@@ -200,6 +202,7 @@ public float confidence() {
          * @param point the PointF coordinates (float values) of the 
          *              face's mid-point
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.530 -0500", hash_original_method = "9735D84F89F9E8F084506CF39AC5503E", hash_generated_method = "F2F1230E6AE5A819E30388714347D749")
         
 public void getMidPoint(PointF point) {

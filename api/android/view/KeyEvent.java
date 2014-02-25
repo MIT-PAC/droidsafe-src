@@ -15,17 +15,21 @@ import android.util.SparseIntArray;
 import android.view.KeyCharacterMap.KeyData;
 
 public class KeyEvent extends InputEvent implements Parcelable {
-    
+
+    /*
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static KeyEvent droidsafeObtainEvent() {
         Random rand = new Random();
         KeyEvent ev = new KeyEvent(rand.nextInt(), rand.nextInt(), rand.nextInt(),
                                    rand.nextInt(), rand.nextInt(), rand.nextInt());
         return ev;
     }
+    */
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.923 -0500", hash_original_method = "CD92FE183731A7A6D1227776EFB98684", hash_generated_method = "FF01DC7C6BA6162970DE0E4EE19F724E")
-    
+    @DSVerified 
 private static void populateKeycodeSymbolicNames() {
         SparseArray<String> names = KEYCODE_SYMBOLIC_NAMES;
         names.append(KEYCODE_UNKNOWN, "KEYCODE_UNKNOWN");
@@ -1057,6 +1061,7 @@ public void reset(Object target) {
          * <p>This is only needed if you are directly dispatching events, rather
          * than handling them in {@link Callback#onKeyDown}.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.326 -0500", hash_original_method = "F359109F6941FCC4380DDA2E2CA9E676", hash_generated_method = "915D81D324F7B39734380B66EFBED977")
         
 public void startTracking(KeyEvent event, Object target) {
@@ -1073,6 +1078,7 @@ public void startTracking(KeyEvent event, Object target) {
          * Return true if the key event is for a key code that is currently
          * being tracked by the dispatcher.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.328 -0500", hash_original_method = "07F4929E2B3E025FC2215EF8E614ABBF", hash_generated_method = "DA8BE213587217DB451EF8ED183187C5")
         
 public boolean isTracking(KeyEvent event) {
@@ -2523,6 +2529,8 @@ public final int getAction() {
      * For {@link #ACTION_UP} events, indicates that the event has been
      * canceled as per {@link #FLAG_CANCELED}.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.254 -0500", hash_original_method = "67F2F19B4B996A0666B0A05E347C8968", hash_generated_method = "73A43E898178BA57C38A48FDF2CA8C20")
     
 public final boolean isCanceled() {
@@ -2536,6 +2544,8 @@ public final boolean isCanceled() {
      * event is received while a previous one is being tracked, tracking is
      * stopped on the previous event.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.257 -0500", hash_original_method = "27796C2FEC9179970B535474C3BFAAB9", hash_generated_method = "6071FAB17E9EF98C52C9B45C7AF05744")
     
 public final void startTracking() {
@@ -2547,6 +2557,8 @@ public final void startTracking() {
      * tracked from its initial down event as per
      * {@link #FLAG_TRACKING}.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.260 -0500", hash_original_method = "D30D10CBEE1B4F7DBBD65FEDA5F644C1", hash_generated_method = "DBE0A3A4DB9003B3AFA7090D6FE625D7")
     
 public final boolean isTracking() {
@@ -2884,6 +2896,8 @@ public boolean isPrintingKey() {
      * @return The return value from the Callback method that was called.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.309 -0500", hash_original_method = "486AD389F69CA9E805DF428CF28467C4", hash_generated_method = "27BD5748E6BAFC465DCAD4D67218DD05")
+    @DSVerified("Callback dispatching")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
 public final boolean dispatch(Callback receiver, DispatcherState state,
             Object target) {

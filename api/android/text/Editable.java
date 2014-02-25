@@ -17,14 +17,24 @@ extends CharSequence, GetChars, Spannable, Appendable
     
     public Editable insert(int where, CharSequence text);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Editable delete(int st, int en);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Editable append(CharSequence text);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Editable append(CharSequence text, int start, int end);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public Editable append(char text);
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void clear();
     
     public void clearSpans();

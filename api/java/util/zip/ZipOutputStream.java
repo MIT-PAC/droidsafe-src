@@ -62,8 +62,8 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
      * @param p1
      *            the {@code OutputStream} to write the data to.
      */
-    @DSComment("zip/io")
-    @DSSpec(DSCat.IO)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.717 -0500", hash_original_method = "8A42A56E156B97294BE7CC83201EADCF", hash_generated_method = "F421FE5C883001A63E02AD136DB20949")
     
 public ZipOutputStream(OutputStream p1) {
@@ -397,6 +397,7 @@ private int writeShort(OutputStream os, int i) throws IOException {
      * @exception IOException
      *                If an error occurs writing to the stream
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.746 -0500", hash_original_method = "F9EBE9ED855C5E2014EA6CAF53F89130", hash_generated_method = "3F4E55B962E176E96CF3299F7DB01ADA")
     

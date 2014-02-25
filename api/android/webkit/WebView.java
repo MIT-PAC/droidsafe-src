@@ -2398,6 +2398,7 @@ public WebBackForwardList restoreState(Bundle inState) {
      *            controlling caching, accept types or the User-Agent, their
      *            values may be overriden by the WebView's defaults.
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.565 -0500", hash_original_method = "66CEDD7560D58AC5C6DF5108A28592A9", hash_generated_method = "5B9D1B63FC1E7B285328458907CCA0A9")
     
 public void loadUrl(String url, Map<String, String> additionalHttpHeaders) {
@@ -2405,6 +2406,7 @@ public void loadUrl(String url, Map<String, String> additionalHttpHeaders) {
         loadUrlImpl(url, additionalHttpHeaders);
     }
 
+    @DSVerified
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.567 -0500", hash_original_method = "1BCC17243147768FF726FCE9A98025DC", hash_generated_method = "9DC311FFA850B862423B38D4B91018ED")
@@ -2415,7 +2417,11 @@ private void loadUrlImpl(String url, Map<String, String> extraHeaders) {
         arg.mUrl = url;
         arg.mExtraHeaders = extraHeaders;
         mWebViewCore.sendMessage(EventHub.LOAD_URL, arg);
-        clearHelpers();
+        WebViewClient client = getWebViewClient();
+        client.onLoadResource(this, url);
+        client.onPageFinished(this, url);
+        client.onReceivedError(this, DSUtils.FAKE_INT, new String(), url);
+        //clearHelpers();
     }
 
     /**
@@ -2452,7 +2458,8 @@ private void loadUrlImpl(String url) {
      * @param postData The data will be passed to "POST" request.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.573 -0500", hash_original_method = "4D8085D3E47A5523B39E9E45FB3B56EB", hash_generated_method = "BDA72B4C0B750A07FE4F609C9A662AA6")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void postUrl(String url, byte[] postData) {
         checkThread();
         if (URLUtil.isNetworkUrl(url)) {
@@ -2498,7 +2505,6 @@ public void postUrl(String url, byte[] postData) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.576 -0500", hash_original_method = "36CBAFDF58E1CD9C6313A9EA95B15170", hash_generated_method = "7129D2CE5481188BA506D152E5DF4298")
     
 public void loadData(String data, String mimeType, String encoding) {
-        checkThread();
         loadDataImpl(data, mimeType, encoding);
     }
 
@@ -2621,6 +2627,7 @@ public void stopLoading() {
     /**
      * Reload the current url.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.606 -0500", hash_original_method = "012D905CFE3C40A166231928A7F6FD85", hash_generated_method = "5F5638F28E9C0FFF9AA6B8A4D8FA6E4D")
     
 public void reload() {
@@ -3682,6 +3689,7 @@ private int computeRealVerticalScrollRange() {
      * that url has begun, the current page may not have changed.
      * @return The url for the current page.
      */
+    @DSSpec(DSCat.URI_EXCHANGE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.790 -0500", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "F38C676B99E9ECCC987DAE6C3277ADF4")
     
@@ -4558,8 +4566,9 @@ private void contentSizeChanged(boolean updateLayout) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.908 -0500", hash_original_method = "769F6743ED2D17827D8530B0462AC06C", hash_generated_method = "62BFFE4108BE3AC6FAE4A3DFA32B6093")
     
+    @DSVerified
 public void setWebViewClient(WebViewClient client) {
-        checkThread();
+        //checkThread();
         mCallbackProxy.setWebViewClient(client);
     }
 
@@ -4646,11 +4655,14 @@ public WebBackForwardListClient getWebBackForwardListClient() {
      * @deprecated This method is now obsolete.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.923 -0500", hash_original_method = "810505B18EC3CA9A02B80DBEC4016604", hash_generated_method = "965038717D24F7E9DE840A33C8EC8565")
-    
+
+    @DSVerified("Picture comes from Internet")
+    @DSSpec(DSCat.INTERNET)
 @Deprecated
     public void setPictureListener(PictureListener listener) {
-        checkThread();
         mPictureListener = listener;
+        if (listener != null)
+            listener.onNewPicture(this, new Picture());
     }
 
     /**
@@ -10190,6 +10202,7 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
     
     @Deprecated public interface PictureListener {
         
+        @DSVerified
         @Deprecated
         @DSComment("Abstract Method")
         @DSSpec(DSCat.ABSTRACT_METHOD)

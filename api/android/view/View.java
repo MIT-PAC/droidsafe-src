@@ -1351,8 +1351,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     new InputEventConsistencyVerifier(this, 0) : null;
     
                     @DSVerified
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public View(Context context){
 		mContext = context;
 		onSizeChanged(0,0,0,0);
@@ -1394,24 +1394,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      * @param attrs The attributes of the XML tag that is inflating the view.
      * @see #View(Context, AttributeSet, int)
      */
-    @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.705 -0500", hash_original_method = "7A0AD99F840E8369EC476A6B56BA8ADA", hash_generated_method = "A09B7F6F117B98E786ADFB55C19B5992")
     @DSVerified
 public View(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSVerified
     public View(Context context, AttributeSet attrs, int defStyle){
 		this(context);
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-	@DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSVerified
     View(){
 		this(new ContextImpl());
@@ -1422,7 +1422,8 @@ public View(Context context, AttributeSet attrs) {
 		*/
 	}
 	
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSVerified
     public View(droidsafe.helpers.DSOnlyType dontcare) {
        this(); 
@@ -2815,6 +2816,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="layout",mapping={@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LTR,to="LTR"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_RTL,to="RTL"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_INHERIT,to="INHERIT"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LOCALE,to="LOCALE")}) 
 	public int getLayoutDirection(){
@@ -2827,6 +2830,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return 0;
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setLayoutDirection(int layoutDirection){
@@ -6000,6 +6005,7 @@ public DragShadowBuilder() {
 			return 0;
 		}
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public static int getMode(int measureSpec){
 			// Original method
@@ -6185,8 +6191,8 @@ public BaseSavedState[] newArray(int size) {
          *
          * @param source
          */
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.189 -0500", hash_original_method = "0710B1BECA4AE2A64DE9C58BFD4A1161", hash_generated_method = "A170B20D980951FCD7B625137DF8A752")
         
 public BaseSavedState(Parcel source) {
@@ -6198,8 +6204,8 @@ public BaseSavedState(Parcel source) {
          *
          * @param superState The state of the superclass of this view
          */
-        @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSComment("constructor")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.192 -0500", hash_original_method = "C61013DFD638DC996F3EF4CC52F40C74", hash_generated_method = "47DE192996C36408BDAA9BA55ED90871")
         
 public BaseSavedState(Parcelable superState) {
@@ -6629,7 +6635,7 @@ AttachInfo(IWindowSession session, IWindow window,
     public static class AccessibilityDelegate {
         
         @DSVerified
-        @DSComment("not sensitive/not an action")
+        @DSComment("constructor")
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.663 -0400", hash_original_method = "B81C1E38B66B1195ED1D00E194D402D3", hash_generated_method = "B81C1E38B66B1195ED1D00E194D402D3")
         public AccessibilityDelegate ()
@@ -6773,7 +6779,8 @@ AttachInfo(IWindowSession session, IWindow window,
     }
     
     public interface OnCreateContextMenuListener {
-        
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo);
     }
     

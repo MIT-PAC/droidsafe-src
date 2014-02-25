@@ -738,6 +738,7 @@ protected View onCreateView(View parent, String name, AttributeSet attrs)
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.816 -0500", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "42E00CE52BE01D0BF7040FF60139A865")
+    @DSVerified
     
 View createViewFromTag(View parent, String name, AttributeSet attrs) {
         if (name.equals("view")) {

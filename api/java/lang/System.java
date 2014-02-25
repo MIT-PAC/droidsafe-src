@@ -384,6 +384,8 @@ public static String getProperty(String propertyName) {
      * @return the value of the specified system property or the {@code
      *         defaultValue} if the property does not exist.
      */
+    @DSComment("System information")
+    @DSSpec(DSCat.SYSTEM)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.667 -0500", hash_original_method = "0AD78573C84AE39631B832983C262457", hash_generated_method = "01672AFEB4169F8733E9B7130C897E0E")
     

@@ -92,18 +92,24 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
 
     private PopupDataSetObserver mObserver;
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.029 -0500", hash_original_method = "25FDD5DBEC32252B7FC5EA7A3C1328DA", hash_generated_method = "0C7B7D22F248FE6109823F4B0F4CAAE9")
     
 public AutoCompleteTextView(Context context) {
         this(context, null);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.032 -0500", hash_original_method = "37425D654E09169E65BAA252CC2C351E", hash_generated_method = "E4179262A4C131B20A93FB94930A339C")
     
 public AutoCompleteTextView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.autoCompleteTextViewStyle);
     }
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.036 -0500", hash_original_method = "E7A1365EE4283D79F23C38EBF5E5D299", hash_generated_method = "89FD964B0ABCB7421FE995ED0157B557")
     
 public AutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
@@ -524,6 +530,8 @@ public int getThreshold() {
      *
      * @attr ref android.R.styleable#AutoCompleteTextView_completionThreshold
      */
+    @DSComment("Autocomplete")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.087 -0500", hash_original_method = "E80EC39EC531963E159919926C4979B9", hash_generated_method = "19334D7DFA7EE4A6663FB4F88E3C4D9D")
     
 public void setThreshold(int threshold) {
@@ -984,6 +992,8 @@ public boolean isPerformingCompletion() {
      * 
      * @hide Pending API council approval.
      */
+    @DSComment("Autocomplete")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.155 -0500", hash_original_method = "3F95D8A8308B140C895762391C3A32C6", hash_generated_method = "24DAE7F22FFD61C7AE872D912B41AF03")
     
 public void setText(CharSequence text, boolean filter) {

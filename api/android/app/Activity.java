@@ -268,8 +268,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     final Handler mHandler = new Handler();
     
-	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+	@DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Activity() {
 		super();
 		mWindow = PolicyManager.makeNewWindow((Context)this);
@@ -305,14 +305,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         this.__ds__intentFilters.add(intentFilter);
         Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
         intent.addCategory(intentFilter.getCategory(getTaintInt()));
-        this.__ds__intentsFromFilter.add(intent);	
+        this.__ds__intentsFromFilter.add(intent);
     
         //set the intent from the intent filter
         this.setIntent(intent);
 
         return intent;
     }
-
 
 public void setIntent(Intent newIntent) {
         mIntent = newIntent;
@@ -432,7 +431,8 @@ public Window getWindow() {
 		*/
 	}
     
-	@DSComment("normal android callback")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
 	@DSVerified("Modeled Lifecycle Event")
     protected void onCreate(Bundle savedInstanceState){
@@ -477,6 +477,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
         restoreManagedDialogs(savedInstanceState);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
@@ -770,8 +771,6 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
     public boolean droidsafeOnCreateThumbnail() {
         return onCreateThumbnail(new Bitmap(), new Canvas());
     }
- 
-
     
     /**
      * Generate a new description for this activity.  This method is called
@@ -1181,7 +1180,8 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
-	@DSVerified
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -1207,7 +1207,8 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
-	@DSVerified
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -1313,6 +1314,7 @@ public void setFinishOnTouchOutside(boolean finish) {
         onGenericMotionEvent(motionEv);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onKeyDown(int keyCode, KeyEvent event){
@@ -1738,7 +1740,6 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-   
     
     @DSVerified
     @DSComment("normal android callback")
@@ -2582,7 +2583,9 @@ public LayoutInflater getLayoutInflater() {
         for (Intent intent: intents)
             startActivity(intent);
     }
-    
+
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
@@ -2658,10 +2661,14 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
+        fragment.onActivityCreated(new Bundle());
+        fragment.onActivityResult(DSUtils.FAKE_INT, DSUtils.FAKE_INT, intent);
 	    /*
 		Instrumentation.ActivityResult ar =
 	            mInstrumentation.execStartActivity(
@@ -4061,7 +4068,7 @@ final void performUserLeaving() {
      */
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-	public void droidsafeOnSubActivityHook() {
+	public void droidsafeSubActivityCallbackHook() {
         droidsafeOnOthersHook();
 	}
     
@@ -4090,7 +4097,6 @@ final void performUserLeaving() {
         //TODO: WHAT ABOUT A REAL MENU?
         this.onActionModeStarted(new ActionMode.SimpleActionMode());
         this.onActionModeFinished(new ActionMode.SimpleActionMode());
-        
         
         AttributeSet attrSet = new AttributeSet.EmptyAttributeSet();;
         this.onCreateView(new String(), getBaseContext(), attrSet);

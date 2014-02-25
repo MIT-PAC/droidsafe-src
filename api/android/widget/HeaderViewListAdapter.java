@@ -58,6 +58,7 @@ public HeaderViewListAdapter(ArrayList<ListView.FixedViewInfo> headerViewInfos,
                 && areAllListInfosSelectable(mFooterViewInfos);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.799 -0500", hash_original_method = "F816FE78C9557554F8C5B6BB80A06D13", hash_generated_method = "D35435BAA79C392D18F5E294569DB3F6")
     
@@ -299,6 +300,7 @@ public Filter getFilter() {
         return null;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.839 -0500", hash_original_method = "16C6428A588CE1C0BF49AB22D8718A60", hash_generated_method = "1B4072FCD9397C730B9A7DF907318F48")
     

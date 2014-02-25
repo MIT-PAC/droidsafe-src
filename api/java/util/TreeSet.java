@@ -22,8 +22,8 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
 
     private transient NavigableSet<E> descendingSet;
 
-    @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.834 -0500", hash_original_method = "B468A43994310DE7D91A1366853F3908", hash_generated_method = "B468A43994310DE7D91A1366853F3908")
     
 TreeSet(NavigableMap<E, Object> map) {
@@ -34,16 +34,16 @@ TreeSet(NavigableMap<E, Object> map) {
      * Constructs a new empty instance of {@code TreeSet} which uses natural
      * ordering.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.836 -0500", hash_original_method = "A94A461A61DAB692596F2C820B79ED22", hash_generated_method = "327076A149DBADC603C3153C96F5BBC3")
     
 public TreeSet() {
         backingMap = new TreeMap<E, Object>();
     }
     
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.545 -0400", hash_original_method = "98B2B75BFA703DD0E35ED82DE7014603", hash_generated_method = "9295DFAB1B2A4F093CB6CC0F48F4D93E")
     public  TreeSet(Collection<? extends E> collection) {
         this();
@@ -61,8 +61,8 @@ public TreeSet() {
      * @param comparator
      *            the comparator to use.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.843 -0500", hash_original_method = "8C746452C9FB7802CDFBFB3337D39F4C", hash_generated_method = "E0BD18821C11565186A14557633F54CF")
     
 public TreeSet(Comparator<? super E> comparator) {
@@ -76,8 +76,8 @@ public TreeSet(Comparator<? super E> comparator) {
      * @param set
      *            the SortedSet of elements to add.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.845 -0500", hash_original_method = "A9811B2E808509DC9D16313E2A4EF959", hash_generated_method = "7357EAA636FC4374A613D83DAF4FD331")
     
 public TreeSet(SortedSet<E> set) {

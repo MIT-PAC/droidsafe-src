@@ -912,6 +912,8 @@ public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.900 -0500", hash_original_method = "9C697C4B592697CC08FD298666C0BB54", hash_generated_method = "E8E099DCDF065A984638E8D712836242")
     
 public ByteBuffer put(ByteBuffer src) {

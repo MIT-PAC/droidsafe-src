@@ -26,8 +26,8 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
 
     public LoadedApk mLoadedApk;
 
-    @DSComment("Safe, check callback modeling")
-    @DSSafe(DSCat.ANDROID_APPLICATION)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.744 -0500", hash_original_method = "C931B33981954029459F423E4A87FAC0", hash_generated_method = "F0E4FB0F5E319AAF30983CD5CD1CB19D")
     
 public Application() {
@@ -296,19 +296,26 @@ private Object[] collectActivityLifecycleCallbacks() {
     }
     
 	// ------------- Droidsafe Hooks -------------
-    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL) 
  	public void droidsafeAttach(Context context) {
  		attach(context);
  	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL) 
 	public void droidsafeOnCreate() {
 		onCreate();
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL) 
 	public void droidsafeOnTerminate() {
 		onTerminate();
 	}
-    
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public void droidsafeOnEverythingElse() {
 		onTrimMemory(getTaintInt());
 		onLowMemory();

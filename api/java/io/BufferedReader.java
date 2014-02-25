@@ -32,7 +32,7 @@ public class BufferedReader extends Reader {
      *
      * @param in the {@code Reader} the buffer reads from.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.785 -0500", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "C875FF71AF33FE067958C813F8D30031")
     
@@ -48,7 +48,7 @@ public BufferedReader(Reader in) {
      * @param size the size of buffer in characters.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
-    @DSComment("Spec is marked when opening raw stream")
+    @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.788 -0500", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "606113C73DB54594A0B938E27DBC855E")
     
@@ -216,6 +216,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.807 -0500", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "BD51F80B0E1483CC290DA4C926697DD8")
     
 @Override
@@ -256,6 +258,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.810 -0500", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "D9AE1B55A0510DB080BA6CE3B1DC1A90")
     
 @Override

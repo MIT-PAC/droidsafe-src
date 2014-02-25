@@ -21,8 +21,8 @@ public final class InputQueue {
     private static void nativeRegisterInputChannel(InputChannel inputChannel,
             InputHandler inputHandler, MessageQueue messageQueue) {
         channels.add(inputChannel);
-        KeyEvent keyEvent = KeyEvent.droidsafeObtainEvent();
-        MotionEvent motionEvent = MotionEvent.droidsafeObtainEvent(); 
+        KeyEvent keyEvent = new KeyEvent();
+        MotionEvent motionEvent = new MotionEvent(); 
         long token = new Random().nextLong();
         FinishedCallback callback = FinishedCallback.obtain(token);
 

@@ -74,8 +74,8 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     boolean mShownByMe;
 
-    @DSComment("GUI, dialog")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.483 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
     @DSVerified
     
@@ -283,6 +283,8 @@ public boolean getShowsDialog() {
         return mShowsDialog;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.511 -0500", hash_original_method = "4F6E3ACB3030C4724A44B02F1B4FB1BA", hash_generated_method = "409F3CC8703F9FF26D31058EF49DCA85")
     
 @Override

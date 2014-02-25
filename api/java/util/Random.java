@@ -30,8 +30,8 @@ public class Random implements Serializable {
      * <p>The initial state (that is, the seed) is <i>partially</i> based
      * on the current time of day in milliseconds.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.537 -0500", hash_original_method = "3173C51AF7594D647EC1C2CFA488A448", hash_generated_method = "3003E66E4DF5DBAF130E361D30BBC461")
     
 public Random() {
@@ -46,8 +46,8 @@ public Random() {
      * <p>This constructor is mainly useful for <i>predictability</i> in tests.
      * The default constructor is likely to provide better randomness.
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.540 -0500", hash_original_method = "D88C1F5B76368386940C522DAEBBB898", hash_generated_method = "2AB029D1B592D6FE924D1C32E74CCD2F")
     
 public Random(long seed) {

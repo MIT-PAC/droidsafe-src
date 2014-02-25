@@ -44,10 +44,8 @@ public class AccessibilityNodeProviderCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.761 -0500", hash_original_field = "48629E1EF59C7AC3C27FEDA4F322ABF0", hash_generated_field = "CE1E18E5EA07069A732C13416453E5C0")
 
-
     private static  AccessibilityNodeProviderImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.764 -0500", hash_original_field = "CE4A25A5FCA68A13DF0B738C2E4F0931", hash_generated_field = "97E0C8F5D54B0146976916141F3ABC8E")
-
 
     private  Object mProvider;
 
@@ -79,6 +77,7 @@ public AccessibilityNodeProviderCompat(Object provider) {
     /**
      * @return The wrapped {@link android.view.accessibility.AccessibilityNodeProvider}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.774 -0500", hash_original_method = "1A780E2925A8445EDC44EDD31624C667", hash_generated_method = "19AF098890749E7BDD93C8A964CD775E")
     
 public Object getProvider() {

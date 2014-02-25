@@ -70,8 +70,8 @@ public Messenger[] newArray(int size) {
      * 
      * @param target The Handler that will receive sent messages.
      */
-    @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.403 -0500", hash_original_method = "A65C5BAC2E4407473A9171FA89173DDE", hash_generated_method = "F9EADB68E50F41D4F02A92288796FDE3")
     
 public Messenger(Handler target) {
@@ -84,8 +84,8 @@ public Messenger(Handler target) {
      * 
      * @param target The IBinder this Messenger should communicate with.
      */
-    @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.431 -0500", hash_original_method = "291BB446453057D831D652E8D2879500", hash_generated_method = "21FAEE86AF040679487C6933431AE666")
     
 public Messenger(IBinder target) {

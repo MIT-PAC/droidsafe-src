@@ -479,6 +479,7 @@ private ProfileSyncState() {}
          * @param contactUri A {@link #CONTENT_URI} row, or an existing
          *            {@link #CONTENT_LOOKUP_URI} to attempt refreshing.
          */
+        @DSSpec(DSCat.CONTACT)
         @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.803 -0500", hash_original_method = "297CD8052D16F966DA20463FE5C9F18D", hash_generated_method = "E132A7F36CE1995AD84D3CA4E748E1F1")
         
@@ -506,6 +507,7 @@ public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
          * Build a {@link #CONTENT_LOOKUP_URI} lookup {@link Uri} using the
          * given {@link ContactsContract.Contacts#_ID} and {@link #LOOKUP_KEY}.
          */
+        @DSSpec(DSCat.CONTACT)
         @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.805 -0500", hash_original_method = "0E35577C3A2634FAB6CE2A7C0110A8D4", hash_generated_method = "7A2D838CE8D4D565E159F4336E306008")
         
@@ -2603,6 +2605,7 @@ private ProviderStatus() {
          *            already viewing the contact details card, this can be used
          *            to omit the details entry from the dialog.
          */
+        @DSSpec(DSCat.CONTACT)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.923 -0500", hash_original_method = "718CFEA83C0A766BFE63C0D34638CAC0", hash_generated_method = "8025127BAB7936EEF5D047C5941E2A4C")
         
 public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
@@ -2649,6 +2652,7 @@ public static void showQuickContact(Context context, View target, Uri lookupUri,
          *            already viewing the contact details card, this can be used
          *            to omit the details entry from the dialog.
          */
+        @DSSpec(DSCat.CONTACT)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.926 -0500", hash_original_method = "55973817E502F758AB5135D809FEAF34", hash_generated_method = "CB00F9B98EAF811099D2420F8D678C5B")
         
 public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,

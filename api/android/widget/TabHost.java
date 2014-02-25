@@ -54,6 +54,8 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
 
     private int mTabLayoutId;
 
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.567 -0500", hash_original_method = "81177E2AB2CE2AADA9E4D9B57D5EE61E", hash_generated_method = "1974FB29BBEE5CBE2B7611BE4D2F4E31")
     
 public TabHost(Context context) {
@@ -61,8 +63,8 @@ public TabHost(Context context) {
         initTabHost();
     }
 
-    @DSComment("TabHost, check callbacks modeled")
-    @DSSafe(DSCat.GUI)
+    @DSComment("constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.570 -0500", hash_original_method = "6A9D0785655056C88014FFCBE8AF5DF8", hash_generated_method = "C057BB56C35A71EA0AE296190D007541")
     
 public TabHost(Context context, AttributeSet attrs) {

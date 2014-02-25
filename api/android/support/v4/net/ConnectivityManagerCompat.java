@@ -81,7 +81,6 @@ public class ConnectivityManagerCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.757 -0500", hash_original_field = "98D4FEAE4D74781E5C7D506BA2049F3B", hash_generated_field = "1F929D9DFBE6D25785432D16CEEE3F39")
 
-
     private static  ConnectivityManagerCompatImpl IMPL;
 
     static {
@@ -114,6 +113,7 @@ public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
      * potentially-stale value from
      * {@link ConnectivityManager#EXTRA_NETWORK_INFO}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.766 -0500", hash_original_method = "B5D2929AF51F9EC227FA93BC6AC1D13F", hash_generated_method = "D9576F332F39CC0B6F2F6C8F46671305")
     
 public static NetworkInfo getNetworkInfoFromBroadcast(ConnectivityManager cm, Intent intent) {

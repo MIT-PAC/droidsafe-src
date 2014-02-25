@@ -110,7 +110,8 @@ public static SQLiteDatabase openDatabase(String path, CursorFactory factory, in
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.144 -0500", hash_original_method = "320878150F5912B8D3148CDF6639FAEA", hash_generated_method = "7A60C4CE5D61D8E31F425BBC36F9236C")
-    
+    @DSVerified
+    @DSSpec(DSCat.DATABASE)
 private static SQLiteDatabase openDatabase(String path, CursorFactory factory, int flags,
             DatabaseErrorHandler errorHandler, short connectionNum) {
         SQLiteDatabase db = new SQLiteDatabase(path, factory, flags, errorHandler, connectionNum);
@@ -517,7 +518,8 @@ static ArrayList<DbStats> getDbStats() {
 
     private final ArrayList<Integer> mCustomFunctions =
             new ArrayList<Integer>();
-    
+    @DSVerified
+    @DSSpec(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.536 -0400", hash_original_method = "ED994C20AB51232E6F0B83AA0494CFAA", hash_generated_method = "379F4686F5BBA9E0C91C6A2E8EA0C809")
     private  SQLiteDatabase(String path, CursorFactory factory, int flags,
             DatabaseErrorHandler errorHandler, short connectionNum) {
@@ -1958,6 +1960,8 @@ public long replaceOrThrow(String table, String nullColumnHack,
      * {@link #CONFLICT_IGNORE}
      * OR -1 if any error
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.239 -0500", hash_original_method = "4E696CAC31E62C2450813F66BA0D3688", hash_generated_method = "D3FFFFD73FA936FAF47289C5F6C32E7E")
     
 public long insertWithOnConflict(String table, String nullColumnHack,
@@ -2180,6 +2184,8 @@ public void execSQL(String sql) throws SQLException {
      * @param bindArgs only byte[], String, Long and Double are supported in bindArgs.
      * @throws SQLException if the SQL string is invalid
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.253 -0500", hash_original_method = "C75317BDB75C741C750B94F218C97882", hash_generated_method = "EBB1B2E9ABAA2FAB66A09DC8431DF450")
     
 public void execSQL(String sql, Object[] bindArgs) throws SQLException {

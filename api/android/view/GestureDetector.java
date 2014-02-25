@@ -110,7 +110,8 @@ public class GestureDetector {
      *      android.view.GestureDetector.OnGestureListener, android.os.Handler)} instead.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.779 -0500", hash_original_method = "A860FCB0BF3B13241916CBB6D51694FF", hash_generated_method = "483A0378504B2A0BA9280087D88B032E")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 @Deprecated
     public GestureDetector(OnGestureListener listener, Handler handler) {
         this(null, listener, handler);
@@ -130,7 +131,8 @@ public class GestureDetector {
      *      android.view.GestureDetector.OnGestureListener)} instead.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.782 -0500", hash_original_method = "6A4A0666EC699D6858654C1F91F62135", hash_generated_method = "99BD04EE9FBE8B984F91705EAEE67716")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 @Deprecated
     public GestureDetector(OnGestureListener listener) {
         this(null, listener, null);
@@ -148,7 +150,8 @@ public class GestureDetector {
      * @throws NullPointerException if {@code listener} is null.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.785 -0500", hash_original_method = "D6C1A078025AA71050A12C76B6AD8601", hash_generated_method = "5419B561FCBBBBCD0F236CE7EE9B24FC")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public GestureDetector(Context context, OnGestureListener listener) {
         this(context, listener, null);
     }
@@ -166,12 +169,14 @@ public GestureDetector(Context context, OnGestureListener listener) {
      * @throws NullPointerException if {@code listener} is null.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.788 -0500", hash_original_method = "D04E727BBFBC862644FCD26897C3FDE9", hash_generated_method = "D8AB09B5C4D5F3E22791F8D7E0B84762")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public GestureDetector(Context context, OnGestureListener listener, Handler handler) {
         this(context, listener, handler, context != null &&
                 context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.FROYO);
     }
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.340 -0400", hash_original_method = "3A200FED7280634DDE54E1C354EDC878", hash_generated_method = "2ACD6CA9F5DEC57A33DA67091312F2BF")
     public  GestureDetector(Context context, OnGestureListener listener, Handler handler,
             boolean ignoreMultitouch) {
