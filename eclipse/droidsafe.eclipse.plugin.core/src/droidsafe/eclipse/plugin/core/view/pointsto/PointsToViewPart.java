@@ -1,21 +1,12 @@
 package droidsafe.eclipse.plugin.core.view.pointsto;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.MethodInfoOutlineViewPart;
-import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 import droidsafe.speclang.model.MethodModel;
 
 /**
@@ -65,6 +56,10 @@ public class PointsToViewPart extends MethodInfoOutlineViewPart {
         activePage.activate(view);
     }
 
+    protected MethodModel getMethod() {
+        return (MethodModel) fInputElement;
+    }
+    
 //    /**
 //     * Auxiliary function to setup a selection listener that would reset the contents of the outline
 //     * view once a different project is selected.

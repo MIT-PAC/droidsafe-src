@@ -88,8 +88,10 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
                 if (data instanceof MethodModel) {
                   MethodModel method = (MethodModel) data;
                   PointsToViewPart.openView(method);
-                  InfoFlowDetailsViewPart.openView(method);
                   ValueViewPart.openView(method);
+                  SourceSinkPair sourceSinkFilter = (SourceSinkPair) treeElement.getParent().getData();
+                  MethodWithSourceSinkFilter methodWithSourceSinkFilter = new MethodWithSourceSinkFilter(method, sourceSinkFilter);
+                  InfoFlowDetailsViewPart.openView(methodWithSourceSinkFilter);
                 }
               }
             }

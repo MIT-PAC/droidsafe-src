@@ -23,18 +23,23 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.action.IStatusLineManager;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.Region;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IEditorActionBarContributor;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.SubActionBars;
 import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.ITextEditor;
@@ -43,9 +48,7 @@ import org.osgi.framework.FrameworkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
@@ -138,27 +141,38 @@ public class DroidsafePluginUtilities {
           document.getLineOffset(lineNumber - 1),
           document.getLineLength(lineNumber - 1));
       } catch (BadLocationException e) {
-        logger.debug("Exception while revealing line {} for class {}", line, className);
+        error("Bad source location: line " + line + " for class " + className);
         e.printStackTrace();
       }
     }
   }
 
-  /**
+  private static void error(String errMsg) {
+    //IActionBars bars = viewPart.getViewSite().getActionBars();
+    //((SubActionBars)bars).activate();
+    IWorkbenchPage page =
+        PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+        .getActivePage();
+    IWorkbenchPart part = page.getActivePart();
+    IActionBars bars = null;
+    if (part instanceof IViewPart) {
+      bars = ((IViewPart) part).getViewSite().getActionBars();
+    } else if (part instanceof IEditorPart) {
+      bars = ((IEditorPart) part).getEditorSite().getActionBars();
+    }
+    if (bars != null) {
+      bars.getStatusLineManager().setErrorMessage(errMsg);
+    }
+    logger.debug(errMsg);
+  }
+
+/**
    * Reveals and highlights the given method argument or receiver for the given project in an editor.  
    * Activates the editor if the parameter 'activate' is true.
    */
   public static void revealInEditor(IProject project, MethodArgumentModel methArg, boolean activate) {
     MethodModel method = methArg.getMethod();
-    List<CodeLocationModel> lines = method.getLines();
-    SourceLocationTag line;
-    boolean isDecl = false;
-    if (lines.isEmpty()) {
-      line = method.getDeclSourceLocation();
-      isDecl = true;
-    } else {
-      line = lines.get(0);
-    }
+    SourceLocationTag line = getLine(method);
     if (line != null) {
       String className = line.getClz();
       IEditorPart openedEditor = openEditor(project, className, activate);
@@ -168,6 +182,7 @@ public class DroidsafePluginUtilities {
             textEditor.getDocumentProvider().getDocument(
               textEditor.getEditorInput());
         int lineNumber = line.getLine();
+        boolean isDecl = method.getLines().isEmpty();
         IRegion region = getRegion(document, methArg, line, isDecl);
         try {
           int offset = (region == null) ? document.getLineOffset(lineNumber - 1) : region.getOffset();
@@ -186,33 +201,21 @@ public class DroidsafePluginUtilities {
    * Activates the editor if the parameter 'activate' is true.
    */
   public static void revealInEditor(IProject project, MethodModel method, boolean activate) {
+    SourceLocationTag line = getLine(method);
+    if (line != null) {
+      revealInEditor(project, line, activate);
+    }
+  }
+
+  public static SourceLocationTag getLine(MethodModel method) {
     List<CodeLocationModel> lines = method.getLines();
-    SourceLocationTag line;
+    SourceLocationTag line = null;
     if (lines.isEmpty()) {
       line = method.getDeclSourceLocation();
     } else {
       line = lines.get(0);
     }
-    if (line != null) {
-      String className = line.getClz();
-      IEditorPart openedEditor = openEditor(project, className, activate);
-      if (openedEditor != null && openedEditor instanceof ITextEditor) {
-        ITextEditor textEditor = (ITextEditor) openedEditor;
-        IDocument document =
-            textEditor.getDocumentProvider().getDocument(
-              textEditor.getEditorInput());
-        int lineNumber = line.getLine();
-        int offset;
-        try {
-            offset = document.getLineOffset(lineNumber - 1);
-            int length = document.getLineLength(lineNumber - 1);
-            textEditor.selectAndReveal(offset, length);
-        } catch (BadLocationException e) {
-            logger.debug("Exception while creating editor for line {}", line);
-            e.printStackTrace();
-        }
-      }
-    }
+    return line;
   }
 
   /**
@@ -257,7 +260,7 @@ public class DroidsafePluginUtilities {
     String regex = "(^|(.*)?\\s+)(" + methodName + ")\\s*\\((.*\\)).*\\{.*";
     Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
     boolean matched = false;
-    int offset, length;
+    int offset;
     IRegion region = null;
     while (startLine > 0 && !matched) {
       offset = document.getLineOffset(startLine);
@@ -488,13 +491,16 @@ public class DroidsafePluginUtilities {
         }
       }
     } catch (Exception ex) {
-      logger.debug("Exception while creating editor for class {}", className);
       ex.printStackTrace();
     }
+    if (openEditor == null)
+      error("Failed to find Java source for class " + className);      
     return openEditor;
   }
+  
+  
 
-  /**
+/**
    * Returns the path name for Apac Home.
    */
   public static String getApacHome() {

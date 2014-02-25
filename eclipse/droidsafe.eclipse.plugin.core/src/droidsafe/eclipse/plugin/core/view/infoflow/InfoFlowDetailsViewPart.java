@@ -1,21 +1,12 @@
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.MethodInfoOutlineViewPart;
-import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 import droidsafe.speclang.model.MethodModel;
 
 /**
@@ -53,9 +44,20 @@ public class InfoFlowDetailsViewPart extends MethodInfoOutlineViewPart {
     }
 
     /**
+     * Return the method on which the droidsafe analysis info is displayed on this outline.
+     */
+    protected MethodModel getMethod() {
+        if (fInputElement instanceof MethodModel)
+            return (MethodModel) fInputElement;
+        if (fInputElement instanceof MethodWithSourceSinkFilter)
+            return ((MethodWithSourceSinkFilter)fInputElement).getMethod();
+        return null;
+    }
+
+    /**
      * Open the outline view for the given input element.
      */
-    public static void openView(MethodModel inputElement) {
+    public static void openView(Object inputElement) {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
         InfoFlowDetailsViewPart view = (InfoFlowDetailsViewPart) activePage.findView(VIEW_ID);
         if (view == null) {
