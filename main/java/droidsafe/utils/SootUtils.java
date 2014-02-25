@@ -70,7 +70,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.tagkit.GeneratedPhantomMethodTag;
 import soot.tagkit.LineNumberTag;
-import soot.tagkit.SourceLnNamePosTag;
+import soot.tagkit.SourceFileTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.Type;
@@ -826,7 +826,7 @@ public class SootUtils {
      * Return the source location of a method based on its first statement.
      */
     public static SourceLocationTag getMethodLocation(SootMethod method) {
-        if (method.isConcrete()) {
+        if (method != null && method.isConcrete()) {
             Chain<Unit> stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
             Iterator<Unit> stmtIt = stmts.snapshotIterator();
 
@@ -885,24 +885,30 @@ public class SootUtils {
      * Return the source location of a Jimple statement in a soot class.
      */
     public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
-        if (stmt == null || clz == null) {
-            return null;
+        if (stmt != null && clz != null) {
+            SourceLocationTag line = stmtToSourceLocMap.get(stmt);
+            if (line != null)
+                return line;
+            if (ClassCloner.isClonedClass(clz))
+                clz = ClassCloner.getClonedClassFromClone(clz);
+            LineNumberTag lineNumberTag = (LineNumberTag) stmt.getTag("LineNumberTag");
+            if (lineNumberTag != null) {
+                SourceFileTag sourceFileTag = (SourceFileTag) clz.getTag("SourceFileTag");
+                if (sourceFileTag != null) {
+                    String sourceFile = sourceFileTag.getSourceFile();
+                    int pos = sourceFile.indexOf(".");
+                    if (pos > 0) {
+                        String sourceFileClass = clz.getPackageName() + "." + sourceFile.substring(0, pos);
+                        line = new SourceLocationTag(sourceFileClass,  lineNumberTag.getLineNumber());
+                        stmtToSourceLocMap.put(stmt, line);
+                        return line;
+                    }
+                }
+            } else {
+                logger.debug("Cannot find line number tag for {} {}", stmt, clz);
+            }
         }
-
-        SourceLocationTag line = stmtToSourceLocMap.get(stmt);
-        if (line != null)
-            return line;
-
-        LineNumberTag tag = (LineNumberTag) stmt.getTag("LineNumberTag");
-
-        if (tag != null) {
-            line = new SourceLocationTag(clz.toString(),  tag.getLineNumber()); 
-            stmtToSourceLocMap.put(stmt, line);
-        } else {
-            logger.debug("Cannot find line number tag for {} {}", stmt, clz);
-        }
-
-        return line;
+        return null;
     }
 
     /**
