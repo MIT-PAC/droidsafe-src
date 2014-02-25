@@ -127,7 +127,10 @@ public class SMTP extends SocketClient
      * for saving SMTP reply information.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.389 -0500", hash_original_method = "9F40EF610D87F26524AC6D109A5BE297", hash_generated_method = "50F3D9B24A302707056EF234BCACCD48")
-    
+
+    @DSComment("Constructor")
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public SMTP()
     {
         setDefaultPort(DEFAULT_PORT);
@@ -139,7 +142,8 @@ public SMTP()
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.393 -0500", hash_original_method = "1D3E8BFCD7325AB348F43D5C5B1437A0", hash_generated_method = "E6956E6D765D88ED0AA3A7175C92BC2E")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
 private int __sendCommand(String command, String args, boolean includeSpace)
     throws IOException
     {
@@ -168,7 +172,8 @@ private int __sendCommand(String command, String args, boolean includeSpace)
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.396 -0500", hash_original_method = "39E467315B0550F4BCD2DCF905E6BAC3", hash_generated_method = "B79E0F8C114406AB0F3D873846D4CF7A")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
 private int __sendCommand(int command, String args, boolean includeSpace)
     throws IOException
     {
@@ -176,7 +181,8 @@ private int __sendCommand(int command, String args, boolean includeSpace)
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.401 -0500", hash_original_method = "2E97ADF91021E508EA557CC7491DEEE5", hash_generated_method = "D21CD44644C6BA04EF9673339E05EFD9")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
 private void __getReply() throws IOException
     {
         int length;
@@ -244,7 +250,8 @@ private void __getReply() throws IOException
 
     /*** Initiates control connections and gets initial reply. ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.404 -0500", hash_original_method = "4BE5AFBC6E7AF7109FE6D4429F8CEB8D", hash_generated_method = "D1A4E670EEBDCB98A0A2CF76FD22C954")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 protected void _connectAction_() throws IOException
     {
         super._connectAction_();
@@ -265,7 +272,8 @@ protected void _connectAction_() throws IOException
      * @param listener  The ProtocolCommandListener to add.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.407 -0500", hash_original_method = "B2E7C8147EAF016E25D01B4A081623E2", hash_generated_method = "EBB19817C4DDE4A3C65E2B3B1F18E706")
-    
+    @DSVerified("Callbacks called from command support")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void addProtocolCommandListener(ProtocolCommandListener listener)
     {
         _commandSupport_.addProtocolCommandListener(listener);
@@ -278,7 +286,8 @@ public void addProtocolCommandListener(ProtocolCommandListener listener)
      * @param listener  The ProtocolCommandListener to remove.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.410 -0500", hash_original_method = "17C790A63BE2E925F1B089C57BEDE92F", hash_generated_method = "61530F256429087D025AC2A72509A95D")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void removeProtocolCommandistener(ProtocolCommandListener listener)
     {
         _commandSupport_.removeProtocolCommandListener(listener);
@@ -294,7 +303,8 @@ public void removeProtocolCommandistener(ProtocolCommandListener listener)
      * @exception IOException If an error occurs while disconnecting.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.413 -0500", hash_original_method = "270AE27F27A3F7621C8092BA94DE298D", hash_generated_method = "18BBEE17F7D24A9079B33AEDF2E4EF50")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void disconnect() throws IOException
     {
         super.disconnect();
@@ -327,7 +337,9 @@ public void disconnect() throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.417 -0500", hash_original_method = "0218F4D28BBAC52F4E4CDA38DE21ED29", hash_generated_method = "A6523FFC35A73A72F6578AEEF3CC2A9D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int sendCommand(String command, String args) throws IOException
     {
         return __sendCommand(command, args, true);
@@ -356,7 +368,9 @@ public int sendCommand(String command, String args) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.419 -0500", hash_original_method = "8DE93EB71DBB87CAEC8D19D2B5E0D583", hash_generated_method = "153ED036F6D2AC6DDC165C7DD1F9EF63")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int sendCommand(int command, String args) throws IOException
     {
         return sendCommand(SMTPCommand._commands[command], args);
@@ -382,7 +396,9 @@ public int sendCommand(int command, String args) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.423 -0500", hash_original_method = "249D1EA65C901278A4D9A21CA58581D8", hash_generated_method = "319B33627FD404284CF2FADC01D735DC")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int sendCommand(String command) throws IOException
     {
         return sendCommand(command, null);
@@ -409,7 +425,9 @@ public int sendCommand(String command) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.426 -0500", hash_original_method = "1F8849508E07E274C5D8FC641A8F26DF", hash_generated_method = "9641A9247D5EAF7473C640D4A279E4DE")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int sendCommand(int command) throws IOException
     {
         return sendCommand(command, null);
@@ -425,7 +443,8 @@ public int sendCommand(int command) throws IOException
      * @return The integer value of the reply code of the last SMTP reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.429 -0500", hash_original_method = "C50A2128BE09AED79AF9E811C678D377", hash_generated_method = "B9B64ED2E5BE5B2AD33B35CE05FA014A")
-    
+    @DSVerified("Getter Method")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getReplyCode()
     {
         return _replyCode;
@@ -449,7 +468,8 @@ public int getReplyCode()
      *                         server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.433 -0500", hash_original_method = "7A68383686F9416248FE3E530FCEE8A5", hash_generated_method = "575287EC1D25B9CB6A334BD3212BBDC7")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int getReply() throws IOException
     {
         __getReply();
@@ -465,7 +485,8 @@ public int getReply() throws IOException
      * @return The lines of text from the last SMTP response as an array.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.436 -0500", hash_original_method = "3A94E407C2A98EED939BFA1A6A3156D5", hash_generated_method = "D7F54852D6CD4A77CA3C84C4B5B9FBFB")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public String[] getReplyStrings()
     {
         String[] lines;
@@ -482,7 +503,8 @@ public String[] getReplyStrings()
      * @return The entire text from the last SMTP response as a String.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.439 -0500", hash_original_method = "84E293B796CFF792E36C37EFD2119006", hash_generated_method = "7A2D3AD43224B53EF4FBD29D4B1D280A")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public String getReplyString()
     {
         Enumeration en;
@@ -520,7 +542,9 @@ public String getReplyString()
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.442 -0500", hash_original_method = "B5C1A087675A1945EC6C55F404B859EF", hash_generated_method = "C071A397866D02A93D1A81C8028C5A31")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public int helo(String hostname) throws IOException
     {
         return sendCommand(SMTPCommand.HELO, hostname);
@@ -542,7 +566,9 @@ public int helo(String hostname) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.445 -0500", hash_original_method = "781B73A423F5607115D65A9F70C8C3FD", hash_generated_method = "D543F294199168290E6AF66EFEC94A0E")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int mail(String reversePath) throws IOException
     {
         return __sendCommand(SMTPCommand.MAIL, reversePath, false);
@@ -564,7 +590,9 @@ public int mail(String reversePath) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.449 -0500", hash_original_method = "E09AC91BFF0716A1363050785841D6F7", hash_generated_method = "27D251DA038DA05A7DD877977877B001")
-    
+     @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})   
 public int rcpt(String forwardPath) throws IOException
     {
         return __sendCommand(SMTPCommand.RCPT, forwardPath, false);
@@ -585,7 +613,9 @@ public int rcpt(String forwardPath) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.452 -0500", hash_original_method = "748B8AADFB217AB8F29DF7ED1C81D966", hash_generated_method = "0B4E66181B796C9630F40375F7787CCF")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int data() throws IOException
     {
         return sendCommand(SMTPCommand.DATA);
@@ -607,7 +637,9 @@ public int data() throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.455 -0500", hash_original_method = "CE7958995206C16BABC830EC1527AD6A", hash_generated_method = "B0C6476C1A7AA9D02FCCF8389C3472A7")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int send(String reversePath) throws IOException
     {
         return sendCommand(SMTPCommand.SEND, reversePath);
@@ -629,7 +661,9 @@ public int send(String reversePath) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.458 -0500", hash_original_method = "B0CD1CF37C47B6EE8CA9750CE89F4BC8", hash_generated_method = "3F9500F6CC498B34F0757D541AC9F0D3")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int soml(String reversePath) throws IOException
     {
         return sendCommand(SMTPCommand.SOML, reversePath);
@@ -651,7 +685,9 @@ public int soml(String reversePath) throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.461 -0500", hash_original_method = "A5632C4BCBF4A04998C8AED30BFA7D34", hash_generated_method = "451AC0235001E13CBE31F28EA5F72ECF")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int saml(String reversePath) throws IOException
     {
         return sendCommand(SMTPCommand.SAML, reversePath);
@@ -673,6 +709,9 @@ public int saml(String reversePath) throws IOException
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.464 -0500", hash_original_method = "96B070670DE0E95F8D3FF147ADCAC1FA", hash_generated_method = "962E9816683B153B9D737496AF7F2319")
     
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int rset() throws IOException
     {
         return sendCommand(SMTPCommand.RSET);
@@ -694,7 +733,9 @@ public int rset() throws IOException
      *      command or receiving the server reply.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.467 -0500", hash_original_method = "48854BC79E0F6D799B73E2D315528F1E", hash_generated_method = "9F05A7A5E55780B46804AA35B3B91120")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public int vrfy(String user) throws IOException
     {
         return sendCommand(SMTPCommand.VRFY, user);
