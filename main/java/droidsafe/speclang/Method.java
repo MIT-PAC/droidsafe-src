@@ -23,6 +23,7 @@ import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
 import soot.Value;
+import soot.jimple.Constant;
 import soot.jimple.Expr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
@@ -470,6 +471,9 @@ public class Method implements Comparable<Method> {
                 argInfoValues[i] = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
                             getMethodContext(), (Local)ptaInfo.getArgValue(i));
+            } else if (ptaInfo.getArgValue(i) instanceof Constant) {
+                //do nothing for constants
+                
             } else {
                 logger.error("Unknown value or type for argument when retreiveing infovalue: {} {} {}", 
                     getMethodContext(), ptaInfo.getArgValue(i), ptaInfo.getArgValue(i).getType());

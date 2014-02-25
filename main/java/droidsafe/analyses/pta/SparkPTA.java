@@ -242,13 +242,6 @@ public class SparkPTA extends PTABridge {
         return allAllocNodes;
     }
 
-    /**
-     * Given a Spark AllocNode return the corresponding new expression (Jimple NewExpr or String) 
-     */
-    public Object getNewExpr(IAllocNode an) {
-        return newToAllocNodeMap.inverse().get((AllocNode) an);
-    }
-
 
     @Override
     public boolean isLegalCast(Type objType, Type refType) {
