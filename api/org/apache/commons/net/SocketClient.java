@@ -85,7 +85,8 @@ public abstract class SocketClient
      * {@link org.apache.commons.net.DefaultSocketFactory}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.126 -0500", hash_original_method = "93FF3AD39A65F94071EDD8E8BD3E2EC6", hash_generated_method = "A8D9DAA4A8C3033FC100F445681247DB")
-    
+    @DSComment("Constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)  
 public SocketClient()
     {
         _socket_ = null;
@@ -115,7 +116,8 @@ public SocketClient()
      * initialization of the aforementioned protected variables.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.129 -0500", hash_original_method = "6901DE6A68C50AF510824F6003DFB9AA", hash_generated_method = "C4D04EC4C4B919DA34DF87779076DC74")
-    
+    @DSVerified("Calling getters")
+    @DSSafe(DSCat.SAFE_OTHERS)
 protected void _connectAction_() throws IOException
     {
         _socket_.setSoTimeout(_timeout_);
@@ -139,7 +141,8 @@ protected void _connectAction_() throws IOException
      *  derived from it.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.132 -0500", hash_original_method = "7B958379BE3471901DE9AE1E0C97E973", hash_generated_method = "59DFFFFD87AC2E26A854BEDC8D27CD38")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void connect(InetAddress host, int port)
     throws SocketException, IOException
     {
@@ -162,7 +165,8 @@ public void connect(InetAddress host, int port)
      * @exception UnknownHostException If the hostname cannot be resolved.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.135 -0500", hash_original_method = "41EEE4FD6DB40E930F556CF3C8791806", hash_generated_method = "9C6A38F158C783651B9DB6E6338D9FFF")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void connect(String hostname, int port)
     throws SocketException, IOException
     {
@@ -187,7 +191,8 @@ public void connect(String hostname, int port)
      *  derived from it.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.138 -0500", hash_original_method = "2CAF2963B0112EDF585D8A32A0235CCA", hash_generated_method = "396152F6872FABEFE736E336119A17A3")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void connect(InetAddress host, int port,
                         InetAddress localAddr, int localPort)
     throws SocketException, IOException
@@ -214,7 +219,8 @@ public void connect(InetAddress host, int port,
      * @exception UnknownHostException If the hostname cannot be resolved.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.141 -0500", hash_original_method = "A05AB8172AA7B61690B92586AB9E9173", hash_generated_method = "ABB49830F80F0FB2307D9A8B3059FC1A")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void connect(String hostname, int port,
                         InetAddress localAddr, int localPort)
     throws SocketException, IOException
@@ -238,7 +244,8 @@ public void connect(String hostname, int port,
      *  derived from it.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.143 -0500", hash_original_method = "41434615E178682B599165811173ABD1", hash_generated_method = "0424ADF3E270CB84012A1F132468CFBB")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void connect(InetAddress host) throws SocketException, IOException
     {
         connect(host, _defaultPort_);
@@ -259,7 +266,8 @@ public void connect(InetAddress host) throws SocketException, IOException
      * @exception UnknownHostException If the hostname cannot be resolved.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.146 -0500", hash_original_method = "D57FE7EA8899601F3786405387BCB305", hash_generated_method = "2A27D75E9027188AA3FC818ACD09C1EC")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public void connect(String hostname) throws SocketException, IOException
     {
         connect(hostname, _defaultPort_);
@@ -277,7 +285,7 @@ public void connect(String hostname) throws SocketException, IOException
      * @exception IOException  If there is an error closing the socket.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.151 -0500", hash_original_method = "7C98583F77EDF407420D49C65683FC52", hash_generated_method = "3451BFE69D5642F05D8CFA219CB4C55F")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void disconnect() throws IOException
     {
         _socket_.close();
@@ -297,7 +305,7 @@ public void disconnect() throws IOException
      *         false otherwise.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.156 -0500", hash_original_method = "E94E451F563AEB345A5532C008598177", hash_generated_method = "80797AEB78C6B5AE0E145C627917395C")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isConnected()
     {
         return _isConnected_;
@@ -313,7 +321,7 @@ public boolean isConnected()
      * @param port  The default port to set.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.161 -0500", hash_original_method = "FB52FA9DA5ADF056A39906C36DDF7C89", hash_generated_method = "86A877BCB08FAAF142E0A5A229343A28")
-    
+    @DSSafe(DSCat.SAFE_OTHERS) 
 public void setDefaultPort(int port)
     {
         _defaultPort_ = port;
@@ -326,7 +334,7 @@ public void setDefaultPort(int port)
      * @return The current value of the default port.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.166 -0500", hash_original_method = "DCF009AC615CEE14D3009D308D6D00AA", hash_generated_method = "980912D8044E6AEFD2342D1F6885DB99")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getDefaultPort()
     {
         return _defaultPort_;
@@ -345,7 +353,7 @@ public int getDefaultPort()
      *                 connection.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.171 -0500", hash_original_method = "B1B69883F5517DC8F397475A3AFD5B54", hash_generated_method = "E3FC7F9EB20F1DBBCBC5E1F4A3158A29")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setDefaultTimeout(int timeout)
     {
         _timeout_ = timeout;
@@ -360,7 +368,7 @@ public void setDefaultTimeout(int timeout)
      *         opening a socket.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.175 -0500", hash_original_method = "0A2938C4AB3D789E8DE51C3D26C66274", hash_generated_method = "83F4743C6CFCE48F1B1A5C5F0F3F91E3")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getDefaultTimeout()
     {
         return _timeout_;
@@ -377,7 +385,7 @@ public int getDefaultTimeout()
      * @exception SocketException If the operation fails.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.180 -0500", hash_original_method = "479DBF5E68FC96FE9C21ED750A0333B0", hash_generated_method = "8B00040ECF2DB1DEE6B13D01FA3F80D4")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setSoTimeout(int timeout) throws SocketException
     {
         _socket_.setSoTimeout(timeout);
@@ -391,7 +399,7 @@ public void setSoTimeout(int timeout) throws SocketException
      * @exception SocketException If the operation fails.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.184 -0500", hash_original_method = "6FF781C0A1CD1666DE724FB5EDF49A3E", hash_generated_method = "AF602ED0F1F526CADF145552332EF6B3")
-    
+    @DSSafe(DSCat.SAFE_OTHERS) 
 public int getSoTimeout() throws SocketException
     {
         return _socket_.getSoTimeout();
@@ -405,7 +413,7 @@ public int getSoTimeout() throws SocketException
      * @exception SocketException If the operation fails.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.189 -0500", hash_original_method = "920C4715CC2AFFF8AD450EE6A942F5AB", hash_generated_method = "6ED48C277E9BF00E64D1875D25A3A120")
-    
+    @DSSafe(DSCat.SAFE_OTHERS) 
 public void setTcpNoDelay(boolean on) throws SocketException
     {
         _socket_.setTcpNoDelay(on);
@@ -421,7 +429,7 @@ public void setTcpNoDelay(boolean on) throws SocketException
      * @exception SocketException If the operation fails.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.194 -0500", hash_original_method = "18F63B14BC54F71A76CCFFE849F4289C", hash_generated_method = "474B39BC1E892D4CC86FAA6FF814156F")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean getTcpNoDelay() throws SocketException
     {
         return _socket_.getTcpNoDelay();
@@ -436,7 +444,7 @@ public boolean getTcpNoDelay() throws SocketException
      * @exception SocketException If the operation fails.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.199 -0500", hash_original_method = "6AE183177EA54EA621FCFC3FC30A8D88", hash_generated_method = "8A3CE2DFC1C52D571A114FD309376ABB")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setSoLinger(boolean on, int val) throws SocketException
     {
         _socket_.setSoLinger(on, val);
@@ -451,7 +459,7 @@ public void setSoLinger(boolean on, int val) throws SocketException
      * @exception SocketException If the operation fails.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.204 -0500", hash_original_method = "2CAB1FAED311E2CB18D6CDAD890CA69D", hash_generated_method = "B066C282DE90D9E7FF75974658DA94CA")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getSoLinger() throws SocketException
     {
         return _socket_.getSoLinger();
@@ -466,7 +474,7 @@ public int getSoLinger() throws SocketException
      *         for the connection.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.209 -0500", hash_original_method = "97A9AB88FBE0CF0F4FA56668AE610FD9", hash_generated_method = "6E070E29463F86DCF93CB00D693E03A2")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getLocalPort()
     {
         return _socket_.getLocalPort();
@@ -479,7 +487,7 @@ public int getLocalPort()
      * @return The local address to which the client's socket is bound.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.213 -0500", hash_original_method = "695EE6197C6950818AB629303AB28701", hash_generated_method = "BCE1AD8DD07386D3740CFBA98FF2161D")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public InetAddress getLocalAddress()
     {
         return _socket_.getLocalAddress();
@@ -493,7 +501,7 @@ public InetAddress getLocalAddress()
      *         connected.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.218 -0500", hash_original_method = "C1726499023788C9F9A3176021A48A7D", hash_generated_method = "FB9124FAE5A73B8CAC55B08A22625384")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getRemotePort()
     {
         return _socket_.getPort();
@@ -504,7 +512,7 @@ public int getRemotePort()
      * @return The remote address to which the client is connected.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.223 -0500", hash_original_method = "0AC407323960F33B0316EE968EF838C2", hash_generated_method = "5E582BBE860DDD545830EB14E486575D")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public InetAddress getRemoteAddress()
     {
         return _socket_.getInetAddress();
@@ -521,7 +529,7 @@ public InetAddress getRemoteAddress()
      * @return True if the remote hosts are the same, false if not.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.228 -0500", hash_original_method = "8E46176062A22F0EF265736A53696086", hash_generated_method = "727FC798DE8E6B8B3E3FD242D0744942")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean verifyRemote(Socket socket)
     {
         InetAddress host1, host2;
@@ -542,7 +550,7 @@ public boolean verifyRemote(Socket socket)
      * @param factory  The new SocketFactory the SocketClient should use.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.233 -0500", hash_original_method = "B0A4F7202C432D5F3A85378B9558CC43", hash_generated_method = "1C95F218AA3824296CD891982F3CB993")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setSocketFactory(SocketFactory factory)
     {
         if (factory == null)

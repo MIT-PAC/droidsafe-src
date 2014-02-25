@@ -75,6 +75,7 @@ public final class DotTerminatedMessageReader extends Reader
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.649 -0500", hash_original_method = "5F0168F87C9D2A44BA2B8F8ED212E0A4", hash_generated_method = "93F0EF4DDF0AF87DDB7A69D318F3F3AC")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 public DotTerminatedMessageReader(Reader reader)
     {
         super(reader);
@@ -99,7 +100,8 @@ public DotTerminatedMessageReader(Reader reader)
      *            stream.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.655 -0500", hash_original_method = "31E0BE08E1B2B985E35B0612944B01C1", hash_generated_method = "638C5AFEA3994937953C50E97D9FE696")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read() throws IOException
     {
         int ch;
@@ -198,7 +200,8 @@ public int read() throws IOException
      *            stream.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.660 -0500", hash_original_method = "65554F0C302DA5F8C76906F90F535223", hash_generated_method = "684EA5F33B6E7AA3FC0B779B5BE44EC3")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read(char[] buffer) throws IOException
     {
         return read(buffer, 0, buffer.length);
@@ -219,30 +222,15 @@ public int read(char[] buffer) throws IOException
      *            stream.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.663 -0500", hash_original_method = "297F7CC520BE2F901AA36D11D965CF70", hash_generated_method = "F2D860805EDA4A832B634194E89F311B")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read(char[] buffer, int offset, int length) throws IOException
     {
-        int ch, off;
-        synchronized (lock)
-        {
-            if (length < 1)
-            {
-                return 0;
-            }
-            if ((ch = read()) == -1)
-            {
-                return -1;
-            }
-            off = offset;
-
-            do
-            {
-                buffer[offset++] = (char) ch;
-            }
-            while (--length > 0 && (ch = read()) != -1);
-
-            return (offset - off);
-        }
+        addTaint(offset);
+        addTaint(length);
+        buffer.addTaint(getTaint());
+        
+        return buffer.getTaintInt();
     }
 
     /**
@@ -252,13 +240,11 @@ public int read(char[] buffer, int offset, int length) throws IOException
      *            stream.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.666 -0500", hash_original_method = "312B0BBDB8B9F957CA62333F3425B34A", hash_generated_method = "146CA1B4249C7657C86A7CD7358090AF")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean ready() throws IOException
     {
-        synchronized (lock)
-        {
-            return (pos < internalBuffer.length || internalReader.ready());
-        }
+        return getTaintBoolean();
     }
 
     /**
@@ -276,7 +262,8 @@ public boolean ready() throws IOException
      *            underlying stream.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.670 -0500", hash_original_method = "9C47CBAA33D56EB05E095A69AEB3F55A", hash_generated_method = "3F2D341E8B187C6DA677EC304D5C7996")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void close() throws IOException
     {
         synchronized (lock)

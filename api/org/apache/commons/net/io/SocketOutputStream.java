@@ -51,7 +51,8 @@ public class SocketOutputStream extends FilterOutputStream
      * @param stream  The input stream to wrap.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.081 -0500", hash_original_method = "7F812F523D0E5A460F612F9FF5DFBBFE", hash_generated_method = "36F947C0B7CA3FFADBD301E3AB0D2646")
-    
+    @DSComment("Constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public SocketOutputStream(Socket socket, OutputStream stream)
     {
         super(stream);
@@ -72,7 +73,9 @@ public SocketOutputStream(Socket socket, OutputStream stream)
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.084 -0500", hash_original_method = "2025D8159C2E55719645FF1B84712B94", hash_generated_method = "AF8A52B23E466A1E85C0396FA63F30D8")
-    
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
+    @DSSink({DSSinkKind.NETWORK})
 public void write(byte buffer[], int offset, int length) throws IOException
     {
         out.write(buffer, offset, length);
@@ -87,7 +90,7 @@ public void write(byte buffer[], int offset, int length) throws IOException
      *                         or socket.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.088 -0500", hash_original_method = "E93BEE50684598E86CF4860142BFC855", hash_generated_method = "5E58DC0AD70210253ADAC11CE7F86386")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void close() throws IOException
     {
         super.close();

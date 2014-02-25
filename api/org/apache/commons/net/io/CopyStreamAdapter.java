@@ -66,7 +66,8 @@ public CopyStreamAdapter()
      *              bytes.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.219 -0500", hash_original_method = "F49A1215DBCAFF371E059D4C820BFFAD", hash_generated_method = "D0C5A42D8CF59B609D724814F892DAB7")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void bytesTransferred(CopyStreamEvent event)
     {
         bytesTransferred(event.getTotalBytesTransferred(),
@@ -90,7 +91,8 @@ public void bytesTransferred(CopyStreamEvent event)
      *        the size is unknown.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.223 -0500", hash_original_method = "162C0509301F2C51523E8B25D0579049", hash_generated_method = "FCF69916F262C42E9B6A1EB9B1E1D628")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void bytesTransferred(long totalBytesTransferred,
                                  int bytesTransferred, long streamSize)
     {
@@ -118,10 +120,21 @@ public void bytesTransferred(long totalBytesTransferred,
      * @param listener  The CopyStreamlistener to register.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.226 -0500", hash_original_method = "804DBCB0CD99C171EB9C2BE85EFE707F", hash_generated_method = "F945DE3E757AC7DD3DC8584B1CB11B30")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void addCopyStreamListener(CopyStreamListener listener)
     {
         internalListeners.addListener(listener);
+        if (listener != null) {
+            bytesTransferred(DSUtils.FAKE_INT, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+            
+            CopyStreamEvent event = new CopyStreamEvent(this,
+                                    DSUtils.FAKE_INT,
+                                    DSUtils.FAKE_INT,
+                                    DSUtils.FAKE_INT);
+
+            bytesTransferred(event);
+        }
     }
 
     /**
@@ -130,7 +143,8 @@ public void addCopyStreamListener(CopyStreamListener listener)
      * @param listener  The CopyStreamlistener to unregister.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.229 -0500", hash_original_method = "2D7E47036B50BB575C62CBE22B38A3ED", hash_generated_method = "13D305BFC1071355C8CD298FADE3E731")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void removeCopyStreamListener(CopyStreamListener listener)
     {
         internalListeners.removeListener(listener);

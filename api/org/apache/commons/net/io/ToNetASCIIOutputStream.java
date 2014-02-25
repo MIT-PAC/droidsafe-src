@@ -47,7 +47,9 @@ public final class ToNetASCIIOutputStream extends FilterOutputStream
      * @param output  The OutputStream to wrap.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.128 -0500", hash_original_method = "455EAE3DE648593AC33DA780813354C8", hash_generated_method = "D0A2D391BDF46DDA5D237F5FEF381ACE")
-    
+    @DSComment("Constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
+
 public ToNetASCIIOutputStream(OutputStream output)
     {
         super(output);
@@ -67,7 +69,9 @@ public ToNetASCIIOutputStream(OutputStream output)
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.134 -0500", hash_original_method = "C10D4A1492D25EED638CC1439313FEB4", hash_generated_method = "1EB1701C520BB6CD6B5B055C3516E7D2")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(int ch)
     throws IOException
     {
@@ -97,7 +101,9 @@ public synchronized void write(int ch)
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.140 -0500", hash_original_method = "11AFF6C7676FEB0968CBC8B8BF9C6A52", hash_generated_method = "506047B26931C7FFF38435DA1DD16290")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(byte buffer[])
     throws IOException
     {
@@ -116,7 +122,9 @@ public synchronized void write(byte buffer[])
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.146 -0500", hash_original_method = "35710279C92937D6002494F8923AF4C7", hash_generated_method = "6E9348F7EFB5AD81FB65B907A9AA86BD")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(byte buffer[], int offset, int length)
     throws IOException
     {

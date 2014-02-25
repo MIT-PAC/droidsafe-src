@@ -45,7 +45,9 @@ public class DefaultDatagramSocketFactory implements DatagramSocketFactory
      * @exception SocketException If the socket could not be created.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.539 -0500", hash_original_method = "58256EB8A7EF88EDEB5E4AD1ABF0E125", hash_generated_method = "23A41768FB0B8E7E2E1730BDCDF4AD35")
-    
+    @DSComment("Constructor")
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public DatagramSocket createDatagramSocket() throws SocketException
     {
         return new DatagramSocket();
@@ -59,6 +61,8 @@ public DatagramSocket createDatagramSocket() throws SocketException
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.542 -0500", hash_original_method = "F6DD6C3EA4EC095AD6C456C3C2A4311E", hash_generated_method = "D0173F6A98A344AF92F85E29FE893017")
     
+    @DSVerified("Potentially listening to other socket")
+    @DSSpec(DSCat.INTERNET)
 public DatagramSocket createDatagramSocket(int port) throws SocketException
     {
         return new DatagramSocket(port);
@@ -74,6 +78,8 @@ public DatagramSocket createDatagramSocket(int port) throws SocketException
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.546 -0500", hash_original_method = "E7765B1F5071215565A877BF624E5F15", hash_generated_method = "48AAD943FA72B2B79BA264EF711FFE29")
     
+    @DSVerified
+    @DSSpec(DSCat.INTERNET)
 public DatagramSocket createDatagramSocket(int port, InetAddress laddr)
     throws SocketException
     {

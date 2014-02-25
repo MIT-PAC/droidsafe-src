@@ -51,7 +51,8 @@ public final class FromNetASCIIOutputStream extends FilterOutputStream
      * @param output  The OutputStream to wrap.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.424 -0500", hash_original_method = "B3697246130D2B10DFD352DF4E32FBC6", hash_generated_method = "654E7775CBB7CAD048A0C4280FAC85E3")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public FromNetASCIIOutputStream(OutputStream output)
     {
         super(output);
@@ -60,7 +61,8 @@ public FromNetASCIIOutputStream(OutputStream output)
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.427 -0500", hash_original_method = "42D12089AE481A637844D99861D38A63", hash_generated_method = "9D73230208366CCCA423836286EE2152")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
 private void __write(int ch) throws IOException
     {
         switch (ch)
@@ -104,7 +106,9 @@ private void __write(int ch) throws IOException
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.430 -0500", hash_original_method = "E0D4643D13B7CCDA3167C7EA96CF1000", hash_generated_method = "5CF591D4ECBF29A40680A9E022503132")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(int ch)
     throws IOException
     {
@@ -126,7 +130,9 @@ public synchronized void write(int ch)
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.434 -0500", hash_original_method = "11AFF6C7676FEB0968CBC8B8BF9C6A52", hash_generated_method = "506047B26931C7FFF38435DA1DD16290")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(byte buffer[])
     throws IOException
     {
@@ -145,7 +151,9 @@ public synchronized void write(byte buffer[])
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.437 -0500", hash_original_method = "4A2C80599CF241166B5A206B5D8B6870", hash_generated_method = "A8A4BD75DF015A1A0C79560CED73EED3")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(byte buffer[], int offset, int length)
     throws IOException
     {
@@ -168,7 +176,8 @@ public synchronized void write(byte buffer[], int offset, int length)
      * @exception IOException  If an error occurs while closing the stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.441 -0500", hash_original_method = "0E1BC60F26C591E101972A03334B6F1C", hash_generated_method = "082789CDF70A79F8395EB80149C48B2C")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public synchronized void close()
     throws IOException
     {
