@@ -273,8 +273,8 @@ public class RCFG  {
         System.out.println("\t" + callEdge.srcStmt());*/
         
         if (API.v().isSystemMethod(callee) && 
-                !API.v().isSystemMethod(caller) &&
-                API.v().isInterestingMethod(callee) &&
+                !API.v().isSystemMethod(caller) && 
+                API.v().reportInSpec(callee) &&
                 !IGNORE_SYS_METHOD_WITH_NAME.contains(callee.getName()) &&
                 !ignoreSet.contains(callEdge.srcStmt())) {
 
@@ -365,7 +365,7 @@ public class RCFG  {
 
             SootMethod method = invokeExpr.getMethod();
 
-            if (API.v().isInterestingMethod(method))
+            if (API.v().isSensitiveAction(method))
                 strBuilder.append("\t" + method + "\n");
         }
 

@@ -653,7 +653,7 @@ public class API {
      * a system class (any class in Android.jar) that is not explicitly marked
      * as safe in system_calls.txt (see safe_methods)
      */
-    public boolean isInterestingMethod(SootMethod method) {
+    public boolean isSensitiveAction(SootMethod method) {
         if (all_sys_methods.contains(method) && !safe_methods.contains (method)) {
             return true;
         }
@@ -661,7 +661,13 @@ public class API {
         return false;
     }
 
-
+    /** 
+     * Should a call to this method be reported in the security specification?
+     */
+    public boolean reportInSpec(SootMethod method) {
+        return isSensitiveAction(method) || hasSinkInfoKind(method);
+    }
+    
     public String api_xref (String method_sig, String txt) {
         String sig = method_sig.replace ("<", "");
         sig = sig.replace (">", "");

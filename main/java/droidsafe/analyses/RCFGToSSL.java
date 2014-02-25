@@ -34,6 +34,7 @@ import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.BooleanValue;
 import droidsafe.speclang.ByteValue;
@@ -140,8 +141,8 @@ public class RCFGToSSL {
 	    return method;
 	}
 	
-	private boolean shouldIgnore(OutputEvent oe) {	
-		if (SafeAndroidClassesAndMethods.v().isSafeMethod(oe.getTarget()))
+	private boolean shouldIgnoreAction(OutputEvent oe) {	
+		if (SafeAndroidClassesAndMethods.v().isSafeMethod(oe.getTarget()) && !API.v().hasSinkInfoKind(oe.getTarget()))
 		    return true;
 		
 		return (IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
@@ -151,7 +152,7 @@ public class RCFGToSSL {
 		List<Method> methods = new LinkedList<Method>();
 
 		//should we ignore creating a method in the spec from this output event
-		if (shouldIgnore(oe)) {
+		if (shouldIgnoreAction(oe)) {
 			return methods;
 		}
 
