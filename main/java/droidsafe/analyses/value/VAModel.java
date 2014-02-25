@@ -13,7 +13,7 @@ import com.google.gson.JsonSyntaxException;
  */
 public abstract class VAModel {
     
-    public static final String INVALIDATED = "\"INVALIDATED\"";
+    public static final String INVALIDATED = "<INVALIDATED>";
 
     /**
      * An object may be invalidated if we cannot soundly resolve it.
@@ -44,22 +44,31 @@ public abstract class VAModel {
      */
     public abstract String toStringDetailed();
 
+    /**
+     * @returns a well-formatted (pretty!) detailed printout of the results, indented at 
+     * the given level.
+     */
+    public abstract String toStringPretty(int level) ;
+
+//    public String toStringPretty() {
+//        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+//        JsonParser jp = new JsonParser();
+//        try {
+//            JsonElement je = jp.parse(this.toStringDetailed());
+//            return gson.toJson(je).replace("\"", ""); 
+//            //return unescapeUnicode(gson.toJson(je).replace("\"", "")); 
+//        } catch (JsonSyntaxException e) {
+//            System.out.println("Malformed JSON: " + this.toStringDetailed());
+//            System.out.println(e.toString());
+//        }
+//        return null;
+//    }
 
     /**
      * @returns a well-formatted (pretty!) detailed printout of the results
      */
     public String toStringPretty() {
-        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
-        JsonParser jp = new JsonParser();
-        try {
-            JsonElement je = jp.parse(this.toStringDetailed());
-            return gson.toJson(je).replace("\"", ""); 
-            //return unescapeUnicode(gson.toJson(je).replace("\"", "")); 
-        } catch (JsonSyntaxException e) {
-            System.out.println("Malformed JSON: " + this.toStringDetailed());
-            System.out.println(e.toString());
-        }
-        return null;
+        return toStringPretty(0);
     }
 
     /**
@@ -70,4 +79,5 @@ public abstract class VAModel {
         //is this really necessary?
         //return this.toStringDetailed().replace("\"", "");
     }
+
 }

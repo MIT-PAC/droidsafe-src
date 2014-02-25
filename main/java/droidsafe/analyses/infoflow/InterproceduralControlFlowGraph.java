@@ -190,7 +190,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         CallGraph callGraph = Scene.v().getCallGraph();
         TopologicalOrderer topologicalOrderer = new TopologicalOrderer(callGraph);
         topologicalOrderer.go();
-        List<SootMethod> topologicallyOrderedMethods = topologicalOrderer.order();
+        List<SootMethod> topologicallyOrderedMethods = null;//(List<SootMethod>)topologicalOrderer.order();
         List<SootMethod> reverseTopologicallyOrderedMethods = Lists.reverse(topologicallyOrderedMethods);
         for (SootMethod method : reverseTopologicallyOrderedMethods) {
             if (reachableMethods.contains(method)) {

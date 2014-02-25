@@ -598,6 +598,35 @@ public class SootUtils {
 
         return methods;
     }
+    
+    /**
+     * Given a class and method name, find all po
+     * @param clz
+     * @param name
+     * @return
+     */
+    public static List<SootMethod> findPossibleInheritedMethods(SootClass clz, String name) {
+        Hierarchy hierarchy = Scene.v().getActiveHierarchy();
+        LinkedList<SootMethod> methods = new LinkedList<SootMethod>();
+
+        List<SootClass> classes = new LinkedList<SootClass>();
+
+        if (!clz.isInterface()) 
+            classes.addAll(hierarchy.getSuperclassesOfIncluding(clz));
+
+        classes.addAll(clz.getInterfaces());
+
+
+        for (SootClass parent : classes) {
+            for (SootMethod method : parent.getMethods()) {
+                //logger.debug("Looking at {} in {}", method, parent);
+                if (method.getName().equals(name))
+                    methods.add(method);
+            }
+        }
+        return methods;
+    }
+
 
 
     /**

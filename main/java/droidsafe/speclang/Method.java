@@ -423,7 +423,7 @@ public class Method implements Comparable<Method> {
      */
     public Set<Stmt> getReceiverSourceInfoUnits() {
         //call the information flow results
-        if (!hasReceiver())
+        if (InformationFlowAnalysis.v() == null || !hasReceiver())
             return new HashSet<Stmt>();
 
         if (recInfoValues == null) {
@@ -451,7 +451,11 @@ public class Method implements Comparable<Method> {
      * argument (or one of its fields).
      */
     public Set<Stmt> getArgSourceInfoUnits(int i) {
-
+        Set<Stmt> srcSrcs = new HashSet<Stmt>();
+        
+        if (InformationFlowAnalysis.v() == null)
+            return srcSrcs; 
+        
         if (argInfoValues[i] == null) {
             argInfoValues[i] = new HashSet<InfoValue>();
             if (ptaInfo.isArgPointer(i)) {
@@ -469,7 +473,7 @@ public class Method implements Comparable<Method> {
             }
         }
 
-        Set<Stmt> srcSrcs = new HashSet<Stmt>();
+ 
         for (InfoValue iv : argInfoValues[i]) {
             if (iv instanceof InfoUnit) {
                 InfoUnit srcUnit = (InfoUnit)iv;
@@ -556,6 +560,9 @@ public class Method implements Comparable<Method> {
      *  Return the high level InfoKinds for all possible access of the target method.
      */
     public Set<InfoKind> getSourcesInfoKinds() {
+        if (InformationFlowAnalysis.v() == null)
+            return Collections.<InfoKind>emptySet();
+        
         if (methodInfoKinds == null) {
             methodInfoKinds = getInfoKinds(InformationFlowAnalysis.v().getTaints(getMethodContext()));
         }

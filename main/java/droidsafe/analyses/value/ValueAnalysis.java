@@ -63,7 +63,7 @@ public class ValueAnalysis  {
     private static ValueAnalysis am;
 
     /** string to represent sets of unknown values */
-    public static final String UNKNOWN_VALUES_STRING = "ANYTHING";
+    public static final String UNKNOWN_VALUES_STRING = "<ANYTHING>";
 
     /** 
      * keys are the objects that we can and want to model (they are new expressions) 
@@ -145,12 +145,10 @@ public class ValueAnalysis  {
 
     /** access to the singleton instance */
     public static ValueAnalysis v() {
-        return am;
-    }
-
-    public static void setup() {
         if (am == null)
             am = new ValueAnalysis();
+        
+        return am;
     }
 
     /** run the analysis to fixed point */
@@ -160,6 +158,9 @@ public class ValueAnalysis  {
             droidsafe.main.Main.exit(1);
         }      
 
+        //create singleton
+        v();
+        
         try {
             vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                 + "va-errors.log");

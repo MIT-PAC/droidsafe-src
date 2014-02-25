@@ -11,6 +11,7 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.Project;
 import droidsafe.transforms.objsensclone.ClassCloner;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
@@ -29,6 +30,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.jimple.InvokeExpr;
 import soot.jimple.NewExpr;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.RefType;
 import soot.SootClass;
@@ -48,7 +50,7 @@ public class VAStats {
 
     // all lrelevant 
     private Set<IAllocNode> reachableAllocNodes = new HashSet<IAllocNode>();
-    
+
     // classes and fields resolved by value analysis
     private Map<String, Set<SootField>> vaResolvedClassNamesAndFields = new HashMap<String, Set<SootField>>();
 
@@ -60,7 +62,7 @@ public class VAStats {
 
     // private constructor to enforce singleton pattern
     private VAStats() {}
-    
+
     public static void run() {
         if(v==null) v = new VAStats();
 
@@ -85,9 +87,12 @@ public class VAStats {
                 SootMethod entryPointMethod = invokeExpr.getMethod();
                 if (entryPointMethod.getName().equals("onClick")) {
                     for(int i = 0; i < rcfgNode.getNumArgs(); ++i) {
-                        for(IAllocNode allocNode : rcfgNode.getArgPTSet(i)) {
-                            v.markAllocNodeAsReachable(allocNode);
-                            v.markMethodAsRelevant(allocNode, entryPointMethod);
+
+                        for(IAllocNode allocNode : rcfgNode.getArgPTSet( i)) {
+                            if(shouldInclude(allocNode)) {
+                                v.markAllocNodeAsReachable(allocNode);
+                                v.markMethodAsRelevant(allocNode, entryPointMethod);
+                            }
                         }
                     }
                 }
@@ -100,8 +105,10 @@ public class VAStats {
                         // process receiver IAllocNodes
                         Set<IAllocNode> receiverPTSet = (Set<IAllocNode>)oe.getReceiverPTSet();
                         for(IAllocNode allocNode : receiverPTSet) {
-                            v.markAllocNodeAsReachable(allocNode);
-                            v.markMethodAsRelevant(allocNode, sm);
+                            if(shouldInclude(allocNode)) {
+                                v.markAllocNodeAsReachable(allocNode);
+                                v.markMethodAsRelevant(allocNode, sm);
+                            }
                         }
                     }
                     // process argument allocNodes
@@ -109,8 +116,10 @@ public class VAStats {
                         if(oe.isArgPointer(i)) {
                             Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(i);
                             for(IAllocNode allocNode : argPTSet) {
-                                v.markAllocNodeAsReachable(allocNode);
-                                v.markMethodAsRelevant(allocNode, sm);
+                                if(shouldInclude(allocNode)) {
+                                    v.markAllocNodeAsReachable(allocNode);
+                                    v.markMethodAsRelevant(allocNode, sm);
+                                }
                             }
                         }
                     }
@@ -151,15 +160,35 @@ public class VAStats {
                                 Type fieldType = sf.getType();
                                 if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
                                     size = fieldVAModels.size();
+                                    for(VAModel vaModel : fieldVAModels) {
+                                        if(vaModel instanceof UnknownVAModel) {
+                                            size = -1;
+                                        }
+                                    }
                                 } else {
-                                    VAModel vaModel = fieldVAModels.iterator().next();
-                                    if(vaModel instanceof PrimVAModel) {
-                                        PrimVAModel primVAModel = (PrimVAModel)vaModel;
-                                        // if the primitive field is invalidated, we can't trust the number of values
-                                        if(!primVAModel.invalidated()) {
-                                            Set<Object> values = primVAModel.getValues();
-                                            // if the set of values could include ANYTHING, leave size as -1
-                                            if(!values.contains("ANYTHING")) size = values.size();
+                                    for(VAModel vaModel : fieldVAModels) {
+                                        if(vaModel instanceof PrimVAModel) {
+                                            PrimVAModel primVAModel = (PrimVAModel)vaModel;
+                                            // if the primitive field is invalidated, we can't trust the number of values
+                                            if(primVAModel.invalidated()) {
+                                                size = -1;
+                                                break;
+                                            } else {
+                                                Set<Object> values = primVAModel.getValues();
+                                                // if the set of values could include ANYTHING, leave size as -1
+                                                if(values.contains(ValueAnalysis.UNKNOWN_VALUES_STRING)) {
+                                                    size = -1;
+                                                    break;    
+                                                } else {
+                                                    if (size == -1) {
+                                                        size = 0;
+                                                    }
+                                                    size += values.size(); 
+                                                }
+                                            }
+                                        } else {
+                                            size = -1;
+                                            break;
                                         }
                                     }
                                 }
@@ -172,13 +201,13 @@ public class VAStats {
                             rowEntries.add("UNKNOWN");
                         else
                             rowEntries.add(String.valueOf(size));
-               
+
                         // 3rd column - relevant methods for the node
                         rowEntries.add(v.getRelevantMethods(node));
-                        
+
                         // 4th column - allocNode
                         rowEntries.add(node.toString());
-                        
+
                         // write out all columns
                         writer.writeNext(rowEntries.toArray(new String[] {}));
                     }
@@ -218,13 +247,13 @@ public class VAStats {
         return sootClass;
     }
 
-    
+
     /**
      * Helper method that records a soot method as being reachable with respect to a particular allocNode
      */
     private void markMethodAsRelevant(IAllocNode allocNode, SootMethod sootMethod) {
         if(!v.allocNodeToRelevantMethodsMap.containsKey(allocNode)) {
-             v.allocNodeToRelevantMethodsMap.put(allocNode, new HashSet<SootMethod>());
+            v.allocNodeToRelevantMethodsMap.put(allocNode, new HashSet<SootMethod>());
         }
         v.allocNodeToRelevantMethodsMap.get(allocNode).add(sootMethod);
     }
@@ -245,11 +274,29 @@ public class VAStats {
                 for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
                     Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(allocNode, sf);
                     for(IAllocNode an : allocNodes) {
-                        markAllocNodeAsReachable(an);
+                        if(shouldInclude(an)) {
+                            markAllocNodeAsReachable(an);
+                        }
                     }
                 }
             }
         }
     }
 
+    /** 
+     * Returns true if allocNode not allocated in DroidSafeMain or is of type android.app.Activity
+     */
+    private static boolean shouldInclude(IAllocNode allocNode) {
+        SootMethod method = ((AllocNode)allocNode).getMethod();
+        if(method != null) {
+            SootClass sootClass = method.getDeclaringClass();
+            Type type = allocNode.getType();
+            if(sootClass != null && type instanceof RefType) {
+                boolean should = sootClass.getName() != "droidsafe.generated.DroidSafeMain" || 
+                        ClassCloner.removeClassCloneSuffix(((RefType)type).getSootClass().getSuperclass().getName()).equals("android.app.Activity");
+                return should;
+            }
+        }
+        return false;
+    }
 }

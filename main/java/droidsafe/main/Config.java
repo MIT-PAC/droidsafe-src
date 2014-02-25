@@ -71,7 +71,8 @@ public class Config {
     /** Path for the root folder for droidsafe code */
     private String apacHome = System.getenv("APAC_HOME");
 
-    public File ANDROID_LIB_DIR;
+    public File ANDROID_LIB_DIR = new File(System.getenv("APAC_HOME") + File.separator + ANDROID_LIB_DIR_REL);  
+
     public String target = "specdump";
     /** Don't include source location information when outputting spec */
     public boolean noSourceInfo = false;
@@ -111,7 +112,10 @@ public class Config {
     public boolean runValueAnalysis = true;
 
     /** if true, compute value analysis result stats */
-    public boolean computeVAStats = false;
+    public boolean dumpVAStats = false;
+
+    /** if true, compute StartActivityTransform ICC result stats */
+    public boolean dumpICCStats = false;
 
     /** if true, use the small manual set of android classes for the api model, for a fast run. */
     public boolean useManualModeling = false;
@@ -234,8 +238,12 @@ public class Config {
         options.addOption(noVA);
 
         Option vaStats =
-                new Option("vastats", "Calculate VA stats.");
+                new Option("vastats", "Dump VA stats.");
         options.addOption(vaStats);
+
+        Option iccStats =
+                new Option("iccstats", "Dump ICC stats.");
+        options.addOption(iccStats);
 
         Option allStatsRun =
                 new Option("stats", "Perform extra work to generate stats.");
@@ -334,7 +342,10 @@ public class Config {
             this.runValueAnalysis = false;
 
         if (cmd.hasOption("vastats"))
-            this.computeVAStats = true;
+            this.dumpVAStats = true;
+
+        if (cmd.hasOption("iccstats"))
+            this.dumpICCStats = true;
 
         if (cmd.hasOption("stats"))
             this.statsRun = true;

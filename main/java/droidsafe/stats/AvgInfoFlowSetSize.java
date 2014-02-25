@@ -1,28 +1,33 @@
 package droidsafe.stats;
 
-import java.util.HashMap;
-import java.util.Iterator;
 
 import soot.Context;
 import soot.Local;
-import soot.SootMethod;
-import soot.Unit;
-import soot.ValueBox;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
-import soot.jimple.StmtBody;
-import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
-import soot.util.Chain;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
-import droidsafe.android.system.API;
+import droidsafe.android.app.Project;
 import droidsafe.utils.JimpleRelationships;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+
 public class AvgInfoFlowSetSize {
+
+    /** Logger class */
+    private static final Logger logger = LoggerFactory.getLogger(AvgInfoFlowSetSize.class);
+
 
     private long totalSets = 0;
     private long totalSetsSize = 0;
@@ -74,7 +79,17 @@ public class AvgInfoFlowSetSize {
                 }
             }
         }
-        
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(Project.v().getOutputDir() + File.separator + "info-set-size.txt");
+            out.println(totalSets + " " + totalSetsSize);
+        } catch (IOException e) {
+            logger.warn("Couldn't write out high level flows num to high-level.txt: "+ e);
+        } finally {
+            out.close();
+        }
+
+   
         System.out.println(":Total Info Sets:" + totalSets);
         System.out.println(":Total Sets Size:" + totalSetsSize);
     }

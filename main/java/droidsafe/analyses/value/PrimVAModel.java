@@ -41,19 +41,55 @@ public abstract class PrimVAModel extends VAModel {
         return str + "}";
     }
 
+    @Override
+    public String toStringPretty(int level) {
+        return this.fieldsStringPretty(level);
+    }
+
     public String fieldsString() {
         String fieldsString = "";
         if(this.invalidated) {
-            fieldsString += INVALIDATED;
+            fieldsString += "\"" + INVALIDATED + "\"";
         } else {
             fieldsString += "[";
             Set<String> fieldStrings = new HashSet<String>();
             for(Object val : this.getValues()) {
-                fieldStrings.add("\"" + val.toString() + "\"");
+                fieldStrings.add("\"" + val.toString().replace("\\", "\\\\").replace("\"", "\\\"") + "\"");
             }
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
             fieldsString += "]";
         }
         return fieldsString;
+    }
+
+    public String fieldsStringPretty(int level) {
+        String indent = "\n" + VAUtils.indent(level);
+        StringBuffer buf = new StringBuffer();
+        if(this.invalidated) {
+            buf.append(INVALIDATED);
+        } else {
+            boolean first = true;
+            Set<Object> vals = this.getValues();
+            if (vals.size() > 1)
+                buf.append("{");
+            for(Object val : vals) {
+                if (first) {
+                    first = false;
+                    if (vals.size() > 1)
+                        buf.append(indent);
+                } else {
+                    buf.append(",");
+                    buf.append(indent);
+                }
+                if (val instanceof String && !val.equals(ValueAnalysis.UNKNOWN_VALUES_STRING)) {
+                    buf.append("\"" + val + "\"");
+                } else {
+                    buf.append(val);
+                }
+            }
+            if (vals.size() > 1)
+                buf.append("}");
+        }
+        return buf.toString();
     }
 }

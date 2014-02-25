@@ -68,26 +68,6 @@ public class JSAResultInjection extends BodyTransformer {
     }
     
     /**
-     * Return true if we should track string constants from this class.
-     */
-    private boolean shouldTrackStringValue(SootClass clz) {
-        Set<SootClass> baseClassesToModel = ValueAnalysis.baseClassesToModel();
-        //check class directly
-        
-        if (baseClassesToModel.contains(clz))
-            return true; 
-
-        //if not directly contained, now check parents
-        for (SootClass parent : SootUtils.getParents(clz)) {
-            if (!parent.isInterface() && baseClassesToModel.contains(parent)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
      * Tranform method called on the body that will find all invoke expressions, and
      * if an arg is a string constant, will create a new local for the constant, 
      * and replace the constant in the argument with the local.
@@ -95,7 +75,6 @@ public class JSAResultInjection extends BodyTransformer {
     protected void internalTransform(Body b, String phaseName, Map options)  {
         SootMethod enclosingMethod = b.getMethod();
         
-        boolean isVATrackedClass = shouldTrackStringValue(enclosingMethod.getDeclaringClass());
         
         StmtBody stmtBody = (StmtBody)b;
 
@@ -113,20 +92,7 @@ public class JSAResultInjection extends BodyTransformer {
             if (!stmt.containsInvokeExpr()) {
                 continue;
             }
-            
-            //add all string constants from va tracked classes, but not from other API classes
-            //because this is too aggressive
-            if (isVATrackedClass && false) {
-                for (Object valueBox : stmt.getUseAndDefBoxes()) {
-                    if (valueBox instanceof ValueBox) {
-                        Value value = ((ValueBox)valueBox).getValue();
-                        if (value instanceof StringConstant) {
-                            trackedStringConstants.add((StringConstant)value);
-                        }
-                    }
-                }
-                    
-            }
+        
 
             InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
             Map<Integer, Value> argMod = new HashMap<Integer, Value>();
