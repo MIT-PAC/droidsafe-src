@@ -29,7 +29,7 @@ def run_droidsafe(args):
     java_command.append(classpath)
 
     #uncomment for yourkit profiler
-    #java_command.append("-agentpath:/Users/mgordon/tools/YourKit_Java_Profiler_2013_build_13052.app/bin/mac/libyjpagent.jnilib")
+    #java_command.append("-agentpath:/Users/mgordon/tools/YourKit_Java_Profiler_2013_build_13072.app/bin/mac/libyjpagent.jnilib")
 
     java_command.append("-Djava.library.path=" + APAC_HOME + "lib")
 
