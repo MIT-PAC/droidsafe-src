@@ -98,6 +98,8 @@ protected AbstractMap() {
     
 public abstract Set<Map.Entry<K, V>> entrySet();
     
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     protected Set<Map.Entry<K, V>> getEntrySet() {
         return backingEntrySet;
     }
@@ -378,11 +380,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.248 -0400", hash_original_method = "BE68DB72EA44A9864EFB8085A73DD13D", hash_generated_method = "FFF60DD0BB73731BB57AABB5E433364A")
     public Collection<V> values() {
-        Collection<V> var60B0A8A6E555943126A18D312F8E04FB_154168766 =         valuesCollection;
-        //var60B0A8A6E555943126A18D312F8E04FB_154168766.addTaint(getTaint());
-        return var60B0A8A6E555943126A18D312F8E04FB_154168766;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return valuesCollection;
     }
         
 @DSComment("From safe class list")
