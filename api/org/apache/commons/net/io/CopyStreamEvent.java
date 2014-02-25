@@ -61,7 +61,7 @@ public class CopyStreamEvent extends EventObject
      *          size is unknown.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.510 -0500", hash_original_method = "BA8DA0A39FE3A34BE845FD360AA83761", hash_generated_method = "69ED514E7589238E52E387503E561C4E")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public CopyStreamEvent(Object source, long totalBytesTransferred,
                            int bytesTransferred, long streamSize)
     {
@@ -78,7 +78,7 @@ public CopyStreamEvent(Object source, long totalBytesTransferred,
      * the vent.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.514 -0500", hash_original_method = "A41DCDCF02D5E7DE0F70EA42230590E8", hash_generated_method = "1C275BAD42DAFAE806A28930DC4CFDFE")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int getBytesTransferred()
     {
         return bytesTransferred;
@@ -91,7 +91,7 @@ public int getBytesTransferred()
      * operation.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.517 -0500", hash_original_method = "C28B76EE4358A62CAE2EB5BA12A6EFD5", hash_generated_method = "CA66174706A724EDF639914843DF4E73")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public long getTotalBytesTransferred()
     {
         return totalBytesTransferred;
@@ -104,7 +104,7 @@ public long getTotalBytesTransferred()
      * @return The size of the stream being copied.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.520 -0500", hash_original_method = "59ECAC7CB091DC5DF7BEC5C502422BD9", hash_generated_method = "E3F57A8B46C91F94897BD3FC30C4B2BA")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public long getStreamSize()
     {
         return streamSize;

@@ -56,7 +56,8 @@ public final class ToNetASCIIInputStream extends FilterInputStream
      * @param input  The InputStream to .
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.319 -0500", hash_original_method = "F3B35E0FD371515D334EC748B5846BB7", hash_generated_method = "D0A1AEE213E7B9EB1FD1C4CEB0FEBDA6")
-    
+    @DSComment("Constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public ToNetASCIIInputStream(InputStream input)
     {
         super(input);
@@ -74,7 +75,7 @@ public ToNetASCIIInputStream(InputStream input)
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.323 -0500", hash_original_method = "A3DC32615BCC1627FA6F5D9720F7FDA3", hash_generated_method = "364063D4FD99910199DCA9476E1586D9")
-    
+    @DSSpec(DSCat.IO)
 public int read() throws IOException
     {
         int ch;
@@ -120,7 +121,8 @@ public int read() throws IOException
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.326 -0500", hash_original_method = "1AF05D3B3AC1A0BE6FEC3ED8E4AD92D7", hash_generated_method = "602CBE64B37DDC68026D3CD1EA56EC7D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read(byte buffer[]) throws IOException
     {
         return read(buffer, 0, buffer.length);
@@ -142,47 +144,28 @@ public int read(byte buffer[]) throws IOException
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.329 -0500", hash_original_method = "A62229E028B48C960393B7A95C0B3743", hash_generated_method = "2240EB94EB9D0F7EECFEA2AD7D8B2D5A")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read(byte buffer[], int offset, int length) throws IOException
     {
-        int ch, off;
-
-        if (length < 1)
-            return 0;
-
-        ch = available();
-
-        if (length > ch)
-            length = ch;
-
-        // If nothing is available, block to read only one character
-        if (length < 1)
-            length = 1;
-
-        if ((ch = read()) == -1)
-            return -1;
-
-        off = offset;
-
-        do
-        {
-            buffer[offset++] = (byte)ch;
-        }
-        while (--length > 0 && (ch = read()) != -1);
-
-        return (offset - off);
+        addTaint(length);
+        buffer.addTaint(getTaint());
+        return buffer.getTaintInt();
     }
 
     /*** Returns false.  Mark is not supported. ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.332 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
     
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean markSupported()
     {
         return false;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.335 -0500", hash_original_method = "837ED4D38116082969ED1A2B9853076B", hash_generated_method = "FC06C236E4A5ECFD33984BC0DC36AD0F")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int available() throws IOException
     {
         int result;

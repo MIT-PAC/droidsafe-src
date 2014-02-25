@@ -180,7 +180,8 @@ public final class SMTPReply
      *         if not.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.723 -0500", hash_original_method = "8808742E73FD3FA546FD7E08E34E1555", hash_generated_method = "4A32F7BAE69E0E9EB8F923C70A16AC18")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public static boolean isPositivePreliminary(int reply)
     {
         return (reply >= 100 && reply < 200);
@@ -197,7 +198,8 @@ public static boolean isPositivePreliminary(int reply)
      *         if not.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.727 -0500", hash_original_method = "54F56FCB0FE10A11F3FC3B4B0BA615D4", hash_generated_method = "E5158DEF50508063A3FAA4CB78999168")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public static boolean isPositiveCompletion(int reply)
     {
         return (reply >= 200 && reply < 300);
@@ -217,7 +219,8 @@ public static boolean isPositiveCompletion(int reply)
      *         if not.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.731 -0500", hash_original_method = "C8C1F446DBB41359AB2C72DE65947E17", hash_generated_method = "87AB1F2A75B0DA527C4EB5550803BD97")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public static boolean isPositiveIntermediate(int reply)
     {
         return (reply >= 300 && reply < 400);
@@ -234,7 +237,8 @@ public static boolean isPositiveIntermediate(int reply)
      *         if not.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.734 -0500", hash_original_method = "DC5C6AC2DFC5703884925E95380CED47", hash_generated_method = "1DE3EAECC7BBF780F5F9D829D9A6954B")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public static boolean isNegativeTransient(int reply)
     {
         return (reply >= 400 && reply < 500);
@@ -251,7 +255,8 @@ public static boolean isNegativeTransient(int reply)
      *         if not.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.738 -0500", hash_original_method = "7730219D57FA624E42FCB8EA28B30401", hash_generated_method = "304A07393478892767F1C29F32540023")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public static boolean isNegativePermanent(int reply)
     {
         return (reply >= 500 && reply < 600);
@@ -259,7 +264,8 @@ public static boolean isNegativePermanent(int reply)
 
     // Cannot be instantiated
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.719 -0500", hash_original_method = "DFDBDCF3FC4B384EB118FCC808E12741", hash_generated_method = "9F880FB78080BC21BCBB0CC3E63B7555")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
 private SMTPReply()
     {}
 

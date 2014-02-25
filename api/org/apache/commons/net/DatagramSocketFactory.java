@@ -1,4 +1,5 @@
 /*
+
  * Copyright 2001-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,6 +46,7 @@ public interface DatagramSocketFactory
      * <p>
      * @exception SocketException If the socket could not be created.
      ***/
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public DatagramSocket createDatagramSocket() throws SocketException;
 
     /***
@@ -53,6 +55,7 @@ public interface DatagramSocketFactory
      * @param port The port to use for the socket.
      * @exception SocketException If the socket could not be created.
      ***/
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public DatagramSocket createDatagramSocket(int port) throws SocketException;
 
     /***
@@ -63,6 +66,7 @@ public interface DatagramSocketFactory
      * @param laddr  The local address to use.
      * @exception SocketException If the socket could not be created.
      ***/
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public DatagramSocket createDatagramSocket(int port, InetAddress laddr)
     throws SocketException;
 }

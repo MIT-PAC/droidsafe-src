@@ -70,6 +70,8 @@ public ProtocolCommandSupport(Object source)
      *        including all arguments.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.565 -0500", hash_original_method = "924DE571208EDB6F106CC9F7AEFEDFBC", hash_generated_method = "917AFAEC8846A21C4DBFDDE51A31009B")
+    @DSVerified
+    @DSSafe(DSCat.CALLBACK_INVOKE)
     
 public void fireCommandSent(String command, String message)
     {
@@ -103,6 +105,8 @@ public void fireCommandSent(String command, String message)
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.569 -0500", hash_original_method = "B9F577E0FBCAEFE328E86EB9BD6751FB", hash_generated_method = "6B1AA54471EAD34211C83ED4F2700F7B")
     
+    @DSVerified
+    @DSSafe(DSCat.CALLBACK_INVOKE)
 public void fireReplyReceived(int replyCode, String message)
     {
         Enumeration en;
@@ -126,10 +130,16 @@ public void fireReplyReceived(int replyCode, String message)
      * @param listener  The ProtocolCommandListener to add.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.573 -0500", hash_original_method = "DECBD44E3008758FDC051E0FB454F22B", hash_generated_method = "9D096511C0BF9614F763EFCCD40CBA9A")
-    
+   
+    @DSVerified
+    @DSSafe(DSCat.CALLBACK_INVOKE)
 public void addProtocolCommandListener(ProtocolCommandListener listener)
     {
         __listeners.addListener(listener);
+        if (listener != null) {
+            fireCommandSent("<proto-command>", "<proto-message>");
+            fireReplyReceived(DSUtils.FAKE_INT, "<reply-received-msg>");
+        }
     }
 
     /***

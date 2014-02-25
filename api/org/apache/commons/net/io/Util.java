@@ -78,7 +78,9 @@ public final class Util
      *            getIOException() methods.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.818 -0500", hash_original_method = "988C8C1A9C87B41B84F5CBCE16DA1DA1", hash_generated_method = "B0ACB468F4096B1507B0A8AC1B39636A")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyStream(InputStream source, OutputStream dest,
                                         int bufferSize, long streamSize,
                                         CopyStreamListener listener,
@@ -163,7 +165,9 @@ public static final long copyStream(InputStream source, OutputStream dest,
      *            getIOException() methods.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.822 -0500", hash_original_method = "59F041575984EC96DFD0048B067EB3F8", hash_generated_method = "67DB68E6109BDF76F718C4F5354A00B6")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyStream(InputStream source, OutputStream dest,
                                         int bufferSize, long streamSize,
                                         CopyStreamListener listener)
@@ -195,7 +199,9 @@ public static final long copyStream(InputStream source, OutputStream dest,
      *            getIOException() methods.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.827 -0500", hash_original_method = "805E3D268EC2C624B76D676FF5B77E40", hash_generated_method = "E26FE89963A7CF23AB90370ADC8186C5")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyStream(InputStream source, OutputStream dest,
                                         int bufferSize)
     throws CopyStreamException
@@ -209,7 +215,9 @@ public static final long copyStream(InputStream source, OutputStream dest,
      * Same as <code> copyStream(source, dest, DEFAULT_COPY_BUFFER_SIZE); </code>
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.831 -0500", hash_original_method = "C323B602CD06AD973DC5FDF71A366294", hash_generated_method = "79746B066B86222CEF2617E74A625A3E")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyStream(InputStream source, OutputStream dest)
     throws CopyStreamException
     {
@@ -249,7 +257,9 @@ public static final long copyStream(InputStream source, OutputStream dest)
      *            getIOException() methods.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.835 -0500", hash_original_method = "E7B7C9450E823273368CE03BFFFC56F4", hash_generated_method = "7C00E07CBAAEA290928D5CD0E564AA90")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyReader(Reader source, Writer dest,
                                         int bufferSize, long streamSize,
                                         CopyStreamListener listener)
@@ -319,7 +329,9 @@ public static final long copyReader(Reader source, Writer dest,
      *            getIOException() methods.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.838 -0500", hash_original_method = "37E6395A53D2856A75AD4C3F97C011E2", hash_generated_method = "B3C18AA82E084366BF075DFC9488C49D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyReader(Reader source, Writer dest,
                                         int bufferSize)
     throws CopyStreamException
@@ -333,7 +345,9 @@ public static final long copyReader(Reader source, Writer dest,
      * Same as <code> copyReader(source, dest, DEFAULT_COPY_BUFFER_SIZE); </code>
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.842 -0500", hash_original_method = "9E0049FC39F955363C8AC470546DF985", hash_generated_method = "5E48864011F01A2EFAAC41F42D632A46")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public static final long copyReader(Reader source, Writer dest)
     throws CopyStreamException
     {
@@ -342,6 +356,8 @@ public static final long copyReader(Reader source, Writer dest)
 
     // Cannot be instantiated
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.814 -0500", hash_original_method = "3D931E11640E8C52E9034B5681D86ADB", hash_generated_method = "CB4C43C81CA4705B619CC3DA2D5FFAD7")
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
     
 private Util()
     { }

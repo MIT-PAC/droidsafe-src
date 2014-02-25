@@ -47,6 +47,8 @@ public interface ProtocolCommandListener extends EventListener
      * <p>
      * @param event The ProtocolCommandEvent fired.
      ***/
+    @DSVerified("Called in ProtocolCommandSupport")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void protocolCommandSent(ProtocolCommandEvent event);
 
     /***
@@ -55,6 +57,9 @@ public interface ProtocolCommandListener extends EventListener
      * <p>
      * @param event The ProtocolCommandEvent fired.
      ***/
+
+    @DSVerified("Called in ProtocolCommandSupport")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void protocolReplyReceived(ProtocolCommandEvent event);
 
 }

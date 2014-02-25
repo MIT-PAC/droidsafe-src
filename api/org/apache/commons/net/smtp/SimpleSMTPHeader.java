@@ -69,7 +69,8 @@ public class SimpleSMTPHeader
      *              This should be the subject of the message.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.655 -0500", hash_original_method = "F5AEFAEF4E02A70FD5903FF3D20C6A4E", hash_generated_method = "7840BDA390B3340A6B8253B6C7813E2D")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public SimpleSMTPHeader(String from, String to, String subject)
     {
         __to = to;
@@ -92,7 +93,8 @@ public SimpleSMTPHeader(String from, String to, String subject)
      * @param value  The value of the added header field.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.658 -0500", hash_original_method = "5FCF67AB7FDBB19E75F1395E1E296333", hash_generated_method = "089221D91A9BEA064E10692D44044A1F")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void addHeaderField(String headerField, String value)
     {
         __headerFields.append(headerField);
@@ -108,7 +110,8 @@ public void addHeaderField(String headerField, String value)
      * @param address The email address to add to the CC list.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.662 -0500", hash_original_method = "5F0180DFE6C43FD3D2E19E724059CA58", hash_generated_method = "64AE4BFA28419E9E4F0FD9C8BF57BF4D")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void addCC(String address)
     {
         if (__cc == null)
@@ -129,7 +132,8 @@ public void addCC(String address)
      * @return The message header in the form of a String.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.666 -0500", hash_original_method = "62A908C41BE62BCE0C6AA4E6495535A3", hash_generated_method = "C4202B21989B2CD8AAFF9A5EDC7022BB")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public String toString()
     {
         StringBuffer header = new StringBuffer();

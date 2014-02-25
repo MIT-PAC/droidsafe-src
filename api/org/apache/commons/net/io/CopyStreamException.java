@@ -46,7 +46,7 @@ public class CopyStreamException extends IOException
      * @param exception  The IOException thrown during a copy operation.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.061 -0500", hash_original_method = "3FBE7BF8C34BE1586BD3FB61F6724F2F", hash_generated_method = "2F77D8C2A02E8DDB4F8B16E6421D8E7F")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public CopyStreamException(String message,
                                long bytesTransferred,
                                IOException exception)
@@ -63,7 +63,7 @@ public CopyStreamException(String message,
      * been transferred by a failed copy operation.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.064 -0500", hash_original_method = "C28B76EE4358A62CAE2EB5BA12A6EFD5", hash_generated_method = "CA66174706A724EDF639914843DF4E73")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public long getTotalBytesTransferred()
     {
         return totalBytesTransferred;
@@ -74,7 +74,7 @@ public long getTotalBytesTransferred()
      * @return The IOException responsible for the failure of a copy operation.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.068 -0500", hash_original_method = "E95CA5C5CC4C3C4034B99C0746930F29", hash_generated_method = "0368ABD64BA9D6CBD1FBE9C1A3A11E11")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public IOException getIOException()
     {
         return ioException;

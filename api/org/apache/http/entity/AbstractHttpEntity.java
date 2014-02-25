@@ -33,7 +33,8 @@ public abstract class AbstractHttpEntity implements HttpEntity {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.918 -0500", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "33852E0EBCD1B1F03B200DF158C6DE03")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public Header getContentType() {
         return this.contentType;
     }
@@ -47,7 +48,8 @@ public Header getContentType() {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.921 -0500", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "0F715B6D0D7D905C0D822E970B6614D5")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public Header getContentEncoding() {
         return this.contentEncoding;
     }
@@ -60,7 +62,8 @@ public Header getContentEncoding() {
      * @return  the 'chunked' flag
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.923 -0500", hash_original_method = "A2E32B99DD6261F3B5CB31D5FA7FC0FC", hash_generated_method = "D46D66383F14F25D695C786209B4FF6E")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public boolean isChunked() {
         return this.chunked;
     }
@@ -74,7 +77,8 @@ public boolean isChunked() {
      *                          <code>null</code> to unset
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.925 -0500", hash_original_method = "2A50843ADF5A0160EFC9E5758FE12891", hash_generated_method = "1874C3317F3410204EFC04FD9299595D")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public void setContentType(final Header contentType) {
         this.contentType = contentType;
     }
@@ -88,7 +92,8 @@ public void setContentType(final Header contentType) {
      *                     <code>null</code> to unset
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.927 -0500", hash_original_method = "E88DF46252A0D3C2D0E67C1F492FFB2C", hash_generated_method = "3DFC5FA202A5B7D3D2C51A0040367FD0")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public void setContentType(final String ctString) {
         Header h = null;
         if (ctString != null) {
@@ -106,7 +111,8 @@ public void setContentType(final String ctString) {
      *                          <code>null</code> to unset
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.929 -0500", hash_original_method = "DEBEEA900825B0657525159073BC33A3", hash_generated_method = "50544A7BFB2B272F6A1826A6DC648C69")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public void setContentEncoding(final Header contentEncoding) {
         this.contentEncoding = contentEncoding;
     }
@@ -120,7 +126,8 @@ public void setContentEncoding(final Header contentEncoding) {
      *                     <code>null</code> to unset
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.932 -0500", hash_original_method = "C8D25A66722ADB2A8BE857D43D852F52", hash_generated_method = "D642BC53948088F105FD18B8BE2281A6")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public void setContentEncoding(final String ceString) {
         Header h = null;
         if (ceString != null) {
@@ -139,7 +146,8 @@ public void setContentEncoding(final String ceString) {
     @DSComment("possibly edits networking data")
     @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.936 -0500", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "257FDFC86D61A9133D77F54CD71C658D")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public void setChunked(boolean b) {
         this.chunked = b;
     }
@@ -158,7 +166,8 @@ public void setChunked(boolean b) {
      *          if a streaming subclass does not override this method
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.939 -0500", hash_original_method = "3048E7043703056EA818491E1D9863FC", hash_generated_method = "3ED0DB4C1BFC2781032ABBA2CF53EE80")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void consumeContent()
         throws IOException, UnsupportedOperationException{
         if (isStreaming()) {

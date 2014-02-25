@@ -61,7 +61,8 @@ public final class FromNetASCIIInputStream extends PushbackInputStream
      *   system line separator, false if they are the same.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.901 -0500", hash_original_method = "8110C8E7476BAC12ED22AD12D0A85400", hash_generated_method = "48AB28D83654864E9BDD43DDAAC51E5F")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public static final boolean isConversionRequired()
     {
         return !_noConversionRequired;
@@ -76,7 +77,8 @@ public static final boolean isConversionRequired()
      * InputStream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.905 -0500", hash_original_method = "235D12E1C0658EE09BEFB9086E97A54C", hash_generated_method = "3E872DC79AAB9673DD68326684BD29B8")
-    
+    @DSVerified("Constructor")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public FromNetASCIIInputStream(InputStream input)
     {
         super(input, _lineSeparatorBytes.length + 1);
@@ -84,7 +86,8 @@ public FromNetASCIIInputStream(InputStream input)
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.910 -0500", hash_original_method = "77980A358154D9038CFECBC54542DD49", hash_generated_method = "8E9BB545BA3E9B629B4ECC63266C8715")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
 private int __read() throws IOException
     {
         int ch;
@@ -127,7 +130,8 @@ private int __read() throws IOException
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.913 -0500", hash_original_method = "FDD307626797CF03D3088020E6279DC1", hash_generated_method = "EC28F09966AA2D56B5EA24D3CC58965D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read() throws IOException
     {
         if (_noConversionRequired)
@@ -149,7 +153,8 @@ public int read() throws IOException
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.916 -0500", hash_original_method = "1AF05D3B3AC1A0BE6FEC3ED8E4AD92D7", hash_generated_method = "602CBE64B37DDC68026D3CD1EA56EC7D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read(byte buffer[]) throws IOException
     {
         return read(buffer, 0, buffer.length);
@@ -171,7 +176,8 @@ public int read(byte buffer[]) throws IOException
      *            stream.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.920 -0500", hash_original_method = "D5CA87DB17742A9AF9BD65F49DD2ECBD", hash_generated_method = "E675C261CE18EE23F3E1B538CF4CA707")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)
 public int read(byte buffer[], int offset, int length) throws IOException
     {
         int ch, off;
@@ -215,7 +221,8 @@ public int read(byte buffer[], int offset, int length) throws IOException
      * blocking.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.923 -0500", hash_original_method = "C56687AB499DA35AD83666C42808A3B2", hash_generated_method = "7668CEF39E8CDEF265D2D91FCC382449")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int available() throws IOException
     {
         return (buf.length - pos) + in.available();

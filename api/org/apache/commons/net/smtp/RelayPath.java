@@ -48,7 +48,9 @@ public final class RelayPath
      * @param emailAddress The destination email address.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.756 -0500", hash_original_method = "5F136D339506768265D1EADC5C1F6BBD", hash_generated_method = "A22A62F74CBC653ED8E2E0F0C2E714A5")
-    
+    @DSComment("Constructor")
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public RelayPath(String emailAddress)
     {
         _path = new Vector();
@@ -69,6 +71,8 @@ public RelayPath(String emailAddress)
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.760 -0500", hash_original_method = "7912556ED62AEE2B5498669D6D968833", hash_generated_method = "AAC5FEE875714E8157FED6F87A0F39FE")
     
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void addRelay(String hostname)
     {
         _path.addElement(hostname);
@@ -80,6 +84,8 @@ public void addRelay(String hostname)
      * @return The properly formatted string representation of the relay path.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.768 -0500", hash_original_method = "8E799345410D5A9E18D25167F32F6404", hash_generated_method = "5E5CABB43821B92D3373B636ACA540B2")
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     
 public String toString()
     {

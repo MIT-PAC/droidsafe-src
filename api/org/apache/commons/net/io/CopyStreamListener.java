@@ -1,4 +1,5 @@
 /*
+
  * Copyright 2001-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,6 +52,8 @@ public interface CopyStreamListener extends EventListener
      * @param event The CopyStreamEvent fired by the copying of a block of
      *              bytes.
      */
+    @DSVerified("callback called in CopyStreamAdapter")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void bytesTransferred(CopyStreamEvent event);
 
 
@@ -67,6 +70,8 @@ public interface CopyStreamListener extends EventListener
      *        This may be equal to CopyStreamEvent.UNKNOWN_STREAM_SIZE if
      *        the size is unknown.
      */
+    @DSVerified("callback called in CopyStreamAdapter")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public void bytesTransferred(long totalBytesTransferred,
                                  int bytesTransferred,
                                  long streamSize);
