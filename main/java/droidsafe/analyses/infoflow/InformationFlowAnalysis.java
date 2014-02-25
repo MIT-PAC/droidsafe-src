@@ -212,9 +212,7 @@ public class InformationFlowAnalysis {
                 locals.merge(ls);
             }
         } else {
-            if (Config.v().strict) {
-                assert precedingBlocks.size() == 0;
-            }
+            assert precedingBlocks.size() == 0;
             Locals ls = this.stackArea.get(null).get(block);
             locals = new Locals(ls);
         }
@@ -253,9 +251,7 @@ public class InformationFlowAnalysis {
                 Locals outLocals = execute(block, inLocals, nonStackArea);
                 if (outLocals != null) {
                     for (Block followingBlock : InterproceduralControlFlowGraph.v().getSuccsOf(block)) {
-                        if (Config.v().strict) {
-                            assert !(InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead()));
-                        }
+                        assert !(InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead()));
                         if (this.hasChanged || !(this.stackArea.get(block).get(followingBlock).equals(outLocals))) {
                             this.stackArea.get(block).put(followingBlock, outLocals);
                             this.hasChanged = true;
@@ -273,16 +269,10 @@ public class InformationFlowAnalysis {
     private void initialize() {
         SootMethod method = Harness.v().getMain();
         List<Block> blocks = InterproceduralControlFlowGraph.v().methodToHeadBlocks.get(method);
-        if (Config.v().strict) {
-            assert blocks.size() == 1;
-        }
+        assert blocks.size() == 1;
         Block block = blocks.get(0);
-        if (Config.v().strict) {
-            assert block.getHead() instanceof IdentityStmt;
-        }
-        if (Config.v().strict) {
-            assert InterproceduralControlFlowGraph.v().getHeads().contains(block);
-        }
+        assert block.getHead() instanceof IdentityStmt;
+        assert InterproceduralControlFlowGraph.v().getHeads().contains(block);
 
         this.stackArea.get(null).put(block, Locals.EMPTY);
     }
@@ -445,9 +435,7 @@ public class InformationFlowAnalysis {
             public void caseInvokeExpr(InvokeExpr invokeExpr) {
                 // local "=" invoke_expr
                 // invoke_expr = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr;
-                if (Config.v().strict) {
-                    assert !(invokeExpr instanceof DynamicInvokeExpr);
-                }
+                assert !(invokeExpr instanceof DynamicInvokeExpr);
                 setResult(execute(stmt, invokeExpr, locals, nonStackArea));
             }
         };
@@ -460,49 +448,25 @@ public class InformationFlowAnalysis {
         AbstractConstantSwitch constantSwitch = new AbstractConstantSwitch() {
             @Override
             public void caseClassConstant(ClassConstant constant) {
-                if (Config.v().strict) {
-                    assert lLocal.getType() instanceof RefType;
-                }
-                if (Config.v().strict) {
-                    SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-                    for (MethodOrMethodContext methodContext : PTABridge.v().getMethodContexts(method)) {
-                        Context context = methodContext.context();
-                        assert PTABridge.v().getAllocNode(constant, context) != null :
-                                method + ": " + stmt + ":\n" + "\tPTABridge.v().getAllocNode(" + constant + ", " + method +") is null";
-                    }
-                }
+                assert lLocal.getType() instanceof RefType;
                 setResult(locals);
             }
 
             @Override
             public void caseNullConstant(NullConstant constant) {
-                if (Config.v().strict) {
-                    assert lLocal.getType() instanceof RefLikeType;
-                }
+                assert lLocal.getType() instanceof RefLikeType;
                 setResult(locals);
             }
 
             @Override
             public void caseStringConstant(StringConstant constant) {
-                if (Config.v().strict) {
-                    assert lLocal.getType() instanceof RefType;
-                }
-                if (Config.v().strict) {
-                    SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-                    for (MethodOrMethodContext methodContext : PTABridge.v().getMethodContexts(method)) {
-                        Context context = methodContext.context();
-                        assert PTABridge.v().getAllocNode(constant, context) != null :
-                                method + ": " + stmt + ":\n" + "\tPTABridge.v().getAllocNode(" + constant + ", " + method + ") is null";
-                    }
-                }
+                assert lLocal.getType() instanceof RefType;
                 setResult(locals);
             }
 
             @Override
             public void defaultCase(Object constant) {
-                if (Config.v().strict) {
-                    assert constant instanceof NumericConstant;
-                }
+                assert constant instanceof NumericConstant;
                 setResult(locals);
             }
         };
@@ -513,13 +477,9 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" local
     private Locals execute(AssignStmt stmt, Local lLocal, Local rLocal, Locals locals, NonStackArea nonStackArea) {
         if (lLocal.getType() instanceof RefLikeType) {
-            if (Config.v().strict) {
                 assert rLocal.getType() instanceof RefLikeType;
-            }
         } else {
-            if (Config.v().strict) {
                 assert !(rLocal.getType() instanceof RefLikeType);
-            }
             Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
@@ -536,13 +496,9 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" instance_field_ref
     private Locals execute(AssignStmt stmt, Local lLocal, InstanceFieldRef instanceFieldRef, Locals locals, NonStackArea nonStackArea) {
         if (lLocal.getType() instanceof RefLikeType) {
-            if (Config.v().strict) {
-                assert instanceFieldRef.getType() instanceof RefLikeType;
-            }
+            assert instanceFieldRef.getType() instanceof RefLikeType;
         } else {
-            if (Config.v().strict) {
-                assert !(instanceFieldRef.getType() instanceof RefLikeType);
-            }
+            assert !(instanceFieldRef.getType() instanceof RefLikeType);
             Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
@@ -567,13 +523,9 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" static_field_ref
     private Locals execute(AssignStmt stmt, Local lLocal, StaticFieldRef staticFieldRef, Locals locals, NonStackArea nonStackArea) {
         if (lLocal.getType() instanceof RefLikeType) {
-            if (Config.v().strict) {
-                assert staticFieldRef.getType() instanceof RefLikeType;
-            }
+            assert staticFieldRef.getType() instanceof RefLikeType;
         } else {
-            if (Config.v().strict) {
-                assert !(staticFieldRef.getType() instanceof RefLikeType);
-            }
+            assert !(staticFieldRef.getType() instanceof RefLikeType);
             Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
@@ -592,13 +544,9 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" array_ref
     private Locals execute(AssignStmt stmt, Local lLocal, ArrayRef arrayRef, Locals locals, NonStackArea nonStackArea) {
         if (lLocal.getType() instanceof RefLikeType) {
-            if (Config.v().strict) {
-                assert arrayRef.getType() instanceof RefLikeType;
-            }
+            assert arrayRef.getType() instanceof RefLikeType;
         } else {
-            if (Config.v().strict) {
-                assert !(arrayRef.getType() instanceof RefLikeType);
-            }
+            assert !(arrayRef.getType() instanceof RefLikeType);
             Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
@@ -621,9 +569,7 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" new_expr
     private Locals execute(AssignStmt stmt, Local lLocal, NewExpr newExpr, Locals locals, NonStackArea nonStackArea) {
-        if (Config.v().strict) {
-            assert lLocal.getType() instanceof RefLikeType;
-        }
+        assert lLocal.getType() instanceof RefLikeType;
 //        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
 //        Body body = block.getBody();
 //        SootMethod method = body.getMethod();
@@ -648,9 +594,7 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" new_array_expr
     private Locals execute(AssignStmt stmt, Local lLocal, NewArrayExpr newArrayExpr, Locals locals, NonStackArea nonStackArea) {
-        if (Config.v().strict) {
-            assert lLocal.getType() instanceof RefLikeType;
-        }
+        assert lLocal.getType() instanceof RefLikeType;
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
@@ -670,9 +614,7 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" new_multi_array_expr
     private Locals execute(AssignStmt stmt, Local lLocal, NewMultiArrayExpr newMultiArrayExpr, Locals locals, NonStackArea nonStackArea) {
-        if (Config.v().strict) {
-            assert lLocal.getType() instanceof RefLikeType;
-        }
+        assert lLocal.getType() instanceof RefLikeType;
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
@@ -721,19 +663,11 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" "(" type ")" local
     private Locals execute(AssignStmt stmt, Local lLocal, CastExpr castExpr, Local rLocal, Locals locals, NonStackArea nonStackArea) {
         if (lLocal.getType() instanceof RefLikeType) {
-            if (Config.v().strict) {
-                assert castExpr.getType() instanceof RefLikeType;
-            }
-            if (Config.v().strict) {
-                assert rLocal.getType() instanceof RefLikeType;
-            }
+            assert castExpr.getType() instanceof RefLikeType;
+            assert rLocal.getType() instanceof RefLikeType;
         } else {
-            if (Config.v().strict) {
-                assert !(castExpr.getType() instanceof RefLikeType);
-            }
-            if (Config.v().strict) {
-                assert !(rLocal.getType() instanceof RefLikeType);
-            }
+            assert !(castExpr.getType() instanceof RefLikeType);
+            assert !(rLocal.getType() instanceof RefLikeType);
             Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
@@ -752,17 +686,7 @@ public class InformationFlowAnalysis {
         AbstractConstantSwitch constantSwitch = new AbstractConstantSwitch() {
             @Override
             public void caseClassConstant(ClassConstant constant) {
-                if (Config.v().strict) {
-                    assert lLocal.getType() instanceof RefType;
-                }
-                if (Config.v().strict) {
-                    SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-                    for (MethodOrMethodContext methodContext : PTABridge.v().getMethodContexts(method)) {
-                        Context context = methodContext.context();
-                        assert PTABridge.v().getAllocNode(constant, context) != null :
-                                method + ": " + stmt + ":\n" + "\tPTABridge.v().getAllocNode(" + constant + ", " + method + ") is null";
-                    }
-                }
+                assert lLocal.getType() instanceof RefType;
                 setResult(locals);
             }
 
@@ -773,28 +697,14 @@ public class InformationFlowAnalysis {
 
             @Override
             public void caseStringConstant(StringConstant constant) {
-                if (Config.v().strict) {
-                    assert lLocal.getType() instanceof RefType;
-                }
-                if (Config.v().strict) {
-                    SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-                    for (MethodOrMethodContext methodContext : PTABridge.v().getMethodContexts(method)) {
-                        Context context = methodContext.context();
-                        assert PTABridge.v().getAllocNode(constant, context) != null :
-                                method + ": " + stmt + ":\n" + "\tPTABridge.v().getAllocNode(" + constant + ", " + method + ") is null";
-                    }
-                }
+                assert lLocal.getType() instanceof RefType;
                 setResult(locals);
             }
 
             @Override
             public void defaultCase(Object constant) {
-                if (Config.v().strict) {
-                    assert lLocal.getType() instanceof PrimType;
-                }
-                if (Config.v().strict) {
-                    assert constant instanceof NumericConstant;
-                }
+                assert lLocal.getType() instanceof PrimType;
+                assert constant instanceof NumericConstant;
                 setResult(locals);
             }
         };
@@ -804,9 +714,7 @@ public class InformationFlowAnalysis {
 
     // assigin_stmt = local "=" instance_of_expr
     private Locals execute(AssignStmt stmt, Local lLocal, InstanceOfExpr instanceOfExpr, Locals locals, NonStackArea nonStackArea) {
-        if (Config.v().strict) {
-            assert !(lLocal.getType() instanceof RefLikeType);
-        }
+        assert !(lLocal.getType() instanceof RefLikeType);
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
@@ -828,9 +736,7 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" unop_expr
     private Locals execute(final AssignStmt stmt, final Local lLocal, UnopExpr unopExpr, final Locals locals, final NonStackArea nonStackArea) {
-        if (Config.v().strict) {
-            assert !(lLocal.getType() instanceof RefLikeType);
-        }
+        assert !(lLocal.getType() instanceof RefLikeType);
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         Body body = block.getBody();
         final SootMethod method = body.getMethod();
@@ -850,9 +756,7 @@ public class InformationFlowAnalysis {
 
             @Override
             public void caseLengthExpr(LengthExpr lengthExpr) {
-                if (Config.v().strict) {
-                    assert opImmediate instanceof Local;
-                }
+                assert opImmediate instanceof Local;
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
                     Context context = methodContext.context();
@@ -872,9 +776,7 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" binop_expr
     private Locals execute(AssignStmt stmt, Local lLocal, BinopExpr binopExpr, Locals locals, NonStackArea nonStackArea) {
-        if (Config.v().strict) {
-            assert !(lLocal.getType() instanceof RefLikeType);
-        }
+        assert !(lLocal.getType() instanceof RefLikeType);
         SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
         // binop_expr = immediate binop immediate
         Immediate[] immediates = {(Immediate)binopExpr.getOp1(), (Immediate)binopExpr.getOp2()};
@@ -896,10 +798,8 @@ public class InformationFlowAnalysis {
                 locals.putS(context, lLocal, values);
             }
         } else {
-            if (Config.v().strict) {
-                assert immediates[0].getType() instanceof PrimType;
-                assert immediates[1].getType() instanceof PrimType;
-            }
+            assert immediates[0].getType() instanceof PrimType;
+            assert immediates[1].getType() instanceof PrimType;
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
@@ -968,9 +868,7 @@ public class InformationFlowAnalysis {
             @Override
             public void caseConstant(Constant constant) {
                 // static_field_ref "=" constant
-                if (Config.v().strict) {
-                    assert !(constant instanceof ClassConstant);
-                }
+                assert !(constant instanceof ClassConstant);
                 setResult(locals);
             }
         };
@@ -1153,9 +1051,7 @@ public class InformationFlowAnalysis {
 
     private Locals executeGetTaint(Stmt stmt, InvokeExpr invokeExpr, Locals locals, NonStackArea nonStackArea) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
-        if (Config.v().strict) {
-            assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
-        }
+        assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         if (stmt instanceof AssignStmt) {
@@ -1175,18 +1071,14 @@ public class InformationFlowAnalysis {
             }
         } else {
             // "virtualinvoke" immediate ".[" Object.getTaint* "]" "(" ")"
-            if (Config.v().strict) {
-                assert stmt instanceof InvokeStmt;
-            }
+            assert stmt instanceof InvokeStmt;
         }
        return locals;
     }
 
     private Locals executeAddTaint(Stmt stmt, InvokeExpr invokeExpr, Locals locals, NonStackArea nonStackArea) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
-        if (Config.v().strict) {
-            assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
-        }
+        assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         Local baseLocal = (Local)((VirtualInvokeExpr)invokeExpr).getBase();
@@ -1202,9 +1094,7 @@ public class InformationFlowAnalysis {
                 }
             }
         } else {
-            if (Config.v().strict) {
-                assert argImmediate instanceof Constant;
-            }
+            assert argImmediate instanceof Constant;
         }
         return locals;
     }
@@ -1290,9 +1180,7 @@ public class InformationFlowAnalysis {
     }
 
     private ImmutableSet<InfoValue> evaluate(final Context context, Immediate immediate, final Locals locals) {
-        if (Config.v().strict) {
-            assert !(immediate.getType() instanceof RefLikeType);
-        }
+        assert !(immediate.getType() instanceof RefLikeType);
 
         // immediate = constant | local;
         MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {

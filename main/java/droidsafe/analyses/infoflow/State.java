@@ -23,9 +23,7 @@ class ContextLocal {
     Local local;
 
     private ContextLocal(Context context, Local local) {
-        if (Config.v().strict) {
-            assert local != null;
-        }
+        assert local != null;
         this.context = context;
         this.local = local;
     }
@@ -174,9 +172,7 @@ class AllocNodeField  {
     SootField field;
 
     private AllocNodeField(IAllocNode allocNode, SootField field) {
-        if (Config.v().strict) {
-            assert allocNode != null && field != null;
-        }
+        assert allocNode != null && field != null;
         this.allocNode = allocNode;
         this.field = field;
     }

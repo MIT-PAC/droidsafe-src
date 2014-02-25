@@ -140,9 +140,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     }
 
     public Block getFallThroughBlock(Block callerBlock) {
-        if (Config.v().strict) {
-            assert ((Stmt)callerBlock.getTail()).containsInvokeExpr();
-        }
+        assert ((Stmt)callerBlock.getTail()).containsInvokeExpr();
         Body callerBody = callerBlock.getBody();
         SootMethod callerMethod = callerBody.getMethod();
         List<Block> followingBlocks = this.blockToFollowingBlocks.get(callerBlock);
@@ -235,16 +233,10 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
             Unit tailUnit = block.getTail();
             if (((Stmt)tailUnit).containsInvokeExpr()) {
                 List<Block> followingBlocks = this.blockToFollowingBlocks.get(block);
-                if (Config.v().strict) {
-                    assert followingBlocks.size() == 1;
-                }
+                assert followingBlocks.size() == 1;
                 Block fallThroughBlock = followingBlocks.get(0);
-                if (Config.v().strict) {
-                    assert !(containsCaughtExceptionRef(fallThroughBlock.getHead()));
-                }
-                if (Config.v().strict) {
-                    assert block.getBody().getMethod().equals(fallThroughBlock.getBody().getMethod());
-                }
+                assert !(containsCaughtExceptionRef(fallThroughBlock.getHead()));
+                assert block.getBody().getMethod().equals(fallThroughBlock.getBody().getMethod());
                 Iterator<Edge> callEdges = callGraph.edgesOutOf(tailUnit);
                 while (callEdges.hasNext()) {
                     Edge callEdge = callEdges.next();
