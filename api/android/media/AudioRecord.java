@@ -200,14 +200,17 @@ static public int getMinBufferSize(int sampleRateInHz, int channelConfig, int au
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:29.071 -0500", hash_original_method = "B58723AC8A06330DB518FE874415CDC1", hash_generated_method = "AA49D321012562E9189BD4F7C2309138")
-    
+    @DSVerified
+    @DSBan(DSCat.PRIVATE_METHOD)
     static private final int native_get_min_buff_size(
                 int sampleRateInHz, int channelCount, int audioFormat){
     	//Formerly a native method
-    	addTaint(sampleRateInHz);
-    	addTaint(channelCount);
-    	addTaint(audioFormat);
-    	return getTaintInt();
+        Object obj = new Object();
+        obj.addTaint(sampleRateInHz);
+        obj.addTaint(channelCount);
+        obj.addTaint(audioFormat);
+        
+    	return obj.getTaintInt();
     }
 
 
