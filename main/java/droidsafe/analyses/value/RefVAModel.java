@@ -181,18 +181,17 @@ public abstract class RefVAModel extends VAModel {
      */
     public String toStringPretty(int level) {
         StringBuffer buf = new StringBuffer();
-        buf.append("va-modeled-");
+        String indent = "\n" + VAUtils.indent(level);
+        buf.append(indent);
         buf.append(this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()));
-        buf.append(" ");
-        buf.append(this.getId());
         buf.append(": ");
         if(beingPrinted) {
             buf.append("<RECURSIVE>");
         } else {
             beingPrinted = true;
-            buf.append("{");
+            // buf.append("{");
             buf.append(this.fieldsStringPretty(level + 1));
-            buf.append("}");
+            // buf.append("}");
             beingPrinted = false;
         }
         return buf.toString();
@@ -287,7 +286,7 @@ public abstract class RefVAModel extends VAModel {
                         buf.append(INVALIDATED);
                     } else {
                         // using which we call getFieldVAModels to get a list of of object models
-                        if(vaModels.size() > 1) buf.append("{");
+                        // if(vaModels.size() > 1) buf.append("{");
                         boolean firstValue = true;
                         for (VAModel vaModel : vaModels) {
                             // TODO: figure out why this can be null
@@ -305,7 +304,7 @@ public abstract class RefVAModel extends VAModel {
                                 }
                             }
                         }
-                        if(vaModels.size() > 1) buf.append("}");
+                        // if(vaModels.size() > 1) buf.append("}");
                     }
                 }
             }

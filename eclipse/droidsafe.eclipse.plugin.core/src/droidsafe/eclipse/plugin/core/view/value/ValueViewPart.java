@@ -124,7 +124,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
                 if (receiverValue != null && !receiverValue.isEmpty()) {
                     buf.append("----- receiver: ");
                     buf.append(method.getReceiverType());
-                    buf.append(" --------------------\n\n");
+                    buf.append(" --------------------\n");
                     buf.append(receiverValue);
                 }
                 List<String> argTypes = method.getMethodArguments();
@@ -132,12 +132,12 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
                     String argValue = method.getArgumentValue(i);
                     if (argValue != null) {
                         if (buf.length() > 0) 
-                            buf.append(":\n\n");
+                            buf.append("\n\n");
                         buf.append("----- argument ");
                         buf.append(i + 1);
                         buf.append(": ");
                         buf.append(argTypes.get(i));
-                        buf.append(" --------------------\n\n");
+                        buf.append(" --------------------\n");
                         buf.append(argValue);
                     }
                 }

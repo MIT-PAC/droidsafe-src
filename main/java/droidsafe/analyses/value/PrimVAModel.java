@@ -70,8 +70,8 @@ public abstract class PrimVAModel extends VAModel {
         } else {
             boolean first = true;
             Set<Object> vals = this.getValues();
-            if (vals.size() > 1)
-                buf.append("{");
+//            if (vals.size() > 1)
+//                buf.append("{");
             for(Object val : vals) {
                 if (first) {
                     first = false;
@@ -87,8 +87,8 @@ public abstract class PrimVAModel extends VAModel {
                     buf.append(val);
                 }
             }
-            if (vals.size() > 1)
-                buf.append("}");
+//            if (vals.size() > 1)
+//                buf.append("}");
         }
         return buf.toString();
     }
