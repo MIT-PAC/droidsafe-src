@@ -431,7 +431,6 @@ public Window getWindow() {
 		*/
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
 	@DSVerified("Modeled Lifecycle Event")
