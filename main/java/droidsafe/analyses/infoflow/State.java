@@ -24,7 +24,7 @@ class ContextLocal {
 
     private ContextLocal(Context context, Local local) {
         if (Config.v().strict) {
-            assert context != null && local != null;
+            assert local != null;
         }
         this.context = context;
         this.local = local;
@@ -50,12 +50,12 @@ class ContextLocal {
         }
         ContextLocal that = (ContextLocal)object;
 
-        return this.local.equals(that.local) && this.context.equals(that.context);
+        return this.local.equals(that.local) && ((this.context == null && that.context == null) || (this.context != null && this.context.equals(that.context)));
     }
 
     @Override
     public int hashCode() {
-        return 31 * (31 * 17 + this.context.hashCode()) + this.local.hashCode();
+        return 31 * (31 * 17 + (this.context != null ? this.context.hashCode() : 0)) + this.local.hashCode();
     }
 
     @Override
