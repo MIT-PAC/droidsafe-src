@@ -34,35 +34,43 @@ public class ListenerList implements Serializable
     private Vector __listeners;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.526 -0500", hash_original_method = "584E60922940A736A6FF41CA4C8DA8F7", hash_generated_method = "26BF69FF81734FEC6734C9CFDCAE02FC")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public ListenerList()
     {
         __listeners = new Vector();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.529 -0500", hash_original_method = "0AC17197E5276DE7CBA010BDA5C2B2F2", hash_generated_method = "3384F3269FB19A8535D85D4667FDCC96")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public synchronized void addListener(EventListener listener)
     {
         __listeners.addElement(listener);
+        if (listener != null) {
+        }
+
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.532 -0500", hash_original_method = "AFCF3089FC23AA9DA53FAB7053CC96B3", hash_generated_method = "0561F686518CCF4B9F8531919422C161")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public synchronized void removeListener(EventListener listener)
     {
         __listeners.removeElement(listener);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.535 -0500", hash_original_method = "CB1546203AA20A5E0C4825E35116EE10", hash_generated_method = "5EFDEDCF7F1AFF303B1BB0928D921F5E")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE) 
 public synchronized Enumeration getListeners()
     {
         return ((Vector)__listeners.clone()).elements();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.539 -0500", hash_original_method = "2C5BC93715E39FD3F47AA06A65E1F674", hash_generated_method = "CE2515F9B8892AD16CCAB0E998136EA0")
-    
+    @DSVerified
+    @DSSafe(DSCat.DATA_STRUCTURE)
 public int getListenerCount()
     {
         return __listeners.size();

@@ -40,7 +40,8 @@ public final class SMTPConnectionClosedException extends IOException
 
     /*** Constructs a SMTPConnectionClosedException with no message ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.846 -0500", hash_original_method = "18514752AF9765DC2B592BA63E6E31BB", hash_generated_method = "0BBE24FD00D06DA5CCB82C2749A74814")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public SMTPConnectionClosedException()
     {
         super();
@@ -52,7 +53,8 @@ public SMTPConnectionClosedException()
      * @param message  The message explaining the reason for the exception.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.850 -0500", hash_original_method = "662F89856A3B1E88FA54A5AA5FC0E396", hash_generated_method = "737A6B97701E0AB20FAA2BFB74B032C0")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public SMTPConnectionClosedException(String message)
     {
         super(message);

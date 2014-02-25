@@ -129,7 +129,12 @@ public class SMTPClient extends SMTP
     /*
      * Default SMTPClient constructor.  Creates a new SMTPClient instance.
      */
-    //public SMTPClient() {  }
+    @DSComment("Constructor")
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public SMTPClient() {  
+        
+    }
 
 
     /***
@@ -165,7 +170,8 @@ public class SMTPClient extends SMTP
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.893 -0500", hash_original_method = "BFA0A8FEA8E06D6A267D67FA4CCF091B", hash_generated_method = "256489EB04C9F3CD609596048359BA7D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
 public boolean completePendingCommand() throws IOException
     {
         return SMTPReply.isPositiveCompletion(getReply());
@@ -188,7 +194,9 @@ public boolean completePendingCommand() throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.897 -0500", hash_original_method = "ADC5687DD367DA748E87D370EBAA626A", hash_generated_method = "9EE693998BA7A36A3A10E2F3EB609F02")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean login(String hostname) throws IOException
     {
         return SMTPReply.isPositiveCompletion(helo(hostname));
@@ -210,7 +218,9 @@ public boolean login(String hostname) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.901 -0500", hash_original_method = "9284A49878E24579805D9B3A83B65918", hash_generated_method = "5026640DDE838AB1D7C568964116B628")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})  
 public boolean login() throws IOException
     {
         String name;
@@ -243,7 +253,8 @@ public boolean login() throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.905 -0500", hash_original_method = "A1B2D3D68C3A7DEE0788CB81C0FF13CB", hash_generated_method = "1DC0A2D0572E79AF86DDF8883FF2BA8D")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean setSender(RelayPath path) throws IOException
     {
         return SMTPReply.isPositiveCompletion(mail(path.toString()));
@@ -267,7 +278,8 @@ public boolean setSender(RelayPath path) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.909 -0500", hash_original_method = "B1F5B3A988F172353F08FDEFCB4418C8", hash_generated_method = "7CE41911B29D32F7EB7077BFBD8F53E5")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean setSender(String address) throws IOException
     {
         return SMTPReply.isPositiveCompletion(mail("<" + address + ">"));
@@ -291,7 +303,8 @@ public boolean setSender(String address) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.912 -0500", hash_original_method = "60C6DD13258E5D92FEA078E8C5222031", hash_generated_method = "271B53BA67E51E525EF7141EC3F65BC7")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean addRecipient(RelayPath path) throws IOException
     {
         return SMTPReply.isPositiveCompletion(rcpt(path.toString()));
@@ -315,7 +328,8 @@ public boolean addRecipient(RelayPath path) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.916 -0500", hash_original_method = "535370C087A055BCC54FD714FA277330", hash_generated_method = "F61C3E3B4781D082849D9D094BC24EF1")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean addRecipient(String address) throws IOException
     {
         return SMTPReply.isPositiveCompletion(rcpt("<" + address + ">"));
@@ -363,7 +377,9 @@ public boolean addRecipient(String address) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.921 -0500", hash_original_method = "3CE926AFC3A0744468CAB1714BF35B0D", hash_generated_method = "656009A6922DA839F09EB24B03E1B99D")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public Writer sendMessageData() throws IOException
     {
         if (!SMTPReply.isPositiveIntermediate(data()))
@@ -392,7 +408,9 @@ public Writer sendMessageData() throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.929 -0500", hash_original_method = "7B89051DA90849929443A02F47B1E028", hash_generated_method = "A3D159AC352612B215386DC8E6BBF4F9")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean sendShortMessageData(String message) throws IOException
     {
         Writer writer;
@@ -430,7 +448,9 @@ public boolean sendShortMessageData(String message) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.933 -0500", hash_original_method = "92647114F0B86067E7D43CC90DB0EBBE", hash_generated_method = "4558FF435C34BA54D2D4F3B6B39E0B7B")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean sendSimpleMessage(String sender, String recipient,
                                      String message)
     throws IOException
@@ -467,7 +487,9 @@ public boolean sendSimpleMessage(String sender, String recipient,
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.937 -0500", hash_original_method = "5AD2FE5C3CFE682A970F0638BE91A64C", hash_generated_method = "879DAC5FC115025C63FF204819E0C22B")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean sendSimpleMessage(String sender, String[] recipients,
                                      String message)
     throws IOException
@@ -504,7 +526,9 @@ public boolean sendSimpleMessage(String sender, String[] recipients,
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.941 -0500", hash_original_method = "86625BE6BC74680BCE9F9FD0AA53BF54", hash_generated_method = "8AE8656DED621D60E849739B60BF3CA8")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean logout() throws IOException
     {
         return SMTPReply.isPositiveCompletion(quit());
@@ -526,7 +550,9 @@ public boolean logout() throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.944 -0500", hash_original_method = "D3B7CEC20A124B5B8658676D7721D307", hash_generated_method = "2B4C16F7BEE7A65CECC0B61F85D894BA")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean reset() throws IOException
     {
         return SMTPReply.isPositiveCompletion(rset());
@@ -548,7 +574,9 @@ public boolean reset() throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.948 -0500", hash_original_method = "4BA0FED02486EFBF4EE8334994DBE6CC", hash_generated_method = "CCB0D26414F71ECFF28E424750726E31")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean verify(String username) throws IOException
     {
         int result;
@@ -575,7 +603,9 @@ public boolean verify(String username) throws IOException
      *  command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.951 -0500", hash_original_method = "F9C41201775A1AACD21054779541BDEA", hash_generated_method = "3CA11E865E7B60B42B88D30C85038589")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public String listHelp() throws IOException
     {
         if (SMTPReply.isPositiveCompletion(help()))
@@ -600,7 +630,9 @@ public String listHelp() throws IOException
      *  command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.955 -0500", hash_original_method = "ACA58AE10EC88B0125C9A13993452736", hash_generated_method = "83BBE64308388E1E7664DAD362BEAF09")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public String listHelp(String command) throws IOException
     {
         if (SMTPReply.isPositiveCompletion(help(command)))
@@ -623,7 +655,9 @@ public String listHelp(String command) throws IOException
      *      command to the server or receiving a reply from the server.
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.959 -0500", hash_original_method = "D41F1FA722E38C99947581A87108BCAE", hash_generated_method = "F0091385F9E85AF39D1057ADB6E82EB4")
-    
+    @DSVerified
+    @DSSpec(DSCat.IO)   
+    @DSSink({DSSinkKind.NETWORK})
 public boolean sendNoOp() throws IOException
     {
         return SMTPReply.isPositiveCompletion(noop());
