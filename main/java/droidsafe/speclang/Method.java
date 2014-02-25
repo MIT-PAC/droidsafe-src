@@ -80,7 +80,7 @@ public class Method implements Comparable<Method> {
         logger.info("Creating method: {} with receiever {}", method, receiver);
         this.ptaInfo = ptaInfo;
         argInfoKinds = new HashSet[ptaInfo.getNumArgs()];
-        argInfoValues = new HashSet[ptaInfo.getNumArgs()];
+        argInfoValues = new Set[ptaInfo.getNumArgs()];
     }
 
     /**
@@ -275,6 +275,7 @@ public class Method implements Comparable<Method> {
     /**
      * Return a string that conforms to the security specification language.
      */
+    @Override
     public String toString() {
         return toString(false);
     }
@@ -431,7 +432,7 @@ public class Method implements Comparable<Method> {
             recInfoValues = new HashSet<InfoValue>();
                         
             for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
-                recInfoValues.addAll(InformationFlowAnalysis.v().getTaints((AllocNode)node, getMethodContext()));
+                recInfoValues.addAll(InformationFlowAnalysis.v().getTaints(node, getMethodContext()));
             }
         }
 
@@ -464,16 +465,15 @@ public class Method implements Comparable<Method> {
        
             if (ptaInfo.isArgPointer(i)) {
                 for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
-                    argInfoValues[i].addAll(InformationFlowAnalysis.v().getTaints((AllocNode)node, getMethodContext()));
+                    argInfoValues[i].addAll(InformationFlowAnalysis.v().getTaints(node, getMethodContext()));
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
                 argInfoValues[i] = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
-                            getMethodContext(), (Local)ptaInfo.getArgValue(i));
+                            ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
             } else if (ptaInfo.getArgValue(i) instanceof Constant) {
                 //do nothing for constants
-                
             } else {
                 logger.error("Unknown value or type for argument when retreiveing infovalue: {} {} {}", 
                     getMethodContext(), ptaInfo.getArgValue(i), ptaInfo.getArgValue(i).getType());
@@ -677,6 +677,7 @@ public class Method implements Comparable<Method> {
      * number annotation, but if that is not present, it does a lexigraphical order of 
      * the receiver and method name.
      */
+    @Override
     public int compareTo (Method m) {
         return this.toCompleteString().compareTo(m.toCompleteString());
     }

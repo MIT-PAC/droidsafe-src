@@ -267,7 +267,7 @@ public abstract class PTABridge {
         Iterator<Edge> it = callGraph.edgesOutOf(momc);
         while (it.hasNext()) {
             Edge e = it.next();
-            if (e.srcStmt().equals(stmt))
+            if (stmt.equals(e.srcStmt()))
                 edges.add(e);
         }
         

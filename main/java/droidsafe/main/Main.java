@@ -326,14 +326,12 @@ public class Main {
 
             StopWatch timer = new StopWatch();
             driverMsg("Starting Information Flow Analysis...");
-            /*
             monitor.subTask("Information Flow Analysis: Injected source flow");
             timer.start();
             InjectedSourceFlows.run();
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-             */
             monitor.subTask("Information Flow Analysis: Control flow graph");
             ObjectUtils.run();
             InterproceduralControlFlowGraph.run();

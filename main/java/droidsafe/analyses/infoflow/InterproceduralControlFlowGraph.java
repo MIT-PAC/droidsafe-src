@@ -190,11 +190,15 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         CallGraph callGraph = Scene.v().getCallGraph();
         TopologicalOrderer topologicalOrderer = new TopologicalOrderer(callGraph);
         topologicalOrderer.go();
-        List<SootMethod> topologicallyOrderedMethods = null;//(List<SootMethod>)topologicalOrderer.order();
-        List<SootMethod> reverseTopologicallyOrderedMethods = Lists.reverse(topologicallyOrderedMethods);
-        for (SootMethod method : reverseTopologicallyOrderedMethods) {
+        List<MethodOrMethodContext> topologicallyOrderedMethods = topologicalOrderer.order();
+        List<MethodOrMethodContext> reverseTopologicallyOrderedMethods = Lists.reverse(topologicallyOrderedMethods);
+        for (MethodOrMethodContext methodContext : reverseTopologicallyOrderedMethods) {
+            SootMethod method = methodContext.method();
+            if (this.methodToBlocks.containsKey(method)) {
+                continue;
+            }
             if (reachableMethods.contains(method)) {
-                if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method))) {
+                if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
                     Body body = method.getActiveBody();
                     BlockGraph blockGraph = new MyBriefBlockGraph(body);
                     if (entryPoints.contains(method)) {
