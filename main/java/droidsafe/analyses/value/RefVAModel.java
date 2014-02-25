@@ -248,7 +248,10 @@ public abstract class RefVAModel extends VAModel {
                     }
                     fieldString += StringUtils.join(objectModelStrings.toArray(), ", ");
                     if(vaModels.size() > 1) fieldString += "]";
+                } else if (vaModels.size() == 0) {
+                    fieldString += "\"Field not set\"";
                 } else {
+               
                     fieldString += "\"too many values\"";
                 }
                 int length = fieldString.length();

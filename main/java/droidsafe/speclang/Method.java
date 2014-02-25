@@ -424,10 +424,11 @@ public class Method implements Comparable<Method> {
     public Set<Stmt> getReceiverSourceInfoUnits() {
         //call the information flow results
         if (InformationFlowAnalysis.v() == null || !hasReceiver())
-            return new HashSet<Stmt>();
+            return Collections.<Stmt>emptySet();
 
         if (recInfoValues == null) {
             recInfoValues = new HashSet<InfoValue>();
+                        
             for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
                 recInfoValues.addAll(InformationFlowAnalysis.v().getTaints((AllocNode)node, getMethodContext()));
             }
@@ -451,13 +452,15 @@ public class Method implements Comparable<Method> {
      * argument (or one of its fields).
      */
     public Set<Stmt> getArgSourceInfoUnits(int i) {
-        Set<Stmt> srcSrcs = new HashSet<Stmt>();
         
         if (InformationFlowAnalysis.v() == null)
-            return srcSrcs; 
+            return Collections.<Stmt>emptySet();
         
+        Set<Stmt> srcSrcs = new HashSet<Stmt>();
+               
         if (argInfoValues[i] == null) {
             argInfoValues[i] = new HashSet<InfoValue>();
+       
             if (ptaInfo.isArgPointer(i)) {
                 for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
                     argInfoValues[i].addAll(InformationFlowAnalysis.v().getTaints((AllocNode)node, getMethodContext()));
@@ -493,6 +496,10 @@ public class Method implements Comparable<Method> {
      * Return the set of all InfoKinds for the targets of all sources.
      */
     private Set<InfoKind> getInfoKinds(Set<InfoValue> srcs) {
+        if (InformationFlowAnalysis.v() == null)
+            return Collections.emptySet(); 
+        
+        
         Set<InfoKind> srcKinds = new HashSet<InfoKind>();
         for (InfoValue iv : srcs) {
             if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
@@ -529,6 +536,9 @@ public class Method implements Comparable<Method> {
      * be tainted with.
      */
     public Set<InfoKind> getArgInfoKinds(int i) {
+        if (InformationFlowAnalysis.v() == null)
+            return Collections.emptySet(); 
+        
         if (argInfoKinds[i] == null) {
             //call info flow and cache results
             getArgSourceInfoUnits(i);
@@ -543,6 +553,9 @@ public class Method implements Comparable<Method> {
      * tainted with.	 
      */
     public Set<InfoKind> getRecInfoKinds() {
+        if (InformationFlowAnalysis.v() == null)
+            return Collections.emptySet(); 
+        
         if (hasReceiver()) { 
             if (recInfoKinds == null) {
                 //cache info flow results
