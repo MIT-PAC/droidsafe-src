@@ -219,10 +219,10 @@ public abstract class RefVAModel extends VAModel {
             int cumStrLen = 0;
             for(SootField sootField : getFieldsToDisplay(this.getSootClass())) {
                 Set<VAModel> vaModels = this.getFieldVAModels(sootField);
-                String fieldString = "\"" + sootField.getName() + "\":";
+                String fieldString = "";
                 if(vaModels == null) {
                     fieldString += INVALIDATED;
-                } else if(vaModels.size() > 0 && vaModels.size() < 100){
+                } else if(vaModels.size() >= 0 && vaModels.size() < 100){
                     // using which we call getFieldVAModels to get a list of of object models
                     if(vaModels.size() > 1) fieldString += "[";
                     Set<String> objectModelStrings = new HashSet<String>();
@@ -248,16 +248,13 @@ public abstract class RefVAModel extends VAModel {
                     }
                     fieldString += StringUtils.join(objectModelStrings.toArray(), ", ");
                     if(vaModels.size() > 1) fieldString += "]";
-                } else if (vaModels.size() == 0) {
-                    fieldString += "\"Field not set\"";
                 } else {
-               
                     fieldString += "\"too many values\"";
                 }
                 int length = fieldString.length();
                 cumStrLen += length;
                 if(length > 0 && cumStrLen  < 1000) {
-                    fieldStrings.add(fieldString);
+                    fieldStrings.add("\"" + sootField.getName() + "\":" + fieldString);
                 }
 
             }
