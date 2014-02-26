@@ -234,7 +234,9 @@ public class AndroidManifest {
 			  if (sootClass.isPhantom() || !sootClass.isInScene())
 				  throw new Exception();
 		  } catch (Exception e) {
-			  logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}", name);
+			  logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}, from {} ", 
+			          className, name);
+			  logger.error("Package name from AndroidManifest.xml: {} ", Resources.v().package_name);
 			  droidsafe.main.Main.exit(1);
 		  }
 
@@ -666,6 +668,47 @@ public class AndroidManifest {
           dataUri = uriBuilder.toString();
       }
     }
+    
+    public String getDataPath() {
+        StringBuilder builder = new StringBuilder();
+        if (dataPath.size() > 0)
+            builder.append(String.format("/%s", listToString(dataPath)));
+        if (dataPathPrefix.size() > 0)
+            builder.append(String.format("/%s", listToString(dataPathPrefix)));
+        if (dataPathPattern.size() > 0)
+            builder.append(String.format("/%s", listToString(dataPathPattern)));
+        return builder.toString();
+    }
+    
+    public String getDataScheme() {
+        StringBuilder builder = new StringBuilder();
+        if (dataMime.size() > 0) {
+            //uriBuilder.append(String.format("[mime:%s]", StringUtils.join(dataMime, "|")));
+            if (dataScheme.size() == 0)
+                dataScheme.add("file");
+        }
+        
+        if (dataScheme.size() > 0) {
+            builder.append(String.format("%s://", listToString(dataScheme)));
+        }
+        return builder.toString();
+    }
+    
+    public String getData() {
+        StringBuilder builder = new StringBuilder();
+        if (dataMime.size() > 0) {
+            //uriBuilder.append(String.format("[mime:%s]", StringUtils.join(dataMime, "|")));
+            if (dataScheme.size() == 0)
+                dataScheme.add("file");
+        }
+        
+        if (dataScheme.size() > 0) {
+            builder.append(String.format("%s://", listToString(dataScheme)));
+        }
+        return builder.toString();
+    }
+
+
 
     /**
      * Convenient method to get a string representation of list
