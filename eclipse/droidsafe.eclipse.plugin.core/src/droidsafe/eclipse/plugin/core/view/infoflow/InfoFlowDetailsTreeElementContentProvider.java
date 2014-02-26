@@ -43,7 +43,7 @@ public class InfoFlowDetailsTreeElementContentProvider extends MethodInfoTreeEle
             if (infoKinds != null || method.getArgumentSourceInfoUnits(i) != null) {
                 if (infoKinds == null) {
                     infoKinds = new ArrayList<String>();
-                    infoKinds.add(API.v().SENSITIVE_NOCATEGORY.toString());
+                    infoKinds.add(API.v().SENSITIVE_UNCATEGORIZED.toString());
                 }
                 if (sourceFilter == null || infoKinds.contains(sourceFilter)) {
                     methodArgs.add(method.getArgumentModel(i));
