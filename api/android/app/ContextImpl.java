@@ -412,14 +412,15 @@ private File getPreferencesDir() {
         }
     }
     
-    @DSSink({DSSinkKind.FILE})
+
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.FILE})
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
