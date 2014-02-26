@@ -424,6 +424,8 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSVerified
+    @DSSpec(DSCat.FILE_SYSTEM)
     @Override
     public boolean deleteFile(String name) {
         return false;
@@ -431,47 +433,79 @@ private File getPreferencesDir() {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public File getFilesDir() {
-        throw new UnsupportedOperationException();
+        return new File("<files-dir>");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public File getExternalFilesDir(String type) {
-        throw new UnsupportedOperationException();
+        return new File("<external-files-dir>");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public File getObbDir() {
-        throw new UnsupportedOperationException();
+        return new File("<obb-dir>");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public File getCacheDir() {
-        throw new UnsupportedOperationException();
+        return new File("<cache-dir>");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
+    @DSSafe(DSCat.FS_INFO)
     public File getExternalCacheDir() {
-        throw new UnsupportedOperationException();
+        return new File("<external-cache-dir>");
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @Override
-    public File getFileStreamPath(String name) {
-        throw new UnsupportedOperationException();
+    @DSSafe(DSCat.FS_INFO)
+    public File[] getExternalCacheDirs(String type) {
+        File file = new File("<external-cache-dirs>/{type=" + type + "}");
+        return new File[] {file};
     }
     
+    @DSSafe(DSCat.FS_INFO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public File[] getExternalFileDirs(String type) {
+        File file = new File("<external-file-dirs>/{type=" + type + "}");
+        return new File[] {file};
+    }
+    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.FS_INFO)
+    public File[] getObbDirs(String type) {
+        File file = new File("<obb-dir>");
+        return new File[] {file};
+    }
+
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @Override
+    @DSSafe(DSCat.FS_INFO)
+    public File getFileStreamPath(String name) {
+        return new File("<app-dir>/" + name);
+    }
+    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.FS_INFO)
     @Override
     public String[] fileList() {
-        throw new UnsupportedOperationException( );
+        String file = new String("<app-dir>/<private-files>");
+        String[] files = new String[1];
+        files[0] = file;
+        return files;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.261 -0500", hash_original_method = "65FB5D1503ECB4784897EFA233F40D4E", hash_generated_method = "84BE5A8970A0E0573304AB63A724FE37")
-    
+   @DSSpec(DSCat.DATABASE) 
 @Override
     public SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory factory) {
         File f = validateFilePath(name, true);
@@ -482,6 +516,7 @@ private File getPreferencesDir() {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.263 -0500", hash_original_method = "E2C57028FEE97C40627D175379C5C276", hash_generated_method = "F757051A6F1AA50C45F64144CC800557")
     
+   @DSSpec(DSCat.DATABASE) 
 @Override
     public SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory factory,
             DatabaseErrorHandler errorHandler) {
@@ -491,27 +526,37 @@ private File getPreferencesDir() {
         return db;
     }
     
+   @DSSpec(DSCat.DATABASE) 
     @Override
     public boolean deleteDatabase(String name) {
-        throw new UnsupportedOperationException();
+       return getTaintBoolean();
+        //throw new UnsupportedOperationException();
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.FS_INFO)
     @Override
     public File getDatabasePath(String name) {
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        return new File("<database-path>/" + name);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.FS_INFO)
     @Override
     public String[] databaseList() {
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        String file = new String("<database-dir>/<private-db>");
+        String[] files = new String[1];
+        files[0] = file;
+        return files;
     }
 
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.272 -0500", hash_original_method = "5E7F893311C7FFBA04D943EFEC31C4D2", hash_generated_method = "CECB6C2171E104773B017888B934F3B5")
     
-private File getDatabasesDir() {
+    private File getDatabasesDir() {
         synchronized (mSync) {
             if (mDatabasesDir == null) {
                 mDatabasesDir = new File(getDataDirFile(), "databases");

@@ -22,6 +22,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -62,6 +63,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.inputmethod.EditorInfo;
 import android.widget.CursorAdapter;
 import android.widget.AbsListView;
+import android.app.FragmentManager;
+import android.app.LoaderManager;
 
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
@@ -349,6 +352,19 @@ public final Activity getParent() {
         return mParent;
     }
 
+    
+    //TODO: We need to find a way to model parent activity associated
+    // with this activity
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    Intent   getParentActivityIntent() {
+        if (mParent != null) {
+            Intent intent = new Intent();
+            return intent;
+        }
+        
+        return new Intent();
+    }
+    
     /** Retrieve the window manager for showing custom windows. */
     @DSComment("Android Manager retrieved/accessed")
     @DSSpec(DSCat.ANDROID_MANAGER)
@@ -2948,7 +2964,13 @@ public ComponentName getCallingActivity() {
 public void finishFromChild(Activity child) {
         finish();
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void finishAffinity() {
+        
+    }
+
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void finishActivity(int requestCode){
@@ -3350,6 +3372,17 @@ public final CharSequence getTitle() {
     }
 		*/
 	}
+    
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    public boolean navigateUpTo (Intent upIntent) {
+        return getTaintBoolean();
+    }
+
+    @DSComment("Only checking on the intent, no action associated with it")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean shouldUpRecreateTask(Intent targetIntent) {
+        return getTaintBoolean();
+    }
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)

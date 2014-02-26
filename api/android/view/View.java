@@ -5551,7 +5551,9 @@ protected void dispatchDraw(Canvas canvas) {
     public ViewGroup.LayoutParams getLayoutParams() {
         return mLayoutParams;
     }
-    
+
+    @DSVerified
+    @DSSafe(DSCat.GUI)
     public void setLayoutParams(ViewGroup.LayoutParams params){
 		mLayoutParams = params;
 		requestLayout();
@@ -9047,7 +9049,8 @@ protected void dispatchSetActivated(boolean activated) {
      * @see #setTag(int, Object)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.852 -0500", hash_original_method = "8D2B18A079B1EE90519A06D435C647B9", hash_generated_method = "33E1CD81B753027A33A76D43EBE89CCE")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setTag(final Object tag) {
         mTag = tag;
     }
@@ -9065,7 +9068,8 @@ public void setTag(final Object tag) {
     }
 		*/
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 	public void setTag(int key, final Object tag){
 		setKeyedTag(key, tag);
 		// Original method
@@ -9080,7 +9084,9 @@ public void setTag(final Object tag) {
 		*/
 		//Return nothing
 	}
-    
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTagInternal(int key, Object tag){
 		setKeyedTag(key, tag);

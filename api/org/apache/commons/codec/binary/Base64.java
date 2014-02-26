@@ -14,6 +14,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.942 -0500", hash_original_method = "A822EBC4FB6E69A8F1BB99F6026DF203", hash_generated_method = "42463F56890B4DE57C93AFF61468CC38")
+    @DSVerified
     
 private static boolean isBase64(byte octect) {
         if (octect == PAD) {
@@ -34,7 +35,8 @@ private static boolean isBase64(byte octect) {
      *         alphabet or if the byte array is empty; false, otherwise
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.945 -0500", hash_original_method = "9B3201AE5D07B0FE82D467B91B0DEBA5", hash_generated_method = "879B54130E22C02EF54785AE920934C3")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public static boolean isArrayByteBase64(byte[] arrayOctect) {
 
         arrayOctect = discardWhitespace(arrayOctect);
@@ -89,7 +91,8 @@ public static byte[] encodeBase64Chunked(byte[] binaryData) {
      * @return Base64-encoded data.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.959 -0500", hash_original_method = "574B1997394313A9CBB50913816A2452", hash_generated_method = "F7A59FE591A255BCF961218A4165471C")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
         int lengthDataBits = binaryData.length * EIGHTBIT;
         int fewerThan24bits = lengthDataBits % TWENTYFOURBITGROUP;
@@ -106,121 +109,10 @@ public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
             encodedDataLength = numberTriplets * 4;
         }
 
-        // If the output is to be "chunked" into 76 character sections, 
-        // for compliance with RFC 2045 MIME, then it is important to 
-        // allow for extra length to account for the separator(s)
-        if (isChunked) {
-
-            nbrChunks =
-                (CHUNK_SEPARATOR.length == 0 ? 0 : (int) Math.ceil((float) encodedDataLength / CHUNK_SIZE));
-            encodedDataLength += nbrChunks * CHUNK_SEPARATOR.length;
-        }
-
         encodedData = new byte[encodedDataLength];
+        encodedData.addTaint(isChunked);
 
-        byte k = 0, l = 0, b1 = 0, b2 = 0, b3 = 0;
-
-        int encodedIndex = 0;
-        int dataIndex = 0;
-        int i = 0;
-        int nextSeparatorIndex = CHUNK_SIZE;
-        int chunksSoFar = 0;
-
-        //log.debug("number of triplets = " + numberTriplets);
-        for (i = 0; i < numberTriplets; i++) {
-            dataIndex = i * 3;
-            b1 = binaryData[dataIndex];
-            b2 = binaryData[dataIndex + 1];
-            b3 = binaryData[dataIndex + 2];
-
-            //log.debug("b1= " + b1 +", b2= " + b2 + ", b3= " + b3);
-
-            l = (byte) (b2 & 0x0f);
-            k = (byte) (b1 & 0x03);
-
-            byte val1 =
-                ((b1 & SIGN) == 0) ? (byte) (b1 >> 2) : (byte) ((b1) >> 2 ^ 0xc0);
-            byte val2 =
-                ((b2 & SIGN) == 0) ? (byte) (b2 >> 4) : (byte) ((b2) >> 4 ^ 0xf0);
-            byte val3 =
-                ((b3 & SIGN) == 0) ? (byte) (b3 >> 6) : (byte) ((b3) >> 6 ^ 0xfc);
-
-            encodedData[encodedIndex] = lookUpBase64Alphabet[val1];
-            //log.debug( "val2 = " + val2 );
-            //log.debug( "k4   = " + (k<<4) );
-            //log.debug(  "vak  = " + (val2 | (k<<4)) );
-            encodedData[encodedIndex + 1] =
-                lookUpBase64Alphabet[val2 | (k << 4)];
-            encodedData[encodedIndex + 2] =
-                lookUpBase64Alphabet[(l << 2) | val3];
-            encodedData[encodedIndex + 3] = lookUpBase64Alphabet[b3 & 0x3f];
-
-            encodedIndex += 4;
-
-            // If we are chunking, let's put a chunk separator down.
-            if (isChunked) {
-                // this assumes that CHUNK_SIZE % 4 == 0
-                if (encodedIndex == nextSeparatorIndex) {
-                    System.arraycopy(
-                        CHUNK_SEPARATOR,
-                        0,
-                        encodedData,
-                        encodedIndex,
-                        CHUNK_SEPARATOR.length);
-                    chunksSoFar++;
-                    nextSeparatorIndex =
-                        (CHUNK_SIZE * (chunksSoFar + 1)) + 
-                        (chunksSoFar * CHUNK_SEPARATOR.length);
-                    encodedIndex += CHUNK_SEPARATOR.length;
-                }
-            }
-        }
-
-        // form integral number of 6-bit groups
-        dataIndex = i * 3;
-
-        if (fewerThan24bits == EIGHTBIT) {
-            b1 = binaryData[dataIndex];
-            k = (byte) (b1 & 0x03);
-            //log.debug("b1=" + b1);
-            //log.debug("b1<<2 = " + (b1>>2) );
-            byte val1 =
-                ((b1 & SIGN) == 0) ? (byte) (b1 >> 2) : (byte) ((b1) >> 2 ^ 0xc0);
-            encodedData[encodedIndex] = lookUpBase64Alphabet[val1];
-            encodedData[encodedIndex + 1] = lookUpBase64Alphabet[k << 4];
-            encodedData[encodedIndex + 2] = PAD;
-            encodedData[encodedIndex + 3] = PAD;
-        } else if (fewerThan24bits == SIXTEENBIT) {
-
-            b1 = binaryData[dataIndex];
-            b2 = binaryData[dataIndex + 1];
-            l = (byte) (b2 & 0x0f);
-            k = (byte) (b1 & 0x03);
-
-            byte val1 =
-                ((b1 & SIGN) == 0) ? (byte) (b1 >> 2) : (byte) ((b1) >> 2 ^ 0xc0);
-            byte val2 =
-                ((b2 & SIGN) == 0) ? (byte) (b2 >> 4) : (byte) ((b2) >> 4 ^ 0xf0);
-
-            encodedData[encodedIndex] = lookUpBase64Alphabet[val1];
-            encodedData[encodedIndex + 1] =
-                lookUpBase64Alphabet[val2 | (k << 4)];
-            encodedData[encodedIndex + 2] = lookUpBase64Alphabet[l << 2];
-            encodedData[encodedIndex + 3] = PAD;
-        }
-
-        if (isChunked) {
-            // we also add a separator to the end of the final chunk.
-            if (chunksSoFar < nbrChunks) {
-                System.arraycopy(
-                    CHUNK_SEPARATOR,
-                    0,
-                    encodedData,
-                    encodedDataLength - CHUNK_SEPARATOR.length,
-                    CHUNK_SEPARATOR.length);
-            }
-        }
-
+        encodedData.addTaint(binaryData.getTaint());
         return encodedData;
     }
 
@@ -231,8 +123,9 @@ public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
      * @return Array containing decoded data.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.963 -0500", hash_original_method = "87C77E071BDF35E1C91859D8F7A3EF45", hash_generated_method = "24B5D2DD8D4071995BF1156D8E7C81EE")
-    
-public static byte[] decodeBase64(byte[] base64Data) {
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public static byte[] decodeBase64(byte[] base64Data) {
         // RFC 2045 requires that we discard ALL non-Base64 characters
         base64Data = discardNonBase64(base64Data);
 
@@ -242,55 +135,9 @@ public static byte[] decodeBase64(byte[] base64Data) {
         }
 
         int numberQuadruple = base64Data.length / FOURBYTE;
-        byte decodedData[] = null;
-        byte b1 = 0, b2 = 0, b3 = 0, b4 = 0, marker0 = 0, marker1 = 0;
-
-        // Throw away anything not in base64Data
-
-        int encodedIndex = 0;
-        int dataIndex = 0;
-        {
-            // this sizes the output array properly - rlw
-            int lastData = base64Data.length;
-            // ignore the '=' padding
-            while (base64Data[lastData - 1] == PAD) {
-                if (--lastData == 0) {
-                    return new byte[0];
-                }
-            }
-            decodedData = new byte[lastData - numberQuadruple];
-        }
         
-        for (int i = 0; i < numberQuadruple; i++) {
-            dataIndex = i * 4;
-            marker0 = base64Data[dataIndex + 2];
-            marker1 = base64Data[dataIndex + 3];
-            
-            b1 = base64Alphabet[base64Data[dataIndex]];
-            b2 = base64Alphabet[base64Data[dataIndex + 1]];
-            
-            if (marker0 != PAD && marker1 != PAD) {
-                //No PAD e.g 3cQl
-                b3 = base64Alphabet[marker0];
-                b4 = base64Alphabet[marker1];
-                
-                decodedData[encodedIndex] = (byte) (b1 << 2 | b2 >> 4);
-                decodedData[encodedIndex + 1] =
-                    (byte) (((b2 & 0xf) << 4) | ((b3 >> 2) & 0xf));
-                decodedData[encodedIndex + 2] = (byte) (b3 << 6 | b4);
-            } else if (marker0 == PAD) {
-                //Two PAD e.g. 3c[Pad][Pad]
-                decodedData[encodedIndex] = (byte) (b1 << 2 | b2 >> 4);
-            } else if (marker1 == PAD) {
-                //One PAD e.g. 3cQ[Pad]
-                b3 = base64Alphabet[marker0];
-                
-                decodedData[encodedIndex] = (byte) (b1 << 2 | b2 >> 4);
-                decodedData[encodedIndex + 1] =
-                    (byte) (((b2 & 0xf) << 4) | ((b3 >> 2) & 0xf));
-            }
-            encodedIndex += 3;
-        }
+        byte[] decodedData = new byte[numberQuadruple];
+        decodedData.addTaint(base64Data.getTaint());
         return decodedData;
     }
     
@@ -397,10 +244,22 @@ static byte[] discardNonBase64(byte[] data) {
 
     private static byte[] lookUpBase64Alphabet = new byte[LOOKUPLENGTH];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.644 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {
         //Synthesized constructor
+    }
+    
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public Base64(int lineLength, byte[] separator) {
+        addTaint(lineLength);
+        addTaint(separator.getTaint());
+    }
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean hasData() {
+        return getTaintBoolean();
     }
 
     /**
@@ -416,7 +275,7 @@ static byte[] discardNonBase64(byte[] data) {
      *                          of type byte[]
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.951 -0500", hash_original_method = "27928DA5608E3EA81ACF98D07D1CDAA8", hash_generated_method = "51462A14CCF991407A4464C8FB796E4C")
-    
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public Object decode(Object pObject) throws DecoderException {
         if (!(pObject instanceof byte[])) {
             throw new DecoderException("Parameter supplied to Base64 decode is not a byte[]");
@@ -433,7 +292,8 @@ public Object decode(Object pObject) throws DecoderException {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.953 -0500", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "C17AE6177C5668A0F0E5EE932AEF930C")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public byte[] decode(byte[] pArray) {
         return decodeBase64(pArray);
     }
@@ -453,7 +313,8 @@ public byte[] decode(byte[] pArray) {
      *                          of type byte[]
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.970 -0500", hash_original_method = "D5F82E7B8136CE61250AF5358F628FEE", hash_generated_method = "7692D23DABDAD6D43E67AD377007F3FC")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public Object encode(Object pObject) throws EncoderException {
         if (!(pObject instanceof byte[])) {
             throw new EncoderException(
@@ -471,7 +332,8 @@ public Object encode(Object pObject) throws EncoderException {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.972 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
-    
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public byte[] encode(byte[] pArray) {
         return encodeBase64(pArray, false);
     }
@@ -502,6 +364,49 @@ public byte[] encode(byte[] pArray) {
         lookUpBase64Alphabet[62] = (byte) '+';
         lookUpBase64Alphabet[63] = (byte) '/';
     }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public void setInitialBuffer(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        addTaint(b.getTaint());
+        addTaint(offset);
+        addTaint(len);
+    }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public int readResults(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        b.addTaint(getTaint());
+        b.addTaint(offset);
+        b.addTaint(len);
+        return b.getTaintInt();
+    }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public static byte[] encode(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        byte[] ret = new byte[len];
+        ret.addTaint(b.getTaint());
+        ret.addTaint(offset);
+        ret.addTaint(len);
+        return ret;
+    }
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public byte[] decode(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        byte[] ret = new byte[len];
+        ret.addTaint(b.getTaint());
+        ret.addTaint(offset);
+        ret.addTaint(len);
+        return ret; 
+    }
+    
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public int avail() {
+        return getTaintInt();
+    }
+    
     
 }
 

@@ -286,6 +286,8 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
 
     private boolean mVisible = true;
 
+    private boolean mAutoMirrored = false;
+
     @DSVerified    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
@@ -804,6 +806,18 @@ public boolean setVisible(boolean visible, boolean restart) {
             invalidateSelf();
         }
         return changed;
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setAutoMirrored(boolean automirror) {
+        mAutoMirrored = automirror;
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean isAutoMirrored() {
+        return mAutoMirrored;
     }
 
     @DSComment("From safe class list")

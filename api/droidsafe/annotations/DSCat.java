@@ -5,6 +5,7 @@ public enum DSCat {
     ANDROID_ANIMATION,
     ANDROID_CALLBACK,   //methods like onClick 
     OS_GENERAL,
+    FS_INFO,
     DATA_STRUCTURE,  
     MEM_BUFFER,
     SAFE_LIST,
@@ -35,6 +36,7 @@ public enum DSCat {
     ANDROID_MANAGER,
     ANDROID_LOADER,
     AUDIO_CALL,
+    AUDIO_RECORDING,
     APP_RESOURCE,
     CALLBACK_INVOKE,
     
