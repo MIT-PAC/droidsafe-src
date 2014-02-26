@@ -98,6 +98,125 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
 
     private float mLastGetTime;
 
+/**
+ * Display flag: Indicates that the display supports compositing content
+ * that is stored in protected graphics buffers.
+ * <p>
+ * If this flag is set then the display device supports compositing protected buffers.
+ * </p><p>
+ * If this flag is not set then the display device may not support compositing
+ * protected buffers; the user may see a blank region on the screen instead of
+ * the protected content.
+ * </p><p>
+ * Secure (DRM) video decoders may allocate protected graphics buffers to request that
+ * a hardware-protected path be provided between the video decoder and the external
+ * display sink.  If a hardware-protected path is not available, then content stored
+ * in protected graphics buffers may not be composited.
+ * </p><p>
+ * An application can use the absence of this flag as a hint that it should not use protected
+ * buffers for this display because the content may not be visible.  For example,
+ * if the flag is not set then the application may choose not to show content on this
+ * display, show an informative error message, select an alternate content stream
+ * or adopt a different strategy for decoding content that does not rely on
+ * protected buffers.
+ * </p>
+ *
+ * @see #getFlags
+ */
+public static final int FLAG_SUPPORTS_PROTECTED_BUFFERS = 1 << 0;
+
+/**
+ * Display flag: Indicates that the display has a secure video output and
+ * supports compositing secure surfaces.
+ * <p>
+ * If this flag is set then the display device has a secure video output
+ * and is capable of showing secure surfaces.  It may also be capable of
+ * showing {@link #FLAG_SUPPORTS_PROTECTED_BUFFERS protected buffers}.
+ * </p><p>
+ * If this flag is not set then the display device may not have a secure video
+ * output; the user may see a blank region on the screen instead of
+ * the contents of secure surfaces or protected buffers.
+ * </p><p>
+ * Secure surfaces are used to prevent content rendered into those surfaces
+ * by applications from appearing in screenshots or from being viewed
+ * on non-secure displays.  Protected buffers are used by secure video decoders
+ * for a similar purpose.
+ * </p><p>
+ * An application creates a window with a secure surface by specifying the
+ * {@link WindowManager.LayoutParams#FLAG_SECURE} window flag.
+ * Likewise, an application creates a {@link SurfaceView} with a secure surface
+ * by calling {@link SurfaceView#setSecure} before attaching the secure view to
+ * its containing window.
+ * </p><p>
+ * An application can use the absence of this flag as a hint that it should not create
+ * secure surfaces or protected buffers on this display because the content may
+ * not be visible.  For example, if the flag is not set then the application may
+ * choose not to show content on this display, show an informative error message,
+ * select an alternate content stream or adopt a different strategy for decoding
+ * content that does not rely on secure surfaces or protected buffers.
+ * </p>
+ *
+ * @see #getFlags
+ */
+public static final int FLAG_SECURE = 1 << 1;
+
+/**
+ * Display flag: Indicates that the display is private.  Only the application that
+ * owns the display can create windows on it.
+ *
+ * @see #getFlags
+ */
+public static final int FLAG_PRIVATE = 1 << 2;
+
+/**
+ * Display flag: Indicates that the display is a presentation display.
+ * <p>
+ * This flag identifies secondary displays that are suitable for
+ * use as presentation displays such as HDMI or Wireless displays.  Applications
+ * may automatically project their content to presentation displays to provide
+ * richer second screen experiences.
+ * </p>
+ *
+ * @see #getFlags
+ */
+public static final int FLAG_PRESENTATION = 1 << 3;
+
+/**
+ * Display type: Unknown display type.
+ * @hide
+ */
+public static final int TYPE_UNKNOWN = 0;
+
+/**
+ * Display type: Built-in display.
+ * @hide
+ */
+public static final int TYPE_BUILT_IN = 1;
+
+/**
+ * Display type: HDMI display.
+ * @hide
+ */
+public static final int TYPE_HDMI = 2;
+
+/**
+ * Display type: WiFi display.
+ * @hide
+ */
+public static final int TYPE_WIFI = 3;
+
+/**
+ * Display type: Overlay display.
+ * @hide
+ */
+public static final int TYPE_OVERLAY = 4;
+
+/**
+ * Display type: Virtual display.
+ * @hide
+ */
+public static final int TYPE_VIRTUAL = 5;
+
     /**
      * Use {@link android.view.WindowManager#getDefaultDisplay()
      * WindowManager.getDefaultDisplay()} to create a Display object.
@@ -120,6 +239,11 @@ Display(int display, CompatibilityInfoHolder compatInfo) {
         mCompatibilityInfo = compatInfo != null ? compatInfo : new CompatibilityInfoHolder();
         mDisplay = display;
         init(display);
+    }
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Display(DSOnlyType dontcare) {
+        this(DSUtils.FAKE_INT, null);
     }
 
     /**
@@ -514,6 +638,11 @@ public void getMetricsWithSize(DisplayMetrics outMetrics,
     private void init(int display){
     	//Formerly a native method
     	addTaint(display);
+    }
+
+    public static boolean hasAccess(int uid, int flags, int ownerUid) {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }

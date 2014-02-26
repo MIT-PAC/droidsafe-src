@@ -80,6 +80,12 @@ public static File getSecureDataDirectory() {
         }
     }
 
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public static String  getStorageState(String path) {
+        return "<storage-state-of{" + path + "}>";
+    }
+
     /**
      * Returns whether the Encrypted File System feature is enabled on the device or not.
      * @return <code>true</code> if Encrypted File System feature is enabled, <code>false</code>

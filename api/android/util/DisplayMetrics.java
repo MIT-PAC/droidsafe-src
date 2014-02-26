@@ -72,6 +72,7 @@ public class DisplayMetrics {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.953 -0500", hash_original_field = "7A76B8DB0D7311E4E1524870DE48AEFA", hash_generated_field = "E7D21E9F11C660B9441D398BA879C05D")
 
     public float noncompatYdpi;
+public int noncompatDensityDpi;
 
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)

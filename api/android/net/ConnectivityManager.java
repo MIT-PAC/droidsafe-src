@@ -779,7 +779,8 @@ public ProxyProperties getProxy() {
      */
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.089 -0500", hash_original_method = "9D2F7B8AE7DD2651562BD08E17F617DF", hash_generated_method = "46CF3D7367153193ED8E5B3A5F3ECEAE")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setDataDependency(int networkType, boolean met) {
         try {
             mService.setDataDependency(networkType, met);
@@ -800,12 +801,19 @@ public void setDataDependency(int networkType, boolean met) {
      */
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.091 -0500", hash_original_method = "A6B9FE53FCB83D066C3DAD2A2CD2AA6D", hash_generated_method = "4A0CA3D82DAD09F68F1F4B54C3FB9B45")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isNetworkSupported(int networkType) {
         try {
             return mService.isNetworkSupported(networkType);
         } catch (RemoteException e) {}
         return false;
     }
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean isActiveNetworkMetered() {
+        return getTaintBoolean();
+    }
+        
 }
 

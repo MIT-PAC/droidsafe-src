@@ -80,6 +80,7 @@ import android.os.Vibrator;
 import android.os.storage.StorageManager;
 import android.provider.AlarmClock;
 import android.telephony.TelephonyManager;
+import android.view.CompatibilityInfoHolder;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.WindowManager;
@@ -182,6 +183,9 @@ public abstract class Context {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.044 -0500", hash_original_field = "4EAA61CDE85421448F5630ED152906B7", hash_generated_field = "DACE3B8B9B06D14717640DFBD64CB027")
 
     public static final String STATUS_BAR_SERVICE = "statusbar";
+
+    public static final String DISPLAY_SERVICE = "display";
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.046 -0500", hash_original_field = "C16093489DFF215824042ED412850E06", hash_generated_field = "2F45F5AD93952D9D29432D95F2452092")
 
     public static final String CONNECTIVITY_SERVICE = "connectivity";
@@ -2342,6 +2346,11 @@ public boolean isRestricted() {
 	public Intent droidsafeGetIntent() {
 	    return __ds__intentsFromFilter.get(getTaintInt());
 	}
+
+    public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {
+        // TODO Auto-generated method stub
+        return null;
+    }
     
 }
 
