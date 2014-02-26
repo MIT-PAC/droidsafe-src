@@ -219,7 +219,7 @@ public class MethodModel extends ModelChangeSupport
     boolean hasInfo = false;
     methodArgumentSourceInfoUnits = new ArrayList<List<CallLocationModel>>();
     for (int i = 0; i < originalMethod.getArgs().length; i++) {
-      Set<Stmt> stmts = originalMethod.getArgSourceInfoUnits(i);
+      Set<Stmt> stmts = null;//originalMethod.getArgSourceInfoUnits(i);
       List<CallLocationModel> argSourceInfoUnits = null;
       if (!stmts.isEmpty()) {
         argSourceInfoUnits = new ArrayList<CallLocationModel>();
@@ -313,7 +313,7 @@ public class MethodModel extends ModelChangeSupport
    */
   private void setReceiverSourceInfoUnits(Method originalMethod) {
     boolean hasInfo = false;
-    Set<Stmt> stmts = originalMethod.getReceiverSourceInfoUnits();
+    Set<Stmt> stmts = null;//originalMethod.getReceiverSourceInfoUnits();
     if (!stmts.isEmpty()) {
       receiverSourceInfoUnits = new ArrayList<CallLocationModel>();
       for (Stmt stmt : stmts) {

@@ -69,7 +69,7 @@ public class AutomatedSourceTagging {
                 //add a pkg kind for methods that return a prim or string
                 if (m.getReturnType() instanceof PrimType || 
                         SootUtils.isStringOrSimilarType(m.getReturnType())) {
-                    API.v().addSourceInfoKind(m, getInfoKindNameFromPkg(pkg));
+                    API.v().addSourceInfoKind(m, getInfoKindNameFromPkg(pkg), false);
                 }
             }
         }

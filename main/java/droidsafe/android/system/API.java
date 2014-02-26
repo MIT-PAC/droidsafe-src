@@ -223,7 +223,7 @@ public class API {
 
             classificationCat = new HashMap<SootMethod, String>();
             
-            SENSITIVE_UNCATEGORIZED = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED");
+            SENSITIVE_UNCATEGORIZED = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED", true);
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
@@ -472,11 +472,11 @@ public class API {
     /**
      * Add infokind taint to the return value of the method.
      */
-    public void addSourceInfoKind(SootMethod sootMethod, String kind) {
+    public void addSourceInfoKind(SootMethod sootMethod, String kind, boolean sensitive) {
         if (!srcsMapping.containsKey(sootMethod)) {
             srcsMapping.put(sootMethod, new HashSet<InfoKind>());
         }
-        srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(kind));
+        srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(kind, sensitive));
     }
     
 
@@ -497,16 +497,13 @@ public class API {
             //get more informatin for uncategorized
             if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind)) {
                 String pkg = sootMethod.getDeclaringClass().getPackageName();
-                infoKind = pkg.substring(pkg.indexOf(".") + 1);
-            } else {
-                //encase in asterisks to denote it is marked by human as sensitive
-                infoKind = "*" + infoKind +"*";
-            }
+                infoKind = pkg.substring(pkg.indexOf(".") + 1).toUpperCase();
+            } 
             
             if (!sinksMapping.containsKey(sootMethod)) {
                 sinksMapping.put(sootMethod, new HashSet<InfoKind>());
             }
-            sinksMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
+            sinksMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind, true));
             logger.info("Adding sink infokind category for {} as {}", sootMethod, infoKind);
         }
             
@@ -528,7 +525,7 @@ public class API {
             
             String infoKind = ((AnnotationEnumElem)ae).getConstantName();
             
-            //don't add uncategorized if we have an uncategorized sink / source
+            //don't add uncategorized if we have an uncategorized source
             if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind))
                 continue;
             
@@ -536,10 +533,7 @@ public class API {
                 srcsMapping.put(sootMethod, new HashSet<InfoKind>());
             }
             
-            //encase in asterisks to denote it was labeled by human as sensitive
-            infoKind = "*" + infoKind +"*";
-            
-            srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
+            srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind, true));
             logger.info("Adding source infokind category for {} as {}", sootMethod, infoKind);
         }
             

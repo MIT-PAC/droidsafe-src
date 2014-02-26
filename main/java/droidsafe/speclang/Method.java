@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -58,20 +60,16 @@ public class Method implements Comparable<Method> {
     private List<SourceLocationTag> lines;
     /** Points to information for this method call */
     private PTAMethodInformation ptaInfo;
-    /** receiver info kinds set, used to cache the info kinds so we do not query info flow more than once */
-    private Set<InfoKind> recInfoKinds;
+
     /** receiver raw info flow information, used to cache the info kinds so we do not query info flow more than once */
-    private Set<InfoValue> recInfoValues;
+    private Map<InfoKind, Set<Stmt>> recFlows;
     /** argument info kinds set, used to cache the info kinds so we do not query info flow more than once */
-    private Set<InfoKind>[] argInfoKinds;
-    /** argument raw info flow results, used to cache the info kinds so we do not query info flow more than once */
-    private Set<InfoValue>[] argInfoValues;
+    private Map<InfoKind, Set<Stmt>>[] argFlows;
+
     /** if the target method is synthetic, then we try to find the real target through the synthetic method
      *  if this is non-null, then this is the real target of this method in user code     */
     private SootMethod realTarget = null;
-    /** cache of the info kinds that method call (plus any called methods) could access */
-    private Set<InfoKind> methodInfoKinds;
-
+    
     public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, ArgumentValue receiver) {
         this.sootMethod = method;
         this.args = args;
@@ -79,8 +77,9 @@ public class Method implements Comparable<Method> {
         lines = new ArrayList<SourceLocationTag>();
         logger.info("Creating method: {} with receiever {}", method, receiver);
         this.ptaInfo = ptaInfo;
-        argInfoKinds = new HashSet[ptaInfo.getNumArgs()];
-        argInfoValues = new Set[ptaInfo.getNumArgs()];
+        argFlows = new Map[ptaInfo.getNumArgs()];
+        cacheArgSourceInfoFlows();
+        cacheRecInfoFlows();
     }
 
     /**
@@ -316,7 +315,7 @@ public class Method implements Comparable<Method> {
             for (InfoKind src : argsSourceKinds) { 
                 ret.append(" " + src);
             }
-            ret.append(")\n//    (sinks:");
+            ret.append(")\n//    (Category of Sink:");
 
             for (InfoKind sink : sinkKinds)
                 ret.append(" " + sink);
@@ -415,82 +414,90 @@ public class Method implements Comparable<Method> {
         return new HashSet<InfoKind>();
     }
 
-    private MethodOrMethodContext getMethodContext() {
-        return ptaInfo.getEdge().getTgt();
+    private void cacheRecInfoFlows() {
+        //call the information flow results
+        if (InformationFlowAnalysis.v() == null || !hasReceiver()) {
+            recFlows = Collections.<InfoKind, Set<Stmt>>emptyMap();
+            return;
+        }
+
+        recFlows = new HashMap<InfoKind, Set<Stmt>>();
+
+        //loop over all alloc nodes of receiver, must be a reference to have a receiver!
+        for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
+            //for each information flow result
+            for (InfoValue iv : 
+                InformationFlowAnalysis.v().getTaints(node, ptaInfo.getEdge().getTgt())) {
+
+                //get high level taint
+                for (InfoKind infoK : getInfoKinds(iv)) {
+                    //rememeber we have high-level taint
+                    if (!recFlows.containsKey(infoK)) 
+                        recFlows.put(infoK, new HashSet<Stmt>());
+                    //add stmt if we have one
+                    if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt)
+                        recFlows.get(infoK).add((Stmt)((InfoUnit)iv).getUnit());
+                }
+
+            }
+        }
     }
 
     /**
      * For the receiver of this method, return the set of all api calls in user code that 
      * could reach the receiver (or one of its fields).
      */
-    public Set<Stmt> getReceiverSourceInfoUnits() {
-        //call the information flow results
-        if (InformationFlowAnalysis.v() == null || !hasReceiver())
-            return Collections.<Stmt>emptySet();
-
-        if (recInfoValues == null) {
-            recInfoValues = new HashSet<InfoValue>();
-                        
-            for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
-                recInfoValues.addAll(InformationFlowAnalysis.v().getTaints(node, getMethodContext()));
-            }
-        }
-
-        Set<Stmt> srcSrcs = new HashSet<Stmt>();
-        for (InfoValue iv : recInfoValues) {
-            if (iv instanceof InfoUnit) {
-                InfoUnit srcUnit = (InfoUnit)iv;
-                if (!(srcUnit.getUnit() instanceof Stmt))
-                    continue;
-                srcSrcs.add((Stmt)srcUnit.getUnit());
-            }
-        }
-
-        return srcSrcs;
+    public Map<InfoKind, Set<Stmt>> getReceiverSourceInfoUnits() {
+        return recFlows;
     }
 
-    /**
-     * For argument at i return the set of all api calls in user code that could reach the 
-     * argument (or one of its fields).
-     */
-    public Set<Stmt> getArgSourceInfoUnits(int i) {
-        
-        if (InformationFlowAnalysis.v() == null)
-            return Collections.<Stmt>emptySet();
-        
-        Set<Stmt> srcSrcs = new HashSet<Stmt>();
-               
-        if (argInfoValues[i] == null) {
-            argInfoValues[i] = new HashSet<InfoValue>();
-       
+    private void cacheArgSourceInfoFlows() {
+        for (int i = 0; i < ptaInfo.getNumArgs(); i++) {
+            argFlows[i] = new HashMap<InfoKind, Set<Stmt>>();
+
+            //no result
+            if (InformationFlowAnalysis.v() == null)
+                continue;
+
+            Set<InfoValue> infoValues = new HashSet<InfoValue>();
+
             if (ptaInfo.isArgPointer(i)) {
                 for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
-                    argInfoValues[i].addAll(InformationFlowAnalysis.v().getTaints(node, getMethodContext()));
+                    infoValues.addAll(InformationFlowAnalysis.v().getTaints(node));
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
-                argInfoValues[i] = 
+                infoValues = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
                             ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
             } else if (ptaInfo.getArgValue(i) instanceof Constant) {
                 //do nothing for constants
             } else {
                 logger.error("Unknown value or type for argument when retreiveing infovalue: {} {} {}", 
-                    getMethodContext(), ptaInfo.getArgValue(i), ptaInfo.getArgValue(i).getType());
+                    ptaInfo.getEdge().getTgt(), ptaInfo.getArgValue(i), ptaInfo.getArgValue(i).getType());
+            }
+
+            //at this point we have info values set
+            for (InfoValue iv : infoValues) {
+                //get high level taint
+                for (InfoKind infoK : getInfoKinds(iv)) {
+                    //rememeber we have high-level taint
+                    if (!argFlows[i].containsKey(infoK)) 
+                        argFlows[i].put(infoK, new HashSet<Stmt>());
+                    //add stmt if we have one
+                    if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt)
+                        argFlows[i].get(infoK).add((Stmt)((InfoUnit)iv).getUnit());
+                }
             }
         }
+    }
 
- 
-        for (InfoValue iv : argInfoValues[i]) {
-            if (iv instanceof InfoUnit) {
-                InfoUnit srcUnit = (InfoUnit)iv;
-                if (!(srcUnit.getUnit() instanceof Stmt))
-                    continue;
-                srcSrcs.add((Stmt)srcUnit.getUnit());
-            }
-        }
-
-        return srcSrcs;
+    /**
+     * For argument at i return the set of all api calls in user code that could reach the 
+     * argument (or one of its fields).
+     */
+    public Map<InfoKind, Set<Stmt>> getArgSourceInfoUnits(int i) {
+        return argFlows[i];
     }
 
     /**
@@ -498,39 +505,42 @@ public class Method implements Comparable<Method> {
      * information flow for the units the flow to it, and then use the PTA to find all the targets
      * of the source statements to see if any of them have higher level InfoKind associated with them.
      * Return the set of all InfoKinds for the targets of all sources.
+     * 
+     * if onlySensitive is true, then only add sensitive infokinds (see infokind definition)
      */
-    private Set<InfoKind> getInfoKinds(Set<InfoValue> srcs) {
-        if (InformationFlowAnalysis.v() == null)
-            return Collections.emptySet(); 
-        
-        
+    private Set<InfoKind> getInfoKinds(InfoValue iv) {
+
         Set<InfoKind> srcKinds = new HashSet<InfoKind>();
-        for (InfoValue iv : srcs) {
-            if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
 
-                Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
+        if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
 
-                if (!stmt.containsInvokeExpr())
-                    continue;
+            Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
 
-                InvokeExpr invoke = stmt.getInvokeExpr();
-                //for each of the targets see if they have an Info Kind
+            if (!stmt.containsInvokeExpr())
+                return srcKinds;
 
-                try {
-                    Collection<SootMethod> targets = 
-                            PTABridge.v().resolveInvoke(invoke, ptaInfo.getEdge().srcCtxt());
+            InvokeExpr invoke = stmt.getInvokeExpr();
+            //for each of the targets see if they have an Info Kind
 
-                    for (SootMethod target : targets) {
-                        srcKinds.addAll(API.v().getSourceInfoKinds(target));
+            try {
+                //TODO: CONTEXT HERE FROM THE INFOVALUE
+                Collection<SootMethod> targets = 
+                        PTABridge.v().resolveInvoke(invoke);
+
+                for (SootMethod target : targets) { 
+                    for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
+                        srcKinds.add(kind);
                     }
-                } catch (CannotFindMethodException e) {
-                    continue;
                 }
-            } else if (iv instanceof InfoKind) {
-                srcKinds.add((InfoKind)iv);
-            }
+            } catch (CannotFindMethodException e) {
 
+            }
+        } else if (iv instanceof InfoKind) {
+            srcKinds.add((InfoKind)iv);
+        } else {
+            logger.warn("Strange info value: {} {}", iv, iv.getClass());
         }
+
 
         return srcKinds;
     }
@@ -542,14 +552,15 @@ public class Method implements Comparable<Method> {
     public Set<InfoKind> getArgInfoKinds(int i) {
         if (InformationFlowAnalysis.v() == null)
             return Collections.emptySet(); 
+        //info flow result is cached
+        Set<InfoKind> highLevelKinds = new HashSet<InfoKind>();
         
-        if (argInfoKinds[i] == null) {
-            //call info flow and cache results
-            getArgSourceInfoUnits(i);
-            //convert info flow infovalue results to infokind
-            argInfoKinds[i] = getInfoKinds(argInfoValues[i]);
+        for (InfoKind kind : argFlows[i].keySet()) {
+            if (kind.isSensitive()) 
+                highLevelKinds.add(kind);
         }
-        return argInfoKinds[i];
+        
+        return highLevelKinds;
     }
 
     /**
@@ -557,20 +568,37 @@ public class Method implements Comparable<Method> {
      * tainted with.	 
      */
     public Set<InfoKind> getRecInfoKinds() {
-        if (InformationFlowAnalysis.v() == null)
+        if (InformationFlowAnalysis.v() == null || !hasReceiver()) 
             return Collections.emptySet(); 
-        
-        if (hasReceiver()) { 
-            if (recInfoKinds == null) {
-                //cache info flow results
-                getReceiverSourceInfoUnits();
-                //convert info flow results to high level infokind
-                recInfoKinds = getInfoKinds(recInfoValues);
-            }
-            return recInfoKinds;
+
+        //info flow result is cached
+        Set<InfoKind> highLevelKinds = new HashSet<InfoKind>();
+
+        for (InfoKind kind : recFlows.keySet()) {
+            if (kind.isSensitive()) 
+                highLevelKinds.add(kind);
         }
-        else 
-            return new HashSet<InfoKind>();
+
+        return highLevelKinds;
+    }
+
+    /**
+     * Return high level info kinds for all memory that this method touches.  Does not include all taint 
+     * on receiver or arguments (but could include accesses of receiver or arguments).
+     */
+    public Set<InfoKind> getMethodInfoKinds() {
+        if (InformationFlowAnalysis.v() == null)
+            return Collections.<InfoKind>emptySet();
+
+        Set<InfoKind> methodKinds = new HashSet<InfoKind>();
+        for (InfoValue iv : InformationFlowAnalysis.v().getTaints(ptaInfo.getEdge().getTgt())) {
+            for (InfoKind kind : getInfoKinds(iv)) {
+                if (kind.isSensitive()) 
+                    methodKinds.add(kind);
+            }
+        }
+
+        return methodKinds;
     }
 
     /**
@@ -579,12 +607,16 @@ public class Method implements Comparable<Method> {
     public Set<InfoKind> getSourcesInfoKinds() {
         if (InformationFlowAnalysis.v() == null)
             return Collections.<InfoKind>emptySet();
-        
-        if (methodInfoKinds == null) {
-            methodInfoKinds = getInfoKinds(InformationFlowAnalysis.v().getTaints(getMethodContext()));
-        }
 
-        return methodInfoKinds;
+        Set<InfoKind> kinds = new HashSet<InfoKind>();
+
+        kinds.addAll(getRecInfoKinds());
+        kinds.addAll(getMethodInfoKinds());
+
+        for (int i = 0; i < sootMethod.getParameterCount(); i++) 
+            kinds.addAll(getArgInfoKinds(i));
+
+        return kinds;
     }
 
     @Override

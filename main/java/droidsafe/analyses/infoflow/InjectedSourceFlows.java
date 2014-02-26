@@ -73,10 +73,10 @@ public class InjectedSourceFlows {
        
        flowsToInject.put("android.net.Uri.uriString", 
                     new LinkedHashMap<Object,InfoKind>() {{
-                        put("person", InfoKind.getInfoKind("CONTACT_INFORMATION"));
-                        put("contact", InfoKind.getInfoKind("CONTACT_INFORMATION"));
-                        put("content://browser/bookmarks", InfoKind.getInfoKind("BROWSER_INFORMATION"));
-                        put("content://browser/bookmarks", InfoKind.getInfoKind("BROWSER_INFORMATION"));
+                        put("person", InfoKind.getInfoKind("CONTACT_INFORMATION", true));
+                        put("contact", InfoKind.getInfoKind("CONTACT_INFORMATION", true));
+                        put("content://browser/bookmarks", InfoKind.getInfoKind("BROWSER_INFORMATION", true));
+                        put("content://browser/bookmarks", InfoKind.getInfoKind("BROWSER_INFORMATION", true));
                     }});
                   
     }
@@ -89,19 +89,6 @@ public class InjectedSourceFlows {
         this.injectedFlows = new LinkedHashMap<IAllocNode, Set<InfoKind>>();
     }
 
-    /**
-     * This map defines the flows we will inject based on classes.
-     *
-     * fully qualified class name -> set of kinds
-     */
-    private static Map<String, Set<InfoKind>> classNameToFlows = new HashMap<String, Set<InfoKind>>();
-    static {
-        {
-            Set<InfoKind> kinds = new HashSet<InfoKind>();
-            kinds.add(InfoKind.getInfoKind("LOCATION_INFORMATION"));
-            classNameToFlows.put("android.location.Location", kinds);
-        }
-    }
 
     /**
      * runs the analysis
@@ -131,15 +118,7 @@ public class InjectedSourceFlows {
      * Return the set of injected flows for this allocation site.
      */
     public Set<InfoKind> getInjectedFlows(IAllocNode node) {
-        Object newExpr = node.getNewExpr();
-        if (newExpr instanceof NewExpr) {
-            String className = ((NewExpr)newExpr).getBaseType().getClassName();
-            if (classNameToFlows.containsKey(className)) {
-                return classNameToFlows.get(className);
-            }
-        }
-
-        if (injectedFlows.containsKey(node)) {
+         if (injectedFlows.containsKey(node)) {
             return injectedFlows.get(node);
         } else {
             return new LinkedHashSet<InfoKind>();

@@ -36,6 +36,8 @@ import soot.jimple.JimpleBody;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.NewExpr;
 
 public class UnmodeledGeneratedClasses {
     private final static Logger logger = LoggerFactory.getLogger(UnmodeledGeneratedClasses.class);
@@ -86,6 +88,16 @@ public class UnmodeledGeneratedClasses {
         createClass();
     }
 
+    /**
+     * Is this node of a created class type?
+     */
+    public boolean isGeneratedNode(AllocNode node) {
+        if (node.getType() instanceof RefType) {
+            return classesAdded.contains(((RefType)node.getType()).getSootClass());
+        }
+        
+        return false;
+    }
 
     private void createClass() {
         //create the harness class
@@ -229,11 +241,13 @@ public class UnmodeledGeneratedClasses {
 
         logger.info("Creating cloned class for fallback modeling: {}", clone);
 
+        classesAdded.add(clone);
+        
         installNoArgConstructor(clone);
 
         //make all methods of unmodeled type
         for (SootMethod method : clone.getMethods()) {
-            API.v().addSourceInfoKind(method, "UNMODELED");
+            API.v().addSourceInfoKind(method, "UNMODELED", false);
         }
 
         //field and add creation of object

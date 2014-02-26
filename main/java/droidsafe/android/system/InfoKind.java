@@ -15,40 +15,31 @@ public  class InfoKind implements InfoValue {
     /** name of this information kind */
     private String name;
     
+    private boolean sensitive;
+    
     /** map of strings to the info kind that represents them */
-    private static HashMap<String,InfoKind> infoKinds = new HashMap<String,InfoKind>();
+    private static HashMap<InfoKind,InfoKind> infoKinds = new HashMap<InfoKind,InfoKind>();
 
     /** 
      * Given a string return (or create and return) the InfoKind object that
      * represents it.
      */
-    public static InfoKind getInfoKind(String str) {
-        if (!infoKinds.containsKey(str)) {
-            infoKinds.put(str, new InfoKind(str));
+    public static InfoKind getInfoKind(String str, boolean sensitive) {
+        InfoKind probe = new InfoKind(str, sensitive);
+        
+        if (!infoKinds.containsKey(probe)) {
+            infoKinds.put(probe, probe);
         }
         
-        return infoKinds.get(str);
+        return infoKinds.get(probe);
     }
     
-    /**
-     * Create a new information kind named str.
-     */
-    private InfoKind(String str) {
-        this.name = str;
-    }
-
-    /**
-     * Return the string name of this information kind.
-     */
-    public String toString() {
-        return name;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + (sensitive ? 1231 : 1237);
         return result;
     }
 
@@ -61,6 +52,28 @@ public  class InfoKind implements InfoValue {
         if (name == null) {
             if (other.name != null) return false;
         } else if (!name.equals(other.name)) return false;
+        if (sensitive != other.sensitive) return false;
         return true;
     }
+
+    public boolean isSensitive() {
+        return sensitive;
+    }
+    
+    /**
+     * Create a new information kind named str.
+     */
+    private InfoKind(String str, boolean sensitive) {
+        this.sensitive = sensitive;
+        this.name = str;
+    }
+
+    /**
+     * Return the string name of this information kind.
+     */
+    public String toString() {
+        return name;
+    }
+
+ 
 }
