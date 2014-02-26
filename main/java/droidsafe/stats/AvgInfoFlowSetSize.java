@@ -64,7 +64,7 @@ public class AvgInfoFlowSetSize {
                                 thisSetSize += InformationFlowAnalysis.v().getTaints(an, oe.getEdge().getTgt()).size();
                             }
                         } else {
-                            InformationFlowAnalysis.v().getTaints(enclosing, oe.getEdge().getTgt(), 
+                            InformationFlowAnalysis.v().getTaints(enclosing, oe.getEdge().getSrc(), 
                                 (Local)oe.getArgValue(i)).size();
                         }
                         if (thisSetSize > 0) {
