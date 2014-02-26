@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import android.util.Slog;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;

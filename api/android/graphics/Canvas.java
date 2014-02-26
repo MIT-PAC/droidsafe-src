@@ -466,6 +466,12 @@ Canvas(int nativeCanvas) {
         mFinalizer = new CanvasFinalizer(nativeCanvas);
         mDensity = Bitmap.getDefaultDensity();
     }
+    //droidsafe wrapper without changing visibility of the default constructor
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Canvas(droidsafe.helpers.DSOnlyType dontcare, int nativeCanvas) {
+        this(nativeCanvas);
+    }
 
     /**
      * Returns null.
