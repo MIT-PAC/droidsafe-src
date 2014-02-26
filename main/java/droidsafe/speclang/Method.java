@@ -294,13 +294,13 @@ public class Method implements Comparable<Method> {
         //print resolved high-level information flows
         Set<InfoKind> recSourceKinds = getRecInfoKinds();
         Set<InfoKind> sinkKinds = getSinkInfoKinds();
-
+        Set<InfoKind> methodKinds = getMethodInfoKinds();
         Set<InfoKind> argsSourceKinds = new HashSet<InfoKind>();
 
         for (int i = 0; i < ptaInfo.getNumArgs(); i++)
             argsSourceKinds.addAll(getArgInfoKinds(i));
 
-        if (!recSourceKinds.isEmpty() || !argsSourceKinds.isEmpty() || !sinkKinds.isEmpty()) {
+        if (!recSourceKinds.isEmpty() || !argsSourceKinds.isEmpty() || !sinkKinds.isEmpty() || !methodKinds.isEmpty()) {
             ret.append("// InfoFlows: \n");
 
             if (hasReceiver()) {
@@ -315,6 +315,12 @@ public class Method implements Comparable<Method> {
             for (InfoKind src : argsSourceKinds) { 
                 ret.append(" " + src);
             }
+            
+            ret.append(")\n//    (Method accesses:");
+            for (InfoKind src : methodKinds) { 
+                ret.append(" " + src);
+            }
+            
             ret.append(")\n//    (Category of Sink:");
 
             for (InfoKind sink : sinkKinds)

@@ -82,6 +82,7 @@ public class API {
     private Map<SootMethod,Set<InfoKind>> sinksMapping;
     /** default info kind for a spec or ban method that is not labeled */
     public InfoKind SENSITIVE_UNCATEGORIZED;
+    public InfoKind UNMODELED;
 
     /** Container classes that we have modified to be understood by our analysis. */
     private Set<String> droidSafeContainerClasses = 
@@ -224,6 +225,7 @@ public class API {
             classificationCat = new HashMap<SootMethod, String>();
             
             SENSITIVE_UNCATEGORIZED = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED", true);
+            UNMODELED = InfoKind.getInfoKind("UNMODELED", false);
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
