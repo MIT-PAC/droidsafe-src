@@ -479,7 +479,7 @@ public class ObjectSensitivityCloner {
                         //found an appropriate constructor call
                         //clone class and install it as an new API class
 
-                        ClassCloner cCloner = ClassCloner.cloneClass(base, false);
+                        ClassCloner cCloner = ClassCloner.cloneClassAndInheritedMethods(base, false);
 
                         SootClass cloned = cCloner.getClonedClass();
 

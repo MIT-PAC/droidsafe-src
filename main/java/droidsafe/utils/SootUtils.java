@@ -42,6 +42,8 @@ import soot.DoubleType;
 import soot.FloatType;
 import soot.Hierarchy;
 import soot.IntType;
+import soot.Modifier;
+import soot.SootField;
 import soot.SootMethodRef;
 import soot.ValueBox;
 import soot.jimple.DoubleConstant;
@@ -598,7 +600,7 @@ public class SootUtils {
 
         return methods;
     }
-    
+
     /**
      * Given a class and method name, find all po
      * @param clz
@@ -1456,6 +1458,40 @@ public class SootUtils {
             result.put( entry.getKey(), entry.getValue() );
         }
         return result;
+    }
+
+    /**
+     * Change private to protected for ancestor fields.
+     */
+    public static void makeFieldsVisible(SootClass ancestor) {  
+        for (SootField ancestorField : ancestor.getFields()) {
+            if (ancestorField.isPrivate()) {
+                //turn on protected
+                ancestorField.setModifiers(ancestorField.getModifiers() | Modifier.PROTECTED);
+                //turn off private
+                ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.PRIVATE);
+            }
+
+            //turn off final for ancestor methods
+            if (ancestorField.isFinal())
+                ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.FINAL);
+        }
+    }
+
+    public static List<SootClass> getSuperClassesOf(SootClass clazz) {
+        //build ancestor
+        //List<SootClass> ancestors = Scene.v().getActiveHierarchy().getSuperclassesOf(clazz);
+        List<SootClass> ancestors = new LinkedList<SootClass>();
+
+        //fill in ancestor list without using Soot.Hierarchy
+        SootClass curAncestor = clazz;
+        while (curAncestor.hasSuperclass())
+        {
+            ancestors.add(curAncestor.getSuperclass());
+            curAncestor = curAncestor.getSuperclass();
+        }
+        
+        return ancestors;
     }
 }
 

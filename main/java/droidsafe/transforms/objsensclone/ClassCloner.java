@@ -111,15 +111,18 @@ public class ClassCloner {
      * 
      * if allMethods is true, then clone all methods from ancestor classes, otherwise if false, clone only reachables
      */
-    public static ClassCloner cloneClass(SootClass original, boolean allMethods) {
+    public static ClassCloner cloneClassAndInheritedMethods(SootClass original, boolean allMethods) {
         ClassCloner c = new ClassCloner(original, allMethods);
+        c.cloneClassCloneMethodsAndInstallClass();
+        return c;
+    }
+
+    public static ClassCloner cloneClass(SootClass original) {
+        ClassCloner c = new ClassCloner(original, false);
         c.cloneAndInstallClass();
         return c;
     }
 
-    /**
-     * Perform the work of actually clone class, changing fields and cloning methods.
-     */
     private void cloneAndInstallClass() {
         clone = new SootClass(original.getName() + CLONE_POSTFIX + uniqueID, 
             original.getModifiers());
@@ -134,18 +137,26 @@ public class ClassCloner {
             original.setModifiers(original.getModifiers() ^ Modifier.FINAL);
         }
         clone.setSuperclass(original);
-
-        //remove inheritance by cloning
-        cim = new CloneInheritedMethods(clone, cloneAllMethods);
-        cim.transform();
-
+        
         //install the class
         Scene.v().addClass(clone);
         Scene.v().loadClass(clone.getName(), SootClass.BODIES);
         clone.setApplicationClass();  
 
         API.v().cloneClassClassifications(original, clone);
+    }
+    
+    /**
+     * Perform the work of actually clone class, changing fields and cloning methods.
+     */
+    private void cloneClassCloneMethodsAndInstallClass() {
+        cloneAndInstallClass();
 
+        //remove inheritance by cloning
+        cim = new CloneInheritedMethods(clone, cloneAllMethods);
+        cim.transform();
+
+      
         //for all new expressions in the cloned methods of the clone,
         //replace self creations with creations of clone
         RefType originalType = RefType.v(original);

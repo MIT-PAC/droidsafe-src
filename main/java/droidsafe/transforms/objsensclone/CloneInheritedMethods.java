@@ -110,28 +110,10 @@ public class CloneInheritedMethods {
             if (ancestor.isPhantom())
                 continue;
 
-            makeAncestorFieldsVisible(ancestor);
+            SootUtils.makeFieldsVisible(ancestor);
         }
 
         cloneHiddenAncestorMethodsAndFixInvokeSpecial();
-    }
-
-    /**
-     * Change private to protected for ancestor fields.
-     */
-    private void makeAncestorFieldsVisible(SootClass ancestor) {  
-        for (SootField ancestorField : ancestor.getFields()) {
-            if (ancestorField.isPrivate()) {
-                //turn on protected
-                ancestorField.setModifiers(ancestorField.getModifiers() | Modifier.PROTECTED);
-                //turn off private
-                ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.PRIVATE);
-            }
-
-            //turn off final for ancestor methods
-            if (ancestorField.isFinal())
-                ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.FINAL);
-        }
     }
 
     /**

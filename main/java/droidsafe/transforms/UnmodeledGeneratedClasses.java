@@ -1,19 +1,24 @@
 package droidsafe.transforms;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.SootUtils;
 import soot.ArrayType;
+import soot.Body;
 import soot.Local;
 import soot.Modifier;
 import soot.PrimType;
@@ -57,6 +62,8 @@ public class UnmodeledGeneratedClasses {
 
     public static int localID = 0;
 
+    private Set<SootClass> classesAdded;
+
     public static void reset() {
         v = null;
     }
@@ -74,6 +81,7 @@ public class UnmodeledGeneratedClasses {
 
     private UnmodeledGeneratedClasses() {
         typeToAddedField = new HashMap<Type,SootField>();
+        classesAdded = new HashSet<SootClass>();
         //create class with fields, all initialized in a method or static init
         createClass();
     }
@@ -216,10 +224,12 @@ public class UnmodeledGeneratedClasses {
         }
 
         //clone clz
-        ClassCloner cloner = ClassCloner.cloneClass(clz, true);
+        ClassCloner cloner = ClassCloner.cloneClass(clz);
         SootClass clone = cloner.getClonedClass();
-        
+
         logger.info("Creating cloned class for fallback modeling: {}", clone);
+
+        installNoArgConstructor(clone);
 
         //make all methods of unmodeled type
         for (SootMethod method : clone.getMethods()) {
@@ -247,6 +257,51 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newAssignStmt(local, Jimple.v().newNewExpr(clone.getType())));
         addStmt(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, clone.getMethod(noArgConsSubSig).makeRef())));
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
+    }
+
+    /**
+     * Create a no arg constructor either by cloning super's no arg constructor (if exists) or creating an empty
+     */
+    private void installNoArgConstructor(SootClass clone) {
+        boolean cloned = false;
+
+        //first try to clone the superclass's init method
+        if (clone.getSuperclass().declaresMethod("void <init>()")) {
+            SootMethod ancestorM = clone.getSuperclass().getMethod("void <init>()");
+            if ( !ancestorM.isPhantom() && ancestorM.isConcrete()) {
+                SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
+                    ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
+
+                clone.addMethod(newMeth);
+
+                API.v().cloneMethodClassifications(ancestorM, newMeth);
+
+                //clone body
+                Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
+                newMeth.setActiveBody(newBody);
+
+                JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
+                cloned = true;
+            }
+        }
+
+        if (!cloned) {
+            //if we have not cloned a method, then just create a no arg constructor...
+            SootMethod init = new SootMethod("<init>", Collections.<Type>emptyList(), VoidType.v(), 
+                Modifier.PUBLIC, Collections.<SootClass>emptyList());
+            
+            clone.addMethod(init);
+            
+            Body newBody = Jimple.v().newBody(init);
+            init.setActiveBody(newBody);
+            
+            //get this, just return?
+            Local thisL = Jimple.v().newLocal("r0", clone.getType());
+            newBody.getLocals().add(thisL);
+            newBody.getUnits().add(Jimple.v().newIdentityStmt(thisL, Jimple.v().newThisRef(clone.getType())));
+            
+            newBody.getUnits().add(Jimple.v().newReturnVoidStmt());
+        }
     }
 
     public Value getSootFieldForType(Type type) {
