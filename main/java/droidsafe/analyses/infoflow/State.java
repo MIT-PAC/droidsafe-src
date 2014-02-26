@@ -14,8 +14,6 @@ import soot.Local;
 import soot.SootField;
 import soot.jimple.toolkits.pta.IAllocNode;
 
-import droidsafe.main.Config;
-
 class ContextLocal {
     private static final HashMap<ImmutablePair<Context, Local>, ContextLocal> cache = new HashMap<ImmutablePair<Context, Local>, ContextLocal>();
 
@@ -103,6 +101,14 @@ class Locals {
         }
     }
 
+    ImmutableSet<InfoValue> putW(Context context, Local local, ImmutableSet<InfoValue>values) {
+        return putW(ContextLocal.v(context,  local), values);
+    }
+    
+    ImmutableSet<InfoValue> putW(Context context, Local local, HashSet<InfoValue> values) {
+        return putW(ContextLocal.v(context,  local), ImmutableSet.<InfoValue>copyOf(values));
+    }
+    
     private ImmutableSet<InfoValue> remove(ContextLocal contextLocal) {
         return this.contextLocalToValues.remove(contextLocal);
     }
@@ -162,6 +168,10 @@ class Locals {
     @Override
     public String toString() {
         return contextLocalToValues.toString();
+    }
+    
+    int size() {
+        return this.contextLocalToValues.size();
     }
 }
 
@@ -283,6 +293,10 @@ class Instances {
 
         return true;
     }
+    
+    int size() {
+        return this.allocNodeFieldToValues.size();
+    }
 }
 
 class Arrays {
@@ -345,6 +359,10 @@ class Arrays {
 
         return true;
     }
+    
+    int size() {
+        return this.arrays.size();
+    }
 }
 
 class Statics {
@@ -402,20 +420,27 @@ class Statics {
 
         return true;
     }
+    
+    int size() {
+        return this.statics.size();
+    }
 }
 
-class NonStackArea {
+class State {
+    Locals locals;
     Instances instances;
     Arrays arrays;
     Statics statics;
 
-    NonStackArea() {
+    State() {
+        this.locals = new Locals();
         this.instances = new Instances();
         this.arrays = new Arrays();
         this.statics = new Statics();
     }
 
-    NonStackArea(NonStackArea that) {
+    State(State that) {
+        this.locals = new Locals(that.locals);
         this.instances = new Instances(that.instances);
         this.arrays = new Arrays(that.arrays);
         this.statics = new Statics(that.statics);
@@ -426,11 +451,11 @@ class NonStackArea {
         if (this == object) {
             return true;
         }
-        if (!(object instanceof NonStackArea)) {
+        if (!(object instanceof State)) {
             return false;
         }
-        NonStackArea that = (NonStackArea)object;
+        State that = (State)object;
 
-        return this.instances.equals(that.instances) && this.arrays.equals(that.arrays) && this.statics.equals(that.statics);
+        return this.locals.equals(that.locals) && this.instances.equals(that.instances) && this.arrays.equals(that.arrays) && this.statics.equals(that.statics);
     }
 }
