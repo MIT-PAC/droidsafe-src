@@ -218,6 +218,8 @@ public class UnmodeledGeneratedClasses {
         //clone clz
         ClassCloner cloner = ClassCloner.cloneClass(clz, true);
         SootClass clone = cloner.getClonedClass();
+        
+        logger.info("Creating cloned class for fallback modeling: {}", clone);
 
         //make all methods of unmodeled type
         for (SootMethod method : clone.getMethods()) {
