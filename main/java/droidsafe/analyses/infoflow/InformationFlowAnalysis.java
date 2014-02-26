@@ -52,6 +52,7 @@ import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
@@ -61,6 +62,7 @@ import soot.toolkits.graph.Block;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.transforms.UnmodeledGeneratedClasses;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -403,6 +405,9 @@ public class InformationFlowAnalysis {
                 for (IAllocNode allocNode : allocNodes) {
                     ImmutableSet<InfoValue> vs = state.instances.get(allocNode, field);
                     values.addAll(vs);
+                    if (UnmodeledGeneratedClasses.v().isGeneratedNode((AllocNode)allocNode)) {
+                        values.add(API.v().UNMODELED);
+                    }
                 }
                 state.locals.putW(context, lLocal, values);
             }
