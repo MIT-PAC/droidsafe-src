@@ -310,7 +310,7 @@ public ContextImpl(ContextImpl context) {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    
+    @DSSafe(DSCat.SOURCE)
     public Resources getResources() {
         return Resources.getSystem();
     }

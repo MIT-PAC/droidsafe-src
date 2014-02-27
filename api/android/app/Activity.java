@@ -1651,7 +1651,7 @@ public void onDetachedFromWindow() {
 	}
     
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
