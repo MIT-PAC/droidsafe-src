@@ -32,7 +32,8 @@ public class AnimatorInflater {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.801 -0500", hash_original_method = "867C489934B793819C9588902A365D13", hash_generated_method = "EEB112F6BC658F8BBAC093C2FF604E3F")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_ANIMATION)
 public static Animator loadAnimator(Context context, int id)
             throws NotFoundException {
 
@@ -316,7 +317,8 @@ private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, V
     private static final int VALUE_TYPE_CUSTOM      = 5;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.942 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
-    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
     public AnimatorInflater ()
     {
         //Synthesized constructor

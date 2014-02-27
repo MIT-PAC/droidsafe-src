@@ -153,7 +153,8 @@ public boolean isStarted() {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.833 -0400", hash_original_method = "9023764EFF4F5DD5C344B401D2F44A3C", hash_generated_method = "AF6F7DF4131BFA1F773F940D8B5D8057")
-    
+    @DSVerified("callback modeled")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void addListener(AnimatorListener listener) {
         addTaint(listener.getTaint());
         if(mListeners == null)        

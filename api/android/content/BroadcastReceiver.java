@@ -15,6 +15,7 @@ import android.app.ActivityThread;
 import android.app.Application;
 import android.app.IActivityManager;
 import android.app.QueuedWork;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -438,6 +439,10 @@ void checkSynchronousHint() {
             for (int catIndex = 0; catIndex < catCount; catIndex++) {
                 intent.addCategory(intentFilter.getCategory(catIndex));
             }
+            
+            Uri dataUri = intentFilter.droidsafeGetDataUri();
+            if (dataUri != null)
+                intent.setData(dataUri);
             
             if (mApplication != null) {
                 mApplication.__ds__intentFilters.add(intentFilter);

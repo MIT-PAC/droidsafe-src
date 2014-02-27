@@ -715,7 +715,8 @@ public DependencyListener(AnimatorSet animatorSet, Node node, int rule) {
          * animation is canceled.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.725 -0500", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "DE41ACB60F7DCC91D2500687FD4FFE69")
-        
+        @DSVerified
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onAnimationCancel(Animator animation) {
         }
 
@@ -724,7 +725,8 @@ public void onAnimationCancel(Animator animation) {
          */
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.728 -0500", hash_original_method = "E0F66F3A2F7DEFA05E43170D7FDC6E81", hash_generated_method = "42514359CDD00951D89B9ED5670B7B09")
-        
+        @DSVerified
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onAnimationEnd(Animator animation) {
             if (mRule == Dependency.AFTER) {
                 startIfReady(animation);
@@ -735,7 +737,8 @@ public void onAnimationEnd(Animator animation) {
          * Ignore repeat events for now
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.730 -0500", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "21972E6A0238BBC5342FCFEFA63E7A08")
-        
+        @DSVerified
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onAnimationRepeat(Animator animation) {
         }
 
@@ -744,7 +747,8 @@ public void onAnimationRepeat(Animator animation) {
          */
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.732 -0500", hash_original_method = "C319AA8CE810AC3271C178BB34DF8E30", hash_generated_method = "2E86170B59EB6BEEE710D4737E27B5A4")
-        
+        @DSVerified
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onAnimationStart(Animator animation) {
             if (mRule == Dependency.WITH) {
                 startIfReady(animation);
@@ -795,13 +799,15 @@ private void startIfReady(Animator dependencyAnimation) {
         private AnimatorSet mAnimatorSet;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.742 -0500", hash_original_method = "F7A8B618CE707AD8B38E15DFED3CE3FB", hash_generated_method = "F7A8B618CE707AD8B38E15DFED3CE3FB")
-        
+        @DSVerified("callback modeled")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 AnimatorSetListener(AnimatorSet animatorSet) {
             mAnimatorSet = animatorSet;
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.745 -0500", hash_original_method = "BE6E1E1BF0ACB2CE5581D6C3A3287656", hash_generated_method = "BE7D60EE73685D79D0CA6057D31795D3")
-        
+        @DSVerified("callback modeled")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onAnimationCancel(Animator animation) {
             if (!mTerminated) {
                 // Listeners are already notified of the AnimatorSet canceling in cancel().
@@ -974,7 +980,8 @@ public void addDependency(Dependency dependency) {
          * the other methods of this Builder object.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.801 -0500", hash_original_method = "B0114D66E7DF09FC47A74BA216B98164", hash_generated_method = "B0114D66E7DF09FC47A74BA216B98164")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 Builder(Animator anim) {
             mCurrentNode = mNodeMap.get(anim);
             if (mCurrentNode == null) {
@@ -992,7 +999,8 @@ Builder(Animator anim) {
          * {@link AnimatorSet#play(Animator)} method starts.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.803 -0500", hash_original_method = "B05ED6D6B491946B79783B58A8AC02E5", hash_generated_method = "FC8F4A8CD6F8E05ACF3A3197FD6930FF")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public Builder with(Animator anim) {
             Node node = mNodeMap.get(anim);
             if (node == null) {
@@ -1014,7 +1022,8 @@ public Builder with(Animator anim) {
          * {@link AnimatorSet#play(Animator)} method ends.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.807 -0500", hash_original_method = "115926E0469E8C75055FFE822D9B435C", hash_generated_method = "A0BE22F31690B5565E23A795E6D3318F")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public Builder before(Animator anim) {
             Node node = mNodeMap.get(anim);
             if (node == null) {
@@ -1036,7 +1045,8 @@ public Builder before(Animator anim) {
          * {@link AnimatorSet#play(Animator)} method to play.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.809 -0500", hash_original_method = "83E010DE5FB75637ACD6CFFBA4AB1D7F", hash_generated_method = "E00834B6C1E4D5CD71741A44B05CD531")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
 public Builder after(Animator anim) {
             Node node = mNodeMap.get(anim);
             if (node == null) {
@@ -1058,7 +1068,8 @@ public Builder after(Animator anim) {
          * animation starts.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.811 -0500", hash_original_method = "5E60D6733644E2424482AFF107063E09", hash_generated_method = "392273B6B486D7F0366629E9B78B72B3")
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)  
 public Builder after(long delay) {
             // setup dummy ValueAnimator just to run the clock
             ValueAnimator anim = ValueAnimator.ofFloat(0f, 1f);

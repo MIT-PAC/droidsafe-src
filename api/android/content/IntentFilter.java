@@ -370,6 +370,25 @@ private IntentFilter(Parcel source) {
         mHasPartialTypes = source.readInt() > 0;
     }
 
+    Uri dataUri;
+    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeSetDataUri(String data) {
+        try {
+            dataUri = Uri.parse(data);
+        }
+        catch (Exception ex) {
+            
+        }
+    }
+   
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Uri droidsafeGetDataUri() {
+        return dataUri;
+    }
+
     /**
      * Modify priority of this filter.  The default priority is 0. Positive
      * values will be before the default, lower values will be after it.
