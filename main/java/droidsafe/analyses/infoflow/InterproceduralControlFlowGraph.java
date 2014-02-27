@@ -87,7 +87,7 @@ public class InterproceduralControlFlowGraph implements Iterable<Block> {
         }
         if (Config.v().infoFlowValues != null) {
             for (SootMethod method : reachableMethods) {
-                if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
+                if (method.hasActiveBody()) {
                     Body body = method.getActiveBody();
                     Chain<Local> locals = body.getLocals();
                     for (Local local : locals) {
