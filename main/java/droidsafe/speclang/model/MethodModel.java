@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,7 +95,7 @@ public class MethodModel extends ModelChangeSupport
   /**
    * List of list of lines for new expressions that could reach the method's arguments.
    */
-  private List<List<CallLocationModel>> methodArgumentSourceInfoUnits;
+  private List<Map<String, List<CallLocationModel>>> methodArgumentSourceInfoUnits;
 
   /**
    * List of high-level information kinds that the the method's arguments could possibly be 
@@ -151,7 +153,7 @@ public class MethodModel extends ModelChangeSupport
   /**
    * The list of all api calls in user code that could reach the receiver (or one of its fields).
    */
-  private List<CallLocationModel> receiverSourceInfoUnits;
+  private Map<String, List<CallLocationModel>> receiverSourceInfoUnits;
 
   /**
    * The list of high-level information kinds that the receiver could possibly be 
@@ -217,22 +219,26 @@ public class MethodModel extends ModelChangeSupport
    */
   private void setArgumentSourceInfoUnits(Method originalMethod) {
     boolean hasInfo = false;
-    methodArgumentSourceInfoUnits = new ArrayList<List<CallLocationModel>>();
+    methodArgumentSourceInfoUnits = new ArrayList<Map<String, List<CallLocationModel>>>();
     for (int i = 0; i < originalMethod.getArgs().length; i++) {
-      Set<Stmt> stmts = null;//originalMethod.getArgSourceInfoUnits(i);
-      List<CallLocationModel> argSourceInfoUnits = null;
-      if (!stmts.isEmpty()) {
-        argSourceInfoUnits = new ArrayList<CallLocationModel>();
-        for (Stmt stmt : stmts) {
+      Map<InfoKind, Set<Stmt>> map = originalMethod.getArgSourceInfoUnits(i);
+      Map<String, List<CallLocationModel>> mapModel = null;
+      if (!map.isEmpty()) {
+        hasInfo = true;
+        mapModel = new TreeMap<String, List<CallLocationModel>>();
+        for (InfoKind infoKind : map.keySet()) {
+          List<CallLocationModel> argSourceInfoUnits = new ArrayList<CallLocationModel>();
+          for (Stmt stmt : map.get(infoKind)) {
             CallLocationModel line = CallLocationModel.get(stmt);
             if (line != null) {
-                argSourceInfoUnits.add(line);
-                hasInfo = true;
+              argSourceInfoUnits.add(line);
             }
+          }
+          Collections.sort(argSourceInfoUnits);
+          mapModel.put(infoKind.toString(), argSourceInfoUnits);
         }
-        Collections.sort(argSourceInfoUnits);
       }
-      methodArgumentSourceInfoUnits.add(argSourceInfoUnits);
+      methodArgumentSourceInfoUnits.add(mapModel);
     }
     if (!hasInfo)
       methodArgumentSourceInfoUnits = null;
@@ -313,17 +319,21 @@ public class MethodModel extends ModelChangeSupport
    */
   private void setReceiverSourceInfoUnits(Method originalMethod) {
     boolean hasInfo = false;
-    Set<Stmt> stmts = null;//originalMethod.getReceiverSourceInfoUnits();
-    if (!stmts.isEmpty()) {
-      receiverSourceInfoUnits = new ArrayList<CallLocationModel>();
-      for (Stmt stmt : stmts) {
-        CallLocationModel line = CallLocationModel.get(stmt);
-        if (line != null) {
-          hasInfo = true;
-          receiverSourceInfoUnits.add(line);
+    receiverSourceInfoUnits = new TreeMap<String, List<CallLocationModel>>();
+    Map<InfoKind, Set<Stmt>> map = originalMethod.getReceiverSourceInfoUnits();
+    if (!map.isEmpty()) {
+      for (InfoKind infoKind : map.keySet()) {
+        List<CallLocationModel> sourceInfoUnits = new ArrayList<CallLocationModel>();
+        for (Stmt stmt : map.get(infoKind)) {
+          CallLocationModel line = CallLocationModel.get(stmt);
+          if (line != null) {
+            sourceInfoUnits.add(line);
+            hasInfo = true;
+          }
         }
+        Collections.sort(sourceInfoUnits);
+        receiverSourceInfoUnits.put(infoKind.toString(), sourceInfoUnits);
       }
-      Collections.sort(receiverSourceInfoUnits);
     }
     if (!hasInfo)
       receiverSourceInfoUnits = null;
@@ -707,7 +717,7 @@ public class MethodModel extends ModelChangeSupport
    * Returns the list of all api calls in user code that could reach the receiver (i = -1)
    * or the ith argument.
    */
-  public List<CallLocationModel> getArgumentSourceInfoUnits(int i) {
+  public Map<String, List<CallLocationModel>> getArgumentSourceInfoUnits(int i) {
     if (i == -1)
       return receiverSourceInfoUnits;
     if (methodArgumentSourceInfoUnits == null)

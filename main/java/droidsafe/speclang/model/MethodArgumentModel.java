@@ -1,6 +1,7 @@
 package droidsafe.speclang.model;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Representation of the receiver or an argument of a method call.
@@ -69,7 +70,7 @@ public class MethodArgumentModel {
     /**
      * Return the the list of all api calls in user code that could reach the receiver/argument.
      */
-    public List<CallLocationModel> getSourceInfoUnits() {
+    public Map<String, List<CallLocationModel>> getSourceInfoUnits() {
         return method.getArgumentSourceInfoUnits(argumentIndex);
     }
 

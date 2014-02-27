@@ -1,7 +1,10 @@
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import droidsafe.android.system.API;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
@@ -36,53 +39,49 @@ public class InfoFlowDetailsTreeElementContentProvider extends MethodInfoTreeEle
         }
         if (!method.hasInfoFlowInfo())
             return NO_CHILDREN;
-        List<MethodArgumentModel> methodArgs = new ArrayList<MethodArgumentModel>();
-        List<String> infoKindsStrings = new ArrayList<String>();
-        for (int i = -1; i < method.getMethodArguments().size(); i++) {
-            List<String> infoKinds = method.getArgumentInfoKinds(i);
-            if (infoKinds != null || method.getArgumentSourceInfoUnits(i) != null) {
-                if (infoKinds == null) {
-                    infoKinds = new ArrayList<String>();
-                    infoKinds.add(API.v().SENSITIVE_UNCATEGORIZED.toString());
-                }
-                if (sourceFilter == null || infoKinds.contains(sourceFilter)) {
-                    methodArgs.add(method.getArgumentModel(i));
-                    String infoKindsStr = (sourceFilter != null) ? sourceFilter : infoKinds.toString();
-                    infoKindsStrings.add(infoKindsStr);
-                }
-            }
-        }
         List<Object> roots = new ArrayList<Object>();
-        if (!methodArgs.isEmpty()) {
-            TreeElement<String, MethodArgumentModel> root =
-                    new TreeElement<String, MethodArgumentModel>("Sources", "Sources", MethodArgumentModel.class);
-            for (int i = 0; i < methodArgs.size(); i++) {
-                MethodArgumentModel methodArg = methodArgs.get(i);
-                TreeElement<MethodArgumentModel, String> methArgElement =
-                        new TreeElement<MethodArgumentModel, String>(methodArg.toString(),
-                                methodArg, String.class);
-                String infoKindsStr = infoKindsStrings.get(i);
-                TreeElement<String, CallLocationModel> infoKindsElement = new TreeElement<String, CallLocationModel>(infoKindsStr, infoKindsStr, CallLocationModel.class);
-                methArgElement.addChild(infoKindsElement);
-                List<CallLocationModel> locs = methodArg.getSourceInfoUnits();
-                if (locs != null) {
-                    for (CallLocationModel loc: locs) {
-                        TreeElement<CallLocationModel, Object> locElement = new TreeElement<CallLocationModel, Object>(loc.toString(), loc, Object.class);
-                        infoKindsElement.addChild(locElement);
+        boolean hasSourceInfo = false;
+        TreeElement<String, MethodArgumentModel> sourceRoot =
+                new TreeElement<String, MethodArgumentModel>("Sources", "Sources", MethodArgumentModel.class);
+        for (int i = -1; i < method.getMethodArguments().size(); i++) {
+            MethodArgumentModel methodArg = method.getArgumentModel(i);
+            Map<String, List<CallLocationModel>> infoKindToCalls = methodArg.getSourceInfoUnits();
+            if (infoKindToCalls != null && !infoKindToCalls.isEmpty()) {
+                Set<String> infoKinds = infoKindToCalls.keySet();
+                if (sourceFilter == null || infoKinds.contains(sourceFilter)) {
+                    if (sourceFilter != null) {
+                        infoKinds = new HashSet<String>();
+                        infoKinds.add(sourceFilter);
                     }
+                    hasSourceInfo = true;
+                    TreeElement<MethodArgumentModel, String> methArgElement =
+                            new TreeElement<MethodArgumentModel, String>(methodArg.toString(),
+                                    methodArg, String.class);
+                    for (String infoKind: infoKinds) {
+                        TreeElement<String, CallLocationModel> infoKindElement = new TreeElement<String, CallLocationModel>(infoKind, infoKind, CallLocationModel.class);
+                        methArgElement.addChild(infoKindElement);
+                        List<CallLocationModel> locs = infoKindToCalls.get(infoKind);
+                        if (locs != null) {
+                            for (CallLocationModel loc: locs) {
+                                TreeElement<CallLocationModel, Object> locElement = new TreeElement<CallLocationModel, Object>(loc.toString(), loc, Object.class);
+                                infoKindElement.addChild(locElement);
+                            }
+                        }
+                    }
+                    sourceRoot.addChild(methArgElement);
                 }
-                root.addChild(methArgElement);
             }
-            roots.add(root);
         }
+        if (hasSourceInfo)
+            roots.add(sourceRoot);
         List<String> sinkInfoKinds = method.getSinkInfoKinds();
         if (sinkInfoKinds != null) {
-            TreeElement<String, String> root =
+            TreeElement<String, String> sinkRoot =
                     new TreeElement<String, String>("Sinks", "Sinks", String.class);
             String infoKindsStr = (sinkFilter != null) ? sinkFilter : sinkInfoKinds.toString();
             TreeElement<String, Object> infoKindsElement = new TreeElement<String, Object>(infoKindsStr, infoKindsStr, Object.class);
-            root.addChild(infoKindsElement);
-            roots.add(root);
+            sinkRoot.addChild(infoKindsElement);
+            roots.add(sinkRoot);
         }
         return roots.toArray();
     }

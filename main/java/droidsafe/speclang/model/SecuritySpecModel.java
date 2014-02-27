@@ -627,13 +627,13 @@ public class SecuritySpecModel extends ModelChangeSupport
         if (method.hasInfoFlowInfo()) {
           fw.write(method.getSignature() + "\n");
           List<String> receiverInfoKinds = method.getArgumentInfoKinds(-1);
-          List<CallLocationModel> receiverSourceInfoUnits = method.getArgumentSourceInfoUnits(-1);
+          Map<String, List<CallLocationModel>> receiverSourceInfoUnits = method.getArgumentSourceInfoUnits(-1);
           String desc = "<receiver> " + method.getReceiverType();
           writeInfoFlowDetails(desc, receiverInfoKinds, receiverSourceInfoUnits, fw);
           List<String> args = method.getMethodArguments();
           for (int i = 0; i < args.size(); i++) {
             List<String> argInfoKinds = method.getArgumentInfoKinds(i);
-            List<CallLocationModel> argInfoUnits = method.getArgumentSourceInfoUnits(i);
+            Map<String, List<CallLocationModel>> argInfoUnits = method.getArgumentSourceInfoUnits(i);
             desc = "<argument " + (i + 1) + "> : " + args.get(i);
             writeInfoFlowDetails(desc, argInfoKinds, argInfoUnits, fw);
           }
@@ -650,14 +650,17 @@ public class SecuritySpecModel extends ModelChangeSupport
   }
 
   private static void writeInfoFlowDetails(String desc, List<String> infoKinds,
-      List<CallLocationModel> infoUnits, FileWriter fw) throws IOException {
+                                           Map<String, List<CallLocationModel>> infoUnits, FileWriter fw) throws IOException {
     if ((infoKinds != null && !infoKinds.isEmpty()) || (infoUnits != null && !infoUnits.isEmpty())) {
       fw.write("  " + desc + "\n");
       String kinds = (infoKinds == null) ? "[SENSITIVE_UNCATEGORIZED]" : infoKinds.toString();
       fw.write("    " + kinds + "\n");
       if (infoUnits != null) {
-        for (CallLocationModel loc: infoUnits) {
-          fw.write("      " + loc + "\n");
+        for (String kind: infoUnits.keySet()) {
+          fw.write("    " + kind + "\n");
+          for (CallLocationModel loc: infoUnits.get(kind)) {
+            fw.write("      " + loc + "\n");
+          }
         }
       }
     }
