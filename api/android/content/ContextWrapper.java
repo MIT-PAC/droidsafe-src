@@ -332,6 +332,8 @@ public Context getBaseContext() {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.156 -0500", hash_original_method = "44DE59125179A0BDED11E57B810BFAF1", hash_generated_method = "0F6E27ED3C39786F554597D2572B5FD9")
+    @DSVerified
+    @DSSafe(DSCat.FS_INFO)
     
 @Override
     public File getCacheDir() {
@@ -341,9 +343,37 @@ public Context getBaseContext() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.159 -0500", hash_original_method = "7C2D809316E637C52FE8D4DE0AE386A3", hash_generated_method = "5907DC0B3DDB4625833A1540D8CFA11E")
     
+    @DSVerified
+    @DSSafe(DSCat.FS_INFO)
 @Override
     public File getExternalCacheDir() {
         return mBase.getExternalCacheDir();
+    }
+    
+    
+    @DSVerified
+    @DSSafe(DSCat.FS_INFO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @Override
+    public File[] getExternalCacheDirs() {
+        return mBase.getExternalCacheDirs();
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.FS_INFO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @Override
+    public File[] getExternalFileDirs() {
+        return mBase.getExternalFileDirs();
+    }
+
+
+    @DSVerified
+    @DSSafe(DSCat.FS_INFO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @Override
+    public File[] getObbDirs() {
+        return mBase.getObbDirs();
     }
 
     @DSComment("Method returns IO Object")

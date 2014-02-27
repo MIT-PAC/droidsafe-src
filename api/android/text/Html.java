@@ -103,6 +103,13 @@ public static String toHtml(Spanned text) {
         return out.toString();
     }
 
+
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public static String escapeHtml(CharSequence text) {
+        return text.toString();
+    }
+
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.473 -0500", hash_original_method = "EB1C92AF9B222E7DE929025AF49140FD", hash_generated_method = "A5A19CCB97B3B92C189AF9263480E11F")

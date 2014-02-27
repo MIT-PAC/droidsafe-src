@@ -38,6 +38,8 @@ private static float getRawY(MotionEvent event, int pointerIndex) {
         float offset = event.getRawY() - event.getY();
         return event.getY(pointerIndex) + offset;
     }
+
+    private boolean scaleEnabled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.540 -0500", hash_original_field = "331FAAD620AC9265B21867D644F5430D", hash_generated_field = "4649FA3572602ADAEA386A657BBBCE55")
 
     private static final String TAG = "ScaleGestureDetector";
@@ -554,6 +556,18 @@ private void reset() {
     
 public boolean isInProgress() {
         return mGestureInProgress;
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean isQuickScaleEnabled() {
+        return scaleEnabled;
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setQuickScaleEnabled(boolean enabled) {
+        scaleEnabled = enabled;
     }
 
     /**

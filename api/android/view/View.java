@@ -29,6 +29,7 @@ import android.graphics.Region;
 import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Parcel;
@@ -46,6 +47,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityEventSource;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
 import android.view.animation.Animation;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
@@ -6709,7 +6711,51 @@ AttachInfo(IWindowSession session, IWindow window,
 			// Original method
             return host.onRequestSendAccessibilityEventInternal(child, event);
 		}
+        /**
+         * Gets the provider for managing a virtual view hierarchy rooted at this View
+         * and reported to {@link android.accessibilityservice.AccessibilityService}s
+         * that explore the window content.
+         * <p>
+         * The default implementation behaves as
+         * {@link View#getAccessibilityNodeProvider() View#getAccessibilityNodeProvider()} for
+         * the case of no accessibility delegate been set.
+         * </p>
+         *
+         * @return The provider.
+         *
+         * @see AccessibilityNodeProvider
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public AccessibilityNodeProvider getAccessibilityNodeProvider(View host) {
+            // from original source
+            AccessibilityNodeProvider provider = new AccessibilityNodeProvider() {
+            };
+            return provider;
+            //original code returns null
+        }    
         
+        /**
+         * Performs the specified accessibility action on the view. For
+         * possible accessibility actions look at {@link AccessibilityNodeInfo}.
+         * <p>
+         * The default implementation behaves as
+         * {@link View#performAccessibilityAction(int, Bundle)
+         *  View#performAccessibilityAction(int, Bundle)} for the case of
+         *  no accessibility delegate been set.
+         * </p>
+         *
+         * @param action The action to perform.
+         * @return Whether the action was performed.
+         *
+         * @see View#performAccessibilityAction(int, Bundle)
+         *      View#performAccessibilityAction(int, Bundle)
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public boolean performAccessibilityAction(View host, int action, Bundle args) {
+            return host.performAccessibilityActionInternal(action, args);
+        }
     }
     
     public interface OnLayoutChangeListener {
@@ -6833,6 +6879,11 @@ AttachInfo(IWindowSession session, IWindow window,
         return getTaintBoolean();
 	}
     
+    public boolean performAccessibilityActionInternal(int action, Bundle args) {
+        // TODO Auto-generated method stub
+        return getTaintBoolean();
+    }
+
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean postDelayed(Runnable action, long delayMillis){
@@ -9859,5 +9910,150 @@ protected void resolveTextDirection() {
     }
 		*/
 	}
+    
+    /**
+     * Gets the live region mode for this View.
+     *
+     * @return The live region mode for the view.
+     *
+     * @attr ref android.R.styleable#View_accessibilityLiveRegion
+     *
+     * @see #setAccessibilityLiveRegion(int)
+     */
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getAccessibilityLiveRegion() {
+        return getTaintInt();
+    }
+    
+    /**
+     * Gets the provider for managing a virtual view hierarchy rooted at this View
+     * and reported to {@link android.accessibilityservice.AccessibilityService}s
+     * that explore the window content.
+     * <p>
+     * If this method returns an instance, this instance is responsible for managing
+     * {@link AccessibilityNodeInfo}s describing the virtual sub-tree rooted at this
+     * View including the one representing the View itself. Similarly the returned
+     * instance is responsible for performing accessibility actions on any virtual
+     * view or the root view itself.
+     * </p>
+     * <p>
+     * If an {@link AccessibilityDelegate} has been specified via calling
+     * {@link #setAccessibilityDelegate(AccessibilityDelegate)} its
+     * {@link AccessibilityDelegate#getAccessibilityNodeProvider(View)}
+     * is responsible for handling this call.
+     * </p>
+     *
+     * @return The provider.
+     *
+     * @see AccessibilityNodeProvider
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public AccessibilityNodeProvider getAccessibilityNodeProvider() {
+        if (mAccessibilityDelegate != null) {
+            return mAccessibilityDelegate.getAccessibilityNodeProvider(this);
+        } else {
+            return null;
+        }
+    }
+    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getImportantForAccessibility() {
+        return getTaintInt();
+    }
+    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getLabelFor() {
+        return getTaintInt();
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setLabelFor(int id) {
+        addTaint(id);
+    }
+    
+    /**
+     * Gets the parent for accessibility purposes. Note that the parent for
+     * accessibility is not necessary the immediate parent. It is the first
+     * predecessor that is important for accessibility.
+     *
+     * @return The parent for accessibility purposes.
+     */
+    public ViewParent getParentForAccessibility() {
+        if (mParent instanceof View) {
+            View parentView = (View) mParent;
+            if (parentView.includeForAccessibility()) {
+                return mParent;
+            } else {
+                return ((View) mParent).getParentForAccessibility();
+            }
+        }
+        return null;
+    }
+
+    private boolean includeForAccessibility() {
+        // TODO Auto-generated method stub
+        //return false;
+        return getTaintBoolean();
+    }
+    
+    /**
+     * Set whether this view is currently tracking transient state that the
+     * framework should attempt to preserve when possible. This flag is reference counted,
+     * so every call to setHasTransientState(true) should be paired with a later call
+     * to setHasTransientState(false).
+     *
+     * <p>A view with transient state cannot be trivially rebound from an external
+     * data source, such as an adapter binding item views in a list. This may be
+     * because the view is performing an animation, tracking user selection
+     * of content, or similar.</p>
+     *
+     * @param hasTransientState true if this view has transient state
+     */
+    int mTransientStateCount = 0;
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setHasTransientState(boolean hasTransientState) {
+        mTransientStateCount = hasTransientState ? mTransientStateCount + 1 :
+                mTransientStateCount - 1;
+        if (mTransientStateCount < 0) {
+            mTransientStateCount = 0;
+            Log.e(VIEW_LOG_TAG, "hasTransientState decremented below 0: " +
+                    "unmatched pair of setHasTransientState calls");
+        } else if ((hasTransientState && mTransientStateCount == 1) ||
+                (!hasTransientState && mTransientStateCount == 0)) {
+            // update flag if we've just incremented up from 0 or decremented down to 0
+            if (mParent != null) {
+                try {
+                    mParent.childHasTransientStateChanged(this, hasTransientState);
+                } catch (AbstractMethodError e) {
+                    Log.e(VIEW_LOG_TAG, mParent.getClass().getSimpleName() +
+                            " does not fully implement ViewParent", e);
+                }
+            }
+        }
+    }
+    /**
+     * Indicates whether the view is currently tracking transient state that the
+     * app should not need to concern itself with saving and restoring, but that
+     * the framework should take special note to preserve when possible.
+     *
+     * <p>A view with transient state cannot be trivially rebound from an external
+     * data source, such as an adapter binding item views in a list. This may be
+     * because the view is performing an animation, tracking user selection
+     * of content, or similar.</p>
+     *
+     * @return true if the view has transient state
+     */
+    @ViewDebug.ExportedProperty(category = "layout")
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean hasTransientState() {
+        return getTaintBoolean();
+    }
 }
 

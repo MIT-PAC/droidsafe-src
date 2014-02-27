@@ -87,4 +87,9 @@ public interface ViewParent {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event);
+
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void childHasTransientStateChanged(View view,
+            boolean hasTransientState);
 }

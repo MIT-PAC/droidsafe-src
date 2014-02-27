@@ -854,7 +854,18 @@ public abstract File getCacheDir();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.928 -0500", hash_original_method = "DC9C00B30E2B2D99DE9CCC7273B6CAC5", hash_generated_method = "9934C57497FC9CC239AA3AEAA11356D7")
     
 public abstract File getExternalCacheDir();
+    
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public abstract File[] getExternalCacheDirs();
 
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public abstract File[] getExternalFileDirs();
+
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public abstract File[] getObbDirs();
     /**
      * Returns an array of strings naming the private files associated with
      * this Context's application package.
