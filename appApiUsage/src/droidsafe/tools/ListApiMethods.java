@@ -104,13 +104,102 @@ public class ListApiMethods extends ApiUsageListing {
         }
         return classification;
     }
-    
+
+    /**
+     * Method toe extract annotations
+     * @param method
+     * @return list of annotation in string format
+     */
+    public  List<String> extractDSAnnotations(SootMethod method) {
+        List<String> annoList = new LinkedList<String>();
+        //Extracting classification annotation
+        for (Tag tag: method.getTags()) {
+            logger.debug("{} => {}/{}", method, tag.getClass(), tag);
+            if (!(tag instanceof soot.tagkit.VisibilityAnnotationTag)) {
+                continue;
+            }
+            VisibilityAnnotationTag visAnnotation = (VisibilityAnnotationTag)tag;
+
+            logger.debug("visAnnotation {} ", visAnnotation);
+
+            StringBuilder sb = new StringBuilder();
+            for (AnnotationTag annoTag: visAnnotation.getAnnotations()) {
+                if (annoTag.getNumElems() < 1)
+                    continue;
+
+                if (!annoTag.getType().matches(".*DS(Safe|Spec|Ban|Comment|Sink|Source).*")) {
+                    continue; 
+                }
+
+                logger.info("=========AnnotationTag=======");
+                logger.info("{}", annoTag);
+                AnnotationElem elem = annoTag.getElemAt(0);
+                logger.info("TYPE:{}, ELEM-CLASS: {}, ELEM: {}", 
+                        annoTag.getType(), elem.getClass(), elem);
+
+                if (elem instanceof AnnotationStringElem) {
+                    AnnotationStringElem strElem = (AnnotationStringElem)elem;
+                    logger.info("TYPE: {}/ NAME:{}/VALUE: {}", 
+                            annoTag.getType(), strElem.getName(), strElem.getValue());
+                    String commentAnno = String.format("@DSComment(\"%s\")",strElem.getValue());
+                    annoList.add(commentAnno);
+                    logger.info("comment Anno: {}", commentAnno);
+                }
+
+                if (elem instanceof AnnotationEnumElem) {
+                    AnnotationEnumElem enumElem = (AnnotationEnumElem)elem;
+                    logger.info("TYPE:{}/ TYPENAME:{} /CONST_NAME{}: {}", enumElem.getName(), 
+                            annoTag.getType(),
+                            enumElem.getTypeName(),
+                            enumElem.getConstantName());
+
+                    String[] tokens = annoTag.getType().split("/");
+
+                    String classificationType = tokens[tokens.length-1];
+                    classificationType = classificationType.replace(";", "");
+                    String classificationAnno = String.format("@%s(DSCat.%s)", 
+                            classificationType, enumElem.getConstantName());
+                    annoList.add(classificationAnno);
+                    logger.info("classification Type {}", classificationAnno);
+                }
+
+                if (elem instanceof AnnotationArrayElem) {
+                    AnnotationArrayElem arrayElem = (AnnotationArrayElem)elem;
+                    AnnotationEnumElem enumElem = (AnnotationEnumElem)arrayElem.getValueAt(0);
+
+                    //logger.info("SINK/SOURCE {} ", enumElem);
+                    String infoflowType = "None";
+                    String[] tokens = annoTag.getType().split("/");
+                    if (tokens.length > 0)
+                        infoflowType = tokens[tokens.length-1];
+                    infoflowType = infoflowType.replace(";", "");
+                    //logger.info("infoflowType {} ", infoflowType);
+
+                    tokens = enumElem.getTypeName().split("/");
+                    String typeName = ""; 
+                    if (tokens.length > 0)
+                        typeName = tokens[tokens.length - 1];
+                    typeName = typeName.replaceAll(";", "");
+
+                    String infoflowAnno = String.format("@%s(%s.%s)", 
+                            infoflowType, typeName, enumElem.getConstantName());
+
+                    //logger.info("info annotation {} ", infoflowAnno);
+                    annoList.add(infoflowAnno);
+                }
+                logger.info("==========================");
+            }
+        }
+
+        return annoList;
+    }
+
     /**
      * given a method, find its current classification
      * @param method
      * @return
      */
-    public String getExitingClassification(SootMethod method) {
+    public String getExistingClassification(SootMethod method) {
         String classificationAnno = null;
         String commentAnno = null;
         //Extracting classification annotation
@@ -129,7 +218,84 @@ public class ListApiMethods extends ApiUsageListing {
                     continue;
 
 
-                if (!annoTag.getType().matches(".*DS(Safe|Spec|Ban|Comment).*")) {
+                if (!annoTag.getType().matches(".*DS(Safe|Spec|Ban|Comment|Sink|Source).*")) {
+                    continue; 
+                }
+
+                logger.info("=========AnnotationTag=======");
+                logger.info("{}", annoTag);
+                AnnotationElem elem = annoTag.getElemAt(0);
+                logger.info("TYPE:{}, ELEM-CLASS: {}, ELEM: {}", 
+                        annoTag.getType(), elem.getClass(), elem);
+
+                if (elem instanceof AnnotationStringElem) {
+                    AnnotationStringElem strElem = (AnnotationStringElem)elem;
+                    logger.info("TYPE: {}/ NAME:{}/VALUE: {}", 
+                            annoTag.getType(), strElem.getName(), strElem.getValue());
+                    commentAnno = String.format("@DSComment(\"%s\")",strElem.getValue());
+                    logger.info("comment Anno: {}", commentAnno);
+                }
+
+                if (elem instanceof AnnotationEnumElem) {
+                    AnnotationEnumElem enumElem = (AnnotationEnumElem)elem;
+                    logger.info("TYPE:{}/ TYPENAME:{} /CONST_NAME{}: {}", enumElem.getName(), 
+                            annoTag.getType(),
+                            enumElem.getTypeName(),
+                            enumElem.getConstantName());
+
+                    String[] tokens = annoTag.getType().split("/");
+
+                    String classificationType = tokens[tokens.length-1];
+                    classificationType = classificationType.replace(";", "");
+                    classificationAnno = String.format("@%s(DSCat.%s)", 
+                            classificationType, enumElem.getConstantName());
+
+                    logger.info("classification Type {}", classificationAnno);
+                }
+
+                if (elem instanceof AnnotationArrayElem) {
+                    AnnotationArrayElem arrayElem = (AnnotationArrayElem)elem;
+                    AnnotationEnumElem sinkSourceElem = (AnnotationEnumElem) arrayElem.getValueAt(0);
+                    AnnotationEnumElem enumElem = (AnnotationEnumElem)arrayElem.getValueAt(0);
+
+                    String[] tokens = annoTag.getType().split("/");
+                    String infoflowType = tokens[tokens.length-1];
+                    infoflowType = infoflowType.replace(";", "");
+                    String infoflowAnno = String.format("@%s(DSCat.%s)", 
+                            infoflowType, enumElem.getConstantName());
+
+                    logger.info("SINK/SOURCE {} ", enumElem);
+                }
+                logger.info("==========================");
+            }
+        }
+
+        if (classificationAnno != null && commentAnno != null) {
+            classificationAnno = classificationAnno + " - " + commentAnno;
+        }
+        return classificationAnno;
+    }
+    
+    public String getExistingInfoFlow(SootMethod method) {
+        String classificationAnno = null;
+        String commentAnno = null;
+        //Extracting classification annotation
+        for (Tag tag: method.getTags()) {
+            logger.debug("{} => {}/{}", method, tag.getClass(), tag);
+            if (!(tag instanceof soot.tagkit.VisibilityAnnotationTag)) {
+                continue;
+            }
+            VisibilityAnnotationTag visAnnotation = (VisibilityAnnotationTag)tag;
+
+            logger.debug("visAnnotation {} ", visAnnotation);
+
+            StringBuilder sb = new StringBuilder();
+            for (AnnotationTag annoTag: visAnnotation.getAnnotations()) {
+                if (annoTag.getNumElems() < 1)
+                    continue;
+
+
+                if (!annoTag.getType().matches(".*DS(Sink|Source).*")) {
                     continue; 
                 }
 
@@ -173,6 +339,110 @@ public class ListApiMethods extends ApiUsageListing {
         return classificationAnno;
     }
     
+    private String getModelReportLine(String line, List<String> annoList) {
+
+        String sinkAnno = "NO_INFO";
+        String classification = "UNCLASSIFIED";
+
+        for (String anno: annoList) {
+            if (anno.matches("@DS(Safe|Spec|Ban).*")) {
+                classification = anno;
+            }
+
+            if (anno.matches("@DSSink.*")) {
+                sinkAnno = anno;
+            }
+        }
+        return String.format("%s - %s - %s ", line, classification, sinkAnno);
+    }
+ 
+    /**
+     * Method to report state of the modelling
+     * @param fileName
+     * @throws FileNotFoundException
+     */
+    public void reportModeling(String fileName, boolean withinList) throws FileNotFoundException {
+        
+        PrintStream outStream = new PrintStream(fileName);
+        Set<String> matchedSet = new HashSet<String>();
+        for(SootClass cls: Scene.v().getClasses()) {
+            for (SootMethod method: cls.getMethods()) {
+                
+                String name = getMethodFullName(method);
+                //match list only when used with classification
+                if (!methodOfInterest(name) && withinList)
+                    continue;
+
+                matchedSet.add(name);
+                String line = method.getSignature();
+
+                List<String> annoList = extractDSAnnotations(method);
+                String reportLine = getModelReportLine(line, annoList);
+                outStream.println(reportLine);
+            }
+        }    
+
+        if (interestList.size() > 0) {
+            interestList.removeAll(matchedSet);
+            outStream.println("");
+            outStream.println("");
+            outStream.println("=================================================");
+            outStream.println("         Superclass has models ");
+            outStream.println("=================================================");
+            
+            List<String> remainedList = new ArrayList<String>(interestList);
+            Collections.sort(remainedList);          
+            
+            for (String api: remainedList) {
+                String[] tokens = api.split("\\.");
+                String methodName = tokens[tokens.length - 1];
+                
+                String className = "";
+                for (int i = 0; i < tokens.length - 1; i++) {
+                    if (i == 0)
+                        className = tokens[i];
+                    else
+                        className = className + "." + tokens[i];
+                }
+
+                logger.info("{} => {}/{}", api, className, methodName);
+                SootClass sootClass = Scene.v().getSootClass(className);
+                List<SootMethod> potentials = SootUtils.findPossibleInheritedMethods(sootClass, methodName);
+                Set<SootMethod> potentialSet = new HashSet<SootMethod>(potentials);
+                
+                boolean hasSuperMethod = false;
+                for (SootMethod method: potentialSet) {
+                    //remove duplicate
+
+                    String name = getMethodFullName(method);
+                    logger.info("api {}, potential {} => name {} ", api, method, name);
+                    
+                    if (name.equals(api) || matchedSet.contains(name))
+                        continue;
+
+                    List<String> annoList = extractDSAnnotations(method);
+                    String reportLine = getModelReportLine(name, annoList);
+                    outStream.printf("%s - ENG3 %s\n", reportLine, api);
+                    interestList.remove(api);
+                    break;
+                }
+            }
+            
+            outStream.println("");
+            outStream.println("");
+            outStream.println("=================================================");
+            outStream.println("         No Source Found");
+            outStream.println("=================================================");
+            remainedList = new ArrayList<String>(interestList); 
+            Collections.sort(remainedList);
+            for (String api: remainedList) {
+                outStream.println(api);
+            }
+        }
+        outStream.close();
+    }
+       
+
     public void saveApiList(String fileName, boolean useModifier, boolean classify) throws FileNotFoundException {
         
         PrintStream outStream = new PrintStream(fileName);
@@ -199,7 +469,7 @@ public class ListApiMethods extends ApiUsageListing {
                     if (classification != null)
                         classification = "[A] " + classification;
                     
-                    String existingClassification = getExitingClassification(method);
+                    String existingClassification = getExistingClassification(method);
                     if (existingClassification != null)
                         classification  = "[E] " + existingClassification;
 
@@ -243,7 +513,7 @@ public class ListApiMethods extends ApiUsageListing {
                 for (SootMethod method: potentials) {
 
                     String classification = getAutoClassification(method);
-                    String existingClassification = getExitingClassification(method);
+                    String existingClassification = getExistingClassification(method);
                     if (existingClassification != null)
                         classification = existingClassification;
                     
@@ -270,6 +540,7 @@ public class ListApiMethods extends ApiUsageListing {
         options.addOption("c", "classify", false, "automatic classification");
         options.addOption("a", "apijar",  true,  "Optional API jar file");
         options.addOption("l", "list",  true,  "list of api to list (class methodname)");
+        options.addOption("r", "report",  true,  "modeling report");
 
         if (args.length == 0){
             printHelp(options);
@@ -300,8 +571,9 @@ public class ListApiMethods extends ApiUsageListing {
         
         ListApiMethods listing = new ListApiMethods();
         
-        if (!commandLine.hasOption("out") && !commandLine.hasOption("classify")) {
-            System.out.println("Please specify either output or classify ");
+        if (!commandLine.hasOption("out") && !commandLine.hasOption("classify") && 
+            !commandLine.hasOption("report")) {
+            System.out.println("Please specify options r, o, or c");
             printHelp(options);
             return;
         }
@@ -324,8 +596,10 @@ public class ListApiMethods extends ApiUsageListing {
             listing.addApiJar(jarName);
         }
         
+        boolean useList = false;
         if (commandLine.hasOption("l")) {
             listing.setReadList(commandLine.getOptionValue("l"));
+            useList = true;
         }
         listing.activateSootScene();
         
@@ -341,6 +615,16 @@ public class ListApiMethods extends ApiUsageListing {
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
+            }
+        }
+        
+        if (commandLine.hasOption("report")) {
+            String fileName = commandLine.getOptionValue("report");
+            try {
+                listing.reportModeling(fileName, useList);
+            }
+            catch (Exception ex) {
+                
             }
         }
     }
