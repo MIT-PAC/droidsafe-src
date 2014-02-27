@@ -677,7 +677,7 @@ public static int signum(long v) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.285 -0500", hash_original_method = "8F2CF5A217071E0F4A3781D5167C1BC6", hash_generated_method = "137B180EC478CCA493863FFA3A3D4729")
     
 public static Long valueOf(long v) {
-        return  v >= 128 || v < -128 ? new Long(v) : SMALL_VALUES[((int) v) + 128];
+        return new Long(v);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.170 -0500", hash_original_field = "3694E207E9FA390D67DFF54E3EB6C15C", hash_generated_field = "2DEB2A3C564958CD30E19E2E40A09F63")
 
@@ -704,9 +704,6 @@ public static Long valueOf(long v) {
      * @since 1.5
      */
     public static final int SIZE = 64;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.288 -0500", hash_original_field = "0DEA7FDF0C427EF3748BB2F4B00A9305", hash_generated_field = "202F4351B1469287DCC673EA94D22CDB")
-
-    private static final Long[] SMALL_VALUES = new Long[256];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.173 -0500", hash_original_field = "DDD221DA9F0E75EE691CFACED8C3397A", hash_generated_field = "8A7F925BC1BBEBA69C20FE023280FB40")
 
     private  long value;
@@ -857,11 +854,6 @@ public int compareTo(Long object) {
 @Override
     public String toString() {
         return Long.toString(value);
-    }
-    static {
-        for (int i = -128; i < 128; i++) {
-            SMALL_VALUES[i + 128] = new Long(i);
-        }
     }
     
 }
