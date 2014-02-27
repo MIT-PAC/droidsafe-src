@@ -43,6 +43,7 @@ public class AndroidManifest {
   public List<UsesPermission> uses_permissions 
     = new ArrayList<UsesPermission>();
   public List<Permission> permissions = new ArrayList<Permission>();
+  public List<UsesFeature> features = new ArrayList<UsesFeature>();
 
   public AndroidManifest (File manifest) throws Exception {
 
@@ -99,7 +100,8 @@ public class AndroidManifest {
         uses_permissions.add (new UsesPermission (parent, n));
       else if (name.equalsIgnoreCase ("permission"))
         permissions.add (new Permission (parent, n));
-
+      else if (name.equalsIgnoreCase ("uses-feature"))
+        features.add (new UsesFeature(parent, n));
       else { 
         parent.xml_error ("Unexpected node %s in manifest ignored", 
                           n.getNodeName());
@@ -256,6 +258,7 @@ public class AndroidManifest {
     public String label;
     public String name;
     public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
+    public List<MetaData> metaDataList = new LinkedList<MetaData>();
         
     public Activity (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {
@@ -268,6 +271,9 @@ public class AndroidManifest {
         String name = child.getNodeName();
         if (name.equalsIgnoreCase ("intent-filter"))
           intent_filters.add (new IntentFilter(parent, child));
+        else if (name.equalsIgnoreCase("meta-data")) {
+            metaDataList.add(new MetaData(parent, child));
+        }
         else {
           xml_error ("Unexpected node %s in activity %s ignored", 
                       n.getNodeName(), name);
@@ -290,52 +296,52 @@ public class AndroidManifest {
 
   public class Service extends ComponentBaseElement {
 
-    public boolean enabled;
-    public boolean exported;
-    public Boolean isolatedProcess;
-    public String label;
-    public String name;
-    public String permission;
-    public String process;
+      public boolean enabled;
+      public boolean exported;
+      public Boolean isolatedProcess;
+      public String label;
+      public String name;
+      public String permission;
+      public String process;
 
-    public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
+      public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
 
-    public Service (BaseElement parent, Node n) 
-      throws InvalidPropertiesFormatException {
+      public Service (BaseElement parent, Node n) 
+              throws InvalidPropertiesFormatException {
 
-      super (n, parent);
-      enabled = boolean_attribute ("enabled", true);
-      isolatedProcess = boolean_attribute ("isolatedProcess");
-      label = get_attr ("label");
-      name = get_attr ("name");
-      permission = get_attr ("permission");
-      process = get_attr ("process");
-      
-      for (Node child : gather_children()) {
-        String name = child.getNodeName();
-        if (name.equalsIgnoreCase ("intent-filter"))
-          intent_filters.add (new IntentFilter(parent, child));
-        else {
-          xml_error ("Unexpected node %s in service %s ignored", 
-                      n.getNodeName(), name);
-        }
+          super (n, parent);
+          enabled = boolean_attribute ("enabled", true);
+          isolatedProcess = boolean_attribute ("isolatedProcess");
+          label = get_attr ("label");
+          name = get_attr ("name");
+          permission = get_attr ("permission");
+          process = get_attr ("process");
+
+          for (Node child : gather_children()) {
+              String name = child.getNodeName();
+              if (name.equalsIgnoreCase ("intent-filter"))
+                  intent_filters.add (new IntentFilter(parent, child));
+              else {
+                  xml_error ("Unexpected node %s in service %s ignored", 
+                          n.getNodeName(), name);
+              }
+          }
+
+          // Services are exported by default if there is at least one intent filter
+          exported = boolean_attribute ("exported", (intent_filters.size() > 0));
+
       }
 
-      // Services are exported by default if there is at least one intent filter
-      exported = boolean_attribute ("exported", (intent_filters.size() > 0));
+      /** Returns the fully qualified classname of the activities main class **/
+      public String main_class() {
+          return manifest.package_name + "." + name;
+      }
 
-    }
-
-    /** Returns the fully qualified classname of the activities main class **/
-    public String main_class() {
-      return manifest.package_name + "." + name;
-    }
-
-    public String toString() {
-      if (intent_filters.size() > 0) 
-        return String.format ("%s: intent-filters: %s", name, intent_filters);
-      return name;
-    }
+      public String toString() {
+          if (intent_filters.size() > 0) 
+              return String.format ("%s: intent-filters: %s", name, intent_filters);
+          return name;
+      }
 
   }
 
@@ -473,6 +479,29 @@ public class AndroidManifest {
 
     public String toString() {
       return name;
+    }
+  }
+
+  public class UsesFeature extends BaseElement {
+
+    @Attribute public String name;
+    @Attribute public Boolean required; 
+
+    public UsesFeature (BaseElement parent, Node n) 
+      throws InvalidPropertiesFormatException {
+
+      super (n, parent);
+      get_attributes (this);
+
+      for (Node child : gather_children()) {
+        String name = child.getNodeName();
+        xml_error ("Unexpected node '%s' in uses-sdk ignored", name);
+      }
+    }
+
+    public String toString() {
+      return String.format ("UsesFeature: name %s, Required = %s",
+                            name, required);
     }
   }
 
@@ -666,6 +695,8 @@ public class AndroidManifest {
               uriBuilder.append(String.format("[mime=%s]", listToString(dataMime)));
           
           dataUri = uriBuilder.toString();
+          
+          logger.debug("intentFilger {}, dataUri {} ", this, dataUri);
       }
     }
     

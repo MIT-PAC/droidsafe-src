@@ -297,6 +297,7 @@ public class Harness {
             }
             
             if (intentFilter.dataUri != null) {
+                logger.debug("Found intent filter uri  {} ", intentFilter.dataUri);
                 Local stringLocal = Jimple.v().newLocal(String.format("__dsUriString%03d", LOCAL_COUNTER++),  
                     RefType.v("java.lang.String"));
                 body.getLocals().add(stringLocal);
@@ -305,7 +306,6 @@ public class Harness {
                 body.getUnits().add(Jimple.v().
                     newAssignStmt(stringLocal, StringConstant.v(intentFilter.dataUri)));
 
-                //call addAction
                 body.getUnits().add(
                     Jimple.v().newInvokeStmt(
                         Jimple.v().newVirtualInvokeExpr(intentFilterLocal, 
