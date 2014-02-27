@@ -811,6 +811,8 @@ public Style getStyle() {
      *
      * @param style The new style to set in the paint
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.650 -0500", hash_original_method = "0C31442FDD5A78FAD136F991DDCEA542", hash_generated_method = "E884518AA9F94886D9AD0FA0C4C3470A")
     
 public void setStyle(Style style) {
@@ -1336,6 +1338,8 @@ public Align getTextAlign() {
      *
      * @param align set the paint's Align value for drawing text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.734 -0500", hash_original_method = "9031C48C5C8C88E95D6A94DEBF9597C6", hash_generated_method = "01D15030FFE698C314850B5707B14980")
     
 public void setTextAlign(Align align) {

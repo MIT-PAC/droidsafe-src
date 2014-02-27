@@ -67,6 +67,8 @@ public static Spanned fromHtml(String source) {
      *
      * <p>This uses TagSoup to handle real HTML, including all of the brokenness found in the wild.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.466 -0500", hash_original_method = "496EFA2446255A7AD2E06A2E8CF61A20", hash_generated_method = "9CF480D24E2573CBB0B4131BAA26BEB9")
     
 public static Spanned fromHtml(String source, ImageGetter imageGetter,

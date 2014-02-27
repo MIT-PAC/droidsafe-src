@@ -30,6 +30,8 @@ public class BitmapFactory {
      *         decoded, or, if opts is non-null, if opts requested only the
      *         size be returned (in opts.outWidth and opts.outHeight)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.750 -0500", hash_original_method = "52672E8127CAFECE2449AA57E7257570", hash_generated_method = "238E57666ACD9E7CED5C9BB42FE11C28")
     
 public static Bitmap decodeFile(String pathName, Options opts) {
@@ -170,6 +172,8 @@ public static Bitmap decodeResource(Resources res, int id) {
      *         decoded, or, if opts is non-null, if opts requested only the
      *         size be returned (in opts.outWidth and opts.outHeight)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.762 -0500", hash_original_method = "8AAF3F50F887FE806E4860779AA74DE9", hash_generated_method = "05D1D900B439E490D08316FB8261B25F")
     
 public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts) {
@@ -218,6 +222,8 @@ public static Bitmap decodeByteArray(byte[] data, int offset, int length) {
      *         decoded, or, if opts is non-null, if opts requested only the
      *         size be returned (in opts.outWidth and opts.outHeight)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.768 -0500", hash_original_method = "A48399D0F4A852A63A3C3FE959923362", hash_generated_method = "2A1EC91856AB3B43A7F7823037671A1C")
     
 public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts) {

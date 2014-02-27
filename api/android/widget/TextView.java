@@ -3811,6 +3811,8 @@ public boolean getFreezesText() {
      * @attr ref android.R.styleable#TextView_text
      * @attr ref android.R.styleable#TextView_bufferType
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.833 -0500", hash_original_method = "607651EBB019EF2524713C89A6A4FC8C", hash_generated_method = "98E679A14C4ED901FEA49B7F2111C04B")
     
 public void setText(CharSequence text, BufferType type) {
@@ -3821,6 +3823,8 @@ public void setText(CharSequence text, BufferType type) {
         }
     }
     
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.534 -0400", hash_original_method = "EBAE4ED74D570AD4FF310073DD3BF4E5", hash_generated_method = "2BA93A7A63A103A1E7CA1F5FB9BB442F")
     private void setText(CharSequence text, BufferType type,
                          boolean notifyBefore, int oldlen) {
@@ -4054,6 +4058,8 @@ public final void setTextKeepState(CharSequence text, BufferType type) {
         setText(getContext().getResources().getText(resid));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.890 -0500", hash_original_method = "A59BD645A347EA39C4147D9E24C2BE1F", hash_generated_method = "A74286E7AFE78955A1C99AD90E6CBDE1")
     
 public final void setText(int resid, BufferType type) {

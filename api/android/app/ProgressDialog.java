@@ -51,6 +51,8 @@ public static ProgressDialog show(Context context, CharSequence title,
         return show(context, title, message, indeterminate, cancelable, null);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.864 -0500", hash_original_method = "03DAB0D982360E51140E9719BAAFE26F", hash_generated_method = "E3DCC1D2DE2531289BDB206E026F7182")
     
 public static ProgressDialog show(Context context, CharSequence title,

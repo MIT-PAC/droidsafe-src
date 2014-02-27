@@ -15,6 +15,8 @@ import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
         if (enumType == null || name == null) {
             throw new NullPointerException("enumType == null || name == null");

@@ -33,6 +33,8 @@ public static void enableDebugLogging(boolean enabled) {
         //Synthesized constructor
     }
     
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract <D> Loader<D> initLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
     
@@ -197,7 +199,6 @@ void installLoader(LoaderInfo info) {
         addTaint(callback.getTaint());
         addTaint(args.getTaint());
         addTaint(id);
-        
         
         if(mCreatingLoader)        
         {

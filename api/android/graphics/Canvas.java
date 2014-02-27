@@ -937,6 +937,8 @@ public final Matrix getMatrix() {
      * @param op How the clip is modified
      * @return true if the resulting clip is non-empty
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.173 -0500", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "11763958C4DDE97C38EB6CF50AA0DC5D")
     
 public boolean clipRect(RectF rect, Region.Op op) {
@@ -953,6 +955,8 @@ public boolean clipRect(RectF rect, Region.Op op) {
      * @param op How the clip is modified
      * @return true if the resulting clip is non-empty
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.175 -0500", hash_original_method = "C0255CEC0BCD1AD46E1B4E180BE74E1B", hash_generated_method = "B52B4C54AFF7D730B7710759599B2299")
     
 public boolean clipRect(Rect rect, Region.Op op) {
@@ -1010,6 +1014,8 @@ public boolean clipRect(Rect rect, Region.Op op) {
      * @param op     How the clip is modified
      * @return       true if the resulting clip is non-empty
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.184 -0500", hash_original_method = "1DF6FF81DFB932BE2B5849557766481E", hash_generated_method = "949B522CC2BD95F3746A3FBAF564F432")
     
 public boolean clipRect(float left, float top, float right, float bottom,

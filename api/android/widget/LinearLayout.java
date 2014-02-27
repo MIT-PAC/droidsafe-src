@@ -1559,6 +1559,8 @@ public LayoutParams(int width, int height, float weight) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.015 -0500", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "AA7E78F64C1B2029CADFD7AA230FA359")
         
 public LayoutParams(ViewGroup.LayoutParams p) {
@@ -1568,6 +1570,8 @@ public LayoutParams(ViewGroup.LayoutParams p) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.018 -0500", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "A83E3EC70AE7CFFC0495D4E169E975D9")
         
 public LayoutParams(MarginLayoutParams source) {

@@ -29,6 +29,8 @@ public LevelListDrawable() {
         this(null, null);
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.765 -0500", hash_original_method = "FF29C84E557E14BBFF6CC67242AEE642", hash_generated_method = "8733E31FD345288A2D5EAF44753D672B")
     
 private LevelListDrawable(LevelListState state, Resources res) {

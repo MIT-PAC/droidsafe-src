@@ -63,6 +63,8 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
         return (Editable) super.getText();
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.049 -0500", hash_original_method = "91EEE8E208E2C0AA25FB9684496DF44B", hash_generated_method = "F4CE5E692ED684A96EEE23BA8F4FEFCF")
     
 @Override

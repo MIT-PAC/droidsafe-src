@@ -274,6 +274,8 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
      * @param config   The bitmap config to create.
      * @throws IllegalArgumentException if the width or height are <= 0
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.795 -0500", hash_original_method = "A69C1A6B363DCF14C299E4864CF77D03", hash_generated_method = "6FF2BF773051FD6D6A1B48DF50C9FDD4")
     
 public static Bitmap createBitmap(int width, int height, Config config) {
@@ -324,6 +326,8 @@ public static Bitmap createBitmap(int width, int height, Config config) {
      * @throws IllegalArgumentException if the width or height are <= 0, or if
      *         the color array's length is less than the number of pixels.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.800 -0500", hash_original_method = "3025C3F86E2BC308BDBF4BB36F710549", hash_generated_method = "C5B6A54165DF6B416215E521BC50CE65")
     
 public static Bitmap createBitmap(int colors[], int offset, int stride,
@@ -361,6 +365,8 @@ public static Bitmap createBitmap(int colors[], int offset, int stride,
      * @throws IllegalArgumentException if the width or height are <= 0, or if
      *         the color array's length is less than the number of pixels.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.802 -0500", hash_original_method = "0687CE6A4B07D857B75A84209513431A", hash_generated_method = "26A1CBF4DD06B2FCE6D7F82EE8B64B69")
     
 public static Bitmap createBitmap(int colors[], int width, int height, Config config) {
@@ -827,6 +833,8 @@ public void copyPixelsFromBuffer(Buffer src) {
         nativeCopyPixelsFromBuffer(mNativeBitmap, src);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.794 -0400", hash_original_method = "5A36626FB0A5325F859AD016AE482420", hash_generated_method = "2279C6000E444E69DC03419CB555ABDA")
     public Bitmap copy(Config config, boolean isMutable) {
         addTaint(isMutable);
@@ -881,6 +889,8 @@ public byte[] getNinePatchChunk() {
      * @param stream   The outputstream to write the compressed data.
      * @return true if successfully compressed to the specified stream.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.816 -0500", hash_original_method = "222D378B2B8943C109AD4B8264ED828B", hash_generated_method = "1EEF55911D982D9804A2FF9D6A90314B")
     
 public boolean compress(CompressFormat format, int quality, OutputStream stream) {

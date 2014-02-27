@@ -176,6 +176,8 @@ public BitmapDrawable(Resources res, Bitmap bitmap) {
         }
     }
 
+    @DSComment("Private Method")
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.142 -0500", hash_original_method = "FB19047A342C9589C667FFAF2B0ECEA1", hash_generated_method = "E33C44F0BAD1866256B0752EAE971E19")
     
 private BitmapDrawable(BitmapState state, Resources res) {

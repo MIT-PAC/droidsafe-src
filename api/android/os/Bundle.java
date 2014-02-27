@@ -1378,6 +1378,8 @@ public Bundle getBundle(String key) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.589 -0400", hash_original_method = "3B646958426B4FA703D61CD64DB4127C", hash_generated_method = "572C7E2ACF1B7DC166C7E159C488DD53")
     public <T extends Parcelable> T getParcelable(String key) {
         addTaint(key.getTaint());

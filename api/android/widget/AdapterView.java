@@ -242,6 +242,8 @@ public final OnItemSelectedListener getOnItemSelectedListener() {
      *
      * @return The adapter used to provide this view's content.
      */
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.004 -0500", hash_original_method = "A0D14CFDF948E28FE8D8741A033FF666", hash_generated_method = "6F799C158744ABEEA3E3237B64E67AE4")
     
 public abstract T getAdapter();
