@@ -78,11 +78,6 @@ public class DroidsafeAnalysisRunner extends Main {
     Config.v().writeJimpleAppClasses = writeJimpleClasses;
     boolean infoFlow = preferenceStore.getBoolean(PreferenceConstants.P_INFOFLOW);
     Config.v().infoFlow = infoFlow;
-    if (infoFlow) {
-//      Config.v().infoFlowDotFile = preferenceStore.getString(PreferenceConstants.P_INFOFLOWDOTFILE);
-      Config.v().infoFlowDotMethods =
-          preferenceStore.getString(PreferenceConstants.P_INFOFLOWMETHOD).split(";");
-    }
     String passTarget = preferenceStore.getString(PreferenceConstants.P_TARGET_PASS);
     Config.v().target = passTarget;
     Config.v().dumpPta = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_PTA);
