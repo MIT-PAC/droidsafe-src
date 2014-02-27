@@ -1,7 +1,6 @@
 package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
-
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -50,6 +49,7 @@ import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -349,7 +349,13 @@ public class Main {
                 String[] values = Config.v().infoFlowValues;
                 if (values != null) {
                     for (String value : values) {
-                        InformationFlowAnalysis.v().printContextLocals(value, Project.v().getOutputDir() + File.separator + value + ".txt");
+                        String pathName = Project.v().getOutputDir() + File.separator + value + ".txt";
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(pathName));
+                        InformationFlowAnalysis.v().printContextLocals(value, writer);
+                        InformationFlowAnalysis.v().printAllocNodeFields(value, writer);
+                        InformationFlowAnalysis.v().printAllocNodes(value, writer);
+                        InformationFlowAnalysis.v().printFields(value, writer);
+                        writer.close();
                     }
                 }
             } catch (IOException exp) {

@@ -1,6 +1,7 @@
 package droidsafe.analyses.infoflow;
 
 import java.io.IOException;
+import java.io.Writer;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -950,8 +951,20 @@ public class InformationFlowAnalysis {
         return (ImmutableSet<InfoValue>)immediateSwitch.getResult();
     }
     
-    public void printContextLocals(String value, String fileName) throws IOException {
-        this.state.locals.printContextLocals(value, fileName);
+    public void printContextLocals(String value, Writer writer) throws IOException {
+        this.state.locals.printContextLocals(value, writer);
+    }
+    
+    public void printAllocNodeFields(String value, Writer writer) throws IOException {
+        this.state.instances.printAllocNodeFields(value, writer);
+    }
+
+    public void printAllocNodes(String value, Writer writer) throws IOException {
+        this.state.arrays.printAllocNodes(value, writer);
+    }
+
+    public void printFields(String value, Writer writer) throws IOException {
+        this.state.statics.printFields(value, writer);
     }
 }
 

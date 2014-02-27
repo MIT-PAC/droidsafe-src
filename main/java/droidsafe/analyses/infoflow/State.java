@@ -1,27 +1,25 @@
 package droidsafe.analyses.infoflow;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
+import java.io.Writer;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import com.google.common.collect.ImmutableSet;
 
-import droidsafe.android.app.Project;
 import droidsafe.main.Config;
+import droidsafe.utils.JimpleRelationships;
 import soot.Context;
 import soot.Local;
 import soot.SootField;
 import soot.SootMethod;
+import soot.jimple.Expr;
+import soot.jimple.Stmt;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 class ContextLocal {
@@ -135,25 +133,23 @@ class Locals {
         return get(ContextLocal.v(context, local));
     }
 
-    void printContextLocals(String tgtValue, String fileName) throws IOException {
+    void printContextLocals(String tgtValue, Writer writer) throws IOException {
         assert Config.v().infoFlowValues != null;
-        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
         for (Map.Entry<ContextLocal, ImmutableSet<InfoValue>> contextLocalValues : this.contextLocalToValues.entrySet()) {
             ImmutableSet<InfoValue> values = contextLocalValues.getValue();
             for (InfoValue value : values) {
                 if (value.toString().equals(tgtValue)) {
+                    writer.write("|LOCAL|");
                     ContextLocal contextLocal = contextLocalValues.getKey();
                     Local local = contextLocal.local;
                     SootMethod method = InterproceduralControlFlowGraph.v().localToMethod.get(local);
-                    writer.write(method != null ? method.toString() : "null");
-                    writer.write("\t\t");
-                    writer.write(local.toString());
+                    writer.write(" |METHOD| " + (method != null ? method.toString() : "null"));
+                    writer.write(" |LOCAL| " + local);
                     writer.write('\n');
                     break;
                 }
             }
         }
-        writer.close();
     }
 
     @Override
@@ -319,6 +315,32 @@ class Instances {
     int size() {
         return this.allocNodeFieldToValues.size();
     }
+    
+    void printAllocNodeFields(String tgtValue, Writer writer) throws IOException {
+        assert Config.v().infoFlowValues != null;
+        for (Map.Entry<AllocNodeField, ImmutableSet<InfoValue>> allocNodeFieldValues : this.allocNodeFieldToValues.entrySet()) {
+            ImmutableSet<InfoValue> values = allocNodeFieldValues.getValue();
+            for (InfoValue value : values) {
+                if (value.toString().equals(tgtValue)) {
+                    writer.write("|INSTANCE|");
+                    AllocNodeField allocNodeField = allocNodeFieldValues.getKey();
+                    AllocNode allocNode = (AllocNode)allocNodeField.allocNode;
+                    SootMethod method = allocNode.getMethod();
+                    writer.write(" |METHOD| " + method);
+                    Object newExpr = allocNode.getNewExpr();
+                    if (newExpr instanceof Expr) {
+                        Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)newExpr);
+                        writer.write(" |STMT| " + stmt);
+                    }
+                    writer.write(" |ALLOCNODE| " + allocNode);
+                    SootField field = allocNodeField.field;
+                    writer.write(" |FIELD| " + field);
+                    writer.write('\n');
+                    break;
+                }
+            }
+        }
+    }
 }
 
 class Arrays {
@@ -385,6 +407,29 @@ class Arrays {
     int size() {
         return this.arrays.size();
     }
+    
+    void printAllocNodes(String tgtValue, Writer writer) throws IOException {
+        assert Config.v().infoFlowValues != null;
+        for (Map.Entry<IAllocNode, ImmutableSet<InfoValue>> allocNodeValues : this.arrays.entrySet()) {
+            ImmutableSet<InfoValue> values = allocNodeValues.getValue();
+            for (InfoValue value : values) {
+                writer.write("|ARRAY|");
+                if (value.toString().equals(tgtValue)) {
+                    AllocNode allocNode = (AllocNode)allocNodeValues.getKey();
+                    SootMethod method = allocNode.getMethod();
+                    writer.write(" |METHOD| " + method);
+                    Object newExpr = allocNode.getNewExpr();
+                    if (newExpr instanceof Expr) {
+                        Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)newExpr);
+                        writer.write(" |STMT| " + stmt);
+                    }
+                    writer.write(" |ALLOCNODE| " + allocNode);
+                    writer.write('\n');
+                    break;
+                }
+            }
+        }
+    }
 }
 
 class Statics {
@@ -445,6 +490,22 @@ class Statics {
     
     int size() {
         return this.statics.size();
+    }
+    
+    void printFields(String tgtValue, Writer writer) throws IOException {
+        assert Config.v().infoFlowValues != null;
+        for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : this.statics.entrySet()) {
+            ImmutableSet<InfoValue> values = fieldValues.getValue();
+            for (InfoValue value : values) {
+                if (value.toString().equals(tgtValue)) {
+                    writer.write("|STATIC|");
+                    SootField field = fieldValues.getKey();
+                    writer.write(" |FIELD| " + field);
+                    writer.write('\n');
+                    break;
+                }
+            }
+        }
     }
 }
 
