@@ -78,8 +78,8 @@ public class Config {
     public boolean noSourceInfo = false;
     /** If true, analyze information flows. */
     public boolean infoFlow = true;
-    /** Methods on which to export information flows in DOT */
-    public String[] infoFlowDotMethods;
+    /** InfoValues that we are concerned with  */
+    public String[] infoFlowValues;
     /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
     public boolean infoFlowTrackAll = false;
     /** if true, use event context, otherwise, use insensitive result */
@@ -277,15 +277,14 @@ public class Config {
                 "Turn off information flow analysis");
         options.addOption(noInfoFlow);
 
-        Option infoFlowDotMethod =
+        Option infoFlowValue =
                 OptionBuilder
-                .withArgName("METHOD")
+                .withArgName("INFOVALUE")
                 .hasArg()
                 .withDescription(
-                    "Export information flows specific to METHOD only: METHOD is specified by its signature"
-                            + " (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")")
-                            .withLongOpt("infoflow-dot-method").create("x");
-        options.addOption(infoFlowDotMethod);
+                    "Print contexts and local variables that have INFOVALUE")
+                            .withLongOpt("infoflow-value").create("x");
+        options.addOption(infoFlowValue);
 
         Option infoFlowTrackAll = new Option("trackallflows", 
                 "Track all methods (excluding those in java.lang) during information flow analysis");
@@ -377,9 +376,9 @@ public class Config {
             this.infoFlow = false;
         }
 
-        if (cmd.hasOption("infoflow-dot-method")) {
+        if (cmd.hasOption("infoflow-value")) {
             assert this.infoFlow;
-            this.infoFlowDotMethods = cmd.getOptionValues("infoflow-dot-method");
+            this.infoFlowValues = cmd.getOptionValues("infoflow-value");
         }
 
         if (cmd.hasOption("pta")) {

@@ -10,6 +10,7 @@ import java.util.Set;
 import com.google.common.collect.Lists;
 
 import soot.Body;
+import soot.Local;
 import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootMethod;
@@ -18,8 +19,9 @@ import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.TopologicalOrderer;
 import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
-
+import soot.util.Chain;
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.main.Config;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -33,6 +35,8 @@ public class InterproceduralControlFlowGraph implements Iterable<Block> {
     
     public final Map<Unit, Block> unitToBlock = new HashMap<Unit, Block>();
 
+    public final Map<Local, SootMethod> localToMethod = new HashMap<Local, SootMethod>();
+    
     private static InterproceduralControlFlowGraph v;
 
     public static InterproceduralControlFlowGraph v() {
@@ -77,6 +81,17 @@ public class InterproceduralControlFlowGraph implements Iterable<Block> {
                             Unit unit = units.next();
                             this.unitToBlock.put(unit, block);
                         }
+                    }
+                }
+            }
+        }
+        if (Config.v().infoFlowValues != null) {
+            for (SootMethod method : reachableMethods) {
+                if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
+                    Body body = method.getActiveBody();
+                    Chain<Local> locals = body.getLocals();
+                    for (Local local : locals) {
+                        this.localToMethod.put(local, method);
                     }
                 }
             }

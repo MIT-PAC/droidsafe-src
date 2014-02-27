@@ -1,5 +1,6 @@
 package droidsafe.analyses.infoflow;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -58,7 +59,6 @@ import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
-
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
@@ -948,6 +948,10 @@ public class InformationFlowAnalysis {
         };
         immediate.apply(immediateSwitch);
         return (ImmutableSet<InfoValue>)immediateSwitch.getResult();
+    }
+    
+    public void printContextLocals(String value, String fileName) throws IOException {
+        this.state.locals.printContextLocals(value, fileName);
     }
 }
 

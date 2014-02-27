@@ -345,6 +345,16 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
+            try {
+                String[] values = Config.v().infoFlowValues;
+                if (values != null) {
+                    for (String value : values) {
+                        InformationFlowAnalysis.v().printContextLocals(value, Project.v().getOutputDir() + File.separator + value + ".txt");
+                    }
+                }
+            } catch (IOException exp) {
+                logger.error(exp.toString());
+            }
             timer.stop();
             droidsafe.stats.AvgInfoFlowSetSize.run();
             driverMsg("Finished Information Flow Analysis: " + timer);

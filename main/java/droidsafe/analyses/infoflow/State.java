@@ -1,17 +1,27 @@
 package droidsafe.analyses.infoflow;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import com.google.common.collect.ImmutableSet;
 
+import droidsafe.android.app.Project;
+import droidsafe.main.Config;
 import soot.Context;
 import soot.Local;
 import soot.SootField;
+import soot.SootMethod;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 class ContextLocal {
@@ -125,13 +135,25 @@ class Locals {
         return get(ContextLocal.v(context, local));
     }
 
-    Locals merge(Locals that) {
-        for (Map.Entry<ContextLocal, ImmutableSet<InfoValue>> contextLocalValues : that.contextLocalToValues.entrySet()) {
-            ContextLocal contextLocal = contextLocalValues.getKey();
+    void printContextLocals(String tgtValue, String fileName) throws IOException {
+        assert Config.v().infoFlowValues != null;
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+        for (Map.Entry<ContextLocal, ImmutableSet<InfoValue>> contextLocalValues : this.contextLocalToValues.entrySet()) {
             ImmutableSet<InfoValue> values = contextLocalValues.getValue();
-            putW(contextLocal, values);
+            for (InfoValue value : values) {
+                if (value.toString().equals(tgtValue)) {
+                    ContextLocal contextLocal = contextLocalValues.getKey();
+                    Local local = contextLocal.local;
+                    SootMethod method = InterproceduralControlFlowGraph.v().localToMethod.get(local);
+                    writer.write(method.toString());
+                    writer.write("\t\t");
+                    writer.write(local.toString());
+                    writer.write('\n');
+                    break;
+                }
+            }
         }
-        return this;
+        writer.close();
     }
 
     @Override
