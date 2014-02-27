@@ -516,14 +516,13 @@ private Uri() {}
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getEncodedUserInfo() {
 		// TODO Auto-generated method stub
-		return null;
+		return uriString;
 	}
     
 	@DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public String getHost() {
-		// TODO Auto-generated method stub
-		return null;
+            return uriString;
 	}
     
 	@DSComment("Abstract Method")
