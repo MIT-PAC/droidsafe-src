@@ -107,13 +107,19 @@ public class JSAResultInjection extends BodyTransformer {
                         continue;
                     }
                     
+                    String jsaRE = JSAStrings.v().getRegex(v);
+                    //don't track empty or any string values from jsa
+                    if (JSAStrings.v().ignoreRE(jsaRE)) {
+                        continue;
+                    }
+                    
                     //add a local variable
                     Local arg = Jimple.v().newLocal(LOCAL_PREFIX + LOCALID++, RefType.v("java.lang.String"));
                     stmtBody.getLocals().add(arg);
 
                     //add an assignment of the local to the string constant
                     //right before the call
-                    StringConstant sc = StringConstant.v(JSAStrings.v().getRegex(v));
+                    StringConstant sc = StringConstant.v(jsaRE);
                     trackedStringConstants.add(sc);
                     AssignStmt assignStmt = Jimple.v().newAssignStmt(arg, sc);
                     units.insertBefore(assignStmt, stmt);

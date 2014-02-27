@@ -53,44 +53,44 @@ import droidsafe.speclang.ValueAnalysisValue;
 
 
 public class RCFGToSSL {
-	private final static Logger logger = LoggerFactory.getLogger(RCFGToSSL.class);
-	
-	private static RCFGToSSL v;
-	
-	private SecuritySpecification spec;
-	
-	public static final String SSL_FILE_NAME = "template-spec.ssl";
-	
-	/**
-	 * if true, ignore creating output events for the packages defined in IGNORE_OE_FROM_PACKAGES 
-	 */
-	public static final boolean IGNORE_OE_FROM_DEFINED_PACKAGES = false;
-	
-	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
-			new HashSet<String>(Arrays.asList(
-					"boolean equals(java.lang.Object)",
-					"int hashCode()",
-					"java.lang.String toString()"
-					));
-	
-	public static RCFGToSSL v() { 
-		return v;
-	}
-	
-	/**
-	 * Convert the rCFT to an SSL.
-	 * 
-	 * If conformance is true, then we are going to use the SSL for conformance checking, so group the same 
-	 * method of a Input event
-	 */
-	public static void run(boolean conformance) {
-		v = new RCFGToSSL(conformance);
-		
-		v.createSSL(RCFG.v());
-		
-		logger.info("Writing spec to file");
-		String fname = Project.v().getOutputDir() + File.separator + SSL_FILE_NAME;
-		writeSpecToFile(v.getSpec().toString(), fname);
+    private final static Logger logger = LoggerFactory.getLogger(RCFGToSSL.class);
+
+    private static RCFGToSSL v;
+
+    private SecuritySpecification spec;
+
+    public static final String SSL_FILE_NAME = "template-spec.ssl";
+
+    /**
+     * if true, ignore creating output events for the packages defined in IGNORE_OE_FROM_PACKAGES 
+     */
+    public static final boolean IGNORE_OE_FROM_DEFINED_PACKAGES = false;
+
+    private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
+            new HashSet<String>(Arrays.asList(
+                "boolean equals(java.lang.Object)",
+                "int hashCode()",
+                "java.lang.String toString()"
+                    ));
+
+    public static RCFGToSSL v() { 
+        return v;
+    }
+
+    /**
+     * Convert the rCFT to an SSL.
+     * 
+     * If conformance is true, then we are going to use the SSL for conformance checking, so group the same 
+     * method of a Input event
+     */
+    public static void run(boolean conformance) {
+        v = new RCFGToSSL(conformance);
+
+        v.createSSL(RCFG.v());
+
+        logger.info("Writing spec to file");
+        String fname = Project.v().getOutputDir() + File.separator + SSL_FILE_NAME;
+        writeSpecToFile(v.getSpec().toString(), fname);
 
         String html_fname = Project.v().getOutputDir() + "/spec.html";
         writeSpecToFile(v.getSpec().toHtmlString(), html_fname);
@@ -99,33 +99,33 @@ public class RCFGToSSL {
         // GK: Removing json spec generation, until it is needed.
         String json_fname = Project.v().getOutputDir() + "/spec.json";
         writeSpecToFile("var data = " + v.getSpec().toJsonString(), json_fname);
-        */
-	}
-	
-	protected RCFGToSSL(boolean conformance) {
-		spec = new SecuritySpecification(conformance);	
-	}
-	
-	public SecuritySpecification getSpec() {
-		return spec;
-	}
-	
-	private void createSSL(RCFG rcfg) {
-		for (RCFGNode node : rcfg.getNodes()) {
-		    logger.info("Converting rCFG Node: " + node);
-		    Method ie = makeInputEventMethod(node);
-			for (OutputEvent oe : node.getOutputEvents())
-				spec.addOutputEventToInputEvent(ie, methodsFromOutputEvent(oe));
-		}
-	}
-	
-	/**
-	 * Create a method from the rCFG node's entry point (input event).
-	 */
-	private Method makeInputEventMethod(RCFGNode node) {
-	    ArgumentValue receiver = makeMethodReceiver(node);
+         */
+    }
 
-	    ArgumentValue[] args = new ArgumentValue[node.getNumArgs()];
+    protected RCFGToSSL(boolean conformance) {
+        spec = new SecuritySpecification(conformance);	
+    }
+
+    public SecuritySpecification getSpec() {
+        return spec;
+    }
+
+    private void createSSL(RCFG rcfg) {
+        for (RCFGNode node : rcfg.getNodes()) {
+            logger.info("Converting rCFG Node: " + node);
+            Method ie = makeInputEventMethod(node);
+            for (OutputEvent oe : node.getOutputEvents())
+                spec.addOutputEventToInputEvent(ie, methodsFromOutputEvent(oe));
+        }
+    }
+
+    /**
+     * Create a method from the rCFG node's entry point (input event).
+     */
+    private Method makeInputEventMethod(RCFGNode node) {
+        ArgumentValue receiver = makeMethodReceiver(node);
+
+        ArgumentValue[] args = new ArgumentValue[node.getNumArgs()];
 
         for (int i = 0; i < node.getNumArgs(); i++) {
             if (node.isArgPointer(i)) {
@@ -134,63 +134,63 @@ public class RCFGToSSL {
                 args[i] = getArgumentValueForPrimitive(node.getArgValue(i), node.getArgumentType(i));
             }
         }
-	    
-	    Method method = new Method(node.getEntryPoint(), node, args, receiver);
-	    //if this entry is a synthetic method, then calculate the line number properly
-	    method.checkForSynthetic();
-	    return method;
-	}
-	
-	private boolean shouldIgnoreAction(OutputEvent oe) {	
-		if (SafeAndroidClassesAndMethods.v().isSafeMethod(oe.getTarget()) && !API.v().hasSinkInfoKind(oe.getTarget()))
-		    return true;
-		
-		return (IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
-	}
-	
-	private List<Method> methodsFromOutputEvent(OutputEvent oe) {
-		List<Method> methods = new LinkedList<Method>();
 
-		//should we ignore creating a method in the spec from this output event
-		if (shouldIgnoreAction(oe)) {
-			return methods;
-		}
+        Method method = new Method(node.getEntryPoint(), node, args, receiver);
+        //if this entry is a synthetic method, then calculate the line number properly
+        method.checkForSynthetic();
+        return method;
+    }
 
-		ArgumentValue[] args = new ArgumentValue[oe.getNumArgs()];
+    private boolean shouldIgnoreAction(OutputEvent oe) {	
+        if (SafeAndroidClassesAndMethods.v().isSafeMethod(oe.getTarget()) && !API.v().hasSinkInfoKind(oe.getTarget()))
+            return true;
 
-		for (int i = 0; i < oe.getNumArgs(); i++) {
-			if (oe.isArgPointer(i)) {
-				args[i] = getArgumentValueForPointer(oe, i);
-			} else {
-				args[i] = getArgumentValueForPrimitive(oe.getArgValue(i), oe.getTarget().getParameterType(i));
-			}
-		}
+        return (IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
+    }
 
-		ArgumentValue receiver = makeMethodReceiver(oe);
-		Method method = new Method(oe.getTarget(), oe, args, receiver);	
-		
-		logger.info("Created method with target: {}", method.getSootMethod());
-		//transfer over the source location information of the call
-		if (oe.getSourceLocationTag() != null)
-			method.addLineTag(oe.getSourceLocationTag());
+    private List<Method> methodsFromOutputEvent(OutputEvent oe) {
+        List<Method> methods = new LinkedList<Method>();
 
-		methods.add(method);
+        //should we ignore creating a method in the spec from this output event
+        if (shouldIgnoreAction(oe)) {
+            return methods;
+        }
 
-		return methods;
-	}
-	
-	/**
-	 * Given the possible presence of a receiver for a method, query the VA for a result
-	 * and if no result, just return type.
-	 */
-	private ArgumentValue makeMethodReceiver(PTAMethodInformation method) {
-	    //if no receiver, then return null
-	    if (!method.hasReceiver())
-	        return null;
+        ArgumentValue[] args = new ArgumentValue[oe.getNumArgs()];
 
-	    boolean allVAResults = true;
-	    List<ConcreteArgumentValue> vaResults = new LinkedList<ConcreteArgumentValue>();
-	    
+        for (int i = 0; i < oe.getNumArgs(); i++) {
+            if (oe.isArgPointer(i)) {
+                args[i] = getArgumentValueForPointer(oe, i);
+            } else {
+                args[i] = getArgumentValueForPrimitive(oe.getArgValue(i), oe.getTarget().getParameterType(i));
+            }
+        }
+
+        ArgumentValue receiver = makeMethodReceiver(oe);
+        Method method = new Method(oe.getTarget(), oe, args, receiver);	
+
+        logger.info("Created method with target: {}", method.getSootMethod());
+        //transfer over the source location information of the call
+        if (oe.getSourceLocationTag() != null)
+            method.addLineTag(oe.getSourceLocationTag());
+
+        methods.add(method);
+
+        return methods;
+    }
+
+    /**
+     * Given the possible presence of a receiver for a method, query the VA for a result
+     * and if no result, just return type.
+     */
+    private ArgumentValue makeMethodReceiver(PTAMethodInformation method) {
+        //if no receiver, then return null
+        if (!method.hasReceiver())
+            return null;
+
+        boolean allVAResults = true;
+        List<ConcreteArgumentValue> vaResults = new LinkedList<ConcreteArgumentValue>();
+
         //iterate over all the nodes pointed to and see if they are all va results
         //if not, break and remember
         for (IAllocNode node : method.getReceiverPTSet()) {
@@ -204,122 +204,125 @@ public class RCFGToSSL {
                 break;
             }
         }
-        
-	    if (allVAResults && method.getReceiverPTSet().size() > 0) {
+
+        if (allVAResults && method.getReceiverPTSet().size() > 0) {
             //if we have all va results, create the concrete argument list from the results
             ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(method.getReceiverType());
             for (ConcreteArgumentValue s : vaResults) 
                 clrv.add(s);
             return clrv;
-	    } else {
-	        //cannot conclude va results because not all nodes have them, so just return type
-	        return new TypeValue(method.getReceiverType());
-	    }
-	}
-	
-	private static void writeSpecToFile(String secspec, String fname) {
-		try{
-			FileWriter fstream = new FileWriter(fname);
-			BufferedWriter out = new BufferedWriter(fstream);
-			out.write(secspec);
-			out.close();
-		} catch (Exception e){//Catch exception if any
-          logger.error("Writing specification file.", e);
-		}
-	}
-	
-	//given a pta set for an arg and type for the arg, create the appropriate value
-	//for the Method object of the specification language.
-	private ArgumentValue getArgumentValueForPointer(PTAMethodInformation methodInfo, int i) {
-	    Type t = methodInfo.getArgumentType(i);
-	   
-	    //set the argument value if it is a value tracked by JSA
-	    if (JSAStrings.v().isHotspotValue(methodInfo.getArgValue(i))) {
-	        JSAValue jsav = new JSAValue(JSAStrings.v().getRegex(methodInfo.getArgValue(i)));
-	        ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
-	        clrv.add(jsav);
-	        return clrv;
-	    }
-	    
-	    Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(i); 
-		boolean allConstants = true;
-		//here we consider Value Analysis results as constants
-		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();
-		
-		//iterate over all the nodes pointed to and see if they are all constants
-		//if not, break and remember
-		for (IAllocNode node : ptsToSet) {
-			if (node instanceof IStringConstantNode) {
-				//create new string values just in case this is all constants
-				String value = ((IStringConstantNode)node).getString();
-				constants.add(new StringValue(value));
-			} else if (node instanceof IClassConstantNode) {
-				//create a new concrete arg value just in case this is all constants
-				constants.add(new ClassValue(((IClassConstantNode)node).getClassConstant().getValue()));
-			} else if (ValueAnalysis.v().hasResult(node)) {
-			    //check to see if we have a value analysis result for this alloc node
-			    //and if so, add it to the concrete list of values.
-			    ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node));
-			    constants.add(vav);			    
-			} else {
-				allConstants = false;
-				break;
-			}
-		}
-		
-		//a points to set could be empty if the alloc node is in library code
-		if (allConstants && ptsToSet.size() > 0) {
-			//if we have all constants, create the concrete argument list from the constants
-			ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
-			for (ConcreteArgumentValue s : constants) 
-				clrv.add(s);
-			return clrv;
-			
-		} else if (ptsToSet.isEmpty()) {
-		    ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
+        } else {
+            //cannot conclude va results because not all nodes have them, so just return type
+            return new TypeValue(method.getReceiverType());
+        }
+    }
+
+    private static void writeSpecToFile(String secspec, String fname) {
+        try{
+            FileWriter fstream = new FileWriter(fname);
+            BufferedWriter out = new BufferedWriter(fstream);
+            out.write(secspec);
+            out.close();
+        } catch (Exception e){//Catch exception if any
+            logger.error("Writing specification file.", e);
+        }
+    }
+
+    //given a pta set for an arg and type for the arg, create the appropriate value
+    //for the Method object of the specification language.
+    private ArgumentValue getArgumentValueForPointer(PTAMethodInformation methodInfo, int i) {
+        Type t = methodInfo.getArgumentType(i);
+
+        //set the argument value if it is a value tracked by JSA, but only if it is meaningful
+        if (JSAStrings.v().isHotspotValue(methodInfo.getArgValue(i))) {
+            String jsaRE = JSAStrings.v().getRegex(methodInfo.getArgValue(i));
+            if (!JSAStrings.v().ignoreRE(jsaRE)) {
+                JSAValue jsav = new JSAValue(jsaRE);
+                ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
+                clrv.add(jsav);
+                return clrv;
+            }
+        }
+
+        Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(i); 
+        boolean allConstants = true;
+        //here we consider Value Analysis results as constants
+        List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();
+
+        //iterate over all the nodes pointed to and see if they are all constants
+        //if not, break and remember
+        for (IAllocNode node : ptsToSet) {
+            if (node instanceof IStringConstantNode) {
+                //create new string values just in case this is all constants
+                String value = ((IStringConstantNode)node).getString();
+                constants.add(new StringValue(value));
+            } else if (node instanceof IClassConstantNode) {
+                //create a new concrete arg value just in case this is all constants
+                constants.add(new ClassValue(((IClassConstantNode)node).getClassConstant().getValue()));
+            } else if (ValueAnalysis.v().hasResult(node)) {
+                //check to see if we have a value analysis result for this alloc node
+                //and if so, add it to the concrete list of values.
+                ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node));
+                constants.add(vav);			    
+            } else {
+                allConstants = false;
+                break;
+            }
+        }
+
+        //a points to set could be empty if the alloc node is in library code
+        if (allConstants && ptsToSet.size() > 0) {
+            //if we have all constants, create the concrete argument list from the constants
+            ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
+            for (ConcreteArgumentValue s : constants) 
+                clrv.add(s);
+            return clrv;
+
+        } else if (ptsToSet.isEmpty()) {
+            ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
             clrv.add(NullValue.getNullValue());
             return clrv;
-		} else {  //if not all constants, then return type because we don't know what is happening
-			return new TypeValue(t);
-		}
-	}
-	
-	/**
-	 * Create an argument in the SSL IR from the type and the value of the parameter of
-	 * a method.
-	 */
-	private ArgumentValue getArgumentValueForPrimitive(Value value, Type type) {
-		ConcreteListArgumentValue listArg = new ConcreteListArgumentValue(type);
-		
-		if (value instanceof IntConstant) {
-			int intValue = ((IntConstant)value).value;
+        } else {  //if not all constants, then return type because we don't know what is happening
+            return new TypeValue(t);
+        }
+    }
 
-			if (type instanceof BooleanType) {
-				listArg.add(BooleanValue.getBooleanValue(intValue));
-			} else if (type instanceof CharType) {
-				listArg.add(new CharValue((char)intValue));
-			} else if (type instanceof IntType) {
-				listArg.add(new IntValue(intValue));
-			} else if (type instanceof ByteType) {
-			    listArg.add(new ByteValue((byte)intValue));
-			} else {
-				logger.error("Unknown type for int constant when converting to method: {}", type);
-				droidsafe.main.Main.exit(1);
-			}
-			return listArg;
-		} else if (value instanceof LongConstant) {
-			//TODO: should have a long constant as well
-			return new TypeValue(type);
-		} else if (value instanceof StringConstant) {
-			listArg.add(new StringValue(((StringConstant)value).value));
-			return listArg;
-		} else if (value instanceof ClassConstant) {
-			listArg.add(new ClassValue(((ClassConstant)value).getValue()));
-			return listArg;
-		} else if (value instanceof NullConstant) {
-		    listArg.add(NullValue.getNullValue());
-		    return listArg;
-		} else 
-			return new TypeValue(type);
-	}
+    /**
+     * Create an argument in the SSL IR from the type and the value of the parameter of
+     * a method.
+     */
+    private ArgumentValue getArgumentValueForPrimitive(Value value, Type type) {
+        ConcreteListArgumentValue listArg = new ConcreteListArgumentValue(type);
+
+        if (value instanceof IntConstant) {
+            int intValue = ((IntConstant)value).value;
+
+            if (type instanceof BooleanType) {
+                listArg.add(BooleanValue.getBooleanValue(intValue));
+            } else if (type instanceof CharType) {
+                listArg.add(new CharValue((char)intValue));
+            } else if (type instanceof IntType) {
+                listArg.add(new IntValue(intValue));
+            } else if (type instanceof ByteType) {
+                listArg.add(new ByteValue((byte)intValue));
+            } else {
+                logger.error("Unknown type for int constant when converting to method: {}", type);
+                droidsafe.main.Main.exit(1);
+            }
+            return listArg;
+        } else if (value instanceof LongConstant) {
+            //TODO: should have a long constant as well
+            return new TypeValue(type);
+        } else if (value instanceof StringConstant) {
+            listArg.add(new StringValue(((StringConstant)value).value));
+            return listArg;
+        } else if (value instanceof ClassConstant) {
+            listArg.add(new ClassValue(((ClassConstant)value).getValue()));
+            return listArg;
+        } else if (value instanceof NullConstant) {
+            listArg.add(NullValue.getNullValue());
+            return listArg;
+        } else 
+            return new TypeValue(type);
+    }
 }

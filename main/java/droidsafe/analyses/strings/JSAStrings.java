@@ -106,6 +106,21 @@ public class JSAStrings {
         }
     }
 
+    /** 
+     * Return true if this re should be ignored because it is either empty or any string!
+     * 
+     * Or if length is too long.
+     */
+    public boolean ignoreRE(String jsaRE) {
+        if ("<any string>".equals(jsaRE) || "<empty>".equals(jsaRE))
+            return true;
+        
+        if (jsaRE.length() > 1000)
+            return true;
+        
+        return false;
+    }
+    
     /**
      * Constructor.
      */
