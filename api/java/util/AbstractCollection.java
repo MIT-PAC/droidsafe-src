@@ -386,7 +386,7 @@ public abstract Iterator<E> iterator();
         }
         
         @Override
-        
+            @DSSafe()
         public boolean hasNext() {
             // TODO Auto-generated method stub
             //return (current < len -1);
@@ -394,21 +394,21 @@ public abstract Iterator<E> iterator();
         }
 
         @Override
-        
+            @DSSafe()
         public T next() {
             // TODO Auto-generated method stub
             return (T) collectionData[++current];
         }
 
         @Override
-        
+            @DSSafe()
         public void remove() {
             // TODO Auto-generated method stub
             removeElementAt(current);
         }
 
         @Override
-        
+                    @DSSafe()
         public void add(Object object) {
             // TODO Auto-generated method stub
             //addElementAt(current, object);
