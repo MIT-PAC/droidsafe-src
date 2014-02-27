@@ -165,10 +165,6 @@ public class Harness {
 
         addCallToModelingRuntime(body);
 
-        //call all static initializer method       
-        //SootMethod allClinits = callAllStaticInitializers();
-        //body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));    
-
         //add call to initialize the dummy class that create unmodeled values
         body.getUnits().add(Jimple.v().newInvokeStmt
             (Jimple.v().newStaticInvokeExpr(UnmodeledGeneratedClasses.v().getInitMethod().makeRef())));

@@ -308,7 +308,7 @@ public class SecuritySpecification  {
                 numActions++;
                 buf.append("\t");
                 //print out the method and flag unsupport (true arg to toString())
-                buf.append(oe.toString(true).replaceAll("\n", "\n\t") + ";\n");
+                buf.append(oe.toString(true).replaceAll("\n", "\n\t") + ";\n\n");
 
                
             }

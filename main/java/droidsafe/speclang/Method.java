@@ -291,32 +291,46 @@ public class Method implements Comparable<Method> {
         for (String str : Permissions.v().getPermissions(sootMethod)) 
             ret.append("// Requires permission: " + str + "\n");
 
-        //print resolved high-level information flows
-        Set<InfoKind> recSourceKinds = getRecInfoKinds();
-        Set<InfoKind> sinkKinds = getSinkInfoKinds();
-        Set<InfoKind> methodKinds = getMethodInfoKinds();
-        Set<InfoKind> argsSourceKinds = new HashSet<InfoKind>();
+        
 
-        for (int i = 0; i < ptaInfo.getNumArgs(); i++)
-            argsSourceKinds.addAll(getArgInfoKinds(i));
-
-        if (!recSourceKinds.isEmpty() || !argsSourceKinds.isEmpty() || !sinkKinds.isEmpty() || !methodKinds.isEmpty()) {
+        if (!getSourcesInfoKinds().isEmpty()) {
+          //print resolved high-level information flows
+            Map<InfoKind, Set<Stmt>> recSourceKinds = getReceiverSourceInfoUnits();
+            Set<InfoKind> sinkKinds = getSinkInfoKinds();
+            Set<InfoKind> methodKinds = getMethodInfoKinds();
+                        
             ret.append("// InfoFlows: \n");
 
             if (hasReceiver()) {
-                ret.append("//    (receiver:");
-                for (InfoKind src : recSourceKinds) 
-                    ret.append(" " + src);
-
-                ret.append(")\n");
+                ret.append("//    receiver:\n");
+                
+                for (Map.Entry<InfoKind, Set<Stmt>> src : recSourceKinds.entrySet()) { 
+                    if (!src.getKey().isSensitive())
+                        continue;
+                    ret.append("//\t    " + src.getKey() + ": \n");
+                    for (Stmt stmt : src.getValue()) {
+                        ret.append("//\t        " + stmt+"\n");
+                    }
+                }
             }
 
-            ret.append("//    (args:");
-            for (InfoKind src : argsSourceKinds) { 
-                ret.append(" " + src);
+            ret.append("//    args:\n");
+            for (int i = 0; i < ptaInfo.getNumArgs(); i++) {
+                Map<InfoKind, Set<Stmt>> infoMap = getArgSourceInfoUnits(i);
+                if (infoMap.isEmpty())
+                    continue;
+                ret.append("//\t    " + i + "\n");
+                for (Map.Entry<InfoKind, Set<Stmt>> src : infoMap.entrySet()) {
+                    if (!src.getKey().isSensitive())
+                        continue;    
+                    ret.append("//\t        " + src.getKey() + ": \n");
+                    for (Stmt stmt : src.getValue()) {
+                        ret.append("//\t            " + stmt+"\n");
+                    }
+                }
             }
             
-            ret.append(")\n//    (Method accesses:");
+            ret.append("//    (Method accesses:");
             for (InfoKind src : methodKinds) { 
                 ret.append(" " + src);
             }
