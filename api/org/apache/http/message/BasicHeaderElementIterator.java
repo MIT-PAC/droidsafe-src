@@ -121,13 +121,13 @@ private void parseNextElement() {
     @Override
 	public HeaderElement nextElement() {
 		// TODO Auto-generated method stub
-		return null;
+           return (HeaderElement)headerIt.next();
 	}
     
 	@Override
 	public Object next() {
 		// TODO Auto-generated method stub
-		return new Object();
+            return headerIt.next();
 	}
     
     @Override
