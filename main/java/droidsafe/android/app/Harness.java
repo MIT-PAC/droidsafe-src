@@ -230,7 +230,11 @@ public class Harness {
         methodSig = String.format("<%s: void addAction(java.lang.String)>", 
                 "android.content.IntentFilter");
         SootMethod addAction = Scene.v().getMethod(methodSig);
-
+        
+        methodSig = String.format("<%s: void droidsafeSetDataUri(java.lang.String)>", 
+                "android.content.IntentFilter");
+        SootMethod setDataUri = Scene.v().getMethod(methodSig);
+        
         methodSig = String.format("<%s: %s registerReceiver(%s,%s)>", 
             "android.content.Context",
             "android.content.Intent",
@@ -287,6 +291,24 @@ public class Harness {
                         Jimple.v().newVirtualInvokeExpr(intentFilterLocal, 
                             addCategory.makeRef(), stringLocal)));
             }
+            
+            if (intentFilter.dataUri != null) {
+                logger.debug("Found intent filter uri  {} ", intentFilter.dataUri);
+                Local stringLocal = Jimple.v().newLocal(String.format("__dsUriString%03d", LOCAL_COUNTER++),  
+                    RefType.v("java.lang.String"));
+                body.getLocals().add(stringLocal);
+
+                //localString = "constant"
+                body.getUnits().add(Jimple.v().
+                    newAssignStmt(stringLocal, StringConstant.v(intentFilter.dataUri)));
+
+                body.getUnits().add(
+                    Jimple.v().newInvokeStmt(
+                        Jimple.v().newVirtualInvokeExpr(intentFilterLocal, 
+                            setDataUri.makeRef(), stringLocal)));
+                
+            }
+            
 
             // calling __ds__registerIntentFilter
             body.getUnits().add(
