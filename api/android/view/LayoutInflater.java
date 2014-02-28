@@ -309,6 +309,10 @@ public View inflate(XmlPullParser parser, ViewGroup root) {
     @DSSafe(DSCat.SAFE_LIST)
     public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
 		View newView = new View();
+		newView.addTaint(taint);
+		newView.addTaint(resource);
+		newView.addTaint(root.getTaint());
+		newView.addTaint(attachToRoot);
 		return newView;	
 	}
 

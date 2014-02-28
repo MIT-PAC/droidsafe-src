@@ -3,6 +3,7 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
+import android.text.TextUtils;
 import android.util.Log;
 import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
@@ -29,6 +30,7 @@ import android.graphics.Region;
 import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -50,6 +52,7 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import android.view.animation.Animation;
+import android.view.inputmethod.BaseInputConnection;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AdapterView;
@@ -236,13 +239,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSSafe(DSCat.GUI)
     public static View inflate(Context context, int resource, ViewGroup root){
 		// Original method
-		/*
-		{
         LayoutInflater factory = LayoutInflater.from(context);
         return factory.inflate(resource, root);
-    }
-		*/
-		return null;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:36.965 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
@@ -1825,11 +1823,25 @@ public View(Context context, AttributeSet attrs) {
             onRestoreInstanceState(state);
         
         onVisibilityChanged(this, DSUtils.FAKE_INT);
+
+        Drawable drawable = new ShapeDrawable();
+
+        onDrawVerticalScrollBar(new Canvas(), drawable, DSUtils.FAKE_INT,
+                DSUtils.FAKE_INT, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+
+        onDrawHorizontalScrollBar(new Canvas(), drawable, DSUtils.FAKE_INT,
+                DSUtils.FAKE_INT, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+
+        onDraw(new Canvas());
+        
+        onFocusChanged(DSUtils.UNKNOWN_BOOLEAN, DSUtils.FAKE_INT, new Rect());
         
     }
+
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public void droidsafeOverridingMethodHook() {
+        /*
         computeHorizontalScrollExtent();
         computeHorizontalScrollOffset();
         computeHorizontalScrollRange();
@@ -1838,6 +1850,7 @@ public View(Context context, AttributeSet attrs) {
         computeVerticalScrollExtent();
         computeVerticalScrollOffset();
         computeVerticalScrollRange();
+        */
     }
     
     @DSComment("Normal GUI")
@@ -2324,6 +2337,9 @@ public View(Context context, AttributeSet attrs) {
     }
 		*/
 		//Return nothing
+
+        onFocusChanged(true, direction, previouslyFocusedRect);
+        refreshDrawableState();
 	}
     
     @DSComment("Normal GUI")
@@ -2432,7 +2448,8 @@ public View(Context context, AttributeSet attrs) {
 		*/
 		return false;
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2583,14 +2600,10 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public AccessibilityNodeInfo createAccessibilityNodeInfo(){
 		// Original method
-		/*
-		{
-        AccessibilityNodeInfo info = AccessibilityNodeInfo.obtain(this);
+        AccessibilityNodeInfo info = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
         onInitializeAccessibilityNodeInfo(info);
+        info.addTaint(taint);
         return info;
-    }
-		*/
-		return null;
 	}
     
     @DSVerified
@@ -2733,12 +2746,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSafe(DSCat.GUI)
     public View findFocus(){
 		// Original method
-		/*
-		{
         return (mPrivateFlags & FOCUSED) != 0 ? this : null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
@@ -3466,6 +3474,7 @@ protected void dispatchSetPressed(boolean pressed) {
     @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View focusSearch(int direction){
 		// Original method
         if (mParent != null) {
@@ -3496,12 +3505,19 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View findUserSetNextFocus(View root, int direction){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+        View newView = new View();
+        newView.addTaint(taint);
+        newView.addTaint(root.getTaint());
+        newView.addTaint(direction);
+        return newView;
 	}
-    
+
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     private View findViewInsideOutShouldExist(View root, final int childViewId){
 		// Original method
 		/*
@@ -3519,7 +3535,12 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
         return result;
     }
 		*/
-		return null;
+        View newView = new View();
+        newView.addTaint(taint);
+        newView.addTaint(root.getTaint());
+        newView.addTaint(childViewId);
+        return newView;
+
 	}
     
     @DSComment("Normal GUI")
@@ -3527,25 +3548,16 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ArrayList<View> getFocusables(int direction){
 		// Original method
-		/*
-		{
         ArrayList<View> result = new ArrayList<View>(24);
         addFocusables(result, direction);
         return result;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void addFocusables(ArrayList<View> views, int direction){
 		// Original method
-		/*
-		{
         addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -3574,7 +3586,6 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     @DSSafe(DSCat.GUI)
     public void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags){
 		// Original method
-		/*
 		{
         if ((flags & FIND_VIEWS_WITH_CONTENT_DESCRIPTION) != 0 && !TextUtils.isEmpty(searched)
                 && !TextUtils.isEmpty(mContentDescription)) {
@@ -3585,8 +3596,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
             }
         }
     }
-		*/
-		//Return nothing
+        
 	}
     
     @DSComment("Normal GUI")
@@ -3594,29 +3604,22 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ArrayList<View> getTouchables(){
 		// Original method
-		/*
 		{
         ArrayList<View> result = new ArrayList<View>();
         addTouchables(result);
         return result;
     }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void addTouchables(ArrayList<View> views){
 		// Original method
-		/*
-		{
         final int viewFlags = mViewFlags;
         if (((viewFlags & CLICKABLE) == CLICKABLE || (viewFlags & LONG_CLICKABLE) == LONG_CLICKABLE)
                 && (viewFlags & ENABLED_MASK) == ENABLED) {
             views.add(this);
         }
-    }
-		*/
 		//Return nothing
 	}
     
@@ -3754,12 +3757,7 @@ public void onFinishTemporaryDetach() {
     
     public KeyEvent.DispatcherState getKeyDispatcherState(){
 		// Original method
-		/*
-		{
         return mAttachInfo != null ? mAttachInfo.mKeyDispatchState : null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("potential callback called inside method")
@@ -4431,7 +4429,10 @@ public boolean onCheckIsTextEditor() {
     @DSVerified
     @DSSafe(DSCat.ANDROID_CALLBACK) 
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
-        return null;
+        InputConnection conn = new BaseInputConnection(this, DSUtils.UNKNOWN_BOOLEAN); 
+        conn.addTaint(outAttrs.getTaint());
+        conn.addTaint(taint);
+        return conn;
     }
 
     /**
@@ -4489,7 +4490,10 @@ public boolean checkInputConnectionProxy(View view) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.163 -0500", hash_original_method = "5F63695E16A345A992F87C295B6530DF", hash_generated_method = "D50F5F7A11219609DE7D895C0081EC1F")
     
 protected ContextMenuInfo getContextMenuInfo() {
-        return null;
+        ContextMenuInfo info = new ContextMenuInfo() {
+        };
+        info.addTaint(taint);
+        return info;
     }
 
     /**
@@ -5030,16 +5034,13 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Matrix getMatrix(){
 		// Original method
-		/*
-		{
-        if (mTransformationInfo != null) {
-            updateMatrix();
-            return mTransformationInfo.mMatrix;
+        {
+            if (mTransformationInfo != null) {
+                updateMatrix();
+                return mTransformationInfo.mMatrix;
+            }
+            return Matrix.IDENTITY_MATRIX;
         }
-        return Matrix.IDENTITY_MATRIX;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Package priviledge")
@@ -5102,7 +5103,8 @@ protected void dispatchDraw(Canvas canvas) {
         return Matrix.IDENTITY_MATRIX;
     }
 		*/
-		return null;
+		//return null;
+        return Matrix.IDENTITY_MATRIX;
 	}
     
     @DSComment("Normal GUI")
@@ -6122,15 +6124,10 @@ public void invalidate() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Handler getHandler(){
 		// Original method
-		/*
-		{
         if (mAttachInfo != null) {
             return mAttachInfo.mHandler;
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     static class TransformationInfo {
@@ -6295,12 +6292,9 @@ public DragShadowBuilder() {
         @SuppressWarnings({"JavadocReference"}) 
 		final public View getView(){
 			// Original method
-			/*
 			{
             return mView.get();
-        }
-			*/
-			return null;
+			}
 		}
         
         public void onProvideShadowMetrics(Point shadowSize, Point shadowTouchPoint){
@@ -7788,7 +7782,8 @@ public void computeScroll() {
 protected boolean isVerticalScrollBarHidden() {
         return false;
     }
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onDrawHorizontalScrollBar(Canvas canvas, Drawable scrollBar,
             int l, int t, int r, int b){
 		// Original method
@@ -7801,6 +7796,8 @@ protected boolean isVerticalScrollBarHidden() {
 		//Return nothing
 	}
     
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onDrawVerticalScrollBar(Canvas canvas, Drawable scrollBar,
             int l, int t, int r, int b){
 		// Original method
@@ -7953,12 +7950,9 @@ protected void onDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public IBinder getWindowToken(){
 		// Original method
-		/*
-		{
-        return mAttachInfo != null ? mAttachInfo.mWindowToken : null;
-    }
-		*/
-		return null;
+        {
+            return mAttachInfo != null ? mAttachInfo.mWindowToken : null;
+        }
 	}
     
     @DSComment("Binder is vague, need modeling")
@@ -7966,8 +7960,6 @@ protected void onDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public IBinder getApplicationWindowToken(){
 		// Original method
-		/*
-		{
         AttachInfo ai = mAttachInfo;
         if (ai != null) {
             IBinder appWindowToken = ai.mPanelParentWindowToken;
@@ -7977,9 +7969,6 @@ protected void onDraw(Canvas canvas) {
             return appWindowToken;
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Package priviledge")
@@ -7987,12 +7976,9 @@ protected void onDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     IWindowSession getWindowSession(){
 		// Original method
-		/*
-		{
-        return mAttachInfo != null ? mAttachInfo.mSession : null;
-    }
-		*/
-		return null;
+        {
+            return mAttachInfo != null ? mAttachInfo.mSession : null;
+        }
 	}
     
     void dispatchAttachedToWindow(AttachInfo info, int visibility){
@@ -8335,12 +8321,7 @@ protected void dispatchGetDisplayList() {}
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Bitmap getDrawingCache(){
 		// Original method
-		/*
-		{
         return getDrawingCache(false);
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
@@ -8348,8 +8329,6 @@ protected void dispatchGetDisplayList() {}
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Bitmap getDrawingCache(boolean autoScale){
 		// Original method
-		/*
-		{
         if ((mViewFlags & WILL_NOT_CACHE_DRAWING) == WILL_NOT_CACHE_DRAWING) {
             return null;
         }
@@ -8357,9 +8336,6 @@ protected void dispatchGetDisplayList() {}
             buildDrawingCache(autoScale);
         }
         return autoScale ? mDrawingCache : mUnscaledDrawingCache;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
@@ -8429,10 +8405,17 @@ protected void dispatchGetDisplayList() {}
 		//Return nothing
 	}
     
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSource({DSSourceKind.IMAGE})
     Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+        Bitmap bm = new Bitmap();
+        bm.addTaint(quality.taint);
+        bm.addTaint(backgroundColor);
+        bm.addTaint(skipChildren);
+        bm.addTaint(taint);
+		return bm;
 	}
 
     /**
@@ -9243,7 +9226,6 @@ protected void dispatchSetActivated(boolean activated) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View getRootView(){
 		// Original method
-		/*
 		{
         if (mAttachInfo != null) {
             final View v = mAttachInfo.mRootView;
@@ -9257,8 +9239,6 @@ protected void dispatchSetActivated(boolean activated) {
         }
         return parent;
     }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
@@ -9301,104 +9281,74 @@ protected void dispatchSetActivated(boolean activated) {
     
     protected View findViewWithTagTraversal(Object tag){
 		// Original method
-		/*
-		{
         if (tag != null && tag.equals(mTag)) {
             return this;
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip){
 		// Original method
-		/*
-		{
         if (predicate.apply(this)) {
             return this;
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final View findViewById(int id){
-		return this;
-		// Original method
-		/*
-		{
         if (id < 0) {
             return null;
         }
         return findViewTraversal(id);
-    }
-		*/
 	}
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final View findViewByAccessibilityId(int accessibilityId){
 		// Original method
-		/*
-		{
         if (accessibilityId < 0) {
             return null;
         }
         return findViewByAccessibilityIdTraversal(accessibilityId);
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
-		/*
-		{
         if (getAccessibilityViewId() == accessibilityId) {
             return this;
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final View findViewWithTag(Object tag){
 		// Original method
-		/*
-		{
         if (tag == null) {
             return null;
         }
         return findViewWithTagTraversal(tag);
-    }
-		*/
-		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final View findViewByPredicate(Predicate<View> predicate){
 		// Original method
-		/*
 		{
-        return findViewByPredicateTraversal(predicate, null);
-    }
-		*/
-		return null;
+		    return findViewByPredicateTraversal(predicate, null);
+		}
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final View findViewByPredicateInsideOut(View start, Predicate<View> predicate){
 		// Original method
-		/*
-		{
         View childToSkip = null;
         for (;;) {
             View view = start.findViewByPredicateTraversal(predicate, childToSkip);
@@ -9412,9 +9362,6 @@ protected void dispatchSetActivated(boolean activated) {
             childToSkip = start;
             start = (View) parent;
         }
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Normal GUI")
@@ -9816,7 +9763,8 @@ public Animation getAnimation() {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
     protected void onAnimationStart(){
 		// Original method
 		/*
@@ -9826,7 +9774,8 @@ public Animation getAnimation() {
 		*/
 		//Return nothing
 	}
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
     protected void onAnimationEnd(){
 		// Original method
 		/*
@@ -9849,7 +9798,8 @@ public Animation getAnimation() {
      * @return true if the view can draw with the specified alpha.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.927 -0500", hash_original_method = "DC47911C20E58BC47F643D76AAAF3E73", hash_generated_method = "F976C7D5D2AAD617BDE6C87C1BB8E8CF")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK) 
 protected boolean onSetAlpha(int alpha) {
         return false;
     }
