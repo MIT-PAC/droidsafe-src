@@ -225,7 +225,7 @@ protected abstract UserTokenHandler createUserTokenHandler();
     @Override
 	public HttpParams getParams() {
 		// TODO Auto-generated method stub
-		return null;
+		return defaultParams;
 	}
 
     /**
@@ -244,7 +244,7 @@ public synchronized void setParams(HttpParams params) {
     @Override
 	public ClientConnectionManager getConnectionManager() {
 		// TODO Auto-generated method stub
-		return null;
+		return connManager;
 	}
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

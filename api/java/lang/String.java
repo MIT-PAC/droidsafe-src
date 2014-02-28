@@ -1,5 +1,4 @@
 package java.lang;
-
 // Droidsafe Imports
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -24,7 +23,6 @@ import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 
 public final class String implements Serializable, Comparable<String>, CharSequence {
-
     /**
      * Creates a new string containing the characters in the specified character
      * array. Modifying the character array after creating the string has no
@@ -306,36 +304,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @SuppressWarnings("unused")
         private static int indexOf(String haystackString, String needleString,
                                    int cache, int md2, char lastChar) {
-        char[] haystack = haystackString.value;
-        int haystackOffset = haystackString.offset;
-        int haystackLength = haystackString.count;
-        char[] needle = needleString.value;
-        int needleOffset = needleString.offset;
-        int needleLength = needleString.count;
-        int needleLengthMinus1 = needleLength - 1;
-        int haystackEnd = haystackOffset + haystackLength;
-        outer_loop: for (int i = haystackOffset + needleLengthMinus1; i < haystackEnd;) {
-            if (lastChar == haystack[i]) {
-                for (int j = 0; j < needleLengthMinus1; ++j) {
-                    if (needle[j + needleOffset] != haystack[i + j
-                                                             - needleLengthMinus1]) {
-                        int skip = 1;
-                        if ((cache & (1 << haystack[i])) == 0) {
-                            skip += j;
-                        }
-                        i += Math.max(md2, skip);
-                        continue outer_loop;
-                    }
-                }
-                return i - needleLengthMinus1 - haystackOffset;
-            }
-
-            if ((cache & (1 << haystack[i])) == 0) {
-                i += needleLengthMinus1;
-            }
-            i++;
-        }
-        return -1;
+        int ret = haystackString.getTaintInt() + needleString.getTaintInt() + cache + md2 + (int)lastChar;
+        return ret;
     }
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.754 -0500", hash_original_field = "FD3FEDA6C0FA798616493B49961CBA92", hash_generated_field = "94C8E35BF1C6D0DCD0C640C5B7214BD5")
 
@@ -960,8 +930,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         void _getChars(int start, int end, char[] buffer, int index) {
         // NOTE last character not copied!
-        addTaint(buffer.getTaint());
-    
+        buffer.addTaint(this.getTaint());
     }
 
     @DSComment("From safe class list")
@@ -1299,7 +1268,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      */
     @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.951 -0500", hash_original_method = "8508513C5D9E5D7A42B020CFB91803A3", hash_generated_method = "CE66BF7B4E46285328F82EC9849A383E")
     
         public boolean startsWith(String prefix) {
@@ -1337,7 +1305,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
     @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.049 -0400", hash_original_method = "FA273138383309E9BFDA8AAE2A7C6025", hash_generated_method = "0A4B172CD2951ABC21C7191BBBED5414")
         public String substring(int start, int end) {
         addTaint(start);

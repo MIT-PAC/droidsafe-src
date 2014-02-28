@@ -79,7 +79,8 @@ public int getPolicyViolation() {
             return mPolicyViolated;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.478 -0500", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "115A7BE97D13DB5D0A3713B9F0FA2346")
         
 public String getMessage() {

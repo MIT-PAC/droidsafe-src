@@ -35,10 +35,9 @@ public ErrnoException(String functionName, int errno, Throwable cause) {
      * We do this here rather than in the constructor so that callers only pay for
      * this if they need it.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.446 -0500", hash_original_method = "911EB712B1CEA729911922ADFC942179", hash_generated_method = "53A9666ACEFF8B8418191A69426AAC6E")
-    
-@Override public String getMessage() {
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @Override public String getMessage() {
         String errnoName = OsConstants.errnoName(errno);
         if (errnoName == null) {
             errnoName = "errno " + errno;

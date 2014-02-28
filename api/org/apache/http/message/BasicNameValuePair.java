@@ -17,28 +17,30 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 
     private  String value;
     
-	public BasicNameValuePair(final String name, final String value) {
-		addTaint(name.getTaint());
-		addTaint(value.getTaint());
-	}
+    public BasicNameValuePair(final String name, final String value) {
+        super();
+        if (name == null) {
+            throw new IllegalArgumentException("Name may not be null");
+        }
+        this.name = name;
+        this.value = value;
+    }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public String getName() {
+        return this.name;
+    }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-	public String getValue() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public String getValue() {
+        return this.value;
+    }
     
     /**
      * Get a string representation of this pair.

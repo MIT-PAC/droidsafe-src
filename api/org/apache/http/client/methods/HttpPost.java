@@ -13,6 +13,9 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
 
     public final static String METHOD_NAME = "POST";
     
+    @DSVAModeled
+    private URI theURI;
+
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.328 -0500", hash_original_method = "034A352FF9B05AAB848E440712ABE34B", hash_generated_method = "8731034ED4B7D7C5F2C0F73BBAB5A4A9")
@@ -45,5 +48,16 @@ public HttpPost(final URI uri) {
     public String getMethod() {
         return METHOD_NAME;
     }
+
+    @DSSafe()
+    public void setURI(final URI uri) {
+        this.theURI = uri;
+    }
+    
+    @DSSafe()
+    public URI getURI() {
+        return this.theURI;
+    }
+
 }
 

@@ -643,7 +643,7 @@ public static int signum(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.256 -0500", hash_original_method = "34E26A0F2F8E35922D8A4237B251C395", hash_generated_method = "FEB2B9F896E123B5C0527B185F160803")
     
 public static Integer valueOf(int i) {
-        return  i >= 128 || i < -128 ? new Integer(i) : SMALL_VALUES[i + 128];
+        return  new Integer(i);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.135 -0500", hash_original_field = "3D10FD4F0E8697EBDBC88B99D7AC38DA", hash_generated_field = "88D0C92B83B1D40D76F4FBB954A2A9E5")
 
@@ -670,9 +670,6 @@ public static Integer valueOf(int i) {
     @SuppressWarnings("unchecked")
     public static final Class<Integer> TYPE
             = (Class<Integer>) int[].class.getComponentType();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.258 -0500", hash_original_field = "8BF684B9DEAA323648A9119C4E3D2EED", hash_generated_field = "2B503CD004C95B2E1022E1C894D7A1A1")
-
-    private static final Integer[] SMALL_VALUES = new Integer[256];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.137 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
 
     private  int value;
@@ -826,11 +823,6 @@ public int compareTo(Integer object) {
 @Override
     public String toString() {
         return Integer.toString(value);
-    }
-    static {
-        for (int i = -128; i < 128; i++) {
-            SMALL_VALUES[i + 128] = new Integer(i);
-        }
     }
     
 }

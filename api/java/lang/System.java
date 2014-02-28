@@ -76,8 +76,12 @@ public static void setErr(PrintStream newErr) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
-        dst = src;
-	}
+        ((Object[])dst)[0] = ((Object[])src)[0];
+        dst.addTaint(src.getTaint());
+        dst.addTaint(srcPos);
+        dst.addTaint(dstPos);
+        dst.addTaint(length);
+    }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
