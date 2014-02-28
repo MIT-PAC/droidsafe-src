@@ -4,11 +4,15 @@ package com.android.internal.view.menu;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.util.ArrayList;
 
+import android.app.ContextImpl;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.res.Resources;
 import android.database.DataSetObserver;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -22,6 +26,7 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListAdapter;
 import android.widget.ListPopupWindow;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 
 public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.OnKeyListener, ViewTreeObserver.OnGlobalLayoutListener, PopupWindow.OnDismissListener, View.OnAttachStateChangeListener, MenuPresenter {
@@ -96,10 +101,34 @@ public MenuPopupHelper(Context context, MenuBuilder menu,
         mAnchorView = anchorView;
 
         menu.addMenuPresenter(this);
+        
+        droidsafeCallbackHooks();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.052 -0500", hash_original_method = "2004F2F21A84D03A526AC70184547D5A", hash_generated_method = "C1D89E9158410DEE65B49C01493BFD1D")
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeCallbackHooks() {
+        this.onViewAttachedToWindow(mAnchorView);
+        this.onGlobalLayout();
+        this.onDismiss();
+        Parcelable state = this.onSaveInstanceState();
+        this.onRestoreInstanceState(state);
+        
+        ListView lv = new ListView(mContext);
+        this.onItemClick(lv, mAnchorView, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        
+        MenuItemImpl menuItemImpl = new MenuItemImpl(mMenu, DSUtils.FAKE_INT,
+                DSUtils.FAKE_INT, DSUtils.FAKE_INT, mPopupMaxWidth, new String(), mPopupMaxWidth);
+        SubMenuBuilder sb =  new SubMenuBuilder(mContext, mMenu, menuItemImpl);
+        this.onSubMenuSelected(sb);
+
+        this.onKey(mAnchorView, DSUtils.FAKE_INT, new KeyEvent());
+        this.onCloseMenu(mMenu, DSUtils.UNKNOWN_BOOLEAN);
+        this.onViewDetachedFromWindow(mAnchorView);
+    }
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.052 -0500", hash_original_method = "2004F2F21A84D03A526AC70184547D5A", hash_generated_method = "C1D89E9158410DEE65B49C01493BFD1D")
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setAnchorView(View anchor) {
         mAnchorView = anchor;
     }
@@ -156,7 +185,8 @@ public void dismiss() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.064 -0500", hash_original_method = "7397A4058C634C2C06C80EFBB0CF76A6", hash_generated_method = "D46DCFDF7E7EC5C486A2C9AAE9EFE426")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onDismiss() {
         mPopup = null;
         mMenu.close();
@@ -176,7 +206,8 @@ public boolean isShowing() {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.070 -0500", hash_original_method = "CC543C30CFA85AC204B1A7C4ADC5298F", hash_generated_method = "8064FA4EE09322C88B459DF4BD3026C7")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         MenuAdapter adapter = mAdapter;
@@ -184,7 +215,8 @@ public boolean isShowing() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.072 -0500", hash_original_method = "5530A17DF0C464E4D3DE3D685535DA7D", hash_generated_method = "E28A3720C7E66B24CAC4E2708B232FF4")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public boolean onKey(View v, int keyCode, KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_MENU) {
             dismiss();
@@ -224,7 +256,8 @@ private int measureContentWidth(ListAdapter adapter) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.077 -0500", hash_original_method = "C6EC024B4EC2712488353CA11D4CBD8A", hash_generated_method = "2C8432F731C1ED6580A5EE1417F9855D")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void onGlobalLayout() {
         if (isShowing()) {
@@ -278,14 +311,24 @@ private int measureContentWidth(ListAdapter adapter) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.091 -0500", hash_original_method = "10FF3E14371A7D0CA3058A6B9B33844C", hash_generated_method = "F6C496CC72FE6F7A403B63FD5A754BFF")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void setCallback(Callback cb) {
         mPresenterCallback = cb;
+        cb.onCloseMenu(mMenu, DSUtils.UNKNOWN_BOOLEAN);
+        
+        MenuItemImpl menuItemImpl = new MenuItemImpl(mMenu, DSUtils.FAKE_INT,
+                DSUtils.FAKE_INT, DSUtils.FAKE_INT, mPopupMaxWidth, new String(), mPopupMaxWidth);
+        SubMenuBuilder sb =  new SubMenuBuilder(mContext, mMenu, menuItemImpl);
+        this.onSubMenuSelected(sb);
+        
+        cb.onOpenSubMenu(sb);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.093 -0500", hash_original_method = "248A3012A015004678EE499361542EC2", hash_generated_method = "B9FA22C810531D832491734E6A46493F")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
         if (subMenu.hasVisibleItems()) {
@@ -314,7 +357,8 @@ private int measureContentWidth(ListAdapter adapter) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.096 -0500", hash_original_method = "1BC820400AE9FB8BFD96C3A130B646DF", hash_generated_method = "47C7BA0C7FCF250659D3D769A516E4B3")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
         // Only care about the (sub)menu we're presenting.
@@ -457,16 +501,44 @@ void findExpandedIndex() {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.108 -0500", hash_original_method = "F5855573BDD3346EB58FBC078F0D1E94", hash_generated_method = "D7C142582BEA8E084D7F8C19441F7839")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public Parcelable onSaveInstanceState() {
-        return null;
+        return new Parcelable() {
+            
+            @Override
+            @DSVerified
+            @DSSpec(DSCat.SERIALIZATION)
+            public void writeToParcel(Parcel dest, int flags) {
+                // TODO Auto-generated method stub
+                
+            }
+            
+            @Override
+            @DSVerified
+            @DSSafe(DSCat.SAFE_OTHERS)
+            public int describeContents() {
+                // TODO Auto-generated method stub
+                return 0;
+            }
+        };
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.110 -0500", hash_original_method = "0C3EAD71D41C59A31F244EC76F29937C", hash_generated_method = "EA02457E24D7D58E860CD649C8CDC212")
-    
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public void onRestoreInstanceState(Parcelable state) {
+    }
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public ListPopupWindow getPopup() {
+        // TODO Auto-generated method stub
+        //return null;
+        ListPopupWindow popup = new ListPopupWindow(new ContextImpl());
+        return popup;
     }
 }
 
