@@ -23,6 +23,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -72,6 +73,12 @@ import java.util.List;
  */
 public abstract class AccessibilityNodeProvider {
 
+    /** Synthetic Constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public AccessibilityNodeProvider() {
+        
+    }
+    
     /**
      * Returns an {@link AccessibilityNodeInfo} representing a virtual view,
      * i.e. a descendant of the host View, with the given <code>virtualViewId</code>
@@ -97,8 +104,13 @@ public abstract class AccessibilityNodeProvider {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-27 14:26:54.358 -0500", hash_original_method = "2D22D7D27171E4BBD3FBB0816658181C", hash_generated_method = "8207C0B9C8EA8A9F91147C603FEEDB42")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
 public AccessibilityNodeInfo createAccessibilityNodeInfo(int virtualViewId) {
-        return null;
+        AccessibilityNodeInfo  node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
+        node.addTaint(virtualViewId);
+        node.addTaint(getTaint());
+        return node;
     }
 
     /**
@@ -117,6 +129,7 @@ public AccessibilityNodeInfo createAccessibilityNodeInfo(int virtualViewId) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-27 14:26:54.363 -0500", hash_original_method = "7E74F335A2D5DD213B9A800F16F5C8B8", hash_generated_method = "923DF7BCA2BC291182E703183FAAB2BD")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean performAction(int virtualViewId, int action, Bundle arguments) {
         return false;
     }
@@ -137,9 +150,16 @@ public boolean performAction(int virtualViewId, int action, Bundle arguments) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-27 14:26:54.366 -0500", hash_original_method = "16A32CD569D5A9B35C8E9A129A1ED251", hash_generated_method = "E66EB97DE56E2EB2D4557560CF1D4901")
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
 public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByText(String text,
             int virtualViewId) {
-        return null;
+        AccessibilityNodeInfo  node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
+        node.addTaint(virtualViewId);
+        node.addTaint(getTaint());
+        List<AccessibilityNodeInfo> list = new LinkedList<AccessibilityNodeInfo>();
+        list.add(node);
+        return list;
     }
 
     /**
@@ -164,8 +184,13 @@ public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByText(String text,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-27 14:26:54.369 -0500", hash_original_method = "8D5F5CB0DD81FDFD26C50EECCCDCFCE9", hash_generated_method = "53D90B84868CA28D4FA14FEF2BB4981F")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
 public AccessibilityNodeInfo findAccessibilityFocus(int virtualViewId) {
-        return null;
+        AccessibilityNodeInfo  node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
+        node.addTaint(virtualViewId);
+        node.addTaint(getTaint());
+        return node;
     }
 
     /**
@@ -198,7 +223,13 @@ public AccessibilityNodeInfo findAccessibilityFocus(int virtualViewId) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-27 14:26:54.372 -0500", hash_original_method = "9EDAA1AB33E095A491DB90E17C8C458E", hash_generated_method = "F1979A21E992F4B750B5BA23FDCC06B7")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
 public AccessibilityNodeInfo accessibilityFocusSearch(int direction, int virtualViewId) {
-        return null;
+        AccessibilityNodeInfo  node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
+        node.addTaint(virtualViewId);
+        node.addTaint(direction);
+        node.addTaint(getTaint());
+        return node;
     }
 }

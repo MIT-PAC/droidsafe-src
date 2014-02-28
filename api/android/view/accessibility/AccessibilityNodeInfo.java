@@ -1155,6 +1155,7 @@ private void setBooleanProperty(int property, boolean value) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.358 -0500", hash_original_method = "0D9114E83A94DAB2C664FA6E45C487C9", hash_generated_method = "BC4D7D397131B35AD8A5BAEE310B718C")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setConnectionId(int connectionId) {
         enforceNotSealed();
         mConnectionId = connectionId;
@@ -1165,6 +1166,7 @@ public void setConnectionId(int connectionId) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.361 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 public int describeContents() {
         return 0;
     }
@@ -1178,6 +1180,7 @@ public int describeContents() {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.363 -0500", hash_original_method = "7730BDD0DFF4FE8B243CA8BC305ED86E", hash_generated_method = "D19C5B16DCE00646203E99ED6C851A4E")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setSealed(boolean sealed) {
         mSealed = sealed;
     }
@@ -1191,6 +1194,7 @@ public void setSealed(boolean sealed) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.365 -0500", hash_original_method = "AF3422E1C079F6B2A15130B45797502F", hash_generated_method = "F23B568E45220201E3D8D9529E5C4B1C")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 public boolean isSealed() {
         return mSealed;
     }
@@ -1204,6 +1208,7 @@ public boolean isSealed() {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.368 -0500", hash_original_method = "0309B89A8A5C20FB439CB65AA9DE3FAA", hash_generated_method = "C604CEA8A3BAA88EE6676A4CDACE3183")
     
+    @DSSafe(DSCat.SAFE_OTHERS)
 protected void enforceSealed() {
         if (!isSealed()) {
             throw new IllegalStateException("Cannot perform this "
@@ -1261,7 +1266,7 @@ public void recycle() {
      * </p>
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.385 -0500", hash_original_method = "CE4668F7872E1547EB7B822B86C2AD44", hash_generated_method = "4702C75306CD7D2A7AAA5B0E1291FEC2")
-    
+    @DSSpec(DSCat.SERIALIZATION)
 public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(isSealed() ? 1 : 0);
         parcel.writeInt(mAccessibilityViewId);

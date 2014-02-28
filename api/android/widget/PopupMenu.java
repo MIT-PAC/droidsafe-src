@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.ListPopupWindow.ForwardingListener;
 
 public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.848 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -34,6 +36,7 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.858 -0500", hash_original_field = "8FFF3740C31C0B684496596E84733DB4", hash_generated_field = "5BB48C56597239A71FC51ED477A581A9")
 
     private OnDismissListener mDismissListener;
+private ForwardingListener mDragListener;
 
     /**
      * Construct a new PopupMenu.
@@ -204,6 +207,51 @@ public void onCloseSubMenu(SubMenuBuilder menu) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.889 -0500", hash_original_method = "BD3281B75359F57929C0B7D8E3BC0065", hash_generated_method = "C5DDE5ACC8940AA6876CE15F613929AA")
     
 public void onMenuModeChange(MenuBuilder menu) {
+    }
+    
+    
+
+    /**
+     * Returns an {@link OnTouchListener} that can be added to the anchor view
+     * to implement drag-to-open behavior.
+     * <p>
+     * When the listener is set on a view, touching that view and dragging
+     * outside of its bounds will open the popup window. Lifting will select the
+     * currently touched list item.
+     * <p>
+     * Example usage:
+     * <pre>
+     * PopupMenu myPopup = new PopupMenu(context, myAnchor);
+     * myAnchor.setOnTouchListener(myPopup.getDragToOpenListener());
+     * </pre>
+     *
+     * @return a touch listener that controls drag-to-open behavior
+     */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    public OnTouchListener getDragToOpenListener() {
+        if (mDragListener == null) {
+            mDragListener = new ForwardingListener(mAnchor) {
+                @Override
+                protected boolean onForwardingStarted() {
+                    show();
+                    return true;
+                }
+
+                @Override
+                protected boolean onForwardingStopped() {
+                    dismiss();
+                    return true;
+                }
+
+                @Override
+                public ListPopupWindow getPopup() {
+                    // This will be null until show() is called.
+                    return mPopup.getPopup();
+                }
+            };
+        }
+
+        return mDragListener;
     }
     
     public interface OnDismissListener {

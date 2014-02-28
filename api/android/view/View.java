@@ -5783,7 +5783,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    private boolean pointInView(float localX, float localY, float slop){
+    public boolean pointInView(float localX, float localY, float slop){
 		// Original method
 		/*
 		{
