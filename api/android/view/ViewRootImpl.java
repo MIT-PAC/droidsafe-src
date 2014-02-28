@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Slog;
 import droidsafe.annotations.*;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -54,6 +55,7 @@ import android.util.PoolableManager;
 import android.util.Pools;
 import android.util.SparseArray;
 import android.util.TypedValue;
+import android.view.View.AttachInfo.InvalidateInfo;
 import android.view.View.MeasureSpec;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityInteractionClient;
@@ -5896,6 +5898,24 @@ public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
 public boolean requestChildRectangleOnScreen(View child, Rect rectangle,
             boolean immediate) {
         return scrollToRectOrFocus(rectangle, immediate);
+    }
+
+    @Override
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void childHasTransientStateChanged(View view,
+            boolean hasTransientState) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void dispatchInvalidateRectOnAnimation(InvalidateInfo info) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void dispatchInvalidateOnAnimation(View view) {
+        // TODO Auto-generated method stub
+        
     }
 }
 

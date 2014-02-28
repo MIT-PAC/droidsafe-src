@@ -43,6 +43,7 @@ import android.util.Pools;
 import android.util.Property;
 import android.util.SparseArray;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.View.AttachInfo.InvalidateInfo;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityEventSource;
 import android.view.accessibility.AccessibilityManager;
@@ -402,28 +403,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.088 -0500", hash_original_field = "BCBE108429F3B545EA884E1A5D5EFA8D", hash_generated_field = "D47B48591230EE766F208E58DC2093F4")
 
     static final int PARENT_SAVE_DISABLED_MASK = 0x20000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.090 -0500", hash_original_field = "F04774A310B3A78732E1759B8808A3FB", hash_generated_field = "A688099F9FE53C57D5410ECB0B78ECF6")
 
-    public static final int LAYOUT_DIRECTION_LTR = 0x00000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.092 -0500", hash_original_field = "FDC90F3D619889F3495BE5D41F5D935E", hash_generated_field = "1E680499F28E2DB403E520F9B378996F")
-
-    public static final int LAYOUT_DIRECTION_RTL = 0x40000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.095 -0500", hash_original_field = "AAC88B3FDFF63D7A019F2B4787C16C47", hash_generated_field = "3C8F75DD79F0631A6C45E4E961B35BE6")
-
-    public static final int LAYOUT_DIRECTION_INHERIT = 0x80000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.097 -0500", hash_original_field = "755DD58A08A5F29950EF84ABC9AA1539", hash_generated_field = "309700780AC169B61849F35A862B3E65")
-
-    public static final int LAYOUT_DIRECTION_LOCALE = 0xC0000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.100 -0500", hash_original_field = "BCA2ED79755FE10650FC5AA72EB72C02", hash_generated_field = "6FE5303D659D6470BE6AE1DC66925B88")
-
-    static final int LAYOUT_DIRECTION_MASK = 0xC0000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.103 -0500", hash_original_field = "C5AFD6A6C9366D33798D144A8078E6B3", hash_generated_field = "2B195F9D5574504A59136591EF21764E")
-
-    private static final int[] LAYOUT_DIRECTION_FLAGS = {LAYOUT_DIRECTION_LTR,
-        LAYOUT_DIRECTION_RTL, LAYOUT_DIRECTION_INHERIT, LAYOUT_DIRECTION_LOCALE};
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.105 -0500", hash_original_field = "2FF3B4B954872B8A2CAC234A1183B4EA", hash_generated_field = "0FF5069567EECE1EABD2593046037335")
-
-    private static final int LAYOUT_DIRECTION_DEFAULT = LAYOUT_DIRECTION_INHERIT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.107 -0500", hash_original_field = "7F3BDB64A61717B04C7D240EBBFB58CA", hash_generated_field = "4E5D1049C9EF75861592546EF88DBF53")
 
     public static final int FOCUSABLES_ALL = 0x00000000;
@@ -625,6 +605,245 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         R.attr.state_drag_can_accept,   VIEW_STATE_DRAG_CAN_ACCEPT,
         R.attr.state_drag_hovered,      VIEW_STATE_DRAG_HOVERED,
     };
+
+/**
+ * Indicates that this view has reported that it can accept the current drag's content.
+ * Cleared when the drag operation concludes.
+ * @hide
+ */
+static final int PFLAG2_DRAG_CAN_ACCEPT            = 0x00000001;
+
+/**
+ * Indicates that this view is currently directly under the drag location in a
+ * drag-and-drop operation involving content that it can accept.  Cleared when
+ * the drag exits the view, or when the drag operation concludes.
+ * @hide
+ */
+static final int PFLAG2_DRAG_HOVERED               = 0x00000002;
+
+/**
+ * Bit shift to get the horizontal layout direction. (bits after DRAG_HOVERED)
+ * @hide
+ */
+static final int PFLAG2_LAYOUT_DIRECTION_MASK_SHIFT = 2;
+
+/**
+ * Mask for use with private flags indicating bits used for horizontal layout direction.
+ * @hide
+ */
+static final int PFLAG2_LAYOUT_DIRECTION_MASK = 0x00000003 << PFLAG2_LAYOUT_DIRECTION_MASK_SHIFT;
+
+/**
+ * Indicates whether the view horizontal layout direction has been resolved and drawn to the
+ * right-to-left direction.
+ * @hide
+ */
+static final int PFLAG2_LAYOUT_DIRECTION_RESOLVED_RTL = 4 << PFLAG2_LAYOUT_DIRECTION_MASK_SHIFT;
+
+/**
+ * Indicates whether the view horizontal layout direction has been resolved.
+ * @hide
+ */
+static final int PFLAG2_LAYOUT_DIRECTION_RESOLVED = 8 << PFLAG2_LAYOUT_DIRECTION_MASK_SHIFT;
+
+/**
+ * Mask for use with private flags indicating bits used for resolved horizontal layout direction.
+ * @hide
+ */
+static final int PFLAG2_LAYOUT_DIRECTION_RESOLVED_MASK = 0x0000000C
+        << PFLAG2_LAYOUT_DIRECTION_MASK_SHIFT;
+/**
+ * Text direction is coming from the system Locale.
+ */
+public static final int TEXT_DIRECTION_LOCALE = 5;
+
+/*
+ * Default text alignment. The text alignment of this View is inherited from its parent.
+ * Use with {@link #setTextAlignment(int)}
+ */
+public static final int TEXT_ALIGNMENT_INHERIT = 0;
+
+public static final int TEXT_ALIGNMENT_GRAVITY = 1;
+
+/**
+ * Align to the start of the paragraph, e.g. ALIGN_NORMAL.
+ *
+ * Use with {@link #setTextAlignment(int)}
+ */
+public static final int TEXT_ALIGNMENT_TEXT_START = 2;
+
+/**
+ * Align to the end of the paragraph, e.g. ALIGN_OPPOSITE.
+ *
+ * Use with {@link #setTextAlignment(int)}
+ */
+public static final int TEXT_ALIGNMENT_TEXT_END = 3;
+
+/**
+ * Center the paragraph, e.g. ALIGN_CENTER.
+ *
+ * Use with {@link #setTextAlignment(int)}
+ */
+public static final int TEXT_ALIGNMENT_CENTER = 4;
+
+public static final int TEXT_ALIGNMENT_VIEW_START = 5;
+
+/**
+ * Align to the end of the view, which is ALIGN_RIGHT if the view resolved
+ * layoutDirection is LTR, and ALIGN_LEFT otherwise.
+ *
+ * Use with {@link #setTextAlignment(int)}
+ */
+public static final int TEXT_ALIGNMENT_VIEW_END = 6;
+
+/**
+ * Default text alignment is inherited
+ */
+private static final int TEXT_ALIGNMENT_DEFAULT = TEXT_ALIGNMENT_GRAVITY;
+
+/**
+ * Default resolved text alignment
+ * @hide
+ */
+static final int TEXT_ALIGNMENT_RESOLVED_DEFAULT = TEXT_ALIGNMENT_GRAVITY;
+
+/**
+  * Bit shift to get the horizontal layout direction. (bits after DRAG_HOVERED)
+  * @hide
+  */
+static final int PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT = 13;
+
+/**
+  * Mask for use with private flags indicating bits used for text alignment.
+  * @hide
+  */
+static final int PFLAG2_TEXT_ALIGNMENT_MASK = 0x00000007 << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT;
+
+/**
+ * Array of text direction flags for mapping attribute "textAlignment" to correct
+ * flag value.
+ * @hide
+ */
+private static final int[] PFLAG2_TEXT_ALIGNMENT_FLAGS = {
+        TEXT_ALIGNMENT_INHERIT << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT,
+        TEXT_ALIGNMENT_GRAVITY << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT,
+        TEXT_ALIGNMENT_TEXT_START << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT,
+        TEXT_ALIGNMENT_TEXT_END << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT,
+        TEXT_ALIGNMENT_CENTER << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT,
+        TEXT_ALIGNMENT_VIEW_START << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT,
+        TEXT_ALIGNMENT_VIEW_END << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT
+};
+
+/**
+ * Indicates whether the view text alignment has been resolved.
+ * @hide
+ */
+static final int PFLAG2_TEXT_ALIGNMENT_RESOLVED = 0x00000008 << PFLAG2_TEXT_ALIGNMENT_MASK_SHIFT;
+
+/**
+ * Bit shift to get the resolved text alignment.
+ * @hide
+ */
+static final int PFLAG2_TEXT_ALIGNMENT_RESOLVED_MASK_SHIFT = 17;
+
+/**
+ * Mask for use with private flags indicating bits used for text alignment.
+ * @hide
+ */
+static final int PFLAG2_TEXT_ALIGNMENT_RESOLVED_MASK = 0x00000007
+        << PFLAG2_TEXT_ALIGNMENT_RESOLVED_MASK_SHIFT;
+
+/**
+ * Indicates whether if the view text alignment has been resolved to gravity
+ */
+private static final int PFLAG2_TEXT_ALIGNMENT_RESOLVED_DEFAULT =
+        TEXT_ALIGNMENT_RESOLVED_DEFAULT << PFLAG2_TEXT_ALIGNMENT_RESOLVED_MASK_SHIFT;
+
+// Accessiblity constants for mPrivateFlags2
+
+
+/**
+ * Shift for the bits in {@link #mPrivateFlags2} related to the
+ * "accessibilityLiveRegion" attribute.
+ */
+static final int PFLAG2_ACCESSIBILITY_LIVE_REGION_SHIFT = 23;
+
+/**
+ * Live region mode specifying that accessibility services should not
+ * automatically announce changes to this view. This is the default live
+ * region mode for most views.
+ * <p>
+ * Use with {@link #setAccessibilityLiveRegion(int)}.
+ */
+public static final int ACCESSIBILITY_LIVE_REGION_NONE = 0x00000000;
+
+/**
+ * Live region mode specifying that accessibility services should announce
+ * changes to this view.
+ * <p>
+ * Use with {@link #setAccessibilityLiveRegion(int)}.
+ */
+public static final int ACCESSIBILITY_LIVE_REGION_POLITE = 0x00000001;
+
+/**
+ * Live region mode specifying that accessibility services should interrupt
+ * ongoing speech to immediately announce changes to this view.
+ * <p>
+ * Use with {@link #setAccessibilityLiveRegion(int)}.
+ */
+public static final int ACCESSIBILITY_LIVE_REGION_ASSERTIVE = 0x00000002;
+
+/**
+ * The default whether the view is important for accessibility.
+ */
+static final int ACCESSIBILITY_LIVE_REGION_DEFAULT = ACCESSIBILITY_LIVE_REGION_NONE;
+
+/**
+ * Mask for obtaining the bits which specify a view's accessibility live
+ * region mode.
+ */
+static final int PFLAG2_ACCESSIBILITY_LIVE_REGION_MASK = (ACCESSIBILITY_LIVE_REGION_NONE
+        | ACCESSIBILITY_LIVE_REGION_POLITE | ACCESSIBILITY_LIVE_REGION_ASSERTIVE)
+        << PFLAG2_ACCESSIBILITY_LIVE_REGION_SHIFT;
+
+/**
+ * Flag indicating whether a view has accessibility focus.
+ */
+static final int PFLAG2_ACCESSIBILITY_FOCUSED = 0x04000000;
+
+/**
+ * Flag whether the accessibility state of the subtree rooted at this view changed.
+ */
+static final int PFLAG2_SUBTREE_ACCESSIBILITY_STATE_CHANGED = 0x08000000;
+
+/**
+ * Flag indicating whether a view failed the quickReject() check in draw(). This condition
+ * is used to check whether later changes to the view's transform should invalidate the
+ * view to force the quickReject test to run again.
+ */
+static final int PFLAG2_VIEW_QUICK_REJECTED = 0x10000000;
+
+/**
+ * Flag indicating that start/end padding has been resolved into left/right padding
+ * for use in measurement, layout, drawing, etc. This is set by {@link #resolvePadding()}
+ * and checked by {@link #measure(int, int)} to determine if padding needs to be resolved
+ * during measurement. In some special cases this is required such as when an adapter-based
+ * view measures prospective children without attaching them to a window.
+ */
+static final int PFLAG2_PADDING_RESOLVED = 0x20000000;
+
+/**
+ * Flag indicating that the start/end drawables has been resolved into left/right ones.
+ */
+static final int PFLAG2_DRAWABLE_RESOLVED = 0x40000000;
+
+/**
+ * Indicates that the view is tracking some sort of transient state
+ * that the app should not need to be aware of, but that the framework
+ * should take special care to preserve.
+ */
+static final int PFLAG2_HAS_TRANSIENT_STATE = 0x80000000;
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.249 -0500", hash_original_field = "DF4583259D9D883E840253E6EA438707", hash_generated_field = "09FD46ADE03A21840451EFC738B1A7A7")
 
     private static final int POPULATING_ACCESSIBILITY_EVENT_TYPES =
@@ -878,6 +1097,126 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 
     protected static int DEFAULT_TEXT_DIRECTION = TEXT_DIRECTION_INHERIT;
 
+
+/**
+ * Shift for the bits in {@link #mPrivateFlags2} related to the
+ * "importantForAccessibility" attribute.
+ */
+static final int PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_SHIFT = 20;
+
+/**
+ * Automatically determine whether a view is important for accessibility.
+ */
+public static final int IMPORTANT_FOR_ACCESSIBILITY_AUTO = 0x00000000;
+
+/**
+ * The view is important for accessibility.
+ */
+public static final int IMPORTANT_FOR_ACCESSIBILITY_YES = 0x00000001;
+
+/**
+ * The view is not important for accessibility.
+ */
+public static final int IMPORTANT_FOR_ACCESSIBILITY_NO = 0x00000002;
+
+/**
+ * The view is not important for accessibility, nor are any of its
+ * descendant views.
+ */
+public static final int IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS = 0x00000004;
+
+
+/**
+ * Mask for obtainig the bits which specify how to determine
+ * whether a view is important for accessibility.
+ */
+static final int PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_MASK = (IMPORTANT_FOR_ACCESSIBILITY_AUTO
+    | IMPORTANT_FOR_ACCESSIBILITY_YES | IMPORTANT_FOR_ACCESSIBILITY_NO
+    | IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS)
+    << PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_SHIFT;
+
+/**
+ * Default text direction is inherited
+ */
+private static final int TEXT_DIRECTION_DEFAULT = TEXT_DIRECTION_INHERIT;
+
+/**
+ * Default resolved text direction
+ * @hide
+ */
+static final int TEXT_DIRECTION_RESOLVED_DEFAULT = TEXT_DIRECTION_FIRST_STRONG;
+
+/**
+ * Bit shift to get the horizontal layout direction. (bits after LAYOUT_DIRECTION_RESOLVED)
+ * @hide
+ */
+static final int PFLAG2_TEXT_DIRECTION_MASK_SHIFT = 6;
+
+/**
+ * Mask for use with private flags indicating bits used for text direction.
+ * @hide
+ */
+static final int PFLAG2_TEXT_DIRECTION_MASK = 0x00000007
+        << PFLAG2_TEXT_DIRECTION_MASK_SHIFT;
+
+
+/**
+ * Indicates whether the view text direction has been resolved.
+ * @hide
+ */
+static final int PFLAG2_TEXT_DIRECTION_RESOLVED = 0x00000008
+        << PFLAG2_TEXT_DIRECTION_MASK_SHIFT;
+
+/**
+ * Bit shift to get the horizontal layout direction. (bits after DRAG_HOVERED)
+ * @hide
+ */
+static final int PFLAG2_TEXT_DIRECTION_RESOLVED_MASK_SHIFT = 10;
+
+/**
+ * Mask for use with private flags indicating bits used for resolved text direction.
+ * @hide
+ */
+static final int PFLAG2_TEXT_DIRECTION_RESOLVED_MASK = 0x00000007
+        << PFLAG2_TEXT_DIRECTION_RESOLVED_MASK_SHIFT;
+/**
+ * The default whether the view is important for accessibility.
+ */
+static final int IMPORTANT_FOR_ACCESSIBILITY_DEFAULT = IMPORTANT_FOR_ACCESSIBILITY_AUTO;
+
+/**
+ * Group of bits indicating that RTL properties resolution is done.
+ */
+static final int ALL_RTL_PROPERTIES_RESOLVED = PFLAG2_LAYOUT_DIRECTION_RESOLVED |
+        PFLAG2_TEXT_DIRECTION_RESOLVED |
+        PFLAG2_TEXT_ALIGNMENT_RESOLVED |
+        PFLAG2_PADDING_RESOLVED |
+        PFLAG2_DRAWABLE_RESOLVED;
+/**
+ * Array of text direction flags for mapping attribute "textDirection" to correct
+ * flag value.
+ * @hide
+ */
+private static final int[] PFLAG2_TEXT_DIRECTION_FLAGS = {
+        TEXT_DIRECTION_INHERIT << PFLAG2_TEXT_DIRECTION_MASK_SHIFT,
+        TEXT_DIRECTION_FIRST_STRONG << PFLAG2_TEXT_DIRECTION_MASK_SHIFT,
+        TEXT_DIRECTION_ANY_RTL << PFLAG2_TEXT_DIRECTION_MASK_SHIFT,
+        TEXT_DIRECTION_LTR << PFLAG2_TEXT_DIRECTION_MASK_SHIFT,
+        TEXT_DIRECTION_RTL << PFLAG2_TEXT_DIRECTION_MASK_SHIFT,
+        TEXT_DIRECTION_LOCALE << PFLAG2_TEXT_DIRECTION_MASK_SHIFT
+};
+
+/**
+ * Indicates whether the view text direction has been resolved to the "first strong" heuristic.
+ * @hide
+ */
+static final int PFLAG2_TEXT_DIRECTION_RESOLVED_DEFAULT =
+        TEXT_DIRECTION_RESOLVED_DEFAULT << PFLAG2_TEXT_DIRECTION_RESOLVED_MASK_SHIFT;
+private static final int LAYOUT_DIRECTION_LOCALE = 0;
+private static final int LAYOUT_DIRECTION_LTR = 0;
+private static final int LAYOUT_DIRECTION_RTL = 0;
+private static final int LAYOUT_DIRECTION_INHERIT = 0;
+
     public static Property<View, Float> ALPHA = new MyFloatPropertyView("alpha");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.675 -0400", hash_original_field = "2463A82C1B3B068FBED45F14B07DEA60", hash_generated_field = "2E88A25ECF88D0581B11F01DDC5B788E")
 
@@ -1115,6 +1454,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                                 equals = SYSTEM_UI_FLAG_VISIBLE,
                                 name = "SYSTEM_UI_FLAG_VISIBLE", outputIf = true)
     })
+
+   
     int mSystemUiVisibility;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.437 -0500", hash_original_field = "AA3BA123C58FF5925198746B8B561359", hash_generated_field = "AA3BA123C58FF5925198746B8B561359")
 
@@ -6368,7 +6709,8 @@ public BaseSavedState(Parcelable superState) {
                 return sPool.acquire();
             }
 				*/
-				return null;
+				//return null;
+                return new InvalidateInfo();
 			}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.208 -0500", hash_original_field = "8B0E658DD91059EF813B52020A729F93", hash_generated_field = "B2FFB1CA44DC2BFD07F60AEC442C51E3")
 
@@ -6446,7 +6788,7 @@ public InvalidateInfo getNextPoolable() {
 				*/
 				//Return nothing
 			}
-            
+            @DSSafe(DSCat.SAFE_OTHERS)            
             public boolean isPooled(){
 				return getTaintBoolean();
 				// Original method
@@ -6456,7 +6798,7 @@ public InvalidateInfo getNextPoolable() {
             }
 				*/
 			}
-            
+            @DSSafe(DSCat.SAFE_OTHERS)            
             public void setPooled(boolean isPooled){
 				addTaint(isPooled);
 				// Original method
@@ -6467,6 +6809,12 @@ public InvalidateInfo getNextPoolable() {
 				*/
 				//Return nothing
 			}
+
+            @DSSafe(DSCat.SAFE_OTHERS)
+            public static InvalidateInfo obtain() {
+                // TODO Auto-generated method stub
+                return new InvalidateInfo();
+            }
         }
         
         interface Callbacks {
@@ -6480,6 +6828,10 @@ public InvalidateInfo getNextPoolable() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.364 -0500", hash_original_field = "2E729681C5CD99C66AC4181B19223EFE", hash_generated_field = "2E729681C5CD99C66AC4181B19223EFE")
 
         int mAccessibilityWindowId = View.NO_ID;
+        
+        ViewRootImpl mViewRootImpl = null;
+        
+        Display mDisplay = null;
 
         /**
          * Creates a new set of attachment information with the specified
@@ -6494,6 +6846,23 @@ AttachInfo(IWindowSession session, IWindow window,
             mSession = session;
             mWindow = window;
             mWindowToken = window.asBinder();
+            mHandler = handler;
+            mRootCallbacks = effectPlayer;
+        }
+        
+        /**
+         * Creates a new set of attachment information with the specified
+         * events handler and thread.
+         *
+         * @param handler the events handler the view must use
+         */
+        AttachInfo(IWindowSession session, IWindow window, Display display,
+                ViewRootImpl viewRootImpl, Handler handler, Callbacks effectPlayer) {
+            mSession = session;
+            mWindow = window;
+            mWindowToken = window.asBinder();
+            mDisplay = display;
+            mViewRootImpl = viewRootImpl;
             mHandler = handler;
             mRootCallbacks = effectPlayer;
         }
@@ -6878,9 +7247,35 @@ AttachInfo(IWindowSession session, IWindow window,
         }
         return getTaintBoolean();
 	}
-    
+
+    /**
+     * Performs the specified accessibility action on the view. For
+     * possible accessibility actions look at {@link AccessibilityNodeInfo}.
+     * <p>
+     * If an {@link AccessibilityDelegate} has been specified via calling
+     * {@link #setAccessibilityDelegate(AccessibilityDelegate)} its
+     * {@link AccessibilityDelegate#performAccessibilityAction(View, int, Bundle)}
+     * is responsible for handling this call.
+     * </p>
+     *
+     * @param action The action to perform.
+     * @param arguments Optional action arguments.
+     * @return Whether the action was performed.
+     */
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean performAccessibilityAction(int action, Bundle arguments) {
+      if (mAccessibilityDelegate != null) {
+          return mAccessibilityDelegate.performAccessibilityAction(this, action, arguments);
+      } else {
+          return performAccessibilityActionInternal(action, arguments);
+      }
+    }
+
     public boolean performAccessibilityActionInternal(int action, Bundle args) {
         // TODO Auto-generated method stub
+        addTaint(action);
+        addTaint(args.getTaint());
         return getTaintBoolean();
     }
 
@@ -9927,6 +10322,67 @@ protected void resolveTextDirection() {
     }
     
     /**
+     * Sets the live region mode for this view. This indicates to accessibility
+     * services whether they should automatically notify the user about changes
+     * to the view's content description or text, or to the content descriptions
+     * or text of the view's children (where applicable).
+     * <p>
+     * For example, in a login screen with a TextView that displays an "incorrect
+     * password" notification, that view should be marked as a live region with
+     * mode {@link #ACCESSIBILITY_LIVE_REGION_POLITE}.
+     * <p>
+     * To disable change notifications for this view, use
+     * {@link #ACCESSIBILITY_LIVE_REGION_NONE}. This is the default live region
+     * mode for most views.
+     * <p>
+     * To indicate that the user should be notified of changes, use
+     * {@link #ACCESSIBILITY_LIVE_REGION_POLITE}.
+     * <p>
+     * If the view's changes should interrupt ongoing speech and notify the user
+     * immediately, use {@link #ACCESSIBILITY_LIVE_REGION_ASSERTIVE}.
+     *
+     * @param mode The live region mode for this view, one of:
+     *        <ul>
+     *        <li>{@link #ACCESSIBILITY_LIVE_REGION_NONE}
+     *        <li>{@link #ACCESSIBILITY_LIVE_REGION_POLITE}
+     *        <li>{@link #ACCESSIBILITY_LIVE_REGION_ASSERTIVE}
+     *        </ul>
+     * @attr ref android.R.styleable#View_accessibilityLiveRegion
+     */
+    @DSSafe
+    public void setAccessibilityLiveRegion(int mode) {
+        if (mode != getAccessibilityLiveRegion()) {
+            mPrivateFlags2 = DSUtils.FAKE_INT;
+            notifyViewAccessibilityStateChangedIfNeeded(DSUtils.FAKE_INT);
+        }
+    }
+
+    //SendViewStateChangedAccessibilityEvent mSendViewStateChangedAccessibilityEvent;
+    /**
+     * Notifies that the accessibility state of this view changed. The change
+     * is local to this view and does not represent structural changes such
+     * as children and parent. For example, the view became focusable. The
+     * notification is at at most once every
+     * {@link ViewConfiguration#getSendRecurringAccessibilityEventsInterval()}
+     * to avoid unnecessary load to the system. Also once a view has a pending
+     * notifucation this method is a NOP until the notification has been sent.
+     *
+     * @hide
+     */
+    public void notifyViewAccessibilityStateChangedIfNeeded(int changeType) {
+        if (!AccessibilityManager.getInstance(mContext).isEnabled()) {
+            return;
+        }
+        /*
+        if (mSendViewStateChangedAccessibilityEvent == null) {
+            mSendViewStateChangedAccessibilityEvent =
+                    new SendViewStateChangedAccessibilityEvent();
+        }
+        mSendViewStateChangedAccessibilityEvent.runOrPost(changeType);
+        */
+        //TODO: We stub it out for now
+    }
+    /**
      * Gets the provider for managing a virtual view hierarchy rooted at this View
      * and reported to {@link android.accessibilityservice.AccessibilityService}s
      * that explore the window content.
@@ -10037,6 +10493,38 @@ protected void resolveTextDirection() {
             }
         }
     }
+    
+    /**
+     * Sets how to determine whether this view is important for accessibility
+     * which is if it fires accessibility events and if it is reported to
+     * accessibility services that query the screen.
+     *
+     * @param mode How to determine whether this view is important for accessibility.
+     *
+     * @attr ref android.R.styleable#View_importantForAccessibility
+     *
+     * @see #IMPORTANT_FOR_ACCESSIBILITY_YES
+     * @see #IMPORTANT_FOR_ACCESSIBILITY_NO
+     * @see #IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+     * @see #IMPORTANT_FOR_ACCESSIBILITY_AUTO
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setImportantForAccessibility(int mode) {
+        final int oldMode = getImportantForAccessibility();
+        if (mode != oldMode) {
+            // If we're moving between AUTO and another state, we might not need
+            // to send a subtree changed notification. We'll store the computed
+            // importance, since we'll need to check it later to make sure.
+            final boolean maySkipNotify = oldMode == IMPORTANT_FOR_ACCESSIBILITY_AUTO
+                    || mode == IMPORTANT_FOR_ACCESSIBILITY_AUTO;
+            final boolean oldIncludeForAccessibility = maySkipNotify && includeForAccessibility();
+            mPrivateFlags2 &= ~PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_MASK;
+            mPrivateFlags2 |= (mode << PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_SHIFT)
+                    & PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_MASK;
+            notifyViewAccessibilityStateChangedIfNeeded(DSUtils.FAKE_INT);
+        }
+    }
+
     /**
      * Indicates whether the view is currently tracking transient state that the
      * app should not need to concern itself with saving and restoring, but that
@@ -10054,6 +10542,124 @@ protected void resolveTextDirection() {
     @DSSafe(DSCat.SAFE_OTHERS)
     public boolean hasTransientState() {
         return getTaintBoolean();
+    }
+    
+    /**
+     * <p>Cause an invalidate to happen on the next animation time step, typically the
+     * next display frame.</p>
+     *
+     * <p>This method can be invoked from outside of the UI thread
+     * only when this View is attached to a window.</p>
+     *
+     * @see #invalidate()
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void postInvalidateOnAnimation() {
+        // We try only with the AttachInfo because there's no point in invalidating
+        // if we are not attached to our window
+        final AttachInfo attachInfo = mAttachInfo;
+        if (attachInfo != null) {
+            attachInfo.mViewRootImpl.dispatchInvalidateOnAnimation(this);
+        }
+    }
+    
+    /**
+     * <p>Cause an invalidate of the specified area to happen on the next animation
+     * time step, typically the next display frame.</p>
+     *
+     * <p>This method can be invoked from outside of the UI thread
+     * only when this View is attached to a window.</p>
+     *
+     * @param left The left coordinate of the rectangle to invalidate.
+     * @param top The top coordinate of the rectangle to invalidate.
+     * @param right The right coordinate of the rectangle to invalidate.
+     * @param bottom The bottom coordinate of the rectangle to invalidate.
+     *
+     * @see #invalidate(int, int, int, int)
+     * @see #invalidate(Rect)
+     */
+    public void postInvalidateOnAnimation(int left, int top, int right, int bottom) {
+        // We try only with the AttachInfo because there's no point in invalidating
+        // if we are not attached to our window
+        final AttachInfo attachInfo = mAttachInfo;
+        if (attachInfo != null) {
+            final AttachInfo.InvalidateInfo info = AttachInfo.InvalidateInfo.obtain();
+            info.target = this;
+            info.left = left;
+            info.top = top;
+            info.right = right;
+            info.bottom = bottom;
+
+            attachInfo.mViewRootImpl.dispatchInvalidateRectOnAnimation(info);
+        }
+    }
+    
+    /**
+     * <p>Causes the Runnable to execute on the next animation time step,
+     * after the specified amount of time elapses.
+     * The runnable will be run on the user interface thread.</p>
+     *
+     * @param action The Runnable that will be executed.
+     * @param delayMillis The delay (in milliseconds) until the Runnable
+     *        will be executed.
+     *
+     * @see #postOnAnimation
+     * @see #removeCallbacks
+     */
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void postOnAnimationDelayed(Runnable action, long delayMillis) {
+            // Assume that post will succeed later
+        //ViewRootImpl.getRunQueue().postDelayed(action, delayMillis);
+        if (action != null) {
+            action.run();
+        }
+    }
+    
+
+    /**
+     * Updates the {@link Paint} object used with the current layer (used only if the current
+     * layer type is not set to {@link #LAYER_TYPE_NONE}). Changed properties of the Paint
+     * provided to {@link #setLayerType(int, android.graphics.Paint)} will be used the next time
+     * the View is redrawn, but {@link #setLayerPaint(android.graphics.Paint)} must be called to
+     * ensure that the view gets redrawn immediately.
+     *
+     * <p>A layer is associated with an optional {@link android.graphics.Paint}
+     * instance that controls how the layer is composed on screen. The following
+     * properties of the paint are taken into account when composing the layer:</p>
+     * <ul>
+     * <li>{@link android.graphics.Paint#getAlpha() Translucency (alpha)}</li>
+     * <li>{@link android.graphics.Paint#getXfermode() Blending mode}</li>
+     * <li>{@link android.graphics.Paint#getColorFilter() Color filter}</li>
+     * </ul>
+     *
+     * <p>If this view has an alpha value set to < 1.0 by calling {@link #setAlpha(float)}, the
+     * alpha value of the layer's paint is superceded by this view's alpha value.</p>
+     *
+     * @param paint The paint used to compose the layer. This argument is optional
+     *        and can be null. It is ignored when the layer type is
+     *        {@link #LAYER_TYPE_NONE}
+     *
+     * @see #setLayerType(int, android.graphics.Paint)
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setLayerPaint(Paint paint) {
+        int layerType = getLayerType();
+        if (layerType != LAYER_TYPE_NONE) {
+            mLayerPaint = paint == null ? new Paint() : paint;
+            /*
+            if (layerType == LAYER_TYPE_HARDWARE) {
+                HardwareLayer layer = getHardwareLayer();
+                if (layer != null) {
+                    layer.setLayerPaint(paint);
+                }
+                invalidateViewProperty(false, false);
+            } else {
+                invalidate();
+            }
+            */
+            invalidate();
+        }
     }
 }
 
