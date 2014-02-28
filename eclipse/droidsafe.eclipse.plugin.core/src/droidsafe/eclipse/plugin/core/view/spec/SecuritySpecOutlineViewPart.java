@@ -27,7 +27,9 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorPart;
@@ -168,16 +170,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
           IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
           IProject project = (res != null) ? res.getProject() : null;
           if (project != null && project != SecuritySpecOutlineViewPart.this.selectedProject) {
-            refreshSpecAndOutlineView();
-            // SecuritySpecOutlineViewPart.this.securitySpecModel = null;
-            // initializeSecuritySpec(SecuritySpecOutlineViewPart.this.parentComposite);
-            // if (SecuritySpecOutlineViewPart.this.securitySpecModel != null) {
-            // if (getViewer() == null) {
-            // initializeTreeViewer();
-            // } else {
-            // getViewer().setInput(securitySpecModel);
-            // }
-            // }
+            BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
+              @Override
+              public void run() {
+                refreshSpecAndOutlineView();
+              }
+            });
           }
         }
       }
@@ -203,7 +201,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
     if (getViewer() != null) {
       this.parentComposite.layout();
     }
-    
   }
 
   /**
