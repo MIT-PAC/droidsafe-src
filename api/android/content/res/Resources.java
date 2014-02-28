@@ -292,21 +292,16 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     @DSBan(DSCat.PRIVATE_METHOD)
     private NativePluralRules getPluralRule(){
 		// Original method
-		/*
-		{
         synchronized (mSync) {
             if (mPluralRule == null) {
                 mPluralRule = NativePluralRules.forLocale(mConfiguration.locale);
             }
             return mPluralRule;
         }
-    }
-		*/
-		return null;
 	}
 	
 	@DSComment("Accessing App Resource")
-    @DSSpec(DSCat.APP_RESOURCE)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getString(int id, Object... formatArgs){
 		String str = new String();
@@ -362,7 +357,10 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
                                     + Integer.toHexString(id));
     }
 		*/
-		return null;
+		CharSequence[] obj = new CharSequence[1];
+        obj.addTaint(id);
+        obj.addTaint(taint);
+        return obj;
 	}
     
 	@DSComment("Accessing App Resource")
@@ -380,7 +378,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
                                     + Integer.toHexString(id));
     }
 		*/
-		return null;
+		
+        String[] str = new String[10];
+        str.addTaint(id);
+        str.addTaint(taint);
+        return str;
 	}
     
 	@DSComment("Resource is a data structure, getting system resource is spec")
@@ -398,7 +400,10 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
                                     + Integer.toHexString(id));
     }
 		*/
-		return null;
+        int[] obj = new int[10];
+        obj.addTaint(id);
+        obj.addTaint(taint);
+		return obj;
 	}
     
 	@DSComment("seemed harmless")
@@ -419,7 +424,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         return array;
     }
 		*/
-		return null;
+        TypedArray arr = new TypedArray(DSOnlyType.DONTCARE);
+        arr.addTaint(id);
+        arr.addTaint(taint);
+		return arr;
+
 	}
     
 	@DSComment("Resource is a data structure, getting system resource is spec")
@@ -518,8 +527,6 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Drawable getDrawableForDensity(int id, int density){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             TypedValue value = mTmpValue;
             getValueForDensity(id, density, value, true);
@@ -532,16 +539,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
             }
             return loadDrawable(value, id);
         }
-    }
-		*/
-		return null;
 	}
     
 	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Movie getMovie(int id){
 		// Original method
-		/*
-		{
         InputStream is = openRawResource(id);
         Movie movie = Movie.decodeStream(is);
         try {
@@ -550,9 +552,6 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         catch (java.io.IOException e) {
         }
         return movie;
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("Resource is a data structure, getting system resource is spec")
@@ -586,16 +585,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ColorStateList getColorStateList(int id){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
             return loadColorStateList(value, id);
         }
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("Resource is a data structure, getting system resource is spec")
@@ -648,23 +642,13 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public XmlResourceParser getLayout(int id){
 		// Original method
-		/*
-		{
         return loadXmlResourceParser(id, "layout");
-    }
-		*/
-		return null;
 	}
     
 	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public XmlResourceParser getAnimation(int id){
 		// Original method
-		/*
-		{
         return loadXmlResourceParser(id, "anim");
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("seemed harmless")
@@ -672,34 +656,22 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public XmlResourceParser getXml(int id){
 		// Original method
-		/*
-		{
         return loadXmlResourceParser(id, "xml");
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     public InputStream openRawResource(int id){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             return openRawResource(id, mTmpValue);
         }
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     public InputStream openRawResource(int id, TypedValue value){
 		// Original method
-		/*
-		{
         getValue(id, value, true);
         try {
             return mAssets.openNonAsset(value.assetCookie, value.string.toString(),
@@ -710,17 +682,12 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
             rnf.initCause(e);
             throw rnf;
         }
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     public AssetFileDescriptor openRawResourceFd(int id){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
@@ -736,40 +703,26 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
                 throw rnf;
             }
         }
-    }
-		*/
-		return null;
 	}
     
 	@DSComment("Resource is a data structure")
     @DSSafe(DSCat.DATA_STRUCTURE)
     public void getValue(int id, TypedValue outValue, boolean resolveRefs){
-		// Original method
-		/*
-		{
         boolean found = mAssets.getResourceValue(id, 0, outValue, resolveRefs);
         if (found) {
             return;
         }
         throw new NotFoundException("Resource ID #0x"
                                     + Integer.toHexString(id));
-    }
-		*/
-		//Return nothing
 	}
     
 	public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs){
 		// Original method
-		/*
-		{
         boolean found = mAssets.getResourceValue(id, density, outValue, resolveRefs);
         if (found) {
             return;
         }
         throw new NotFoundException("Resource ID #0x" + Integer.toHexString(id));
-    }
-		*/
-		//Return nothing
 	}
     
 	public void getValue(String name, TypedValue outValue, boolean resolveRefs){
@@ -789,18 +742,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     
     public final Theme newTheme(){
 		// Original method
-		/*
-		{
         return new Theme();
-    }
-		*/
-		return null;
 	}
     
     public TypedArray obtainAttributes(AttributeSet set, int[] attrs){
 		// Original method
-		/*
-		{
         int len = attrs.length;
         TypedArray array = getCachedStyledAttributes(len);
         XmlBlock.Parser parser = (XmlBlock.Parser)set;
@@ -809,9 +755,6 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         array.mRsrcs = attrs;
         array.mXml = parser;
         return array;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("update system configuration")
@@ -820,12 +763,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics){
 		// Original method
-		/*
-		{
         updateConfiguration(config, metrics, null);
-    }
-		*/
-		//Return nothing
 	}
     
     public void updateConfiguration(Configuration config,
@@ -878,13 +816,8 @@ public Configuration getConfiguration() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CompatibilityInfo getCompatibilityInfo(){
 		// Original method
-		/*
-		{
         return mCompatibilityInfo != null ? mCompatibilityInfo
                 : CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
-    }
-		*/
-		return null;
 	}
     
     public void setCompatibilityInfo(CompatibilityInfo ci){
@@ -1014,30 +947,34 @@ public NotFoundException(String name) {
         @DSSafe(DSCat.DATA_STRUCTURE)
         public TypedArray obtainStyledAttributes(int[] attrs){
 			// Original method
-			/*
-			{
             int len = attrs.length;
             TypedArray array = getCachedStyledAttributes(len);
             array.mRsrcs = attrs;
             AssetManager.applyStyle(mTheme, 0, 0, 0, attrs,
                     array.mData, array.mIndices);
             return array;
-        }
-			*/
-			return null;
 		}
         
         public TypedArray obtainStyledAttributes(int resid, int[] attrs){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
-			return null;
+            TypedArray typeArray = new TypedArray(DSOnlyType.DONTCARE);
+            typeArray.addTaint(resid);
+            typeArray.addTaint(attrs[0]);
+            typeArray.addTaint(attrs.getTaint());
+            typeArray.addTaint(taint);
+            return typeArray;
 		}
         
         public TypedArray obtainStyledAttributes(AttributeSet set,
                 int[] attrs, int defStyleAttr, int defStyleRes){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
-			return null;
+            TypedArray typeArray = new TypedArray(DSOnlyType.DONTCARE);
+            typeArray.addTaint(attrs[0]);
+            typeArray.addTaint(attrs.getTaint());
+            typeArray.addTaint(taint);
+            return typeArray;
 		}
         
         @DSComment("data structure class")
@@ -1209,8 +1146,6 @@ public final AssetManager getAssets() {
             LongSparseArray<WeakReference<ConstantState>> drawableCache,
             long key){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             WeakReference<Drawable.ConstantState> wr = drawableCache.get(key);
             if (wr != null) {   
@@ -1222,11 +1157,12 @@ public final AssetManager getAssets() {
                     drawableCache.delete(key);
                 }
             }
+            Drawable ret = new ColorDrawable();
+            ret.addTaint(key);
+            ret.addTaint(drawableCache.taint);
+            ret.addTaint(getTaint());
+            return ret;
         }
-        return null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Package priviledge")
@@ -1242,8 +1178,6 @@ public final AssetManager getAssets() {
     @DSBan(DSCat.PRIVATE_METHOD)
     private ColorStateList getCachedColorStateList(int key){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             WeakReference<ColorStateList> wr = mColorStateListCache.get(key);
             if (wr != null) {   
@@ -1256,9 +1190,6 @@ public final AssetManager getAssets() {
                 }
             }
         }
-        return null;
-    }
-		*/
 		return null;
 	}
     
@@ -1267,8 +1198,6 @@ public final AssetManager getAssets() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     XmlResourceParser loadXmlResourceParser(int id, String type){
 		// Original method
-		/*
-		{
         synchronized (mTmpValue) {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
@@ -1280,9 +1209,15 @@ public final AssetManager getAssets() {
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         }
-    }
-		*/
-		return null;
+    /*
+        XmlResourceParser parser = new XmlResourceParser(); 
+        obj.addTaint(id);
+        obj.addTaint(type);
+        obj.addTaint(taint);
+		return obj;
+    */
+
+		//return null;
 	}
     
     @DSComment("Package priviledge")
@@ -1292,7 +1227,7 @@ public final AssetManager getAssets() {
             int assetCookie, String type){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+        return loadXmlResourceParser(file, id, assetCookie, type);
 	}
     
     @DSComment("Private Method")
@@ -1300,7 +1235,10 @@ public final AssetManager getAssets() {
     private TypedArray getCachedStyledAttributes(int len){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+        TypedArray arr = new TypedArray(DSOnlyType.DONTCARE);
+        arr.addTaint(len);
+        arr.addTaint(taint);
+		return arr;
 	}
 }
 

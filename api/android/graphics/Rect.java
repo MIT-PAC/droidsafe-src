@@ -16,19 +16,17 @@ public final class Rect implements Parcelable {
     @DSSafe(DSCat.SAFE_LIST)
     public static Rect unflattenFromString(String str){
 		// Original method
-		/*
-		{
+        /*
         Matcher matcher = FLATTENED_PATTERN.matcher(str);
         if (!matcher.matches()) {
             return null;
         }
-        return new Rect(Integer.parseInt(matcher.group(1)),
-                Integer.parseInt(matcher.group(2)),
-                Integer.parseInt(matcher.group(3)),
-                Integer.parseInt(matcher.group(4)));
-    }
-		*/
-		return null;
+        */
+        Rect rect = new Rect(DSUtils.FAKE_INT, DSUtils.FAKE_INT,
+                             DSUtils.FAKE_INT, DSUtils.FAKE_INT);
+        
+        rect.addTaint(str.getTaint());
+        return rect;
 	}
     
     @DSComment("From safe class list")

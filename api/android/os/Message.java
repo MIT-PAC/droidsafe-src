@@ -165,7 +165,7 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
         m.arg1 = arg1;
         m.arg2 = arg2;
         m.obj = obj;
-		return null;
+		return m;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.286 -0500", hash_original_field = "B7262A81C8C3C702FB75E30B43F29131", hash_generated_field = "D6FE2D8FA032C972D45CEB59E1725115")
 

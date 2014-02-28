@@ -2358,10 +2358,9 @@ public boolean isRestricted() {
 	    return __ds__intentsFromFilter.get(getTaintInt());
 	}
 
-    public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public abstract CompatibilityInfoHolder getCompatibilityInfo(int displayId); 
     
 }
 

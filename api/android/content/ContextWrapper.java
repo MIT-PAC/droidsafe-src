@@ -66,6 +66,7 @@ import android.os.Vibrator;
 import android.os.storage.StorageManager;
 import android.provider.AlarmClock;
 import android.telephony.TelephonyManager;
+import android.view.CompatibilityInfoHolder;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.WindowManager;
@@ -885,6 +886,12 @@ public Context getBaseContext() {
 @Override
     public boolean isRestricted() {
         return mBase.isRestricted();
+    }
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {
+        return mBase.getCompatibilityInfo(displayId);
     }
     
 }
