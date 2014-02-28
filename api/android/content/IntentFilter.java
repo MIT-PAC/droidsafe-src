@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -1569,6 +1570,25 @@ private final boolean findMimeType(String type) {
     public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }
+    Uri dataUri;
+    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void droidsafeSetDataUri(String data) {
+        try {
+            dataUri = Uri.parse(data);
+        }
+        catch (Exception ex) {
+            
+        }
+    }
+   
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public Uri droidsafeGetDataUri() {
+        return dataUri;
+    }
+
     
 }
 
