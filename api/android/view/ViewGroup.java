@@ -3113,7 +3113,8 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 			//Return nothing
 		}
-        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
         public void setMarginsRelative(int start, int top, int end, int bottom){
 			addTaint(start);
 			startMargin = start;  //Preserved
@@ -3189,6 +3190,100 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 			//Return nothing
 		}
+        
+        
+        /**
+         * Set the layout direction
+         * @param layoutDirection the layout direction.
+         *        Should be either {@link View#LAYOUT_DIRECTION_LTR}
+         *                     or {@link View#LAYOUT_DIRECTION_RTL}.
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public void setLayoutDirection(int layoutDirection) {
+            if (layoutDirection != View.LAYOUT_DIRECTION_LTR &&
+                    layoutDirection != View.LAYOUT_DIRECTION_RTL) return;
+            this.layoutDirection = layoutDirection;
+        }
+
+        /**
+         * Retuns the layout direction. Can be either {@link View#LAYOUT_DIRECTION_LTR} or
+         * {@link View#LAYOUT_DIRECTION_RTL}.
+         *
+         * @return the layout direction.
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public int getLayoutDirection() {
+            return layoutDirection;
+        }
+
+        int initialLeftMargin = DSUtils.FAKE_INT;
+        int initialRightMargin = DSUtils.FAKE_INT;
+        /**
+         * This will be called by {@link android.view.View#requestLayout()}. Left and Right margins
+         * may be overridden depending on layout direction.
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public void resolveLayoutDirection(int layoutDirection) {
+            setLayoutDirection(layoutDirection);
+
+            if (!isMarginRelative()) return;
+
+     
+            switch(layoutDirection) {
+                case View.LAYOUT_DIRECTION_RTL:
+                    leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : initialLeftMargin;
+                    rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : initialRightMargin;
+                    break;
+                case View.LAYOUT_DIRECTION_LTR:
+                default:
+                    leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : initialLeftMargin;
+                    rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : initialRightMargin;
+                    break;
+            }
+        }
+
+        /**
+         * @hide
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public boolean isLayoutRtl() {
+            return (layoutDirection == View.LAYOUT_DIRECTION_RTL);
+        }
+        
+
+        /**
+         * Sets the relative start margin.
+         *
+         * @param start the start margin size
+         *
+         * @attr ref android.R.styleable#ViewGroup_MarginLayout_layout_marginStart
+         */
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public void setMarginStart(int start) {
+            startMargin = start;
+        }
+        
+        int layoutDirection =  View.LAYOUT_DIRECTION_LTR;
+
+
+        /**
+         * Sets the relative end margin.
+         *
+         * @param end the end margin size
+         *
+         * @attr ref android.R.styleable#ViewGroup_MarginLayout_layout_marginEnd
+         */
+        
+        @DSVerified
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public void setMarginEnd(int end) {
+            endMargin = end;
+        }
     }
     
     private static final class TouchTarget {
@@ -3883,5 +3978,16 @@ public void setLayoutAnimationListener(Animation.AnimationListener animationList
 		*/
 		return false;
 	}
+    
+    int layoutMode = DSUtils.FAKE_INT;
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getLayoutMode () {
+        return layoutMode;
+    }
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setLayoutMode (int mode) {
+        layoutMode = mode;
+    }
 }
 

@@ -5,6 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import android.graphics.Rect;
@@ -643,8 +645,94 @@ void set(InternalInsetsInfo other) {
         public void onScrollChanged();
     }
     
+    List<OnWindowAttachListener> mOnWindowAttachListeners = new LinkedList<OnWindowAttachListener>();
+    /**
+     * Register a callback to be invoked when the view hierarchy is attached to a window.
+     *
+     * @param listener The callback to add
+     *
+     * @throws IllegalStateException If {@link #isAlive()} returns false
+     */
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    public void addOnWindowAttachListener(OnWindowAttachListener listener) {
+        checkIsAlive();
+
+        mOnWindowAttachListeners.add(listener);
+        if (listener != null){
+            listener.onWindowAttached();
+            listener.onWindowDetached();
+        }
+    }
+
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    public void removeOnWindowAttachListener(OnWindowAttachListener listener) {
+        // we do not need to do anything in the remove method
+    }
+    
+    List<OnWindowFocusChangeListener> mOnWindowFocusListeners = 
+            new LinkedList<OnWindowFocusChangeListener>();
+
+    /**
+     * Register a callback to be invoked when the window focus state within the view tree changes.
+     *
+     * @param listener The callback to add
+     *
+     * @throws IllegalStateException If {@link #isAlive()} returns false
+     */
+    @DSVerified
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    public void addOnWindowFocusChangeListener(OnWindowFocusChangeListener listener) {
+        checkIsAlive();
+
+        mOnWindowFocusListeners.add(listener);
+        if (listener != null) {
+            listener.onWindowFocusChanged(DSUtils.UNKNOWN_BOOLEAN);
+        }
+    }
+    
+    /**
+     * Interface definition for a callback to be invoked when the view hierarchy is
+     * attached to and detached from its window.
+     */
+    public interface OnWindowAttachListener {
+        /**
+         * Callback method to be invoked when the view hierarchy is attached to a window
+         */
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public void onWindowAttached();
+
+        /**
+         * Callback method to be invoked when the view hierarchy is detached from a window
+         */
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public void onWindowDetached();
+    }
+    
+
+    /**
+     * Interface definition for a callback to be invoked when the view hierarchy's window
+     * focus state changes.
+     */
+    public interface OnWindowFocusChangeListener {
+        /**
+         * Callback method to be invoked when the window focus changes in the view tree.
+         *
+         * @param hasFocus Set to true if the window is gaining focus, false if it is
+         * losing focus.
+         */
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public void onWindowFocusChanged(boolean hasFocus);
+    }
+
     public interface OnComputeInternalInsetsListener {
         
+        @DSVerified
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onComputeInternalInsets(InternalInsetsInfo inoutInfo);
     }
     

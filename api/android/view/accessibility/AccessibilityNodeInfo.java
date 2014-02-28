@@ -105,6 +105,44 @@ private static String getActionSymbolicName(int action) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.167 -0500", hash_original_field = "8BF5B7BB2C741E6F51882B1E85E5F169", hash_generated_field = "1E642CC81E6D04170ACE577F1365D5E0")
 
     private static final int UNDEFINED = -1;
+
+    public static final long ROOT_NODE_ID = -1; 
+
+    private static final int BOOLEAN_PROPERTY_CHECKABLE = 0x00000001;
+
+    private static final int BOOLEAN_PROPERTY_CHECKED = 0x00000002;
+
+    private static final int BOOLEAN_PROPERTY_FOCUSABLE = 0x00000004;
+
+    private static final int BOOLEAN_PROPERTY_FOCUSED = 0x00000008;
+
+    private static final int BOOLEAN_PROPERTY_SELECTED = 0x00000010;
+
+    private static final int BOOLEAN_PROPERTY_CLICKABLE = 0x00000020;
+
+    private static final int BOOLEAN_PROPERTY_LONG_CLICKABLE = 0x00000040;
+
+    private static final int BOOLEAN_PROPERTY_ENABLED = 0x00000080;
+
+    private static final int BOOLEAN_PROPERTY_PASSWORD = 0x00000100;
+
+    private static final int BOOLEAN_PROPERTY_SCROLLABLE = 0x00000200;
+
+    private static final int BOOLEAN_PROPERTY_ACCESSIBILITY_FOCUSED = 0x00000400;
+
+    private static final int BOOLEAN_PROPERTY_VISIBLE_TO_USER = 0x00000800;
+
+    private static final int BOOLEAN_PROPERTY_EDITABLE = 0x00001000;
+
+    private static final int BOOLEAN_PROPERTY_OPENS_POPUP = 0x00002000;
+
+    private static final int BOOLEAN_PROPERTY_DISMISSABLE = 0x00004000;
+
+    private static final int BOOLEAN_PROPERTY_MULTI_LINE = 0x00008000;
+
+    private static final int BOOLEAN_PROPERTY_CONTENT_INVALID = 0x00010000;
+
+    
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.170 -0500", hash_original_field = "617EB5A49831D4E42CC1FEF3965E4033", hash_generated_field = "F78F9523CB351E82CADC0E3370F65663")
 
     /**
@@ -180,6 +218,38 @@ public AccessibilityNodeInfo[] newArray(int size) {
             return new AccessibilityNodeInfo[size];
         }
     };
+    private int mWindowId = UNDEFINED;
+    private long mSourceNodeId = ROOT_NODE_ID;
+    private long mParentNodeId = ROOT_NODE_ID;
+    private long mLabelForId = ROOT_NODE_ID;
+    private long mLabeledById = ROOT_NODE_ID;
+
+
+    /**
+     * Movement granularity bit for traversing the text of a node by character.
+     */
+    public static final int MOVEMENT_GRANULARITY_CHARACTER = 0x00000001;
+
+    /**
+     * Movement granularity bit for traversing the text of a node by word.
+     */
+    public static final int MOVEMENT_GRANULARITY_WORD = 0x00000002;
+
+    /**
+     * Movement granularity bit for traversing the text of a node by line.
+     */
+    public static final int MOVEMENT_GRANULARITY_LINE = 0x00000004;
+
+    /**
+     * Movement granularity bit for traversing the text of a node by paragraph.
+     */
+    public static final int MOVEMENT_GRANULARITY_PARAGRAPH = 0x00000008;
+
+    /**
+     * Movement granularity bit for traversing the text of a node by page.
+     */
+    public static final int MOVEMENT_GRANULARITY_PAGE = 0x00000010;
+    
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.214 -0500", hash_original_field = "7529D89125C85FA10C2D8024D951EA47", hash_generated_field = "C62243493B3195CCB3CA5EBD27BBE8A1")
 
     private AccessibilityNodeInfo mNext;
@@ -228,6 +298,9 @@ public AccessibilityNodeInfo[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.248 -0500", hash_original_field = "8B5A4110581AEE7B543A400E2F63419C", hash_generated_field = "19848A63CACE6F8B90BC11DC69A6EB80")
 
     private int mConnectionId = UNDEFINED;
+private int mLiveRegion;
+private int mMovementGranularities;
+private String mViewIdResourceName;
 
     /**
      * Hide constructor from clients.
@@ -1324,9 +1397,9 @@ private void clear() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.398 -0500", hash_original_method = "554416B444549B4EB33FDEE3DD8518FA", hash_generated_method = "B64BAFB1492494C16331DCA440BBD62E")
     
-private boolean canPerformRequestOverConnection(int accessibilityViewId) {
+private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
         return (mConnectionId != UNDEFINED && mAccessibilityWindowId != UNDEFINED
-                && accessibilityViewId != UNDEFINED);
+                && mSourceNodeId2 != UNDEFINED);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.400 -0500", hash_original_method = "75F2609B8EC69930F0DC5E65EF5711F8", hash_generated_method = "547EDF81AA61F05F1F04339744629523")
@@ -1430,5 +1503,248 @@ private boolean canPerformRequestOverConnection(int accessibilityViewId) {
             return new AccessibilityNodeInfo[size];
         }
     
+    /**
+     * Find the view that has the specified focus type. The search starts from
+     * the view represented by this node info.
+     *
+     * @param focus The focus to find. One of {@link #FOCUS_INPUT} or
+     *         {@link #FOCUS_ACCESSIBILITY}.
+     * @return The node info of the focused view or null.
+     *
+     * @see #FOCUS_INPUT
+     * @see #FOCUS_ACCESSIBILITY
+     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public AccessibilityNodeInfo findFocus(int focus) {
+        enforceSealed();
+        //enforceValidFocusType(focus);
+        if (!canPerformRequestOverConnection(mSourceNodeId)) {
+            return null;
+        }
+        /*
+        return AccessibilityInteractionClient.getInstance().findFocus(mConnectionId, mWindowId,
+                mSourceNodeId, focus);
+        */
+        AccessibilityNodeInfo node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
+        node.addTaint(taint);
+        node.addTaint(focus);
+        return node;
+    }
+    
+    /**
+     * Searches for the nearest view in the specified direction that can take
+     * the input focus.
+     *
+     * @param direction The direction. Can be one of:
+     *     {@link View#FOCUS_DOWN},
+     *     {@link View#FOCUS_UP},
+     *     {@link View#FOCUS_LEFT},
+     *     {@link View#FOCUS_RIGHT},
+     *     {@link View#FOCUS_FORWARD},
+     *     {@link View#FOCUS_BACKWARD}.
+     *
+     * @return The node info for the view that can take accessibility focus.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public AccessibilityNodeInfo focusSearch(int direction) {
+        enforceSealed();
+        if (!canPerformRequestOverConnection(mSourceNodeId)) {
+            return null;
+        }
+        AccessibilityNodeInfo node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
+        node.addTaint(taint);
+        node.addTaint(direction);
+        return node;
+        /*
+        return AccessibilityInteractionClient.getInstance().focusSearch(mConnectionId, mWindowId,
+                mSourceNodeId, direction);
+        */
+    }
+    
+    /**
+     * Gets the node's live region mode.
+     * <p>
+     * A live region is a node that contains information that is important for
+     * the user and when it changes the user should be notified. For example,
+     * in a login screen with a TextView that displays an "incorrect password"
+     * notification, that view should be marked as a live region with mode
+     * {@link View#ACCESSIBILITY_LIVE_REGION_POLITE}.
+     * <p>
+     * It is the responsibility of the accessibility service to monitor
+     * {@link AccessibilityEvent#TYPE_WINDOW_CONTENT_CHANGED} events indicating
+     * changes to live region nodes and their children.
+     *
+     * @return The live region mode, or
+     *         {@link View#ACCESSIBILITY_LIVE_REGION_NONE} if the view is not a
+     *         live region.
+     * @see android.view.View#getAccessibilityLiveRegion()
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getLiveRegion() {
+        return mLiveRegion;
+    }
+
+    /**
+     * Sets the node's live region mode.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     *
+     * @param mode The live region mode, or
+     *        {@link View#ACCESSIBILITY_LIVE_REGION_NONE} if the view is not a
+     *        live region.
+     * @see android.view.View#setAccessibilityLiveRegion(int)
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setLiveRegion(int mode) {
+        enforceNotSealed();
+        mLiveRegion = mode;
+    }
+    
+
+    /**
+     * Sets the movement granularities for traversing the text of this node.
+     * <p>
+     *   <strong>Note:</strong> Cannot be called from an
+     *   {@link android.accessibilityservice.AccessibilityService}.
+     *   This class is made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param granularities The bit mask with granularities.
+     *
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setMovementGranularities(int granularities) {
+        enforceNotSealed();
+        mMovementGranularities = granularities;
+    }
+
+    /**
+     * Gets the movement granularities for traversing the text of this node.
+     *
+     * @return The bit mask with granularities.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public int getMovementGranularities() {
+        return mMovementGranularities;
+    }
+
+
+    /**
+     * Gets the human readable movement granularity symbolic name.
+     *
+     * @param granularity The granularity.
+     * @return The symbolic name.
+     */
+    private static String getMovementGranularitySymbolicName(int granularity) {
+        switch (granularity) {
+            case MOVEMENT_GRANULARITY_CHARACTER:
+                return "MOVEMENT_GRANULARITY_CHARACTER";
+            case MOVEMENT_GRANULARITY_WORD:
+                return "MOVEMENT_GRANULARITY_WORD";
+            case MOVEMENT_GRANULARITY_LINE:
+                return "MOVEMENT_GRANULARITY_LINE";
+            case MOVEMENT_GRANULARITY_PARAGRAPH:
+                return "MOVEMENT_GRANULARITY_PARAGRAPH";
+            case MOVEMENT_GRANULARITY_PAGE:
+                return "MOVEMENT_GRANULARITY_PAGE";
+            default:
+                throw new IllegalArgumentException("Unknown movement granularity: " + granularity);
+        }
+    }
+    
+
+    /**
+     * Sets the fully qualified resource name of the source view's id.
+     *
+     * <p>
+     *   <strong>Note:</strong> Cannot be called from an
+     *   {@link android.accessibilityservice.AccessibilityService}.
+     *   This class is made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param viewIdResName The id resource name.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setViewIdResourceName(String viewIdResName) {
+        enforceNotSealed();
+        mViewIdResourceName = viewIdResName;
+    }
+
+    /**
+     * Gets the fully qualified resource name of the source view's id.
+     *
+     * <p>
+     *   <strong>Note:</strong> The primary usage of this API is for UI test automation
+     *   and in order to report the source view id of an {@link AccessibilityNodeInfo} the
+     *   client has to set the {@link AccessibilityServiceInfo#FLAG_REPORT_VIEW_IDS}
+     *   flag when configuring his {@link android.accessibilityservice.AccessibilityService}.
+     * </p>
+
+     * @return The id resource name.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public String getViewIdResourceName() {
+        return mViewIdResourceName;
+    }
+
+
+    /**
+     * Sets whether this node is visible to the user.
+     *
+     * @return Whether the node is visible to the user.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS) 
+    public boolean isVisibleToUser() {
+        return getBooleanProperty(BOOLEAN_PROPERTY_VISIBLE_TO_USER);
+    }
+
+    /**
+     * Sets whether this node is visible to the user.
+     * <p>
+     *   <strong>Note:</strong> Cannot be called from an
+     *   {@link android.accessibilityservice.AccessibilityService}.
+     *   This class is made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param visibleToUser Whether the node is visible to the user.
+     *
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setVisibleToUser(boolean visibleToUser) {
+        setBooleanProperty(BOOLEAN_PROPERTY_VISIBLE_TO_USER, visibleToUser);
+    }
+
+    /**
+     * Gets whether this node is accessibility focused.
+     *
+     * @return True if the node is accessibility focused.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public boolean isAccessibilityFocused() {
+        return getBooleanProperty(BOOLEAN_PROPERTY_ACCESSIBILITY_FOCUSED);
+    }
+
+    /**
+     * Sets whether this node is accessibility focused.
+     * <p>
+     *   <strong>Note:</strong> Cannot be called from an
+     *   {@link android.accessibilityservice.AccessibilityService}.
+     *   This class is made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param focused True if the node is accessibility focused.
+     *
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setAccessibilityFocused(boolean focused) {
+        setBooleanProperty(BOOLEAN_PROPERTY_ACCESSIBILITY_FOCUSED, focused);
+    }
+
 }
 
