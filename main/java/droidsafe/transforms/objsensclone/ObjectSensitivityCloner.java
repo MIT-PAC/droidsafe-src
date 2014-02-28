@@ -377,7 +377,7 @@ public class ObjectSensitivityCloner {
                 
                 //clone and install method
                 //create new method
-                String cloneName = method.getName() + "__" + i;
+                String cloneName = method.getName() + CloneInheritedMethods.CLONED_METHOD_SUFFIX + i;
                 
                 SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
                     method.getReturnType(), method.getModifiers(), method.getExceptions());

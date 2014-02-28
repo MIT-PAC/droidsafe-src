@@ -59,7 +59,7 @@ public class CloneInheritedMethods {
     /** class on which we are working */
     private SootClass clazz;
     /** suffix to add to cloned methods that were hidden by inheritance but are reachable by invoke special */
-    private static final String CLONED_HIDDEN_METHOD_SUFFIX = "_ds_hidden_clone_";
+    public static final String CLONED_METHOD_SUFFIX = "_ds_method_clone_";
     /** id to add to cloned methods that were hidden by inheritance but are reachable by invoke special */
     private static int cloned_method_id = 0;
     /** if true clone all methods otherwise clone only reachable */
@@ -213,7 +213,7 @@ public class CloneInheritedMethods {
                             if (debug) System.out.println("\tChange ref " + cloneOfTarget);
                         } else if (parents.contains(target.getDeclaringClass())) {
                             //target has not been cloned, but should be cloned, so clone it and change ref of invoke
-                            String name = target.getName() + CLONED_HIDDEN_METHOD_SUFFIX + (cloned_method_id++);
+                            String name = target.getName() + CLONED_METHOD_SUFFIX + (cloned_method_id++);
                             SootMethod clonedMethod = cloneMethod(target, name);
                             si.setMethodRef(clonedMethod.makeRef());
                             cloneAdded = true;
@@ -322,7 +322,7 @@ public class CloneInheritedMethods {
     }
     
     public static String removeMethodCloneSuffix(String str) {
-        String regex = CLONED_HIDDEN_METHOD_SUFFIX+"[0-9]+";
+        String regex = CLONED_METHOD_SUFFIX+"[0-9]+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
         return matcher.replaceAll("");
