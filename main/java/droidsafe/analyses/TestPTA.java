@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import soot.Context;
 import soot.Local;
 import soot.MethodOrMethodContext;
+import soot.Scene;
 import soot.SootMethod;
 import soot.Value;
 import soot.ValueBox;
@@ -47,7 +48,6 @@ public class TestPTA  {
 
 
     public void visitMethods() {
-        // TODO Auto-generated method stub
         for (SootMethod method : PTABridge.v().getReachableMethods()) {
             testMethod(method);
         }
@@ -65,16 +65,27 @@ public class TestPTA  {
             SootMethod method = momc.method();
             Context context = momc.context();
             
-            if (!method.getSignature().startsWith("<edu.droidsafe"))
-                continue;
             
+            if (!method.getSignature().contains("<java.lang.RealToString: java.lang.RealToString getInstance()"))
+                continue;
+                      
             if (!method.isConcrete())
                 continue;
             if (!method.hasActiveBody()) {
                 method.retrieveActiveBody();
             }
             
+            Iterator<Edge> edges = Scene.v().getCallGraph().edgesInto(momc); 
+            while (edges.hasNext()) {
+                System.out.println(edges.next());
+            }
+            
             System.out.println(momc);
+            
+            edges = Scene.v().getCallGraph().edgesOutOf(momc); 
+            while (edges.hasNext()) {
+                System.out.println(edges.next());
+            }
             
             // We first gather all the memory access expressions
             for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {

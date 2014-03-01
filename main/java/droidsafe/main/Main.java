@@ -13,6 +13,7 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
@@ -212,7 +213,6 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-
         //run jsa after we inject strings from XML values and layout
         //does not need a pta run before
         driverMsg("Starting String Analysis...");
@@ -239,11 +239,15 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }     
 
+        new TestPTA();
+        
         //run value analysis, if it runs, then the code may have veen transformed
         if (Config.v().runValueAnalysis) {
             runVA(monitor);
         }
 
+        new TestPTA();
+        
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
@@ -260,6 +264,8 @@ public class Main {
             }
         }
 
+        new TestPTA();
+                
         {
             //account for any transformations
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
@@ -274,6 +280,9 @@ public class Main {
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
+        new TestPTA();
+
+        
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
         rcfgTimer.start();
@@ -308,8 +317,6 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        //Test the points to analysis
-        //new TestPTA();
 
         if (Config.v().writeJimpleAppClasses) {
             driverMsg("Writing Jimple Classes.");
@@ -462,10 +469,7 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+        
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
         ClassGetNameToClassString.run();
