@@ -4,6 +4,7 @@ package android.test.mock;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -587,6 +588,43 @@ public void enforceUriPermission(
     public boolean isRestricted() {
         throw new UnsupportedOperationException();        
     }
+    
+
+    @Override
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public File[] getExternalCacheDirs() {
+        // TODO Auto-generated method stub
+        File[] files = new File[1];
+        
+        files[0] = new File("<external-cache-dirs>");
+        
+        return files;
+        
+    }
+
+    @Override
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public File[] getExternalFileDirs() {
+        File[] files = new File[1];
+        
+        files[0] = new File("<external-file-dirs>");
+        
+        return files;
+    }
+
+    @Override
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public File[] getObbDirs() {
+        File[] files = new File[1];
+        
+        files[0] = new File("<obb-dirs>");
+        
+        return files;
+    }
+    
 
     
 }

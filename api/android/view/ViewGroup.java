@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -2699,8 +2700,10 @@ public LayoutTransition getLayoutTransition() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.941 -0500", hash_original_method = "71AA4DA3A86B859FE325E7D3AB99A56D", hash_generated_method = "C9442B2DA782FC842F7449F8B61E3ED6")
     
 @Override
-    protected abstract void onLayout(boolean changed,
-            int l, int t, int r, int b);
+    protected void onLayout(boolean changed,
+            int l, int t, int r, int b){
+        
+    }
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
@@ -3988,6 +3991,13 @@ public void setLayoutAnimationListener(Animation.AnimationListener animationList
     @DSSafe(DSCat.SAFE_OTHERS)
     public void setLayoutMode (int mode) {
         layoutMode = mode;
+    }
+    
+    @DSVerified
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void childHasTransientStateChanged(View view,
+            boolean hasTransientState) {
+        
     }
 }
 

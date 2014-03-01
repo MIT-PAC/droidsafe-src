@@ -1210,10 +1210,10 @@ private static final int[] PFLAG2_TEXT_DIRECTION_FLAGS = {
  */
 static final int PFLAG2_TEXT_DIRECTION_RESOLVED_DEFAULT =
         TEXT_DIRECTION_RESOLVED_DEFAULT << PFLAG2_TEXT_DIRECTION_RESOLVED_MASK_SHIFT;
-static final int LAYOUT_DIRECTION_LOCALE = 0;
-static final int LAYOUT_DIRECTION_LTR = -1;
-static final int LAYOUT_DIRECTION_RTL = 0;
-static final int LAYOUT_DIRECTION_INHERIT = 0;
+public static final int LAYOUT_DIRECTION_LOCALE = 0;
+public static final int LAYOUT_DIRECTION_LTR = -1;
+public static final int LAYOUT_DIRECTION_RTL = 0;
+public static final int LAYOUT_DIRECTION_INHERIT = 0;
 
     public static Property<View, Float> ALPHA = new MyFloatPropertyView("alpha");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.675 -0400", hash_original_field = "2463A82C1B3B068FBED45F14B07DEA60", hash_generated_field = "2E88A25ECF88D0581B11F01DDC5B788E")

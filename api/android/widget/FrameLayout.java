@@ -4,6 +4,7 @@ package android.widget;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -702,6 +703,15 @@ public LayoutParams(ViewGroup.MarginLayoutParams source) {
 @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         return new LayoutParams(p);
+    }
+
+    @Override
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public void childHasTransientStateChanged(View view,
+            boolean hasTransientState) {
+        // TODO Auto-generated method stub
+        
     }
 }
 

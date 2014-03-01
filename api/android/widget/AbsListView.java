@@ -55,7 +55,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static View retrieveFromScrap(ArrayList<View> scrapViews, int position){
 		// Original method
-		/*
+
 		{
         int size = scrapViews.size();
         if (size > 0) {
@@ -72,8 +72,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             return null;
         }
     }
-		*/
-		return null;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.797 -0500", hash_original_field = "38E044CB52C13C2CC72B802D346B5A5F", hash_generated_field = "E0C0A7FB76C7D7FDA0F484B266D28899")
 
@@ -598,7 +596,9 @@ public AbsListView(Context context, AttributeSet attrs) {
         return null;
     }
 		*/
-		return null;
+    	SparseBooleanArray sb = new SparseBooleanArray();
+    	sb.addTaint(getTaint());
+		return sb;
 	}
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -618,7 +618,8 @@ public AbsListView(Context context, AttributeSet attrs) {
         return ids;
     }
 		*/
-		return null;
+    	long[] la = new long[1];
+		return la;
 	}
     
     public void clearChoices(){
@@ -1038,7 +1039,7 @@ public AbsListView(Context context, AttributeSet attrs) {
     @Override public Parcelable onSaveInstanceState(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+		return super.onSaveInstanceState();
 	}
     
     @Override public void onRestoreInstanceState(Parcelable state){
@@ -1086,15 +1087,12 @@ public AbsListView(Context context, AttributeSet attrs) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getTextFilter(){
 		// Original method
-		/*
 		{
         if (mTextFilterEnabled && mTextFilter != null) {
             return mTextFilter.getText();
         }
         return null;
     }
-		*/
-		return null;
 	}
     
     @Override protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect){
@@ -1321,7 +1319,6 @@ protected void layoutChildren() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override @ViewDebug.ExportedProperty public View getSelectedView(){
 		// Original method
-		/*
 		{
         if (mItemCount > 0 && mSelectedPosition >= 0) {
             return getChildAt(mSelectedPosition - mFirstPosition);
@@ -1329,8 +1326,6 @@ protected void layoutChildren() {
             return null;
         }
     }
-		*/
-		return null;
 	}
     
     @DSComment("Abstract AbsListView")
@@ -1387,7 +1382,7 @@ protected void layoutChildren() {
     View obtainView(int position, boolean[] isScrap){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+    	return null;
 	}
     
     @DSComment("Package priviledge")
@@ -1664,7 +1659,8 @@ public void setScrollIndicators(View up, View down) {
         return state;
     }
 		*/
-		return null;
+    	int[] i = new int[1];
+		return i;
 	}
     
     @Override public boolean verifyDrawable(Drawable dr){
@@ -1729,12 +1725,10 @@ public void setScrollIndicators(View up, View down) {
     
     ContextMenuInfo createContextMenuInfo(View view, int position, long id){
 		// Original method
-		/*
 		{
         return new AdapterContextMenuInfo(view, position, id);
     }
-		*/
-		return null;
+
 	}
     
     boolean performLongPress(final View child,
@@ -3328,7 +3322,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getActiveView(int position){
 			// Original method
-			/*
 			{
             int index = position - mFirstActivePosition;
             final View[] activeViews = mActiveViews;
@@ -3339,8 +3332,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
             }
             return null;
         }
-			*/
-			return null;
+
 		}
         
         @DSComment("Package priviledge")
@@ -3348,7 +3340,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getScrapView(int position){
 			// Original method
-			/*
 			{
             if (mViewTypeCount == 1) {
                 return retrieveFromScrap(mCurrentScrap, position);
@@ -3360,8 +3351,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
             }
             return null;
         }
-			*/
-			return null;
 		}
         
         @DSComment("Package priviledge")
@@ -3521,7 +3510,12 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     @Override public InputConnection onCreateInputConnection(EditorInfo outAttrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
+   	 if (isTextFilterEnabled()) {
+   		createTextFilter(false);
+   		return new InputConnectionWrapper(mTextFilter.onCreateInputConnection(outAttrs), true);
+   	 }else {
 		return null;
+   	 }
 	}
     
     @Override public boolean checkInputConnectionProxy(View view){
@@ -3627,32 +3621,24 @@ public void afterTextChanged(Editable s) {
     
     @Override protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
-		/*
 		{
         return new LayoutParams(p);
     }
-		*/
-		return null;
 	}
     
     @Override public LayoutParams generateLayoutParams(AttributeSet attrs){
 		// Original method
-		/*
 		{
         return new AbsListView.LayoutParams(getContext(), attrs);
     }
-		*/
-		return null;
 	}
     
     @Override protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
-		/*
 		{
         return p instanceof AbsListView.LayoutParams;
     }
-		*/
-		return false;
+
 	}
     
     @DSComment("Abstract AbsListView")
