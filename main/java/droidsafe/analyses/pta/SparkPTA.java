@@ -107,11 +107,12 @@ public class SparkPTA extends PTABridge {
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
      * to one.
+     * 
+     * Strings will be added if the precisestrings options is given
      */
-    private static final String  LIMIT_DEPTH_TO_ONE = 
+    private static String  LIMIT_DEPTH_TO_ONE = 
             "java.lang.Throwable,java.math.BigInt,java.math.BigInteger,"+
-             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point," +
-             "java.lang.String,java.lang.StringBuffer,java.lang.StringBuilder";
+             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point"; 
     
     public SparkPTA(Map<String,String> opts) {
         super(opts);
@@ -667,7 +668,13 @@ public class SparkPTA extends PTABridge {
         opt.put("string-constants","true");   
 
         opt.put("kobjsens", Integer.toString(K));
-
+        //if you change this to true, the turn of the static method cloner!
+        opt.put("objsens-context-for-static-methods", "false");
+        
+        //if we don't want precise strings, then limit the depth of k to one for string types
+        if (!Config.v().preciseStrings)
+            LIMIT_DEPTH_TO_ONE += ",java.lang.String,java.lang.StringBuffer,java.lang.StringBuilder";
+        
         opt.put("obj-sens-no-context-list", 
                 LIMIT_DEPTH_TO_ONE);
         

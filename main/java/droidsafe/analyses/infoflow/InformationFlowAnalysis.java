@@ -198,10 +198,10 @@ public class InformationFlowAnalysis {
                 this.state = state;
                 hasChanged = true;
             }
-//            G.v().out.println("locals.size() = " + this.state.locals.size());
-//           G.v().out.println("instances.size() = " + this.state.instances.size());
-//            G.v().out.println("arrays.size() = " + this.state.arrays.size());
-//            G.v().out.println("statics.size() = " + this.state.statics.size());
+            G.v().out.println("locals.size() = " + this.state.locals.size());
+           G.v().out.println("instances.size() = " + this.state.instances.size());
+            G.v().out.println("arrays.size() = " + this.state.arrays.size());
+           G.v().out.println("statics.size() = " + this.state.statics.size());
         } while (hasChanged);
     }
 

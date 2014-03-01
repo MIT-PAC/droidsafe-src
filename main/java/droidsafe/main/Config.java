@@ -136,6 +136,8 @@ public class Config {
     public int kobjsens = 2;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
+    /** should we add context greater than 1 to string for more precise, but could blow up! */
+    public boolean preciseStrings = false;
 
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -225,6 +227,9 @@ public class Config {
         Option noCloneStatics = new Option("noclonestatics", "Do not clone static methods to add call site sensitivity");
         options.addOption(noCloneStatics);
 
+        Option preciseStrs = new Option("precisestrings", "turn on extra precision for strings, EXPENSIVE");
+        options.addOption(preciseStrs);
+        
         Option writeJimple =
                 new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
         options.addOption(writeJimple);
@@ -372,6 +377,10 @@ public class Config {
             this.cloneStaticCalls = false;
         }
 
+        if (cmd.hasOption("precisestrings")) {
+            this.preciseStrings = true;
+        }
+        
         if (cmd.hasOption("noinfoflow")) {
             this.infoFlow = false;
         }
