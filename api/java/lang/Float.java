@@ -12,19 +12,19 @@ public final class Float extends Number implements Comparable<Float> {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int floatToIntBits(float value) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)value;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int floatToRawIntBits(float value) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)value;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static float intBitsToFloat(int bits) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return (float)bits;
     }
 
     /**
