@@ -185,7 +185,7 @@ public static short reverseBytes(short s) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.159 -0500", hash_original_method = "35082CB91401B94EAC986E5B2FF0266B", hash_generated_method = "7296C5697BB66FEC2AC94F5102A69D0E")
     
 public static Short valueOf(short s) {
-        return s < -128 || s >= 128 ? new Short(s) : SMALL_VALUES[s + 128];
+        return new Short(s);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.093 -0500", hash_original_field = "A8778D06FF83BAF5C55E40DEE84ED89F", hash_generated_field = "AC22C2D7B4371C5B3354C8DF803452A1")
 
@@ -204,9 +204,7 @@ public static Short valueOf(short s) {
     @SuppressWarnings("unchecked")
     public static final Class<Short> TYPE
             = (Class<Short>) short[].class.getComponentType();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.162 -0500", hash_original_field = "97B531C87F4FB80CFD372E04927CE7B6", hash_generated_field = "5EDCE38E3A4104420004ABECDB3724B1")
 
-    private static final Short[] SMALL_VALUES = new Short[256];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.095 -0500", hash_original_field = "BB4D74E719D7C3FD900295EFF5775244", hash_generated_field = "6B20F172DB6AEA88BC2254D4F28BB29D")
 
     private  short value;
@@ -361,12 +359,6 @@ public int compareTo(Short object) {
 @Override
     public String toString() {
         return Integer.toString(value);
-    }
-    static {
-        for (int i = -128; i < 128; i++) {
-            SMALL_VALUES[i + 128] = new Short((short) i);
-        }
-    }
-    
+    }    
 }
 

@@ -7,13 +7,13 @@ import droidsafe.annotations.*;
 public interface Projection {
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public GeoPoint fromPixels(int x, int y);
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public float metersToEquatorPixels(float meters);
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public Point toPixels(GeoPoint in, Point out);
     
 }

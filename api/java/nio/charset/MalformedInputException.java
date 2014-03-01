@@ -37,7 +37,8 @@ public int getInputLength() {
         return this.inputLength;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.093 -0500", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "1857012EE798A7AA3F53EF74BDA89DF6")
     
 @Override

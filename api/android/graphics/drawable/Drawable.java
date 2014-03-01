@@ -316,7 +316,6 @@ public abstract void draw(Canvas canvas);
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.903 -0500", hash_original_method = "16D67C97CF930C94423B2F0ABE9E2FB8", hash_generated_method = "5DAE90321A04C30BBDBF694E00F0AABC")
     @DSVerified    
     
@@ -340,7 +339,6 @@ public void setBounds(int left, int top, int right, int bottom) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.905 -0500", hash_original_method = "343A23DF727C21562F2BBDB7DAA5F811", hash_generated_method = "6874DBC0AAB6A4D64EC3FDE9608CF73D")
     @DSVerified    
     
@@ -460,7 +458,6 @@ public int getChangingConfigurations() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.919 -0500", hash_original_method = "A73E6D639014FDB13967AD6B494837C8", hash_generated_method = "885C8677A0ED029E797386D2040088D8")
     @DSVerified    
     
@@ -474,7 +471,6 @@ public void setDither(boolean dither) {}
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.921 -0500", hash_original_method = "D611F7535670B80ECD8BF210909C26D1", hash_generated_method = "72A4AA63A3BDB8FE50798AE60EFC3156")
     @DSVerified    
 public void setFilterBitmap(boolean filter) {}

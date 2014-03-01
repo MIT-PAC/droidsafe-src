@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -369,26 +370,6 @@ private IntentFilter(Parcel source) {
         mPriority = source.readInt();
         mHasPartialTypes = source.readInt() > 0;
     }
-
-    Uri dataUri;
-    
-    @DSVerified
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public void droidsafeSetDataUri(String data) {
-        try {
-            dataUri = Uri.parse(data);
-        }
-        catch (Exception ex) {
-            
-        }
-    }
-   
-    @DSVerified
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public Uri droidsafeGetDataUri() {
-        return dataUri;
-    }
-
     /**
      * Modify priority of this filter.  The default priority is 0. Positive
      * values will be before the default, lower values will be after it.
@@ -1588,6 +1569,28 @@ private final boolean findMimeType(String type) {
     public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }
+
+
+
+
+    Uri dataUri;
+    
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeSetDataUri(String data) {
+        try {
+            dataUri = new Uri(data);
+        }
+        catch (Exception ex) {
+            
+        }
+    }
+   
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Uri droidsafeGetDataUri() {
+        return dataUri;
+    }
     
 }
 

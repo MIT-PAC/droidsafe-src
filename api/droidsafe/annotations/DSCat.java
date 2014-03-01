@@ -15,7 +15,8 @@ public enum DSCat {
     DATA_GENERAL,
     SAFE_OTHERS,
     UTIL_FUNCTION,
-    
+    SOURCE,
+
     //Ban Categories
     DALVIK,
     PRIVATE_METHOD,

@@ -448,7 +448,6 @@ public Window getWindow() {
 		*/
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
 	@DSVerified("Modeled Lifecycle Event")
@@ -1653,7 +1652,7 @@ public void onDetachedFromWindow() {
 	}
     
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));

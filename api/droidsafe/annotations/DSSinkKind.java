@@ -23,5 +23,6 @@ public enum DSSinkKind {
     SYNCHRONIZATION_DATA,
     SYSTEM_SETTINGS,
     VOIP,
-    UNSPECIFIED
+    UNSPECIFIED,
+    USB
 }

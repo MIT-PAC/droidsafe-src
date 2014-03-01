@@ -66,7 +66,7 @@ public static int compare(char lhs, char rhs) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.088 -0500", hash_original_method = "F129BF1AA7DEE10DECE549FDC9BFFE92", hash_generated_method = "F095D9571C020E30A8442C3CF921848D")
     
 public static Character valueOf(char c) {
-        return c < 128 ? SMALL_VALUES[c] : new Character(c);
+        return new Character(c);
     }
     /**
      * Indicates whether {@code codePoint} is a valid Unicode code point.
@@ -3007,9 +3007,7 @@ private UnicodeBlock(String blockName, int start, int end) {
             DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE,
             DIRECTIONALITY_POP_DIRECTIONAL_FORMAT,
             DIRECTIONALITY_NONSPACING_MARK, DIRECTIONALITY_BOUNDARY_NEUTRAL };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.090 -0500", hash_original_field = "746163763AABF4DDD9581130113F2B00", hash_generated_field = "6CC9F0022C62911835E4ACEBBB9BE5BF")
 
-    private static final Character[] SMALL_VALUES = new Character[128];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.461 -0500", hash_original_field = "116C54C63A0999E8859ECE8A2FFB8D84", hash_generated_field = "747ED88C4962B4F2D5A7D8AD1452F805")
 
     private  char value;
@@ -3099,11 +3097,6 @@ public int compareTo(Character c) {
 @Override
     public String toString() {
         return String.valueOf(value);
-    }
-    static {
-        for (int i = 0; i < 128; i++) {
-            SMALL_VALUES[i] = new Character((char) i);
-        }
     }
     
 }

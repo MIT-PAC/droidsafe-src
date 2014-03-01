@@ -83,6 +83,7 @@ public class DSCursor implements Cursor {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
