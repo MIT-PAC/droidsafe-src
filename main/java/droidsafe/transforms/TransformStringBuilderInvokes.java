@@ -88,6 +88,11 @@ public class TransformStringBuilderInvokes {
                         if (assign.getLeftOp() instanceof Local && assign.getRightOp() instanceof InstanceInvokeExpr) {
                             InstanceInvokeExpr iie = (InstanceInvokeExpr)assign.getRightOp();
 
+                            //first check if we have a toString call
+                            
+                            if (!"java.lang.String toString()".equals(iie.getMethodRef().getSubSignature().getString()))
+                                continue;                            
+                            
                             boolean onlyStringTypes = true;
 
                             for (IAllocNode node : PTABridge.v().getPTSet(iie.getBase())) {
@@ -100,13 +105,8 @@ public class TransformStringBuilderInvokes {
                             if (!onlyStringTypes)
                                 continue;
 
-                            //at this point we have a call to a string like method
-                            //check that it returns a string
-                            if (!"java.lang.String".equals(iie.getMethodRef().returnType().toString()))
-                                continue;
-
                             //found method call to transform!
-                            logger.info("Replacing toString call in method {}", method);
+                            logger.info("Replacing toString call in method {} of {}", method, assign.getRightOp());
 
                             //replace call with new expression to local
                             NewExpr newExpr = Jimple.v().newNewExpr(RefType.v("java.lang.String"));
