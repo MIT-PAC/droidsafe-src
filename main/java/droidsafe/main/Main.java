@@ -239,15 +239,11 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }     
 
-        new TestPTA();
-        
         //run value analysis, if it runs, then the code may have veen transformed
         if (Config.v().runValueAnalysis) {
             runVA(monitor);
         }
 
-        new TestPTA();
-        
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
@@ -264,8 +260,6 @@ public class Main {
             }
         }
 
-        new TestPTA();
-                
         {
             //account for any transformations
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
@@ -280,9 +274,6 @@ public class Main {
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-        new TestPTA();
-
-        
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
         rcfgTimer.start();
@@ -597,8 +588,6 @@ public class Main {
         timer.stop();
 
         driverMsg("Finished PTA: " + timer);
-
-        // new TestPTA();
 
         return DroidsafeExecutionStatus.OK_STATUS;
     }

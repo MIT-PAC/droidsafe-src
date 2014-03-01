@@ -110,7 +110,8 @@ public class SparkPTA extends PTABridge {
      */
     private static final String  LIMIT_DEPTH_TO_ONE = 
             "java.lang.Throwable,java.math.BigInt,java.math.BigInteger,"+
-             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point";
+             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point," +
+             "java.lang.String,java.lang.StringBuffer,java.lang.StringBuilder";
     
     public SparkPTA(Map<String,String> opts) {
         super(opts);
