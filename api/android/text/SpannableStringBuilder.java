@@ -318,7 +318,8 @@ public SpannableStringBuilder delete(int start, int end) {
     @Override
 	public Editable append(CharSequence text) {
 		// TODO Auto-generated method stub
-		return null;
+    	int length = length();
+    	return replace(length, length, text, 0, text.length());
 	}
     
     @DSComment("From safe class list")
@@ -326,7 +327,8 @@ public SpannableStringBuilder delete(int start, int end) {
     @Override
 	public Editable append(CharSequence text, int start, int end) {
 		// TODO Auto-generated method stub
-		return null;
+    	int length = length();
+    	return replace(length, length, text, start, end);
 	}
     
     @DSComment("From safe class list")
@@ -334,7 +336,7 @@ public SpannableStringBuilder delete(int start, int end) {
     @Override
 	public Editable append(char text) {
 		// TODO Auto-generated method stub
-		return null;
+		return append(String.valueOf(text));
 	}
 
     @DSComment("Private Method")
@@ -954,7 +956,7 @@ public int nextSpanTransition(int start, int limit, Class kind) {
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
-		return null;
+    	return new SpannableStringBuilder(this, start, end);
 	}
     
     @DSComment("From safe class list")
@@ -1214,7 +1216,7 @@ public float getTextRunAdvances(int start, int end, int contextStart, int contex
     @Override
 	public InputFilter[] getFilters() {
 		// TODO Auto-generated method stub
-		return null;
+    	return mFilters;
 	}
     
 }

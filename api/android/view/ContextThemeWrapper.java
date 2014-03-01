@@ -57,7 +57,15 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
     
     @Override public Resources.Theme getTheme() {
-        return null;
+        if (mTheme != null) {
+            return mTheme;
+        }
+
+        mThemeResource = Resources.selectDefaultTheme(mThemeResource,
+                getApplicationInfo().targetSdkVersion);
+        initializeTheme();
+
+        return mTheme;
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

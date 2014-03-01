@@ -2360,8 +2360,13 @@ public boolean isRestricted() {
 	}
 
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
-    public abstract CompatibilityInfoHolder getCompatibilityInfo(int displayId); 
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {
+        CompatibilityInfoHolder holder = new CompatibilityInfoHolder();
+        holder.addTaint(taint);
+        holder.addTaint(displayId);
+        return holder;
+    }
     
 }
 
