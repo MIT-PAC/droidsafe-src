@@ -413,8 +413,8 @@ class Arrays {
         for (Map.Entry<IAllocNode, ImmutableSet<InfoValue>> allocNodeValues : this.arrays.entrySet()) {
             ImmutableSet<InfoValue> values = allocNodeValues.getValue();
             for (InfoValue value : values) {
-                writer.write("|ARRAY|");
                 if (value.toString().equals(tgtValue)) {
+                    writer.write("|ARRAY|");
                     AllocNode allocNode = (AllocNode)allocNodeValues.getKey();
                     SootMethod method = allocNode.getMethod();
                     writer.write(" |METHOD| " + method);
