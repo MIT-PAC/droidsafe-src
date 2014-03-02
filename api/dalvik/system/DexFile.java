@@ -76,25 +76,23 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097;
+        outputName.addTaint(flags);
+        outputName.addTaint(sourceName.getTaint());
+        return (sourceName.getTaintInt() + flags + outputName.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int openDexFile(byte[] fileContents) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
+        return fileContents.getTaintInt() + fileContents[0];
     }
-    
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static void closeDexFile(int cookie) {
     }
     
     public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446;
+        return (fileName.getTaintBoolean());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.701 -0500", hash_original_field = "17C86C09C6C4D7B6E875B4525EC536C5", hash_generated_field = "02A3A9994454C1152633199C0FF9DCC4")
 

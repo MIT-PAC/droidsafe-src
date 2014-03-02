@@ -100,7 +100,8 @@ public static int forkAndSpecialize(int uid, int gid, int[] gids,
     
     public static int nativeForkAndSpecialize(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits) {
-        return DSUtils.UNKNOWN_INT;
+        return (uid + gid + gids[0] + debugFlags + rlimits[0][0] +
+                gids.getTaintInt() + rlimits[0].getTaintInt());
     }
 
     /**
@@ -168,7 +169,10 @@ public static int forkSystemServer(int uid, int gid, int[] gids,
     public static int nativeForkSystemServer(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits,
             long permittedCapabilities, long effectiveCapabilities) {
-        return DSUtils.UNKNOWN_INT;
+
+        return (uid + gid + gids[0] + debugFlags + rlimits[0][0] +
+                gids.getTaintInt() + rlimits[0].getTaintInt() +
+                (int)permittedCapabilities + (int)effectiveCapabilities) ;
     }
 
     /**

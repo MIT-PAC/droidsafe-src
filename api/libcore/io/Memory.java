@@ -130,19 +130,28 @@ public static void pokeShort(byte[] dst, int offset, short value, ByteOrder orde
     }
     
     public static byte peekByte(int address) {
-        return DSUtils.UNKNOWN_BYTE;
+        return (byte)address;
     }
     
     public static int peekInt(int address, boolean swap) {
-        return DSUtils.UNKNOWN_INT;
+        int temp = 0;
+        if (swap)
+            temp = 1;
+        return address + temp;
     }
     
     public static long peekLong(int address, boolean swap) {
-        return DSUtils.UNKNOWN_LONG;
+        int temp = 0;
+        if (swap)
+            temp = 1;
+        return address + temp;
     }
     
     public static short peekShort(int address, boolean swap) {
-        return DSUtils.UNKNOWN_SHORT;
+        int temp = 0;
+        if (swap)
+            temp = 1;
+        return (short) (address + temp);
     }
     
     public static void peekByteArray(int address, byte[] dst, int dstOffset, int byteCount) {

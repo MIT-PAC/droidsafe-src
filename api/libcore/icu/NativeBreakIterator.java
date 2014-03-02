@@ -43,25 +43,25 @@ public static NativeBreakIterator getWordInstance(Locale where) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getCharacterInstanceImpl(String locale) {
-        return DSUtils.UNKNOWN_INT;
+        return locale.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getWordInstanceImpl(String locale) {
-        return DSUtils.UNKNOWN_INT;
+        return locale.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getLineInstanceImpl(String locale) {
-        return DSUtils.UNKNOWN_INT;
+        return locale.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getSentenceInstanceImpl(String locale) {
-        return DSUtils.UNKNOWN_INT;
+        return locale.getTaintInt();
     }
     
     @DSComment("Private Method")
@@ -77,55 +77,55 @@ public static NativeBreakIterator getWordInstance(Locale where) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int cloneImpl(int address) {
-        return DSUtils.UNKNOWN_INT;
+        return address;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int precedingImpl(int address, int offset) {
-        return DSUtils.UNKNOWN_INT;
+        return (address + offset);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isBoundaryImpl(int address, int offset) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (address > offset);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nextImpl(int address, int n) {
-        return DSUtils.UNKNOWN_INT;
+        return (address + n);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int previousImpl(int address) {
-        return DSUtils.UNKNOWN_INT;
+        return address;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int currentImpl(int address) {
-        return DSUtils.UNKNOWN_INT;
+        return address;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int firstImpl(int address) {
-        return DSUtils.UNKNOWN_INT;
+        return address;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int followingImpl(int address, int offset) {
-        return DSUtils.UNKNOWN_INT;
+        return (address + offset);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int lastImpl(int address) {
-        return DSUtils.UNKNOWN_INT;
+        return address;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.736 -0500", hash_original_field = "ADC5815F60DECE39E3EFD55FDE9D76C1", hash_generated_field = "8F5E3087826950D143F25CF896D3856E")
 

@@ -245,8 +245,10 @@ private static void startGC() {}
 private static void startClassPrep() {}
     
     public static long countInstancesOfClass(Class klass, boolean assignable) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897;
+        long temp = 0;
+        if (assignable)
+            temp = 1;
+        return (klass.getTaintInt()  + temp);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.564 -0500", hash_original_field = "103A7AD49C9023AE1D12A98CE8B6B3EC", hash_generated_field = "0A342A62DC379FC9FAD1F478C502DC74")
 

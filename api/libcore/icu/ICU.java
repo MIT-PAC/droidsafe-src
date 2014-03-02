@@ -218,8 +218,7 @@ public static Locale[] getAvailableNumberFormatLocales() {
     }
     
     public static int getCurrencyFractionDigits(String currencyCode) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785716854 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785716854;
+        return currencyCode.getTaintInt();
     }
     
     public static String getCurrencySymbol(String locale, String currencyCode) {
@@ -291,8 +290,7 @@ public static Locale[] getAvailableNumberFormatLocales() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean initLocaleDataImpl(String locale, LocaleData result) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629;
+        return locale.getTaintBoolean() && result.getTaintBoolean();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.184 -0500", hash_original_field = "90AA6CFBDEE696F6EF43191174536FDC", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
 

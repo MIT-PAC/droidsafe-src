@@ -268,13 +268,14 @@ Posix() { }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.388 -0400", hash_original_method = "FEC6121EA2A897FBB99121F96B439FBB", hash_generated_method = "F60821EF1BF0B8831D7AAFEE843DD949")
     public StructLinger getsockoptLinger(FileDescriptor fd, int level, int option) throws ErrnoException {
-    	StructLinger sl = new StructLinger(DSUtils.UNKNOWN_INT,DSUtils.UNKNOWN_INT);
+    	StructLinger sl = new StructLinger(level, option);
+        sl.addTaint(fd.getTaint());
     	return sl;
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.389 -0400", hash_original_method = "F02C71E9B42FAB3C0C2F8E812A8DAE0B", hash_generated_method = "6CA79EDA1D97037C4E5A07F27DEFAAF6")
     public StructTimeval getsockoptTimeval(FileDescriptor fd, int level, int option) throws ErrnoException {
-    	StructTimeval st = StructTimeval.fromMillis(DSUtils.UNKNOWN_LONG);
+    	StructTimeval st = StructTimeval.fromMillis(level + option);
     	st.addTaint(fd.getTaint());
     	return st;
     }

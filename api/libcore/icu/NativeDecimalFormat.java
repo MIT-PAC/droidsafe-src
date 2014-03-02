@@ -43,8 +43,7 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int cloneImpl(int addr) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316;
+        return addr;
     }
     
     @DSComment("Private Method")
@@ -53,25 +52,34 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
     }
     
     private static char[] formatLong(int addr, long value, FieldPositionIterator iter) {
-                char[] var50607924ABD4C17119BAF3A1CE41C0EC_478728693 = {DSUtils.UNKNOWN_CHAR};
-        return var50607924ABD4C17119BAF3A1CE41C0EC_478728693;
+        char[] chars = new char[10];
+        chars.addTaint(addr);
+        chars.addTaint(value);
+        chars.addTaint(iter.getTaint());
+        return chars;
     }
     
     private static char[] formatDouble(int addr, double value, FieldPositionIterator iter) {
-                char[] var50607924ABD4C17119BAF3A1CE41C0EC_1264013246 = {DSUtils.UNKNOWN_CHAR};
-        return var50607924ABD4C17119BAF3A1CE41C0EC_1264013246;
+        char[] chars = new char[10];
+        chars.addTaint(addr);
+        chars.addTaint(value);
+        chars.addTaint(iter.getTaint());
+        return chars;
+
     }
     
     private static char[] formatDigitList(int addr, String value, FieldPositionIterator iter) {
-                char[] var50607924ABD4C17119BAF3A1CE41C0EC_1973734016 = {DSUtils.UNKNOWN_CHAR};
-        return var50607924ABD4C17119BAF3A1CE41C0EC_1973734016;
+        char[] chars = new char[10];
+        chars.addTaint(addr);
+        chars.addTaint(value.getTaint());
+        chars.addTaint(iter.getTaint());
+        return chars;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getAttribute(int addr, int symbol) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035;
+        return (addr + symbol);
     }
     
     @DSComment("Private Method")
@@ -89,8 +97,11 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
             String infinity, String internationalCurrencySymbol, char minusSign,
             char monetaryDecimalSeparator, String nan, char patternSeparator, char percent,
             char perMill, char zeroDigit) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659367098 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659367098;
+        return (pattern.getTaintInt() + currencySymbol.getTaintInt() + 
+                decimalSeparator + digit + exponentSeparator.getTaintInt() +
+                groupingSeparator + infinity.getTaintInt() + internationalCurrencySymbol.getTaintInt() +
+                minusSign + monetaryDecimalSeparator + nan.getTaintInt() + patternSeparator +
+                percent + perMill + zeroDigit);
     }
     
     @DSComment("Private Method")

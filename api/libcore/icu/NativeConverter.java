@@ -19,19 +19,34 @@ public final class NativeConverter {
     
     public static int decode(long converterHandle, byte[] input, int inEnd,
             char[] output, int outEnd, int[] data, boolean flush) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734718063 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734718063;
+                output.addTaint(converterHandle);
+                output.addTaint(inEnd);
+                output.addTaint(outEnd);
+                output.addTaint(flush);
+
+                for (int i = 0; i < input.length; i++) {
+                    output[i] = (char)input[i];
+                }
+
+                return output.getTaintInt();
     }
     
     public static int encode(long converterHandle, char[] input, int inEnd,
             byte[] output, int outEnd, int[] data, boolean flush) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482483034 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482483034;
+        output.addTaint(converterHandle);
+        output.addTaint(inEnd);
+        output.addTaint(outEnd);
+        output.addTaint(flush);
+
+        for (int i = 0; i < input.length; i++) {
+            output[i] = (byte)input[i];
+        }
+
+        return output.getTaintInt();
     }
     
     public static long openConverter(String encoding) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1093574736 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1093574736;
+        return encoding.getTaintInt();
     }
     
     public static void closeConverter(long converterHandle) {
@@ -44,38 +59,34 @@ public final class NativeConverter {
     }
     
     public static byte[] getSubstitutionBytes(long converterHandle) {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2075683128 = {DSUtils.UNKNOWN_BYTE};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_2075683128;
+        byte[] bytes = new byte[10];
+        bytes.addTaint(converterHandle);
+        bytes[0] = (byte)converterHandle;
+        return bytes;
     }
     
     public static int getMaxBytesPerChar(long converterHandle) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485540835 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485540835;
+        return (int)converterHandle;
     }
     
     public static int getMinBytesPerChar(long converterHandle) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295075292 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295075292;
+        return (int)converterHandle;
     }
     
     public static float getAveBytesPerChar(long converterHandle) {
-                float var546ADE640B6EDFBC8A086EF31347E768_65193943 = DSUtils.UNKNOWN_FLOAT;
-        return var546ADE640B6EDFBC8A086EF31347E768_65193943;
+        return (float)converterHandle;
     }
     
     public static float getAveCharsPerByte(long converterHandle) {
-                float var546ADE640B6EDFBC8A086EF31347E768_293980650 = DSUtils.UNKNOWN_FLOAT;
-        return var546ADE640B6EDFBC8A086EF31347E768_293980650;
+        return (float)converterHandle;
     }
     
     public static boolean contains(String converterName1, String converterName2) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181634740 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_181634740;
+        return (converterName1.getTaintBoolean() && converterName2.getTaintBoolean());
     }
     
     public static boolean canEncode(long converterHandle, int codeUnit) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751980040 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751980040;
+        return (converterHandle > 0) && (codeUnit > 0);
     }
     
     public static String[] getAvailableCharsetNames() {
@@ -188,8 +199,7 @@ public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int setCallbackDecode(long converterHandle, int onMalformedInput, int onUnmappableInput, String subChars) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043;
+                return ((int)converterHandle + onMalformedInput + onUnmappableInput + subChars.getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.543 -0500", hash_original_method = "C9EC92733E72FDFF26006CD6BB2B521C", hash_generated_method = "E0EEB07D09DCA82B0AC3252F2CCCFCC5")
@@ -204,8 +214,7 @@ public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int setCallbackEncode(long converterHandle, int onMalformedInput, int onUnmappableInput, byte[] subBytes) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015;
+        return ((int)converterHandle + onMalformedInput + onUnmappableInput + subBytes.getTaintInt() + subBytes[0]);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.997 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")

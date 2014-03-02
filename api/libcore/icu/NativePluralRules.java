@@ -24,13 +24,13 @@ public static NativePluralRules forLocale(Locale locale) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int forLocaleImpl(String localeName) {
-        return DSUtils.UNKNOWN_INT;
+        return localeName.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int quantityForIntImpl(int address, int value) {
-        return DSUtils.UNKNOWN_INT;
+        return address + value;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.316 -0500", hash_original_field = "220EA0F5275BEF69F5B6DE1C402F7FD3", hash_generated_field = "91C59E99B3C50EDD2FE9E46B39A1B227")
 
