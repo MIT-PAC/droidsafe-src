@@ -54,7 +54,7 @@ private static int setEcho(boolean on, int previousState) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int setEchoImpl(boolean on, int previousState) throws IOException {
-        return DSUtils.UNKNOWN_INT;
+        return on? previousState : -previousState;    
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.416 -0500", hash_original_field = "BBCA88E2364A76AF3007D259E6D8A88C", hash_generated_field = "546A7D00A3DECA7028ABE7F203CC82FE")
 

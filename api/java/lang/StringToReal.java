@@ -12,13 +12,19 @@ final class StringToReal {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static double parseDblImpl(String s, int e) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        Object obj = new Object();
+        obj.addTaint(s.getTaint());
+        obj.addTaint(e);
+        return (double)obj.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float parseFltImpl(String s, int e) {
-        return DSUtils.UNKNOWN_FLOAT;
+        Object obj = new Object();
+        obj.addTaint(s.getTaint());
+        obj.addTaint(e);
+        return (float)obj.getTaintInt();
     }
 
     @DSComment("Private Method")

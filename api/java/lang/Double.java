@@ -12,13 +12,13 @@ public final class Double extends Number implements Comparable<Double> {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static long doubleToLongBits(double value) {
-        return DSUtils.UNKNOWN_LONG;
+        return (long)value;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static long doubleToRawLongBits(double value) {
-        return DSUtils.UNKNOWN_LONG;
+        return (long)value;
     }
 
     /**
@@ -57,7 +57,7 @@ public static boolean isNaN(double d) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double longBitsToDouble(long bits) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return (double)bits;
     }
 
     /**

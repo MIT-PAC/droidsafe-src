@@ -649,47 +649,45 @@ private static void runSelectLoopMode() throws MethodAndArgsCaller {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int setreuid(int ruid, int euid) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046;
+        return ruid + euid;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int setregid(int rgid, int egid) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307;
+        return rgid + egid;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int setpgid(int pid, int pgid) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942;
+        return pid + pgid;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int getpgid(int pid) throws IOException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067;
+        return pid;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static void reopenStdio(FileDescriptor in,
             FileDescriptor out, FileDescriptor err) throws IOException {
+        out.addTaint(in.getTaint());
+        err.addTaint(in.getTaint());
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static void setCloseOnExec(FileDescriptor fd, boolean flag) throws IOException {
+        fd.addTaint(flag);
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static long capgetPermitted(int pid) throws IOException {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050;
+                return pid;
     }
     
     @DSComment("Package priviledge")
@@ -702,8 +700,7 @@ private static void runSelectLoopMode() throws MethodAndArgsCaller {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int selectReadable(FileDescriptor[] fds) throws IOException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160;
+        return (fds.getTaintInt() + fds[0].getTaintInt());
     }
     
     @DSComment("Package priviledge")

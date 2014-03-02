@@ -13,18 +13,16 @@ public class DdmVmInternal {
     }
     
     public static boolean heapInfoNotify(int when) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_14218202 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_14218202;
+        return (when > 0);
     }
     
     public static boolean heapSegmentNotify(int when, int what,
         boolean isNative) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1093062549 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1093062549;
+                return (when > what) && isNative;
     }
     
     public static byte[] getThreadStats() {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_319188016 = {DSUtils.UNKNOWN_BYTE};
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_319188016 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_319188016;
     }
     

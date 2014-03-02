@@ -14,15 +14,13 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int forNameImpl(String blockName) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915900274 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915900274;
+        return blockName.getTaintInt();
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int ofImpl(int codePoint) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771157942 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771157942;
+        return codePoint;
 	}
 
     @DSComment("Private Method")
@@ -905,8 +903,7 @@ public static int digit(int codePoint, int radix) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int digitImpl(int codePoint, int radix) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350347683 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350347683;
+        return codePoint + radix;
 	}
 
     /**
@@ -1046,8 +1043,7 @@ public static int getNumericValue(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getNumericValueImpl(int codePoint) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117;
+        return codePoint;
 	}
 
     /**
@@ -1088,8 +1084,7 @@ public static int getType(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getTypeImpl(int codePoint) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757;
+        return codePoint;
 	}
 
     /**
@@ -1135,8 +1130,7 @@ public static byte getDirectionality(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static byte getDirectionalityImpl(int codePoint) {
-		byte var40EA57D3EE3C07BF1C102B466E1C3091_330183665 = DSUtils.UNKNOWN_BYTE;
-		return var40EA57D3EE3C07BF1C102B466E1C3091_330183665;
+        return (byte)codePoint;
 	}
 
     /**
@@ -1174,8 +1168,7 @@ public static boolean isMirrored(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isMirroredImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579042988 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579042988;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1257,8 +1250,7 @@ public static boolean isDefined(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isDefinedImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177;
+        return codePoint > 0;
 	}
 
     /**
@@ -1303,8 +1295,7 @@ public static boolean isDigit(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isDigitImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1348,8 +1339,7 @@ public static boolean isIdentifierIgnorable(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isIdentifierIgnorableImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1549,8 +1539,7 @@ public static boolean isLetter(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLetterImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1598,8 +1587,7 @@ public static boolean isLetterOrDigit(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLetterOrDigitImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1644,8 +1632,7 @@ public static boolean isLowerCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLowerCaseImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1079247224 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1079247224;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1715,8 +1702,7 @@ public static boolean isSpaceChar(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isSpaceCharImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1754,8 +1740,7 @@ public static boolean isTitleCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isTitleCaseImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1795,8 +1780,7 @@ public static boolean isUnicodeIdentifierPart(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1836,8 +1820,7 @@ public static boolean isUnicodeIdentifierStart(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321;
+        return (codePoint > 0);
 	}
 
     /**
@@ -1882,8 +1865,7 @@ public static boolean isUpperCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isUpperCaseImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420;
+        return (codePoint != 0);
 	}
 
     /**
@@ -1937,8 +1919,7 @@ public static boolean isWhitespace(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isWhitespaceImpl(int codePoint) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1925136494 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1925136494;
+        return (codePoint != 0);
 	}
 
     /**
@@ -2003,8 +1984,7 @@ public static int toLowerCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int toLowerCaseImpl(int codePoint) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218;
+        return codePoint;
 	}
 
     /**
@@ -2059,8 +2039,7 @@ public static int toTitleCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int toTitleCaseImpl(int codePoint) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862;
+        return codePoint;
 	}
 
     /**
@@ -2109,8 +2088,7 @@ public static int toUpperCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int toUpperCaseImpl(int codePoint) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328761199 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328761199;
+        return codePoint;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.458 -0500", hash_original_field = "F9145C97B03A03915081B9182B5C3766", hash_generated_field = "366B6821F766B64AFF49ADADAD2066C9")
 

@@ -94,7 +94,7 @@ public static String quote(String string) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int compileImpl(String regex, int flags) {
-        return DSUtils.UNKNOWN_INT;
+        return (regex.getTaintInt() + flags);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.833 -0500", hash_original_field = "28B78F8205583CDA257F5D62102A6F9A", hash_generated_field = "89AAD938CC344AC32E4A8CD5D4DF86F6")
 

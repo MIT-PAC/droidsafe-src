@@ -36,22 +36,19 @@ public static Unsafe getUnsafe() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long objectFieldOffset0(Field field) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090;
+        return (long)field.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int arrayBaseOffset0(Class clazz) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368;
+        return clazz.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int arrayIndexScale0(Class clazz) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006;
+        return clazz.getTaintInt();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.639 -0500", hash_original_field = "3083DF6B0AC55CB3E662F95128363160", hash_generated_field = "0E67CDB95370A302579A19EADA2AF913")
 

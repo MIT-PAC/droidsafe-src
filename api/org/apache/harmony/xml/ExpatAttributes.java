@@ -52,15 +52,13 @@ abstract class ExpatAttributes implements Attributes {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getIndex(int attributePointer, String uri, String localName) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945;
+        return attributePointer + uri.getTaintInt() + localName.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getIndexForQName(int attributePointer, String qName) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906;
+        return attributePointer + qName.getTaintInt();
     }
     
     @DSComment("Private Method")

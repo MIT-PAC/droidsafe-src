@@ -42,49 +42,50 @@ public static String quoteReplacement(String s) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean findImpl(int addr, String s, int startIndex, int[] offsets) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (0 < (addr + s.getTaintInt() + startIndex + offsets[0] + offsets.getTaintInt()));
     }
+
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean findNextImpl(int addr, String s, int[] offsets) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (0 < (addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int groupCountImpl(int addr) {
-        return DSUtils.UNKNOWN_INT;
+        return addr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean hitEndImpl(int addr) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (addr > 0);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean lookingAtImpl(int addr, String s, int[] offsets) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (0 < (addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean matchesImpl(int addr, String s, int[] offsets) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (0 < (addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int openImpl(int patternAddr) {
-        return DSUtils.UNKNOWN_INT;
+        return patternAddr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean requireEndImpl(int addr) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (addr > 0);
     }
     
     @DSComment("Private Method")

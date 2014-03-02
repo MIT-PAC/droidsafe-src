@@ -45,9 +45,12 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 	}
     
     static boolean isAnnotationPresent(Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985;
-	}
+        Object obj = new Object();
+        obj.addTaint(declaringClass.getTaint());
+        obj.addTaint(slot);
+        obj.addTaint(annotationType.getTaint());
+        return obj.getTaintBoolean();
+    }
 
     /**
      * Creates an array of empty Annotation arrays.
@@ -76,8 +79,11 @@ static Annotation[][] noAnnotations(int size) {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int getMethodModifiers(Class<?> declaringClass, int slot) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721;
+        
+        Object obj = new Object();
+        obj.addTaint(declaringClass.getTaint());
+        obj.addTaint(slot);
+        return obj.getTaintInt();
 	}
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.128 -0400", hash_original_field = "6D5C49EE7CEF5783A42FC1C7653D6955", hash_generated_field = "3465881694FBE3BA7144100AF6865EE1")

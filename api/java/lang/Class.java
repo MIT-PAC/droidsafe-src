@@ -199,8 +199,10 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getModifiers(Class<?> clazz, boolean ignoreInnerClassesAttrib) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902;
+        int temp = 0;
+        if (ignoreInnerClassesAttrib)
+            temp = 1;
+        return clazz.getTaintInt() + temp;
     }
     
     @DSComment("Private Method")

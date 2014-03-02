@@ -469,8 +469,7 @@ public static SecurityManager getSecurityManager() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int identityHashCode(Object anObject) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
+        return anObject.getTaintInt();
 	}
 
     /**

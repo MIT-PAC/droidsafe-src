@@ -13,121 +13,121 @@ public final class Math {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double abs(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static float abs(float f) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return f;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int abs(int i) {
-        return DSUtils.UNKNOWN_INT;
+        return i;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static long abs(long l) {
-        return DSUtils.UNKNOWN_LONG;
+        return l;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double acos(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double asin(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double atan(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double atan2(double y, double x) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return x+y;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double cbrt(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double ceil(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double cos(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double cosh(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double exp(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double expm1(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double floor(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double hypot(double x, double y) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return x + y;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double IEEEremainder(double x, double y) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return x + y;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double log(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double log10(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double log1p(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
 
     /**
@@ -152,23 +152,8 @@ public final class Math {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.675 -0500", hash_original_method = "44DF249E8533183B21D14B39E826B28E", hash_generated_method = "380B6602028EB9350F7E15749FFDEB86")
     
-public static double max(double d1, double d2) {
-        if (d1 > d2) {
-            return d1;
-        }
-        if (d1 < d2) {
-            return d2;
-        }
-        /* if either arg is NaN, return NaN */
-        if (d1 != d2) {
-            return Double.NaN;
-        }
-        /* max(+0.0,-0.0) == +0.0 */
-        /* Double.doubleToRawLongBits(0.0d) == 0 */
-        if (Double.doubleToRawLongBits(d1) != 0) {
-            return d2;
-        }
-        return 0.0d;
+    public static double max(double d1, double d2) {
+        return d1 + d2;
     }
 
     /**
@@ -215,7 +200,7 @@ public static float max(float f1, float f2) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int max(int i1, int i2) {
-        return DSUtils.UNKNOWN_INT;
+        return i1 + i2;
     }
 
     /**
@@ -321,7 +306,7 @@ public static float min(float f1, float f2) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int min(int i1, int i2) {
-        return DSUtils.UNKNOWN_INT;
+        return i1 + i2;
     }
 
     /**
@@ -345,13 +330,13 @@ public static long min(long l1, long l2) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double pow(double x, double y) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return  x + y;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double rint(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
 
     /**
@@ -491,31 +476,31 @@ public static float signum(float f) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double sin(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double sinh(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double sqrt(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double tan(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static double tanh(double d) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return d;
     }
 
     /**
@@ -625,7 +610,7 @@ public static double ulp(double d) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static double nextafter(double x, double y) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return x + y;
     }
 
     /**

@@ -72,25 +72,25 @@ public static int kernelToTag(String string) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_tagSocketFd(FileDescriptor fd, int tag, int uid) {
-        return DSUtils.UNKNOWN_INT;
+        return (fd.getTaintInt() + tag + uid);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_untagSocketFd(FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        return fd.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setCounterSet(int uid, int counterSetNum) {
-        return DSUtils.UNKNOWN_INT;
+        return (uid + counterSetNum);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_deleteTagData(int tag, int uid) {
-        return DSUtils.UNKNOWN_INT;
+        return tag + uid;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:07.097 -0500", hash_original_field = "61BC72D0885B6C4EA30ED1602CCC52E9", hash_generated_field = "20F5941A978139BFC6C872DB572C577F")
 

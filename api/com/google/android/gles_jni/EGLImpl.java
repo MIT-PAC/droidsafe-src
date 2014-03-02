@@ -20,8 +20,7 @@ import droidsafe.helpers.DSUtils;
 public class EGLImpl implements EGL10 {
     
     public static int getInitCount(EGLDisplay display) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600;
+        return display.getTaintInt();
     }
     
     @DSComment("Private Method")

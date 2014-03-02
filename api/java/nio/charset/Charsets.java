@@ -10,18 +10,27 @@ import droidsafe.helpers.DSUtils;
 public class Charsets {
     
     public static byte[] toAsciiBytes(char[] chars, int offset, int length) {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_709532227 = {DSUtils.UNKNOWN_BYTE};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_709532227;
+        byte[] out = new byte[length];
+        for (int i = 0; i < length; i++) {
+            out[i] = (byte)chars[i+offset]; 
+        }
+        return out;
     }
     
     public static byte[] toIsoLatin1Bytes(char[] chars, int offset, int length) {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1419875334 = {DSUtils.UNKNOWN_BYTE};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1419875334;
+        byte[] out = new byte[length];
+        for (int i = 0; i < length; i++) {
+            out[i] = (byte)chars[i+offset]; 
+        }
+        return out;
     }
     
     public static byte[] toUtf8Bytes(char[] chars, int offset, int length) {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_938529096 = {DSUtils.UNKNOWN_BYTE};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_938529096;
+        byte[] out = new byte[length];
+        for (int i = 0; i < length; i++) {
+            out[i] = (byte)chars[i+offset]; 
+        }
+        return out;
     }
 
     /**

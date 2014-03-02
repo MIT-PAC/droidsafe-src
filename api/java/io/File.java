@@ -142,8 +142,7 @@ public static File[] listRoots() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean setLastModifiedImpl(String path, long time) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677;
+        return ((int)time > path.getTaintInt());
 	}
     
     @DSComment("Private Method")

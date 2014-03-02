@@ -36,57 +36,52 @@ public final class NativeCrypto {
     
     public static int EVP_PKEY_new_DSA(byte[] p, byte[] q, byte[] g,
                                               byte[] priv_key, byte[] pub_key) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865609011 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865609011;
+        return (p[0] + q[0] + g[0] + priv_key[0] + pub_key[0] +
+                p.getTaintInt() + q.getTaintInt() + g.getTaintInt() + 
+                priv_key.getTaintInt() + pub_key.getTaintInt());
     }
     
     public static int EVP_PKEY_new_RSA(byte[] n, byte[] e, byte[] d, byte[] p, byte[] q) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232903658 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232903658;
+        return (p[0] + q[0] + n[0] + e[0] + d[0] + 
+                p.getTaintInt() + q.getTaintInt() + 
+                n.getTaintInt() + e.getTaintInt() + d.getTaintInt());
     }
     
     public static void EVP_PKEY_free(int pkey) {
     }
     
     public static int EVP_get_digestbyname(String name) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067004612 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067004612;
+        return name.getTaintInt();
     }
     
     public static int EVP_MD_size(int evp_md) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371314546 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371314546;
+        return evp_md;
     }
     
     public static int EVP_MD_block_size(int evp_md) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519226683 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519226683;
+        return evp_md;
     }
     
     public static void EVP_MD_CTX_destroy(int ctx) {
     }
     
     public static int EVP_MD_CTX_copy(int ctx) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1963314458 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1963314458;
+        return ctx;
     }
     
     public static int EVP_DigestInit(int evp_md) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024163460 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024163460;
+                return evp_md;
     }
     
     public static void EVP_DigestUpdate(int ctx, byte[] buffer, int offset, int length) {
     }
     
     public static int EVP_DigestFinal(int ctx, byte[] hash, int offset) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668405372 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668405372;
+        return (ctx + hash[0] + offset + hash.getTaintInt());
     }
     
     public static int EVP_VerifyInit(String algorithm) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134582078 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134582078;
+        return algorithm.getTaintInt();
     }
     
     public static void EVP_VerifyUpdate(int ctx, byte[] buffer,
@@ -95,16 +90,15 @@ public final class NativeCrypto {
     
     public static int EVP_VerifyFinal(int ctx, byte[] signature,
                                              int offset, int length, int key) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181030487 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181030487;
+        return (ctx + signature[0] + signature.getTaintInt() +
+                offset + length + key);
     }
     
     public static void RAND_seed(byte[] seed) {
     }
     
     public static int RAND_load_file(String filename, long max_bytes) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_562927099 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_562927099;
+        return (filename.getTaintInt() + (int)max_bytes);
     }
 
     // --- X509_NAME -----------------------------------------------------------
@@ -200,8 +194,7 @@ public static String[] getSupportedCipherSuites() {
     }
     
     public static int SSL_new(int ssl_ctx) throws SSLException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431793162 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431793162;
+        return ssl_ctx;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.046 -0500", hash_original_method = "72E122187013708BACCA6AD76CAE16AD", hash_generated_method = "4A31EBD0504003546DBA1D0217827A21")
@@ -239,33 +232,27 @@ public static byte[][] encodeIssuerX509Principals(X509Certificate[] certificates
     }
     
     public static long SSL_get_mode(int ssl) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_935462345 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_935462345;
+        return ssl;
     }
     
     public static long SSL_set_mode(int ssl, long mode) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1592410460 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1592410460;
+        return (ssl + mode);
     }
     
     public static long SSL_clear_mode(int ssl, long mode) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1994213698 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1994213698;
+        return (ssl + mode);
     }
     
     public static long SSL_get_options(int ssl) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1351792898 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1351792898;
+        return ssl;
     }
     
     public static long SSL_set_options(int ssl, long options) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1606611539 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1606611539;
+        return (ssl + options);
     }
     
     public static long SSL_clear_options(int ssl, long options) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1442836426 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1442836426;
+        return (ssl + options);
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -457,35 +444,55 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
                                               SSLHandshakeCallbacks shc,
                                               int timeout,
                                               boolean client_mode) throws SSLException, SocketTimeoutException, CertificateException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052926841 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052926841;
+
+        int tmp = 0;
+        if (client_mode)
+            tmp = 1;
+
+        return (sslNativePointer + fd.getTaintInt() +
+                shc.getTaintInt() + timeout + tmp); 
     }
     
     public static void SSL_renegotiate(int sslNativePointer) throws SSLException {
     }
     
     public static byte[][] SSL_get_certificate(int sslNativePointer) {
-                byte[][] var09EEFE93BC05FD972F5A60957AA3195B_275851818 = {{DSUtils.UNKNOWN_BYTE}};
-        return var09EEFE93BC05FD972F5A60957AA3195B_275851818;
+        byte[][] obj = new byte[1][10];
+        obj.addTaint(sslNativePointer);
+        return obj;
     }
     
     public static byte[][] SSL_get_peer_cert_chain(int sslNativePointer) {
-                byte[][] var09EEFE93BC05FD972F5A60957AA3195B_144247038 = {{DSUtils.UNKNOWN_BYTE}};
-        return var09EEFE93BC05FD972F5A60957AA3195B_144247038;
+
+        byte[][] obj = new byte[1][10];
+        obj.addTaint(sslNativePointer);
+        return obj;
     }
     
     public static int SSL_read(int sslNativePointer,
                                       FileDescriptor fd,
                                       SSLHandshakeCallbacks shc,
                                       byte[] b, int off, int len, int timeout) throws IOException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_161276270 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_161276270;
+        b.addTaint(sslNativePointer);
+        b.addTaint(shc.getTaint());
+        b.addTaint(len);
+        b.addTaint(off);
+        b.addTaint(timeout);
+        b.addTaint(fd.getTaint());
+        return b.getTaintInt(); 
     }
     
     public static void SSL_write(int sslNativePointer,
                                         FileDescriptor fd,
                                         SSLHandshakeCallbacks shc,
                                         byte[] b, int off, int len) throws IOException {
+
+        fd.addTaint(sslNativePointer);
+        fd.addTaint(shc.getTaint());
+        fd.addTaint(b.getTaint());
+        fd.addTaint(b[0]);
+        fd.addTaint(off);
+        fd.addTaint(len);
     }
     
     public static void SSL_interrupt(int sslNativePointer) {
@@ -500,13 +507,14 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
     }
     
     public static byte[] SSL_SESSION_session_id(int sslSessionNativePointer) {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1024556878 = {DSUtils.UNKNOWN_BYTE};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1024556878;
+        byte[] bytes = new byte[10];
+        bytes.addTaint(sslSessionNativePointer);
+        bytes[0] = (byte)sslSessionNativePointer;
+        return bytes;
     }
     
     public static long SSL_SESSION_get_time(int sslSessionNativePointer) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_922418158 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_922418158;
+        return sslSessionNativePointer;
     }
     
     public static String SSL_SESSION_get_version(int sslSessionNativePointer) {
@@ -533,13 +541,15 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
     }
     
     public static byte[] i2d_SSL_SESSION(int sslSessionNativePointer) {
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_503780473 = {DSUtils.UNKNOWN_BYTE};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_503780473;
+        byte[] bytes = new byte[10];
+        bytes.addTaint(sslSessionNativePointer);
+        bytes[0] =(byte)sslSessionNativePointer;
+        
+        return bytes; 
     }
     
     public static int d2i_SSL_SESSION(byte[] data) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053194282 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053194282;
+        return (data[0] + data.getTaintInt());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.978 -0500", hash_original_field = "C3CFB2FCD1E5EF44AE7C46878C170911", hash_generated_field = "96B3D7F063AB86A68380150319726EEF")
 

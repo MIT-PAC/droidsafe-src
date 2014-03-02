@@ -40,8 +40,20 @@ final class ProcessManager {
     private static int exec(String[] command, String[] environment,
             String workingDirectory, FileDescriptor in, FileDescriptor out,
             FileDescriptor err, boolean redirectErrorStream) throws IOException {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_149867586 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_149867586;
+
+        //taint will propagate out to both out and err
+        out.addTaint(command.getTaint());
+        out.addTaint(command[0].getTaint());
+        out.addTaint(environment.getTaint());
+        out.addTaint(environment[0].getTaint());
+        out.addTaint(workingDirectory.getTaint());
+        out.addTaint(in.getTaint());
+
+        out.addTaint(err.getTaint());
+        out.addTaint(redirectErrorStream);
+        err.addTaint(out.getTaint());
+
+        return err.getTaintInt();
     }
 
     /** Gets the process manager. */

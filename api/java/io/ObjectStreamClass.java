@@ -335,8 +335,7 @@ static Field fieldSerialPersistentFields(Class<?> cl) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int getConstructorId(Class<?> c) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812619741 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812619741;
+        return c.getTaintInt();
 	}
     
     @DSComment("Package priviledge")
@@ -360,8 +359,7 @@ static Field fieldSerialPersistentFields(Class<?> cl) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean hasClinit(Class<?> cl) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153496694 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_153496694;
+        return cl.getTaintBoolean();
 	}
 
     /**

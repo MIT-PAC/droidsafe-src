@@ -35,8 +35,12 @@ public final class Field extends AccessibleObject implements Member {
     
     private static boolean isAnnotationPresent(
             Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1800919321 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1800919321;
+            
+            Object obj = new Object();
+            obj.addTaint(declaringClass.getTaint());
+            obj.addTaint(slot);
+            obj.addTaint(annotationType.getTaint());
+            return obj.getTaintBoolean();
     }
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.020 -0400", hash_original_field = "53D2DF7F6A0025522B6A62D7BCCD362B", hash_generated_field = "FE1CC35DA4EB56C9880DCB488708D9CB")
