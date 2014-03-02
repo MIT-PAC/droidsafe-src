@@ -349,7 +349,7 @@ public class ListApiMethods extends ApiUsageListing {
                 classification = anno;
             }
 
-            if (anno.matches("@DSSink.*")) {
+            if (anno.matches("@DS(Sink|Source).*")) {
                 sinkAnno = anno;
             }
         }
