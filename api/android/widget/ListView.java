@@ -362,7 +362,7 @@ public boolean removeFooterView(View v) {
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
-		return null;
+        return super.mAdapter;
 	}
 
     /**

@@ -33,7 +33,7 @@ import java.lang.ref.WeakReference;
 
 public final class GestureLibraries {
 
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.014 -0500", hash_original_method = "36C2566972C9E7C5A89CB148B99828C5", hash_generated_method = "EB171114E70DEA09E730F03A5BA67241")
     

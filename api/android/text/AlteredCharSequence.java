@@ -82,7 +82,11 @@ public char charAt(int off) {
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
-		return null;
+        String str = new String();
+        str.addTaint(taint);
+        str.addTaint(start);
+        str.addTaint(end);
+		return str;
 	}
 
     @DSComment("From safe class list")

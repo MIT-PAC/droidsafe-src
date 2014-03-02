@@ -2,6 +2,8 @@ package android.view;
 
 import java.util.Random;
 
+import com.android.internal.policy.PolicyManager;
+
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -83,13 +85,17 @@ public class WindowImpl extends Window {
 	@Override
 	public View getCurrentFocus() {
 		// TODO Auto-generated method stub
-		return null;
+        View v = new View();
+        v.addTaint(taint);
+		return v;
 	}
 
 	@Override
 	public LayoutInflater getLayoutInflater() {
 		// TODO Auto-generated method stub
-		return null;
+	       LayoutInflater manager = PolicyManager.makeNewLayoutInflater(getContext());
+           manager.addTaint(getTaint());
+           return manager;
 	}
 
 	@Override
@@ -234,7 +240,9 @@ public class WindowImpl extends Window {
     @Override
 	public View getDecorView() {
 		// TODO Auto-generated method stub
-		return null;
+		View view = new View();
+        view.addTaint(getTaint());
+        return view;
 	}
 	
 	@Override
@@ -248,7 +256,7 @@ public class WindowImpl extends Window {
     @Override
 	public Bundle saveHierarchyState() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Bundle();
 	}
 
 	@Override

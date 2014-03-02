@@ -1171,7 +1171,11 @@ public final AssetManager getAssets() {
     ColorStateList loadColorStateList(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+        ColorStateList stateList = ColorStateList.valueOf(getTaintInt());
+        addTaint(value.getTaint());
+        addTaint(id);
+        stateList.addTaint(taint);
+		return stateList;
 	}
     
     @DSComment("Private Method")
@@ -1209,7 +1213,7 @@ public final AssetManager getAssets() {
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         }
-    /*
+   /*     
         XmlResourceParser parser = new XmlResourceParser(); 
         obj.addTaint(id);
         obj.addTaint(type);

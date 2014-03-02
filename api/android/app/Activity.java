@@ -69,6 +69,7 @@ import android.app.LoaderManager;
 
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
+import com.android.internal.view.menu.ContextMenuBuilder;
 import com.android.internal.view.menu.MenuBuilder;
 
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
@@ -4135,7 +4136,8 @@ final void performUserLeaving() {
         this.onCreateView(new String(), getBaseContext(), attrSet);
         
         //context menu
-        ContextMenu contextMenu = new ContextMenu.DroidSafeContextMenu();
+        ContextMenu contextMenu = new ContextMenuBuilder(getBaseContext());
+        
         ContextMenu.ContextMenuInfo info = null;
         this.onCreateContextMenu(contextMenu, 
                 this.findViewById(DSUtils.FAKE_INT), info);

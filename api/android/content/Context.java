@@ -279,9 +279,7 @@ public abstract AssetManager getAssets();
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.858 -0500", hash_original_method = "DDC03F44FA955FC312F0B392013F0650", hash_generated_method = "FCB6897E52684952F018239BD74C6494")
-    
-        @DSSafe(DSCat.SOURCE)
-public abstract Resources getResources();
+    public abstract Resources getResources();
 
     /** Return PackageManager instance to find global package information. */
     @DSComment("Abstract Method")

@@ -1,6 +1,10 @@
 package android.view;
 
 // Droidsafe Imports
+import android.widget.PopupMenu;
+
+import com.android.internal.view.menu.ContextMenuBuilder;
+
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
@@ -239,49 +243,52 @@ public boolean isUiFocusable() {
     
     public static class SimpleActionMode extends ActionMode {
         
+        CharSequence mTitle;
+        CharSequence mSubtitle;
+        View mView;
+        
         @DSVerified
         @DSSafe(DSCat.SAFE_OTHERS)
         public SimpleActionMode() {
-            
+            mView = new View();
         }
-
+        @DSSafe(DSCat.SAFE_OTHERS)
         public SimpleActionMode(int mode) {
+            mView = new View();
         }
-
-
+         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
-        
         public void setTitle(CharSequence title) {
             // TODO Auto-generated method stub
-            
+            mTitle = title;
         }
-
         @Override
         
         public void setTitle(int resId) {
             // TODO Auto-generated method stub
-            
+            mTitle = mView.getContext().getText(resId);
         }
 
         @Override
         
         public void setSubtitle(CharSequence subtitle) {
             // TODO Auto-generated method stub
-            
+            mSubtitle = subtitle;
         }
 
         @Override
-        
+        @DSSafe(DSCat.SAFE_OTHERS)
         public void setSubtitle(int resId) {
             // TODO Auto-generated method stub
-            
+            mSubtitle = mView.getContext().getText(resId);
         }
 
         @Override
-        
+        @DSSafe(DSCat.SAFE_OTHERS)
         public void setCustomView(View view) {
             // TODO Auto-generated method stub
-            
+            mView = view;
         }
 
         @Override
@@ -302,39 +309,36 @@ public boolean isUiFocusable() {
         
         public Menu getMenu() {
             // TODO Auto-generated method stub
-            return null; 
+           
+            return new ContextMenuBuilder(mView.getContext());
         }
 
         @Override
         
         public CharSequence getTitle() {
             // TODO Auto-generated method stub
-            return null;
+            return mTitle;
         }
 
         @Override
         
         public CharSequence getSubtitle() {
             // TODO Auto-generated method stub
-            String str = new String(); 
-            str.addTaint(getTaint());
-            return str;
+            return mSubtitle;
         }
 
         @Override
         
         public View getCustomView() {
             // TODO Auto-generated method stub
-            View v = new View();
-            v.addTaint(getTaint());
-            return v;
+            return mView;
         }
 
         @Override
         
         public MenuInflater getMenuInflater() {
             // TODO Auto-generated method stub
-            View v = new View();
+            View v = mView;
             MenuInflater inflater = new MenuInflater(v.getContext());
             inflater.addTaint(getTaint());
             return inflater;

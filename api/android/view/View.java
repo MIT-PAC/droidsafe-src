@@ -61,6 +61,7 @@ import android.widget.ScrollBarDrawable;
 import com.android.internal.R;
 import com.android.internal.util.Predicate;
 import com.android.internal.view.InputConnectionWrapper;
+import com.android.internal.view.menu.ContextMenuBuilder;
 
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback, AccessibilityEventSource {
     
@@ -2139,7 +2140,10 @@ public View(Context context, AttributeSet attrs) {
 		//Return nothing
         getListenerInfo().mOnCreateContextMenuListener = l;
         if (l != null) {
-            l.onCreateContextMenu(new ContextMenu.DroidSafeContextMenu(), 
+            ContextMenuBuilder builder = new ContextMenuBuilder(getContext());
+            builder.addTaint(taint);
+            
+            l.onCreateContextMenu(builder, 
                     this, new AdapterView.AdapterContextMenuInfo(this, 
                             DSUtils.FAKE_INT, DSUtils.FAKE_INT));
         }
@@ -2227,12 +2231,7 @@ public View(Context context, AttributeSet attrs) {
     
     public boolean showContextMenu(float x, float y, int metaState){
 		// Original method
-		/*
-		{
         return showContextMenu();
-    }
-		*/
-		return false;
 	}
     
     public ActionMode startActionMode(ActionMode.Callback callback){

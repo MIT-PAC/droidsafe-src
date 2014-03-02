@@ -116,7 +116,10 @@ public interface AttributeSet {
         @DSSafe(DSCat.SAFE_OTHERS)
         public String getAttributeName(int index) {
             // TODO Auto-generated method stub
-            return null;
+            addTaint(index);
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
         }
 
         @Override
@@ -124,7 +127,10 @@ public interface AttributeSet {
         @DSSafe(DSCat.SAFE_OTHERS)
         public String getAttributeValue(int index) {
             // TODO Auto-generated method stub
-            return null;
+            addTaint(index);
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
         }
 
         @Override
@@ -132,7 +138,11 @@ public interface AttributeSet {
         @DSSafe(DSCat.SAFE_OTHERS)
         public String getAttributeValue(String namespace, String name) {
             // TODO Auto-generated method stub
-            return null;
+            addTaint(name.getTaint());
+            addTaint(namespace.getTaint());
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
         }
 
         @Override
@@ -140,7 +150,9 @@ public interface AttributeSet {
         @DSSafe(DSCat.SAFE_OTHERS)
         public String getPositionDescription() {
             // TODO Auto-generated method stub
-            return null;
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
         }
 
         @Override
@@ -259,7 +271,9 @@ public interface AttributeSet {
         @DSSafe(DSCat.SAFE_OTHERS)
         public String getIdAttribute() {
             // TODO Auto-generated method stub
-            return null;
+            String str = new String();
+            str.addTaint(taint);
+            return str; 
         }
 
         @Override
@@ -267,7 +281,9 @@ public interface AttributeSet {
         @DSSafe(DSCat.SAFE_OTHERS)
         public String getClassAttribute() {
             // TODO Auto-generated method stub
-            return null;
+            String str = new String();
+            str.addTaint(taint);
+            return str; 
         }
 
         @Override

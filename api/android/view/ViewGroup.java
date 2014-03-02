@@ -37,15 +37,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     @DSBan(DSCat.PRIVATE_METHOD)
     private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event){
 		// Original method
-		/*
-		{
         if (event.getHistorySize() == 0) {
             return event;
         }
         return MotionEvent.obtainNoHistory(event);
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Private Method")
@@ -508,17 +503,12 @@ public ViewGroup(Context context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View focusSearch(View focused, int direction){
 		// Original method
-		/*
-		{
         if (isRootNamespace()) {
             return FocusFinder.getInstance().findNextFocus(this, focused, direction);
         } else if (mParent != null) {
             return mParent.focusSearch(focused, direction);
         }
         return null;
-    }
-		*/
-		return null;
 	}
 
     /**
@@ -679,15 +669,13 @@ public View getFocusedChild() {
             System.out.println("Find focus in " + this + ": flags="
                     + isFocused() + ", child=" + mFocused);
         }
+        */
         if (isFocused()) {
             return this;
         }
         if (mFocused != null) {
             return mFocused.findFocus();
         }
-        return null;
-    }
-		*/
 		return null;
 	}
     
@@ -767,8 +755,6 @@ public View getFocusedChild() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
-		/*
-		{
         View foundView = super.findViewByAccessibilityIdTraversal(accessibilityId);
         if (foundView != null) {
             return foundView;
@@ -783,9 +769,6 @@ public View getFocusedChild() {
             }
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("potential callback called inside method")
@@ -957,8 +940,6 @@ public View getFocusedChild() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint){
 		// Original method
-		/*
-		{
         final int count = mChildrenCount;
         final View[] children = mChildren;
         for (int i = count - 1; i >= 0; i--) {
@@ -971,9 +952,6 @@ public View getFocusedChild() {
             }
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Package priviledge")
@@ -1296,8 +1274,6 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private void clearTouchTargets(){
 		// Original method
-		/*
-		{
         TouchTarget target = mFirstTouchTarget;
         if (target != null) {
             do {
@@ -1307,9 +1283,6 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
             } while (target != null);
             mFirstTouchTarget = null;
         }
-    }
-		*/
-		//Return nothing
 	}
     
     @DSComment("Private Method")
@@ -1322,38 +1295,28 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
     
     private TouchTarget getTouchTarget(View child){
 		// Original method
-		/*
-		{
         for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
             if (target.child == child) {
                 return target;
             }
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     private TouchTarget addTouchTarget(View child, int pointerIdBits){
 		// Original method
-		/*
-		{
-        TouchTarget target = TouchTarget.obtain(child, pointerIdBits);
+        TouchTarget target = new TouchTarget();       
+        target.child = child;
+        target.pointerIdBits = pointerIdBits;
         target.next = mFirstTouchTarget;
         mFirstTouchTarget = target;
         return target;
-    }
-		*/
-		return null;
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void removePointersFromTouchTargets(int pointerIdBits){
 		// Original method
-		/*
-		{
         TouchTarget predecessor = null;
         TouchTarget target = mFirstTouchTarget;
         while (target != null) {
@@ -1374,9 +1337,6 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
             predecessor = target;
             target = next;
         }
-    }
-		*/
-		//Return nothing
 	}
     
     protected boolean isTransformedTouchPointInView(float x, float y, View child,
@@ -1804,8 +1764,6 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
     
     @Override Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
 		// Original method
-		/*
-		{
         int count = mChildrenCount;
         int[] visibilities = null;
         if (skipChildren) {
@@ -1825,9 +1783,6 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
             }
         }
         return b;
-    }
-		*/
-		return null;
 	}
     
     @DSVerified
@@ -2028,8 +1983,6 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @Override protected View findViewTraversal(int id){
 		// Original method
-		/*
-		{
         if (id == mID) {
             return this;
         }
@@ -2045,15 +1998,10 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
             }
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @Override protected View findViewWithTagTraversal(Object tag){
 		// Original method
-		/*
-		{
         if (tag != null && tag.equals(mTag)) {
             return this;
         }
@@ -2069,15 +2017,10 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
             }
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @Override protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip){
 		// Original method
-		/*
-		{
         if (predicate.apply(this)) {
             return this;
         }
@@ -2093,9 +2036,6 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
             }
         }
         return null;
-    }
-		*/
-		return null;
 	}
     
     @DSVerified
@@ -2615,6 +2555,12 @@ public LayoutTransition getLayoutTransition() {
     public ViewParent invalidateChildInParent(final int[] location, final Rect dirty){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
+        addTaint(location.getTaint());
+        addTaint(dirty.getTaint());
+        if (getTaintBoolean()) {
+            mParent.addTaint(taint);
+            return mParent;
+        }
 		return null;
 	}
     
@@ -3293,8 +3239,6 @@ public MarginLayoutParams(LayoutParams source) {
         
         public static TouchTarget obtain(View child, int pointerIdBits){
 			// Original method
-			/*
-			{
             final TouchTarget target;
             synchronized (sRecycleLock) {
                 if (sRecycleBin == null) {
@@ -3309,9 +3253,6 @@ public MarginLayoutParams(LayoutParams source) {
             target.child = child;
             target.pointerIdBits = pointerIdBits;
             return target;
-        }
-			*/
-			return null;
 		}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.181 -0500", hash_original_field = "3A74AA851F9571BE25183B185857A3CA", hash_generated_field = "393219263EA5357C424C8D6A0761942D")
 
@@ -3370,8 +3311,7 @@ private TouchTarget() {
         
         public static HoverTarget obtain(View child){
 			// Original method
-			/*
-			{
+
             final HoverTarget target;
             synchronized (sRecycleLock) {
                 if (sRecycleBin == null) {
@@ -3385,9 +3325,7 @@ private TouchTarget() {
             }
             target.child = child;
             return target;
-        }
-			*/
-			return null;
+
 		}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.213 -0500", hash_original_field = "3A74AA851F9571BE25183B185857A3CA", hash_generated_field = "393219263EA5357C424C8D6A0761942D")
 
@@ -3481,22 +3419,12 @@ private HoverTarget() {
     @DSSafe(DSCat.DATA_STRUCTURE)
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
-		/*
-		{
         return p;
-    }
-		*/
-		return null;
 	}
     
     protected LayoutParams generateDefaultLayoutParams(){
 		// Original method
-		/*
-		{
         return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    }
-		*/
-		return null;
 	}
     
     @Override protected boolean dispatchConsistencyCheck(int consistency){
@@ -3833,9 +3761,7 @@ private HoverTarget() {
     
     @Override protected int[] onCreateDrawableState(int extraSpace){
 		// Original method
-		/*
-		{
-        if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0) {
+		if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0) {
             return super.onCreateDrawableState(extraSpace);
         }
         int need = 0;
@@ -3854,9 +3780,7 @@ private HoverTarget() {
             }
         }
         return state;
-    }
-		*/
-		return null;
+
 	}
     
     @DSComment("Normal GUI")

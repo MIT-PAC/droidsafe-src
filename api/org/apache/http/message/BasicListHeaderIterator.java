@@ -98,7 +98,16 @@ protected boolean filterHeader(int index) {
     @Override
 	public Header nextHeader() {
 		// TODO Auto-generated method stub
-		return null;
+
+        final int current = this.currentIndex;
+        if (current < 0) {
+            throw new NoSuchElementException("Iteration already finished.");
+        }
+
+        this.lastIndex    = current;
+        this.currentIndex = findNext(current);
+
+        return (Header) this.allHeaders.get(current);
 	}
     
 	@Override

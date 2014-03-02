@@ -1382,7 +1382,11 @@ protected void layoutChildren() {
     View obtainView(int position, boolean[] isScrap){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-    	return null;
+        View v = new View(DSOnlyType.DONTCARE);
+        v.addTaint(taint);
+        v.addTaint(position);
+        v.addTaint(isScrap[0]);
+    	return v;
 	}
     
     @DSComment("Package priviledge")
