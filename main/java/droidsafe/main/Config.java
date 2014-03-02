@@ -138,7 +138,9 @@ public class Config {
     public boolean cloneStaticCalls = true;
     /** should we add context greater than 1 to string for more precise, but could blow up! */
     public boolean preciseStrings = false;
-    /** should we not try to add precision for strings from certain classes */
+    /** should  add precision for strings for all classes */
+    public boolean verypreciseStrings = false;
+    /** should we not add any precision for strings and clump them all together */
     public boolean impreciseStrings = false;
 
     /**
@@ -229,11 +231,14 @@ public class Config {
         Option noCloneStatics = new Option("noclonestatics", "Do not clone static methods to add call site sensitivity");
         options.addOption(noCloneStatics);
 
-        Option preciseStrs = new Option("precisestrings", "turn on extra precision for strings, EXPENSIVE");
+        Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
+        options.addOption(impreciseStrs);
+        
+        Option preciseStrs = new Option("precisestrings", "turn on extra precision for strings in important classes, EXPENSIVE");
         options.addOption(preciseStrs);
 
-        Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST");
-        options.addOption(impreciseStrs);
+        Option verypreciseStrs = new Option("veryprecisestrings", "turn on extra precision for all strings, VERY EXPENSIVE");
+        options.addOption(verypreciseStrs);
 
         Option writeJimple =
                 new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
@@ -382,16 +387,24 @@ public class Config {
             this.cloneStaticCalls = false;
         }
 
-        if (cmd.hasOption("precisestrings")) {
-            this.preciseStrings = true;
-        }
-
+        int stringOptCnt = 0;
         if (cmd.hasOption("imprecisestrings")) {
             this.impreciseStrings = true;
+            stringOptCnt++;
         }
         
-        if (this.preciseStrings && this.impreciseStrings) {
-            logger.error("Cannot enable both precise and imprecise Strings!");
+        if (cmd.hasOption("precisestrings")) {
+            this.preciseStrings = true;
+            stringOptCnt++;
+        }
+
+        if (cmd.hasOption("veryprecisestrings")) {
+            this.verypreciseStrings = true;
+            stringOptCnt++;
+        }
+        
+        if (stringOptCnt > 1) {
+            logger.error("Cannot enable more than one string precision option!");
             droidsafe.main.Main.exit(1);
         }
 

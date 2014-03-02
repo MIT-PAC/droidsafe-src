@@ -675,15 +675,16 @@ public class SparkPTA extends PTABridge {
         opt.put("add-tags","false");             
         opt.put("set-mass","false");
         
-        opt.put("merge-stringbuffer","false");   
-        opt.put("string-constants","true");   
+        
+        opt.put("merge-stringbuffer",Config.v().impreciseStrings ? "true" : "false");   
+        opt.put("string-constants", "true");   
 
         opt.put("kobjsens", Integer.toString(K));
         //if you change this to true, the turn of the static method cloner!
         opt.put("kobjsens-context-for-static-methods", "false");
         
         //pass on precise strings option
-        opt.put("kobjsens-precise-strings", Config.v().preciseStrings ? "true" : "false");
+        opt.put("kobjsens-precise-strings", Config.v().verypreciseStrings ? "true" : "false");
         
         opt.put("kobjsens-no-context-list", 
                 LIMIT_DEPTH_TO_ONE);
@@ -722,7 +723,7 @@ public class SparkPTA extends PTABridge {
     
     private String buildImportantAllocs() {
         //if we want imprecise strings, then don't add precision for any allocators
-        if (Config.v().impreciseStrings) {
+        if (!Config.v().preciseStrings) {
             return "";
         }
         
