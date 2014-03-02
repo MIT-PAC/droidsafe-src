@@ -45,38 +45,50 @@ public class DSCursor implements Cursor {
 		addTaint(selectionArgs.toString().getTaint());
 		addTaint(sortOrder.getTaint());
 	}	
+
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getColumnCount() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return 0;
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getColumnIndex(String columnName) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return 0;
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getColumnIndexOrThrow(String columnName) {
         return getTaintInt();
     }
-
+    
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public String getColumnName(int columnIndex) {
         String str = new String("DSUnknown");
         str.addTaint(getTaint());
         return str;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public String[] getColumnNames() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getCount() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isNull(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -94,56 +106,76 @@ public class DSCursor implements Cursor {
         return getTaintInt();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public short getShort(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public float getFloat(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public double getDouble(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public byte[] getBlob(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public String getString(int columnIndex) {
         return new String("DSUnknown");
     }
 
+    
     public Bundle getExtras() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getPosition() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return 0;
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public boolean isAfterLast() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public boolean isBeforeFirst() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
-
+    
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public boolean isFirst() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public boolean isLast() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean move(int offset) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return true;
     }
     
     @DSComment("From safe class list")
@@ -152,30 +184,35 @@ public class DSCursor implements Cursor {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean moveToLast() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return true;
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public boolean moveToNext() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean moveToPrevious() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean moveToPosition(int position) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
     public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        //TODO: need to add taint to the buffer, but cannot
+        buffer.data[0] = (char)columnIndex;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public void deactivate() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+
     }
     
     @DSComment("From safe class list")
@@ -186,45 +223,51 @@ public class DSCursor implements Cursor {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public boolean isClosed() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean requery() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
     public void registerContentObserver(ContentObserver observer) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        observer.onChange(false);
     }
-
+    
+    
     public void registerDataSetObserver(DataSetObserver observer) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        observer.onChanged();
+        observer.onInvalidated();
     }
 
     public Bundle respond(Bundle extras) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean getWantsAllOnMoveCalls() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return false;
     }
 
     @SuppressWarnings("deprecation")
     public void setNotificationUri(ContentResolver cr, Uri uri) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        //?? what to model here??
     }
 
     @SuppressWarnings("deprecation")
     public void unregisterContentObserver(ContentObserver observer) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        
     }
 
     @SuppressWarnings("deprecation")
     public void unregisterDataSetObserver(DataSetObserver observer) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getType(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return 0;
     }
 }
