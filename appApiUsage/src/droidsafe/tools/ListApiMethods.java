@@ -54,7 +54,7 @@ public class ListApiMethods extends ApiUsageListing {
             
             for (String entry: list) {
                 entry = entry.trim();
-                entry = entry.replaceAll("\\d+\\s+",  "");
+                entry = entry.replaceAll("^\\s*\\d+\\s+",  "");
                 entry = entry.replaceAll("\\s+",  ".");
                 logger.debug("adding {}", entry);
                 interestList.add(entry);
@@ -382,8 +382,24 @@ public class ListApiMethods extends ApiUsageListing {
             }
         }    
 
+        logger.info("Original list: size {}, matched {} ", 
+                interestList.size(), matchedSet.size());
+
+        interestList.removeAll(matchedSet);
+        
+        logger.info("After removed: {} ", interestList.size());
+        
+        String getString = "android.app.Activity.getString";
+        if (interestList.contains(getString)) {
+            logger.info("android.app.Activity.getString is still around");        
+        }
+        
+        if (matchedSet.contains(getString)) {
+            logger.info("getString {} is in matched set", getString);        
+        }
+
+        logger.info("==========Checking superclass's models .... ");
         if (interestList.size() > 0) {
-            interestList.removeAll(matchedSet);
             outStream.println("");
             outStream.println("");
             outStream.println("=================================================");
@@ -392,6 +408,7 @@ public class ListApiMethods extends ApiUsageListing {
             
             List<String> remainedList = new ArrayList<String>(interestList);
             Collections.sort(remainedList);          
+            
             
             for (String api: remainedList) {
                 String[] tokens = api.split("\\.");
@@ -406,6 +423,7 @@ public class ListApiMethods extends ApiUsageListing {
                 }
 
                 logger.info("{} => {}/{}", api, className, methodName);
+
                 SootClass sootClass = Scene.v().getSootClass(className);
                 List<SootMethod> potentials = SootUtils.findPossibleInheritedMethods(sootClass, methodName);
                 Set<SootMethod> potentialSet = new HashSet<SootMethod>(potentials);
@@ -417,13 +435,16 @@ public class ListApiMethods extends ApiUsageListing {
                     String name = getMethodFullName(method);
                     logger.info("api {}, potential {} => name {} ", api, method, name);
                     
-                    if (name.equals(api) || matchedSet.contains(name))
+                    if (matchedSet.contains(name)) {
+                        matchedSet.add(api);
                         continue;
+                    }
 
                     List<String> annoList = extractDSAnnotations(method);
                     String reportLine = getModelReportLine(name, annoList);
                     outStream.printf("%s - ENG3 %s\n", reportLine, api);
-                    interestList.remove(api);
+                    matchedSet.add(name);
+                    matchedSet.add(api);
                     break;
                 }
             }
@@ -433,6 +454,7 @@ public class ListApiMethods extends ApiUsageListing {
             outStream.println("=================================================");
             outStream.println("         No Source Found");
             outStream.println("=================================================");
+            interestList.removeAll(matchedSet);
             remainedList = new ArrayList<String>(interestList); 
             Collections.sort(remainedList);
             for (String api: remainedList) {
