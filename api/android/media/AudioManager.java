@@ -1657,6 +1657,7 @@ public void unregisterAudioFocusListener(OnAudioFocusChangeListener l) {
      *      as the playback of a song or a video.
      *  @return {@link #AUDIOFOCUS_REQUEST_FAILED} or {@link #AUDIOFOCUS_REQUEST_GRANTED}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.324 -0500", hash_original_method = "15F0A18D8B83DF0E5C3CD27FFCEED082", hash_generated_method = "6E143F48E05EFC7863B60522E85BB683")
     
 public int requestAudioFocus(OnAudioFocusChangeListener l, int streamType, int durationHint) {
@@ -1684,6 +1685,7 @@ public int requestAudioFocus(OnAudioFocusChangeListener l, int streamType, int d
      *  @param l the listener with which focus was requested.
      *  @return {@link #AUDIOFOCUS_REQUEST_FAILED} or {@link #AUDIOFOCUS_REQUEST_GRANTED}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.327 -0500", hash_original_method = "32D2590B7FC8AFB5DC09D66E2CA73EB1", hash_generated_method = "21579358F332629CF31E0E350183F580")
     
 public int abandonAudioFocus(OnAudioFocusChangeListener l) {

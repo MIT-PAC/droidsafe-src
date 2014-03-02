@@ -38,6 +38,7 @@ public class MalformedServerReplyException extends IOException
 {
 
     /*** Constructs a MalformedServerReplyException with no message ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:51.067 -0500", hash_original_method = "BD3412B94A9D5270DAB4E49CF4DCDC4E", hash_generated_method = "30E67CC927DD90B3E142FC63DA075985")
     
 public MalformedServerReplyException()
@@ -50,6 +51,7 @@ public MalformedServerReplyException()
      * <p>
      * @param message  The message explaining the reason for the exception.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:51.087 -0500", hash_original_method = "C82C5551751BCEB1A1B9782968036383", hash_generated_method = "561C7F8CC940BAC2190BD2357E257E33")
     
 public MalformedServerReplyException(String message)

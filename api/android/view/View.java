@@ -759,7 +759,6 @@ private static final int PFLAG2_TEXT_ALIGNMENT_RESOLVED_DEFAULT =
 
 // Accessiblity constants for mPrivateFlags2
 
-
 /**
  * Shift for the bits in {@link #mPrivateFlags2} related to the
  * "accessibilityLiveRegion" attribute.
@@ -1095,7 +1094,6 @@ static final int PFLAG2_HAS_TRANSIENT_STATE = 0x80000000;
 
     protected static int DEFAULT_TEXT_DIRECTION = TEXT_DIRECTION_INHERIT;
 
-
 /**
  * Shift for the bits in {@link #mPrivateFlags2} related to the
  * "importantForAccessibility" attribute.
@@ -1122,7 +1120,6 @@ public static final int IMPORTANT_FOR_ACCESSIBILITY_NO = 0x00000002;
  * descendant views.
  */
 public static final int IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS = 0x00000004;
-
 
 /**
  * Mask for obtainig the bits which specify how to determine
@@ -1156,7 +1153,6 @@ static final int PFLAG2_TEXT_DIRECTION_MASK_SHIFT = 6;
  */
 static final int PFLAG2_TEXT_DIRECTION_MASK = 0x00000007
         << PFLAG2_TEXT_DIRECTION_MASK_SHIFT;
-
 
 /**
  * Indicates whether the view text direction has been resolved.
@@ -1452,7 +1448,6 @@ public static final int LAYOUT_DIRECTION_INHERIT = 0;
                                 equals = SYSTEM_UI_FLAG_VISIBLE,
                                 name = "SYSTEM_UI_FLAG_VISIBLE", outputIf = true)
     })
-
    
     int mSystemUiVisibility;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.437 -0500", hash_original_field = "AA3BA123C58FF5925198746B8B561359", hash_generated_field = "AA3BA123C58FF5925198746B8B561359")
@@ -2636,6 +2631,7 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
      *
      * @see AccessibilityDelegate
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.860 -0500", hash_original_method = "32F138BD45B7179C5519FF8B12AC5296", hash_generated_method = "A12D9A93F2041EE5B4A76AE71737ABA4")
     
 public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
@@ -3755,6 +3751,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 public void onFinishTemporaryDetach() {
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public KeyEvent.DispatcherState getKeyDispatcherState(){
 		// Original method
         return mAttachInfo != null ? mAttachInfo.mKeyDispatchState : null;
@@ -5890,6 +5887,7 @@ protected void dispatchDraw(Canvas canvas) {
      * @return The LayoutParams associated with this view, or null if no
      *         parameters have been set yet
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.404 -0500", hash_original_method = "5EB740A9A129A62709C940CDC3C1FA90", hash_generated_method = "0E7022E2AA69DD9440A61ABEEAEDDFD9")
     
 @ViewDebug.ExportedProperty(deepExport = true, prefix = "layout_")
@@ -7096,7 +7094,7 @@ AttachInfo(IWindowSession session, IWindow window,
             };
             return provider;
             //original code returns null
-        }    
+        }
         
         /**
          * Performs the specified accessibility action on the view. For
@@ -10299,7 +10297,7 @@ protected void resolveTextDirection() {
      *        </ul>
      * @attr ref android.R.styleable#View_accessibilityLiveRegion
      */
-    @DSSafe
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void setAccessibilityLiveRegion(int mode) {
         if (mode != getAccessibilityLiveRegion()) {
             mPrivateFlags2 = DSUtils.FAKE_INT;
@@ -10389,6 +10387,7 @@ protected void resolveTextDirection() {
      *
      * @return The parent for accessibility purposes.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ViewParent getParentForAccessibility() {
         if (mParent instanceof View) {
             View parentView = (View) mParent;
@@ -10528,6 +10527,7 @@ protected void resolveTextDirection() {
      * @see #invalidate(int, int, int, int)
      * @see #invalidate(Rect)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void postInvalidateOnAnimation(int left, int top, int right, int bottom) {
         // We try only with the AttachInfo because there's no point in invalidating
         // if we are not attached to our window
@@ -10565,7 +10565,6 @@ protected void resolveTextDirection() {
             action.run();
         }
     }
-    
 
     /**
      * Updates the {@link Paint} object used with the current layer (used only if the current

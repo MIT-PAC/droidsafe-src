@@ -58,6 +58,7 @@ public abstract InputStream getErrorStream();
      * @return the input stream to read from the output stream associated with
      *         the native process.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.958 -0500", hash_original_method = "422D86606304C3F8D9976A0E2284F13F", hash_generated_method = "556020BF6265A6C5614B1CFEE9E2FBA9")

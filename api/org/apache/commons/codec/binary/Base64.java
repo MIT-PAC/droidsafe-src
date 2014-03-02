@@ -62,6 +62,7 @@ public static boolean isArrayByteBase64(byte[] arrayOctect) {
      * @param binaryData binary data to encode
      * @return Base64 characters
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.947 -0500", hash_original_method = "4494B29E35A945C6922BB1D438D582EC", hash_generated_method = "8B6A51FCB99EE75C98201BBFFB4CEC76")
     
 public static byte[] encodeBase64(byte[] binaryData) {
@@ -406,7 +407,6 @@ public byte[] encode(byte[] pArray) {
     public int avail() {
         return getTaintInt();
     }
-    
     
 }
 

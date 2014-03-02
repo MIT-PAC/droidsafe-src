@@ -9,6 +9,6 @@ public interface Executor {
     
     @DSVerified
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.THREADING)
     void execute(Runnable command);
 }

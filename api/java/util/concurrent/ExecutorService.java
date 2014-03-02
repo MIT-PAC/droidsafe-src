@@ -10,7 +10,7 @@ import java.util.List;
 public interface ExecutorService extends Executor {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     void shutdown();
     
     @DSComment("Abstract Method")

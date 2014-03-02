@@ -332,6 +332,8 @@ public State getState() {
      * Reports the current fine-grained state of the network.
      * @return the fine-grained state
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.940 -0500", hash_original_method = "EF299E7A8E902EE5662452C8EC565B0C", hash_generated_method = "061FCDC7F5E040ECCA6F4ED8FF0403D3")
     
 public DetailedState getDetailedState() {

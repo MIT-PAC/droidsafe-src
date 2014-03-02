@@ -75,6 +75,7 @@ public enum DSCat {
     PACKAGE_INFO,
     PHONE_CALL,
     PHONE_STATE,
+    POWER_MANAGER,
     RESOURCE,
     RTP_CALL,
     SENSOR,
@@ -92,6 +93,8 @@ public enum DSCat {
     SECURITY,
     SERIALIZATION,
     TELEPHONY,
+    
+    THREADING, //threading/execution
     URI_EXCHANGE,
     WIFI,
     

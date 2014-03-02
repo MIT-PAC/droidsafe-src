@@ -106,7 +106,7 @@ private static String getActionSymbolicName(int action) {
 
     private static final int UNDEFINED = -1;
 
-    public static final long ROOT_NODE_ID = -1; 
+    public static final long ROOT_NODE_ID = -1;
 
     private static final int BOOLEAN_PROPERTY_CHECKABLE = 0x00000001;
 
@@ -141,7 +141,6 @@ private static String getActionSymbolicName(int action) {
     private static final int BOOLEAN_PROPERTY_MULTI_LINE = 0x00008000;
 
     private static final int BOOLEAN_PROPERTY_CONTENT_INVALID = 0x00010000;
-
     
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.170 -0500", hash_original_field = "617EB5A49831D4E42CC1FEF3965E4033", hash_generated_field = "F78F9523CB351E82CADC0E3370F65663")
 
@@ -223,7 +222,6 @@ public AccessibilityNodeInfo[] newArray(int size) {
     private long mParentNodeId = ROOT_NODE_ID;
     private long mLabelForId = ROOT_NODE_ID;
     private long mLabeledById = ROOT_NODE_ID;
-
 
     /**
      * Movement granularity bit for traversing the text of a node by character.
@@ -1519,7 +1517,8 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
      * @see #FOCUS_INPUT
      * @see #FOCUS_ACCESSIBILITY
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource(DSSourceKind.SENSITIVE_UNCATEGORIZED)
     public AccessibilityNodeInfo findFocus(int focus) {
         enforceSealed();
         //enforceValidFocusType(focus);
@@ -1607,7 +1606,6 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
         enforceNotSealed();
         mLiveRegion = mode;
     }
-    
 
     /**
      * Sets the movement granularities for traversing the text of this node.
@@ -1637,7 +1635,6 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
         return mMovementGranularities;
     }
 
-
     /**
      * Gets the human readable movement granularity symbolic name.
      *
@@ -1660,7 +1657,6 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
                 throw new IllegalArgumentException("Unknown movement granularity: " + granularity);
         }
     }
-    
 
     /**
      * Sets the fully qualified resource name of the source view's id.
@@ -1695,7 +1691,6 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
     public String getViewIdResourceName() {
         return mViewIdResourceName;
     }
-
 
     /**
      * Sets whether this node is visible to the user.

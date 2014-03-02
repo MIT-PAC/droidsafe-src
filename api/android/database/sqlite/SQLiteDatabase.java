@@ -61,6 +61,8 @@ public class SQLiteDatabase extends SQLiteClosable {
      * @return the newly opened database
      * @throws SQLiteException if the database cannot be opened
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.138 -0500", hash_original_method = "561EAEA4DA554DB918DDA9176F70DC13", hash_generated_method = "4942BCB41767BFD0488622F1AB1E7C65")
     
 public static SQLiteDatabase openDatabase(String path, CursorFactory factory, int flags) {
@@ -86,6 +88,8 @@ public static SQLiteDatabase openDatabase(String path, CursorFactory factory, in
      * @return the newly opened database
      * @throws SQLiteException if the database cannot be opened
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.141 -0500", hash_original_method = "528BDC0ADA7690DDC947E526A8FE7C65", hash_generated_method = "A09B47EAA0844CC09CC8C7D4BD955518")
     
 public static SQLiteDatabase openDatabase(String path, CursorFactory factory, int flags,

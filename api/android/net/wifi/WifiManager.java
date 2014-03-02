@@ -1504,6 +1504,7 @@ public String getConfigFile() {
      *
      * @see WifiLock
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.448 -0500", hash_original_method = "77C6D00CEFBA51FBEDF42525D5CAF8B4", hash_generated_method = "0017863403E4329B16521F9204F2257A")
     
 public WifiLock createWifiLock(int lockType, String tag) {
@@ -1522,6 +1523,7 @@ public WifiLock createWifiLock(int lockType, String tag) {
      *
      * @see WifiLock
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.451 -0500", hash_original_method = "F25A7BAA745FE3E1539A4ACAD2E402AC", hash_generated_method = "273F4FF9E160AB67701DDADFDFA75CDD")
     
 public WifiLock createWifiLock(String tag) {
@@ -1541,6 +1543,7 @@ public WifiLock createWifiLock(String tag) {
      *
      * @see MulticastLock
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.453 -0500", hash_original_method = "90BF24DBA9F26B31ED84B0CABBF9287E", hash_generated_method = "44ED1D34D5A2181B0D15F63F3B719EC5")
     
 public MulticastLock createMulticastLock(String tag) {

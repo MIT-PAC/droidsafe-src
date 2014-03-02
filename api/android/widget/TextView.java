@@ -8124,6 +8124,7 @@ private void applySingleLine(boolean singleLine, boolean applyTransformation,
      *
      * @attr ref android.R.styleable#TextView_ellipsize
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.297 -0500", hash_original_method = "8F48F7BF1B8DCE5D5519F1200A0ED853", hash_generated_method = "F285A0E27AA103D42B31FA598A7067B7")
     
 public void setEllipsize(TextUtils.TruncateAt where) {

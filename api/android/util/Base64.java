@@ -49,6 +49,7 @@ public static byte[] decode(String str, int flags) {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.841 -0500", hash_original_method = "ACD53DE2D88BBAB4B72FDF61BEE83076", hash_generated_method = "F3FD65D235E64E72F9A5E7B532538D46")
     
 public static byte[] decode(byte[] input, int flags) {
@@ -71,6 +72,7 @@ public static byte[] decode(byte[] input, int flags) {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.844 -0500", hash_original_method = "795AFD2FD16C81A1775B830E04DF9E9F", hash_generated_method = "E1784E1E0B1A65AD0A028EC0396E05B0")
     
 public static byte[] decode(byte[] input, int offset, int len, int flags) {
@@ -132,6 +134,7 @@ public static String encodeToString(byte[] input, int flags) {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.885 -0500", hash_original_method = "A12D3DC1982AC39840BA4C25FDD2D3BE", hash_generated_method = "047A122D3A75AEB424BF4A43E04D2130")
     
 public static String encodeToString(byte[] input, int offset, int len, int flags) {

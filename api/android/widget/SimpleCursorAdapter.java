@@ -163,6 +163,7 @@ public ViewBinder getViewBinder() {
      * @see #bindView(android.view.View, android.content.Context, android.database.Cursor)
      * @see #getViewBinder()
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.903 -0500", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "CD8F00DE3A674A18D556142232BB8469")
     
 public void setViewBinder(ViewBinder viewBinder) {

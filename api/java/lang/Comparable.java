@@ -8,6 +8,6 @@ import droidsafe.annotations.*;
 public interface Comparable<T> {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     int compareTo(T another);
 }

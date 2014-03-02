@@ -51,12 +51,10 @@ public final class DotTerminatedMessageWriter extends Writer
     private static final int __LAST_WAS_NL_STATE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.943 -0500", hash_original_field = "52F6FF2783D6331A8D30C6852223843F", hash_generated_field = "5AD41186785E88DD1F7FF1EEF877EE9E")
 
-
     private int __state;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.946 -0500", hash_original_field = "902460CA8958914FD108B5165B21CF5C", hash_generated_field = "E719BB84825F6B08666A694C6A1EF62C")
 
     private Writer __output;
-
 
     /***
      * Creates a DotTerminatedMessageWriter that wraps an existing Writer
@@ -64,6 +62,7 @@ public final class DotTerminatedMessageWriter extends Writer
      * <p>
      * @param output  The Writer output destination to write the message.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.949 -0500", hash_original_method = "7F3B7E4878F7B7AD878E6CDC69994E94", hash_generated_method = "D333A4E720FF728B2B39EB9E531568C9")
     
 public DotTerminatedMessageWriter(Writer output)
@@ -72,7 +71,6 @@ public DotTerminatedMessageWriter(Writer output)
         __output = output;
         __state = __NOTHING_SPECIAL_STATE;
     }
-
 
     /***
      * Writes a character to the output.  Note that a call to this method
@@ -85,6 +83,8 @@ public DotTerminatedMessageWriter(Writer output)
      * @exception IOException  If an error occurs while writing to the
      *            underlying output.
      ***/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.953 -0500", hash_original_method = "4EE95F45C86E4F91258EC37A0D803D0C", hash_generated_method = "6D7E28704DC5D004632F393AF374FD21")
     
 public void write(int ch) throws IOException
@@ -116,7 +116,6 @@ public void write(int ch) throws IOException
         }
     }
 
-
     /***
      * Writes a number of characters from a character array to the output
      * starting from a given offset.
@@ -127,6 +126,8 @@ public void write(int ch) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output.
      ***/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.957 -0500", hash_original_method = "41630DBB62E0DD4474E2353E85A23DEC", hash_generated_method = "51F12645A0F3999256B122AE6A18CCC9")
     
 public void write(char[] buffer, int offset, int length) throws IOException
@@ -138,7 +139,6 @@ public void write(char[] buffer, int offset, int length) throws IOException
         }
     }
 
-
     /***
      * Writes a character array to the output.
      * <p>
@@ -146,13 +146,14 @@ public void write(char[] buffer, int offset, int length) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output.
      ***/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.960 -0500", hash_original_method = "FA022850E89BAA01DC8A711414675DE7", hash_generated_method = "D072F1DB76073C5678A4C631350B2B2D")
     
 public void write(char[] buffer) throws IOException
     {
         write(buffer, 0, buffer.length);
     }
-
 
     /***
      * Writes a String to the output.
@@ -161,13 +162,14 @@ public void write(char[] buffer) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output.
      ***/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.963 -0500", hash_original_method = "222E87E258845BFD571D8B5E946AF980", hash_generated_method = "ECA3BB9D25CCF5656E5278F6B4A24661")
     
 public void write(String string) throws IOException
     {
         write(string.toCharArray());
     }
-
 
     /***
      * Writes part of a String to the output starting from a given offset.
@@ -178,13 +180,14 @@ public void write(String string) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output.
      ***/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.966 -0500", hash_original_method = "A3382A53D185805D9FEF81E52E78D014", hash_generated_method = "CE386F23A09968D7056636BB7A12DD1A")
     
 public void write(String string, int offset, int length) throws IOException
     {
         write(string.toCharArray(), offset, length);
     }
-
 
     /***
      * Flushes the underlying output, writing all buffered output.
@@ -201,7 +204,6 @@ public void flush() throws IOException
             __output.flush();
         }
     }
-
 
     /***
      * Flushes the underlying output, writing all buffered output, but doesn't

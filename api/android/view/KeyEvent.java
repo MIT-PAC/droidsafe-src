@@ -2877,6 +2877,7 @@ public boolean isPrintingKey() {
     /**
      * @deprecated Use {@link #dispatch(Callback, DispatcherState, Object)} instead.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.306 -0500", hash_original_method = "1A3310CD4FC6031A54E66A6FF268F76E", hash_generated_method = "5B26E47846EAE8380053C5447857FA9A")
     
 @Deprecated

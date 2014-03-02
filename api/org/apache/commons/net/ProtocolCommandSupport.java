@@ -49,6 +49,7 @@ public class ProtocolCommandSupport implements Serializable
      * <p>
      * @param source  The source to use for all generated ProtocolCommandEvents.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.560 -0500", hash_original_method = "502912F9C717431C8F131DAFAEA6CFFC", hash_generated_method = "50D637142878A0E2645D56388C70D614")
     
 public ProtocolCommandSupport(Object source)
@@ -56,7 +57,6 @@ public ProtocolCommandSupport(Object source)
         __listeners = new ListenerList();
         __source = source;
     }
-
 
     /***
      * Fires a ProtocolCommandEvent signalling the sending of a command to all
@@ -147,6 +147,7 @@ public void addProtocolCommandListener(ProtocolCommandListener listener)
      * <p>
      * @param listener  The ProtocolCommandListener to remove.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.577 -0500", hash_original_method = "8BAE9456243623A59719FE55D09576AF", hash_generated_method = "98A8D0F0B5B9C9B0B8D3A0903AFD90DB")
     
 public void removeProtocolCommandListener(ProtocolCommandListener listener)
@@ -154,12 +155,13 @@ public void removeProtocolCommandListener(ProtocolCommandListener listener)
         __listeners.removeListener(listener);
     }
 
-
     /***
      * Returns the number of ProtocolCommandListeners currently registered.
      * <p>
      * @return The number of ProtocolCommandListeners currently registered.
      ***/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.580 -0500", hash_original_method = "0341EF00CE2D6A0D116D4599A710DD9D", hash_generated_method = "863A9ADABBC8E3D79823EA3D9745525B")
     
 public int getListenerCount()

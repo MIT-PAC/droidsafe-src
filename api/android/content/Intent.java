@@ -2268,6 +2268,7 @@ public CharSequence getCharSequenceExtra(String name) {
         return mExtras == null ? null : mExtras.getCharSequence(name);
     }
     
+    @DSSpec(DSCat.SERIALIATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.428 -0400", hash_original_method = "1C448816D9B902054FE9E8A698247DA2", hash_generated_method = "3E3DEE7B959E87E94EACE1CB55226D17")
     public <T extends Parcelable> T getParcelableExtra(String name) {
         addTaint(name.getTaint());

@@ -160,6 +160,7 @@ public int read(char[] buf) throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.846 -0500", hash_original_method = "BAAE620DD47C67A7C9FA2D182BB45EC6", hash_generated_method = "9A8DFEF4E7A8AC2186089662A0C89E20")

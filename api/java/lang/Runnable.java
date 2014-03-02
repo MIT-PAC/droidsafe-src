@@ -8,6 +8,6 @@ import droidsafe.annotations.*;
 public interface Runnable {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.THREADING)
     public void run();
 }

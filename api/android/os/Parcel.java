@@ -1908,6 +1908,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final <T> T[] createTypedArray(Parcelable.Creator<T> c) {
 		return (T[]) this.mValueTypedArray;
 		// Original method
@@ -1989,6 +1991,8 @@ public String[] newArray(int size) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
 		return (T) mValueParcelable;
 		// Original method

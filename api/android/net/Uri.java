@@ -533,13 +533,13 @@ private Uri() {}
 	}
     
 	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public String getPath() {
 		return uriString;
 	}
     
 	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public String getEncodedPath() {
 		return uriString;
 	}
@@ -2409,7 +2409,7 @@ PathSegments getPathSegments() {
 	}
     
 	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
 		LinkedList<String> list = new LinkedList<String>();
@@ -2418,7 +2418,7 @@ PathSegments getPathSegments() {
 	}
     
 	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public String getLastPathSegment() {
 		return uriString;
 	}
@@ -2438,7 +2438,7 @@ public int hashCode() {
     }
     
 	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public String toString() {
                 String str = new String();
                 str.addTaint(this.getTaint());

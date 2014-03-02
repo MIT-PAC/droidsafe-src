@@ -325,6 +325,7 @@ MyHandler(Looper mainLooper) {
         public void onAccessibilityStateChanged(boolean enabled);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.318 -0400", hash_original_method = "30ACA46B7331464EC3BADA9B88DE998C", hash_generated_method = "717A666E6BC15313F7DC671F3F29079E")
     public boolean addAccessibilityStateChangeListener(
             AccessibilityStateChangeListener listener) {
@@ -340,6 +341,7 @@ MyHandler(Looper mainLooper) {
         //return mAccessibilityStateChangeListeners.add(listener);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.318 -0400", hash_original_method = "253F741B79F5A62D71C9725DE0D51542", hash_generated_method = "DA685E6A5AB504A56BB127F89E0AE3B5")
     public boolean removeAccessibilityStateChangeListener(
             AccessibilityStateChangeListener listener) {

@@ -304,9 +304,9 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
      * @param canvas The canvas to draw into
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.901 -0500", hash_original_method = "E7E2918BC47750A7683807E138C9FCF4", hash_generated_method = "DC73F3A81D382705FEE7B6D1EB5964B5")
-    @DSVerified    
+    @DSVerified
     
 public abstract void draw(Canvas canvas);
 
@@ -318,7 +318,7 @@ public abstract void draw(Canvas canvas);
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.903 -0500", hash_original_method = "16D67C97CF930C94423B2F0ABE9E2FB8", hash_generated_method = "5DAE90321A04C30BBDBF694E00F0AABC")
-    @DSVerified    
+    @DSVerified
     
 public void setBounds(int left, int top, int right, int bottom) {
         Rect oldBounds = mBounds;
@@ -342,7 +342,7 @@ public void setBounds(int left, int top, int right, int bottom) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.905 -0500", hash_original_method = "343A23DF727C21562F2BBDB7DAA5F811", hash_generated_method = "6874DBC0AAB6A4D64EC3FDE9608CF73D")
-    @DSVerified    
+    @DSVerified
     
 public void setBounds(Rect bounds) {
         setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
@@ -359,7 +359,7 @@ public void setBounds(Rect bounds) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.907 -0500", hash_original_method = "2860BC8F60A9356A6AA851AD0EDF9049", hash_generated_method = "A26616E82DFC109B2FAD7A3295CBE031")
-    @DSVerified    
+    @DSVerified
     
 public final void copyBounds(Rect bounds) {
         bounds.set(mBounds);
@@ -377,7 +377,7 @@ public final void copyBounds(Rect bounds) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.909 -0500", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "8398153568D8B0C1C8AE601AF1652DDD")
-    @DSVerified    
+    @DSVerified
     
 public final Rect copyBounds() {
         return new Rect(mBounds);
@@ -402,7 +402,7 @@ public final Rect copyBounds() {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.912 -0500", hash_original_method = "F9C4E095C08A855B9547E5FC046C50BF", hash_generated_method = "BB0D4C947EFB311B6298FBD3B2491C35")
-    @DSVerified    
+    @DSVerified
     
 public final Rect getBounds() {
         if (mBounds == ZERO_BOUNDS_RECT) {
@@ -424,7 +424,7 @@ public final Rect getBounds() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.913 -0500", hash_original_method = "E7340D87AE9D08581CEC5A0FAA0552EE", hash_generated_method = "9F4E013A3B7A5088FF0C842FD0E94E98")
-    @DSVerified    
+    @DSVerified
     
 public void setChangingConfigurations(int configs) {
         mChangingConfigurations = configs;
@@ -447,7 +447,7 @@ public void setChangingConfigurations(int configs) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.917 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "1EFD981CB6D64D2240E5805425A8136B")
-    @DSVerified    
+    @DSVerified
     
 public int getChangingConfigurations() {
         return mChangingConfigurations;
@@ -462,7 +462,7 @@ public int getChangingConfigurations() {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.919 -0500", hash_original_method = "A73E6D639014FDB13967AD6B494837C8", hash_generated_method = "885C8677A0ED029E797386D2040088D8")
-    @DSVerified    
+    @DSVerified
     
 public void setDither(boolean dither) {}
 
@@ -603,7 +603,7 @@ public int getResolvedLayoutDirectionSelf() {
      * 255 means fully opaque.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.942 -0500", hash_original_method = "552C47BA233D82B224568BE44106808F", hash_generated_method = "BA237553E37FDD6A99627044600E8CEA")
     
 public abstract void setAlpha(int alpha);
@@ -615,7 +615,7 @@ public abstract void setAlpha(int alpha);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.944 -0500", hash_original_method = "BDC70B2F57B8B4271211A6F4E36828D5", hash_generated_method = "4C4D56B62B5030A0B2B533B25B3B132E")
-    @DSVerified    
+    @DSVerified
     
 public abstract void setColorFilter(ColorFilter cf);
 
@@ -652,7 +652,7 @@ public void clearColorFilter() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.950 -0500", hash_original_method = "5AE02876CD642F1B59606A09240D1BD0", hash_generated_method = "87BE84D342AB9204B08094A38F81BC23")
-    @DSVerified    
+    @DSVerified
     
 public boolean isStateful() {
         return false;
@@ -730,7 +730,7 @@ public void jumpToCurrentState() {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.958 -0500", hash_original_method = "00D08FCE0657F40CBD93DF1CB810B766", hash_generated_method = "A9832292CF51056A0946F9B8A2FBC09B")
-    @DSVerified    
+    @DSVerified
     
 public Drawable getCurrent() {
         return this;
@@ -755,7 +755,7 @@ public Drawable getCurrent() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.961 -0500", hash_original_method = "9037BFCAC5FB09B2A9E758C0533961C8", hash_generated_method = "CAC49DCDC50EEE63A7A5AA74566C9A29")
-    @DSVerified    
+    @DSVerified
     
 public final boolean setLevel(int level) {
         if (mLevel != level) {
@@ -774,7 +774,7 @@ public final boolean setLevel(int level) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.964 -0500", hash_original_method = "3688C6710C4CB9729612AA02E692BC0A", hash_generated_method = "920139CD38512EC2764B3D291ADD9FB8")
-    @DSVerified    
+    @DSVerified
     
 public final int getLevel() {
         return mLevel;
@@ -797,7 +797,7 @@ public final int getLevel() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.966 -0500", hash_original_method = "385D529E13116BE326F07B115E2B9363", hash_generated_method = "5E48D3139FE4584E32634293062CC314")
-    @DSVerified    
+    @DSVerified
     
 public boolean setVisible(boolean visible, boolean restart) {
         boolean changed = mVisible != visible;
@@ -823,7 +823,7 @@ public boolean setVisible(boolean visible, boolean restart) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.968 -0500", hash_original_method = "5E5A2EDE31F4C9B537E19F3E9904B493", hash_generated_method = "D3B6BF17C13DC8D40405CAB7A503ACFE")
-    @DSVerified    
+    @DSVerified
     
 public final boolean isVisible() {
         return mVisible;
@@ -854,9 +854,9 @@ public final boolean isVisible() {
      * @see android.graphics.PixelFormat
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.970 -0500", hash_original_method = "9662DD8C5FEE80BC1339C77EC72BA687", hash_generated_method = "7B9E49E8EE3D72D401142B9347C6D2DA")
-    @DSVerified    
+    @DSVerified
     
 public abstract int getOpacity();
 
@@ -877,7 +877,7 @@ public abstract int getOpacity();
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.975 -0500", hash_original_method = "6885EC41EEEA48BF379C9186E23112DE", hash_generated_method = "0957E709FBCC66345B992BB3BA42C3DF")
-    @DSVerified    
+    @DSVerified
     
 public Region getTransparentRegion() {
         return null;
@@ -895,7 +895,7 @@ public Region getTransparentRegion() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.977 -0500", hash_original_method = "B7A8462AFC13A6E0F2F8BCB43385BD49", hash_generated_method = "58A509E6CF0FAC6525FCC611ABA223CD")
-    @DSVerified    
+    @DSVerified
     
 protected boolean onStateChange(int[] state) { return false; }
     /** Override this in your subclass to change appearance if you vary based
@@ -908,7 +908,7 @@ protected boolean onStateChange(int[] state) { return false; }
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.979 -0500", hash_original_method = "37D330857F7202D119AB7FE43B955D5E", hash_generated_method = "528BB1010E01B65B3B9ADB937C28B112")
-    @DSVerified    
+    @DSVerified
     
 protected boolean onLevelChange(int level) { return false; }
     /**
@@ -918,7 +918,7 @@ protected boolean onLevelChange(int level) { return false; }
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.981 -0500", hash_original_method = "F81B37D492B4B76F5CB4F03B5248220C", hash_generated_method = "43794E13307713CCF0C1A15FC4F2B463")
-    @DSVerified    
+    @DSVerified
     
 protected void onBoundsChange(Rect bounds) {}
 

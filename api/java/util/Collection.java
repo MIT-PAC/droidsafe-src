@@ -14,7 +14,7 @@ public interface Collection<E> extends Iterable<E> {
     public void clear();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean contains(Object object);
     
     public boolean containsAll(Collection<?> collection);

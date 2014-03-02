@@ -37,7 +37,6 @@ import org.apache.commons.codec.binary.StringUtils;
 public class DigestUtils {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:47:28.794 -0500", hash_original_field = "718C7B67F12CEA0A799121EFB073D08C", hash_generated_field = "45326B07D4C6B386899414D6534492F3")
 
-
     private static final int STREAM_BUFFER_LENGTH = 1024;
 
     /**
@@ -324,6 +323,7 @@ public static byte[] sha(InputStream data) throws IOException {
      *            Data to digest
      * @return SHA-1 digest
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:47:28.955 -0500", hash_original_method = "15F41961C160D456F8E3323E6B9C04D5", hash_generated_method = "7B1C4F23D15C491ABD48D4EF17B52A80")
     
 public static byte[] sha(String data) {

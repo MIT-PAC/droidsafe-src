@@ -1051,6 +1051,8 @@ public final int getByteCount() {
      * If the bitmap's internal config is in one of the public formats, return
      * that config, otherwise return null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.845 -0500", hash_original_method = "2965E803C3174189F0506D62E1B543D4", hash_generated_method = "8C8D5743BC9562CEC4C6371B676EA621")
     
 public final Config getConfig() {

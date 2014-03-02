@@ -17,7 +17,7 @@ import org.apache.http.protocol.HttpContext;
 public interface HttpClient {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.INTERNET)
     HttpParams getParams()
         ;
     
@@ -26,24 +26,28 @@ public interface HttpClient {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpUriRequest request)
         throws IOException, ClientProtocolException
         ;
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpUriRequest request, HttpContext context)
         throws IOException, ClientProtocolException
         ;
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpHost target, HttpRequest request)
         throws IOException, ClientProtocolException
         ;
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpHost target, HttpRequest request,
                          HttpContext context)
         throws IOException, ClientProtocolException

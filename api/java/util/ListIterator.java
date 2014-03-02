@@ -8,7 +8,7 @@ import droidsafe.annotations.*;
 public interface ListIterator<E> extends Iterator<E> {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     void add(E object);
     
     @DSComment("Abstract Method")

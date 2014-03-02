@@ -70,7 +70,6 @@ public class AudioRecord
     public static final int RECORDSTATE_RECORDING = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.409 -0500", hash_original_field = "746609D22FCF0D7F2FA5575D91BB0797", hash_generated_field = "D368C87D4B8D849294C5B2BFA9F26133")
 
-
     // Error codes:
     // to keep in sync with frameworks/base/core/jni/android_media_AudioRecord.cpp
     /**
@@ -87,7 +86,6 @@ public class AudioRecord
 
     public static final int ERROR_INVALID_OPERATION = -3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.461 -0500", hash_original_field = "21F94D1EAC43E93365D901EE02902323", hash_generated_field = "BF93E21576A3B2CA77860393ECCD0417")
-
     
     private static final int AUDIORECORD_ERROR_SETUP_ZEROFRAMECOUNT      = -16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.471 -0500", hash_original_field = "B4A3F5415584880E34B6FF10B2006DB4", hash_generated_field = "FA13E41AF4927D38BD807F679267AFEB")
@@ -113,7 +111,6 @@ public class AudioRecord
 
     private static final int NATIVE_EVENT_NEW_POS = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.585 -0500", hash_original_field = "7F9A0061087988706A825661F6580CAC", hash_generated_field = "963E58A81FACA9BA2A3C11F65FF70C13")
-
     
     private final static String TAG = "AudioRecord-Java";
 
@@ -176,7 +173,6 @@ static public int getMinBufferSize(int sampleRateInHz, int channelConfig, int au
         }
     }
     
-    
     //---------------------------------------------------------
     // Java methods called from the native side
     //--------------------
@@ -212,8 +208,6 @@ static public int getMinBufferSize(int sampleRateInHz, int channelConfig, int au
         
     	return obj.getTaintInt();
     }
-
-
     
     //---------------------------------------------------------
     // Utility methods
@@ -353,7 +347,6 @@ public AudioRecord(int audioSource, int sampleRateInHz, int channelConfig, int a
         mState = STATE_INITIALIZED;
     }
 
-
     // Convenience method for the constructor's parameter checks.
     // This is where constructor IllegalArgumentException-s are thrown
     // postconditions:
@@ -425,7 +418,6 @@ private void audioParamCheck(int audioSource, int sampleRateInHz,
         }
     }
 
-
     // Convenience method for the contructor's audio buffer size check.
     // preconditions:
     //    mChannelCount is valid
@@ -444,15 +436,14 @@ private void audioBuffSizeCheck(int audioBufferSize) {
         }
 
         mNativeBufferSizeInBytes = audioBufferSize;
-    }    
-
-
+    }
 
     /**
      * Releases the native AudioRecord resources.
      * The object can no longer be used and the reference should be set to null
      * after a call to release()
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.758 -0500", hash_original_method = "6BAFEF4B56071398EF886C8BE9B37DAC", hash_generated_method = "0CB0E51B886DD97EA89E4DF7048B042A")
     
 public void release() {
@@ -465,14 +456,12 @@ public void release() {
         mState = STATE_UNINITIALIZED;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.766 -0500", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override
     protected void finalize() {
         native_finalize();
-    } 
-
+    }
 
     //--------------------------------------------------------------------------
     // Getters
@@ -589,7 +578,6 @@ public int getAudioSessionId() {
      * @throws IllegalStateException
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.847 -0500", hash_original_method = "D5E9AE9E0E11D1DB437CBB352D957E8A", hash_generated_method = "9A9E9BB9FCCCB393EF8EBAF1029769B6")
-   
     
     @DSSpec(DSCat.AUDIO_RECORDING)
 public void startRecording()
@@ -606,8 +594,6 @@ public void startRecording()
             }
         }
     }
-
-
 
     /**
      * Stops recording.
@@ -628,7 +614,6 @@ public void stop()
             mRecordingState = RECORDSTATE_STOPPED;
         }
     }
-
 
     //---------------------------------------------------------
     // Audio data supply
@@ -659,7 +644,6 @@ public int read(byte[] audioData, int offsetInBytes, int sizeInBytes) {
         return native_read_in_byte_array(audioData, offsetInBytes, sizeInBytes);
     }
 
-
     /**
      * Reads audio data from the audio hardware for recording into a buffer.
      * @param audioData the array to which the recorded audio data is written.
@@ -686,7 +670,6 @@ public int read(short[] audioData, int offsetInShorts, int sizeInShorts) {
         return native_read_in_short_array(audioData, offsetInShorts, sizeInShorts);
     }
 
-
     /**
      * Reads audio data from the audio hardware for recording into a direct buffer. If this buffer
      * is not a direct buffer, this method will always return 0.
@@ -712,7 +695,6 @@ public int read(ByteBuffer audioBuffer, int sizeInBytes) {
         return native_read_in_direct_buffer(audioBuffer, sizeInBytes);
     }
 
-
     //---------------------------------------------------------
     // Interface definitions
     //--------------------
@@ -736,8 +718,6 @@ public int read(ByteBuffer audioBuffer, int sizeInBytes) {
         void onPeriodicNotification(AudioRecord recorder);
     }
 
-
-
     //---------------------------------------------------------
     // Inner classes
     //--------------------
@@ -748,7 +728,6 @@ public int read(ByteBuffer audioBuffer, int sizeInBytes) {
      */  
     private class NativeEventHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.918 -0500", hash_original_field = "2B54E5191104C9CC662749AFFFB72F6D", hash_generated_field = "D02B153A39B137A767FAF29879DD86F9")
-
         
         private  AudioRecord mAudioRecord;
 
@@ -786,7 +765,6 @@ NativeEventHandler(AudioRecord recorder, Looper looper) {
             }
         }
     };
-
 
     //--------------------------------------------------------------------------
     // Initialization / configuration
@@ -836,7 +814,6 @@ public void setRecordPositionUpdateListener(OnRecordPositionUpdateListener liste
         
     }
 
-
     /**
      * Sets the marker position at which the listener is called, if set with 
      * {@link #setRecordPositionUpdateListener(OnRecordPositionUpdateListener)} or 
@@ -851,7 +828,6 @@ public int setNotificationMarkerPosition(int markerInFrames) {
         return native_set_marker_pos(markerInFrames);
     }
 
-
     /**
      * Sets the period at which the listener is called, if set with
      * {@link #setRecordPositionUpdateListener(OnRecordPositionUpdateListener)} or 
@@ -864,7 +840,6 @@ public int setNotificationMarkerPosition(int markerInFrames) {
 public int setPositionNotificationPeriod(int periodInFrames) {
         return native_set_pos_update_period(periodInFrames);
     }
-    
 
     //---------------------------------------------------------
     // Native methods called from the Java side
@@ -886,14 +861,12 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.967 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     @DSVerified
     @DSBan(DSCat.PRIVATE_METHOD)
     private final void native_finalize(){
     	//Formerly a native method
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.977 -0500", hash_original_method = "29EBD7A2FE8EDC8D2C10EA00B5293031", hash_generated_method = "8E05B7AB4B85F0BA21E048043C2032E1")
     @DSVerified
@@ -901,7 +874,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     private final void native_release(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.986 -0500", hash_original_method = "018663B9BA68CEE6215D6C2D6CDF1E24", hash_generated_method = "3CF50098215D70CBF36D1000DAFEBC9C")
     @DSVerified
@@ -911,14 +883,12 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.995 -0500", hash_original_method = "7AE7BD386DE7186B97622AE5A757DF71", hash_generated_method = "2C001E290E4F435149A59F53766E71EF")
     @DSVerified
     @DSBan(DSCat.PRIVATE_METHOD)
     private final void native_stop(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:29.005 -0500", hash_original_method = "B4EE445EBADFD07C3061F8995AE09F29", hash_generated_method = "53497DC50E746DA235F26B12A8B0F56D")
     @DSVerified
@@ -933,7 +903,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:29.015 -0500", hash_original_method = "8D6C27C905BCFDE7BA929DF2BC9FB650", hash_generated_method = "0800FA1D748523AF83CCF0FBFCD95AA7")
     @DSVerified
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -947,7 +916,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:29.023 -0500", hash_original_method = "EF368B7B52F9547D11C0B896AAED364B", hash_generated_method = "FE76904AC45B69622E584D79F589AFA8")
     @DSVerified
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -958,7 +926,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	jBuffer.addTaint(getTaint());
     	return getTaintInt();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:29.033 -0500", hash_original_method = "F88EF7916D562385F7AC5D5313AEC7D2", hash_generated_method = "C85D747757429FD805A8DB37CB223ADC")
     @DSVerified
@@ -975,7 +942,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:29.052 -0500", hash_original_method = "076BD1361A73CF54CF958B5360137DB5", hash_generated_method = "4057A75CA90D38FD797BCC4CEB825877")
     
@@ -991,7 +957,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
 }
 

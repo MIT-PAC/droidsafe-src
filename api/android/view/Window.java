@@ -583,6 +583,8 @@ public void setAttributes(WindowManager.LayoutParams a) {
      * @return WindowManager.LayoutParams Either the existing window
      *         attributes object, or a freshly created one if there is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.737 -0500", hash_original_method = "1740BD4A684D4859A9304C42BFBB0628", hash_generated_method = "971AECF2967770A660CA66946ABA7DF4")
     
 public final WindowManager.LayoutParams getAttributes() {

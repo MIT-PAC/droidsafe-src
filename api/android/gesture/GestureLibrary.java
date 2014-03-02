@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.gesture;
 
 import droidsafe.annotations.*;
@@ -40,7 +39,7 @@ public abstract boolean save();
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.492 -0500", hash_original_method = "7CBDBE19D2EB2109490F734B622F8585", hash_generated_method = "D407F91A8B34F31FCFE8287408C02D31")
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
 public abstract boolean load();
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.496 -0500", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "0198B3E008A084D33A7779761A0527C9")

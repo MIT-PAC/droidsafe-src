@@ -901,6 +901,7 @@ public void setPlaybackState(int state) {
      *    2.0f is 2x, 0.5f is half-speed, -2.0f is rewind at 2x speed. 0.0f means nothing is
      *    playing (e.g. when state is {@link #PLAYSTATE_ERROR}).
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 12:25:06.098 -0500", hash_original_method = "8B2AAF40BC5CC46CB9E02D7DF06C2F85", hash_generated_method = "48BCE842BAB23808F5C78DBDF2872E6E")
     
 public void setPlaybackState(int state, long timeInMs, float playbackSpeed) {

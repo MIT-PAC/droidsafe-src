@@ -56,20 +56,17 @@ public final class DisplayManager {
             "android.hardware.display.category.PRESENTATION";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:20:07.889 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:20:07.892 -0500", hash_original_field = "2CC68F96F934EA3E15BF4794DB3DE566", hash_generated_field = "A9921A4E062A258F54A69A5DF5AAB9C1")
 
     private  DisplayManagerGlobal mGlobal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:20:07.895 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
 
-
     private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:20:07.902 -0500", hash_original_field = "B00A3026F5234AF7ABD5E573AB12C298", hash_generated_field = "60D45257E3B0DDEF0044C24C8554CECD")
 
     private final SparseArray<Display> mDisplays = new SparseArray<Display>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:20:07.905 -0500", hash_original_field = "2E696C2CBA94376ED9E68D7B7E69843B", hash_generated_field = "74CC84EA7CCF3EC091CABB380B804F63")
-
 
     private final ArrayList<Display> mTempDisplays = new ArrayList<Display>();
 
@@ -128,6 +125,7 @@ public Display[] getDisplays() {
      *
      * @see #DISPLAY_CATEGORY_PRESENTATION
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:20:07.930 -0500", hash_original_method = "6C06E5C8451B49B10C00F3A9AD582CF7", hash_generated_method = "284ABF02CF15A4126183B588A2A6C405")
     
 public Display[] getDisplays(String category) {

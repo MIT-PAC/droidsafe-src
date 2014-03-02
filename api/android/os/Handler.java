@@ -52,7 +52,8 @@ public class Handler {
 		*/
 	}
     
-	public Handler(Callback callback){
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public Handler(Callback callback){
 		mLooper = Looper.myLooper();
 		//mQueue = mLooper.mQueue;
 		mCallback = callback;
@@ -83,7 +84,8 @@ public class Handler {
 		mCallback = null;
 	}
     
-	public Handler(Looper looper, Callback callback){
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public Handler(Looper looper, Callback callback){
 		mLooper = looper;
 		//mQueue = looper.mQueue;
 		mCallback = callback;

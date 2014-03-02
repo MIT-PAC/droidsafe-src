@@ -347,6 +347,7 @@ public PowerManager(IPowerManager service, Handler handler)
      * @see WakeLock#acquire()
      * @see WakeLock#release()
      */
+    @DSSpec(DSCat.POWER_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.683 -0500", hash_original_method = "93AAF5370B6BA4BEAC029A2F72D16576", hash_generated_method = "1CDA668250E23B518D981E8780517EAE")
     
 public WakeLock newWakeLock(int flags, String tag)

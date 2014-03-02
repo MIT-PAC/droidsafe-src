@@ -33,6 +33,7 @@ public static void enableDebugLogging(boolean enabled) {
         //Synthesized constructor
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract <D> Loader<D> initLoader(int id, Bundle args,

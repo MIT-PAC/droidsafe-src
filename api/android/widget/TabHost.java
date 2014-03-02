@@ -102,6 +102,8 @@ private void initTabHost() {
      * Get a new {@link TabSpec} associated with this tab host.
      * @param tag required tag of tab.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.574 -0500", hash_original_method = "9E260D3987C01C55D906A5443FE1F250", hash_generated_method = "A4E462546AA9F6622B95E5FD4A82210C")
     
 public TabSpec newTabSpec(String tag) {
@@ -230,6 +232,7 @@ public void onTouchModeChanged(boolean isInTouchMode) {
      * Add a tab.
      * @param tabSpec Specifies how to create the indicator and content.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.597 -0500", hash_original_method = "7B3B3CDC4F6E22F75BE659816FB8A96F", hash_generated_method = "6607B25D611E173B00C4B9CB03AD311D")
     
 public void addTab(TabSpec tabSpec) {

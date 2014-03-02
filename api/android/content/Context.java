@@ -270,21 +270,21 @@ public abstract class Context {
 
     /** Return an AssetManager instance for your application's package. */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.856 -0500", hash_original_method = "3D9F192E32E991AE3314DE7A1AFABF9B", hash_generated_method = "64818D2C9943C784FC5AD2D35E83F009")
     
 public abstract AssetManager getAssets();
 
     /** Return a Resources instance for your application's package. */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.858 -0500", hash_original_method = "DDC03F44FA955FC312F0B392013F0650", hash_generated_method = "FCB6897E52684952F018239BD74C6494")
     
 public abstract Resources getResources();
 
     /** Return PackageManager instance to find global package information. */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.860 -0500", hash_original_method = "79CAABBA68FB074205B16005189B326D", hash_generated_method = "FCD846236522A06EEDB2DBD77E2946E2")
     
 public abstract PackageManager getPackageManager();
@@ -302,7 +302,7 @@ public abstract ContentResolver getContentResolver();
      * services, etc).
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.865 -0500", hash_original_method = "2273432F36EEE4336A286768A4295592", hash_generated_method = "D221AC1129500C9E83799580297114B8")
     
 public abstract Looper getMainLooper();
@@ -332,6 +332,7 @@ public abstract Looper getMainLooper();
      * if you forget to unregister, unbind, etc.
      * </ul>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.867 -0500", hash_original_method = "4BFA2CD701CE85242491E38EAA80F5E1", hash_generated_method = "52427EC0AE341980B3A33AF47042782C")
@@ -509,6 +510,7 @@ public final TypedArray obtainStyledAttributes(
     /**
      * Return a class loader you can use to retrieve classes in this package.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.896 -0500", hash_original_method = "8A810E4DE3086C301A9EB2A3F9E45FA2", hash_generated_method = "488BD79C00E2507C7A9C8DB8CE74E57B")
@@ -650,6 +652,7 @@ public abstract FileInputStream openFileInput(String name)
      * @see #deleteFile
      * @see java.io.FileOutputStream#FileOutputStream(String)
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.913 -0500", hash_original_method = "BEE63DE917C6EB7327F3CD638CB5E201", hash_generated_method = "C3F3F1D5E8BA5B4F3D287ECFD48EBDEA")
@@ -707,6 +710,7 @@ public abstract File getFileStreamPath(String name);
      * @see #getFileStreamPath
      * @see #getDir
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.920 -0500", hash_original_method = "876DBAEF3446A3BCF806918F15973E79", hash_generated_method = "1B23CBD89B8D00392FABFF3F660464F2")
@@ -780,6 +784,7 @@ public abstract File getFilesDir();
      * @see #getFilesDir
      * @see android.os.Environment#getExternalStoragePublicDirectory
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.922 -0500", hash_original_method = "0A68A7ED4304E520C4C4BE1D85F1E40A", hash_generated_method = "AB6B043865C07D01667A23CF19BC158B")
@@ -791,6 +796,7 @@ public abstract File getExternalFilesDir(String type);
      * are any) can be found.  Note if the application does not have any OBB
      * files, this directory may not exist.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.924 -0500", hash_original_method = "A938DDE28A8E328C810E5D63E9AF5380", hash_generated_method = "1D4A7FAD43E05DE74E01D9C6EAFF4AC7")
@@ -814,6 +820,7 @@ public abstract File getObbDir();
      * @see #getFileStreamPath
      * @see #getDir
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.926 -0500", hash_original_method = "E360556E62C838AA9E622386657A8DBC", hash_generated_method = "F778C1CABF9FB77070025876201F1166")
@@ -849,12 +856,14 @@ public abstract File getCacheDir();
      *
      * @see #getCacheDir
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.928 -0500", hash_original_method = "DC9C00B30E2B2D99DE9CCC7273B6CAC5", hash_generated_method = "9934C57497FC9CC239AA3AEAA11356D7")
     
 public abstract File getExternalCacheDir();
     
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract File[] getExternalCacheDirs();
@@ -863,6 +872,7 @@ public abstract File getExternalCacheDir();
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract File[] getExternalFileDirs();
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract File[] getObbDirs();
@@ -1105,6 +1115,7 @@ public abstract String[] databaseList();
      *
      * @see PackageManager#resolveActivity
      */
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.963 -0500", hash_original_method = "06B12B71B896DBD5D7C902DA38D16681", hash_generated_method = "BC85A3AAC104AF5786AD1DC454AD7A2D")
@@ -1131,6 +1142,7 @@ public abstract void startActivity(Intent intent);
      *
      * @see PackageManager#resolveActivity
      */
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.965 -0500", hash_original_method = "805B1869BDFCE06BF619D5A658DF064F", hash_generated_method = "A0E9D7EE9D2E9CF7F658AE830D92157B")
@@ -1182,6 +1194,7 @@ public abstract void startIntentSender(IntentSender intent,
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.969 -0500", hash_original_method = "758F82A7831A3E63BFA33BC1D51204CD", hash_generated_method = "562685EAD67DEDBF8ECDCC3E48DED167")
@@ -1212,6 +1225,7 @@ public abstract void sendBroadcast(Intent intent);
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.971 -0500", hash_original_method = "BD64097323B630BD418E3BBAB8229A5A", hash_generated_method = "99A1B49845C72E86D3E83EC3A7954E4F")
@@ -1546,7 +1560,7 @@ public abstract void unregisterReceiver(BroadcastReceiver receiver);
      * @see #bindService
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.992 -0500", hash_original_method = "299DC35BFC98468366A24298AABF9029", hash_generated_method = "9E29465F9BF8E95E0E1D32A7BC59A66B")
     
 public abstract ComponentName startService(Intent service);
@@ -1631,7 +1645,7 @@ public abstract boolean stopService(Intent service);
      * @see #BIND_NOT_FOREGROUND
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.997 -0500", hash_original_method = "BF9EC72D463D2576E4637238C7B5F8A3", hash_generated_method = "4F1CE20356B579F43B07AF5AA56DEB85")
     
 public abstract boolean bindService(Intent service, ServiceConnection conn,
@@ -2357,7 +2371,6 @@ public boolean isRestricted() {
 	public Intent droidsafeGetIntent() {
 	    return __ds__intentsFromFilter.get(getTaintInt());
 	}
-
 
     @DSSafe(DSCat.SAFE_OTHERS)
     public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {

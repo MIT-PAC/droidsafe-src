@@ -21,7 +21,7 @@ public interface Cursor {
     static final int FIELD_TYPE_BLOB = 4;
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     int getCount();
     
     @DSComment("Abstract Method")

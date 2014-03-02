@@ -119,8 +119,9 @@ public abstract String[] getSupportedCipherSuites();
      * @throws java.net.UnknownHostException
      *             if the host is unknown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.856 -0500", hash_original_method = "92AB7E02FDD9B6DD187F9A9C0226B2B5", hash_generated_method = "B9E6F078DE3B349829055D34988DB96B")
     
 public abstract Socket createSocket(Socket s, String host, int port, boolean autoClose)

@@ -36,6 +36,8 @@ public abstract class SQLiteOpenHelper {
 
     private  DatabaseErrorHandler mErrorHandler;
     
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.823 -0400", hash_original_method = "FA08D03545E9DF881DE2A492BC7B90D5", hash_generated_method = "5E6F83AB57D3846D72B269C6A4631576")
     public  SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version) {
         this(context, name, factory, version, new DefaultDatabaseErrorHandler());
@@ -43,7 +45,6 @@ public abstract class SQLiteOpenHelper {
         addTaint(factory.getTaint());
         addTaint(name.getTaint());
         addTaint(context.getTaint());
-
         
         // ---------- Original Method ----------
     }
@@ -64,6 +65,8 @@ public abstract class SQLiteOpenHelper {
      * @param errorHandler the {@link DatabaseErrorHandler} to be used when sqlite reports database
      * corruption.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.782 -0500", hash_original_method = "31439111717724CD584CC4C37B277BA9", hash_generated_method = "1E87DEE6C831B0E790943148296DFDC0")
     
 public SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version,

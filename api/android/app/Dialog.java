@@ -204,6 +204,7 @@ Dialog(Context context, int theme, boolean createContextWrapper) {
         mCancelMessage = cancelCallback;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.057 -0500", hash_original_method = "C9ADA56967BDAFB742C2181BE637639A", hash_generated_method = "97FBC2BE4A86EB17DA33D5BA2C676D09")
     
 protected Dialog(Context context, boolean cancelable,
@@ -620,6 +621,7 @@ public void setContentView(View view) {
      * @param view The desired content to display.
      * @param params Layout parameters for the view.
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.114 -0500", hash_original_method = "21FC0CE0727282A96780C185A7B70535", hash_generated_method = "47989C8CCE46AD610759CFB799BD8925")
     
 public void setContentView(View view, ViewGroup.LayoutParams params) {

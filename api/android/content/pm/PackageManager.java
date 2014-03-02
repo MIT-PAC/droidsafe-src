@@ -552,8 +552,9 @@ public NameNotFoundException(String name) {
      * @see #GET_SIGNATURES
      * @see #GET_UNINSTALLED_PACKAGES
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.582 -0500", hash_original_method = "464828FC1398C3C4C0BF897023D8D8AE", hash_generated_method = "C85FB643A0DD80923535E9820CD8A70B")
     
 public abstract PackageInfo getPackageInfo(String packageName, int flags)
@@ -734,8 +735,9 @@ public abstract List<PermissionGroupInfo> getAllPermissionGroups(int flags);
      * @see #GET_SHARED_LIBRARY_FILES
      * @see #GET_UNINSTALLED_PACKAGES
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.604 -0500", hash_original_method = "BC9AFAA827FACCD234420D43BFB9185C", hash_generated_method = "DD1EE427C72C068D4C9362CB17337762")
     
 public abstract ApplicationInfo getApplicationInfo(String packageName,
@@ -761,8 +763,9 @@ public abstract ApplicationInfo getApplicationInfo(String packageName,
      * @see #GET_META_DATA
      * @see #GET_SHARED_LIBRARY_FILES
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.606 -0500", hash_original_method = "A7A64DAF504027462A462281F2A57199", hash_generated_method = "5D6C6A69E2318B84E7D342B9CA736A86")
     
 public abstract ActivityInfo getActivityInfo(ComponentName component,
@@ -1204,8 +1207,9 @@ public abstract ResolveInfo resolveActivity(Intent intent, int flags);
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.651 -0500", hash_original_method = "AC20BF243DC1E97601026E9C98F03F62", hash_generated_method = "C4F29DC65152E729E3C95F54803E2EAD")
     
 public abstract List<ResolveInfo> queryIntentActivities(Intent intent,
@@ -1319,8 +1323,9 @@ public abstract List<ResolveInfo> queryIntentServices(Intent intent,
      * @return ContentProviderInfo Information about the provider, if found,
      *         else null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.662 -0500", hash_original_method = "CFE5D064AFA538A646FC7253CD52DEB8", hash_generated_method = "2213BA79A107BB9936D3476AEF3743A0")
     
 public abstract ProviderInfo resolveContentProvider(String name,
@@ -1433,8 +1438,9 @@ public abstract Drawable getDrawable(String packageName, int resid,
      *
      * @see #getActivityIcon(Intent)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.674 -0500", hash_original_method = "EA2EDB5C6BA981BD61C45ACED3124C72", hash_generated_method = "8CCFA0CD700316E0128637C662938FB1")
     
 public abstract Drawable getActivityIcon(ComponentName activityName)
@@ -1457,8 +1463,9 @@ public abstract Drawable getActivityIcon(ComponentName activityName)
      *
      * @see #getActivityIcon(ComponentName)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.676 -0500", hash_original_method = "E1E7DF7C8539E8DF9184DF5DB8C2CD90", hash_generated_method = "D17E962D94EAC8BBB20FBDAA903C3D48")
     
 public abstract Drawable getActivityIcon(Intent intent)
@@ -1487,8 +1494,9 @@ public abstract Drawable getDefaultActivityIcon();
      *
      * @see #getApplicationIcon(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.681 -0500", hash_original_method = "FE6B9FADCBE1C0A097A550756025ECA1", hash_generated_method = "A0A8CD23D402AE385224882A18EDD4A2")
     
 public abstract Drawable getApplicationIcon(ApplicationInfo info);
@@ -1509,8 +1517,9 @@ public abstract Drawable getApplicationIcon(ApplicationInfo info);
      *
      * @see #getApplicationIcon(ApplicationInfo)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.683 -0500", hash_original_method = "EE5F31B7588978F62B92A22FA544772B", hash_generated_method = "3924CFBDD036383EE621CCED3E85ACEE")
     
 public abstract Drawable getApplicationIcon(String packageName)
@@ -1659,8 +1668,9 @@ public abstract XmlResourceParser getXml(String packageName, int resid,
      * it could not be found for any reason.
      * @param info The application to get the label of
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.700 -0500", hash_original_method = "9CBEA3BF0AE7CFAA4440ABBDDD974B55", hash_generated_method = "5E9D06E583A54C2826BDD24E952441E9")
     
 public abstract CharSequence getApplicationLabel(ApplicationInfo info);

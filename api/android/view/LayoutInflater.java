@@ -159,6 +159,7 @@ public Context getContext() {
      * name. If the factory returns a View, add that to the hierarchy. If it
      * returns null, proceed to call onCreateView(name).
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.774 -0500", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "BB2447E4D90ED5D0807E89E46636F0EC")
     
 public final Factory getFactory() {
@@ -193,6 +194,7 @@ public final Factory2 getFactory2() {
      * merge your own factory with whatever factory the original instance is
      * using.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.779 -0500", hash_original_method = "711BCDCCD1A0460B88DDB4B05554E6F0", hash_generated_method = "2A839CC188A56A09B649B9EBB0CE6C8E")
     
 public void setFactory(Factory factory) {

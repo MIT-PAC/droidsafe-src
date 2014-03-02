@@ -9,6 +9,6 @@ import java.util.Iterator;
 public interface Iterable<T> {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     Iterator<T> iterator();
 }

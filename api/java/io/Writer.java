@@ -50,7 +50,7 @@ protected Writer(Object lock) {
      *             if an error occurs while closing this writer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.985 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "2228FF14FE1AFC53EB7399AA035D1509")
     
 public abstract void close() throws IOException;
@@ -63,7 +63,7 @@ public abstract void close() throws IOException;
      *             if an error occurs while flushing this writer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.988 -0500", hash_original_method = "19CA02765A6BC90E1BC39264DF2DA8FE", hash_generated_method = "39634ABBFA297A919A191B73454200E1")
     
 public abstract void flush() throws IOException;
@@ -101,6 +101,7 @@ public void write(char[] buf) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.993 -0500", hash_original_method = "FA39B0B4ACD833F007B6A5EFA706DF90", hash_generated_method = "1F14AD35BDAC531FAF76D6C9A1E9B3E0")
