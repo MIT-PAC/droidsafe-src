@@ -152,6 +152,12 @@ public void appendFloat(AbstractStringBuilder sb, float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.692 -0500", hash_original_method = "E5DE8038B72ADC299B522ADF153A4152", hash_generated_method = "B2A7C1F6A2239EC1955869A0760FC556")
     
 public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
+        if (sb == null)
+            sb = new StringBuffer();
+        
+        sb.append0((char)inputNumber);
+        return sb.toString();
+        /*
         int inputNumberBits = Float.floatToRawIntBits(inputNumber);
         boolean positive = (inputNumberBits & Float.SIGN_MASK) == 0;
         int e = (inputNumberBits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
@@ -202,11 +208,12 @@ public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
         AbstractStringBuilder dst = (sb != null) ? sb : new StringBuilder(26);
         if (inputNumber >= 1e7f || inputNumber <= -1e7f
                 || (inputNumber > -1e-3f && inputNumber < 1e-3f)) {
-            freeFormatExponential(dst, positive);
+                freeFormatExponential(dst, positive);
         } else {
             freeFormat(dst, positive);
         }
         return (sb != null) ? null : dst.toString();
+*/
     }
 
     @DSComment("Private Method")
