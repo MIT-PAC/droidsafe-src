@@ -69,8 +69,7 @@ public Header getLastHeader(final String name) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Header[] getAllHeaders() {
-		// TODO Auto-generated method stub
-		return null;
+        return this.headergroup.getAllHeaders();
 	}
     
     // non-javadoc, see interface HttpMessage

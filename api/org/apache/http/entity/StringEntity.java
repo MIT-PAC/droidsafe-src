@@ -41,7 +41,7 @@ public StringEntity(final String s, String charset)
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.794 -0400", hash_original_method = "C6F1280894F4B444CF2EFAD46C585EEF", hash_generated_method = "708E4C200C264FD91BBE539DBA47BFF1")
     public  StringEntity(final String s) throws UnsupportedEncodingException {
-        //this(s, null);
+        this.content = s.getBytes();
         addTaint(s.getTaint());
         // ---------- Original Method ----------
     }

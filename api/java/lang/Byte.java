@@ -180,7 +180,7 @@ public static Byte valueOf(String string, int radix) throws NumberFormatExceptio
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.478 -0500", hash_original_method = "ED2DBBC22F9957F86BC9FC2AC655A3C8", hash_generated_method = "BF35DA0FF2C2C3C53A13663AA1B29BBE")
     
 public static Byte valueOf(byte b) {
-        return VALUES[b + 128];
+        return new Byte(b);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.408 -0500", hash_original_field = "A5E8E87A2BAF29AAB1D89B635C5626F8", hash_generated_field = "0B9495765198BD47B32DBC3AF8355DF1")
 
@@ -199,9 +199,7 @@ public static Byte valueOf(byte b) {
     @SuppressWarnings("unchecked")
     public static final Class<Byte> TYPE
             = (Class<Byte>) byte[].class.getComponentType();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.481 -0500", hash_original_field = "2BD35CD0F898BC5B653F09F65927E632", hash_generated_field = "B024BB67DE07AF1FC60D295A0CC58A8E")
 
-    private static final Byte[] VALUES = new Byte[256];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.411 -0500", hash_original_field = "6072D19D08473B81BB367C06EAF7BB24", hash_generated_field = "8CCAF7A9B8382D1617ADC5CB954C674D")
 
     private  byte value;
@@ -355,11 +353,6 @@ public int compareTo(Byte object) {
 @Override
     public String toString() {
         return Integer.toString(value);
-    }
-    static {
-        for (int i = -128; i < 128; i++) {
-            VALUES[i + 128] = new Byte((byte) i);
-        }
     }
     
 }

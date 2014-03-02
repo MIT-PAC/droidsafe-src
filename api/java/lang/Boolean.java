@@ -60,7 +60,7 @@ public static boolean getBoolean(String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.853 -0500", hash_original_method = "BD83C9A3C7856D0FAE5D6BC0CCD859FA", hash_generated_method = "35EF410EA41D39A8C101C5B251B58242")
     
 public static boolean parseBoolean(String s) {
-        return "true".equalsIgnoreCase(s);
+        return new Boolean("true".equals(s));
     }
 
     /**
@@ -92,7 +92,7 @@ public static String toString(boolean value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.857 -0500", hash_original_method = "D7304055711653AFAB319201D507D88D", hash_generated_method = "5D2F5BB17E0BBABB512766F7522CD9F0")
     
 public static Boolean valueOf(String string) {
-        return parseBoolean(string) ? Boolean.TRUE : Boolean.FALSE;
+        return new Boolean("true".equals(string));
     }
 
     /**
@@ -112,7 +112,7 @@ public static Boolean valueOf(String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.860 -0500", hash_original_method = "1F020F11EF22A99E6E7AE33CA4E6AFB6", hash_generated_method = "E53A913A6561FDE56D487E4A382C5544")
     
 public static Boolean valueOf(boolean b) {
-        return b ? Boolean.TRUE : Boolean.FALSE;
+        return new Boolean(b);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.816 -0500", hash_original_field = "E0E21F09D385039080D9D1CB5BA45688", hash_generated_field = "CFFD6448D529B230EC4B399C365C3ED6")
 

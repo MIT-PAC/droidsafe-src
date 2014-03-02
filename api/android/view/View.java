@@ -4337,7 +4337,7 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
                     setPressed(false);
                     if (!mHasPerformedLongPress) {
                         removeLongPressCallback();
-                        result = performClick();
+                        //result = performClick();
                     }
                 }
                 break;

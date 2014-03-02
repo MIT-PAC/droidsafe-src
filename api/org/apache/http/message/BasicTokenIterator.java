@@ -54,14 +54,13 @@ public BasicTokenIterator(final HeaderIterator headerIterator) {
     
     @Override
 	public String nextToken() {
-		// TODO Auto-generated method stub
-		return null;
+        return this.headerIt.nextHeader().getValue();
 	}
     
 	@Override
 	public Object next() {
-		// TODO Auto-generated method stub
-		return new Object();
+            return  this.headerIt.nextHeader().getValue();
+	
 	}
     
     @Override

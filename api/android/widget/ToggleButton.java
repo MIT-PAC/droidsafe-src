@@ -61,7 +61,6 @@ public ToggleButton(Context context) {
 
     @DSComment("ToggleButton, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.765 -0500", hash_original_method = "114EA4FC41B05DCC13D832240123F1AB", hash_generated_method = "2032E16A48DAE7A8FAA1E2F794EDFD08")
     
 @Override
@@ -143,7 +142,6 @@ public void setTextOff(CharSequence textOff) {
         updateReferenceToIndicatorDrawable(getBackground());
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.781 -0500", hash_original_method = "4BCD6E00FF1D8992B4CBE123EFCE4218", hash_generated_method = "A7CB598DCD8B54B83BCEAA154034CAE7")
     
 @Override

@@ -125,7 +125,7 @@ public boolean releaseInterface(UsbInterface intf) {
      * or negative value for failure
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.099 -0500", hash_original_method = "287C316117341FB52A3A40CE5C499D4B", hash_generated_method = "CE61F0C638961A5D4F378D03E7A5F968")
-    
+    @DSSink(DSSinkKind.USB)
 public int controlTransfer(int requestType, int request, int value,
             int index, byte[] buffer, int length, int timeout) {
         return native_control_request(requestType, request, value, index, buffer, length, timeout);
@@ -143,7 +143,7 @@ public int controlTransfer(int requestType, int request, int value,
      * or negative value for failure
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.102 -0500", hash_original_method = "3B16B20932FC06A1773A3617B4E26D41", hash_generated_method = "D5B0FFEC51ADE550873498514BC5E299")
-    
+    @DSSink(DSSinkKind.USB)
 public int bulkTransfer(UsbEndpoint endpoint, byte[] buffer, int length, int timeout) {
         return native_bulk_request(endpoint.getAddress(), buffer, length, timeout);
     }
