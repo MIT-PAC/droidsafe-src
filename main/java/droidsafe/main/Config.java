@@ -107,7 +107,7 @@ public class Config {
 
     /** timeout value in minutes for running the string analysis. 0 means no timeout. Default is 120 (2 hours). */
     public int stringAnalysisTimeout = 120;
-    
+
     /** if true, run value analysis */
     public boolean runValueAnalysis = true;
 
@@ -138,6 +138,8 @@ public class Config {
     public boolean cloneStaticCalls = true;
     /** should we add context greater than 1 to string for more precise, but could blow up! */
     public boolean preciseStrings = false;
+    /** should we not try to add precision for strings from certain classes */
+    public boolean impreciseStrings = false;
 
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -215,21 +217,24 @@ public class Config {
                 OptionBuilder.withArgName("value").hasArg()
                 .withDescription("Timeout value for the string analysis (default 120)").create("jsatimeout");
         options.addOption(jsatimeout);
-        
+
         Option kObjSens = OptionBuilder.withArgName("k").hasArg()
                 .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
         options.addOption(kObjSens);
-                
+
 
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
-        
+
         Option noCloneStatics = new Option("noclonestatics", "Do not clone static methods to add call site sensitivity");
         options.addOption(noCloneStatics);
 
         Option preciseStrs = new Option("precisestrings", "turn on extra precision for strings, EXPENSIVE");
         options.addOption(preciseStrs);
-        
+
+        Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST");
+        options.addOption(impreciseStrs);
+
         Option writeJimple =
                 new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
         options.addOption(writeJimple);
@@ -267,7 +272,7 @@ public class Config {
 
         Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
         options.addOption(pta);
-        
+
         Option fallbackMod = new Option("nofallback", "Disable Fallback Modeling");
         options.addOption(fallbackMod);
 
@@ -287,8 +292,8 @@ public class Config {
                 .withArgName("INFOVALUE")
                 .hasArg()
                 .withDescription(
-                    "Print contexts and local variables that have INFOVALUE")
-                            .withLongOpt("infoflow-value").create("x");
+                        "Print contexts and local variables that have INFOVALUE")
+                        .withLongOpt("infoflow-value").create("x");
         options.addOption(infoFlowValue);
 
         Option infoFlowTrackAll = new Option("trackallflows", 
@@ -364,15 +369,15 @@ public class Config {
         if (cmd.hasOption("jsatimeout")) {
             this.stringAnalysisTimeout = Integer.parseInt(cmd.getOptionValue("jsatimeout"));
         }
-        
+
         if (cmd.hasOption("kobjsens")) {
             this.kobjsens = Integer.parseInt(cmd.getOptionValue("kobjsens"));
         }
-        
+
         if (cmd.hasOption("strict")) {
             this.strict = true;
         }
-        
+
         if (cmd.hasOption("noclonestatics")) {
             this.cloneStaticCalls = false;
         }
@@ -380,7 +385,16 @@ public class Config {
         if (cmd.hasOption("precisestrings")) {
             this.preciseStrings = true;
         }
+
+        if (cmd.hasOption("imprecisestrings")) {
+            this.impreciseStrings = true;
+        }
         
+        if (this.preciseStrings && this.impreciseStrings) {
+            logger.error("Cannot enable both precise and imprecise Strings!");
+            droidsafe.main.Main.exit(1);
+        }
+
         if (cmd.hasOption("noinfoflow")) {
             this.infoFlow = false;
         }
@@ -417,7 +431,7 @@ public class Config {
 
         if (cmd.hasOption("nofallback"))
             this.addFallbackModeling = false;
-        
+
         if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 
 

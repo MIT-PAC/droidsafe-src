@@ -114,6 +114,17 @@ public class SparkPTA extends PTABridge {
             "java.lang.Throwable,java.math.BigInt,java.math.BigInteger,"+
              "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point"; 
     
+    /** package prefix of important allocators from java */
+    private static String[] IMPORTANT_ALLOCATORS_FROM_JAVA = {
+        "java.io",
+        "java.lang",
+        "java.math",
+        "java.net",
+        "java.nio",
+        "java.util",
+        "java.text"
+    };
+    
     public SparkPTA(Map<String,String> opts) {
         super(opts);
     }
@@ -669,14 +680,15 @@ public class SparkPTA extends PTABridge {
 
         opt.put("kobjsens", Integer.toString(K));
         //if you change this to true, the turn of the static method cloner!
-        opt.put("objsens-context-for-static-methods", "false");
+        opt.put("kobjsens-context-for-static-methods", "false");
         
-        //if we don't want precise strings, then limit the depth of k to one for string types
-        if (!Config.v().preciseStrings)
-            LIMIT_DEPTH_TO_ONE += ",java.lang.String,java.lang.StringBuffer,java.lang.StringBuilder";
+        //pass on precise strings option
+        opt.put("kobjsens-precise-strings", Config.v().preciseStrings ? "true" : "false");
         
-        opt.put("obj-sens-no-context-list", 
+        opt.put("kobjsens-no-context-list", 
                 LIMIT_DEPTH_TO_ONE);
+        
+        opt.put("kobjsens-important-allocators", buildImportantAllocs());
         
         //now overwrite options with options that are passed in
         for (Map.Entry<String, String> entry : opts.entrySet()) {
@@ -695,5 +707,38 @@ public class SparkPTA extends PTABridge {
 
 
         logger.info("[spark] Done!");
+    }
+    
+    private boolean isImportantJavaAlloc(SootClass clz) {
+        String packageName = clz.getName();
+        
+        for (String packPrefix : IMPORTANT_ALLOCATORS_FROM_JAVA) {
+            if (packageName.startsWith(packPrefix))
+                return true;
+        }
+        
+        return false;
+    }
+    
+    private String buildImportantAllocs() {
+        //if we want imprecise strings, then don't add precision for any allocators
+        if (Config.v().impreciseStrings) {
+            return "";
+        }
+        
+        StringBuffer sb = new StringBuffer();
+      
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (Project.v().isSrcClass(clz) ||
+                    isImportantJavaAlloc(clz)) {
+                logger.info("Adding class to important alloc list of spark: {}", clz);
+                sb.append(clz + ",");
+            }
+        }
+        String ret = sb.toString();
+        
+        ret = ret.substring(0, ret.length() - 1);
+        
+        return ret;
     }
 }
