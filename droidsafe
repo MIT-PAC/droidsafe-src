@@ -6,7 +6,7 @@ import os
 import subprocess
 import socket
 
-# if your hostname is one of these, then issue a server run (use 32 GB memory)
+# if your hostname is one of these, then issue a server run (use BIG GB memory)
 SERVERS = ["hippo", "rhino"]
 
 HOSTNAME = socket.gethostname()
@@ -14,6 +14,7 @@ JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
 MAIN_CLASS = "droidsafe.main.Main"
 APAC_HOME = os.environ['APAC_HOME'] + os.sep
 
+SERVER_MEMORY="80"
 
 def run_droidsafe(args):
     libs = APAC_HOME + "bin" + os.sep
@@ -35,9 +36,9 @@ def run_droidsafe(args):
     java_command.append("-Djava.library.path=" + APAC_HOME + "lib")
 
     if (HOSTNAME in SERVERS):
-        print("Server run: setting memory size to 32GB")
+        print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
         java_command.append("-Xms2g")
-        java_command.append("-Xmx32g")
+        java_command.append("-Xmx" + SERVER_MEMORY+ "g")
     else:
         java_command.append("-Xms1g")
         java_command.append("-Xmx16g")
