@@ -200,13 +200,13 @@ static String getMethodName(String prefix, String propertyName) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     static private int nGetIntMethod(Class targetClass, String methodName) {
-        return DSUtils.UNKNOWN_INT;
+        return (targetClass.getTaintInt() + methodName.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     static private int nGetFloatMethod(Class targetClass, String methodName) {
-        return DSUtils.UNKNOWN_INT;
+        return (targetClass.getTaintInt() + methodName.getTaintInt());
     }
     
     @DSComment("Private Method")

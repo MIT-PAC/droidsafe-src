@@ -133,8 +133,7 @@ public static MediaPlayer create(Context context, int resid) {
     }
     
     public static int native_pullBatteryData(Parcel reply) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814873156 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814873156;
+        return reply.getTaintInt();
     }
 
     /**

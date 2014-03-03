@@ -13,8 +13,7 @@ public class AvoidXfermode extends Xfermode {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(int opColor, int tolerance,
                                            int nativeMode) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613288083 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613288083;
+        return (opColor + tolerance + nativeMode);
     }
     
     /** This xfermode draws, or doesn't draw, based on the destination's

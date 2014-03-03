@@ -28,13 +28,15 @@ public static String getDeviceName(int id) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_get_device_id(String name) {
-        return DSUtils.UNKNOWN_INT;
+        return name.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String native_get_device_name(int id) {
-        	return DSUtils.UNKNOWN_STRING;
+            String str = new String();
+            str.addTaint(id);
+            return str;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.326 -0500", hash_original_field = "4E5F892C05B53768683DDD3E619455EF", hash_generated_field = "DAD861C32930D3C3DB9711543F4CBDEA")
 

@@ -14,8 +14,8 @@ public class AudioSystem {
 public static final int getNumStreamTypes() { return NUM_STREAM_TYPES; }
     
     public static int muteMicrophone(boolean on) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756309994 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756309994;
+        int tmp = on? 0: 1;
+        return tmp;
     }
     
     public static boolean isMicrophoneMuted() {
@@ -24,13 +24,11 @@ public static final int getNumStreamTypes() { return NUM_STREAM_TYPES; }
     }
     
     public static boolean isStreamActive(int stream, int inPastMs) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1331802538 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1331802538;
+        return (stream > inPastMs);
     }
     
     public static int setParameters(String keyValuePairs) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860833902 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860833902;
+        return keyValuePairs.getTaintInt();
     }
     
     public static String getParameters(String keys) {
@@ -73,53 +71,43 @@ private static void errorCallbackFromNative(int error)
     }
     
     public static int setDeviceConnectionState(int device, int state, String device_address) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_187799177 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_187799177;
+        return (device + state + device_address.getTaintInt());                
     }
     
     public static int getDeviceConnectionState(int device, String device_address) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11225308 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11225308;
+        return (device + device_address.getTaintInt());                
     }
     
     public static int setPhoneState(int state) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995969536 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995969536;
+        return state;
     }
     
     public static int setRingerMode(int mode, int mask) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1507481703 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1507481703;
+        return (mode + mask);
     }
     
     public static int setForceUse(int usage, int config) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429176203 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429176203;
+                return (usage + config);
     }
     
     public static int getForceUse(int usage) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138645 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138645;
+        return usage;
     }
     
     public static int initStreamVolume(int stream, int indexMin, int indexMax) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593650950 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593650950;
+        return (stream + indexMin + indexMax);
     }
     
     public static int setStreamVolumeIndex(int stream, int index) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515598909 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515598909;
+        return stream + index;
     }
     
     public static int getStreamVolumeIndex(int stream) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458088729 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458088729;
+        return stream;
     }
     
     public static int getDevicesForStream(int stream) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384;
+        return stream;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.712 -0500", hash_original_field = "A6B9CAE819C8928B0B4F12E0E2A67209", hash_generated_field = "510AC64E3D8878D1E4E4A84AF2CB48F5")
 

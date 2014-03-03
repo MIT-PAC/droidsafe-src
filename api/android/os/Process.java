@@ -337,11 +337,11 @@ private static ProcessStartResult startViaZygote(final String processClass,
     }
     
     public static final int getUidForName(String name) {
-        return DSUtils.UNKNOWN_INT;
+        return name.getTaintInt();
     }
     
     public static final int getGidForName(String name) {
-        return DSUtils.UNKNOWN_INT;
+        return name.getTaintInt();
     }
 
     /**
@@ -395,7 +395,7 @@ public static final int getParentPid(int pid) {
     }
     
     public static final int getThreadPriority(int tid) throws IllegalArgumentException {
-        return DSUtils.UNKNOWN_INT;
+        return tid;
     }
     
     /**
@@ -414,7 +414,7 @@ public static final int getParentPid(int pid) {
     }
     
     public static final boolean setOomAdj(int pid, int amt) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (pid > amt);
     }
     
     public static final void setArgV0(String text) {
@@ -438,11 +438,11 @@ public static final void killProcess(int pid) {
     }
     
     public static final int setUid(int uid) {
-        return DSUtils.UNKNOWN_INT;
+        return uid;
     }
     
     public static final int setGid(int uid) {
-        return DSUtils.UNKNOWN_INT;
+        return uid;
     }
     
     public static final void sendSignal(int pid, int signal) {
@@ -472,22 +472,48 @@ public static final void killProcessQuiet(int pid) {
     }
     
     public static final int[] getPids(String path, int[] lastArray) {
-        int[] ret = {DSUtils.UNKNOWN_INT};
+        int[] ret = new int[10];
+        ret.addTaint(path.getTaint());
+        for (int i = 0; i < lastArray.length; i++)
+            ret[i] = lastArray[i];
         return ret;
     }
     
     public static final boolean readProcFile(String file, int[] format,
             String[] outStrings, long[] outLongs, float[] outFloats) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+
+        outStrings.addTaint(format.getTaint());
+        outLongs.addTaint(format.getTaint());
+        outFloats.addTaint(format.getTaint());
+
+        outStrings.addTaint(file.getTaint());
+        outLongs.addTaint(file.getTaint());
+        outFloats.addTaint(file.getTaint());
+
+        return outFloats.getTaintBoolean() && outStrings.getTaintBoolean() && outLongs.getTaintBoolean();
     }
     
     public static final boolean parseProcLine(byte[] buffer, int startIndex, 
             int endIndex, int[] format, String[] outStrings, long[] outLongs, float[] outFloats) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+
+        outStrings.addTaint(startIndex + endIndex);
+        outLongs.addTaint(startIndex + endIndex);
+        outFloats.addTaint(startIndex + endIndex);
+
+        outStrings.addTaint(format.getTaint());
+        outLongs.addTaint(format.getTaint());
+        outFloats.addTaint(format.getTaint());
+
+        outStrings.addTaint(buffer.getTaint());
+        outLongs.addTaint(buffer.getTaint());
+        outFloats.addTaint(buffer.getTaint());
+
+        return outFloats.getTaintBoolean() && outStrings.getTaintBoolean() && outLongs.getTaintBoolean();
+
     }
     
     public static final long getPss(int pid) {
-        return DSUtils.UNKNOWN_LONG;
+        return pid;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.598 -0500", hash_original_field = "BC44B407F4C10F9EDAD581BF2B8CACF3", hash_generated_field = "5F9C7257A217587A990699F8AF46B2EF")
 

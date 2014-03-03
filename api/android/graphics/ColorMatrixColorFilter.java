@@ -12,15 +12,13 @@ public class ColorMatrixColorFilter extends ColorFilter {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeColorMatrixFilter(float[] array) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702;
+        return (int)(array[0] + array.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nColorMatrixFilter(int nativeFilter, float[] array) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373;
+        return (int)(array[0] + array.getTaintInt() + nativeFilter);
     }
     /**
      * Create a colorfilter that transforms colors through a 4x5 color matrix.

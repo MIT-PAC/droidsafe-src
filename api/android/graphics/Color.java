@@ -383,14 +383,16 @@ public static int HSVToColor(int alpha, float hsv[]) {
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
+    private static void nativeRGBToHSV(int red, int green, int blue, float hsv[]) {
+        hsv[0] = (red + green + blue);
+        hsv[1] = (red + green + blue);
+        hsv[2] = (red + green + blue);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeHSVToColor(int alpha, float hsv[]) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947;
+        return (int)(alpha + hsv[0] + hsv[1] + hsv[2]);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.547 -0500", hash_original_field = "40C6B57D4F537C98C100CDD3283B6A16", hash_generated_field = "5072579A5D175A2DD4305C5328287571")
 

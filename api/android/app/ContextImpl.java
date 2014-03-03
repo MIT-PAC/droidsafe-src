@@ -754,7 +754,10 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
             conn.onServiceConnected(serviceCompName, mActivityToken);
             conn.onServiceDisconnected(serviceCompName);
         }
-        return DSUtils.UNKNOWN_BOOLEAN;
+        addTaint(service.getTaint());
+        addTaint(conn.getTaint());
+        addTaint(flags);
+        return getTaintBoolean();
     }
 
     @DSVerified

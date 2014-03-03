@@ -17,19 +17,21 @@ public class SQLiteQuery extends SQLiteProgram {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeFillWindow(int databasePtr, int statementPtr, int windowPtr,
             int startPos, int offsetParam) {
-        return DSUtils.UNKNOWN_INT;
+        return  databasePtr + statementPtr + windowPtr + startPos + offsetParam;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeColumnCount(int statementPtr) {
-        return DSUtils.UNKNOWN_INT;
+        return statementPtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeColumnName(int statementPtr, int columnIndex) {
-        	return new String();
+        String str = new String();
+        str.addTaint(statementPtr + columnIndex);
+        return str;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.469 -0500", hash_original_field = "60D09076627E73BCAEEB6F563954C30A", hash_generated_field = "33B4EC31717AE04F4951ABB455378F67")
 

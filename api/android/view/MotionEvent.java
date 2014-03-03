@@ -42,14 +42,21 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
             float xOffset, float yOffset, float xPrecision, float yPrecision,
             long downTimeNanos, long eventTimeNanos,
             int pointerCount, PointerProperties[] pointerIds, PointerCoords[] pointerCoords) {
-        return DSUtils.UNKNOWN_INT;
+            
+            double temp = deviceId + source + action + flags + edgeFlags +
+                        metaState + buttonState + xOffset + yOffset  + 
+                        xPrecision + yPrecision + downTimeNanos + eventTimeNanos +
+                        pointerIds[0].getTaintInt() + pointerCoords[0].getTaintInt();
+
+        return (int)(temp);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCopy(int destNativePtr, int sourceNativePtr,
             boolean keepHistory) {
-        return DSUtils.UNKNOWN_INT;
+        int temp = keepHistory? 0: 1; 
+        return (destNativePtr + sourceNativePtr + temp);
     }
     
     @DSComment("Private Method")
@@ -64,25 +71,25 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetDeviceId(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetSource(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeSetSource(int nativePtr, int source) {
-        return DSUtils.UNKNOWN_INT;
+        return (nativePtr + source);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetAction(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
@@ -93,13 +100,13 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeIsTouchEvent(int nativePtr) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (nativePtr > 0);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetFlags(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
@@ -110,7 +117,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetEdgeFlags(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
@@ -121,13 +128,13 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetMetaState(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetButtonState(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
@@ -138,31 +145,31 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetXOffset(int nativePtr) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return (float)nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetYOffset(int nativePtr) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetXPrecision(int nativePtr) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetYPrecision(int nativePtr) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetDownTimeNanos(int nativePtr) {
-        return DSUtils.UNKNOWN_LONG;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
@@ -173,55 +180,56 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetPointerCount(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetPointerId(int nativePtr, int pointerIndex) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr + pointerIndex;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetToolType(int nativePtr, int pointerIndex) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr + pointerIndex;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeFindPointerIndex(int nativePtr, int pointerId) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr + pointerId;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetHistorySize(int nativePtr) {
-        return DSUtils.UNKNOWN_INT;
+        return nativePtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetEventTimeNanos(int nativePtr, int historyPos) {
-        return DSUtils.UNKNOWN_LONG;
+        return nativePtr + historyPos;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetRawAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return (nativePtr + axis + pointerIndex + historyPos);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return (nativePtr + axis + pointerIndex + historyPos);
     }
     
     private static void nativeGetPointerCoords(int nativePtr,
             int pointerIndex, int historyPos, PointerCoords outPointerCoords) {
+        outPointerCoords.addTaint(nativePtr + pointerIndex + historyPos);
     }
     
     private static void nativeGetPointerProperties(int nativePtr,
@@ -241,12 +249,13 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeReadFromParcel(int nativePtr, Parcel parcel) {
-        return DSUtils.UNKNOWN_INT;
+        return (nativePtr + parcel.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeWriteToParcel(int nativePtr, Parcel parcel) {
+        parcel.addTaint(nativePtr);
     }
 
     @DSComment("Private Method")

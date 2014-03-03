@@ -12,7 +12,7 @@ public class PorterDuffXfermode extends Xfermode {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateXfermode(int mode) {
-        return DSUtils.UNKNOWN_INT;
+        return mode;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.252 -0500", hash_original_field = "0EEBD768349295274478FE908D38E6AA", hash_generated_field = "698BE6610509E128DA164E335568BD09")
 

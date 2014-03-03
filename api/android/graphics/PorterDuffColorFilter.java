@@ -12,14 +12,14 @@ public class PorterDuffColorFilter extends ColorFilter {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_CreatePorterDuffFilter(int srcColor, int porterDuffMode) {
-        return DSUtils.UNKNOWN_INT;
+        return (srcColor + porterDuffMode);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nCreatePorterDuffFilter(int nativeFilter, int srcColor,
             int porterDuffMode) {
-        return DSUtils.UNKNOWN_INT;
+        return (srcColor + porterDuffMode + nativeFilter);
     }
     /**
      * Create a colorfilter that uses the specified color and porter-duff mode.

@@ -223,22 +223,22 @@ public static void incrementOperationCount(int tag, int operationCount) {
     
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTxPackets(String iface) {
-        return DSUtils.UNKNOWN_LONG;
+        return iface.getTaintInt();
     }
     
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getRxPackets(String iface) {
-        return DSUtils.UNKNOWN_LONG;
+        return iface.getTaintInt();
     }
     
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTxBytes(String iface) {
-        return DSUtils.UNKNOWN_LONG;
+        return iface.getTaintInt();
     }
     
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getRxBytes(String iface) {
-        return DSUtils.UNKNOWN_LONG;
+        return iface.getTaintInt();
     }
     
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
@@ -268,53 +268,53 @@ public static void incrementOperationCount(int tag, int operationCount) {
     @DSComment("Traffic statistics")
     @DSSpec(DSCat.NETWORK_STATS)
     public static long getUidTxBytes(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     @DSComment("Traffic statistics")
     @DSSpec(DSCat.NETWORK_STATS)
     public static long getUidRxBytes(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidTxPackets(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidRxPackets(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidTcpTxBytes(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidTcpRxBytes(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidUdpTxBytes(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidUdpRxBytes(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidTcpTxSegments(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidTcpRxSegments(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidUdpTxPackets(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
     
     public static long getUidUdpRxPackets(int uid) {
-        return DSUtils.UNKNOWN_LONG;
+        return uid;
     }
 
     /**

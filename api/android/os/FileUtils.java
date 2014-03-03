@@ -36,23 +36,26 @@ public static boolean getFileStatus(String path, FileStatus status) {
     }
     
     private static boolean getFileStatusNative(String path, FileStatus status) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        status.addTaint(path.getTaint());
+        return status.getTaintBoolean();
     }
     
     public static int setPermissions(String file, int mode, int uid, int gid) {
-        return DSUtils.UNKNOWN_INT;
+        file.addTaint(mode + uid + gid);
+        return file.getTaintInt();
     }
     
     public static int getPermissions(String file, int[] outPermissions) {
-        return DSUtils.UNKNOWN_INT;
+        outPermissions[0] = file.getTaintInt();
+        return outPermissions.getTaintInt();
     }
     
     public static int setUMask(int mask) {
-        return DSUtils.UNKNOWN_INT;
+        return mask;
     }
     
     public static int getFatVolumeId(String mountPoint) {
-        return DSUtils.UNKNOWN_INT;
+        return mountPoint.getTaintInt();
     }
 
     /**

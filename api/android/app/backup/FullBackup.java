@@ -20,7 +20,13 @@ public class FullBackup {
     
     static public int backupToTar(String packageName, String domain,
             String linkdomain, String rootpath, String path, BackupDataOutput output) {
-        return DSUtils.UNKNOWN_INT;
+
+        output.addTaint(packageName.getTaint());
+        output.addTaint(domain.getTaint());
+        output.addTaint(rootpath.getTaint());
+        output.addTaint(path.getTaint());
+
+        return output.getTaintInt();
     }
 
     /**

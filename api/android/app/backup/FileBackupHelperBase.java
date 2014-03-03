@@ -69,19 +69,28 @@ static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutpu
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int performBackup_native(FileDescriptor oldState,
             int data, FileDescriptor newState, String[] files, String[] keys) {
-        return DSUtils.UNKNOWN_INT;
+
+        newState.addTaint(oldState.getTaint());
+        newState.addTaint(data);
+        newState.addTaint(files[0].getTaint());
+        newState.addTaint(files.getTaint());
+        newState.addTaint(keys[0].getTaint());
+        newState.addTaint(keys.getTaint());
+
+        return newState.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeFile_native(int ptr, String filename, int backupReader) {
-        return DSUtils.UNKNOWN_INT;
+        return (ptr + filename.getTaintInt() + backupReader);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeSnapshot_native(int ptr, FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        fd.addTaint(ptr);
+        return fd.getTaintInt();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.028 -0500", hash_original_field = "73DA84C3D73901EAFDC64078A17B6EFD", hash_generated_field = "61E475B8BF147749B9941333719C84D8")
 

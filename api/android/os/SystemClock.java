@@ -46,7 +46,7 @@ public static void sleep(long ms)
     }
     
     public static boolean setCurrentTimeMillis(long millis) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (millis != 0);
     }
     
     @DSComment("SystemClock only allows reading time")

@@ -397,6 +397,7 @@ public Bitmap getFrameAtTime() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.171 -0400", hash_original_method = "0267DF76D9FDF0A85486B93D0A2D882E", hash_generated_method = "EAEEF9DF0C3B11B82EFDFB7406623787")
     private Bitmap _getFrameAtTime(long timeUs, int option) {
     	Bitmap bmp = BitmapFactory.decodeByteArray(new byte[] {1}, DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT);
+        bmp.addTaint(getTaint());
     	bmp.addTaint(timeUs);
     	bmp.addTaint(option);
     	return bmp;

@@ -275,27 +275,30 @@ public static String getEGLErrorString(int error) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getInternalFormat(Bitmap bitmap) {
-        return DSUtils.UNKNOWN_INT;
+        return bitmap.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getType(Bitmap bitmap) {
-        return DSUtils.UNKNOWN_INT;
+        return bitmap.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
-        return DSUtils.UNKNOWN_INT;
+        bitmap.addTaint(target + level + internalformat + type + border);
+        return bitmap.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
-        return DSUtils.UNKNOWN_INT;
+
+        bitmap.addTaint(target + level + format + type + xoffset + yoffset);
+        return bitmap.getTaintInt();
     }
 
     @DSComment("Private Method")

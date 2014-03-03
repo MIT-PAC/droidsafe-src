@@ -57,7 +57,7 @@ public static List<AudioDecoder> getAudioDecoders() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int native_get_video_decoder_type(int index) {
-        return DSUtils.UNKNOWN_INT;
+        return index;
     }
     
     @DSComment("Private Method")
@@ -69,7 +69,7 @@ public static List<AudioDecoder> getAudioDecoders() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int native_get_audio_decoder_type(int index) {
-        return DSUtils.UNKNOWN_INT;
+        return index;
     }
 
     @DSComment("Private Method")

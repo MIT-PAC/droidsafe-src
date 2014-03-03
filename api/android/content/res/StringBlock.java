@@ -92,13 +92,13 @@ private static String subtag(String full, String attribute) {
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
-        return DSUtils.UNKNOWN_INT;
+        return data.getTaintInt() + offset + size;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetSize(int obj) {
-        return DSUtils.UNKNOWN_INT;
+        return obj;
     }
     
     @DSComment("Private Method")
@@ -114,6 +114,7 @@ private static String subtag(String full, String attribute) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int[] nativeGetStyle(int obj, int idx) {
         int[] ret = {DSUtils.UNKNOWN_INT};
+        ret.addTaint(obj + idx);
         return ret;
     }
     

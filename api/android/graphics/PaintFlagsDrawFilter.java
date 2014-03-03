@@ -12,7 +12,7 @@ public class PaintFlagsDrawFilter extends DrawFilter {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(int clearBits, int setBits) {
-        return DSUtils.UNKNOWN_INT;
+        return (clearBits + setBits);
     }
 
     /**

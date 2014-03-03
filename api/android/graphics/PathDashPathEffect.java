@@ -10,8 +10,7 @@ public class PathDashPathEffect extends PathEffect {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(int native_path, float advance,
                                            float phase, int native_style) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_32104371 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_32104371;
+    return (int)(native_path + advance + phase + native_style);
     }
 
     /**
