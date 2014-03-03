@@ -20,7 +20,7 @@ public class SweepGradient extends Shader {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate2(float x, float y, int color0, int color1) {
-        return (x + y + color1 + color2);
+        return (int)(x + y + color1 + color0);
     }
     
     @DSComment("Private Method")
@@ -31,7 +31,7 @@ public class SweepGradient extends Shader {
         float temp = (native_shader + cx + cy);
         positions.addTaint(temp);
         colors.addTaint(temp);
-        return (native_shader + cx + cy + colors.getTaintInt() + positions.getTaintInt());
+        return (int)(native_shader + cx + cy + colors.getTaintInt() + positions.getTaintInt());
     }
     
     @DSComment("Private Method")

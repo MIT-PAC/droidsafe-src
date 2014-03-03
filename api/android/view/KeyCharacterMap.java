@@ -34,7 +34,7 @@ public class KeyCharacterMap {
             FallbackAction outFallbackAction) {
 
             outFallbackAction.addTaint((ptr + keyCode + metaState)); 
-            return outFallback.getTaintBoolean();
+            return outFallbackAction.getTaintBoolean();
     }
     
     @DSComment("Private Method")

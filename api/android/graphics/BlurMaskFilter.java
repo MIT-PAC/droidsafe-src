@@ -9,7 +9,7 @@ public class BlurMaskFilter extends MaskFilter {
         @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(float radius, int style) {
-        return (radius + style);
+        return (int)(radius + style);
     }
     
     /**

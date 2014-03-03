@@ -25,21 +25,22 @@ public static Picture createFromStream(InputStream stream) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(int nativeSrcOr0) {
-        return DSUtils.UNKNOWN_INT;
+        return nativeSrcOr0;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromStream(InputStream stream,
                                                 byte[] storage) {
-        return DSUtils.UNKNOWN_INT;
+        storage.addTaint(stream.getTaint());
+        return storage.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeBeginRecording(int nativeCanvas,
                                                     int w, int h) {
-        return DSUtils.UNKNOWN_INT;
+        return (nativeCanvas + w + h);
     }
     
     @DSComment("Private Method")
@@ -56,7 +57,9 @@ public static Picture createFromStream(InputStream stream) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeWriteToStream(int nativePicture,
                                            OutputStream stream, byte[] storage) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        stream.addTaint(nativePicture);
+        stream.addTaint(storage.getTaint());
+        return stream.getTaintBoolean();
     }
     
     @DSComment("Private Method")

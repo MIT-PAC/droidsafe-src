@@ -24,13 +24,13 @@ public class FloatMath {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static float sin(float angle) {
-        return value;
+        return angle;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static float cos(float angle) {
-        return value;
+        return angle;
     }
     
     @DSComment("From safe class list")

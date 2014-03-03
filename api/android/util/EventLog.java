@@ -26,11 +26,11 @@ public class EventLog {
     }
     
     public static int writeEvent(int tag, long value) {
-        return (tag + value);
+        return (int)(tag + value);
     }
     
     public static int writeEvent(int tag, String str) {
-        return (tag + str.getTaintInt);
+        return (tag + str.getTaintInt());
     }
     
     public static int writeEvent(int tag, Object... list) {

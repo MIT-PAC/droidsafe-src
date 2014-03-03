@@ -458,13 +458,13 @@ public class GLES20 {
 	}
     
     public static boolean glIsShader(int shader) {
-        return shader;
+        return (shader != 0);
 	}
     
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static boolean glIsTexture(int texture) {
-        return texture;
+        return (texture != 0);
 	}
     
     @DSComment("OpenGL Graphics Manipulation")

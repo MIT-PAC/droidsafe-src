@@ -34,7 +34,7 @@ public static String getDeviceName(int id) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String native_get_device_name(int id) {
-            String str - new String();
+            String str = new String();
             str.addTaint(id);
             return str;
     }

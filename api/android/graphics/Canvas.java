@@ -87,7 +87,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                     float t, float r, float b,
                                                     int alpha, int layerFlags) {
 
-        return nativeCanvas + l + t + r + b + alpha + layerFlags;
+        return (int)(nativeCanvas + l + t + r + b + alpha + layerFlags);
     }
     
     @DSComment("Private Method")
@@ -150,7 +150,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
-        return (nativeCanvas + rect.getTaintInt() + native_edgeType);
+        return (nativeCanvas + rect.getTaintInt() + native_edgeType) > 0;
     }
     
     @DSComment("Private Method")
@@ -168,7 +168,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float left, float top,
                                                      float right, float bottom,
                                                      int native_edgeType) {
-        return (nativeCanvas + left + top + right +buttom + native_edge) > 0;
+        return (nativeCanvas + left + top + right + bottom + native_edgeType) > 0;
     }
     
     @DSComment("Private Method")

@@ -13,28 +13,36 @@ public class RadialGradient extends Shader {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate1(float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
-        return DSUtils.UNKNOWN_INT;
+        float temp = (x + y + radius + tileMode);
+        positions[0] = (colors[0] + colors.getTaintInt() + temp);
+        positions.addTaint(colors.getTaint());
+        return positions.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate2(float x, float y, float radius,
             int color0, int color1, int tileMode) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)((int)x + (int)y + radius + color0 + color1 + tileMode);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate1(int native_shader, float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
-        return DSUtils.UNKNOWN_INT;
+
+        float temp = (x + y + radius + tileMode);
+        positions[0] = (colors[0] + colors.getTaintInt() + temp);
+        positions.addTaint(colors.getTaint());
+        return positions.getTaintInt();
+
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate2(int native_shader, float x, float y, float radius,
             int color0, int color1, int tileMode) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)((int)x + (int)y + radius + color0 + color1 + tileMode);
     }
 
 	/**	Create a shader that draws a radial gradient given the center and radius.

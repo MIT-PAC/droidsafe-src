@@ -48,7 +48,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
                         xPrecision + yPrecision + downTimeNanos + eventTimeNanos +
                         pointerIds[0].getTaintInt() + pointerCoords[0].getTaintInt();
 
-        return (int temp);
+        return (int)(temp);
     }
     
     @DSComment("Private Method")
@@ -56,7 +56,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     private static int nativeCopy(int destNativePtr, int sourceNativePtr,
             boolean keepHistory) {
         int temp = keepHistory? 0: 1; 
-        return (destNativePtr + sourceNativePtr + temp;
+        return (destNativePtr + sourceNativePtr + temp);
     }
     
     @DSComment("Private Method")
@@ -198,7 +198,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeFindPointerIndex(int nativePtr, int pointerId) {
-        return nativePtr + poitnerId;
+        return nativePtr + pointerId;
     }
     
     @DSComment("Private Method")
@@ -210,7 +210,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetEventTimeNanos(int nativePtr, int historyPos) {
-        return nativePtr  historyPos;
+        return nativePtr + historyPos;
     }
     
     @DSComment("Private Method")
@@ -229,7 +229,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     
     private static void nativeGetPointerCoords(int nativePtr,
             int pointerIndex, int historyPos, PointerCoords outPointerCoords) {
-        outPtrCoords.addTaint(nativePtr + pointerIndex + historyPos);
+        outPointerCoords.addTaint(nativePtr + pointerIndex + historyPos);
     }
     
     private static void nativeGetPointerProperties(int nativePtr,

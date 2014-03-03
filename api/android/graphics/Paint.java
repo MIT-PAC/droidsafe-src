@@ -74,7 +74,7 @@ public class Paint {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getFillPath(int native_object,
                                                      int src, int dst) {
-        return (native_object + src + dst);
+        return (native_object + src + dst) > 0;
     }
     
     @DSComment("Private Method")
@@ -139,7 +139,7 @@ public class Paint {
     
     private static float native_getFontMetrics(int native_paint,
                                                       FontMetrics metrics) {
-        return native_object + metrics.getTaintInt();
+        return (int)(native_paint + metrics.getTaintInt());
     }
     
     @DSComment("Private Method")
@@ -165,9 +165,9 @@ public class Paint {
     private static int native_getTextGlyphs(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, char[] glyphs) {
-        glyphs.addTaint(native_object + text.getTaintInt()  + start + end
+        glyphs.addTaint(native_object + text.getTaintInt()  + start + end +
                         contextStart + contextEnd + flags);
-        return widths.getTaintInt();
+        return glyphs.getTaintInt();
 
     }
     
@@ -179,9 +179,10 @@ public class Paint {
 
         advances[0] = text[0];
 
-        advances.addTaint(native_object + index + count + countextIndex +
-                          contextCount + flags + adancesIndex + reserved);
-        advances.addTaint(text.getTaint);
+        advances.addTaint(native_object + index + count + contextIndex +
+                          contextCount + flags + advancesIndex + reserved);
+
+        advances.addTaint(text.getTaint());
 
         return (float)advances.getTaintInt();
     }
@@ -192,9 +193,9 @@ public class Paint {
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, float[] advances, int advancesIndex, int reserved) {
 
-        advances.addTaint(native_object + index + count + countextIndex +
-                          contextCount + flags + adancesIndex + reserved);
-        advances.addTaint(text.getTaint);
+        advances.addTaint(native_object + start + end + contextStart +
+                          contextEnd + flags + advancesIndex + reserved);
+        advances.addTaint(text.getTaint());
 
         return (float)advances.getTaintInt();
     }

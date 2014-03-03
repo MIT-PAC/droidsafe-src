@@ -66,7 +66,7 @@ public class Region implements Parcelable {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
-        return (native_dst + left + top + right + buttom > op);
+        return (native_dst + left + top + right + bottom > op);
     }
     
     @DSComment("Private Method")

@@ -17,7 +17,7 @@ public class SQLiteQuery extends SQLiteProgram {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeFillWindow(int databasePtr, int statementPtr, int windowPtr,
             int startPos, int offsetParam) {
-        return  databasePtrg + statementPtrg + windowPtr + startPosg + offsetParam;
+        return  databasePtr + statementPtr + windowPtr + startPos + offsetParam;
     }
     
     @DSComment("Private Method")

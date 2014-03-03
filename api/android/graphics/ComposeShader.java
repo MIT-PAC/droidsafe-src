@@ -34,7 +34,7 @@ public class ComposeShader extends Shader {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativePostCreate2(int native_shader, int native_skiaShaderA,
             int native_skiaShaderB, int porterDuffMode) {
-        return native_shader + native_skiaShaderA + native_skiaShaderB + native_mode;
+        return native_shader + native_skiaShaderA + native_skiaShaderB;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.871 -0500", hash_original_field = "27E69BFD969C4FEF73690310ABD89FC4", hash_generated_field = "9D1A193A171A566C28715B3DF9829B6D")
 

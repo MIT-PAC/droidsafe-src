@@ -766,7 +766,7 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
         values[0] = queue;
-        status[0] = qeueue;
+        status[0] = queue;
         timestamp[0] = queue;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276;

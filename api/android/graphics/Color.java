@@ -383,7 +383,7 @@ public static int HSVToColor(int alpha, float hsv[]) {
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
+    private static void nativeRGBToHSV(int red, int green, int blue, float hsv[]) {
         hsv[0] = (red + green + blue);
         hsv[1] = (red + green + blue);
         hsv[2] = (red + green + blue);

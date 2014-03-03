@@ -12,7 +12,7 @@ public class CornerPathEffect extends PathEffect {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(float radius) {
-        return radius;
+        return (int)radius;
     }
 
     /**
