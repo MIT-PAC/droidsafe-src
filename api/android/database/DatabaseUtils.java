@@ -767,6 +767,7 @@ public static void cursorRowToContentValues(Cursor cursor, ContentValues values)
      * @param table the name of the table to query
      * @return the number of rows in the table
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.359 -0500", hash_original_method = "929DBC7A90DC227FF2B26E4E72D12B70", hash_generated_method = "8CC78C93660BD02E2DF389D10B4F12B7")
@@ -784,6 +785,7 @@ public static long queryNumEntries(SQLiteDatabase db, String table) {
      *              Passing null will count all rows for the given table
      * @return the number of rows in the table filtered by the selection
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.363 -0500", hash_original_method = "14DB54E29D400149A38978E82860E0D6", hash_generated_method = "87854038149496693F499F6CC5631C59")
@@ -805,6 +807,7 @@ public static long queryNumEntries(SQLiteDatabase db, String table, String selec
      *              The values will be bound as Strings.
      * @return the number of rows in the table filtered by the selection
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.365 -0500", hash_original_method = "B4D6325E78B6FA18E9BDD75F37F7F7A7", hash_generated_method = "BC0B7A6C7758DC73C629DDD9DF9A80E6")

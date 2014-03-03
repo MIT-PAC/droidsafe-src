@@ -183,6 +183,7 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean getBoolean(int index, boolean defValue){

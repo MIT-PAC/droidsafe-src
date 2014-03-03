@@ -35,7 +35,7 @@ public static void enableDebugLogging(boolean enabled) {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public abstract <D> Loader<D> initLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
     

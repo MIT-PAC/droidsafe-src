@@ -542,7 +542,7 @@ public void setProvider(String provider) {
      * 1970.
      */
     @DSComment("Data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.367 -0500", hash_original_method = "997C67A326545139029C9D8F308B45E1", hash_generated_method = "71E6372FD72C471FB7AEA62C47181467")
     
