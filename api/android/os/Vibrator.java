@@ -25,7 +25,7 @@ public class Vibrator {
         
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "151D3F2E4276DA07BF42252D33EAFAD7")
     public boolean hasVibrator() {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return getTaintBoolean();
         // ---------- Original Method ----------
         //if (mService == null) {
             //Log.w(TAG, "Failed to vibrate; no vibrator service.");
@@ -42,6 +42,7 @@ public class Vibrator {
     @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
     public void vibrate(long milliseconds) {
+        addTaint(milliseconds);
         //End block
         // ---------- Original Method ----------
         //if (mService == null) {
@@ -59,6 +60,7 @@ public class Vibrator {
     @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "4FEC1D25C674D0C4EBF3B684610D737E")
     public void vibrate(long[] pattern, int repeat) {
+        addTaint((int)pattern[0] + repeat);
     	//End block
         // ---------- Original Method ----------
         //if (mService == null) {

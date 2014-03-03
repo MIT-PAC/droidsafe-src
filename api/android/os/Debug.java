@@ -727,7 +727,7 @@ public static void resetAllCounts() {
     }
     
     public static long getPss(int pid) {
-        return DSUtils.UNKNOWN_LONG;
+        return pid;
     }
 
     /**
