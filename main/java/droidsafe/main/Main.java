@@ -397,7 +397,8 @@ public class Main {
                 timer.start();
                 SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
                 SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-                SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+                if (Config.v().debug)
+                  SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
             }
