@@ -69,7 +69,7 @@ static DrawData deserializeViewState(InputStream stream, WebView web)
         stream.addTaint(baseLayer);
         stream.addTaint(storage.getTaint());
         stream.addTaint(storage[0]);
-        return stream.getTaintBoolean();;
+        return stream.getTaintBoolean();
     }
     
     @DSComment("Private Method")
