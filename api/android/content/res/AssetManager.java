@@ -50,7 +50,14 @@ public static AssetManager getSystem() {
     static final boolean applyStyle(int theme,
             int defStyleAttr, int defStyleRes, int xmlParser,
             int[] inAttrs, int[] outValues, int[] outIndices) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+
+        for (int i = 0; i < 1; i++) {
+            outValues[i] = inAttrs[i] + theme + defStyleAttr + defStyleRes +
+                           xmlParser;
+            outIndices[i] = outValues[i];
+        }
+
+        return (outValues[0] > outIndices[0]);
     }
     
     public static final int getGlobalAssetCount() {
@@ -80,7 +87,8 @@ public static AssetManager getSystem() {
     static final int loadThemeAttributeValue(int theme, int ident,
                                                                 TypedValue outValue,
                                                                 boolean resolve) {
-        return DSUtils.UNKNOWN_INT;
+        int temp = resolve? 1:0;
+        return theme + ident + outValue.getTaintInt() + temp;
     }
     
     @DSComment("Package priviledge")

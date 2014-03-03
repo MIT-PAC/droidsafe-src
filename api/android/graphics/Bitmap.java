@@ -427,8 +427,9 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     private static boolean nativeCompress(int nativeBitmap, int format,
                                             int quality, OutputStream stream,
                                             byte[] tempStorage) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116630351 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_116630351;
+        stream.addTaint(nativeBitmap + format + quality);
+        tempStorage.addTaint(nativeBitmap + format + quality);
+        return stream.getTaintBoolean();
     }
     
     @DSComment("Private Method")
@@ -439,43 +440,39 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeWidth(int nativeBitmap) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746939276 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746939276;
+        return nativeBitmap;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeHeight(int nativeBitmap) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907482253 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907482253;
+        return nativeBitmap;
     }
+
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeRowBytes(int nativeBitmap) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115927299 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115927299;
+        return nativeBitmap;
     }
+        
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConfig(int nativeBitmap) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220830768 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220830768;
+        return nativeBitmap;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeHasAlpha(int nativeBitmap) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910603484 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_910603484;
+        return (nativeBitmap > 0);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetPixel(int nativeBitmap, int x, int y) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133622273 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133622273;
+        return nativeBitmap + x + y;
     }
     
     @DSComment("Private Method")
@@ -512,8 +509,7 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGenerationId(int nativeBitmap) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796645940 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796645940;
+        return nativeBitmap;
     }
     
     @DSComment("Private Method")
@@ -530,8 +526,9 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
                                                       boolean isMutable,
                                                       int density,
                                                       Parcel p) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146699439 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146699439;
+        p.addTaint(nativeBitmap + density);
+        p.addTaint(isMutable);
+        return p.getTaintBoolean();
     }
     
     /*
@@ -555,8 +552,7 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSameAs(int nb0, int nb1) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_227929198 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_227929198;
+                return nb0 > nb1;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.696 -0500", hash_original_field = "E311D4441C2D20ABF50E7FA2BB4DEE17", hash_generated_field = "C25FA99E764685711DDB1FEBC88ADFFB")
 

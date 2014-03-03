@@ -14,7 +14,7 @@ public class BackupDataOutput {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int ctor(FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        return fd.getTaintInt();
     }
     
     @DSComment("Private Method")
@@ -25,13 +25,13 @@ public class BackupDataOutput {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeEntityHeader_native(int mBackupWriter, String key, int dataSize) {
-        return DSUtils.UNKNOWN_INT;
+        return (mBackupWriter + key.getTaintInt() + dataSize);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int writeEntityData_native(int mBackupWriter, byte[] data, int size) {
-        return DSUtils.UNKNOWN_INT;
+        return (mBackupWriter + data.getTaintInt() + data[0] + size);
     }
     
     @DSComment("Private Method")

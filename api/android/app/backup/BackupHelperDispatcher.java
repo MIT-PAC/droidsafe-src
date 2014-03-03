@@ -18,21 +18,27 @@ import droidsafe.helpers.DSUtils;
 public class BackupHelperDispatcher {
     
     private static int readHeader_native(Header h, FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        h.addTaint(fd.getTaint());
+        return h.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int skipChunk_native(FileDescriptor fd, int bytesToSkip) {
-        return DSUtils.UNKNOWN_INT;
+        fd.addTaint(bytesToSkip);
+        return fd.getTaintInt();
     }
     
     private static int allocateHeader_native(Header h, FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        fd.addTaint(h.getTaint());
+        h.addTaint(fd.getTaint());
+        return h.getTaintInt();
     }
     
     private static int writeHeader_native(Header h, FileDescriptor fd, int pos) {
-        return DSUtils.UNKNOWN_INT;
+        fd.addTaint(h.getTaint());
+        fd.addTaint(pos);
+        return fd.getTaintInt();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.660 -0500", hash_original_field = "D272C13E9A9C0E3E4CA27E55BE191CFA", hash_generated_field = "AEF462BF91D0B416E4E3B66437F12C41")
 

@@ -14,7 +14,7 @@ public class BackupDataInput {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int ctor(FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        return fd.getTaintInt();
     }
     
     @DSComment("Private Method")

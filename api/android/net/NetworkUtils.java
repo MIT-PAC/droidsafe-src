@@ -17,38 +17,31 @@ import droidsafe.helpers.DSUtils;
 public class NetworkUtils {
     
     public static int enableInterface(String interfaceName) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1119625488 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1119625488;
+        return interfaceName.getTaintInt();
     }
     
     public static int disableInterface(String interfaceName) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319418608 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319418608;
+        return interfaceName.getTaintInt();
     }
     
     public static int resetConnections(String interfaceName, int mask) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255618748 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255618748;
+        return interfaceName.getTaintInt() + mask;
     }
     
     public static boolean runDhcp(String interfaceName, DhcpInfoInternal ipInfo) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243915330 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243915330;
+        return interfaceName.getTaintBoolean() && ipInfo.getTaintBoolean();
     }
     
     public static boolean runDhcpRenew(String interfaceName, DhcpInfoInternal ipInfo) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1115115336 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1115115336;
+        return interfaceName.getTaintBoolean() && ipInfo.getTaintBoolean();
     }
     
     public static boolean stopDhcp(String interfaceName) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048450172 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048450172;
+        return interfaceName.getTaintBoolean();
     }
     
     public static boolean releaseDhcpLease(String interfaceName) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70583775 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_70583775;
+        return interfaceName.getTaintBoolean();
     }
     
     public static String getDhcpError() {

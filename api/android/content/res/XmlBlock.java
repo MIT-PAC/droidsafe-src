@@ -23,115 +23,115 @@ final class XmlBlock {
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
-        return DSUtils.UNKNOWN_INT;
+        return (data.getTaintInt() + data[0] + offset + size);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetStringBlock(int obj) {
-        return DSUtils.UNKNOWN_INT;
+        return obj;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeCreateParseState(int obj) {
-        return DSUtils.UNKNOWN_INT;
+        return obj;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static final int nativeNext(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetNamespace(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static final int nativeGetName(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetText(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetLineNumber(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeCount(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeNamespace(int state, int idx) {
-        return DSUtils.UNKNOWN_INT;
+        return state + idx;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeName(int state, int idx) {
-        return DSUtils.UNKNOWN_INT;
+        return state + idx;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeResource(int state, int idx) {
-        return DSUtils.UNKNOWN_INT;
+        return state + idx;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeDataType(int state, int idx) {
-        return DSUtils.UNKNOWN_INT;
+        return state + idx;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeData(int state, int idx) {
-        return DSUtils.UNKNOWN_INT;
+        return state + idx;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeStringValue(int state, int idx) {
-        return DSUtils.UNKNOWN_INT;
+        return state + idx;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetIdAttribute(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetClassAttribute(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetStyleAttribute(int state) {
-        return DSUtils.UNKNOWN_INT;
+        return state;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final int nativeGetAttributeIndex(int state, String namespace, String name) {
-        return DSUtils.UNKNOWN_INT;
+        return state + namespace.getTaintInt() + name.getTaintInt();
     }
     
     @DSComment("Private Method")
