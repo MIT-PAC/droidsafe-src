@@ -91,8 +91,7 @@ public static void setAcceptFileSchemeCookies(boolean accept) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeHasCookies(boolean privateBrowsing) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281785784 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_281785784;
+        return privateBrowsing;
     }
     
     @DSComment("Private Method")

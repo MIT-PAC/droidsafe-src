@@ -40,8 +40,7 @@ public static GeolocationPermissions getInstance() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetAllowed(String origin) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142;
+        return origin.getTaintBoolean();
     }
     
     @DSComment("Private Method")

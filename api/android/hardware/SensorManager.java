@@ -765,7 +765,10 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276 = DSUtils.UNKNOWN_INT;
+        values[0] = queue;
+        status[0] = qeueue;
+        timestamp[0] = queue;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.670 -0500", hash_original_field = "70463D03D9E458FAC8FA89B5DDDB34B7", hash_generated_field = "D46DC572C2EFA3216DE38441F1A6F061")

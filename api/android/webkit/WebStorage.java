@@ -40,15 +40,13 @@ public static WebStorage getInstance() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetUsageForOrigin(String origin) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200;
+        return origin.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetQuotaForOrigin(String origin) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_752076961 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_752076961;
+        return origin.getTaintInt();
     }
     
     @DSComment("Private Method")

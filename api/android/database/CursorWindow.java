@@ -21,13 +21,13 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(String name, int cursorWindowSize) {
-        return DSUtils.UNKNOWN_INT;
+        return (cursorWindowSize + name.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromParcel(Parcel parcel) {
-        return DSUtils.UNKNOWN_INT;
+        return parcel.getTaintInt();
     }
     
     @DSComment("Private Method")
@@ -48,19 +48,19 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetNumRows(int windowPtr) {
-        return DSUtils.UNKNOWN_INT;
+        return windowPtr;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (windowPtr > columnNum);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeAllocRow(int windowPtr) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (windowPtr > 0);
     }
     
     @DSComment("Private Method")
@@ -71,13 +71,14 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetType(int windowPtr, int row, int column) {
-        return DSUtils.UNKNOWN_INT;
+        return (windowPtr + row + column);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static byte[] nativeGetBlob(int windowPtr, int row, int column) {
-        byte[] ret = {DSUtils.UNKNOWN_BYTE};
+        byte[] ret = {(byte)windowPtr};
+        ret.addTaint(row + windowPtr + column);
         return ret;
     }
     
@@ -94,49 +95,51 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long nativeGetLong(int windowPtr, int row, int column) {
-        return DSUtils.UNKNOWN_LONG;
+        return (windowPtr + row + column);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static double nativeGetDouble(int windowPtr, int row, int column) {
-        return DSUtils.UNKNOWN_DOUBLE;
+        return (windowPtr + row + column);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeCopyStringToBuffer(int windowPtr, int row, int column,
             CharArrayBuffer buffer) {
+
+        buffer.addTaint(windowPtr + row + column);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (windowPtr > value[0] + row + column + value.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (windowPtr > row + column + value.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (windowPtr > row + column + (int)value);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (value > windowPtr + row + column );
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutNull(int windowPtr, int row, int column) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (windowPtr > row + column); 
     }
     
     @DSComment("Private Method")

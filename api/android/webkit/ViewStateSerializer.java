@@ -66,14 +66,18 @@ static DrawData deserializeViewState(InputStream stream, WebView web)
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSerializeViewState(int baseLayer,
             OutputStream stream, byte[] storage) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        stream.addTaint(baseLayer);
+        stream.addTaint(storage.getTaint());
+        stream.addTaint(storage[0]);
+        return stream;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeDeserializeViewState(
             InputStream stream, byte[] storage) {
-        return DSUtils.UNKNOWN_INT;
+        storage[0] = (byte)stream.getTaintInt();
+        return storage.getTaintInt();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.293 -0500", hash_original_field = "93DB6FF890F60901303B2AEAD85141C3", hash_generated_field = "16A3D3E1F1A46232673D292E95776672")
 

@@ -75,8 +75,7 @@ public class GLES20 {
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static int glCheckFramebufferStatus(int target) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143838249 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143838249;
+        return target;
 	}
     
     @DSComment("OpenGL Graphics Manipulation")
@@ -125,8 +124,7 @@ public class GLES20 {
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static int glCreateShader(int type) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748292391 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748292391;
+        return type;
 	}
     
     public static void glCullFace(int mode) {
@@ -298,8 +296,7 @@ public class GLES20 {
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static int glGetAttribLocation(int program, String name) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250723517 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250723517;
+        return (program + name.getTaintInt());
 	}
     
     public static void glGetBooleanv(int pname, boolean[] params, int offset) {
@@ -422,8 +419,7 @@ public class GLES20 {
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static int glGetUniformLocation(int program, String name) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214476555 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214476555;
+        return (name.getTaintInt() + program);
 	}
     
     public static void glGetVertexAttribfv(int index, int pname, float[] params, int offset) {
@@ -442,40 +438,33 @@ public class GLES20 {
 	}
     
     public static boolean glIsBuffer(int buffer) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153268133 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_153268133;
+        return (buffer > 0);
 	}
     
     public static boolean glIsEnabled(int cap) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843616081 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1843616081;
+        return (cap > 0);
 	}
     
     public static boolean glIsFramebuffer(int framebuffer) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_110434919 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_110434919;
+        return (framebuffer != 0);
 	}
     
     public static boolean glIsProgram(int program) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1073646847 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1073646847;
+        return (program != 0);
 	}
     
     public static boolean glIsRenderbuffer(int renderbuffer) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736306196 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_736306196;
+        return (renderbuffer != 0);
 	}
     
     public static boolean glIsShader(int shader) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_504045245 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_504045245;
+        return shader;
 	}
     
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static boolean glIsTexture(int texture) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683324650 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683324650;
+        return texture;
 	}
     
     @DSComment("OpenGL Graphics Manipulation")

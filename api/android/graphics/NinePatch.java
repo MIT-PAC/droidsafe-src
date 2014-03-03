@@ -12,7 +12,7 @@ public class NinePatch {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static boolean isNinePatchChunk(byte[] chunk) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (chunk[0] > 0) && chunck.getTaintBoolean();
     }
     
     @DSComment("Private Method")
@@ -38,7 +38,7 @@ public class NinePatch {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetTransparentRegion(
             int bitmap, byte[] chunk, Rect location) {
-        return DSUtils.UNKNOWN_INT;
+        return (bitmap + chunk[0] + chunk.getTaintInt() + location.getTaintInt());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.436 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "4EFA3179E01F3A6C04DAAC2298E5BFE4")
 

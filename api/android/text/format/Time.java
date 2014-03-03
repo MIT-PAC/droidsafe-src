@@ -43,8 +43,7 @@ public static int compare(Time a, Time b) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCompare(Time a, Time b) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953;
+        return (a.getTaintInt() + b.getTaintInt());
     }
 
     /**

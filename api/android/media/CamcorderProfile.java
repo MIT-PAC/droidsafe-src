@@ -142,8 +142,7 @@ public static boolean hasProfile(int cameraId, int quality) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static final boolean native_has_camcorder_profile(
             int cameraId, int quality) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356549571 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1356549571;
+                return (cameraId > quality);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.113 -0500", hash_original_field = "120BD91DC6CD0AF8818AEBC6C6E92345", hash_generated_field = "C2F9FE5E90015935D35BC3387778951D")
 

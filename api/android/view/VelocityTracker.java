@@ -42,18 +42,19 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetXVelocity(int ptr, int id) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return (ptr + id);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static float nativeGetYVelocity(int ptr, int id) {
-        return DSUtils.UNKNOWN_FLOAT;
+        return (ptr + id);
     }
     
     private static boolean nativeGetEstimator(int ptr, int id,
             int degree, int horizonMillis, Estimator outEstimator) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        outEstimator.addTaint(ptr + id + degree + horizonMillis);  
+        return outEstimator.getTaintBoolean();
     }
 
     /**

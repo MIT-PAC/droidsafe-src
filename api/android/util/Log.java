@@ -141,7 +141,7 @@ public static int w(String tag, String msg, Throwable tr) {
     @DSComment("Android logging subsystem")
     @DSSpec(DSCat.LOGGING)
     public static boolean isLoggable(String tag, int level) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return (tag.getTaintInt() > level);
     }
 
     /*
@@ -303,7 +303,7 @@ public static int println(int priority, String tag, String msg) {
     
     public static int println_native(int bufID,
             int priority, String tag, String msg) {
-        return DSUtils.UNKNOWN_INT;
+        return (bufID + priority + tag.getTaintInt() + msg.getTaintInt());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.057 -0500", hash_original_field = "F56CF3B1687883ED2E2E2F2BEB496CD9", hash_generated_field = "183ECC1630CBD890D38268E5859FD6F6")
 

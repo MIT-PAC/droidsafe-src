@@ -166,8 +166,8 @@ public static Directions directions(int dir, byte[] levels, int lstart,
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int runBidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656;
+        int tmp = (haveInfo)? 0: 1;
+        return (dir + chs[0] + chInfo[0] + n + tmp + chs.getTaintInt() + chInfo.getTaintInt());
     }
     
     @DSComment("Package priviledge")

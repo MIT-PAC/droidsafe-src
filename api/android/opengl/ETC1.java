@@ -11,14 +11,16 @@ import droidsafe.helpers.DSUtils;
 public class ETC1 {
     
     public static void encodeBlock(Buffer in, int validPixelMask, Buffer out) {
+        out.addTaint(in.getTaint());
+        out.addTaint(validPixelMask);
     }
     
     public static void decodeBlock(Buffer in, Buffer out) {
+        out.addTaint(in.getTaint());
     }
     
     public static int getEncodedDataSize(int width, int height) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668332068 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668332068;
+        return (width + height);
     }
     
     public static void encodeImage(Buffer in, int width, int height,
@@ -35,22 +37,19 @@ public class ETC1 {
     @DSComment("OpenGL ETC1")
     @DSSafe(DSCat.GRAPHICS)
     public static boolean isValid(Buffer header) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740;
+        return header.getTaintBoolean();
     }
     
     @DSComment("OpenGL ETC1")
     @DSSafe(DSCat.GRAPHICS)
     public static int getWidth(Buffer header) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895;
+        return header.getTaintInt();
     }
     
     @DSComment("OpenGL ETC1")
     @DSSafe(DSCat.GRAPHICS)
     public static int getHeight(Buffer header) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593;
+        return header.getTaintInt();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.140 -0500", hash_original_field = "3FD41814A44CD87686FFB634677A1BB4", hash_generated_field = "3863B19F8A17DA2305AA0B46C80C0681")
 

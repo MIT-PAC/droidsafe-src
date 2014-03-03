@@ -16,8 +16,7 @@ public class KeyCharacterMap {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeLoad(String file) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077;
+        return file.getTaintInt();
     }
     
     @DSComment("Private Method")
@@ -28,42 +27,38 @@ public class KeyCharacterMap {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetCharacter(int ptr, int keyCode, int metaState) {
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1244637250 = DSUtils.UNKNOWN_CHAR;
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1244637250;
+        return (char)(ptr + keyCode + metaState);
     }
     
     private static boolean nativeGetFallbackAction(int ptr, int keyCode, int metaState,
             FallbackAction outFallbackAction) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657;
+
+            outFallbackAction.addTaint((ptr + keyCode + metaState)); 
+            return outFallback.getTaintBoolean();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetNumber(int ptr, int keyCode) {
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1984588844 = DSUtils.UNKNOWN_CHAR;
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1984588844;
+        return (char)(ptr + keyCode);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetMatch(int ptr, int keyCode, char[] chars, int metaState) {
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1376476993 = DSUtils.UNKNOWN_CHAR;
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1376476993;
+        return (char)(ptr + keyCode + metaState + chars[0] + chars.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static char nativeGetDisplayLabel(int ptr, int keyCode) {
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1718283332 = DSUtils.UNKNOWN_CHAR;
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1718283332;
+                return (char)(ptr + keyCode);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetKeyboardType(int ptr) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073;
+        return ptr;
     }
     
     @DSComment("Private Method")

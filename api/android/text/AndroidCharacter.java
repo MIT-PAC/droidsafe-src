@@ -18,8 +18,7 @@ public class AndroidCharacter {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int getEastAsianWidth(char input) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166295311 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166295311;
+                return input;
     }
     
     @DSComment("From safe class list")
@@ -31,15 +30,13 @@ public class AndroidCharacter {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static boolean mirror(char[] text, int start, int count) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_456670344 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_456670344;
+                return (text[0] + text.getTaintInt() + start) > count;
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static char getMirror(char ch) {
-                char varA87DEB01C5F539E6BDA34829C8EF2368_2008958859 = DSUtils.UNKNOWN_CHAR;
-        return varA87DEB01C5F539E6BDA34829C8EF2368_2008958859;
+        return ch;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.670 -0500", hash_original_field = "2BEB84B214627D9549964994B4BB5258", hash_generated_field = "98DECEB35F8226006D9E5F1A18C84ABF")
 

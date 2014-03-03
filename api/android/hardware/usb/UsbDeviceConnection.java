@@ -280,7 +280,9 @@ public String getSerial() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "7798A12605DD56CE252D35CCA7400682", hash_generated_method = "ABC78903D368E3A02775041EDC3A80F9")
     private String native_get_serial() {
-    	return DSUtils.UNKNOWN_STRING;
+        String str = new String();
+        str.addTaint(getTaint());
+    	return str;
     }
 }
 

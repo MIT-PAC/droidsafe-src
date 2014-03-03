@@ -22,19 +22,19 @@ import droidsafe.helpers.DSUtils;
 public class EventLog {
     
     public static int writeEvent(int tag, int value) {
-        return DSUtils.UNKNOWN_INT;
+        return (tag + value);
     }
     
     public static int writeEvent(int tag, long value) {
-        return DSUtils.UNKNOWN_INT;
+        return (tag + value);
     }
     
     public static int writeEvent(int tag, String str) {
-        return DSUtils.UNKNOWN_INT;
+        return (tag + str.getTaintInt);
     }
     
     public static int writeEvent(int tag, Object... list) {
-        return DSUtils.UNKNOWN_INT;
+        return (list.getTaintInt() + tag);
     }
     
     public static void readEvents(int[] tags, Collection<Event> output) throws IOException {
