@@ -47,8 +47,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int initRaster(int nativeBitmapOrZero) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903;
+        return nativeBitmapOrZero;
     }
     
     @DSComment("Private Method")
@@ -60,8 +59,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_saveLayer(int nativeCanvas, RectF bounds,
                                                int paint, int layerFlags) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653;
+        return (nativeCanvas + bounds.getTaintInt() + paint + layerFlags);
     }
     
     @DSComment("Private Method")
@@ -69,8 +67,10 @@ protected static void checkRange(int length, int offset, int count) {
     private static int native_saveLayer(int nativeCanvas, float l,
                                                float t, float r, float b,
                                                int paint, int layerFlags) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430058921 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430058921;
+
+        float temp = nativeCanvas + l + t + r + b + paint + layerFlags;
+
+        return (int)temp;
     }
     
     @DSComment("Private Method")
@@ -78,8 +78,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static int native_saveLayerAlpha(int nativeCanvas,
                                                     RectF bounds, int alpha,
                                                     int layerFlags) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730328887 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730328887;
+        return (nativeCanvas + bounds.getTaintInt() + alpha + layerFlags);
     }
     
     @DSComment("Private Method")
@@ -87,8 +86,8 @@ protected static void checkRange(int length, int offset, int count) {
     private static int native_saveLayerAlpha(int nativeCanvas, float l,
                                                     float t, float r, float b,
                                                     int alpha, int layerFlags) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192671444 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192671444;
+
+        return nativeCanvas + l + t + r + b + alpha + layerFlags;
     }
     
     @DSComment("Private Method")
@@ -107,8 +106,8 @@ protected static void checkRange(int length, int offset, int count) {
                                                   float left, float top,
                                                   float right, float bottom,
                                                   int regionOp) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065743384 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065743384;
+
+        return (nCanvas + left + top + right + bottom + regionOp != 0);
     }
     
     @DSComment("Private Method")
@@ -116,8 +115,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071424835 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071424835;
+        return (nativeCanvas + nativePath > regionOp);
     }
     
     @DSComment("Private Method")
@@ -125,8 +123,8 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_clipRegion(int nativeCanvas,
                                                     int nativeRegion,
                                                     int regionOp) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1786500323 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1786500323;
+
+        return (nativeCanvas + nativeRegion > regionOp);
     }
     
     @DSComment("Private Method")
@@ -139,8 +137,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843;
+        return (nativeCanvas != bounds.getTaintInt());
     }
     
     @DSComment("Private Method")
@@ -153,8 +150,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522063304 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_522063304;
+        return (nativeCanvas + rect.getTaintInt() + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -162,8 +158,8 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      int path,
                                                      int native_edgeType) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643825593 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_643825593;
+
+        return (0 != (nativeCanvas + path + native_edgeType));
     }
     
     @DSComment("Private Method")
@@ -172,8 +168,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float left, float top,
                                                      float right, float bottom,
                                                      int native_edgeType) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1380645477 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1380645477;
+        return (nativeCanvas + left + top + right +buttom + native_edge) > 0;
     }
     
     @DSComment("Private Method")

@@ -113,13 +113,13 @@ public static Typeface createFromFile(String path) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(String familyName, int style) {
-        return DSUtils.UNKNOWN_INT;
+        return (familyName.getTaintInt() + style);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromTypeface(int native_instance, int style) {
-        return DSUtils.UNKNOWN_INT;
+        return (native_instance + style);
     }
     
     @DSComment("Private Method")
@@ -130,19 +130,20 @@ public static Typeface createFromFile(String path) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeGetStyle(int native_instance) {
-        return DSUtils.UNKNOWN_INT;
+        return native_instance;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromAsset(AssetManager mgr, String path) {
-        return DSUtils.UNKNOWN_INT;
+        mgr.addTaint(path.getTaintInt());
+        return mgr.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreateFromFile(String path) {
-        return DSUtils.UNKNOWN_INT;
+        return path.getTaintInt();
     }
     
     @DSComment("From safe class list")

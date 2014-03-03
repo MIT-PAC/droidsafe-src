@@ -23,8 +23,7 @@ public class Paint {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_initWithPaint(int paint) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822342811 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822342811;
+                return paint;
     }
     
     @DSComment("Private Method")
@@ -40,8 +39,7 @@ public class Paint {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getStyle(int native_object) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695600058 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695600058;
+        return native_object;
     }
     
     @DSComment("Private Method")
@@ -52,8 +50,7 @@ public class Paint {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getStrokeCap(int native_object) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72348221 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72348221;
+        return native_object;
     }
     
     @DSComment("Private Method")
@@ -64,8 +61,7 @@ public class Paint {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getStrokeJoin(int native_object) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100687496 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100687496;
+        return native_object;
     }
     
     @DSComment("Private Method")
@@ -78,70 +74,61 @@ public class Paint {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getFillPath(int native_object,
                                                      int src, int dst) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554135697 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1554135697;
+        return (native_object + src + dst);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setShader(int native_object, int shader) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304132726 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304132726;
+        return (native_object + shader);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setColorFilter(int native_object,
                                                     int filter) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660421621 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660421621;
+        return (native_object + filter);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setXfermode(int native_object,
                                                  int xfermode) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1010875162 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1010875162;
+        return native_object + xfermode;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setPathEffect(int native_object,
                                                    int effect) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132479319 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132479319;
+        return native_object + effect;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setMaskFilter(int native_object,
                                                    int maskfilter) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946182993 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946182993;
+        return native_object + maskfilter;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setTypeface(int native_object,
                                                  int typeface) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216630856 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216630856;
+        return native_object + typeface;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_setRasterizer(int native_object,
                                                    int rasterizer) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401536634 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401536634;
+        return native_object + rasterizer;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getTextAlign(int native_object) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101495221 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101495221;
+        return native_object;
     }
     
     @DSComment("Private Method")
@@ -152,24 +139,25 @@ public class Paint {
     
     private static float native_getFontMetrics(int native_paint,
                                                       FontMetrics metrics) {
-                float var546ADE640B6EDFBC8A086EF31347E768_1646011385 = DSUtils.UNKNOWN_FLOAT;
-        return var546ADE640B6EDFBC8A086EF31347E768_1646011385;
+        return native_object + metrics.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getTextWidths(int native_object,
                             char[] text, int index, int count, float[] widths) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172843739 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172843739;
+        widths[0] = text[0];
+        widths.addTaint(native_object + text.getTaintInt() + index + count);
+        return widths.getTaintInt();
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getTextWidths(int native_object,
                             String text, int start, int end, float[] widths) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740280915 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740280915;
+
+        widths.addTaint(native_object + text.getTaintInt()  + start + end);
+        return widths.getTaintInt();
     }
     
     @DSComment("Private Method")
@@ -177,8 +165,10 @@ public class Paint {
     private static int native_getTextGlyphs(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, char[] glyphs) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960442695 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960442695;
+        glyphs.addTaint(native_object + text.getTaintInt()  + start + end
+                        contextStart + contextEnd + flags);
+        return widths.getTaintInt();
+
     }
     
     @DSComment("Private Method")
@@ -186,8 +176,14 @@ public class Paint {
     private static float native_getTextRunAdvances(int native_object,
             char[] text, int index, int count, int contextIndex, int contextCount,
             int flags, float[] advances, int advancesIndex, int reserved) {
-                float var546ADE640B6EDFBC8A086EF31347E768_2085706126 = DSUtils.UNKNOWN_FLOAT;
-        return var546ADE640B6EDFBC8A086EF31347E768_2085706126;
+
+        advances[0] = text[0];
+
+        advances.addTaint(native_object + index + count + countextIndex +
+                          contextCount + flags + adancesIndex + reserved);
+        advances.addTaint(text.getTaint);
+
+        return (float)advances.getTaintInt();
     }
     
     @DSComment("Private Method")
@@ -195,8 +191,12 @@ public class Paint {
     private static float native_getTextRunAdvances(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, float[] advances, int advancesIndex, int reserved) {
-                float var546ADE640B6EDFBC8A086EF31347E768_1890811747 = DSUtils.UNKNOWN_FLOAT;
-        return var546ADE640B6EDFBC8A086EF31347E768_1890811747;
+
+        advances.addTaint(native_object + index + count + countextIndex +
+                          contextCount + flags + adancesIndex + reserved);
+        advances.addTaint(text.getTaint);
+
+        return (float)advances.getTaintInt();
     }
     
     @DSComment("Private Method")

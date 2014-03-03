@@ -422,15 +422,17 @@ public static void setDefaultConfig(Bitmap.Config config) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
-		byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_721079546 = { DSUtils.UNKNOWN_BYTE };
-		return var2F9C81BC6E497382285CD6B7A7E33DE1_721079546;
+		byte[] bytes = new byte[10];
+        bytes[0] = chunk[0];
+        bytes.addTaint(scale);
+        bytes.addTaint(pad.getTaint());
+		return bytes;
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeIsSeekable(FileDescriptor fd) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392;
+        return fd.getTaintBoolean();
 	}
     
     @DSComment("From safe class list")

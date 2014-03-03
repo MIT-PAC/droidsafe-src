@@ -13,7 +13,7 @@ public class Interpolator {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeConstructor(int valueCount, int frameCount) {
-        return DSUtils.UNKNOWN_INT;
+        return (valueCount + frameCount);
     }
     
     @DSComment("Private Method")
@@ -39,7 +39,8 @@ public class Interpolator {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
-        return DSUtils.UNKNOWN_INT;
+        values[0] = (native_instance + msec);
+        return (int)values[0];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.812 -0500", hash_original_field = "7C821A44BA6C69802A2F40CFF359D196", hash_generated_field = "68C3E9DC71F308640D17475B37A6DDEF")
     

@@ -12,15 +12,14 @@ public class Path {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int init1() {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576785566 = DSUtils.UNKNOWN_INT;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576785566 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576785566;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int init2(int nPath) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_107083419 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_107083419;
+        return nPath;
     }
     
     @DSComment("Private Method")
@@ -41,8 +40,7 @@ public class Path {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_getFillType(int nPath) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765210493 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765210493;
+        return nPath;
     }
     
     @DSComment("Private Method")
@@ -53,15 +51,13 @@ public class Path {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isEmpty(int nPath) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520183094 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520183094;
+        return (nPath > 0);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isRect(int nPath, RectF rect) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682948170 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_682948170;
+        return (nPath > rect.getTaintInt());
     }
     
     @DSComment("Private Method")

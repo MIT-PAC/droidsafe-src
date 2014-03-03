@@ -12,7 +12,7 @@ public class DashPathEffect extends PathEffect {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeCreate(float intervals[], float phase) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)(phase + intervals[0] + intervals.getTaintInt());
     }
 
     /**
