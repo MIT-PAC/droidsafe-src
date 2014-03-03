@@ -380,17 +380,26 @@ public class Main {
         if (Config.v().target.equals("specdump")) {
             driverMsg("Converting RCFG to SSL and dumping...");
             monitor.subTask("Writing Spec to File");
+            StopWatch timer = new StopWatch();
+            timer.start();
             RCFGToSSL.run(false);
             SecuritySpecification spec = RCFGToSSL.v().getSpec();
             monitor.worked(1);
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
+            timer.stop();
+            driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
             if (spec != null) {
+                driverMsg("Creating Eclipse Plugin Serialized Specification...");
+                timer.reset();
+                timer.start();
                 SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
                 SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
                 SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+                timer.stop();
+                driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
             }
             monitor.worked(1);
             if (monitor.isCanceled()) {
