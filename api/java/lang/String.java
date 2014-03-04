@@ -906,6 +906,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         byte[] bytes = new byte[1];
         
         bytes.addTaint(getTaint());
+        bytes[0] = getTaintByte();
         return bytes;
     }
     
