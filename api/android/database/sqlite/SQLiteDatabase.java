@@ -828,7 +828,7 @@ private void checkLockHoldTime() {
      * </pre>
      */
     @DSComment("Database access")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.089 -0500", hash_original_method = "36B8D50340D02900F098E44F066CFF12", hash_generated_method = "A6184A05F618D1808B44159CDC4ECD60")
     
 public void beginTransaction() {
@@ -1073,7 +1073,7 @@ public void endTransaction() {
      * transaction is already marked as successful.
      */
     @DSComment("Database access")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.106 -0500", hash_original_method = "CAD10DEB5A167AB4D97D078F2E23C48E", hash_generated_method = "11423CA2AB953135C722FCDBA12D61D5")
     
 public void setTransactionSuccessful() {
@@ -1297,7 +1297,7 @@ private void setJournalMode(final String dbPath, final String mode) {
      * Close the database.
      */
     @DSComment("Database access")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.160 -0500", hash_original_method = "F057ECACA47F2E639159F91F6FF25AA8", hash_generated_method = "BC9E75A207746F095F3747302163154C")
     
 public void close() {
@@ -1852,6 +1852,7 @@ public Cursor rawQueryWithFactory(
      *            column values
      * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.229 -0500", hash_original_method = "7C0142B65481E16DCFB76B6C0BD0AF64", hash_generated_method = "B95E58E579B5A6D9594C3B5AF493AAD3")
@@ -1964,6 +1965,7 @@ public long replaceOrThrow(String table, String nullColumnHack,
      * {@link #CONFLICT_IGNORE}
      * OR -1 if any error
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.239 -0500", hash_original_method = "4E696CAC31E62C2450813F66BA0D3688", hash_generated_method = "D3FFFFD73FA936FAF47289C5F6C32E7E")
@@ -2261,7 +2263,7 @@ public boolean isReadOnly() {
      * @return true if the DB is currently open (has not been closed)
      */
     @DSComment("Database access")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.266 -0500", hash_original_method = "61E254D128D08D9B7DD7C5EEB86B883E", hash_generated_method = "A1637FC4A8E8E14962FA82A2C62D9651")
     
 public boolean isOpen() {

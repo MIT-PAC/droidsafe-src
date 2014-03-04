@@ -353,7 +353,6 @@ public final Application getApplication() {
 public final Activity getParent() {
         return mParent;
     }
-
     
     //TODO: We need to find a way to model parent activity associated
     // with this activity
@@ -449,6 +448,7 @@ public Window getWindow() {
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
 	@DSVerified("Modeled Lifecycle Event")

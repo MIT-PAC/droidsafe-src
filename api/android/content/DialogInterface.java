@@ -24,7 +24,7 @@ public interface DialogInterface {
     public static final int BUTTON3 = BUTTON_NEUTRAL;
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void cancel();
 
     @DSComment("Abstract Method")

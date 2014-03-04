@@ -830,7 +830,7 @@ public void removeUpdates(LocationListener listener) {
      * @throws IllegalArgumentException if intent is null
      */
     @DSComment("Location manager")
-    @DSSpec(DSCat.LOCATION)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.101 -0500", hash_original_method = "53855AAE83CDCFDE219D3895B886D007", hash_generated_method = "11D02D5FFF7DF18BC5C2C49EC31ACDE3")
     
 public void removeUpdates(PendingIntent intent) {
@@ -941,7 +941,7 @@ public void removeProximityAlert(PendingIntent intent) {
      * @throws IllegalArgumentException if provider is null
      */
     @DSComment("Location manager")
-    @DSSpec(DSCat.LOCATION)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.108 -0500", hash_original_method = "A73A17F882D5C0CB78BFCF12E6BF5D56", hash_generated_method = "661252561785095187961056FE5269CA")
     

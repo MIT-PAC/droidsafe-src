@@ -161,7 +161,7 @@ public class SensorManager {
      */
 
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.037 -0500", hash_original_method = "80FFBDA32F1CA6FB68C3B24B9C01CA42", hash_generated_method = "C2361A9E50FB5E2540C47B2203847598")
     
@@ -454,7 +454,7 @@ private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
      * @see GeomagneticField
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.051 -0500", hash_original_method = "48D1C344F1CE2628DE4C68ABB227A1F6", hash_generated_method = "5E0C14D6CF43554F17C02DEA9C8592AA")
     
@@ -1849,7 +1849,7 @@ public List<Sensor> getSensorList(int type) {
      *        a bit masks of the sensors to unregister from
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.004 -0500", hash_original_method = "08C00AEC5C2F4A8557AFE56DD5038FAA", hash_generated_method = "F6900602A78D362DC13AF520AEF4FB59")
     
 @Deprecated
@@ -1926,7 +1926,7 @@ public List<Sensor> getSensorList(int type) {
      *        a SensorListener object
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.010 -0500", hash_original_method = "F024191DD75DA5578F802D33C834CE8F", hash_generated_method = "C7791D999DC6F94D97BA856FF8908E2A")
     
 @Deprecated

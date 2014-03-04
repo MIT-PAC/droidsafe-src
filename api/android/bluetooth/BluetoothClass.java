@@ -333,6 +333,7 @@ public BluetoothClass(int classInt) {
         return mClass;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Bluetooth subsystem")
     @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.439 -0500", hash_original_method = "E65C8DBAA86595E02DE1992FA15205E3", hash_generated_method = "8D351E82FF3F21D76A924AE1FC9D0F5E")
