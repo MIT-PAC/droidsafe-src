@@ -174,7 +174,9 @@ public class InformationFlowAnalysis {
                     }
                 }
             } else if (type instanceof ArrayType) {
-                ImmutableSet<InfoValue> vs = this.state.arrays.get(reachableAllocNode);
+                ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, ObjectUtils.v().taint);
+                values.addAll(vs);
+                vs = this.state.arrays.get(reachableAllocNode);
                 values.addAll(vs);
             }
         }
