@@ -338,7 +338,7 @@ public ContextImpl(ContextImpl context) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Context getApplicationContext() {
-        return this;
+        return DroidSafeAndroidRuntime.mApplication;
     }
     
     @Override

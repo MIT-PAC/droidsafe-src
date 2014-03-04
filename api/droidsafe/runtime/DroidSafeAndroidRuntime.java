@@ -33,7 +33,8 @@ import com.google.android.maps.MapActivity;
 public class DroidSafeAndroidRuntime {
     public static boolean control = new Random().nextBoolean();
     public static int switchControl = new Random().nextInt();
-    private static Application mApplication;
+    /** make public so that other context's can grab this! */
+    public static Application mApplication;
     
     /**
      * This method will be called automatically by the droidsafe harness class before all
