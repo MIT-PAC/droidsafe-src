@@ -142,7 +142,11 @@ public class Config {
     public boolean verypreciseStrings = false;
     /** should we not add any precision for strings and clump them all together */
     public boolean impreciseStrings = false;
-
+    /** track only annotated source in the source */
+    public boolean onlyannotatedsources = true;
+    /** Generate pta result for eclipse plugin */
+    public boolean ptaresult = true;
+    
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
      * the application to System.exit(int) when Main.exit() is called. We use this option when running
@@ -251,6 +255,10 @@ public class Config {
         Option noVA =
                 new Option("nova", "Do not run value analysis.");
         options.addOption(noVA);
+        
+        Option noPTAResult =
+                new Option("noptaresult", "Do not translate PTA result for eclipse plugin");
+        options.addOption(noPTAResult);
 
         Option vaStats =
                 new Option("vastats", "Dump VA stats.");
@@ -355,6 +363,10 @@ public class Config {
         if (cmd.hasOption("nova"))
             this.runValueAnalysis = false;
 
+        if (cmd.hasOption("noptaresult"))
+            this.ptaresult = false;
+               
+        
         if (cmd.hasOption("vastats"))
             this.dumpVAStats = true;
 

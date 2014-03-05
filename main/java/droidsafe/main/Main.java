@@ -11,6 +11,7 @@ import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.CallGraphDumper;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
@@ -120,6 +121,8 @@ public class Main {
         CallLocationModel.reset();
         ObjectSensitivityCloner.reset();
         RCFG.reset();
+        
+        
         monitor.worked(1);
         AutomatedSourceTagging.run();
         if (monitor.isCanceled()) {
@@ -265,6 +268,10 @@ public class Main {
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
+            if (Config.v().dumpCallGraph) {
+                CallGraphDumper.run(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+            }
+                       
             //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
             //replace calls with new expressions, and let the modeling pass taint appropriately
             driverMsg("Converting AbstractStringBuilder.toString()");
@@ -273,6 +280,7 @@ public class Main {
 
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
@@ -368,13 +376,15 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        driverMsg("Finding method calls on all important alloc nodes...");
-        monitor.subTask("Generating Spec");
-        MethodCallsOnAlloc.run();
-        driverMsg("Finished finding method calls on alloc nodes.");
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        if (Config.v().ptaresult) {
+            driverMsg("Finding method calls on all important alloc nodes...");
+            monitor.subTask("Generating Spec");
+            MethodCallsOnAlloc.run();
+            driverMsg("Finished finding method calls on alloc nodes.");
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
         }
 
         if (Config.v().target.equals("specdump")) {
