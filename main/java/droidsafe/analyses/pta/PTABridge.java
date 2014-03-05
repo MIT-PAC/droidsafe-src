@@ -53,6 +53,8 @@ public abstract class PTABridge {
     /** options passed by caller to the underlying pta */
     protected Map<String,String> opts;
     
+    public static boolean DUMP_CALL_GRAPH_NEXT_RUN = false;
+    
     /** When gathering statistics, ignore methods and references of these classes or subclasses */
     public static final Set<String> STATS_IGNORE_CLASS_STRINGS = new HashSet<String>(Arrays.asList(
         "java.lang.String", 

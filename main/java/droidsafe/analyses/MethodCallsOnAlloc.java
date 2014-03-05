@@ -81,6 +81,9 @@ public class MethodCallsOnAlloc {
      * Return singleton.
      */
     public static MethodCallsOnAlloc v() {
+        if (v == null)
+            v = new MethodCallsOnAlloc();
+        
         return v;
     }
 

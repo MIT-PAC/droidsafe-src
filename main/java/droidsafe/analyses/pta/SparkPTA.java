@@ -104,6 +104,8 @@ public class SparkPTA extends PTABridge {
 
     private Set<AllocNode> allAllocNodes;
     
+    
+    
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
      * to one.
@@ -575,12 +577,8 @@ public class SparkPTA extends PTABridge {
         // TODO Auto-generated method stub
 
     }
-
-    @Override
-    public void dumpCallGraph(String fileStr) {
-        // TODO Auto-generated method stub
-
-    }
+    
+   
     
     private void countNode(Map<SootClass, Integer> nodeCount, AllocNode node) {
         SootClass clz = null;
@@ -741,5 +739,11 @@ public class SparkPTA extends PTABridge {
         ret = ret.substring(0, ret.length() - 1);
         
         return ret;
+    }
+
+    @Override
+    public void dumpCallGraph(String fileStr) {
+        // TODO Auto-generated method stub
+        
     }
 }
