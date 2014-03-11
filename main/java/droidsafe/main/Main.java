@@ -122,13 +122,13 @@ public class Main {
         ObjectSensitivityCloner.reset();
         RCFG.reset();
         
-        
+        /*
         monitor.worked(1);
         AutomatedSourceTagging.run();
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        */
 
 
         driverMsg("Removing identity overrides.");

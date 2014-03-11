@@ -33,58 +33,74 @@ public class CallGraphDumper {
             //the rCFG node
             Set<Edge> visitedEdges = 
                     new HashSet<Edge>();
-            Map<String, Set<MethodOrMethodContext>> classSubgraph = 
+            Map<String, Set<MethodOrMethodContext>> classSubgraphNodes = 
                     new HashMap<String, Set<MethodOrMethodContext>>();
-            
+            Map<String, Set<Edge>> classSubgraphEdges = 
+                    new HashMap<String, Set<Edge>>();
+
             int uniqueID = 0;
-            
+
             for (MethodOrMethodContext src : PTABridge.v().getReachableMethodContexts()) {
                 if (API.v().isSystemMethod(src.method()))
                     continue;
-                
+
                 String className = src.method().getDeclaringClass().getName();
-                
-                if (!classSubgraph.containsKey(className)) {
-                    classSubgraph.put(className, new HashSet<MethodOrMethodContext>());
+
+                if (!classSubgraphNodes.containsKey(className)) {
+                    classSubgraphNodes.put(className, new HashSet<MethodOrMethodContext>());
                 }
-                
-                classSubgraph.get(className).add(src);
-                
+
+                classSubgraphNodes.get(className).add(src);
+
                 Iterator<Edge> edges = PTABridge.v().getCallGraph().edgesOutOf(src);
                 while (edges.hasNext()) {
                     Edge edge = edges.next();
-                    
+
                     if (!API.v().reportInSpec(edge.tgt()) && API.v().isSystemMethod(edge.tgt()))
                         continue;
-                    
+
                     boolean isAPI = API.v().reportInSpec(edge.tgt());
-                    
+
                     if (!visitedEdges.contains(edge)) {
                         String tgtID = Integer.toString(edge.getTgt().hashCode());
-                        
+
                         if (isAPI) {
                             //create unique id for api calls so they show up multiple times
                             tgtID += uniqueID++;
                             fw.write(getMethodDotLabel(edge.getTgt(), true, tgtID));
                         }
-                        
-                        fw.write(edge.getSrc().hashCode() + "->" + tgtID + ";\n");
-                        
+
+                        if (className.equals(edge.tgt().method().getDeclaringClass().getName())) {
+                            if (!classSubgraphEdges.containsKey(className)) {
+                                classSubgraphEdges.put(className, new HashSet<Edge>());
+                            }
+
+                            classSubgraphEdges.get(className).add(edge);
+                        } else {
+                            fw.write(edge.getSrc().hashCode() + "->" + tgtID + ";\n");
+                        }
+
                         visitedEdges.add(edge);
-                            
+
                     }
-                    
+
                 }
             }
 
-            for (String pack : classSubgraph.keySet()) {
-                String label = pack.replace('.', '_').replace('.', '.');
-                fw.write("subgraph " + pack.replace('.', '_') + "{\n");
+            for (String pack : classSubgraphNodes.keySet()) {
+                String label = pack.replace('.', '_').replace('$', '_');
+                fw.write("subgraph " + label + "{\n");
                 fw.write("label = \"" + pack + "\";\n");
                 fw.write("color=blue;\n");
-                for (MethodOrMethodContext m : classSubgraph.get(pack)) {
+                for (MethodOrMethodContext m : classSubgraphNodes.get(pack)) {
                     fw.write(getMethodDotLabel(m, false, Integer.toString(m.hashCode())));
                 }
+                if (classSubgraphEdges.containsKey(pack)) {
+                    for (Edge e : classSubgraphEdges.get(pack)) {
+                        fw.write(e.getSrc().hashCode() + "->" + e.getTgt().hashCode() + ";\n");
+                    }
+                }
+
                 fw.write("}\n");
             }
 
