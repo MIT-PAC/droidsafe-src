@@ -12,6 +12,7 @@ import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.CallGraphDumper;
+import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
@@ -137,6 +138,14 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        // Search for catch blocks
+        if (true) {
+        	driverMsg ("Searching for catch blocks");
+        	CatchBlocks cb = new CatchBlocks();
+        	cb.run();
+        	System.exit(-1);
         }
 
         driverMsg("Calling scalar optimizations.");
