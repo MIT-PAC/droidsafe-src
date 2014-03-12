@@ -559,10 +559,15 @@ public class ListApiMethods extends ApiUsageListing {
         // TODO Auto-generated method stub
         Options options = new Options();
         options.addOption("o", "out",     true,  "output filename");
-        options.addOption("c", "classify", false, "automatic classification");
+        options.addOption("c", "classify", false,"automatic classification");
         options.addOption("a", "apijar",  true,  "Optional API jar file");
-        options.addOption("l", "list",  true,  "list of api to list (class methodname)");
-        options.addOption("r", "report",  true,  "modeling report");
+        options.addOption("l", "list",  true,    "list of api to list (class methodname)");
+        options.addOption("r", "report",  true,           "modeling report");
+        /*
+        options.addOption("rc", "report-class",  false,  "include classification in report");
+        options.addOption("ri", "report-info",  false,  "include info flow in report");
+        options.addOption("rm", "report-comment",  false,  "include comment in report");
+        */
 
         if (args.length == 0){
             printHelp(options);

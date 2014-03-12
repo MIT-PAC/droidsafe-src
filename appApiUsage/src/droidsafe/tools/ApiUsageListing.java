@@ -68,6 +68,7 @@ public class ApiUsageListing {
             e.printStackTrace();
         };               
     }
+    
 
     protected HashMap<SootMethod, Integer> apiAllUsage    = new HashMap<SootMethod, Integer>();
     protected HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
@@ -267,6 +268,51 @@ public class ApiUsageListing {
        
     }
     
+    /**
+     * 
+     * @param stream
+     */
+
+    private static boolean isComponentClass(SootClass klass) {
+       return false; 
+    }
+    public void dumpComponentExchange(PrintStream stream) {
+        // Going through all methods inside the class
+        for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            logger.info("Application classes {} ", sootClass);
+        
+            Chain<SootClass> infSet = sootClass.getInterfaces(); 
+
+            for (SootMethod sootMethod: sootClass.getMethods()) {
+                // Check for overriding method
+                // check for method being called by someone
+                logger.info("Method {} ", sootMethod);
+                                
+                SootMethod overriden = SootUtils.getApiOverridenMethod(sootMethod);
+                //if (SootUtils.isApiOverridenMethod(sootMethod)) {
+                if (overriden != null) {
+                }
+
+                Set<SootMethod> calleeSet = SootUtils.getCalleeSet(sootMethod);
+                for (SootMethod method: calleeSet) {
+                    // skip aplication class
+                    if (method.getDeclaringClass().isApplicationClass()) {
+                        continue;
+                    }
+
+                    // if the callee is application class, we skip
+                    if (apiAllUsage.containsKey(method)) {
+                        continue;
+                    }
+                    
+                    // add the counter
+                   
+                }
+                
+           }            
+        }
+    }
+
     private static void setSootOptions() {
         soot.options.Options.v().set_keep_line_number(true);
         soot.options.Options.v().set_whole_program(true);
@@ -288,6 +334,7 @@ public class ApiUsageListing {
         options.addOption("o", "out",     true,  "output filename");
         options.addOption("i", "inlist",  true,  "input list of jar files");
         options.addOption("a", "apijar",  true,  "Optional API jar file");
+        options.addOption("c", "comp",    false, "Component Dependency");
 
         if (args.length == 0){
             printHelp(options);
