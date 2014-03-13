@@ -55,6 +55,7 @@ import droidsafe.utils.SootUtils;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -91,9 +92,10 @@ public class Main {
 
     /**
      * Entry point of DroidSafe Tool.
+     * @throws FileNotFoundException 
      * 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         driverMsg("Starting DroidSafe Run");
         // grab command line args and set some globals
         Config.v().init(args);
@@ -101,7 +103,7 @@ public class Main {
         run(new DroidsafeDefaultProgressMonitor());
     }
 
-    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
+    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         sMonitor = monitor;
         monitor.subTask("Initializing Environment");
         G.reset();

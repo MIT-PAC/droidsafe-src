@@ -1,9 +1,13 @@
 package droidsafe.analyses;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -22,13 +26,17 @@ import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Trap;
 import soot.Unit;
+import soot.UnitBox;
 import soot.Value;
 import soot.jimple.AssignStmt;
+import soot.jimple.GotoStmt;
+import soot.jimple.IfStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
 import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
+import soot.jimple.ReturnStmt;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
@@ -40,6 +48,7 @@ import soot.util.Chain;
 import droidsafe.android.app.Project;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 
 /**
  * Catch block indicator. Looks for catch blocks in the application code and
@@ -56,23 +65,30 @@ public class CatchBlocks {
     /** Enable/Disable the transformation **/
     static boolean enabled = true;
     
-    /** Find all catch blocks and characterize their contents **/
-    public void run() {
+    private HashMap<Unit,Integer> lnums = null;
+    
+    PrintStream fp = null;
+        
+    /** Find all catch blocks and characterize their contents 
+     * @throws FileNotFoundException **/
+    public void run() throws FileNotFoundException {
 
         if (!enabled) return;
+        
+        fp = new PrintStream (Project.v().getOutputDir() + "/catch_blocks.out");
         
         // Process each source class (those in app/src)
         for (SootClass clz : Scene.v().getClasses()) {
             if (!Project.v().isSrcClass(clz.toString()))
             	continue;
             logger.info("processing class {}", clz);
-        	if (!clz.getShortName().equals ("FetchForecast")) {
+        	if (false && !clz.getShortName().equals ("FetchForecast")) {
         		logger.info ("skipping class {}", clz);
         		continue;
         	}
 
             for (SootMethod method : clz.getMethods()) {
-            	if (!method.getName().equals ("run")) {
+            	if (false && !method.getName().equals ("run")) {
             		logger.info("  skipping method {}", method);
             		continue;
             	}
@@ -81,6 +97,9 @@ public class CatchBlocks {
                 }
             }
         }
+        
+        fp.close();
+        
     }
 
     /**
@@ -93,17 +112,124 @@ public class CatchBlocks {
     	Chain <Unit> insts = body.getUnits();
         // NormalUnitPrinter nup = new NormalUnitPrinter(b);
 
-    	logger.info("  processing method {}", meth);
-        for (Unit unit : insts) {
-        	Stmt stmt = (Stmt) unit;
-        	logger.info ("    class {}, stmt {}", stmt.getClass(), stmt);
+    	// Build destinations for jumps and keep track of all jump targets
+    	lnums = new LinkedHashMap<Unit,Integer>();
+    	HashMap<Unit,List<Unit>> jump_dests_to_src 
+    	    = new LinkedHashMap<Unit,List<Unit>>();
+    	int inst_offset = 0;
+        for (Unit src : insts) {
+        	lnums.put (src, inst_offset);
+        	inst_offset++;
+        	Unit target = null;
+        	if (src instanceof GotoStmt)
+        		target = ((GotoStmt)src).getTarget();
+        	else if (src instanceof IfStmt)
+        		target = ((IfStmt)src).getTarget();
+        	if (target != null) {
+        		List<Unit> sources = jump_dests_to_src.get(target);
+        		if (sources == null) {
+        			sources = new ArrayList<Unit>();
+        			jump_dests_to_src.put(target, sources);
+        		}
+        		sources.add (src);
+        	}
         }
+
+        // Dump the code with destinations for jumps/branches
+        if (logger.isInfoEnabled()) {
+	    	logger.info("  processing method {}", meth);
+	        for (Unit unit : insts) {
+	        	if (unit instanceof GotoStmt) {
+	        		GotoStmt goto_stmt = (GotoStmt) unit;
+	        		logger.info ("    {} class {} stmt goto {}", lnums.get(unit),
+	        				unit.getClass(), lnums.get(goto_stmt.getTarget()));
+	        	} else if (unit instanceof IfStmt) {
+	        		IfStmt if_stmt = (IfStmt) unit;
+	        		logger.info ("    {} class {} stmt if {} goto {}", lnums.get(unit),
+	        				unit.getClass(), if_stmt.getCondition(), 
+	        				lnums.get(if_stmt.getTarget()));
+	        	} else {
+	        		logger.info ("    {}: class {}, stmt {}", lnums.get (unit),
+	        				unit.getClass(), unit);
+	        	}
+	        }
+        }
+
         
-        logger.info("  traps for {}", meth);
+        logger.info("  processing traps for {}", meth);
         for (Trap trap : body.getTraps()) {
         	logger.info ("    class {}, trap {}", trap.getClass(), trap);
+        	HashSet<Unit> unit_in_trap = new HashSet<Unit>();
+        	Unit start = trap.getHandlerUnit();
+        	Unit u;
+        	for (u = start ; u != null; u = insts.getSuccOf(u)) {
+        		unit_in_trap.add(u);
+        		if (jump_dests_to_src.containsKey(u)) {
+        			for (Unit src : jump_dests_to_src.get(u))
+        				logger.info ("      {} is targeted by {}", 
+        						toString (u), toString(src));
+        			break;
+        		}
+        		if (u instanceof ReturnStmt)
+        			break;
+        		if (u instanceof GotoStmt)
+        			break;
+        		if (u instanceof IfStmt)
+        			break;
+        	}
+        	logger.info ("  begin handler = {}", toString(start));
+        	logger.info ("  end handler = {}", toString(u));
+        	SourceLocationTag slt 
+        	  = SootUtils.getSourceLocation((Stmt) start, meth.getDeclaringClass());
+        	fp.printf ("\n%s, %s\n", meth.getSignature(), slt);
+        	extract_calls (fp, meth.getDeclaringClass(), insts, start, u);
         }
-    	
+    }
+    
+    /**
+     * Extracts all of the calls from the instructions between start (inclusive)
+     * and end (exclusive).
+     * 
+     * @param insts		- Chain that contains start and end
+     * @param start     - start instruction (inclusive)
+     * @param end       - end instruction (exclusive)
+     */
+    private void extract_calls (PrintStream fp, SootClass clz, Chain<Unit> insts, 
+    		Unit start, Unit end) {
+
+    	for (Unit u = start; u != end; u = insts.getSuccOf(u)) {
+    		Stmt s = (Stmt)u;
+    		if (s.containsInvokeExpr()) {
+    			InvokeExpr ie = s.getInvokeExpr();
+    	       	SourceLocationTag slt 
+    	       	  = SootUtils.getSourceLocation((Stmt) start, clz);
+    			fp.printf ("  %s, %s\n", ie.getMethod(), slt);
+    		}
+    	}
+    }
+    
+    /** 
+     * formats an instruction using lnums to fill in branch destinations
+     * and offsets in the current method
+     * 
+     * @param u
+     * @param lnums
+     * @return
+     */
+    private  String toString (Unit u) {
+    	if (u == null)
+    		return "<last instruction>";
+       	if (u instanceof GotoStmt) {
+    		GotoStmt goto_stmt = (GotoStmt) u;
+    		return String.format ("goto %d (line %d)", 
+    				lnums.get(goto_stmt.getTarget()), lnums.get(u));
+    	} else if (u instanceof IfStmt) {
+    		IfStmt if_stmt = (IfStmt) u;
+    		return String.format ("if %s goto %d (line %d)",
+    				if_stmt.getCondition(), lnums.get(if_stmt.getTarget()), 
+    				lnums.get(u));
+    	} else 
+    		return String.format ("%s (line %d)", u, lnums.get(u));
     }
     
     /**
