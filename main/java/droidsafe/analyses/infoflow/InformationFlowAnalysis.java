@@ -144,6 +144,12 @@ public class InformationFlowAnalysis {
         return values;
     }
 
+    public Set<InfoValue> getTaints(MethodOrMethodContext srcMethodContext, Local local) {
+        assert local.getType() instanceof PrimType;
+        Context context = srcMethodContext.context();
+        return this.state.locals.get(context, local);
+    }
+
     public Set<InfoValue> getTaints(Stmt stmt, MethodOrMethodContext srcMethodContext, Local local) {
         assert srcMethodContext.method().getActiveBody().getUnits().contains(stmt);
         assert local.getType() instanceof PrimType;

@@ -69,6 +69,7 @@ import org.apache.commons.lang3.time.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import checks.CloggedNativeMethods;
 import soot.G;
 import soot.Scene;
 import soot.SootClass;
@@ -367,6 +368,15 @@ public class Main {
             } catch (IOException exp) {
                 logger.error(exp.toString());
             }
+
+            if (Config.v().infoFlowNative) {
+                try {
+                    CloggedNativeMethods.run();
+                } catch (IOException exp) {
+                    logger.error(exp.toString());
+                }
+            }
+
             timer.stop();
             droidsafe.stats.AvgInfoFlowSetSize.run();
             driverMsg("Finished Information Flow Analysis: " + timer);
