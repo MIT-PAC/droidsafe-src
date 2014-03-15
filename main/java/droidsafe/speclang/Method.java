@@ -550,7 +550,7 @@ public class Method implements Comparable<Method> {
             try {
                 //TODO: CONTEXT HERE FROM THE INFOVALUE
                 Collection<SootMethod> targets = 
-                        PTABridge.v().resolveInvoke(invoke);
+                        PTABridge.v().resolveInvokeIns(invoke);
 
                 for (SootMethod target : targets) { 
                     for (InfoKind kind : API.v().getSourceInfoKinds(target)) {

@@ -99,7 +99,7 @@ public class InsertUnmodeledObjects {
                                 continue;            
 
                             try {
-                                Collection<SootMethod> targets = PTABridge.v().resolveInvoke(invoke);
+                                Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
                                 for (SootMethod target : targets) 
                                     if (API.v().isSystemMethod(target)) {
                                         hasAPITarget = true;
@@ -113,7 +113,7 @@ public class InsertUnmodeledObjects {
                             if (hasAPITarget) {
                                 //we have a method that could target the api, now see if the return value has 
                                 //anything in its pt set
-                                if (PTABridge.v().getPTSet(assign.getLeftOp()).isEmpty()) {
+                                if (PTABridge.v().getPTSetIns(assign.getLeftOp()).isEmpty()) {
                                     addUnmodeledObject(assign, method);
                                 }
                             }

@@ -275,7 +275,7 @@ public class RequiredModeling {
                 Collection<SootMethod> resolved = null;
            
                 try {
-                    resolved = PTABridge.v().resolveInstanceInvoke(iie);
+                    resolved = PTABridge.v().resolveInstanceInvokeIns(iie);
                 } catch (CannotFindMethodException e) {
                     resolved = null;
                 }

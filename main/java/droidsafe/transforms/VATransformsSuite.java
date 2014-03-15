@@ -69,7 +69,7 @@ public class VATransformsSuite  {
                     continue;
 
                 try {
-                    for (SootMethod callee : PTABridge.v().resolveInvoke(invokeExpr)) {
+                    for (SootMethod callee : PTABridge.v().resolveInvokeIns(invokeExpr)) {
                         for (VATransform transform : transforms) {
                             transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
                         }

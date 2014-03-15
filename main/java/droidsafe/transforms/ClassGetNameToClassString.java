@@ -74,7 +74,7 @@ public class ClassGetNameToClassString extends BodyTransformer {
         AssignStmt assign = (AssignStmt)stmt;
         InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
         try {
-            Collection<SootMethod> targets = PTABridge.v().resolveInvoke(invoke);
+            Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
 
             if (targets.size() != 1)
                 return false;
@@ -84,7 +84,7 @@ public class ClassGetNameToClassString extends BodyTransformer {
                 //replace java.lang.Class.getName() with a string constant if possible
                 if ("<java.lang.Class: java.lang.String getName()>".equals(target.getSignature())) {
                     InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
-                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSet(iie.getBase());
+                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSetIns(iie.getBase());
                     for(IAllocNode node : nodes) {
                         if (!(node instanceof IClassConstantNode))
                             return false;

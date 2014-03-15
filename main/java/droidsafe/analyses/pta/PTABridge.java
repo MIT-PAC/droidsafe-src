@@ -149,6 +149,11 @@ public abstract class PTABridge {
 
     /** return the alloc node of the PAG representing the new expr */
     public abstract IAllocNode getAllocNode(Object newExpr, Context context);
+
+    /** return the alloc node of the PAG representing the new expr */
+    public abstract IAllocNode getAllocNodeIns(Object newExpr);
+
+    
     
     /** Get all the alloc nodes of the PAG */
     public abstract Set<? extends IAllocNode> getAllAllocNodes();
@@ -169,16 +174,16 @@ public abstract class PTABridge {
     public abstract boolean isPointer(Value val);
     
     /** Return the possible dynamic types of the pointer value */
-    public abstract Set<Type> getTypes(Value val);
+    public abstract Set<Type> getTypesIns(Value val);
     
     /** Return the possible dynamic types of the pointer value given the context */
     public abstract Set<Type> getTypes(Value val, Context context);
     
     /** Return the possible alloc nodes that the given pointer could point to, insensitive */
-    public abstract Set<? extends IAllocNode> getPTSet(Value val);
+    public abstract Set<? extends IAllocNode> getPTSetIns(Value val);
     
     /**
-     * Content Insensitive query of field reference with allocnode and field. 
+     * Query of field reference with allocnode and field. 
      */
     public abstract Set<? extends IAllocNode> getPTSet(IAllocNode node, SootField field);
     
@@ -189,7 +194,7 @@ public abstract class PTABridge {
     public abstract Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode nodes);
     
     /** Resolve the targets of the invoke statement given the PTA and an insensitive search */
-    public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke)  throws CannotFindMethodException;
+    public abstract Collection<SootMethod> resolveInvokeIns(InvokeExpr invoke)  throws CannotFindMethodException;
     
     /** Resolve the targets of the invoke statement given the PTA and the context*/
     public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context) 
@@ -202,9 +207,9 @@ public abstract class PTABridge {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke)
+    public Collection<SootMethod> resolveInstanceInvokeIns(InstanceInvokeExpr invoke)
             throws CannotFindMethodException {
-        return resolveInstanceInvokeMap(invoke).values();
+        return resolveInstanceInvokeMapIns(invoke).values();
     }
     
     /**
@@ -219,7 +224,7 @@ public abstract class PTABridge {
     
     /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 
     given the PTA and an insensitive search */
-    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke)
+    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMapIns(InstanceInvokeExpr invoke)
             throws CannotFindMethodException;
     
     /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 

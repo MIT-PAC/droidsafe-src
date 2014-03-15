@@ -75,7 +75,7 @@ public class FindAPICallsWithNonLocalEffects {
                 try {
                     //for nonlocals
                     boolean found = false;
-                    for (SootMethod target : PTABridge.v().resolveInvoke(invoke)) {
+                    for (SootMethod target : PTABridge.v().resolveInvokeIns(invoke)) {
                         if (!API.v().isSystemMethod(target))
                             continue;
 
@@ -105,7 +105,7 @@ public class FindAPICallsWithNonLocalEffects {
                         if (returnVal.getType() instanceof RefType && !(returnVal instanceof Constant)) {
 
                             Set<IAllocNode> returnNodes = new HashSet<IAllocNode>();
-                            for (IAllocNode an : (Set<IAllocNode>) PTABridge.v().getPTSet(returnVal)) {
+                            for (IAllocNode an : (Set<IAllocNode>) PTABridge.v().getPTSetIns(returnVal)) {
                                 if (!(an.getNewExpr() instanceof NewExpr))
                                     continue;
                                 SootClass enclosingC =  ((NewExpr)an.getNewExpr()).getBaseType().getSootClass();
@@ -121,7 +121,7 @@ public class FindAPICallsWithNonLocalEffects {
                             for (Value arg : invoke.getArgs()) {
                                 if (!(arg.getType() instanceof RefType) || arg instanceof Constant)
                                     continue;
-                                for (IAllocNode an : PTABridge.v().getPTSet(arg)) {
+                                for (IAllocNode an : PTABridge.v().getPTSetIns(arg)) {
                                     if (!(an.getNewExpr() instanceof NewExpr))
                                         continue;
                                     SootClass enclosingC =  ((NewExpr)an.getNewExpr()).getBaseType().getSootClass();
@@ -134,7 +134,7 @@ public class FindAPICallsWithNonLocalEffects {
                             
                             //cull return node
 
-                            for (Map.Entry<IAllocNode,SootMethod> entry : PTABridge.v().resolveInstanceInvokeMap((InstanceInvokeExpr)invoke).entrySet()) {
+                            for (Map.Entry<IAllocNode,SootMethod> entry : PTABridge.v().resolveInstanceInvokeMapIns((InstanceInvokeExpr)invoke).entrySet()) {
                                 SootMethod target = entry.getValue();
                                 IAllocNode receiver = entry.getKey();
                                 
@@ -248,7 +248,7 @@ public class FindAPICallsWithNonLocalEffects {
         boolean found = false;
 
         //check non local and not app
-        for (IAllocNode an : PTABridge.v().getPTSet(v)) {
+        for (IAllocNode an : PTABridge.v().getPTSetIns(v)) {
             if (!(an.getNewExpr() instanceof NewExpr))
                 continue;
 

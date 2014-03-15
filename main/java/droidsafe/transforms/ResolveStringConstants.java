@@ -277,7 +277,7 @@ public class ResolveStringConstants extends BodyTransformer {
     private Collection<SootMethod> getTargets(InvokeExpr expr) {
         if (expr instanceof InstanceInvokeExpr) {
             try {
-                return PTABridge.v().resolveInstanceInvoke((InstanceInvokeExpr)expr);
+                return PTABridge.v().resolveInstanceInvokeIns((InstanceInvokeExpr)expr);
             } catch (CannotFindMethodException e) {
                logger.error("Error resolving virtual call: {}", e);
                droidsafe.main.Main.exit(1);

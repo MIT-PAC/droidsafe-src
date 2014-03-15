@@ -266,7 +266,7 @@ public class OutputEvent implements PTAMethodInformation {
 
             for (int i = 0; i < getNumArgs(); i++) {
                 if (isArgPointer(i)) {
-                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSet(getArgValue(i));
+                    Set<? extends IAllocNode> nodes = getArgPTSet(i);
                     formatter.format("\tArg %d (size %d)\n", i, nodes.size());
                     for (IAllocNode node : nodes) {
                         if (node instanceof IStringConstantNode) {

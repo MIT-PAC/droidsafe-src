@@ -76,7 +76,7 @@ public class ObjectGetClassToClassConstant extends BodyTransformer {
         AssignStmt assign = (AssignStmt)stmt;
         InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
         try {
-            Collection<SootMethod> targets = PTABridge.v().resolveInvoke(invoke);
+            Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
 
             if (targets.size() != 1)
                 return;
@@ -86,7 +86,7 @@ public class ObjectGetClassToClassConstant extends BodyTransformer {
                 //replace java.lang.Object.getClass() with a class constant if possible
                 if ("<java.lang.Object: java.lang.Class getClass()>".equals(target.getSignature())) {
                     InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
-                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSet(iie.getBase());
+                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSetIns(iie.getBase());
                     // add a local variable
                     Local newLocal = Jimple.v().newLocal(LOCAL_PREFIX + LOCAL_ID++, RefType.v("java.lang.Class"));
                     stmtBody.getLocals().add(newLocal);

@@ -101,7 +101,7 @@ public class TestPTA  {
                         }
                         
                         System.out.println("  Context Insensitive");
-                        for (IAllocNode node : PTABridge.v().getPTSet(value)) {
+                        for (IAllocNode node : PTABridge.v().getPTSetIns(value)) {
                             System.out.println("\t" + node);
                         }
                     }
@@ -149,12 +149,12 @@ public class TestPTA  {
 
             System.out.println("Instance Invoke: " + st);
            
-            for (IAllocNode node : PTABridge.v().getPTSet(iie.getBase()))
+            for (IAllocNode node : PTABridge.v().getPTSetIns(iie.getBase()))
                 System.out.println("  " + node);
             System.out.println("Args");
             for (Value val : iie.getArgs()) {
                 if (PTABridge.v().isPointer(val)) {
-                    for (IAllocNode node : PTABridge.v().getPTSet(val))
+                    for (IAllocNode node : PTABridge.v().getPTSetIns(val))
                         System.out.println("  " + node);
                 } else {
                     System.out.println("  not a pointer.");
@@ -173,11 +173,11 @@ public class TestPTA  {
                     } 
 
                     if (PTABridge.v().isPointer(a.getLeftOp())) {
-                        Set<? extends IAllocNode> lhsNodes = PTABridge.v().getPTSet(a.getLeftOp());
+                        Set<? extends IAllocNode> lhsNodes = PTABridge.v().getPTSetIns(a.getLeftOp());
 
                         Set<? extends IAllocNode> rhsNodes = null;
                         if (PTABridge.v().isPointer(a.getRightOp())) {
-                            rhsNodes = PTABridge.v().getPTSet(a.getRightOp() 
+                            rhsNodes = PTABridge.v().getPTSetIns(a.getRightOp() 
                                 );
                         } else if (PTABridge.v().getAllocNode(a.getRightOp(), null) != null) {
                             Set<IAllocNode> nodes = new LinkedHashSet<IAllocNode>();
@@ -185,7 +185,7 @@ public class TestPTA  {
                             rhsNodes = nodes;
                         } else if (a.getRightOp() instanceof CastExpr) {
                             CastExpr castExpr = (CastExpr)a.getRightOp();
-                            rhsNodes = PTABridge.v().getPTSet(castExpr.getOp());
+                            rhsNodes = PTABridge.v().getPTSetIns(castExpr.getOp());
                             Set<IAllocNode> toRemove = new HashSet<IAllocNode>();
                             for (IAllocNode node : rhsNodes) {
                                 if (!PTABridge.v().isLegalCast(node.getType(), castExpr.getCastType())) {
@@ -210,7 +210,7 @@ public class TestPTA  {
                                 System.out.println("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
                                 Set<? extends IAllocNode> baseNodes = 
-                                        PTABridge.v().getPTSet(
+                                        PTABridge.v().getPTSetIns(
                                             ((InstanceFieldRef)a.getLeftOp()).getBase());
                                 for (IAllocNode node : baseNodes) {
                                     System.out.println("  baseNode: " + node);
