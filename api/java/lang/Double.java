@@ -90,7 +90,10 @@ public static double parseDouble(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.675 -0500", hash_original_method = "CC232B8CAE36CFF9A4793AA7869B9E47", hash_generated_method = "FEE36900B728A02BB946FAF254D44323")
     
 public static String toString(double d) {
-        return RealToString.getInstance().doubleToString(d);
+        //return RealToString.getInstance().doubleToString(d);
+        String s = new String("<double>");
+        s.addTaint(d);
+        return s;
     }
 
     /**
