@@ -383,9 +383,17 @@ public class RCFG  {
 
             fw.write("# All Reachable Methods in User Classes (including system methods) \n\n");
 
-            for (SootMethod method : PTABridge.v().getReachableMethods()) {
-                if (!API.v().isSystemClass(method.getDeclaringClass()))
-                    fw.write(method + "\n");
+            for (MethodOrMethodContext mc : PTABridge.v().getReachableMethodContexts()) {
+                SootMethod method = mc.method();
+                
+                if (!API.v().isSystemMethod(method) || 
+                        method.getDeclaringClass().getName().startsWith("droidsafe.generated")) {
+                    fw.write(mc + "\n");
+                    fw.write("\tSRCS:\n");
+                    for (Edge src : PTABridge.v().incomingEdges(mc)) {
+                        fw.write("\t" + src.getSrc() + "\n");
+                    }
+                }
             }
 
             fw.close();

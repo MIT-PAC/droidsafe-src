@@ -233,15 +233,14 @@ public class Main {
         timer1.stop();
         driverMsg("Finished String Analysis: " + timer1);
 
-
         driverMsg("Cloning static methods to introduce call site context...");
         monitor.subTask("Cloning static methods to introduce callsite context...");
         ObjectSensitivityCloner.cloneStaticMethods(true);
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }     
-
+        } 
+        
         //run value analysis, if it runs, then the code may have veen transformed
         if (Config.v().runValueAnalysis) {
             runVA(monitor);

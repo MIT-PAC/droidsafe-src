@@ -404,6 +404,10 @@ public class SparkPTA extends PTABridge {
     }
 
     private void checkContext(Context context) {
+        //ok for context to be null
+        if (context == null)
+            return;
+        
         if (!(context instanceof AllocNode)) {
             logger.error("Invalid context type for spark object sensitivity: " + context);
             droidsafe.main.Main.exit(1);
@@ -413,9 +417,6 @@ public class SparkPTA extends PTABridge {
     
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val, Context context) {
-        
-        if (context == null)
-            return getPTSet(val);
         
         checkContext(context);
 
@@ -511,12 +512,8 @@ public class SparkPTA extends PTABridge {
      */
     public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
-        Set<? extends IAllocNode> allocs = null;
-        //get either the context sensitive or insensitive result based on the context param 
-        if (context == null) 
-            allocs = getPTSet(invoke.getBase());
-        else
-            allocs = getPTSet(invoke.getBase(), context);
+        Set<? extends IAllocNode> allocs;
+        allocs = getPTSet(invoke.getBase(), context);
 
         return internalResolveInstanceInvokeMap(allocs, invoke, context);
     }
@@ -720,16 +717,13 @@ public class SparkPTA extends PTABridge {
     }
     
     private String buildImportantAllocs() {
-        //if we want imprecise strings, then don't add precision for any allocators
-        if (!Config.v().preciseStrings) {
-            return "";
-        }
-        
         StringBuffer sb = new StringBuffer();
       
         for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz) ||
-                    isImportantJavaAlloc(clz)) {
+            if (Project.v().isSrcClass(clz) || 
+                    /*isImportantJavaAlloc(clz) ||*/
+                    clz.getName().startsWith(Project.DS_GENERATED_CLASSES_PREFX) ||
+                    clz.getName().startsWith("droidsafe.runtime")) {
                 logger.info("Adding class to important alloc list of spark: {}", clz);
                 sb.append(clz + ",");
             }

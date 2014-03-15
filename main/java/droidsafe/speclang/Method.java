@@ -487,6 +487,11 @@ public class Method implements Comparable<Method> {
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
+                System.out.println(ptaInfo.getEdge().getSrc());
+                System.out.println(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()));                
+                System.out.println(ptaInfo.getArgValue(i) + "\n");
+                
+                
                 infoValues = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
                             ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
