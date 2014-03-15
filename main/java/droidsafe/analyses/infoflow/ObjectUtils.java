@@ -45,11 +45,11 @@ public class ObjectUtils {
         }
     }
 
-    boolean isAddTaint(SootMethod method) {
+    public boolean isAddTaint(SootMethod method) {
         return addTaints.contains(method);
     }
 
-    boolean isGetTaint(SootMethod method) {
+    public boolean isGetTaint(SootMethod method) {
         return getTaints.contains(method);
     }
 }

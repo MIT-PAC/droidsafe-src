@@ -82,6 +82,8 @@ public class Config {
     public String[] infoFlowValues;
     /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
     public boolean infoFlowTrackAll = false;
+    /** If true, list native methods that cut information flows. */
+    public boolean infoFlowNative = false;
     /** if true, use event context, otherwise, use insensitive result */
     public boolean eventContextPTA = false;
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
@@ -313,6 +315,9 @@ public class Config {
                 "Track all methods (excluding those in java.lang) during information flow analysis");
         options.addOption(infoFlowTrackAll);
 
+        Option infoflowNative = new Option("native", "List native methods that cut information flows");
+        options.addOption(infoflowNative);
+
         Option approot =
                 OptionBuilder.withArgName("dir").hasArg()
                 .withDescription("The Android application root directory").create("approot");
@@ -427,6 +432,11 @@ public class Config {
         if (cmd.hasOption("infoflow-value")) {
             assert this.infoFlow;
             this.infoFlowValues = cmd.getOptionValues("infoflow-value");
+        }
+
+        if (cmd.hasOption("native")) {
+            assert this.infoFlow;
+            this.infoFlowNative = true;
         }
 
         if (cmd.hasOption("pta")) {
