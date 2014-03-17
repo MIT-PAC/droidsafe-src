@@ -26,6 +26,7 @@ import soot.AnySubType;
 import soot.ArrayType;
 import soot.Context;
 import soot.G;
+import soot.Hierarchy;
 import soot.Local;
 import soot.MethodContext;
 import soot.MethodOrMethodContext;
@@ -58,6 +59,7 @@ import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.GeomQueries;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.InsensitiveAllocNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
@@ -93,7 +95,7 @@ public class SparkPTA extends PTABridge {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(SparkPTA.class);
     /** bimap of new expressions to their alloc node representation */
-    private HashBiMap<Object, AllocNode> newToAllocNodeMap;
+    private HashBiMap<Object, InsensitiveAllocNode> newToAllocNodeMap;
     /** all method reachable from the harness main */
     private Set<SootMethod> reachableMethods;
     /** add method + contexts that are reachable */
@@ -109,13 +111,20 @@ public class SparkPTA extends PTABridge {
     
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
-     * to one.
+     * to one.  Also add subclasses of each 
      * 
      * Strings will be added if the precisestrings options is given
      */
-    private static String  LIMIT_DEPTH_TO_ONE = 
-            "java.lang.Throwable,java.math.BigInt,java.math.BigInteger,"+
-             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point"; 
+    private static String[]  NO_CONTEXT = { 
+            "java.lang.Throwable",
+            "java.math.BigInt",
+            "java.math.BigInteger",
+            "android.graphics.Rect",
+            "android.view.MotionEvent",
+            "android.view.KeyEvent",
+            "android.graphics.Point"
+    };
+                     
     
     /** package prefix of important allocators from java */
     private static String[] IMPORTANT_ALLOCATORS_FROM_JAVA = {
@@ -228,25 +237,24 @@ public class SparkPTA extends PTABridge {
     }
     
     public Set<IAllocNode> getAllocNodeIns(Object newExpr) {
-        AllocNode insens = null;
+        InsensitiveAllocNode insens = null;
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
             Integer i = type.numDimensions;
             Pair pair = new Pair(newArr, i);
-            insens = (AllocNode) newToAllocNodeMap.get(pair);
+            insens = newToAllocNodeMap.get(pair);
         } else {
             if (!newToAllocNodeMap.containsKey(newExpr)) {
                 System.out.println("Not in new -> alloc map: " + newExpr);
                 return null;
             }
-            insens = (AllocNode) newToAllocNodeMap.get(newExpr);
+            insens = newToAllocNodeMap.get(newExpr);
         }
         
         Set<IAllocNode> nodes = new HashSet<IAllocNode>();
         
         nodes.add(insens);
-        
         nodes.addAll(insens.getContextNodeMap().values());
         
         return nodes;
@@ -256,19 +264,19 @@ public class SparkPTA extends PTABridge {
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
     public IAllocNode getAllocNode(Object newExpr, Context context) {
-        AllocNode insens = null;
+        InsensitiveAllocNode insens = null;
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
             Integer i = type.numDimensions;
             Pair pair = new Pair(newArr, i);
-            insens = (AllocNode) newToAllocNodeMap.get(pair);
+            insens = newToAllocNodeMap.get(pair);
         } else {
             if (!newToAllocNodeMap.containsKey(newExpr)) {
                 System.out.println("Not in new -> alloc map: " + newExpr);
                 return null;
             }
-            insens = (AllocNode) newToAllocNodeMap.get(newExpr);
+            insens = newToAllocNodeMap.get(newExpr);
         }
             
         return insens.context(context);
@@ -426,24 +434,10 @@ public class SparkPTA extends PTABridge {
          */
         return (Set<? extends IAllocNode>) allocNodes;
     }
-
-    private void checkContext(Context context) {
-        //ok for context to be null
-        if (context == null)
-            return;
-        
-        if (!(context instanceof AllocNode)) {
-            logger.error("Invalid context type for spark object sensitivity: " + context);
-            droidsafe.main.Main.exit(1);
-        }
-            
-    }
     
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val, Context context) {
-        
-        checkContext(context);
-
+     
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
 
@@ -635,13 +629,20 @@ public class SparkPTA extends PTABridge {
         int realSize = 0; 
 
         for (AllocNode node : ptsProvider.getAllocNodes()) {
-            newToAllocNodeMap.put(node.getNewExpr(), node);
+            if (!(node instanceof InsensitiveAllocNode)) {
+                logger.error("Found non-insensitive node in ptsProvider.getAllocNodes()");
+                droidsafe.main.Main.exit(1);
+            }
+            
+            InsensitiveAllocNode insNode = (InsensitiveAllocNode)node;
+                
+            newToAllocNodeMap.put(node.getNewExpr(), insNode);
             realSize ++;
             allAllocNodes.add(node);
         
             //countNode(nodeCount, node);
         
-            for (Map.Entry<Context, AllocNode> entry : node.getContextNodeMap().entrySet()) {
+            for (Map.Entry<Context, ObjectSensitiveAllocNode> entry : insNode.getContextNodeMap().entrySet()) {
                 allAllocNodes.add(entry.getValue());
                 //countNode(nodeCount, node);
             }
@@ -709,7 +710,7 @@ public class SparkPTA extends PTABridge {
         opt.put("kobjsens-precise-strings", Config.v().verypreciseStrings ? "true" : "false");
         
         opt.put("kobjsens-no-context-list", 
-                LIMIT_DEPTH_TO_ONE);
+                buildNoContextList());
         
         opt.put("kobjsens-important-allocators", buildImportantAllocs());
         
@@ -730,6 +731,26 @@ public class SparkPTA extends PTABridge {
 
 
         logger.info("[spark] Done!");
+    }
+    
+    private String buildNoContextList() {
+        StringBuffer buf = new StringBuffer();
+        
+        for (String str : NO_CONTEXT) {
+            SootClass clz = Scene.v().getSootClass(str);
+            
+            for (SootClass child : Scene.v().getActiveHierarchy().getSubclassesOfIncluding(clz)) { 
+                buf.append(child + ",");
+                logger.info("Adding class to ignore context list of spark: {}", clz);
+            }
+        }
+        
+        String ret = buf.toString();
+        
+        ret = ret.substring(0, ret.length() - 1);
+        
+        return ret;
+        
     }
     
     private boolean isImportantJavaAlloc(SootClass clz) {
