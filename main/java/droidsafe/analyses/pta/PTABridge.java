@@ -151,7 +151,7 @@ public abstract class PTABridge {
     public abstract IAllocNode getAllocNode(Object newExpr, Context context);
 
     /** return the alloc node of the PAG representing the new expr */
-    public abstract IAllocNode getAllocNodeIns(Object newExpr);
+    public abstract Set<IAllocNode> getAllocNodeIns(Object newExpr);
 
     
     

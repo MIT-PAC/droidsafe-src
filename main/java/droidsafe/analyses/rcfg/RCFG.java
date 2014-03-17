@@ -393,6 +393,7 @@ public class RCFG  {
                     for (Edge src : PTABridge.v().incomingEdges(mc)) {
                         fw.write("\t" + src.getSrc() + "\n");
                     }
+                    fw.write("\n");
                 }
             }
 
