@@ -211,6 +211,8 @@ public class SparkPTA extends PTABridge {
                 (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         
+        //dumpReachablesAndAllocNodes();
+        
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
         }
@@ -223,6 +225,31 @@ public class SparkPTA extends PTABridge {
             new SparkPTAStats().writeStats();
     }
 
+    private void dumpReachablesAndAllocNodes() {
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "spark-dump.log");
+            
+            fw.write("# Reachable Method Contexts:\n\n");
+            
+            for (MethodOrMethodContext momc : getReachableMethodContexts()) {
+                fw.write(momc + "\n\n");
+            }
+            
+            fw.write("\n\n# AllocNodes: \n\n");
+            Iterator<AllocNode> nodes = ptsProvider.getAllocNodeNumberer().iterator(); 
+            while (nodes.hasNext()) {
+                AllocNode node = nodes.next();
+                fw.write(node + "\n\n");
+            }
+            
+            fw.close();
+            
+        } catch (IOException e) {
+            
+        }
+        
+    }
+    
     public CallGraph getCallGraph() {
         return callGraph;
     }
