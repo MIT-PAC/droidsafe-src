@@ -17,6 +17,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Menu;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.MethodArgumentModel;
@@ -30,6 +33,8 @@ import droidsafe.utils.SourceLocationTag;
  * 
  */
 abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart implements ISelectionChangedListener {
+
+    private static final String SOURCE_LOCATION_PROP = "src-loc";
 
     /** The main tree viewer used to display droidsafe analysis info. */
     protected TreeViewer fTreeViewer;
@@ -135,6 +140,14 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
                     DroidsafePluginUtilities.revealInEditor(getProject(), (MethodArgumentModel) data, activate);
                 } else if (data instanceof MethodModel) {
                     DroidsafePluginUtilities.revealInEditor(getProject(), (MethodModel) data, activate);
+                } else if (data instanceof JsonObject) {
+                    JsonElement srcLoc = ((JsonObject) data).get(SOURCE_LOCATION_PROP);
+                    if (srcLoc != null && srcLoc.isJsonObject()) {
+                        JsonObject srcLocObj = (JsonObject) srcLoc;
+                        String className = srcLocObj.get("class").getAsString();
+                        int lineNumber = srcLocObj.get("line").getAsInt();
+                        DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate); 
+                    }
                 }
             }
         }

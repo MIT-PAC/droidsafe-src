@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.runner;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.eclipse.core.resources.IProject;
@@ -101,7 +102,7 @@ public class DroidsafeAnalysisRunner extends Main {
     // ResourcesSoot.reset();
   }
 
-  public IStatus run(IProgressMonitor monitor) {
+  public IStatus run(IProgressMonitor monitor) throws FileNotFoundException {
     DroidsafeEclipseProgressMonitor dsMonitor = new DroidsafeEclipseProgressMonitor(monitor);
     DroidsafeExecutionStatus execStatus = Main.run(dsMonitor);
     if (monitor.isCanceled() || execStatus == DroidsafeExecutionStatus.CANCEL_STATUS) {

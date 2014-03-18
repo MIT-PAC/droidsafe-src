@@ -8,6 +8,7 @@ import org.eclipse.ui.IPerspectiveFactory;
 
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
+import droidsafe.eclipse.plugin.core.view.json.CatchBlocksViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
@@ -22,6 +23,7 @@ public class DroidsafePerspectiveFactory implements IPerspectiveFactory {
         leftFolder.addView(JavaUI.ID_PACKAGES);
         leftFolder.addView(SecuritySpecOutlineViewPart.VIEW_ID);
         leftFolder.addView(InfoFlowSummaryViewPart.VIEW_ID);
+        leftFolder.addView(CatchBlocksViewPart.VIEW_ID);
 
         layout.addView(InfoFlowDetailsViewPart.VIEW_ID, IPageLayout.TOP, (float)0.5, editorArea);
         layout.addView(ValueViewPart.VIEW_ID, IPageLayout.RIGHT, (float)0.33, InfoFlowDetailsViewPart.VIEW_ID);

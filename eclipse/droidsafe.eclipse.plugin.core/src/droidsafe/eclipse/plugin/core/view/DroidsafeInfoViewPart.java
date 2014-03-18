@@ -6,8 +6,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.ISelectionService;
@@ -155,7 +157,12 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
             IProject project = (res != null) ? res.getProject() : null;
             if (project != null && project != fSelectedProject) {
                 fSelectedProject = project;
-                projectChanged();
+                BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
+                    @Override
+                    public void run() {
+                        projectChanged();
+                    }
+                  });
             }
           }
         }
