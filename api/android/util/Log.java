@@ -141,7 +141,7 @@ public static int w(String tag, String msg, Throwable tr) {
     @DSComment("Android logging subsystem")
     @DSSpec(DSCat.LOGGING)
     public static boolean isLoggable(String tag, int level) {
-        return (tag.getTaintInt() > level);
+        return Object.toTaintBoolean(tag.getTaintInt() + level);
     }
 
     /*

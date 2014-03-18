@@ -31,21 +31,21 @@ public class Matrix {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int native_create(int native_src_or_zero){
 		//Formerly a native function
-		return 0;
+		return native_src_or_zero;
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isIdentity(int native_object){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object);
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_rectStaysRect(int native_object){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object);
 	}
     
     @DSComment("Private Method")
@@ -139,7 +139,7 @@ public class Matrix {
     private static boolean native_setConcat(int native_object,
                                                    int a, int b){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + a + b);
 	}
     
     @DSComment("Private Method")
@@ -147,7 +147,7 @@ public class Matrix {
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + dx + dy);
 	}
     
     @DSComment("Private Method")
@@ -155,7 +155,7 @@ public class Matrix {
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + sx + sy + px + py);
 	}
     
     @DSComment("Private Method")
@@ -163,7 +163,7 @@ public class Matrix {
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + sx + sy);
 	}
     
     @DSComment("Private Method")
@@ -171,7 +171,7 @@ public class Matrix {
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + degrees + px + py);
 	}
     
     @DSComment("Private Method")
@@ -179,7 +179,7 @@ public class Matrix {
     private static boolean native_preRotate(int native_object,
                                                    float degrees){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + degrees);
 	}
     
     @DSComment("Private Method")
@@ -187,7 +187,7 @@ public class Matrix {
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + kx + ky + px + py);
 	}
     
     @DSComment("Private Method")
@@ -195,7 +195,7 @@ public class Matrix {
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + kx + ky);
 	}
     
     @DSComment("Private Method")
@@ -203,7 +203,7 @@ public class Matrix {
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + other_matrix);
 	}
     
     @DSComment("Private Method")
@@ -211,7 +211,7 @@ public class Matrix {
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + dx + dy);
 	}
     
     @DSComment("Private Method")
@@ -219,7 +219,7 @@ public class Matrix {
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + sx + sy + px + py);
 	}
     
     @DSComment("Private Method")
@@ -227,7 +227,7 @@ public class Matrix {
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + sx + sy);
 	}
     
     @DSComment("Private Method")
@@ -235,7 +235,7 @@ public class Matrix {
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + px + py);
 	}
     
     @DSComment("Private Method")
@@ -243,7 +243,7 @@ public class Matrix {
     private static boolean native_postRotate(int native_object,
                                                     float degrees){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + degrees);
 	}
     
     @DSComment("Private Method")
@@ -251,7 +251,7 @@ public class Matrix {
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + kx + ky + px + py);
 	}
     
     @DSComment("Private Method")
@@ -259,7 +259,7 @@ public class Matrix {
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + kx + ky);
 	}
     
     @DSComment("Private Method")
@@ -267,7 +267,7 @@ public class Matrix {
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + other_matrix);
 	}
     
     @DSComment("Private Method")
@@ -275,22 +275,26 @@ public class Matrix {
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf){
 		//Formerly a native function
-		return false;
-	}
+        return toTaintBoolean(dst.getTaintInt() + native_object + src.getTaintInt() + stf);
+    }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount){
 		//Formerly a native function
-		return false;
+        dst.addTaint(src.getTaint());
+        for (int i = 0; i < src.length; i++) {
+            dst[i] = src[i] + native_object + srcIndex + dstIndex + pointCount;
+        }
+        return toTaintBoolean(dst[0] + dst.getTaintInt());
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_invert(int native_object, int inverse){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + inverse);
 	}
     
     @DSComment("Private Method")
@@ -307,7 +311,7 @@ public class Matrix {
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_object + src.getTaintInt() + dst.getTaintInt());
 	}
     
     @DSComment("Private Method")
@@ -338,7 +342,7 @@ public class Matrix {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_equals(int native_a, int native_b){
 		//Formerly a native function
-		return false;
+        return toTaintBoolean(native_a + native_b);
 	}
     
     @DSComment("Private Method")
@@ -382,17 +386,16 @@ public class Matrix {
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Matrix(){
-		/*
 		native_instance = native_create(0);
-		*/
 	}
     
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Matrix(Matrix src){
-		/*
-		native_instance = native_create(src != null ? src.native_instance : 0);
-		*/
+        if (src != null)
+            native_instance = src.native_instance;
+        else
+            native_instance  = native_create(0);
 	}
     
     @DSComment("From safe class list")
@@ -404,7 +407,7 @@ public class Matrix {
         return native_isIdentity(native_instance);
     }
 		*/
-		return false;
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -416,7 +419,7 @@ public class Matrix {
         return native_rectStaysRect(native_instance);
     }
 		*/
-		return false;
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -447,7 +450,7 @@ public class Matrix {
                native_equals(native_instance, ((Matrix)obj).native_instance);
     }
 		*/
-		return false;
+        return toTaintBoolean(getTaintInt() + obj.getTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -473,6 +476,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(dx + dy);
 	}
     
     @DSComment("From safe class list")
@@ -486,6 +490,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(sx + sy + px + py);
 	}
     
     @DSComment("From safe class list")
@@ -499,6 +504,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(sx + sy);
 	}
     
     @DSComment("From safe class list")
@@ -512,6 +518,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(degrees + px + py);
 	}
     
     @DSComment("From safe class list")
@@ -525,6 +532,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(degrees);
 	}
     
     @DSComment("From safe class list")
@@ -551,6 +559,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(sinValue + cosValue);
 	}
     
     @DSComment("From safe class list")
@@ -564,6 +573,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(kx + ky + px + py);
 	}
     
     @DSComment("From safe class list")
@@ -577,6 +587,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(kx + ky);
 	}
     
     @DSComment("From safe class list")
@@ -590,7 +601,9 @@ public class Matrix {
                                 b.native_instance);
     }
 		*/
-		return false;
+        addTaint(a.getTaint());
+        addTaint(b.getTaint());
+		return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -602,7 +615,8 @@ public class Matrix {
         return native_preTranslate(native_instance, dx, dy);
     }
 		*/
-		return false;
+        addTaint(dx + dy);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -614,7 +628,8 @@ public class Matrix {
         return native_preScale(native_instance, sx, sy, px, py);
     }
 		*/
-		return false;
+        addTaint(sx + sy + px + py);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -626,7 +641,8 @@ public class Matrix {
         return native_preScale(native_instance, sx, sy);
     }
 		*/
-		return false;
+        addTaint(sx + sy);
+		return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -638,7 +654,8 @@ public class Matrix {
         return native_preRotate(native_instance, degrees, px, py);
     }
 		*/
-		return false;
+        addTaint(degrees + px + py);
+		return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -650,7 +667,8 @@ public class Matrix {
         return native_preRotate(native_instance, degrees);
     }
 		*/
-		return false;
+        addTaint(degrees);
+		return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -662,7 +680,10 @@ public class Matrix {
         return native_preSkew(native_instance, kx, ky, px, py);
     }
 		*/
-		return false;
+        addTaint(kx + ky + px + py);
+        
+        return getTaintBoolean();
+        
 	}
     
     @DSComment("From safe class list")
@@ -674,7 +695,8 @@ public class Matrix {
         return native_preSkew(native_instance, kx, ky);
     }
 		*/
-		return false;
+        addTaint(kx + ky);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -686,7 +708,8 @@ public class Matrix {
         return native_preConcat(native_instance, other.native_instance);
     }
 		*/
-		return false;
+        addTaint(other.getTaint());
+		return getTaintBoolean(); 
 	}
     
     @DSComment("From safe class list")
@@ -698,7 +721,9 @@ public class Matrix {
         return native_postTranslate(native_instance, dx, dy);
     }
 		*/
-		return false;
+        addTaint(dx + dy);
+        
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -710,7 +735,8 @@ public class Matrix {
         return native_postScale(native_instance, sx, sy, px, py);
     }
 		*/
-		return false;
+        addTaint(sx + sy + px + py);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -722,7 +748,8 @@ public class Matrix {
         return native_postScale(native_instance, sx, sy);
     }
 		*/
-		return false;
+        addTaint(sx + sy);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -734,7 +761,8 @@ public class Matrix {
         return native_postRotate(native_instance, degrees, px, py);
     }
 		*/
-		return false;
+        addTaint(degrees + px + py);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -746,7 +774,8 @@ public class Matrix {
         return native_postRotate(native_instance, degrees);
     }
 		*/
-		return false;
+        addTaint(degrees);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -758,7 +787,8 @@ public class Matrix {
         return native_postSkew(native_instance, kx, ky, px, py);
     }
 		*/
-		return false;
+        addTaint(kx + ky + px + py);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -770,7 +800,8 @@ public class Matrix {
         return native_postSkew(native_instance, kx, ky);
     }
 		*/
-		return false;
+        addTaint(kx + ky);
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -782,7 +813,8 @@ public class Matrix {
         return native_postConcat(native_instance, other.native_instance);
     }
 		*/
-		return false;
+        addTaint(other.getTaint());
+        return getTaintBoolean();
 	}
     
     public boolean setRectToRect(RectF src, RectF dst, ScaleToFit stf){
@@ -795,7 +827,9 @@ public class Matrix {
         return native_setRectToRect(native_instance, src, dst, stf.nativeInt);
     }
 		*/
-		return false;
+        addTaint(src.getTaintInt() + dst.getTaintInt() + stf.getTaintInt());
+        
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -815,7 +849,10 @@ public class Matrix {
                                     dst, dstIndex, pointCount);
     }
 		*/
-		return false;
+        addTaint(src.getTaint());
+        addTaint(dst.getTaint());
+        addTaint(srcIndex + dstIndex + pointCount + src[0] + dst[0]);
+		return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -827,7 +864,8 @@ public class Matrix {
         return native_invert(native_instance, inverse.native_instance);
     }
 		*/
-		return false;
+        addTaint(inverse.getTaint());
+        return getTaintBoolean();
 	}
     
     @DSComment("From safe class list")
@@ -843,6 +881,10 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        dst.addTaint(src.getTaint());
+        for (int i = 0; i < src.length; i++) {
+            dst[i] = src[i] + dstIndex + srcIndex + pointCount;
+        }
 	}
     
     @DSComment("From safe class list")
@@ -858,6 +900,10 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+
+        for (int i = 0; i < src.length; i++) {
+            dst[i] = src[i] + dstIndex + srcIndex + vectorCount;
+        }
 	}
     
     @DSComment("From safe class list")
@@ -873,6 +919,8 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        for (int i = 0; i < src.length; i++)
+            dst[i] = src[i];
 	}
     
     @DSComment("From safe class list")
@@ -888,6 +936,9 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+
+        for (int i = 0; i < src.length; i++)
+            dst[i] = src[i];
 	}
     
     @DSComment("From safe class list")
@@ -900,6 +951,9 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(pts.getTaint());
+        for (int i = 0; i < pts.length; i++)
+            addTaint(pts[i]);
 	}
     
     @DSComment("From safe class list")
@@ -912,6 +966,9 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(vecs.getTaint());
+        for (int i = 0; i < vecs.length; i++)
+            addTaint(vecs[i]);
 	}
     
     @DSComment("From safe class list")
@@ -926,7 +983,9 @@ public class Matrix {
         return native_mapRect(native_instance, dst, src);
     }
 		*/
-		return false;
+        dst.addTaint(src.getTaint());
+        dst.addTaint(getTaint());
+        return dst.getTaintBoolean();
 	}
     
     public enum ScaleToFit {
@@ -950,12 +1009,7 @@ ScaleToFit(int nativeInt) {
     @DSSafe(DSCat.SAFE_LIST)
     public boolean mapRect(RectF rect){
 		// Original method
-		/*
-		{
         return mapRect(rect, rect);
-    }
-		*/
-		return false;
 	}
     
     @DSComment("From safe class list")
@@ -967,7 +1021,7 @@ ScaleToFit(int nativeInt) {
         return native_mapRadius(native_instance, radius);
     }
 		*/
-		return 0;
+		return (radius + getTaintFloat());
 	}
     
     @DSComment("From safe class list")
@@ -983,6 +1037,10 @@ ScaleToFit(int nativeInt) {
     }
 		*/
 		//Return nothing
+        for (int i = 0; i < values.length; i++)
+            values[i] = getTaintFloat();
+        
+        values.addTaint(getTaint());
 	}
     
     @DSComment("From safe class list")
@@ -999,6 +1057,9 @@ ScaleToFit(int nativeInt) {
     }
 		*/
 		//Return nothing
+        addTaint(values.getTaint());
+        for (int i = 0; i < values.length; i++)
+            addTaint(values[i]);
 	}
     
     @DSComment("From safe class list")
@@ -1014,7 +1075,9 @@ ScaleToFit(int nativeInt) {
         return sb.toString();
     }
 		*/
-		return "";
+        String str = new String();
+        str.addTaint(taint);
+		return str;
 	}
     
     @DSComment("From safe class list")
@@ -1034,6 +1097,7 @@ ScaleToFit(int nativeInt) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void toShortString(StringBuilder sb){
+        sb.addTaint(taint);
 		// Original method
 		/*
 		{
@@ -1054,6 +1118,8 @@ ScaleToFit(int nativeInt) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void printShortString(PrintWriter pw){
+        pw.addTaint(native_instance);
+        pw.addTaint(taint);
 		// Original method
 		/*
 		{

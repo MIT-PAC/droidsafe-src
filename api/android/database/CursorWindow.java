@@ -54,13 +54,13 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
-        return (windowPtr > columnNum);
+        return toTaintBoolean(windowPtr + columnNum);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeAllocRow(int windowPtr) {
-        return (windowPtr > 0);
+        return toTaintBoolean(windowPtr); 
     }
     
     @DSComment("Private Method")
@@ -115,31 +115,31 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
-        return (windowPtr > value[0] + row + column + value.getTaintInt());
+        return toTaintBoolean(windowPtr + value[0] + row + column + value.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
-        return (windowPtr > row + column + value.getTaintInt());
+        return toTaintBoolean(windowPtr + row + column + value.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
-        return (windowPtr > row + column + (int)value);
+        return toTaintBoolean(windowPtr + row + column + (int)value);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
-        return (value > windowPtr + row + column );
+        return toTaintBoolean(value + windowPtr + row + column );
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutNull(int windowPtr, int row, int column) {
-        return (windowPtr > row + column); 
+        return toTaintBoolean(windowPtr + row + column); 
     }
     
     @DSComment("Private Method")

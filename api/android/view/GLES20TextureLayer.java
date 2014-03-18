@@ -105,7 +105,7 @@ SurfaceTexture getSurfaceTexture() {
     
 @Override
     void setTransform(Matrix matrix) {
-        GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.native_instance);
+        GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.getTaintInt());
     }
     
 }

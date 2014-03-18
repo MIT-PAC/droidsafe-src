@@ -862,7 +862,7 @@ public void transform(Matrix matrix, Path dst) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.269 -0500", hash_original_method = "E2E9E79308A321DB0305128A17F8E66B", hash_generated_method = "AA19067AA7A96EBCD61A9CD10B053F4E")
     
 public void transform(Matrix matrix) {
-        native_transform(mNativePath, matrix.native_instance);
+        native_transform(mNativePath, matrix.getTaintInt());
     }
     
     @DSComment("From safe class list")

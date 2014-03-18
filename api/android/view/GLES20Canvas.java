@@ -1002,7 +1002,7 @@ void resume() {
     
 @Override
     public void concat(Matrix matrix) {
-        nConcatMatrix(mRenderer, matrix.native_instance);
+        nConcatMatrix(mRenderer, matrix.getTaintInt());
     }
     
     ///////////////////////////////////////////////////////////////////////////

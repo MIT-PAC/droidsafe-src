@@ -107,7 +107,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                   float right, float bottom,
                                                   int regionOp) {
 
-        return (nCanvas + left + top + right + bottom + regionOp != 0);
+        return toTaintBoolean(nCanvas + left + top + right + bottom + regionOp);
     }
     
     @DSComment("Private Method")
@@ -115,7 +115,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
-        return (nativeCanvas + nativePath > regionOp);
+        return toTaintBoolean(nativeCanvas + nativePath + regionOp);
     }
     
     @DSComment("Private Method")
@@ -124,7 +124,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                     int nativeRegion,
                                                     int regionOp) {
 
-        return (nativeCanvas + nativeRegion > regionOp);
+        return toTaintBoolean(nativeCanvas + nativeRegion + regionOp);
     }
     
     @DSComment("Private Method")
@@ -137,7 +137,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
-        return (nativeCanvas != bounds.getTaintInt());
+        return toTaintBoolean(nativeCanvas + bounds.getTaintInt());
     }
     
     @DSComment("Private Method")
@@ -150,7 +150,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
-        return (nativeCanvas + rect.getTaintInt() + native_edgeType) > 0;
+        return toTaintBoolean(nativeCanvas + rect.getTaintInt() + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -159,7 +159,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      int path,
                                                      int native_edgeType) {
 
-        return (0 != (nativeCanvas + path + native_edgeType));
+        return toTaintBoolean(nativeCanvas + path + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -168,7 +168,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float left, float top,
                                                      float right, float bottom,
                                                      int native_edgeType) {
-        return (nativeCanvas + left + top + right + bottom + native_edgeType) > 0;
+        return toTaintBoolean(nativeCanvas + left + top + right + bottom + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -482,7 +482,8 @@ Canvas(int nativeCanvas) {
     
 @Deprecated
     protected GL getGL() {
-        return null;
+        //return null;
+        return new GL() {};
     }
 
     /**
@@ -878,7 +879,7 @@ public final void rotate(float degrees, float px, float py) {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void concat(Matrix matrix) {
-		addTaint(matrix.native_instance);
+		addTaint(matrix.getTaint());
     }
     
     /**
@@ -895,7 +896,7 @@ public final void rotate(float degrees, float px, float py) {
     
 public void setMatrix(Matrix matrix) {
         native_setMatrix(mNativeCanvas,
-                         matrix == null ? 0 : matrix.native_instance);
+                         matrix == null ? 0 : matrix.getTaintInt());
     }
     
     /**
@@ -907,7 +908,7 @@ public void setMatrix(Matrix matrix) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.168 -0500", hash_original_method = "43D0B837CD75E40B4AB1C87B7D03A6CC", hash_generated_method = "A9BE5FD6B90F19A6DB1C75520C046BEA")
     
 public void getMatrix(Matrix ctm) {
-        native_getCTM(mNativeCanvas, ctm.native_instance);
+        native_getCTM(mNativeCanvas, ctm.getTaintInt());
     }
 
     /**

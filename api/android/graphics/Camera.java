@@ -151,7 +151,7 @@ public Camera() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.176 -0500", hash_original_method = "EEC65A3D99E4715BBC5254EBE009F300", hash_generated_method = "90A3153B8C1F07C2E6E7AC8153A377AF")
     
 public void getMatrix(Matrix matrix) {
-        nativeGetMatrix(matrix.native_instance);
+        nativeGetMatrix(matrix.getTaintInt());
     }
 
     /**

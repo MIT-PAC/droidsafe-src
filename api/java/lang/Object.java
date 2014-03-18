@@ -448,5 +448,15 @@ public final void wait(long millis) throws InterruptedException {
         
     }
     
+    public static boolean toTaintBoolean(boolean intValue) {
+        return false;
+    }
+            
+    public static boolean toTaintBoolean(double intValue) {
+        return false;
+    }
+    
+
+    
 }
 
