@@ -31,6 +31,13 @@ import soot.SootMethod;
 import soot.tagkit.*;
 
 public class ListApiMethods extends ApiUsageListing {
+    
+    public static int ANNO_REPORT_NONE = 0;
+    public static int ANNO_REPORT_COMMENT = 1;
+    public static int ANNO_REPORT_CLASSIFCATION = 2;
+    public static int ANNO_REPORT_INFOFLOW = 4;
+    
+    private int annotationReportType = ANNO_REPORT_NONE;
     private static final Logger logger = LoggerFactory.getLogger(ApiUsageListing.class);
 
     private Set<String> safeClassSet = new HashSet<String>();
@@ -65,6 +72,9 @@ public class ListApiMethods extends ApiUsageListing {
         }
     }
     
+    public void setAnnoReportType(int type) {
+        annotationReportType = type;
+    }
 
     /**
      * Helper method to get a method's full name
@@ -86,7 +96,7 @@ public class ListApiMethods extends ApiUsageListing {
             return true;
         return interestList.contains(sig);
     }
-    
+        
     public String getAutoClassification(SootMethod method) {
         String classification = null;
         int modifiers = method.getModifiers();
@@ -343,6 +353,7 @@ public class ListApiMethods extends ApiUsageListing {
 
         String sinkAnno = "NO_INFO";
         String classification = "UNCLASSIFIED";
+        String comment = null;
 
         for (String anno: annoList) {
             if (anno.matches("@DS(Safe|Spec|Ban).*")) {
@@ -352,8 +363,21 @@ public class ListApiMethods extends ApiUsageListing {
             if (anno.matches("@DS(Sink|Source).*")) {
                 sinkAnno = anno;
             }
+            if (anno.matches("@DSComment.*")) {
+                comment = anno;
+            }            
         }
-        return String.format("%s - %s - %s ", line, classification, sinkAnno);
+        String annoStr = "";
+        if ((annotationReportType & ANNO_REPORT_CLASSIFCATION) != 0)             
+            annoStr = annoStr + " - " + classification;
+        
+        if ((annotationReportType & ANNO_REPORT_INFOFLOW) != 0)             
+            annoStr = annoStr + " - " + sinkAnno;
+        
+        if ((annotationReportType & ANNO_REPORT_COMMENT) != 0 && comment != null)          
+            annoStr = annoStr + " - " + comment;
+        
+        return String.format("%s %s ", line, annoStr);
     }
  
     /**
@@ -558,16 +582,17 @@ public class ListApiMethods extends ApiUsageListing {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         Options options = new Options();
-        options.addOption("o", "out",     true,  "output filename");
-        options.addOption("c", "classify", false,"automatic classification");
-        options.addOption("a", "apijar",  true,  "Optional API jar file");
-        options.addOption("l", "list",  true,    "list of api to list (class methodname)");
-        options.addOption("r", "report",  true,           "modeling report");
-        /*
-        options.addOption("rc", "report-class",  false,  "include classification in report");
-        options.addOption("ri", "report-info",  false,  "include info flow in report");
-        options.addOption("rm", "report-comment",  false,  "include comment in report");
-        */
+        options.addOption("o", "out",      true,  "output filename");
+        options.addOption("c", "classify", false, "automatic classification");
+        
+        options.addOption("a", "apijar",   true,  "Optional API jar file");
+        options.addOption("l", "list",     true,  "list of api to list (class methodname)");
+        options.addOption("r", "report",   true,  "modeling report");
+        options.addOption("b", "boolcast", true,  "ouputput boolean cast to a file");
+
+        options.addOption("rc", "report-class",   false,  "include classification in report");
+        options.addOption("ri", "report-info",    false,  "include info flow in report");
+        options.addOption("rm", "report-comment", false,  "include comment in report");
 
         if (args.length == 0){
             printHelp(options);
@@ -583,6 +608,7 @@ public class ListApiMethods extends ApiUsageListing {
             e.printStackTrace();
             return;
         }
+       
                        
         String[] libJars = null;
         if (commandLine.hasOption("apijar")) {
@@ -595,8 +621,24 @@ public class ListApiMethods extends ApiUsageListing {
             libJars = new String[1];
             libJars[0] = droidsafe.main.Config.v().getAndroidLibJarPath();
         }
+       
+        int annotationType = ANNO_REPORT_NONE;
+        
+        if (commandLine.hasOption("report-comment")) {
+            annotationType |= ANNO_REPORT_COMMENT;
+        }
+        
+        if (commandLine.hasOption("report-class")) {
+            annotationType |= ANNO_REPORT_CLASSIFCATION;
+        }
+        
+        if (commandLine.hasOption("report-infoflow")) {
+            annotationType |= ANNO_REPORT_INFOFLOW;
+        }
         
         ListApiMethods listing = new ListApiMethods();
+        
+        listing.setAnnoReportType(annotationType);
         
         if (!commandLine.hasOption("out") && !commandLine.hasOption("classify") && 
             !commandLine.hasOption("report")) {
