@@ -212,6 +212,7 @@ public class SparkPTA extends PTABridge {
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         
         //dumpReachablesAndAllocNodes();
+        //dumpCallGraphReachablesCSV();
         
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
@@ -248,6 +249,38 @@ public class SparkPTA extends PTABridge {
             
         }
         
+    }
+    
+    /**
+     * Expensive!
+     */
+    private void dumpCallGraphReachablesCSV() {
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "reachables-count.csv");
+            
+            fw.write("Method,Reachables");
+            
+            for (MethodOrMethodContext momc : getReachableMethodContexts()) {
+                Set<MethodOrMethodContext> c = new HashSet<MethodOrMethodContext>();
+                c.add(momc);
+                ReachableMethods rm = new ReachableMethods(callGraph, c);
+                rm.update();
+                
+                QueueReader<MethodOrMethodContext> edges = rm.listener();
+                int reachables = 0;
+                while (edges.hasNext()) {
+                    edges.next();
+                    reachables++;
+                }
+                
+                fw.write(momc + "," + reachables + "\n");
+            }
+                        
+            fw.close();
+            
+        } catch (IOException e) {
+            
+        }
     }
     
     public CallGraph getCallGraph() {
