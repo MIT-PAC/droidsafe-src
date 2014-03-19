@@ -19,6 +19,56 @@ public class CallGraphDumper {
     public CallGraphDumper() {
         // TODO Auto-generated constructor stub
     }
+    
+    public static void runGEXF(String fileStr) {
+        System.out.println("Dumping call graph.");
+        FileWriter fw;
+        try {
+            fw = new FileWriter(fileStr);
+
+            fw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                     "<gexf xmlns=\"http://www.gexf.net/1.2draft\" version=\"1.2\">\n" +
+                     "<meta lastmodifieddate=\"2009-03-20\">\n" +  
+                     "<creator>Gexf.net</creator>\n" +
+                     "<description>DroidSafe Call Graph</description>\n" +
+                     "</meta>\n" +
+                     "<graph mode=\"static\" defaultedgetype=\"directed\">\n");
+
+            StringBuffer edges = new StringBuffer();
+            StringBuffer nodes = new StringBuffer();
+            int edgeID = 0;
+            
+            for (MethodOrMethodContext src : PTABridge.v().getReachableMethodContexts()) {
+                nodes.append("<node id=\"" + src.hashCode() + "\" label=\"" + src.toString() + "\"/>\n");
+                //edges
+                Iterator<Edge> edgesIt = PTABridge.v().getCallGraph().edgesOutOf(src);
+                while (edgesIt.hasNext()) {
+                    Edge edge = edgesIt.next();
+                    
+                    edges.append("<edge id=\"" + edgeID + 
+                        "\" source=\"" + edge.getSrc().hashCode() + "\" target=\"" + edge.getTgt().hashCode() + "\"/>\n");
+                    
+                    edgeID++;
+                }
+            }
+            
+            fw.write("<nodes>\n");
+            fw.write(nodes.toString());
+            fw.write("</nodes>\n");
+            
+            fw.write("<edges>\n");
+            fw.write(edges.toString());
+            fw.write("</edges>\n");
+            
+            fw.write("</graph>\n" + 
+                     "</gexf>\n");
+                    
+            fw.close();
+        } catch (IOException e) {
+            System.err.println("Error writing call graph dot file");
+            droidsafe.main.Main.exit(1);
+        }
+    }
 
     public static void run(String fileStr) {
         System.out.println("Dumping call graph.");

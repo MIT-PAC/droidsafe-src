@@ -269,7 +269,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
             if (Config.v().dumpCallGraph) {
-                CallGraphDumper.run(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+                CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
             }
                        
             //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()

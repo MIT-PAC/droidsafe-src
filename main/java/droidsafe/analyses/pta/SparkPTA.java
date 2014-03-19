@@ -273,7 +273,7 @@ public class SparkPTA extends PTABridge {
                     reachables++;
                 }
                 
-                fw.write(momc + "," + reachables + "\n");
+                fw.write(momc + "|" + reachables + "\n");
             }
                         
             fw.close();
