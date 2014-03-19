@@ -1357,7 +1357,7 @@ void resume() {
         int modifiers = setupModifiers(paint);
         if (path.isSimplePath) {
             if (path.rects != null) {
-                nDrawRects(mRenderer, path.rects.mNativeRegion, paint.mNativePaint);
+                nDrawRects(mRenderer, path.rects.getTaintInt(), paint.mNativePaint);
             }
         } else {
             nDrawPath(mRenderer, path.getTaintInt(), paint.mNativePaint);
