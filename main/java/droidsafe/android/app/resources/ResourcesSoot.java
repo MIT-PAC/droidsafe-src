@@ -173,7 +173,7 @@ public class ResourcesSoot {
         mLayoutInitMap = new HashMap<Integer, SootMethod>();
 
         mSootClass = new SootClass(Project.DS_GENERATED_CLASSES_PREFX + "ResourcesSoot", Modifier.PUBLIC);
-    //  mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
+        mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
         Scene.v().addClass(mSootClass);
 
         mConditionalField = new SootField("randomCond", BooleanType.v(),
