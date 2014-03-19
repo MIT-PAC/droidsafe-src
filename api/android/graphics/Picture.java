@@ -58,6 +58,7 @@ public static Picture createFromStream(InputStream stream) {
     private static boolean nativeWriteToStream(int nativePicture,
                                            OutputStream stream, byte[] storage) {
         stream.addTaint(nativePicture);
+        stream.addTaint(storage[0]);
         stream.addTaint(storage.getTaint());
         return stream.getTaintBoolean();
     }
@@ -90,7 +91,8 @@ public Picture() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.316 -0500", hash_original_method = "0B8FC63E2385743B0CD030A74D7237E0", hash_generated_method = "E4AD0EEA9BC532D70FB4390F0FDD4FED")
     
 public Picture(Picture src) {
-        this(nativeConstructor(src != null ? src.mNativePicture : 0));
+        addTaint(src.taint);
+        //this(nativeConstructor(src != null ? src.mNativePicture : 0));
     }
     
     @DSComment("Private Method")
@@ -114,8 +116,9 @@ private Picture(int nativePicture) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.318 -0500", hash_original_method = "20E22D7D195E3391E43BD9FB13A423DE", hash_generated_method = "8C3B3B505356E2C21BC55C3D8E1AC0C3")
     
 public Canvas beginRecording(int width, int height) {
-        int ni = nativeBeginRecording(mNativePicture, width, height);
-        mRecordingCanvas = new RecordingCanvas(this, ni);
+        //int ni = nativeBeginRecording(mNativePicture, width, height);
+        addTaint(width + height);
+        mRecordingCanvas = new RecordingCanvas(this, getTaintInt());
         return mRecordingCanvas;
     }
     
@@ -175,6 +178,7 @@ public void draw(Canvas canvas) {
             endRecording();
         }
         nativeDraw(canvas.mNativeCanvas, mNativePicture);
+        canvas.addTaint(getTaint());
     }
 
     /**
@@ -188,10 +192,13 @@ public void writeToStream(OutputStream stream) {
         if (stream == null) {
             throw new NullPointerException();
         }
+        stream.addTaint(taint);
+      /*  
         if (!nativeWriteToStream(mNativePicture, stream,
                              new byte[WORKING_STREAM_STORAGE])) {
             throw new RuntimeException();
         }
+       */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.336 -0500", hash_original_method = "A9ACB715DF1E16C6B20EA656F0034A3C", hash_generated_method = "24872D74DDE1566A22D3FC719A5F95C5")

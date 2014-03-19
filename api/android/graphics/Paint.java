@@ -1012,7 +1012,9 @@ public void setStrokeJoin(Join join) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.691 -0500", hash_original_method = "47F5CE3F8A2C9B64184DA3E7564A16E0", hash_generated_method = "9AA3C716C273CCE49736E910AA470DCB")
     
 public boolean getFillPath(Path src, Path dst) {
-        return native_getFillPath(mNativePaint, src.ni(), dst.ni());
+        //return native_getFillPath(mNativePaint, src.ni(), dst.ni());
+        dst.addTaint(src.getTaint());
+        return dst.getTaintBoolean();
     }
 
     /**
