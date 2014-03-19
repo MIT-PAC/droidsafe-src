@@ -283,11 +283,10 @@ public class Matrix {
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount){
 		//Formerly a native function
-        dst.addTaint(src.getTaint());
         for (int i = 0; i < src.length; i++) {
             dst[i] = src[i] + native_object + srcIndex + dstIndex + pointCount;
         }
-        return toTaintBoolean(dst[0] + dst.getTaintInt());
+        return toTaintBoolean(dst[0]);
 	}
     
     @DSComment("Private Method")
@@ -381,21 +380,25 @@ public class Matrix {
     public static Matrix IDENTITY_MATRIX = new Matrix();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.571 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "368FA2DC569BFE75826F8A8AC6BD5246")
 
-    public int native_instance;
+    public int native_instance;  //will bereplaced by getTaintInt()
     
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Matrix(){
-		native_instance = native_create(0);
+		//native_instance = native_create(0);
+		//native_instance = DSUtils.FAKE_INT;
 	}
     
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Matrix(Matrix src){
+        /*
         if (src != null)
-            native_instance = src.native_instance;
+            native_instance = src.native_instance + src.getTaintInt();
         else
-            native_instance  = native_create(0);
+            native_instance  = DSUtils.FAKE_INT;
+        */
+        addTaint(src.getTaint());
 	}
     
     @DSComment("From safe class list")
@@ -437,6 +440,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(src.getTaint());
 	}
     
     @DSComment("From safe class list")
@@ -546,6 +550,7 @@ public class Matrix {
     }
 		*/
 		//Return nothing
+        addTaint(sinValue + cosValue + px + py);
 	}
     
     @DSComment("From safe class list")
@@ -1039,8 +1044,6 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
         for (int i = 0; i < values.length; i++)
             values[i] = getTaintFloat();
-        
-        values.addTaint(getTaint());
 	}
     
     @DSComment("From safe class list")
@@ -1057,7 +1060,6 @@ ScaleToFit(int nativeInt) {
     }
 		*/
 		//Return nothing
-        addTaint(values.getTaint());
         for (int i = 0; i < values.length; i++)
             addTaint(values[i]);
 	}
@@ -1075,6 +1077,7 @@ ScaleToFit(int nativeInt) {
         return sb.toString();
     }
 		*/
+        
         String str = new String();
         str.addTaint(taint);
 		return str;
@@ -1091,7 +1094,9 @@ ScaleToFit(int nativeInt) {
         return sb.toString();
     }
 		*/
-		return "";
+        String str = new String();
+        str.addTaint(taint);
+        return str;
 	}
     
     @DSComment("From safe class list")

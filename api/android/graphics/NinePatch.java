@@ -12,7 +12,7 @@ public class NinePatch {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static boolean isNinePatchChunk(byte[] chunk) {
-        return (chunk[0] > 0) && chunk.getTaintBoolean();
+        return toTaintBoolean(chunk[0]);
     }
     
     @DSComment("Private Method")
@@ -111,14 +111,8 @@ public void setPaint(Paint p) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.454 -0500", hash_original_method = "EAF50CB5C0E6A8C8743BB0867CC2AAFE", hash_generated_method = "4C604BF9D7599B29FC764F1927B989FB")
     
 public void draw(Canvas canvas, RectF location) {
-        if (!canvas.isHardwareAccelerated()) {
-            nativeDraw(canvas.mNativeCanvas, location,
-                       mBitmap.ni(), mChunk,
-                       mPaint != null ? mPaint.mNativePaint : 0,
-                       canvas.mDensity, mBitmap.mDensity);
-        } else {
-            canvas.drawPatch(mBitmap, mChunk, location, mPaint);
-        }
+        addTaint(location.getTaint());
+        canvas.addTaint(getTaint());
     }
     
     /** 
@@ -132,6 +126,7 @@ public void draw(Canvas canvas, RectF location) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.457 -0500", hash_original_method = "0ABE1DB59D00B8D3A7DF4CB4F149C27D", hash_generated_method = "4800FA80F07F749D78A2A7FC786195E4")
     
 public void draw(Canvas canvas, Rect location) {
+        /*
         if (!canvas.isHardwareAccelerated()) {
             nativeDraw(canvas.mNativeCanvas, location,
                         mBitmap.ni(), mChunk,
@@ -141,6 +136,10 @@ public void draw(Canvas canvas, Rect location) {
             mRect.set(location);
             canvas.drawPatch(mBitmap, mChunk, mRect, mPaint);
         }
+        */
+        mRect.set(location);
+        canvas.addTaint(getTaint());
+        canvas.addTaint(location.getTaint());
     }
 
     /** 
@@ -155,6 +154,7 @@ public void draw(Canvas canvas, Rect location) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.459 -0500", hash_original_method = "CF14EE2D4C6547AB65BEAA94D29C006C", hash_generated_method = "AAE7B6C3C8CCFBA5AE2B6F0B28BC0BD7")
     
 public void draw(Canvas canvas, Rect location, Paint paint) {
+       /* 
         if (!canvas.isHardwareAccelerated()) {
             nativeDraw(canvas.mNativeCanvas, location,
                     mBitmap.ni(), mChunk, paint != null ? paint.mNativePaint : 0,
@@ -163,6 +163,12 @@ public void draw(Canvas canvas, Rect location, Paint paint) {
             mRect.set(location);
             canvas.drawPatch(mBitmap, mChunk, mRect, paint);
         }
+        */
+
+        mRect.set(location);
+        canvas.addTaint(getTaint());
+        canvas.addTaint(location.getTaint());
+        canvas.addTaint(paint.getTaint());
     }
 
     /**
@@ -210,9 +216,14 @@ public final boolean hasAlpha() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.470 -0500", hash_original_method = "057B771D19C75A7C087A15EB64E8E6F2", hash_generated_method = "9DBBD34840F49148A1CA4BBFC7879982")
     
 public final Region getTransparentRegion(Rect location) {
+        /*
         int r = nativeGetTransparentRegion(mBitmap.ni(), mChunk, location);
         return r != 0 ? new Region(r) : null;
+        */
+        Region r = new Region();
+        r.addTaint(location.getTaint());
+        r.addTaint(getTaint());
+        return r;
     }
-    
 }
 

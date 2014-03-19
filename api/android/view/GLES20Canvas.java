@@ -988,14 +988,14 @@ void resume() {
     
 @Override
     public void setMatrix(Matrix matrix) {
-        nSetMatrix(mRenderer, matrix.native_instance);
+        nSetMatrix(mRenderer, matrix.getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.368 -0500", hash_original_method = "5C2AB9AC8E62FE145634A1140AF6AF7A", hash_generated_method = "E336193D9894F888AEC4D90B138B72D7")
     
 @Override
     public void getMatrix(Matrix matrix) {
-        nGetMatrix(mRenderer, matrix.native_instance);
+        nGetMatrix(mRenderer, matrix.getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.374 -0500", hash_original_method = "D981C9A8CE9E8AB948A57E105C909748", hash_generated_method = "E6CCDE5196546BDDF5DB3BB3AEE5FB0F")
@@ -1174,7 +1174,7 @@ void resume() {
         int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
         final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer,
-                matrix.native_instance, nativePaint);
+                matrix.getTaintInt(), nativePaint);
         if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
@@ -1360,7 +1360,7 @@ void resume() {
                 nDrawRects(mRenderer, path.rects.mNativeRegion, paint.mNativePaint);
             }
         } else {
-            nDrawPath(mRenderer, path.mNativePath, paint.mNativePaint);
+            nDrawPath(mRenderer, path.getTaintInt(), paint.mNativePaint);
         }
         if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }

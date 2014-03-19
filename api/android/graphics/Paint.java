@@ -74,7 +74,7 @@ public class Paint {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getFillPath(int native_object,
                                                      int src, int dst) {
-        return (native_object + src + dst) > 0;
+        return toTaintBoolean((native_object + src + dst) + 0);
     }
     
     @DSComment("Private Method")
@@ -334,7 +334,7 @@ public class Paint {
     private static final int CURSOR_OPT_MAX_VALUE = CURSOR_AT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.427 -0500", hash_original_field = "7A06680BB090697C51CD6B1335275C0F", hash_generated_field = "F9F1B9FB44729EA466DD33DE16A3AB10")
 
-    public int mNativePaint;
+    public int mNativePaint = DSUtils.FAKE_INT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.429 -0500", hash_original_field = "FDF54A2FE886548299B21698A652A06E", hash_generated_field = "5D6D299C9DDEDCCB11EFFA1C147C3DF6")
 
     private ColorFilter mColorFilter;
