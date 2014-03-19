@@ -1137,6 +1137,7 @@ public TextView(Context context,
                 == (EditorInfo.TYPE_CLASS_NUMBER | EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD);
         if(inputMethod != null)        
         {
+            /* commented by droidsafe because reflection cannot be resolved!
             Class<?> c;
             try 
             {
@@ -1167,13 +1168,14 @@ public TextView(Context context,
             try 
             {
                 mInputType = inputType != EditorInfo.TYPE_NULL
-                        ? inputType
+                ? inputType
                                 : mInput.getInputType();
             } //End block
             catch (IncompatibleClassChangeError e)
             {
                 mInputType = EditorInfo.TYPE_CLASS_TEXT;
             } //End block
+            */
         } //End block
         else
             if(digits != null)        
