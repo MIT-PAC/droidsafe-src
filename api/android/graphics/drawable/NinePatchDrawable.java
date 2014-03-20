@@ -220,10 +220,11 @@ private void computeBitmapSize() {
                 if (dest == src) {
                     mPadding = dest = new Rect(src);
                 }
-                dest.left = Bitmap.scaleFromDensity(src.left, sdensity, tdensity);
-                dest.top = Bitmap.scaleFromDensity(src.top, sdensity, tdensity);
-                dest.right = Bitmap.scaleFromDensity(src.right, sdensity, tdensity);
-                dest.bottom = Bitmap.scaleFromDensity(src.bottom, sdensity, tdensity);
+                int left = Bitmap.scaleFromDensity(src.left, sdensity, tdensity);
+                int top = Bitmap.scaleFromDensity(src.top, sdensity, tdensity);
+                int right = Bitmap.scaleFromDensity(src.right, sdensity, tdensity);
+                int bottom = Bitmap.scaleFromDensity(src.bottom, sdensity, tdensity);
+                dest.addTaint(left + right + top + bottom);
             }
         }
     }

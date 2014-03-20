@@ -308,10 +308,13 @@ public Rect getSurfaceFrame() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.944 -0500", hash_original_method = "B2173B72636D8AF8E14456C4D20DEB0F", hash_generated_method = "2142AE9B301E658322B43FA2F8DD3787")
     
 public void setSurfaceFrameSize(int width, int height) {
+        mSurfaceFrame.addTaint(width + height);
+/*
         mSurfaceFrame.top = 0;
         mSurfaceFrame.left = 0;
         mSurfaceFrame.right = width;
         mSurfaceFrame.bottom = height;
+*/
     }
 }
 

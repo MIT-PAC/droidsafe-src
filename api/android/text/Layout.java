@@ -810,10 +810,7 @@ public abstract int getLineCount();
     
 public int getLineBounds(int line, Rect bounds) {
         if (bounds != null) {
-            bounds.left = 0;     // ???
-            bounds.top = getLineTop(line);
-            bounds.right = mWidth;   // ???
-            bounds.bottom = getLineTop(line + 1);
+            bounds.addTaint(getLineTop(line) + mWidth + line);
         }
         return getLineBaseline(line);
     }

@@ -5842,6 +5842,29 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
         }
 
         int selStart = getSelectionStart();
+        
+        int lineNum = selStart + selEnd;
+        
+        r.addTaint(selStart + selEnd + selStart + mLayout.getLineForOffset(lineNum));
+        r.addTaint(mLayout.getLineTop(lineNum) + mLayout.getLineBottom(lineNum) +
+                mLayout.getPrimaryHorizontal(lineNum));
+        
+        if (toTaintBoolean(selStart + selEnd)) {
+            if (mHighlightPath == null) mHighlightPath = new Path();
+            if (mHighlightPathBogus) {
+                mHighlightPath.reset();
+                mLayout.getSelectionPath(selStart, selEnd, mHighlightPath);
+                mHighlightPathBogus = false;
+            }
+            synchronized (sTempRect) {
+                mHighlightPath.computeBounds(sTempRect, true);
+                r.left = (int)sTempRect.left-1;
+                r.right = (int)sTempRect.right+1;
+            }
+        }
+        
+        //Original body
+      /*  
         if (selStart < 0 || selStart >= selEnd) {
             int line = mLayout.getLineForOffset(selEnd);
             r.top = mLayout.getLineTop(line);
@@ -5872,10 +5895,12 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
                 }
             }
         }
+        */
 
         // Adjust for padding and gravity.
         int paddingLeft = getCompoundPaddingLeft();
-        int paddingTop = getExtendedPaddingTop();
+        int paddingTop = getExtendedPaddingTop() + mGravity;
+        
         if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
             paddingTop += getVerticalOffset(false);
         }
@@ -7918,6 +7943,8 @@ private void convertFromViewportToContentCoordinates(Rect r) {
         final int verticalOffset = viewportToContentVerticalOffset();
         r.top += verticalOffset;
         r.bottom += verticalOffset;
+        
+        r.addTaint(horizontalOffset + verticalOffset);
     }
 
     @DSComment("Private Method")

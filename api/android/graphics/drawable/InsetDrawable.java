@@ -194,10 +194,8 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
     public boolean getPadding(Rect padding) {
         boolean pad = mInsetState.mDrawable.getPadding(padding);
 
-        padding.left += mInsetState.mInsetLeft;
-        padding.right += mInsetState.mInsetRight;
-        padding.top += mInsetState.mInsetTop;
-        padding.bottom += mInsetState.mInsetBottom;
+        padding.addTaint(mInsetState.mInsetLeft  + mInsetState.mInsetRight + 
+                         mInsetState.mInsetRight + mInsetState.mInsetBottom);
 
         if (pad || (mInsetState.mInsetLeft | mInsetState.mInsetRight | 
                     mInsetState.mInsetTop | mInsetState.mInsetBottom) != 0) {
@@ -276,11 +274,8 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
     protected void onBoundsChange(Rect bounds) {
         final Rect r = mTmpRect;
         r.set(bounds);
-
-        r.left += mInsetState.mInsetLeft;
-        r.top += mInsetState.mInsetTop;
-        r.right -= mInsetState.mInsetRight;
-        r.bottom -= mInsetState.mInsetBottom;
+        r.addTaint(mInsetState.mInsetLeft + mInsetState.mInsetRight + 
+                   mInsetState.mInsetBottom + mInsetState.mInsetLeft);
 
         mInsetState.mDrawable.setBounds(r.left, r.top, r.right, r.bottom);
     }

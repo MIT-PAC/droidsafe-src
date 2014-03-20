@@ -348,7 +348,10 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
 
             // If this item type and the previous item type are different, then we need to change
             // the left & right bounds
-            if (pos.position.type != lastItemType) {
+
+            
+/*            if (pos.position.type != lastItemType) {
+                
                 if (pos.position.type == ExpandableListPosition.CHILD) {
                     indicatorRect.left = (mChildIndicatorLeft == CHILD_INDICATOR_INHERIT) ?
                             mIndicatorLeft : mChildIndicatorLeft;
@@ -364,9 +367,14 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
 
                 lastItemType = pos.position.type; 
             }
-
-            if (indicatorRect.left != indicatorRect.right) {
+*/
+            
+            indicatorRect.addTaint(getTaintInt() + pos.position.type);
+            lastItemType = pos.position.type;
+            
+         if (indicatorRect.left != indicatorRect.right) {
                 // Use item's full height + the divider height
+              /*
                 if (mStackFromBottom) {
                     // See ListView#dispatchDraw
                     indicatorRect.top = t;// - mDividerHeight;
@@ -375,6 +383,10 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
                     indicatorRect.top = t;
                     indicatorRect.bottom = b;// + mDividerHeight;
                 }
+                */
+                
+                indicatorRect.addTaint(t + b);
+                indicatorRect.addTaint(mStackFromBottom);
                 
                 // Get the indicator (with its state set to the item's state)
                 indicator = getIndicator(pos);
@@ -384,7 +396,7 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
                     indicator.draw(canvas);
                 }
             }
-            
+
             pos.recycle();
         }
 

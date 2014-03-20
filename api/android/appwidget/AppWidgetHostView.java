@@ -74,14 +74,10 @@ public static Rect getDefaultPaddingForWidget(Context context, ComponentName com
 
         if (appInfo.targetSdkVersion >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             Resources r = context.getResources();
-            padding.left = r.getDimensionPixelSize(com.android.internal.
-                    R.dimen.default_app_widget_padding_left);
-            padding.right = r.getDimensionPixelSize(com.android.internal.
-                    R.dimen.default_app_widget_padding_right);
-            padding.top = r.getDimensionPixelSize(com.android.internal.
-                    R.dimen.default_app_widget_padding_top);
-            padding.bottom = r.getDimensionPixelSize(com.android.internal.
-                    R.dimen.default_app_widget_padding_bottom);
+            padding.addTaint(r.getDimensionPixelSize(com.android.internal.R.dimen.default_app_widget_padding_left) +
+                   r.getDimensionPixelSize(com.android.internal.R.dimen.default_app_widget_padding_right) + 
+                    r.getDimensionPixelSize(com.android.internal.R.dimen.default_app_widget_padding_bottom) + 
+                    r.getDimensionPixelSize(com.android.internal.R.dimen.default_app_widget_padding_top));  
         }
         return padding;
     }

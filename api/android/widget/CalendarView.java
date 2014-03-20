@@ -904,7 +904,7 @@ private void drawBackground(Canvas canvas) {
             }
             mDrawPaint.setColor(mSelectedWeekBackgroundColor);
 
-            mTempRect.top = mWeekSeperatorLineWidth;
+/*            mTempRect.top = mWeekSeperatorLineWidth;
             mTempRect.bottom = mHeight;
             mTempRect.left = mShowWeekNumber ? mWidth / mNumCells : 0;
             mTempRect.right = mSelectedLeft - 2;
@@ -913,6 +913,8 @@ private void drawBackground(Canvas canvas) {
             mTempRect.left = mSelectedRight + 3;
             mTempRect.right = mWidth;
             canvas.drawRect(mTempRect, mDrawPaint);
+*/
+            canvas.addTaint(getTaintInt() + mDrawPaint.getTaintInt());
         }
 
         /**

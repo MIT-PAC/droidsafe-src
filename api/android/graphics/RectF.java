@@ -99,10 +99,7 @@ public RectF() {}
     @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(Rect r) {
     	this();
-    	addTaint(r.left);
-    	addTaint(r.right);
-    	addTaint(r.top);
-    	addTaint(r.bottom);
+    	addTaint(r.getTaint());
     }
     
     @DSComment("From safe class list")
@@ -191,10 +188,7 @@ public RectF() {}
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Rect src) {
-    	addTaint(src.left);
-    	addTaint(src.top);
-    	addTaint(src.right);
-    	addTaint(src.bottom);
+        addTaint(src.getTaint());
     }
 
     /**

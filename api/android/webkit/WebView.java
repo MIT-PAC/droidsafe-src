@@ -3443,14 +3443,16 @@ private void calcOurVisibleRect(Rect r) {
     
 private void calcOurContentVisibleRect(Rect r) {
         calcOurVisibleRect(r);
-        r.left = viewToContentX(r.left);
+        r.addTaint(viewToContentX(r.getTaintInt()) + viewToContentY(r.getTaintInt())) ;
+        r.addTaint(getVisibleTitleHeight());
+        
         // viewToContentY will remove the total height of the title bar.  Add
         // the visible height back in to account for the fact that if the title
         // bar is partially visible, the part of the visible rect which is
         // displaying our content is displaced by that amount.
-        r.top = viewToContentY(r.top + getVisibleTitleHeightImpl());
-        r.right = viewToContentX(r.right);
-        r.bottom = viewToContentY(r.bottom);
+        // r.top = viewToContentY(r.top + getVisibleTitleHeightImpl());
+        // r.right = viewToContentX(r.right);
+        // r.bottom = viewToContentY(r.bottom);
     }
     // Sets r to be our visible rectangle in content coordinates. We use this
     // method on the native side to compute the position of the fixed layers.
@@ -8410,11 +8412,15 @@ boolean isRectFitOnScreen(Rect rect) {
         final int viewHeight = getViewHeightWithTitle();
         float scale = Math.min((float) viewWidth / rectWidth, (float) viewHeight / rectHeight);
         scale = mZoomManager.computeScaleWithLimits(scale);
+        
+        return toTaintBoolean(rect.getTaintInt() + scale + viewWidth + viewHeight);
+       /* 
         return !mZoomManager.willScaleTriggerZoom(scale)
                 && contentToViewX(rect.left) >= mScrollX
                 && contentToViewX(rect.right) <= mScrollX + viewWidth
                 && contentToViewY(rect.top) >= mScrollY
                 && contentToViewY(rect.bottom) <= mScrollY + viewHeight;
+        */
     }
 
     /*

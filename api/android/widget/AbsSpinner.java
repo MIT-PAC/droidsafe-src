@@ -184,8 +184,13 @@ void resetList() {
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize;
         int heightSize;
+        mSpinnerPadding.addTaint(mPaddingLeft + mSelectionLeftPadding +
+                mPaddingRight + mSelectionRightPadding + 
+                mPaddingBottom + mSelectionBottomPadding + 
+                mPaddingTop  + mSelectionTopPadding 
+                );
 
-        mSpinnerPadding.left = mPaddingLeft > mSelectionLeftPadding ? mPaddingLeft
+/*        mSpinnerPadding.left = mPaddingLeft > mSelectionLeftPadding ? mPaddingLeft
                 : mSelectionLeftPadding;
         mSpinnerPadding.top = mPaddingTop > mSelectionTopPadding ? mPaddingTop
                 : mSelectionTopPadding;
@@ -193,7 +198,7 @@ void resetList() {
                 : mSelectionRightPadding;
         mSpinnerPadding.bottom = mPaddingBottom > mSelectionBottomPadding ? mPaddingBottom
                 : mSelectionBottomPadding;
-
+*/
         if (mDataChanged) {
             handleDataChanged();
         }

@@ -380,8 +380,8 @@ public boolean isStripEnabled() {
 
         if (mStripMoved) {
             final Rect bounds = mBounds;
-            bounds.left = selectedChild.getLeft();
-            bounds.right = selectedChild.getRight();
+            bounds.addTaint(selectedChild.getLeft() + selectedChild.getRight());
+            
             final int myHeight = getHeight();
             leftStrip.setBounds(Math.min(0, bounds.left - leftStrip.getIntrinsicWidth()),
                     myHeight - leftStrip.getIntrinsicHeight(), bounds.left, myHeight);

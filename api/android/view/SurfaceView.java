@@ -843,6 +843,9 @@ private void updateWindow(boolean force, boolean redrawNeeded) {
                     if (DEBUG) Log.i(TAG, "New surface: " + mNewSurface
                             + ", vis=" + visible + ", frame=" + mWinFrame);
 
+                    mSurfaceFrame.addTaint(mWinFrame.getTaintInt() + 
+                            mTranslator.applicationInvertedScale);
+                    /*
                     mSurfaceFrame.left = 0;
                     mSurfaceFrame.top = 0;
                     if (mTranslator == null) {
@@ -853,11 +856,12 @@ private void updateWindow(boolean force, boolean redrawNeeded) {
                         mSurfaceFrame.right = (int) (mWinFrame.width() * appInvertedScale + 0.5f);
                         mSurfaceFrame.bottom = (int) (mWinFrame.height() * appInvertedScale + 0.5f);
                     }
+                    */
                     
                     final int surfaceWidth = mSurfaceFrame.right;
                     final int surfaceHeight = mSurfaceFrame.bottom;
-                    realSizeChanged = mLastSurfaceWidth != surfaceWidth
-                            || mLastSurfaceHeight != surfaceHeight;
+                    realSizeChanged = toTaintBoolean(mLastSurfaceWidth + mLastSurfaceHeight + 
+                                                    surfaceWidth + surfaceHeight);
                     mLastSurfaceWidth = surfaceWidth;
                     mLastSurfaceHeight = surfaceHeight;
                 } finally {

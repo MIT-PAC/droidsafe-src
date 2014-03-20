@@ -39,7 +39,7 @@ public final class Rect implements Parcelable {
                && a.top < b.bottom && b.top < a.bottom;
     }
 		*/
-        return (a.getTaintBoolean() && b.getTaintBoolean());
+        return toTaintBoolean(a.getTaintInt() + b.getTaintInt());
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.574 -0500", hash_original_field = "C827880A18B6ACBC60E1778FF671B928", hash_generated_field = "22CBDD4FA5AC4D71EB10C39DCFB71CD2")
 
@@ -88,6 +88,7 @@ public Rect[] newArray(int size) {
     
 public Rect() {}
     
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
     private void droidsafeSetMembers() {
         this.bottom = getTaintInt();
         this.top    = getTaintInt();
@@ -124,6 +125,27 @@ public Rect() {}
 		droidsafeSetMembers();
 	}
     
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override
+    public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        droidsafeSetMembers();
+    }
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override
+    public void addTaint(double t) {
+        super.addTaint(t);
+        droidsafeSetMembers();
+    }
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override
+    public void addTaint(boolean t) {
+        super.addTaint(t);
+        droidsafeSetMembers();
+    }
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override public boolean equals(Object obj){
@@ -138,7 +160,7 @@ public Rect() {}
         return false;
     }
 		*/
-		return (obj.getTaintBoolean() && getTaintBoolean());
+		return toTaintBoolean(obj.getTaintInt() + getTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -376,10 +398,7 @@ public Rect() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void offsetTo(int newLeft, int newTop){
-		addTaint(newLeft);
-		left = newLeft;  //Preserved
-		addTaint(newTop);
-		top = newTop;  //Preserved
+		addTaint(newLeft + newTop);
 		droidsafeSetMembers();
 		// Original method
 		/*

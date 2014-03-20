@@ -952,10 +952,13 @@ public BackgroundDrawable(int width) {
         public void draw(Canvas canvas) {
             mPaint.setColor(0x6633b5e5);
             canvas.drawRect(getBounds(), mPaint);
+            mInsetRect.addTaint(getBounds().getTaintInt() + mBorderWidth);
+            /*
             mInsetRect.left = getBounds().left + mBorderWidth;
             mInsetRect.top = getBounds().top + mBorderWidth;
             mInsetRect.right = getBounds().right - mBorderWidth;
             mInsetRect.bottom = getBounds().bottom - mBorderWidth;
+            */
             mPaint.setColor(Color.WHITE);
             canvas.drawRect(mInsetRect, mPaint);
         }

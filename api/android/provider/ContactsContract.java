@@ -2617,10 +2617,7 @@ public static void showQuickContact(Context context, View target, Uri lookupUri,
             target.getLocationOnScreen(pos);
 
             final Rect rect = new Rect();
-            rect.left = (int) (pos[0] * appScale + 0.5f);
-            rect.top = (int) (pos[1] * appScale + 0.5f);
-            rect.right = (int) ((pos[0] + target.getWidth()) * appScale + 0.5f);
-            rect.bottom = (int) ((pos[1] + target.getHeight()) * appScale + 0.5f);
+            rect.addTaint(pos[0] + pos[1] + appScale + target.getTaintInt());
 
             // Trigger with obtained rectangle
             showQuickContact(context, rect, lookupUri, mode, excludeMimes);

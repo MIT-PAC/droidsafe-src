@@ -935,22 +935,15 @@ public boolean pageScroll(int direction) {
         boolean right = direction == View.FOCUS_RIGHT;
         int width = getWidth();
 
+        mTempRect.addTaint(direction + width + getScrollX());
+        
         if (right) {
-            mTempRect.left = getScrollX() + width;
             int count = getChildCount();
             if (count > 0) {
                 View view = getChildAt(0);
-                if (mTempRect.left + width > view.getRight()) {
-                    mTempRect.left = view.getRight() - width;
-                }
+                mTempRect.addTaint(view.getRight());
             }
-        } else {
-            mTempRect.left = getScrollX() - width;
-            if (mTempRect.left < 0) {
-                mTempRect.left = 0;
-            }
-        }
-        mTempRect.right = mTempRect.left + width;
+        } 
 
         return scrollAndFocus(direction, mTempRect.left, mTempRect.right);
     }
@@ -973,6 +966,8 @@ public boolean fullScroll(int direction) {
         boolean right = direction == View.FOCUS_RIGHT;
         int width = getWidth();
 
+        mTempRect.addTaint(direction + width + getChildCount());
+        
         mTempRect.left = 0;
         mTempRect.right = width;
 
@@ -980,8 +975,9 @@ public boolean fullScroll(int direction) {
             int count = getChildCount();
             if (count > 0) {
                 View view = getChildAt(0);
-                mTempRect.right = view.getRight();
-                mTempRect.left = mTempRect.right - width;
+                mTempRect.addTaint(view.getRight());
+                //mTempRect.right = view.getRight();
+                //mTempRect.left = mTempRect.right - width;
             }
         }
 
@@ -1114,8 +1110,8 @@ private boolean isWithinDeltaOfScreen(View descendant, int delta) {
         descendant.getDrawingRect(mTempRect);
         offsetDescendantRectToMyCoords(descendant, mTempRect);
 
-        return (mTempRect.right + delta) >= getScrollX()
-                && (mTempRect.left - delta) <= (getScrollX() + getWidth());
+        return toTaintBoolean((mTempRect.right + delta) + getScrollX() +
+                               mTempRect.left   + getWidth());
     }
 
     /**
@@ -1367,6 +1363,8 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
 
         int fadingEdge = getHorizontalFadingEdgeLength();
 
+        return (width + screenLeft + screenRight + fadingEdge + rect.getTaintInt());
+      /*  
         // leave room for left fading edge as long as rect isn't at very left
         if (rect.left > 0) {
             screenLeft += fadingEdge;
@@ -1413,7 +1411,7 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
             // make sure we aren't scrolling any further than the left our content
             scrollXDelta = Math.max(scrollXDelta, -getScrollX());
         }
-        return scrollXDelta;
+        return scrollXDelta;*/
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.412 -0500", hash_original_method = "C2C4A47D49BA76A3A98712461E581564", hash_generated_method = "98DCFF4EDA5A5C8FC7E7F6CD8CED4486")
