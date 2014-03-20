@@ -759,7 +759,7 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
 		//Formerly a native method.  Generated a very simple stub.
-		return false;
+		return (toTaintBoolean(queue + name.length() + sensor + enable));
 	}
     
     @DSComment("Package priviledge")

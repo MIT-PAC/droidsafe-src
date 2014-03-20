@@ -227,7 +227,7 @@ public AppWidgetProviderInfo getAppWidgetInfo() {
     
 private int generateId() {
         final int id = getId();
-        return id == View.NO_ID ? mAppWidgetId : id;
+        return (mAppWidgetId + id);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.306 -0500", hash_original_method = "9249C138593FE1EB2CAEA94EA5A08B6D", hash_generated_method = "1224F5B1E7A48675964760C9C9D46D1C")

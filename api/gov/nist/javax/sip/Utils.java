@@ -187,7 +187,9 @@ public synchronized String generateBranchId() {
 public boolean responseBelongsToUs(SIPResponse response) {
         Via topmostVia = response.getTopmostVia();
         String branch = topmostVia.getBranch();
-        return branch != null && branch.endsWith(this.signature);
+        if (branch != null)
+            return branch.getTaintBoolean();
+        return branch.endsWith(this.signature);
     }
     static {
         try {

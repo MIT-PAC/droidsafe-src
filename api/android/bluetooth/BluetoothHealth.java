@@ -480,10 +480,14 @@ void close() {
     
 private boolean isEnabled() {
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-
+        if (adapter != null)
+            return adapter.getTaintBoolean();
+        return false;
+/*
         if (adapter != null && adapter.getState() == BluetoothAdapter.STATE_ON) return true;
         log("Bluetooth is Not enabled");
         return false;
+*/
     }
 
     @DSComment("Private Method")
@@ -493,8 +497,7 @@ private boolean isEnabled() {
 private boolean isValidDevice(BluetoothDevice device) {
         if (device == null) return false;
 
-        if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
-        return false;
+        return BluetoothAdapter.checkBluetoothAddress(device.getAddress());
     }
 
     @DSComment("Private Method")
@@ -503,6 +506,14 @@ private boolean isValidDevice(BluetoothDevice device) {
     
 private boolean checkAppParam(String name, int role, int channelType,
             BluetoothHealthCallback callback) {
+
+        int callbackInt = 0;
+        if (callback != null)
+            callbackInt = callback.getTaintInt();
+
+        return toTaintBoolean(role + channelType + name.length() + callbackInt);
+        
+/*
         if (name == null || (role != SOURCE_ROLE && role != SINK_ROLE) ||
                 (channelType != CHANNEL_TYPE_RELIABLE &&
                 channelType != CHANNEL_TYPE_STREAMING &&
@@ -511,6 +522,7 @@ private boolean checkAppParam(String name, int role, int channelType,
         }
         if (role == SOURCE_ROLE && channelType == CHANNEL_TYPE_ANY) return false;
         return true;
+*/
     }
 }
 

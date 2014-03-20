@@ -145,7 +145,7 @@ boolean writeFile(File f, BackupDataInputStream in) {
                 mExceptionLogged = true;
             }
         }
-        return (result == 0);
+        return toTaintBoolean(result); 
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.045 -0500", hash_original_method = "2A62291A9AE3A671BAC15E3191D32511", hash_generated_method = "28B9531644FE5B2C583FA07E375C1A23")

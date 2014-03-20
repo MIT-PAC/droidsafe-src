@@ -220,7 +220,7 @@ private boolean hasFileChangedUnexpectedly() {
             return true;
         }
         synchronized (this) {
-            return mStatTimestamp != stat.mtime || mStatSize != stat.size;
+            return toTaintBoolean(mStatTimestamp + stat.mtime +  mStatSize + stat.size);
         }
     }
 

@@ -262,7 +262,7 @@ public ActivityInfo() {
                 : configChanges;
     }
 		*/
-		return 0;
+		return (getTaintInt() + configChanges);
 	}
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

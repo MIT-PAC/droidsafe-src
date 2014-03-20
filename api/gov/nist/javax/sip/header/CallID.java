@@ -44,14 +44,11 @@ public CallID(String callId) throws IllegalArgumentException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.854 -0500", hash_original_method = "90F237F3A3B37E6D3BD3A71F3DAA1462", hash_generated_method = "B846D960AFE8184FB667FC98070AC245")
     
 public boolean equals( Object other ) {
-
-        if (this==other) return true;
-
         if (other instanceof CallIdHeader) {
             final CallIdHeader o = (CallIdHeader) other;
             return this.getCallId().equalsIgnoreCase( o.getCallId() );
         }
-        return false;
+        return getTaintBoolean();
     }
 
     /**

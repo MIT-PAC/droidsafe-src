@@ -937,7 +937,7 @@ ApplicationPackageManager(ContextImpl context,
             if (mCachedSafeMode < 0) {
                 mCachedSafeMode = mPM.isSafeMode() ? 1 : 0;
             }
-            return mCachedSafeMode != 0;
+            return toTaintBoolean(mCachedSafeMode + toTaintInt(mPM.isSafeMode())); 
         } catch (RemoteException e) {
             throw new RuntimeException("Package manager has died", e);
         }
@@ -1398,7 +1398,23 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
         
 @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
+
+            Object ret = new Object();
+            ret.addTaint(o.getTaintInt() + getTaintInt());
+
+            if (packageName != null)
+                ret.addTaint(packageName.getTaint());
+
+            ret.addTaint(o.getClass().getTaint());
+
+            if (o != null && getClass() == o.getClass()) {
+                ResourceName that = (ResourceName) o;
+                ret.addTaint(that.packageName.getTaint());
+            }
+
+            return ret.getTaintBoolean();
+
+/*
             if (o == null || getClass() != o.getClass()) return false;
 
             ResourceName that = (ResourceName) o;
@@ -1406,7 +1422,7 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
             if (iconId != that.iconId) return false;
             return !(packageName != null ?
                      !packageName.equals(that.packageName) : that.packageName != null);
-
+*/
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.985 -0500", hash_original_method = "FE96AD3461E654FCE4E8B88F254AC3EE", hash_generated_method = "762AFF0BD766AF93D60EF5AA43B0A594")

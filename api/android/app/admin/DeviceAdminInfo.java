@@ -324,7 +324,7 @@ public boolean isVisible() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.375 -0500", hash_original_method = "E08C907F6F855F797C3DCE0727348F6B", hash_generated_method = "5DA099686E4153D4293B4EBE71F5AE0A")
     
 public boolean usesPolicy(int policyIdent) {
-        return (mUsesPolicies & (1<<policyIdent)) != 0;
+        return toTaintBoolean(mUsesPolicies  + policyIdent);  
     }
     
     /**

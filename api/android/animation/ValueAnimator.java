@@ -1126,7 +1126,8 @@ private void start(boolean playBackwards) {
     
 @Override
     public boolean isRunning() {
-        return (mPlayingState == RUNNING || mRunning);
+        return toTaintBoolean(mPlayingState + toTaintInt(mRunning));
+        //return (mPlayingState == RUNNING || mRunning);
     }
 
     @DSComment("From safe class list")

@@ -307,8 +307,9 @@ public int getPriority(BluetoothDevice device) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.398 -0500", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "199CD6721D66E41745A6F0D547B34AF7")
     
 private boolean isEnabled() {
-       if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
-       return false;
+       return toTaintBoolean(mAdapter.getState());
+       //if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
+       //return false;
     }
 
     @DSComment("Private Method")
@@ -317,9 +318,7 @@ private boolean isEnabled() {
     
 private boolean isValidDevice(BluetoothDevice device) {
        if (device == null) return false;
-
-       if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
-       return false;
+       return BluetoothAdapter.checkBluetoothAddress(device.getAddress());
     }
 }
 

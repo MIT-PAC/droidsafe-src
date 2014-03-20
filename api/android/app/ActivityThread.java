@@ -117,8 +117,17 @@ public static ActivityThread currentActivityThread() {
     
 public static String currentPackageName() {
         ActivityThread am = currentActivityThread();
+        String str = new String();
+        if (am != null) {
+            str.addTaint(am.getTaint());
+            str.addTaint(am.mBoundApplication.getTaint());
+            str.addTaint(am.mBoundApplication.processName.getTaint());
+        }
+        return str;
+        /*
         return (am != null && am.mBoundApplication != null)
             ? am.mBoundApplication.processName : null;
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.901 -0500", hash_original_method = "F6FC3F72525CD988EE04D3FABD038B41", hash_generated_method = "88F02418DA4B139D2F80F444B2991324")
@@ -706,8 +715,12 @@ public Configuration getConfiguration() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.945 -0500", hash_original_method = "BB8D8D9198132B7570723812CBBB4B98", hash_generated_method = "9F84848E50566940ABA86601B9B7DC16")
     
 public boolean isProfiling() {
+        return toTaintBoolean(mProfiler.getTaintInt() + mProfiler.profileFile.getTaintInt() +
+                             mProfiler.profileFd.getTaintInt());
+/*
         return mProfiler != null && mProfiler.profileFile != null
                 && mProfiler.profileFd == null;
+*/
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -2728,7 +2741,7 @@ final boolean applyConfigurationToResourcesLocked(Configuration config,
             }
         }
         
-        return changes != 0;
+        return toTaintBoolean(changes); 
     }
 
     @DSComment("Package priviledge")
@@ -4545,7 +4558,8 @@ ResourcesKey(String resDir, float scale) {
                 return false;
             }
             ResourcesKey peer = (ResourcesKey) obj;
-            return mResDir.equals(peer.mResDir) && mScale == peer.mScale;
+            return toTaintBoolean(obj.getTaintInt() + getTaintInt() + mScale);
+            //return mResDir.equals(peer.mResDir) && mScale == peer.mScale;
         }
         
     }

@@ -78,7 +78,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.800 -0500", hash_original_method = "5954B7E2243EB0AA755A2C7023AF3E50", hash_generated_method = "E4EC00F798DD35579B3FA9A6C74222C7")
     
 public boolean hasReachedZero() {
-        return maxForwards == 0;
+        return toTaintBoolean(maxForwards); 
     }
 
     /** decrement MaxForwards field one by one.

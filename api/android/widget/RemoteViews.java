@@ -1230,7 +1230,7 @@ public void writeToParcel(Parcel dest, int flags) {
                             view.getLocationOnScreen(pos);
 
                             final Rect rect = new Rect();
-                            rect.addTaint(pos[0] + pos[1] + appScale + v.getWidth() + v.getHeight());
+                            rect.addTaint(pos[0] + pos[1] + appScale + view.getWidth() + view.getHeight());
                        /*     rect.left = (int) (pos[0] * appScale + 0.5f);
                             rect.top = (int) (pos[1] * appScale + 0.5f);
                             rect.right = (int) ((pos[0] + view.getWidth()) * appScale + 0.5f);
@@ -1275,7 +1275,7 @@ public void writeToParcel(Parcel dest, int flags) {
                             view.getLocationOnScreen(pos);
                             final Rect rect = new Rect();
 
-                            rect.addTaint(pos[0] + pos[1] + appScale + v.getWidth() + v.getHeight());
+                            rect.addTaint(pos[0] + pos[1] + appScale + view.getWidth() + view.getHeight());
           /*                  rect.left = (int) (pos[0] * appScale + 0.5f);
                             rect.top = (int) (pos[1] * appScale + 0.5f);
                             rect.right = (int) ((pos[0] + view.getWidth()) * appScale + 0.5f);

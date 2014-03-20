@@ -90,11 +90,17 @@ BluetoothHealthAppConfiguration(String name, int dataType, int role, int
     public boolean equals(Object o) {
         if (o instanceof BluetoothHealthAppConfiguration) {
             BluetoothHealthAppConfiguration config = (BluetoothHealthAppConfiguration) o;
+
+            return toTaintBoolean(getTaintInt() + o.getTaintInt() + config.getName().getTaintInt() +
+                              config.getDataType() + config.getRole() +
+                              mDataType + mRole + mChannelType + config.getChannelType());
+            /*
             // config.getName() can never be NULL
             return mName.equals(config.getName()) &&
                     mDataType == config.getDataType() &&
                     mRole == config.getRole() &&
                     mChannelType == config.getChannelType();
+            */
         }
         return false;
     }

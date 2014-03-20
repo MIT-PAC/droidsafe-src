@@ -59,10 +59,13 @@ public Account(Parcel in) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.359 -0500", hash_original_method = "8952178E80D6EF68D44FC6803A31AC53", hash_generated_method = "E11F1B2B48F4426422AA38A1FF583D29")
     
 public boolean equals(Object o) {
+        return toTaintBoolean(o.getTaintInt() + getTaintInt());
+        /*
         if (o == this) return true;
         if (!(o instanceof Account)) return false;
         final Account other = (Account)o;
         return name.equals(other.name) && type.equals(other.type);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.362 -0500", hash_original_method = "2D8E3835F41EEE5A0134485B603913A1", hash_generated_method = "FC220BBEAC6B827E0FEF5853192F624B")
