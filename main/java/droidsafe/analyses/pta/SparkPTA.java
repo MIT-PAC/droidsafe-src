@@ -69,6 +69,8 @@ import soot.jimple.spark.sets.P2SetVisitor;
 import soot.jimple.spark.sets.PointsToSetInternal;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.callgraph.EdgePredicate;
+import soot.jimple.toolkits.callgraph.Filter;
 import soot.jimple.toolkits.callgraph.ReachableMethods;
 import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
@@ -123,6 +125,7 @@ public class SparkPTA extends PTABridge {
             "android.view.MotionEvent",
             "android.view.KeyEvent",
             "android.graphics.Point"
+         
     };
                      
     
@@ -213,6 +216,7 @@ public class SparkPTA extends PTABridge {
         
         //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
+        //dumpOutdegreesCSV();
         
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
@@ -250,7 +254,40 @@ public class SparkPTA extends PTABridge {
         }
         
     }
+
+   private void dumpOutdegreesCSV() {
+       try {
+           FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "reachables-outdegree.csv");
+           
+           fw.write("Method,Outdegree");
+           
+           for (MethodOrMethodContext momc : getReachableMethodContexts()) {
+               int outdegree = 0;
+               Iterator<Edge> edges = callGraph.edgesOutOf(momc);
+               while (edges.hasNext()) {
+                   edges.next();
+                   outdegree++;
+               }
+                       
+               fw.write(momc + "|" + outdegree + "\n");
+           }
+                       
+           fw.close();
+           
+       } catch (IOException e) {
+           
+       }
+   }
     
+   EdgePredicate noStaticInits = new EdgePredicate() {
+
+    @Override
+    public boolean want(Edge e) {
+        return !("<clinit>".equals(e.tgt().getName()));
+    }
+       
+   };
+   
     /**
      * Expensive!
      */
@@ -260,16 +297,25 @@ public class SparkPTA extends PTABridge {
             
             fw.write("Method,Reachables");
             
+            
             for (MethodOrMethodContext momc : getReachableMethodContexts()) {
-                Set<MethodOrMethodContext> c = new HashSet<MethodOrMethodContext>();
+                if ("<clinit>".equals(momc.method().getName()))
+                    continue;
+                    
+                Set<MethodOrMethodContext> c = new HashSet<MethodOrMethodContext>();            
                 c.add(momc);
-                ReachableMethods rm = new ReachableMethods(callGraph, c);
+                Filter filter = new Filter(noStaticInits);
+                //filter on static initializers, hopefully they won't show in the stats, 
+                //or any calls that they make...
+                ReachableMethods rm = new ReachableMethods(callGraph, c.iterator(), filter);
                 rm.update();
                 
                 QueueReader<MethodOrMethodContext> edges = rm.listener();
                 int reachables = 0;
                 while (edges.hasNext()) {
-                    edges.next();
+                    MethodOrMethodContext reachable = edges.next();
+                    if ("<clinit>".equals(reachable.method().getName()))
+                        continue;
                     reachables++;
                 }
                 
@@ -772,7 +818,8 @@ public class SparkPTA extends PTABridge {
         opt.put("kobjsens-no-context-list", 
                 buildNoContextList());
         
-        opt.put("kobjsens-important-allocators", buildImportantAllocs());
+        //opt.put("kobjsens-important-allocators", buildImportantAllocs());
+        opt.put("kobjsens-important-allocators", "");
         
         //now overwrite options with options that are passed in
         for (Map.Entry<String, String> entry : opts.entrySet()) {

@@ -277,11 +277,10 @@ public class Main {
             driverMsg("Converting AbstractStringBuilder.toString()");
             TransformStringBuilderInvokes.run();
         }
-
+        
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         
-
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
         rcfgTimer.start();

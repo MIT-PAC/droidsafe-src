@@ -64,17 +64,22 @@ public class TestPTA  {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             SootMethod method = momc.method();
             Context context = momc.context();
+           
+            /*
+          if (API.v().isSystemMethod(method)) 
+              continue;
+              */
             
-            
-            if (!method.getSignature().contains("<java.lang.RealToString: java.lang.RealToString getInstance()"))
+            if (!"<java.net.InterfaceAddress: java.lang.String toString()>".equals(method.getSignature()))
                 continue;
+          
                       
             if (!method.isConcrete())
                 continue;
             if (!method.hasActiveBody()) {
                 method.retrieveActiveBody();
             }
-            
+           
             Iterator<Edge> edges = Scene.v().getCallGraph().edgesInto(momc); 
             while (edges.hasNext()) {
                 System.out.println(edges.next());

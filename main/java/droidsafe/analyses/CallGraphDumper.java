@@ -9,8 +9,14 @@ import java.util.Map;
 import java.util.Set;
 
 import soot.MethodOrMethodContext;
+import soot.Scene;
 import soot.SootMethod;
+import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.callgraph.EdgePredicate;
+import soot.jimple.toolkits.callgraph.Filter;
+import soot.jimple.toolkits.callgraph.ReachableMethods;
+import soot.util.queue.QueueReader;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 
@@ -18,6 +24,57 @@ public class CallGraphDumper {
 
     public CallGraphDumper() {
         // TODO Auto-generated constructor stub
+    }
+    
+    /*
+    public static void countReachableMethodsFrom(Edge edge, 
+                                                 Map<MethodOrMethodContext, Integer> counts) {
+        CallGraph cg = PTABridge.v().getCallGraph();
+        
+        Iterator<Edge> edges = cg.edgesOutOf(edge.getTgt());
+        
+        int total = 0;
+        
+        while (edges.hasNext()) {
+            Edge edge = edges.next();
+            
+            countReachableMethodsFrom(edge.getTgt(), counts);
+            total += counts.get(edge.getTgt());
+        }
+        
+        if (!counts.containsKey(momc)) {
+            
+        }
+    }
+    */
+    
+    static EdgePredicate noStaticInits = new EdgePredicate() {
+
+        @Override
+        public boolean want(Edge e) {
+            return !("<clinit>".equals(e.tgt().getName()));
+        }
+           
+       };
+    
+    private static Set<MethodOrMethodContext> reachableFromNoClinits(SootMethod method) {
+        Set<MethodOrMethodContext> c = new HashSet<MethodOrMethodContext>();            
+        c.add(method);
+        Filter filter = new Filter(noStaticInits);
+        //filter on static initializers, hopefully they won't show in the stats, 
+        //or any calls that they make...
+        ReachableMethods rm = new ReachableMethods(PTABridge.v().getCallGraph(), c.iterator(), filter);
+        rm.update();
+        
+        Set<MethodOrMethodContext> ret = new HashSet<MethodOrMethodContext>();
+        
+        QueueReader<MethodOrMethodContext> qr = rm.listener();
+        while (qr.hasNext()) {
+            ret.add(qr.next());
+        }
+        
+        return ret;
+        
     }
     
     public static void runGEXF(String fileStr) {
@@ -38,12 +95,25 @@ public class CallGraphDumper {
             StringBuffer nodes = new StringBuffer();
             int edgeID = 0;
             
-            for (MethodOrMethodContext src : PTABridge.v().getReachableMethodContexts()) {
-                nodes.append("<node id=\"" + src.hashCode() + "\" label=\"" + src.toString() + "\"/>\n");
+            Set<MethodOrMethodContext> momcs;
+            //momcs = PTABridge.v().getReachableMethodContexts();
+            
+            SootMethod theOne = Scene.v().getMethod("<java.net.InterfaceAddress: java.lang.String toString()>");
+            momcs = reachableFromNoClinits(theOne.method());
+                        
+            for (MethodOrMethodContext src : momcs) {
+                if ("<clinit>".equals(src.method().getName()))
+                    continue;
+                
+                String methodL = src.toString();
+                methodL = methodL.replaceAll("<|>", "");
+                nodes.append("<node id=\"" + src.hashCode() + "\" label=\"" + methodL + "\"/>\n");
                 //edges
                 Iterator<Edge> edgesIt = PTABridge.v().getCallGraph().edgesOutOf(src);
                 while (edgesIt.hasNext()) {
                     Edge edge = edgesIt.next();
+                    if ("<clinit>".equals(edge.tgt().getName())  || !momcs.contains(edge.getTgt()))
+                        continue;
                     
                     edges.append("<edge id=\"" + edgeID + 
                         "\" source=\"" + edge.getSrc().hashCode() + "\" target=\"" + edge.getTgt().hashCode() + "\"/>\n");
