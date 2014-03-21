@@ -46,43 +46,12 @@ private static NumberFormatException invalidInt(String s) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.169 -0500", hash_original_method = "46DA43F84FA71E66C3C03274BBD22B81", hash_generated_method = "3ABFBE25C2D84F1E621213D0CCED98AA")
     
-public static Integer decode(String string) throws NumberFormatException {
-        int length = string.length(), i = 0;
-        if (length == 0) {
-            throw invalidInt(string);
-        }
-        char firstDigit = string.charAt(i);
-        boolean negative = firstDigit == '-';
-        if (negative) {
-            if (length == 1) {
-                throw invalidInt(string);
-            }
-            firstDigit = string.charAt(++i);
-        }
-
-        int base = 10;
-        if (firstDigit == '0') {
-            if (++i == length) {
-                return valueOf(0);
-            }
-            if ((firstDigit = string.charAt(i)) == 'x' || firstDigit == 'X') {
-                if (++i == length) {
-                    throw invalidInt(string);
-                }
-                base = 16;
-            } else {
-                base = 8;
-            }
-        } else if (firstDigit == '#') {
-            if (++i == length) {
-                throw invalidInt(string);
-            }
-            base = 16;
-        }
-
-        int result = parse(string, i, base, negative);
-        return valueOf(result);
-    }
+   public static Integer decode(String string) throws NumberFormatException {
+        Integer ret = new Integer(string.getTaintInt());
+        if (DroidSafeAndroidRuntime.control)
+            throw new NumberFormatException();
+        return ret;
+      }
 
     /**
      * Returns the {@code Integer} value of the system property identified by
@@ -101,19 +70,12 @@ public static Integer decode(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.180 -0500", hash_original_method = "F01C30BD973BCE191A7284E98D1A303E", hash_generated_method = "C1DAAE89FBE184F5C7F6A97080859E37")
     
 public static Integer getInteger(String string) {
-        if (string == null || string.length() == 0) {
-            return null;
-        }
         String prop = System.getProperty(string);
-        if (prop == null) {
-            return null;
-        }
-        try {
-            return decode(prop);
-        } catch (NumberFormatException ex) {
-            return null;
-        }
+        Integer ret = new Integer(string.getTaintInt());
+        ret.value = prop.getTaintInt();
+        return ret;
     }
+    
 
     /**
      * Returns the {@code Integer} value of the system property identified by
