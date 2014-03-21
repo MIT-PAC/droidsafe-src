@@ -194,9 +194,13 @@ public static Double valueOf(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.688 -0500", hash_original_method = "1D9798A0A4D63301EAA0C709DA651E0D", hash_generated_method = "4777531DC6DAFBE5D6CD7B3DF1F501A7")
     
 public static String toHexString(double d) {
+        String ret = new String("<Double.toHexString>");
+        ret.addTaint(d);
+        return ret;
         /*
          * Reference: http://en.wikipedia.org/wiki/IEEE_754-1985
          */
+        /*
         if (d != d) {
             return "NaN";
         }
@@ -275,6 +279,7 @@ public static String toHexString(double d) {
             hexString.append(Long.toString(exponent - 1023));
         }
         return hexString.toString();
+        */
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.569 -0500", hash_original_field = "35B23ACD344EC3F8625C720C8375C8B0", hash_generated_field = "7F5B63AE36FC607559921B1D63D2079E")
 

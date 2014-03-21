@@ -53,27 +53,7 @@ public class JarHandler extends URLStreamHandler {
 @Override
     protected void parseURL(URL url, String spec, int start, int limit) {
         String file = url.getFile();
-        if (file == null) {
-            file = "";
-        }
-        if (limit > start) {
-            spec = spec.substring(start, limit);
-        } else {
-            spec = "";
-        }
-        if (spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1)) {
-            throw new NullPointerException("Cannot find \"!/\"");
-        }
-        if (file.isEmpty()) {
-            file = spec;
-        } else if (spec.charAt(0) == '/') {
-            file = file.substring(0, file.indexOf('!') + 1) + spec;
-        } else {
-            int idx = file.indexOf('!');
-            String tmpFile = file.substring(idx + 1, file.lastIndexOf('/') + 1) + spec;
-            tmpFile = UrlUtils.canonicalizePath(tmpFile, true);
-            file = file.substring(0, idx + 1) + tmpFile;
-        }
+        file = file + spec;
         try {
             // check that the embedded url is valid
             new URL(file);

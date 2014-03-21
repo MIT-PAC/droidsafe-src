@@ -28,6 +28,16 @@ class VMClassLoader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.660 -0500", hash_original_method = "AF486A7D7E964EDE4DDBB83EBC604A43", hash_generated_method = "6271D690045E117ED2B73930093ED883")
     
 static URL getResource(String name) {
+        //droidsafe short-circuiting
+        try {
+            return new URL(name);
+        } catch (Exception e) {
+            
+        }
+
+        return null;
+
+        /*
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
             String urlStr = getBootClassPathResource(name, i);
@@ -41,6 +51,7 @@ static URL getResource(String name) {
             }
         }
         return null;
+        */
     }
 
     /*
@@ -52,6 +63,18 @@ static URL getResource(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.663 -0500", hash_original_method = "41BB43040C33BB8F9D26EFBD637FF5E0", hash_generated_method = "BA6F8EFE5770630EF076EF012F1DAE80")
     
 static List<URL> getResources(String name) {
+                //droidsafe short-circuiting
+        URL url = null;
+        try {
+            url = new URL(name);
+        } catch (Exception e) {
+            
+        }
+        ArrayList<URL> list = new ArrayList<URL>();
+        list.add(url);
+        return list;
+
+        /*
         ArrayList<URL> list = new ArrayList<URL>();
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
@@ -66,6 +89,7 @@ static List<URL> getResources(String name) {
             }
         }
         return list;
+        */
     }
     
     @DSComment("Package priviledge")

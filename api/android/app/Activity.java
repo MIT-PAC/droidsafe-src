@@ -683,7 +683,7 @@ final void performSaveInstanceState(Bundle outState) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onSaveInstanceState(Bundle outState){
-		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
+        outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
         outState.putParcelable(FRAGMENTS_TAG, p);
         getApplication().dispatchActivitySaveInstanceState(this, outState);
@@ -2285,16 +2285,16 @@ public void closeContextMenu() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onSearchRequested(){
-		startSearch(null, false, null, false); 
-        return getTaintBoolean();
-		// Original method
-		/*
-		{
         startSearch(null, false, null, false); 
-        return true;
+        return getTaintBoolean();
+        // Original method
+        /*
+          {
+          startSearch(null, false, null, false); 
+          return true;
+          }
+        */
     }
-		*/
-	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
