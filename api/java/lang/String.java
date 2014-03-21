@@ -793,7 +793,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.863 -0500", hash_original_method = "F488471D994E6AC017026A4A172508CF", hash_generated_method = "21A9CBF4CE60BC5F74030C540EEF2812")
     
-        public String concat(String string) {
+    public String concat(String string) {
         addTaint(string.getTaint());
         return this;
     }
