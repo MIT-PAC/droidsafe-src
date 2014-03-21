@@ -1417,7 +1417,10 @@ public Bitmap extractAlpha() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.886 -0500", hash_original_method = "3EA2D759216A517078419525658BBCD0", hash_generated_method = "5B0C9164781E8B5FE38A18C12C1D13D5")
     
 public boolean sameAs(Bitmap other) {
-        return this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap));
+        //return this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap));
+        return toTaintBoolean(getTaintInt() + other.getTaintInt() +
+                              mNativeBitmap + other.mNativeBitmap);
+                              
     }
 
     /**

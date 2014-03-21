@@ -348,7 +348,7 @@ private synchronized boolean isFree() {
             if (Log.isLoggable(TAG, Log.DEBUG)) {
                 verify();
             }
-            return (mFreeBusyFlag == FREE);
+            return mFreeBusyFlag;
         }
 
         @DSComment("Private Method")

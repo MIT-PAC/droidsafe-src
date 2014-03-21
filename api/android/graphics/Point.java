@@ -48,12 +48,14 @@ public Point() {}
     public Point(int x, int y){
         addTaint(x);
         addTaint(y);
+        droidsafeUpdateMembers();
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public Point(Point src){
         addTaint(src.getTaint());
+        droidsafeUpdateMembers();
         /*
         this.x = src.x;
         this.y = src.y;
@@ -65,6 +67,7 @@ public Point() {}
     public void set(int x, int y){
         addTaint(x);
         addTaint(y);
+        droidsafeUpdateMembers();
         // Original method
         /*
         {
@@ -73,12 +76,15 @@ public Point() {}
     }
         */
     }
+
+    private void droidsafeUpdateMembers() {
+        x = getTaintInt();
+        y = getTaintInt();
+    }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void negate(){
-        addTaint(x);
-        addTaint(y);
     }
 
     /**
@@ -89,14 +95,14 @@ public Point() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.608 -0500", hash_original_method = "2341B98028DF5979D10DDC3712740A20", hash_generated_method = "2AF844617832D70B37734FAC2E663D69")
     
 public final void offset(int dx, int dy) {
-        x += dx;
-        y += dy;
+        addTaint(dx + dy);
+        droidsafeUpdateMembers();
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(int x, int y){
-        return getTaintBoolean();
+        return toTaintBoolean(x + y + getTaintInt());
         // Original method
         /*
         {
@@ -110,7 +116,7 @@ public final void offset(int dx, int dy) {
     @Override public boolean equals(Object o){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Point p = (Point) o;
-        return getTaintBoolean();
+        return toTaintBoolean(getTaintInt() + o.getTaintInt()); 
         // Original method
         /*
         {
@@ -174,11 +180,13 @@ public final void offset(int dx, int dy) {
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(x);
         out.writeInt(y);
+        out.writeInt(flags);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
+        addTaint(in.getTaint());
         // Original method
         /*
         {

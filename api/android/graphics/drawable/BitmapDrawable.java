@@ -643,8 +643,12 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
             return PixelFormat.TRANSLUCENT;
         }
         Bitmap bm = mBitmap;
+        /*
         return (bm == null || bm.hasAlpha() || mBitmapState.mPaint.getAlpha() < 255) ?
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
+        */
+
+        return (bm.getTaintInt() + mBitmapState.mPaint.getAlpha());
     }
     
     final static class BitmapState extends ConstantState {

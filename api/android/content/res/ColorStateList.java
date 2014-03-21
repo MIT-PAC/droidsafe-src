@@ -272,7 +272,8 @@ private void inflate(Resources r, XmlPullParser parser, AttributeSet attrs)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.589 -0500", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "F2CE60EC24AACBB277BF7C8F4AAEEF0C")
     
 public boolean isStateful() {
-        return mStateSpecs.length > 1;
+        //return mStateSpecs.length > 1;
+        return mStateSpecs.getTaintBoolean();
     }
     
     /**

@@ -438,7 +438,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isNull(int row, int column) {
-        return getType(row, column) == Cursor.FIELD_TYPE_NULL;
+        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_NULL);
     }
 
     /**
@@ -456,7 +456,7 @@ public void freeLastRow(){
 @Deprecated
     public boolean isBlob(int row, int column) {
         int type = getType(row, column);
-        return type == Cursor.FIELD_TYPE_BLOB || type == Cursor.FIELD_TYPE_NULL;
+        return toTaintBoolean(type + Cursor.FIELD_TYPE_BLOB + type + Cursor.FIELD_TYPE_NULL);
     }
 
     /**
@@ -472,7 +472,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isLong(int row, int column) {
-        return getType(row, column) == Cursor.FIELD_TYPE_INTEGER;
+        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_INTEGER);
     }
 
     /**
@@ -488,7 +488,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isFloat(int row, int column) {
-        return getType(row, column) == Cursor.FIELD_TYPE_FLOAT;
+        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_FLOAT);
     }
 
     /**
@@ -506,7 +506,7 @@ public void freeLastRow(){
 @Deprecated
     public boolean isString(int row, int column) {
         int type = getType(row, column);
-        return type == Cursor.FIELD_TYPE_STRING || type == Cursor.FIELD_TYPE_NULL;
+        return toTaintBoolean(type + Cursor.FIELD_TYPE_STRING + type + Cursor.FIELD_TYPE_NULL);
     }
 
     /**

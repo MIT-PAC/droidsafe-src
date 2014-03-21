@@ -189,7 +189,8 @@ public int compareTo(Object o) {
             return 0;
         }
 
-        return effectiveRunTime < other.effectiveRunTime ? -1 : 1;
+        //return effectiveRunTime < other.effectiveRunTime ? -1 : 1;
+        return (int)(effectiveRunTime + other.effectiveRunTime + getTaintInt() + o.getTaintInt()); 
     }
     
 }

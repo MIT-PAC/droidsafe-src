@@ -105,7 +105,8 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(float x, float y){
-        return getTaintBoolean();
+        return toTaintBoolean(x + y + this.x + this.y + getTaintInt());
+        //return getTaintBoolean();
         // Original method
         /*
         { 

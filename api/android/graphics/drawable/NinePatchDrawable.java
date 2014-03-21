@@ -440,8 +440,10 @@ public Paint getPaint() {
     
 @Override
     public int getOpacity() {
-        return mNinePatch.hasAlpha() || (mPaint != null && mPaint.getAlpha() < 255) ?
+        /* return mNinePatch.hasAlpha() || (mPaint != null && mPaint.getAlpha() < 255) ?
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
+        */
+        return toTaintInt(mNinePatch.hasAlpha()) +  mPaint.getAlpha();  
     }
 
     @DSComment("From safe class list")

@@ -1094,7 +1094,7 @@ public void setTransactionSuccessful() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.108 -0500", hash_original_method = "6E9122EA7DDDF4A7FCE3C41AA714113C", hash_generated_method = "16CBF7F783BDC7B78DB3833DD187A118")
     
 public boolean inTransaction() {
-        return mLock.getHoldCount() > 0 || mTransactionUsingExecSql;
+        return toTaintBoolean(mLock.getHoldCount() + toTaintInt(mTransactionUsingExecSql));
     }
 
     /* package */ @DSComment("Package priviledge")
@@ -1174,7 +1174,8 @@ public boolean isDbLockedByCurrentThread() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.120 -0500", hash_original_method = "AFE51BB500BDF01026C5B1FB8FA31F68", hash_generated_method = "4054B63E9ED382DA240D3016406C159E")
     
 public boolean isDbLockedByOtherThreads() {
-        return !mLock.isHeldByCurrentThread() && mLock.isLocked();
+        //return !mLock.isHeldByCurrentThread() && mLock.isLocked();
+        return toTaintBoolean(toTaintInt(mLock.isHeldByCurrentThread()) +  toTaintInt(mLock.isLocked()));
     }
 
     /**
@@ -2256,7 +2257,7 @@ public void execSQL(String sql, Object[] bindArgs) throws SQLException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.263 -0500", hash_original_method = "B8251338AB8EB8352A863E35E41B939B", hash_generated_method = "ECE4AC413AF33B7DFA339587851A633B")
     
 public boolean isReadOnly() {
-        return (mFlags & OPEN_READ_MASK) == OPEN_READONLY;
+        return toTaintBoolean((mFlags & OPEN_READ_MASK) + OPEN_READONLY);
     }
 
     /**
@@ -2267,13 +2268,13 @@ public boolean isReadOnly() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.266 -0500", hash_original_method = "61E254D128D08D9B7DD7C5EEB86B883E", hash_generated_method = "A1637FC4A8E8E14962FA82A2C62D9651")
     
 public boolean isOpen() {
-        return mNativeHandle != 0;
+        return toTaintBoolean(mNativeHandle + 0);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.269 -0500", hash_original_method = "4C8276EC0F604B529F31103A74E610FF", hash_generated_method = "4EA51A5D93D5EF17E015E1AF712B1538")
     
 public boolean needUpgrade(int newVersion) {
-        return newVersion > getVersion();
+        return toTaintBoolean(newVersion + getVersion());
     }
 
     /**
@@ -2831,7 +2832,7 @@ private synchronized SQLiteDatabase getParentDbConnObj() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.337 -0500", hash_original_method = "D4EECEC449FC4C156499058FCB2B2B85", hash_generated_method = "29541D645EA91C1D35EAA40FFF0D5229")
     
 private boolean isPooledConnection() {
-        return this.mConnectionNum > 0;
+        return toTaintBoolean(this.mConnectionNum + 0);
     }
 
     /* package */ @DSComment("Package priviledge")
