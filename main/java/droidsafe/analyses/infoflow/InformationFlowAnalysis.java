@@ -55,6 +55,7 @@ import soot.jimple.Stmt;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.NoContext;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
@@ -376,6 +377,10 @@ public class InformationFlowAnalysis {
         stmt.getRightOp().apply(rValueSwitch);
     }
 
+    private boolean ignoreContext(Context context) {
+        return Config.v().ignoreNoContextFlows && context instanceof NoContext; 
+    }
+    
     // assign_stmt = local "=" local
     private void execute(AssignStmt stmt, Local lLocal, Local rLocal, State state) {
         if (lLocal.getType() instanceof RefLikeType) {
@@ -388,6 +393,8 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context))
+                    continue;
                 ImmutableSet<InfoValue> values = state.locals.get(context, rLocal);
                 state.locals.putW(context, lLocal, values);
             }
@@ -409,6 +416,8 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context))
+                    continue;
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
@@ -438,6 +447,8 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context))
+                    continue;
                 state.locals.putW(context, lLocal, values);
             }
         }
@@ -457,6 +468,8 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context))
+                    continue;
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
@@ -479,6 +492,8 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
         for (MethodOrMethodContext methodContext : methodContexts) {
             Context context = methodContext.context();
+            if (ignoreContext(context))
+                continue;
             ImmutableSet<InfoValue> values = evaluate(context, sizeImmediate, state.locals);
             if (!(values.isEmpty())) {
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, context);
@@ -503,6 +518,8 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
         for (MethodOrMethodContext methodContext : methodContexts) {
             Context context = methodContext.context();
+            if (ignoreContext(context))
+                continue;
             HashSet<InfoValue> values = new HashSet<InfoValue>();
             for (Immediate sizeImmediate : sizeImmediates) {
                 ImmutableSet<InfoValue> sizeValues = evaluate(context, sizeImmediate, state.locals);
@@ -725,6 +742,8 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context))
+                    continue;
                 ImmutableSet<InfoValue> values = evaluate(context, rLocal, state.locals);
                 state.statics.putW(field, values);
             }
@@ -759,6 +778,8 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context))
+                    continue;
                 ImmutableSet<InfoValue> values = evaluate(context, rLocal, state.locals);
                 if (!(values.isEmpty())) {
                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);

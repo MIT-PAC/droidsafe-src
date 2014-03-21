@@ -138,12 +138,12 @@ public class Config {
     public int kobjsens = 2;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
-    /** should we add context greater than 1 to string for more precise, but could blow up! */
-    public boolean preciseStrings = false;
-    /** should  add precision for strings for all classes */
-    public boolean verypreciseStrings = false;
     /** should we not add any precision for strings and clump them all together */
     public boolean impreciseStrings = false;
+    /** if true add context sensitivity for all objects in pta, otherwise start in user code, and lose it based on k*/
+    public boolean allContextForPTA = false;
+    /** if true, then in the info flow analysis ignore methods with NoContext */
+    public boolean ignoreNoContextFlows = false;
     /** track only annotated source in the source */
     public boolean onlyannotatedsources = true;
     /** Generate pta result for eclipse plugin */
@@ -240,12 +240,12 @@ public class Config {
         Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
         options.addOption(impreciseStrs);
         
-        Option preciseStrs = new Option("precisestrings", "turn on extra precision for strings in important classes, EXPENSIVE");
-        options.addOption(preciseStrs);
-
-        Option verypreciseStrs = new Option("veryprecisestrings", "turn on extra precision for all strings, VERY EXPENSIVE");
-        options.addOption(verypreciseStrs);
-
+        Option allcontext = new Option("allcontext", "Track context on all objects, not just starting at user code.");
+        options.addOption(allcontext);
+        
+        Option ignorenocontextflows = new Option("ignorenocontextflows", "Ignore flows that occur in method with no context");
+        options.addOption(ignorenocontextflows);
+        
         Option writeJimple =
                 new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
         options.addOption(writeJimple);
@@ -404,27 +404,18 @@ public class Config {
             this.cloneStaticCalls = false;
         }
 
-        int stringOptCnt = 0;
         if (cmd.hasOption("imprecisestrings")) {
             this.impreciseStrings = true;
-            stringOptCnt++;
+        }
+       
+        if (cmd.hasOption("allcontext")) {
+            this.allContextForPTA = true;
         }
         
-        if (cmd.hasOption("precisestrings")) {
-            this.preciseStrings = true;
-            stringOptCnt++;
-        }
-
-        if (cmd.hasOption("veryprecisestrings")) {
-            this.verypreciseStrings = true;
-            stringOptCnt++;
+        if (cmd.hasOption("ignorenocontextflows")) {
+            this.ignoreNoContextFlows = true;
         }
         
-        if (stringOptCnt > 1) {
-            logger.error("Cannot enable more than one string precision option!");
-            droidsafe.main.Main.exit(1);
-        }
-
         if (cmd.hasOption("noinfoflow")) {
             this.infoFlow = false;
         }

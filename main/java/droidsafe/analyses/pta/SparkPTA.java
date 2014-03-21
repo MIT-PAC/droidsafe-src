@@ -747,7 +747,7 @@ public class SparkPTA extends PTABridge {
             allAllocNodes.add(node);
         
             //countNode(nodeCount, node);
-        
+            
             for (Map.Entry<Context, ObjectSensitiveAllocNode> entry : insNode.getContextNodeMap().entrySet()) {
                 allAllocNodes.add(entry.getValue());
                 //countNode(nodeCount, node);
@@ -810,16 +810,16 @@ public class SparkPTA extends PTABridge {
 
         opt.put("kobjsens", Integer.toString(K));
         //if you change this to true, the turn of the static method cloner!
-        opt.put("kobjsens-context-for-static-methods", "false");
-        
-        //pass on precise strings option
-        opt.put("kobjsens-precise-strings", Config.v().verypreciseStrings ? "true" : "false");
+        opt.put("kobjsens-context-for-static-methods", "true");
         
         opt.put("kobjsens-no-context-list", 
                 buildNoContextList());
         
-        //opt.put("kobjsens-important-allocators", buildImportantAllocs());
-        opt.put("kobjsens-important-allocators", "");
+        if (Config.v().allContextForPTA)
+            opt.put("kobjsens-important-allocators", "");
+        else 
+            opt.put("kobjsens-important-allocators", buildImportantAllocs());
+        
         
         //now overwrite options with options that are passed in
         for (Map.Entry<String, String> entry : opts.entrySet()) {
