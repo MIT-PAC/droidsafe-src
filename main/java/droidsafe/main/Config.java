@@ -148,6 +148,8 @@ public class Config {
     public boolean onlyannotatedsources = true;
     /** Generate pta result for eclipse plugin */
     public boolean ptaresult = true;
+    /** should a context sensitive pta add context to static inits? */
+    public boolean staticinitcontext = true;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -257,6 +259,9 @@ public class Config {
         Option noVA =
                 new Option("nova", "Do not run value analysis.");
         options.addOption(noVA);
+        
+        Option noStaticInitContext = new Option("noclinitcontext", "PTA will not add special context for static inits");
+        options.addOption(noStaticInitContext);
         
         Option noPTAResult =
                 new Option("noptaresult", "Do not translate PTA result for eclipse plugin");
@@ -368,6 +373,9 @@ public class Config {
         if (cmd.hasOption("nova"))
             this.runValueAnalysis = false;
 
+        if (cmd.hasOption("noclinitcontext"))
+            this.staticinitcontext = false;
+        
         if (cmd.hasOption("noptaresult"))
             this.ptaresult = false;
                

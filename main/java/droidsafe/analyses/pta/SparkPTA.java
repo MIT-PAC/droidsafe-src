@@ -214,7 +214,7 @@ public class SparkPTA extends PTABridge {
                 (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         
-        //dumpReachablesAndAllocNodes();
+        dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
         //dumpOutdegreesCSV();
         
@@ -805,12 +805,12 @@ public class SparkPTA extends PTABridge {
         opt.put("set-mass","false");
         
         
-        opt.put("merge-stringbuffer",Config.v().impreciseStrings ? "true" : "false");   
+        opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
         opt.put("string-constants", "true");   
 
         opt.put("kobjsens", Integer.toString(K));
         //if you change this to true, the turn of the static method cloner!
-        opt.put("kobjsens-context-for-static-methods", "true");
+        opt.put("kobjsens-context-for-static-methods", Boolean.toString(Config.v().staticinitcontext));
         
         opt.put("kobjsens-no-context-list", 
                 buildNoContextList());
