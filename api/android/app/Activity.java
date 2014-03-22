@@ -811,7 +811,7 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.620 -0500", hash_original_method = "ABF3FC9B35FB67DA4650457E79D2DAE8", hash_generated_method = "4A801EFBDC40FB7231D50804D2987BA1")
     
 public CharSequence onCreateDescription() {
-        return null;
+        return new String("<Activity.onCreateDescription>");
     }
     
     @DSVerified
