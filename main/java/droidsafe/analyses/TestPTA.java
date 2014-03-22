@@ -10,8 +10,11 @@ import org.slf4j.LoggerFactory;
 
 import soot.Context;
 import soot.Local;
+import soot.MethodContext;
 import soot.MethodOrMethodContext;
+import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
 import soot.Value;
 import soot.ValueBox;
@@ -43,7 +46,8 @@ public class TestPTA  {
 
     public TestPTA() {
         // TODO Auto-generated constructor stub
-        testUserMethods();
+        //testUserMethods();
+        findPTSets();
     }
 
 
@@ -59,20 +63,63 @@ public class TestPTA  {
         numMethods++;
         System.out.println("Call: " + sm);
     }
+    
+    private void findPTSets() {
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            SootMethod method = momc.method();
+            Context context = momc.context();
+                               
+            if (!method.isConcrete())
+                continue;
+            if (!method.hasActiveBody()) {
+                method.retrieveActiveBody();
+            }
+            
+  
+            
+            if (!"getTaint".equals(method.getName()))
+                continue;
+            
+            //SootClass clz = Scene.v().getSootClass("com.ultracoolmap.UltraCoolMapActivity");
+            SootClass clz = Scene.v().getSootClass("edu.droidsafe.Context");
+            
+            boolean found = false;
+            
+            System.out.println(momc);
+            
+            // We first gather all the memory access expressions
+            for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+                Stmt st = (Stmt) stmts.next();
+                
+                for (ValueBox vb : st.getUseAndDefBoxes()) {
+                    Value value = vb.getValue();
+                    if (PTABridge.v().isPointer(value)) {
+                        System.out.println(value);
+                        for (IAllocNode node : PTABridge.v().getPTSet(value, context)) {
+                            //if (node.getType() instanceof RefType && 
+                            //        ((RefType)node.getType()).getSootClass().equals(clz)) {
+                                
+                                System.out.println("\t" + node);
+                            //}
+                            
+                        }
+                        
+                         
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
 
     private void testUserMethods() {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             SootMethod method = momc.method();
             Context context = momc.context();
            
-            /*
-          if (API.v().isSystemMethod(method)) 
+            if (API.v().isSystemMethod(method)) 
               continue;
-              */
-            
-            if (!"<java.net.InterfaceAddress: java.lang.String toString()>".equals(method.getSignature()))
-                continue;
-          
+                        
                       
             if (!method.isConcrete())
                 continue;
@@ -80,17 +127,21 @@ public class TestPTA  {
                 method.retrieveActiveBody();
             }
            
+            /*
             Iterator<Edge> edges = Scene.v().getCallGraph().edgesInto(momc); 
             while (edges.hasNext()) {
                 System.out.println(edges.next());
             }
+            */
             
             System.out.println(momc);
-            
+          
+            /*
             edges = Scene.v().getCallGraph().edgesOutOf(momc); 
             while (edges.hasNext()) {
                 System.out.println(edges.next());
             }
+            */
             
             // We first gather all the memory access expressions
             for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
@@ -100,13 +151,8 @@ public class TestPTA  {
                     Value value = vb.getValue();
                     if (PTABridge.v().isPointer(value)) {
                         System.out.println(value);
-                        System.out.println("  Context Sensitive");
+                        //System.out.println("  Context Sensitive");
                         for (IAllocNode node : PTABridge.v().getPTSet(value, context)) {
-                            System.out.println("\t" + node);
-                        }
-                        
-                        System.out.println("  Context Insensitive");
-                        for (IAllocNode node : PTABridge.v().getPTSetIns(value)) {
                             System.out.println("\t" + node);
                         }
                     }
