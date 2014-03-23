@@ -24,5 +24,7 @@ public enum DSSinkKind {
     SYSTEM_SETTINGS,
     VOIP,
     UNSPECIFIED,
-    USB
+    USB,
+    REFLECTION,
+    IPC
 }

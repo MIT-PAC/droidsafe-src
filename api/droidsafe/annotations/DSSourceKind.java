@@ -20,5 +20,6 @@ public enum DSSourceKind {
     SYSTEM_SETTINGS,
     UNIQUE_IDENTIFIER,
     UNSPECIFIED,
-    UNMODELED
+    UNMODELED,
+    REFLECTION
 }
