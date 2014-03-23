@@ -780,7 +780,7 @@ public class SparkPTA extends PTABridge {
         opt.put("vta","false");                   
         opt.put("rta","false");                   
         opt.put("field-based","false");           
-        opt.put("types-for-sites","false");        
+        
         
   
         
@@ -804,12 +804,13 @@ public class SparkPTA extends PTABridge {
         opt.put("add-tags","false");             
         opt.put("set-mass","false");
         
+        opt.put("types-for-sites","false");        
         
         opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
         opt.put("string-constants", "true");   
 
         opt.put("kobjsens", Integer.toString(K));
-        //if you change this to true, the turn of the static method cloner!
+        
         opt.put("kobjsens-context-for-static-methods", Boolean.toString(Config.v().staticinitcontext));
         
         opt.put("kobjsens-no-context-list", 
