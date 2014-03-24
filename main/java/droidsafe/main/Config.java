@@ -150,6 +150,8 @@ public class Config {
     public boolean ptaresult = true;
     /** should a context sensitive pta add context to static inits? */
     public boolean staticinitcontext = true;
+    /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
+    public boolean typesForContext = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -244,6 +246,9 @@ public class Config {
         
         Option allcontext = new Option("allcontext", "Track context on all objects, not just starting at user code.");
         options.addOption(allcontext);
+        
+        Option tforC = new Option("typesforcontext", "use types (instead of alloc sites) for object sensitive context elements > 1");
+        options.addOption(tforC);
         
         Option ignorenocontextflows = new Option("ignorenocontextflows", "Ignore flows that occur in method with no context");
         options.addOption(ignorenocontextflows);
@@ -418,6 +423,10 @@ public class Config {
        
         if (cmd.hasOption("allcontext")) {
             this.allContextForPTA = true;
+        }
+        
+        if (cmd.hasOption("typesforcontext")) {
+            this.typesForContext = true;
         }
         
         if (cmd.hasOption("ignorenocontextflows")) {

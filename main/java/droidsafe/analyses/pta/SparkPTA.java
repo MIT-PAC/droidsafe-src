@@ -811,10 +811,12 @@ public class SparkPTA extends PTABridge {
 
         opt.put("kobjsens", Integer.toString(K));
         
-        opt.put("kobjsens-context-for-static-methods", Boolean.toString(Config.v().staticinitcontext));
+        opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
         
         opt.put("kobjsens-no-context-list", 
                 buildNoContextList());
+        
+        opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));
         
         if (Config.v().allContextForPTA)
             opt.put("kobjsens-important-allocators", "");
