@@ -416,6 +416,7 @@ private BigDecimal(long smallValue, int scale){
         this.smallValue = smallValue;
         this.scale = scale;
         this.bitLength = bitLength(smallValue);
+        addTaint(smallValue + scale);
     }
 
     @DSComment("Private Method")
@@ -426,6 +427,7 @@ private BigDecimal(int smallValue, int scale){
         this.smallValue = smallValue;
         this.scale = scale;
         this.bitLength = bitLength(smallValue);
+        addTaint(smallValue + scale);
     }
 
     /**
@@ -454,6 +456,8 @@ public BigDecimal(char[] in, int offset, int len) {
         String scaleString; // buffer for scale
         StringBuilder unscaledBuffer; // buffer for unscaled value
         long newScale; // the new scale
+
+        addTaint(in[0] + offset + len);
 
         if (in == null) {
             throw new NullPointerException();
@@ -681,6 +685,7 @@ public BigDecimal(String val, MathContext mc) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.188 -0500", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "21F06AAA0AAC6CA3F389A18FE466D483")
     
 public BigDecimal(double val) {
+        addTaint(val);
         if (Double.isInfinite(val) || Double.isNaN(val)) {
             throw new NumberFormatException("Infinity or NaN: " + val);
         }
@@ -825,6 +830,7 @@ public BigDecimal(BigInteger unscaledVal, int scale) {
         }
         this.scale = scale;
         setUnscaledValue(unscaledVal);
+        addTaint(unscaledVal.getTaintInt() + scale);
     }
 
     /**
@@ -1576,9 +1582,9 @@ public BigDecimal divideToIntegralValue(BigDecimal divisor) {
             }
             newScale = tempScale;
         }
-        return ((integralValue.signum() == 0)
+        return (integralValue.signum() != 0)
         ? zeroScaledBy(newScale)
-                : new BigDecimal(integralValue, safeLongToInt(newScale)));
+                : new BigDecimal(integralValue, safeLongToInt(newScale));
     }
 
     /**
@@ -2416,6 +2422,8 @@ public BigDecimal stripTrailingZeros() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.355 -0500", hash_original_method = "1C45ED34C4C1F5BEBD8BB8EF3CBE1A6B", hash_generated_method = "1695AC05EBFF1DFDEC554390AEF57837")
     
 public int compareTo(BigDecimal val) {
+    return (getTaintInt() - val.getTaintInt());
+    /*
         int thisSign = signum();
         int valueSign = val.signum();
 
@@ -2445,6 +2453,7 @@ public int compareTo(BigDecimal val) {
         } else  {
             return 1;
         }
+    */
     }
 
     /**
@@ -2464,6 +2473,8 @@ public int compareTo(BigDecimal val) {
     
 @Override
     public boolean equals(Object x) {
+        return super.equals(x);
+        /*
         if (this == x) {
             return true;
         }
@@ -2475,6 +2486,7 @@ public int compareTo(BigDecimal val) {
 
         }
         return false;
+        */
     }
 
     /**
@@ -3133,6 +3145,8 @@ private void inplaceRound(MathContext mc) {
         scale = safeLongToInt(newScale);
         precision = mcPrecision;
         setUnscaledValue(integerAndFraction[0]);
+
+        addTaint(mc.getTaint());
     }
     /**
      * This method implements an efficient rounding for numbers which unscaled
@@ -3237,6 +3251,7 @@ private int approxPrecision() {
 private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
         in.defaultReadObject();
+        addTaint(in.getTaint());
 
         this.bitLength = intVal.bitLength();
         if (this.bitLength < 64) {
@@ -3270,6 +3285,7 @@ private void readObject(ObjectInputStream in) throws IOException,
 private void writeObject(ObjectOutputStream out) throws IOException {
         getUnscaledValue();
         out.defaultWriteObject();
+        out.addTaint(getTaint());
     }
 
     @DSComment("Private Method")
@@ -3293,6 +3309,33 @@ private void setUnscaledValue(BigInteger unscaledValue) {
         if(this.bitLength < 64) {
             this.smallValue = unscaledValue.longValue();
         }
+        addTaint(unscaledValue.getTaint());
     }
+
+    @Override
+    public void addTaint(double d) {
+        super.addTaint(d);
+        bitLength = getTaintInt();
+        hashCode = getTaintInt();
+        //intVal = getTaintInt();
+        precision = getTaintInt();
+        scale = getTaintInt();
+        smallValue = getTaintInt();
+        toStringImage = taint.toString();
+    }
+
+    @Override
+    public void addTaint(DSTaintObject d) {
+        super.addTaint(d);
+        bitLength = getTaintInt();
+        hashCode = getTaintInt();
+        //intVal = getTaintInt();
+        precision = getTaintInt();
+        scale = getTaintInt();
+        smallValue = getTaintInt();
+        toStringImage = taint.toString();
+    }
+
+
 }
 

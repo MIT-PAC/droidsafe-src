@@ -186,7 +186,7 @@ private synchronized void initGenericType() {
     
 public boolean isSynthetic() {
         int flags = getFieldModifiers(declaringClass, slot);
-        return (flags & Modifier.SYNTHETIC) != 0;
+        return toTaintBoolean((flags & Modifier.SYNTHETIC) + 0);
     }
 
     /**
@@ -222,7 +222,7 @@ public String toGenericString() {
     
 public boolean isEnumConstant() {
         int flags = getFieldModifiers(declaringClass, slot);
-        return (flags & Modifier.ENUM) != 0;
+        return toTaintBoolean((flags & Modifier.ENUM) + 0);
     }
 
     /**

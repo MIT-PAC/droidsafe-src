@@ -40,7 +40,7 @@ public final class Float extends Number implements Comparable<Float> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.286 -0500", hash_original_method = "F3C86372B308CB7AC0FC99B1DB4B622C", hash_generated_method = "683D8A9E5B30B40DB742F066FBD6598C")
     
 public static boolean isInfinite(float f) {
-        return (f == POSITIVE_INFINITY) || (f == NEGATIVE_INFINITY);
+        return toTaintBoolean(f); 
     }
 
     /**
@@ -57,7 +57,8 @@ public static boolean isInfinite(float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.291 -0500", hash_original_method = "797988AA09B377AAD595A673B0C7988B", hash_generated_method = "D920FE10DB13EBBC00F5D9F8CC7066A9")
     
 public static boolean isNaN(float f) {
-        return f != f;
+        return toTaintBoolean(f);
+        //return f != f;
     }
 
     /**
@@ -136,6 +137,8 @@ public static Float valueOf(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.309 -0500", hash_original_method = "437B20A71BAFB5FA99C486D62470A20A", hash_generated_method = "A08FC7329D3A6C2C7FB657184679034A")
     
 public static int compare(float float1, float float2) {
+        return (int)(float1 + float2);
+        /*
         // Non-zero, non-NaN checking.
         if (float1 > float2) {
             return 1;
@@ -164,6 +167,7 @@ public static int compare(float float1, float float2) {
         // (f1 == f2) ? 0 : (f1 < f2) ? -1 : 1
         // because f1 and f2 are either 0 or Integer.MIN_VALUE
         return (f1 >> 31) - (f2 >> 31);
+        */
     }
 
     /**
@@ -208,6 +212,11 @@ public static String toHexString(float f) {
             return "-Infinity";
         }
 
+        String str = new String();
+        str.addTaint(f);
+        return str;
+
+        /*
         int bitValue = floatToIntBits(f);
 
         boolean negative = (bitValue & 0x80000000) != 0;
@@ -276,6 +285,7 @@ public static String toHexString(float f) {
             hexString.append(exponent - 127);
         }
         return hexString.toString();
+        */
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.197 -0500", hash_original_field = "000C4FCEDA08ED86907ED4A1E40905D5", hash_generated_field = "2D74B2AF393FD57B1253D83587B03C3D")
 
@@ -357,6 +367,7 @@ public static String toHexString(float f) {
     
 public Float(float value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -371,6 +382,7 @@ public Float(float value) {
     
 public Float(double value) {
         this.value = (float) value;
+        addTaint(value);
     }
 
     /**
@@ -453,8 +465,11 @@ public int compareTo(Float object) {
     
 @Override
     public boolean equals(Object object) {
+        /*
         return (object instanceof Float) &&
                 (floatToIntBits(this.value) == floatToIntBits(((Float) object).value));
+        */
+        return super.equals(object);
     }
 
     /**

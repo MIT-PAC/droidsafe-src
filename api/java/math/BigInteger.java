@@ -681,6 +681,8 @@ public boolean testBit(int n) {
         if (n < 0) {
             throw new ArithmeticException("n < 0: " + n);
         }
+        return toTaintBoolean(getTaintInt() + getBitInt().getTaintInt() + n);
+/*
         int sign = signum();
         if (sign > 0 && nativeIsValid && !javaIsValid) {
             return getBigInt().isBitSet(n);
@@ -708,8 +710,9 @@ public boolean testBit(int n) {
                     digit = ~digit;
                 }
             }
-            return ((digit & n) != 0);
+            return toTaintBoolean(((digit & n) + 0));
         }
+*/
     }
 
     /**
@@ -1060,6 +1063,8 @@ public BigInteger max(BigInteger value) {
     
 @Override
     public boolean equals(Object x) {
+        return super.equals(x);
+        /*
         if (this == x) {
             return true;
         }
@@ -1067,6 +1072,7 @@ public BigInteger max(BigInteger value) {
             return this.compareTo((BigInteger) x) == 0;
         }
         return false;
+        */
     }
 
     /**

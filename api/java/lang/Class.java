@@ -1298,7 +1298,7 @@ public Object[] getSigners() {
 public boolean isAnnotation() {
         final int ACC_ANNOTATION = 0x2000;  // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        return (mod & ACC_ANNOTATION) != 0;
+        return toTaintBoolean((mod & ACC_ANNOTATION) + 0);
     }
 
     @DSComment("Refelction/class loader")
@@ -1351,7 +1351,10 @@ public boolean isAnnotation() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.063 -0500", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "295B3FD7BCB14D1F140029116A5683AB")
     
 public boolean isArray() {
-        return getComponentType() != null;
+        //return getComponentType() != null;
+        if (getComponentType() != null)
+            return getComponentType().getTaintBoolean();
+        return getTaintBoolean();
     }
 
     /**
@@ -1390,7 +1393,8 @@ public boolean isArray() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.069 -0500", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "433854292DBBE11D1B7A199C41DDB4FD")
     
 public boolean isEnum() {
-        return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
+        //return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
+        return toTaintBoolean(getModifiers() + getSuperclass().getTaintInt());
     }
 
     /**
@@ -1443,7 +1447,8 @@ public boolean isEnum() {
 public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
-        return enclosed && !isAnonymousClass();
+        //return enclosed && !isAnonymousClass();
+        return toTaintBoolean(toTaintInt(enclosed) + toTaintInt(isAnonymousClass()));
     }
 
     /**
@@ -1458,7 +1463,10 @@ public boolean isLocalClass() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.081 -0500", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "ED77BF92668C44C3CF8FD9420EB90C99")
     
 public boolean isMemberClass() {
-        return getDeclaringClass() != null;
+        //return getDeclaringClass() != null;
+        if (getDeclaringClass() != null)
+            return getDeclaringClass().getTaintBoolean();
+        return getTaintBoolean();
     }
 
     /**
@@ -1487,7 +1495,7 @@ public boolean isMemberClass() {
 public boolean isSynthetic() {
         final int ACC_SYNTHETIC = 0x1000;   // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        return (mod & ACC_SYNTHETIC) != 0;
+        return toTaintBoolean((mod & ACC_SYNTHETIC) + 0);
     }
 
     /**

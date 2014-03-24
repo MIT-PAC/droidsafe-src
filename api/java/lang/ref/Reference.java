@@ -114,7 +114,10 @@ public T get() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.755 -0500", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "FB8F80D156FCF2C6768C48826119B1E7")
     
 public boolean isEnqueued() {
-        return queueNext != null;
+        //return queueNext != null;
+        if (queueNext == null)
+            return false;
+        return queueNext.getTaintBoolean();
     }
     
 }

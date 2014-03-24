@@ -77,12 +77,7 @@ public Point() {}
         */
     }
 
-    private void droidsafeUpdateMembers() {
-        x = getTaintInt();
-        y = getTaintInt();
-    }
-    
-    @DSComment("From safe class list")
+        @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void negate(){
     }
@@ -195,5 +190,21 @@ public final void offset(int dx, int dy) {
     }
         */
     }
+
+    private void droidsafeUpdateMembers() {
+        x = getTaintInt();
+        y = getTaintInt();
+    }
+
+    @Override public void addTaint(double t) {
+        super.addTaint(t);
+        droidsafeUpdateMembers();
+    }
+
+    @Override public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        droidsafeUpdateMembers();
+    }
+
 }
 

@@ -34,7 +34,8 @@ public final class Double extends Number implements Comparable<Double> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.654 -0500", hash_original_method = "A3EC509E9519032EDFEF225EA8C949FF", hash_generated_method = "B11887FC3B6A3BAD273423365EA6BE37")
     
 public static boolean isInfinite(double d) {
-        return (d == POSITIVE_INFINITY) || (d == NEGATIVE_INFINITY);
+        //return (d == POSITIVE_INFINITY) || (d == NEGATIVE_INFINITY);
+        return toTaintBoolean((d + POSITIVE_INFINITY) + (d + NEGATIVE_INFINITY));
     }
 
     /**
@@ -51,7 +52,8 @@ public static boolean isInfinite(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.659 -0500", hash_original_method = "A570339C802CFE5901F930FCAA1CB116", hash_generated_method = "7F8B0D286435B57612BBCABE86B8E8D3")
     
 public static boolean isNaN(double d) {
-        return d != d;
+        return toTaintBoolean(d);
+        //return d != d;
     }
     
     @DSComment("From safe class list")
@@ -133,6 +135,7 @@ public static Double valueOf(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.681 -0500", hash_original_method = "16F4C4AC195BAC3086DB19C14344D828", hash_generated_method = "F607633F4BB8D1C812C817D81F436495")
     
 public static int compare(double double1, double double2) {
+        /*
         // Non-zero, non-NaN checking.
         if (double1 > double2) {
             return 1;
@@ -160,6 +163,9 @@ public static int compare(double double1, double double2) {
         // The below expression is equivalent to:
         // (d1 == d2) ? 0 : (d1 < d2) ? -1 : 1
         return (int) ((d1 >> 63) - (d2 >> 63));
+        */
+
+        return (int)(double1 + double2);
     }
 
     /**
@@ -204,6 +210,11 @@ public static String toHexString(double d) {
             return "-Infinity";
         }
 
+        String str = new String();
+        str.addTaint(d);
+        return str;
+
+        /*
         long bitValue = doubleToLongBits(d);
 
         boolean negative = (bitValue & 0x8000000000000000L) != 0;
@@ -272,6 +283,7 @@ public static String toHexString(double d) {
             hexString.append(Long.toString(exponent - 1023));
         }
         return hexString.toString();
+        */
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.569 -0500", hash_original_field = "35B23ACD344EC3F8625C720C8375C8B0", hash_generated_field = "7F5B63AE36FC607559921B1D63D2079E")
 
@@ -357,6 +369,7 @@ public static String toHexString(double d) {
     
 public Double(double value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -446,8 +459,11 @@ public int compareTo(Double object) {
     
 @Override
     public boolean equals(Object object) {
+        return super.equals(object);
+        /*
         return (object instanceof Double) &&
                 (doubleToLongBits(this.value) == doubleToLongBits(((Double) object).value));
+        */
     }
 
     @DSComment("From safe class list")

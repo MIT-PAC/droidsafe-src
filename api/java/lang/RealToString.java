@@ -79,6 +79,11 @@ public void appendDouble(AbstractStringBuilder sb, double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.683 -0500", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "5848186623705B9B0A9C31305748F30C")
     
 private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
+    String ret = new String();
+    ret.addTaint(sb.getTaint());
+    ret.addTaint(inputNumber);
+    return ret; 
+    /*
         long inputNumberBits = Double.doubleToRawLongBits(inputNumber);
         boolean positive = (inputNumberBits & Double.SIGN_MASK) == 0;
         int e = (int) ((inputNumberBits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS);
@@ -135,6 +140,7 @@ private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
             freeFormat(dst, positive);
         }
         return (sb != null) ? null : dst.toString();
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.685 -0500", hash_original_method = "2E0F3580AFBA548A22C88B300D06F425", hash_generated_method = "0226850FC0A373006994FC1BF3B248F6")

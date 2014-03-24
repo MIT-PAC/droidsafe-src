@@ -18,7 +18,8 @@ public final class Integer extends Number implements Comparable<Integer> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.163 -0500", hash_original_method = "08B34540C6F5E5FA9EF442057B264C3A", hash_generated_method = "04989A44666D307E13510E4935EA503C")
     
 public static int compare(int lhs, int rhs) {
-        return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
+        //return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
+        return (lhs + rhs);
     }
 
     @DSComment("Private Method")
@@ -689,6 +690,7 @@ public static Integer valueOf(int i) {
     
 public Integer(int value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -763,7 +765,8 @@ public int compareTo(Integer object) {
     
 @Override
     public boolean equals(Object o) {
-        return (o instanceof Integer) && (((Integer) o).value == value);
+        //return (o instanceof Integer) && (((Integer) o).value == value);
+        return super.equals(o);
     }
 
     @DSComment("From safe class list")

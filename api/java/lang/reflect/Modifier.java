@@ -76,7 +76,7 @@ public static int methodModifiers() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.596 -0500", hash_original_method = "4393F5C84F1A6C20484EB804711F0AF9", hash_generated_method = "3CF1C591AE7F3113A85B2A4E0D9D09C9")
     
 public static boolean isAbstract(int modifiers) {
-        return ((modifiers & ABSTRACT) != 0);
+        return toTaintBoolean(((modifiers & ABSTRACT) + 0));
     }
 
     /**
@@ -91,7 +91,7 @@ public static boolean isAbstract(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.598 -0500", hash_original_method = "CBF7AC275E896CAF05907BF83162C1F9", hash_generated_method = "2F28EE34F8D175F67B3F0E2B79741BE8")
     
 public static boolean isFinal(int modifiers) {
-        return ((modifiers & FINAL) != 0);
+        return toTaintBoolean(((modifiers & FINAL) + 0));
     }
 
     /**
@@ -106,7 +106,7 @@ public static boolean isFinal(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.601 -0500", hash_original_method = "6989910559795EB48195A46B3188D519", hash_generated_method = "8B5865805C5F5F9CA6531F51EA172A4C")
     
 public static boolean isInterface(int modifiers) {
-        return ((modifiers & INTERFACE) != 0);
+        return toTaintBoolean(((modifiers & INTERFACE) + 0));
     }
 
     /**
@@ -121,7 +121,7 @@ public static boolean isInterface(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.603 -0500", hash_original_method = "DA6BEE0F153DB8F35550AFD9CB07FE76", hash_generated_method = "B21F0FD66FA20515D3A05AAD7CB0A45C")
     
 public static boolean isNative(int modifiers) {
-        return ((modifiers & NATIVE) != 0);
+        return toTaintBoolean(((modifiers & NATIVE) + 0));
     }
 
     /**
@@ -136,7 +136,7 @@ public static boolean isNative(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.606 -0500", hash_original_method = "C23CD0C026CEBAE83AF0F37DEB3B9BE7", hash_generated_method = "66C3354DF6123C83C6A6B80B6AFD7803")
     
 public static boolean isPrivate(int modifiers) {
-        return ((modifiers & PRIVATE) != 0);
+        return toTaintBoolean(((modifiers & PRIVATE) + 0));
     }
 
     /**
@@ -151,7 +151,7 @@ public static boolean isPrivate(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.608 -0500", hash_original_method = "34F3755D4F3C080FEB39C242B465057F", hash_generated_method = "4AD66D8FB2A0CB5DE3FB088B823E1A30")
     
 public static boolean isProtected(int modifiers) {
-        return ((modifiers & PROTECTED) != 0);
+        return toTaintBoolean(((modifiers & PROTECTED) + 0));
     }
 
     /**
@@ -168,7 +168,7 @@ public static boolean isProtected(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.611 -0500", hash_original_method = "F32A5C6A60F6D3AE4E2798FB3C917182", hash_generated_method = "17A09D042FE469EEA8A7D832BFCD0E80")
     
 public static boolean isPublic(int modifiers) {
-        return ((modifiers & PUBLIC) != 0);
+        return toTaintBoolean(((modifiers & PUBLIC) + 0));
     }
 
     /**
@@ -185,7 +185,7 @@ public static boolean isPublic(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.613 -0500", hash_original_method = "F73282A82DE53F4E8602A983F3FBD929", hash_generated_method = "4F839491C85D91B0C9553754D6711D11")
     
 public static boolean isStatic(int modifiers) {
-        return ((modifiers & STATIC) != 0);
+        return toTaintBoolean(((modifiers & STATIC) + 0));
     }
 
     /**
@@ -200,7 +200,7 @@ public static boolean isStatic(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.616 -0500", hash_original_method = "69B63C272419F112013D47037EF5FF0C", hash_generated_method = "DEAEEA89B99839FC0BF1C8CB2C51928A")
     
 public static boolean isStrict(int modifiers) {
-        return ((modifiers & STRICT) != 0);
+        return toTaintBoolean(((modifiers & STRICT) + 0));
     }
 
     /**
@@ -215,7 +215,7 @@ public static boolean isStrict(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.619 -0500", hash_original_method = "49E2E5B1428F9F4298859885B6785735", hash_generated_method = "4D461F8AB64D65327C584ABB44CC0B52")
     
 public static boolean isSynchronized(int modifiers) {
-        return ((modifiers & SYNCHRONIZED) != 0);
+        return toTaintBoolean(((modifiers & SYNCHRONIZED) + 0));
     }
 
     /**
@@ -232,7 +232,7 @@ public static boolean isSynchronized(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.621 -0500", hash_original_method = "57209F613683B2F4AD04C6D317C5C05F", hash_generated_method = "43B1846810DDC077F366CAA38168D506")
     
 public static boolean isTransient(int modifiers) {
-        return ((modifiers & TRANSIENT) != 0);
+        return toTaintBoolean(((modifiers & TRANSIENT) + 0));
     }
 
     /**
@@ -247,7 +247,7 @@ public static boolean isTransient(int modifiers) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.624 -0500", hash_original_method = "B0E5F2B6D36D4B1865726F3E3779D240", hash_generated_method = "7A46AE2CCC9985861E307F94713AFCE5")
     
 public static boolean isVolatile(int modifiers) {
-        return ((modifiers & VOLATILE) != 0);
+        return toTaintBoolean(((modifiers & VOLATILE) + 0));
     }
 
     /**

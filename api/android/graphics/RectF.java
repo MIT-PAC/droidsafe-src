@@ -29,8 +29,7 @@ public class RectF implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.926 -0500", hash_original_method = "1FAEC0442F27706D6D5F3E840B971AB4", hash_generated_method = "B7ECD36105B38ABAEED5381ABDCCD9B3")
     
 public static boolean intersects(RectF a, RectF b) {
-        return a.left < b.right && b.left < a.right
-                && a.top < b.bottom && b.top < a.bottom;
+        return toTaintBoolean(a.getTaintInt() + b.getTaintInt());
     }
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.336 -0400", hash_original_field = "5E7201C60E05C026DD3550B3101B80A5", hash_generated_field = "C46FA4AE8D434E2146AE8F7264B82507")
@@ -68,6 +67,8 @@ public RectF[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.862 -0500", hash_original_field = "850F91B179F4198EC71F4EA92A267B16", hash_generated_field = "3601A2C074D2F75BE50976E0F9B684C6")
 
     public float bottom;
+
+    
     
     /**
      * Create a new empty RectF. All coordinates are initialized to 0.
@@ -133,7 +134,7 @@ public RectF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean isEmpty() {
-        return false;
+        return getTaintBoolean();
     }
     
     @DSComment("From safe class list")
@@ -153,13 +154,13 @@ public RectF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final float centerX() {
-        return 0;
+        return getTaintFloat();
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final float centerY() {
-        return 0;
+        return getTaintFloat();
     }
     
     @DSComment("From safe class list")
@@ -202,11 +203,8 @@ public RectF() {}
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.903 -0500", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "209DD68EA03C32B026C6A69EF4BF7652")
     
-public void offset(float dx, float dy) {
-        left    += dx;
-        top     += dy;
-        right   += dx;
-        bottom  += dy;
+    public void offset(float dx, float dy) {
+        addTaint(dx + dy);
     }
 
     /**
@@ -221,10 +219,7 @@ public void offset(float dx, float dy) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.906 -0500", hash_original_method = "17E8F6A0DA6BEF949708E45EF28FBDEC", hash_generated_method = "072395F153C45E5EB171F20F34EFAEBF")
     
 public void offsetTo(float newLeft, float newTop) {
-        right += newLeft - left;
-        bottom += newTop - top;
-        left = newLeft;
-        top = newTop;
+        addTaint(newLeft + newTop);
     }
     
     /**
@@ -241,10 +236,7 @@ public void offsetTo(float newLeft, float newTop) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.908 -0500", hash_original_method = "4ED8FEC7EC4817417CFF539CEB8CD3D5", hash_generated_method = "5C4D73D90534F267ACD4AF169BAC2F86")
     
 public void inset(float dx, float dy) {
-        left    += dx;
-        top     += dy;
-        right   -= dx;
-        bottom  -= dy;
+        addTaint(dx + dy);
     }
 
     /**
@@ -263,8 +255,7 @@ public void inset(float dx, float dy) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.910 -0500", hash_original_method = "7C65F21BA78E9C886CB99F3A821D7FC2", hash_generated_method = "478A0BFDE6FD19E13A25783CBA08CD39")
     
 public boolean contains(float x, float y) {
-        return left < right && top < bottom  // check for empty first
-                && x >= left && x < right && y >= top && y < bottom;
+        return toTaintBoolean(x + y + getTaintInt());
     }
     
     /**
@@ -285,10 +276,7 @@ public boolean contains(float x, float y) {
     
 public boolean contains(float left, float top, float right, float bottom) {
                 // check for empty first
-        return this.left < this.right && this.top < this.bottom
-                // now check for containment
-                && this.left <= left && this.top <= top
-                && this.right >= right && this.bottom >= bottom;
+        return toTaintBoolean(left + top + right + bottom + getTaintInt());
     }
     
     /**
@@ -305,10 +293,7 @@ public boolean contains(float left, float top, float right, float bottom) {
     
 public boolean contains(RectF r) {
                 // check for empty first
-        return this.left < this.right && this.top < this.bottom
-                // now check for containment
-                && left <= r.left && top <= r.top
-                && right >= r.right && bottom >= r.bottom;
+        return toTaintBoolean(r.getTaintInt() + getTaintInt());
     }
     
     /**
@@ -334,6 +319,8 @@ public boolean contains(RectF r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.917 -0500", hash_original_method = "B665C4D2FA87DEF248CEB5906A538992", hash_generated_method = "2D0C490DF28548B6DC59C756C6E5ED0F")
     
 public boolean intersect(float left, float top, float right, float bottom) {
+    return toTaintBoolean(left + top + right + bottom + getTaintInt());
+    /*
         if (this.left < right && left < this.right
                 && this.top < bottom && top < this.bottom) {
             if (this.left < left) {
@@ -351,6 +338,7 @@ public boolean intersect(float left, float top, float right, float bottom) {
             return true;
         }
         return false;
+        */
     }
     
     /**
@@ -390,6 +378,7 @@ public boolean intersect(RectF r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.921 -0500", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "2AF3213ACBAE2E61B84DD66231F68225")
     
 public boolean setIntersect(RectF a, RectF b) {
+    /*
         if (a.left < b.right && b.left < a.right
                 && a.top < b.bottom && b.top < a.bottom) {
             left = Math.max(a.left, b.left);
@@ -399,6 +388,9 @@ public boolean setIntersect(RectF a, RectF b) {
             return true;
         }
         return false;
+    */
+        addTaint(a.getTaintInt() + b.getTaintInt());
+        return getTaintBoolean();
     }
     
     /**
@@ -421,8 +413,11 @@ public boolean setIntersect(RectF a, RectF b) {
     
 public boolean intersects(float left, float top, float right,
                               float bottom) {
+        /*
         return this.left < right && left < this.right
                 && this.top < bottom && top < this.bottom;
+        */
+        return toTaintBoolean(left + top + right + bottom + getTaintInt());
     }
     
     /**
@@ -466,6 +461,7 @@ public void roundOut(Rect dst) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.934 -0500", hash_original_method = "4ED17A6A0BD221C6F562FF187EDE0EC1", hash_generated_method = "4C2692EB26E3BEAAD6C7D4E751D89554")
     
 public void union(float left, float top, float right, float bottom) {
+    /*
         if ((left < right) && (top < bottom)) {
             if ((this.left < this.right) && (this.top < this.bottom)) {
                 if (this.left > left)
@@ -483,6 +479,8 @@ public void union(float left, float top, float right, float bottom) {
                 this.bottom = bottom;
             }
         }
+    */
+    addTaint(left + top + right + bottom);
     }
     
     /**
@@ -512,6 +510,7 @@ public void union(RectF r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.938 -0500", hash_original_method = "5491E96A191FF9AA58559CF28A27B675", hash_generated_method = "F8C61246652072081D322D7B41B43ABE")
     
 public void union(float x, float y) {
+    /*
         if (x < left) {
             left = x;
         } else if (x > right) {
@@ -522,6 +521,8 @@ public void union(float x, float y) {
         } else if (y > bottom) {
             bottom = y;
         }
+      */
+        addTaint(x + y);
     }
     
     /**
@@ -536,6 +537,7 @@ public void union(float x, float y) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.940 -0500", hash_original_method = "5E187609DBD260B5F8E2F7AA44836C46", hash_generated_method = "E1C40BC234F345C5C8DA68129055BA5D")
     
 public void sort() {
+    /*
         if (left > right) {
             float temp = left;
             left = right;
@@ -546,6 +548,7 @@ public void sort() {
             top = bottom;
             bottom = temp;
         }
+    */
     }
 
     /**
@@ -573,6 +576,7 @@ public void writeToParcel(Parcel out, int flags) {
         out.writeFloat(top);
         out.writeFloat(right);
         out.writeFloat(bottom);
+        out.addTaint(flags);
     }
     
     /**
@@ -586,10 +590,13 @@ public void writeToParcel(Parcel out, int flags) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.954 -0500", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "32582E56D2E66C5F6A01976E86765F0C")
     
 public void readFromParcel(Parcel in) {
+        addTaint(in.getTaint());
+        /*
         left = in.readFloat();
         top = in.readFloat();
         right = in.readFloat();
         bottom = in.readFloat();
+        */
     }
     // orphaned legacy method
     
@@ -602,6 +609,23 @@ public void readFromParcel(Parcel in) {
 	public final float left() {
 		return getTaintFloat();
 	}
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private void droidsafeUpdateMembers() {
+        right = getTaintInt();
+        left  = getTaintInt();
+        bottom = getTaintInt();
+        top    = getTaintInt();
+    }
+
+    @Override public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        droidsafeUpdateMembers();
+    }
     
+    @Override public void addTaint(double t) {
+        super.addTaint(t);
+        droidsafeUpdateMembers();
+    }
 }
 

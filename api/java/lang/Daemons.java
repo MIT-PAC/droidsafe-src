@@ -70,7 +70,9 @@ public abstract void run();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.211 -0500", hash_original_method = "DAD25559614D18C95C6D7AD3A5FF9D6E", hash_generated_method = "8B7294982D4EEACFF88A4080ED0EA4C4")
         
 protected synchronized boolean isRunning() {
-            return thread != null;
+            if (thread != null)
+                return thread.getTaintBoolean();
+            return getTaintBoolean();
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.214 -0500", hash_original_method = "87D921900F5E002E9B0AB652C178420C", hash_generated_method = "0D5FBDB54D594FDB7E4154CC30D14C2A")

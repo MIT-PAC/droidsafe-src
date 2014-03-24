@@ -182,7 +182,7 @@ public int remove(Object key) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.975 -0500", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "BCEA08F5849F536168BFB81023CBA1DB")
     
 public boolean isEmpty() {
-        return size == 0;
+        return toTaintBoolean(size + 0);
     }
 }
 

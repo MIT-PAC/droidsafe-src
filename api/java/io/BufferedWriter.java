@@ -150,7 +150,8 @@ private void flushInternal() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.418 -0500", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "49B5D6BDDF3744E41E97B3326CF144AB")
     
 private boolean isClosed() {
-        return out == null;
+        //return out == null;
+        return out.getTaintBoolean();
     }
 
     /**

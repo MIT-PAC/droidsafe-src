@@ -99,7 +99,7 @@ public final boolean readBoolean() throws IOException {
         if (temp < 0) {
             throw new EOFException();
         }
-        return temp != 0;
+        return toTaintBoolean(temp + 0);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.225 -0500", hash_original_method = "4C5816AE98147904E59B8C8EC0214947", hash_generated_method = "BF89FDFB9F1F44FEE7263800350EBECD")

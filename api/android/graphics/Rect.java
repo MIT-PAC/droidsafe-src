@@ -89,7 +89,7 @@ public Rect[] newArray(int size) {
 public Rect() {}
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    private void droidsafeSetMembers() {
+    private void droidsafeUpdateMembers() {
         this.bottom = getTaintInt();
         this.top    = getTaintInt();
         this.left   = getTaintInt();
@@ -109,7 +109,7 @@ public Rect() {}
 		this.right = right;
 		this.bottom = bottom;
 		*/
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("constructor")
@@ -122,28 +122,28 @@ public Rect() {}
 		right = r.right;
 		bottom = r.bottom;
 		*/
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     @Override
     public void addTaint(DSTaintObject t) {
         super.addTaint(t);
-        droidsafeSetMembers();
+        droidsafeUpdateMembers();
     }
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     @Override
     public void addTaint(double t) {
         super.addTaint(t);
-        droidsafeSetMembers();
+        droidsafeUpdateMembers();
     }
 
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     @Override
     public void addTaint(boolean t) {
         super.addTaint(t);
-        droidsafeSetMembers();
+        droidsafeUpdateMembers();
     }
     
     @DSComment("From safe class list")
@@ -357,7 +357,7 @@ public Rect() {}
 		*/
 		//Return nothing
         addTaint(left + top + right + bottom);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
@@ -374,7 +374,7 @@ public Rect() {}
     }
 		*/
         addTaint(src.getTaint());
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 		//Return nothing
 	}
     
@@ -392,14 +392,14 @@ public Rect() {}
 		*/
 		//Return nothing
         addTaint(dx + dy);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void offsetTo(int newLeft, int newTop){
 		addTaint(newLeft + newTop);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 		// Original method
 		/*
 		{
@@ -426,7 +426,7 @@ public Rect() {}
 		*/
 		//Return nothing
         addTaint(dx + dy);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
@@ -496,7 +496,7 @@ public Rect() {}
     }
 		*/
         addTaint(left + top + right + bottom);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 		return getTaintBoolean();
 	}
     
@@ -532,7 +532,7 @@ public Rect() {}
     }
 		*/
         addTaint(a.getTaintInt() + b.getTaintInt());
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 		return getTaintBoolean();
 	}
     
@@ -577,7 +577,7 @@ public Rect() {}
 		//Return nothing
 
         addTaint(left + top + right + bottom);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
@@ -591,7 +591,7 @@ public Rect() {}
 		*/
 		//Return nothing
         addTaint(r.getTaint());
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
@@ -614,7 +614,7 @@ public Rect() {}
 		*/
 		//Return nothing
         addTaint(x + y);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
@@ -679,7 +679,7 @@ public int describeContents() {
 		*/
 		//Return nothing
         addTaint(in.getTaint());
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
@@ -698,7 +698,7 @@ public int describeContents() {
 		*/
 		//Return nothing
         addTaint(scale);
-		droidsafeSetMembers();
+		droidsafeUpdateMembers();
 	}
 }
 

@@ -142,7 +142,7 @@ public static File[] listRoots() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean setLastModifiedImpl(String path, long time) {
-        return ((int)time > path.getTaintInt());
+        return toTaintBoolean(((int)time + path.getTaintInt()));
 	}
     
     @DSComment("Private Method")
@@ -668,7 +668,7 @@ public String getPath() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.507 -0500", hash_original_method = "9F2931F68825A4578F9E89212BCAE059", hash_generated_method = "2E75DF42A48FEC873AC09333063133CF")
     
 public boolean isAbsolute() {
-        return path.length() > 0 && path.charAt(0) == separatorChar;
+        return toTaintBoolean(path.length() + path.charAt(0) + separatorChar);
     }
 
     /**
@@ -1132,7 +1132,8 @@ public boolean mkdirs() {
         }
 
         /* Otherwise, try to create a parent directory and then this directory */
-        return (new File(parentDir).mkdirs() && mkdir());
+        return toTaintBoolean(toTaintInt(new File(parentDir).mkdirs()) +
+                              toTaintInt(mkdir()));
     }
 
     /**

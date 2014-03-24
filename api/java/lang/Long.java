@@ -18,7 +18,8 @@ public final class Long extends Number implements Comparable<Long> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.196 -0500", hash_original_method = "AF31214DC9658698FC6F93EE1A427F5A", hash_generated_method = "8A15ED8494923E2C5CF33F19A2C4ADA1")
     
 public static int compare(long lhs, long rhs) {
-        return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
+        //return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
+        return (int)(lhs - rhs);
     }
 
     @DSComment("Private Method")
@@ -720,6 +721,7 @@ public static Long valueOf(long v) {
     
 public Long(long value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -794,7 +796,8 @@ public int compareTo(Long object) {
     
 @Override
     public boolean equals(Object o) {
-        return (o instanceof Long) && (((Long) o).value == value);
+        //return (o instanceof Long) && (((Long) o).value == value);
+        return super.equals(o);
     }
 
     @DSComment("From safe class list")

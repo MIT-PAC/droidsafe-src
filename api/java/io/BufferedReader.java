@@ -144,7 +144,8 @@ private int fillBuf() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.797 -0500", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "67B0DB4F7332E1551B3772D6F1B4F707")
     
 private boolean isClosed() {
-        return buf == null;
+        //return buf == null;
+        return buf.getTaintBoolean();
     }
 
     /**
@@ -442,7 +443,7 @@ public String readLine() throws IOException {
     public boolean ready() throws IOException {
         synchronized (lock) {
             checkNotClosed();
-            return ((end - pos) > 0) || in.ready();
+            return toTaintBoolean((end - pos) + toTaintInt(in.ready()));
         }
     }
 

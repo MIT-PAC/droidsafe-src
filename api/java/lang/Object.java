@@ -83,7 +83,8 @@ public Object() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.140 -0500", hash_original_method = "9AE1611573D7E7CF89E7E933B2D1DCAF", hash_generated_method = "9814B1EDD6A309DF77DC31113B9908C5")
     @DSVerified()
 public boolean equals(Object o) {
-        return this == o;
+        //return this == o;
+        return toTaintBoolean(getTaintInt() + o.getTaintInt());
     }
 
     /**

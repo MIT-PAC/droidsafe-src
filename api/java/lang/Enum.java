@@ -91,6 +91,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 protected Enum(String name, int ordinal) {
         this.name = name;
         this.ordinal = ordinal;
+        addTaint(name.getTaint());
+        addTaint(ordinal);
     }
 
     /**
@@ -155,7 +157,7 @@ public final int ordinal() {
     
 @Override
     public final boolean equals(Object other) {
-        return this == other;
+        return super.equals(other);
     }
 
     @DSComment("From safe class list")
@@ -164,7 +166,12 @@ public final int ordinal() {
     
 @Override
     public final int hashCode() {
-        return ordinal + (name == null ? 0 : name.hashCode());
+        //return ordinal + (name == null ? 0 : name.hashCode());
+        int code = 0;
+        if (name != null)
+            code += name.hashCode();
+
+        return (ordinal + code);
     }
 
     /**

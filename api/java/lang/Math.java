@@ -748,6 +748,8 @@ public static double nextAfter(double start, double direction) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.775 -0500", hash_original_method = "2E9F27F6AE2FE55081770F69E2F60829", hash_generated_method = "6DECAE837D531B483F47DAC581A6C932")
     
 public static float nextAfter(float start, double direction) {
+    return (float)(start + direction);
+    /*
         if (Float.isNaN(start) || Double.isNaN(direction)) {
             return Float.NaN;
         }
@@ -785,6 +787,7 @@ public static float nextAfter(float start, double direction) {
             return -Float.MIN_VALUE;
         }
         return (float) direction;
+        */
     }
 
     /**

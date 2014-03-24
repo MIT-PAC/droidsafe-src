@@ -33,15 +33,15 @@ final class NativeBN {
 	}
     
     public static boolean BN_copy(int to, int from) {
-        return (to == from);
+        return toTaintBoolean((to + from));
 	}
     
     public static boolean putLongInt(int a, long dw) {
-        return (a == dw);
+        return toTaintBoolean((a + dw));
 	}
     
     public static boolean putULongInt(int a, long dw, boolean neg) {
-        return  (a == (int)dw) && neg;
+        return  toTaintBoolean(a + dw + neg);
 	}
     
     public static int BN_dec2bn(int a, String str) {
@@ -53,15 +53,15 @@ final class NativeBN {
 	}
     
     public static boolean BN_bin2bn(byte[] s, int len, boolean neg, int ret) {
-        return ((s.getTaintInt() + s[0] + len + ret) > 0) && neg;
+        return toTaintBoolean((s.getTaintInt() + s[0] + len + ret) + 0 + neg);
 	}
     
     public static boolean litEndInts2bn(int[] ints, int len, boolean neg, int ret) {
-        return ((ints.getTaintInt() + ints[0] + len + ret) > 0) && neg;
+        return toTaintBoolean(((ints.getTaintInt() + ints[0] + len + ret) + 0) + neg);
 	}
     
     public static boolean twosComp2bn(byte[] s, int len, int ret) {
-        return ((s.getTaintInt() + s[0] + len + ret) > 0);
+        return toTaintBoolean(((s.getTaintInt() + s[0] + len + ret) + 0));
 	}
     
     public static long longInt(int a) {
@@ -102,27 +102,27 @@ final class NativeBN {
 	}
     
     public static boolean BN_is_bit_set(int a, int n) {
-        return (a < n);
+        return toTaintBoolean((a + n));
 	}
     
     public static boolean modifyBit(int a, int n, int op) {
-        return ((a + n ) < op);
+        return toTaintBoolean(((a + n ) + op));
 	}
     
     public static boolean BN_shift(int r, int a, int n) {
-        return ((a + n ) < r);
+        return toTaintBoolean(((a + n ) + r));
 	}
     
     public static boolean BN_add_word(int a, int w) {
-        return (a < w);
+        return toTaintBoolean((a + w));
 	}
     
     public static boolean BN_sub_word(int a, int w) {
-        return (a < w);
+        return toTaintBoolean((a + w));
 	}
     
     public static boolean BN_mul_word(int a, int w) {
-        return (a < w);
+        return toTaintBoolean((a + w));
 	}
     
     public static int BN_div_word(int a, int w) {
@@ -134,47 +134,47 @@ final class NativeBN {
 	}
     
     public static boolean BN_add(int r, int a, int b) {
-        return ((a + r + b) > 0);
+        return toTaintBoolean(((a + r + b) + 0));
 	}
     
     public static boolean BN_sub(int r, int a, int b) {
-        return ((a + r + b) > 0);
+        return toTaintBoolean(((a + r + b) + 0));
 	}
     
     public static boolean BN_gcd(int r, int a, int b) {
-        return ((a + r + b) > 0);
+        return toTaintBoolean(((a + r + b) + 0));
 	}
     
     public static boolean BN_mul(int r, int a, int b) {
-        return ((a + r + b) > 0);
+        return toTaintBoolean(((a + r + b) + 0));
 	}
     
     public static boolean BN_exp(int r, int a, int p) {
-        return ((a + r + p) > 0);
+        return toTaintBoolean(((a + r + p) + 0));
 	}
     
     public static boolean BN_div(int dv, int rem, int m, int d) {
-        return ((dv + rem + m + d) > 0);
+        return toTaintBoolean(((dv + rem + m + d) + 0));
 	}
     
     public static boolean BN_nnmod(int r, int a, int m) {
-        return ((a + r + m) > 0);
+        return toTaintBoolean(((a + r + m) + 0));
 	}
     
     public static boolean BN_mod_exp(int r, int a, int p, int m) {
-        return ((a + r + p + m) > 0);
+        return toTaintBoolean(((a + r + p + m) + 0));
 	}
     
     public static boolean BN_mod_inverse(int ret, int a, int n) {
-        return ((ret + a + n) > 0);
+        return toTaintBoolean(((ret + a + n) + 0));
 	}
     
     public static boolean BN_generate_prime_ex(int ret, int bits, boolean safe, int add, int rem, int cb) {
-        return (0 < (ret + bits + add + rem + cb)) && safe;
+        return toTaintBoolean((0 + (ret + bits + add + rem + cb)) + safe);
 	}
     
     public static boolean BN_is_prime_ex(int p, int nchecks, int cb) {
-        return (0 < (p + nchecks + cb));
+        return toTaintBoolean((0 + (p + nchecks + cb)));
 	}
     
     @DSComment("Package priviledge")
