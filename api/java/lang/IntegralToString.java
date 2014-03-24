@@ -13,19 +13,28 @@ public final class IntegralToString {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.174 -0500", hash_original_method = "84A07FBCA269378A9147D6530126000E", hash_generated_method = "CF6A398FCDDC219326C41A995D5477D8")
     
 public static String intToString(int i, int radix) {
+      // We only need to transfer taint from the argument to the result
+      // No need to execute the surprisingly complex code required to
+      // do this.
+      String rval = "123";
+      rval.addTaint(i);
+      return rval;
+
+      /*
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             radix = 10;
         }
         if (radix == 10) {
             return intToString(i);
         }
-
+      */
         /*
          * If i is positive, negate it. This is the opposite of what one might
          * expect. It is necessary because the range of the negative values is
          * strictly larger than that of the positive values: there is no
          * positive value corresponding to Integer.MIN_VALUE.
          */
+      /*
         boolean negative = false;
         if (i < 0) {
             negative = true;
@@ -48,6 +57,7 @@ public static String intToString(int i, int radix) {
         }
 
         return new String(cursor, bufLen - cursor, buf);
+      */
     }
 
     /**
@@ -56,7 +66,14 @@ public static String intToString(int i, int radix) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.176 -0500", hash_original_method = "B1B4D5F6DCA8EF0F22789512858C9AFE", hash_generated_method = "B3ECD37125ED3587B94ECCC77B8D6BA4")
     
 public static String intToString(int i) {
-        return convertInt(null, i);
+      // We only need to transfer taint from the argument to the result
+      // No need to execute the surprisingly complex code required to
+      // do this.
+      String rval = "123";
+      rval.addTaint(i);
+      return rval;
+
+      // return convertInt(null, i);
     }
 
     /**
@@ -77,6 +94,19 @@ public static void appendInt(AbstractStringBuilder sb, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.183 -0500", hash_original_method = "18F04DADB801BEC6FD2BF5A5509D8E24", hash_generated_method = "E79DB73A536926B98FC83AF3DDCD828E")
     
 private static String convertInt(AbstractStringBuilder sb, int i) {
+      // We only need to transfer taint from the argument to the result
+      // No need to execute the surprisingly complex code required to
+      // do this.
+      String rval = "123";
+      rval.addTaint(i);
+      if (sb == null)
+          return rval;
+      else {
+        sb.append0(rval);
+        return null;
+      }
+
+        /*
         boolean negative = false;
         String quickResult = null;
         if (i < 0) {
@@ -144,6 +174,7 @@ private static String convertInt(AbstractStringBuilder sb, int i) {
         } else {
             return new String(cursor, bufLen - cursor, buf);
         }
+        */
     }
 
     /**

@@ -332,7 +332,9 @@ public static String toOctalString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.220 -0500", hash_original_method = "83FFC2042E386057ACE3416E6CB82244", hash_generated_method = "937E52F3011B3AAE21ECE10A2A8E9C67")
     
 public static String toString(int i) {
-        return IntegralToString.intToString(i);
+      // TODO JHP (transfer taint here)
+      return "123";
+      // return IntegralToString.intToString(i);
     }
 
     /**

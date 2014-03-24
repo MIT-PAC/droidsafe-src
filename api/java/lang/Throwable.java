@@ -314,12 +314,23 @@ private StackTraceElement[] getInternalStackTrace() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.615 -0500", hash_original_method = "721611E9E00924F0C591FE9FD87A98DF", hash_generated_method = "E081C99283B0C7FAF2830771267339F1")
     
 public void printStackTrace(PrintStream err) {
+
+      // TODO JHP
+      // Note that while the stack trace itself can't communicate anything of interest, 
+      // I think this will also print any suppressed or causing exceptions.  If that
+      // includes the message then arbitrary information can be sent out via this
+      // mechanism.  Of course, any sensitive information being written to an exception
+      // should be examined closely.
+      return;
+
+      /*
         try {
             printStackTrace(err, "", null);
         } catch (IOException e) {
             // Appendable.append throws IOException but PrintStream.append doesn't.
             throw new AssertionError();
         }
+      */
     }
 
     /**
@@ -336,12 +347,18 @@ public void printStackTrace(PrintStream err) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.617 -0500", hash_original_method = "83BBC2719839E738869257F8A62E26AC", hash_generated_method = "A0F9157CE536E06503E642974016B844")
     
 public void printStackTrace(PrintWriter err) {
+
+      // TODO JHP
+      return;
+
+      /*
         try {
             printStackTrace(err, "", null);
         } catch (IOException e) {
             // Appendable.append throws IOException, but PrintWriter.append doesn't.
             throw new AssertionError();
         }
+      */
     }
 
     /**
