@@ -1730,7 +1730,6 @@ public int offsetByCodePoints(int index, int codePointOffset) {
 @Override public void addTaint(DSTaintObject t) {
         super.addTaint(t);
         ASCII[0] = getTaintChar();
-        value[0] = getTaintChar();
         offset = getTaintInt();
         hashCode = getTaintInt();
         count = getTaintInt();
@@ -1740,7 +1739,6 @@ public int offsetByCodePoints(int index, int codePointOffset) {
     @Override public void addTaint(double t) {
         super.addTaint(t);
         ASCII[0] = getTaintChar();
-        value[0] = getTaintChar();
         offset = getTaintInt();
         hashCode = getTaintInt();
         count = getTaintInt();
