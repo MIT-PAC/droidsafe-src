@@ -122,14 +122,14 @@ public class Main {
         CallLocationModel.reset();
         ObjectSensitivityCloner.reset();
         RCFG.reset();
-        
-        /*
-        monitor.worked(1);
-        AutomatedSourceTagging.run();
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+        if (Config.v().infoFlowTrackAll) {
+            monitor.worked(1);
+            AutomatedSourceTagging.run();
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
         }
-        */
 
 
         driverMsg("Removing identity overrides.");
@@ -241,7 +241,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         } 
-        
+
         //run value analysis, if it runs, then the code may have veen transformed
         if (Config.v().runValueAnalysis) {
             runVA(monitor);
@@ -271,18 +271,18 @@ public class Main {
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
             }
-                       
+
             //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
             //replace calls with new expressions, and let the modeling pass taint appropriately
             driverMsg("Converting AbstractStringBuilder.toString()");
             TransformStringBuilderInvokes.run();
         }
-        
+
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
+
         //new TestPTA();
-        
+
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
         rcfgTimer.start();
@@ -418,7 +418,7 @@ public class Main {
                 SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
                 SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
                 if (Config.v().debug)
-                  SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+                    SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
             }
@@ -474,7 +474,7 @@ public class Main {
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
+
         driverMsg("Injecting String Analysis Results.");
         monitor.subTask("Injecting String Analysis Results.");
         JSAResultInjection.run();
@@ -490,7 +490,7 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
+
         driverMsg("Converting Class.getName calls to class name strings.");
         monitor.subTask("Converting Class.getName calls to class name strings.");
         ClassGetNameToClassString.run();
@@ -547,10 +547,10 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         return DroidsafeExecutionStatus.OK_STATUS;
     }
-    
+
     /**
      * Print message to out and to logger.
      * 

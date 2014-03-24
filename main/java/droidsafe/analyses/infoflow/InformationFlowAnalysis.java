@@ -986,8 +986,7 @@ public class InformationFlowAnalysis {
                 Stmt callStmt = callEdge.srcStmt();
                 ImmutableSet<InfoValue> callValues = null;
                 if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                    if (API.v().hasSourceInfoKind(calleeMethod)
-                            || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                    if (API.v().hasSourceInfoKind(calleeMethod)) {
                         callValues = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                         InvokeExpr invokeExpr = callStmt.getInvokeExpr();
                         List<Value> argImmediates = invokeExpr.getArgs();
@@ -1007,8 +1006,7 @@ public class InformationFlowAnalysis {
                 if (callStmt instanceof AssignStmt) {
                     if (returnType instanceof RefLikeType) {
                         if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                            if (API.v().hasSourceInfoKind(calleeMethod)
-                                    || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                            if (API.v().hasSourceInfoKind(calleeMethod)) {
                                 Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, callerContext);
                                 for (IAllocNode allocNode : allocNodes) {
@@ -1019,8 +1017,7 @@ public class InformationFlowAnalysis {
                     } else {
                         HashSet<InfoValue> values = new HashSet<InfoValue>(evaluate(calleeContext, returnImmediate, state.locals));
                         if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                            if (API.v().hasSourceInfoKind(calleeMethod)
-                                    || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                            if (API.v().hasSourceInfoKind(calleeMethod)) {
                                 values.addAll(callValues);
                             }
                         }
@@ -1049,8 +1046,7 @@ public class InformationFlowAnalysis {
                 Stmt callStmt = callEdge.srcStmt();
                 ImmutableSet<InfoValue> callValues = null;
                 if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                    if (API.v().hasSourceInfoKind(calleeMethod)
-                            || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                    if (API.v().hasSourceInfoKind(calleeMethod)) {
                         callValues = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                         InvokeExpr invokeExpr = callStmt.getInvokeExpr();
                         List<Value> argImmediates = invokeExpr.getArgs();
@@ -1480,8 +1476,7 @@ class InjectedValuesAnalysis {
             MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
             SootMethod calleeMethod = calleeMethodContext.method();
             if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                if (API.v().hasSourceInfoKind(calleeMethod)
-                        || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                if (API.v().hasSourceInfoKind(calleeMethod)) {
                     values.add(InfoUnit.v(stmt));
                 }
             }
