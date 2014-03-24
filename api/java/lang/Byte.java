@@ -39,12 +39,20 @@ public static int compare(byte lhs, byte rhs) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.438 -0500", hash_original_method = "FFA7DA06804046B92F2D54F8D6E8206F", hash_generated_method = "2EB97CCF14C50762CE7A9B6EFF037343")
     
 public static Byte decode(String string) throws NumberFormatException {
+        if (DroidSafeAndroidRuntime.control)
+            throw new NumberFormatException("Value out of range for byte: \"" + string + "\"");
+
+        Byte ret = new Byte(string.getTaintByte());
+
+        return ret;
+        /*
         int intValue = Integer.decode(string);
         byte result = (byte) intValue;
         if (result == intValue) {
             return valueOf(result);
         }
         throw new NumberFormatException("Value out of range for byte: \"" + string + "\"");
+        */
     }
 
     /**
@@ -62,7 +70,7 @@ public static Byte decode(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.456 -0500", hash_original_method = "3E3DB9EACBAEC53C68BCBB24FE69AB14", hash_generated_method = "30051DC3AE22E7DDA2FF507800CF7FBE")
     
 public static byte parseByte(String string) throws NumberFormatException {
-        return parseByte(string, 10);
+        return string.getTaintByte();
     }
 
     /**
@@ -85,12 +93,10 @@ public static byte parseByte(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.459 -0500", hash_original_method = "BF3D50DD939D834A7DF75489B00C6690", hash_generated_method = "DCFACEE3BA254C7BC8C98F4F5AB6DDB7")
     
 public static byte parseByte(String string, int radix) throws NumberFormatException {
-        int intValue = Integer.parseInt(string, radix);
-        byte result = (byte) intValue;
-        if (result == intValue) {
-            return result;
-        }
-        throw new NumberFormatException("Value out of range for byte: \"" + string + "\"");
+        if (DroidSafeAndroidRuntime.control)
+            throw new NumberFormatException("Value out of range for byte: \"" + string + radix + "\"");
+        
+        return (byte)(string.getTaintInt() + radix);
     }
 
     /**
@@ -102,7 +108,10 @@ public static byte parseByte(String string, int radix) throws NumberFormatExcept
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.467 -0500", hash_original_method = "178909B2C58CF7188A6A8BC8023FFA15", hash_generated_method = "BA098F90A3D5AA4F49CACD160D9F0877")
     
 public static String toHexString(byte b, boolean upperCase) {
-        return IntegralToString.byteToHexString(b, upperCase);
+        String str = new String("<Byte.toHexString>");
+        str.addTaint(b);
+        str.addTaint(upperCase);
+        return str;
     }
 
     /**
@@ -118,7 +127,10 @@ public static String toHexString(byte b, boolean upperCase) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.470 -0500", hash_original_method = "A5C9B1F940A6E4E0B7C56A8CD89F3E5B", hash_generated_method = "CF35E1D7B63D21B25C3AC38B2AA64EC0")
     
 public static String toString(byte value) {
-        return Integer.toString(value);
+        String str = new String("<Byte.toString>");
+        str.addTaint(value);
+        return str;
+
     }
 
     /**
@@ -137,7 +149,7 @@ public static String toString(byte value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.472 -0500", hash_original_method = "C35C42F07E6BEE21A855B7E6408FB8DD", hash_generated_method = "E186142D5A2A10E55B23D27838DD1C2D")
     
 public static Byte valueOf(String string) throws NumberFormatException {
-        return valueOf(parseByte(string));
+        return new Byte(string.getTaintByte());
     }
 
     /**
@@ -161,7 +173,7 @@ public static Byte valueOf(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.475 -0500", hash_original_method = "46925E95C7BFFD2FC27FB6165D068F93", hash_generated_method = "89D01FA737447FDF0216F6FA90FA37F9")
     
 public static Byte valueOf(String string, int radix) throws NumberFormatException {
-        return valueOf(parseByte(string, radix));
+        return new Byte(string.getTaintByte());
     }
 
     /**
@@ -236,7 +248,7 @@ public Byte(byte value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.428 -0500", hash_original_method = "6A41489347990CAADB010180F3DA4F08", hash_generated_method = "66A20A3FACCD57C473E8A1F62EA3004B")
     
 public Byte(String string) throws NumberFormatException {
-        this(parseByte(string));
+        this(string.getTaintByte());
     }
 
     /**
@@ -355,8 +367,10 @@ public int compareTo(Byte object) {
     
 @Override
     public String toString() {
-        return Integer.toString(value);
+        String str = new String("<Byte.toString()>");
+        str.addTaint(value);
+        return str;
     }
-    
+
 }
 

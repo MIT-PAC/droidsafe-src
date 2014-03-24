@@ -129,12 +129,17 @@ private static void splitAndAdd(String path, boolean wantDirectories,
     
 private static Element[] makeDexElements(ArrayList<File> files,
             File optimizedDirectory) {
-        ArrayList<Element> elements = new ArrayList<Element>();
+        
+        Element[] ret = new Element[1];
+        
+        ret[0] = new Element(files.get(0), null, null);
+
+        return ret;
 
         /*
-         * Open all files and load the (direct or contained) dex files
-         * up front.
-         */
+        ArrayList<Element> elements = new ArrayList<Element>();
+
+
         for (File file : files) {
             ZipFile zip = null;
             DexFile dex = null;
@@ -152,25 +157,12 @@ private static Element[] makeDexElements(ArrayList<File> files,
                 try {
                     zip = new ZipFile(file);
                 } catch (IOException ex) {
-                    /*
-                     * Note: ZipException (a subclass of IOException)
-                     * might get thrown by the ZipFile constructor
-                     * (e.g. if the file isn't actually a zip/jar
-                     * file).
-                     */
                     System.logE("Unable to open zip file: " + file, ex);
                 }
 
                 try {
                     dex = loadDexFile(file, optimizedDirectory);
                 } catch (IOException ignored) {
-                    /*
-                     * IOException might get thrown "legitimately" by
-                     * the DexFile constructor if the zip file turns
-                     * out to be resource-only (that is, no
-                     * classes.dex file in it). Safe to just ignore
-                     * the exception here, and let dex == null.
-                     */
                 }
             } else {
                 System.logW("Unknown file type for: " + file);
@@ -181,7 +173,9 @@ private static Element[] makeDexElements(ArrayList<File> files,
             }
         }
 
+
         return elements.toArray(new Element[elements.size()]);
+        */
     }
 
     /**

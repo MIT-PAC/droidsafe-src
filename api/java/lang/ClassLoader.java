@@ -29,7 +29,7 @@ public abstract class ClassLoader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.698 -0500", hash_original_method = "68A1F8E40482E8D5899E0A36610D7F57", hash_generated_method = "8DF30F2216A35375468497DB19BD60B0")
     
 private static ClassLoader createSystemClassLoader() {
-        String classPath = System.getProperty("java.class.path", ".");
+        //String classPath = System.getProperty("java.class.path", ".");
 
         // String[] paths = classPath.split(":");
         // URL[] urls = new URL[paths.length];
@@ -45,7 +45,7 @@ private static ClassLoader createSystemClassLoader() {
         // return new java.net.URLClassLoader(urls, null);
 
         // TODO Make this a java.net.URLClassLoader once we have those?
-        return new PathClassLoader(classPath, BootClassLoader.getInstance());
+        return new PathClassLoader("java.class.path", BootClassLoader.getInstance());
     }
 
     /**
@@ -115,7 +115,18 @@ public static Enumeration<URL> getSystemResources(String resName) throws IOExcep
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.709 -0500", hash_original_method = "05C330432267C3CB2D525AEB5E4DBFBC", hash_generated_method = "A33A37C69D674218736BA9B9695F3584")
     
 public static InputStream getSystemResourceAsStream(String resName) {
+        //droidsafe short-circuiting
+        try {
+            return (new URL(resName)).openStream();
+        } catch (Exception e) {
+            
+        }
+
+        return null;
+
+            /*
         return SystemClassLoader.loader.getResourceAsStream(resName);
+            */
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.693 -0500", hash_original_field = "C6C9C9B9683A3ABEAA9A2585B1BD6899", hash_generated_field = "F21C7A33E41D98EA12963007269D2C47")
 
@@ -426,6 +437,16 @@ public URL getResource(String resName) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.747 -0500", hash_original_method = "D8955CCF86190424763C439F9FDF42B6", hash_generated_method = "23CB9B395B84F49B6BEEC8C70F6D582B")
     
 public InputStream getResourceAsStream(String resName) {
+        //droidsafe short-circuiting
+        try {
+            return (new URL(resName)).openStream();
+        } catch (Exception e) {
+            
+        }
+
+        return null;
+
+        /*
         try {
             URL url = getResource(resName);
             if (url != null) {
@@ -434,8 +455,9 @@ public InputStream getResourceAsStream(String resName) {
         } catch (IOException ex) {
             // Don't want to see the exception.
         }
-
+        
         return null;
+        */
     }
 
     /**
@@ -541,6 +563,10 @@ protected final void resolveClass(Class<?> clazz) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.757 -0500", hash_original_method = "A0771382989D9347D13AB7091421D08A", hash_generated_method = "9482DAB9A6C5BF756E036D4F94DCBFCD")
     
 protected URL findResource(String resName) {
+        try {
+            return new URL(resName);
+        } catch (Exception e) {
+        }
         return null;
     }
 
@@ -818,7 +844,9 @@ public BootClassLoader() {
         super(null, true);
     }
 
+/*  commented out by droidsafe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.807 -0500", hash_original_method = "0FBC8B1C710D0CE61299895128455485", hash_generated_method = "32D6ECFE7C4B8FD34375E6F47B87EC79")
+
     
 @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
@@ -857,6 +885,7 @@ public BootClassLoader() {
      * ClassLoaders. Rather unlikely, and given that this whole thing is more or
      * less a workaround, probably not worth the effort.
      */
+    /*
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.815 -0500", hash_original_method = "F97E0A3F9917A73A09E7D2F766F9C1D2", hash_generated_method = "851BDA5342BA91242176CAD96E2969A6")
     
@@ -907,5 +936,6 @@ public BootClassLoader() {
     public Enumeration<URL> getResources(String resName) throws IOException {
         return findResources(resName);
     }
+*/
 }
 

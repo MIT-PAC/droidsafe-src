@@ -92,7 +92,10 @@ public static double parseDouble(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.675 -0500", hash_original_method = "CC232B8CAE36CFF9A4793AA7869B9E47", hash_generated_method = "FEE36900B728A02BB946FAF254D44323")
     
 public static String toString(double d) {
-        return RealToString.getInstance().doubleToString(d);
+        //return RealToString.getInstance().doubleToString(d);
+        String s = new String("<double>");
+        s.addTaint(d);
+        return s;
     }
 
     /**
@@ -197,9 +200,13 @@ public static Double valueOf(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.688 -0500", hash_original_method = "1D9798A0A4D63301EAA0C709DA651E0D", hash_generated_method = "4777531DC6DAFBE5D6CD7B3DF1F501A7")
     
 public static String toHexString(double d) {
+        String ret = new String("<Double.toHexString>");
+        ret.addTaint(d);
+        return ret;
         /*
          * Reference: http://en.wikipedia.org/wiki/IEEE_754-1985
          */
+        /*
         if (d != d) {
             return "NaN";
         }

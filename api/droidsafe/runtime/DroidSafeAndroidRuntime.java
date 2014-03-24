@@ -74,7 +74,8 @@ public class DroidSafeAndroidRuntime {
         activity.onCreateDescription();
         activity.onLowMemory();
         activity.onRetainNonConfigurationInstance();
-        activity.onSearchRequested();
+        //do not call this automatically because it leads to a crazy long path of crap
+        //activity.onSearchRequested();
         activity.onUserInteraction();
 
         //TODO: DOES THIS MAKE SENSE? 

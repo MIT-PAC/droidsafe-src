@@ -1218,6 +1218,7 @@ public URL getResource(String resName) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.042 -0500", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "86CEEF39D17B80ED6EB9C612DF444F82")
     
 public InputStream getResourceAsStream(String resName) {
+        /*
         // Get absolute resource name, but without the leading slash
         if (resName.startsWith("/")) {
             resName = resName.substring(1);
@@ -1240,6 +1241,8 @@ public InputStream getResourceAsStream(String resName) {
         } else {
             return ClassLoader.getSystemResourceAsStream(resName);
         }
+        */
+        return ClassLoader.getSystemResourceAsStream(resName);
     }
 
     /**

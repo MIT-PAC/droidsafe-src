@@ -1227,16 +1227,10 @@ public synchronized void start() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.681 -0500", hash_original_method = "A23472E398F1697320641EE9BCE07378", hash_generated_method = "EF55F94392AFE1651323B5CB3F34FCE5")
     
 public void unpark() {
+        /*
         VMThread vmt = vmThread;
 
         if (vmt == null) {
-            /*
-             * vmThread is null before the thread is start()ed. In
-             * this case, we just go ahead and set the state to
-             * PREEMPTIVELY_UNPARKED. Since this happens before the
-             * thread is started, we don't have to worry about
-             * synchronizing with it.
-             */
             parkState = ParkState.PREEMPTIVELY_UNPARKED;
             return;
         }
@@ -1244,25 +1238,20 @@ public void unpark() {
         synchronized (vmt) {
             switch (parkState) {
                 case ParkState.PREEMPTIVELY_UNPARKED: {
-                    /*
-                     * Nothing to do in this case: By definition, a
-                     * preemptively unparked thread is to remain in
-                     * the preemptively unparked state if it is told
-                     * to unpark.
-                     */
                     break;
                 }
                 case ParkState.UNPARKED: {
                     parkState = ParkState.PREEMPTIVELY_UNPARKED;
                     break;
                 }
-                default /*parked*/: {
+                default: {
                     parkState = ParkState.UNPARKED;
                     vmt.notifyAll();
                     break;
                 }
             }
         }
+        */
     }
 
     /**
@@ -1289,6 +1278,8 @@ public void unpark() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.684 -0500", hash_original_method = "25C50086F373F8B2A1357A67BAD56EA4", hash_generated_method = "96B78C49F0C114B68EE5F31253BE89ED")
     
 public void parkFor(long nanos) {
+        
+        /*
         VMThread vmt = vmThread;
 
         if (vmt == null) {
@@ -1312,23 +1303,19 @@ public void parkFor(long nanos) {
                     } catch (InterruptedException ex) {
                         interrupt();
                     } finally {
-                        /*
-                         * Note: If parkState manages to become
-                         * PREEMPTIVELY_UNPARKED before hitting this
-                         * code, it should left in that state.
-                         */
                         if (parkState == ParkState.PARKED) {
                             parkState = ParkState.UNPARKED;
                         }
                     }
                     break;
                 }
-                default /*parked*/: {
+                default: {
                     throw new AssertionError(
                             "shouldn't happen: attempt to repark");
                 }
             }
         }
+        */
     }
 
     /**
@@ -1355,6 +1342,7 @@ public void parkFor(long nanos) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.687 -0500", hash_original_method = "98F10CBBB26C44644E065EAD29E052AC", hash_generated_method = "187AF55D9829DCAFB9E9DB811B9AF877")
     
 public void parkUntil(long time) {
+        /*
         VMThread vmt = vmThread;
 
         if (vmt == null) {
@@ -1363,20 +1351,6 @@ public void parkUntil(long time) {
         }
 
         synchronized (vmt) {
-            /*
-             * Note: This conflates the two time bases of "wall clock"
-             * time and "monotonic uptime" time. However, given that
-             * the underlying system can only wait on monotonic time,
-             * it is unclear if there is any way to avoid the
-             * conflation. The downside here is that if, having
-             * calculated the delay, the wall clock gets moved ahead,
-             * this method may not return until well after the wall
-             * clock has reached the originally designated time. The
-             * reverse problem (the wall clock being turned back)
-             * isn't a big deal, since this method is allowed to
-             * spuriously return for any reason, and this situation
-             * can safely be construed as just such a spurious return.
-             */
             long delayMillis = time - System.currentTimeMillis();
 
             if (delayMillis <= 0) {
@@ -1385,6 +1359,7 @@ public void parkUntil(long time) {
                 parkFor(delayMillis * NANOS_PER_MILLI);
             }
         }
+    */
     }
 }
 

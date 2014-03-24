@@ -1396,10 +1396,10 @@ public long getFreeSpace() {
         }
     }
     static {
-        separatorChar = System.getProperty("file.separator", "/").charAt(0);
-        pathSeparatorChar = System.getProperty("path.separator", ":").charAt(0);
-        separator = String.valueOf(separatorChar);
-        pathSeparator = String.valueOf(pathSeparatorChar);
+        separatorChar = '/';     //System.getProperty("file.separator", "/").charAt(0);
+        pathSeparatorChar = ':'; //System.getProperty("path.separator", ":").charAt(0);
+        separator = "/";         //String.valueOf(separatorChar);
+        pathSeparator = ";";     //String.valueOf(pathSeparatorChar);
     }
     
 }

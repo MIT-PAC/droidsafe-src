@@ -12,42 +12,11 @@ public final class IntegralToString {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.174 -0500", hash_original_method = "84A07FBCA269378A9147D6530126000E", hash_generated_method = "CF6A398FCDDC219326C41A995D5477D8")
     
-public static String intToString(int i, int radix) {
-        if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
-            radix = 10;
-        }
-        if (radix == 10) {
-            return intToString(i);
-        }
-
-        /*
-         * If i is positive, negate it. This is the opposite of what one might
-         * expect. It is necessary because the range of the negative values is
-         * strictly larger than that of the positive values: there is no
-         * positive value corresponding to Integer.MIN_VALUE.
-         */
-        boolean negative = false;
-        if (i < 0) {
-            negative = true;
-        } else {
-            i = -i;
-        }
-
-        int bufLen = radix < 8 ? 33 : 12;  // Max chars in result (conservative)
-        char[] buf = new char[bufLen];
-        int cursor = bufLen;
-
-        do {
-            int q = i / radix;
-            buf[--cursor] = DIGITS[radix * q - i];
-            i = q;
-        } while (i != 0);
-
-        if (negative) {
-            buf[--cursor] = '-';
-        }
-
-        return new String(cursor, bufLen - cursor, buf);
+    public static String intToString(int i, int radix) {
+        String str = new String("<Integral.toString()>");
+        str.addTaint(i);
+        str.addTaint(radix);
+        return str;
     }
 
     /**
@@ -55,8 +24,11 @@ public static String intToString(int i, int radix) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.176 -0500", hash_original_method = "B1B4D5F6DCA8EF0F22789512858C9AFE", hash_generated_method = "B3ECD37125ED3587B94ECCC77B8D6BA4")
     
-public static String intToString(int i) {
-        return convertInt(null, i);
+    public static String intToString(int i) {
+        String str = new String("<Integral.intToString()>");
+        str.addTaint(i);
+        return str;
+        //return convertInt(null, i);
     }
 
     /**
@@ -77,72 +49,14 @@ public static void appendInt(AbstractStringBuilder sb, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.183 -0500", hash_original_method = "18F04DADB801BEC6FD2BF5A5509D8E24", hash_generated_method = "E79DB73A536926B98FC83AF3DDCD828E")
     
 private static String convertInt(AbstractStringBuilder sb, int i) {
-        boolean negative = false;
-        String quickResult = null;
-        if (i < 0) {
-            negative = true;
-            i = -i;
-            if (i < 100) {
-                if (i < 0) {
-                    // If -n is still negative, n is Integer.MIN_VALUE
-                    quickResult = "-2147483648";
-                } else {
-                    quickResult = SMALL_NEGATIVE_VALUES[i];
-                    if (quickResult == null) {
-                        SMALL_NEGATIVE_VALUES[i] = quickResult =
-                                i < 10 ? stringOf('-', ONES[i]) : stringOf('-', TENS[i], ONES[i]);
-                    }
-                }
-            }
-        } else {
-            if (i < 100) {
-                quickResult = SMALL_NONNEGATIVE_VALUES[i];
-                if (quickResult == null) {
-                    SMALL_NONNEGATIVE_VALUES[i] = quickResult =
-                            i < 10 ? stringOf(ONES[i]) : stringOf(TENS[i], ONES[i]);
-                }
-            }
-        }
-        if (quickResult != null) {
-            if (sb != null) {
-                sb.append0(quickResult);
-                return null;
-            }
-            return quickResult;
-        }
-
-        int bufLen = 11; // Max number of chars in result
-        char[] buf = (sb != null) ? BUFFER.get() : new char[bufLen];
-        int cursor = bufLen;
-
-        // Calculate digits two-at-a-time till remaining digits fit in 16 bits
-        while (i >= (1 << 16)) {
-            // Compute q = n/100 and r = n % 100 as per "Hacker's Delight" 10-8
-            int q = (int) ((0x51EB851FL * i) >>> 37);
-            int r = i - 100*q;
-            buf[--cursor] = ONES[r];
-            buf[--cursor] = TENS[r];
-            i = q;
-        }
-
-        // Calculate remaining digits one-at-a-time for performance
-        while (i != 0) {
-            // Compute q = n/10 and r = n % 10 as per "Hacker's Delight" 10-8
-            int q = (0xCCCD * i) >>> 19;
-            int r = i - 10*q;
-            buf[--cursor] = DIGITS[r];
-            i = q;
-        }
-
-        if (negative) {
-            buf[--cursor] = '-';
-        }
-
+        String str = new String("<IntegralToString.convertInt>");
+        str.addTaint(i);
+        
         if (sb != null) {
-            sb.append0(buf, cursor, bufLen - cursor);
+            sb.append0(str);
             return null;
         } else {
-            return new String(cursor, bufLen - cursor, buf);
+            return str;
         }
     }
 
@@ -151,47 +65,11 @@ private static String convertInt(AbstractStringBuilder sb, int i) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.186 -0500", hash_original_method = "37B28104B332535CD9A4BDBCC29D5030", hash_generated_method = "B837EAB259A841BED217DC0BA5724CFC")
     
-public static String longToString(long v, int radix) {
-        int i = (int) v;
-        if (i == v) {
-            return intToString(i, radix);
-        }
-
-        if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
-            radix = 10;
-        }
-        if (radix == 10) {
-            return longToString(v);
-        }
-
-        /*
-         * If v is positive, negate it. This is the opposite of what one might
-         * expect. It is necessary because the range of the negative values is
-         * strictly larger than that of the positive values: there is no
-         * positive value corresponding to Integer.MIN_VALUE.
-         */
-        boolean negative = false;
-        if (v < 0) {
-            negative = true;
-        } else {
-            v = -v;
-        }
-
-        int bufLen = radix < 8 ? 65 : 23;  // Max chars in result (conservative)
-        char[] buf = new char[bufLen];
-        int cursor = bufLen;
-
-        do {
-            long q = v / radix;
-            buf[--cursor] = DIGITS[(int) (radix * q - v)];
-            v = q;
-        } while (v != 0);
-
-        if (negative) {
-            buf[--cursor] = '-';
-        }
-
-        return new String(cursor, bufLen - cursor, buf);
+    public static String longToString(long v, int radix) {
+        String str = new String("<IntegralToString.longToString>");
+        str.addTaint(v);
+        str.addTaint(radix);
+        return str;
     }
 
     /**
@@ -200,7 +78,11 @@ public static String longToString(long v, int radix) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.188 -0500", hash_original_method = "153B7EAD25B0FBAAC892ABA7B6CC50EA", hash_generated_method = "07305E55971D5721CD811119E18E7393")
     
 public static String longToString(long l) {
-        return convertLong(null, l);
+        String str = new String("<IntegralToString.longToString>");
+        str.addTaint(l);
+        
+        return str;
+
     }
 
     /**
@@ -221,81 +103,14 @@ public static void appendLong(AbstractStringBuilder sb, long l) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.195 -0500", hash_original_method = "335087D7FF3CE8ACF704F016666ED5E4", hash_generated_method = "9C2CF14366EC4FEC5E2510809E61CCA2")
     
 private static String convertLong(AbstractStringBuilder sb, long n) {
-        int i = (int) n;
-        if (i == n) {
-            return convertInt(sb, i);
-        }
+        String str = new String("<IntegralToString.longToString>");
+        str.addTaint(n);
 
-        boolean negative = (n < 0);
-        if (negative) {
-            n = -n;
-            if (n < 0) {
-                // If -n is still negative, n is Long.MIN_VALUE
-                String quickResult = "-9223372036854775808";
-                if (sb != null) {
-                    sb.append0(quickResult);
-                    return null;
-                }
-                return quickResult;
-            }
-        }
-
-        int bufLen = 20; // Maximum number of chars in result
-        char[] buf = (sb != null) ? BUFFER.get() : new char[bufLen];
-
-        int low = (int) (n % 1000000000); // Extract low-order 9 digits
-        int cursor = intIntoCharArray(buf, bufLen, low);
-
-        // Zero-pad Low order part to 9 digits
-        while (cursor != (bufLen - 9)) {
-            buf[--cursor] = '0';
-        }
-
-        /*
-         * The remaining digits are (n - low) / 1,000,000,000.  This
-         * "exact division" is done as per the online addendum to Hank Warren's
-         * "Hacker's Delight" 10-20, http://www.hackersdelight.org/divcMore.pdf
-         */
-        n = ((n - low) >>> 9) * 0x8E47CE423A2E9C6DL;
-
-        /*
-         * If the remaining digits fit in an int, emit them using a
-         * single call to intIntoCharArray. Otherwise, strip off the
-         * low-order digit, put it in buf, and then call intIntoCharArray
-         * on the remaining digits (which now fit in an int).
-         */
-        if ((n & (-1L << 32)) == 0) {
-            cursor = intIntoCharArray(buf, cursor, (int) n);
-        } else {
-            /*
-             * Set midDigit to n % 10
-             */
-            int lo32 = (int) n;
-            int hi32 = (int) (n >>> 32);
-
-            // midDigit = ((unsigned) low32) % 10, per "Hacker's Delight" 10-21
-            int midDigit = MOD_10_TABLE[(0x19999999 * lo32 + (lo32 >>> 1) + (lo32 >>> 3)) >>> 28];
-
-            // Adjust midDigit for hi32. (assert hi32 == 1 || hi32 == 2)
-            midDigit -= hi32 << 2;  // 1L << 32 == -4 MOD 10
-            if (midDigit < 0) {
-                midDigit += 10;
-            }
-            buf[--cursor] = DIGITS[midDigit];
-
-            // Exact division as per Warren 10-20
-            int rest = ((int) ((n - midDigit) >>> 1)) * 0xCCCCCCCD;
-            cursor = intIntoCharArray(buf, cursor, rest);
-        }
-
-        if (negative) {
-            buf[--cursor] = '-';
-        }
         if (sb != null) {
-            sb.append0(buf, cursor, bufLen - cursor);
+            sb.append0(str);
             return null;
         } else {
-            return new String(cursor, bufLen - cursor, buf);
+            return str;
         }
     }
 
@@ -311,36 +126,18 @@ private static String convertLong(AbstractStringBuilder sb, long n) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.197 -0500", hash_original_method = "AA8AE34ED725E04DA1882B7CEAEB718F", hash_generated_method = "C5EE79131CBB996273FBE7D43CDE847F")
     
 private static int intIntoCharArray(char[] buf, int cursor, int n) {
-        // Calculate digits two-at-a-time till remaining digits fit in 16 bits
-        while ((n & 0xffff0000) != 0) {
-            /*
-             * Compute q = n/100 and r = n % 100 as per "Hacker's Delight" 10-8.
-             * This computation is slightly different from the corresponding
-             * computation in intToString: the shifts before and after
-             * multiply can't be combined, as that would yield the wrong result
-             * if n's sign bit were set.
-             */
-            int q = (int) ((0x51EB851FL * (n >>> 2)) >>> 35);
-            int r = n - 100*q;
-            buf[--cursor] = ONES[r];
-            buf[--cursor] = TENS[r];
-            n = q;
-        }
-
-        // Calculate remaining digits one-at-a-time for performance
-        while (n != 0) {
-            // Compute q = n / 10 and r = n % 10 as per "Hacker's Delight" 10-8
-            int q = (0xCCCD * n) >>> 19;
-            int r = n - 10*q;
-            buf[--cursor] = DIGITS[r];
-            n = q;
-        }
+        buf[0] = (char)cursor;
+        buf[0] = (char)n;
         return cursor;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.201 -0500", hash_original_method = "A41E5D3875136344B237460B8AD39DE0", hash_generated_method = "BF9029A36E87AD6C0F7646EBDC2AD21F")
     
 public static String intToBinaryString(int i) {
+        String str = new String("<IntegralToString");
+        str.addTaint(i);
+        return str;
+        /*
         int bufLen = 32;  // Max number of binary digits in an int
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -350,11 +147,16 @@ public static String intToBinaryString(int i) {
         }  while ((i >>>= 1) != 0);
 
         return new String(cursor, bufLen - cursor, buf);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.203 -0500", hash_original_method = "425709456D43055F08B99D956BED133A", hash_generated_method = "19DE5B453C600CEADCEE9910F20C6563")
     
 public static String longToBinaryString(long v) {
+        String str = new String("<IntegralToString");
+        str.addTaint(v);
+        return str;
+        /*
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToBinaryString(i);
@@ -369,30 +171,32 @@ public static String longToBinaryString(long v) {
         }  while ((v >>>= 1) != 0);
 
         return new String(cursor, bufLen - cursor, buf);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.206 -0500", hash_original_method = "25742899540A4F6BF48504885A2F05E0", hash_generated_method = "47163F3DAA1C79F199346566712562F1")
     
 public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean upperCase) {
-        char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
-        sb.append(digits[(b >> 4) & 0xf]);
-        sb.append(digits[b & 0xf]);
+        sb.append(b);
+        sb.addTaint(upperCase);
         return sb;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.208 -0500", hash_original_method = "010E15EE749C468A15543203E9BC66F2", hash_generated_method = "65341427BE591FEECBDD3EBCD1A98B15")
     
 public static String byteToHexString(byte b, boolean upperCase) {
-        char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
-        char[] buf = new char[2]; // We always want two digits.
-        buf[0] = digits[(b >> 4) & 0xf];
-        buf[1] = digits[b & 0xf];
-        return new String(0, 2, buf);
+        String str = new String("<IntegeralToString>");
+        str.addTaint(b);
+        return str;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.211 -0500", hash_original_method = "744A47F287A2754D655F5FDE5DEB2E5D", hash_generated_method = "8851B88F67110322BF450F54F6CBA037")
     
-public static String bytesToHexString(byte[] bytes, boolean upperCase) {
+    public static String bytesToHexString(byte[] bytes, boolean upperCase) {
+        String str = new String("<IntegralToString>");
+        str.addTaint(bytes[0]);
+        return str;
+        /*
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[bytes.length * 2];
         int c = 0;
@@ -401,11 +205,19 @@ public static String bytesToHexString(byte[] bytes, boolean upperCase) {
             buf[c++] = digits[b & 0xf];
         }
         return new String(buf);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.213 -0500", hash_original_method = "53C9BEADC911A160577C54E5E3F03689", hash_generated_method = "1B231099D778F3AA3ECB08BDBE1B4A8A")
     
 public static String intToHexString(int i, boolean upperCase, int minWidth) {
+        String str = new String("<IntegralToString");
+        str.addTaint(i);
+        str.addTaint(minWidth);
+        str.addTaint(upperCase);
+        return str;
+        
+        /*
         int bufLen = 8;  // Max number of hex digits in an int
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -416,11 +228,16 @@ public static String intToHexString(int i, boolean upperCase, int minWidth) {
         } while ((i >>>= 4) != 0 || (bufLen - cursor < minWidth));
 
         return new String(cursor, bufLen - cursor, buf);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.216 -0500", hash_original_method = "40D5415945BB8116A305EC0340CF03D3", hash_generated_method = "AC3B506B8F65F32340C42CCE255AD773")
     
 public static String longToHexString(long v) {
+        String str = new String("<IntegralToString");
+        str.addTaint(v);
+        return str;
+        /*
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToHexString(i, false, 0);
@@ -435,11 +252,17 @@ public static String longToHexString(long v) {
         } while ((v >>>= 4) != 0);
 
         return new String(cursor, bufLen - cursor, buf);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.219 -0500", hash_original_method = "45CC1A585F589498B158F1646F8FCD50", hash_generated_method = "491C057DAC348EAD6D01733B5670B1D3")
     
 public static String intToOctalString(int i) {
+        String str = new String("<IntegralToString");
+        str.addTaint(i);
+        return str;
+
+        /*
         int bufLen = 11;  // Max number of octal digits in an int
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -449,11 +272,17 @@ public static String intToOctalString(int i) {
         } while ((i >>>= 3) != 0);
 
         return new String(cursor, bufLen - cursor, buf);
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.222 -0500", hash_original_method = "0B792E8186913E3E66D8EB47F2B35BC9", hash_generated_method = "CD5497C1B1686D3D197A7F06DC143795")
     
 public static String longToOctalString(long v) {
+        String str = new String("<IntegralToString");
+        str.addTaint(v);
+        return str;
+
+        /*
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToOctalString(i);
@@ -467,6 +296,7 @@ public static String longToOctalString(long v) {
         } while ((v >>>= 3) != 0);
 
         return new String(cursor, bufLen - cursor, buf);
+        */
     }
 
     /**
@@ -479,13 +309,14 @@ public static String longToOctalString(long v) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.224 -0500", hash_original_method = "F1C6410A467B286589D07AFCC53374B5", hash_generated_method = "49D2D4BE49B87B4FD1B9513189C9E32D")
     
-private static String stringOf(char... args) {
+    private static String stringOf(char... args) {
         return new String(0, args.length, args);
     }
     
+    /*
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "AB280E60F0CF35D4F468078DFDA43178", hash_generated_field = "425773BE567620BA8858A8C9A806C3AB")
 
-    private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {
+        private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "DD3C6EC86D330D1AF7830345AF558804")
         @Override
@@ -497,6 +328,7 @@ private static String stringOf(char... args) {
         }
         
 };
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.151 -0500", hash_original_field = "37DFB5C87B09E2D3A46A9A888D8120E2", hash_generated_field = "3F7A7621FDECF4B1F00F7F02BB032983")
 
     private static final String[] SMALL_NONNEGATIVE_VALUES = new String[100];
@@ -556,7 +388,7 @@ private static String stringOf(char... args) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.171 -0500", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "F9A5116623A8F121F9E7894C48ABCCA4")
-    
+    */    
 private IntegralToString() {
     }
 }
