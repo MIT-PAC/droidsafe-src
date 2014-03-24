@@ -142,15 +142,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        // Search for catch blocks
-        if (true) {
-        	driverMsg ("Searching for catch blocks");
-        	CatchBlocks cb = new CatchBlocks();
-        	cb.run();
-        	System.exit(-1);
-        }
-
-        driverMsg("Calling scalar optimizations.");
+       driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
         monitor.worked(1);
@@ -278,6 +270,14 @@ public class Main {
             //account for any transformations
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+            // Search for catch blocks
+            if (true) {
+            	driverMsg ("Searching for catch blocks");
+            	CatchBlocks cb = new CatchBlocks();
+            	cb.run();
+            	System.exit(-1);
+            }
 
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.run(Project.v().getOutputDir() + File.separator + "callgraph.dot");

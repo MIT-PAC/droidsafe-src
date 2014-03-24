@@ -11,6 +11,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import soot.Body;
 import soot.BodyTransformer;
 import soot.Local;
+import soot.MethodOrMethodContext;
 import soot.NormalUnitPrinter;
 import soot.RefType;
 import soot.Scene;
@@ -41,14 +43,18 @@ import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.tagkit.AnnotationTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
 import soot.util.Chain;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
+
 
 /**
  * Catch block indicator. Looks for catch blocks in the application code and
@@ -68,7 +74,25 @@ public class CatchBlocks {
     private HashMap<Unit,Integer> lnums = null;
     
     PrintStream fp = null;
-        
+    private static int call_cnt = 0;
+    
+    /** Map from processed methods to info about them **/
+    private HashMap<SootMethod,MethodInfo> methods 
+        = new LinkedHashMap<SootMethod,MethodInfo>();
+    
+    /** Class that stores information about each method previously processed **/
+    static class MethodInfo {
+        static int next_id = 1;
+        int subcall_cnt;
+        boolean terminal;
+        int id;
+        MethodInfo(int cnt, boolean terminal) {
+            subcall_cnt = cnt;
+            this.terminal = terminal;
+            id = next_id++;
+        }
+    }
+    
     /** Find all catch blocks and characterize their contents 
      * @throws FileNotFoundException **/
     public void run() throws FileNotFoundException {
@@ -76,6 +100,7 @@ public class CatchBlocks {
         if (!enabled) return;
         
         fp = new PrintStream (Project.v().getOutputDir() + "/catch_blocks.out");
+        fp.printf ("{ %s [\n", json_field ("contents"));
         
         // Process each source class (those in app/src)
         for (SootClass clz : Scene.v().getClasses()) {
@@ -94,13 +119,14 @@ public class CatchBlocks {
             	}
             	if (method.isConcrete()) {
             		proc_method (method);
-                }
+            	}
             }
         }
-        
+        fp.println ("  {}");
+        fp.println ("]}");
         fp.close();
         
-    }
+        }
 
     /**
      * Processes the method looking for catch block information
@@ -179,10 +205,9 @@ public class CatchBlocks {
         	}
         	logger.info ("  begin handler = {}", toString(start));
         	logger.info ("  end handler = {}", toString(u));
-        	SourceLocationTag slt 
-        	  = SootUtils.getSourceLocation((Stmt) start, meth.getDeclaringClass());
-        	fp.printf ("\n%s, %s\n", meth.getSignature(), slt);
-        	extract_calls (fp, meth.getDeclaringClass(), insts, start, u);
+        	print_call (meth, (Stmt)start, "  ", "cblock", true);
+        	extract_calls (fp, meth, insts, start, u);
+        	fp.println ("  ]},");
         }
     }
     
@@ -194,20 +219,214 @@ public class CatchBlocks {
      * @param start     - start instruction (inclusive)
      * @param end       - end instruction (exclusive)
      */
-    private void extract_calls (PrintStream fp, SootClass clz, Chain<Unit> insts, 
+    private void extract_calls (PrintStream fp, SootMethod method, Chain<Unit> insts, 
     		Unit start, Unit end) {
 
+    	CallGraph cg = PTABridge.v().getCallGraph();
+    	
     	for (Unit u = start; u != end; u = insts.getSuccOf(u)) {
     		Stmt s = (Stmt)u;
     		if (s.containsInvokeExpr()) {
     			InvokeExpr ie = s.getInvokeExpr();
-    	       	SourceLocationTag slt 
-    	       	  = SootUtils.getSourceLocation((Stmt) start, clz);
-    			fp.printf ("  %s, %s\n", ie.getMethod(), slt);
+ 
+    			
+       	       	// Get the edges from the method containing the catch block to
+       	       	// the statement that includes a method call.  If there are
+       	       	// multiple implementations of a virtual/interface method that
+       	       	// can be called here, each will be listed.
+    			List<Edge> outgoingEdges = PTABridge.v().outgoingEdges(method, s);
+    			
+    			// Loop through each edge to the method
+    			for (Edge edge : outgoingEdges) {
+    				MethodOrMethodContext mc = edge.getTgt();
+          	       	SourceLocationTag slt = getSourceLocation(s);
+          	       	print_call (mc.method(), s, "    ", "direct-call", true);
+           	       	
+    				// Process each method that can be called from the method in this
+    				// statement
+    				Stack<SootMethod> stack = new Stack<SootMethod>();
+    				process_call_chain (mc, stack, "      ");
+    				fp.println("    ]},");
+    			}
     		}
     	}
+    	// put out an empty object so that there is an object following the ',' from
+    	// the last one.  A kluge admittedly, but better than anything else I can think of.
+    	fp.println ("    {}");
     }
     
+    /**
+     * Process the call chain and print a json representation of it to fp.
+     * Ignores any calls that are within the API. Terminates on any recursive
+     * calls or static initializers. .
+     * 
+     * @param mc      - Method to start at
+     * @param stack   - Current call chain, used to check for recursion
+     * @param indent  - indent for printing (blank string)
+     */
+    private void process_call_chain (MethodOrMethodContext mc, 
+            Stack<SootMethod> stack,String indent) {
+        
+        CallGraph cg = PTABridge.v().getCallGraph();
+        ArrayList<String> calls = new ArrayList<String>();
+        for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
+            Edge e = tit.next();
+            SootMethod m = e.getTgt().method();
+            if (m.toString().contains ("<clinit>"))
+                continue;
+            if (is_terminal (e.getTgt())) {
+                print_call (m, e.srcStmt(), indent, "syscall", false);
+            } else if (stack.contains(m)) {
+                // don't bother to print recursive  call
+            } else { // need to process anything it calls
+                print_call (m, e.srcStmt(), indent, "call-chain", true);
+                stack.push (m);
+                process_call_chain (e.getTgt(), stack, indent + "  ");
+                stack.pop();
+                fp.printf ("%s]},\n", indent);
+            }
+        }
+        // Final object in the contents array (which must not have a comma following it)
+        fp.println (indent + "{ }");
+        return;
+    }
+      
+    private void print_call (SootMethod m, Stmt s, String indent, String type, boolean contents) {
+        fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
+        fp.printf ("%s  %s,\n", indent, json_field ("signature", m.getSignature()));
+        SourceLocationTag slt = getSourceLocation(s);
+        if (slt != null) {
+          fp.printf ("%s  %s", indent, json_field ("src-loc"));
+          fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
+                  json_field ("line", slt.getLine()));
+        }
+        if (contents) {
+            fp.printf ("%s  %s,\n", indent, json_field ("score", 5));
+            fp.printf ("%s  %s [\n", indent, json_field ("contents"));
+        } else {
+            fp.printf ("%s  %s\n", indent, json_field ("score", 5));
+            fp.printf ("%s},\n", indent);
+        }
+    }
+    
+    private String json_field (String name) {
+        return json_field (name, null);
+    }
+    private String json_field (String name, String value) {
+        name = "\"" + name + "\"";
+        if (value == null)
+            return String.format ("%-8s : ", name);
+        return String.format ("%-8s : \"%s\"", name, value);
+    }
+    
+    private String json_field (String name, int value) {
+        return String.format ("%-8s : %d", "\"" + name + "\"", value);
+    }
+          
+    /**
+     * Process the call chain and returns a list of strings where the
+     * indentation indicates the call chain.  Each call also contains the
+     * number of edges beneath it.  Terminates on any recursive calls or
+     * static initializers.  
+     * .
+     * @param mc		- Method to start at
+     * @param stack     - Current call chain, used to check for recursion
+     * @param indent	- indent for printing (blank string)
+     */
+    private ArrayList<String> get_call_chain (MethodOrMethodContext mc, 
+    		Stack<SootMethod> stack,String indent) {
+       	CallGraph cg = PTABridge.v().getCallGraph();
+       	ArrayList<String> calls = new ArrayList<String>();
+    	for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
+    		Edge e = tit.next();
+    		SootMethod m = e.getTgt().method();
+    		if (m.toString().contains ("<clinit>"))
+    			continue;
+    		call_cnt++;
+    		if ((call_cnt % 10000) == 0)
+    			fp.printf("stack: %s\n", stack);
+    		MethodInfo mi = methods.get(m);
+    		if (mi != null) {
+    		    calls.add (String.format ("%s%s (%d)", indent, m, mi.subcall_cnt));
+    		    logger.info ("  found method {}, call cnt {}", m, mi.subcall_cnt);
+    		    continue;
+    		}
+    		// fp.printf ("%s%s\n", indent, m); fp.flush();
+    		if (!is_terminal (e.getTgt()) && !stack.contains(m)) {
+    			stack.push (m);
+    			List<String> subcalls = get_call_chain (e.getTgt(), stack, 
+    					indent + "  ");
+    			stack.pop();
+    			calls.add (String.format ("%s%s (%d)", indent, m, subcalls.size()));
+    			calls.addAll (subcalls);
+    			methods.put (m, new MethodInfo (subcalls.size(), false));
+    		} else { // no subcalls
+    			calls.add (indent + m + "(recursive)");
+    		}
+    	}
+    	return calls;
+    }
+    
+    /**
+     * Returns true if the specified method should terminate the call graph
+     * The call graph is terminated on system calls that do not have callbacks
+     * into application code.
+     * @param m
+     * @return
+     */
+    private boolean is_terminal (MethodOrMethodContext mc) {
+    	Stack<SootMethod> stack = new Stack<SootMethod>();
+    	boolean result = is_system (mc.method()) && !calls_app_method (mc, stack);
+    	logger.info ("  {} terminal = {}", mc.method(), result);
+    	return result;
+    }
+    
+    /** Returns true if an app method is called directly or indirectly from mc **/
+    private boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
+    	CallGraph cg = PTABridge.v().getCallGraph();
+    	logger.info("  cam: entering iterator, stack = {}", stack);
+    	int ii = 0;
+    	for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
+    		Edge e = tit.next();
+    		SootMethod m = e.getTgt().method();
+    		logger.info("  cam: considering method {} ({})", m, ii++);
+            MethodInfo mi = methods.get(m);
+            if (mi != null) {
+                if (mi.terminal) 
+                    continue;
+                else
+                    return true;
+            }
+            if (m.toString().contains("<clinit>"))
+    			continue;
+    		if (!is_system (m)) {
+    		    logger.info ("  cam: {} is not a system call");
+    		    return true;
+    		}
+    		if (!stack.contains(m)) {
+    			stack.push(m);
+    			boolean result = calls_app_method (e.getTgt(), stack);
+    			methods.put (m, new MethodInfo(-1, !result));
+    			stack.pop();
+    			if (result) {
+    			    logger.info ("  cam: {} true", m);
+    			}
+    		}
+    	}
+    	logger.info("  cam: {} is terminal", mc.method());
+    	return false;
+    }
+    
+    /** Returns true if the specified method is a system (android or java) class **/
+    private boolean is_system (SootMethod m) {
+    	Project p = Project.v();
+    	SootClass c = m.getDeclaringClass();
+    	return !p.isSrcClass(c) && !p.isLibClass(c);
+    }
+    /** gets the source location for unit (which must be a stmt) **/
+    private SourceLocationTag getSourceLocation (Unit s) {
+    	return SootUtils.getSourceLocation((Stmt) s);
+    }
     /** 
      * formats an instruction using lnums to fill in branch destinations
      * and offsets in the current method
