@@ -472,7 +472,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
-        if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         
         driverMsg("Injecting String Analysis Results.");
