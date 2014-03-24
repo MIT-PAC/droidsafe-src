@@ -346,6 +346,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         offset = 0;
         count = 0;
     }
+    
+    
 
     /*
      * Private constructor used for JIT optimization.
@@ -822,8 +824,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @Override
         public boolean equals(Object object){
     	//Formerly a native method
-    	addTaint(object.getTaint());
-    	return getTaintBoolean();
+        return super.equals(object);
+    	//addTaint(object.getTaint());
+    	//return getTaintBoolean();
     }
 
     /**
@@ -1703,5 +1706,26 @@ public int offsetByCodePoints(int index, int codePointOffset) {
         addTaint(codePointOffset);
         return getTaintInt();
     }
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+@Override public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        ASCII[0] = getTaintChar();
+        value[0] = getTaintChar();
+        offset = getTaintInt();
+        hashCode = getTaintInt();
+        count = getTaintInt();
+    }
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override public void addTaint(double t) {
+        super.addTaint(t);
+        ASCII[0] = getTaintChar();
+        value[0] = getTaintChar();
+        offset = getTaintInt();
+        hashCode = getTaintInt();
+        count = getTaintInt();
+    }
+    
 }
 

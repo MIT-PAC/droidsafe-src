@@ -100,7 +100,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeIsTouchEvent(int nativePtr) {
-        return (nativePtr > 0);
+        return toTaintBoolean(nativePtr);
     }
     
     @DSComment("Private Method")

@@ -41,7 +41,7 @@ final class NativeBN {
 	}
     
     public static boolean putULongInt(int a, long dw, boolean neg) {
-        return  toTaintBoolean(a + dw + neg);
+        return  toTaintBoolean(a + dw + toTaintInt(neg));
 	}
     
     public static int BN_dec2bn(int a, String str) {
@@ -53,11 +53,11 @@ final class NativeBN {
 	}
     
     public static boolean BN_bin2bn(byte[] s, int len, boolean neg, int ret) {
-        return toTaintBoolean((s.getTaintInt() + s[0] + len + ret) + 0 + neg);
+        return toTaintBoolean((s.getTaintInt() + s[0] + len + ret) + 0 + toTaintInt(neg));
 	}
     
     public static boolean litEndInts2bn(int[] ints, int len, boolean neg, int ret) {
-        return toTaintBoolean(((ints.getTaintInt() + ints[0] + len + ret) + 0) + neg);
+        return toTaintBoolean(((ints.getTaintInt() + ints[0] + len + ret) + 0) + toTaintInt(neg));
 	}
     
     public static boolean twosComp2bn(byte[] s, int len, int ret) {
@@ -170,7 +170,7 @@ final class NativeBN {
 	}
     
     public static boolean BN_generate_prime_ex(int ret, int bits, boolean safe, int add, int rem, int cb) {
-        return toTaintBoolean((0 + (ret + bits + add + rem + cb)) + safe);
+        return toTaintBoolean(0 + ret + bits + add + rem + cb + toTaintInt(safe));
 	}
     
     public static boolean BN_is_prime_ex(int p, int nchecks, int cb) {

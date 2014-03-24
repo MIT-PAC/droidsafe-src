@@ -210,8 +210,7 @@ public static void dumpHprofData(String fileName) throws IOException {
     }
     
     public static boolean cacheRegisterMap(String classAndMethodDesc) {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021648724 = DSUtils.UNKNOWN_BOOLEAN;
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021648724;
+        return (classAndMethodDesc.getTaintBoolean());
     }
     
     public static void dumpReferenceTables() {

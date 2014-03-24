@@ -1417,6 +1417,7 @@ public static boolean isJavaIdentifierPart(char c) {
     
 public static boolean isJavaIdentifierPart(int codePoint) {
         // Use precomputed bitmasks to optimize the ASCII range.
+        /*
         if (codePoint < 64) {
             return toTaintBoolean((0x3ff00100fffc1ffL & (1L << codePoint)) + 0);
         } else if (codePoint < 128) {
@@ -1429,6 +1430,8 @@ public static boolean isJavaIdentifierPart(int codePoint) {
                 || type == COMBINING_SPACING_MARK || type == NON_SPACING_MARK
                 || (codePoint >= 0 && codePoint <= 8) || (codePoint >= 0xe && codePoint <= 0x1b)
                 || (codePoint >= 0x7f && codePoint <= 0x9f) || type == FORMAT;
+        */
+        return toTaintBoolean(codePoint);
     }
 
     /**
@@ -1589,8 +1592,6 @@ public static boolean isLetterOrDigit(char c) {
     
 public static boolean isLetterOrDigit(int codePoint) {
         // Optimized case for ASCII
-        return toTaintBoolean(codePoint);
-        /*
         if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
             return true;
         }
@@ -1601,7 +1602,6 @@ public static boolean isLetterOrDigit(int codePoint) {
             return false;
         }
         return isLetterOrDigitImpl(codePoint);
-        */
     }
     
     @DSComment("Private Method")
@@ -3024,6 +3024,7 @@ private UnicodeBlock(String blockName, int start, int end) {
     
 public Character(char value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**

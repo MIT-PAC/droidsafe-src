@@ -11043,7 +11043,9 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "843882909A38B2FC0D8F4867EE2AC0A0", hash_generated_method = "E271E918D4C574FDDE4719E4B98A8B2B")
     private Rect nativeCursorNodeBounds() {
-    	return new Rect();
+        Rect rect = new Rect();
+        rect.addTaint(getTaint());
+    	return rect;
     }
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -11086,14 +11088,18 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "CB263EC43145C659054742CE0640D198", hash_generated_method = "2045A184BB97A2996B1887CC917B0804")
     private Point nativeCursorPosition() {
-    	return new Point();
+        Point p = new Point();
+        p.addTaint(getTaint());
+    	return p;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "05985317D344F6F01EE48FCED9442B85", hash_generated_method = "3E24BE9E7EBDB8C5312CC587887CD85C")
     private String nativeCursorText() {
-    	return new String();
+        String str = new String();
+        str.addTaint(getTaint());
+    	return str;
     }
     /**
      * Returns true if the native cursor node says it wants to handle key events
@@ -11137,11 +11143,11 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     private int nativeDraw(Canvas canvas, RectF visibleRect,
                 int color, int extra, boolean splitIfNeeded){
     	//Formerly a native method
+    	canvas.addTaint(visibleRect.getTaint());
+    	canvas.addTaint(color);
+    	canvas.addTaint(extra);
+    	canvas.addTaint(splitIfNeeded);
     	addTaint(canvas.getTaint());
-    	addTaint(visibleRect.getTaint());
-    	addTaint(color);
-    	addTaint(extra);
-    	addTaint(splitIfNeeded);
     	return getTaintInt();
     }
 
@@ -11891,10 +11897,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     
     int nativeGetBlockLeftEdge(int x, int y, float scale){
     	//Formerly a native method
-    	addTaint(x);
-    	addTaint(y);
-    	addTaint(scale);
-    	return getTaintInt();
+    	return (int)(getTaintInt() + x + y + scale);
     }
 
     @DSComment("Private Method")
@@ -11983,8 +11986,9 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     
     private void     nativeGetTextSelectionRegion(int instance, Region region){
     	//Formerly a native method
-    	addTaint(instance);
-    	addTaint(region.getTaint());
+    	//addTaint(instance);
+    	//addTaint(region.getTaint());
+    	region.addTaint(instance + region.getTaintInt());
     }
 
     @DSComment("Private Method")
@@ -11993,8 +11997,11 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     
     private void     nativeGetSelectionHandles(int instance, int[] handles){
     	//Formerly a native method
+        handles[0] = instance;
+        /*
     	addTaint(instance);
     	addTaint(handles[0]);
+    	*/
     }
 
 }

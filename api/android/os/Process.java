@@ -414,7 +414,7 @@ public static final int getParentPid(int pid) {
     }
     
     public static final boolean setOomAdj(int pid, int amt) {
-        return (pid > amt);
+        return toTaintBoolean(pid  + amt);
     }
     
     public static final void setArgV0(String text) {
@@ -490,7 +490,7 @@ public static final void killProcessQuiet(int pid) {
         outLongs.addTaint(file.getTaint());
         outFloats.addTaint(file.getTaint());
 
-        return outFloats.getTaintBoolean() && outStrings.getTaintBoolean() && outLongs.getTaintBoolean();
+        return toTaintBoolean(outFloats.getTaintInt() + outStrings.getTaintInt() + outLongs.getTaintInt());
     }
     
     public static final boolean parseProcLine(byte[] buffer, int startIndex, 
@@ -508,7 +508,7 @@ public static final void killProcessQuiet(int pid) {
         outLongs.addTaint(buffer.getTaint());
         outFloats.addTaint(buffer.getTaint());
 
-        return outFloats.getTaintBoolean() && outStrings.getTaintBoolean() && outLongs.getTaintBoolean();
+        return toTaintBoolean(outFloats.getTaintInt() + outStrings.getTaintInt() + outLongs.getTaintInt());
 
     }
     

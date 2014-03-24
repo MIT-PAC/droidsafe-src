@@ -408,6 +408,7 @@ public String[] newArray(int size) {
     
     public final boolean pushAllowFds(boolean allowFds){
 		//Formerly a native function
+        addTaint(allowFds);
 		return getTaintBoolean();
 	}
     

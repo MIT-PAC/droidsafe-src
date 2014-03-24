@@ -581,11 +581,14 @@ public String format(String format) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.790 -0500", hash_original_method = "412A6EFDB33A9BCE94A5C52880803E0F", hash_generated_method = "00E04CF05A04A7A34BCFBE1E8F8AC975")
     
 public boolean parse(String s) {
+        /*
         if (nativeParse(s)) {
             timezone = TIMEZONE_UTC;
             return true;
         }
         return false;
+        */
+        return nativeParse(s);
     }
 
     /**
@@ -637,11 +640,14 @@ public boolean parse(String s) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.798 -0500", hash_original_method = "E417695E8CAC19265A6537D747474825", hash_generated_method = "DE9F06A70AE7B2D50C4E75981B0D2CE7")
     
 public boolean parse3339(String s) {
+         /*
          if (nativeParse3339(s)) {
              timezone = TIMEZONE_UTC;
              return true;
          }
          return false;
+         */
+         return nativeParse3339(s);
      }
 
      @DSComment("Private Method")

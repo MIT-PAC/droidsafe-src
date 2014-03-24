@@ -290,7 +290,7 @@ public static Locale[] getAvailableNumberFormatLocales() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean initLocaleDataImpl(String locale, LocaleData result) {
-        return locale.getTaintBoolean() && result.getTaintBoolean();
+        return toTaintBoolean(locale.getTaintInt() + result.getTaintInt());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.184 -0500", hash_original_field = "90AA6CFBDEE696F6EF43191174536FDC", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
 

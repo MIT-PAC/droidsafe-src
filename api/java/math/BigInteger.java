@@ -681,8 +681,6 @@ public boolean testBit(int n) {
         if (n < 0) {
             throw new ArithmeticException("n < 0: " + n);
         }
-        return toTaintBoolean(getTaintInt() + getBitInt().getTaintInt() + n);
-/*
         int sign = signum();
         if (sign > 0 && nativeIsValid && !javaIsValid) {
             return getBigInt().isBitSet(n);
@@ -712,7 +710,6 @@ public boolean testBit(int n) {
             }
             return toTaintBoolean(((digit & n) + 0));
         }
-*/
     }
 
     /**
