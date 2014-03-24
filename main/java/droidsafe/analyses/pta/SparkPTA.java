@@ -802,8 +802,7 @@ public class SparkPTA extends PTABridge {
         opt.put("class-method-var","true");     
         opt.put("dump-answer","false");          
         opt.put("add-tags","false");             
-        opt.put("set-mass","false");
-        
+        opt.put("set-mass","false");   
         opt.put("types-for-sites","false");        
         
         opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
