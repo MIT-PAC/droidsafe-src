@@ -272,11 +272,14 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
             // Search for catch blocks
-            if (true) {
+            if (Config.v().runCatchBlocks) {
             	driverMsg ("Searching for catch blocks");
+            	StopWatch cbtimer = new StopWatch();
+            	cbtimer.start();
             	CatchBlocks cb = new CatchBlocks();
             	cb.run();
-            	System.exit(-1);
+            	cbtimer.stop();
+            	driverMsg ("Finished Catch Block Analysis: " + cbtimer);
             }
 
             if (Config.v().dumpCallGraph) {

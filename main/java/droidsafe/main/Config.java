@@ -146,6 +146,8 @@ public class Config {
     public boolean onlyannotatedsources = true;
     /** Generate pta result for eclipse plugin */
     public boolean ptaresult = true;
+    /** Run Catch Block Analysis **/
+    public boolean runCatchBlocks = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -318,6 +320,9 @@ public class Config {
                 .withDescription("The Android application root directory").create("approot");
         options.addOption(approot);
 
+        Option catchBlocks = new Option ("catchblocks", "Run catch block analysis");
+        options.addOption (catchBlocks);
+        
         Option target =
                 OptionBuilder.withArgName("target").hasArg().withDescription("Target pass to run")
                 .create("t");
@@ -362,6 +367,9 @@ public class Config {
 
         if (cmd.hasOption("nova"))
             this.runValueAnalysis = false;
+        
+        if (cmd.hasOption ("catchblocks"))
+            this.runCatchBlocks = true;
 
         if (cmd.hasOption("noptaresult"))
             this.ptaresult = false;
