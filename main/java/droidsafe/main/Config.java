@@ -41,6 +41,9 @@ public class Config {
     public static final Set<String> TARGETS = new LinkedHashSet<String>(Arrays.asList("specdump",
             "confcheck"));
 
+    /** Value analysis depth for following fields when printing */
+    public static final int VA_PRINTING_LEVEL = 3;
+
     /** location of all android apps */
     public static final String ANDROID_APP_DIR_REL = "android-apps";
 
