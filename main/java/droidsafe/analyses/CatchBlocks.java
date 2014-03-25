@@ -71,6 +71,8 @@ public class CatchBlocks {
     /** Enable/Disable the transformation **/
     static boolean enabled = true;
     
+    private boolean dump_all_calls = false;
+    
     private HashMap<Unit,Integer> lnums = null;
     
     PrintStream fp = null;
@@ -99,7 +101,7 @@ public class CatchBlocks {
 
         if (!enabled) return;
         
-        fp = new PrintStream (Project.v().getOutputDir() + "/catch_blocks.out");
+        fp = new PrintStream (Project.v().getOutputDir() + "/catch_blocks.json");
         fp.printf ("{ %s [\n", json_field ("contents"));
         
         // Process each source class (those in app/src)
@@ -239,14 +241,21 @@ public class CatchBlocks {
     			// Loop through each edge to the method
     			for (Edge edge : outgoingEdges) {
     				MethodOrMethodContext mc = edge.getTgt();
-          	       	SourceLocationTag slt = getSourceLocation(s);
-          	       	print_call (mc.method(), s, "    ", "direct-call", true);
+                    Stack<SootMethod> stack = new Stack<SootMethod>();
+
+    				if (dump_all_calls) {
+    				    List<String> calls = get_call_chain (mc, stack, "      ");
+    				    fp.printf ("    method %s (%d)\n", mc.method(), calls.size());
+    				    for (String call : calls)
+    				        fp.println (call);
+    				} else {
+    				    print_call (mc.method(), s, "    ", "direct-call", true);
            	       	
-    				// Process each method that can be called from the method in this
-    				// statement
-    				Stack<SootMethod> stack = new Stack<SootMethod>();
-    				process_call_chain (mc, stack, "      ");
-    				fp.println("    ]},");
+    				    // Process each method that can be called from the method in this
+    				    // statement
+    				    process_call_chain (mc, stack, "      ");
+    				    fp.println("    ]},");
+    				}
     			}
     		}
     	}
