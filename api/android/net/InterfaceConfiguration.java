@@ -34,7 +34,9 @@ public class InterfaceConfiguration implements Parcelable {
 
     public static final Creator<InterfaceConfiguration> CREATOR =
         new Creator<InterfaceConfiguration>() {
-            public InterfaceConfiguration createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:20.731 -0400", hash_original_method = "76C6CBF6FE2D5EB36C73B2620657A1AC", hash_generated_method = "4D05993755407010E5072F2053E009C7")
+        
+public InterfaceConfiguration createFromParcel(Parcel in) {
                 InterfaceConfiguration info = new InterfaceConfiguration();
                 info.hwAddr = in.readString();
                 if (in.readByte() == 1) {
@@ -44,7 +46,9 @@ public class InterfaceConfiguration implements Parcelable {
                 return info;
             }
 
-            public InterfaceConfiguration[] newArray(int size) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:20.732 -0400", hash_original_method = "9F99AD90A41C85329A32DABBF90EC240", hash_generated_method = "8921B33319AE1F1D8C9DBB71F3C379A9")
+        
+public InterfaceConfiguration[] newArray(int size) {
                 return new InterfaceConfiguration[size];
             }
         };

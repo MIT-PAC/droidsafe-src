@@ -158,14 +158,18 @@ private static void log(String msg) {
 
 
     private ServiceConnection mConnection = new ServiceConnection() {
-        public void onServiceConnected(ComponentName className, IBinder service) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.085 -0400", hash_original_method = "448C51A87F86E30F78864D74B3DBC838", hash_generated_method = "E31932F9B8598E41281DB71873526FB9")
+        
+public void onServiceConnected(ComponentName className, IBinder service) {
             if (DBG) log("Proxy object connected");
             mService = IBluetoothPbap.Stub.asInterface(service);
             if (mServiceListener != null) {
                 mServiceListener.onServiceConnected();
             }
         }
-        public void onServiceDisconnected(ComponentName className) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.086 -0400", hash_original_method = "3196E10393A2BF53EC38563E863DECAC", hash_generated_method = "C38DF49DEC213E2404E4084E56F12E21")
+        
+public void onServiceDisconnected(ComponentName className) {
             if (DBG) log("Proxy object disconnected");
             mService = null;
             if (mServiceListener != null) {

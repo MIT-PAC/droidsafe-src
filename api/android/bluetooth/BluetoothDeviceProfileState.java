@@ -237,7 +237,9 @@ public final class BluetoothDeviceProfileState extends StateMachine {
 
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:14.246 -0400", hash_original_method = "68502EFA9DC722C0870F4958CDF61986", hash_generated_method = "D60BBAABDA4DB7790270A9890FAB305C")
+        
+@Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
@@ -321,7 +323,9 @@ public final class BluetoothDeviceProfileState extends StateMachine {
 
     private BluetoothProfile.ServiceListener mBluetoothProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
-        public void onServiceConnected(int profile, BluetoothProfile proxy) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:14.261 -0400", hash_original_method = "EC5B2D2B1234ED3BB90F13463938E49B", hash_generated_method = "5CAB5AAB9628894CE09D91F42BCDB158")
+        
+public void onServiceConnected(int profile, BluetoothProfile proxy) {
             synchronized(BluetoothDeviceProfileState.this) {
                 mHeadsetService = (BluetoothHeadset) proxy;
                 if (mAutoConnectionPending) {
@@ -330,7 +334,9 @@ public final class BluetoothDeviceProfileState extends StateMachine {
                 }
             }
         }
-        public void onServiceDisconnected(int profile) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:14.264 -0400", hash_original_method = "6F896B2BC65B96C7E3DEBF6D6C2A1678", hash_generated_method = "5974E538723CBF15F64FD6D790208504")
+        
+public void onServiceDisconnected(int profile) {
             synchronized(BluetoothDeviceProfileState.this) {
                 mHeadsetService = null;
             }

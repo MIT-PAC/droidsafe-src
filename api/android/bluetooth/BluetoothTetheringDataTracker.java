@@ -104,10 +104,14 @@ public static synchronized BluetoothTetheringDataTracker getInstance() {
 
     private BluetoothProfile.ServiceListener mProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
-        public void onServiceConnected(int profile, BluetoothProfile proxy) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:17.207 -0400", hash_original_method = "75162FF2FC33BE2B6B1325F8645EBC1B", hash_generated_method = "62B9848B231BCD5BD54662E15F361A76")
+        
+public void onServiceConnected(int profile, BluetoothProfile proxy) {
             mBluetoothPan = (BluetoothPan) proxy;
         }
-        public void onServiceDisconnected(int profile) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:17.208 -0400", hash_original_method = "689B408215CC2E7D996339AADB82B7E0", hash_generated_method = "CC689E3E9ADB93B7F6C7EBB3962A4117")
+        
+public void onServiceDisconnected(int profile) {
             mBluetoothPan = null;
         }
     };
@@ -345,7 +349,9 @@ public synchronized void startReverseTether(String iface, BluetoothDevice device
         mIface = iface;
         mDevice = device;
         Thread dhcpThread = new Thread(new Runnable() {
-            public void run() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:17.235 -0400", hash_original_method = "FB9174C1B530D0751959C1927D66B916", hash_generated_method = "A090132B26E855C3B521526C20C665B8")
+            
+public void run() {
                 //TODO(): Add callbacks for failure and success case.
                 //Currently this thread runs independently.
                 DhcpInfoInternal dhcpInfoInternal = new DhcpInfoInternal();

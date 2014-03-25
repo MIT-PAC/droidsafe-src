@@ -80,7 +80,9 @@ public class BluetoothProfileState extends StateMachine {
 
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.237 -0400", hash_original_method = "A5B907A2BE55D1826A6FCD8EFEF64977", hash_generated_method = "7153FC8A2555480B9A73BBAE70C5BAE7")
+        
+@Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
