@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+#must be in parent directory of application root
+#takes one argument
+
+#-kobjsens 2, 3, 4
+#-noclinitcontext
+#-ignorenocontextflows
+#-allcontext
+#-typesforcontext
+#-trackallflows (looks good for general use)
+
+num_tests=6
+app_dir=${1?"Need root directory arg"}
+apac_home=${APAC_HOME?"Need to define APAC_HOME"}
+args_file_name="ds.rt.addtional.args"
+
+function create_config() {
+    # $1 is root dir
+    # $2 is test name
+    # $3 is test parameters to be writter to file
+    
+    test_dir="$1"-"$2"
+
+    # copy root dir to directory with test name appended
+    echo "$test_dir"
+    cp -R $1 "$test_dir"
+
+    # create parameters file
+    echo "$3" > "$test_dir"/"$args_file_name"
+    
+    
+}
+
+args1="-kobjsens 2
+-nova
+-nojsa
+-noclinitcontext
+-ignorenocontextflows"
+create_config "$app_dir" "2obj-nova" "$args1"
+
+args2="-kobjsens 4
+-typesforcontext
+-noclinitcontext
+-trackallflows
+-ignorenocontextflows"
+create_config "$app_dir" "4obj-types-trackall" "$args2"
+
+args3="-kobjsens 2
+-allcontext
+-noclinitcontext
+-trackallflows"
+create_config "$app_dir" "2obj-allcontext-noclinit" "$args3"
+
+args4="-kobjsens 3
+-noclinitcontext
+-trackallflows
+-ignorenocontextflows"
+create_config "$app_dir" "3obj-trackall" "$args4"
+
+args5="-kobjsens 4
+-noclinitcontext
+-trackallflows
+-ignorenocontextflows"
+create_config "$app_dir" "4obj-trackall" "$args5"
+
+
+${apac_home}/system-tests/regtest.py -threads $num_tests -timeout 28800 -dir .
+
+
+
+
+
