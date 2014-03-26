@@ -96,6 +96,11 @@ public class InformationFlowAnalysis {
 
     public Set<InfoValue> getTaints(IAllocNode rootAllocNode, MethodOrMethodContext methodContext) {
         Set<InfoValue> values = new HashSet<InfoValue>();
+
+        // HACK
+        values.addAll(this.state.instances.get(AllocNodeField.v(rootAllocNode, ObjectUtils.v().taint)));
+        values.addAll(this.state.arrays.get(rootAllocNode));
+
         Set<IAllocNode> reachableAllocNodes = AllocNodeUtils.v().reachableAllocNodes(rootAllocNode);
 
         Set<AllocNodeField> allocNodeFields = AllocNodeFieldsReadAnalysis.v().getRecursively(methodContext);
