@@ -80,6 +80,7 @@ public class API {
     private Map<SootMethod,Set<InfoKind>> srcsMapping;
     /** map of sinks from soot method to info kinds */
     private Map<SootMethod,Set<InfoKind>> sinksMapping;
+    private Set<SootMethod> sourcesThatTaintArgs;
     /** default info kind for a spec or ban method that is not labeled */
     public InfoKind SENSITIVE_UNCATEGORIZED;
     public InfoKind UNMODELED;
@@ -169,6 +170,9 @@ public class API {
             ifs.addAll(sinksMapping.get(original));
             sinksMapping.put(clone, ifs);
         }
+        
+        if (sourcesThatTaintArgs.contains(original))
+            sourcesThatTaintArgs.add(clone);
     }
     
     /**
@@ -209,6 +213,8 @@ public class API {
             srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
 
             sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
+            
+            sourcesThatTaintArgs = new HashSet<SootMethod>();
 
             allSystemClasses = new LinkedHashSet<SootClass>();
 
@@ -409,6 +415,7 @@ public class API {
             boolean verified = false;
             boolean sink = false;
             boolean source = false;
+            boolean sourceTaintArgs = false;
             String category = "";
             for (Tag tag : method.getTags()) {
                 if (tag instanceof VisibilityAnnotationTag) {
@@ -440,6 +447,10 @@ public class API {
                             logger.info("Found method with BAN classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSVerified")) {
                             verified = true;
+                        } else if (at.getType().contains("droidsafe/annotations/DSSourceTaintArgs")) {
+                            sourceTaintArgs = true;
+                            sourcesThatTaintArgs.add(method);
+                            logger.info("Noting that source taints args: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSSink")) {
                             logger.info("Found sink method: {}", method);
                             addSinkTag(method, at);
@@ -451,6 +462,10 @@ public class API {
                         }
                     }
                 }
+            }
+            
+            if (sourceTaintArgs && !sink) {
+                logger.error("Method that taints all args but is not a source: {}", method);
             }
 
             if (c != Classification.NONE && !category.isEmpty()) {
@@ -828,6 +843,10 @@ public class API {
         return all_sys_methods;
     }
 
+    public boolean isSourceThatTaintsArgs(SootMethod method) {
+        return sourcesThatTaintArgs.contains(method); 
+    }
+    
     /**
      * Return turn if the method is a source method that has a high level information kind defined.
      */
