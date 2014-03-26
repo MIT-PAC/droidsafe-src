@@ -55,11 +55,13 @@ import soot.jimple.Stmt;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.NoContext;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
+
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
@@ -95,6 +97,11 @@ public class InformationFlowAnalysis {
 
     public Set<InfoValue> getTaints(IAllocNode rootAllocNode, MethodOrMethodContext methodContext) {
         Set<InfoValue> values = new HashSet<InfoValue>();
+
+        // HACK
+        values.addAll(this.state.instances.get(AllocNodeField.v(rootAllocNode, ObjectUtils.v().taint)));
+        values.addAll(this.state.arrays.get(rootAllocNode));
+
         Set<IAllocNode> reachableAllocNodes = AllocNodeUtils.v().reachableAllocNodes(rootAllocNode);
 
         Set<AllocNodeField> allocNodeFields = AllocNodeFieldsReadAnalysis.v().getRecursively(methodContext);
@@ -142,6 +149,12 @@ public class InformationFlowAnalysis {
         values.addAll(vs);
 
         return values;
+    }
+
+    public Set<InfoValue> getTaints(MethodOrMethodContext srcMethodContext, Local local) {
+        assert local.getType() instanceof PrimType;
+        Context context = srcMethodContext.context();
+        return this.state.locals.get(context, local);
     }
 
     public Set<InfoValue> getTaints(Stmt stmt, MethodOrMethodContext srcMethodContext, Local local) {
@@ -370,6 +383,10 @@ public class InformationFlowAnalysis {
         stmt.getRightOp().apply(rValueSwitch);
     }
 
+    public static boolean ignoreContext(Context context) {
+        return Config.v().ignoreNoContextFlows && context instanceof NoContext; 
+    }
+    
     // assign_stmt = local "=" local
     private void execute(AssignStmt stmt, Local lLocal, Local rLocal, State state) {
         if (lLocal.getType() instanceof RefLikeType) {
@@ -382,6 +399,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 ImmutableSet<InfoValue> values = state.locals.get(context, rLocal);
                 state.locals.putW(context, lLocal, values);
             }
@@ -403,6 +423,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
@@ -432,6 +455,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 state.locals.putW(context, lLocal, values);
             }
         }
@@ -451,6 +477,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
@@ -473,6 +502,9 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
         for (MethodOrMethodContext methodContext : methodContexts) {
             Context context = methodContext.context();
+            if (ignoreContext(context)) {
+                continue;
+            }
             ImmutableSet<InfoValue> values = evaluate(context, sizeImmediate, state.locals);
             if (!(values.isEmpty())) {
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, context);
@@ -497,6 +529,9 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
         for (MethodOrMethodContext methodContext : methodContexts) {
             Context context = methodContext.context();
+            if (ignoreContext(context)) {
+                continue;
+            }
             HashSet<InfoValue> values = new HashSet<InfoValue>();
             for (Immediate sizeImmediate : sizeImmediates) {
                 ImmutableSet<InfoValue> sizeValues = evaluate(context, sizeImmediate, state.locals);
@@ -545,6 +580,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 ImmutableSet<InfoValue> values = state.locals.get(context, rLocal);
                 state.locals.putW(context, lLocal, values);
             }
@@ -562,6 +600,9 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
         for (MethodOrMethodContext methodContext : methodContexts) {
             Context context = methodContext.context();
+            if (ignoreContext(context)) {
+                continue;
+            }
             HashSet<InfoValue> values = new HashSet<InfoValue>();
             Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(opLocal, context);
             for (IAllocNode allocNode : allocNodes) {
@@ -587,6 +628,9 @@ public class InformationFlowAnalysis {
             public void caseNegExpr(NegExpr negExpr) {
                 for (MethodOrMethodContext methodContext : PTABridge.v().getMethodContexts(method)) {
                     Context context = methodContext.context();
+                    if (ignoreContext(context)) {
+                        continue;
+                    }
                     ImmutableSet<InfoValue> values = evaluate(context, opImmediate, state.locals);
                     state.locals.putW(context, lLocal, values);
                 }
@@ -598,6 +642,9 @@ public class InformationFlowAnalysis {
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
                     Context context = methodContext.context();
+                    if (ignoreContext(context)) {
+                        continue;
+                    }
                     HashSet<InfoValue> values = new HashSet<InfoValue>();
                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(opImmediate, context);
                     for (IAllocNode allocNode : allocNodes) {
@@ -622,6 +669,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 for (int i = 0; i < immediates.length; i++) {
                     if (isOpLocal[i]) {
@@ -640,6 +690,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 for (Immediate immediate : immediates) {
                     ImmutableSet<InfoValue> vs = evaluate(context, immediate, state.locals);
@@ -679,6 +732,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 ImmutableSet<InfoValue> values = evaluate(context, rLocal, state.locals);
                 if (!(values.isEmpty())) {
                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
@@ -719,6 +775,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 ImmutableSet<InfoValue> values = evaluate(context, rLocal, state.locals);
                 state.statics.putW(field, values);
             }
@@ -753,6 +812,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 ImmutableSet<InfoValue> values = evaluate(context, rLocal, state.locals);
                 if (!(values.isEmpty())) {
                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
@@ -789,12 +851,18 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> callerMethodContexts = PTABridge.v().getMethodContexts(callerMethod);
         for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
             Context callerContext = callerMethodContext.context();
+            if (ignoreContext(callerContext)) {
+                continue;
+            }
             List<Edge> callEdges = PTABridge.v().outgoingEdges(callerMethodContext, stmt);
             for (Edge callEdge : callEdges) {
                 MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
+                Context calleeContext = calleeMethodContext.context();
+                if (ignoreContext(calleeContext)) {
+                    continue;
+                }
                 SootMethod calleeMethod = calleeMethodContext.method();
                 if (calleeMethod.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(calleeMethod))) {
-                    Context calleeContext = calleeMethodContext.context();
                     HashSet<InfoValue>[] argumentValues = contextToArguments.get(calleeContext);
                     if (argumentValues == null) {
                         argumentValues = new HashSet[argumentCount];
@@ -817,12 +885,19 @@ public class InformationFlowAnalysis {
             }
         }
         for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
+            Context callerContext = callerMethodContext.context();
+            if (ignoreContext(callerContext)) {
+                continue;
+            }
             List<Edge> callEdges = PTABridge.v().outgoingEdges(callerMethodContext, stmt);
             for (Edge callEdge : callEdges) {
                 MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
+                Context calleeContext = calleeMethodContext.context();
+                if (ignoreContext(calleeContext)) {
+                    continue;
+                }
                 SootMethod calleeMethod = calleeMethodContext.method();
                 if (calleeMethod.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(calleeMethod))) {
-                    Context calleeContext = calleeMethodContext.context();
                     HashSet<InfoValue>[] argumentValues = contextToArguments.get(calleeContext);
                     Local[] parameterLocals = getParameterLocals(calleeMethod);
                     for (int i = 0; i < parameterLocals.length; i++) {
@@ -847,6 +922,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
@@ -868,6 +946,9 @@ public class InformationFlowAnalysis {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
+                if (ignoreContext(context)) {
+                    continue;
+                }
                 ImmutableSet<InfoValue> values = state.locals.get(context, (Local)argImmediate);
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
@@ -898,25 +979,59 @@ public class InformationFlowAnalysis {
         Set<MethodOrMethodContext> calleeMethodContexts = PTABridge.v().getMethodContexts(calleeMethod);
         for (MethodOrMethodContext calleeMethodContext : calleeMethodContexts) {
             Context calleeContext = calleeMethodContext.context();
+            if (ignoreContext(calleeContext)) {
+                continue;
+            }
             for (Edge callEdge : PTABridge.v().incomingEdges(calleeMethodContext)) {
                 MethodOrMethodContext callerMethodContext = callEdge.getSrc();
                 SootMethod callerMethod = callerMethodContext.method();
                 Context callerContext = callerMethodContext.context();
+                if (ignoreContext(callerContext)) {
+                    continue;
+                }
                 Stmt callStmt = callEdge.srcStmt();
                 ImmutableSet<InfoValue> callValues = null;
                 if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                    if (API.v().hasSourceInfoKind(calleeMethod)
-                            || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                    if (API.v().hasSourceInfoKind(calleeMethod)) {
                         callValues = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                         InvokeExpr invokeExpr = callStmt.getInvokeExpr();
                         List<Value> argImmediates = invokeExpr.getArgs();
                         for (Value argImmediate : argImmediates) {
-                            if (argImmediate.getType() instanceof ArrayType) {
-                                ArrayType argType = (ArrayType)argImmediate.getType();
-                                if (argType.getElementType() instanceof PrimType) {
+                            Type argType = argImmediate.getType();
+                            if (argType instanceof RefType) {
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
                                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                     for (IAllocNode allocNode : allocNodes) {
-                                        state.arrays.putW(allocNode, callValues);
+                                        state.instances.putW(AllocNodeField.v(allocNode, ObjectUtils.v().taint), callValues);
+                                    }
+                                }
+                            } else if (argType instanceof ArrayType) {
+                                ArrayType arrayType = (ArrayType)argImmediate.getType();
+                                Type elementType = arrayType.getElementType();
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
+                                    } else {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            Set<IAllocNode> elementAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(arrayAllocNode);
+                                            for (IAllocNode elementAllocNode : elementAllocNodes) {
+                                                state.instances.putW(AllocNodeField.v(elementAllocNode, ObjectUtils.v().taint), callValues);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
                                     }
                                 }
                             }
@@ -926,8 +1041,7 @@ public class InformationFlowAnalysis {
                 if (callStmt instanceof AssignStmt) {
                     if (returnType instanceof RefLikeType) {
                         if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                            if (API.v().hasSourceInfoKind(calleeMethod)
-                                    || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                            if (API.v().hasSourceInfoKind(calleeMethod)) {
                                 Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, callerContext);
                                 for (IAllocNode allocNode : allocNodes) {
@@ -938,8 +1052,7 @@ public class InformationFlowAnalysis {
                     } else {
                         HashSet<InfoValue> values = new HashSet<InfoValue>(evaluate(calleeContext, returnImmediate, state.locals));
                         if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                            if (API.v().hasSourceInfoKind(calleeMethod)
-                                    || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                            if (API.v().hasSourceInfoKind(calleeMethod)) {
                                 values.addAll(callValues);
                             }
                         }
@@ -962,21 +1075,52 @@ public class InformationFlowAnalysis {
                 MethodOrMethodContext callerMethodContext = callEdge.getSrc();
                 SootMethod callerMethod = callerMethodContext.method();
                 Context callerContext = callerMethodContext.context();
+                if (ignoreContext(callerContext)) {
+                    continue;
+                }
                 Stmt callStmt = callEdge.srcStmt();
                 ImmutableSet<InfoValue> callValues = null;
                 if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                    if (API.v().hasSourceInfoKind(calleeMethod)
-                            || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                    if (API.v().hasSourceInfoKind(calleeMethod)) {
                         callValues = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                         InvokeExpr invokeExpr = callStmt.getInvokeExpr();
                         List<Value> argImmediates = invokeExpr.getArgs();
                         for (Value argImmediate : argImmediates) {
-                            if (argImmediate.getType() instanceof ArrayType) {
-                                ArrayType argType = (ArrayType)argImmediate.getType();
-                                if (argType.getElementType() instanceof PrimType) {
+                            Type argType = argImmediate.getType();
+                            if (argType instanceof RefType) {
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
                                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                     for (IAllocNode allocNode : allocNodes) {
-                                        state.arrays.putW(allocNode, callValues);
+                                        state.instances.putW(AllocNodeField.v(allocNode, ObjectUtils.v().taint), callValues);
+                                    }
+                                }
+                            } else if (argType instanceof ArrayType) {
+                                ArrayType arrayType = (ArrayType)argImmediate.getType();
+                                Type elementType = arrayType.getElementType();
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
+                                    } else {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            Set<IAllocNode> elementAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(arrayAllocNode);
+                                            for (IAllocNode elementAllocNode : elementAllocNodes) {
+                                                state.instances.putW(AllocNodeField.v(elementAllocNode, ObjectUtils.v().taint), callValues);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
                                     }
                                 }
                             }
@@ -1113,6 +1257,10 @@ class AllocNodeFieldsReadAnalysis {
                 List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
+                    Context context = methodContext.context();
+                    if (InformationFlowAnalysis.ignoreContext(context)) {
+                        continue;
+                    }
                     HashSet<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
                     for (Block block : blocks) {
                         Iterator<Unit> units = block.iterator();
@@ -1141,10 +1289,18 @@ class AllocNodeFieldsReadAnalysis {
             return this.methodContextToAllocNodeFieldsRecursively.get(methodContext);
         }
 
+        Context context = methodContext.context();
+        if (InformationFlowAnalysis.ignoreContext(context)) {
+            return ImmutableSet.<AllocNodeField>of();
+        }
         HashSet<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>(this.methodContextToAllocNodeFields.get(methodContext));
         Iterator<MethodOrMethodContext> tgtMethodContexts = this.transitiveTargets.iterator(methodContext);
         while (tgtMethodContexts.hasNext()) {
             MethodOrMethodContext tgtMethodContext = tgtMethodContexts.next();
+            Context tgtContext = tgtMethodContext.context();
+            if (InformationFlowAnalysis.ignoreContext(tgtContext)) {
+                continue;
+            }
             Set<AllocNodeField> afs = this.methodContextToAllocNodeFields.get(tgtMethodContext);
             allocNodeFields.addAll(afs);
         }
@@ -1200,6 +1356,10 @@ class AllocNodesReadAnalysis {
                 List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
+                    Context context = methodContext.context();
+                    if (InformationFlowAnalysis.ignoreContext(context)) {
+                        continue;
+                    }
                     HashSet<IAllocNode> allocNodes = new HashSet<IAllocNode>();
                     for (Block block : blocks) {
                         Iterator<Unit> units = block.iterator();
@@ -1228,10 +1388,18 @@ class AllocNodesReadAnalysis {
             return this.methodContextToAllocNodesRecursively.get(methodContext);
         }
 
+        Context context = methodContext.context();
+        if (InformationFlowAnalysis.ignoreContext(context)) {
+            return ImmutableSet.<IAllocNode>of();
+        }
         HashSet<IAllocNode> allocNodes = new HashSet<IAllocNode>(this.methodContextToAllocNodes.get(methodContext));
         Iterator<MethodOrMethodContext> tgtMethodContexts = this.transitiveTargets.iterator(methodContext);
         while (tgtMethodContexts.hasNext()) {
             MethodOrMethodContext tgtMethodContext = tgtMethodContexts.next();
+            Context tgtContext = tgtMethodContext.context();
+            if (InformationFlowAnalysis.ignoreContext(tgtContext)) {
+                continue;
+            }
             Set<IAllocNode> as = this.methodContextToAllocNodes.get(tgtMethodContext);
             allocNodes.addAll(as);
         }
@@ -1308,6 +1476,10 @@ class FieldsReadAnalysis {
             return this.methodContextToFieldsRecursively.get(methodContext);
         }
 
+        Context context = methodContext.context();
+        if (InformationFlowAnalysis.ignoreContext(context)) {
+            return ImmutableSet.<SootField>of();
+        }
         HashSet<SootMethod> visitedMethods = new HashSet<SootMethod>();
         SootMethod method = methodContext.method();
         HashSet<SootField> fields = new HashSet<SootField>(this.methodToFields.get(method));
@@ -1315,6 +1487,10 @@ class FieldsReadAnalysis {
         Iterator<MethodOrMethodContext> tgtMethodContexts = this.transitiveTargets.iterator(methodContext);
         while (tgtMethodContexts.hasNext()) {
             MethodOrMethodContext tgtMethodContext = tgtMethodContexts.next();
+            Context tgtContext = tgtMethodContext.context();
+            if (InformationFlowAnalysis.ignoreContext(tgtContext)) {
+                continue;
+            }
             SootMethod tgtMethod = tgtMethodContext.method();
             if (!(visitedMethods.contains(tgtMethod))) {
                 Set<SootField> fs = this.methodToFields.get(tgtMethodContext.method());
@@ -1346,6 +1522,7 @@ class InjectedValuesAnalysis {
     }
 
     static Set<InfoValue> getInjectedValues(AssignStmt stmt, MethodOrMethodContext methodContext) {
+        
         Set<InfoValue> values = null;
         Value rValue = stmt.getRightOp();
         if (rValue instanceof InvokeExpr) {
@@ -1363,8 +1540,7 @@ class InjectedValuesAnalysis {
             MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
             SootMethod calleeMethod = calleeMethodContext.method();
             if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
-                if (API.v().hasSourceInfoKind(calleeMethod)
-                        || (Config.v().infoFlowTrackAll && !(calleeMethod.getDeclaringClass().getPackageName().equals("java.lang")))) {
+                if (API.v().hasSourceInfoKind(calleeMethod)) {
                     values.add(InfoUnit.v(stmt));
                 }
             }
@@ -1379,6 +1555,10 @@ class InjectedValuesAnalysis {
                 List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
+                    Context context = methodContext.context();
+                    if (InformationFlowAnalysis.ignoreContext(context)) {
+                        continue;
+                    }
                     HashSet<InfoValue> values = new HashSet<InfoValue>();
                     for (Block block : blocks) {
                         Iterator<Unit> units = block.iterator();
@@ -1407,10 +1587,18 @@ class InjectedValuesAnalysis {
             return this.methodContextToValuesRecursively.get(methodContext);
         }
 
+        Context context = methodContext.context();
+        if (InformationFlowAnalysis.ignoreContext(context)) {
+            return ImmutableSet.<InfoValue>of();
+        }
         HashSet<InfoValue> values = new HashSet<InfoValue>(this.methodContextToValues.get(methodContext));
         Iterator<MethodOrMethodContext> tgtMethodContexts = this.transitiveTargets.iterator(methodContext);
         while (tgtMethodContexts.hasNext()) {
             MethodOrMethodContext tgtMethodContext = tgtMethodContexts.next();
+            Context tgtContext = tgtMethodContext.context();
+            if (InformationFlowAnalysis.ignoreContext(tgtContext)) {
+                continue;
+            }
             Set<InfoValue> vs = this.methodContextToValues.get(tgtMethodContext);
             values.addAll(vs);
         }

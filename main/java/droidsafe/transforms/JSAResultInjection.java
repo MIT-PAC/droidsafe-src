@@ -144,7 +144,7 @@ public class JSAResultInjection extends BodyTransformer {
         if (!PTABridge.v().isPointer(v))
             return false;
         
-        for (IAllocNode node : PTABridge.v().getPTSet(v)) {
+        for (IAllocNode node : PTABridge.v().getPTSetIns(v)) {
             if (!(node instanceof StringConstantNode)) 
                 return false;
         }

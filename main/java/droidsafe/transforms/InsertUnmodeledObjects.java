@@ -17,7 +17,9 @@ import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Type;
 import soot.Value;
+import soot.ValueBox;
 import soot.jimple.AssignStmt;
+import soot.jimple.CastExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.StaticFieldRef;
@@ -27,6 +29,7 @@ import soot.util.Chain;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.SootUtils;
 
 /**
  * 
@@ -99,7 +102,7 @@ public class InsertUnmodeledObjects {
                                 continue;            
 
                             try {
-                                Collection<SootMethod> targets = PTABridge.v().resolveInvoke(invoke);
+                                Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
                                 for (SootMethod target : targets) 
                                     if (API.v().isSystemMethod(target)) {
                                         hasAPITarget = true;
@@ -113,7 +116,7 @@ public class InsertUnmodeledObjects {
                             if (hasAPITarget) {
                                 //we have a method that could target the api, now see if the return value has 
                                 //anything in its pt set
-                                if (PTABridge.v().getPTSet(assign.getLeftOp()).isEmpty()) {
+                                if (PTABridge.v().getPTSetIns(assign.getLeftOp()).isEmpty()) {
                                     addUnmodeledObject(assign, method);
                                 }
                             }
@@ -122,6 +125,32 @@ public class InsertUnmodeledObjects {
                 }
             }
         }
+    }
+    
+    private Type findCast(SootMethod method, Stmt start, Value v) {
+        Body body = method.getActiveBody();
+        StmtBody stmtBody = (StmtBody)body;
+        Chain units = stmtBody.getUnits();
+        Iterator stmtIt = units.iterator(start);
+
+        while (stmtIt.hasNext()) {
+            Stmt stmt = (Stmt)stmtIt.next();
+            
+            if (stmt.branches())
+                return null;
+            
+            for (ValueBox vb : stmt.getUseBoxes()) {
+                if (vb.getValue() instanceof CastExpr) {
+                    CastExpr ce = (CastExpr)vb.getValue();
+                    if (ce.getOp().equals(v)) {
+                        logger.info("Found cast of {} in {} to {}", v, method, ce.getCastType());
+                        return ce.getCastType();
+                    }
+                }
+            }
+        }
+        
+        return null;
     }
     
     /**
@@ -133,7 +162,21 @@ public class InsertUnmodeledObjects {
         SootMethodRef target = invoke.getMethodRef();
         Body body = method.getActiveBody();
         
-        Type type = target.returnType();
+        //try to find a cast to narrow type
+        Type castType = findCast(method, stmt, stmt.getLeftOp());
+        Type returnType = target.returnType();
+        Type type;
+        
+        if (castType != null) {
+            if (!SootUtils.isSubTypeOfIncluding(castType, returnType)) {
+                logger.info("Could not use cast type because not child of return type {} {}", castType, returnType);
+                type = returnType;
+            } else {
+                type = castType;
+            }            
+        } else 
+            type = returnType;
+            
         
         Value newObj = UnmodeledGeneratedClasses.v().getSootFieldForType(type);
         

@@ -487,6 +487,11 @@ public class Method implements Comparable<Method> {
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
+                //System.out.println(ptaInfo.getEdge().getSrc());
+                //System.out.println(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()));                
+                //System.out.println(ptaInfo.getArgValue(i) + "\n");
+                
+                
                 infoValues = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
                             ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
@@ -545,7 +550,7 @@ public class Method implements Comparable<Method> {
             try {
                 //TODO: CONTEXT HERE FROM THE INFOVALUE
                 Collection<SootMethod> targets = 
-                        PTABridge.v().resolveInvoke(invoke);
+                        PTABridge.v().resolveInvokeIns(invoke);
 
                 for (SootMethod target : targets) { 
                     for (InfoKind kind : API.v().getSourceInfoKinds(target)) {

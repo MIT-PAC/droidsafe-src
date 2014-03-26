@@ -26,6 +26,7 @@ import soot.AnySubType;
 import soot.ArrayType;
 import soot.Context;
 import soot.G;
+import soot.Hierarchy;
 import soot.Local;
 import soot.MethodContext;
 import soot.MethodOrMethodContext;
@@ -58,6 +59,7 @@ import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.GeomQueries;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.InsensitiveAllocNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
@@ -67,7 +69,10 @@ import soot.jimple.spark.sets.P2SetVisitor;
 import soot.jimple.spark.sets.PointsToSetInternal;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.callgraph.EdgePredicate;
+import soot.jimple.toolkits.callgraph.Filter;
 import soot.jimple.toolkits.callgraph.ReachableMethods;
+import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
@@ -92,7 +97,7 @@ public class SparkPTA extends PTABridge {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(SparkPTA.class);
     /** bimap of new expressions to their alloc node representation */
-    private HashBiMap<Object, AllocNode> newToAllocNodeMap;
+    private HashBiMap<Object, InsensitiveAllocNode> newToAllocNodeMap;
     /** all method reachable from the harness main */
     private Set<SootMethod> reachableMethods;
     /** add method + contexts that are reachable */
@@ -108,13 +113,21 @@ public class SparkPTA extends PTABridge {
     
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
-     * to one.
+     * to one.  Also add subclasses of each 
      * 
      * Strings will be added if the precisestrings options is given
      */
-    private static String  LIMIT_DEPTH_TO_ONE = 
-            "java.lang.Throwable,java.math.BigInt,java.math.BigInteger,"+
-             "android.graphics.Rect,android.view.MotionEvent,android.view.KeyEvent,android.graphics.Point"; 
+    private static String[]  NO_CONTEXT = { 
+            "java.lang.Throwable",
+            "java.math.BigInt",
+            "java.math.BigInteger",
+            "android.graphics.Rect",
+            "android.view.MotionEvent",
+            "android.view.KeyEvent",
+            "android.graphics.Point"
+         
+    };
+                     
     
     /** package prefix of important allocators from java */
     private static String[] IMPORTANT_ALLOCATORS_FROM_JAVA = {
@@ -169,8 +182,11 @@ public class SparkPTA extends PTABridge {
             
             reachableMethodContexts.add(momc);
 
-            //System.out.println("SparkPTA Reachable MOMC: " + momc);
-            
+            /*
+            if (momc.method().getSubSignature().equals("void <clinit>()") ||
+                    momc.method().getDeclaringClass().getName().equals("java.lang.Integer"))
+                System.out.println(momc);
+            */
             if (!methodToContexts.containsKey(momc.method()))
                 methodToContexts.put(momc.method(), new LinkedHashSet<MethodOrMethodContext>());
             
@@ -198,6 +214,10 @@ public class SparkPTA extends PTABridge {
                 (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         
+        dumpReachablesAndAllocNodes();
+        //dumpCallGraphReachablesCSV();
+        //dumpOutdegreesCSV();
+        
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
         }
@@ -210,6 +230,105 @@ public class SparkPTA extends PTABridge {
             new SparkPTAStats().writeStats();
     }
 
+    private void dumpReachablesAndAllocNodes() {
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "spark-dump.log");
+            
+            fw.write("# Reachable Method Contexts:\n\n");
+            
+            for (MethodOrMethodContext momc : getReachableMethodContexts()) {
+                fw.write(momc + "\n\n");
+            }
+            
+            fw.write("\n\n# AllocNodes: \n\n");
+            Iterator<AllocNode> nodes = ptsProvider.getAllocNodeNumberer().iterator(); 
+            while (nodes.hasNext()) {
+                AllocNode node = nodes.next();
+                fw.write(node + "\n\n");
+            }
+            
+            fw.close();
+            
+        } catch (IOException e) {
+            
+        }
+        
+    }
+
+   private void dumpOutdegreesCSV() {
+       try {
+           FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "reachables-outdegree.csv");
+           
+           fw.write("Method,Outdegree");
+           
+           for (MethodOrMethodContext momc : getReachableMethodContexts()) {
+               int outdegree = 0;
+               Iterator<Edge> edges = callGraph.edgesOutOf(momc);
+               while (edges.hasNext()) {
+                   edges.next();
+                   outdegree++;
+               }
+                       
+               fw.write(momc + "|" + outdegree + "\n");
+           }
+                       
+           fw.close();
+           
+       } catch (IOException e) {
+           
+       }
+   }
+    
+   EdgePredicate noStaticInits = new EdgePredicate() {
+
+    @Override
+    public boolean want(Edge e) {
+        return !("<clinit>".equals(e.tgt().getName()));
+    }
+       
+   };
+   
+    /**
+     * Expensive!
+     */
+    private void dumpCallGraphReachablesCSV() {
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "reachables-count.csv");
+            
+            fw.write("Method,Reachables");
+            
+            
+            for (MethodOrMethodContext momc : getReachableMethodContexts()) {
+                if ("<clinit>".equals(momc.method().getName()))
+                    continue;
+                    
+                Set<MethodOrMethodContext> c = new HashSet<MethodOrMethodContext>();            
+                c.add(momc);
+                Filter filter = new Filter(noStaticInits);
+                //filter on static initializers, hopefully they won't show in the stats, 
+                //or any calls that they make...
+                ReachableMethods rm = new ReachableMethods(callGraph, c.iterator(), filter);
+                rm.update();
+                
+                QueueReader<MethodOrMethodContext> edges = rm.listener();
+                int reachables = 0;
+                while (edges.hasNext()) {
+                    MethodOrMethodContext reachable = edges.next();
+                    if ("<clinit>".equals(reachable.method().getName()))
+                        continue;
+                    reachables++;
+                }
+                
+                fw.write(momc + "|" + reachables + "\n");
+            }
+                        
+            fw.close();
+            
+        } catch (IOException e) {
+            
+        }
+    }
+    
     public CallGraph getCallGraph() {
         return callGraph;
     }
@@ -223,31 +342,50 @@ public class SparkPTA extends PTABridge {
         return methodToContexts.get(method);
     }
     
-    /**
-     * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
-     */
-    public IAllocNode getAllocNode(Object newExpr, Context context) {
-        AllocNode insens = null;
+    public Set<IAllocNode> getAllocNodeIns(Object newExpr) {
+        InsensitiveAllocNode insens = null;
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
             Integer i = type.numDimensions;
             Pair pair = new Pair(newArr, i);
-            insens = (AllocNode) newToAllocNodeMap.get(pair);
+            insens = newToAllocNodeMap.get(pair);
         } else {
             if (!newToAllocNodeMap.containsKey(newExpr)) {
                 System.out.println("Not in new -> alloc map: " + newExpr);
                 return null;
             }
-            insens = (AllocNode) newToAllocNodeMap.get(newExpr);
+            insens = newToAllocNodeMap.get(newExpr);
         }
         
-        if (context != null) {
-            return insens.context(context);
+        Set<IAllocNode> nodes = new HashSet<IAllocNode>();
+        
+        nodes.add(insens);
+        nodes.addAll(insens.getContextNodeMap().values());
+        
+        return nodes;
+    }
+    
+    /**
+     * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
+     */
+    public IAllocNode getAllocNode(Object newExpr, Context context) {
+        InsensitiveAllocNode insens = null;
+        if (newExpr instanceof NewMultiArrayExpr) {
+            NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
+            ArrayType type = (ArrayType)newArr.getType();
+            Integer i = type.numDimensions;
+            Pair pair = new Pair(newArr, i);
+            insens = newToAllocNodeMap.get(pair);
         } else {
-            return insens;
+            if (!newToAllocNodeMap.containsKey(newExpr)) {
+                System.out.println("Not in new -> alloc map: " + newExpr);
+                return null;
+            }
+            insens = newToAllocNodeMap.get(newExpr);
         }
             
+        return insens.context(context);
     }
 
     /**
@@ -284,10 +422,10 @@ public class SparkPTA extends PTABridge {
     }
 
     @Override
-    public Set<Type> getTypes(Value val) {
+    public Set<Type> getTypesIns(Value val) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (IAllocNode node : getPTSet(val)) {
+        for (IAllocNode node : getPTSetIns(val)) {
             types.add(node.getType());
         }
 
@@ -306,7 +444,7 @@ public class SparkPTA extends PTABridge {
     }
 
     @Override
-    public Set<? extends IAllocNode> getPTSet(Value val) {
+    public Set<? extends IAllocNode> getPTSetIns(Value val) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
 
@@ -402,23 +540,10 @@ public class SparkPTA extends PTABridge {
          */
         return (Set<? extends IAllocNode>) allocNodes;
     }
-
-    private void checkContext(Context context) {
-        if (!(context instanceof AllocNode)) {
-            logger.error("Invalid context type for spark object sensitivity: " + context);
-            droidsafe.main.Main.exit(1);
-        }
-            
-    }
     
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val, Context context) {
-        
-        if (context == null)
-            return getPTSet(val);
-        
-        checkContext(context);
-
+     
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
 
@@ -462,7 +587,7 @@ public class SparkPTA extends PTABridge {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an insensitive search.
      */
-    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke) 
+    public Collection<SootMethod> resolveInvokeIns(InvokeExpr invoke) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -472,7 +597,7 @@ public class SparkPTA extends PTABridge {
             logger.error("Should not see dynamic invoke expr: {}", invoke);
             droidsafe.main.Main.exit(1);
         } else if (invoke instanceof InstanceInvokeExpr) {
-            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
+            return resolveInstanceInvokeIns((InstanceInvokeExpr)invoke);
         }
 
         return Collections.emptySet();
@@ -499,9 +624,12 @@ public class SparkPTA extends PTABridge {
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
+    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMapIns(InstanceInvokeExpr invoke) 
             throws CannotFindMethodException {
-        return resolveInstanceInvokeMap(invoke, null);
+        Set<? extends IAllocNode> allocs;
+        allocs = getPTSetIns(invoke.getBase());
+        
+        return internalResolveInstanceInvokeMap(allocs, invoke);
     }
 
     /**
@@ -511,21 +639,17 @@ public class SparkPTA extends PTABridge {
      */
     public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
-        Set<? extends IAllocNode> allocs = null;
-        //get either the context sensitive or insensitive result based on the context param 
-        if (context == null) 
-            allocs = getPTSet(invoke.getBase());
-        else
-            allocs = getPTSet(invoke.getBase(), context);
+        Set<? extends IAllocNode> allocs;
+        allocs = getPTSet(invoke.getBase(), context);
 
-        return internalResolveInstanceInvokeMap(allocs, invoke, context);
+        return internalResolveInstanceInvokeMap(allocs, invoke);
     }
 
     /**
      * 
      */
     private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
-        InstanceInvokeExpr invoke, Context context) throws CannotFindMethodException {
+        InstanceInvokeExpr invoke) throws CannotFindMethodException {
         Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
 
         //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
@@ -611,13 +735,20 @@ public class SparkPTA extends PTABridge {
         int realSize = 0; 
 
         for (AllocNode node : ptsProvider.getAllocNodes()) {
-            newToAllocNodeMap.put(node.getNewExpr(), node);
+            if (!(node instanceof InsensitiveAllocNode)) {
+                logger.error("Found non-insensitive node in ptsProvider.getAllocNodes()");
+                droidsafe.main.Main.exit(1);
+            }
+            
+            InsensitiveAllocNode insNode = (InsensitiveAllocNode)node;
+                
+            newToAllocNodeMap.put(node.getNewExpr(), insNode);
             realSize ++;
             allAllocNodes.add(node);
         
             //countNode(nodeCount, node);
-        
-            for (Map.Entry<Context, AllocNode> entry : node.getContextNodeMap().entrySet()) {
+            
+            for (Map.Entry<Context, ObjectSensitiveAllocNode> entry : insNode.getContextNodeMap().entrySet()) {
                 allAllocNodes.add(entry.getValue());
                 //countNode(nodeCount, node);
             }
@@ -649,7 +780,7 @@ public class SparkPTA extends PTABridge {
         opt.put("vta","false");                   
         opt.put("rta","false");                   
         opt.put("field-based","false");           
-        opt.put("types-for-sites","false");        
+        
         
   
         
@@ -671,23 +802,26 @@ public class SparkPTA extends PTABridge {
         opt.put("class-method-var","true");     
         opt.put("dump-answer","false");          
         opt.put("add-tags","false");             
-        opt.put("set-mass","false");
+        opt.put("set-mass","false");   
+        opt.put("types-for-sites","false");        
         
-        
-        opt.put("merge-stringbuffer",Config.v().impreciseStrings ? "true" : "false");   
+        opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
         opt.put("string-constants", "true");   
 
         opt.put("kobjsens", Integer.toString(K));
-        //if you change this to true, the turn of the static method cloner!
-        opt.put("kobjsens-context-for-static-methods", "false");
         
-        //pass on precise strings option
-        opt.put("kobjsens-precise-strings", Config.v().verypreciseStrings ? "true" : "false");
+        opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
         
         opt.put("kobjsens-no-context-list", 
-                LIMIT_DEPTH_TO_ONE);
+                buildNoContextList());
         
-        opt.put("kobjsens-important-allocators", buildImportantAllocs());
+        opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));
+        
+        if (Config.v().allContextForPTA)
+            opt.put("kobjsens-important-allocators", "");
+        else 
+            opt.put("kobjsens-important-allocators", buildImportantAllocs());
+        
         
         //now overwrite options with options that are passed in
         for (Map.Entry<String, String> entry : opts.entrySet()) {
@@ -708,6 +842,26 @@ public class SparkPTA extends PTABridge {
         logger.info("[spark] Done!");
     }
     
+    private String buildNoContextList() {
+        StringBuffer buf = new StringBuffer();
+        
+        for (String str : NO_CONTEXT) {
+            SootClass clz = Scene.v().getSootClass(str);
+            
+            for (SootClass child : Scene.v().getActiveHierarchy().getSubclassesOfIncluding(clz)) { 
+                buf.append(child + ",");
+                logger.info("Adding class to ignore context list of spark: {}", clz);
+            }
+        }
+        
+        String ret = buf.toString();
+        
+        ret = ret.substring(0, ret.length() - 1);
+        
+        return ret;
+        
+    }
+    
     private boolean isImportantJavaAlloc(SootClass clz) {
         String packageName = clz.getName();
         
@@ -720,16 +874,13 @@ public class SparkPTA extends PTABridge {
     }
     
     private String buildImportantAllocs() {
-        //if we want imprecise strings, then don't add precision for any allocators
-        if (!Config.v().preciseStrings) {
-            return "";
-        }
-        
         StringBuffer sb = new StringBuffer();
       
         for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz) ||
-                    isImportantJavaAlloc(clz)) {
+            if (Project.v().isSrcClass(clz) || 
+                    /*isImportantJavaAlloc(clz) ||*/
+                    clz.getName().startsWith(Project.DS_GENERATED_CLASSES_PREFX) ||
+                    clz.getName().startsWith("droidsafe.runtime")) {
                 logger.info("Adding class to important alloc list of spark: {}", clz);
                 sb.append(clz + ",");
             }

@@ -34,12 +34,14 @@ import soot.jimple.LongConstant;
 import soot.jimple.StringConstant;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
 import soot.Context;
 import soot.MethodOrMethodContext;
 import soot.RefType;
+import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
@@ -180,7 +182,8 @@ public class ValueAnalysis  {
 
         am.visitMethodContexts();
 
-        am.logResults();
+        if (Config.v().debug)
+            am.logResults();
 
         try {
             am.vaErrorsLog.close();
@@ -197,7 +200,8 @@ public class ValueAnalysis  {
 
     public void createObjectModels() {
         for(IAllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
-            createObjectModel(allocNode);    
+            if (allocNode instanceof ObjectSensitiveAllocNode)
+                createObjectModel(allocNode);    
         }
     }
 
@@ -306,7 +310,7 @@ public class ValueAnalysis  {
                                         if(fieldObjectVAModel instanceof PrimVAModel) {
                                             PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
                                             if (fieldPrimVAModel instanceof StringVAModel) {
-                                                handleString(assignStmt, fieldPrimVAModel, context);
+                                                handleString(momc, assignStmt, fieldPrimVAModel, context);
                                             } else  {
                                                 //primitive, but not string primitive
                                                 if(rightOp instanceof Constant) {
@@ -349,10 +353,10 @@ public class ValueAnalysis  {
     /**
      * Handle case where type for assignment is a string
      */
-    private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Context context) {
+    private void handleString(MethodOrMethodContext momc, AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Context context) {
         //Found string
         Set<? extends IAllocNode> rhsNodes;
-
+        
         //get the string nodes the rhs expression could possibly point to
         if (assignStmt.getRightOp() instanceof StringConstant) {
             //if a direct string constant, then get the string constant node from pta
@@ -366,12 +370,12 @@ public class ValueAnalysis  {
 
         for(IAllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
-            if(rhsNode instanceof IStringConstantNode) {
+            if(rhsNode.getNewExpr() instanceof StringConstant) {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
                 if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() <= 5) {
-                    String value = ((IStringConstantNode)rhsNode).getString();
+                    String value = sc.value;
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
                     value = value.replace("\\uxxxx", "");
@@ -387,7 +391,7 @@ public class ValueAnalysis  {
                     fieldPrimVAModel.getValues());
                 fieldPrimVAModel.addValue(UNKNOWN_VALUES_STRING);
             }
-        }                           
+        }  
     }
 
     /**

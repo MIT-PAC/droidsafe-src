@@ -95,7 +95,7 @@ public class TransformStringBuilderInvokes {
                             
                             boolean onlyStringTypes = true;
 
-                            for (IAllocNode node : PTABridge.v().getPTSet(iie.getBase())) {
+                            for (IAllocNode node : PTABridge.v().getPTSetIns(iie.getBase())) {
                                 if (!STRING_LIKE_CLASSES.contains(node.getType().toString())) {
                                     onlyStringTypes = false;
                                     break;

@@ -41,6 +41,9 @@ public class Config {
     public static final Set<String> TARGETS = new LinkedHashSet<String>(Arrays.asList("specdump",
             "confcheck"));
 
+    /** Value analysis depth for following fields when printing */
+    public static final int VA_PRINTING_LEVEL = 3;
+
     /** location of all android apps */
     public static final String ANDROID_APP_DIR_REL = "android-apps";
 
@@ -82,6 +85,8 @@ public class Config {
     public String[] infoFlowValues;
     /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
     public boolean infoFlowTrackAll = false;
+    /** If true, list native methods that cut information flows. */
+    public boolean infoFlowNative = false;
     /** if true, use event context, otherwise, use insensitive result */
     public boolean eventContextPTA = false;
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
@@ -136,18 +141,22 @@ public class Config {
     public int kobjsens = 2;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
-    /** should we add context greater than 1 to string for more precise, but could blow up! */
-    public boolean preciseStrings = false;
-    /** should  add precision for strings for all classes */
-    public boolean verypreciseStrings = false;
     /** should we not add any precision for strings and clump them all together */
     public boolean impreciseStrings = false;
+    /** if true add context sensitivity for all objects in pta, otherwise start in user code, and lose it based on k*/
+    public boolean allContextForPTA = false;
+    /** if true, then in the info flow analysis ignore methods with NoContext */
+    public boolean ignoreNoContextFlows = false;
     /** track only annotated source in the source */
     public boolean onlyannotatedsources = true;
     /** Generate pta result for eclipse plugin */
     public boolean ptaresult = true;
     /** Run Catch Block Analysis **/
     public boolean runCatchBlocks = false;
+    /** should a context sensitive pta add context to static inits? */
+    public boolean staticinitcontext = true;
+    /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
+    public boolean typesForContext = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -240,12 +249,15 @@ public class Config {
         Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
         options.addOption(impreciseStrs);
         
-        Option preciseStrs = new Option("precisestrings", "turn on extra precision for strings in important classes, EXPENSIVE");
-        options.addOption(preciseStrs);
-
-        Option verypreciseStrs = new Option("veryprecisestrings", "turn on extra precision for all strings, VERY EXPENSIVE");
-        options.addOption(verypreciseStrs);
-
+        Option allcontext = new Option("allcontext", "Track context on all objects, not just starting at user code.");
+        options.addOption(allcontext);
+        
+        Option tforC = new Option("typesforcontext", "use types (instead of alloc sites) for object sensitive context elements > 1");
+        options.addOption(tforC);
+        
+        Option ignorenocontextflows = new Option("ignorenocontextflows", "Ignore flows that occur in method with no context");
+        options.addOption(ignorenocontextflows);
+        
         Option writeJimple =
                 new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
         options.addOption(writeJimple);
@@ -257,6 +269,9 @@ public class Config {
         Option noVA =
                 new Option("nova", "Do not run value analysis.");
         options.addOption(noVA);
+        
+        Option noStaticInitContext = new Option("noclinitcontext", "PTA will not add special context for static inits");
+        options.addOption(noStaticInitContext);
         
         Option noPTAResult =
                 new Option("noptaresult", "Do not translate PTA result for eclipse plugin");
@@ -315,6 +330,9 @@ public class Config {
                 "Track all methods (excluding those in java.lang) during information flow analysis");
         options.addOption(infoFlowTrackAll);
 
+        Option infoflowNative = new Option("native", "List native methods that cut information flows");
+        options.addOption(infoflowNative);
+
         Option approot =
                 OptionBuilder.withArgName("dir").hasArg()
                 .withDescription("The Android application root directory").create("approot");
@@ -371,6 +389,9 @@ public class Config {
         if (cmd.hasOption ("catchblocks"))
             this.runCatchBlocks = true;
 
+        if (cmd.hasOption("noclinitcontext"))
+            this.staticinitcontext = false;
+        
         if (cmd.hasOption("noptaresult"))
             this.ptaresult = false;
                
@@ -407,27 +428,22 @@ public class Config {
             this.cloneStaticCalls = false;
         }
 
-        int stringOptCnt = 0;
         if (cmd.hasOption("imprecisestrings")) {
             this.impreciseStrings = true;
-            stringOptCnt++;
+        }
+       
+        if (cmd.hasOption("allcontext")) {
+            this.allContextForPTA = true;
         }
         
-        if (cmd.hasOption("precisestrings")) {
-            this.preciseStrings = true;
-            stringOptCnt++;
-        }
-
-        if (cmd.hasOption("veryprecisestrings")) {
-            this.verypreciseStrings = true;
-            stringOptCnt++;
+        if (cmd.hasOption("typesforcontext")) {
+            this.typesForContext = true;
         }
         
-        if (stringOptCnt > 1) {
-            logger.error("Cannot enable more than one string precision option!");
-            droidsafe.main.Main.exit(1);
+        if (cmd.hasOption("ignorenocontextflows")) {
+            this.ignoreNoContextFlows = true;
         }
-
+        
         if (cmd.hasOption("noinfoflow")) {
             this.infoFlow = false;
         }
@@ -435,6 +451,11 @@ public class Config {
         if (cmd.hasOption("infoflow-value")) {
             assert this.infoFlow;
             this.infoFlowValues = cmd.getOptionValues("infoflow-value");
+        }
+
+        if (cmd.hasOption("native")) {
+            assert this.infoFlow;
+            this.infoFlowNative = true;
         }
 
         if (cmd.hasOption("pta")) {

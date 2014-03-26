@@ -4,6 +4,7 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.UnknownVAModel;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.utils.SootUtils;
+import droidsafe.main.Config;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;
@@ -181,6 +182,10 @@ public abstract class RefVAModel extends VAModel {
      */
     public String toStringPretty(int level) {
         StringBuffer buf = new StringBuffer();
+
+	if (level > Config.v().VA_PRINTING_LEVEL)
+	    return buf.toString();
+
         String indent = "\n" + VAUtils.indent(level);
         buf.append(indent);
         buf.append(this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()));
@@ -265,7 +270,10 @@ public abstract class RefVAModel extends VAModel {
     /**
      * Return a well-formatted (pretty!) string of the resolved field values for this modeled object.
      */
-    private String fieldsStringPretty(int level) {
+    private String fieldsStringPretty(int level) {	
+	if (level > Config.v().VA_PRINTING_LEVEL)
+	    return "<additional depth not shown>";
+
         if (this.invalidated) {
             return INVALIDATED;
         } else {

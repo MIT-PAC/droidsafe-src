@@ -204,6 +204,10 @@ public class GeoPTA extends PTABridge {
         return ptsProvider.isValidMethod(sm);
     }
     
+    public Set<IAllocNode> getAllocNodeIns(Object newExpr) {
+        throw new RuntimeException("Not implemented!");
+    }
+    
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
@@ -324,10 +328,10 @@ public class GeoPTA extends PTABridge {
     }
 
     @Override
-    public Set<Type> getTypes(Value val) {
+    public Set<Type> getTypesIns(Value val) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (IAllocNode node : getPTSet(val)) {
+        for (IAllocNode node : getPTSetIns(val)) {
             types.add(node.getType());
         }
 
@@ -384,7 +388,7 @@ public class GeoPTA extends PTABridge {
     public Set<? extends IAllocNode> getPTSet(Value val, Context ctxt) {
       
         if (ctxt == null)
-            return getPTSet(val);
+            return getPTSetIns(val);
         else 
             return getPTSet1CFA(val, ctxt);
     }
@@ -396,7 +400,7 @@ public class GeoPTA extends PTABridge {
         try {
             //if the context does not make sense, use the insensitive version
             if (context == null )
-                return getPTSet(val);
+                return getPTSetIns(val);
 
           
 
@@ -436,7 +440,7 @@ public class GeoPTA extends PTABridge {
             return (Set<? extends IAllocNode>) allocNodes;
         } catch (Exception ee) {
             logger.info("Some error in 1CFA search.  Falling back to insensitive search." , ee);
-            return getPTSet(val);
+            return getPTSetIns(val);
         }
     }
     
@@ -448,7 +452,7 @@ public class GeoPTA extends PTABridge {
      */
     private Set<? extends IAllocNode> getPTSetEventContext(Value val, Context c) {
         if (!Config.v().eventContextPTA)
-            return getPTSet(val);
+            return getPTSetIns(val);
         
         totalECQueries++;
         
@@ -473,7 +477,7 @@ public class GeoPTA extends PTABridge {
                     queries.contexsByAnyCallEdge(context, (Local)val, objFull) ) {
                 objFull.finish();
             } else {
-                return getPTSet(val);
+                return getPTSetIns(val);
             }
             for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
@@ -493,7 +497,7 @@ public class GeoPTA extends PTABridge {
                     queries.contextsByAnyCallEdge(context, base, ifr.getField(), objFull) ) {
                 objFull.finish();
             } else {
-                return getPTSet(val);
+                return getPTSetIns(val);
             }
             for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
@@ -512,7 +516,7 @@ public class GeoPTA extends PTABridge {
                     queries.contextsByAnyCallEdge(context, base, ArrayElement.v(), objFull) ) {
                 objFull.finish();
             } else {
-                return getPTSet(val);
+                return getPTSetIns(val);
             }
             for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
@@ -521,14 +525,14 @@ public class GeoPTA extends PTABridge {
             return (Set<? extends IAllocNode>) allocNodes;
         }
         else {
-            return getPTSet(val);
+            return getPTSetIns(val);
         }
     }
     
     /**
      * Given a pointer value, return the context insensitive points to set.
      */
-    public Set<? extends IAllocNode> getPTSet(Value val) {
+    public Set<? extends IAllocNode> getPTSetIns(Value val) {
                
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
@@ -592,7 +596,7 @@ public class GeoPTA extends PTABridge {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an insensitive search.
      */
-    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke) 
+    public Collection<SootMethod> resolveInvokeIns(InvokeExpr invoke) 
         throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -602,7 +606,7 @@ public class GeoPTA extends PTABridge {
             logger.error("Should not see dynamic invoke expr: {}", invoke);
             droidsafe.main.Main.exit(1);
         } else if (invoke instanceof InstanceInvokeExpr) {
-            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
+            return resolveInstanceInvokeIns((InstanceInvokeExpr)invoke);
         }
         
         return Collections.emptySet();
@@ -612,7 +616,7 @@ public class GeoPTA extends PTABridge {
     public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
         if (context == null) {
-            return resolveInvoke(invoke);
+            return resolveInvokeIns(invoke);
         } else {
             return resolveInvokeEventContext(invoke, context); 
         }
@@ -666,7 +670,7 @@ public class GeoPTA extends PTABridge {
         if (context != null) {
             return resolveInstanceInvokeMap1CFA(invoke, context);
         } else 
-            return resolveInstanceInvokeMap(invoke);
+            return resolveInstanceInvokeMapIns(invoke);
     }
     
     /**
@@ -674,7 +678,7 @@ public class GeoPTA extends PTABridge {
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
+    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMapIns(InstanceInvokeExpr invoke) 
         throws CannotFindMethodException {
         return resolveInstanceInvokeMap1CFA(invoke, null);
     }
@@ -689,7 +693,7 @@ public class GeoPTA extends PTABridge {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
-            allocs = getPTSet(invoke.getBase());
+            allocs = getPTSetIns(invoke.getBase());
         else
             allocs = getPTSet1CFA(invoke.getBase(), context);
         
@@ -747,7 +751,7 @@ public class GeoPTA extends PTABridge {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
-            allocs = getPTSet(invoke.getBase());
+            allocs = getPTSetIns(invoke.getBase());
         else
             allocs = getPTSetEventContext(invoke.getBase(), context);
         

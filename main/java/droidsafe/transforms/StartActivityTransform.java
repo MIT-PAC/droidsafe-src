@@ -159,7 +159,7 @@ class StartActivityTransform implements VATransform {
     private Set<SootField> getIntentTargetHarnessFlds(Value intentArg) {
         Set<SootField> resolvedTargetHarnessFlds = new HashSet<SootField>();
 
-        Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(intentArg);
+        Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSetIns(intentArg);
 
         // Couldn't figure out which intents 
         if(allocNodes.size() == 0) {

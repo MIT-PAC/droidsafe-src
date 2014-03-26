@@ -150,7 +150,7 @@ public class SparkPTAStats {
                                 Set<IAllocNode> possibleContextNodes = new HashSet<IAllocNode>();
                                 Set<IAllocNode> queriedContextNodes = new HashSet<IAllocNode>();
                                 
-                                Set<AllocNode> allocNodes = (Set<AllocNode>)pta.getPTSet(contextVal);
+                                Set<AllocNode> allocNodes = (Set<AllocNode>)pta.getPTSetIns(contextVal);
 
                                 for (AllocNode an : allocNodes) {
                                     //System.out.println("Here4: " + an);    

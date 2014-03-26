@@ -170,7 +170,7 @@ public class PaddlePTA extends PTABridge {
                 if (value instanceof Local ||
                         value instanceof StaticFieldRef ||
                         value instanceof InstanceFieldRef) {
-                    Set<IAllocNode> nodes = (Set<IAllocNode>) getPTSet(value);
+                    Set<IAllocNode> nodes = (Set<IAllocNode>) getPTSetIns(value);
 
                     int ignoreSize = 0;
                     for (IAllocNode an : nodes) {
@@ -259,6 +259,10 @@ public class PaddlePTA extends PTABridge {
     @Override
     public boolean isLegalCast(Type objType, Type refType) {
         return PaddleScene.v().tm.castNeverFails(objType, refType);
+    }
+    
+    public Set<IAllocNode> getAllocNodeIns(Object newExpr) {
+        throw new RuntimeException("Not implemented");
     }
 
     /**
@@ -350,10 +354,10 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public Set<Type> getTypes(Value val) {
+    public Set<Type> getTypesIns(Value val) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (IAllocNode node : getPTSet(val)) {
+        for (IAllocNode node : getPTSetIns(val)) {
             types.add(node.getType());
         }
 
@@ -372,7 +376,7 @@ public class PaddlePTA extends PTABridge {
     }
 
     @Override
-    public Set<? extends IAllocNode> getPTSet(Value val) {
+    public Set<? extends IAllocNode> getPTSetIns(Value val) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetReadOnly pts = null;
 
@@ -447,7 +451,7 @@ public class PaddlePTA extends PTABridge {
         //            return getPTSet1CFA(val, context.getContext());
         //        } else if (context.getType() == ContextType.NONE) {
         if (context == null) {
-            return getPTSet(val);
+            return getPTSetIns(val);
         } else {
             logger.error("Invalid Query Type: {}", context);
             droidsafe.main.Main.exit(1);
@@ -466,7 +470,7 @@ public class PaddlePTA extends PTABridge {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an insensitive search.
      */
-    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke) throws CannotFindMethodException {
+    public Collection<SootMethod> resolveInvokeIns(InvokeExpr invoke) throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
             ret.add(((StaticInvokeExpr)invoke).getMethod());
@@ -475,7 +479,7 @@ public class PaddlePTA extends PTABridge {
             logger.error("Should not see dynamic invoke expr: {}", invoke);
             droidsafe.main.Main.exit(1);
         } else if (invoke instanceof InstanceInvokeExpr) {
-            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
+            return resolveInstanceInvokeIns((InstanceInvokeExpr)invoke);
         }
 
         return Collections.emptySet();
@@ -502,7 +506,7 @@ public class PaddlePTA extends PTABridge {
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke)
+    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMapIns(InstanceInvokeExpr invoke)
             throws CannotFindMethodException {
         return resolveInstanceInvokeMap(invoke, null);
     }
@@ -517,7 +521,7 @@ public class PaddlePTA extends PTABridge {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
-            allocs = getPTSet(invoke.getBase());
+            allocs = getPTSetIns(invoke.getBase());
         else
             allocs = getPTSet(invoke.getBase(), context);
 
