@@ -6,6 +6,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import droidsafe.eclipse.plugin.core.view.json.JsonViewPart;
 import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 /**
@@ -17,18 +18,20 @@ import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
  */
 public class RefreshOutlineView extends AbstractHandler {
 
-  /**
-   * Command implementation. Just retrieves the active part, the droidsafe outline part, and calls
-   * the refresh method.
-   */
-  @Override
-  public Object execute(ExecutionEvent event) throws ExecutionException {
-    IWorkbenchPart part = HandlerUtil.getActivePart(event);
-    if (part instanceof SecuritySpecOutlineViewPart) {
-      SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
-      droidsafeView.refreshSpecAndOutlineView();
+    /**
+     * Command implementation. Just retrieves the active part, the droidsafe outline part, and calls
+     * the refresh method.
+     */
+    @Override
+    public Object execute(ExecutionEvent event) throws ExecutionException {
+        IWorkbenchPart part = HandlerUtil.getActivePart(event);
+        if (part instanceof SecuritySpecOutlineViewPart) {
+            SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
+            droidsafeView.refreshSpecAndOutlineView();
+        } else if (part instanceof JsonViewPart) {
+            ((JsonViewPart) part).updateView();
+        }
+        return null;
     }
-    return null;
-  }
 
 }

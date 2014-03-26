@@ -34,9 +34,9 @@ public class JsonTreeElementLabelProvider extends MethodInfoTreeElementLabelProv
             Object data = treeElement.getData();
             if (data instanceof JsonObject) {
                 JsonObject jsonObj = (JsonObject) data;
-                JsonElement sig = jsonObj.get("signature");
+                String sig = Utils.getFieldValueAsString(jsonObj, "signature");
                 if (sig != null)
-                    return DroidsafePluginUtilities.removeCloneSuffix(Utils.signatureShortLabel(sig));
+                    return DroidsafePluginUtilities.removeCloneSuffix(Utils.shortSignature(sig));
             }
             return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
         }
@@ -50,7 +50,12 @@ public class JsonTreeElementLabelProvider extends MethodInfoTreeElementLabelProv
      * @return The tool tip text for the node.
      */
     public String getToolTipText(Object element) {
-        return DroidsafePluginUtilities.removeCloneSuffix(element.toString());
+        if (element instanceof TreeElement<?, ?>) {
+            TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
+            Object data = treeElement.getData();
+            return (data instanceof JsonElement) ? Utils.toStringPretty((JsonElement)data) : data.toString();
+        }
+        return null;
     }
     /**
      * Returns the icon image for the tree node.

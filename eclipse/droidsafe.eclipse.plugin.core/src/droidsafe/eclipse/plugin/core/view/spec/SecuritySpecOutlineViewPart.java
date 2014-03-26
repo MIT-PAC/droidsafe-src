@@ -199,7 +199,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
             }
             InfoFlowSummaryViewPart.openView(this.securitySpecModel);
         }
-        CatchBlocksViewPart.openView();
         if (getViewer() != null) {
             this.parentComposite.layout();
         }
@@ -221,7 +220,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
             initializeTreeViewer();
             InfoFlowSummaryViewPart.openView(this.securitySpecModel);
         }
-        CatchBlocksViewPart.openView();
     }
 
     private void updateCurrentViewerSettings() {

@@ -1,5 +1,10 @@
 package droidsafe.eclipse.plugin.core.view.json;
 
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -37,13 +42,36 @@ abstract public class JsonViewPart extends DroidsafeInfoOutlineViewPart {
           + "\nYou may also need to run the Droidsafe spec generation "
           + "command from the project context menu.";
     
+    public Map<String, Boolean> getVisibilityMap() {
+        return ((JsonTreeElementContentProvider)fContentProvider).getVisibilityMap();
+    }
+
+    public boolean getVisibility(String type) {
+        Map<String, Boolean> visibilityMap = getVisibilityMap();
+        Boolean visibility = visibilityMap.get(type);
+        if (visibility != null)
+            return visibility.booleanValue();
+        return true;
+    }
+
+    public void toggleVisibility(String type) {
+        Map<String, Boolean> visibilityMap = getVisibilityMap();
+        Boolean visibility = visibilityMap.get(type);
+        if (visibility != null)
+            visibilityMap.put(type, !visibility.booleanValue());
+    }
+
     /**
      * Set the input element for the viewer and update the contents of the view.
      */
     protected void setInputElement(String inputElement) {
-        if (!inputElement.equals(fInputElement)) {
-            fInputElement = inputElement;
-            updateView();
+        IProject project = getProject();
+        if (project != null) {
+            inputElement = DroidsafePluginUtilities.droidsafeOutputFile(project, inputElement);
+            if (inputElement != fInputElement) {
+                fInputElement = inputElement;
+                updateView();
+            }
         }
     }
     
@@ -61,9 +89,9 @@ abstract public class JsonViewPart extends DroidsafeInfoOutlineViewPart {
     /**
      * Update the content of the outline view.
      */
-    protected void updateView() {
+    public void updateView() {
         if (fInputElement != null && fParentComposite != null) {
-            JsonObject jsonObj = DroidsafePluginUtilities.parseIndicatorDisplay(getProject(), fInputElement);
+            JsonObject jsonObj = DroidsafePluginUtilities.parseIndicatorDisplay(fInputElement);
             showPage(PAGE_VIEWER);
             fTreeViewer.setInput(jsonObj);
         }        
@@ -115,5 +143,20 @@ abstract public class JsonViewPart extends DroidsafeInfoOutlineViewPart {
             revealSelectionInEditor(selection, false);
         }
     }
+
+    public void addFilter(Filter filter) {
+        ((JsonTreeElementContentProvider)fContentProvider).addFilter(filter);
+        refresh();
+    }
+
+    public List<Filter> getFilters() {
+        return ((JsonTreeElementContentProvider)fContentProvider).getFilters();
+    }
+
+    public void setFilters(List<Filter> filters) {
+        ((JsonTreeElementContentProvider)fContentProvider).setFilters(filters);
+        refresh();
+    }
+
 
 }

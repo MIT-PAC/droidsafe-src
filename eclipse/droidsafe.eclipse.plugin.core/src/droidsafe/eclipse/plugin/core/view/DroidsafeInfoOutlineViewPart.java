@@ -164,4 +164,10 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         return fTreeViewer.getControl();
     }
 
+    public void refresh() {
+        fTreeViewer.refresh();
+        // fTreeViewer.expandToLevel(autoExpandLevel());
+        fTreeViewer.expandAll();    
+      }
+
 }

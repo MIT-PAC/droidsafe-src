@@ -135,14 +135,14 @@
             name="Set Visibility">
       </command>
       <command
-            defaultHandler="droidsafe.eclipse.plugin.core.commands.ToggleCallChainVisibility"
-            id="droidsafe.eclipse.plugin.core.commands.ToggleCallChainVisibility"
-            name="Call Chain">
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.NewFilter"
+            id="droidsafe.eclipse.plugin.core.commands.NewFilter"
+            name="Create Filter">
       </command>
       <command
-            defaultHandler="droidsafe.eclipse.plugin.core.commands.ToggleSysCallVisibility"
-            id="droidsafe.eclipse.plugin.core.commands.ToggleSysCallVisibility"
-            name="System Call">
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SetFilters"
+            id="droidsafe.eclipse.plugin.core.commands.SetFilters"
+            name="Set Filters">
       </command>
    </extension>
    <extension
@@ -501,8 +501,29 @@
             allPopups="false"
             locationURI="menu:droidsafe.eclipse.plugin.core.view.CatchBlocksView">
          <command
-               commandId="droidsafe.eclipse.plugin.core.commands.SetTypeVisibility"
-               label="Visibility"
+               commandId="droidsafe.eclipse.plugin.core.commands.SetFilters"
+               label="Set Filters"
+               style="push">
+         </command>
+         <menu
+               label="Set Visibility">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.json.TypeVisibilityMenu"
+                  id="droidsafe.eclipse.plugin.core.view.json.TypeVisibilityMenu">
+            </dynamic>
+         </menu>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+               label="Refresh Outline View"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.CatchBlocksView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.NewFilter"
+               label="Create Filter"
                style="push">
          </command>
       </menuContribution>

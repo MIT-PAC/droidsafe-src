@@ -123,13 +123,17 @@ public class DroidsafePluginUtilities {
         return null;
     }
 
+    public static String droidsafeOutputFile(IProject project, String fileName) {
+        String projectRootPath = project.getLocation().toOSString();
+        String fullPath = projectRootPath + File.separator + Project.OUTPUT_DIR + File.separator + fileName;
+        return fullPath;
+    }
+    
     /**
      * Reads the JSON object for an indicator display from the given JSON file
      */
-    public static JsonObject parseIndicatorDisplay(IProject project, String jsonFileName) {
-        String projectRootPath = project.getLocation().toOSString();
-        String fullPath = projectRootPath + File.separator + Project.OUTPUT_DIR + File.separator + jsonFileName;
-        File file = new File(fullPath);
+    public static JsonObject parseIndicatorDisplay(String jsonFileName) {
+        File file = new File(jsonFileName);
         if (file.exists()) {
             try {
                 JsonParser jp = new JsonParser();
@@ -702,5 +706,12 @@ public class DroidsafePluginUtilities {
         return image.createImage();
     }
 
+    public static String[] enumStrings(Class<? extends Enum<?>> e) {
+        Enum<?>[] values = e.getEnumConstants();
+        String[] strings = new String[values.length];
+        for (int i = 0; i < values.length; i++)
+            strings[i] = values[i].toString();
+        return strings;
+    }
 }
 
