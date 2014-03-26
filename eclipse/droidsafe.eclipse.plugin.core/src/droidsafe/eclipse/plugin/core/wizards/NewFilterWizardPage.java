@@ -106,16 +106,30 @@ public class NewFilterWizardPage extends WizardPage {
         setFieldValue();
     }
 
+    private FilterOp getFilterOp() {
+        return FilterOp.values()[filterTypeCombo.getSelectionIndex()]; 
+    }
+
+    private String[] getFields() {
+        FilterOp filterOp = getFilterOp();
+        return getFields(filterOp);
+    }
+
+    private String[] getFields(FilterOp filterOp) {
+        switch (filterOp) {
+            case SHOW: return showFields;
+            default: return fields;
+        }
+    }
+
     private void addListeners() {
         filterTypeCombo.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                FilterOp filterOp = FilterOp.values()[filterTypeCombo.getSelectionIndex()];
-                if (filterOp == FilterOp.SHOW) {
-                    typeText.setText("");
-                    fieldCombo.setItems(showFields);
-                    fieldCombo.select(0);
-                }
+                typeText.setText("");
+                fieldCombo.setItems(getFields());
+                fieldCombo.select(0);
+                setFieldValue();
             }
         });
         fieldCombo.addSelectionListener(new SelectionAdapter() {
@@ -143,7 +157,7 @@ public class NewFilterWizardPage extends WizardPage {
             } else if (type.endsWith(".")){
                 type = type.substring(0,  type.length() - 1);
             }
-            String field = fields[fieldCombo.getSelectionIndex()];
+            String field = getFields(filterOp)[fieldCombo.getSelectionIndex()];
             CompareOp compOp = CompareOp.values()[compOpCombo.getSelectionIndex()];
             Filter filter = new Filter(filterOp, type, field, compOp, value);
             return filter;
