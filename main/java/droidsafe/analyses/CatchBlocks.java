@@ -71,8 +71,13 @@ public class CatchBlocks {
     /** Enable/Disable the transformation **/
     static boolean enabled = true;
     
+    /** Rather than creating normal output, dump the entire call graph **/
     private boolean dump_all_calls = false;
     
+    /** debugging flag that only processes specified classes/methods **/
+    private boolean filter_source = false;
+    
+    /** Map from unit to line number **/
     private HashMap<Unit,Integer> lnums = null;
     
     PrintStream fp = null;
@@ -102,20 +107,27 @@ public class CatchBlocks {
         if (!enabled) return;
         
         fp = new PrintStream (Project.v().getOutputDir() + "/catch_blocks.json");
-        fp.printf ("{ %s [\n", json_field ("contents"));
+        fp.printf("{\n");
+        fp.printf("  %s,\n", json_field ("indicator-type", "Catch Blocks"));
+        fp.printf("  %s {\n", json_field ("visibility"));
+        fp.printf("    %s,\n", json_field ("direct-call", true));
+        fp.printf("    %s,\n", json_field ("call-chain", false));
+        fp.printf("    %s\n", json_field ("syscall", true));
+        fp.printf("  },\n");
+        fp.printf (" %s [\n", json_field ("contents"));
         
         // Process each source class (those in app/src)
         for (SootClass clz : Scene.v().getClasses()) {
             if (!Project.v().isSrcClass(clz.toString()))
             	continue;
             logger.info("processing class {}", clz);
-        	if (false && !clz.getShortName().equals ("FetchForecast")) {
+        	if (filter_source && !clz.getShortName().equals ("FetchForecast")) {
         		logger.info ("skipping class {}", clz);
         		continue;
         	}
 
             for (SootMethod method : clz.getMethods()) {
-            	if (false && !method.getName().equals ("run")) {
+            	if (filter_source && !method.getName().equals ("run")) {
             		logger.info("  skipping method {}", method);
             		continue;
             	}
@@ -324,12 +336,16 @@ public class CatchBlocks {
     private String json_field (String name, String value) {
         name = "\"" + name + "\"";
         if (value == null)
-            return String.format ("%-8s : ", name);
-        return String.format ("%-8s : \"%s\"", name, value);
+            return String.format ("%-12s : ", name);
+        return String.format ("%-12s : \"%s\"", name, value);
     }
     
     private String json_field (String name, int value) {
-        return String.format ("%-8s : %d", "\"" + name + "\"", value);
+        return String.format ("%-12s : %d", "\"" + name + "\"", value);
+    }
+          
+    private String json_field (String name, boolean value) {
+        return String.format ("%-12s : %b", "\"" + name + "\"", value);
     }
           
     /**
@@ -361,7 +377,7 @@ public class CatchBlocks {
     		    continue;
     		}
     		// fp.printf ("%s%s\n", indent, m); fp.flush();
-    		if (!is_terminal (e.getTgt()) && !stack.contains(m)) {
+    		if (!stack.contains(m)) {
     			stack.push (m);
     			List<String> subcalls = get_call_chain (e.getTgt(), stack, 
     					indent + "  ");
@@ -369,7 +385,7 @@ public class CatchBlocks {
     			calls.add (String.format ("%s%s (%d)", indent, m, subcalls.size()));
     			calls.addAll (subcalls);
     			methods.put (m, new MethodInfo (subcalls.size(), false));
-    		} else { // no subcalls
+    		} else { // recursive call
     			calls.add (indent + m + "(recursive)");
     		}
     	}
