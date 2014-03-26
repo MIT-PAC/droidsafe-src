@@ -405,8 +405,9 @@ public final Message obtainMessage()
 		// DSModeled - "sending" message without need for MessageQueue by calling handler directly.
     	addTaint(msg.getTaint());
 		addTaint(uptimeMillis);
-		msg.callback.run();
-		dispatchMessage(msg);
+        handleMessage (msg);
+		// msg.callback.run();
+		// dispatchMessage(msg);
 		return true;
 	}
     @DSVerified
