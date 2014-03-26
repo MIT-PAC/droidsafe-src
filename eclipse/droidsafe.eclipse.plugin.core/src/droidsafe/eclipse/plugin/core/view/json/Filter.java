@@ -49,7 +49,7 @@ public class Filter {
     }
     
     public enum FilterOp {
-        EXCLUDE, INCLUDE; //, SHOW;
+        EXCLUDE, INCLUDE, SHOW;
 
         public static final String[] strings = DroidsafePluginUtilities.enumStrings(FilterOp.class);;
 
