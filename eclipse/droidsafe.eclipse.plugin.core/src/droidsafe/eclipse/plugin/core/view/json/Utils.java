@@ -52,7 +52,7 @@ public class Utils {
             if (value != null) {
                 return value.getAsString();
             } else if (SIGNATURE_FIELDS.contains(field)){
-                getSignatureFieldValueAsString(jsonObject, field);
+                return getSignatureFieldValueAsString(jsonObject, field);
             }
         }
         return null;
@@ -84,6 +84,7 @@ public class Utils {
     public static String signatureMethodName(String sig) {
         int pos1 = sig.indexOf(": ") + 2;
         int pos2 = sig.indexOf("(", pos1);
+        pos1 = sig.lastIndexOf(" ", pos2) + 1;
         return sig.substring(pos1, pos2);
     }
 

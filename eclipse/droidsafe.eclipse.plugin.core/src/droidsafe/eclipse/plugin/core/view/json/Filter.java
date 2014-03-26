@@ -149,6 +149,9 @@ public class Filter {
                 if (field.equals("signature")) {
                     String sig = Utils.getFieldValueAsString(jsonObj, field);
                     return compOp.apply(sig, value);
+                } else if (Utils.SIGNATURE_FIELDS.contains(field)){
+                    String str1 = Utils.getSignatureFieldValueAsString(jsonObj, field);
+                    return compOp.apply(str1, value);
                 } else {
                     JsonElement ovalue = jsonObj.get(field);
                     if (ovalue.isJsonPrimitive()) {
