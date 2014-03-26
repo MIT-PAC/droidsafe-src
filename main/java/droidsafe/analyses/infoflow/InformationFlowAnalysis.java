@@ -61,6 +61,7 @@ import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
+
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
@@ -996,12 +997,41 @@ public class InformationFlowAnalysis {
                         InvokeExpr invokeExpr = callStmt.getInvokeExpr();
                         List<Value> argImmediates = invokeExpr.getArgs();
                         for (Value argImmediate : argImmediates) {
-                            if (argImmediate.getType() instanceof ArrayType) {
-                                ArrayType argType = (ArrayType)argImmediate.getType();
-                                if (argType.getElementType() instanceof PrimType) {
+                            Type argType = argImmediate.getType();
+                            if (argType instanceof RefType) {
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
                                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                     for (IAllocNode allocNode : allocNodes) {
-                                        state.arrays.putW(allocNode, callValues);
+                                        state.instances.putW(AllocNodeField.v(allocNode, ObjectUtils.v().taint), callValues);
+                                    }
+                                }
+                            } else if (argType instanceof ArrayType) {
+                                ArrayType arrayType = (ArrayType)argImmediate.getType();
+                                Type elementType = arrayType.getElementType();
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
+                                    } else {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            Set<IAllocNode> elementAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(arrayAllocNode);
+                                            for (IAllocNode elementAllocNode : elementAllocNodes) {
+                                                state.instances.putW(AllocNodeField.v(elementAllocNode, ObjectUtils.v().taint), callValues);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
                                     }
                                 }
                             }
@@ -1056,12 +1086,41 @@ public class InformationFlowAnalysis {
                         InvokeExpr invokeExpr = callStmt.getInvokeExpr();
                         List<Value> argImmediates = invokeExpr.getArgs();
                         for (Value argImmediate : argImmediates) {
-                            if (argImmediate.getType() instanceof ArrayType) {
-                                ArrayType argType = (ArrayType)argImmediate.getType();
-                                if (argType.getElementType() instanceof PrimType) {
+                            Type argType = argImmediate.getType();
+                            if (argType instanceof RefType) {
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
                                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                     for (IAllocNode allocNode : allocNodes) {
-                                        state.arrays.putW(allocNode, callValues);
+                                        state.instances.putW(AllocNodeField.v(allocNode, ObjectUtils.v().taint), callValues);
+                                    }
+                                }
+                            } else if (argType instanceof ArrayType) {
+                                ArrayType arrayType = (ArrayType)argImmediate.getType();
+                                Type elementType = arrayType.getElementType();
+                                if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
+                                    } else {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            Set<IAllocNode> elementAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(arrayAllocNode);
+                                            for (IAllocNode elementAllocNode : elementAllocNodes) {
+                                                state.instances.putW(AllocNodeField.v(elementAllocNode, ObjectUtils.v().taint), callValues);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (elementType instanceof PrimType) {
+                                        Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                        for (IAllocNode arrayAllocNode : arrayAllocNodes) {
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.arrays.putW(arrayAllocNode, callValues);
+                                        }
                                     }
                                 }
                             }
