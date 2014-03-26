@@ -295,7 +295,8 @@ public class Main {
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         
-
+// try catch blocks here
+        
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
         rcfgTimer.start();

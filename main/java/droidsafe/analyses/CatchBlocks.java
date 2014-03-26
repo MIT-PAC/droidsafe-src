@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -75,7 +76,7 @@ public class CatchBlocks {
     private boolean dump_all_calls = false;
     
     /** debugging flag that only processes specified classes/methods **/
-    private boolean filter_source = false;
+    private boolean filter_source = true;
     
     /** Map from unit to line number **/
     private HashMap<Unit,Integer> lnums = null;
@@ -86,6 +87,14 @@ public class CatchBlocks {
     /** Map from processed methods to info about them **/
     private HashMap<SootMethod,MethodInfo> methods 
         = new LinkedHashMap<SootMethod,MethodInfo>();
+    
+    /** set of method names known not to have callbacks **/
+    private static HashSet<String> no_callback_methods = new HashSet<String>();
+    
+    static {
+        no_callback_methods.add ("valueOf");
+        no_callback_methods.add ("toString");
+    }
     
     /** Class that stores information about each method previously processed **/
     static class MethodInfo {
@@ -236,22 +245,23 @@ public class CatchBlocks {
     private void extract_calls (PrintStream fp, SootMethod method, Chain<Unit> insts, 
     		Unit start, Unit end) {
 
-    	CallGraph cg = PTABridge.v().getCallGraph();
     	
     	for (Unit u = start; u != end; u = insts.getSuccOf(u)) {
     		Stmt s = (Stmt)u;
     		if (s.containsInvokeExpr()) {
-    			InvokeExpr ie = s.getInvokeExpr();
  
-    			
        	       	// Get the edges from the method containing the catch block to
        	       	// the statement that includes a method call.  If there are
        	       	// multiple implementations of a virtual/interface method that
        	       	// can be called here, each will be listed.
-    			List<Edge> outgoingEdges = PTABridge.v().outgoingEdges(method, s);
+    			List<Edge> allEdgesForContexts = new LinkedList<Edge>();
+    			for (MethodOrMethodContext momc : PTABridge.v().getMethodContexts(method)) {
+    			    List<Edge> outgoingEdges = PTABridge.v().outgoingEdges(momc, s);
+    			    allEdgesForContexts.addAll(outgoingEdges);
+    			}
     			
     			// Loop through each edge to the method
-    			for (Edge edge : outgoingEdges) {
+    			for (Edge edge : allEdgesForContexts) {
     				MethodOrMethodContext mc = edge.getTgt();
                     Stack<SootMethod> stack = new Stack<SootMethod>();
 
@@ -265,11 +275,12 @@ public class CatchBlocks {
            	       	
     				    // Process each method that can be called from the method in this
     				    // statement
-    				    process_call_chain (mc, stack, "      ");
+    				    process_call_chain (mc, stack, "      ", true);
     				    fp.println("    ]},");
     				}
     			}
     		}
+    		
     	}
     	// put out an empty object so that there is an object following the ',' from
     	// the last one.  A kluge admittedly, but better than anything else I can think of.
@@ -279,37 +290,51 @@ public class CatchBlocks {
     /**
      * Process the call chain and print a json representation of it to fp.
      * Ignores any calls that are within the API. Terminates on any recursive
-     * calls or static initializers. .
+     * calls or static initializers. If the API call contains a callback, 
+     * processes that call.  But system calls within system calls are never printed.
      * 
      * @param mc      - Method to start at
      * @param stack   - Current call chain, used to check for recursion
      * @param indent  - indent for printing (blank string)
      */
-    private void process_call_chain (MethodOrMethodContext mc, 
-            Stack<SootMethod> stack,String indent) {
+    private int process_call_chain (MethodOrMethodContext mc, 
+            Stack<SootMethod> stack,String indent, boolean close) {
         
         CallGraph cg = PTABridge.v().getCallGraph();
+        int sub_cnt = 0;
         ArrayList<String> calls = new ArrayList<String>();
         for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
             Edge e = tit.next();
             SootMethod m = e.getTgt().method();
+            boolean print_m = !(is_system(mc.method()) && is_system (m));
             if (m.toString().contains ("<clinit>"))
                 continue;
             if (is_terminal (e.getTgt())) {
-                print_call (m, e.srcStmt(), indent, "syscall", false);
+                if (print_m) {
+                    print_call (m, e.srcStmt(), indent, "syscall", false);
+                    sub_cnt++;
+                }
             } else if (stack.contains(m)) {
                 // don't bother to print recursive  call
             } else { // need to process anything it calls
-                print_call (m, e.srcStmt(), indent, "call-chain", true);
-                stack.push (m);
-                process_call_chain (e.getTgt(), stack, indent + "  ");
-                stack.pop();
-                fp.printf ("%s]},\n", indent);
+                if (print_m) {
+                    print_call (m, e.srcStmt(), indent, "call-chain", true);
+                    sub_cnt++;
+                    stack.push (m);
+                    process_call_chain (e.getTgt(), stack, indent + "  ", true);
+                    stack.pop();
+                    fp.printf ("%s]},\n", indent);
+                } else { // not printing this method
+                    stack.push(m);
+                    sub_cnt += process_call_chain (e.getTgt(), stack, indent, false);
+                    stack.pop();
+                }
             }
         }
         // Final object in the contents array (which must not have a comma following it)
-        fp.println (indent + "{ }");
-        return;
+        if ((sub_cnt > 0) && close)
+            fp.println (indent + "{ }");
+        return sub_cnt;
     }
       
     private void print_call (SootMethod m, Stmt s, String indent, String type, boolean contents) {
@@ -410,6 +435,10 @@ public class CatchBlocks {
     private boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
     	CallGraph cg = PTABridge.v().getCallGraph();
     	logger.info("  cam: entering iterator, stack = {}", stack);
+    	if (no_callback_methods.contains (mc.method().getName()))
+    	    return false;
+    	if (system_depth (stack) > 5)
+    	    return false;
     	int ii = 0;
     	for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
     		Edge e = tit.next();
@@ -422,6 +451,8 @@ public class CatchBlocks {
                 else
                     return true;
             }
+            if (no_callback_methods.contains (m.getName()))
+                continue;
             if (m.toString().contains("<clinit>"))
     			continue;
     		if (!is_system (m)) {
@@ -435,6 +466,7 @@ public class CatchBlocks {
     			stack.pop();
     			if (result) {
     			    logger.info ("  cam: {} true", m);
+    			    return true;
     			}
     		}
     	}
@@ -442,6 +474,15 @@ public class CatchBlocks {
     	return false;
     }
     
+    /** Returns the number of calls back to the last non-system call **/
+    private int system_depth (Stack<SootMethod> stack) {
+        for (int ii = stack.size()-1; ii > 0; ii--) {
+            SootMethod m = stack.get(ii);
+            if (!is_system(m))
+                return stack.size() - ii;
+        }
+        return stack.size();
+    }
     /** Returns true if the specified method is a system (android or java) class **/
     private boolean is_system (SootMethod m) {
     	Project p = Project.v();
