@@ -127,6 +127,19 @@ public class Harness {
     }
 
     /**
+     * After the harness has created created code in here, this allows one to add additional statements.
+     * 
+     * @param stmt
+     */
+    public void addStmtToEndOfMainLoop(Stmt stmt) {
+        harnessMainBody.getUnits().insertBefore(stmt, inLoopStmt);
+    }
+    
+    public void addLocalToMain(Local l) {
+        harnessMainBody.getLocals().add(l);
+    }
+    
+    /**
      * Return the static field of the harness that stores the object of the created class clz. 
      */
     public SootField getFieldForCreatedClass(SootClass clz) {
