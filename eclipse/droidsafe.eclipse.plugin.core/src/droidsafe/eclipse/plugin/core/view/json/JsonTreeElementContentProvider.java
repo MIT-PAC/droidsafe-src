@@ -168,16 +168,24 @@ public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementCont
     private boolean isFiltered(TreeElement<JsonElement, ?> element, Filter filter) {
         JsonElement jsonElt = element.getData();
         FilterPred pred = filter.pred;
-        boolean satisfied = pred.apply(jsonElt);
         switch (filter.op) {
-            case EXCLUDE: return satisfied;
-            case INCLUDE: return !satisfied;
+            case EXCLUDE: return pred.apply(jsonElt);
+            case INCLUDE: return !pred.apply(jsonElt);
             default: // SHOW
-                // TODO
-                System.err.println("Not yet implemented");
-                return false;
+                return !satisfiedInTree(element, pred);
         }
-        
+    }
+
+    private boolean satisfiedInTree(TreeElement<JsonElement, ?> element, FilterPred pred) {
+        JsonElement jsonElt = element.getData();
+        boolean satisfied = pred.apply(jsonElt);
+        if (satisfied)
+            return true;
+        for (TreeElement<?,?> child: element.getChildren()) {
+            if (satisfiedInTree((TreeElement<JsonElement, ?>)child, pred))
+                return true;
+        }
+        return false;
     }
 
     private boolean isVisible(JsonElement jsonElement) {
@@ -200,7 +208,17 @@ public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementCont
     }
 
     public void addFilter(Filter filter) {
-        filters.add(filter);
+        int size = filters.size();
+        if (size == 0 || filter.op == FilterOp.SHOW || filters.get(size - 1).op != FilterOp.SHOW) {
+            filters.add(filter);
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (filters.get(i).op == FilterOp.SHOW) {
+                    filters.add(i, filter);
+                    break;
+                }
+            }
+        }
     }
 
     public List<Filter> getFilters() {
