@@ -1952,7 +1952,8 @@ private Object readNewLongString(boolean unshared) throws IOException {
      * @see ObjectOutputStream#writeObject(Object)
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
+    @DSSource(DSSourceKind.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.477 -0500", hash_original_method = "D5CBFBA6D0DD1CCB325BD55A2992CB88", hash_generated_method = "8B539A099312D41A4AC5038F6E707F3F")
     
 public final Object readObject() throws OptionalDataException,

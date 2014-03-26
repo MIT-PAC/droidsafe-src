@@ -412,7 +412,7 @@ public InetAddress getInetAddress() {
      *             socket is in an invalid state.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.764 -0500", hash_original_method = "83F4AB21434B41B13879E1F39D268878", hash_generated_method = "6A888960A97927C9FE7BA113727A3BC0")
     
@@ -472,7 +472,7 @@ public int getLocalPort() {
      *             socket is in an invalid state.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.774 -0500", hash_original_method = "0AB25EAA0774AA81766D4356986FC34F", hash_generated_method = "7FE0092975A1C779207A619656F7BC91")
     

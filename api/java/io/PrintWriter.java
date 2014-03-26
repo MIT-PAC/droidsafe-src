@@ -259,7 +259,7 @@ protected void clearError() {
      * state is set to {@code true}.
      */
     @DSComment("PrintWriter class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.534 -0500", hash_original_method = "3747E1B1C7FB1936BAC6943C89A67163", hash_generated_method = "6555AC8DF092B1F6499D2697C5833C35")
     
 @Override

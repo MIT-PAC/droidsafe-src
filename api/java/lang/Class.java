@@ -1089,7 +1089,7 @@ public int getModifiers() {
      * @return the name of the class represented by this {@code Class}.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
     

@@ -1466,7 +1466,6 @@ private void setRelativeDrawablesIfNeeded(Drawable start, Drawable end) {
 
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.550 -0500", hash_original_method = "224789FFA5DBD63B17185276A15DADF0", hash_generated_method = "756550E254590B5801A7246265A40FA0")
     
 @Override
@@ -8333,7 +8332,7 @@ protected void onSelectionChanged(int selStart, int selEnd) {
      * Editable if it would not otherwise be and does call this method.
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.457 -0500", hash_original_method = "B64F50676D912718618203C6EADBF90A", hash_generated_method = "626E7FC9F045281C668160725195AD32")
     
 public void addTextChangedListener(TextWatcher watcher) {

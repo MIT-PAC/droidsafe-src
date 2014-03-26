@@ -3063,7 +3063,6 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setEnabled(boolean enabled){
 		// Original method
