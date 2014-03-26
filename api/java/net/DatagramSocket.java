@@ -369,6 +369,8 @@ public synchronized int getSoTimeout() throws SocketException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSource(DSSourceKind.NETWORK_INFORMATION)
+    @DSSourceTaintArgs
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.645 -0500", hash_original_method = "C2244B28A3A8977EAD72461E3F35998B", hash_generated_method = "FA40C6DCB99A1FF924F067925A9AE9BC")
     
 public synchronized void receive(DatagramPacket pack) throws IOException {
@@ -401,6 +403,7 @@ public synchronized void receive(DatagramPacket pack) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.648 -0500", hash_original_method = "F0676E3BCA654DF56D2BFA1EDDBDFD76", hash_generated_method = "2353F46655A0E31C5FAD87BE14A59420")
     
 public void send(DatagramPacket pack) throws IOException {
+        pack.getTaint();
         checkOpen();
         ensureBound();
 

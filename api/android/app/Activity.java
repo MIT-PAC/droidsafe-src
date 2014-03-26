@@ -863,7 +863,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     public int getChangingConfigurations(){
 		return getTaintInt();
 		// Original method
