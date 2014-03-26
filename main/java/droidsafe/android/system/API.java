@@ -464,7 +464,7 @@ public class API {
                 }
             }
             
-            if (sourceTaintArgs && !sink) {
+            if (sourceTaintArgs && !source) {
                 logger.error("Method that taints all args but is not a source: {}", method);
             }
 
