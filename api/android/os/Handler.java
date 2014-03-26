@@ -299,7 +299,7 @@ public final Message obtainMessage()
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     public final boolean sendMessage(Message msg){
 		// Original method
 		/*
@@ -313,7 +313,7 @@ public final Message obtainMessage()
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessage(int what){
 		// Original method
 		/*
@@ -327,7 +327,7 @@ public final Message obtainMessage()
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
 		// Original method
 		/*
@@ -346,7 +346,7 @@ public final Message obtainMessage()
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
 		// Original method
 		/*
@@ -365,9 +365,8 @@ public final Message obtainMessage()
     
 	@DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSVerified
-    @DSSafe(DSCat.OS_GENERAL)
     public final boolean sendMessageDelayed(Message msg, long delayMillis){
 		// Original method
 		/*
@@ -383,7 +382,7 @@ public final Message obtainMessage()
         return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
 	}
     @DSVerified
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.IO_ACTION_METHOD)
 	public boolean sendMessageAtTime(Message msg, long uptimeMillis){
 		// Original method
 		/*
@@ -524,7 +523,7 @@ public final Looper getLooper() {
         return mLooper;
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     public final void dump(Printer pw, String prefix){
 		// Original method
 		/*
@@ -609,7 +608,7 @@ public final Looper getLooper() {
         {
             //Synthesized constructor
         }
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSink({DSSinkKind.IPC})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.097 -0500", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "F786300E27C986F542B94E2D484AD33A")
         
 public void send(Message msg) {

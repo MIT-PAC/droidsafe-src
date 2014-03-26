@@ -641,7 +641,9 @@ public Class<?> getReturnType() {
      *             if an exception was thrown by the invoked method
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
+    @DSSource(DSSourceKind.REFLECTION)
+    @DSSink(DSSinkKind.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
 public Object invoke(Object receiver, Object... args)
@@ -655,15 +657,21 @@ public Object invoke(Object receiver, Object... args)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.898 -0400", hash_original_method = "0E030E32F68EF389669F95D53DF2EFAB", hash_generated_method = "5C866D8DF0795175296282F6D723F5B5")
 	private Object invokeNative(Object obj, Object[] args, Class<?> declaringClass, Class<?>[] parameterTypes, Class<?> returnType, int slot, boolean noAccessCheck)
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		addTaint(obj.taint);
-		addTaint(args[0].taint);
-		addTaint(declaringClass.taint);
-		addTaint(parameterTypes[0].taint);
-		addTaint(returnType.taint);
-		addTaint(slot);
-		addTaint(noAccessCheck);
-		Object ret = new Object();
-		return ret;
+        
+          addTaint(obj.taint);
+          addTaint(args[0].taint);
+          addTaint(declaringClass.taint);
+          addTaint(parameterTypes[0].taint);
+          addTaint(returnType.taint);
+          addTaint(slot);
+          addTaint(noAccessCheck);
+          /*
+          Object ret = new Object();
+          ret.addTaint(this.getTaint());
+          return ret;
+          */
+          //we have no idea the type of what is returned here, so let the fallback modeling handle
+          return null;
 	}
 
     /**

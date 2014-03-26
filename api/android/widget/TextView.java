@@ -582,7 +582,7 @@ private static int extractRangeEndFromLong(long range) {
 
     @ViewDebug.ExportedProperty(category = "text")
     @DSVAModeled
-    private CharSequence            mText;
+    protected CharSequence            mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.377 -0500", hash_original_field = "42E628F60C958E8C05B8C414894669BE", hash_generated_field = "30221785C9497266E9C8ABBDFDCBE7EC")
 
     private CharSequence            mTransformed;
@@ -1137,6 +1137,7 @@ public TextView(Context context,
                 == (EditorInfo.TYPE_CLASS_NUMBER | EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD);
         if(inputMethod != null)        
         {
+            /* commented by droidsafe because reflection cannot be resolved!
             Class<?> c;
             try 
             {
@@ -1167,13 +1168,14 @@ public TextView(Context context,
             try 
             {
                 mInputType = inputType != EditorInfo.TYPE_NULL
-                        ? inputType
+                ? inputType
                                 : mInput.getInputType();
             } //End block
             catch (IncompatibleClassChangeError e)
             {
                 mInputType = EditorInfo.TYPE_CLASS_TEXT;
             } //End block
+            */
         } //End block
         else
             if(digits != null)        
@@ -3780,8 +3782,8 @@ public boolean getFreezesText() {
     @android.view.RemotableViewMethod
     public final void setText(CharSequence text) {
         addTaint(text.getTaint());
-        setText(text, mBufferType);
-        //mText = text;
+        //setText(text, mBufferType);
+        mText = text;
         // ---------- Original Method ----------
         //setText(text, mBufferType);
     }

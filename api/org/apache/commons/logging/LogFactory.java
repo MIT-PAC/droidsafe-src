@@ -18,6 +18,7 @@ import java.security.PrivilegedAction;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Properties;
+import org.apache.commons.logging.impl.WeakHashtable;
 
 public abstract class LogFactory {
 
@@ -41,33 +42,7 @@ public abstract class LogFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.237 -0500", hash_original_method = "99E3A91D3C10CF72291E25D8500DEBBE", hash_generated_method = "1382044792DAC3A0FD246B154CBA0A69")
     
 private static final Hashtable createFactoryStore() {
-        Hashtable result = null;
-        String storeImplementationClass 
-            = System.getProperty(HASHTABLE_IMPLEMENTATION_PROPERTY);
-        if (storeImplementationClass == null) {
-            storeImplementationClass = WEAK_HASHTABLE_CLASSNAME;
-        }
-        try {
-            Class implementationClass = Class.forName(storeImplementationClass);
-            result = (Hashtable) implementationClass.newInstance();
-            
-        } catch (Throwable t) {
-            // ignore
-            if (!WEAK_HASHTABLE_CLASSNAME.equals(storeImplementationClass)) {
-                // if the user's trying to set up a custom implementation, give a clue
-                if (isDiagnosticsEnabled()) {
-                    // use internal logging to issue the warning
-                    logDiagnostic("[ERROR] LogFactory: Load of custom hashtable failed");
-                } else {
-                    // we *really* want this output, even if diagnostics weren't
-                    // explicitly enabled by the user.
-                    System.err.println("[ERROR] LogFactory: Load of custom hashtable failed");
-                }
-            }
-        }
-        if (result == null) {
-            result = new Hashtable();
-        }
+        Hashtable result = new Hashtable();
         return result;
     }
 

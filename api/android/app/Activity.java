@@ -683,7 +683,7 @@ final void performSaveInstanceState(Bundle outState) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onSaveInstanceState(Bundle outState){
-		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
+        outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
         outState.putParcelable(FRAGMENTS_TAG, p);
         getApplication().dispatchActivitySaveInstanceState(this, outState);
@@ -811,7 +811,7 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.620 -0500", hash_original_method = "ABF3FC9B35FB67DA4650457E79D2DAE8", hash_generated_method = "4A801EFBDC40FB7231D50804D2987BA1")
     
 public CharSequence onCreateDescription() {
-        return null;
+        return new String("<Activity.onCreateDescription>");
     }
     
     @DSVerified
@@ -863,7 +863,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     public int getChangingConfigurations(){
 		return getTaintInt();
 		// Original method
@@ -2285,16 +2285,16 @@ public void closeContextMenu() {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onSearchRequested(){
-		startSearch(null, false, null, false); 
-        return getTaintBoolean();
-		// Original method
-		/*
-		{
         startSearch(null, false, null, false); 
-        return true;
+        return getTaintBoolean();
+        // Original method
+        /*
+          {
+          startSearch(null, false, null, false); 
+          return true;
+          }
+        */
     }
-		*/
-	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)

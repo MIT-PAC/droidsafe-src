@@ -19,53 +19,7 @@ public final class UrlUtils {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.922 -0500", hash_original_method = "9846573335398B4F61F3531E4C57F2B5", hash_generated_method = "80D0985321ECA2E6F1ECECF536BFEBFB")
     
-public static String canonicalizePath(String path, boolean discardRelativePrefix) {
-        // the first character of the current path segment
-        int segmentStart = 0;
-
-        // the number of segments seen thus far that can be erased by sequences of '..'.
-        int deletableSegments = 0;
-
-        for (int i = 0; i <= path.length(); ) {
-            int nextSegmentStart;
-            if (i == path.length()) {
-                nextSegmentStart = i;
-            } else if (path.charAt(i) == '/') {
-                nextSegmentStart = i + 1;
-            } else {
-                i++;
-                continue;
-            }
-
-            /*
-             * We've encountered either the end of a segment or the end of the
-             * complete path. If the final segment was "." or "..", remove the
-             * appropriate segments of the path.
-             */
-            if (i == segmentStart + 1 && path.regionMatches(segmentStart, ".", 0, 1)) {
-                // Given "abc/def/./ghi", remove "./" to get "abc/def/ghi".
-                path = path.substring(0, segmentStart) + path.substring(nextSegmentStart);
-                i = segmentStart;
-            } else if (i == segmentStart + 2 && path.regionMatches(segmentStart, "..", 0, 2)) {
-                if (deletableSegments > 0 || discardRelativePrefix) {
-                    // Given "abc/def/../ghi", remove "def/../" to get "abc/ghi".
-                    deletableSegments--;
-                    int prevSegmentStart = path.lastIndexOf('/', segmentStart - 2) + 1;
-                    path = path.substring(0, prevSegmentStart) + path.substring(nextSegmentStart);
-                    i = segmentStart = prevSegmentStart;
-                } else {
-                    // There's no segment to delete; this ".." segment must be retained.
-                    i++;
-                    segmentStart = i;
-                }
-            } else {
-                if (i > 0) {
-                    deletableSegments++;
-                }
-                i++;
-                segmentStart = i;
-            }
-        }
+    public static String canonicalizePath(String path, boolean discardRelativePrefix) {
         return path;
     }
 

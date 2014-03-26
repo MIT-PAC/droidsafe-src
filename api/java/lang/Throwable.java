@@ -53,7 +53,8 @@ private static int countDuplicates(StackTraceElement[] currentStack,
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static StackTraceElement[] nativeGetStackTrace(Object stackState) {
-    	StackTraceElement[] ret = new StackTraceElement[0];
+    	StackTraceElement[] ret = new StackTraceElement[1];
+        ret[0] = new StackTraceElement();
     	ret[0].addTaint(stackState.taint);
     	return ret;
     }
@@ -236,7 +237,7 @@ public String getLocalizedMessage() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.602 -0500", hash_original_method = "45FE0FF583AFF2392C672B8C003FC38F", hash_generated_method = "335BD883E150835B2792DDB4AA7898D9")
     
 public StackTraceElement[] getStackTrace() {
-        return getInternalStackTrace().clone();
+        return getInternalStackTrace();
     }
 
     /**
