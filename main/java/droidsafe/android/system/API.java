@@ -1,4 +1,4 @@
-    package droidsafe.android.system;
+package droidsafe.android.system;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -138,7 +138,7 @@ public class API {
     public void addContainerClass(SootClass clz) {
         droidSafeContainerClasses.add(clz.getName());
     }
-    
+
     /**
      * When adding a method clone, make sure the cloned method has all same designations as
      * original.
@@ -154,27 +154,27 @@ public class API {
             //some methods are auto generated and don't have a classification 
             API.v().addBanMethod(clone);
         }
-        
+
         if (classificationCat.containsKey(original)) {
             classificationCat.put(clone, classificationCat.get(original));
         }
-        
+
         if (srcsMapping.containsKey(original)) {
             Set<InfoKind> ifs = new HashSet<InfoKind>();
             ifs.addAll(srcsMapping.get(original));
             srcsMapping.put(clone, ifs);
         }
-        
+
         if (sinksMapping.containsKey(original)) {
             Set<InfoKind> ifs = new HashSet<InfoKind>();
             ifs.addAll(sinksMapping.get(original));
             sinksMapping.put(clone, ifs);
         }
-        
+
         if (sourcesThatTaintArgs.contains(original))
             sourcesThatTaintArgs.add(clone);
     }
-    
+
     /**
      * If adding a class that is a clone, make sure to add the clone to the correct maps,
      * as guided by the original class.
@@ -198,7 +198,7 @@ public class API {
         if (Project.v().isLibClass(original)) {
             Project.v().addLibClass(clone);
         }
-        
+
         //if the original class had all methods denoted as safe, then all the methods of the clone
         //should be denoted as safe
         if (SafeAndroidClassesAndMethods.v().isSafeClass(original))
@@ -213,7 +213,7 @@ public class API {
             srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
 
             sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
-            
+
             sourcesThatTaintArgs = new HashSet<SootMethod>();
 
             allSystemClasses = new LinkedHashSet<SootClass>();
@@ -229,7 +229,7 @@ public class API {
             api_modeled_methods = new SootMethodList();
 
             classificationCat = new HashMap<SootMethod, String>();
-            
+
             SENSITIVE_UNCATEGORIZED = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED", true);
             UNMODELED = InfoKind.getInfoKind("UNMODELED", false);
 
@@ -428,7 +428,7 @@ public class API {
                             addSafeMethod(method);
                             logger.info("Found method with SAFE classification: {}", method);
                         } else if (at.getType().contains("droidsafe/annotations/DSSpec")) {
-                            
+
                             category = getCategoryFromClassificationTag(at);
                             //if classified as spec because it was abstract, then do not make spec
                             if ("ABSTRACT_METHOD".equals(category)) {
@@ -463,7 +463,7 @@ public class API {
                     }
                 }
             }
-            
+
             if (sourceTaintArgs && !source) {
                 logger.error("Method that taints all args but is not a source: {}", method);
             }
@@ -485,7 +485,7 @@ public class API {
             }
         }
     }
-    
+
     /**
      * Add infokind taint to the return value of the method.
      */
@@ -495,68 +495,68 @@ public class API {
         }
         srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(kind, sensitive));
     }
-    
+
 
     private void addSinkTag(SootMethod sootMethod, AnnotationTag at) {
         if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
             logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
             droidsafe.main.Main.exit(1);
         }
-        
+
         for (AnnotationElem ae : ((AnnotationArrayElem)at.getElemAt(0)).getValues()) {
             if (!(ae instanceof AnnotationEnumElem)) {
                 logger.error("DSSink/DSSource Annotation Element incorrect for: {} is {}", sootMethod, ae.getClass());
                 droidsafe.main.Main.exit(1);
             }
-            
+
             String infoKind = ((AnnotationEnumElem)ae).getConstantName();
-           
+
             //get more informatin for uncategorized
             if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind)) {
                 String pkg = sootMethod.getDeclaringClass().getPackageName();
                 infoKind = pkg.substring(pkg.indexOf(".") + 1).toUpperCase();
             } 
-            
+
             if (!sinksMapping.containsKey(sootMethod)) {
                 sinksMapping.put(sootMethod, new HashSet<InfoKind>());
             }
             sinksMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind, true));
             logger.info("Adding sink infokind category for {} as {}", sootMethod, infoKind);
         }
-            
-            
+
+
     }
-    
+
 
     private void addSourceTag(SootMethod sootMethod, AnnotationTag at) {
         if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
             logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
             droidsafe.main.Main.exit(1);
         }
-        
+
         for (AnnotationElem ae : ((AnnotationArrayElem)at.getElemAt(0)).getValues()) {
             if (!(ae instanceof AnnotationEnumElem)) {
                 logger.error("DSSink/DSSource Annotation Element incorrect for: {} is {}", sootMethod, ae.getClass());
                 droidsafe.main.Main.exit(1);
             }
-            
+
             String infoKind = ((AnnotationEnumElem)ae).getConstantName();
-            
+
             //don't add uncategorized if we have an uncategorized source
             if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind))
                 continue;
-            
+
             if (!srcsMapping.containsKey(sootMethod)) {
                 srcsMapping.put(sootMethod, new HashSet<InfoKind>());
             }
-            
+
             srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind, true));
             logger.info("Adding source infokind category for {} as {}", sootMethod, infoKind);
         }
-            
-            
+
+
     }
-    
+
     private String getCategoryFromClassificationTag(AnnotationTag at) {
         if (at.getElems().size() > 0)
             return ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
@@ -665,9 +665,23 @@ public class API {
      * as safe in system_calls.txt (see safe_methods)
      */
     public boolean isSensitiveAction(SootMethod method) {
-        if (all_sys_methods.contains(method) && !safe_methods.contains (method)) {
+        if (!all_sys_methods.contains(method))
+            return false;
+
+        if (spec_methods.contains (method))
             return true;
-        }
+
+        if (safe_methods.contains(method))
+            return false;
+
+        if (spec_methods.containsPoly(method))
+            return true;
+
+        if (safe_methods.containsPoly(method))
+            return false;
+
+        if (banned_methods.contains(method))
+            return true;
 
         return false;
     }
@@ -678,7 +692,7 @@ public class API {
     public boolean reportInSpec(SootMethod method) {
         return isSensitiveAction(method) || hasSinkInfoKind(method);
     }
-    
+
     public String api_xref (String method_sig, String txt) {
         String sig = method_sig.replace ("<", "");
         sig = sig.replace (">", "");
@@ -831,7 +845,7 @@ public class API {
     public boolean isDSVerifiedMethod(SootMethod m) {
         return verified_methods.contains(m);
     }
-    
+
     /**
      * Return true if the argument is a modeled method from the api.
      */
@@ -846,14 +860,14 @@ public class API {
     public boolean isSourceThatTaintsArgs(SootMethod method) {
         return sourcesThatTaintArgs.contains(method); 
     }
-    
+
     /**
      * Return turn if the method is a source method that has a high level information kind defined.
      */
     public boolean hasSourceInfoKind(SootMethod method) {
         if (srcsMapping.containsKey(method)) 
             return true;
-        
+
         //check for all overriden methods because of possible cloning
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
@@ -862,10 +876,10 @@ public class API {
                     return true;
             }
         }
-        
+
         return false;
     }
-    
+
     /**
      * Return the high level information kinds defined for this source method.  Search all parent overriden methods
      * as well for info kind.
@@ -873,9 +887,9 @@ public class API {
     public Set<InfoKind> getSourceInfoKinds(SootMethod method) {
         if (srcsMapping.containsKey(method))
             return srcsMapping.get(method);
-        
+
         Set<InfoKind> kinds = new HashSet<InfoKind>();
-        
+
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
                 SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
@@ -884,10 +898,10 @@ public class API {
                     kinds.addAll(parentMappings);
             }
         }
-        
+
         return kinds;
     }
-    
+
     /**
      * Return turn if the method is a sink method that has a high level information kind defined.
      * Search all parent overriden methods as well for info kind.
@@ -895,7 +909,7 @@ public class API {
     public boolean hasSinkInfoKind(SootMethod method) {
         if (sinksMapping.containsKey(method)) 
             return true;
-        
+
         //check for all overriden methods because of possible cloning
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
@@ -904,10 +918,10 @@ public class API {
                     return true;
             }
         }
-        
+
         return false;
     }
-    
+
     /**
      * Return the high level information kinds defined for this sink method. Search all parent overriden methods
      * as well for info kind.
@@ -915,9 +929,9 @@ public class API {
     public Set<InfoKind> getSinkInfoKinds(SootMethod method) {
         if (sinksMapping.containsKey(method))
             return sinksMapping.get(method);
-        
+
         Set<InfoKind> kinds = new HashSet<InfoKind>();
-        
+
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
                 SootUtils.getOverriddenMethodsFromSuperclasses(method)) {
@@ -926,7 +940,7 @@ public class API {
                     kinds.addAll(parentMapping);
             }
         }
-        
+
         return kinds;
     }
 
