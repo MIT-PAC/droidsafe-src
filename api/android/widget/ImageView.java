@@ -458,9 +458,7 @@ public void setImageDrawable(Drawable drawable) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.893 -0500", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "02829D3E86CB5FA2EC39813FBB35490C")
-    
 @android.view.RemotableViewMethod
     public void setImageBitmap(Bitmap bm) {
         // if this is used frequently, may handle bitmaps explicitly
