@@ -100,7 +100,8 @@ public enum DSCat {
     WIFI,
     
     SPEC_OTHERS,
-    
+    TIME,
+
     //Default value, not SAFE, BAN nor SPEC
     UNSPECIFIED;
 }
