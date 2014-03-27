@@ -68,7 +68,7 @@ abstract public class JsonViewPart extends DroidsafeInfoOutlineViewPart {
         IProject project = getProject();
         if (project != null) {
             inputElement = DroidsafePluginUtilities.droidsafeOutputFile(project, inputElement);
-            if (inputElement != fInputElement) {
+            if (inputElement != fInputElement || fTreeViewer.getInput() == null) {
                 fInputElement = inputElement;
                 updateView();
             }

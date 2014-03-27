@@ -145,16 +145,24 @@ public class DroidsafePluginUtilities {
                 if (je.isJsonObject())
                     return (JsonObject) je; 
             } catch (Exception ex) {
-                showError("JSON file pare error", "Error parsing the JSON file " + jsonFileName, ex);
+                showError("JSON file parse error", "Error parsing the JSON file " + jsonFileName, ex);
                 ex.printStackTrace();
             }
+        } else {
+            showError("JSON file does not exist", "Failed to find JSON file" + jsonFileName);
         }
         return null;
     }
 
+    private static void showError(String title, String msg) {
+        showError(title, msg, null);
+    }
+
     private static void showError(String title, String msg, Exception ex) {
         Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-        MessageDialog.openError(shell, title, msg + "\n\n" + ex);
+        if (ex != null)
+            msg = msg + "\n\n" + ex;
+        MessageDialog.openError(shell, title, msg);
     }
 
     /**
