@@ -106,6 +106,7 @@ public CharSequence getTextOn() {
     
 public void setTextOn(CharSequence textOn) {
         mTextOn = textOn;
+        mText = textOn;
     }
 
     /**
@@ -131,6 +132,7 @@ public CharSequence getTextOff() {
     
 public void setTextOff(CharSequence textOff) {
         mTextOff = textOff;
+        mText = textOff;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.778 -0500", hash_original_method = "CD87BB009216C6E394DAEB7F0CACBDC7", hash_generated_method = "107CC6583C01286AF3D6BEFD023A060A")

@@ -21,5 +21,6 @@ public enum DSSourceKind {
     UNIQUE_IDENTIFIER,
     UNSPECIFIED,
     UNMODELED,
-    REFLECTION
+    REFLECTION,
+    SERIALIZATION
 }

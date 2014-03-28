@@ -721,7 +721,7 @@ public abstract int getMinimum(int field);
      *                from the current field values.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TIME)
     @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.841 -0500", hash_original_method = "0D972793C1A81D3B5C0D23389B920FB5", hash_generated_method = "04B7220A597D699C98A15AA207DDB442")
     

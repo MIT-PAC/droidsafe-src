@@ -7,6 +7,10 @@ import droidsafe.annotations.*;
 
 public final class Messenger implements Parcelable {
 
+    /** Addded by droidsafe */
+    private Handler mHandler;
+    private IBinder mIBinder;
+
     /**
      * Convenience function for writing either a Messenger or null pointer to
      * a Parcel.  You must use this with {@link #readMessengerOrNullFromParcel}
@@ -76,6 +80,7 @@ public Messenger[] newArray(int size) {
     
 public Messenger(Handler target) {
         mTarget = target.getIMessenger();
+        mHandler = target;
     }
     
     /**
@@ -90,6 +95,7 @@ public Messenger(Handler target) {
     
 public Messenger(IBinder target) {
         mTarget = IMessenger.Stub.asInterface(target);
+        mIBinder = target;
     }
     
     /**

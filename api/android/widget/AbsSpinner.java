@@ -304,7 +304,6 @@ void recycleAllViews() {
      */
     @DSComment("Spinner")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.367 -0500", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "C3A5D610F87F4D3CECAE59DEBB9EE18C")
     
 public void setSelection(int position, boolean animate) {
@@ -316,7 +315,6 @@ public void setSelection(int position, boolean animate) {
 
     @DSComment("Spinner")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.369 -0500", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "5A7C3B76C3326CF67657E51BD1F90B58")
     
 @Override
@@ -335,7 +333,6 @@ public void setSelection(int position, boolean animate) {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.372 -0500", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "63246E2C9E0D90A96046BA94228CF775")
     
 void setSelectionInt(int position, boolean animate) {
@@ -555,7 +552,6 @@ private SavedState(Parcel in) {
             //Synthesized constructor
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.421 -0500", hash_original_method = "12E9E54F63615166D97804FCD5F19EB6", hash_generated_method = "592737E4726413560A9B7CE9C2327AB3")
         
 public void put(int position, View v) {
