@@ -25,10 +25,13 @@ public static Unsafe getUnsafe() {
          * Only code on the bootclasspath is allowed to get at the
          * Unsafe instance.
          */
+
+        /*
         ClassLoader calling = VMStack.getCallingClassLoader();
         if ((calling != null) && (calling != Unsafe.class.getClassLoader())) {
             throw new SecurityException("Unsafe access denied");
         }
+        */
 
         return THE_ONE;
     }
@@ -67,6 +70,10 @@ private Unsafe() {}
 	
     public long objectFieldOffset(Field field) {
         addTaint(field.getTaint());
+        
+        return getTaintLong();
+
+/*
         if(Modifier.isStatic(field.getModifiers()))        
         {
             IllegalArgumentException var9647A65078523FC9A06312AFCF421504_59239873 = new IllegalArgumentException(
@@ -77,6 +84,7 @@ private Unsafe() {}
         long var45155EBB460CF1A21C43208975B41A88_966943115 = (objectFieldOffset0(field));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_995281280 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_995281280;
+*/
         // ---------- Original Method ----------
         //if (Modifier.isStatic(field.getModifiers())) {
             //throw new IllegalArgumentException(
@@ -137,11 +145,12 @@ public int arrayIndexScale(Class clazz) {
     public boolean compareAndSwapInt(Object obj, long offset,
                 int expectedValue, int newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(expectedValue);
-    	addTaint(newValue);
-    	return getTaintBoolean();
+
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(expectedValue);
+    	obj.addTaint(newValue);
+    	return toTaintBoolean(obj.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -161,11 +170,11 @@ public int arrayIndexScale(Class clazz) {
     public boolean compareAndSwapLong(Object obj, long offset,
                 long expectedValue, long newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(expectedValue);
-    	addTaint(newValue);
-    	return getTaintBoolean();
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(expectedValue);
+    	obj.addTaint(newValue);
+    	return toTaintBoolean(obj.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -185,11 +194,11 @@ public int arrayIndexScale(Class clazz) {
     public boolean compareAndSwapObject(Object obj, long offset,
                 Object expectedValue, Object newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(expectedValue.getTaint());
-    	addTaint(newValue.getTaint());
-    	return getTaintBoolean();
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(expectedValue.getTaint());
+    	obj.addTaint(newValue.getTaint());
+    	return toTaintBoolean(obj.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -204,9 +213,9 @@ public int arrayIndexScale(Class clazz) {
     
     public int getIntVolatile(Object obj, long offset){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	return getTaintInt();
+    	//addTaint(obj.getTaint());
+    	//addTaint(offset);
+    	return (int)(getTaintInt() + obj.getTaintInt() + offset);
     }
 
     /**
@@ -221,9 +230,12 @@ public int arrayIndexScale(Class clazz) {
     
     public void putIntVolatile(Object obj, long offset, int newValue){
     	//Formerly a native method
+        /*
     	addTaint(obj.getTaint());
     	addTaint(offset);
     	addTaint(newValue);
+    	*/
+        obj.addTaint(offset + newValue);
     }
 
     /**
@@ -238,9 +250,7 @@ public int arrayIndexScale(Class clazz) {
     
     public long getLongVolatile(Object obj, long offset){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	return getTaintLong();
+    	return getTaintLong() + obj.getTaintLong() + offset;
     }
 
     /**
@@ -255,9 +265,9 @@ public int arrayIndexScale(Class clazz) {
     
     public void putLongVolatile(Object obj, long offset, long newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue);
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.175 -0400", hash_original_method = "7F65AB78F7829D174777BA98D685A0A2", hash_generated_method = "8389F48CA8228ADA469FDA17F26377FB")
@@ -281,9 +291,9 @@ public int arrayIndexScale(Class clazz) {
     public void putObjectVolatile(Object obj, long offset,
                 Object newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue.getTaint());
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue.getTaint());
     }
 
     /**
@@ -297,9 +307,9 @@ public int arrayIndexScale(Class clazz) {
     
     public int getInt(Object obj, long offset){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	return getTaintInt();
+    	//addTaint(obj.getTaint());
+    	//addTaint(offset);
+    	return (int)(obj.getTaintInt() + offset);
     }
 
     /**
@@ -313,9 +323,9 @@ public int arrayIndexScale(Class clazz) {
     
     public void putInt(Object obj, long offset, int newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue);
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue);
     }
 
     /**
@@ -325,9 +335,9 @@ public int arrayIndexScale(Class clazz) {
     
     public void putOrderedInt(Object obj, long offset, int newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue);
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue);
     }
 
     /**
@@ -341,9 +351,8 @@ public int arrayIndexScale(Class clazz) {
     
     public long getLong(Object obj, long offset){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	return getTaintLong();
+    	//addTaint(obj.getTaint());
+    	return getTaintLong() + obj.getTaintLong() + offset;
     }
 
     /**
@@ -357,9 +366,9 @@ public int arrayIndexScale(Class clazz) {
     
     public void putLong(Object obj, long offset, long newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue);
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue);
     }
 
     /**
@@ -369,9 +378,9 @@ public int arrayIndexScale(Class clazz) {
     
     public void putOrderedLong(Object obj, long offset, long newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue);
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.178 -0400", hash_original_method = "F008619F8920F7BD7FA02EADD68A4977", hash_generated_method = "67D30353ADFDF0D1EFF7C8039039B89C")
@@ -393,9 +402,9 @@ public int arrayIndexScale(Class clazz) {
     
     public void putObject(Object obj, long offset, Object newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue.getTaint());
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue.getTaint());
     }
 
     /**
@@ -406,9 +415,9 @@ public int arrayIndexScale(Class clazz) {
     public void putOrderedObject(Object obj, long offset,
                 Object newValue){
     	//Formerly a native method
-    	addTaint(obj.getTaint());
-    	addTaint(offset);
-    	addTaint(newValue.getTaint());
+    	//addTaint(obj.getTaint());
+    	obj.addTaint(offset);
+    	obj.addTaint(newValue.getTaint());
     }
 
     /**
@@ -429,11 +438,13 @@ public int arrayIndexScale(Class clazz) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.739 -0500", hash_original_method = "A0416E5885795BAB8716EF22A6E96095", hash_generated_method = "BCC6DA0B677C50C73234B16C2E03374C")
     
 public void park(boolean absolute, long time) {
+        /*
         if (absolute) {
             Thread.currentThread().parkUntil(time);
         } else {
             Thread.currentThread().parkFor(time);
         }
+        */
     }
 
     /**
@@ -447,11 +458,13 @@ public void park(boolean absolute, long time) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.741 -0500", hash_original_method = "D722FA56AE20F33E2A3A13A64FA43CE8", hash_generated_method = "8157480CBC445615D2CEC44C5420F670")
     
 public void unpark(Object obj) {
+        /*
         if (obj instanceof Thread) {
             ((Thread) obj).unpark();
         } else {
             throw new IllegalArgumentException("valid for Threads only");
         }
+        */
     }
 }
 
