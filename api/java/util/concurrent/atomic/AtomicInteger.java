@@ -15,7 +15,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.320 -0500", hash_original_field = "2B4D3697B0BD0FB4DB161026EA588EEA", hash_generated_field = "3ACE806C2A776E8F67FFC072288734E8")
 
-    private static  long valueOffset;
+    private static  long valueOffset = DroidSafeAndroidRuntime.runtimeInteger;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.323 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
 
     private volatile int value;
@@ -297,12 +297,15 @@ public float floatValue() {
 public double doubleValue() {
         return (double)get();
     }
+    /*
     static {
       try {
+          
         valueOffset = unsafe.objectFieldOffset
             (AtomicInteger.class.getDeclaredField("value"));
       } catch (Exception ex) { throw new Error(ex); }
     }
+    */
     
 }
 

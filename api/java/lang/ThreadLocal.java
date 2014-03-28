@@ -9,16 +9,20 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadLocal<T> {
+/* 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.344 -0500", hash_original_field = "65EF0C9DFC0E92D7EED5F56DE419D25E", hash_generated_field = "D0904C715877D79D507857C3DBB2EE5E")
-
     private static AtomicInteger hashCounter = new AtomicInteger(0);
+*/
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.341 -0500", hash_original_field = "C19D8ED4807D46DB1FCA44799C1FDD28", hash_generated_field = "E19C4AFB9937521DCDC693F15C42E2A7")
 
     private final Reference<ThreadLocal<T>> reference
             = new WeakReference<ThreadLocal<T>>(this);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.346 -0500", hash_original_field = "5323E62630847103A2D18086F1AC9418", hash_generated_field = "B643A854DCD11F044BA6D1951F01CE6B")
 
+/*
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.346 -0500", hash_original_field = "5323E62630847103A2D18086F1AC9418", hash_generated_field = "B643A854DCD11F044BA6D1951F01CE6B")
     private final int hash = hashCounter.getAndAdd(0x61c88647 * 2);
+*/  
+    private final int hash = DroidSafeAndroidRuntime.switchControl;
 
     /* Thanks to Josh Bloch and Doug Lea for code reviews and impl advice. */
 
