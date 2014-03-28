@@ -235,6 +235,7 @@ public void dumpAsync(final FileDescriptor fd, final String[] args) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.172 -0500", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "F6D7C174AEA7671EB5A5529CC69A276B")
     
 protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
+        fout.addTaint(fd.getTaintInt() + args[0].getTaintInt());
     }
 
     /**

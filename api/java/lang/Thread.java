@@ -25,7 +25,7 @@ public class Thread implements Runnable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.568 -0500", hash_original_method = "72CB3A6A0CD8DFEFDD9F27A9340FE949", hash_generated_method = "E8DF2F9A27CDE94B070C859E848D0FEB")
     
 public static int activeCount() {
-        return currentThread().getThreadGroup().activeCount();
+        return currentThread().getThreadGroup().activeCount();        
     }
 
     /**
@@ -37,7 +37,7 @@ public static int activeCount() {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.575 -0500", hash_original_method = "E6DEC3347F951D8CF63DAEF794A9852A", hash_generated_method = "A6E83BE8198CFD257937EA056A110E8E")
     
-public static Thread currentThread() {
+public static Thread currentThread() {        
         return VMThread.currentThread();
     }
 
@@ -66,8 +66,11 @@ public static void dumpStack() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.583 -0500", hash_original_method = "F21037CBC74EFF42DC16954068137FCD", hash_generated_method = "279702287A8803CF7FD9B3CD0FDA5D55")
     
 public static int enumerate(Thread[] threads) {
+        /*
         Thread thread = Thread.currentThread();
         return thread.getThreadGroup().enumerate(threads);
+        */
+        return threads[0].getTaintInt();
     }
 
     /**
@@ -120,7 +123,8 @@ public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.613 -0500", hash_original_method = "B8A4971B71D8B35D3212DC9C05DB29D4", hash_generated_method = "00ED1370A4CE19FDDCF3473034823E48")
     
 public static boolean interrupted() {
-        return VMThread.interrupted();
+        //return VMThread.interrupted();
+        return DroidSafeAndroidRuntime.control;
     }
 
     /**
@@ -164,7 +168,9 @@ public static void sleep(long time) throws InterruptedException {
             ex.addTaint(nanos);
             throw ex;
         }
+        /*
         VMThread.sleep(millis, nanos);
+        */
     }
 
     /**
@@ -175,7 +181,7 @@ public static void sleep(long time) throws InterruptedException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.674 -0500", hash_original_method = "20B3C869DA440A74B56436DD2A7E18B0", hash_generated_method = "ECC5CEEE91AB0DE77B9F3B933211D215")
     
 public static void yield() {
-        VMThread.yield();
+        //VMThread.yield();
     }
 
     /**
@@ -189,7 +195,8 @@ public static void yield() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.676 -0500", hash_original_method = "4BFB422FC2892097647B5CFF3006D866", hash_generated_method = "1BCBF2A06539CEF9F83D2539DCAFCEAE")
     
 public static boolean holdsLock(Object object) {
-        return currentThread().vmThread.holdsLock(object);
+        //return currentThread().vmThread.holdsLock(object);
+        return (object.getTaintBoolean());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.473 -0500", hash_original_field = "5FC7F9392DE523EE635F94A39030F4C7", hash_generated_field = "E32D593DEDB2FDC7FE0DFB7474352DBA")
 
@@ -667,6 +674,7 @@ public StackTraceElement[] getStackTrace() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.603 -0500", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "BB5064B4667026FA9295779FABA1A723")
     
 public State getState() {
+        /*
         // TODO This is ugly and should be implemented better.
         VMThread vmt = this.vmThread;
 
@@ -682,6 +690,11 @@ public State getState() {
             }
         }
         return hasBeenStarted ? Thread.State.TERMINATED : Thread.State.NEW;
+        */
+        if (DroidSafeAndroidRuntime.control)
+            return Thread.State.TERMINATED ;
+        
+        return Thread.State.NEW;
     }
 
     /**
@@ -748,6 +761,7 @@ public UncaughtExceptionHandler getUncaughtExceptionHandler() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.610 -0500", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "7822AB2F5B34D299297A20478B751727")
     
 public void interrupt() {
+        /*
         synchronized (interruptActions) {
             for (int i = interruptActions.size() - 1; i >= 0; i--) {
                 interruptActions.get(i).run();
@@ -758,6 +772,7 @@ public void interrupt() {
         if (vmt != null) {
             vmt.interrupt();
         }
+        */
     }
 
     /**
