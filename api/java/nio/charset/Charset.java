@@ -132,7 +132,8 @@ private static Charset cacheCharset(String charsetName, Charset cs) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.301 -0500", hash_original_method = "B31D6DDF47464344AF549FF7AC79952D", hash_generated_method = "69512781EC40B9F94DBA1CA7BA3C02E4")
     
 public static Charset forName(String charsetName) {
-        // Is this charset in our cache?
+
+/*        // Is this charset in our cache?
         Charset cs;
         synchronized (CACHED_CHARSETS) {
             cs = CACHED_CHARSETS.get(charsetName);
@@ -158,9 +159,12 @@ public static Charset forName(String charsetName) {
             if (cs != null) {
                 return cacheCharset(charsetName, cs);
             }
-        }
+        }*/
 
-        throw new UnsupportedCharsetException(charsetName);
+        if (DroidSafeAndroidRuntime.control)
+            throw new UnsupportedCharsetException(charsetName);
+        
+        return new MyCharset(charsetName);
     }
 
     /**
@@ -596,9 +600,14 @@ public final int compareTo(Charset charset) {
     
     protected static class MyCharset extends Charset {
 
+        public MyCharset(String setName) {
+            super(setName, null);
+        }
+
         public MyCharset() {
             super("", null);
         }
+
         @Override
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.309 -0500", hash_original_method = "A170E8D5F907BC2C49EE2B6B025995E0", hash_generated_method = "69BECE17D88537817044B7AB49A588D2")
