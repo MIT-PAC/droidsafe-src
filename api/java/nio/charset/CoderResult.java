@@ -122,6 +122,10 @@ private CoderResult(int type, int length) {
         this.type = type;
         this.length = length;
     }
+    
+    public CoderResult(DSOnlyType dontcare) {
+        
+    }
 
     /**
      * Returns true if this result is an underflow condition.
@@ -268,7 +272,9 @@ public void throwException() throws BufferUnderflowException,
                 dsc = "";
                 break;
         }
-        return getClass().getName() + "[" + dsc + "]";
+        //return getClass().getName() + "[" + dsc + "]";
+        dsc.addTaint(taint);
+        return dsc;
     }
 }
 
