@@ -10,9 +10,11 @@ public class AtomicInteger extends Number implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.314 -0500", hash_original_field = "EDA2AEC613B19DD5D3B8D8B483F792BA", hash_generated_field = "BC575BADA52C64A5C5C6ADD1B81BACA0")
 
     private static final long serialVersionUID = 6214790243416807050L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.317 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "E7D465D52C267C4626E00B16AF4442B8")
+// @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.317 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "E7D465D52C267C4626E00B16AF4442B8")
 
-    private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+    //private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+    // private static final Unsafe unsafe = new Unsafe(DSOnlyType.DONTCARE);
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.320 -0500", hash_original_field = "2B4D3697B0BD0FB4DB161026EA588EEA", hash_generated_field = "3ACE806C2A776E8F67FFC072288734E8")
 
     private static  long valueOffset = DroidSafeAndroidRuntime.runtimeInteger;
@@ -41,6 +43,18 @@ public AtomicInteger(int initialValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.328 -0500", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "0E6B9C34F7A1BCF5C7C73F35173892F1")
     
 public AtomicInteger() {
+    }
+    
+    @Override
+    public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        value = (int)getTaintInt();
+    }
+    
+    @Override
+    public void addTaint(double t) {
+        super.addTaint(t);
+        value = (int)getTaintInt();
     }
 
     /**
@@ -148,7 +162,9 @@ public final boolean compareAndSet(int expect, int update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.343 -0500", hash_original_method = "22EC2300FEC70C46ECF009D542FC9430", hash_generated_method = "9EF3B090C06F7BFF42DD435957FE768B")
     
 public final boolean weakCompareAndSet(int expect, int update) {
-        return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        addTaint(expect + update);
+        return getTaintBoolean();
     }
 
     /**

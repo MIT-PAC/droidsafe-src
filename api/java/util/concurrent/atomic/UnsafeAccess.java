@@ -7,10 +7,12 @@ import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
 final class UnsafeAccess {
+    /*package*/ 
+/*
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.031 -0500", hash_original_field = "384614B22A2950A8251BF7CF99FCA6CC", hash_generated_field = "43F7273FA81332C6953EE82E08DFE9B4")
 
-    /*package*/ static final Unsafe THE_ONE = Unsafe.getUnsafe();
-
+    static final Unsafe THE_ONE = Unsafe.getUnsafe();
+*/
     /**
      * This class is uninstantiable.
      */

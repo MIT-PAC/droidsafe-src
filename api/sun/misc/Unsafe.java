@@ -33,7 +33,8 @@ public static Unsafe getUnsafe() {
         }
         */
 
-        return THE_ONE;
+        //return THE_ONE;
+        return new Unsafe(DSOnlyType.DONTCARE);
     }
     
     /*
@@ -68,6 +69,9 @@ public static Unsafe getUnsafe() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.641 -0500", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "2F1337A71CFB2F9405F3B53E4913683F")
     
 private Unsafe() {}
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Unsafe(DSOnlyType dontcare) {}
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.181 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "37509F27C578466D3CFFA3A1C5C8873A")
 	
@@ -443,6 +447,8 @@ public int arrayIndexScale(Class clazz) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.739 -0500", hash_original_method = "A0416E5885795BAB8716EF22A6E96095", hash_generated_method = "BCC6DA0B677C50C73234B16C2E03374C")
     
 public void park(boolean absolute, long time) {
+        addTaint(absolute);
+        addTaint(time);
         /*
         if (absolute) {
             Thread.currentThread().parkUntil(time);
@@ -470,6 +476,7 @@ public void unpark(Object obj) {
             throw new IllegalArgumentException("valid for Threads only");
         }
         */
+        addTaint(obj.getTaint());
     }
 }
 
