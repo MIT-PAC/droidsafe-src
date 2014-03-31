@@ -497,7 +497,8 @@ public void print(long lnum) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.560 -0500", hash_original_method = "649E6082D773CF70C752E5716C5CC7C1", hash_generated_method = "EAB1D91353181ABAEA72D7E1487AC34B")
     
 public void print(Object obj) {
-        print(String.valueOf(obj));
+        //print(String.valueOf(obj));
+        addTaint(obj.getTaint());
     }
 
     /**

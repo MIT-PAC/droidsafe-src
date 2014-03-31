@@ -36,6 +36,7 @@ public static Unsafe getUnsafe() {
         return THE_ONE;
     }
     
+    /*
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static long objectFieldOffset0(Field field) {
@@ -53,6 +54,8 @@ public static Unsafe getUnsafe() {
     private static int arrayIndexScale0(Class clazz) {
         return clazz.getTaintInt();
     }
+*/
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.639 -0500", hash_original_field = "3083DF6B0AC55CB3E662F95128363160", hash_generated_field = "0E67CDB95370A302579A19EADA2AF913")
 
     private static final Unsafe THE_ONE = new Unsafe();
@@ -108,7 +111,8 @@ public int arrayBaseOffset(Class clazz) {
                     "valid for array classes only");
         }
 
-        return arrayBaseOffset0(clazz);
+        //return arrayBaseOffset0(clazz);
+        return (clazz.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -125,7 +129,8 @@ public int arrayIndexScale(Class clazz) {
                     "valid for array classes only");
         }
 
-        return arrayIndexScale0(clazz);
+        //return arrayIndexScale0(clazz);
+        return (clazz.getTaintInt() + getTaintInt());
     }
 
     /**

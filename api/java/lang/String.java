@@ -230,7 +230,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.996 -0500", hash_original_method = "29C79BCB300036CC1B9D463111BC50FD", hash_generated_method = "8DAED21ABAC747A4DC39D23D809B5F9B")
     
         public static String valueOf(Object value) {
-        return value != null ? value.toString() : "null";
+        if (value == null)
+            return "null";
+        String str = new String();
+        str.addTaint(value.getTaint());
+        return str;
     }
 
     /**

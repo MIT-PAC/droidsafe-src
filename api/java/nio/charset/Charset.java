@@ -4,6 +4,7 @@ package java.nio.charset;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -214,12 +215,15 @@ public static Charset defaultCharset() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.352 -0500", hash_original_method = "CF00CD3332842EC74198C62C87ED0076", hash_generated_method = "E9F8BE2CBB97B961A5CDA9BA052EE481")
     
 private static Charset getDefaultCharset() {
+        /*
         String encoding = System.getProperty("file.encoding", "UTF-8");
         try {
             return Charset.forName(encoding);
         } catch (UnsupportedCharsetException e) {
             return Charset.forName("UTF-8");
         }
+        */
+        return Charset.forName("UTF-8");
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.276 -0500", hash_original_field = "460C9BF0E81398E540D5223DD230E9C6", hash_generated_field = "978C227844F811E8AD7601EBA458F045")
 
@@ -263,6 +267,11 @@ protected Charset(String canonicalName, String[] aliases) {
                 this.aliasesSet.add(alias);
             }
         }
+    }
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private Charset() {
+        
     }
 
     /**
