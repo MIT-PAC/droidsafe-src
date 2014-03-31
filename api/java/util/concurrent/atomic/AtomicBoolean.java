@@ -49,13 +49,13 @@ public AtomicBoolean() {
     @Override
     public void addTaint(DSTaintObject t) {
         super.addTaint(t);
-        value = (int)getTaintInt();
+        value = getTaintBoolean(); 
     }
     
     @Override
     public void addTaint(double t) {
         super.addTaint(t);
-        value = (int)getTaintInt();
+        value = getTaintBoolean();
     }
     
     /**
