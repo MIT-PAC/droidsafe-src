@@ -169,7 +169,7 @@ public class SparkPTA extends PTABridge {
         //fill reachable methods map
         reachableMethods = new LinkedHashSet<SootMethod>();
         reachableMethodContexts = new LinkedHashSet<MethodOrMethodContext>();
-        methodToContexts = new HashMap<SootMethod, Set<MethodOrMethodContext>>();
+        methodToContexts = new LinkedHashMap<SootMethod, Set<MethodOrMethodContext>>();
 
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
 
@@ -358,7 +358,7 @@ public class SparkPTA extends PTABridge {
             insens = newToAllocNodeMap.get(newExpr);
         }
         
-        Set<IAllocNode> nodes = new HashSet<IAllocNode>();
+        Set<IAllocNode> nodes = new LinkedHashSet<IAllocNode>();
         
         nodes.add(insens);
         nodes.addAll(insens.getContextNodeMap().values());
@@ -445,7 +445,7 @@ public class SparkPTA extends PTABridge {
 
     @Override
     public Set<? extends IAllocNode> getPTSetIns(Value val) {
-        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
         PointsToSetInternal pts = null;
 
         try {
@@ -485,7 +485,7 @@ public class SparkPTA extends PTABridge {
 
 
     public Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode allocNode) {
-        final Set<AllocNode> ptSet = new HashSet<AllocNode>();
+        final Set<AllocNode> ptSet = new LinkedHashSet<AllocNode>();
 
         HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
         pointsToSet.add((AllocNode) allocNode);
@@ -507,7 +507,7 @@ public class SparkPTA extends PTABridge {
             droidsafe.main.Main.exit(1);
         }
 
-        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
         HashPointsToSet pointsToSet = new HashPointsToSet(node.getType(), ptsProvider);
         pointsToSet.add((AllocNode) node);
@@ -544,7 +544,7 @@ public class SparkPTA extends PTABridge {
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val, Context context) {
      
-        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
         PointsToSetInternal pts = null;
 
         try {
@@ -590,7 +590,7 @@ public class SparkPTA extends PTABridge {
     public Collection<SootMethod> resolveInvokeIns(InvokeExpr invoke) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
-            Set<SootMethod> ret = new HashSet<SootMethod>();
+            Set<SootMethod> ret = new LinkedHashSet<SootMethod>();
             ret.add(((StaticInvokeExpr)invoke).getMethod());
             return ret;
         } else if (invoke instanceof DynamicInvokeExpr) {
@@ -607,7 +607,7 @@ public class SparkPTA extends PTABridge {
     public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
-            Set<SootMethod> ret = new HashSet<SootMethod>();
+            Set<SootMethod> ret = new LinkedHashSet<SootMethod>();
             ret.add(((StaticInvokeExpr)invoke).getMethod());
             return ret;
         } else if (invoke instanceof DynamicInvokeExpr) {
