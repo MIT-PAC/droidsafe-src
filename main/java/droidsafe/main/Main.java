@@ -272,8 +272,8 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
             // Search for catch blocks
-            if (Config.v().runCatchBlocks) {
-            	driverMsg ("Searching for catch blocks");
+            if (Config.v().runCatchBlocksFast) {
+            	driverMsg ("Searching for catch blocks (fast)");
             	StopWatch cbtimer = new StopWatch();
             	cbtimer.start();
             	CatchBlocks cb = new CatchBlocks();
@@ -295,8 +295,17 @@ public class Main {
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         
-// try catch blocks here
-        
+        // Search for catch blocks
+        if (Config.v().runCatchBlocks) {
+            driverMsg ("Searching for catch blocks (precise)");
+            StopWatch cbtimer = new StopWatch();
+            cbtimer.start();
+            CatchBlocks cb = new CatchBlocks();
+            cb.run();
+            cbtimer.stop();
+            driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+        }
+       
         //new TestPTA();
 
         driverMsg("Starting Generate RCFG...");

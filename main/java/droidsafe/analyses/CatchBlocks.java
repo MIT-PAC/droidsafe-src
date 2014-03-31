@@ -76,7 +76,7 @@ public class CatchBlocks {
     private boolean dump_all_calls = false;
     
     /** debugging flag that only processes specified classes/methods **/
-    private boolean filter_source = true;
+    private boolean filter_source = false;
     
     /** Map from unit to line number **/
     private HashMap<Unit,Integer> lnums = null;

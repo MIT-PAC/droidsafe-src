@@ -153,6 +153,8 @@ public class Config {
     public boolean ptaresult = true;
     /** Run Catch Block Analysis **/
     public boolean runCatchBlocks = false;
+    /** Run fast Catch Block Analysis **/
+    public boolean runCatchBlocksFast = false;
     /** should a context sensitive pta add context to static inits? */
     public boolean staticinitcontext = true;
     /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
@@ -340,6 +342,9 @@ public class Config {
 
         Option catchBlocks = new Option ("catchblocks", "Run catch block analysis");
         options.addOption (catchBlocks);
+        
+        Option catchBlocksFast = new Option ("catchblocksfast", "Run fast catch block analysis");
+        options.addOption (catchBlocksFast);
         
         Option target =
                 OptionBuilder.withArgName("target").hasArg().withDescription("Target pass to run")
