@@ -83,6 +83,7 @@ import droidsafe.main.Config;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 
 /**
  * A PTA bridge for the SPARK points to analysis.  Right now the analysis is context insensitive.
@@ -109,6 +110,7 @@ public class SparkPTA extends PTABridge {
 
     private Set<AllocNode> allAllocNodes;
     
+    private static int runCount = 1;
     
     
     /** comma separated list of classes in which no matter what the length of k
@@ -223,7 +225,9 @@ public class SparkPTA extends PTABridge {
         }
 
         if (Config.v().dumpCallGraph) {
-            dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+            //dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+            String fileName = String.format("callgraph%d.txt", runCount++);
+            dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
         }
 
         if (Config.v().statsRun)
@@ -721,7 +725,83 @@ public class SparkPTA extends PTABridge {
             nodeCount.put(clz, nodeCount.get(clz) + 1);
         }
     }
-    
+
+    private Set<SootMethod> callgraphSet = new HashSet<SootMethod>();
+
+    public void dumpTextGraph(String fileName) {
+        // TODO Auto-generated method stub
+        PrintStream printStream  = null;
+        try {
+            printStream = new PrintStream(fileName);
+        }
+        catch (Exception ex) {        
+            logger.warn("Cannot dump TextGraph {} ", fileName);
+            return;
+        }
+
+        callgraphSet.clear(); 
+
+        for (SootMethod entry: Scene.v().getEntryPoints()) {
+            /*
+               printStream.printf("Entry %s \n", entry.toString());
+               Iterator<Edge> iterator = callGraph.edgesOutOf(entry);
+               while (iterator.hasNext()) {
+               totalIndegree++;
+               Edge edge = iterator.next();
+               printStream.printf("%d: %s \n", totalIndegree, edge.tgt().toString());
+               }
+               printStream.printf("\n");
+             */
+            dumpTextGraph(entry, printStream, 0);
+        }
+
+        printStream.close();
+    }
+
+    private static String indentString(int level) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            builder.append("  ");
+        }
+        return builder.toString();
+    }
+
+    private void dumpTextGraph(SootMethod caller, PrintStream printStream, int level) {
+
+        String indent = indentString(level);
+        caller.getTags();
+        printStream.printf("%s %s\n", indent, caller.toString());
+        Iterator<Edge> iterator = callGraph.edgesOutOf(caller);
+        callgraphSet.add(caller);
+
+
+        //boolean appClass = caller.getDeclaringClass().isApplicationClass();
+        boolean systemApi = API.v().isSystemMethod(caller);
+
+        /*
+           printStream.printf("%s Declaring method %s: app %s\n", indent, 
+           caller.toString(), systemApi? "False": "True");
+         */
+
+        String subindent = indentString(level+1);
+        while (iterator.hasNext()) {
+            Edge edge = iterator.next();
+            if (!systemApi) {
+                List<Stmt> invokeStmtList = SootUtils.getInvokeStatements(caller, edge.tgt());
+                for (Stmt stmt: invokeStmtList) {
+                    printStream.printf("%s #[%s] ", subindent, stmt);
+                    SourceLocationTag tag = SootUtils.getSourceLocation(stmt);
+                    if (tag != null) {
+                        printStream.printf(": %s", tag.toString());
+                    }
+                    printStream.printf("\n");
+                }
+            }
+
+            if (!callgraphSet.contains(edge.tgt()))
+                dumpTextGraph(edge.tgt(), printStream, level+1);
+        }
+    }
 
     /**
      * Create the bi map of NewExpr <-> AllocNode
