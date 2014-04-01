@@ -39,6 +39,7 @@ import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.EqExpr;
 import soot.jimple.IdentityStmt;
 import soot.jimple.InstanceFieldRef;
+import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InstanceOfExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
@@ -940,7 +941,7 @@ public class InformationFlowAnalysis {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
-        Local baseLocal = (Local)((VirtualInvokeExpr)invokeExpr).getBase();
+        Local baseLocal = (Local)((InstanceInvokeExpr)invokeExpr).getBase();
         Immediate argImmediate = (Immediate)invokeExpr.getArg(0);
         if (argImmediate instanceof Local) {
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
