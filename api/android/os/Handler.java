@@ -211,8 +211,9 @@ public final Message obtainMessage()
        return  sendMessageDelayed(getPostMessage(r), 0);
     }
 		*/
-    	addTaint(r.getTaint());
-       return  sendMessageDelayed(getPostMessage(r), 0);
+	    addTaint(r.getTaint());
+	    r.run();
+       return getTaintBoolean();
 	}
     
     @DSComment("General android operation, no security concern")
@@ -225,8 +226,7 @@ public final Message obtainMessage()
     }
 		*/
     	addTaint(r.getTaint());
-    	addTaint(uptimeMillis);
-    	return sendMessageAtTime(getPostMessage(r), uptimeMillis);
+    	return post(r);
 	}
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
@@ -237,10 +237,13 @@ public final Message obtainMessage()
         return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
     }
 		*/
-    	addTaint(r.getTaint());
+    	/*addTaint(r.getTaint());
     	addTaint(token.getTaint());
     	addTaint(uptimeMillis);
-    	return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
+    	return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);*/
+        addTaint(r.getTaint());
+        addTaint(token.getTaint());
+    	return post(r);
 	}
     
     @DSComment("General android operation, no security concern")
@@ -253,8 +256,8 @@ public final Message obtainMessage()
     }
 		*/
     	addTaint(r.getTaint());
-    	addTaint(delayMillis);
-    	return sendMessageDelayed(getPostMessage(r), delayMillis);
+    	return post(r);
+    	//return sendMessageDelayed(getPostMessage(r), delayMillis);
 	}
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
@@ -266,7 +269,7 @@ public final Message obtainMessage()
     }
 		*/
     	addTaint(r.getTaint());
-    	return sendMessageAtFrontOfQueue(getPostMessage(r));
+    	return post(r);
 	}
     
     @DSComment("not sensitive/not an action")
@@ -279,8 +282,8 @@ public final Message obtainMessage()
     }
 		*/
 		//Return nothing
-    	addTaint(r.getTaint());
-    	mQueue.removeMessages(this, r, null);
+/*    	addTaint(r.getTaint());
+    	mQueue.removeMessages(this, r, null);*/
 	}
     
     @DSSafe(DSCat.OS_GENERAL)
@@ -290,11 +293,11 @@ public final Message obtainMessage()
 		{
         mQueue.removeMessages(this, r, token);
     }
-		*/
+		
 		//Return nothing
     	addTaint(r.getTaint());
     	addTaint(token.getTaint());
-    	mQueue.removeMessages(this, r, token);
+    	mQueue.removeMessages(this, r, token);*/
 	}
     
 	@DSComment("IO movement methodName")
@@ -308,7 +311,8 @@ public final Message obtainMessage()
     }
 		*/
     	addTaint(msg.getTaint());
-        return sendMessageDelayed(msg, 0);
+    	dispatchMessage(msg);
+        return getTaintBoolean();
 	}
     
 	@DSComment("IO movement methodName")
@@ -404,9 +408,7 @@ public final Message obtainMessage()
 		// DSModeled - "sending" message without need for MessageQueue by calling handler directly.
     	addTaint(msg.getTaint());
 		addTaint(uptimeMillis);
-		msg.callback.run();
-		dispatchMessage(msg);
-		return true;
+		return sendMessage(msg);
 	}
     @DSVerified
     @DSSafe(DSCat.OS_GENERAL)
@@ -428,7 +430,7 @@ public final Message obtainMessage()
         return sent;
     }
 		*/
-    	addTaint(msg.getTaint());
+/*    	addTaint(msg.getTaint());
     	boolean sent = false;
         MessageQueue queue = mQueue;
         if (queue != null) {
@@ -438,10 +440,9 @@ public final Message obtainMessage()
         else {
             RuntimeException e = new RuntimeException(
                 this + " sendMessageAtTime() called with no mQueue");
-        }
+        }*/
 
-		dispatchMessage(msg);
-		return getTaintBoolean();
+		return sendMessage(msg);
 	}
     
     @DSComment("not sensitive/not an action")
@@ -536,14 +537,15 @@ public final Looper getLooper() {
     }
 		*/
 		//Return nothing
-    	addTaint(pw.getTaint());
+    	/*addTaint(pw.getTaint());
     	addTaint(prefix.getTaint());
     	pw.println(prefix + this + " @ " + SystemClock.uptimeMillis());
         if (mLooper == null) {
             pw.println(prefix + "looper uninitialized");
         } else {
             mLooper.dump(pw, prefix + "  ");
-        }
+        }*/
+        pw.addTaint(getTaintInt() + prefix.getTaintInt());
 	}
     
     @Override public String toString(){
@@ -555,11 +557,15 @@ public final Looper getLooper() {
         + "}";
     }
 		*/
-    	String retVal = "Handler (" + getClass().getName() + ") {"
+ /*   	String retVal = "Handler (" + getClass().getName() + ") {"
     	        + Integer.toHexString(System.identityHashCode(this))
     	        + "}";
     	retVal.addTaint(getTaint());
-		return retVal;
+		return retVal;*/
+        
+        String str = new String();
+        str.addTaint(getTaint());
+        return str; 
 	}
     
     @DSComment("Package priviledge")
