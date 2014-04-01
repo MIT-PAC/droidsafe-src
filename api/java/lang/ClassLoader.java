@@ -45,7 +45,9 @@ private static ClassLoader createSystemClassLoader() {
         // return new java.net.URLClassLoader(urls, null);
 
         // TODO Make this a java.net.URLClassLoader once we have those?
-        return new PathClassLoader("java.class.path", BootClassLoader.getInstance());
+        // return new PathClassLoader("java.class.path", BootClassLoader.getInstance());
+        
+        return BootClassLoader.getInstance();
     }
 
     /**

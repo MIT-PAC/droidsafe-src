@@ -11,9 +11,12 @@ import android.view.Window;
 import android.view.WindowImpl;
 import android.view.WindowManagerPolicy;
 import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSCat;
+import droidsafe.annotations.DSComment;
 import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.DSSpec;
 
 public final class PolicyManager {
     
@@ -87,6 +90,42 @@ private PolicyManager() {}
             newCopy.addTaint(getTaint());
             // TODO Auto-generated method stub
             return newCopy;
+        }
+        
+    }
+    
+    private static class MyPolicy implements IPolicy {
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public Window makeNewWindow(Context context) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public LayoutInflater makeNewLayoutInflater(Context context) {
+            // TODO Auto-generated method stub
+            return new MyLayoutInflater(context);
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public WindowManagerPolicy makeNewWindowManager() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        public FallbackEventHandler makeNewFallbackEventHandler(Context context) {
+            // TODO Auto-generated method stub
+            return null;
         }
         
     }

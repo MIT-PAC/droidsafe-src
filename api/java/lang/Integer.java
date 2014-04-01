@@ -186,7 +186,7 @@ public static int parseInt(String string, int radix) throws NumberFormatExceptio
     
 private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
         //TODO: maybe incorporate negative into taint
-        return parseInt(string, radix) + offset;
+        return parseInt(string, radix) + offset + toTaintInt(negative);
     }
 
     /**

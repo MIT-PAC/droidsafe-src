@@ -24,6 +24,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
         if (!enumType.isEnum()) {
             throw new IllegalArgumentException(enumType + " is not an enum type");
         }
+        
         for (T value : getSharedConstants(enumType)) {
             if (name.equals(value.name())) {
                 return value;
@@ -46,6 +47,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_method = "4DA067D184DCA03E4A8499CE8148F1DB", hash_generated_method = "7F031794B7075609744F8874AE3F398D")
         @Override
         protected Object[] create(Class<? extends Enum> enumType) {
+            /*
             Object[] varB4EAC82CA7396A68D541C85D26508E83_1848793963 = null; 
             Method method = (Method) Class.getDeclaredConstructorOrMethod(
                     enumType, "values", EmptyArray.CLASS);
@@ -64,7 +66,13 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
             addTaint(enumType.getTaint());
             varB4EAC82CA7396A68D541C85D26508E83_1848793963.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1848793963;
-            
+           */ 
+
+            if (DroidSafeAndroidRuntime.control) throw new AssertionError();
+            Object[] objs = new Object[1];
+            objs[0] = new Object();
+            objs[0].addTaint(enumType.getTaint());
+            return objs;
         }
         
 };
