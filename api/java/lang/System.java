@@ -151,14 +151,16 @@ private static String getenv(String name, String defaultValue) {
         if (name == null) {
             throw new NullPointerException("name == null");
         }
-        String value = Libcore.os.getenv(name);
-        return (value != null) ? value : defaultValue;
+        /*String value = Libcore.os.getenv(name);
+        return (value != null) ? value : defaultValue;*/
+        String newStr = new String(name);
+        newStr.addTaint(defaultValue.getTaint());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String getEnvByName(String name) {
-		return new String();
+		return new String(name);
 	}
 
     /**
@@ -171,12 +173,13 @@ private static String getenv(String name, String defaultValue) {
     
 public static Map<String, String> getenv() {
         Map<String, String> map = new HashMap<String, String>();
-        for (String entry : Libcore.os.environ()) {
+     /*   for (String entry : Libcore.os.environ()) {
             int index = entry.indexOf('=');
             if (index != -1) {
                 map.put(entry.substring(0, index), entry.substring(index + 1));
             }
-        }
+        }*/
+        map.put(new String(),  new String());
         return new SystemEnvironment(map);
     }
 

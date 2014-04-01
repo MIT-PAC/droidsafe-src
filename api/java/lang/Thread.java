@@ -520,7 +520,8 @@ Thread(ThreadGroup group, String name, int priority, boolean daemon) {
 private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         Thread currentThread = Thread.currentThread();
         if (group == null) {
-            group = currentThread.getThreadGroup();
+            //group = currentThread.getThreadGroup();
+            group = new ThreadGroup(DSOnlyType.DONTCARE);
         }
 
         if (group.isDestroyed()) {

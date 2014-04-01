@@ -41,7 +41,7 @@ public final class VMDebug {
     
 @Deprecated
     public static void startMethodTracing() {
-        startMethodTracing(DEFAULT_METHOD_TRACE_FILE_NAME, 0, 0);
+        //startMethodTracing(DEFAULT_METHOD_TRACE_FILE_NAME, 0, 0);
     }
 
     /**

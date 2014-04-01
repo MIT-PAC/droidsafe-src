@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 
 import libcore.util.BasicLruCache;
 import libcore.util.EmptyArray;
@@ -35,11 +36,21 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     
     @SuppressWarnings("unchecked")
     public static <T extends Enum<T>> T[] getSharedConstants(Class<T> enumType) {
+        if (sharedConstantsCache == null) {
+            sharedConstantsCache = new HashMap<Class<? extends Enum>, Object[]>();
+            Object[] objs = new Object[1];
+            objs[0] = new Object();
+            objs[0].addTaint(enumType.getTaint());
+            sharedConstantsCache.put(enumType, objs);
+        }
         return (T[]) sharedConstantsCache.get(enumType);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.908 -0500", hash_original_field = "36ABA869F03F9A9F22D0E91086D2EDD0", hash_generated_field = "F6C6D1A2DF29E3B35FCE4B7C508D18C8")
 
     private static final long serialVersionUID = -4300926546619394005L;
+
+    static private HashMap<Class<? extends Enum>, Object[]>  sharedConstantsCache;
+/*
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_field = "9E1AB9651106D78F89D200A6B8A75C99", hash_generated_field = "B4F6D6026899BCE9E7B0DB1ABDB36603")
 
     private static final BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {
@@ -66,7 +77,6 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
             addTaint(enumType.getTaint());
             varB4EAC82CA7396A68D541C85D26508E83_1848793963.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1848793963;
-           */ 
 
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
             Object[] objs = new Object[1];
@@ -76,6 +86,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
         }
         
 };
+*/
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.917 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private  String name;

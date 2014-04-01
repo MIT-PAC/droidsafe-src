@@ -129,7 +129,9 @@ public class Handler {
         return "0x" + Integer.toHexString(message.what);
     }
 		*/
-		return "";
+        String str = new String();
+        str.addTaint(message.getTaintInt() + getTaintInt());
+		return str;
 	}
 
     /**
@@ -343,7 +345,7 @@ public final Message obtainMessage()
 		*/
     	addTaint(what);
     	addTaint(delayMillis);
-        Message msg = Message.obtain();
+        Message msg = new Message();
         msg.what = what;
         return sendMessageDelayed(msg, delayMillis);
 	}
@@ -362,9 +364,10 @@ public final Message obtainMessage()
 		*/
     	addTaint(what);
     	addTaint(uptimeMillis);
-        Message msg = Message.obtain();
+        Message msg = new Message();
         msg.what = what;
-        return sendMessageAtTime(msg, uptimeMillis);
+        msg.addTaint(uptimeMillis);
+        return sendMessage(msg);
 	}
     
 	@DSComment("IO movement methodName")
@@ -383,7 +386,7 @@ public final Message obtainMessage()
 		*/
     	addTaint(msg.getTaint());
     	addTaint(delayMillis);
-        return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
+        return sendMessage(msg);
 	}
     @DSVerified
     @DSSpec(DSCat.IO_ACTION_METHOD)

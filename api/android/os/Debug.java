@@ -794,7 +794,7 @@ public static int getLoadedClassCount() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.969 -0500", hash_original_method = "2A3BA8C930CC8D70EFDC06E422B5CE17", hash_generated_method = "A68900B8650C713DF8FE69E78EA5F319")
     
 public static void dumpHprofData(String fileName) throws IOException {
-        VMDebug.dumpHprofData(fileName);
+        //VMDebug.dumpHprofData(fileName);
     }
 
     /**
@@ -811,7 +811,7 @@ public static void dumpHprofData(String fileName) throws IOException {
     
 public static void dumpHprofData(String fileName, FileDescriptor fd)
             throws IOException {
-        VMDebug.dumpHprofData(fileName, fd);
+        //VMDebug.dumpHprofData(fileName, fd);
     }
 
     /**
@@ -838,7 +838,8 @@ public static void dumpHprofDataDdms() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.980 -0500", hash_original_method = "D878379E552A4E4CA3B2BC84B825D68D", hash_generated_method = "7CD0606BCDE9409948B14414AD145835")
     
 public static long countInstancesOfClass(Class cls) {
-        return VMDebug.countInstancesOfClass(cls, true);
+        //return VMDebug.countInstancesOfClass(cls, true);
+        return cls.getTaintLong();
     }
     
     public static int getBinderSentTransactions() {
@@ -879,7 +880,8 @@ public static long countInstancesOfClass(Class cls) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.002 -0500", hash_original_method = "0CA55CC43FB3B8576CC7C0DBAF1F74C0", hash_generated_method = "E08171120887014347C0D1FF2B57D7A2")
     
 public static final boolean cacheRegisterMap(String classAndMethodDesc) {
-        return VMDebug.cacheRegisterMap(classAndMethodDesc);
+        //return VMDebug.cacheRegisterMap(classAndMethodDesc);
+        return classAndMethodDesc.getTaintBoolean();
     }
 
     /**
@@ -891,7 +893,7 @@ public static final boolean cacheRegisterMap(String classAndMethodDesc) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.004 -0500", hash_original_method = "9646D8356AAE31876A9E9F3AB6644735", hash_generated_method = "A593400102316B2AAD640F9202795286")
     
 public static final void dumpReferenceTables() {
-        VMDebug.dumpReferenceTables();
+        //VMDebug.dumpReferenceTables();
     }
 
     /**
@@ -1427,7 +1429,7 @@ public int globalMethodInvocations() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.725 -0500", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "EDEB9D622E5FBF902147BB9B280ED1ED")
     
 private Debug() {}
-    static {
+   /* static {
         if (false) {
             final String TAG = "DebugProperties";
             final String[] files = { "/system/debug.prop", "/debug.prop", "/data/debug.prop" };
@@ -1455,6 +1457,6 @@ private Debug() {}
             debugProperties = null;
         }
     }
-    
+    */
 }
 
