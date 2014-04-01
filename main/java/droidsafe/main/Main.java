@@ -280,6 +280,9 @@ public class Main {
             	cb.run();
             	cbtimer.stop();
             	driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+            	System.exit (0);
+            } else {
+            	driverMsg ("no catch block run");
             }
 
             if (Config.v().dumpCallGraph) {

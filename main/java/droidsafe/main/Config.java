@@ -393,6 +393,9 @@ public class Config {
         
         if (cmd.hasOption ("catchblocks"))
             this.runCatchBlocks = true;
+        
+        if (cmd.hasOption ("catchblocksfast"))
+        	this.runCatchBlocksFast = true;
 
         if (cmd.hasOption("noclinitcontext"))
             this.staticinitcontext = false;

@@ -3,6 +3,7 @@ package droidsafe.analyses;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -107,6 +108,51 @@ public class CatchBlocks {
             this.terminal = terminal;
             id = next_id++;
         }
+    }
+    
+    /** information about each call in the call chain **/
+    static class CallChainInfo {
+    	String type;
+    	SootMethod method;
+    	Stmt stmt;
+    	int syscalls;
+    	int calls;
+    	CallChainInfo[] contents = new CallChainInfo[0];
+    	public CallChainInfo (SootMethod m, Stmt s, String type) {
+    		this.type = type;
+    		this.method = m;
+    		this.stmt = s;
+    		calls = 1;
+    		if (type.equals ("syscall"))
+    			syscalls = 1;
+    	}
+    	public void dump_json (PrintStream fp, String indent) {
+       		fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
+    		fp.printf ("%s  %s,\n", indent, json_field ("signature", method.getSignature()));
+    		SourceLocationTag slt = getSourceLocation(stmt);
+    		if (slt != null) {
+    			fp.printf ("%s  %s", indent, json_field ("src-loc"));
+    			fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
+    					json_field ("line", slt.getLine()));
+    		}   
+    		fp.printf ("%s  %s,\n", indent, json_field ("syscalls", syscalls));
+    		fp.printf ("%s  %s,\n", indent, json_field ("calls", calls));
+    		
+    		if ((contents != null) && (contents.length > 0)) {
+    			fp.printf ("%s  %s,\n", indent, json_field ("score", 5));
+    			fp.printf ("%s  %s [\n", indent, json_field ("contents"));
+    			String delim = "";
+    			for (CallChainInfo cci : contents) {
+    				fp.print (delim);
+    				delim = ",\n";
+    				cci.dump_json (fp, indent + "  ");
+    			}
+    			fp.printf ("\n%s]}", indent);
+    		} else {
+    			fp.printf ("%s  %s\n", indent, json_field ("score", 5));
+    			fp.printf ("%s}", indent);
+    		}
+    	}
     }
     
     /** Find all catch blocks and characterize their contents 
@@ -228,12 +274,14 @@ public class CatchBlocks {
         	}
         	logger.info ("  begin handler = {}", toString(start));
         	logger.info ("  end handler = {}", toString(u));
-        	print_call (meth, (Stmt)start, "  ", "cblock", true);
-        	extract_calls (fp, meth, insts, start, u);
-        	fp.println ("  ]},");
+        	// print_call (meth, (Stmt)start, "  ", "cblock", true);
+        	CallChainInfo cci = extract_calls (fp, meth, insts, start, u);
+        	// fp.println ("  ]},");
+        	cci.dump_json (fp, "  ");
+        	fp.println (",");
         }
     }
-    
+    	
     /**
      * Extracts all of the calls from the instructions between start (inclusive)
      * and end (exclusive).
@@ -242,9 +290,11 @@ public class CatchBlocks {
      * @param start     - start instruction (inclusive)
      * @param end       - end instruction (exclusive)
      */
-    private void extract_calls (PrintStream fp, SootMethod method, Chain<Unit> insts, 
+    private CallChainInfo extract_calls (PrintStream fp, SootMethod method, Chain<Unit> insts, 
     		Unit start, Unit end) {
 
+    	CallChainInfo cci = new CallChainInfo (method, (Stmt)start, "cblock");
+    	List<CallChainInfo> ccis = new ArrayList<CallChainInfo>();
     	
     	for (Unit u = start; u != end; u = insts.getSuccOf(u)) {
     		Stmt s = (Stmt)u;
@@ -271,70 +321,68 @@ public class CatchBlocks {
     				    for (String call : calls)
     				        fp.println (call);
     				} else {
-    				    print_call (mc.method(), s, "    ", "direct-call", true);
-           	       	
-    				    // Process each method that can be called from the method in this
-    				    // statement
-    				    process_call_chain (mc, stack, "      ", true);
-    				    fp.println("    ]},");
+    					CallChainInfo dcall = process_call_chain (mc, s, stack);
+    					dcall.type = "direct-call";
+    					ccis.add(dcall);
     				}
     			}
     		}
-    		
+ 
     	}
-    	// put out an empty object so that there is an object following the ',' from
-    	// the last one.  A kluge admittedly, but better than anything else I can think of.
-    	fp.println ("    {}");
+        for (CallChainInfo callee : ccis) {
+        	cci.syscalls += callee.syscalls;
+        	cci.calls += callee.calls;
+        }
+    	cci.contents = ccis.toArray(cci.contents);
+		return cci;
     }
     
     /**
-     * Process the call chain and print a json representation of it to fp.
-     * Ignores any calls that are within the API. Terminates on any recursive
-     * calls or static initializers. If the API call contains a callback, 
-     * processes that call.  But system calls within system calls are never printed.
+     * Process the call chain and returns a CallChainInfo that 
+     * describes this call and any call that it makes.
+     * Ignores any calls that are within the API. Ignores recursive
+     * calls and static initializers.  Terminates on system calls
+     * that do not contain callbacks.
      * 
      * @param mc      - Method to start at
+     * @param s		  - Stmt that called mc
      * @param stack   - Current call chain, used to check for recursion
-     * @param indent  - indent for printing (blank string)
      */
-    private int process_call_chain (MethodOrMethodContext mc, 
-            Stack<SootMethod> stack,String indent, boolean close) {
+    private CallChainInfo process_call_chain (MethodOrMethodContext mc, 
+            Stmt s, Stack<SootMethod> stack) {
         
+    	if (is_terminal (mc))
+    		return new CallChainInfo (mc.method(), s, "syscall");
+    	
+    	CallChainInfo cci = new CallChainInfo (mc.method(), s, "callchain");
+    	ArrayList<CallChainInfo> calls = new ArrayList<CallChainInfo>();
         CallGraph cg = PTABridge.v().getCallGraph();
-        int sub_cnt = 0;
-        ArrayList<String> calls = new ArrayList<String>();
+        
         for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
             Edge e = tit.next();
             SootMethod m = e.getTgt().method();
             boolean print_m = !(is_system(mc.method()) && is_system (m));
-            if (m.toString().contains ("<clinit>"))
+            if (m.toString().contains ("<clinit>")) {
                 continue;
-            if (is_terminal (e.getTgt())) {
-                if (print_m) {
-                    print_call (m, e.srcStmt(), indent, "syscall", false);
-                    sub_cnt++;
-                }
             } else if (stack.contains(m)) {
-                // don't bother to print recursive  call
-            } else { // need to process anything it calls
-                if (print_m) {
-                    print_call (m, e.srcStmt(), indent, "call-chain", true);
-                    sub_cnt++;
-                    stack.push (m);
-                    process_call_chain (e.getTgt(), stack, indent + "  ", true);
-                    stack.pop();
-                    fp.printf ("%s]},\n", indent);
-                } else { // not printing this method
-                    stack.push(m);
-                    sub_cnt += process_call_chain (e.getTgt(), stack, indent, false);
-                    stack.pop();
-                }
+                // ignore recursive  call
+            } else { // normal call 
+            	stack.push (m);
+            	CallChainInfo callee = process_call_chain (e.getTgt(), e.srcStmt(), stack);
+            	stack.pop();
+            	if (print_m) {
+            		calls.add (callee);
+            	} else { // skip callee and just add what it calls
+            		calls.addAll (Arrays.asList(callee.contents));
+            	}
             }
         }
-        // Final object in the contents array (which must not have a comma following it)
-        if ((sub_cnt > 0) && close)
-            fp.println (indent + "{ }");
-        return sub_cnt;
+        for (CallChainInfo callee : calls) {
+        	cci.syscalls += callee.syscalls;
+        	cci.calls += callee.calls;
+        }
+        cci.contents = calls.toArray(cci.contents);
+        return cci;
     }
       
     private void print_call (SootMethod m, Stmt s, String indent, String type, boolean contents) {
@@ -355,21 +403,21 @@ public class CatchBlocks {
         }
     }
     
-    private String json_field (String name) {
+    private static String json_field (String name) {
         return json_field (name, null);
     }
-    private String json_field (String name, String value) {
+    private static String json_field (String name, String value) {
         name = "\"" + name + "\"";
         if (value == null)
             return String.format ("%-12s : ", name);
         return String.format ("%-12s : \"%s\"", name, value);
     }
     
-    private String json_field (String name, int value) {
+    private static String json_field (String name, int value) {
         return String.format ("%-12s : %d", "\"" + name + "\"", value);
     }
           
-    private String json_field (String name, boolean value) {
+    private static String json_field (String name, boolean value) {
         return String.format ("%-12s : %b", "\"" + name + "\"", value);
     }
           
@@ -490,7 +538,7 @@ public class CatchBlocks {
     	return !p.isSrcClass(c) && !p.isLibClass(c);
     }
     /** gets the source location for unit (which must be a stmt) **/
-    private SourceLocationTag getSourceLocation (Unit s) {
+    private static SourceLocationTag getSourceLocation (Unit s) {
     	return SootUtils.getSourceLocation((Stmt) s);
     }
     /** 
