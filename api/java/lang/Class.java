@@ -217,7 +217,6 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     private static final long serialVersionUID = 3206093459760846163L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.860 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
 
-    @DSVAModeled
     private transient String name;
     
     @DSComment("Private Method")
@@ -1103,7 +1102,7 @@ public String getName() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
-    	String ret = new String();
+    	String ret = new String("<Class getName()>");
     	return ret;
     }
 
