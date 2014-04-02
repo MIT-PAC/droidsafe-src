@@ -46,6 +46,7 @@ import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InterfaceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
 import soot.jimple.NewMultiArrayExpr;
 import soot.jimple.NullConstant;
 import soot.jimple.SpecialInvokeExpr;
@@ -789,6 +790,14 @@ public class SparkPTA extends PTABridge {
             if (!systemApi) {
                 List<Stmt> invokeStmtList = SootUtils.getInvokeStatements(caller, edge.tgt());
                 for (Stmt stmt: invokeStmtList) {
+                    InvokeStmt invokeStmt = (InvokeStmt)stmt;
+                    
+                    SootMethod method = invokeStmt.getInvokeExpr().getMethod();
+                    
+                    // only printout 
+                    if (method != edge.tgt() && !method.equals(edge.tgt()))  
+                        continue;
+                    
                     printStream.printf("%s #[%s] ", subindent, stmt);
                     SourceLocationTag tag = SootUtils.getSourceLocation(stmt);
                     if (tag != null) {
@@ -798,8 +807,13 @@ public class SparkPTA extends PTABridge {
                 }
             }
 
-            //if (!callgraphSet.contains(edge.tgt()))
-            dumpTextGraph(edge.tgt(), printStream, level+1);
+            if (!callgraphSet.contains(edge.tgt())) {
+                dumpTextGraph(edge.tgt(), printStream, level+1);
+            }
+            else {
+                //already in the call graph, just print it out
+                printStream.printf("%s %s\n", indent, edge.tgt().toString());
+            }
         }
     }
 
