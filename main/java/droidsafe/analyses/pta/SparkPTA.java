@@ -790,14 +790,6 @@ public class SparkPTA extends PTABridge {
             if (!systemApi) {
                 List<Stmt> invokeStmtList = SootUtils.getInvokeStatements(caller, edge.tgt());
                 for (Stmt stmt: invokeStmtList) {
-                    InvokeStmt invokeStmt = (InvokeStmt)stmt;
-                    
-                    SootMethod method = invokeStmt.getInvokeExpr().getMethod();
-                    
-                    // only printout 
-                    if (method != edge.tgt() && !method.equals(edge.tgt()))  
-                        continue;
-                    
                     printStream.printf("%s #[%s] ", subindent, stmt);
                     SourceLocationTag tag = SootUtils.getSourceLocation(stmt);
                     if (tag != null) {
