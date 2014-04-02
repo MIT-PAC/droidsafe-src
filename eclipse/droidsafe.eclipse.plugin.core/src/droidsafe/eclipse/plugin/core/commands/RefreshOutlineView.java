@@ -6,7 +6,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.view.json.JsonViewPart;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 /**
@@ -28,8 +28,8 @@ public class RefreshOutlineView extends AbstractHandler {
         if (part instanceof SecuritySpecOutlineViewPart) {
             SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
             droidsafeView.refreshSpecAndOutlineView();
-        } else if (part instanceof JsonViewPart) {
-            ((JsonViewPart) part).updateView();
+        } else if (part instanceof IndicatorViewPart) {
+            ((IndicatorViewPart) part).updateView();
         }
         return null;
     }

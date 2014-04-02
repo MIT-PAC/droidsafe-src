@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.json;
+package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,11 +14,13 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import droidsafe.eclipse.plugin.core.filters.Filter;
+import droidsafe.eclipse.plugin.core.filters.FilterOp;
+import droidsafe.eclipse.plugin.core.filters.FilterPredClause;
+import droidsafe.eclipse.plugin.core.filters.FilterPred;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.infoflow.SourceSinkPair;
-import droidsafe.eclipse.plugin.core.view.json.Filter.FilterOp;
-import droidsafe.eclipse.plugin.core.view.json.Filter.FilterPred;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 
@@ -28,16 +30,18 @@ import droidsafe.speclang.model.SecuritySpecModel;
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
-    
-    private Map<String, Boolean> visibilityMap = new TreeMap<String, Boolean>();
-    
-    private Map<String, Boolean> defaultVisibilityMap = null;
+public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
     
     private List<Filter> filters = new ArrayList<Filter>();
     
     /** The object on which the droidsafe analysis info is to be displayed in the outline view */
     protected JsonObject fInput;
+
+    private IndicatorViewPart viewPart;
+
+    public IndicatorTreeElementContentProvider(IndicatorViewPart viewPart) {
+        this.viewPart = viewPart;
+    }
 
     @Override
     public Object[] getElements(Object input) {
@@ -59,8 +63,6 @@ public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementCont
      */
     protected Object[] initializeRoots() {
         List<TreeElement<JsonElement, JsonElement>> roots = new ArrayList<TreeElement<JsonElement, JsonElement>>();
-        computeDefaultVisibilityMap(fInput);
-        computeVisibilityMapFromDefault();
         JsonArray rootArray = Utils.getChildrenArray(fInput);
         if (rootArray != null) {
             for (int i = 0; i < rootArray.size(); i++) {
@@ -74,31 +76,6 @@ public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementCont
             return roots.toArray();
         }
         return NO_CHILDREN;
-    }
-
-    private void computeDefaultVisibilityMap(JsonObject jsonObj) {
-        defaultVisibilityMap = new TreeMap<String, Boolean>();
-        JsonElement visibility = jsonObj.get("visibility");
-        if (visibility != null && visibility.isJsonObject()) {
-            for (Map.Entry<String, JsonElement> entry: visibility.getAsJsonObject().entrySet()) {
-                String key = entry.getKey();
-                Boolean value = Boolean.valueOf(entry.getValue().getAsBoolean());
-                defaultVisibilityMap.put(key, value);
-            }
-        }
-    }
-
-    private void computeVisibilityMapFromDefault() {
-        for (String key: visibilityMap.keySet()) {
-            if (!defaultVisibilityMap.containsKey(key)) {
-                visibilityMap.remove(key);
-            }
-        }
-        for (String key: defaultVisibilityMap.keySet()) {
-            if (!visibilityMap.containsKey(key)) {
-                visibilityMap.put(key, defaultVisibilityMap.get(key));
-            }
-        }
     }
 
     private List<TreeElement<JsonElement, JsonElement>> initializeTree(JsonElement jsonElement) {
@@ -189,6 +166,7 @@ public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementCont
     }
 
     private boolean isVisible(JsonElement jsonElement) {
+        Map<String, Boolean> visibilityMap = viewPart.getVisibilityMap();
         String type = Utils.getObjectType(jsonElement);
         if (type != null && visibilityMap.containsKey(type)) {
             return visibilityMap.get(type).booleanValue();
@@ -196,10 +174,6 @@ public class JsonTreeElementContentProvider extends DroidsafeInfoTreeElementCont
         return true;
     }
     
-    public Map<String, Boolean> getVisibilityMap() {
-        return visibilityMap;
-    }
-
     /**
      * Reset the content of this content provider.
      */

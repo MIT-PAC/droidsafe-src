@@ -1,25 +1,17 @@
-package droidsafe.eclipse.plugin.core.view.json;
+package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import soot.SootField;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.VAUtils;
-import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.eclipse.plugin.core.view.json.Filter.CompareOp;
+import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 
 public class Utils {
     
@@ -88,22 +80,41 @@ public class Utils {
         return sig.substring(pos1, pos2);
     }
 
-    public static String[] getFields(JsonObject jsonObj) {
+    public static Set<String> getFilterFields(JsonObject jsonObj) {
         Set<String> fields = new TreeSet<String>();
         for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
             String field = entry.getKey();
-            if (!field.equals("type")) {
-                if (field.equals("signature")) {
+            if (field.equals("signature")) {
+                fields.add(field);
+                fields.addAll(SIGNATURE_FIELDS);
+            } else {
+                JsonElement value = entry.getValue();
+                if (value.isJsonPrimitive()) 
                     fields.add(field);
-                    fields.addAll(SIGNATURE_FIELDS);
-                } else {
-                    JsonElement value = entry.getValue();
-                    if (value.isJsonPrimitive()) 
-                        fields.add(field);
+            }
+        }
+        return fields;
+    }
+
+    public static Set<String> getAllFilterFields(JsonObject jsonObj) {
+        Set<String> fields = new TreeSet<String>();
+        getAllFilterFields(jsonObj, fields, true);
+        return fields;
+    }
+
+    private static void getAllFilterFields(JsonObject jsonObj, Set<String> fields, boolean topLevel) {
+        if (!topLevel) {
+            fields.addAll(getFilterFields(jsonObj));
+        }
+        JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
+        if (childrenArray != null) {
+            for (int i = 0; i < childrenArray.size(); i++) {
+                JsonElement child = childrenArray.get(i);
+                if (child.isJsonObject()) {
+                    getAllFilterFields((JsonObject)child, fields, false);
                 }
             }
         }
-        return fields.toArray(new String[0]);
     }
 
     public static boolean isEmptyJsonObject(JsonElement jsonElt) {

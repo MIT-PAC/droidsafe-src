@@ -8,7 +8,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.view.json.JsonViewPart;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.wizards.FiltersWizard;
 
 public class SetFilters extends AbstractHandler {
@@ -18,8 +18,8 @@ public class SetFilters extends AbstractHandler {
         IWorkbenchPart view = HandlerUtil.getActivePart(event);
         IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
 
-        if (view instanceof JsonViewPart) {
-            JsonViewPart jsonView = (JsonViewPart) view;
+        if (view instanceof IndicatorViewPart) {
+            IndicatorViewPart jsonView = (IndicatorViewPart) view;
             FiltersWizard wizard = new FiltersWizard();
             wizard.init(jsonView);
             // Create the wizard dialog

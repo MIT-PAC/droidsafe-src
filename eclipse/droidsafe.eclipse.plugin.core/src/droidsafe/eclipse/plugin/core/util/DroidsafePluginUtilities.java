@@ -4,6 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
@@ -133,23 +134,33 @@ public class DroidsafePluginUtilities {
         return fullPath;
     }
     
+    public static File[] getIndicatorFiles(IProject project) {
+        return getOutputFilesWithExtension(project, ".json");
+    }
+
+    public static File[] getOutputFilesWithExtension(IProject project, final String ext) {
+        String projectRootPath = project.getLocation().toOSString();
+        File outputDir = new File(projectRootPath + File.separator + Project.OUTPUT_DIR);
+        File[] files = outputDir.listFiles(new FilenameFilter() {
+            public boolean accept(File dir, String name) {
+                return name.endsWith(ext);
+            }
+        });
+        return files;
+    }
+    
     /**
      * Reads the JSON object for an indicator display from the given JSON file
      */
-    public static JsonObject parseIndicatorDisplay(String jsonFileName) {
-        File file = new File(jsonFileName);
-        if (file.exists()) {
-            try {
-                JsonParser jp = new JsonParser();
-                JsonElement je = jp.parse(new FileReader(file));
-                if (je.isJsonObject())
-                    return (JsonObject) je; 
-            } catch (Exception ex) {
-                showError("JSON file parse error", "Error parsing the JSON file " + jsonFileName, ex);
-                ex.printStackTrace();
-            }
-        } else {
-            showError("JSON file does not exist", "Failed to find JSON file" + jsonFileName);
+    public static JsonObject parseIndicatorFile(File jsonFile) {
+        try {
+            JsonParser jp = new JsonParser();
+            JsonElement je = jp.parse(new FileReader(jsonFile));
+            if (je.isJsonObject())
+                return (JsonObject) je; 
+        } catch (Exception ex) {
+            showError("JSON file parse error", "Error parsing the JSON file " + jsonFile, ex);
+            ex.printStackTrace();
         }
         return null;
     }

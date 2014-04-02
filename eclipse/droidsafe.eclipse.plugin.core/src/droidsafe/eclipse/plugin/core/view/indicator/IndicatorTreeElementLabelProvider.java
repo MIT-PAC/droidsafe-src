@@ -1,4 +1,7 @@
-package droidsafe.eclipse.plugin.core.view.json;
+package droidsafe.eclipse.plugin.core.view.indicator;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.eclipse.swt.graphics.Image;
 
@@ -19,7 +22,17 @@ import droidsafe.speclang.model.MethodArgumentModel;
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class JsonTreeElementLabelProvider extends MethodInfoTreeElementLabelProvider {
+public class IndicatorTreeElementLabelProvider extends MethodInfoTreeElementLabelProvider {
+
+    private IndicatorViewPart viewPart;
+    
+    public IndicatorTreeElementLabelProvider(IndicatorViewPart viewPart) {
+        this.viewPart = viewPart;
+    }
+
+    public Map<String, Boolean> getDisplayMap() {
+        return viewPart.getDisplayMap();
+    }
 
     /**
      * Returns the label for the tree node to display in the tree outline view.
@@ -35,8 +48,15 @@ public class JsonTreeElementLabelProvider extends MethodInfoTreeElementLabelProv
             if (data instanceof JsonObject) {
                 JsonObject jsonObj = (JsonObject) data;
                 String sig = Utils.getFieldValueAsString(jsonObj, "signature");
-                if (sig != null)
-                    return DroidsafePluginUtilities.removeCloneSuffix(Utils.shortSignature(sig));
+                if (sig != null) {
+                    String label = DroidsafePluginUtilities.removeCloneSuffix(Utils.shortSignature(sig));
+                    for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
+                        String field = entry.getKey();
+                        if (viewPart.getDisplay(field))
+                            label = label + " (" + field + "=" + entry.getValue() + ")";
+                    }
+                    return label;
+                }
             }
             return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
         }

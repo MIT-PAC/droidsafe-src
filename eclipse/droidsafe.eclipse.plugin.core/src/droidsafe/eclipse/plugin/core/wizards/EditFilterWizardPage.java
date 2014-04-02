@@ -3,7 +3,6 @@ package droidsafe.eclipse.plugin.core.wizards;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -11,59 +10,45 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
 import droidsafe.eclipse.plugin.core.filters.BoolOp;
-import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.filters.CompareOp;
+import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.filters.FilterOp;
 import droidsafe.eclipse.plugin.core.filters.FilterPred;
 import droidsafe.eclipse.plugin.core.filters.FilterPredClause;
-import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
-import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 
-import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Button;
-
-public class NewFilterWizardPage extends WizardPage {
+public class EditFilterWizardPage extends WizardPage {
 
     private static final int MAX_PRED_CLAUSES = 10;
-    private JsonObject jsonObject;
+    private Filter filter;
     private int numberOfPredClauses;
     private Combo[] fieldCombos = new Combo[MAX_PRED_CLAUSES];
     private Combo[] compOpCombos = new Combo[MAX_PRED_CLAUSES];
     private Text[] valueTexts = new Text[MAX_PRED_CLAUSES];
     private Button[] addButtons = new Button[MAX_PRED_CLAUSES];
     private Button[] removeButtons = new Button[MAX_PRED_CLAUSES];
-    private String[] filterFields;
     private Composite filterOpContainer;
     private Button[] filterOpButtons;
     private Button[] boolOpButtons;
     private boolean[] clausesComplete = new boolean[MAX_PRED_CLAUSES];
+    private String[] filterFields;
 
     /**
      * Create the wizard.
-     * @param selection 
+     * @param filter 
      * @param view 
      */
-    public NewFilterWizardPage(IStructuredSelection selection) {
-        super("NewFilterWizardPage");
-        setTitle("New Filter");
-        setDescription("Create a new display filter for the indicator outline view.");
-        Object element = selection.getFirstElement();
-        if (element instanceof TreeElement<?,?>) {
-            Object data = ((TreeElement<?,?>)element).getData();
-            if (data instanceof JsonElement && ((JsonElement)data).isJsonObject()) {
-                this.jsonObject = (JsonObject) data;
-                this.filterFields = Utils.getFilterFields(jsonObject).toArray(new String[0]);
-            }
-        }
+    public EditFilterWizardPage(Filter filter, String[] filterFields) {
+        super("EditFilterWizardPage");
+        setTitle("Edit Filter");
+        setDescription("Edit a display filter for the indicator outline view.");
+        this.filter = filter;
+        this.filterFields = filterFields;
     }
 
     /**
@@ -121,6 +106,7 @@ public class NewFilterWizardPage extends WizardPage {
         for (int i = 0; i < MAX_PRED_CLAUSES; i++) {
             fieldCombos[i] = new Combo(predsContainer, SWT.BORDER | SWT.READ_ONLY);
             gridData = new GridData(SWT.LEFT, SWT.TOP, false, false);
+            gridData.widthHint = 100;
             fieldCombos[i].setLayoutData(gridData);
 
             compOpCombos[i] = new Combo(predsContainer, SWT.BORDER | SWT.READ_ONLY);
@@ -148,33 +134,29 @@ public class NewFilterWizardPage extends WizardPage {
     }
 
     private void fillData() {
-        filterOpButtons[0].setSelection(true);
-        boolOpButtons[0].setSelection(true);
-        numberOfPredClauses = 1;
-        int typeFieldIndex = -1;
-        for (int i = 0; i < filterFields.length; i++) {
-            if (filterFields[i].equals("type")) {
-                typeFieldIndex = i;
-                numberOfPredClauses = 2;
-                break;
-            }
-        }
+        FilterOp filterOp = filter.op;
+        FilterPred filterPred = filter.pred;
+        BoolOp boolOp = filterPred.getBoolOp();
+        List<FilterPredClause> clauses = filterPred.getClauses();
+        filterOpButtons[filterOp.getValue()].setSelection(true);
+        boolOpButtons[boolOp.getValue()].setSelection(true);
+        numberOfPredClauses = clauses.size();
         for (int i = 0; i < MAX_PRED_CLAUSES; i++) {
             fieldCombos[i].setItems(filterFields);
             compOpCombos[i].setItems(CompareOp.strings);
-            compOpCombos[i].select(0);
-            if (i >= numberOfPredClauses) {
+            if (i < numberOfPredClauses) {
+                FilterPredClause clause = clauses.get(i);
+                String field = clause.field;
+                CompareOp compOp = clause.compOp;
+                String value = clause.value;
+                fieldCombos[i].setText(field);
+                compOpCombos[i].select(compOp.getValue());
+                valueTexts[i].setText(value);
+                clausesComplete[i] = true;
+            } else {
                 setPredVisible(i, false);
                 clausesComplete[i] = false;
-            } else {
-                int index = i;
-                if (typeFieldIndex >= 0) {
-                    index = (i == 0) ? typeFieldIndex : (typeFieldIndex == 0) ? 1 : 0;
-                }
-                fieldCombos[i].select(index);
-                setFieldValue(i);
-                clausesComplete[i] = true;
-            }
+            } 
         }
         setPageComplete(true);
     }
@@ -210,13 +192,6 @@ public class NewFilterWizardPage extends WizardPage {
     }
     
     private void addListeners(final int i) {
-        fieldCombos[i].addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                setFieldValue(i);
-                updatePageComplete();
-            }
-        });
         addButtons[i].addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -272,17 +247,9 @@ public class NewFilterWizardPage extends WizardPage {
     }
     
     private void copyClause(int from, int to) {
-        fieldCombos[to].select(fieldCombos[from].getSelectionIndex());
+        fieldCombos[to].setText(fieldCombos[from].getText());
         compOpCombos[to].select(compOpCombos[from].getSelectionIndex());
         valueTexts[to].setText(valueTexts[from].getText());
-        clausesComplete[to] = clausesComplete[from];
-    }
-
-    private void setFieldValue(int i) {
-        String field = fieldCombos[i].getText();
-        String value = Utils.getFieldValueAsString(jsonObject, field);
-        if (value != null)
-            valueTexts[i].setText(value);
     }
     
     public Filter getFilter() {
@@ -298,7 +265,7 @@ public class NewFilterWizardPage extends WizardPage {
     }
 
     private FilterPredClause getFilterPredClause(int i) {
-        String field = filterFields[fieldCombos[i].getSelectionIndex()];
+        String field = fieldCombos[i].getText();
         CompareOp compOp = CompareOp.values()[compOpCombos[i].getSelectionIndex()];
         String value = valueTexts[i].getText();
         FilterPredClause clause = new FilterPredClause(null, field, compOp, value);

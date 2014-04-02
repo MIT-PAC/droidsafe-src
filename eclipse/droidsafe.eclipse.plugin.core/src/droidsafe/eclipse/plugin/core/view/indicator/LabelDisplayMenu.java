@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.json;
+package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.util.Map;
 import java.util.Set;
@@ -16,23 +16,23 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.CompoundContributionItem;
 
-public class TypeVisibilityMenu extends CompoundContributionItem {
+public class LabelDisplayMenu extends CompoundContributionItem {
 
     @Override
     protected IContributionItem[] getContributionItems() {
-        final JsonViewPart view = getView();
+        final IndicatorViewPart view = getView();
         if (view == null)
             return new IContributionItem[0];
 
-        Map<String, Boolean> visibilityMap = view.getVisibilityMap();
+        Map<String, Boolean> displayMap = view.getDisplayMap();
 
-        if (visibilityMap.isEmpty())
+        if (displayMap.isEmpty())
             return new IContributionItem[0];
         
-        Set<String> types = visibilityMap.keySet();
-        IContributionItem[] items = new IContributionItem[types.size()];
+        Set<String> fields = displayMap.keySet();
+        IContributionItem[] items = new IContributionItem[fields.size()];
         int i = 0;
-        for (final String type: types) {
+        for (final String field: fields) {
             items[i++] = new ContributionItem() {
 
                 /*
@@ -43,20 +43,20 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
                  */
                 public void fill(Menu menu, int index) {
                     MenuItem item = new MenuItem(menu, SWT.CHECK);
-                    item.setText(type);
-                    item.addListener(SWT.Selection, getMenuItemListener(type, view));
-                    item.setSelection(view.getVisibility(type));
+                    item.setText(field);
+                    item.addListener(SWT.Selection, getMenuItemListener(field, view));
+                    item.setSelection(view.getDisplay(field));
                 }
 
                 /**
                  * Return the menu item listener for selection of a filter.
                  * 
-                 * @param type
+                 * @param field
                  * @param view
                  * @return Listener
                  */
-                private Listener getMenuItemListener(final String type,
-                                                     final JsonViewPart view) {
+                private Listener getMenuItemListener(final String field,
+                                                     final IndicatorViewPart view) {
                     return new Listener() {
                         /*
                          * (non-Javadoc)
@@ -65,7 +65,7 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
                          */
                         public void handleEvent(Event event) {
                             if (view != null) {
-                                view.toggleVisibility(type);
+                                view.toggleDisplay(field);
                                 view.refresh();
                             }
                         }
@@ -83,7 +83,7 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
      * 
      * @return JsonViewPart or <code>null</code> if the active view isn't a JsonViewPart
      */
-    JsonViewPart getView() {
+    IndicatorViewPart getView() {
         IWorkbenchWindow active = PlatformUI.getWorkbench()
                 .getActiveWorkbenchWindow();
         if (active == null)
@@ -92,10 +92,10 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
         if (page == null)
             return null;
         IWorkbenchPart part = page.getActivePart();
-        if (!(part instanceof JsonViewPart))
+        if (!(part instanceof IndicatorViewPart))
             return null;
 
-        return (JsonViewPart) part;
+        return (IndicatorViewPart) part;
     }
 
 }

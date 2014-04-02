@@ -130,11 +130,6 @@
             name="Show Points-to View">
       </command>
       <command
-            defaultHandler="droidsafe.eclipse.plugin.core.commands.SetTypeVisibility"
-            id="droidsafe.eclipse.plugin.core.commands.SetTypeVisibility"
-            name="Set Visibility">
-      </command>
-      <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.NewFilter"
             id="droidsafe.eclipse.plugin.core.commands.NewFilter"
             name="Create Filter">
@@ -480,7 +475,7 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.CatchBlocksView">
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.IndicatorView">
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
                icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
@@ -499,16 +494,23 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:droidsafe.eclipse.plugin.core.view.CatchBlocksView">
+            locationURI="menu:droidsafe.eclipse.plugin.core.view.IndicatorView">
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.SetFilters"
-               label="Set Filters"
+               label="Filters"
                style="push">
          </command>
          <menu
-               label="Set Visibility">
+               label="Label Display">
             <dynamic
-                  class="droidsafe.eclipse.plugin.core.view.json.TypeVisibilityMenu"
+                  class="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu"
+                  id="droidsafe.eclipse.plugin.core.view.json.LabelDisplayMenu">
+            </dynamic>
+         </menu>
+         <menu
+               label="Visibility">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.TypeVisibilityMenu"
                   id="droidsafe.eclipse.plugin.core.view.json.TypeVisibilityMenu">
             </dynamic>
          </menu>
@@ -517,10 +519,21 @@
                label="Refresh Outline View"
                style="push">
          </command>
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator1"
+               visible="true">
+         </separator>
+         <menu
+               label="Switch Indicator">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.IndicatorMenu"
+                  id="droidsafe.eclipse.plugin.core.view.indicator.IndicatorMenu">
+            </dynamic>
+         </menu>
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="popup:droidsafe.eclipse.plugin.core.view.CatchBlocksView">
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.IndicatorView">
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.NewFilter"
                label="Create Filter"
@@ -619,10 +632,10 @@
       </view>
       <view
             category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
-            class="droidsafe.eclipse.plugin.core.view.json.CatchBlocksViewPart"
+            class="droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart"
             icon="icons/android.png"
-            id="droidsafe.eclipse.plugin.core.view.CatchBlocksView"
-            name="Catch Blocks"
+            id="droidsafe.eclipse.plugin.core.view.IndicatorView"
+            name="Indicator"
             restorable="false">
       </view>
    </extension>

@@ -6,15 +6,12 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
-import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
-import droidsafe.eclipse.plugin.core.view.json.JsonViewPart;
-import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.wizards.NewFilterWizard;
 
 public class NewFilter extends AbstractHandler {
@@ -25,8 +22,8 @@ public class NewFilter extends AbstractHandler {
         IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
         IWorkbenchPage activePage = window.getActivePage();
 
-        if (view instanceof JsonViewPart) {
-            JsonViewPart jsonView = (JsonViewPart) view;
+        if (view instanceof IndicatorViewPart) {
+            IndicatorViewPart jsonView = (IndicatorViewPart) view;
             ISelection topSelection = activePage.getSelection();
             if (topSelection != null && topSelection instanceof IStructuredSelection) {
                 IStructuredSelection structuredSelection = (IStructuredSelection) topSelection;

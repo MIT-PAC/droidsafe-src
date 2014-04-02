@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.wizards;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -8,37 +9,53 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CheckboxCellEditor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.EditingSupport;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
+import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
-import droidsafe.eclipse.plugin.core.view.json.Filter;
 
 public class FiltersWizardPage extends WizardPage {
-    private TableViewer viewer;
+    private TableViewer tableViewer;
+    private Table table;
     private ArrayList<Filter> newFilters;
+    private Composite buttonsContainer;
+    private String[] filterFields;
+    private Button deleteButton;
+    private Button editButton;
 
     /**
      * Create the wizard.
      * @param filters 
      */
-    public FiltersWizardPage(List<Filter> filters) {
+    public FiltersWizardPage(List<Filter> filters, String[] filterFields) {
         super("wizardPage");
-        setTitle("View Filters");
-        setDescription("List of filters for the outline view.");
+        setTitle("View or Set Filters");
+        setDescription("View or set the list of filters for the indicator outline view.");
         this.newFilters = new ArrayList<Filter>();
         for (Filter filter: filters) {
             newFilters.add(new Filter(filter));
         }
+        this.filterFields = filterFields;
     }
 
     public List<Filter> getNewFilters() {
@@ -55,33 +72,88 @@ public class FiltersWizardPage extends WizardPage {
         setControl(container);
         container.setLayout(new GridLayout(2, false));
         
-        viewer = new TableViewer(container, SWT.MULTI | SWT.H_SCROLL
+        tableViewer = new TableViewer(container, SWT.MULTI | SWT.H_SCROLL
             | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 
-        final Table table = viewer.getTable();
+        table = tableViewer.getTable();
         table.setHeaderVisible(true);
         table.setLinesVisible(false);
         
         createColumns(container);
 
-        viewer.setContentProvider(ArrayContentProvider.getInstance());
-        viewer.setInput(newFilters);
+        tableViewer.setContentProvider(ArrayContentProvider.getInstance());
+        tableViewer.setInput(newFilters);
         
-        GridData gridData = new GridData();
-        gridData.verticalAlignment = GridData.FILL;
-        gridData.horizontalSpan = 1;
-        gridData.grabExcessHorizontalSpace = true;
-        gridData.grabExcessVerticalSpace = true;
-        gridData.horizontalAlignment = GridData.BEGINNING;
-        viewer.getControl().setLayoutData(gridData);
+        GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        tableViewer.getControl().setLayoutData(gridData);
+        
+        buttonsContainer = new Composite(container, SWT.NULL);
+        gridData = new GridData(SWT.LEFT, SWT.FILL, false, false);
+        buttonsContainer.setLayoutData(gridData);
+        RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+        rowLayout.pack = false;
+        buttonsContainer.setLayout(rowLayout);
 
-        Button deleteButton = new Button(container, SWT.NONE);
+        editButton = new Button(buttonsContainer, SWT.NONE);
+        editButton.setText("Edit");
+        editButton.setEnabled(false);
+        editButton.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                ISelection selection = tableViewer.getSelection();
+                if (selection != null && selection instanceof IStructuredSelection) {
+                    IStructuredSelection sel = (IStructuredSelection) selection;
+                    for (Iterator<Filter> iterator = sel.iterator(); iterator.hasNext();) {
+                      Filter filter = iterator.next();
+                      editFilter(filter);
+                    }
+                    tableViewer.refresh();
+                  }
+            }
+        });
+
+        deleteButton = new Button(buttonsContainer, SWT.NONE);
         deleteButton.setText("Delete");
+        deleteButton.setEnabled(false);
+        deleteButton.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                ISelection selection = tableViewer.getSelection();
+                if (selection != null && selection instanceof IStructuredSelection) {
+                    IStructuredSelection sel = (IStructuredSelection) selection;
+                    for (Iterator<Filter> iterator = sel.iterator(); iterator.hasNext();) {
+                      Filter filter = iterator.next();
+                      newFilters.remove(filter);
+                    }
+                    tableViewer.refresh();
+                  }
+            }
+        });
+
+        tableViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+            public void selectionChanged(final SelectionChangedEvent event) {
+                IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+                boolean selected = (selection != null && !selection.isEmpty());
+                editButton.setEnabled(selected);
+                deleteButton.setEnabled(selected);
+            }
+        });
+    }
+    
+    private void editFilter(Filter filter) {
+        IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+        EditFilterWizard wizard = new EditFilterWizard();
+        wizard.init(newFilters, filter, filterFields);
+        // Create the wizard dialog
+        WizardDialog dialog = new WizardDialog(window.getShell(),wizard);
+        // Open the wizard dialog
+        dialog.open();
+
     }
 
     private void createColumns(Composite parent) {
-        TableViewerColumn col1 = createTableViewerColumn("Filter", 500, 0);
-        col1.setLabelProvider(new ColumnLabelProvider() {
+        TableViewerColumn filterCol = createTableViewerColumn("Filter", 500, 0);
+        filterCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
             public String getText(Object element) {
                 Filter filter = (Filter) element;
@@ -89,11 +161,21 @@ public class FiltersWizardPage extends WizardPage {
             }
         });
 
-        TableViewerColumn col2 = createTableViewerColumn("Enabled", 50, 1);
-        col2.setLabelProvider(new ColumnLabelProvider() {
+//        TableViewerColumn filterOpCol = createTableViewerColumn("FilterOp", 100, 0);
+//        filterOpCol.setLabelProvider(new ColumnLabelProvider() {
+//            @Override
+//            public String getText(Object element) {
+//                Filter filter = (Filter) element;
+//                return filter.op.toString();
+//            }
+//        });
+//        filterOpCol.setEditingSupport(new FilterOpEditingSupport());
+        
+        TableViewerColumn enabledCol = createTableViewerColumn("Enabled", 50, 1);
+        enabledCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
             public String getText(Object element) {
-                return "";
+                return null;
             }
 
             @Override
@@ -104,12 +186,12 @@ public class FiltersWizardPage extends WizardPage {
                 return DroidsafeImages.UNCHECKED;
             }
         });
-        col2.setEditingSupport(new EnabledEditingSupport(viewer));
+        enabledCol.setEditingSupport(new EnabledEditingSupport());
     }
 
     private TableViewerColumn createTableViewerColumn(String title, int bound,
                                                       final int colNumber) {
-        final TableViewerColumn viewerColumn = new TableViewerColumn(viewer,
+        final TableViewerColumn viewerColumn = new TableViewerColumn(tableViewer,
             SWT.NONE);
         final TableColumn column = viewerColumn.getColumn();
         column.setText(title);
@@ -119,24 +201,52 @@ public class FiltersWizardPage extends WizardPage {
         return viewerColumn;
     }
 
+//    public class FilterOpEditingSupport extends EditingSupport {
+//
+//        public FilterOpEditingSupport() {
+//            super(viewer);
+//        }
+//
+//        @Override
+//        protected boolean canEdit(Object element) {
+//            return true;
+//        }
+//
+//        @Override
+//        protected CellEditor getCellEditor(Object element) {
+//            return new ComboBoxCellEditor(table, FilterOp.strings, SWT.READ_ONLY);
+//        }
+//
+//        @Override
+//        protected Object getValue(Object element) {
+//            Filter filter = (Filter) element;
+//            return filter.op.getValue();
+//
+//        }
+//
+//        @Override
+//        protected void setValue(Object element, Object value) {
+//            Filter filter = (Filter) element;
+//            int i = ((Integer) value).intValue();
+//            filter.op = FilterOp.values()[i];
+//            viewer.update(element, null);
+//        }
+//    }
+
     public class EnabledEditingSupport extends EditingSupport {
 
-        private final TableViewer viewer;
-
-        public EnabledEditingSupport(TableViewer viewer) {
-            super(viewer);
-            this.viewer = viewer;
-        }
-
-        @Override
-        protected CellEditor getCellEditor(Object element) {
-            return new CheckboxCellEditor(null, SWT.CHECK | SWT.READ_ONLY);
-
+        public EnabledEditingSupport() {
+            super(tableViewer);
         }
 
         @Override
         protected boolean canEdit(Object element) {
             return true;
+        }
+        @Override
+        protected CellEditor getCellEditor(Object element) {
+            return new CheckboxCellEditor(null, SWT.CHECK | SWT.READ_ONLY);
+
         }
 
         @Override
@@ -150,7 +260,7 @@ public class FiltersWizardPage extends WizardPage {
         protected void setValue(Object element, Object value) {
             Filter filter = (Filter) element;
             filter.setEnabled((Boolean) value);
-            viewer.update(element, null);
+            tableViewer.update(element, null);
         }
     }
     
