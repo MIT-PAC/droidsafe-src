@@ -366,7 +366,8 @@ public class ValueAnalysis  {
                                         VAModel fieldObjectVAModel = (VAModel)fieldObject;
                                         if(fieldObjectVAModel instanceof PrimVAModel) {
                                             PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
-                                            if (fieldPrimVAModel instanceof StringVAModel) {
+                                            if (fieldPrimVAModel instanceof StringVAModel || 
+                                                    fieldPrimVAModel instanceof ClassVAModel) {
                                                 handleStringOrClass(momc, assignStmt, fieldPrimVAModel, context);
                                             } else  {
                                                 //primitive, but not string primitive

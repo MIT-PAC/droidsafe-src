@@ -479,7 +479,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
-        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Injecting String Analysis Results.");
@@ -581,6 +581,19 @@ public class Main {
         return afterTransform(monitor, recordTime, opts);
     }
 
+    public static DroidsafeExecutionStatus afterTransformMedium(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+        Map<String,String> opts = new HashMap<String,String>();
+
+        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
+            //build fast options for spark
+            opts.put("merge-stringbuffer","true");   
+            opts.put("string-constants","true");   
+            opts.put("kobjsens", "1");
+        } 
+
+        return afterTransform(monitor, recordTime, opts);
+    }
+    
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Map<String,String> opts = new HashMap<String,String>();
 

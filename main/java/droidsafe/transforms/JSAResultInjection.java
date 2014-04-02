@@ -103,6 +103,8 @@ public class JSAResultInjection extends BodyTransformer {
                 //don't do a injection of the hotspot value if it is all constants anyway...
                 if (v != null && JSAStrings.v().isHotspotValue(v)) {
                     
+                    boolean debug = expr.getMethodRef().getSubSignature().toString().contains("setType");
+                    
                     if (allStringConstants(v)) {
                         continue;
                     }
@@ -145,8 +147,9 @@ public class JSAResultInjection extends BodyTransformer {
             return false;
         
         for (IAllocNode node : PTABridge.v().getPTSetIns(v)) {
-            if (!(node instanceof StringConstantNode)) 
+            if (!(node.getNewExpr() instanceof StringConstant)) {
                 return false;
+            }
         }
         
         return true;
