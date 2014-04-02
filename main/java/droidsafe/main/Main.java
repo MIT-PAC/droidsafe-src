@@ -41,6 +41,7 @@ import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.ServiceTransforms;
 import droidsafe.transforms.StartActivityTransformStats;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
@@ -247,6 +248,12 @@ public class Main {
             runVA(monitor);
         }
 
+        {
+            //patch in messages
+            ServiceTransforms.v().run();
+            
+        }
+        
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
@@ -497,7 +504,7 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+               
         //need this pta run to account for jsa injection and class / forname
         if (afterTransformPrecise(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;

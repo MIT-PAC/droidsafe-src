@@ -81,7 +81,7 @@ public class Harness {
     private String modelApplicationMethod = "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>";
     private SootClass harnessClass;
     private SootMethod harnessMain;
-    public static String HARNESS_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFX + "DroidSafeMain";
+    public static String HARNESS_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFIX + "DroidSafeMain";
     public static String FIELD_PREFIX = "_ds_field_";
 
     private Map<SootClass, SootField> globalsMap;

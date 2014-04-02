@@ -12,20 +12,20 @@ import org.apache.commons.lang3.StringUtils;
  *
  * @author dpetters
  */
-public abstract class PrimVAModel extends VAModel {
+public abstract class PrimVAModel<T> extends VAModel {
 
-    public Set<Object> values = new HashSet<Object>();
+    public Set<T> values = new HashSet<T>();
     public final String type;
 
     public PrimVAModel(String type) {
         this.type = type;
     }
 
-    public void addValue(Object value) {
+    public void addValue(T value) {
         this.values.add(value);
     }
 
-    public Set<Object> getValues() {
+    public Set<T> getValues() {
         return this.values;
     }
 
@@ -69,7 +69,7 @@ public abstract class PrimVAModel extends VAModel {
             buf.append(INVALIDATED);
         } else {
             boolean first = true;
-            Set<Object> vals = this.getValues();
+            Set<T> vals = this.getValues();
 //            if (vals.size() > 1)
 //                buf.append("{");
             for(Object val : vals) {

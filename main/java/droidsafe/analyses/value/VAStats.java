@@ -130,7 +130,7 @@ public class VAStats {
         // write out headers for columns
         writer.writeNext(new String[] {"field", "size", "relevant methods", "allocNode"});
 
-        for(Map.Entry<IAllocNode, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
+        for(Map.Entry<IAllocNode, RefVAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             IAllocNode node = entry.getKey();
             Type type = node.getType();
             // we only care about reachable nodes
