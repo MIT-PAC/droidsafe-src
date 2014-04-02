@@ -785,17 +785,22 @@ public class SparkPTA extends PTABridge {
          */
 
         String subindent = indentString(level+1);
+        Set<Object> calleeSet = new HashSet<Object>();
+        
         while (iterator != null && iterator.hasNext()) {
             Edge edge = iterator.next();
             if (!systemApi) {
                 List<Stmt> invokeStmtList = SootUtils.getInvokeStatements(caller, edge.tgt());
                 for (Stmt stmt: invokeStmtList) {
+                    if (calleeSet.contains(stmt))
+                        continue;
                     printStream.printf("%s #[%s] ", subindent, stmt);
                     SourceLocationTag tag = SootUtils.getSourceLocation(stmt);
                     if (tag != null) {
                         printStream.printf(": %s", tag.toString());
                     }
                     printStream.printf("\n");
+                    calleeSet.add(stmt.toString());
                 }
             }
 
@@ -804,7 +809,10 @@ public class SparkPTA extends PTABridge {
             }
             else {
                 //already in the call graph, just print it out
+                if (calleeSet.contains(edge.tgt()))
+                    continue;
                 printStream.printf("%s %s\n", indent, edge.tgt().toString());
+                calleeSet.add(edge.tgt());
             }
         }
     }
