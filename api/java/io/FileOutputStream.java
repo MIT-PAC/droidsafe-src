@@ -46,6 +46,11 @@ public class FileOutputStream extends OutputStream implements Closeable {
 public FileOutputStream(File file) throws FileNotFoundException {
         this(file, false);
     }
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public FileOutputStream(DSOnlyType dsonly) {
+        
+    }
 
     /**
      * Constructs a new {@code FileOutputStream} that writes to {@code file}.

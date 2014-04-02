@@ -155,6 +155,7 @@ private static String getenv(String name, String defaultValue) {
         return (value != null) ? value : defaultValue;*/
         String newStr = new String(name);
         newStr.addTaint(defaultValue.getTaint());
+        return newStr;
     }
     
     @DSComment("Private Method")
@@ -501,7 +502,7 @@ public static String lineSeparator() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.686 -0500", hash_original_method = "0A5482C5BE01BBAB439F3387C549F83E", hash_generated_method = "02556AE73AEC2E1D7F54E204C98326F3")
     
 public static void load(String pathName) {
-        Runtime.getRuntime().load(pathName, VMStack.getCallingClassLoader());
+        // Runtime.getRuntime().load(pathName, VMStack.getCallingClassLoader());
     }
 
     /**
@@ -519,7 +520,7 @@ public static void load(String pathName) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.689 -0500", hash_original_method = "0A3470DEBF4C375636532E38AAF3C5D7", hash_generated_method = "88D9169C5FC0C884DFF6AA876D761784")
     
 public static void loadLibrary(String libName) {
-        Runtime.getRuntime().loadLibrary(libName, VMStack.getCallingClassLoader());
+        // Runtime.getRuntime().loadLibrary(libName, VMStack.getCallingClassLoader());
     }
 
     /**
@@ -590,7 +591,7 @@ public static void logW(String message, Throwable th) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.710 -0500", hash_original_method = "6EE6952ECA2DC5E5A6C1DD03C0E7FD35", hash_generated_method = "195A681901EA8D4D0CE146BE36AC1277")
     
 public static void runFinalization() {
-        Runtime.getRuntime().runFinalization();
+        // Runtime.getRuntime().runFinalization();
     }
 
     /**
@@ -609,7 +610,7 @@ public static void runFinalization() {
 @SuppressWarnings("deprecation")
     @Deprecated
     public static void runFinalizersOnExit(boolean flag) {
-        Runtime.runFinalizersOnExit(flag);
+        // Runtime.runFinalizersOnExit(flag);
     }
 
     /**
@@ -725,10 +726,17 @@ private String toNonNullString(Object o) {
 private System() {
     }
     static {
+        /*
         err = new PrintStream(new FileOutputStream(FileDescriptor.err));
         out = new PrintStream(new FileOutputStream(FileDescriptor.out));
         in = new FileInputStream(FileDescriptor.in);
         lineSeparator = System.getProperty("line.separator");
+        */
+
+        err = new PrintStream(new FileOutputStream(DSOnlyType.DONTCARE));
+        out = new PrintStream(new FileOutputStream(DSOnlyType.DONTCARE));
+        in = new FileInputStream(DSOnlyType.DONTCARE);
+        lineSeparator = "<line-separator>"; //System.getProperty("line.separator");
     }
     
 }
