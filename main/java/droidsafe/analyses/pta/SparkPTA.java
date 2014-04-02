@@ -784,7 +784,7 @@ public class SparkPTA extends PTABridge {
          */
 
         String subindent = indentString(level+1);
-        while (iterator.hasNext()) {
+        while (iterator != null && iterator.hasNext()) {
             Edge edge = iterator.next();
             if (!systemApi) {
                 List<Stmt> invokeStmtList = SootUtils.getInvokeStatements(caller, edge.tgt());
@@ -798,8 +798,8 @@ public class SparkPTA extends PTABridge {
                 }
             }
 
-            if (!callgraphSet.contains(edge.tgt()))
-                dumpTextGraph(edge.tgt(), printStream, level+1);
+            //if (!callgraphSet.contains(edge.tgt()))
+            dumpTextGraph(edge.tgt(), printStream, level+1);
         }
     }
 
