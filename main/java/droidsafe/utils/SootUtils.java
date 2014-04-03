@@ -1501,6 +1501,53 @@ public class SootUtils {
         
         return ancestors;
     }
+
+      /**
+           * get a list of statements that a method calls the other
+                * @param sootMethod
+                     * @param callee
+                          * @return
+                               */
+    public static List<Stmt> getInvokeStatements(SootMethod sootMethod, SootMethod callee) {
+        List<Stmt> invokeStmtList = new LinkedList<Stmt>();
+
+        if (!sootMethod.isConcrete()) {
+            return invokeStmtList;
+        }
+
+        Body body;
+        try {
+            body = sootMethod.retrieveActiveBody();
+        }
+        catch (Exception ex) {
+            logger.warn("execption trying to get ActiveBody: {} ", ex);
+            return invokeStmtList;
+        }
+
+        Chain<Unit> units = body.getUnits();
+
+
+        /* Note that locals are named as follows:
+         *  r => reference, i=> immediate
+         *  $r, $i => true local
+         *  r, i => parameter passing, and r0 is for this when it is non-static
+         */
+
+        for (Unit unit: units){
+            Stmt statement = (Stmt)unit;
+
+            if (statement.containsInvokeExpr())
+            {
+                InvokeExpr expr = statement.getInvokeExpr();
+                SootMethod invokedMethod = expr.getMethod();
+                if (invokedMethod == callee)
+                    invokeStmtList.add(statement);
+            }
+
+        }
+        return invokeStmtList;
+    }
+
 }
 
 
