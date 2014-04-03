@@ -46,6 +46,11 @@ public class FileOutputStream extends OutputStream implements Closeable {
 public FileOutputStream(File file) throws FileNotFoundException {
         this(file, false);
     }
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public FileOutputStream(DSOnlyType dsonly) {
+        
+    }
 
     /**
      * Constructs a new {@code FileOutputStream} that writes to {@code file}.
@@ -142,6 +147,7 @@ public FileOutputStream(String path, boolean append) throws FileNotFoundExceptio
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.268 -0500", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "D1DCB3056D2414B4C27AA873251B546E")
     
 @Override protected void finalize() throws IOException {
+        /*
         try {
             if (guard != null) {
                 guard.warnIfOpen();
@@ -156,6 +162,7 @@ public FileOutputStream(String path, boolean append) throws FileNotFoundExceptio
                 throw new AssertionError(t);
             }
         }
+        */
     }
 
     /**

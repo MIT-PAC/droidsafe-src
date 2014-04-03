@@ -14,7 +14,7 @@ public class LockSupport {
     
 private static void setBlocker(Thread t, Object arg) {
         // Even though volatile, hotspot doesn't need a write barrier here.
-        unsafe.putObject(t, parkBlockerOffset, arg);
+        // unsafe.putObject(t, parkBlockerOffset, arg);
     }
 
     /**
@@ -33,8 +33,8 @@ private static void setBlocker(Thread t, Object arg) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.574 -0500", hash_original_method = "AA144DAE626D1FC4A444DAB2F57A5DFF", hash_generated_method = "C5A75627D3783B45C8815300004B2FA9")
     
 public static void unpark(Thread thread) {
-        if (thread != null)
-            unsafe.unpark(thread);
+/*        if (thread != null)
+            unsafe.unpark(thread);*/
     }
 
     /**
@@ -70,10 +70,10 @@ public static void unpark(Thread thread) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.576 -0500", hash_original_method = "9FFE9C4FBEBDC611716102353929873A", hash_generated_method = "85454A0BD08D43F71292F38CCA8873C2")
     
 public static void park(Object blocker) {
-        Thread t = Thread.currentThread();
+/*        Thread t = Thread.currentThread();
         setBlocker(t, blocker);
         unsafe.park(false, 0L);
-        setBlocker(t, null);
+        setBlocker(t, null);*/
     }
 
     /**
@@ -113,12 +113,12 @@ public static void park(Object blocker) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.579 -0500", hash_original_method = "BB206AC8E013AD0E9FEF1DDAAABEEEBD", hash_generated_method = "F1096F8CC593BEF47D79E7DBB4AA82AC")
     
 public static void parkNanos(Object blocker, long nanos) {
-        if (nanos > 0) {
+   /*     if (nanos > 0) {
             Thread t = Thread.currentThread();
             setBlocker(t, blocker);
             unsafe.park(false, nanos);
             setBlocker(t, null);
-        }
+        }*/
     }
 
     /**
@@ -159,10 +159,10 @@ public static void parkNanos(Object blocker, long nanos) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.582 -0500", hash_original_method = "0855F8F0A685C0A0F11A8479CA1035F9", hash_generated_method = "0F892157FB747A78E660067C7860FDDF")
     
 public static void parkUntil(Object blocker, long deadline) {
-        Thread t = Thread.currentThread();
+/*        Thread t = Thread.currentThread();
         setBlocker(t, blocker);
         unsafe.park(true, deadline);
-        setBlocker(t, null);
+        setBlocker(t, null);*/
     }
 
     /**
@@ -181,7 +181,10 @@ public static void parkUntil(Object blocker, long deadline) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.584 -0500", hash_original_method = "FABD15B84248DFA8DB8C445A813A4A9A", hash_generated_method = "4F6363ECE549B2E0BC08A0B1D4BB7E94")
     
 public static Object getBlocker(Thread t) {
-        return unsafe.getObjectVolatile(t, parkBlockerOffset);
+        //return unsafe.getObjectVolatile(t, parkBlockerOffset);
+        Object obj = new Object();
+        obj.addTaint(t.getTaint());
+        return obj;
     }
 
     /**
@@ -214,7 +217,7 @@ public static Object getBlocker(Thread t) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.587 -0500", hash_original_method = "8862E3D1B9BFF0D09C2996E9CBC712CF", hash_generated_method = "F06B4363F0D3D20CEFB06DE095A21122")
     
 public static void park() {
-        unsafe.park(false, 0L);
+        //unsafe.park(false, 0L);
     }
 
     /**
@@ -251,8 +254,8 @@ public static void park() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.589 -0500", hash_original_method = "34D034AC59585156B0A7A1824A52863C", hash_generated_method = "E31930F1A3C10E7A97F145773F156B26")
     
 public static void parkNanos(long nanos) {
-        if (nanos > 0)
-            unsafe.park(false, nanos);
+      /*  if (nanos > 0)
+            unsafe.park(false, nanos);*/
     }
 
     /**
@@ -290,7 +293,7 @@ public static void parkNanos(long nanos) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.592 -0500", hash_original_method = "8CEF6D7C5A80AE2063E3BE40913FB712", hash_generated_method = "E6C1296825D0589C5E49902B14F6F69F")
     
 public static void parkUntil(long deadline) {
-        unsafe.park(true, deadline);
+        //unsafe.park(true, deadline);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.566 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "4A946894549DA1F8D40B85B66FD5EA02")
 
@@ -304,12 +307,7 @@ public static void parkUntil(long deadline) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.563 -0500", hash_original_method = "1CF344A2CC5D467FE100F1B8497D1A42", hash_generated_method = "076A4D379B3B276A2C5223239AB83D59")
     
 private LockSupport() {}
-    static {
-        try {
-            parkBlockerOffset = unsafe.objectFieldOffset
-                (java.lang.Thread.class.getDeclaredField("parkBlocker"));
-        } catch (Exception ex) { throw new Error(ex); }
-    }
+  
     
 }
 

@@ -4,6 +4,7 @@ package java.nio.charset;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -27,6 +28,7 @@ public abstract class Charset implements Comparable<Charset> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.289 -0500", hash_original_method = "1B562419FBD56BE2B33ED98FD4ABE386", hash_generated_method = "A2F453F6E5C441B83EF70DACAF3D16D1")
     
 private static void checkCharsetName(String name) {
+        /*
         if (name.isEmpty()) {
             throw new IllegalCharsetNameException(name);
         }
@@ -36,6 +38,7 @@ private static void checkCharsetName(String name) {
                 throw new IllegalCharsetNameException(name);
             }
         }
+        */
     }
 
     @DSComment("Private Method")
@@ -43,8 +46,11 @@ private static void checkCharsetName(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.292 -0500", hash_original_method = "9034B02728818A8ACE22749851509C68", hash_generated_method = "C5A1AB7024C0FABC4FCBF5F9A0833A7E")
     
 private static boolean isValidCharsetNameCharacter(char c) {
+        /*
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
                 c == '-' || c == '.' || c == ':' || c == '_';
+        */
+        return toTaintBoolean(c);
     }
 
     /**
@@ -126,7 +132,8 @@ private static Charset cacheCharset(String charsetName, Charset cs) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.301 -0500", hash_original_method = "B31D6DDF47464344AF549FF7AC79952D", hash_generated_method = "69512781EC40B9F94DBA1CA7BA3C02E4")
     
 public static Charset forName(String charsetName) {
-        // Is this charset in our cache?
+
+/*        // Is this charset in our cache?
         Charset cs;
         synchronized (CACHED_CHARSETS) {
             cs = CACHED_CHARSETS.get(charsetName);
@@ -152,9 +159,12 @@ public static Charset forName(String charsetName) {
             if (cs != null) {
                 return cacheCharset(charsetName, cs);
             }
-        }
+        }*/
 
-        throw new UnsupportedCharsetException(charsetName);
+        if (DroidSafeAndroidRuntime.control)
+            throw new UnsupportedCharsetException(charsetName);
+        
+        return new MyCharset(charsetName);
     }
 
     /**
@@ -214,12 +224,16 @@ public static Charset defaultCharset() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.352 -0500", hash_original_method = "CF00CD3332842EC74198C62C87ED0076", hash_generated_method = "E9F8BE2CBB97B961A5CDA9BA052EE481")
     
 private static Charset getDefaultCharset() {
+        /*
         String encoding = System.getProperty("file.encoding", "UTF-8");
         try {
             return Charset.forName(encoding);
         } catch (UnsupportedCharsetException e) {
             return Charset.forName("UTF-8");
         }
+        */
+        //return Charset.forName("UTF-8");
+        return new MyCharset();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.276 -0500", hash_original_field = "460C9BF0E81398E540D5223DD230E9C6", hash_generated_field = "978C227844F811E8AD7601EBA458F045")
 
@@ -263,6 +277,11 @@ protected Charset(String canonicalName, String[] aliases) {
                 this.aliasesSet.add(alias);
             }
         }
+    }
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private Charset() {
+        
     }
 
     /**
@@ -333,7 +352,8 @@ public final String name() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.319 -0500", hash_original_method = "9500673A94BC6D8C4BDA9785EBDB1148", hash_generated_method = "0ED77981E1A594D94B2465B8E5BD1417")
     
 public final Set<String> aliases() {
-        return Collections.unmodifiableSet(this.aliasesSet);
+        //return Collections.unmodifiableSet(this.aliasesSet);
+        return this.aliasesSet;
     }
 
     /**
@@ -506,7 +526,7 @@ public final int compareTo(Charset charset) {
     public final boolean equals(Object obj) {
         if (obj instanceof Charset) {
             Charset that = (Charset) obj;
-            return this.canonicalName.equals(that.canonicalName);
+            return toTaintBoolean(canonicalName.getTaintInt() - that.canonicalName.getTaintInt());
         }
         return false;
     }
@@ -520,7 +540,8 @@ public final int compareTo(Charset charset) {
     
 @Override
     public final int hashCode() {
-        return this.canonicalName.hashCode();
+        //return this.canonicalName.hashCode();
+        return getTaintInt();
     }
 
     /**
@@ -535,7 +556,82 @@ public final int compareTo(Charset charset) {
     
 @Override
     public final String toString() {
-        return getClass().getName() + "[" + this.canonicalName + "]";
+        //return getClass().getName() + "[" + this.canonicalName + "]";
+        return this.canonicalName;
+    }
+    
+    /**
+     * Encoder class
+     */
+    private class MyCharsetEncoder extends CharsetEncoder {
+        protected MyCharsetEncoder(Charset cs) {
+            super(cs, 0, 0);
+            addTaint(cs.getTaint());
+            // TODO Auto-generated constructor stub
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.303 -0500", hash_original_method = "9616F044279972BD99324EB6552327DB", hash_generated_method = "87FA30EDAC109573D595DF9CF40D1A26")
+        protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
+            // TODO Auto-generated method stub
+            CoderResult result = new CoderResult(DSOnlyType.DONTCARE);
+            result.addTaint(taint);
+            out.addTaint(taint);
+            return result;
+        }
+    }
+    
+    private class MyCharsetDecoder extends CharsetDecoder {
+        protected MyCharsetDecoder(Charset cs) {
+            super(cs, 0, 0);
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.883 -0500", hash_original_method = "9680F981801283FFB7CE500C1C691EF0", hash_generated_method = "45E10C8598041348E587BA19E1D99A75")
+        protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
+            CoderResult result = new CoderResult(DSOnlyType.DONTCARE);
+            result.addTaint(taint);
+            out.addTaint(taint);
+            return result;
+        }
+    }
+    
+    protected static class MyCharset extends Charset {
+
+        public MyCharset(String setName) {
+            super(setName, null);
+        }
+
+        public MyCharset() {
+            super("", null);
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.309 -0500", hash_original_method = "A170E8D5F907BC2C49EE2B6B025995E0", hash_generated_method = "69BECE17D88537817044B7AB49A588D2")
+        public boolean contains(Charset charset) {
+            // TODO Auto-generated method stub
+            return toTaintBoolean(getTaintInt() + charset.getTaintInt());
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.311 -0500", hash_original_method = "6CE48151599625E957ABC6EC54C683E1", hash_generated_method = "F7342451161EBEDD0F2A5E305B52C07E")
+        public CharsetEncoder newEncoder() {
+            // TODO Auto-generated method stub
+            return new  MyCharsetEncoder(this);
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.314 -0500", hash_original_method = "87399EF201DA00E186FBDB0ABC0F624F", hash_generated_method = "2CC99218A52107AA79DA0D19E105B263")
+        public CharsetDecoder newDecoder() {
+            // TODO Auto-generated method stub
+            return new MyCharsetDecoder(this);
+        }
+        
     }
 }
 

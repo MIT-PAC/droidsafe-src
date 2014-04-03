@@ -208,10 +208,15 @@ public StringBuilder append(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.203 -0500", hash_original_method = "63927F926AE6750A93D97E305D647A93", hash_generated_method = "9E396BD3A53B208EFDF6E5AE46CE5E65")
     
 public StringBuilder append(Object obj) {
+        /*
         if (obj == null) {
             appendNull();
         } else {
             append0(obj.toString());
+        }
+        */
+        if (obj != null) {
+            addTaint(obj.getTaint());
         }
         return this;
     }

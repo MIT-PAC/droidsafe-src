@@ -18,9 +18,12 @@ public class AtomicLong extends Number implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.503 -0500", hash_original_field = "657C091FF433ACBC782F3ED1087BD6AB", hash_generated_field = "0B880760F282B6C2D9B088CA9DBA6E27")
 
     private static final long serialVersionUID = 1927816293512124184L;
+
+/*
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.506 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "E7D465D52C267C4626E00B16AF4442B8")
 
     private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+*/
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.508 -0500", hash_original_field = "2B4D3697B0BD0FB4DB161026EA588EEA", hash_generated_field = "3ACE806C2A776E8F67FFC072288734E8")
 
     private static  long valueOffset;
@@ -52,6 +55,18 @@ public AtomicLong(long initialValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.523 -0500", hash_original_method = "E5BCC7DD3ADE986582FDD04FB62FAAFA", hash_generated_method = "2C25E4FF944D2330F4ED58696D2578B6")
     
 public AtomicLong() {
+    }
+
+    @Override
+    public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        value = (int)getTaintInt();
+    }
+    
+    @Override
+    public void addTaint(double t) {
+        super.addTaint(t);
+        value = (int)getTaintInt();
     }
 
     /**
@@ -93,7 +108,8 @@ public final void set(long newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.531 -0500", hash_original_method = "5F840B47C39798AC1AA2E3C6DCFC9B43", hash_generated_method = "83A9877A95611BF082C2348B8392889A")
     
 public final void lazySet(long newValue) {
-        unsafe.putOrderedLong(this, valueOffset, newValue);
+        value = newValue;
+        //unsafe.putOrderedLong(this, valueOffset, newValue);
     }
 
     /**
@@ -108,11 +124,8 @@ public final void lazySet(long newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.534 -0500", hash_original_method = "390AAB13B16AF188378473BA59BB98BA", hash_generated_method = "4DB366D00B730F399166E828BE3ABDB1")
     
 public final long getAndSet(long newValue) {
-        while (true) {
-            long current = get();
-            if (compareAndSet(current, newValue))
-                return current;
-        }
+        value += newValue;
+        return value;
     }
 
     /**
@@ -129,7 +142,8 @@ public final long getAndSet(long newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.536 -0500", hash_original_method = "9AFEEC1B0401F372D8D224EE7A6E78FB", hash_generated_method = "189734F5014268382A7251BC77333F86")
     
 public final boolean compareAndSet(long expect, long update) {
-        return unsafe.compareAndSwapLong(this, valueOffset, expect, update);
+        value += expect + update;
+        return toTaintBoolean(value);
     }
 
     /**
@@ -149,7 +163,8 @@ public final boolean compareAndSet(long expect, long update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.539 -0500", hash_original_method = "CF5E29839097193C76F9677539F6A8BA", hash_generated_method = "91E09302334FEF6440EF02F50CA298F0")
     
 public final boolean weakCompareAndSet(long expect, long update) {
-        return unsafe.compareAndSwapLong(this, valueOffset, expect, update);
+        value += expect + update;
+        return toTaintBoolean(value);
     }
 
     /**
@@ -163,12 +178,7 @@ public final boolean weakCompareAndSet(long expect, long update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.542 -0500", hash_original_method = "0FB09453B9C7F7E3674DED4A168E8FE2", hash_generated_method = "3E6BAA9B4DE447110E896CD61AC2ACE1")
     
 public final long getAndIncrement() {
-        while (true) {
-            long current = get();
-            long next = current + 1;
-            if (compareAndSet(current, next))
-                return current;
-        }
+        return value++;
     }
 
     /**
@@ -182,12 +192,7 @@ public final long getAndIncrement() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.544 -0500", hash_original_method = "B338EF04AC352C769CAB7069B279216B", hash_generated_method = "6552A10E0051DDC92382F8CAC7DF24C1")
     
 public final long getAndDecrement() {
-        while (true) {
-            long current = get();
-            long next = current - 1;
-            if (compareAndSet(current, next))
-                return current;
-        }
+        return value--;
     }
 
     /**
@@ -202,12 +207,8 @@ public final long getAndDecrement() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.547 -0500", hash_original_method = "F13F3FE7BE5ED16E2943CEEE9739382A", hash_generated_method = "77B18165BA1EBE3546A7B43EEE7209E2")
     
 public final long getAndAdd(long delta) {
-        while (true) {
-            long current = get();
-            long next = current + delta;
-            if (compareAndSet(current, next))
-                return current;
-        }
+        value += delta;
+        return value;
     }
 
     /**
@@ -220,12 +221,7 @@ public final long getAndAdd(long delta) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.549 -0500", hash_original_method = "0B4DA3D002D9BEE66893798DFD4DBDF7", hash_generated_method = "D3393C2385D07821FEECC3C8F0475B32")
     
 public final long incrementAndGet() {
-        for (;;) {
-            long current = get();
-            long next = current + 1;
-            if (compareAndSet(current, next))
-                return next;
-        }
+        return value++;
     }
 
     /**
@@ -238,12 +234,7 @@ public final long incrementAndGet() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.552 -0500", hash_original_method = "BC527AFE730427BE036B66CE7C20403C", hash_generated_method = "57901D9491D199549A641CDD99485838")
     
 public final long decrementAndGet() {
-        for (;;) {
-            long current = get();
-            long next = current - 1;
-            if (compareAndSet(current, next))
-                return next;
-        }
+        return value--;
     }
 
     /**
@@ -257,12 +248,8 @@ public final long decrementAndGet() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.554 -0500", hash_original_method = "9F7FB16A58B977A4E2DB5A0F397D878E", hash_generated_method = "E4AC06DEA775AB143FDC21E24E9F7009")
     
 public final long addAndGet(long delta) {
-        for (;;) {
-            long current = get();
-            long next = current + delta;
-            if (compareAndSet(current, next))
-                return next;
-        }
+        value += delta;
+        return value;
     }
 
     /**
@@ -308,12 +295,14 @@ public float floatValue() {
 public double doubleValue() {
         return (double)get();
     }
+    /*
     static {
       try {
         valueOffset = unsafe.objectFieldOffset
             (AtomicLong.class.getDeclaredField("value"));
       } catch (Exception ex) { throw new Error(ex); }
     }
+    */
     
 }
 

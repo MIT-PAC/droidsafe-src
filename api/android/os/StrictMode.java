@@ -44,7 +44,7 @@ public final class StrictMode {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.087 -0500", hash_original_method = "EAF2550D78E81A3AE328ECCA2D8E112F", hash_generated_method = "5A09CA60BA8E320D1EB7DAC5A9D7D786")
     
 public static void setThreadPolicy(final ThreadPolicy policy) {
-        setThreadPolicyMask(policy.mask);
+        // setThreadPolicyMask(policy.mask);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.090 -0500", hash_original_method = "E103159859299A70CFA6BDDF6D97BFB9", hash_generated_method = "64B3CD68640DDC6DAF70F01107CD41E0")
@@ -55,17 +55,17 @@ private static void setThreadPolicyMask(final int policyMask) {
         // Binder in order to propagate the value across Binder calls,
         // even across native-only processes.  The two are kept in
         // sync via the callback to onStrictModePolicyChange, below.
-        setBlockGuardPolicy(policyMask);
+/*        setBlockGuardPolicy(policyMask);
 
         // And set the Android native version...
-        Binder.setThreadStrictModePolicy(policyMask);
+        Binder.setThreadStrictModePolicy(policyMask);*/
     }
 
     // Sets the policy in Dalvik/libcore (BlockGuard)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.092 -0500", hash_original_method = "621EB7D543F59B08E720C397686C01C7", hash_generated_method = "0C67E320A9DC44A23CD56A5FF63141B2")
     
 private static void setBlockGuardPolicy(final int policyMask) {
-        if (policyMask == 0) {
+/*        if (policyMask == 0) {
             BlockGuard.setThreadPolicy(BlockGuard.LAX_POLICY);
             return;
         }
@@ -75,7 +75,7 @@ private static void setBlockGuardPolicy(final int policyMask) {
         } else {
             AndroidBlockGuardPolicy androidPolicy = (AndroidBlockGuardPolicy) policy;
             androidPolicy.setPolicyMask(policyMask);
-        }
+        }*/
     }
 
     // Sets up CloseGuard in Dalvik/libcore
@@ -84,10 +84,10 @@ private static void setBlockGuardPolicy(final int policyMask) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.094 -0500", hash_original_method = "A91AC5C680257C159878619FE045BB6E", hash_generated_method = "69E0B6702899716DD5BEDDAA8C84C9A9")
     
 private static void setCloseGuardEnabled(boolean enabled) {
-        if (!(CloseGuard.getReporter() instanceof AndroidCloseGuardReporter)) {
+/*        if (!(CloseGuard.getReporter() instanceof AndroidCloseGuardReporter)) {
             CloseGuard.setReporter(new AndroidCloseGuardReporter());
         }
-        CloseGuard.setEnabled(enabled);
+        CloseGuard.setEnabled(enabled);*/
     }
 
     /**
@@ -101,7 +101,8 @@ private static void setCloseGuardEnabled(boolean enabled) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.120 -0500", hash_original_method = "846C0C89D35574B87DE239A886F76A3A", hash_generated_method = "DC71E2C046BD1C5E6C2EF35BD28B7815")
     
 public static int getThreadPolicyMask() {
-        return BlockGuard.getThreadPolicy().getPolicyMask();
+        //return BlockGuard.getThreadPolicy().getPolicyMask();
+        return DSUtils.UNKNOWN_INT;
     }
 
     /**
@@ -168,7 +169,7 @@ public static ThreadPolicy allowThreadDiskReads() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.129 -0500", hash_original_method = "13EE91C23AA3A16D1C05B9C12BE22DBD", hash_generated_method = "AFC78790EC21E917F2FB96DCEBE01755")
     
 private static boolean amTheSystemServerProcess() {
-        // Fast path.  Most apps don't have the system server's UID.
+     /*   // Fast path.  Most apps don't have the system server's UID.
         if (Process.myUid() != Process.SYSTEM_UID) {
             return false;
         }
@@ -183,7 +184,8 @@ private static boolean amTheSystemServerProcess() {
                 return true;
             }
         }
-        return false;
+        return false;*/
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     /**
@@ -194,7 +196,7 @@ private static boolean amTheSystemServerProcess() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.133 -0500", hash_original_method = "052278CA509C38C507499B2FA93CCBD3", hash_generated_method = "6360FD2ACFB7F3B7EF98972CB440886C")
     
 public static boolean conditionallyEnableDebugLogging() {
-        boolean doFlashes = SystemProperties.getBoolean(VISUAL_PROPERTY, false)
+       /* boolean doFlashes = SystemProperties.getBoolean(VISUAL_PROPERTY, false)
                 && !amTheSystemServerProcess();
         final boolean suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, false);
 
@@ -239,6 +241,8 @@ public static boolean conditionallyEnableDebugLogging() {
             setCloseGuardEnabled(vmClosableObjectLeaksEnabled());
         }
         return true;
+        */
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     /**
@@ -250,9 +254,9 @@ public static boolean conditionallyEnableDebugLogging() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.135 -0500", hash_original_method = "511C5822AAD77FC3309E37C883E816C8", hash_generated_method = "943148D2FBAAAB0DE8F1927558795D9F")
     
 public static void enableDeathOnNetwork() {
-        int oldPolicy = getThreadPolicyMask();
+      /*  int oldPolicy = getThreadPolicyMask();
         int newPolicy = oldPolicy | DETECT_NETWORK | PENALTY_DEATH_ON_NETWORK;
-        setThreadPolicyMask(newPolicy);
+        setThreadPolicyMask(newPolicy);*/
     }
 
     /**
@@ -273,6 +277,7 @@ public static void enableDeathOnNetwork() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.138 -0500", hash_original_method = "505B6F2C5D14D5307D2792E4869F206A", hash_generated_method = "B2A8BE88A07C1CCC431566DDEBE0F08C")
     
 private static int parsePolicyFromMessage(String message) {
+/*        
         if (message == null || !message.startsWith("policy=")) {
             return 0;
         }
@@ -285,7 +290,9 @@ private static int parsePolicyFromMessage(String message) {
             return Integer.valueOf(policyString).intValue();
         } catch (NumberFormatException e) {
             return 0;
-        }
+        }*/
+        
+        return message.getTaintInt();
     }
 
     /**
@@ -296,7 +303,8 @@ private static int parsePolicyFromMessage(String message) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.141 -0500", hash_original_method = "45B3269BE626BB87F4C05CA0ACD29C39", hash_generated_method = "4CCEDD75E9105676A0753C8872D2F662")
     
 private static int parseViolationFromMessage(String message) {
-        if (message == null) {
+        return message.getTaintInt();
+/*        if (message == null) {
             return 0;
         }
         int violationIndex = message.indexOf("violation=");
@@ -313,7 +321,7 @@ private static int parseViolationFromMessage(String message) {
             return Integer.valueOf(violationString).intValue();
         } catch (NumberFormatException e) {
             return 0;
-        }
+        }*/
     }
 
     @DSComment("Private Method")
@@ -321,14 +329,16 @@ private static int parseViolationFromMessage(String message) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.153 -0500", hash_original_method = "30484C59249AAEAE6E097D020A18B06F", hash_generated_method = "37F8ED1F104DFF04041FDF639CA6DE3E")
     
 private static boolean tooManyViolationsThisLoop() {
-        return violationsBeingTimed.get().size() >= MAX_OFFENSES_PER_LOOP;
+        //return violationsBeingTimed.get().size() >= MAX_OFFENSES_PER_LOOP;
+
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.203 -0500", hash_original_method = "D57761C9E43274832734BB25E55BB64E", hash_generated_method = "C76AA26C9CA762FACBC9B4EACDE82B97")
     
 private static void executeDeathPenalty(ViolationInfo info) {
-        int violationBit = parseViolationFromMessage(info.crashInfo.exceptionMessage);
-        throw new StrictModeViolation(info.policy, violationBit, null);
+/*        int violationBit = parseViolationFromMessage(info.crashInfo.exceptionMessage);
+        throw new StrictModeViolation(info.policy, violationBit, null);*/
     }
     
     private static void dropboxViolationAsync(
@@ -424,7 +434,7 @@ public static void setVmPolicy(final VmPolicy policy) {
         synchronized (StrictMode.class) {
             sVmPolicy = policy;
             sVmPolicyMask = policy.mask;
-            setCloseGuardEnabled(vmClosableObjectLeaksEnabled());
+           /* setCloseGuardEnabled(vmClosableObjectLeaksEnabled());
 
             Looper looper = Looper.getMainLooper();
             if (looper != null) {
@@ -437,7 +447,7 @@ public static void setVmPolicy(final VmPolicy policy) {
                     mq.addIdleHandler(sProcessIdleHandler);
                     sIsIdlerRegistered = true;
                 }
-            }
+            }*/
         }
     }
 
@@ -516,7 +526,7 @@ public static void onWebViewMethodCalledOnWrongThread(Throwable originStack) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.256 -0500", hash_original_method = "3BA160C791F73BC1B2756430F54D7253", hash_generated_method = "84C7935E4E3FABBD05E1556FC7CE4E7E")
     
 public static void onVmPolicyViolation(String message, Throwable originStack) {
-        final boolean penaltyDropbox = (sVmPolicyMask & PENALTY_DROPBOX) != 0;
+       /* final boolean penaltyDropbox = (sVmPolicyMask & PENALTY_DROPBOX) != 0;
         final boolean penaltyDeath = (sVmPolicyMask & PENALTY_DEATH) != 0;
         final boolean penaltyLog = (sVmPolicyMask & PENALTY_LOG) != 0;
         final ViolationInfo info = new ViolationInfo(originStack, sVmPolicyMask);
@@ -583,7 +593,7 @@ public static void onVmPolicyViolation(String message, Throwable originStack) {
             System.err.println("StrictMode VmPolicy violation with POLICY_DEATH; shutting down.");
             Process.killProcess(Process.myPid());
             System.exit(10);
-        }
+        }*/
     }
 
     /**
@@ -677,8 +687,11 @@ public static Span enterCriticalSpan(String name) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("name must be non-null and non-empty");
         }
+        
         ThreadSpanState state = sThisThreadSpanState.get();
-        Span span = null;
+
+        return new Span(state);
+       /* Span span = null;
         synchronized (state) {
             if (state.mFreeListHead != null) {
                 span = state.mFreeListHead;
@@ -699,7 +712,7 @@ public static Span enterCriticalSpan(String name) {
             }
             if (LOG_V) Log.d(TAG, "Span enter=" + name + "; size=" + state.mActiveSize);
         }
-        return span;
+        return span;*/
     }
 
     /**
@@ -714,12 +727,12 @@ public static Span enterCriticalSpan(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.321 -0500", hash_original_method = "B98B8D959756B812CAEADC403B908021", hash_generated_method = "2AF92D94E361076B27970F1E047306BA")
     
 public static void noteSlowCall(String name) {
-        BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
+      /*  BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
             // StrictMode not enabled.
             return;
         }
-        ((AndroidBlockGuardPolicy) policy).onCustomSlowCall(name);
+        ((AndroidBlockGuardPolicy) policy).onCustomSlowCall(name);*/
     }
 
     /**
@@ -728,12 +741,12 @@ public static void noteSlowCall(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.324 -0500", hash_original_method = "750E68EADFFF9EF2A8A0F45DFD480746", hash_generated_method = "E45B8AD0CDA3B0BAE91719810A69FEDC")
     
 public static void noteDiskRead() {
-        BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
+       /* BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
             // StrictMode not enabled.
             return;
         }
-        ((AndroidBlockGuardPolicy) policy).onReadFromDisk();
+        ((AndroidBlockGuardPolicy) policy).onReadFromDisk();*/
     }
 
     /**
@@ -742,12 +755,12 @@ public static void noteDiskRead() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.326 -0500", hash_original_method = "C2C60A74DC13C0F89DC4E47159DB8FD2", hash_generated_method = "121CB5F2B452143B05D28AAC32EF6673")
     
 public static void noteDiskWrite() {
-        BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
+      /*  BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
             // StrictMode not enabled.
             return;
         }
-        ((AndroidBlockGuardPolicy) policy).onWriteToDisk();
+        ((AndroidBlockGuardPolicy) policy).onWriteToDisk();*/
     }
 
     /**
@@ -768,7 +781,7 @@ public static Object trackActivity(Object instance) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.333 -0500", hash_original_method = "4C40B4FD0BD10B4EE6F7D0BFF962D7AA", hash_generated_method = "0D457BD9440D94DCA0BF865CD4A7ADDC")
     
 public static void incrementExpectedActivityCount(Class klass) {
-        if (klass == null) {
+        /*if (klass == null) {
             return;
         }
 
@@ -780,7 +793,7 @@ public static void incrementExpectedActivityCount(Class klass) {
             Integer expected = sExpectedActivityInstanceCount.get(klass);
             Integer newExpected = expected == null ? 1 : expected + 1;
             sExpectedActivityInstanceCount.put(klass, newExpected);
-        }
+        }*/
     }
 
     /**
@@ -789,7 +802,7 @@ public static void incrementExpectedActivityCount(Class klass) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.337 -0500", hash_original_method = "F6C508055F46D99984B7E83214C007E3", hash_generated_method = "C9EEFF1EDA70124026A116A3829AF691")
     
 public static void decrementExpectedActivityCount(Class klass) {
-        if (klass == null) {
+        /*if (klass == null) {
             return;
         }
 
@@ -831,7 +844,7 @@ public static void decrementExpectedActivityCount(Class klass) {
         if (instances > limit) {
             Throwable tr = new InstanceCountViolation(klass, instances, limit);
             onVmPolicyViolation(tr.getMessage(), tr);
-        }
+        }*/
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.871 -0500", hash_original_field = "09E16BB7B51D673D1BCEFBE815620A11", hash_generated_field = "EFD495BFFD08DBECC91B6FEE7B253D98")
 

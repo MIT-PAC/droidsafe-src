@@ -6,19 +6,26 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadLocal<T> {
+/* 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.344 -0500", hash_original_field = "65EF0C9DFC0E92D7EED5F56DE419D25E", hash_generated_field = "D0904C715877D79D507857C3DBB2EE5E")
-
     private static AtomicInteger hashCounter = new AtomicInteger(0);
+*/
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.341 -0500", hash_original_field = "C19D8ED4807D46DB1FCA44799C1FDD28", hash_generated_field = "E19C4AFB9937521DCDC693F15C42E2A7")
 
     private final Reference<ThreadLocal<T>> reference
             = new WeakReference<ThreadLocal<T>>(this);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.346 -0500", hash_original_field = "5323E62630847103A2D18086F1AC9418", hash_generated_field = "B643A854DCD11F044BA6D1951F01CE6B")
 
+/*
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.346 -0500", hash_original_field = "5323E62630847103A2D18086F1AC9418", hash_generated_field = "B643A854DCD11F044BA6D1951F01CE6B")
     private final int hash = hashCounter.getAndAdd(0x61c88647 * 2);
+*/  
+    private final int hash = DroidSafeAndroidRuntime.switchControl;
+    
+    HashMap<Object, Object> droidsafeObjectMap = new HashMap<Object, Object>();
 
     /* Thanks to Josh Bloch and Doug Lea for code reviews and impl advice. */
 
@@ -48,6 +55,8 @@ public ThreadLocal() {}
     public T get() {
         // Optimized for the fast path.
         Thread currentThread = Thread.currentThread();
+        return (T)droidsafeObjectMap.get(currentThread);
+/*
         Values values = values(currentThread);
         if (values != null) {
             Object[] table = values.table;
@@ -60,6 +69,7 @@ public ThreadLocal() {}
         }
 
         return (T) values.getAfterMiss(this);
+*/
     }
 
     /**
@@ -88,11 +98,14 @@ protected T initialValue() {
     
 public void set(T value) {
         Thread currentThread = Thread.currentThread();
+        droidsafeObjectMap.put(currentThread, value);
+        /*
         Values values = values(currentThread);
         if (values == null) {
             values = initializeValues(currentThread);
         }
         values.put(this, value);
+        */
     }
 
     /**
@@ -108,11 +121,13 @@ public void set(T value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.334 -0500", hash_original_method = "E12F04AD7D9687B33AD1C273DE0809EB", hash_generated_method = "ACDA24ADC78949A9692E989598D5396F")
     
 public void remove() {
+        /*
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
         if (values != null) {
             values.remove(this);
         }
+        */
     }
 
     /**

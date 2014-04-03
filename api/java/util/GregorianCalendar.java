@@ -501,6 +501,7 @@ private final void cachedFieldsCheckAndGet(long timeVal,
     
 @Override
     protected void computeFields() {
+        /*
         TimeZone timeZone = getTimeZone();
         int dstOffset = timeZone.inDaylightTime(new Date(time)) ? timeZone.getDSTSavings() : 0;
         int zoneOffset = timeZone.getRawOffset();
@@ -600,12 +601,14 @@ private final void cachedFieldsCheckAndGet(long timeVal,
 
             isCached = true;
         }
+        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.384 -0500", hash_original_method = "2C41A89AB92A41E731883E58EB4B865A", hash_generated_method = "022959F13365F46FF73CCF558677F2AC")
     
 @Override
     protected void computeTime() {
+        /*
         if (!isLenient()) {
             if (isSet[HOUR_OF_DAY]) {
                 if (fields[HOUR_OF_DAY] < 0 || fields[HOUR_OF_DAY] > 23) {
@@ -810,6 +813,7 @@ private final void cachedFieldsCheckAndGet(long timeVal,
             computeFields();
             areFieldsSet = true;
         }
+        */
     }
 
     @DSComment("Private Method")

@@ -103,7 +103,7 @@ public static Class<?> forName(String className) throws ClassNotFoundException {
 public static Class<?> forName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
 
-        if (classLoader == null) {
+/*        if (classLoader == null) {
             classLoader = ClassLoader.getSystemClassLoader();
         }
         // Catch an Exception thrown by the underlying native code. It wraps
@@ -123,14 +123,35 @@ public static Class<?> forName(String className, boolean initializeBoolean,
             }
             throw e;
         }
+        return result;*/
+       
+        
+        if (DroidSafeAndroidRuntime.control) {
+            throw new ClassNotFoundException();
+        }
+        Class<?> result = (Class<?>) new Class();
+        
+        result.addTaint(className.getTaintInt() + 
+                        toTaintInt(initializeBoolean) + classLoader.getTaintInt());
+        result.droidsafeSetLoader(classLoader);
         return result;
+        
+    }
+    
+    ClassLoader droidsafeClassLoader = null;
+    void droidsafeSetLoader(ClassLoader loader) {
+        droidsafeClassLoader = loader;
+        addTaint(loader.getTaint());
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
-    	Class<?> cl = Object.class;
+    	Class<?> cl = new Class();
+    	cl.addTaint(className.getTaintInt() + toTaintInt(initializeBoolean) +
+    	            classLoader.getTaintInt());
+    	cl.droidsafeSetLoader(classLoader);
     	return cl;
     }
     
@@ -432,11 +453,10 @@ public ClassLoader getClassLoader() {
             return null;
         }
 
-        ClassLoader loader = getClassLoaderImpl();
-        if (loader == null) {
-            loader = BootClassLoader.getInstance();
-        }
-        return loader;
+        if (droidsafeClassLoader != null)
+            return droidsafeClassLoader;
+        
+        return  BootClassLoader.getInstance();
     }
 
     /**

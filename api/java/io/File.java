@@ -51,7 +51,10 @@ public class File implements Serializable, Comparable<File> {
     
 private static String fixSlashes(String origPath) {
         // Remove duplicate adjacent slashes.
-        boolean lastWasSlash = false;
+        
+        return origPath;
+        
+/*        boolean lastWasSlash = false;
         char[] newPath = origPath.toCharArray();
         int length = newPath.length;
         int newLength = 0;
@@ -72,7 +75,7 @@ private static String fixSlashes(String origPath) {
             newLength--;
         }
         // Reuse the original string if possible.
-        return (newLength != length) ? new String(newPath, 0, newLength) : origPath;
+        return (newLength != length) ? new String(newPath, 0, newLength) : origPath;*/
     }
 
     // Joins two path components, adding a separator only if necessary.

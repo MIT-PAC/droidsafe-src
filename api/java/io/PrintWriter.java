@@ -241,6 +241,7 @@ protected void clearError() {
     
 @Override
     public void close() {
+        /*
         synchronized (lock) {
             if (out != null) {
                 try {
@@ -251,6 +252,7 @@ protected void clearError() {
                 out = null;
             }
         }
+        */
     }
 
     /**
@@ -264,6 +266,7 @@ protected void clearError() {
     
 @Override
     public void flush() {
+        /*
         synchronized (lock) {
             if (out != null) {
                 try {
@@ -275,6 +278,7 @@ protected void clearError() {
                 setError();
             }
         }
+        */
     }
 
     /**
@@ -298,7 +302,12 @@ protected void clearError() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.536 -0500", hash_original_method = "68BF859C2EE72E22FD2B6E3C884D672F", hash_generated_method = "C83B536B3B84E2F36ACC0E6CD007F14D")
     
 public PrintWriter format(String format, Object... args) {
-        return format(Locale.getDefault(), format, args);
+        addTaint(format.getTaint());
+        for (Object arg: args){
+            addTaint(arg.getTaint());
+        }
+        return this;
+        //return format(Locale.getDefault(), format, args);
     }
 
     /**
@@ -488,7 +497,8 @@ public void print(long lnum) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.560 -0500", hash_original_method = "649E6082D773CF70C752E5716C5CC7C1", hash_generated_method = "EAB1D91353181ABAEA72D7E1487AC34B")
     
 public void print(Object obj) {
-        print(String.valueOf(obj));
+        //print(String.valueOf(obj));
+        addTaint(obj.getTaint());
     }
 
     /**
@@ -534,12 +544,14 @@ public void print(boolean bool) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.568 -0500", hash_original_method = "F64EE4A89E44550272E2ED021897135C", hash_generated_method = "7F9921E118814F069608AD604993C5DF")
     
 public void println() {
+        /*
         synchronized (lock) {
             print(System.lineSeparator());
             if (autoFlush) {
                 flush();
             }
         }
+        */
     }
 
     /**
@@ -740,6 +752,7 @@ protected void setError() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.602 -0500", hash_original_method = "A7437F4A37204482B8F05D868AC831D8", hash_generated_method = "45DD7E2CBEC3C1BAC560BA8D3552A6CE")
     
 private final void doWrite(char[] buf, int offset, int count) {
+        /*
         synchronized (lock) {
             if (out != null) {
                 try {
@@ -751,6 +764,8 @@ private final void doWrite(char[] buf, int offset, int count) {
                 setError();
             }
         }
+        */
+        addTaint(buf[0] + offset + count);  
     }
 
     /**

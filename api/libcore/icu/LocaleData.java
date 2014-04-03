@@ -22,6 +22,11 @@ public static LocaleData get(Locale locale) {
             locale = Locale.getDefault();
         }
         String localeName = locale.toString();
+        
+        LocaleData localeData = new LocaleData();
+        localeData.addTaint(locale.getTaint());
+        return localeData;
+        /*
         synchronized (localeDataCache) {
             LocaleData localeData = localeDataCache.get(localeName);
             if (localeData != null) {
@@ -37,6 +42,7 @@ public static LocaleData get(Locale locale) {
             localeDataCache.put(localeName, newLocaleData);
             return newLocaleData;
         }
+        */
     }
 
     @DSComment("Private Method")

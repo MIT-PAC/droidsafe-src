@@ -10,9 +10,12 @@ public class AtomicReference<V> implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.189 -0500", hash_original_field = "823BEC65A4A881166696CB1BF2DFCDEF", hash_generated_field = "F377B552F3A51EC0DBE8D7F8863A64C0")
 
     private static final long serialVersionUID = -1848883965231344442L;
+
+/*
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.192 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "E7D465D52C267C4626E00B16AF4442B8")
 
     private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+*/
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.194 -0500", hash_original_field = "2B4D3697B0BD0FB4DB161026EA588EEA", hash_generated_field = "3ACE806C2A776E8F67FFC072288734E8")
 
     private static  long valueOffset;
@@ -41,6 +44,18 @@ public AtomicReference(V initialValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.203 -0500", hash_original_method = "F97CF4B9707D277EAF947474019CC6FE", hash_generated_method = "CEE6F0364685959E02A5037951EEC7AB")
     
 public AtomicReference() {
+    }
+    
+    @Override
+    public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        value.addTaint(t);
+    }
+    
+    @Override
+    public void addTaint(double t) {
+        super.addTaint(t);
+        value.addTaint(t);
     }
 
     /**
@@ -82,7 +97,7 @@ public final void set(V newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.209 -0500", hash_original_method = "5F145FC62F46FF5FAD786BED834DE8D5", hash_generated_method = "296FEC93AA3A03604C3649376F898A7D")
     
 public final void lazySet(V newValue) {
-        unsafe.putOrderedObject(this, valueOffset, newValue);
+        set(newValue);
     }
 
     /**
@@ -98,7 +113,9 @@ public final void lazySet(V newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.212 -0500", hash_original_method = "069E7BB7A98500BAF130264F81E7ADC7", hash_generated_method = "55A18E7DD94B7439EA730F0CF8FEAE6F")
     
 public final boolean compareAndSet(V expect, V update) {
-        return unsafe.compareAndSwapObject(this, valueOffset, expect, update);
+        set(expect);
+        set(update);
+        return value.getTaintBoolean();
     }
 
     /**
@@ -118,7 +135,9 @@ public final boolean compareAndSet(V expect, V update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.215 -0500", hash_original_method = "801403A92781688D40B445FC7E652974", hash_generated_method = "EB801DEAE4DF2E72BBC54D899262BEAE")
     
 public final boolean weakCompareAndSet(V expect, V update) {
-        return unsafe.compareAndSwapObject(this, valueOffset, expect, update);
+        set(expect);
+        set(update);
+        return value.getTaintBoolean();
     }
 
     /**
@@ -133,11 +152,8 @@ public final boolean weakCompareAndSet(V expect, V update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.217 -0500", hash_original_method = "FD7BCDEFF552AB71FCB964A4983AD19B", hash_generated_method = "DEF91DF473EB9A1AA2087DFAFB68BC02")
     
 public final V getAndSet(V newValue) {
-        while (true) {
-            V x = get();
-            if (compareAndSet(x, newValue))
-                return x;
-        }
+        set(newValue);
+        return value;
     }
 
     /**
@@ -151,12 +167,14 @@ public final V getAndSet(V newValue) {
 public String toString() {
         return String.valueOf(get());
     }
+    /*
     static {
       try {
         valueOffset = unsafe.objectFieldOffset
             (AtomicReference.class.getDeclaredField("value"));
       } catch (Exception ex) { throw new Error(ex); }
     }
+    */
     
 }
 

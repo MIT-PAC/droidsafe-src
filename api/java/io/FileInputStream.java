@@ -86,6 +86,10 @@ public FileInputStream(String path) throws FileNotFoundException {
         this(new File(path));
     }
 
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public FileInputStream(DSOnlyType dontcare) {
+    }
+
     @DSComment("File Input Stream")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.119 -0500", hash_original_method = "EBD7B964937B6AA7FA3657DA1AAC30BC", hash_generated_method = "ADA0D7075AE3399605E425074EC4F63B")

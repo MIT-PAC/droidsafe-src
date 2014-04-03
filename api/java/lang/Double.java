@@ -76,7 +76,8 @@ public static boolean isNaN(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.668 -0500", hash_original_method = "25293AE596CADCBBB53C06F5AC0CC1E4", hash_generated_method = "605DFB2105E41AF97FEBDA947F8A9F93")
     
 public static double parseDouble(String string) throws NumberFormatException {
-        return StringToReal.parseDouble(string);
+        //return StringToReal.parseDouble(string);
+        return string.getTaintDouble();
     }
 
     /**

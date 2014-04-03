@@ -33,6 +33,9 @@ import com.google.android.maps.MapActivity;
 public class DroidSafeAndroidRuntime {
     public static boolean control = new Random().nextBoolean();
     public static int switchControl = new Random().nextInt();
+    public static int runtimeInteger  = new Random().nextInt();
+    public static float runtimeFloat = new Random().nextFloat();
+
     /** make public so that other context's can grab this! */
     public static Application mApplication;
     

@@ -141,12 +141,24 @@ public NameValueCache(String versionSystemProperty, Uri uri, String callCommand)
             mVersionSystemProperty = versionSystemProperty;
             mUri = uri;
             mCallCommand = callCommand;
+            
+            addTaint(versionSystemProperty.getTaintInt() +
+                    uri.getTaintInt() + 
+                    callCommand.getTaintInt());
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.497 -0500", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "3F56C11F8B1D8391051310C80CA41A69")
         
 public String getString(ContentResolver cr, String name) {
-            long newValuesVersion = SystemProperties.getLong(mVersionSystemProperty, 0);
+            
+            String result = new String();
+            result.addTaint(cr.getTaint());
+            result.addTaint(name.getTaint());
+            result.addTaint(getTaint());
+            return result;
+
+           
+          /*  long newValuesVersion = SystemProperties.getLong(mVersionSystemProperty, 0);
 
             synchronized (this) {
                 if (mValuesVersion != newValuesVersion) {
@@ -218,6 +230,7 @@ public String getString(ContentResolver cr, String name) {
             } finally {
                 if (c != null) c.close();
             }
+        */
         }
     }
     
@@ -2385,7 +2398,7 @@ public static final void setLocationProviderEnabled(ContentResolver cr,
         
 public static Intent getIntentForShortcut(ContentResolver cr, char shortcut)
         {
-            Intent intent = null;
+           /* Intent intent = null;
 
             Cursor c = cr.query(CONTENT_URI,
                     sIntentProjection, sShortcutSelection,
@@ -2407,7 +2420,12 @@ public static Intent getIntentForShortcut(ContentResolver cr, char shortcut)
                 if (c != null) c.close();
             }
 
-            return intent;
+            return intent;*/
+            
+            Intent i = new Intent();
+            i.addTaint(cr.getTaint());
+            i.addTaint(shortcut);
+            return i;
         }
 
         /**
@@ -2482,7 +2500,7 @@ public static CharSequence getLabelForFolder(Resources r, String folder) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.659 -0500", hash_original_method = "CEF1D2F717830086ECA4871334F6B001", hash_generated_method = "3EC304D62692B33131B3CA88A5083CAF")
         
 public static CharSequence getTitle(Context context, Cursor cursor) {
-            int titleColumn = cursor.getColumnIndex(TITLE);
+/*            int titleColumn = cursor.getColumnIndex(TITLE);
             int intentColumn = cursor.getColumnIndex(INTENT);
             if (titleColumn == -1 || intentColumn == -1) {
                 throw new IllegalArgumentException(
@@ -2508,7 +2526,13 @@ public static CharSequence getTitle(Context context, Cursor cursor) {
 
             PackageManager packageManager = context.getPackageManager();
             ResolveInfo info = packageManager.resolveActivity(intent, 0);
-            return info != null ? info.loadLabel(packageManager) : "";
+            return info != null ? info.loadLabel(packageManager) : "";*/
+            
+            String result = new String();
+            result.addTaint(context.getTaint());
+            result.addTaint(cursor.getTaint());
+            
+            return result;
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.622 -0500", hash_original_field = "A93CE64F477FE079D3034A9948D130F9", hash_generated_field = "127C508760F30C38F353D1C0CBBEF438")
 

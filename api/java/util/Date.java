@@ -44,6 +44,12 @@ private static int parse(String string, String[] array) {
     
 @Deprecated
     public static long parse(String string) {
+
+        if (DroidSafeAndroidRuntime.control)
+           throw new IllegalArgumentException();
+        
+        return string.getTaintInt();
+       /* 
         if (string == null) {
             throw new IllegalArgumentException("The string argument is null");
         }
@@ -169,8 +175,8 @@ private static int parse(String string, String[] array) {
                     String[] weekdays = symbols.getWeekdays(), months = symbols
                             .getMonths();
                     int value;
-                    if (parse(text, weekdays) != -1) {/* empty */
-                    } else if (month == -1 && (month = parse(text, months)) != -1) {/* empty */
+                    if (parse(text, weekdays) != -1) {
+                    } else if (month == -1 && (month = parse(text, months)) != -1) {
                     } else if (text.equals("GMT") || text.equals("UT") || text.equals("UTC")) {
                         zone = true;
                         zoneOffset = 0;
@@ -225,6 +231,7 @@ private static int parse(String string, String[] array) {
                     .getTime();
         }
         throw new IllegalArgumentException();
+        */
     }
 
     @DSComment("Private Method")
