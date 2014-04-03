@@ -64,8 +64,6 @@ public class ValueAnalysis  {
     //if true then for string values, only track jsa resolved strings (so hot spot strings)
     public static final boolean ONLY_TRACK_JSA_STRINGS = true;
 
-    public static final boolean ONLY_TRACK_USER_OBJECTS = true;
-
     public static final boolean USE_PTA_ONLY = true;
 
     /** Singleton for analysis */
@@ -210,17 +208,7 @@ public class ValueAnalysis  {
     public void createObjectModels() {
         for(IAllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
             if (allocNode instanceof ObjectSensitiveAllocNode) {
-                SootMethod allocatorM = ((ObjectSensitiveAllocNode)allocNode).getMethod();
-                SootClass allocatorC = null;
-                if (allocatorM != null) {
-                    allocatorC = allocatorM.getDeclaringClass();
-                }
-                
-                //decide if want to track all objects or just user/gen objects based on static boolean
-                if (!ONLY_TRACK_USER_OBJECTS || 
-                        (allocatorC == null || !API.v().isSystemClass(allocatorC) || 
-                        Project.v().isDroidSafeGeneratedClass(allocatorC)))
-                    createObjectModel(allocNode);    
+                createObjectModel(allocNode);    
             }
         }
     }
@@ -294,10 +282,12 @@ public class ValueAnalysis  {
         for (IAllocNode an : allocNodeToVAModelMap.keySet()) {
             RefVAModel baseModel = (RefVAModel)allocNodeToVAModelMap.get(an);
             
-            //System.out.printf("Looking at: %s\n", an);
-            
             if (baseModel == null)
                 continue;
+            
+            //boolean debug = (an.getType().equals(RefType.v("android.net.Uri")));                    
+            
+            //if (debug) System.out.printf("Looking at: %s\n", an);
             
             Class<?> baseVAModelClass = baseModel.getClass();
             
@@ -315,14 +305,14 @@ public class ValueAnalysis  {
                     Set<? extends IAllocNode> fieldPTSet = PTABridge.v().getPTSet(an, sootField);
                     
                     if (fieldVAModel instanceof StringVAModel || fieldVAModel instanceof ClassVAModel) {
-                        //System.out.printf("Found tracked field: %s\n", fieldName);
+                       // if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
                         handleFieldValue((PrimVAModel)fieldVAModel, fieldPTSet);
                     }
                 } catch (Exception e) {
                     //used to ignore fields that are not tracked by va
                 } 
             }
-            //System.out.println();
+            //if (debug) System.out.println();
         }
     }
 
@@ -439,6 +429,7 @@ public class ValueAnalysis  {
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
                 if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() <= 5) {
                     String value = sc.value;
+                    //if (debug) System.out.println("Found sc: " + value);
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
                     value = value.replace("\\uxxxx", "");
@@ -452,7 +443,7 @@ public class ValueAnalysis  {
             }
                         
             if (!knownValue) {
-                //System.out.println("Not known: " + rhsNode);
+                //if (debug) System.out.println("Not known: " + rhsNode);
                 // all strings weren't constants, write unknown value
                 ValueAnalysis.logError(fieldPrimVAModel.toString() + 
                     " the value it is assigned, " + 
