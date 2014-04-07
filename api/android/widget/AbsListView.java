@@ -48,7 +48,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     static int getDistance(Rect source, Rect dest, int direction){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return 0;
+        return (source.getTaintInt() + dest.getTaintInt() + direction);
 	}
     
     @DSComment("Package priviledge")
