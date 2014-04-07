@@ -9,6 +9,7 @@ import java.util.TreeSet;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 
 import droidsafe.analyses.value.VAUtils;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
@@ -117,6 +118,25 @@ public class Utils {
         }
     }
 
+    public static Set<String> getSortByFields(JsonObject jsonObj) {
+        Set<String> fields = new TreeSet<String>();
+        JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
+        if (childrenArray != null && childrenArray.size() > 0) {
+            jsonObj = (JsonObject) childrenArray.get(0);
+            for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
+                String field = entry.getKey();
+                if (field.equals("signature")) {
+                    fields.addAll(SIGNATURE_FIELDS);
+                } else if (!field.equals("type")) {
+                    JsonElement value = entry.getValue();
+                    if (value.isJsonPrimitive()) 
+                        fields.add(field);
+                }
+            }
+        }
+        return fields;
+    }
+
     public static boolean isEmptyJsonObject(JsonElement jsonElt) {
         return jsonElt.isJsonObject() && ((JsonObject)jsonElt).entrySet().isEmpty();
     }
@@ -180,6 +200,27 @@ public class Utils {
         }
         buf.append("]");
         return buf.toString();
+    }
+
+    public static int compareField(JsonObject jsonObj1, JsonObject jsonObj2, String field) {
+        JsonElement val1 = jsonObj1.get(field);
+        JsonElement val2 = jsonObj2.get(field);
+        if (val1 != null && val2 != null) {
+            if (val1.isJsonPrimitive() && val2.isJsonPrimitive()) {
+                JsonPrimitive primVal1 = (JsonPrimitive) val1;
+                JsonPrimitive primVal2 = (JsonPrimitive) val2;
+                if (primVal1.isNumber() && primVal2.isNumber()) {
+                    // TODO: handle long, float, double
+                    int int1 = primVal1.getAsInt();
+                    int int2 = primVal2.getAsInt();
+                    return int2 - int1;
+                }
+            }
+            String str1 = val1.getAsString();
+            String str2 = val2.getAsString();
+            return str1.compareTo(str2);
+        }
+        return 0;
     }
 
 }

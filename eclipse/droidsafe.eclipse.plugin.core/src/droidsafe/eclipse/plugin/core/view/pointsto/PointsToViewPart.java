@@ -6,7 +6,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.MethodInfoOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.MethodModel;
 
 /**
@@ -24,12 +26,12 @@ public class PointsToViewPart extends MethodInfoOutlineViewPart {
     protected static String EMPTY_PAGE_LABEL = "To display the points-to info, first select a method from the 'Security Spec Outline'";
     
     @Override
-    protected IBaseLabelProvider makeLabelProvider() {
+    protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
         return new PointsToTreeElementLabelProvider();
     }
 
     @Override
-    protected ITreeContentProvider makeContentProvider() {
+    protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
         return new PointsToTreeElementContentProvider();
     }
     

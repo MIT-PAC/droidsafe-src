@@ -1,14 +1,21 @@
 package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
@@ -17,8 +24,11 @@ import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.filters.Filter;
+import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 
 /**
  * View for displaying the points-to info on the receiver/arguments of a given method. 
@@ -52,6 +62,12 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     private Map<String, Boolean> defaultDisplayMap = null;
 
     private String[] filterFields;
+
+    private Set<String> sortByFields;
+
+    private String sortByField;
+
+    private JsonObject jsonObject;
 
     public Map<String, Boolean> getVisibilityMap() {
         return visibilityMap;
@@ -165,12 +181,12 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
      */
     public void updateView() {
         if (fInputElement != null && fParentComposite != null) {
-            JsonObject jsonObj = DroidsafePluginUtilities.parseIndicatorFile(fInputElement);
-            computeDefaultVisibilityMap(jsonObj);
+            jsonObject = DroidsafePluginUtilities.parseIndicatorFile(fInputElement);
+            computeDefaultVisibilityMap(jsonObject);
             computeVisibilityMapFromDefault();
-            computeDefaultDisplayMap(jsonObj);
+            computeDefaultDisplayMap(jsonObject);
             computeDisplayMapFromDefault();
-            String indicatorType = Utils.getFieldValueAsString(jsonObj, "indicator-type");
+            String indicatorType = Utils.getFieldValueAsString(jsonObject, "indicator-type");
             if (indicatorType == null) {
                 String fileName = fInputElement.getName();
                 int pos = fileName.indexOf(".");
@@ -178,19 +194,21 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
             }
             setPartName(indicatorType);
             showPage(PAGE_VIEWER);
-            fTreeViewer.setInput(jsonObj);
+            if (fTreeViewer.getSorter() == null)
+                sortByField(getSortByField());
+            fTreeViewer.setInput(jsonObject);
         } else {
             setPartName(DEFAULT_PART_NAME);
         }
     }
 
     @Override
-    protected ITreeContentProvider makeContentProvider() {
+    protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
         return new IndicatorTreeElementContentProvider(this);
     }
 
     @Override
-    protected IBaseLabelProvider makeLabelProvider() {
+    protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
         return new IndicatorTreeElementLabelProvider(this);
     }
 
@@ -258,12 +276,32 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
 
     public String[] getFilterFields() {
         if (filterFields == null) {
-            JsonObject jsonObj = (JsonObject)fTreeViewer.getInput();
-            filterFields = Utils.getAllFilterFields(jsonObj).toArray(new String[0]);
+            filterFields = Utils.getAllFilterFields(jsonObject).toArray(new String[0]);
         }
         return filterFields;
     }
     
+    public Set<String> getSortByFields() {
+        if (sortByFields == null && jsonObject != null) {
+            sortByFields = Utils.getSortByFields(jsonObject);
+        }
+        return sortByFields;
+    }
+    
+    public String getSortByField() {
+        if (sortByField == null) {
+            Set<String> fields = getSortByFields();
+            if (fields.contains("class"))
+                sortByField = "class";
+            else
+                sortByField = fields.iterator().next();
+        }
+        return sortByField;
+    }
+
+    public void setSortByField(String field) {
+        sortByField = field;
+    }
     public void dispose() {
         reset();
     }
@@ -271,4 +309,66 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     private void reset() {
         setInputElement(null);
     }
+
+    public void sortByField(final String field) {
+        if (field != null) {
+            TreeViewer viewer = getViewer();
+            ISelection savedSelections = viewer.getSelection();
+
+            viewer.setComparator(new ViewerComparator() {
+                public int compare(Viewer view, Object o1, Object o2) {
+                    if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+                        Object data1 = ((TreeElement<?, ?>) o1).getData();
+                        Object data2 = ((TreeElement<?, ?>) o2).getData();
+                        return compare(view, data1, data2);
+
+                    } else if (o1 instanceof JsonObject && o2 instanceof JsonObject) {
+                        JsonObject jsonObj1 = (JsonObject) o1;
+                        JsonObject jsonObj2 = (JsonObject) o2;
+                        int result = Utils.compareField(jsonObj1, jsonObj2, field);
+                        for (String sigField: Utils.SIGNATURE_FIELDS) {
+                            if (result != 0)
+                                break;
+                            if (!field.equals(sigField))
+                                result = Utils.compareField(jsonObj1, jsonObj2, sigField);
+                        }
+                        return result;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+            viewer.expandAll();
+            selectObjects(savedSelections);
+        }
+    }
+
+    /**
+     * This method will re-select the nodes that were selected before the change in the outline
+     * structure.
+     * 
+     * This method should be called by any method that changes the structure of the outline tree.
+     * 
+     * @param savedSelections The set of nodes selected before the change in the structure of the
+     *        outline.
+     */
+    private void selectObjects(ISelection savedSelections) {
+        List<Object> selectedElements = new ArrayList<Object>();
+        if (savedSelections != null && savedSelections instanceof IStructuredSelection) {
+            IStructuredSelection structuredSelection = ((IStructuredSelection) savedSelections);
+            for (Object selection : structuredSelection.toList()) {
+                if (selection instanceof TreeElement<?, ?>) {
+                    TreeElement<?, ?> element = (TreeElement<?, ?>) selection;
+                    TreeElement<?, ?> newTreeElement = ((IndicatorTreeElementContentProvider)fContentProvider).findTreeElement(element.getData());
+                    if (newTreeElement != null) {
+                        selectedElements.add(newTreeElement);
+                    }
+                }
+            }
+        }
+        if (!selectedElements.isEmpty()) {
+            getViewer().setSelection(new StructuredSelection(selectedElements), true);
+        }
+    }
+
 }

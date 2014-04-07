@@ -504,14 +504,21 @@
                label="Label Display">
             <dynamic
                   class="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu"
-                  id="droidsafe.eclipse.plugin.core.view.json.LabelDisplayMenu">
+                  id="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu">
+            </dynamic>
+         </menu>
+         <menu
+               label="Sort by">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.SortOutlineMenu"
+                  id="droidsafe.eclipse.plugin.core.view.indicator.SortOutlineMenu">
             </dynamic>
          </menu>
          <menu
                label="Visibility">
             <dynamic
                   class="droidsafe.eclipse.plugin.core.view.indicator.TypeVisibilityMenu"
-                  id="droidsafe.eclipse.plugin.core.view.json.TypeVisibilityMenu">
+                  id="droidsafe.eclipse.plugin.core.view.indicator.TypeVisibilityMenu">
             </dynamic>
          </menu>
          <command

@@ -2,11 +2,15 @@ package droidsafe.eclipse.plugin.core.view;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.TreeViewer;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.speclang.model.IModelChangeSupport;
 
 /**
  * Content provider for the tree structure of the points-to outline view.
@@ -22,6 +26,19 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
     /** The tree viewer for the points-to outline view. */
     protected TreeViewer fViewer;
     
+    protected Object[] rootElements;
+
+    private Map<Object, TreeElement<?, ?>> treeElementMap =
+            new HashMap<Object, TreeElement<?, ?>>();
+
+    public Object[] getRootElements() {
+        return rootElements;
+    }
+    
+    public Map<Object, TreeElement<?, ?>> getTreeElementMap() {
+        return treeElementMap;
+    }
+
     @Override
     public void dispose() {}
 
@@ -73,5 +90,22 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
             this.fViewer.update(source, null);
         }
     }
+    
+    /**
+     * Returns the tree element corresponding to the element model (method or code location).
+     * 
+     * @param modelObject The method or code location object represented in the outline view.
+     * 
+     * @return The tree node element wrapping the model object.
+     * 
+     */
+    public TreeElement<?, ?> findTreeElement(Object data) {
+        TreeElement<?, ?> result = treeElementMap.get(data);
+        if (result != null && data.equals(result.getData())) {
+            return result;
+        }
+        return null;
+    }
+
 
 }

@@ -66,4 +66,13 @@ public class DroidsafeImages {
     /** The image for an unchecked box */
     public static final Image UNCHECKED = DroidsafePluginUtilities.getImage("unchecked.gif");
 
+    /** The image for a down arrow */
+    public static final Image NEXT_IMAGE = DroidsafePluginUtilities.getImage("next.png");
+
+    /** The image for an up arrow */
+    public static final Image PREV_IMAGE = DroidsafePluginUtilities.getImage("prev.png");
+
+    /** The image for closing a view */
+    public static final Image CLOSE_IMAGE = DroidsafePluginUtilities.getImage("close.png");
+
 }

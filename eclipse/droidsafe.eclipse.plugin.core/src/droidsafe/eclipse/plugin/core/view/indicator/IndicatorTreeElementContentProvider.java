@@ -1,11 +1,8 @@
 package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
@@ -16,13 +13,9 @@ import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.filters.FilterOp;
-import droidsafe.eclipse.plugin.core.filters.FilterPredClause;
 import droidsafe.eclipse.plugin.core.filters.FilterPred;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
-import droidsafe.eclipse.plugin.core.view.infoflow.SourceSinkPair;
-import droidsafe.speclang.model.MethodModel;
-import droidsafe.speclang.model.SecuritySpecModel;
 
 /**
  * Content provider for the tree structure of the points-to outline view.
@@ -47,9 +40,11 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
     public Object[] getElements(Object input) {
         if (input instanceof JsonObject) {
             this.fInput = (JsonObject) input;
-            return initializeRoots();
+            rootElements = initializeRoots();
+        } else {
+            rootElements = NO_CHILDREN;
         }
-        return NO_CHILDREN;
+        return rootElements;
     }
 
     @Override
@@ -62,6 +57,7 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
      * Populate the tree elements of the JSON object outline view. Return the root elements.
      */
     protected Object[] initializeRoots() {
+        getTreeElementMap().clear();
         List<TreeElement<JsonElement, JsonElement>> roots = new ArrayList<TreeElement<JsonElement, JsonElement>>();
         JsonArray rootArray = Utils.getChildrenArray(fInput);
         if (rootArray != null) {
@@ -84,6 +80,7 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         TreeElement<JsonElement, JsonElement> element = null;
         if (visible) {
             element = new TreeElement<JsonElement, JsonElement>(jsonElement.toString(), jsonElement, JsonElement.class);
+            getTreeElementMap().put(jsonElement, element);
             result.add(element);
         }
         JsonArray childrenArray = Utils.getChildrenArray(jsonElement);

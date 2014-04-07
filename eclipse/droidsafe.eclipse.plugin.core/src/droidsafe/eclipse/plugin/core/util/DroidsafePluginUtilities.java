@@ -165,11 +165,11 @@ public class DroidsafePluginUtilities {
         return null;
     }
 
-    private static void showError(String title, String msg) {
+    public static void showError(String title, String msg) {
         showError(title, msg, null);
     }
 
-    private static void showError(String title, String msg, Exception ex) {
+    public static void showError(String title, String msg, Exception ex) {
         Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
         if (ex != null)
             msg = msg + "\n\n" + ex;
@@ -218,7 +218,7 @@ public class DroidsafePluginUtilities {
         }
     }
 
-    private static void error(String errMsg) {
+    public static void error(String errMsg) {
         //IActionBars bars = viewPart.getViewSite().getActionBars();
         //((SubActionBars)bars).activate();
         IWorkbenchPage page =
