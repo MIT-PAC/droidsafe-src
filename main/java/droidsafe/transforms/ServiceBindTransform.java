@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
@@ -42,7 +43,7 @@ public class ServiceBindTransform implements VATransform {
     private int uniqueID = 0;
     
     public ServiceBindTransform() {
-        // TODO Auto-generated constructor stub
+        
     }
 
     @Override
@@ -64,20 +65,26 @@ public class ServiceBindTransform implements VATransform {
         //add call to droidSafeOnBind(Intent, ServiceConnection)
         //for all service destinations from the intent 
         //for the services created in the harness
-        for (Map.Entry<SootClass,SootField> service : targetServiceFields(invoke.getArg(0))) {
-            logger.info("Adding call to droidSafeOnBind() with target {}", service.getKey());
+        Set<? extends IAllocNode> intentNodes = PTABridge.v().getPTSetIns(invoke.getArg(0));
+        for (SootField serviceFld : IntentUtils.v().getIntentServiceTargetHarnessFields(intentNodes)) {
+            if (!(serviceFld.getType() instanceof RefType))
+                continue;
+            
+            SootClass serviceClz = ((RefType)serviceFld.getType()).getSootClass();
+            
+            logger.info("Adding call to droidSafeOnBind() with target {}", serviceClz);
             
             //local = field from harness 
-            Local fieldLocal = Jimple.v().newLocal("SERVICE_LOCAL" + uniqueID++, service.getValue().getType());
+            Local fieldLocal = Jimple.v().newLocal("SERVICE_LOCAL" + uniqueID++, serviceFld.getType());
             body.getLocals().add(fieldLocal);
             AssignStmt localAssign = Jimple.v().newAssignStmt(
                 fieldLocal, 
-                Jimple.v().newStaticFieldRef(service.getValue().makeRef()));
+                Jimple.v().newStaticFieldRef(serviceFld.makeRef()));
             
             body.getUnits().insertAfter(localAssign, stmt);
             
             //local.droidSafeOnBind(invoke.arg(0), invoke.arg(1))
-            SootMethodRef dsOnBind = makeDSOnbindRef(service.getKey());
+            SootMethodRef dsOnBind = makeDSOnbindRef(serviceClz);
             
             List<Value> params = new LinkedList<Value>();
             
@@ -98,27 +105,6 @@ public class ServiceBindTransform implements VATransform {
         params.add(RefType.v("android.content.ServiceConnection"));
         
         return Scene.v().makeMethodRef(serC, "droidSafeOnBind", params, VoidType.v(), false);
-    }
-    
-    private List<Map.Entry<SootClass,SootField>> targetServiceFields(Value intentValue) {
-        List<Map.Entry<SootClass,SootField>> serviceFields = new LinkedList<Map.Entry<SootClass,SootField>>();
-        
-        for (IAllocNode node : PTABridge.v().getPTSetIns(intentValue)) {
-            if (!ValueAnalysis.v().hasResult(node))
-                continue;
-            
-            VAModel model = ValueAnalysis.v().getResult(node);
-            
-            System.out.println(model);
-        }
-                
-        //TODO: temporarily deliver to all services
-        for (Map.Entry<SootClass,SootField> entry : Harness.v().getCreatedFieldsMap().entrySet()) {
-            if (Hierarchy.inheritsFromAndroidService(entry.getKey())) 
-                serviceFields.add(entry);
-        }
-        
-        return serviceFields;
     }
 
     @Override
