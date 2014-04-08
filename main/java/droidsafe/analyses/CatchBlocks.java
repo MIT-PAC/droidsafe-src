@@ -169,6 +169,11 @@ public class CatchBlocks {
         fp.printf("    %s,\n", json_field ("call-chain", false));
         fp.printf("    %s\n", json_field ("syscall", true));
         fp.printf("  },\n");
+        fp.printf("  %s {\n", json_field ("display"));
+        fp.printf("    %s,\n", json_field ("calls", false));
+        fp.printf("    %s,\n", json_field ("syscalls", false));
+        fp.printf("    %s\n", json_field ("score", false));
+        fp.printf("  },\n");
         fp.printf (" %s [\n", json_field ("contents"));
         
         // Process each source class (those in app/src)
@@ -354,7 +359,7 @@ public class CatchBlocks {
     	if (is_terminal (mc))
     		return new CallChainInfo (mc.method(), s, "syscall");
     	
-    	CallChainInfo cci = new CallChainInfo (mc.method(), s, "callchain");
+    	CallChainInfo cci = new CallChainInfo (mc.method(), s, "call-chain");
     	ArrayList<CallChainInfo> calls = new ArrayList<CallChainInfo>();
         CallGraph cg = PTABridge.v().getCallGraph();
         
