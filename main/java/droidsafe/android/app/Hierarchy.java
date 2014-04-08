@@ -49,6 +49,15 @@ public class Hierarchy {
 	    return methods;
 	}
 	
+		
+	/** 
+     * Returns true if cn is class android/app/Service or is a class
+     * that inherits from android/app/Service
+     */
+    public static boolean inheritsFromAndroidService(final SootClass cn) {
+        return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
+            Scene.v().getSootClass(Components.SERVICE_CLASS));
+    }
 	
 	/** 
 	 * Returns true if cn is class android/app/Activity or is a class

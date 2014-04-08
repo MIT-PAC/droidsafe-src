@@ -944,7 +944,7 @@ public class SparkPTA extends PTABridge {
             
             for (SootClass child : Scene.v().getActiveHierarchy().getSubclassesOfIncluding(clz)) { 
                 buf.append(child + ",");
-                logger.info("Adding class to ignore context list of spark: {}", clz);
+                logger.info("Adding class to ignore context list of spark: {}", child);
             }
         }
         

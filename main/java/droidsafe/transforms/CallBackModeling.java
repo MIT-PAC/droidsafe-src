@@ -85,17 +85,21 @@ public class CallBackModeling {
         callFallBackMethods();
         
         //check for components that are not created anywhere
-        findUnallocedComponents();
+        findAndCreateUnallocedComponents();
     }
     
-    private void findUnallocedComponents() {
-        for (SootClass hasFallback : classToCallbackMethod.keySet()) {
-            if (Hierarchy.isAndroidComponentClass(hasFallback) && !calledFallback.contains(hasFallback) &&
-                    !Project.v().isLibClass(hasFallback)) {
+    /**
+     * Find component classes in user code that was not declared in the manifest, and create fields for
+     * them in the harness.
+     */
+    private void findAndCreateUnallocedComponents() {
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (!clz.isInterface() && Hierarchy.isAndroidComponentClass(clz) && !Harness.v().hasCreatedField(clz) &&
+                    Project.v().isSrcClass(clz)) {
                 //found component that is not allocated, should we call is??
                 logger.warn("Found component not in manifest and not created in code: {}. Adding modeling.", 
-                    hasFallback);
-                Harness.v().createComponentsNotInManifest(hasFallback);
+                    clz);
+                Harness.v().createComponentsNotInManifest(clz);
             }
         }
     }
