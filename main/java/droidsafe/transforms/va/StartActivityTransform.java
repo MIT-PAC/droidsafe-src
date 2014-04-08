@@ -53,8 +53,6 @@ class StartActivityTransform implements VATransform {
 
     Set<Stmt> modified = new HashSet<Stmt>();
 
-    Set<SootField> allHarnessActivityFlds = new HashSet<SootField>();
-
     public StartActivityTransform() {
         //get all activities
 

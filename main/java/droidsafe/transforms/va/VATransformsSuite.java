@@ -33,8 +33,9 @@ import soot.SootMethod;
  */
 public class VATransformsSuite  {
     private List<VATransform> transforms = Arrays.asList(
-        (VATransform)new StartActivityTransform(),
-        (VATransform)new ServiceBindTransform()
+        new StartActivityTransform(),
+        new ServiceBindTransform(),
+        new StartServiceTransform()
             );
 
     // enforce singleton pattern
@@ -54,7 +55,7 @@ public class VATransformsSuite  {
                     || containingMthd.isPhantom() 
                     || SootUtils.isRuntimeStubMethod(containingMthd))
                 continue;
-            
+
             // iterate over the containing method's body statements
             StmtBody stmtBody = (StmtBody)containingMthd.getActiveBody();
             Iterator stmtIt = stmtBody.getUnits().snapshotIterator();
@@ -65,7 +66,7 @@ public class VATransformsSuite  {
                 if (!stmt.containsInvokeExpr())
                     continue;
                 InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-               
+
                 for (VATransform transform : transforms) { 
                     try {
                         for (SootMethod callee : PTABridge.v().resolveInvokeIns(invokeExpr)) {
