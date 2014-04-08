@@ -8160,11 +8160,11 @@ public void setEllipsize(TextUtils.TruncateAt where) {
         if (mEllipsize != where) {
             mEllipsize = where;
 
-            if (mLayout != null) {
-                nullLayouts();
-                requestLayout();
-                invalidate();
-            }
+//            if (mLayout != null) {
+//                nullLayouts();
+//                requestLayout();
+//                invalidate();
+//            }
         }
     }
 
@@ -9076,7 +9076,7 @@ private void downgradeEasyCorrectionSpans() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.605 -0500", hash_original_method = "1022846F3BD24E55F7B42FF144EBDE9C", hash_generated_method = "DAD6D0E43EF9339B29A9002BF6C34AA9")
     
 private void prepareCursorControllers() {
-        boolean windowSupportsHandles = false;
+      /*  boolean windowSupportsHandles = false;
 
         ViewGroup.LayoutParams params = getRootView().getLayoutParams();
         if (params instanceof WindowManager.LayoutParams) {
@@ -9103,7 +9103,7 @@ private void prepareCursorControllers() {
                 mSelectionModifierCursorController.onDetached();
                 mSelectionModifierCursorController = null;
             }
-        }
+        }*/
     }
 
     /**
