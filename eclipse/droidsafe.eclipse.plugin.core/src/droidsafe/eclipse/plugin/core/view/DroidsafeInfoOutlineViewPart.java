@@ -204,4 +204,25 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         fTreeViewer.expandAll();    
       }
 
+    public void setLongLabel(boolean longLabel) {
+        fLabelProvider.setLongLabel(longLabel);
+        updateLabels();
+    }
+
+    public void updateLabels() {
+        Object[] roots = fContentProvider.getRootElements();
+        if (roots != null) {
+            for (Object root: roots) {
+                updateLabels(root);
+            }
+        }
+    }
+
+    private void updateLabels(Object element) {
+        fTreeViewer.update(element, null);
+        for (Object child: fContentProvider.getChildren(element)) {
+            updateLabels(child);
+        }
+    }
+
 }

@@ -43,7 +43,7 @@ public class LabelDisplayMenu extends CompoundContributionItem {
                  */
                 public void fill(Menu menu, int index) {
                     MenuItem item = new MenuItem(menu, SWT.CHECK);
-                    item.setText(field);
+                    item.setText("Show "+field);
                     item.addListener(SWT.Selection, getMenuItemListener(field, view));
                     item.setSelection(view.getDisplay(field));
                 }
@@ -66,7 +66,7 @@ public class LabelDisplayMenu extends CompoundContributionItem {
                         public void handleEvent(Event event) {
                             if (view != null) {
                                 view.toggleDisplay(field);
-                                view.refresh();
+                                view.updateLabels();
                             }
                         }
                     };

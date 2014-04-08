@@ -28,6 +28,8 @@ public class DroidsafeInfoTreeElementLabelProvider extends StyledCellLabelProvid
     private String searchString;
     
     private Object searchElement;
+
+    protected boolean longLabel;
     
     public void setSearchString(String searchString) {
         this.searchString = searchString;
@@ -126,6 +128,10 @@ public class DroidsafeInfoTreeElementLabelProvider extends StyledCellLabelProvid
       cell.setStyleRanges(styledString.getStyleRanges());
       cell.setImage(getImage(element));
       super.update(cell);
+    }
+
+    public void setLongLabel(boolean longLabel) {
+        this.longLabel = longLabel;
     }
 
 }

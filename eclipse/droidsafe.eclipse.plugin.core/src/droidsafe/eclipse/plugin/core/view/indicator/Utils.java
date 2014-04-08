@@ -201,8 +201,13 @@ public class Utils {
         buf.append("]");
         return buf.toString();
     }
-
+    
     public static int compareField(JsonObject jsonObj1, JsonObject jsonObj2, String field) {
+        if (SIGNATURE_FIELDS.contains(field)) {
+            String val1 = getSignatureFieldValueAsString(jsonObj1, field);
+            String val2 = getSignatureFieldValueAsString(jsonObj2, field);
+            return val1.compareTo(val2);
+        }
         JsonElement val1 = jsonObj1.get(field);
         JsonElement val2 = jsonObj2.get(field);
         if (val1 != null && val2 != null) {

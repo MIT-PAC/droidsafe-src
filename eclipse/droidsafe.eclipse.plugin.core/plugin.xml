@@ -139,6 +139,15 @@
             id="droidsafe.eclipse.plugin.core.commands.SetFilters"
             name="Set Filters">
       </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.LongLabel"
+            id="droidsafe.eclipse.plugin.core.commands.LongLabel"
+            name="Long Label">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:false"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -501,7 +510,16 @@
                style="push">
          </command>
          <menu
-               label="Label Display">
+               label="Label">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.LongLabel"
+                  label="Use Long Label"
+                  style="toggle">
+            </command>
+            <separator
+                  name="droidsafe.eclipse.plugin.core.separator"
+                  visible="true">
+            </separator>
             <dynamic
                   class="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu"
                   id="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu">

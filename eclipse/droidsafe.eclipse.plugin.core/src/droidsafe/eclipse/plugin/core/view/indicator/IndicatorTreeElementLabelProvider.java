@@ -49,7 +49,11 @@ public class IndicatorTreeElementLabelProvider extends DroidsafeInfoTreeElementL
                 JsonObject jsonObj = (JsonObject) data;
                 String sig = Utils.getFieldValueAsString(jsonObj, "signature");
                 if (sig != null) {
-                    String label = DroidsafePluginUtilities.removeCloneSuffix(Utils.shortSignature(sig));
+                    if (longLabel)
+                        sig = sig.substring(1, sig.length() - 1);
+                    else
+                        sig = Utils.shortSignature(sig);
+                    String label = DroidsafePluginUtilities.removeCloneSuffix(sig);
                     for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
                         String field = entry.getKey();
                         if (viewPart.getDisplay(field))
