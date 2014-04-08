@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 
 import android.content.ComponentCallbacks2;
 import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -461,7 +462,13 @@ public final void attach(
 final String getClassName() {
         return mClassName;
     }
-    
+
+    @DSSafe
+    public void droidSafeOnBind(Intent intent, ServiceConnection connection) {
+        IBinder binder = this.onBind(intent);
+        connection.onServiceConnected(new ComponentName(this, mClassName), binder);        
+    }
+
     /**
      * callback hook for subservices
      */

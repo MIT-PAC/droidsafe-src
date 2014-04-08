@@ -3,6 +3,7 @@ package android.os;
 // Droidsafe Imports
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
+import droidsafe.concrete.*;
 import droidsafe.annotations.*;
 
 public final class Messenger implements Parcelable {
@@ -10,6 +11,9 @@ public final class Messenger implements Parcelable {
     /** Addded by droidsafe */
     private Handler mHandler;
     private IBinder mIBinder;
+
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.400 -0500", hash_original_field = "ED133AFC551B364C3AF2BBDA21A22AA7", hash_generated_field = "F9905056B1A64DB2AA90D47CBD792D5B")
+    private  IMessenger mTarget;
 
     /**
      * Convenience function for writing either a Messenger or null pointer to
@@ -62,9 +66,8 @@ public Messenger[] newArray(int size) {
             return new Messenger[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.400 -0500", hash_original_field = "ED133AFC551B364C3AF2BBDA21A22AA7", hash_generated_field = "F9905056B1A64DB2AA90D47CBD792D5B")
 
-    private  IMessenger mTarget;
+
 
     /**
      * Create a new Messenger pointing to the given Handler.  Any Message
@@ -81,6 +84,7 @@ public Messenger[] newArray(int size) {
 public Messenger(Handler target) {
         mTarget = target.getIMessenger();
         mHandler = target;
+        mIBinder = new DroidSafeBinder(this);
     }
     
     /**
@@ -114,6 +118,9 @@ public Messenger(IBinder target) {
     
 public void send(Message message) throws RemoteException {
         mTarget.send(message);
+        //droidsafe message delivery
+        if (mIBinder instanceof DroidSafeBinder)
+            ((DroidSafeBinder)mIBinder).getMessenger().mHandler.handleMessage(message);
     }
     
     /**
@@ -128,7 +135,7 @@ public void send(Message message) throws RemoteException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.407 -0500", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "CF424504EFFD31AD8ED006BBB939C76F")
     
 public IBinder getBinder() {
-        return mTarget.asBinder();
+        return mIBinder;
     }
     
     /**

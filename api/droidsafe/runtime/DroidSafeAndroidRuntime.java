@@ -40,16 +40,6 @@ public class DroidSafeAndroidRuntime {
     public static Application mApplication;
     
     /**
-     * This method will be called automatically by the droidsafe harness class before all
-     * application code.
-     * 	
-     * @param args
-     */
-    public static void main() {
-
-    }
-
-    /**
      * create any associated state and call init methods on an activity
      * 
      * call any life cycle events for the activity
