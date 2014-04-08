@@ -234,7 +234,7 @@ public class SearchDialog extends Dialog {
         this.searchString = searchString;
         this.searchResult = new ArrayList<Object>();
         this.searchIndex = 0;
-        for (Object rootElement: contentProvider.getRootElements()) {
+        for (Object rootElement: contentProvider.getSortedRootElements()) {
             computeSearchResult(rootElement);
         }
     }
@@ -244,7 +244,7 @@ public class SearchDialog extends Dialog {
         if (StringUtils.containsIgnoreCase(label, searchString)) {
             this.searchResult.add(element);
         }
-        for (Object child: contentProvider.getChildren(element)) {
+        for (Object child: contentProvider.getSortedChildren(element)) {
             computeSearchResult(child);
         }
     }

@@ -2,12 +2,14 @@ package droidsafe.eclipse.plugin.core.view;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.speclang.model.IModelChangeSupport;
@@ -32,6 +34,12 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
             new HashMap<Object, TreeElement<?, ?>>();
 
     public Object[] getRootElements() {
+        return rootElements;
+    }
+    
+    public Object[] getSortedRootElements() {
+        if (rootElements != null)
+            sort(rootElements);
         return rootElements;
     }
     
@@ -69,6 +77,17 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
           return NO_CHILDREN;
     }
 
+    public Object[] getSortedChildren(Object parent) {
+        Object[] children = getChildren(parent);
+        sort(children);
+        return children;
+    }
+
+    public void sort(Object[] elements) {
+        ViewerComparator comparator = fViewer.getComparator();
+        comparator.sort(fViewer, elements);
+    }
+
     @Override
     public boolean hasChildren(Object parent) {
         if (parent instanceof TreeElement<?, ?>) {
@@ -77,7 +96,7 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
         }
         return false;
     }
-
+    
     /**
      * Changes in the model will trigger updates of the tree view. We assume the source of the event
      * is a TreeElement object, so we can call update diretcly on the element.
