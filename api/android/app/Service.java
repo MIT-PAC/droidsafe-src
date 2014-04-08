@@ -467,6 +467,7 @@ final String getClassName() {
     public void droidSafeOnBind(Intent intent, ServiceConnection connection) {
         IBinder binder = this.onBind(intent);
         this.onUnbind(intent);
+        this.onRebind(intent);
         connection.onServiceConnected(intent.getComponent(), binder);
         connection.onServiceDisconnected(intent.getComponent());
     }
