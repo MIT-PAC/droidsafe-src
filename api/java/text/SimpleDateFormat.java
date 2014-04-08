@@ -988,8 +988,14 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
     
 @Override
     public Date parse(String string, ParsePosition position) {
+        
+        Date date = new Date();
+        date.addTaint(string.getTaint());
+        date.addTaint(position.getTaint());
+        date.addTaint(getTaint());
+        return date;
         // Harmony delegates to ICU's SimpleDateFormat, we implement it directly
-        boolean quote = false;
+       /* boolean quote = false;
         int next, last = -1, count = 0, offset = position.getIndex();
         int length = string.length();
         calendar.clear();
@@ -1057,6 +1063,7 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
         position.setIndex(offset);
         calendar.setTimeZone(zone);
         return date;
+*/
     }
 
     @DSComment("Private Method")

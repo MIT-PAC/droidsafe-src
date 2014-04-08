@@ -107,7 +107,7 @@ protected FilterInputStream(InputStream in) {
     
 @Override
     public int read() throws IOException {
-        return in.read();
+        return in.droidsafeRead();
     }
 
     /**

@@ -1984,7 +1984,12 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
     
 private Object readObject(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
-        boolean restoreInput = (primitiveData == input);
+        Object obj = new Object();
+        obj.addTaint(taint);
+        obj.addTaint(unshared);
+        return obj;
+        
+    /*    boolean restoreInput = (primitiveData == input);
         if (restoreInput) {
             primitiveData = emptyStream;
         }
@@ -2038,7 +2043,7 @@ private Object readObject(boolean unshared) throws OptionalDataException,
                 validations = null;
             }
         }
-        return result;
+        return result;*/
     }
 
     /**

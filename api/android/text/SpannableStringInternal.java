@@ -49,32 +49,10 @@ private static String region(int start, int end) {
     
 SpannableStringInternal(CharSequence source,
                                           int start, int end) {
-        if (start == 0 && end == source.length())
-            mText = source.toString();
-        else
-            mText = source.toString().substring(start, end);
-
-        int initial = ArrayUtils.idealIntArraySize(0);
-        mSpans = new Object[initial];
-        mSpanData = new int[initial * 3];
-
-        if (source instanceof Spanned) {
-            Spanned sp = (Spanned) source;
-            Object[] spans = sp.getSpans(start, end, Object.class);
-
-            for (int i = 0; i < spans.length; i++) {
-                int st = sp.getSpanStart(spans[i]);
-                int en = sp.getSpanEnd(spans[i]);
-                int fl = sp.getSpanFlags(spans[i]);
-
-                if (st < start)
-                    st = start;
-                if (en > end)
-                    en = end;
-
-                setSpan(spans[i], st - start, en - start, fl);
-            }
-        }
+        
+        mText = new String();
+        mText.addTaint(source.getTaint());
+        mText.addTaint(start + end);
     }
 
     @DSComment("From safe class list")
@@ -96,7 +74,7 @@ public final char charAt(int i) {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final String toString() {
-        return new String();
+        return new String(mText);
     }
 
     /* subclasses must do subSequence() to preserve type */
@@ -115,7 +93,8 @@ public final void getChars(int start, int end, char[] dest, int off) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.082 -0500", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "7B198AB61B6B726FF2E2996AF3FF95CD")
     
 void setSpan(Object what, int start, int end, int flags) {
-        int nstart = start;
+        mText.addTaint(what.getTaintInt() + end + flags);
+        /*int nstart = start;
         int nend = end;
 
         checkRange("setSpan", start, end);
@@ -177,7 +156,7 @@ void setSpan(Object what, int start, int end, int flags) {
         mSpanCount++;
 
         if (this instanceof Spannable)
-            sendSpanAdded(what, nstart, nend);
+            sendSpanAdded(what, nstart, nend);*/
     }
 
     /* package */ @DSComment("Package priviledge")
@@ -185,7 +164,7 @@ void setSpan(Object what, int start, int end, int flags) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.085 -0500", hash_original_method = "03C5B870069E116AF35881F1682BF48B", hash_generated_method = "03C5B870069E116AF35881F1682BF48B")
     
 void removeSpan(Object what) {
-        int count = mSpanCount;
+       /* int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
 
@@ -205,7 +184,7 @@ void removeSpan(Object what) {
                 sendSpanRemoved(what, ostart, oend);
                 return;
             }
-        }
+        }*/
     }
 
     @DSComment("From safe class list")
@@ -214,7 +193,7 @@ void removeSpan(Object what) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.088 -0500", hash_original_method = "2C34546685C4DD853C66A09CEFBD0C65", hash_generated_method = "49A5A83F9D601DCC21A804366460C069")
     
 public int getSpanStart(Object what) {
-        int count = mSpanCount;
+      /*  int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
 
@@ -224,7 +203,8 @@ public int getSpanStart(Object what) {
             }
         }
 
-        return -1;
+        return -1;*/
+        return (mText.getTaintInt() + what.getTaintInt());
     }
 
     @DSComment("From safe class list")
@@ -233,7 +213,7 @@ public int getSpanStart(Object what) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.091 -0500", hash_original_method = "D299E1841C6A6AC66FA9181AA7F112ED", hash_generated_method = "5F80416C7EB9B0125A02073DF204AAD9")
     
 public int getSpanEnd(Object what) {
-        int count = mSpanCount;
+   /*     int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
 
@@ -243,7 +223,9 @@ public int getSpanEnd(Object what) {
             }
         }
 
-        return -1;
+        return -1;*/
+
+        return (mText.getTaintInt() + what.getTaintInt());
     }
 
     @DSComment("From safe class list")
@@ -252,7 +234,7 @@ public int getSpanEnd(Object what) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.093 -0500", hash_original_method = "0BC2A6452DDDFB33D1E74093A43A22EC", hash_generated_method = "6EB8AB2A3F9A018CE5A37968A4FC11D4")
     
 public int getSpanFlags(Object what) {
-        int count = mSpanCount;
+/*        int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
 
@@ -262,7 +244,8 @@ public int getSpanFlags(Object what) {
             }
         }
 
-        return 0; 
+        return 0;*/ 
+        return (mText.getTaintInt() + what.getTaintInt());
     }
     
     @DSComment("From safe class list")
@@ -270,7 +253,14 @@ public int getSpanFlags(Object what) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.792 -0400", hash_original_method = "A79E5C3938B902091EA5DB757C342E2D", hash_generated_method = "8B11A1D83B40723E850120BF22A1B3F9")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
-        addTaint(kind.getTaint());
+        
+        
+        Object[] spans = new Object[1];
+        spans[0].addTaint(queryStart + queryEnd + kind.getTaintInt() + mText.getTaintInt());
+        
+        return (T[])spans;
+        
+       /* addTaint(kind.getTaint());
         addTaint(queryEnd);
         addTaint(queryStart);
         int count = 0;
@@ -367,14 +357,14 @@ T[] varC2D15B14AC552DB2CA74824AA0037754_1920914000 =         (T[]) nret;
         return varC2D15B14AC552DB2CA74824AA0037754_1920914000;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
-    }
+*/    }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.100 -0500", hash_original_method = "AE7B5CCE37B25ED0DAD474C110343705", hash_generated_method = "B15379486045DF44417ECB33E33EDC55")
     
 public int nextSpanTransition(int start, int limit, Class kind) {
-        int count = mSpanCount;
+        /*int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
 
@@ -392,7 +382,8 @@ public int nextSpanTransition(int start, int limit, Class kind) {
                 limit = en;
         }
 
-        return limit;
+        return limit;*/
+        return (start + limit + kind.getTaintInt() + mText.getTaintInt());
     }
 
     @DSComment("Private Method")

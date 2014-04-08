@@ -139,6 +139,15 @@ public boolean markSupported() {
 public abstract int read() throws IOException;
 
     /**
+     * This method provides a stub for reading.  To reduce complexity of read
+     * subclasses should call this when overriding
+     * @return
+     */
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public int droidsafeRead() {
+        return getTaintInt();
+    }
+    /**
      * Equivalent to {@code read(buffer, 0, buffer.length)}.
      */
     @DSComment("Activity on IO class")
