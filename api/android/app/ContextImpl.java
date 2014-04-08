@@ -730,12 +730,12 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ComponentName startService(Intent service) {
-        throw new UnsupportedOperationException();
+        return service.getComponent();
     }
     
     @Override
     public boolean stopService(Intent service) {
-        throw new UnsupportedOperationException();
+        return true;
     }
     
     ComponentName serviceCompName = null; 
