@@ -1,4 +1,4 @@
-package droidsafe.transforms;
+package droidsafe.transforms.va;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
@@ -16,6 +16,7 @@ import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -28,6 +29,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.pta.IAllocNode;
+import soot.ArrayType;
 import soot.Local;
 import soot.RefType;
 import soot.Scene;
@@ -50,15 +52,15 @@ class StartActivityTransform implements VATransform {
     private Set<String> sigsOfInvokesToTransform;
 
     Set<Stmt> modified = new HashSet<Stmt>();
-    
+
     Set<SootField> allHarnessActivityFlds = new HashSet<SootField>();
 
     public StartActivityTransform() {
         //get all activities
-        
+
     }
 
-    
+
     @Override
 
     public void tranformsInvoke(SootMethod containingMthd, SootMethod callee, InvokeExpr invoke, Stmt stmt, Body body) { 
@@ -76,7 +78,19 @@ class StartActivityTransform implements VATransform {
 
         Value intentArg = invoke.getArg(0);
 
-        Set<? extends IAllocNode> intentNodes = PTABridge.v().getPTSetIns(intentArg);
+        Set<IAllocNode> intentNodes;
+        
+        if (intentArg.getType() instanceof RefType) 
+            intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
+        else if (intentArg.getType() instanceof ArrayType) {
+            //array argument for startActivities
+            intentNodes = new LinkedHashSet<IAllocNode>();
+            for (IAllocNode array : PTABridge.v().getPTSetIns(intentArg)) {
+                intentNodes.addAll((Set<IAllocNode>)PTABridge.v().getPTSetOfArrayElement(array));
+            }
+        } else
+            return;
+            
 
         for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(intentNodes)) {
             logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
@@ -89,7 +103,7 @@ class StartActivityTransform implements VATransform {
             //set field of activity to local [local = harness.activityfield]
             //set local to field
             Stmt localAssign = Jimple.v().newAssignStmt
-                (local, Jimple.v().newStaticFieldRef(activityField.makeRef()));
+                    (local, Jimple.v().newStaticFieldRef(activityField.makeRef()));
             body.getUnits().insertBefore(localAssign, stmt);
 
             //call setActivity on local with local arg from start activity
@@ -97,7 +111,7 @@ class StartActivityTransform implements VATransform {
             //this will work for both startActivity and startActivityForResult
             args.add(intentArg);
             Stmt setIntentCall = 
-                Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                    Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
                         (local, setIntentMethod.makeRef(), args));
 
             body.getUnits().insertAfter(setIntentCall, localAssign);
@@ -116,9 +130,23 @@ class StartActivityTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityForResult(android.content.Intent,int,android.os.Bundle)>");
             sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int)>");
             sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)>");
+
+            sigsOfInvokesToTransform.add("<android.content.Context: void startActivity(android.content.Intent)>");
+            sigsOfInvokesToTransform.add("<android.app.Service: void startActivity(android.content.Intent)>");
+            sigsOfInvokesToTransform.add("<android.app.Application: void startActivity(android.content.Intent)>");
+
+            sigsOfInvokesToTransform.add( "<android.app.Fragment: void startActivity(android.content.Intent)>");
+            sigsOfInvokesToTransform.add("<android.app.Fragment: void startActivityForResult(android.content.Intent,int)>");
+            sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void startActivity(android.content.Intent)>");
+
+            sigsOfInvokesToTransform.add( "<android.app.Activity: void startActivities(android.content.Intent[])>");
+            sigsOfInvokesToTransform.add( "<android.content.Context: void startActivities(android.content.Intent[])>");
+            sigsOfInvokesToTransform.add( "<android.content.ContextWrapper: void startActivities(android.content.Intent[])>");
+
+
         }
         return sigsOfInvokesToTransform;
     }
 
-  
+
 }

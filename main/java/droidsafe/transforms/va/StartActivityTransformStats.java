@@ -1,6 +1,7 @@
-package droidsafe.transforms;
+package droidsafe.transforms.va;
 
 import au.com.bytecode.opencsv.CSVWriter;
+import droidsafe.analyses.value.IntentType;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.RefVAModel;
 import droidsafe.analyses.value.ValueAnalysis;

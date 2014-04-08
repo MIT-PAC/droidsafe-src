@@ -18,7 +18,6 @@ import droidsafe.analyses.value.primitives.ClassVAModel;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
-import droidsafe.transforms.IntentType;
 import droidsafe.transforms.objsensclone.ClassCloner;
 
 public class IntentUtils {

@@ -1,4 +1,4 @@
-package droidsafe.transforms;
+package droidsafe.transforms.va;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.utils.CannotFindMethodException;

@@ -1,4 +1,4 @@
-package droidsafe.transforms;
+package droidsafe.transforms.va;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -96,6 +96,9 @@ public class ServiceBindTransform implements VATransform {
             
             //insert the statement
             body.getUnits().insertAfter(call, localAssign);
+            
+            //delete the original bindService call
+            body.getUnits().remove(stmt);
         }
     }
 
