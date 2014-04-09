@@ -81,6 +81,9 @@ public class CatchBlocks {
     /** debugging flag that only processes specified classes/methods **/
     private boolean filter_source = false;
     
+    /** just ignore duplicate methods rather than merging call chains **/
+    private boolean ignore_dup_methods = false;
+    
     /** Map from unit to line number **/
     private HashMap<Unit,Integer> lnums = null;
     
@@ -113,7 +116,7 @@ public class CatchBlocks {
     }
     
     /** information about each call in the call chain **/
-    static class CallChainInfo {
+    static class CallChainInfo implements Comparable<CallChainInfo>{
     	String type;
     	SootMethod method;
     	Stmt stmt;
@@ -128,6 +131,59 @@ public class CatchBlocks {
     		calls = 1;
     		if (type.equals ("syscall"))
     			syscalls = 1;
+    	}
+    	/** merge multiple call chains from different contexts **/
+    	public void merge (CallChainInfo other) {
+    	   if (method != other.method) 
+    	       throw new RuntimeException ("methods don't match: " 
+    	               + method + ", " + other.method + " " + method.equals(other.method)
+    	               + " " + method.hashCode() + " " + other.method.hashCode());
+    	   if (contents.length == 0) {
+    	       contents = other.contents;
+    	       return;
+    	   } else if (other.contents.length == 0) {
+    	       return;
+    	   }
+    	   List<CallChainInfo> ccis = new ArrayList<CallChainInfo>(Arrays.asList(contents));
+    	   Map<SootMethod,CallChainInfo> minfo = new HashMap<SootMethod,CallChainInfo>();
+    	   for (CallChainInfo cci : contents) 
+    	       minfo.put(cci.method, cci);
+    	   for (CallChainInfo other_cci : other.contents) {
+    	       CallChainInfo cci = minfo.get(other_cci.method);
+    	       if (cci == null)
+    	           ccis.add(other_cci);
+    	       else
+    	           cci.merge (other_cci);
+    	   }
+    	   if (contents.length == ccis.size())
+    	       logger.info ("merge: {} old/new size = {}", method, ccis.size());
+    	   else
+    	       logger.info ("merge: {} orig {} elems, new {} elems", method, 
+    	               contents.length, ccis.size());
+    	   contents = ccis.toArray (new CallChainInfo[0]);
+    	}
+    	/** merge any duplicate method calls **/
+    	public void merge_contents() {
+    	    if (contents.length == 0)
+    	        return;
+    	    Arrays.sort (contents);
+    	    List<CallChainInfo> unique_calls = new ArrayList<CallChainInfo>();
+    	    unique_calls.add (contents[0]);
+    	    for (int ii = 1; ii < contents.length; ii++) {
+    	        CallChainInfo top = unique_calls.get(unique_calls.size()-1);
+    	        if (contents[ii].method == top.method)
+    	            top.merge (contents[ii]);
+    	        else
+    	            unique_calls.add(contents[ii]);
+    	    }
+    	    logger.info ("merge_contents {}: old {} elems, new {} elems", 
+    	            method, contents.length, unique_calls.size());
+            contents = unique_calls.toArray(new CallChainInfo[0]);
+    	}
+    	
+    	/** order by signature **/
+    	public int compareTo (CallChainInfo other) {
+    	    return method.getSignature().compareTo(other.method.getSignature());
     	}
     	public void calculate_scores() {
     	    score = 0;
@@ -333,6 +389,7 @@ public class CatchBlocks {
 
     	CallChainInfo cci = new CallChainInfo (method, (Stmt)start, "cblock");
     	List<CallChainInfo> ccis = new ArrayList<CallChainInfo>();
+    	Set<SootMethod> processed_methods = new HashSet<SootMethod>();
     	
     	for (Unit u = start; u != end; u = insts.getSuccOf(u)) {
     		Stmt s = (Stmt)u;
@@ -361,13 +418,24 @@ public class CatchBlocks {
     				} else {
     					CallChainInfo dcall = process_call_chain (mc, s, stack);
     					dcall.type = "direct-call";
-    					ccis.add(dcall);
+    					if (ignore_dup_methods) {
+    					    if (!processed_methods.contains (mc.method())) {
+    					        ccis.add(dcall);
+    					        processed_methods.add(mc.method());
+    					    }
+    					} else {
+    					    ccis.add(dcall);
+    					}
     				}
     			}
     		}
  
     	}
     	cci.contents = ccis.toArray(cci.contents);
+    	if (ignore_dup_methods)
+    	    Arrays.sort(cci.contents);
+    	else
+    	    cci.merge_contents();
 		return cci;
     }
     
@@ -389,12 +457,20 @@ public class CatchBlocks {
     		return new CallChainInfo (mc.method(), s, "syscall");
     	
     	CallChainInfo cci = new CallChainInfo (mc.method(), s, "call-chain");
-    	ArrayList<CallChainInfo> calls = new ArrayList<CallChainInfo>();
         CallGraph cg = PTABridge.v().getCallGraph();
         
+        Set<SootMethod> processed_methods = new HashSet<SootMethod>();
+        List<CallChainInfo> calls = new ArrayList<CallChainInfo>();
         for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
             Edge e = tit.next();
             SootMethod m = e.getTgt().method();
+            if (ignore_dup_methods) {
+                if (processed_methods.contains(m)) {
+                    logger.info ("pcc: method {}, duplicate callee {}", mc.method(), m);
+                    continue;
+                }
+                processed_methods.add (m);
+            }
             boolean print_m = !(is_system(mc.method()) && is_system (m));
             if (m.toString().contains ("<clinit>")) {
                 continue;
@@ -405,13 +481,26 @@ public class CatchBlocks {
             	CallChainInfo callee = process_call_chain (e.getTgt(), e.srcStmt(), stack);
             	stack.pop();
             	if (print_m) {
-            		calls.add (callee);
+            	    calls.add (callee);
             	} else { // skip callee and just add what it calls
-            		calls.addAll (Arrays.asList(callee.contents));
+            	    if (ignore_dup_methods) {
+            	        for (CallChainInfo callee_call : callee.contents) {
+            	            if (!processed_methods.contains (callee_call.method)) {
+            	                calls.add (callee_call);
+            	                processed_methods.add(callee_call.method);
+            	            }
+            	        }
+            	    } else {
+            	        calls.addAll (Arrays.asList(callee.contents));
+            	    }
             	}
             }
         }
         cci.contents = calls.toArray(cci.contents);
+        if (ignore_dup_methods)
+            Arrays.sort(cci.contents);
+        else
+            cci.merge_contents();
         return cci;
     }
     
