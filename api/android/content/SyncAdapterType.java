@@ -209,7 +209,9 @@ public boolean equals(Object o) {
         if (!(o instanceof SyncAdapterType)) return false;
         final SyncAdapterType other = (SyncAdapterType)o;
         // don't include userVisible or supportsUploading in the equality check
-        return authority.equals(other.authority) && accountType.equals(other.accountType);
+        //return authority.equals(other.authority) && accountType.equals(other.accountType);
+        return toTaintBoolean(toTaintInt(authority.equals(other.authority))  +
+                              toTaintInt(accountType.equals(other.accountType)));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.520 -0500", hash_original_method = "16D7E959FAC6345A599199AFC4EA50EB", hash_generated_method = "FD796F4389853C23CBCF318ECE7050C7")

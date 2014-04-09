@@ -59,7 +59,8 @@ private static int compareStrings(String... values) {
 
             int comp = values[index].compareTo(values[index+1]);
             if (comp != 0) {
-                return comp < 0 ? -1 : 1;
+                //return comp < 0 ? -1 : 1;
+                return (comp + values[0].length()); //values has taint too
             }
         }
 

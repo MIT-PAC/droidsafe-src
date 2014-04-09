@@ -45,8 +45,20 @@ public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
     
+    /*
+     * TODO: We need to model message passing within looper
+     */
     public static void loop() {
-        Looper me = myLooper();
+        
+/*        Looper me = myLooper();
+        
+        //Not sure this is suficient
+        MessageQueue queue = me.mQueue;
+        Message msg = queue.next(); 
+        msg.target.dispatchMessage(msg);*/
+        
+        
+        /*
         if (me == null) {
             throw new RuntimeException("No Looper; Looper.prepare() wasn't called on this thread.");
         }
@@ -57,6 +69,7 @@ public synchronized static Looper getMainLooper() {
         msg.target.dispatchMessage(msg);
         long newIdent = Binder.clearCallingIdentity();
             msg.recycle();
+      */
     }
     
     @DSComment("General android operation, no security concern")
@@ -106,7 +119,8 @@ public static MessageQueue myQueue() {
 private Looper() {
         mQueue = new MessageQueue();
         mRun = true;
-        mThread = Thread.currentThread();
+        //mThread = Thread.currentThread();
+        mThread = new Thread();
     }
 
     /**
@@ -163,6 +177,8 @@ public MessageQueue getQueue() {
     }
     
     public void dump(Printer pw, String prefix){
+        pw.addTaint(taint);
+        pw.addTaint(prefix.getTaint());
     }
     
     public String toString(){

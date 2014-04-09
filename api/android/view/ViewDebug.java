@@ -475,7 +475,7 @@ private static void requestLayout(View root, String parameter) {
         if (view != null) {
             root.post(new Runnable() {
                 public void run() {
-                    view.requestLayout();
+                    //view.requestLayout();
                 }
             });
         }
@@ -778,7 +778,7 @@ private static Bitmap performViewCapture(final View captureView, final boolean s
 
             captureView.post(new Runnable() {
                 public void run() {
-                    try {
+                    /*try {
                         cache[0] = captureView.createSnapshot(
                                 Bitmap.Config.ARGB_8888, 0, skpiChildren);
                     } catch (OutOfMemoryError e) {
@@ -786,6 +786,7 @@ private static Bitmap performViewCapture(final View captureView, final boolean s
                     } finally {
                         latch.countDown();
                     }
+                    */
                 }
             });
 
@@ -1793,7 +1794,7 @@ void save() {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    saveTraces();
+                    //saveTraces();
                 }
             }, "LooperProfiler[" + mPath + "]").start();
         }

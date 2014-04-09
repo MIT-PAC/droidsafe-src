@@ -51,11 +51,7 @@ public void close() throws IOException {
 public int read() throws IOException {
         byte b[] = new byte[1];
         int ret = mSocket.read(b, 0, 1);
-        if (ret == 1) {
-            return (int)b[0] & 0xff;
-        } else {
-            return -1;
-        }
+        return (ret + b[0]);
     }
 
     /**

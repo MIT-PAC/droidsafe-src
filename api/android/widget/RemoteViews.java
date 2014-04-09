@@ -1105,12 +1105,14 @@ public void writeToParcel(Parcel dest, int flags) {
                         v.getLocationOnScreen(pos);
 
                         final Rect rect = new Rect();
-                        rect.left = (int) (pos[0] * appScale + 0.5f);
+                        rect.addTaint(pos[0] + pos[1] + appScale + v.getWidth() + v.getHeight());
+            
+                        /*           rect.left = (int) (pos[0] * appScale + 0.5f);
                         rect.top = (int) (pos[1] * appScale + 0.5f);
                         rect.right = (int) ((pos[0] + v.getWidth()) * appScale + 0.5f);
                         rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);
 
-                        fillInIntent.setSourceBounds(rect);
+*/                        fillInIntent.setSourceBounds(rect);
                         startIntentSafely(v.getContext(), pendingIntent, fillInIntent);
                     }
 
@@ -1140,10 +1142,13 @@ public void writeToParcel(Parcel dest, int flags) {
                         final int[] pos = new int[2];
                         v.getLocationOnScreen(pos);
                         final Rect rect = new Rect();
+                        rect.addTaint(pos[0] + pos[1] + appScale + v.getWidth() + v.getHeight());
+/*
                         rect.left = (int) (pos[0] * appScale + 0.5f);
                         rect.top = (int) (pos[1] * appScale + 0.5f);
                         rect.right = (int) ((pos[0] + v.getWidth()) * appScale + 0.5f);
                         rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);
+*/
                         fillInIntent.setSourceBounds(rect);
                         startIntentSafely(v.getContext(), pendingIntent, fillInIntent);
                     }
@@ -1225,11 +1230,12 @@ public void writeToParcel(Parcel dest, int flags) {
                             view.getLocationOnScreen(pos);
 
                             final Rect rect = new Rect();
-                            rect.left = (int) (pos[0] * appScale + 0.5f);
+                            rect.addTaint(pos[0] + pos[1] + appScale + view.getWidth() + view.getHeight());
+                       /*     rect.left = (int) (pos[0] * appScale + 0.5f);
                             rect.top = (int) (pos[1] * appScale + 0.5f);
                             rect.right = (int) ((pos[0] + view.getWidth()) * appScale + 0.5f);
                             rect.bottom = (int) ((pos[1] + view.getHeight()) * appScale + 0.5f);
-
+*/
                             final Intent intent = new Intent();
                             intent.setSourceBounds(rect);
                             startIntentSafely(view.getContext(), pendingIntentTemplate, fillInIntent);
@@ -1268,11 +1274,13 @@ public void writeToParcel(Parcel dest, int flags) {
                             final int[] pos = new int[2];
                             view.getLocationOnScreen(pos);
                             final Rect rect = new Rect();
-                            rect.left = (int) (pos[0] * appScale + 0.5f);
+
+                            rect.addTaint(pos[0] + pos[1] + appScale + view.getWidth() + view.getHeight());
+          /*                  rect.left = (int) (pos[0] * appScale + 0.5f);
                             rect.top = (int) (pos[1] * appScale + 0.5f);
                             rect.right = (int) ((pos[0] + view.getWidth()) * appScale + 0.5f);
                             rect.bottom = (int) ((pos[1] + view.getHeight()) * appScale + 0.5f);
-                            final Intent intent = new Intent();
+        */                    final Intent intent = new Intent();
                             intent.setSourceBounds(rect);
                             startIntentSafely(view.getContext(), pendingIntentTemplate, fillInIntent);
                         }
@@ -1406,12 +1414,15 @@ public void writeToParcel(Parcel dest, int flags) {
                         v.getLocationOnScreen(pos);
 
                         final Rect rect = new Rect();
-                        rect.left = (int) (pos[0] * appScale + 0.5f);
+                        
+                        rect.addTaint(pos[0] + pos[1] + appScale + v.getWidth() + v.getHeight());
+
+/*                        rect.left = (int) (pos[0] * appScale + 0.5f);
                         rect.top = (int) (pos[1] * appScale + 0.5f);
                         rect.right = (int) ((pos[0] + v.getWidth()) * appScale + 0.5f);
                         rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);
 
-                        final Intent intent = new Intent();
+ */                       final Intent intent = new Intent();
                         intent.setSourceBounds(rect);
                         startIntentSafely(v.getContext(), pendingIntent, intent);
                     }
@@ -1426,10 +1437,11 @@ public void writeToParcel(Parcel dest, int flags) {
                         final int[] pos = new int[2];
                         v.getLocationOnScreen(pos);
                         final Rect rect = new Rect();
-                        rect.left = (int) (pos[0] * appScale + 0.5f);
+                        rect.addTaint(pos[0] + pos[1] + appScale + v.getWidth() + v.getHeight());
+                      /*  rect.left = (int) (pos[0] * appScale + 0.5f);
                         rect.top = (int) (pos[1] * appScale + 0.5f);
                         rect.right = (int) ((pos[0] + v.getWidth()) * appScale + 0.5f);
-                        rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);
+                        rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);*/
                         final Intent intent = new Intent();
                         intent.setSourceBounds(rect);
                         startIntentSafely(v.getContext(), pendingIntent, intent);

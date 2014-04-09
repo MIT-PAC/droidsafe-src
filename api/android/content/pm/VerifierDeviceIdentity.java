@@ -228,7 +228,8 @@ private VerifierDeviceIdentity(Parcel source) {
         }
 
         final VerifierDeviceIdentity o = (VerifierDeviceIdentity) other;
-        return mIdentity == o.mIdentity;
+        return toTaintBoolean(getTaintInt() + o.getTaintInt() + 
+                              mIdentity +  o.mIdentity);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.286 -0500", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "08E30F2EC0373C28DD87D94073A647CC")

@@ -436,7 +436,7 @@ final void setIndex(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.006 -0500", hash_original_method = "B0D28796550366EF842F99A3D9D59C11", hash_generated_method = "D60291057198FF92ECFB3CAF33EB7BBB")
     
 final boolean isInBackStack() {
-        return mBackStackNesting > 0;
+        return toTaintBoolean(mBackStackNesting + getTaintInt()); 
     }
 
     /**
@@ -681,7 +681,7 @@ final public FragmentManager getFragmentManager() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.046 -0500", hash_original_method = "C0D74F5DDFD9A01C19E54F3379BA7652", hash_generated_method = "618EE3A321C4FFDE67749913AA58ADE8")
     
 final public boolean isAdded() {
-        return mActivity != null && mAdded;
+        return toTaintBoolean(toTaintInt(mAdded) + mActivity.getTaintInt());
     }
 
     /**
@@ -741,8 +741,11 @@ final public boolean isResumed() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.058 -0500", hash_original_method = "72982976B71B01DF2412198462460DF0", hash_generated_method = "3FC970F17DE45AAF7F1BC31C989BC4E0")
     
 final public boolean isVisible() {
+        /*
         return isAdded() && !isHidden() && mView != null
                 && mView.getWindowToken() != null && mView.getVisibility() == View.VISIBLE;
+        */
+        return toTaintBoolean(getTaintInt() + mView.getTaintInt());
     }
     
     /**
@@ -755,7 +758,8 @@ final public boolean isVisible() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.061 -0500", hash_original_method = "E04FD968639295CCE5F791161EDE4496", hash_generated_method = "95435B2E5A3E660232E391B2CA517F03")
     
 final public boolean isHidden() {
-        return mHidden;
+        //return mHidden;
+        return toTaintBoolean(getTaintInt() + toTaintInt(mHidden));
     }
     
     /**

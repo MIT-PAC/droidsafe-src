@@ -57,7 +57,7 @@ public static AssetManager getSystem() {
             outIndices[i] = outValues[i];
         }
 
-        return (outValues[0] > outIndices[0]);
+        return toTaintBoolean(outValues[0] + outIndices[0]);
     }
     
     public static final int getGlobalAssetCount() {

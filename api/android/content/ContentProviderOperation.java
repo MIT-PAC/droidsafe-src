@@ -236,13 +236,14 @@ public int getType() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.140 -0500", hash_original_method = "94452D9A7E20FFB1CE97B24DC927192A", hash_generated_method = "E8336FA6E03BBC6F6A64980723FF7046")
     
 public boolean isWriteOperation() {
-        return mType == TYPE_DELETE || mType == TYPE_INSERT || mType == TYPE_UPDATE;
+        return toTaintBoolean(mType);
+        //return mType == TYPE_DELETE || mType == TYPE_INSERT || mType == TYPE_UPDATE;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.142 -0500", hash_original_method = "BBB0424C7EB706D24B64E8DBE01BF66B", hash_generated_method = "0EAAFFB0E8BF0C7108D52276EEB9E86C")
     
 public boolean isReadOperation() {
-        return mType == TYPE_ASSERT;
+        return toTaintBoolean(mType + TYPE_ASSERT);
     }
     
     public static class Builder {

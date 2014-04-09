@@ -39,7 +39,8 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.488 -0500", hash_original_method = "C1EC99295C60E8CDF33A346200304D0A", hash_generated_method = "12670E839438D361F4B14561A2A8FD66")
     
 public static boolean needNewResources(int configChanges, int interestingChanges) {
-        return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
+        //return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
+        return toTaintBoolean(configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE));
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.303 -0500", hash_original_field = "5D73236DF3C2B1F3FA582709E51BE31B", hash_generated_field = "B346CDA4558DB20C72B6AF98D39CC438")
 
@@ -309,7 +310,7 @@ private Configuration(Parcel source) {
 public boolean isLayoutSizeAtLeast(int size) {
         int cur = screenLayout&SCREENLAYOUT_SIZE_MASK;
         if (cur == SCREENLAYOUT_SIZE_UNDEFINED) return false;
-        return cur >= size;
+        return toTaintBoolean(cur + size);
     }
     
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -464,7 +465,7 @@ public boolean isOtherSeqNewer(Configuration other) {
             // sequence has wrapped around.
             return false;
         }
-        return diff > 0;
+        return toTaintBoolean(diff);
     }
     
     /**
@@ -600,7 +601,8 @@ public int compareTo(Configuration that) {
 public boolean equals(Configuration that) {
         if (that == null) return false;
         if (that == this) return true;
-        return this.compareTo(that) == 0;
+        //return this.compareTo(that) == 0;
+        return toTaintBoolean(this.compareTo(that));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.516 -0500", hash_original_method = "EE31E2EDAF6F402A909910F793361153", hash_generated_method = "57B2634122888BCF4E17A8B21DDBC6B1")

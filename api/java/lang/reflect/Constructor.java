@@ -268,7 +268,7 @@ public Annotation[][] getParameterAnnotations() {
     
 public boolean isVarArgs() {
         int mods = Method.getMethodModifiers(declaringClass, slot);
-        return (mods & Modifier.VARARGS) != 0;
+        return toTaintBoolean((mods & Modifier.VARARGS) + 0);
     }
 
     /**
@@ -282,7 +282,7 @@ public boolean isVarArgs() {
     
 public boolean isSynthetic() {
         int mods = Method.getMethodModifiers(declaringClass, slot);
-        return (mods & Modifier.SYNTHETIC) != 0;
+        return toTaintBoolean((mods & Modifier.SYNTHETIC) + 0);
     }
 
     /**
@@ -303,7 +303,8 @@ public boolean isSynthetic() {
     
 @Override
     public boolean equals(Object object) {
-        return object instanceof Constructor && toString().equals(object.toString());
+        return super.equals(object);
+        //return object instanceof Constructor && toString().equals(object.toString());
     }
 
     /**

@@ -29,7 +29,7 @@ public final class SQLiteDebug {
     
 public static final boolean shouldLogSlowQuery(long elapsedTimeMillis) {
         int slowQueryMillis = SystemProperties.getInt("db.log.slow_query_threshold", -1);
-        return slowQueryMillis >= 0 && elapsedTimeMillis > slowQueryMillis;
+        return toTaintBoolean(slowQueryMillis + elapsedTimeMillis + slowQueryMillis);
     }
 
     /**

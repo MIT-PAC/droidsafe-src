@@ -42,6 +42,7 @@ static int majorAxisDistance(int direction, Rect source, Rect dest) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.119 -0500", hash_original_method = "ABB1C6898E503A151891B7A9ABFAD773", hash_generated_method = "9A2D243C90DD6E103172E274629951BB")
     
 static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
+        /*
         switch (direction) {
             case View.FOCUS_LEFT:
                 return source.left - dest.right;
@@ -52,8 +53,13 @@ static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
             case View.FOCUS_DOWN:
                 return dest.top - source.bottom;
         }
-        throw new IllegalArgumentException("direction must be one of "
+        */
+
+        if (DroidSafeAndroidRuntime.control) {
+            throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        }
+        return (direction + source.getTaintInt() + dest.getTaintInt());
     }
 
     /**
@@ -75,18 +81,12 @@ static int majorAxisDistanceToFarEdge(int direction, Rect source, Rect dest) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.124 -0500", hash_original_method = "AC771A545341D8B57AB42CBFAC5A4EC8", hash_generated_method = "18B58AC0903F0B603C49979735EDB163")
     
 static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
-        switch (direction) {
-            case View.FOCUS_LEFT:
-                return source.left - dest.left;
-            case View.FOCUS_RIGHT:
-                return dest.right - source.right;
-            case View.FOCUS_UP:
-                return source.top - dest.top;
-            case View.FOCUS_DOWN:
-                return dest.bottom - source.bottom;
-        }
-        throw new IllegalArgumentException("direction must be one of "
+
+        if (DroidSafeAndroidRuntime.control) {
+            throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        }
+        return (direction + source.getTaintInt() + dest.getTaintInt());        
     }
 
     /**
@@ -102,22 +102,10 @@ static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.127 -0500", hash_original_method = "05A50C3C0DAB95FFDE6EA8B241A55A35", hash_generated_method = "520632667D7E86F01831D49C034CAE08")
     
 static int minorAxisDistance(int direction, Rect source, Rect dest) {
-        switch (direction) {
-            case View.FOCUS_LEFT:
-            case View.FOCUS_RIGHT:
-                // the distance between the center verticals
-                return Math.abs(
-                        ((source.top + source.height() / 2) -
-                        ((dest.top + dest.height() / 2))));
-            case View.FOCUS_UP:
-            case View.FOCUS_DOWN:
-                // the distance between the center horizontals
-                return Math.abs(
-                        ((source.left + source.width() / 2) -
-                        ((dest.left + dest.width() / 2))));
-        }
-        throw new IllegalArgumentException("direction must be one of "
+        if (DroidSafeAndroidRuntime.control)
+            throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        return (direction + source.getTaintInt() + dest.getTaintInt());
     }
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.091 -0400", hash_original_field = "7690E1068C76C497BCB909EC68C2FD34", hash_generated_field = "8109D1296FDD65456C25811CCC70C8C4")
@@ -425,6 +413,7 @@ int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.109 -0500", hash_original_method = "10315B5B788523AD56571BFBE30F6A43", hash_generated_method = "10315B5B788523AD56571BFBE30F6A43")
     
 boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
+        /*
         switch (direction) {
             case View.FOCUS_LEFT:
                 return (srcRect.right > destRect.right || srcRect.left >= destRect.right) 
@@ -439,8 +428,12 @@ boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
                 return (srcRect.top < destRect.top || srcRect.bottom <= destRect.top)
                         && srcRect.bottom < destRect.bottom;
         }
-        throw new IllegalArgumentException("direction must be one of "
-                + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        */
+        if (DroidSafeAndroidRuntime.control)
+            throw new IllegalArgumentException("direction must be one of "
+                    + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+
+        return (toTaintBoolean(direction + srcRect.getTaintInt() + destRect.getTaintInt()));
     }
 
     /**
@@ -475,6 +468,7 @@ boolean beamsOverlap(int direction, Rect rect1, Rect rect2) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.114 -0500", hash_original_method = "0F816E844CC5CD74396FEF014D25737B", hash_generated_method = "0F816E844CC5CD74396FEF014D25737B")
     
 boolean isToDirectionOf(int direction, Rect src, Rect dest) {
+        /*
         switch (direction) {
             case View.FOCUS_LEFT:
                 return src.left >= dest.right;
@@ -485,8 +479,13 @@ boolean isToDirectionOf(int direction, Rect src, Rect dest) {
             case View.FOCUS_DOWN:
                 return src.bottom <= dest.top;
         }
-        throw new IllegalArgumentException("direction must be one of "
+        */
+
+        if (DroidSafeAndroidRuntime.control)
+            throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        
+        return toTaintBoolean(direction + src.getTaintInt() + dest.getTaintInt());
     }
 
     /**
@@ -608,32 +607,9 @@ public int compare(View first, View second) {
             if (first == second) {
                 return 0;
             }
-
             getRect(first, mFirstRect);
             getRect(second, mSecondRect);
-
-            if (mFirstRect.top < mSecondRect.top) {
-                return -1;
-            } else if (mFirstRect.top > mSecondRect.top) {
-                return 1;
-            } else if (mFirstRect.left < mSecondRect.left) {
-                return -1;
-            } else if (mFirstRect.left > mSecondRect.left) {
-                return 1;
-            } else if (mFirstRect.bottom < mSecondRect.bottom) {
-                return -1;
-            } else if (mFirstRect.bottom > mSecondRect.bottom) {
-                return 1;
-            } else if (mFirstRect.right < mSecondRect.right) {
-                return -1;
-            } else if (mFirstRect.right > mSecondRect.right) {
-                return 1;
-            } else {
-                // The view are distinct but completely coincident so we consider
-                // them equal for our purposes.  Since the sort is stable, this
-                // means that the views will retain their layout order relative to one another.
-                return 0;
-            }
+            return (mFirstRect.getTaintInt() + mSecondRect.getTaintInt());
         }
 
         @DSComment("Private Method")
@@ -655,6 +631,7 @@ private void getRect(View view, Rect rect) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.133 -0500", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "47998B70C2658DBDED4D069DD5945833")
     
 private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
+        /*
         switch (direction) {
             case View.FOCUS_LEFT:
                 return destRect.left <= x && destRect.top <= y && y <= destRect.bottom;
@@ -665,8 +642,12 @@ private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
             case View.FOCUS_DOWN:
                 return destRect.top >= y && destRect.left <= x && x <= destRect.right;
         }
-        throw new IllegalArgumentException("direction must be one of "
+        */
+        if (DroidSafeAndroidRuntime.control)
+            throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+
+        return toTaintBoolean(x + y + destRect.getTaintInt() +  direction);
     }
 }
 

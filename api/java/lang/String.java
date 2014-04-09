@@ -230,7 +230,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.996 -0500", hash_original_method = "29C79BCB300036CC1B9D463111BC50FD", hash_generated_method = "8DAED21ABAC747A4DC39D23D809B5F9B")
     
         public static String valueOf(Object value) {
-        return value != null ? value.toString() : "null";
+        if (value == null)
+            return "null";
+        String str = new String();
+        str.addTaint(value.getTaint());
+        return str;
     }
 
     /**
@@ -375,6 +379,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         offset = 0;
         count = 0;
     }
+    
+    
 
     /*
      * Private constructor used for JIT optimization.
@@ -835,8 +841,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @Override
         public boolean equals(Object object){
     	//Formerly a native method
-    	addTaint(object.getTaint());
-    	return getTaintBoolean();
+        return super.equals(object);
+    	//addTaint(object.getTaint());
+    	//return getTaintBoolean();
     }
 
     /**
@@ -1720,5 +1727,24 @@ public int offsetByCodePoints(int index, int codePointOffset) {
         addTaint(codePointOffset);
         return getTaintInt();
     }
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+@Override public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        ASCII[0] = getTaintChar();
+        offset = getTaintInt();
+        hashCode = getTaintInt();
+        count = getTaintInt();
+    }
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @Override public void addTaint(double t) {
+        super.addTaint(t);
+        ASCII[0] = getTaintChar();
+        offset = getTaintInt();
+        hashCode = getTaintInt();
+        count = getTaintInt();
+    }
+    
 }
 

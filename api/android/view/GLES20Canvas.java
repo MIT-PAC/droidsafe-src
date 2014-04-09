@@ -51,7 +51,8 @@ static boolean isAvailable() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nCreateLayerRenderer(int layer) {
-        return DSUtils.UNKNOWN_INT;
+        //return DSUtils.UNKNOWN_INT;
+        return layer;
     }
     
     @DSComment("Private Method")
@@ -73,13 +74,13 @@ static boolean isAvailable() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int nCreateTextureLayer(boolean opaque, int[] layerInfo) {
-        return DSUtils.UNKNOWN_INT;
+        return toTaintInt(opaque) + layerInfo[0];
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int nCreateLayer(int width, int height, boolean isOpaque, int[] layerInfo) {
-        return DSUtils.UNKNOWN_INT;
+        return (width + height + toTaintInt(isOpaque) + layerInfo[0]);
     }
     
     @DSComment("Package priviledge")
@@ -111,7 +112,7 @@ static boolean isAvailable() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean nCopyLayer(int layerId, int bitmap) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return toTaintBoolean(layerId + bitmap);
     }
     
     @DSComment("Private Method")
@@ -210,7 +211,8 @@ public static void disableVsync() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nCallDrawGLFunction(int renderer, int drawGLFunction) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return toTaintBoolean(renderer + drawGLFunction);
+        //return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     /**
@@ -269,7 +271,8 @@ public static void initCaches() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetDisplayList(int renderer, int displayList) {
-        return DSUtils.UNKNOWN_INT;
+        return renderer + displayList;
+        //return DSUtils.UNKNOWN_INT;
     }
     
     @DSComment("Package priviledge")
@@ -296,14 +299,15 @@ static int getDisplayListSize(int displayList) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetDisplayListSize(int displayList) {
-        return DSUtils.UNKNOWN_INT;
+        //return DSUtils.UNKNOWN_INT;
+        return displayList;
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nDrawDisplayList(int renderer, int displayList,
             int width, int height, Rect dirty) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return  toTaintBoolean(renderer + displayList + width + height + dirty.getTaintInt());
     }
     
     @DSComment("Private Method")
@@ -330,27 +334,29 @@ static int getDisplayListSize(int displayList) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nClipRect(int renderer, float left, float top,
             float right, float bottom, int op) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        //return DSUtils.UNKNOWN_BOOLEAN;
+
+        return toTaintBoolean(renderer + left + top + right + bottom + op);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nClipRect(int renderer, int left, int top, int right, int bottom,
             int op) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return toTaintBoolean(renderer + left + top + right + bottom + op);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nGetClipBounds(int renderer, Rect bounds) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return toTaintBoolean(renderer + bounds.getTaintInt());
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nQuickReject(int renderer, float left, float top,
             float right, float bottom, int edge) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+        return toTaintBoolean(renderer + left + top + right + bottom + edge);
     }
     
     @DSComment("Private Method")
@@ -391,33 +397,35 @@ static int getDisplayListSize(int displayList) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSave(int renderer, int flags) {
-        return DSUtils.UNKNOWN_INT;
+        return (renderer + flags);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayer(int renderer, int paint, int saveFlags) {
-        return DSUtils.UNKNOWN_INT;
+        //return DSUtils.UNKNOWN_INT;
+        return (renderer + paint + saveFlags);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayer(int renderer, float left, float top,
             float right, float bottom, int paint, int saveFlags) {
-        return DSUtils.UNKNOWN_INT;
+
+        return (int)(renderer + left + top + right + bottom + paint + saveFlags);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayerAlpha(int renderer, int alpha, int saveFlags) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)(renderer + alpha + saveFlags);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nSaveLayerAlpha(int renderer, float left, float top, float right,
             float bottom, int alpha, int saveFlags) {
-        return DSUtils.UNKNOWN_INT;
+        return (int)(renderer + left + top + right + bottom + alpha + saveFlags);
     }
     
     @DSComment("Private Method")
@@ -433,7 +441,7 @@ static int getDisplayListSize(int displayList) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nGetSaveCount(int renderer) {
-        return DSUtils.UNKNOWN_INT;
+        return renderer;
     }
     
     @DSComment("Private Method")
@@ -988,21 +996,21 @@ void resume() {
     
 @Override
     public void setMatrix(Matrix matrix) {
-        nSetMatrix(mRenderer, matrix.native_instance);
+        nSetMatrix(mRenderer, matrix.getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.368 -0500", hash_original_method = "5C2AB9AC8E62FE145634A1140AF6AF7A", hash_generated_method = "E336193D9894F888AEC4D90B138B72D7")
     
 @Override
     public void getMatrix(Matrix matrix) {
-        nGetMatrix(mRenderer, matrix.native_instance);
+        nGetMatrix(mRenderer, matrix.getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.374 -0500", hash_original_method = "D981C9A8CE9E8AB948A57E105C909748", hash_generated_method = "E6CCDE5196546BDDF5DB3BB3AEE5FB0F")
     
 @Override
     public void concat(Matrix matrix) {
-        nConcatMatrix(mRenderer, matrix.native_instance);
+        nConcatMatrix(mRenderer, matrix.getTaintInt());
     }
     
     ///////////////////////////////////////////////////////////////////////////
@@ -1174,7 +1182,7 @@ void resume() {
         int modifiers = paint != null ? setupModifiers(bitmap, paint) : MODIFIER_NONE;
         final int nativePaint = paint == null ? 0 : paint.mNativePaint;
         nDrawBitmap(mRenderer, bitmap.mNativeBitmap, bitmap.mBuffer,
-                matrix.native_instance, nativePaint);
+                matrix.getTaintInt(), nativePaint);
         if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }
 
@@ -1357,10 +1365,10 @@ void resume() {
         int modifiers = setupModifiers(paint);
         if (path.isSimplePath) {
             if (path.rects != null) {
-                nDrawRects(mRenderer, path.rects.mNativeRegion, paint.mNativePaint);
+                nDrawRects(mRenderer, path.rects.getTaintInt(), paint.mNativePaint);
             }
         } else {
-            nDrawPath(mRenderer, path.mNativePath, paint.mNativePaint);
+            nDrawPath(mRenderer, path.getTaintInt(), paint.mNativePaint);
         }
         if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
     }

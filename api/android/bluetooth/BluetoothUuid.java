@@ -109,6 +109,8 @@ public static boolean isUuidPresent(ParcelUuid[] uuidArray, ParcelUuid uuid) {
     
 public static boolean containsAnyUuid(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
         if (uuidA == null && uuidB == null) return true;
+        return toTaintBoolean(uuidA[0].getTaintInt() + uuidB[0].getTaintInt());
+/*
 
         if (uuidA == null) {
             return uuidB.length == 0 ? true : false;
@@ -123,6 +125,7 @@ public static boolean containsAnyUuid(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
             if (uuidSet.contains(uuid)) return true;
         }
         return false;
+*/
     }
 
     /**
@@ -138,6 +141,9 @@ public static boolean containsAnyUuid(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
 public static boolean containsAllUuids(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
         if (uuidA == null && uuidB == null) return true;
 
+        return toTaintBoolean(uuidA[0].getTaintInt() + uuidB[0].getTaintInt());
+        /*
+
         if (uuidA == null) {
             return uuidB.length == 0 ? true : false;
         }
@@ -149,6 +155,7 @@ public static boolean containsAllUuids(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
             if (!uuidSet.contains(uuid)) return false;
         }
         return true;
+        */
     }
 
     /**

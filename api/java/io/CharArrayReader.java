@@ -99,7 +99,8 @@ public CharArrayReader(char[] buf, int offset, int length) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.627 -0500", hash_original_method = "F0DC6C1F8DBE67146FDB19D4375AE051", hash_generated_method = "7D3E0CB9D461E3294FC5AE0F436AD4DE")
     
 private boolean isOpen() {
-        return buf != null;
+        //return buf != null;
+        return buf.getTaintBoolean();
     }
 
     /**
@@ -112,7 +113,8 @@ private boolean isOpen() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.629 -0500", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "67B0DB4F7332E1551B3772D6F1B4F707")
     
 private boolean isClosed() {
-        return buf == null;
+        //return buf == null;
+        return buf.getTaintBoolean();
     }
 
     /**
@@ -241,7 +243,7 @@ private void checkNotClosed() throws IOException {
     public boolean ready() throws IOException {
         synchronized (lock) {
             checkNotClosed();
-            return pos != count;
+            return toTaintBoolean(pos + count);
         }
     }
 

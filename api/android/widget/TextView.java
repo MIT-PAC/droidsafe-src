@@ -1466,7 +1466,6 @@ private void setRelativeDrawablesIfNeeded(Drawable start, Drawable end) {
 
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.550 -0500", hash_original_method = "224789FFA5DBD63B17185276A15DADF0", hash_generated_method = "756550E254590B5801A7246265A40FA0")
     
 @Override
@@ -5844,6 +5843,29 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
         }
 
         int selStart = getSelectionStart();
+        
+        int lineNum = selStart + selEnd;
+        
+        r.addTaint(selStart + selEnd + selStart + mLayout.getLineForOffset(lineNum));
+        r.addTaint(mLayout.getLineTop(lineNum) + mLayout.getLineBottom(lineNum) +
+                mLayout.getPrimaryHorizontal(lineNum));
+        
+        if (toTaintBoolean(selStart + selEnd)) {
+            if (mHighlightPath == null) mHighlightPath = new Path();
+            if (mHighlightPathBogus) {
+                mHighlightPath.reset();
+                mLayout.getSelectionPath(selStart, selEnd, mHighlightPath);
+                mHighlightPathBogus = false;
+            }
+            synchronized (sTempRect) {
+                mHighlightPath.computeBounds(sTempRect, true);
+                r.left = (int)sTempRect.left-1;
+                r.right = (int)sTempRect.right+1;
+            }
+        }
+        
+        //Original body
+      /*  
         if (selStart < 0 || selStart >= selEnd) {
             int line = mLayout.getLineForOffset(selEnd);
             r.top = mLayout.getLineTop(line);
@@ -5874,10 +5896,12 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
                 }
             }
         }
+        */
 
         // Adjust for padding and gravity.
         int paddingLeft = getCompoundPaddingLeft();
-        int paddingTop = getExtendedPaddingTop();
+        int paddingTop = getExtendedPaddingTop() + mGravity;
+        
         if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
             paddingTop += getVerticalOffset(false);
         }
@@ -7920,6 +7944,8 @@ private void convertFromViewportToContentCoordinates(Rect r) {
         final int verticalOffset = viewportToContentVerticalOffset();
         r.top += verticalOffset;
         r.bottom += verticalOffset;
+        
+        r.addTaint(horizontalOffset + verticalOffset);
     }
 
     @DSComment("Private Method")
@@ -8333,7 +8359,7 @@ protected void onSelectionChanged(int selStart, int selEnd) {
      * Editable if it would not otherwise be and does call this method.
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.457 -0500", hash_original_method = "B64F50676D912718618203C6EADBF90A", hash_generated_method = "626E7FC9F045281C668160725195AD32")
     
 public void addTextChangedListener(TextWatcher watcher) {

@@ -418,7 +418,7 @@ public void disableCompatibilityMode() {
     
 private boolean isPackageUnavailable(PackageManager pm) {
         try {
-            return pm.getPackageInfo(packageName, 0) == null;
+            return pm.getPackageInfo(packageName, 0).getTaintBoolean();
         } catch (NameNotFoundException ex) {
             return true;
         }

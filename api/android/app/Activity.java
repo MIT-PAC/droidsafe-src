@@ -448,10 +448,9 @@ public Window getWindow() {
 		*/
 	}
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-	@DSVerified("Modeled Lifecycle Event")
+    @DSVerified("Modeled Lifecycle Event")
     protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
@@ -1762,7 +1761,8 @@ public View onCreatePanelView(int featureId) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
-		return (onPrepareOptionsMenu(menu) || mFragments.dispatchPrepareOptionsMenu(menu) && menu.hasVisibleItems());
+		return toTaintBoolean(toTaintInt(onPrepareOptionsMenu(menu)) + 
+                              toTaintInt(mFragments.dispatchPrepareOptionsMenu(menu))  + toTaintInt(menu.hasVisibleItems()));
 		// Original method
 		/*
 		{

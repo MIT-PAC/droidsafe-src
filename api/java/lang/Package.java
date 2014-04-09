@@ -159,7 +159,8 @@ public Annotation[] getDeclaredAnnotations() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.146 -0500", hash_original_method = "5232C7D94E7B41515E39CA253236284F", hash_generated_method = "225772F708D97128A8DAA5A4D24733D0")
     
 public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
-        return getAnnotation(annotationType) != null;
+        //return getAnnotation(annotationType) != null;
+        return getAnnotation(annotationType).getTaintBoolean();
     }
 
     /**
@@ -328,7 +329,8 @@ public boolean isCompatibleWith(String version) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.176 -0500", hash_original_method = "8B9E9C35AFB855740620C92F002E4A38", hash_generated_method = "D93A43812A9CA0B98209947C6F6A18EE")
     
 public boolean isSealed() {
-        return sealBase != null;
+        //return sealBase != null;
+        return sealBase.getTaintBoolean();
     }
 
     /**
@@ -345,7 +347,8 @@ public boolean isSealed() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.178 -0500", hash_original_method = "55B8ABCD808682E10A2965544061F7A5", hash_generated_method = "287EF2A604F94B823DCF0CE559604AFE")
     
 public boolean isSealed(URL url) {
-        return sealBase != null && sealBase.sameFile(url);
+        //return sealBase != null && sealBase.sameFile(url);
+        return toTaintBoolean(sealBase.getTaintInt() + toTaintInt(sealBase.sameFile(url)));
     }
 
     @DSComment("From safe class list")

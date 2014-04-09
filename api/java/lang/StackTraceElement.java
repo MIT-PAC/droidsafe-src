@@ -217,7 +217,7 @@ public String getMethodName() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.900 -0500", hash_original_method = "9234CE459C30A5F4896C026CB51E3A9C", hash_generated_method = "AF9C5ABF854DFC57A5D4E6FB50B0F17A")
     
 public boolean isNativeMethod() {
-        return lineNumber == NATIVE_LINE_NUMBER;
+        return toTaintBoolean(lineNumber + NATIVE_LINE_NUMBER);
     }
 
     @DSComment("From safe class list")

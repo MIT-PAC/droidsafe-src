@@ -1758,7 +1758,7 @@ public boolean startNextMatchingActivity(IBinder callingActivity,
         int result = reply.readInt();
         reply.recycle();
         data.recycle();
-        return result != 0;
+        return toTaintBoolean(result); 
     }
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.152 -0500", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "51169BDC420B5824522C25A41C863501")

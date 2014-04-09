@@ -97,6 +97,12 @@ private ThreadGroup() {
         this.name = "system";
         this.parent = null;
     }
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public ThreadGroup(DSOnlyType dontcare) {
+        this.name = "dsgroup";
+        this.parent = new ThreadGroup();
+    }
 
     /**
      * Returns the number of running {@code Thread}s which are children of this thread group,

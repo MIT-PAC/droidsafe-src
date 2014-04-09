@@ -316,14 +316,14 @@ public final boolean moveToPrevious() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.070 -0500", hash_original_method = "9906FDA9BB1856CC0A1F7D5381F7AEF7", hash_generated_method = "C40AB657A69E2902AA98802D2AE2BC57")
     
 public final boolean isFirst() {
-        return mPos == 0 && getCount() != 0;
+        return toTaintBoolean(mPos +  getCount()); 
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.072 -0500", hash_original_method = "5D098944D57453F70DEC79DF938E50E8", hash_generated_method = "2D99BEDEB15A192A9ADCED88078DF1C6")
     
 public final boolean isLast() {
         int cnt = getCount();
-        return mPos == (cnt - 1) && cnt != 0;
+        return toTaintBoolean(mPos + (cnt - 1) + cnt + 0);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.075 -0500", hash_original_method = "BEAF42FFABF4F6277016BED9CE1900CE", hash_generated_method = "DC54FF25EA062AC902D6DEC4030B59D4")
@@ -332,7 +332,7 @@ public final boolean isBeforeFirst() {
         if (getCount() == 0) {
             return true;
         }
-        return mPos == -1;
+        return toTaintBoolean(mPos);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.078 -0500", hash_original_method = "EBC209D2038AD2122CD62927CB78B2F3", hash_generated_method = "F6FADDDBA5B0BE59CC93AFB99FF0B987")
@@ -341,7 +341,7 @@ public final boolean isAfterLast() {
         if (getCount() == 0) {
             return true;
         }
-        return mPos == getCount();
+        return toTaintBoolean(mPos + getCount());
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})

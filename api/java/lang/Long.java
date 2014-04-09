@@ -18,7 +18,8 @@ public final class Long extends Number implements Comparable<Long> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.196 -0500", hash_original_method = "AF31214DC9658698FC6F93EE1A427F5A", hash_generated_method = "8A15ED8494923E2C5CF33F19A2C4ADA1")
     
 public static int compare(long lhs, long rhs) {
-        return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
+        //return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
+        return (int)(lhs - rhs);
     }
 
     @DSComment("Private Method")
@@ -221,6 +222,7 @@ public static long parseLong(String string) throws NumberFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.230 -0500", hash_original_method = "37F9F64824FAF4D2E17AC94C2167510B", hash_generated_method = "08F133E83B9B1B64AA4CE7E30D669FA8")
     
 public static long parseLong(String string, int radix) throws NumberFormatException {
+        /*
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             throw new NumberFormatException("Invalid radix: " + radix);
         }
@@ -237,6 +239,8 @@ public static long parseLong(String string, int radix) throws NumberFormatExcept
         }
 
         return parse(string, i, radix, negative);
+        */
+        return (string.length() + radix);
     }
 
     @DSComment("Private Method")
@@ -244,6 +248,7 @@ public static long parseLong(String string, int radix) throws NumberFormatExcept
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.233 -0500", hash_original_method = "5F099721BA22F8C0462415F93D75AC09", hash_generated_method = "1B5D6A65FF554EB847E082D6FEBAD556")
     
 private static long parse(String string, int offset, int radix, boolean negative) {
+        /*
         long max = Long.MIN_VALUE / radix;
         long result = 0, length = string.length();
         while (offset < length) {
@@ -267,6 +272,9 @@ private static long parse(String string, int offset, int radix, boolean negative
             }
         }
         return result;
+        */
+        
+        return (string.length() + offset + radix + toTaintInt(negative));
     }
 
     /**
@@ -513,9 +521,12 @@ public static int numberOfLeadingZeros(long v) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.267 -0500", hash_original_method = "742DD812D57640DE025BDD2284962D31", hash_generated_method = "F898CDA751901199B3054D7A96183C59")
     
 public static int numberOfTrailingZeros(long v) {
+        /*
         int low = (int) v;
         return low !=0 ? Integer.numberOfTrailingZeros(low)
                        : 32 + Integer.numberOfTrailingZeros((int) (v >>> 32));
+        */
+        return (int)v;
     }
 
     /**
@@ -720,6 +731,7 @@ public static Long valueOf(long v) {
     
 public Long(long value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -794,7 +806,8 @@ public int compareTo(Long object) {
     
 @Override
     public boolean equals(Object o) {
-        return (o instanceof Long) && (((Long) o).value == value);
+        //return (o instanceof Long) && (((Long) o).value == value);
+        return super.equals(o);
     }
 
     @DSComment("From safe class list")

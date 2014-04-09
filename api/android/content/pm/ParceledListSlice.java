@@ -121,7 +121,7 @@ public boolean append(T item) {
         item.writeToParcel(mParcel, PARCELABLE_WRITE_RETURN_VALUE);
         mNumItems++;
 
-        return mParcel.dataSize() > MAX_IPC_SIZE;
+        return toTaintBoolean(mParcel.dataSize() + MAX_IPC_SIZE);
     }
 
     /**

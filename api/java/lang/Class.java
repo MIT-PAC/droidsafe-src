@@ -103,7 +103,7 @@ public static Class<?> forName(String className) throws ClassNotFoundException {
 public static Class<?> forName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
 
-        if (classLoader == null) {
+/*        if (classLoader == null) {
             classLoader = ClassLoader.getSystemClassLoader();
         }
         // Catch an Exception thrown by the underlying native code. It wraps
@@ -123,14 +123,35 @@ public static Class<?> forName(String className, boolean initializeBoolean,
             }
             throw e;
         }
+        return result;*/
+       
+        
+        if (DroidSafeAndroidRuntime.control) {
+            throw new ClassNotFoundException();
+        }
+        Class<?> result = (Class<?>) new Class();
+        
+        result.addTaint(className.getTaintInt() + 
+                        toTaintInt(initializeBoolean) + classLoader.getTaintInt());
+        result.droidsafeSetLoader(classLoader);
         return result;
+        
+    }
+    
+    ClassLoader droidsafeClassLoader = null;
+    void droidsafeSetLoader(ClassLoader loader) {
+        droidsafeClassLoader = loader;
+        addTaint(loader.getTaint());
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
-    	Class<?> cl = Object.class;
+    	Class<?> cl = new Class();
+    	cl.addTaint(className.getTaintInt() + toTaintInt(initializeBoolean) +
+    	            classLoader.getTaintInt());
+    	cl.droidsafeSetLoader(classLoader);
     	return cl;
     }
     
@@ -217,7 +238,6 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     private static final long serialVersionUID = 3206093459760846163L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.860 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
 
-    @DSVAModeled
     private transient String name;
     
     @DSComment("Private Method")
@@ -433,11 +453,10 @@ public ClassLoader getClassLoader() {
             return null;
         }
 
-        ClassLoader loader = getClassLoaderImpl();
-        if (loader == null) {
-            loader = BootClassLoader.getInstance();
-        }
-        return loader;
+        if (droidsafeClassLoader != null)
+            return droidsafeClassLoader;
+        
+        return  BootClassLoader.getInstance();
     }
 
     /**
@@ -594,8 +613,9 @@ public Constructor<?>[] getConstructors() {
     
     private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass){
     	//Formerly a native method
-    	addTaint(annotationClass.getTaint());
-    	return getTaintBoolean();
+        return toTaintBoolean(getTaintInt() + annotationClass.getTaintInt());
+    	//addTaint(annotationClass.getTaint());
+    	//return getTaintBoolean();
     }
 
     /**
@@ -1089,7 +1109,7 @@ public int getModifiers() {
      * @return the name of the class represented by this {@code Class}.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
     
@@ -1102,7 +1122,7 @@ public String getName() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
-    	String ret = new String();
+    	String ret = new String("<Class getName()>");
     	return ret;
     }
 
@@ -1301,7 +1321,7 @@ public Object[] getSigners() {
 public boolean isAnnotation() {
         final int ACC_ANNOTATION = 0x2000;  // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        return (mod & ACC_ANNOTATION) != 0;
+        return toTaintBoolean((mod & ACC_ANNOTATION) + 0);
     }
 
     @DSComment("Refelction/class loader")
@@ -1354,7 +1374,10 @@ public boolean isAnnotation() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.063 -0500", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "295B3FD7BCB14D1F140029116A5683AB")
     
 public boolean isArray() {
-        return getComponentType() != null;
+        //return getComponentType() != null;
+        if (getComponentType() != null)
+            return getComponentType().getTaintBoolean();
+        return getTaintBoolean();
     }
 
     /**
@@ -1377,8 +1400,7 @@ public boolean isArray() {
     
     public boolean isAssignableFrom(Class<?> cls){
     	//Formerly a native method
-    	addTaint(cls.getTaint());
-    	return getTaintBoolean();
+        return toTaintBoolean(getTaintInt() + cls.getTaintInt());
     }
 
     /**
@@ -1393,7 +1415,8 @@ public boolean isArray() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.069 -0500", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "433854292DBBE11D1B7A199C41DDB4FD")
     
 public boolean isEnum() {
-        return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
+        //return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
+        return toTaintBoolean(getModifiers() + getSuperclass().getTaintInt());
     }
 
     /**
@@ -1413,8 +1436,11 @@ public boolean isEnum() {
     
     public boolean isInstance(Object object){
     	//Formerly a native method
+        /*
     	addTaint(object.getTaint());
     	return getTaintBoolean();
+    	*/
+        return toTaintBoolean(object.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -1446,7 +1472,8 @@ public boolean isEnum() {
 public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
-        return enclosed && !isAnonymousClass();
+        //return enclosed && !isAnonymousClass();
+        return toTaintBoolean(toTaintInt(enclosed) + toTaintInt(isAnonymousClass()));
     }
 
     /**
@@ -1461,7 +1488,10 @@ public boolean isLocalClass() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.081 -0500", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "ED77BF92668C44C3CF8FD9420EB90C99")
     
 public boolean isMemberClass() {
-        return getDeclaringClass() != null;
+        //return getDeclaringClass() != null;
+        if (getDeclaringClass() != null)
+            return getDeclaringClass().getTaintBoolean();
+        return getTaintBoolean();
     }
 
     /**
@@ -1490,7 +1520,7 @@ public boolean isMemberClass() {
 public boolean isSynthetic() {
         final int ACC_SYNTHETIC = 0x1000;   // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        return (mod & ACC_SYNTHETIC) != 0;
+        return toTaintBoolean((mod & ACC_SYNTHETIC) + 0);
     }
 
     /**

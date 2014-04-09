@@ -75,7 +75,7 @@ public LinkedBlockingQueue() {
 public LinkedBlockingQueue(int capacity) {
         if (capacity <= 0) throw new IllegalArgumentException();
         this.capacity = capacity;
-        last = head = new Node<E>(null);
+        requestCapacity(capacity);
     }
 
     /**
@@ -94,7 +94,8 @@ public LinkedBlockingQueue(int capacity) {
     
 public LinkedBlockingQueue(Collection<? extends E> c) {
         this(Integer.MAX_VALUE);
-        final ReentrantLock putLock = this.putLock;
+        addAll(c);
+ /*       final ReentrantLock putLock = this.putLock;
         putLock.lock(); // Never contended, but necessary for visibility
         try {
             int n = 0;
@@ -109,7 +110,7 @@ public LinkedBlockingQueue(Collection<? extends E> c) {
             count.set(n);
         } finally {
             putLock.unlock();
-        }
+        }*/
     }
 
     /**
@@ -121,13 +122,13 @@ public LinkedBlockingQueue(Collection<? extends E> c) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.309 -0500", hash_original_method = "15D22B562F85AEAC3F4AC4996FFD23A3", hash_generated_method = "690339A57E7981A56E8267DFE7AE9E32")
     
 private void signalNotEmpty() {
-        final ReentrantLock takeLock = this.takeLock;
+      /*  final ReentrantLock takeLock = this.takeLock;
         takeLock.lock();
         try {
             notEmpty.signal();
         } finally {
             takeLock.unlock();
-        }
+        }*/
     }
 
     /**
@@ -138,13 +139,13 @@ private void signalNotEmpty() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.313 -0500", hash_original_method = "23256B84FD63DB25D1FF9FA99CF29C9A", hash_generated_method = "0A0CCB5473488EC37FD52A018021376A")
     
 private void signalNotFull() {
-        final ReentrantLock putLock = this.putLock;
+       /* final ReentrantLock putLock = this.putLock;
         putLock.lock();
         try {
             notFull.signal();
         } finally {
             putLock.unlock();
-        }
+        }*/
     }
 
     /**
@@ -157,7 +158,6 @@ private void signalNotFull() {
 private void enqueue(Node<E> node) {
         // assert putLock.isHeldByCurrentThread();
         // assert last.next == null;
-        last = last.next = node;
     }
 
     /**
@@ -253,7 +253,8 @@ public int remainingCapacity() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.338 -0500", hash_original_method = "37DF2D00E21001E825743AC7943B033F", hash_generated_method = "2FA40809E202F16AD2228E0B91B6701C")
     
 public void put(E e) throws InterruptedException {
-        if (e == null) throw new NullPointerException();
+        super.add(e);
+/*        if (e == null) throw new NullPointerException();
         // Note: convention in all put/take/etc is to preset local var
         // holding count negative to indicate failure unless set.
         int c = -1;
@@ -262,14 +263,14 @@ public void put(E e) throws InterruptedException {
         final AtomicInteger count = this.count;
         putLock.lockInterruptibly();
         try {
-            /*
+            
              * Note that count is used in wait guard even though it is
              * not protected by lock. This works because count can
              * only decrease at this point (all other puts are shut
              * out by lock), and we (or some other waiting put) are
              * signalled if it ever changes from capacity. Similarly
              * for all other uses of count in other wait guards.
-             */
+             
             while (count.get() == capacity) {
                 notFull.await();
             }
@@ -281,7 +282,7 @@ public void put(E e) throws InterruptedException {
             putLock.unlock();
         }
         if (c == 0)
-            signalNotEmpty();
+            signalNotEmpty();*/
     }
 
     /**
@@ -299,8 +300,10 @@ public void put(E e) throws InterruptedException {
     
 public boolean offer(E e, long timeout, TimeUnit unit)
         throws InterruptedException {
+        add(e);
+        return getTaintBoolean();
 
-        if (e == null) throw new NullPointerException();
+/*        if (e == null) throw new NullPointerException();
         long nanos = unit.toNanos(timeout);
         int c = -1;
         final ReentrantLock putLock = this.putLock;
@@ -321,7 +324,7 @@ public boolean offer(E e, long timeout, TimeUnit unit)
         }
         if (c == 0)
             signalNotEmpty();
-        return true;
+        return true;*/
     }
 
     /**
@@ -340,7 +343,9 @@ public boolean offer(E e, long timeout, TimeUnit unit)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.343 -0500", hash_original_method = "751C55DFDD2504B6D9AAA83EF3048DDA", hash_generated_method = "D2ADC948D3AB6EC72A4437470CF6A0BA")
     
 public boolean offer(E e) {
-        if (e == null) throw new NullPointerException();
+        add(e);
+        return getTaintBoolean();
+    /*    if (e == null) throw new NullPointerException();
         final AtomicInteger count = this.count;
         if (count.get() == capacity)
             return false;
@@ -360,7 +365,7 @@ public boolean offer(E e) {
         }
         if (c == 0)
             signalNotEmpty();
-        return c >= 0;
+        return c >= 0;*/
     }
 
     @DSComment("From safe class list")
@@ -368,7 +373,8 @@ public boolean offer(E e) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.346 -0500", hash_original_method = "022306A077B45DC674F98467F25F93CD", hash_generated_method = "3E3064FFB44D5FC2152801FE8CB3A063")
     
 public E take() throws InterruptedException {
-        E x;
+        return removeFirstElement();
+/*        E x;
         int c = -1;
         final AtomicInteger count = this.count;
         final ReentrantLock takeLock = this.takeLock;
@@ -386,7 +392,7 @@ public E take() throws InterruptedException {
         }
         if (c == capacity)
             signalNotFull();
-        return x;
+        return x;*/
     }
 
     @DSComment("From safe class list")
@@ -394,7 +400,8 @@ public E take() throws InterruptedException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.349 -0500", hash_original_method = "AA8094BF5AEC46D297071331A526D258", hash_generated_method = "7DC827F2232517E7E0CC043F47ED1EB7")
     
 public E poll(long timeout, TimeUnit unit) throws InterruptedException {
-        E x = null;
+        return removeFirstElement();
+       /* E x = null;
         int c = -1;
         long nanos = unit.toNanos(timeout);
         final AtomicInteger count = this.count;
@@ -415,7 +422,7 @@ public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         }
         if (c == capacity)
             signalNotFull();
-        return x;
+        return x;*/
     }
 
     @DSComment("From safe class list")
@@ -423,7 +430,7 @@ public E poll(long timeout, TimeUnit unit) throws InterruptedException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.353 -0500", hash_original_method = "D22B106AF12DCACC53C408D22FAEA025", hash_generated_method = "41F2F247DEA96A501DD66B85F362E3FB")
     
 public E poll() {
-        final AtomicInteger count = this.count;
+       /* final AtomicInteger count = this.count;
         if (count.get() == 0)
             return null;
         E x = null;
@@ -442,7 +449,8 @@ public E poll() {
         }
         if (c == capacity)
             signalNotFull();
-        return x;
+        return x;*/
+        return removeFirstElement();
     }
 
     @DSComment("From safe class list")
@@ -450,7 +458,8 @@ public E poll() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.355 -0500", hash_original_method = "6BD887DAC1ACD373E1861DD85FA5D83B", hash_generated_method = "BF4430C205A805491F590C69F04E3B5B")
     
 public E peek() {
-        if (count.get() == 0)
+        return getFirstElement();
+/*        if (count.get() == 0)
             return null;
         final ReentrantLock takeLock = this.takeLock;
         takeLock.lock();
@@ -462,7 +471,7 @@ public E peek() {
                 return first.item;
         } finally {
             takeLock.unlock();
-        }
+        }*/
     }
 
     /**
@@ -471,7 +480,7 @@ public E peek() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.358 -0500", hash_original_method = "354B8979A292DF58D8ACD150BF598C2B", hash_generated_method = "6345B801E86CF78FF3EC60753CECB078")
     
 void unlink(Node<E> p, Node<E> trail) {
-        // assert isFullyLocked();
+/*        // assert isFullyLocked();
         // p.next is not changed, to allow iterators that are
         // traversing p to maintain their weak-consistency guarantee.
         p.item = null;
@@ -479,7 +488,7 @@ void unlink(Node<E> p, Node<E> trail) {
         if (last == p)
             last = trail;
         if (count.getAndDecrement() == capacity)
-            notFull.signal();
+            notFull.signal();*/
     }
 
     /**
@@ -498,7 +507,7 @@ void unlink(Node<E> p, Node<E> trail) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.360 -0500", hash_original_method = "43DA2AA0857729B72806FF0ABDC45219", hash_generated_method = "013E83539AA1F111BA99927E68DD4682")
     
 public boolean remove(Object o) {
-        if (o == null) return false;
+/*        if (o == null) return false;
         fullyLock();
         try {
             for (Node<E> trail = head, p = trail.next;
@@ -512,7 +521,9 @@ public boolean remove(Object o) {
             return false;
         } finally {
             fullyUnlock();
-        }
+        }*/
+        super.remove(o);
+        return getTaintBoolean();
     }
 
     /**
@@ -528,7 +539,7 @@ public boolean remove(Object o) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.363 -0500", hash_original_method = "A4E3D89F8C47A7118ADD1757BF8D3A46", hash_generated_method = "838F7E959C6474957608640409E1AD98")
     
 public boolean contains(Object o) {
-        if (o == null) return false;
+       /* if (o == null) return false;
         fullyLock();
         try {
             for (Node<E> p = head.next; p != null; p = p.next)
@@ -537,7 +548,8 @@ public boolean contains(Object o) {
             return false;
         } finally {
             fullyUnlock();
-        }
+        }*/
+        return super.contains(o);
     }
 
     /**
@@ -558,7 +570,7 @@ public boolean contains(Object o) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.365 -0500", hash_original_method = "A06A302045E6771EA320A7223F86E4E8", hash_generated_method = "23AD50A3F537DF0818A01FE2BB7FABF1")
     
 public Object[] toArray() {
-        fullyLock();
+       /* fullyLock();
         try {
             int size = count.get();
             Object[] a = new Object[size];
@@ -568,7 +580,8 @@ public Object[] toArray() {
             return a;
         } finally {
             fullyUnlock();
-        }
+        }*/
+        return super.toArray();
     }
         
 @DSComment("From safe class list")
@@ -576,7 +589,8 @@ public Object[] toArray() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.586 -0400", hash_original_method = "3C0973EC18B4AB6267920EDC87F075C5", hash_generated_method = "765D849DB37E2E7E74B6D5F8CD431089")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
-        addTaint(a[0].getTaint());
+        return super.toArray(a);
+       /* addTaint(a[0].getTaint());
         fullyLock();
         try 
         {
@@ -613,14 +627,14 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1520448393 =             a;
         //} finally {
             //fullyUnlock();
         //}
-    }
+*/    }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.370 -0500", hash_original_method = "74ADAA84A44AA4C99AF60EA5FA9916C8", hash_generated_method = "4C19B39368E5BA95807215E36EBD7EB5")
     
 public String toString() {
-        fullyLock();
+       /* fullyLock();
         try {
             Node<E> p = head.next;
             if (p == null)
@@ -638,7 +652,8 @@ public String toString() {
             }
         } finally {
             fullyUnlock();
-        }
+        }*/
+        return super.toString();
     }
 
     /**
@@ -650,7 +665,7 @@ public String toString() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.373 -0500", hash_original_method = "2B97B8EA201FFE74530152ABDF41ED91", hash_generated_method = "C5DDAC8973345F26091FACB30536355A")
     
 public void clear() {
-        fullyLock();
+       /* fullyLock();
         try {
             for (Node<E> p, h = head; (p = h.next) != null; h = p) {
                 h.next = h;
@@ -662,7 +677,7 @@ public void clear() {
                 notFull.signal();
         } finally {
             fullyUnlock();
-        }
+        }*/
     }
 
     /**
@@ -690,7 +705,7 @@ public int drainTo(Collection<? super E> c) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.378 -0500", hash_original_method = "3B8D4B25C05B9AD02BEBED4DB8AC9EEC", hash_generated_method = "A184BCFEA67EB6A128346DE0E86D1F1E")
     
 public int drainTo(Collection<? super E> c, int maxElements) {
-        if (c == null)
+       /* if (c == null)
             throw new NullPointerException();
         if (c == this)
             throw new IllegalArgumentException();
@@ -724,7 +739,12 @@ public int drainTo(Collection<? super E> c, int maxElements) {
             takeLock.unlock();
             if (signalNotFull)
                 signalNotFull();
+        }*/
+        
+        for (int i = 0; i < maxElements; i++) {
+            c.add(removeFirstElement());
         }
+        return getTaintInt();
     }
 
     /**
@@ -762,7 +782,7 @@ public Iterator<E> iterator() {
     
 private void writeObject(java.io.ObjectOutputStream s)
         throws java.io.IOException {
-
+/*
         fullyLock();
         try {
             // Write out any hidden stuff, plus capacity
@@ -776,7 +796,8 @@ private void writeObject(java.io.ObjectOutputStream s)
             s.writeObject(null);
         } finally {
             fullyUnlock();
-        }
+        }*/
+        s.addTaint(taint);
     }
     
     static class Node<E> {
@@ -809,14 +830,14 @@ Node(E x) { item = x; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.392 -0500", hash_original_method = "5363017965403D930144EB6431B1229A", hash_generated_method = "5363017965403D930144EB6431B1229A")
         
 Itr() {
-            fullyLock();
+            /*fullyLock();
             try {
                 current = head.next;
                 if (current != null)
                     currentElement = current.item;
             } finally {
                 fullyUnlock();
-            }
+            }*/
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.394 -0500", hash_original_method = "930D47D628EF4F4226A6936FD0C40F3E", hash_generated_method = "C1DDC93408DCC4B7E836794905136C6C")

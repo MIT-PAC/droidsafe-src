@@ -219,9 +219,12 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
         
 @Override
         public int available() throws IOException {
+            /*
             return mRemaining >= 0
                     ? (mRemaining < 0x7fffffff ? (int)mRemaining : 0x7fffffff)
                     : super.available();
+            */
+            return (int)(mRemaining + super.available());
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.768 -0500", hash_original_method = "CAA8FF401C122C408179370071B2636B", hash_generated_method = "133480537539C593AACA5B34163DC7D7")
@@ -230,7 +233,8 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
         public int read() throws IOException {
             byte[] buffer = new byte[1];
             int result = read(buffer, 0, 1);
-            return result == -1 ? -1 : buffer[0] & 0xff;
+            //return result == -1 ? -1 : buffer[0] & 0xff;
+            return (result + buffer[0]);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.771 -0500", hash_original_method = "9675FBC56EDFB22EFDB5A62982BF1091", hash_generated_method = "367348FC8B4441B579089B440A81D12C")

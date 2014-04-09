@@ -235,9 +235,10 @@ public int recvfrom(FileDescriptor fd, ByteBuffer buffer, int flags, InetSocketA
 public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException { return os.recvfrom(fd, bytes, byteOffset, byteCount, flags, srcAddress); }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.503 -0500", hash_original_method = "B12B5B450AD1F25F30BAE5F7F0558752", hash_generated_method = "E9E1FD709F69F08B201BFCC3B7CD2E6C")
     
+    @DSSpec(DSCat.FILE_SYSTEM)
 public void remove(String path) throws ErrnoException { os.remove(path); }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.505 -0500", hash_original_method = "91C997D77FC3A21A4E5692674F9BE11B", hash_generated_method = "E5FB73D16505D8B2B19A895F812629FF")
-    
+    @DSSpec(DSCat.FILE_SYSTEM)
 public void rename(String oldPath, String newPath) throws ErrnoException { os.rename(oldPath, newPath); }
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.507 -0500", hash_original_method = "C572D6E07635A5094C687364A5671672", hash_generated_method = "9210DAC481869179E325D412403D65FF")

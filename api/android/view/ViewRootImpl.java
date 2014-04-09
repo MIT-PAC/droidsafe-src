@@ -3049,10 +3049,7 @@ void updateConfiguration(Configuration config, boolean force) {
                 if (config != null) {
                     updateConfiguration(config, false);
                 }
-                mWinFrame.left = 0;
-                mWinFrame.right = msg.arg1;
-                mWinFrame.top = 0;
-                mWinFrame.bottom = msg.arg2;
+                mWinFrame.addTaint(getTaintInt() + msg.getTaintInt()); 
                 mPendingContentInsets.set(((ResizedInfo)msg.obj).coveredInsets);
                 mPendingVisibleInsets.set(((ResizedInfo)msg.obj).visibleInsets);
                 if (msg.what == RESIZED_REPORT) {

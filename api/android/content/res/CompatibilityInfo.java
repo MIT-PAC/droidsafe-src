@@ -309,25 +309,25 @@ private CompatibilityInfo(Parcel source) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.137 -0500", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "CE3ECB8A302D492657575F56F106DDC0")
     
 public boolean isScalingRequired() {
-        return (mCompatibilityFlags&SCALING_REQUIRED) != 0;
+        return toTaintBoolean(mCompatibilityFlags&SCALING_REQUIRED);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.139 -0500", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "63741BA273D23971F1DD1BD664397649")
     
 public boolean supportsScreen() {
-        return (mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0;
+        return toTaintBoolean(mCompatibilityFlags&NEEDS_SCREEN_COMPAT);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.141 -0500", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "DFAB80F286B6871F3C74F69E74D52217")
     
 public boolean neverSupportsScreen() {
-        return (mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0;
+        return toTaintBoolean(mCompatibilityFlags&ALWAYS_NEEDS_COMPAT);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.144 -0500", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "ADBF8E57DB7043C0B1D7DA74EE10E29B")
     
 public boolean alwaysSupportsScreen() {
-        return (mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0;
+        return toTaintBoolean(mCompatibilityFlags&NEVER_NEEDS_COMPAT);
     }
     
     public class Translator {
@@ -571,7 +571,12 @@ public void applyToConfiguration(Configuration inoutConfig) {
             if (applicationDensity != oc.applicationDensity) return false;
             if (applicationScale != oc.applicationScale) return false;
             if (applicationInvertedScale != oc.applicationInvertedScale) return false;
-            return true;
+
+            return toTaintBoolean(getTaintInt() + o.getTaintInt() +
+                                 mCompatibilityFlags  + oc.mCompatibilityFlags +
+                                 applicationScale + oc.applicationScale + 
+                                 applicationInvertedScale + oc.applicationInvertedScale);
+
         } catch (ClassCastException e) {
             return false;
         }

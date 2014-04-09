@@ -1461,7 +1461,9 @@ private RemoteViews makeTickerView() {
 private RemoteViews makeBigContentView() {
             if (mActions.size() == 0) return null;
 
-            return applyStandardTemplateWithActions(DSUtils.FAKE_INT);
+            RemoteViews views = applyStandardTemplateWithActions(DSUtils.FAKE_INT);
+            views.addTaint(mActions.size());
+            return views;
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.061 -0500", hash_original_method = "844D05C6031B677F492F5AA75F21CC3E", hash_generated_method = "B6ACDFC267242CB93669567AB7D7C323")

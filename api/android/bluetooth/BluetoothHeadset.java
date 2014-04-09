@@ -727,8 +727,11 @@ public boolean stopScoUsingVirtualVoiceCall(BluetoothDevice device) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.952 -0500", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "199CD6721D66E41745A6F0D547B34AF7")
     
 private boolean isEnabled() {
+        return toTaintBoolean(mAdapter.getState());
+        /*
        if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
        return false;
+       */
     }
 
     @DSComment("Private Method")
@@ -736,8 +739,11 @@ private boolean isEnabled() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.953 -0500", hash_original_method = "7FB46929D91880D43466C28024A250A9", hash_generated_method = "3C06CF0F89EACE9CA2AD2966A7F6F9D2")
     
 private boolean isDisabled() {
+       return mAdapter.getTaintBoolean();
+       /*
        if (mAdapter.getState() == BluetoothAdapter.STATE_OFF) return true;
        return false;
+       */
     }
 
     @DSComment("Private Method")
@@ -747,8 +753,11 @@ private boolean isDisabled() {
 private boolean isValidDevice(BluetoothDevice device) {
        if (device == null) return false;
 
+       return BluetoothAdapter.checkBluetoothAddress(device.getAddress());
+       /*
        if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
        return false;
+       */
     }
 }
 

@@ -24,6 +24,7 @@ public final class IoUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.008 -0500", hash_original_method = "CC3C835C7DC734EC9385EF1867371AFC", hash_generated_method = "8B39CF26E6726B55D58D9E9B5459D2BB")
     
 public static void close(FileDescriptor fd) throws IOException {
+        /*
         try {
             if (fd != null && fd.valid()) {
                 Libcore.os.close(fd);
@@ -31,6 +32,7 @@ public static void close(FileDescriptor fd) throws IOException {
         } catch (ErrnoException errnoException) {
             throw errnoException.rethrowAsIOException();
         }
+        */
     }
 
     /**
@@ -39,6 +41,7 @@ public static void close(FileDescriptor fd) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.010 -0500", hash_original_method = "5A323B6ADA47CBA0330A8558101AA838", hash_generated_method = "E9967153966BAB91FFBB75CD16C1808C")
     
 public static void closeQuietly(AutoCloseable closeable) {
+        /*
         if (closeable != null) {
             try {
                 closeable.close();
@@ -47,6 +50,7 @@ public static void closeQuietly(AutoCloseable closeable) {
             } catch (Exception ignored) {
             }
         }
+        */
     }
 
     /**
@@ -55,10 +59,12 @@ public static void closeQuietly(AutoCloseable closeable) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.013 -0500", hash_original_method = "60944505B5CDBC3DF1F09D504ABE26CA", hash_generated_method = "53F886DD2DB1D0EAB6B0035C406A33A2")
     
 public static void closeQuietly(FileDescriptor fd) {
+        /*
         try {
             IoUtils.close(fd);
         } catch (IOException ignored) {
         }
+        */
     }
 
     /**
@@ -67,12 +73,14 @@ public static void closeQuietly(FileDescriptor fd) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.015 -0500", hash_original_method = "FBB19954C139B496BF770D1E0B9BA455", hash_generated_method = "35C319B42F18EB8B04D25696B3275EEF")
     
 public static void closeQuietly(Socket socket) {
+        /*
         if (socket != null) {
             try {
                 socket.close();
             } catch (Exception ignored) {
             }
         }
+*/
     }
 
     /**
@@ -140,8 +148,9 @@ private static UnsafeByteSequence readFileAsBytes(String path) throws IOExceptio
      */
     // TODO: this should specify paths as Strings rather than as Files
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.027 -0500", hash_original_method = "DB704A8F8A7F34577D0E64DF217C80C1", hash_generated_method = "6F5C68D217003AECDC816E33345B9471")
-    
+   @DSSpec(DSCat.IO_ACTION_METHOD) 
 public static void deleteContents(File dir) throws IOException {
+        /*
         File[] files = dir.listFiles();
         if (files == null) {
             throw new IllegalArgumentException("not a directory: " + dir);
@@ -154,6 +163,7 @@ public static void deleteContents(File dir) throws IOException {
                 throw new IOException("failed to delete file: " + file);
             }
         }
+        */
     }
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)

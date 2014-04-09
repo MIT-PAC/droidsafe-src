@@ -30,7 +30,7 @@ public abstract class PackageManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.780 -0500", hash_original_method = "C886A1F4AC1BEA7F445F1AC60A095F6B", hash_generated_method = "747D4FECDA5081F50BA85A7F0D4DE332")
     
 public static boolean isSameUser(int uid1, int uid2) {
-        return getUserId(uid1) == getUserId(uid2);
+        return toTaintBoolean(getUserId(uid1) + getUserId(uid2));
     }
 
     /**

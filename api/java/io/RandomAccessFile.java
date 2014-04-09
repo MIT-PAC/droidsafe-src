@@ -337,7 +337,7 @@ public final boolean readBoolean() throws IOException {
         if (temp < 0) {
             throw new EOFException();
         }
-        return temp != 0;
+        return toTaintBoolean(temp + 0);
     }
 
     /**

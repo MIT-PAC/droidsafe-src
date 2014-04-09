@@ -237,7 +237,7 @@ private void checkNotClosed() throws IOException {
             if (buf == null) {
                 throw new IOException("Reader is closed");
             }
-            return (buf.length - pos > 0 || in.ready());
+            return toTaintBoolean(buf.getTaintInt() - pos + 0 + toTaintInt(in.ready()));
         }
     }
 

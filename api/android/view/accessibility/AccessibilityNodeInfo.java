@@ -1352,6 +1352,9 @@ private void initFromParcel(Parcel parcel) {
             childIds.put(i, childId);
         }
 
+        mBoundsInParent.addTaint(parcel.getTaint());
+        mBoundsInScreen.addTaint(parcel.getTaint());
+/*
         mBoundsInParent.top = parcel.readInt();
         mBoundsInParent.bottom = parcel.readInt();
         mBoundsInParent.left = parcel.readInt();
@@ -1361,7 +1364,7 @@ private void initFromParcel(Parcel parcel) {
         mBoundsInScreen.bottom = parcel.readInt();
         mBoundsInScreen.left = parcel.readInt();
         mBoundsInScreen.right = parcel.readInt();
-
+*/
         mActions = parcel.readInt();
 
         mBooleanProperties = parcel.readInt();

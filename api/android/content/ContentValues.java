@@ -542,7 +542,7 @@ public Boolean getAsBoolean(String key) {
             if (value instanceof CharSequence) {
                 return Boolean.valueOf(value.toString());
             } else if (value instanceof Number) {
-                return ((Number) value).intValue() != 0;
+                return toTaintBoolean(((Number) value).intValue()); 
             } else {
                 Log.e(TAG, "Cannot cast value for " + key + " to a Boolean: " + value, e);
                 return null;

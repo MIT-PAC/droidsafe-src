@@ -466,7 +466,7 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeHasAlpha(int nativeBitmap) {
-        return (nativeBitmap > 0);
+        return toTaintBoolean(nativeBitmap);
     }
     
     @DSComment("Private Method")
@@ -552,7 +552,7 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSameAs(int nb0, int nb1) {
-                return nb0 > nb1;
+                return toTaintBoolean(nb0 + nb1);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.696 -0500", hash_original_field = "E311D4441C2D20ABF50E7FA2BB4DEE17", hash_generated_field = "C25FA99E764685711DDB1FEBC88ADFFB")
 
@@ -1417,7 +1417,10 @@ public Bitmap extractAlpha() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.886 -0500", hash_original_method = "3EA2D759216A517078419525658BBCD0", hash_generated_method = "5B0C9164781E8B5FE38A18C12C1D13D5")
     
 public boolean sameAs(Bitmap other) {
-        return this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap));
+        //return this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap));
+        return toTaintBoolean(getTaintInt() + other.getTaintInt() +
+                              mNativeBitmap + other.mNativeBitmap);
+                              
     }
 
     /**

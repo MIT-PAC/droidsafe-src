@@ -49,7 +49,7 @@ protected FilterInputStream(InputStream in) {
     
 @Override
     public void close() throws IOException {
-        in.close();
+        //in.close();
     }
 
     /**

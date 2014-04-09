@@ -51,13 +51,13 @@ public class Path {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isEmpty(int nPath) {
-        return (nPath > 0);
+        return toTaintBoolean(nPath);  
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isRect(int nPath, RectF rect) {
-        return (nPath > rect.getTaintInt());
+        return toTaintBoolean(nPath + rect.getTaintInt());
     }
     
     @DSComment("Private Method")
@@ -247,6 +247,13 @@ public class Path {
         // within this object's mNativePath.  init2 is a native call,
         // so I conseratively assume this object's mNativePath is tainted 
         // with src.mNativePath 
+/*
+        isSimplePath = src.isSimplePath;
+        mNativePath = src.mNativePath;
+        addTaint(src.isSimplePath);
+        addTaint(src.mNativePath);
+*/
+
         addTaint(src.getTaint());
     }
     
@@ -264,7 +271,7 @@ public void reset() {
             mLastDirection = null;
             if (rects != null) rects.setEmpty();
         }
-        native_reset(mNativePath);
+        //native_reset(mNativePath);
     }
 
     /**
@@ -281,7 +288,7 @@ public void rewind() {
             mLastDirection = null;
             if (rects != null) rects.setEmpty();
         }
-        native_rewind(mNativePath);
+        //native_rewind(mNativePath);
     }
 
     /** Replace the contents of this with the contents of src.
@@ -294,7 +301,8 @@ public void rewind() {
 public void set(Path src) {
         if (this != src) {
             isSimplePath = src.isSimplePath;
-            native_set(mNativePath, src.mNativePath);
+            //native_set(mNativePath, src.mNativePath);
+            addTaint(src.getTaint());
         }
     }
 
@@ -307,7 +315,7 @@ public void set(Path src) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.183 -0500", hash_original_method = "756CBBEFC8F729432A1EDFB10FC9B142", hash_generated_method = "3E1091E64E04D95BCD9FC7CCA880B267")
     
 public FillType getFillType() {
-        return sFillTypeArray[native_getFillType(mNativePath)];
+        return sFillTypeArray[native_getFillType(getTaintInt())];
     }
 
     /**
@@ -318,7 +326,8 @@ public FillType getFillType() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.185 -0500", hash_original_method = "5E380303FA17349F493701662250C5C9", hash_generated_method = "A82B4D2E18FDC69EB3998B22CCB8CB7D")
     
 public void setFillType(FillType ft) {
-        native_setFillType(mNativePath, ft.nativeInt);
+        //native_setFillType(mNativePath, ft.nativeInt);
+        addTaint(ft.getTaint());
     }
     
     /**
@@ -331,8 +340,8 @@ public void setFillType(FillType ft) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.188 -0500", hash_original_method = "659A2CB8B4863836C5C292B196F32903", hash_generated_method = "60472A76FE7A5B817C24F7714958844A")
     
 public boolean isInverseFillType() {
-        final int ft = native_getFillType(mNativePath);
-        return (ft & 2) != 0;
+        //return toTaintBoolean(mNativePath);
+        return getTaintBoolean();
     }
     
     /**
@@ -343,9 +352,11 @@ public boolean isInverseFillType() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.190 -0500", hash_original_method = "B0C8497AF8D8E800E41ED12D1C4B68D2", hash_generated_method = "01779E7563CC9D1C10FBB738A02AEB08")
     
 public void toggleInverseFillType() {
+        /*
         int ft = native_getFillType(mNativePath);
         ft ^= 2;
         native_setFillType(mNativePath, ft);
+        */
     }
     
     /**
@@ -358,7 +369,8 @@ public void toggleInverseFillType() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.192 -0500", hash_original_method = "7418BC5D1CF727D38A2258A36F4B5C15", hash_generated_method = "5E68F97A65859B3BEDCFD1D0A3F53164")
     
 public boolean isEmpty() {
-        return native_isEmpty(mNativePath);
+        //return native_isEmpty(mNativePath);
+        return getTaintBoolean();
     }
 
     /**
@@ -375,7 +387,11 @@ public boolean isEmpty() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.194 -0500", hash_original_method = "B84E7088610242E6493E719E7ABEF1E6", hash_generated_method = "A006FE7A8FF3CC1C6DAB8DB5F9C7CA0D")
     
 public boolean isRect(RectF rect) {
-        return native_isRect(mNativePath, rect);
+        if (rect!= null) {
+            rect.addTaint(getTaint());
+            return rect.getTaintBoolean();
+        }
+        return false;
     }
 
     /**
@@ -392,7 +408,12 @@ public boolean isRect(RectF rect) {
     
 @SuppressWarnings({"UnusedDeclaration"})
     public void computeBounds(RectF bounds, boolean exact) {
+        /*
         native_computeBounds(mNativePath, bounds);
+        mNativePath += toTaintInt(true);
+        */
+        bounds.addTaint(exact);
+        bounds.addTaint(getTaint());
     }
 
     /**
@@ -407,7 +428,8 @@ public boolean isRect(RectF rect) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.198 -0500", hash_original_method = "29BD172EB2F3A7AF9AFA9275279C4F54", hash_generated_method = "5043BC79422F095F0E841B1527CD7B1D")
     
 public void incReserve(int extraPtCount) {
-        native_incReserve(mNativePath, extraPtCount);
+        //native_incReserve(mNativePath, extraPtCount);
+        addTaint(extraPtCount);
     }
 
     /**
@@ -421,7 +443,9 @@ public void incReserve(int extraPtCount) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.201 -0500", hash_original_method = "732AD0D6CB11A9ADE203372D23E48872", hash_generated_method = "D02CEE4CBF36DAA6F8F680D2D5C12B04")
     
 public void moveTo(float x, float y) {
-        native_moveTo(mNativePath, x, y);
+        //native_moveTo(mNativePath, x, y);
+        //mNativePath += (int)(x + y);
+        addTaint(x + y);
     }
 
     /**
@@ -439,7 +463,9 @@ public void moveTo(float x, float y) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.203 -0500", hash_original_method = "0933141A2BB19D63525BF81BE900CD97", hash_generated_method = "7DAF1A7203D408BDFAB1D871ECB1CE25")
     
 public void rMoveTo(float dx, float dy) {
-        native_rMoveTo(mNativePath, dx, dy);
+        //native_rMoveTo(mNativePath, dx, dy);
+        //mNativePath += (int)(dx + dy);
+        addTaint(dx + dy);
     }
 
     /**
@@ -456,7 +482,8 @@ public void rMoveTo(float dx, float dy) {
     
 public void lineTo(float x, float y) {
         isSimplePath = false;
-        native_lineTo(mNativePath, x, y);
+        //native_lineTo(mNativePath, x, y);
+        addTaint(x + y);
     }
 
     /**
@@ -475,7 +502,9 @@ public void lineTo(float x, float y) {
     
 public void rLineTo(float dx, float dy) {
         isSimplePath = false;
-        native_rLineTo(mNativePath, dx, dy);
+        //native_rLineTo(mNativePath, dx, dy);
+        //mNativePath += (int)(dx + dy);
+        addTaint(dx + dy);
     }
 
     /**
@@ -494,7 +523,12 @@ public void rLineTo(float dx, float dy) {
     
 public void quadTo(float x1, float y1, float x2, float y2) {
         isSimplePath = false;
+        /*
         native_quadTo(mNativePath, x1, y1, x2, y2);
+        mNativePath += (int) (x1 + y1 + x2 + y2);
+        addTaint(mNativePath);
+        */
+        addTaint(x1 + x2 + y1 + y2);
     }
 
     /**
@@ -517,7 +551,13 @@ public void quadTo(float x1, float y1, float x2, float y2) {
     
 public void rQuadTo(float dx1, float dy1, float dx2, float dy2) {
         isSimplePath = false;
+        /*
         native_rQuadTo(mNativePath, dx1, dy1, dx2, dy2);
+        mNativePath += (int)(dx1 + dy1 + dx2 + dy2);
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
+        addTaint(dx1 + dx2 + dy1 + dy2);
     }
 
     /**
@@ -539,7 +579,13 @@ public void rQuadTo(float dx1, float dy1, float dx2, float dy2) {
 public void cubicTo(float x1, float y1, float x2, float y2,
                         float x3, float y3) {
         isSimplePath = false;
+        /*
         native_cubicTo(mNativePath, x1, y1, x2, y2, x3, y3);
+        mNativePath += (int)(x1 + x2 + y1 + y2);
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
+        addTaint(x1 + x2 + y1 + y2);
     }
 
     /**
@@ -554,7 +600,13 @@ public void cubicTo(float x1, float y1, float x2, float y2,
 public void rCubicTo(float x1, float y1, float x2, float y2,
                          float x3, float y3) {
         isSimplePath = false;
+        /*
         native_rCubicTo(mNativePath, x1, y1, x2, y2, x3, y3);
+        mNativePath += (int)(x1 + y1 + x2 + y2 + x3 + y3);
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
+        addTaint(x1 + y1 + x2 + y2 + x3 + y3);
     }
 
     /**
@@ -577,15 +629,27 @@ public void rCubicTo(float x1, float y1, float x2, float y2,
 public void arcTo(RectF oval, float startAngle, float sweepAngle,
                       boolean forceMoveTo) {
         isSimplePath = false;
+        /*
         native_arcTo(mNativePath, oval, startAngle, sweepAngle, forceMoveTo);
+        mNativePath += (int)(oval.getTaintInt() + startAngle + sweepAngle + toTaintInt(forceMoveTo));
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
+        addTaint(oval.getTaintInt() + startAngle + sweepAngle);
+        addTaint(forceMoveTo);
     }
      
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void arcTo(RectF oval, float startAngle, float sweepAngle) {
-        addTaint(oval.getTaint());
-        addTaint(startAngle);
-        addTaint(sweepAngle);
+        isSimplePath = false;
+        /*
+        mNativePath += (int)(oval.getTaintInt() + startAngle + sweepAngle);
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
+
+        addTaint(oval.getTaintInt() + startAngle + sweepAngle);
     }
     
     /**
@@ -598,12 +662,17 @@ public void arcTo(RectF oval, float startAngle, float sweepAngle,
     
 public void close() {
         isSimplePath = false;
-        native_close(mNativePath);
+        //native_close(mNativePath);
+       /* 
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.235 -0500", hash_original_method = "4C4C77916FAC7E47D84337BC4A27AFDA", hash_generated_method = "0EF07D3D916DD25CFCB49A56E294B8A6")
     
 private void detectSimplePath(float left, float top, float right, float bottom, Direction dir) {
+        /*
         if (mDetectSimplePaths) {
             if (mLastDirection == null) {
                 mLastDirection = dir;
@@ -615,6 +684,9 @@ private void detectSimplePath(float left, float top, float right, float bottom, 
                 rects.op((int) left, (int) top, (int) right, (int) bottom, Region.Op.UNION);
             }
         }
+        */
+        isSimplePath = toTaintBoolean(left + top + right + bottom + dir.nativeInt);
+        
     }
 
     /**
@@ -630,7 +702,8 @@ public void addRect(RectF rect, Direction dir) {
             throw new NullPointerException("need rect parameter");
         }
         detectSimplePath(rect.left, rect.top, rect.right, rect.bottom, dir);
-        native_addRect(mNativePath, rect, dir.nativeInt);
+        //native_addRect(mNativePath, rect, dir.nativeInt);
+        addTaint(rect.getTaintInt() + dir.nativeInt);
     }
 
     /**
@@ -646,7 +719,8 @@ public void addRect(RectF rect, Direction dir) {
     
 public void addRect(float left, float top, float right, float bottom, Direction dir) {
         detectSimplePath(left, top, right, bottom, dir);
-        native_addRect(mNativePath, left, top, right, bottom, dir.nativeInt);
+        //native_addRect(mNativePath, left, top, right, bottom, dir.nativeInt);
+        addTaint(left + top + right + bottom + dir.nativeInt);
     }
 
     /**
@@ -662,7 +736,8 @@ public void addOval(RectF oval, Direction dir) {
             throw new NullPointerException("need oval parameter");
         }
         isSimplePath = false;
-        native_addOval(mNativePath, oval, dir.nativeInt);
+        //native_addOval(mNativePath, oval, dir.nativeInt);
+        addTaint(oval.getTaintInt() + dir.nativeInt);
     }
 
     /**
@@ -677,7 +752,9 @@ public void addOval(RectF oval, Direction dir) {
     
 public void addCircle(float x, float y, float radius, Direction dir) {
         isSimplePath = false;
-        native_addCircle(mNativePath, x, y, radius, dir.nativeInt);
+        //native_addCircle(mNativePath, x, y, radius, dir.nativeInt);
+        //mNativePath = (int)(x + y + radius + dir.getTaintInt());
+        addTaint(x + y + radius + dir.getTaintInt());
     }
 
     /**
@@ -696,7 +773,10 @@ public void addArc(RectF oval, float startAngle, float sweepAngle) {
             throw new NullPointerException("need oval parameter");
         }
         isSimplePath = false;
-        native_addArc(mNativePath, oval, startAngle, sweepAngle);
+        
+        addTaint(oval.getTaintInt() + startAngle + sweepAngle);
+        
+        //native_addArc(mNativePath, oval, startAngle, sweepAngle);
     }
 
     /**
@@ -714,7 +794,8 @@ public void addRoundRect(RectF rect, float rx, float ry, Direction dir) {
             throw new NullPointerException("need rect parameter");
         }
         isSimplePath = false;
-        native_addRoundRect(mNativePath, rect, rx, ry, dir.nativeInt);
+        addTaint(rect.getTaintInt() + rx + ry + dir.nativeInt); 
+        //native_addRoundRect(mNativePath, rect, rx, ry, dir.nativeInt);
     }
     
     /**
@@ -736,7 +817,8 @@ public void addRoundRect(RectF rect, float[] radii, Direction dir) {
             throw new ArrayIndexOutOfBoundsException("radii[] needs 8 values");
         }
         isSimplePath = false;
-        native_addRoundRect(mNativePath, rect, radii, dir.nativeInt);
+        //native_addRoundRect(mNativePath, rect, radii, dir.nativeInt);
+        addTaint(rect.getTaintInt() + radii[0] + dir.nativeInt);
     }
     
     /**
@@ -751,7 +833,8 @@ public void addRoundRect(RectF rect, float[] radii, Direction dir) {
     
 public void addPath(Path src, float dx, float dy) {
         isSimplePath = false;
-        native_addPath(mNativePath, src.mNativePath, dx, dy);
+        //native_addPath(mNativePath, src.mNativePath, dx, dy);
+        addTaint(src.getTaintInt() + dx + dy);
     }
 
     /**
@@ -765,7 +848,15 @@ public void addPath(Path src, float dx, float dy) {
     
 public void addPath(Path src) {
         isSimplePath = false;
+        addTaint(src.getTaint());
+
+        /*
         native_addPath(mNativePath, src.mNativePath);
+        mNativePath = src.mNativePath;
+        
+        addTaint(mNativePath);
+        addTaint(isSimplePath);
+        */
     }
 
     /**
@@ -779,7 +870,8 @@ public void addPath(Path src) {
     
 public void addPath(Path src, Matrix matrix) {
         if (!src.isSimplePath) isSimplePath = false;
-        native_addPath(mNativePath, src.mNativePath, matrix.native_instance);
+        //native_addPath(mNativePath, src.mNativePath, matrix.native_instance);
+        addTaint(src.getTaintInt() + matrix.getTaintInt());
     }
 
     /**
@@ -795,11 +887,13 @@ public void addPath(Path src, Matrix matrix) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.260 -0500", hash_original_method = "300271373C98AD70F0D1DFEC9CC1821E", hash_generated_method = "59165EC4A27D0BFC06FEA206895769A9")
     
 public void offset(float dx, float dy, Path dst) {
-        int dstNative = 0;
+        
+        addTaint(dx + dy);
+        
         if (dst != null) {
-            dstNative = dst.mNativePath;
+            dst.addTaint(getTaint());
         }
-        native_offset(mNativePath, dx, dy, dstNative);
+        //native_offset(mNativePath, dx, dy, dstNative);
     }
 
     /**
@@ -813,7 +907,8 @@ public void offset(float dx, float dy, Path dst) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.263 -0500", hash_original_method = "84AAB7006BE97BBDBF66CEB78BE6403B", hash_generated_method = "3C20BC051E9D2FCD151EE798638265AC")
     
 public void offset(float dx, float dy) {
-        native_offset(mNativePath, dx, dy);
+        //native_offset(mNativePath, dx, dy);
+        addTaint(dx + dy);
     }
 
     /**
@@ -829,7 +924,8 @@ public void offset(float dx, float dy) {
     
 public void setLastPoint(float dx, float dy) {
         isSimplePath = false;
-        native_setLastPoint(mNativePath, dx, dy);
+        //native_setLastPoint(mNativePath, dx, dy);
+        addTaint(dx + dy);
     }
 
     /**
@@ -845,11 +941,11 @@ public void setLastPoint(float dx, float dy) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.267 -0500", hash_original_method = "C6EADCEB56E45A061E81B3D824529855", hash_generated_method = "155AEFF2297093F3595BC74B1CF28D38")
     
 public void transform(Matrix matrix, Path dst) {
-        int dstNative = 0;
+        addTaint(matrix.native_instance + dst.getTaintInt() + matrix.getTaintInt());
         if (dst != null) {
-            dstNative = dst.mNativePath;
+            dst.addTaint(getTaint()) ;
         }
-        native_transform(mNativePath, matrix.native_instance, dstNative);
+        //native_transform(mNativePath, matrix.native_instance, dstNative);
     }
 
     /**
@@ -862,7 +958,8 @@ public void transform(Matrix matrix, Path dst) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.269 -0500", hash_original_method = "E2E9E79308A321DB0305128A17F8E66B", hash_generated_method = "AA19067AA7A96EBCD61A9CD10B053F4E")
     
 public void transform(Matrix matrix) {
-        native_transform(mNativePath, matrix.native_instance);
+        //native_transform(mNativePath, matrix.getTaintInt());
+        addTaint(matrix.getTaint());
     }
     
     @DSComment("From safe class list")
@@ -897,6 +994,7 @@ Direction(int ni) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.232 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "6B116C6445FBD920A2653C64D32C9FB3")
 
          int nativeInt;
+    
     }
     
     @DSComment("Package priviledge")

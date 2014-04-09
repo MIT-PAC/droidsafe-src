@@ -92,7 +92,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
 @Override
     public boolean isNull(int columnIndex) {
         checkPosition();
-        return mWindow.getType(mPos, columnIndex) == Cursor.FIELD_TYPE_NULL;
+        return toTaintBoolean(mWindow.getType(mPos, columnIndex) + Cursor.FIELD_TYPE_NULL);
     }
 
     /**
@@ -102,8 +102,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isBlob(int columnIndex) {
-        return getType(columnIndex) == Cursor.FIELD_TYPE_BLOB;
-    }
+            return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_BLOB);
+        }
 
     /**
      * @deprecated Use {@link #getType}
@@ -112,8 +112,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isString(int columnIndex) {
-        return getType(columnIndex) == Cursor.FIELD_TYPE_STRING;
-    }
+            return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_STRING);
+        }
 
     /**
      * @deprecated Use {@link #getType}
@@ -122,7 +122,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isLong(int columnIndex) {
-        return getType(columnIndex) == Cursor.FIELD_TYPE_INTEGER;
+        return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_INTEGER);
     }
 
     /**
@@ -132,7 +132,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isFloat(int columnIndex) {
-        return getType(columnIndex) == Cursor.FIELD_TYPE_FLOAT;
+        return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_FLOAT);
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
@@ -194,7 +194,8 @@ public void setWindow(CursorWindow window) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.454 -0500", hash_original_method = "CE7634279B030B3367B24B82DE682EB0", hash_generated_method = "E794DC69B772C88CA8008EEA960D60CF")
     
 public boolean hasWindow() {
-        return mWindow != null;
+        //return mWindow != null;
+        return mWindow.getTaintBoolean();
     }
 
     /**

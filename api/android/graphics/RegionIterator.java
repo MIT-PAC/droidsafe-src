@@ -23,7 +23,7 @@ public class RegionIterator {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeNext(int native_iter, Rect r) {
-        return (native_iter > r.getTaintInt());
+        return toTaintBoolean(native_iter + r.getTaintInt());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.013 -0500", hash_original_field = "3718B7AC5E828F6E59131B9828863051", hash_generated_field = "E1D7CD06343707E8A73E705F1CEC05A1")
     
@@ -42,6 +42,7 @@ public class RegionIterator {
     
 public RegionIterator(Region region) {
         mNativeIter = nativeConstructor(region.ni());
+        addTaint(region.getTaint());
     }
 
     /**
@@ -57,7 +58,7 @@ public final boolean next(Rect r) {
         if (r == null) {
             throw new NullPointerException("The Rect must be provided");
         }
-        return nativeNext(mNativeIter, r);
+        return toTaintBoolean(r.getTaintInt() + getTaintInt());
     }
     
     @DSComment("From safe class list")

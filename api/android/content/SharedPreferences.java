@@ -61,16 +61,16 @@ public interface SharedPreferences {
     Map<String, ?> getAll();
 
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     String getString(String key, String defValue);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     Set<String> getStringSet(String key, Set<String> defValues);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int getInt(String key, int defValue);
     

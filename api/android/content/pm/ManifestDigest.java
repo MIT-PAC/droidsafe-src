@@ -99,8 +99,10 @@ private ManifestDigest(Parcel source) {
         }
 
         final ManifestDigest other = (ManifestDigest) o;
+        return toTaintBoolean(o.getTaintInt() + getTaintInt() + 
+                             mDigest.getTaintInt() + other.mDigest.getTaintInt());
 
-        return this == other || Arrays.equals(mDigest, other.mDigest);
+        //return this == other || Arrays.equals(mDigest, other.mDigest);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.889 -0500", hash_original_method = "E44F66496A9E1D9F549FC1B26A939089", hash_generated_method = "36DCC4708255E87D514E030B24E7ADCA")

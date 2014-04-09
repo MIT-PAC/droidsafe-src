@@ -611,7 +611,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         }
     }
 		*/
-		return false;
+		return toTaintBoolean(id + getTaintInt());
 	}
     
 	@DSComment("Resource is a data structure, getting system resource is spec")

@@ -82,11 +82,11 @@ public final class NativeConverter {
     }
     
     public static boolean contains(String converterName1, String converterName2) {
-        return (converterName1.getTaintBoolean() && converterName2.getTaintBoolean());
+        return toTaintBoolean(converterName1.getTaintInt() + converterName2.getTaintInt());
     }
     
     public static boolean canEncode(long converterHandle, int codeUnit) {
-        return (converterHandle > 0) && (codeUnit > 0);
+        return toTaintBoolean(converterHandle  + codeUnit); 
     }
     
     public static String[] getAvailableCharsetNames() {

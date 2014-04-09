@@ -79,6 +79,10 @@ public static void apply(int gravity, int w, int h, Rect container,
     
 public static void apply(int gravity, int w, int h, Rect container,
             int xAdj, int yAdj, Rect outRect) {
+        
+        outRect.addTaint(gravity + w + h + xAdj + yAdj + container.getTaintInt());
+
+        /*
         switch (gravity&((AXIS_PULL_BEFORE|AXIS_PULL_AFTER)<<AXIS_X_SHIFT)) {
             case 0:
                 outRect.left = container.left
@@ -160,6 +164,7 @@ public static void apply(int gravity, int w, int h, Rect container,
                 outRect.bottom = container.bottom + yAdj;
                 break;
         }
+        */
     }
 
     /**
@@ -182,41 +187,7 @@ public static void apply(int gravity, int w, int h, Rect container,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.342 -0500", hash_original_method = "4DADE2ED4614B557691AD1421788BDE3", hash_generated_method = "2C545D1FB947278F2E1C4B6DDA29EF0B")
     
 public static void applyDisplay(int gravity, Rect display, Rect inoutObj) {
-        if ((gravity&DISPLAY_CLIP_VERTICAL) != 0) {
-            if (inoutObj.top < display.top) inoutObj.top = display.top;
-            if (inoutObj.bottom > display.bottom) inoutObj.bottom = display.bottom;
-        } else {
-            int off = 0;
-            if (inoutObj.top < display.top) off = display.top-inoutObj.top;
-            else if (inoutObj.bottom > display.bottom) off = display.bottom-inoutObj.bottom;
-            if (off != 0) {
-                if (inoutObj.height() > (display.bottom-display.top)) {
-                    inoutObj.top = display.top;
-                    inoutObj.bottom = display.bottom;
-                } else {
-                    inoutObj.top += off;
-                    inoutObj.bottom += off;
-                }
-            }
-        }
-        
-        if ((gravity&DISPLAY_CLIP_HORIZONTAL) != 0) {
-            if (inoutObj.left < display.left) inoutObj.left = display.left;
-            if (inoutObj.right > display.right) inoutObj.right = display.right;
-        } else {
-            int off = 0;
-            if (inoutObj.left < display.left) off = display.left-inoutObj.left;
-            else if (inoutObj.right > display.right) off = display.right-inoutObj.right;
-            if (off != 0) {
-                if (inoutObj.width() > (display.right-display.left)) {
-                    inoutObj.left = display.left;
-                    inoutObj.right = display.right;
-                } else {
-                    inoutObj.left += off;
-                    inoutObj.right += off;
-                }
-            }
-        }
+        inoutObj.addTaint(gravity + display.getTaintInt());
     }
     
     /**
@@ -228,7 +199,7 @@ public static void applyDisplay(int gravity, Rect display, Rect inoutObj) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.347 -0500", hash_original_method = "1F47EE467986BB0FFF0B9D8C3E5BF63C", hash_generated_method = "7832ED6601F42177E105964EB06301A4")
     
 public static boolean isVertical(int gravity) {
-        return gravity > 0 && (gravity & VERTICAL_GRAVITY_MASK) != 0;
+        return toTaintBoolean(gravity);
     }
 
     /**

@@ -59,10 +59,13 @@ public BluetoothClass(int classInt) {
     
 @Override
     public boolean equals(Object o) {
+        return toTaintBoolean(getTaintInt() + o.getTaintInt());
+        /*
         if (o instanceof BluetoothClass) {
             return mClass == ((BluetoothClass)o).mClass;
         }
         return false;
+        */
     }
     
     public static final class Service {
@@ -368,7 +371,7 @@ public void writeToParcel(Parcel out, int flags) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.482 -0500", hash_original_method = "A40FEF9DD742C9180312A83CC46BA74D", hash_generated_method = "361D3D89F84B08660F7805B92FEDDB85")
     
 public boolean hasService(int service) {
-        return ((mClass & Service.BITMASK & service) != 0);
+        return toTaintBoolean(mClass & Service.BITMASK & service); 
     }
 
     /**
@@ -468,17 +471,23 @@ public boolean doesClassMatch(int profile) {
                 default:
                     return false;
             }
-        } else if (profile == PROFILE_HID) {
-            return (getDeviceClass() & Device.Major.PERIPHERAL) == Device.Major.PERIPHERAL;
+        }
+
+        return toTaintBoolean(profile + getDeviceClass() + toTaintInt(hasService(profile)));
+        
+        /*
+         else if (profile == PROFILE_HID) {
+            return toTaintBoolean(getDeviceClass() & Device.Major.PERIPHERAL + Device.Major.PERIPHERAL); 
         } else if (profile == PROFILE_PANU || profile == PROFILE_NAP){
             // No good way to distinguish between the two, based on class bits.
             if (hasService(Service.NETWORKING)) {
                 return true;
             }
-            return (getDeviceClass() & Device.Major.NETWORKING) == Device.Major.NETWORKING;
+            return toTaintBoolean(getDeviceClass() & Device.Major.NETWORKING + Device.Major.NETWORKING + );
         } else {
             return false;
         }
+        */
     }
 }
 

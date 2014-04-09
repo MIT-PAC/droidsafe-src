@@ -107,7 +107,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                   float right, float bottom,
                                                   int regionOp) {
 
-        return (nCanvas + left + top + right + bottom + regionOp != 0);
+        return toTaintBoolean(nCanvas + left + top + right + bottom + regionOp);
     }
     
     @DSComment("Private Method")
@@ -115,7 +115,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
-        return (nativeCanvas + nativePath > regionOp);
+        return toTaintBoolean(nativeCanvas + nativePath + regionOp);
     }
     
     @DSComment("Private Method")
@@ -124,7 +124,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                     int nativeRegion,
                                                     int regionOp) {
 
-        return (nativeCanvas + nativeRegion > regionOp);
+        return toTaintBoolean(nativeCanvas + nativeRegion + regionOp);
     }
     
     @DSComment("Private Method")
@@ -137,7 +137,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
-        return (nativeCanvas != bounds.getTaintInt());
+        return toTaintBoolean(nativeCanvas + bounds.getTaintInt());
     }
     
     @DSComment("Private Method")
@@ -150,7 +150,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
-        return (nativeCanvas + rect.getTaintInt() + native_edgeType) > 0;
+        return toTaintBoolean(nativeCanvas + rect.getTaintInt() + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -159,7 +159,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      int path,
                                                      int native_edgeType) {
 
-        return (0 != (nativeCanvas + path + native_edgeType));
+        return toTaintBoolean(nativeCanvas + path + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -168,7 +168,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float left, float top,
                                                      float right, float bottom,
                                                      int native_edgeType) {
-        return (nativeCanvas + left + top + right + bottom + native_edgeType) > 0;
+        return toTaintBoolean(nativeCanvas + left + top + right + bottom + native_edgeType);
     }
     
     @DSComment("Private Method")
@@ -460,6 +460,8 @@ Canvas(int nativeCanvas) {
         mNativeCanvas = nativeCanvas;
         mFinalizer = new CanvasFinalizer(nativeCanvas);
         mDensity = Bitmap.getDefaultDensity();
+
+        addTaint(nativeCanvas);
     }
     //droidsafe wrapper without changing visibility of the default constructor
     @DSVerified
@@ -482,7 +484,8 @@ Canvas(int nativeCanvas) {
     
 @Deprecated
     protected GL getGL() {
-        return null;
+        //return null;
+        return new GL() {};
     }
 
     /**
@@ -878,7 +881,7 @@ public final void rotate(float degrees, float px, float py) {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void concat(Matrix matrix) {
-		addTaint(matrix.native_instance);
+		addTaint(matrix.getTaint());
     }
     
     /**
@@ -895,7 +898,7 @@ public final void rotate(float degrees, float px, float py) {
     
 public void setMatrix(Matrix matrix) {
         native_setMatrix(mNativeCanvas,
-                         matrix == null ? 0 : matrix.native_instance);
+                         matrix == null ? 0 : matrix.getTaintInt());
     }
     
     /**
@@ -907,7 +910,7 @@ public void setMatrix(Matrix matrix) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.168 -0500", hash_original_method = "43D0B837CD75E40B4AB1C87B7D03A6CC", hash_generated_method = "A9BE5FD6B90F19A6DB1C75520C046BEA")
     
 public void getMatrix(Matrix ctm) {
-        native_getCTM(mNativeCanvas, ctm.native_instance);
+        native_getCTM(mNativeCanvas, ctm.getTaintInt());
     }
 
     /**
@@ -921,7 +924,8 @@ public void getMatrix(Matrix ctm) {
     
 public final Matrix getMatrix() {
         Matrix m = new Matrix();
-        getMatrix(m);
+        //getMatrix(m);
+        m.addTaint(getTaint());
         return m;
     }
     
@@ -937,9 +941,14 @@ public final Matrix getMatrix() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.173 -0500", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "11763958C4DDE97C38EB6CF50AA0DC5D")
     
 public boolean clipRect(RectF rect, Region.Op op) {
+        addTaint(rect.getTaint());
+        addTaint(op.nativeInt);
+        return getTaintBoolean();
+        /*
         return native_clipRect(mNativeCanvas,
                                rect.left, rect.top, rect.right, rect.bottom,
                                op.nativeInt);
+        */
     }
 
     /**
@@ -955,9 +964,13 @@ public boolean clipRect(RectF rect, Region.Op op) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.175 -0500", hash_original_method = "C0255CEC0BCD1AD46E1B4E180BE74E1B", hash_generated_method = "B52B4C54AFF7D730B7710759599B2299")
     
 public boolean clipRect(Rect rect, Region.Op op) {
+        /*
         return native_clipRect(mNativeCanvas,
                                rect.left, rect.top, rect.right, rect.bottom,
                                op.nativeInt);
+        */
+        addTaint(rect.getTaintInt() + op.nativeInt);
+        return getTaintBoolean();
     }
 
     /**
@@ -1015,8 +1028,9 @@ public boolean clipRect(Rect rect, Region.Op op) {
     
 public boolean clipRect(float left, float top, float right, float bottom,
                             Region.Op op) {
-        return native_clipRect(mNativeCanvas, left, top, right, bottom,
-                               op.nativeInt);
+        //return native_clipRect(mNativeCanvas, left, top, right, bottom, op.nativeInt);
+        addTaint(left + top + right + bottom + op.getTaintInt());
+        return getTaintBoolean();
     }
 
     /**
@@ -1083,7 +1097,10 @@ public boolean clipRect(float left, float top, float right, float bottom,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.194 -0500", hash_original_method = "7A7DE76338CD4FF5C3A48558D2B4614E", hash_generated_method = "1BC6A3758785F5F0776626FF643FAA62")
     
 public boolean clipPath(Path path, Region.Op op) {
-        return native_clipPath(mNativeCanvas, path.ni(), op.nativeInt);
+        //return native_clipPath(mNativeCanvas, path.ni(), op.nativeInt);
+        addTaint(path.getTaint());
+        addTaint(op.getTaint());
+        return getTaintBoolean(); 
     }
     
     /**
@@ -1114,7 +1131,8 @@ public boolean clipPath(Path path) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.198 -0500", hash_original_method = "28C7C5FF233FA752A95A4980EB733491", hash_generated_method = "2F846477F27E4E0526BED076D2581381")
     
 public boolean clipRegion(Region region, Region.Op op) {
-        return native_clipRegion(mNativeCanvas, region.ni(), op.nativeInt);
+        addTaint(region.getTaintInt() + op.nativeInt);
+        return  getTaintBoolean();
     }
 
     /**
@@ -1285,7 +1303,8 @@ public void drawRGB(int r, int g, int b) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.227 -0500", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "25A3A58DABAB0A14F7BA58894D4CE78B")
     
 public void drawARGB(int a, int r, int g, int b) {
-        native_drawARGB(mNativeCanvas, a, r, g, b);
+        //native_drawARGB(mNativeCanvas, a, r, g, b);
+       addTaint(a + r + g + b); 
     }
 
     /**
@@ -1299,7 +1318,8 @@ public void drawARGB(int a, int r, int g, int b) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.229 -0500", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "EE06CAAE9D24DA5976CF89E841300FAB")
     
 public void drawColor(int color) {
-        native_drawColor(mNativeCanvas, color);
+        //native_drawColor(mNativeCanvas, color);
+        addTaint(color);
     }
 
     /**
@@ -1312,7 +1332,8 @@ public void drawColor(int color) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.231 -0500", hash_original_method = "4AB8965ACD48B286E6BCF28D614F6B00", hash_generated_method = "BC575776DFB584ABEB1578CB4B01E8B5")
     
 public void drawColor(int color, PorterDuff.Mode mode) {
-        native_drawColor(mNativeCanvas, color, mode.nativeInt);
+        //native_drawColor(mNativeCanvas, color, mode.nativeInt);
+        addTaint(color + mode.nativeInt);
     }
 
     /**
@@ -1327,7 +1348,8 @@ public void drawColor(int color, PorterDuff.Mode mode) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.233 -0500", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "842D690B248E8ADCC5125F903224E558")
     
 public void drawPaint(Paint paint) {
-        native_drawPaint(mNativeCanvas, paint.mNativePaint);
+        //native_drawPaint(mNativeCanvas, paint.mNativePaint);
+        addTaint(paint.getTaint());
     }
     
     /**
@@ -1519,8 +1541,11 @@ public void drawRect(float left, float top, float right, float bottom,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.263 -0500", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "692344834A58C7F02E5722238C227FDE")
     
 public void drawCircle(float cx, float cy, float radius, Paint paint) {
+        /*
         native_drawCircle(mNativeCanvas, cx, cy, radius,
                           paint.mNativePaint);
+        */
+        addTaint(cx + cy + radius + paint.getTaintInt());
     }
 
     /**
@@ -1555,8 +1580,12 @@ public void drawArc(RectF oval, float startAngle, float sweepAngle,
         if (oval == null) {
             throw new NullPointerException();
         }
+        /*
         native_drawArc(mNativeCanvas, oval, startAngle, sweepAngle,
                        useCenter, paint.mNativePaint);
+        */
+        addTaint(oval.getTaintInt() + startAngle + sweepAngle + paint.getTaintInt());
+        addTaint(useCenter);
     }
 
     /**
@@ -1607,6 +1636,7 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.274 -0500", hash_original_method = "ED4DAC4BAED1A32A3D194D286EE0C9BC", hash_generated_method = "EB27392E1BDD30EDFD84F4921F2A74B4")
     
 public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
+        addTaint(bitmap.getTaintInt() + chunks[0] + dst.getTaintInt() + paint.getTaintInt());
     }
     
     @DSComment("From safe class list")
@@ -1663,10 +1693,14 @@ public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
         if (dst == null) {
             throw new NullPointerException();
         }
+        /*
         throwIfRecycled(bitmap);
         native_drawBitmap(mNativeCanvas, bitmap.ni(), src, dst,
                           paint != null ? paint.mNativePaint : 0,
                           mScreenDensity, bitmap.mDensity);
+        */
+        addTaint(bitmap.getTaintInt() + src.getTaintInt() + paint.getTaintInt());
+        dst.addTaint(taint);
     }
     
     /**
@@ -1715,9 +1749,13 @@ public void drawBitmap(int[] colors, int offset, int stride, float x,
         if (width == 0 || height == 0) {
             return;
         }
+/*
         // punch down to native for the actual draw
         native_drawBitmap(mNativeCanvas, colors, offset, stride, x, y, width, height, hasAlpha,
                 paint != null ? paint.mNativePaint : 0);
+*/
+        addTaint(colors[0] + offset + stride + x + y + width + height + paint.getTaintInt());
+        addTaint(hasAlpha);
     }
     
     /** Legacy version of drawBitmap(int[] colors, ...) that took ints for x,y
@@ -1746,8 +1784,11 @@ public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.289 -0500", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "E0067301BC4D95F1F82B6EFF8CAC0C89")
     
 public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
+        /*
         nativeDrawBitmapMatrix(mNativeCanvas, bitmap.ni(), matrix.ni(),
                 paint != null ? paint.mNativePaint : 0);
+        */
+        addTaint(bitmap.getTaintInt() + matrix.getTaintInt() + paint.getTaintInt());
     }
     
     /**
@@ -2203,6 +2244,8 @@ public void drawTextOnPath(String text, Path path, float hOffset,
             native_drawTextOnPath(mNativeCanvas, text, path.ni(),
                                   hOffset, vOffset, paint.mBidiFlags,
                                   paint.mNativePaint);
+            addTaint(text.getTaint());
+            addTaint(path.getTaintInt() + hOffset + vOffset + paint.getTaintInt());
         }
     }
 
@@ -2219,7 +2262,8 @@ public void drawTextOnPath(String text, Path path, float hOffset,
     
 public void drawPicture(Picture picture) {
         picture.endRecording();
-        native_drawPicture(mNativeCanvas, picture.ni());
+        //native_drawPicture(mNativeCanvas, picture.ni());
+        addTaint(picture.getTaint());
     }
     
     /**

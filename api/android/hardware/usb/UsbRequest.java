@@ -128,7 +128,7 @@ public void setClientData(Object data) {
      * @return true if the queueing operation succeeded
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.339 -0500", hash_original_method = "0AB508D5F9E406998904FC2F468636F7", hash_generated_method = "55C23BE676606CB343FBCFD9F57A59FD")
-    
+    @DSSink({DSSinkKind.USB})
 public boolean queue(ByteBuffer buffer, int length) {
         boolean out = (mEndpoint.getDirection() == UsbConstants.USB_DIR_OUT);
         boolean result;
@@ -150,7 +150,7 @@ public boolean queue(ByteBuffer buffer, int length) {
     /* package */ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.342 -0500", hash_original_method = "AD7D73F051931557C02FDFDEB6B3C889", hash_generated_method = "AD7D73F051931557C02FDFDEB6B3C889")
-    
+     
 void dequeue() {
         boolean out = (mEndpoint.getDirection() == UsbConstants.USB_DIR_OUT);
         if (mBuffer.isDirect()) {

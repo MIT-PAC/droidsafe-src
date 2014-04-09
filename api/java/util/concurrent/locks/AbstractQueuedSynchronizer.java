@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import sun.misc.Unsafe;
@@ -438,6 +439,7 @@ private final boolean parkAndCheckInterrupt() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.151 -0500", hash_original_method = "0D7553B7A8DFDAC7C355CECFA0DBF574", hash_generated_method = "0438DB130048B3FDCFEB9CC8F2209EF6")
     
 final boolean acquireQueued(final Node node, int arg) {
+
         boolean failed = true;
         try {
             boolean interrupted = false;
@@ -823,9 +825,7 @@ protected boolean isHeldExclusively() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.181 -0500", hash_original_method = "10DE26F4AB94E5F1867D5F821F4BF0D7", hash_generated_method = "62EDAA8E2A69B433409756720C4BCF9D")
     
 public final void acquire(int arg) {
-        if (!tryAcquire(arg) &&
-            acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
-            selfInterrupt();
+        addTaint(arg);
     }
 
     /**
@@ -848,10 +848,13 @@ public final void acquire(int arg) {
     
 public final void acquireInterruptibly(int arg)
             throws InterruptedException {
+    addTaint(arg);
+    /*
         if (Thread.interrupted())
             throw new InterruptedException();
         if (!tryAcquire(arg))
             doAcquireInterruptibly(arg);
+    */
     }
 
     /**
@@ -877,10 +880,12 @@ public final void acquireInterruptibly(int arg)
     
 public final boolean tryAcquireNanos(int arg, long nanosTimeout)
             throws InterruptedException {
-        if (Thread.interrupted())
+/*        if (Thread.interrupted())
             throw new InterruptedException();
         return tryAcquire(arg) ||
-            doAcquireNanos(arg, nanosTimeout);
+            doAcquireNanos(arg, nanosTimeout);*/
+        addTaint(arg + nanosTimeout);
+        return getTaintBoolean();
     }
 
     /**
@@ -897,14 +902,16 @@ public final boolean tryAcquireNanos(int arg, long nanosTimeout)
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.189 -0500", hash_original_method = "482847B9E820B21E98E389768A5050E4", hash_generated_method = "2FAEE2167706D475481F2CF3BE74917C")
     
-public final boolean release(int arg) {
-        if (tryRelease(arg)) {
+public final boolean release(int arg) {        
+/*        if (tryRelease(arg)) {
             Node h = head;
             if (h != null && h.waitStatus != 0)
                 unparkSuccessor(h);
             return true;
         }
-        return false;
+        return false;*/
+        addTaint(arg);
+        return getTaintBoolean();
     }
 
     /**
@@ -923,8 +930,8 @@ public final boolean release(int arg) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.192 -0500", hash_original_method = "503864E706CF656D09684EB1E461773D", hash_generated_method = "4174C720E2F034320AE5D361BCEDD81B")
     
 public final void acquireShared(int arg) {
-        if (tryAcquireShared(arg) < 0)
-            doAcquireShared(arg);
+ /*       if (tryAcquireShared(arg) < 0)
+            doAcquireShared(arg);*/
     }
 
     /**
@@ -946,10 +953,11 @@ public final void acquireShared(int arg) {
     
 public final void acquireSharedInterruptibly(int arg)
             throws InterruptedException {
-        if (Thread.interrupted())
+/*        if (Thread.interrupted())
             throw new InterruptedException();
         if (tryAcquireShared(arg) < 0)
-            doAcquireSharedInterruptibly(arg);
+            doAcquireSharedInterruptibly(arg);*/
+        addTaint(arg);
     }
 
     /**
@@ -974,10 +982,12 @@ public final void acquireSharedInterruptibly(int arg)
     
 public final boolean tryAcquireSharedNanos(int arg, long nanosTimeout)
             throws InterruptedException {
-        if (Thread.interrupted())
+/*        if (Thread.interrupted())
             throw new InterruptedException();
         return tryAcquireShared(arg) >= 0 ||
-            doAcquireSharedNanos(arg, nanosTimeout);
+            doAcquireSharedNanos(arg, nanosTimeout);*/
+        addTaint(arg + nanosTimeout);
+        return getTaintBoolean();
     }
 
     /**
@@ -994,11 +1004,13 @@ public final boolean tryAcquireSharedNanos(int arg, long nanosTimeout)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.200 -0500", hash_original_method = "64AF2599D3C05FF36535D67856367D8D", hash_generated_method = "39408A7D0DD8AD8D4C66CEF09C1EF3BB")
     
 public final boolean releaseShared(int arg) {
-        if (tryReleaseShared(arg)) {
+ /*       if (tryReleaseShared(arg)) {
             doReleaseShared();
             return true;
         }
-        return false;
+        return false;*/
+        addTaint(arg);
+        return getTaintBoolean();
     }
 
     // Queue inspection methods
@@ -1019,7 +1031,8 @@ public final boolean releaseShared(int arg) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.203 -0500", hash_original_method = "3ACA5092770D7AD1442898AF3B627DFE", hash_generated_method = "37DD01FA42E8F07F9DC2844F456F2826")
     
 public final boolean hasQueuedThreads() {
-        return head != tail;
+        return getTaintBoolean();
+        //return head != tail;
     }
 
     /**
@@ -1036,7 +1049,8 @@ public final boolean hasQueuedThreads() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.205 -0500", hash_original_method = "3ED9D0D071477B613E998B33D61DD4C5", hash_generated_method = "BBEFB627E25524A6B5E2B21CE60A6901")
     
 public final boolean hasContended() {
-        return head != null;
+        return getTaintBoolean();
+        //return head != null;
     }
 
     /**
@@ -1056,8 +1070,13 @@ public final boolean hasContended() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.209 -0500", hash_original_method = "DB23AE447B60E978D848F5CEAEC8257B", hash_generated_method = "C85CE6E16C73974CB41083E907609161")
     
 public final Thread getFirstQueuedThread() {
+        Thread t = new Thread();
+        t.addTaint(taint);
+        return t;
         // handle only fast path, else relay
+        /*
         return (head == tail) ? null : fullGetFirstQueuedThread();
+        */
     }
 
     /**
@@ -1118,12 +1137,13 @@ private Thread fullGetFirstQueuedThread() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.214 -0500", hash_original_method = "1573E83A14D593E0BFADABB9AEDBB7D2", hash_generated_method = "0C16F7A946D77FA08793AC10C12614CA")
     
 public final boolean isQueued(Thread thread) {
-        if (thread == null)
+        /*if (thread == null)
             throw new NullPointerException();
         for (Node p = tail; p != null; p = p.prev)
             if (p.thread == thread)
                 return true;
-        return false;
+        return false;*/
+        return toTaintBoolean(thread.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -1199,11 +1219,12 @@ public final boolean hasQueuedPredecessors() {
         // The correctness of this depends on head being initialized
         // before tail and on head.next being accurate if the current
         // thread is first in queue.
-        Node t = tail; // Read fields in reverse initialization order
+       /* Node t = tail; // Read fields in reverse initialization order
         Node h = head;
         Node s;
         return h != t &&
-            ((s = h.next) == null || s.thread != Thread.currentThread());
+            ((s = h.next) == null || s.thread != Thread.currentThread());*/
+        return getTaintBoolean();
     }
 
     // Instrumentation and monitoring methods
@@ -1224,12 +1245,15 @@ public final boolean hasQueuedPredecessors() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.222 -0500", hash_original_method = "65AB677A04652631BF1CC269A789F93A", hash_generated_method = "3891B39CEDDDC3F2382E5CD4C00CC553")
     
 public final int getQueueLength() {
+        /*
         int n = 0;
         for (Node p = tail; p != null; p = p.prev) {
             if (p.thread != null)
                 ++n;
         }
         return n;
+        */
+        return getTaintInt();
     }
 
     /**
@@ -1273,6 +1297,7 @@ public final Collection<Thread> getQueuedThreads() {
     
 public final Collection<Thread> getExclusiveQueuedThreads() {
         ArrayList<Thread> list = new ArrayList<Thread>();
+        /*
         for (Node p = tail; p != null; p = p.prev) {
             if (!p.isShared()) {
                 Thread t = p.thread;
@@ -1280,6 +1305,11 @@ public final Collection<Thread> getExclusiveQueuedThreads() {
                     list.add(t);
             }
         }
+        */
+        Thread tempThread = new Thread();
+        tempThread.addTaint(taint);
+        list.add(tempThread);
+
         return list;
     }
 
@@ -1297,14 +1327,11 @@ public final Collection<Thread> getExclusiveQueuedThreads() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.230 -0500", hash_original_method = "3B2BC348731488178C75B0F7C3256BE4", hash_generated_method = "CE4E9194FCA7D28E65C681FDCFC4E133")
     
 public final Collection<Thread> getSharedQueuedThreads() {
+
         ArrayList<Thread> list = new ArrayList<Thread>();
-        for (Node p = tail; p != null; p = p.prev) {
-            if (p.isShared()) {
-                Thread t = p.thread;
-                if (t != null)
-                    list.add(t);
-            }
-        }
+        Thread t  = new Thread();
+        t.addTaint(taint);
+        list.add(t);
         return list;
     }
 
@@ -1323,10 +1350,16 @@ public final Collection<Thread> getSharedQueuedThreads() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.233 -0500", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "83A51AA04AFC157B403BDF3D76B84E44")
     
 public String toString() {
+        /*
         int s = getState();
         String q  = hasQueuedThreads() ? "non" : "";
         return super.toString() +
             "[State = " + s + ", " + q + "empty queue]";
+        */
+        
+        String str = new String();
+        str.addTaint(taint);
+        return str;
     }
 
     // Internal support methods for Conditions
@@ -2048,9 +2081,12 @@ final int fullyRelease(Node node) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.249 -0500", hash_original_method = "B60D02054E03A30F41C10CC4F7B33B2F", hash_generated_method = "F1EA5FFDDCACED770F5C70B4F30E69A0")
     
 public final boolean owns(ConditionObject condition) {
+        /*
         if (condition == null)
             throw new NullPointerException();
         return condition.isOwnedBy(this);
+        */
+        return toTaintBoolean(condition.getTaintInt() + getTaintInt());
     }
 
     /**
@@ -2072,9 +2108,10 @@ public final boolean owns(ConditionObject condition) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.251 -0500", hash_original_method = "B87CA02CD99C2C81A6ADCC153DE8BF7D", hash_generated_method = "6E1202B80C2DA1B5A16421696D8F1FD1")
     
 public final boolean hasWaiters(ConditionObject condition) {
-        if (!owns(condition))
+/*        if (!owns(condition))
             throw new IllegalArgumentException("Not owner");
-        return condition.hasWaiters();
+        return condition.hasWaiters();*/
+        return toTaintBoolean(getTaintInt() + condition.getTaintInt());
     }
 
     /**
@@ -2096,9 +2133,11 @@ public final boolean hasWaiters(ConditionObject condition) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.254 -0500", hash_original_method = "FDFBF2604A26737643DD133E9F8A257F", hash_generated_method = "BB445F3F41EF6096E481C65A19571401")
     
 public final int getWaitQueueLength(ConditionObject condition) {
-        if (!owns(condition))
+       /* if (!owns(condition))
             throw new IllegalArgumentException("Not owner");
-        return condition.getWaitQueueLength();
+        return condition.getWaitQueueLength();*/
+        addTaint(condition.getTaint());
+        return getTaintInt();
     }
 
     /**
@@ -2120,9 +2159,15 @@ public final int getWaitQueueLength(ConditionObject condition) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.257 -0500", hash_original_method = "70972013E049E7504ADBD56143485C77", hash_generated_method = "E171771CF6B1B92DC1DD3B7B92ACC0A9")
     
 public final Collection<Thread> getWaitingThreads(ConditionObject condition) {
+        /*
         if (!owns(condition))
             throw new IllegalArgumentException("Not owner");
         return condition.getWaitingThreads();
+        */
+        List<Thread> list = new ArrayList<Thread>();
+        Thread t = new Thread();
+        t.addTaint(taint);
+        return list;
     }
 
     /**

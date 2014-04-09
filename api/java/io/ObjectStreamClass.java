@@ -397,7 +397,7 @@ static boolean isExternalizable(Class<?> cl) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.359 -0500", hash_original_method = "6FE1F5C82C04AB08E12223950D7EB08A", hash_generated_method = "0970F67E09B2A5AAF9041B560FB4FFF3")
     
 static boolean isPrimitiveType(char typecode) {
-        return !(typecode == '[' || typecode == 'L');
+        return toTaintBoolean((typecode + '[' + typecode + 'L'));
     }
 
     /**
@@ -1201,7 +1201,8 @@ boolean isEnum() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.398 -0500", hash_original_method = "8B291B650661131936FFDD0976F9C451", hash_generated_method = "8B291B650661131936FFDD0976F9C451")
     
 boolean hasMethodWriteReplace() {
-        return (methodWriteReplace != null);
+        //return (methodWriteReplace != null);
+        return (methodWriteReplace.getTaintBoolean());
     }
 
     @DSComment("Package priviledge")
@@ -1218,7 +1219,8 @@ Method getMethodWriteReplace() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.403 -0500", hash_original_method = "2852DBB1E5C3B0D1351FCC53EE3E49ED", hash_generated_method = "2852DBB1E5C3B0D1351FCC53EE3E49ED")
     
 boolean hasMethodReadResolve() {
-        return (methodReadResolve != null);
+        //return (methodReadResolve != null);
+        return (methodReadResolve.getTaintBoolean());
     }
 
     @DSComment("Package priviledge")
@@ -1235,7 +1237,7 @@ Method getMethodReadResolve() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.407 -0500", hash_original_method = "5A79EE26139C94EE3C3A1C73D8050C0E", hash_generated_method = "5A79EE26139C94EE3C3A1C73D8050C0E")
     
 boolean hasMethodWriteObject() {
-        return (methodWriteObject != null);
+        return (methodWriteObject.getTaintBoolean());
     }
 
     @DSComment("Package priviledge")
@@ -1252,7 +1254,7 @@ Method getMethodWriteObject() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.412 -0500", hash_original_method = "46A702B5AEFAE4B1088A7C3DF1FC5D53", hash_generated_method = "46A702B5AEFAE4B1088A7C3DF1FC5D53")
     
 boolean hasMethodReadObject() {
-        return (methodReadObject != null);
+        return (methodReadObject.getTaintBoolean());
     }
 
     @DSComment("Package priviledge")
@@ -1269,7 +1271,7 @@ Method getMethodReadObject() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.417 -0500", hash_original_method = "29BCBE89B6EA217724D7699109546E15", hash_generated_method = "29BCBE89B6EA217724D7699109546E15")
     
 boolean hasMethodReadObjectNoData() {
-        return (methodReadObjectNoData != null);
+        return (methodReadObjectNoData.getTaintBoolean());
     }
 
     @DSComment("Package priviledge")

@@ -422,18 +422,12 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         // Arbitrarily get the padding from the first image.
         // Technically we should maybe do something more intelligent,
         // like take the max padding of all the images.
-        padding.left = 0;
-        padding.top = 0;
-        padding.right = 0;
-        padding.bottom = 0;
+        padding.addTaint(getTaint());
         final ChildDrawable[] array = mLayerState.mChildren;
         final int N = mLayerState.mNum;
         for (int i=0; i<N; i++) {
             reapplyPadding(i, array[i]);
-            padding.left += mPaddingL[i];
-            padding.top += mPaddingT[i];
-            padding.right += mPaddingR[i];
-            padding.bottom += mPaddingB[i];
+            padding.addTaint(mPaddingL[i] + mPaddingR[i] + mPaddingT[i] + mPaddingB[i] + N)  ;
         }
         return true;
     }

@@ -1313,7 +1313,10 @@ public ActivityResult execStartActivity(
                     if (am.match(who, null, intent)) {
                         am.mHits++;
                         if (am.isBlocking()) {
-                            return requestCode >= 0 ? am.getResult() : null;
+                            am.addTaint(requestCode);
+                            ActivityResult result = am.getResult(); 
+                            result.addTaint(requestCode);
+                            return requestCode >= 0 ? result : null;
                         }
                         break;
                     }
@@ -1823,7 +1826,10 @@ public ActivityResult execStartActivity(
                     if (am.match(who, null, intent)) {
                         am.mHits++;
                         if (am.isBlocking()) {
-                            return requestCode >= 0 ? am.getResult() : null;
+                            ActivityResult result = am.getResult(); 
+                            result.addTaint(am.isBlocking());
+                            result.addTaint(requestCode);
+                            return requestCode >= 0 ? result : null;
                         }
                         break;
                     }

@@ -181,10 +181,12 @@ protected Throwable(String detailMessage, Throwable throwable, boolean enableSup
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.595 -0500", hash_original_method = "1BF0D9E451222474F2DDB047C74BA127", hash_generated_method = "74F05E3F25AB2BF87F24FDC716350999")
     
 public Throwable fillInStackTrace() {
+        /*
         // Fill in the intermediate representation
         stackState = nativeFillInStackTrace();
         // Mark the full representation as empty
         stackTrace = null;
+        */
         return this;
     }
 
@@ -315,23 +317,15 @@ private StackTraceElement[] getInternalStackTrace() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.615 -0500", hash_original_method = "721611E9E00924F0C591FE9FD87A98DF", hash_generated_method = "E081C99283B0C7FAF2830771267339F1")
     
 public void printStackTrace(PrintStream err) {
-
-      // TODO JHP
-      // Note that while the stack trace itself can't communicate anything of interest, 
-      // I think this will also print any suppressed or causing exceptions.  If that
-      // includes the message then arbitrary information can be sent out via this
-      // mechanism.  Of course, any sensitive information being written to an exception
-      // should be examined closely.
-      return;
-
-      /*
+        /*
         try {
             printStackTrace(err, "", null);
         } catch (IOException e) {
             // Appendable.append throws IOException but PrintStream.append doesn't.
             throw new AssertionError();
         }
-      */
+        */
+        err.addTaint(taint);
     }
 
     /**
@@ -374,6 +368,11 @@ public void printStackTrace(PrintWriter err) {
     
 private void printStackTrace(Appendable err, String indent, StackTraceElement[] parentStack)
             throws IOException {
+        err.addTaint(indent.getTaint());
+        err.addTaint(getTaint());
+        if (parentStack != null)
+            err.addTaint(parentStack[0].getTaint());
+        /*
         err.append(toString());
         err.append("\n");
 
@@ -410,6 +409,7 @@ private void printStackTrace(Appendable err, String indent, StackTraceElement[] 
             err.append("Caused by: ");
             cause.printStackTrace(err, indent, stack);
         }
+        */
     }
 
     @DSComment("From safe class list")
@@ -418,12 +418,17 @@ private void printStackTrace(Appendable err, String indent, StackTraceElement[] 
     
 @Override
     public String toString() {
+        /*
         String msg = getLocalizedMessage();
         String name = getClass().getName();
         if (msg == null) {
             return name;
         }
         return name + ": " + msg;
+        */
+        String retStr = new String();
+        retStr.addTaint(getTaint());
+        return retStr;
     }
 
     /**

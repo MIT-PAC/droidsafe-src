@@ -458,7 +458,7 @@ public ComponentName getSearchActivity() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.634 -0500", hash_original_method = "E8E1D8EA6D890D66AA7ADE8877B0250D", hash_generated_method = "DCB34860B0CD2AB315B0B71B66FB505C")
     
 public boolean useBadgeLabel() {
-        return 0 != (mSearchMode & SEARCH_MODE_BADGE_LABEL);
+        return toTaintBoolean(mSearchMode & SEARCH_MODE_BADGE_LABEL);
     }
 
     /**
@@ -471,7 +471,7 @@ public boolean useBadgeLabel() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.636 -0500", hash_original_method = "FEE9D772AE5D3D19558CCEFFB0D8835C", hash_generated_method = "0C8169242869498E87B1B7CB9AD5D6CC")
     
 public boolean useBadgeIcon() {
-        return (0 != (mSearchMode & SEARCH_MODE_BADGE_ICON)) && (mIconId != 0);
+        return toTaintBoolean((mSearchMode & SEARCH_MODE_BADGE_ICON) + mIconId); 
     }
 
     /**
@@ -482,7 +482,7 @@ public boolean useBadgeIcon() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.638 -0500", hash_original_method = "B8AED61CE994D23FCE3A1E2344A9A897", hash_generated_method = "84E455895C890BB175A60E44375E3B7B")
     
 public boolean shouldRewriteQueryFromData() {
-        return 0 != (mSearchMode & SEARCH_MODE_QUERY_REWRITE_FROM_DATA);
+        return toTaintBoolean(mSearchMode & SEARCH_MODE_QUERY_REWRITE_FROM_DATA);
     }
 
     /**
@@ -493,7 +493,7 @@ public boolean shouldRewriteQueryFromData() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.641 -0500", hash_original_method = "5A9C6F4DB0BEA2BB31C909F5BB55A3E0", hash_generated_method = "01391EDFBAD2071E255DF8EBB2C3EB51")
     
 public boolean shouldRewriteQueryFromText() {
-        return 0 != (mSearchMode & SEARCH_MODE_QUERY_REWRITE_FROM_TEXT);
+        return toTaintBoolean(mSearchMode & SEARCH_MODE_QUERY_REWRITE_FROM_TEXT);
     }
 
     /**
@@ -709,7 +709,7 @@ public int getIconId() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.718 -0500", hash_original_method = "BD4587B1756B2E1B29D5C797A6E8E884", hash_generated_method = "ED059A87FEB437C33E40B96F0E387EBD")
     
 public boolean getVoiceSearchEnabled() {
-        return 0 != (mVoiceSearchMode & VOICE_SEARCH_SHOW_BUTTON);
+        return toTaintBoolean(mVoiceSearchMode & VOICE_SEARCH_SHOW_BUTTON);
     }
 
     /**
@@ -721,7 +721,7 @@ public boolean getVoiceSearchEnabled() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.720 -0500", hash_original_method = "AD4F5DA741FB0C864BEACDD753D4C8F3", hash_generated_method = "CD7F6120C24225F28D37505E9C101ACD")
     
 public boolean getVoiceSearchLaunchWebSearch() {
-        return 0 != (mVoiceSearchMode & VOICE_SEARCH_LAUNCH_WEB_SEARCH);
+        return toTaintBoolean(mVoiceSearchMode & VOICE_SEARCH_LAUNCH_WEB_SEARCH);
     }
     
     public static class ActionKeyInfo implements Parcelable {
@@ -862,7 +862,7 @@ public void writeToParcel(Parcel dest, int flags) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.722 -0500", hash_original_method = "8242FA220A8F4815DCA2E78C8BAC691A", hash_generated_method = "3E44592355CF85742965CE50A634775D")
     
 public boolean getVoiceSearchLaunchRecognizer() {
-        return 0 != (mVoiceSearchMode & VOICE_SEARCH_LAUNCH_RECOGNIZER);
+        return toTaintBoolean(mVoiceSearchMode & VOICE_SEARCH_LAUNCH_RECOGNIZER);
     }
 
     /**

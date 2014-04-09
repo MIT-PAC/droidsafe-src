@@ -20,7 +20,8 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.843 -0500", hash_original_method = "B3A70AF2DF8E93CED801D9C24A07FA78", hash_generated_method = "52DBC9C2C80935547BDAD01A5C55773E")
     
 public static int compare(boolean lhs, boolean rhs) {
-        return lhs == rhs ? 0 : lhs ? 1 : -1;
+        //return lhs == rhs ? 0 : lhs ? 1 : -1;
+        return toTaintInt(lhs) + toTaintInt(rhs);
     }
 
     /**
@@ -60,7 +61,8 @@ public static boolean getBoolean(String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.853 -0500", hash_original_method = "BD83C9A3C7856D0FAE5D6BC0CCD859FA", hash_generated_method = "35EF410EA41D39A8C101C5B251B58242")
     
 public static boolean parseBoolean(String s) {
-        return new Boolean("true".equals(s));
+        return s.getTaintBoolean();
+        //return new Boolean("true".equals(s));
     }
 
     /**
@@ -92,7 +94,8 @@ public static String toString(boolean value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.857 -0500", hash_original_method = "D7304055711653AFAB319201D507D88D", hash_generated_method = "5D2F5BB17E0BBABB512766F7522CD9F0")
     
 public static Boolean valueOf(String string) {
-        return new Boolean("true".equals(string));
+        //return new Boolean("true".equals(string));
+        return new Boolean(string.getTaintBoolean());
     }
 
     /**
@@ -169,6 +172,7 @@ public Boolean(String string) {
     
 public Boolean(boolean value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -202,7 +206,9 @@ public boolean booleanValue() {
 @Override
     @FindBugsSuppressWarnings("RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN")
     public boolean equals(Object o) {
-        return (o == this) || ((o instanceof Boolean) && (((Boolean) o).value == value));
+        //return (o == this) || ((o instanceof Boolean) && (((Boolean) o).value == value));
+        // we implement default taint transfer in Object
+        return super.equals(o);
     }
 
     /**
@@ -239,7 +245,8 @@ public int compareTo(Boolean that) {
     
 @Override
     public int hashCode() {
-        return value ? 1231 : 1237;
+        //return value ? 1231 : 1237;
+        return toTaintInt(value);
     }
 
     /**

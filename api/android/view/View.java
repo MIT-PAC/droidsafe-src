@@ -3063,7 +3063,6 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setEnabled(boolean enabled){
 		// Original method
@@ -9296,10 +9295,16 @@ protected void dispatchSetActivated(boolean activated) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final View findViewById(int id){
+        /*
         if (id < 0) {
             return null;
         }
         return findViewTraversal(id);
+        */
+        View v = new View();
+        v.addTaint(taint);
+        v.addTaint(id);
+        return v;
 	}
     
     @DSComment("Package priviledge")
@@ -9346,7 +9351,7 @@ protected void dispatchSetActivated(boolean activated) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final View findViewByPredicateInsideOut(View start, Predicate<View> predicate){
 		// Original method
-        View childToSkip = null;
+/*        View childToSkip = null;
         for (;;) {
             View view = start.findViewByPredicateTraversal(predicate, childToSkip);
             if (view != null || start == this) {
@@ -9358,7 +9363,10 @@ protected void dispatchSetActivated(boolean activated) {
             }
             childToSkip = start;
             start = (View) parent;
-        }
+        }*/
+        View v = new View();
+        v.addTaint(start.getTaintInt() + predicate.getTaintInt());
+        return v;
 	}
     
     @DSComment("Normal GUI")
@@ -9516,13 +9524,13 @@ public void setTag(final Object tag) {
         return onConsistencyCheck(consistency);
     }
 		*/
-		return false;
+		return toTaintBoolean(getTaintInt() + consistency);
 	}
     
     protected boolean onConsistencyCheck(int consistency){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return false;
+		return toTaintBoolean(getTaintInt() + consistency);
 	}
     
     public void debug(){
@@ -9552,7 +9560,7 @@ public void setTag(final Object tag) {
         return -1;
     }
 		*/
-		return 0;
+		return getTaintInt();
 	}
 
     /**

@@ -109,9 +109,11 @@ private IOException streamClosed() throws IOException {
         buf = null;
         InputStream localIn = in;
         in = null;
+        /*
         if (localIn != null) {
             localIn.close();
         }
+        */
     }
 
     @DSComment("Private Method")

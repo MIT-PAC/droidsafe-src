@@ -18,7 +18,7 @@ public final class Short extends Number implements Comparable<Short> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.119 -0500", hash_original_method = "EC012F50DB4364A9230CE07FC3FDA08E", hash_generated_method = "04F0AD5B79EFA19C0773385F336B3C1E")
     
 public static int compare(long lhs, long rhs) {
-        return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
+        return (int)(lhs - rhs); 
     }
 
     /**
@@ -240,6 +240,7 @@ public Short(String string) throws NumberFormatException {
     
 public Short(short value) {
         this.value = value;
+        addTaint(value);
     }
 
     @DSComment("From safe class list")
@@ -299,7 +300,8 @@ public int compareTo(Short object) {
     
 @Override
     public boolean equals(Object object) {
-        return (object instanceof Short) && (((Short) object).value == value);
+        //return (object instanceof Short) && (((Short) object).value == value);
+        return super.equals(object);
     }
 
     @DSComment("From safe class list")

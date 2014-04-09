@@ -134,7 +134,7 @@ public Socket(Proxy proxy) {
      *             if an error occurs while creating the socket.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.737 -0500", hash_original_method = "59B1F76D08717F2A7DB6178659D1BD4D", hash_generated_method = "6316CA7E40A21D61D9B9CAFA97BA22ED")
     
 public Socket(String dstName, int dstPort) throws UnknownHostException, IOException {
@@ -165,7 +165,7 @@ public Socket(String dstName, int dstPort) throws UnknownHostException, IOExcept
      *             if an error occurs while creating the socket.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.740 -0500", hash_original_method = "7A6ED28BC12F5ABFF2F2CE0F9C5717C0", hash_generated_method = "9C677317C87580468FBBC3BC25BFED31")
     
 public Socket(String dstName, int dstPort, InetAddress localAddress, int localPort) throws IOException {
@@ -198,7 +198,7 @@ public Socket(String dstName, int dstPort, InetAddress localAddress, int localPo
      *             DatagramSocket} for UDP transport.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.744 -0500", hash_original_method = "1948ABC1DE3B1C37A63093E998C50FE7", hash_generated_method = "C650B30E681882C8D76DB812E2F56676")
     
 @Deprecated
@@ -220,7 +220,7 @@ public Socket(String dstName, int dstPort, InetAddress localAddress, int localPo
      *             if an error occurs while creating the socket.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.747 -0500", hash_original_method = "A1767A7E1F84ED40BDB339014C4851EF", hash_generated_method = "80204189B6A824DCFD0C9110D1ADFD5C")
     
 public Socket(InetAddress dstAddress, int dstPort) throws IOException {
@@ -247,7 +247,7 @@ public Socket(InetAddress dstAddress, int dstPort) throws IOException {
      *             if an error occurs while creating the socket.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.749 -0500", hash_original_method = "BE0D4569A05DA3EF578449A5DA65F5E7", hash_generated_method = "0E8F2DC694F5FBD63C66F979FDE19EBD")
     
 public Socket(InetAddress dstAddress, int dstPort,
@@ -276,7 +276,7 @@ public Socket(InetAddress dstAddress, int dstPort,
      *             DatagramSocket} for UDP transport.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.752 -0500", hash_original_method = "D85BA2D34027734E343FA152CA6CE177", hash_generated_method = "6B14DA291D9EF1DF9AC5EA862FF0318C")
     
 @Deprecated
@@ -472,7 +472,7 @@ public int getLocalPort() {
      *             socket is in an invalid state.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.774 -0500", hash_original_method = "0AB25EAA0774AA81766D4356986FC34F", hash_generated_method = "7FE0092975A1C779207A619656F7BC91")
     

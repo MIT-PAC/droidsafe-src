@@ -24,7 +24,7 @@ public static final int getNumStreamTypes() { return NUM_STREAM_TYPES; }
     }
     
     public static boolean isStreamActive(int stream, int inPastMs) {
-        return (stream > inPastMs);
+        return toTaintBoolean(stream + inPastMs);
     }
     
     public static int setParameters(String keyValuePairs) {

@@ -3141,9 +3141,8 @@ void drawOverscrollFooter(Canvas canvas, Drawable drawable, Rect bounds) {
         if (drawDividers || drawOverscrollHeader || drawOverscrollFooter) {
             // Only modify the top and bottom in the loop, we set the left and right here
             final Rect bounds = mTempRect;
-            bounds.left = mPaddingLeft;
-            bounds.right = mRight - mLeft - mPaddingRight;
-
+            bounds.addTaint(mPaddingLeft + mRight + mPaddingRight);
+                    
             final int count = getChildCount();
             final int headerCount = mHeaderViewInfos.size();
             final int itemCount = mItemCount;

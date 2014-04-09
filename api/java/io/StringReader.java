@@ -59,7 +59,8 @@ public StringReader(String str) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.769 -0500", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "6527F0BA57A980BF6CB039A1D9CEA605")
     
 private boolean isClosed() {
-        return str == null;
+        //return str == null;
+        return str.getTaintBoolean();
     }
 
     /**

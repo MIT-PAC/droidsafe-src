@@ -105,7 +105,8 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(float x, float y){
-        return getTaintBoolean();
+        return toTaintBoolean(x + y + this.x + this.y + getTaintInt());
+        //return getTaintBoolean();
         // Original method
         /*
         { 
@@ -150,6 +151,7 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
+        addTaint(in.getTaint());
         // Original method
         /*
         {
@@ -158,5 +160,21 @@ public PointF() {}
     }
         */
     }
+
+    private void droidsafeUpdateMembers() {
+        x = getTaintFloat();
+        y = getTaintFloat();
+    }
+
+    @Override public void addTaint(double t) {
+        super.addTaint(t);
+        droidsafeUpdateMembers();
+    }
+
+    @Override public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        droidsafeUpdateMembers();
+    }
 }
+
 

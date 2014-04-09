@@ -10,12 +10,14 @@ public class AtomicInteger extends Number implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.314 -0500", hash_original_field = "EDA2AEC613B19DD5D3B8D8B483F792BA", hash_generated_field = "BC575BADA52C64A5C5C6ADD1B81BACA0")
 
     private static final long serialVersionUID = 6214790243416807050L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.317 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "E7D465D52C267C4626E00B16AF4442B8")
+// @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.317 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "E7D465D52C267C4626E00B16AF4442B8")
 
-    private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+    //private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+    // private static final Unsafe unsafe = new Unsafe(DSOnlyType.DONTCARE);
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.320 -0500", hash_original_field = "2B4D3697B0BD0FB4DB161026EA588EEA", hash_generated_field = "3ACE806C2A776E8F67FFC072288734E8")
 
-    private static  long valueOffset;
+    private static  long valueOffset = DroidSafeAndroidRuntime.runtimeInteger;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.323 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
 
     private volatile int value;
@@ -41,6 +43,18 @@ public AtomicInteger(int initialValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.328 -0500", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "0E6B9C34F7A1BCF5C7C73F35173892F1")
     
 public AtomicInteger() {
+    }
+    
+    @Override
+    public void addTaint(DSTaintObject t) {
+        super.addTaint(t);
+        value = (int)getTaintInt();
+    }
+    
+    @Override
+    public void addTaint(double t) {
+        super.addTaint(t);
+        value = (int)getTaintInt();
     }
 
     /**
@@ -82,7 +96,8 @@ public final void set(int newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.336 -0500", hash_original_method = "77EB9E59BE67AA43485FF3A0F0492CB7", hash_generated_method = "4CD52BDA532FC5AB7C0B2B2E1A0C3792")
     
 public final void lazySet(int newValue) {
-        unsafe.putOrderedInt(this, valueOffset, newValue);
+        //unsafe.putOrderedInt(this, valueOffset, newValue);
+        set(newValue);
     }
 
     /**
@@ -97,11 +112,17 @@ public final void lazySet(int newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.338 -0500", hash_original_method = "EFF79965BA8CD7578F2A5616273687C7", hash_generated_method = "459912E78FA47DBEC8F8D999BA2FBD0D")
     
 public final int getAndSet(int newValue) {
+        /*
         for (;;) {
             int current = get();
             if (compareAndSet(current, newValue))
                 return current;
         }
+        */
+        int oldValue = value;
+        value = newValue;
+        return oldValue;
+        
     }
 
     /**
@@ -118,7 +139,10 @@ public final int getAndSet(int newValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.340 -0500", hash_original_method = "3CF6D7A3DD4EDBE8D1648E756B160F53", hash_generated_method = "1B4BBA8A27DFE3B91E1C4A1B3C9EAA69")
     
 public final boolean compareAndSet(int expect, int update) {
-        return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        value = update;
+        addTaint(update);
+        return toTaintBoolean(expect + update + getTaintInt());
     }
 
     /**
@@ -138,7 +162,9 @@ public final boolean compareAndSet(int expect, int update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.343 -0500", hash_original_method = "22EC2300FEC70C46ECF009D542FC9430", hash_generated_method = "9EF3B090C06F7BFF42DD435957FE768B")
     
 public final boolean weakCompareAndSet(int expect, int update) {
-        return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        addTaint(expect + update);
+        return getTaintBoolean();
     }
 
     /**
@@ -152,12 +178,15 @@ public final boolean weakCompareAndSet(int expect, int update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.345 -0500", hash_original_method = "621C33BC86CD3122044A53600F895B29", hash_generated_method = "425725E2DE13479856F360A7F13BBBA6")
     
 public final int getAndIncrement() {
+        /*
         for (;;) {
             int current = get();
             int next = current + 1;
             if (compareAndSet(current, next))
                 return current;
         }
+        */
+        return value++;
     }
 
     /**
@@ -171,12 +200,15 @@ public final int getAndIncrement() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.348 -0500", hash_original_method = "D5257E8A410056D1BB1DB7447390EAE5", hash_generated_method = "8C7CA472D5F813D9D0A3E6E453CD9E55")
     
 public final int getAndDecrement() {
+        /*
         for (;;) {
             int current = get();
             int next = current - 1;
             if (compareAndSet(current, next))
                 return current;
         }
+        */
+        return value--;
     }
 
     /**
@@ -191,12 +223,8 @@ public final int getAndDecrement() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.351 -0500", hash_original_method = "4B803B85C89B0C062A735FA86D4518AE", hash_generated_method = "95C75EF25F3A5B40B217926C833417D1")
     
 public final int getAndAdd(int delta) {
-        for (;;) {
-            int current = get();
-            int next = current + delta;
-            if (compareAndSet(current, next))
-                return current;
-        }
+        value += delta;
+        return value;
     }
 
     /**
@@ -209,12 +237,7 @@ public final int getAndAdd(int delta) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.353 -0500", hash_original_method = "6DC45C427ABFB1C3B7D74803EAAF22FF", hash_generated_method = "0B6200F869F0C82E61A1C6A81CB8263D")
     
 public final int incrementAndGet() {
-        for (;;) {
-            int current = get();
-            int next = current + 1;
-            if (compareAndSet(current, next))
-                return next;
-        }
+       return ++value;
     }
 
     /**
@@ -227,12 +250,7 @@ public final int incrementAndGet() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.356 -0500", hash_original_method = "4357F9DD6725F5F393683EE2EA89C677", hash_generated_method = "64BF2D5FDACCDB13E451FABAE036B245")
     
 public final int decrementAndGet() {
-        for (;;) {
-            int current = get();
-            int next = current - 1;
-            if (compareAndSet(current, next))
-                return next;
-        }
+        return --value;
     }
 
     /**
@@ -246,12 +264,9 @@ public final int decrementAndGet() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.359 -0500", hash_original_method = "5280B98EAB69F2A556138E3D06C4D0D3", hash_generated_method = "0AE1F741F0946B437A1E22F6DD01A830")
     
 public final int addAndGet(int delta) {
-        for (;;) {
-            int current = get();
-            int next = current + delta;
-            if (compareAndSet(current, next))
-                return next;
-        }
+        value += delta;
+        return value;
+        
     }
 
     /**
@@ -297,12 +312,15 @@ public float floatValue() {
 public double doubleValue() {
         return (double)get();
     }
+    /*
     static {
       try {
+          
         valueOffset = unsafe.objectFieldOffset
             (AtomicInteger.class.getDeclaredField("value"));
       } catch (Exception ex) { throw new Error(ex); }
     }
+    */
     
 }
 

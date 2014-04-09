@@ -26,7 +26,7 @@ Posix() { }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.381 -0400", hash_original_method = "3FF894EBDB6D10C08E17FEF79D8BBDA9", hash_generated_method = "CD0A84B225A700801CB0CB5C048B5F64")
     public FileDescriptor accept(FileDescriptor fd, InetSocketAddress peerAddress) throws ErrnoException {
     	FileDescriptor ret = new FileDescriptor();
-    	ret.addTaint(peerAddress.getTaint());
+    	ret.addTaint(peerAddress.getTaintInt() + fd.getTaintInt() + getTaintInt());
     	return ret;
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.976 -0500", hash_original_method = "B1689CE6DA8AD962BE72C0197D9C07BB", hash_generated_method = "7855063195F4F4D7FD71EAD81B9987A1")

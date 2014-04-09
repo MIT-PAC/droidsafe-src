@@ -2726,8 +2726,7 @@ public void glVertexPointer(
             int buffer
         ){
     	//Formerly a native method
-    	addTaint(buffer);
-    	return getTaintBoolean();
+        return toTaintBoolean(buffer + getTaintInt());
     }
 
     // C function GLboolean glIsEnabled ( GLenum cap )
@@ -2738,8 +2737,9 @@ public void glVertexPointer(
             int cap
         ){
     	//Formerly a native method
-    	addTaint(cap);
-    	return getTaintBoolean();
+    	//addTaint(cap);
+    	//return getTaintBoolean();
+        return toTaintBoolean(cap + getTaintInt());
     }
 
     // C function GLboolean glIsTexture ( GLuint texture )
@@ -2750,8 +2750,7 @@ public void glVertexPointer(
             int texture
         ){
     	//Formerly a native method
-    	addTaint(texture);
-    	return getTaintBoolean();
+        return toTaintBoolean(texture + getTaintInt());
     }
 
     // C function void glNormalPointer ( GLenum type, GLsizei stride, GLint offset )
@@ -3804,8 +3803,11 @@ public void glWeightPointerOES(
             int framebuffer
         ){
     	//Formerly a native method
+        /*
     	addTaint(framebuffer);
     	return getTaintBoolean();
+    	*/
+        return toTaintBoolean(framebuffer + getTaintInt());
     }
 
     // C function GLboolean glIsRenderbufferOES ( GLint renderbuffer )
@@ -3816,8 +3818,9 @@ public void glWeightPointerOES(
             int renderbuffer
         ){
     	//Formerly a native method
-    	addTaint(renderbuffer);
-    	return getTaintBoolean();
+    	//addTaint(renderbuffer);
+    	//return getTaintBoolean();
+        return toTaintBoolean(renderbuffer + getTaintInt());
     }
 
     // C function void glRenderbufferStorageOES ( GLint target, GLint internalformat, GLint width, GLint height )

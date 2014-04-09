@@ -47,8 +47,12 @@ public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativ
     private static boolean nativeSendSurfaceTexture(SurfaceTexture texture,
             int baseLayer, int videoLayerId, int textureName,
             int playerState) {
+        /*
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661271996 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1661271996;
+        */
+        return toTaintBoolean(texture.getTaintInt() + baseLayer + videoLayerId +
+                              textureName + playerState);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.196 -0500", hash_original_field = "E6AD586BAB234E94D45CE40212A71595", hash_generated_field = "49647B825D8BF64F7018D2D660AE2DD2")
 

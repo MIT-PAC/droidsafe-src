@@ -18,7 +18,8 @@ public final class Byte extends Number implements Comparable<Byte> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.436 -0500", hash_original_method = "526CB67D9082E1052DF512ACF5AFED97", hash_generated_method = "AF1DFE575C4097C8712CFD7C9136BD0A")
     
 public static int compare(byte lhs, byte rhs) {
-        return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
+        //return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
+        return (lhs + rhs);
     }
 
     /**
@@ -230,6 +231,7 @@ public static Byte valueOf(byte b) {
     
 public Byte(byte value) {
         this.value = value;
+        addTaint(value);
     }
 
     /**
@@ -310,7 +312,8 @@ public int compareTo(Byte object) {
 @Override
     @FindBugsSuppressWarnings("RC_REF_COMPARISON")
     public boolean equals(Object object) {
-        return (object == this) || ((object instanceof Byte) && (((Byte) object).value == value));
+        return super.equals(object);
+        //return (object == this) || ((object instanceof Byte) && (((Byte) object).value == value));
     }
 
     @DSComment("From safe class list")
