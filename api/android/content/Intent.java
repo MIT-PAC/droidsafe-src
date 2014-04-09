@@ -1644,6 +1644,11 @@ public Intent[] newArray(int size) {
 
     @DSVAModeled
     private ComponentName mComponent;
+
+
+   @DSVAModeled
+   private Class<?> mClsComponent;
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.272 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
 
     @DSVAModeled
@@ -1683,6 +1688,7 @@ public Intent() {
         this.mType = o.mType;
         this.mPackage = o.mPackage;
         this.mComponent = o.mComponent;
+        this.mClsComponent = mClsComponent;
         this.mFlags = o.mFlags;
         if(o.mCategories != null)        
         {
@@ -1734,6 +1740,7 @@ public Intent() {
 		this.setType(o.getType());
 		this.setPackage(o.getPackage());
 		this.setComponent(o.getComponent());
+                this.mClsComponent = mClsComponent;
 		for (String category : o.getCategories()) {
 			this.addCategory(category);
 		}
@@ -1767,6 +1774,7 @@ public Intent() {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "8A8F598E2C7B57A58F1379D7AFC8B81F", hash_generated_method = "CFC95A750DAD5D8F9B4AF9DD7CFFB32A")
     public  Intent(Context packageContext, Class<?> cls) {
+        mClsComponent = cls;
         mComponent = new ComponentName(packageContext, cls.getName());
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);
@@ -1777,6 +1785,7 @@ public Intent() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "780AF3DA4D357977F460A8077F315476", hash_generated_method = "6432A8C7753059113592629EBEB24128")
     public  Intent(String action, Uri uri,
             Context packageContext, Class<?> cls) {
+        mClsComponent = cls;
         addTaint(action.getTaint());
         setAction(action);
         mData = uri;
@@ -3853,12 +3862,17 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         return this;
     }
     
-	@DSComment("Potential intent to trigger other processing")
+    @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent setComponent(ComponentName component) {
         mComponent = component;
-        addTaint(component.getTaint());
-        return this;
+            //this is just to set mClsComponent to a unknown value for value analysis to account for this call...e
+            try {
+                mClsComponent = Class.forName(component.getClassName());    
+            } catch (ClassNotFoundException e){
+            }
+            addTaint(component.getTaint());
+            return this;
     }
     
     @DSComment("Potential intent to trigger other processing")
@@ -3867,6 +3881,10 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "A7E573A4994CE22857A73F3E6FF16052", hash_generated_method = "C98CA911AF4638EF31A76CD5F5B6B418")
     public Intent setClassName(Context packageContext, String className) {
         mComponent = new ComponentName(packageContext, className);
+        try {
+            mClsComponent = Class.forName(className);  
+        } catch (ClassNotFoundException e) {
+        }
         addTaint(packageContext.getTaint());
         addTaint(className.getTaint()); 
         Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
@@ -3884,6 +3902,10 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     public Intent setClassName(String packageName, String className) {
         addTaint(packageName.getTaint());
         addTaint(className.getTaint());
+        try {
+            mClsComponent = Class.forName(className);  
+        } catch (ClassNotFoundException e) {
+        }
         mComponent = new ComponentName(packageName, className);
         Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1442856412.addTaint(taint);
@@ -3898,6 +3920,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "07D0BC1863460C70C46D0D4DB8E842CD", hash_generated_method = "7F6ACB39663195BC97A4BC6A90961AAC")
     public Intent setClass(Context packageContext, Class<?> cls) {
+        mClsComponent = cls;
         addTaint(packageContext.getTaint());
         addTaint(cls.getTaint());
         mComponent = new ComponentName(packageContext, cls.getName());
