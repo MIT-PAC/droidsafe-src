@@ -143,7 +143,7 @@ public GZIPInputStream(InputStream is, int size) throws IOException {
         }
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
 
-        int bytesRead;
+        /*int bytesRead;
         try {
             bytesRead = super.read(buffer, offset, byteCount);
         } finally {
@@ -158,7 +158,8 @@ public GZIPInputStream(InputStream is, int size) throws IOException {
             verifyCrc();
         }
 
-        return bytesRead;
+        return bytesRead;*/
+        return super.read(buffer, offset, byteCount);
     }
 
     @DSComment("Private Method")

@@ -35,7 +35,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
     
 @Override
     public int read() throws IOException {
-        return is.read();
+        return is.droidsafeRead();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.613 -0500", hash_original_method = "67E478B38D83ABBBB81FEA8967B3C884", hash_generated_method = "2828806F2C8D5A9174A8E6F3C39664CC")
@@ -78,7 +78,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
     
 @Override
     public int available() throws IOException {
-        return is.available();
+        return is.droidsafeAvailable();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.627 -0500", hash_original_method = "E4EF9B11E6886DE5F69F77BED2D5F0AB", hash_generated_method = "D049E862079BA20C47481A3C43C5C187")

@@ -576,7 +576,7 @@ protected DateFormat() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.044 -0500", hash_original_method = "2A35FD3F5DCDDD81B439EA4274C41413", hash_generated_method = "EEB1197F390F746EAF296F0CBA3BE616")
     
 public final String format(Date date) {
-        return format(date, new StringBuffer(), new FieldPosition(0))
+        return droidsafeFormat(date, new StringBuffer(), new FieldPosition(0))
                 .toString();
     }
 
@@ -653,11 +653,12 @@ public TimeZone getTimeZone() {
     
 @Override
     public int hashCode() {
-        return calendar.getFirstDayOfWeek()
+        return (getTaintInt() + calendar.getTaintInt() + numberFormat.hashCode());
+  /*      return calendar.getFirstDayOfWeek()
                 + calendar.getMinimalDaysInFirstWeek()
                 + calendar.getTimeZone().hashCode()
                 + (calendar.isLenient() ? 1231 : 1237)
-                + numberFormat.hashCode();
+                + numberFormat.hashCode();*/
     }
 
     /**

@@ -5480,288 +5480,294 @@ public boolean isTextSelectable() {
 
         if (mCurrentAlpha <= ViewConfiguration.ALPHA_THRESHOLD_INT) return;
 
-        restartMarqueeIfNeeded();
+        onDrawStub(canvas);
+        
+        //restartMarqueeIfNeeded();
 
-        // Draw the background for this view
+//        // Draw the background for this view
+//        super.onDraw(canvas);
+//
+//        final int compoundPaddingLeft = getCompoundPaddingLeft();
+//        final int compoundPaddingTop = getCompoundPaddingTop();
+//        final int compoundPaddingRight = getCompoundPaddingRight();
+//        final int compoundPaddingBottom = getCompoundPaddingBottom();
+//        final int scrollX = mScrollX;
+//        final int scrollY = mScrollY;
+//        final int right = mRight;
+//        final int left = mLeft;
+//        final int bottom = mBottom;
+//        final int top = mTop;
+//
+//        final Drawables dr = mDrawables;
+//        if (dr != null) {
+//            /*
+//             * Compound, not extended, because the icon is not clipped
+//             * if the text height is smaller.
+//             */
+//
+//            int vspace = bottom - top - compoundPaddingBottom - compoundPaddingTop;
+//            int hspace = right - left - compoundPaddingRight - compoundPaddingLeft;
+//
+//            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
+//            // Make sure to update invalidateDrawable() when changing this code.
+//            if (dr.mDrawableLeft != null) {
+//                canvas.save();
+//                canvas.translate(scrollX + mPaddingLeft,
+//                                 scrollY + compoundPaddingTop +
+//                                 (vspace - dr.mDrawableHeightLeft) / 2);
+//                dr.mDrawableLeft.draw(canvas);
+//                canvas.restore();
+//            }
+//
+//            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
+//            // Make sure to update invalidateDrawable() when changing this code.
+//            if (dr.mDrawableRight != null) {
+//                canvas.save();
+//                canvas.translate(scrollX + right - left - mPaddingRight - dr.mDrawableSizeRight,
+//                         scrollY + compoundPaddingTop + (vspace - dr.mDrawableHeightRight) / 2);
+//                dr.mDrawableRight.draw(canvas);
+//                canvas.restore();
+//            }
+//
+//            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
+//            // Make sure to update invalidateDrawable() when changing this code.
+//            if (dr.mDrawableTop != null) {
+//                canvas.save();
+//                canvas.translate(scrollX + compoundPaddingLeft + (hspace - dr.mDrawableWidthTop) / 2,
+//                        scrollY + mPaddingTop);
+//                dr.mDrawableTop.draw(canvas);
+//                canvas.restore();
+//            }
+//
+//            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
+//            // Make sure to update invalidateDrawable() when changing this code.
+//            if (dr.mDrawableBottom != null) {
+//                canvas.save();
+//                canvas.translate(scrollX + compoundPaddingLeft +
+//                        (hspace - dr.mDrawableWidthBottom) / 2,
+//                         scrollY + bottom - top - mPaddingBottom - dr.mDrawableSizeBottom);
+//                dr.mDrawableBottom.draw(canvas);
+//                canvas.restore();
+//            }
+//        }
+//
+//        int color = mCurTextColor;
+//
+//        if (mLayout == null) {
+//            assumeLayout();
+//        }
+//
+//        Layout layout = mLayout;
+//        int cursorcolor = color;
+//
+//        if (mHint != null && mText.length() == 0) {
+//            if (mHintTextColor != null) {
+//                color = mCurHintTextColor;
+//            }
+//
+//            layout = mHintLayout;
+//        }
+//
+//        mTextPaint.setColor(color);
+//        if (mCurrentAlpha != 255) {
+//            // If set, the alpha will override the color's alpha. Multiply the alphas.
+//            mTextPaint.setAlpha((mCurrentAlpha * Color.alpha(color)) / 255);
+//        }
+//        mTextPaint.drawableState = getDrawableState();
+//
+//        canvas.save();
+//        /*  Would be faster if we didn't have to do this. Can we chop the
+//            (displayable) text so that we don't need to do this ever?
+//        */
+//
+//        int extendedPaddingTop = getExtendedPaddingTop();
+//        int extendedPaddingBottom = getExtendedPaddingBottom();
+//
+//        float clipLeft = compoundPaddingLeft + scrollX;
+//        float clipTop = extendedPaddingTop + scrollY;
+//        float clipRight = right - left - compoundPaddingRight + scrollX;
+//        float clipBottom = bottom - top - extendedPaddingBottom + scrollY;
+//
+//        if (mShadowRadius != 0) {
+//            clipLeft += Math.min(0, mShadowDx - mShadowRadius);
+//            clipRight += Math.max(0, mShadowDx + mShadowRadius);
+//
+//            clipTop += Math.min(0, mShadowDy - mShadowRadius);
+//            clipBottom += Math.max(0, mShadowDy + mShadowRadius);
+//        }
+//
+//        canvas.clipRect(clipLeft, clipTop, clipRight, clipBottom);
+//
+//        int voffsetText = 0;
+//        int voffsetCursor = 0;
+//
+//        // translate in by our padding
+//        {
+//            /* shortcircuit calling getVerticaOffset() */
+//            if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
+//                voffsetText = getVerticalOffset(false);
+//                voffsetCursor = getVerticalOffset(true);
+//            }
+//            canvas.translate(compoundPaddingLeft, extendedPaddingTop + voffsetText);
+//        }
+//
+//        final int layoutDirection = getResolvedLayoutDirection();
+//        final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
+//        if (mEllipsize == TextUtils.TruncateAt.MARQUEE &&
+//                mMarqueeFadeMode != MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS) {
+//            if (!mSingleLine && getLineCount() == 1 && canMarquee() &&
+//                    (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) != Gravity.LEFT) {
+//                canvas.translate(mLayout.getLineRight(0) - (mRight - mLeft -
+//                        getCompoundPaddingLeft() - getCompoundPaddingRight()), 0.0f);
+//            }
+//
+//            if (mMarquee != null && mMarquee.isRunning()) {
+//                canvas.translate(-mMarquee.mScroll, 0.0f);
+//            }
+//        }
+//
+//        Path highlight = null;
+//        int selStart = -1, selEnd = -1;
+//        boolean drawCursor = false;
+//
+//        //  If there is no movement method, then there can be no selection.
+//        //  Check that first and attempt to skip everything having to do with
+//        //  the cursor.
+//        //  XXX This is not strictly true -- a program could set the
+//        //  selection manually if it really wanted to.
+//        if (mMovement != null && (isFocused() || isPressed())) {
+//            selStart = getSelectionStart();
+//            selEnd = getSelectionEnd();
+//
+//            if (selStart >= 0) {
+//                if (mHighlightPath == null) mHighlightPath = new Path();
+//
+//                if (selStart == selEnd) {
+//                    if (isCursorVisible() &&
+//                            (SystemClock.uptimeMillis() - mShowCursor) % (2 * BLINK) < BLINK) {
+//                        if (mHighlightPathBogus) {
+//                            mHighlightPath.reset();
+//                            mLayout.getCursorPath(selStart, mHighlightPath, mText);
+//                            updateCursorsPositions();
+//                            mHighlightPathBogus = false;
+//                        }
+//
+//                        // XXX should pass to skin instead of drawing directly
+//                        mHighlightPaint.setColor(cursorcolor);
+//                        if (mCurrentAlpha != 255) {
+//                            mHighlightPaint.setAlpha(
+//                                    (mCurrentAlpha * Color.alpha(cursorcolor)) / 255);
+//                        }
+//                        mHighlightPaint.setStyle(Paint.Style.STROKE);
+//                        highlight = mHighlightPath;
+//                        drawCursor = mCursorCount > 0;
+//                    }
+//                } else if (textCanBeSelected()) {
+//                    if (mHighlightPathBogus) {
+//                        mHighlightPath.reset();
+//                        mLayout.getSelectionPath(selStart, selEnd, mHighlightPath);
+//                        mHighlightPathBogus = false;
+//                    }
+//
+//                    // XXX should pass to skin instead of drawing directly
+//                    mHighlightPaint.setColor(mHighlightColor);
+//                    if (mCurrentAlpha != 255) {
+//                        mHighlightPaint.setAlpha(
+//                                (mCurrentAlpha * Color.alpha(mHighlightColor)) / 255);
+//                    }
+//                    mHighlightPaint.setStyle(Paint.Style.FILL);
+//
+//                    highlight = mHighlightPath;
+//                }
+//            }
+//        }
+//
+//        /*  Comment out until we decide what to do about animations
+//        boolean isLinearTextOn = false;
+//        if (currentTransformation != null) {
+//            isLinearTextOn = mTextPaint.isLinearTextOn();
+//            Matrix m = currentTransformation.getMatrix();
+//            if (!m.isIdentity()) {
+//                // mTextPaint.setLinearTextOn(true);
+//            }
+//        }
+//        */
+//
+//        final InputMethodState ims = mInputMethodState;
+//        final int cursorOffsetVertical = voffsetCursor - voffsetText;
+//        if (ims != null && ims.mBatchEditNesting == 0) {
+//            InputMethodManager imm = InputMethodManager.peekInstance();
+//            if (imm != null) {
+//                if (imm.isActive(this)) {
+//                    boolean reported = false;
+//                    if (ims.mContentChanged || ims.mSelectionModeChanged) {
+//                        // We are in extract mode and the content has changed
+//                        // in some way... just report complete new text to the
+//                        // input method.
+//                        reported = reportExtractedText();
+//                    }
+//                    if (!reported && highlight != null) {
+//                        int candStart = -1;
+//                        int candEnd = -1;
+//                        if (mText instanceof Spannable) {
+//                            Spannable sp = (Spannable)mText;
+//                            candStart = EditableInputConnection.getComposingSpanStart(sp);
+//                            candEnd = EditableInputConnection.getComposingSpanEnd(sp);
+//                        }
+//                        imm.updateSelection(this, selStart, selEnd, candStart, candEnd);
+//                    }
+//                }
+//                
+//                if (imm.isWatchingCursor(this) && highlight != null) {
+//                    highlight.computeBounds(ims.mTmpRectF, true);
+//                    ims.mTmpOffset[0] = ims.mTmpOffset[1] = 0;
+//    
+//                    canvas.getMatrix().mapPoints(ims.mTmpOffset);
+//                    ims.mTmpRectF.offset(ims.mTmpOffset[0], ims.mTmpOffset[1]);
+//    
+//                    ims.mTmpRectF.offset(0, cursorOffsetVertical);
+//    
+//                    ims.mCursorRectInWindow.set((int)(ims.mTmpRectF.left + 0.5),
+//                            (int)(ims.mTmpRectF.top + 0.5),
+//                            (int)(ims.mTmpRectF.right + 0.5),
+//                            (int)(ims.mTmpRectF.bottom + 0.5));
+//    
+//                    imm.updateCursor(this,
+//                            ims.mCursorRectInWindow.left, ims.mCursorRectInWindow.top,
+//                            ims.mCursorRectInWindow.right, ims.mCursorRectInWindow.bottom);
+//                }
+//            }
+//        }
+//
+//        if (mCorrectionHighlighter != null) {
+//            mCorrectionHighlighter.draw(canvas, cursorOffsetVertical);
+//        }
+//
+//        if (drawCursor) {
+//            drawCursor(canvas, cursorOffsetVertical);
+//            // Rely on the drawable entirely, do not draw the cursor line.
+//            // Has to be done after the IMM related code above which relies on the highlight.
+//            highlight = null;
+//        }
+//
+//        layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
+//
+//        if (mMarquee != null && mMarquee.shouldDrawGhost()) {
+//            canvas.translate((int) mMarquee.getGhostOffset(), 0.0f);
+//            layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
+//        }
+//
+//        /*  Comment out until we decide what to do about animations
+//        if (currentTransformation != null) {
+//            mTextPaint.setLinearTextOn(isLinearTextOn);
+//        }
+//
+//        */
+//        canvas.restore();
+    }
+    
+    private void onDrawStub(Canvas canvas) {
         super.onDraw(canvas);
-
-        final int compoundPaddingLeft = getCompoundPaddingLeft();
-        final int compoundPaddingTop = getCompoundPaddingTop();
-        final int compoundPaddingRight = getCompoundPaddingRight();
-        final int compoundPaddingBottom = getCompoundPaddingBottom();
-        final int scrollX = mScrollX;
-        final int scrollY = mScrollY;
-        final int right = mRight;
-        final int left = mLeft;
-        final int bottom = mBottom;
-        final int top = mTop;
-
-        final Drawables dr = mDrawables;
-        if (dr != null) {
-            /*
-             * Compound, not extended, because the icon is not clipped
-             * if the text height is smaller.
-             */
-
-            int vspace = bottom - top - compoundPaddingBottom - compoundPaddingTop;
-            int hspace = right - left - compoundPaddingRight - compoundPaddingLeft;
-
-            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
-            // Make sure to update invalidateDrawable() when changing this code.
-            if (dr.mDrawableLeft != null) {
-                canvas.save();
-                canvas.translate(scrollX + mPaddingLeft,
-                                 scrollY + compoundPaddingTop +
-                                 (vspace - dr.mDrawableHeightLeft) / 2);
-                dr.mDrawableLeft.draw(canvas);
-                canvas.restore();
-            }
-
-            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
-            // Make sure to update invalidateDrawable() when changing this code.
-            if (dr.mDrawableRight != null) {
-                canvas.save();
-                canvas.translate(scrollX + right - left - mPaddingRight - dr.mDrawableSizeRight,
-                         scrollY + compoundPaddingTop + (vspace - dr.mDrawableHeightRight) / 2);
-                dr.mDrawableRight.draw(canvas);
-                canvas.restore();
-            }
-
-            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
-            // Make sure to update invalidateDrawable() when changing this code.
-            if (dr.mDrawableTop != null) {
-                canvas.save();
-                canvas.translate(scrollX + compoundPaddingLeft + (hspace - dr.mDrawableWidthTop) / 2,
-                        scrollY + mPaddingTop);
-                dr.mDrawableTop.draw(canvas);
-                canvas.restore();
-            }
-
-            // IMPORTANT: The coordinates computed are also used in invalidateDrawable()
-            // Make sure to update invalidateDrawable() when changing this code.
-            if (dr.mDrawableBottom != null) {
-                canvas.save();
-                canvas.translate(scrollX + compoundPaddingLeft +
-                        (hspace - dr.mDrawableWidthBottom) / 2,
-                         scrollY + bottom - top - mPaddingBottom - dr.mDrawableSizeBottom);
-                dr.mDrawableBottom.draw(canvas);
-                canvas.restore();
-            }
-        }
-
-        int color = mCurTextColor;
-
-        if (mLayout == null) {
-            assumeLayout();
-        }
-
-        Layout layout = mLayout;
-        int cursorcolor = color;
-
-        if (mHint != null && mText.length() == 0) {
-            if (mHintTextColor != null) {
-                color = mCurHintTextColor;
-            }
-
-            layout = mHintLayout;
-        }
-
-        mTextPaint.setColor(color);
-        if (mCurrentAlpha != 255) {
-            // If set, the alpha will override the color's alpha. Multiply the alphas.
-            mTextPaint.setAlpha((mCurrentAlpha * Color.alpha(color)) / 255);
-        }
-        mTextPaint.drawableState = getDrawableState();
-
-        canvas.save();
-        /*  Would be faster if we didn't have to do this. Can we chop the
-            (displayable) text so that we don't need to do this ever?
-        */
-
-        int extendedPaddingTop = getExtendedPaddingTop();
-        int extendedPaddingBottom = getExtendedPaddingBottom();
-
-        float clipLeft = compoundPaddingLeft + scrollX;
-        float clipTop = extendedPaddingTop + scrollY;
-        float clipRight = right - left - compoundPaddingRight + scrollX;
-        float clipBottom = bottom - top - extendedPaddingBottom + scrollY;
-
-        if (mShadowRadius != 0) {
-            clipLeft += Math.min(0, mShadowDx - mShadowRadius);
-            clipRight += Math.max(0, mShadowDx + mShadowRadius);
-
-            clipTop += Math.min(0, mShadowDy - mShadowRadius);
-            clipBottom += Math.max(0, mShadowDy + mShadowRadius);
-        }
-
-        canvas.clipRect(clipLeft, clipTop, clipRight, clipBottom);
-
-        int voffsetText = 0;
-        int voffsetCursor = 0;
-
-        // translate in by our padding
-        {
-            /* shortcircuit calling getVerticaOffset() */
-            if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != Gravity.TOP) {
-                voffsetText = getVerticalOffset(false);
-                voffsetCursor = getVerticalOffset(true);
-            }
-            canvas.translate(compoundPaddingLeft, extendedPaddingTop + voffsetText);
-        }
-
-        final int layoutDirection = getResolvedLayoutDirection();
-        final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
-        if (mEllipsize == TextUtils.TruncateAt.MARQUEE &&
-                mMarqueeFadeMode != MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS) {
-            if (!mSingleLine && getLineCount() == 1 && canMarquee() &&
-                    (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) != Gravity.LEFT) {
-                canvas.translate(mLayout.getLineRight(0) - (mRight - mLeft -
-                        getCompoundPaddingLeft() - getCompoundPaddingRight()), 0.0f);
-            }
-
-            if (mMarquee != null && mMarquee.isRunning()) {
-                canvas.translate(-mMarquee.mScroll, 0.0f);
-            }
-        }
-
-        Path highlight = null;
-        int selStart = -1, selEnd = -1;
-        boolean drawCursor = false;
-
-        //  If there is no movement method, then there can be no selection.
-        //  Check that first and attempt to skip everything having to do with
-        //  the cursor.
-        //  XXX This is not strictly true -- a program could set the
-        //  selection manually if it really wanted to.
-        if (mMovement != null && (isFocused() || isPressed())) {
-            selStart = getSelectionStart();
-            selEnd = getSelectionEnd();
-
-            if (selStart >= 0) {
-                if (mHighlightPath == null) mHighlightPath = new Path();
-
-                if (selStart == selEnd) {
-                    if (isCursorVisible() &&
-                            (SystemClock.uptimeMillis() - mShowCursor) % (2 * BLINK) < BLINK) {
-                        if (mHighlightPathBogus) {
-                            mHighlightPath.reset();
-                            mLayout.getCursorPath(selStart, mHighlightPath, mText);
-                            updateCursorsPositions();
-                            mHighlightPathBogus = false;
-                        }
-
-                        // XXX should pass to skin instead of drawing directly
-                        mHighlightPaint.setColor(cursorcolor);
-                        if (mCurrentAlpha != 255) {
-                            mHighlightPaint.setAlpha(
-                                    (mCurrentAlpha * Color.alpha(cursorcolor)) / 255);
-                        }
-                        mHighlightPaint.setStyle(Paint.Style.STROKE);
-                        highlight = mHighlightPath;
-                        drawCursor = mCursorCount > 0;
-                    }
-                } else if (textCanBeSelected()) {
-                    if (mHighlightPathBogus) {
-                        mHighlightPath.reset();
-                        mLayout.getSelectionPath(selStart, selEnd, mHighlightPath);
-                        mHighlightPathBogus = false;
-                    }
-
-                    // XXX should pass to skin instead of drawing directly
-                    mHighlightPaint.setColor(mHighlightColor);
-                    if (mCurrentAlpha != 255) {
-                        mHighlightPaint.setAlpha(
-                                (mCurrentAlpha * Color.alpha(mHighlightColor)) / 255);
-                    }
-                    mHighlightPaint.setStyle(Paint.Style.FILL);
-
-                    highlight = mHighlightPath;
-                }
-            }
-        }
-
-        /*  Comment out until we decide what to do about animations
-        boolean isLinearTextOn = false;
-        if (currentTransformation != null) {
-            isLinearTextOn = mTextPaint.isLinearTextOn();
-            Matrix m = currentTransformation.getMatrix();
-            if (!m.isIdentity()) {
-                // mTextPaint.setLinearTextOn(true);
-            }
-        }
-        */
-
-        final InputMethodState ims = mInputMethodState;
-        final int cursorOffsetVertical = voffsetCursor - voffsetText;
-        if (ims != null && ims.mBatchEditNesting == 0) {
-            InputMethodManager imm = InputMethodManager.peekInstance();
-            if (imm != null) {
-                if (imm.isActive(this)) {
-                    boolean reported = false;
-                    if (ims.mContentChanged || ims.mSelectionModeChanged) {
-                        // We are in extract mode and the content has changed
-                        // in some way... just report complete new text to the
-                        // input method.
-                        reported = reportExtractedText();
-                    }
-                    if (!reported && highlight != null) {
-                        int candStart = -1;
-                        int candEnd = -1;
-                        if (mText instanceof Spannable) {
-                            Spannable sp = (Spannable)mText;
-                            candStart = EditableInputConnection.getComposingSpanStart(sp);
-                            candEnd = EditableInputConnection.getComposingSpanEnd(sp);
-                        }
-                        imm.updateSelection(this, selStart, selEnd, candStart, candEnd);
-                    }
-                }
-                
-                if (imm.isWatchingCursor(this) && highlight != null) {
-                    highlight.computeBounds(ims.mTmpRectF, true);
-                    ims.mTmpOffset[0] = ims.mTmpOffset[1] = 0;
-    
-                    canvas.getMatrix().mapPoints(ims.mTmpOffset);
-                    ims.mTmpRectF.offset(ims.mTmpOffset[0], ims.mTmpOffset[1]);
-    
-                    ims.mTmpRectF.offset(0, cursorOffsetVertical);
-    
-                    ims.mCursorRectInWindow.set((int)(ims.mTmpRectF.left + 0.5),
-                            (int)(ims.mTmpRectF.top + 0.5),
-                            (int)(ims.mTmpRectF.right + 0.5),
-                            (int)(ims.mTmpRectF.bottom + 0.5));
-    
-                    imm.updateCursor(this,
-                            ims.mCursorRectInWindow.left, ims.mCursorRectInWindow.top,
-                            ims.mCursorRectInWindow.right, ims.mCursorRectInWindow.bottom);
-                }
-            }
-        }
-
-        if (mCorrectionHighlighter != null) {
-            mCorrectionHighlighter.draw(canvas, cursorOffsetVertical);
-        }
-
-        if (drawCursor) {
-            drawCursor(canvas, cursorOffsetVertical);
-            // Rely on the drawable entirely, do not draw the cursor line.
-            // Has to be done after the IMM related code above which relies on the highlight.
-            highlight = null;
-        }
-
-        layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
-
-        if (mMarquee != null && mMarquee.shouldDrawGhost()) {
-            canvas.translate((int) mMarquee.getGhostOffset(), 0.0f);
-            layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
-        }
-
-        /*  Comment out until we decide what to do about animations
-        if (currentTransformation != null) {
-            mTextPaint.setLinearTextOn(isLinearTextOn);
-        }
-        */
-
-        canvas.restore();
     }
 
     @DSComment("Private Method")
@@ -8701,7 +8707,7 @@ private void updateSpellCheckSpans(int start, int end, boolean createSpellChecke
             return;
         }
         
-        mShowCursor = SystemClock.uptimeMillis();
+        /*mShowCursor = SystemClock.uptimeMillis();
 
         ensureEndedBatchEdit();
 
@@ -8734,7 +8740,7 @@ private void updateSpellCheckSpans(int start, int end, boolean createSpellChecke
                 // It would be better to know why the DecorView does not have focus at that time.
                 if (((this instanceof ExtractEditText) || mSelectionMoved) &&
                         selStart >= 0 && selEnd >= 0) {
-                    /*
+                    
                      * Someone intentionally set the selection, so let them
                      * do whatever it is that they wanted to do instead of
                      * the default on-focus behavior.  We reset the selection
@@ -8742,7 +8748,7 @@ private void updateSpellCheckSpans(int start, int end, boolean createSpellChecke
                      * because some movement methods do something other than
                      * just setting the selection in theirs and we still
                      * need to go through that path.
-                     */
+                     
                     Selection.setSelection((Spannable) mText, selStart, selEnd);
                 }
 
@@ -8796,7 +8802,7 @@ private void updateSpellCheckSpans(int start, int end, boolean createSpellChecke
         if (mTransformation != null) {
             mTransformation.onFocusChanged(this, mText, focused, direction, previouslyFocusedRect);
         }
-
+*/
         super.onFocusChanged(focused, direction, previouslyFocusedRect);
     }
 
@@ -12793,14 +12799,14 @@ public InsertionHandleView(Drawable drawable) {
         
 @Override
         public void show() {
-            super.show();
+         /*   super.show();
 
             final long durationSinceCutOrCopy = SystemClock.uptimeMillis() - sLastCutOrCopyTime;
             if (durationSinceCutOrCopy < RECENT_CUT_COPY_DURATION) {
                 showActionPopupWindow(0);
             }
 
-            hideAfterDelay();
+            hideAfterDelay();*/
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.180 -0500", hash_original_method = "59B6A837BA01A6E9F2644C670D997B83", hash_generated_method = "1BF6184BF9B4E6FF6F7F5FFEDE9126A1")

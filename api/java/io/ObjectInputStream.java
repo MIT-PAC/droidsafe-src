@@ -222,7 +222,7 @@ public ObjectInputStream(InputStream input) throws StreamCorruptedException, IOE
     public int available() throws IOException {
         // returns 0 if next data is an object, or N if reading primitive types
         checkReadPrimitiveTypes();
-        return primitiveData.available();
+        return primitiveData.droidsafeAvailable();
     }
 
     /**
@@ -239,7 +239,7 @@ public ObjectInputStream(InputStream input) throws StreamCorruptedException, IOE
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.333 -0500", hash_original_method = "5DD662298FB99DC11E3F5A1BB4812CC0", hash_generated_method = "C3EF6120899F63F2851F20098D8AAECC")
     
 private void checkReadPrimitiveTypes() throws IOException {
-        // If we still have primitive data, it is ok to read primitive data
+       /* // If we still have primitive data, it is ok to read primitive data
         if (primitiveData == input || primitiveData.available() > 0) {
             return;
         }
@@ -271,7 +271,7 @@ private void checkReadPrimitiveTypes() throws IOException {
                     return;
             }
             // Only TC_RESET falls through
-        } while (true);
+        } while (true);*/
     }
 
     /**
@@ -403,7 +403,7 @@ private void pushbackTC() {
 @Override
     public int read() throws IOException {
         checkReadPrimitiveTypes();
-        return primitiveData.read();
+        return primitiveData.droidsafeRead();
     }
 
     /**

@@ -63,7 +63,7 @@ private static MemoryMappedFile mapData() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.740 -0500", hash_original_method = "880C6B6FFD6476FB4BC9E8F8AE296E97", hash_generated_method = "3770FEFFBAC67FD1905A83F293D6AE9F")
     
 private static void readIndex() {
-        MemoryMappedFile mappedFile = null;
+       /* MemoryMappedFile mappedFile = null;
         try {
             mappedFile = MemoryMappedFile.mmapRO(INDEX_FILE_NAME);
             readIndex(mappedFile);
@@ -71,7 +71,7 @@ private static void readIndex() {
             throw new AssertionError(ex);
         } finally {
             IoUtils.closeQuietly(mappedFile);
-        }
+        }*/
     }
 
     @DSComment("Private Method")
@@ -182,28 +182,34 @@ private static TimeZone makeTimeZone(String id) throws IOException {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.750 -0500", hash_original_method = "659D0293BDF51E54E117CD011B6D5569", hash_generated_method = "4E4D93DDC3024AC09E6B60611D266549")
     
-public static String[] getAvailableIDs() {
-        return ids.clone();
+    public static String[] getAvailableIDs() {
+        return getAvailableIDs(0);
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.752 -0500", hash_original_method = "91B44B1DD587FF59D37E00614C5C4739", hash_generated_method = "B9911AE44E980EDBB56D169BD081B9A3")
     
 public static String[] getAvailableIDs(int rawOffset) {
-        List<String> matches = new ArrayList<String>();
+       /* List<String> matches = new ArrayList<String>();
         for (int i = 0, end = rawUtcOffsets.length; i < end; i++) {
             if (rawUtcOffsets[i] == rawOffset) {
                 matches.add(ids[i]);
             }
         }
-        return matches.toArray(new String[matches.size()]);
+        return matches.toArray(new String[matches.size()]);*/
+        if (ids == null) {
+            ids = new String[1];
+            ids[0] = new String("<zone-id>");
+        }
+        ids[0].addTaint(rawOffset);
+        return ids;
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.755 -0500", hash_original_method = "AF44A55E6688F7315D6A27422073E89E", hash_generated_method = "FDDDE13339454F68759F52C88F9D59B8")
     
 public static TimeZone getSystemDefault() {
-        synchronized (LOCK) {
+       /* synchronized (LOCK) {
             TimezoneGetter tzGetter = TimezoneGetter.getInstance();
             String zoneName = tzGetter != null ? tzGetter.getId() : null;
             if (zoneName != null) {
@@ -215,20 +221,25 @@ public static TimeZone getSystemDefault() {
                 zoneName = "localtime";
             }
             return TimeZone.getTimeZone(zoneName);
-        }
+        }*/
+        return new ZoneInfo(DSOnlyType.DONTCARE);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.757 -0500", hash_original_method = "8DE7908FF133C8748934019B6455568E", hash_generated_method = "F221F71F3E58C301D3AEAAEE17106F8E")
     
 public static TimeZone getTimeZone(String id) {
-        if (id == null) {
+      /*  if (id == null) {
             return null;
         }
         try {
             return makeTimeZone(id);
         } catch (IOException ignored) {
             return null;
-        }
+        }*/
+
+        TimeZone tz = new ZoneInfo(DSOnlyType.DONTCARE);
+        tz.addTaint(id.getTaint());
+        return tz;
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

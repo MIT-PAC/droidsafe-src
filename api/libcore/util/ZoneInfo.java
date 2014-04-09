@@ -17,10 +17,14 @@ public final class ZoneInfo extends TimeZone {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.474 -0500", hash_original_method = "8870473B0F5D9FAFDE3FAA6E00691882", hash_generated_method = "724284E4D54CC069B48EAD49A7CB88A9")
     
 private static String formatTime(int s, TimeZone tz) {
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy zzz");
+/*        SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy zzz");
         sdf.setTimeZone(tz);
         long ms = ((long) s) * 1000L;
-        return sdf.format(new Date(ms));
+        return sdf.format(new Date(ms));*/
+        
+        String str = new String();
+        str.addTaint(s + tz.getTaintInt());
+        return str;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.414 -0500", hash_original_field = "894BF769F550782D8734EEEE182490C9", hash_generated_field = "F90447479CBDC64DF2FB7D5461FD8925")
 
@@ -64,12 +68,22 @@ private static String formatTime(int s, TimeZone tz) {
 
     private  boolean mUseDst;
 
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public ZoneInfo(DSOnlyType dontcare){
+        
+    }
+    
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.445 -0500", hash_original_method = "7B585FDC58F35CED01D1FBB089EE95E4", hash_generated_method = "D677FA1F79FBEA978D270DD51A2C60F2")
     
 ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] isDsts) {
-        mTransitions = transitions;
+        addTaint(name.getTaintInt() +
+                transitions[0] + 
+                type[0] +
+                gmtOffsets[0] +
+                isDsts[0]);
+       /* mTransitions = transitions;
         mTypes = type;
         mIsDsts = isDsts;
         setID(name);
@@ -128,7 +142,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         mUseDst = usesDst;
 
         mRawOffset *= 1000;
-        mEarliestRawOffset = earliestRawOffset * 1000;
+        mEarliestRawOffset = earliestRawOffset * 1000;*/
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -136,7 +150,8 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
     
 @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int millis) {
-        // XXX This assumes Gregorian always; Calendar switches from
+        return (getTaintInt() + era + year + month + day + dayOfWeek + millis);
+      /*  // XXX This assumes Gregorian always; Calendar switches from
         // Julian to Gregorian in 1582.  What calendar system are the
         // arguments supposed to come from?
 
@@ -160,7 +175,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         calc -= mRawOffset;
         calc -= UNIX_OFFSET;
 
-        return getOffset(calc);
+        return getOffset(calc);*/
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -168,7 +183,8 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
     
 @Override
     public int getOffset(long when) {
-        int unix = (int) (when / 1000);
+        return (int)(when + getTaintInt());
+       /* int unix = (int) (when / 1000);
         int transition = Arrays.binarySearch(mTransitions, unix);
         if (transition < 0) {
             transition = ~transition - 1;
@@ -179,13 +195,14 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
                 return mEarliestRawOffset;
             }
         }
-        return mRawOffset + mOffsets[mTypes[transition] & 0xff] * 1000;
+        return mRawOffset + mOffsets[mTypes[transition] & 0xff] * 1000;*/
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.453 -0500", hash_original_method = "B2B7B20D9A81D2665491427CA669DC48", hash_generated_method = "FDA7F3F3F70CC070FC719E68A65BF66A")
     
 @Override public boolean inDaylightTime(Date time) {
-        long when = time.getTime();
+        return toTaintBoolean(time.getHours() + getTaintInt());
+       /* long when = time.getTime();
         int unix = (int) (when / 1000);
         int transition = Arrays.binarySearch(mTransitions, unix);
         if (transition < 0) {
@@ -198,26 +215,26 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
                 return false;
             }
         }
-        return mIsDsts[mTypes[transition] & 0xff] == 1;
+        return mIsDsts[mTypes[transition] & 0xff] == 1;*/
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.455 -0500", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "0BE2EC6C07866D6560B4FEC30DFB59A8")
     
 @Override public int getRawOffset() {
-        return mRawOffset;
+        return getTaintInt();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.458 -0500", hash_original_method = "AE2A1B68EBE1FCF14F7860BA64C34CCE", hash_generated_method = "6290A6F7084233AE5F747A41F23FBDD3")
     
 @Override public void setRawOffset(int off) {
-        mRawOffset = off;
+        addTaint(off);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.460 -0500", hash_original_method = "81F7D5AE987C5D23D9D894C0567E3722", hash_generated_method = "DD86F760425679822A9B0195140AE811")
     
 @Override public boolean useDaylightTime() {
-        return mUseDst;
+        return getTaintBoolean();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.463 -0500", hash_original_method = "73AAAC31DDE42029904964FC44B684BD", hash_generated_method = "A0C350257820BABA84EDFA3574B394D3")
@@ -230,15 +247,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         if (mUseDst != other.mUseDst) {
             return false;
         }
-        if (!mUseDst) {
-            return mRawOffset == other.mRawOffset;
-        }
-        return mRawOffset == other.mRawOffset
-                // Arrays.equals returns true if both arrays are null
-                && Arrays.equals(mOffsets, other.mOffsets)
-                && Arrays.equals(mIsDsts, other.mIsDsts)
-                && Arrays.equals(mTypes, other.mTypes)
-                && Arrays.equals(mTransitions, other.mTransitions);
+        return toTaintBoolean(getTaintInt() + other.getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.466 -0500", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "E5D81ACFE1B7D26D686272EC1051E97E")
@@ -255,7 +264,8 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
     
 @Override
     public int hashCode() {
-        final int prime = 31;
+        return getTaintInt();
+       /* final int prime = 31;
         int result = 1;
         result = prime * result + getID().hashCode();
         result = prime * result + Arrays.hashCode(mOffsets);
@@ -264,14 +274,15 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         result = prime * result + Arrays.hashCode(mTransitions);
         result = prime * result + Arrays.hashCode(mTypes);
         result = prime * result + (mUseDst ? 1231 : 1237);
-        return result;
+        return result;*/
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.471 -0500", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "50A1DCBE916F412686F7B0C03CABB98E")
     
 @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        return new String(taint);
+       /* StringBuilder sb = new StringBuilder();
         // First the basics...
         sb.append(getClass().getName() + "[" + getID() + ",mRawOffset=" + mRawOffset +
                 ",mUseDst=" + mUseDst + "]");
@@ -287,7 +298,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
             f.format("%4d : time=%11d %s = %s isDst=%d offset=%5d gmtOffset=%d\n",
                     i, mTransitions[i], utcTime, localTime, mIsDsts[type], offset, gmtOffset);
         }
-        return sb.toString();
+        return sb.toString();*/
     }
 }
 
