@@ -35,7 +35,8 @@ public class VATransformsSuite  {
     private List<VATransform> transforms = Arrays.asList(
         new StartActivityTransform(),
         new ServiceBindTransform(),
-        new StartServiceTransform()
+        new StartServiceTransform(),
+        new BroadcastReceiverTransform()
             );
 
     // enforce singleton pattern

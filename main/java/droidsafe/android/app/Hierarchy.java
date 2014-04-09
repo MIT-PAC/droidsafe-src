@@ -68,6 +68,16 @@ public class Hierarchy {
 		    Scene.v().getSootClass(Components.ACTIVITY_CLASS));
 	}
 	
+	/** 
+     * Returns true if cn is class android/content/BroadcastReceiver or is a class
+     * that inherits from android/content/BroadcastReceiver
+     */
+    public static boolean inheritsFromAndroidBroadcastReceiver(final SootClass cn) {
+        return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
+            Scene.v().getSootClass(Components.BROADCASTRECEIVER_CLASS));
+    }
+    
+	
 	/**
 	 * Return true if this class inherits from an android component class.
 	 */

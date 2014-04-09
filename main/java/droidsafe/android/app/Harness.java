@@ -589,8 +589,8 @@ public class Harness {
             harnessClass.addField(newField);
 
             //create a constructor for this object
-            Stmt consCall = TransformsUtils.getConstructorCall(receiver, type);
-            if (consCall != null)
+            List<Stmt> consCalls = TransformsUtils.getConstructorCall(body, receiver, type);
+            for (Stmt consCall : consCalls)
                 body.getUnits().insertBefore(consCall, inLoopStmt);
 
             //assign back to field

@@ -67,6 +67,23 @@ public class IntentUtils {
     /**
      * 
      */
+    public Set<SootField> getIntentBroadcastReceiverTargetHarnessFields(Set<? extends IAllocNode> allocNodes) {
+        Set<SootField> allHarnessServiceFlds = new LinkedHashSet<SootField>();
+
+        if (CONSERVATIVE) {
+            for (SootClass clz : Harness.v().getCreatedClasses()) {
+                if (Hierarchy.inheritsFromAndroidBroadcastReceiver(clz)) {
+                    allHarnessServiceFlds.add(Harness.v().getFieldForCreatedClass(clz));
+                }
+            }
+        }
+
+        return getIntentTargetHarnessFlds(allocNodes, allHarnessServiceFlds);
+    }
+    
+    /**
+     * 
+     */
     public Set<SootField> getIntentServiceTargetHarnessFields(Set<? extends IAllocNode> allocNodes) {
         Set<SootField> allHarnessServiceFlds = new LinkedHashSet<SootField>();
 
