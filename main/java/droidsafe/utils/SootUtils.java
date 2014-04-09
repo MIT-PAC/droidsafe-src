@@ -46,6 +46,7 @@ import soot.Modifier;
 import soot.SootField;
 import soot.SootMethodRef;
 import soot.ValueBox;
+import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.Expr;
 import soot.jimple.FloatConstant;
@@ -479,6 +480,13 @@ public class SootUtils {
         return null;
     }
 
+    /**
+     * return the soot class referenced by the given class constant
+     */
+    public static SootClass getSootClass(ClassConstant cc) {
+        return Scene.v().getSootClass(cc.getValue().replaceAll("/", "."));
+    }
+    
 
     /**
      * Matching a callback method.  We ignore return type as it is not important in callback

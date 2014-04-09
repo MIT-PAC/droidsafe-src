@@ -2,6 +2,7 @@ package droidsafe.analyses.value;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.analyses.value.primitives.ClassVAModel;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
@@ -25,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.AssignStmt;
+import soot.jimple.ClassConstant;
 import soot.jimple.Constant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
@@ -40,6 +42,7 @@ import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
 import soot.Context;
 import soot.MethodOrMethodContext;
+import soot.PrimType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -61,6 +64,8 @@ public class ValueAnalysis  {
     //if true then for string values, only track jsa resolved strings (so hot spot strings)
     public static final boolean ONLY_TRACK_JSA_STRINGS = true;
 
+    public static final boolean USE_PTA_ONLY = true;
+
     /** Singleton for analysis */
     private static ValueAnalysis am;
 
@@ -71,7 +76,7 @@ public class ValueAnalysis  {
      * keys are the objects that we can and want to model (they are new expressions) 
      * The value is the Model object which simulates that object. 
      */
-    private Map<IAllocNode, VAModel> allocNodeToVAModelMap; 
+    private Map<IAllocNode, RefVAModel> allocNodeToVAModelMap; 
 
     private Set<Type> vaModeledTypesAndParents;
 
@@ -98,7 +103,7 @@ public class ValueAnalysis  {
 
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
-        this.allocNodeToVAModelMap = new LinkedHashMap<IAllocNode, VAModel>();
+        this.allocNodeToVAModelMap = new LinkedHashMap<IAllocNode, RefVAModel>();
         this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
         this.vaModeledTypesAndParents = new HashSet<Type>();
     }
@@ -119,7 +124,7 @@ public class ValueAnalysis  {
     /**
      * Getter for analysis result.  AllocNode -> VAModel.
      */
-    public Map<IAllocNode, VAModel> getResults() {
+    public Map<IAllocNode, RefVAModel> getResults() {
         return this.allocNodeToVAModelMap;
     }
 
@@ -149,7 +154,7 @@ public class ValueAnalysis  {
     public static ValueAnalysis v() {
         if (am == null)
             am = new ValueAnalysis();
-        
+
         return am;
     }
 
@@ -162,7 +167,7 @@ public class ValueAnalysis  {
 
         //create singleton
         v();
-        
+
         try {
             vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                 + "va-errors.log");
@@ -179,8 +184,10 @@ public class ValueAnalysis  {
 
         am.createObjectModels();
 
-
-        am.visitMethodContexts();
+        if (USE_PTA_ONLY)
+            am.collectPTAResults();
+        else 
+            am.visitMethodContexts();
 
         if (Config.v().debug)
             am.logResults();
@@ -200,8 +207,9 @@ public class ValueAnalysis  {
 
     public void createObjectModels() {
         for(IAllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
-            if (allocNode instanceof ObjectSensitiveAllocNode)
+            if (allocNode instanceof ObjectSensitiveAllocNode) {
                 createObjectModel(allocNode);    
+            }
         }
     }
 
@@ -269,6 +277,45 @@ public class ValueAnalysis  {
         }
     }
 
+    private void collectPTAResults() {
+        //loop through all alloc nodes in map
+        for (IAllocNode an : allocNodeToVAModelMap.keySet()) {
+            RefVAModel baseModel = (RefVAModel)allocNodeToVAModelMap.get(an);
+            
+            if (baseModel == null)
+                continue;
+            
+            //boolean debug = (an.getType().equals(RefType.v("android.net.Uri")));                    
+            
+            //if (debug) System.out.printf("Looking at: %s\n", an);
+            
+            Class<?> baseVAModelClass = baseModel.getClass();
+            
+            //for each field with a type of string or classconstant
+            for (SootField sootField : baseModel.getFields()) {
+                //add values from pta to the model
+                String fieldName = sootField.getName();
+                
+                try {
+                    Field field = baseVAModelClass.getField(fieldName);
+                    Object fieldObject = field.get(baseModel);
+                    
+                    VAModel fieldVAModel = (VAModel)fieldObject;
+                    
+                    Set<? extends IAllocNode> fieldPTSet = PTABridge.v().getPTSet(an, sootField);
+                    
+                    if (fieldVAModel instanceof StringVAModel || fieldVAModel instanceof ClassVAModel) {
+                       // if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
+                        handleFieldValue((PrimVAModel)fieldVAModel, fieldPTSet);
+                    }
+                } catch (Exception e) {
+                    //used to ignore fields that are not tracked by va
+                } 
+            }
+            //if (debug) System.out.println();
+        }
+    }
+
     public void visitMethodContexts() {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             SootMethod sootMethod = momc.method();
@@ -279,7 +326,7 @@ public class ValueAnalysis  {
 
             if(!sootMethod.hasActiveBody())
                 sootMethod.retrieveActiveBody();
-            
+
             for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
                 Stmt stmt = (Stmt) stmts.next();
                 if(stmt instanceof AssignStmt) {
@@ -309,8 +356,9 @@ public class ValueAnalysis  {
                                         VAModel fieldObjectVAModel = (VAModel)fieldObject;
                                         if(fieldObjectVAModel instanceof PrimVAModel) {
                                             PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
-                                            if (fieldPrimVAModel instanceof StringVAModel) {
-                                                handleString(momc, assignStmt, fieldPrimVAModel, context);
+                                            if (fieldPrimVAModel instanceof StringVAModel || 
+                                                    fieldPrimVAModel instanceof ClassVAModel) {
+                                                handleStringOrClass(momc, assignStmt, fieldPrimVAModel, context);
                                             } else  {
                                                 //primitive, but not string primitive
                                                 if(rightOp instanceof Constant) {
@@ -353,12 +401,12 @@ public class ValueAnalysis  {
     /**
      * Handle case where type for assignment is a string
      */
-    private void handleString(MethodOrMethodContext momc, AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Context context) {
+    private void handleStringOrClass(MethodOrMethodContext momc, AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Context context) {
         //Found string
         Set<? extends IAllocNode> rhsNodes;
-        
+
         //get the string nodes the rhs expression could possibly point to
-        if (assignStmt.getRightOp() instanceof StringConstant) {
+        if (assignStmt.getRightOp() instanceof Constant) {
             //if a direct string constant, then get the string constant node from pta
             Set<IAllocNode> nodes = new HashSet<IAllocNode>();
             nodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp(), context));
@@ -368,22 +416,34 @@ public class ValueAnalysis  {
             rhsNodes = PTABridge.v().getPTSet(assignStmt.getRightOp(), context);
         }
 
+        handleFieldValue(fieldPrimVAModel, rhsNodes);
+    }
+    
+    private void handleFieldValue(PrimVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes) {
         for(IAllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
+            
             if(rhsNode.getNewExpr() instanceof StringConstant) {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
                 if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() <= 5) {
                     String value = sc.value;
+                    //if (debug) System.out.println("Found sc: " + value);
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
                     value = value.replace("\\uxxxx", "");
                     fieldPrimVAModel.addValue(value);
                     knownValue = true;
                 }
+            } else if (rhsNode.getNewExpr() instanceof ClassConstant) {
+                fieldPrimVAModel.addValue(SootUtils.getSootClass((ClassConstant)rhsNode.getNewExpr()));
+                //System.out.printf("Found CC: %s\n", SootUtils.getSootClass((ClassConstant)rhsNode.getNewExpr()));
+                knownValue = true;
             }
+                        
             if (!knownValue) {
+                //if (debug) System.out.println("Not known: " + rhsNode);
                 // all strings weren't constants, write unknown value
                 ValueAnalysis.logError(fieldPrimVAModel.toString() + 
                     " the value it is assigned, " + 
@@ -391,7 +451,7 @@ public class ValueAnalysis  {
                     fieldPrimVAModel.getValues());
                 fieldPrimVAModel.addValue(UNKNOWN_VALUES_STRING);
             }
-        }  
+        }   
     }
 
     /**
@@ -422,9 +482,23 @@ public class ValueAnalysis  {
      * Log the results of the modeling
      */
     private void logResults() {
-        for(Map.Entry<IAllocNode, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
+        for(Map.Entry<IAllocNode, RefVAModel> entry : allocNodeToVAModelMap.entrySet()) {
             logResult("AllocNode: " + entry.getKey());
             logResult("Model: " + entry.getValue().toStringPretty());
         }
+    }
+    
+    /**
+     * Return true if VA handles the type as a primitive, so true for primitives, strings, and java.lang.Class.
+     */
+    public static boolean handleAsPrimType(Type type) {
+        if (type instanceof RefType) {
+            return SootUtils.isStringOrSimilarType(type) || type.equals(RefType.v("java.lang.Class"));
+        } else if (type instanceof PrimType) {
+            return true;
+        } else 
+            return false;
+        
+        
     }
 }

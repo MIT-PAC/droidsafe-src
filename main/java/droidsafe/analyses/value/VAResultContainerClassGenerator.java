@@ -223,7 +223,8 @@ public class VAResultContainerClassGenerator {
                             RefType refType = (RefType)fieldType;
                             SootClass fieldTypeClass = ((RefType)fieldType).getSootClass();
                             if (refType.equals(RefType.v("java.lang.String")) ||
-                                    refType.equals(RefType.v("java.lang.CharSequence"))) {
+                                    refType.equals(RefType.v("java.lang.CharSequence")) ||
+                                    refType.equals(RefType.v("java.lang.Class"))) {
                                 //add string fields to the list of fields that are modeled!
                                 classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
                             } else if(!classesAndFieldsToModel.containsKey(fieldTypeClass)) {
@@ -821,6 +822,8 @@ public class VAResultContainerClassGenerator {
                 String coiName = coi.getName();
                 if (coiName.equals("String") || coiName.equals("CharSequence")) {
                     type = getStringType();
+                } else if (coiName.startsWith("Class")) {
+                    type = getClassType();
                 } else if (PRIMITIVE_WRAPPER_CLASS_NAMES.contains(coiName)) {
                     type = convertStringOrPrimitiveWrapperType(coiName);
                 } else if (COLLECTION_CLASS_NAMES.contains(coiName)){
@@ -860,6 +863,21 @@ public class VAResultContainerClassGenerator {
         
         return type;
     }
+    
+    private Type getClassType() {
+        //System.out.println("**Converting class!!");
+        String vaClass = "Class" + "VAModel";
+        Type type = classTypeConversionMap.get(vaClass);
+        if (type == null) {
+            imports.add("droidsafe.analyses.value.primitives." + vaClass);
+            type = makeReferenceType(vaClass);
+            classTypeConversionMap.put(vaClass, type);
+        }
+        
+        return type;
+    }
+    
+    
 
     private Type convertStringOrPrimitiveWrapperType(String clsName) {
         Type type = classTypeConversionMap.get(clsName);

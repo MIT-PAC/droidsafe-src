@@ -973,7 +973,7 @@ public class SparkPTA extends PTABridge {
         for (SootClass clz : Scene.v().getClasses()) {
             if (Project.v().isSrcClass(clz) || 
                     /*isImportantJavaAlloc(clz) ||*/
-                    clz.getName().startsWith(Project.DS_GENERATED_CLASSES_PREFX) ||
+                    clz.getName().startsWith(Project.DS_GENERATED_CLASSES_PREFIX) ||
                     clz.getName().startsWith("droidsafe.runtime")) {
                 logger.info("Adding class to important alloc list of spark: {}", clz);
                 sb.append(clz + ",");
