@@ -53,6 +53,8 @@ import soot.tagkit.VisibilityAnnotationTag;
 import soot.util.Chain;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
+import droidsafe.android.system.InfoKind;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
@@ -117,6 +119,7 @@ public class CatchBlocks {
     	Stmt stmt;
     	int syscalls;
     	int calls;
+    	int score;
     	CallChainInfo[] contents = new CallChainInfo[0];
     	public CallChainInfo (SootMethod m, Stmt s, String type) {
     		this.type = type;
@@ -125,6 +128,35 @@ public class CatchBlocks {
     		calls = 1;
     		if (type.equals ("syscall"))
     			syscalls = 1;
+    	}
+    	public void calculate_scores() {
+    	    score = 0;
+    	    if (contents.length == 0) {
+    	        API api = API.v();
+    	        Set<InfoKind> source = api.getSourceInfoKinds(method);
+    	        Set<InfoKind> sink = api.getSinkInfoKinds(method);
+    	        if (is_system (method)) {
+    	            if (api.isSafeMethod(method))
+    	                score = 0;
+    	            else if (api.isSpecMethod(method))
+    	                score = 5;
+    	            else if (api.isBannedMethod(method))
+    	                score = 6;  
+    	            if (!source.isEmpty())
+    	                score += 1;
+    	            else if (!sink.isEmpty())
+    	                score += 2;
+    	        }    	            
+    	        return;
+    	    }
+    	    for (CallChainInfo cci : contents) {
+    	        cci.calculate_scores();
+    	        calls += cci.calls;
+    	        syscalls += cci.syscalls;
+    	        if (cci.score > score)
+    	            score = cci.score;
+    	    }
+    	    
     	}
     	public void dump_json (PrintStream fp, String indent) {
        		fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
@@ -139,7 +171,7 @@ public class CatchBlocks {
     		fp.printf ("%s  %s,\n", indent, json_field ("calls", calls));
     		
     		if ((contents != null) && (contents.length > 0)) {
-    			fp.printf ("%s  %s,\n", indent, json_field ("score", 5));
+    			fp.printf ("%s  %s,\n", indent, json_field ("score", score));
     			fp.printf ("%s  %s [\n", indent, json_field ("contents"));
     			String delim = "";
     			for (CallChainInfo cci : contents) {
@@ -149,7 +181,7 @@ public class CatchBlocks {
     			}
     			fp.printf ("\n%s]}", indent);
     		} else {
-    			fp.printf ("%s  %s\n", indent, json_field ("score", 5));
+    			fp.printf ("%s  %s\n", indent, json_field ("score", score));
     			fp.printf ("%s}", indent);
     		}
     	}
@@ -281,6 +313,7 @@ public class CatchBlocks {
         	logger.info ("  end handler = {}", toString(u));
         	// print_call (meth, (Stmt)start, "  ", "cblock", true);
         	CallChainInfo cci = extract_calls (fp, meth, insts, start, u);
+        	cci.calculate_scores();
         	// fp.println ("  ]},");
         	cci.dump_json (fp, "  ");
         	fp.println (",");
@@ -334,10 +367,6 @@ public class CatchBlocks {
     		}
  
     	}
-        for (CallChainInfo callee : ccis) {
-        	cci.syscalls += callee.syscalls;
-        	cci.calls += callee.calls;
-        }
     	cci.contents = ccis.toArray(cci.contents);
 		return cci;
     }
@@ -382,14 +411,10 @@ public class CatchBlocks {
             	}
             }
         }
-        for (CallChainInfo callee : calls) {
-        	cci.syscalls += callee.syscalls;
-        	cci.calls += callee.calls;
-        }
         cci.contents = calls.toArray(cci.contents);
         return cci;
     }
-      
+    
     private void print_call (SootMethod m, Stmt s, String indent, String type, boolean contents) {
         fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
         fp.printf ("%s  %s,\n", indent, json_field ("signature", m.getSignature()));
@@ -537,7 +562,7 @@ public class CatchBlocks {
         return stack.size();
     }
     /** Returns true if the specified method is a system (android or java) class **/
-    private boolean is_system (SootMethod m) {
+    private static boolean is_system (SootMethod m) {
     	Project p = Project.v();
     	SootClass c = m.getDeclaringClass();
     	return !p.isSrcClass(c) && !p.isLibClass(c);
