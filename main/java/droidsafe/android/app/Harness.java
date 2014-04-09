@@ -81,7 +81,7 @@ public class Harness {
     private String modelApplicationMethod = "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>";
     private SootClass harnessClass;
     private SootMethod harnessMain;
-    public static String HARNESS_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFX + "DroidSafeMain";
+    public static String HARNESS_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFIX + "DroidSafeMain";
     public static String FIELD_PREFIX = "_ds_field_";
 
     private Map<SootClass, SootField> globalsMap;
@@ -126,6 +126,19 @@ public class Harness {
         return globalsMap.keySet();
     }
 
+    /**
+     * After the harness has created created code in here, this allows one to add additional statements.
+     * 
+     * @param stmt
+     */
+    public void addStmtToEndOfMainLoop(Stmt stmt) {
+        harnessMainBody.getUnits().insertBefore(stmt, inLoopStmt);
+    }
+    
+    public void addLocalToMain(Local l) {
+        harnessMainBody.getLocals().add(l);
+    }
+    
     /**
      * Return the static field of the harness that stores the object of the created class clz. 
      */

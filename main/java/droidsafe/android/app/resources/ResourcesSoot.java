@@ -172,7 +172,7 @@ public class ResourcesSoot {
         mUiObjectTable = new HashMap<Integer, UISootObject>();
         mLayoutInitMap = new HashMap<Integer, SootMethod>();
 
-        mSootClass = new SootClass(Project.DS_GENERATED_CLASSES_PREFX + "ResourcesSoot", Modifier.PUBLIC);
+        mSootClass = new SootClass(Project.DS_GENERATED_CLASSES_PREFIX + "ResourcesSoot", Modifier.PUBLIC);
         mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
         Scene.v().addClass(mSootClass);
 

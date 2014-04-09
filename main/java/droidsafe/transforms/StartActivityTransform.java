@@ -278,9 +278,9 @@ class StartActivityTransform implements VATransform {
                     return null;
                 }
                 // get the class strings
-                Set<Object> mClassObjects = ((StringVAModel)mClassVAModel).getValues();
-                for(Object mClassObject : mClassObjects) {
-                    targetClsStrings.add((String)mClassObject);
+                Set<String> mClassObjects = ((StringVAModel)mClassVAModel).getValues();
+                for(String mClassObject : mClassObjects) {
+                    targetClsStrings.add(mClassObject);
                 }
             }
         }

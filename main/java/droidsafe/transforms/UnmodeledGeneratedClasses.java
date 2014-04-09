@@ -44,7 +44,7 @@ public class UnmodeledGeneratedClasses {
 
     private static UnmodeledGeneratedClasses v = null;
 
-    public static final String DUMMIES_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFX + "DroidSafeDummies";
+    public static final String DUMMIES_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFIX + "DroidSafeDummies";
 
     public static final String UNKNOWN_TAINT_METHOD_PREFIX = "getUnmodeledTaint";
 

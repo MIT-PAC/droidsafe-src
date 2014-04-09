@@ -20,7 +20,9 @@ import soot.Local;
 import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.PrimType;
+import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
@@ -69,7 +71,7 @@ public class Method implements Comparable<Method> {
     /** if the target method is synthetic, then we try to find the real target through the synthetic method
      *  if this is non-null, then this is the real target of this method in user code     */
     private SootMethod realTarget = null;
-    
+
     public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, ArgumentValue receiver) {
         this.sootMethod = method;
         this.args = args;
@@ -291,19 +293,19 @@ public class Method implements Comparable<Method> {
         for (String str : Permissions.v().getPermissions(sootMethod)) 
             ret.append("// Requires permission: " + str + "\n");
 
-        
+
 
         if (!getSourcesInfoKinds().isEmpty()) {
-          //print resolved high-level information flows
+            //print resolved high-level information flows
             Map<InfoKind, Set<Stmt>> recSourceKinds = getReceiverSourceInfoUnits();
             Set<InfoKind> sinkKinds = getSinkInfoKinds();
             Set<InfoKind> methodKinds = getMethodInfoKinds();
-                        
+
             ret.append("// InfoFlows: \n");
 
             if (hasReceiver()) {
                 ret.append("//    receiver:\n");
-                
+
                 for (Map.Entry<InfoKind, Set<Stmt>> src : recSourceKinds.entrySet()) { 
                     if (!src.getKey().isSensitive())
                         continue;
@@ -329,18 +331,35 @@ public class Method implements Comparable<Method> {
                     }
                 }
             }
-            
+
             ret.append("//    (Method accesses:");
             for (InfoKind src : methodKinds) { 
                 ret.append(" " + src);
             }
-            
+
             ret.append(")\n//    (Category of Sink:");
 
             for (InfoKind sink : sinkKinds)
                 ret.append(" " + sink);
 
             ret.append(")\n");
+        }
+
+        if (ptaInfo.hasReceiver()) {
+            //loop over all alloc nodes of receiver, must be a reference to have a receiver!
+            Set<SootClass> receiverClass = new HashSet<SootClass>();
+            for (IAllocNode node : ptaInfo.getReceiverPTSet()) {
+                if (node.getType() instanceof RefType) {
+                    receiverClass.add(((RefType)node.getType()).getSootClass());
+                }
+            }
+
+
+            ret.append("//Receiver types: ");
+            for (SootClass clz : receiverClass) {
+                ret.append(clz + " ");
+            }
+            ret.append("\n");
         }
 
         if (flagUnsupported && !API.v().isSupportedMethod(sootMethod))
@@ -490,8 +509,8 @@ public class Method implements Comparable<Method> {
                 //System.out.println(ptaInfo.getEdge().getSrc());
                 //System.out.println(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()));                
                 //System.out.println(ptaInfo.getArgValue(i) + "\n");
-                
-                
+
+
                 infoValues = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
                             ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
@@ -579,12 +598,12 @@ public class Method implements Comparable<Method> {
             return Collections.emptySet(); 
         //info flow result is cached
         Set<InfoKind> highLevelKinds = new HashSet<InfoKind>();
-        
+
         for (InfoKind kind : argFlows[i].keySet()) {
             if (kind.isSensitive()) 
                 highLevelKinds.add(kind);
         }
-        
+
         return highLevelKinds;
     }
 

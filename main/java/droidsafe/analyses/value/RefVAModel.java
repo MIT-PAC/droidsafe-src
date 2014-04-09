@@ -60,7 +60,8 @@ public abstract class RefVAModel extends VAModel {
         String errorMsg = this.getAllocNode() + "'s field " + sootField + " got assigned the value 'unknown' because ";
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
-        if((fieldType instanceof ArrayType || fieldType instanceof RefType) && !SootUtils.isStringOrSimilarType(fieldType)) {
+        if((fieldType instanceof ArrayType || fieldType instanceof RefType) && 
+                !ValueAnalysis.handleAsPrimType(fieldType)) {
             IAllocNode wholeObjectAN = this.getAllocNode();
             Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(wholeObjectAN, sootField);
             if (fieldType instanceof ArrayType) {
@@ -318,6 +319,10 @@ public abstract class RefVAModel extends VAModel {
             }
             return buf.toString();
         }
+    }
+    
+    public Set<SootField> getFields() {
+        return getFieldsToDisplay(this.getSootClass());
     }
 
     public static Set<SootField> getFieldsToDisplay(SootClass sootClassParam) {

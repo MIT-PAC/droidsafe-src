@@ -42,6 +42,7 @@ import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.ServiceTransforms;
 import droidsafe.transforms.StartActivityTransformStats;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
@@ -250,6 +251,12 @@ public class Main {
             runVA(monitor);
         }
 
+        {
+            //patch in messages
+            ServiceTransforms.v().run();
+            
+        }
+        
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
@@ -500,7 +507,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
-        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Injecting String Analysis Results.");
@@ -525,7 +532,7 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+               
         //need this pta run to account for jsa injection and class / forname
         if (afterTransformPrecise(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -602,6 +609,19 @@ public class Main {
         return afterTransform(monitor, recordTime, opts);
     }
 
+    public static DroidsafeExecutionStatus afterTransformMedium(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+        Map<String,String> opts = new HashMap<String,String>();
+
+        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
+            //build fast options for spark
+            opts.put("merge-stringbuffer","true");   
+            opts.put("string-constants","true");   
+            opts.put("kobjsens", "1");
+        } 
+
+        return afterTransform(monitor, recordTime, opts);
+    }
+    
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Map<String,String> opts = new HashMap<String,String>();
 
