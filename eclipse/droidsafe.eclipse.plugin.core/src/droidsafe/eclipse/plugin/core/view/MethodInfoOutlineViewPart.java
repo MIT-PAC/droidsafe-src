@@ -33,7 +33,7 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
         return fInputElement;
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         resetViewer();
         showPage(PAGE_EMPTY);
     }

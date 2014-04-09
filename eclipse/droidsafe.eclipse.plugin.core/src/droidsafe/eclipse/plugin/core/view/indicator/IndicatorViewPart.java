@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -226,6 +227,14 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
      * Open the outline view for the given input element.
      */
     public static void openView(File indicatorFile) {
+        IndicatorViewPart view = openView();
+        view.setInputElement(indicatorFile);
+    }
+
+    /**
+     * Show the outline view.
+     */
+    public static IndicatorViewPart openView() {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
         
         IndicatorViewPart view = (IndicatorViewPart) activePage.findView(VIEW_ID);
@@ -237,8 +246,7 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
                 e.printStackTrace();
             }
         }
-        view.setInputElement(indicatorFile);
-//        activePage.activate(view);
+        return view;
     }
 
     @Override
@@ -249,11 +257,22 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
         }
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         reset();
-        fIndicatorFiles = DroidsafePluginUtilities.getIndicatorFiles(getProject());
-        File indicatorFile = (fIndicatorFiles == null || fIndicatorFiles.length == 0) ? null : fIndicatorFiles[0];
-        openView(indicatorFile); 
+        IProject project = getProject();
+        fIndicatorFiles = DroidsafePluginUtilities.getIndicatorFiles(project);
+        if (fIndicatorFiles == null || fIndicatorFiles.length == 0) {
+            fEmptyPageLabel.setText(noJsonFileMessage(project));
+            showPage(PAGE_EMPTY);
+        } else {
+            File indicatorFile = fIndicatorFiles[0];
+            openView(indicatorFile);
+        }
+    }
+    
+    private String noJsonFileMessage(IProject project) {
+        return "No indicator (.json) files found in the droidsafe output directory\n\n  " + 
+                DroidsafePluginUtilities.getProjectOutputDir(project);
     }
 
     public void addFilter(Filter filter) {

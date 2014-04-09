@@ -73,7 +73,7 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
 //        activePage.activate(view);
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         // do nothing. Viewer content is changed via calls to openView() from SecuritySpecOutlineViewPart. 
     }
 

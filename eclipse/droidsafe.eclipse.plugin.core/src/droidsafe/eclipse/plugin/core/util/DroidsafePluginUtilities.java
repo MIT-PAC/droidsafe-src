@@ -129,8 +129,8 @@ public class DroidsafePluginUtilities {
     }
 
     public static String droidsafeOutputFile(IProject project, String fileName) {
-        String projectRootPath = project.getLocation().toOSString();
-        String fullPath = projectRootPath + File.separator + Project.OUTPUT_DIR + File.separator + fileName;
+        String outputDir = getProjectOutputDir(project);
+        String fullPath = outputDir + File.separator + fileName;
         return fullPath;
     }
     
@@ -139,14 +139,19 @@ public class DroidsafePluginUtilities {
     }
 
     public static File[] getOutputFilesWithExtension(IProject project, final String ext) {
-        String projectRootPath = project.getLocation().toOSString();
-        File outputDir = new File(projectRootPath + File.separator + Project.OUTPUT_DIR);
+        File outputDir = new File(getProjectOutputDir(project));
         File[] files = outputDir.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
                 return name.endsWith(ext);
             }
         });
         return files;
+    }
+    
+    public static String getProjectOutputDir (IProject project) {
+        String projectRootPath = project.getLocation().toOSString();
+        String outputDir = projectRootPath + File.separator + Project.OUTPUT_DIR;
+        return outputDir;
     }
     
     /**
