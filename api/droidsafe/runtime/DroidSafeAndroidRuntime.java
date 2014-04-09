@@ -167,7 +167,8 @@ public class DroidSafeAndroidRuntime {
 
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {        
+    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {   
+        Context context = mApplication.getApplicationContext();
         if (mApplication != null) {
             receiver.setApplication(mApplication);
             // callback receiver

@@ -155,6 +155,10 @@ public int onStartCommand(Intent intent, int flags, int startId) {
         onStart(intent, startId);
         return mStartCompatibility ? START_STICKY_COMPATIBILITY : START_STICKY;
     }
+
+    public void droidSafeOnStartCommand(Intent intent, int flags, int startId) {
+        onStartCommand(intent, flags, startId);
+    }
     
     /**
      * Called by the system to notify a Service that it is no longer used and is being removed.  The

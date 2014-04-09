@@ -495,8 +495,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.190 -0500", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "992EA6715D65F485692876B471F1C6B9")
     
 @Override
@@ -504,7 +504,8 @@ public Context getBaseContext() {
         mBase.startActivity(intent);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.193 -0500", hash_original_method = "013A3CF6138EA6FE6C22614936FE13C8", hash_generated_method = "52762932C0CF308D26FC5B36BA40DE9B")
     
 @Override
@@ -512,10 +513,10 @@ public Context getBaseContext() {
         mBase.startActivities(intents);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.196 -0500", hash_original_method = "D7C74DA04A5B79EC6630FAD526B70ED6", hash_generated_method = "A75697A4F883BAA4873AD01D25FE8E42")
-    
-@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.196 -0500", hash_original_method = "D7C74DA04A5B79EC6630FAD526B70ED6", hash_generated_method = "A75697A4F883BAA4873AD01D25FE8E42")    
+    @Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
             throws IntentSender.SendIntentException {
@@ -524,31 +525,29 @@ public Context getBaseContext() {
     }
     
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.198 -0500", hash_original_method = "CD7D57CF51FEE3E0548133C9C2D084D1", hash_generated_method = "BE288488A1FBD4AF9F7B86466BB1D059")
-    
-@Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
+    @Override
     public void sendBroadcast(Intent intent) {
         mBase.sendBroadcast(intent);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.200 -0500", hash_original_method = "0D532949C3012CD33C142E9B5D03BB61", hash_generated_method = "DA4E611FCD62E3251428C579B62B39B8")
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-@Override
+    @Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public void sendBroadcast(Intent intent, String receiverPermission) {
         mBase.sendBroadcast(intent, receiverPermission);
     }
     @DSVerified
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.202 -0500", hash_original_method = "F587D697CC21A22CF1C16322E48A38D4", hash_generated_method = "B9C5A334E7FCF219150501789BEAC80C")
-    
-@Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
+    @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
         mBase.sendOrderedBroadcast(intent, receiverPermission);
@@ -556,11 +555,10 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.205 -0500", hash_original_method = "DEE55BD129D883E4F2F6F72EA9382082", hash_generated_method = "60EB3C25B9CDBEE2156292B403A5D265")
-    
-@Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
+    @Override
     public void sendOrderedBroadcast(
         Intent intent, String receiverPermission, BroadcastReceiver resultReceiver,
         Handler scheduler, int initialCode, String initialData,
@@ -570,24 +568,23 @@ public Context getBaseContext() {
                 initialData, initialExtras);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.207 -0500", hash_original_method = "E4D0FD66C31D49EF8A28B259CA31F5AB", hash_generated_method = "5C8026ECFF9BD6F962718388BB93A0F3")
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    
-@Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
+    @Override
     public void sendStickyBroadcast(Intent intent) {
         mBase.sendStickyBroadcast(intent);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.210 -0500", hash_original_method = "7E21CD2A51D6CF22EBBD91300928AE98", hash_generated_method = "BE7EB70AC42FBFF67990C422D3707BA6")
     @DSVerified
-    @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    
-@Override
+    @DSComment("Potential intent to trigger other processing")    
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
+    @Override
     public void sendStickyOrderedBroadcast(
         Intent intent, BroadcastReceiver resultReceiver,
         Handler scheduler, int initialCode, String initialData,

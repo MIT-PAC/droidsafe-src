@@ -217,31 +217,25 @@ public IntentFilter[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.732 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
 
-    @DSVAModeled
     private int mPriority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.734 -0500", hash_original_field = "1C01DCF3CAD6F1F8B4C99696F3E8A2C8", hash_generated_field = "B7B787904E751334D4C6C5E9190CBECB")
 
     @DSVAModeled
-    private  ArrayList<String> mActions;
+    private  String mActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.737 -0500", hash_original_field = "3FA8ABFF8F3A29D5E46D1842F4E37CCD", hash_generated_field = "DF1B13D35CEEB5232DEB8422E072E169")
 
-    @DSVAModeled
     private ArrayList<String> mCategories = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.739 -0500", hash_original_field = "C86BC44BB7486732DFCE4230CAE0D3E5", hash_generated_field = "D6C69DEDF341F4A4196AEA26E81D24A7")
 
-    @DSVAModeled
     private ArrayList<String> mDataSchemes = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.741 -0500", hash_original_field = "49B33C9415691552BCB1FCE6D3901D6B", hash_generated_field = "C318D366A8228836F69A6B4BDDBFB506")
 
-    @DSVAModeled
     private ArrayList<AuthorityEntry> mDataAuthorities = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.744 -0500", hash_original_field = "ED5161411B31CEB4187B897C71E9F686", hash_generated_field = "2207044C23DD28F016FBFC7451C9D66A")
 
-    @DSVAModeled
     private ArrayList<PatternMatcher> mDataPaths = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.746 -0500", hash_original_field = "85E613F84E208E29787CF516CB1D2553", hash_generated_field = "06256A3E596C9EB087048F541BEAB278")
 
-    @DSVAModeled
     private ArrayList<String> mDataTypes = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.748 -0500", hash_original_field = "4E9BB20DDD719BB7B01F0A2592C02543", hash_generated_field = "A768E3466CCFB1BF3BC36D8E0C71D999")
 
@@ -256,7 +250,6 @@ public IntentFilter[] newArray(int size) {
     
 public IntentFilter() {
         mPriority = 0;
-        mActions = new ArrayList<String>();
     }
 
     /**
@@ -272,7 +265,6 @@ public IntentFilter() {
     
 public IntentFilter(String action) {
         mPriority = 0;
-        mActions = new ArrayList<String>();
         addAction(action);
     }
 
@@ -299,7 +291,6 @@ public IntentFilter(String action) {
 public IntentFilter(String action, String dataType)
         throws MalformedMimeTypeException {
         mPriority = 0;
-        mActions = new ArrayList<String>();
         addAction(action);
         addDataType(dataType);
     }
@@ -315,7 +306,7 @@ public IntentFilter(String action, String dataType)
     
 public IntentFilter(IntentFilter o) {
         mPriority = o.mPriority;
-        mActions = new ArrayList<String>(o.mActions);
+        mActions = o.mActions;
         if (o.mCategories != null) {
             mCategories = new ArrayList<String>(o.mCategories);
         }
@@ -339,8 +330,7 @@ public IntentFilter(IntentFilter o) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.924 -0500", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "6EE529B66EC18E565826F7115C1F962E")
     
 private IntentFilter(Parcel source) {
-        mActions = new ArrayList<String>();
-        source.readStringList(mActions);
+        mActions = source.readString();
         if (source.readInt() != 0) {
             mCategories = new ArrayList<String>();
             source.readStringList(mCategories);
@@ -417,9 +407,7 @@ public final int getPriority() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.784 -0500", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "3CBB35A7E6A8533169E7E4AFDAFF741D")
     
 public final void addAction(String action) {
-        if (!mActions.contains(action)) {
-            mActions.add(action);
-        }
+        mActions = action;
     }
 
     /**
@@ -430,7 +418,7 @@ public final void addAction(String action) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.786 -0500", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "0D6591890E76CE60B3E65B000F6BC744")
     
 public final int countActions() {
-        return mActions.size();
+        return 1;
     }
 
     /**
@@ -442,7 +430,7 @@ public final int countActions() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.788 -0500", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "CCCD1EB514435FFA0F2B8D27E682ABE9")
     
 public final String getAction(int index) {
-        return mActions.get(index);
+        return mActions;
     }
 
     /**
@@ -456,7 +444,7 @@ public final String getAction(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.790 -0500", hash_original_method = "9D48CC1056269867443B9FC005D01764", hash_generated_method = "E11D4D17B078E86A23C0ADE548B9A036")
     
 public final boolean hasAction(String action) {
-        return action != null && mActions.contains(action);
+        return true;
     }
 
     /**
@@ -480,7 +468,9 @@ public final boolean matchAction(String action) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.795 -0500", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "C97A7DCA62EDED3DB3829661D6065AF8")
     
 public final Iterator<String> actionsIterator() {
-        return mActions != null ? mActions.iterator() : null;
+        ArrayList<String> actions = new ArrayList<String>();
+        actions.add(mActions);
+        return mActions != null ? actions.iterator() : null;
     }
 
     /**
@@ -1253,7 +1243,7 @@ public void writeToXml(XmlSerializer serializer) throws IOException {
         int N = countActions();
         for (int i=0; i<N; i++) {
             serializer.startTag(null, ACTION_STR);
-            serializer.attribute(null, NAME_STR, mActions.get(i));
+            serializer.attribute(null, NAME_STR, mActions);
             serializer.endTag(null, ACTION_STR);
         }
         N = countCategories();
@@ -1369,8 +1359,8 @@ public void readFromXml(XmlPullParser parser) throws XmlPullParserException,
     
 public void dump(Printer du, String prefix) {
         StringBuilder sb = new StringBuilder(256);
-        if (mActions.size() > 0) {
-            Iterator<String> it = mActions.iterator();
+        if (countActions() > 0) {
+            Iterator<String> it = actionsIterator();
             while (it.hasNext()) {
                 sb.setLength(0);
                 sb.append(prefix); sb.append("Action: \"");
@@ -1445,7 +1435,7 @@ public final int describeContents() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.919 -0500", hash_original_method = "2C734948869786E017228B90D172BE24", hash_generated_method = "4F147E1D1C84E2F200DCFB5C2C125F60")
     
 public final void writeToParcel(Parcel dest, int flags) {
-        dest.writeStringList(mActions);
+        dest.writeString(mActions);
         if (mCategories != null) {
             dest.writeInt(1);
             dest.writeStringList(mCategories);

@@ -1677,6 +1677,7 @@ public Intent[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.283 -0500", hash_original_method = "5C0F2C7B56AA3A635FE64462CDD8279E", hash_generated_method = "CA02BD6062B99ED9FB67966A876306F0")
     
 public Intent() {
+        mExtras = new Bundle();
     }
     
     @DSComment("constructor")
@@ -1731,6 +1732,7 @@ public Intent() {
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     private Intent(Intent o, boolean all) {
+            this();
 		/*
 		 * Piggyback on the setters to track the taint.  The desire here
 		 * is to "inherit" the taint from the Intent that is passed in
@@ -1741,6 +1743,7 @@ public Intent() {
 		this.setPackage(o.getPackage());
 		this.setComponent(o.getComponent());
                 this.mClsComponent = mClsComponent;
+                
 		for (String category : o.getCategories()) {
 			this.addCategory(category);
 		}
@@ -1760,12 +1763,14 @@ public Intent() {
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Intent(String action) {
+            this();
         mAction = action;
     }
     
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Intent(String action, Uri uri) {
+            this();
         mAction = action;
         mData = uri;
     }
@@ -1774,6 +1779,7 @@ public Intent() {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "8A8F598E2C7B57A58F1379D7AFC8B81F", hash_generated_method = "CFC95A750DAD5D8F9B4AF9DD7CFFB32A")
     public  Intent(Context packageContext, Class<?> cls) {
+        this();
         mClsComponent = cls;
         mComponent = new ComponentName(packageContext, cls.getName());
         // ---------- Original Method ----------
@@ -1785,6 +1791,7 @@ public Intent() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "780AF3DA4D357977F460A8077F315476", hash_generated_method = "6432A8C7753059113592629EBEB24128")
     public  Intent(String action, Uri uri,
             Context packageContext, Class<?> cls) {
+        this();
         mClsComponent = cls;
         addTaint(action.getTaint());
         setAction(action);
@@ -1802,6 +1809,7 @@ public Intent() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.624 -0500", hash_original_method = "BDABA8F9DB7F141DA2E5B48F186347CF", hash_generated_method = "FD782D49799CFD91C295FAFFCE111B9E")
     
 protected Intent(Parcel in) {
+        this();
         readFromParcel(in);
     }
 
@@ -2651,9 +2659,7 @@ public Bundle getBundleExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.423 -0500", hash_original_method = "6E509C3CEA63C12F8DB889EF86C70010", hash_generated_method = "350C4CD52734D15F08BF35252FD71B56")
     
 public Bundle getExtras() {
-        return (mExtras != null)
-                ? new Bundle(mExtras)
-                : null;
+        return mExtras;
     }
 
     /**
@@ -2964,9 +2970,6 @@ public void removeCategory(String category) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.456 -0500", hash_original_method = "E358DED697FF080F831811D5D578FEBC", hash_generated_method = "9CAFB07CB8CADF7A1B737CEF0A85C927")
     
 public Intent putExtra(String name, boolean value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putBoolean(name, value);
         return this;
     }
@@ -2992,9 +2995,6 @@ public Intent putExtra(String name, boolean value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.458 -0500", hash_original_method = "983951350B18B30CD357EFC4A5F8C533", hash_generated_method = "369EAA9A7D333C9805FC57A65750D36F")
     
 public Intent putExtra(String name, byte value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putByte(name, value);
         return this;
     }
@@ -3020,9 +3020,6 @@ public Intent putExtra(String name, byte value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.461 -0500", hash_original_method = "44F743D0FCF3A3B09735F92996DFB8B8", hash_generated_method = "9A89A17EE52C9990C8D3B5950C6CB8BC")
     
 public Intent putExtra(String name, char value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putChar(name, value);
         return this;
     }
@@ -3048,9 +3045,6 @@ public Intent putExtra(String name, char value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.463 -0500", hash_original_method = "D504428E6A64263CB337167E8E11D24B", hash_generated_method = "F6A29E038B705BB14118CC4BC5C94282")
     
 public Intent putExtra(String name, short value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putShort(name, value);
         return this;
     }
@@ -3076,9 +3070,6 @@ public Intent putExtra(String name, short value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.465 -0500", hash_original_method = "0F8D3938F71F1CBC0AF93312AEF5DBAF", hash_generated_method = "B6977BA11CBD13188A6EE2314F4AAB8E")
     
 public Intent putExtra(String name, int value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putInt(name, value);
         return this;
     }
@@ -3104,9 +3095,6 @@ public Intent putExtra(String name, int value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.467 -0500", hash_original_method = "210CE6920B09DE82954A1910A2E05BDA", hash_generated_method = "4EBA47DCA070071028BBC47A17DF202A")
     
 public Intent putExtra(String name, long value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putLong(name, value);
         return this;
     }
@@ -3132,9 +3120,6 @@ public Intent putExtra(String name, long value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.469 -0500", hash_original_method = "5563D3D5FF8C4FA36F1584B48F1347B6", hash_generated_method = "5067A756CF8499B7ABF1DB4D1F6C7336")
     
 public Intent putExtra(String name, float value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putFloat(name, value);
         return this;
     }
@@ -3160,9 +3145,6 @@ public Intent putExtra(String name, float value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.472 -0500", hash_original_method = "FDAB0726590DA4887C7F048C162A9588", hash_generated_method = "1C66BD585F85E5DE9F834C9668DEEE1F")
     
 public Intent putExtra(String name, double value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putDouble(name, value);
         return this;
     }
@@ -3188,9 +3170,6 @@ public Intent putExtra(String name, double value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.474 -0500", hash_original_method = "FFA94FE476B4FC82FDFAB8191F06F76A", hash_generated_method = "4F3AC23F2FDE2E244EBF603512230CB6")
     
 public Intent putExtra(String name, String value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putString(name, value);
         return this;
     }
@@ -3216,9 +3195,6 @@ public Intent putExtra(String name, String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.476 -0500", hash_original_method = "C3AAC0183A1B956AD55E80A8556AFB71", hash_generated_method = "B7766A00144A1C85BA9AD9A626B68D86")
     
 public Intent putExtra(String name, CharSequence value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putCharSequence(name, value);
         return this;
     }
@@ -3244,9 +3220,6 @@ public Intent putExtra(String name, CharSequence value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.478 -0500", hash_original_method = "49EBB52F87B2F24E715C34795BBE3213", hash_generated_method = "E35F92A22E889420C4D9EB6CCD82A333")
     
 public Intent putExtra(String name, Parcelable value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putParcelable(name, value);
         return this;
     }
@@ -3272,9 +3245,6 @@ public Intent putExtra(String name, Parcelable value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.480 -0500", hash_original_method = "478D5F3649CF3C1019BEE6D895BDE15B", hash_generated_method = "8EE2EE37DEC8E216CE30AD3A34E60139")
     
 public Intent putExtra(String name, Parcelable[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putParcelableArray(name, value);
         return this;
     }
@@ -3300,9 +3270,6 @@ public Intent putExtra(String name, Parcelable[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.483 -0500", hash_original_method = "7056A89E2AB58239EE1F715B825304C9", hash_generated_method = "CAA15AD865F73E5B8B7CEC0FDDEF3C48")
     
 public Intent putParcelableArrayListExtra(String name, ArrayList<? extends Parcelable> value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putParcelableArrayList(name, value);
         return this;
     }
@@ -3326,9 +3293,6 @@ public Intent putParcelableArrayListExtra(String name, ArrayList<? extends Parce
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.485 -0500", hash_original_method = "25611C5EA858F4B01007B3F78DCCE949", hash_generated_method = "B00CD5DBF3B90CCA1774FF3426ED7F66")
     
 public Intent putIntegerArrayListExtra(String name, ArrayList<Integer> value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putIntegerArrayList(name, value);
         return this;
     }
@@ -3352,9 +3316,6 @@ public Intent putIntegerArrayListExtra(String name, ArrayList<Integer> value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.487 -0500", hash_original_method = "FCCCC0193355017A3AB410227E2B8C63", hash_generated_method = "D9A90AA848BD3378AFD8B57E938B259A")
     
 public Intent putStringArrayListExtra(String name, ArrayList<String> value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putStringArrayList(name, value);
         return this;
     }
@@ -3378,9 +3339,6 @@ public Intent putStringArrayListExtra(String name, ArrayList<String> value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.490 -0500", hash_original_method = "56169BFB83B473D5686B58CC3B07DAC6", hash_generated_method = "13A3F22ED96C8CFEA983255956176211")
     
 public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence> value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putCharSequenceArrayList(name, value);
         return this;
     }
@@ -3389,7 +3347,6 @@ public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence>
     @DSSafe(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public Intent putExtra(String name, Serializable value) {
-        mExtras = new Bundle();
         mExtras.putSerializable(name, value);
         return this;
     }
@@ -3415,9 +3372,6 @@ public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence>
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.494 -0500", hash_original_method = "6C30326EEBD8635124BFC9218A6B6422", hash_generated_method = "C75337EC13A828BA2CF290B1734627F0")
     
 public Intent putExtra(String name, boolean[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putBooleanArray(name, value);
         return this;
     }
@@ -3443,9 +3397,6 @@ public Intent putExtra(String name, boolean[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.496 -0500", hash_original_method = "4D4788E50F7779B1D72BD45B4E76C775", hash_generated_method = "CF81A6D8F26F9F109EFE6BE3F51D4C02")
     
 public Intent putExtra(String name, byte[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putByteArray(name, value);
         return this;
     }
@@ -3471,9 +3422,6 @@ public Intent putExtra(String name, byte[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.498 -0500", hash_original_method = "521E65BC95668B6A66CE17103975D2B1", hash_generated_method = "8DC6ED6D9F00B4FC7646C9B74D598F46")
     
 public Intent putExtra(String name, short[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putShortArray(name, value);
         return this;
     }
@@ -3499,9 +3447,6 @@ public Intent putExtra(String name, short[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.500 -0500", hash_original_method = "CEC6E945D8554F36BF71D2D38B61B7EF", hash_generated_method = "5294EA3365F0D553D067410AB35C1AA8")
     
 public Intent putExtra(String name, char[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putCharArray(name, value);
         return this;
     }
@@ -3527,9 +3472,7 @@ public Intent putExtra(String name, char[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.502 -0500", hash_original_method = "AD8C8F2DD7A3862E32E54CE0FBFF67CE", hash_generated_method = "A74DCDCC8CEF665CFAAEBCFA9362ED98")
     
 public Intent putExtra(String name, int[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
+
         mExtras.putIntArray(name, value);
         return this;
     }
@@ -3555,9 +3498,7 @@ public Intent putExtra(String name, int[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.505 -0500", hash_original_method = "EEA209751D515DE89BAC56042276C483", hash_generated_method = "AD4E2FEBA3938BC3B383C31CE8AA5621")
     
 public Intent putExtra(String name, long[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
+
         mExtras.putLongArray(name, value);
         return this;
     }
@@ -3583,9 +3524,7 @@ public Intent putExtra(String name, long[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.507 -0500", hash_original_method = "F6CA728A57FEA4C77AF7294872C7D495", hash_generated_method = "0AB87D1FFE8ACBFD8140FF2BFBB1B700")
     
 public Intent putExtra(String name, float[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
+
         mExtras.putFloatArray(name, value);
         return this;
     }
@@ -3611,9 +3550,7 @@ public Intent putExtra(String name, float[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.510 -0500", hash_original_method = "3F155E9B232579FD3DCD2D3FAECEA79F", hash_generated_method = "D2DFE2902C91701683C6C77CD1D801AB")
     
 public Intent putExtra(String name, double[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
+
         mExtras.putDoubleArray(name, value);
         return this;
     }
@@ -3639,9 +3576,6 @@ public Intent putExtra(String name, double[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.512 -0500", hash_original_method = "4105C6229BFDC8C2B450D57FAD8A78CA", hash_generated_method = "1D158E827BC908009601A331BE3E2C15")
     
 public Intent putExtra(String name, String[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putStringArray(name, value);
         return this;
     }
@@ -3667,9 +3601,6 @@ public Intent putExtra(String name, String[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.514 -0500", hash_original_method = "5B5979B9E2BB6EA8D0974FC96788F02A", hash_generated_method = "9CF7F62F974438343F82E84474D2AC00")
     
 public Intent putExtra(String name, CharSequence[] value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putCharSequenceArray(name, value);
         return this;
     }
@@ -3695,9 +3626,6 @@ public Intent putExtra(String name, CharSequence[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.517 -0500", hash_original_method = "79076492A33BAA4B69A022CE305E32E8", hash_generated_method = "1A23CC6FCDD5B5BFDC1538D40AAC1BAC")
     
 public Intent putExtra(String name, Bundle value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putBundle(name, value);
         return this;
     }
@@ -3727,9 +3655,6 @@ public Intent putExtra(String name, Bundle value) {
     
 @Deprecated
     public Intent putExtra(String name, IBinder value) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putIBinder(name, value);
         return this;
     }
@@ -3748,12 +3673,9 @@ public Intent putExtra(String name, Bundle value) {
     
 public Intent putExtras(Intent src) {
         if (src.mExtras != null) {
-            if (mExtras == null) {
-                mExtras = new Bundle(src.mExtras);
-            } else {
-                mExtras.putAll(src.mExtras);
-            }
+            mExtras.putAll(src.mExtras);
         }
+
         return this;
     }
 
@@ -3773,9 +3695,6 @@ public Intent putExtras(Intent src) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.523 -0500", hash_original_method = "300503D60C48D249178D35D7CDB92339", hash_generated_method = "FC9E29D42D611ABE43D557232408FD20")
     
 public Intent putExtras(Bundle extras) {
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
         mExtras.putAll(extras);
         return this;
     }

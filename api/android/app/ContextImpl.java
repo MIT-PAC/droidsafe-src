@@ -111,7 +111,7 @@ ReceiverRestrictedContext(Context base) {
 @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
-        return receiver.__ds__registerIntentFilter(filter)[0];
+        return receiver.__ds__registerIntentFilter(this, filter)[0];
     }
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -610,13 +610,15 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @Override
     public void startActivities(Intent[] intents) {
         throw new UnsupportedOperationException();
@@ -630,26 +632,30 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override
     public void sendBroadcast(Intent intent) {
-        throw new UnsupportedOperationException();
+        
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
-        throw new UnsupportedOperationException();
+        
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
-        throw new UnsupportedOperationException();
+
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
@@ -657,13 +663,15 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @Override
     public void sendStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
@@ -679,14 +687,14 @@ private File getPreferencesDir() {
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	// Generate Intents based on filter
-        return receiver.__ds__registerIntentFilter(filter)[0];
+        return receiver.__ds__registerIntentFilter(this, filter)[0];
     }
     
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
     	// Generate Intents based on filter
-        return receiver.__ds__registerIntentFilter(filter)[0];
+        return receiver.__ds__registerIntentFilter(this,filter)[0];
     }
 
     @DSComment("Private Method")

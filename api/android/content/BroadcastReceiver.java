@@ -37,6 +37,10 @@ public abstract class BroadcastReceiver {
 public BroadcastReceiver() {
     }
 
+    public void droidSafeOnReceive(Context context, Intent intent) {
+        onReceive(context, intent);
+    }
+
     /**
      * This method is called when the BroadcastReceiver is receiving an Intent
      * broadcast.  During this time you can use the other methods on
@@ -429,7 +433,7 @@ void checkSynchronousHint() {
     // broadcast the receiver of application
     // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
     
-    public Intent[] __ds__registerIntentFilter(IntentFilter intentFilter) {
+    public Intent[] __ds__registerIntentFilter(Context context, IntentFilter intentFilter) {
         int actionCount = intentFilter.countActions();
         int catCount = intentFilter.countCategories();
         Intent[] intents = new Intent[actionCount];
@@ -449,7 +453,7 @@ void checkSynchronousHint() {
                 mApplication.__ds__intentsFromFilter.add(intent);
             }
             
-            onReceive(mApplication, intent);
+            onReceive(context, intent);
 
             intents[actionIndex] = intent;
         }
