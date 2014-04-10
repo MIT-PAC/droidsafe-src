@@ -22,7 +22,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
         addTaint(value.getTaint());
         addTaint(runnable.getTaint());
 RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723 =         new FutureTask<T>(runnable, value);
-        var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723.addTaint(taint);
+        var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723.addTaint(getTaint());
         return var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723;
         // ---------- Original Method ----------
         //return new FutureTask<T>(runnable, value);
@@ -32,7 +32,7 @@ RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723 =         new F
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
         addTaint(callable.getTaint());
 RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_34807659 =         new FutureTask<T>(callable);
-        varBEF434F9B24D8E8523500F630F54EF1C_34807659.addTaint(taint);
+        varBEF434F9B24D8E8523500F630F54EF1C_34807659.addTaint(getTaint());
         return varBEF434F9B24D8E8523500F630F54EF1C_34807659;
         // ---------- Original Method ----------
         //return new FutureTask<T>(callable);

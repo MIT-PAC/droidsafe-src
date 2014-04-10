@@ -233,7 +233,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         if (value == null)
             return "null";
         String str = new String();
-        str.addTaint(value.getTaint());
+        str.addTaint(value.getTaintInt());
         return str;
     }
 
@@ -305,9 +305,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
    public static String format(Locale locale, String format, Object... args) {
         String str = new String("<Formated String>");
-        str.addTaint(format.getTaint());
+        str.addTaint(format.getTaintInt());
         for (Object arg : args) 
-            str.addTaint(arg.toString().getTaint());
+            str.addTaint(arg.toString().getTaintInt());
         return str;
         /*
         if (format == null) {
@@ -380,13 +380,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         count = 0;
     }
     
-    
+
+    /*    
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public String(DSTaintObject t) {
         this();
         addTaint(t);
     }
-    
+    */
 
     /*
      * Private constructor used for JIT optimization.
@@ -402,7 +403,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         count = s.count + 1;
         //System.arraycopy(s.value, s.offset, value, 0, s.count);
         //value[s.count] = c;
-        this.addTaint(s.getTaint());
+        this.addTaint(s.getTaintInt());
         this.addTaint(c);
     }
 
@@ -534,7 +535,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.813 -0400", hash_original_method = "230168F72CB2A0A48AA9F4A7AFCECA03", hash_generated_method = "5CF85473A930BD9609F6F58C62C97D46")
         public  String(byte[] data, int offset, int byteCount, Charset charset) {
-        addTaint(charset.getTaint());
+        addTaint(charset.getTaintInt());
         addTaint(data[0]);
     }
 
@@ -599,7 +600,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.822 -0500", hash_original_method = "7D7AE898849737A5DE2F771028ADD293", hash_generated_method = "1067742A918A0414BA56DD0E157F3286")
     
         public String(String toCopy) {
-        addTaint(toCopy.getTaint());
+        addTaint(toCopy.getTaintInt());
     }
 
     /*
@@ -611,7 +612,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         @SuppressWarnings( { "unused", "nls" })
         private String(String s1, String s2) {
-        addTaint(s1.getTaint());addTaint(s2.getTaint());
+        addTaint(s1.getTaintInt());addTaint(s2.getTaintInt());
     }
 
     /*
@@ -623,7 +624,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         @SuppressWarnings( { "unused", "nls" })
         private String(String s1, String s2, String s3) {
-        addTaint(s1.getTaint());addTaint(s2.getTaint());addTaint(s3.getTaint());
+        addTaint(s1.getTaintInt());addTaint(s2.getTaintInt());addTaint(s3.getTaintInt());
     }
 
     /**
@@ -635,14 +636,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.831 -0500", hash_original_method = "C3DEF5F256BD0FFA01404830FE1A0B0E", hash_generated_method = "3229E36585BD2E2901FD01AB77B2E7F3")
     
         public String(StringBuffer stringBuffer) {
-        addTaint(stringBuffer.getTaint());
+        addTaint(stringBuffer.getTaintInt());
     }
     
     /** used by droidsafe to model strings in the information flow */
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
         public String(AbstractStringBuilder sb) {
-        addTaint(sb.getTaint());
+        addTaint(sb.getTaintInt());
     }
     
     @DSComment("constructor")
@@ -665,7 +666,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.837 -0500", hash_original_method = "1A43E0983F964C9F4090DA81181B802F", hash_generated_method = "1EFA5C7DF66501B4E9300FC7A3F11922")
     
         public String(StringBuilder stringBuilder) {
-        addTaint(stringBuilder.getTaint());
+        addTaint(stringBuilder.getTaintInt());
     }
 
     /*
@@ -677,7 +678,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         @SuppressWarnings("unused")
         private String(String s1, int v1) {
-        addTaint(s1.getTaint());addTaint(v1);
+        addTaint(s1.getTaintInt());addTaint(v1);
     }
 
     /**
@@ -761,7 +762,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         public int compareTo(String string){
     	//Formerly a native method
-    	addTaint(string.getTaint());
+    	addTaint(string.getTaintInt());
     	return getTaintInt();
     }
 
@@ -806,7 +807,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.863 -0500", hash_original_method = "F488471D994E6AC017026A4A172508CF", hash_generated_method = "21A9CBF4CE60BC5F74030C540EEF2812")
     
     public String concat(String string) {
-        addTaint(string.getTaint());
+        addTaint(string.getTaintInt());
         return this;
     }
 
@@ -848,7 +849,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         public boolean equals(Object object){
     	//Formerly a native method
         return super.equals(object);
-    	//addTaint(object.getTaint());
+    	//addTaint(object.getTaintInt());
     	//return getTaintBoolean();
     }
 
@@ -875,7 +876,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.952 -0400", hash_original_method = "628C355D58441C62D711BC1C2A898A67", hash_generated_method = "96F0117EE797C83FEB58E8D326BFF607")
         @Deprecated
         public void getBytes(int start, int end, byte[] data, int index) {
-        data.addTaint(getTaint());
+        data.addTaint(getTaintInt());
     }
 
     /**
@@ -912,7 +913,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
         byte[] bytes = new byte[1];
         
-        bytes.addTaint(getTaint());
+        bytes.addTaint(getTaintInt());
         bytes[0] = getTaintByte();
         return bytes;
 
@@ -937,7 +938,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         public byte[] getBytes(Charset charset) {
         byte[] bytes = new byte[1];
         
-        bytes.addTaint(getTaint());
+        bytes.addTaint(getTaintInt());
         bytes[0] = getTaintByte();
         return bytes;
     }
@@ -949,7 +950,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(index);
         addTaint(end);
         addTaint(start);
-        buffer.addTaint(getTaint());
+        buffer.addTaint(getTaintInt());
     }
 
     /**
@@ -963,7 +964,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         void _getChars(int start, int end, char[] buffer, int index) {
         // NOTE last character not copied!
-        buffer.addTaint(this.getTaint());
+        buffer.addTaint(this.getTaintInt());
     }
 
     @DSComment("From safe class list")
@@ -1073,7 +1074,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.912 -0500", hash_original_method = "30C77F2F1070D21229A0301D2E3C23FC", hash_generated_method = "7B5C852FA9A1DF46DDC4AC013C96E720")
     
         public int indexOf(String subString, int start) {
-        addTaint(subString.getTaint());
+        addTaint(subString.getTaintInt());
         return getTaintInt();
     }
     
@@ -1149,7 +1150,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.931 -0500", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "FEF0BFF9BA9E8F1DA2DE7F055FC99EC3")
     
         public int lastIndexOf(String string) {
-        addTaint(string.getTaint());
+        addTaint(string.getTaintInt());
         return getTaintInt();
     }
 
@@ -1172,7 +1173,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.934 -0500", hash_original_method = "08D5FBAA11FAAE0244D1BD87258C05E0", hash_generated_method = "EEF14964EDF3E0241435E51BAF061B2D")
     
         public int lastIndexOf(String subString, int start) {
-        addTaint(subString.getTaint());
+        addTaint(subString.getTaintInt());
         return getTaintInt();
     }
 
@@ -1212,7 +1213,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.940 -0500", hash_original_method = "8EA3BFAB97A4D4877FC2554FB493C6C0", hash_generated_method = "91E7B8B05EA1C3F175A3139FD889C65C")
     
         public boolean regionMatches(int thisStart, String string, int start, int length) {
-        this.addTaint(string.getTaint());
+        this.addTaint(string.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -1241,7 +1242,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.943 -0500", hash_original_method = "5098FC46543D7D1A735E08AA962F8003", hash_generated_method = "88F17216AA2E98FA881DE372CE6364E6")
     
         public boolean regionMatches(boolean ignoreCase, int thisStart, String string, int start, int length) {
-        this.addTaint(string.getTaint());
+        this.addTaint(string.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -1283,8 +1284,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.949 -0500", hash_original_method = "226EAAC156D556D42E48670E64FEC4E8", hash_generated_method = "BAA289D8CF1FC3382A99E9306635F827")
     
         public String replace(CharSequence target, CharSequence replacement) {
-        addTaint(target.getTaint());
-        addTaint(replacement.getTaint());
+        addTaint(target.getTaintInt());
+        addTaint(replacement.getTaintInt());
         return this;
     }
 
@@ -1355,7 +1356,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         public char[] toCharArray() {
         char[] buffer = new char[count];
-        buffer.addTaint(this.getTaint());
+        buffer.addTaint(this.getTaintInt());
         return buffer;
     }
 
@@ -1474,7 +1475,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.001 -0500", hash_original_method = "233CB676C051D9EE76740A9343D1B467", hash_generated_method = "4B95AEE813CA7CAF74C1B96B4257E04D")
     
         public boolean contentEquals(StringBuffer strbuf) {
-        addTaint(strbuf.getTaint());
+        addTaint(strbuf.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -1492,14 +1493,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.004 -0500", hash_original_method = "733340B51AD84F3351AE4177729AE631", hash_generated_method = "002CA0AA9437153C4069C729DA94CA0D")
     
         public boolean contentEquals(CharSequence cs) {
-        addTaint(cs.getTaint());
+        addTaint(cs.getTaintInt());
         return getTaintBoolean();
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public boolean contains(CharSequence cs) {
-        this.addTaint(cs.getTaint());
+        this.addTaint(cs.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -1524,7 +1525,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.007 -0500", hash_original_method = "54546B1154273B2EF815CC4641C4AF95", hash_generated_method = "31150CC120132529E2C554553C68A957")
     
         public boolean matches(String regularExpression) {
-        addTaint(regularExpression.getTaint());
+        addTaint(regularExpression.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -1548,8 +1549,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.009 -0500", hash_original_method = "85FB9291CC087326BB42DD27D5FF2770", hash_generated_method = "39E48D55E8E4F9E59F58690640BB29E5")
     
         public String replaceAll(String regularExpression, String replacement) {
-        addTaint(regularExpression.getTaint());
-        addTaint(replacement.getTaint());
+        addTaint(regularExpression.getTaintInt());
+        addTaint(replacement.getTaintInt());
         return this;
 
     }
@@ -1574,8 +1575,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.012 -0500", hash_original_method = "B1F6469D7EA429A7B60DE2A4BC9D1B18", hash_generated_method = "E6B964A174237D2BB7F3EA8A25C91AB3")
     
         public String replaceFirst(String regularExpression, String replacement) {
-        addTaint(regularExpression.getTaint());
-        addTaint(replacement.getTaint());
+        addTaint(regularExpression.getTaintInt());
+        addTaint(replacement.getTaintInt());
         return this;
 
     }
@@ -1624,7 +1625,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         public String[] split(String regularExpression, int limit) {
         String[] result = new String[1];
-        result.addTaint(this.getTaint());
+        result.addTaint(this.getTaintInt());
         return result;
 
     }
@@ -1732,15 +1733,6 @@ public int offsetByCodePoints(int index, int codePointOffset) {
         addTaint(index);
         addTaint(codePointOffset);
         return getTaintInt();
-    }
-
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-@Override public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        ASCII[0] = getTaintChar();
-        offset = getTaintInt();
-        hashCode = getTaintInt();
-        count = getTaintInt();
     }
 
     @DSBan(DSCat.DROIDSAFE_INTERNAL)

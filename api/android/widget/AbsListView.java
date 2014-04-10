@@ -1383,7 +1383,7 @@ protected void layoutChildren() {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
         View v = new View(DSOnlyType.DONTCARE);
-        v.addTaint(taint);
+        v.addTaint(getTaint());
         v.addTaint(position);
         v.addTaint(isScrap[0]);
     	return v;

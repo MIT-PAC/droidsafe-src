@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.app.ContextImpl;
 
 import com.android.internal.util.CharSequences;
 
@@ -1151,13 +1152,8 @@ public Context getContext() {
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.908 -0500", hash_original_method = "8BF68140BB0364C46F5E3D57D69A6DB5", hash_generated_method = "F09B3CE58B6C7368086BB1A9CBCCC878")
-    
-public SharedPreferences getSharedPreferences() {
-        if (mPreferenceManager == null) {
-            return null;
-        }
-        
-        return mPreferenceManager.getSharedPreferences();
+public SharedPreferences getSharedPreferences() {        
+        return ContextImpl.getSharedPreferencesDS();
     }
     
     /**
