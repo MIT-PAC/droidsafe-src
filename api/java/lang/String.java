@@ -342,30 +342,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.754 -0500", hash_original_field = "FD3FEDA6C0FA798616493B49961CBA92", hash_generated_field = "94C8E35BF1C6D0DCD0C640C5B7214BD5")
 
         private static final long serialVersionUID = -6849794470754667710L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.757 -0500", hash_original_field = "6043FA7459F5A202FA1BB308F3CA1020", hash_generated_field = "44CEA20EA4711232CF026CC7232D685C")
-
-        private static final char REPLACEMENT_CHAR = (char) 0xfffd;
 
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.767 -0500", hash_original_field = "4A935136612EAA09E31702F46C8876CF", hash_generated_field = "A2069D0DAA8806E284E1501E715FFAC8")
 
     public static final Comparator<String> CASE_INSENSITIVE_ORDER = new CaseInsensitiveComparator();
 
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.770 -0500", hash_original_field = "C14595FF670F012A0483206D218F5442", hash_generated_field = "6699F3B26E20D4AC1415724EB8FB9705")
-
-        private static  char[] ASCII;
-
-    //@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.772 -0500", hash_original_field = "CA3CEF12FBB39E8368D4DC357E1B2764", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
-        //        private  char[] value;
-
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.774 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
-
-        private  int offset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.777 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
-
-        private  int count;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.780 -0500", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "38607001336EF9DE010EF92F750652A2")
-
-        private int hashCode;
 
     /**
      * Creates an empty string.
@@ -376,8 +357,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         public String() {
         //        value = EmptyArray.CHAR;
-        offset = 0;
-        count = 0;
     }
     
     
@@ -391,9 +370,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         @SuppressWarnings("unused")
         private String(String s, char c) {
-        offset = 0;
         //        value = new char[s.count + 1];
-        count = s.count + 1;
         //System.arraycopy(s.value, s.offset, value, 0, s.count);
         //value[s.count] = c;
         this.addTaint(s.getTaint());
@@ -579,8 +556,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         String(int offset, int charCount, char[] chars) {
         //this.value = chars;
         this.addTaint(chars[0]);
-        this.offset = offset;
-        this.count = charCount;
+        this.addTaint(offset);
+        this.addTaint(charCount);
     }
 
     /**
@@ -1348,7 +1325,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.961 -0500", hash_original_method = "66BAEF040BB5FDC80731F9B16CD33C32", hash_generated_method = "F8512EE67F64CE701F309692817A9311")
     
         public char[] toCharArray() {
-        char[] buffer = new char[count];
+        char[] buffer = new char[1];
         buffer.addTaint(this.getTaint());
         return buffer;
     }
@@ -1726,25 +1703,6 @@ public int offsetByCodePoints(int index, int codePointOffset) {
         addTaint(index);
         addTaint(codePointOffset);
         return getTaintInt();
-    }
-
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-@Override public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        ASCII[0] = getTaintChar();
-        offset = getTaintInt();
-        hashCode = getTaintInt();
-        count = getTaintInt();
-    }
-
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override public void addTaint(double t) {
-        super.addTaint(t);
-        ASCII[0] = getTaintChar();
-        offset = getTaintInt();
-        hashCode = getTaintInt();
-        count = getTaintInt();
-    }
-    
+    }    
 }
 
