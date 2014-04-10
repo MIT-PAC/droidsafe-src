@@ -862,6 +862,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
+    @DSSafe
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     public int getChangingConfigurations(){
 		return getTaintInt();

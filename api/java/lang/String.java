@@ -635,7 +635,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     /** used by droidsafe to model strings in the information flow */
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
-        public String(AbstractStringBuilder sb) {
+    public String(AbstractStringBuilder sb) {
         addTaint(sb.getTaint());
     }
     

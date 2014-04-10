@@ -143,7 +143,8 @@ public IBinder peekService(Context myContext, Intent service) {
      * @see #setResult(int, String, Bundle)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.705 -0500", hash_original_method = "D9C6679B9D8E9806D41E73EFA120BCFE", hash_generated_method = "4728470787842C4041B9F512D6E54F97")
-    
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSink(DSSinkKind.IPC)
 public final void setResultCode(int code) {
         checkSynchronousHint();
         mPendingResult.mResultCode = code;
@@ -156,7 +157,7 @@ public final void setResultCode(int code) {
      */
     @DSComment("no impact")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.707 -0500", hash_original_method = "413D4442793CB2CD30088D833172245E", hash_generated_method = "880C511B5BE77BEBC42FD95480D19EEC")
     
 public final int getResultCode() {
@@ -180,8 +181,8 @@ public final int getResultCode() {
      */
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
+    @DSSink(DSSinkKind.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.709 -0500", hash_original_method = "326C45A93CAC69AE5F40CC5662FD4E21", hash_generated_method = "E4DE2260ED5DD490E9332E22785D5122")
-    
 public final void setResultData(String data) {
         checkSynchronousHint();
         mPendingResult.mResultData = data;
@@ -193,9 +194,9 @@ public final void setResultData(String data) {
      * 
      * @return String The current result data; may be null.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.712 -0500", hash_original_method = "4500B5844C9E31997AA4128C2B631832", hash_generated_method = "F3267C287ABB4521B4DB8DAD802FFCAB")
-    
+    @DSSafe(DSCat.OS_GENERAL)
 public final String getResultData() {
         return mPendingResult != null ? mPendingResult.mResultData : null;
     }
@@ -218,9 +219,9 @@ public final String getResultData() {
      * @see #setResult(int, String, Bundle)
      */
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.714 -0500", hash_original_method = "A002D9C66CF7F2AA1D1827503AAC99EC", hash_generated_method = "569D36CAC8A5C7CB261AB149A764B2A9")
-    
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSink(DSSinkKind.IPC)
 public final void setResultExtras(Bundle extras) {
         checkSynchronousHint();
         mPendingResult.mResultExtras = extras;
@@ -237,9 +238,9 @@ public final void setResultExtras(Bundle extras) {
      * 
      * @return Map The current extras map.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.716 -0500", hash_original_method = "4CB90710C7A856F1CF5FAF169A56650C", hash_generated_method = "F071904FD5E94C95688CCF90728424FC")
-    
+    @DSSafe(DSCat.OS_GENERAL)
 public final Bundle getResultExtras(boolean makeMap) {
         if (mPendingResult == null) {
             return null;
@@ -273,9 +274,9 @@ public final Bundle getResultExtras(boolean makeMap) {
      * replaces the current map (if any).
      */
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.718 -0500", hash_original_method = "71BA20FC3DD345B39DB950803A39A1ED", hash_generated_method = "ED3154BE987877FA0FF2943FC85107BB")
-    
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSink(DSSinkKind.IPC)
 public final void setResult(int code, String data, Bundle extras) {
         checkSynchronousHint();
         mPendingResult.mResultCode = code;
@@ -289,9 +290,9 @@ public final void setResult(int code, String data, Bundle extras) {
      * 
      * @return True if the broadcast should be aborted.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.721 -0500", hash_original_method = "AC60D9C3BD95277DA035DD6FF45A8CCB", hash_generated_method = "149DAF27069326FB25F67A39BB4A2D01")
-    
+    @DSSafe(DSCat.OS_GENERAL)
 public final boolean getAbortBroadcast() {
         return mPendingResult != null ? mPendingResult.mAbortBroadcast : false;
     }
@@ -367,7 +368,8 @@ public final void setOrderedHint(boolean isOrdered) {
      * For internal use to set the result data that is active. @hide
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.734 -0500", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "3655C594E563935225D30259AECDD6E6")
-    
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSink(DSSinkKind.IPC)
 public final void setPendingResult(PendingResult result) {
         mPendingResult = result;
     }
@@ -376,7 +378,8 @@ public final void setPendingResult(PendingResult result) {
      * For internal use to set the result data that is active. @hide
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.737 -0500", hash_original_method = "DB63B22B6D1F06710FF3BD6349434467", hash_generated_method = "0A667A34B1A427078E19EEC72E5E076A")
-    
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource({DSSourceKind.IPC})
 public final PendingResult getPendingResult() {
         return mPendingResult;
     }
@@ -401,9 +404,9 @@ public final void setDebugUnregister(boolean debug) {
     /**
      * Return the last value given to {@link #setDebugUnregister}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.742 -0500", hash_original_method = "19A67BCF6BEB94B2ECFD54D952C17B9D", hash_generated_method = "9DECD4B98E264D80CCBAA5A6F4CBE4AD")
-    
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource(DSSourceKind.IPC)
 public final boolean getDebugUnregister() {
         return mDebugUnregister;
     }
@@ -523,7 +526,9 @@ public PendingResult(int resultCode, String resultData, Bundle resultExtras,
          * asynchronous broadcast handling.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.654 -0500", hash_original_method = "8D188219D9B47ACA890A3A3FC0E4CDB9", hash_generated_method = "E32022466188A7DAF782DFC9003CFD6F")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSink(DSSinkKind.IPC)
+
 public final void setResultCode(int code) {
             checkSynchronousHint();
             mResultCode = code;
@@ -534,9 +539,10 @@ public final void setResultCode(int code) {
          * BroadcastReceiver.getResultCode()} for
          * asynchronous broadcast handling.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.656 -0500", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "465ACAC5613A6099E1AF6CE8D2EEE8B1")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSource(DSSourceKind.IPC)
+
 public final int getResultCode() {
             return mResultCode;
         }
@@ -547,7 +553,9 @@ public final int getResultCode() {
          * asynchronous broadcast handling.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.658 -0500", hash_original_method = "70EE21896C4793F2CD7F1124D2F52609", hash_generated_method = "184B0DE368B365C6EE3EFE3877A399AC")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSink(DSSinkKind.IPC)
+
 public final void setResultData(String data) {
             checkSynchronousHint();
             mResultData = data;
@@ -558,9 +566,10 @@ public final void setResultData(String data) {
          * BroadcastReceiver.getResultData()} for
          * asynchronous broadcast handling.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.661 -0500", hash_original_method = "AF28EEAF3BA9B8705C009D1FCC834AB4", hash_generated_method = "5C6F3660000895054189DB24D79089B0")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSource(DSSourceKind.IPC)
+
 public final String getResultData() {
             return mResultData;
         }
@@ -571,7 +580,8 @@ public final String getResultData() {
          * asynchronous broadcast handling.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.663 -0500", hash_original_method = "043EFA68A5EC6A2685391992580FAB4F", hash_generated_method = "90BC11B88935DBA281C46408CD5CD07A")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSink(DSSinkKind.IPC)
 public final void setResultExtras(Bundle extras) {
             checkSynchronousHint();
             mResultExtras = extras;
@@ -582,9 +592,10 @@ public final void setResultExtras(Bundle extras) {
          * BroadcastReceiver.getResultExtras(boolean)} for
          * asynchronous broadcast handling.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.666 -0500", hash_original_method = "48408ADF0828FD95531740A7B634349C", hash_generated_method = "9EE4A1D648D3CFF409DC710800479791")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSource(DSSourceKind.IPC)
+
 public final Bundle getResultExtras(boolean makeMap) {
             Bundle e = mResultExtras;
             if (!makeMap) return e;
@@ -598,7 +609,9 @@ public final Bundle getResultExtras(boolean makeMap) {
          * asynchronous broadcast handling.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.668 -0500", hash_original_method = "48338FF93B0D949C9CE50695C92AC674", hash_generated_method = "1B0E51B76DF4CEB770F6DDC75DD56316")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSink(DSSinkKind.IPC)
+
 public final void setResult(int code, String data, Bundle extras) {
             checkSynchronousHint();
             mResultCode = code;
@@ -611,9 +624,9 @@ public final void setResult(int code, String data, Bundle extras) {
          * BroadcastReceiver.getAbortBroadcast()} for
          * asynchronous broadcast handling.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.670 -0500", hash_original_method = "27570BF34E94ABF03E65F54A5F2272E5", hash_generated_method = "F83BD098FE1867AE62400EBE8D0FCBE8")
-        
+        @DSSafe(DSCat.OS_GENERAL)
+        @DSSource(DSSourceKind.IPC)
 public final boolean getAbortBroadcast() {
             return mAbortBroadcast;
         }
