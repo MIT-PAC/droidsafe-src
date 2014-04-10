@@ -76,16 +76,19 @@ public class TestPTA  {
             }
             
   
-            
-            if (!"getTaint".equals(method.getName()))
+            if (!"<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>".equals(method.getSignature()))
                 continue;
             
-            //SootClass clz = Scene.v().getSootClass("com.ultracoolmap.UltraCoolMapActivity");
-            SootClass clz = Scene.v().getSootClass("edu.droidsafe.Context");
-            
-            boolean found = false;
-            
             System.out.println(momc);
+            
+            Iterator<Edge> edges = Scene.v().getCallGraph().edgesOutOf(momc);
+            
+            System.out.println("\nOutgoing Edges: \n");
+            while (edges.hasNext()) {
+                System.out.println("\t" + edges.next().getTgt());
+            }
+            
+            
             
             // We first gather all the memory access expressions
             for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {

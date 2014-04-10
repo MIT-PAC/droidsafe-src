@@ -145,6 +145,7 @@ class Locals {
                     SootMethod method = InterproceduralControlFlowGraph.v().localToMethod.get(local);
                     writer.write(" |METHOD| " + (method != null ? method.toString() : "null"));
                     writer.write(" |LOCAL| " + local);
+                    writer.write(" |CONTEXT| " + contextLocal.context);
                     writer.write('\n');
                     break;
                 }
