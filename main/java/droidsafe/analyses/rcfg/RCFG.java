@@ -393,6 +393,13 @@ public class RCFG  {
                     for (Edge src : PTABridge.v().incomingEdges(mc)) {
                         fw.write("\t" + src.getSrc() + "\n");
                     }
+                    /*
+                    fw.write("\n\tDESTS:\n");
+                    Iterator<Edge> edges = Scene.v().getCallGraph().edgesOutOf(mc);
+                    while (edges.hasNext()){
+                        fw.write("\t" + edges.next() + "\n");
+                    } 
+                    */      
                     fw.write("\n");
                 }
             }
