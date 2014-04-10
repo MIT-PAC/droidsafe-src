@@ -493,7 +493,7 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
     if(!MessageDigest.isEqual(d, Base64.decode(hash)))            
             {
                 SecurityException var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624 = invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
-                var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624.addTaint(taint);
+                var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624.addTaint(getTaint());
                 throw var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624;
             } //End block
             verifiedEntries.put(name, certificates);

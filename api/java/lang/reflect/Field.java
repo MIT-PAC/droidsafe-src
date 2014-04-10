@@ -19,7 +19,7 @@ public final class Field extends AccessibleObject implements Member {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
     	Annotation[] ret = new Annotation[0];
-    	ret[0].addTaint(declaringClass.taint);
+    	ret[0].addTaint(declaringClass.getTaint());
     	ret[0].addTaint(slot);
     	return ret;
     }
@@ -27,9 +27,9 @@ public final class Field extends AccessibleObject implements Member {
     private static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
     	A ret = (A)new Object();
-    	ret.addTaint(declaringClass.taint);
+    	ret.addTaint(declaringClass.getTaint());
     	ret.addTaint(slot);
-    	ret.addTaint(annotationType.taint);
+    	ret.addTaint(annotationType.getTaint());
     	return ret;
     }
     
@@ -172,7 +172,7 @@ private synchronized void initGenericType() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.759 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "F1BBACEA836E9C65FE0E5D9A22FF7006")
     private Object[] getSignatureAnnotation(Class declaringClass, int slot) {
-    	addTaint(declaringClass.taint);
+    	addTaint(declaringClass.getTaint());
     	addTaint(slot);
     	return new Object[0];
     }
@@ -259,11 +259,11 @@ public Type getGenericType() {
         if(annotationType == null)        
         {
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_286909647 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_286909647.addTaint(taint);
+            varD3565833EFC12BC5822ABFE94D257EDE_286909647.addTaint(getTaint());
             throw varD3565833EFC12BC5822ABFE94D257EDE_286909647;
         } //End block
 A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declaringClass, slot, annotationType);
-        varD37D33C5EE02B81A7F8EF45A88B88039_1884546761.addTaint(taint);
+        varD37D33C5EE02B81A7F8EF45A88B88039_1884546761.addTaint(getTaint());
         return varD37D33C5EE02B81A7F8EF45A88B88039_1884546761;
         // ---------- Original Method ----------
         //if (annotationType == null) {
@@ -1036,9 +1036,9 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.775 -0400", hash_original_method = "2E771D0497C584665EAFE5039BCB9B58", hash_generated_method = "5DD6344BFC9E3A8D7857167F9BE20F54")
     private Object getField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck) throws IllegalAccessException {
-    	addTaint(o.taint);
-    	addTaint(declaringClass.taint);
-    	addTaint(type.taint);
+    	addTaint(o.getTaint());
+    	addTaint(declaringClass.getTaint());
+    	addTaint(type.getTaint());
     	addTaint(slot);
     	addTaint(noAccessCheck);
     	return new Object();

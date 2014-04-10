@@ -60,7 +60,7 @@ static String getClassSignatureAttribute(Class clazz) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Object[] getClassSignatureAnnotation(Class clazz) {
 		Object[] ret = new Object[0];
-		ret[0].addTaint(clazz.taint);
+		ret[0].addTaint(clazz.getTaint());
 		return ret;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.332 -0500", hash_original_field = "73EA6AEBBE448C5C33ED9F0E5E3F055A", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
@@ -136,7 +136,7 @@ public Annotation[] getAnnotations() {
     public <T extends Annotation> T getAnnotation(Class<T> annotationType) {
         addTaint(annotationType.getTaint());
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1374839107 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1374839107.addTaint(taint);
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1374839107.addTaint(getTaint());
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1374839107;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();

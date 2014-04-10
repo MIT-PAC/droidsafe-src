@@ -1700,7 +1700,7 @@ public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
                           mScreenDensity, bitmap.mDensity);
         */
         addTaint(bitmap.getTaintInt() + src.getTaintInt() + paint.getTaintInt());
-        dst.addTaint(taint);
+        dst.addTaint(getTaint());
     }
     
     /**

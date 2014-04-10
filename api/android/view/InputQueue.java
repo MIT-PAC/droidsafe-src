@@ -126,7 +126,7 @@ private FinishedCallback() {
             addTaint(handled);
             if (DroidSafeAndroidRuntime.control) {
                 IllegalStateException var241EDB98EA12D59AE07921EE5D3D6CA9_1882957200 = new IllegalStateException("Event finished callback already invoked.");
-                var241EDB98EA12D59AE07921EE5D3D6CA9_1882957200.addTaint(taint);
+                var241EDB98EA12D59AE07921EE5D3D6CA9_1882957200.addTaint(getTaint());
                 throw var241EDB98EA12D59AE07921EE5D3D6CA9_1882957200;
             } //End block
             

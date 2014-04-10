@@ -448,7 +448,7 @@ public Object[] toArray() {
         public <T> T[] toArray(T[] a) {
             addTaint(a[0].getTaint());
 T[] varBD37699932362128D1DCA08F9CDDCC12_2067346240 =             set.toArray(a);
-            varBD37699932362128D1DCA08F9CDDCC12_2067346240.addTaint(taint);
+            varBD37699932362128D1DCA08F9CDDCC12_2067346240.addTaint(getTaint());
             return varBD37699932362128D1DCA08F9CDDCC12_2067346240;
             // ---------- Original Method ----------
             //return set.toArray(a);

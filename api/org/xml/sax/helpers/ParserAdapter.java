@@ -998,7 +998,7 @@ public String getValue (String qName)
     if(useException)            
             {
             SAXParseException var854AD97C008FC0C49293EF8835D8E041_564975120 = makeException("Undeclared prefix: " + qName);
-            var854AD97C008FC0C49293EF8835D8E041_564975120.addTaint(taint);
+            var854AD97C008FC0C49293EF8835D8E041_564975120.addTaint(getTaint());
             throw var854AD97C008FC0C49293EF8835D8E041_564975120;
             }
             reportError("Undeclared prefix: " + qName);
@@ -1007,7 +1007,7 @@ public String getValue (String qName)
             parts[2] = qName.intern();
         } //End block
 String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
-        var6651EAC2994005EE903B8D00ACB7442E_128503195.addTaint(taint);
+        var6651EAC2994005EE903B8D00ACB7442E_128503195.addTaint(getTaint());
         return var6651EAC2994005EE903B8D00ACB7442E_128503195;
         // ---------- Original Method ----------
         //String parts[] = nsSupport.processName(qName, nameParts,

@@ -644,7 +644,7 @@ public static void setSecurityManager(SecurityManager sm) {
     
     public static String mapLibraryName(String userLibName) {
 		String ret = new String();
-		ret.addTaint(userLibName.taint);
+		ret.addTaint(userLibName.getTaint());
 		return ret;
 	}
     

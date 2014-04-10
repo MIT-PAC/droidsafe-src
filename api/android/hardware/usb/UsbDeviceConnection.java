@@ -92,7 +92,7 @@ public byte[] getRawDescriptors() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.092 -0500", hash_original_method = "D71499ECC8620176973E88D08B964E3F", hash_generated_method = "68A5C818784255C557663E724D6F9B0D")
     
 public boolean claimInterface(UsbInterface intf, boolean force) {
-        //intf.addTaint(taint);
+        //intf.addTaint(getTaint());
         //return intf.getTaintBoolean();
         return native_claim_interface(intf.getId(), force);
     }
@@ -277,7 +277,7 @@ public String getSerial() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "88959A018189FD60E12A8554B278AF72", hash_generated_method = "3CB7E68BF025980C89AAE00C7D02E8F5")
     private UsbRequest native_request_wait() {
         UsbRequest request = new UsbRequest();
-        request.addTaint(taint);
+        request.addTaint(getTaint());
         return request;
     }
     

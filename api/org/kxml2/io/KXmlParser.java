@@ -324,7 +324,7 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
                 {
                     RuntimeException varED97AAB5843948CA47DCBF2C58EC51F0_1764040438 = new RuntimeException(
                             "illegal attribute name: " + attrName + " at " + this);
-                    varED97AAB5843948CA47DCBF2C58EC51F0_1764040438.addTaint(taint);
+                    varED97AAB5843948CA47DCBF2C58EC51F0_1764040438.addTaint(getTaint());
                     throw varED97AAB5843948CA47DCBF2C58EC51F0_1764040438;
                 } //End block
                 else
@@ -337,7 +337,7 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
                     {
                         RuntimeException varB9AFB5BE9C6FD0ABD6B99FD1168B2524_568875178 = new RuntimeException(
                                 "Undefined Prefix: " + attrPrefix + " in " + this);
-                        varB9AFB5BE9C6FD0ABD6B99FD1168B2524_568875178.addTaint(taint);
+                        varB9AFB5BE9C6FD0ABD6B99FD1168B2524_568875178.addTaint(getTaint());
                         throw varB9AFB5BE9C6FD0ABD6B99FD1168B2524_568875178;
                     } //End block
                     attributes[i] = attrNs;
@@ -2077,13 +2077,13 @@ public String getNamespaceUri(int pos) {
         if("xml".equals(prefix))        
         {
 String varB42E997512DFFB350471AB44C36A387C_1067348118 =             "http://www.w3.org/XML/1998/namespace";
-            varB42E997512DFFB350471AB44C36A387C_1067348118.addTaint(taint);
+            varB42E997512DFFB350471AB44C36A387C_1067348118.addTaint(getTaint());
             return varB42E997512DFFB350471AB44C36A387C_1067348118;
         } //End block
         if("xmlns".equals(prefix))        
         {
 String var9D449F1D53C2C64B85A7AEF148BB8C58_1902710790 =             "http://www.w3.org/2000/xmlns/";
-            var9D449F1D53C2C64B85A7AEF148BB8C58_1902710790.addTaint(taint);
+            var9D449F1D53C2C64B85A7AEF148BB8C58_1902710790.addTaint(getTaint());
             return var9D449F1D53C2C64B85A7AEF148BB8C58_1902710790;
         } //End block
 for(int i = (getNamespaceCount(depth) << 1) - 2;i >= 0;i -= 2)
@@ -2093,7 +2093,7 @@ for(int i = (getNamespaceCount(depth) << 1) - 2;i >= 0;i -= 2)
                 if(nspStack[i] == null)                
                 {
 String var7C146870E87A0CC7077FCAFD76B21B23_1502014471 =                     nspStack[i + 1];
-                    var7C146870E87A0CC7077FCAFD76B21B23_1502014471.addTaint(taint);
+                    var7C146870E87A0CC7077FCAFD76B21B23_1502014471.addTaint(getTaint());
                     return var7C146870E87A0CC7077FCAFD76B21B23_1502014471;
                 } //End block
             } //End block
@@ -2101,12 +2101,12 @@ String var7C146870E87A0CC7077FCAFD76B21B23_1502014471 =                     nspS
             if(prefix.equals(nspStack[i]))            
             {
 String var7C146870E87A0CC7077FCAFD76B21B23_120227909 =                 nspStack[i + 1];
-                var7C146870E87A0CC7077FCAFD76B21B23_120227909.addTaint(taint);
+                var7C146870E87A0CC7077FCAFD76B21B23_120227909.addTaint(getTaint());
                 return var7C146870E87A0CC7077FCAFD76B21B23_120227909;
             } //End block
         } //End block
 String var540C13E9E156B687226421B24F2DF178_472639323 =         null;
-        var540C13E9E156B687226421B24F2DF178_472639323.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_472639323.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_472639323;
         // ---------- Original Method ----------
         //if ("xml".equals(prefix)) {

@@ -90,7 +90,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         if (DroidSafeAndroidRuntime.control)
         {
             IllegalArgumentException var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858 = new IllegalArgumentException("Load factor: " + loadFactor);
-            var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858.addTaint(taint);
+            var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858.addTaint(getTaint());
             throw var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858;
         } //End block
         // ---------- Original Method ----------
@@ -123,7 +123,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_358918830 = 
                     new AssertionError(new CloneNotSupportedException());
-            varA5A331D65C8C3F32D42E49D64BCF4109_358918830.addTaint(taint);
+            varA5A331D65C8C3F32D42E49D64BCF4109_358918830.addTaint(getTaint());
             throw varA5A331D65C8C3F32D42E49D64BCF4109_358918830;
         } //End block
         
@@ -245,7 +245,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         if (DroidSafeAndroidRuntime.control)
         {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_609880649 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_609880649.addTaint(taint);
+            var7338BC9F48D81FE0BBD6183F4014DCC4_609880649.addTaint(getTaint());
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_609880649;
         } //End block
         return backingMap.put(key,  value);
@@ -398,7 +398,7 @@ protected void rehash() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "D92B3AB4F78D152BCFDB4F438052384E", hash_generated_method = "3698A0D9DC498C7A503FBCDCEFC73B91")
     public synchronized Enumeration<V> elements() {
 Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new ValueEnumeration<V>();
-        var3998A6162E9CBDC16A5D7E7745A926CC_955772035.addTaint(taint);
+        var3998A6162E9CBDC16A5D7E7745A926CC_955772035.addTaint(getTaint());
         return var3998A6162E9CBDC16A5D7E7745A926CC_955772035;
         // ---------- Original Method ----------
         //return new ValueEnumeration();
@@ -632,7 +632,7 @@ public final V setValue(V value) {
         if(capacity < 0)        
         {
             InvalidObjectException var4B6A7F779A4667EA55847180B6A27960_1436446989 = new InvalidObjectException("Capacity: " + capacity);
-            var4B6A7F779A4667EA55847180B6A27960_1436446989.addTaint(taint);
+            var4B6A7F779A4667EA55847180B6A27960_1436446989.addTaint(getTaint());
             throw var4B6A7F779A4667EA55847180B6A27960_1436446989;
         } //End block
         
@@ -640,7 +640,7 @@ public final V setValue(V value) {
         if(size < 0)        
         {
             InvalidObjectException varE685AABC7A986A19539C13F2F8920021_1526559440 = new InvalidObjectException("Size: " + size);
-            varE685AABC7A986A19539C13F2F8920021_1526559440.addTaint(taint);
+            varE685AABC7A986A19539C13F2F8920021_1526559440.addTaint(getTaint());
             throw varE685AABC7A986A19539C13F2F8920021_1526559440;
         } //End block
 for(int i = 0;i < size;i++)

@@ -604,7 +604,7 @@ for(Node<E> p = head.next;p != null;p = p.next)
             if(a.length > k)            
             a[k] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_1520448393 =             a;
-            var3F5343BF1D849954A73F0BB303805FFD_1520448393.addTaint(taint);
+            var3F5343BF1D849954A73F0BB303805FFD_1520448393.addTaint(getTaint());
             return var3F5343BF1D849954A73F0BB303805FFD_1520448393;
         } //End block
         finally 
@@ -797,7 +797,7 @@ private void writeObject(java.io.ObjectOutputStream s)
         } finally {
             fullyUnlock();
         }*/
-        s.addTaint(taint);
+        s.addTaint(getTaint());
     }
     
     static class Node<E> {

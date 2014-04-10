@@ -983,7 +983,7 @@ switch(f.mState){
             {
                 SuperNotCalledException var3B21D72FE3B78DA21309B053881BE5E5_238902641 = new SuperNotCalledException("Fragment " + f
                                 + " did not call through to super.onAttach()");
-                var3B21D72FE3B78DA21309B053881BE5E5_238902641.addTaint(taint);
+                var3B21D72FE3B78DA21309B053881BE5E5_238902641.addTaint(getTaint());
                 throw var3B21D72FE3B78DA21309B053881BE5E5_238902641;
             } //End block
             mActivity.onAttachFragment(f);
@@ -995,7 +995,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException varDCB548427EBCECA4CC9F6862AC507FF3_12691253 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onCreate()");
-                    varDCB548427EBCECA4CC9F6862AC507FF3_12691253.addTaint(taint);
+                    varDCB548427EBCECA4CC9F6862AC507FF3_12691253.addTaint(getTaint());
                     throw varDCB548427EBCECA4CC9F6862AC507FF3_12691253;
                 } //End block
             } //End block
@@ -1026,7 +1026,7 @@ switch(f.mState){
                             IllegalArgumentException var0353385A08CCE5D7465C38B4F1D7C17E_442916768 = new IllegalArgumentException("No view found for id 0x"
                                             + Integer.toHexString(f.mContainerId)
                                             + " for fragment " + f);
-                            var0353385A08CCE5D7465C38B4F1D7C17E_442916768.addTaint(taint);
+                            var0353385A08CCE5D7465C38B4F1D7C17E_442916768.addTaint(getTaint());
                             throw var0353385A08CCE5D7465C38B4F1D7C17E_442916768;
                         } //End block
                     } //End block
@@ -1058,7 +1058,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException var45C194242DE43412EAC556A63F1E43D7_462847951 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onActivityCreated()");
-                    var45C194242DE43412EAC556A63F1E43D7_462847951.addTaint(taint);
+                    var45C194242DE43412EAC556A63F1E43D7_462847951.addTaint(getTaint());
                     throw var45C194242DE43412EAC556A63F1E43D7_462847951;
                 } //End block
                 if(f.mView != null)                
@@ -1077,7 +1077,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException varF07429FD2D04E52714B8713F40AFC9DD_1672170067 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onStart()");
-                    varF07429FD2D04E52714B8713F40AFC9DD_1672170067.addTaint(taint);
+                    varF07429FD2D04E52714B8713F40AFC9DD_1672170067.addTaint(getTaint());
                     throw varF07429FD2D04E52714B8713F40AFC9DD_1672170067;
                 } //End block
             } //End block
@@ -1091,7 +1091,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException var2F03BD78E4921B7BE5C850B804B95C39_1948517605 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onResume()");
-                    var2F03BD78E4921B7BE5C850B804B95C39_1948517605.addTaint(taint);
+                    var2F03BD78E4921B7BE5C850B804B95C39_1948517605.addTaint(getTaint());
                     throw var2F03BD78E4921B7BE5C850B804B95C39_1948517605;
                 } //End block
                 f.mSavedFragmentState = null;
@@ -1112,7 +1112,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException var55DB580FC19CB339D914E96405A6FFDF_1507103059 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onPause()");
-                    var55DB580FC19CB339D914E96405A6FFDF_1507103059.addTaint(taint);
+                    var55DB580FC19CB339D914E96405A6FFDF_1507103059.addTaint(getTaint());
                     throw var55DB580FC19CB339D914E96405A6FFDF_1507103059;
                 } //End block
                 f.mResumed = false;
@@ -1126,7 +1126,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException var240380EDA5D49D36DA90F7CBC00728AE_1059908555 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onStop()");
-                    var240380EDA5D49D36DA90F7CBC00728AE_1059908555.addTaint(taint);
+                    var240380EDA5D49D36DA90F7CBC00728AE_1059908555.addTaint(getTaint());
                     throw var240380EDA5D49D36DA90F7CBC00728AE_1059908555;
                 } //End block
             } //End block
@@ -1147,7 +1147,7 @@ switch(f.mState){
                 {
                     SuperNotCalledException var7FE18600505ECC477FD177AC364738B8_970899931 = new SuperNotCalledException("Fragment " + f
                                     + " did not call through to super.onDestroyView()");
-                    var7FE18600505ECC477FD177AC364738B8_970899931.addTaint(taint);
+                    var7FE18600505ECC477FD177AC364738B8_970899931.addTaint(getTaint());
                     throw var7FE18600505ECC477FD177AC364738B8_970899931;
                 } //End block
                 if(f.mView != null && f.mContainer != null)                
@@ -1214,7 +1214,7 @@ switch(f.mState){
                         {
                             SuperNotCalledException var996818535D410BFCADDBA6185941AB67_1303038861 = new SuperNotCalledException("Fragment " + f
                                             + " did not call through to super.onDestroy()");
-                            var996818535D410BFCADDBA6185941AB67_1303038861.addTaint(taint);
+                            var996818535D410BFCADDBA6185941AB67_1303038861.addTaint(getTaint());
                             throw var996818535D410BFCADDBA6185941AB67_1303038861;
                         } //End block
                     } //End block
@@ -1224,7 +1224,7 @@ switch(f.mState){
                     {
                         SuperNotCalledException varA1E86A4AD3397A3A1F40BAC562CFC4E0_1331780739 = new SuperNotCalledException("Fragment " + f
                                         + " did not call through to super.onDetach()");
-                        varA1E86A4AD3397A3A1F40BAC562CFC4E0_1331780739.addTaint(taint);
+                        varA1E86A4AD3397A3A1F40BAC562CFC4E0_1331780739.addTaint(getTaint());
                         throw varA1E86A4AD3397A3A1F40BAC562CFC4E0_1331780739;
                     } //End block
                     if(!f.mRetaining)                    

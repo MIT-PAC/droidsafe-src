@@ -1223,7 +1223,7 @@ public Builder detectLeakedClosableObjects() {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "70D58CB86738E652D64572B273F4DEEA")
             public Builder penaltyDeath() {
 Builder var6F115A07D237A33880541F25719D67B0_1559101226 =                 enable(PENALTY_DEATH);
-                var6F115A07D237A33880541F25719D67B0_1559101226.addTaint(taint);
+                var6F115A07D237A33880541F25719D67B0_1559101226.addTaint(getTaint());
                 return var6F115A07D237A33880541F25719D67B0_1559101226;
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DEATH);
@@ -1232,7 +1232,7 @@ Builder var6F115A07D237A33880541F25719D67B0_1559101226 =                 enable(
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "500E5F189D822DE77B9BA7533BD281D3")
             public Builder penaltyLog() {
 Builder var7C46BCB224406F4BC478971CF4360D87_1946014504 =                 enable(PENALTY_LOG);
-                var7C46BCB224406F4BC478971CF4360D87_1946014504.addTaint(taint);
+                var7C46BCB224406F4BC478971CF4360D87_1946014504.addTaint(getTaint());
                 return var7C46BCB224406F4BC478971CF4360D87_1946014504;
                 // ---------- Original Method ----------
                 //return enable(PENALTY_LOG);
@@ -1241,7 +1241,7 @@ Builder var7C46BCB224406F4BC478971CF4360D87_1946014504 =                 enable(
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "534BBD6BF05727FEE3669BE78D059282")
             public Builder penaltyDropBox() {
 Builder varC3126CEB2524227BCB28FCD226FE486C_1272195904 =                 enable(PENALTY_DROPBOX);
-                varC3126CEB2524227BCB28FCD226FE486C_1272195904.addTaint(taint);
+                varC3126CEB2524227BCB28FCD226FE486C_1272195904.addTaint(getTaint());
                 return varC3126CEB2524227BCB28FCD226FE486C_1272195904;
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DROPBOX);
@@ -1251,7 +1251,7 @@ Builder varC3126CEB2524227BCB28FCD226FE486C_1272195904 =                 enable(
             private Builder enable(int bit) {
                 mMask |= bit;
 Builder var72A74007B2BE62B849F475C7BDA4658B_2113603366 =                 this;
-                var72A74007B2BE62B849F475C7BDA4658B_2113603366.addTaint(taint);
+                var72A74007B2BE62B849F475C7BDA4658B_2113603366.addTaint(getTaint());
                 return var72A74007B2BE62B849F475C7BDA4658B_2113603366;
                 // ---------- Original Method ----------
                 //mMask |= bit;

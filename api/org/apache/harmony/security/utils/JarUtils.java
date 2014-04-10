@@ -265,7 +265,9 @@ private static X509Certificate findCert(Principal issuer, X509Certificate[] cand
         @DSSafe(DSCat.SAFE_OTHERS)
         public String toString() {
             // TODO Auto-generated method stub
-            return new String(taint);
+            String s = new String("<JarUtils.toString()>");
+            s.addTaint(getTaint());
+            return s;
         }
 
         @Override

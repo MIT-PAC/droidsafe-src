@@ -2030,7 +2030,7 @@ void loadSynchronousMessages() {
     private String nativeRedirectedToUrl(String baseUrl,
             String redirectTo, int nativeResponse) {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 

@@ -1417,7 +1417,7 @@ return _result;
 		_reply.recycle();
 		_data.recycle();
 	}
-	_result.addTaint(taint);
+	_result.addTaint(getTaint());
 	return _result;
 }
 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.635 -0500", hash_original_method = "3D76221EEE129FA0ECE3D53CFBE745D6", hash_generated_method = "9A4EF4BF180AABD3096EE0ABADEC19F6")

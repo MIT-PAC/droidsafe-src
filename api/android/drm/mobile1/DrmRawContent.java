@@ -383,7 +383,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.546 -0400", hash_original_method = "F8C7C9754DABA7F76C3A7CE0927D169C", hash_generated_method = "FB49DAE02267FB01D7F8074178E3812C")
     private String nativeGetRightsAddress() {
     	String s = new String();
-    	s.addTaint(this.taint);
+    	s.addTaint(this.getTaint());
     	return s;
     }
 
@@ -436,7 +436,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.547 -0400", hash_original_method = "9C49D7586D5C53FF58306596D0BFC464", hash_generated_method = "3114617F023481A1F61CCC44387FD7A5")
     private String nativeGetContentType() {
     	String s = new String();
-    	s.addTaint(this.taint);
+    	s.addTaint(this.getTaint());
     	return s;
     }
 

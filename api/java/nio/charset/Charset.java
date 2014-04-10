@@ -576,8 +576,8 @@ public final int compareTo(Charset charset) {
         protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
             // TODO Auto-generated method stub
             CoderResult result = new CoderResult(DSOnlyType.DONTCARE);
-            result.addTaint(taint);
-            out.addTaint(taint);
+            result.addTaint(getTaint());
+            out.addTaint(getTaint());
             return result;
         }
     }
@@ -592,8 +592,8 @@ public final int compareTo(Charset charset) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.883 -0500", hash_original_method = "9680F981801283FFB7CE500C1C691EF0", hash_generated_method = "45E10C8598041348E587BA19E1D99A75")
         protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
             CoderResult result = new CoderResult(DSOnlyType.DONTCARE);
-            result.addTaint(taint);
-            out.addTaint(taint);
+            result.addTaint(getTaint());
+            out.addTaint(getTaint());
             return result;
         }
     }

@@ -99,20 +99,20 @@ public ElementType(String name, int model, int memberOf, int flags, Schema schem
         if(colon == -1)        
         {
 String varAB2345C238CB3313D565FE6B975DC720_909030397 =             attribute ? "" : theSchema.getURI();
-            varAB2345C238CB3313D565FE6B975DC720_909030397.addTaint(taint);
+            varAB2345C238CB3313D565FE6B975DC720_909030397.addTaint(getTaint());
             return varAB2345C238CB3313D565FE6B975DC720_909030397;
         } //End block
         String prefix = name.substring(0, colon);
         if(prefix.equals("xml"))        
         {
 String varB42E997512DFFB350471AB44C36A387C_1201065483 =             "http://www.w3.org/XML/1998/namespace";
-            varB42E997512DFFB350471AB44C36A387C_1201065483.addTaint(taint);
+            varB42E997512DFFB350471AB44C36A387C_1201065483.addTaint(getTaint());
             return varB42E997512DFFB350471AB44C36A387C_1201065483;
         } //End block
         else
         {
 String varAA673C9A0924498AE38DAA66A4683FC8_1871885814 =             ("urn:x-prefix:" + prefix).intern();
-            varAA673C9A0924498AE38DAA66A4683FC8_1871885814.addTaint(taint);
+            varAA673C9A0924498AE38DAA66A4683FC8_1871885814.addTaint(getTaint());
             return varAA673C9A0924498AE38DAA66A4683FC8_1871885814;
         } //End block
         // ---------- Original Method ----------

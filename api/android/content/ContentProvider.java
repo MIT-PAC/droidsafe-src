@@ -708,13 +708,13 @@ public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bu
             };
             task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Object[])null);
 ParcelFileDescriptor var0A32740862433E6F4A2B631AD9C65F9E_1518019049 =             fds[0];
-            var0A32740862433E6F4A2B631AD9C65F9E_1518019049.addTaint(taint);
+            var0A32740862433E6F4A2B631AD9C65F9E_1518019049.addTaint(getTaint());
             return var0A32740862433E6F4A2B631AD9C65F9E_1518019049;
         } //End block
         catch (IOException e)
         {
             FileNotFoundException var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_861167959 = new FileNotFoundException("failure making pipe");
-            var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_861167959.addTaint(taint);
+            var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_861167959.addTaint(getTaint());
             throw var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_861167959;
         } //End block
         // ---------- Original Method ----------

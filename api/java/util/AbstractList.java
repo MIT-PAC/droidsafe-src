@@ -97,7 +97,7 @@ public abstract E get(int location);
     @Override
     public Iterator<E> iterator() {
         Iterator<E> var98A17F5C644EE571B50E8AB722E91624_1992156947 = getIterator();        
-        var98A17F5C644EE571B50E8AB722E91624_1992156947.addTaint(taint);
+        var98A17F5C644EE571B50E8AB722E91624_1992156947.addTaint(getTaint());
         return var98A17F5C644EE571B50E8AB722E91624_1992156947;
         // ---------- Original Method ----------
         //return new SimpleListIterator();
@@ -123,7 +123,7 @@ public abstract E get(int location);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.430 -0400", hash_original_method = "E1D07920E5A846C0C2E714EA3D018977", hash_generated_method = "A397E522795A04A37957E6B7762430ED")
     public ListIterator<E> listIterator(int location) {
         ListIterator<E> varA850735745ADA094DBCC6D2BBBE0CA4F_935962105 = getListIterator(location);
-        varA850735745ADA094DBCC6D2BBBE0CA4F_935962105.addTaint(taint);
+        varA850735745ADA094DBCC6D2BBBE0CA4F_935962105.addTaint(getTaint());
         varA850735745ADA094DBCC6D2BBBE0CA4F_935962105.addTaint(location);
         return varA850735745ADA094DBCC6D2BBBE0CA4F_935962105;
         // ---------- Original Method ----------
@@ -168,20 +168,20 @@ public abstract E get(int location);
                 List<E> elemList;
                 
                 elemList = new SubAbstractList<E>(this, start, end);
-                elemList.addTaint(taint);
+                elemList.addTaint(getTaint());
                 elemList.addTaint(end);
                 elemList.addTaint(start);
                 return elemList;
             } //End block
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_130481627 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_130481627.addTaint(taint);
+            var5783EF97022AA508B74A1E3EA38534AF_130481627.addTaint(getTaint());
             var5783EF97022AA508B74A1E3EA38534AF_130481627.addTaint(start); 
             var5783EF97022AA508B74A1E3EA38534AF_130481627.addTaint(end); 
             throw var5783EF97022AA508B74A1E3EA38534AF_130481627;
         }
         else {
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229 = new IndexOutOfBoundsException();
-            varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229.addTaint(taint);
+            varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229.addTaint(getTaint());
             varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229.addTaint(start);
             varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229.addTaint(end);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229;

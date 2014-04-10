@@ -435,7 +435,7 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
     
     public static String SSL_get_servername(int sslNativePointer) {
     	String ret = new String();
-    	ret.taint.addTaint(sslNativePointer);
+    	ret.addTaint(sslNativePointer);
     	return ret;
     }
     
@@ -519,21 +519,21 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
     
     public static String SSL_SESSION_get_version(int sslSessionNativePointer) {
     	String ret = new String();
-    	ret.taint.addTaint(sslSessionNativePointer);
+    	ret.addTaint(sslSessionNativePointer);
     	return ret;
     }
     
     public static String SSL_SESSION_cipher(int sslSessionNativePointer) {
     	String ret = new String();
-    	ret.taint.addTaint(sslSessionNativePointer);
+    	ret.addTaint(sslSessionNativePointer);
     	return ret;
     }
     
     public static String SSL_SESSION_compress_meth(int sslCtxNativePointer,
                                                           int sslSessionNativePointer) {
     	String ret = new String();
-    	ret.taint.addTaint(sslCtxNativePointer);
-    	ret.taint.addTaint(sslSessionNativePointer);
+    	ret.addTaint(sslCtxNativePointer);
+    	ret.addTaint(sslSessionNativePointer);
     	return ret;
     }
     

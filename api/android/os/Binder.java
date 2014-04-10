@@ -400,7 +400,7 @@ public IInterface queryLocalInterface(String descriptor) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "EA4B3F54BFD9578B1A4BA99DF2C0FDB9")
     public String getInterfaceDescriptor() throws RemoteException {
         String s = new String();
-        s.addTaint(this.taint);
+        s.addTaint(this.getTaint());
         return s;
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.209 -0500", hash_original_method = "2DB55944420A41A5CEDC8BE2777F8B50", hash_generated_method = "D7176CFB390C114FB35EDCB077C2D1BA")

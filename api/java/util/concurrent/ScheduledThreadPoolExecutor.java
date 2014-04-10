@@ -236,7 +236,7 @@ void reExecutePeriodic(RunnableScheduledFuture<?> task) {
         addTaint(task.getTaint());
         addTaint(runnable.getTaint());
 RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1944033159 =         task;
-        varE3FBC805688C6CF32CF252D3CB460B3C_1944033159.addTaint(taint);
+        varE3FBC805688C6CF32CF252D3CB460B3C_1944033159.addTaint(getTaint());
         return varE3FBC805688C6CF32CF252D3CB460B3C_1944033159;
         // ---------- Original Method ----------
         //return task;
@@ -248,7 +248,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1944033159 =     
         addTaint(task.getTaint());
         addTaint(callable.getTaint());
 RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =         task;
-        varE3FBC805688C6CF32CF252D3CB460B3C_535228177.addTaint(taint);
+        varE3FBC805688C6CF32CF252D3CB460B3C_535228177.addTaint(getTaint());
         return varE3FBC805688C6CF32CF252D3CB460B3C_535228177;
         // ---------- Original Method ----------
         //return task;
@@ -330,7 +330,7 @@ public ScheduledFuture<?> schedule(Runnable command,
         if(callable == null || unit == null)        
         {
         NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_2104150494 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_2104150494.addTaint(taint);
+        var7338BC9F48D81FE0BBD6183F4014DCC4_2104150494.addTaint(getTaint());
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_2104150494;
         }
         RunnableScheduledFuture<V> t = decorateTask(callable,
@@ -338,7 +338,7 @@ public ScheduledFuture<?> schedule(Runnable command,
                                        triggerTime(delay, unit)));
         delayedExecute(t);
 ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
-        varE0D714D758F1540A8DF364A965AF9150_13040699.addTaint(taint);
+        varE0D714D758F1540A8DF364A965AF9150_13040699.addTaint(getTaint());
         return varE0D714D758F1540A8DF364A965AF9150_13040699;
         // ---------- Original Method ----------
         //if (callable == null || unit == null)
@@ -456,7 +456,7 @@ public Future<?> submit(Runnable task) {
         addTaint(task.getTaint());
 Future<T> var5F143B3617D15E425694BCB00707B794_1636405938 =         schedule(Executors.callable(task, result),
                         0, TimeUnit.NANOSECONDS);
-        var5F143B3617D15E425694BCB00707B794_1636405938.addTaint(taint);
+        var5F143B3617D15E425694BCB00707B794_1636405938.addTaint(getTaint());
         return var5F143B3617D15E425694BCB00707B794_1636405938;
         // ---------- Original Method ----------
         //return schedule(Executors.callable(task, result),
@@ -469,7 +469,7 @@ Future<T> var5F143B3617D15E425694BCB00707B794_1636405938 =         schedule(Exec
     public <T> Future<T> submit(Callable<T> task) {
         addTaint(task.getTaint());
 Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0, TimeUnit.NANOSECONDS);
-        varC033FC2530DBD28BB1831A9C4CE5DB45_4715437.addTaint(taint);
+        varC033FC2530DBD28BB1831A9C4CE5DB45_4715437.addTaint(getTaint());
         return varC033FC2530DBD28BB1831A9C4CE5DB45_4715437;
         // ---------- Original Method ----------
         //return schedule(task, 0, TimeUnit.NANOSECONDS);
@@ -1249,14 +1249,14 @@ public Object[] toArray() {
                 if(a.length < size)                
                 {
 T[] varD7F9E2498EEEC82C28C16468811B6DF2_24220868 =                 (T[]) Arrays.copyOf(queue, size, a.getClass());
-                varD7F9E2498EEEC82C28C16468811B6DF2_24220868.addTaint(taint);
+                varD7F9E2498EEEC82C28C16468811B6DF2_24220868.addTaint(getTaint());
                 return varD7F9E2498EEEC82C28C16468811B6DF2_24220868;
                 }
                 System.arraycopy(queue, 0, a, 0, size);
                 if(a.length > size)                
                 a[size] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_99574316 =                 a;
-                var3F5343BF1D849954A73F0BB303805FFD_99574316.addTaint(taint);
+                var3F5343BF1D849954A73F0BB303805FFD_99574316.addTaint(getTaint());
                 return var3F5343BF1D849954A73F0BB303805FFD_99574316;
             } //End block
             finally 

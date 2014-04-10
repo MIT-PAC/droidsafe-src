@@ -1146,7 +1146,7 @@ public TextView(Context context,
             catch (ClassNotFoundException ex)
             {
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_1465662716 = new RuntimeException(ex);
-                varF35D3C95F99DACEE8C542CF38D772C50_1465662716.addTaint(taint);
+                varF35D3C95F99DACEE8C542CF38D772C50_1465662716.addTaint(getTaint());
                 throw varF35D3C95F99DACEE8C542CF38D772C50_1465662716;
             } //End block
             try 
@@ -1156,13 +1156,13 @@ public TextView(Context context,
             catch (InstantiationException ex)
             {
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_783290925 = new RuntimeException(ex);
-                varF35D3C95F99DACEE8C542CF38D772C50_783290925.addTaint(taint);
+                varF35D3C95F99DACEE8C542CF38D772C50_783290925.addTaint(getTaint());
                 throw varF35D3C95F99DACEE8C542CF38D772C50_783290925;
             } //End block
             catch (IllegalAccessException ex)
             {
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_1419080337 = new RuntimeException(ex);
-                varF35D3C95F99DACEE8C542CF38D772C50_1419080337.addTaint(taint);
+                varF35D3C95F99DACEE8C542CF38D772C50_1419080337.addTaint(getTaint());
                 throw varF35D3C95F99DACEE8C542CF38D772C50_1419080337;
             } //End block
             try 

@@ -1792,7 +1792,7 @@ public void handleUpEvent(KeyEvent event) {
     		addTaint(in.getTaint());
             in.readInt(); 
             KeyEvent retVal = KeyEvent.createFromParcelBody(in);
-    		retVal.addTaint(taint);
+    		retVal.addTaint(getTaint());
             return retVal;
         }
 

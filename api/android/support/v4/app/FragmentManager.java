@@ -1083,7 +1083,7 @@ switch(f.mState){
             {
                 SuperNotCalledException var3B21D72FE3B78DA21309B053881BE5E5_1575770204 = new SuperNotCalledException("Fragment " + f
                                 + " did not call through to super.onAttach()");
-                var3B21D72FE3B78DA21309B053881BE5E5_1575770204.addTaint(taint);
+                var3B21D72FE3B78DA21309B053881BE5E5_1575770204.addTaint(getTaint());
                 throw var3B21D72FE3B78DA21309B053881BE5E5_1575770204;
             } //End block
             if(f.mParentFragment == null)            
@@ -1282,7 +1282,7 @@ switch(f.mState){
                     {
                         SuperNotCalledException varA1E86A4AD3397A3A1F40BAC562CFC4E0_1132341421 = new SuperNotCalledException("Fragment " + f
                                         + " did not call through to super.onDetach()");
-                        varA1E86A4AD3397A3A1F40BAC562CFC4E0_1132341421.addTaint(taint);
+                        varA1E86A4AD3397A3A1F40BAC562CFC4E0_1132341421.addTaint(getTaint());
                         throw varA1E86A4AD3397A3A1F40BAC562CFC4E0_1132341421;
                     } //End block
                     if(!keepActive)                    

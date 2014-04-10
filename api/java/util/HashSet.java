@@ -71,7 +71,7 @@ HashSet(HashMap<E, HashSet<E>> backingMap) {
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_591335645 = 
                     new AssertionError(new CloneNotSupportedException());
-            varA5A331D65C8C3F32D42E49D64BCF4109_591335645.addTaint(taint);
+            varA5A331D65C8C3F32D42E49D64BCF4109_591335645.addTaint(getTaint());
             throw varA5A331D65C8C3F32D42E49D64BCF4109_591335645;
         } //End block
         HashSet<E> newSet = new HashSet<E>();

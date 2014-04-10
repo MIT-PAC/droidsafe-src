@@ -25,7 +25,7 @@ public final class Rect implements Parcelable {
         Rect rect = new Rect(DSUtils.FAKE_INT, DSUtils.FAKE_INT,
                              DSUtils.FAKE_INT, DSUtils.FAKE_INT);
         
-        rect.addTaint(str.getTaint());
+        rect.addTaintDS(str.getTaintInt());
         return rect;
 	}
     
@@ -99,10 +99,10 @@ public Rect() {}
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Rect(int left, int top, int right, int bottom){
-		addTaint(left);
-		addTaint(top);
-		addTaint(right);
-		addTaint(bottom);
+		addTaintDS(left);
+		addTaintDS(top);
+		addTaintDS(right);
+		addTaintDS(bottom);
 		/*
 		this.left = left;
 		this.top = top;
@@ -115,7 +115,7 @@ public Rect() {}
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Rect(Rect r){
-		addTaint(r.getTaint());
+		addTaintDS(r.getTaintInt());
 		/*
 		left = r.left;
 		top = r.top;
@@ -126,22 +126,13 @@ public Rect() {}
 	}
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override
-    public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
-    }
-    
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override
-    public void addTaint(double t) {
+    public void addTaintDS(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
 
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override
-    public void addTaint(boolean t) {
+    public void addTaintDS(boolean t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
@@ -177,7 +168,7 @@ public Rect() {}
     }
 		*/
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
 		return str;
 	}
     
@@ -191,7 +182,7 @@ public Rect() {}
     }
 		*/
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
 		return str;
 	}
     
@@ -208,7 +199,7 @@ public Rect() {}
         return sb.toString();
     }
 		*/
-        sb.addTaint(taint);
+        sb.addTaint(getTaint());
 		return sb.toString();
 	}
     
@@ -244,7 +235,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        pw.addTaint(taint);
+        pw.addTaint(getTaint());
 	}
     
     @DSComment("From safe class list")
@@ -356,7 +347,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(left + top + right + bottom);
+        addTaintDS(left + top + right + bottom);
 		droidsafeUpdateMembers();
 	}
     
@@ -373,7 +364,7 @@ public Rect() {}
         this.bottom = src.bottom;
     }
 		*/
-        addTaint(src.getTaint());
+        addTaintDS(src.getTaintInt());
 		droidsafeUpdateMembers();
 		//Return nothing
 	}
@@ -391,14 +382,14 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(dx + dy);
+        addTaintDS(dx + dy);
 		droidsafeUpdateMembers();
 	}
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void offsetTo(int newLeft, int newTop){
-		addTaint(newLeft + newTop);
+		addTaintDS(newLeft + newTop);
 		droidsafeUpdateMembers();
 		// Original method
 		/*
@@ -425,7 +416,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(dx + dy);
+        addTaintDS(dx + dy);
 		droidsafeUpdateMembers();
 	}
     
@@ -495,7 +486,7 @@ public Rect() {}
         return false;
     }
 		*/
-        addTaint(left + top + right + bottom);
+        addTaintDS(left + top + right + bottom);
 		droidsafeUpdateMembers();
 		return getTaintBoolean();
 	}
@@ -509,7 +500,7 @@ public Rect() {}
         return intersect(r.left, r.top, r.right, r.bottom);
     }
 		*/
-        addTaint(r.getTaint());
+        addTaintDS(r.getTaintInt());
 		return getTaintBoolean();
 	}
     
@@ -531,7 +522,7 @@ public Rect() {}
         return false;
     }
 		*/
-        addTaint(a.getTaintInt() + b.getTaintInt());
+        addTaintDS(a.getTaintInt() + b.getTaintInt());
 		droidsafeUpdateMembers();
 		return getTaintBoolean();
 	}
@@ -576,7 +567,7 @@ public Rect() {}
 		*/
 		//Return nothing
 
-        addTaint(left + top + right + bottom);
+        addTaintDS(left + top + right + bottom);
 		droidsafeUpdateMembers();
 	}
     
@@ -590,7 +581,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(r.getTaint());
+        addTaintDS(r.getTaintInt());
 		droidsafeUpdateMembers();
 	}
     
@@ -613,7 +604,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(x + y);
+        addTaintDS(x + y);
 		droidsafeUpdateMembers();
 	}
     
@@ -678,7 +669,7 @@ public int describeContents() {
     }
 		*/
 		//Return nothing
-        addTaint(in.getTaint());
+        addTaintDS(in.getTaintInt());
 		droidsafeUpdateMembers();
 	}
     
@@ -697,7 +688,7 @@ public int describeContents() {
     }
 		*/
 		//Return nothing
-        addTaint(scale);
+        addTaintDS(scale);
 		droidsafeUpdateMembers();
 	}
 }

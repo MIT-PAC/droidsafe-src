@@ -449,7 +449,7 @@ public HttpResponse execute(HttpHost target, HttpRequest request,
         addTaint(responseHandler.getTaint());
         addTaint(request.getTaint());
 T var36E49463A8C0D597D04C307A302D4311_1262386378 =         delegate.execute(request, responseHandler);
-        var36E49463A8C0D597D04C307A302D4311_1262386378.addTaint(taint);
+        var36E49463A8C0D597D04C307A302D4311_1262386378.addTaint(getTaint());
         return var36E49463A8C0D597D04C307A302D4311_1262386378;
         // ---------- Original Method ----------
         //return delegate.execute(request, responseHandler);
@@ -526,7 +526,7 @@ public void process(HttpRequest request, HttpContext context)
         addTaint(responseHandler.getTaint());
         addTaint(request.getTaint());
 T var4C992D413ECABA26DC3DF2FE56905C2B_848318443 =         delegate.execute(request, responseHandler, context);
-        var4C992D413ECABA26DC3DF2FE56905C2B_848318443.addTaint(taint);
+        var4C992D413ECABA26DC3DF2FE56905C2B_848318443.addTaint(getTaint());
         return var4C992D413ECABA26DC3DF2FE56905C2B_848318443;
         // ---------- Original Method ----------
         //return delegate.execute(request, responseHandler, context);
@@ -540,7 +540,7 @@ T var4C992D413ECABA26DC3DF2FE56905C2B_848318443 =         delegate.execute(reque
         addTaint(request.getTaint());
         addTaint(target.getTaint());
 T var1B6735C657E1CD3BC52AB580BBCBDB6A_240690404 =         delegate.execute(target, request, responseHandler);
-        var1B6735C657E1CD3BC52AB580BBCBDB6A_240690404.addTaint(taint);
+        var1B6735C657E1CD3BC52AB580BBCBDB6A_240690404.addTaint(getTaint());
         return var1B6735C657E1CD3BC52AB580BBCBDB6A_240690404;
         // ---------- Original Method ----------
         //return delegate.execute(target, request, responseHandler);
@@ -554,7 +554,7 @@ T var1B6735C657E1CD3BC52AB580BBCBDB6A_240690404 =         delegate.execute(targe
         addTaint(request.getTaint());
         addTaint(target.getTaint());
 T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(target, request, responseHandler, context);
-        var88CD165110419B2B8C92D3A1E57DA7B1_550641489.addTaint(taint);
+        var88CD165110419B2B8C92D3A1E57DA7B1_550641489.addTaint(getTaint());
         return var88CD165110419B2B8C92D3A1E57DA7B1_550641489;
         // ---------- Original Method ----------
         //return delegate.execute(target, request, responseHandler, context);

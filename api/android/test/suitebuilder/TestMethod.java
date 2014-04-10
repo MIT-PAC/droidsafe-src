@@ -60,13 +60,13 @@ public String getEnclosingClassname() {
         try 
         {
 T var324CE2F6140A562CCF31A2BF285CA24A_621130133 =             getEnclosingClass().getMethod(getName()).getAnnotation(annotationClass);
-            var324CE2F6140A562CCF31A2BF285CA24A_621130133.addTaint(taint);
+            var324CE2F6140A562CCF31A2BF285CA24A_621130133.addTaint(getTaint());
             return var324CE2F6140A562CCF31A2BF285CA24A_621130133;
         } //End block
         catch (NoSuchMethodException e)
         {
 T var540C13E9E156B687226421B24F2DF178_876805713 =             null;
-            var540C13E9E156B687226421B24F2DF178_876805713.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_876805713.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_876805713;
         } //End block
         // ---------- Original Method ----------

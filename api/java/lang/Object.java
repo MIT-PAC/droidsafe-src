@@ -452,7 +452,7 @@ public final void wait(long millis) throws InterruptedException {
     
     // orphaned legacy method
     
-    public void addTaint(double taint) {
+    public final void addTaint(double taint) {
         
     }
     

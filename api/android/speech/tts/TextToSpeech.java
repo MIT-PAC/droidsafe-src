@@ -178,7 +178,7 @@ private String getPackageName() {
         addTaint(errorResult.getTaint());
         addTaint(action.getTaint());
 R var6CD80DC7ED7C75CB0A432FA52BFDBB11_1308670570 =         runAction(action, errorResult, method, false);
-        var6CD80DC7ED7C75CB0A432FA52BFDBB11_1308670570.addTaint(taint);
+        var6CD80DC7ED7C75CB0A432FA52BFDBB11_1308670570.addTaint(getTaint());
         return var6CD80DC7ED7C75CB0A432FA52BFDBB11_1308670570;
         // ---------- Original Method ----------
         //return runAction(action, errorResult, method, false);
@@ -190,7 +190,7 @@ R var6CD80DC7ED7C75CB0A432FA52BFDBB11_1308670570 =         runAction(action, err
         addTaint(errorResult.getTaint());
         addTaint(action.getTaint());
 R varBE0F0122D8EC62CE380C7C3C781DBEA1_2048697216 =         runAction(action, errorResult, method, true);
-        varBE0F0122D8EC62CE380C7C3C781DBEA1_2048697216.addTaint(taint);
+        varBE0F0122D8EC62CE380C7C3C781DBEA1_2048697216.addTaint(getTaint());
         return varBE0F0122D8EC62CE380C7C3C781DBEA1_2048697216;
         // ---------- Original Method ----------
         //return runAction(action, errorResult, method, true);
@@ -207,11 +207,11 @@ R varBE0F0122D8EC62CE380C7C3C781DBEA1_2048697216 =         runAction(action, err
             if(mServiceConnection == null)            
             {
 R var79B35EE005A3F2115C55AE7046E4A0E2_125574140 =                 errorResult;
-                var79B35EE005A3F2115C55AE7046E4A0E2_125574140.addTaint(taint);
+                var79B35EE005A3F2115C55AE7046E4A0E2_125574140.addTaint(getTaint());
                 return var79B35EE005A3F2115C55AE7046E4A0E2_125574140;
             } //End block
 R var6E73D2A7B1D3CEC549E60088058AF61B_843365152 =             mServiceConnection.runAction(action, errorResult, method, reconnect);
-            var6E73D2A7B1D3CEC549E60088058AF61B_843365152.addTaint(taint);
+            var6E73D2A7B1D3CEC549E60088058AF61B_843365152.addTaint(getTaint());
             return var6E73D2A7B1D3CEC549E60088058AF61B_843365152;
         } //End block
         // ---------- Original Method ----------
@@ -1035,11 +1035,11 @@ public void disconnect() {
                     if(mService == null)                    
                     {
 R var79B35EE005A3F2115C55AE7046E4A0E2_305781130 =                         errorResult;
-                        var79B35EE005A3F2115C55AE7046E4A0E2_305781130.addTaint(taint);
+                        var79B35EE005A3F2115C55AE7046E4A0E2_305781130.addTaint(getTaint());
                         return var79B35EE005A3F2115C55AE7046E4A0E2_305781130;
                     } //End block
 R varD2997F7A1AE93B1FCC30EEA67FF3D50D_1331602775 =                     action.run(mService);
-                    varD2997F7A1AE93B1FCC30EEA67FF3D50D_1331602775.addTaint(taint);
+                    varD2997F7A1AE93B1FCC30EEA67FF3D50D_1331602775.addTaint(getTaint());
                     return varD2997F7A1AE93B1FCC30EEA67FF3D50D_1331602775;
                 } //End block
             } //End block
@@ -1051,7 +1051,7 @@ R varD2997F7A1AE93B1FCC30EEA67FF3D50D_1331602775 =                     action.ru
                     initTts();
                 } //End block
 R var79B35EE005A3F2115C55AE7046E4A0E2_113215503 =                 errorResult;
-                var79B35EE005A3F2115C55AE7046E4A0E2_113215503.addTaint(taint);
+                var79B35EE005A3F2115C55AE7046E4A0E2_113215503.addTaint(getTaint());
                 return var79B35EE005A3F2115C55AE7046E4A0E2_113215503;
             } //End block
             // ---------- Original Method ----------

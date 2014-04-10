@@ -678,7 +678,7 @@ public void externalRepresentation(Message callback) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.717 -0400", hash_original_method = "818D4287AF55B155FD9BEC63FC9BB14D", hash_generated_method = "2CE36722D89C9AAE233D32794227C266")
     private String externalRepresentation() {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 
@@ -708,7 +708,7 @@ public void documentAsText(Message callback) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "79942AAFA346C254C5198053B4C683D6", hash_generated_method = "07D5EDE5120089FA81790CBAAE4B851E")
     private String documentAsText() {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     
@@ -717,7 +717,7 @@ public void documentAsText(Message callback) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "BAA59F57B83FBAF7CC9F5BD462BDF4D7", hash_generated_method = "81DE64B9D9AB653AFA9FD34037C2102D")
     private String childFramesAsText() {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 
@@ -855,7 +855,7 @@ private int getFile(String uri, byte[] buffer, int offset,
             if(url == null || url.length() == 0)            
             {
 InputStream var540C13E9E156B687226421B24F2DF178_1805354417 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1805354417.addTaint(taint);
+                var540C13E9E156B687226421B24F2DF178_1805354417.addTaint(getTaint());
                 return var540C13E9E156B687226421B24F2DF178_1805354417;
             } //End block
             int slash = url.indexOf('/');
@@ -863,7 +863,7 @@ InputStream var540C13E9E156B687226421B24F2DF178_1805354417 =                 nul
             if(slash == -1 || dot == -1)            
             {
 InputStream var540C13E9E156B687226421B24F2DF178_516075261 =                 null;
-                var540C13E9E156B687226421B24F2DF178_516075261.addTaint(taint);
+                var540C13E9E156B687226421B24F2DF178_516075261.addTaint(getTaint());
                 return var540C13E9E156B687226421B24F2DF178_516075261;
             } //End block
             String subClassName = url.substring(0, slash);
@@ -884,20 +884,20 @@ InputStream var540C13E9E156B687226421B24F2DF178_516075261 =                 null
 InputStream varC78BFCF12FBFA3227A0197E64EC01945_850987104 =                     mContext.getAssets().openNonAsset(
                             value.assetCookie, value.string.toString(),
                             AssetManager.ACCESS_STREAMING);
-                    varC78BFCF12FBFA3227A0197E64EC01945_850987104.addTaint(taint);
+                    varC78BFCF12FBFA3227A0197E64EC01945_850987104.addTaint(getTaint());
                     return varC78BFCF12FBFA3227A0197E64EC01945_850987104;
                 } //End block
                 else
                 {
 InputStream var540C13E9E156B687226421B24F2DF178_345571007 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_345571007.addTaint(taint);
+                    var540C13E9E156B687226421B24F2DF178_345571007.addTaint(getTaint());
                     return var540C13E9E156B687226421B24F2DF178_345571007;
                 } //End block
             } //End block
             catch (Exception e)
             {
 InputStream var540C13E9E156B687226421B24F2DF178_1844221166 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1844221166.addTaint(taint);
+                var540C13E9E156B687226421B24F2DF178_1844221166.addTaint(getTaint());
                 return var540C13E9E156B687226421B24F2DF178_1844221166;
             } //End block
         } //End block
@@ -909,13 +909,13 @@ InputStream var540C13E9E156B687226421B24F2DF178_1844221166 =                 nul
             {
                 AssetManager assets = mContext.getAssets();
 InputStream var6EC0EF420A631EB21F555D908B217CE1_2052547921 =                 assets.open(url, AssetManager.ACCESS_STREAMING);
-                var6EC0EF420A631EB21F555D908B217CE1_2052547921.addTaint(taint);
+                var6EC0EF420A631EB21F555D908B217CE1_2052547921.addTaint(getTaint());
                 return var6EC0EF420A631EB21F555D908B217CE1_2052547921;
             } //End block
             catch (IOException e)
             {
 InputStream var540C13E9E156B687226421B24F2DF178_1943533256 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1943533256.addTaint(taint);
+                var540C13E9E156B687226421B24F2DF178_1943533256.addTaint(getTaint());
                 return var540C13E9E156B687226421B24F2DF178_1943533256;
             } //End block
         } //End block
@@ -932,20 +932,20 @@ InputStream var540C13E9E156B687226421B24F2DF178_1943533256 =                 nul
                 } //End block
                 Uri uri = Uri.parse(url);
 InputStream varD596734B53E0C27C52F1BA3951A39E00_86716833 =                 mContext.getContentResolver().openInputStream(uri);
-                varD596734B53E0C27C52F1BA3951A39E00_86716833.addTaint(taint);
+                varD596734B53E0C27C52F1BA3951A39E00_86716833.addTaint(getTaint());
                 return varD596734B53E0C27C52F1BA3951A39E00_86716833;
             } //End block
             catch (Exception e)
             {
 InputStream var540C13E9E156B687226421B24F2DF178_1487990529 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1487990529.addTaint(taint);
+                var540C13E9E156B687226421B24F2DF178_1487990529.addTaint(getTaint());
                 return var540C13E9E156B687226421B24F2DF178_1487990529;
             } //End block
         } //End block
         else
         {
 InputStream var540C13E9E156B687226421B24F2DF178_1855706854 =             null;
-            var540C13E9E156B687226421B24F2DF178_1855706854.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_1855706854.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_1855706854;
         } //End block
         // ---------- Original Method ----------
@@ -1655,7 +1655,7 @@ public void onLowMemory() {}
     
     public String stringByEvaluatingJavaScriptFromString(String script) {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 
@@ -1785,7 +1785,7 @@ public void stopLoading() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "865B533AFC1748A162575C4402C4E1D7", hash_generated_method = "649B5EB499FF582D6D8E126787969B7F")
     private String[] getUsernamePassword() {
     	String[] s = new String[1];
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 
@@ -1809,9 +1809,9 @@ public void stopLoading() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "74581984BB5BC192860C6547F8D5036F", hash_generated_method = "1313694DA1B47EE7DE9BC757D7889251")
     private String nativeSaveWebArchive(String basename, boolean autoname) {
     	addTaint(autoname);
-    	addTaint(basename.taint);
+    	addTaint(basename.getTaint());
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 

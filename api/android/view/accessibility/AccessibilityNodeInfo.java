@@ -1533,7 +1533,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
                 mSourceNodeId, focus);
         */
         AccessibilityNodeInfo node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
-        node.addTaint(taint);
+        node.addTaint(getTaint());
         node.addTaint(focus);
         return node;
     }
@@ -1560,7 +1560,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
             return null;
         }
         AccessibilityNodeInfo node = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
-        node.addTaint(taint);
+        node.addTaint(getTaint());
         node.addTaint(direction);
         return node;
         /*

@@ -273,7 +273,7 @@ public void throwException() throws BufferUnderflowException,
                 break;
         }
         //return getClass().getName() + "[" + dsc + "]";
-        dsc.addTaint(taint);
+        dsc.addTaint(getTaint());
         return dsc;
     }
 }

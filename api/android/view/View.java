@@ -1775,10 +1775,14 @@ public View(Context context, AttributeSet attrs) {
        this(); 
     }
     
-    @Override
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public void addTaint(double t) {
+    public void addTaintDS(double t) {
         super.addTaint(t);
+        mLeft = mRight = mTop = mBottom = mScrollX = mScrollY = getTaintInt();
+    }
+
+    public void addTaintDS(boolean b) {
+        super.addTaint(b);
         mLeft = mRight = mTop = mBottom = mScrollX = mScrollY = getTaintInt();
     }
     
@@ -2157,7 +2161,7 @@ public View(Context context, AttributeSet attrs) {
         getListenerInfo().mOnCreateContextMenuListener = l;
         if (l != null) {
             ContextMenuBuilder builder = new ContextMenuBuilder(getContext());
-            builder.addTaint(taint);
+            builder.addTaint(getTaint());
             
             l.onCreateContextMenu(builder, 
                     this, new AdapterView.AdapterContextMenuInfo(this, 
@@ -2612,7 +2616,7 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
 		// Original method
         AccessibilityNodeInfo info = new AccessibilityNodeInfo(DSOnlyType.DONTCARE);
         onInitializeAccessibilityNodeInfo(info);
-        info.addTaint(taint);
+        info.addTaint(getTaint());
         return info;
 	}
     
@@ -2845,7 +2849,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setNextFocusLeftId(int nextFocusLeftId){
-		addTaint(nextFocusLeftId);
+		addTaintDS(nextFocusLeftId);
 		// Original method
         mNextFocusLeftId = nextFocusLeftId;
 		//Return nothing
@@ -2980,7 +2984,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setVisibility(int visibility){
-		addTaint(visibility);
+		addTaintDS(visibility);
 		// Original method
 		/*
 		{
@@ -3461,9 +3465,9 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
         View newView = new View();
-        newView.addTaint(getTaint());
-        newView.addTaint(root.getTaint());
-        newView.addTaint(direction);
+        newView.addTaintDS(getTaintInt());
+        newView.addTaintDS(root.getTaintInt());
+        newView.addTaintDS(direction);
         return newView;
 	}
 
@@ -3487,9 +3491,9 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     }
 		*/
         View newView = new View();
-        newView.addTaint(taint);
-        newView.addTaint(root.getTaint());
-        newView.addTaint(childViewId);
+        newView.addTaintDS(getTaintInt());
+        newView.addTaintDS(root.getTaintInt());
+        newView.addTaintDS(childViewId);
         return newView;
 
 	}
@@ -4341,7 +4345,7 @@ public boolean onCheckIsTextEditor() {
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
         InputConnection conn = new BaseInputConnection(this, DSUtils.UNKNOWN_BOOLEAN); 
         conn.addTaint(outAttrs.getTaint());
-        conn.addTaint(taint);
+        conn.addTaint(getTaint());
         return conn;
     }
 
@@ -4402,7 +4406,7 @@ public boolean checkInputConnectionProxy(View view) {
 protected ContextMenuInfo getContextMenuInfo() {
         ContextMenuInfo info = new ContextMenuInfo() {
         };
-        info.addTaint(taint);
+        info.addTaint(getTaint());
         return info;
     }
 
@@ -5342,7 +5346,7 @@ protected void dispatchDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
         mBottom = bottom;
-        addTaint(bottom);
+        addTaintDS(bottom);
 	}
     
     @DSComment("From safe class list")
@@ -5360,7 +5364,7 @@ protected void dispatchDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
         mLeft = left;
-        addTaint(left);
+        addTaintDS(left);
 	}
     
     @DSComment("Normal GUI")
@@ -5378,7 +5382,7 @@ protected void dispatchDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
         mRight = right;
-        addTaint(right);
+        addTaintDS(right);
 	}
     
     @DSComment("Normal GUI")
@@ -8279,10 +8283,10 @@ protected void dispatchGetDisplayList() {}
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
         Bitmap bm = new Bitmap();
-        bm.addTaint(quality.taint);
+        bm.addTaint(quality.getTaint());
         bm.addTaint(backgroundColor);
         bm.addTaint(skipChildren);
-        bm.addTaint(taint);
+        bm.addTaint(getTaint());
 		return bm;
 	}
 
@@ -8886,8 +8890,8 @@ public Drawable getBackground() {
 	}
     
     public void setPaddingRelative(int start, int top, int end, int bottom){
-		addTaint(start);
-		addTaint(end);
+		addTaintDS(start);
+		addTaintDS(end);
 		// Original method
 		/*
 		{
@@ -8997,7 +9001,7 @@ public Drawable getBackground() {
     @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSelected(boolean selected){
-	    addTaint(selected); 
+	    addTaintDS(selected); 
 		// Original method
 		/*
 		{
@@ -9174,7 +9178,7 @@ protected void dispatchSetActivated(boolean activated) {
         return findViewTraversal(id);
         */
         View v = new View();
-        v.addTaint(taint);
+        v.addTaint(getTaint());
         v.addTaint(id);
         return v;
 	}
@@ -9237,7 +9241,7 @@ protected void dispatchSetActivated(boolean activated) {
             start = (View) parent;
         }*/
         View v = new View();
-        v.addTaint(start.getTaintInt() + predicate.getTaintInt());
+        v.addTaintDS(start.getTaintInt() + predicate.getTaintInt());
         return v;
 	}
     

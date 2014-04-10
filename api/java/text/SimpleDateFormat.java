@@ -797,7 +797,7 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
 public Date get2DigitYearStart() {
         //return (Date) defaultCenturyStart.clone();
         Date date = new Date();
-        date.addTaint(taint);
+        date.addTaint(getTaint());
         return date;
     }
 

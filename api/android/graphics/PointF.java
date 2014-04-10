@@ -60,14 +60,14 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public PointF(float x, float y){
-        addTaint(x);
-        addTaint(y);
+        addTaintDS(x);
+        addTaintDS(y);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public PointF(Point p){
-        addTaint(p.getTaint());
+        addTaintDS(p.getTaintInt());
         /*
         this.x = p.x;
         this.y = p.y;
@@ -77,29 +77,29 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void set(float x, float y){
-        addTaint(x);
-        addTaint(y);
+        addTaintDS(x);
+        addTaintDS(y);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void set(PointF p){
-        addTaint(p.getTaint());
+        addTaintDS(p.getTaintInt());
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void negate(){
-        addTaint(x);
-        addTaint(y);
+        addTaintDS(x);
+        addTaintDS(y);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void offset(float dx, float dy){
-        addTaint(dx);
-        addTaint(dy);
+        addTaintDS(dx);
+        addTaintDS(dy);
     }
     
     @DSComment("From safe class list")
@@ -151,7 +151,7 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
-        addTaint(in.getTaint());
+        addTaintDS(in.getTaintInt());
         // Original method
         /*
         {
@@ -166,12 +166,7 @@ public PointF() {}
         y = getTaintFloat();
     }
 
-    @Override public void addTaint(double t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
-    }
-
-    @Override public void addTaint(DSTaintObject t) {
+    public void addTaintDS(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
