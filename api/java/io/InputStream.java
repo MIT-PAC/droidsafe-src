@@ -103,6 +103,7 @@ public void close() throws IOException {
     
 public void mark(int readlimit) {
         /* empty */
+        addTaint(readlimit);
     }
 
     /**
@@ -118,7 +119,8 @@ public void mark(int readlimit) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.136 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
     
 public boolean markSupported() {
-        return false;
+        return getTaintBoolean();
+        //return false;
     }
 
     /**
@@ -138,6 +140,21 @@ public boolean markSupported() {
     
 public abstract int read() throws IOException;
 
+    /**
+     * This method provides a stub for reading.  To reduce complexity of read
+     * subclasses should call this when overriding
+     * @return
+     */
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public int droidsafeRead() {
+        return getTaintInt();
+    }
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public int droidsafeAvailable() {
+        return getTaintInt();
+    } 
+    
     /**
      * Equivalent to {@code read(buffer, 0, buffer.length)}.
      */
@@ -232,7 +249,9 @@ public synchronized void reset() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.148 -0500", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "49A9DBDBFE5E6C68C4E21B5D436733ED")
     
 public long skip(long byteCount) throws IOException {
-        return Streams.skipByReading(this, byteCount);
+        //return Streams.skipByReading(this, byteCount);
+        addTaint(byteCount);
+        return getTaintLong();
     }
     
 }

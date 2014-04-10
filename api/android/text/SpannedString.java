@@ -46,7 +46,6 @@ public CharSequence subSequence(int start, int end) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanEnd(Object what) {
-    	addTaint(what.getTaint());
     	return super.getSpanEnd(what);
     }
     
@@ -54,7 +53,6 @@ public CharSequence subSequence(int start, int end) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanFlags(Object what) {
-    	addTaint(what.getTaint());
     	return super.getSpanFlags(what);
     }
     
@@ -62,16 +60,12 @@ public CharSequence subSequence(int start, int end) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanStart(Object what) {
-    	addTaint(what.getTaint());
     	return super.getSpanStart(what);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public int nextSpanTransition(int start, int limit, Class kind) {
-    	addTaint(start);
-    	addTaint(limit);
-    	addTaint(kind.getTaint());
     	return super.nextSpanTransition(start, limit, kind);
     }
     
@@ -79,9 +73,6 @@ public CharSequence subSequence(int start, int end) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
-    	addTaint(queryStart);
-    	addTaint(queryEnd);
-    	addTaint(kind.getTaint());
     	return super.getSpans(queryStart, queryEnd, kind);
     }
 }

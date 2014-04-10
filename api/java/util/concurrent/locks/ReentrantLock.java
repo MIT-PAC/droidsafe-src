@@ -38,7 +38,11 @@ public ReentrantLock() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.127 -0500", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "351877AD8EA12CDBB8C7B872FE29D59C")
     
 public ReentrantLock(boolean fair) {
-        sync = fair ? new FairSync() : new NonfairSync();
+//        sync = fair ? new FairSync() : new NonfairSync();
+        
+        sync = new NonfairSync();
+        addTaint(fair);
+        sync.addTaint(fair);
     }
 
     /**
@@ -60,7 +64,7 @@ public ReentrantLock(boolean fair) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.129 -0500", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "A5139769638ADB3A94F8F9B0BCDCD0D7")
     
 public void lock() {
-        sync.lock();
+//        sync.lock();
     }
 
     /**
@@ -114,7 +118,7 @@ public void lock() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.131 -0500", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "99377CF76908D3005FAA9EC94629A986")
     
 public void lockInterruptibly() throws InterruptedException {
-        sync.acquireInterruptibly(1);
+//        sync.acquireInterruptibly(1);
     }
 
     /**
@@ -148,7 +152,8 @@ public void lockInterruptibly() throws InterruptedException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.134 -0500", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "97D786FCA0BEDED2F0E4356B5AB95F67")
     
 public boolean tryLock() {
-        return sync.nonfairTryAcquire(1);
+//        return sync.nonfairTryAcquire(1);
+        return getTaintBoolean();
     }
 
     /**
@@ -227,7 +232,8 @@ public boolean tryLock() {
     
 public boolean tryLock(long timeout, TimeUnit unit)
             throws InterruptedException {
-        return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+//        return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+        return toTaintBoolean(getTaintInt() + timeout + unit.getTaintInt());
     }
 
     /**
@@ -246,7 +252,7 @@ public boolean tryLock(long timeout, TimeUnit unit)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.138 -0500", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "B39A8E8B3E8EC93EC8CE2E174E9F2264")
     
 public void unlock() {
-        sync.release(1);
+//        sync.release(1);
     }
 
     /**
@@ -412,7 +418,8 @@ public boolean isLocked() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.150 -0500", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "FD5B86C0AAA17846C7B1961516E570A6")
     
 public final boolean isFair() {
-        return sync instanceof FairSync;
+        //return sync instanceof FairSync;
+        return getTaintBoolean();
     }
 
     /**
@@ -630,7 +637,7 @@ abstract void lock();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.079 -0500", hash_original_method = "D19DB0AA686FDE0FA905238F42C3F88E", hash_generated_method = "B7883604D2C795D13E82979DBE62A2DC")
         
 final boolean nonfairTryAcquire(int acquires) {
-            final Thread current = Thread.currentThread();
+            /*final Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
                 if (compareAndSetState(0, acquires)) {
@@ -645,13 +652,14 @@ final boolean nonfairTryAcquire(int acquires) {
                 setState(nextc);
                 return true;
             }
-            return false;
+            return false;*/
+            return toTaintBoolean(acquires + getTaintInt());
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.082 -0500", hash_original_method = "F58D783FAFD21E630011410A68B89B8B", hash_generated_method = "3E82D59643E85E9651F99240EFB1CE2D")
         
 protected final boolean tryRelease(int releases) {
-            int c = getState() - releases;
+/*            int c = getState() - releases;
             if (Thread.currentThread() != getExclusiveOwnerThread())
                 throw new IllegalMonitorStateException();
             boolean free = false;
@@ -660,7 +668,9 @@ protected final boolean tryRelease(int releases) {
                 setExclusiveOwnerThread(null);
             }
             setState(c);
-            return free;
+            return free;*/
+
+            return toTaintBoolean(releases + getTaintInt());
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.084 -0500", hash_original_method = "A843CC28FFAE9A089B89A0058BA2B9D5", hash_generated_method = "F9F3075EA01C68039167225BB13CE9C6")
@@ -668,7 +678,8 @@ protected final boolean tryRelease(int releases) {
 protected final boolean isHeldExclusively() {
             // While we must in general read state before owner,
             // we don't need to do so to check if current thread is owner
-            return getExclusiveOwnerThread() == Thread.currentThread();
+            //return getExclusiveOwnerThread() == Thread.currentThread();
+            return getTaintBoolean();
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.087 -0500", hash_original_method = "093F0D0E6A279CA43864791B6FD65040", hash_generated_method = "2CCC1BFDC1E662866A1BCF57D99E767B")
@@ -742,16 +753,17 @@ private void readObject(java.io.ObjectInputStream s)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.106 -0500", hash_original_method = "250EC96D0AD0D747189CAF2CF367FDFE", hash_generated_method = "B345FD567880571D3A71FD5885973500")
         
 final void lock() {
-            if (compareAndSetState(0, 1))
+           /* if (compareAndSetState(0, 1))
                 setExclusiveOwnerThread(Thread.currentThread());
             else
-                acquire(1);
+                acquire(1);*/
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.108 -0500", hash_original_method = "4FB92A369E0871387D4F8186DCD16A26", hash_generated_method = "A965948D429CC064E5AF354EE90E23A7")
         
 protected final boolean tryAcquire(int acquires) {
-            return nonfairTryAcquire(acquires);
+            //return nonfairTryAcquire(acquires);
+            return toTaintBoolean(acquires + getTaintInt());
         }
     }
     
@@ -773,7 +785,7 @@ protected final boolean tryAcquire(int acquires) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.116 -0500", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "DE2F5634D2D003CE0C5600B9574D43C7")
         
 final void lock() {
-            acquire(1);
+//            acquire(1);
         }
 
         /**
@@ -783,7 +795,7 @@ final void lock() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.119 -0500", hash_original_method = "81B34FC5A1F152836CFB423B4391D12C", hash_generated_method = "85AACD2AC5C1AA7D10076D3A0C9C39C7")
         
 protected final boolean tryAcquire(int acquires) {
-            final Thread current = Thread.currentThread();
+           /* final Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
                 if (!hasQueuedPredecessors() &&
@@ -799,7 +811,8 @@ protected final boolean tryAcquire(int acquires) {
                 setState(nextc);
                 return true;
             }
-            return false;
+            return false;*/
+            return toTaintBoolean(acquires + getTaintInt());
         }
     }
 
@@ -816,10 +829,11 @@ protected final boolean tryAcquire(int acquires) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.172 -0500", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "548B061ACBA6E1F017C0D4DB8D3F0A12")
     
 public String toString() {
-        Thread o = sync.getOwner();
+       /* Thread o = sync.getOwner();
         return super.toString() + ((o == null) ?
                                    "[Unlocked]" :
-                                   "[Locked by thread " + o.getName() + "]");
+                                   "[Locked by thread " + o.getName() + "]");*/
+        return new String(taint);
     }
 }
 

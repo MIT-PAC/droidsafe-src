@@ -4,15 +4,22 @@ package org.apache.harmony.security.utils;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
+import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.security.Principal;
+import java.security.PublicKey;
 import java.security.Signature;
+import java.security.SignatureException;
 import java.security.cert.Certificate;
+import java.security.cert.CertificateEncodingException;
+import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.Collection;
@@ -48,7 +55,14 @@ public class JarUtils {
 public static Certificate[] verifySignature(InputStream signature, InputStream
             signatureBlock) throws IOException, GeneralSecurityException {
 
-        BerInputStream bis = new BerInputStream(signatureBlock);
+        Certificate[] certs = new Certificate[1];
+        
+        certs[0] = new org.apache.harmony.security.provider.cert.X509CertImpl(signature);
+        certs[0].addTaint(signatureBlock.getTaint());
+        
+        return certs;
+        
+      /*  BerInputStream bis = new BerInputStream(signatureBlock);
         ContentInfo info = (ContentInfo)ContentInfo.ASN1.decode(bis);
         SignedData signedData = info.getSignedData();
         if (signedData == null) {
@@ -154,7 +168,7 @@ public static Certificate[] verifySignature(InputStream signature, InputStream
             throw new SecurityException("Incorrect signature");
         }
 
-        return createChain(certs[issuerSertIndex], certs);
+        return createChain(certs[issuerSertIndex], certs);*/
     }
 
     @DSComment("Private Method")
@@ -210,6 +224,59 @@ private static X509Certificate findCert(Principal issuer, X509Certificate[] cand
     public JarUtils ()
     {
         //Synthesized constructor
+    }
+    
+    private static class DummyCertificate extends Certificate {
+
+        protected DummyCertificate(String type) {
+            super(type);
+            // TODO Auto-generated constructor stub
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public byte[] getEncoded() throws CertificateEncodingException {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public void verify(PublicKey key) throws CertificateException,
+                NoSuchAlgorithmException, InvalidKeyException,
+                NoSuchProviderException, SignatureException {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.490 -0500", hash_original_method = "206D0A21D5BAE0F83A1719C1D14A7E35", hash_generated_method = "D17B985B54E602C77696D4D138B8890E")
+        public void verify(PublicKey key, String sigProvider)
+                throws CertificateException, NoSuchAlgorithmException,
+                InvalidKeyException, NoSuchProviderException,
+                SignatureException {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public String toString() {
+            // TODO Auto-generated method stub
+            return new String(taint);
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.495 -0500", hash_original_method = "F2C717FDFBF8A1EA046A033A3AA9C5CC", hash_generated_method = "D544FA3197F301F074C9140DD12C3EA0")
+        public PublicKey getPublicKey() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+        
     }
 }
 

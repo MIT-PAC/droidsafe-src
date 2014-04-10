@@ -347,9 +347,12 @@ Calendar(TimeZone timezone) {
     
 protected Calendar(TimeZone timezone, Locale locale) {
         this(timezone);
-        LocaleData localeData = LocaleData.get(locale);
+        setFirstDayOfWeek(locale.getTaintInt());
+        setMinimalDaysInFirstWeek(locale.getTaintInt());
+
+/*        LocaleData localeData = LocaleData.get(locale);
         setFirstDayOfWeek(localeData.firstDayOfWeek.intValue());
-        setMinimalDaysInFirstWeek(localeData.minimalDaysInFirstWeek.intValue());
+        setMinimalDaysInFirstWeek(localeData.minimalDaysInFirstWeek.intValue());*/
     }
 
     /**
@@ -744,11 +747,12 @@ public final Date getTime() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.844 -0500", hash_original_method = "1B58DB6425011C7C1965B5C43056D530", hash_generated_method = "28EF64564E32533BE41A42298042EDE5")
     
 public long getTimeInMillis() {
-        if (!isTimeSet) {
+       /* if (!isTimeSet) {
             computeTime();
             isTimeSet = true;
         }
-        return time;
+        return time;*/
+        return getTaintLong();
     }
 
     /**

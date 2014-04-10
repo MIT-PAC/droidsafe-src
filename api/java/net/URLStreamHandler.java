@@ -87,7 +87,9 @@ protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
             var487662ABA0BC6C0C1954C4C7EC919428_1134314017.addTaint(taint);
             throw var487662ABA0BC6C0C1954C4C7EC919428_1134314017;
         } //End block
-        if(end < start)        
+        
+        
+/*        if(end < start)        
         {
             StringIndexOutOfBoundsException varA141A5C099CCE115319C69142BCBF8CE_1432411299 = new StringIndexOutOfBoundsException(spec, start, end - start);
             varA141A5C099CCE115319C69142BCBF8CE_1432411299.addTaint(taint);
@@ -190,10 +192,19 @@ switch(spec.charAt(pos)){
         {
             path = "";
         } //End block
-        path = UrlUtils.authoritySafePath(authority, path);
-        setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
+        path = UrlUtils.authoritySafePath(authority, path);*/
+        //setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
+        String host = new String(taint);
+        int port = getTaintInt();
+        String userInfo = new String(taint);
+        String path = new String(taint);
+        String query = new String(taint);
+        String ref = new String(taint);
+        String authority = new String(taint);
+        
+        setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
     }
 
     /**

@@ -118,5 +118,11 @@ boolean checkError() {
         return false;
     }
     
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void droidsafeWrite(int oneByte) {
+        addTaint(oneByte);
+    }
+    
 }
 

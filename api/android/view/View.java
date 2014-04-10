@@ -74,7 +74,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return (value < -NONZERO_EPSILON || value > NONZERO_EPSILON);
     }
 		*/
-		return false;
+		return toTaintBoolean(value);
 	}
     
     protected static boolean isLayoutDirectionRtl(Locale locale){
@@ -85,7 +85,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 LocaleUtil.getLayoutDirectionFromLocale(locale));
     }
 		*/
-		return false;
+		return locale.getTaintBoolean();
 	}
     
     @DSComment("Private Method")
@@ -119,7 +119,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return output;
     }
 		*/
-		return "";
+        String str = new String();
+        str.addTaint(flags);
+		return str;
 	}
     
     @DSComment("Private Method")
@@ -127,7 +129,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     private static String printPrivateFlags(int privateFlags){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return "";
+        String str = new String();
+        str.addTaint(privateFlags);
+		return str;
 	}
     
     protected static int[] mergeDrawableStates(int[] baseState, int[] additionalState){
@@ -143,7 +147,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return baseState;
     }
 		*/
-		return new int[1];
+        int[] ret = new int[1];
+        ret[0] = (baseState[0] + additionalState[0]);
+		return ret;
 	}
     
     protected static String debugIndent(int depth){
@@ -157,29 +163,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return spaces.toString();
     }
 		*/
-		return "";
+        String str = new String();
+        str.addTaint(depth);
+		return str;
 	}
     
     public static int combineMeasuredStates(int curState, int newState){
 		// Original method
-		/*
-		{
         return curState | newState;
-    }
-		*/
-		return 0;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public static int resolveSize(int size, int measureSpec){
 		// Original method
-		/*
-		{
         return resolveSizeAndState(size, measureSpec, 0) & MEASURED_SIZE_MASK;
-    }
-		*/
-		return 0;
 	}
     
     @DSComment("Normal GUI")
@@ -209,7 +207,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return result | (childMeasuredState&MEASURED_STATE_MASK);
     }
 		*/
-		return 0;
+		return (size + measureSpec + childMeasuredState);
 	}
     
     @DSComment("Normal GUI")
@@ -233,15 +231,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return result;
     }
 		*/
-		return 0;
+		return (size + measureSpec) ;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public static View inflate(Context context, int resource, ViewGroup root){
 		// Original method
+        /*
         LayoutInflater factory = LayoutInflater.from(context);
         return factory.inflate(resource, root);
+        */
+        View v = new View();
+        v.mContext = context;
+        v.addTaint(resource);
+        v.mParent = root;
+        return v;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:36.965 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
@@ -1463,7 +1468,7 @@ public static final int LAYOUT_DIRECTION_INHERIT = 0;
     int mViewFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.492 -0500", hash_original_field = "814413531F598274EEECF8BE645FBF8D", hash_generated_field = "814413531F598274EEECF8BE645FBF8D")
 
-    TransformationInfo mTransformationInfo;
+    TransformationInfo mTransformationInfo; 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.494 -0500", hash_original_field = "6984E5F9EA6C46A4DE1DC2016BB38A0F", hash_generated_field = "62AEC70730E07CC33ABF33611E56E0C9")
 
     private boolean mLastIsOpaque;
@@ -1641,6 +1646,9 @@ public static final int LAYOUT_DIRECTION_INHERIT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.650 -0500", hash_original_field = "13469CC6FA3BEBB2A9BF70A4D43D1327", hash_generated_field = "4F21705D0823B901E43594B264DCB237")
 
     private int mVerticalScrollbarPosition;
+
+    private Object dsTransformInfo = new Object();
+    
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.668 -0500", hash_original_field = "E5A07826446E84312680E03AD4CB174D", hash_generated_field = "76D9A2089F38CDD618BD49C87D710C3C")
 
     @ViewDebug.ExportedProperty(category = "drawing", mapping = {
@@ -1692,6 +1700,7 @@ public static final int LAYOUT_DIRECTION_INHERIT = 0;
     @DSSafe(DSCat.SAFE_OTHERS)
     public View(Context context){
 		mContext = context;
+		mTransformationInfo = new TransformationInfo();
 		onSizeChanged(0,0,0,0);
         onDraw(new Canvas());
         mResources = context.getResources();
@@ -1764,6 +1773,13 @@ public View(Context context, AttributeSet attrs) {
     @DSVerified
     public View(droidsafe.helpers.DSOnlyType dontcare) {
        this(); 
+    }
+    
+    @Override
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public void addTaint(double t) {
+        super.addTaint(t);
+        mLeft = mRight = mTop = mBottom = mScrollX = mScrollY = getTaintInt();
     }
     
     protected void initializeFadingEdge(TypedArray a){
@@ -2823,13 +2839,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusLeftId(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mNextFocusLeftId;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
@@ -2837,11 +2847,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     public void setNextFocusLeftId(int nextFocusLeftId){
 		addTaint(nextFocusLeftId);
 		// Original method
-		/*
-		{
         mNextFocusLeftId = nextFocusLeftId;
-    }
-		*/
 		//Return nothing
 	}
     
@@ -2849,51 +2855,29 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusRightId(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mNextFocusRightId;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setNextFocusRightId(int nextFocusRightId){
-		addTaint(nextFocusRightId);
 		// Original method
-		/*
-		{
         mNextFocusRightId = nextFocusRightId;
-    }
-		*/
-		//Return nothing
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusUpId(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mNextFocusUpId;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setNextFocusUpId(int nextFocusUpId){
-		addTaint(nextFocusUpId);
 		// Original method
-		/*
-		{
         mNextFocusUpId = nextFocusUpId;
-    }
-		*/
 		//Return nothing
 	}
     
@@ -2901,51 +2885,29 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusDownId(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mNextFocusDownId;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setNextFocusDownId(int nextFocusDownId){
-		addTaint(nextFocusDownId);
 		// Original method
-		/*
-		{
         mNextFocusDownId = nextFocusDownId;
-    }
-		*/
-		//Return nothing
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusForwardId(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mNextFocusForwardId;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setNextFocusForwardId(int nextFocusForwardId){
-		addTaint(nextFocusForwardId);
 		// Original method
-		/*
-		{
         mNextFocusForwardId = nextFocusForwardId;
-    }
-		*/
 		//Return nothing
 	}
     
@@ -2977,8 +2939,6 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     protected boolean fitSystemWindows(Rect insets){
 		// Original method
-		/*
-		{
         if ((mViewFlags & FITS_SYSTEM_WINDOWS) == FITS_SYSTEM_WINDOWS) {
             mPaddingLeft = insets.left;
             mPaddingTop = insets.top;
@@ -2987,9 +2947,6 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
             requestLayout();
             return true;
         }
-        return false;
-    }
-		*/
 		return false;
 	}
     
@@ -2998,11 +2955,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFitsSystemWindows(boolean fitSystemWindows){
 		// Original method
-		/*
-		{
         setFlags(fitSystemWindows ? FITS_SYSTEM_WINDOWS : 0, FITS_SYSTEM_WINDOWS);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -3010,12 +2963,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSafe(DSCat.GUI)
     public boolean fitsSystemWindows(){
 		// Original method
-		/*
-		{
-        return (mViewFlags & FITS_SYSTEM_WINDOWS) == FITS_SYSTEM_WINDOWS;
-    }
-		*/
-		return false;
+        return toTaintBoolean((mViewFlags & FITS_SYSTEM_WINDOWS) + FITS_SYSTEM_WINDOWS);
 	}
     
     @DSComment("From safe class list")
@@ -3024,12 +2972,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=VISIBLE,to="VISIBLE"),@ViewDebug.IntToString(from=INVISIBLE,to="INVISIBLE"),@ViewDebug.IntToString(from=GONE,to="GONE")}) 
 	public int getVisibility(){
 		// Original method
-		/*
-		{
         return mViewFlags & VISIBILITY_MASK;
-    }
-		*/
-		return 0;
 	}
     
 	@DSComment("From safe class list")
@@ -3053,12 +2996,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @ViewDebug.ExportedProperty 
 	public boolean isEnabled(){
 		// Original method
-		/*
-		{
-        return (mViewFlags & ENABLED_MASK) == ENABLED;
-    }
-		*/
-		return false;
+        //return (mViewFlags & ENABLED_MASK) == ENABLED;
+        return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3075,6 +3014,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(enabled), DSUtils.UNKNOWN_INT);
 	}
     
     @DSComment("Normal GUI")
@@ -3091,6 +3031,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(focusable), DSUtils.UNKNOWN_INT);
 	}
     
     @DSComment("Normal GUI")
@@ -3106,6 +3047,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         }
     }
 		*/
+
+        setFlags(toTaintInt(focusableInTouchMode), DSUtils.UNKNOWN_INT);
 		//Return nothing
 	}
     
@@ -3120,6 +3063,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+
+        setFlags(toTaintInt(soundEffectsEnabled), DSUtils.UNKNOWN_INT);
 	}
     
     @DSComment("Normal GUI")
@@ -3132,7 +3077,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return SOUND_EFFECTS_ENABLED == (mViewFlags & SOUND_EFFECTS_ENABLED);
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3146,6 +3091,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+
+        setFlags(toTaintInt(hapticFeedbackEnabled), DSUtils.UNKNOWN_INT); 
 	}
     
     @DSComment("Normal GUI")
@@ -3158,7 +3105,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return HAPTIC_FEEDBACK_ENABLED == (mViewFlags & HAPTIC_FEEDBACK_ENABLED);
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3172,7 +3119,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return mViewFlags & LAYOUT_DIRECTION_MASK;
     }
 		*/
-		return 0;
+		return mViewFlags;
 	}
     
     @DSComment("Normal GUI")
@@ -3189,7 +3136,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         }
     }
 		*/
-		//Return nothing
+        //Return nothing
+        setFlags(layoutDirection, 0);
 	}
     
     @ViewDebug.ExportedProperty(category="layout",mapping={@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LTR,to="RESOLVED_DIRECTION_LTR"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_RTL,to="RESOLVED_DIRECTION_RTL")}) 
@@ -3202,7 +3150,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
                 LAYOUT_DIRECTION_RTL : LAYOUT_DIRECTION_LTR;
     }
 		*/
-		return 0;
+		return mPrivateFlags2;
 	}
     
     @ViewDebug.ExportedProperty(category="layout") 
@@ -3213,7 +3161,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
     }
 		*/
-		return false;
+        return toTaintBoolean(getResolvedLayoutDirection());
 	}
     
     @DSComment("Normal GUI")
@@ -3227,6 +3175,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(willNotDraw), 0); 
 	}
     
     @DSComment("Normal GUI")
@@ -3239,7 +3188,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & DRAW_MASK) == WILL_NOT_DRAW;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3253,6 +3202,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(willNotCacheDrawing), 0); 
 	}
     
     @DSComment("Normal GUI")
@@ -3265,7 +3215,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & WILL_NOT_CACHE_DRAWING) == WILL_NOT_CACHE_DRAWING;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3278,7 +3228,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & CLICKABLE) == CLICKABLE;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3292,6 +3242,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(clickable), 0); 
 	}
     
     @DSComment("Normal GUI")
@@ -3303,7 +3254,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & LONG_CLICKABLE) == LONG_CLICKABLE;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3317,6 +3268,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(longClickable), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3336,6 +3288,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
+
+        mPrivateFlags += PRESSED + toTaintInt(pressed);
 	}
 
     /**
@@ -3359,7 +3313,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mPrivateFlags & PRESSED) == PRESSED;
     }
 		*/
-		return false;
+		return toTaintBoolean(mPrivateFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3371,7 +3325,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mViewFlags & SAVE_DISABLED_MASK) != SAVE_DISABLED;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3385,6 +3339,7 @@ protected void dispatchSetPressed(boolean pressed) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(enabled), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3397,7 +3352,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mViewFlags & FILTER_TOUCHES_WHEN_OBSCURED) != 0;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3412,6 +3367,7 @@ protected void dispatchSetPressed(boolean pressed) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(enabled), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3423,7 +3379,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3437,6 +3393,7 @@ protected void dispatchSetPressed(boolean pressed) {
     }
 		*/
 		//Return nothing
+        setFlags(toTaintInt(enabled), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3449,7 +3406,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return FOCUSABLE == (mViewFlags & FOCUSABLE_MASK);
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSComment("Normal GUI")
@@ -3462,7 +3419,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return FOCUSABLE_IN_TOUCH_MODE == (mViewFlags & FOCUSABLE_IN_TOUCH_MODE);
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags);
 	}
     
     @DSVerified
@@ -3494,7 +3451,7 @@ protected void dispatchSetPressed(boolean pressed) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.008 -0500", hash_original_method = "3A7E0D4CA01222234C5493EC87211574", hash_generated_method = "FC584848E967C1F8159AB204C291F20A")
     
 public boolean dispatchUnhandledMove(View focused, int direction) {
-        return false;
+        return toTaintBoolean(focused.getTaintInt() + direction);
     }
     
     @DSComment("Package priviledge")
@@ -3504,7 +3461,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
         View newView = new View();
-        newView.addTaint(taint);
+        newView.addTaint(getTaint());
         newView.addTaint(root.getTaint());
         newView.addTaint(direction);
         return newView;
@@ -3759,20 +3716,13 @@ public void onFinishTemporaryDetach() {
     @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchKeyEventPreIme(KeyEvent event){
 		// Original method
-		/*
-		{
         return onKeyPreIme(event.getKeyCode(), event);
-    }
-		*/
-		return false;
 	}
     
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchKeyEvent(KeyEvent event){
 		// Original method
-		/*
-		{
         if (mInputEventConsistencyVerifier != null) {
             mInputEventConsistencyVerifier.onKeyEvent(event, 0);
         }
@@ -3789,21 +3739,13 @@ public void onFinishTemporaryDetach() {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
         }
         return false;
-    }
-		*/
-		return false;
 	}
     
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		// Original method
-		/*
-		{
         return onKeyShortcut(event.getKeyCode(), event);
-    }
-		*/
-		return false;
 	}
     
     @DSVerified
@@ -3856,22 +3798,17 @@ public void onFinishTemporaryDetach() {
         return true;
     }
 		*/
-		return false;
+		return toTaintBoolean(mViewFlags + event.getFlags());
 	}
     
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchTrackballEvent(MotionEvent event){
 		// Original method
-		/*
-		{
         if (mInputEventConsistencyVerifier != null) {
             mInputEventConsistencyVerifier.onTrackballEvent(event, 0);
         }
         return onTrackballEvent(event);
-    }
-		*/
-		return false;
 	}
     
     @DSComment("potential callback called inside method")
@@ -3886,8 +3823,6 @@ public void onFinishTemporaryDetach() {
     @DSBan(DSCat.PRIVATE_METHOD)
     private boolean dispatchGenericMotionEventInternal(MotionEvent event){
 		// Original method
-		/*
-		{
         ListenerInfo li = mListenerInfo;
         if (li != null && li.mOnGenericMotionListener != null
                 && (mViewFlags & ENABLED_MASK) == ENABLED
@@ -3901,15 +3836,10 @@ public void onFinishTemporaryDetach() {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
         }
         return false;
-    }
-		*/
-		return false;
 	}
     
     protected boolean dispatchHoverEvent(MotionEvent event){
 		// Original method
-		/*
-		{
         ListenerInfo li = mListenerInfo;
         if (li != null && li.mOnHoverListener != null
                 && (mViewFlags & ENABLED_MASK) == ENABLED
@@ -3917,9 +3847,6 @@ public void onFinishTemporaryDetach() {
             return true;
         }
         return onHoverEvent(event);
-    }
-		*/
-		return false;
 	}
 
     /**
@@ -3968,27 +3895,18 @@ protected boolean dispatchGenericFocusedEvent(MotionEvent event) {
     
     public final boolean dispatchPointerEvent(MotionEvent event){
 		// Original method
-		/*
-		{
         if (event.isTouchEvent()) {
             return dispatchTouchEvent(event);
         } else {
             return dispatchGenericMotionEvent(event);
         }
-    }
-		*/
-		return false;
 	}
     
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
     public void dispatchWindowFocusChanged(boolean hasFocus){
 		// Original method
-		/*
-		{
         onWindowFocusChanged(hasFocus);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -4062,11 +3980,7 @@ protected boolean dispatchGenericFocusedEvent(MotionEvent event) {
     @DSSpec(DSCat.TO_MODEL)
     public void dispatchDisplayHint(int hint){
 		// Original method
-		/*
-		{
         onDisplayHint(hint);
-    }
-		*/
 		//Return nothing
 	}
 
@@ -4303,7 +4217,8 @@ public boolean onKeyPreIme(int keyCode, KeyEvent event) {
         return result;
     }
 		*/
-		return false;
+		//return false;
+        return toTaintBoolean(mViewFlags + keyCode + event.getTaintInt());
 	}
 
     /**
@@ -4631,6 +4546,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
     }
 		*/
 		//Return nothing
+        onHoverChanged(hovered);
 	}
 
     /**
@@ -4871,13 +4787,8 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollX(int value){
-	    addTaint(value);
 		// Original method
-		/*
-		{
         scrollTo(value, mScrollY);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -4886,11 +4797,7 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollY(int value){
 		// Original method
-		/*
-		{
         scrollTo(mScrollX, value);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -4898,26 +4805,16 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getScrollX(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mScrollX;
-    }
-		*/
 	}
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getScrollY(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mScrollY;
-    }
-		*/
 	}
     
 	@DSComment("Normal GUI")
@@ -4926,12 +4823,7 @@ protected void dispatchDraw(Canvas canvas) {
     @ViewDebug.ExportedProperty(category="layout") 
 	public final int getWidth(){
 		// Original method
-		/*
-		{
         return mRight - mLeft;
-    }
-		*/
-		return 0;
 	}
     
 	@DSComment("Normal GUI")
@@ -4940,12 +4832,7 @@ protected void dispatchDraw(Canvas canvas) {
     @ViewDebug.ExportedProperty(category="layout") 
 	public final int getHeight(){
 		// Original method
-		/*
-		{
         return mBottom - mTop;
-    }
-		*/
-		return getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -4961,26 +4848,22 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        outRect.addTaint(mScrollX + mScrollY);
 	}
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredWidth(){
-		return getTaintInt();
+        return mMeasuredWidth;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredWidthAndState(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mMeasuredWidth;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
@@ -4988,25 +4871,15 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredHeight(){
 		// Original method
-		/*
-		{
         return mMeasuredHeight & MEASURED_SIZE_MASK;
-    }
-		*/
-		return 0;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredHeightAndState(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mMeasuredHeight;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
@@ -5014,14 +4887,9 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredState(){
 		// Original method
-		/*
-		{
         return (mMeasuredWidth&MEASURED_STATE_MASK)
                 | ((mMeasuredHeight>>MEASURED_HEIGHT_STATE_SHIFT)
                         & (MEASURED_STATE_MASK>>MEASURED_HEIGHT_STATE_SHIFT));
-    }
-		*/
-		return 0;
 	}
     
     @DSComment("Normal GUI")
@@ -5051,7 +4919,8 @@ protected void dispatchDraw(Canvas canvas) {
         return true;
     }
 		*/
-		return false;
+		//return false;
+        return mTransformationInfo.getTaintBoolean();
 	}
     
     @DSComment("Package priviledge")
@@ -5099,7 +4968,8 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//return null;
-        return Matrix.IDENTITY_MATRIX;
+        //return Matrix.IDENTITY_MATRIX;
+        return mTransformationInfo.matrix3D; 
 	}
     
     @DSComment("Normal GUI")
@@ -5124,6 +4994,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(distance);
 	}
     
     @DSComment("Normal GUI")
@@ -5136,7 +5007,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mRotation : 0;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5158,6 +5029,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(rotation);
 	}
     
     @DSComment("Normal GUI")
@@ -5170,7 +5042,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mRotationY : 0;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5192,6 +5064,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+		mTransformationInfo.addTaint(rotationY);
 	}
     
     @DSComment("Normal GUI")
@@ -5204,7 +5077,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mRotationX : 0;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5226,6 +5099,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(rotationX);
 	}
     
     @DSComment("Normal GUI")
@@ -5238,7 +5112,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mScaleX : 1;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5260,6 +5134,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(scaleX);
 	}
     
     @DSComment("Normal GUI")
@@ -5272,7 +5147,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mScaleY : 1;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5294,6 +5169,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+		mTransformationInfo.addTaint(scaleY);
 	}
     
     @DSComment("Normal GUI")
@@ -5306,7 +5182,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mPivotX : 0;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5329,6 +5205,8 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        
+        mTransformationInfo.addTaint(pivotX);
 	}
     
     @DSComment("Normal GUI")
@@ -5341,7 +5219,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mPivotY : 0;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5364,6 +5242,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(pivotY);
 	}
     
     @DSComment("Normal GUI")
@@ -5376,7 +5255,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mAlpha : 1;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
@@ -5398,6 +5277,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(alpha);
 	}
     
     @DSComment("Package priviledge")
@@ -5417,7 +5297,9 @@ protected void dispatchDraw(Canvas canvas) {
         return subclassHandlesAlpha;
     }
 		*/
-		return false;
+
+        mTransformationInfo.addTaint(alpha);
+		return mTransformationInfo.getTaintBoolean();
 	}
     
     @DSComment("Normal GUI")
@@ -5425,13 +5307,8 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getTop(){
-		return getTaintInt();
 		// Original method
-		/*
-		{
         return mTop;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
@@ -5440,6 +5317,7 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        mTop = top;
 	}
     
     @DSComment("Normal GUI")
@@ -5447,25 +5325,14 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getBottom(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mBottom;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean isDirty(){
 		// Original method
-		/*
-		{
-        return (mPrivateFlags & DIRTY_MASK) != 0;
-    }
-		*/
-		return false;
+        return toTaintBoolean(mPrivateFlags & DIRTY_MASK); 
 	}
     
     @DSComment("Normal GUI")
@@ -5474,6 +5341,8 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        mBottom = bottom;
+        addTaint(bottom);
 	}
     
     @DSComment("From safe class list")
@@ -5481,13 +5350,7 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getLeft(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mLeft;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
@@ -5496,6 +5359,8 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        mLeft = left;
+        addTaint(left);
 	}
     
     @DSComment("Normal GUI")
@@ -5503,13 +5368,7 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getRight(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mRight;
-    }
-		*/
 	}
     
     @DSComment("Normal GUI")
@@ -5518,6 +5377,8 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        mRight = right;
+        addTaint(right);
 	}
     
     @DSComment("Normal GUI")
@@ -5530,7 +5391,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mLeft + (mTransformationInfo != null ? mTransformationInfo.mTranslationX : 0);
     }
 		*/
-		return 0;
+		return (mLeft + mTransformationInfo.getTaintInt());
 	}
     
     @DSComment("Normal GUI")
@@ -5538,11 +5399,7 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setX(float x){
 		// Original method
-		/*
-		{
         setTranslationX(x - mLeft);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -5556,7 +5413,7 @@ protected void dispatchDraw(Canvas canvas) {
         return mTop + (mTransformationInfo != null ? mTransformationInfo.mTranslationY : 0);
     }
 		*/
-		return 0;
+        return (mTransformationInfo.getTaintInt() + mTop);
 	}
     
     @DSComment("Normal GUI")
@@ -5564,11 +5421,7 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setY(float y){
 		// Original method
-		/*
-		{
         setTranslationY(y - mTop);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -5582,12 +5435,13 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mTranslationX : 0;
     }
 		*/
-		return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setTranslationX(float translationX){
+        mTransformationInfo.addTaint(translationX);
 		// Original method
 		/*
 		{
@@ -5616,12 +5470,14 @@ protected void dispatchDraw(Canvas canvas) {
         return mTransformationInfo != null ? mTransformationInfo.mTranslationY : 0;
     }
 		*/
-		return 0;
+		//return 0;
+		return mTransformationInfo.getTaintInt();
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setTranslationY(float translationY){
+        mTransformationInfo.addTaint(translationY);
 		// Original method
 		/*
 		{
@@ -5641,6 +5497,7 @@ protected void dispatchDraw(Canvas canvas) {
 	}
     
     public void setFastTranslationX(float x){
+        mTransformationInfo.addTaint(x);
 		// Original method
 		/*
 		{
@@ -5654,6 +5511,7 @@ protected void dispatchDraw(Canvas canvas) {
 	}
     
     public void setFastTranslationY(float y){
+        mTransformationInfo.addTaint(y);
 		// Original method
 		/*
 		{
@@ -5667,6 +5525,7 @@ protected void dispatchDraw(Canvas canvas) {
 	}
     
     public void setFastX(float x){
+        mTransformationInfo.addTaint(x + mLeft);
 		// Original method
 		/*
 		{
@@ -5680,6 +5539,7 @@ protected void dispatchDraw(Canvas canvas) {
 	}
     
     public void setFastY(float y){
+        mTransformationInfo.addTaint(y + mTop);
 		// Original method
 		/*
 		{
@@ -5703,6 +5563,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(x);
 	}
     
     public void setFastScaleY(float y){
@@ -5716,6 +5577,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(y);
 	}
     
     public void setFastAlpha(float alpha){
@@ -5727,6 +5589,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(alpha);
 	}
     
     public void setFastRotationY(float y){
@@ -5740,6 +5603,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mTransformationInfo.addTaint(y);
 	}
     
     @DSComment("Normal GUI")
@@ -5763,6 +5627,8 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        outRect.addTaint(mLeft + mTop + mRight + mBottom + 
+                        mTransformationInfo.getTaintInt());
 	}
     
     @DSComment("Package priviledge")
@@ -5775,7 +5641,7 @@ protected void dispatchDraw(Canvas canvas) {
                 && localY >= 0 && localY < (mBottom - mTop);
     }
 		*/
-		return false;
+		return toTaintBoolean(localX + localY + mRight + mLeft + mBottom + mTop);
 	}
     
     @DSComment("Private Method")
@@ -5788,7 +5654,7 @@ protected void dispatchDraw(Canvas canvas) {
                 localY < ((mBottom - mTop) + slop);
     }
 		*/
-		return false;
+		return toTaintBoolean(localX + localY + mRight + mLeft + mBottom + mTop + slop);
 	}
     
     @DSComment("Normal GUI")
@@ -5801,6 +5667,7 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        r.addTaint(getTaintInt() + mRight + mLeft + mBottom + mTop);
 	}
     
     @DSComment("Normal GUI")
@@ -5822,7 +5689,10 @@ protected void dispatchDraw(Canvas canvas) {
         return false;
     }
 		*/
-		return false;
+        r.addTaint(globalOffset.getTaintInt() + getTaintInt() +
+                mRight + mLeft + mBottom + mTop + mScrollX + mScrollY);
+        
+		return r.getTaintBoolean();
 	}
     
     @DSComment("Normal GUI")
@@ -5834,7 +5704,10 @@ protected void dispatchDraw(Canvas canvas) {
         return getGlobalVisibleRect(r, null);
     }
 		*/
-		return false;
+        r.addTaint(mRight + mLeft + mBottom + mTop + mScrollX + mScrollY + 
+                getTaintInt());
+        
+		return r.getTaintBoolean();
 	}
     
     @DSComment("Normal GUI")
@@ -5851,7 +5724,10 @@ protected void dispatchDraw(Canvas canvas) {
         return false;
     }
 		*/
-		return false;
+        r.addTaint(mRight + mLeft + mBottom + mTop + mScrollX + mScrollY + 
+                getTaintInt());
+        
+		return r.getTaintBoolean();
 	}
     
     @DSComment("Normal GUI")
@@ -5860,6 +5736,7 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        setX(offset);
 	}
     
     @DSComment("Normal GUI")
@@ -5868,6 +5745,7 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        setY(offset);
 	}
 
     /**
@@ -5931,17 +5809,16 @@ protected void dispatchDraw(Canvas canvas) {
     }
 		*/
 		//Return nothing
+        mScrollX = x;
+        mScrollY = y;
+        onScrollChanged(x, y, x, y);
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void scrollBy(int x, int y){
 		// Original method
-		/*
-		{
         scrollTo(mScrollX + x, mScrollY + y);
-    }
-		*/
 		//Return nothing
 	}
     
@@ -6007,6 +5884,7 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        addTaint(dirty.getTaint());
 	}
     
     @DSComment("Normal GUI")
@@ -6015,6 +5893,7 @@ protected void dispatchDraw(Canvas canvas) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+        addTaint(l + t + r + b);
 	}
 
     /**
@@ -6037,6 +5916,7 @@ public void invalidate() {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+	    addTaint(invalidateCache);
 	}
     
     public void fastInvalidate(){
@@ -6202,7 +6082,7 @@ public void invalidate() {
         {
             //Synthesized constructor
         }
-
+        
     }
     
     static class ListenerInfo {
@@ -7891,11 +7771,7 @@ protected void onDraw(Canvas canvas) {
     
     protected void resetResolvedLayoutDirection(){
 		// Original method
-		/*
-		{
         mPrivateFlags2 &= ~LAYOUT_DIRECTION_RESOLVED;
-    }
-		*/
 		//Return nothing
 	}
     
@@ -9569,9 +9445,11 @@ public void setTag(final Object tag) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.881 -0500", hash_original_method = "B7CE3104FF9ED0677BFFACD05F948960", hash_generated_method = "345A2F414C44CB96C8C1996F7916E049")
     
 public void requestLayout() {
+        /*
         if (ViewDebug.TRACE_HIERARCHY) {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.REQUEST_LAYOUT);
         }
+        */
 
         mPrivateFlags |= FORCE_LAYOUT;
         mPrivateFlags |= INVALIDATED;
@@ -10015,7 +9893,7 @@ public boolean onDragEvent(DragEvent event) {
         return (mPrivateFlags2 & DRAG_CAN_ACCEPT) != 0;
     }
 		*/
-		return false;
+		return toTaintBoolean(mPrivateFlags2);
 	}
 
     /**

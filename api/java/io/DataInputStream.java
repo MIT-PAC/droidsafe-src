@@ -145,7 +145,8 @@ public final void readFully(byte[] dst) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.238 -0500", hash_original_method = "DF35152FE50D45334A46E811DED0CD82", hash_generated_method = "63C911CF15A622193902D9D738EE61C2")
     
 public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
-        Streams.readFully(in, dst, offset, byteCount);
+        //Streams.readFully(in, dst, offset, byteCount);
+        in.read(dst, offset, byteCount);
     }
 
     @DSComment("Activity on IO class")
@@ -153,15 +154,19 @@ public final void readFully(byte[] dst, int offset, int byteCount) throws IOExce
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.241 -0500", hash_original_method = "9458C501A59EB6F89A7F70AB314A9403", hash_generated_method = "9112DA648D62C2A937D7C558FC5866FC")
     
 public final int readInt() throws IOException {
-        Streams.readFully(in, scratch, 0, SizeOf.INT);
-        return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
+        byte[] tmp = new byte[1];
+        readFully(tmp, 0, 0);
+        return tmp[0];
+        //return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
+        /*Streams.readFully(in, scratch, 0, SizeOf.INT);
+        return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);*/
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.244 -0500", hash_original_method = "65FD20FE420262B12F0063D27F62A405", hash_generated_method = "84589DFEC3B64DF8C1541613CF612599")
     
 @Deprecated
     public final String readLine() throws IOException {
-        StringBuilder line = new StringBuilder(80); // Typical line length
+        /*StringBuilder line = new StringBuilder(80); // Typical line length
         boolean foundTerminator = false;
         while (true) {
             int nextByte = in.read();
@@ -177,7 +182,7 @@ public final int readInt() throws IOException {
                         return line.toString();
                     }
                     foundTerminator = true;
-                    /* Have to be able to peek ahead one byte */
+                     Have to be able to peek ahead one byte 
                     if (!(in.getClass() == PushbackInputStream.class)) {
                         in = new PushbackInputStream(in);
                     }
@@ -191,7 +196,8 @@ public final int readInt() throws IOException {
                     }
                     line.append((char) nextByte);
             }
-        }
+        }*/
+        return new String(in.taint);
     }
 
     @DSComment("Activity on IO class")
@@ -199,15 +205,17 @@ public final int readInt() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.246 -0500", hash_original_method = "326E32602D90F4299C77023F7351E4DA", hash_generated_method = "F5A3C7CEE92A45C5691BAA619958DC92")
     
 public final long readLong() throws IOException {
-        Streams.readFully(in, scratch, 0, SizeOf.LONG);
-        return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
+       /* Streams.readFully(in, scratch, 0, SizeOf.LONG);
+        return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);*/
+        return readInt();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.249 -0500", hash_original_method = "F2D7E122731E959B896496A8F1F12120", hash_generated_method = "EB42EA6D36573C0AD80D7A6AD7292C79")
     
 public final short readShort() throws IOException {
-        Streams.readFully(in, scratch, 0, SizeOf.SHORT);
-        return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
+        /*Streams.readFully(in, scratch, 0, SizeOf.SHORT);
+        return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);*/
+        return (short)readInt();
     }
 
     @DSComment("Activity on IO class")

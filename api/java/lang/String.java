@@ -381,6 +381,12 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
     
     
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public String(DSTaintObject t) {
+        this();
+        addTaint(t);
+    }
+    
 
     /*
      * Private constructor used for JIT optimization.

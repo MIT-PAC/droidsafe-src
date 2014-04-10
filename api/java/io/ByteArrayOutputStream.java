@@ -235,6 +235,9 @@ public String toString(String enc) throws UnsupportedEncodingException {
             expand(1);
         }
         buf[count++] = (byte) oneByte;
+        
+        //propagate it to the base class OutputStrea
+        addTaint(oneByte);
     }
 
     /**

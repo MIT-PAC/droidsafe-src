@@ -45,12 +45,13 @@ public class FileInputStream extends InputStream implements Closeable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.110 -0500", hash_original_method = "1BD49D518996D312C80F5CC2297619D7", hash_generated_method = "B658BDC677171B3FEE9047C0F1943C54")
     
 public FileInputStream(File file) throws FileNotFoundException {
-        if (file == null) {
+   /*     if (file == null) {
             throw new NullPointerException("file == null");
         }
         this.fd = IoBridge.open(file.getAbsolutePath(), O_RDONLY);
         this.shouldClose = true;
-        guard.open("close");
+        guard.open("close");*/
+        addTaint(file.getTaint());
     }
 
     /**
@@ -69,6 +70,7 @@ public FileInputStream(FileDescriptor fd) {
         if (fd == null) {
             throw new NullPointerException("fd == null");
         }
+        addTaint(fd.getTaint());
         this.fd = fd;
         this.shouldClose = false;
         // Note that we do not call guard.open here because the
@@ -96,7 +98,8 @@ public FileInputStream(String path) throws FileNotFoundException {
     
 @Override
     public int available() throws IOException {
-        return IoBridge.available(fd);
+        //return IoBridge.available(fd);
+        return droidsafeAvailable();
     }
 
     @DSComment("File Input Stream")
@@ -105,7 +108,7 @@ public FileInputStream(String path) throws FileNotFoundException {
     
 @Override
     public void close() throws IOException {
-        guard.close();
+        /*guard.close();
         synchronized (this) {
             if (channel != null) {
                 channel.close();
@@ -117,7 +120,7 @@ public FileInputStream(String path) throws FileNotFoundException {
                 // we need to explicitly stop using an unowned fd (http://b/4361076).
                 fd = new FileDescriptor();
             }
-        }
+        }*/
     }
 
     /**
@@ -130,7 +133,7 @@ public FileInputStream(String path) throws FileNotFoundException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.124 -0500", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "D1DCB3056D2414B4C27AA873251B546E")
     
 @Override protected void finalize() throws IOException {
-        try {
+       /* try {
             if (guard != null) {
                 guard.warnIfOpen();
             }
@@ -143,7 +146,7 @@ public FileInputStream(String path) throws FileNotFoundException {
                 // remove the 'throws Throwable' clause.
                 throw new AssertionError(t);
             }
-        }
+        }*/
     }
 
     /**
@@ -181,7 +184,8 @@ public final FileDescriptor getFD() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.132 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
     
 @Override public int read() throws IOException {
-        return Streams.readSingleByte(this);
+        //return Streams.readSingleByte(this);
+        return droidsafeRead();
     }
 
     @DSComment("Activity on IO class")
@@ -189,7 +193,8 @@ public final FileDescriptor getFD() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.135 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "E85E2815A9A684302F2788213CC7C71B")
     
 @Override public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
-        return IoBridge.read(fd, buffer, byteOffset, byteCount);
+        //return IoBridge.read(fd, buffer, byteOffset, byteCount);
+        return super.read(buffer, byteOffset, byteCount);
     }
 
     @DSComment("File Input Stream")
@@ -198,7 +203,7 @@ public final FileDescriptor getFD() throws IOException {
     
 @Override
     public long skip(long byteCount) throws IOException {
-        if (byteCount < 0) {
+        /*if (byteCount < 0) {
             throw new IOException("byteCount < 0: " + byteCount);
         }
         try {
@@ -212,7 +217,9 @@ public final FileDescriptor getFD() throws IOException {
                 return super.skip(byteCount);
             }
             throw errnoException.rethrowAsIOException();
-        }
+        }*/
+        addTaint(byteCount);
+        return getTaintLong();
     }
     
 }

@@ -131,10 +131,10 @@ private void resetSession() {
 private void setLocale(Locale locale) {
         mCurrentLocale = locale;
 
-        resetSession();
+/*        resetSession();
 
         // Change SpellParsers' wordIterator locale
-        mWordIterator = new WordIterator(locale);
+        mWordIterator = new WordIterator(locale);*/
 
         // This class is the listener for locale change: warn other locale-aware objects
         mTextView.onLocaleChanged();

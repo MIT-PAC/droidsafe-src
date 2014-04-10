@@ -40,7 +40,7 @@ public FilterOutputStream(OutputStream out) {
     
 @Override
     public void close() throws IOException {
-        Throwable thrown = null;
+       /* Throwable thrown = null;
         try {
             flush();
         } catch (Throwable e) {
@@ -57,7 +57,7 @@ public FilterOutputStream(OutputStream out) {
 
         if (thrown != null) {
             SneakyThrow.sneakyThrow(thrown);
-        }
+        }*/
     }
 
     /**
@@ -120,7 +120,8 @@ public FilterOutputStream(OutputStream out) {
     
 @Override
     public void write(int oneByte) throws IOException {
-        out.write(oneByte);
+        //out.write(oneByte);
+        out.droidsafeWrite(oneByte);
     }
     
 }

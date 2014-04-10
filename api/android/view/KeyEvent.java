@@ -2153,7 +2153,7 @@ private KeyEvent(Parcel in) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.144 -0500", hash_original_method = "6B64621545DE4A3A123816F2DEDFC8C2", hash_generated_method = "311EF9D923328349C899A3F659837300")
     
 public final void recycle() {
-        if (mRecycled) {
+    /*    if (mRecycled) {
             throw new RuntimeException(toString() + " recycled twice!");
         }
         mRecycled = true;
@@ -2165,7 +2165,7 @@ public final void recycle() {
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
             }
-        }
+        }*/
     }
 
     /** @hide */
