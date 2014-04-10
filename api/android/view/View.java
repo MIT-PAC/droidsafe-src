@@ -7227,14 +7227,8 @@ AttachInfo(IWindowSession session, IWindow window,
     }
 		*/
     	addTaint(action.getTaint());
-    	Handler handler;
-        AttachInfo attachInfo = mAttachInfo;
-        if (attachInfo != null) {
-            handler = attachInfo.mHandler;
-            handler.post(action);
-        } else {
-            ViewRootImpl.getRunQueue().post(action);
-        }
+        //call action directly
+        action.run();
         return getTaintBoolean();
 	}
 
@@ -7272,6 +7266,8 @@ AttachInfo(IWindowSession session, IWindow window,
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean postDelayed(Runnable action, long delayMillis){
+        //call the action directly
+        action.run();
 		// Original method
 		/*
 		{
