@@ -811,7 +811,7 @@ public class SparkPTA extends PTABridge {
                 //already in the call graph, just print it out
                 if (calleeSet.contains(edge.tgt()))
                     continue;
-                printStream.printf("%s %s\n", indent, edge.tgt().toString());
+                printStream.printf("%s %s\n", subindent, edge.tgt().toString());
                 calleeSet.add(edge.tgt());
             }
         }

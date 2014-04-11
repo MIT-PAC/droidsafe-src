@@ -71,14 +71,12 @@ public class TestPTA  {
                                
             if (!method.isConcrete())
                 continue;
-            
             if (!method.hasActiveBody()) {
                 method.retrieveActiveBody();
             }
             
   
-            
-            if (!"<java.lang.String: void <init>(java.lang.AbstractStringBuilder)>".equals(method.getSignature()))
+            if (!"<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>".equals(method.getSignature()))
                 continue;
             
             System.out.println(momc);
