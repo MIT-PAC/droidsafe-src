@@ -296,10 +296,12 @@ public final CoderResult decode(ByteBuffer in, CharBuffer out,
                 // unexpected exception
                 throw new CoderMalfunctionError(ex);
             }
+            
+            return result;
 
-            /*
+    /*        
              * result handling
-             */
+             
             if (result.isUnderflow()) {
                 int remaining = in.remaining();
                 status = endOfInput ? END : ONGOING;
@@ -327,7 +329,7 @@ public final CoderResult decode(ByteBuffer in, CharBuffer out,
                 if (action != CodingErrorAction.IGNORE)
                     return result;
             }
-            in.position(in.position() + result.length());
+            in.position(in.position() + result.length());*/
         }
     }
 
@@ -368,6 +370,18 @@ public final CoderResult decode(ByteBuffer in, CharBuffer out,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.883 -0500", hash_original_method = "9680F981801283FFB7CE500C1C691EF0", hash_generated_method = "45E10C8598041348E587BA19E1D99A75")
     
 protected abstract CoderResult decodeLoop(ByteBuffer in, CharBuffer out);
+    
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public CoderResult droidsafeDecodeLoop(ByteBuffer in, CharBuffer out) {
+        out.append(in.getChar());
+        
+        CoderResult result = new CoderResult(DSOnlyType.DONTCARE);
+        
+        result.addTaint(getTaintInt() + out.get());
+        
+        return result;
+        
+    }
 
     /**
      * Gets the charset detected by this decoder; this method is optional.
@@ -433,14 +447,18 @@ public Charset detectedCharset() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.888 -0500", hash_original_method = "5C3493C7F863D5F0BA88F45F364D1985", hash_generated_method = "0C1B7548141C5F33F7CCB8B03163DF20")
     
 public final CoderResult flush(CharBuffer out) {
-        if (status != END && status != INIT) {
+        /*if (status != END && status != INIT) {
             throw new IllegalStateException();
         }
         CoderResult result = implFlush(out);
         if (result == CoderResult.UNDERFLOW) {
             status = FLUSH;
         }
-        return result;
+        return result;*/
+        out.addTaint(taint);
+        CoderResult ret = new CoderResult(DSOnlyType.DONTCARE);
+        ret.addTaint(out.getTaint());
+        return ret;
     }
 
     /**

@@ -4982,11 +4982,11 @@ private void invalidateCursor() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.011 -0500", hash_original_method = "7C61928A88071E487AF3987FA1C70EFA", hash_generated_method = "4139BB0FADBE2F8969A16FE36EA86B1B")
     
 private void invalidateCursor(int a, int b, int c) {
-        if (a >= 0 || b >= 0 || c >= 0) {
+       /* if (a >= 0 || b >= 0 || c >= 0) {
             int start = Math.min(Math.min(a, b), c);
             int end = Math.max(Math.max(a, b), c);
-            invalidateRegion(start, end, true /* Also invalidates blinking cursor */);
-        }
+            invalidateRegion(start, end, true  Also invalidates blinking cursor );
+        }*/
     }
 
     /**
@@ -6771,13 +6771,13 @@ void ensureEndedBatchEdit() {
 void finishBatchEdit(final InputMethodState ims) {
         onEndBatchEdit();
         
-        if (ims.mContentChanged || ims.mSelectionModeChanged) {
+       /* if (ims.mContentChanged || ims.mSelectionModeChanged) {
             updateAfterEdit();
             reportExtractedText();
         } else if (ims.mCursorChanged) {
             // Cheezy way to get us to report the current cursor location.
             invalidateCursor();
-        }
+        }*/
     }
     
     @DSComment("Package priviledge")
@@ -6785,7 +6785,7 @@ void finishBatchEdit(final InputMethodState ims) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.192 -0500", hash_original_method = "208D05A3FD324C57DA7FED31CDB936F2", hash_generated_method = "208D05A3FD324C57DA7FED31CDB936F2")
     
 void updateAfterEdit() {
-        invalidate();
+  /*      invalidate();
         int curs = getSelectionStart();
 
         if (curs >= 0 || (mGravity & Gravity.VERTICAL_GRAVITY_MASK) == Gravity.BOTTOM) {
@@ -6798,7 +6798,7 @@ void updateAfterEdit() {
             bringPointIntoView(curs);
         }
 
-        checkForResize();
+        checkForResize();*/
     }
     
     /**
@@ -7249,7 +7249,11 @@ public void setIncludeFontPadding(boolean includepad) {
     
 @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        addTaint(widthMeasureSpec + heightMeasureSpec);
+        
+        //We are only interested in catching the override, this whole thing can be 
+        //NOOP
+      /*  int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
@@ -7409,10 +7413,10 @@ public void setIncludeFontPadding(boolean includepad) {
             unpaddedHeight = Math.min(unpaddedHeight, mLayout.getLineTop(mMaximum));
         }
 
-        /*
+        
          * We didn't let makeNewLayout() register to bring the cursor into view,
          * so do it here if there is any possibility that it is needed.
-         */
+         
         if (mMovement != null ||
             mLayout.getWidth() > unpaddedWidth ||
             mLayout.getHeight() > unpaddedHeight) {
@@ -7421,7 +7425,7 @@ public void setIncludeFontPadding(boolean includepad) {
             scrollTo(0, 0);
         }
 
-        setMeasuredDimension(width, height);
+        setMeasuredDimension(width, height);*/
     }
 
     @DSComment("Private Method")
@@ -11657,7 +11661,7 @@ private SuggestionSpan[] getSuggestionSpans() {
         public void show() {
             if (!(mText instanceof Editable)) return;
 
-            updateSuggestions();
+            // updateSuggestions();
             mCursorWasVisibleBeforeSuggestions = mCursorVisible;
             setCursorVisible(false);
             mIsShowingUp = true;
