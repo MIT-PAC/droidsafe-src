@@ -24,6 +24,7 @@ public class ObjectUtils {
     SootField taint;
     Set<SootMethod> addTaints;
     Set<SootMethod> getTaints;
+    Set<SootMethod> toTaints;
 
     private ObjectUtils() {
         SootClass klass = Scene.v().getSootClass("java.lang.Object");
@@ -36,11 +37,14 @@ public class ObjectUtils {
         }
         addTaints = new HashSet<SootMethod>();
         getTaints = new HashSet<SootMethod>();
+        toTaints = new HashSet<SootMethod>();
         for (SootMethod method : klass.getMethods()) {
             if (method.getName().startsWith("addTaint")) {
                 addTaints.add(method);
             } else if (method.getName().startsWith("getTaint")) {
                 getTaints.add(method);
+            } else if (method.getName().startsWith("toTaint")) {
+                toTaints.add(method);
             }
         }
     }
@@ -51,5 +55,9 @@ public class ObjectUtils {
 
     public boolean isGetTaint(SootMethod method) {
         return getTaints.contains(method);
+    }
+
+    public boolean isToTaint(SootMethod method) {
+        return toTaints.contains(method);
     }
 }
