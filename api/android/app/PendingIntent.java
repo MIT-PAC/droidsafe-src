@@ -42,10 +42,8 @@ public final class PendingIntent implements Parcelable {
      * supplied.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.420 -0500", hash_original_method = "69D22A82CA352429278AB66C9EC4D269", hash_generated_method = "95BB43864FAB78706EBCD8B6F60963D4")
-    
 public static PendingIntent getActivity(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
@@ -106,10 +104,8 @@ public static PendingIntent getActivity(Context context, int requestCode,
      * supplied.
      */
     @DSComment("IPC activity")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.423 -0500", hash_original_method = "54CC706903E6C235969DAB2CC8228B77", hash_generated_method = "BE46BD134F3641199D92CC24DA371D50")
-    
 public static PendingIntent getActivities(Context context, int requestCode,
             Intent[] intents, int flags) {
         String packageName = context.getPackageName();
@@ -149,11 +145,9 @@ public static PendingIntent getActivities(Context context, int requestCode,
      * supplied.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.426 -0500", hash_original_method = "7ECBF28DE75BC4F2B5047057DCC1075B", hash_generated_method = "41701B886985ED16AB2AB3DED8138C7A")
-    
-public static PendingIntent getBroadcast(Context context, int requestCode,
+    @DSSpec(DSCat.IPC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.426 -0500", hash_original_method = "7ECBF28DE75BC4F2B5047057DCC1075B", hash_generated_method = "41701B886985ED16AB2AB3DED8138C7A") 
+    public static PendingIntent getBroadcast(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -192,10 +186,8 @@ public static PendingIntent getBroadcast(Context context, int requestCode,
      * supplied.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.428 -0500", hash_original_method = "ABFD2E080CD8663BF6E26BE6876274AD", hash_generated_method = "D979B054426B7D588BDD63C2E93DE780")
-    
 public static PendingIntent getService(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
@@ -224,7 +216,6 @@ public static PendingIntent getService(Context context, int requestCode,
      */
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.472 -0500", hash_original_method = "22B62015BE969BA5F8FF4277748534BD", hash_generated_method = "9C4F52F75D02CD3BE3C38AA5172500C5")
-    
 public static void writePendingIntentOrNullToParcel(PendingIntent sender,
             Parcel out) {
         out.writeStrongBinder(sender != null ? sender.mTarget.asBinder()
