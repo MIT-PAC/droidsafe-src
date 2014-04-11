@@ -432,11 +432,17 @@ void checkSynchronousHint() {
         Log.e("BroadcastReceiver", e.getMessage(), e);
     }
     
+
+    public Intent[] __ds__registerIntentFilter(IntentFilter intentFilter) {
+        return __ds__registerIntentFilter(DroidSafeAndroidRuntime.context, intentFilter);
+    }
+
     // Broadcast receiver really belongs to application so, we call register intentfilter from
     // broadcast the receiver of application
     // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
-    
-    public Intent[] __ds__registerIntentFilter(Context context, IntentFilter intentFilter) {
+
+    public Intent[] __ds__registerIntentFilter(Context context, IntentFilter intentFilter) {    
+
         int actionCount = intentFilter.countActions();
         int catCount = intentFilter.countCategories();
         Intent[] intents = new Intent[actionCount];
