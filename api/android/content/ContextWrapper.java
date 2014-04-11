@@ -608,7 +608,7 @@ public Context getBaseContext() {
     @DSSpec(DSCat.INTENT_EXCHANGE)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        return receiver.__ds__registerIntentFilter(filter)[0];
+        return receiver.__ds__registerIntentFilter(this, filter)[0];
     	//return null; // no 'sticky' intents need to be modeled for coverage
     }
 
@@ -625,7 +625,7 @@ public Context getBaseContext() {
         BroadcastReceiver receiver, IntentFilter filter,
         String broadcastPermission, Handler scheduler) {
         
-        Intent intent = receiver.__ds__registerIntentFilter(filter)[0];
+        Intent intent = receiver.__ds__registerIntentFilter(this,filter)[0];
         
         mBase.registerReceiver(receiver, filter, broadcastPermission,
                 scheduler);

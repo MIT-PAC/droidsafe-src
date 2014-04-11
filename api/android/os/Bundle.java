@@ -57,7 +57,7 @@ public Bundle[] newArray(int size) {
     // (except inside a call to unparcel)
 
     @DSVAModeled
-    /* package */ Map<String, Object> mMap = null;
+    /* package */ Map<String, Object> mMap = new HashMap<String, Object>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.394 -0500", hash_original_field = "E5162DF86C59E17EA59FEBB7EF559274", hash_generated_field = "E946E9EF60C24CFB270D51C185FC58B8")
 
     /* package */ Parcel mParcelledData = null;
@@ -82,7 +82,6 @@ public Bundle[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.405 -0500", hash_original_method = "40BE022BD5AEEE3B1F4C24A599FDBBB4", hash_generated_method = "2E4F8DD9FFAB812A4C4E1772928E04E9")
     
 public Bundle() {
-        mMap = new HashMap<String, Object>();
         mClassLoader = getClass().getClassLoader();
     }
 
@@ -114,7 +113,7 @@ Bundle(Parcel parcelledData, int length) {
     public  Bundle(ClassLoader loader) {
         mMap = new HashMap<String, Object>();
         mClassLoader = loader;
-        addTaint(loader.getTaint());
+        //addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //mMap = new HashMap<String, Object>();
         //mClassLoader = loader;
@@ -184,7 +183,6 @@ Bundle(Parcel parcelledData, int length) {
         
         Object o = mMap.values().iterator().next();
         
-        o.addTaint(getTaint());
         return (String) o;
         
         // ---------- Original Method ----------
@@ -210,7 +208,7 @@ Bundle(Parcel parcelledData, int length) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.110 -0400", hash_original_method = "98C9A117007F79899B5BBD029ABFD6B8", hash_generated_method = "1DFA79725EDD590714D0602080EA4C5B")
     public void setClassLoader(ClassLoader loader) {
         mClassLoader = loader;
-        addTaint(loader.getTaint());
+        //addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //mClassLoader = loader;
     }
@@ -229,7 +227,7 @@ public ClassLoader getClassLoader() {
     public boolean setAllowFds(boolean allowFds) {
         boolean orig = mAllowFds;
         mAllowFds = allowFds;
-        addTaint(allowFds);
+        //addTaint(allowFds);
         boolean var025F253325B46929CD34F2A7C3C55E7C_657424141 = (orig);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912;
@@ -259,20 +257,20 @@ public ClassLoader getClassLoader() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.433 -0500", hash_original_method = "C84307F15A2AB40D2A9CA51D74C5FD0F", hash_generated_method = "ED5D513DE4FFFE667446D5431C83A8D7")
     
 synchronized void unparcel() {
-        if (mParcelledData == null) {
-            return;
-        }
+        // if (mParcelledData == null) {
+        //     return;
+        // }
 
-        int N = mParcelledData.readInt();
-        if (N < 0) {
-            return;
-        }
-        if (mMap == null) {
-            mMap = new HashMap<String, Object>();
-        }
-        mParcelledData.readMapInternal(mMap, N, mClassLoader);
-        mParcelledData.recycle();
-        mParcelledData = null;
+        // //int N = mParcelledData.readInt();
+        // //if (N < 0) {
+        // //    return;
+        // //}
+        // if (mMap == null) {
+        //     mMap = new HashMap<String, Object>();
+        // }
+        // mParcelledData.readMapInternal(mMap, N, mClassLoader);
+        // mParcelledData.recycle();
+        // mParcelledData = null;
     }
     
     @DSComment("OS Bundle data structure")
@@ -944,24 +942,17 @@ private void typeWarning(String key, Object value, String className,
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.445 -0400", hash_original_method = "62E0EA051DB8CF7BEF8CA2ACB88171F1", hash_generated_method = "85B0E924776CDCBCD46F75FE8DDED70C")
     public boolean getBoolean(String key, boolean defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
-        //Object o = mMap.get(key); //this shoudl already be part of taint
-        return getTaintBoolean();
-
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Boolean) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Boolean", defaultValue, e);
-            //return defaultValue;
-        //}
+        Object o = mMap.get(key);
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Boolean) o;
+        } catch (ClassCastException e) {
+            typeWarning(key, o, "Boolean", defaultValue, e);
+            return defaultValue;
+        }
     }
     
     @DSComment("OS Bundle data structure")
@@ -969,13 +960,7 @@ private void typeWarning(String key, Object value, String className,
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.453 -0400", hash_original_method = "E9711B4A318F78DD358F0F07FAB02724", hash_generated_method = "7CDE4B3DA7CC5151B6E1EE322F54DDC4")
     public byte getByte(String key) {
-        addTaint(key.getTaint());
-        unparcel();
-        byte var40EA57D3EE3C07BF1C102B466E1C3091_69905918 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_69905918;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getByte(key, (byte) 0);
+        return getByte(key, (byte) 0);
     }
     
     @DSComment("OS Bundle data structure")
@@ -983,35 +968,24 @@ private void typeWarning(String key, Object value, String className,
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.459 -0400", hash_original_method = "44660F005C21F1E59A8F3EDCC4F5A0ED", hash_generated_method = "8AC1CB1AEF35009035F9F39AE8DF8133")
     public Byte getByte(String key, byte defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        return getTaintByte();
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Byte) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Byte", defaultValue, e);
-            //return defaultValue;
-        //}
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Byte) o;
+        } catch (ClassCastException e) {
+            typeWarning(key, o, "Byte", defaultValue, e);
+            return defaultValue;
+        }
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.466 -0400", hash_original_method = "82E77139364787BB6587747BA780C45B", hash_generated_method = "F494331CB0DEE0D6602E45E444A2F6C1")
     public char getChar(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        Object value = mMap.get(key);        
-        return getTaintChar();
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getChar(key, (char) 0);
+        return getChar(key, (char) 0);
     }
 
     /**

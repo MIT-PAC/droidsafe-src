@@ -46,25 +46,26 @@ private static File makeBackupFile(File prefsFile) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.944 -0500", hash_original_method = "8706A5F2BF3C277E766BE1BA5825DD17", hash_generated_method = "97918F44CAE3B5E098E992A15594609C")
     
-private static FileOutputStream createFileOutputStream(File file) {
+    private static FileOutputStream createFileOutputStream(File file) {
         FileOutputStream str = null;
         try {
             str = new FileOutputStream(file);
         } catch (FileNotFoundException e) {
-            File parent = file.getParentFile();
-            if (!parent.mkdir()) {
-                Log.e(TAG, "Couldn't create directory for SharedPreferences file " + file);
-                return null;
-            }
-            FileUtils.setPermissions(
-                parent.getPath(),
-                FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
-                -1, -1);
-            try {
-                str = new FileOutputStream(file);
-            } catch (FileNotFoundException e2) {
-                Log.e(TAG, "Couldn't create SharedPreferences file " + file, e2);
-            }
+
+            // File parent = file.getParentFile();
+            // if (!parent.mkdir()) {
+            //     Log.e(TAG, "Couldn't create directory for SharedPreferences file " + file);
+            //     return null;
+            // }
+            // FileUtils.setPermissions(
+            //     parent.getPath(),
+            //     FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+            //     -1, -1);
+            // try {
+            //     str = new FileOutputStream(file);
+            // } catch (FileNotFoundException e2) {
+            //     Log.e(TAG, "Couldn't create SharedPreferences file " + file, e2);
+            // }
         }
         return str;
     }
@@ -121,8 +122,9 @@ SharedPreferencesImpl(File file, int mode) {
         mBackupFile = makeBackupFile(file);
         mMode = mode;
         mLoaded = false;
-        mMap = null;
-        startLoadFromDisk();
+        //        mMap = null;
+        mMap = new HashMap<String, Object>();
+        //startLoadFromDisk();
     }
 
     @DSComment("Private Method")
@@ -197,7 +199,7 @@ void startReloadIfChangedUnexpectedly() {
             if (!hasFileChangedUnexpectedly()) {
                 return;
             }
-            startLoadFromDisk();
+            //startLoadFromDisk();
         }
     }
 
@@ -228,6 +230,7 @@ private boolean hasFileChangedUnexpectedly() {
     
 public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         synchronized(this) {
+            listener.onSharedPreferenceChanged((SharedPreferences)this, "<ONSHAREDPREFERENCECHANGE>");
             mListeners.put(listener, mContent);
         }
     }
@@ -245,18 +248,20 @@ public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeL
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.849 -0500", hash_original_method = "4E41B5524ECBD1AD902DE6B06A01DA71", hash_generated_method = "0F58067B65B73DD44D97312B510CDE4F")
     
 private void awaitLoadedLocked() {
-        if (!mLoaded) {
-            // Raise an explicit StrictMode onReadFromDisk for this
-            // thread, since the real read will be in a different
-            // thread and otherwise ignored by StrictMode.
-            BlockGuard.getThreadPolicy().onReadFromDisk();
-        }
-        while (!mLoaded) {
-            try {
-                wait();
-            } catch (InterruptedException unused) {
-            }
-        }
+        //simplified
+        
+        // if (!mLoaded) {
+        //     // Raise an explicit StrictMode onReadFromDisk for this
+        //     // thread, since the real read will be in a different
+        //     // thread and otherwise ignored by StrictMode.
+        //     BlockGuard.getThreadPolicy().onReadFromDisk();
+        // }
+        // while (!mLoaded) {
+        //     try {
+        //         wait();
+        //     } catch (InterruptedException unused) {
+        //     }
+        // }
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -379,9 +384,7 @@ public void setDiskWriteResult(boolean result) {
     }
     
     public final class EditorImpl implements Editor {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.890 -0500", hash_original_field = "3FC71DF7D3FFEA41D867531704814F5E", hash_generated_field = "EAED15AFA724D9B204324BD6499C436E")
 
-        private final Map<String, Object> mModified = Maps.newHashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.893 -0500", hash_original_field = "922D569D1FD307D3C7570C9400254C0D", hash_generated_field = "67418A00EF4F0B8868F3E7D11AB465BE")
 
         private boolean mClear = false;
@@ -396,7 +399,7 @@ public void setDiskWriteResult(boolean result) {
         
 public Editor putString(String key, String value) {
             synchronized (this) {
-                mModified.put(key, value);
+                mMap.put(key, value);
                 return this;
             }
         }
@@ -404,7 +407,7 @@ public Editor putString(String key, String value) {
         
 public Editor putStringSet(String key, Set<String> values) {
             synchronized (this) {
-                mModified.put(key, values);
+                mMap.put(key, values);
                 return this;
             }
         }
@@ -412,7 +415,7 @@ public Editor putStringSet(String key, Set<String> values) {
         
 public Editor putInt(String key, int value) {
             synchronized (this) {
-                mModified.put(key, value);
+                mMap.put(key, value);
                 return this;
             }
         }
@@ -420,7 +423,7 @@ public Editor putInt(String key, int value) {
         
 public Editor putLong(String key, long value) {
             synchronized (this) {
-                mModified.put(key, value);
+                mMap.put(key, value);
                 return this;
             }
         }
@@ -428,7 +431,7 @@ public Editor putLong(String key, long value) {
         
 public Editor putFloat(String key, float value) {
             synchronized (this) {
-                mModified.put(key, value);
+                mMap.put(key, value);
                 return this;
             }
         }
@@ -436,7 +439,7 @@ public Editor putFloat(String key, float value) {
         
 public Editor putBoolean(String key, boolean value) {
             synchronized (this) {
-                mModified.put(key, value);
+                mMap.put(key, value);
                 return this;
             }
         }
@@ -445,7 +448,7 @@ public Editor putBoolean(String key, boolean value) {
         
 public Editor remove(String key) {
             synchronized (this) {
-                mModified.put(key, this);
+                mMap.put(key, this);
                 return this;
             }
         }
@@ -494,81 +497,84 @@ public void apply() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.923 -0500", hash_original_method = "686A9AF4CEF5EAEBEB20BB8BD072C7B7", hash_generated_method = "9BA2189DE8CEA93CF33B821EC45821DA")
         
 private MemoryCommitResult commitToMemory() {
-            MemoryCommitResult mcr = new MemoryCommitResult();
-            synchronized (SharedPreferencesImpl.this) {
-                // We optimistically don't make a deep copy until
-                // a memory commit comes in when we're already
-                // writing to disk.
-                if (mDiskWritesInFlight > 0) {
-                    // We can't modify our mMap as a currently
-                    // in-flight write owns it.  Clone it before
-                    // modifying it.
-                    // noinspection unchecked
-                    mMap = new HashMap<String, Object>(mMap);
-                }
-                mcr.mapToWriteToDisk = mMap;
-                mDiskWritesInFlight++;
 
-                boolean hasListeners = mListeners.size() > 0;
-                if (hasListeners) {
-                    mcr.keysModified = new ArrayList<String>();
-                    mcr.listeners =
-                            new HashSet<OnSharedPreferenceChangeListener>(mListeners.keySet());
-                }
+            // MemoryCommitResult mcr = new MemoryCommitResult();
+            // synchronized (SharedPreferencesImpl.this) {
+            //     // We optimistically don't make a deep copy until
+            //     // a memory commit comes in when we're already
+            //     // writing to disk.
+            //     if (mDiskWritesInFlight > 0) {
+            //         // We can't modify our mMap as a currently
+            //         // in-flight write owns it.  Clone it before
+            //         // modifying it.
+            //         // noinspection unchecked
+            //         mMap = new HashMap<String, Object>(mMap);
+            //     }
+            //     mcr.mapToWriteToDisk = mMap;
+            //     mDiskWritesInFlight++;
 
-                synchronized (this) {
-                    if (mClear) {
-                        if (!mMap.isEmpty()) {
-                            mcr.changesMade = true;
-                            mMap.clear();
-                        }
-                        mClear = false;
-                    }
+            //     boolean hasListeners = mListeners.size() > 0;
+            //     if (hasListeners) {
+            //         mcr.keysModified = new ArrayList<String>();
+            //         mcr.listeners =
+            //                 new HashSet<OnSharedPreferenceChangeListener>(mListeners.keySet());
+            //     }
 
-                    for (Map.Entry<String, Object> e : mModified.entrySet()) {
-                        String k = e.getKey();
-                        Object v = e.getValue();
-                        if (v == this) {  // magic value for a removal mutation
-                            if (!mMap.containsKey(k)) {
-                                continue;
-                            }
-                            mMap.remove(k);
-                        } else {
-                            boolean isSame = false;
-                            if (mMap.containsKey(k)) {
-                                Object existingValue = mMap.get(k);
-                                if (existingValue != null && existingValue.equals(v)) {
-                                    continue;
-                                }
-                            }
-                            mMap.put(k, v);
-                        }
+            //     synchronized (this) {
+            //         if (mClear) {
+            //             if (!mMap.isEmpty()) {
+            //                 mcr.changesMade = true;
+            //                 mMap.clear();
+            //             }
+            //             mClear = false;
+            //         }
 
-                        mcr.changesMade = true;
-                        if (hasListeners) {
-                            mcr.keysModified.add(k);
-                        }
-                    }
+            //         for (Map.Entry<String, Object> e : mModified.entrySet()) {
+            //             String k = e.getKey();
+            //             Object v = e.getValue();
+            //             if (v == this) {  // magic value for a removal mutation
+            //                 if (!mMap.containsKey(k)) {
+            //                     continue;
+            //                 }
+            //                 mMap.remove(k);
+            //             } else {
+            //                 boolean isSame = false;
+            //                 if (mMap.containsKey(k)) {
+            //                     Object existingValue = mMap.get(k);
+            //                     if (existingValue != null && existingValue.equals(v)) {
+            //                         continue;
+            //                     }
+            //                 }
+            //                 mMap.put(k, v);
+            //             }
 
-                    mModified.clear();
-                }
-            }
-            return mcr;
+            //             mcr.changesMade = true;
+            //             if (hasListeners) {
+            //                 mcr.keysModified.add(k);
+            //             }
+            //         }
+
+            //         mModified.clear();
+            //     }
+            // }
+            return null;
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.925 -0500", hash_original_method = "23D73852609E646C4CF9B990F4BA7C23", hash_generated_method = "B941E20570A0708A8A4C7429464090D9")
         
 public boolean commit() {
-            MemoryCommitResult mcr = commitToMemory();
-            SharedPreferencesImpl.this.enqueueDiskWrite(
-                mcr, null /* sync write on this thread okay */);
-            try {
-                mcr.writtenToDiskLatch.await();
-            } catch (InterruptedException e) {
-                return false;
-            }
-            notifyListeners(mcr);
-            return mcr.writeToDiskResult;
+            
+            // MemoryCommitResult mcr = commitToMemory();
+            // SharedPreferencesImpl.this.enqueueDiskWrite(
+            //     mcr, null /* sync write on this thread okay */);
+            // try {
+            //     mcr.writtenToDiskLatch.await();
+            // } catch (InterruptedException e) {
+            //     return false;
+            // }
+            // notifyListeners(mcr);
+            // return mcr.writeToDiskResult;
+            return true;
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.932 -0500", hash_original_method = "9C764C33950FD36589194E2D3CE4E56B", hash_generated_method = "E7A44895AE6A994C9DEED51B844FC3ED")
@@ -609,9 +615,9 @@ public Editor edit() {
         //      context.getSharedPreferences(..).edit().putString(..).apply()
         //
         // ... all without blocking.
-        synchronized (this) {
-            awaitLoadedLocked();
-        }
+        //synchronized (this) {
+        //    awaitLoadedLocked();
+        //}
 
         return new EditorImpl();
     }
@@ -636,100 +642,102 @@ public Editor edit() {
     
 private void enqueueDiskWrite(final MemoryCommitResult mcr,
                                   final Runnable postWriteRunnable) {
-        final Runnable writeToDiskRunnable = new Runnable() {
-                public void run() {
-                    synchronized (mWritingToDiskLock) {
-                        writeToFile(mcr);
-                    }
-                    synchronized (SharedPreferencesImpl.this) {
-                        mDiskWritesInFlight--;
-                    }
-                    if (postWriteRunnable != null) {
-                        postWriteRunnable.run();
-                    }
-                }
-            };
+        //simplified by DS
+        // final Runnable writeToDiskRunnable = new Runnable() {
+        //         public void run() {
+        //             synchronized (mWritingToDiskLock) {
+        //                 writeToFile(mcr);
+        //             }
+        //             synchronized (SharedPreferencesImpl.this) {
+        //                 mDiskWritesInFlight--;
+        //             }
+        //             if (postWriteRunnable != null) {
+        //                 postWriteRunnable.run();
+        //             }
+        //         }
+        //     };
 
-        final boolean isFromSyncCommit = (postWriteRunnable == null);
+        // final boolean isFromSyncCommit = (postWriteRunnable == null);
 
-        // Typical #commit() path with fewer allocations, doing a write on
-        // the current thread.
-        if (isFromSyncCommit) {
-            boolean wasEmpty = false;
-            synchronized (SharedPreferencesImpl.this) {
-                wasEmpty = mDiskWritesInFlight == 1;
-            }
-            if (wasEmpty) {
-                writeToDiskRunnable.run();
-                return;
-            }
-        }
+        // // Typical #commit() path with fewer allocations, doing a write on
+        // // the current thread.
+        // if (isFromSyncCommit) {
+        //     boolean wasEmpty = false;
+        //     synchronized (SharedPreferencesImpl.this) {
+        //         wasEmpty = mDiskWritesInFlight == 1;
+        //     }
+        //     if (wasEmpty) {
+        //         writeToDiskRunnable.run();
+        //         return;
+        //     }
+        // }
 
-        QueuedWork.singleThreadExecutor().execute(writeToDiskRunnable);
+        // QueuedWork.singleThreadExecutor().execute(writeToDiskRunnable);
     }
 
     // Note: must hold mWritingToDiskLock
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.948 -0500", hash_original_method = "2845FAF740EE3AE38D64734030124734", hash_generated_method = "33C02F22B6D01BCA645F03D0B47618B7")
     
 private void writeToFile(MemoryCommitResult mcr) {
-        // Rename the current file so it may be used as a backup during the next read
-        if (mFile.exists()) {
-            if (!mcr.changesMade) {
-                // If the file already exists, but no changes were
-                // made to the underlying map, it's wasteful to
-                // re-write the file.  Return as if we wrote it
-                // out.
-                mcr.setDiskWriteResult(true);
-                return;
-            }
-            if (!mBackupFile.exists()) {
-                if (!mFile.renameTo(mBackupFile)) {
-                    Log.e(TAG, "Couldn't rename file " + mFile
-                          + " to backup file " + mBackupFile);
-                    mcr.setDiskWriteResult(false);
-                    return;
-                }
-            } else {
-                mFile.delete();
-            }
-        }
+        // simplified by DS
+    //     // Rename the current file so it may be used as a backup during the next read
+    //     if (mFile.exists()) {
+    //         if (!mcr.changesMade) {
+    //             // If the file already exists, but no changes were
+    //             // made to the underlying map, it's wasteful to
+    //             // re-write the file.  Return as if we wrote it
+    //             // out.
+    //             mcr.setDiskWriteResult(true);
+    //             return;
+    //         }
+    //         if (!mBackupFile.exists()) {
+    //             if (!mFile.renameTo(mBackupFile)) {
+    //                 Log.e(TAG, "Couldn't rename file " + mFile
+    //                       + " to backup file " + mBackupFile);
+    //                 mcr.setDiskWriteResult(false);
+    //                 return;
+    //             }
+    //         } else {
+    //             mFile.delete();
+    //         }
+    //     }
 
-        // Attempt to write the file, delete the backup and return true as atomically as
-        // possible.  If any exception occurs, delete the new file; next time we will restore
-        // from the backup.
-        try {
-            FileOutputStream str = createFileOutputStream(mFile);
-            if (str == null) {
-                mcr.setDiskWriteResult(false);
-                return;
-            }
-            XmlUtils.writeMapXml(mcr.mapToWriteToDisk, str);
-            FileUtils.sync(str);
-            str.close();
-            ContextImpl.setFilePermissionsFromMode(mFile.getPath(), mMode, 0);
-            FileStatus stat = new FileStatus();
-            if (FileUtils.getFileStatus(mFile.getPath(), stat)) {
-                synchronized (this) {
-                    mStatTimestamp = stat.mtime;
-                    mStatSize = stat.size;
-                }
-            }
-            // Writing was successful, delete the backup file if there is one.
-            mBackupFile.delete();
-            mcr.setDiskWriteResult(true);
-            return;
-        } catch (XmlPullParserException e) {
-            Log.w(TAG, "writeToFile: Got exception:", e);
-        } catch (IOException e) {
-            Log.w(TAG, "writeToFile: Got exception:", e);
-        }
-        // Clean up an unsuccessfully written file
-        if (mFile.exists()) {
-            if (!mFile.delete()) {
-                Log.e(TAG, "Couldn't clean up partially-written file " + mFile);
-            }
-        }
-        mcr.setDiskWriteResult(false);
-    }
+    //     // Attempt to write the file, delete the backup and return true as atomically as
+    //     // possible.  If any exception occurs, delete the new file; next time we will restore
+    //     // from the backup.
+    //     try {
+    //         FileOutputStream str = createFileOutputStream(mFile);
+    //         if (str == null) {
+    //             mcr.setDiskWriteResult(false);
+    //             return;
+    //         }
+    //         XmlUtils.writeMapXml(mcr.mapToWriteToDisk, str);
+    //         FileUtils.sync(str);
+    //         str.close();
+    //         ContextImpl.setFilePermissionsFromMode(mFile.getPath(), mMode, 0);
+    //         FileStatus stat = new FileStatus();
+    //         if (FileUtils.getFileStatus(mFile.getPath(), stat)) {
+    //             synchronized (this) {
+    //                 mStatTimestamp = stat.mtime;
+    //                 mStatSize = stat.size;
+    //             }
+    //         }
+    //         // Writing was successful, delete the backup file if there is one.
+    //         mBackupFile.delete();
+    //         mcr.setDiskWriteResult(true);
+    //         return;
+    //     } catch (XmlPullParserException e) {
+    //         Log.w(TAG, "writeToFile: Got exception:", e);
+    //     } catch (IOException e) {
+    //         Log.w(TAG, "writeToFile: Got exception:", e);
+    //     }
+    //     // Clean up an unsuccessfully written file
+    //     if (mFile.exists()) {
+    //         if (!mFile.delete()) {
+    //             Log.e(TAG, "Couldn't clean up partially-written file " + mFile);
+    //         }
+    //     }
+    //     mcr.setDiskWriteResult(false);
+     }
 }
 
