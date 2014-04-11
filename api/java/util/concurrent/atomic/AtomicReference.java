@@ -46,14 +46,7 @@ public AtomicReference(V initialValue) {
 public AtomicReference() {
     }
     
-    @Override
-    public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        value.addTaint(t);
-    }
-    
-    @Override
-    public void addTaint(double t) {
+    public void addTaintDS(double t) {
         super.addTaint(t);
         value.addTaint(t);
     }

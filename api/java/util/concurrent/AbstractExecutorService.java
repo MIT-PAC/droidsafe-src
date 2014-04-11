@@ -22,7 +22,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
         addTaint(value.getTaint());
         addTaint(runnable.getTaint());
 RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723 =         new FutureTask<T>(runnable, value);
-        var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723.addTaint(taint);
+        var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723.addTaint(getTaint());
         return var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723;
         // ---------- Original Method ----------
         //return new FutureTask<T>(runnable, value);
@@ -32,7 +32,7 @@ RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_1846031723 =         new F
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
         addTaint(callable.getTaint());
 RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_34807659 =         new FutureTask<T>(callable);
-        varBEF434F9B24D8E8523500F630F54EF1C_34807659.addTaint(taint);
+        varBEF434F9B24D8E8523500F630F54EF1C_34807659.addTaint(getTaint());
         return varBEF434F9B24D8E8523500F630F54EF1C_34807659;
         // ---------- Original Method ----------
         //return new FutureTask<T>(callable);
@@ -58,13 +58,13 @@ public Future<?> submit(Runnable task) {
         if(task == null)        
         {
         NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1226693436 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_1226693436.addTaint(taint);
+        var7338BC9F48D81FE0BBD6183F4014DCC4_1226693436.addTaint(getTaint());
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_1226693436;
         }
         RunnableFuture<T> ftask = newTaskFor(task, result);
         execute(ftask);
 Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_603271610 =         ftask;
-        var1A47BEF10A35E08D71A10703CE70AAF7_603271610.addTaint(taint);
+        var1A47BEF10A35E08D71A10703CE70AAF7_603271610.addTaint(getTaint());
         return var1A47BEF10A35E08D71A10703CE70AAF7_603271610;
         // ---------- Original Method ----------
         //if (task == null) throw new NullPointerException();
@@ -79,13 +79,13 @@ Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_603271610 =         ftask;
         if(task == null)        
         {
         NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_971193699 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_971193699.addTaint(taint);
+        var7338BC9F48D81FE0BBD6183F4014DCC4_971193699.addTaint(getTaint());
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_971193699;
         }
         RunnableFuture<T> ftask = newTaskFor(task);
         execute(ftask);
 Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_2038148973 =         ftask;
-        var1A47BEF10A35E08D71A10703CE70AAF7_2038148973.addTaint(taint);
+        var1A47BEF10A35E08D71A10703CE70AAF7_2038148973.addTaint(getTaint());
         return var1A47BEF10A35E08D71A10703CE70AAF7_2038148973;
         // ---------- Original Method ----------
         //if (task == null) throw new NullPointerException();
@@ -105,14 +105,14 @@ Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_2038148973 =         ftask;
         if(tasks == null)        
         {
         NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1502055719 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_1502055719.addTaint(taint);
+        var7338BC9F48D81FE0BBD6183F4014DCC4_1502055719.addTaint(getTaint());
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_1502055719;
         }
         int ntasks = tasks.size();
         if(ntasks == 0)        
         {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_379144784 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_379144784.addTaint(taint);
+        var5783EF97022AA508B74A1E3EA38534AF_379144784.addTaint(getTaint());
         throw var5783EF97022AA508B74A1E3EA38534AF_379144784;
         }
         List<Future<T>> futures = new ArrayList<Future<T>>(ntasks);
@@ -146,7 +146,7 @@ for(;;)
                         if(f == null)                        
                         {
                         TimeoutException var3B6A086CA796B867C2DC52AFEEF9D0CF_569672888 = new TimeoutException();
-                        var3B6A086CA796B867C2DC52AFEEF9D0CF_569672888.addTaint(taint);
+                        var3B6A086CA796B867C2DC52AFEEF9D0CF_569672888.addTaint(getTaint());
                         throw var3B6A086CA796B867C2DC52AFEEF9D0CF_569672888;
                         }
                         long now = System.nanoTime();
@@ -162,7 +162,7 @@ for(;;)
                     try 
                     {
 T var62EE18F85D765480227B4F97C873CDE0_1318816487 =                         f.get();
-                        var62EE18F85D765480227B4F97C873CDE0_1318816487.addTaint(taint);
+                        var62EE18F85D765480227B4F97C873CDE0_1318816487.addTaint(getTaint());
                         return var62EE18F85D765480227B4F97C873CDE0_1318816487;
                     } //End block
                     catch (ExecutionException eex)
@@ -177,7 +177,7 @@ T var62EE18F85D765480227B4F97C873CDE0_1318816487 =                         f.get
             } //End block
             if(ee == null)            
             ee = new ExecutionException();
-            ee.addTaint(taint);
+            ee.addTaint(getTaint());
             throw ee;
         } //End block
         finally 
@@ -195,13 +195,13 @@ for(Future<T> f : futures)
         try 
         {
 T var0D831F06EB35AD75173571A2A7D5F832_1034355156 =             doInvokeAny(tasks, false, 0);
-            var0D831F06EB35AD75173571A2A7D5F832_1034355156.addTaint(taint);
+            var0D831F06EB35AD75173571A2A7D5F832_1034355156.addTaint(getTaint());
             return var0D831F06EB35AD75173571A2A7D5F832_1034355156;
         } //End block
         catch (TimeoutException cannotHappen)
         {
 T var540C13E9E156B687226421B24F2DF178_243117211 =             null;
-            var540C13E9E156B687226421B24F2DF178_243117211.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_243117211.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_243117211;
         } //End block
         // ---------- Original Method ----------
@@ -220,7 +220,7 @@ T var540C13E9E156B687226421B24F2DF178_243117211 =             null;
         addTaint(timeout);
         addTaint(tasks.getTaint());
 T varDB8B1C04F589A22E27B8623D8C9F7420_1843617302 =         doInvokeAny(tasks, true, unit.toNanos(timeout));
-        varDB8B1C04F589A22E27B8623D8C9F7420_1843617302.addTaint(taint);
+        varDB8B1C04F589A22E27B8623D8C9F7420_1843617302.addTaint(getTaint());
         return varDB8B1C04F589A22E27B8623D8C9F7420_1843617302;
         // ---------- Original Method ----------
         //return doInvokeAny(tasks, true, unit.toNanos(timeout));
@@ -233,7 +233,7 @@ T varDB8B1C04F589A22E27B8623D8C9F7420_1843617302 =         doInvokeAny(tasks, tr
         if(tasks == null)        
         {
         NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1690769176 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_1690769176.addTaint(taint);
+        var7338BC9F48D81FE0BBD6183F4014DCC4_1690769176.addTaint(getTaint());
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_1690769176;
         }
         List<Future<T>> futures = new ArrayList<Future<T>>(tasks.size());
@@ -264,7 +264,7 @@ for(Future<T> f : futures)
             } //End block
             done = true;
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1026182331 =             futures;
-            var7DD305F66D87C2DBA38D1F4FEAB104D5_1026182331.addTaint(taint);
+            var7DD305F66D87C2DBA38D1F4FEAB104D5_1026182331.addTaint(getTaint());
             return var7DD305F66D87C2DBA38D1F4FEAB104D5_1026182331;
         } //End block
         finally 
@@ -287,7 +287,7 @@ for(Future<T> f : futures)
         if(tasks == null || unit == null)        
         {
         NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_2032225772 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_2032225772.addTaint(taint);
+        var7338BC9F48D81FE0BBD6183F4014DCC4_2032225772.addTaint(getTaint());
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_2032225772;
         }
         long nanos = unit.toNanos(timeout);
@@ -309,7 +309,7 @@ for(Callable<T> t : tasks)
                 if(nanos <= 0)                
                 {
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1907078213 =                 futures;
-                var7DD305F66D87C2DBA38D1F4FEAB104D5_1907078213.addTaint(taint);
+                var7DD305F66D87C2DBA38D1F4FEAB104D5_1907078213.addTaint(getTaint());
                 return var7DD305F66D87C2DBA38D1F4FEAB104D5_1907078213;
                 }
             } //End block
@@ -320,7 +320,7 @@ for(Future<T> f : futures)
                     if(nanos <= 0)                    
                     {
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_2016215237 =                     futures;
-                    var7DD305F66D87C2DBA38D1F4FEAB104D5_2016215237.addTaint(taint);
+                    var7DD305F66D87C2DBA38D1F4FEAB104D5_2016215237.addTaint(getTaint());
                     return var7DD305F66D87C2DBA38D1F4FEAB104D5_2016215237;
                     }
                     try 
@@ -336,7 +336,7 @@ List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_2016215237 =                
                     catch (TimeoutException toe)
                     {
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1141320188 =                         futures;
-                        var7DD305F66D87C2DBA38D1F4FEAB104D5_1141320188.addTaint(taint);
+                        var7DD305F66D87C2DBA38D1F4FEAB104D5_1141320188.addTaint(getTaint());
                         return var7DD305F66D87C2DBA38D1F4FEAB104D5_1141320188;
                     } //End block
                     long now = System.nanoTime();
@@ -346,7 +346,7 @@ List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1141320188 =                
             } //End block
             done = true;
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1749954216 =             futures;
-            var7DD305F66D87C2DBA38D1F4FEAB104D5_1749954216.addTaint(taint);
+            var7DD305F66D87C2DBA38D1F4FEAB104D5_1749954216.addTaint(getTaint());
             return var7DD305F66D87C2DBA38D1F4FEAB104D5_1749954216;
         } //End block
         finally 

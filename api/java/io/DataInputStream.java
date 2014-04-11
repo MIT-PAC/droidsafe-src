@@ -163,7 +163,7 @@ public final int readInt() throws IOException {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.244 -0500", hash_original_method = "65FD20FE420262B12F0063D27F62A405", hash_generated_method = "84589DFEC3B64DF8C1541613CF612599")
-    
+    @DSSource(DSSourceKind.IO)
 @Deprecated
     public final String readLine() throws IOException {
         /*StringBuilder line = new StringBuilder(80); // Typical line length
@@ -197,7 +197,7 @@ public final int readInt() throws IOException {
                     line.append((char) nextByte);
             }
         }*/
-        return new String(in.taint);
+        return new String(new byte[]{in.getTaintByte()});
     }
 
     @DSComment("Activity on IO class")

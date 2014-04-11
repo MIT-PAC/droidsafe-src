@@ -833,7 +833,9 @@ public String toString() {
         return super.toString() + ((o == null) ?
                                    "[Unlocked]" :
                                    "[Locked by thread " + o.getName() + "]");*/
-        return new String(taint);
+        String s = new String();
+        s.addTaint(getTaint());
+        return s;
     }
 }
 

@@ -56,15 +56,8 @@ public AtomicLong(long initialValue) {
     
 public AtomicLong() {
     }
-
-    @Override
-    public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        value = (int)getTaintInt();
-    }
-    
-    @Override
-    public void addTaint(double t) {
+        
+    public void addTaintDS(double t) {
         super.addTaint(t);
         value = (int)getTaintInt();
     }

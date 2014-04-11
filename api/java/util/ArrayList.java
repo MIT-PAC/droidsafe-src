@@ -42,7 +42,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         if(capacity < 0)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_866917787 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_866917787.addTaint(taint);
+            var5783EF97022AA508B74A1E3EA38534AF_866917787.addTaint(getTaint());
             throw var5783EF97022AA508B74A1E3EA38534AF_866917787;
         } //End block
     }
@@ -200,7 +200,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         {
             InvalidObjectException var273D26CAC01DC448104B1EC1CDD9496E_2047464109 = new InvalidObjectException(
                     "Capacity: " + cap + " < size: ");
-            var273D26CAC01DC448104B1EC1CDD9496E_2047464109.addTaint(taint);
+            var273D26CAC01DC448104B1EC1CDD9496E_2047464109.addTaint(getTaint());
             throw var273D26CAC01DC448104B1EC1CDD9496E_2047464109;
         } //End block
         for(int i = 0;i < cap;i++)

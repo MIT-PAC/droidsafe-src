@@ -306,7 +306,7 @@ for(T item : items)
             } //End block
         } //End block
 List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
-        var7A9FA332A2F68B4B3F12D84C779C06B6_962876593.addTaint(taint);
+        var7A9FA332A2F68B4B3F12D84C779C06B6_962876593.addTaint(getTaint());
         return var7A9FA332A2F68B4B3F12D84C779C06B6_962876593;
         // ---------- Original Method ----------
         //ArrayList<T> selectedItems = new ArrayList<T>();

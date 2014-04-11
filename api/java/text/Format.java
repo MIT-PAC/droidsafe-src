@@ -117,7 +117,8 @@ protected Format() {
 public final String format(Object object) {
        /* return format(object, new StringBuffer(), new FieldPosition(0))
                 .toString();*/
-        String ret = new String(object.getTaint());
+        String ret = new String();
+        ret.addTaint(object.getTaint());
         ret.addTaint(getTaint());
         return ret;
     }

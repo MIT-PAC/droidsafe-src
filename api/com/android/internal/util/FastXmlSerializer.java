@@ -348,7 +348,7 @@ public void processingInstruction(String text) throws IOException, IllegalArgume
             return;
         } //End block
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1513226464 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1513226464.addTaint(taint);
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1513226464.addTaint(getTaint());
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1513226464;
         // ---------- Original Method ----------
         //if (name.equals("http://xmlpull.org/v1/doc/features.html#indent-output")) {

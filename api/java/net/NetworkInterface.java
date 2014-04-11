@@ -563,7 +563,7 @@ for(int i = 0;i < result.length;++i)
         catch (Exception ex)
         {
             SocketException var8E41BFA796BE9F8FB9DC270405E20F86_1814482532 = rethrowAsSocketException(ex);
-            var8E41BFA796BE9F8FB9DC270405E20F86_1814482532.addTaint(taint);
+            var8E41BFA796BE9F8FB9DC270405E20F86_1814482532.addTaint(getTaint());
             throw var8E41BFA796BE9F8FB9DC270405E20F86_1814482532;
         } //End block
 */        // ---------- Original Method ----------

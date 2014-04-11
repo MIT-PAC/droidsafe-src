@@ -63,7 +63,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         if(capacity < 0)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_962100488 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_962100488.addTaint(taint);
+            var5783EF97022AA508B74A1E3EA38534AF_962100488.addTaint(getTaint());
             throw var5783EF97022AA508B74A1E3EA38534AF_962100488;
         } //End block
         requestCapacity(capacity);
@@ -111,7 +111,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
             if (DroidSafeAndroidRuntime.control)
             {
                 AssertionError assertionException = new AssertionError(new CloneNotSupportedException());
-                assertionException.addTaint(taint);
+                assertionException.addTaint(getTaint());
                 throw assertionException;
             } //End block
 
@@ -156,7 +156,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
 
         addTaint(location);
         ArrayIndexOutOfBoundsException varC4E99290A8E221CD17D3A059991A865D_386874881 = arrayIndexOutOfBoundsException(location, elementCount);
-        varC4E99290A8E221CD17D3A059991A865D_386874881.addTaint(taint);
+        varC4E99290A8E221CD17D3A059991A865D_386874881.addTaint(getTaint());
         throw varC4E99290A8E221CD17D3A059991A865D_386874881;
         // ---------- Original Method ----------
         //if (location < elementCount) {
@@ -276,7 +276,6 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         addTaint(location);
         addTaint(object.getTaint());
         return super.getLastIndexOf(object, location);
-        
         // ---------- Original Method ----------
         //if (object != null) {
             //for (int i = location; i < elementCount; i++) {
@@ -336,7 +335,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         if (DroidSafeAndroidRuntime.control)
         {
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_89226828 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_89226828.addTaint(taint);
+            var28D00AB599969908D71F102AF992D49A_89226828.addTaint(getTaint());
             throw var28D00AB599969908D71F102AF992D49A_89226828;
         } //End block
         
@@ -357,7 +356,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
             addTaint(location);
             addTaint(object.getTaint());
             java.lang.ArrayIndexOutOfBoundsException varC4E99290A8E221CD17D3A059991A865D_827782882 = arrayIndexOutOfBoundsException(location, elementCount);
-            varC4E99290A8E221CD17D3A059991A865D_827782882.addTaint(taint);
+            varC4E99290A8E221CD17D3A059991A865D_827782882.addTaint(getTaint());
             throw varC4E99290A8E221CD17D3A059991A865D_827782882;
         }
 
@@ -467,7 +466,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         if(size == 0)        
         {
 String varAA6F5C51D397701D3E65BDD2DF6A0CE1_382590946 =             "[]";
-            varAA6F5C51D397701D3E65BDD2DF6A0CE1_382590946.addTaint(taint);
+            varAA6F5C51D397701D3E65BDD2DF6A0CE1_382590946.addTaint(getTaint());
             return varAA6F5C51D397701D3E65BDD2DF6A0CE1_382590946;
         } //End block
         int length = size - 1;
@@ -495,7 +494,7 @@ for(int i = 0;i < length;i++)
         } //End block
         buffer.append(']');
 String varD03843288D33B9E1D3062E25339ECF6D_693101289 =         buffer.toString();
-        varD03843288D33B9E1D3062E25339ECF6D_693101289.addTaint(taint);
+        varD03843288D33B9E1D3062E25339ECF6D_693101289.addTaint(getTaint());
         return varD03843288D33B9E1D3062E25339ECF6D_693101289;
         // ---------- Original Method ----------
         //if (elementCount == 0) {

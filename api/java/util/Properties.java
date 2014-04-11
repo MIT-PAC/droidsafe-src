@@ -639,7 +639,7 @@ public synchronized void store(Writer writer, String comment) throws IOException
         if(in == null)        
         {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_511171775 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_511171775.addTaint(taint);
+            var7338BC9F48D81FE0BBD6183F4014DCC4_511171775.addTaint(getTaint());
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_511171775;
         } //End block
         if(builder == null)        
@@ -652,7 +652,7 @@ public synchronized void store(Writer writer, String comment) throws IOException
             catch (ParserConfigurationException e)
             {
                 Error varD7D5CC05F351C45F26A7F84C2C962F04_883337655 = new Error(e);
-                varD7D5CC05F351C45F26A7F84C2C962F04_883337655.addTaint(taint);
+                varD7D5CC05F351C45F26A7F84C2C962F04_883337655.addTaint(getTaint());
                 throw varD7D5CC05F351C45F26A7F84C2C962F04_883337655;
             } //End block
             builder.setErrorHandler(new ErrorHandler() {
@@ -709,13 +709,13 @@ for(int i = 0;i < entriesListLength;i++)
         } //End block
         catch (IOException e)
         {
-            e.addTaint(taint);
+            e.addTaint(getTaint());
             throw e;
         } //End block
         catch (SAXException e)
         {
             InvalidPropertiesFormatException var764BEE11ACAB04F9CC0D2D21744DD45D_1659499523 = new InvalidPropertiesFormatException(e);
-            var764BEE11ACAB04F9CC0D2D21744DD45D_1659499523.addTaint(taint);
+            var764BEE11ACAB04F9CC0D2D21744DD45D_1659499523.addTaint(getTaint());
             throw var764BEE11ACAB04F9CC0D2D21744DD45D_1659499523;
         } //End block
         // ---------- Original Method ----------

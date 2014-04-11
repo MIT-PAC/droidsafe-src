@@ -96,7 +96,7 @@ static List<URL> getResources(String name) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
     	Class ret = (Class)new Object();
-    	ret.addTaint(name.taint);
+    	ret.addTaint(name.getTaint());
     	ret.addTaint(resolve);
     	return ret;
     }
@@ -113,7 +113,7 @@ static List<URL> getResources(String name) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
     	Class ret = (Class)new Object();
-    	ret.addTaint(cl.taint);
+    	ret.addTaint(cl.getTaint());
     	ret.addTaint(data[0]);
     	ret.addTaint(offset);
     	ret.addTaint(len);
@@ -124,7 +124,7 @@ static List<URL> getResources(String name) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class defineClass(ClassLoader cl, byte[] data, int offset, int len) throws ClassFormatError {
     	Class ret = (Class)new Object();
-    	ret.addTaint(cl.taint);
+    	ret.addTaint(cl.getTaint());
     	ret.addTaint(data[0]);
     	ret.addTaint(offset);
     	ret.addTaint(len);
@@ -135,8 +135,8 @@ static List<URL> getResources(String name) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Class findLoadedClass(ClassLoader cl, String name) {
     	Class ret = (Class)new Object();
-    	ret.addTaint(name.taint);
-    	ret.addTaint(cl.taint);
+    	ret.addTaint(name.getTaint());
+    	ret.addTaint(cl.getTaint());
     	return ret;
     }
     
@@ -151,7 +151,7 @@ static List<URL> getResources(String name) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String getBootClassPathResource(String name, int index) {
     	String ret = new String();
-    	ret.addTaint(name.taint);
+    	ret.addTaint(name.getTaint());
     	ret.addTaint(index);
     	return ret;
     }

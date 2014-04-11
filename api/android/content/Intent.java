@@ -2282,7 +2282,7 @@ public CharSequence getCharSequenceExtra(String name) {
     public <T extends Parcelable> T getParcelableExtra(String name) {
         addTaint(name.getTaint());
 T varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787 =         mExtras == null ? null : mExtras.<T>getParcelable(name);
-        varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787.addTaint(taint);
+        varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787.addTaint(getTaint());
         return varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787;
         // ---------- Original Method ----------
         //return mExtras == null ? null : mExtras.<T>getParcelable(name);
@@ -2314,7 +2314,7 @@ public Parcelable[] getParcelableArrayExtra(String name) {
     public <T extends Parcelable> ArrayList<T> getParcelableArrayListExtra(String name) {
         addTaint(name.getTaint());
 ArrayList<T> var2AA7AC40ADC652D6C8E180CF68F49870_1307005652 =         mExtras == null ? null : mExtras.<T>getParcelableArrayList(name);
-        var2AA7AC40ADC652D6C8E180CF68F49870_1307005652.addTaint(taint);
+        var2AA7AC40ADC652D6C8E180CF68F49870_1307005652.addTaint(getTaint());
         return var2AA7AC40ADC652D6C8E180CF68F49870_1307005652;
         // ---------- Original Method ----------
         //return mExtras == null ? null : mExtras.<T>getParcelableArrayList(name);
@@ -2874,7 +2874,7 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
         mData = data;
         mType = type;
 Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1185276063.addTaint(taint);
+        var72A74007B2BE62B849F475C7BDA4658B_1185276063.addTaint(getTaint());
         addTaint(data.getTaint());
         addTaint(type.getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1185276063;
@@ -2919,14 +2919,14 @@ public void removeCategory(String category) {
         {
             IllegalArgumentException varDB28EE105FC601F18A42EF13E45407D0_474748705 = new IllegalArgumentException(
                     "Intent being set as a selector of itself");
-            varDB28EE105FC601F18A42EF13E45407D0_474748705.addTaint(taint);
+            varDB28EE105FC601F18A42EF13E45407D0_474748705.addTaint(getTaint());
             throw varDB28EE105FC601F18A42EF13E45407D0_474748705;
         } //End block
         if(selector != null && mPackage != null)        
         {
             IllegalArgumentException var8BA32FA43E547F20BF608AAF6B7199B5_1000380269 = new IllegalArgumentException(
                     "Can't set selector when package name is already set");
-            var8BA32FA43E547F20BF608AAF6B7199B5_1000380269.addTaint(taint);
+            var8BA32FA43E547F20BF608AAF6B7199B5_1000380269.addTaint(getTaint());
             throw var8BA32FA43E547F20BF608AAF6B7199B5_1000380269;
         } //End block
         mSelector = selector;
@@ -3833,7 +3833,7 @@ public void removeExtra(String name) {
         mFlags = flags;
         addTaint(flags);
 Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_238535034.addTaint(taint);
+        var72A74007B2BE62B849F475C7BDA4658B_238535034.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_238535034;
         // ---------- Original Method ----------
         //mFlags = flags;
@@ -3888,7 +3888,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         addTaint(packageContext.getTaint());
         addTaint(className.getTaint()); 
         Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_607451133.addTaint(taint);
+        var72A74007B2BE62B849F475C7BDA4658B_607451133.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_607451133;
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, className);
@@ -3908,7 +3908,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         }
         mComponent = new ComponentName(packageName, className);
         Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1442856412.addTaint(taint);
+        var72A74007B2BE62B849F475C7BDA4658B_1442856412.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1442856412;
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageName, className);
@@ -3925,7 +3925,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         addTaint(cls.getTaint());
         mComponent = new ComponentName(packageContext, cls.getName());
 Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1106282301.addTaint(taint);
+        var72A74007B2BE62B849F475C7BDA4658B_1106282301.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1106282301;
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);

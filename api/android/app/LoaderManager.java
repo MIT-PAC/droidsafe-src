@@ -182,7 +182,7 @@ void installLoader(LoaderInfo info) {
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     private<D> void droidsafeCallbackHook(Loader<D> loader, int id, Bundle args,  LoaderManager.LoaderCallbacks<D> callback) {
-        loader.addTaint(taint);
+        loader.addTaint(getTaint());
        
         callback.onCreateLoader(id, args);
         callback.onLoaderReset(loader);
@@ -204,7 +204,7 @@ void installLoader(LoaderInfo info) {
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_690930276 = new IllegalStateException("Called while creating a loader");
-            varC1757A3C3A6F109D8AFC5079F17B7ED3_690930276.addTaint(taint);
+            varC1757A3C3A6F109D8AFC5079F17B7ED3_690930276.addTaint(getTaint());
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_690930276;
         } //End block
         LoaderInfo info = mLoaders.get(id);
@@ -223,7 +223,7 @@ void installLoader(LoaderInfo info) {
         } //End block
 
         Loader<D> loader =         (Loader<D>)info.mLoader;
-        loader.addTaint(taint);
+        loader.addTaint(getTaint());
         droidsafeCallbackHook(loader, id, args, callback);
         return loader;
         // ---------- Original Method ----------
@@ -256,7 +256,7 @@ void installLoader(LoaderInfo info) {
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_1590505732 = new IllegalStateException("Called while creating a loader");
-            varC1757A3C3A6F109D8AFC5079F17B7ED3_1590505732.addTaint(taint);
+            varC1757A3C3A6F109D8AFC5079F17B7ED3_1590505732.addTaint(getTaint());
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_1590505732;
         } //End block
         LoaderInfo info = mLoaders.get(id);
@@ -289,7 +289,7 @@ void installLoader(LoaderInfo info) {
                         if(DEBUG){ }                        info.mPendingLoader = createLoader(id, args, 
                                 (LoaderManager.LoaderCallbacks<Object>)callback);
 Loader<D> varA0A415B70AD2C3775252A85D08956D6B_1321731627 =                         (Loader<D>)info.mPendingLoader.mLoader;
-                        varA0A415B70AD2C3775252A85D08956D6B_1321731627.addTaint(taint);
+                        varA0A415B70AD2C3775252A85D08956D6B_1321731627.addTaint(getTaint());
                         return varA0A415B70AD2C3775252A85D08956D6B_1321731627;
                     } //End block
                 } //End block
@@ -302,7 +302,7 @@ Loader<D> varA0A415B70AD2C3775252A85D08956D6B_1321731627 =                      
         } //End block
         info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
         Loader<D> loader =         (Loader<D>)info.mLoader;
-        loader.addTaint(taint);
+        loader.addTaint(getTaint());
         droidsafeCallbackHook(loader, id, args, callback);
 
         return loader;
@@ -350,7 +350,7 @@ public void destroyLoader(int id) {
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_333560318 = new IllegalStateException("Called while creating a loader");
-            varC1757A3C3A6F109D8AFC5079F17B7ED3_333560318.addTaint(taint);
+            varC1757A3C3A6F109D8AFC5079F17B7ED3_333560318.addTaint(getTaint());
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_333560318;
         } //End block
         LoaderInfo loaderInfo = mLoaders.get(id);
@@ -359,15 +359,15 @@ public void destroyLoader(int id) {
             if(loaderInfo.mPendingLoader != null)            
             {
 Loader<D> varD7DEEECF015803983B03F1336AB68299_1517013931 =                 (Loader<D>)loaderInfo.mPendingLoader.mLoader;
-                varD7DEEECF015803983B03F1336AB68299_1517013931.addTaint(taint);
+                varD7DEEECF015803983B03F1336AB68299_1517013931.addTaint(getTaint());
                 return varD7DEEECF015803983B03F1336AB68299_1517013931;
             } //End block
 Loader<D> var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_1797653311 =             (Loader<D>)loaderInfo.mLoader;
-            var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_1797653311.addTaint(taint);
+            var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_1797653311.addTaint(getTaint());
             return var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_1797653311;
         } //End block
 Loader<D> var540C13E9E156B687226421B24F2DF178_678915004 =         null;
-        var540C13E9E156B687226421B24F2DF178_678915004.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_678915004.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_678915004;
         // ---------- Original Method ----------
         //if (mCreatingLoader) {

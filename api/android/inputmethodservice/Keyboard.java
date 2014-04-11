@@ -244,7 +244,7 @@ for(int keyIndex = 0;keyIndex < numKeys;++keyIndex)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.276 -0400", hash_original_method = "9C5EC889910FC63E2BE3F348DAE4AAAD", hash_generated_method = "6A1C99C56D0E6437E54B114688BD2F7B")
     public List<Key> getKeys() {
 List<Key> var5AEE71826958DB6E612956708AF0BFCD_1356398994 =         mKeys;
-        var5AEE71826958DB6E612956708AF0BFCD_1356398994.addTaint(taint);
+        var5AEE71826958DB6E612956708AF0BFCD_1356398994.addTaint(getTaint());
         return var5AEE71826958DB6E612956708AF0BFCD_1356398994;
         // ---------- Original Method ----------
         //return mKeys;
@@ -254,7 +254,7 @@ List<Key> var5AEE71826958DB6E612956708AF0BFCD_1356398994 =         mKeys;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.278 -0400", hash_original_method = "E40925805CEC2A064551415A821E0FB9", hash_generated_method = "4EAEA954F4A3DA048442B2088B01A4FA")
     public List<Key> getModifierKeys() {
 List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
-        var8E2232677A0F8985EDE331E3DBDCDCE0_365756968.addTaint(taint);
+        var8E2232677A0F8985EDE331E3DBDCDCE0_365756968.addTaint(getTaint());
         return var8E2232677A0F8985EDE331E3DBDCDCE0_365756968;
         // ---------- Original Method ----------
         //return mModifierKeys;
@@ -481,7 +481,7 @@ for(int i = 0;i < mKeys.size();i++)
         addTaint(parser.getTaint());
         addTaint(res.getTaint());
 Row var7FB2305D944DF0E13CD0B9F32571CD82_217922640 =         new Row(res, this, parser);
-        var7FB2305D944DF0E13CD0B9F32571CD82_217922640.addTaint(taint);
+        var7FB2305D944DF0E13CD0B9F32571CD82_217922640.addTaint(getTaint());
         return var7FB2305D944DF0E13CD0B9F32571CD82_217922640;
         // ---------- Original Method ----------
         //return new Row(res, this, parser);
@@ -497,7 +497,7 @@ Row var7FB2305D944DF0E13CD0B9F32571CD82_217922640 =         new Row(res, this, p
         addTaint(parent.getTaint());
         addTaint(res.getTaint());
 Key varE985980EDE73F0AE27A28D587669E369_495507450 =         new Key(res, parent, x, y, parser);
-        varE985980EDE73F0AE27A28D587669E369_495507450.addTaint(taint);
+        varE985980EDE73F0AE27A28D587669E369_495507450.addTaint(getTaint());
         return varE985980EDE73F0AE27A28D587669E369_495507450;
         // ---------- Original Method ----------
         //return new Key(res, parent, x, y, parser);

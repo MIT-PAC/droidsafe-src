@@ -65,7 +65,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         if (DroidSafeAndroidRuntime.control)
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_715994921 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_715994921.addTaint(taint);
+            var5783EF97022AA508B74A1E3EA38534AF_715994921.addTaint(getTaint());
             throw var5783EF97022AA508B74A1E3EA38534AF_715994921;
         } //End block
         // ---------- Original Method ----------
@@ -97,13 +97,13 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         {
             EnumMap<K, V> enumMap = (EnumMap<K, V>) super.clone();
             EnumMap<K, V> var93535FC7597EF533BF9378E6783BB0AC_1899359267 =             enumMap;
-            var93535FC7597EF533BF9378E6783BB0AC_1899359267.addTaint(taint);
+            var93535FC7597EF533BF9378E6783BB0AC_1899359267.addTaint(getTaint());
             return var93535FC7597EF533BF9378E6783BB0AC_1899359267;
         } //End block
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1475084858 = new AssertionError(e);
-            varA5A331D65C8C3F32D42E49D64BCF4109_1475084858.addTaint(taint);
+            varA5A331D65C8C3F32D42E49D64BCF4109_1475084858.addTaint(getTaint());
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1475084858;
         } //End block
         // ---------- Original Method ----------

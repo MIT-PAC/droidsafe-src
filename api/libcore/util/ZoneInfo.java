@@ -281,7 +281,9 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
     
 @Override
     public String toString() {
-        return new String(taint);
+        String s = new String();
+        s.addTaint(getTaint());
+        return s;
        /* StringBuilder sb = new StringBuilder();
         // First the basics...
         sb.append(getClass().getName() + "[" + getID() + ",mRawOffset=" + mRawOffset +

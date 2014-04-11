@@ -1071,7 +1071,7 @@ public final boolean hasContended() {
     
 public final Thread getFirstQueuedThread() {
         Thread t = new Thread();
-        t.addTaint(taint);
+        t.addTaint(getTaint());
         return t;
         // handle only fast path, else relay
         /*
@@ -1307,7 +1307,7 @@ public final Collection<Thread> getExclusiveQueuedThreads() {
         }
         */
         Thread tempThread = new Thread();
-        tempThread.addTaint(taint);
+        tempThread.addTaint(getTaint());
         list.add(tempThread);
 
         return list;
@@ -1330,7 +1330,7 @@ public final Collection<Thread> getSharedQueuedThreads() {
 
         ArrayList<Thread> list = new ArrayList<Thread>();
         Thread t  = new Thread();
-        t.addTaint(taint);
+        t.addTaint(getTaint());
         list.add(t);
         return list;
     }
@@ -1358,7 +1358,7 @@ public String toString() {
         */
         
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
         return str;
     }
 
@@ -2166,7 +2166,7 @@ public final Collection<Thread> getWaitingThreads(ConditionObject condition) {
         */
         List<Thread> list = new ArrayList<Thread>();
         Thread t = new Thread();
-        t.addTaint(taint);
+        t.addTaint(getTaint());
         return list;
     }
 

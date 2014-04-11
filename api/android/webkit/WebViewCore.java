@@ -1533,7 +1533,7 @@ protected void enterFullscreenForVideoLayer(int layerId, String url) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.677 -0400", hash_original_method = "241A051A4ABC8D2C1F54A842088CB439", hash_generated_method = "ADDFF51CB4191E5A33B19E9FFF8D0598")
     private String nativeRetrieveHref(int x, int y) {
     	String s = new String ();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     
@@ -1542,7 +1542,7 @@ protected void enterFullscreenForVideoLayer(int layerId, String url) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.677 -0400", hash_original_method = "FBE4886E30C0F15C8EE972672B86778C", hash_generated_method = "00676F9B8F3E27C703CEC42462520F49")
     private String nativeRetrieveAnchorText(int x, int y) {
     	String s = new String ();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     
@@ -1551,7 +1551,7 @@ protected void enterFullscreenForVideoLayer(int layerId, String url) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.677 -0400", hash_original_method = "7F214D01044FDB7C0A6FFA5743028C76", hash_generated_method = "DF1E348C7A15B8A70CB12B2540802419")
     private String nativeRetrieveImageSource(int x, int y) {
     	String s = new String ();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     @DSComment("Private Method")
@@ -1751,7 +1751,7 @@ protected void enterFullscreenForVideoLayer(int layerId, String url) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.681 -0400", hash_original_method = "7F9DDA20412A0AF9D5E94CA5D5B0BEAA", hash_generated_method = "AA720C4F9758D8D1846FA8601154CB6F")
     private String nativeModifySelection(int direction, int granularity) {
     	String s = new String ();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 
@@ -2713,7 +2713,7 @@ private void sendFindAgain() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.711 -0400", hash_original_method = "D72E3E2D187EE0995228637414D15F8B", hash_generated_method = "77A50DA793DDA2062D397DD558B3E833")
     private String nativeRequestLabel(int framePtr, int nodePtr) {
     	String s = new String ();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     /**
@@ -4655,7 +4655,7 @@ DrawData() {
     private ArrayList<Rect> nativeGetTouchHighlightRects(int x, int y,
             int slop) {
     	ArrayList<Rect> ret = new ArrayList<>();
-    	ret.addTaint(taint);
+    	ret.addTaint(getTaint());
     	return ret;
     }
 

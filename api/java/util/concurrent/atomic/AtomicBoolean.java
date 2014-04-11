@@ -46,14 +46,7 @@ public AtomicBoolean(boolean initialValue) {
 public AtomicBoolean() {
     }
 
-    @Override
-    public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        value = getTaintBoolean(); 
-    }
-    
-    @Override
-    public void addTaint(double t) {
+    public void addTaintDS(double t) {
         super.addTaint(t);
         value = getTaintBoolean();
     }

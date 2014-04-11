@@ -170,7 +170,7 @@ public JarEntry nextElement() {
             }
         }
 Enumeration<JarEntry> varFD6D5513D1E96AE9B20DD26D8EAB087D_1778760700 =         new JarFileEnumerator(super.entries(), this);
-        varFD6D5513D1E96AE9B20DD26D8EAB087D_1778760700.addTaint(taint);
+        varFD6D5513D1E96AE9B20DD26D8EAB087D_1778760700.addTaint(getTaint());
         return varFD6D5513D1E96AE9B20DD26D8EAB087D_1778760700;
         // ---------- Original Method ----------
         //class JarFileEnumerator implements Enumeration<JarEntry> {

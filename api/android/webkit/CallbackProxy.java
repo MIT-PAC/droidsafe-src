@@ -1070,7 +1070,7 @@ void switchOutDrawHistory() {
             } //End block
         } //End block
 String varCD126D34DD1576383395AEE5945E9C28_1967986208 =         title;
-        varCD126D34DD1576383395AEE5945E9C28_1967986208.addTaint(taint);
+        varCD126D34DD1576383395AEE5945E9C28_1967986208.addTaint(getTaint());
         return varCD126D34DD1576383395AEE5945E9C28_1967986208;
         // ---------- Original Method ----------
         //String title = url;

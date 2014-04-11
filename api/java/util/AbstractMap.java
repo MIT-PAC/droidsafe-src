@@ -188,7 +188,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         addTaint(key.getTaint());
         if (DroidSafeAndroidRuntime.control) {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601.addTaint(taint);
+            var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601.addTaint(getTaint());
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601;
         }
         

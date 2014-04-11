@@ -521,7 +521,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
                 }
             }
 };
-        var471FDD296ED6D8C124DBA353D5A605DC_349773066.addTaint(taint);
+        var471FDD296ED6D8C124DBA353D5A605DC_349773066.addTaint(getTaint());
         return var471FDD296ED6D8C124DBA353D5A605DC_349773066;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

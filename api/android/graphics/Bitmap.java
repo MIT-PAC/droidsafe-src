@@ -844,7 +844,7 @@ public void copyPixelsFromBuffer(Buffer src) {
             b.mDensity = mDensity;
         } //End block
 Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
-        var73F89FAC8F369DF0913D10C37C1E0EA1_36661561.addTaint(taint);
+        var73F89FAC8F369DF0913D10C37C1E0EA1_36661561.addTaint(getTaint());
         return var73F89FAC8F369DF0913D10C37C1E0EA1_36661561;
         // ---------- Original Method ----------
         //checkRecycled("Can't copy a recycled bitmap");
@@ -1392,7 +1392,7 @@ public Bitmap extractAlpha() {
     @DSSafe(DSCat.SAFE_LIST)
     public Bitmap extractAlpha(Paint paint, int[] offsetXY) {
         Bitmap bm = new Bitmap();
-        bm.taint.addTaint(offsetXY[0]);
+        bm.addTaint(offsetXY[0]);
         bm.addTaint(paint.getTaint());
         bm.mDensity = mDensity;
         return bm;

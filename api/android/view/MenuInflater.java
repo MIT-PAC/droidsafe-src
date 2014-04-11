@@ -381,14 +381,14 @@ public boolean hasAddedItem() {
                 Class<?> clazz = mContext.getClassLoader().loadClass(className);
                 Constructor<?> constructor = clazz.getConstructor(constructorSignature);
 T var1B6EA7B4D87788B4A4FAC443448837E5_698570623 =                 (T) constructor.newInstance(arguments);
-                var1B6EA7B4D87788B4A4FAC443448837E5_698570623.addTaint(taint);
+                var1B6EA7B4D87788B4A4FAC443448837E5_698570623.addTaint(getTaint());
                 return var1B6EA7B4D87788B4A4FAC443448837E5_698570623;
             } //End block
             catch (Exception e)
             {
             } //End block
 T var540C13E9E156B687226421B24F2DF178_1858135280 =             null;
-            var540C13E9E156B687226421B24F2DF178_1858135280.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_1858135280.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_1858135280;
             // ---------- Original Method ----------
             //try {

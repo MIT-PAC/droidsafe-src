@@ -46,13 +46,13 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
         if(name == null)        
         {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_293905393 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_293905393.addTaint(taint);
+            var7338BC9F48D81FE0BBD6183F4014DCC4_293905393.addTaint(getTaint());
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_293905393;
         } //End block
         if(!name.startsWith("http://xml.org/sax/features/"))        
         {
             SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_1395243829 = new SAXNotRecognizedException(name);
-            var5FC954F6CCADD58BC8498AD6F3DB9EC4_1395243829.addTaint(taint);
+            var5FC954F6CCADD58BC8498AD6F3DB9EC4_1395243829.addTaint(getTaint());
             throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_1395243829;
         } //End block
         boolean var88BA011B209A52DCABE538CA75B2D11A_84159439 = (Boolean.TRUE.equals(features.get(name)));
@@ -115,13 +115,13 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
         if(name == null)        
         {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_564546876 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_564546876.addTaint(taint);
+            var7338BC9F48D81FE0BBD6183F4014DCC4_564546876.addTaint(getTaint());
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_564546876;
         } //End block
         if(!name.startsWith("http://xml.org/sax/features/"))        
         {
             SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_1668489285 = new SAXNotRecognizedException(name);
-            var5FC954F6CCADD58BC8498AD6F3DB9EC4_1668489285.addTaint(taint);
+            var5FC954F6CCADD58BC8498AD6F3DB9EC4_1668489285.addTaint(getTaint());
             throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_1668489285;
         } //End block
         if(value)        

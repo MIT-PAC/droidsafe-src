@@ -70,7 +70,7 @@ public LinkedList(Collection<? extends E> collection) {
         LinkedList l = new LinkedList();
         l.addAll(this);
         Object var792FD495AAD83D144D2F19BF9BB22987_1928323188 =             l;
-        var792FD495AAD83D144D2F19BF9BB22987_1928323188.addTaint(taint);
+        var792FD495AAD83D144D2F19BF9BB22987_1928323188.addTaint(getTaint());
         return var792FD495AAD83D144D2F19BF9BB22987_1928323188;
     }
     
@@ -80,7 +80,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "0073A2AD94DC363435B793B69AD53800", hash_generated_method = "82AD0E2AD0C962DA96A1294602E8A14B")
     public E getFirst() {
         E var47B6E8AF818F6390E3E49621F01F780F_453290605 =         getElementAt(0);
-        var47B6E8AF818F6390E3E49621F01F780F_453290605.addTaint(taint);
+        var47B6E8AF818F6390E3E49621F01F780F_453290605.addTaint(getTaint());
         return var47B6E8AF818F6390E3E49621F01F780F_453290605;
         // ---------- Original Method ----------
         //return getFirstImpl();
@@ -93,12 +93,12 @@ public LinkedList(Collection<? extends E> collection) {
     public E getLast() {
         if (DroidSafeAndroidRuntime.control) {
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_1562898767 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_1562898767.addTaint(taint);
+            var28D00AB599969908D71F102AF992D49A_1562898767.addTaint(getTaint());
             throw var28D00AB599969908D71F102AF992D49A_1562898767;
         }
 
         E lastData = getElementAt(size() -1);
-        lastData.addTaint(taint);
+        lastData.addTaint(getTaint());
         return lastData;
 
         // ---------- Original Method ----------
@@ -146,7 +146,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "B739DCE0B4C0EF3D97CD82250338592B", hash_generated_method = "5BFD32313DD750C7CA5760471E7BA36B")
     public Iterator<E> descendingIterator() {
         Iterator<E> iter = getReverseIterator();
-        iter.addTaint(taint);
+        iter.addTaint(getTaint());
         return iter;
         // ---------- Original Method ----------
         //return new ReverseLinkIterator<E>(this);
@@ -182,7 +182,7 @@ public LinkedList(Collection<? extends E> collection) {
     public E peekFirst() {
         E elem = getFirstElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return peekFirstImpl();
@@ -194,7 +194,7 @@ public LinkedList(Collection<? extends E> collection) {
     public E peekLast() {
         E elem = getLastElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
@@ -207,7 +207,7 @@ public LinkedList(Collection<? extends E> collection) {
     public E pollFirst() {
         E elem = removeFirstElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return (size == 0) ? null : removeFirstImpl();
@@ -219,7 +219,7 @@ public LinkedList(Collection<? extends E> collection) {
     public E pollLast() {
         E elem = removeLastElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return (size == 0) ? null : removeLastImpl();
@@ -231,7 +231,7 @@ public LinkedList(Collection<? extends E> collection) {
     public E pop() {
         E elem = removeLastElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return removeFirstImpl();
@@ -307,7 +307,7 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
     public E poll() {
         E elem = removeFirstElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
     }
     
@@ -317,7 +317,7 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
     public E remove() {
         E elem = removeFirstElement();
         if (elem != null)
-            elem.addTaint(taint);
+            elem.addTaint(getTaint());
         return elem;
     }
     

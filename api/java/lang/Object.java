@@ -5,12 +5,18 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-import droidsafe.helpers.DSTaintObject;
+//import droidsafe.helpers.DSTaintObject;
 
 public class Object {
     
-    // orphaned legacy field
-    public DSTaintObject taint;
+    private class DSTaintObject {
+    }
+
+    //Droidsafe infoflow attaches taint to this field for objects in the heap
+    //do not access it directly!!! use getTaint()
+    //private DSTaintObject taint;
+    private DSTaintObject taint;
+
     /**
      * Constructs a new instance of {@code Object}.
      */
@@ -28,7 +34,7 @@ public Object() {
         if(!(this instanceof Cloneable))        
         {
             CloneNotSupportedException varAAEB03D14830D479070633B166EED001_1798330854 = new CloneNotSupportedException("Class doesn't implement Cloneable");
-            varAAEB03D14830D479070633B166EED001_1798330854.addTaint(taint);
+            varAAEB03D14830D479070633B166EED001_1798330854.addTaint(getTaint());
             throw varAAEB03D14830D479070633B166EED001_1798330854;
         } //End block
         
@@ -374,20 +380,18 @@ public final void wait(long millis) throws InterruptedException {
     // orphaned legacy method
     
     public DSTaintObject getTaint() {
-        
         return taint;
     }
     
     // orphaned legacy method
     
     public int getTaintInt() {
-        
         return 0;
     }
     
     // orphaned legacy method
     
-    public void addTaint(DSTaintObject taint) {
+    public final void addTaint(DSTaintObject taint) {
         
     }
     
@@ -448,7 +452,7 @@ public final void wait(long millis) throws InterruptedException {
     
     // orphaned legacy method
     
-    public void addTaint(double taint) {
+    public final void addTaint(double taint) {
         
     }
     

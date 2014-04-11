@@ -202,7 +202,7 @@ public final PrivateKey generatePrivate(KeySpec keySpec)
         addTaint(keySpec.getTaint());
         addTaint(key.getTaint());
 T var8F4D81791C8180D9CBCF44423DBEC0F6_77754240 =         spiImpl.engineGetKeySpec(key, keySpec);
-        var8F4D81791C8180D9CBCF44423DBEC0F6_77754240.addTaint(taint);
+        var8F4D81791C8180D9CBCF44423DBEC0F6_77754240.addTaint(getTaint());
         return var8F4D81791C8180D9CBCF44423DBEC0F6_77754240;
         // ---------- Original Method ----------
         //return spiImpl.engineGetKeySpec(key, keySpec);

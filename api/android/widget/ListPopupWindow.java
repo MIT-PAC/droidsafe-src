@@ -1173,7 +1173,7 @@ public void run() {
             dstEvent.recycle();
             return handled;
             */
-            addTaint(srcEvent.taint);
+            addTaint(srcEvent.getTaint());
             return getTaintBoolean();
         }
 

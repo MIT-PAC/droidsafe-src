@@ -228,8 +228,8 @@ public float setTargetHeapUtilization(float newTarget) {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.814 -0400", hash_original_method = "8EBD5DB8B6D587374B3055052FBB49F5", hash_generated_method = "320B737E55AF8DBCC23875D982D400A7")
     public Object newNonMovableArray(Class<?> componentType, int length) {
-    	taint.addTaint(length);
-    	taint.addTaint(componentType.taint);
+    	addTaint(length);
+    	addTaint(componentType.getTaint());
     	return new Object();
     }
 

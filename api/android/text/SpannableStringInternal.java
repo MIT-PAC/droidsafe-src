@@ -333,7 +333,7 @@ for(j = 0;j < count;j++)
         if(count == 0)        
         {
 T[] var2CE1F6B8DBEF82A682E5E21A4D0315D3_1058709778 =             (T[]) ArrayUtils.emptyArray(kind);
-            var2CE1F6B8DBEF82A682E5E21A4D0315D3_1058709778.addTaint(taint);
+            var2CE1F6B8DBEF82A682E5E21A4D0315D3_1058709778.addTaint(getTaint());
             return var2CE1F6B8DBEF82A682E5E21A4D0315D3_1058709778;
         } //End block
         if(count == 1)        
@@ -341,19 +341,19 @@ T[] var2CE1F6B8DBEF82A682E5E21A4D0315D3_1058709778 =             (T[]) ArrayUtil
             ret = (Object[]) Array.newInstance(kind, 1);
             ret[0] = ret1;
 T[] var110CDC22E76A3D741F90CE34DAD38798_138378504 =             (T[]) ret;
-            var110CDC22E76A3D741F90CE34DAD38798_138378504.addTaint(taint);
+            var110CDC22E76A3D741F90CE34DAD38798_138378504.addTaint(getTaint());
             return var110CDC22E76A3D741F90CE34DAD38798_138378504;
         } //End block
         if(count == ret.length)        
         {
 T[] var110CDC22E76A3D741F90CE34DAD38798_1848989534 =             (T[]) ret;
-            var110CDC22E76A3D741F90CE34DAD38798_1848989534.addTaint(taint);
+            var110CDC22E76A3D741F90CE34DAD38798_1848989534.addTaint(getTaint());
             return var110CDC22E76A3D741F90CE34DAD38798_1848989534;
         } //End block
         Object[] nret = (Object[]) Array.newInstance(kind, count);
         System.arraycopy(ret, 0, nret, 0, count);
 T[] varC2D15B14AC552DB2CA74824AA0037754_1920914000 =         (T[]) nret;
-        varC2D15B14AC552DB2CA74824AA0037754_1920914000.addTaint(taint);
+        varC2D15B14AC552DB2CA74824AA0037754_1920914000.addTaint(getTaint());
         return varC2D15B14AC552DB2CA74824AA0037754_1920914000;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

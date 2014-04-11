@@ -121,7 +121,7 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
             RuntimeException var814898E2A75124B230F991BD301E888E_738625787 = new RuntimeException(
                     "Your content must have a ListView whose id attribute is " +
                     "'android.R.id.list'");
-            var814898E2A75124B230F991BD301E888E_738625787.addTaint(taint);
+            var814898E2A75124B230F991BD301E888E_738625787.addTaint(getTaint());
             throw var814898E2A75124B230F991BD301E888E_738625787;
         } //End block
         if(emptyView != null)        

@@ -1475,7 +1475,7 @@ private Object readNewArray(boolean unshared) throws OptionalDataException,
     if(classDesc == null)        
         {
             InvalidClassException varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029 = missingClassDescriptor();
-            varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029.addTaint(taint);
+            varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029.addTaint(getTaint());
             throw varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029;
         } //End block
         Class<?> localClass = classDesc.forClass();
@@ -1484,7 +1484,7 @@ private Object readNewArray(boolean unshared) throws OptionalDataException,
             registerObjectRead(localClass, nextHandle(), unshared);
         } //End block
 Class<?> var0C65C20E72071ADD9DC54213330F27FA_1943451547 =         localClass;
-        var0C65C20E72071ADD9DC54213330F27FA_1943451547.addTaint(taint);
+        var0C65C20E72071ADD9DC54213330F27FA_1943451547.addTaint(getTaint());
         return var0C65C20E72071ADD9DC54213330F27FA_1943451547;
         // ---------- Original Method ----------
         //ObjectStreamClass classDesc = readClassDesc();
@@ -1985,7 +1985,7 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
 private Object readObject(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
         Object obj = new Object();
-        obj.addTaint(taint);
+        obj.addTaint(getTaint());
         obj.addTaint(unshared);
         return obj;
         

@@ -192,7 +192,7 @@ void installLoader(LoaderInfo info) {
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_1739798532 = new IllegalStateException("Called while creating a loader");
-            varC1757A3C3A6F109D8AFC5079F17B7ED3_1739798532.addTaint(taint);
+            varC1757A3C3A6F109D8AFC5079F17B7ED3_1739798532.addTaint(getTaint());
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_1739798532;
         } //End block
         LoaderInfo info = mLoaders.get(id);
@@ -210,7 +210,7 @@ void installLoader(LoaderInfo info) {
             info.callOnLoadFinished(info.mLoader, info.mData);
         } //End block
 Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_113499934 =         (Loader<D>)info.mLoader;
-        var75A6A3900136EAA1B4E4C3D43F1802B1_113499934.addTaint(taint);
+        var75A6A3900136EAA1B4E4C3D43F1802B1_113499934.addTaint(getTaint());
         return var75A6A3900136EAA1B4E4C3D43F1802B1_113499934;
         // ---------- Original Method ----------
         //if (mCreatingLoader) {
@@ -240,7 +240,7 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_113499934 =         (Loader<D>)inf
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_864873549 = new IllegalStateException("Called while creating a loader");
-            varC1757A3C3A6F109D8AFC5079F17B7ED3_864873549.addTaint(taint);
+            varC1757A3C3A6F109D8AFC5079F17B7ED3_864873549.addTaint(getTaint());
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_864873549;
         } //End block
         LoaderInfo info = mLoaders.get(id);
@@ -273,7 +273,7 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_113499934 =         (Loader<D>)inf
                         if(DEBUG){ }                        info.mPendingLoader = createLoader(id, args, 
                                 (LoaderManager.LoaderCallbacks<Object>)callback);
 Loader<D> varA0A415B70AD2C3775252A85D08956D6B_1679481719 =                         (Loader<D>)info.mPendingLoader.mLoader;
-                        varA0A415B70AD2C3775252A85D08956D6B_1679481719.addTaint(taint);
+                        varA0A415B70AD2C3775252A85D08956D6B_1679481719.addTaint(getTaint());
                         return varA0A415B70AD2C3775252A85D08956D6B_1679481719;
                     } //End block
                 } //End block
@@ -286,7 +286,7 @@ Loader<D> varA0A415B70AD2C3775252A85D08956D6B_1679481719 =                      
         } //End block
         info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
 Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_709765809 =         (Loader<D>)info.mLoader;
-        var75A6A3900136EAA1B4E4C3D43F1802B1_709765809.addTaint(taint);
+        var75A6A3900136EAA1B4E4C3D43F1802B1_709765809.addTaint(getTaint());
         return var75A6A3900136EAA1B4E4C3D43F1802B1_709765809;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -331,7 +331,7 @@ public void destroyLoader(int id) {
         if(mCreatingLoader)        
         {
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_862913388 = new IllegalStateException("Called while creating a loader");
-            varC1757A3C3A6F109D8AFC5079F17B7ED3_862913388.addTaint(taint);
+            varC1757A3C3A6F109D8AFC5079F17B7ED3_862913388.addTaint(getTaint());
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_862913388;
         } //End block
         LoaderInfo loaderInfo = mLoaders.get(id);
@@ -340,15 +340,15 @@ public void destroyLoader(int id) {
             if(loaderInfo.mPendingLoader != null)            
             {
 Loader<D> varD7DEEECF015803983B03F1336AB68299_1771904158 =                 (Loader<D>)loaderInfo.mPendingLoader.mLoader;
-                varD7DEEECF015803983B03F1336AB68299_1771904158.addTaint(taint);
+                varD7DEEECF015803983B03F1336AB68299_1771904158.addTaint(getTaint());
                 return varD7DEEECF015803983B03F1336AB68299_1771904158;
             } //End block
 Loader<D> var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_33956037 =             (Loader<D>)loaderInfo.mLoader;
-            var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_33956037.addTaint(taint);
+            var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_33956037.addTaint(getTaint());
             return var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_33956037;
         } //End block
 Loader<D> var540C13E9E156B687226421B24F2DF178_269167439 =         null;
-        var540C13E9E156B687226421B24F2DF178_269167439.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_269167439.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_269167439;
         // ---------- Original Method ----------
         //if (mCreatingLoader) {

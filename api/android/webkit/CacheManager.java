@@ -883,7 +883,7 @@ private static CacheResult parseHeaders(int statusCode, Headers headers,
     
     private static CacheResult nativeGetCacheResult(String url) {
     	CacheResult ret = new CacheResult();
-    	ret.taint.addTaint(url.taint);
+    	ret.addTaint(url.getTaint());
     	return ret;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.898 -0500", hash_original_field = "81C4610321BCE12B5287EA324FFC2568", hash_generated_field = "389C12A8617D8BCC08630F7BA010C0E2")

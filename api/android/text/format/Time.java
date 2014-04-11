@@ -529,7 +529,7 @@ public String format(String format) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "751765C8BBD19CCE2EF370E3AB9D4D19", hash_generated_method = "CC9E7C3FAB0B3C60FBFB40FF6979F754")
     private String format1(String format) {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	s.addTaint(format.getTaint());
     	return s;
     }
@@ -538,7 +538,7 @@ public String format(String format) {
     @Override
     public String toString() {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 
@@ -748,7 +748,7 @@ public boolean parse3339(String s) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.834 -0400", hash_original_method = "41A869EF339B8E1FD69184435BC2AFF4", hash_generated_method = "80016ED483EF4736E85C065EFF5B1D3A")
     public String format2445() {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 

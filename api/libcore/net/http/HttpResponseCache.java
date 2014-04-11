@@ -567,7 +567,7 @@ CacheResponse var290A606B2E179EF78FC04FCFE9A15A2D_753268352 =             new Ca
                     return in;
                 }
 };
-            var290A606B2E179EF78FC04FCFE9A15A2D_753268352.addTaint(taint);
+            var290A606B2E179EF78FC04FCFE9A15A2D_753268352.addTaint(getTaint());
             return var290A606B2E179EF78FC04FCFE9A15A2D_753268352;
             // ---------- Original Method ----------
             //return new CacheResponse() {
@@ -588,7 +588,7 @@ SecureCacheResponse varD331870BD359303242F080E81225CD8A_1476178398 =            
             @Override
             public Map<String, List<String>> getHeaders() {
 Map<String, List<String>> var0919DB83F382E960ABF31AD5831D30F0_1346796912 =                 responseHeaders.toMultimap();
-                var0919DB83F382E960ABF31AD5831D30F0_1346796912.addTaint(taint);
+                var0919DB83F382E960ABF31AD5831D30F0_1346796912.addTaint(getTaint());
                 return var0919DB83F382E960ABF31AD5831D30F0_1346796912;
                 // ---------- Original Method ----------
                 //return responseHeaders.toMultimap();
@@ -598,7 +598,7 @@ Map<String, List<String>> var0919DB83F382E960ABF31AD5831D30F0_1346796912 =      
             @Override
             public InputStream getBody() {
 InputStream var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868 =                 in;
-                var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868.addTaint(taint);
+                var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868.addTaint(getTaint());
                 return var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868;
                 // ---------- Original Method ----------
                 //return in;
@@ -647,7 +647,7 @@ InputStream var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868 =                 in;
                     return ((X509Certificate) localCertificates[0]).getSubjectX500Principal();
                 }
 };
-            varD331870BD359303242F080E81225CD8A_1476178398.addTaint(taint);
+            varD331870BD359303242F080E81225CD8A_1476178398.addTaint(getTaint());
             return varD331870BD359303242F080E81225CD8A_1476178398;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation

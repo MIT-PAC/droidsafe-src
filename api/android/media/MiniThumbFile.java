@@ -252,7 +252,7 @@ public synchronized void saveMiniThumbToFile(byte[] data, long id, long magic)
     if(r == null)        
         {
 byte [] var540C13E9E156B687226421B24F2DF178_980742372 =         null;
-        var540C13E9E156B687226421B24F2DF178_980742372.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_980742372.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_980742372;
         }
         long pos = id * BYTES_PER_MINTHUMB;
@@ -272,7 +272,7 @@ byte [] var540C13E9E156B687226421B24F2DF178_980742372 =         null;
                 {
                     mBuffer.get(data, 0, length);
 byte [] var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150 =                     data;
-                    var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150.addTaint(taint);
+                    var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150.addTaint(getTaint());
                     return var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150;
                 } //End block
             } //End block
@@ -295,7 +295,7 @@ byte [] var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150 =                     dat
             } //End block
         } //End block
 byte [] var540C13E9E156B687226421B24F2DF178_1109737605 =         null;
-        var540C13E9E156B687226421B24F2DF178_1109737605.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_1109737605.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_1109737605;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

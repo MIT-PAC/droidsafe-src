@@ -128,7 +128,7 @@ public Object[] toArray() {
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());
 T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
-        varAA44379FEF6B0261A49B4F9151CB856C_1385790034.addTaint(taint);
+        varAA44379FEF6B0261A49B4F9151CB856C_1385790034.addTaint(getTaint());
         return varAA44379FEF6B0261A49B4F9151CB856C_1385790034;
         // ---------- Original Method ----------
         //return al.toArray(a);
