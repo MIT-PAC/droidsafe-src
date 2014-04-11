@@ -46,15 +46,15 @@ public Point() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public Point(int x, int y){
-        addTaintDS(x);
-        addTaintDS(y);
+        addTaint(x);
+        addTaint(y);
         droidsafeUpdateMembers();
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public Point(Point src){
-        addTaintDS(src.getTaintInt());
+        addTaint(src.getTaintInt() + src.x + src.y);
         droidsafeUpdateMembers();
         /*
         this.x = src.x;
@@ -65,8 +65,8 @@ public Point() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void set(int x, int y){
-        addTaintDS(x);
-        addTaintDS(y);
+        addTaint(x);
+        addTaint(y);
         droidsafeUpdateMembers();
         // Original method
         /*
@@ -90,14 +90,14 @@ public Point() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.608 -0500", hash_original_method = "2341B98028DF5979D10DDC3712740A20", hash_generated_method = "2AF844617832D70B37734FAC2E663D69")
     
 public final void offset(int dx, int dy) {
-        addTaintDS(dx + dy);
+        addTaint(dx + dy);
         droidsafeUpdateMembers();
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(int x, int y){
-        return toTaintBoolean(x + y + getTaintInt());
+        return toTaintBoolean(x + y + getSumTaintInt());
         // Original method
         /*
         {
@@ -111,7 +111,14 @@ public final void offset(int dx, int dy) {
     @Override public boolean equals(Object o){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Point p = (Point) o;
-        return toTaintBoolean(getTaintInt() + o.getTaintInt()); 
+        
+        if (o instanceof Point) {
+            Point p = (Point) o;
+            return toTaintBoolean(
+                    this.getSumTaintInt() +
+                    p.getSumTaintInt());
+        }
+        return false;
         // Original method
         /*
         {
@@ -127,7 +134,7 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override public int hashCode(){
-        return getTaintInt();
+        return getSumTaintInt();
         // Original method
         /*
         {
@@ -153,7 +160,7 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override public int describeContents(){
-        return getTaintInt();
+        return getSumTaintInt();
         // Original method
         /*
         {
@@ -181,7 +188,8 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
-        addTaintDS(in.getTaintInt());
+        addTaint(in.getTaintInt());
+        droidsafeUpdateMembers();
         // Original method
         /*
         {
@@ -195,11 +203,10 @@ public final void offset(int dx, int dy) {
         x = getTaintInt();
         y = getTaintInt();
     }
-
-    public void addTaintDS(double t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
+    
+    public int getSumTaintInt() {
+        return (x + y + getTaintInt());
     }
-
+    
 }
 

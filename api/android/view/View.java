@@ -1776,13 +1776,18 @@ public View(Context context, AttributeSet attrs) {
     }
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public void addTaintDS(double t) {
+    private void addTaintLocal(double t) {
         super.addTaint(t);
         mLeft = mRight = mTop = mBottom = mScrollX = mScrollY = getTaintInt();
     }
 
-    public void addTaintDS(boolean b) {
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    private void addTaintLocal(boolean b) {
         super.addTaint(b);
+        mLeft = mRight = mTop = mBottom = mScrollX = mScrollY = getTaintInt();
+    }
+    
+    public void droidsafeUpdateMembers() {
         mLeft = mRight = mTop = mBottom = mScrollX = mScrollY = getTaintInt();
     }
     
@@ -2849,7 +2854,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setNextFocusLeftId(int nextFocusLeftId){
-		addTaintDS(nextFocusLeftId);
+		addTaintLocal(nextFocusLeftId);
 		// Original method
         mNextFocusLeftId = nextFocusLeftId;
 		//Return nothing
@@ -2984,7 +2989,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setVisibility(int visibility){
-		addTaintDS(visibility);
+		addTaintLocal(visibility);
 		// Original method
 		/*
 		{
@@ -3465,9 +3470,9 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
         View newView = new View();
-        newView.addTaintDS(getTaintInt());
-        newView.addTaintDS(root.getTaintInt());
-        newView.addTaintDS(direction);
+        newView.addTaintLocal(getTaintInt());
+        newView.addTaintLocal(root.getTaintInt());
+        newView.addTaintLocal(direction);
         return newView;
 	}
 
@@ -3491,9 +3496,9 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     }
 		*/
         View newView = new View();
-        newView.addTaintDS(getTaintInt());
-        newView.addTaintDS(root.getTaintInt());
-        newView.addTaintDS(childViewId);
+        newView.addTaintLocal(getTaintInt());
+        newView.addTaintLocal(root.getTaintInt());
+        newView.addTaintLocal(childViewId);
         return newView;
 
 	}
@@ -5346,7 +5351,7 @@ protected void dispatchDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
         mBottom = bottom;
-        addTaintDS(bottom);
+        addTaintLocal(bottom);
 	}
     
     @DSComment("From safe class list")
@@ -5364,7 +5369,7 @@ protected void dispatchDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
         mLeft = left;
-        addTaintDS(left);
+        addTaintLocal(left);
 	}
     
     @DSComment("Normal GUI")
@@ -5382,7 +5387,7 @@ protected void dispatchDraw(Canvas canvas) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
         mRight = right;
-        addTaintDS(right);
+        addTaintLocal(right);
 	}
     
     @DSComment("Normal GUI")
@@ -8890,8 +8895,8 @@ public Drawable getBackground() {
 	}
     
     public void setPaddingRelative(int start, int top, int end, int bottom){
-		addTaintDS(start);
-		addTaintDS(end);
+		addTaintLocal(start);
+		addTaintLocal(end);
 		// Original method
 		/*
 		{
@@ -9001,7 +9006,7 @@ public Drawable getBackground() {
     @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSelected(boolean selected){
-	    addTaintDS(selected); 
+	    addTaintLocal(selected); 
 		// Original method
 		/*
 		{
@@ -9241,7 +9246,7 @@ protected void dispatchSetActivated(boolean activated) {
             start = (View) parent;
         }*/
         View v = new View();
-        v.addTaintDS(start.getTaintInt() + predicate.getTaintInt());
+        v.addTaintLocal(start.getTaintInt() + predicate.getTaintInt());
         return v;
 	}
     

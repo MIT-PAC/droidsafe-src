@@ -45,7 +45,7 @@ public AtomicInteger(int initialValue) {
 public AtomicInteger() {
     }
     
-    public void addTaintDS(double t) {
+    private void addTaintLocal(double t) {
         super.addTaint(t);
         value = (int)getTaintInt();
     }
@@ -134,7 +134,7 @@ public final int getAndSet(int newValue) {
 public final boolean compareAndSet(int expect, int update) {
         //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
         value = update;
-        addTaintDS(update);
+        addTaintLocal(update);
         return toTaintBoolean(expect + update + getTaintInt());
     }
 
@@ -156,7 +156,7 @@ public final boolean compareAndSet(int expect, int update) {
     
 public final boolean weakCompareAndSet(int expect, int update) {
         //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
-        addTaintDS(expect + update);
+        addTaintLocal(expect + update);
         return getTaintBoolean();
     }
 

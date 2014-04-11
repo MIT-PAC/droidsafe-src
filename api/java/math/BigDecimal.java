@@ -416,7 +416,7 @@ private BigDecimal(long smallValue, int scale){
         this.smallValue = smallValue;
         this.scale = scale;
         this.bitLength = bitLength(smallValue);
-        addTaintDS(smallValue + scale);
+        addTaintLocal(smallValue + scale);
     }
 
     @DSComment("Private Method")
@@ -427,7 +427,7 @@ private BigDecimal(int smallValue, int scale){
         this.smallValue = smallValue;
         this.scale = scale;
         this.bitLength = bitLength(smallValue);
-        addTaintDS(smallValue + scale);
+        addTaintLocal(smallValue + scale);
     }
 
     /**
@@ -457,7 +457,7 @@ public BigDecimal(char[] in, int offset, int len) {
         StringBuilder unscaledBuffer; // buffer for unscaled value
         long newScale; // the new scale
 
-        addTaintDS(in[0] + offset + len);
+        addTaintLocal(in[0] + offset + len);
 
         if (in == null) {
             throw new NullPointerException();
@@ -685,7 +685,7 @@ public BigDecimal(String val, MathContext mc) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.188 -0500", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "21F06AAA0AAC6CA3F389A18FE466D483")
     
 public BigDecimal(double val) {
-        addTaintDS(val);
+        addTaintLocal(val);
         if (Double.isInfinite(val) || Double.isNaN(val)) {
             throw new NumberFormatException("Infinity or NaN: " + val);
         }
@@ -830,7 +830,7 @@ public BigDecimal(BigInteger unscaledVal, int scale) {
         }
         this.scale = scale;
         setUnscaledValue(unscaledVal);
-        addTaintDS(unscaledVal.getTaintInt() + scale);
+        addTaintLocal(unscaledVal.getTaintInt() + scale);
     }
 
     /**
@@ -3146,7 +3146,7 @@ private void inplaceRound(MathContext mc) {
         precision = mcPrecision;
         setUnscaledValue(integerAndFraction[0]);
 
-        addTaintDS(mc.getTaintInt());
+        addTaintLocal(mc.getTaintInt());
     }
     /**
      * This method implements an efficient rounding for numbers which unscaled
@@ -3251,7 +3251,7 @@ private int approxPrecision() {
 private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
         in.defaultReadObject();
-        addTaintDS(in.getTaintInt());
+        addTaintLocal(in.getTaintInt());
 
         this.bitLength = intVal.bitLength();
         if (this.bitLength < 64) {
@@ -3309,10 +3309,10 @@ private void setUnscaledValue(BigInteger unscaledValue) {
         if(this.bitLength < 64) {
             this.smallValue = unscaledValue.longValue();
         }
-        addTaintDS(unscaledValue.getTaintInt());
+        addTaintLocal(unscaledValue.getTaintInt());
     }
 
-    public void addTaintDS(double d) {
+    private void addTaintLocal(double d) {
         super.addTaint(d);
         bitLength = getTaintInt();
         hashCode = getTaintInt();

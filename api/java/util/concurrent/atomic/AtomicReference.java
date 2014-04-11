@@ -46,7 +46,7 @@ public AtomicReference(V initialValue) {
 public AtomicReference() {
     }
     
-    public void addTaintDS(double t) {
+    public void addTaintLocal(double t) {
         super.addTaint(t);
         value.addTaint(t);
     }

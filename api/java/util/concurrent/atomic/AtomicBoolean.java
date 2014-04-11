@@ -46,11 +46,6 @@ public AtomicBoolean(boolean initialValue) {
 public AtomicBoolean() {
     }
 
-    public void addTaintDS(double t) {
-        super.addTaint(t);
-        value = getTaintBoolean();
-    }
-    
     /**
      * Returns the current value.
      *

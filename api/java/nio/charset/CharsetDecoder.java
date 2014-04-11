@@ -455,7 +455,7 @@ public final CoderResult flush(CharBuffer out) {
             status = FLUSH;
         }
         return result;*/
-        out.addTaint(taint);
+        out.addTaint(getTaint());
         CoderResult ret = new CoderResult(DSOnlyType.DONTCARE);
         ret.addTaint(out.getTaint());
         return ret;
