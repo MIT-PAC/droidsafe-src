@@ -465,16 +465,16 @@ public final void wait(long millis) throws InterruptedException {
         this.taint = getTaint();
     }
     
-    public static int toTaintInt(boolean intValue) {
+    public static final int toTaintInt(boolean intValue) {
         return 0;
     }
     
     
-    public static double toTaintFloat(boolean intValue) {
+    public static final double toTaintFloat(boolean intValue) {
         return 0;
     }
             
-    public static boolean toTaintBoolean(double intValue) {
+    public static final boolean toTaintBoolean(double intValue) {
         return false;
     }
     
