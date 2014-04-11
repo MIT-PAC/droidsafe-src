@@ -198,15 +198,16 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         return absLoc;
     }
 
-    public void refresh() {
-        fTreeViewer.refresh();
+    public void refresh(boolean recomputeTree, boolean updateLabel) {
+        if (recomputeTree)
+            fContentProvider.setRootElements(null);
+        fTreeViewer.refresh(updateLabel);
         // fTreeViewer.expandToLevel(autoExpandLevel());
         fTreeViewer.expandAll();    
       }
 
     public void setLongLabel(boolean longLabel) {
-        fLabelProvider.setLongLabel(longLabel);
-        updateLabels();
+        // No-op by default.  Subclasses should override it if long labels are supported.
     }
 
     public void updateLabels() {

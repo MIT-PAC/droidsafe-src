@@ -24,6 +24,14 @@ public enum FilterOp {
             default: return "show";
         }
     }
+    
+    public static FilterOp parse(String str) throws FilterException {
+        for (int i = 0; i < strings.length; i++) {
+            if (str.equals(strings[i]))
+                return values()[i];
+        }
+        throw new FilterException("Unrecognized filter type: " + str);
+    }
 }
 
 

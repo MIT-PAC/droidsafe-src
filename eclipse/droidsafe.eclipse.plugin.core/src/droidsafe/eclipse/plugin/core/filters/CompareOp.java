@@ -39,6 +39,14 @@ public enum CompareOp {
         }
     }
     
+    public static CompareOp parse(String str) throws FilterException {
+        for (int i = 0; i < strings.length; i++) {
+            if (str.equals(strings[i]))
+                return values()[i];
+        }
+        throw new FilterException("Unrecognized compare op: " + str);
+    }
+    
     public boolean apply(boolean value1, boolean value2) {
         switch (this) {
             case EQ: return value1 == value2;

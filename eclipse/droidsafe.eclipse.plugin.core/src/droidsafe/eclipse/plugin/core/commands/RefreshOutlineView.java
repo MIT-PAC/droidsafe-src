@@ -29,7 +29,7 @@ public class RefreshOutlineView extends AbstractHandler {
             SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
             droidsafeView.refreshSpecAndOutlineView();
         } else if (part instanceof IndicatorViewPart) {
-            ((IndicatorViewPart) part).updateView();
+            ((IndicatorViewPart) part).updateView(true);
         }
         return null;
     }

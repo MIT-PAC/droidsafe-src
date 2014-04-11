@@ -66,7 +66,7 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
                         public void handleEvent(Event event) {
                             if (view != null) {
                                 view.toggleVisibility(type);
-                                view.refresh();
+                                view.refresh(true, false);
                             }
                         }
                     };

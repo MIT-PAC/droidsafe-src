@@ -34,9 +34,16 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
             new HashMap<Object, TreeElement<?, ?>>();
 
     public Object[] getRootElements() {
+        if (rootElements == null) {
+            rootElements = initializeRoots();
+        }
         return rootElements;
     }
     
+    public void setRootElements(Object[] rootElements) {
+        this.rootElements = rootElements;
+    }
+
     public Object[] getSortedRootElements() {
         if (rootElements != null)
             sort(rootElements);
@@ -125,6 +132,5 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
         }
         return null;
     }
-
 
 }

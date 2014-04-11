@@ -66,7 +66,7 @@ public class IndicatorMenu extends CompoundContributionItem {
                          */
                         public void handleEvent(Event event) {
                             if (view != null) {
-                                view.setInputElement(file);
+                                view.setInputElement(file, false);
                             }
                         }
                     };

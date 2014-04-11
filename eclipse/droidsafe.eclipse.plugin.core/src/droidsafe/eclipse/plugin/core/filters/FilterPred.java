@@ -2,8 +2,13 @@ package droidsafe.eclipse.plugin.core.filters;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 
 public class FilterPred {
 
@@ -65,5 +70,36 @@ public class FilterPred {
             buf.append(clause);
         }
         return buf.toString();
+    }
+
+    public static FilterPred parse(JsonElement filterElt, Set<String> filterFields) throws FilterException {
+        JsonElement predElt = Utils.getFieldValue(filterElt, "pred");
+        if (predElt != null) {
+            FilterPredClause clause = FilterPredClause.parse(predElt, filterFields);
+            if (clause != null)
+                return new FilterPred(clause);
+        } else {
+            JsonArray conjuncts = Utils.getFieldValueAsArray(filterElt, "conjuncts");
+            if (conjuncts != null) {
+                List<FilterPredClause> clauses = parsePredClauses(conjuncts, filterFields);
+                return new FilterPred(BoolOp.AND, clauses);
+            } else {
+                JsonArray disjuncts = Utils.getFieldValueAsArray(filterElt, "disjuncts");
+                if (disjuncts != null) {
+                    List<FilterPredClause> clauses = parsePredClauses(disjuncts, filterFields);
+                    return new FilterPred(BoolOp.OR, clauses);
+                }
+            }
+        }
+        throw new FilterException("Missing predicate property \"pred\", \"conjuncts\", or \"disjuncts\" in\n" + filterElt);
+    }
+
+    private static List<FilterPredClause> parsePredClauses(JsonArray clauseArr, Set<String> filterFields) throws FilterException {
+        List<FilterPredClause> result = new ArrayList<FilterPredClause>();
+        for (int i = 0; i < clauseArr.size(); i++) {
+            FilterPredClause clause = FilterPredClause.parse(clauseArr.get(i), filterFields);
+            result.add(clause);
+        }
+        return result;
     }
 }

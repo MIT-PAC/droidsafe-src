@@ -12,7 +12,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.filters.Filter;
-import droidsafe.eclipse.plugin.core.filters.FilterOp;
 import droidsafe.eclipse.plugin.core.filters.FilterPred;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
@@ -25,12 +24,23 @@ import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvide
  */
 public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
     
-    private List<Filter> filters = new ArrayList<Filter>();
-    
     /** The object on which the droidsafe analysis info is to be displayed in the outline view */
     protected JsonObject fInput;
 
     private IndicatorViewPart viewPart;
+
+    public Object[] getRootElements() {
+        Object[] rootElements = viewPart.getRootElements();
+        if (rootElements == null) {
+            rootElements = initializeRoots();
+            viewPart.setRootElements(rootElements);
+        }
+        return rootElements;
+    }
+    
+    public void setRootElements(Object[] rootElements) {
+        viewPart.setRootElements(rootElements);
+    }
 
     public IndicatorTreeElementContentProvider(IndicatorViewPart viewPart) {
         this.viewPart = viewPart;
@@ -39,12 +49,9 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
     @Override
     public Object[] getElements(Object input) {
         if (input instanceof JsonObject) {
-            this.fInput = (JsonObject) input;
-            rootElements = initializeRoots();
-        } else {
-            rootElements = NO_CHILDREN;
-        }
-        return rootElements;
+            return getRootElements();
+        } 
+        return NO_CHILDREN;
     }
 
     @Override
@@ -104,7 +111,7 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
     
     private List<TreeElement<JsonElement, JsonElement>> applyFilters(
             List<TreeElement<JsonElement, JsonElement>> roots) {
-        for (Filter filter: filters) {
+        for (Filter filter: viewPart.getFilters()) {
             if (filter.isEnabled()) {
                 roots = applyFilter(roots, filter);
             }
@@ -178,26 +185,5 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
     protected void reset() {
     }
 
-    public void addFilter(Filter filter) {
-        int size = filters.size();
-        if (size == 0 || filter.op == FilterOp.SHOW || filters.get(size - 1).op != FilterOp.SHOW) {
-            filters.add(filter);
-        } else {
-            for (int i = 0; i < size; i++) {
-                if (filters.get(i).op == FilterOp.SHOW) {
-                    filters.add(i, filter);
-                    break;
-                }
-            }
-        }
-    }
-
-    public List<Filter> getFilters() {
-        return filters;
-    }
-
-    public void setFilters(List<Filter> filters) {
-        this.filters = filters;
-    }
 
 }

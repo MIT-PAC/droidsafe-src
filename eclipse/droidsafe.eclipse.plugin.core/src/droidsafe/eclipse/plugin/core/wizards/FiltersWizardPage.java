@@ -152,12 +152,22 @@ public class FiltersWizardPage extends WizardPage {
     }
 
     private void createColumns(Composite parent) {
-        TableViewerColumn filterCol = createTableViewerColumn("Filter", 500, 0);
+        TableViewerColumn nameCol = createTableViewerColumn("Filter Name", 150, 0);
+        nameCol.setLabelProvider(new ColumnLabelProvider() {
+            @Override
+            public String getText(Object element) {
+                Filter filter = (Filter) element;
+                String name = filter.name;
+                return (name == null) ? "" : name;
+            }
+        });
+
+        TableViewerColumn filterCol = createTableViewerColumn("Filter Spec", 500, 0);
         filterCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
             public String getText(Object element) {
                 Filter filter = (Filter) element;
-                return filter.toString();
+                return filter.op + " " + filter.pred;
             }
         });
 

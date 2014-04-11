@@ -13,6 +13,7 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import droidsafe.eclipse.plugin.core.filters.BoolOp;
@@ -37,6 +38,7 @@ public class EditFilterWizardPage extends WizardPage {
     private Button[] boolOpButtons;
     private boolean[] clausesComplete = new boolean[MAX_PRED_CLAUSES];
     private String[] filterFields;
+    private Text filterNameText;
 
     /**
      * Create the wizard.
@@ -60,11 +62,20 @@ public class EditFilterWizardPage extends WizardPage {
 
         setControl(container);
         GridLayout gridLayout = new GridLayout();
-        gridLayout.numColumns = 1;
+        gridLayout.numColumns = 2;
         container.setLayout(gridLayout);
         
+        Label filterNameLabel = new Label (container, SWT.NONE);
+        filterNameLabel.setText("Filter name:");             
+        GridData gridData = new GridData(SWT.LEFT, SWT.CENTER, false, false);
+        filterNameLabel.setLayoutData(gridData);
+        filterNameText = new Text(container, SWT.BORDER);
+        gridData = new GridData(GridData.FILL_HORIZONTAL);
+        filterNameText.setLayoutData(gridData);
+
         filterOpContainer = new Composite(container, SWT.NONE);
-        GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+        gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+        gridData.horizontalSpan = gridLayout.numColumns;
         filterOpContainer.setLayoutData(gridData);
         RowLayout rowLayout = new RowLayout();
         filterOpContainer.setLayout(rowLayout);
@@ -78,6 +89,7 @@ public class EditFilterWizardPage extends WizardPage {
         
         Composite predContainer = new Composite(container, SWT.BORDER);
         gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        gridData.horizontalSpan = gridLayout.numColumns;
         predContainer.setLayoutData(gridData);
         gridLayout = new GridLayout();
         gridLayout.numColumns = 1;
@@ -134,6 +146,8 @@ public class EditFilterWizardPage extends WizardPage {
     }
 
     private void fillData() {
+        if (filter.name != null)
+            filterNameText.setText(filter.name);;
         FilterOp filterOp = filter.op;
         FilterPred filterPred = filter.pred;
         BoolOp boolOp = filterPred.getBoolOp();
@@ -253,6 +267,7 @@ public class EditFilterWizardPage extends WizardPage {
     }
     
     public Filter getFilter() {
+        String name = filterNameText.getText();
         FilterOp filterOp = getFilterOp();
         BoolOp boolOp = getBooleanOp();
         List<FilterPredClause> clauses = new ArrayList<FilterPredClause>();
@@ -261,14 +276,14 @@ public class EditFilterWizardPage extends WizardPage {
             clauses.add(clause);
         }
         FilterPred filterPred = new FilterPred(boolOp, clauses);
-        return new Filter(filterOp, filterPred);
+        return new Filter(name, filterOp, filterPred);
     }
 
     private FilterPredClause getFilterPredClause(int i) {
         String field = fieldCombos[i].getText();
         CompareOp compOp = CompareOp.values()[compOpCombos[i].getSelectionIndex()];
         String value = valueTexts[i].getText();
-        FilterPredClause clause = new FilterPredClause(null, field, compOp, value);
+        FilterPredClause clause = new FilterPredClause(field, compOp, value);
         return clause;
     }
     

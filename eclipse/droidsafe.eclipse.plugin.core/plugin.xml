@@ -506,20 +506,11 @@
             locationURI="menu:droidsafe.eclipse.plugin.core.view.IndicatorView">
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.SetFilters"
-               label="Filters"
+               label="Filters..."
                style="push">
          </command>
          <menu
                label="Label">
-            <command
-                  commandId="droidsafe.eclipse.plugin.core.commands.LongLabel"
-                  label="Use Long Label"
-                  style="toggle">
-            </command>
-            <separator
-                  name="droidsafe.eclipse.plugin.core.separator"
-                  visible="true">
-            </separator>
             <dynamic
                   class="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu"
                   id="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu">

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.jface.action.IContributionItem;
+import org.eclipse.jface.action.Separator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
@@ -26,52 +27,90 @@ public class LabelDisplayMenu extends CompoundContributionItem {
 
         Map<String, Boolean> displayMap = view.getDisplayMap();
 
-        if (displayMap.isEmpty())
-            return new IContributionItem[0];
-        
         Set<String> fields = displayMap.keySet();
-        IContributionItem[] items = new IContributionItem[fields.size()];
-        int i = 0;
-        for (final String field: fields) {
-            items[i++] = new ContributionItem() {
+        IContributionItem[] items = new IContributionItem[fields.isEmpty() ? 1 : fields.size() + 2];
+        items[0] = new ContributionItem() {
 
-                /*
-                 * (non-Javadoc)
-                 * 
-                 * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu,
-                 *      int)
-                 */
-                public void fill(Menu menu, int index) {
-                    MenuItem item = new MenuItem(menu, SWT.CHECK);
-                    item.setText("Show "+field);
-                    item.addListener(SWT.Selection, getMenuItemListener(field, view));
-                    item.setSelection(view.getDisplay(field));
-                }
+            /*
+             * (non-Javadoc)
+             * 
+             * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu,
+             *      int)
+             */
+            public void fill(Menu menu, int index) {
+                MenuItem item = new MenuItem(menu, SWT.CHECK);
+                item.setText("Use Long Label");
+                item.addListener(SWT.Selection, getMenuItemListener(view));
+                item.setSelection(view.longLabel());
+            }
 
-                /**
-                 * Return the menu item listener for selection of a filter.
-                 * 
-                 * @param field
-                 * @param view
-                 * @return Listener
-                 */
-                private Listener getMenuItemListener(final String field,
-                                                     final IndicatorViewPart view) {
-                    return new Listener() {
-                        /*
-                         * (non-Javadoc)
-                         * 
-                         * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
-                         */
-                        public void handleEvent(Event event) {
-                            if (view != null) {
-                                view.toggleDisplay(field);
-                                view.updateLabels();
-                            }
+            /**
+             * Return the menu item listener for selection of a filter.
+             * 
+             * @param field
+             * @param view
+             * @return Listener
+             */
+            private Listener getMenuItemListener(final IndicatorViewPart view) {
+                return new Listener() {
+                    /*
+                     * (non-Javadoc)
+                     * 
+                     * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
+                     */
+                    public void handleEvent(Event event) {
+                        if (view != null) {
+                            view.setLongLabel(!view.longLabel());
+                            view.updateLabels();
                         }
-                    };
-                }
-            };
+                    }
+                };
+            }
+        };
+        if (!fields.isEmpty()) {
+            items[1] = new Separator();
+            int i = 2;
+            for (final String field: fields) {
+                items[i++] = new ContributionItem() {
+
+                    /*
+                     * (non-Javadoc)
+                     * 
+                     * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu,
+                     *      int)
+                     */
+                    public void fill(Menu menu, int index) {
+                        MenuItem item = new MenuItem(menu, SWT.CHECK);
+                        item.setText("Show "+field);
+                        item.addListener(SWT.Selection, getMenuItemListener(field, view));
+                        item.setSelection(view.getDisplay(field));
+                    }
+
+                    /**
+                     * Return the menu item listener for selection of a filter.
+                     * 
+                     * @param field
+                     * @param view
+                     * @return Listener
+                     */
+                    private Listener getMenuItemListener(final String field,
+                                                         final IndicatorViewPart view) {
+                        return new Listener() {
+                            /*
+                             * (non-Javadoc)
+                             * 
+                             * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
+                             */
+                            public void handleEvent(Event event) {
+                                if (view != null) {
+                                    view.toggleDisplay(field);
+                                    view.updateLabels();
+                                }
+                            }
+                        };
+                    }
+                };
+            }
         }
 
         return items;

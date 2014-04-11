@@ -12,7 +12,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
 import droidsafe.analyses.value.VAUtils;
-import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 
 public class Utils {
     
@@ -39,20 +38,41 @@ public class Utils {
     }
     
     public static String getFieldValueAsString(JsonElement jsonElement, String field) {
-        if (jsonElement.isJsonObject()) {
-            JsonObject jsonObject = (JsonObject) jsonElement;
-            JsonElement value = jsonObject.get(field);
-            if (value != null) {
-                return value.getAsString();
-            } else if (SIGNATURE_FIELDS.contains(field)){
-                return getSignatureFieldValueAsString(jsonObject, field);
-            }
+        JsonElement value = getFieldValue(jsonElement, field);
+        if (value != null) {
+            return value.getAsString();
+        } else if (SIGNATURE_FIELDS.contains(field)){
+            return getSignatureFieldValueAsString(jsonElement, field);
         }
         return null;
     }
 
-    public static String getSignatureFieldValueAsString(JsonObject jsonObject, String field) {
-        String sig = jsonObject.get("signature").getAsString();
+    public static JsonObject getFieldValueAsObject(JsonElement jsonElement, String field) {
+        JsonElement value = getFieldValue(jsonElement, field);
+        if (value != null && value.isJsonObject()) {
+            return value.getAsJsonObject();
+        }
+        return null;
+    }
+
+    public static JsonArray getFieldValueAsArray(JsonElement jsonElement, String field) {
+        JsonElement value = getFieldValue(jsonElement, field);
+        if (value != null && value.isJsonArray()) {
+            return value.getAsJsonArray();
+        }
+        return null;
+    }
+
+    public static JsonElement getFieldValue(JsonElement jsonElement, String field) {
+        if (jsonElement.isJsonObject()) {
+            JsonObject jsonObject = (JsonObject) jsonElement;
+            JsonElement value = jsonObject.get(field);
+            return value;
+        }
+        return null;
+    }
+    public static String getSignatureFieldValueAsString(JsonElement jsonElement, String field) {
+        String sig = getFieldValueAsString(jsonElement, "signature");
         if (sig != null) {
             if (field.equals("class"))
                 return signatureClass(sig);

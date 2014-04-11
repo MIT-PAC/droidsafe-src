@@ -2,16 +2,14 @@ package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -20,7 +18,6 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.Activator;
@@ -48,30 +45,16 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     
     protected File fInputElement;
     
+    private Map<File, IndicatorViewState> fStateMap = new HashMap<File, IndicatorViewState>();
+    
     /** The text displayed on the empty page. */
     protected static String EMPTY_PAGE_LABEL = "No Android Project selected. "
-          + "\nSelect an Android project in the Project Explorer."
-          + "\nYou may also need to run the Droidsafe spec generation "
-          + "command from the project context menu.";
+          + "\nSelect an Android project in the Project Explorer.";
     
-    private Map<String, Boolean> visibilityMap = new TreeMap<String, Boolean>();
-    
-    private Map<String, Boolean> defaultVisibilityMap = null;
-    
-    private Map<String, Boolean> displayMap = new TreeMap<String, Boolean>();
-    
-    private Map<String, Boolean> defaultDisplayMap = null;
-
-    private String[] filterFields;
-
-    private Set<String> sortByFields;
-
-    private String sortByField;
-
-    private JsonObject jsonObject;
+    private IndicatorViewState fState;
 
     public Map<String, Boolean> getVisibilityMap() {
-        return visibilityMap;
+        return fState.visibilityMap;
     }
 
     public boolean getVisibility(String type) {
@@ -90,79 +73,33 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     }
 
     public Map<String, Boolean> getDisplayMap() {
-        return displayMap;
+        return fState.displayMap;
     }
 
     public boolean getDisplay(String field) {
-        Boolean display = displayMap.get(field);
+        Boolean display = fState.displayMap.get(field);
         if (display != null)
             return display.booleanValue();
         return false;
     }
 
     public void toggleDisplay(String field) {
-        Boolean display = displayMap.get(field);
+        Boolean display = fState.displayMap.get(field);
         if (display != null)
-            displayMap.put(field, !display.booleanValue());
-    }
-
-    private void computeDefaultVisibilityMap(JsonObject jsonObj) {
-        defaultVisibilityMap = new TreeMap<String, Boolean>();
-        JsonElement visibility = jsonObj.get("visibility");
-        if (visibility != null && visibility.isJsonObject()) {
-            for (Map.Entry<String, JsonElement> entry: visibility.getAsJsonObject().entrySet()) {
-                String key = entry.getKey();
-                Boolean value = Boolean.valueOf(entry.getValue().getAsBoolean());
-                defaultVisibilityMap.put(key, value);
-            }
-        }
-    }
-
-    private void computeVisibilityMapFromDefault() {
-        for (String key: visibilityMap.keySet()) {
-            if (!defaultVisibilityMap.containsKey(key)) {
-                visibilityMap.remove(key);
-            }
-        }
-        for (String key: defaultVisibilityMap.keySet()) {
-            if (!visibilityMap.containsKey(key)) {
-                visibilityMap.put(key, defaultVisibilityMap.get(key));
-            }
-        }
-    }
-
-    private void computeDefaultDisplayMap(JsonObject jsonObj) {
-        defaultDisplayMap = new TreeMap<String, Boolean>();
-        JsonElement display = jsonObj.get("display");
-        if (display != null && display.isJsonObject()) {
-            for (Map.Entry<String, JsonElement> entry: display.getAsJsonObject().entrySet()) {
-                String key = entry.getKey();
-                Boolean value = Boolean.valueOf(entry.getValue().getAsBoolean());
-                defaultDisplayMap.put(key, value);
-            }
-        }
-    }
-
-    private void computeDisplayMapFromDefault() {
-        for (String key: displayMap.keySet()) {
-            if (!defaultDisplayMap.containsKey(key)) {
-                displayMap.remove(key);
-            }
-        }
-        for (String key: defaultDisplayMap.keySet()) {
-            if (!displayMap.containsKey(key)) {
-                displayMap.put(key, defaultDisplayMap.get(key));
-            }
-        }
+            fState.displayMap.put(field, !display.booleanValue());
     }
 
     /**
      * Set the input element for the viewer and update the contents of the view.
      */
     protected void setInputElement(File indicatorFile) {
+        setInputElement(indicatorFile, false);
+    }
+
+    protected void setInputElement(File indicatorFile, boolean reload) {
         if (indicatorFile != fInputElement || fTreeViewer.getInput() == null) {
             fInputElement = indicatorFile;
-            updateView();
+            updateView(reload);
         }
     }
     
@@ -181,23 +118,29 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
      * Update the content of the outline view.
      */
     public void updateView() {
+        updateView(false);
+    }
+
+    /**
+     * Update the content of the outline view.
+     */
+    public void updateView(boolean reload) {
         if (fInputElement != null && fParentComposite != null) {
-            jsonObject = DroidsafePluginUtilities.parseIndicatorFile(fInputElement);
-            computeDefaultVisibilityMap(jsonObject);
-            computeVisibilityMapFromDefault();
-            computeDefaultDisplayMap(jsonObject);
-            computeDisplayMapFromDefault();
-            String indicatorType = Utils.getFieldValueAsString(jsonObject, "indicator-type");
-            if (indicatorType == null) {
-                String fileName = fInputElement.getName();
-                int pos = fileName.indexOf(".");
-                indicatorType = fileName.substring(0, pos).replace('_', ' ');
+            IndicatorViewState oldState = fStateMap.get(fInputElement);
+            if (reload || oldState == null ) {
+                JsonObject jsonObject = DroidsafePluginUtilities.parseIndicatorFile(fInputElement);
+                if (jsonObject == null)
+                    return;
+                fState = new IndicatorViewState(fInputElement, jsonObject, oldState);
+                fStateMap.put(fInputElement, fState);
+            } else {
+                fState = oldState;
             }
-            setPartName(indicatorType);
+            setPartName(fState.indicatorType);
             showPage(PAGE_VIEWER);
+            fTreeViewer.setInput(fState.jsonObject);
             if (fTreeViewer.getSorter() == null)
                 sortByField(getSortByField());
-            fTreeViewer.setInput(jsonObject);
         } else {
             setPartName(DEFAULT_PART_NAME);
         }
@@ -258,11 +201,10 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     }
 
     protected void projectSelected() {
-        reset();
-        IProject project = getProject();
-        fIndicatorFiles = DroidsafePluginUtilities.getIndicatorFiles(project);
+//        reset();
+        fIndicatorFiles = getIndicatorFiles();
         if (fIndicatorFiles == null || fIndicatorFiles.length == 0) {
-            fEmptyPageLabel.setText(noJsonFileMessage(project));
+            fEmptyPageLabel.setText(noJsonFileMessage());
             showPage(PAGE_EMPTY);
         } else {
             File indicatorFile = fIndicatorFiles[0];
@@ -270,57 +212,47 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
         }
     }
     
-    private String noJsonFileMessage(IProject project) {
+    private String noJsonFileMessage() {
+        IProject project = getProject();
         return "No indicator (.json) files found in the droidsafe output directory\n\n  " + 
                 DroidsafePluginUtilities.getProjectOutputDir(project);
     }
 
     public void addFilter(Filter filter) {
-        ((IndicatorTreeElementContentProvider)fContentProvider).addFilter(filter);
-        refresh();
+        fState.addFilter(filter);
+        refresh(true, false);
     }
 
     public List<Filter> getFilters() {
-        return ((IndicatorTreeElementContentProvider)fContentProvider).getFilters();
+        return fState.filters;
     }
 
     public void setFilters(List<Filter> filters) {
-        ((IndicatorTreeElementContentProvider)fContentProvider).setFilters(filters);
-        refresh();
+        fState.filters = filters;
+        refresh(true, false);
     }
 
     public File[] getIndicatorFiles() {
-        return fIndicatorFiles;
+        IProject project = getProject();
+        return DroidsafePluginUtilities.getIndicatorFiles(project);
     }
 
     public String[] getFilterFields() {
-        if (filterFields == null) {
-            filterFields = Utils.getAllFilterFields(jsonObject).toArray(new String[0]);
-        }
-        return filterFields;
+        return fState.getFilterFields();
     }
     
     public Set<String> getSortByFields() {
-        if (sortByFields == null && jsonObject != null) {
-            sortByFields = Utils.getSortByFields(jsonObject);
-        }
-        return sortByFields;
+        return fState.getSortByFields();
     }
     
     public String getSortByField() {
-        if (sortByField == null) {
-            Set<String> fields = getSortByFields();
-            if (fields.contains("class"))
-                sortByField = "class";
-            else
-                sortByField = fields.iterator().next();
-        }
-        return sortByField;
+        return fState.getSortByField();
     }
 
     public void setSortByField(String field) {
-        sortByField = field;
+        fState.sortByField = field;
     }
+
     public void dispose() {
         reset();
     }
@@ -388,6 +320,23 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
         if (!selectedElements.isEmpty()) {
             getViewer().setSelection(new StructuredSelection(selectedElements), true);
         }
+    }
+
+    public boolean longLabel() {
+        return fState.longLabel;
+    }
+
+    public void setLongLabel(boolean longLabel) {
+        fState.longLabel = longLabel;
+        updateLabels();
+    }
+
+    public Object[] getRootElements() {
+        return fState.rootElements;
+    }
+    
+    public void setRootElements(Object[] rootElements) {
+        fState.rootElements = rootElements;
     }
 
 }
