@@ -235,9 +235,9 @@ public static InvocationHandler getInvocationHandler(Object proxy)
     private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
     	Class ret = (Class)new Object();
-    	ret.addTaint(name.taint);
-    	ret.addTaint(interfaces[0].taint);
-    	ret.addTaint(loader.taint);
+    	ret.addTaint(name.getTaint());
+    	ret.addTaint(interfaces[0].getTaint());
+    	ret.addTaint(loader.getTaint());
     	return ret;
     }
     

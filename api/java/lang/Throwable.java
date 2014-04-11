@@ -55,7 +55,7 @@ private static int countDuplicates(StackTraceElement[] currentStack,
     private static StackTraceElement[] nativeGetStackTrace(Object stackState) {
     	StackTraceElement[] ret = new StackTraceElement[1];
         ret[0] = new StackTraceElement();
-    	ret[0].addTaint(stackState.taint);
+    	ret[0].addTaint(stackState.getTaint());
     	return ret;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.567 -0500", hash_original_field = "03831E44B4BAB79115DDC1B6FBA097B6", hash_generated_field = "02CA67A79E3766B4E9DFDCEAEB0383C0")
@@ -325,7 +325,7 @@ public void printStackTrace(PrintStream err) {
             throw new AssertionError();
         }
         */
-        err.addTaint(taint);
+        err.addTaint(getTaint());
     }
 
     /**

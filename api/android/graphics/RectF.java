@@ -83,24 +83,24 @@ public RectF() {}
     @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
-    	addTaint(left);
-    	addTaint(top);
-    	addTaint(right);
-    	addTaint(bottom);
+    	addTaintLocal(left);
+    	addTaintLocal(top);
+    	addTaintLocal(right);
+    	addTaintLocal(bottom);
     }
     
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(RectF r) { 
     	this();
-    	addTaint(r.getTaint());
+    	addTaintLocal(r.getTaintInt());
     }
     
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public RectF(Rect r) {
     	this();
-    	addTaint(r.getTaint());
+    	addTaintLocal(r.getTaintInt());
     }
     
     @DSComment("From safe class list")
@@ -127,7 +127,7 @@ public RectF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void printShortString(PrintWriter pw) {
-    	char c = 0;
+    	char c = (char)getSumTaintInt();
     	pw.append(c);
     }
     
@@ -172,24 +172,24 @@ public RectF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void set(float left, float top, float right, float bottom) {
-    	addTaint(left);
-    	addTaint(top);
-    	addTaint(right);
-    	addTaint(bottom);  
+    	addTaintLocal(left);
+    	addTaintLocal(top);
+    	addTaintLocal(right);
+    	addTaintLocal(bottom);  
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(RectF src) {
-    	addTaint(src.getTaint());
+    	addTaintLocal(src.getTaintInt());
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Rect src) {
-        addTaint(src.getTaint());
+        addTaintLocal(src.getTaintInt());
     }
 
     /**
@@ -204,7 +204,7 @@ public RectF() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.903 -0500", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "209DD68EA03C32B026C6A69EF4BF7652")
     
     public void offset(float dx, float dy) {
-        addTaint(dx + dy);
+        addTaintLocal(dx + dy);
     }
 
     /**
@@ -219,7 +219,7 @@ public RectF() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.906 -0500", hash_original_method = "17E8F6A0DA6BEF949708E45EF28FBDEC", hash_generated_method = "072395F153C45E5EB171F20F34EFAEBF")
     
 public void offsetTo(float newLeft, float newTop) {
-        addTaint(newLeft + newTop);
+        addTaintLocal(newLeft + newTop);
     }
     
     /**
@@ -236,7 +236,7 @@ public void offsetTo(float newLeft, float newTop) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.908 -0500", hash_original_method = "4ED8FEC7EC4817417CFF539CEB8CD3D5", hash_generated_method = "5C4D73D90534F267ACD4AF169BAC2F86")
     
 public void inset(float dx, float dy) {
-        addTaint(dx + dy);
+        addTaintLocal(dx + dy);
     }
 
     /**
@@ -389,7 +389,7 @@ public boolean setIntersect(RectF a, RectF b) {
         }
         return false;
     */
-        addTaint(a.getTaintInt() + b.getTaintInt());
+        addTaintLocal(a.getTaintInt() + b.getTaintInt());
         return getTaintBoolean();
     }
     
@@ -480,7 +480,7 @@ public void union(float left, float top, float right, float bottom) {
             }
         }
     */
-    addTaint(left + top + right + bottom);
+    addTaintLocal(left + top + right + bottom);
     }
     
     /**
@@ -522,7 +522,7 @@ public void union(float x, float y) {
             bottom = y;
         }
       */
-        addTaint(x + y);
+        addTaintLocal(x + y);
     }
     
     /**
@@ -590,7 +590,7 @@ public void writeToParcel(Parcel out, int flags) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.954 -0500", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "32582E56D2E66C5F6A01976E86765F0C")
     
 public void readFromParcel(Parcel in) {
-        addTaint(in.getTaint());
+        addTaintLocal(in.getTaintInt());
         /*
         left = in.readFloat();
         top = in.readFloat();
@@ -601,13 +601,15 @@ public void readFromParcel(Parcel in) {
     // orphaned legacy method
     
 	public final float top() {
-		return getTaintFloat();
+		//return getTaintFloat();
+		return getSumTaintInt();
 	}
     
     // orphaned legacy method
     
 	public final float left() {
-		return getTaintFloat();
+		//return getTaintFloat();
+		return getSumTaintInt();
 	}
 
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
@@ -617,15 +619,14 @@ public void readFromParcel(Parcel in) {
         bottom = getTaintInt();
         top    = getTaintInt();
     }
-
-    @Override public void addTaint(DSTaintObject t) {
+    
+    private void addTaintLocal(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
     
-    @Override public void addTaint(double t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
+    private int getSumTaintInt() {
+        return (int)(right + left + bottom + top + getTaintInt());
     }
 }
 

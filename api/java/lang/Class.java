@@ -165,7 +165,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
     	Class[] ret = new Class[0];
-    	ret.addTaint(clazz.taint);
+    	ret.addTaint(clazz.getTaint());
     	ret.addTaint(publicOnly);
     	return ret;
     }
@@ -175,7 +175,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
     	Constructor[] ret = new Constructor[0];
-    	ret.addTaint(clazz.taint);
+    	ret.addTaint(clazz.getTaint());
     	ret.addTaint(publicOnly);
     	return ret;
     }
@@ -184,7 +184,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
-    	ret.addTaint(clazz.taint);
+    	ret.addTaint(clazz.getTaint());
     	ret.addTaint(publicOnly);
     	return ret;
     }
@@ -193,8 +193,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Field getDeclaredField(Class<?> clazz, String name) {
     	Field ret = new Field();
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(name.taint);
+    	ret.addTaint(clazz.getTaint());
+    	ret.addTaint(name.getTaint());
     	return ret;
     }
     
@@ -202,7 +202,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
-    	ret[0].addTaint(clazz.taint);
+    	ret[0].addTaint(clazz.getTaint());
     	ret[0].addTaint(publicOnly);
     	return ret;
     }
@@ -211,9 +211,9 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
     	Method ret = new Method();
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(name.taint);
-    	ret.addTaint(args[0].taint);
+    	ret.addTaint(clazz.getTaint());
+    	ret.addTaint(name.getTaint());
+    	ret.addTaint(args[0].getTaint());
     	return ret;
     }
     
@@ -269,7 +269,7 @@ private String getSignatureAttribute() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
     	Object[] foo = new Object[0];
-    	foo.addTaint(this.taint);
+    	foo.addTaint(this.getTaint());
     	return foo;
     }
 
@@ -296,14 +296,14 @@ public Class<?>[] getClasses() {
         if(annotationType == null)        
         {
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_369997871 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_369997871.addTaint(taint);
+            varD3565833EFC12BC5822ABFE94D257EDE_369997871.addTaint(getTaint());
             throw varD3565833EFC12BC5822ABFE94D257EDE_369997871;
         } //End block
         A annotation = getDeclaredAnnotation(annotationType);
         if(annotation != null)        
         {
 A varB5EBB19788F53663B19E3EA6F1AE265A_918165834 =             annotation;
-            varB5EBB19788F53663B19E3EA6F1AE265A_918165834.addTaint(taint);
+            varB5EBB19788F53663B19E3EA6F1AE265A_918165834.addTaint(getTaint());
             return varB5EBB19788F53663B19E3EA6F1AE265A_918165834;
         } //End block
         if(annotationType.isAnnotationPresent(Inherited.class))        
@@ -314,13 +314,13 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
                 if(annotation != null)                
                 {
 A varB5EBB19788F53663B19E3EA6F1AE265A_526672705 =                     annotation;
-                    varB5EBB19788F53663B19E3EA6F1AE265A_526672705.addTaint(taint);
+                    varB5EBB19788F53663B19E3EA6F1AE265A_526672705.addTaint(getTaint());
                     return varB5EBB19788F53663B19E3EA6F1AE265A_526672705;
                 } //End block
             } //End block
         } //End block
 A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
-        var540C13E9E156B687226421B24F2DF178_936883154.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_936883154.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_936883154;
         // ---------- Original Method ----------
         //if (annotationType == null) {
@@ -485,7 +485,7 @@ ClassLoader getClassLoaderImpl() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.699 -0400", hash_original_method = "A6D69727DF0CDE095BD59CFD60FF06ED", hash_generated_method = "CDEED6F065A507A7FECB927A85CD4D66")
     public Class<?> getComponentType() {
     	Class<?> cl = (Class)new Object();
-    	cl.addTaint(this.taint);
+    	cl.addTaint(this.getTaint());
     	return cl;
     }
 
@@ -600,7 +600,7 @@ public Constructor<?>[] getConstructors() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "097083D90BBF2FCC58AC81DB8664E54F", hash_generated_method = "33C06C0DC63918D788913C928E9A0C55")
     private <A extends Annotation> A getDeclaredAnnotation(Class<A> annotationClass) {
     	A ret = (A)new Object();
-       	addTaint(annotationClass.taint);
+       	addTaint(annotationClass.getTaint());
     	return ret;
     }
 
@@ -1615,13 +1615,13 @@ public Package getPackage() {
         if(clazz.isAssignableFrom(this))        
         {
 Class<? extends U> var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090 =             (Class<? extends U>)this;
-            var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090.addTaint(taint);
+            var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090.addTaint(getTaint());
             return var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090;
         } //End block
         String actualClassName = this.getName();
         String desiredClassName = clazz.getName();
         ClassCastException var7B10A624B63DE93BBB3082FF2B62182B_1271522509 = new ClassCastException(actualClassName + " cannot be cast to " + desiredClassName);
-        var7B10A624B63DE93BBB3082FF2B62182B_1271522509.addTaint(taint);
+        var7B10A624B63DE93BBB3082FF2B62182B_1271522509.addTaint(getTaint());
         throw var7B10A624B63DE93BBB3082FF2B62182B_1271522509;
         // ---------- Original Method ----------
         //if (clazz.isAssignableFrom(this)) {

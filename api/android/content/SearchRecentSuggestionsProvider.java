@@ -127,7 +127,7 @@ public DatabaseHelper(Context context, int newVersion) {
                 ((mode & DATABASE_MODE_QUERIES) == 0))        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1093189208 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1093189208.addTaint(taint);
+            var5783EF97022AA508B74A1E3EA38534AF_1093189208.addTaint(getTaint());
             throw var5783EF97022AA508B74A1E3EA38534AF_1093189208;
         } //End block
         mTwoLineDisplay = (0 != (mode & DATABASE_MODE_2LINES));

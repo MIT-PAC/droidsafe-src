@@ -1079,7 +1079,7 @@ ScaleToFit(int nativeInt) {
 		*/
         
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
 		return str;
 	}
     
@@ -1095,14 +1095,14 @@ ScaleToFit(int nativeInt) {
     }
 		*/
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
         return str;
 	}
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void toShortString(StringBuilder sb){
-        sb.addTaint(taint);
+        sb.addTaint(getTaint());
 		// Original method
 		/*
 		{
@@ -1124,7 +1124,7 @@ ScaleToFit(int nativeInt) {
     @DSSafe(DSCat.SAFE_LIST)
     public void printShortString(PrintWriter pw){
         pw.addTaint(native_instance);
-        pw.addTaint(taint);
+        pw.addTaint(getTaint());
 		// Original method
 		/*
 		{

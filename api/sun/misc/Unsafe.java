@@ -85,7 +85,7 @@ private Unsafe() {}
         {
             IllegalArgumentException var9647A65078523FC9A06312AFCF421504_59239873 = new IllegalArgumentException(
                     "valid for instance fields only");
-            var9647A65078523FC9A06312AFCF421504_59239873.addTaint(taint);
+            var9647A65078523FC9A06312AFCF421504_59239873.addTaint(getTaint());
             throw var9647A65078523FC9A06312AFCF421504_59239873;
         } //End block
         long var45155EBB460CF1A21C43208975B41A88_966943115 = (objectFieldOffset0(field));
@@ -282,7 +282,7 @@ public int arrayIndexScale(Class clazz) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.175 -0400", hash_original_method = "7F65AB78F7829D174777BA98D685A0A2", hash_generated_method = "8389F48CA8228ADA469FDA17F26377FB")
     public Object getObjectVolatile(Object obj, long offset) {
     	Object ret = new Object();
-    	ret.addTaint(obj.taint);
+    	ret.addTaint(obj.getTaint());
     	ret.addTaint(offset);
     	return ret;
     }
@@ -395,7 +395,7 @@ public int arrayIndexScale(Class clazz) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.178 -0400", hash_original_method = "F008619F8920F7BD7FA02EADD68A4977", hash_generated_method = "67D30353ADFDF0D1EFF7C8039039B89C")
     public Object getObject(Object obj, long offset) {
     	Object ret = new Object();
-    	ret.addTaint(obj.taint);
+    	ret.addTaint(obj.getTaint());
     	ret.addTaint(offset);
     	return ret;
     }

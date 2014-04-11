@@ -129,7 +129,7 @@ public WebAddress(String address) throws ParseException {
             authInfo = mAuthInfo + "@";
         } //End block
 String varD260FE9771F1CDCAFC02A5BB565B207F_664591555 =         mScheme + "://" + authInfo + mHost + port + mPath;
-        varD260FE9771F1CDCAFC02A5BB565B207F_664591555.addTaint(taint);
+        varD260FE9771F1CDCAFC02A5BB565B207F_664591555.addTaint(getTaint());
         return varD260FE9771F1CDCAFC02A5BB565B207F_664591555;
         // ---------- Original Method ----------
         //String port = "";

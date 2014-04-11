@@ -306,7 +306,7 @@ public Object[] toArray() {
         if(snapshot.length > contents.length)        
         {
 T[] varAA242AD64FBF22E93B9DE930C2395AE0_337796799 =             (T[]) Arrays.copyOf(snapshot, snapshot.length, contents.getClass());
-            varAA242AD64FBF22E93B9DE930C2395AE0_337796799.addTaint(taint);
+            varAA242AD64FBF22E93B9DE930C2395AE0_337796799.addTaint(getTaint());
             return varAA242AD64FBF22E93B9DE930C2395AE0_337796799;
         } //End block
         System.arraycopy(snapshot, 0, contents, 0, snapshot.length);
@@ -315,7 +315,7 @@ T[] varAA242AD64FBF22E93B9DE930C2395AE0_337796799 =             (T[]) Arrays.cop
             contents[snapshot.length] = null;
         } //End block
 T[] var5DC9C33EDB9F81CF1216538024B770BE_39742848 =         contents;
-        var5DC9C33EDB9F81CF1216538024B770BE_39742848.addTaint(taint);
+        var5DC9C33EDB9F81CF1216538024B770BE_39742848.addTaint(getTaint());
         return var5DC9C33EDB9F81CF1216538024B770BE_39742848;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;

@@ -614,7 +614,7 @@ public ChildViewCache(View v) {
         if(drawableId == null || drawableId.length() == 0 || "0".equals(drawableId))        
         {
 Drawable var540C13E9E156B687226421B24F2DF178_1260539036 =             null;
-            var540C13E9E156B687226421B24F2DF178_1260539036.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_1260539036.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_1260539036;
         } //End block
         try 
@@ -626,13 +626,13 @@ Drawable var540C13E9E156B687226421B24F2DF178_1260539036 =             null;
             if(drawable != null)            
             {
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1901568503 =                 drawable;
-                varA22A26D75522826F9AEFA195DDDFD365_1901568503.addTaint(taint);
+                varA22A26D75522826F9AEFA195DDDFD365_1901568503.addTaint(getTaint());
                 return varA22A26D75522826F9AEFA195DDDFD365_1901568503;
             } //End block
             drawable = mProviderContext.getResources().getDrawable(resourceId);
             storeInIconCache(drawableUri, drawable);
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1360525305 =             drawable;
-            varA22A26D75522826F9AEFA195DDDFD365_1360525305.addTaint(taint);
+            varA22A26D75522826F9AEFA195DDDFD365_1360525305.addTaint(getTaint());
             return varA22A26D75522826F9AEFA195DDDFD365_1360525305;
         } //End block
         catch (NumberFormatException nfe)
@@ -641,20 +641,20 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_1360525305 =             drawable;
             if(drawable != null)            
             {
 Drawable varA22A26D75522826F9AEFA195DDDFD365_2051079005 =                 drawable;
-                varA22A26D75522826F9AEFA195DDDFD365_2051079005.addTaint(taint);
+                varA22A26D75522826F9AEFA195DDDFD365_2051079005.addTaint(getTaint());
                 return varA22A26D75522826F9AEFA195DDDFD365_2051079005;
             } //End block
             Uri uri = Uri.parse(drawableId);
             drawable = getDrawable(uri);
             storeInIconCache(drawableId, drawable);
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1917741064 =             drawable;
-            varA22A26D75522826F9AEFA195DDDFD365_1917741064.addTaint(taint);
+            varA22A26D75522826F9AEFA195DDDFD365_1917741064.addTaint(getTaint());
             return varA22A26D75522826F9AEFA195DDDFD365_1917741064;
         } //End block
         catch (Resources.NotFoundException nfe)
         {
 Drawable var540C13E9E156B687226421B24F2DF178_93646596 =             null;
-            var540C13E9E156B687226421B24F2DF178_93646596.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_93646596.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_93646596;
         } //End block
         // ---------- Original Method ----------

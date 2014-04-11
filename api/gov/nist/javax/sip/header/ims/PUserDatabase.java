@@ -47,7 +47,7 @@ public String getDatabaseName() {
         if((databaseName==null)||(databaseName.equals(" ")))        
         {
         NullPointerException varA3D75CD097E396096D0DAAE2F57C8E0F_272624513 = new NullPointerException("Database name is null");
-        varA3D75CD097E396096D0DAAE2F57C8E0F_272624513.addTaint(taint);
+        varA3D75CD097E396096D0DAAE2F57C8E0F_272624513.addTaint(getTaint());
         throw varA3D75CD097E396096D0DAAE2F57C8E0F_272624513;
         }
         else

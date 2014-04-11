@@ -36,7 +36,7 @@ public Stack() {
     public synchronized E peek() {
         if (isEmpty()) {
             EmptyStackException varD2F310AAC69D0B44FED139E8A8976F2D_500805259 = new EmptyStackException();
-            varD2F310AAC69D0B44FED139E8A8976F2D_500805259.addTaint(taint);
+            varD2F310AAC69D0B44FED139E8A8976F2D_500805259.addTaint(getTaint());
             throw varD2F310AAC69D0B44FED139E8A8976F2D_500805259; 
         }
         return getLastElement();
@@ -49,7 +49,7 @@ public Stack() {
     public synchronized E pop() {
         if (isEmpty()) {
             EmptyStackException varD2F310AAC69D0B44FED139E8A8976F2D_500805259 = new EmptyStackException();
-            varD2F310AAC69D0B44FED139E8A8976F2D_500805259.addTaint(taint);
+            varD2F310AAC69D0B44FED139E8A8976F2D_500805259.addTaint(getTaint());
             throw varD2F310AAC69D0B44FED139E8A8976F2D_500805259; 
         }
         return removeLastElement();

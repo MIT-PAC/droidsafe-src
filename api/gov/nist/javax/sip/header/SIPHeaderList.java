@@ -750,7 +750,7 @@ public HDR set(int position, HDR sipHeader) {
     public <T> T[] toArray(T[] array) {
         addTaint(array[0].getTaint());
 T[] var0350DC20E51885F26BC9AE21A5634403_1012850215 =         this.hlist.toArray(array);
-        var0350DC20E51885F26BC9AE21A5634403_1012850215.addTaint(taint);
+        var0350DC20E51885F26BC9AE21A5634403_1012850215.addTaint(getTaint());
         return var0350DC20E51885F26BC9AE21A5634403_1012850215;
         // ---------- Original Method ----------
         //return this.hlist.toArray(array);

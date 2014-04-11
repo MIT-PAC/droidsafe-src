@@ -105,12 +105,12 @@ for(Annotation annotation : getAnnotations())
             if(annotationType.isInstance(annotation))            
             {
 A var2A4302F2C71F8CB31F4FBBBA89DC4531_2117789764 =                 (A) annotation;
-                var2A4302F2C71F8CB31F4FBBBA89DC4531_2117789764.addTaint(taint);
+                var2A4302F2C71F8CB31F4FBBBA89DC4531_2117789764.addTaint(getTaint());
                 return var2A4302F2C71F8CB31F4FBBBA89DC4531_2117789764;
             } //End block
         } //End block
 A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
-        var540C13E9E156B687226421B24F2DF178_1222859646.addTaint(taint);
+        var540C13E9E156B687226421B24F2DF178_1222859646.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_1222859646;
         // ---------- Original Method ----------
         //for (Annotation annotation : getAnnotations()) {

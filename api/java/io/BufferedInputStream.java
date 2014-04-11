@@ -78,11 +78,12 @@ public BufferedInputStream(InputStream in, int size) {
     
 @Override
     public synchronized int available() throws IOException {
-        InputStream localIn = in; // 'in' could be invalidated by close()
+      /*  InputStream localIn = in; // 'in' could be invalidated by close()
         if (buf == null || localIn == null) {
             throw streamClosed();
         }
-        return count - pos + localIn.available();
+        return count - pos + localIn.available();*/
+        return super.droidsafeAvailable();
     }
 
     @DSComment("Private Method")
@@ -122,8 +123,11 @@ private IOException streamClosed() throws IOException {
     
 private int fillbuf(InputStream localIn, byte[] localBuf)
             throws IOException {
-        if (markpos == -1 || (pos - markpos >= marklimit)) {
-            /* Mark position not set or exceeded readlimit */
+        localIn.read(localBuf);
+       
+        return (localBuf[0] + localIn.getTaintInt());
+      /*  if (markpos == -1 || (pos - markpos >= marklimit)) {
+             Mark position not set or exceeded readlimit 
             int result = localIn.read(localBuf);
             if (result > 0) {
                 markpos = -1;
@@ -133,7 +137,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
             return result;
         }
         if (markpos == 0 && marklimit > localBuf.length) {
-            /* Increase buffer size to accommodate the readlimit */
+             Increase buffer size to accommodate the readlimit 
             int newLength = localBuf.length * 2;
             if (newLength > marklimit) {
                 newLength = marklimit;
@@ -147,12 +151,12 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
             System.arraycopy(localBuf, markpos, localBuf, 0, localBuf.length
                     - markpos);
         }
-        /* Set the new position and mark position */
+         Set the new position and mark position 
         pos -= markpos;
         count = markpos = 0;
         int bytesread = localIn.read(localBuf, pos, localBuf.length - pos);
         count = bytesread <= 0 ? pos : pos + bytesread;
-        return bytesread;
+        return bytesread;*/
     }
 
     /**
@@ -174,6 +178,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
     public synchronized void mark(int readlimit) {
         marklimit = readlimit;
         markpos = pos;
+        in.addTaint(readlimit);
     }
 
     /**
@@ -210,15 +215,15 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
     public synchronized int read() throws IOException {
         // Use local refs since buf and in may be invalidated by an
         // unsynchronized close()
-        byte[] localBuf = buf;
+/*        byte[] localBuf = buf;
         InputStream localIn = in;
         if (localBuf == null || localIn == null) {
             throw streamClosed();
         }
 
-        /* Are there buffered bytes available? */
+         Are there buffered bytes available? 
         if (pos >= count && fillbuf(localIn, localBuf) == -1) {
-            return -1; /* no, fill buffer */
+            return -1;  no, fill buffer 
         }
         // localBuf may have been invalidated by fillbuf
         if (localBuf != buf) {
@@ -228,11 +233,13 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
             }
         }
 
-        /* Did filling the buffer fail with -1 (EOF)? */
+         Did filling the buffer fail with -1 (EOF)? 
         if (count - pos > 0) {
             return localBuf[pos++] & 0xFF;
         }
-        return -1;
+        return -1;*/
+        
+        return fillbuf(in, buf);
     }
 
     /**
@@ -261,9 +268,10 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
     
 @Override
     public synchronized int read(byte[] buffer, int offset, int byteCount) throws IOException {
+        return super.read(buffer, offset, byteCount);
         // Use local ref since buf may be invalidated by an unsynchronized
         // close()
-        byte[] localBuf = buf;
+       /* byte[] localBuf = buf;
         if (localBuf == null) {
             throw streamClosed();
         }
@@ -278,7 +286,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
 
         int required;
         if (pos < count) {
-            /* There are bytes available in the buffer. */
+             There are bytes available in the buffer. 
             int copylength = count - pos >= byteCount ? byteCount : count - pos;
             System.arraycopy(localBuf, pos, buffer, offset, copylength);
             pos += copylength;
@@ -293,10 +301,10 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
 
         while (true) {
             int read;
-            /*
+            
              * If we're not marked and the required size is greater than the
              * buffer, simply read the bytes directly bypassing the buffer.
-             */
+             
             if (markpos == -1 && required >= localBuf.length) {
                 read = localIn.read(buffer, offset, required);
                 if (read == -1) {
@@ -326,7 +334,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
                 return byteCount - required;
             }
             offset += read;
-        }
+        }*/
     }
 
     /**
@@ -368,7 +376,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
 @Override
     public synchronized long skip(long byteCount) throws IOException {
         // Use local refs since buf and in may be invalidated by an
-        // unsynchronized close()
+     /*   // unsynchronized close()
         byte[] localBuf = buf;
         InputStream localIn = in;
         if (localBuf == null) {
@@ -403,7 +411,9 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
                 return read;
             }
         }
-        return read + localIn.skip(byteCount - read);
+        return read + localIn.skip(byteCount - read);*/
+        in.skip(byteCount);
+        return in.getTaintInt();
     }
     
 }

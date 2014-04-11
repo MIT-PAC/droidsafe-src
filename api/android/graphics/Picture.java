@@ -91,7 +91,7 @@ public Picture() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.316 -0500", hash_original_method = "0B8FC63E2385743B0CD030A74D7237E0", hash_generated_method = "E4AD0EEA9BC532D70FB4390F0FDD4FED")
     
 public Picture(Picture src) {
-        addTaint(src.taint);
+        addTaint(src.getTaint());
         //this(nativeConstructor(src != null ? src.mNativePicture : 0));
     }
     
@@ -192,7 +192,7 @@ public void writeToStream(OutputStream stream) {
         if (stream == null) {
             throw new NullPointerException();
         }
-        stream.addTaint(taint);
+        stream.addTaint(getTaint());
       /*  
         if (!nativeWriteToStream(mNativePicture, stream,
                              new byte[WORKING_STREAM_STORAGE])) {

@@ -327,7 +327,8 @@ private static int zone(String text) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.909 -0500", hash_original_method = "117F9B64DCE96B425DE39D6FF0E7C956", hash_generated_method = "474DEEC95109DC78EDD8476E9FBAEB33")
     
 public Date() {
-        this(System.currentTimeMillis());
+        //this(System.currentTimeMillis());
+        this(0);
     }
 
     /**
@@ -425,7 +426,6 @@ public Date() {
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.921 -0500", hash_original_method = "F91B8E0C111622A18C17EB4FC5AA472B", hash_generated_method = "FD8B232B005EE7105E8510DB09E5C300")
-    
 public Date(long milliseconds) {
         this.milliseconds = milliseconds;
     }

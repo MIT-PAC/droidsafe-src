@@ -476,7 +476,7 @@ for(p = first();p != null && k < a.length;p = succ(p))
             if(k < a.length)            
             a[k] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_1239886747 =             a;
-            var3F5343BF1D849954A73F0BB303805FFD_1239886747.addTaint(taint);
+            var3F5343BF1D849954A73F0BB303805FFD_1239886747.addTaint(getTaint());
             return var3F5343BF1D849954A73F0BB303805FFD_1239886747;
         } //End block
         ArrayList<E> al = new ArrayList<E>();
@@ -487,7 +487,7 @@ for(Node<E> q = first();q != null;q = succ(q))
             al.add(item);
         } //End block
 T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
-        varAA44379FEF6B0261A49B4F9151CB856C_1343847510.addTaint(taint);
+        varAA44379FEF6B0261A49B4F9151CB856C_1343847510.addTaint(getTaint());
         return varAA44379FEF6B0261A49B4F9151CB856C_1343847510;
         // ---------- Original Method ----------
         //int k = 0;

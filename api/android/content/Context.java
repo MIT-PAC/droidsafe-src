@@ -2378,7 +2378,7 @@ public boolean isRestricted() {
     @DSSafe(DSCat.SAFE_OTHERS)
     public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {
         CompatibilityInfoHolder holder = new CompatibilityInfoHolder();
-        holder.addTaint(taint);
+        holder.addTaint(getTaint());
         holder.addTaint(displayId);
         return holder;
     }

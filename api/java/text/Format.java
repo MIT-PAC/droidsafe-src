@@ -115,8 +115,12 @@ protected Format() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.549 -0500", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "D6FF871E879357E151D2BDB709C4FF98")
     
 public final String format(Object object) {
-        return format(object, new StringBuffer(), new FieldPosition(0))
-                .toString();
+       /* return format(object, new StringBuffer(), new FieldPosition(0))
+                .toString();*/
+        String ret = new String();
+        ret.addTaint(object.getTaint());
+        ret.addTaint(getTaint());
+        return ret;
     }
 
     /**
@@ -146,6 +150,12 @@ public final String format(Object object) {
 public abstract StringBuffer format(Object object, StringBuffer buffer,
             FieldPosition field);
 
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public StringBuffer droidsafeFormat(Object obj, StringBuffer buffer, FieldPosition field) {
+        StringBuffer sb = new StringBuffer();
+        sb.addTaint(obj.getTaintInt() + buffer.getTaintInt() + field.getTaintInt());
+        return sb;
+    }
     /**
      * Formats the specified object using the rules of this format and returns
      * an {@code AttributedCharacterIterator} with the formatted string and no

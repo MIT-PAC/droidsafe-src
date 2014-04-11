@@ -58,8 +58,8 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
     	Class clazz = new Class();
-    	clazz.addTaint(name.taint);
-    	clazz.addTaint(loader.taint);
+    	clazz.addTaint(name.getTaint());
+    	clazz.addTaint(loader.getTaint());
     	clazz.addTaint(cookie);
     	return clazz;
     }

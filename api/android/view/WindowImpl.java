@@ -86,7 +86,7 @@ public class WindowImpl extends Window {
 	public View getCurrentFocus() {
 		// TODO Auto-generated method stub
         View v = new View();
-        v.addTaint(taint);
+        v.addTaint(getTaint());
 		return v;
 	}
 

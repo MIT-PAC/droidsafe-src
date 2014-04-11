@@ -154,7 +154,7 @@ public ManagedClientConnection getConnection(
                         route, state);
             }
 };
-        var0563123A8DD7E35E063A27BF427D175E_529814248.addTaint(taint);
+        var0563123A8DD7E35E063A27BF427D175E_529814248.addTaint(getTaint());
         return var0563123A8DD7E35E063A27BF427D175E_529814248;
         // ---------- Original Method ----------
         //return new ClientConnectionRequest() {

@@ -84,13 +84,15 @@ protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         if(this != url.streamHandler)        
         {
             SecurityException var487662ABA0BC6C0C1954C4C7EC919428_1134314017 = new SecurityException("Only a URL's stream handler is permitted to mutate it");
-            var487662ABA0BC6C0C1954C4C7EC919428_1134314017.addTaint(taint);
+            var487662ABA0BC6C0C1954C4C7EC919428_1134314017.addTaint(getTaint());
             throw var487662ABA0BC6C0C1954C4C7EC919428_1134314017;
         } //End block
-        if(end < start)        
+        
+        
+/*        if(end < start)        
         {
             StringIndexOutOfBoundsException varA141A5C099CCE115319C69142BCBF8CE_1432411299 = new StringIndexOutOfBoundsException(spec, start, end - start);
-            varA141A5C099CCE115319C69142BCBF8CE_1432411299.addTaint(taint);
+            varA141A5C099CCE115319C69142BCBF8CE_1432411299.addTaint(getTaint());
             throw varA141A5C099CCE115319C69142BCBF8CE_1432411299;
         } //End block
         int fileStart;
@@ -126,7 +128,7 @@ protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
                 {
                     IllegalArgumentException var7AD0952D33BE3CCF5494213CD4BA84BF_1080940106 = new IllegalArgumentException("Expected an IPv6 address: "
                             + spec.substring(hostStart, ipv6End + 1));
-                    var7AD0952D33BE3CCF5494213CD4BA84BF_1080940106.addTaint(taint);
+                    var7AD0952D33BE3CCF5494213CD4BA84BF_1080940106.addTaint(getTaint());
                     throw var7AD0952D33BE3CCF5494213CD4BA84BF_1080940106;
                 } //End block
                 colonSearchFrom = ipv6End;
@@ -140,7 +142,7 @@ protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
                 if(port < 0)                
                 {
                     IllegalArgumentException var13CB96733FDAAE67690AEC1B839973F5_1497837441 = new IllegalArgumentException("port < 0: " + port);
-                    var13CB96733FDAAE67690AEC1B839973F5_1497837441.addTaint(taint);
+                    var13CB96733FDAAE67690AEC1B839973F5_1497837441.addTaint(getTaint());
                     throw var13CB96733FDAAE67690AEC1B839973F5_1497837441;
                 } //End block
             } //End block
@@ -190,10 +192,25 @@ switch(spec.charAt(pos)){
         {
             path = "";
         } //End block
-        path = UrlUtils.authoritySafePath(authority, path);
-        setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
+        path = UrlUtils.authoritySafePath(authority, path);*/
+        //setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
+        String host = new String();
+        host.addTaint(getTaint());
+        int port = getTaintInt();
+        String userInfo = new String();
+        userInfo.addTaint(getTaint());
+        String path = new String();
+        path.addTaint(getTaint());
+        String query = new String();
+        query.addTaint(getTaint());
+        String ref = new String();
+        ref.addTaint(getTaint());
+        String authority = new String();
+        authority.addTaint(getTaint());
+        
+        setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
     }
 
     /**
@@ -306,7 +323,7 @@ protected String toExternalForm(URL url) {
             } //End block
         } //End block
 String varE65B3A02759122992CB82C0E651AD408_1238751379 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_1238751379.addTaint(taint);
+        varE65B3A02759122992CB82C0E651AD408_1238751379.addTaint(getTaint());
         return varE65B3A02759122992CB82C0E651AD408_1238751379;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

@@ -32,6 +32,7 @@ public static float length(float x, float y) {
 public PointF createFromParcel(Parcel in) {
             PointF r = new PointF();
             r.readFromParcel(in);
+            r.addTaintLocal(in.getTaintInt());
             return r;
         }
 
@@ -60,14 +61,14 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public PointF(float x, float y){
-        addTaint(x);
-        addTaint(y);
+        addTaintLocal(x);
+        addTaintLocal(y);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public PointF(Point p){
-        addTaint(p.getTaint());
+        addTaintLocal(p.getSumTaintInt());
         /*
         this.x = p.x;
         this.y = p.y;
@@ -77,35 +78,35 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void set(float x, float y){
-        addTaint(x);
-        addTaint(y);
+        addTaintLocal(x);
+        addTaintLocal(y);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void set(PointF p){
-        addTaint(p.getTaint());
+        addTaintLocal(p.getSumTaintInt());
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void negate(){
-        addTaint(x);
-        addTaint(y);
+        addTaintLocal(x);
+        addTaintLocal(y);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void offset(float dx, float dy){
-        addTaint(dx);
-        addTaint(dy);
+        addTaintLocal(dx);
+        addTaintLocal(dy);
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(float x, float y){
-        return toTaintBoolean(x + y + this.x + this.y + getTaintInt());
+        return toTaintBoolean(x + y + getSumTaintInt());
         //return getTaintBoolean();
         // Original method
         /*
@@ -118,7 +119,8 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final float length(){
-        return getTaintFloat();
+        return getSumTaintInt();
+        //return getTaintFloat();
         // Original method
         /*
         { 
@@ -130,7 +132,7 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override public int describeContents(){
-        return getTaintInt();
+        return getSumTaintInt();
     }
 
     /**
@@ -151,7 +153,7 @@ public PointF() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
-        addTaint(in.getTaint());
+        addTaintLocal(in.getTaintInt());
         // Original method
         /*
         {
@@ -166,14 +168,13 @@ public PointF() {}
         y = getTaintFloat();
     }
 
-    @Override public void addTaint(double t) {
+    private void addTaintLocal(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
-
-    @Override public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
+    
+    public int getSumTaintInt() {
+        return (int)(getTaintInt() + x + y);
     }
 }
 

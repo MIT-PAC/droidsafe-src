@@ -835,7 +835,7 @@ public void glColorPointer(
     ) {
     	addTaint(name);
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 

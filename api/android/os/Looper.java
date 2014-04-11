@@ -177,7 +177,7 @@ public MessageQueue getQueue() {
     }
     
     public void dump(Printer pw, String prefix){
-        pw.addTaint(taint);
+        pw.addTaint(getTaint());
         pw.addTaint(prefix.getTaint());
     }
     

@@ -201,8 +201,7 @@ static void setFilePermissionsFromMode(String name, int mode,
     private final static boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.017 -0500", hash_original_field = "CE42D0F9354A6290AB7AAA746491BCDC", hash_generated_field = "C28D37FE74542C16238F74BB2031E102")
 
-    private static final HashMap<String, SharedPreferencesImpl> sSharedPrefs =
-            new HashMap<String, SharedPreferencesImpl>();
+private static final SharedPreferences sSharedPrefs = new SharedPreferencesImpl(null, 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.061 -0500", hash_original_field = "4E4A3933C0CBDF5ABDBF6C047A99416B", hash_generated_field = "24FE645B537D86D59BF761DAE24AA3EA")
 
     private static final String[] EMPTY_FILE_LIST = {};
@@ -396,8 +395,13 @@ public ContextImpl(ContextImpl context) {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    public SharedPreferences getSharedPreferences(String name, int mode) {
-        throw new UnsupportedOperationException();
+    public SharedPreferences getSharedPreferences(String name, int mode) {        
+        return sSharedPrefs;
+    }
+
+    //added by droidsafe to share static preferences around.
+    public static SharedPreferences getSharedPreferencesDS() {
+        return sSharedPrefs;
     }
 
     @DSComment("Private Method")

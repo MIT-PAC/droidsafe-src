@@ -117,7 +117,7 @@ public InputChannel() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "55C683646032EAF5E4A7B598D440C2F0")
     private String nativeGetName() {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     

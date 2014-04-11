@@ -66,8 +66,8 @@ abstract class ExpatAttributes implements Attributes {
     private static String getValue(int attributePointer, String uri, String localName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
-    	ret.addTaint(uri.taint);
-    	ret.addTaint(localName.taint);
+    	ret.addTaint(uri.getTaint());
+    	ret.addTaint(localName.getTaint());
     	return ret;
     }
     
@@ -76,7 +76,7 @@ abstract class ExpatAttributes implements Attributes {
     private static String getValueForQName(int attributePointer, String qName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
-    	ret.addTaint(qName.taint);
+    	ret.addTaint(qName.getTaint());
     	return ret;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.257 -0500", hash_original_field = "5BA7CA622D233542C87EE6134AF7D100", hash_generated_field = "F3F78ECDDA218F6E2CE999A3775F902F")

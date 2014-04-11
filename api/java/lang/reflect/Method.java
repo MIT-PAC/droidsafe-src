@@ -22,7 +22,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Object[] getSignatureAnnotation(Class declaringClass, int slot) {
 		Object[] ret = new Object[0];
-		ret[0].addTaint(declaringClass.taint);
+		ret[0].addTaint(declaringClass.getTaint());
 		ret[0].addTaint(slot);
 		return ret;
 	}
@@ -31,16 +31,16 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Annotation[] getDeclaredAnnotations(Class<?> declaringClass, int slot) {
 		Annotation[] ret = new Annotation[0];
-		ret[0].addTaint(declaringClass.taint);
+		ret[0].addTaint(declaringClass.getTaint());
 		ret[0].addTaint(slot);
 		return ret;
 	}
     
     static <A extends Annotation> A getAnnotation(Class<?> declaringClass, int slot, Class<A> annotationType) {
 		A ret = (A) new Object();
-		ret.addTaint(declaringClass.taint);
+		ret.addTaint(declaringClass.getTaint());
 		ret.addTaint(slot);
-		ret.addTaint(annotationType.taint);
+		ret.addTaint(annotationType.getTaint());
 		return ret;
 	}
     
@@ -71,7 +71,7 @@ static Annotation[][] noAnnotations(int size) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
 		Annotation[][] ret = new Annotation[0][0];
-		ret[0][0].addTaint(declaringClass.taint);
+		ret[0][0].addTaint(declaringClass.getTaint());
 		ret[0][0].addTaint(slot);
 		return ret;
 	}
@@ -366,11 +366,11 @@ public Type getGenericReturnType() {
         if(annotationType == null)        
         {
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_1545342916 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_1545342916.addTaint(taint);
+            varD3565833EFC12BC5822ABFE94D257EDE_1545342916.addTaint(getTaint());
             throw varD3565833EFC12BC5822ABFE94D257EDE_1545342916;
         } //End block
 A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declaringClass, slot, annotationType);
-        varD37D33C5EE02B81A7F8EF45A88B88039_629409244.addTaint(taint);
+        varD37D33C5EE02B81A7F8EF45A88B88039_629409244.addTaint(getTaint());
         return varD37D33C5EE02B81A7F8EF45A88B88039_629409244;
         // ---------- Original Method ----------
         //if (annotationType == null) {
@@ -465,7 +465,7 @@ public Object getDefaultValue() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.884 -0400", hash_original_method = "01EB45D9363E910A54E557C442527E6E", hash_generated_method = "12453DE2F22689947CA412DBF05F783C")
 	private Object getDefaultValue(Class declaringClass, int slot) {
-		addTaint(declaringClass.taint);
+		addTaint(declaringClass.getTaint());
 		addTaint(slot);
 		return new Object();
 	}
@@ -658,11 +658,11 @@ public Object invoke(Object receiver, Object... args)
 	private Object invokeNative(Object obj, Object[] args, Class<?> declaringClass, Class<?>[] parameterTypes, Class<?> returnType, int slot, boolean noAccessCheck)
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
-          addTaint(obj.taint);
-          addTaint(args[0].taint);
-          addTaint(declaringClass.taint);
-          addTaint(parameterTypes[0].taint);
-          addTaint(returnType.taint);
+          addTaint(obj.getTaint());
+          addTaint(args[0].getTaint());
+          addTaint(declaringClass.getTaint());
+          addTaint(parameterTypes[0].getTaint());
+          addTaint(returnType.getTaint());
           addTaint(slot);
           addTaint(noAccessCheck);
           /*

@@ -28,7 +28,7 @@ public class DdmVmInternal {
     
     public static StackTraceElement[] getStackTraceById(int threadId) {
     	StackTraceElement[] ste = new StackTraceElement[]{new StackTraceElement()};
-    	ste[0].taint.addTaint(threadId);
+    	ste[0].addTaint(threadId);
     	return ste;
     }
     

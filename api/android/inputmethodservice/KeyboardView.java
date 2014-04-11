@@ -549,7 +549,7 @@ switch(attr){
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.815 -0400", hash_original_method = "23010A325BF7C5CE115AD6532E7DE613", hash_generated_method = "EBA85B6AD2BFDBA82A5114535F7F12A3")
     protected OnKeyboardActionListener getOnKeyboardActionListener() {
 OnKeyboardActionListener varCA74E3A39D116C170964E820A8E794C6_425890983 =         mKeyboardActionListener;
-        varCA74E3A39D116C170964E820A8E794C6_425890983.addTaint(taint);
+        varCA74E3A39D116C170964E820A8E794C6_425890983.addTaint(getTaint());
         return varCA74E3A39D116C170964E820A8E794C6_425890983;
         // ---------- Original Method ----------
         //return mKeyboardActionListener;
@@ -591,7 +591,7 @@ OnKeyboardActionListener varCA74E3A39D116C170964E820A8E794C6_425890983 =        
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.820 -0400", hash_original_method = "984E33167FBB351AF6D207D6648DD7BE", hash_generated_method = "E07063A84AF8BC6549A47C5285A9A8AE")
     public Keyboard getKeyboard() {
 Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
-        var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270.addTaint(taint);
+        var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270.addTaint(getTaint());
         return var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270;
         // ---------- Original Method ----------
         //return mKeyboard;
@@ -724,7 +724,7 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
             label = label.toString().toUpperCase();
         } //End block
 CharSequence var057F26F90053C562EFC08298AB91C2B1_45947701 =         label;
-        var057F26F90053C562EFC08298AB91C2B1_45947701.addTaint(taint);
+        var057F26F90053C562EFC08298AB91C2B1_45947701.addTaint(getTaint());
         return var057F26F90053C562EFC08298AB91C2B1_45947701;
         // ---------- Original Method ----------
         //if (mKeyboard.isShifted() && label != null && label.length() < 3
@@ -1077,13 +1077,13 @@ for(int c = 0;c < nCodes;c++)
             mPreviewLabel.setLength(0);
             mPreviewLabel.append((char) key.codes[mTapCount < 0 ? 0 : mTapCount]);
 CharSequence var3B8009DBC52123412327A0E0C562E082_447087581 =             adjustCase(mPreviewLabel);
-            var3B8009DBC52123412327A0E0C562E082_447087581.addTaint(taint);
+            var3B8009DBC52123412327A0E0C562E082_447087581.addTaint(getTaint());
             return var3B8009DBC52123412327A0E0C562E082_447087581;
         } //End block
         else
         {
 CharSequence var205FABBFF9568819CAC3C3C1D98F3426_1990994969 =             adjustCase(key.label);
-            var205FABBFF9568819CAC3C3C1D98F3426_1990994969.addTaint(taint);
+            var205FABBFF9568819CAC3C3C1D98F3426_1990994969.addTaint(getTaint());
             return var205FABBFF9568819CAC3C3C1D98F3426_1990994969;
         } //End block
         // ---------- Original Method ----------

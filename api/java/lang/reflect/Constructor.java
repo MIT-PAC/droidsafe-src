@@ -215,11 +215,11 @@ public Type[] getGenericExceptionTypes() {
         if(annotationType == null)        
         {
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_1877579624 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_1877579624.addTaint(taint);
+            varD3565833EFC12BC5822ABFE94D257EDE_1877579624.addTaint(getTaint());
             throw varD3565833EFC12BC5822ABFE94D257EDE_1877579624;
         } //End block
 A var5417718CA49F9779F67999A1AA0ED4BB_140290513 =         Method.getAnnotation(declaringClass, slot, annotationType);
-        var5417718CA49F9779F67999A1AA0ED4BB_140290513.addTaint(taint);
+        var5417718CA49F9779F67999A1AA0ED4BB_140290513.addTaint(getTaint());
         return var5417718CA49F9779F67999A1AA0ED4BB_140290513;
         // ---------- Original Method ----------
         //if (annotationType == null) {
@@ -481,9 +481,9 @@ public T newInstance(Object... args) throws InstantiationException, IllegalAcces
             Class<?>[] parameterTypes, int slot,
             boolean noAccessCheck) throws InstantiationException, IllegalAccessException,
             InvocationTargetException {
-    	addTaint(args[0].taint);
-    	addTaint(declaringClass.taint);
-    	addTaint(parameterTypes[0].taint);
+    	addTaint(args[0].getTaint());
+    	addTaint(declaringClass.getTaint());
+    	addTaint(parameterTypes[0].getTaint());
     	addTaint(slot);
     	addTaint(noAccessCheck);
     	return (T)new Object();

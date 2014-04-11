@@ -1137,7 +1137,7 @@ void clean(QNode pred, QNode s) {
         if(a.length > 0)        
         a[0] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
-        var3F5343BF1D849954A73F0BB303805FFD_368967572.addTaint(taint);
+        var3F5343BF1D849954A73F0BB303805FFD_368967572.addTaint(getTaint());
         return var3F5343BF1D849954A73F0BB303805FFD_368967572;
         // ---------- Original Method ----------
         //if (a.length > 0)

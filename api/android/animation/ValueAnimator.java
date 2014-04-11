@@ -1171,9 +1171,10 @@ public void reverse() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.767 -0500", hash_original_method = "634DE70818167FA9FFDD8CDDE693BD3B", hash_generated_method = "5D97E956FAA966B4585DE4644711D5E7")
     
 private void endAnimation() {
-        sAnimations.get().remove(this);
+ /*       sAnimations.get().remove(this);
         sPendingAnimations.get().remove(this);
         sDelayedAnims.get().remove(this);
+
         mPlayingState = STOPPED;
         if (mRunning && mListeners != null) {
             ArrayList<AnimatorListener> tmpListeners =
@@ -1184,7 +1185,10 @@ private void endAnimation() {
             }
         }
         mRunning = false;
-        mStarted = false;
+        mStarted = false;*/
+        for (int i = 0; i < mListeners.size(); i++) {
+            mListeners.get(i).onAnimationEnd(this);
+        }
     }
 
     /**

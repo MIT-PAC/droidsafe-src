@@ -728,9 +728,9 @@ public void onAnimationCancel(Animator animation) {
         @DSVerified
         @DSSafe(DSCat.ANDROID_CALLBACK)
 public void onAnimationEnd(Animator animation) {
-            if (mRule == Dependency.AFTER) {
+           /* if (mRule == Dependency.AFTER) {
                 startIfReady(animation);
-            }
+            }*/
         }
 
         /**

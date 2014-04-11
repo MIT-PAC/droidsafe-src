@@ -488,12 +488,12 @@ public boolean exists() {
         if(isAbsolute())        
         {
 String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
-            var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(taint);
+            var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(getTaint());
             return var535F4D9720F3B0C96D8143873CE0638C_1405753140;
         } //End block
         String userDir = "user.dir" + path;
         String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 = userDir, path;
-        var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(taint);
+        var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(getTaint());
         return var4F090B9F25B3E37BF995BFA6769B0207_1493143672;
         // ---------- Original Method ----------
         //if (isAbsolute()) {
@@ -1234,24 +1234,24 @@ public boolean renameTo(File newPath) {
             if(!name.startsWith("/"))            
             {
 URI var81CE9C8452AED16CEDF893615168C3D2_1760874075 =                 new URI("file", null, "/" + name, null, null);
-                var81CE9C8452AED16CEDF893615168C3D2_1760874075.addTaint(taint);
+                var81CE9C8452AED16CEDF893615168C3D2_1760874075.addTaint(getTaint());
                 return var81CE9C8452AED16CEDF893615168C3D2_1760874075;
             } //End block
             else
             if(name.startsWith("//"))            
             {
 URI var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290 =                 new URI("file", "", name, null);
-                var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290.addTaint(taint);
+                var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290.addTaint(getTaint());
                 return var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290;
             } //End block
 URI varEF9537D825B1B2B07B3A54F3FC640952_313304114 =             new URI("file", null, name, null, null);
-            varEF9537D825B1B2B07B3A54F3FC640952_313304114.addTaint(taint);
+            varEF9537D825B1B2B07B3A54F3FC640952_313304114.addTaint(getTaint());
             return varEF9537D825B1B2B07B3A54F3FC640952_313304114;
         } //End block
         catch (URISyntaxException e)
         {
 URI var540C13E9E156B687226421B24F2DF178_816445735 =             null;
-            var540C13E9E156B687226421B24F2DF178_816445735.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_816445735.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_816445735;
         } //End block
         // ---------- Original Method ----------
@@ -1275,18 +1275,18 @@ URI var540C13E9E156B687226421B24F2DF178_816445735 =             null;
         if(!name.startsWith("/"))        
         {
 URL var347EE1274B4A53E8A16CAFF7EB7D3896_581746080 =             new URL("file", "", -1, "/" + name, null);
-            var347EE1274B4A53E8A16CAFF7EB7D3896_581746080.addTaint(taint);
+            var347EE1274B4A53E8A16CAFF7EB7D3896_581746080.addTaint(getTaint());
             return var347EE1274B4A53E8A16CAFF7EB7D3896_581746080;
         } //End block
         else
         if(name.startsWith("//"))        
         {
 URL varB6E76567327A20845E8CD7E94383DAA5_1818859224 =             new URL("file:" + name);
-            varB6E76567327A20845E8CD7E94383DAA5_1818859224.addTaint(taint);
+            varB6E76567327A20845E8CD7E94383DAA5_1818859224.addTaint(getTaint());
             return varB6E76567327A20845E8CD7E94383DAA5_1818859224;
         } //End block
 URL var9F0992E1CDD9692D51AE22365958494F_479158924 =         new URL("file", "", -1, name, null);
-        var9F0992E1CDD9692D51AE22365958494F_479158924.addTaint(taint);
+        var9F0992E1CDD9692D51AE22365958494F_479158924.addTaint(getTaint());
         return var9F0992E1CDD9692D51AE22365958494F_479158924;
         // ---------- Original Method ----------
         //String name = getAbsoluteName();

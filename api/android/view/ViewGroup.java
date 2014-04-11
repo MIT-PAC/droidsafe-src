@@ -2558,7 +2558,7 @@ public LayoutTransition getLayoutTransition() {
         addTaint(location.getTaint());
         addTaint(dirty.getTaint());
         if (getTaintBoolean()) {
-            mParent.addTaint(taint);
+            mParent.addTaint(getTaint());
             return mParent;
         }
 		return null;

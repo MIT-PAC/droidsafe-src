@@ -798,7 +798,7 @@ public boolean isReachable(int timeout) throws IOException {
     if(ttl < 0 || timeout < 0)        
         {
             IllegalArgumentException var40D35409B98F9E8BB904703A1693CF05_433979614 = new IllegalArgumentException("ttl < 0 || timeout < 0");
-            var40D35409B98F9E8BB904703A1693CF05_433979614.addTaint(taint);
+            var40D35409B98F9E8BB904703A1693CF05_433979614.addTaint(getTaint());
             throw var40D35409B98F9E8BB904703A1693CF05_433979614;
         } //End block
     if(networkInterface == null)        

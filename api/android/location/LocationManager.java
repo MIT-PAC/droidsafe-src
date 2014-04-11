@@ -967,19 +967,19 @@ public boolean isProviderEnabled(String provider) {
         if(provider == null)        
         {
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_408376459 = new IllegalArgumentException("provider==null");
-            var3740E938BA9AB726EFDC662393650C35_408376459.addTaint(taint);
+            var3740E938BA9AB726EFDC662393650C35_408376459.addTaint(getTaint());
             throw var3740E938BA9AB726EFDC662393650C35_408376459;
         } //End block
         try 
         {
 Location var94D744E5CB62D5F61288405519195D94_1241647484 =             mService.getLastKnownLocation(provider);
-            var94D744E5CB62D5F61288405519195D94_1241647484.addTaint(taint);
+            var94D744E5CB62D5F61288405519195D94_1241647484.addTaint(getTaint());
             
         } //End block
         catch (RemoteException ex)
         {
 Location var540C13E9E156B687226421B24F2DF178_1859180586 =             null;
-            var540C13E9E156B687226421B24F2DF178_1859180586.addTaint(taint);
+            var540C13E9E156B687226421B24F2DF178_1859180586.addTaint(getTaint());
           
         } //End block
         // ---------- Original Method ----------

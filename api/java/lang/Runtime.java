@@ -44,8 +44,8 @@ public static Runtime getRuntime() {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String nativeLoad(String filename, ClassLoader loader) {
 		String ret = new String();
-		ret.addTaint(filename.taint);
-		ret.addTaint(loader.taint);
+		ret.addTaint(filename.getTaint());
+		ret.addTaint(loader.getTaint());
 		return ret;
 	}
 

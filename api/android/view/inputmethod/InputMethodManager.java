@@ -1001,7 +1001,7 @@ void scheduleCheckFocusLocked(View view) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.753 -0500", hash_original_method = "7D116D001C63CE498592C7AACB0DA356", hash_generated_method = "3D7C005C05712ACF3F7A1C3F97E42DBD")
     
 public void checkFocus() {
-        // This is called a lot, so short-circuit before locking.
+/*        // This is called a lot, so short-circuit before locking.
         if (mServedView == mNextServedView && !mNextServedNeedsStart) {
             return;
         }
@@ -1037,7 +1037,7 @@ public void checkFocus() {
             ic.finishComposingText();
         }
         
-        startInputInner();
+        startInputInner();*/
     }
     
     @DSComment("Package priviledge")
