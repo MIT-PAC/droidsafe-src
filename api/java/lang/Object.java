@@ -12,10 +12,7 @@ public class Object {
     private class DSTaintObject {
     }
 
-    //Droidsafe infoflow attaches taint to this field for objects in the heap
-    //do not access it directly!!! use getTaint()
-    //private DSTaintObject taint;
-    private DSTaintObject taint;
+    private DSTaintObject taint = null;
 
     /**
      * Constructs a new instance of {@code Object}.
@@ -386,74 +383,86 @@ public final void wait(long millis) throws InterruptedException {
     // orphaned legacy method
     
     public int getTaintInt() {
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public final void addTaint(DSTaintObject taint) {
-        
+        //touch taint
+        this.taint = taint;
     }
     
     // orphaned legacy method
     
     public short getTaintShort() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public byte getTaintByte() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public void addTaint(boolean taint) {
-      
+        //just touch the taint for pta
+        this.taint = getTaint();
     }
     
     // orphaned legacy method
     
     public boolean getTaintBoolean() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return true;
     }
     
     // orphaned legacy method
     
     public char getTaintChar() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public float getTaintFloat() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public double getTaintDouble() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public long getTaintLong() {
-        
+         //need to access the taint field for pta to create field
+        this.taint = getTaint();
         return 0;
     }
     
     // orphaned legacy method
     
     public final void addTaint(double taint) {
-        
+        //need to access the taint field for pta to create field
+        this.taint = getTaint();
     }
     
     public static int toTaintInt(boolean intValue) {
