@@ -67,14 +67,18 @@ public class InsertUnmodeledObjects {
      * reference with an empty points to set.
      */
     public void run() {
-        findAPICallsWithNullReturnValues();
-
-        //find fields of components created in harness main that reference other user components
-        //and that are null in the pta, and force an assignment to the appropriate field in the harness 
-        fixUpUserRefsToComponents();
+        try {
+            findAPICallsWithNullReturnValues();
+            //find fields of components created in harness main that reference other user components
+            //and that are null in the pta, and force an assignment to the appropriate field in the harness 
+            fixUpUserRefsToComponents();
+        } catch (Exception e) {
+            //keep working but report error to console
+            logger.warn("Error during InsertUnmodeledObjects.  Continuing...", e);
+        }
     }
 
-    private void fixUpUserRefsToComponents() {
+    private void fixUpUserRefsToComponents() throws Exception {
         //for each created component in the main
         int localID = 0;
 
@@ -91,7 +95,8 @@ public class InsertUnmodeledObjects {
                 //System.out.println("Searching " + refClass);
 
 
-                if (API.v().isSystemClass(refClass) || !Hierarchy.isAndroidComponentClass(refClass) ||
+                if (refClass.isInterface() || API.v().isSystemClass(refClass) || 
+                        !Hierarchy.isAndroidComponentClass(refClass) ||
                         !Harness.v().getCreatedClasses().contains(refClass))
                     continue;
 
@@ -105,7 +110,7 @@ public class InsertUnmodeledObjects {
                 boolean oneEmpty = false;
 
                 for (IAllocNode node : PTABridge.v().getPTSetIns(sfr)) {
-                    
+
                     if (fieldOfComp.isStatic()) {
                         if (PTABridge.v().getPTSetIns(Jimple.v().newStaticFieldRef(fieldOfComp.makeRef())).isEmpty()) {
                             oneEmpty = true;
@@ -144,15 +149,19 @@ public class InsertUnmodeledObjects {
                 AssignStmt assign2 = Jimple.v().newAssignStmt(r, Jimple.v().newStaticFieldRef(otherFieldOfMain.makeRef()));
                 Harness.v().addStmtToEndOfMainLoop(assign2);
 
-                //l.fieldOfComp = r                
-                AssignStmt assign3 = Jimple.v().newAssignStmt(
-                    Jimple.v().newInstanceFieldRef(l, fieldOfComp.makeRef()), 
-                    r);
+                //l.fieldOfComp = r  
+
+                AssignStmt assign3;
+                if (fieldOfComp.isStatic()) {
+                    assign3 = Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(fieldOfComp.makeRef()), r);
+                } else {
+                    assign3 = Jimple.v().newAssignStmt(
+                        Jimple.v().newInstanceFieldRef(l, fieldOfComp.makeRef()), 
+                        r);
+                }
                 Harness.v().addStmtToEndOfMainLoop(assign3);
 
             }
-
-
         }
 
 
@@ -165,7 +174,7 @@ public class InsertUnmodeledObjects {
     /**
      * Search all reachable methods in user code for api calls that return a value with an empty pt set.
      */
-    private void findAPICallsWithNullReturnValues() {
+    private void findAPICallsWithNullReturnValues() throws Exception {
         List<SootClass> classes = new LinkedList<SootClass>();
         classes.addAll(Scene.v().getClasses());
         for (SootClass clz : classes) {

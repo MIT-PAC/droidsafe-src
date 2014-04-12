@@ -82,6 +82,9 @@ public class Hierarchy {
 	 * Return true if this class inherits from an android component class.
 	 */
 	public static boolean isAndroidComponentClass(SootClass clz) {
+	    if (clz.isInterface())
+	        return false;
+	    
 		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {
@@ -96,6 +99,9 @@ public class Hierarchy {
 	 * Return the closest parent of clz that is an android component
 	 */
 	public static SootClass getComponentParent(SootClass clz) {
+	    if (clz.isInterface())
+            return null;
+	    
 		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {
