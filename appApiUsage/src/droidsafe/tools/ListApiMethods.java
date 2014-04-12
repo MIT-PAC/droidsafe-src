@@ -177,13 +177,13 @@ public class ListApiMethods extends ApiUsageListing {
                     AnnotationArrayElem arrayElem = (AnnotationArrayElem)elem;
                     AnnotationEnumElem enumElem = (AnnotationEnumElem)arrayElem.getValueAt(0);
 
-                    //logger.info("SINK/SOURCE {} ", enumElem);
+                    logger.info("SINK/SOURCE {} ", enumElem);
                     String infoflowType = "None";
                     String[] tokens = annoTag.getType().split("/");
                     if (tokens.length > 0)
                         infoflowType = tokens[tokens.length-1];
                     infoflowType = infoflowType.replace(";", "");
-                    //logger.info("infoflowType {} ", infoflowType);
+                    logger.info("infoflowType {} ", infoflowType);
 
                     tokens = enumElem.getTypeName().split("/");
                     String typeName = ""; 
@@ -194,7 +194,7 @@ public class ListApiMethods extends ApiUsageListing {
                     String infoflowAnno = String.format("@%s(%s.%s)", 
                             infoflowType, typeName, enumElem.getConstantName());
 
-                    //logger.info("info annotation {} ", infoflowAnno);
+                    logger.info("info annotation {} ", infoflowAnno);
                     annoList.add(infoflowAnno);
                 }
                 logger.info("==========================");
@@ -659,12 +659,14 @@ public class ListApiMethods extends ApiUsageListing {
             annotationType |= ANNO_REPORT_CLASSIFCATION;
         }
         
-        if (commandLine.hasOption("report-infoflow")) {
+        if (commandLine.hasOption("report-info")) {
             annotationType |= ANNO_REPORT_INFOFLOW;
         }
         
         ListApiMethods listing = new ListApiMethods();
         
+        logger.info("setting annotation type {} ", annotationType);
+
         listing.setAnnoReportType(annotationType);
         
         if (!commandLine.hasOption("out") && !commandLine.hasOption("classify") && 
