@@ -79,7 +79,7 @@ public class InsertUnmodeledObjects {
         int localID = 0;
 
         for (SootClass created : Harness.v().getCreatedClasses()) {
-            if (!Hierarchy.isAndroidComponentClass(created))
+            if (created.isInterface() || !Hierarchy.isAndroidComponentClass(created))
                 continue;
 
             //find fields that reference other classes that are user and components
