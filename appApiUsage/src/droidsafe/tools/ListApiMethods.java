@@ -488,6 +488,33 @@ public class ListApiMethods extends ApiUsageListing {
         outStream.close();
     }
        
+    public void dumpBooleanCast(String fileName) {
+        PrintStream outStream = null;
+        try {
+            outStream = new PrintStream(fileName);
+        } 
+        catch (Exception ex) {
+            return;
+        }
+        
+        for(SootClass cls: Scene.v().getClasses()) {
+            for (SootMethod method: cls.getMethods()) {
+                String line = method.getSignature();
+                String modifierString = "";
+                if (method.getModifiers() != 0) {
+                    modifierString = soot.Modifier.toString(method.getModifiers()); 
+                    if (modifierString.contains("abstract"))
+                        continue;
+                }
+
+                line = modifierString + " - " + line;
+                
+                if (method.getReturnType().toString().equals("boolean")) {
+                    outStream.println(line);
+                }
+            }
+        }
+    }
 
     public void saveApiList(String fileName, boolean useModifier, boolean classify) throws FileNotFoundException {
         
@@ -641,8 +668,9 @@ public class ListApiMethods extends ApiUsageListing {
         listing.setAnnoReportType(annotationType);
         
         if (!commandLine.hasOption("out") && !commandLine.hasOption("classify") && 
+            !commandLine.hasOption("boolcast") &&
             !commandLine.hasOption("report")) {
-            System.out.println("Please specify options r, o, or c");
+            System.out.println("Please specify options r, o, or c, b");
             printHelp(options);
             return;
         }
@@ -670,6 +698,7 @@ public class ListApiMethods extends ApiUsageListing {
             listing.setReadList(commandLine.getOptionValue("l"));
             useList = true;
         }
+        
         listing.activateSootScene();
         
         if (commandLine.hasOption("out")) {
@@ -695,6 +724,10 @@ public class ListApiMethods extends ApiUsageListing {
             catch (Exception ex) {
                 
             }
+        }
+        
+        if (commandLine.hasOption("boolcast")) {
+            listing.dumpBooleanCast(commandLine.getOptionValue("boolcast"));
         }
     }
     
