@@ -18,6 +18,7 @@ import droidsafe.analyses.value.VAUtils;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.reports.ICCMap;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -139,6 +140,9 @@ public class BroadcastReceiverTransform implements VATransform {
                 continue;
             
             for (SootClass target : filterActionsToClass.get(action)) {
+                //report in ICC json report
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), target, stmt);
+                
                 SootField brField = Harness.v().getFieldForCreatedClass(target);
                 if (brField == null)
                     continue;

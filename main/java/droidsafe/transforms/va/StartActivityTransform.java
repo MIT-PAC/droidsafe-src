@@ -11,6 +11,7 @@ import droidsafe.analyses.value.UnknownVAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.reports.ICCMap;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -115,6 +116,13 @@ class StartActivityTransform implements VATransform {
             body.getUnits().insertAfter(setIntentCall, localAssign);
             //ignore making output events for this call we add
             RCFG.v().ignoreInvokeForOutputEvents(setIntentCall);
+            
+            //register in report of icc
+            if (activityField.getType() instanceof RefType) {
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                    ((RefType)activityField.getType()).getSootClass(), 
+                    stmt);
+            }
         }
     }
 

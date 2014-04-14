@@ -16,6 +16,7 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.reports.ICCMap;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.Local;
@@ -99,6 +100,9 @@ public class ServiceBindTransform implements VATransform {
             
             //delete the original bindService call
             body.getUnits().remove(stmt);
+            
+            //report in ICCMap 
+            ICCMap.v().addInfo(containingMthd.getDeclaringClass(), serviceClz, stmt);
         }
     }
 

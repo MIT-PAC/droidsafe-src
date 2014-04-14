@@ -13,6 +13,7 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.android.app.Project;
+import droidsafe.reports.ICCMap;
 import droidsafe.utils.JimpleRelationships;
 import soot.ArrayType;
 import soot.Body;
@@ -90,6 +91,11 @@ public class StartServiceTransform implements VATransform {
             body.getUnits().insertAfter(onStartCall, localAssign);
             //ignore making output events for this call we add
             RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
+            
+            //add to icc report 
+            if (serviceField.getType() instanceof RefType)
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                    ((RefType)serviceField.getType()).getSootClass(), stmt);
         }
     }
 

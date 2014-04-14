@@ -27,6 +27,7 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
+import droidsafe.reports.ICCMap;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -339,6 +340,8 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        writeJSONReports();
 
         if (Config.v().infoFlow) {
             // ObjectSensitivityCloner.v().runForInfoFlow();
@@ -483,6 +486,10 @@ public class Main {
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
+    private static void writeJSONReports() {
+        ICCMap.v().toJSON(Project.v().getOutputDir());
+    }
+    
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
         if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
