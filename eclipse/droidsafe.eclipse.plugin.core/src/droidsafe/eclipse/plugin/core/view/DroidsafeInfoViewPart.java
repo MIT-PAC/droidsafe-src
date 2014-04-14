@@ -6,8 +6,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.ISelectionService;
@@ -32,7 +34,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
 
     /** The project selected on the Project Explorer View. */
     protected IProject fSelectedProject;
-    
+
     /** The container for this viewer. */
     protected Composite fParentComposite;
 
@@ -52,8 +54,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
      */
     @Override
     public void createPartControl(Composite parent) {
-        fParentComposite = parent;
-        setSelectionListener();
+        fParentComposite = parent;        
         fPagebook = new PageBook(parent, SWT.NONE);
 
         // Page 1: Viewer
@@ -63,7 +64,12 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
         fEmptyPageLabel = new Label(fPagebook, SWT.TOP + SWT.LEFT + SWT.WRAP);
         fEmptyPageLabel.setText(emptyPageText());
 
-        showPage(PAGE_EMPTY);
+        IProject project = getProject();
+        if (project == null)
+            showPage(PAGE_EMPTY);
+        else
+            projectSelected();
+        setSelectionListener();
     }
 
     /**
@@ -104,7 +110,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     protected IProject getSelectedProject() {
         ISelectionService ss =
                 Activator.getDefault().getWorkbench().getActiveWorkbenchWindow()
-                        .getSelectionService();
+                .getSelectionService();
         String projExpID = "org.eclipse.ui.navigator.ProjectExplorer";
         ISelection sel = ss.getSelection(projExpID);
         if (sel == null) {
@@ -145,26 +151,31 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
      * view once a different project is selected.
      */
     protected void setSelectionListener() {
-      this.fSelectionListener = new ISelectionListener() {
-        public void selectionChanged(IWorkbenchPart part, ISelection sel) {
-          if (!(sel instanceof IStructuredSelection)) return;
-          IStructuredSelection ss = (IStructuredSelection) sel;
-          Object selectedObject = ss.getFirstElement();
-          if (selectedObject instanceof IAdaptable) {
-            IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
-            IProject project = (res != null) ? res.getProject() : null;
-            if (project != null && project != fSelectedProject) {
-                fSelectedProject = project;
-                projectChanged();
+        this.fSelectionListener = new ISelectionListener() {
+            public void selectionChanged(IWorkbenchPart part, ISelection sel) {
+                if (!(sel instanceof IStructuredSelection)) return;
+                IStructuredSelection ss = (IStructuredSelection) sel;
+                Object selectedObject = ss.getFirstElement();
+                if (selectedObject instanceof IAdaptable) {
+                    IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
+                    IProject project = (res != null) ? res.getProject() : null;
+                    if (project != null && project != fSelectedProject) {
+                        fSelectedProject = project;
+                        BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
+                            @Override
+                            public void run() {
+                                projectSelected();
+                            }
+                        });
+                    }
+                }
             }
-          }
-        }
 
-      };
-      getSite().getPage().addSelectionListener(this.fSelectionListener);
+        };
+        getSite().getPage().addSelectionListener(this.fSelectionListener);
     }
-    
-    abstract protected void projectChanged();
+
+    abstract protected void projectSelected();
 
     abstract protected void clearViewer();
 

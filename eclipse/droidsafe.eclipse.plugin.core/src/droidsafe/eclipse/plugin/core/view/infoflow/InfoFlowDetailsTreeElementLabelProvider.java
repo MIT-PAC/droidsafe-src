@@ -5,7 +5,7 @@ import org.eclipse.swt.graphics.Image;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
-import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
 
@@ -15,7 +15,7 @@ import droidsafe.speclang.model.MethodArgumentModel;
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class InfoFlowDetailsTreeElementLabelProvider extends MethodInfoTreeElementLabelProvider {
+public class InfoFlowDetailsTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
     
     /**
      * Returns the label for the tree node to display in the tree outline view.

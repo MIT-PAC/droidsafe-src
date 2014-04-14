@@ -151,6 +151,10 @@ public class Config {
     public boolean onlyannotatedsources = true;
     /** Generate pta result for eclipse plugin */
     public boolean ptaresult = true;
+    /** Run Catch Block Analysis **/
+    public boolean runCatchBlocks = false;
+    /** Run fast Catch Block Analysis **/
+    public boolean runCatchBlocksFast = false;
     /** should a context sensitive pta add context to static inits? */
     public boolean staticinitcontext = true;
     /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
@@ -336,6 +340,12 @@ public class Config {
                 .withDescription("The Android application root directory").create("approot");
         options.addOption(approot);
 
+        Option catchBlocks = new Option ("catchblocks", "Run catch block analysis");
+        options.addOption (catchBlocks);
+        
+        Option catchBlocksFast = new Option ("catchblocksfast", "Run fast catch block analysis");
+        options.addOption (catchBlocksFast);
+        
         Option target =
                 OptionBuilder.withArgName("target").hasArg().withDescription("Target pass to run")
                 .create("t");
@@ -380,6 +390,12 @@ public class Config {
 
         if (cmd.hasOption("nova"))
             this.runValueAnalysis = false;
+        
+        if (cmd.hasOption ("catchblocks"))
+            this.runCatchBlocks = true;
+        
+        if (cmd.hasOption ("catchblocksfast"))
+        	this.runCatchBlocksFast = true;
 
         if (cmd.hasOption("noclinitcontext"))
             this.staticinitcontext = false;

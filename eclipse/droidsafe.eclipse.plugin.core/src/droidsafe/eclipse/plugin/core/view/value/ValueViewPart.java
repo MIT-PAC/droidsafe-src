@@ -68,7 +68,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         return fInputElement;
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         resetViewer();
         showPage(PAGE_EMPTY);
     }

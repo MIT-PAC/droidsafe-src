@@ -12,6 +12,7 @@ import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.CallGraphDumper;
+import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
@@ -56,6 +57,7 @@ import droidsafe.utils.SootUtils;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -93,9 +95,10 @@ public class Main {
 
     /**
      * Entry point of DroidSafe Tool.
+     * @throws FileNotFoundException 
      * 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         driverMsg("Starting DroidSafe Run");
         // grab command line args and set some globals
         Config.v().init(args);
@@ -103,7 +106,7 @@ public class Main {
         run(new DroidsafeDefaultProgressMonitor());
     }
 
-    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
+    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         sMonitor = monitor;
         monitor.subTask("Initializing Environment");
         G.reset();
@@ -142,7 +145,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        driverMsg("Calling scalar optimizations.");
+       driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
         monitor.worked(1);
@@ -276,6 +279,20 @@ public class Main {
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
+            // Search for catch blocks
+            if (Config.v().runCatchBlocksFast) {
+            	driverMsg ("Searching for catch blocks (fast)");
+            	StopWatch cbtimer = new StopWatch();
+            	cbtimer.start();
+            	CatchBlocks cb = new CatchBlocks();
+            	cb.run();
+            	cbtimer.stop();
+            	driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+            	System.exit (0);
+            } else {
+            	driverMsg ("no catch block run");
+            }
+
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
             }
@@ -288,7 +305,18 @@ public class Main {
 
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+        
+        // Search for catch blocks
+        if (Config.v().runCatchBlocks) {
+            driverMsg ("Searching for catch blocks (precise)");
+            StopWatch cbtimer = new StopWatch();
+            cbtimer.start();
+            CatchBlocks cb = new CatchBlocks();
+            cb.run();
+            cbtimer.stop();
+            driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+        }
+       
         //new TestPTA();
 
         driverMsg("Starting Generate RCFG...");

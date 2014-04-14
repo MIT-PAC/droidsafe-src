@@ -10,6 +10,8 @@ import org.eclipse.ui.PartInitException;
 
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.SpecInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
@@ -34,12 +36,12 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
           + "command from the project context menu.";
     
     @Override
-    protected ITreeContentProvider makeContentProvider() {
+    protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
         return new InfoFlowSummaryTreeElementContentProvider();
     }
 
     @Override
-    protected IBaseLabelProvider makeLabelProvider() {
+    protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
         return new InfoFlowSummarylTreeElementLabelProvider();
     }
 
@@ -71,7 +73,7 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
 //        activePage.activate(view);
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         // do nothing. Viewer content is changed via calls to openView() from SecuritySpecOutlineViewPart. 
     }
 

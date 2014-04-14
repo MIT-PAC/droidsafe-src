@@ -632,7 +632,7 @@ public class MethodModel extends ModelChangeSupport
       }
     }
     if (result == 0) {
-      result = Integer.compare(this.getLines().size(), m.getLines().size());
+      result = Integer.compare (this.getLines().size(), m.getLines().size());
     }
     if (result == 0) {
       for (int i = 0; i < this.getLines().size(); i++) {
