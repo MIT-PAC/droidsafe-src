@@ -20,6 +20,23 @@ include "utils.php";
  *  between each class and at the top of the class there is an
  *  optional comment in the spec column.
  */
+class SpecInfo {
+  var $person;
+  var $spec;
+  var $ss;
+  var $sig;
+  var $comment;
+  function __construct ($line, $person = null) {
+    list ($this->person, $this->spec, $this->ss, $this->sig, $$this->comment) 
+      = explode ("\t", $info);
+    if (!$this->person)
+      $this->person = $person;
+    $this->class = 
+  }
+  function get_class() {
+    return preg_replace ("/:.*/", "", $this->sig);
+  }
+}
 
 {
   $info_file = null;
@@ -43,10 +60,13 @@ include "utils.php";
   $all_info = file ($info_file, FILE_IGNORE_NEW_LINES);
   foreach ($info as $all_info) {
     list ($person, $spec, $ss, $sig, $comment) = explode ("\t", $info);
+    if ($person)
+      $last_person = $person;
     if (!$sig && !$spec) {
       assert (!$person && !$ss && !$comment, "bad format: $info");
       $block_comment = null;
       $new_block_comment = false;
+      $last_person = null;
       continue;
     }
     if (!$sig) {
@@ -55,19 +75,18 @@ include "utils.php";
       $new_block_comment = true;
       continue;
     }
+    $specinfo = new SpecInfo ($line, $last_person);
     
-    // Figure out the class from the signature
-    $class = preg_replace ("/:.*/", "", $sig);
-
     // If there was a block comment for this class, remember it
     if ($new_block_comment) {
-      $bcomment[$class] = $block_comment;
+      $bcomment[$specinfo->get_class()] = $block_comment;
       $new_block_comment = false;
     }
 
     // Remember the information for this signature
     if (!array_key_exists($sig)) 
       throw new Exception ("$sig appears twice: $info");
-    $info_map[$sig] = $info;
+    $info_map[$sig] = $specinfo;
   }
 
+  // Read the current spec/source/sink info
