@@ -1,8 +1,15 @@
 package droidsafe.analyses.value;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+import droidsafe.analyses.value.primitives.ClassVAModel;
+import droidsafe.transforms.objsensclone.ClassCloner;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 
 /**
@@ -18,7 +25,7 @@ public class VAUtils {
     public static String toAttrModelingModelClass(String regularClass){
         return ValueAnalysis.MODEL_PACKAGE_PREFIX + regularClass;
     }
-   
+
     /**
      * Convert the string signature of an attr modeling model class to a string signature of a regular class 
      */
@@ -55,4 +62,34 @@ public class VAUtils {
     public static String indent(int level) {
         return (level <= 0) ? "" : String.format("%" + level * 2 + "s", "");
     }
+
+    /**
+     * For each node in nodes, find the VA result, and then find all primitive values of type T
+     * of the field.  Does not report of any invalidations.
+     */
+    public static <T> List<T> getAnyVAValuesForField(Set<IAllocNode> nodes, String field) {
+        List<T> ret = new LinkedList<T>();
+        for (IAllocNode node : nodes) {
+            VAModel vaModel = ValueAnalysis.v().getResult(node);
+            if(vaModel != null && vaModel instanceof RefVAModel) {
+                RefVAModel refVAModel = (RefVAModel)vaModel;
+                SootClass clonedSootClass = ((RefType)(refVAModel.getAllocNode().getType())).getSootClass();
+                SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedSootClass);
+
+                Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(intentSootClass.getFieldByName(field));
+                if (fieldVAModels.size() > 0) {
+                    for (VAModel clz : fieldVAModels) {
+                        if (clz instanceof PrimVAModel) {
+                            PrimVAModel<T> clzModel = (PrimVAModel<T>)clz;
+                            for (T value : clzModel.getValues()) {
+                                ret.add(value);
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+    
 }

@@ -139,6 +139,14 @@ public class Harness {
         harnessMainBody.getLocals().add(l);
     }
     
+    public Map<SootClass,SootField> getCreatedFieldsMap() {
+        return globalsMap;
+    }
+    
+    public boolean hasCreatedField(SootClass clz) {
+        return globalsMap.containsKey(clz);
+    }
+    
     /**
      * Return the static field of the harness that stores the object of the created class clz. 
      */
@@ -176,8 +184,6 @@ public class Harness {
 
         Stmt beginCalls = mainMethodHeader(body);
 
-        addCallToModelingRuntime(body);
-
         //add call to initialize the dummy class that create unmodeled values
         body.getUnits().add(Jimple.v().newInvokeStmt
             (Jimple.v().newStaticInvokeExpr(UnmodeledGeneratedClasses.v().getInitMethod().makeRef())));
@@ -196,15 +202,6 @@ public class Harness {
         harnessClass.setApplicationClass();		
 
         SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir(), getHarnessClass());
-    }
-
-
-    //add call to the modeling entry point for the modeling of the android runtime
-    private void addCallToModelingRuntime(StmtBody body) {
-        SootClass dsRuntime = Scene.v().getSootClass("droidsafe.runtime.DroidSafeAndroidRuntime");
-        SootMethod entry = dsRuntime.getMethod("void main()");
-        Stmt call = Jimple.v().newInvokeStmt(TransformsUtils.makeInvokeExpression(entry, null, new LinkedList<Value>()));
-        body.getUnits().add(call);
     }
 
     /**
@@ -592,8 +589,8 @@ public class Harness {
             harnessClass.addField(newField);
 
             //create a constructor for this object
-            Stmt consCall = TransformsUtils.getConstructorCall(receiver, type);
-            if (consCall != null)
+            List<Stmt> consCalls = TransformsUtils.getConstructorCall(body, receiver, type);
+            for (Stmt consCall : consCalls)
                 body.getUnits().insertBefore(consCall, inLoopStmt);
 
             //assign back to field

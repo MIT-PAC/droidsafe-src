@@ -839,8 +839,13 @@ public class InformationFlowAnalysis {
         SootMethod invokeMethod = invokeExpr.getMethod();
         if (ObjectUtils.v().isAddTaint(invokeMethod)) {
             executeAddTaint(stmt, invokeExpr, state);
+            return;
         } else if (ObjectUtils.v().isGetTaint(invokeMethod)) {
             executeGetTaint(stmt, invokeExpr, state);
+            return;
+        } else if (ObjectUtils.v().isToTaint(invokeMethod)) {
+            executeToTaint(stmt, invokeExpr, state);
+            return;
         }
 
         Block callerBlock = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
@@ -944,16 +949,40 @@ public class InformationFlowAnalysis {
         Local baseLocal = (Local)((InstanceInvokeExpr)invokeExpr).getBase();
         Immediate argImmediate = (Immediate)invokeExpr.getArg(0);
         if (argImmediate instanceof Local) {
+            Local argLocal = (Local)argImmediate;
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
             for (MethodOrMethodContext methodContext : methodContexts) {
                 Context context = methodContext.context();
                 if (ignoreContext(context)) {
                     continue;
                 }
-                ImmutableSet<InfoValue> values = state.locals.get(context, (Local)argImmediate);
+                ImmutableSet<InfoValue> values = state.locals.get(context, argLocal);
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
                     state.instances.putW(allocNode, ObjectUtils.v().taint, values);
+                }
+            }
+        }
+    }
+
+    private void executeToTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
+        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Body body = block.getBody();
+        SootMethod method = body.getMethod();
+        if (stmt instanceof AssignStmt) {
+            // local "=" "staticinvoke" "[" Object.toTaint* "]" "(" immediate ")"
+            Immediate argImmediate = (Immediate)invokeExpr.getArg(0);
+            if (argImmediate instanceof Local) {
+                Local argLocal = (Local)argImmediate;
+                Local lLocal = (Local)((AssignStmt)stmt).getLeftOp();
+                Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+                for (MethodOrMethodContext methodContext : methodContexts) {
+                    Context context = methodContext.context();
+                    if (ignoreContext(context)) {
+                        continue;
+                    }
+                    ImmutableSet<InfoValue> values = state.locals.get(context, argLocal);
+                    state.locals.putW(context, lLocal, values);
                 }
             }
         }

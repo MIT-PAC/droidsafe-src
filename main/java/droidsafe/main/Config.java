@@ -458,6 +458,7 @@ public class Config {
 
         if (cmd.hasOption("infoflow-value")) {
             assert this.infoFlow;
+            System.out.println(cmd.getOptionValues("infoflow-value")[0]);
             this.infoFlowValues = cmd.getOptionValues("infoflow-value");
         }
 

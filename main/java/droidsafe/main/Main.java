@@ -39,14 +39,14 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
+import droidsafe.transforms.va.StartActivityTransformStats;
+import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.transforms.ServiceTransforms;
-import droidsafe.transforms.StartActivityTransformStats;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
-import droidsafe.transforms.VATransformsSuite;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.IDroidsafeProgressMonitor;
@@ -253,7 +253,7 @@ public class Main {
 
         {
             //patch in messages
-            ServiceTransforms.v().run();
+            //ServiceTransforms.v().run();
             
         }
         
@@ -352,6 +352,11 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
+        //if debugging then write some jimple classes
+        if (Config.v().debug) {
+            writeSrcAndGeneratedJimple();
+        }
+        
 
         if (Config.v().writeJimpleAppClasses) {
             driverMsg("Writing Jimple Classes.");
@@ -680,6 +685,15 @@ public class Main {
         // Scene.v().setMainClass(Harness.v().getHarnessClass());
     }
 
+    private static void writeSrcAndGeneratedJimple() {
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (Project.v().isSrcClass(clz) || Project.v().isDroidSafeGeneratedClass(clz)) {
+                SootUtils.writeByteCodeAndJimple(
+                    Project.v().getOutputDir(), clz);
+            }
+        }
+    }
+    
     /**
      * Dump jimple files for all application classes.
      */

@@ -1,7 +1,11 @@
 package droidsafe.transforms;
 
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -85,17 +89,31 @@ public class CallBackModeling {
         callFallBackMethods();
         
         //check for components that are not created anywhere
-        findUnallocedComponents();
+        findAndCreateUnallocedComponents();
     }
     
-    private void findUnallocedComponents() {
-        for (SootClass hasFallback : classToCallbackMethod.keySet()) {
-            if (Hierarchy.isAndroidComponentClass(hasFallback) && !calledFallback.contains(hasFallback) &&
-                    !Project.v().isLibClass(hasFallback)) {
+    /**
+     * Find component classes in user code that was not declared in the manifest, and create fields for
+     * them in the harness.
+     */
+    private void findAndCreateUnallocedComponents() {
+        List<SootClass> sortedClasses = new ArrayList<SootClass>(Scene.v().getClasses());
+        
+        Collections.sort(sortedClasses, new Comparator<SootClass>() {
+            @Override
+            public int compare(SootClass o1, SootClass o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+            
+        });
+        
+        for (SootClass clz : sortedClasses) {
+            if (!clz.isInterface() && Hierarchy.isAndroidComponentClass(clz) && !Harness.v().hasCreatedField(clz) &&
+                    Project.v().isSrcClass(clz)) {
                 //found component that is not allocated, should we call is??
                 logger.warn("Found component not in manifest and not created in code: {}. Adding modeling.", 
-                    hasFallback);
-                Harness.v().createComponentsNotInManifest(hasFallback);
+                    clz);
+                Harness.v().createComponentsNotInManifest(clz);
             }
         }
     }
@@ -368,10 +386,11 @@ public class CallBackModeling {
         body.getLocals().add(argLocal);
 
         //add the call to the new object
-        body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
+        Stmt assign = Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz)));
+        body.getUnits().add(assign);
 
-        Stmt consCall = TransformsUtils.getConstructorCall(argLocal, RefType.v(clz));
-        if (consCall != null)
+        List<Stmt> consCalls = TransformsUtils.getConstructorCall(body, argLocal, RefType.v(clz));
+        for (Stmt consCall : consCalls)
             body.getUnits().add(consCall);
         
         return argLocal;

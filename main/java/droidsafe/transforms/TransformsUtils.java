@@ -9,6 +9,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.android.app.Harness;
 import droidsafe.utils.SootUtils;
 import soot.ArrayType;
 import soot.Body;
@@ -35,6 +36,8 @@ public class TransformsUtils {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(TransformsUtils.class);
 
+    private static int uniqueID = 0;
+    
     private TransformsUtils() {
         // TODO Auto-generated constructor stub
     }
@@ -127,8 +130,9 @@ public class TransformsUtils {
      * add a constructor call to body for the given reftype.  Use the simpliest constructor
      * that can be found.
      */
-    public static Stmt getConstructorCall(Local local, RefType type) {
+    public static List<Stmt> getConstructorCall(Body body, Local local, RefType type) {
         SootClass clazz = type.getSootClass();
+        List<Stmt> stmts = new LinkedList<Stmt>();
 
         //add the call to the constructor with its args
         SootMethod constructor = SootUtils.findSimpliestConstructor(clazz);
@@ -136,19 +140,30 @@ public class TransformsUtils {
 
         if (constructor == null) {
             logger.warn("Cannot find constructor for {}.  Not going to call constructor.", clazz);
-            return null;
+            return stmts;
         }
-
-        if (constructor.getParameterCount() > 0)
-            logger.warn("Need to create dummy value for type, but no no-arg constructor: {}", clazz);
 
         //create list of dummy arg values for the constructor call, right now all constants
         List<Value> args = new LinkedList<Value>();
-        for (Object argType : constructor.getParameterTypes()) {
-            args.add(SootUtils.getNullValue((Type)argType));
+        for (Type argType : constructor.getParameterTypes()) {
+            //for inner classes of components, we can use the field in the harness if it is of the right type
+            //for the argument
+            if (argType instanceof RefType && Harness.v().hasCreatedField(((RefType)argType).getSootClass())) {
+                Local tempLocal = Jimple.v().newLocal("inner_local" + uniqueID++, argType);
+                body.getLocals().add(tempLocal);
+                stmts.add(Jimple.v().newAssignStmt(
+                    tempLocal, 
+                    Jimple.v().newStaticFieldRef
+                        (Harness.v().getFieldForCreatedClass(((RefType)argType).getSootClass()).makeRef())));
+                args.add(tempLocal);
+            } else {
+                logger.warn("Need to create dummy value for type, but no no-arg constructor: {}", clazz);
+                args.add(SootUtils.getNullValue(argType));
+            }
         }
 
         //add constructor call to body nested in invoke statement
-         return Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args));
+         stmts.add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args)));
+         return stmts;
     }
 }
