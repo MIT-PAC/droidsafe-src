@@ -111,7 +111,7 @@ public class SearchRecentSuggestions {
                 ((mode & SearchRecentSuggestionsProvider.DATABASE_MODE_QUERIES) == 0))        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_112960440 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_112960440.addTaint(taint);
+            var5783EF97022AA508B74A1E3EA38534AF_112960440.addTaint(getTaint());
             throw var5783EF97022AA508B74A1E3EA38534AF_112960440;
         } //End block
         mTwoLineDisplay = (0 != (mode & SearchRecentSuggestionsProvider.DATABASE_MODE_2LINES));

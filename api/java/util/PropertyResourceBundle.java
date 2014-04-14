@@ -86,7 +86,7 @@ protected Set<String> handleKeySet(){
         if(parent == null)        
         {
 Enumeration<String> var6BDB3A965228957FB4A93D8CFE026B07_1233927182 =             getLocalKeys();
-            var6BDB3A965228957FB4A93D8CFE026B07_1233927182.addTaint(taint);
+            var6BDB3A965228957FB4A93D8CFE026B07_1233927182.addTaint(getTaint());
             return var6BDB3A965228957FB4A93D8CFE026B07_1233927182;
         } //End block
 Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075 =         new Enumeration<String>() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.508 -0400", hash_original_field = "86E09BF7152A875F2EB007DC9547307A", hash_generated_field = "975E55A4433F6ABC0D4D089A47474FE3")
@@ -138,7 +138,7 @@ public String nextElement() {
                 return pEnum.nextElement();
             }
 };
-        var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075.addTaint(taint);
+        var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075.addTaint(getTaint());
         return var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

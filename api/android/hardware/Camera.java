@@ -3802,7 +3802,7 @@ public final void setErrorCallback(ErrorCallback cb)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.245 -0400", hash_original_method = "3CEFEC9BC04BFA67886C8721C375B2BF", hash_generated_method = "7CDFCD53AAB21A45E6D03778B4CC52A9")
     private final String native_getParameters() {
     	String s = new String();
-    	s.addTaint(this.taint);
+    	s.addTaint(this.getTaint());
     	return s;
     }
 

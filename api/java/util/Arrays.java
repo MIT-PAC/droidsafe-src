@@ -3154,13 +3154,13 @@ ArrayList(E[] storage) {
             try 
             {
 E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
-                varE9389EE2200B2620B656A8101CB528EA_471271096.addTaint(taint);
+                varE9389EE2200B2620B656A8101CB528EA_471271096.addTaint(getTaint());
                 return varE9389EE2200B2620B656A8101CB528EA_471271096;
             } //End block
             catch (ArrayIndexOutOfBoundsException e)
             {
                 IndexOutOfBoundsException var984B160C934F71ECE403396A96C29D5E_1586489341 = java.util.ArrayList.throwIndexOutOfBoundsException(location, a.length);
-                var984B160C934F71ECE403396A96C29D5E_1586489341.addTaint(taint);
+                var984B160C934F71ECE403396A96C29D5E_1586489341.addTaint(getTaint());
                 throw var984B160C934F71ECE403396A96C29D5E_1586489341;
             } //End block
             // ---------- Original Method ----------
@@ -3252,7 +3252,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
                 contents[size] = null;
             } //End block
 T[] var5DC9C33EDB9F81CF1216538024B770BE_763551582 =             contents;
-            var5DC9C33EDB9F81CF1216538024B770BE_763551582.addTaint(taint);
+            var5DC9C33EDB9F81CF1216538024B770BE_763551582.addTaint(getTaint());
             return var5DC9C33EDB9F81CF1216538024B770BE_763551582;
             // ---------- Original Method ----------
             //int size = size();

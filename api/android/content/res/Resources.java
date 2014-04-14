@@ -284,7 +284,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		String str = new String();
 		str.addTaint(id);
 		str.addTaint(quantity);
-		str.addTaint(taint);
+		str.addTaint(getTaint());
 		return str;
 	}
 	  
@@ -317,7 +317,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     	String str = new String();
 		str.addTaint(id);
 		str.addTaint(quantity);
-		str.addTaint(taint);
+		str.addTaint(getTaint());
 		return str;
 	}
     
@@ -328,7 +328,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     	String str = new String();
 		str.addTaint(id);
 		str.addTaint(quantity);
-		str.addTaint(taint);
+		str.addTaint(getTaint());
 		return str;
 	}
     
@@ -337,8 +337,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     public CharSequence getText(int id, CharSequence def){
     	String str = new String();
 		str.addTaint(id);
-		str.addTaint(def.taint);
-		str.addTaint(taint);
+		str.addTaint(def.getTaint());
+		str.addTaint(getTaint());
 		return str;
 	}
     
@@ -359,7 +359,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		CharSequence[] obj = new CharSequence[1];
         obj.addTaint(id);
-        obj.addTaint(taint);
+        obj.addTaint(getTaint());
         return obj;
 	}
     
@@ -381,7 +381,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		
         String[] str = new String[10];
         str.addTaint(id);
-        str.addTaint(taint);
+        str.addTaint(getTaint());
         return str;
 	}
     
@@ -402,7 +402,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
         int[] obj = new int[10];
         obj.addTaint(id);
-        obj.addTaint(taint);
+        obj.addTaint(getTaint());
 		return obj;
 	}
     
@@ -426,7 +426,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
         TypedArray arr = new TypedArray(DSOnlyType.DONTCARE);
         arr.addTaint(id);
-        arr.addTaint(taint);
+        arr.addTaint(getTaint());
 		return arr;
 
 	}
@@ -962,7 +962,7 @@ public NotFoundException(String name) {
             typeArray.addTaint(resid);
             typeArray.addTaint(attrs[0]);
             typeArray.addTaint(attrs.getTaint());
-            typeArray.addTaint(taint);
+            typeArray.addTaint(getTaint());
             return typeArray;
 		}
         
@@ -973,7 +973,7 @@ public NotFoundException(String name) {
             TypedArray typeArray = new TypedArray(DSOnlyType.DONTCARE);
             typeArray.addTaint(attrs[0]);
             typeArray.addTaint(attrs.getTaint());
-            typeArray.addTaint(taint);
+            typeArray.addTaint(getTaint());
             return typeArray;
 		}
         
@@ -1159,7 +1159,7 @@ public final AssetManager getAssets() {
             }
             Drawable ret = new ColorDrawable();
             ret.addTaint(key);
-            ret.addTaint(drawableCache.taint);
+            ret.addTaint(drawableCache.getTaint());
             ret.addTaint(getTaint());
             return ret;
         }
@@ -1174,7 +1174,7 @@ public final AssetManager getAssets() {
         ColorStateList stateList = ColorStateList.valueOf(getTaintInt());
         addTaint(value.getTaint());
         addTaint(id);
-        stateList.addTaint(taint);
+        stateList.addTaint(getTaint());
 		return stateList;
 	}
     
@@ -1217,7 +1217,7 @@ public final AssetManager getAssets() {
         XmlResourceParser parser = new XmlResourceParser(); 
         obj.addTaint(id);
         obj.addTaint(type);
-        obj.addTaint(taint);
+        obj.addTaint(getTaint());
 		return obj;
     */
 
@@ -1241,7 +1241,7 @@ public final AssetManager getAssets() {
 		/* Original Method Too Long, Refer to Original Implementation */
         TypedArray arr = new TypedArray(DSOnlyType.DONTCARE);
         arr.addTaint(len);
-        arr.addTaint(taint);
+        arr.addTaint(getTaint());
 		return arr;
 	}
 }

@@ -137,7 +137,7 @@ public String getSchemeName() {
             buffer.append(Integer.toString(this.port));
         } //End block
 String varD03843288D33B9E1D3062E25339ECF6D_30388163 =         buffer.toString();
-        varD03843288D33B9E1D3062E25339ECF6D_30388163.addTaint(taint);
+        varD03843288D33B9E1D3062E25339ECF6D_30388163.addTaint(getTaint());
         return varD03843288D33B9E1D3062E25339ECF6D_30388163;
         // ---------- Original Method ----------
         //CharArrayBuffer buffer = new CharArrayBuffer(32);

@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 
 import android.content.ComponentCallbacks2;
 import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -153,6 +154,10 @@ public void onCreate() {
 public int onStartCommand(Intent intent, int flags, int startId) {
         onStart(intent, startId);
         return mStartCompatibility ? START_STICKY_COMPATIBILITY : START_STICKY;
+    }
+
+    public void droidSafeOnStartCommand(Intent intent, int flags, int startId) {
+        onStartCommand(intent, flags, startId);
     }
     
     /**
@@ -461,7 +466,16 @@ public final void attach(
 final String getClassName() {
         return mClassName;
     }
-    
+
+    @DSSafe
+    public void droidSafeOnBind(Intent intent, ServiceConnection connection) {
+        IBinder binder = this.onBind(intent);
+        this.onUnbind(intent);
+        this.onRebind(intent);
+        connection.onServiceConnected(intent.getComponent(), binder);
+        connection.onServiceDisconnected(intent.getComponent());
+    }
+
     /**
      * callback hook for subservices
      */

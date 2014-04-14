@@ -199,7 +199,7 @@ private SimpleDateFormat(Locale locale) {
         calendar = new GregorianCalendar(locale);
         calendar.add(Calendar.YEAR, -80);
         creationYear = calendar.get(Calendar.YEAR);
-        defaultCenturyStart = calendar.getTime();
+        //defaultCenturyStart = calendar.getTime();
     }
 
     /**
@@ -238,7 +238,7 @@ private void validateFormat(char format) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.067 -0500", hash_original_method = "49C9E23BED9AC71209F0210F812D9D37", hash_generated_method = "C9301FAA0B5F911E884F0B0D4E4BD72F")
     
 private void validatePattern(String template) {
-        boolean quote = false;
+      /*  boolean quote = false;
         int next, last = -1, count = 0;
 
         final int patternLength = template.length();
@@ -282,7 +282,7 @@ private void validatePattern(String template) {
 
         if (quote) {
             throw new IllegalArgumentException("Unterminated quote");
-        }
+        }*/
     }
 
     /**
@@ -364,8 +364,11 @@ public void applyPattern(String template) {
             return false;
         }
         SimpleDateFormat simple = (SimpleDateFormat) object;
-        return super.equals(object) && pattern.equals(simple.pattern)
-                && formatData.equals(simple.formatData);
+      /*  return super.equals(object) && pattern.equals(simple.pattern)
+                && formatData.equals(simple.formatData);*/
+        
+        return toTaintBoolean(getTaintInt() + object.getTaintInt() + 
+                simple.pattern.getTaintInt() + pattern.getTaintInt());
     }
 
     /**
@@ -514,7 +517,9 @@ private StringBuffer formatImpl(Date date, StringBuffer buffer,
     
 private void append(StringBuffer buffer, FieldPosition position,
             List<FieldPosition> fields, char format, int count) {
-        int field = -1;
+        buffer.addTaint(getTaintInt() + position.getTaintInt() + fields.get(0).getTaintInt() +
+                        format + count);
+       /* int field = -1;
         int index = PATTERN_CHARS.indexOf(format);
         if (index == -1) {
             throw new IllegalArgumentException("Unknown pattern character '" + format + "'");
@@ -530,11 +535,11 @@ private void append(StringBuffer buffer, FieldPosition position,
             case YEAR_FIELD:
                 dateFormatField = Field.YEAR;
                 int year = calendar.get(Calendar.YEAR);
-                /*
+                
                  * For 'y' and 'yyy', we're consistent with Unicode and previous releases
                  * of Android. But this means we're inconsistent with the RI.
                  *     http://unicode.org/reports/tr35/
-                 */
+                 
                 if (count == 2) {
                     appendNumber(buffer, 2, year % 100);
                 } else {
@@ -638,7 +643,7 @@ private void append(StringBuffer buffer, FieldPosition position,
                 position.setBeginIndex(beginPosition);
                 position.setEndIndex(buffer.length());
             }
-        }
+        }*/
     }
 
     @DSComment("Private Method")
@@ -790,7 +795,10 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.124 -0500", hash_original_method = "71AF220EE7B6857040DD249E69ABFBDC", hash_generated_method = "E74FAA143E85741BE4E1784A56BEBA05")
     
 public Date get2DigitYearStart() {
-        return (Date) defaultCenturyStart.clone();
+        //return (Date) defaultCenturyStart.clone();
+        Date date = new Date();
+        date.addTaint(getTaint());
+        return date;
     }
 
     /**
@@ -988,8 +996,14 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
     
 @Override
     public Date parse(String string, ParsePosition position) {
+        
+        Date date = new Date();
+        date.addTaint(string.getTaint());
+        date.addTaint(position.getTaint());
+        date.addTaint(getTaint());
+        return date;
         // Harmony delegates to ICU's SimpleDateFormat, we implement it directly
-        boolean quote = false;
+       /* boolean quote = false;
         int next, last = -1, count = 0, offset = position.getIndex();
         int length = string.length();
         calendar.clear();
@@ -1057,6 +1071,7 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
         position.setIndex(offset);
         calendar.setTimeZone(zone);
         return date;
+*/
     }
 
     @DSComment("Private Method")

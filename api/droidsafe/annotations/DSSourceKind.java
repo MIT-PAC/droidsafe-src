@@ -22,5 +22,7 @@ public enum DSSourceKind {
     UNSPECIFIED,
     UNMODELED,
     REFLECTION,
-    SERIALIZATION
+    SERIALIZATION,
+    IPC,
+    IO
 }

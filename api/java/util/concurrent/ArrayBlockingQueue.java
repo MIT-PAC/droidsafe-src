@@ -575,7 +575,7 @@ for(int i = takeIndex, k = 0;k < count;i = inc(i),k++)
             if(len > count)            
             a[count] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_969682730 =             a;
-            var3F5343BF1D849954A73F0BB303805FFD_969682730.addTaint(taint);
+            var3F5343BF1D849954A73F0BB303805FFD_969682730.addTaint(getTaint());
             return var3F5343BF1D849954A73F0BB303805FFD_969682730;
         } //End block
         finally 

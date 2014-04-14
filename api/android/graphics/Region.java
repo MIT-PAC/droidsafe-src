@@ -161,7 +161,7 @@ public Region(Region region) {
 public Region(Rect r) {
         //mNativeRegion = nativeConstructor();
         //nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
-        addTaint(r.getTaint());
+        addTaintLocal(r.getTaintInt());
     }
 
     /** Return a region set to the specified rectangle
@@ -173,7 +173,7 @@ public Region(Rect r) {
 public Region(int left, int top, int right, int bottom) {
         //mNativeRegion = nativeConstructor();
         //nativeSetRect(mNativeRegion, left, top, right, bottom);
-        addTaint(left + right + bottom + top);
+        addTaintLocal(left + right + bottom + top);
     }
     
     @DSComment("Package priviledge")
@@ -188,7 +188,7 @@ Region(int ni) {
         }
         */
         //mNativeRegion = ni;
-        addTaint(ni);
+        addTaintLocal(ni);
     }
 
     /* add dummy parameter so constructor can be called from jni without
@@ -198,7 +198,7 @@ Region(int ni) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.302 -0500", hash_original_method = "5B5253F8036AE411F7DD245C7F6E35C3", hash_generated_method = "437B56B8F299655728FD6424D860FFDE")
     
 private Region(int ni, int dummy) {
-        addTaint(ni + dummy);
+        addTaintLocal(ni + dummy);
         //this(ni);
     }
 
@@ -221,7 +221,7 @@ public void setEmpty() {
     
 public boolean set(Region region) {
         //return nativeSetRegion(mNativeRegion, region.mNativeRegion);
-        addTaint(region.getTaint());
+        addTaintLocal(region.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -234,7 +234,7 @@ public boolean set(Region region) {
     
 public boolean set(Rect r) {
         //return nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
-        addTaint(r.getTaint());
+        addTaintLocal(r.getTaintInt());
         return getTaintBoolean();
     }
     
@@ -246,7 +246,7 @@ public boolean set(Rect r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.210 -0500", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "A6370D0256D51227732DADCCC0838A83")
     
 public boolean set(int left, int top, int right, int bottom) {
-        addTaint(left + right + top + bottom);
+        addTaintLocal(left + right + top + bottom);
         return getTaintBoolean();
     }
 
@@ -263,7 +263,7 @@ public boolean set(int left, int top, int right, int bottom) {
     
 public boolean setPath(Path path, Region clip) {
         //return nativeSetPath(mNativeRegion, path.ni(), clip.mNativeRegion);
-        addTaint(path.getTaintInt() + clip.getTaintInt());
+        addTaintLocal(path.getTaintInt() + clip.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -315,7 +315,8 @@ public boolean setPath(Path path, Region clip) {
 public Rect getBounds() {
         Rect r = new Rect();
         //nativeGetBounds(mNativeRegion, r);
-        r.addTaint(taint);
+        r.addTaint(getTaintInt());
+        r.describeContents();
         return r;
     }
     
@@ -348,7 +349,7 @@ public boolean getBounds(Rect r) {
 public Path getBoundaryPath() {
         Path path = new Path();
         //nativeGetBoundaryPath(mNativeRegion, path.ni());
-        path.addTaint(taint);
+        path.addTaint(getTaint());
         return path;
     }
 
@@ -361,7 +362,7 @@ public Path getBoundaryPath() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.233 -0500", hash_original_method = "4EAA9FC9D13D7E90DDD0EEB1CB6196B1", hash_generated_method = "8C0B92710855EFE0DA0BBF78C532F7A0")
     
 public boolean getBoundaryPath(Path path) {
-        path.addTaint(taint);
+        path.addTaint(getTaint());
         return path.getTaintBoolean();
     }
         
@@ -469,10 +470,10 @@ public void translate(int dx, int dy) {
     
     public void translate(int dx, int dy, Region dst){
     	//Formerly a native method
-    	addTaint(dx);
-    	addTaint(dy);
+    	addTaintLocal(dx);
+    	addTaintLocal(dy);
     	if (dst != null)
-    	    addTaint(dst.getTaint());
+    	    addTaintLocal(dst.getTaintInt());
     }
 
     /**
@@ -503,9 +504,9 @@ public void scale(float scale) {
     
     public void scale(float scale, Region dst){
     	//Formerly a native method
-    	addTaint(scale);
+    	addTaintLocal(scale);
     	if (dst != null)
-    	    addTaint(dst.getTaint());
+    	    addTaintLocal(dst.getTaintInt());
     }
 
     @DSComment("From safe class list")
@@ -523,7 +524,7 @@ public final boolean union(Rect r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.268 -0500", hash_original_method = "0254EC2D8CB0B709656A3942F767CF9E", hash_generated_method = "0CB3F7FD91AEAB7C2CA4E8CE82749124")
     
 public boolean op(Rect r, Op op) {
-        addTaint(r.getTaintInt() + op.nativeInt);
+        addTaintLocal(r.getTaintInt() + op.nativeInt);
         return getTaintBoolean();
     }
 
@@ -534,7 +535,7 @@ public boolean op(Rect r, Op op) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.270 -0500", hash_original_method = "F7B19A9596841ACD8A98EA48656877B1", hash_generated_method = "79A6092D9718A068C6448484EC593839")
     
 public boolean op(int left, int top, int right, int bottom, Op op) {
-        addTaint(left + right + top + bottom + op.nativeInt);
+        addTaintLocal(left + right + top + bottom + op.nativeInt);
         return getTaintBoolean();
     }
 
@@ -555,7 +556,7 @@ public boolean op(Region region, Op op) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.274 -0500", hash_original_method = "029ED340525EAD4C240C408219CCC448", hash_generated_method = "232E6767C9A21A7EAC5FD15D9DEB8F1E")
     
 public boolean op(Rect rect, Region region, Op op) {
-        addTaint(rect.getTaintInt() + region.getTaintInt() + op.getTaintInt());
+        addTaintLocal(rect.getTaintInt() + region.getTaintInt() + op.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -566,7 +567,7 @@ public boolean op(Rect rect, Region region, Op op) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.277 -0500", hash_original_method = "7FDA52C90EA81767BFA435745FBF29BC", hash_generated_method = "089E0854D84F67F7C34E741D9604673A")
     
 public boolean op(Region region1, Region region2, Op op) {
-        addTaint(region1.getTaintInt() + region2.getTaintInt() + op.getTaintInt());
+        addTaintLocal(region1.getTaintInt() + region2.getTaintInt() + op.getTaintInt());
         return getTaintBoolean();
     }
 
@@ -576,7 +577,7 @@ public boolean op(Region region1, Region region2, Op op) {
     
 public String toString() {
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
         return str;
     }
     
@@ -598,7 +599,7 @@ public int describeContents() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.292 -0500", hash_original_method = "D2434A1CAFA87CC30850BFCF09357749", hash_generated_method = "E11215F902D1914FB169602BEAD50BE4")
     
 public void writeToParcel(Parcel p, int flags) {
-        p.addTaint(taint);
+        p.addTaint(getTaint());
         p.addTaint(flags);
     }
 
@@ -629,14 +630,8 @@ protected void finalize() throws Throwable {
     private void droidsafeUpdateMembers() {
     }
 
-    @Override
-    public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
-    }
-
-    @Override
-    public void addTaint(double t) {
+  
+    public void addTaintLocal(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }

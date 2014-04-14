@@ -84,7 +84,7 @@ private static void collectIpv6Addresses(String interfaceName, int interfaceInde
         // 5. flags
         // 6. interface name
         // "00000000000000000000000000000001 01 80 10 80       lo"
-        BufferedReader in = null;
+       /* BufferedReader in = null;
         try {
             in = new BufferedReader(new FileReader("/proc/net/if_inet6"));
             String suffix = " " + interfaceName;
@@ -107,14 +107,19 @@ private static void collectIpv6Addresses(String interfaceName, int interfaceInde
             throw rethrowAsSocketException(ex);
         } finally {
             IoUtils.closeQuietly(in);
-        }
+        }*/
+        
+        short prefixLength = 0;
+        Inet6Address inet6Address = new Inet6Address(new byte[1], null, 0);
+        interfaceAddresses.add(new InterfaceAddress(inet6Address, prefixLength));
+        
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.648 -0500", hash_original_method = "94D78D0B75F8342178E142C0650C9826", hash_generated_method = "449E16074333C15C6AB7217B3EC188CF")
     
 private static void collectIpv4Address(String interfaceName, List<InetAddress> addresses,
             List<InterfaceAddress> interfaceAddresses) throws SocketException {
-        FileDescriptor fd = null;
+       /* FileDescriptor fd = null;
         try {
             fd = Libcore.os.socket(AF_INET, SOCK_DGRAM, 0);
             InetAddress address = Libcore.os.ioctlInetAddress(fd, SIOCGIFADDR, interfaceName);
@@ -137,7 +142,10 @@ private static void collectIpv4Address(String interfaceName, List<InetAddress> a
             throw rethrowAsSocketException(ex);
         } finally {
             IoUtils.closeQuietly(fd);
-        }
+        }*/
+        short prefixLength = 0;
+        Inet4Address inet4Address = new Inet4Address(new byte[1], "");
+        interfaceAddresses.add(new InterfaceAddress(inet4Address, inet4Address, inet4Address));
     }
 
     @DSComment("Private Method")
@@ -147,12 +155,13 @@ private static void collectIpv4Address(String interfaceName, List<InetAddress> a
 @FindBugsSuppressWarnings("DMI_HARDCODED_ABSOLUTE_FILENAME")
     private static boolean isValidInterfaceName(String interfaceName) {
         // Don't just stat because a crafty user might have / or .. in the supposed interface name.
-        for (String validName : new File("/sys/class/net").list()) {
+        /*for (String validName : new File("/sys/class/net").list()) {
             if (interfaceName.equals(validName)) {
                 return true;
             }
         }
-        return false;
+        return false;*/
+        return interfaceName.getTaintBoolean();
     }
 
     @DSComment("Private Method")
@@ -247,7 +256,7 @@ public static Enumeration<NetworkInterface> getNetworkInterfaces() throws Socket
     
 @FindBugsSuppressWarnings("DMI_HARDCODED_ABSOLUTE_FILENAME")
     private static List<NetworkInterface> getNetworkInterfacesList() throws SocketException {
-        String[] interfaceNames = new File("/sys/class/net").list();
+       /* String[] interfaceNames = new File("/sys/class/net").list();
         NetworkInterface[] interfaces = new NetworkInterface[interfaceNames.length];
         for (int i = 0; i < interfaceNames.length; ++i) {
             interfaces[i] = NetworkInterface.getByName(interfaceNames[i]);
@@ -278,7 +287,13 @@ public static Enumeration<NetworkInterface> getNetworkInterfaces() throws Socket
             result.add(interfaces[counter]);
             peeked[counter] = true;
         }
-        return result;
+        return result;*/
+        NetworkInterface[] interfaces = new NetworkInterface[1];
+        List<NetworkInterface> infList = new LinkedList<NetworkInterface>();
+        for (int i = 0; i < interfaces.length; ++i) {
+            infList.add(NetworkInterface.getByName(""));
+        }
+        return infList;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.605 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
@@ -513,14 +528,18 @@ public boolean supportsMulticast() throws SocketException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.695 -0500", hash_original_method = "D18447285D6021856765D65DFF4990EE", hash_generated_method = "FF52A0778A379010D3D17A6B111C779E")
     
 private boolean hasFlag(int mask) throws SocketException {
-        int flags = readIntFile("/sys/class/net/" + name + "/flags");
-        return (flags & mask) != 0;
+        /*int flags = readIntFile("/sys/class/net/" + name + "/flags");
+        return (flags & mask) != 0;*/
+        return toTaintBoolean(mask + getTaintInt());
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.939 -0400", hash_original_method = "38A6C5A0C86B6ED6858EFB47D652704B", hash_generated_method = "03D3756D0CCE283A6BBA95B14F88554B")
     public byte[] getHardwareAddress() throws SocketException {
-        try 
+        byte[] bites = new byte[1];
+        bites[0] = (byte)getTaintInt();
+        return bites;
+        /*try 
         {
             String s = IoUtils.readFileAsString("/sys/class/net/" + name + "/address");
             byte[] result = new byte[s.length()/3];
@@ -544,10 +563,10 @@ for(int i = 0;i < result.length;++i)
         catch (Exception ex)
         {
             SocketException var8E41BFA796BE9F8FB9DC270405E20F86_1814482532 = rethrowAsSocketException(ex);
-            var8E41BFA796BE9F8FB9DC270405E20F86_1814482532.addTaint(taint);
+            var8E41BFA796BE9F8FB9DC270405E20F86_1814482532.addTaint(getTaint());
             throw var8E41BFA796BE9F8FB9DC270405E20F86_1814482532;
         } //End block
-        // ---------- Original Method ----------
+*/        // ---------- Original Method ----------
         //try {
             //String s = IoUtils.readFileAsString("/sys/class/net/" + name + "/address");
             //byte[] result = new byte[s.length()/3];
@@ -576,7 +595,8 @@ for(int i = 0;i < result.length;++i)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.700 -0500", hash_original_method = "57A1E5A45121F464D5D64A55053B7665", hash_generated_method = "D889655AAC62B736100BE7BE6B8BE0AD")
     
 public int getMTU() throws SocketException {
-        return readIntFile("/sys/class/net/" + name + "/mtu");
+        //return readIntFile("/sys/class/net/" + name + "/mtu");
+        return getTaintInt();
     }
 
     /**
@@ -594,7 +614,8 @@ public int getMTU() throws SocketException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.703 -0500", hash_original_method = "8D88E2F84D40F104BBA78B3610BC12B1", hash_generated_method = "BD415C56DB1063D2DD40FE801D625259")
     
 public boolean isVirtual() {
-        return parent != null;
+        //return parent != null;
+        return getTaintBoolean();
     }
     
 }

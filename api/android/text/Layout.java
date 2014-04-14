@@ -1636,7 +1636,7 @@ public SpannedEllipsizer(CharSequence display) {
             addTaint(end);
             addTaint(start);
 T[] varF03F51B4D510CEB709FCAEAB771CF011_1441501040 =             mSpanned.getSpans(start, end, type);
-            varF03F51B4D510CEB709FCAEAB771CF011_1441501040.addTaint(taint);
+            varF03F51B4D510CEB709FCAEAB771CF011_1441501040.addTaint(getTaint());
             return varF03F51B4D510CEB709FCAEAB771CF011_1441501040;
             // ---------- Original Method ----------
             //return mSpanned.getSpans(start, end, type);

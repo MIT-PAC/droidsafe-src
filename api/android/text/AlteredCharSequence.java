@@ -83,7 +83,7 @@ public char charAt(int off) {
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getTaint());
         str.addTaint(start);
         str.addTaint(end);
 		return str;
@@ -129,7 +129,7 @@ private AlteredSpanned(CharSequence source, char[] sub,
             addTaint(end);
             addTaint(start);
 T[] varD00095851380FE9BCE207689FFB0CC5E_1799231042 =             mSpanned.getSpans(start, end, kind);
-            varD00095851380FE9BCE207689FFB0CC5E_1799231042.addTaint(taint);
+            varD00095851380FE9BCE207689FFB0CC5E_1799231042.addTaint(getTaint());
             return varD00095851380FE9BCE207689FFB0CC5E_1799231042;
             // ---------- Original Method ----------
             //return mSpanned.getSpans(start, end, kind);

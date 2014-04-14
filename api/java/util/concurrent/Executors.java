@@ -487,13 +487,13 @@ public T run() throws Exception {
                             return task.call();
                         }
 }, acc);
-                var8C0E7955A367AA4C5A2C7492B4312867_977516067.addTaint(taint);
+                var8C0E7955A367AA4C5A2C7492B4312867_977516067.addTaint(getTaint());
                 return var8C0E7955A367AA4C5A2C7492B4312867_977516067;
             } //End block
             catch (PrivilegedActionException e)
             {
                 Exception varB727EB75A5923A25079A15DB07B65969_1926769963 = e.getException();
-                varB727EB75A5923A25079A15DB07B65969_1926769963.addTaint(taint);
+                varB727EB75A5923A25079A15DB07B65969_1926769963.addTaint(getTaint());
                 throw varB727EB75A5923A25079A15DB07B65969_1926769963;
             } //End block
             // ---------- Original Method ----------
@@ -572,13 +572,13 @@ public T run() throws Exception {
                             }
                         }
 }, acc);
-                varBCBFD1547E568D77EC8B60D97435E881_964807118.addTaint(taint);
+                varBCBFD1547E568D77EC8B60D97435E881_964807118.addTaint(getTaint());
                 return varBCBFD1547E568D77EC8B60D97435E881_964807118;
             } //End block
             catch (PrivilegedActionException e)
             {
                 Exception varB727EB75A5923A25079A15DB07B65969_1592493440 = e.getException();
-                varB727EB75A5923A25079A15DB07B65969_1592493440.addTaint(taint);
+                varB727EB75A5923A25079A15DB07B65969_1592493440.addTaint(getTaint());
                 throw varB727EB75A5923A25079A15DB07B65969_1592493440;
             } //End block
             // ---------- Original Method ----------
@@ -731,7 +731,7 @@ public Future<?> submit(Runnable task) {
         public <T> Future<T> submit(Callable<T> task) {
             addTaint(task.getTaint());
 Future<T> var3A821B5C48F3C73F2F85580271A54221_1800187115 =             e.submit(task);
-            var3A821B5C48F3C73F2F85580271A54221_1800187115.addTaint(taint);
+            var3A821B5C48F3C73F2F85580271A54221_1800187115.addTaint(getTaint());
             return var3A821B5C48F3C73F2F85580271A54221_1800187115;
             // ---------- Original Method ----------
             //return e.submit(task);
@@ -742,7 +742,7 @@ Future<T> var3A821B5C48F3C73F2F85580271A54221_1800187115 =             e.submit(
             addTaint(result.getTaint());
             addTaint(task.getTaint());
 Future<T> varEAF64FBE2776E66AA7D7A86DC0368144_678840174 =             e.submit(task, result);
-            varEAF64FBE2776E66AA7D7A86DC0368144_678840174.addTaint(taint);
+            varEAF64FBE2776E66AA7D7A86DC0368144_678840174.addTaint(getTaint());
             return varEAF64FBE2776E66AA7D7A86DC0368144_678840174;
             // ---------- Original Method ----------
             //return e.submit(task, result);
@@ -752,7 +752,7 @@ Future<T> varEAF64FBE2776E66AA7D7A86DC0368144_678840174 =             e.submit(t
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
             addTaint(tasks.getTaint());
 List<Future<T>> var501DF73082C68D7843A2F94A5A9D39DE_125190879 =             e.invokeAll(tasks);
-            var501DF73082C68D7843A2F94A5A9D39DE_125190879.addTaint(taint);
+            var501DF73082C68D7843A2F94A5A9D39DE_125190879.addTaint(getTaint());
             return var501DF73082C68D7843A2F94A5A9D39DE_125190879;
             // ---------- Original Method ----------
             //return e.invokeAll(tasks);
@@ -765,7 +765,7 @@ List<Future<T>> var501DF73082C68D7843A2F94A5A9D39DE_125190879 =             e.in
             addTaint(timeout);
             addTaint(tasks.getTaint());
 List<Future<T>> var87E281F68E17B3CFFAEC895C8A8BFC68_708146293 =             e.invokeAll(tasks, timeout, unit);
-            var87E281F68E17B3CFFAEC895C8A8BFC68_708146293.addTaint(taint);
+            var87E281F68E17B3CFFAEC895C8A8BFC68_708146293.addTaint(getTaint());
             return var87E281F68E17B3CFFAEC895C8A8BFC68_708146293;
             // ---------- Original Method ----------
             //return e.invokeAll(tasks, timeout, unit);
@@ -775,7 +775,7 @@ List<Future<T>> var87E281F68E17B3CFFAEC895C8A8BFC68_708146293 =             e.in
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
             addTaint(tasks.getTaint());
 T var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437 =             e.invokeAny(tasks);
-            var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437.addTaint(taint);
+            var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437.addTaint(getTaint());
             return var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437;
             // ---------- Original Method ----------
             //return e.invokeAny(tasks);
@@ -788,7 +788,7 @@ T var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437 =             e.invokeAny(tasks)
             addTaint(timeout);
             addTaint(tasks.getTaint());
 T varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114 =             e.invokeAny(tasks, timeout, unit);
-            varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114.addTaint(taint);
+            varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114.addTaint(getTaint());
             return varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114;
             // ---------- Original Method ----------
             //return e.invokeAny(tasks, timeout, unit);
@@ -836,7 +836,7 @@ public ScheduledFuture<?> schedule(Runnable command, long delay,  TimeUnit unit)
             addTaint(delay);
             addTaint(callable.getTaint());
 ScheduledFuture<V> var25477A3DA2D98386CF98CD42AD75D94E_288143507 =             e.schedule(callable, delay, unit);
-            var25477A3DA2D98386CF98CD42AD75D94E_288143507.addTaint(taint);
+            var25477A3DA2D98386CF98CD42AD75D94E_288143507.addTaint(getTaint());
             return var25477A3DA2D98386CF98CD42AD75D94E_288143507;
             // ---------- Original Method ----------
             //return e.schedule(callable, delay, unit);

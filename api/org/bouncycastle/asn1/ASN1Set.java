@@ -211,7 +211,7 @@ public DERObject getDERObject()
                 return outer;
             }
 };
-        varFEF15DF2C04179BD8EB2593AF5B49D65_1012881334.addTaint(taint);
+        varFEF15DF2C04179BD8EB2593AF5B49D65_1012881334.addTaint(getTaint());
         return varFEF15DF2C04179BD8EB2593AF5B49D65_1012881334;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

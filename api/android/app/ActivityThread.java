@@ -5404,7 +5404,7 @@ public void run() {
             {
                 RuntimeException varEEE3265923145F3B5B035C3648D6659E_609348860 = new RuntimeException(
                         "Unable to instantiate Application():" + e.toString(), e);
-                varEEE3265923145F3B5B035C3648D6659E_609348860.addTaint(taint);
+                varEEE3265923145F3B5B035C3648D6659E_609348860.addTaint(getTaint());
                 throw varEEE3265923145F3B5B035C3648D6659E_609348860;
             } //End block
         } //End block

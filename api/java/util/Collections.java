@@ -1281,7 +1281,7 @@ Iterator<E> varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739 =             new Ite
                     throw new UnsupportedOperationException();
                 }
 };
-            varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739.addTaint(taint);
+            varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739.addTaint(getTaint());
             return varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739;
             // ---------- Original Method ----------
             //return new Iterator<E>() {
@@ -1477,13 +1477,13 @@ Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =       
                             throw new UnsupportedOperationException();
                         }
 };
-                var72555FFA480563A744615CB3042A10C3_693483736.addTaint(taint);
+                var72555FFA480563A744615CB3042A10C3_693483736.addTaint(getTaint());
                 return var72555FFA480563A744615CB3042A10C3_693483736;
                 // ---------- Original Method ----------
                 // Original Method Too Long, Refer to Original Implementation
             }
 };
-            varC1C98ED33EBE8D5F809497AE1618869F_181985594.addTaint(taint);
+            varC1C98ED33EBE8D5F809497AE1618869F_181985594.addTaint(getTaint());
             return varC1C98ED33EBE8D5F809497AE1618869F_181985594;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
@@ -1658,7 +1658,7 @@ SynchronizedCollection(Collection<E> collection, Object mutex) {
             synchronized
 (mutex)            {
 T[] varA824E05E0FA0C1B35EB9A8324FF1796D_221099759 =                 c.toArray(array);
-                varA824E05E0FA0C1B35EB9A8324FF1796D_221099759.addTaint(taint);
+                varA824E05E0FA0C1B35EB9A8324FF1796D_221099759.addTaint(getTaint());
                 return varA824E05E0FA0C1B35EB9A8324FF1796D_221099759;
             } //End block
             // ---------- Original Method ----------
@@ -2489,7 +2489,7 @@ Iterator<E> var17584F965577555F1B3BEAB9FFD781E4_1722746458 =             new Ite
                     throw new UnsupportedOperationException();
                 }
 };
-            var17584F965577555F1B3BEAB9FFD781E4_1722746458.addTaint(taint);
+            var17584F965577555F1B3BEAB9FFD781E4_1722746458.addTaint(getTaint());
             return var17584F965577555F1B3BEAB9FFD781E4_1722746458;
             // ---------- Original Method ----------
             //return new Iterator<E>() {
@@ -2553,7 +2553,7 @@ Iterator<E> var17584F965577555F1B3BEAB9FFD781E4_1722746458 =             new Ite
         public <T> T[] toArray(T[] array) {
             addTaint(array[0].getTaint());
 T[] varA824E05E0FA0C1B35EB9A8324FF1796D_1507973265 =             c.toArray(array);
-            varA824E05E0FA0C1B35EB9A8324FF1796D_1507973265.addTaint(taint);
+            varA824E05E0FA0C1B35EB9A8324FF1796D_1507973265.addTaint(getTaint());
             return varA824E05E0FA0C1B35EB9A8324FF1796D_1507973265;
             // ---------- Original Method ----------
             //return c.toArray(array);
@@ -2772,7 +2772,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
                     throw new UnsupportedOperationException();
                 }
 };
-            var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926.addTaint(taint);
+            var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926.addTaint(getTaint());
             return var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
@@ -3004,7 +3004,7 @@ Iterator<Map.Entry<K, V>> var95D309287220EAC9AA0261E09FAD4D41_1872266644 =      
                         throw new UnsupportedOperationException();
                     }
 };
-                var95D309287220EAC9AA0261E09FAD4D41_1872266644.addTaint(taint);
+                var95D309287220EAC9AA0261E09FAD4D41_1872266644.addTaint(getTaint());
                 return var95D309287220EAC9AA0261E09FAD4D41_1872266644;
                 // ---------- Original Method ----------
                 //return new Iterator<Map.Entry<K, V>>() {
@@ -3124,7 +3124,7 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
                     contents[index] = null;
                 } //End block
 T[] var5DC9C33EDB9F81CF1216538024B770BE_1421244130 =                 contents;
-                var5DC9C33EDB9F81CF1216538024B770BE_1421244130.addTaint(taint);
+                var5DC9C33EDB9F81CF1216538024B770BE_1421244130.addTaint(getTaint());
                 return var5DC9C33EDB9F81CF1216538024B770BE_1421244130;
                 // ---------- Original Method ----------
                 //int size = c.size(), index = 0;
@@ -3428,7 +3428,7 @@ SetFromMap(final Map<E, Boolean> map) {
         public <T> T[] toArray(T[] contents) {
             addTaint(contents[0].getTaint());
 T[] var3546C28EE3387A2856CC723595918E17_779556003 =             backingSet.toArray(contents);
-            var3546C28EE3387A2856CC723595918E17_779556003.addTaint(taint);
+            var3546C28EE3387A2856CC723595918E17_779556003.addTaint(getTaint());
             return var3546C28EE3387A2856CC723595918E17_779556003;
             // ---------- Original Method ----------
             //return backingSet.toArray(contents);
@@ -3612,7 +3612,7 @@ AsLIFOQueue(final Deque<E> deque) {
         public <T> T[] toArray(T[] contents) {
             addTaint(contents[0].getTaint());
 T[] varB826DAACB71C6F73C56D75F228BB03F8_1296691217 =             q.toArray(contents);
-            varB826DAACB71C6F73C56D75F228BB03F8_1296691217.addTaint(taint);
+            varB826DAACB71C6F73C56D75F228BB03F8_1296691217.addTaint(getTaint());
             return varB826DAACB71C6F73C56D75F228BB03F8_1296691217;
             // ---------- Original Method ----------
             //return q.toArray(contents);
@@ -3699,7 +3699,7 @@ public CheckedCollection(Collection<E> c, Class<E> type) {
         public <T> T[] toArray(T[] arr) {
             addTaint(arr[0].getTaint());
 T[] varC7FA0C6E1955DD91DCB427C3A91A0EA7_810280548 =             c.toArray(arr);
-            varC7FA0C6E1955DD91DCB427C3A91A0EA7_810280548.addTaint(taint);
+            varC7FA0C6E1955DD91DCB427C3A91A0EA7_810280548.addTaint(getTaint());
             return varC7FA0C6E1955DD91DCB427C3A91A0EA7_810280548;
             // ---------- Original Method ----------
             //return c.toArray(arr);
@@ -4265,7 +4265,7 @@ for(int i = 0;i < thisSize;i++)
                     array[thisSize] = null;
                 } //End block
 T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
-                var1270D5B74B756F17D644A15D775499D9_2051754257.addTaint(taint);
+                var1270D5B74B756F17D644A15D775499D9_2051754257.addTaint(getTaint());
                 return var1270D5B74B756F17D644A15D775499D9_2051754257;
                 // ---------- Original Method ----------
                 //int thisSize = size();

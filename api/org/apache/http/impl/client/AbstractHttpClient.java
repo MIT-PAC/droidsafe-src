@@ -767,7 +767,7 @@ protected HttpParams determineParams(HttpRequest req) {
         addTaint(responseHandler.getTaint());
         addTaint(request.getTaint());
 T varED3CB22FA083C9F271E3D2665EE7B341_1684867738 =         execute(request, responseHandler, null);
-        varED3CB22FA083C9F271E3D2665EE7B341_1684867738.addTaint(taint);
+        varED3CB22FA083C9F271E3D2665EE7B341_1684867738.addTaint(getTaint());
         return varED3CB22FA083C9F271E3D2665EE7B341_1684867738;
         // ---------- Original Method ----------
         //return execute(request, responseHandler, null);
@@ -784,7 +784,7 @@ T varED3CB22FA083C9F271E3D2665EE7B341_1684867738 =         execute(request, resp
         addTaint(request.getTaint());
         HttpHost target = determineTarget(request);
 T var7F6E56C9A163132ECE3E76F87E689070_1492548815 =         execute(target, request, responseHandler, context);
-        var7F6E56C9A163132ECE3E76F87E689070_1492548815.addTaint(taint);
+        var7F6E56C9A163132ECE3E76F87E689070_1492548815.addTaint(getTaint());
         return var7F6E56C9A163132ECE3E76F87E689070_1492548815;
         // ---------- Original Method ----------
         //HttpHost target = determineTarget(request);
@@ -801,7 +801,7 @@ T var7F6E56C9A163132ECE3E76F87E689070_1492548815 =         execute(target, reque
         addTaint(request.getTaint());
         addTaint(target.getTaint());
 T varA621BC86743DA81920EC9390504093CE_1888191818 =         execute(target, request, responseHandler, null);
-        varA621BC86743DA81920EC9390504093CE_1888191818.addTaint(taint);
+        varA621BC86743DA81920EC9390504093CE_1888191818.addTaint(getTaint());
         return varA621BC86743DA81920EC9390504093CE_1888191818;
         // ---------- Original Method ----------
         //return execute(target, request, responseHandler, null);
@@ -822,7 +822,7 @@ T varA621BC86743DA81920EC9390504093CE_1888191818 =         execute(target, reque
         {
             IllegalArgumentException varC8FA2574296C77CD9B2D78EDCAB5BB02_1745085228 = new IllegalArgumentException
                 ("Response handler must not be null.");
-            varC8FA2574296C77CD9B2D78EDCAB5BB02_1745085228.addTaint(taint);
+            varC8FA2574296C77CD9B2D78EDCAB5BB02_1745085228.addTaint(getTaint());
             throw varC8FA2574296C77CD9B2D78EDCAB5BB02_1745085228;
         } //End block
         HttpResponse response = execute(target, request, context);
@@ -848,23 +848,23 @@ T varA621BC86743DA81920EC9390504093CE_1888191818 =         execute(target, reque
             if(t instanceof Error)            
             {
                 Error varE4E19808241EF112D2272BA099520A74_528921079 = (Error) t;
-                varE4E19808241EF112D2272BA099520A74_528921079.addTaint(taint);
+                varE4E19808241EF112D2272BA099520A74_528921079.addTaint(getTaint());
                 throw varE4E19808241EF112D2272BA099520A74_528921079;
             } //End block
             if(t instanceof RuntimeException)            
             {
                 RuntimeException var240BB82070FA0C18A5C852C3B09D6C1F_123333957 = (RuntimeException) t;
-                var240BB82070FA0C18A5C852C3B09D6C1F_123333957.addTaint(taint);
+                var240BB82070FA0C18A5C852C3B09D6C1F_123333957.addTaint(getTaint());
                 throw var240BB82070FA0C18A5C852C3B09D6C1F_123333957;
             } //End block
             if(t instanceof IOException)            
             {
                 IOException var8E119F6D5DC5E35389CA6F978EE60BCE_886945523 = (IOException) t;
-                var8E119F6D5DC5E35389CA6F978EE60BCE_886945523.addTaint(taint);
+                var8E119F6D5DC5E35389CA6F978EE60BCE_886945523.addTaint(getTaint());
                 throw var8E119F6D5DC5E35389CA6F978EE60BCE_886945523;
             } //End block
             UndeclaredThrowableException varCDADF2F647FF0550CFA2582D55121867_650809770 = new UndeclaredThrowableException(t);
-            varCDADF2F647FF0550CFA2582D55121867_650809770.addTaint(taint);
+            varCDADF2F647FF0550CFA2582D55121867_650809770.addTaint(getTaint());
             throw varCDADF2F647FF0550CFA2582D55121867_650809770;
         } //End block
         HttpEntity entity = response.getEntity();
@@ -873,7 +873,7 @@ T varA621BC86743DA81920EC9390504093CE_1888191818 =         execute(target, reque
             entity.consumeContent();
         } //End block
 T varDC838461EE2FA0CA4C9BBB70A15456B0_1663788671 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1663788671.addTaint(taint);
+        varDC838461EE2FA0CA4C9BBB70A15456B0_1663788671.addTaint(getTaint());
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1663788671;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

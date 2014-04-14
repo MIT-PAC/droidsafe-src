@@ -182,7 +182,7 @@ public ZipEntry nextElement() {
                 return iterator.next();
             }
 };
-        var5C2492AEF6429BB2452507D2F1DD320A_330051403.addTaint(taint);
+        var5C2492AEF6429BB2452507D2F1DD320A_330051403.addTaint(getTaint());
         return var5C2492AEF6429BB2452507D2F1DD320A_330051403;
         // ---------- Original Method ----------
         //checkNotClosed();

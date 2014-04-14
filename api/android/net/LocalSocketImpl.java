@@ -157,7 +157,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "91E7A83B201CCE6F03E99B6B97993D3C", hash_generated_method = "BF4DB921189260FDA30B994461CFCF87")
     private FileDescriptor create_native(boolean stream) throws IOException {
         FileDescriptor fd = new FileDescriptor();
-        fd.addTaint(this.taint);
+        fd.addTaint(this.getTaint());
         return fd;
     }
     @DSComment("Private Method")
@@ -187,7 +187,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     private Credentials getPeerCredentials_native(
             FileDescriptor fd) throws IOException {
     	Credentials creds = new Credentials(0, 0, 0);
-    	creds.addTaint(this.taint);
+    	creds.addTaint(this.getTaint());
     	return creds;
     }
     @DSComment("Private Method")
@@ -220,7 +220,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.249 -0400", hash_original_method = "AD93B21D07861EA052C26EC40030E4DA", hash_generated_method = "0BA24B5688D235E53CBDA81423459803")
     private FileDescriptor accept(FileDescriptor fd, LocalSocketImpl s) throws IOException {
         FileDescriptor fd2 = new FileDescriptor();
-        fd2.addTaint(this.taint);
+        fd2.addTaint(this.getTaint());
         return fd2;
     }
 

@@ -157,7 +157,7 @@ public class EGLImpl implements EGL10 {
     	addTaint(display.getTaint());
     	addTaint(name);
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.396 -0500", hash_original_method = "3CBB90A352CD62A4CE70C5B74A91066B", hash_generated_method = "1120ADA1C3ACB2D19833DADC9E26C64A")

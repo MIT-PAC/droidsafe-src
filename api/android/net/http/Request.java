@@ -381,7 +381,7 @@ void addHeaders(Map<String, String> headers) {
                     {
                         mEventHandler.data(buf, count);
                     } //End block
-                    e.addTaint(taint);
+                    e.addTaint(getTaint());
                     throw e;
                 } //End block
             } //End block
@@ -457,11 +457,11 @@ String getHostPort() {
             mHost.getSchemeName().equals("https"))        
         {
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_558262208 =             mPath;
-            var6AF672BCA4D9DB76D759DE4D6BEB1D5F_558262208.addTaint(taint);
+            var6AF672BCA4D9DB76D759DE4D6BEB1D5F_558262208.addTaint(getTaint());
             return var6AF672BCA4D9DB76D759DE4D6BEB1D5F_558262208;
         } //End block
 String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeName() + "://" + getHostPort() + mPath;
-        var2C2774A4504CCD41056B65A992871E34_1015357335.addTaint(taint);
+        var2C2774A4504CCD41056B65A992871E34_1015357335.addTaint(getTaint());
         return var2C2774A4504CCD41056B65A992871E34_1015357335;
         // ---------- Original Method ----------
         //if (mProxyHost == null ||

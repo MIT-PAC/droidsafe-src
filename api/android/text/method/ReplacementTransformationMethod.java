@@ -215,7 +215,7 @@ public CharSequence subSequence(int start, int end) {
             addTaint(end);
             addTaint(start);
 T[] varF03F51B4D510CEB709FCAEAB771CF011_117357119 =             mSpanned.getSpans(start, end, type);
-            varF03F51B4D510CEB709FCAEAB771CF011_117357119.addTaint(taint);
+            varF03F51B4D510CEB709FCAEAB771CF011_117357119.addTaint(getTaint());
             return varF03F51B4D510CEB709FCAEAB771CF011_117357119;
             // ---------- Original Method ----------
             //return mSpanned.getSpans(start, end, type);

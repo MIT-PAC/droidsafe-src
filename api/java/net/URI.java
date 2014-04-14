@@ -1245,7 +1245,7 @@ public String toASCIIString() {
             result.append(fragment);
         } //End block
 String var6E684D9B8DA835CC8A13C4D3E99458C8_563535807 =         convertHexToLowerCase(result.toString());
-        var6E684D9B8DA835CC8A13C4D3E99458C8_563535807.addTaint(taint);
+        var6E684D9B8DA835CC8A13C4D3E99458C8_563535807.addTaint(getTaint());
         return var6E684D9B8DA835CC8A13C4D3E99458C8_563535807;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

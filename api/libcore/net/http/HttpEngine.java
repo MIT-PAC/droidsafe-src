@@ -666,9 +666,14 @@ final void readTrailers() throws IOException {
 private void readHeaders(RawHeaders headers) throws IOException {
         // parse the result headers until the first blank line
         String line;
-        while (!(line = Streams.readAsciiLine(socketIn)).isEmpty()) {
+        /*while (!(line = Streams.readAsciiLine(socketIn)).isEmpty()) {
             headers.addLine(line);
-        }
+        }*/
+
+        line = new String(); 
+        line.addTaint(socketIn.read());
+        headers.addLine(line);
+
 
         CookieHandler cookieHandler = CookieHandler.getDefault();
         if (cookieHandler != null) {

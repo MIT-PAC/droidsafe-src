@@ -1011,7 +1011,7 @@ public HeaderAdapter(Context context, List<Header> objects) {
                 holder.summary.setVisibility(View.GONE);
             } //End block
 View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
-            var057D265746AE9672AFE5F9FF6338071D_1722391247.addTaint(taint);
+            var057D265746AE9672AFE5F9FF6338071D_1722391247.addTaint(getTaint());
             return var057D265746AE9672AFE5F9FF6338071D_1722391247;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation

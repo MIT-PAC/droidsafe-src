@@ -282,7 +282,7 @@ public int getMaximumAndroidPua() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "3AA105C3169886A719F2BF7A3237E4A3", hash_generated_method = "1FEDBE13E2C3435ECCCBB1756DB5C9E3")
 	private Bitmap nativeGetBitmapFromAndroidPua(int nativeEmojiFactory, int AndroidPua) {
 		Bitmap bm = new Bitmap();
-		bm.addTaint(this.taint);
+		bm.addTaint(this.getTaint());
 		return bm;
 	}
     @DSComment("Private Method")

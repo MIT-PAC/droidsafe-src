@@ -21,7 +21,7 @@ public class ExtractedTextRequest implements Parcelable {
             res.flags = source.readInt();
             res.hintMaxLines = source.readInt();
             res.hintMaxChars = source.readInt();
-            res.addTaint(taint);
+            res.addTaint(getTaint());
             return res;
         }
         

@@ -862,6 +862,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
+    @DSSafe
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     public int getChangingConfigurations(){
 		return getTaintInt();
@@ -1392,8 +1393,9 @@ public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onBackPressed(){
-		mFragments.popBackStackImmediate();
-		finish();
+        //We don't need to do anything in the model.  This method is only called
+        //incase user code overrides this
+        
 		// Original method
 		/*
 		{

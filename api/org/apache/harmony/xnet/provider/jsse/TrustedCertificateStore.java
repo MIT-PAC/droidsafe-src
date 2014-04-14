@@ -395,17 +395,17 @@ for(int index = 0;true;index++)
                 if(desiredReturnType == Boolean.class)                
                 {
 T varEEA82B1F5951E79A49A59D17E2B4064C_1145522171 =                     (T) Boolean.FALSE;
-                    varEEA82B1F5951E79A49A59D17E2B4064C_1145522171.addTaint(taint);
+                    varEEA82B1F5951E79A49A59D17E2B4064C_1145522171.addTaint(getTaint());
                     return varEEA82B1F5951E79A49A59D17E2B4064C_1145522171;
                 } //End block
                 if(desiredReturnType == File.class)                
                 {
 T varF370AF19C57A14797EFDE924F649B8A2_1417298089 =                     (T) file;
-                    varF370AF19C57A14797EFDE924F649B8A2_1417298089.addTaint(taint);
+                    varF370AF19C57A14797EFDE924F649B8A2_1417298089.addTaint(getTaint());
                     return varF370AF19C57A14797EFDE924F649B8A2_1417298089;
                 } //End block
 T var540C13E9E156B687226421B24F2DF178_442038581 =                 null;
-                var540C13E9E156B687226421B24F2DF178_442038581.addTaint(taint);
+                var540C13E9E156B687226421B24F2DF178_442038581.addTaint(getTaint());
                 return var540C13E9E156B687226421B24F2DF178_442038581;
             } //End block
             if(isTombstone(file))            
@@ -422,23 +422,23 @@ T var540C13E9E156B687226421B24F2DF178_442038581 =                 null;
                 if(desiredReturnType == X509Certificate.class)                
                 {
 T var317015959638CAF4FFAC3A88AE5CE017_819158653 =                     (T) cert;
-                    var317015959638CAF4FFAC3A88AE5CE017_819158653.addTaint(taint);
+                    var317015959638CAF4FFAC3A88AE5CE017_819158653.addTaint(getTaint());
                     return var317015959638CAF4FFAC3A88AE5CE017_819158653;
                 } //End block
                 if(desiredReturnType == Boolean.class)                
                 {
 T varE0E5C48B656ACCBA0CDB3CC6914BAD9C_41080555 =                     (T) Boolean.TRUE;
-                    varE0E5C48B656ACCBA0CDB3CC6914BAD9C_41080555.addTaint(taint);
+                    varE0E5C48B656ACCBA0CDB3CC6914BAD9C_41080555.addTaint(getTaint());
                     return varE0E5C48B656ACCBA0CDB3CC6914BAD9C_41080555;
                 } //End block
                 if(desiredReturnType == File.class)                
                 {
 T varF370AF19C57A14797EFDE924F649B8A2_1961021583 =                     (T) file;
-                    varF370AF19C57A14797EFDE924F649B8A2_1961021583.addTaint(taint);
+                    varF370AF19C57A14797EFDE924F649B8A2_1961021583.addTaint(getTaint());
                     return varF370AF19C57A14797EFDE924F649B8A2_1961021583;
                 } //End block
                 AssertionError varA81442E36297E737EB908877E58260E8_1544935951 = new AssertionError();
-                varA81442E36297E737EB908877E58260E8_1544935951.addTaint(taint);
+                varA81442E36297E737EB908877E58260E8_1544935951.addTaint(getTaint());
                 throw varA81442E36297E737EB908877E58260E8_1544935951;
             } //End block
         } //End block

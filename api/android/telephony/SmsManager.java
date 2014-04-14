@@ -170,6 +170,12 @@ private SmsManager() {
 public void sendTextMessage(
             String destinationAddress, String scAddress, String text,
             PendingIntent sentIntent, PendingIntent deliveryIntent) {
+        //droidsafe touch all strings
+        String message = destinationAddress + scAddress + text;
+        sentIntent.addTaint(message.getTaint());
+        deliveryIntent.addTaint(message.getTaint());
+        
+            /*
         if (TextUtils.isEmpty(destinationAddress)) {
             throw new IllegalArgumentException("Invalid destinationAddress");
         }
@@ -186,6 +192,7 @@ public void sendTextMessage(
         } catch (RemoteException ex) {
             // ignore it
         }
+            */
     }
 
     /**

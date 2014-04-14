@@ -108,7 +108,7 @@ public TreeSet(SortedSet<E> set) {
         {
             CloneNotSupportedException e = new CloneNotSupportedException();
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1900183531 = new AssertionError(e);
-            varA5A331D65C8C3F32D42E49D64BCF4109_1900183531.addTaint(taint);
+            varA5A331D65C8C3F32D42E49D64BCF4109_1900183531.addTaint(getTaint());
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1900183531;
         } //End block
 

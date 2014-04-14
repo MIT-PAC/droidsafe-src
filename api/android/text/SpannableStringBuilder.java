@@ -807,7 +807,7 @@ public int getSpanFlags(Object what) {
         if(kind == null)        
         {
 T[] var9D4CC3533B24DD61A73D38EC233FFA92_1168608204 =         ArrayUtils.emptyArray(kind);
-        var9D4CC3533B24DD61A73D38EC233FFA92_1168608204.addTaint(taint);
+        var9D4CC3533B24DD61A73D38EC233FFA92_1168608204.addTaint(getTaint());
         return var9D4CC3533B24DD61A73D38EC233FFA92_1168608204;
         }
         int spanCount = mSpanCount;
@@ -886,7 +886,7 @@ for(j = 0;j < count;j++)
         if(count == 0)        
         {
 T[] var9D4CC3533B24DD61A73D38EC233FFA92_674511624 =             ArrayUtils.emptyArray(kind);
-            var9D4CC3533B24DD61A73D38EC233FFA92_674511624.addTaint(taint);
+            var9D4CC3533B24DD61A73D38EC233FFA92_674511624.addTaint(getTaint());
             return var9D4CC3533B24DD61A73D38EC233FFA92_674511624;
         } //End block
         if(count == 1)        
@@ -894,19 +894,19 @@ T[] var9D4CC3533B24DD61A73D38EC233FFA92_674511624 =             ArrayUtils.empty
             ret = (T[]) Array.newInstance(kind, 1);
             ret[0] = ret1;
 T[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2021125999 =             ret;
-            varEDFF4FBBF053B5DC2B444ADFA049EE0F_2021125999.addTaint(taint);
+            varEDFF4FBBF053B5DC2B444ADFA049EE0F_2021125999.addTaint(getTaint());
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_2021125999;
         } //End block
         if(count == ret.length)        
         {
 T[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1094619637 =             ret;
-            varEDFF4FBBF053B5DC2B444ADFA049EE0F_1094619637.addTaint(taint);
+            varEDFF4FBBF053B5DC2B444ADFA049EE0F_1094619637.addTaint(getTaint());
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1094619637;
         } //End block
         T[] nret = (T[]) Array.newInstance(kind, count);
         System.arraycopy(ret, 0, nret, 0, count);
 T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
-        var785F7C6C4DBBD240B854AFDE8D881E30_290589019.addTaint(taint);
+        var785F7C6C4DBBD240B854AFDE8D881E30_290589019.addTaint(getTaint());
         return var785F7C6C4DBBD240B854AFDE8D881E30_290589019;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

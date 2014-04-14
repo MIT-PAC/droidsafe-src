@@ -992,7 +992,7 @@ for(Node<E> p = first;p != null;p = p.next)
             if(a.length > k)            
             a[k] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_2033373084 =             a;
-            var3F5343BF1D849954A73F0BB303805FFD_2033373084.addTaint(taint);
+            var3F5343BF1D849954A73F0BB303805FFD_2033373084.addTaint(getTaint());
             return var3F5343BF1D849954A73F0BB303805FFD_2033373084;
         } //End block
         finally 

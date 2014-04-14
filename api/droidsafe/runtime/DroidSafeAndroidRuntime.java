@@ -35,20 +35,11 @@ public class DroidSafeAndroidRuntime {
     public static int switchControl = new Random().nextInt();
     public static int runtimeInteger  = new Random().nextInt();
     public static float runtimeFloat = new Random().nextFloat();
+    public static Context context = new ContextImpl();
 
     /** make public so that other context's can grab this! */
     public static Application mApplication;
     
-    /**
-     * This method will be called automatically by the droidsafe harness class before all
-     * application code.
-     * 	
-     * @param args
-     */
-    public static void main() {
-
-    }
-
     /**
      * create any associated state and call init methods on an activity
      * 
@@ -60,8 +51,6 @@ public class DroidSafeAndroidRuntime {
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelActivity(android.app.Activity activity) {
-        ContextImpl context = new ContextImpl();
-
         if (mApplication != null)
             activity.setApplication(mApplication);
 
@@ -177,41 +166,40 @@ public class DroidSafeAndroidRuntime {
 
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {        
+    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {   
         if (mApplication != null) {
             receiver.setApplication(mApplication);
             // callback receiver
             if (receiver instanceof android.app.admin.DeviceAdminReceiver) {
                 DeviceAdminReceiver ar = (DeviceAdminReceiver) receiver;
                 Intent appIntent = mApplication.droidsafeGetIntent();
-                Context appContext = mApplication.getApplicationContext();
-                ar.onDisableRequested(appContext, appIntent);
-                ar.onDisabled(appContext, appIntent);
-                ar.onEnabled(appContext, appIntent);
-                ar.onPasswordChanged(appContext, appIntent);
-                ar.onPasswordExpiring(appContext, appIntent);
-                ar.onPasswordFailed(appContext, appIntent);
-                ar.onPasswordSucceeded(appContext, appIntent);
+                ar.onDisableRequested(context, appIntent);
+                ar.onDisabled(context, appIntent);
+                ar.onEnabled(context, appIntent);
+                ar.onPasswordChanged(context, appIntent);
+                ar.onPasswordExpiring(context, appIntent);
+                ar.onPasswordFailed(context, appIntent);
+                ar.onPasswordSucceeded(context, appIntent);
             }
 
             if (receiver instanceof android.appwidget.AppWidgetProvider) {
                 AppWidgetProvider aw = (AppWidgetProvider)receiver;
                 Intent appIntent = mApplication.droidsafeGetIntent();
-                Context appContext = mApplication.getApplicationContext();
-                aw.onReceive(appContext, appIntent);
-                aw.onEnabled(appContext);
-                aw.onDisabled(appContext);
+                aw.onReceive(context, appIntent);
+                aw.onEnabled(context);
+                aw.onDisabled(context);
                 int[] appWidgetIds = new int[1];
                 appWidgetIds[0] = DSUtils.FAKE_INT;
-                aw.onUpdate(appContext, AppWidgetManager.getInstance(appContext), appWidgetIds);
-                aw.onDeleted(appContext, appWidgetIds);
+                aw.onUpdate(context, AppWidgetManager.getInstance(context), appWidgetIds);
+                aw.onDeleted(context, appWidgetIds);
             }
         }
     }
     
     public static void modelApplication(android.app.Application app) {
         mApplication = app;
-
+        
+        
         app.droidsafeOnCreate();
         app.droidsafeOnTerminate();
         app.droidsafeOnEverythingElse();

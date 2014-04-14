@@ -370,7 +370,7 @@ public void updateViewLayout(View view, ViewGroup.LayoutParams params) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.228 -0500", hash_original_method = "6ED1D335390D20FBE30CC53F4D61DE9F", hash_generated_method = "97555D333EA1C440F3216E288199576F")
     
 public void removeView(View view) {
-        synchronized (this) {
+       /* synchronized (this) {
             int index = findViewLocked(view, true);
             View curView = removeViewLocked(index);
             if (curView == view) {
@@ -379,14 +379,19 @@ public void removeView(View view) {
             
             throw new IllegalStateException("Calling with view " + view
                     + " but the ViewAncestor is attached to " + curView);
+        }*/
+        if (DroidSafeAndroidRuntime.control) {
+            throw new IllegalStateException("Calling with view " + view
+                    + " but the ViewAncestor is attached to "); 
         }
+        view.onDetachedFromWindow();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.230 -0500", hash_original_method = "EE35B3CBE21A32408B24AA67A208567E", hash_generated_method = "1B701F99C123B88F26A7AD9EF3F5188D")
     
 public void removeViewImmediate(View view) {
         synchronized (this) {
-            int index = findViewLocked(view, true);
+           /* int index = findViewLocked(view, true);
             ViewRootImpl root = mRoots[index];
             View curView = root.getView();
             
@@ -395,10 +400,13 @@ public void removeViewImmediate(View view) {
             finishRemoveViewLocked(curView, index);
             if (curView == view) {
                 return;
-            }
+            }*/
             
-            throw new IllegalStateException("Calling with view " + view
-                    + " but the ViewAncestor is attached to " + curView);
+            if (DroidSafeAndroidRuntime.control) {
+                throw new IllegalStateException("Calling with view " + view
+                        + " but the ViewAncestor is attached to "); 
+            }
+            view.onDetachedFromWindow();
         }
     }
     

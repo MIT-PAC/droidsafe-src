@@ -299,7 +299,7 @@ public void setDataSource(Context context, Uri uri)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.169 -0400", hash_original_method = "8FC26B688DF40812E766667E74AA42B9", hash_generated_method = "FE2CB58CC88315CB1A432EFEAAD82A77")
     public String extractMetadata(int keyCode) {
     	String s = new String();
-    	s.addTaint(taint);
+    	s.addTaint(getTaint());
     	return s;
     }
 

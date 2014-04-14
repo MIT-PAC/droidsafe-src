@@ -34,7 +34,8 @@ protected FilterInputStream(InputStream in) {
     
 @Override
     public int available() throws IOException {
-        return in.available();
+        //return in.available();
+        return in.droidsafeAvailable();
     }
 
     /**
@@ -107,7 +108,7 @@ protected FilterInputStream(InputStream in) {
     
 @Override
     public int read() throws IOException {
-        return in.read();
+        return in.droidsafeRead();
     }
 
     /**

@@ -18,7 +18,7 @@ public final class CorrectionInfo implements Parcelable {
         public CorrectionInfo createFromParcel(Parcel source) {
     		addTaint(source.getTaint());
     		CorrectionInfo retVal = new CorrectionInfo(source);
-    		retVal.addTaint(taint);
+    		retVal.addTaint(getTaint());
             return retVal;
         }
         

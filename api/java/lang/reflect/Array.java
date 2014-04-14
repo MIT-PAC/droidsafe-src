@@ -426,7 +426,7 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
     private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
     	Object ret = new Object();
-    	ret.addTaint(componentType.taint);
+    	ret.addTaint(componentType.getTaint());
     	ret.addTaint(dimensions[0]);
     	return ret;
     }
@@ -492,7 +492,7 @@ public static Object newInstance(Class<?> componentType, int size)
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
     	Object ret = new Object();
-    	ret.addTaint(componentType.taint);
+    	ret.addTaint(componentType.getTaint());
     	ret.addTaint(length);
     	return ret;
     }

@@ -359,9 +359,9 @@ RenderScript(Context ctx) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.333 -0400", hash_original_method = "A170821D17F63D9EDF5AAFFF93CB7028", hash_generated_method = "1C435B28B274730163B2755B3AC76CDA")
      String nContextGetErrorMessage(int con) {
-    	taint.addTaint(con);
+    	addTaint(con);
     	String retVal = new String();
-    	retVal.addTaint(taint);
+    	retVal.addTaint(getTaint());
     	return retVal;
     }
     @DSComment("Package priviledge")
@@ -740,7 +740,7 @@ synchronized void nAssignName(int obj, byte[] name) {
     	addTaint(con);
     	addTaint(obj);
     	String retVal = new String();
-    	retVal.addTaint(taint);
+    	retVal.addTaint(getTaint());
     	return retVal;
     }
     @DSComment("Package priviledge")

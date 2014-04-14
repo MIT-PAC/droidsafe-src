@@ -223,7 +223,7 @@ public Map.Entry<K, V> get(Map.Entry<K, V> entry) {
                                 return entry;
                             }
 });
-            varFD445BCDDF9C631EA7BE770450B83225_839819223.addTaint(taint);
+            varFD445BCDDF9C631EA7BE770450B83225_839819223.addTaint(getTaint());
             return varFD445BCDDF9C631EA7BE770450B83225_839819223;
             // ---------- Original Method ----------
             //return new HashIterator<Map.Entry<K, V>>(
@@ -234,7 +234,7 @@ public Map.Entry<K, V> get(Map.Entry<K, V> entry) {
                         //});
         }
 };
-        var952772A53018FA152689B94755082E8D_915180893.addTaint(taint);
+        var952772A53018FA152689B94755082E8D_915180893.addTaint(getTaint());
         return var952772A53018FA152689B94755082E8D_915180893;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

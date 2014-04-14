@@ -239,11 +239,11 @@ public final void init(byte[] params, String format) throws IOException {
         if(!initialized)        
         {
             InvalidParameterSpecException var54E4AE85F53D5769EC35860EC68CC518_1569405853 = new InvalidParameterSpecException("Parameter has not been initialized");
-            var54E4AE85F53D5769EC35860EC68CC518_1569405853.addTaint(taint);
+            var54E4AE85F53D5769EC35860EC68CC518_1569405853.addTaint(getTaint());
             throw var54E4AE85F53D5769EC35860EC68CC518_1569405853;
         } //End block
 T var85314A191FE096CEB6FC1BB15A481DB0_510525874 =         spiImpl.engineGetParameterSpec(paramSpec);
-        var85314A191FE096CEB6FC1BB15A481DB0_510525874.addTaint(taint);
+        var85314A191FE096CEB6FC1BB15A481DB0_510525874.addTaint(getTaint());
         return var85314A191FE096CEB6FC1BB15A481DB0_510525874;
         // ---------- Original Method ----------
         //if (!initialized) {

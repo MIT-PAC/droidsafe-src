@@ -207,7 +207,7 @@ public static String readAsciiLine(InputStream in) throws IOException {
         // TODO: support UTF-8 here instead
 
         StringBuilder result = new StringBuilder(80);
-        while (true) {
+       /* while (true) {
             int c = in.read();
             if (c == -1) {
                 throw new EOFException();
@@ -221,6 +221,9 @@ public static String readAsciiLine(InputStream in) throws IOException {
         if (length > 0 && result.charAt(length - 1) == '\r') {
             result.setLength(length - 1);
         }
+        return result.toString();*/
+        result.append(in.droidsafeRead());
+        
         return result.toString();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.753 -0500", hash_original_field = "BC4E566FC02FEB5BAB3223E68C61F7C4", hash_generated_field = "A1B1A5BE6021D69F6851622BFC79A5B3")

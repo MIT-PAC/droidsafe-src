@@ -1193,7 +1193,7 @@ public abstract void startIntentSender(IntentSender intent,
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.969 -0500", hash_original_method = "758F82A7831A3E63BFA33BC1D51204CD", hash_generated_method = "562685EAD67DEDBF8ECDCC3E48DED167")
@@ -1224,9 +1224,9 @@ public abstract void sendBroadcast(Intent intent);
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.971 -0500", hash_original_method = "BD64097323B630BD418E3BBAB8229A5A", hash_generated_method = "99A1B49845C72E86D3E83EC3A7954E4F")
     
 public abstract void sendBroadcast(Intent intent,
@@ -1253,7 +1253,8 @@ public abstract void sendBroadcast(Intent intent,
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.973 -0500", hash_original_method = "4819235453B1EB0A02E9B2B19D176EA5", hash_generated_method = "C8A50F78D35C84BBE5A0A5E97023628C")
     
 public abstract void sendOrderedBroadcast(Intent intent,
@@ -1302,7 +1303,8 @@ public abstract void sendOrderedBroadcast(Intent intent,
      * @see android.app.Activity#RESULT_OK
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.976 -0500", hash_original_method = "F7F06BF835757EA8F337533771196C96", hash_generated_method = "66B9FEF66D5275FE598D2CA96213915A")
     
 public abstract void sendOrderedBroadcast(Intent intent,
@@ -1330,7 +1332,8 @@ public abstract void sendOrderedBroadcast(Intent intent,
      * @see #sendStickyOrderedBroadcast(Intent, BroadcastReceiver, Handler, int, String, Bundle)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.978 -0500", hash_original_method = "EBC415C0B4A9F508CD7CFAFD71BBCC4E", hash_generated_method = "72631BAFAFE1DEE59543EA72FA63139E")
     
 public abstract void sendStickyBroadcast(Intent intent);
@@ -1376,7 +1379,8 @@ public abstract void sendStickyBroadcast(Intent intent);
      * @see android.app.Activity#RESULT_OK
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.980 -0500", hash_original_method = "93DED7B582D7EACDC4FD6F46909C6664", hash_generated_method = "ACA4150575708078A8D06985E00FFB4B")
     
 public abstract void sendStickyOrderedBroadcast(Intent intent,
@@ -2374,7 +2378,7 @@ public boolean isRestricted() {
     @DSSafe(DSCat.SAFE_OTHERS)
     public CompatibilityInfoHolder getCompatibilityInfo(int displayId) {
         CompatibilityInfoHolder holder = new CompatibilityInfoHolder();
-        holder.addTaint(taint);
+        holder.addTaint(getTaint());
         holder.addTaint(displayId);
         return holder;
     }

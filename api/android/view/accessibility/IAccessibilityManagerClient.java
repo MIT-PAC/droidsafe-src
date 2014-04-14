@@ -96,7 +96,7 @@ _data.recycle();
 	addTaint(data.getTaint());
 	addTaint(reply.getTaint());
 	addTaint(flags);
-	reply.addTaint(taint);
+	reply.addTaint(getTaint());
 	switch (code)
 	{
 		case INTERFACE_TRANSACTION:

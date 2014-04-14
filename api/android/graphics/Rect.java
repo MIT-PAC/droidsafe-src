@@ -25,7 +25,7 @@ public final class Rect implements Parcelable {
         Rect rect = new Rect(DSUtils.FAKE_INT, DSUtils.FAKE_INT,
                              DSUtils.FAKE_INT, DSUtils.FAKE_INT);
         
-        rect.addTaint(str.getTaint());
+        rect.addTaintLocal(str.getTaintInt());
         return rect;
 	}
     
@@ -39,7 +39,7 @@ public final class Rect implements Parcelable {
                && a.top < b.bottom && b.top < a.bottom;
     }
 		*/
-        return toTaintBoolean(a.getTaintInt() + b.getTaintInt());
+        return toTaintBoolean(a.getSumTaintInt() + b.getSumTaintInt());
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.574 -0500", hash_original_field = "C827880A18B6ACBC60E1778FF671B928", hash_generated_field = "22CBDD4FA5AC4D71EB10C39DCFB71CD2")
 
@@ -89,20 +89,20 @@ public Rect[] newArray(int size) {
 public Rect() {}
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    private void droidsafeUpdateMembers() {
-        this.bottom = getTaintInt();
-        this.top    = getTaintInt();
-        this.left   = getTaintInt();
-        this.right  = getTaintInt();
+    public void droidsafeUpdateMembers() {
+        this.bottom = getSumTaintInt();
+        this.top    = getSumTaintInt();
+        this.left   = getSumTaintInt();
+        this.right  = getSumTaintInt();
     }
 
 	@DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Rect(int left, int top, int right, int bottom){
-		addTaint(left);
-		addTaint(top);
-		addTaint(right);
-		addTaint(bottom);
+		addTaintLocal(left);
+		addTaintLocal(top);
+		addTaintLocal(right);
+		addTaintLocal(bottom);
 		/*
 		this.left = left;
 		this.top = top;
@@ -115,7 +115,7 @@ public Rect() {}
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Rect(Rect r){
-		addTaint(r.getTaint());
+		addTaintLocal(r.getSumTaintInt());
 		/*
 		left = r.left;
 		top = r.top;
@@ -126,22 +126,13 @@ public Rect() {}
 	}
     
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override
-    public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
-    }
-    
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override
-    public void addTaint(double t) {
+    private void addTaintLocal(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
 
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    @Override
-    public void addTaint(boolean t) {
+    private void addTaintLocal(boolean t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
@@ -160,7 +151,12 @@ public Rect() {}
         return false;
     }
 		*/
-		return toTaintBoolean(obj.getTaintInt() + getTaintInt());
+        Rect r = (Rect) obj;
+        if (r != null) {
+            return toTaintBoolean(r.getSumTaintInt() + getSumTaintInt());
+        }
+ 
+		return false;
 	}
     
     @DSComment("From safe class list")
@@ -177,7 +173,7 @@ public Rect() {}
     }
 		*/
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getSumTaintInt());
 		return str;
 	}
     
@@ -191,7 +187,7 @@ public Rect() {}
     }
 		*/
         String str = new String();
-        str.addTaint(taint);
+        str.addTaint(getSumTaintInt());
 		return str;
 	}
     
@@ -208,7 +204,7 @@ public Rect() {}
         return sb.toString();
     }
 		*/
-        sb.addTaint(taint);
+        sb.addTaint(getSumTaintInt());
 		return sb.toString();
 	}
     
@@ -244,7 +240,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        pw.addTaint(taint);
+        pw.addTaint(getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -256,7 +252,7 @@ public Rect() {}
         return left >= right || top >= bottom;
     }
 		*/
-		return getTaintBoolean();
+		return toTaintBoolean(getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -268,7 +264,7 @@ public Rect() {}
         return right - left;
     }
 		*/
-		return getTaintInt();
+		return getSumTaintInt();
 	}
     
     @DSComment("From safe class list")
@@ -280,7 +276,7 @@ public Rect() {}
         return bottom - top;
     }
 		*/
-		return getTaintInt();
+		return getSumTaintInt();
 	}
     
     @DSComment("From safe class list")
@@ -292,7 +288,7 @@ public Rect() {}
         return (left + right) >> 1;
     }
 		*/
-		return getTaintInt();
+		return getSumTaintInt();
 	}
     
     @DSComment("From safe class list")
@@ -304,7 +300,7 @@ public Rect() {}
         return (top + bottom) >> 1;
     }
 		*/
-		return getTaintInt();
+		return getSumTaintInt();
 	}
     
     @DSComment("From safe class list")
@@ -316,7 +312,7 @@ public Rect() {}
         return (left + right) * 0.5f;
     }
 		*/
-		return getTaintFloat();
+		return getSumTaintInt();
 	}
     
     @DSComment("From safe class list")
@@ -328,7 +324,7 @@ public Rect() {}
         return (top + bottom) * 0.5f;
     }
 		*/
-		return getTaintFloat();
+		return getSumTaintInt();
 	}
     
     @DSComment("From safe class list")
@@ -356,8 +352,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(left + top + right + bottom);
-		droidsafeUpdateMembers();
+        addTaintLocal(left + top + right + bottom);
 	}
     
     @DSComment("From safe class list")
@@ -373,8 +368,7 @@ public Rect() {}
         this.bottom = src.bottom;
     }
 		*/
-        addTaint(src.getTaint());
-		droidsafeUpdateMembers();
+        addTaintLocal(src.getSumTaintInt());
 		//Return nothing
 	}
     
@@ -391,15 +385,13 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(dx + dy);
-		droidsafeUpdateMembers();
+        addTaintLocal(dx + dy);
 	}
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void offsetTo(int newLeft, int newTop){
-		addTaint(newLeft + newTop);
-		droidsafeUpdateMembers();
+		addTaintLocal(newLeft + newTop);
 		// Original method
 		/*
 		{
@@ -425,8 +417,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(dx + dy);
-		droidsafeUpdateMembers();
+        addTaintLocal(dx + dy);
 	}
     
     @DSComment("From safe class list")
@@ -439,7 +430,7 @@ public Rect() {}
                && x >= left && x < right && y >= top && y < bottom;
     }
 		*/
-		return toTaintBoolean(x + y + getTaintInt());
+		return toTaintBoolean(x + y + getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -453,7 +444,7 @@ public Rect() {}
                 && this.right >= right && this.bottom >= bottom;
     }
 		*/
-		return toTaintBoolean(left + top + right + bottom + getTaintInt());
+		return toTaintBoolean(left + top + right + bottom + getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -467,7 +458,7 @@ public Rect() {}
                && right >= r.right && bottom >= r.bottom;
     }
 		*/
-		return toTaintBoolean(r.getTaintInt() + getTaintInt());
+		return toTaintBoolean(r.getSumTaintInt() + getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -495,8 +486,7 @@ public Rect() {}
         return false;
     }
 		*/
-        addTaint(left + top + right + bottom);
-		droidsafeUpdateMembers();
+        addTaintLocal(left + top + right + bottom);
 		return getTaintBoolean();
 	}
     
@@ -509,7 +499,7 @@ public Rect() {}
         return intersect(r.left, r.top, r.right, r.bottom);
     }
 		*/
-        addTaint(r.getTaint());
+        addTaintLocal(r.getSumTaintInt());
 		return getTaintBoolean();
 	}
     
@@ -531,8 +521,7 @@ public Rect() {}
         return false;
     }
 		*/
-        addTaint(a.getTaintInt() + b.getTaintInt());
-		droidsafeUpdateMembers();
+        addTaintLocal(a.getSumTaintInt() + b.getSumTaintInt());
 		return getTaintBoolean();
 	}
     
@@ -546,7 +535,7 @@ public Rect() {}
                && this.top < bottom && top < this.bottom;
     }
 		*/
-        return toTaintBoolean(left + top + right + bottom + getTaintInt());
+        return toTaintBoolean(left + top + right + bottom + getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -576,8 +565,7 @@ public Rect() {}
 		*/
 		//Return nothing
 
-        addTaint(left + top + right + bottom);
-		droidsafeUpdateMembers();
+        addTaintLocal(left + top + right + bottom);
 	}
     
     @DSComment("From safe class list")
@@ -590,8 +578,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(r.getTaint());
-		droidsafeUpdateMembers();
+        addTaintLocal(r.getSumTaintInt());
 	}
     
     @DSComment("From safe class list")
@@ -613,8 +600,7 @@ public Rect() {}
     }
 		*/
 		//Return nothing
-        addTaint(x + y);
-		droidsafeUpdateMembers();
+        addTaintLocal(x + y);
 	}
     
     @DSComment("From safe class list")
@@ -646,7 +632,7 @@ public Rect() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.658 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents() {
-        return getTaintInt();
+        return getSumTaintInt();
     }
     
     @DSComment("From safe class list")
@@ -662,7 +648,7 @@ public int describeContents() {
     }
 		*/
 		//Return nothing
-        out.addTaint(getTaintInt() + flags);
+        out.addTaint(getSumTaintInt() + flags);
 	}
     
     @DSComment("From safe class list")
@@ -678,7 +664,7 @@ public int describeContents() {
     }
 		*/
 		//Return nothing
-        addTaint(in.getTaint());
+        addTaintLocal(in.getTaintInt());
 		droidsafeUpdateMembers();
 	}
     
@@ -697,8 +683,11 @@ public int describeContents() {
     }
 		*/
 		//Return nothing
-        addTaint(scale);
-		droidsafeUpdateMembers();
+        addTaintLocal(scale);
 	}
+    
+    public int getSumTaintInt() {
+        return (int)(getSumTaintInt() + bottom + top + left + right);
+    }
 }
 

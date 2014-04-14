@@ -207,7 +207,7 @@ public GregorianCalendar(TimeZone timezone) {
     
 public GregorianCalendar(TimeZone timezone, Locale locale) {
         super(timezone, locale);
-        setTimeInMillis(System.currentTimeMillis());
+        //setTimeInMillis(System.currentTimeMillis());
     }
 
     @DSComment("constructor")

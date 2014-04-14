@@ -272,7 +272,7 @@ public interface AttributeSet {
         public String getIdAttribute() {
             // TODO Auto-generated method stub
             String str = new String();
-            str.addTaint(taint);
+            str.addTaint(getTaint());
             return str; 
         }
 
@@ -282,7 +282,7 @@ public interface AttributeSet {
         public String getClassAttribute() {
             // TODO Auto-generated method stub
             String str = new String();
-            str.addTaint(taint);
+            str.addTaint(getTaint());
             return str; 
         }
 

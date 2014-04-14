@@ -54,7 +54,7 @@ public Point() {}
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public Point(Point src){
-        addTaint(src.getTaint());
+        addTaint(src.getTaintInt() + src.x + src.y);
         droidsafeUpdateMembers();
         /*
         this.x = src.x;
@@ -97,7 +97,7 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(int x, int y){
-        return toTaintBoolean(x + y + getTaintInt());
+        return toTaintBoolean(x + y + getSumTaintInt());
         // Original method
         /*
         {
@@ -111,7 +111,14 @@ public final void offset(int dx, int dy) {
     @Override public boolean equals(Object o){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Point p = (Point) o;
-        return toTaintBoolean(getTaintInt() + o.getTaintInt()); 
+        
+        if (o instanceof Point) {
+            Point p = (Point) o;
+            return toTaintBoolean(
+                    this.getSumTaintInt() +
+                    p.getSumTaintInt());
+        }
+        return false;
         // Original method
         /*
         {
@@ -127,7 +134,7 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override public int hashCode(){
-        return getTaintInt();
+        return getSumTaintInt();
         // Original method
         /*
         {
@@ -153,7 +160,7 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override public int describeContents(){
-        return getTaintInt();
+        return getSumTaintInt();
         // Original method
         /*
         {
@@ -181,7 +188,8 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void readFromParcel(Parcel in){
-        addTaint(in.getTaint());
+        addTaint(in.getTaintInt());
+        droidsafeUpdateMembers();
         // Original method
         /*
         {
@@ -195,16 +203,10 @@ public final void offset(int dx, int dy) {
         x = getTaintInt();
         y = getTaintInt();
     }
-
-    @Override public void addTaint(double t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
+    
+    public int getSumTaintInt() {
+        return (x + y + getTaintInt());
     }
-
-    @Override public void addTaint(DSTaintObject t) {
-        super.addTaint(t);
-        droidsafeUpdateMembers();
-    }
-
+    
 }
 

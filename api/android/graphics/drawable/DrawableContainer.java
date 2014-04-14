@@ -709,7 +709,7 @@ public final Rect getConstantPadding() {
             for (int i = 0; i < N; i++) {
                 if (drawables[i].getPadding(t)) {
                     if (r == null) r = new Rect(0, 0, 0, 0);
-                    r.addTaint(t.taint);
+                    r.addTaint(t.getTaint());
                 }
             }
             mPaddingChecked = true;

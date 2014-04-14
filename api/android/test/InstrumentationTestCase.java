@@ -81,7 +81,7 @@ public Instrumentation getInstrumentation() {
             intent.putExtras(extras);
         } //End block
 T varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626 =         launchActivityWithIntent(pkg, activityCls, intent);
-        varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626.addTaint(taint);
+        varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626.addTaint(getTaint());
         return varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626;
         // ---------- Original Method ----------
         //Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -105,7 +105,7 @@ T varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626 =         launchActivityWithInt
         T activity = (T) getInstrumentation().startActivitySync(intent);
         getInstrumentation().waitForIdleSync();
 T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
-        var8CEBAC25E19008E785695F06EF11C2CD_232979124.addTaint(taint);
+        var8CEBAC25E19008E785695F06EF11C2CD_232979124.addTaint(getTaint());
         return var8CEBAC25E19008E785695F06EF11C2CD_232979124;
         // ---------- Original Method ----------
         //intent.setClassName(pkg, activityCls.getName());

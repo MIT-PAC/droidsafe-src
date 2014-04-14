@@ -2032,7 +2032,11 @@ public void setSelectionAfterHeaderView() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.348 -0500", hash_original_method = "1DD47D400FE7B21B7ADCD2D234FB64A7", hash_generated_method = "6C43D83C6F4D105A7792B80D392A7B0F")
     
 private boolean commonKey(int keyCode, int count, KeyEvent event) {
-        if (mAdapter == null || !mIsAttached) {
+       // all the onKeyXYZ call this method.  Normally the overriding method
+       // from the user code is more of a security concern, we can just do a 
+       // no op for this method
+       return toTaintBoolean(keyCode + count + event.getTaintInt() + getTaintInt());
+      /*  if (mAdapter == null || !mIsAttached) {
             return false;
         }
 
@@ -2180,7 +2184,7 @@ private boolean commonKey(int keyCode, int count, KeyEvent event) {
 
             default: // shouldn't happen
                 return false;
-        }
+        }*/
     }
 
     /**

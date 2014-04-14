@@ -119,6 +119,7 @@ public static synchronized CoderResult unmappableForLength(int length)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.570 -0500", hash_original_method = "720E366141B1E6A3092F9CE363C44766", hash_generated_method = "FB49B0EB754E7FF4B7B137E2B4C0B486")
     
 private CoderResult(int type, int length) {
+        addTaint(type + length);
         this.type = type;
         this.length = length;
     }
@@ -137,7 +138,7 @@ private CoderResult(int type, int length) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.579 -0500", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "CAF9A4E111854F6FF7C687173E4F4809")
     
 public boolean isUnderflow() {
-        return this.type == TYPE_UNDERFLOW;
+        return toTaintBoolean(this.type); 
     }
 
     /**
@@ -152,8 +153,7 @@ public boolean isUnderflow() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.581 -0500", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "1D64F760E3C6751142FF43E5BE9BABBC")
     
 public boolean isError() {
-        return this.type == TYPE_MALFORMED_INPUT
-                || this.type == TYPE_UNMAPPABLE_CHAR;
+        return toTaintBoolean(this.type); 
     }
 
     /**
@@ -164,7 +164,7 @@ public boolean isError() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.583 -0500", hash_original_method = "A1FC6FBF45CD4662583E11635A563069", hash_generated_method = "889DBFFCEA6AA85967FA554415EFE20F")
     
 public boolean isMalformed() {
-        return this.type == TYPE_MALFORMED_INPUT;
+        return toTaintBoolean(this.type); 
     }
 
     /**
@@ -177,7 +177,7 @@ public boolean isMalformed() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.586 -0500", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "716A62D018BCE4DEC3B5E75C09F90BCC")
     
 public boolean isOverflow() {
-        return this.type == TYPE_OVERFLOW;
+        return toTaintBoolean(this.type); 
     }
 
     /**
@@ -188,7 +188,7 @@ public boolean isOverflow() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.588 -0500", hash_original_method = "406F98BDE206F12612B0B50954C0A2D7", hash_generated_method = "7461A2B81E86EC49BAF71719D92CF9E9")
     
 public boolean isUnmappable() {
-        return this.type == TYPE_UNMAPPABLE_CHAR;
+        return toTaintBoolean(this.type); 
     }
 
     /**
@@ -203,7 +203,7 @@ public boolean isUnmappable() {
     
 public int length() throws UnsupportedOperationException {
         if (this.type == TYPE_MALFORMED_INPUT || this.type == TYPE_UNMAPPABLE_CHAR) {
-            return this.length;
+            return (this.length + this.type);
         }
         throw new UnsupportedOperationException("length meaningless for " + toString());
     }
@@ -273,7 +273,7 @@ public void throwException() throws BufferUnderflowException,
                 break;
         }
         //return getClass().getName() + "[" + dsc + "]";
-        dsc.addTaint(taint);
+        dsc.addTaint(getTaint());
         return dsc;
     }
 }

@@ -142,7 +142,7 @@ private void doubleCapacity() {
             System.arraycopy(elements, 0, a, headPortionLen, tail);
         } //End block
 T[] var3F5343BF1D849954A73F0BB303805FFD_458471027 =         a;
-        var3F5343BF1D849954A73F0BB303805FFD_458471027.addTaint(taint);
+        var3F5343BF1D849954A73F0BB303805FFD_458471027.addTaint(getTaint());
         return var3F5343BF1D849954A73F0BB303805FFD_458471027;
         // ---------- Original Method ----------
         //if (head < tail) {
@@ -761,7 +761,7 @@ public Object[] toArray() {
         if(a.length > size)        
         a[size] = null;
 T[] var3F5343BF1D849954A73F0BB303805FFD_87702147 =         a;
-        var3F5343BF1D849954A73F0BB303805FFD_87702147.addTaint(taint);
+        var3F5343BF1D849954A73F0BB303805FFD_87702147.addTaint(getTaint());
         return var3F5343BF1D849954A73F0BB303805FFD_87702147;
         // ---------- Original Method ----------
         //int size = size();

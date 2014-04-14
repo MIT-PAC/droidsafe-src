@@ -530,7 +530,7 @@ static ArrayList<DbStats> getDbStats() {
         if(path == null)        
         {
             IllegalArgumentException varE4C91A561B864CD4490A03B12C2E1BD5_1723494487 = new IllegalArgumentException("path should not be null");
-            varE4C91A561B864CD4490A03B12C2E1BD5_1723494487.addTaint(taint);
+            varE4C91A561B864CD4490A03B12C2E1BD5_1723494487.addTaint(getTaint());
             throw varE4C91A561B864CD4490A03B12C2E1BD5_1723494487;
         } //End block
         
@@ -944,7 +944,7 @@ public void beginTransactionWithListenerNonExclusive(
                     String msg = "Cannot call beginTransaction between "
                             + "calling setTransactionSuccessful and endTransaction";
                     IllegalStateException e = new IllegalStateException(msg);
-                    e.addTaint(taint);
+                    e.addTaint(getTaint());
                     throw e;
                 } //End block
                 ok = true;
@@ -971,7 +971,7 @@ public void beginTransactionWithListenerNonExclusive(
                 catch (RuntimeException e)
                 {
                     execSQL("ROLLBACK;");
-                    e.addTaint(taint);
+                    e.addTaint(getTaint());
                     throw e;
                 } //End block
             } //End block
@@ -2069,7 +2069,7 @@ public int update(String table, ContentValues values, String whereClause, String
         if(values == null || values.size() == 0)        
         {
             IllegalArgumentException varEEE2AB986D839FC34B1428F77875E0E5_795302489 = new IllegalArgumentException("Empty values");
-            varEEE2AB986D839FC34B1428F77875E0E5_795302489.addTaint(taint);
+            varEEE2AB986D839FC34B1428F77875E0E5_795302489.addTaint(getTaint());
             throw varEEE2AB986D839FC34B1428F77875E0E5_795302489;
         } //End block
         StringBuilder sql = new StringBuilder(120);
@@ -2110,7 +2110,7 @@ for(i = setValuesSize;i < bindArgsSize;i++)
         catch (SQLiteDatabaseCorruptException e)
         {
             onCorruption();
-            e.addTaint(taint);
+            e.addTaint(getTaint());
             throw e;
         } //End block
         finally 
@@ -2535,7 +2535,7 @@ synchronized SQLiteCompiledSql getCompiledStatementForSql(String sql) {
             {
                 IllegalStateException var5012919EDBC0D151A6C270907E44577F_1033219340 = new IllegalStateException(
                         "expected value between 0 and " + MAX_SQL_CACHE_SIZE);
-                var5012919EDBC0D151A6C270907E44577F_1033219340.addTaint(taint);
+                var5012919EDBC0D151A6C270907E44577F_1033219340.addTaint(getTaint());
                 throw var5012919EDBC0D151A6C270907E44577F_1033219340;
             } //End block
             else
@@ -2543,7 +2543,7 @@ synchronized SQLiteCompiledSql getCompiledStatementForSql(String sql) {
             {
                 IllegalStateException var325AC93AC3A8216D94109299E6891532_1769476857 = new IllegalStateException("cannot set cacheSize to a value less than the "
                         + "value set with previous setMaxSqlCacheSize() call.");
-                var325AC93AC3A8216D94109299E6891532_1769476857.addTaint(taint);
+                var325AC93AC3A8216D94109299E6891532_1769476857.addTaint(getTaint());
                 throw var325AC93AC3A8216D94109299E6891532_1769476857;
             } //End block
             mCompiledQueries = new LruCache<String, SQLiteCompiledSql>(cacheSize) {
