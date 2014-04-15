@@ -133,10 +133,9 @@ USAGE;
     $linenum++;
     $line = str_replace ("DSSinkKind", "DSout", $line);
     $line = str_replace ("DSSourceKind", "DSin", $line);
-    list ($sig, $spec, $ss) = preg_split ("/ +- +/", $line);
+    @list ($sig, $spec, $ss) = preg_split ("/ +- +/", $line);
     if (!$ss) {
-      printf ("bad line: '$line'");
-      return;
+      throw new Exception ("bad line ($report_file:$linenum): '$line'");
     }
     $curinfo = new SpecInfo ($sig, $spec, $ss);
     if (array_key_exists ($sig, $info_map))
