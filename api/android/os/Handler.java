@@ -95,13 +95,13 @@ public class Handler {
      * Subclasses must implement this to receive messages.
      */
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.014 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
     @DSVerified
     public void handleMessage(Message msg) {
     }
     
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSVerified
     public void dispatchMessage(Message msg){
 		// Original method
@@ -203,9 +203,9 @@ public final Message obtainMessage()
     	return Message.obtain(this, what, arg1, arg2, obj);
 	}
     
-	@DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
-	@DSVerified
+    @DSComment("General android operation, no security concern")
+    @DSSpec(DSCat.IPC)
+    @DSVerified
     public final boolean post(Runnable r){
 		// Original method
 		/*
@@ -219,7 +219,7 @@ public final Message obtainMessage()
 	}
     
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.IPC)
     public final boolean postAtTime(Runnable r, long uptimeMillis){
 		// Original method
 		/*
@@ -231,7 +231,7 @@ public final Message obtainMessage()
     	return post(r);
 	}
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.IPC)
     public final boolean postAtTime(Runnable r, Object token, long uptimeMillis){
 		// Original method
 		/*
@@ -249,7 +249,7 @@ public final Message obtainMessage()
 	}
     
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.IPC)
     public final boolean postDelayed(Runnable r, long delayMillis){
 		// Original method
 		/*
@@ -262,7 +262,7 @@ public final Message obtainMessage()
     	//return sendMessageDelayed(getPostMessage(r), delayMillis);
 	}
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.IPC)
     public final boolean postAtFrontOfQueue(Runnable r){
 		// Original method
 		/*
@@ -303,7 +303,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendMessage(Message msg){
 		// Original method
@@ -318,7 +318,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessage(int what){
 		// Original method
@@ -332,7 +332,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
 		// Original method
@@ -351,7 +351,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
 		// Original method
@@ -371,7 +371,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @DSVerified
     public final boolean sendMessageDelayed(Message msg, long delayMillis){
@@ -389,7 +389,8 @@ public final Message obtainMessage()
         return sendMessage(msg);
 	}
     @DSVerified
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IPC)
+   @DSSink({DSSinkKind.IPC})
 	public boolean sendMessageAtTime(Message msg, long uptimeMillis){
 		// Original method
 		/*
@@ -414,7 +415,8 @@ public final Message obtainMessage()
 		return sendMessage(msg);
 	}
     @DSVerified
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSafe(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     public final boolean sendMessageAtFrontOfQueue(Message msg){
 		// Original method
 		/*

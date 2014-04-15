@@ -645,8 +645,8 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.222 -0500", hash_original_method = "460FA5078659EEF29B84A9C36C1BA43F", hash_generated_method = "5AF5415B02FACA6C8C573880AF05D53F")
     
 @Override
@@ -668,8 +668,8 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Bind a service with a connection")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.227 -0500", hash_original_method = "67132A5BC1B8EF0B15B0E872390898A0", hash_generated_method = "5A2B04010F66FEE0B0F4E923A6C9E2B2")
     
 @Override

@@ -4,6 +4,8 @@ package android.content;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
+import java.util.Map;
+import java.util.HashMap;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.Serializable;
@@ -277,18 +279,19 @@ public static Intent parseUri(String uri, int flags) throws URISyntaxException {
                 else {
                     String key = Uri.decode(uri.substring(i + 2, eq));
                     // create Bundle if it doesn't already exist
-                    if (intent.mExtras == null) intent.mExtras = new Bundle();
-                    Bundle b = intent.mExtras;
+                    if (intent.mExtras == null) intent.mExtras = new HashMap<String, Object>();// Bundle();
+                    Map<String,Object> b = intent.mExtras;
+
                     // add EXTRA
-                    if      (uri.startsWith("S.", i)) b.putString(key, value);
-                    else if (uri.startsWith("B.", i)) b.putBoolean(key, Boolean.parseBoolean(value));
-                    else if (uri.startsWith("b.", i)) b.putByte(key, Byte.parseByte(value));
-                    else if (uri.startsWith("c.", i)) b.putChar(key, value.charAt(0));
-                    else if (uri.startsWith("d.", i)) b.putDouble(key, Double.parseDouble(value));
-                    else if (uri.startsWith("f.", i)) b.putFloat(key, Float.parseFloat(value));
-                    else if (uri.startsWith("i.", i)) b.putInt(key, Integer.parseInt(value));
-                    else if (uri.startsWith("l.", i)) b.putLong(key, Long.parseLong(value));
-                    else if (uri.startsWith("s.", i)) b.putShort(key, Short.parseShort(value));
+                    if      (uri.startsWith("S.", i)) b.put(key, value);
+                    else if (uri.startsWith("B.", i)) b.put(key, Boolean.parseBoolean(value));
+                    else if (uri.startsWith("b.", i)) b.put(key, Byte.parseByte(value));
+                    else if (uri.startsWith("c.", i)) b.put(key, value.charAt(0));
+                    else if (uri.startsWith("d.", i)) b.put(key, Double.parseDouble(value));
+                    else if (uri.startsWith("f.", i)) b.put(key, Float.parseFloat(value));
+                    else if (uri.startsWith("i.", i)) b.put(key, Integer.parseInt(value));
+                    else if (uri.startsWith("l.", i)) b.put(key, Long.parseLong(value));
+                    else if (uri.startsWith("s.", i)) b.put(key, Short.parseShort(value));
                     else throw new URISyntaxException(uri, "unknown EXTRA type", i);
                 }
 
@@ -421,37 +424,37 @@ public static Intent getIntentOld(String uri) throws URISyntaxException {
                     i = j;
 
                     // create Bundle if it doesn't already exist
-                    if (intent.mExtras == null) intent.mExtras = new Bundle();
+                    if (intent.mExtras == null) intent.mExtras = new HashMap<String, Object>();//new Bundle();
 
                     // add item to bundle
                     try {
                         switch (type) {
                             case 'S':
-                                intent.mExtras.putString(key, Uri.decode(value));
+                                intent.mExtras.put(key, Uri.decode(value));
                                 break;
                             case 'B':
-                                intent.mExtras.putBoolean(key, Boolean.parseBoolean(value));
+                                intent.mExtras.put(key, Boolean.parseBoolean(value));
                                 break;
                             case 'b':
-                                intent.mExtras.putByte(key, Byte.parseByte(value));
+                                intent.mExtras.put(key, Byte.parseByte(value));
                                 break;
                             case 'c':
-                                intent.mExtras.putChar(key, Uri.decode(value).charAt(0));
+                                intent.mExtras.put(key, Uri.decode(value).charAt(0));
                                 break;
                             case 'd':
-                                intent.mExtras.putDouble(key, Double.parseDouble(value));
+                                intent.mExtras.put(key, Double.parseDouble(value));
                                 break;
                             case 'f':
-                                intent.mExtras.putFloat(key, Float.parseFloat(value));
+                                intent.mExtras.put(key, Float.parseFloat(value));
                                 break;
                             case 'i':
-                                intent.mExtras.putInt(key, Integer.parseInt(value));
+                                intent.mExtras.put(key, Integer.parseInt(value));
                                 break;
                             case 'l':
-                                intent.mExtras.putLong(key, Long.parseLong(value));
+                                intent.mExtras.put(key, Long.parseLong(value));
                                 break;
                             case 's':
-                                intent.mExtras.putShort(key, Short.parseShort(value));
+                                intent.mExtras.put(key, Short.parseShort(value));
                                 break;
                             default:
                                 throw new URISyntaxException(uri, "EXTRA has unknown type", i);
@@ -548,9 +551,10 @@ public static Intent parseIntent(Resources resources, XmlPullParser parser, Attr
 
             } else if (nodeName.equals("extra")) {
                 if (intent.mExtras == null) {
-                    intent.mExtras = new Bundle();
+                    intent.mExtras = new HashMap<String,Object>();
                 }
-                resources.parseBundleExtra("extra", attrs, intent.mExtras);
+                //DroidSafe what to do here?
+                //resources.parseBundleExtra("extra", attrs, intent.mExtras);
                 XmlUtils.skipCurrentTag(parser);
 
             } else {
@@ -1659,8 +1663,13 @@ public Intent[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.276 -0500", hash_original_field = "8E33C9E28D87B1286C4160446ABF7B5C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
 
     @DSVAModeled
-    private Bundle mExtras;
+    private Map<String, Object> mExtras;
+
+    //added by droidsafe
+    private Bundle mBundle = new Bundle();
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.278 -0500", hash_original_field = "708E5F39540EB50A3784AFB8B598ECB4", hash_generated_field = "B906B02E252E86FB4170D1D8409B9103")
+
 
     private Rect mSourceBounds;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.281 -0500", hash_original_field = "06832ADB256ECCC21128BB7F5B657E0D", hash_generated_field = "E0BD8AEFA324D8DA702D2534D195AB3A")
@@ -1677,7 +1686,7 @@ public Intent[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.283 -0500", hash_original_method = "5C0F2C7B56AA3A635FE64462CDD8279E", hash_generated_method = "CA02BD6062B99ED9FB67966A876306F0")
     
 public Intent() {
-        mExtras = new Bundle();
+        mExtras = new HashMap<String, Object>();//new Bundle();
     }
     
     @DSComment("constructor")
@@ -1697,7 +1706,7 @@ public Intent() {
         } //End block
         if(o.mExtras != null)        
         {
-            this.mExtras = new Bundle(o.mExtras);
+            this.mExtras = new HashMap<String,Object>();//Bundle(o.mExtras);
         } //End block
         if(o.mSourceBounds != null)        
         {
@@ -2020,9 +2029,9 @@ public Intent getSelector() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.347 -0500", hash_original_method = "C5389CB5192CD8E55615D6E62222251D", hash_generated_method = "1742444D8E555DE140BADD2B12A1C195")
     
 public void setExtrasClassLoader(ClassLoader loader) {
-        if (mExtras != null) {
-            mExtras.setClassLoader(loader);
-        }
+        //        if (mExtras != null) {
+            //mExtras.setClassLoader(loader);
+        // }
     }
 
     /**
@@ -2045,7 +2054,7 @@ public boolean hasExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.352 -0500", hash_original_method = "A4A187292984F1C3EE73C7C78931040C", hash_generated_method = "B45047FD99E72F75FF3244AA3317BDA2")
     
 public boolean hasFileDescriptors() {
-        return mExtras != null && mExtras.hasFileDescriptors();
+        return true;// mExtras != null && mExtras.hasFileDescriptors();
     }
     
 	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -2096,7 +2105,7 @@ public boolean hasFileDescriptors() {
     
 public boolean getBooleanExtra(String name, boolean defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getBoolean(name, defaultValue);
+            ((Boolean)mExtras.get(name)).booleanValue();
     }
 
     /**
@@ -2116,7 +2125,7 @@ public boolean getBooleanExtra(String name, boolean defaultValue) {
     
 public byte getByteExtra(String name, byte defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getByte(name, defaultValue);
+            ((Byte)mExtras.get(name)).byteValue();
     }
 
     /**
@@ -2138,7 +2147,7 @@ public byte getByteExtra(String name, byte defaultValue) {
     
 public short getShortExtra(String name, short defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getShort(name, defaultValue);
+            ((Short)mExtras.get(name)).shortValue();
     }
 
     /**
@@ -2158,7 +2167,7 @@ public short getShortExtra(String name, short defaultValue) {
     
 public char getCharExtra(String name, char defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getChar(name, defaultValue);
+            ((Character)mExtras.get(name)).charValue();
     }
 
     /**
@@ -2180,7 +2189,7 @@ public char getCharExtra(String name, char defaultValue) {
     
 public int getIntExtra(String name, int defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getInt(name, defaultValue);
+            ((Integer)mExtras.get(name)).intValue();
     }
 
     /**
@@ -2202,7 +2211,7 @@ public int getIntExtra(String name, int defaultValue) {
     
 public long getLongExtra(String name, long defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getLong(name, defaultValue);
+            ((Long)mExtras.get(name)).longValue();
     }
 
     /**
@@ -2222,7 +2231,7 @@ public long getLongExtra(String name, long defaultValue) {
     
 public float getFloatExtra(String name, float defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getFloat(name, defaultValue);
+            ((Float)mExtras.get(name)).floatValue();
     }
 
     /**
@@ -2244,7 +2253,7 @@ public float getFloatExtra(String name, float defaultValue) {
     
 public double getDoubleExtra(String name, double defaultValue) {
         return mExtras == null ? defaultValue :
-            mExtras.getDouble(name, defaultValue);
+            ((Double)mExtras.get(name)).doubleValue();
     }
 
     /**
@@ -2263,7 +2272,7 @@ public double getDoubleExtra(String name, double defaultValue) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.376 -0500", hash_original_method = "8063ECA9F5AA2AEF21F6A345FFE2B7E6", hash_generated_method = "92DA4B9217AE26D6B16B4A7152FDE01A")
     
 public String getStringExtra(String name) {
-        return mExtras == null ? null : mExtras.getString(name);
+        return mExtras == null ? null : (String)mExtras.get(name);
     }
 
     /**
@@ -2282,14 +2291,14 @@ public String getStringExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.378 -0500", hash_original_method = "1694F41DCC8D039EBF419B4A0F2C4125", hash_generated_method = "0261ACCD25A2458F32FBB474CDC883CF")
     
 public CharSequence getCharSequenceExtra(String name) {
-        return mExtras == null ? null : mExtras.getCharSequence(name);
+        return mExtras == null ? null : (CharSequence)mExtras.get(name);
     }
     
     @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.428 -0400", hash_original_method = "1C448816D9B902054FE9E8A698247DA2", hash_generated_method = "3E3DEE7B959E87E94EACE1CB55226D17")
     public <T extends Parcelable> T getParcelableExtra(String name) {
         addTaint(name.getTaint());
-T varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787 =         mExtras == null ? null : mExtras.<T>getParcelable(name);
+        T varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787 =         mExtras == null ? null : (T) mExtras.get(name);
         varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787.addTaint(getTaint());
         return varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787;
         // ---------- Original Method ----------
@@ -2312,7 +2321,7 @@ T varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787 =         mExtras == null ? nul
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.382 -0500", hash_original_method = "28D360BBB773D3DC39CC6E8B3FB095BE", hash_generated_method = "95CF13FB7C566158CE15E0D32127AEB6")
     
 public Parcelable[] getParcelableArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getParcelableArray(name);
+        return mExtras == null ? null : (Parcelable[])mExtras.get(name);
     }
     
     @DSComment("movement of Intent is spec")
@@ -2321,8 +2330,7 @@ public Parcelable[] getParcelableArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.429 -0400", hash_original_method = "BB02D0F500EDCAC2282F912174ECF594", hash_generated_method = "8496E3B52B9613F422993EC5A62C4915")
     public <T extends Parcelable> ArrayList<T> getParcelableArrayListExtra(String name) {
         addTaint(name.getTaint());
-ArrayList<T> var2AA7AC40ADC652D6C8E180CF68F49870_1307005652 =         mExtras == null ? null : mExtras.<T>getParcelableArrayList(name);
-        var2AA7AC40ADC652D6C8E180CF68F49870_1307005652.addTaint(getTaint());
+        ArrayList<T> var2AA7AC40ADC652D6C8E180CF68F49870_1307005652 =         mExtras == null ? null : (ArrayList<T>)mExtras.get(name);
         return var2AA7AC40ADC652D6C8E180CF68F49870_1307005652;
         // ---------- Original Method ----------
         //return mExtras == null ? null : mExtras.<T>getParcelableArrayList(name);
@@ -2344,7 +2352,7 @@ ArrayList<T> var2AA7AC40ADC652D6C8E180CF68F49870_1307005652 =         mExtras ==
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.386 -0500", hash_original_method = "9F4D1ACCAA6C6918CB97F661FEDB7260", hash_generated_method = "76C340BC56D9F60CF88D86C558C6825B")
     
 public Serializable getSerializableExtra(String name) {
-        return mExtras == null ? null : mExtras.getSerializable(name);
+        return mExtras == null ? null : (Serializable) mExtras.get(name);
     }
 
     /**
@@ -2361,7 +2369,7 @@ public Serializable getSerializableExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.388 -0500", hash_original_method = "E5A5C9C6BF01CEEFEAABCB20BBD32323", hash_generated_method = "9D819F72EA76BB36C2E7C757B77E7E73")
     
 public ArrayList<Integer> getIntegerArrayListExtra(String name) {
-        return mExtras == null ? null : mExtras.getIntegerArrayList(name);
+        return mExtras == null ? null : (ArrayList<Integer>)mExtras.get(name);
     }
 
     /**
@@ -2380,7 +2388,7 @@ public ArrayList<Integer> getIntegerArrayListExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.390 -0500", hash_original_method = "D8E538521D5877A04B9E1243CFFC8BD3", hash_generated_method = "C957CBF04B8FE7BC5D3B612E6C8EF2B8")
     
 public ArrayList<String> getStringArrayListExtra(String name) {
-        return mExtras == null ? null : mExtras.getStringArrayList(name);
+        return mExtras == null ? null : (ArrayList<String>)mExtras.get(name);
     }
 
     /**
@@ -2397,7 +2405,7 @@ public ArrayList<String> getStringArrayListExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.392 -0500", hash_original_method = "3C0B0EF6206949D4005752F37A471C32", hash_generated_method = "ECD41137BFE2663E1A6EF1072F5BC8BD")
     
 public ArrayList<CharSequence> getCharSequenceArrayListExtra(String name) {
-        return mExtras == null ? null : mExtras.getCharSequenceArrayList(name);
+        return mExtras == null ? null : ( ArrayList<CharSequence> ) mExtras.get(name);
     }
 
     /**
@@ -2414,7 +2422,7 @@ public ArrayList<CharSequence> getCharSequenceArrayListExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.394 -0500", hash_original_method = "FE55BFBE9F4BF617BE3A0BE7101EDA89", hash_generated_method = "46C15F919A0BC4FC1F5845C5606E2FCA")
     
 public boolean[] getBooleanArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getBooleanArray(name);
+        return mExtras == null ? null : (boolean[])mExtras.get(name);
     }
 
     /**
@@ -2431,7 +2439,7 @@ public boolean[] getBooleanArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.397 -0500", hash_original_method = "8982B2CEDDCF3062481CA9400546FBDD", hash_generated_method = "AA610F065416BB90204CAC0C5A97C0BA")
     
 public byte[] getByteArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getByteArray(name);
+        return mExtras == null ? null : (byte[])mExtras.get(name);
     }
 
     /**
@@ -2448,7 +2456,7 @@ public byte[] getByteArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.400 -0500", hash_original_method = "CD9B24503F7344F42640A5B885850704", hash_generated_method = "C14AAA2A7CB39D2AACEA331C248790B9")
     
 public short[] getShortArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getShortArray(name);
+        return mExtras == null ? null : (short[])mExtras.get(name);
     }
 
     /**
@@ -2465,7 +2473,7 @@ public short[] getShortArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.402 -0500", hash_original_method = "CC419D577155763512853EA59FC750C3", hash_generated_method = "6449192E644028A86E4E2A1C58F0BF9F")
     
 public char[] getCharArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getCharArray(name);
+        return mExtras == null ? null : (char[])mExtras.get(name);
     }
 
     /**
@@ -2484,7 +2492,7 @@ public char[] getCharArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.404 -0500", hash_original_method = "0A82189594F324AE308815E53494E5B0", hash_generated_method = "18315128FFB19E0CB138FC41A8F8B9F1")
     
 public int[] getIntArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getIntArray(name);
+        return mExtras == null ? null : (int[])mExtras.get(name);
     }
 
     /**
@@ -2503,7 +2511,7 @@ public int[] getIntArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.406 -0500", hash_original_method = "2B191C1241796E74336A46C43420CA80", hash_generated_method = "E9465F183BBDCF9BF79C15025BB3B762")
     
 public long[] getLongArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getLongArray(name);
+        return mExtras == null ? null : (long[])mExtras.get(name);
     }
 
     /**
@@ -2520,7 +2528,7 @@ public long[] getLongArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.408 -0500", hash_original_method = "8DC240B1B74093D697F56B17354B0D80", hash_generated_method = "CD9CEAF80BD4CFD40B3E7E06ECE8F68A")
     
 public float[] getFloatArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getFloatArray(name);
+        return mExtras == null ? null : (float[])mExtras.get(name);
     }
 
     /**
@@ -2537,7 +2545,7 @@ public float[] getFloatArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.410 -0500", hash_original_method = "3975857C05E9D537152AB546E3F37275", hash_generated_method = "101A5FF3F013762428C03E757BC8781C")
     
 public double[] getDoubleArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getDoubleArray(name);
+        return mExtras == null ? null : (double[])mExtras.get(name);
     }
 
     /**
@@ -2556,7 +2564,7 @@ public double[] getDoubleArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.412 -0500", hash_original_method = "63A5C80C2A9C3E397356915A6EC07B98", hash_generated_method = "A76D69A0A3AF1C0E068340C351C69CE2")
     
 public String[] getStringArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getStringArray(name);
+        return mExtras == null ? null : (String[])mExtras.get(name);
     }
 
     /**
@@ -2573,7 +2581,7 @@ public String[] getStringArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.414 -0500", hash_original_method = "9443A9A4C1E608DAA4A110E653269318", hash_generated_method = "6F6F167168942EAE44475ED712DAA9C6")
     
 public CharSequence[] getCharSequenceArrayExtra(String name) {
-        return mExtras == null ? null : mExtras.getCharSequenceArray(name);
+        return mExtras == null ? null : (CharSequence[])mExtras.get(name);
     }
 
     /**
@@ -2592,7 +2600,7 @@ public CharSequence[] getCharSequenceArrayExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.416 -0500", hash_original_method = "913345623B540CBB75EA0BDD1C78C162", hash_generated_method = "93F751E5024747FA0CAE2E759F15F6B4")
     
 public Bundle getBundleExtra(String name) {
-        return mExtras == null ? null : mExtras.getBundle(name);
+        return mExtras == null ? null : (Bundle)mExtras.get(name);
     }
 
     /**
@@ -2613,7 +2621,7 @@ public Bundle getBundleExtra(String name) {
     
 @Deprecated
     public IBinder getIBinderExtra(String name) {
-        return mExtras == null ? null : mExtras.getIBinder(name);
+        return mExtras == null ? null : (IBinder)mExtras.get(name);
     }
 
     /**
@@ -2658,8 +2666,10 @@ public Bundle getBundleExtra(String name) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.423 -0500", hash_original_method = "6E509C3CEA63C12F8DB889EF86C70010", hash_generated_method = "350C4CD52734D15F08BF35252FD71B56")
     
-public Bundle getExtras() {
-        return mExtras;
+    public Bundle getExtras() {
+        mBundle.mMap = mExtras;
+                
+        return mBundle;
     }
 
     /**
@@ -2970,7 +2980,7 @@ public void removeCategory(String category) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.456 -0500", hash_original_method = "E358DED697FF080F831811D5D578FEBC", hash_generated_method = "9CAFB07CB8CADF7A1B737CEF0A85C927")
     
 public Intent putExtra(String name, boolean value) {
-        mExtras.putBoolean(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -2995,7 +3005,7 @@ public Intent putExtra(String name, boolean value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.458 -0500", hash_original_method = "983951350B18B30CD357EFC4A5F8C533", hash_generated_method = "369EAA9A7D333C9805FC57A65750D36F")
     
 public Intent putExtra(String name, byte value) {
-        mExtras.putByte(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3020,7 +3030,7 @@ public Intent putExtra(String name, byte value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.461 -0500", hash_original_method = "44F743D0FCF3A3B09735F92996DFB8B8", hash_generated_method = "9A89A17EE52C9990C8D3B5950C6CB8BC")
     
 public Intent putExtra(String name, char value) {
-        mExtras.putChar(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3045,7 +3055,7 @@ public Intent putExtra(String name, char value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.463 -0500", hash_original_method = "D504428E6A64263CB337167E8E11D24B", hash_generated_method = "F6A29E038B705BB14118CC4BC5C94282")
     
 public Intent putExtra(String name, short value) {
-        mExtras.putShort(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3070,7 +3080,7 @@ public Intent putExtra(String name, short value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.465 -0500", hash_original_method = "0F8D3938F71F1CBC0AF93312AEF5DBAF", hash_generated_method = "B6977BA11CBD13188A6EE2314F4AAB8E")
     
 public Intent putExtra(String name, int value) {
-        mExtras.putInt(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3095,7 +3105,7 @@ public Intent putExtra(String name, int value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.467 -0500", hash_original_method = "210CE6920B09DE82954A1910A2E05BDA", hash_generated_method = "4EBA47DCA070071028BBC47A17DF202A")
     
 public Intent putExtra(String name, long value) {
-        mExtras.putLong(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3120,7 +3130,7 @@ public Intent putExtra(String name, long value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.469 -0500", hash_original_method = "5563D3D5FF8C4FA36F1584B48F1347B6", hash_generated_method = "5067A756CF8499B7ABF1DB4D1F6C7336")
     
 public Intent putExtra(String name, float value) {
-        mExtras.putFloat(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3145,7 +3155,7 @@ public Intent putExtra(String name, float value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.472 -0500", hash_original_method = "FDAB0726590DA4887C7F048C162A9588", hash_generated_method = "1C66BD585F85E5DE9F834C9668DEEE1F")
     
 public Intent putExtra(String name, double value) {
-        mExtras.putDouble(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3170,7 +3180,7 @@ public Intent putExtra(String name, double value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.474 -0500", hash_original_method = "FFA94FE476B4FC82FDFAB8191F06F76A", hash_generated_method = "4F3AC23F2FDE2E244EBF603512230CB6")
     
 public Intent putExtra(String name, String value) {
-        mExtras.putString(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3195,7 +3205,7 @@ public Intent putExtra(String name, String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.476 -0500", hash_original_method = "C3AAC0183A1B956AD55E80A8556AFB71", hash_generated_method = "B7766A00144A1C85BA9AD9A626B68D86")
     
 public Intent putExtra(String name, CharSequence value) {
-        mExtras.putCharSequence(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3220,7 +3230,7 @@ public Intent putExtra(String name, CharSequence value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.478 -0500", hash_original_method = "49EBB52F87B2F24E715C34795BBE3213", hash_generated_method = "E35F92A22E889420C4D9EB6CCD82A333")
     
 public Intent putExtra(String name, Parcelable value) {
-        mExtras.putParcelable(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3245,7 +3255,7 @@ public Intent putExtra(String name, Parcelable value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.480 -0500", hash_original_method = "478D5F3649CF3C1019BEE6D895BDE15B", hash_generated_method = "8EE2EE37DEC8E216CE30AD3A34E60139")
     
 public Intent putExtra(String name, Parcelable[] value) {
-        mExtras.putParcelableArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3270,7 +3280,7 @@ public Intent putExtra(String name, Parcelable[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.483 -0500", hash_original_method = "7056A89E2AB58239EE1F715B825304C9", hash_generated_method = "CAA15AD865F73E5B8B7CEC0FDDEF3C48")
     
 public Intent putParcelableArrayListExtra(String name, ArrayList<? extends Parcelable> value) {
-        mExtras.putParcelableArrayList(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3293,7 +3303,7 @@ public Intent putParcelableArrayListExtra(String name, ArrayList<? extends Parce
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.485 -0500", hash_original_method = "25611C5EA858F4B01007B3F78DCCE949", hash_generated_method = "B00CD5DBF3B90CCA1774FF3426ED7F66")
     
 public Intent putIntegerArrayListExtra(String name, ArrayList<Integer> value) {
-        mExtras.putIntegerArrayList(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3316,7 +3326,7 @@ public Intent putIntegerArrayListExtra(String name, ArrayList<Integer> value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.487 -0500", hash_original_method = "FCCCC0193355017A3AB410227E2B8C63", hash_generated_method = "D9A90AA848BD3378AFD8B57E938B259A")
     
 public Intent putStringArrayListExtra(String name, ArrayList<String> value) {
-        mExtras.putStringArrayList(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3339,7 +3349,7 @@ public Intent putStringArrayListExtra(String name, ArrayList<String> value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.490 -0500", hash_original_method = "56169BFB83B473D5686B58CC3B07DAC6", hash_generated_method = "13A3F22ED96C8CFEA983255956176211")
     
 public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence> value) {
-        mExtras.putCharSequenceArrayList(name, value);
+        mExtras.put(name, value);
         return this;
     }
     
@@ -3347,7 +3357,7 @@ public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence>
     @DSSafe(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public Intent putExtra(String name, Serializable value) {
-        mExtras.putSerializable(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3372,7 +3382,7 @@ public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence>
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.494 -0500", hash_original_method = "6C30326EEBD8635124BFC9218A6B6422", hash_generated_method = "C75337EC13A828BA2CF290B1734627F0")
     
 public Intent putExtra(String name, boolean[] value) {
-        mExtras.putBooleanArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3397,7 +3407,7 @@ public Intent putExtra(String name, boolean[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.496 -0500", hash_original_method = "4D4788E50F7779B1D72BD45B4E76C775", hash_generated_method = "CF81A6D8F26F9F109EFE6BE3F51D4C02")
     
 public Intent putExtra(String name, byte[] value) {
-        mExtras.putByteArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3422,7 +3432,7 @@ public Intent putExtra(String name, byte[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.498 -0500", hash_original_method = "521E65BC95668B6A66CE17103975D2B1", hash_generated_method = "8DC6ED6D9F00B4FC7646C9B74D598F46")
     
 public Intent putExtra(String name, short[] value) {
-        mExtras.putShortArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3447,7 +3457,7 @@ public Intent putExtra(String name, short[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.500 -0500", hash_original_method = "CEC6E945D8554F36BF71D2D38B61B7EF", hash_generated_method = "5294EA3365F0D553D067410AB35C1AA8")
     
 public Intent putExtra(String name, char[] value) {
-        mExtras.putCharArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3473,7 +3483,7 @@ public Intent putExtra(String name, char[] value) {
     
 public Intent putExtra(String name, int[] value) {
 
-        mExtras.putIntArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3499,7 +3509,7 @@ public Intent putExtra(String name, int[] value) {
     
 public Intent putExtra(String name, long[] value) {
 
-        mExtras.putLongArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3525,7 +3535,7 @@ public Intent putExtra(String name, long[] value) {
     
 public Intent putExtra(String name, float[] value) {
 
-        mExtras.putFloatArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3551,7 +3561,7 @@ public Intent putExtra(String name, float[] value) {
     
 public Intent putExtra(String name, double[] value) {
 
-        mExtras.putDoubleArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3576,7 +3586,7 @@ public Intent putExtra(String name, double[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.512 -0500", hash_original_method = "4105C6229BFDC8C2B450D57FAD8A78CA", hash_generated_method = "1D158E827BC908009601A331BE3E2C15")
     
 public Intent putExtra(String name, String[] value) {
-        mExtras.putStringArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3601,7 +3611,7 @@ public Intent putExtra(String name, String[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.514 -0500", hash_original_method = "5B5979B9E2BB6EA8D0974FC96788F02A", hash_generated_method = "9CF7F62F974438343F82E84474D2AC00")
     
 public Intent putExtra(String name, CharSequence[] value) {
-        mExtras.putCharSequenceArray(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3626,7 +3636,7 @@ public Intent putExtra(String name, CharSequence[] value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.517 -0500", hash_original_method = "79076492A33BAA4B69A022CE305E32E8", hash_generated_method = "1A23CC6FCDD5B5BFDC1538D40AAC1BAC")
     
 public Intent putExtra(String name, Bundle value) {
-        mExtras.putBundle(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3655,7 +3665,7 @@ public Intent putExtra(String name, Bundle value) {
     
 @Deprecated
     public Intent putExtra(String name, IBinder value) {
-        mExtras.putIBinder(name, value);
+        mExtras.put(name, value);
         return this;
     }
 
@@ -3695,7 +3705,7 @@ public Intent putExtras(Intent src) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.523 -0500", hash_original_method = "300503D60C48D249178D35D7CDB92339", hash_generated_method = "FC9E29D42D611ABE43D557232408FD20")
     
 public Intent putExtras(Bundle extras) {
-        mExtras.putAll(extras);
+        mExtras.putAll(extras.mMap);
         return this;
     }
 
@@ -3709,7 +3719,7 @@ public Intent putExtras(Bundle extras) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.525 -0500", hash_original_method = "9273ED8AEDE591E5D2100B41909C8A11", hash_generated_method = "C2F0CCF4A1DAF110F7CBEF1FA7C79D71")
     
 public Intent replaceExtras(Intent src) {
-        mExtras = src.mExtras != null ? new Bundle(src.mExtras) : null;
+        mExtras = src.mExtras;
         return this;
     }
 
@@ -3723,7 +3733,7 @@ public Intent replaceExtras(Intent src) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.527 -0500", hash_original_method = "CBF42E478CC456FFD10D6777F319F0BD", hash_generated_method = "F442059822B057D55A287710A70DCBAE")
     
 public Intent replaceExtras(Bundle extras) {
-        mExtras = extras != null ? new Bundle(extras) : null;
+        mExtras = extras.mMap;
         return this;
     }
 
@@ -3933,7 +3943,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         {
             if(other.mExtras != null)            
             {
-                mExtras = new Bundle(other.mExtras);
+                mExtras = new HashMap<String,Object>();// new Bundle(other.mExtras);
             } //End block
         } //End block
         else
@@ -3941,7 +3951,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         {
             try 
             {
-                Bundle newb = new Bundle(other.mExtras);
+                Map<String, Object> newb = new HashMap<String,Object>();//Bundle(other.mExtras);
                 newb.putAll(mExtras);
                 mExtras = newb;
             } //End block
@@ -4290,7 +4300,7 @@ public void writeToParcel(Parcel out, int flags) {
             out.writeInt(0);
         }
 
-        out.writeBundle(mExtras);
+        out.writeMap(mExtras);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.627 -0500", hash_original_method = "275963C0D40D3AED4795057AE368B460", hash_generated_method = "09B180D23DBB15F2E9219E7BBB908111")
@@ -4322,7 +4332,7 @@ public void readFromParcel(Parcel in) {
             mSelector = new Intent(in);
         }
 
-        mExtras = in.readBundle();
+        mExtras = in.readBundle().mMap;
     }
     
     /**

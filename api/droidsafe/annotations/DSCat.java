@@ -102,6 +102,8 @@ public enum DSCat {
     SPEC_OTHERS,
     TIME,
 
+    IPC_CALLBACK,
+
     //Default value, not SAFE, BAN nor SPEC
     UNSPECIFIED;
 }

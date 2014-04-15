@@ -57,7 +57,7 @@ public Bundle[] newArray(int size) {
     // (except inside a call to unparcel)
 
     @DSVAModeled
-    /* package */ Map<String, Object> mMap = new HashMap<String, Object>();
+    public Map<String, Object> mMap = new HashMap<String, Object>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.394 -0500", hash_original_field = "E5162DF86C59E17EA59FEBB7EF559274", hash_generated_field = "E946E9EF60C24CFB270D51C185FC58B8")
 
     /* package */ Parcel mParcelledData = null;

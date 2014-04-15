@@ -99,8 +99,7 @@ ReceiverRestrictedContext(Context base) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.003 -0500", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "90430B4E7D776228913823B75B9973EF")
-    
-@Override
+    @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         return registerReceiver(receiver, filter, null, null);
     }
@@ -114,10 +113,10 @@ ReceiverRestrictedContext(Context base) {
         return receiver.__ds__registerIntentFilter(this, filter)[0];
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")
-    
-@Override
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")   
+    @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         throw new ReceiverCallNotAllowedException(
                 "IntentReceiver components are not allowed to bind to services");
@@ -628,7 +627,9 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+   
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @Override
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
@@ -736,16 +737,18 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
-        throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     @Override
     public ComponentName startService(Intent service) {
         return service.getComponent();
     }
     
     @Override
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public boolean stopService(Intent service) {
         return true;
     }
@@ -753,8 +756,8 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     ComponentName serviceCompName = null; 
 
     @DSVerified("Calling connection callback")
-    @DSSpec(DSCat.SERVICE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         //throw new UnsupportedOperationException();
@@ -834,48 +837,47 @@ private void enforce(
     @Override
     public void enforcePermission(
             String permission, int pid, int uid, String message) {
-        throw new UnsupportedOperationException();
     }
     
     @Override
     public void enforceCallingPermission(String permission, String message) {
-        throw new UnsupportedOperationException();
+       
     }
     
     @Override
     public void enforceCallingOrSelfPermission(String permission, String message) {
-        throw new UnsupportedOperationException();
+       
     }
     
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
-        throw new UnsupportedOperationException();
+        
     }
     
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
-        throw new UnsupportedOperationException();
+       
     }
     
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
     
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
     
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
     
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
 
     @DSComment("Private Method")
@@ -919,37 +921,37 @@ private void enforceForUri(
     @Override
     public void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message) {
-        throw new UnsupportedOperationException();
+        
     }
     
     @Override
     public void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message) {
-        throw new UnsupportedOperationException();
+       
     }
     
     @Override
     public void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message) {
-        throw new UnsupportedOperationException();
+        
     }
     
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
             int pid, int uid, int modeFlags, String message) {
-        throw new UnsupportedOperationException();
+       
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
     public Context createPackageContext(String packageName, int flags)
             throws PackageManager.NameNotFoundException {
-        throw new UnsupportedOperationException();
+        return this;
     }
     
     @Override
     public boolean isRestricted() {
-        throw new UnsupportedOperationException();        
+        return true;
     }
 
     @DSComment("Private Method")

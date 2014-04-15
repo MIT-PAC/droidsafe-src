@@ -282,10 +282,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     /** Return the intent that started this activity. */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
-    
     public Intent getIntent() {
         return mIntent;
     }
@@ -318,7 +317,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         return intent;
     }
 
-public void setIntent(Intent newIntent) {
+    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.IPC)
+    public void setIntent(Intent newIntent) {
         mIntent = newIntent;
     }
 
@@ -655,7 +656,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
      */
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.580 -0500", hash_original_method = "ECA12E6FCFF6C8E6301C9A23FD34F5BD", hash_generated_method = "4ADDCDE3CE740D4C5E6F0A8FD5893823")
     
 protected void onNewIntent(Intent intent) {
@@ -2473,9 +2474,9 @@ public LayoutInflater getLayoutInflater() {
 	}
     
     @DSVerified
-	@DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
@@ -2484,10 +2485,10 @@ public LayoutInflater getLayoutInflater() {
         passed to this method.  Of course, we cannot model the response intent
         perfectly, but grab as many fields as we can.
 		*/
-		Intent resultIntent;
-		resultIntent = intent.translateIntent();
-		this.onActivityResult(requestCode, /* just make this up */ -1,
-				resultIntent);
+        //Intent resultIntent;
+        //resultIntent = intent.translateIntent();
+        this.onActivityResult(requestCode, /* just make this up */ -1,
+				intent);
 		// Original method
 		/*
 		{
@@ -2512,7 +2513,8 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
@@ -2545,8 +2547,8 @@ public LayoutInflater getLayoutInflater() {
     
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
 		
@@ -2591,11 +2593,10 @@ public LayoutInflater getLayoutInflater() {
      * @see #startActivityForResult
      */
     @DSVerified
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
-    
-@Override
+    @Override
     public void startActivities(Intent[] intents) {
         mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
@@ -2604,8 +2605,8 @@ public LayoutInflater getLayoutInflater() {
     }
 
     @DSVerified
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSpec(DSCat.IPC)
+    @DSSink({DSSinkKind.IPC})
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResult(intent, -1, fillInIntent, flagsMask,
@@ -2620,14 +2621,16 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public boolean startNextMatchingActivity(Intent intent){
 		try {
             intent.setAllowFds(false);
@@ -2654,7 +2657,8 @@ public LayoutInflater getLayoutInflater() {
 		return false;
 	}
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode){
 		Instrumentation.ActivityResult ar =
@@ -2682,8 +2686,8 @@ public LayoutInflater getLayoutInflater() {
 	}
 
     @DSVerified
-    @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
         fragment.onActivityCreated(new Bundle());
@@ -2714,7 +2718,8 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.IPC)
     public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
             int extraFlags){
@@ -2750,7 +2755,8 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
     }
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.IPC)
     public final void setResult(int resultCode){
 		addTaint(resultCode);
 		// Original method
@@ -2766,7 +2772,8 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
 	}
     
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.IPC)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -3043,10 +3050,10 @@ public void finishActivityFromChild(Activity child, int requestCode) {
      * @see #setResult(int)
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSafe(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.263 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "62DF0F5F92A373B4F8B7952D89BB1F57")
     @DSVerified("Activity Callback")
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
     
     public PendingIntent createPendingResult(int requestCode, Intent data,
@@ -3377,7 +3384,8 @@ public final CharSequence getTitle() {
 		*/
 	}
     
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.IPC)
     public boolean navigateUpTo (Intent upIntent) {
         return getTaintBoolean();
     }

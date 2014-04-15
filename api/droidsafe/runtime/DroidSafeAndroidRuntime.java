@@ -90,7 +90,7 @@ public class DroidSafeAndroidRuntime {
         //activity.droidsafeOnKeyEvents();
         */
         activity.onConfigurationChanged(new Configuration());
-        activity.droidsafeOnSavedInstanceState(new Bundle());
+        activity.droidsafeOnSavedInstanceState(b);
         
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
@@ -108,8 +108,7 @@ public class DroidSafeAndroidRuntime {
       
         activity.droidsafeOnDestroy();
 
-        Bundle state = new Bundle();
-        activity.droidsafePerformRestoreInstanceState(state);
+        activity.droidsafePerformRestoreInstanceState(b);
         
         activity.onDetachedFromWindow();
         //Calls for MapActivity from mapping library

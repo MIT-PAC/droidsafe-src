@@ -385,10 +385,9 @@ public abstract String getType(Uri uri);
      * @return The URI for the newly inserted item.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.742 -0500", hash_original_method = "B4DEB75D711E59EC126B5AA1EC87337F", hash_generated_method = "A947EC9D331AF38EAB8C36385181C769")
-    @DSVerified
-    
+    @DSVerified    
 public abstract Uri insert(Uri uri, ContentValues values);
 
     /**
@@ -405,9 +404,10 @@ public abstract Uri insert(Uri uri, ContentValues values);
      * @param values An array of sets of column_name/value pairs to add to the database.
      * @return The number of values that were inserted.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.744 -0500", hash_original_method = "C678349FF8875CB9D22305FF9A5474DD", hash_generated_method = "DB10E22D5FFB11F9E085FB4F782D17D3")
+
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.744 -0500", hash_original_method = "C678349FF8875CB9D22305FF9A5474DD", hash_generated_method = "DB10E22D5FFB11F9E085FB4F782D17D3")
+    @DSSafe(DSCat.IPC_CALLBACK)
 public int bulkInsert(Uri uri, ContentValues[] values) {
         int numValues = values.length;
         for (int i = 0; i < numValues; i++) {
@@ -437,11 +437,10 @@ public int bulkInsert(Uri uri, ContentValues[] values) {
      * @throws SQLException
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.746 -0500", hash_original_method = "E44ADC3F69A5B9F650B7F634DA106EF4", hash_generated_method = "1ACE593BD8B128A106D7B3E5FDA132DB")
     @DSVerified
-    
-public abstract int delete(Uri uri, String selection, String[] selectionArgs);
+    @DSSafe(DSCat.IPC_CALLBACK)
+    public abstract int delete(Uri uri, String selection, String[] selectionArgs);
 
     /**
      * Implement this to handle requests to update one or more rows.
@@ -461,11 +460,10 @@ public abstract int delete(Uri uri, String selection, String[] selectionArgs);
      * @return the number of rows affected.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.748 -0500", hash_original_method = "848ED1B601C77FEA6ED8D03E747F824C", hash_generated_method = "B8DAF275BB400A7B883E6875C5F854FA")
-    
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSVerified
-public abstract int update(Uri uri, ContentValues values, String selection,
+    public abstract int update(Uri uri, ContentValues values, String selection,
             String[] selectionArgs);
 
     /**
@@ -501,10 +499,10 @@ public abstract int update(Uri uri, ContentValues values, String selection,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.750 -0500", hash_original_method = "DCC5B23EAE3536B2EEFB8F5A1AA89B13", hash_generated_method = "84165A880D6CDF9D2F7DE7F768E3AB8F")
      @DSComment("File System access")
-    @DSSpec(DSCat.FILE_SYSTEM)   
+     @DSSafe(DSCat.IPC_CALLBACK)
     @DSVerified
-public ParcelFileDescriptor openFile(Uri uri, String mode)
-            throws FileNotFoundException {
+    public ParcelFileDescriptor openFile(Uri uri, String mode)
+        throws FileNotFoundException {
         throw new FileNotFoundException("No files supported by provider at "
                 + uri);
     }
@@ -548,11 +546,11 @@ public ParcelFileDescriptor openFile(Uri uri, String mode)
      * @see #openFileHelper(Uri, String)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.752 -0500", hash_original_method = "58BEA9E66A4FD3FC19246F4A2CA5B928", hash_generated_method = "A6089BB0E944391C03BA06D5D029DD00")
-   @DSComment("File System access")
-    @DSSpec(DSCat.FILE_SYSTEM)   
+    @DSComment("File System access")
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSVerified 
-public AssetFileDescriptor openAssetFile(Uri uri, String mode)
-            throws FileNotFoundException {
+    public AssetFileDescriptor openAssetFile(Uri uri, String mode)
+        throws FileNotFoundException {
         ParcelFileDescriptor fd = openFile(uri, mode);
         return fd != null ? new AssetFileDescriptor(fd, 0, -1) : null;
     }
@@ -571,9 +569,8 @@ public AssetFileDescriptor openAssetFile(Uri uri, String mode)
      * @return Returns a new ParcelFileDescriptor that can be used by the
      * client to access the file.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.756 -0500", hash_original_method = "B77C082B2FC41ABB2AC9CAAF0861BB6A", hash_generated_method = "15E279E4CA599D4F9A2A194A376208B5")
-    
+    @DSSafe(DSCat.IPC_CALLBACK)
 protected final ParcelFileDescriptor openFileHelper(Uri uri,
             String mode) throws FileNotFoundException {
         Cursor c = query(uri, new String[]{"_data"}, null, null, null);
@@ -621,9 +618,8 @@ protected final ParcelFileDescriptor openFileHelper(Uri uri,
      * @see #openTypedAssetFile(Uri, String, Bundle)
      * @see ClipDescription#compareMimeTypes(String, String)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.758 -0500", hash_original_method = "BEF8B956D915C9CD914319D11D9F55DF", hash_generated_method = "ECED8D109C81BADA2FF3CB79B0E8F176")
-    
+    @DSSafe(DSCat.IPC_CALLBACK)
 public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
         return null;
     }
@@ -663,9 +659,9 @@ public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
      * @see #openAssetFile(Uri, String)
      * @see ClipDescription#compareMimeTypes(String, String)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.761 -0500", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "E154058D1651C11A0B7BFCB07D29F74C")
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.761 -0500", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "E154058D1651C11A0B7BFCB07D29F74C")
+    @DSSafe(DSCat.IPC_CALLBACK)
 public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bundle opts)
             throws FileNotFoundException {
         if ("*/*".equals(mimeTypeFilter)) {
@@ -680,7 +676,8 @@ public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bu
         }
         throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
     }
-    
+
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.801 -0400", hash_original_method = "BC63CE555A1B156ABB3D2B022F0E90CE", hash_generated_method = "1600271E293F4C12749AC8508682DA08")
     public <T> ParcelFileDescriptor openPipeHelper(final Uri uri, final String mimeType,
             final Bundle opts, final T args, final PipeDataWriter<T> func) throws FileNotFoundException {
@@ -737,7 +734,6 @@ protected boolean isTemporary() {
      * @return the Binder object for this provider
      * @hide
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.773 -0500", hash_original_method = "883A061900350051FBA62F6F6FD9E085", hash_generated_method = "01677C8C73DD72384BF638D4A5102678")
     
 public IContentProvider getIContentProvider() {
@@ -796,7 +792,7 @@ public void attachInfo(Context context, ProviderInfo info) {
      * @see ContentProviderOperation#apply
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.777 -0500", hash_original_method = "E0DAC3050A9BAD12465D5076F1EE0420", hash_generated_method = "5E5EB1E9AE59FBDF718D6BE7226D411C")
-    
+    @DSSafe(DSCat.IPC_CALLBACK)
 public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations)
             throws OperationApplicationException {
         final int numOperations = operations.size();
@@ -819,7 +815,7 @@ public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> op
      *   the default for providers which don't implement any call methods.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.780 -0500", hash_original_method = "FDEF25FCA992321C96D9ED3D525FD124", hash_generated_method = "657B396BB7AFF64A38FC1384C839E2F8")
-    
+    @DSSafe(DSCat.IPC_CALLBACK)
 public Bundle call(String method, String arg, Bundle extras) {
         return null;
     }
@@ -849,15 +845,14 @@ ContentProvider getContentProvider() {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.672 -0500", hash_original_method = "C07C2CC52F2EA8ADD199B18CF964D47B", hash_generated_method = "92C9B98D23FEE24EAC2A672A27059E31")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public Cursor query(Uri uri, String[] projection,
                 String selection, String[] selectionArgs, String sortOrder) {
             enforceReadPermission(uri);
             return ContentProvider.this.query(uri, projection, selection,
                     selectionArgs, sortOrder);
         }
-
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.674 -0500", hash_original_method = "BE9D1875DBA635C7BA04B42A3E893DA2", hash_generated_method = "F7F9ADB0E834AECC90BB268DEAA25DBF")
         
 public String getType(Uri uri) {
@@ -865,21 +860,21 @@ public String getType(Uri uri) {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.676 -0500", hash_original_method = "2D883DF9190F17ADC9F3F05EDAD4CA9E", hash_generated_method = "FFBAD1A55B0D0BCB03580CCC52A126FB")
-        
+       @DSSafe(DSCat.IPC_CALLBACK) 
 public Uri insert(Uri uri, ContentValues initialValues) {
             enforceWritePermission(uri);
             return ContentProvider.this.insert(uri, initialValues);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.678 -0500", hash_original_method = "9C9FBE82EEDFD6251BF8F9B258727CC2", hash_generated_method = "19B6712A67243DBBDF3F204C1BD19343")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public int bulkInsert(Uri uri, ContentValues[] initialValues) {
             enforceWritePermission(uri);
             return ContentProvider.this.bulkInsert(uri, initialValues);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.681 -0500", hash_original_method = "8198345EE7E6B486A1CABFB05410D25E", hash_generated_method = "FE61C1B8B0CD6AA41C73DEC46BB548CF")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations)
                 throws OperationApplicationException {
             for (ContentProviderOperation operation : operations) {
@@ -895,14 +890,14 @@ public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> op
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.684 -0500", hash_original_method = "9F536F247E1CDAAB23A0513292709CB1", hash_generated_method = "C8C3FD7D9AC45416E200D5BBD9CCA9DC")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public int delete(Uri uri, String selection, String[] selectionArgs) {
             enforceWritePermission(uri);
             return ContentProvider.this.delete(uri, selection, selectionArgs);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.686 -0500", hash_original_method = "A4C580D76A4BE435F05FDF3658D031E7", hash_generated_method = "FCC88624F446656B38EFA01DA02B728E")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public int update(Uri uri, ContentValues values, String selection,
                 String[] selectionArgs) {
             enforceWritePermission(uri);
@@ -910,7 +905,7 @@ public int update(Uri uri, ContentValues values, String selection,
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.689 -0500", hash_original_method = "A3B5DD3A6EF0BED7F3109E14959CA5EF", hash_generated_method = "F9B080E61BE06619E555CC6875519C55")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public ParcelFileDescriptor openFile(Uri uri, String mode)
                 throws FileNotFoundException {
             if (mode != null && mode.startsWith("rw")) enforceWritePermission(uri);
@@ -919,7 +914,7 @@ public ParcelFileDescriptor openFile(Uri uri, String mode)
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.691 -0500", hash_original_method = "9FC3CF0D01502503E6A8E959789D91E0", hash_generated_method = "BADD8B63F628F6CE2BDAB329A64578C7")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public AssetFileDescriptor openAssetFile(Uri uri, String mode)
                 throws FileNotFoundException {
             if (mode != null && mode.startsWith("rw")) enforceWritePermission(uri);
@@ -928,7 +923,7 @@ public AssetFileDescriptor openAssetFile(Uri uri, String mode)
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.693 -0500", hash_original_method = "F8D45B029854B0071CB25BB646C6653D", hash_generated_method = "6A525E17BF33EED69D6DFA6E9C07CAC4")
-        
+        @DSSafe(DSCat.IPC_CALLBACK)
 public Bundle call(String method, String arg, Bundle extras) {
             return ContentProvider.this.call(method, arg, extras);
         }
